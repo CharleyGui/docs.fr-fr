@@ -3,10 +3,10 @@ title: Flux de contrôle dans les programmes Async (C#)
 ms.date: 07/20/2015
 ms.assetid: fc92b08b-fe1d-4d07-84ab-5192fafe06bb
 ms.openlocfilehash: 99f80a86f14179c5f270064a9f96e35f8611ef13
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70204440"
 ---
 # <a name="control-flow-in-async-programs-c"></a>Flux de contrôle dans les programmes asynchrones (C#)
@@ -93,15 +93,15 @@ Length of the downloaded string: 33946.
 Vous pouvez télécharger le code que cette rubrique utilise à partir de MSDN, ou vous pouvez le créer vous-même.
 
 > [!NOTE]
-> Pour exécuter l’exemple, Visual Studio version 2012 ou ultérieure et .NET Framework version 4.5 ou ultérieure doivent être installés sur votre ordinateur.
+> Pour exécuter l’exemple, Visual Studio version 2012, ou une version ultérieure, et .NET Framework version 4.5, ou une version ultérieure, doivent être installés sur votre ordinateur.
 
 ### <a name="download-the-program"></a>Télécharger le programme
 
-L’application utilisée dans cette rubrique est téléchargeable dans [Async Sample: Control Flow in Async Programs](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0) (Exemple Async : Flux de contrôle dans les programmes Async). Les étapes suivantes ouvrent et exécutent le programme.
+Vous pouvez télécharger l’application utilisée dans cette rubrique à partir de l’[exemple Async : Flux de contrôle dans les programmes Async](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0). Les étapes suivantes ouvrent et exécutent le programme.
 
 1. Décompressez le fichier téléchargé, puis démarrez Visual Studio.
 
-2. Dans la barre de menus, choisissez **Fichier** > **Ouvrir** > **Projet/Solution**.
+2. Sur la barre de menu, choisissez **File** > **Open** > **Project/Solution**.
 
 3. Accédez au dossier qui contient l’exemple de code décompressé, ouvrez le fichier solution (.sln), puis choisissez la touche **F5** pour générer et exécuter le projet.
 
@@ -113,11 +113,11 @@ Pour exécuter le projet, procédez comme suit :
 
 1. Démarrez Visual Studio.
 
-2. Dans la barre de menus, choisissez **Fichier** > **Nouveau** > **Projet**.
+2. Sur la barre de menu, choisissez **File** > **New** > **Project**.
 
-     La boîte de dialogue **Nouveau projet** s'affiche.
+     La boîte de dialogue **Nouveau projet** s’affiche.
 
-3. Choisissez la catégorie **Installé** > **Visual C#**  > **Windows Desktop**, puis **WPF App** dans la liste des modèles de projets.
+3. Choisissez la catégorie**De bureau Windows** Visual**CMD** >  **installée,** > puis choisissez **l’application WPF** parmi la liste des modèles de projet.
 
 4. Entrez `AsyncTracer` comme nom du projet, puis choisissez le bouton **OK**.
 
@@ -238,7 +238,7 @@ Pour exécuter le projet, procédez comme suit :
 
 10. Appuyez sur la touche **F5** pour exécuter le programme, puis choisissez le bouton **Démarrer**.
 
-    La sortie suivante apparaît :
+    Vous obtenez la sortie suivante :
 
     ```output
     ONE:   Entering startButton_Click.
@@ -272,9 +272,9 @@ Pour exécuter le projet, procédez comme suit :
 
 ### <a name="steps-one-and-two"></a>Étapes UN et DEUX
 
-Les deux premières lignes d’affichage suivent le chemin quand `startButton_Click` appelle `AccessTheWebAsync` et `AccessTheWebAsync` appelle la méthode asynchrone <xref:System.Net.Http.HttpClient> <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>. L’image suivante montre les appels de méthode à méthode.
+Les deux premières lignes d’affichage suivent le chemin quand `startButton_Click` appelle `AccessTheWebAsync` et `AccessTheWebAsync` appelle la méthode asynchrone <xref:System.Net.Http.HttpClient><xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>. L’image suivante montre les appels de méthode à méthode.
 
-![Étapes ONE et TWO](./media/asynctrace-onetwo.png "AsyncTrace-ONETWO")
+![Étapes UN et DEUX](./media/asynctrace-onetwo.png "AsyncTrace-ONETWO")
 
 Le type de retour de `AccessTheWebAsync` et de `client.GetStringAsync` est <xref:System.Threading.Tasks.Task%601>. Pour `AccessTheWebAsync`, TResult est un entier. Pour `GetStringAsync`, TResult est une chaîne. Pour plus d’informations sur les types de retour de méthode asynchrone, consultez [Types de retour Async (C#)](./async-return-types.md).
 
@@ -306,7 +306,7 @@ string urlContents = await getStringTask;
 
  L’illustration suivante montre le flux de contrôle entre `client.GetStringAsync` et l’assignation à `getStringTask`, puis entre la création de `getStringTask` et l’application d’un opérateur await.
 
- ![Étape THREE](./media/asynctrace-three.png "AsyncTrace-Three")
+ ![Étape TROIS](./media/asynctrace-three.png "AsyncTrace-Trois")
 
  L’expression await suspend `AccessTheWebAsync` jusqu’à ce que `client.GetStringAsync` retourne une sortie. Dans le même temps, le contrôle retourne à l’appelant de `AccessTheWebAsync`, `startButton_Click`.
 
@@ -341,7 +341,7 @@ int contentLength = await getLengthTask;
 
  Dans l’illustration suivante, les flèches indiquent le flux de contrôle entre l’expression await dans `AccessTheWebAsync` et l’assignation d’une valeur à `getLengthTask`, suivie du traitement normal dans `startButton_Click` jusqu’à ce que `getLengthTask` soit attendu.
 
- ![Étape FOUR](./media/asynctrace-four.png "AsyncTrace-FOUR")
+ ![Étape QUATRE](./media/asynctrace-four.png "AsyncTrace-FOUR")
 
 ### <a name="step-five"></a>Étape FIVE
 
@@ -358,7 +358,7 @@ FIVE:  Back in AccessTheWebAsync.
 
  L’illustration suivante présente le transfert du contrôle après l’exécution de `client.GetStringAsync` (et de `getStringTask`).
 
- ![Étape FIVE](./media/asynctrace-five.png "AsyncTrace-FIVE")
+ ![Étape FIVE](./media/asynctrace-five.png "AsyncTrace-CINQ")
 
  `AccessTheWebAsync` s’exécute jusqu’à la fin et le contrôle retourne à `startButton_Click`, qui attend que son exécution soit terminée.
 
@@ -383,11 +383,11 @@ int contentLength = await getLengthTask;
 
  L’illustration suivante montre le retour du contrôle de `AccessTheWebAsync` à `startButton_Click`.
 
- ![Étape SIX](./media/asynctrace-six.png "AsyncTrace-SIX")
+ ![Étape SIX](./media/asynctrace-six.png "AsyncTrace-SIX")
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Programmation asynchrone avec Async et Await (C#)](./index.md)
 - [Types de retour async (C#)](./async-return-types.md)
-- [Procédure pas à pas : Accès au web avec async et await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [Exemple Async : Control Flow in Async Programs (C# and Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)
+- [Procédure pas à pas : accès au web avec async et await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Exemple Async : Flux de contrôle dans les programmes Async (C# et Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)

@@ -1,18 +1,18 @@
 ---
-title: 'Didacticiel : classer des fleurs Iris-k-signifiant clustering'
+title: 'Tutorial: Catégoriser les fleurs d’iris - k-moyens clustering'
 description: Découvrez comment utiliser ML.NET dans un scénario de clustering
 author: pkulikov
 ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
 ms.openlocfilehash: 174907adac5741d5cc7d02cb134921debc586061
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78241089"
 ---
-# <a name="tutorial-categorize-iris-flowers-using-k-means-clustering-with-mlnet"></a>Didacticiel : classer des fleurs d’iris à l’aide du clustering k-signifiant avec ML.NET
+# <a name="tutorial-categorize-iris-flowers-using-k-means-clustering-with-mlnet"></a>Tutorial: Catégoriser les fleurs d’iris à l’aide de k-moyens clustering avec ML.NET
 
 Ce tutoriel montre comment utiliser ML.NET pour générer un [modèle de clustering](../resources/tasks.md#clustering) pour le [jeu de données Iris](https://en.wikipedia.org/wiki/Iris_flower_data_set).
 
@@ -27,9 +27,9 @@ Dans ce tutoriel, vous allez apprendre à :
 > - Effectuer l’apprentissage du modèle
 > - Utiliser le modèle pour les prévisions
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Conditions préalables requises
 
-- [Visual Studio 2017 version 15,6 ou ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec la charge de travail « développement multiplateforme .net Core » installée.
+- [Visual Studio 2017 version 15.6 ou plus tard](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec le ".NET Core cross-platform development" charge de travail installé.
 
 ## <a name="understand-the-problem"></a>Comprendre le problème
 
@@ -41,21 +41,21 @@ Comme vous ne savez pas à quel groupe appartient chaque fleur, vous choisissez 
 
 ## <a name="create-a-console-application"></a>Création d’une application console
 
-1. Ouvrez Visual Studio. Sélectionnez **Fichier** > **Nouveau** > **Projet** dans la barre de menus. Dans la boîte de dialogue **Nouveau projet**, sélectionnez le nœud **Visual C#** suivi du nœud **.NET Core**. Ensuite, sélectionnez le modèle de projet **Application console (.NET Core)**. Dans la zone de texte **Nom**, tapez « IrisFlowerClustering », puis sélectionnez le bouton **OK**.
+1. Ouvrez Visual Studio. Sélectionnez **File** > **New** > **Project** à partir de la barre de menu. Dans la boîte de dialogue **Nouveau projet**, sélectionnez le nœud **Visual C#** suivi du nœud **.NET Core**. Ensuite, sélectionnez le modèle de projet **Application console (.NET Core)**. Dans la zone de texte **Nom**, tapez « IrisFlowerClustering », puis sélectionnez le bouton **OK**.
 
-1. Créez un répertoire nommé *Data* dans votre projet pour enregistrer le jeu de données et les fichiers de modèle :
+1. Créez un répertoire nommé *Données* dans votre projet pour stocker l’ensemble de données et les fichiers modéliques :
 
     Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **Nouveau dossier**. Tapez « Données » et appuyez sur Entrée.
 
-1. Installez le package NuGet **Microsoft.ML** :
+1. Installer le **paquet nuGet Microsoft.ML** :
 
-    Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Gérer les packages NuGet**. Choisissez « nuget.org » comme source du package, sélectionnez l’onglet **Parcourir** , recherchez **Microsoft.ml** , puis sélectionnez le bouton **installer** . Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés.
+    Dans **Solution Explorer**, cliquez à droite sur le projet et sélectionnez Manage **NuGet Packages**. Choisissez «nuget.org» comme source de paquet, sélectionnez **l’onglet Parcourir,** recherchez **Microsoft.ML** et sélectionnez le bouton **Installer.** Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés.
 
 ## <a name="prepare-the-data"></a>Préparer les données
 
 1. Téléchargez le jeu de données [iris.data](https://github.com/dotnet/machinelearning/blob/master/test/data/iris.data) et enregistrez-le dans le dossier *Data* que vous avez créé à l’étape précédente. Pour plus d’informations sur le jeu de données Iris, consultez la page Wikipédia [Iris de Fisher](https://en.wikipedia.org/wiki/Iris_flower_data_set) et la page [Iris Data Set](https://archive.ics.uci.edu/ml/datasets/Iris), qui est la source du jeu de données.
 
-1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier *iris.data* et sélectionnez **Propriétés**. Sous **Avancé**, définissez la valeur **Copier dans le répertoire de sortie** sur **Copier si plus récent**.
+1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier *iris.data* et sélectionnez **Propriétés**. Sous **Advanced**, changer la valeur de **la copie à l’annuaire de sortie** à copier si plus **récent**.
 
 Le fichier *iris.data* contient cinq colonnes qui représentent :
 
@@ -120,11 +120,11 @@ La classe <xref:Microsoft.ML.MLContext?displayProperty=nameWithType> représente
 
 ## <a name="set-up-data-loading"></a>Configurer le chargement des données
 
-Ajoutez le code suivant à la méthode `Main` pour configurer la façon de charger les données :
+Ajoutez le code `Main` suivant à la méthode pour configurer la manière de charger les données :
 
 [!code-csharp[Create text loader](~/samples/snippets/machine-learning/IrisFlowerClustering/csharp/Program.cs#CreateDataView)]
 
-La [méthode d’extension générique `MLContext.Data.LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) déduit du type `IrisData` fourni le schéma du jeu de données et retourne <xref:Microsoft.ML.IDataView>, qui peut être utilisé en entrée de transformateurs.
+La [ `MLContext.Data.LoadFromTextFile` méthode d’extension](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) générique déduit le schéma `IrisData` de <xref:Microsoft.ML.IDataView> l’ensemble de données du type fourni et les retours qui peuvent être utilisés comme entrée pour les transformateurs.
 
 ## <a name="create-a-learning-pipeline"></a>Créer un pipeline d’apprentissage
 
@@ -157,7 +157,7 @@ Pour effectuer des prédictions, utilisez la classe <xref:Microsoft.ML.Predictio
 
 [!code-csharp[Create predictor](~/samples/snippets/machine-learning/IrisFlowerClustering/csharp/Program.cs#Predictor)]
 
-Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. Il est acceptable d’utiliser dans des environnements à thread unique ou prototype. Pour améliorer les performances et la sécurité des threads dans les environnements de production, utilisez le service `PredictionEnginePool`, qui crée une [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) de [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) objets à utiliser dans votre application. Consultez ce guide sur l' [utilisation de `PredictionEnginePool` dans une API Web ASP.net Core](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
+Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)n’est pas sans fil. Il est acceptable d’utiliser dans des environnements à thread unique ou prototype. Pour améliorer les performances et la `PredictionEnginePool` sécurité des fils [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) dans les environnements de production, utilisez le service, qui crée un des objets à utiliser dans toute votre application. Voir ce guide sur la façon [d’utiliser `PredictionEnginePool` dans un ASP.NET’API Web de base](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
 
 > [!NOTE]
 > L’extension de service `PredictionEnginePool` est disponible en préversion.
@@ -187,7 +187,7 @@ Distances: 11.69127 0.02159119 25.59896
 
 Félicitations ! Vous venez de créer un modèle d’apprentissage automatique de clustering des iris et l’avez utilisé pour réaliser des prédictions. Vous trouverez le code source de ce tutoriel dans le dépôt GitHub [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/IrisFlowerClustering).
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]

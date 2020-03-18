@@ -12,16 +12,16 @@ helpviewer_keywords:
 - event unsubscription [C#]
 - -= operator [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
-ms.openlocfilehash: ccf3572df99f5c3de127c9ada690a977843648af
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 2017aade92e8d7ad2af7101a107122fa8d7b9e27
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78238842"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78847649"
 ---
 # <a name="--and---operators-c-reference"></a>Opérateurs - et -=, opérateurs - (référence C#)
 
-Les opérateurs `-` et `-=` sont pris en charge par les types numériques [intégraux](../builtin-types/integral-numeric-types.md) et à [virgule flottante](../builtin-types/floating-point-numeric-types.md) intégrés et les types [délégués](../builtin-types/reference-types.md#the-delegate-type) .
+Les `-` `-=` opérateurs et les opérateurs sont soutenus par les types [numériques intégrés](../builtin-types/integral-numeric-types.md) et [flottants](../builtin-types/floating-point-numeric-types.md) et les types [de délégués.](../builtin-types/reference-types.md#the-delegate-type)
 
 Pour plus d’informations sur l’opérateur arithmétique `-`, consultez les sections [Opérateurs plus et moins unaires](arithmetic-operators.md#unary-plus-and-minus-operators) et [Opérateur de soustraction -](arithmetic-operators.md#subtraction-operator--) de l’article [Opérateurs arithmétiques](arithmetic-operators.md).
 
@@ -31,19 +31,19 @@ Pour les opérandes du même type [délégué](../builtin-types/reference-types.
 
 - Si les deux opérandes ont des valeurs non Null et que la liste d’appel de l’opérande de partie droite est une sous-liste contiguë correcte de la liste d’appel de l’opérande de partie droite, le résultat de l’opération est une nouvelle liste d’appel obtenue en supprimant les entrées de l’opérande de partie droite à partir de la liste d’appel de l’opérande de gauche. Si la liste des opérandes de partie droite correspond à plusieurs sous-listes contiguës dans la liste des opérandes de partie gauche, seule la sous-liste correspondante la plus à droite est supprimée. Si la suppression aboutit à une liste vide, le résultat est `null`.
 
-  [!code-csharp-interactive[delegate removal](~/samples/snippets/csharp/language-reference/operators/SubtractionOperator.cs#DelegateRemoval)]
+  [!code-csharp-interactive[delegate removal](snippets/SubtractionOperator.cs#DelegateRemoval)]
 
 - Si la liste d’appel de l’opérande de partie droite n’est pas une sous-liste contiguë correcte de la liste d’appel de l’opérande de partie gauche, le résultat de l’opération est l’opérande de partie gauche. Par exemple, la suppression d’un délégué qui ne fait pas partie du délégué multicast ne fait rien et génère un délégué multicast inchangé.
 
-  [!code-csharp-interactive[delegate removal with no effect](~/samples/snippets/csharp/language-reference/operators/SubtractionOperator.cs#DelegateRemovalNoChange)]
+  [!code-csharp-interactive[delegate removal with no effect](snippets/SubtractionOperator.cs#DelegateRemovalNoChange)]
 
   L’exemple précédent montre également que durant la suppression de délégué, les instances de délégués sont comparées. Par exemple, les délégués qui sont produits à partir de l’évaluation d’[expressions lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) identiques ne sont pas égaux. Pour plus d’informations sur l’égalité des délégués, consultez la section [Opérateurs d’égalité de délégués](~/_csharplang/spec/expressions.md#delegate-equality-operators) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
 - Si l’opérande de partie gauche est `null`, le résultat de l’opération est `null`. Si l’opérande de partie droite est `null`, le résultat de l’opération est l’opérande de partie gauche.
 
-  [!code-csharp-interactive[delegate removal and null](~/samples/snippets/csharp/language-reference/operators/SubtractionOperator.cs#DelegateRemovalAndNull)]
+  [!code-csharp-interactive[delegate removal and null](snippets/SubtractionOperator.cs#DelegateRemovalAndNull)]
 
-Pour combiner des délégués, utilisez l’[opérateur `+`](addition-operator.md#delegate-combination).
+Pour combiner les délégués, utilisez [ `+` l’opérateur](addition-operator.md#delegate-combination).
 
 Pour plus d'informations sur les types de délégués, consultez [Délégués](../../programming-guide/delegates/index.md).
 
@@ -65,9 +65,9 @@ sauf que `x` n’est évalué qu’une seule fois.
 
 L’exemple suivant illustre l’utilisation de l’opérateur `-=` :
 
-[!code-csharp-interactive[-= examples](~/samples/snippets/csharp/language-reference/operators/SubtractionOperator.cs#SubtractAndAssign)]
+[!code-csharp-interactive[-= examples](snippets/SubtractionOperator.cs#SubtractAndAssign)]
 
-Vous utilisez également l’opérateur `-=` pour spécifier une méthode de gestionnaire d’événements à supprimer quand vous vous désabonnez d’un [événement](../keywords/event.md). Pour plus d’informations, consultez [Comment s’abonner et annuler l’abonnement à des événements](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
+Vous utilisez également l’opérateur `-=` pour spécifier une méthode de gestionnaire d’événements à supprimer quand vous vous désabonnez d’un [événement](../keywords/event.md). Pour plus d’informations, voir [Comment vous abonner et désabonner des événements](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 
@@ -79,8 +79,8 @@ Pour plus d’informations, consultez les sections [Opérateur moins unaire](~/_
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
-- [Opérateurs C#](index.md)
+- [Référence C#](../index.md)
+- [Opérateurs CMD](index.md)
 - [Événements](../../programming-guide/events/index.md)
-- [Opérateurs arithmétiques](arithmetic-operators.md)
-- [+ et +=, opérateurs](addition-operator.md)
+- [Opérateurs d’arithmétique](arithmetic-operators.md)
+- [et les opérateurs](addition-operator.md)

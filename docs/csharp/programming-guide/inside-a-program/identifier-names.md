@@ -3,10 +3,10 @@ title: Noms d’identificateurs
 description: Découvrez les règles relatives aux noms d’identificateurs valides dans le langage de programmation C#.
 ms.date: 08/21/2018
 ms.openlocfilehash: bef6e2ea285b5391af3350ae42a4105d140c6d1b
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77673366"
 ---
 # <a name="identifier-names"></a>Noms d’identificateurs
@@ -35,10 +35,10 @@ En plus des règles, un certain nombre de [conventions de nommage](../../../stan
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [À l’intérieur d’un programme C#](./index.md)
-- [Informations de référence sur C#](../../language-reference/index.md)
+- [À l'intérieur d'un programme C#](./index.md)
+- [Référence C](../../language-reference/index.md)
 - [Classes](../classes-and-structs/classes.md)
-- [Types de structures](../../language-reference/builtin-types/struct.md)
+- [Types de structure](../../language-reference/builtin-types/struct.md)
 - [Espaces de noms](../namespaces/index.md)
 - [Interfaces](../interfaces/index.md)
 - [Délégués](../delegates/index.md)

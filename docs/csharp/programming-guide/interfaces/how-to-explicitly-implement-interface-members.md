@@ -1,20 +1,20 @@
 ---
-title: Comment implémenter de manière explicite des C# membres d’interface-Guide de programmation
+title: Comment implémenter explicitement les membres de l’interface - Guide de programmation C
 ms.date: 07/20/2015
 helpviewer_keywords:
 - interfaces [C#], explicitly implementing
 ms.assetid: 514cde76-f981-474e-8b40-9493619f899c
 ms.openlocfilehash: dff094aca237ed6146bd9b52813c40549bc99b9b
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77627783"
 ---
-# <a name="how-to-explicitly-implement-interface-members-c-programming-guide"></a>Comment implémenter de manière explicite desC# membres d’interface (Guide de programmation)
-Cet exemple déclare une [interface](../../language-reference/keywords/interface.md), `IDimensions` et une classe `Box`, qui implémente de manière explicite les membres d’interface `GetLength` et `GetWidth`. Les membres sont accessibles via l’instance d’interface `dimensions`.  
+# <a name="how-to-explicitly-implement-interface-members-c-programming-guide"></a>Comment implémenter explicitement les membres de l’interface (Guide de programmation C)
+Cet exemple déclare [interface](../../language-reference/keywords/interface.md)une `IDimensions`interface , `Box`, et une classe, `GetLength` `GetWidth`, qui implémente explicitement les membres de l’interface et . Les membres sont accessibles via l’instance d’interface `dimensions`.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  [!code-csharp[csProgGuideInheritance#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#8)]  
   
 ## <a name="robust-programming"></a>Programmation fiable  

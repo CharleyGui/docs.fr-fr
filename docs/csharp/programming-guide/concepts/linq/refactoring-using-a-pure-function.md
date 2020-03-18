@@ -3,19 +3,19 @@ title: Refactorisation à l’aide d’une fonction pure (C#)
 ms.date: 07/20/2015
 ms.assetid: a3416a45-9e12-4e4a-9747-897f06eef510
 ms.openlocfilehash: f264a0028ed265a5a4fbe1dc32f430c648724c20
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70253077"
 ---
 # <a name="refactoring-using-a-pure-function-c"></a>Refactorisation à l’aide d’une fonction pure (C#)
 L’exemple suivant refactorise l’exemple précédent, [Refactorisation à l’aide d’une méthode d’extension (C#)](./refactoring-using-an-extension-method.md), de façon à utiliser une fonction pure. Dans cet exemple, le code utilisé pour rechercher le texte d’un paragraphe est déplacé vers la méthode statique pure `ParagraphText`.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
  Cet exemple traite un document WordprocessingML et récupère les nœuds de paragraphes à partir d'un document WordprocessingML. Il identifie également le style de chaque paragraphe. Cet exemple se base sur les exemples précédents de ce didacticiel. Dans le code ci-dessous, le code refactorisé figure dans des commentaires.  
   
- Pour obtenir des instructions sur la création du document source utilisé dans cet exemple, consultez [Création du document Office Open XML source (C#)](./creating-the-source-office-open-xml-document.md).  
+ Pour obtenir des instructions pour créer le document source utilisé dans cet exemple, consultez [Création du document Office Open XML source (C#)](./creating-the-source-office-open-xml-document.md).  
   
  Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
@@ -181,6 +181,6 @@ StyleName:Code >Hello World<
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Tutoriel : manipulation de contenu dans un document WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)
+- [Didacticiel : manipulation de contenu dans un document WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)
 - [Refactorisation à l’aide d’une méthode d’extension (C#)](./refactoring-using-an-extension-method.md)
 - [Refactorisation dans des fonctions pures (C#)](./refactoring-into-pure-functions.md)

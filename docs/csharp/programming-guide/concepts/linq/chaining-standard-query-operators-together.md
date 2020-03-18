@@ -3,23 +3,23 @@ title: Chaînage d’opérateurs de requête standard (C#)
 ms.date: 07/20/2015
 ms.assetid: 66f2b0a9-2c23-4735-988e-bbc9dfb55c7b
 ms.openlocfilehash: 37df654b2bfdcc135460e5ded2ceec1eca33b35a
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70204207"
 ---
 # <a name="chaining-standard-query-operators-together-c"></a>Chaînage d’opérateurs de requête standard (C#)
-C’est la dernière rubrique du [Tutoriel : Chaînage de requêtes (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).  
+Il s’agit de la dernière rubrique du [Didacticiel : chaînage de requêtes (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).  
   
  Les opérateurs de requête standard peuvent également être chaînés ensemble. Par exemple, vous pouvez lancer l'opérateur <xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType> et il fonctionne également de manière différée. Aucun résultat intermédiaire n'est matérialisé par l'opérateur.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
  Dans cet exemple, la méthode <xref:System.Linq.Enumerable.Where%2A> est appelée avant `ConvertCollectionToUpperCase`. La méthode <xref:System.Linq.Enumerable.Where%2A> opère presque exactement de la même façon que les méthodes différées utilisées dans les exemples précédents de ce didacticiel, `ConvertCollectionToUpperCase` et `AppendString`.  
   
  Il existe toutefois une différence : dans le cas présent, la méthode <xref:System.Linq.Enumerable.Where%2A> itère au sein de sa collection source, détermine que le premier élément ne passe pas le prédicat et obtient l'élément suivant qui, lui, passe. Elle génère ensuite le deuxième élément.  
   
- L’idée de base est néanmoins la même : les collections intermédiaires sont matérialisées uniquement si cela est nécessaire.  
+ L'idée de base est néanmoins identique : les collections intermédiaires ne sont matérialisées que si elles doivent l'être.  
   
  Lorsque des expressions de requêtes sont utilisées, elles sont converties en appels aux opérateurs de requête standard et les mêmes principes sont applicables.  
   
@@ -73,7 +73,7 @@ class Program
 }  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```output  
 ToUpper: source >abc<  

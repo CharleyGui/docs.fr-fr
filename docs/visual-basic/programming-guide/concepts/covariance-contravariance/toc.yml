@@ -4,7 +4,7 @@
     - name: Variance dans les interfaces génériques
       href: variance-in-generic-interfaces.md
       items:
-        - name: Création d’interfaces génériques de type variant
+        - name: Création d'interfaces génériques de type variant
           href: creating-variant-generic-interfaces.md
         - name: Utilisation de la variance dans les interfaces pour les collections génériques
           href: using-variance-in-interfaces-for-generic-collections.md

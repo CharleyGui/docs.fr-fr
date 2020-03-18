@@ -4,10 +4,10 @@ description: Décrit la prise en charge par C# des éléments ignorés, qui sont
 ms.technology: csharp-fundamentals
 ms.date: 07/21/2017
 ms.openlocfilehash: a76e7fc13f92ec0de87153bb35eb3924bb317616
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73100640"
 ---
 # <a name="discards---c-guide"></a>Éléments ignorés - Guide C#
@@ -22,7 +22,7 @@ Vous indiquez qu’une variable est un élément ignoré en lui affectant comme 
 
 Dans C# 7.0, les éléments ignorés sont pris en charge dans les affectations dans les contextes suivants :
 
-- Déconstruction de [tuple et d’objet](deconstruct.md).
+- Tuple et [la déconstruction d’objets](deconstruct.md).
 - Critères spéciaux avec [is](language-reference/keywords/is.md) et [switch](language-reference/keywords/switch.md).
 - Appels à des méthodes avec des paramètres `out`.
 - Un `_` autonome quand aucun `_` n’est dans l’étendue.
@@ -67,20 +67,20 @@ Vous pouvez utiliser un élément ignoré autonome pour indiquer une variable qu
 
 Notez que `_` est aussi un identificateur valide. Quand il est utilisé en dehors d’un contexte pris en charge, `_` est traité non pas comme élément ignoré, mais comme variable valide. Si un identificateur nommé `_` est déjà dans l’étendue, l’utilisation de `_` comme élément ignoré autonome peut provoquer :
 
-- Une modification accidentelle de la valeur de la variable `_` dans l’étendue en lui affectant la valeur de l’élément ignoré prévu. Exemple :
+- Une modification accidentelle de la valeur de la variable `_` dans l’étendue en lui affectant la valeur de l’élément ignoré prévu. Par exemple :
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#1)]
 
-- Une erreur de compilateur pour violation de sécurité du type. Exemple :
+- Une erreur de compilateur pour violation de sécurité du type. Par exemple :
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#2)]
 
-- Erreur du compilateur CS0136 : « Impossible de déclarer une variable locale ou un paramètre nommé ‘\_’ dans cette portée, car ce nom est utilisé dans une portée locale englobante pour définir une variable locale ou un paramètre. » Exemple :
+- Erreur du compilateur CS0136 : « Impossible de déclarer une variable locale ou un paramètre nommé ‘\_’ dans cette portée, car ce nom est utilisé dans une portée locale englobante pour définir une variable locale ou un paramètre. » Par exemple :
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#3)]
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Déconstruction de tuples et autres types](deconstruct.md)
-- [Mot clé `is`](language-reference/keywords/is.md)
-- [Mot clé `switch`](language-reference/keywords/switch.md)
+- [`is`Mot-clé](language-reference/keywords/is.md)
+- [`switch`Mot-clé](language-reference/keywords/switch.md)

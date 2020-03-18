@@ -5,27 +5,27 @@ helpviewer_keywords:
 - using statement [C#]
 ms.assetid: afc355e6-f0b9-4240-94dd-0d93f17d9fc3
 ms.openlocfilehash: 52cde99fd029ce50f159b2a87fbfbf47fc79dccc
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75712960"
 ---
 # <a name="using-statement-c-reference"></a>using, instruction (référence C#)
 
 Fournit une syntaxe pratique qui garantit l’utilisation correcte d’objets <xref:System.IDisposable>.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre comment utiliser l’instruction `using`.
 
 [!code-csharp[csrefKeywordsNamespace#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#4)]
 
-À partir C# de 8,0, vous pouvez utiliser la syntaxe alternative suivante pour l’instruction `using` qui ne requiert pas d’accolades :
+En commençant par C 8.0, vous pouvez utiliser `using` la syntaxe alternative suivante pour l’énoncé qui ne nécessite pas d’accolades :
 
 [!code-csharp[csrefKeywordsNamespace#New](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#ModernUsing)]
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 <xref:System.IO.File> et <xref:System.Drawing.Font> sont des exemples de types managés qui accèdent à des ressources non managées (dans le cas présent, des handles de fichiers et des contextes d’appareil). Beaucoup d’autres types de ressources non managées et de bibliothèques de classes peuvent les encapsuler. Tous les types de cette sorte doivent implémentent l’interface <xref:System.IDisposable>.
 
@@ -35,7 +35,7 @@ L’instruction `using` garantit que <xref:System.IDisposable.Dispose%2A> est ap
 
 [!code-csharp[csrefKeywordsNamespace#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#5)]
 
-La plus récente syntaxe d’instruction `using` se traduit par un code très similaire. Le bloc `try` s’ouvre à l’emplacement où la variable est déclarée. Le bloc `finally` est ajouté à la fermeture du bloc englobant, en général à la fin d’une méthode.
+La syntaxe de déclaration plus nouvelle `using` se traduit par un code très similaire. Le `try` bloc s’ouvre là où la variable est déclarée. Le `finally` bloc est ajouté à la fin du bloc d’enceinte, généralement à la fin d’une méthode.
 
 Pour plus d’informations sur l’instruction `try`-`finally`, consultez la rubrique [try-finally](try-finally.md).
 
@@ -43,7 +43,7 @@ Vous pouvez déclarer plusieurs instances d’un type dans l’instruction `usin
 
 [!code-csharp[csrefKeywordsNamespace#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#6)]
 
-Vous pouvez combiner plusieurs déclarations du même type à l’aide de la nouvelle syntaxe C# introduite avec 8 également. Ceci est illustré dans l'exemple suivant :
+Vous pouvez combiner plusieurs déclarations du même type à l’aide de la nouvelle syntaxe introduite avec C 8 ainsi. Ceci est illustré dans l'exemple suivant :
 
 [!code-csharp[csrefKeywordsNamespace#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#MultipleUsing)]
 
@@ -59,11 +59,11 @@ Pour plus d’informations, consultez [Instruction using](~/_csharplang/spec/sta
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [using, directive](using-directive.md)
-- [Nettoyage de la mémoire](../../../standard/garbage-collection/index.md)
+- [en utilisant la directive](using-directive.md)
+- [Garbage collection](../../../standard/garbage-collection/index.md)
 - [Utilisation d’objets implémentant IDisposable](../../../standard/garbage-collection/using-objects.md)
 - [Interface IDisposable](xref:System.IDisposable)
-- [instruction using dans C# 8,0](~/_csharplang/proposals/csharp-8.0/using.md)
+- [à l’aide de l’énoncé dans C 8.0](~/_csharplang/proposals/csharp-8.0/using.md)

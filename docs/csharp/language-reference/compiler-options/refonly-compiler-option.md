@@ -8,10 +8,10 @@ helpviewer_keywords:
 - -refonly compiler option [C#]
 - refonly compiler option [C#]
 ms.openlocfilehash: 856b65d3b2217dbe5d53ecda00723b47247d80a4
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72773852"
 ---
 # <a name="-refonly-c-compiler-options"></a>-refonly (Options du compilateur C#)
@@ -24,13 +24,13 @@ L’option **-refonly** indique qu’un assembly de référence doit être gén�
 -refonly
 ```
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-Les assemblys de référence sont un type spécial d’assembly qui ne contient que la quantité minimale de métadonnées requises pour représenter la surface de l’API publique de la bibliothèque. Elles incluent des déclarations pour tous les membres qui sont significatifs lors du référencement d’un assembly dans les outils de génération, mais excluent toutes les implémentations de membres et les déclarations de membres privés qui n’ont aucun impact observable sur leur contrat d’API. Pour plus d’informations, consultez [références des assemblys](../../../standard/assembly/reference-assemblies.md) dans le guide .net.
+Les assemblages de référence sont un type spécial d’assemblage qui ne contient que la quantité minimale de métadonnées requises pour représenter la surface publique de l’API de la bibliothèque. Elles comprennent des déclarations pour tous les membres qui sont importantes lorsqu’ils font référence à une assemblée dans des outils de construction, mais excluent toutes les mises en œuvre et déclarations des membres du groupe privé qui n’ont aucune incidence observable sur leur contrat d’API. Pour plus d’informations, voir [les assemblages de référence](../../../standard/assembly/reference-assemblies.md) dans .NET Guide.
 
-Les options `-refonly` et [`-refout`](refout-compiler-option.md) s’excluent mutuellement.
+Les `-refonly` [`-refout`](refout-compiler-option.md) options et les options s’excluent mutuellement.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](./index.md)
+- [Options de compilateur C](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

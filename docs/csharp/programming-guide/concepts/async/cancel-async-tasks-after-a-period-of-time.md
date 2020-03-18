@@ -3,10 +3,10 @@ title: Annuler des tâches asynchrones après une période spécifique (C#)
 ms.date: 07/20/2015
 ms.assetid: 194282c2-399f-46da-a7a6-96674e00b0b3
 ms.openlocfilehash: 110c4700d0d2afc87f9144bf258cdd4991f107f4
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70204337"
 ---
 # <a name="cancel-async-tasks-after-a-period-of-time-c"></a>Annuler des tâches async après une période spécifique (C#)
@@ -18,19 +18,19 @@ Cet exemple s’appuie sur le code développé dans [Annuler une tâche asynchro
 > [!NOTE]
 > Pour exécuter les exemples, Visual Studio version 2012 ou ultérieure et le .NET Framework version 4.5 ou ultérieure doivent être installés sur votre ordinateur.
 
-## <a name="download-the-example"></a>Télécharger l’exemple
+## <a name="download-the-example"></a>Télécharger l'exemple
 
-Téléchargez l’intégralité des projets Windows Presentation Foundation (WPF) à partir de la page [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) (Exemple Async  : Réglage précis de votre application), puis suivez ces étapes.
+Téléchargez l’intégralité du projet Windows Presentation Foundation (WPF) à partir de la page [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea), puis procédez comme suit.
 
 1. Décompressez le fichier que vous avez téléchargé, puis démarrez Visual Studio.
 
-2. Dans la barre de menus, choisissez **Fichier** > **Ouvrir** > **Projet/Solution**.
+2. Sur la barre de menu, choisissez **File** > **Open** > **Project/Solution**.
 
-3. Dans la boîte de dialogue **Ouvrir le projet**, ouvrez le dossier contenant l’exemple de code que vous avez décompressé, puis ouvrez le fichier de solution (.sln) pour AsyncFineTuningCS.
+3. Dans la boîte de dialogue **Ouvrir le projet**, ouvrez le dossier contenant l’exemple de code que vous avez décompressé, puis ouvrez le fichier solution (.sln) pour AsyncFineTuningCS.
 
 4. Dans l’**Explorateur de solutions**, ouvrez le menu contextuel du projet **CancelAfterTime**, puis choisissez **Définir comme projet de démarrage**.
 
-5. Appuyez sur la touche **F5** pour exécuter le projet. (Ou appuyez sur les touches **Ctrl**+**F5** pour exécuter le projet sans le déboguer.)
+5. Appuyez sur la touche **F5** pour exécuter le projet. (Ou, appuyez sur **Ctrl**+**F5** pour exécuter le projet sans le déboguer).
 
 6. Exécutez le programme plusieurs fois pour vérifier qu’il peut afficher la sortie pour tous les sites web, aucun site web ou certains sites web.
 
@@ -92,7 +92,7 @@ Le code suivant est le texte complet du fichier MainWindow.xaml.cs de l’exempl
 
 Notez que vous devez ajouter une référence pour <xref:System.Net.Http>.
 
-Vous pouvez télécharger le projet à partir de la page [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) (Exemple Async : Réglage précis de votre application).
+Vous pouvez télécharger le projet à partir de la page [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
 
 ```csharp
 using System;
@@ -218,7 +218,7 @@ namespace CancelAfterTime
 ## <a name="see-also"></a>Voir aussi
 
 - [Programmation asynchrone avec Async et Await (C#)](./index.md)
-- [Procédure pas à pas : Accès au web avec async et await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [Annuler une tâche async ou une liste de tâches (C#)](./cancel-an-async-task-or-a-list-of-tasks.md)
-- [Ajuster une application Async (C#)](./fine-tuning-your-async-application.md)
-- [Exemple Async : Réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Procédure pas à pas : accès au web avec async et await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Annuler une tâche asynchrone ou une liste de tâches (C#)](./cancel-an-async-task-or-a-list-of-tasks.md)
+- [Réglage de votre application asynchrone (C#)](./fine-tuning-your-async-application.md)
+- [Exemple Async : ajuster une application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

@@ -5,18 +5,18 @@ ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: bbcdd339-86eb-4ae5-9911-4c214a39a92d
 ms.openlocfilehash: 12093e9c9246c87cc5ea3aedaca6ba34acacce4d
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73036991"
 ---
 # <a name="expression-trees-explained"></a>Explication des arborescences d’expressions
 
-[Précédent -- Vue d’ensemble](expression-trees.md)
+[Précédent – Vue d’ensemble](expression-trees.md)
 
 Les arborescences d’expressions sont des structures de données qui définissent du code. Elles sont basées sur les mêmes structures que celles utilisées par un compilateur pour analyser du code et générer la sortie compilée. Lors de la lecture de ce didacticiel, vous remarquerez qu’il existe certaines similitudes entre les arborescences d’expressions et les types utilisés dans les API Roslyn pour générer des [Analyzers et CodeFixes](https://github.com/dotnet/roslyn-analyzers).
-(Analyzers et CodeFixes sont des packages NuGet qui effectuent une analyse statique sur le code et peuvent suggérer des corrections à un développeur.) Les concepts sont similaires et le résultat final est une structure de données qui permet l’examen du code source de manière explicite. Toutefois, les arborescences d’expressions sont basées sur un ensemble de classes et d’API totalement différent des API Roslyn.
+(Les analyseurs et les codeFixes sont des paquets NuGet qui effectuent une analyse statique sur le code et peuvent suggérer des correctifs potentiels pour un développeur.) Les concepts sont similaires, et le résultat final est une structure de données qui permet l’examen du code source d’une manière significative. Toutefois, les arborescences d’expressions sont basées sur un ensemble de classes et d’API totalement différentdes API Roslyn.
 
 Examinons un exemple simple.
 Voici une ligne de code :
@@ -29,9 +29,9 @@ Si vous analysez ceci comme une arborescence d’expressions, l’arborescence c
 Le nœud extérieur est une instruction de déclaration de variable avec attribution (`var sum = 1 + 2;`). Ce nœud extérieur contient plusieurs nœuds enfants : une déclaration de variable, un opérateur d’assignation et une expression qui représente la partie à droite du signe égal. Cette expression est sous-divisée en expressions qui représentent l’opération d’addition et les opérandes gauche et droit de l’addition.
 
 Penchons-nous un peu plus sur les expressions qui composent la partie à droite du signe égal.
-L’expression est `1 + 2`. Il s’agit d’une expression binaire. Plus spécifiquement, il s’agit d’une expression d’addition binaire. Une expression d’addition binaire a deux enfants, représentant les nœuds gauche et droit de l’expression d’addition. Ici, les deux nœuds sont des expressions constantes : l’opérande gauche est la valeur `1` et l’opérande droit la valeur `2`.
+L’expression est `1 + 2`. Il s’agit d’une expression binaire. Plus spécifiquement, il s’agit d’une expression d’addition binaire. Une expression d’addition binaire a deux enfants, représentant les nœuds gauche et droit de l’expression d’addition. Ici, les deux nœuds sont des expressions constantes : l’opérande gauche est la valeur `1`, et l’opérande droit est la valeur `2`.
 
-Visuellement, l’instruction dans son ensemble est une arborescence : on peut partir du nœud racine et accéder à chacun des nœuds pour voir le code qui compose l’instruction :
+Visuellement, l’instruction entière est une arborescence. Vous pouvez partir du nœud racine et accéder à chaque nœud dans l’arborescence pour voir le code qui compose l’instruction :
 
 - Instruction de déclaration de variable avec attribution (`var sum = 1 + 2;`)
   - Déclaration de type de variable implicite (`var sum`)
@@ -70,4 +70,4 @@ Les API d’arborescences d’expressions vous permettent de créer des arboresc
 
 La seule chose que vous ne pouvez pas faire est de modifier une arborescence d’expressions.  Les arborescences d’expressions sont des structures de données immuables. Si vous souhaitez muter (changer) une expression de l’arborescence, vous devez créer une nouvelle arborescence qui est une copie de l’original, mais avec les modifications souhaitées.
 
-[Suivant -- Types de frameworks prenant en charge les arborescences d’expressions](expression-classes.md)
+[Suivant – Types de frameworks prenant en charge les arborescences d’expressions](expression-classes.md)

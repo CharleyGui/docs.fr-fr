@@ -3,11 +3,11 @@ title: Relations entre les fonctionnalités de langage et les types de biblioth�
 description: Les fonctionnalités de langage se basent souvent sur les types de bibliothèque pour l’implémentation. Vous devez donc bien comprendre ces relations.
 ms.date: 07/20/2017
 ms.openlocfilehash: dfae7972af0a251a92700d7d33bd6f971eb1870e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33360081"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "61706024"
 ---
 # <a name="relationships-between-language-features-and-library-types"></a>Relations entre les fonctionnalités de langage et les types de bibliothèque
 

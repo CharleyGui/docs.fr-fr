@@ -1,87 +1,87 @@
 ---
 title: Installer des fichiers IntelliSense localisés
-description: Découvrez comment configurer votre ordinateur de développement pour utiliser des fichiers IntelliSense localisés pour les projets .NET Core dans Visual Studio.
+description: Découvrez comment configurer votre machine de développement pour utiliser des fichiers IntelliSense localisés pour des projets .NET Core dans Visual Studio.
 ms.date: 01/23/2020
 ms.openlocfilehash: e45e225e58865ca2b529000ada0984fbeca850f3
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78157711"
 ---
 # <a name="how-to-install-localized-intellisense-files-for-net-core"></a>Comment installer des fichiers IntelliSense localisés pour .NET Core
 
-[IntelliSense](/visualstudio/ide/using-intellisense) est une aide à la saisie semi-automatique de code qui est disponible dans différents environnements de développement intégré (IDE), tels que Visual Studio. Par défaut, lorsque vous développez des projets .NET Core, le kit de développement logiciel (SDK) comprend uniquement la version anglaise des fichiers IntelliSense. Cet article explique les éléments suivants :
+[IntelliSense](/visualstudio/ide/using-intellisense) est une aide à l’achèvement du code qui est disponible dans différents environnements de développement intégrés (IDE), tels que Visual Studio. Par défaut, lorsque vous développez des projets .NET Core, le SDK ne comprend que la version anglaise des fichiers IntelliSense. Cet article explique :
 
 - Comment installer la version localisée de ces fichiers.
-- Comment modifier l’installation de Visual Studio pour utiliser une autre langue.
+- Comment modifier l’installation Visual Studio pour utiliser une langue différente.
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Conditions préalables requises
 
-- [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download/dotnet-core) ou version ultérieure.
-- [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou une version ultérieure.
+- [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core) ou une version ultérieure.
+- [Visual Studio 2019 version 16.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou une version ultérieure.
 
 ## <a name="download-and-install-the-localized-intellisense-files"></a>Télécharger et installer les fichiers IntelliSense localisés
 
 > [!IMPORTANT]
-> Cette procédure nécessite que vous disposiez de l’autorisation d’administrateur pour copier les fichiers IntelliSense dans le dossier d’installation de .NET Core.
+> Cette procédure exige que vous ayez la permission de l’administrateur de copier les fichiers IntelliSense au dossier d’installation .NET Core.
 
-1. Accédez à la page [Télécharger les fichiers IntelliSense](https://dotnet.microsoft.com/download/dotnet-core/intellisense) .
+1. Rendez-vous sur la page [télécharger les fichiers IntelliSense.](https://dotnet.microsoft.com/download/dotnet-core/intellisense)
 
-1. Téléchargez le fichier IntelliSense correspondant à la langue et à la version que vous souhaitez utiliser.
+1. Téléchargez le fichier IntelliSense pour la langue et la version que vous souhaitez utiliser.
 
-1. Extrayez le contenu du fichier zip.
+1. Extraire le contenu du fichier zip.
 
-1. Accédez au dossier IntelliSense .NET Core.
+1. Naviguez vers le dossier Intellisense .NET Core.
 
-   1. Accédez au dossier d’installation de .NET Core. Par défaut, il se trouve sous *%ProgramFiles%\dotnet\packs*.
-   1. Choisissez le kit de développement logiciel (SDK) pour lequel vous souhaitez installer IntelliSense et accédez au chemin d’accès associé. Vous disposez des options suivantes :
+   1. Naviguez vers le dossier d’installation .NET Core. Par défaut, il est inférieur *à %ProgramFiles%-dotnet packs*.
+   1. Choisissez le SDK pour lequel vous souhaitez installer l’IntelliSense et naviguez vers le chemin associé. Vous disposez des options suivantes :
 
-      | Type de kit de développement logiciel (SDK)        | Chemin d'accès                               |
+      | Type de kit de développement logiciel (SDK)        | Path                               |
       | --------------- | ---------------------------------- |
-      | .NET Core       | *Microsoft. Netcore. app. Ref*        |
-      | Bureau Windows | *Microsoft. WindowsDesktop. app. Ref* |
-      | .NET Standard   | *Netstandard. Library. Ref*          |
+      | .NET Core       | *Microsoft.NETCore.App.Ref (en anglais seulement)*        |
+      | Windows Desktop | *Microsoft.WindowsDesktop.App.Ref (en)* |
+      | .NET Standard   | *NETStandard.Library.Ref NETStandard.Library.Ref NETStandard.Library.Ref NETStand*          |
 
-   1. Accédez à la version pour laquelle vous souhaitez installer la fonctionnalité IntelliSense localisée. Par exemple, *3.1.0*.
-   1. Ouvrez le dossier *ref* .
-   1. Ouvrez le dossier moniker. Par exemple, *netcoreapp 3.1*.
+   1. Naviguez vers la version pour laquelle vous souhaitez installer l’IntelliSense localisé. Par exemple, *3.1.0*.
+   1. Ouvrez le dossier *d’arbitre.*
+   1. Ouvrez le dossier de surnom. Par exemple, *netcoreapp3.1*.
 
-   Par conséquent, le chemin d’accès complet que vous recherchez devrait ressembler à *C:\Program Files\dotnet\packs\Microsoft.NETCore.app.Ref\3.1.0\ref\netcoreapp3.1*.
+   Ainsi, le chemin complet que vous navigueriez à ressembler à *C: 'Program Files’dotnet’packs-Microsoft.NETCore.App.Ref'3.1.0'ref’netcoreapp3.1*.
 
-1. Créez un sous-dossier à l’intérieur du dossier moniker que vous venez d’ouvrir. Le nom du dossier indique la langue que vous souhaitez utiliser. Le tableau suivant spécifie les différentes options :
+1. Créez un sous-pliage à l’intérieur du dossier de surnom que vous venez d’ouvrir. Le nom du dossier indique la langue que vous souhaitez utiliser. Le tableau suivant précise les différentes options :
 
-   | Langue              | Nom du dossier |
+   | Langage              | Nom du dossier |
    | --------------------- | ----------- |
-   | Portugais (Brésil)  | *PT-BR*     |
-   | Chinois (simplifié)  | *zh-Hans*   |
-   | Chinois (traditionnel) | *zh-Hant*   |
-   | Français                | *fr*        |
+   | Portugais brésilien  | *pt-br*     |
+   | Chinois (simplifié)  | *zh-hans*   |
+   | Chinois (traditionnel) | *zh-hant*   |
+   | Français                | *Fr*        |
    | Allemand                | *de*        |
-   | Italien               | *tel*        |
+   | Italien               | *Il*        |
    | Japonais              | *ja*        |
-   | Coréen                | *Ko*        |
-   | Russe               | *Arabie*        |
-   | Espagnol               | *sec*        |
+   | Coréen                | *ko (en)*        |
+   | Russe               | *Ru*        |
+   | Espagnol               | *es es*        |
 
-1. Copiez les fichiers *. xml* que vous avez extraits à l’étape 3 dans ce nouveau dossier. Les fichiers *. xml* sont décomposés par dossiers SDK. par conséquent, copiez-les dans le kit de développement logiciel (SDK) correspondant que vous avez choisi à l’étape 4.
+1. Copiez les fichiers *.xml* que vous avez extraits sur l’étape 3 à ce nouveau dossier. Les fichiers *.xml* sont décomposés par les dossiers SDK, alors copiez-les sur le SDK correspondant que vous avez choisi sur l’étape 4.
 
-## <a name="modify-visual-studio-language"></a>Modifier le langage de Visual Studio
+## <a name="modify-visual-studio-language"></a>Modifier le langage Visual Studio
 
-Pour que Visual Studio utilise une langue différente pour IntelliSense, installez le module linguistique approprié. Vous pouvez effectuer cette opération [pendant l’installation](/visualstudio/install/install-visual-studio#step-6---install-language-packs-optional) ou ultérieurement en modifiant l’installation de Visual Studio. Si vous avez déjà configuré Visual Studio dans le langage de votre choix, votre installation IntelliSense est prête.
+Pour Visual Studio d’utiliser une langue différente pour IntelliSense, installez le pack de langue approprié. Cela peut être fait lors de [l’installation](/visualstudio/install/install-visual-studio#step-6---install-language-packs-optional) ou à une date ultérieure en modifiant l’installation Visual Studio. Si vous avez déjà Visual Studio configuré dans la langue de votre choix, votre installation IntelliSense est prête.
 
-### <a name="install-the-language-pack"></a>Installer le module linguistique
+### <a name="install-the-language-pack"></a>Installer le pack de langue
 
-Si vous n’avez pas installé le module linguistique souhaité au cours de l’installation, mettez à jour Visual Studio comme suit pour installer le module linguistique :
+Si vous n’avez pas installé le pack de langue désiré pendant la configuration, mettez à jour Visual Studio comme suit pour installer le pack de langue :
 
 > [!IMPORTANT]
-> Pour installer, mettre à jour ou modifier Visual Studio, vous devez ouvrir une session avec un compte disposant de l’autorisation administrateur. Pour plus d’informations, consultez [Autorisations utilisateur et Visual Studio](/visualstudio/ide/user-permissions-and-visual-studio).
+> Pour installer, mettre à jour ou modifier Visual Studio, vous devez vous connecter avec un compte qui a la permission de l’administrateur. Pour plus d’informations, voir [les autorisations des utilisateurs et Visual Studio](/visualstudio/ide/user-permissions-and-visual-studio).
 
 1. Recherchez le programme d’installation de Visual Studio sur votre ordinateur.
 
    Par exemple, sur un ordinateur exécutant Windows 10, sélectionnez **Démarrer**, puis faites défiler jusqu’à la lettre **V** où il est répertorié comme **Visual Studio Installer**.
 
-   ![Ouvrir le Visual Studio Installer à partir de Windows](./media/localized-intellisense/vs-installer-windows-start.png)
+   ![Ouvrez l’installateur visual studio à partir de Windows](./media/localized-intellisense/vs-installer-windows-start.png)
 
    > [!NOTE]
    > Vous trouverez également Visual Studio Installer à l’emplacement suivant :
@@ -90,39 +90,39 @@ Si vous n’avez pas installé le module linguistique souhaité au cours de l’
 
    Vous devrez peut-être mettre à jour le programme d’installation avant de continuer. Dans ce cas, suivez les invites.
 
-1. Dans le programme d’installation, recherchez l’édition de Visual Studio à laquelle vous souhaitez ajouter le module linguistique, puis choisissez **modifier**.
+1. Dans l’installateur, recherchez l’édition de Visual Studio à laquelle vous souhaitez ajouter le pack de langue, puis choisissez **Modifier**.
 
    ![Mettre à jour ou modifier Visual Studio](./media/localized-intellisense/vs-installer-modify.png)
 
    > [!IMPORTANT]
-   > Si vous ne voyez pas de bouton **modifier** mais que vous voyez une **mise à jour** , vous devez mettre à jour votre Visual Studio avant de pouvoir modifier votre installation.
-   > Une fois la mise à jour terminée, le bouton **modifier** doit s’afficher.
+   > Si vous ne voyez pas de bouton **Modifier** mais que vous en voyez une **mise à jour** à la place, vous devez mettre à jour votre studio visuel avant de pouvoir modifier votre installation.
+   > Une fois la mise à jour terminée, le bouton **Modifier** doit s’apparaître.
 
-1. Sous l’onglet **modules linguistiques** , sélectionnez ou désélectionnez les langues que vous voulez installer ou désinstaller.
+1. Dans **l’onglet Packs langue,** sélectionnez ou désélectionner les langues que vous souhaitez installer ou désinstaller.
 
-   ![Onglet modules linguistiques de Visual Studio](./media/localized-intellisense/vs-modify-language-packs.png)
+   ![Visuel Studio langue packs onglet](./media/localized-intellisense/vs-modify-language-packs.png)
 
 1. Choisissez **Modifier**. La mise à jour démarre.
 
-### <a name="modify-language-settings-in-visual-studio"></a>Modifier les paramètres de langue dans Visual Studio
+### <a name="modify-language-settings-in-visual-studio"></a>Modifier les paramètres linguistiques dans Visual Studio
 
-Une fois que vous avez installé les modules linguistiques souhaités, modifiez les paramètres de Visual Studio pour utiliser une autre langue :
+Une fois que vous avez installé les packs de langage souhaités, modifiez vos paramètres Visual Studio pour utiliser une langue différente :
 
 1. Ouvrez Visual Studio.
 
 1. Dans la fenêtre de démarrage, choisissez **Continuer sans code**.
 
-1. Dans la barre de menus, sélectionnez **outils** > **options**. La boîte de dialogue Options s’ouvre.
+1. Sur la barre de menu, sélectionnez **Options Outils** > **.** Le dialogue Options s’ouvre.
 
-1. Sous le nœud **environnement** , choisissez **paramètres internationaux**.
+1. Sous le nœud **Environnement,** choisissez **paramètres internationaux**.
 
-1. Dans la liste déroulante **langue** , sélectionnez la langue de votre choix. Choisissez **OK**.
+1. Sur le **décrochage linguistique,** sélectionnez la langue désirée. Choisissez **OK**.
 
-1. Une boîte de dialogue vous informe que vous devez redémarrer Visual Studio pour que les modifications prennent effet. Choisissez **OK**.
+1. Un dialogue vous informe que vous devez redémarrer Visual Studio pour que les modifications prennent effet. Choisissez **OK**.
 
 1. Redémarrez Visual Studio.
 
-Après cela, votre IntelliSense doit fonctionner comme prévu quand vous ouvrez un projet .NET Core qui cible la version des fichiers IntelliSense que vous venez d’installer.
+Après cela, votre IntelliSense devrait fonctionner comme prévu lorsque vous ouvrez un projet .NET Core qui cible la version des fichiers IntelliSense que vous venez d’installer.
 
 ## <a name="see-also"></a>Voir aussi
 

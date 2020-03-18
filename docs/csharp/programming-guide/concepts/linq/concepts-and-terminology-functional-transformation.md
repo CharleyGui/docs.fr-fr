@@ -3,10 +3,10 @@ title: Concepts et terminologie (transformation fonctionnelle) (C#)
 ms.date: 07/20/2015
 ms.assetid: 03defb3a-7e17-4ab1-8efa-4dd66621e860
 ms.openlocfilehash: 3e2ecc4c2f70700ae92ee36b6f122059b922332e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70040632"
 ---
 # <a name="concepts-and-terminology-functional-transformation-c"></a>Concepts et terminologie (transformation fonctionnelle) (C#)
@@ -36,7 +36,7 @@ La *programmation fonctionnelle* est une approche de programmation prenant direc
 
 Historiquement, les langages de programmation fonctionnelle à usage général, tels que ML, Scheme, Haskell et F#, ont toujours essentiellement intéressé la communauté liée au monde de l’enseignement et de la recherche. Même s’il a toujours été possible d’écrire des transformations fonctionnelles pures en C#, la difficulté de cette opération a souvent découragé la plupart des programmeurs. Dans les récentes versions de C#, toutefois, de nouvelles constructions de langage telles que les expressions lambda et l’inférence de type rendent la programmation fonctionnelle beaucoup plus simple et plus productive.
 
-Pour plus d’informations sur la programmation fonctionnelle, consultez [Comparaison de la programmation fonctionnelle et de la programmation impérative (C#)](./functional-programming-vs-imperative-programming.md).
+Pour plus d’informations sur la programmation fonctionnelle, voir [Programmation fonctionnelle vs Programmation impérative ( CMD).](./functional-programming-vs-imperative-programming.md)
 
 #### <a name="domain-specific-fp-languages"></a>Langages de programmation fonctionnelle spécifiques aux domaines
 
@@ -62,7 +62,7 @@ Ensemble structuré de données, généralement d'un type uniforme. Pour être c
 tuple (types anonymes) \
 Concept mathématique, un tuple est une séquence limitée d'objets, chacun d'un type spécifique. Un tuple porte également le nom de liste ordonnée. Les types anonymes sont une implémentation linguistique de ce concept, qui permet à un type de classe non nommé d'être déclaré et à un objet de ce type d'être instancié en même temps.
 
-Pour plus d’informations, consultez [Types anonymes](../../classes-and-structs/anonymous-types.md).
+Pour plus d’informations, voir [Anonymous Types](../../classes-and-structs/anonymous-types.md).
 
 inférence de type (typage implicite) \
 Capacité d'un compilateur à déterminer le type d'une variable en l'absence d'une déclaration de type explicite.
@@ -79,4 +79,4 @@ Ces fonctionnalités de langage seront utilisées dans les exemples de code tout
 ## <a name="see-also"></a>Voir aussi
 
 - [Introduction aux transformations fonctionnelles pures (C#)](./introduction-to-pure-functional-transformations.md)
-- [Comparaison de la programmation fonctionnelle et de la programmation impérative (C#)](./functional-programming-vs-imperative-programming.md)
+- [Programmation fonctionnelle vs programmation impérative (C)](./functional-programming-vs-imperative-programming.md)

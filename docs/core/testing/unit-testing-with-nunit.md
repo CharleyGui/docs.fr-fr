@@ -4,10 +4,10 @@ description: Apprenez les concepts des tests unitaires dans C# et .NET Core de m
 author: rprouse
 ms.date: 08/31/2018
 ms.openlocfilehash: 283aa5a28ed213d4290eb3c73a98af56ec074ad0
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78240881"
 ---
 # <a name="unit-testing-c-with-nunit-and-net-core"></a>Effectuer des tests unitaires de C# avec NUnit et .NET Core
@@ -16,7 +16,7 @@ Ce didacticiel vous guide pas à pas dans la création d’un exemple de solutio
 
 [!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Conditions préalables requises
 
 - [Kit SDK .NET Core 2.1](https://dotnet.microsoft.com/download) (ou version ultérieure).
 - Un éditeur de texte ou un éditeur de code de votre choix.
@@ -89,7 +89,7 @@ La commande [dotnet new](../tools/dotnet-new.md) crée un projet de test qui uti
 
 [!code-xml[Packages](~/samples/snippets/core/testing/unit-testing-using-nunit/csharp/PrimeService.Tests/PrimeService.Tests.csproj#Packages)]
 
-Le projet de test a besoin d’autres packages pour créer et exécuter des tests unitaires. `dotnet new` dans l’étape précédente a ajouté le kit SDK de test Microsoft, le framework de test NUnit et l’adaptateur de test NUnit. Maintenant, ajoutez la bibliothèque de classes `PrimeService` en tant qu’une autre dépendance au projet. Utilisez la commande [`dotnet add reference`](../tools/dotnet-add-reference.md) :
+Le projet de test a besoin d’autres packages pour créer et exécuter des tests unitaires. `dotnet new` dans l’étape précédente a ajouté le kit SDK de test Microsoft, le framework de test NUnit et l’adaptateur de test NUnit. Maintenant, ajoutez la bibliothèque de classes `PrimeService` en tant qu’une autre dépendance au projet. Utilisez [`dotnet add reference`](../tools/dotnet-add-reference.md) la commande :
 
 ```dotnetcli
 dotnet add reference ../PrimeService/PrimeService.csproj
@@ -124,7 +124,7 @@ Vous allez écrire un test défaillant, le corriger pour qu’il réussisse, pui
 
 L’attribut `[TestFixture]` désigne une classe qui contient des tests unitaires. L’attribut `[Test]` indique une méthode qui est une méthode de test.
 
-Enregistrez ce fichier et exécutez [`dotnet test`](../tools/dotnet-test.md) pour générer les tests et la bibliothèque de classes, puis exécutez les tests. Le Test Runner NUnit contient le point d’entrée de programme qui permet d’exécuter vos tests. `dotnet test` démarre le Test Runner à l’aide du projet de test unitaire que vous avez créé.
+Enregistrer ce fichier [`dotnet test`](../tools/dotnet-test.md) et exécuter pour construire les tests et la bibliothèque de classe, puis exécuter les tests. Le Test Runner NUnit contient le point d’entrée de programme qui permet d’exécuter vos tests. `dotnet test` démarre le Test Runner à l’aide du projet de test unitaire que vous avez créé.
 
 Votre test échoue. Vous n’avez pas encore créé l’implémentation. Pour que ce test réussisse, écrivez le code le plus simple dans la classe `PrimeService` qui fonctionne :
 

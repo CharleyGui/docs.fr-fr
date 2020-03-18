@@ -7,10 +7,10 @@ helpviewer_keywords:
 - errors [C#]
 ms.assetid: 57262ab1-6c50-4f9c-81ad-9fba48477416
 ms.openlocfilehash: af1ec49e6c7eb94c4e324b947e8ead8149d0a997
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "72771877"
 ---
 # <a name="c-compiler-errors"></a>Erreurs du compilateur C#
@@ -31,8 +31,8 @@ Certaines erreurs du compilateur C# possèdent des rubriques correspondantes qui
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../compiler-options/index.md)
-- [Désolé, nous n’avons pas d’informations spécifiques sur cette erreur C#](../../misc/sorry-we-don-t-have-specifics-on-this-csharp-error.md)
-- [Page Générer, Concepteur de projet (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)
-- [-warn (Options du compilateur C#)](../compiler-options/warn-compiler-option.md)
-- [-nowarn (Options du compilateur C#)](../compiler-options/nowarn-compiler-option.md)
+- [Options de compilateur C](../compiler-options/index.md)
+- [Désolé, nous n'avons pas d'informations sur cette erreur C#](../../misc/sorry-we-don-t-have-specifics-on-this-csharp-error.md)
+- [Générer, page du Concepteur de projets (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)
+- [-avertissement (Options compilateur C)](../compiler-options/warn-compiler-option.md)
+- [-maintenantarn (Options compilateur C)](../compiler-options/nowarn-compiler-option.md)

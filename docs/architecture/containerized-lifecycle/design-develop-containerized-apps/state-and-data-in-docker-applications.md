@@ -3,10 +3,10 @@ title: État et données dans les applications Docker
 description: Découvrez l’option disponible pour enregistrer l’état dans des applications conteneurisées.
 ms.date: 02/15/2019
 ms.openlocfilehash: b2368efb0eff2bdce48b77b2addcc4de89822c74
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394640"
 ---
 # <a name="state-and-data-in-docker-applications"></a>État et données dans les applications Docker
@@ -43,11 +43,11 @@ Les volumes peuvent être nommés ou anonymes (par défaut). Les volumes nommés
 
 Les **montages de liaison** existent depuis longtemps. Ils permettent de mapper des dossiers à un point de montage d’un conteneur. Les montages de liaison ont plus de limitations que les volumes et présentent certains problèmes de sécurité importants. Les volumes sont donc l’option recommandée.
 
-Les **montages `tmpfs`** sont des dossiers virtuels qui résident uniquement dans la mémoire de l’hôte et qui ne sont jamais écrits dans le système de fichiers. Ils sont rapides et sécurisés, mais ils consomment de la mémoire et sont conçus uniquement pour des données non persistantes.
+les supports sont des dossiers virtuels qui ne vivent que dans la mémoire de l’hôte et ne sont jamais écrits au système de fichiers. ** `tmpfs` ** Ils sont rapides et sécurisés, mais ils consomment de la mémoire et sont conçus uniquement pour des données non persistantes.
 
 Comme le montre la figure 4-5, les volumes Docker standard peuvent être stockés en dehors des conteneurs eux-mêmes, mais dans les limites physiques du serveur ou de la machine virtuelle hôte. Les conteneurs Docker ne peuvent cependant pas accéder à un volume depuis un serveur ou une machine virtuelle hôte à un autre. En d’autres termes, avec ces volumes, il n’est pas possible de gérer les données partagées entre des conteneurs qui s’exécutent sur des hôtes Docker distincts. Toutefois, cela est possible avec un pilote de volume qui prend en charge les hôtes distants.
 
-![Diagramme montrant les volumes de l’ancrage stockés en dehors des conteneurs.](./media/state-and-data-in-docker-applications/container-based-application-external-data-sources.png)
+![Diagramme montrant les volumes Docker stockés à l’extérieur des conteneurs.](./media/state-and-data-in-docker-applications/container-based-application-external-data-sources.png)
 
 **Figure 4-5**. Volumes et sources de données externes pour applications conteneurisées
 
@@ -55,16 +55,16 @@ De plus, quand des conteneurs Docker sont managés par un orchestrateur, ils peu
 
 Des **sources de données distantes et des outils de mise en cache**, comme Azure SQL Database, Azure Cosmos DB ou un cache à distance comme Redis, peuvent être utilisés dans des applications en conteneur de la même façon qu’ils sont utilisés dans des développements sans conteneurs. Il s’agit d’un moyen éprouvé pour stocker des données d’application métier.
 
-**Stockage Azure** Les données métier doivent généralement être placées dans des ressources ou des bases de données externes, comme le service Stockage Azure. Stockage Azure fournit les services suivants dans le cloud :
+**Stockage Azure.** Les données métier doivent généralement être placées dans des ressources ou des bases de données externes, comme le service Stockage Azure. Stockage Azure fournit les services suivants dans le cloud :
 
-- Stockage Blob stocke les données des objets non structurés. Un objet blob peut être n’importe quel type de données texte ou binaires, comme des fichiers de document ou multimédias (fichiers image, audio et vidéo). Stockage Blob est également appelé Stockage d’objets.
+- Le stockage Blob stocke les données d’objets non structurées. Un objet blob peut être n’importe quel type de données texte ou binaires, comme des fichiers de document ou multimédias (fichiers image, audio et vidéo). Blob Storage est parfois appelé stockage d’objets.
 
 - Stockage Fichier propose un stockage partagé pour les applications héritées utilisant le protocole SMB standard. Les machines virtuelles et les services cloud Azure peuvent partager des données de fichiers entre des composants d’application via des partages montés. Les applications locales peuvent accéder aux données des fichiers d’un partage via l’API REST du service Fichier.
 
-- Stockage Table stocke les jeux de données structurés. Stockage Table est un magasin de données clé-attribut NoSQL, qui permet le développement rapide et un accès rapide à de grandes quantités de données.
+- Le stockage de tables stocke les jeux de données structurés. Stockage Table est un magasin de données clé-attribut NoSQL, qui permet le développement rapide et un accès rapide à de grandes quantités de données.
 
-**Bases de données relationnelles et bases de données NoSQL.** Il existe de nombreuses options pour les bases de données externes, à partir de bases de données relationnelles telles que SQL Server, PostgreSQL, Oracle ou des bases de données NoSQL comme Azure Cosmos DB, MongoDB, etc. Ces bases de données ne seront pas expliquées dans le cadre de ce guide, car il s’agit d’une rubrique différente.
+**Bases de données relationnelles et bases de données NoSQL.** Il existe de nombreux choix pour les bases de données externes, à partir de bases de données relationnelles comme SQL Server, PostgreSQL, Oracle, ou NoSQL bases de données comme Azure Cosmos DB, MongoDB, etc. Ces bases de données ne seront pas expliquées dans le cadre de ce guide car elles sont un sujet tout à fait différent.
 
 >[!div class="step-by-step"]
->[Précédent](monolithic-applications.md)
->[Suivant](soa-applications.md)
+>[Suivant précédent](monolithic-applications.md)
+>[Next](soa-applications.md)

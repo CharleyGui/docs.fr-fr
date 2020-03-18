@@ -195,21 +195,21 @@
                   href: icorruntimehost-createdomainex-method.md
                 - name: 'CreateEvidence, méthode'
                   href: icorruntimehost-createevidence-method.md
-                - name: 'CreateLogicalThreadState, méthode'
+                - name: CreateLogicalThreadState (méthode)
                   href: icorruntimehost-createlogicalthreadstate-method.md
                 - name: 'CurrentDomain, méthode'
                   href: icorruntimehost-currentdomain-method.md
-                - name: 'DeleteLogicalThreadState, méthode'
+                - name: DeleteLogicalThreadState (méthode)
                   href: icorruntimehost-deletelogicalthreadstate-method.md
                 - name: 'EnumDomains, méthode'
                   href: icorruntimehost-enumdomains-method.md
-                - name: 'GetConfiguration, méthode'
+                - name: GetConfiguration (méthode)
                   href: icorruntimehost-getconfiguration-method.md
                 - name: 'GetDefaultDomain, méthode'
                   href: icorruntimehost-getdefaultdomain-method.md
-                - name: 'LocksHeldByLogicalThread, méthode'
+                - name: LocksHeldByLogicalThread (méthode)
                   href: icorruntimehost-locksheldbylogicalthread-method.md
-                - name: 'MapFile, méthode'
+                - name: MapFile (méthode)
                   href: icorruntimehost-mapfile-method.md
                 - name: 'NextDomain, méthode'
                   href: icorruntimehost-nextdomain-method.md
@@ -217,9 +217,9 @@
                   href: icorruntimehost-start-method.md
                 - name: 'Stop, méthode'
                   href: icorruntimehost-stop-method.md
-                - name: 'SwitchInLogicalThreadState, méthode'
+                - name: SwitchInLogicalThreadState (méthode)
                   href: icorruntimehost-switchinlogicalthreadstate-method.md
-                - name: 'SwitchOutLogicalThreadState, méthode'
+                - name: SwitchOutLogicalThreadState (méthode)
                   href: icorruntimehost-switchoutlogicalthreadstate-method.md
                 - name: 'UnloadDomain, méthode'
                   href: icorruntimehost-unloaddomain-method.md
@@ -234,19 +234,19 @@
             - name: 'IApartmentCallback, interface'
               href: iapartmentcallback-interface.md
               items:
-                - name: 'DoCallback, méthode'
+                - name: DoCallback (méthode)
                   href: iapartmentcallback-docallback-method.md
             - name: 'IAppDomainBinding, interface'
               href: iappdomainbinding-interface.md
               items:
-                - name: 'OnAppDomain, méthode'
+                - name: OnAppDomain (méthode)
                   href: iappdomainbinding-onappdomain-method.md
             - name: 'ICatalogServices, interface'
               href: icatalogservices-interface.md
               items:
-                - name: 'Autodone, méthode'
+                - name: Autodone (méthode)
                   href: icatalogservices-autodone-method.md
-                - name: 'NotAutodone, méthode'
+                - name: NotAutodone (méthode)
                   href: icatalogservices-notautodone-method.md
             - name: 'ICLRAssemblyIdentityManager, interface'
               href: iclrassemblyidentitymanager-interface.md
@@ -288,7 +288,7 @@
                   href: iclrdebugmanager-endconnection-method.md
                 - name: 'GetDacl, méthode'
                   href: iclrdebugmanager-getdacl-method.md
-                - name: 'IsDebuggerAttached, méthode'
+                - name: IsDebuggerAttached (méthode)
                   href: iclrdebugmanager-isdebuggerattached-method.md
                 - name: 'SetConnectionTasks, méthode'
                   href: iclrdebugmanager-setconnectiontasks-method.md
@@ -303,16 +303,16 @@
                   href: iclrerrorreportingmanager-begincustomdump-method.md
                 - name: 'EndCustomDump, méthode'
                   href: iclrerrorreportingmanager-endcustomdump-method.md
-                - name: 'GetBucketParametersForCurrentException, méthode'
+                - name: GetBucketParametersForCurrentException (méthode)
                   href: iclrerrorreportingmanager-getbucketparametersforcurrentexception-method.md
             - name: 'ICLRGCManager, interface'
               href: iclrgcmanager-interface.md
               items:
-                - name: 'Collect, méthode'
+                - name: Collect (méthode)
                   href: iclrgcmanager-collect-method.md
-                - name: 'GetStats, méthode'
+                - name: GetStats (méthode)
                   href: iclrgcmanager-getstats-method.md
-                - name: 'SetGCStartupLimits, méthode'
+                - name: SetGCStartupLimits (méthode)
                   href: iclrgcmanager-setgcstartuplimits-method.md
             - name: 'ICLRHostBindingPolicyManager, interface'
               href: iclrhostbindingpolicymanager-interface.md
@@ -434,7 +434,7 @@
                   href: iclrtaskmanager-createtask-method.md
                 - name: 'GetCurrentTask, méthode'
                   href: iclrtaskmanager-getcurrenttask-method.md
-                - name: 'GetCurrentTaskType, méthode'
+                - name: GetCurrentTaskType (méthode)
                   href: iclrtaskmanager-getcurrenttasktype-method.md
                 - name: 'SetLocale, méthode'
                   href: iclrtaskmanager-setlocale-method.md
@@ -443,72 +443,72 @@
             - name: 'ICLRValidator, interface'
               href: iclrvalidator-interface.md
               items:
-                - name: 'FormatEventInfo, méthode'
+                - name: FormatEventInfo (méthode)
                   href: iclrvalidator-formateventinfo-method.md
-                - name: 'Validate, méthode'
+                - name: Validate (méthode)
                   href: iclrvalidator-validate-method.md
             - name: 'ICorConfiguration, interface'
               href: icorconfiguration-interface.md
               items:
-                - name: 'AddDebuggerSpecialThread, méthode'
+                - name: AddDebuggerSpecialThread (méthode)
                   href: icorconfiguration-adddebuggerspecialthread-method.md
-                - name: 'SetDebuggerThreadControl, méthode'
+                - name: SetDebuggerThreadControl (méthode)
                   href: icorconfiguration-setdebuggerthreadcontrol-method.md
-                - name: 'SetGCHostControl, méthode'
+                - name: SetGCHostControl (méthode)
                   href: icorconfiguration-setgchostcontrol-method.md
-                - name: 'SetGCThreadControl, méthode'
+                - name: SetGCThreadControl (méthode)
                   href: icorconfiguration-setgcthreadcontrol-method.md
             - name: 'ICorThreadpool, interface'
               href: icorthreadpool-interface.md
               items:
-                - name: 'CorBindIoCompletionCallback, méthode'
+                - name: CorBindIoCompletionCallback (méthode)
                   href: icorthreadpool-corbindiocompletioncallback-method.md
-                - name: 'CorCallOrQueueUserWorkItem, méthode'
+                - name: CorCallOrQueueUserWorkItem (méthode)
                   href: icorthreadpool-corcallorqueueuserworkitem-method.md
-                - name: 'CorChangeTimer, méthode'
+                - name: CorChangeTimer (méthode)
                   href: icorthreadpool-corchangetimer-method.md
-                - name: 'CorCreateTimer, méthode'
+                - name: CorCreateTimer (méthode)
                   href: icorthreadpool-corcreatetimer-method.md
-                - name: 'CorDeleteTimer, méthode'
+                - name: CorDeleteTimer (méthode)
                   href: icorthreadpool-cordeletetimer-method.md
-                - name: 'CorGetAvailableThreads, méthode'
+                - name: CorGetAvailableThreads (méthode)
                   href: icorthreadpool-corgetavailablethreads-method.md
-                - name: 'CorGetMaxThreads, méthode'
+                - name: CorGetMaxThreads (méthode)
                   href: icorthreadpool-corgetmaxthreads-method.md
-                - name: 'CorQueueUserWorkItem, méthode'
+                - name: CorQueueUserWorkItem (méthode)
                   href: icorthreadpool-corqueueuserworkitem-method.md
-                - name: 'CorRegisterWaitForSingleObject, méthode'
+                - name: CorRegisterWaitForSingleObject (méthode)
                   href: icorthreadpool-corregisterwaitforsingleobject-method.md
-                - name: 'CorSetMaxThreads, méthode'
+                - name: CorSetMaxThreads (méthode)
                   href: icorthreadpool-corsetmaxthreads-method.md
-                - name: 'CorUnregisterWait, méthode'
+                - name: CorUnregisterWait (méthode)
                   href: icorthreadpool-corunregisterwait-method.md
             - name: 'IDebuggerInfo, interface'
               href: idebuggerinfo-interface.md
               items:
-                - name: 'IsDebuggerAttached, méthode'
+                - name: IsDebuggerAttached (méthode)
                   href: idebuggerinfo-isdebuggerattached-method.md
             - name: 'IDebuggerThreadControl, interface'
               href: idebuggerthreadcontrol-interface.md
               items:
-                - name: 'ReleaseAllRuntimeThreads, méthode'
+                - name: ReleaseAllRuntimeThreads (méthode)
                   href: idebuggerthreadcontrol-releaseallruntimethreads-method.md
-                - name: 'StartBlockingForDebugger, méthode'
+                - name: StartBlockingForDebugger (méthode)
                   href: idebuggerthreadcontrol-startblockingfordebugger-method.md
-                - name: 'ThreadIsBlockingForDebugger, méthode'
+                - name: ThreadIsBlockingForDebugger (méthode)
                   href: idebuggerthreadcontrol-threadisblockingfordebugger-method.md
             - name: 'IGCHost, interface'
               href: igchost-interface.md
               items:
-                - name: 'Collect, méthode'
+                - name: Collect (méthode)
                   href: igchost-collect-method.md
-                - name: 'GetStats, méthode'
+                - name: GetStats (méthode)
                   href: igchost-getstats-method.md
-                - name: 'GetThreadStats, méthode'
+                - name: GetThreadStats (méthode)
                   href: igchost-getthreadstats-method.md
-                - name: 'SetGCStartupLimits, méthode'
+                - name: SetGCStartupLimits (méthode)
                   href: igchost-setgcstartuplimits-method.md
-                - name: 'SetVirtualMemLimit, méthode'
+                - name: SetVirtualMemLimit (méthode)
                   href: igchost-setvirtualmemlimit-method.md
             - name: 'IGCHost2, interface'
               href: igchost2-interface.md
@@ -518,16 +518,16 @@
             - name: 'IGCHostControl, interface'
               href: igchostcontrol-interface.md
               items:
-                - name: 'RequestVirtualMemLimit, méthode'
+                - name: RequestVirtualMemLimit (méthode)
                   href: igchostcontrol-requestvirtualmemlimit-method.md
             - name: 'IGCThreadControl, interface'
               href: igcthreadcontrol-interface.md
               items:
-                - name: 'SuspensionEnding, méthode'
+                - name: SuspensionEnding (méthode)
                   href: igcthreadcontrol-suspensionending-method.md
-                - name: 'SuspensionStarting, méthode'
+                - name: SuspensionStarting (méthode)
                   href: igcthreadcontrol-suspensionstarting-method.md
-                - name: 'ThreadIsBlockingForSuspension, méthode'
+                - name: ThreadIsBlockingForSuspension (méthode)
                   href: igcthreadcontrol-threadisblockingforsuspension-method.md
             - name: 'IHostAssemblyManager, interface'
               href: ihostassemblymanager-interface.md
@@ -571,11 +571,11 @@
             - name: 'IHostGCManager, interface'
               href: ihostgcmanager-interface.md
               items:
-                - name: 'SuspensionEnding, méthode'
+                - name: SuspensionEnding (méthode)
                   href: ihostgcmanager-suspensionending-method.md
-                - name: 'SuspensionStarting, méthode'
+                - name: SuspensionStarting (méthode)
                   href: ihostgcmanager-suspensionstarting-method.md
-                - name: 'ThreadIsBlockingForSuspension, méthode'
+                - name: ThreadIsBlockingForSuspension (méthode)
                   href: ihostgcmanager-threadisblockingforsuspension-method.md
             - name: 'IHostIoCompletionManager, interface'
               href: ihostiocompletionmanager-interface.md
@@ -623,17 +623,17 @@
             - name: 'IHostMemoryManager, interface'
               href: ihostmemorymanager-interface.md
               items:
-                - name: 'AcquiredVirtualAddressSpace, méthode'
+                - name: AcquiredVirtualAddressSpace (méthode)
                   href: ihostmemorymanager-acquiredvirtualaddressspace-method.md
                 - name: 'CreateMAlloc, méthode'
                   href: ihostmemorymanager-createmalloc-method.md
                 - name: 'GetMemoryLoad, méthode'
                   href: ihostmemorymanager-getmemoryload-method.md
-                - name: 'NeedsVirtualAddressSpace, méthode'
+                - name: NeedsVirtualAddressSpace (méthode)
                   href: ihostmemorymanager-needsvirtualaddressspace-method.md
                 - name: 'RegisterMemoryNotificationCallback, méthode'
                   href: ihostmemorymanager-registermemorynotificationcallback-method.md
-                - name: 'ReleasedVirtualAddressSpace, méthode'
+                - name: ReleasedVirtualAddressSpace (méthode)
                   href: ihostmemorymanager-releasedvirtualaddressspace-method.md
                 - name: 'VirtualAlloc, méthode'
                   href: ihostmemorymanager-virtualalloc-method.md
@@ -734,7 +734,7 @@
                   href: ihosttaskmanager-enterruntime-method.md
                 - name: 'GetCurrentTask, méthode'
                   href: ihosttaskmanager-getcurrenttask-method.md
-                - name: 'GetStackGuarantee, méthode'
+                - name: GetStackGuarantee (méthode)
                   href: ihosttaskmanager-getstackguarantee-method.md
                 - name: 'LeaveRuntime, méthode'
                   href: ihosttaskmanager-leaveruntime-method.md
@@ -746,7 +746,7 @@
                   href: ihosttaskmanager-setclrtaskmanager-method.md
                 - name: 'SetLocale, méthode'
                   href: ihosttaskmanager-setlocale-method.md
-                - name: 'SetStackGuarantee, méthode'
+                - name: SetStackGuarantee (méthode)
                   href: ihosttaskmanager-setstackguarantee-method.md
                 - name: 'SetUILocale, méthode'
                   href: ihosttaskmanager-setuilocale-method.md
@@ -772,72 +772,72 @@
             - name: 'IManagedObject, interface'
               href: imanagedobject-interface.md
               items:
-                - name: 'GetObjectIdentity, méthode'
+                - name: GetObjectIdentity (méthode)
                   href: imanagedobject-getobjectidentity-method.md
-                - name: 'GetSerializedBuffer, méthode'
+                - name: GetSerializedBuffer (méthode)
                   href: imanagedobject-getserializedbuffer-method.md
             - name: 'IObjectHandle, interface'
               href: iobjecthandle-interface.md
               items:
-                - name: 'Unwrap, méthode'
+                - name: Unwrap (méthode)
                   href: iobjecthandle-unwrap-method.md
             - name: 'ITypeName, interface'
               href: itypename-interface.md
               items:
-                - name: 'GetAssemblyName, méthode'
+                - name: GetAssemblyName (méthode)
                   href: itypename-getassemblyname-method.md
-                - name: 'GetModifierLength, méthode'
+                - name: GetModifierLength (méthode)
                   href: itypename-getmodifierlength-method.md
-                - name: 'GetModifiers, méthode'
+                - name: GetModifiers (méthode)
                   href: itypename-getmodifiers-method.md
-                - name: 'GetNameCount, méthode'
+                - name: GetNameCount (méthode)
                   href: itypename-getnamecount-method.md
-                - name: 'GetNames, méthode'
+                - name: GetNames (méthode)
                   href: itypename-getnames-method.md
-                - name: 'GetTypeArgumentCount, méthode'
+                - name: GetTypeArgumentCount (méthode)
                   href: itypename-gettypeargumentcount-method.md
-                - name: 'GetTypeArguments, méthode'
+                - name: GetTypeArguments (méthode)
                   href: itypename-gettypearguments-method.md
             - name: 'ITypeNameBuilder, interface'
               href: itypenamebuilder-interface.md
               items:
-                - name: 'AddArray, méthode'
+                - name: AddArray (méthode)
                   href: itypenamebuilder-addarray-method.md
-                - name: 'AddAssemblySpec, méthode'
+                - name: AddAssemblySpec (méthode)
                   href: itypenamebuilder-addassemblyspec-method.md
-                - name: 'AddByRef, méthode'
+                - name: AddByRef (méthode)
                   href: itypenamebuilder-addbyref-method.md
-                - name: 'AddName, méthode'
+                - name: AddName (méthode)
                   href: itypenamebuilder-addname-method.md
-                - name: 'AddPointer, méthode'
+                - name: AddPointer (méthode)
                   href: itypenamebuilder-addpointer-method.md
-                - name: 'AddSzArray, méthode'
+                - name: AddSzArray (méthode)
                   href: itypenamebuilder-addszarray-method.md
-                - name: 'Clear, méthode'
+                - name: Clear (méthode)
                   href: itypenamebuilder-clear-method.md
-                - name: 'CloseGenericArgument, méthode'
+                - name: CloseGenericArgument (méthode)
                   href: itypenamebuilder-closegenericargument-method.md
-                - name: 'CloseGenericArguments, méthode'
+                - name: CloseGenericArguments (méthode)
                   href: itypenamebuilder-closegenericarguments-method.md
-                - name: 'OpenGenericArgument, méthode'
+                - name: OpenGenericArgument (méthode)
                   href: itypenamebuilder-opengenericargument-method.md
-                - name: 'OpenGenericArguments, méthode'
+                - name: OpenGenericArguments (méthode)
                   href: itypenamebuilder-opengenericarguments-method.md
-                - name: 'ToString, méthode'
+                - name: Méthode ToString
                   href: itypenamebuilder-tostring-method.md
             - name: 'ITypeNameFactory, interface'
               href: itypenamefactory-interface.md
               items:
-                - name: 'GetTypeNameBuilder, méthode'
+                - name: GetTypeNameBuilder (méthode)
                   href: itypenamefactory-gettypenamebuilder-method.md
-                - name: 'ParseTypeName, méthode'
+                - name: ParseTypeName (méthode)
                   href: itypenamefactory-parsetypename-method.md
             - name: 'IValidator, interface'
               href: ivalidator-interface.md
               items:
-                - name: 'FormatEventInfo, méthode'
+                - name: FormatEventInfo (méthode)
                   href: ivalidator-formateventinfo-method.md
-                - name: 'Validate, méthode'
+                - name: Validate (méthode)
                   href: ivalidator-validate-method.md
         - name: "Interfaces d'hébergement du CLR ajoutées dans .NET Framework\_4 et 4.5"
           href: clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md
@@ -915,55 +915,55 @@
             - name: 'ICLRStrongName, interface'
               href: iclrstrongname-interface.md
               items:
-                - name: 'GetHashFromAssemblyFile, méthode'
+                - name: Méthode GetHashFromAssemblyFile
                   href: iclrstrongname-gethashfromassemblyfile-method.md
-                - name: 'GetHashFromAssemblyFileW, méthode'
+                - name: Méthode GetHashFromAssemblyFileW
                   href: iclrstrongname-gethashfromassemblyfilew-method.md
-                - name: 'GetHashFromBlob, méthode'
+                - name: Méthode GetHashFromBlob
                   href: iclrstrongname-gethashfromblob-method.md
-                - name: 'GetHashFromFile, méthode'
+                - name: Méthode GetHashFromFile
                   href: iclrstrongname-gethashfromfile-method.md
-                - name: 'GetHashFromFileW, méthode'
+                - name: Méthode GetHashFromFileW
                   href: iclrstrongname-gethashfromfilew-method.md
-                - name: 'GetHashFromHandle, méthode'
+                - name: Méthode GetHashFromHandle
                   href: iclrstrongname-gethashfromhandle-method.md
-                - name: 'StrongNameCompareAssemblies, méthode'
+                - name: Méthode StrongNameCompareAssemblies
                   href: iclrstrongname-strongnamecompareassemblies-method.md
-                - name: 'StrongNameFreeBuffer, méthode'
+                - name: Méthode StrongNameFreeBuffer
                   href: iclrstrongname-strongnamefreebuffer-method.md
-                - name: 'StrongNameGetBlob, méthode'
+                - name: Méthode StrongNameGetBlob
                   href: iclrstrongname-strongnamegetblob-method.md
-                - name: 'StrongNameGetBlobFromImage, méthode'
+                - name: Méthode StrongNameGetBlobFromImage
                   href: iclrstrongname-strongnamegetblobfromimage-method.md
-                - name: 'StrongNameGetPublicKey, méthode'
+                - name: Méthode StrongNameGetPublicKey
                   href: iclrstrongname-strongnamegetpublickey-method.md
-                - name: 'StrongNameHashSize, méthode'
+                - name: Méthode StrongNameHashSize
                   href: iclrstrongname-strongnamehashsize-method.md
-                - name: 'StrongNameKeyDelete, méthode'
+                - name: Méthode StrongNameKeyDelete
                   href: iclrstrongname-strongnamekeydelete-method.md
-                - name: 'StrongNameKeyGen, méthode'
+                - name: Méthode StrongNameKeyGen
                   href: iclrstrongname-strongnamekeygen-method.md
-                - name: 'StrongNameKeyGenEx, méthode'
+                - name: Méthode StrongNameKeyGenEx
                   href: iclrstrongname-strongnamekeygenex-method.md
-                - name: 'StrongNameKeyInstall, méthode'
+                - name: Méthode StrongNameKeyInstall
                   href: iclrstrongname-strongnamekeyinstall-method.md
-                - name: 'StrongNameSignatureGeneration, méthode'
+                - name: Méthode StrongNameSignatureGeneration
                   href: iclrstrongname-strongnamesignaturegeneration-method.md
-                - name: 'StrongNameSignatureGenerationEx, méthode'
+                - name: Méthode StrongNameSignatureGenerationEx
                   href: iclrstrongname-strongnamesignaturegenerationex-method.md
-                - name: 'StrongNameSignatureSize, méthode'
+                - name: Méthode StrongNameSignatureSize
                   href: iclrstrongname-strongnamesignaturesize-method.md
-                - name: 'StrongNameSignatureVerification, méthode'
+                - name: Méthode StrongNameSignatureVerification
                   href: iclrstrongname-strongnamesignatureverification-method.md
-                - name: 'StrongNameSignatureVerificationEx, méthode'
+                - name: Méthode StrongNameSignatureVerificationEx
                   href: iclrstrongname-strongnamesignatureverificationex-method.md
-                - name: 'StrongNameSignatureVerificationFromImage, méthode'
+                - name: Méthode StrongNameSignatureVerificationFromImage
                   href: iclrstrongname-strongnamesignatureverificationfromimage-method.md
-                - name: 'StrongNameTokenFromAssembly, méthode'
+                - name: Méthode StrongNameTokenFromAssembly
                   href: iclrstrongname-strongnametokenfromassembly-method.md
-                - name: 'StrongNameTokenFromAssembly, méthode'
+                - name: Méthode StrongNameTokenFromAssemblyEx
                   href: iclrstrongname-strongnametokenfromassemblyex-method.md
-                - name: 'StrongNameTokenFromPublicKey, méthode'
+                - name: Méthode StrongNameTokenFromPublicKey
                   href: iclrstrongname-strongnametokenfrompublickey-method.md
             - name: 'ICLRStrongName2, interface'
               href: iclrstrongname2-interface.md
@@ -977,7 +977,7 @@
               items:
                 - name: 'BeginPreventAsyncAbort, méthode'
                   href: iclrtask2-beginpreventasyncabort-method.md
-                - name: 'BeginPreventAsyncAbort, méthode'
+                - name: 'EndPreventAsyncAbort, méthode'
                   href: iclrtask2-endpreventasyncabort-method.md
     - name: Structures d'hébergement
       href: hosting-structures.md

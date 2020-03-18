@@ -1,7 +1,7 @@
 - name: Informations de référence sur les API non managées
   href: index.md
   items:
-    - name: Types de données communs
+    - name: Types de données courants
       href: common-data-types-unmanaged-api-reference.md
     - name: API ALink
       href: alink/

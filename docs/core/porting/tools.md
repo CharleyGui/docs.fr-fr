@@ -4,19 +4,19 @@ description: Découvrez certains des outils que vous pouvez utiliser pour effect
 author: cartermp
 ms.date: 12/07/2018
 ms.openlocfilehash: 98b3a29f2287414b2cd323f1cbf2225905592b26
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78157516"
 ---
 # <a name="tools-to-help-with-porting-to-net-core"></a>Outils facilitant le portage vers .NET Core
 
 Les outils présentés dans cet article peuvent vous être utiles dans le cadre d’un portage :
 
-- [Analyseur de portabilité .net](../../standard/analyzers/portability-analyzer.md) -chaîne d’outils qui peut générer un rapport sur la portabilité de votre code entre .NET Framework et .net Core :
-  - En tant qu' [outil en ligne de commande](https://github.com/Microsoft/dotnet-apiport/releases)
-  - En tant qu' [extension Visual Studio](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b)
+- [.NET Analyseur de portabilité](../../standard/analyzers/portability-analyzer.md) - Une chaîne d’outils qui peut générer un rapport de la façon dont votre code est portable entre .NET Framework et .NET Core:
+  - En tant [qu’outil de ligne de commande](https://github.com/Microsoft/dotnet-apiport/releases)
+  - En tant [qu’extension Visual Studio](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b)
 - [.NET API Analyzer](../../standard/analyzers/api-analyzer.md) : analyseur Roslyn qui découvre les risques potentiels liés à la compatibilité des API C# sur différentes plateformes et détecte les appels aux API dépréciées.
 
 En outre, vous pouvez essayer de porter des solutions plus petites ou des projets individuels au format de fichier de projet .NET Core avec l’outil [CsprojToVs2017](https://github.com/hvanbakel/CsprojToVs2017).

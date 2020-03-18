@@ -29,7 +29,7 @@
       href: section-element.md
     - name: Schéma des paramètres d’application
       href: appsettings/index.md
-    - name: Schéma des paramètres d’application
+    - name: Schéma des paramètres d'application
       href: application-settings-schema.md
     - name: Schéma des paramètres du fournisseur de langage et du compilateur
       href: compiler/index.md

@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - where (generic type constraint) [C#]
 ms.openlocfilehash: d236420c5019f7529b729155b13df50807dc1dab
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77626709"
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (contrainte de type générique) (Référence C#)
 
-La clause `where` dans une définition générique spécifie des contraintes sur les types qui sont utilisés comme arguments pour les paramètres de type d’un type générique, d’une méthode, d’un délégué ou d’une fonction locale. Les contraintes peuvent spécifier des interfaces, des classes de base ou exiger qu’un type générique soit une référence, une valeur ou un type non managé. Elles déclarent des fonctionnalités que l’argument de type doit posséder.
+La clause `where` dans une définition générique spécifie des contraintes sur les types qui sont utilisés comme arguments pour les paramètres de type d’un type générique, d’une méthode, d’un délégué ou d’une fonction locale. Les contraintes peuvent spécifier les interfaces, les classes de base ou exiger qu’un type générique soit un type de référence, de valeur ou non. Elles déclarent des fonctionnalités que l’argument de type doit posséder.
 
 Vous pouvez, par exemple, déclarer une classe générique, `MyGenericClass`, de telle sorte que le paramètre de type `T` implémente l’interface <xref:System.IComparable%601> :
 
@@ -32,10 +32,10 @@ La clause `where` peut spécifier que le type est une `class` ou un `struct`. La
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#3)]
 
-La clause `where` peut inclure la contrainte `notnull`. La contrainte de `notnull` limite le paramètre de type aux types non nullables. Ce type peut être un type [valeur](../builtin-types/value-types.md) ou un type référence non Nullable. La contrainte de `notnull` est disponible à C# partir de 8,0 pour le code compilé dans un [contexte de`nullable enable`](../../nullable-references.md#nullable-contexts). Contrairement à d’autres contraintes, si un argument de type viole la contrainte de `notnull`, le compilateur génère un avertissement au lieu d’une erreur. Les avertissements sont générés uniquement dans un contexte de `nullable enable`.
+La `where` clause peut `notnull` inclure la contrainte. La `notnull` contrainte limite le paramètre de type à des types non annulables. Ce type peut être un [type de valeur](../builtin-types/value-types.md) ou un type de référence non annulable. La `notnull` contrainte est disponible à partir de C 8.0 pour le code compilé dans un [ `nullable enable` contexte](../../nullable-references.md#nullable-contexts). Contrairement à d’autres contraintes, `notnull` si un argument type viole la contrainte, le compilateur génère un avertissement au lieu d’une erreur. Les avertissements ne `nullable enable` sont générés que dans un contexte.
 
 > [!IMPORTANT]
-> Les déclarations génériques qui incluent la contrainte `notnull` peuvent être utilisées dans un contexte oublie Nullable, mais le compilateur n’applique pas la contrainte.
+> Les déclarations génériques qui incluent la `notnull` contrainte peuvent être utilisées dans un contexte inouigne, mais le compilateur n’applique pas la contrainte.
 
 [!code-csharp[using the nonnull constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#NotNull)]
 
@@ -43,7 +43,7 @@ La clause `where` peut aussi inclure une contrainte `unmanaged`. La contrainte `
 
 [!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#4)]
 
-La clause `where` peut également inclure une contrainte de constructeur, `new()`. Cette contrainte permet de créer une instance d’un paramètre de type à l’aide de l’opérateur `new`. La [contrainte New ()](new-constraint.md) permet au compilateur de savoir que tout argument de type fourni doit avoir un constructeur sans paramètre accessible. Par exemple :
+La clause `where` peut également inclure une contrainte de constructeur, `new()`. Cette contrainte permet de créer une instance d’un paramètre de type à l’aide de l’opérateur `new`. La [nouvelle () contrainte](new-constraint.md) permet au compilateur de savoir que tout argument de type fourni doit avoir un constructeur sans paramètres accessible. Par exemple :
 
 [!code-csharp[using the new constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#5)]
 
@@ -71,8 +71,8 @@ Pour plus d’informations sur la syntaxe et l’utilisation de contraintes, con
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Introduction aux génériques](../../programming-guide/generics/index.md)
-- [new, contrainte](./new-constraint.md)
+- [nouvelle contrainte](./new-constraint.md)
 - [Contraintes sur les paramètres de type](../../programming-guide/generics/constraints-on-type-parameters.md)

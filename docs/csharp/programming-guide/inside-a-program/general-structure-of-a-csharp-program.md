@@ -5,10 +5,10 @@ helpviewer_keywords:
 - C# language, program structure
 ms.assetid: 5ae964a5-0ef0-40fe-88fb-6d1793371d0d
 ms.openlocfilehash: 4a2340c29527ac09ba53daee03e06420b269df56
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77673340"
 ---
 # <a name="general-structure-of-a-c-program-c-programming-guide"></a>Structure générale d'un programme C# (guide de programmation C#)
@@ -21,7 +21,7 @@ Les programmes C# se composent d’un ou plusieurs fichiers. Chaque fichier peu
   
 - [Classes](../classes-and-structs/classes.md)  
   
-- [Structures](../../language-reference/builtin-types/struct.md)  
+- [Structs](../../language-reference/builtin-types/struct.md)  
   
 - [Espaces de noms](../namespaces/index.md)  
   
@@ -36,5 +36,5 @@ Pour plus d’informations, consultez [Concepts de base](~/_csharplang/spec/basi
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [À l’intérieur d’un programme C#](./index.md)
-- [Informations de référence sur C#](../../language-reference/index.md)
+- [À l'intérieur d'un programme C#](./index.md)
+- [Référence C](../../language-reference/index.md)

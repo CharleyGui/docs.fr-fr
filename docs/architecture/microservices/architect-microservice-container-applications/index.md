@@ -3,15 +3,15 @@ title: Architecture d’applications conteneur et basées sur des microservices
 description: L’architecture d’applications conteneur et basées sur des microservices n’est pas une mince affaire et ne doit pas être prise à la légère. Découvrez les concepts fondamentaux dans ce chapitre.
 ms.date: 09/20/2018
 ms.openlocfilehash: aff30c907f1140b94dbcae330ed7cb633b0a744b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "70295517"
 ---
 # <a name="architecting-container-and-microservice-based-applications"></a>Architecture d’applications conteneur et basées sur des microservices
 
-*Si les microservices offrent de nombreux avantages, ils soulèvent aussi de nouveaux problèmes de taille. Les modèles d’architecture des microservices sont les piliers fondamentaux de la création d’une application basée sur des microservices.*
+*Les microservices offrent d’excellents avantages, mais soulèvent également d’énormes nouveaux défis. Les modèles d’architecture microservice sont des piliers fondamentaux lors de la création d’une application basée sur le microservice.*
 
 Plus haut dans ce guide, vous avez découvert les concepts de base des conteneurs et de Docker. Il s’agissait du minimum à savoir pour commencer à utiliser des conteneurs. Encore que, même si les conteneurs sont des facilitateurs et des compléments parfaits pour les microservices, ils ne sont pas obligatoires dans une architecture de microservices. D’ailleurs, la plupart des concepts architecturaux évoqués dans cette section valent aussi sans conteneurs. Cependant, ces recommandations portent sur la confluence des deux du fait de l’importance déjà évoquée des conteneurs.
 
@@ -28,5 +28,5 @@ Si le processus échoue, le conteneur prend fin et l’orchestrateur prend le co
 Le cas peut se présenter où vous voulez que plusieurs processus s’exécutent dans un même conteneur. Pour ce scénario, comme il ne peut y avoir qu’un seul point d’entrée par conteneur, vous pouvez exécuter un script dans le conteneur qui lance le nombre de programmes voulu. Par exemple, vous pouvez utiliser [Supervisor](http://supervisord.org/) ou un outil similaire pour prendre en charge le lancement de plusieurs processus à l’intérieur d’un même conteneur. Toutefois, même s’il existe des architectures qui contiennent plusieurs processus par conteneur, cette approche n’est pas très courante.
 
 >[!div class="step-by-step"]
->[Précédent](../net-core-net-framework-containers/official-net-docker-images.md)
->[Suivant](containerize-monolithic-applications.md)
+>[Suivant précédent](../net-core-net-framework-containers/official-net-docker-images.md)
+>[Next](containerize-monolithic-applications.md)

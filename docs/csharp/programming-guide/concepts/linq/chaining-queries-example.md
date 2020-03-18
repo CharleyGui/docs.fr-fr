@@ -3,16 +3,16 @@ title: Exemple de chaînage de requêtes (C#)
 ms.date: 07/20/2015
 ms.assetid: abbca162-d95e-43af-b92c-e46e6aa2540e
 ms.openlocfilehash: 45e3a4f341ca8eb06ff0f553e0f933956e6c6546
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70205415"
 ---
 # <a name="chaining-queries-example-c"></a>Exemple de chaînage de requêtes (C#)
 Cet exemple est basé sur l’exemple précédent et illustre ce qui se produit quand vous chaînez deux requêtes qui utilisent toutes deux l’exécution et l’évaluation différées.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
  Dans cet exemple, une autre méthode d'extension est introduite : `AppendString`. Elle ajoute une chaîne spécifiée à chaque chaîne de la collection source, puis génère les nouvelles chaînes.  
   
 ```csharp  
@@ -62,7 +62,7 @@ class Program
 }  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```output  
 ToUpper: source >abc<  
@@ -88,4 +88,4 @@ Main: str >GHI!!!<
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Tutoriel : Chaînage de requêtes (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [Didacticiel : chaînage de requêtes (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

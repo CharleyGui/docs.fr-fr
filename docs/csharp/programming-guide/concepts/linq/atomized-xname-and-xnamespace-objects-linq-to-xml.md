@@ -3,14 +3,14 @@ title: Objets XName et XNamespace atomisés (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: a5b21433-b49d-415c-b00e-bcbfb0d267d7
 ms.openlocfilehash: bc5066440d87f5485ae9099d7a7f4f5e9e66b4ec
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70204277"
 ---
 # <a name="atomized-xname-and-xnamespace-objects-linq-to-xml-c"></a>Objets XName et XNamespace atomisés (LINQ to XML) (C#)
-Les objets <xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace> sont *atomisés* ; autrement dit, s’ils contiennent le même nom qualifié, ils font référence au même objet. Ceci permet d’améliorer les performances des requêtes : quand vous comparez deux noms atomisés pour en vérifier l’égalité, le langage intermédiaire sous-jacent doit seulement déterminer si les deux références pointent vers le même objet. Le code sous-jacent ne doit pas effectuer de comparaisons de chaînes, ce qui prendrait beaucoup de temps.  
+Les objets <xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace> sont *atomisés* ; autrement dit, s’ils contiennent le même nom qualifié, ils font référence au même objet. Ceci permet d'améliorer les performances des requêtes : lorsque vous comparez deux noms atomisés pour en vérifier l'égalité, le langage intermédiaire sous-jacent doit seulement déterminer si les deux références pointent vers le même objet. Le code sous-jacent ne doit pas effectuer de comparaisons de chaînes, ce qui prendrait beaucoup de temps.  
   
 ## <a name="atomization-semantics"></a>Sémantique d'atomisation  
  L'atomisation signifie que si deux objets <xref:System.Xml.Linq.XName> ont le même nom local et qu'ils soient dans le même espace de noms, ils partagent la même instance. De la même manière, si deux <xref:System.Xml.Linq.XNamespace> ont le même URI d'espace de noms, ils partagent la même instance.  
@@ -19,7 +19,7 @@ Les objets <xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace> son
   
  <xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace> implémentent également les opérateurs d'égalité et d'inégalité pour déterminer si les deux objets comparés sont des références à la même instance.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
  Le code suivant crée certains objets <xref:System.Xml.Linq.XElement> et démontre que des noms identiques partagent la même instance.  
   
 ```csharp  
@@ -39,7 +39,7 @@ else
     Console.WriteLine("Different");  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```output  
 r1 and r2 have names that refer to the same instance.  
@@ -67,7 +67,7 @@ foreach (var z in query)
     Console.WriteLine(z);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <C1>1</C1>  

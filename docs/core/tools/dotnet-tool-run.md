@@ -1,38 +1,39 @@
 ---
-title: commande d’exécution de l’outil dotnet
-description: La commande d’exécution de l’outil dotnet appelle un outil local.
+title: commande d’exécution d’outil de dotnet
+description: La commande d’exécution d’outil de dotnet invoque un outil local.
 ms.date: 02/14/2020
-ms.openlocfilehash: 76830b8a8088fbf21f14ab0722b9547eabde7ba4
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: a088cd0b7f4bba014234a8189a42a63aa6d88f4e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78156957"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78847844"
 ---
-# <a name="dotnet-tool-run"></a>dotnet tool run
+# <a name="dotnet-tool-run"></a>dotnet outil exécuter
 
-**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,0 et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 3.0 SDK et les versions ultérieures
 
 ## <a name="name"></a>Nom
 
-`dotnet tool run` : appelle un outil local.
+`dotnet tool run`- Invoque un outil local.
 
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
 dotnet tool run <COMMAND NAME>
+
 dotnet tool run <-h|--help>
 ```
 
 ## <a name="description"></a>Description
 
-La commande `dotnet tool run` recherche les fichiers de manifeste de l’outil qui se trouvent dans la portée du répertoire actif. Lorsqu’il trouve une référence à l’outil spécifié, il exécute l’outil. Pour plus d’informations, consultez [appeler un outil local](global-tools.md#invoke-a-local-tool).
+L’outil `dotnet tool run` de recherche de commande manifeste les fichiers qui sont en portée pour l’annuaire actuel. Lorsqu’il trouve une référence à l’outil spécifié, il exécute l’outil. Pour plus d’informations, voir [Invoquez un outil local](global-tools.md#invoke-a-local-tool).
 
 ## <a name="arguments"></a>Arguments
 
 - **`COMMAND_NAME`**
 
-  Nom de commande de l’outil à exécuter.
+  Le nom de commande de l’outil à exécuter.
 
 ## <a name="options"></a>Options
 
@@ -40,12 +41,13 @@ La commande `dotnet tool run` recherche les fichiers de manifeste de l’outil q
 
   Affiche une aide brève pour la commande.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 - **`dotnet tool run dotnetsay`**
 
-  Exécute l’outil local `dotnetsay`.
+  Exécute `dotnetsay` l’outil local.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils .NET Core](global-tools.md)
+- [.NET Outils de base](global-tools.md)
+- [Tutorial: Installer et utiliser un outil local .NET Core en utilisant le CLI .NET Core](local-tools-how-to-use.md)

@@ -3,10 +3,10 @@ title: Classification des opérateurs de requête standard en fonction de leur m
 ms.date: 07/20/2015
 ms.assetid: b9435ce5-a7cf-4182-9f01-f3468a5533dc
 ms.openlocfilehash: ccf8fced5c92ceaaf84f9240e235da0e2b56ac1e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69924291"
 ---
 # <a name="classification-of-standard-query-operators-by-manner-of-execution-c"></a>Classification des opérateurs de requête standard en fonction de leur mode d’exécution (C#)

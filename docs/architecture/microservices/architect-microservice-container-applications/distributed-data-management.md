@@ -3,10 +3,10 @@ title: Problématiques et solutions pour la gestion des données distribuées
 description: Découvrez les défis et les solutions spécifiques à la gestion des données distribuée dans le monde des microservices.
 ms.date: 09/20/2018
 ms.openlocfilehash: c30de24591d5a73fd34087f34a69e9c7ed54cd35
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "71834458"
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>Problématiques et solutions pour la gestion des données distribuées
@@ -23,31 +23,31 @@ La façon dont vous identifiez les limites entre plusieurs contextes d’applica
 
 Une deuxième problématique est la façon d’implémenter des requêtes qui extraient des données de plusieurs microservices, tout en évitant des communication intensives entre les microservices et les applications clientes distantes. Par exemple, un écran d’une application mobile a besoin d’afficher les informations utilisateur détenues par des microservices distincts gérant respectivement le panier d’achat, le catalogue et l’identité des utilisateurs. Un autre exemple est un rapport complexe impliquant plusieurs tables qui se trouvent dans plusieurs microservices. La bonne solution dépend de la complexité des requêtes. Dans tous les cas, il vous faut un moyen d’agréger les informations pour améliorer l’efficacité des communications de votre système. Les solutions les plus répandues sont les suivantes :
 
-**Passerelle d’API.** Pour une agrégation de données simples provenant de plusieurs microservices qui ont des bases de données différentes, l’approche recommandée est un microservice d’agrégation, connu sous le nom de passerelle d’API. Vous devez cependant être prudent dans l’implémentation de ce modèle, car il peut être un goulot d’étranglement dans votre système, et il peut violer le principe d’autonomie des microservices. Pour atténuer ce risque, vous pouvez avoir plusieurs passerelles d’API réduites, chacune étant consacrée à une « section » verticale ou un domaine d’activité du système. Le modèle de passerelle d’API est détaillé plus loin dans la [section relative à la passerelle d’API](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md#why-consider-api-gateways-instead-of-direct-client-to-microservice-communication).
+**Porte aPI.** Pour une agrégation de données simples provenant de plusieurs microservices qui ont des bases de données différentes, l’approche recommandée est un microservice d’agrégation, connu sous le nom de passerelle d’API. Vous devez cependant être prudent dans l’implémentation de ce modèle, car il peut être un goulot d’étranglement dans votre système, et il peut violer le principe d’autonomie des microservices. Pour atténuer ce risque, vous pouvez avoir plusieurs passerelles d’API réduites, chacune étant consacrée à une « section » verticale ou un domaine d’activité du système. Le modèle de passerelle d’API est détaillé plus loin dans la [section relative à la passerelle d’API](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md#why-consider-api-gateways-instead-of-direct-client-to-microservice-communication).
 
-**CQRS avec des tables de requêtes/lectures.** Une autre solution pour agréger des données provenant de plusieurs microservices est le [modèle de vue matérialisée](https://docs.microsoft.com/azure/architecture/patterns/materialized-view). Dans cette approche, vous générez à l’avance (vous préparez des données dénormalisées avant que les requêtes réelles ne soient effectuées) une table en lecture seule avec les données détenues par plusieurs microservices. La table a un format adapté aux besoins de l’application cliente.
+**CQRS avec tables de requête/lectures.** Une autre solution pour agréger des données provenant de plusieurs microservices est le [modèle de vue matérialisée](https://docs.microsoft.com/azure/architecture/patterns/materialized-view). Dans cette approche, vous générez à l’avance (vous préparez des données dénormalisées avant que les requêtes réelles ne soient effectuées) une table en lecture seule avec les données détenues par plusieurs microservices. La table a un format adapté aux besoins de l’application cliente.
 
 Considérons par exemple l’écran d’une application mobile. Si vous avez une seule base de données, vous pouvez extraire en une seule fois les données pour cet écran en utilisant une requête SQL qui effectue une jointure complexe impliquant plusieurs tables. Cependant, quand vous avez plusieurs bases de données et que chaque base de données est détenue par un microservice différent, vous ne pouvez pas interroger ces bases de données et créer une jointure SQL. Votre requête complexe devient un vrai défi. Vous pouvez répondre à cette exigence à l’aide d’une approche CQRS : vous créez une table dénormalisée dans une autre base de données, utilisée seulement pour les requêtes. La table peut être conçue spécifiquement pour les données dont vous avez besoin pour la requête complexe, avec une relation un-à-un entre les champs nécessaires à l’écran de votre application et les colonnes de la table de requête. Elle peut également servir pour la création de rapports.
 
 Cette approche résout non seulement le problème d’origine (comment faire des requêtes et des jointures entre des microservices), mais elle améliore également considérablement les performances en comparaison d’une jointure complexe, car vous avez déjà les données nécessaires à l’application dans la table de requête. Bien sûr, l’utilisation de CQRS (séparation des responsabilités en matière de commande et de requête) avec des tables de requêtes/lectures signifie davantage de travail de développement et l’application d’une cohérence à terme. Néanmoins, les exigences de performances et de haute scalabilité dans les [scénarios collaboratifs](http://udidahan.com/2011/10/02/why-you-should-be-using-cqrs-almost-everywhere/) (ou les scénarios de concurrence, selon le point de vue) doivent vous inciter à appliquer CQRS à plusieurs bases de données.
 
-**« Données froides » dans des bases de données centrales.** Pour les rapports et les requêtes complexes ne nécessitant pas de données en temps réel, une approche courante consiste à exporter vos « données chaudes » (données transactionnelles des microservices) en tant que « données froides » dans des bases de données volumineuses utilisées seulement pour la création de rapports. Ce système de base de données centrale peut être un système basé sur le Big Data, comme Hadoop, un entrepôt de données basé sur Azure SQL Data Warehouse, ou même une base de données SQL utilisée seulement pour les rapports (si la taille n’est pas un problème).
+**"Données froides" dans les bases de données centrales.** Pour les rapports et les requêtes complexes ne nécessitant pas de données en temps réel, une approche courante consiste à exporter vos « données chaudes » (données transactionnelles des microservices) en tant que « données froides » dans des bases de données volumineuses utilisées seulement pour la création de rapports. Ce système de base de données centrale peut être un système basé sur le Big Data, comme Hadoop, un entrepôt de données basé sur Azure SQL Data Warehouse, ou même une base de données SQL utilisée seulement pour les rapports (si la taille n’est pas un problème).
 
 Gardez à l’esprit que cette base de données centralisée doit être utilisée seulement pour les requêtes et les rapports qui n’ont pas besoin de données en temps réel. Les mises à jour et les transactions d’origine, qui constituent votre source de référence, doivent être effectuées dans les données de vos microservices. Vous allez synchroniser les données via une communication pilotée par les événements (traitée dans les sections suivantes) ou via d’autres outils d’importation/exportation de l’infrastructure de base de données. Si vous utilisez une communication pilotée par les événements, ce processus d’intégration est similaire à la façon dont vous propagez les données comme cela a été décrit précédemment pour les tables de requête CQRS.
 
-Toutefois, si la conception de votre application implique d’agréger constamment les informations provenant de plusieurs microservices pour des requêtes complexes, cela peut être le symptôme d’une mauvaise conception : un microservice doit être aussi isolé que possible des autres microservices. (Cela exclut les rapports/analyses qui doivent toujours utiliser des bases de données centrales à froid.) Ce problème peut souvent être dû à la fusion de microservices. Vous devez équilibrer l’autonomie de l’évolution et du déploiement de chaque microservice avec des dépendances fortes, la cohésion et l’agrégation des données.
+Toutefois, si la conception de votre application implique d’agréger constamment les informations provenant de plusieurs microservices pour des requêtes complexes, cela peut être le symptôme d’une mauvaise conception : un microservice doit être aussi isolé que possible des autres microservices. (Cela exclut les rapports/analyses qui devraient toujours utiliser des bases de données centrales à froid.) Avoir ce problème peut souvent être une raison de fusionner les microservices. Vous devez équilibrer l’autonomie de l’évolution et du déploiement de chaque microservice avec des dépendances fortes, la cohésion et l’agrégation des données.
 
 ## <a name="challenge-3-how-to-achieve-consistency-across-multiple-microservices"></a>Problématique \#3 : Comment garantir la cohérence entre plusieurs microservices
 
 Comme indiqué précédemment, les données détenues par chaque microservice sont privées pour ce microservice et sont accessibles seulement via son API de microservice. Ainsi, le problème est de savoir comment implémenter des processus métier de bout en bout tout en conservant la cohérence entre plusieurs microservices.
 
-Pour analyser ce problème, prenons l’exemple de l’[application de référence eShopOnContainers](https://aka.ms/eshoponcontainers). Le microservice Catalog (Catalogue) gère les informations relatives à tous les produits, notamment leur prix. Le microservice Basket (Panier) gère les données temporelles relatives aux articles que les utilisateurs ajoutent à leurs paniers d’achat, notamment le prix des articles au moment où ils ont été ajoutés au panier. Quand le prix d’un produit est mis à jour dans le catalogue, ce prix doit l’être également dans les paniers actifs qui contiennent le produit correspondant. De plus, le système doit en principe avertir l’utilisateur en lui indiquant que le prix d’un article particulier a changé depuis son ajout au panier.
+Pour analyser ce problème, regardons un exemple de l’application de [référence eShopOnContainers](https://aka.ms/eshoponcontainers). Le microservice Catalog (Catalogue) gère les informations relatives à tous les produits, notamment leur prix. Le microservice Basket (Panier) gère les données temporelles relatives aux articles que les utilisateurs ajoutent à leurs paniers d’achat, notamment le prix des articles au moment où ils ont été ajoutés au panier. Quand le prix d’un produit est mis à jour dans le catalogue, ce prix doit l’être également dans les paniers actifs qui contiennent le produit correspondant. De plus, le système doit en principe avertir l’utilisateur en lui indiquant que le prix d’un article particulier a changé depuis son ajout au panier.
 
 Dans une hypothétique version monolithique de cette application, quand le prix change dans la table des produits, le sous-système de catalogue peut simplement utiliser une transaction ACID pour mettre à jour le prix actuel dans la table Basket (Panier).
 
 Toutefois, dans une application basée sur les microservices, les tables Order (Commande) et Product (Produit) appartiennent à leurs microservices respectifs. Aucun microservice ne doit jamais inclure de tables/stockage appartenant à un autre microservice dans ses propres transactions, pas même dans les requêtes directes, comme indiqué sur la figure 4-9.
 
-![Diagramme montrant que les données de la base de données des microservices ne peuvent pas être partagées.](./media/distributed-data-management/indepentent-microservice-databases.png)
+![Diagramme montrant que les données de base de données des microservices ne peuvent pas être partagées.](./media/distributed-data-management/indepentent-microservice-databases.png)
 
 **Figure 4-9**. Un microservice ne peut pas accéder directement à une table dans un autre microservice
 
@@ -79,34 +79,34 @@ En fait, si vos microservices internes communiquent en créant des chaînes de r
 
 Par conséquent, pour atteindre à l’autonomie des microservices et avoir une meilleure résilience, vous devez minimiser l’utilisation de chaînes de communication de demande/réponse entre les microservices. Il est recommandé d’utiliser seulement une interaction asynchrone pour la communication entre les microservices, via une communication asynchrone basée sur des messages et des événements, ou via une interrogation HTTP (asynchrone) indépendante du cycle de requête-réponse HTTP d’origine.
 
-L’utilisation d’une communication asynchrone est détaillée plus loin dans ce guide, dans les sections [L’intégration de microservices asynchrones implique l’autonomie des microservices](communication-in-microservice-architecture.md#asynchronous-microservice-integration-enforces-microservices-autonomy) et [Communication asynchrone basée sur des messages](asynchronous-message-based-communication.md).
+L’utilisation de la communication asynchrone est expliquée avec des détails supplémentaires plus tard dans ce guide dans les sections [Asynchrone microservice intégration applique l’autonomie du microservice](communication-in-microservice-architecture.md#asynchronous-microservice-integration-enforces-microservices-autonomy) et [la communication asynchrone message basée](asynchronous-message-based-communication.md).
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Théorème CAP** \
+- **Théorème de la PAC** \
   <https://en.wikipedia.org/wiki/CAP_theorem>
 
-- **Cohérence à terme** \
+- **Cohérence éventuelle** \
   <https://en.wikipedia.org/wiki/Eventual_consistency>
 
-- **Data Consistency Primer** \
+- **Apprêt de cohérence de données** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/dn589800(v=pandp.10)>
 
-- **Martin Fowler. CQRS (séparation des responsabilités en matière de commande et de requête)**  \
+- **Martin Fowler. CQRS (Ségrégation des responsabilités de commandement et de requête)** \
   <https://martinfowler.com/bliki/CQRS.html>
 
 - **Vue matérialisée** \
   <https://docs.microsoft.com/azure/architecture/patterns/materialized-view>
 
-- **Charles Row. ACID et BASE : l’évolution du pH du traitement des transactions de base de données** \
+- **Charles Row. ACID vs BASE: Le pH changeant du traitement des transactions de base de données** \
   <https://www.dataversity.net/acid-vs-base-the-shifting-ph-of-database-transaction-processing/>
 
-- **Transaction de compensation** \
+- **Transaction compensatoire** \
   <https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction>
 
-- **UDI Dahan. \ de la composition orientée services**
+- **Udi Dahan. Composition orientée service** \
   <http://udidahan.com/2014/07/30/service-oriented-composition-with-video/>
 
 >[!div class="step-by-step"]
->[Précédent](logical-versus-physical-architecture.md)
->[Suivant](identify-microservice-domain-model-boundaries.md)
+>[Suivant précédent](logical-versus-physical-architecture.md)
+>[Next](identify-microservice-domain-model-boundaries.md)

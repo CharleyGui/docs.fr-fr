@@ -5,21 +5,21 @@ author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: 9dea7dbccb5c9e125f792e6a7287a7dd2fad26f1
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73093548"
 ---
 # <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>Applications serverless : Architecture, modèles et implémentation Azure
 
-![Capture d’écran montrant la couverture de livre électronique applications sans serveur.](./media/index/serverless-apps-cover.jpg)
+![Capture d’écran qui montre la couverture du livre électronique Serverless Apps.](./media/index/serverless-apps-cover.jpg)
 
 > TÉLÉCHARGEMENT disponible à l’adresse suivante : <https://aka.ms/serverless-ebook>
 
 PUBLIÉ PAR
 
-Division Développeur Microsoft, équipes produit .NET et Visual Studio
+Division Développeurs Microsoft, équipes produit .NET et Visual Studio
 
 Division de Microsoft Corporation
 
@@ -33,7 +33,7 @@ Tous droits réservés. Aucune partie du contenu de ce document ne peut être re
 
 Ce document est fourni « en l’état » et exprime les points de vue et les opinions de son auteur. Les points de vue, les opinions et les informations exprimés dans ce document, notamment l’URL et autres références à des sites web Internet, peuvent faire l’objet de modifications sans préavis.
 
-Certains exemples décrits dans ce document ne sont fournis qu’à titre d’illustration et sont purement fictifs. Toute ressemblance ou tout lien avec le monde réel sont purement fortuits et involontaires.
+ Certains exemples sont fournis à titre indicatif uniquement et sont fictifs. Toute association ou lien est purement involontaire ou fortuit.
 
 Microsoft et les marques commerciales mentionnées dans la page web « Marques » sur <https://www.microsoft.com> sont des marques du groupe Microsoft.
 
@@ -43,25 +43,25 @@ Toutes les autres marques et tous les autres logos sont la propriété de leurs 
 
 Auteur :
 
-> **[Jeremy Likness](https://twitter.com/jeremylikness)** , avocat du Cloud senior, Microsoft Corp.
+> **[Jeremy Likness](https://twitter.com/jeremylikness)**, Senior Cloud Advocate, Microsoft Corp.
 
-Contributeur :
+Collaborateur :
 
-> **[Cecil Phillip](https://twitter.com/cecilphillip)** , avocat du Cloud senior, Microsoft Corp.
+> **[Cecil Phillip](https://twitter.com/cecilphillip)**, Senior Cloud Advocate, Microsoft Corp.
 
 Rédacteurs :
 
-> **[Bill Wagner](https://twitter.com/billwagner)** , développeur de contenu senior, Microsoft Corp.
+> **[Bill Wagner](https://twitter.com/billwagner)**, Développeur de contenu senior, Microsoft Corp.
 
-> **[Maira Wenzel](https://twitter.com/mairacw)** , développeur de contenu senior, Microsoft Corp.
+> **[Maira Wenzel](https://twitter.com/mairacw)**, Développeur de contenu senior, Microsoft Corp.
 
 Participants et réviseurs :
 
-> **[Steve Smith](https://twitter.com/ardalis)** , propriétaire, Ardalis Services.
+> **[Steve Smith](https://twitter.com/ardalis)**, propriétaire, Ardalis Services.
 
 ## <a name="introduction"></a>Introduction
 
-Le modèle [serverless](https://azure.microsoft.com/solutions/serverless/) incarne l’évolution des plateformes cloud vers du code natif cloud pur. Il rapproche les développeurs d’une logique métier en les éloignant des problèmes d’infrastructure. Il ne s’agit pas d’un modèle qui n’implique « aucun serveur », mais plutôt d’un modèle qui implique « moins de serveurs ». Le code serverless est basé sur les événements. Le code peut être déclenché par n’importe quoi, une requête web HTTP traditionnelle, un minuteur ou le résultat du chargement d’un fichier. L’infrastructure derrière le modèle serverless permet une mise à l’échelle instantanée pour répondre à des besoins élastiques et offre une micro-facturation pour un vrai « paiement à l’utilisation. » Le modèle serverless demande de penser et d’approcher autrement la création d’applications et n’est pas la solution à tous les problèmes. En tant que développeur, vous devez déterminer :
+[Serverless](https://azure.microsoft.com/solutions/serverless/) est l’évolution des plates-formes cloud dans la direction du code natif du cloud pur. Il rapproche les développeurs d’une logique métier en les éloignant des problèmes d’infrastructure. Il ne s’agit pas d’un modèle qui n’implique « aucun serveur », mais plutôt d’un modèle qui implique « moins de serveurs ». Le code serverless est basé sur les événements. Le code peut être déclenché par n’importe quoi, une requête web HTTP traditionnelle, un minuteur ou le résultat du chargement d’un fichier. L’infrastructure derrière le modèle serverless permet une mise à l’échelle instantanée pour répondre à des besoins élastiques et offre une micro-facturation pour un vrai « paiement à l’utilisation. » Le modèle serverless demande de penser et d’approcher autrement la création d’applications et n’est pas la solution à tous les problèmes. En tant que développeur, vous devez déterminer :
 
 - Quels sont les avantages et les inconvénients du modèle serverless ?
 - Pourquoi devriez-vous envisager le modèle serverless pour vos propres applications ?
@@ -88,9 +88,9 @@ Avant le cloud, une délimitation perceptible existait entre le développement e
 - Où sont envoyées les sauvegardes de stockage ?
 - Un système d’alimentation redondant doit-il être envisagé ?
 
-La liste s’allongeait et la surcharge était énorme. Dans de nombreux cas, les services informatiques étaient obligés de gaspiller considérablement. Le gaspillage était dû à une allocation excessive de serveurs en tant qu’ordinateurs de sauvegarde pour la récupération d’urgence et les serveurs de secours pour permettre la montée en puissance parallèle. Heureusement, l’introduction de la technologie de virtualisation (comme [Hyper-V](/virtualization/hyper-v-on-windows/about/)) avec des machines virtuelles (VM) a donné lieu à l’infrastructure en tant que service (IaaS). Avec une infrastructure virtualisée, des opérations permettaient de définir un ensemble standard de serveurs comme épine dorsale, donnant ainsi un environnement flexible capable de provisionner des serveurs uniques « à la demande ». Plus important, la virtualisation préparait le terrain pour utiliser le cloud afin de fournir des machines virtuelles « en tant que service ». Les entreprises pouvaient alors aisément arrêter de se préoccuper du système d’alimentation redondant ou des ordinateurs physiques. Elles se concentraient plutôt sur l’environnement virtuel.
+La liste s’allongeait et la surcharge était énorme. Dans de nombreux cas, les services informatiques étaient obligés de gaspiller considérablement. Les déchets étaient dus à une sur-allocation des serveurs comme machines de sauvegarde pour la récupération en cas de catastrophe et des serveurs de secours pour permettre l’étalement. Heureusement, l’introduction de la technologie de virtualisation (comme [Hyper-V](/virtualization/hyper-v-on-windows/about/)) avec des machines virtuelles (VM) a donné lieu à l’infrastructure en tant que service (IaaS). Avec une infrastructure virtualisée, des opérations permettaient de définir un ensemble standard de serveurs comme épine dorsale, donnant ainsi un environnement flexible capable de provisionner des serveurs uniques « à la demande ». Plus important, la virtualisation préparait le terrain pour utiliser le cloud afin de fournir des machines virtuelles « en tant que service ». Les entreprises pouvaient alors aisément arrêter de se préoccuper du système d’alimentation redondant ou des ordinateurs physiques. Elles se concentraient plutôt sur l’environnement virtuel.
 
-IaaS implique quand même une surcharge conséquente parce que les opérations sont encore responsables de différentes tâches. Ces tâches sont les suivantes :
+IaaS implique quand même une surcharge conséquente parce que les opérations sont encore responsables de différentes tâches. Il s’agit notamment des tâches suivantes :
 
 - Correction et sauvegarde des serveurs.
 - Installation de packages.
@@ -118,8 +118,8 @@ Ce guide met avant tout l’accent sur les approches d’architecture et les mod
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Centre des architectures Azure](https://docs.microsoft.com/azure/architecture/)
-- [Bonnes pratiques pour les applications cloud](https://docs.microsoft.com/azure/architecture/best-practices/api-design)
+- [Centre d’architecture Azure](https://docs.microsoft.com/azure/architecture/)
+- [Meilleures pratiques pour les applications cloud](https://docs.microsoft.com/azure/architecture/best-practices/api-design)
 
 ## <a name="who-should-use-the-guide"></a>Public visé par ce guide
 

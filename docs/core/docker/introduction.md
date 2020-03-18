@@ -4,21 +4,21 @@ description: Cet article présente Docker et en brosse une vue d’ensemble dans
 ms.date: 03/20/2019
 ms.custom: mvc
 ms.openlocfilehash: eedfd1e7c1b361beb9d4f271e739657ef5e894a6
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78157789"
 ---
 # <a name="introduction-to-net-and-docker"></a>Introduction à .NET et à Docker
 
 .NET Core peut s’exécuter sans problème dans un conteneur Docker. Les conteneurs offrent un moyen léger d’isoler une application du reste du système hôte, en partageant seulement le noyau et en utilisant les ressources attribuées à l’application. Si vous ne connaissez pas encore Docker, nous vous recommandons de lire la [documentation de présentation](https://docs.docker.com/engine/docker-overview/) de Docker.
 
-Pour plus d’informations sur l’installation de l’ordinateur de la station d’accueil, consultez la page de téléchargement de l' [édition Desktop : Community Edition](https://www.docker.com/products/docker-desktop).
+Pour plus d’informations sur la façon d’installer Docker, voir la page de téléchargement pour [Docker Desktop: Community Edition](https://www.docker.com/products/docker-desktop).
 
 ## <a name="docker-basics"></a>Bases de Docker
 
-Il y a quelques concepts à connaître. Le client docker dispose d’une interface CLI que vous pouvez utiliser pour gérer des images et des conteneurs. Prenez bien le temps de lire la documentation de [présentation de Docker](https://docs.docker.com/engine/docker-overview/).
+Il y a quelques concepts à connaître. Le client Docker dispose d’un CLI que vous pouvez utiliser pour gérer des images et des conteneurs. Prenez bien le temps de lire la documentation de [présentation de Docker](https://docs.docker.com/engine/docker-overview/).
 
 ### <a name="images"></a>Images
 
@@ -26,7 +26,7 @@ Une image est une collection ordonnée de modifications du système de fichiers 
 
 Les conteneurs étant créés à partir d’images, celles-ci comportent un ensemble de paramètres d’exécution (par exemple, un exécutable de démarrage) qui s’exécutent au démarrage du conteneur.
 
-### <a name="containers"></a>Conteneurs
+### <a name="containers"></a>Containers
 
 Un conteneur est une instance exécutable d’une image. Lorsque vous générez votre image, vous déployez votre application et ses dépendances. Il est ensuite possible d’instancier plusieurs conteneurs, tous isolés les uns des autres. Chaque instance de conteneur possède son propre système de fichiers, sa propre mémoire et sa propre interface réseau.
 
@@ -40,7 +40,7 @@ Microsoft Container Registry (MCR) est la source officielle d’images conteneur
 
 ### <a name="dockerfile"></a>Dockerfile
 
-Un **Dockerfile** est un fichier définissant un ensemble d’instructions qui créent une image. Chaque instruction du **Dockerfile** produit une couche de l’image. Pour l’essentiel, lorsque vous reconstruisez l’image, seules les couches qui ont changé sont reconstruites. Les **fichier dockerfile** peuvent être distribués à d’autres utilisateurs et leur permettre de recréer une nouvelle image de la même façon que vous l’avez créée. Si cette solution permet de diffuser les *instructions* sur la création de l’image, le principal moyen d’en distribuer une consiste à la publier dans un registre.
+Un **Dockerfile** est un fichier définissant un ensemble d’instructions qui créent une image. Chaque instruction du **Dockerfile** produit une couche de l’image. Pour la plupart, lorsque vous reconstruisez l’image, seules les couches qui ont changé sont reconstruites. Le **Dockerfile** peut être distribué à d’autres et leur permet de recréer une nouvelle image de la même manière que vous l’avez créée. Si cette solution permet de diffuser les *instructions* sur la création de l’image, le principal moyen d’en distribuer une consiste à la publier dans un registre.
 
 ## <a name="net-core-images"></a>Images .NET Core
 
@@ -52,25 +52,25 @@ Microsoft fournit des images adaptées à des scénarios particuliers. Par exemp
 
 Différents services Azure prennent en charge les conteneurs. Créez une image Docker pour votre application et déployez-la sur l’un des services suivants :
 
-- [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/)\
+- [Service Azure Kubernetes (AKS)](https://azure.microsoft.com/services/kubernetes-service/)\
 Mettez à l’échelle et orchestrez des conteneurs Linux avec Kubernetes.
 
-- [Azure App Service](https://azure.microsoft.com/services/app-service/containers/)\
+- [Service d’application Azure](https://azure.microsoft.com/services/app-service/containers/)\
 Déployez des API ou des applications web avec des conteneurs Linux dans un environnement PaaS.
 
-- [Azure Container Instances](https://azure.microsoft.com/services/container-instances/)\
+- [Instances de conteneurs Azure](https://azure.microsoft.com/services/container-instances/)\
 Hébergez votre conteneur dans le cloud sans les services de gestion de niveau supérieur.
 
-- [Azure Batch](https://azure.microsoft.com/services/batch/)\
+- [Lot Azure](https://azure.microsoft.com/services/batch/)\
 Exécutez des tâches de calcul répétitives avec des conteneurs.
 
-- [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/)\
-Tirez, déplacez et modernisez des applications .NET aux microservices à l’aide de conteneurs Windows Server.
+- [Tissu de service Azure](https://azure.microsoft.com/services/service-fabric/)\
+Soulevez, déplacez et modernisez les applications .NET vers les microservices à l’aide de conteneurs Windows Server.
 
-- [Azure Container Registry](https://azure.microsoft.com/services/container-registry/)\
+- [Registre des conteneurs Azure](https://azure.microsoft.com/services/container-registry/)\
 Stockez et gérez des images conteneurs pour tous types de déploiements Azure.
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 - [Apprenez à conteneuriser une application .NET Core.](build-container.md)
 - [Apprenez à conteneuriser une application ASP.NET Core.](/aspnet/core/host-and-deploy/docker/building-net-docker-images)

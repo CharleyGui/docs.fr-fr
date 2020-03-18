@@ -4,10 +4,10 @@ description: Ce tutoriel fournit des instructions détaillées pour générer un
 ms.date: 08/01/2018
 ms.custom: mvc
 ms.openlocfilehash: f6fc21c010f9b5fcd5e709ef822639c020a7c93b
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78240548"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Tutoriel : Écrire votre premier analyseur et correctif de code
@@ -16,12 +16,12 @@ Le SDK .NET Compiler Platform fournit les outils nécessaires pour créer des av
 
 Dans ce tutoriel, vous allez explorer la création d’un **analyseur** et d’un **correctif de code** associé à l’aide des API Roslyn. Un analyseur consiste à effectuer une analyse du code source et signaler un problème à l’utilisateur. Un analyseur peut également fournir un correctif de code qui représente une modification du code source de l’utilisateur. Ce tutoriel crée un analyseur qui recherche des déclarations de variables locales qui pourraient être déclarées à l’aide du modificateur `const` mais qui ne le sont pas. Le correctif de code associé modifie ces déclarations pour ajouter le modificateur `const`.
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Conditions préalables requises
 
 - [Visual Studio 2017](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2017-and-other-products)
-- [Visual Studio 2019](https://www.visualstudio.com/downloads)
+- [Studio visuel 2019](https://www.visualstudio.com/downloads)
 
-Vous devez installer le kit de **développement logiciel (SDK) .NET Compiler Platform** via le Visual Studio installer :
+Vous devrez installer la **plate-forme de compilateur .NET SDK** via l’installateur Visual Studio :
 
 [!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 
@@ -60,7 +60,7 @@ Le modèle Analyseur avec correctif de code crée trois projets : un contient l
 > [!TIP]
 > Lorsque vous exécutez votre analyseur, vous démarrez une deuxième copie de Visual Studio. Cette deuxième copie utilise un hive de Registre différent pour stocker les paramètres. Cela vous permet de différencier les paramètres Visual dans les deux copies de Visual Studio. Vous pouvez choisir un autre thème pour l’exécution expérimentale de Visual Studio. En outre, ne rendez pas vos paramètres itinérants et ne vous connectez pas à votre compte Visual Studio à l’aide de l’exécution expérimentale de Visual Studio. Cela permet de conserver les paramètres différents.
 
-Dans la deuxième instance de Visual Studio que vous venez de démarrer, créez C# un projet d’application console (.net Core ou .NET Framework projet fonctionne, les analyseurs fonctionnent au niveau de la source.) Placez le curseur sur le jeton avec un soulignement ondulé et le texte d’avertissement fourni par un analyseur s’affiche.
+Dans la deuxième instance Visual Studio que vous venez de démarrer, créez un nouveau projet d’application de console C (soit .NET Core ou .NET Framework project fonctionnera -- les analyseurs fonctionnent au niveau source.) Planer au-dessus du jeton avec un soulignement ondulé, et le texte d’avertissement fourni par un analyseur apparaît.
 
 Le modèle crée un analyseur qui émet un avertissement sur chaque déclaration de type dont le nom de type contient des lettres minuscules, comme indiqué dans la figure suivante :
 

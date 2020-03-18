@@ -3,10 +3,10 @@ title: Orchestration des microservices et des applications à plusieurs conteneu
 description: Apprenez à déployer une application à l’aide d’Azure Kubernetes Service.
 ms.date: 02/15/2019
 ms.openlocfilehash: 0aa2f83fbf8f9a8815d65730002943cca748643d
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "71182369"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks"></a>Déployer sur Azure Kubernetes Service (AKS)
@@ -64,7 +64,7 @@ Première étape : obtention des informations d’identification :
 az aks get-credentials --resource-group MSSampleK8ClusterRG --name MSSampleK8Cluster
 ```
 
-![Sortie de la console à partir de la commande ci-dessus : fusionné «MsSampleK8Cluster en tant que contexte actuel dans/root/.Kube/config.](media/get-credentials-command-result.png)
+![Sortie de console de la commande ci-dessus : Fusionné "MsSampleK8Cluster comme contexte actuel dans /root/.kube/config.](media/get-credentials-command-result.png)
 
 **Figure 4-19**. Résultat de la commande `aks get-credentials`.
 
@@ -74,10 +74,10 @@ Ensuite, obtention des nœuds à partir de Kubectl :
 kubectl get nodes
 ```
 
-![Sortie de la console à partir de la commande ci-dessus : liste des nœuds dont l’État, l’âge (heure d’exécution) et la version](media/kubectl-get-nodes-command-result.png)
+![Sortie de la console de la commande ci-dessus: Liste des nœuds avec statut, âge (temps en cours d’exécution), et la version](media/kubectl-get-nodes-command-result.png)
 
 **Figure 4-20**. Résultat de la commande `kubectl get nodes`.
 
 >[!div class="step-by-step"]
->[Précédent](orchestrate-high-scalability-availability.md)
->[Suivant](docker-apps-development-environment.md)
+>[Suivant précédent](orchestrate-high-scalability-availability.md)
+>[Next](docker-apps-development-environment.md)

@@ -3,10 +3,10 @@ title: Implémenter des connexions SQL à Entity Framework Core résilientes
 description: Découvrez comment implémenter des connexions SQL à Entity Framework Core résilientes. Cette technique est particulièrement importante lors de l’utilisation d’Azure SQL Database dans le cloud.
 ms.date: 10/16/2018
 ms.openlocfilehash: 7a047edca21d63a451e90f407b23f3358d461330
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78241063"
 ---
 # <a name="implement-resilient-entity-framework-core-sql-connections"></a>Implémenter des connexions SQL à Entity Framework Core résilientes
@@ -146,12 +146,12 @@ public class ResilientTransaction
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Résilience des connexions et Interception des commandes avec EF dans une application ASP.NET MVC** \
+- **Liaison De résilience et d’interception de commandement avec EF dans une application MVC ASP.NET** \
   [https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application)
 
-- **Cesar de la Torre. Utilisation de connexions et de transactions Entity Framework Core SQL résilientes** \
+- **Cesar de la Torre. Utilisation de connexions et de transactions SQL de base de cadre d’entités résilientes** \
   <https://devblogs.microsoft.com/cesardelatorre/using-resilient-entity-framework-core-sql-connections-and-transactions-retries-with-exponential-backoff/>
 
 >[!div class="step-by-step"]
->[Précédent](implement-retries-exponential-backoff.md)
->[Suivant](use-httpclientfactory-to-implement-resilient-http-requests.md)
+>[Suivant précédent](implement-retries-exponential-backoff.md)
+>[Next](use-httpclientfactory-to-implement-resilient-http-requests.md)

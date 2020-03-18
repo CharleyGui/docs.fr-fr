@@ -1,18 +1,18 @@
 ---
-title: Valeurs par défaut C# des types C# -référence
-description: Découvrez les valeurs par défaut C# des types tels que bool, Char, int, float, double et More.
+title: Valeurs par défaut des types de C - Référence C
+description: Apprenez les valeurs par défaut des types de Cmd tels que le bool, l’omble, l’int, le flotteur, le double et plus encore.
 ms.date: 12/18/2019
 helpviewer_keywords:
 - default [C#]
 - parameterless constructor [C#]
 ms.openlocfilehash: 93b6079b9a3bbf6d537094cab9dfb305ace7f6bf
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77625863"
 ---
-# <a name="default-values-of-c-types-c-reference"></a>Valeurs par défaut C# des typesC# (référence)
+# <a name="default-values-of-c-types-c-reference"></a>Valeurs par défaut des types C (référence C)
 
 Le tableau suivant présente les valeurs par défaut des types C# :
 
@@ -21,11 +21,11 @@ Le tableau suivant présente les valeurs par défaut des types C# :
 |tout type référence ;|`null`|
 |Tout [type numérique intégral intégré](integral-numeric-types.md)|0 (zéro)|
 |Tout [type numérique à virgule flottante intégré](floating-point-numeric-types.md)|0 (zéro)|
-|[bool](bool.md)|`false`|
+|[Bool](bool.md)|`false`|
 |[char](char.md)|`'\0'` (U+0000)|
-|[enum](enum.md)|Valeur produite par l’expression `(E)0`, où `E` est l’identificateur de l’enum.|
+|[Enum](enum.md)|Valeur produite par l’expression `(E)0`, où `E` est l’identificateur de l’enum.|
 |[struct](struct.md)|Valeur produite en affectant à tous les champs de type valeur leur valeur par défaut et à tous les champs de type référence la valeur `null`.|
-|Tout [type valeur Nullable](nullable-value-types.md)|Instance pour laquelle la propriété <xref:System.Nullable%601.HasValue%2A> a la valeur `false` et la propriété <xref:System.Nullable%601.Value%2A> n’est pas définie. Cette valeur par défaut est également connue sous le nom de valeur *null* d’un type valeur Nullable.|
+|Tout [type valeur Nullable](nullable-value-types.md)|Instance pour laquelle la propriété <xref:System.Nullable%601.HasValue%2A> a la valeur `false` et la propriété <xref:System.Nullable%601.Value%2A> n’est pas définie. Cette valeur par défaut est également connue sous le nom de valeur *nulle* d’un type de valeur nulle.|
 
 Utilisez l’[opérateur par défaut](../operators/default.md) pour produire la valeur par défaut d’un type, comme illustré dans l’exemple suivant :
 
@@ -33,7 +33,7 @@ Utilisez l’[opérateur par défaut](../operators/default.md) pour produire la 
 int a = default(int);
 ```
 
-À compter de C# 7.1, vous pouvez utiliser le [littéral `default`](../operators/default.md#default-literal) pour initialiser une variable avec la valeur par défaut de son type :
+En commençant par le C 7.1, vous pouvez utiliser le [ `default` littéral](../operators/default.md#default-literal) pour initialiser une variable avec la valeur par défaut de son type :
 
 ```csharp
 int a = default;
@@ -46,7 +46,7 @@ var n = new System.Numerics.Complex();
 Console.WriteLine(n);  // output: (0, 0)
 ```
 
-Au moment de l’exécution, si l’instance <xref:System.Type?displayProperty=nameWithType> représente un type valeur, vous pouvez utiliser la méthode <xref:System.Activator.CreateInstance(System.Type)?displayProperty=nameWithType> pour appeler le constructeur sans paramètre afin d’obtenir la valeur par défaut du type.
+Au moment de <xref:System.Type?displayProperty=nameWithType> l’exécution, si l’instance <xref:System.Activator.CreateInstance(System.Type)?displayProperty=nameWithType> représente un type de valeur, vous pouvez utiliser la méthode pour invoquer le constructeur sans paramètres pour obtenir la valeur par défaut du type.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -57,5 +57,5 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Constructeurs](../../programming-guide/classes-and-structs/constructors.md)

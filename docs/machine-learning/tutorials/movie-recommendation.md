@@ -1,18 +1,18 @@
 ---
-title: 'Didacticiel : créer un projet de recommandation-factorisation de la matrice'
+title: 'Tutorial: Construire un lecteur de film - factorisation de matrice'
 description: Ce tutoriel explique comment créer un système de suggestion de films à l’aide de ML.NET dans une application console .NET. Les étapes de ce tutoriel utilisent le langage C# et Visual Studio 2019.
 author: briacht
 ms.date: 09/30/2019
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
 ms.openlocfilehash: a221289d0c232863f03a275c26dce835f2878bf7
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78241102"
 ---
-# <a name="tutorial-build-a-movie-recommender-using-matrix-factorization-with-mlnet"></a>Didacticiel : créer un conseiller de film à l’aide du factorisation de matrice avec ML.NET
+# <a name="tutorial-build-a-movie-recommender-using-matrix-factorization-with-mlnet"></a>Tutorial: Construire un lecteur de film en utilisant la factorisation de matrice avec ML.NET
 
 Ce tutoriel explique comment créer un système de suggestion de films à l’aide de ML.NET dans une application console .NET. Les étapes de ce tutoriel utilisent le langage C# et Visual Studio 2019.
 
@@ -34,11 +34,11 @@ Vous effectuerez les étapes suivantes pour accomplir votre tâche, ainsi que to
 1. [Charger vos données](#load-your-data)
 2. [Créer et entraîner votre modèle](#build-and-train-your-model)
 3. [Évaluer votre modèle](#evaluate-your-model)
-4. [Utiliser votre modèle](#use-your-model)
+4. [Utiliser le modèle](#use-your-model)
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Conditions préalables requises
 
-* [Visual Studio 2017 version 15,6 ou ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec la charge de travail « développement multiplateforme .net Core » installée.
+* [Visual Studio 2017 version 15.6 ou plus tard](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec le ".NET Core cross-platform development" charge de travail installé.
 
 ## <a name="select-the-appropriate-machine-learning-task"></a>Sélectionner la tâche d’apprentissage automatique appropriée
 
@@ -46,9 +46,9 @@ Il existe plusieurs façons d’aborder les problèmes de suggestion, par exempl
 
 ## <a name="create-a-console-application"></a>Création d’une application console
 
-### <a name="create-a-project"></a>Créer un projet
+### <a name="create-a-project"></a>Création d’un projet
 
-1. Ouvrez Visual Studio 2017. Sélectionnez **Fichier** > **Nouveau** > **Projet** dans la barre de menus. Dans la boîte de dialogue **Nouveau projet**, sélectionnez le nœud **Visual C#** suivi du nœud **.NET Core**. Ensuite, sélectionnez le modèle de projet **Application console (.NET Core)**. Dans la zone de texte **Nom**, tapez « MovieRecommender », puis sélectionnez le bouton **OK**.
+1. Ouvrez Visual Studio 2017. Sélectionnez **File** > **New** > **Project** à partir de la barre de menu. Dans la boîte de dialogue **Nouveau projet**, sélectionnez le nœud **Visual C#** suivi du nœud **.NET Core**. Ensuite, sélectionnez le modèle de projet **Application console (.NET Core)**. Dans la zone de texte **Nom**, tapez « MovieRecommender », puis sélectionnez le bouton **OK**.
 
 2. Créez un répertoire nommé *Données* dans votre projet pour enregistrer le jeu de données :
 
@@ -56,7 +56,7 @@ Il existe plusieurs façons d’aborder les problèmes de suggestion, par exempl
 
 3. Installez les packages NuGet **Microsoft.ML** et **Microsoft.ML.Recommender** :
 
-    Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Gérer les packages NuGet**. Choisissez « nuget.org » comme source du package, sélectionnez l’onglet **Parcourir**, recherchez **Microsoft.ML**, sélectionnez le package dans la liste, puis sélectionnez le bouton **Installer**. Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés. Répétez ces étapes pour **Microsoft.ML.Recommender**.
+    Dans **Solution Explorer**, cliquez à droite sur le projet et sélectionnez Manage **NuGet Packages**. Choisissez « nuget.org » comme source du package, sélectionnez l’onglet **Parcourir**, recherchez **Microsoft.ML**, sélectionnez le package dans la liste, puis sélectionnez le bouton **Installer**. Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés. Répétez ces étapes pour **Microsoft.ML.Recommender**.
 
 4. Ajoutez les instructions `using` suivantes en tête de votre fichier *Program.cs* :
 
@@ -69,11 +69,11 @@ Il existe plusieurs façons d’aborder les problèmes de suggestion, par exempl
    * Cliquez avec le bouton droit sur [*recommendation-ratings-train.csv*](https://raw.githubusercontent.com/dotnet/machinelearning-samples/master/samples/csharp/getting-started/MatrixFactorization_MovieRecommendation/Data/recommendation-ratings-train.csv) et sélectionnez « Enregistrer le lien (ou la cible) sous... ».
    * Cliquez avec le bouton droit sur [*recommendation-ratings-test.csv*](https://raw.githubusercontent.com/dotnet/machinelearning-samples/master/samples/csharp/getting-started/MatrixFactorization_MovieRecommendation/Data/recommendation-ratings-test.csv) et sélectionnez « Enregistrer le lien (ou la cible) sous... ».
 
-     Veillez à enregistrer les fichiers \*.csv dans le dossier *Données* ou, après les avoir enregistrés ailleurs, à les y déplacer.
+     Assurez-vous d’enregistrer \*les fichiers .csv dans le dossier De *données,* ou après l’enregistrer ailleurs, déplacez les \*fichiers .csv vers le dossier De *données.*
 
-2. Dans l'Explorateur de solutions, cliquez avec le bouton droit sur chacun des fichiers \*.csv, puis sélectionnez **Propriétés**. Sous **Avancé**, définissez la valeur **Copier dans le répertoire de sortie** sur **Copier si plus récent**.
+2. Dans l'Explorateur de solutions, cliquez avec le bouton droit sur chacun des fichiers \*.csv, puis sélectionnez **Propriétés**. Sous **Advanced**, changer la valeur de **la copie à l’annuaire de sortie** à copier si plus **récent**.
 
-   ![GIF d’un utilisateur qui sélectionne copier si plus récent dans Visual Studio.](./media/movie-recommendation/copy-to-output-if-newer.gif)
+   ![GIF d’un utilisateur sélectionnant la copie si plus récent dans VS.](./media/movie-recommendation/copy-to-output-if-newer.gif)
 
 ## <a name="load-your-data"></a>Charger vos données
 
@@ -83,7 +83,7 @@ Les données d’évaluation pour les suggestions sont divisées en jeux de donn
 
 Voici un aperçu des données de vos fichiers \*.csv :
 
-![Capture d’écran de la préversion du jeu de données CVS.](./media/movie-recommendation/csv-file-dataset-preview.png)
+![Capture d’écran de l’aperçu du jeu de données CVS.](./media/movie-recommendation/csv-file-dataset-preview.png)
 
 Les fichiers \*.csv comportent quatre colonnes :
 
@@ -102,7 +102,7 @@ Puisque vous souhaitez prédire des évaluations de films, c’est la colonne d�
 | `movieId`      |               |
 | `timestamp`     |               |
 
-C’est à vous de décider quelles `Features` sont utilisées pour prévoir la `Label`. Vous pouvez également utiliser des méthodes comme l’importance de la [fonctionnalité de permutation](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md) pour vous aider à sélectionner le meilleur `Features`.
+C’est à vous de décider quelles `Features` sont utilisées pour prévoir la `Label`. Vous pouvez également utiliser des méthodes comme [l’importance de la fonction de permutation](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md) pour aider à sélectionner le meilleur `Features`.
 
 Dans ce cas, vous devez retirer la colonne `timestamp` comme `Feature`, car l’horodatage n’affecte pas vraiment comment un utilisateur évalue un film donné et ne contribue donc pas à la précision de la prédiction :
 
@@ -167,11 +167,11 @@ Ajoutez le code suivant dans la méthode `Main()` pour appeler votre méthode `L
 
 ## <a name="build-and-train-your-model"></a>Créer et entraîner votre modèle
 
-Il existe trois concepts majeurs dans ML.NET : les [données](../resources/glossary.md#data), les [transformateurs](../resources/glossary.md#transformer)et les [estimateurs](../resources/glossary.md#estimator).
+Il existe trois concepts majeurs dans ML.NET: [Données](../resources/glossary.md#data), [Transformateurs](../resources/glossary.md#transformer), et [Estimateurs](../resources/glossary.md#estimator).
 
 Les algorithmes d’entraînement de machine Learning nécessitent des données dans un certain format. Les `Transformers` servent à transformer les données tabulaires dans un format compatible.
 
-![Diagramme du flux de données du transformateur.](./media/movie-recommendation/data-transformer-transformed.png)
+![Diagramme du flux de données Transformer.](./media/movie-recommendation/data-transformer-transformed.png)
 
 Vous créez des `Transformers` dans ML.NET en créant des `Estimators`. Les `Estimators` prennent des données et retournent des `Transformers`.
 
@@ -320,7 +320,7 @@ Utilisez le `PredictionEngine` pour prédire l’évaluation en ajoutant le code
 
 [!code-csharp[PredictionEngine](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#PredictionEngine "Create Prediction Engine")]
 
-Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. Il est acceptable d’utiliser dans des environnements à thread unique ou prototype. Pour améliorer les performances et la sécurité des threads dans les environnements de production, utilisez le service `PredictionEnginePool`, qui crée une [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) de [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) objets à utiliser dans votre application. Consultez ce guide sur l' [utilisation de `PredictionEnginePool` dans une API Web ASP.net Core](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
+Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)n’est pas sans fil. Il est acceptable d’utiliser dans des environnements à thread unique ou prototype. Pour améliorer les performances et la `PredictionEnginePool` sécurité des fils [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) dans les environnements de production, utilisez le service, qui crée un des objets à utiliser dans toute votre application. Voir ce guide sur la façon [d’utiliser `PredictionEnginePool` dans un ASP.NET’API Web de base](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
 
 > [!NOTE]
 > L’extension de service `PredictionEnginePool` est disponible en préversion.
@@ -373,7 +373,7 @@ Ajoutez la ligne de code suivante dans la méthode `Main()` pour appeler votre m
 
 ### <a name="use-your-saved-model"></a>Utiliser le modèle enregistré
 
-Une fois que vous avez enregistré votre modèle formé, vous pouvez utiliser le modèle dans différents environnements. Consultez [enregistrer et charger des modèles formés](../how-to-guides/save-load-machine-learning-models-ml-net.md) pour apprendre à faire fonctionner un modèle de machine learning formé dans des applications.
+Une fois que vous avez enregistré votre modèle qualifié, vous pouvez consommer le modèle dans différents environnements. Consultez [Save et chargez des modèles formés](../how-to-guides/save-load-machine-learning-models-ml-net.md) pour apprendre à mettre en service un modèle d’apprentissage automatique formé dans les applications.
 
 ## <a name="results"></a>Résultats
 
@@ -428,7 +428,7 @@ Dans ce tutoriel, vous utilisez uniquement les trois `Features` (`user id`, `mov
 
 Même si c’est un bon point de départ, en réalité vous souhaiterez sans doute ajouter d’autres attributs ou `Features` (par exemple l’âge, le sexe, l’emplacement géographique et ainsi de suite) s’ils sont inclus dans le jeu de données. L’ajout de `Features` plus pertinentes peut aider à améliorer les performances de votre modèle de suggestion.
 
-Si vous n’êtes pas sûr de la `Features` qui peut être la plus pertinente pour votre tâche de Machine Learning, vous pouvez également utiliser la FCC (Feature contribution Calculation) et l’importance de la [fonctionnalité de permutation](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md), que ml.NET fournit pour découvrir les `Features`les plus influents.
+Si vous n’êtes pas sûr de savoir qui `Features` pourrait être le plus pertinent pour votre tâche d’apprentissage automatique, vous pouvez également faire usage de calcul de la contribution des fonctionnalités (FCC) et [l’importance caractéristique de permutation](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md), qui ML.NET fournit de découvrir le plus influent `Features`.
 
 ### <a name="algorithm-hyperparameters"></a>Hyperparamètres d’algorithme
 
@@ -453,10 +453,10 @@ var options = new MatrixFactorizationTrainer.Options
 
 L’algorithme de factorisation de matrice avec filtrage collaboratif n’est qu’une approche parmi d’autres pour effectuer des suggestions de films. Dans de nombreux cas, vous ne disposerez peut-être pas des données d’évaluation et aurez uniquement l’historique des films des utilisateurs. Dans d’autres cas, vous aurez peut-être davantage que juste les données d’évaluation de l’utilisateur.
 
-| Algorithme       | Scénario           | Exemple  |
+| Algorithm       | Scénario           | Exemple  |
 | ------------- |:-------------:| -----:|
-| Factorisation de matrice à une classe | Utilisez-la quand vous avez uniquement userId et movieId. Ce style de suggestion est basé sur le scénario de coachat (ou produits fréquemment achetés ensemble), ce qui signifie qu’il suggérera aux clients un ensemble de produits en fonction de leur propre historique de commandes. | [>Faites un essai](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/MatrixFactorization_ProductRecommendation) |
-| Machines de factorisation prenant en charge les champs | Elles permettent d’effectuer des suggestions quand vous disposez d’autres caractéristiques en plus de userId, productId et rating (par exemple la description du produit ou le prix du produit). Cette méthode adopte également une approche avec filtrage collaboratif. | [>Faites un essai](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/end-to-end-apps/Recommendation-MovieRecommender) |
+| Factorisation de matrice à une classe | Utilisez-la quand vous avez uniquement userId et movieId. Ce style de suggestion est basé sur le scénario de coachat (ou produits fréquemment achetés ensemble), ce qui signifie qu’il suggérera aux clients un ensemble de produits en fonction de leur propre historique de commandes. | [>Essayez-le](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/MatrixFactorization_ProductRecommendation) |
+| Machines de factorisation prenant en charge les champs | Elles permettent d’effectuer des suggestions quand vous disposez d’autres caractéristiques en plus de userId, productId et rating (par exemple la description du produit ou le prix du produit). Cette méthode adopte également une approche avec filtrage collaboratif. | [>Essayez-le](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/end-to-end-apps/Recommendation-MovieRecommender) |
 
 ### <a name="new-user-scenario"></a>Scénario avec nouvel utilisateur
 
@@ -466,7 +466,7 @@ L’un des problèmes courants dans le filtrage collaboratif est le problème de
 
 Les données utilisées dans ce tutoriel sont dérivées du [Jeu de données MovieLens](http://files.grouplens.org/datasets/movielens/).
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 Dans ce didacticiel, vous avez appris à :
 

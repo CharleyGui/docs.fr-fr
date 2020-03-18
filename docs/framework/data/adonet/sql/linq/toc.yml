@@ -1,7 +1,7 @@
 - name: LINQ to SQL
   href: index.md
   items:
-    - name: Prise en main
+    - name: Commencer
       href: getting-started.md
       items:
         - name: Que faire avec LINQ to SQL
@@ -13,21 +13,21 @@
         - name: Apprentissage par les procédures pas à pas
           href: learning-by-walkthroughs.md
           items:
-            - name: "Procédure pas à pas\_: Requête et modèle objet simples (Visual Basic)"
+            - name: "Procédure pas à pas\_: requête et modèle objet simples (Visual Basic)"
               href: walkthrough-simple-object-model-and-query-visual-basic.md
-            - name: "Procédure pas à pas\_: Interrogation entre relations (Visual Basic)"
+            - name: "Procédure pas à pas\_: interrogation de relations (Visual Basic)"
               href: walkthrough-querying-across-relationships-visual-basic.md
-            - name: "Procédure pas à pas\_: Manipulation de données (Visual Basic)"
+            - name: "Procédure pas à pas\_: manipulation de données (Visual Basic)"
               href: walkthrough-manipulating-data-visual-basic.md
-            - name: "Procédure pas à pas\_: Utilisation de procédures stockées uniquement (Visual Basic)"
+            - name: "Procédure pas à pas\_: utilisation de procédures stockées uniquement (Visual Basic)"
               href: walkthrough-using-only-stored-procedures-visual-basic.md
-            - name: "Procédure pas à pas\_: Requête et modèle objet simples (C#)"
+            - name: "Procédure pas à pas\_: requête et modèle objet simples (C#)"
               href: walkthrough-simple-object-model-and-query-csharp.md
-            - name: "Procédure pas à pas\_: Interrogation entre relations (C#)"
+            - name: "Procédure pas à pas\_: interrogation de relations (C#)"
               href: walkthrough-querying-across-relationships-csharp.md
-            - name: "Procédure pas à pas\_: Manipulation de données (C#)"
+            - name: "Procédure pas à pas\_: manipulation de données (C#)"
               href: walkthrough-manipulating-data-csharp.md
-            - name: "Procédure pas à pas\_: Utilisation de procédures stockées uniquement (C#)"
+            - name: "Procédure pas à pas\_: utilisation de procédures stockées uniquement (C#)"
               href: walkthrough-using-only-stored-procedures-csharp.md
     - name: Guide de programmation
       href: programming-guide.md
@@ -35,76 +35,76 @@
         - name: Création du modèle objet
           href: creating-the-object-model.md
           items:
-            - name: "Procédure\_: Générer le modèle objet en Visual Basic ou en C#"
+            - name: "Comment\_: générer le modèle objet en Visual Basic ou C#"
               href: how-to-generate-the-object-model-in-visual-basic-or-csharp.md
-            - name: "Procédure\_: Générer le modèle objet sous forme de fichier externe"
+            - name: "Comment\_: générer le modèle objet sous forme de fichier externe"
               href: how-to-generate-the-object-model-as-an-external-file.md
-            - name: "Procédure\_: Générer du code personnalisé en modifiant un fichier DBML"
+            - name: "Comment\_: générer du code personnalisé en modifiant un fichier DBML"
               href: how-to-generate-customized-code-by-modifying-a-dbml-file.md
-            - name: "Procédure\_: Valider des fichiers de mappage externes et DBML"
+            - name: "Comment\_: valider des fichiers de mappage externes et DBML"
               href: how-to-validate-dbml-and-external-mapping-files.md
-            - name: "Procédure\_: Rendre les entités sérialisables"
+            - name: "Comment\_: rendre les entités sérialisables"
               href: how-to-make-entities-serializable.md
-            - name: "Procédure\_: Personnaliser des classes d’entité à l’aide de l’éditeur de code"
+            - name: "Comment\_: personnaliser des classes d'entité à l'aide de l'éditeur de code"
               href: how-to-customize-entity-classes-by-using-the-code-editor.md
               items:
-                - name: "Procédure\_: Spécifier des noms de bases de données"
+                - name: "Comment\_: spécifier des noms de bases de données"
                   href: how-to-specify-database-names.md
-                - name: "Procédure\_: Représenter des tables en tant que classes"
+                - name: "Comment\_: représenter des tables en tant que classes"
                   href: how-to-represent-tables-as-classes.md
-                - name: "Procédure\_: Représenter des colonnes en tant que membres de classe"
+                - name: "Comment\_: représenter des colonnes en tant que membres de classe"
                   href: how-to-represent-columns-as-class-members.md
-                - name: "Procédure\_: Représenter les clés primaires"
+                - name: "Comment\_: représenter les clés primaires"
                   href: how-to-represent-primary-keys.md
-                - name: "Procédure\_: Mapper des relations de base de données"
+                - name: "Comment\_: mapper des relations de base de données"
                   href: how-to-map-database-relationships.md
-                - name: "Procédure\_: Représenter des colonnes en tant que colonnes générées par une base de données"
+                - name: "Comment\_: représenter des colonnes en tant que colonnes générées par une base de données"
                   href: how-to-represent-columns-as-database-generated.md
-                - name: "Procédure\_: Représenter des colonnes en tant que colonnes timestamp ou version"
+                - name: "Comment\_: représenter des colonnes en tant que colonnes timestamp ou version"
                   href: how-to-represent-columns-as-timestamp-or-version-columns.md
-                - name: "Procédure\_: Spécifier des types de données de base de données"
+                - name: "Comment\_: spécifier des types de données de base de données"
                   href: how-to-specify-database-data-types.md
-                - name: "Procédure\_: Représenter des colonnes calculées"
+                - name: "Comment\_: représenter des colonnes calculées"
                   href: how-to-represent-computed-columns.md
-                - name: "Procédure\_: Spécifier des champs de stockage privés"
+                - name: "Comment\_: spécifier des champs de stockage privés"
                   href: how-to-specify-private-storage-fields.md
-                - name: "Procédure\_: Représenter des colonnes en tant que colonnes autorisant les valeurs Null"
+                - name: "Comment\_: représenter des colonnes en tant que colonnes autorisant les valeurs Null"
                   href: how-to-represent-columns-as-allowing-null-values.md
-                - name: "Procédure\_: Mapper des hiérarchies d’héritage"
+                - name: "Comment\_: mapper des hiérarchies d'héritage"
                   href: how-to-map-inheritance-hierarchies.md
-                - name: "Procédure\_: Spécifier la vérification de conflits d’accès concurrentiel"
+                - name: "Comment\_: spécifier la vérification de conflits d'accès concurrentiel"
                   href: how-to-specify-concurrency-conflict-checking.md
         - name: Communication avec la base de données
           href: communicating-with-the-database.md
           items:
-            - name: "Procédure\_: Se connecter à une base de données"
+            - name: "Comment\_: se connecter à une base de données"
               href: how-to-connect-to-a-database.md
-            - name: "Procédure\_: Exécuter directement des commandes SQL"
+            - name: "Comment\_: exécuter directement des commandes SQL"
               href: how-to-directly-execute-sql-commands.md
-            - name: "Procédure\_: Réutiliser une connexion entre une commande ADO.NET et un DataContext"
+            - name: "Comment\_: réutiliser une connexion entre une commande ADO.NET et un DataContext"
               href: how-to-reuse-a-connection-between-an-ado-net-command-and-a-datacontext.md
         - name: Interrogation de la base de données
           href: querying-the-database.md
           items:
-            - name: "Procédure\_: Demander des informations"
+            - name: "Comment\_: demander des informations"
               href: how-to-query-for-information.md
-            - name: "Procédure\_: Récupérer des informations en lecture seule"
+            - name: "Comment\_: récupérer des informations en lecture seule"
               href: how-to-retrieve-information-as-read-only.md
-            - name: "Procédure\_: Contrôler la quantité de données associées récupérées"
+            - name: "Comment\_: contrôler la quantité de données liées récupérées"
               href: how-to-control-how-much-related-data-is-retrieved.md
-            - name: "Procédure\_: Filtrer les données associées"
+            - name: "Comment\_: filtrer des données liées"
               href: how-to-filter-related-data.md
-            - name: "Procédure\_: Désactiver le chargement différé"
+            - name: "Comment\_: désactiver le chargement différé"
               href: how-to-turn-off-deferred-loading.md
-            - name: "Procédure\_: Exécuter directement des requêtes SQL"
+            - name: "Comment\_: exécuter directement des requêtes SQL"
               href: how-to-directly-execute-sql-queries.md
-            - name: "Procédure\_: Stocker et réutiliser des requêtes"
+            - name: "Comment\_: stocker et réutiliser des requêtes"
               href: how-to-store-and-reuse-queries.md
-            - name: "Procédure\_: Gérer les clés composites dans les requêtes"
+            - name: "Comment\_: gérer les clés composites dans les requêtes"
               href: how-to-handle-composite-keys-in-queries.md
-            - name: "Procédure\_: Récupérer plusieurs objets à la fois"
+            - name: "Comment\_: récupérer plusieurs objets à la fois"
               href: how-to-retrieve-many-objects-at-once.md
-            - name: "Procédure\_: Filtrer au niveau du DataContext"
+            - name: "Comment\_: filtrer au niveau du DataContext"
               href: how-to-filter-at-the-datacontext-level.md
             - name: Exemples de requêtes
               href: query-examples.md
@@ -155,45 +155,45 @@
         - name: Apport et soumission de modifications de données
           href: making-and-submitting-data-changes.md
           items:
-            - name: "Procédure\_: Insérer des lignes dans la base de données"
+            - name: "Comment\_: insérer des lignes dans la base de données"
               href: how-to-insert-rows-into-the-database.md
-            - name: "Procédure\_: Mettre à jour des lignes dans la base de données"
+            - name: "Comment\_: mettre à jour des lignes dans la base de données"
               href: how-to-update-rows-in-the-database.md
-            - name: "Procédure\_: Supprimer des lignes de la base de données"
+            - name: "Comment\_: supprimer des lignes de la base de données"
               href: how-to-delete-rows-from-the-database.md
-            - name: "Procédure\_: Soumettre des modifications à la base de données"
+            - name: "Comment\_: soumettre des modifications à la base de données"
               href: how-to-submit-changes-to-the-database.md
-            - name: "Procédure\_: Mettre entre parenthèses des soumissions de données à l’aide de transactions"
+            - name: "Comment\_: mettre entre parenthèses des soumissions de données à l’aide de transactions"
               href: how-to-bracket-data-submissions-by-using-transactions.md
-            - name: "Procédure\_: Créer dynamiquement une base de données"
+            - name: "Comment\_: créer dynamiquement une base de données"
               href: how-to-dynamically-create-a-database.md
-            - name: "Procédure\_: Gérer les conflits de changement"
+            - name: "Comment\_: gérer les conflits de changement"
               href: how-to-manage-change-conflicts.md
               items:
-                - name: "Procédure\_: Détecter et résoudre des soumissions en conflit"
+                - name: "Comment\_: détecter et résoudre des soumissions en conflit"
                   href: how-to-detect-and-resolve-conflicting-submissions.md
-                - name: "Procédure\_: Spécifier le moment où des exceptions d’accès concurrentiel sont levées"
+                - name: "Comment\_: spécifier le moment où des exceptions d'accès concurrentiel sont levées"
                   href: how-to-specify-when-concurrency-exceptions-are-thrown.md
-                - name: "Procédure\_: Spécifier les membres dont les conflits d’accès concurrentiel doivent être vérifiés"
+                - name: "Comment\_: spécifier les membres dont les conflits d'accès concurrentiel doivent être vérifiés"
                   href: how-to-specify-which-members-are-tested-for-concurrency-conflicts.md
-                - name: "Procédure\_: Récupérer des informations sur les conflits entre entités"
+                - name: "Comment\_: récupérer des informations sur les conflits entre entités"
                   href: how-to-retrieve-entity-conflict-information.md
-                - name: "Procédure\_: Récupérer des informations sur les conflits entre membres"
+                - name: "Comment\_: récupérer des informations sur les conflits entre membres"
                   href: how-to-retrieve-member-conflict-information.md
-                - name: "Procédure\_: Résoudre des conflits en conservant des valeurs de bases de données"
+                - name: "Comment\_: résoudre des conflits en conservant des valeurs de bases de données"
                   href: how-to-resolve-conflicts-by-retaining-database-values.md
-                - name: "Procédure\_: Résoudre des conflits en remplaçant des valeurs de bases de données"
+                - name: "Comment\_: résoudre des conflits d'accès concurrentiel en remplaçant des valeurs de base de données"
                   href: how-to-resolve-conflicts-by-overwriting-database-values.md
-                - name: "Procédure\_: Résoudre les conflits d’accès concurrentiel en fusionnant des valeurs de base de données"
+                - name: "Comment\_: résoudre les conflits d'accès concurrentiel en fusionnant des valeurs de base de données"
                   href: how-to-resolve-conflicts-by-merging-with-database-values.md
         - name: Prise en charge du débogage
           href: debugging-support.md
           items:
-            - name: "Procédure\_: Afficher le code SQL généré"
+            - name: "Comment\_: afficher le code SQL généré"
               href: how-to-display-generated-sql.md
-            - name: "Procédure\_: Afficher un ensemble de modifications ou ChangeSet"
+            - name: "Comment\_: afficher un ensemble de modifications ou ChangeSet"
               href: how-to-display-a-changeset.md
-            - name: "Procédure\_: Afficher des commandes LINQ to SQL"
+            - name: "Comment\_: afficher des commandes LINQ to SQL"
               href: how-to-display-linq-to-sql-commands.md
             - name: Résolution des problèmes
               href: troubleshooting.md
@@ -207,7 +207,7 @@
             - name: 'Personnalisation des opérations d''insertion, de mise à jour et de suppression'
               href: customizing-insert-update-and-delete-operations.md
               items:
-                - name: "Opérations de personnalisation\_: Vue d'ensemble"
+                - name: "Personnalisation d'opérations\_: vue d'ensemble"
                   href: customizing-operations-overview.md
                 - name: 'Opérations d''insertion, de mise à jour et de suppression'
                   href: insert-update-and-delete-operations.md
@@ -228,7 +228,7 @@
                   href: linq-to-sql-n-tier-with-aspnet.md
                 - name: Applications multicouches LINQ to SQL avec les services Web
                   href: linq-to-sql-n-tier-with-web-services.md
-                - name: Implémentation de la logique métier dans les applications multiniveaux
+                - name: Implémentation de la logique métier dans les applications multicouches (LINQ to SQL)
                   href: implementing-business-logic-linq-to-sql.md
                 - name: Récupération de données et opérations CUD dans les applications multicouches (LINQ to SQL)
                   href: data-retrieval-and-cud-operations-in-n-tier-applications.md
@@ -238,7 +238,7 @@
               href: the-linq-to-sql-object-model.md
             - name: États des objets et suivi des modifications
               href: object-states-and-change-tracking.md
-            - name: "Accès concurrentiel optimiste\_: Vue d'ensemble"
+            - name: "Accès concurrentiel optimiste\_: vue d'ensemble"
               href: optimistic-concurrency-overview.md
             - name: Concepts relatifs aux requêtes
               href: query-concepts.md
@@ -247,7 +247,7 @@
                   href: linq-to-sql-queries.md
                 - name: Interrogation de relations
                   href: querying-across-relationships.md
-                - name: Exécution distante et exécution locale
+                - name: Comparaison entre une exécution de requête locale et une exécution de requête distante
                   href: remote-vs-local-execution.md
                 - name: Comparaison entre le chargement différé et le chargement immédiat
                   href: deferred-versus-immediate-loading.md
@@ -260,13 +260,13 @@
             - name: Procédures stockées
               href: stored-procedures.md
               items:
-                - name: "Procédure\_: Retourner des ensembles de lignes"
+                - name: "Comment\_: retourner des jeux de lignes"
                   href: how-to-return-rowsets.md
-                - name: "Procédure\_: Utiliser des procédures stockées qui prennent des paramètres"
+                - name: "Comment\_: utiliser des procédures stockées qui prennent des paramètres"
                   href: how-to-use-stored-procedures-that-take-parameters.md
-                - name: "Procédure\_: Utiliser des procédures stockées mappées pour plusieurs formes de résultats"
+                - name: "Comment\_: utiliser des procédures stockées mappées pour plusieurs formes de résultats"
                   href: how-to-use-stored-procedures-mapped-for-multiple-result-shapes.md
-                - name: "Procédure\_: Utiliser des procédures stockées mappées pour des formes de résultats séquentielles"
+                - name: "Comment\_: utiliser des procédures stockées mappées pour des formes de résultats séquentielles"
                   href: how-to-use-stored-procedures-mapped-for-sequential-result-shapes.md
                 - name: Personnalisation d'opérations à l'aide de procédures stockées
                   href: customizing-operations-by-using-stored-procedures.md
@@ -281,13 +281,13 @@
             - name: Fonctions définies par l'utilisateur
               href: user-defined-functions.md
               items:
-                - name: "Procédure\_: Utiliser des fonctions scalaires définies par l’utilisateur"
+                - name: "Comment\_: utiliser des fonctions scalaires définies par l'utilisateur"
                   href: how-to-use-scalar-valued-user-defined-functions.md
-                - name: "Procédure\_: Utiliser des fonctions tables définies par l’utilisateur"
+                - name: "Comment\_: utiliser des fonctions table définies par l'utilisateur"
                   href: how-to-use-table-valued-user-defined-functions.md
-                - name: "Procédure\_: Appeler des fonctions inline définies par l’utilisateur"
+                - name: "Comment\_: appeler des fonctions inline définies par l'utilisateur"
                   href: how-to-call-user-defined-functions-inline.md
-    - name: Référence
+    - name: Reference
       href: reference.md
       items:
         - name: Fonctions et types de données

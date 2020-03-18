@@ -3,19 +3,19 @@
   items:
     - name: Classe et propriétés d'exception
       href: exception-class-and-properties.md
-    - name: "Procédure\_: utiliser le bloc try/catch pour intercepter des exceptions"
+    - name: Guide pratique pour utiliser le bloc try/catch pour intercepter des exceptions
       href: how-to-use-the-try-catch-block-to-catch-exceptions.md
-    - name: "Procédure\_: utiliser des exceptions spécifiques dans un bloc Catch"
+    - name: "Comment\_: utiliser des exceptions spécifiques dans un bloc catch"
       href: how-to-use-specific-exceptions-in-a-catch-block.md
-    - name: "Procédure\_: lever explicitement des exceptions"
+    - name: "Comment\_: lever explicitement des exceptions"
       href: how-to-explicitly-throw-exceptions.md
-    - name: "Procédure\_: créer des exceptions définies par l’utilisateur"
+    - name: "Comment\_: créer des exceptions définies par l'utilisateur"
       href: how-to-create-user-defined-exceptions.md
     - name: "Guide pratique\_: créer des exceptions définies par l’utilisateur avec des messages d’exception localisés"
       href: how-to-create-localized-exception-messages.md
     - name: Utilisation de gestionnaires filtrés par l'utilisateur
       href: using-user-filtered-exception-handlers.md
-    - name: "Procédure\_: utiliser des blocs Finally"
+    - name: "Comment\_: utiliser des blocs finally"
       href: how-to-use-finally-blocks.md
     - name: "Gestion des exceptions COM\_Interop"
       href: handling-com-interop-exceptions.md

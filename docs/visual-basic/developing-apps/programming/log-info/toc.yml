@@ -1,25 +1,25 @@
 - name: Enregistrement d’informations provenant de l’application
   href: index.md
   items:
-    - name: "Procédure\_: écrire des messages de journal"
+    - name: "Comment\_: écrire des messages de journal"
       href: how-to-write-log-messages.md
-    - name: "Procédure\_: journaliser des exceptions"
+    - name: "Comment\_: enregistrer des exceptions"
       href: how-to-log-exceptions.md
-    - name: "Procédure\_: enregistrer des messages quand l’application démarre ou s’arrête"
+    - name: "Comment\_: enregistrer des messages lorsque l'application démarre ou s'arrête"
       href: how-to-log-messages-when-the-application-starts-or-shuts-down.md
-    - name: "Procédure\_: écrire dans le journal des événements de l’application"
+    - name: "Comment\_: écrire dans le journal des événements de l'application"
       href: how-to-write-to-an-application-event-log.md
-    - name: "Procédure\_: écrire des informations sur les événements dans un fichier texte"
+    - name: "Comment\_: écrire des informations sur des événements dans un fichier texte"
       href: how-to-write-event-information-to-a-text-file.md
     - name: Utilisation des journaux des applications
       href: working-with-application-logs.md
-    - name: "Procédure pas à pas\_: détermination de l’emplacement des informations My.Application.Log"
+    - name: "Procédure pas à pas\_: détermination de l'emplacement des informations My.Application.Log"
       href: walkthrough-determining-where-my-application-log-writes-information.md
-    - name: "Procédure pas à pas\_: modification de l’emplacement des informations My.Application.Log"
+    - name: "Procédure pas à pas\_: modification de l'emplacement des informations My.Application.Log"
       href: walkthrough-changing-where-my-application-log-writes-information.md
     - name: "Procédure pas à pas\_: filtrage de la sortie de My.Application.Log"
       href: walkthrough-filtering-my-application-log-output.md
-    - name: "Procédure pas à pas\_: création d’écouteurs de journalisation personnalisés"
+    - name: "Procédure pas à pas\_: création d'écouteurs de journalisation personnalisés"
       href: walkthrough-creating-custom-log-listeners.md
-    - name: 'Résolution des problèmes : Écouteurs de journalisation'
+    - name: "Dépannage\_: écouteurs de journalisation"
       href: troubleshooting-log-listeners.md

@@ -3,10 +3,10 @@ title: Créer des applications ASP.NET Core 2.2 déployées en tant que contene
 description: Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
 ms.date: 02/25/2019
 ms.openlocfilehash: ab64a0423ceceb8285c159af276d6d97e12379d8
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70848756"
 ---
 # <a name="build-aspnet-core-22-applications-deployed-as-linux-containers-into-an-akskubernetes-orchestrator"></a>Créer des applications ASP.NET Core 2.2 déployées en tant que conteneurs Linux dans un orchestrateur AKS/Kubernetes
@@ -33,7 +33,7 @@ Cet exemple utilise un projet simple basé sur un modèle d’API web Visual Stu
 
 **Figure 4-36**. Création d’une application ASP.NET Core
 
-Pour créer l’exemple de projet dans Visual Studio, sélectionnez **Fichier** > **Nouveau** > **Projet**, sélectionnez les types de projet **Web** dans le volet gauche, puis **Application web ASP.NET Core**.
+Pour créer l’exemple de projet dans Visual Studio, sélectionnez **File** > **New** > **Project**, sélectionnez les types de projet **Web** dans le volet gauche, **suivis de ASP.NET application Web de base.**
 
 Visual Studio liste les modèles pour les projets web. Pour notre exemple, sélectionnez **API** pour créer une application API Web ASP.NET.
 
@@ -45,9 +45,9 @@ Vérifiez que vous avez sélectionné le framework ASP.NET Core 2.2. .NET Core�
 
 Si vous avez des versions antérieures de .NET Core, vous pouvez télécharger et installer la version 2.2 à partir de <https://dotnet.microsoft.com/download>.
 
-Vous pouvez ajouter la prise en charge de Docker lors de la création du projet ou par la suite, de sorte à pouvoir « dockeriser » votre projet à tout moment. Pour ajouter la prise en charge de Docker après la création du projet, cliquez avec le bouton droit sur le nœud du projet dans l’Explorateur de solutions et sélectionnez **Ajouter** > **Prise en charge de Docker** dans le menu contextuel.
+Vous pouvez ajouter la prise en charge de Docker lors de la création du projet ou par la suite, de sorte à pouvoir « dockeriser » votre projet à tout moment. Pour ajouter le support Docker après la création du projet, cliquez à droite sur le nœud du projet dans Solution Explorer et **sélectionnez le** > support Add**Docker** sur le menu context.
 
-![Option de menu contextuel pour ajouter la prise en charge de l’ancrage à un projet existant : cliquez avec le bouton droit (sur le projet) > ajoutez > prise en charge de l’ancrage.](media/add-docker-support-to-project.png)
+![Option de menu contextuelle pour ajouter le support Docker à un projet existant : Cliquez à droite (sur le projet) > Ajouter > support Docker.](media/add-docker-support-to-project.png)
 
 **Figure 4-38**. Ajout de la prise en charge de Docker à un projet existant
 
@@ -69,7 +69,7 @@ Après avoir exécuté le projet, vous pouvez lister les images à l’aide de l
 docker images
 ```
 
-![La sortie de console de la commande dockers images affiche une liste avec : dépôt, étiquette, ID d’image, créé (date) et taille.](media/docker-images-command.png)
+![Sortie de la console à partir de la commande d’images docker, montre une liste avec: Dépôt, Tag, Id Image, Créé (date), et La taille.](media/docker-images-command.png)
 
 **Figure 4-40**. Affichage des images Docker
 
@@ -89,7 +89,7 @@ Si vous exécutez la commande `docker image`, vous voyez deux images créées, u
 
 ### <a name="create-a-new-tag-for-the-image"></a>Créer une balise pour l’image
 
-Chaque image de conteneur doit être marquée avec le nom `loginServer` du Registre. Cette balise est utilisée pour le routage lors du push d’images de conteneur dans un registre d’images.
+Chaque image de conteneur doit être marquée avec le `loginServer` nom du registre. Cette balise est utilisée pour l’acheminement lors de l’envoi des images de conteneur dans un registre d’images.
 
 Vous pouvez voir le nom `loginServer` à partir du portail Azure, en prenant les informations auprès d’Azure Container Registry.
 
@@ -190,7 +190,7 @@ Vous êtes maintenant presque prêt à effectuer un déploiement en utilisant **
 az aks get-credentials --resource-group MSSampleResourceGroupAKS --name mssampleclusterk801
 ```
 
-![Sortie de la console à partir de la commande ci-dessus : fusionné «MSSampleK8Cluster en tant que contexte actuel dans/root/.Kube/config](media/getting-aks-credentials.png)
+![Sortie de console de la commande ci-dessus: Fusionné "MSSampleK8Cluster comme contexte actuel dans /root/.kube/config](media/getting-aks-credentials.png)
 
 **Figure 4-47**. Obtention des informations d’identification
 
@@ -219,8 +219,8 @@ Puis accédez à l’URL `http://127.0.0.1:8001`.
 Votre application est maintenant déployée sur Azure, à l’aide d’un conteneur Linux et d’un cluster AKS Kubernetes. Vous pouvez accéder à votre application par le biais de l’adresse IP publique de votre service, que vous pouvez obtenir à partir du portail Azure.
 
 > [!NOTE]
-> Vous pouvez voir comment créer le cluster AKS pour cet exemple dans la section [**Déployer sur Azure Kubernetes Service (AKS)** ](deploy-azure-kubernetes-service.md) de ce guide.
+> Vous pouvez voir comment créer le cluster AKS pour cet exemple dans la section [**Déployer sur Azure Kubernetes Service (AKS)**](deploy-azure-kubernetes-service.md) de ce guide.
 
 >[!div class="step-by-step"]
->[Précédent](set-up-windows-containers-with-powershell.md)
->[Suivant](../docker-devops-workflow/index.md)
+>[Suivant précédent](set-up-windows-containers-with-powershell.md)
+>[Next](../docker-devops-workflow/index.md)

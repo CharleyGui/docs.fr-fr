@@ -5,10 +5,10 @@ author: pkulikov
 ms.technology: csharp-fundamentals
 ms.date: 09/02/2019
 ms.openlocfilehash: b901ae661ebd4af625d9f3c999b0eb50dda1990d
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73039210"
 ---
 # <a name="string-interpolation-in-c"></a>Interpolation de chaîne en C\#
@@ -75,7 +75,7 @@ Pour plus d’informations, consultez la section [Composant d’alignement](../.
 
 Les chaînes interpolées prennent en charge toutes les séquences d’échappement qui peuvent être utilisés dans les littéraux de chaîne ordinaires. Pour plus d’informations, consultez [Séquences d’échappement de chaîne](../programming-guide/strings/index.md#string-escape-sequences).
 
-Pour interpréter les séquences d’échappement littéralement, utilisez un littéral de chaîne [textuelle](../language-reference/tokens/verbatim.md). Une chaîne textuelle interpolée commence par le caractère `$` suivi du caractère `@`. À C# partir de 8,0, vous pouvez utiliser les jetons`$`et`@`dans n’importe quel ordre : `$@"..."`et`@$"..."`sont des chaînes textuelles interpolées valides.
+Pour interpréter les séquences d’échappement littéralement, utilisez un littéral de chaîne [textuelle](../language-reference/tokens/verbatim.md). Une chaîne textuelle interpolée `$` commence par `@` le personnage suivi du personnage. En commençant par C 8.0, `$` `@` vous pouvez utiliser les `$@"..."` jetons et les jetons dans n’importe quel ordre : les deux et `@$"..."` sont valides interpolés chaînes textuelles.
 
 Pour inclure une accolade, « { » ou «} », dans une chaîne de résultat, utilisez deux accolades, « {{ » ou «}} ». Pour plus d’informations, consultez la section [Échappement des accolades](../../standard/base-types/composite-formatting.md#escaping-braces) de la rubrique [Mise en forme composite](../../standard/base-types/composite-formatting.md).
 
@@ -112,4 +112,4 @@ Ce tutoriel décrit des scénarios courants d’utilisation de l’interpolation
 - <xref:System.String.Format%2A?displayProperty=nameWithType>
 - <xref:System.FormattableString?displayProperty=nameWithType>
 - <xref:System.IFormattable?displayProperty=nameWithType>
-- [Chaînes](../programming-guide/strings/index.md)
+- [Cordes](../programming-guide/strings/index.md)

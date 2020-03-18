@@ -9,12 +9,12 @@ ms.topic: landing-page
 ms.custom: updateeachrelease
 ms.date: 01/24/2020
 ms.openlocfilehash: 2c3901f8d5c8bb0c7ffde31b1aec19a81af9f4ce
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78239922"
 ---
 # <a name="net-api-browser"></a>Navigateur d’API .NET
 
-Bienvenue dans le navigateur d’API .NET, votre magasin unique pour tous. API .net de Microsoft. Pour rechercher une API managée, indiquez-la dans la zone ci-dessous. Vous pouvez en savoir plus sur le navigateur [d’API dans notre billet de blog](https://aka.ms/apibrowser). Si vous avez des commentaires, créez un nouveau problème dans le [référentiel MicrosoftDocs/feedback sur GitHub](https://github.com/MicrosoftDocs/feedback/issues).
+Bienvenue sur le navigateur API .NET - votre guichet unique pour tous . API net de Microsoft. Pour rechercher une API managée, indiquez-la dans la zone ci-dessous. Vous pouvez en savoir plus sur le navigateur API [dans notre blog](https://aka.ms/apibrowser). Si vous avez des commentaires, créez un nouveau numéro dans le [référentiel MicrosoftDocs/feedback sur GitHub](https://github.com/MicrosoftDocs/feedback/issues).

@@ -5,19 +5,19 @@ helpviewer_keywords:
 - fields [C#]
 ms.assetid: 3cbb2f61-75f8-4cce-b4ef-f5d1b3de0db7
 ms.openlocfilehash: 46d4f77a4a490b2acdb5da20b9a477f27c38d410
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77628239"
 ---
 # <a name="fields-c-programming-guide"></a>Champs (Guide de programmation C#)
 
 Un *champ* est une variable de tout type qui est déclarée directement dans une [classe](../../language-reference/keywords/class.md) ou un [struct](../../language-reference/builtin-types/struct.md). Les champs sont *membres* de leur type contenant.
 
-Une classe ou un struct peut avoir des champs d’instance, des champs statiques, ou les deux. Les champs d’instance sont spécifiques à une instance de type. Si vous avez une classe T avec un champ d’instance F, vous pouvez créer deux objets de type T et modifier la valeur de F dans chaque objet, sans affecter la valeur de l’autre objet. En revanche, un champ statique appartient à la classe, et il est partagé entre toutes les instances de cette classe. Vous pouvez accéder au champ statique uniquement à l’aide du nom de la classe. Si vous accédez au champ static par un nom d’instance, vous recevez une erreur de compilation [CS0176](../../misc/cs0176.md) .
+Une classe ou une structtruct peut avoir des champs d’instance, des champs statiques, ou les deux. Les champs d’instance sont spécifiques à une instance de type. Si vous avez une classe T avec un champ d’instance F, vous pouvez créer deux objets de type T et modifier la valeur de F dans chaque objet, sans affecter la valeur de l’autre objet. En revanche, un champ statique appartient à la classe, et il est partagé entre toutes les instances de cette classe. Vous ne pouvez accéder au champ statique qu’en utilisant le nom de classe. Si vous accédez au champ statique par un nom d’instance, vous obtenez une erreur de compilation [CS0176.](../../misc/cs0176.md)
 
-En règle générale, vous devez utiliser des champs uniquement pour les variables dont l’accessibilité est privée ou protégée. Les données que votre classe expose au code client doivent être fournies par le biais de [méthodes](./methods.md), de [Propriétés](./properties.md)et d' [indexeurs](../indexers/index.md). L’utilisation de ces constructions pour l’accès indirect aux champs internes permet d’éviter les valeurs d’entrée non valides. Un champ privé qui stocke les données exposées par une propriété publique est appelé *magasin de stockage* ou *champ de stockage*.
+En règle générale, vous devez utiliser des champs uniquement pour les variables dont l’accessibilité est privée ou protégée. Les données que votre classe expose au code client doivent être fournies par des [méthodes,](./methods.md) [des propriétés](./properties.md)et [des indexateurs.](../indexers/index.md) L’utilisation de ces constructions pour l’accès indirect aux champs internes permet d’éviter les valeurs d’entrée non valides. Un champ privé qui stocke les données exposées par une propriété publique est appelé *magasin de stockage* ou *champ de stockage*.
 
 En général, les champs stockent les données qui doivent être accessibles à plusieurs méthodes de classe et doivent être stockées plus longtemps que la durée de vie d’une méthode. Par exemple, une classe qui représente une date de calendrier peut avoir trois champs de type entier : un pour le mois, un pour le jour et un pour l’année. Les variables qui ne sont pas utilisées en dehors de la portée d’une méthode doivent être déclarées comme des *variables locales* dans le corps de la méthode.
 
@@ -38,9 +38,9 @@ Les champs sont initialisés juste avant le constructeur pour l’instance d’o
 > [!NOTE]
 > Un initialiseur de champ ne peut pas référencer d’autres champs d’instance.
 
-Les champs peuvent être marqués comme [public](../../language-reference/keywords/public.md), [Private](../../language-reference/keywords/private.md), [protected](../../language-reference/keywords/protected.md), [Internal](../../language-reference/keywords/internal.md), [protected internal](../../language-reference/keywords/protected-internal.md)ou [Private protected](../../language-reference/keywords/private-protected.md). Ces modificateurs d’accès définissent comment les utilisateurs de la classe peuvent accéder aux champs. Pour plus d’informations, consultez la page [Modificateurs d’accès](./access-modifiers.md).
+Les champs peuvent être [marqués](../../language-reference/keywords/public.md)comme publics , [privés](../../language-reference/keywords/private.md), [protégés,](../../language-reference/keywords/protected.md) [internes,](../../language-reference/keywords/internal.md) [protégés internes,](../../language-reference/keywords/protected-internal.md)ou [privés protégés](../../language-reference/keywords/private-protected.md). Ces modificateurs d’accès définissent comment les utilisateurs de la classe peuvent accéder aux champs. Pour plus d’informations, consultez [Modificateurs d’accès](./access-modifiers.md).
 
-Facultatif : vous pouvez déclarer un champ comme [static](../../language-reference/keywords/static.md). Ainsi, le champ est disponible à tout moment pour les appelants, même si aucune instance de la classe n’existe. Pour plus d’informations, consultez [Classes statiques et membres de classe statique](./static-classes-and-static-class-members.md).
+Facultatif : vous pouvez déclarer un champ comme [static](../../language-reference/keywords/static.md). Ainsi, le champ est disponible à tout moment pour les appelants, même si aucune instance de la classe n’existe. Pour plus d’informations, consultez la page [Classes statiques et membres de classes statiques](./static-classes-and-static-class-members.md).
 
 Un champ peut être déclaré comme [readonly](../../language-reference/keywords/readonly.md). Un champ en lecture seule ne peut recevoir de valeur que pendant l’initialisation ou dans un constructeur. Un champ `static readonly` est très similaire à une constante, à ceci près que le compilateur C# n’a pas accès à la valeur d’un champ statique en lecture seule au moment de la compilation, mais seulement au moment de l’exécution. Pour plus d’informations, consultez [Constantes](./constants.md).
 

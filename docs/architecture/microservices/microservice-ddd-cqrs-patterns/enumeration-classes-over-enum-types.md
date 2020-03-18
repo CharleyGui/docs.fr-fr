@@ -2,12 +2,12 @@
 title: Utilisation de classes d’énumération plutôt que de types enum
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Découvrez comment utiliser des classes d’énumération pour contourner certaines limitations des types enum.
 ms.date: 10/08/2018
-ms.openlocfilehash: 82bd80d19b3b73eb2f45ede8cc7ad4593c688277
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: fb2cbcd744f29c70a86e6f3300721934192eb752
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628460"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78847178"
 ---
 # <a name="use-enumeration-classes-instead-of-enum-types"></a>Utiliser des classes d’énumération à la place de types enum
 
@@ -69,9 +69,9 @@ Vous pouvez utiliser cette classe comme type dans n’importe quel objet entité
 ```csharp
 public class CardType : Enumeration
 {
-    public static CardType Amex = new CardType(1, "Amex");
-    public static CardType Visa = new CardType(2, "Visa");
-    public static CardType MasterCard = new CardType(3, "MasterCard");
+    public static readonly CardType Amex = new CardType(1, "Amex");
+    public static readonly CardType Visa = new CardType(2, "Visa");
+    public static readonly CardType MasterCard = new CardType(3, "MasterCard");
 
     public CardType(int id, string name)
         : base(id, name)
@@ -82,10 +82,10 @@ public class CardType : Enumeration
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Jimmy bogard. Classes d’énumération** \
+- **Jimmy Bogard. Cours d’énumération** \
   <https://lostechies.com/jimmybogard/2008/08/12/enumeration-classes/>
 
-- **Steve Smith. Énumérer les C# alternatives dans** \
+- **Steve Smith. Enum Alternatives en C #** \
   <https://ardalis.com/enum-alternatives-in-c>
 
 - **Enumeration.cs.** Classe d’énumération de base dans eShopOnContainers \
@@ -98,5 +98,5 @@ public class CardType : Enumeration
   <https://www.nuget.org/packages/Ardalis.SmartEnum/>
 
 >[!div class="step-by-step"]
->[Précédent](implement-value-objects.md)
->[Suivant](domain-model-layer-validations.md)
+>[Suivant précédent](implement-value-objects.md)
+>[Next](domain-model-layer-validations.md)

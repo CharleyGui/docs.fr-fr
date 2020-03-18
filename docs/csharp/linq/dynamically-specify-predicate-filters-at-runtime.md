@@ -4,11 +4,11 @@ description: Découvrez comment spécifier dynamiquement des filtres de prédica
 ms.date: 12/01/2016
 ms.assetid: 90238470-0767-497c-916c-52d0d16845e0
 ms.openlocfilehash: 314be8f98b9ff014f14bef11a1f3581eff8574b4
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857734"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "61659941"
 ---
 # <a name="dynamically-specify-predicate-filters-at-runtime"></a>Spécifier dynamiquement des filtres de prédicat au moment de l’exécution
 
@@ -70,5 +70,5 @@ Dans certains cas, ce n’est qu’au moment de l’exécution que vous savez co
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ (Language Integrated Query)](index.md)
-- [where, clause](../language-reference/keywords/where-clause.md)
+- [Requête intégrée linguistique (LINQ)](index.md)
+- [où la clause](../language-reference/keywords/where-clause.md)

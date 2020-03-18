@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-ms.openlocfilehash: 711005479eea2757b4ef18f6710a4453bfca02f9
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: a9e80ecb3288479a2ca81b43c9d088809ed5f2f0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78238830"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78847285"
 ---
 # <a name="sizeof-operator-c-reference"></a>sizeof, opérateur (référence C#)
 
@@ -40,7 +40,7 @@ Vous n’avez pas non plus besoin d’utiliser un contexte unsafe quand l’opé
 
 L’exemple suivant illustre l’utilisation de l’opérateur `sizeof` :
 
-[!code-csharp[sizeof examples](~/samples/snippets/csharp/language-reference/operators/SizeOfOperator.cs)]
+[!code-csharp[sizeof examples](snippets/SizeOfOperator.cs)]
 
 L’opérateur `sizeof` retourne un nombre d’octets qui seraient alloués par la Common Language Runtime dans la mémoire managée. Pour les types [struct](../builtin-types/struct.md), cette valeur comprend le remplissage, comme le montre l’exemple précédent. Le résultat de l’opérateur `sizeof` peut différer de celui de la méthode <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=nameWithType>, qui retourne la taille d’un type dans la mémoire *non managée*.
 
@@ -50,9 +50,9 @@ Pour plus d’informations, consultez la section [Opérateur sizeof](~/_csharpla
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
-- [Opérateurs C#](index.md)
+- [Référence C#](../index.md)
+- [Opérateurs CMD](index.md)
 - [Opérateurs associés au pointeur](pointer-related-operators.md)
 - [Types de pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- [Types liés à la mémoire et à l’étendue](../../../standard/memory-and-spans/index.md)
+- [Types liés à la mémoire et à la travée](../../../standard/memory-and-spans/index.md)
 - [Génériques en .NET](../../../standard/generics/index.md)

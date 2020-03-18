@@ -5,10 +5,10 @@ helpviewer_keywords:
 - new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
 ms.openlocfilehash: 6c4fedd469efb79f91780dff26da89b586de2d1c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713344"
 ---
 # <a name="new-modifier-c-reference"></a>new, modificateur (référence C#)
@@ -35,13 +35,13 @@ L’utilisation des opérateurs `new` et [override](override.md) sur le même me
 
 L'utilisation du modificateur `new` dans une déclaration qui ne masque pas un membre hérité génère un avertissement.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Dans cet exemple, une classe de base, `BaseC` et une classe dérivée, `DerivedC`, utilisent le même nom de champ `x`, masquant ainsi la valeur du champ hérité. Cet exemple illustre l'utilisation du modificateur `new`. Il montre aussi comment accéder aux membres masqués de la classe de base en utilisant leurs noms complets.
 
 [!code-csharp[csrefKeywordsOperator#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsOperator/CS/csrefKeywordsOperators.cs#9)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Dans cet exemple, une classe imbriquée masque une classe du même nom dans la classe de base. Cet exemple illustre l'utilisation du modificateur `new` pour éliminer le message d'avertissement, ainsi que l'accès aux membres de la classe masquée à l'aide de leurs noms complets.
 
@@ -59,9 +59,9 @@ Pour plus d’informations, consultez la section [Modificateur new](~/_csharplan
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../language-reference/index.md)
+- [Référence C](../../language-reference/index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs](index.md)
-- [Versioning avec les mots clés override et new](../../programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)
+- [Gestion de version avec les mots clés override et new](../../programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)
 - [Savoir quand utiliser les mots clés override et new](../../programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)

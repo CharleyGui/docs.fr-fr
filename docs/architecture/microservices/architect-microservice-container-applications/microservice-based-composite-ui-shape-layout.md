@@ -3,15 +3,15 @@ title: Création d’une interface utilisateur composite basée sur des microser
 description: Une architecture de microservices n’est pas uniquement conçue pour le back-end. Elle peut également s’utiliser dans un environnement front-end comme vous allez pouvoir le voir.
 ms.date: 09/20/2018
 ms.openlocfilehash: 1861d3bb6e5d4a0226aa8f3f72a2e0d3e83be56f
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72275739"
 ---
 # <a name="creating-composite-ui-based-on-microservices"></a>Création d’une interface utilisateur composite basée sur des microservices
 
-L’architecture des microservices commence souvent par les données et la logique de gestion côté serveur, mais, dans de nombreux cas, l’interface utilisateur est toujours gérée comme un monolithique. Toutefois, une approche plus avancée, appelée [micro frontend](https://martinfowler.com/articles/micro-frontends.html), consiste à concevoir l’interface utilisateur de votre application en fonction des microservices. Ceci implique d’avoir une interface utilisateur composite produite par les microservices, et non pas des microservices sur le serveur et simplement une application cliente monolithique consommant les microservices. Avec cette approche, les microservices que vous créez peuvent être complets, avec à la fois la logique et une représentation visuelle.
+L’architecture des microservices commence souvent par les données de manipulation du côté du serveur et la logique, mais, dans de nombreux cas, l’interface utilisateur est toujours traitée comme un monolithe. Cependant, une approche plus avancée, appelée [micro frontends](https://martinfowler.com/articles/micro-frontends.html), est de concevoir votre interface utilisateur d’application basée sur les microservices ainsi. Ceci implique d’avoir une interface utilisateur composite produite par les microservices, et non pas des microservices sur le serveur et simplement une application cliente monolithique consommant les microservices. Avec cette approche, les microservices que vous créez peuvent être complets, avec à la fois la logique et une représentation visuelle.
 
 La figure 4-20 montre une approche plus simple consistant à seulement consommer des microservices à partir d’une application cliente monolithique. Bien sûr, vous pourriez avoir un service ASP.NET MVC intermédiaire produisant du code HTML et JavaScript. La figure est une simplification qui met en évidence le fait que vous avez une interface utilisateur cliente (monolithique) consommant les microservices, qui s’occupe seulement de la logique et des données, mais pas de la forme de l’interface utilisateur (HTML et JavaScript).
 
@@ -25,11 +25,11 @@ Au démarrage de l’application cliente, chacun des composants de l’interface
 
 La figure 4-21 montre une version de cette approche de l’interface utilisateur composite. C’est une version simplifiée, car vous pouvez avoir d’autres microservices qui agrègent des parties plus petites selon différentes techniques. Cela dépend de ce que vous créez : une application web traditionnelle (ASP.NET MVC) ou une application monopage (SPA).
 
-![Diagramme d’une interface utilisateur composite constituée de nombreux modèles de vue.](./media/microservice-based-composite-ui-shape-layout/microservice-generate-composite-ui.png)
+![Diagramme d’une interface utilisateur composite composée de nombreux modèles de vue.](./media/microservice-based-composite-ui-shape-layout/microservice-generate-composite-ui.png)
 
 **Figure 4-21**. Exemple d’une application d’interface utilisateur composite mise en forme des microservices de backend
 
-Chacun de ces microservices de composition de l’interface utilisateur serait similaire à une petite passerelle d’API. Mais dans ce cas, chacun d’entre eux est responsable d’une petite zone d’interface utilisateur.
+Chacun de ces microservices de composition de l’interface utilisateur serait similaire à une petite passerelle d’API. Mais dans ce cas, chacun est responsable d’une petite zone d’assurance-chômage.
 
 Une approche d’interface utilisateur composite basée sur des microservices peut être plus ou moins difficile à implémenter, selon les technologies d’interface utilisateur que vous utilisez. Par exemple, vous n’utilisez pas les mêmes techniques pour créer une application web traditionnelle que pour créer une application monopage ou pour des applications mobiles natives (comme quand vous développez des applications Xamarin, ce qui peut s’avérer plus difficile avec cette approche).
 
@@ -39,27 +39,27 @@ Nous vous encourageons cependant à utiliser les références suivantes pour en 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Micro frontends (blog de Martin Fowler)**  
+- **Micro Frontends (blog de Martin Fowler)**  
   <https://martinfowler.com/articles/micro-frontends.html>
   
-- **Micro-serveurs frontaux (site Michael Geers)**  
+- **Micro Frontends (site Michael Geers)**  
   <https://micro-frontends.org/>
   
-- **Interface utilisateur composite avec ASP.NET (atelier particulier)**  
+- **Composite UI using ASP.NET (atelier Particular)**  
   <https://github.com/Particular/Workshop/tree/master/demos/asp-net-core>
 
-- **Ruben Oostinga. Frontend monolithique dans l’architecture de microservices**  
+- **Ruben Oostinga. Le Frontend monolithique dans l’architecture microservices**  
   <https://xebia.com/blog/the-monolithic-frontend-in-the-microservices-architecture/>
 
-- **Mauro Servienti. Le secret d’une meilleure composition d’interface utilisateur**  
+- **Mauro Servienti. Le secret d’une meilleure composition de l’interface utilisateur**  
   <https://particular.net/blog/secret-of-better-ui-composition>
 
-- **Viktor Farcic. Inclusion de composants Web frontaux dans des microservices**  
+- **Viktor Farcic. Inclure les composants Web front-end dans les microservices**  
   <https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/>
 
-- **Gestion des serveurs frontaux dans l’architecture des microservices**  
+- **Managing Frontend in the Microservices Architecture**  
   <https://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html>
 
 >[!div class="step-by-step"]
->[Précédent](microservices-addressability-service-registry.md)
->[Suivant](resilient-high-availability-microservices.md)
+>[Suivant précédent](microservices-addressability-service-registry.md)
+>[Next](resilient-high-availability-microservices.md)

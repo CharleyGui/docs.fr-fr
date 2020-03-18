@@ -6,10 +6,10 @@ helpviewer_keywords:
 - accessors [C#], indexers
 ms.assetid: e16b54bd-4a83-4f52-bd75-65819fca79e8
 ms.openlocfilehash: 667a4213626ee37bfc5bf8c4fe78c2cf7186a73e
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77627836"
 ---
 # <a name="indexers-in-interfaces-c-programming-guide"></a>Indexeurs dans les interfaces (Guide de programmation C#)
@@ -19,7 +19,7 @@ Des indexeurs peuvent être déclarés dans une [interface](../../language-refer
 - Les accesseurs d’interface n’utilisent pas de modificateurs.
 - Un accesseur d’interface n’a généralement pas de corps.
 
-L’objectif de l’accesseur est d’indiquer si l’indexeur est en lecture-écriture, en lecture seule ou en écriture seule. Vous pouvez fournir une implémentation pour un indexeur défini dans une interface, mais cela est rare. Les indexeurs définissent généralement une API pour accéder aux champs de données, et les champs de données ne peuvent pas être définis dans une interface.
+Le but de l’accesseur est d’indiquer si l’indexeur est lu-écrit, lu-seulement, ou écrire-seulement. Vous pouvez fournir une implémentation pour un indexeur défini dans une interface, mais c’est rare. Les indexateurs définissent généralement une API pour accéder aux champs de données, et les champs de données ne peuvent pas être définis dans une interface.
 
 L’exemple ci-dessous porte sur un accesseur d’indexeur d’interface :
 
@@ -27,7 +27,7 @@ L’exemple ci-dessous porte sur un accesseur d’indexeur d’interface :
 
 La signature d’un indexeur doit se distinguer de tous les autres indexeurs déclarés dans la même interface.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre comment implémenter des indexeurs d’interface.
 
