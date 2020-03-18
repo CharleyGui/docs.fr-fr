@@ -151,7 +151,7 @@
             - name: Test unitaire
               tocHref: /dotnet/core/testing/
               topicHref: /dotnet/core/testing/index
-            - name: Gestion de version
+            - name: Versioning
               tocHref: /dotnet/core/versions/
               topicHref: /dotnet/core/versions/index
             - name: Projets de SDK
@@ -470,7 +470,7 @@
                 - name: Délégués
                   tocHref: /dotnet/csharp/programming-guide/delegates/
                   topicHref: /dotnet/csharp/programming-guide/delegates/index
-                - name: Événements
+                - name: événements
                   tocHref: /dotnet/csharp/programming-guide/events/
                   topicHref: /dotnet/csharp/programming-guide/events/index
                 - name: Exceptions et gestion des exceptions
@@ -646,7 +646,7 @@
                 - name: Liaison anticipée et liaison tardive
                   tocHref: /dotnet/visual-basic/programming-guide/language-features/early-late-binding/
                   topicHref: /dotnet/visual-basic/programming-guide/language-features/early-late-binding/index
-                - name: Événements
+                - name: événements
                   tocHref: /dotnet/visual-basic/programming-guide/language-features/events/
                   topicHref: /dotnet/visual-basic/programming-guide/language-features/events/index
                 - name: LINQ
@@ -676,14 +676,14 @@
             - name: Informations de référence sur le langage
               tocHref: /dotnet/visual-basic/language-reference/
               topicHref: /dotnet/visual-basic/language-reference/index
-            - name: Référence
+            - name: Reference
               tocHref: /dotnet/visual-basic/reference/
               topicHref: /dotnet/visual-basic/reference/index
         - name: Guide ML.NET
           tocHref: /dotnet/machine-learning/
           topicHref: /dotnet/machine-learning/index
           items:
-            - name: Guides pratiques
+            - name: "Guides pratiques\_:"
               tocHref: /dotnet/machine-learning/how-to-guides/
               topicHref: /dotnet/machine-learning/how-to-guides/index
             - name: Ressources
