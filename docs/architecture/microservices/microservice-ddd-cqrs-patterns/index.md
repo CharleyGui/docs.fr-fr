@@ -3,10 +3,10 @@ title: Lutte contre la complexité d’entreprise dans un microservice disposant
 description: Architecture des Microservices .NET pour les applications .NET en conteneur | Comprendre comment gérer des scénarios professionnels complexes en appliquant modèles DDD et CQRS
 ms.date: 10/08/2018
 ms.openlocfilehash: 88b105b68307c8587f877bb9ddf370e143d8539b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73739826"
 ---
 # <a name="tackle-business-complexity-in-a-microservice-with-ddd-and-cqrs-patterns"></a>Lutter contre la complexité d’entreprise dans un microservice disposant des modèles DDD et CQRS
@@ -31,46 +31,46 @@ DDD est un large sujet avec un ensemble complet de ressources d’apprentissage.
 
 ##### <a name="ddd-domain-driven-design"></a>DDD (Domain-Driven Design)
 
-- **Eric Evans.**  \ de la langue du domaine
+- **Eric Evans. Langage de domaine** \
   <https://domainlanguage.com/>
 
-- **Martin Fowler. \ de conception pilotée par domaine**
+- **Martin Fowler. Conception axée sur le domaine** \
   <https://martinfowler.com/tags/domain%20driven%20design.html>
 
-- **Jimmy bogard. Renforcement de votre domaine : un \ d’initiation**
+- **Jimmy Bogard. Renforcer votre domaine : une introduction** \
   <https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/>
 
 ##### <a name="ddd-books"></a>Ouvrages DDD
 
-- **Eric Evans. Conception pilotée par domaine : la complexité des logiciels** \
+- **Eric Evans. Conception axée sur le domaine : s’attaquer à la complexité au cœur du logiciel** \
   <https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/>
 
-- **Eric Evans. Référence de conception pilotée par domaine : définitions et résumés de modèles** \
+- **Eric Evans. Référence de conception axée sur le domaine : Définitions et résumés de modèles** \
   <https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/>
 
-- **Vaughn Vernon. Implémentation de la conception pilotée par domaine** \
+- **Vaughn Vernon. Mise en œuvre de la conception axée sur le domaine** \
   <https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/>
 
-- **Vaughn Vernon. Conception pilotée par domaine \ distillée**
+- **Vaughn Vernon. Conception axée sur le domaine distillée** \
   <https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/>
 
-- **Jimmy Nilsson. Application de la conception et des modèles pilotés par domaine** \
+- **Jimmy Nilsson. Appliquer la conception et les modèles axés sur le domaine** \
   <https://www.amazon.com/Applying-Domain-Driven-Design-Patterns-Examples/dp/0321268202/>
 
-- **Cesar de la Torre. Guide d’architecture orientée domaine N à couches avec .NET** \
+- **Cesar de la Torre. N-Layered Domain-Oriented Architecture Guide avec .NET** \
   <https://www.amazon.com/N-Layered-Domain-Oriented-Architecture-Guide-NET/dp/8493903612/>
 
-- **Avram et Floyd Marinescu. Conception pilotée par domaine \ rapidement**
+- **Abel Avram et Floyd Marinescu. Conception axée sur le domaine rapidement** \
   <https://www.amazon.com/Domain-Driven-Design-Quickly-Abel-Avram/dp/1411609255/>
 
-- **Scott Millett, Nick Tune - Patterns, Principles, and Practices of Domain-Driven Design** \
+- **Scott Millett, Nick Tune - Modèles, Principes et Pratiques de conception axée sur le domaine** \
   <http://www.wrox.com/WileyCDA/WroxTitle/Patterns-Principles-and-Practices-of-Domain-Driven-Design.productCd-1118714709.html>
 
 ##### <a name="ddd-training"></a>Formation DDD
 
-- **Julie Lerman et Steve Smith. Notions de base de la conception pilotées par domaine** \
+- **Julie Lerman et Steve Smith. Fondamentaux de conception axés sur le domaine** \
   <https://bit.ly/PS-DDD>
 
 >[!div class="step-by-step"]
->[Précédent](../multi-container-microservice-net-applications/implement-api-gateways-with-ocelot.md)
->[Suivant](apply-simplified-microservice-cqrs-ddd-patterns.md)
+>[Suivant précédent](../multi-container-microservice-net-applications/implement-api-gateways-with-ocelot.md)
+>[Next](apply-simplified-microservice-cqrs-ddd-patterns.md)

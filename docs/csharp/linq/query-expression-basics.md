@@ -3,12 +3,12 @@ title: Concepts de base des expressions de requête (LINQ en C#)
 description: Présente les concepts liés aux expressions de requête
 ms.date: 11/30/2016
 ms.assetid: 027db1f8-346f-44d2-a16e-043fcea3a4e0
-ms.openlocfilehash: 5ebe2163df47c60c677d7ac911ce0f65529835eb
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 83beaa82d4b4b42ff9da5230edddd391b33a0717
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635858"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79173352"
 ---
 # <a name="query-expression-basics"></a>Concepts de base des expressions de requête
 
@@ -146,17 +146,17 @@ Utilisez la clause `orderby` pour trier les résultats par ordre croissant ou d�
 
 [!code-csharp[csrefQueryExpBasics#60](~/samples/snippets/csharp/concepts/linq/query-expression-basics_16.cs)]
 
-Le mot clé `ascending` est facultatif ; il s’agit de l’ordre de tri par défaut si aucun ordre n’est spécifié. Pour plus d’informations, consultez [orderby, clause](../language-reference/keywords/orderby-clause.md).
+Le mot clé `ascending` est facultatif ; il s’agit de l’ordre de tri par défaut si aucun ordre n’est spécifié. Pour plus d’informations, voir [clause d’ordre](../language-reference/keywords/orderby-clause.md).
 
 #### <a name="join-clause"></a>join, clause
 
-Utilisez la clause `join` pour associer et/ou combiner des éléments d’une source de données avec des éléments d’une autre source de données en fonction d’une comparaison d’égalité entre des clés spécifiées dans chaque élément. Dans LINQ, les opérations de jointure sont effectuées sur les séquences des objets dont les éléments sont des types différents. Après avoir joint deux séquences, vous devez utiliser une instruction `select` ou `group` pour spécifier quel élément stocker dans la séquence de sortie. Vous pouvez également utiliser un type anonyme pour combiner des propriétés de chaque jeu d’éléments associés dans un nouveau type pour la séquence de sortie. L’exemple suivant associe des objets `prod` dont la propriété `Category` correspond à l’une des catégories dans le tableau de chaînes `categories`. Les produits dont la `Category` ne correspond à aucune chaîne dans `categories` sont filtrés. L’instruction `select` projette un nouveau type dont les propriétés sont extraites de `cat` et `prod`.
+Utilisez la clause `join` pour associer et/ou combiner des éléments d’une source de données avec des éléments d’une autre source de données en fonction d’une comparaison d’égalité entre des clés spécifiées dans chaque élément. Dans LINQ, les opérations de jointure sont effectuées sur les séquences des objets dont les éléments sont des types différents. Après avoir joint deux séquences, vous devez utiliser une instruction `select` ou `group` pour spécifier quel élément stocker dans la séquence de sortie. Vous pouvez également utiliser un type anonyme pour combiner des propriétés de chaque jeu d’éléments associés dans un nouveau type pour la séquence de sortie. L’exemple suivant associe des objets `prod` dont la propriété `Category` correspond à l’une des catégories dans le tableau de chaînes `categories`. Les `Category` produits qui ne `categories` correspondent à aucune chaîne sont filtrés. L’énoncé `select` projette un nouveau type `cat` `prod`dont les propriétés sont prises à la fois et .
 
 [!code-csharp[csrefQueryExpBasics#61](~/samples/snippets/csharp/concepts/linq/query-expression-basics_17.cs)]
 
-Vous pouvez également effectuer une jointure groupée en stockant les résultats de l’opération `join` dans une variable temporaire à l’aide du mot clé [into](../language-reference/keywords/into.md). Pour plus d’informations, consultez [join, clause](../language-reference/keywords/join-clause.md).
+Vous pouvez également effectuer une jointure groupée en stockant les résultats de l’opération `join` dans une variable temporaire à l’aide du mot clé [into](../language-reference/keywords/into.md). Pour plus d’informations, voir [clause d’adhésion](../language-reference/keywords/join-clause.md).
 
-#### <a name="let-clause"></a>let, clause 
+#### <a name="let-clause"></a>clause let
 
 Utilisez la clause `let` pour stocker le résultat d’une expression telle qu’un appel de méthode dans une nouvelle variable de portée. Dans l’exemple suivant, la variable de portée `firstName` stocke le premier élément du tableau de chaînes retourné par `Split`.
 
@@ -170,11 +170,11 @@ Une clause de requête peut elle-même contenir une expression de requête, qui 
 
 [!code-csharp[csrefQueryExpBasics#63](~/samples/snippets/csharp/concepts/linq/query-expression-basics_19.cs)]
 
-Pour plus d’informations, consultez [effectuer une sous-requête sur une opération de regroupement](perform-a-subquery-on-a-grouping-operation.md).
+Pour plus d’informations, voir [Effectuer une sous-querie sur une opération de regroupement](perform-a-subquery-on-a-grouping-operation.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../programming-guide/index.md)
-- [LINQ (Language Integrated Query)](index.md)
+- [Guide de programmation CMD](../programming-guide/index.md)
+- [Requête intégrée linguistique (LINQ)](index.md)
 - [Mots clés de requête (LINQ)](../language-reference/keywords/query-keywords.md)
-- [Vue d’ensemble des opérateurs de requête standard](../programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Aperçu standard des opérateurs de requêtes](../programming-guide/concepts/linq/standard-query-operators-overview.md)

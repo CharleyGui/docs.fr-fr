@@ -1,22 +1,22 @@
 ---
-title: Comment rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (C#)
+title: Comment trouver des éléments avec un attribut spécifique (XPath-LINQ à XML) (C)
 ms.date: 07/20/2015
 ms.assetid: daed00dd-923a-43be-8a90-eee406f6f574
 ms.openlocfilehash: e79cad3ad6fb0bf88e388b552f8e39327acfb4ad
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141042"
 ---
-# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-c"></a>Comment rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (C#)
+# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-c"></a>Comment trouver des éléments avec un attribut spécifique (XPath-LINQ à XML) (C)
 Parfois, vous souhaitez rechercher tous les éléments qui ont un attribut spécifique. Vous ne vous souciez pas du contenu de l'attribut. Au lieu de cela, vous souhaitez sélectionner les éléments en fonction de l'existence de l'attribut.  
   
  L’expression XPath est la suivante :  
   
  `./*[@Select]`  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Le code suivant sélectionne simplement les éléments qui ont l'attribut `Select`.  
   
 ```csharp  
@@ -48,7 +48,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```output  
 Results are identical  

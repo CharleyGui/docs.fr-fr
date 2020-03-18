@@ -1,15 +1,15 @@
 ---
-title: Comment rechercher des éléments enfants en fonction de leur position (XPath-LINQ to XMLC#) ()
+title: Comment trouver des éléments pour enfants en fonction de la position (XPath-LINQ à XML) (C)
 ms.date: 07/20/2015
 ms.assetid: e35bb269-ec86-4c96-8321-12491a0eb2c3
 ms.openlocfilehash: cc0ff5639345d36ebb0423a12b66de8f1a70ade1
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141118"
 ---
-# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>Comment rechercher des éléments enfants en fonction de leur position (XPath-LINQ to XMLC#) ()
+# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>Comment trouver des éléments pour enfants en fonction de la position (XPath-LINQ à XML) (C)
 Parfois, vous souhaitez rechercher des éléments en fonction de leur position. Vous pourriez souhaiter rechercher le deuxième élément, ou les troisième, quatrième et cinquième éléments.  
   
  L’expression XPath est la suivante :  
@@ -18,7 +18,7 @@ Parfois, vous souhaitez rechercher des éléments en fonction de leur position. 
   
  Il existe deux approches pour l'écriture de cette requête [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] d'une manière différée. Vous pouvez utiliser les opérateurs <xref:System.Linq.Enumerable.Skip%2A> et <xref:System.Linq.Enumerable.Take%2A>, ou vous pouvez utiliser la surcharge <xref:System.Linq.Enumerable.Where%2A> qui prend un index. Lorsque vous utilisez la surcharge <xref:System.Linq.Enumerable.Where%2A>, vous utilisez une expression lambda qui prend deux arguments. L'exemple suivant illustre les deux méthodes de sélection basée sur la position.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Cet exemple recherche les deuxième, troisième et quatrième éléments `Test`. Le résultat est une collection d’éléments.  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration test (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).  
@@ -54,7 +54,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```output  
 Results are identical  

@@ -1,15 +1,15 @@
 ---
-title: Comment comparer des chaînes- C# Guide
+title: Comment comparer les cordes - Guide C
 description: Découvrez comment comparer et trier des valeurs de chaîne, avec ou sans casse, avec ou sans tri propre à la culture
 ms.date: 10/03/2018
 helpviewer_keywords:
 - strings [C#], comparison
 - comparing strings [C#]
 ms.openlocfilehash: dda3ec8cb6a0131867e6ea3bb0cf7199d86058ff
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73973322"
 ---
 # <a name="how-to-compare-strings-in-c"></a>Comment comparer des chaînes en C\#
@@ -29,19 +29,19 @@ Quand vous comparez des chaînes, vous les ordonnez les unes par rapport aux aut
 
 ## <a name="default-ordinal-comparisons"></a>Comparaisons ordinales par défaut
 
-Par défaut, les opérations les plus courantes :
+Par défaut, les opérations les plus courantes :
 
 - <xref:System.String.CompareTo%2A?displayProperty=nameWithType>
 - <xref:System.String.Equals%2A?displayProperty=nameWithType>
-- <xref:System.String.op_Equality%2A?displayProperty=nameWithType> et <xref:System.String.op_Inequality%2A?displayProperty=nameWithType>, autrement dit, [les opérateurs d’égalité `==` et `!=`](../language-reference/operators/equality-operators.md#string-equality), respectivement
+- <xref:System.String.op_Equality%2A?displayProperty=nameWithType>et, <xref:System.String.op_Inequality%2A?displayProperty=nameWithType>c’est-à-dire, [les opérateurs `==` d’égalité et, `!=` ](../language-reference/operators/equality-operators.md#string-equality)respectivement
 
-effectue une comparaison ordinale respectant la casse et, si nécessaire, utilise la culture actuelle. L’exemple suivant illustre ce qui suit :
+effectuer une comparaison ordinaire sensible aux cas et, si nécessaire, utiliser la culture actuelle. L’exemple suivant montre que :
 
 [!code-csharp-interactive[Comparing strings using an ordinal comparison](../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs#1)]
 
-La comparaison ordinale par défaut ne prend pas en compte les règles linguistiques lors de la comparaison de chaînes. Elle compare la valeur binaire de chaque objet <xref:System.Char> dans les deux chaînes. La comparaison ordinale par défaut respecte ainsi également la casse.
+La comparaison ordinaire par défaut ne tient pas compte des règles linguistiques lors de la comparaison des cordes. Elle compare la valeur binaire de chaque objet <xref:System.Char> dans les deux chaînes. La comparaison ordinale par défaut respecte ainsi également la casse.
 
-Notez que le test d’égalité avec <xref:System.String.Equals%2A?displayProperty=nameWithType> et les opérateurs `==` et `!=` diffèrent de la comparaison de chaînes à l’aide des méthodes <xref:System.String.CompareTo%2A?displayProperty=nameWithType> et <xref:System.String.Compare(System.String,System.String)?displayProperty=nameWithType)>. Tandis que les tests d’égalité effectuent une comparaison ordinale respectant la casse, les méthodes de comparaison effectuent une comparaison respectant la casse et dépendante de la culture à l’aide de la culture actuelle. Étant donné que les méthodes de comparaison par défaut effectuent souvent différents types de comparaisons, nous vous recommandons de toujours indiquer clairement l’intention de votre code en appelant une surcharge qui spécifie explicitement le type de comparaison à effectuer.
+Notez que le <xref:System.String.Equals%2A?displayProperty=nameWithType> test `==` pour `!=` l’égalité avec et <xref:System.String.CompareTo%2A?displayProperty=nameWithType> <xref:System.String.Compare(System.String,System.String)?displayProperty=nameWithType)> les opérateurs et diffère de la comparaison des chaînes en utilisant le et les méthodes. Bien que les tests d’égalité effectuent une comparaison ordinaire sensible aux cas, les méthodes de comparaison effectuent une comparaison sensible aux cas et sensible à la culture en utilisant la culture actuelle. Étant donné que les méthodes de comparaison par défaut effectuent souvent différents types de comparaisons, nous vous recommandons de toujours indiquer clairement l’intention de votre code en appelant une surcharge qui spécifie explicitement le type de comparaison à effectuer.
 
 ## <a name="case-insensitive-ordinal-comparisons"></a>Comparaisons ordinales ne respectant pas la casse
 
@@ -135,6 +135,6 @@ Vous pouvez intégrer une chaîne ou récupérer une référence à une chaîne 
 
 - <xref:System.Globalization.CultureInfo?displayProperty=nameWithType>
 - <xref:System.StringComparer?displayProperty=nameWithType>
-- [Chaînes](../programming-guide/strings/index.md)
+- [Cordes](../programming-guide/strings/index.md)
 - [Comparaison de chaînes](../../standard/base-types/comparing.md)
 - [Globalisation et localisation d’applications](/visualstudio/ide/globalizing-and-localizing-applications)

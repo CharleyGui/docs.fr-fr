@@ -4,17 +4,17 @@ description: Découvrez les modèles personnalisés pour tout type de projet ou 
 author: thraka
 ms.date: 06/14/2019
 ms.openlocfilehash: 8e1ac4ca21a8a90ad0f7c9bd3dd11281eb4a6e02
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73420879"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Modèles personnalisés pour dotnet new
 
-Le [SDK .NET Core](https://dotnet.microsoft.com/download) est fourni avec de nombreux modèles déjà installés et prêts à l’emploi. La [commande `dotnet new`](dotnet-new.md) n’est pas simplement une façon d’utiliser un modèle, mais montre aussi comment installer et désinstaller des modèles. À compter de .NET Core 2.0, vous pouvez créer vos propres modèles personnalisés pour tout type de projet, tel qu’une application, un service, un outil ou une bibliothèque de classes. Vous pouvez même créer un modèle qui génère un ou plusieurs fichiers indépendants, comme un fichier de configuration.
+Le [SDK .NET Core](https://dotnet.microsoft.com/download) est fourni avec de nombreux modèles déjà installés et prêts à l’emploi. La [ `dotnet new` commande](dotnet-new.md) n’est pas seulement le moyen d’utiliser un modèle, mais aussi la façon d’installer et de désinstaller les modèles. À compter de .NET Core 2.0, vous pouvez créer vos propres modèles personnalisés pour tout type de projet, tel qu’une application, un service, un outil ou une bibliothèque de classes. Vous pouvez même créer un modèle qui génère un ou plusieurs fichiers indépendants, comme un fichier de configuration.
 
-Vous pouvez installer des modèles personnalisés à partir d’un package NuGet sur tout flux NuGet, en référençant un fichier *nupkg* NuGet directement ou en spécifiant un répertoire de système de fichiers qui contient le modèle. Le moteur de modèle offre des fonctionnalités qui vous permettent de remplacer des valeurs, d’inclure et d’exclure des fichiers, ainsi que d’exécuter des opérations de traitement personnalisées quand votre modèle est utilisé.
+Vous pouvez installer des modèles personnalisés à partir d’un paquet NuGet sur n’importe quel flux NuGet, en faisant référence directement à un fichier NuGet *.nupkg,* ou en spécifiant un répertoire de système de fichiers qui contient le modèle. Le moteur de modèle offre des fonctionnalités qui vous permettent de remplacer des valeurs, d’inclure et d’exclure des fichiers, ainsi que d’exécuter des opérations de traitement personnalisées quand votre modèle est utilisé.
 
 Le moteur de modèle est open source et le dépôt de code en ligne se trouve à l’adresse [dotnet/templating](https://github.com/dotnet/templating/) sur GitHub. Visitez le dépôt [dotnet/dotnet-template-samples](https://github.com/dotnet/dotnet-template-samples) pour obtenir des exemples de modèles. Vous trouverez d’autres modèles, y compris des modèles tiers, à partir de la page [Available templates for dotnet new](https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new) (modèles disponibles pour dotnet new) sur GitHub. Pour plus d’informations sur la création et l’utilisation de modèles personnalisés, consultez [Guide pratique pour créer vos propres modèles pour dotnet new](https://devblogs.microsoft.com/dotnet/how-to-create-your-own-templates-for-dotnet-new/) et le [Wiki du dépôt GitHub dotnet/templating GitHub](https://github.com/dotnet/templating/wiki).
 
@@ -33,7 +33,7 @@ dotnet new --list
 Un modèle est constitué des éléments suivants :
 
 - Dossiers et fichiers sources.
-- Un fichier de configuration (*template.json*).
+- Un fichier de configuration *(template.json*).
 
 ### <a name="source-files-and-folders"></a>Dossiers et fichiers sources
 
@@ -52,7 +52,7 @@ Les fichiers générés par le modèle peuvent être modifiés en fonction de la
 
 Le fichier *template.json* est placé dans un dossier *.template.config* dans le répertoire racine du modèle. Le fichier fournit des informations de configuration au moteur de modèle. La configuration minimale requiert les membres affichés dans le tableau suivant, qui suffisent pour créer un modèle fonctionnel.
 
-| Membre            | Tapez          | Description |
+| Membre            | Type          | Description |
 | ----------------- | ------------- | ----------- |
 | `$schema`         | URI           | Schéma JSON pour le fichier *template.json*. Les éditeurs qui prennent en charge les schémas JSON activent les fonctionnalités d’édition JSON quand le schéma est spécifié. Par exemple, [Visual Studio Code](https://code.visualstudio.com/) exige ce membre pour activer IntelliSense. Utilisez la valeur de `http://json.schemastore.org/template`. |
 | `author`          | string        | Auteur du modèle. |
@@ -63,7 +63,7 @@ Le fichier *template.json* est placé dans un dossier *.template.config* dans le
 
 Le schéma complet pour le fichier *template.json* se trouve dans le [magasin de schémas JSON](http://json.schemastore.org/template). Pour plus d’informations sur le fichier *template.json*, consultez le [Wiki de création de modèles dotnet](https://github.com/dotnet/templating/wiki).
 
-#### <a name="example"></a>Exemple
+#### <a name="example"></a> Exemple
 
 Par exemple, voici un dossier de modèle qui contient deux fichiers de contenu : *console.cs* et *readme.txt*. Notez que la présence du dossier requis nommé *.template.config*, qui contient le fichier *template.json*.
 
@@ -95,7 +95,7 @@ Le dossier *mytemplate* est un pack de modèle installable. Une fois le pack ins
 
 Un modèle personnalisé est empaqueté avec la commande [dotnet pack](dotnet-pack.md) et un fichier *.csproj*. Vous pouvez également utiliser [NuGet](https://docs.microsoft.com/nuget/tools/nuget-exe-cli-reference) avec la commande [nuget pack](https://docs.microsoft.com/nuget/tools/cli-ref-pack) et un fichier *.nuspec*. Toutefois, NuGet nécessite .NET Framework sur Windows et [Mono](https://www.mono-project.com/) sur Linux et MacOS.
 
-Le fichier *.csproj* est légèrement différent d’un fichier de projet de code *.csproj* traditionnel. Notez les paramètres suivants :
+Le fichier *.csproj* est légèrement différent d’un fichier de projet de code *.csproj* traditionnel. Notez les points suivants :
 
 01. Le paramètre `<PackageType>` est ajouté et défini sur `Template`.
 01. Le paramètre `<PackageVersion>` est ajouté et défini sur un [numéro de version de NuGet](/nuget/reference/package-versioning) valide.

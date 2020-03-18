@@ -1,15 +1,15 @@
 ---
-title: Comment remplir des collections d’objets à partir de plusieurs sources (C#Linq) ()
+title: Comment remplir les collections d’objets à partir de sources multiples (LINQ) (C)
 ms.date: 06/12/2018
 ms.assetid: 8ad7d480-b46c-4ccc-8c57-76f2d04ccc6d
 ms.openlocfilehash: 3d841e5ca25afde94674af0fedc9a824c382be5b
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75345757"
 ---
-# <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Comment remplir des collections d’objets à partir de plusieurs sources (C#Linq) ()
+# <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Comment remplir les collections d’objets à partir de sources multiples (LINQ) (C)
 
 Cet exemple montre comment fusionner des données de différentes sources en une séquence de nouveaux types.
 
@@ -18,9 +18,9 @@ Cet exemple montre comment fusionner des données de différentes sources en une
 
 ## <a name="to-create-the-data-file"></a>Pour créer le fichier de données
 
-Copiez les fichiers Names. csv et scores. csv dans le dossier de votre projet, comme décrit dans Guide pratique [pour joindre du contenu provenantC#de fichiers différents (LINQ) ()](./how-to-join-content-from-dissimilar-files-linq.md).
+Copiez les fichiers names.csv et scores.csv dans votre dossier de projet, tel que décrit dans [Comment joindre le contenu à partir de fichiers différents (LINQ) (C)](./how-to-join-content-from-dissimilar-files-linq.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre comment utiliser un type nommé `Student` pour stocker des données fusionnées de deux collections en mémoire de chaînes qui simulent des données de feuille de calcul au format .csv. La première collection de chaînes représente les noms et les ID des étudiants, et la deuxième collection représente l’ID d’étudiant (dans la première colonne) et quatre notes d’examen. L’ID est utilisé comme clé étrangère.
 

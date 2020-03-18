@@ -5,10 +5,10 @@ helpviewer_keywords:
 - access modifiers [C#]
 ms.assetid: 61c3fa51-c00f-48cb-9b49-c805dedd62d7
 ms.openlocfilehash: 754949e42771de30cc2dce7e4e610f70ada6dfd4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713844"
 ---
 # <a name="access-modifiers-c-reference"></a>Modificateurs d’accès (référence C#)
@@ -21,17 +21,17 @@ Les modificateurs d’accès sont des mots clés utilisés pour spécifier l’
   
  Les modificateurs d’accès permettent de spécifier les six niveaux d’accessibilité suivants :  
   
-- [`public`](public.md) : l’accès n’est pas limité.  
+- [`public`](public.md): L’accès n’est pas limité.  
   
-- [`protected`](protected.md) : l’accès est limité à la classe conteneur ou aux types dérivés de la classe conteneur.  
+- [`protected`](protected.md): L’accès se limite à la classe ou aux types contenants dérivés de la classe contenante.  
   
-- [`internal`](internal.md) : l’accès est limité à l’assembly actuel.  
+- [`internal`](internal.md): L’accès est limité à l’assemblage actuel.  
   
-- [`protected internal`](protected-internal.md) : l’accès est limité à l’assembly actuel ou aux types dérivés de la classe conteneur.  
+- [`protected internal`](protected-internal.md): L’accès est limité à l’assemblage actuel ou aux types dérivés de la classe contenante.  
   
-- [`private`](private.md) : l’accès est limité au type conteneur.  
+- [`private`](private.md): L’accès est limité au type contenant.  
 
-- [`private protected`](private-protected.md) : l’accès est limité à la classe conteneur ou aux types dérivés de la classe conteneur dans l’assembly actuel.  
+- [`private protected`](private-protected.md): L’accès se limite à la classe ou aux types contenants dérivés de la classe contenante dans l’assemblage actuel.  
   
  Cette section introduit également les éléments suivants :  
   
@@ -43,7 +43,7 @@ Les modificateurs d’accès sont des mots clés utilisés pour spécifier l’
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
 - [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md)

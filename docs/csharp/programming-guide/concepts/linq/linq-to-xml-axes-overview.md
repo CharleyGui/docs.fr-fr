@@ -3,10 +3,10 @@ title: Vue d’ensemble des axes LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 516792fb-461d-40a8-8a50-9993a51258fc
 ms.openlocfilehash: c8b64731925f37d54bded62fae4ccae9933ffbe9
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75635520"
 ---
 # <a name="linq-to-xml-axes-overview-c"></a>Vue d’ensemble des axes LINQ to XML (C#)
@@ -16,7 +16,7 @@ Après avoir créé une arborescence XML ou chargé un document XML dans une arb
   
  Outre les méthodes d’axe, qui retournent des collections, il existe deux autres méthodes que vous utilisez fréquemment dans les requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. La méthode <xref:System.Xml.Linq.XContainer.Element%2A> retourne un seul objet <xref:System.Xml.Linq.XElement>. La méthode <xref:System.Xml.Linq.XElement.Attribute%2A> retourne un seul objet <xref:System.Xml.Linq.XAttribute>.  
   
- Dans de nombreux cas, les requêtes LINQ offrent la manière la plus puissante d’examiner une arborescence, d’en extraire des données et de la transformer. Les requêtes LINQ opèrent sur des objets qui implémentent <xref:System.Collections.Generic.IEnumerable%601>, et les axes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] retournent <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> collections et <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XAttribute> Collections. Vous avez besoin de ces collections pour effectuer vos requêtes.  
+ À de nombreuses fins, les requêtes de LINQ fournissent le moyen le plus puissant d’examiner un arbre, d’en extraire des données et de le transformer. Les requêtes LINQ fonctionnent <xref:System.Collections.Generic.IEnumerable%601>sur [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] des objets <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> qui mettent <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XAttribute> en œuvre, et les axes de retour des collections, et des collections. Vous avez besoin de ces collections pour effectuer vos requêtes.  
   
  Outre les méthodes d’axe qui récupèrent des collections d’éléments et d’attributs, il existe des méthodes d’axe qui vous permettent d’itérer au sein de l’arborescence en détail. Par exemple, au lieu de travailler au niveau des éléments et des attributs, vous pouvez travailler avec les nœuds de l'arborescence. Les nœuds représentent un niveau de granularité plus élevé que les éléments et les attributs. Lorsque vous travaillez avec des nœuds, vous pouvez examiner les commentaires XML, les nœuds de texte, les instructions de traitement, et bien plus encore. Cette fonctionnalité est importante, par exemple pour quelqu'un qui écrit un traitement de texte et qui souhaite enregistrer des documents au format XML. Toutefois, la plupart des programmeurs XML sont principalement concernés par les éléments, les attributs et leurs valeurs.  
   

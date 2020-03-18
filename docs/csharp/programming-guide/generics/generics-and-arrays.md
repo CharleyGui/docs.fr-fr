@@ -6,10 +6,10 @@ helpviewer_keywords:
 - arrays [C#], generics
 ms.assetid: 7d956536-3851-41b5-94ad-3e7c0a5fe485
 ms.openlocfilehash: a8fad38fac07b9e8d51529d3ab7070328a333dbb
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75703011"
 ---
 # <a name="generics-and-arrays-c-programming-guide"></a>Génériques et tableaux (guide de programmation C#)

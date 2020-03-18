@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 469be53e14c42775f21ef1ef815becd5cad03a97
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: e5da9a98e8725880223df3737dc60f773db8d20e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75336721"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79141131"
 ---
-# <a name="contributing"></a>Contribuer
+# <a name="contributing"></a>Contribution
 
 Nous vous remercions de l’intérêt que vous portez à la documentation .NET à travers vos contributions.
 
@@ -15,32 +15,36 @@ Nous vous remercions de l’intérêt que vous portez à la documentation .NET �
 
 Le document aborde le processus de contribution aux articles et exemples de code qui sont hébergés sur le [site de la documentation .NET](https://docs.microsoft.com/dotnet). Les contributions peuvent aller de la simple correction de fautes de frappe à la rédaction complexe de nouveaux articles.
 
-- [À faire et à ne pas faire](#dos-and-donts)
+- [DOs et DON’Ts](#dos-and-donts)
 - [Processus de contribution](#process-for-contributing)
 - [L’expérience interactive C#](#the-c-interactive-experience)
 - [Contrat de licence de contribution (CLA)](#contributor-license-agreement)
 
 Ce référentiel contient la documentation conceptuelle de .NET. Le site de la documentation de .NET repose sur plusieurs référentiels en plus de celui-ci :
 
-- [Exemples de code et extraits de code](https://github.com/dotnet/samples) Les problèmes et les tâches de ce référentiel sont suivis dans [dotnet/docs/Problems](https://github.com/dotnet/docs/issues).
-- Informations de référence sur l' [API .net](https://github.com/dotnet/dotnet-api-docs) Les problèmes et les tâches de ce référentiel sont suivis dans [dotnet/dotnet-API-docs/Problems](https://github.com/dotnet/dotnet-api-docs/issues).
-- [Référence du kit de développement logiciel .NET Compiler Platform](https://github.com/dotnet/roslyn-api-docs) Les problèmes et les tâches de ce référentiel sont suivis dans [dotnet/docs/Problems](https://github.com/dotnet/docs/issues).
+- [Échantillons de code et extraits](https://github.com/dotnet/samples) Les questions et les tâches de ce référentiel sont suivies dans [dotnet/docs/issues](https://github.com/dotnet/docs/issues).
+- [.NET référence API](https://github.com/dotnet/dotnet-api-docs) Les questions et les tâches de ce référentiel sont suivies dans [les questions/issues dotnet/dotnet-api-docs](https://github.com/dotnet/dotnet-api-docs/issues).
+- [.NET Compiler Platform SDK référence](https://github.com/dotnet/roslyn-api-docs) Les questions et les tâches de cette pension sont suivies dans [dotnet/docs/issues](https://github.com/dotnet/docs/issues).
+
+### <a name="contributing-to-international-content"></a>Contribuer au contenu international
+
+Les contributions pour le contenu traduit par la machine (MT) ne sont actuellement pas acceptées pour l’instant. Dans un effort pour améliorer la qualité du contenu MT, nous avons fait la transition vers un moteur Neural MT. Nous acceptons et encourageons les contributions pour le contenu traduit par l’homme (HT), qui est utilisé pour former le moteur Neural MT. Ainsi, au fil du temps, les contributions au contenu HT amélioreront la qualité de HT et DE MT. Les sujets MT auront un avertissement indiquant qu’une partie du sujet peut être MT, et le bouton **Edit** ne sera pas affiché comme son désactivé.
 
 ## <a name="dos-and-donts"></a>À faire et à ne pas faire
 
 La liste suivante montre quelques règles directrices que vous devez garder à l’esprit quand vous contribuez à la documentation .NET :
 
-- **À ne pas faire** : Nous surprendre avec des demandes de tirage démesurées. Soumettez plutôt un problème et démarrez une discussion pour convenir avec nous de la direction à prendre avant d’investir beaucoup de votre temps. Pour les modifications en bloc, décomposer le travail en un nombre de fichiers de plus petite taille (jusqu’à 100 fichiers). Cette recommandation est fortement recommandée si votre demande de tirage ne respecte pas les instructions suivantes.
-- **Examinez** [les problèmes de recherche de suggestions](https://github.com/dotnet/docs/labels/up-for-grabs) sur les tâches.
-- **Créez un** PR pour chaque tâche. Les demandes de tirage qui incluent plusieurs modifications non liées sont beaucoup plus difficiles à examiner. Cela retarde les révisions et la fusion de PRs. Cette règle s’applique également aux révisions : nous essayons de ne pas suggérer de modifications non liées dans les révisions. Nous demandons aux révisions de la communauté d’adhérer à cette instruction.
-- **Fournissez** une description claire du travail dans votre demande de tirage. Dites-nous ce qui a changé et pourquoi. La description par défaut de « Update article.md » n’est pas utile pour les réviseurs.
-- **N’envoyez pas** PRs pour les modifications de style uniquement sans discussion préalable. Ces demandes de précision prennent plus de temps pour vérifier la précision, et la fusion peut souvent entraîner des conflits de fusion avec d’autres mises à jour importantes. Nous travaillons à la suite d’un style cohérent, mais nous équilibrerons ce travail avec d’autres tâches. Les articles sont mis en conformité du style lorsque nous faisons des mises à jour majeures pour d’autres raisons.
-- **À faire** : Lire le [guide de style](./styleguide/template.md) et les recommandations sur le [style et le ton](./styleguide/voice-tone.md). Les nouveaux ajouts doivent suivre ces instructions.
+- **À ne pas faire** : Nous surprendre avec des demandes de tirage démesurées. Soumettez plutôt un problème et démarrez une discussion pour convenir avec nous de la direction à prendre avant d’investir beaucoup de votre temps. Pour les modifications en vrac, décomposez le travail en petits PR (jusqu’à 100 fichiers). Cette ligne directrice est fortement recommandée si votre PR ne suit pas les lignes directrices suivantes.
+- **Ne** regardez le courant [à gagner](https://github.com/dotnet/docs/labels/up-for-grabs) questions pour les suggestions sur les tâches.
+- **NE** créer un PR pour chaque tâche. Les ER qui comprennent de multiples changements sans rapport sont beaucoup plus difficiles à examiner. Cela retarde les examens et la fusion des ER. Cette ligne directrice s’applique également aux examens : nous essayons de ne pas suggérer de changements non liés aux examens; nous demandons aux examens communautaires d’adhérer à cette ligne directrice.
+- **NE** fournir une description claire du travail dans votre PR. Dites-nous ce qui a changé et pourquoi. La description par défaut de "mise à jour article.md" n’est pas utile pour les examinateurs.
+- **NE soumettez PAS** de PPA pour des changements de style seulement sans discussion préalable. Ces ER prennent plus de temps à examiner pour l’exactitude, et les fusionner provoque souvent des conflits de fusion avec d’autres mises à jour importantes. Nous nous efforçons de suivre un style cohérent, mais nous équilibrons ce travail avec d’autres tâches. Articles sont introduits dans la conformité de style lorsque nous faisons des mises à jour majeures pour d’autres raisons.
+- **À faire** : Lire le [guide de style](./styleguide/template.md) et les recommandations sur le [style et le ton](./styleguide/voice-tone.md). Les nouveaux ajouts devraient suivre ces lignes directrices.
 - **À faire** : Créer une branche distincte dans votre duplication (fork) avant de travailler sur les articles.
 - **À faire** : Suivre le [workflow GitHub Flow](https://guides.github.com/introduction/flow/).
 - **À faire** : Bloguer et tweeter (ou autre) régulièrement à propos de vos contributions.
 
-Ces instructions nous aident à respecter l’heure de chacun. De nombreuses personnes contribuent à ces dépôts. En suivant ces instructions, il est plus facile d’examiner et de fusionner votre demande de tirage en temps opportun. Ces pratiques réduisent les conflits avec la fonction PRs des autres membres de la communauté et de notre équipe. Étant donné que le fichier PRs qui ne suit pas ces instructions entraîne souvent un travail supplémentaire pour les membres de la communauté et des États-Unis, ceux-ci peuvent être rejetés. Si vous souhaitez une exception, commencez par créer un problème.
+Ces lignes directrices nous aident à respecter le temps de chacun. Beaucoup de gens contribuent à ces dépôts. En suivant ces lignes directrices, il est plus facile pour nous d’examiner et de fusionner vos relations publiques en temps opportun. Ces pratiques minimisent les conflits avec les ER d’autres membres de la communauté et de notre équipe. Étant donné que les ER qui ne suivent pas ces lignes directrices causent souvent du travail supplémentaire pour nous et les membres de la communauté, ces ER peuvent être rejetés. Si vous voulez une exception, commencez par créer un problème.
 
 > Note : vous remarquerez peut-être que certaines rubriques ne respectent pas toutes les recommandations spécifiées ici et dans le [guide de style](./styleguide/template.md). Nous travaillons actuellement à une cohérence globale du site.
 
@@ -48,22 +52,22 @@ Ces instructions nous aident à respecter l’heure de chacun. De nombreuses per
 
 Vous devez avoir une connaissance élémentaire de [Git et GitHub.com](https://guides.github.com/activities/hello-world/).
 
-**Étape 1 :** Ignorez cette étape pour les modifications mineures (par exemple, si vous corrigez une faute de frappe ou si vous ouvrez immédiatement une requête de tirage pour résoudre un problème que vous trouvez dans la documentation). Si vous souhaitez écrire un nouveau contenu ou examiner en détail un contenu existant, ouvrez un [problème](https://github.com/dotnet/docs/issues) en décrivant ce que vous voulez faire.
+**Étape 1 :** Passez cette étape pour de petits changements (par exemple, si vous corrigez une faute de frappe ou ou ouvrez immédiatement une demande de traction pour résoudre un problème que vous trouvez dans les documents). Si vous souhaitez écrire un nouveau contenu ou examiner en détail un contenu existant, ouvrez un [problème](https://github.com/dotnet/docs/issues) en décrivant ce que vous voulez faire.
 Le contenu situé dans le dossier *docs* est organisé en sections que l’on retrouve dans la table des matières. Définissez l’emplacement de la rubrique dans la table des matières. Obtenez des commentaires sur votre proposition.
 
-\- ou -
+-ou-
 
 Vous pouvez également choisir des problèmes existants pour lesquels les contributions de la communauté sont les bienvenus. [Projets pour les contributeurs de la communauté .NET](https://github.com/dotnet/docs/projects/35) répertorie la plupart des éléments de travail disponibles aux contributeurs de la communauté. Selon vos centres d’intérêt et votre niveau de participation, vous pouvez choisir des problèmes dans les catégories suivantes :
 
-- **Maintenance**. Cette catégorie inclut des contributions relativement simples, telles que la résolution de liens rompus ou incorrects, l’ajout d’exemples de code manquant, ou des problèmes liés à un contenu limité. Parfois, ces problèmes peuvent concerner un grand nombre de fichiers. Dans ce cas, vous devriez nous indiquer le contenu sur lequel vous souhaitez travailler, avant de commencer.
+- **Entretien**. Cette catégorie inclut des contributions relativement simples, telles que la résolution de liens rompus ou incorrects, l’ajout d’exemples de code manquant, ou des problèmes liés à un contenu limité. Parfois, ces problèmes peuvent concerner un grand nombre de fichiers. Dans ce cas, vous devriez nous indiquer le contenu sur lequel vous souhaitez travailler, avant de commencer.
 
-- **Mises à jour du contenu**. Étant donné l’énorme quantité de documents disponibles, le contenu devient facilement obsolète et nécessite une révision. En outre, pour diverses raisons, certains contenus ont été dupliqués, voire triples. La mise à jour du contenu consiste à s’assurer que des rubriques individuelles sont actualisées ou à réviser le contenu d’une zone de fonctionnalité afin d’éliminer les doublons et garantir que tout le contenu unique est conservé dans une documentation la plus restreinte possible.
+- **Mises à jour du contenu**. Étant donné l’énorme quantité de documents disponibles, le contenu devient facilement obsolète et nécessite une révision. En outre, pour diverses raisons, certains contenus ont été dupliqués ou même triplicés. La mise à jour du contenu consiste à s’assurer que des rubriques individuelles sont actualisées ou à réviser le contenu d’une zone de fonctionnalité afin d’éliminer les doublons et garantir que tout le contenu unique est conservé dans une documentation la plus restreinte possible.
 
 - **Création de nouveau contenu**. Si vous souhaitez créer votre propre rubrique, ces problèmes répertorient les rubriques que nous aimerions ajouter à notre documentation. Veuillez nous prévenir avant de commencer à travailler sur une rubrique. Si vous souhaitez écrire une rubrique qui n’est pas répertoriée ici, ouvrez un problème.
 
 Vous pouvez également consulter la liste de nos [problèmes ouverts](https://github.com/dotnet/docs/issues) et vous porter volontaire pour travailler sur ceux qui vous intéressent. Nous utilisons l’étiquette [up-for-grabs](https://github.com/dotnet/docs/labels/up-for-grabs) pour signaler les problèmes auxquels vous pouvez apporter votre contribution.
 
-**Étape 2 :** dupliquez les référentiels `dotnet/docs`, `dotnet/samples` ou `dotnet/dotnet-api-docs` si nécessaire et créez une branche pour vos modifications.
+**Étape 2:** Fourche `dotnet/docs`le `dotnet/samples` `dotnet/dotnet-api-docs` , ou reposez au besoin et créez une branche pour vos modifications.
 
 Pour les modifications mineures, vous pouvez utiliser l’interface web de GitHub. Cliquez simplement sur le bouton **Edit the file in your fork of this project** (Modifier le fichier dans la branche de ce projet) du fichier que vous souhaitez modifier. GitHub crée la nouvelle branche lorsque vous envoyez les modifications.
 
@@ -92,9 +96,9 @@ docs
             portability_report.png
 ```
 
-**Étape 4 :** Soumettez une demande de tirage (PR) à partir de votre branche à `dotnet/docs/master`, `dotnet/dotnet-api-docs/master`ou `dotnet/samples/master`.
+**Étape 4:** Soumettez une demande de traction `dotnet/docs/master`(PR) de votre succursale à , `dotnet/dotnet-api-docs/master`, ou `dotnet/samples/master`.
 
-Votre demande de tirage doit *toujours* cibler la branche par défaut du dépôt (à moins que vous ne travailliez sur une branche de version). Pour dotnet/docs, Master Branch est la branche par défaut. Pour les référentiels localisés, la branche active est celle par défaut. Vous ne devez *jamais* ouvrir une demande de tirage qui cible la branche Live sur dotnet/docs.
+Votre PR doit *toujours* cibler la branche par défaut du référentiel (sauf si vous travaillez sur une branche de version). Pour dotnet/docs, la branche principale est la branche par défaut. Pour les dépôts localisés, la branche live est la branche par défaut. Vous *ne* devriez jamais ouvrir une RP qui cible la branche en direct sur dotnet / docs.
 
 Chaque demande de tirage devrait généralement résoudre un problème à la fois. La demande de tirage peut modifier un ou plusieurs fichiers. Si vous gérez plusieurs correctifs sur des fichiers différents, il est préférable d’utiliser des demandes de tirage distinctes.
 
@@ -119,7 +123,7 @@ Nous faisons la distinction suivante pour le code existant dans notre référent
 Tout le code réside dans le référentiel [dotnet/samples](https://github.com/dotnet/samples). Nous élaborons actuellement un modèle dans lequel notre structure de dossier samples correspond à notre structure de dossier docs. Voici les normes que nous appliquons :
 
 - Le dossier *snippets* de niveau supérieur contient les extraits de code de petits échantillons ciblés.
-- Les échantillons de référence d’API situés dans un dossier suivent ce modèle : *snippets/\<language>/api/\<namespace>/\<apiname>* .
+- Les échantillons de référence d’API situés dans un dossier suivent ce modèle : *snippets/\<language>/api/\<namespace>/\<apiname>*.
 - Les autres dossiers de niveau supérieur correspondent aux dossiers de niveau supérieur du référentiel *docs*. Par exemple, le référentiel docs contient un dossier *machine-learning/tutorials*, et les échantillons pour les tutoriels Machine Learning se trouvent dans le dossier *samples/machine-learning/tutorials*.
 
 En outre, tous les échantillons dans les dossiers *core* et *standard* doivent pouvoir être créés et exécutés sur toutes les plateformes prises en charge par .NET Core. Notre système d’intégration continue appliquera cette stratégie. Le dossier *framework* de niveau supérieur contient des échantillons uniquement créés et validés sous Windows.
@@ -135,7 +139,7 @@ Pour plus d’informations, consultez le [fichier readme des échantillons](http
 
 ## <a name="the-c-interactive-experience"></a>L’expérience interactive C#
 
-De courts échantillons de code en C# peuvent utiliser la balise de langage `csharp-interactive` pour spécifier un échantillon C# qui s’exécute dans le navigateur. (Les exemples de code inline utilisent la balise `csharp-interactive`, pour les extraits de code inclus dans la source, utilisez la balise `code-csharp-interactive`.) Ces exemples de code affichent une fenêtre de code et une fenêtre de sortie dans l’article. La fenêtre de sortie affiche le résultat de l’exécution du code interactif une fois que l’utilisateur a exécuté l’échantillon.
+De courts échantillons de code en C# peuvent utiliser la balise de langage `csharp-interactive` pour spécifier un échantillon C# qui s’exécute dans le navigateur. (Les échantillons de `csharp-interactive` code en ligne utilisent l’étiquette, `code-csharp-interactive` pour les extraits inclus à partir de la source, utilisez l’étiquette.) Ces échantillons de code affichent une fenêtre de code et une fenêtre de sortie dans l’article. La fenêtre de sortie affiche le résultat de l’exécution du code interactif une fois que l’utilisateur a exécuté l’échantillon.
 
 Le C# expérience interactive modifie comment nous collaborons avec des exemples. Les visiteurs peuvent exécuter l’échantillon pour afficher les résultats. Un certain nombre de facteurs aident à déterminer si l’échantillon ou le texte correspondant doit inclure des informations sur la sortie.
 

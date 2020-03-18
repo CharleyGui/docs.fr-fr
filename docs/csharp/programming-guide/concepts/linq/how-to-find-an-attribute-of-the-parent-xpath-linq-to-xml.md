@@ -1,15 +1,15 @@
 ---
-title: Comment rechercher un attribut du parent (XPath-LINQ to XML) (C#)
+title: Comment trouver un attribut du parent (XPath-LINQ à XML) (C)
 ms.date: 07/20/2015
 ms.assetid: dbef9d89-a5c4-431f-80cc-7a2ebf323f86
 ms.openlocfilehash: bfe7554a5c767adde5e7170c8e1ea0537155f6df
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141178"
 ---
-# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>Comment rechercher un attribut du parent (XPath-LINQ to XML) (C#)
+# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>Comment trouver un attribut du parent (XPath-LINQ à XML) (C)
 
 Cette rubrique montre comment naviguer jusqu'à l'élément parent et rechercher un attribut de celui-ci.
 
@@ -17,7 +17,7 @@ L’expression XPath est la suivante :
 
 `../@id`
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Cet exemple recherche d'abord un élément `Author`. Il recherche ensuite l'attribut `id` de l'élément parent.
 
@@ -48,7 +48,7 @@ else
 Console.WriteLine(att1);
 ```
 
-Cet exemple génère la sortie suivante :
+Cet exemple produit la sortie suivante :
 
 ```output
 Results are identical

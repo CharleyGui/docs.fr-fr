@@ -1,15 +1,15 @@
 ---
-title: 'Comment : améliorer la précision du modèle'
+title: 'Comment faire : Améliorer la précision du modèle'
 description: Découvrez comment améliorer la précision du modèle
 ms.date: 04/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc
 ms.openlocfilehash: 8f3b283de378a37bfe429688207ea9fb52f9ca7f
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75739575"
 ---
 # <a name="improve-mlnet-model-accuracy"></a>Améliorer la précision du modèle ML.NET
@@ -32,15 +32,15 @@ La signification d’un seul point de données peut être difficile à interpré
 
 Bien que l’ajout d’échantillons de données et de caractéristiques puisse aider à améliorer la précision du modèle, cela peut également introduire du bruit, dans la mesure où toutes les données et caractéristiques ne sont pas significatives. Ainsi, il est important de comprendre quelles sont les caractéristiques qui impactent le plus les décisions prises par l’algorithme. L’utilisation de techniques telles que PFI (Permutation Feature Importance) peut aider à identifier ces caractéristiques déterminantes, à expliquer le modèle, mais aussi à utiliser la sortie comme méthode de sélection de caractéristiques pour réduire la quantité de caractéristiques bruyantes introduites dans le processus d’entraînement.
 
-Pour plus d’informations sur l’utilisation de PFI, consultez [explication des prédictions de modèle à l’aide de la fonctionnalité de permutation](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md).
+Pour plus d’informations sur l’utilisation de PFI, voir [expliquer les prédictions du modèle en utilisant Permutation Feature Importance](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md).
 
 ## <a name="cross-validation"></a>Validation croisée
 
-La validation croisée est une technique d’entraînement et d’évaluation de modèle qui fractionne les données en plusieurs partitions sur lesquelles elle entraîne plusieurs algorithmes. Cette technique améliore la robustesse du modèle en réservant des données à partir du processus d’entraînement. En plus d’améliorer les performances sur les observations invisibles, dans les environnements limités en données, cette technique peut être un outil efficace pour entraîner des modèles avec un jeu de données plus petit.
+La validation croisée est une technique d’entraînement et d’évaluation de modèle qui fractionne les données en plusieurs partitions sur lesquelles elle entraîne plusieurs algorithmes. Cette technique améliore la robustesse du modèle en réservant des données à partir du processus d’entraînement. Outre améliorer les performances sur les observations invisibles, dans les environnements limités en données, cette technique peut être un outil efficace pour entraîner des modèles avec un jeu de données plus petit.
 
 Consultez le lien suivant pour savoir [comment utiliser la validation croisée dans ML.NET](../how-to-guides/train-machine-learning-model-cross-validation-ml-net.md).
 
-## <a name="hyperparameter-tuning"></a>Réglage des hyperparamètres
+## <a name="hyperparameter-tuning"></a>Optimisation des hyperparamètres
 
 L’entraînement des modèles Machine Learning est un processus itératif et exploratoire. Par exemple, quel est le nombre optimal de clusters quand un modèle est entraîné à l’aide de l’algorithme k-moyennes ? La réponse dépend de nombreux facteurs tels que la structure des données. La recherche de ce nombre nécessiterait d’expérimenter différentes valeurs pour k, puis d’évaluer les performances afin de déterminer la meilleure valeur. La pratique de l’ajustement de ces paramètres pour rechercher un modèle optimal est appelée ajustement des hyperparamètres.
 

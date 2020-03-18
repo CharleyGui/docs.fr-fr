@@ -4,10 +4,10 @@ description: Familiarisez-vous avec les outils Docker disponibles dans Visual St
 ms.date: 02/15/2019
 ms.custom: vs-dotnet
 ms.openlocfilehash: 2b6fdc33f9cf850cf9e52fca4a1a9754cd412567
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68673876"
 ---
 # <a name="use-docker-tools-in-visual-studio-2017-on-windows"></a>Utilisez les outils Docker dans Visual Studio 2017 sur Windows
@@ -33,7 +33,7 @@ Les commandes **Ajouter > Prise en charge de Docker** et **Ajouter > Prise en ch
 
 ### <a name="add-docker-support"></a>Ajouter la prise en charge Docker
 
-Vous pouvez ajouter la prise en charge de Docker à un projet ASP.NET Core existant en sélectionnant **Ajouter** > **Prise en charge de Docker** dans l’**Explorateur de solutions**. Vous pouvez également activer la prise en charge de Docker lors de la création du projet en sélectionnant **Activer la prise en charge de Docker** dans la boîte de dialogue **nouvelle Application de Web ASP.NET Core** qui s’ouvre après avoir cliqué sur **OK** dans la boîte de dialogue **Nouveau projet**, comme l’illustre la figure 4-32.
+Vous pouvez ajouter le support Docker à un projet de base ASP.NET existant en sélectionnant **Add** > **Docker Support** dans Solution **Explorer**. Vous pouvez également activer la prise en charge de Docker lors de la création du projet en sélectionnant **Activer la prise en charge de Docker** dans la boîte de dialogue **nouvelle Application de Web ASP.NET Core** qui s’ouvre après avoir cliqué sur **OK** dans la boîte de dialogue **Nouveau projet**, comme l’illustre la figure 4-32.
 
 ![Activer la prise en charge de Docker pour une nouvelle application web ASP.NET Core dans Visual Studio](./media/enable-docker-support-visual-studio.png)
 
@@ -66,17 +66,17 @@ Si le fichier *docker-compose.yml* existe déjà, Visual Studio ajoute simplemen
 
 Dans le menu principal, choisissez **Outils > Options**, puis développez **Outils de conteneur > Paramètres**. Les paramètres des outils de conteneur s’affichent.
 
-![Les options des outils Docker pour Visual Studio sont : Extraire automatiquement les images Docker nécessaires lors du chargement du projet, Démarrer automatiquement les conteneurs en arrière-plan, Tuer automatiquement les conteneurs lors de la fermeture de la solution et Ne pas demander l’approbation du certificat SSL localhost.](./media/visual-studio-docker-tools-options.png)
+![Visual Studio Docker outils options, montrant: Tirer automatiquement les images Docker nécessaires sur la charge du projet, démarrer automatiquement les conteneurs en arrière-plan, tuer automatiquement les conteneurs sur la solution à proximité, et ne pas inciter à faire confiance certificat SSL.](./media/visual-studio-docker-tools-options.png)
 
 **Figure 4-35**. Options des outils Docker
 
 Le tableau suivant peut vous aider à déterminer comment définir ces options.
 
-| Name | Paramètre par défaut | S'applique à | Description |
+| Nom | Paramètre par défaut | S'applique à | Description |
 | -----|:---------------:|:----------:| ----------- |
-| Extraire automatiquement des images Docker nécessaires lors du chargement du projet | Activé | Docker Compose | Pour améliorer les performances lors du chargement des projets, Visual Studio démarre une opération d’extraction Docker en arrière-plan de sorte que lorsque vous êtes prêt à exécuter votre code, l’image est déjà téléchargée ou en cours de téléchargement. Si vous chargez simplement des projets et parcourez du code, vous pouvez désactiver cette option pour éviter le téléchargement des images conteneur dont vous n’avez pas besoin. |
-| Démarrer automatiquement les conteneurs en arrière-plan | Activé | Docker Compose | De nouveau pour améliorer les performances, Visual Studio crée un conteneur avec des montages de volume déjà prêts quand vous créez et exécutez votre conteneur. Si vous voulez contrôler le moment auquel est créé votre conteneur, désactivez cette option. |
-| Tuer automatiquement les conteneurs lors de la fermeture de la solution | Activé | Docker Compose | Désactivez cette option si vous voulez que les conteneurs de votre solution continuent à s’exécuter après la fermeture de la solution ou la fermeture de Visual Studio. |
+| Extraire automatiquement des images Docker nécessaires lors du chargement du projet | Il en va | Docker Compose | Pour améliorer les performances lors du chargement des projets, Visual Studio démarre une opération d’extraction Docker en arrière-plan de sorte que lorsque vous êtes prêt à exécuter votre code, l’image est déjà téléchargée ou en cours de téléchargement. Si vous chargez simplement des projets et parcourez du code, vous pouvez désactiver cette option pour éviter le téléchargement des images conteneur dont vous n’avez pas besoin. |
+| Démarrer automatiquement les conteneurs en arrière-plan | Il en va | Docker Compose | De nouveau pour améliorer les performances, Visual Studio crée un conteneur avec des montages de volume déjà prêts quand vous créez et exécutez votre conteneur. Si vous voulez contrôler le moment auquel est créé votre conteneur, désactivez cette option. |
+| Tuer automatiquement les conteneurs lors de la fermeture de la solution | Il en va | Docker Compose | Désactivez cette option si vous voulez que les conteneurs de votre solution continuent à s’exécuter après la fermeture de la solution ou la fermeture de Visual Studio. |
 | Ne pas demander l’approbation du certificat SSL localhost | Off | Projets ASP.NET Core 2.2 | Si le certificat SSL localhost n’est pas approuvé, Visual Studio vous invite à le faire chaque fois que vous exécutez votre projet, sauf si cette case est cochée. |
 
 > [!WARNING]
@@ -90,5 +90,5 @@ Le tableau suivant peut vous aider à déterminer comment définir ces options.
 >Déployer un conteneur ASP.NET sur un registre de conteneurs avec Visual Studio : <https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker>
 
 >[!div class="step-by-step"]
->[Précédent](docker-apps-inner-loop-workflow.md)
->[Suivant](set-up-windows-containers-with-powershell.md)
+>[Suivant précédent](docker-apps-inner-loop-workflow.md)
+>[Next](set-up-windows-containers-with-powershell.md)

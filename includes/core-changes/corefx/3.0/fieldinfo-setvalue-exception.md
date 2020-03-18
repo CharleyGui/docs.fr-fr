@@ -1,23 +1,23 @@
 ---
 ms.openlocfilehash: dc733ee32184db5af59bb06e294cd73765977581
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77449551"
 ---
-### <a name="fieldinfosetvalue-throws-exception-for-static-init-only-fields"></a>FieldInfo. SetValue lève une exception pour les champs statiques, en initialisation seule
+### <a name="fieldinfosetvalue-throws-exception-for-static-init-only-fields"></a>FieldInfo.SetValue jette l’exception pour les champs statiques et init-seulement
 
-À compter de .NET Core 3,0, une exception est levée lorsque vous tentez de définir une valeur sur un champ statique, <xref:System.Reflection.FieldAttributes.InitOnly> en appelant <xref:System.Reflection.FieldInfo.SetValue%2A?displayProperty=fullName>.
+À partir de .NET Core 3.0, une exception est lancée <xref:System.Reflection.FieldAttributes.InitOnly> lorsque vous <xref:System.Reflection.FieldInfo.SetValue%2A?displayProperty=fullName>essayez de définir une valeur sur un terrain statique en appelant .
 
-#### <a name="change-description"></a>Modifier la description
+#### <a name="change-description"></a>Description de la modification
 
-Dans .NET Framework et les versions de .net Core antérieures à 3,0, vous pouviez définir la valeur d’un champ statique qui est constant après son initialisation ([ReadOnly en C# ](~/docs/csharp/language-reference/keywords/readonly.md)) en appelant <xref:System.Reflection.FieldInfo.SetValue%2A?displayProperty=fullName>. Toutefois, la définition de ce type de champ de cette façon a entraîné un comportement imprévisible basé sur le Framework cible et les paramètres d’optimisation.
+Dans .NET Framework et les versions de .NET Core avant 3.0, vous pouvez définir la valeur d’un champ statique <xref:System.Reflection.FieldInfo.SetValue%2A?displayProperty=fullName>qui est constant après qu’il est initialisé ( lire dans C ' )[en](~/docs/csharp/language-reference/keywords/readonly.md)appelant . Cependant, la définition d’un tel champ de cette façon a entraîné un comportement imprévisible basé sur le cadre cible et les paramètres d’optimisation.
 
-Dans .NET Core 3,0 et versions ultérieures, lorsque vous appelez <xref:System.Reflection.FieldInfo.SetValue%2A> sur un champ statique <xref:System.Reflection.FieldAttributes.InitOnly>, une exception <xref:System.FieldAccessException?displayProperty=nameWithType> est levée.
+Dans .NET Core 3.0 et les <xref:System.Reflection.FieldInfo.SetValue%2A> versions ultérieures, lorsque vous faites appel à un champ statique, <xref:System.Reflection.FieldAttributes.InitOnly> une <xref:System.FieldAccessException?displayProperty=nameWithType> exception est lancée.
 
 > [!TIP]
-> Un champ <xref:System.Reflection.FieldAttributes.InitOnly> est un champ qui ne peut être défini qu’au moment où il est déclaré ou dans le constructeur pour la classe conteneur. En d’autres termes, elle est constante une fois qu’elle a été initialisée.
+> Un <xref:System.Reflection.FieldAttributes.InitOnly> champ est celui qui ne peut être fixé qu’au moment où il est déclaré ou dans le constructeur pour la classe contenant. En d’autres termes, il est constant après qu’il soit initialisé.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -25,9 +25,9 @@ Dans .NET Core 3,0 et versions ultérieures, lorsque vous appelez <xref:System.R
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Initialisez les champs statiques <xref:System.Reflection.FieldAttributes.InitOnly> dans un constructeur statique. Cela s’applique à la fois aux types dynamiques et non dynamiques.
+Initialiser les <xref:System.Reflection.FieldAttributes.InitOnly> champs statiques dans un constructeur statique. Cela s’applique à la fois aux types dynamiques et non dynamiques.
 
-Vous pouvez également supprimer l’attribut <xref:System.Reflection.FieldAttributes.InitOnly?displayProperty=nameWithType> du champ, puis appeler <xref:System.Reflection.FieldInfo.SetValue%2A?displayProperty=nameWithType>.
+Alternativement, vous pouvez <xref:System.Reflection.FieldAttributes.InitOnly?displayProperty=nameWithType> supprimer l’attribut du <xref:System.Reflection.FieldInfo.SetValue%2A?displayProperty=nameWithType>champ, puis appeler .
 
 #### <a name="category"></a>Category
 

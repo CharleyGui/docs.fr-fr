@@ -7,10 +7,10 @@ helpviewer_keywords:
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
 ms.openlocfilehash: b883012cf8f72247ff4e0b47a46eee1854e2d534
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "76735648"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Exceptions et gestion des exceptions (Guide de programmation C#)
@@ -31,7 +31,7 @@ Les exceptions ont les propriétés suivantes :
 - Utilisez un bloc `try` autour des instructions qui peuvent lever des exceptions.
 - Dès qu’une exception se produit dans le bloc `try`, le flux de contrôle passe immédiatement au premier gestionnaire d’exceptions associé présent dans la pile des appels. En C#, le mot clé `catch` est utilisé pour définir un gestionnaire d’exceptions.
 - Si aucun gestionnaire d’exceptions n’est présent pour une exception donnée, le programme s’arrête avec un message d’erreur.
-- N’interceptez pas d’exception si vous ne pouvez pas la gérer tout en laissant l’application dans un état connu. Si vous interceptez `System.Exception`, levez-la à nouveau à l’aide du mot clé `throw` à la fin du bloc `catch`.
+- N’interceptez pas d’exception si vous ne pouvez pas la gérer tout en laissant l’application dans un état connu. Si vous `System.Exception`attrapez, re-jetez-le en utilisant le `throw` mot clé à la fin du `catch` bloc.
 - Si un bloc `catch` définit une variable d’exception, vous pouvez l’utiliser pour obtenir plus d’informations sur le type d’exception qui s’est produit.
 - Les exceptions peuvent être générées explicitement par un programme avec le mot clé `throw`.
 - Les objets Exception contiennent des informations détaillées sur l'erreur, telles que l'état de la pile des appels et une description du texte de l'erreur.
@@ -40,13 +40,13 @@ Les exceptions ont les propriétés suivantes :
 
 ## <a name="related-sections"></a>Sections connexes
 
-Pour plus d’informations sur les exceptions et la gestion des exceptions, consultez les articles suivants :
+Voir les articles suivants pour plus d’informations sur les exceptions et le traitement des exceptions :
 
-- [Utilisation d’exceptions](using-exceptions.md)
+- [Utilisation des exceptions](using-exceptions.md)
 - [Gestion des exceptions](exception-handling.md)
 - [Création et levée d’exceptions](creating-and-throwing-exceptions.md)
 - [Exceptions générées par le compilateur](compiler-generated-exceptions.md)
-- [Comment gérer une exception à l’aide de try/C# catch (Guide de programmation)](how-to-handle-an-exception-using-try-catch.md)
+- [Comment gérer une exception à l’aide d’essai/capture (Guide de programmation CMD)](how-to-handle-an-exception-using-try-catch.md)
 - [Comment exécuter le code de nettoyage à l’aide de finally](how-to-execute-cleanup-code-using-finally.md)
 - [Comment intercepter une exception non-CLS](how-to-catch-a-non-cls-exception.md)
 
@@ -59,7 +59,7 @@ Pour plus d’informations, consultez [Exceptions](~/_csharplang/spec/exceptions
 - <xref:System.SystemException>
 - [Guide de programmation C#](../index.md)
 - [Mots clés C#](../../language-reference/keywords/index.md)
-- [throw](../../language-reference/keywords/throw.md)
+- [Jeter](../../language-reference/keywords/throw.md)
 - [try-catch](../../language-reference/keywords/try-catch.md)
 - [try-finally](../../language-reference/keywords/try-finally.md)
 - [try-catch-finally](../../language-reference/keywords/try-catch-finally.md)

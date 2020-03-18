@@ -3,10 +3,10 @@ title: Magasin de packages de runtime
 description: Découvrez comment utiliser le magasin de packages de runtime et les manifestes cibles utilisés par .NET Core.
 ms.date: 08/12/2017
 ms.openlocfilehash: 7a833ed95147608c6fb403f8f0dec179d2a73833
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77448956"
 ---
 # <a name="runtime-package-store"></a>Magasin de packages de runtime
@@ -72,13 +72,13 @@ dotnet store --manifest <PATH_TO_MANIFEST_FILE> --runtime <RUNTIME_IDENTIFIER> -
 dotnet store --manifest packages.csproj --runtime win10-x64 --framework netcoreapp2.0 --framework-version 2.0.0
 ```
 
-Vous pouvez passer plusieurs chemins de manifeste de magasin de packages cible à une seule commande [`dotnet store`](../tools/dotnet-store.md) en répétant l’option et le chemin dans la commande.
+Vous pouvez passer plusieurs chemins manifestes [`dotnet store`](../tools/dotnet-store.md) de magasin de paquets cibles à une seule commande en répétant l’option et le chemin dans la commande.
 
 Par défaut, la sortie de la commande est un magasin de packages sous le sous-répertoire *.dotnet/store* du profil de l’utilisateur. Vous pouvez spécifier un autre emplacement à l’aide de l’option `--output <OUTPUT_DIRECTORY>`. Le répertoire racine du magasin contient un fichier manifeste cible *artifact.xml*. Ce fichier peut être mis à disposition en téléchargement et servir aux auteurs d’application qui souhaitent cibler ce magasin au moment de la publication.
 
 **Exemple**
 
-Le fichier *artifact.xml* suivant est issu de l’exécution de l’exemple précédent. [`Castle.Core`](https://www.nuget.org/packages/Castle.Core/) étant une dépendance de `Moq`, il est inclus automatiquement et apparaît dans le fichier manifeste *artifacts.xml*.
+Le fichier *artifact.xml* suivant est issu de l’exécution de l’exemple précédent. Notez [`Castle.Core`](https://www.nuget.org/packages/Castle.Core/) que c’est une dépendance de `Moq`, de sorte qu’il est inclus automatiquement et apparaît dans le fichier de manifeste *artifacts.xml.*
 
 ```xml
 <StoreArtifacts>
@@ -90,7 +90,7 @@ Le fichier *artifact.xml* suivant est issu de l’exécution de l’exemple pré
 
 ## <a name="publishing-an-app-against-a-target-manifest"></a>Publication d’une application par rapport à un manifeste cible
 
-Si vous avez un fichier manifeste cible sur le disque, vous spécifiez le chemin du fichier quand vous publiez votre application avec la commande [`dotnet publish`](../tools/dotnet-publish.md) :
+Si vous avez un fichier manifeste cible sur disque, vous spécifiez le chemin vers le fichier lors de la publication de votre application avec la [`dotnet publish`](../tools/dotnet-publish.md) commande :
 
 ```dotnetcli
 dotnet publish --manifest <PATH_TO_MANIFEST_FILE>
@@ -108,7 +108,7 @@ Spécifiez plusieurs manifestes cible quand vous publiez une application en rép
 
 ## <a name="specifying-target-manifests-in-the-project-file"></a>Spécification de manifestes cibles dans le fichier projet
 
-Au lieu de spécifier des manifestes cibles avec la commande [`dotnet publish`](../tools/dotnet-publish.md), vous pouvez les spécifier dans le fichier projet sous forme de liste de chemins délimitée par des points-virgules sous une balise **\<TargetManifestFiles>** .
+Une alternative à la spécifier les manifestes de cible avec la [`dotnet publish`](../tools/dotnet-publish.md) commande est de les spécifier dans le fichier du projet comme une liste de sentiers séparés par le point-virgule sous une ** \<étiquette de>TargetManifestFiles.**
 
 ```xml
 <PropertyGroup>
@@ -116,17 +116,17 @@ Au lieu de spécifier des manifestes cibles avec la commande [`dotnet publish`](
 </PropertyGroup>
 ```
 
-Spécifiez les manifestes cibles dans le fichier projet uniquement quand l’environnement cible de l’application est bien connu, à l’image des projets .NET Core. Ce n’est pas le cas des projets open source. En général, les utilisateurs d’un projet open source le déploient sur des environnements de production différents. Ces environnements de production ont généralement différents ensembles de packages préinstallés. Vous ne pouvez pas faire de suppositions quant au manifeste cible dans de tels environnements ; vous devez donc utiliser l’option `--manifest` de [`dotnet publish`](../tools/dotnet-publish.md).
+Spécifiez les manifestes cibles dans le fichier projet uniquement quand l’environnement cible de l’application est bien connu, à l’image des projets .NET Core. Ce n’est pas le cas des projets open source. En général, les utilisateurs d’un projet open source le déploient sur des environnements de production différents. Ces environnements de production ont généralement différents ensembles de packages préinstallés. Vous ne pouvez pas faire des hypothèses sur le manifeste `--manifest` cible [`dotnet publish`](../tools/dotnet-publish.md)dans de tels environnements, de sorte que vous devriez utiliser l’option de .
 
 ## <a name="aspnet-core-implicit-store"></a>Magasin ASP.NET Core implicite
 
 Le magasin implicite ASP.NET Core s’applique uniquement à ASP.NET Core 2.0. Nous vous recommandons fortement de baser les applications sur ASP.NET Core 2.1 et version ultérieure, car le magasin implicite n’est **pas** utilisé dans ce cas. ASP.NET Core 2.1 et les versions ultérieures utilisent le framework partagé.
 
-La fonctionnalité de magasin de packages de runtime est implicitement utilisée par une application ASP.NET Core quand celle-ci est déployée en tant qu’application [à déploiement dépendant du framework](index.md#publish-runtime-dependent). Les cibles dans [`Microsoft.NET.Sdk.Web`](https://github.com/aspnet/websdk) contiennent les manifestes référençant le magasin de packages implicite sur le système cible. De plus, toute application à déploiement dépendant du framework qui est tributaire du package `Microsoft.AspNetCore.All` aboutit à une application publiée qui contient uniquement l’application et ses composants et non les packages listés dans le métapackage `Microsoft.AspNetCore.All`. Ces packages sont censés être présents sur le système cible.
+La fonctionnalité de magasin de packages de runtime est implicitement utilisée par une application ASP.NET Core quand celle-ci est déployée en tant qu’application [à déploiement dépendant du framework](index.md#publish-runtime-dependent). Les cibles [`Microsoft.NET.Sdk.Web`](https://github.com/aspnet/websdk) comprennent les manifestes faisant référence au magasin implicite de paquets sur le système cible. De plus, toute application à déploiement dépendant du framework qui est tributaire du package `Microsoft.AspNetCore.All` aboutit à une application publiée qui contient uniquement l’application et ses composants et non les packages listés dans le métapackage `Microsoft.AspNetCore.All`. Ces packages sont censés être présents sur le système cible.
 
 Le magasin de packages de runtime est installé sur l’hôte quand le SDK .NET Core est installé. D’autres programmes d’installation peuvent fournir le magasin de packages de runtime, notamment les installations Zip/tarball du SDK .NET Core, `apt-get`, Red Hat Yum, le bundle .NET Core Windows Server Hosting et les installations de magasin de packages de runtime manuelles.
 
-Quand vous déployez une application [à déploiement dépendant du framework](index.md#publish-runtime-dependent), vérifiez que le SDK .NET Core est installé sur l’environnement cible. Si l’application est déployée sur un environnement qui n’a pas ASP.NET Core, vous pouvez ne pas utiliser le magasin implicite en définissant **\<PublishWithAspNetCoreTargetManifest>** sur `false` dans le fichier projet, comme dans l’exemple suivant :
+Quand vous déployez une application [à déploiement dépendant du framework](index.md#publish-runtime-dependent), vérifiez que le SDK .NET Core est installé sur l’environnement cible. Si l’application est déployée dans un environnement qui n’inclut pas ASP.NET Core, vous pouvez vous retirer du magasin implicite en spécifiant `false` ** \<PublishWithAspNetTargetManifest>** réglé dans le fichier du projet comme dans l’exemple suivant :
 
 ```xml
 <PropertyGroup>
@@ -135,7 +135,7 @@ Quand vous déployez une application [à déploiement dépendant du framework](i
 ```
 
 > [!NOTE]
-> Dans le cas des applications [à déploiement autonome](index.md#publish-self-contained), le système peut ne pas contenir les packages de manifestes nécessaires. Par conséquent, **\<PublishWithAspNetCoreTargetManifest>** ne peut pas être défini avec la valeur `true` pour une application à déploiement autonome.
+> Dans le cas des applications [à déploiement autonome](index.md#publish-self-contained), le système peut ne pas contenir les packages de manifestes nécessaires. Par conséquent, ** \<PublishWithAspNetCoreTargetManifest>** ne `true` peut pas être configuré pour une application SCD.
 
 Si vous déployez une application et que le déploiement comprend une dépendance de manifeste (l’assembly est présent dans le dossier *bin*), le magasin de packages de runtime *n’est pas utilisé* sur l’hôte pour cet assembly. L’assembly dans le dossier *bin* est utilisé indépendamment de sa présence dans le magasin de packages de runtime sur l’hôte.
 

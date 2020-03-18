@@ -3,10 +3,10 @@ title: Principes de conception communs des conteneurs
 description: Découvrez un principe fondamental d’une bonne conception de conteneurs, à savoir qu’un conteneur doit héberger un seul processus.
 ms.date: 02/15/2019
 ms.openlocfilehash: 69f3ff6c9303f0c4082695d861a8c90031295b6a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68672496"
 ---
 # <a name="common-container-design-principles"></a>Principes de conception communs des conteneurs
@@ -20,5 +20,5 @@ Dans le modèle à base de conteneurs, un conteneur représente un processus uni
 Le cas peut se présenter où vous voulez que plusieurs processus s’exécutent dans un même conteneur. Dans tout document d’architecture, il n’est jamais question de « jamais » et il n’y a pas toujours un « toujours ». Pour les scénarios qui nécessitent plusieurs processus, un modèle courant consiste à utiliser un [superviseur](http://supervisord.org/).
 
 >[!div class="step-by-step"]
->[Précédent](design-docker-applications.md)
->[Suivant](monolithic-applications.md)
+>[Suivant précédent](design-docker-applications.md)
+>[Next](monolithic-applications.md)

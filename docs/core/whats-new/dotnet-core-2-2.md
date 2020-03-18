@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.date: 12/04/2018
 ms.openlocfilehash: e045c39240c99777d05ca86ee0a8cd1fa4309c4f
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78156580"
 ---
 # <a name="whats-new-in-net-core-22"></a>Nouveautés de .NET Core 2.2
@@ -26,9 +26,9 @@ Ce nouveau mode de déploiement présente le net avantage de créer un exécutab
 
 **Gérer les événements dans les services de runtime**
 
-Supposons que vous souhaitiez surveiller l’utilisation des services de runtime (par exemple, GC, JIT ou ThreadPool) par votre application, pour comprendre leur impact sur votre application.Sur les systèmes Windows, cette opération est généralement effectuée en surveillant les événements ETW du processus en cours.Bien que cette opération continue de fonctionner correctement, il n’est pas toujours possible d’utiliser ETW si vous exécutez dans un environnement à faibles privilèges ou sur Linux ou macOS.
+Supposons que vous souhaitiez surveiller l’utilisation des services de runtime (par exemple, GC, JIT ou ThreadPool) par votre application, pour comprendre leur impact sur votre application.Sur les systèmes Windows, on effectue en général pour cela un monitoring des événements ETW du processus en cours.Bien que cette solution fonctionne toujours, il n’est pas toujours possible d’utiliser ETW, notamment dans un environnement à faibles privilèges ou sous Linux ou macOS.
 
-À partir de .NET Core 2.2, la classe <xref:System.Diagnostics.Tracing.EventListener?displayProperty=nameWithType> peut consommer des événements CoreCLR. Ces événements décrivent le comportement de ces services de runtime, comme GC, JIT, ThreadPool et Interop. Ce sont les mêmes que dans le fournisseur ETW CoreCLR.Cela permet aux applications de consommer ces événements ou d’utiliser un mécanisme de transport pour les envoyer à un service d’agrégation de télémétrie. L’exemple de code suivant montre comment s’abonner aux événements :
+À partir de .NET Core 2.2, la classe <xref:System.Diagnostics.Tracing.EventListener?displayProperty=nameWithType> peut consommer des événements CoreCLR. Ces événements décrivent le comportement de ces services de runtime, comme GC, JIT, ThreadPool et Interop. Ce sont les mêmes que dans le fournisseur ETW CoreCLR.Les applications peuvent ainsi consommer ces événements ou utiliser un mécanisme de transport pour les envoyer à un service d’agrégation de données de télémétrie. L’exemple de code suivant montre comment s’abonner aux événements :
 
 ```csharp
 internal sealed class SimpleEventListener : EventListener

@@ -1,22 +1,22 @@
 ---
-title: Comment rechercher des descendants d’un élément enfant (XPath-LINQ to XML) (C#)
+title: Comment trouver les descendants d’un élément enfant (XPath-LINQ à XML) (C)
 ms.date: 07/20/2015
 ms.assetid: 505b7512-bb8b-4f85-abbf-491f039c961e
 ms.openlocfilehash: fb3e20ce21c1f6d2a71f2f71b8acec7cecf0f3ed
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141095"
 ---
-# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a>Comment rechercher des descendants d’un élément enfant (XPath-LINQ to XML) (C#)
+# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a>Comment trouver les descendants d’un élément enfant (XPath-LINQ à XML) (C)
 Cette rubrique montre comment obtenir les éléments descendants d'un élément enfant avec un nom particulier.  
   
  L’expression XPath est la suivante :  
   
  `./Paragraph//Text/text()`  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Cet exemple simule les problèmes d'extraction de texte à partir d'une représentation XML d'un document de traitement de texte. Il sélectionne tout d'abord tous les éléments `Paragraph`, puis il sélectionne tous les éléments descendants `Text` de chaque élément `Paragraph`. Il ne sélectionne pas `Text`les éléments descendants de`Comment` l'élément.  
   
 ```csharp  
@@ -68,7 +68,7 @@ else
 Console.WriteLine(str2);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```output  
 Results are identical  

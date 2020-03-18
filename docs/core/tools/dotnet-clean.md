@@ -3,17 +3,17 @@ title: Commande dotnet clean
 description: La commande dotnet clean nettoie le répertoire actif.
 ms.date: 02/14/2020
 ms.openlocfilehash: 186f1ea07718a8e178f88c3d079cf6e2f1f8660b
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77503758"
 ---
 # <a name="dotnet-clean"></a>dotnet clean
 
-**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 2.x SDK et les versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet clean` : Nettoie la sortie d’un projet.
 
@@ -39,7 +39,7 @@ Projet ou solution MSBuild à nettoyer. Si vous ne spécifiez pas de fichier pro
 
 * **`-c|--configuration <CONFIGURATION>`**
 
-  Définit la configuration de build. La valeur par défaut pour la plupart des projets est `Debug`, mais vous pouvez remplacer les paramètres de configuration de build dans votre projet. Cette option est uniquement requise durant le nettoyage si vous l’avez spécifiée au moment de la génération.
+  Définit la configuration de build. La valeur par `Debug`défaut pour la plupart des projets est, mais vous pouvez remplacer les paramètres de configuration de construction dans votre projet. Cette option est uniquement requise durant le nettoyage si vous l’avez spécifiée au moment de la génération.
 
 * **`-f|--framework <FRAMEWORK>`**
 
@@ -51,11 +51,11 @@ Projet ou solution MSBuild à nettoyer. Si vous ne spécifiez pas de fichier pro
 
 * **`--interactive`**
 
-  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Disponible à partir du kit SDK .NET Core 3.0.
+  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Option disponible à partir du kit SDK .NET Core 3.0.
 
 * **`--nologo`**
 
-  N’affiche pas la bannière de démarrage ni le message de copyright. Disponible à partir du kit SDK .NET Core 3.0.
+  N’affiche pas la bannière de démarrage ni le message de copyright. Option disponible à partir du kit SDK .NET Core 3.0.
 
 * **`-o|--output <OUTPUT_DIRECTORY>`**
 

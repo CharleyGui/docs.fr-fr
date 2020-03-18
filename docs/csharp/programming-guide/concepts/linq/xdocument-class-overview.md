@@ -3,10 +3,10 @@ title: Vue d’ensemble de la classe XDocument (C#)
 ms.date: 07/20/2015
 ms.assetid: 63305603-ab54-49fc-84e4-f76eecc59549
 ms.openlocfilehash: de49dc071d22dd77dddea29ca114663261e3edda
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69590847"
 ---
 # <a name="xdocument-class-overview-c"></a>Vue d’ensemble de la classe XDocument (C#)

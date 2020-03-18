@@ -4,17 +4,17 @@ description: Contient des liens vers des rubriques qui fournissent des informati
 ms.date: 11/30/2016
 ms.assetid: 8eb3284f-0ab9-4cad-9216-2da58d9761a5
 ms.openlocfilehash: 0b9301074996528cd1fbcfebde3a0a57b15e2f15
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73421762"
 ---
 # <a name="linq-in-c"></a>LINQ en C\#
 
 Cette section contient des liens vers des rubriques qui fournissent des informations plus détaillées à propos de LINQ.
 
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
 [Introduction aux requêtes LINQ](../programming-guide/concepts/linq/introduction-to-linq-queries.md)  
 Décrit les trois parties de l’opération de requête LINQ de base qui sont communes à tous les langages et à toutes les sources de données.  
@@ -34,10 +34,10 @@ Compare la syntaxe des méthodes et la syntaxe des requêtes considérées comme
 [Fonctionnalités C# qui prennent en charge LINQ](../programming-guide/concepts/linq/features-that-support-linq.md)  
 Décrit les constructions de langage dans C# qui prennent en charge LINQ.
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
 [Expressions de requête LINQ](index.md)  
 Inclut une vue d’ensemble des requêtes dans LINQ et fournit des liens vers des ressources supplémentaires.
 
-[Vue d’ensemble des opérateurs de requête standard](../programming-guide/concepts/linq/standard-query-operators-overview.md)  
+[Aperçu standard des opérateurs de requêtes](../programming-guide/concepts/linq/standard-query-operators-overview.md)  
 Présente les méthodes standard utilisées dans LINQ.

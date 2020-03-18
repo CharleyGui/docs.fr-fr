@@ -4,21 +4,21 @@ description: Dans ce tutoriel sur les branches et les boucles, vous allez écrir
 ms.date: 10/31/2017
 ms.custom: mvc
 ms.openlocfilehash: 44b634e3c2120116ee7fd66770398a6b66c8ed8c
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73739124"
 ---
 # <a name="learn-conditional-logic-with-branch-and-loop-statements"></a>Découvrir la logique conditionnelle avec des instructions de branches et de boucles
 
 Ce tutoriel explique comment écrire du code qui examine des variables et modifie le chemin d’exécution en fonction de ces variables. Vous allez écrire un code en C# et afficher les résultats de la compilation et de l’exécution du code. Ce tutoriel comporte une série de leçons visant à explorer les constructions de type branches et boucles en C#. Ces leçons présentent les concepts de base du langage C#.
 
-Ce tutoriel suppose que vous disposez d’un ordinateur que vous pouvez utiliser pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur Windows, Linux ou MacOS. Vous trouverez une brève vue d’ensemble des commandes utilisées dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
+Ce tutoriel suppose de disposer d’un ordinateur utilisable pour le développement. Le tutoriel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a des instructions pour configurer votre environnement de développement local sur Windows, Linux ou macOS. Vous trouverez une brève vue d’ensemble des commandes utilisées dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
 
 ## <a name="make-decisions-using-the-if-statement"></a>Prendre des décisions à l’aide de l’instruction `if`
 
-Créez un répertoire nommé *branches-tutorial*. Créez le répertoire actif et exécutez la commande suivante :
+Créez un répertoire nommé *branches-tutorial*. Faites que le répertoire actuel et exécuter la commande suivante:
 
 ```dotnetcli
 dotnet new console -n BranchesAndLoops -o .
@@ -127,7 +127,7 @@ else
 
 Modifiez les valeurs de `a`, `b` et `c` et passez de `&&` à `||` et inversement. Vous comprendrez mieux comment fonctionnent les opérateurs `&&` et `||`.
 
-Vous avez terminé la première étape. Avant de passer à la section suivante, déplaçons le code actuel dans une méthode distincte. Cela nous permettra de travailler plus facilement avec un nouvel exemple. Renommez votre méthode `Main` `ExploreIf` et écrivez une nouvelle méthode `Main` qui appelle `ExploreIf`. Une fois terminé, votre code doit ressembler au code suivant :
+Vous avez terminé la première étape. Avant de passer à la section suivante, déplaçons le code actuel dans une méthode distincte. Cela nous permettra de travailler plus facilement avec un nouvel exemple. Renommez votre méthode `Main``ExploreIf` et écrivez une nouvelle méthode `Main` qui appelle `ExploreIf`. Une fois terminé, votre code doit ressembler au code suivant :
 
 ```csharp
 using System;
@@ -235,11 +235,11 @@ for (int index = 0; index < 10; index++)
 
 Cette boucle fonctionne de manière identique à la boucle `while` et la boucle `do` que vous avez déjà utilisées. L’instruction `for` comprend trois parties qui contrôlent son fonctionnement.
 
-La première partie est l’**initialiseur for** : `int index = 0;` déclare que `index` est la variable de boucle et définit sa valeur initiale sur `0`.
+La première partie est l’initialisation : **for initializer** `int index = 0;` déclare qu’il s’agit `index` de la variable de boucle, et fixe sa valeur initiale à `0`.
 
-La partie centrale est la **condition for** : `index < 10` déclare que cette boucle `for` continue à s’exécuter tant que la valeur de compteur est inférieure à 10.
+La partie centrale **for condition**est `index < 10` la condition `for` : déclare que cette boucle continue à s’exécuter tant que la valeur du compteur est inférieure à 10.
 
-La dernière partie est l’**itérateur for** : `index++` indique comment modifier la variable de boucle après l’exécution du bloc qui suit l’instruction `for`. Il spécifie ici que `index` doit être incrémenté de 1 chaque fois que le bloc s’exécute.
+La dernière partie est l’itérateur : `index++` précise comment modifier la variable `for` de boucle après l’exécution du bloc suivant la déclaration. **for iterator** Il spécifie ici que `index` doit être incrémenté de 1 chaque fois que le bloc s’exécute.
 
 Vérifiez-le par vous-même. Réalisez les essais suivants :
 

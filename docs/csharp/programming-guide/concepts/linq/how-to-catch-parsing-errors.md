@@ -1,20 +1,20 @@
 ---
-title: Comment intercepter les erreurs d’analyseC#()
+title: Comment attraper les erreurs d’analyse (C)
 ms.date: 07/20/2015
 ms.assetid: bfb612d4-5605-48ef-8c93-915cf9d5dcfb
 ms.openlocfilehash: 1a05037892061dec85e7837472e8ec13e076724b
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141483"
 ---
-# <a name="how-to-catch-parsing-errors-c"></a>Comment intercepter les erreurs d’analyseC#()
+# <a name="how-to-catch-parsing-errors-c"></a>Comment attraper les erreurs d’analyse (C)
 Cette rubrique montre comment détecter du code XML incorrect ou non valide.  
   
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est implémenté avec <xref:System.Xml.XmlReader>. Si du code XML incorrect ou non valide est passé à [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], la classe sous-jacente <xref:System.Xml.XmlReader> ève une exception. Les différentes méthodes qui analysent le code XML, telles que <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, n’interceptent pas l’exception. Celle-ci peut donc être interceptée par votre application.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Le code suivant tente d'analyser du code XML non valide :  
   
 ```csharp  

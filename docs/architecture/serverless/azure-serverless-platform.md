@@ -1,26 +1,26 @@
 ---
-title: Plateforme sans serveur Azure-applications sans serveur
-description: La plateforme sans serveur Azure offre des fonctionnalités telles que le code de mise à l’échelle instantanée déclenchée par des événements, l’orchestration basée sur le Cloud, l’orchestration de flux de travail, etc.
+title: La plate-forme sans serveur Azure - Applications sans serveur
+description: La plate-forme sans serveur Azure offre des fonctionnalités, y compris le code à l’échelle instantanée déclenché par les événements, pub/sous-service basés sur le cloud, orchestration de flux de travail et plus encore.
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: 43646db564ae31d26fe59e1ad7392e51d2d4e953
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69577592"
 ---
 # <a name="azure-serverless-platform"></a>Plateforme sans serveur Azure
 
-La plateforme sans serveur Azure comprend Azure Functions, Logic Apps et Event Grid. Ces services fonctionnent ensemble et se connectent à de nombreuses autres ressources. La plate-forme sans serveur fonctionne avec tous les éléments, depuis les bases de données et le stockage jusqu’à l’analyse et la Machine Learning/l’intelligence artificielle.
+La plate-forme Azure sans serveur comprend Azure Functions, Logic Apps et Event Grid. Ces services travaillent ensemble et se connectent avec une myriade d’autres ressources. La plate-forme sans serveur fonctionne avec tout, des bases de données et du stockage à l’analyse et l’apprentissage automatique / intelligence artificielle.
 
-Vous pouvez également utiliser Application Insights, une plateforme sans serveur pour la capture des traces de diagnostic et la télémétrie. Application Insights sont disponibles pour les applications de tous types (Desktop, mobile ou Web), ainsi que pour les implémentations sans serveur. La plateforme est visualisée dans le diagramme suivant :
+Vous pouvez également utiliser Application Insights, une plate-forme sans serveur pour capturer les traces diagnostiques et la télémétrie. Les aperçus d’applications sont disponibles pour les applications de tous types (bureau, mobile ou web) ainsi que les implémentations sans serveur. La plate-forme est visualisée dans le diagramme suivant :
 
 ![Plateforme sans serveur Azure](./media/azure-serverless-platform.png)
 
-Ce chapitre décrit les notions de base de chaque composant.
+Ce chapitre décompose les principes fondamentaux de chaque composant.
 
 >[!div class="step-by-step"]
->[Précédent](serverless-design-examples.md)
->[Suivant](azure-functions.md)
+>[Suivant précédent](serverless-design-examples.md)
+>[Next](azure-functions.md)

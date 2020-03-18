@@ -3,10 +3,10 @@ title: Implémentation de lectures/requêtes dans un microservice CQRS
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre l’implémentation du côté requêtes de CQRS sur le microservice Ordering dans eShopOnContainers avec Dapper.
 ms.date: 10/08/2018
 ms.openlocfilehash: 235b0e471a17e2a37a883a111cf499b7837f3ea1
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73972085"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implémenter les lectures/requêtes dans un microservice CQRS
@@ -15,7 +15,7 @@ Pour les lectures/requêtes, le microservice Ordering (Commandes) de l’applica
 
 L’approche est simple, comme le montre la figure 7-3. L’interface API est implémentée par les contrôleurs d’API web à l’aide de n’importe quelle infrastructure, comme un micro-mappeur objet/relationnel (ORM) tel que Dapper, et en retournant des ViewModels dynamiques en fonction des besoins des applications d’interface utilisateur.
 
-![Diagramme montrant les requêtes de haut niveau, côté de la CQRS simplifiée.](./media/cqrs-microservice-reads/simple-approach-cqrs-queries.png)
+![Diagramme montrant des requêtes de haut niveau-côté dans CQRS simplifiés.](./media/cqrs-microservice-reads/simple-approach-cqrs-queries.png)
 
 **Figure 7-3**. Approche la plus simple pour les requêtes dans un microservice CQRS
 
@@ -23,9 +23,9 @@ L’approche la plus simple pour le côté requêtes dans une approche CQRS simp
 
 Dans la mesure où il s’agit d’une approche simple, le code nécessaire côté requêtes (comme le code utilisant un micro-ORM tel que [Dapper](https://github.com/StackExchange/Dapper)) peut être implémenté [dans le même projet d’API web](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Queries/OrderQueries.cs). La figure 7-4 illustre ceci. Les requêtes sont définies dans le projet de microservice **Ordering.API** dans la solution eShopOnContainers.
 
-![Capture d’écran du dossier requêtes du projet Ordering. API.](./media/cqrs-microservice-reads/ordering-api-queries-folder.png)
+![Capture d’écran du dossier Requête du projet Ordering.API.](./media/cqrs-microservice-reads/ordering-api-queries-folder.png)
 
-**Figure 7-4**. Requêtes dans le microservice de commandes dans eShopOnContainers
+**Figure 7-4**. Requêtes dans le microservice de commandes dans eShopOnContainers
 
 ## <a name="use-viewmodels-specifically-made-for-client-apps-independent-from-domain-model-constraints"></a>Utiliser des ViewModels spécifiquement conçus pour les applications clientes, indépendants des contraintes de modèle de domaine
 
@@ -41,7 +41,7 @@ Vous pouvez utiliser n’importe quel micro-ORM, Entity Framework Core ou même 
 
 Dapper est un projet Open Source (initialement créé par Sam Saffron). Il fait partie des éléments essentiels utilisés dans [Stack Overflow](https://stackoverflow.com/). Pour utiliser Dapper, il vous suffit de l’installer par le biais du [package NuGet Dapper](https://www.nuget.org/packages/Dapper), comme illustré dans la figure suivante :
 
-![Capture d’écran du package dapper dans la vue packages NuGet.](./media/cqrs-microservice-reads/drapper-package-nuget.png)
+![Capture d’écran du paquet Dapper dans la vue des paquets NuGet.](./media/cqrs-microservice-reads/drapper-package-nuget.png)
 
 Vous devez également ajouter une instruction using afin que votre code ait accès aux méthodes d’extension Dapper.
 
@@ -177,7 +177,7 @@ C’est une autre raison pour laquelle les types retournés explicites sont, à 
 
 Dans l’image suivante, vous pouvez voir comment l’interface utilisateur de Swagger affiche les informations ResponseType.
 
-![Capture d’écran de la page d’interface utilisateur Swagger pour l’API de tri.](./media/cqrs-microservice-reads/swagger-ordering-http-api.png)
+![Capture d’écran de la page de l’interface utilisateur Swagger pour l’API de commande.](./media/cqrs-microservice-reads/swagger-ordering-http-api.png)
 
 **Figure 7-5**. Interface utilisateur de Swagger affichant les types de réponse et les codes d’état HTTP possibles à partir d’une API web
 
@@ -188,12 +188,12 @@ L’image ci-dessus présente des exemples de valeurs basés sur les types ViewM
 - **Dapper**  
  <https://github.com/StackExchange/dapper-dot-net>
 
-- **Julie Lerman. Points de données-dapper, Entity Framework et applications hybrides (article MSDN Magazine)**  
+- **Julie Lerman. Points de données - Dapper, Entity Framework et Hybrid Apps (article du magazine MSDN)**  
   <https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps>
 
-- **Pages d’aide sur l’API web ASP.NET Core avec Swagger**  
+- **ASP.NET Pages d’aide à l’API Web de base à l’aide de Swagger**  
   <https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger?tabs=visual-studio>
 
 >[!div class="step-by-step"]
->[Précédent](eshoponcontainers-cqrs-ddd-microservice.md)
->[Suivant](ddd-oriented-microservice.md)
+>[Suivant précédent](eshoponcontainers-cqrs-ddd-microservice.md)
+>[Next](ddd-oriented-microservice.md)

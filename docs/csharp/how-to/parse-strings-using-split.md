@@ -1,5 +1,5 @@
 ---
-title: Comment analyser des chaînes à l’aide de StringC# . Split (Guide)
+title: Comment analyser les cordes à l’aide de String.Split (Guide C)
 description: String.Split retourne un tableau de chaînes fractionnées à partir d’un ensemble de délimiteurs. Il s’agit d’un moyen simple pour analyser des chaînes.
 ms.date: 01/03/2018
 helpviewer_keywords:
@@ -10,13 +10,13 @@ helpviewer_keywords:
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
 ms.openlocfilehash: b46429f3b55658e1f2a7d21eed714c1d02236c57
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73973233"
 ---
-# <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Comment analyser des chaînes à l’aide de StringC# . Split (Guide)
+# <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Comment analyser les cordes à l’aide de String.Split (Guide C)
 
 La méthode <xref:System.String.Split%2A?displayProperty=nameWithType> crée un tableau de sous-chaînes en fractionnant la chaîne d’entrée en fonction d’un ou plusieurs délimiteurs. C’est souvent le moyen le plus simple pour séparer une chaîne sur des limites de mots. Elle sert également à fractionner des chaînes sur d’autres caractères ou chaînes spécifiques.
 
@@ -48,10 +48,10 @@ Les instances consécutives d’un séparateur produisent une chaîne vide dans 
   
 [!code-csharp-interactive[split strings using strings as separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#5)]
 
-Vous pouvez essayer ces exemples en examinant le code dans notre [dépôt GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
+Vous pouvez essayer ces échantillons en regardant le code dans notre [référentiel GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../programming-guide/index.md)
-- [Chaînes](../programming-guide/strings/index.md)
-- [Expressions régulières .NET](../../standard/base-types/regular-expressions.md)
+- [Cordes](../programming-guide/strings/index.md)
+- [Expressions régulières .NET](../../standard/base-types/regular-expressions.md)

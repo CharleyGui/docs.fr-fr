@@ -1,57 +1,57 @@
 ---
-title: Migration C++de projets/CLI vers .net Core
-description: En savoir plus sur C++le portage de projets/CLI vers .net core.
+title: Migrer les projets CMD/CLI à .NET Core
+description: En savoir plus sur le portage des projets CMD/CLI à .NET Core.
 author: mjrousos
 ms.date: 01/10/2020
 ms.openlocfilehash: eb03f2a5ff42e8279fd3ebd6ee6fb6d955f6798d
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75964929"
 ---
-# <a name="how-to-port-a-ccli-project-to-net-core"></a>Guide pratique pour porter C++un projet/CLI vers .net Core
+# <a name="how-to-port-a-ccli-project-to-net-core"></a>Comment porter un projet CMD/CLI à .NET Core
 
-À compter de .net Core 3,1 et de Visual Studio 2019 version 16,4, [ C++les projets/CLI](/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp) peuvent cibler .net core. Cette prise en charge permet de porter les applications de bureau C++Windows avec des couches Interop/CLI vers .net core. Cet article explique comment déplacer C++des projets/cli de .NET Framework vers .net Core 3,1.
+À partir de .NET Core 3.1 et Visual Studio 2019 version 16.4, [les projets C'/CLI](/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp) peuvent cibler .NET Core. Ce support permet de porter des applications de bureau Windows avec des couches interop C'/CLI à .NET Core. Cet article décrit comment portuairer les projets CMD/CLI du cadre .NET au .NET Core 3.1.
 
-## <a name="ccli-net-core-limitations"></a>C++Limitations de .NET Core/CLI
+## <a name="ccli-net-core-limitations"></a>Limitations de base CMD/CLI .NET
 
-Il existe quelques limitations importantes pour le portage C++de projets/CLI vers .net Core par rapport à d’autres langages :
+Il y a quelques limites importantes au portage des projets de C/CLI à .NET Core par rapport à d’autres langues :
 
-* C++La prise en charge de .NET Core/CLI est Windows uniquement.
-* C++Les projets/CLI ne peuvent pas cibler .NET Standard, mais uniquement .NET Core (ou .NET Framework).
-* C++Les projets/CLI ne prennent pas en charge le nouveau format de fichier de projet de type SDK. Au lieu de cela, même quand vous C++ciblez .net Core, les projets/CLI utilisent le format de fichier vcxproj existant.
-* C++Les projets/CLI ne peuvent pas multicibler plusieurs plateformes .NET. Si vous avez besoin de générer C++un projet/cli pour .NET Framework et .net Core, utilisez des fichiers de projet distincts.
-* .NET Core ne prend pas en charge la compilation `-clr:pure` ou `-clr:safe`, mais uniquement la nouvelle option `-clr:netcore` (qui est équivalente à `-clr` pour .NET Framework).
+* La prise en charge de C/CLI pour .NET Core est Uniquement Windows.
+* Les projets C/CLI ne peuvent pas cibler .NET Standard, seulement .NET Core (ou .NET Framework).
+* Les projets CMD/CLI ne prennent pas en charge le nouveau format de fichier de projet de type SDK. Au lieu de cela, même lorsque vous ciblez .NET Core, les projets C/CLI utilisent le format de fichier vcxproj existant.
+* Les projets C/CLI ne peuvent pas multitarget plusieurs plates-formes .NET. Si vous avez besoin de construire un projet CMD/CLI pour .NET Framework et .NET Core, utilisez des fichiers de projets distincts.
+* .NET Core ne `-clr:pure` prend `-clr:safe` pas en `-clr:netcore` charge ou compilation, `-clr` seulement la nouvelle option (qui est équivalente à pour .NET Framework).
 
-## <a name="port-a-ccli-project"></a>Porter un C++projet/CLI
+## <a name="port-a-ccli-project"></a>Projet de port a CMD/CLI
 
-Pour porter un C++projet/CLI vers .net Core, apportez les modifications suivantes au fichier vcxproj. Ces étapes de migration diffèrent des étapes requises pour les autres types C++de projets, car les projets/CLI n’utilisent pas de fichiers projet de type SDK.
+Pour effectuer un projet CMD/CLI à .NET Core, modifiez les modifications suivantes au fichier vcxproj. Ces étapes de migration diffèrent des étapes nécessaires pour d’autres types de projets, car les projets C/CLI n’utilisent pas de fichiers de projets de type SDK.
 
-1. Remplacez `<CLRSupport>true</CLRSupport>` propriétés par `<CLRSupport>NetCore</CLRSupport>`. Cette propriété est souvent dans des groupes de propriétés spécifiques à la configuration. vous devrez donc peut-être la remplacer à plusieurs emplacements.
-2. Remplacez `<TargetFrameworkVersion>` propriétés par `<TargetFramework>netcoreapp3.1</TargetFramework>`.
-3. Supprimez toutes les références .NET Framework (par exemple `<Reference Include="System" />`). Les assemblys kit SDK .NET Core sont automatiquement référencés lors de l’utilisation de `<CLRSupport>NetCore</CLRSupport>`.
-4. Mettez à jour l’utilisation des API dans les fichiers CPP, si nécessaire, pour supprimer les API non disponibles pour .NET Core. Étant C++donné que les projets/CLI ont tendance à être des couches d’interopérabilité assez étroites, il n’y a souvent pas beaucoup de modifications nécessaires. L' [Analyseur de portabilité .net](../../standard/analyzers/portability-analyzer.md) peut être utilisé pour identifier les API .net non prises en C++charge utilisées par les fichiers binaires/CLI, tout comme avec les fichiers binaires purement managés. Les instructions relatives à la détermination de la portabilité du code et à la mise à jour des projets à utiliser avec les API .NET Core sont disponibles dans le [Guide de portage des bibliothèques](./libraries.md#determine-portability).
+1. Remplacer `<CLRSupport>true</CLRSupport>` les `<CLRSupport>NetCore</CLRSupport>`propriétés par . Cette propriété est souvent dans les groupes de propriété spécifiques à la configuration, de sorte que vous devrez peut-être le remplacer à plusieurs endroits.
+2. Remplacer `<TargetFrameworkVersion>` les `<TargetFramework>netcoreapp3.1</TargetFramework>`propriétés par .
+3. Supprimer toutes les références `<Reference Include="System" />`cadre .NET (comme ). .NET Core SDK assemblages sont `<CLRSupport>NetCore</CLRSupport>`automatiquement référencés lors de l’utilisation .
+4. Mettre à jour l’utilisation de l’API dans les fichiers cpp, au besoin, pour supprimer les API indisponibles pour .NET Core. Étant donné que les projets CMD/CLI ont tendance à être des couches interop assez minces, il n’y a souvent pas beaucoup de changements nécessaires. [L’analyseur de portabilité .NET](../../standard/analyzers/portability-analyzer.md) peut être utilisé pour identifier les API .NET non pris en charge utilisés par les binaires C/CLI tout comme avec les binaires purement gérés. Des lignes directrices pour déterminer la portabilité du code et la mise à jour des projets pour travailler avec les API de base .NET sont disponibles dans les directives de [portage de bibliothèque](./libraries.md#determine-portability).
 
-### <a name="wpf-and-windows-forms-usage"></a>Utilisation de WPF et de Windows Forms
+### <a name="wpf-and-windows-forms-usage"></a>Utilisation des formulaires WPF et Windows
 
-Les projets C++.net Core/CLI peuvent utiliser des API Windows Forms et WPF. Pour utiliser ces API de bureau Windows, vous devez ajouter des références d’infrastructure explicites aux bibliothèques de l’interface utilisateur. Les projets de type SDK qui utilisent les API de bureau Windows référencent automatiquement les bibliothèques d’infrastructure nécessaires à l’aide du kit de développement logiciel (SDK) `Microsoft.NET.Sdk.WindowsDesktop`. Étant C++donné que les projets/CLI n’utilisent pas le format de projet de type SDK, ils doivent ajouter des références d’infrastructure explicites lors du ciblage de .net core.
+Les projets .NET Core CMD/CLI peuvent utiliser les formulaires Windows et les API WPF. Pour utiliser ces API de bureau Windows, vous devez ajouter des références-cadres explicites aux bibliothèques d’interface utilisateur. Les projets de type SDK qui utilisent les API `Microsoft.NET.Sdk.WindowsDesktop` de bureau Windows font automatiquement référence aux bibliothèques-cadres nécessaires en utilisant le SDK. Étant donné que les projets CMD/CLI n’utilisent pas le format de projet de type SDK, ils doivent ajouter des références-cadres explicites lors du ciblage de .NET Core.
 
-Pour utiliser des API Windows Forms, ajoutez cette référence au fichier vcxproj :
+Pour utiliser les API Windows Forms, ajoutez cette référence au fichier vcxproj :
 
 ```xml
 <!-- Reference all of Windows Forms -->
 <FrameworkReference Include="Microsoft.WindowsDesktop.App.WindowsForms" />
 ```
 
-Pour utiliser les API WPF, ajoutez cette référence au fichier vcxproj :
+Pour utiliser les API WPF, ajoutez cette référence au fichier vcxproj :
 
 ```xml
 <!-- Reference all of WPF -->
 <FrameworkReference Include="Microsoft.WindowsDesktop.App.WPF" />
 ```
 
-Pour utiliser les Windows Forms et les API WPF, ajoutez cette référence au fichier vcxproj :
+Pour utiliser les formulaires Windows et les API WPF, ajoutez cette référence au fichier vcxproj :
 
 ```xml
 <!-- Reference the entirety of the Windows desktop framework:
@@ -59,24 +59,24 @@ Pour utiliser les Windows Forms et les API WPF, ajoutez cette référence au fic
 <FrameworkReference Include="Microsoft.WindowsDesktop.App" />
 ```
 
-Actuellement, il n’est pas possible d’ajouter ces références à l’aide du gestionnaire de références de Visual Studio. À la place, mettez à jour le fichier projet manuellement. Cette mise à jour peut être effectuée dans Visual Studio en déchargeant le projet, puis en modifiant le fichier projet. Vous pouvez également utiliser un autre éditeur comme VS Code.
+Actuellement, il n’est pas possible d’ajouter ces références à l’aide du gestionnaire de référence de Visual Studio. Au lieu de cela, mettre à jour le fichier du projet manuellement. Cette mise à jour peut être faite dans Visual Studio en déchargeant le projet, puis en éditant le fichier du projet. Vous pouvez également utiliser un autre éditeur comme VS Code.
 
-## <a name="build-without-msbuild"></a>Générer sans MSBuild
+## <a name="build-without-msbuild"></a>Construire sans MSBuild
 
-Il est également possible de générer C++des projets/CLI sans utiliser MSBuild. Procédez comme suit pour générer C++un projet/CLI pour .net Core directement avec *CL. exe* et *Link. exe*:
+Il est également possible de construire des projets CMD/CLI sans utiliser MSBuild. Suivez ces étapes pour construire un projet CMD/CLI pour .NET Core directement avec *cl.exe* et *link.exe*:
 
-1. Lors de la compilation, passer `-clr:netcore` à *CL. exe*.
-2. Référencez les assemblys de référence .NET Core nécessaires.
-3. Lors de la liaison, fournissez le répertoire hôte de l’application .NET Core en tant que `LibPath` (afin que *ijwhost. lib* puisse être trouvé).
-4. Copiez *ijwhost. dll* (à partir du répertoire hôte de l’application .net Core) dans le répertoire de sortie du projet.
-5. Assurez-vous qu’il existe un fichier [runtimeconfig. JSON](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) pour le premier composant de l’application qui exécutera le code managé. Si l’application a un point d’entrée géré, un fichier de `runtime.config` est créé et copié automatiquement. Toutefois, si l’application a un point d’entrée natif, vous devez créer un fichier `runtimeconfig.json` pour la première C++bibliothèque/CLI afin d’utiliser le Runtime .net core.
+1. Lors de la compilation, passer `-clr:netcore` à *cl.exe*.
+2. Référence nécessaire .NET Assemblages de référence de base.
+3. Lors de la liaison, fournir le répertoire `LibPath` d’hôte de l’application .NET Core comme un (de sorte que *ijwhost.lib* peut être trouvé).
+4. Copiez *ijwhost.dll* (de l’annuaire d’hôte de l’application .NET Core) à l’annuaire de sortie du projet.
+5. Assurez-vous qu’un fichier [runtimeconfig.json](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) existe pour le premier composant de l’application qui exécutera le code géré. Si l’application dispose d’un point d’entrée géré, un `runtime.config` fichier sera créé et copié automatiquement. Si l’application a un point d’entrée `runtimeconfig.json` natif, cependant, vous devez créer un fichier pour la première bibliothèque C /CLI pour utiliser le temps d’exécution .NET Core.
 
 ## <a name="known-issues"></a>Problèmes connus
 
-Il existe quelques problèmes connus à prendre en compte lors de l’utilisation C++de projets/CLI ciblant .net core.
+Il ya quelques problèmes connus à surveiller lors de la collaboration avec des projets C '/CLI ciblant .NET Core.
 
-* Une référence d’infrastructure WPF dans les C++projets .net Core/CLI provoque actuellement des avertissements superflus concernant l’impossibilité d’importer des symboles. Ces avertissements peuvent être ignorés sans risque et doivent être corrigés prochainement.
-* Si l’application dispose d’un point d’entrée natif C++, la bibliothèque/CLI qui exécute en premier le code managé a besoin d’un fichier [runtimeconfig. JSON](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) . Ce fichier de configuration est utilisé lors du démarrage du Runtime .NET Core. C++Les projets/CLI ne créent pas encore `runtimeconfig.json` fichiers automatiquement au moment de la génération, le fichier doit donc être généré manuellement. Si une C++bibliothèque/CLI est appelée à partir d’un point d’entrée managé C++, la bibliothèque/CLI n’a pas besoin d’un fichier `runtimeconfig.json` (car l’assembly de point d’entrée en aura un qui est utilisé lors du démarrage du Runtime). Un exemple simple de `runtimeconfig.json` fichier est présenté ci-dessous. Pour plus d’informations, consultez la [spécification sur GitHub](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
+* Une référence-cadre WPF dans les projets .NET Core C/CLI provoque actuellement des avertissements supplémentaires sur l’impossibilité d’importer des symboles. Ces avertissements peuvent être ignorés en toute sécurité et doivent être corrigés bientôt.
+* Si l’application a un point d’entrée natif, la bibliothèque CMD/CLI qui exécute d’abord le code géré a besoin d’un fichier [runtimeconfig.json.](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) Ce fichier config est utilisé lorsque le temps d’exécution .NET Core commence. Les projets C/CLI ne `runtimeconfig.json` créent pas encore de fichiers à l’heure de la construction, de sorte que le fichier doit être généré manuellement. Si une bibliothèque CMD/CLI est appelée à partir d’un point d’entrée géré, la bibliothèque CMD/CLI n’a pas besoin d’un `runtimeconfig.json` fichier (puisque l’assemblage du point d’entrée en aura un qui est utilisé lors du démarrage de l’exécution). Un fichier `runtimeconfig.json` d’échantillon simple est montré ci-dessous. Pour plus d’informations, voir les [spécifications sur GitHub](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
 
     ```json
     {

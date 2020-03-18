@@ -1,15 +1,15 @@
 ---
-title: Comment réorganiser les champs d’un fichier délimité (LINQ) (C#)
+title: Comment réorganiser les champs d’un fichier délimité (LINQ) (C)
 ms.date: 07/20/2015
 ms.assetid: 4e62d82c-61b7-4f18-b9a1-86723746d7d2
 ms.openlocfilehash: 6bc502ff12a908edf43f9ff7f5f63f98c3ff29c4
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75347652"
 ---
-# <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-c"></a>Comment réorganiser les champs d’un fichier délimité (LINQ) (C#)
+# <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-c"></a>Comment réorganiser les champs d’un fichier délimité (LINQ) (C)
 Un fichier de valeurs séparées par des virgules (CSV) est un fichier texte qui est souvent utilisé pour stocker des données de feuille de calcul ou autres données tabulaires qui sont représentées sous forme de lignes et de colonnes. En utilisant la méthode <xref:System.String.Split%2A> pour séparer les champs, il est très facile d’interroger et de manipuler des fichiers CSV à l’aide de LINQ. En fait, la même technique peut servir à réorganiser les sections de n’importe quelle ligne de texte structurée et ne se limite donc pas aux fichiers CSV.  
   
  Dans l’exemple suivant, supposons que les trois colonnes représentent le nom, le prénom et l’ID de l’étudiant. Les champs sont classés par ordre alphabétique, selon le nom des étudiants. La requête produit une séquence dans laquelle la colonne ID apparaît en premier, suivie d’une deuxième colonne qui comprend à la fois le prénom et le nom de l’étudiant. Les lignes sont réorganisées d’après le champ ID. Les résultats sont enregistrés dans un nouveau fichier et les données d’origine ne sont pas modifiées.  
@@ -33,7 +33,7 @@ Un fichier de valeurs séparées par des virgules (CSV) est un fichier texte qui
     Zabokritski,Eugene,121  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ```csharp  
 class CSVFiles  
@@ -82,4 +82,4 @@ Créez un projet d’application console C# avec des directives `using` pour le
 
 - [LINQ et chaînes (C#)](./linq-and-strings.md)
 - [LINQ et répertoires de fichiers (C#)](./linq-and-file-directories.md)
-- [Génération de code XML à partir de fichiersC#CSV ()](./how-to-generate-xml-from-csv-files.md)
+- [Comment générer XML à partir de fichiers CSV (C)](./how-to-generate-xml-from-csv-files.md)

@@ -1,24 +1,24 @@
 ---
-title: Modifications avec rupture Visual Basic
-description: Répertorie les modifications avec rupture dans Visual Basic utilisé avec .NET Core.
+title: Changements de rupture de base visuelle
+description: Répertorie les modifications de rupture dans Visual Basic utilisées avec .NET Core.
 ms.date: 09/20/2019
 ms.openlocfilehash: 00c88b4d6609f26ad6f2c3f90c8145e4d2eabaa9
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77092952"
 ---
-# <a name="visual-basic-breaking-changes"></a>Modifications avec rupture Visual Basic
+# <a name="visual-basic-breaking-changes"></a>Changements de rupture de base visuelle
 
-La liste suivante répertorie les dernières modifications apportées à Visual Basic :
+Ce qui suit est une liste de changements de rupture dans Visual Basic:
 
-- [Types dans l’espace de noms Microsoft. VisualBasic. ApplicationServices non disponibles](#types-in-microsoftvisualbasicapplicationservices-namespace-not-available)
-- [Types dans l’espace de noms Microsoft. VisualBasic. Devices non disponible](#types-in-microsoftvisualbasicdevices-namespace-not-available)
-- [Types dans l’espace de noms Microsoft. VisualBasic. MyServices non disponibles](#types-in-microsoftvisualbasicmyservices-namespace-not-available)
-- [Microsoft. VisualBasic. constants. vbNewLine est obsolète](#microsoftvisualbasicconstantsvbnewline-is-obsolete)
+- [Types dans Microsoft.VisualBasic.ApplicationServices namespace non disponible](#types-in-microsoftvisualbasicapplicationservices-namespace-not-available)
+- [Types dans Microsoft.VisualBasic.Devices namespace non disponible](#types-in-microsoftvisualbasicdevices-namespace-not-available)
+- [Types dans Microsoft.VisualBasic.MyServices namespace non disponible](#types-in-microsoftvisualbasicmyservices-namespace-not-available)
+- [Microsoft.VisualBasic.Constants.vbNewLine est obsolète](#microsoftvisualbasicconstantsvbnewline-is-obsolete)
 
-## <a name="net-core-30-preview-9"></a>.NET Core 3,0 Preview 9
+## <a name="net-core-30-preview-9"></a>.NET Core 3.0 Aperçu 9
 
 [!INCLUDE[Types in Microsoft.VisualBasic.ApplicationServices namespace not available](~/includes/core-changes/visualbasic/3.0/microsoft.visualbasic.applicationservices-unavailable.md)]
 
@@ -32,6 +32,6 @@ La liste suivante répertorie les dernières modifications apportées à Visual 
 
 ***
 
-## <a name="net-core-30-preview-8"></a>.NET Core 3,0 Preview 8
+## <a name="net-core-30-preview-8"></a>.NET Core 3.0 Aperçu 8
 
 [!INCLUDE[vbNewLine is obsolete](~/includes/core-changes/visualbasic/3.0/vbnewline-is-obsolete.md)]

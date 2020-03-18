@@ -5,10 +5,10 @@ helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
 ms.openlocfilehash: dc03744559a87a2548c5bee9452c22cd20f337b8
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77627708"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Types pointeur (Guide de programmation C#)
@@ -35,7 +35,7 @@ Un pointeur ne peut pas pointer vers une référence ou vers un [struct](../../l
 
 La valeur de la variable pointeur de type `myType*` est l'adresse d'une variable de type `myType`. Les éléments suivants sont des exemples de déclarations de type pointeur :
 
-|Exemple|Description|
+| Exemple|Description|
 |-------------|-----------------|
 |`int* p`|`p` est un pointeur vers un entier.|
 |`int** p`|`p` est un pointeur vers un pointeur vers un entier.|
@@ -72,8 +72,8 @@ Le tableau suivant répertorie les opérateurs et les instructions qui peuvent f
 |`++` et `--`|Incrémente et décrémente les pointeurs.|
 |`+` et `-`|Exécute des opérations arithmétiques sur les pointeurs.|
 |`==`, `!=`, `<`, `>`, `<=` et `>=`|Compare des pointeurs.|
-|[`stackalloc`, opérateur](../../language-reference/operators/stackalloc.md)|Alloue de la mémoire sur la pile.|
-|[instruction `fixed`](../../language-reference/keywords/fixed-statement.md)|Résout temporairement une variable afin de pouvoir rechercher son adresse.|
+|[`stackalloc`Opérateur](../../language-reference/operators/stackalloc.md)|Alloue de la mémoire sur la pile.|
+|[`fixed`Déclaration](../../language-reference/keywords/fixed-statement.md)|Résout temporairement une variable afin de pouvoir rechercher son adresse.|
 
 Pour plus d’informations sur les opérateurs associés au pointeur, consultez [Opérateurs associés au pointeur](../../language-reference/operators/pointer-related-operators.md).
 
@@ -85,7 +85,7 @@ Pour plus d’informations, consultez la section [Types de pointeur](~/_csharpla
 
 - [Guide de programmation C#](../index.md)
 - [Pointeurs et code unsafe](index.md)
-- [Conversions de pointeurs](pointer-conversions.md)
+- [Conversions de pointeur](pointer-conversions.md)
 - [Types référence](../../language-reference/keywords/reference-types.md)
 - [Types de valeur](../../language-reference/builtin-types/value-types.md)
-- [unsafe](../../language-reference/keywords/unsafe.md)
+- [Dangereux](../../language-reference/keywords/unsafe.md)

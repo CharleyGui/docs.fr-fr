@@ -3,10 +3,10 @@ title: construction fonctionnelle (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 57a82bcf-de03-4f1c-a0c8-9a76e989d542
 ms.openlocfilehash: e55b0010a5f75eee8137d1e9bcefc573b5e07e72
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75635754"
 ---
 # <a name="functional-construction-linq-to-xml-c"></a>construction fonctionnelle (LINQ to XML) (C#)
@@ -18,9 +18,9 @@ ms.locfileid: "75635754"
   
 - Le constructeur <xref:System.Xml.Linq.XElement> prend un tableau `params` de type <xref:System.Object>, de sorte que vous puissiez passer toute quantité d'objets au constructeur. Cela vous permet de créer un élément dont le contenu est complexe.  
   
-- Si un objet implémente <xref:System.Collections.Generic.IEnumerable%601>, la collection dans l'objet est énumérée et tous les éléments de la collection sont ajoutés. Si la collection contient des objets <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XAttribute>, chaque élément de la collection est ajouté séparément. Cela est important car il vous permet de passer les résultats d’une requête LINQ au constructeur.  
+- Si un objet implémente <xref:System.Collections.Generic.IEnumerable%601>, la collection dans l'objet est énumérée et tous les éléments de la collection sont ajoutés. Si la collection contient des objets <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XAttribute>, chaque élément de la collection est ajouté séparément. C’est important parce qu’il vous permet de transmettre les résultats d’une requête LINQ au constructeur.  
   
- Ces fonctionnalités vous permettent d’écrire du code pour créer une arborescence XML. Voici un exemple :  
+ Ces fonctionnalités vous permettent d’écrire du code pour créer une arborescence XML. Par exemple :  
   
 ```csharp  
 XElement contacts =  
@@ -38,7 +38,7 @@ XElement contacts =
     );  
 ```  
   
- Ces fonctionnalités vous permettent également d’écrire du code qui utilise les résultats de requêtes LINQ lorsque vous créez une arborescence XML, comme suit :  
+ Ces fonctionnalités vous permettent également d’écrire du code qui utilise les résultats des requêtes LINQ lorsque vous créez un arbre XML, comme suit :  
   
 ```csharp  
 XElement srcTree = new XElement("Root",  
@@ -58,7 +58,7 @@ XElement xmlTree = new XElement("Root",
 Console.WriteLine(xmlTree);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Root>  

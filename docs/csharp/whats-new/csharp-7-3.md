@@ -3,10 +3,10 @@ title: Nouveautés de C# 7.3
 description: Vue d’ensemble des nouvelles fonctionnalités de C# 7.3
 ms.date: 05/16/2018
 ms.openlocfilehash: ba4cea302d91b395e88940d087fcaed306920840
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74204560"
 ---
 # <a name="whats-new-in-c-73"></a>Nouveautés de C# 7.3
@@ -87,7 +87,7 @@ class C
 }
 ```
 
-Pour plus d’informations, consultez l’article sur [l’instruction `fixed`](../language-reference/keywords/fixed-statement.md).
+Pour plus d’informations, [ `fixed` ](../language-reference/keywords/fixed-statement.md)voir l’article sur la déclaration .
 
 ### <a name="ref-local-variables-may-be-reassigned"></a>Les variables locales `ref` peuvent être réaffectées
 
@@ -98,7 +98,7 @@ ref VeryLargeStruct refLocal = ref veryLargeStruct; // initialization
 refLocal = ref anotherVeryLargeStruct; // reassigned, refLocal refers to different storage.
 ```
 
-Pour plus d’informations, consultez l’article sur les [retours `ref` et les variables locales `ref`](../programming-guide/classes-and-structs/ref-returns.md), et l’article sur [`foreach`](../language-reference/keywords/foreach-in.md).
+Pour plus d’informations, voir l’article sur [`foreach`](../language-reference/keywords/foreach-in.md) [ `ref` les retours et `ref` les habitants](../programming-guide/classes-and-structs/ref-returns.md), et l’article sur .
 
 ### <a name="stackalloc-arrays-support-initializers"></a>Les tableaux `stackalloc` prennent en charge les initialiseurs
 
@@ -117,21 +117,21 @@ int* pArr2 = stackalloc int[] {1, 2, 3};
 Span<int> arr = stackalloc [] {1, 2, 3};
 ```
 
-Pour plus d’informations, consultez l’article sur l’[opérateur `stackalloc`](../language-reference/operators/stackalloc.md).
+Pour plus d’informations, voir l’article de [ `stackalloc` l’opérateur.](../language-reference/operators/stackalloc.md)
 
 ### <a name="more-types-support-the-fixed-statement"></a>D’autres types prennent en charge l’instruction `fixed`
 
 L’instruction `fixed` prenait en charge un ensemble limité de types. À partir de C# 7.3, tout type contenant une méthode `GetPinnableReference()` qui retourne `ref T` ou `ref readonly T` peut être `fixed`. L’ajout de cette fonctionnalité signifie que `fixed` peut être utilisé avec <xref:System.Span%601?displayProperty=nameWithType> et des types connexes.
 
-Pour plus d’informations, consultez l’article [Instruction `fixed`](../language-reference/keywords/fixed-statement.md) dans la référence sur le langage.
+Pour plus d’informations, voir l’article [ `fixed` de déclaration](../language-reference/keywords/fixed-statement.md) dans la référence linguistique.
 
 ### <a name="enhanced-generic-constraints"></a>Contraintes génériques améliorées
 
 Vous pouvez maintenant spécifier le type <xref:System.Enum?displayProperty=nameWithType> ou <xref:System.Delegate?displayProperty=nameWithType> en tant que contraintes de classe de base pour un paramètre de type.
 
-Vous pouvez également utiliser la nouvelle contrainte de `unmanaged` pour spécifier qu’un paramètre de type doit être un type non [managé](../language-reference/builtin-types/unmanaged-types.md)qui n’accepte pas les valeurs NULL.
+Vous pouvez également `unmanaged` utiliser la nouvelle contrainte, pour spécifier qu’un paramètre de type doit être un type non-nullable [non gestion .](../language-reference/builtin-types/unmanaged-types.md)
 
-Pour plus d’informations, consultez les articles sur les [contraintes génériques `where`](../language-reference/keywords/where-generic-type-constraint.md) et les [contraintes sur les paramètres de type](../programming-guide/generics/constraints-on-type-parameters.md).
+Pour plus d’informations, [ `where` ](../language-reference/keywords/where-generic-type-constraint.md) voir les articles sur les contraintes [génériques](../programming-guide/generics/constraints-on-type-parameters.md)et les contraintes sur les paramètres de type .
 
 L’ajout de ces contraintes aux types existants est une [modification incompatible](version-update-considerations.md#incompatible-changes). Les types génériques fermés peuvent ne plus respecter ces nouvelles contraintes.
 
@@ -168,7 +168,7 @@ static void M(in S arg);
 > [!NOTE]
 > Cette opération a été implémentée en tant que correctif de bogue. Il n’y a donc plus d’ambiguïté, même si la version du langage est définie sur « 7.2 ».
 
-Pour plus d’informations, consultez l’article sur le [modificateur de paramètre `in`](../language-reference/keywords/in-parameter-modifier.md).
+Pour plus d’informations, voir l’article sur le [ `in` modificateur de paramètres](../language-reference/keywords/in-parameter-modifier.md).
 
 ### <a name="extend-expression-variables-in-initializers"></a>Étendre des variables d’expression dans les initialiseurs
 

@@ -1,13 +1,13 @@
 ---
-title: Application Infer.NET match-up App-programmation probabiliste
-description: Découvrez comment utiliser la programmation probabiliste avec Infer.NET pour créer une application de liste de correspondance de jeu basée sur une version simplifiée de TrueSkill.
+title: Infer.NET’application match-up de jeu - programmation probabiliste
+description: Découvrez comment utiliser la programmation probabiliste avec Infer.NET pour créer une application de liste de jeu basée sur une version simplifiée de TrueSkill.
 ms.date: 01/30/2020
 ms.custom: mvc,how-to
 ms.openlocfilehash: 8e489d61c5e6cca53ba12b13fddd0b73c7f85ef9
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "77092601"
 ---
 # <a name="create-a-game-match-up-list-app-with-infernet-and-probabilistic-programming"></a>Créer une application de tableau de matchs avec Infer.NET et la programmation probabiliste
@@ -22,7 +22,7 @@ La programmation probabiliste permet de créer des modèles statistiques de proc
 
 - Configuration d’un environnement de développement local
 
-  Ce guide pratique suppose de disposer d’un ordinateur utilisable pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur MacOS, Windows ou Linux.
+  Ce guide pratique suppose de disposer d’un ordinateur utilisable pour le développement. Le tutoriel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a des instructions pour configurer votre environnement de développement local sur macOS, Windows ou Linux.
 
 ## <a name="create-your-app"></a>Créer votre application
 

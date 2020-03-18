@@ -5,16 +5,16 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
 ms.openlocfilehash: d70fa54adeb505fd37807399402281dfda67cf52
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77451562"
 ---
 # <a name="characteristics-of-modern-web-applications"></a>Caractéristiques des applications web modernes
 
 > "… avec une bonne conception, les fonctionnalités sont peu coûteuses. Cette approche est compliquée, mais continue à porter ses fruits. »  
-> _\- Dennis Ritchie_
+> _\-Dennis Ritchie_
 
 Les attentes et les exigences des utilisateurs vis-à-vis des applications web modernes n’ont jamais été aussi élevées. Les applications web d’aujourd’hui sont censées être disponibles 24 heures sur 24, sept jours sur sept, depuis n’importe où dans le monde, et être utilisables avec presque n’importe quel appareil ou taille d’écran. Elles doivent être sécurisées, flexibles et scalables afin de répondre aux pics de demande. De plus en plus, des scénarios complexes doivent être gérés par des expériences utilisateur complexes générées sur le client à l’aide de JavaScript et qui communiquent efficacement par le biais d’API web.
 
@@ -26,7 +26,7 @@ Ce guide comprend une application de référence, _eShopOnWeb_, qui illustre cer
 
 ![eShopOnWeb](./media/image2-1.png)
 
-**Figure 2-1.** eShopOnWeb
+**Figure 2-1.** eShopOnWeb
 
 > ### <a name="reference-application"></a>Application de référence
 >
@@ -45,11 +45,11 @@ ASP.NET Core est multiplateforme et peut s’exécuter sur Linux, macOS et Windo
 
 Les packages NuGet sont des citoyens de première classe dans .NET Core, et les applications ASP.NET Core sont composées de nombreuses bibliothèques par le biais de NuGet. Avec ce niveau de granularité des fonctionnalités, les applications dépendent uniquement des fonctionnalités dont elles ont réellement besoin et déploient uniquement ces fonctionnalités, réduisant ainsi leur encombrement et leur surface d’exposition de vulnérabilité de sécurité.
 
-ASP.NET Core prend aussi totalement en charge l’[injection de dépendances](https://deviq.com/dependency-injection/), à la fois en interne et au niveau de l’application. Les interfaces peuvent avoir plusieurs implémentations qui peuvent être échangées en fonction des besoins. L’injection de dépendances permet aux applications d’être faiblement couplées avec ces interfaces, plutôt qu’avec des implémentations spécifiques, ce qui les rend plus faciles à étendre, mettre à jour et tester.
+ASP.NET Core prend également pleinement en charge [l’injection de dépendance,](https://deviq.com/dependency-injection/)tant à l’interne qu’au niveau de l’application. Les interfaces peuvent avoir plusieurs implémentations qui peuvent être échangées en fonction des besoins. L’injection de dépendances permet aux applications d’être faiblement couplées avec ces interfaces, plutôt qu’avec des implémentations spécifiques, ce qui les rend plus faciles à étendre, mettre à jour et tester.
 
 ## <a name="easily-tested-with-automated-tests"></a>Facilement testées avec des tests automatisés
 
-Les applications ASP.NET Core prennent en charge les tests unitaires, et leur faible couplage et leur prise en charge de l’injection de dépendances facilitent le remplacement des infrastructures à problème par des implémentations factices à des fins de test. ASP.NET Core est également fourni avec un TestServer qui peut être utilisé pour héberger des applications en mémoire. Des tests fonctionnels peuvent ensuite effectuer des demandes à ce serveur en mémoire en testant la pile d’application complète (notamment les middlewares, le routage, la liaison de modèle, les filtres, etc.) et en recevant une réponse, tout ceci en une fraction du temps qui serait nécessaire pour héberger l’application sur un serveur réel et effectuer des demandes par le biais de la couche réseau. Ces tests sont particulièrement faciles à écrire et utiles pour les API, qui sont de plus en plus importantes dans les applications web modernes.
+Les applications ASP.NET Core prennent en charge les tests unitaires, et leur faible couplage et leur prise en charge de l’injection de dépendances facilitent le remplacement des infrastructures à problème par des implémentations factices à des fins de test. ASP.NET Core expédie également avec un TestServer qui peut être utilisé pour héberger des applications en mémoire. Des tests fonctionnels peuvent ensuite effectuer des demandes à ce serveur en mémoire en testant la pile d’application complète (notamment les middlewares, le routage, la liaison de modèle, les filtres, etc.) et en recevant une réponse, tout ceci en une fraction du temps qui serait nécessaire pour héberger l’application sur un serveur réel et effectuer des demandes par le biais de la couche réseau. Ces tests sont particulièrement faciles à écrire et utiles pour les API, qui sont de plus en plus importantes dans les applications web modernes.
 
 ## <a name="traditional-and-spa-behaviors-supported"></a>Comportements des applications traditionnelles et SPA pris en charge
 
@@ -61,29 +61,29 @@ De nombreuses applications web impliquent une combinaison des comportements d’
 
 ## <a name="simple-development-and-deployment"></a>Développement et déploiement simples
 
-ASP.NET Core applications peuvent être écrites à l’aide d’éditeurs de texte et d’interfaces de ligne de commande simples, ou d’environnements de développement complets tels que Visual Studio. Les applications monolithiques sont généralement déployées sur un seul point de terminaison. Les déploiements peuvent facilement être automatisés et faire partie d’un pipeline d’intégration continue (CI) et de livraison continue (CD). Outre les outils CI/CD traditionnels, Microsoft Azure a intégré la prise en charge des dépôts Git et peut déployer automatiquement les mises à jour à mesure qu’elles sont effectuées sur une branche ou une étiquette git spécifiée. Azure DevOps fournit un pipeline de déploiement et de création d’intégration continue et de CD complet, et les actions GitHub fournissent une autre option pour les projets hébergés ici.
+ASP.NET applications Core peuvent être écrites à l’aide d’éditeurs de texte simples et d’interfaces de ligne de commande, ou d’environnements de développement complets comme Visual Studio. Les applications monolithiques sont généralement déployées sur un seul point de terminaison. Les déploiements peuvent facilement être automatisés et faire partie d’un pipeline d’intégration continue (CI) et de livraison continue (CD). En plus des outils CI/CD traditionnels, Microsoft Azure a intégré le support pour les dépôts git et peut déployer automatiquement des mises à jour au fur et à mesure qu’elles sont faites sur une branche ou une balise git spécifiée. Azure DevOps fournit un pipeline complet de construction et de déploiement de CI/CD, et GitHub Actions offre une autre option pour les projets qui y sont hébergés.
 
 ## <a name="traditional-aspnet-and-web-forms"></a>ASP.NET traditionnel et Web Forms
 
-En plus d’ASP.NET Core, la plateforme ASP.NET 4.x traditionnelle reste robuste et fiable pour la création d’applications web. ASP.NET prend en charge les modèles de développement d’API Web et MVC, ainsi que Web Forms, ce qui est bien adapté au développement d’applications basées sur des pages riches et aux fonctionnalités d’un écosystème de composants tiers riche. Microsoft Azure offre une excellente prise en charge des applications ASP.NET 4. x, et de nombreux développeurs connaissent cette plateforme.
+En plus d’ASP.NET Core, la plateforme ASP.NET 4.x traditionnelle reste robuste et fiable pour la création d’applications web. ASP.NET prend en charge les modèles de développement de MVC et Web API, ainsi que web Forms, qui est bien adapté au développement d’applications à page riche et dispose d’un riche écosystème de composants tiers. Microsoft Azure a un grand support de longue date pour ASP.NET applications 4.x, et de nombreux développeurs sont familiers avec cette plate-forme.
 
 ## <a name="blazor"></a>Blazor
 
-Éblouissant est inclus avec ASP.NET Core 3,0 et versions ultérieures. Il fournit un nouveau mécanisme pour créer des applications clientes Web interactives C#riches à l’aide de Razor, et ASP.net core. Il offre une autre solution à prendre en compte lors du développement d’applications Web modernes. Il existe deux versions de éblouissant à prendre en compte : côté serveur et côté client.
+Blazor est inclus avec ASP.NET Core 3.0 et plus tard. Il fournit un nouveau mécanisme pour la construction de riches applications interactives client web en utilisant Razor, C, et ASP.NET Core. Il offre une autre solution à considérer lors du développement d’applications Web modernes. Il existe deux versions de Blazor à considérer : côté serveur et côté client.
 
-La version de l’antivirus côté serveur a été publiée dans 2019 avec ASP.NET Core 3,0. Comme son nom l’indique, il s’exécute sur le serveur et restitue les modifications apportées au document client dans le navigateur via le réseau. Le serveur éblouissant offre une expérience client riche sans nécessiter de code JavaScript côté client et sans nécessiter de chargement de page distinct pour chaque interaction de page client. Les modifications apportées à la page chargée sont demandées et traitées par le serveur, puis renvoyées au client à l’aide de Signalr.
+Server-side Blazor est sorti en 2019 avec ASP.NET Core 3.0. Comme son nom l’indique, il s’exécute sur le serveur, rendant les modifications apportées au document client vers le navigateur sur le réseau. Côté serveur, Blazor offre une expérience client riche sans avoir besoin d’un JavaScript côté client et sans avoir besoin de charges de page séparées pour chaque interaction avec la page client. Les modifications de la page chargée sont demandées et traitées par le serveur, puis renvoyées au client à l’aide de SignalR.
 
-Le port éblouissant côté client est publié dans 2020, ce qui évite d’avoir à afficher les modifications sur le serveur. Au lieu de cela, il s’appuie sur webassembly pour exécuter du code .NET au sein du client. Le client peut toujours effectuer des appels d’API au serveur si nécessaire pour demander des données, mais tous les comportements côté client s’exécutent sur le client via webassembly, qui est déjà pris en charge par tous les principaux navigateurs et n’est qu’une bibliothèque JavaScript.
+Le client Blazor sortira en 2020 et éliminera la nécessité de modifier le serveur. Au lieu de cela, il tirera parti de WebAssembly pour exécuter le code .NET au sein du client. Le client peut toujours faire des appels API vers le serveur si nécessaire pour demander des données, mais tous les comportements côté client fonctionne dans le client via WebAssembly, qui est déjà pris en charge par tous les principaux navigateurs et est juste une bibliothèque Javascript.
 
 > ### <a name="references--modern-web-applications"></a>Informations de référence sur les applications web modernes
 >
-> - **Présentation d’ASP.NET Core**  
+> - **Introduction à ASP.NET Core**  
 >   <https://docs.microsoft.com/aspnet/core/>
 > - **Test dans ASP.NET Core**  
 >   <https://docs.microsoft.com/aspnet/core/testing/>
-> - **Éblouissant-prise en main**  
+> - **Blazor - Démarrer**  
 >   <https://blazor.net/docs/get-started.html>
 
 >[!div class="step-by-step"]
->[Précédent](index.md)
->[Suivant](choose-between-traditional-web-and-single-page-apps.md)
+>[Suivant précédent](index.md)
+>[Next](choose-between-traditional-web-and-single-page-apps.md)

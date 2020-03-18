@@ -9,10 +9,10 @@ helpviewer_keywords:
 - bugreport compiler option [C#]
 ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
 ms.openlocfilehash: 0989678be070910c410d71717fe66679e1b70557
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69603083"
 ---
 # <a name="-bugreport-c-compiler-options"></a>-bugreport (Options du compilateur C#)
@@ -28,7 +28,7 @@ Spécifie que les informations de débogage doivent être placées dans un fichi
  `file`  
  Nom du fichier qui doit contenir votre rapport de bogues.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes   
  L’option **-bugreport** spécifie que les informations suivantes doivent être placées dans `file` :  
   
 - Une copie de tous les fichiers de code source de la compilation.  
@@ -55,6 +55,6 @@ Spécifie que les informations de débogage doivent être placées dans un fichi
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](./index.md)
-- [-errorreport (Options du compilateur C#)](./errorreport-compiler-option.md)
+- [Options de compilateur C](./index.md)
+- [-errorreport (Options compilateur C)](./errorreport-compiler-option.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

@@ -21,7 +21,7 @@
       href: tutorials/batch-processing.md
     - name: Streaming structuré
       href: tutorials/streaming.md
-- name: Guides pratiques
+- name: "Guides pratiques\_:"
   items:
     - name: Déboguer votre application
       href: how-to-guides/debug.md
@@ -35,7 +35,7 @@
       href: how-to-guides/ubuntu-instructions.md
     - name: Créer une application sur Windows
       href: how-to-guides/windows-instructions.md
-- name: Référence
+- name: Reference
   items:
     - name: Informations de référence sur les API
       href: 'https://docs.microsoft.com/dotnet/api/?view=spark-dotnet'

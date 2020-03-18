@@ -5,11 +5,11 @@ ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
 ms.openlocfilehash: f44c83408e884d76eef5e2b5abbca511fbae2a1f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73101483"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399447"
 ---
 # <a name="methods"></a>Méthodes
 
@@ -24,10 +24,10 @@ Une méthode est un bloc de code qui contient une série d'instructions. Un prog
 
 Les méthodes sont déclarées dans une `class` ou une `struct` en spécifiant :
 
-- Un niveau d’accès facultatif, comme `public` ou `private`. La valeur par défaut est `private`,
+- Un niveau d’accès facultatif, comme `public` ou `private`. Par défaut, il s’agit de `private`.
 - Des modificateurs facultatifs, comme `abstract` ou `sealed`.
 - La valeur de retour, ou `void` si la méthode n’en a pas.
-- Nom de la méthode.
+- Le nom de la méthode.
 - Des paramètres de méthodes. Les paramètres de méthode sont placés entre parenthèses et séparés par des virgules. Des parenthèses vides indiquent que la méthode ne requiert aucun paramètre.
 
 Ces parties forment ensemble la signature de la méthode.
@@ -79,7 +79,7 @@ Vous pouvez remplacer des membres hérités par des types en utilisant le mot cl
 
 <a name="passing"></a>
 
-## <a name="passing-parameters"></a>Passage de paramètres
+## <a name="passing-parameters"></a>Transmission des paramètres
 
 Les types en C# sont des *types valeur* ou des *types référence*. Pour obtenir la liste des types valeur prédéfinis, consultez [Types et variables](./tour-of-csharp/types-and-variables.md). Par défaut, les types valeur et les types référence sont passés par valeur à une méthode.
 
@@ -103,7 +103,7 @@ L’exemple suivant définit une classe (qui est un type référence) nommée `S
 
 ### <a name="passing-parameters-by-reference"></a>Passage de paramètres par référence
 
-On passe un paramètre par référence quand on souhaite changer la valeur d’un argument dans une méthode et refléter cette modification lorsque le contrôle revient à la méthode appelante. Pour passer un paramètre par référence, vous utilisez le mot clé [`ref`](language-reference/keywords/ref.md) ou [`out`](language-reference/keywords/out-parameter-modifier.md). Vous pouvez également passer une valeur par référence pour éviter la copie tout en empêchant les modifications à l’aide du mot clé [`in`](language-reference/keywords/in-parameter-modifier.md).
+On passe un paramètre par référence quand on souhaite changer la valeur d’un argument dans une méthode et refléter cette modification lorsque le contrôle revient à la méthode appelante. Pour passer un paramètre par [`ref`](language-reference/keywords/ref.md) référence, vous utilisez le ou [`out`](language-reference/keywords/out-parameter-modifier.md) le mot clé. Vous pouvez également passer une valeur par référence pour éviter [`in`](language-reference/keywords/in-parameter-modifier.md) la copie, mais tout de même empêcher les modifications à l’aide du mot clé.
 
 L’exemple suivant est identique au précédent, sauf que la valeur est passée par référence à la méthode `ModifyValue`. Quand la valeur du paramètre est modifiée dans la méthode `ModifyValue`, le changement de la valeur est reflété quand le contrôle retourne à l’appelant.
 
@@ -165,7 +165,7 @@ L’utilisation de paramètres facultatifs affecte la *résolution de la surchar
 
 <a name="return"></a>
 
-## <a name="return-values"></a>Valeurs de retour
+## <a name="return-values"></a>Valeurs retournées
 
 Les méthodes peuvent retourner une valeur à l'appelant. Si le type de retour (le type qui figure avant le nom de la méthode) n’est pas `void`, la méthode peut retourner la valeur en utilisant le mot clé `return`. Une instruction avec le mot clé `return` suivi d’une variable, d’une constante ou d’une expression qui correspond au type de retour retourne cette valeur à l’appelant de la méthode. Les méthodes dotées d'un type de retour non void doivent utiliser le mot clé `return` pour retourner une valeur. Le mot clé `return` arrête également l'exécution de la méthode.
 
@@ -276,11 +276,11 @@ Si la méthode retourne `void` ou est une méthode async, alors le corps de la m
 
 ## <a name="iterators"></a>Iterators
 
-Un itérateur exécute une itération personnalisée sur une collection, comme une liste ou un tableau. Un itérateur utilise l’instruction [yield return](language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction `yield return` est atteinte, l’emplacement actif est mémorisé pour que l’appelant puisse demander l’élément suivant dans la séquence.
+Un itérateur exécute une itération personnalisée sur une collection, comme une liste ou un tableau. Un itérateur utilise l'instruction [yield return](language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction `yield return` est atteinte, l’emplacement actif est mémorisé pour que l’appelant puisse demander l’élément suivant dans la séquence.
 
 Le type de retour d'un itérateur peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601>.
 
-Pour plus d’informations, consultez [Itérateurs](programming-guide/concepts/iterators.md).
+Pour plus d’informations, voir [Iterators](programming-guide/concepts/iterators.md).
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -288,8 +288,8 @@ Pour plus d’informations, consultez [Itérateurs](programming-guide/concepts/i
 - [Classes statiques et membres de classe statique](programming-guide/classes-and-structs/static-classes-and-static-class-members.md)
 - [Héritage](programming-guide/classes-and-structs/inheritance.md)
 - [Classes abstract et sealed et membres de classe](programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)
-- [params](language-reference/keywords/params.md)
+- [Params](language-reference/keywords/params.md)
 - [out](language-reference/keywords/out-parameter-modifier.md)
 - [ref](language-reference/keywords/ref.md)
-- [in](language-reference/keywords/in-parameter-modifier.md)
-- [Passage de paramètres](programming-guide/classes-and-structs/passing-parameters.md)
+- [Dans](language-reference/keywords/in-parameter-modifier.md)
+- [Paramètres de passage](programming-guide/classes-and-structs/passing-parameters.md)

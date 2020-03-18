@@ -5,10 +5,10 @@ helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
 ms.openlocfilehash: eaa78c33613093bb0e108870669392d07d346a95
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77504000"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Valeurs de retour de Main() (Guide de programmation C#)
@@ -23,7 +23,7 @@ Elle peut également retourner un `int` :
 
 Si la valeur de retour de `Main` n’est pas utilisée, retourner `void` permet d’avoir un code un peu plus simple. Cependant, retourner un entier permet au programme de communiquer des informations d’état à d’autres programmes ou scripts qui appellent le fichier exécutable. La valeur de retour de `Main` est traitée comme le code de sortie du processus. Si `void` est retourné à partir de `Main`, le code de sortie est implicitement `0`. L’exemple suivant montre comment accéder à la valeur de retour de `Main`.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Cet exemple utilise les outils de ligne de commande [.NET Core](../../../core/index.md). Si vous ne connaissez pas les outils de ligne de commande .NET Core, vous pouvez les découvrir dans cette [rubrique Bien démarrer](../../../core/tutorials/cli-create-console-app.md).
 
@@ -33,7 +33,7 @@ Modifiez la méthode `Main` dans *program.cs* comme suit :
 
 Quand un programme est exécuté dans Windows, toute valeur retournée par la fonction `Main` est stockée dans une variable d’environnement. Cette variable d’environnement peut être récupérée à l’aide de `ERRORLEVEL` dans un fichier de commandes ou de `$LastExitCode` dans PowerShell.
 
-Vous pouvez générer l’application à l’aide de la commande `dotnet build` de l' [interface CLI dotnet](../../../core/tools/dotnet.md) .
+Vous pouvez générer l’application à l’aide de la commande [dotnet CLI](../../../core/tools/dotnet.md) `dotnet build`.
 
 Ensuite, créez un script PowerShell pour exécuter l’application et afficher le résultat. Collez le code suivant dans un fichier texte et enregistrez-le sous `test.ps1` dans le dossier qui contient le projet. Exécutez le script PowerShell en tapant `test.ps1` à l’invite de PowerShell.
 
@@ -98,6 +98,6 @@ Quand le point d’entrée de l’application retourne `Task` ou `Task<int>`, le
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [Informations de référence sur C#](../index.md)
+- [Référence C](../index.md)
 - [Main() et arguments de ligne de commande](index.md)
-- [Comment afficher les arguments de ligne de commande](./how-to-display-command-line-arguments.md)
+- [Comment afficher les arguments de la ligne de commande](./how-to-display-command-line-arguments.md)

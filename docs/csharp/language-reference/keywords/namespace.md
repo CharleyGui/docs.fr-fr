@@ -9,10 +9,10 @@ helpviewer_keywords:
 - scope [C#]
 ms.assetid: 0a788423-9110-42e0-97d9-bda41ca4870f
 ms.openlocfilehash: b35f0a2a5cc0b2895b491d4ee24f89955f4b8fed
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77625798"
 ---
 # <a name="namespace-c-reference"></a>namespace (référence C#)
@@ -21,21 +21,21 @@ Le mot clé `namespace` est utilisé pour déclarer une portée qui contient un 
 
 [!code-csharp[csrefKeywordsNamespace#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#1)]
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 Dans un espace de noms, vous pouvez déclarer zéro ou plusieurs des types suivants :
 
 - autre espace de noms
 
-- [class](class.md)
+- [Classe](class.md)
 
-- [interface](interface.md)
+- [Interface](interface.md)
 
 - [struct](../builtin-types/struct.md)
 
-- [enum](../builtin-types/enum.md)
+- [Enum](../builtin-types/enum.md)
 
-- [delegate](../builtin-types/reference-types.md#the-delegate-type)
+- [Délégué](../builtin-types/reference-types.md#the-delegate-type)
 
 Le compilateur ajoute un espace de noms par défaut, que vous déclariez ou non explicitement un espace de noms dans un fichier source C#. Cet espace de noms sans nom, parfois appelé espace de noms global, est présent dans chaque fichier. Tout identificateur dans l’espace de noms global peut être utilisé dans un espace de noms nommé.
 
@@ -45,7 +45,7 @@ Il est possible de définir un espace de noms dans deux déclarations ou plus. P
 
 [!code-csharp[csrefKeywordsNamespace#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#2)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre comment appeler une méthode statique dans un espace de noms imbriqué.
 
@@ -57,9 +57,9 @@ Pour plus d’informations, voir la section [Espace de noms](~/_csharplang/spec/
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
-- [Mots clés C#](index.md)
-- [using](using-directive.md)
+- [Référence C#](../index.md)
+- [Mots-clés CMD](index.md)
+- [Utilisant](using-directive.md)
 - [using static](using-static.md)
 - [Qualificateur d’alias d’espace de noms`::`](../operators/namespace-alias-qualifier.md)
 - [Espaces de noms](../../programming-guide/namespaces/index.md)

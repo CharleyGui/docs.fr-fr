@@ -1,23 +1,23 @@
 ---
-title: Types intégrés- C# référence
-description: Découvrez C# les types valeur et référence intégrés
+title: Types intégrés - Référence C
+description: Apprenez les types de valeur et de référence intégrés CMD
 ms.date: 02/04/2020
 helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
 ms.openlocfilehash: 4f748373350ed0596a5f1d595c273243ae3227c3
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77095308"
 ---
-# <a name="built-in-types-c-reference"></a>Types intégrés (C# référence)
+# <a name="built-in-types-c-reference"></a>Types intégrés (référence C)
 
-Le tableau suivant répertorie C# les types [valeur](value-types.md) intégrés :
+Le tableau suivant répertorie les types de [valeur](value-types.md) intégrés CMD :
 
-|C#mot clé type|Type .NET|
+|Mot-clé de type C|Type .NET|
 |--------------|-------------------------|
 |[`bool`](bool.md)|<xref:System.Boolean?displayProperty=nameWithType>|
 |[`byte`](integral-numeric-types.md)|<xref:System.Byte?displayProperty=nameWithType>|
@@ -33,14 +33,14 @@ Le tableau suivant répertorie C# les types [valeur](value-types.md) intégrés�
 |[`short`](integral-numeric-types.md)|<xref:System.Int16?displayProperty=nameWithType>|
 |[`ushort`](integral-numeric-types.md)|<xref:System.UInt16?displayProperty=nameWithType>|
 
-Le tableau suivant répertorie C# les types de [référence](../keywords/reference-types.md) intégrés :
+Le tableau suivant répertorie les types de [référence](../keywords/reference-types.md) intégrés CMD :
 
-|C#mot clé type|Type .NET|
+|Mot-clé de type C|Type .NET|
 |--------------|-------------------------|
 |[`object`](reference-types.md#the-object-type)|<xref:System.Object?displayProperty=nameWithType>|
 |[`string`](reference-types.md#the-string-type)|<xref:System.String?displayProperty=nameWithType>|
 
-Dans les tableaux précédents, chaque C# mot clé de type de la colonne de gauche est un alias pour le type .net correspondant. Ils sont interchangeables. Par exemple, les déclarations suivantes déclarent des variables du même type :
+Dans les tableaux précédents, chaque mot clé de type C de la colonne gauche est un alias pour le type .NET correspondant. Ils sont interchangeables. Par exemple, les déclarations suivantes déclarent des variables du même type :
 
 ```csharp
 int a = 123;
@@ -49,6 +49,6 @@ System.Int32 b = 123;
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
-- [Valeurs par défaut C# des types](default-values.md)
-- [Mot clé `dynamic`](reference-types.md#the-dynamic-type)
+- [Référence C#](../index.md)
+- [Valeurs par défaut des types C](default-values.md)
+- [`dynamic`Mot-clé](reference-types.md#the-dynamic-type)

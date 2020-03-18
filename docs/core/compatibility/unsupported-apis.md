@@ -1,29 +1,29 @@
 ---
-title: API non prises en charge sur .NET Core
+title: API non pris en œtté sur .NET Core
 titleSuffix: ''
-description: Découvrez les API de la .NET Framework qui lèvent toujours une exception sur .NET Core.
+description: Apprenez quelles API du cadre .NET qui jettent toujours une exception sur .NET Core.
 ms.date: 12/23/2019
 ms.openlocfilehash: c4b94321d30cacd90d5c2ee23c258681683a6faa
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77092965"
 ---
-# <a name="apis-that-always-throw-exceptions-on-net-core"></a>API qui lèvent toujours des exceptions sur .NET Core
+# <a name="apis-that-always-throw-exceptions-on-net-core"></a>API qui jettent toujours des exceptions sur .NET Core
 
-Les API suivantes lèvent toujours une <xref:System.PlatformNotSupportedException> sur .NET Core sur tout ou partie des plateformes.
+Les API suivantes jetteront toujours un <xref:System.PlatformNotSupportedException> noyau sur .NET sur tout ou un sous-ensemble de plates-formes.
 
-Cet article organise les membres d’API affectés par espace de noms.
+Cet article organise les membres concernés de l’API par espace de nom.
 
 > [!NOTE]
 >
-> - Cet article est un travail en cours. Il ne s’agit pas d’une liste complète des API qui lèvent des exceptions sur .NET Core.
-> - Cet article n’inclut pas les implémentations d’interface explicites pour la sérialisation binaire qui lèvent sur .NET Core. Pour plus d’informations, consultez [sérialisation binaire dans .net Core](../../standard/serialization/binary-serialization.md#net-core).
+> - Cet article est un travail en cours. Ce n’est pas une liste complète d’API qui jettent des exceptions sur .NET Core.
+> - Cet article n’inclut pas les implémentations d’interface explicites pour la sérialisation binaire qui jettent sur .NET Core. Pour plus d’informations, voir [la sérialisation binaire dans .NET Core](../../standard/serialization/binary-serialization.md#net-core).
 
 ## <a name="system"></a>Système
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> | Tous |
 | <xref:System.AppDomain.ExecuteAssembly(System.String,System.String[],System.Byte[],System.Configuration.Assemblies.AssemblyHashAlgorithm)?displayProperty=nameWithType> | Tous |
@@ -38,7 +38,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemcodedomcompiler"></a>System.CodeDom.Compiler
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromDom%2A?displayProperty=nameWithType> | Tous |
 | <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile%2A?displayProperty=nameWithType> | Tous |
@@ -46,7 +46,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemcollectionsspecialized"></a>System.Collections.Specialized
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Collections.Specialized.NameObjectCollectionBase.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
 | <xref:System.Collections.Specialized.NameObjectCollectionBase.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
@@ -54,40 +54,40 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemconfiguration"></a>System.Configuration
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
-| <xref:System.Configuration.RsaProtectedConfigurationProvider?displayProperty=nameWithType> (tous les membres) | Tous |
+| <xref:System.Configuration.RsaProtectedConfigurationProvider?displayProperty=nameWithType>(tous les membres) | Tous |
 
 ## <a name="systemconsole"></a>System.Console
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Console.Beep?displayProperty=nameWithType> | Linux et macOS |
-| <xref:System.Console.BufferHeight?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
-| <xref:System.Console.BufferWidth?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
-| <xref:System.Console.CursorSize?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
-| <xref:System.Console.CursorVisible?displayProperty=nameWithType> (récupération uniquement) | Linux et macOS |
+| <xref:System.Console.BufferHeight?displayProperty=nameWithType>(réglé uniquement) | Linux et macOS |
+| <xref:System.Console.BufferWidth?displayProperty=nameWithType>(réglé uniquement) | Linux et macOS |
+| <xref:System.Console.CursorSize?displayProperty=nameWithType>(réglé uniquement) | Linux et macOS |
+| <xref:System.Console.CursorVisible?displayProperty=nameWithType>(obtenir seulement) | Linux et macOS |
 | <xref:System.Console.MoveBufferArea%2A?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.Console.SetWindowPosition%2A?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.Console.SetWindowSize%2A?displayProperty=nameWithType> | Linux et macOS |
-| <xref:System.Console.Title?displayProperty=nameWithType> (récupération uniquement) | Linux et macOS |
-| <xref:System.Console.WindowHeight?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
-| <xref:System.Console.WindowLeft?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
-| <xref:System.Console.WindowTop?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
-| <xref:System.Console.WindowWidth?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
+| <xref:System.Console.Title?displayProperty=nameWithType>(obtenir seulement) | Linux et macOS |
+| <xref:System.Console.WindowHeight?displayProperty=nameWithType>(réglé uniquement) | Linux et macOS |
+| <xref:System.Console.WindowLeft?displayProperty=nameWithType>(réglé uniquement) | Linux et macOS |
+| <xref:System.Console.WindowTop?displayProperty=nameWithType>(réglé uniquement) | Linux et macOS |
+| <xref:System.Console.WindowWidth?displayProperty=nameWithType>(réglé uniquement) | Linux et macOS |
 
 ## <a name="systemdatacommon"></a>System.Data.Common
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
-| <xref:System.Data.Common.DbDataReader.GetSchemaTable%2A?displayProperty=nameWithType> (lève <xref:System.NotSupportedException>) | Tous |
+| <xref:System.Data.Common.DbDataReader.GetSchemaTable%2A?displayProperty=nameWithType>(jette <xref:System.NotSupportedException>) | Tous |
 
 ## <a name="systemdiagnosticsprocess"></a>System.Diagnostics.Process
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
-| <xref:System.Diagnostics.Process.MaxWorkingSet?displayProperty=nameWithType> (définir uniquement) | Linux |
-| <xref:System.Diagnostics.Process.MinWorkingSet?displayProperty=nameWithType> (définir uniquement) | Linux |
+| <xref:System.Diagnostics.Process.MaxWorkingSet?displayProperty=nameWithType>(réglé uniquement) | Linux |
+| <xref:System.Diagnostics.Process.MinWorkingSet?displayProperty=nameWithType>(réglé uniquement) | Linux |
 | <xref:System.Diagnostics.Process.ProcessorAffinity?displayProperty=nameWithType> | macOS |
 | <xref:System.Diagnostics.Process.MainWindowHandle?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType> | Linux et macOS |
@@ -95,37 +95,37 @@ Cet article organise les membres d’API affectés par espace de noms.
 | <xref:System.Diagnostics.ProcessStartInfo.PasswordInClearText?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.Diagnostics.ProcessStartInfo.Domain?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.Diagnostics.ProcessStartInfo.LoadUserProfile?displayProperty=nameWithType> | Linux et macOS |
-| <xref:System.Diagnostics.ProcessThread.BasePriority?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
-| <xref:System.Diagnostics.ProcessThread.BasePriority?displayProperty=nameWithType> (récupération uniquement) | macOS |
-| <xref:System.Diagnostics.ProcessThread.ProcessorAffinity?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
+| <xref:System.Diagnostics.ProcessThread.BasePriority?displayProperty=nameWithType>(réglé uniquement) | Linux et macOS |
+| <xref:System.Diagnostics.ProcessThread.BasePriority?displayProperty=nameWithType>(obtenir seulement) | macOS |
+| <xref:System.Diagnostics.ProcessThread.ProcessorAffinity?displayProperty=nameWithType>(réglé uniquement) | Linux et macOS |
 
 ## <a name="systemio"></a>System.IO
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.IO.FileSystemInfo.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
 | <xref:System.IO.FileSystemInfo.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
 
 ## <a name="systemiopipes"></a>System.IO.Pipes
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.IO.Pipes.NamedPipeClientStream.NumberOfServerInstances?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.IO.Pipes.NamedPipeServerStream.GetImpersonationUserName?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.IO.Pipes.PipeStream.InBufferSize?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.IO.Pipes.PipeStream.OutBufferSize?displayProperty=nameWithType> | Linux et macOS |
-| <xref:System.IO.Pipes.PipeStream.ReadMode?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
+| <xref:System.IO.Pipes.PipeStream.ReadMode?displayProperty=nameWithType>(réglé uniquement) | Linux et macOS |
 | <xref:System.IO.Pipes.PipeStream.WaitForPipeDrain?displayProperty=nameWithType> | Linux et macOS |
 
-## <a name="systemmedia"></a>System. Media
+## <a name="systemmedia"></a>System.Médias
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Media.SoundPlayer.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
 
 ## <a name="systemnet"></a>System.Net
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Net.AuthenticationManager.Authenticate(System.String,System.Net.WebRequest,System.Net.ICredentials)?displayProperty=nameWithType> | Tous |
 | <xref:System.Net.AuthenticationManager.PreAuthenticate(System.Net.WebRequest,System.Net.ICredentials)?displayProperty=nameWithType> | Tous |
@@ -147,26 +147,26 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemnetnetworkinformation"></a>System.Net.NetworkInformation
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Net.NetworkInformation.Ping.Send%2A?displayProperty=nameWithType> | Windows (UWP) |
 
 ## <a name="systemnetsockets"></a>System.Net.Sockets
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Net.Sockets.Socket.%23ctor(System.Net.Sockets.SocketInformation)?displayProperty=nameWithType> | Tous |
 | <xref:System.Net.Sockets.Socket.DuplicateAndClose(System.Int32)?displayProperty=nameWithType> | Tous |
 
 ## <a name="systemnetwebsockets"></a>System.Net.WebSockets
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Net.WebSockets.WebSocket.RegisterPrefixes?displayProperty=nameWithType> | Tous |
 
 ## <a name="systemreflection"></a>System.Reflection
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType> | Tous |
 | <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom(System.String)?displayProperty=nameWithType> | Tous |
@@ -178,13 +178,13 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemruntimecompilerservices"></a>System.Runtime.CompilerServices
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Runtime.CompilerServices.DebugInfoGenerator.CreatePdbGenerator?displayProperty=nameWithType> | Tous |
 
 ## <a name="systemruntimeinteropservices"></a>System.Runtime.InteropServices
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Runtime.InteropServices.Marshal.GetIDispatchForObject(System.Object)?displayProperty=nameWithType> | Tous |
 | <xref:System.Runtime.InteropServices.RuntimeEnvironment.SystemConfigurationFile?displayProperty=nameWithType> | Tous |
@@ -196,13 +196,13 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemruntimeserialization"></a>System.Runtime.Serialization
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas?displayProperty=nameWithType> | Tous |
 
 ## <a name="systemsecurity"></a>System.Security
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Security.CodeAccessPermission.Deny?displayProperty=nameWithType> | Tous |
 | <xref:System.Security.CodeAccessPermission.PermitOnly?displayProperty=nameWithType> | Tous |
@@ -221,7 +221,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemsecurityclaims"></a>System.Security.Claims
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Security.Claims.ClaimsPrincipal.%23ctor?displayProperty=nameWithType> | Tous |
 | <xref:System.Security.Claims.ClaimsPrincipal.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
@@ -231,7 +231,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemsecuritycryptography"></a>System.Security.Cryptography
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create(System.String)?displayProperty=nameWithType> | Tous |
 | <xref:System.Security.Cryptography.CspKeyContainerInfo.%23ctor%2A?displayProperty=nameWithType> | Linux et macOS |
@@ -264,7 +264,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemsecuritycryptographypkcs"></a>System.Security.Cryptography.Pkcs
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Security.Cryptography.Pkcs.CmsSigner.%23ctor(System.Security.Cryptography.CspParameters)?displayProperty=nameWithType> | Tous |
 | <xref:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner,System.Boolean)?displayProperty=nameWithType> | Tous |
@@ -272,40 +272,40 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemsecuritycryptographyx509certificates"></a>System.Security.Cryptography.X509Certificates
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Security.Cryptography.X509Certificates.X509Certificate.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
 | <xref:System.Security.Cryptography.X509Certificates.X509Certificate.Import%2A?displayProperty=nameWithType> | Tous |
 | <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
-| <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.PrivateKey?displayProperty=nameWithType> (définir uniquement) | Tous |
+| <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.PrivateKey?displayProperty=nameWithType>(réglé uniquement) | Tous |
 
 ## <a name="systemsecurityauthenticationextendedprotection"></a>System.Security.Authentication.ExtendedProtection
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
 
-## <a name="systemsecuritypolicy"></a>System. Security. Policy
+## <a name="systemsecuritypolicy"></a>System.security.policy
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Security.Policy.Hash.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
 
 ## <a name="systemserviceprocessservicecontroller"></a>System.ServiceProcess.ServiceController
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.ServiceProcess.TimeoutException.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
 
 ## <a name="systemtextregularexpressions"></a>System.Text.RegularExpressions
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> | Tous |
 
 ## <a name="systemthreading"></a>System.Threading
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Threading.CompressedStack.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
 | <xref:System.Threading.ExecutionContext.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
@@ -316,7 +316,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemxml"></a>System.Xml
 
-| Membre | Plateformes qui lèvent |
+| Membre | Plates-formes qui jettent |
 | - | - |
 | <xref:System.Xml.XmlDictionaryReader.CreateMtomReader(System.Byte[],System.Int32,System.Int32,System.Text.Encoding[],System.String,System.Xml.XmlDictionaryReaderQuotas,System.Int32,System.Xml.OnXmlDictionaryReaderClose)?displayProperty=nameWithType> | Tous |
 | <xref:System.Xml.XmlDictionaryReader.CreateMtomReader(System.IO.Stream,System.Text.Encoding[],System.String,System.Xml.XmlDictionaryReaderQuotas,System.Int32,System.Xml.OnXmlDictionaryReaderClose)?displayProperty=nameWithType> | Tous |
@@ -324,6 +324,6 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Dernières modifications pour la migration de .NET Framework vers .NET Core](../compatibility/fx-core.md)
+- [Breaking changes for migration from .NET Framework to .NET Core](../compatibility/fx-core.md)
 - [Sérialisation binaire dans .NET Core](../../standard/serialization/binary-serialization.md#net-core)
-- [Analyseur de portabilité .NET](../../standard/analyzers/portability-analyzer.md)
+- [analyseur de portabilité .NET](../../standard/analyzers/portability-analyzer.md)

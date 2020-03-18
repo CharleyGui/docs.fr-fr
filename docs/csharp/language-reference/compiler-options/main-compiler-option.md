@@ -9,10 +9,10 @@ helpviewer_keywords:
 - /main compiler option [C#]
 ms.assetid: 975cf4d5-36ac-4530-826c-4aad0c7f2049
 ms.openlocfilehash: 6c842abc1423e7ee0d98b71392e02410c6cf9172
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69602724"
 ---
 # <a name="-main-c-compiler-options"></a>-main (Options du compilateur C#)
@@ -29,7 +29,7 @@ Cette option spécifie la classe qui contient le point d’entrée du programme 
  Type contenant la méthode **Main**.  
  Le nom de classe fourni doit être complet, c’est-à-dire qu’il doit inclure l’espace de noms complet contenant la classe, suivi du nom de classe. Par exemple, si la méthode `Main` se trouve dans la classe `Program` dans l’espace de noms `MyApplication.Core`, l’option du compilateur doit être `-main:MyApplication.Core.Program`.
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes   
  Si votre compilation comprend plusieurs types avec une méthode [Main](../../programming-guide/main-and-command-args/index.md), vous pouvez spécifier le type qui contient la méthode **Main** à utiliser comme point d’entrée dans le programme.  
   
  Cette option est à utiliser lors de la compilation d’un fichier .exe.  
@@ -44,7 +44,7 @@ Cette option spécifie la classe qui contient le point d’entrée du programme 
   
      Pour définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.StartupObject%2A>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
  Compilez `t2.cs` et `t3.cs`, en spécifiant que la **Main** se trouve dans `Test2` :  
   
 ```console  
@@ -53,5 +53,5 @@ csc t2.cs t3.cs -main:Test2
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](./index.md)
+- [Options de compilateur C](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

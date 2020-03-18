@@ -3,10 +3,10 @@ title: Préatomisation des objets XName (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: e84fbbe7-f072-4771-bfbb-059d18e1ad15
 ms.openlocfilehash: 2fd754a352bd2988e52ec9c67a9915a8e587b107
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69591498"
 ---
 # <a name="pre-atomization-of-xname-objects-linq-to-xml-c"></a>Préatomisation des objets XName (LINQ to XML) (C#)
@@ -16,8 +16,8 @@ L'un des moyens d'améliorer les performances dans LINQ to XML est de préatomis
   
  Vous devez tester la préatomisation avec votre scénario pour décider si vous devez l'utiliser.  
   
-## <a name="example"></a>Exemples  
- Cela est illustré par l'exemple suivant.  
+## <a name="example"></a> Exemple  
+ l’exemple ci-dessous illustre ce cas de figure.  
   
 ```csharp  
 XName Root = "Root";  
@@ -39,7 +39,7 @@ XElement root = new XElement(Root,
 Console.WriteLine(root);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Root>  
@@ -73,7 +73,7 @@ XElement root = new XElement(Root,
 Console.WriteLine(root);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <aw:Root xmlns:aw="http://www.adventure-works.com">  

@@ -3,17 +3,17 @@ title: Commande dotnet build-server
 description: La commande dotnet build-server interagit avec les serveurs démarrés par une build.
 ms.date: 02/14/2020
 ms.openlocfilehash: a6a9cd6de66371caef66d1101b3f844dffc771ef
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77503779"
 ---
 # <a name="dotnet-build-server"></a>dotnet build-server
 
-**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 2.1 SDK et les versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet build-server` -Interagit avec les serveurs démarrés par une build.
 

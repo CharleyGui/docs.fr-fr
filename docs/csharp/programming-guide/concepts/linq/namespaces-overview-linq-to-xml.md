@@ -3,10 +3,10 @@ title: Vue d'ensemble des espaces de noms (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 16283322-8238-4918-ab11-802ac6748eb7
 ms.openlocfilehash: d5f176a5561b77126ef23af996ab1e4bf51092ad
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68868827"
 ---
 # <a name="namespaces-overview-linq-to-xml"></a>Vue d'ensemble des espaces de noms (LINQ to XML)

@@ -6,10 +6,10 @@ helpviewer_keywords:
 - parameters [C#], value
 ms.assetid: 193ab86f-5f9b-4359-ac29-7cdf8afad3a6
 ms.openlocfilehash: 670af18d4b2b356aa33a0a03a29c05f5ba9bf78f
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76744496"
 ---
 # <a name="passing-value-type-parameters-c-programming-guide"></a>Passage de paramètres de type valeur (Guide de programmation C#)
@@ -41,5 +41,5 @@ Une variable de [type valeur](../../language-reference/builtin-types/value-types
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [Passage de paramètres](./passing-parameters.md)
+- [Paramètres de passage](./passing-parameters.md)
 - [Passage de paramètres de type référence](./passing-reference-type-parameters.md)

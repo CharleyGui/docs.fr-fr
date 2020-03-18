@@ -3,10 +3,10 @@ title: Implémentation d’un modèle de domaine de microservice avec .NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Accéder aux détails d’implémentation d’un modèle de domaine orienté DDD.
 ms.date: 10/08/2018
 ms.openlocfilehash: bff9cbda08e519038056268151a1721427f0ac01
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73972047"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implémenter un modèle de domaine de microservice avec .NET Core
@@ -17,7 +17,7 @@ Dans la section précédente, les modèles et principes fondamentaux de concepti
 
 L’organisation des dossiers utilisée pour l’application de référence eShopOnContainers montre le modèle DDD pour l’application. Vous pouvez trouver qu’une organisation des dossiers différente communique plus clairement les choix de conception effectués pour votre application. Comme vous pouvez le voir dans la figure 7-10, il existe deux agrégats dans le modèle de domaine de commandes : l’agrégat des commandes et l’agrégat des acheteurs. Chaque agrégat est un groupe d’entités de domaine et d’objets de valeur, bien que vous puissiez également avoir un agrégat composé d’une entité de domaine unique (la racine d’agrégat ou l’entité racine).
 
-:::image type="complex" source="./media/net-core-microservice-domain-model/ordering-microservice-container.png" alt-text="Capture d’écran du projet Ordering. Domain dans Explorateur de solutions.":::
+:::image type="complex" source="./media/net-core-microservice-domain-model/ordering-microservice-container.png" alt-text="Capture d’écran du projet Ordering.Domain dans Solution Explorer.":::
 La vue Explorateur de solutions pour le projet Ordering.Domain, montrant le dossier AggregatesModel contenant les dossiers BuyerAggregate et OrderAggregate, chacun d’eux contenant ses classes d’entité, ses fichiers objets de valeur, etc.
 :::image-end:::
 
@@ -170,15 +170,15 @@ Par exemple, dans l’exemple de code OrderAggregate précédent, il existe plus
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Vaughn Vernon. Modélisation des agrégats avec DDD et Entity Framework.** Notez qu’il ne s’agit *pas* d’Entity Framework Core. \
+- **Vaughn Vernon. Agrégats de modélisation avec DDD et cadre d’entité.** Notez qu’il ne s’agit *pas* d’Entity Framework Core. \
   <https://kalele.io/blog-posts/modeling-aggregates-with-ddd-and-entity-framework/>
 
-- **Julie Lerman. Points de données-codage pour la conception pilotée par domaine : conseils pour les développeurs orientés données** \
+- **Julie Lerman. Points de données - Codage pour la conception axée sur le domaine : Conseils pour les développeurs axés sur les données** \
   <https://docs.microsoft.com/archive/msdn-magazine/2013/august/data-points-coding-for-domain-driven-design-tips-for-data-focused-devs>
 
-- **UDI Dahan. Comment créer des modèles de domaine entièrement encapsulés** \
+- **Udi Dahan. Comment créer des modèles de domaine entièrement encapsulés** \
   <http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
 
 > [!div class="step-by-step"]
-> [Précédent](microservice-domain-model.md)
-> [Suivant](seedwork-domain-model-base-classes-interfaces.md)
+> [Suivant précédent](microservice-domain-model.md)
+> [Next](seedwork-domain-model-base-classes-interfaces.md)

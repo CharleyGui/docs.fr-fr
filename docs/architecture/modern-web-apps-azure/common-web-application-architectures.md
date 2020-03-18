@@ -5,16 +5,16 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
 ms.openlocfilehash: 7ec0d9cece40ba8a99e8ab5e028f7ac491ed6f4d
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77450174"
 ---
 # <a name="common-web-application-architectures"></a>Architectures courantes des applications web
 
 > « Si vous pensez qu’une bonne architecture est coûteuse, faites l’expérience d’une mauvaise architecture. »  
-> _- Brian Foote et Joseph Yoder_
+> _– Brian Foote and Joseph Yoder_
 
 La plupart des applications .NET conventionnelles sont déployées sous forme d’unités individuelles qui correspondent à un exécutable ou à une application web unique s’exécutant dans un seul domaine d’application IIS. C’est le modèle de déploiement le plus simple, qui convient parfaitement à beaucoup d’applications internes et applications publiques de petite taille. Toutefois, même avec ce déploiement en unités individuelles, la majorité des applications métier non triviales tirent avantage à avoir leur logique séparée en plusieurs couches.
 
@@ -40,7 +40,7 @@ Pour résoudre ces problèmes, les applications se transforment souvent en solut
 
 ## <a name="what-are-layers"></a>Qu’est-ce qu’une architecture en couches ?
 
-Quand une application devient complexe, un moyen de gérer cette complexité est de scinder l’application selon ses responsabilités ou préoccupations. Cela respecte le principe de séparation des préoccupations et peut aider à maintenir une structure de code en pleine croissance, afin que les développeurs puissent facilement trouver où certaines fonctionnalités sont implémentées. L’architecture en couches offre d’autres avantages que la simple organisation du code.
+Quand une application devient complexe, un moyen de gérer cette complexité est de scinder l’application selon ses responsabilités ou préoccupations. Cela fait suite à la séparation des préoccupations principe et peut aider à maintenir une base de code croissante organisée afin que les développeurs peuvent facilement trouver où certaines fonctionnalités sont mises en œuvre. L’architecture en couches offre d’autres avantages que la simple organisation du code.
 
 En effet, l’organisation du code en couches permet également la réutilisation des fonctionnalités communes de bas niveau dans l’ensemble de l’application. Cette possibilité est intéressante, car elle réduit la quantité de code à écrire et permet la standardisation de l’application sur une implémentation unique, selon le principe [DRY (« Ne vous répétez pas »)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
@@ -59,7 +59,7 @@ La mise en couches logiques est une technique courante pour améliorer l’organ
 
 La figure 5-2 illustre l’organisation la plus courante d’une logique d’application en couches.
 
-![Couches d’application standard](./media/image5-2.png)
+![Couches d’application typiques](./media/image5-2.png)
 
 **Figure 5-2.** Couches d’application classiques.
 
@@ -69,7 +69,7 @@ Cette approche en couches classique a un inconvénient, à savoir que les dépen
 
 La figure 5-3 montre un exemple de solution qui scinde l’application en trois projets par responsabilité (ou couche).
 
-![Application monolithique simple avec trois projets](./media/image5-3.png)
+![Une simple application monolithique avec trois projets](./media/image5-3.png)
 
 **Figure 5-3.** Application monolithique simple constituée de trois projets.
 
@@ -91,7 +91,7 @@ Il est possible d’augmenter ou de diminuer la taille des instances de cette un
 
 L’approche la plus simple pour mettre à l’échelle une application web dans Azure est de configurer la mise à l’échelle manuellement dans le plan App Service de l’application. La figure 5-6 illustre le tableau de bord Azure qui permet de configurer le nombre d’instances au service d’une application.
 
-![Mise à l’échelle du plan App Service dans Azure](./media/image5-6.png)
+![App Service Plan mise à l’échelle à Azure](./media/image5-6.png)
 
 **Figure 5-6.** Mise à l’échelle du plan App Service dans Azure.
 
@@ -99,7 +99,7 @@ L’approche la plus simple pour mettre à l’échelle une application web dans
 
 Les applications conçues selon le principe d’inversion des dépendances et les principes DDD (conception pilotée par le domaine) présentent au final plus ou moins la même architecture. Les noms donnés à cette architecture ont beaucoup varié au fil des années. Au début, on l’a nommée architecture hexagonale, puis architecture ports-adaptateurs. Plus récemment, on l’a appelée [architecture en oignon](https://jeffreypalermo.com/blog/the-onion-architecture-part-1/) ou [architecture propre](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). Cette dernière désignation, architecture propre, est celle utilisée pour qualifier l’architecture utilisée dans ce livre électronique.
 
-L’application de référence eShopOnWeb utilise l’approche propre à l’architecture pour organiser son code en projets. Vous pouvez trouver un modèle de solution que vous pouvez utiliser comme point de départ pour votre propre ASP.NET Core sur le référentiel GitHub [/cleanarchitecture](https://github.com/ardalis/cleanarchitecture) .
+L’application de référence eShopOnWeb utilise l’approche Clean Architecture dans l’organisation de son code en projets. Vous pouvez trouver un modèle de solution que vous pouvez utiliser comme point de départ pour votre propre ASP.NET Core sur le référentiel [GitHub ardalis/cleanarchitecture.](https://github.com/ardalis/cleanarchitecture)
 
 L’architecture propre met la logique métier et le modèle d’application au centre même de l’application. Au lieu que la logique métier dépende des préoccupations de l’accès aux données ou d’une autre infrastructure, cette dépendance est inversée : les détails de l’infrastructure et de l’implémentation dépendent du noyau de l’application. Cela s’obtient par la définition d’abstractions, ou interfaces, dans la couche Noyau de l’application, lesquels sont ensuite implémentés par les types définis dans la couche Infrastructure. Cette architecture est souvent représentée sous la forme d’une série de cercles concentriques, à l’image des couches d’un oignon. La figure 5-7 montre un exemple de ce style de représentation architecturale.
 
@@ -119,9 +119,9 @@ Notez que les flèches pleines représentent les dépendances à la compilation,
 
 La figure 5-9 est une représentation plus détaillée de l’architecture d’une application ASP.NET Core conçue selon ces recommandations.
 
-![Diagramme d’architecture de ASP.NET Core suivant l’architecture propre](./media/image5-9.png)
+![ASP.NET diagramme d’architecture de base suivant l’architecture propre](./media/image5-9.png)
 
-**Figure 5-9**. Diagramme d’une architecture ASP.NET Core propre.
+**Figure 5-9.** Diagramme d’une architecture ASP.NET Core propre.
 
 Comme la couche Noyau de l’application ne dépend pas de la couche Infrastructure, il est très facile d’écrire des tests unitaires automatisés pour cette couche. Les figures 5-10 et 5-11 montrent comment les tests s’intègrent à cette architecture.
 
@@ -145,7 +145,7 @@ Dans les applications monolithiques, les projets Noyau de l’application, Infra
 
 Dans une architecture propre, les responsabilités de chaque projet sont clairement établies. À cet effet, certains types sont communs à chaque projet et vous trouverez souvent plusieurs dossiers correspondant à ces types dans le projet en question.
 
-La couche Noyau de l’application contient le modèle métier, qui définit les entités, les services et les interfaces. Ces interfaces incluent des abstractions pour les opérations qui seront effectuées à l’aide de l’infrastructure, telles que l’accès aux données, l’accès au système de fichiers, les appels réseau, etc. Parfois, les services ou les interfaces définis au niveau de cette couche doivent fonctionner avec des types non-entité qui n’ont pas de dépendances sur l’interface utilisateur ou l’infrastructure. Ils peuvent alors être définis comme objets de transfert de données (DTO).
+La couche Noyau de l’application contient le modèle métier, qui définit les entités, les services et les interfaces. Ces interfaces comprennent des abstractions pour les opérations qui seront effectuées à l’aide d’infrastructure, telles que l’accès aux données, l’accès au système de fichiers, les appels réseau, etc. Parfois, les services ou les interfaces définis à cette couche devront fonctionner avec des types non-entités qui n’ont aucune dépendance à l’assurance-chômage ou à l’infrastructure. Ils peuvent alors être définis comme objets de transfert de données (DTO).
 
 ### <a name="application-core-types"></a>Types de la couche Noyau de l’application
 
@@ -211,7 +211,7 @@ Le déploiement de mises à jour comme images Docker est beaucoup plus rapide et
 
 Comme les conteneurs sont immuables de par leur conception même, il n’y a pas de risques d’endommagement des machines virtuelles, au contraire des scripts de mise à jour qui peuvent oublier de prendre en compte une configuration ou un fichier spécifique sur le disque.
 
-Vous pouvez utiliser des conteneurs Docker pour effectuer un déploiement monolithique d’applications web simples. Cela a pour effet d’améliorer les pipelines d’intégration continue et de déploiement continu et cela contribuer à la réussite du déploiement en production. Plus de « il fonctionne sur mon ordinateur, pourquoi ne fonctionne-t-il pas en production ? »
+Vous pouvez utiliser des conteneurs Docker pour effectuer un déploiement monolithique d’applications web simples. Cela a pour effet d’améliorer les pipelines d’intégration continue et de déploiement continu et cela contribuer à la réussite du déploiement en production. Pas plus "Il fonctionne sur ma machine, pourquoi ne fonctionne-t-il pas en production?"
 
 Une architecture basée sur des microservices présente de nombreux avantages, mais ces avantages se payent par une complexité accrue. Dans certains cas, les coûts l’emportent sur les avantages, de sorte qu’il est préférable d’utiliser une application à déploiement monolithique s’exécutant dans un petit nombre de conteneurs, voire dans un seul conteneur.
 
@@ -259,7 +259,7 @@ networks:
       name: nat
 ```
 
-Le fichier `docker-compose.yml` référence le `Dockerfile` dans le projet `Web`. Le `Dockerfile` sert à spécifier le conteneur de base qui sera utilisé et la façon dont l’application sera configurée dans ce dernier. Voici le `Web` de `Dockerfile` :
+Le fichier `docker-compose.yml` référence le `Dockerfile` dans le projet `Web`. Le `Dockerfile` sert à spécifier le conteneur de base qui sera utilisé et la façon dont l’application sera configurée dans ce dernier. Voici le `Dockerfile` de `Web` :
 
 ```Dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
@@ -289,19 +289,19 @@ Si vous voulez ajouter la prise en charge de Docker à votre application à l’
 
 ### <a name="references--common-web-architectures"></a>Informations de référence sur les architectures web courantes
 
-- **L’architecture propre**  
+- **The Clean Architecture**  
   <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
-- **L’architecture en oignon**  
+- **The Onion Architecture**  
   <https://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
-- **Le modèle référentiel**  
+- **Le modèle de dépôt**  
   <https://deviq.com/repository-pattern/>
 - **Modèle de solution d’architecture propre**  
   <https://github.com/ardalis/cleanarchitecture>
 - **Architecting Microservices (livre électronique)**  
   <https://aka.ms/MicroservicesEbook>
-- **DDD (conception pilotée par le domaine)**  
+- **DDD (Domain-Driven Design)**  
   <https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/>
 
 >[!div class="step-by-step"]
->[Précédent](architectural-principles.md)
->[Suivant](common-client-side-web-technologies.md)
+>[Suivant précédent](architectural-principles.md)
+>[Next](common-client-side-web-technologies.md)

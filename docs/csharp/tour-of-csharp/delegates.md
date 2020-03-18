@@ -4,15 +4,15 @@ description: Découvrez la liaison tardive avec les délégués C#
 ms.date: 02/27/2020
 ms.assetid: 3cc27357-3ac2-43a1-aad0-86a77b88f884
 ms.openlocfilehash: b1740ddc65dcb0ee8775f4cbaa8356293ea55fae
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78159167"
 ---
 # <a name="delegates"></a>Délégués
 
-Un ***type délégué*** représente des références à des méthodes avec une liste de paramètres et un type de retour particuliers. Les délégués permettent de traiter les méthodes en tant qu’entités qui peuvent être affectées à des variables et passées comme paramètres. Les délégués sont similaires au concept de pointeurs de fonction trouvés dans d’autres langages. Contrairement aux pointeurs de fonction, les délégués sont orientés objet et de type sécurisé.
+Un ***type délégué*** représente des références aux méthodes avec une liste de paramètres et un type de retour particuliers. Les délégués permettent de traiter les méthodes en tant qu’entités qui peuvent être affectées à des variables et passées comme paramètres. Les délégués sont semblables au concept de pointeurs de fonction trouvés dans d’autres langues. Contrairement aux pointeurs de fonction, les délégués sont orientés vers les objets et de type-sûr.
 
 L’exemple suivant déclare et utilise un type délégué nommé `Function`.
 
@@ -22,12 +22,12 @@ Une instance du type délégué `Function` peut faire référence à toute méth
 
 Un délégué peut faire référence à une méthode statique (comme `Square` ou `Math.Sin` dans l’exemple précédent) ou à une méthode d’instance (comme `m.Multiply` dans l’exemple précédent). Un délégué qui référence une méthode d’instance référence aussi un objet particulier, et quand la méthode d’instance est appelée via le délégué, cet objet devient `this` dans l’appel.
 
-Les délégués peuvent également être créés à l’aide de fonctions anonymes, qui sont des « méthodes inline » qui sont créées lorsqu’elles sont déclarées. Les fonctions anonymes peuvent voir les variables locales des méthodes qui l’entourent. L’exemple suivant ne crée pas de classe :
+Les délégués peuvent également être créés à l’aide de fonctions anonymes, qui sont des «méthodes inlines» qui sont créées lorsqu’elles sont déclarées. Les fonctions anonymes peuvent voir les variables locales des méthodes qui l’entourent. L’exemple suivant ne crée pas de classe :
 
 [!code-csharp[LambdaExample](../../../samples/snippets/csharp/tour/delegates/Program.cs#L44-L44)]
 
-Un délégué ne connaît pas ou ne tient pas compte de la classe de la méthode qu’il référence ; Il est important que la méthode référencée ait les mêmes paramètres et le même type de retour que le délégué.
+Un délégué ne connaît pas ou ne se soucie pas de la classe de la méthode qu’il fait référence; tout ce qui importe, c’est que la méthode référencée a les mêmes paramètres et le même type de retour que le délégué.
 
 >[!div class="step-by-step"]
->[Précédent](interfaces.md)
->[Suivant](attributes.md)
+>[Suivant précédent](interfaces.md)
+>[Next](attributes.md)

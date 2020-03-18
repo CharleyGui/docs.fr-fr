@@ -3,10 +3,10 @@ title: Projection de code XML en une autre forme (C#)
 ms.date: 07/20/2015
 ms.assetid: 4cb6b14a-32dc-4a2a-813e-bf9368fa8d86
 ms.openlocfilehash: 1377df1ce7f54bc9a0f58836d7df5e5b7b54a69a
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69591536"
 ---
 # <a name="projecting-xml-in-a-different-shape-c"></a>Projection de code XML en une autre forme (C#)
@@ -14,10 +14,10 @@ Cette rubrique illustre un exemple de projection de code XML dont la forme est d
   
  De nombreuses transformations XML courantes sont composées de requêtes chaînées, comme dans cet exemple. Il est courant de commencer avec une certaine forme de code XML, de projeter des résultats intermédiaires en tant que collections de types anonymes ou nommés, puis de projeter les résultats dans du code XML sous une forme complètement différente du code XML source.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
  Cet exemple traite un document WordprocessingML et récupère les nœuds de paragraphes à partir d'un document WordprocessingML. Il identifie également le style et le texte de chaque paragraphe. Pour finir, l'exemple projette le code XML sous une forme différente. Cet exemple se base sur les exemples précédents de ce didacticiel. Dans le code ci-dessous, la nouvelle instruction qui effectue la projection figure dans des commentaires.  
   
- Afin d’obtenir des instructions pour créer le document source utilisé dans cet exemple, consultez [Création du document Office Open XML source (C#)](./creating-the-source-office-open-xml-document.md).  
+ Pour obtenir des instructions pour créer le document source utilisé dans cet exemple, consultez [Création du document Office Open XML source (C#)](./creating-the-source-office-open-xml-document.md).  
   
  Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
@@ -163,7 +163,7 @@ class Program
 }  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Root>  

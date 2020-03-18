@@ -5,17 +5,17 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.openlocfilehash: 1263bfe337b9d6609c0ca7df70aa299a61a7f1a0
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78157399"
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>Tests unitaires dans .NET Core et .NET Standard
 
 .NET Core permet de créer facilement des tests unitaires. Cet article présente les tests unitaires et explique ce qui les distingue des autres types de test. Les ressources connexes au bas de la page vous montrent comment ajouter un projet de test à votre solution. Après avoir configuré votre projet de test, vous pouvez exécuter vos tests unitaires à l’aide de la ligne de commande ou de Visual Studio.
 
-Si vous testez un projet de **ASP.net Core** , consultez [tests d’intégration dans ASP.net Core](/aspnet/core/test/integration-tests#test-app-prerequisites).
+Si vous testez un projet **ASP.NET Core,** consultez [les tests d’intégration dans ASP.NET Core](/aspnet/core/test/integration-tests#test-app-prerequisites).
 
 .NET Core 2.0 et ultérieur prend en charge [.NET Standard 2.0](../../standard/net-standard.md) et nous allons utiliser ses bibliothèques pour illustrer les tests unitaires.
 
@@ -32,19 +32,19 @@ Par ailleurs, n’oubliez pas qu’il existe des bonnes pratiques pour écrire d
 
 Essayez de ne pas introduire de dépendances à l’infrastructure quand vous écrivez des tests unitaires. Elles rendent les tests lents et fragiles et doivent être réservées aux tests d’intégration. Vous pouvez éviter ces dépendances dans votre application en suivant le [principe des dépendances explicites](https://deviq.com/explicit-dependencies-principle/) et en utilisant l’[injection de dépendances](/aspnet/core/fundamentals/dependency-injection). Vous pouvez également conserver vos tests unitaires dans un projet distinct de vos tests d’intégration. Ainsi, vous avez la garantie que votre projet de test unitaire n’a pas de références ou de dépendances aux packages de l’infrastructure.
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 Pour en savoir plus sur les tests unitaires dans les projets .NET Core :
 
 Les projets de test unitaire .NET Core sont pris en charge pour :
 
-- [C#](../../csharp/index.yml)
-- [F#](../../fsharp/index.yml)
-- [Visual Basic](../../visual-basic/index.yml)
+- [C #](../../csharp/index.yml)
+- [F #](../../fsharp/index.yml)
+- [Base visuelle](../../visual-basic/index.yml)
 
 Vous pouvez également choisir entre :
 
-- [xUnit](https://xunit.github.io)
+- [xUnit (en)](https://xunit.github.io)
 - [NUnit](https://nunit.org)
 - [MSTest](https://github.com/Microsoft/testfx-docs)
 

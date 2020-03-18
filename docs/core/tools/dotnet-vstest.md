@@ -3,15 +3,15 @@ title: Commande dotnet vstest
 description: La commande dotnet vstest permet de générer un projet et l’ensemble de ses dépendances.
 ms.date: 02/27/2020
 ms.openlocfilehash: 88e5b6a8966d78d0746f9ea5ccbccab142a2e0f6
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78156931"
 ---
 # <a name="dotnet-vstest"></a>dotnet vstest
 
-**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 2.1 SDK et les versions ultérieures
 
 ## <a name="name"></a>Nom
 
@@ -61,11 +61,11 @@ La commande `dotnet-vstest` exécute l’application en ligne de commande `VSTes
 
 - **`--Parallel`**
 
-  Exécuter les tests en parallèle. Par défaut, tous les cœurs disponibles sur l’ordinateur sont utilisables. Spécifiez un nombre de cœurs explicite en définissant la propriété `MaxCpuCount` sous le nœud `RunConfiguration` dans le fichier *RunSettings* .
+  Exécuter des tests en parallèle. Par défaut, tous les cœurs disponibles sur l’ordinateur sont utilisables. Spécifier un nombre explicite `MaxCpuCount` de `RunConfiguration` cœurs en plaçant la propriété sous le nœud dans le fichier *runsettings.*
 
 - **`--TestCaseFilter <Expression>`**
 
-  Exécutez les tests qui correspondent à l'expression donnée. `<Expression>` est au format `<property>Operator<value>[|&<Expression>]`, où l’opérateur est `=`, `!=` ou `~`. L’opérateur `~` a une sémantique « contient » et est applicable aux propriétés de chaîne comme `DisplayName`. Les parenthèses `()` sont utilisées pour regrouper les sous-expressions.
+  Exécutez les tests qui correspondent à l'expression donnée. `<Expression>` est au format `<property>Operator<value>[|&<Expression>]`, où l’opérateur est `=`, `!=` ou `~`. L’opérateur `~` a une sémantique « contient » et est applicable aux propriétés de chaîne comme `DisplayName`. La parenthèse `()` est utilisée pour regrouper les sous-exemples.
 
 - **`-?|--Help`**
 
@@ -127,19 +127,19 @@ La commande `dotnet-vstest` exécute l’application en ligne de commande `VSTes
 
 ## <a name="examples"></a>Exemples
 
-Exécuter les tests dans *MyTestProject. dll*:
+Exécuter des tests dans *mytestproject.dll*:
 
 ```dotnetcli
 dotnet vstest mytestproject.dll
 ```
 
-Exécutez les tests dans *MyTestProject. dll*, en les exportant vers un dossier personnalisé avec un nom personnalisé :
+Exécuter des tests dans *mytestproject.dll*, l’exportation vers le dossier personnalisé avec le nom personnalisé:
 
 ```dotnetcli
 dotnet vstest mytestproject.dll --logger:"trx;LogFileName=custom_file_name.trx" --ResultsDirectory:custom/file/path
 ```
 
-Exécuter les tests dans *MyTestProject. dll* et *myothertestproject. exe*:
+Exécuter des tests dans *mytestproject.dll* et *myothertestproject.exe:*
 
 ```dotnetcli
 dotnet vstest mytestproject.dll myothertestproject.exe

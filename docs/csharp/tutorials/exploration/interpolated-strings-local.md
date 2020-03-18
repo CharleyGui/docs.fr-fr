@@ -3,17 +3,17 @@ title: Interpolation de chaîne - Tutoriel C#
 description: Ce tutoriel montre comment utiliser la fonctionnalité d’interpolation de chaîne en C# pour insérer les résultats d’expressions mises en forme dans une chaîne plus grande.
 ms.date: 10/23/2018
 ms.openlocfilehash: 593f3a77370da73dfd5f090be98112327b86b1f7
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75346780"
 ---
 # <a name="use-string-interpolation-to-construct-formatted-strings"></a>Utiliser l’interpolation de chaîne pour construire des chaînes mises en forme
 
 Ce tutoriel explique comment utiliser [l’interpolation de chaîne](../../language-reference/tokens/interpolated.md) en C# pour insérer des valeurs dans une chaîne de résultat unique. Vous allez écrire un code en C# et afficher les résultats de la compilation et de l’exécution du code. Le tutoriel contient une série de leçons qui expliquent comment insérer des valeurs dans une chaîne et mettre en forme ces valeurs de différentes façons.
 
-Ce tutoriel suppose que vous disposez d’un ordinateur que vous pouvez utiliser pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur Windows, Linux ou MacOS. Vous pouvez également suivre la [version interactive](interpolated-strings.yml) de ce tutoriel dans votre navigateur.
+Ce tutoriel suppose que vous disposez d’un ordinateur que vous pouvez utiliser pour le développement. Le tutoriel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a des instructions pour configurer votre environnement de développement local sur Windows, Linux ou macOS. Vous pouvez également suivre la [version interactive](interpolated-strings.yml) de ce tutoriel dans votre navigateur.
 
 ## <a name="create-an-interpolated-string"></a>Créer une chaîne interpolée
 
@@ -46,19 +46,19 @@ Essayons quelques autres exemples d’interpolation de chaîne avec d’autres t
 
 Dans la section précédente, vous avez utilisé l’interpolation de chaîne pour insérer une chaîne à l’intérieur d’une autre. Le résultat d’une expression d’interpolation peut toutefois être de n’importe quel type de données. Nous allons insérer des valeurs de différents types de données dans une chaîne interpolée.
 
-Dans l’exemple suivant, nous commençons par définir un type de données de [classe](../../programming-guide/classes-and-structs/classes.md) `Vegetable` qui a une [propriété](../../properties.md) `Name` et une [méthode](../../methods.md)`ToString`, qui [remplace](../../language-reference/keywords/override.md) le comportement de la méthode <xref:System.Object.ToString?displayProperty=nameWithType>. Le [modificateur d’accès `public`](../../language-reference/keywords/public.md) permet à n’importe quel code client d’obtenir la représentation sous forme de chaîne d’une instance de `Vegetable`. Dans l’exemple, la méthode `Vegetable.ToString` retourne la valeur de la propriété `Name` qui est initialisée au [constructeur](../../programming-guide/classes-and-structs/constructors.md)`Vegetable` :
+Dans l’exemple suivant, nous commençons par définir une [classe](../../programming-guide/classes-and-structs/classes.md) comme type de données `Vegetable` avec la `Name` [propriété](../../properties.md) et la `ToString` [méthode](../../methods.md), qui [remplace](../../language-reference/keywords/override.md) le comportement de la méthode <xref:System.Object.ToString?displayProperty=nameWithType>. Le [ `public` modificateur d’accès](../../language-reference/keywords/public.md) met cette méthode à la `Vegetable` disposition de n’importe quel code client pour obtenir la représentation des chaînes d’une instance. Dans l’exemple, `Vegetable.ToString` la méthode `Name` renvoie la valeur `Vegetable` de la propriété qui est parascée chez le [constructeur](../../programming-guide/classes-and-structs/constructors.md):
 
 ```csharp
 public Vegetable(string name) => Name = name;
 ```
 
-Ensuite, nous créons une instance de la classe `Vegetable` nommée `item` en utilisant l’[opérateur `new`](../../language-reference/operators/new-operator.md) et en ajoutant un nom pour le constructeur `Vegetable` :
+Ensuite, nous créons `Vegetable` un `item` exemple de la classe nommée en `Vegetable`utilisant [ `new` l’opérateur](../../language-reference/operators/new-operator.md) et en fournissant un nom pour le constructeur :
 
 ```csharp
 var item = new Vegetable("eggplant");
 ```
 
-Enfin, nous incluons la variable `item` dans une chaîne interpolée qui contient également une valeur <xref:System.DateTime>, une valeur <xref:System.Decimal> et une valeur d' [énumération](../../language-reference/builtin-types/enum.md) `Unit`. Remplacez tout le code C# dans votre éditeur par le code suivant, puis utilisez la commande `dotnet run` pour l’exécuter :
+Enfin, nous incluons la variable `item` dans une chaîne interpolée qui contient également une valeur <xref:System.DateTime>, une valeur <xref:System.Decimal> et une valeur d’ [énumération](../../language-reference/builtin-types/enum.md)`Unit`. Remplacez tout le code C# dans votre éditeur par le code suivant, puis utilisez la commande `dotnet run` pour l’exécuter :
 
 ```csharp
 using System;
@@ -103,7 +103,7 @@ Dans la section précédente, deux chaînes à la mise en forme incorrecte ont �
 Console.WriteLine($"On {date:d}, the price of {item} was {price:C2} per {unit}.");
 ```
 
-Vous spécifiez une chaîne de format en plaçant après l’expression d’interpolation un signe deux-points (« : ») et la chaîne de format. « d » est une [chaîne de format de date et d’heure standard](../../../standard/base-types/standard-date-and-time-format-strings.md#the-short-date-d-format-specifier) qui représente le format de date courte. « C2 » est une [chaîne de format numérique standard](../../../standard/base-types/standard-numeric-format-strings.md#the-currency-c-format-specifier) qui représente un nombre sous forme de valeur monétaire avec deux chiffres après la virgule.
+Vous spécifiez une chaîne de format en plaçant après l’expression d’interpolation un signe deux-points (« : ») et la chaîne de format. « d » est une [chaîne de format de date et d’heure standard](../../../standard/base-types/standard-date-and-time-format-strings.md#the-short-date-d-format-specifier) qui représente le format de date courte. "C2" est une [chaîne de format numérique standard](../../../standard/base-types/standard-numeric-format-strings.md#the-currency-c-format-specifier) qui représente un nombre comme une valeur de change avec deux chiffres après le point décimal.
 
 Plusieurs types dans les bibliothèques .NET prennent en charge un ensemble prédéfini de chaînes de format. Il s’agit notamment de tous les types numériques et des types de date et d’heure. Pour obtenir une liste complète des types qui prennent en charge les chaînes de format, consultez [Chaînes de format et types de bibliothèque de classes .NET](../../../standard/base-types/formatting-types.md#format-strings-and-net-types) dans l’article [Mise en forme des types dans .NET](../../../standard/base-types/formatting-types.md).
 

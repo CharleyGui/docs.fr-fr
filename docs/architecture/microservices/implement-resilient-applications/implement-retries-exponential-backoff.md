@@ -3,10 +3,10 @@ title: Implémenter de nouvelles tentatives avec interruption exponentielle
 description: Découvrez comment implémenter de nouvelles tentatives avec interruption exponentielle.
 ms.date: 10/16/2018
 ms.openlocfilehash: 1b948e399495eeb12016006442ac08d2b04f2e69
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68674536"
 ---
 # <a name="implement-retries-with-exponential-backoff"></a>Implémenter de nouvelles tentatives avec interruption exponentielle
@@ -16,5 +16,5 @@ Les [*nouvelles tentatives avec interruption exponentielle*](/azure/architecture
 Il existe plusieurs approches possibles pour implémenter la logique de nouvelles tentatives avec interruption exponentielle.
 
 >[!div class="step-by-step"]
->[Précédent](partial-failure-strategies.md)
->[Suivant](implement-resilient-entity-framework-core-sql-connections.md)
+>[Suivant précédent](partial-failure-strategies.md)
+>[Next](implement-resilient-entity-framework-core-sql-connections.md)

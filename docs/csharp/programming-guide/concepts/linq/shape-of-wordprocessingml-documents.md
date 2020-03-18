@@ -3,10 +3,10 @@ title: Forme des documents WordprocessingML (C#)
 ms.date: 07/20/2015
 ms.assetid: 3791b5e0-c502-469b-bb75-a7bf6fdd0a94
 ms.openlocfilehash: 58c028fed465f45fdcf8f63f2119eb8e8b201e32
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76732673"
 ---
 # <a name="shape-of-wordprocessingml-documents-c"></a>Forme des documents WordprocessingML (C#)
@@ -96,4 +96,4 @@ using (Package wdPackage = Package.Open("SampleDoc.docx", FileMode.Open, FileAcc
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Didacticiel : Manipulation de contenu dans un document WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)
+- [Didacticiel : manipulation de contenu dans un document WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)

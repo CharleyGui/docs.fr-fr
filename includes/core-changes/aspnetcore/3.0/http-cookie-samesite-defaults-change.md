@@ -1,36 +1,36 @@
 ---
 ms.openlocfilehash: 15ba678431b97e7c961c119d83546569bdf9bad2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74282524"
 ---
-### <a name="http-some-cookie-samesite-defaults-changed-to-none"></a>HTTP : certaines valeurs par défaut de SameSite de cookie ont été remplacées par None
+### <a name="http-some-cookie-samesite-defaults-changed-to-none"></a>HTTP: Certains cookies SameSite défauts changés à Aucun
 
-`SameSite` est une option pour les cookies qui peuvent aider à atténuer certaines attaques de falsification de requête intersites (CSRF). Lorsque cette option a été introduite pour la première fois, des valeurs par défaut incohérentes ont été utilisées dans plusieurs API ASP.NET Core. L’incohérence a conduit à des résultats confuss. À partir de ASP.NET Core 3,0, ces valeurs par défaut sont mieux alignées. Vous devez accepter cette fonctionnalité en fonction de chaque composant.
+`SameSite`est une option pour les cookies qui peuvent aider à atténuer certaines attaques cross-Site Request Forgery (CSRF). Lorsque cette option a été introduite au départ, des défauts de paiement incohérents ont été utilisés dans divers ASP.NET API de base. L’incohérence a conduit à des résultats confus. En ce qui concerne ASP.NET Core 3.0, ces défauts sont mieux alignés. Vous devez adhérer à cette fonctionnalité par composante.
 
 #### <a name="version-introduced"></a>Version introduite
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Les API de ASP.NET Core similaires utilisaient différentes valeurs de <xref:Microsoft.AspNetCore.Http.SameSiteMode> par défaut. Un exemple de l’incohérence s’affiche dans `HttpResponse.Cookies.Append(String, String)` et `HttpResponse.Cookies.Append(String, String, CookieOptions)`, qui sont par défaut respectivement `SameSiteMode.None` et `SameSiteMode.Lax`.
+Des API de base similaires <xref:Microsoft.AspNetCore.Http.SameSiteMode> ASP.NET ont utilisé différentes valeurs par défaut. Un exemple de l’incohérence est `HttpResponse.Cookies.Append(String, String)` `HttpResponse.Cookies.Append(String, String, CookieOptions)`vu dans et `SameSiteMode.None` `SameSiteMode.Lax`, qui a manqué à et , respectivement.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Toutes les API affectées ont par défaut la valeur `SameSiteMode.None`.
+Toutes les API `SameSiteMode.None`affectées par défaut à .
 
-#### <a name="reason-for-change"></a>Motif de modification
+#### <a name="reason-for-change"></a>Raison du changement
 
-La valeur par défaut a été modifiée pour rendre `SameSite` une fonctionnalité d’abonnement.
+La valeur par défaut `SameSite` a été modifiée pour faire une fonction d’opt-in.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Chaque composant qui émet des cookies doit décider si `SameSite` convient à ses scénarios. Passez en revue l’utilisation des API affectées et reconfigurez `SameSite` en fonction des besoins.
+Chaque composant qui émet des `SameSite` cookies doit décider s’il est approprié pour ses scénarios. Examinez votre utilisation des API `SameSite` touchées et reconfigurez au besoin.
 
-#### <a name="category"></a>Catégorie
+#### <a name="category"></a>Category
 
 ASP.NET Core
 

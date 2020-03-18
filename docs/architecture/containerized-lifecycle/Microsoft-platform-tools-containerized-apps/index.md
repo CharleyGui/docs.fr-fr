@@ -3,23 +3,23 @@ title: Présentation de la plateforme et des outils Microsoft pour les applicati
 description: Familiarisez-vous avec les offres de Microsoft visant à prendre en charge le cycle de vie des applications Docker.
 ms.date: 02/15/2019
 ms.openlocfilehash: 9c8c0f5688bf226351abfc7bf52d4ace05f8c6d8
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73738094"
 ---
 # <a name="introduction-to-the-microsoft-platform-andtools-for-containerized-apps"></a>Présentation de la plateforme et des outils Microsoft pour les applications en conteneur
 
-*Vision : créez un cycle de vie d’application en conteneur adaptable, adapté à l’entreprise qui couvre votre développement, vos opérations informatiques et la gestion de la production.*
+*Vision : Créez un cycle de vie d’application adaptable, de qualité d’entreprise et conteneurisé qui couvre votre développement, vos opérations informatiques et votre gestion de la production.*
 
 La figure 3-1 illustre les principaux piliers du cycle de vie des applications Docker, classés selon le type de travail fourni par plusieurs équipes (développement d’applications, processus d’infrastructure DevOps, gestion et opérations informatiques). Dans l’entreprise, les profils du « persona » en charge de chaque zone sont généralement différents. Ses compétences varient aussi.
 
-:::image type="complex" source="./media/index/microsoft-tools-contanerized-docker-app.png" alt-text="Diagramme montrant les outils Microsoft nécessaires à la gestion des applications de l’ancrage.":::
-Outils Microsoft. Pour la charge de travail de développement/conception : le moteur d’ancrage pour Windows, VS et VS Code, .NET Core, service Kubernetes Azure. Pour la charge de travail Build/test/Ship : Azure DevOps, Team Foundation Server, CLI CLI, service Kubernetes Azure. Pour la charge de travail exécuter/surveiller/gérer : Azure Monitor, le portail Azure Azure Kubernetes services, Service Fabric et d’autres orchestrateurs.
+:::image type="complex" source="./media/index/microsoft-tools-contanerized-docker-app.png" alt-text="Diagramme montrant les outils Microsoft nécessaires pour maintenir les applications Docker.":::
+Outils Microsoft. Pour la charge de travail Développer/Design : moteur Docker pour Windows, VS et VS Code, .NET Core, Azure Kubernetes Service. Pour la charge de travail Build/Test/Ship : Azure DevOps, Team Foundation Server, Docker CLI, Azure Kubernetes Service. Pour la charge de travail Run/Monitor/Manage : Azure Monitor, Azure Portal Azure Kubernetes Services, Service Fabric, autres orchestrateurs.
 :::image-end:::
 
-**Figure 3-1** : Principaux piliers du cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
+**Figure 3-1.** Principaux piliers du cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
 
 Un workflow de cycle de vie Docker en conteneur peut être initialement normalisé selon les « choix des produits par défaut », ce qui facilite et accélère le démarrage des développeurs. Toutefois, sous le capot, l’existence d’une infrastructure ouverte est fondamentale pour garantir un workflow flexible capable de s’adapter aux différents contextes de chaque organisation ou entreprise. L’infrastructure de workflow (composants et produits) doit être suffisamment flexible pour prendre en charge le futur environnement de chaque entreprise. Elle doit notamment permettre le remplacement de produits de développement ou DevOps par d’autres. Ces caractéristiques, à savoir la flexibilité, l’ouverture et le vaste choix de technologies d’infrastructure et de plateforme, sont précisément les priorités de Microsoft pour les applications Docker en conteneur, comme l’expliquent les chapitres qui suivent.
 
@@ -27,7 +27,7 @@ Comme le montre le tableau 3-1, l’intention de Microsoft DevOps pour les appli
 
 **Tableau 3-1.** Workflows DevOps, ouverts à toute technologie
 
-| Hôte | Technologies Microsoft | Technologies tierces, enfichables dans Azure |
+| Host | Technologies Microsoft | Technologies tierces, enfichables dans Azure |
 | ---------------------------| ----------------------------------------------------| --------------------------------------------------------------------------------|
 | Plateforme pour applications Docker   | • Microsoft Visual Studio et Visual Studio Code<br /> • .NET<br /> • Microsoft Azure Kubernetes Service (AKS)<br /> • Azure Service Fabric<br /> • Azure Container Registry<br /> | • N’importe quel éditeur de code (par exemple, Sublime)<br /> • N’importe quel langage (Node.js, Java, Go, etc.)<br /> • N’importe quel orchestrateur/planificateur<br /> • N’importe quel registre Docker<br /> |
 | DevOps pour applications Docker     | • Azure DevOps Services<br /> • Microsoft Team Foundation Server<br /> • Azure Kubernetes Service (AKS)<br /> • Azure Service Fabric<br /> | • GitHub, Git, Subversion, etc.<br /> • Jenkins, Chef, Puppet, Velocity, CircleCI, TravisCI, etc.<br /> • Centre de données Docker local, Docker Swarm, Mesos DC/OS, Kubernetes, etc.<br /> |
@@ -43,18 +43,18 @@ La plateforme et les outils Microsoft pour les applications Docker en conteneur,
 
 - **Gestion et supervision** Les informaticiens peuvent gérer et superviser des applications et services de production de plusieurs façons, en intégrant ces deux perspectives dans une expérience consolidée.
 
-  - **Portail Azure** Si vous utilisez des orchestrateurs open source, Azure Kubernetes Service (AKS), Service Fabric et d’autres orchestrateurs vous aident à configurer et à gérer vos environnements Docker. Si vous utilisez Azure Service Fabric, l’outil Service Fabric Explorer vous permet de visualiser et de configurer votre cluster.
+  - **Portail Azure** Si vous utilisez des orchestrateurs open source, Azure Kubernetes Service (AKS), Service Fabric et autres orchestrateurs vous aident à configurer et à entretenir vos environnements Docker. Si vous utilisez Azure Service Fabric, l’outil Service Fabric Explorer vous permet de visualiser et de configurer votre cluster.
 
-  - **Outils Docker** Vous pouvez gérer vos applications conteneur à l’aide d’outils familiers. Il est inutile de changer vos méthodes de gestion Docker existantes pour déplacer les charges de travail de conteneur dans le cloud. Utilisez les outils de gestion d’application que vous connaissez déjà et connectez-vous par le biais des points de terminaison d’API standards de l’orchestrateur de votre choix. Vous pouvez également utiliser d’autres outils tiers pour gérer vos applications Docker, notamment Docker Datacenter ou même les outils CLI Docker.
+  - **Outils Docker** Vous pouvez gérer vos applications de conteneurs à l’aide d’outils familiers. Il est inutile de changer vos méthodes de gestion Docker existantes pour déplacer les charges de travail de conteneur dans le cloud. Utilisez les outils de gestion d’application que vous connaissez déjà et connectez-vous par le biais des points de terminaison d’API standards de l’orchestrateur de votre choix. Vous pouvez également utiliser d’autres outils tiers pour gérer vos applications Docker, notamment Docker Datacenter ou même les outils CLI Docker.
 
     Même si vous connaissez bien les commandes Linux, vous pouvez gérer vos applications de conteneur à l’aide de Microsoft Windows et PowerShell avec une ligne de commande du sous-système Linux et les clients des produits (Docker, Kubernetes...) s’exécutant sur cette fonctionnalité de sous-système Linux. Vous allez en savoir plus sur l’utilisation de ces outils dans le sous-système Linux en utilisant votre système d’exploitation Microsoft Windows favori plus loin dans cet ouvrage.
 
-  - **Outils open source** AKS exposant les points de terminaison de l’API standard pour le moteur d’orchestration, les outils les plus populaires sont compatibles avec AKS et, dans la plupart des cas, fonctionnent dans leur configuration par défaut (comme les visualiseurs, les moniteurs, les outils en ligne de commande ainsi que les outils disponibles à l’avenir).
+  - **Outils open-source** Parce qu’AKS expose les paramètres standard de l’API pour le moteur d’orchestration, les outils les plus populaires sont compatibles avec AKS et, dans la plupart des cas, fonctionneront hors de la boîte, y compris les visualisateurs, la surveillance, les outils de ligne de commande, et même les outils futurs dès qu’ils deviennent disponibles.
 
   - **Azure Monitor** Il s’agit de la solution d’Azure pour superviser tous les angles de votre environnement de production. Vous pouvez superviser les applications Docker de production en configurant simplement leur SDK dans vos services de manière à récupérer les données de journal générées par le système depuis les applications.
 
 Microsoft offre donc une base complète pour un cycle de vie d’application Docker en conteneur de bout en bout. Toutefois, il s’agit d’une *collection de produits et de technologies qui vous permettent de sélectionner et d’intégrer des outils et processus existants*. La flexibilité d’une approche large et la profondeur des fonctionnalités offertes confèrent à Microsoft un positionnement avantageux dans le domaine du développement d’applications Docker en conteneur.
 
 >[!div class="step-by-step"]
->[Précédent](../Docker-application-lifecycle/containers-foundation-for-devops-collaboration.md)
->[Suivant](../design-develop-containerized-apps/index.md)
+>[Suivant précédent](../Docker-application-lifecycle/containers-foundation-for-devops-collaboration.md)
+>[Next](../design-develop-containerized-apps/index.md)

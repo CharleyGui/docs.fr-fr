@@ -5,10 +5,10 @@ helpviewer_keywords:
 - pointers [C#], conversions
 ms.assetid: f0e87502-477a-4ede-a31f-7a3e262e46fb
 ms.openlocfilehash: 517166331d2bcf73132269ce2adcf68d5f60b4fe
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76745365"
 ---
 # <a name="pointer-conversions-c-programming-guide"></a>Conversions de pointeur (Guide de programmation C#)
@@ -16,7 +16,7 @@ Le tableau suivant présente les conversions de pointeur implicites prédéfinie
   
 ## <a name="implicit-pointer-conversions"></a>Conversions de pointeur implicites  
   
-|De|Pour|  
+|À partir|À|  
 |----------|--------|  
 |Tout type pointeur|void*|  
 |null|Tout type pointeur|  
@@ -25,13 +25,13 @@ Le tableau suivant présente les conversions de pointeur implicites prédéfinie
   
 ## <a name="explicit-pointer-conversions"></a>Conversions de pointeur explicites  
   
-|De|Pour|  
+|À partir|À|  
 |----------|--------|  
 |Tout type pointeur|Tout autre type pointeur|  
 |sbyte, byte, short, ushort, int, uint, long ou ulong|Tout type pointeur|  
 |Tout type pointeur|sbyte, byte, short, ushort, int, uint, long ou ulong|  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Dans l’exemple suivant, un pointeur vers `int` est converti en pointeur vers `byte`. Notez que le pointeur pointe vers l’octet traité le plus faible de la variable. Quand vous incrémentez successivement le résultat, jusqu’à la taille de `int` (4 octets), vous pouvez afficher les octets restants de la variable.  
   
  [!code-csharp[csProgGuidePointers#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuidePointers/CS/Pointers2.cs#3)]  
@@ -44,6 +44,6 @@ Le tableau suivant présente les conversions de pointeur implicites prédéfinie
 - [Types de pointeur](pointer-types.md)
 - [Types référence](../../language-reference/keywords/reference-types.md)
 - [Types de valeur](../../language-reference/builtin-types/value-types.md)
-- [unsafe](../../language-reference/keywords/unsafe.md)
+- [Dangereux](../../language-reference/keywords/unsafe.md)
 - [fixed, instruction](../../language-reference/keywords/fixed-statement.md)
 - [stackalloc](../../language-reference/operators/stackalloc.md)

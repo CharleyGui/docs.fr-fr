@@ -3,10 +3,10 @@ title: Opérations d’égalité (C#)
 ms.date: 07/20/2015
 ms.assetid: 9d9a5bf2-f211-4865-bd19-c59ffa004615
 ms.openlocfilehash: 306129c1fe0c3f0003f8be579d987edcaeb63709
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141500"
 ---
 # <a name="equality-operations-c"></a>Opérations d’égalité (C#)
@@ -22,4 +22,4 @@ Deux séquences dont les éléments correspondants sont égaux et qui ont le mê
 
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
-- [Comment comparer le contenu de deux dossiers (LINQ) (C#)](./how-to-compare-the-contents-of-two-folders-linq.md)
+- [Comment comparer le contenu de deux dossiers (LINQ) (C)](./how-to-compare-the-contents-of-two-folders-linq.md)

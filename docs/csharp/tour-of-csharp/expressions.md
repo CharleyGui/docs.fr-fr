@@ -4,10 +4,10 @@ description: Les expressions, opérandes et opérateurs sont des blocs de constr
 ms.date: 02/27/2020
 ms.assetid: 20d5eb10-7381-47b9-ad90-f1cc895aa27e
 ms.openlocfilehash: 209b5da01cd7539f2bd97023f40fd149910b6f1d
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78159154"
 ---
 # <a name="expressions"></a>Expressions
@@ -18,8 +18,8 @@ Quand une expression contient plusieurs opérateurs, la *priorité* des opérate
 
 Lorsqu’un opérande se produit entre deux opérateurs de même priorité, *l’associativité* des opérateurs détermine l’ordre dans lequel les opérations sont effectuées :
 
-* À l’exception des opérateurs d’assignation et de fusion Null, tous les opérateurs binaires sont *associatifs à gauche*, ce qui signifie que les opérations sont effectuées de gauche à droite. Par exemple, `x + y + z` est évalué comme étant `(x + y) + z`.
-* Les opérateurs d’assignation, les opérateurs de fusion Null `??` et `??=`, ainsi que l’opérateur conditionnel `?:` sont *associatifs à droite*, ce qui signifie que les opérations sont exécutées de droite à gauche. Par exemple, `x = y = z` est évalué comme étant `x = (y = z)`.
+* À l’exception des opérateurs d’affectation et de fusion nulle, tous les opérateurs binaires sont *de gauche-associative,* ce qui signifie que les opérations sont effectuées de gauche à droite. Par exemple, `x + y + z` est évalué comme étant `(x + y) + z`.
+* Les opérateurs d’affectation, les `??` opérateurs `??=` de fusion nulle `?:` et les opérateurs, et l’opérateur conditionnel sont *à droite-associative,* ce qui signifie que les opérations sont effectuées de droite à gauche. Par exemple, `x = y = z` est évalué comme étant `x = (y = z)`.
 
 La priorité et l’associativité peuvent être contrôlées à l’aide de parenthèses. Par exemple, `x + y * z` multiplie d’abord `y` par `z`, puis ajoute le résultat à `x`, mais `(x + y) * z` ajoute d’abord `x` et `y`, puis multiplie le résultat par `z`.
 
@@ -30,5 +30,5 @@ C# met à votre disposition de nombreux opérateurs pour effectuer des opératio
 Pour obtenir la liste complète des opérateurs C# classés par niveau de priorité, consultez [Opérateurs C#](../language-reference/operators/index.md).
 
 > [!div class="step-by-step"]
-> [Précédent](types-and-variables.md)
-> [Suivant](statements.md)
+> [Suivant précédent](types-and-variables.md)
+> [Next](statements.md)

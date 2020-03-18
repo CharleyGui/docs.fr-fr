@@ -3,15 +3,15 @@ title: Introduction aux conteneurs et à Docker
 description: Obtenez une vue d’ensemble des principaux avantages de l’utilisation de Docker.
 ms.date: 02/15/2019
 ms.openlocfilehash: 9ac08a64cd2465b4b88a266c1ec0925f37680bf9
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73738176"
 ---
 # <a name="introduction-to-containers-and-docker"></a>Présentation des conteneurs et de Docker
 
-*La mise en conteneur est une approche du développement logiciel dans laquelle une application ou un service, ses dépendances et sa configuration (abstraite comme fichiers manifeste de déploiement) sont regroupés sous la forme d’une image conteneur. Vous pouvez ensuite tester l’application en conteneur en tant qu’unité et la déployer en tant qu’instance d’image de conteneur dans le système d’exploitation hôte.*
+*La conteneurisation est une approche du développement de logiciels dans laquelle une application ou un service, ses dépendances et sa configuration (abstraites sous forme de fichiers manifestes de déploiement) sont emballées ensemble comme une image de conteneur. Vous pouvez ensuite tester l’application conteneurisée en tant qu’unité et la déployer comme instance d’image de conteneur au système d’exploitation hôte (OS).*
 
 De la même manière que les conteneurs de transport permettent de transporter des marchandises par bateau, par train ou par camion indépendamment de la nature de la cargaison, les conteneurs logiciels agissent comme une unité de déploiement logiciel standard qui peut contenir du code et des dépendances différents. Cette façon de mettre les logiciels en conteneur permet aux développeurs et aux informaticiens de les déployer dans les environnements avec peu ou pas de modifications.
 
@@ -19,7 +19,7 @@ Par ailleurs, les conteneurs isolent les applications les unes des autres sur un
 
 Chaque conteneur peut exécuter une application web ou un service dans son intégralité, comme l’illustre la figure 1-1. Dans cet exemple, l’hôte Docker est un hôte de conteneurs, et App1, App2, Svc1 et Svc2 sont des applications ou des services en conteneur.
 
-![Diagramme montrant quatre conteneurs exécutés sur une machine virtuelle ou un serveur.](./media/index/multiple-containers-single-host.png)
+![Diagramme montrant quatre conteneurs fonctionnant dans un VM ou un serveur.](./media/index/multiple-containers-single-host.png)
 
 **Figure 1-1**. plusieurs conteneurs s’exécutant sur un hôte de conteneurs
 

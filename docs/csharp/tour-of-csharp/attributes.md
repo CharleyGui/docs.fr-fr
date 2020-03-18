@@ -4,10 +4,10 @@ description: Découvrir la programmation déclarative à l’aide des attributs 
 ms.date: 02/27/2020
 ms.assetid: 753bcfe2-7ddd-4487-9513-ba70937fc8e9
 ms.openlocfilehash: dc5b194c22fc2746ff8b0ab3e550e560a3666bbe
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78159206"
 ---
 # <a name="attributes"></a>Attributs

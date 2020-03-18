@@ -3,24 +3,24 @@ title: Nouveautés de .NET Core 2.0
 description: Découvrez les nouvelles fonctionnalités de .NET Core.
 ms.date: 08/13/2017
 ms.openlocfilehash: 115b3adc72b6798c6a7bac9cc18044a8822808a6
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801896"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79398831"
 ---
 # <a name="whats-new-in-net-core-20"></a>Nouveautés de .NET Core 2.0
 
 .NET core 2.0 inclut les nouvelles fonctionnalités et améliorations dans les domaines suivants :
 
-- [Outillage](#tooling)
-- [Langages pris en charge](#language-support)
+- [Outils](#tooling)
+- [Support multilingue](#language-support)
 - [Améliorations de plate-forme](#platform-improvements)
 - [Modifications d'API](#api-changes-and-library-support)
 - [Intégration Visual Studio](#visual-studio-integration)
-- [Améliorations apportées à la documentation](#documentation-improvements)
+- [Améliorations de la documentation](#documentation-improvements)
 
-## <a name="tooling"></a>Outillage
+## <a name="tooling"></a>Outils
 
 ### <a name="dotnet-restore-runs-implicitly"></a>la restauration de dotnet s’exécute implicitement
 
@@ -52,11 +52,11 @@ Vous pouvez également recibler les bibliothèques .NET Standard vers .NET Stand
 
 Pour plus d’informations sur la migration de votre projet vers .NET Core 2.0, consultez [Migration depuis ASP.NET Core 1.x vers ASP.NET Core 2.0](/aspnet/core/migration/1x-to-2x/index).
 
-## <a name="language-support"></a>Langages pris en charge
+## <a name="language-support"></a>Support multilingue
 
-En plus de la prise en charge de C# et F#, .NET Core 2.0 prend également en charge Visual Basic.
+En plus de la prise en charge de c# et F#, .NET Core 2.0 prend également en charge Visual Basic.
 
-### <a name="visual-basic"></a>Visual Basic
+### <a name="visual-basic"></a>Visual Basic
 
 Avec la version 2.0, .NET Core prend désormais en charge Visual Basic 2017. Vous pouvez utiliser Visual Basic pour créer des types de projets suivants :
 
@@ -110,7 +110,7 @@ Vous pouvez également développer des applications qui ciblent Linux en tant qu
 
 Les bibliothèques de classes .NET Standard 2.0 peuvent également faire référence à des bibliothèques de classes .NET Framework, à condition qu’elles appellent des API présents dans .NET Standard 2.0. Aucune recompilation des bibliothèques .NET Framework n’est requise.
 
-Pour obtenir la liste des API qui ont été ajoutées au .NET Standard depuis sa dernière version, la .NET Standard 1,6, consultez [.NET Standard 2,0 et 1,6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md).
+Pour une liste des API qui ont été ajoutées à la norme .NET depuis sa dernière version, le .NET Standard 1.6, voir [.NET Standard 2.0 vs 1.6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md).
 
 ### <a name="expanded-surface-area"></a>Surface d’exposition étendue
 
@@ -122,7 +122,7 @@ Et grâce au [pack de compatibilité Windows](../porting/windows-compat-pack.md)
 
 Le code .NET Core peut faire référence aux bibliothèques .NET Framework existantes, y compris les packages NuGet existants. Notez que les bibliothèques doivent utiliser des API qui se trouvent dans .NET Standard.
 
-## <a name="visual-studio-integration"></a>Visual Studio, intégration
+## <a name="visual-studio-integration"></a>Intégration de Visual Studio
 
 Visual Studio 2017 version 15,3 et dans certains cas, Visual Studio pour Mac proposent un nombre d’améliorations importantes pour les développeurs de .NET Core.
 
@@ -136,7 +136,7 @@ Pour recibler votre projet dans Visual Studio, ouvrez l’onglet **Application**
 
 Lorsque vous modifiez votre code, Live Unit Testing exécute automatiquement tous les tests unitaires affectés en arrière-plan et présente les résultats et la couverture du code dans l’environnement Visual Studio. .NET Core 2.0 prend désormais en charge Live Unit Testing. Live Unit Testing était auparavant disponible uniquement pour les applications .NET Framework.
 
-Pour plus d’informations, consultez [Live Unit testing avec Visual Studio](/visualstudio/test/live-unit-testing) et le [Forum aux questions sur Live Unit testing](/visualstudio/test/live-unit-testing-faq).
+Pour plus d’informations, voir [Live Unit Testing with Visual Studio](/visualstudio/test/live-unit-testing) et live Unit Testing [FAQ](/visualstudio/test/live-unit-testing-faq).
 
 ### <a name="better-support-for-multiple-target-frameworks"></a>Meilleure prise en charge pour plusieurs infrastructures cibles
 
@@ -148,16 +148,16 @@ Si vous créez un projet pour plusieurs infrastructures cibles, vous pouvez main
 
 Vous pouvez maintenant installer le Kit SDK .NET Core indépendamment de Visual Studio. Cela rend possible pour une seule version de Visual Studio pour générer des projets qui ciblent des versions différentes du .NET Core. Auparavant, Visual Studio et le Kit SDK .NET Core ont été étroitement couplés ; une version particulière du kit SDK accompagnée d’une version particulière de Visual Studio.
 
-## <a name="documentation-improvements"></a>Améliorations apportées à la documentation
+## <a name="documentation-improvements"></a>Améliorations de la documentation
 
 ### <a name="net-application-architecture"></a>Architecture de l’application .NET
 
 [L’architecture de l’application .NET](https://dotnet.microsoft.com/learn/dotnet/architecture-guides) vous donne accès à un ensemble de livres électroniques qui fournissent des instructions, des bonnes pratiques et des exemples d’applications lors de l’utilisation de .NET pour générer :
 
-- [Containers de microservices et Docker](../../architecture/microservices/index.md)
-- [Applications web avec ASP.NET](../../architecture/modern-web-apps-azure/index.md)
+- [Microservices et conteneurs Docker](../../architecture/microservices/index.md)
+- [Applications Web avec ASP.NET](../../architecture/modern-web-apps-azure/index.md)
 - [Applications mobiles avec Xamarin](/xamarin/xamarin-forms/enterprise-application-patterns/index)
-- [Applications déployées sur le cloud avec Azure](/azure/architecture/reference-architectures/index)
+- [Applications déployées dans le Cloud avec Azure](/azure/architecture/reference-architectures/index)
 
 ## <a name="see-also"></a>Voir aussi
 

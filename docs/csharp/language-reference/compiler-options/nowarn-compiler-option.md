@@ -9,10 +9,10 @@ helpviewer_keywords:
 - -nowarn compiler option [C#]
 ms.assetid: 6dcbc5e8-ae67-4566-9df3-f63cfdd9c4e4
 ms.openlocfilehash: fa3079bf1431ba1a16b5a2eef0dd5500fe95909c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69606616"
 ---
 # <a name="-nowarn-c-compiler-options"></a>-nowarn (options du compilateur C#)
@@ -28,7 +28,7 @@ L’option **-nowarn** vous permet de désactiver l’affichage d’un ou plusie
  `number1`, `number2`  
  Numéro de chaque avertissement que le compilateur ne doit pas afficher.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes   
  Vous devez spécifier uniquement la partie numérique de l’identificateur d’avertissement. Par exemple, si vous souhaitez supprimer l’avertissement CS0028, spécifiez `-nowarn:28`.  
   
  Le compilateur ignore automatiquement les numéros des avertissements passés à `-nowarn` qui étaient valides dans les versions précédentes, mais qui ont été supprimés dans le compilateur. Par exemple, l’avertissement CS0679 était valide dans le compilateur dans Visual Studio .NET 2002, mais il a été supprimé depuis cette version.  
@@ -53,6 +53,6 @@ L’option **-nowarn** vous permet de désactiver l’affichage d’un ou plusie
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](./index.md)
+- [Options de compilateur C](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
 - [Erreurs du compilateur C#](../compiler-messages/index.md)

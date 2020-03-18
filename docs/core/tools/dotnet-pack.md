@@ -3,17 +3,17 @@ title: Commande dotnet pack
 description: La commande dotnet pack crée des packages NuGet pour votre projet .NET Core.
 ms.date: 02/14/2020
 ms.openlocfilehash: 865262f1eb314f9b7e8ee713c573a965e89ded93
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77503645"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
-**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 2.x SDK et les versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet pack` : Place le code dans un package NuGet.
 
@@ -28,12 +28,12 @@ dotnet pack [-h|--help]
 
 ## <a name="description"></a>Description
 
-La commande `dotnet pack` génère le projet et crée les packages NuGet. Le résultat de cette commande est un package NuGet (autrement dit, un fichier *. nupkg* ).
+La commande `dotnet pack` génère le projet et crée les packages NuGet. Le résultat de cette commande est un paquet NuGet (c’est-à-dire un fichier *.nupkg).*
 
-Si vous souhaitez générer un package qui contient les symboles de débogage, deux options sont disponibles :
+Si vous souhaitez générer un paquet contenant les symboles de débogé, vous avez deux options disponibles :
 
-- `--include-symbols` : crée le package de symboles.
-- `--include-source`-elle crée le package de symboles avec un dossier `src` dans contenant les fichiers sources.
+- `--include-symbols`- il crée le paquet de symboles.
+- `--include-source`- il crée le `src` paquet de symboles avec un dossier à l’intérieur contenant les fichiers source.
 
 Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier  *.nuspec*, pour pouvoir être correctement résolues lors de l’installation du package. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Actuellement, vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
 
@@ -55,13 +55,13 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 `PROJECT | SOLUTION`
 
-  Projet ou solution à empaqueter. Il s’agit d’un chemin d’accès à un [fichier csproj](csproj.md), à un fichier solution ou à un répertoire. S’il n’est pas spécifié, la commande recherche un fichier projet ou solution dans le répertoire actif.
+  Le projet ou la solution à emballer. C’est soit un chemin vers un [fichier csproj,](csproj.md)un fichier de solution, ou à un répertoire. S’il n’est pas précisé, la commande recherche l’annuaire actuel pour un projet ou un fichier de solution.
 
 ## <a name="options"></a>Options
 
 - **`-c|--configuration <CONFIGURATION>`**
 
-  Définit la configuration de build. La valeur par défaut pour la plupart des projets est `Debug`, mais vous pouvez remplacer les paramètres de configuration de build dans votre projet.
+  Définit la configuration de build. La valeur par `Debug`défaut pour la plupart des projets est, mais vous pouvez remplacer les paramètres de configuration de construction dans votre projet.
 
 - **`--force`**
 
@@ -73,15 +73,15 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 - **`--include-source`**
 
-  Comprend les packages NuGet de symboles de débogage en plus des packages NuGet standard dans le répertoire de sortie. Les fichiers sources sont inclus dans le dossier `src` au sein du package de symboles.
+  Inclut les symboles de débopathie NuGet paquets en plus des paquets NuGet régulière dans le répertoire de sortie. Les fichiers sources sont `src` inclus dans le dossier dans le paquet de symboles.
 
 - **`--include-symbols`**
 
-  Comprend les packages NuGet de symboles de débogage en plus des packages NuGet standard dans le répertoire de sortie.
+  Inclut les symboles de débopathie NuGet paquets en plus des paquets NuGet régulière dans le répertoire de sortie.
 
 - **`--interactive`**
 
-  Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (son authentification, par exemple). Disponible à partir du kit SDK .NET Core 3.0.
+  Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (son authentification, par exemple). Option disponible à partir du kit SDK .NET Core 3.0.
 
 - **`--no-build`**
 
@@ -97,7 +97,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 - **`--nologo`**
 
-  N’affiche pas la bannière de démarrage ni le message de copyright. Disponible à partir du kit SDK .NET Core 3.0.
+  N’affiche pas la bannière de démarrage ni le message de copyright. Option disponible à partir du kit SDK .NET Core 3.0.
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
@@ -163,7 +163,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
   dotnet pack -p:TargetFrameworks=net45
   ```
 
-- Empaqueter le projet et utiliser un Runtime spécifique (Windows 10) pour l’opération de restauration :
+- Emballez le projet et utilisez un temps d’exécution spécifique (Windows 10) pour l’opération de restauration :
 
   ```dotnetcli
   dotnet pack --runtime win10-x64

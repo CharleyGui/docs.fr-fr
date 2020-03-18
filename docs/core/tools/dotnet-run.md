@@ -3,15 +3,15 @@ title: Commande dotnet run
 description: La commande dotnet run fournit une option pratique pour exécuter votre application à partir du code source.
 ms.date: 02/19/2020
 ms.openlocfilehash: e442ed56d676ffd189ef6d394d840cea671c2dc6
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78157074"
 ---
 # <a name="dotnet-run"></a>dotnet run
 
-**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 2.x SDK et les versions ultérieures
 
 ## <a name="name"></a>Nom
 
@@ -28,7 +28,7 @@ dotnet run [-h|--help]
 
 ## <a name="description"></a>Description
 
-La commande `dotnet run` fournit une option pratique pour exécuter votre application à partir du code source à l’aide d’une seule commande. Elle est utile pour le développement itératif rapide en ligne de commande. Elle dépend de la commande [`dotnet build`](dotnet-build.md) pour générer le code. Les conditions requises pour la génération, par exemple le fait que le projet doit être restauré en premier, s’appliquent également à `dotnet run`.
+La commande `dotnet run` fournit une option pratique pour exécuter votre application à partir du code source à l’aide d’une seule commande. Elle est utile pour le développement itératif rapide en ligne de commande. La commande dépend [`dotnet build`](dotnet-build.md) de la commande pour construire le code. Les conditions requises pour la génération, par exemple le fait que le projet doit être restauré en premier, s’appliquent également à `dotnet run`.
 
 Les fichiers de sortie sont écrits dans l’emplacement par défaut, à savoir `bin/<configuration>/<target>`. Par exemple, si vous avez une application `netcoreapp2.1` et que vous exécutez `dotnet run`, la sortie est placée dans `bin/Debug/netcoreapp2.1`. Les fichiers sont remplacés, si nécessaire. Les fichiers temporaires sont placés dans le répertoire `obj`.
 
@@ -54,7 +54,7 @@ Pour exécuter l’application, la commande `dotnet run` résout les dépendance
 
 - **`-c|--configuration <CONFIGURATION>`**
 
-  Définit la configuration de build. La valeur par défaut pour la plupart des projets est `Debug`, mais vous pouvez remplacer les paramètres de configuration de build dans votre projet.
+  Définit la configuration de build. La valeur par `Debug`défaut pour la plupart des projets est, mais vous pouvez remplacer les paramètres de configuration de construction dans votre projet.
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -70,11 +70,11 @@ Pour exécuter l’application, la commande `dotnet run` résout les dépendance
 
 - **`--interactive`**
 
-  Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (son authentification, par exemple). Disponible à partir du kit SDK .NET Core 3.0.
+  Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (son authentification, par exemple). Option disponible à partir du kit SDK .NET Core 3.0.
 
 - **`--launch-profile <NAME>`**
 
-  Nom du profil de lancement éventuel à utiliser au lancement de l’application. Les profils de lancement sont définis dans le fichier *launchSettings.json* et s’appellent généralement `Development`, `Staging` et `Production`. Pour plus d’informations, consultez [Utilisation de plusieurs environnements](/aspnet/core/fundamentals/environments).
+  Nom du profil de lancement éventuel à utiliser au lancement de l’application. Les profils de lancement sont définis dans le fichier `Development` *launchSettings.json* et sont généralement appelés , `Staging`, et `Production`. Pour plus d’informations, voir [Travailler avec plusieurs environnements](/aspnet/core/fundamentals/environments).
 
 - **`--no-build`**
 
@@ -98,11 +98,11 @@ Pour exécuter l’application, la commande `dotnet run` résout les dépendance
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  Spécifie le runtime cible pour lequel restaurer les packages. Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). `-r` option Short disponible depuis le kit de développement logiciel (SDK) .NET Core 3,0.
+  Spécifie le runtime cible pour lequel restaurer les packages. Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). `-r`option courte disponible depuis .NET Core 3.0 SDK.
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `m`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 2,1.
+  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `m`. Disponible depuis .NET Core 2.1 SDK.
 
 ## <a name="examples"></a>Exemples
 

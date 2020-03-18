@@ -3,10 +3,10 @@ title: Conception d’un modèle de domaine de microservice
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les concepts clés de la conception d’un modèle de domaine orienté DDD.
 ms.date: 01/30/2020
 ms.openlocfilehash: 628fb5c76362ec8f48367b3d69d16ea6ebd24f09
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77502334"
 ---
 # <a name="design-a-microservice-domain-model"></a>Concevoir un modèle de domaine de microservice
@@ -55,13 +55,13 @@ Certaines personnes disent que le modèle de domaine anémique est un anti-modè
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **DevIQ.**  \ d’entité de domaine
+- **DevIQ. Entité de domaine** \
   <https://deviq.com/entity/>
 
 - **Martin Fowler. Le modèle de domaine** \
   <https://martinfowler.com/eaaCatalog/domainModel.html>
 
-- **Martin Fowler. Le modèle de domaine anémique** \
+- **Martin Fowler. Le modèle anémique de domaine** \
   <https://martinfowler.com/bliki/AnemicDomainModel.html>
 
 ### <a name="the-value-object-pattern"></a>Le modèle Objet de valeur
@@ -74,22 +74,22 @@ Une entité dans un microservice peut ne pas être une entité dans un autre mic
 
 Une personne désignée par un prénom et un nom est généralement une entité, car elle a une identité, même si ce prénom et ce nom coïncident avec un autre ensemble de valeurs, par exemple s’ils font également référence à une autre personne.
 
-Les objets de valeur sont difficiles à gérer dans les bases de données relationnelles et ORM comme Entity Framework (EF), tandis que dans les bases de données orientées document, ils sont plus faciles à implémenter et à utiliser.
+Les objets de valeur sont difficiles à gérer dans les bases de données relationnelles et les OUM comme Entity Framework (EF), tandis que dans les bases de données orientées vers les documents, ils sont plus faciles à implémenter et à utiliser.
 
-EF Core 2,0 et versions ultérieures incluent la fonctionnalité [entités détenues](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting) qui facilite la gestion des objets de valeur, comme nous le verrons plus tard.
+EF Core 2.0 et les versions ultérieures comprennent la fonction [Entités possédées](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting) qui facilite la manipulation d’objets à valeur ajoutée, comme nous le verrons en détail plus tard.
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Martin Fowler. Modèle d’objet de valeur** \
   <https://martinfowler.com/bliki/ValueObject.html>
 
-- **Value Object** \
+- **Objet de valeur** \
   <https://deviq.com/value-object/>
 
-- **Value Objects in Test-Driven Development** \
+- **Objets de valeur dans le développement piloté par les tests** \
   [https://leanpub.com/tdd-ebook/read\#leanpub-auto-value-objects](https://leanpub.com/tdd-ebook/read#leanpub-auto-value-objects)
 
-- **Eric Evans. Conception pilotée par domaine : la complexité du logiciel est plus complexe.** (Livre incluant une discussion sur les objets de valeur) \
+- **Eric Evans. Conception axée sur le domaine : s’attaquer à la complexité au cœur du logiciel.** (Livre incluant une discussion sur les objets de valeur) \
   <https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/>
 
 ### <a name="the-aggregate-pattern"></a>Le modèle Agrégat
@@ -108,7 +108,7 @@ Une racine d’agrégat a pour but de garantir la cohérence de l’agrégat ; 
 
 Dans la figure 7-9, vous pouvez voir des exemples d’agrégats, comme l’agrégat Buyer (Acheteur), qui contient une seule entité (la racine d’agrégat Buyer). L’agrégat de commande (Order) contient plusieurs entités et un objet de valeur.
 
-![Diagramme comparant un agrégat d’acheteur et un agrégat de commandes.](./media/microservice-domain-model/buyer-order-aggregate-pattern.png)
+![Diagramme comparant un agrégat d’acheteur et un agrégat de commande.](./media/microservice-domain-model/buyer-order-aggregate-pattern.png)
 
 **Figure 7-9**. Exemples d’agrégats avec une seule entité ou plusieurs entités
 
@@ -133,24 +133,24 @@ L’identification et l’utilisation des agrégats nécessitent des recherches 
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Vaughn Vernon. Conception d’agrégats efficace-partie I : modélisation d’un seul agrégat** (à partir de <http://dddcommunity.org/>) \
+- **Vaughn Vernon. Conception d’agrégat efficace - Partie I : Modélisation d’un agrégat unique** (à partir de <http://dddcommunity.org/>)
   <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_1.pdf>
 
-- **Vaughn Vernon. Conception d’agrégats efficace-partie II : faire fonctionner ensemble des agrégats** (à partir de <http://dddcommunity.org/>) \
+- **Vaughn Vernon. Conception d’agrégats efficaces - Partie II : Faire en sorte que les agrégats fonctionnent ensemble** (à partir de <http://dddcommunity.org/>)
   <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf>
 
-- **Vaughn Vernon. Conception d’agrégats efficace-partie III : obtenir** des informations sur la découverte (à partir de <http://dddcommunity.org/>) \
+- **Vaughn Vernon. Conception d’agrégats efficaces - Partie III : Obtenir l’aperçu par la découverte** (de <http://dddcommunity.org/>)
   <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_3.pdf>
 
-- **Sergey Grybniak. Modèles de conception tactiques de DDD** \
+- **Sergey Grybniak. Modèles de conception tactique DDD** \
   <https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part>
 
-- **Chris Richardson. Développement de microservices transactionnels à l’aide d’agrégats** \
+- **Chris Richardson. Développer des microservices transactionnels à l’aide d’agrégats** \
   <https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-1-richardson>
 
-- **DevIQ. Le modèle d’agrégation** \
+- **DevIQ. Le modèle d’agrégat** \
   <https://deviq.com/aggregate-pattern/>
 
 >[!div class="step-by-step"]
->[Précédent](ddd-oriented-microservice.md)
->[Suivant](net-core-microservice-domain-model.md)
+>[Suivant précédent](ddd-oriented-microservice.md)
+>[Next](net-core-microservice-domain-model.md)

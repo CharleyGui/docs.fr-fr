@@ -5,21 +5,21 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 12/4/2019
 ms.openlocfilehash: c19e5e90cfb96463f744cfb064abe72ee5db2e9f
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "77449324"
 ---
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Architecturer des applications web modernes avec ASP.NET Core et Azure
 
-![Image de couverture du livre du Guide des applications Web modernes de l’architecte.](./media/index/web-application-guide-cover-image.png)
+![Image de couverture de livre du guide Architect Modern Web Applications.](./media/index/web-application-guide-cover-image.png)
 
-**Edition v 3.1** -mise à jour vers ASP.net Core 3,1
+**EDITION v3.1** - Mis à jour pour ASP.NET Core 3.1
 
 PUBLIÉ PAR
 
-Division Développeur Microsoft, équipes produit .NET et Visual Studio
+Division Développeurs Microsoft, équipes produit .NET et Visual Studio
 
 Division de Microsoft Corporation
 
@@ -33,13 +33,13 @@ Tous droits réservés. Aucune partie du contenu de ce document ne peut être re
 
 Ce document est fourni « en l’état » et exprime les points de vue et les opinions de son auteur. Les points de vue, les opinions et les informations exprimés dans ce document, notamment l’URL et autres références à des sites web Internet, peuvent faire l’objet de modifications sans préavis.
 
-Certains exemples sont fournis à titre indicatif uniquement et sont fictifs. Toute association ou lien est purement involontaire ou fortuit.
+ Certains exemples sont fournis à titre indicatif uniquement et sont fictifs. Toute association ou lien est purement involontaire ou fortuit.
 
 Microsoft et les marques commerciales mentionnées dans la page web « Marques » à l’adresse https://www.microsoft.com sont des marques du groupe de sociétés Microsoft.
 
 Mac et macOS sont des marques commerciales d’Apple Inc.
 
-Le logo de la baleine de l’arrimeur est une marque déposée de Dockr, Inc. utilisée par l’autorisation.
+Le logo de la baleine Docker est une marque déposée de Docker, Inc. Utilisée par permission.
 
 Toutes les autres marques et tous les autres logos sont la propriété de leurs propriétaires respectifs.
 
@@ -83,18 +83,18 @@ La création d’applications web avec ASP.NET Core, hébergées dans Azure, off
 
 ## <a name="purpose"></a>Objectif
 
-Ce guide fournit une aide de bout en bout sur la création d’applications web *monolithiques* avec ASP.NET Core et Azure. Dans ce contexte, « monolithiques » fait référence au fait que ces applications sont déployées comme une seule unité, pas comme une collection d’applications et de services qui interagissent.
+Ce guide fournit des conseils de bout en bout sur la construction d’applications web *monolithiques* à l’aide de ASP.NET Core et Azure. Dans ce contexte, « monolithiques » fait référence au fait que ces applications sont déployées comme une seule unité, pas comme une collection d’applications et de services qui interagissent.
 
-Ce guide est complémentaire aux [_microservices .net. Architecture pour les applications .NET en conteneur_](../microservices/index.md) , qui se concentre sur l’ancrage, les microservices et le déploiement de conteneurs pour héberger des applications d’entreprise.
+Ce guide est complémentaire aux [_microservices .NET. Architecture for Containerized .NET Applications_"](../microservices/index.md) qui se concentre davantage sur Docker, Microservices, et le déploiement de conteneurs pour héberger des applications d’entreprise.
 
 ### <a name="net-microservices-architecture-for-containerized-net-applications"></a>Microservices .NET. Architecture pour les applications .NET en conteneur
 
-- **Livre électronique**  
+- **e-book**  
   <https://aka.ms/MicroservicesEbook>
 - **Exemple d’application**  
   <https://aka.ms/microservicesarchitecture>
 
-## <a name="who-should-use-this-guide"></a>À qui s'adresse ce guide ?
+## <a name="who-should-use-this-guide"></a>Public visé par ce guide
 
 Le public visé par ce guide est principalement constitué de développeurs, de responsables du développement et d’architectes qui sont intéressés par la création d’applications web modernes avec des technologies et des services Microsoft dans le cloud.
 
@@ -112,4 +112,4 @@ N’hésitez pas à faire connaître ce guide pour favoriser une compréhension 
   [https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server](../../standard/choosing-core-framework-server.md)
 
 >[!div class="step-by-step"]
->[Next](modern-web-applications-characteristics.md)
+>[Suivant](modern-web-applications-characteristics.md)

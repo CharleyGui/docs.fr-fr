@@ -2,11 +2,11 @@
 title: Attributs (C#)
 ms.date: 04/26/2018
 ms.openlocfilehash: 2a07035ea97bb0ff1a8f4793fe8a30d3a42c34a7
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141569"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79399748"
 ---
 # <a name="attributes-c"></a>Attributs (C#)
 
@@ -19,7 +19,7 @@ Les attributs ont les propriétés suivantes :
 - Les attributs peuvent accepter des arguments de la même façon que les méthodes et les propriétés.
 - Votre programme peut examiner ses propres métadonnées ou celles d’autres programmes grâce à la réflexion. Pour plus d’informations, consultez [Accès à des attributs à l’aide de la réflexion (C#)](accessing-attributes-by-using-reflection.md).
 
-## <a name="using-attributes"></a>Utilisation d’attributs
+## <a name="using-attributes"></a>Utilisation des attributs
 
 Les attributs peuvent être placés sur la quasi-totalité des déclarations, même si un attribut donné peut restreindre les types de déclarations sur lesquels il est valide. En C#, vous spécifiez un attribut en plaçant son nom entre crochets ([]) au-dessus de la déclaration de l’entité à laquelle il s’applique.
 
@@ -67,15 +67,15 @@ Pour identifier de manière explicite une cible d’attribut, utilisez la syntax
 
 La liste des valeurs `target` possibles est présentée dans le tableau suivant.
 
-|Valeur cible|S'applique à|
+|Valeur cible|S’applique à|
 |------------------|----------------|
 |`assembly`|Assembly entier|
 |`module`|Module d’assembly actuel|
 |`field`|Champ dans une classe ou un struct|
-|`event`|événement|
+|`event`|Événement|
 |`method`|Méthode ou accesseurs de propriété `get` et `set`|
 |`param`|Paramètres de méthode ou paramètres d’accesseur de propriété `set`|
-|`property`|Property|
+|`property`|Propriété|
 |`return`|Valeur de retour d’une méthode, indexeur de propriété ou accesseur de propriété `get`|
 |`type`|Struct, classe, interface, énumération ou délégué|
 
@@ -101,8 +101,8 @@ L’exemple suivant montre comment appliquer des attributs à des méthodes, des
 
 La liste suivante comprend certaines des utilisations courantes des attributs dans le code :
 
-- Marquer des méthodes avec l’attribut `WebMethod` dans les services web pour indiquer que la méthode doit pouvoir être appelée via le protocole SOAP. Pour plus d'informations, consultez <xref:System.Web.Services.WebMethodAttribute>.
-- Décrire comment marshaler les paramètres de méthode en cas d’interaction avec du code natif. Pour plus d'informations, consultez <xref:System.Runtime.InteropServices.MarshalAsAttribute>.
+- Marquer des méthodes avec l’attribut `WebMethod` dans les services web pour indiquer que la méthode doit pouvoir être appelée via le protocole SOAP. Pour plus d’informations, consultez <xref:System.Web.Services.WebMethodAttribute>.
+- Décrire comment marshaler les paramètres de méthode en cas d’interaction avec du code natif. Pour plus d’informations, consultez <xref:System.Runtime.InteropServices.MarshalAsAttribute>.
 - Décrire les propriétés COM des classes, méthodes et interfaces.
 - Appeler du code non managé à l’aide de la classe <xref:System.Runtime.InteropServices.DllImportAttribute>.
 - Décrire un assembly : titre, version, description ou marque.
@@ -113,13 +113,13 @@ La liste suivante comprend certaines des utilisations courantes des attributs da
 - Contrôler les optimisations par le compilateur juste-à-temps (JIT) pour que le code reste facile à déboguer.
 - Obtenir des informations sur l’appelant d’une méthode.
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
-Pour plus d'informations, voir :
+Pour plus d'informations, consultez les pages suivantes :
 
 - [Création d’attributs personnalisés (C#)](creating-custom-attributes.md)  
 - [Accès à des attributs à l’aide de la réflexion (C#)](accessing-attributes-by-using-reflection.md)  
-- [Comment créer un C/C++ Union à l’aide d’attributsC#()](how-to-create-a-c-cpp-union-by-using-attributes.md)  
+- [Comment créer un syndicat C/CMD en utilisant des attributs (C)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
 - [Attributs courants (C#)](common-attributes.md)  
 - [Informations relatives à l’appelant (C#)](../caller-information.md)  
 
@@ -128,4 +128,4 @@ Pour plus d'informations, voir :
 - [Guide de programmation C#](../../index.md)
 - [Réflexion (C#)](../reflection.md)
 - [Attributs](../../../../standard/attributes/index.md)
-- [Utilisation d’attributs en C#](../../../tutorials/attributes.md)
+- [Utilisation d’attributs en C #](../../../tutorials/attributes.md)

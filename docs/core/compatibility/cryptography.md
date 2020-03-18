@@ -1,25 +1,25 @@
 ---
-title: Modifications avec rupture de chiffrement
-description: Répertorie les modifications avec rupture liées au chiffrement dans .NET Core.
+title: Modifications de rupture de la cryptographie
+description: Répertorie les changements de rupture liés à la cryptographie dans .NET Core.
 ms.date: 02/10/2020
 ms.openlocfilehash: c25eefa8e3ee01ed7a1df4ec4aa9225f2c347a4d
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77449213"
 ---
-# <a name="cryptography-breaking-changes"></a>Modifications avec rupture de chiffrement
+# <a name="cryptography-breaking-changes"></a>Modifications de rupture de la cryptographie
 
-Les modifications avec rupture suivantes sont documentées sur cette page :
+Les modifications de rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
-| [La valeur par défaut de EnvelopedCms est le chiffrement AES-256](#envelopedcms-defaults-to-aes-256-encryption) | 3.0 |
-| [La taille minimale de la génération de la clé de RSAOpenSsl a augmenté](#minimum-size-for-rsaopenssl-key-generation-has-increased) | 3.0 |
-| [.NET Core 3,0 préfère OpenSSL 1.1. x à OpenSSL 1.0. x](#net-core-30-prefers-openssl-11x-to-openssl-10x) | 3.0 |
+| [EnveloppedCms par défaut au cryptage AES-256](#envelopedcms-defaults-to-aes-256-encryption) | 3.0 |
+| [La taille minimale de la génération clé RSAOpenSsl a augmenté](#minimum-size-for-rsaopenssl-key-generation-has-increased) | 3.0 |
+| [.NET Core 3.0 préfère OpenSSL 1.1.x à OpenSSL 1.0.x](#net-core-30-prefers-openssl-11x-to-openssl-10x) | 3.0 |
 | [Meilleure validation d’argument dans le constructeur Pkcs8PrivateKeyInfo](#better-argument-validation-in-the-pkcs8privatekeyinfo-constructor) | 3.0 |
-| [Le paramètre booléen de SignedCms. ComputeSignature est respecté](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
+| [Boolean paramètre de SignedCms.ComputeSignature est respecté](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
 
 ## <a name="net-core-30"></a>.NET Core 3.0
 

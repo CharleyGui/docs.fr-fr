@@ -1,15 +1,15 @@
 ---
-title: Comparaison entre la programmation fonctionnelle Programmation procédurale (LINQ to XML) (C#)
+title: Programmation fonctionnelle vs procédurale (LINQ à XML) (C)
 ms.date: 07/20/2015
 ms.assetid: fc64e39c-a487-4882-9169-da4de97917d9
 ms.openlocfilehash: e87114d2edcda4b2df14eb2d84f62ebe9638b5eb
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69594246"
 ---
-# <a name="functional-vs-procedural-programming-linq-to-xml-c"></a>Comparaison entre la programmation fonctionnelle Programmation procédurale (LINQ to XML) (C#)
+# <a name="functional-vs-procedural-programming-linq-to-xml-c"></a>Programmation fonctionnelle vs procédurale (LINQ à XML) (C)
 Il existe différents types d'applications XML :  
   
 - Certaines applications prennent des documents XML sources et produisent de nouveaux documents XML d'une forme différente des documents sources.  
@@ -36,7 +36,7 @@ Il existe différents types d'applications XML :
   
  Vous pouvez utiliser LINQ to XML avec l'une ou l'autre de ces approches. Vous utilisez les mêmes classes et, dans certains cas, les mêmes méthodes. Toutefois, la structure et les objectifs des deux approches sont très différents. Par exemple, dans différentes situations, l'une ou l'autre approche fournira souvent de meilleures performances et utilisera plus ou moins de mémoire. En outre, l'une ou l'autre approche sera plus facile à écrire et génèrera du code plus facile à maintenir.  
   
- Pour voir une comparaison de ces deux approches, consultez [Comparaison de la modification d’arborescence XML en mémoire et de la construction fonctionnelle (LINQ to XML) (C#)](./in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml.md).  
+ Pour voir les deux approches contrastées, voir [In-Memory XML Tree Modification vs Functional Construction (LINQ to XML) (CMD)](./in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml.md).  
   
  Pour obtenir un didacticiel sur l’écriture de transformations fonctionnelles, consultez [Transformations fonctionnelles pures de données XML (C#)](./introduction-to-pure-functional-transformations.md).  
   

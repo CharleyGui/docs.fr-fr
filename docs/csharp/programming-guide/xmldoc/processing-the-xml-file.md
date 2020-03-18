@@ -1,20 +1,20 @@
 ---
-title: Traitement du Guide de programmation C# de fichiers XML
+title: Traitement du fichier XML - Guide de programmation C
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
 ms.openlocfilehash: bc72cade9ce6edddb88d741a3424405bba0a7ad8
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76793389"
 ---
-# <a name="processing-the-xml-file-c-programming-guide"></a>Traitement du fichier XML (C# Guide de programmation)
+# <a name="processing-the-xml-file-c-programming-guide"></a>Traitement du fichier XML (guide de programmation C)
 
-Le compilateur génère une chaîne d’ID pour chaque construction de votre code qui est marquée pour générer la documentation. (Pour plus d’informations sur la façon de baliser votre code, consultez [Balises recommandées pour les commentaires de documentation](./recommended-tags-for-documentation-comments.md).) La chaîne d’ID identifie de façon unique la construction. Les programmes qui traitent le fichier XML peuvent utiliser la chaîne d’identification pour identifier l’élément de métadonnées/réflexion .NET Framework correspondant auquel s’applique la documentation.
+Le compilateur génère une chaîne d’ID pour chaque construction de votre code qui est marquée pour générer la documentation. (Pour plus d’informations sur la façon d’étiqueter votre code, voir [les balises recommandées pour les commentaires de documentation](./recommended-tags-for-documentation-comments.md).) La chaîne ID identifie de façon unique la construction. Les programmes qui traitent le fichier XML peuvent utiliser la chaîne d’identification pour identifier l’élément de métadonnées/réflexion .NET Framework correspondant auquel s’applique la documentation.
 
 Le fichier XML n’est pas une représentation hiérarchique de votre code. Il s’agit d’une liste plate avec un ID généré pour chaque élément.
 
@@ -26,9 +26,9 @@ Le compilateur respecte les règles suivantes quand il génère les chaînes d�
 
     |Caractère|Description|
     |---------------|-----------------|
-    |N|Espace de noms<br /><br /> Vous ne pouvez pas ajouter de commentaires de documentation à un espace de noms, mais vous pouvez faire des références cref à des commentaires, si cela est pris en charge.|
-    |T|type : Class, interface, struct, enum ou Delegate|
-    |F|champ|
+    |N|espace de noms<br /><br /> Vous ne pouvez pas ajouter de commentaires de documentation à un espace de noms, mais vous pouvez faire des références cref à des commentaires, si cela est pris en charge.|
+    |T|type : classe, interface, struct, enum ou délégué|
+    |F|field|
     |P|propriété (notamment des indexeurs ou autres propriétés indexées)|
     |M|méthode (notamment des méthodes spéciales telles que des constructeurs, des opérateurs, etc.)|
     |E|événement|
@@ -40,7 +40,7 @@ Le compilateur respecte les règles suivantes quand il génère les chaînes d�
 
   - Types de base. Les types réguliers (ELEMENT_TYPE_CLASS ou ELEMENT_TYPE_VALUETYPE) sont représentés en tant que nom qualifié complet du type.
 
-  - Les types intrinsèques (par exemple, ELEMENT_TYPE_I4, ELEMENT_TYPE_OBJECT, ELEMENT_TYPE_STRING, ELEMENT_TYPE_TYPEDBYREF et ELEMENT_TYPE_VOID) sont représentés en tant que nom qualifié complet du type complet correspondant. Par exemple, System.Int32 ou System.TypedReference.
+  - Les types intrinsèques (par exemple, ELEMENT_TYPE_I4, ELEMENT_TYPE_OBJECT, ELEMENT_TYPE_STRING, ELEMENT_TYPE_TYPEDBYREF et ELEMENT_TYPE_VOID) sont représentés comme le nom entièrement qualifié du type complet correspondant. Par exemple, System.Int32 ou System.TypedReference.
 
   - ELEMENT_TYPE_PTR est représenté par un « \* » après le type modifié.
 
@@ -56,7 +56,7 @@ Le compilateur respecte les règles suivantes quand il génère les chaînes d�
 
   - ELEMENT_TYPE_GENERICARRAY est représenté par « [?] » après le type d’élément du tableau. Le compilateur C# ne génère jamais ceci.
 
-  - ELEMENT_TYPE_ARRAY est représenté par [*limite_inférieure*:`size`,*limite_supérieure*:`size`], où le nombre de virgules correspond au rang - 1, et la limite inférieure et la taille de chaque dimension, si elles sont connues, sont représentées sous forme décimale. Si la limite inférieure ou la taille n’est pas spécifiée, elle est simplement omise. Si la limite inférieure et la taille d’une dimension particulière sont omises, le « : » est également omis. Par exemple, un tableau à deux dimensions avec 1 comme limite inférieure et une taille non spécifiée est [1:,1:].
+  - ELEMENT_TYPE_ARRAY est représenté comme *[en*`size`baisse :`size`, plus*bas*: ] où le nombre de virgules est le rang - 1, et les limites inférieures et la taille de chaque dimension, si elles sont connues, sont représentées en décimale. Si la limite inférieure ou la taille n’est pas spécifiée, elle est simplement omise. Si la limite inférieure et la taille d’une dimension particulière sont omises, le « : » est également omis. Par exemple, un tableau à deux dimensions avec 1 comme limite inférieure et une taille non spécifiée est [1:,1:].
 
   - ELEMENT_TYPE_FNPTR est représenté en tant que « =FUNC:`type`(*signature*) », où `type` est le type de retour et *signature* correspond aux arguments de la méthode. S’il n’y a pas d’argument, les parenthèses sont omises. Le compilateur C# ne génère jamais ceci.
 
@@ -84,6 +84,6 @@ Les exemples suivants montrent comment les chaînes d’ID pour une classe et se
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
-- [-doc (C# options du compilateur)](../../language-reference/compiler-options/doc-compiler-option.md)
-- [Commentaires de documentation XML](./index.md)
+- [Guide de programmation CMD](../index.md)
+- [-doc (options de compilateur de C)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [Commentaires sur la documentation XML](./index.md)

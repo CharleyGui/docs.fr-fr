@@ -8,10 +8,10 @@ helpviewer_keywords:
 - class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
 ms.openlocfilehash: 500160d3bc9280b866e5f5ba24c5edc623e752c1
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77673093"
 ---
 # <a name="class-c-reference"></a>class (référence C#)
@@ -26,11 +26,11 @@ class TestClass
 }
 ```
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 Le langage C# ne permet qu'un seul héritage. Cela signifie qu’une classe peut uniquement hériter de l’implémentation d’une seule classe de base. Toutefois, une classe peut implémenter plusieurs interfaces. Le tableau suivant répertorie des exemples d’héritage de classe et d’implémentation d’interface :
 
-|Héritage|Exemple|
+|Héritage| Exemple|
 |-----------------|-------------|
 |None|`class ClassA { }`|
 |Unique|`class DerivedClass : BaseClass { }`|
@@ -41,7 +41,7 @@ Les classes que vous déclarez directement dans un espace de noms, non imbriqué
 
 Les membres de classe, notamment les classes imbriquées, peuvent être [public](public.md), [protected internal](protected-internal.md), [protected](protected.md), [internal](internal.md), [private](private.md) ou [private protected](private-protected.md). Par défaut, ils sont `private`.
 
-Pour plus d’informations, consultez la page [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md).
+Pour plus d’informations, consultez [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md).
 
 Vous pouvez déclarer des classes génériques qui ont des paramètres de type. Pour plus d’informations, consultez [Classes génériques](../../programming-guide/generics/generic-classes.md).
 
@@ -51,7 +51,7 @@ Une classe peut contenir les déclarations des membres suivants :
 
 - [Constantes](../../programming-guide/classes-and-structs/constants.md)
 
-- [Fields](../../programming-guide/classes-and-structs/fields.md)
+- [Champs](../../programming-guide/classes-and-structs/fields.md)
 
 - [Finaliseurs](../../programming-guide/classes-and-structs/destructors.md)
 
@@ -71,11 +71,11 @@ Une classe peut contenir les déclarations des membres suivants :
 
 - [Interfaces](../../programming-guide/interfaces/index.md)
 
-- [Types de structures](../builtin-types/struct.md)
+- [Types de structure](../builtin-types/struct.md)
 
-- [Types énumération](../builtin-types/enum.md)
+- [Types d’énumération](../builtin-types/enum.md)
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant explique comment déclarer des champs, des constructeurs et des méthodes de classe. Il illustre également l’instanciation d’un objet et l’impression des données d’une instance. Dans cet exemple, deux classes sont déclarées. La première, `Child`, contient deux champs privés (`name` et `age`), deux constructeurs publics et une méthode publique. La deuxième, `StringTest`, contient `Main`.
 
@@ -101,7 +101,7 @@ Notez enfin que pour l’objet créé à l’aide du constructeur sans paramètr
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
-- [Types référence](./reference-types.md)
+- [Types de référence](./reference-types.md)

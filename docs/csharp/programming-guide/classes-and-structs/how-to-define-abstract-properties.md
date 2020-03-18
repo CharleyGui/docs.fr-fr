@@ -1,18 +1,18 @@
 ---
-title: Comment définir des propriétés abstraites C# -Guide de programmation
+title: Comment définir les propriétés abstraites - Guide de programmation C
 ms.date: 07/20/2015
 helpviewer_keywords:
 - properties [C#], abstract
 - abstract properties [C#]
 ms.assetid: 672a90eb-47b9-4ae0-9914-af53852fddcb
 ms.openlocfilehash: c46f36133b68a550a17cf882844fd2481eee8851
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75705611"
 ---
-# <a name="how-to-define-abstract-properties-c-programming-guide"></a>Comment définir des propriétés abstraitesC# (Guide de programmation)
+# <a name="how-to-define-abstract-properties-c-programming-guide"></a>Comment définir les propriétés abstraites (Guide de programmation de CMD)
 L’exemple suivant montre comment définir des propriétés [abstract](../../language-reference/keywords/abstract.md). Une déclaration de propriété abstraite ne fournit pas une implémentation des accesseurs de propriété ; elle déclare que la classe prend en charge des propriétés, mais laisse l’implémentation de l’accesseur aux classes dérivées. L’exemple suivant montre comment implémenter les propriétés abstraites héritées d’une classe de base.  
   
  Cet exemple se compose de trois fichiers, chacun étant compilé individuellement, et l’assembly obtenu est référencé par la compilation suivante :  
@@ -29,7 +29,7 @@ L’exemple suivant montre comment définir des propriétés [abstract](../../la
   
  Cette commande crée le fichier exécutable shapetest.exe.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Ce fichier déclare la classe `Shape` qui contient la propriété `Area` du type `double`.  
   
  [!code-csharp[csProgGuideInheritance#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#1)]  
@@ -42,12 +42,12 @@ L’exemple suivant montre comment définir des propriétés [abstract](../../la
   
 - Quand vous déclarez une propriété abstraite (telle que `Area` dans cet exemple), vous indiquez simplement quels les accesseurs de propriété sont disponibles, mais vous ne les implémentez pas. Dans cet exemple, seul un accesseur [get](../../language-reference/keywords/get.md) est disponible, donc la propriété est en lecture seule.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Le code suivant présente trois sous-classes de `Shape` et indique comment elles substituent la propriété `Area` pour fournir leur propre implémentation.  
   
  [!code-csharp[csProgGuideInheritance#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#2)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Le code suivant montre un programme de test qui crée un certain nombre d’objets dérivés de `Shape` et imprime les zones correspondantes.  
   
  [!code-csharp[csProgGuideInheritance#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#3)]  

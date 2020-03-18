@@ -1,30 +1,30 @@
 ---
-title: Portage d’une application Windows Forms vers .NET Core
-description: Explique comment porter un .NET Framework Windows Forms application vers .NET Core pour Windows.
+title: Port a Windows Forms app to .NET Core
+description: Vous apprend à porter une application .NET Framework Windows Forms à .NET Core for Windows.
 author: Thraka
 ms.author: adegeo
 ms.date: 03/01/2019
 ms.openlocfilehash: dbd522851faa0a4fe435199914a034ee230d3455
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76116025"
 ---
-# <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Comment porter une application de bureau Windows Forms sur .NET Core
+# <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Comment porter une application de bureau Windows Forms à .NET Core
 
-Cet article explique comment déplacer votre application de bureau Windows Forms à partir de .NET Framework vers .NET Core 3,0 ou version ultérieure. Le kit de développement logiciel (SDK) .NET Core 3.0 prend en charge les applications Windows Forms. Windows Forms reste une infrastructure Windows qui s’exécute exclusivement sous Windows. Cet exemple utilise l’interface CLI du kit SDK .NET Core pour créer et gérer un projet.
+Cet article décrit comment porter votre application de bureau windows Forms à partir de .NET Framework à .NET Core 3.0 ou plus tard. Le kit de développement logiciel (SDK) .NET Core 3.0 prend en charge les applications Windows Forms. Windows Forms reste une infrastructure Windows qui s’exécute exclusivement sous Windows. Cet exemple utilise l’interface CLI du kit SDK .NET Core pour créer et gérer un projet.
 
 Dans cet article, différents noms sont utilisés pour identifier les types de fichiers servant à la migration. Les fichiers de votre projet porteront d’autres noms ; faites-les correspondre mentalement à la liste ci-dessous :
 
-| File | Description |
+| Fichier | Description |
 | ---- | ----------- |
 | **MyApps.sln** | Nom du fichier de solution. |
 | **MyForms.csproj** | Nom du projet Windows Forms .NET Framework à porter. |
 | **MyFormsCore.csproj** | Nom du nouveau projet .NET Core en création. |
 | **MyAppCore.exe** | Exécutable de l’application Windows Forms .NET Core. |
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Conditions préalables requises
 
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) pour tout le travail de conception.
 
@@ -33,11 +33,11 @@ Dans cet article, différents noms sont utilisés pour identifier les types de f
   - Développement multiplateforme .NET Core
 
 - Un projet Windows Forms de travail dans une solution qui se génère et s’exécute sans problème.
-- Projet codé dans C#.
-- [.Net Core](https://dotnet.microsoft.com/download/dotnet-core) 3,0 ou version ultérieure.
+- Un projet codé en C.
+- [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) 3.0 ou plus tard.
 
 > [!NOTE]
-> **Visual Studio 2017** ne prend pas en charge les projets .NET Core 3.0. **Visual Studio 2019** est compatible avec les projets .NET Core 3.0, mais ne gère pas encore le Concepteur visuel pour les projets Windows Forms .NET Core 3.0. Pour utiliser le concepteur visuel, vous devez disposer d’un projet .NET Windows Forms dans une solution qui partage les fichiers de formulaires avec le projet .NET Core.
+> **Visual Studio 2017** ne prend pas en charge les projets .NET Core 3.0. **Visual Studio 2019** est compatible avec les projets .NET Core 3.0, mais ne gère pas encore le Concepteur visuel pour les projets Windows Forms .NET Core 3.0. Pour utiliser le concepteur visuel, vous devez avoir un projet .NET Windows Forms dans une solution qui partage les fichiers de formulaires avec le projet .NET Core.
 
 ### <a name="consider"></a>Consider
 
@@ -49,7 +49,7 @@ Voici les points à prendre en compte pour porter une application Windows Forms 
 
 01. Vous utilisez une autre version de Windows Forms.
 
-    Lors de la sortie de .NET Core 3,0 Preview 1, Windows Forms a été ouvert Open source sur GitHub. Le code pour .NET Core Windows Forms est une fourche du code base Windows Forms .NET Framework. Il peut y avoir des différences qui empêchent le portage de l’application.
+    Lorsque .NET Core 3.0 Preview 1 a été publié, Windows Forms est allé open source sur GitHub. Le code pour .NET Core Windows Forms est une fourchette de la base de code .NET Framework Windows Forms. Il peut y avoir des différences qui empêchent le portage de l’application.
 
 01. Le [Pack de compatibilité Windows][compat-pack] peut faciliter la migration.
 
@@ -106,7 +106,7 @@ SolutionFolder
     └───MyFormsCore.csproj
 ```
 
-Ajoutez le projet **MyFormsCore. csproj** à **myapps. sln** avec Visual Studio ou le CLI .net core à partir du répertoire **SolutionFolder** :
+Ajoutez le projet **MyFormsCore.csproj** à **MyApps.sln** avec Visual Studio ou le CLI .NET Core de l’annuaire **SolutionFolder** :
 
 ```dotnetcli
 dotnet sln add .\MyFormsAppCore\MyFormsCore.csproj
@@ -118,13 +118,13 @@ Les projets Windows Forms créés avec .NET Framework comportent un fichier `Ass
 
 Il y a trois paramètres à ajouter au nœud `<PropertyGroup>` principal.
 
-- **GenerateAssemblyInfo**\
+- **GénérerAssemblyInfo**\
 Si cette propriété est définie sur `false`, il ne génère pas les attributs d’assembly, ce qui permet d’éviter le conflit avec le fichier `AssemblyInfo.cs` du projet .NET Framework.
 
-- **AssemblyName**\
+- **Assemblyname**\
 La valeur de cette propriété est le binaire de sortie créé lors de la compilation. Il n’est pas nécessaire d’ajouter une extension au nom. Par exemple, `MyCoreApp` produit `MyCoreApp.exe`.
 
-- **RootNamespace**\
+- **RootNamespace (RootNamespace)**\
 Il s’agit de l’espace de noms utilisé par défaut par le projet, qui doit correspondre à celui du projet .NET Framework.
 
 Ajoutez ces trois éléments au nœud `<PropertyGroup>` dans le fichier `MyFormsCore.csproj` :
@@ -160,7 +160,7 @@ Ajoutez le nœud `<ItemGroup>` suivant à votre projet. Chaque instruction inclu
 
 Vous pouvez également créer une entrée `<Compile>` ou `<EmbeddedResource>` pour chaque fichier de votre projet .NET Framework.
 
-## <a name="add-nuget-packages"></a>Ajouter des packages NuGet
+## <a name="add-nuget-packages"></a>Ajout de packages NuGet
 
 Ajoutez au projet .NET Core chacun des packages NuGet auxquels le projet .NET Framework fait référence.
 
@@ -188,7 +188,7 @@ Les instructions à suivre pour porter un projet de bibliothèque de contrôles 
 
 Reprenons l’exemple de l’étape précédente pour développer les projets et les fichiers de travail.
 
-| File | Description |
+| Fichier | Description |
 | ---- | ----------- |
 | **MyApps.sln** | Nom du fichier de solution. |
 | **MyControls.csproj** | Nom du projet de contrôles Windows Forms .NET Framework à porter. |
@@ -261,7 +261,7 @@ Voici un exemple de fichier de projet de bibliothèque de contrôles Windows For
 
 Comme on peut le voir, le nœud `<OutputType>` a été supprimé, ce qui conduit le compilateur à générer par défaut une bibliothèque au lieu d’un exécutable. `<AssemblyName>` et `<RootNamespace>` ont été modifiés. En particulier, `<RootNamespace>` doit correspondre à l’espace de noms de la bibliothèque de contrôles Windows Forms portée. Enfin, les nœuds `<Compile>` et `<EmbeddedResource>` ont été ajustés pour pointer vers le dossier de la bibliothèque en question.
 
-Ensuite, dans le projet .NET Core **MyFormsCore. csproj** principal, ajoutez une référence à la nouvelle bibliothèque de contrôles de Windows Forms .net core. avec Visual Studio ou l’interface CLI .NET Core à partir du répertoire **SolutionFolder** :
+Ensuite, dans le principal projet .NET Core **MyFormsCore.csproj,** ajoutez une référence à la nouvelle bibliothèque .NET Core Windows Forms Control. avec Visual Studio ou l’interface CLI .NET Core à partir du répertoire **SolutionFolder** :
 
 ```dotnetcli
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj reference .\MyFormsControlsCore\MyControlsCore.csproj
@@ -297,10 +297,10 @@ Comme nous l’avons indiqué dans cet article, Visual Studio 2019 ne prend en c
 
 Dès que Visual Studio 2019 prendra en charge le Concepteur Windows Forms, vous pourrez copier/coller le contenu de votre fichier projet .NET Core dans le fichier projet .NET Framework, puis supprimer les modèles Glob de fichier ajoutés avec les éléments `<Source>` et `<EmbeddedResource>`. Résolvez le chemin d’accès des références de projet utilisées par votre application. Le projet .NET Framework est ainsi mis à niveau en un projet .NET Core.
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
-- En savoir plus sur [les modifications avec rupture d' .NET Framework à .net Core](../compatibility/fx-core.md).
-- Découvrez-en plus sur le [Pack de compatibilité Windows][compat-pack].
+- En savoir plus sur [les changements de rupture de .NET Framework à .NET Core](../compatibility/fx-core.md).
+- En savoir plus sur le [Pack de compatibilité Windows][compat-pack].
 - Regardez une [vidéo sur le portage](https://www.youtube.com/watch?v=upVQEUc_KwU) de projets Windows Forms .NET Framework vers .NET Core.
 
 [compat-pack]: windows-compat-pack.md

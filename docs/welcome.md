@@ -4,10 +4,10 @@ description: Bien démarrer avec la famille de technologies .NET.
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
 ms.openlocfilehash: 20332f4dcc0664287873a27e0064a4765b1ecde7
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "77124219"
 ---
 # <a name="welcome-to-net"></a>Bienvenue dans .NET
@@ -27,7 +27,7 @@ Pour plus d’informations sur .NET, consultez les blogs suivants :
 
 Suivez également les derniers événements .NET :
 
-- [Microsoft a l’allumage](https://www.microsoft.com/ignite)
+- [Microsoft Ignite](https://www.microsoft.com/ignite)
 - [Microsoft Build](https://www.microsoft.com/build)
 - [.NET Conf](https://www.dotnetconf.net/)
 
@@ -45,31 +45,31 @@ Cette documentation couvre les plateformes et les langages compatibles avec .NET
 - [Guide de .NET](standard/index.md)
 - [Guide .NET Core](core/index.md)
 - [Guide du .NET Framework](framework/index.md)
-- [Guide C#](csharp/index.yml)
+- [Guide de voyage CMD](csharp/index.yml)
 - [F# Guide](fsharp/index.yml)
 - [Guide Visual Basic](visual-basic/index.yml)
-- [Guide ML.NET](machine-learning/index.yml)
+- [ML.NET Guide](machine-learning/index.yml)
 - [.NET pour Apache Spark](spark/index.yml)
-- [Architecture des applications .NET](architecture/index.yml)
+- [Architecture de l’application .NET](architecture/index.yml)
 
 Vous pouvez également parcourir les [informations de référence sur l’API .NET](/dotnet/api).
 
 ## <a name="videos"></a>Videos
 
-Explorez des vidéos sur le Web, les appareils C#mobiles, les postes de travail, les machine learning, les conteneurs, l’ancrage, l’accès aux données, etc. :
+Explorez des vidéos sur le Web, le mobile, le bureau, le C, l’apprentissage automatique, les conteneurs/Docker, l’accès aux données, et plus encore :
 
-[Série de vidéos .NET 101](https://dotnet.microsoft.com/learn/videos)
+[série vidéo .NET 101](https://dotnet.microsoft.com/learn/videos)
 
 ## <a name="open-source"></a>Open source
 
 Cette documentation est entièrement [open source](https://github.com/dotnet/docs). Vous pouvez y contribuer comme vous le souhaitez, du signalement de problèmes à la création de rubriques de documentation. Par ailleurs, .NET est en grande partie également open source. La liste suivante présente les principaux dépôts .NET GitHub :
 
 - [Page d’accueil de .NET Core](https://github.com/dotnet/core)
-- [Runtime .NET Core](https://github.com/dotnet/runtime)
-- [Kit de développement logiciel (SDK) .NET Core](https://github.com/dotnet/sdk)
+- [.NET Core runtime (en)](https://github.com/dotnet/runtime)
+- [.NET Core SDK](https://github.com/dotnet/sdk)
 - [Plateforme de compilateur Roslyn (C# et Visual Basic) et outils IDE](https://github.com/dotnet/roslyn)
 - [Compilateur F# et outils IDE](https://github.com/dotnet/fsharp)
 - [Windows Forms](https://github.com/dotnet/winforms)
 - [WPF](https://github.com/dotnet/wpf)
 
-Vous pouvez rejoindre les membres de la [Communauté .NET](https://dotnet.microsoft.com/platform/community) pour connaître les nouveautés ou demander de l’aide.
+Vous pouvez vous joindre à d’autres personnes qui sont déjà actives dans la [communauté .NET](https://dotnet.microsoft.com/platform/community) pour savoir ce qui est nouveau ou demander de l’aide.

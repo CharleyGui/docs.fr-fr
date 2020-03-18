@@ -119,7 +119,7 @@
   href: numerics.md
 - name: 'Dates, heures et fuseaux horaires'
   href: datetime/
-- name: Événements
+- name: événements
   href: events/
 - name: processus d'exécution managée
   href: managed-execution-process.md

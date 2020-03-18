@@ -1,19 +1,19 @@
 ---
-title: Comment créer un C/C++ Union à l’aide d’attributsC#()
+title: Comment créer un syndicat C/CMD en utilisant des attributs (C)
 ms.date: 07/20/2015
 ms.assetid: 85f35e56-26e0-4d31-9f3a-89bd4005e71a
 ms.openlocfilehash: ff8ce560444581a28b257820573224f89a274cd9
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141574"
 ---
-# <a name="how-to-create-a-cc-union-by-using-attributes-c"></a>Comment créer un C/C++ Union à l’aide d’attributsC#()
+# <a name="how-to-create-a-cc-union-by-using-attributes-c"></a>Comment créer un syndicat C/CMD en utilisant des attributs (C)
 
-À l’aide d’attributs, vous pouvez personnaliser la disposition des structs en mémoire. Par exemple, vous pouvez créer ce qu’on appelle une union en C/C++ à l’aide des attributs `StructLayout(LayoutKind.Explicit)` et `FieldOffset`.
+En utilisant des attributs, vous pouvez personnaliser la façon dont les structs sont disposées dans la mémoire. Par exemple, vous pouvez créer ce qu’on appelle une union en C/C++ à l’aide des attributs `StructLayout(LayoutKind.Explicit)` et `FieldOffset`.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Dans ce segment de code, tous les champs de `TestUnion` débutent au même emplacement en mémoire.
 
@@ -37,7 +37,7 @@ struct TestUnion
 }
 ```
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Voici un autre exemple où les champs débutent à différents emplacements définis explicitement.
 

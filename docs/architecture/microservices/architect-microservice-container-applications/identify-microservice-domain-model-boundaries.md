@@ -3,10 +3,10 @@ title: Identification des limites du modèle de domaine pour chaque microservice
 description: Explorez l’essence du partitionnement d’une application volumineuse en microservices pour obtenir une architecture solide.
 ms.date: 09/20/2018
 ms.openlocfilehash: 9c433066dd8e93dbb09b15e58c9c85617775723d
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "71834414"
 ---
 # <a name="identify-domain-model-boundaries-for-each-microservice"></a>Identifier les limites du modèle de domaine pour chaque microservice
@@ -31,7 +31,7 @@ La meilleure réponse à la question de la taille que doit avoir un modèle de d
 
 **Figure 4-10**. Identification des entités et des limites du modèle de microservice
 
-La figure 4-10 illustre un exemple de scénario relatif à un système de gestion de conférences en ligne. La même entité apparaît comme « Users », « Buyers », « payer » et « Customers » en fonction du contexte délimité. Vous avez identifié plusieurs contextes délimités qui peuvent être implémentés en tant que microservices, en fonction des domaines définis pour vous par les experts des domaines. Comme vous pouvez le voir, il existe des entités qui sont présentes dans un seul modèle de microservice, comme Payments (Paiements) dans le microservice Payment (Paiement). Ceux-ci seront faciles à implémenter.
+La figure 4-10 illustre un exemple de scénario relatif à un système de gestion de conférences en ligne. La même entité apparaît comme "Utilisateurs", "Acheteurs", "Payers" et "Clients" selon le contexte délimité. Vous avez identifié plusieurs contextes délimités qui peuvent être implémentés en tant que microservices, en fonction des domaines définis pour vous par les experts des domaines. Comme vous pouvez le voir, il existe des entités qui sont présentes dans un seul modèle de microservice, comme Payments (Paiements) dans le microservice Payment (Paiement). Ceux-ci seront faciles à implémenter.
 
 Cependant, vous pouvez également avoir des entités qui ont une forme différente, mais qui partagent la même identité entre les différents modèles de domaine des différents microservices. Par exemple, l’entité User (Utilisateur) est identifiée dans le microservice Conferences Management (Gestion des conférences). Ce même utilisateur, avec la même identité, est celui qui est nommé Buyers (Acheteurs) dans le microservice Ordering (Commandes), ou celui qui est nommé Payer (Payeur) dans le microservice Payment (Paiement), et même celui qui est nommé Customer (Client) dans le microservice Customer Service (Service client). C’est pourquoi, en fonction de [l’ubiquité du langage](https://martinfowler.com/bliki/UbiquitousLanguage.html) utilisé par chaque expert du domaine, un utilisateur peut avoir une perspective différente, avec même des attributs différents. L’entité représentant un utilisateur dans le modèle de microservice nommé Conferences Management peut avoir la plupart de ses attributs de données personnelles. Cependant, ce même utilisateur dans la forme Payer du microservice Payment ou dans la forme Customer dans le microservice Customer Service peut ne pas nécessiter la même liste d’attributs.
 
@@ -50,5 +50,5 @@ Il existe ici un concept partagé, celui d’un utilisateur présent dans plusie
 Il existe plusieurs avantages à ne pas partager la même entité utilisateur avec le même nombre d’attributs entre les domaines. Un des avantages est de réduire la duplication, de façon que les modèles de microservice n’aient pas les données dont ils n’ont pas besoin. Un autre avantage est d’avoir un microservice maître qui détient un certain type de données par entité, afin que les mises à jour et les requêtes pour ce type de données soient pilotées seulement par ce microservice.
 
 >[!div class="step-by-step"]
->[Précédent](distributed-data-management.md)
->[Suivant](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)
+>[Suivant précédent](distributed-data-management.md)
+>[Next](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)

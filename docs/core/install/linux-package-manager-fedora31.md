@@ -1,31 +1,31 @@
 ---
-title: Installer .NET Core sur Fedora 31-gestionnaire de package-.NET Core
-description: Utilisez un gestionnaire de package pour installer kit SDK .NET Core et le runtime sur Fedora 31.
+title: Installer .NET Core sur Fedora 31 - gestionnaire de paquets - .NET Core
+description: Utilisez un gestionnaire de paquets pour installer .NET Core SDK et l’exécution sur Fedora 31.
 author: thraka
 ms.author: adegeo
 ms.date: 12/17/2019
 ms.openlocfilehash: 28bda3676f99037e565080e1ff3f9d89a67d0d69
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76920781"
 ---
-# <a name="fedora-31-package-manager---install-net-core"></a>Fedora 31 Package Manager-installer .NET Core
+# <a name="fedora-31-package-manager---install-net-core"></a>Fedora 31 Package Manager - Installer .NET Core
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-switcher.md)]
 
-Cet article explique comment utiliser un gestionnaire de package pour installer .NET Core sur Fedora 31. Si vous installez le runtime, nous vous suggérons d’installer le [runtime ASP.net Core](#install-the-aspnet-core-runtime), car il comprend des runtimes .net Core et ASP.net core.
+Cet article décrit comment utiliser un gestionnaire de paquets pour installer .NET Core sur Fedora 31. Si vous installez le temps d’exécution, nous vous suggérons d’installer le [ASP.NET’arrêt Core,](#install-the-aspnet-core-runtime)car il comprend à la fois .NET Core et ASP.NET les temps d’exécution Core.
 
 ## <a name="register-microsoft-key-and-feed"></a>Inscrire la clé et le flux Microsoft
 
-Avant d’installer .NET, vous devez :
+Avant d’installer .NET, vous devrez :
 
 - Enregistrez la clé Microsoft.
-- Enregistrez le dépôt du produit.
-- Installez les dépendances requises.
+- Enregistrez le référentiel du produit.
+- Installer les dépendances requises.
 
-Cette opération ne doit être effectuée qu’une fois par ordinateur.
+Vous ne devez faire ces opérations qu’une seule fois par machine.
 
 Ouvrez un terminal et exécutez les commandes suivantes.
 
@@ -34,25 +34,25 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo wget -q -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com/config/fedora/31/prod.repo
 ```
 
-## <a name="install-the-net-core-sdk"></a>Installer le kit SDK .NET Core
+## <a name="install-the-net-core-sdk"></a>Installer le kit de développement logiciel (SDK) .NET Core
 
-Mettez à jour les produits disponibles pour l’installation, puis installez le kit SDK .NET Core. Dans votre terminal, exécutez la commande suivante.
+Mettre à jour les produits disponibles pour l’installation, puis installer le .NET Core SDK. Dans votre terminal, exécutez la commande suivante.
 
 ```bash
 sudo dnf install dotnet-sdk-3.1
 ```
 
-## <a name="install-the-aspnet-core-runtime"></a>Installer le runtime ASP.NET Core
+## <a name="install-the-aspnet-core-runtime"></a>Installer le temps d’exécution ASP.NET Core
 
-Mettez à jour les produits disponibles pour l’installation, puis installez le runtime ASP.NET. Dans votre terminal, exécutez la commande suivante.
+Mettre à jour les produits disponibles pour l’installation, puis installer le ASP.NET’heure d’exécution. Dans votre terminal, exécutez la commande suivante.
 
 ```bash
 sudo dnf install aspnetcore-runtime-3.1
 ```
 
-## <a name="install-the-net-core-runtime"></a>Installer le Runtime .NET Core
+## <a name="install-the-net-core-runtime"></a>Installer le temps d’exécution .NET Core
 
-Mettez à jour les produits disponibles pour l’installation, puis installez le Runtime .NET Core. Dans votre terminal, exécutez la commande suivante.
+Mettre à jour les produits disponibles pour l’installation, puis installer le temps d’exécution .NET Core. Dans votre terminal, exécutez la commande suivante.
 
 ```bash
 sudo dnf install dotnet-runtime-3.1
@@ -62,10 +62,10 @@ sudo dnf install dotnet-runtime-3.1
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
 
-## <a name="troubleshoot-the-package-manager"></a>Résoudre les problèmes liés au gestionnaire de package
+## <a name="troubleshoot-the-package-manager"></a>Dépanner le gestionnaire de paquets
 
-Cette section fournit des informations sur les erreurs courantes que vous pouvez être amené à effectuer lors de l’utilisation du gestionnaire de package pour installer .NET Core.
+Cette section fournit des informations sur les erreurs courantes que vous pouvez obtenir lors de l’utilisation du gestionnaire de paquet pour installer .NET Core.
 
-### <a name="failed-to-fetch"></a>Échec de la récupération
+### <a name="failed-to-fetch"></a>N’est pas allé chercher
 
 [!INCLUDE [package-manager-failed-to-fetch-rpm](includes/package-manager-failed-to-fetch-rpm.md)]

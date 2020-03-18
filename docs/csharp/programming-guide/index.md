@@ -10,23 +10,23 @@ helpviewer_keywords:
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
 ms.openlocfilehash: de40369a661c347a2125075e820420af4eb71cac
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75337258"
 ---
 # <a name="c-programming-guide"></a>Guide de programmation C#
 
 Cette section fournit des informations détaillées sur les fonctionnalités et fonctions clés du langage C# accessibles par .NET Framework.  
   
- La majeure partie de cette section suppose que vous connaissez déjà en partie C# et les concepts de programmation généraux. Si vous êtes débutant en programmation ou avec C#, vous souhaiterez peut-être consulter la [Présentation des C# didacticiels](../tutorials/intro-to-csharp/index.md) ou le [didacticiel .net dans le navigateur](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1), où aucune connaissance préalable de la programmation n’est requise.  
+ La majeure partie de cette section suppose que vous connaissez déjà en partie C# et les concepts de programmation généraux. Si vous êtes un débutant complet avec la programmation ou avec C, vous pouvez visiter [l’Introduction à C Tutoriels](../tutorials/intro-to-csharp/index.md) ou [.NET In-Browser Tutorial](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1), où aucune connaissance préalable de la programmation est nécessaire.  
   
  Pour plus d’informations sur des mots clés, opérateurs et directives de préprocesseur en particulier, consultez la page [Informations de référence sur C#](../language-reference/index.md). Pour plus d’informations sur la spécification du langage C#, consultez la page [Spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction).  
   
 ## <a name="program-sections"></a>Sections du programme
 
-[À l’intérieur d’un programme C#](./inside-a-program/index.md)  
+[À l'intérieur d'un programme C#](./inside-a-program/index.md)  
   
 [Main() et arguments de ligne de commande](./main-and-command-args/index.md)  
 
@@ -44,7 +44,7 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
 
  [Tableaux](./arrays/index.md)  
   
- [Chaînes](./strings/index.md)  
+ [Cordes](./strings/index.md)  
   
  [Propriétés](./classes-and-structs/properties.md)  
   
@@ -68,13 +68,13 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
 ## <a name="platform-sections"></a>Sections de la plateforme
 
- [Domaines d’application](../../framework/app-domains/application-domains.md)  
+ [Domaines d'application](../../framework/app-domains/application-domains.md)  
   
  [Assemblys dans .NET](../../standard/assembly/index.md)  
   
  [Attributs](./concepts/attributes/index.md)  
   
- [Regroupements](./concepts/collections.md)  
+ [Collections](./concepts/collections.md)  
   
  [Exceptions et gestion des exceptions](./exceptions/index.md)  
   
@@ -86,4 +86,4 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../language-reference/index.md)
+- [Référence C](../language-reference/index.md)

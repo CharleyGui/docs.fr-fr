@@ -1,15 +1,15 @@
 ---
-title: Comment contrôler les préfixes d'C#espaces de noms () (LINQ to XML)
+title: Comment contrôler les préfixes namespace (C) (LINQ à XML)
 ms.date: 07/20/2015
 ms.assetid: 64de5186-b81a-4ddd-8327-8693df59a01b
 ms.openlocfilehash: 9f43c0804d8c830fa75f1e1390cb578c5f5d5106
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141378"
 ---
-# <a name="how-to-control-namespace-prefixes-c-linq-to-xml"></a>Comment contrôler les préfixes d'C#espaces de noms () (LINQ to XML)
+# <a name="how-to-control-namespace-prefixes-c-linq-to-xml"></a>Comment contrôler les préfixes namespace (C) (LINQ à XML)
 Cette rubrique décrit comment contrôler les préfixes d’espaces de noms lors de la sérialisation d’une arborescence XML.  
   
  Dans de nombreux cas, il n'est pas nécessaire de contrôler les préfixes d'espaces de noms.  
@@ -24,7 +24,7 @@ Cette rubrique décrit comment contrôler les préfixes d’espaces de noms lors
   
  Pour créer un attribut qui déclare un espace de noms avec un préfixe, vous devez créer un attribut où l'espace de noms du nom de l'attribut est <xref:System.Xml.Linq.XNamespace.Xmlns%2A> et le nom de l'attribut est le préfixe d'espace de noms. La valeur de l'attribut est l'URI de l'espace de noms.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Cet exemple déclare deux espaces de noms. Il spécifie que l’espace de noms `http://www.adventure-works.com` a le préfixe `aw` et que l’espace de noms `www.fourthcoffee.com` a le préfixe `fc`.  
   
 ```csharp  
@@ -42,7 +42,7 @@ XElement root = new XElement(aw + "Root",
 Console.WriteLine(root);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <aw:Root xmlns:aw="http://www.adventure-works.com" xmlns:fc="www.fourthcoffee.com">  

@@ -3,10 +3,10 @@ title: 'Exemple de fichier XML : Clients et commandes (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: d6d1c9ea-be74-4e6d-bfdd-d4bcc2d301cf
 ms.openlocfilehash: 01c1719bd67bbaf0d46dc6e3c23b5031afd271f8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75346497"
 ---
 # <a name="sample-xml-file-customers-and-orders-linq-to-xml"></a>Exemple de fichier XML : Clients et commandes (LINQ to XML)
@@ -14,7 +14,7 @@ Le fichier XML suivant est utilisé dans différents exemples dans la documentat
   
  La rubrique [Exemple de fichier XSD : Clients et commandes](./sample-xsd-file-customers-and-orders1.md) contient un XSD qui peut servir à valider ce document. Il utilise les fonctionnalités `xs:key` et `xs:keyref` de XSD pour déterminer que l'attribut `CustomerID` de l'élément `Customer` est une clé et pour établir une relation entre l'élément `CustomerID` dans chaque élément `Order` et l'attribut `CustomerID` dans chaque élément `Customer`.  
   
- Pour obtenir un exemple d’écriture de requêtes LINQ qui tirent parti de cette relation à l’aide de la clause `Join`, consultez [Comment joindre deuxC#collections (LINQ to XML) ()](./how-to-join-two-collections-linq-to-xml.md).  
+ Par exemple, des requêtes de LINQ qui `Join` profitent de cette relation en utilisant la clause, voir [Comment joindre deux collections (LINQ à XML) (CMD)](./how-to-join-two-collections-linq-to-xml.md).  
   
 ## <a name="customersordersxml"></a>CustomersOrders.xml  
   

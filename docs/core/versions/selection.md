@@ -5,11 +5,11 @@ author: thraka
 ms.author: adegeo
 ms.date: 06/26/2019
 ms.openlocfilehash: 55f04ce81f63753831fca8fa2e44811c44049733
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77450997"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79398824"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Sélectionner la version .NET Core à utiliser
 
@@ -38,7 +38,7 @@ Vous pouvez tirer parti des fonctionnalités et des améliorations du dernier ki
 
 À de rares occasions, vous pouvez être amené à utiliser une version antérieure du kit SDK. Vous devez dans ce cas spécifier cette version dans un [ fichier *global.json*](../tools/global-json.md). La stratégie « utiliser la dernière version » signifie que vous utilisez uniquement *global.json* pour spécifier une version du kit SDK .NET Core antérieure à la dernière version installée.
 
-*global.json* peut être placé n’importe où dans la hiérarchie des fichiers. L’interface CLI effectue une recherche vers le haut dans le répertoire du projet et s’arrête au premier fichier *global.json* trouvé. Vous pouvez contrôler les projets auxquels un fichier *global.json* donné s’applique par son emplacement dans le système de fichiers. L’interface CLI .NET recherche un fichier *global.json* de manière itérative en parcourant le chemin de bas en haut dans le répertoire de travail actif. Le premier fichier *global.json* trouvé spécifie la version utilisée. Si cette version du kit de développement logiciel (SDK) est installée, cette version est utilisée. Si le kit de développement logiciel (SDK) spécifié dans *global. JSON* est introuvable, l’interface CLI .NET utilise des [règles de correspondance](../tools/global-json.md#matching-rules) pour sélectionner un kit de développement logiciel (SDK) compatible, ou échoue si aucune n’est trouvée.
+*global.json* peut être placé n’importe où dans la hiérarchie des fichiers. L’interface CLI effectue une recherche vers le haut dans le répertoire du projet et s’arrête au premier fichier *global.json* trouvé. Vous pouvez contrôler les projets auxquels un fichier *global.json* donné s’applique par son emplacement dans le système de fichiers. L’interface CLI .NET recherche un fichier *global.json* de manière itérative en parcourant le chemin de bas en haut dans le répertoire de travail actif. Le premier fichier *global.json* trouvé spécifie la version utilisée. Si cette version SDK est installée, cette version est utilisée. Si le SDK spécifié dans le *global.json* n’est pas trouvé, le CLI .NET utilise des [règles correspondantes](../tools/global-json.md#matching-rules) pour sélectionner un SDK compatible, ou échoue si aucun n’est trouvé.
 
 L’exemple suivant présente la syntaxe du fichier *global.json* :
 
@@ -78,7 +78,7 @@ Les versions cibles de .Net Framework Standard sont également plafonnées à la
 
 ## <a name="framework-dependent-apps-roll-forward"></a>Les applications dépendantes du framework font l’objet d’une restauration par progression
 
-Lorsque vous exécutez une application à partir d’une source avec [`dotnet run`](../tools/dotnet-run.md), à partir d’un [**déploiement dépendant du framework**](../deploying/index.md#publish-runtime-dependent) avec [`dotnet myapp.dll`](../tools/dotnet.md#description), ou à partir d’un [**exécutable dépendant du framework**](../deploying/index.md#publish-runtime-dependent) avec `myapp.exe`, l’exécutable `dotnet` est l’**hôte** de l’application.
+Lorsque vous exécutez une [`dotnet run`](../tools/dotnet-run.md)application à partir de [`dotnet myapp.dll`](../tools/dotnet.md#description)la source avec , à partir d’un déploiement dépendant du [**cadre**](../deploying/index.md#publish-runtime-dependent) avec , ou à partir d’un [**cadre dépendant exécutable**](../deploying/index.md#publish-runtime-dependent) avec `myapp.exe`, l’exécutable `dotnet` est l’hôte de l’application. **host**
 
 L’hôte choisit la dernière version de correctif installée sur la machine. Par exemple, si vous avez spécifié `netcoreapp2.0` dans votre fichier projet et que `2.0.4` est le dernier runtime .NET installé, le runtime `2.0.4` est utilisé.
 

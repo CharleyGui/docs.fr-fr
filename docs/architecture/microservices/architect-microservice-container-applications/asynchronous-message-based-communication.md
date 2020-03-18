@@ -3,10 +3,10 @@ title: Communication basée sur des messages asynchrones
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Les communications asynchrones par messages représentent un concept essentiel dans l’architecture de microservices, car elles constituent le meilleur moyen de maintenir l’indépendance des microservices les uns par rapport aux autres tout en les synchronisant au bout du compte.
 ms.date: 09/20/2018
 ms.openlocfilehash: 84eaf70178cce91a86dae8a55badb0b4ddd6a7c1
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73454232"
 ---
 # <a name="asynchronous-message-based-communication"></a>Communication basée sur des messages asynchrones
@@ -53,7 +53,7 @@ Comme indiqué précédemment dans la section [Défis et solutions pour la gesti
 
 Il est important de noter qu’il est possible de communiquer avec plusieurs microservices qui sont abonnés au même événement. Pour ce faire, vous pouvez utiliser la messagerie par publication/abonnement basée sur la communication pilotée par les événements, comme le montre la figure 4-19. Ce mécanisme de publication/d’abonnement n’est pas réservé à l’architecture des microservices. Il est similaire à la façon dont les [contextes délimités](https://martinfowler.com/bliki/BoundedContext.html) dans DDD doivent communiquer, ou à la façon dont vous propagez les mises à jour de la base de données accessible en écriture à la base de données accessible en lecture dans le modèle d’architecture [CQRS (séparation des responsabilités en matière de commande et de requête)](https://martinfowler.com/bliki/CQRS.html). L’objectif est d’obtenir une cohérence à terme entre plusieurs sources de données dans votre système distribué.
 
-![Diagramme montrant les communications asynchrones pilotées par les événements.](./media/asynchronous-message-based-communication/asynchronous-event-driven-communication.png)
+![Diagramme montrant des communications asynchrones axées sur l’événement.](./media/asynchronous-message-based-communication/asynchronous-event-driven-communication.png)
 
 **Figure 4-19**. Communication par message asynchrone pilotée par les événements
 
@@ -73,7 +73,7 @@ L’implémentation d’une architecture pilotée par les événements sur plusi
 
 - Utilisation d’une file d’attente transactionnelle, basée sur DTC, comme MSMQ. (Toutefois, il s’agit d’une approche héritée.)
 
-- Utilisation de [l’exploration des données du journal des transactions](https://www.scoop.it/t/sql-server-transaction-log-mining).
+- Utiliser [l’exploration des données du journal des transactions](https://www.scoop.it/t/sql-server-transaction-log-mining)
 
 - Utilisation de la version complète du [modèle d’approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing).
 
@@ -83,27 +83,27 @@ Si vous envisagez d’utiliser la communication asynchrone, veillez également �
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Event Driven Messaging** \
+- **Messagerie axée sur l’événement** \
   <https://soapatterns.org/design_patterns/event_driven_messaging>
 
-- **Publish/Subscribe Channel** \
+- **Publier/Abonner Channel** \
   <https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html>
 
-- **UDI Dahan. \ CQRS clarifiée**
+- **Udi Dahan. CQRS clarifié** \
   <http://udidahan.com/2009/12/09/clarified-cqrs/>
 
-- **CQRS (séparation des responsabilités en matière de commande et de requête)**  \
+- **Ségrégation des responsabilités de commandement et de requête (CQRS)** \
   <https://docs.microsoft.com/azure/architecture/patterns/cqrs>
 
-- **Communication entre contextes délimités** \
+- **Communiquer entre les contextes liés** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/jj591572(v=pandp.10)>
 
-- **Cohérence à terme** \
+- **Cohérence éventuelle** \
   <https://en.wikipedia.org/wiki/Eventual_consistency>
 
-- **Jimmy bogard. Refactorisation en vue de la résilience : évaluation du couplage** \
+- **Jimmy Bogard. Refactoring Vers la résilience : évaluer le couplage** \
   <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
 > [!div class="step-by-step"]
-> [Précédent](communication-in-microservice-architecture.md)
-> [Suivant](maintain-microservice-apis.md)
+> [Suivant précédent](communication-in-microservice-architecture.md)
+> [Next](maintain-microservice-apis.md)

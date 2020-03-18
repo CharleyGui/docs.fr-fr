@@ -1,28 +1,28 @@
 ---
 ms.openlocfilehash: add3ff8faed2e7fab245e5b6f1b9158b7bdd06f5
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74567371"
 ---
-### <a name="cellformatting-event-not-raised-if-tooltip-is-shown"></a>Événement CellFormatting non déclenché si l’info-bulle est affichée
+### <a name="cellformatting-event-not-raised-if-tooltip-is-shown"></a>CellFormatting événement non soulevé si tooltip est montré
 
-Une <xref:System.Windows.Forms.DataGridView> affiche maintenant le texte et les info-bulles d’erreur d’une cellule lorsque vous survolez par une souris et lorsqu’elle est sélectionnée via le clavier. Si une info-bulle est affichée, l’événement <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType> n’est pas déclenché.
+A <xref:System.Windows.Forms.DataGridView> affiche maintenant les outils texte et erreur d’une cellule lorsqu’il est plané par une souris et lorsqu’il est sélectionné via le clavier. Si un tooltip est <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType> montré, l’événement n’est pas soulevé.
 
-#### <a name="change-description"></a>Modifier la description
+#### <a name="change-description"></a>Description de la modification
 
-Avant .NET Core 3,1, un <xref:System.Windows.Forms.DataGridView> dont la propriété <xref:System.Windows.Forms.DataGridView.ShowCellToolTips%2A> a la valeur `true` affichait une info-bulle pour le texte d’une cellule et des erreurs quand la cellule était pointée par une souris. Les info-bulles n’étaient pas affichées lorsqu’une cellule a été sélectionnée à l’aide du clavier (par exemple, en utilisant la touche Tab, les touches de raccourci ou la navigation vers la flèche). Si l’utilisateur a modifié une cellule, puis que le <xref:System.Windows.Forms.DataGridView> était toujours en mode édition, pointé sur une cellule pour laquelle la propriété <xref:System.Windows.Forms.DataGridViewCell.ToolTipText> n’a pas été définie, un événement <xref:System.Windows.Forms.DataGridView.CellFormatting> a été déclenché pour mettre en forme le texte de la cellule en vue de son affichage dans la cellule.
+Avant .NET Core 3.1, <xref:System.Windows.Forms.DataGridView> un <xref:System.Windows.Forms.DataGridView.ShowCellToolTips%2A> qui `true` avait la propriété réglée pour montrer une pointe d’outils pour le texte d’une cellule et les erreurs lorsque la cellule a été planée par une souris. Les outils n’ont pas été montrés lorsqu’une cellule a été sélectionnée via le clavier (par exemple, en utilisant la clé Tab, les touches de raccourci ou la navigation fléchée). Si l’utilisateur a édité une <xref:System.Windows.Forms.DataGridView> cellule, puis, alors que le était encore <xref:System.Windows.Forms.DataGridViewCell.ToolTipText> en mode <xref:System.Windows.Forms.DataGridView.CellFormatting> d’édition, planait au-dessus d’une cellule qui n’avait pas l’ensemble de propriété, un événement a été soulevé pour formater le texte de la cellule pour l’affichage dans la cellule.
 
-Pour répondre aux normes d’accessibilité, à compter de .NET Core 3,1, un <xref:System.Windows.Forms.DataGridView> dont la propriété <xref:System.Windows.Forms.DataGridView.ShowCellToolTips%2A> a la valeur `true` affiche des info-bulles pour le texte d’une cellule et des erreurs non seulement lorsque la cellule est pointée, mais également quand elle est sélectionnée via le clavier. En raison de cette modification, l’événement <xref:System.Windows.Forms.DataGridView.CellFormatting> n’est *pas* déclenché lorsque les cellules qui n’ont pas la propriété <xref:System.Windows.Forms.DataGridViewCell.ToolTipText> définie sont pointées pendant que le <xref:System.Windows.Forms.DataGridView> est en mode édition. L’événement n’est pas déclenché, car le contenu de la cellule survolée est affiché sous la forme d’une info-bulle au lieu d’être affiché dans la cellule.
+Pour répondre aux normes d’accessibilité, à partir <xref:System.Windows.Forms.DataGridView> de .NET Core 3.1, un qui a la <xref:System.Windows.Forms.DataGridView.ShowCellToolTips%2A> propriété définie pour `true` afficher les outils pour le texte d’une cellule et les erreurs non seulement lorsque la cellule est planée, mais aussi quand il est sélectionné via le clavier. En conséquence de ce <xref:System.Windows.Forms.DataGridView.CellFormatting> changement, l’événement *n’est* pas <xref:System.Windows.Forms.DataGridViewCell.ToolTipText> soulevé lorsque les <xref:System.Windows.Forms.DataGridView> cellules qui n’ont pas l’ensemble de propriété sont planées pendant que le est en mode d’édition. L’événement n’est pas soulevé parce que le contenu de la cellule planée est montré comme un tooltip au lieu d’être affiché dans la cellule.
 
 #### <a name="version-introduced"></a>Version introduite
 
-3,1
+3.1
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Refactorisez tout code qui dépend de l’événement <xref:System.Windows.Forms.DataGridView.CellFormatting> lorsque le <xref:System.Windows.Forms.DataGridView> est en mode édition.
+Refactor tout code qui <xref:System.Windows.Forms.DataGridView.CellFormatting> dépend <xref:System.Windows.Forms.DataGridView> de l’événement pendant que le mode d’édition est en mode d’édition.
 
 #### <a name="category"></a>Category
 
@@ -30,7 +30,7 @@ Windows Forms
 
 #### <a name="affected-apis"></a>API affectées
 
-Non détectable via l’analyse des API.
+Non détectable par l’analyse de l’API.
 
 <!-- 
 

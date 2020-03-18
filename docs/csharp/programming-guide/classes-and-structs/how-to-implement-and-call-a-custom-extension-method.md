@@ -1,22 +1,22 @@
 ---
-title: Comment implémenter et appeler une méthode d’extension personnalisée C# -Guide de programmation
+title: Comment mettre en œuvre et appeler une méthode d’extension personnalisée - Guide de programmation C
 ms.date: 07/20/2015
 helpviewer_keywords:
 - extension methods [C#], implementing and calling
 ms.assetid: 7dab2a56-cf8e-4a47-a444-fe610a02772a
 ms.openlocfilehash: 7e2092a37c1f042a087e03f4a272139b585156c8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75705598"
 ---
-# <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>Comment implémenter et appeler une méthode d’extension personnaliséeC# (Guide de programmation)
+# <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>Comment mettre en œuvre et appeler une méthode d’extension personnalisée (Guide de programmation C)
 Cette rubrique montre comment implémenter vos propres méthodes d’extension pour n’importe quel type .NET. Le code client peut utiliser vos méthodes d’extension en ajoutant une référence à la DLL qui les contient, et en ajoutant une directive [using](../../language-reference/keywords/using-directive.md) qui spécifie l’espace de noms dans lequel les méthodes d’extension sont définies.  
   
 ## <a name="to-define-and-call-the-extension-method"></a>Pour définir et appeler la méthode d’extension  
   
-1. Définissez une [classe](./static-classes-and-static-class-members.md) statique pour contenir la méthode d’extension.  
+1. Définissez une classe statiquepour contenir la méthode d’extension.  
   
      La classe doit être visible par le code client. Pour plus d’informations sur les règles d’accessibilité, consultez [Modificateurs d’accès](./access-modifiers.md).  
   
@@ -30,12 +30,12 @@ Cette rubrique montre comment implémenter vos propres méthodes d’extension p
   
      Notez que le premier paramètre n’est pas spécifié par le code appelant, car il représente le type sur lequel l’opérateur est appliqué, et le compilateur connaît déjà le type de votre objet. Vous devez fournir des arguments uniquement pour les paramètres 2 à `n`.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant implémente une méthode d’extension nommée `WordCount` dans la classe `CustomExtensions.StringExtension`. La méthode opère sur la classe <xref:System.String>, qui est spécifiée comme premier paramètre de méthode. L’espace de noms `CustomExtensions` est importé dans l’espace de noms d’application, et la méthode est appelée à l’intérieur de la méthode `Main`.  
   
  [!code-csharp[csProgGuideExtensionMethods#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExtensionMethods/cs/extensionmethods.cs#1)]  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
+## <a name="net-framework-security"></a>Sécurité du .NET Framework  
  Les méthodes d’extension ne présentent aucune faille de sécurité spécifique. Elles ne peuvent jamais être utilisées pour emprunter l’identité des méthodes existantes sur un type, car toutes les collisions de noms sont résolues en faveur de l’instance ou de la méthode statique définie par le type lui-même. Les méthodes d’extension ne peuvent pas accéder à des données privées dans la classe étendue.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -44,8 +44,8 @@ Cette rubrique montre comment implémenter vos propres méthodes d’extension p
 - [Méthodes d’extension](./extension-methods.md)
 - [LINQ (Language Integrated Query)](../../linq/linq-in-csharp.md)
 - [Classes statiques et membres de classe statique](./static-classes-and-static-class-members.md)
-- [protected](../../language-reference/keywords/protected.md)
-- [internal](../../language-reference/keywords/internal.md)
+- [Protégé](../../language-reference/keywords/protected.md)
+- [Interne](../../language-reference/keywords/internal.md)
 - [public](../../language-reference/keywords/public.md)
-- [this](../../language-reference/keywords/this.md)
-- [namespace](../../language-reference/keywords/namespace.md)
+- [Ce](../../language-reference/keywords/this.md)
+- [Namespace](../../language-reference/keywords/namespace.md)

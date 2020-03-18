@@ -6,10 +6,10 @@ helpviewer_keywords:
 - C# language, expressions
 ms.assetid: c7d8feb0-0e58-4f94-8bf6-4d070550a832
 ms.openlocfilehash: 4bbee8f15c2591e8b172df9a6759449d48697804
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75699091"
 ---
 # <a name="expressions-c-programming-guide"></a>Expressions (Guide de programmation C#)
@@ -30,9 +30,9 @@ System.Convert.ToInt32("35");
   
  Chaque valeur possède un type associé. Par exemple, si x et y sont toutes deux des variables de type `int`, la valeur de l’expression `x + y` est également de type `int`. Si la valeur est assignée à une variable d’un type différent, ou si x et y sont des types différents, les règles de conversion de type sont appliquées. Pour plus d’informations sur le fonctionnement de ces conversions, consultez [Cast et conversions de types](../types/casting-and-type-conversions.md).  
   
-## <a name="overflows"></a>Dépassements de capacité
+## <a name="overflows"></a>Dépassement de capacité
 
- Les expressions numériques peuvent provoquer des dépassements de capacité si la valeur est supérieure à la valeur maximale du type de la valeur. Pour plus d’informations, consultez [case à cocher activée et désactivée](../../language-reference/keywords/checked-and-unchecked.md) et la section [conversions numériques explicites](../../language-reference/builtin-types/numeric-conversions.md#explicit-numeric-conversions) de l’article [conversions numériques intégrées](../../language-reference/builtin-types/numeric-conversions.md) .
+ Les expressions numériques peuvent provoquer des dépassements de capacité si la valeur est supérieure à la valeur maximale du type de la valeur. Pour plus d’informations, voir [Checked and Unchecked](../../language-reference/keywords/checked-and-unchecked.md) et la section [des conversions numériques explicites](../../language-reference/builtin-types/numeric-conversions.md#explicit-numeric-conversions) de [l’article built-in de conversions numériques.](../../language-reference/builtin-types/numeric-conversions.md)
   
 ## <a name="operator-precedence-and-associativity"></a>Priorité des opérateurs et associativité
 
@@ -68,7 +68,7 @@ DoWork();
   
 ## <a name="lambda-expressions"></a>Expressions lambda
 
- Les expressions lambda représentent des « méthodes inline » qui n’ont aucun nom mais qui peuvent avoir des paramètres d’entrée et plusieurs instructions. Elles sont largement utilisées dans LINQ pour passer des arguments aux méthodes. Les expressions lambda sont compilées en délégués ou en arborescences de l’expression en fonction du contexte dans lequel elles sont utilisées. Pour plus d’informations, consultez [Expressions lambda](lambda-expressions.md).  
+ Les expressions lambda représentent des « méthodes inline » qui n’ont aucun nom mais qui peuvent avoir des paramètres d’entrée et plusieurs instructions. Elles sont largement utilisées dans LINQ pour passer des arguments aux méthodes. Les expressions lambda sont compilées en délégués ou en arborescences de l’expression en fonction du contexte dans lequel elles sont utilisées. Pour plus d’informations, voir [Lambda Expressions](lambda-expressions.md).  
   
 ## <a name="expression-trees"></a>Arborescences de l’expression
 
@@ -78,7 +78,7 @@ Les arborescences de l’expression permettent de représenter des expressions e
 
 C# prend en charge les *membres expression-bodied*, qui vous permettent de fournir une définition de corps d’expression concise pour des méthodes, des constructeurs, des finaliseurs, des propriétés et des indexeurs. Pour plus d’informations, consultez [Membres expression-bodied](expression-bodied-members.md).
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
  Chaque fois qu’un accès à un indexeur d’objet, une variable ou une propriété d’objet est identifié à partir d’une expression, la valeur de cet élément est utilisée comme valeur de l’expression. Une expression peut être placée n’importe où en C# où une valeur ou un objet est obligatoire, tant que l’expression correspond finalement au type obligatoire.  
 

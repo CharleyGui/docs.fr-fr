@@ -3,16 +3,16 @@ title: Partie de style d'un document WordprocessingML
 ms.date: 07/20/2015
 ms.assetid: 5458bccf-3898-4661-904b-7d280c9239a9
 ms.openlocfilehash: 56726a7ea7594bfd1c68e5b1f8e45f585138eac6
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68868624"
 ---
 # <a name="style-part-of-a-wordprocessingml-document"></a>Partie de style d'un document WordprocessingML
 Cette rubrique illustre un exemple de la partie de style du document Office Open XML WordprocessingML.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L'exemple suivant est le code XML qui compose la partie de style d'un document Office Open XML WordprocessingML.  
   
  Le style de paragraphe par défaut présente un élément avec la balise d'ouverture suivante :  

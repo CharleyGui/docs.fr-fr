@@ -9,10 +9,10 @@ helpviewer_keywords:
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
 ms.openlocfilehash: c549b9fcc91401aed846afd39e656b60e16afb74
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75937598"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Expressions lambda (Guide de programmation C#)
@@ -41,15 +41,15 @@ Les expressions lambda peuvent également être converties en types d’[arbores
 
 [!code-csharp-interactive[lambda is expression tree](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#ExpressionTree)]
 
-Vous pouvez utiliser des expressions lambda dans tout code qui requiert des instances de types délégués ou d’arborescences d’expressions, par exemple en tant qu’argument de la méthode <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType> pour passer le code qui doit être exécuté en arrière-plan. Vous pouvez également utiliser des expressions lambda lorsque vous écrivez [LINQ C#dans ](../../linq/index.md), comme le montre l’exemple suivant :
+Vous pouvez utiliser des expressions lambda dans tout code qui requiert des instances de types délégués ou d’arborescences d’expressions, par exemple en tant qu’argument de la méthode <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType> pour passer le code qui doit être exécuté en arrière-plan. Vous pouvez également utiliser des expressions lambda lorsque vous écrivez [LINQ en C ,](../../linq/index.md)comme le montre l’exemple suivant :
 
 [!code-csharp-interactive[lambda is argument in LINQ](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#Argument)]
 
-Lorsque la méthode <xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType> est appelée avec une syntaxe fondée sur une méthode dans la classe <xref:System.Linq.Enumerable?displayProperty=nameWithType> (par exemple, dans LINQ to Objects et LINQ to XML), le paramètre est un type délégué <xref:System.Func%602?displayProperty=nameWithType>. Si la méthode <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType> est appelée dans la classe <xref:System.Linq.Queryable?displayProperty=nameWithType> (par exemple, dans LINQ to SQL), le paramètre est un type d’arborescence d’expression [`Expression<Func<TSource,TResult>>`](<xref:System.Linq.Expressions.Expression%601>). Dans les deux cas, vous pouvez utiliser la même expression lambda pour spécifier la valeur de paramètre. Les deux appels `Select` semblent ainsi semblables alors qu’en fait le type des objets créés à partir des lambdas est différent.
+Lorsque la méthode <xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType> est appelée avec une syntaxe fondée sur une méthode dans la classe <xref:System.Linq.Enumerable?displayProperty=nameWithType> (par exemple, dans LINQ to Objects et LINQ to XML), le paramètre est un type délégué <xref:System.Func%602?displayProperty=nameWithType>. Lorsque vous <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType> appelez la <xref:System.Linq.Queryable?displayProperty=nameWithType> méthode dans la classe, par exemple dans LINQ [`Expression<Func<TSource,TResult>>`](<xref:System.Linq.Expressions.Expression%601>)à SQL, le type de paramètre est un type d’arbre d’expression . Dans les deux cas, vous pouvez utiliser la même expression lambda pour spécifier la valeur de paramètre. Les deux appels `Select` semblent ainsi semblables alors qu’en fait le type des objets créés à partir des lambdas est différent.
   
 ## <a name="expression-lambdas"></a>Expressions lambdas
 
-Une expression lambda comportant une expression à droite de l’opérateur `=>` est appelée *expression lambda*. Les expressions lambda sont utilisées en grand nombre dans la construction d’[arborescences d’expressions](../concepts/expression-trees/index.md). Une expression lambda retourne le résultat de l'expression et prend la forme de base suivante :
+Une expression lambda comportant une expression à droite de l’opérateur `=>` est appelée *expression lambda*. Les lambdas d’expression sont largement utilisés dans la construction [d’arbres d’expression.](../concepts/expression-trees/index.md) Une expression lambda retourne le résultat de l'expression et prend la forme de base suivante :
 
 ```csharp
 (input-parameters) => expression
@@ -137,17 +137,17 @@ public partial class Form1 : Form
 }
 ```
 
-Pour plus d’informations sur la création et l’utilisation des méthodes asyncrones, consultez [Programmation asynchrone avec async et await](../concepts/async/index.md).
+Pour plus d’informations sur la façon de créer et d’utiliser des méthodes async, voir [Programmation asynchrone avec async et attendre](../concepts/async/index.md).
 
 ## <a name="lambda-expressions-and-tuples"></a>Expressions lambda et tuples
 
-À compter de sa version 7.0, le langage C# offre une prise en charge intégrée des [tuples](../../tuples.md). Vous pouvez fournir un tuple comme argument à une expression lambda, et votre expression lambda peut aussi retourner un tuple. Dans certains cas, le compilateur C# utilise l’inférence de type pour déterminer les types des composants du tuple.
+En commençant par le C 7.0, la langue Cmd fournit un soutien intégré pour [les tuples](../../tuples.md). Vous pouvez fournir un tuple comme argument à une expression lambda, et votre expression lambda peut aussi retourner un tuple. Dans certains cas, le compilateur C# utilise l’inférence de type pour déterminer les types des composants du tuple.
 
 Vous définissez un tuple en plaçant entre des parenthèses une liste de ses composants avec des virgules comme séparateur. L’exemple suivant utilise un tuple à trois composants pour passer une séquence de nombres à une expression lambda, qui double chaque valeur et retourne un tuple à trois composants contenant le résultat des multiplications.
 
 [!code-csharp-interactive[lambda and tuples](~/samples/snippets/csharp/programming-guide/lambda-expressions/LambdasAndTuples.cs#WithoutComponentName)]
 
-En règle générale, les champs d’un tuple sont nommés `Item1`, `Item2`, etc. Toutefois, vous pouvez définir un tuple avec des composants nommés, comme le montre l’exemple suivant.
+Normalement, les champs d’un tuple `Item1` `Item2`sont nommés, , etc. Vous pouvez, cependant, définir un tuple avec des composants nommés, comme le fait l’exemple suivant.
 
 [!code-csharp-interactive[lambda and named tuples](~/samples/snippets/csharp/programming-guide/lambda-expressions/LambdasAndTuples.cs#WithComponentName)]
 
@@ -229,8 +229,8 @@ Pour plus d’informations, consultez la section [Expressions de fonction anonym
 
 - [Guide de programmation C#](../index.md)
 - [LINQ (Language Integrated Query)](../concepts/linq/index.md)
-- [Arborescences d’expressions](../concepts/expression-trees/index.md)
-- [Comparaison entre les fonctions locales et les expressions lambda](../../local-functions-vs-lambdas.md)
+- [Expression Trees](../concepts/expression-trees/index.md)
+- [Fonctions locales comparées aux expressions lambda](../../local-functions-vs-lambdas.md)
 - [Expressions lambda implicitement typées](../../implicitly-typed-lambda-expressions.md)
 - [Exemples Visual Studio 2008 C# (voir les fichiers d’exemples de requêtes LINQ et le programme XQuery)](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)
 - [Expressions lambda récursives](https://docs.microsoft.com/archive/blogs/madst/recursive-lambda-expressions)

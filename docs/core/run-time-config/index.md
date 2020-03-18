@@ -1,45 +1,45 @@
 ---
-title: Options de configuration au moment de l’exécution
-description: Découvrez comment configurer des applications .NET Core à l’aide des paramètres de configuration de l’exécution.
+title: Options de config à durée de couru
+description: Découvrez comment configurer les applications .NET Core en utilisant des paramètres de configuration en temps d’exécution.
 ms.date: 01/21/2020
 ms.openlocfilehash: ddf68c30e620a06856f65e71bd050e1b77618f20
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76733438"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79399160"
 ---
-# <a name="net-core-run-time-configuration-settings"></a>Paramètres de configuration du Runtime .NET Core
+# <a name="net-core-run-time-configuration-settings"></a>paramètres de configuration de temps d’exécution .NET Core
 
-.NET Core prend en charge l’utilisation de fichiers de configuration et de variables d’environnement pour configurer le comportement des applications .NET Core au moment de l’exécution. La configuration au moment de l’exécution est une option attrayante dans les cas suivants :
+.NET Core prend en charge l’utilisation de fichiers de configuration et de variables de l’environnement pour configurer le comportement des applications .NET Core au moment de l’exécution. La configuration du temps d’exécution est une option intéressante si :
 
-- Vous ne possédez pas ou ne contrôlez pas le code source d’une application. par conséquent, vous ne pouvez pas le configurer par programme.
+- Vous ne possédez pas ou ne contrôlez pas le code source d’une application et vous ne pouvez donc pas le configurer de manière programmatique.
 
-- Plusieurs instances de votre application s’exécutent en même temps sur un système unique et vous souhaitez configurer chacune d’elles pour obtenir des performances optimales.
-
-> [!NOTE]
-> Cette documentation est un travail en cours. Si vous remarquez que les informations présentées ici sont incomplètes ou inexactes, vous pouvez soit [ouvrir un problème](https://github.com/dotnet/docs/issues) pour nous le faire savoir, soit [soumettre une demande de tirage](https://github.com/dotnet/docs/pulls) pour résoudre le problème. Pour plus d’informations sur l’envoi de requêtes de tirage pour le dépôt dotnet/docs, consultez le [Guide du contributeur](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).
-
-.NET Core fournit les mécanismes suivants pour configurer le comportement de l’application au moment de l’exécution :
-
-- Le [fichier runtimeconfig. JSON](#runtimeconfigjson)
-
-- [MSBuild, propriétés](#msbuild-properties)
-
-- [Variables d’environnement](#environment-variables)
-
-Certaines valeurs de configuration peuvent également être définies par programmation en appelant la méthode <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType>.
-
-Les Articles de cette section de la documentation sont organisés par catégorie, par exemple, [débogage](debugging-profiling.md) et [garbage collection](garbage-collector.md). Le cas échéant, des options de configuration s’affichent pour les fichiers *runtimeconfig. JSON* , les propriétés MSBuild, les variables d’environnement et, pour les références croisées, les fichiers *app. config* pour les projets .NET Framework.
-
-## <a name="runtimeconfigjson"></a>runtimeconfig. JSON
-
-Lorsqu’un projet est [généré](../tools/dotnet-build.md), un fichier *[AppName]. runtimeconfig. JSON* est généré dans le répertoire de sortie. Si un fichier *runtimeconfig. template. JSON* se trouve dans le même dossier que le fichier projet, toutes les options de configuration qu’il contient sont fusionnées dans le fichier *[AppName]. runtimeconfig. JSON* . Si vous créez l’application vous-même, placez toutes les options de configuration dans le fichier *runtimeconfig. template. JSON* . Si vous exécutez simplement l’application, insérez-la directement dans le fichier *[AppName]. runtimeconfig. JSON* .
+- Plusieurs instances de votre application s’exécutent en même temps sur un seul système, et vous souhaitez configurer chacune pour des performances optimales.
 
 > [!NOTE]
-> Le fichier *[AppName]. runtimeconfig. JSON* sera remplacé lors des builds suivantes.
+> Cette documentation est un travail en cours. Si vous remarquez que les renseignements présentés ici sont incomplets ou inexacts, soit [ouvrez une question](https://github.com/dotnet/docs/issues) pour nous le faire savoir, soit [soumettez une demande de retrait](https://github.com/dotnet/docs/pulls) pour régler le problème. Pour obtenir de [l’information](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md)sur la soumission de demandes de retrait pour le référentiel dotnet/docs, consultez le guide du contributeur .
 
-Spécifiez les options de configuration au moment de l’exécution dans la section **configProperties** des fichiers *runtimeconfig. JSON* . Cette section se présente sous la forme suivante :
+.NET Core fournit les mécanismes suivants pour configurer le comportement d’application en temps d’exécution :
+
+- Le [fichier runtimeconfig.json](#runtimeconfigjson)
+
+- [Propriétés MSBuild](#msbuild-properties)
+
+- [Variables de l’environnement](#environment-variables)
+
+Certaines valeurs de configuration peuvent également être <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> définies programmatiquement en appelant la méthode.
+
+Les articles de cette section de la documentation sont organisés par catégorie, par exemple, [le débogage](debugging-profiling.md) et [la collecte des ordures](garbage-collector.md). Le cas échéant, les options de configuration sont affichées pour les fichiers *runtimeconfig.json,* les propriétés MSBuild, les variables de l’environnement et, pour les fichiers *app.config* de référence croisées pour les projets cadre .NET.
+
+## <a name="runtimeconfigjson"></a>runtimeconfig.json
+
+Lorsqu’un projet est [construit,](../tools/dotnet-build.md)un fichier *[appname].runtimeconfig.json* est généré dans l’annuaire de sortie. Si un fichier *runtimeconfig.template.json* existe dans le même dossier que le fichier de projet, toutes les options de configuration qu’il contient sont fusionnées dans le fichier *[appname].runtimeconfig.json.* Si vous construisez l’application vous-même, placez toutes les options de configuration dans le fichier *runtimeconfig.template.json.* Si vous êtes juste en cours d’exécution de l’application, les insérer directement dans le *fichier [appname].runtimeconfig.json.*
+
+> [!NOTE]
+> Le *fichier [appname].runtimeconfig.json* sera écrasé sur les builds suivants.
+
+Spécifier les options de configuration en temps d’exécution dans la section **configProperties** des fichiers *runtimeconfig.json.* Cette section a le formulaire:
 
 ```json
 "configProperties": {
@@ -48,9 +48,9 @@ Spécifiez les options de configuration au moment de l’exécution dans la sect
 }
 ```
 
-### <a name="example-appnameruntimeconfigjson-file"></a>Exemple de fichier [AppName]. runtimeconfig. JSON
+### <a name="example-appnameruntimeconfigjson-file"></a>Exemple [appname].runtimeconfig.json fichier
 
-Si vous placez les options dans le fichier JSON de sortie, imbriquez-les sous la propriété `runtimeOptions`.
+Si vous placez les options dans le fichier de `runtimeOptions` sortie JSON, entrez-les sous la propriété.
 
 ```json
 {
@@ -69,9 +69,9 @@ Si vous placez les options dans le fichier JSON de sortie, imbriquez-les sous la
 }
 ```
 
-### <a name="example-runtimeconfigtemplatejson-file"></a>Exemple de fichier runtimeconfig. template. JSON
+### <a name="example-runtimeconfigtemplatejson-file"></a>Exemple de fichier runtimeconfig.template.json
 
-Si vous placez les options dans le fichier JSON du modèle, omettez la propriété `runtimeOptions`.
+Si vous placez les options dans le fichier `runtimeOptions` JSON modèle, omettre la propriété.
 
 ```json
 {
@@ -85,9 +85,9 @@ Si vous placez les options dans le fichier JSON du modèle, omettez la propriét
 
 ## <a name="msbuild-properties"></a>MSBuild (propriétés)
 
-Certaines options de configuration au moment de l’exécution peuvent être définies à l’aide des propriétés MSBuild dans le fichier *. csproj* ou *. vbproj* des projets .net Core de type SDK. Les propriétés MSBuild sont prioritaires sur les options définies dans le fichier *runtimeconfig. template. JSON* . Elles remplacent également toutes les options que vous définissez dans le fichier *[AppName]. runtimeconfig. JSON* au moment de la génération.
+Certaines options de configuration en temps d’exécution peuvent être définies à l’aide de propriétés MSBuild dans le fichier *.csproj* ou *.vbproj* des projets .NET Core de style SDK. Les propriétés MSBuild ont préséance sur les options définies dans le fichier *runtimeconfig.template.json.* Ils surcrivent également toutes les options que vous définissez dans le *fichier [appname].runtimeconfig.json* au moment de la construction.
 
-Voici un exemple de fichier projet de type SDK avec des propriétés MSBuild pour la configuration du comportement au moment de l’exécution :
+Voici un exemple de fichier de projet de type SDK avec des propriétés MSBuild pour configurer le comportement en temps de course :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -106,15 +106,15 @@ Voici un exemple de fichier projet de type SDK avec des propriétés MSBuild pou
 </Project>
 ```
 
-Les propriétés MSBuild pour la configuration du comportement au moment de l’exécution sont indiquées dans les articles individuels pour chaque zone, par exemple, [garbage collection](garbage-collector.md).
+MsBuild propriétés pour configurer le comportement de temps de course sont notés dans les articles individuels pour chaque zone, par exemple, [la collecte des ordures](garbage-collector.md).
 
-## <a name="environment-variables"></a>Variables d’environnement
+## <a name="environment-variables"></a>Variables d'environnement
 
-Les variables d’environnement peuvent être utilisées pour fournir des informations de configuration au moment de l’exécution. Les boutons de configuration spécifiés en tant que variables d’environnement ont généralement le préfixe **COMPlus_** .
+Les variables de l’environnement peuvent être utilisées pour fournir des informations de configuration en temps de course. Les boutons de configuration spécifiés comme variables d’environnement ont généralement le préfixe **COMPlus_**.
 
-Vous pouvez définir des variables d’environnement à partir du panneau de configuration Windows, à partir de la ligne de commande ou par programme, en appelant la méthode <xref:System.Environment.SetEnvironmentVariable(System.String,System.String)?displayProperty=nameWithType> sur les systèmes Windows et UNIX.
+Vous pouvez définir les variables de l’environnement à partir du panneau <xref:System.Environment.SetEnvironmentVariable(System.String,System.String)?displayProperty=nameWithType> de contrôle Windows, à la ligne de commande, ou de manière programmatique en appelant la méthode sur les systèmes Windows et Unix.
 
-Les exemples suivants montrent comment définir une variable d’environnement sur la ligne de commande :
+Les exemples suivants montrent comment définir une variable d’environnement à la ligne de commande :
 
 ```shell
 # Windows

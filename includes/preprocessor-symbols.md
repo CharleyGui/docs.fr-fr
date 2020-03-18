@@ -1,10 +1,10 @@
 ---
 ms.custom: updateeachrelease
 ms.openlocfilehash: 64b544310698ea6f7697ed1997548c1cd3c38ff5
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74838210"
 ---
 | Versions cibles de .NET Framework | Symboles |

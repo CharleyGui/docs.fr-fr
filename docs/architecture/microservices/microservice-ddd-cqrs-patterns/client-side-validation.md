@@ -3,10 +3,10 @@ title: Validation côté client (validation dans les couches de présentation)
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer les concepts clés de la validation côté client.
 ms.date: 10/08/2018
 ms.openlocfilehash: 4e72dcafafc3144a75afe1fd23a4a779f5667459
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68674356"
 ---
 # <a name="client-side-validation-validation-in-the-presentation-layers"></a>Validation côté client (validation dans les couches de présentation)
@@ -35,15 +35,15 @@ L’implémentation de la validation côté client dépend du type d’applicati
 
 ### <a name="validation-in-aspnet-core-apps"></a>Validation dans les applications ASP.NET Core
 
-- **Rick Anderson. Ajout de la validation** \
+- **Rick Anderson. Ajout de validation** \
   <https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation>
 
 ### <a name="validation-in-spa-web-apps-angular-2-typescript-javascript"></a>Validation dans les applications web SPA (Angular 2, TypeScript, JavaScript)
 
-- **Ado Kukic. Validation des formulaires Angular 2** \
+- **Ado Kukic. Validation de formulaire angulaire 2** \
   <https://scotch.io/tutorials/angular-2-form-validation>
 
-- **Validation des formulaires** \
+- **Validation du formulaire** \
   <https://angular.io/guide/form-validation>
 
 - **Validation.** Documentation Breeze. \
@@ -60,5 +60,5 @@ En résumé, voici les concepts les plus importants en ce qui concerne la valida
 - Dans la plupart des cas, une validation redondante côté client est appropriée, car l’application peut être proactive.
 
 >[!div class="step-by-step"]
->[Précédent](domain-model-layer-validations.md)
->[Suivant](domain-events-design-implementation.md)
+>[Suivant précédent](domain-model-layer-validations.md)
+>[Next](domain-events-design-implementation.md)
