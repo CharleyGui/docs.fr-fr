@@ -1,9 +1,9 @@
 - name: Sérialisation
   href: index.md
   items:
-    - name: "Procédure\_: écrire des données d’objet dans un fichier\_XML"
+    - name: "Comment\_: écrire des données d'objet dans un fichier\_XML"
       href: how-to-write-object-data-to-an-xml-file.md
-    - name: "Procédure\_: lire des données d’objet à partir d’un fichier\_XML"
+    - name: "Comment\_: lire des données d’objet à partir d’un fichier XML"
       href: how-to-read-object-data-from-an-xml-file.md
-    - name: "Procédure pas à pas\_: persistance d’un objet"
+    - name: "Procédure pas à pas\_: persistance d'un objet"
       href: walkthrough-persisting-an-object-in-visual-studio.md

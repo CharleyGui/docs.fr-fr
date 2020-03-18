@@ -3,21 +3,21 @@ title: Refactorisation à l’aide d’une fonction pure (C#)
 ms.date: 07/20/2015
 ms.assetid: a3416a45-9e12-4e4a-9747-897f06eef510
 ms.openlocfilehash: f264a0028ed265a5a4fbe1dc32f430c648724c20
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70253077"
 ---
-# <a name="refactoring-using-a-pure-function-c"></a><span data-ttu-id="26117-102">Refactorisation à l’aide d’une fonction pure (C#)</span><span class="sxs-lookup"><span data-stu-id="26117-102">Refactoring Using a Pure Function (C#)</span></span>
-<span data-ttu-id="26117-103">L’exemple suivant refactorise l’exemple précédent, [Refactorisation à l’aide d’une méthode d’extension (C#)](./refactoring-using-an-extension-method.md), de façon à utiliser une fonction pure. Dans cet exemple, le code utilisé pour rechercher le texte d’un paragraphe est déplacé vers la méthode statique pure `ParagraphText`.</span><span class="sxs-lookup"><span data-stu-id="26117-103">The following example refactors the previous example, [Refactoring Using an Extension Method (C#)](./refactoring-using-an-extension-method.md), to use a pure function In this example, the code to find the text of a paragraph is moved to the pure static method `ParagraphText`.</span></span>  
+# <a name="refactoring-using-a-pure-function-c"></a><span data-ttu-id="34c5d-102">Refactorisation à l’aide d’une fonction pure (C#)</span><span class="sxs-lookup"><span data-stu-id="34c5d-102">Refactoring Using a Pure Function (C#)</span></span>
+<span data-ttu-id="34c5d-103">L’exemple suivant refactorise l’exemple précédent, [Refactorisation à l’aide d’une méthode d’extension (C#)](./refactoring-using-an-extension-method.md), de façon à utiliser une fonction pure. Dans cet exemple, le code utilisé pour rechercher le texte d’un paragraphe est déplacé vers la méthode statique pure `ParagraphText`.</span><span class="sxs-lookup"><span data-stu-id="34c5d-103">The following example refactors the previous example, [Refactoring Using an Extension Method (C#)](./refactoring-using-an-extension-method.md), to use a pure function In this example, the code to find the text of a paragraph is moved to the pure static method `ParagraphText`.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="26117-104">Exemples</span><span class="sxs-lookup"><span data-stu-id="26117-104">Example</span></span>  
- <span data-ttu-id="26117-105">Cet exemple traite un document WordprocessingML et récupère les nœuds de paragraphes à partir d'un document WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="26117-105">This example processes a WordprocessingML document, retrieving the paragraph nodes from a WordprocessingML document.</span></span> <span data-ttu-id="26117-106">Il identifie également le style de chaque paragraphe.</span><span class="sxs-lookup"><span data-stu-id="26117-106">It also identifies the style of each paragraph.</span></span> <span data-ttu-id="26117-107">Cet exemple se base sur les exemples précédents de ce didacticiel.</span><span class="sxs-lookup"><span data-stu-id="26117-107">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="26117-108">Dans le code ci-dessous, le code refactorisé figure dans des commentaires.</span><span class="sxs-lookup"><span data-stu-id="26117-108">The refactored code is called out in comments in the code below.</span></span>  
+## <a name="example"></a><span data-ttu-id="34c5d-104"> Exemple</span><span class="sxs-lookup"><span data-stu-id="34c5d-104">Example</span></span>  
+ <span data-ttu-id="34c5d-105">Cet exemple traite un document WordprocessingML et récupère les nœuds de paragraphes à partir d'un document WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="34c5d-105">This example processes a WordprocessingML document, retrieving the paragraph nodes from a WordprocessingML document.</span></span> <span data-ttu-id="34c5d-106">Il identifie également le style de chaque paragraphe.</span><span class="sxs-lookup"><span data-stu-id="34c5d-106">It also identifies the style of each paragraph.</span></span> <span data-ttu-id="34c5d-107">Cet exemple se base sur les exemples précédents de ce didacticiel.</span><span class="sxs-lookup"><span data-stu-id="34c5d-107">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="34c5d-108">Dans le code ci-dessous, le code refactorisé figure dans des commentaires.</span><span class="sxs-lookup"><span data-stu-id="34c5d-108">The refactored code is called out in comments in the code below.</span></span>  
   
- <span data-ttu-id="26117-109">Pour obtenir des instructions sur la création du document source utilisé dans cet exemple, consultez [Création du document Office Open XML source (C#)](./creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="26117-109">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (C#)](./creating-the-source-office-open-xml-document.md).</span></span>  
+ <span data-ttu-id="34c5d-109">Pour obtenir des instructions pour créer le document source utilisé dans cet exemple, consultez [Création du document Office Open XML source (C#)](./creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="34c5d-109">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (C#)](./creating-the-source-office-open-xml-document.md).</span></span>  
   
- <span data-ttu-id="26117-110">Cet exemple utilise des classes de l'assembly WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="26117-110">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="26117-111">Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="26117-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="34c5d-110">Cet exemple utilise des classes de l'assembly WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="34c5d-110">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="34c5d-111">Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="34c5d-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```csharp  
 public static class LocalExtensions  
@@ -154,7 +154,7 @@ class Program
 }  
 ```  
   
- <span data-ttu-id="26117-112">Cet exemple produit la même sortie qu'avant la refactorisation :</span><span class="sxs-lookup"><span data-stu-id="26117-112">This example produces the same output as before the refactoring:</span></span>  
+ <span data-ttu-id="34c5d-112">Cet exemple produit la même sortie qu'avant la refactorisation :</span><span class="sxs-lookup"><span data-stu-id="34c5d-112">This example produces the same output as before the refactoring:</span></span>  
   
 ```output  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -174,13 +174,13 @@ StyleName:Normal ><
 StyleName:Code >Hello World<  
 ```  
   
-### <a name="next-steps"></a><span data-ttu-id="26117-113">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="26117-113">Next Steps</span></span>  
- <span data-ttu-id="26117-114">L'exemple suivant montre comment projeter du code XML en une autre forme :</span><span class="sxs-lookup"><span data-stu-id="26117-114">The next example shows how to project XML into a different shape:</span></span>  
+### <a name="next-steps"></a><span data-ttu-id="34c5d-113">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="34c5d-113">Next Steps</span></span>  
+ <span data-ttu-id="34c5d-114">L'exemple suivant montre comment projeter du code XML en une autre forme :</span><span class="sxs-lookup"><span data-stu-id="34c5d-114">The next example shows how to project XML into a different shape:</span></span>  
   
-- [<span data-ttu-id="26117-115">Projection de code XML en une autre forme (C#)</span><span class="sxs-lookup"><span data-stu-id="26117-115">Projecting XML in a Different Shape (C#)</span></span>](./projecting-xml-in-a-different-shape.md)  
+- [<span data-ttu-id="34c5d-115">Projection de code XML en une autre forme (C#)</span><span class="sxs-lookup"><span data-stu-id="34c5d-115">Projecting XML in a Different Shape (C#)</span></span>](./projecting-xml-in-a-different-shape.md)  
   
-## <a name="see-also"></a><span data-ttu-id="26117-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="26117-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="34c5d-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="34c5d-116">See also</span></span>
 
-- [<span data-ttu-id="26117-117">Tutoriel : manipulation de contenu dans un document WordprocessingML (C#)</span><span class="sxs-lookup"><span data-stu-id="26117-117">Tutorial: Manipulating Content in a WordprocessingML Document (C#)</span></span>](./shape-of-wordprocessingml-documents.md)
-- [<span data-ttu-id="26117-118">Refactorisation à l’aide d’une méthode d’extension (C#)</span><span class="sxs-lookup"><span data-stu-id="26117-118">Refactoring Using an Extension Method (C#)</span></span>](./refactoring-using-an-extension-method.md)
-- [<span data-ttu-id="26117-119">Refactorisation dans des fonctions pures (C#)</span><span class="sxs-lookup"><span data-stu-id="26117-119">Refactoring Into Pure Functions (C#)</span></span>](./refactoring-into-pure-functions.md)
+- [<span data-ttu-id="34c5d-117">Didacticiel : manipulation de contenu dans un document WordprocessingML (C#)</span><span class="sxs-lookup"><span data-stu-id="34c5d-117">Tutorial: Manipulating Content in a WordprocessingML Document (C#)</span></span>](./shape-of-wordprocessingml-documents.md)
+- [<span data-ttu-id="34c5d-118">Refactorisation à l’aide d’une méthode d’extension (C#)</span><span class="sxs-lookup"><span data-stu-id="34c5d-118">Refactoring Using an Extension Method (C#)</span></span>](./refactoring-using-an-extension-method.md)
+- [<span data-ttu-id="34c5d-119">Refactorisation dans des fonctions pures (C#)</span><span class="sxs-lookup"><span data-stu-id="34c5d-119">Refactoring Into Pure Functions (C#)</span></span>](./refactoring-into-pure-functions.md)

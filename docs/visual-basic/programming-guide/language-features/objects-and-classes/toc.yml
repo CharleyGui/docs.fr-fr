@@ -1,23 +1,23 @@
 - name: Objets et classes
   href: index.md
   items:
-    - name: "Procédure pas à pas\_: Définition de classes"
+    - name: "Procédure pas à pas\_: définition de classes"
       href: walkthrough-defining-classes.md
     - name: Propriétés et méthodes surchargées
       href: overloaded-properties-and-methods.md
     - name: Éléments fondamentaux de l’héritage
       href: inheritance-basics.md
-    - name: "Durée de vie des objets\_: comment les objets sont créés et détruits"
+    - name: "Durée de vie d’un objet\_: création et destruction des objets"
       href: object-lifetime-how-objects-are-created-and-destroyed.md
-    - name: "Initialiseurs d’objets\_: types nommés et anonymes"
+    - name: "Initialiseurs d'objets\_: types nommés et anonymes"
       href: object-initializers-named-and-anonymous-types.md
       items:
-        - name: "Procédure\_: déclarer un objet à l’aide d’un initialiseur d’objet"
+        - name: "Comment\_: déclarer un objet à l'aide d'un initialiseur d'objet"
           href: how-to-declare-an-object-by-using-an-object-initializer.md
     - name: Types anonymes
       href: anonymous-types.md
       items:
-        - name: "Procédure\_: déduire les noms et types des propriétés dans les déclarations de types anonymes"
+        - name: "Comment\_: déduire les types et les noms de propriétés dans des déclarations de types anonymes"
           href: how-to-infer-property-names-and-types-in-anonymous-type-declarations.md
         - name: Définition du type anonyme
           href: anonymous-type-definition.md

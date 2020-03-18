@@ -3,22 +3,22 @@
   items:
     - name: Declared Element Names
       href: declared-element-names.md
-    - name: Caractéristiques des éléments déclarés
+    - name: Caractéristiques d'éléments déclarés
       href: declared-element-characteristics.md
       items:
         - name: Durée de vie
           href: lifetime.md
-        - name: Portée
+        - name: Étendue
           href: scope.md
           items:
-            - name: "Procédure\_: contrôler l’étendue d’une variable"
+            - name: "Comment\_: contrôler la portée d'une variable"
               href: how-to-control-the-scope-of-a-variable.md
             - name: Promotion de type
               href: type-promotion.md
         - name: Niveaux d’accès
           href: access-levels.md
           items:
-            - name: "Procédure\_: contrôler la disponibilité d’une variable"
+            - name: "Comment\_: contrôler la disponibilité d'une variable"
               href: how-to-control-the-availability-of-a-variable.md
         - name: References to Declared Elements
           href: references-to-declared-elements.md
@@ -27,9 +27,9 @@
           items:
             - name: Différences entre la copie shadow et la substitution
               href: differences-between-shadowing-and-overriding.md
-            - name: "Procédure\_: masquer une variable portant le même nom que votre variable"
+            - name: "Comment\_: masquer une variable portant le même nom que votre variable"
               href: how-to-hide-a-variable-with-the-same-name-as-your-variable.md
-            - name: "Procédure\_: masquer une variable héritée"
+            - name: "Comment\_: masquer une variable héritée"
               href: how-to-hide-an-inherited-variable.md
-            - name: "Procédure\_: accéder à une variable masquée par une classe dérivée"
+            - name: "Comment\_: accéder à une variable masquée par une classe dérivée"
               href: how-to-access-a-variable-hidden-by-a-derived-class.md

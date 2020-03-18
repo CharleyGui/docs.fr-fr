@@ -1,18 +1,18 @@
-- name: Événements
+- name: événements
   href: index.md
   items:
-    - name: "Procédure\_: déclencher et consommer des événements"
+    - name: "Comment\_: déclencher et utiliser des événements"
       href: how-to-raise-and-consume-events.md
-    - name: "Procédure\_: gérer plusieurs événements à l’aide de propriétés d’événements"
+    - name: "Comment\_: gérer plusieurs événements à l'aide des propriétés d'événements"
       href: how-to-handle-multiple-events-using-event-properties.md
-    - name: "Procédure\_: consommer des événements dans une application Web Forms"
+    - name: 'Comment : consommer des événements dans une application Web Forms'
       href: how-to-consume-events-in-a-web-forms-application.md
     - name: Modèle de design observateur
       href: observer-design-pattern.md
       items:
         - name: Meilleures pratiques du modèle de design observateur
           href: observer-design-pattern-best-practices.md
-        - name: "Procédure\_: implémenter un fournisseur"
+        - name: 'Comment : implémenter un fournisseur'
           href: how-to-implement-a-provider.md
-        - name: "Procédure\_: implémenter un observateur"
+        - name: 'Comment : implémenter une méthode Observer'
           href: how-to-implement-an-observer.md
