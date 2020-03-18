@@ -1,23 +1,23 @@
 ---
-title: Comment rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (C#)
+title: Comment trouver des éléments avec un attribut spécifique (XPath-LINQ à XML) (C)
 ms.date: 07/20/2015
 ms.assetid: daed00dd-923a-43be-8a90-eee406f6f574
 ms.openlocfilehash: e79cad3ad6fb0bf88e388b552f8e39327acfb4ad
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141042"
 ---
-# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-c"></a><span data-ttu-id="427ef-102">Comment rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="427ef-102">How to find elements with a specific attribute (XPath-LINQ to XML) (C#)</span></span>
-<span data-ttu-id="427ef-103">Parfois, vous souhaitez rechercher tous les éléments qui ont un attribut spécifique.</span><span class="sxs-lookup"><span data-stu-id="427ef-103">Sometimes you want to find all elements that have a specific attribute.</span></span> <span data-ttu-id="427ef-104">Vous ne vous souciez pas du contenu de l'attribut.</span><span class="sxs-lookup"><span data-stu-id="427ef-104">You are not concerned about the contents of the attribute.</span></span> <span data-ttu-id="427ef-105">Au lieu de cela, vous souhaitez sélectionner les éléments en fonction de l'existence de l'attribut.</span><span class="sxs-lookup"><span data-stu-id="427ef-105">Instead, you want to select based on the existence of the attribute.</span></span>  
+# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-c"></a><span data-ttu-id="10a7f-102">Comment trouver des éléments avec un attribut spécifique (XPath-LINQ à XML) (C)</span><span class="sxs-lookup"><span data-stu-id="10a7f-102">How to find elements with a specific attribute (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="10a7f-103">Parfois, vous souhaitez rechercher tous les éléments qui ont un attribut spécifique.</span><span class="sxs-lookup"><span data-stu-id="10a7f-103">Sometimes you want to find all elements that have a specific attribute.</span></span> <span data-ttu-id="10a7f-104">Vous ne vous souciez pas du contenu de l'attribut.</span><span class="sxs-lookup"><span data-stu-id="10a7f-104">You are not concerned about the contents of the attribute.</span></span> <span data-ttu-id="10a7f-105">Au lieu de cela, vous souhaitez sélectionner les éléments en fonction de l'existence de l'attribut.</span><span class="sxs-lookup"><span data-stu-id="10a7f-105">Instead, you want to select based on the existence of the attribute.</span></span>  
   
- <span data-ttu-id="427ef-106">L’expression XPath est la suivante :</span><span class="sxs-lookup"><span data-stu-id="427ef-106">The XPath expression is:</span></span>  
+ <span data-ttu-id="10a7f-106">L’expression XPath est la suivante :</span><span class="sxs-lookup"><span data-stu-id="10a7f-106">The XPath expression is:</span></span>  
   
  `./*[@Select]`  
   
-## <a name="example"></a><span data-ttu-id="427ef-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="427ef-107">Example</span></span>  
- <span data-ttu-id="427ef-108">Le code suivant sélectionne simplement les éléments qui ont l'attribut `Select`.</span><span class="sxs-lookup"><span data-stu-id="427ef-108">The following code selects just the elements that have the `Select` attribute.</span></span>  
+## <a name="example"></a><span data-ttu-id="10a7f-107"> Exemple</span><span class="sxs-lookup"><span data-stu-id="10a7f-107">Example</span></span>  
+ <span data-ttu-id="10a7f-108">Le code suivant sélectionne simplement les éléments qui ont l'attribut `Select`.</span><span class="sxs-lookup"><span data-stu-id="10a7f-108">The following code selects just the elements that have the `Select` attribute.</span></span>  
   
 ```csharp  
 XElement doc = XElement.Parse(  
@@ -48,7 +48,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- <span data-ttu-id="427ef-109">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="427ef-109">This example produces the following output:</span></span>  
+ <span data-ttu-id="10a7f-109">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="10a7f-109">This example produces the following output:</span></span>  
   
 ```output  
 Results are identical  

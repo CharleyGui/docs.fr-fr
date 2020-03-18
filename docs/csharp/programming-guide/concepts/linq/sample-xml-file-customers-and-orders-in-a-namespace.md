@@ -3,16 +3,16 @@ title: 'Exemple de fichier XML : Clients et commandes dans un espace de noms2'
 ms.date: 07/20/2015
 ms.assetid: 2da1c474-f658-4dca-a457-c35ef5ba4aff
 ms.openlocfilehash: 80bc052ecc62dfbd78f1dfdffac1925f8a03f31a
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "66483809"
 ---
-# <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a><span data-ttu-id="37269-102">Exemple de fichier XML : Clients et commandes dans un espace de noms</span><span class="sxs-lookup"><span data-stu-id="37269-102">Sample XML File: Customers and Orders in a Namespace</span></span>
-<span data-ttu-id="37269-103">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="37269-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="37269-104">Ce fichier contient des clients et des commandes.</span><span class="sxs-lookup"><span data-stu-id="37269-104">This file contains customers and orders.</span></span> <span data-ttu-id="37269-105">Le code XML se trouve dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="37269-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a><span data-ttu-id="97f73-102">Exemple de fichier XML : Clients et commandes dans un espace de noms</span><span class="sxs-lookup"><span data-stu-id="97f73-102">Sample XML File: Customers and Orders in a Namespace</span></span>
+<span data-ttu-id="97f73-103">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="97f73-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="97f73-104">Ce fichier contient des clients et des commandes.</span><span class="sxs-lookup"><span data-stu-id="97f73-104">This file contains customers and orders.</span></span> <span data-ttu-id="97f73-105">Le code XML se trouve dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="97f73-105">The XML is in a namespace.</span></span>  
   
-## <a name="customersordersinnamespacexml"></a><span data-ttu-id="37269-106">CustomersOrdersInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="37269-106">CustomersOrdersInNamespace.xml</span></span>  
+## <a name="customersordersinnamespacexml"></a><span data-ttu-id="97f73-106">CustomersOrdersInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="97f73-106">CustomersOrdersInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

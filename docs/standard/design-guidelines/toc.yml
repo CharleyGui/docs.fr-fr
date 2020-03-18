@@ -50,7 +50,7 @@
           href: event.md
         - name: Conception de champs
           href: field.md
-        - name: Méthodes d’extension
+        - name: méthodes d’extension.
           href: extension-methods.md
         - name: Surcharges d'opérateurs
           href: operator-overloads.md

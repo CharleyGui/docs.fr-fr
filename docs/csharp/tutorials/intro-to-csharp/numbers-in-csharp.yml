@@ -12,10 +12,10 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.openlocfilehash: 48268c6e839ae4f72aae0e872c837b153325b68b
-  ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 02/20/2020
+  ms.lasthandoff: 03/14/2020
   ms.locfileid: "77504013"
 items:
 - durationInMinutes: 1
@@ -24,7 +24,7 @@ items:
 - title: Explorer les mathématiques avec des entiers
   durationInMinutes: 4
   content: >
-    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **entrer le mode Focus** . Ensuite, tapez le bloc de code suivant dans la fenêtre interactive et sélectionnez **exécuter**:
+    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **De mode Focus Enter.** Ensuite, tapez le bloc de code suivant dans la fenêtre interactive et sélectionnez **Run**:
 
 
     ```csharp
@@ -40,7 +40,7 @@ items:
     ```
 
 
-    Si vous exécutez cette procédure sur votre environnement, vous devez suivre les instructions relatives à la [version locale](numbers-in-csharp-local.md) .
+    Si vous exécutez ceci sur votre environnement, vous devriez suivre les instructions pour la [version locale](numbers-in-csharp-local.md) à la place.
 
 
     Vous venez d’observer l’une des opérations mathématiques de base avec des entiers. Le type `int` représente un **entier**, qui peut être positif ou négatif. Vous utilisez le symbole `+` pour effectuer une addition. Les autres opérations mathématiques courantes avec des entiers sont les suivantes :
@@ -58,10 +58,10 @@ items:
     > Vous pouvez explorer le contenu de ce tutoriel interactif à votre rythme en modifiant le code que vous avez écrit dans la fenêtre interactive. Il fournit des exemples que vous pouvez mettre en pratique à chaque étape.
 
 
-    Commencez par explorer ces différentes opérations. Modifiez la troisième ligne pour tester chacune de ces opérations. Après chaque modification, cliquez sur le bouton **exécuter** .
+    Commencez par explorer ces différentes opérations. Modifiez la troisième ligne pour tester chacune de ces opérations. Après chaque modification, sélectionnez le bouton **Run.**
 
 
-    Soustraction :
+    Soustraction :
 
 
     ```csharp
@@ -71,7 +71,7 @@ items:
     ```
 
 
-    Multiplication :
+    Multiplication :
 
 
     ```csharp
@@ -81,7 +81,7 @@ items:
     ```
 
 
-    Division :
+    Division :
 
 
     ```csharp
@@ -181,7 +181,7 @@ items:
     ```
 
 
-    Sélectionnez **exécuter** à nouveau pour afficher les résultats.
+    Sélectionnez **Exécuter** à nouveau pour voir les résultats.
 
 
     > [!NOTE]
@@ -192,7 +192,7 @@ items:
   content: >
     Ce dernier exemple a montré que la division d’entiers tronque le résultat.
 
-    Vous pouvez récupérer le **reste** à l’aide de l’opérateur de **reste** , le caractère `%` :
+    Vous pouvez obtenir le **reste** en `%` utilisant le **reste** de l’opérateur, le personnage:
 
 
     ```csharp
@@ -256,7 +256,7 @@ items:
 - title: Utiliser le type double
   durationInMinutes: 5
   content: >
-    Le type numérique `double` représente un nombre à virgule flottante double précision. Ces termes vous sont peut-être inconnus. Un nombre **à virgule flottante** est utile pour représenter de très grands ou petits nombres non intégraux. La **double précision** signifie que ces nombres sont stockés avec une précision supérieure à la **simple précision**. Sur les ordinateurs modernes, les nombres double précision sont généralement plus utilisés que les nombres simple précision.
+    Le type numérique `double` représente un nombre à virgule flottante double précision. Ces termes vous sont peut-être inconnus. Un nombre **de points flottants** est utile pour représenter des nombres non intégrals qui peuvent être de très grande ou de faible ampleur. La **double précision** signifie que ces nombres sont stockés avec une précision supérieure à la **simple précision**. Sur les ordinateurs modernes, les nombres double précision sont généralement plus utilisés que les nombres simple précision.
 
     Explorons ce type double. Exécutez le code suivant dans la fenêtre interactive et observez le résultat :
 
@@ -414,8 +414,8 @@ items:
     > [!NOTE]
 
     > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-- content: >
-    Vous avez terminé le tutoriel interactif « Nombres en C# ». Vous pouvez sélectionner le lien **branches et boucles** ci-dessous pour démarrer le didacticiel interactif suivant, ou vous pouvez visiter le [site .net](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .net Core, créer un projet sur votre ordinateur et conserver le codage. La section « étapes suivantes » vous ramène à ces didacticiels.
+- content: >-
+    Vous avez terminé le tutoriel interactif « Nombres en C# ». Vous pouvez sélectionner le lien **Branches et Boucles** ci-dessous pour démarrer le prochain tutoriel interactif, ou vous pouvez visiter le site [.NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le .NET Core SDK, créer un projet sur votre machine, et continuer à coder. La section "Prochaines étapes" vous ramène à ces tutoriels.
 
 
     Pour en savoir plus sur les nombres en C#, consultez les rubriques suivantes :

@@ -8,7 +8,7 @@
     - name: Initialisation tardive
       href: lazy-initialization.md
       items:
-        - name: "Procédure\_: Effectuer une initialisation tardive d’objets"
+        - name: "Comment\_: effectuer une initialisation tardive d'objets"
           href: how-to-perform-lazy-initialization-of-objects.md
     - name: "Événements ETW dans le\_.NET Framework"
       href: etw-events.md

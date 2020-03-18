@@ -161,7 +161,7 @@
           href: language-reference/members/methods.md
         - name: Constructeurs
           href: language-reference/members/constructors.md
-        - name: Événements
+        - name: événements
           href: language-reference/members/events.md
         - name: "Champs explicites\_: mot clé `val`"
           href: language-reference/members/explicit-fields-the-val-keyword.md
@@ -183,7 +183,7 @@
       href: language-reference/access-control.md
     - name: "Expressions conditionnelles\_: if...then...else"
       href: language-reference/conditional-expressions-if-then-else.md
-    - name: Expressions de correspondance
+    - name: Expressions match
       href: language-reference/match-expressions.md
     - name: Critères spéciaux
       href: language-reference/pattern-matching.md
@@ -214,13 +214,13 @@
           href: language-reference/exception-handling/the-invalidArg-function.md
     - name: Attributs
       href: language-reference/attributes.md
-    - name: "Gestion des ressources\_: mot clé use"
+    - name: "Gestion des ressources\_: mot clé «\_use\_»"
       href: language-reference/resource-management-the-use-keyword.md
     - name: Espaces de noms
       href: language-reference/namespaces.md
     - name: Modules
       href: language-reference/modules.md
-    - name: "Déclarations d’importation\_: mot clé open"
+    - name: "Déclarations d'importation\_: mot clé open"
       href: language-reference/import-declarations-the-open-keyword.md
     - name: Fichiers de signature
       href: language-reference/signature-files.md
