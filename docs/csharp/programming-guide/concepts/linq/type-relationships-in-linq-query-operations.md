@@ -13,21 +13,21 @@ helpviewer_keywords:
 - LINQ [C#], type relationships
 ms.assetid: 99118938-d47c-4d7e-bb22-2657a9f95268
 ms.openlocfilehash: 41853e6858fae9e8d449aeed95a6a84f343d5874
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75635611"
 ---
 # <a name="type-relationships-in-linq-query-operations-c"></a>Relations des types dans des opérations de requête LINQ (C#)
-Pour écrire efficacement des requêtes, vous devez comprendre comment les types des variables dans une opération de requête complète sont liés les uns aux autres. Si vous comprenez ces relations, vous comprendrez plus facilement les exemples LINQ et les exemples de code dans la documentation. En outre, vous comprendrez ce qui se passe en arrière-plan lorsque des variables sont implicitement typées à l’aide de `var`.  
+Pour écrire efficacement des requêtes, vous devez comprendre comment les types des variables dans une opération de requête complète sont liés les uns aux autres. Si vous comprenez ces relations, vous comprendrez plus facilement les échantillons et les exemples de code linQ dans la documentation. En outre, vous comprendrez ce qui se passe en arrière-plan lorsque des variables sont implicitement typées à l’aide de `var`.  
   
- Les opérations de requête LINQ sont fortement typées dans la source de données, dans la requête elle-même et dans l’exécution de la requête. Le type des variables dans la requête doit être compatible avec le type des éléments dans la source de données, ainsi qu’avec le type de la variable d’itération dans l’instruction `foreach`. Ce typage fort garantit l’interception des erreurs de type au moment de la compilation lorsqu’elles peuvent être corrigées avant que les utilisateurs ne les rencontrent.  
+ Les opérations de requête linQ sont fortement tapées dans la source de données, dans la requête elle-même et dans l’exécution de la requête. Le type des variables dans la requête doit être compatible avec le type des éléments dans la source de données, ainsi qu’avec le type de la variable d’itération dans l’instruction `foreach`. Ce typage fort garantit l’interception des erreurs de type au moment de la compilation lorsqu’elles peuvent être corrigées avant que les utilisateurs ne les rencontrent.  
   
  Pour illustrer ces relations de types, la plupart des exemples qui suivent utilisent le typage explicite pour toutes les variables. Le dernier exemple montre comment les mêmes principes s’appliquent même si vous utilisez le typage implicite à l’aide de [var](../../../language-reference/keywords/var.md).  
   
 ## <a name="queries-that-do-not-transform-the-source-data"></a>Requêtes qui ne transforment pas les données sources  
- L’illustration suivante montre une opération de requête LINQ to Objects qui n’exécute aucune transformation sur les données. La source contient une séquence de chaînes et le résultat de la requête est également une séquence de chaînes.  
+ L’illustration suivante montre une opération de requête LINQ to Objects qui n’effectue aucune transformation sur les données. La source contient une séquence de chaînes et le résultat de la requête est également une séquence de chaînes.  
   
  ![Diagramme illustrant la relation entre les types de données dans une requête LINQ.](./media/type-relationships-in-linq-query-operations/linq-query-data-type-relation.png)  
   

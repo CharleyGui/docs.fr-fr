@@ -2,12 +2,12 @@
 title: Quand choisir .NET Core pour les conteneurs Docker
 description: Architecture de microservices .NET pour les applications .NET en conteneur | Quand choisir .NET Core pour les conteneurs Docker
 ms.date: 01/30/2020
-ms.openlocfilehash: b3cb1eefe739b4ffdbbdd0bdcb3c74b51862704b
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: f784512af3f520f96d499ab002eda58071b3c284
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77501845"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79147373"
 ---
 # <a name="when-to-choose-net-core-for-docker-containers"></a>Quand choisir .NET Core pour les conteneurs Docker
 
@@ -27,9 +27,9 @@ Il va de soi que si votre objectif est de disposer d’une application (applicat
 
 [Visual Studio pour Mac](https://www.visualstudio.com/vs/visual-studio-mac/) est un IDE, une évolution de Xamarin Studio, qui s’exécute sur macOS et prend en charge le développement d’applications Docker. Ce choix est recommandé pour les développeurs qui travaillent sur des ordinateurs Mac et qui veulent utiliser un IDE puissant.
 
-Vous pouvez également utiliser [Visual Studio code](https://code.visualstudio.com/) sur MacOS, Linux et Windows. Visual Studio Code prend entièrement en charge .NET Core, notamment IntelliSense et le débogage. Étant donné que VS Code est un éditeur léger, vous pouvez l’utiliser pour développer des applications en conteneur sur le Mac conjointement avec l’interface CLI et le [CLI .net Core](../../../core/tools/index.md). Vous pouvez aussi cibler .NET Core avec la plupart des éditeurs tiers comme Sublime, Emacs, vi et le projet open source OmniSharp, qui assure aussi une prise en charge d’IntelliSense.
+Vous pouvez également utiliser [Visual Studio Code](https://code.visualstudio.com/) sur macOS, Linux et Windows. Visual Studio Code prend en charge entièrement .NET Core, y compris IntelliSense et débogage. Parce que VS Code est un éditeur léger, vous pouvez l’utiliser pour développer des applications conteneurisées sur le Mac en conjonction avec le Docker CLI et le [CLI .NET Core](../../../core/tools/index.md). Vous pouvez aussi cibler .NET Core avec la plupart des éditeurs tiers comme Sublime, Emacs, vi et le projet open source OmniSharp, qui assure aussi une prise en charge d’IntelliSense.
 
-Outre les IDE et les éditeurs, vous pouvez utiliser le [CLI .net Core](../../../core/tools/index.md) pour toutes les plateformes prises en charge.
+En plus des IDE et des éditeurs, vous pouvez utiliser le [CLI .NET Core](../../../core/tools/index.md) pour toutes les plates-formes prises en charge.
 
 ## <a name="using-containers-for-new-green-field-projects"></a>Utilisation de conteneurs pour les nouveaux projets (« green-field »)
 
@@ -37,9 +37,9 @@ Les conteneurs sont couramment utilisés avec une architecture de microservices,
 
 ## <a name="create-and-deploy-microservices-on-containers"></a>Créer et déployer des microservices sur des conteneurs
 
-Vous pouvez utiliser le .NET Framework classique pour créer des applications basées sur des microservices (sans conteneurs) en suivant des processus ordinaires. De cette façon, comme .NET Framework est déjà installé et partagé entre les processus, ceux-ci démarrent rapidement du fait de leur légèreté. En revanche, si vous utilisez des conteneurs, l’image pour le .NET Framework classique est aussi basée sur Windows Server Core, ce qui la rend trop lourde pour une approche de microservices dans des conteneurs. Toutefois, les équipes cherchent des opportunités pour améliorer l’expérience des utilisateurs .NET Framework. Récemment, la taille des [images de conteneur Windows Server Core a été réduite à > 40% de moins](https://devblogs.microsoft.com/dotnet/we-made-windows-server-core-container-images-40-smaller). 
+Vous pouvez utiliser le .NET Framework classique pour créer des applications basées sur des microservices (sans conteneurs) en suivant des processus ordinaires. De cette façon, comme .NET Framework est déjà installé et partagé entre les processus, ceux-ci démarrent rapidement du fait de leur légèreté. En revanche, si vous utilisez des conteneurs, l’image pour le .NET Framework classique est aussi basée sur Windows Server Core, ce qui la rend trop lourde pour une approche de microservices dans des conteneurs. Cependant, les équipes ont été à la recherche d’opportunités pour améliorer l’expérience pour les utilisateurs du Cadre .NET ainsi. Récemment, la taille des [images de conteneurs Windows Server Core ont été réduites à >40% plus petit](https://devblogs.microsoft.com/dotnet/we-made-windows-server-core-container-images-40-smaller).
 
-D’un autre côté, .NET Core est le meilleur candidat si vous utilisez un système orienté microservices basé sur des conteneurs, car .NET Core est léger. En outre, les images de conteneur associées, pour Linux ou Windows nano Server, sont légères et petites, ce qui rend les conteneurs clairs et rapides à démarrer.
+D’autre part, .NET Core est le meilleur candidat si vous adoptez un système axé sur les microservices qui est basé sur des conteneurs, parce que .NET Core est léger. En outre, ses images de conteneurs connexes, pour Linux ou Windows Nano Server, sont maigres et petits, ce qui rend les conteneurs légers et rapides à démarrer.
 
 Un microservice doit être le petit possible de façon à être léger pendant son exécution, à offrir un faible encombrement, à présenter un contexte limité réduit (voir DDD, [Conception pilotée par le modèle](https://en.wikipedia.org/wiki/Domain-driven_design)), à ne pas être une source de problèmes et à démarrer et à s’arrêter rapidement. Pour remplir ces conditions, vous devez utiliser des images de conteneur petites et rapides à instancier à l’instar de l’image de conteneur .NET Core.
 
@@ -52,5 +52,5 @@ Quand votre système basé sur des conteneurs a besoin d’une densité, d’une
 Cela est particulièrement intéressant pour les architectures de microservices dans lesquelles plusieurs centaines de microservices (conteneurs) peuvent s’exécuter simultanément. Avec des images ASP.NET Core (basées sur le runtime .NET Core) sur Linux ou Windows Nano, vous pouvez exécuter votre système avec beaucoup moins de serveurs ou de machines virtuelles, ce qui en fin de compte vous permet de réaliser des économies en infrastructure et hébergement.
 
 >[!div class="step-by-step"]
->[Précédent](general-guidance.md)
->[Suivant](net-framework-container-scenarios.md)
+>[Suivant précédent](general-guidance.md)
+>[Next](net-framework-container-scenarios.md)

@@ -6,10 +6,10 @@ helpviewer_keywords:
 - parameters [C#], reference
 ms.assetid: 9e6eb65c-942e-48ab-920a-b7ba9df4ea20
 ms.openlocfilehash: 6fa0e60fafabaa9fb04cdc5d5bf3f9e29490e84f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75714718"
 ---
 # <a name="passing-reference-type-parameters-c-programming-guide"></a>Passage de paramètres de type référence (Guide de programmation C#)
@@ -41,8 +41,8 @@ Une variable d’un [type référence](../../language-reference/keywords/referen
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [Passage de paramètres](./passing-parameters.md)
+- [Paramètres de passage](./passing-parameters.md)
 - [ref](../../language-reference/keywords/ref.md)
-- [in](../../language-reference/keywords/in-parameter-modifier.md)
+- [Dans](../../language-reference/keywords/in-parameter-modifier.md)
 - [out](../../language-reference/keywords/out.md)
-- [Types référence](../../language-reference/keywords/reference-types.md)
+- [Types de référence](../../language-reference/keywords/reference-types.md)

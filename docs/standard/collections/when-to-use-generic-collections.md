@@ -7,10 +7,10 @@ helpviewer_keywords:
 - generic collections [.NET Framework]
 ms.assetid: e7b868b1-11fe-4ac5-bed3-de68aca47739
 ms.openlocfilehash: 7d59259c1cab6842ef62888bf5326225394d8d44
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75711205"
 ---
 # <a name="when-to-use-generic-collections"></a>Quand utiliser les collections génériques
@@ -31,7 +31,7 @@ L'utilisation de collections génériques est généralement recommandée, car e
 - Les classes génériques <xref:System.Collections.Generic.Queue%601>, <xref:System.Collections.Concurrent.ConcurrentQueue%601>, <xref:System.Collections.Generic.Stack%601>, <xref:System.Collections.Concurrent.ConcurrentStack%601>et <xref:System.Collections.Generic.SortedList%602> correspondent aux classes non génériques qui portent le même nom.  
   
 ## <a name="additional-types"></a>Autres types  
- Plusieurs types de collections génériques n'ont pas d'équivalents non génériques. Il s'agit des dossiers suivants :  
+ Plusieurs types de collections génériques n'ont pas d'équivalents non génériques. Les voici :  
   
 - <xref:System.Collections.Generic.LinkedList%601> est une liste liée à usage général qui fournit des opérations d'insertion et de suppression O(1).  
   

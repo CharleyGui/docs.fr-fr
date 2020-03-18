@@ -4,18 +4,18 @@ description: En savoir plus sur les techniques de génération d’arborescences
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
-ms.openlocfilehash: 45628b00633c8d6ff51dbd5f5dbdda7ca25dd7c4
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c93eb16ebf2ff66dc0162afb6841f2cadfce174e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037095"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146045"
 ---
 # <a name="building-expression-trees"></a>Génération d’arborescences d’expressions
 
 [Précédent -- Interprétation d’expressions](expression-trees-interpreting.md)
 
-Toutes les arborescences d’expressions que vous avez vues jusqu’ici ont été créées par le compilateur C#. Tout ce que vous aviez à faire était de créer une expression lambda qui était assignée à une variable de type `Expression<Func<T>>` ou d’un type similaire. Ce n’est pas la seule façon de créer une arborescence d’expressions. Dans de nombreux scénarios, vous constaterez peut-être que vous devez générer une expression en mémoire au moment de l’exécution. 
+Toutes les arborescences d’expressions que vous avez vues jusqu’ici ont été créées par le compilateur C#. Tout ce que vous aviez à faire était de créer une expression lambda qui était assignée à une variable de type `Expression<Func<T>>` ou d’un type similaire. Ce n’est pas la seule façon de créer une arborescence d’expressions. Dans de nombreux scénarios, vous constaterez peut-être que vous devez générer une expression en mémoire au moment de l’exécution.
 
 La génération d’arborescences d’expressions est compliquée par le fait qu’elles sont immuables. Cela signifie que vous devez générer l’arborescence à partir des feuilles jusqu’à la racine. Les API que vous utiliserez pour générer des arborescences d’expressions reflètent cet état de fait : les méthodes que vous utiliserez pour générer un nœud prennent tous ses enfants en tant qu’arguments. Examinons quelques exemples illustrant les techniques à appliquer.
 
@@ -71,7 +71,7 @@ Commençons par générer une arborescence d’expressions pour créer cette exp
 Expression<Func<double, double, double>> distanceCalc =
     (x, y) => Math.Sqrt(x * x + y * y);
 ```
- 
+
 Nous allons commencer par créer des expressions de paramètre pour `x` et `y` :
 
 ```csharp
@@ -111,7 +111,7 @@ Ensuite, vous devez utiliser un sous-ensemble des API de réflexion pour créer 
 
 ## <a name="building-code-in-depth"></a>Code de génération en profondeur
 
-Vous n’êtes pas limité dans ce que vous pouvez générer à l’aide de ces API. Toutefois, plus l’arborescence d’expressions que vous souhaitez générer est compliquée, plus le code est difficile à gérer et à lire. 
+Vous n’êtes pas limité dans ce que vous pouvez générer à l’aide de ces API. Toutefois, plus l’arborescence d’expressions que vous souhaitez générer est compliquée, plus le code est difficile à gérer et à lire.
 
 Nous allons générer une arborescence d’expressions qui est l’équivalent de ce code :
 
@@ -128,7 +128,7 @@ Func<int, int> factorialFunc = (n) =>
 };
 ```
 
-Vous remarquerez ci-dessus que je n’ai pas généré l’arborescence d’expressions, mais simplement le délégué. À l’aide de la classe `Expression`, vous ne pouvez pas créer de lambda-instructions. Voici le code nécessaire pour générer la même fonctionnalité. Il est compliqué par le fait qu’il n’existe pas d’API pour générer une boucle `while`. Au lieu de cela, vous devez générer une boucle qui contient un test conditionnel, et une cible d’étiquette pour quitter la boucle. 
+Vous remarquerez ci-dessus que je n’ai pas généré l’arborescence d’expressions, mais simplement le délégué. À l’aide de la classe `Expression`, vous ne pouvez pas créer de lambda-instructions. Voici le code nécessaire pour générer la même fonctionnalité. Il est compliqué par le fait qu’il n’existe pas d’API pour générer une boucle `while`. Au lieu de cela, vous devez générer une boucle qui contient un test conditionnel, et une cible d’étiquette pour quitter la boucle.
 
 ```csharp
 var nArgument = Expression.Parameter(typeof(int), "n");
@@ -162,13 +162,13 @@ BlockExpression body = Expression.Block(
 );
 ```
 
-Le code de génération de l’arborescence d’expressions pour la fonction factorielle est un peu plus long, plus compliqué et truffé d’étiquettes, d’instructions break et d’autres éléments que nous souhaitons éviter lors de nos tâches quotidiennes de codage. 
+Le code de génération de l’arborescence d’expressions pour la fonction factorielle est un peu plus long, plus compliqué et truffé d’étiquettes, d’instructions break et d’autres éléments que nous souhaitons éviter lors de nos tâches quotidiennes de codage.
 
 Dans cette section, j’ai également mis à jour le code de visiteur pour visiter tous les nœuds de cette arborescence d’expressions et écrire des informations sur les nœuds créés dans cet exemple. Vous pouvez [afficher ou télécharger l’exemple de code](https://github.com/dotnet/samples/tree/master/csharp/expression-trees) à partir du dépôt GitHub dotnet/docs. Essayez par vous-même en créant et en exécutant les exemples. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ## <a name="examining-the-apis"></a>Examen des API
 
-Les API d’arborescence d’expressions comptent parmi les plus difficiles à parcourir dans .NET Core, mais ce n’est pas grave. Leur objectif est plutôt complexe : écrire du code qui génère du code au moment de l’exécution. Elles sont nécessairement compliquées afin de fournir un équilibre entre la prise en charge de toutes les structures de contrôle disponibles en langage C# et la taille de la surface d’exposition des API (qui doit être la plus petite possible). Cet équilibre signifie que de nombreuses structures de contrôle sont représentées non pas par leurs constructions C#, mais par des constructions qui représentent la logique sous-jacente générée par le compilateur à partir de ces constructions de niveau supérieur. 
+Les API d’arborescence d’expressions comptent parmi les plus difficiles à parcourir dans .NET Core, mais ce n’est pas grave. Leur objectif est plutôt complexe : écrire du code qui génère du code au moment de l’exécution. Elles sont nécessairement compliquées afin de fournir un équilibre entre la prise en charge de toutes les structures de contrôle disponibles en langage C# et la taille de la surface d’exposition des API (qui doit être la plus petite possible). Cet équilibre signifie que de nombreuses structures de contrôle sont représentées non pas par leurs constructions C#, mais par des constructions qui représentent la logique sous-jacente générée par le compilateur à partir de ces constructions de niveau supérieur.
 
 Il existe aussi actuellement des expressions C# qui ne peuvent pas être créées directement à l’aide de méthodes de classe `Expression`. En général, il s’agit des opérateurs et expressions les plus récents ajoutés dans C# 5 et C# 6. (Par exemple, les expressions `async` ne peuvent pas être générées et le nouvel opérateur `?.` ne peut pas être créé directement.)
 

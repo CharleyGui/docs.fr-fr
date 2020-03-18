@@ -5,11 +5,11 @@ ms.date: 07/22/2016
 ms.technology: dotnet-standard
 ms.assetid: d095b0b6-2454-4e23-80b4-c9e8a447116c
 ms.openlocfilehash: 8046cb744dccaf512208d517c243640820efce8e
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45685762"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "61945364"
 ---
 # <a name="automatic-memory-management-and-garbage-collection"></a>Gestion automatique de la mémoire et garbage collection
 
@@ -48,4 +48,4 @@ Pour la majorité des objets créés par votre application, vous pouvez laisser 
 ## <a name="see-also"></a>Voir aussi
 
 - [System.GC](xref:System.GC)
-- [Garbage collection dans .NET](index.md)
+- [Garbage collection dans le .NET](index.md)

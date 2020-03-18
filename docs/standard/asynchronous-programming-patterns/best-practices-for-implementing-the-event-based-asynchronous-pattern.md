@@ -13,10 +13,10 @@ helpviewer_keywords:
 - AsyncCompletedEventArgs class
 ms.assetid: 4acd2094-4f46-4eff-9190-92d0d9ff47db
 ms.openlocfilehash: 439b862612d7997c9277ffb2cf4f15b14bd0b106
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78156047"
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a>Meilleures pratiques pour implémenter le modèle asynchrone basé sur des événements
@@ -27,15 +27,15 @@ Le modèle asynchrone basé sur les événements vous permet d’exposer efficac
 ## <a name="required-behavioral-guarantees"></a>Garanties de comportement obligatoires  
  Si vous implémentez le modèle asynchrone basé sur les événements, vous devez fournir une série de garanties pour que votre classe se comporte correctement et que les clients de votre classe puissent s'appuyer sur ce comportement.  
   
-### <a name="completion"></a>Fin  
- Appelez toujours le gestionnaire d’événements <em>MethodName</em>**Completed** quand l’opération s’est terminée correctement, ou bien en cas d’erreur ou d’annulation. Les applications ne doivent jamais rencontrer de situation dans laquelle elles demeurent inactives sans jamais terminer l'opération en cours. L’exception à cette règle est si l’opération asynchrone elle-même est conçue de manière à ne jamais se terminer.  
+### <a name="completion"></a>Completion  
+ Invoquez toujours le gestionnaire d’événement <em>MethodName</em>**Completed** lorsque vous avez réussi à être terminé, à une erreur ou à une annulation. Les applications ne doivent jamais rencontrer de situation dans laquelle elles demeurent inactives sans jamais terminer l'opération en cours. L’exception à cette règle est si l’opération asynchrone elle-même est conçue de manière à ne jamais se terminer.  
   
 ### <a name="completed-event-and-eventargs"></a>Événement Completed et classe EventArgs  
- Pour chaque méthode <em>MethodName</em>**Async** distincte, appliquez les contraintes de conception suivantes :  
+ Pour chaque méthode <em>Distincte MethodName</em>**Async,** appliquez les exigences de conception suivantes :  
   
 - Définissez un événement <em>MethodName</em>**Completed** sur la même classe que la méthode.  
   
-- Définissez une classe <xref:System.EventArgs> et le délégué associé pour l’événement <em>MethodName</em>**Completed** qui dérive de la classe <xref:System.ComponentModel.AsyncCompletedEventArgs>. Le nom de classe par défaut doit être de la forme <em>NomMéthode</em>**CompletedEventArgs**.  
+- Définissez <xref:System.EventArgs> une classe et un délégué accompagnateur pour <xref:System.ComponentModel.AsyncCompletedEventArgs> l’événement <em>MethodName</em>**Completed** qui dérive de la classe. Le nom de classe par défaut doit être de la forme <em>NomMéthode</em>**CompletedEventArgs**.  
   
 - Vérifiez que la classe <xref:System.EventArgs> est spécifique des valeurs de retour de la méthode <em>nom_méthode</em>. Quand vous utilisez la classe <xref:System.EventArgs>, vous ne devez jamais obliger les développeurs à effectuer un transtypage du résultat.  
   
@@ -150,9 +150,9 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
 - <xref:System.ComponentModel.AsyncCompletedEventArgs>
 - <xref:System.ComponentModel.ProgressChangedEventArgs>
 - <xref:System.ComponentModel.BackgroundWorker>
-- [Implémentation du modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)
+- [Implémentation du modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)
 - [Modèle asynchrone basé sur les événements (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
 - [Choix du moment auquel implémenter le modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/deciding-when-to-implement-the-event-based-asynchronous-pattern.md)
-- [Meilleures pratiques pour implémenter le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
-- [Guide pratique : utiliser des composants qui prennent en charge le modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)
-- [Guide pratique pour implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)
+- [Meilleures pratiques pour implémenter le modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
+- [Comment : utiliser des composants qui prennent en charge le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)
+- [Comment : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)

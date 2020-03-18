@@ -6,10 +6,10 @@ ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
 ms.openlocfilehash: d4444b6d080afa92a4e7fd9f30c5f9358f02f0ef
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78159232"
 ---
 # <a name="framework-libraries"></a>Bibliothèques de framework
@@ -32,7 +32,7 @@ Les bibliothèques de classes de base fournissent les types les plus fondamentau
 * <xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/builtin-types/floating-point-numeric-types.md)) : Type virgule flottante 32 bits.
 * <xref:System.Decimal?displayProperty=nameWithType> ([decimal](../csharp/language-reference/builtin-types/floating-point-numeric-types.md)) : Type décimal 128 bits.
 * <xref:System.Byte?displayProperty=nameWithType> ([byte](../csharp/language-reference/builtin-types/integral-numeric-types.md)) : Entier non signé 8 bits qui représente un octet de mémoire.
-* <xref:System.Boolean?displayProperty=nameWithType> ([bool](../csharp/language-reference/builtin-types/bool.md)) : type booléen qui représente `true` ou `false`.
+* <xref:System.Boolean?displayProperty=nameWithType>([bool](../csharp/language-reference/builtin-types/bool.md)) - Un `true` type `false`Boolean qui représente ou .
 * <xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/builtin-types/char.md)) : Type numérique 16 bits qui représente un caractère Unicode.
 * <xref:System.String?displayProperty=nameWithType> ([string](../csharp/language-reference/builtin-types/reference-types.md#the-string-type)) : Représente une série de caractères. Différent de `char[]`, mais permet l’indexation dans chaque `char` individuel de `string`.
 

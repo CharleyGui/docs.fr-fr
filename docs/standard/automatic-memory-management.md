@@ -13,14 +13,14 @@ helpviewer_keywords:
 - runtime, automatic memory management
 ms.assetid: d4850de5-fa63-4936-a250-5678d118acba
 ms.openlocfilehash: 1038f16dca507e58005189c9558a9ec8dae4b34f
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78159700"
 ---
 # <a name="automatic-memory-management"></a>Automatic Memory Management
-La gestion automatique de la mémoire est un des services que le Common Language Runtime fournit au cours de [l'exécution managée](../../docs/standard/managed-execution-process.md). Le Garbage collector du Common Language Runtime gère l’allocation et la libération de mémoire pour une application. Les développeurs n’ont donc plus à écrire du code pour exécuter leurs tâches de gestion de mémoire lors du développement d’applications managées. La gestion automatique de la mémoire permet d'éliminer des problèmes fréquents tels que l'oubli de libération d'un objet ou les fuites de mémoire ou encore les tentatives d'accès à la mémoire à la recherche d'un objet qui a déjà été libéré. Cette section décrit la façon dont le « garbage collector » alloue et libère la mémoire.  
+La gestion automatique de la mémoire est l’un des services que le Common Language Runtime fournit pendant [l’exécution gérée](../../docs/standard/managed-execution-process.md). Le Garbage collector du Common Language Runtime gère l’allocation et la libération de mémoire pour une application. Les développeurs n’ont donc plus à écrire du code pour exécuter leurs tâches de gestion de mémoire lors du développement d’applications managées. La gestion automatique de la mémoire permet d'éliminer des problèmes fréquents tels que l'oubli de libération d'un objet ou les fuites de mémoire ou encore les tentatives d'accès à la mémoire à la recherche d'un objet qui a déjà été libéré. Cette section décrit la façon dont le « garbage collector » alloue et libère la mémoire.  
   
 ## <a name="allocating-memory"></a>Allocation de mémoire  
  Lorsque vous initialisez un nouveau processus, le runtime réserve une région d'espace d'adressage contigu pour le processus. Cet espace d'adressage est appelé le tas managé. Le tas managé garde un pointeur vers l'adresse qui sera allouée au nouvel objet du tas. À l’origine, ce pointeur indique l’adresse de base du tas managé. Tous les [types référence](../../docs/standard/base-types/common-type-system.md) sont alloués sur le tas managé. Lorsqu’une application crée le premier type référence, la mémoire est allouée pour le type à l’adresse de base du tas managé. Lorsque l'application crée l'objet suivant, le « garbage collector » lui alloue de la mémoire dans l'espace d'adressage qui suit immédiatement le premier objet. Aussi longtemps que de l'espace d'adressage est disponible, le « garbage collector » continue à allouer de l'espace pour de nouveaux objets selon la même procédure.  

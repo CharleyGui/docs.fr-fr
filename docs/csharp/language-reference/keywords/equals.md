@@ -8,17 +8,17 @@ helpviewer_keywords:
 - equals keyword [C#]
 ms.assetid: e981309a-e4bf-444c-8a2b-5c695e6114b1
 ms.openlocfilehash: fc190433b37b027a92d8e8338a35b06d5d1e1824
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713577"
 ---
 # <a name="equals-c-reference"></a>equals (Référence C#)
 
-Le mot clé contextuel `equals` est utilisé dans une clause `join` dans une expression de requête pour comparer les éléments de deux séquences. Pour plus d’informations, consultez [join, clause](join-clause.md).
+Le mot clé contextuel `equals` est utilisé dans une clause `join` dans une expression de requête pour comparer les éléments de deux séquences. Pour plus d’informations, voir [clause d’adhésion](join-clause.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant illustre l’utilisation du mot clé `equals` dans une clause `join`.
 
@@ -26,4 +26,4 @@ L’exemple suivant illustre l’utilisation du mot clé `equals` dans une claus
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ (Language Integrated Query)](../../linq/index.md)
+- [Requête intégrée linguistique (LINQ)](../../linq/index.md)

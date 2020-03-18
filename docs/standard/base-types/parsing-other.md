@@ -14,10 +14,10 @@ helpviewer_keywords:
 - Boolean data type, parsing strings
 ms.assetid: d139bc00-3c4e-4d78-ac9a-5c951b258d28
 ms.openlocfilehash: 08e891501bbefcf8b32eff10dd7294af9d81adac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73127570"
 ---
 # <a name="parsing-other-strings-in-net"></a>Analyse d’autres chaînes dans .NET
@@ -30,7 +30,7 @@ Outre des chaînes numériques et <xref:System.DateTime>, vous pouvez analyser d
  [!code-csharp[Conceptual.String.Parse#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.parse/cs/parse.cs#2)]
  [!code-vb[Conceptual.String.Parse#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.parse/vb/parse.vb#2)]  
   
-## <a name="boolean"></a>Booléen  
+## <a name="boolean"></a>Boolean  
  Le type de données **Boolean** contient une méthode **Parse** que vous pouvez utiliser pour convertir une chaîne représentant une valeur Boolean en type **Boolean** réel. Cette méthode ne respecte pas la casse et peut analyser une chaîne contenant « True » ou « False ». La méthode **Parse** associée au type **Boolean** peut aussi analyser des chaînes entourées d’espaces blancs. Si une autre chaîne est passée, une exception <xref:System.FormatException> est levée.  
   
  L’exemple de code suivant utilise la méthode **Parse** pour convertir une chaîne en valeur Boolean.  
@@ -50,6 +50,6 @@ Outre des chaînes numériques et <xref:System.DateTime>, vous pouvez analyser d
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Analyse de chaînes](../../../docs/standard/base-types/parsing-strings.md)
+- [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)
 - [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
 - [Conversion de type dans .NET](../../../docs/standard/base-types/type-conversion.md)

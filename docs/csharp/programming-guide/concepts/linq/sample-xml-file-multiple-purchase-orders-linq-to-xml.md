@@ -2,12 +2,12 @@
 title: 'Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 2d29fcaa-60df-43d4-8ccc-6cdba7c013e9
-ms.openlocfilehash: 1a2bfd64470fb52588d02fcfda5f89301e8d400a
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.openlocfilehash: d73887308c07b161887716ccf2194eeb3918ff51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66483689"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168139"
 ---
 # <a name="sample-xml-file-multiple-purchase-orders-linq-to-xml"></a>Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)
 Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Ce fichier contient plusieurs commandes fournisseur.  
@@ -108,4 +108,3 @@ Le fichier XML suivant est utilisé dans différents exemples dans la documentat
   </PurchaseOrder>  
 </PurchaseOrders>  
 ```  
- 

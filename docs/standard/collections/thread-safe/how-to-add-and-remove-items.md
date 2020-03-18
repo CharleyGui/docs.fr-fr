@@ -9,10 +9,10 @@ helpviewer_keywords:
 - thread-safe collections, concurrent dictionary
 ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
 ms.openlocfilehash: dc4d13e09a91633fac1fcf5bd8ab5b043473bd7d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75711309"
 ---
 # <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Guide pratique : ajouter et supprimer des éléments d'un ConcurrentDictionary
@@ -26,7 +26,7 @@ Cet exemple montre comment ajouter, extraire, mettre à jour et supprimer des é
 |<xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A>|Vous voulez récupérer la valeur existante d’une clé spécifiée et, si la clé n’existe pas, vous voulez spécifier une paire clé/valeur.|  
 |<xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryAdd%2A>, <xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryGetValue%2A> , <xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryUpdate%2A> , <xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryRemove%2A>|Vous voulez ajouter, obtenir, mettre à jour ou supprimer une paire clé/valeur, et, si la clé existe déjà ou si la tentative échoue pour une autre raison, vous voulez prendre une autre mesure.|  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant utilise deux instances de<xref:System.Threading.Tasks.Task> pour ajouter des éléments à un <xref:System.Collections.Concurrent.ConcurrentDictionary%602> simultanément, puis sort tout le contenu pour montrer que les éléments ont été ajoutés avec succès. L’exemple montre également comment utiliser les méthodes <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>, <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> et <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> pour ajouter, mettre à jour et récupérer des éléments de la collection.  
   
  [!code-csharp[CDS#16](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds_dictionaryhowto.cs#16)]
@@ -49,4 +49,4 @@ Cet exemple montre comment ajouter, extraire, mettre à jour et supprimer des é
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Collections.Concurrent?displayProperty=nameWithType>
-- [Collections thread-safe](../../../../docs/standard/collections/thread-safe/index.md)
+- [Thread-Safe Collections](../../../../docs/standard/collections/thread-safe/index.md)

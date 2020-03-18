@@ -19,15 +19,15 @@ helpviewer_keywords:
 - strings [.NET Framework],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
 ms.openlocfilehash: c88776ea9d8ba17d86767b704e8b0eaff5b6cb89
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75711478"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Bonnes pratiques pour l’utilisation de chaînes dans .NET
 
-.NET offre une prise en charge complète du développement d’applications localisées et globalisées, et facilite l’application des conventions de la culture actuelle ou d’une culture spécifique lors de l’exécution d’opérations courantes telles que le tri et l’affichage de chaînes. Toutefois, le tri ou la comparaison de chaînes n'est pas toujours une opération dépendante de la culture. Par exemple, les chaînes utilisées en interne par une application doivent généralement être gérées de la même manière dans toutes les cultures. Quand des données de type chaîne culturellement indépendantes, telles que des étiquettes XML, des étiquettes HTML, des noms d’utilisateurs, des chemins d’accès aux fichiers et des noms d’objets système, sont interprétées comme si elles étaient dépendantes de la culture, le code d’application peut faire l’objet de bogues subtils, de performances médiocres et, dans certains cas, de problèmes de sécurité.
+.NET offre une prise en charge complète du développement d’applications localisées et globalisées, et facilite l’application des conventions de la culture actuelle ou d’une culture spécifique lors de l’exécution d’opérations courantes telles que le tri et l’affichage de chaînes. Toutefois, le tri ou la comparaison de chaînes n'est pas toujours une opération dépendante de la culture. Par exemple, les chaînes utilisées en interne par une application doivent généralement être gérées de la même manière dans toutes les cultures. Quand des données de type chaîne culturellement indépendantes, telles que des balises XML, des balises HTML, des noms d'utilisateurs, des chemins d'accès aux fichiers et des noms d'objets système, sont interprétées comme si elles étaient dépendantes de la culture, le code d'application peut faire l'objet de bogues subtils, de performances médiocres et, dans certains cas, de problèmes de sécurité.
 
 Cette rubrique examine les méthodes de tri, de comparaison et d’application de la casse pour les chaînes dans .NET, présente des recommandations pour sélectionner une méthode appropriée de gestion des chaînes et fournit des informations supplémentaires sur les méthodes de gestion des chaînes. Elle décrit également comment les données mises en forme, telles que les données numériques et les données de date et d'heure, sont traitées pour l'affichage et pour le stockage.
 
@@ -131,12 +131,12 @@ Cette comparaison peut provoquer de sérieux problèmes si la culture est utilis
 [!code-csharp[Conceptual.Strings.BestPractices#12](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/turkish1.cs#12)]
 [!code-vb[Conceptual.Strings.BestPractices#12](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/turkish1.vb#12)]
 
-Dans ce cas, étant donné que « file : » est destiné à être interprété comme un identificateur non linguistique et indépendant de la culture, le code doit plutôt être écrit comme indiqué dans l’exemple suivant :
+Dans ce cas, parce que le « fichier : » est censé être interprété comme un identificateur non linguistique et insensible à la culture, le code doit plutôt être écrit comme indiqué dans l’exemple suivant :
 
 [!code-csharp[Conceptual.Strings.BestPractices#13](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/turkish1.cs#13)]
 [!code-vb[Conceptual.Strings.BestPractices#13](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/turkish1.vb#13)]
 
-### <a name="ordinal-string-operations"></a>Opérations de chaînes ordinales
+### <a name="ordinal-string-operations"></a>Opérations de cordes ordinaires
 
 La spécification de la valeur <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> ou <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> dans un appel de méthode correspond à une comparaison non linguistique dans laquelle les fonctionnalités de langages naturels sont ignorées. Les méthodes qui sont appelées avec ces valeurs <xref:System.StringComparison> font reposer les décisions d'opération de chaîne sur de simples comparaisons d'octets plutôt que sur la casse ou des tables d'équivalences paramétrables par la culture. Dans la plupart des cas, cette approche correspond le mieux à l'interprétation de chaînes prévue tout en rendant le code plus rapide et plus fiable.
 
@@ -147,12 +147,12 @@ Les chaînes dans .NET peuvent contenir des caractères Null incorporés. L'une 
 > [!IMPORTANT]
 > Les méthodes de comparaison de chaînes ignorent les caractères Null incorporés, contrairement aux méthodes de recherche de chaînes telles que <xref:System.String.Contains%2A?displayProperty=nameWithType>, <xref:System.String.EndsWith%2A?displayProperty=nameWithType>, <xref:System.String.IndexOf%2A?displayProperty=nameWithType>, <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>et <xref:System.String.StartsWith%2A?displayProperty=nameWithType> .
 
-L’exemple suivant effectue une comparaison dépendante de la culture de la chaîne "AA" avec une chaîne semblable qui contient plusieurs caractères null incorporés entre "A" et "a", et montre comment les deux chaînes sont considérées comme égales :
+L’exemple suivant effectue une comparaison culturelle sensible de la chaîne "Aa" avec une chaîne similaire qui contient plusieurs caractères incrustés nulles entre "A" et "a", et montre comment les deux cordes sont considérées comme égales:
 
 [!code-csharp[Conceptual.Strings.BestPractices#19](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/embeddednulls1.cs#19)]
  [!code-vb[Conceptual.Strings.BestPractices#19](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/embeddednulls1.vb#19)]
 
-Toutefois, les chaînes ne sont pas considérées comme égales quand vous utilisez la comparaison ordinale, comme le montre l’exemple suivant :
+Cependant, les cordes ne sont pas considérées comme égales lorsque vous utilisez une comparaison ordinaire, comme le montre l’exemple suivant :
   
 [!code-csharp[Conceptual.Strings.BestPractices#20](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/embeddednulls2.cs#20)]
 [!code-vb[Conceptual.Strings.BestPractices#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/embeddednulls2.vb#20)]
@@ -176,7 +176,7 @@ Ces comparaisons restent très rapides.
 
 La sémantique ordinale est la valeur par défaut pour les surcharges de <xref:System.String.Equals%2A?displayProperty=nameWithType> qui n'incluent pas d'argument <xref:System.StringComparison> (notamment l'opérateur d'égalité). Dans tous les cas, nous vous recommandons d'appeler une surcharge ayant un paramètre <xref:System.StringComparison> .
 
-### <a name="string-operations-that-use-the-invariant-culture"></a>opérations de chaîne qui utilisent la culture dite indifférente
+### <a name="string-operations-that-use-the-invariant-culture"></a>opérations de chaîne qui utilisent la culture invariante
 
 Les comparaisons avec la culture dite indifférente utilisent la propriété <xref:System.Globalization.CultureInfo.CompareInfo%2A> retournée par la propriété <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> statique. Ce comportement est le même sur tous les systèmes ; il traduit tous les caractères en dehors de sa plage en ce qu'il suppose être des caractères invariants équivalents. Cette stratégie peut être utile pour la gestion d'un jeu de comportements de chaîne dans toutes les cultures, mais elle donne souvent des résultats inattendus.
 
@@ -197,16 +197,16 @@ En définitive, la culture dite indifférente a très peu de propriétés qui la
 
 ## <a name="choosing-a-stringcomparison-member-for-your-method-call"></a>Choix d’un membre StringComparison pour votre appel de méthode
 
-Le tableau suivant présente le mappage du contexte de chaîne sémantique à un membre d’énumération <xref:System.StringComparison> :
+Le tableau suivant décrit la cartographie du contexte <xref:System.StringComparison> sémantique des cordes à un membre de recensement :
 
 |Données|Comportement|Valeur System.StringComparison<br /><br /> value|
 |----------|--------------|-----------------------------------------------------|
 |Identificateurs internes respectant la casse.<br /><br /> Identificateurs respectant la casse dans des normes telles que XML et HTTP.<br /><br /> Paramètres liés à la sécurité respectant la casse.|Identificateur non linguistique, où les octets correspondent exactement.|<xref:System.StringComparison.Ordinal>|
 |Identificateurs internes ne respectant pas la casse.<br /><br /> Identificateurs ne respectant pas la casse dans des normes telles que XML et HTTP.<br /><br /> Chemins d'accès aux fichiers.<br /><br /> Clés et valeurs de Registre.<br /><br /> Variables d'environnement.<br /><br /> Identificateurs de ressource (par exemple, noms de handles).<br /><br /> Paramètres liés à la sécurité ne respectant pas la casse.|Identificateur non linguistique, où la casse n'est pas pertinente ; en particulier, les données stockées dans la plupart des services système Windows.|<xref:System.StringComparison.OrdinalIgnoreCase>|
-|Certaines données rendues persistantes et linguistiquement pertinentes.<br /><br /> Affichage de données linguistiques qui nécessitent un ordre de tri fixe.|Données dont la culture n'est pas spécifiée qui sont toutefois linguistiquement pertinentes.|<xref:System.StringComparison.InvariantCulture><br /><br /> \- ou -<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|
-|Données affichées à l'utilisateur.<br /><br /> La plupart des entrées d'utilisateur.|Données qui nécessitent des usages linguistiques locaux.|<xref:System.StringComparison.CurrentCulture><br /><br /> \- ou -<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|
+|Certaines données rendues persistantes et linguistiquement pertinentes.<br /><br /> Affichage de données linguistiques qui nécessitent un ordre de tri fixe.|Données dont la culture n'est pas spécifiée qui sont toutefois linguistiquement pertinentes.|<xref:System.StringComparison.InvariantCulture><br /><br /> -ou-<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|
+|Données affichées à l'utilisateur.<br /><br /> La plupart des entrées d'utilisateur.|Données qui nécessitent des usages linguistiques locaux.|<xref:System.StringComparison.CurrentCulture><br /><br /> -ou-<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|
 
-## <a name="common-string-comparison-methods-in-net"></a>Méthodes courantes de comparaison de chaînes dans .NET
+## <a name="common-string-comparison-methods-in-net"></a>Méthodes communes de comparaison des chaînes en .NET
 
 Les sections suivantes décrivent les méthodes le plus souvent utilisées pour la comparaison de chaînes.
 
@@ -295,7 +295,7 @@ Si ces données sont rendues persistantes et déplacées dans toutes les culture
 [!code-csharp[Conceptual.Strings.BestPractices#9](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/indirect1.cs#9)]
 [!code-vb[Conceptual.Strings.BestPractices#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/indirect1.vb#9)]
 
-### <a name="collections-example-hashtable-constructor"></a>Exemple de collections : constructeur Hashtable
+### <a name="collections-example-hashtable-constructor"></a>Exemple de collections : constructeur hashtable
 
 Le hachage de chaînes constitue un deuxième exemple d'opération qui est affectée par la façon dont des chaînes sont comparées.
 
@@ -341,7 +341,7 @@ L'exemple suivant illustre la portabilité limitée qui résulte de l'utilisatio
 [!code-csharp[Conceptual.Strings.BestPractices#21](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/persistence.cs#21)]
 [!code-vb[Conceptual.Strings.BestPractices#21](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/persistence.vb#21)]
 
-Toutefois, si vous remplacez la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> par <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> dans les appels à <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> et <xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>, les données de date et d’heure persistantes sont correctement restaurées, comme le montre la sortie suivante :
+Toutefois, si vous <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> remplacez la propriété par <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> dans les appels <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> <xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>et, les données de date et d’heure persistées sont restaurées avec succès, comme le montre la sortie suivante :
 
 ```console
 06.05.1758 21:26

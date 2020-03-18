@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: 1b4b0aba3ea24682ae972bf283ac387692c83781
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 9d138f79fcede4acac837f8d7793aa343ced737c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901583"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78290754"
 ---
-### <a name="http-defaulthttpcontext-extensibility-removed"></a>HTTP : extensibilité de DefaultHttpContext supprimée
+### <a name="http-defaulthttpcontext-extensibility-removed"></a>HTTP: DefaultHttpContext extétabilité supprimée
 
-Dans le cadre de l’amélioration des performances de ASP.NET Core 3,0, l’extensibilité de `DefaultHttpContext` a été supprimée. La classe est désormais `sealed`. Pour plus d’informations, consultez [dotnet/aspnetcore # 6504](https://github.com/dotnet/aspnetcore/pull/6504).
+Dans le cadre de ASP.NET’amélioration des performances de Core 3.0, l’extéabilité de `DefaultHttpContext` a été supprimée. La classe `sealed`est maintenant . Pour plus d’informations, voir [dotnet/aspnetcore 6504](https://github.com/dotnet/aspnetcore/pull/6504).
 
-Si vos tests unitaires utilisent `Mock<DefaultHttpContext>`, utilisez `Mock<HttpContext>` à la place.
+Si vos tests `Mock<DefaultHttpContext>`unitaires utilisent, utilisez `Mock<HttpContext>` ou `new DefaultHttpContext()` à la place.
 
-Pour plus d’informations, consultez [dotnet/aspnetcore # 6534](https://github.com/dotnet/aspnetcore/issues/6534).
+Pour discussion, voir [dotnet/aspnetcore 6534](https://github.com/dotnet/aspnetcore/issues/6534).
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -20,21 +20,21 @@ Pour plus d’informations, consultez [dotnet/aspnetcore # 6534](https://github.
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Les classes peuvent dériver de `DefaultHttpContext`.
+Les classes `DefaultHttpContext`peuvent dériver de .
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Les classes ne peuvent pas dériver de `DefaultHttpContext`.
+Les cours ne `DefaultHttpContext`peuvent pas dériver de .
 
-#### <a name="reason-for-change"></a>Motif de modification
+#### <a name="reason-for-change"></a>Raison du changement
 
-L’extensibilité a été fournie initialement pour permettre le regroupement des `HttpContext`, mais elle a introduit une complexité inutile et empêchait d’autres optimisations.
+L’extéabilité a été initialement fournie `HttpContext`pour permettre la mise en commun de la , mais il a introduit une complexité inutile et entravé d’autres optimisations.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si vous utilisez `Mock<DefaultHttpContext>` dans vos tests unitaires, commencez à utiliser `Mock<HttpContext>` à la place.
+Si vous utilisez `Mock<DefaultHttpContext>` dans vos tests `Mock<HttpContext>` unitaires, commencez à utiliser à la place.
 
-#### <a name="category"></a>Catégorie
+#### <a name="category"></a>Category
 
 ASP.NET Core
 

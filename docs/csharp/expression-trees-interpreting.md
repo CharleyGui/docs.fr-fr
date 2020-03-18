@@ -4,12 +4,12 @@ description: Découvrez comment écrire du code pour analyser la structure d’u
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: 34434a633d866b82da3da713aaecc218c7d35124
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 1283d7d957c72558652b96cb428efd0f071f0184
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036908"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146006"
 ---
 # <a name="interpreting-expressions"></a>Interprétation des expressions
 
@@ -260,9 +260,9 @@ Expression<Func<int>> sum5 = () => (1 + (2 + 3)) + 4;
 ```
 
 Vous pouvez voir la séparation en deux réponses possibles, pour mettre en évidence la plus prometteuse. La première représente les expressions *associatives à droite*. La deuxième représente les expressions *associatives à gauche*.
-L’avantage de ces deux formats est qu’ils peuvent s’adapter à un nombre arbitraire d’expressions d’addition. 
+L’avantage de ces deux formats est qu’ils peuvent s’adapter à un nombre arbitraire d’expressions d’addition.
 
-Si nous exécutons cette expression dans le visiteur, nous obtenons ce résultat, qui vérifie que l’expression d’addition simple est *associative à gauche*. 
+Si nous exécutons cette expression dans le visiteur, nous obtenons ce résultat, qui vérifie que l’expression d’addition simple est *associative à gauche*.
 
 Pour exécuter cet exemple et voir l’arborescence d’expressions complète, j’ai dû apporter une modification à l’arborescence d’expressions source. Quand l’arborescence d’expressions contient uniquement des constantes, l’arborescence résultante contient simplement la valeur constante `10`. Le compilateur effectue toute l’addition et réduit l’expression à sa forme la plus simple. Le simple ajout d’une variable dans l’expression suffit pour voir l’arborescence d’origine :
 
@@ -349,8 +349,8 @@ L’exemple traite uniquement les arborescences d’expressions les plus rudimen
 
 ```csharp
 Expression<Func<int, int>> factorial = (n) =>
-    n == 0 ? 
-    1 : 
+    n == 0 ?
+    1 :
     Enumerable.Range(1, n).Aggregate((product, factor) => product * factor);
 ```
 
@@ -509,7 +509,7 @@ The expression body is:
 
 ## <a name="extending-the-sample-library"></a>Extension de la bibliothèque d’exemples
 
-Les exemples de cette section illustrent les techniques de base pour visiter et examiner des nœuds dans une arborescence d’expressions. Si j’ai ignoré de nombreuses actions dont vous pourriez avoir besoin, c’est pour mieux me concentrer sur les tâches fondamentales de visite et d’accès aux nœuds dans une arborescence d’expressions. 
+Les exemples de cette section illustrent les techniques de base pour visiter et examiner des nœuds dans une arborescence d’expressions. Si j’ai ignoré de nombreuses actions dont vous pourriez avoir besoin, c’est pour mieux me concentrer sur les tâches fondamentales de visite et d’accès aux nœuds dans une arborescence d’expressions.
 
 Tout d’abord, les visiteurs gèrent uniquement les constantes qui sont des entiers. Les valeurs constantes peuvent être n’importe quel autre type numérique, et le langage C# prend en charge les conversions et les promotions entre ces types. Une version plus robuste de ce code mettrait en miroir toutes ces capacités.
 

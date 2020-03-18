@@ -12,10 +12,10 @@ helpviewer_keywords:
 - displaying date and time data
 ms.assetid: ed324eff-4aff-4a76-b6c0-04e6c0d8f5a9
 ms.openlocfilehash: 455996d091f92367667e7077a4524898cd8face6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73138755"
 ---
 # <a name="how-to-display-dates-in-non-gregorian-calendars"></a>Comment : afficher des dates dans des calendriers non grégoriens
@@ -63,7 +63,7 @@ Les types <xref:System.DateTime> et <xref:System.DateTimeOffset> utilisent le ca
   
     - <xref:System.Globalization.Calendar.GetMilliseconds%2A>, pour afficher les millisecondes de la seconde dans le calendrier approprié.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple affiche une date à l’aide de deux calendriers différents. Il affiche la date après avoir défini le calendrier hégirien comme calendrier par défaut pour la culture ar-JO et affiche la date à l’aide du calendrier persan, qui n’est pas pris en charge comme calendrier facultatif par la culture fa-IR.  
   
  [!code-csharp[Formatting.HowTo.Calendar#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.Calendar/cs/Calendar1.cs#2)]

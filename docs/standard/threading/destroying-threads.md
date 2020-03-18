@@ -10,15 +10,15 @@ helpviewer_keywords:
 - threading [.NET Framework], destroying threads
 ms.assetid: df54e648-c5d1-47c9-bd29-8e4438c1db6d
 ms.openlocfilehash: 842ca4ff17f9cbab3a1518d2dea37436c9b23f9d
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78155930"
 ---
 # <a name="destroying-threads"></a>Détruire des threads
 
-Pour mettre fin à l’exécution du thread, vous utilisez généralement le [modèle d’annulation coopérative](cancellation-in-managed-threads.md). Parfois, il n’est pas possible d’arrêter un thread de manière coopérative, car il exécute du code tiers non conçu pour l’annulation coopérative. La méthode <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> dans .NET Framework peut être utilisée pour arrêter de force un thread managé. Lorsque vous appelez <xref:System.Threading.Thread.Abort%2A>, le Common Language Runtime lève une <xref:System.Threading.ThreadAbortException> dans le thread cible, que le thread cible peut intercepter. Pour plus d’informations, consultez <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. La méthode <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> n’est pas prise en charge dans .NET Core. Si vous devez mettre fin à l’exécution de code tiers de force dans .NET Core, exécutez-le dans le processus distinct et utilisez <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType>.
+Pour mettre fin à l’exécution du fil, vous utilisez généralement le [modèle d’annulation coopérative](cancellation-in-managed-threads.md). Parfois, il n’est pas possible d’arrêter un thread en coopération, car il exécute un code tiers non conçu pour l’annulation coopérative. La <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> méthode dans .NET Framework peut être utilisée pour mettre fin à un thread géré de force. Lorsque vous <xref:System.Threading.Thread.Abort%2A>appelez, le Common Language <xref:System.Threading.ThreadAbortException> Runtime jette un dans le thread cible, que le thread cible peut attraper. Pour plus d’informations, consultez <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. La <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> méthode n’est pas prise en charge dans .NET Core. Si vous avez besoin de mettre fin à l’exécution du code tiers <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType>de force dans .NET Core, l’exécuter dans le processus séparé et l’utiliser .
 
 > [!NOTE]
 > Si un thread est en train d’exécuter du code non managé quand sa méthode <xref:System.Threading.Thread.Abort%2A> est appelée, le runtime le marque comme <xref:System.Threading.ThreadState.AbortRequested?displayProperty=nameWithType>. L’exception est levée quand le thread retourne au code managé.  

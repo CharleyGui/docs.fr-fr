@@ -1,19 +1,19 @@
 ---
-title: Champs réservés Protobuf-gRPC pour les développeurs WCF
-description: En savoir plus sur les champs réservés pour la compatibilité entre les versions.
+title: Protobuf a réservé des champs - gRPC pour les développeurs WCF
+description: Renseignez-vous sur les champs réservés à la compatibilité en version croisée.
 ms.date: 09/09/2019
-ms.openlocfilehash: 50082a1aab2e7707a1839b9d56455124a9e4a6a1
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: bde658c671e970b7ec841d71d5b4284eb91195f0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77542974"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79147943"
 ---
 # <a name="protobuf-reserved-fields"></a>Champs réservés Protobuf
 
-Les garanties de compatibilité descendante dans la mémoire tampon de protocole (Protobuf) s’appuient sur les numéros de champ qui représentent toujours le même élément de données. Si un champ est supprimé d’un message dans une nouvelle version du service, ce numéro de champ ne doit jamais être réutilisé. Pour ce faire, vous pouvez utiliser le mot clé `reserved`. 
+Les garanties de compatibilité vers l’arrière dans Protocol Buffer (Protobuf) reposent sur des numéros de champ représentant toujours le même élément de données. Si un champ est supprimé d’un message dans une nouvelle version du service, ce numéro de champ ne doit jamais être réutilisé. Vous pouvez enfore cela `reserved` en utilisant le mot clé.
 
-Si les champs `displayName` et `marketId` ont été supprimés du message `Stock` défini précédemment, leurs numéros de champ doivent être réservés comme dans l’exemple suivant.
+Si `displayName` les `marketId` champs et les `Stock` champs ont été retirés du message défini plus tôt, leurs numéros de terrain doivent être réservés comme dans l’exemple suivant.
 
 ```protobuf
 syntax "proto3";
@@ -27,7 +27,7 @@ message Stock {
 }
 ```
 
-Vous pouvez également utiliser le mot clé `reserved` en tant qu’espace réservé pour les champs qui peuvent être ajoutés ultérieurement. Vous pouvez exprimer des nombres de champs contigus sous la forme d’une plage à l’aide du mot clé `to`.
+Vous pouvez également `reserved` utiliser le mot clé comme un espace réservé pour les champs qui pourraient être ajoutés à l’avenir. Vous pouvez exprimer des numéros de champ `to` contigus comme une plage en utilisant le mot clé.
 
 ```protobuf
 syntax "proto3";
@@ -40,5 +40,5 @@ message Info {
 ```
 
 >[!div class="step-by-step"]
->[Précédent](protobuf-repeated.md)
->[Suivant](protobuf-any-oneof.md)
+>[Suivant précédent](protobuf-repeated.md)
+>[Next](protobuf-any-oneof.md)

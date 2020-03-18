@@ -3,17 +3,17 @@ title: Workflow de développement de la boucle interne pour les applications Doc
 description: Découvrez le workflow de type « boucle interne » pour le développement des applications Docker.
 ms.date: 02/15/2019
 ms.openlocfilehash: 3d2fc889d22dbf02acccfbf9231ad98fca224cff
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75936810"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Workflow de développement de la boucle interne pour les applications Docker
 
 Avant de déclencher le workflow de boucle externe qui s’étend sur l’ensemble du cycle DevOps, chaque développeur doit, sur sa propre machine, coder l’application à l’aide de la plateforme et du langage de son choix, puis la tester localement (figure 4-21). Dans tous les cas, les développeurs auront tous un important point en commun, quels que soient le langage, le framework et la plateforme qu’ils auront choisis. Dans ce workflow, vous allez également développer et tester des conteneurs Docker, mais localement.
 
-![Diagramme montrant le concept d’un environnement de développement de boucles internes.](./media/docker-apps-inner-loop-workflow/inner-loop-development-context.png)
+![Diagramme montrant le concept d’un environnement de dev de boucle intérieure.](./media/docker-apps-inner-loop-workflow/inner-loop-development-context.png)
 
 **Figure 4-21**. Contexte du développement de boucle interne
 
@@ -35,11 +35,11 @@ Les applications se composent de vos propres services et de bibliothèques suppl
 
 La figure 4-22 montre les étapes de base que vous devez généralement effectuer lors de la création d’une application Docker, et fournit une description détaillée de chaque étape.
 
-![Diagramme montrant les sept étapes nécessaires à la création d’une application en conteneur.](./media/docker-apps-inner-loop-workflow/life-cycle-containerized-apps-docker-cli.png)
+![Diagramme montrant les sept étapes qu’il prend pour créer une application conteneurisée.](./media/docker-apps-inner-loop-workflow/life-cycle-containerized-apps-docker-cli.png)
 
 **Figure 4-22**. Workflow général du cycle de vie des applications Docker conteneurisées dans l’interface CLI Docker
 
-### <a name="step-1-start-coding-in-visual-studio-code-and-create-your-initial-appservice-baseline"></a>Étape 1 : commencer le codage dans Visual Studio Code et créer votre base de référence d’application/de service initiale
+### <a name="step-1-start-coding-in-visual-studio-code-and-create-your-initial-appservice-baseline"></a>Étape 1 : Commencez à coder dans visual Studio Code et créez votre base d’applications/service initiale
 
 Le développement des applications se déroule de façon similaire avec ou sans Docker. La différence est que, lors du développement, vous déployez et testez l’application ou les services exécutés dans des conteneurs Docker qui sont situés dans votre environnement local (comme une machine virtuelle Linux ou Windows).
 
@@ -54,10 +54,10 @@ Avec les dernières versions de Docker pour Mac et Windows, il n’a jamais ét�
 
 Par ailleurs, vous aurez besoin d’un éditeur de code pour développer votre application tout en utilisant l’interface CLI Docker.
 
-Microsoft fournit Visual Studio Code, qui est un éditeur de code léger pris en charge sur Windows, Linux et macOS, et fournit à IntelliSense la [prise en charge de nombreux langages](https://code.visualstudio.com/docs/languages/overview) (JavaScript, .net, Go, Java, Ruby, Python et les langages les plus modernes), du [débogage](https://code.visualstudio.com/Docs/editor/debugging), [de l’intégration avec git](https://code.visualstudio.com/Docs/editor/versioncontrol) et des [Extensions](https://code.visualstudio.com/docs/extensions/overview). Cet éditeur convient parfaitement aux développeurs macOS et Linux. Dans Windows, vous pouvez également utiliser Visual Studio.
+Microsoft fournit Visual Studio Code, qui est un éditeur de code léger qui est pris en charge sur Windows, Linux, et macOS, et fournit IntelliSense avec [le soutien de nombreuses langues](https://code.visualstudio.com/docs/languages/overview) (JavaScript, .NET, Go, Java, Ruby, Python, et la plupart des langues modernes), [débogage](https://code.visualstudio.com/Docs/editor/debugging), [intégration avec Git](https://code.visualstudio.com/Docs/editor/versioncontrol) et [extensions de prise en charge](https://code.visualstudio.com/docs/extensions/overview). Cet éditeur est un excellent ajustement pour les développeurs macOS et Linux. Dans Windows, vous pouvez également utiliser Visual Studio.
 
 > [!TIP]
-> Pour obtenir des instructions sur l’installation de Visual Studio Code pour Windows, Linux ou macOS, accédez à <https://code.visualstudio.com/docs/setup/setup-overview/>.
+> Pour obtenir des instructions sur l’installation de code studio <https://code.visualstudio.com/docs/setup/setup-overview/>visuel pour Windows, Linux ou macOS, rendez-vous sur .
 >
 > Pour obtenir des instructions sur la configuration de Docker sur Mac, accédez à <https://docs.docker.com/docker-for-mac/>.
 
@@ -85,7 +85,7 @@ Pour installer l’extension Docker, appuyez sur Ctrl + Maj + P, tapez `ext 
 
 **Figure 4-23**. Installation de l’extension Docker dans Visual Studio Code
 
-### <a name="step-2-create-a-dockerfile-related-to-an-existing-image-plain-os-or-dev-environments-like-net-core-nodejs-and-ruby"></a>Étape 2 : créer un fichier dockerfile lié à une image existante (environnements de système d’exploitation ou de développement simples tels que .NET Core, node. js et Ruby)
+### <a name="step-2-create-a-dockerfile-related-to-an-existing-image-plain-os-or-dev-environments-like-net-core-nodejs-and-ruby"></a>Étape 2 : Créez un DockerFile lié à une image existante (environnements de système d’exploitation ou de développement comme .NET Core, Node.js et Ruby)
 
 Vous aurez besoin qu’un `DockerFile` soit créé pour chaque image personnalisée et déployé pour chaque conteneur. Si votre application est composée d’un seul service personnalisé, vous n’aurez besoin que d’un seul `DockerFile`. Toutefois, si votre application est composée de plusieurs services (comme dans une architecture de microservices), vous aurez besoin d’un `Dockerfile` par service.
 
@@ -145,7 +145,7 @@ Ainsi, quand vous tirez (pull) une image [dotnet/core/aspnet](https://hub.docker
 
 Vous pouvez créer votre propre image de base Docker à partir de zéro, comme l’explique [cet article](https://docs.docker.com/engine/userguide/eng-image/baseimages/) tiré du site Docker. Ce scénario n’est probablement pas adapté si vous n’êtes pas encore familiarisé avec Docker. Toutefois, si vous souhaitez définir certains aspects de votre propre image de base, vous pouvez le suivre.
 
-### <a name="step-3-create-your-custom-docker-images-embedding-your-service-in-it"></a>Étape 3 : créer vos images d’ancrage personnalisées incorporant votre service dans celui-ci
+### <a name="step-3-create-your-custom-docker-images-embedding-your-service-in-it"></a>Étape 3 : Créez vos images Docker personnalisées intégrant votre service en elle
 
 Vous devrez créer une image pour chaque service personnalisé qui compose votre application. Si votre application n’est composée que d’un seul service ou d’une seule application web, vous n’aurez besoin que d’une seule image.
 
@@ -158,7 +158,7 @@ Vous devrez créer une image pour chaque service personnalisé qui compose votre
 
 Pour créer une image dans votre environnement local à l’aide du fichier DockerFile, vous pouvez utiliser la commande docker build, comme illustré dans la figure 4-25 (vous pouvez également exécuter `docker-compose up --build` pour les applications composées de plusieurs conteneurs ou services).
 
-![Capture d’écran montrant la sortie de la console de la commande dockr Build.](./media/docker-apps-inner-loop-workflow/run-docker-build-command.png)
+![Capture d’écran montrant la sortie de la console de la commande de construction docker.](./media/docker-apps-inner-loop-workflow/run-docker-build-command.png)
 
 **Figure 4-25**. Exécuter docker build
 
@@ -172,7 +172,7 @@ Vous pouvez rechercher les images de votre dépôt local (votre machine de déve
 
 **Figure 4-26**. Affichage des images existantes à l’aide de la commande docker images
 
-### <a name="step-4-define-your-services-in-docker-composeyml-when-building-a-composed-docker-app-with-multiple-services"></a>Étape 4 : définir vos services dans docker-compose. yml lors de la création d’une application d’ancrage composée avec plusieurs services
+### <a name="step-4-define-your-services-in-docker-composeyml-when-building-a-composed-docker-app-with-multiple-services"></a>Étape 4 : Définissez vos services en docker-compose.yml lors de la construction d’une application Docker composée avec plusieurs services
 
 Avec le fichier `docker-compose.yml`, vous pouvez définir un ensemble de services à déployer sous la forme d’une application composée, avec les commandes de déploiement décrites dans la section suivante.
 
@@ -205,11 +205,11 @@ Dans ce cas particulier, ce fichier définit deux services : le service web (vo
 
 Le service redis utilise la [dernière image redis publique](https://hub.docker.com/_/redis/) tirée (pull) du registre Docker Hub. [redis](https://redis.io/) est un système de cache bien connu qui est utilisé pour les applications côté serveur.
 
-### <a name="step-5-build-and-run-your-docker-app"></a>Étape 5 : générer et exécuter votre application Dockr
+### <a name="step-5-build-and-run-your-docker-app"></a>Étape 5 : Construisez et exécutez votre application Docker
 
 Si votre application ne comprend qu’un seul conteneur, vous pouvez l’exécuter en la déployant sur l’hôte Docker (machine virtuelle ou serveur physique). Toutefois, si votre application est composée de plusieurs services, vous devez également la *composer*. Voyons les différentes options.
 
-***Option A : exécuter un seul conteneur ou service***
+***Option A : Exécuter un seul conteneur ou service***
 
 Vous pouvez exécuter l’image Docker à l’aide de la commande docker run, comme illustré ici :
 
@@ -219,7 +219,7 @@ docker run -t -d -p 80:5000 cesardl/netcore-webapi-microservice-docker:first
 
 Pour ce déploiement, nous allons rediriger les requêtes envoyées au port 80 vers le port interne 5000. À présent, l’application écoute le port externe 80 au niveau de l’hôte.
 
-***Option B : composer et exécuter une application à plusieurs conteneurs***
+***Option B : Composez et exécutez une application à conteneurs multiples***
 
 Dans la plupart des scénarios d’entreprise, une application Docker est composée de plusieurs services. Dans ce cas, vous pouvez exécuter la commande `docker-compose up` (figure 4-27), qui utilise le fichier docker-compose.yml que vous avez peut-être créé précédemment. L’exécution de cette commande déploie une application composée avec tous ses conteneurs.
 
@@ -233,7 +233,7 @@ Après avoir exécuté `docker-compose up`, déployez votre application et ses c
 
 **Figure 4-28**. Machine virtuelle avec des conteneurs Docker déployés
 
-### <a name="step-6-test-your-docker-application-locally-in-your-local-cd-vm"></a>Étape 6 : tester votre application Dockr (localement, sur votre machine virtuelle CD locale)
+### <a name="step-6-test-your-docker-application-locally-in-your-local-cd-vm"></a>Étape 6 : Testez votre application Docker (localement, dans votre CD VM local)
 
 Cette étape varie en fonction de ce que fait votre application.
 
@@ -266,8 +266,8 @@ Visual Studio Code prend en charge le débogage Docker si vous utilisez Node.js 
 Vous pouvez également déboguer les conteneurs .NET Core ou .NET Framework dans Docker si vous utilisez Visual Studio pour Windows ou Mac, comme décrit dans la section suivante.
 
 > [!TIP]
-> Pour en savoir plus sur le débogage des conteneurs d’ancrage node. js, consultez <https://blog.docker.com/2016/07/live-debugging-docker/> et <https://docs.microsoft.com/archive/blogs/user_ed/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more>.
+> Pour en savoir plus sur débogage Node.js Conteneurs Docker, voir <https://blog.docker.com/2016/07/live-debugging-docker/> et <https://docs.microsoft.com/archive/blogs/user_ed/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more>.
 
 >[!div class="step-by-step"]
->[Précédent](docker-apps-development-environment.md)
->[Suivant](visual-studio-tools-for-docker.md)
+>[Suivant précédent](docker-apps-development-environment.md)
+>[Next](visual-studio-tools-for-docker.md)

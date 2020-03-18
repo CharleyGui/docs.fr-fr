@@ -13,12 +13,12 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-ms.openlocfilehash: 1055b10d0e3e971a6b0963c1ed950fef903ac5bd
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: fe03bbdd7d037a9f1fb4985b62b447c6ef9c6535
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78239948"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79174782"
 ---
 # <a name="globalization"></a>Globalisation
 
@@ -38,7 +38,7 @@ Par défaut, .NET utilise des chaînes Unicode. Une chaîne Unicode se compose d
 
 Beaucoup d’applications et de systèmes d’exploitation, dont le système d’exploitation Windows, peuvent aussi utiliser des pages de codes pour représenter des jeux de caractères. Les pages de codes contiennent généralement les valeurs ASCII standard (de 0x00 à 0x7F) et mappent les autres caractères aux valeurs restantes (de 0x80 à 0xFF). L’interprétation des valeurs 0x80 à 0xFF dépend de la page de codes utilisée. C’est pour cette raison que vous devez éviter d’utiliser des pages de codes dans une application globalisée, dans la mesure du possible.
 
-L’exemple suivant illustre les risques liés à l’interprétation des données de page de codes quand la page de codes par défaut d’un système est différente de celle sur lequel les données ont été enregistrées. (Pour simuler ce scénario, l’exemple spécifie explicitement des pages de codes différentes.) Tout d’abord, l’exemple définit un tableau qui se compose des caractères majuscules de l’alphabet grec. Ces caractères sont encodés dans un tableau d’octets en utilisant la page de codes 737 (aussi appelée MS-DOS Grec), tableau d’octets qui est ensuite enregistré dans un fichier. Si le fichier est récupéré et que son tableau d’octets est décodé en utilisant la page de codes 737, les caractères d’origine sont restaurés. En revanche, si le fichier est récupéré et que son tableau d’octets est décodé en utilisant la page de codes 1252 (ou Windows-1252, qui représente les caractères de l’alphabet latin), les caractères d’origine sont perdus.
+L’exemple suivant illustre les risques liés à l’interprétation des données de page de codes quand la page de codes par défaut d’un système est différente de celle sur lequel les données ont été enregistrées. (Pour simuler ce scénario, l’exemple spécifie explicitement différentes pages de code.) Tout d’abord, l’exemple définit un tableau qui se compose des caractères supérieurs de l’alphabet grec. Ces caractères sont encodés dans un tableau d’octets en utilisant la page de codes 737 (aussi appelée MS-DOS Grec), tableau d’octets qui est ensuite enregistré dans un fichier. Si le fichier est récupéré et que son tableau d’octets est décodé en utilisant la page de codes 737, les caractères d’origine sont restaurés. En revanche, si le fichier est récupéré et que son tableau d’octets est décodé en utilisant la page de codes 1252 (ou Windows-1252, qui représente les caractères de l’alphabet latin), les caractères d’origine sont perdus.
 
 [!code-csharp[Conceptual.Globalization#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/codepages1.cs#1)]
 [!code-vb[Conceptual.Globalization#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/codepages1.vb#1)]
@@ -66,7 +66,7 @@ Dans la mesure du possible, vous devez traiter les chaînes comme des chaînes e
 > [!TIP]
 > Vous pouvez utiliser la classe <xref:System.Globalization.StringInfo> pour travailler sur les éléments de texte plutôt que sur les caractères individuels d’une chaîne.
 
-Pendant les opérations de recherche et de comparaison de chaînes, l’erreur courante à éviter est de traiter les chaînes comme des ensembles de caractères, chacun représenté par un objet <xref:System.Char>. De fait, un même caractère peut être constitué d’un ou plusieurs objets <xref:System.Char>. Ces caractères se trouvent généralement dans des chaînes de cultures dont les alphabets comportent des caractères extérieurs à la plage de caractères latins de base Unicode (de U+0021 à U+007E). L’exemple suivant recherche l’index du caractère LETTRE MAJUSCULE LATINE A AVEC ACCENT GRAVE (U+00C 0) dans une chaîne. Toutefois, ce caractère peut être représenté de deux façons différentes : en tant qu’unité de code unique (U + 00C0) ou en tant que caractère composite (deux unités de code : U + 0041 et U + 0300). Dans ce cas, le caractère est représenté dans l’instance de chaîne par deux objets <xref:System.Char>, U + 0041 et U + 0300. L’exemple de code appelle les surcharges <xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> et <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> pour rechercher la position de ce caractère dans l’instance de la chaîne, mais elles retournent des résultats différents. Le premier appel de méthode comporte un argument <xref:System.Char> ; il effectue une comparaison ordinale et ne peut donc pas trouver de correspondance. Le deuxième appel comporte un argument <xref:System.String> ; il effectue une comparaison dépendante de la culture et trouve donc une correspondance.
+Pendant les opérations de recherche et de comparaison de chaînes, l’erreur courante à éviter est de traiter les chaînes comme des ensembles de caractères, chacun représenté par un objet <xref:System.Char>. De fait, un même caractère peut être constitué d’un ou plusieurs objets <xref:System.Char>. Ces caractères se trouvent généralement dans des chaînes de cultures dont les alphabets comportent des caractères extérieurs à la plage de caractères latins de base Unicode (de U+0021 à U+007E). L’exemple suivant recherche l’index du caractère LETTRE MAJUSCULE LATINE A AVEC ACCENT GRAVE (U+00C 0) dans une chaîne. Cependant, ce personnage peut être représenté de deux manières différentes : en tant qu’unité de code unique (U-00C0) ou en tant que caractère composite (deux unités de code : U-0041 et U-0300). Dans ce cas, le personnage est représenté <xref:System.Char> dans l’instance de chaîne par deux objets, U-0041 et U-0300. L’exemple de code appelle les surcharges <xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> et <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> pour rechercher la position de ce caractère dans l’instance de la chaîne, mais elles retournent des résultats différents. Le premier appel de méthode comporte un argument <xref:System.Char> ; il effectue une comparaison ordinale et ne peut donc pas trouver de correspondance. Le deuxième appel comporte un argument <xref:System.String> ; il effectue une comparaison dépendante de la culture et trouve donc une correspondance.
 
 [!code-csharp[Conceptual.Globalization#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/search1.cs#18)]
 [!code-vb[Conceptual.Globalization#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/search1.vb#18)]
@@ -106,10 +106,10 @@ La comparaison de chaînes dépendante de la culture est définie par l’objet 
 
 |Version du .NET Framework|Système d’exploitation|Version d’Unicode|
 |----------------------------|----------------------|---------------------|
-|.NET Framework 2.0|Tous les systèmes d'exploitation|Unicode 4.1|
-|.NET Framework 3.0|Tous les systèmes d'exploitation|Unicode 4.1|
-|.NET Framework 3.5|Tous les systèmes d'exploitation|Unicode 4.1|
-|.NET Framework 4|Tous les systèmes d'exploitation|Unicode 5.0|
+|.NET Framework 2.0|Tous les systèmes d’exploitation|Unicode 4.1|
+|.NET Framework 3.0|Tous les systèmes d’exploitation|Unicode 4.1|
+|.NET Framework 3.5|Tous les systèmes d’exploitation|Unicode 4.1|
+|.NET Framework 4|Tous les systèmes d’exploitation|Unicode 5.0|
 |.NET Framework 4.5 et ultérieur sur Windows 7|Unicode 5.0|
 |.NET Framework 4.5 et ultérieur sur les systèmes d’exploitation Windows 8 et versions ultérieures|Unicode 6.3.0|
 |.NET Core (toutes les versions)|En fonction de la version de la norme Unicode prise en charge par le système d’exploitation sous-jacent.|
@@ -336,7 +336,7 @@ En général, ne faites aucune supposition quant aux valeurs des propriétés <x
 
 - .NET prend en charge les cultures de remplacement. Cela permet de définir une nouvelle culture personnalisée qui complète les cultures standard existants ou qui remplace entièrement une culture standard existante.
 
-- Sur des systèmes Windows, l’utilisateur peut personnaliser les paramètres propres à une culture à l’aide de l’application **Région et langue** du Panneau de configuration. Quand vous instanciez un objet <xref:System.Globalization.CultureInfo>, vous pouvez déterminer s’il reflète ces personnalisations utilisateur en appelant le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>. En règle générale, pour les applications destinées aux utilisateurs finals, veillez à respecter les préférences de mise en forme des utilisateurs de sorte que les données leur soient présentées comme attendu.
+- Sur des systèmes Windows, l’utilisateur peut personnaliser les paramètres propres à une culture à l’aide de l’application **Région et langue** du Panneau de configuration. Quand vous instanciez un objet <xref:System.Globalization.CultureInfo>, vous pouvez déterminer s’il reflète ces personnalisations utilisateur en appelant le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>. En règle générale, pour les applications utilisateur final, vous devez respecter les préférences des utilisateurs afin que l’utilisateur soit présenté avec des données dans un format qu’il attend.
 
 ## <a name="see-also"></a>Voir aussi
 

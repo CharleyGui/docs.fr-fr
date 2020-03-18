@@ -9,10 +9,10 @@ helpviewer_keywords:
 - cancellation, how to register callbacks
 ms.assetid: 8838dd75-18ed-4b8b-b322-cd4531faac64
 ms.openlocfilehash: 87ba1ab9ac095c733a53f766d00ebb7530a8d9c4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73138000"
 ---
 # <a name="how-to-register-callbacks-for-cancellation-requests"></a>Comment : enregistrer des rappels pour les demandes d'annulation
@@ -21,7 +21,7 @@ L'exemple suivant montre comment inscrire un délégué qui sera appelé quand u
 > [!NOTE]
 > Quand l'option Uniquement mon code est activée, Visual Studio, dans certains cas, peut s'arrêter sur la ligne qui lève l'exception et afficher un message d'erreur indiquant que l'exception n'est pas gérée par le code utilisateur. Cette erreur est sans gravité. Vous pouvez appuyer sur F5 pour continuer et voir le comportement de gestion des exceptions qui est illustré dans les exemples ci-dessous. Pour empêcher Visual Studio de s'arrêter sur la première erreur, il suffit de désactiver la case à cocher Uniquement mon code sous **Outils, Options, Débogage, Général**.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Dans l'exemple suivant, la méthode <xref:System.Net.WebClient.CancelAsync%2A> est enregistrée comme la méthode à appeler quand une annulation est demandée via le jeton d'annulation.  
   
  [!code-csharp[Conceptual.Cancellation.Callback#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.cancellation.callback/cs/howtoexample1.cs#1)]

@@ -9,10 +9,10 @@ helpviewer_keywords:
 - PLINQ queries, how to use execution mode
 ms.assetid: e52ff26c-c5d3-4fab-9fec-c937fb387963
 ms.openlocfilehash: c602aba6e18f80b007b15cd61dfd2b48a36dd2c8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73139239"
 ---
 # <a name="how-to-specify-the-execution-mode-in-plinq"></a>Comment : spécifier le mode d'exécution en PLINQ
@@ -21,7 +21,7 @@ Cet exemple montre comment forcer PLINQ à contourner ses paramètres heuristiqu
 > [!WARNING]
 > Cet exemple, destiné à illustrer l'utilisation, peut ne pas s'exécuter plus rapidement que la requête LINQ to Objects séquentielle équivalente. Pour plus d’informations sur l’accélération, consultez [Fonctionnement de l’accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  [!code-csharp[PLINQ#22](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#22)]
  [!code-vb[PLINQ#22](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#22)]  
   

@@ -14,17 +14,18 @@ helpviewer_keywords:
 - uppercase
 - lowercase
 ms.assetid: 6805f81b-e9ad-4387-9f4c-b9bdb21b87c0
-ms.openlocfilehash: 135cfa815c10d1a9dd9056604a4601678da9d5c4
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 19795cbed27ca979af813b6060163e76fc5b3780
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159349"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79187216"
 ---
-# <a name="changing-case-in-net"></a>Changement de casse dans .NET
-Si vous écrivez une application qui accepte l'entrée d'un utilisateur, vous ne pouvez jamais être sûr de la casse qu'il utilisera pour entrer les données. Souvent, vous voulez que les chaînes aient une casse cohérente, en particulier si vous les affichez dans l'interface utilisateur. Le tableau suivant décrit trois méthodes de changement de la casse : Les deux premières méthodes fournissent une surcharge qui accepte une culture.  
+# <a name="change-case-in-net"></a>Changement de cas en .NET
+
+Si vous écrivez une application qui accepte l’entrée d’un utilisateur, vous ne pouvez jamais être sûr de quel cas (supérieur ou inférieur) il utilisera pour entrer les données. Souvent, vous voulez que les chaînes aient une casse cohérente, en particulier si vous les affichez dans l'interface utilisateur. Le tableau suivant décrit trois méthodes de changement de la casse : Les deux premières méthodes fournissent une surcharge qui accepte une culture.  
   
-|Nom de la méthode|Utilisez|  
+|Nom de la méthode|Utilisation|  
 |-----------------|---------|  
 |<xref:System.String.ToUpper%2A?displayProperty=nameWithType>|Convertit tous les caractères d'une chaîne en majuscules.|  
 |<xref:System.String.ToLower%2A?displayProperty=nameWithType>|Convertit tous les caractères d'une chaîne en minuscules.|  
@@ -34,7 +35,8 @@ Si vous écrivez une application qui accepte l'entrée d'un utilisateur, vous ne
 > Notez que les méthodes <xref:System.String.ToUpper%2A?displayProperty=nameWithType> et <xref:System.String.ToLower%2A?displayProperty=nameWithType> ne doivent pas être utilisées pour convertir des chaînes pour les comparer ou pour tester leur égalité. Pour plus d'informations, consultez la section [Comparaison de chaînes de casse mixte](#Comparing).  
   
 <a name="Comparing"></a>
-## <a name="comparing-strings-of-mixed-case"></a>Comparaison de chaînes de casse mixte  
+## <a name="compare-strings-of-mixed-case"></a>Comparez les chaînes de cas mixtes  
+
  Pour comparer des chaînes de casse mixte et déterminer leur classement, appelez une des surcharges de la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> avec un paramètre `comparisonType` et spécifiez une valeur <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType>, <xref:System.StringComparison.InvariantCultureIgnoreCase?displayProperty=nameWithType> ou <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> pour l’argument `comparisonType`. Pour une comparaison en utilisant une culture spécifique autre que la culture actuelle, appelez une surcharge de la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> avec les paramètres `culture` et `options`, et spécifiez une valeur <xref:System.Globalization.CompareOptions.IgnoreCase?displayProperty=nameWithType> pour l'argument `options`.  
   
  Pour comparer des chaînes de casse mixte et déterminer si elles sont égales, appelez une des surcharges de la méthode <xref:System.String.Equals%2A?displayProperty=nameWithType> avec un paramètre `comparisonType` et spécifiez une valeur <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType>, <xref:System.StringComparison.InvariantCultureIgnoreCase?displayProperty=nameWithType> ou <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> pour l’argument `comparisonType`.  
@@ -71,5 +73,5 @@ Si vous écrivez une application qui accepte l'entrée d'un utilisateur, vous ne
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérations de chaînes de base](../../../docs/standard/base-types/basic-string-operations.md)
-- [Exécution d'opérations de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
+- [Opérations de base des cordes](../../../docs/standard/base-types/basic-string-operations.md)
+- [Exécution d’opérations de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)

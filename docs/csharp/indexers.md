@@ -4,12 +4,12 @@ description: Découvrez les indexeurs C# et la façon d’implémenter des propr
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
-ms.openlocfilehash: 966483e80d8dd0421dce1b7fabdb0d443d73a0fc
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 8e583b8a7cedab61ea6fdd56587608907610b6b4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77450880"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79145682"
 ---
 # <a name="indexers"></a>Indexeurs
 
@@ -39,7 +39,7 @@ Vous pouvez également spécifier des indexeurs en lecture seule (en omettant l�
 
 Vous pouvez appliquer aux indexeurs quasiment tout ce que vous avez appris de l’utilisation des propriétés. La seule exception à cette règle sont les *propriétés implémentées automatiquement*. Le compilateur ne peut pas toujours générer le stockage adapté à l’indexeur.
 
-C’est la présence d’arguments référençant un élément dans un ensemble d’éléments qui distingue les indexeurs des propriétés. Vous pouvez définir plusieurs indexeurs sur un type, tant que chaque indexeur a sa propre liste d’arguments. Nous allons explorer différents scénarios où vous pourrez utiliser un ou plusieurs indexeurs dans une définition de classe. 
+C’est la présence d’arguments référençant un élément dans un ensemble d’éléments qui distingue les indexeurs des propriétés. Vous pouvez définir plusieurs indexeurs sur un type, tant que chaque indexeur a sa propre liste d’arguments. Nous allons explorer différents scénarios où vous pourrez utiliser un ou plusieurs indexeurs dans une définition de classe.
 
 ## <a name="scenarios"></a>Scénarios
 
@@ -50,7 +50,7 @@ Examinons quelques-uns des scénarios courants d’utilisation des *indexeurs*. 
 
 ### <a name="arrays-and-vectors"></a>Tableaux et vecteurs
 
-L’un des scénarios de création d’indexeur les plus courants est lorsque votre type modélise un tableau ou un vecteur. Vous pouvez créer un indexeur pour modéliser une liste de données triées. 
+L’un des scénarios de création d’indexeur les plus courants est lorsque votre type modélise un tableau ou un vecteur. Vous pouvez créer un indexeur pour modéliser une liste de données triées.
 
 L’avantage de créer votre propre indexeur est que vous pouvez définir le stockage de cette collection en fonction de vos besoins. Imaginez un scénario où votre type modélise des données d’historique qui sont trop volumineuses pour être chargées en une seule fois dans la mémoire. Vous devez charger et décharger des sections de la collection selon leur utilisation. L’exemple suivant modélise ce comportement. Il signale le nombre de points de données. Il crée à la demande des pages contenant des sections de données. Il supprime des pages de la mémoire afin de libérer de l’espace pour les pages qui ont fait l’objet de demandes récentes.
 
@@ -224,9 +224,10 @@ Dans cet exemple, la collection `ArgsAction` correspond étroitement à la colle
 
 ### <a name="multi-dimensional-maps"></a>Mappages multidimensionnels
 
-Vous pouvez créer des indexeurs qui utilisent plusieurs arguments. En outre, ces arguments ne sont pas contraints à être du même type. Examinons ces deux exemples.   
+Vous pouvez créer des indexeurs qui utilisent plusieurs arguments. En outre, ces arguments ne sont pas contraints à être du même type. Examinons ces deux exemples.
 
-Le premier exemple montre une classe qui génère des valeurs pour un ensemble de Mandelbrot. Pour plus d’informations sur les mathématiques impliquées par cet ensemble, lisez [cet article](https://en.wikipedia.org/wiki/Mandelbrot_set). L’indexeur utilise deux doubles pour définir un point dans le plan X, Y.
+Le premier exemple montre une classe qui génère des valeurs pour un ensemble de Mandelbrot. Pour plus d’informations sur les mathématiques impliquées par cet ensemble, lisez [cet article](https://en.wikipedia.org/wiki/Mandelbrot_set).
+L’indexeur utilise deux doubles pour définir un point dans le plan X, Y.
 L’accesseur get calcule le nombre d’itérations jusqu’à un point déterminé pour ne pas se trouver dans l’ensemble. Si le nombre maximal d’itérations est atteint, le point se trouve dans l’ensemble, et la valeur maxIterations de la classe est retournée. Les images générées par ordinateur popularisées par l’ensemble de Mandelbrot définissent des couleurs pour le nombre d’itérations qui sont nécessaires pour déterminer qu’un point se trouve en dehors de l’ensemble.
 
 ```csharp
@@ -267,9 +268,9 @@ Cela définit un dictionnaire qui peut contenir un nombre infini de valeurs. Par
 Examinons une dernière utilisation d’indexeur, dans laquelle l’indexeur accepte plusieurs arguments de types différents. Prenons un programme qui gère des données d’historique des températures. Cet indexeur utilise une ville et une date pour définir ou obtenir les températures minimales et maximales de la ville en question :
 
 ```csharp
-using DateMeasurements = 
+using DateMeasurements =
     System.Collections.Generic.Dictionary<System.DateTime, IndexersSamples.Common.Measurements>;
-using CityDataMeasurements = 
+using CityDataMeasurements =
     System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<System.DateTime, IndexersSamples.Common.Measurements>>;
 
 public class HistoricalWeatherData
@@ -319,12 +320,13 @@ using DateMeasurements = System.Collections.Generic.Dictionary<System.DateTime, 
 using CityDataMeasurements = System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<System.DateTime, IndexersSamples.Common.Measurements>>;
 ```
 
-créent un *alias* pour un type générique construit. Ces instructions permettent au code d’utiliser plus tard les noms plus descriptifs que sont `DateMeasurements` et `CityDateMeasurements`, au lieu de la construction générique de `Dictionary<DateTime, Measurements>` et `Dictionary<string, Dictionary<DateTime, Measurements> >`. Cette construction nécessite l’utilisation de noms de types qualifiés complets à droite du signe `=`.
+créent un *alias* pour un type générique construit. Ces instructions permettent au code d’utiliser plus tard les noms plus descriptifs que sont `DateMeasurements` et `CityDateMeasurements`, au lieu de la construction générique de `Dictionary<DateTime, Measurements>` et `Dictionary<string, Dictionary<DateTime, Measurements> >`.
+Cette construction nécessite l’utilisation de noms de types qualifiés complets à droite du signe `=`.
 
-La deuxième technique consiste à supprimer les sections de date et heure de tous les objets `DateTime` utilisés pour indexer des collections. .NET n’inclut pas de type Date uniquement.
+La deuxième technique consiste à supprimer les sections de date et heure de tous les objets `DateTime` utilisés pour indexer des collections. .NET n’inclut pas un type de date seulement.
 Les développeurs utilisent le type `DateTime`, mais utilisent la propriété `Date` pour s’assurer qu’il n’existe pas d’objets `DateTime` égaux pour ce jour-là.
 
 ## <a name="summing-up"></a>Récapitulatif
 
 Vous devez créer des indexeurs chaque fois que vous avez un élément de type propriété dans votre classe, où cette propriété ne représente pas une valeur unique, mais une collection de valeurs dans laquelle chaque élément est identifié par un ensemble d’arguments. Ces arguments peuvent identifier quel élément de la collection doit être référencé.
-Les indexeurs étendent le concept de [Propriétés](properties.md), où un membre est traité comme un élément de données provenant de l’extérieur de la classe, mais comme une méthode à l’intérieur. Les indexeurs autorisent les arguments à rechercher un élément d’une propriété qui représente un ensemble d’éléments.
+Les indexateurs étendent le concept de [propriétés,](properties.md)où un membre est traité comme un élément de données de l’extérieur de la classe, mais comme une méthode à l’intérieur. Les indexeurs autorisent les arguments à rechercher un élément d’une propriété qui représente un ensemble d’éléments.

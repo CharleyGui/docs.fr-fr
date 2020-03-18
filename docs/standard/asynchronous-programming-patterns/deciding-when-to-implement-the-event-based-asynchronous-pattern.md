@@ -13,10 +13,10 @@ helpviewer_keywords:
 - AsyncCompletedEventArgs class
 ms.assetid: a00046aa-785d-4f7f-a8e5-d06475ea50da
 ms.openlocfilehash: 5fca32953af91184fe99d8ef6afe5a2374f325d6
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67663714"
 ---
 # <a name="deciding-when-to-implement-the-event-based-asynchronous-pattern"></a>Choix du moment auquel implémenter le modèle asynchrone basé sur les événements
@@ -32,7 +32,7 @@ En règle générale, vous devez, dans la mesure du possible, exposer les foncti
 > [!NOTE]
 > Il est rare d’implémenter le modèle <xref:System.IAsyncResult> sans implémenter également le modèle basé sur les événements.
 
-## <a name="guidelines"></a>Recommandations
+## <a name="guidelines"></a>Consignes
 
 La liste suivante décrit les instructions à suivre si vous devez implémenter le modèle asynchrone basé sur les événements :
 
@@ -86,8 +86,8 @@ La liste suivante fournit quelques recommandations à suivre si vous décidez d�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)
+- [Comment : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)
 - [Modèle asynchrone basé sur les événements (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
-- [Implémentation du modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)
+- [Implémentation du modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)
 - [Meilleures pratiques pour implémenter le modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
-- [Vue d’ensemble du modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
+- [Vue d’ensemble du modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)

@@ -9,10 +9,10 @@ helpviewer_keywords:
 - tasks, partitioners
 ms.assetid: 96153688-9a01-47c4-8430-909cee9a2887
 ms.openlocfilehash: 8caea6d8a97b8c0daf7c59718479ea2e12a52d78
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73141567"
 ---
 # <a name="custom-partitioners-for-plinq-and-tpl"></a>Partitionneurs personnalisés pour PLINQ et la bibliothèque parallèle de tâches (TPL)
@@ -44,13 +44,13 @@ Le tableau ci-dessous répertorie les surcharges disponibles avec la méthode <x
 
 |Surcharge|Utiliser l'équilibrage de charge|
 |--------------|-------------------------|
-|<xref:System.Collections.Concurrent.Partitioner.Create%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29>|Always|
+|<xref:System.Collections.Concurrent.Partitioner.Create%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29>|Toujours|
 |<xref:System.Collections.Concurrent.Partitioner.Create%60%601%28%60%600%5B%5D%2CSystem.Boolean%29>|Lorsque l’argument booléen est spécifié comme true|
 |<xref:System.Collections.Concurrent.Partitioner.Create%60%601%28System.Collections.Generic.IList%7B%60%600%7D%2CSystem.Boolean%29>|Lorsque l’argument booléen est spécifié comme true|
-|<xref:System.Collections.Concurrent.Partitioner.Create%28System.Int32%2CSystem.Int32%29>|Never|
-|<xref:System.Collections.Concurrent.Partitioner.Create%28System.Int32%2CSystem.Int32%2CSystem.Int32%29>|Never|
-|<xref:System.Collections.Concurrent.Partitioner.Create%28System.Int64%2CSystem.Int64%29>|Never|
-|<xref:System.Collections.Concurrent.Partitioner.Create%28System.Int64%2CSystem.Int64%2CSystem.Int64%29>|Never|
+|<xref:System.Collections.Concurrent.Partitioner.Create%28System.Int32%2CSystem.Int32%29>|Jamais|
+|<xref:System.Collections.Concurrent.Partitioner.Create%28System.Int32%2CSystem.Int32%2CSystem.Int32%29>|Jamais|
+|<xref:System.Collections.Concurrent.Partitioner.Create%28System.Int64%2CSystem.Int64%29>|Jamais|
+|<xref:System.Collections.Concurrent.Partitioner.Create%28System.Int64%2CSystem.Int64%2CSystem.Int64%29>|Jamais|
 
 ### <a name="configuring-static-range-partitioners-for-parallelforeach"></a>Configuration de partitionneurs de plages statiques pour Parallel.ForEach
 
@@ -128,5 +128,5 @@ Lorsque vous implémentez un partitionneur personnalisé, suivez ces instruction
 ## <a name="see-also"></a>Voir aussi
 
 - [Programmation parallèle](../../../docs/standard/parallel-programming/index.md)
-- [Guide pratique pour implémenter des partitions dynamiques](../../../docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)
-- [Guide pratique pour implémenter un partitionneur pour un partitionnement statique](../../../docs/standard/parallel-programming/how-to-implement-a-partitioner-for-static-partitioning.md)
+- [Comment : implémenter des partitions dynamiques](../../../docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)
+- [Comment : implémenter un partitionneur pour un partitionnement statique](../../../docs/standard/parallel-programming/how-to-implement-a-partitioner-for-static-partitioning.md)

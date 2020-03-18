@@ -6,10 +6,10 @@ helpviewer_keywords:
 - assemblies [.NET Framework], strong-named
 ms.assetid: d4a80263-f3e0-4d81-9b61-f0cbeae3797b
 ms.openlocfilehash: 12b8df3195b2708e4556d4f8065227054db9eb14
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75711569"
 ---
 # <a name="strong-named-assemblies"></a>Assemblys avec nom fort
@@ -20,7 +20,7 @@ Attribuer un nom fort à un assembly permet de lui créer une identité unique p
 
 Un assembly avec nom fort est généré à l'aide de la clé privée qui correspond à la clé publique distribuée avec l'assembly et de l'assembly lui-même. L'assembly inclut le manifeste d'assembly, qui contient les noms et les hachages de tous les fichiers qui le composent. Les assemblys portant le même nom fort doivent être identiques.
 
-Pour attribuer un nom fort à un assembly, vous pouvez utiliser Visual Studio ou un outil en ligne de commande. Pour plus d’informations, consultez [Comment : signer un assembly avec un nom fort](sign-strong-name.md) ou [sn. exe (Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md).
+Pour attribuer un nom fort à un assembly, vous pouvez utiliser Visual Studio ou un outil en ligne de commande. Pour plus d’informations, voir [Comment : Signez un assemblage avec un nom fort](sign-strong-name.md) ou [Sn.exe (outil Strong Name)](../../framework/tools/sn-exe-strong-name-tool.md).
 
 Quand vous créez un assembly avec nom fort, il contient son nom de texte simple, son numéro de version, d'éventuelles informations sur sa culture, une signature numérique et la clé publique qui correspond à la clé privée utilisée pour la signature.
 
@@ -29,7 +29,7 @@ Quand vous créez un assembly avec nom fort, il contient son nom de texte simple
 
 ## <a name="why-strong-name-your-assemblies"></a>Pourquoi attribuer un nom fort à vos assemblys ?
 
-Lorsque vous référencez un assembly avec nom fort, vous pouvez en attendre certains avantages, tels que la protection du contrôle de version et de l'affectation de nom. Dans le .NET Framework, les assemblys avec nom fort peuvent être installés dans le Global Assembly Cache, ce qui est nécessaire pour activer certains scénarios.
+Lorsque vous référencez un assembly avec nom fort, vous pouvez en attendre certains avantages, tels que la protection du contrôle de version et de l'affectation de nom. Dans le cadre .NET, des assemblages nommés par des points forts peuvent être installés dans le cache d’assemblage global, qui est nécessaire pour activer certains scénarios.
 
 Les assemblys avec nom fort s'avèrent utiles dans les scénarios suivants :
 
@@ -39,13 +39,13 @@ Les assemblys avec nom fort s'avèrent utiles dans les scénarios suivants :
 
 - Vous souhaitez que votre assembly soit indépendant du domaine pour ne pas entraîner de baisse des performances des applications utilisant cet assembly. Comme un assembly indépendant du domaine doit être installé dans le Global Assembly Cache, cela nécessite d'attribuer des noms forts.
 
-- Vous souhaitez centraliser la maintenance de votre application en appliquant la stratégie d’éditeur, ce qui signifie que l’assembly doit être installé dans le Global Assembly Cache.
+- Vous souhaitez centraliser l’entretien de votre application en appliquant la politique de l’éditeur, ce qui signifie que l’assemblage doit être installé dans le cache d’assemblage global.
 
-Si vous êtes un développeur Open source et que vous souhaitez obtenir les avantages de l’identité d’un assembly avec nom fort, pensez à archiver la clé privée associée à un assembly dans votre système de contrôle de code source.
+Si vous êtes un développeur open-source et que vous voulez les avantages d’identité d’un assemblage fort, envisagez de vérifier la clé privée associée à un assemblage à votre système de contrôle source.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Global assembly cache](../../framework/app-domains/gac.md)
-- [Comment : signer un assembly avec un nom fort](sign-strong-name.md)
-- [SN. exe (outil Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md)
+- [Cache d’assemblage global](../../framework/app-domains/gac.md)
+- [Comment: Signer une assemblée avec un nom fort](sign-strong-name.md)
+- [Sn.exe (outil Strong Name)](../../framework/tools/sn-exe-strong-name-tool.md)
 - [Créer et utiliser des assemblys avec nom fort](create-use-strong-named.md)

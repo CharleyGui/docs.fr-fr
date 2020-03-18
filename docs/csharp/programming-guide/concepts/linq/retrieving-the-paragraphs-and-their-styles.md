@@ -2,12 +2,12 @@
 title: Récupération des paragraphes et de leurs styles (C#)
 ms.date: 07/20/2015
 ms.assetid: c2f767f8-57b1-4b4b-af04-89ffb1f7067d
-ms.openlocfilehash: ec59ef0ac36f8691ca93a4c21c5379118ee0491f
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 47127b6f1d6bfaa0d8d93333882a0d0b59f1bae6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253071"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168295"
 ---
 # <a name="retrieving-the-paragraphs-and-their-styles-c"></a>Récupération des paragraphes et de leurs styles (C#)
 Dans cet exemple, nous écrivons une requête qui récupère les nœuds de paragraphe à partir d'un document WordprocessingML. Il identifie également le style de chaque paragraphe.  
@@ -16,7 +16,7 @@ Dans cet exemple, nous écrivons une requête qui récupère les nœuds de parag
   
  Cette rubrique explique l'importance de certaines parties de la requête, puis illustre la requête dans le cadre d'un exemple fonctionnel complet.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  La source de la requête permettant de récupérer tous les paragraphes dans un document et leurs styles est la suivante :  
   
 ```csharp  
@@ -25,7 +25,7 @@ xDoc.Root.Element(w + "body").Descendants(w + "p")
   
  Cette expression est similaire à la source de la requête dans l’exemple précédent, [Recherche du style de paragraphe par défaut (C#)](./finding-the-default-paragraph-style.md). La différence principale est qu'elle utilise l'axe <xref:System.Xml.Linq.XContainer.Descendants%2A> au lieu de l'axe <xref:System.Xml.Linq.XContainer.Elements%2A>. La requête utilise l'axe <xref:System.Xml.Linq.XContainer.Descendants%2A> car dans les documents qui ont des sections, les paragraphes ne sont pas les enfants directs de l'élément de corps, mais se trouvent deux niveaux au-dessous dans la hiérarchie. Grâce à l'utilisation de la méthode <xref:System.Xml.Linq.XContainer.Descendants%2A>, le code fonctionnera, que le document utilise des sections ou non.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  La requête utilise une clause `let` afin de déterminer l'élément qui contient le nœud de style. S'il n'y a aucun élément, `styleNode` a la valeur `null` :  
   
 ```csharp  
@@ -36,7 +36,7 @@ let styleNode = para.Elements(w + "pPr").Elements(w + "pStyle").FirstOrDefault()
   
  La requête projette une collection d'un type anonyme avec deux membres, `StyleName` et `ParagraphNode`.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Cet exemple traite un document WordprocessingML et récupère les nœuds de paragraphes à partir d'un document WordprocessingML. Il identifie également le style de chaque paragraphe. Cet exemple se base sur les exemples précédents de ce didacticiel. Dans le code ci-dessous, la nouvelle requête figure dans des commentaires.  
   
  Vous trouverez des instructions pour créer le document source utilisé dans cet exemple dans [Création du document Office Open XML source (C#)](./creating-the-source-office-open-xml-document.md).  
@@ -78,7 +78,7 @@ using (Package wdPackage = Package.Open(fileName, FileMode.Open, FileAccess.Read
     }  
 }  
   
-string defaultStyle =   
+string defaultStyle =
     (string)(  
         from style in styleDoc.Root.Elements(w + "style")  
         where (string)style.Attribute(w + "type") == "paragraph"&&  
@@ -134,4 +134,4 @@ StyleName:Code
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Tutoriel : manipulation de contenu dans un document WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)
+- [Didacticiel : manipulation de contenu dans un document WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)

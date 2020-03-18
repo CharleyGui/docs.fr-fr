@@ -14,21 +14,21 @@ helpviewer_keywords:
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
 ms.openlocfilehash: 3562bd113ae4c9a3f721d8858a5d3625ef548d3a
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78160076"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Substitutions dans les expressions régulières
-Les substitutions sont des éléments de langage reconnus uniquement dans des modèles de remplacement. Elles utilisent un modèle d'expression régulière pour définir tout ou partie du texte qui doit remplacer le texte correspondant dans la chaîne d'entrée. Le modèle de remplacement peut se composer d’une ou plusieurs substitutions avec des caractères littéraux. Les modèles de remplacement sont fournis aux surcharges de la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> qui a un paramètre `replacement` et à la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> . Les méthodes remplacent le modèle correspondant par le modèle défini par le paramètre `replacement` .  
+Les substitutions sont des éléments de langage reconnus uniquement dans des modèles de remplacement. Elles utilisent un modèle d'expression régulière pour définir tout ou partie du texte qui doit remplacer le texte correspondant dans la chaîne d'entrée. Le modèle de remplacement peut se composer d'une ou plusieurs substitutions avec des caractères littéraux. Les modèles de remplacement sont fournis aux surcharges de la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> qui a un paramètre `replacement` et à la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> . Les méthodes remplacent le modèle correspondant par le modèle défini par le paramètre `replacement` .  
   
  Le .NET Framework définit les éléments de substitution répertoriés dans le tableau suivant.  
   
 |Substitution|Description|  
 |------------------|-----------------|  
-|$ *nombre*|Inclut la dernière sous-chaîne correspondant au groupe de capture identifié par *nombre*, où *nombre* est une valeur décimale, dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe numéroté](#substituting-a-numbered-group).|  
-|${ *nom* }|Inclut la dernière sous-chaîne correspondant au groupe nommé désigné par `(?<`*nom*`> )` dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe nommé](#substituting-a-named-group).|  
+|$ *Nombre*|Inclut la dernière sous-chaîne correspondant au groupe de capture identifié par *nombre*, où *nombre* est une valeur décimale, dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe numéroté](#substituting-a-numbered-group).|  
+|${ *nom* }|Inclut le dernier sous-cordon égalé par le `(?<`groupe nommé qui est désigné par *son nom* `> )` dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe nommé](#substituting-a-named-group).|  
 |$$|Inclut un littéral « $ » unique dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un symbole « $ »](#substituting-a--character).|  
 |$&|Inclut une copie de la correspondance entière dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution de la correspondance entière](#substituting-the-entire-match).|  
 |$\`|Inclut tout le texte de la chaîne d'entrée avant la correspondance dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution du texte avant la correspondance](#substituting-the-text-before-the-match).|  
@@ -42,14 +42,14 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
  Le seul caractère qui peut apparaître dans un modèle d'expression régulière ou dans une substitution est le caractère `$` , bien qu'il ait une signification différente dans chaque contexte. Dans un modèle d'expression régulière, `$` est une ancre qui correspond à la fin de la chaîne. Dans un modèle de remplacement, `$` indique le début d'une substitution.  
   
 > [!NOTE]
-> Pour les fonctionnalités semblables à un modèle de remplacement dans une expression régulière, utilisez une référence arrière. Pour plus d'informations sur les références arrières, consultez [Constructions de références arrières](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).  
+> Pour les fonctionnalités semblables à un modèle de remplacement dans une expression régulière, utilisez une référence arrière. Pour plus d’informations sur les backreferences, voir [Backreference Constructs](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).  
 
 ## <a name="substituting-a-numbered-group"></a>Substitution d'un groupe numéroté  
- L'élément de langage `$`*nombre* inclut la dernière sous-chaîne correspondant au groupe de capture *nombre* dans la chaîne de remplacement, où *nombre* est l'index du groupe de capture. Par exemple, le modèle de remplacement `$1` indique que la sous-chaîne correspondante sera remplacée par le premier groupe capturé. Pour plus d’informations sur les groupes de capture numérotés, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+ `$` *L’élément* de langue de nombre inclut le dernier sous-corde égalé par le groupe de capture de *nombre* dans la chaîne de remplacement, où le *nombre* est l’index du groupe de capture. Par exemple, le modèle de remplacement `$1` indique que la sous-chaîne correspondante sera remplacée par le premier groupe capturé. Pour plus d’informations sur les groupes de capture numérotés, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
  Tous les chiffres qui suivent `$` sont interprétés comme appartenant au groupe *nombre* . Si ce n'est pas votre intention, vous pouvez remplacer un groupe nommé à la place. Par exemple, vous pouvez utiliser la chaîne de remplacement `${1}1` au lieu de `$11` pour définir la chaîne de remplacement comme la valeur du premier groupe capturé avec le numéro « 1 ». Pour plus d'informations, consultez [Substitution d'un groupe nommé](#substituting-a-named-group).  
   
- Les groupes de capture auxquels des noms ne sont pas explicitement assignés à l'aide de la syntaxe `(?<`*nom*`>)` sont numérotés de gauche à droite en commençant à un. Les groupes nommés sont également numérotés de gauche à droite, en démarrant à un numéro de plus que l'index du dernier groupe sans nom. Par exemple, dans l'expression régulière `(\w)(?<digit>\d)`, l'index du groupe nommé `digit` est 2.  
+ La capture de groupes qui ne `(?<`sont pas explicitement attribués des noms en utilisant le *nom* `>)` syntaxe sont numérotés de gauche à droite à partir d’un. Les groupes nommés sont également numérotés de gauche à droite, en démarrant à un numéro de plus que l'index du dernier groupe sans nom. Par exemple, dans l'expression régulière `(\w)(?<digit>\d)`, l'index du groupe nommé `digit` est 2.  
   
  Si le *nombre* ne spécifie pas un groupe de capture valide défini dans le modèle d'expression régulière, `$`*nombre* est interprété comme une séquence de caractères littéraux utilisée pour remplacer chaque correspondance.  
   
@@ -70,13 +70,13 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
 |`(\s?\d+[.,]?\d*)`|Mettre en correspondance un espace blanc suivi par un ou plusieurs chiffres décimaux, suivi par zéro ou un point ou une virgule, suivi par zéro ou plusieurs chiffres décimaux. Il s'agit du premier groupe de capture. Étant donné que le modèle de remplacement est `$1`, l'appel à la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> remplace l'intégralité de la sous-chaîne correspondante par ce groupe capturé.|  
 
 ## <a name="substituting-a-named-group"></a>Substitution d'un groupe nommé  
- L'élément de langage `${`*nom*`}` substitue la dernière sous-chaîne correspondante au groupe de capture *nom* , où *nom* est le nom d'un groupe de capture défini par l'élément de langage `(?<`*nom*`>)` . Pour plus d’informations sur les groupes de capture nommés, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+ `${`L’élément de langage de *nom* `}` remplace le dernier sous-corde assorti par le groupe de `(?<`capture de *nom,* où le *nom* est le nom d’un groupe de capture défini par l’élément de langue *de nom.* `>)` Pour plus d’informations sur les groupes de capture nommés, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
  Si le *nom* ne spécifie pas de groupe de capture nommé valide défini dans le modèle d'expression régulière mais se compose de chiffres, `${`*nom*`}` est interprété en tant que groupe numéroté.  
   
  Si le *nom* ne spécifie ni un groupe de capture nommé valide ni un groupe de capture numéroté valide défini dans le modèle d'expression régulière, `${`*nom*`}` est interprété comme une séquence de caractères littéraux utilisée pour remplacer chaque correspondance.  
   
- L'exemple suivant utilise la substitution `${`*nom*`}` pour supprimer le symbole monétaire d'une valeur décimale. Elle supprime les symboles monétaires trouvés au début ou à la fin d'une valeur monétaire, et reconnaît les deux séparateurs décimaux les plus courants (« . » et « , »).  
+ L’exemple suivant `${`utilise la substitution de *nom* `}` pour dépouiller le symbole de la devise d’une valeur décimale. Elle supprime les symboles monétaires trouvés au début ou à la fin d'une valeur monétaire, et reconnaît les deux séparateurs décimaux les plus courants (« . » et « , »).  
   
  [!code-csharp[Conceptual.RegEx.Language.Substitutions#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.substitutions/cs/namedgroup1.cs#2)]
  [!code-vb[Conceptual.RegEx.Language.Substitutions#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.substitutions/vb/namedgroup1.vb#2)]  
@@ -95,7 +95,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
 ## <a name="substituting-a--character"></a>Substitution d'un caractère « $ »  
  La substitution `$$` insère un caractère « $ » littéral dans la chaîne remplacée.  
   
- L'exemple suivant utilise l'objet <xref:System.Globalization.NumberFormatInfo> pour déterminer le symbole monétaire de la culture actuelle et son positionnement dans une chaîne monétaire. Il génère alors à la fois dynamiquement un modèle d’expression régulière et un modèle de remplacement. Si l'exemple est exécuté sur un ordinateur dont la culture actuelle est en-US, il génère le modèle d'expression régulière `\b(\d+)(\.(\d+))?` et le modèle de remplacement `$$ $1$2`. Le modèle de remplacement remplace le texte correspondant par un symbole monétaire et un espace suivi par les premier et second groupes capturés.  
+ L'exemple suivant utilise l'objet <xref:System.Globalization.NumberFormatInfo> pour déterminer le symbole monétaire de la culture actuelle et son positionnement dans une chaîne monétaire. Il génère alors à la fois dynamiquement un modèle d'expression régulière et un modèle de remplacement. Si l'exemple est exécuté sur un ordinateur dont la culture actuelle est en-US, il génère le modèle d'expression régulière `\b(\d+)(\.(\d+))?` et le modèle de remplacement `$$ $1$2`. Le modèle de remplacement remplace le texte correspondant par un symbole monétaire et un espace suivi par les premier et second groupes capturés.  
   
  [!code-csharp[Conceptual.Regex.Language.Substitutions#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.substitutions/cs/dollarsign1.cs#8)]
  [!code-vb[Conceptual.Regex.Language.Substitutions#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.substitutions/vb/dollarsign1.vb#8)]  
@@ -129,7 +129,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
  Le modèle de remplacement `"$&"` ajoute un guillemet littéral au début et à la fin de chaque correspondance.  
 
 ## <a name="substituting-the-text-before-the-match"></a>Substitution du texte avant la correspondance  
- La substitution ``$` `` remplace la chaîne correspondante par la chaîne d'entrée entière avant la correspondance. Autrement dit, elle duplique la chaîne d'entrée jusqu'à la correspondance en supprimant le texte correspondant. N'importe quel texte qui suit le texte correspondant est inchangé dans la chaîne de résultat. S'il existe plusieurs correspondances dans une chaîne d'entrée, le texte de remplacement est dérivé de la chaîne d'entrée d'origine, plutôt que de la chaîne dans laquelle le texte a été remplacé par des correspondances précédentes. \(l’exemple fournit une illustration.\) s’il n’y a aucune correspondance, la substitution de ``$` `` n’a aucun effet.  
+ La substitution ``$` `` remplace la chaîne correspondante par la chaîne d'entrée entière avant la correspondance. Autrement dit, elle duplique la chaîne d'entrée jusqu'à la correspondance en supprimant le texte correspondant. N'importe quel texte qui suit le texte correspondant est inchangé dans la chaîne de résultat. S'il existe plusieurs correspondances dans une chaîne d'entrée, le texte de remplacement est dérivé de la chaîne d'entrée d'origine, plutôt que de la chaîne dans laquelle le texte a été remplacé par des correspondances précédentes. \(L’exemple en fournit une illustration. \) S’il n’y ``$` `` a pas de correspondance, la substitution n’a aucun effet.  
   
  L'exemple suivant utilise le modèle d'expression régulière `\d+` pour faire correspondre une séquence d'un ou de plusieurs chiffres décimaux dans la chaîne d'entrée. La chaîne de remplacement ``$` `` remplace ces chiffres par le texte qui précède la correspondance.  
   
@@ -199,4 +199,4 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Langage des expressions régulières - Aide-mémoire](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [Langage d’expression régulière - Référence rapide](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

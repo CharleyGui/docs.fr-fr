@@ -36,40 +36,40 @@ helpviewer_keywords:
 - GroupCollection class
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
 ms.openlocfilehash: 8956be3cf8f96a8dd255f378d4927404c172c908
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78159999"
 ---
 # <a name="the-regular-expression-object-model"></a>Modèle objet d'expression régulière
-<a name="introduction"></a> Cette rubrique décrit le modèle objet utilisé avec les expressions régulières .NET. Elle contient les sections suivantes :  
+<a name="introduction"></a> Cette rubrique décrit le modèle objet utilisé avec les expressions régulières .NET. Il contient les sections suivantes :  
   
-- [Moteur d’expression régulière](#Engine)  
+- [Le moteur d’expression régulière](#Engine)  
   
-- [Objets MatchCollection et Match](#Match_and_MCollection)  
+- [Le MatchCollection et Les objets de match](#Match_and_MCollection)  
   
-- [Collection de groupes](#GroupCollection)  
+- [La collection de groupe](#GroupCollection)  
   
-- [Groupe capturé](#the_captured_group)  
+- [Le Groupe Capturé](#the_captured_group)  
   
-- [Collection de captures](#CaptureCollection)  
+- [La collection Capture](#CaptureCollection)  
   
-- [Capture individuelle](#the_individual_capture)  
+- [La capture individuelle](#the_individual_capture)  
   
 <a name="Engine"></a>
 ## <a name="the-regular-expression-engine"></a>Moteur d'expression régulière  
- Le moteur d’expression régulière dans .NET est représenté par la classe <xref:System.Text.RegularExpressions.Regex>. Le moteur d'expression régulière prend en charge l'analyse et la compilation d'une expression régulière, ainsi que les opérations qui mettent en correspondance le modèle d'expression régulière avec une chaîne d'entrée. Le moteur est le composant central du modèle objet des expressions régulières .NET.  
+ Le moteur d’expression régulière dans .NET est représenté par la classe <xref:System.Text.RegularExpressions.Regex>. Le moteur d’expression régulière prend en charge l’analyse et la compilation d’une expression régulière, ainsi que les opérations qui mettent en correspondance le modèle d’expression régulière avec une chaîne d’entrée. Le moteur est le composant central du modèle objet des expressions régulières .NET.  
   
  Vous pouvez utiliser le moteur d'expression régulière de deux façons :  
   
-- En appelant les méthodes statiques de la classe <xref:System.Text.RegularExpressions.Regex>. Les paramètres des méthodes comprennent la chaîne d’entrée et le modèle d’expression régulière. Le moteur d'expression régulière met en cache les expressions régulières utilisées dans les appels de méthode statique ; les appels répétés de méthodes d'expression régulière statiques qui utilisent la même expression régulière offrent donc des performances relativement bonnes.  
+- En appelant les méthodes statiques de la classe <xref:System.Text.RegularExpressions.Regex>. Les paramètres des méthodes comprennent la chaîne d'entrée et le modèle d'expression régulière. Le moteur d'expression régulière met en cache les expressions régulières utilisées dans les appels de méthode statique ; les appels répétés de méthodes d'expression régulière statiques qui utilisent la même expression régulière offrent donc des performances relativement bonnes.  
   
 - En instanciant un objet <xref:System.Text.RegularExpressions.Regex>, via la transmission d'une expression régulière au constructeur de classe. Dans ce cas, l'objet <xref:System.Text.RegularExpressions.Regex> est immuable (lecture seule) et représente un moteur d'expression régulière étroitement lié à une expression régulière unique. Comme les expressions régulières utilisées par les instances de <xref:System.Text.RegularExpressions.Regex> ne sont pas mises en cache, vous ne devez pas instancier un objet <xref:System.Text.RegularExpressions.Regex> plusieurs fois avec la même expression régulière.  
   
  Vous pouvez appeler les méthodes de la classe <xref:System.Text.RegularExpressions.Regex> pour effectuer les opérations suivantes :  
   
-- Déterminer si une chaîne correspond à un modèle d’expression régulière.  
+- Déterminer si une chaîne correspond à un modèle d'expression régulière.  
   
 - Extraire une correspondance unique ou la première correspondance.  
   
@@ -169,7 +169,7 @@ ms.locfileid: "78159999"
   
  Par défaut, l'appel de la méthode <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> utilise une évaluation tardive pour remplir l'objet <xref:System.Text.RegularExpressions.MatchCollection>. L'accès aux propriétés qui nécessitent une collection entièrement remplie, telles que les propriétés <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> et <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType>, peut affecter les performances. Nous vous recommandons donc d'accéder à la collection en utilisant l'objet <xref:System.Collections.IEnumerator> retourné par la méthode <xref:System.Text.RegularExpressions.MatchCollection.GetEnumerator%2A?displayProperty=nameWithType>. Des constructions propres au langage, comme `For Each` en Visual Basic et `foreach` en C#, encapsulent l'interface <xref:System.Collections.IEnumerator> de la collection.  
   
- L'exemple suivant utilise la méthode <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%29?displayProperty=nameWithType> pour remplir un objet <xref:System.Text.RegularExpressions.MatchCollection> avec toutes les correspondances trouvées dans une chaîne d'entrée. L'exemple énumère la collection, copie les correspondances dans un tableau de chaînes et enregistre les positions de caractère dans un tableau d'entiers.  
+ L'exemple suivant utilise la méthode <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%29?displayProperty=nameWithType> pour remplir un objet <xref:System.Text.RegularExpressions.MatchCollection> avec toutes les correspondances trouvées dans une chaîne d'entrée. L’exemple énumère la collection, copie les correspondances dans un tableau de chaînes et enregistre les positions de caractère dans un tableau d’entiers.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/matchcollection1.cs#6)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/matchcollection1.vb#6)]  
@@ -232,7 +232,7 @@ ms.locfileid: "78159999"
 ## <a name="the-group-collection"></a>Collection de groupes  
  La propriété <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> retourne un objet <xref:System.Text.RegularExpressions.GroupCollection> qui contient des objets <xref:System.Text.RegularExpressions.Group> représentant des groupes capturés dans une même correspondance. Le premier objet <xref:System.Text.RegularExpressions.Group> de la collection (index 0) représente la correspondance entière. Chaque objet qui suit représente le résultat d'un groupe de capture spécifique.  
   
- Vous pouvez récupérer des objets <xref:System.Text.RegularExpressions.Group> spécifiques dans la collection en utilisant la propriété <xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=nameWithType>. Vous pouvez récupérer les groupes sans nom en fonction de leur position ordinale dans la collection, et les groupes nommés en fonction de leur nom ou de leur position ordinale. Les captures sans nom apparaissent en premier dans la collection et sont indexées de la gauche vers la droite dans l'ordre dans lequel elles figurent dans le modèle d'expression régulière. Les captures nommées sont indexées après les captures sans nom, de la gauche vers la droite dans l'ordre dans lequel elles apparaissent dans le modèle d'expression régulière. Pour déterminer les groupes numérotés disponibles dans la collection retournée pour une méthode de mise en correspondance d'expression régulière particulière, vous pouvez appeler la méthode d'instance <xref:System.Text.RegularExpressions.Regex.GetGroupNumbers%2A?displayProperty=nameWithType>. Pour déterminer les groupes nommés disponibles dans la collection, vous pouvez appeler la méthode d'instance <xref:System.Text.RegularExpressions.Regex.GetGroupNames%2A?displayProperty=nameWithType>. Les deux méthodes sont particulièrement utiles dans les opérations générales qui analysent les correspondances trouvées par une expression régulière.  
+ Vous pouvez récupérer des objets <xref:System.Text.RegularExpressions.Group> spécifiques dans la collection en utilisant la propriété <xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=nameWithType>. Vous pouvez récupérer les groupes sans nom en fonction de leur position ordinale dans la collection, et les groupes nommés en fonction de leur nom ou de leur position ordinale. Les captures sans nom apparaissent en premier dans la collection et sont indexées de la gauche vers la droite dans l'ordre dans lequel elles figurent dans le modèle d'expression régulière. Les captures nommées sont indexées après les captures sans nom, de la gauche vers la droite dans l’ordre dans lequel elles apparaissent dans le modèle d’expression régulière. Pour déterminer les groupes numérotés disponibles dans la collection retournée pour une méthode de mise en correspondance d'expression régulière particulière, vous pouvez appeler la méthode d'instance <xref:System.Text.RegularExpressions.Regex.GetGroupNumbers%2A?displayProperty=nameWithType>. Pour déterminer les groupes nommés disponibles dans la collection, vous pouvez appeler la méthode d'instance <xref:System.Text.RegularExpressions.Regex.GetGroupNames%2A?displayProperty=nameWithType>. Les deux méthodes sont particulièrement utiles dans les opérations générales qui analysent les correspondances trouvées par une expression régulière.  
   
  La propriété <xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=nameWithType> représente l'indexeur de la collection en C# et la propriété par défaut de l'objet de collection en Visual Basic. Cela signifie que les différents objets <xref:System.Text.RegularExpressions.Group> sont accessibles en fonction de leur index (ou nom, dans le cas des groupes nommés) comme suit :  
   
@@ -299,7 +299,7 @@ ms.locfileid: "78159999"
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/nocapture1.cs#11)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/nocapture1.vb#11)]  
   
-- Les quantificateurs peuvent mettre en correspondance plusieurs occurrences d’un modèle défini par un groupe de capture. Dans ce cas, les propriétés `Value` et `Length` d'un objet <xref:System.Text.RegularExpressions.Group> ne contiennent des informations que sur la dernière sous-chaîne capturée. Par exemple, l'expression régulière suivante met en correspondance une phrase unique qui se termine par un point. Elle utilise deux constructions de regroupement : la première capture des mots individuels ainsi qu'un espace blanc, tandis que la seconde capture des mots individuels. Comme le montre le résultat de l'exemple, bien que l'expression régulière parvienne à capturer une phrase entière, le second groupe capture uniquement le dernier mot.  
+- Les quantificateurs peuvent mettre en correspondance plusieurs occurrences d'un modèle défini par un groupe de capture. Dans ce cas, les propriétés `Value` et `Length` d'un objet <xref:System.Text.RegularExpressions.Group> ne contiennent des informations que sur la dernière sous-chaîne capturée. Par exemple, l'expression régulière suivante met en correspondance une phrase unique qui se termine par un point. Elle utilise deux constructions de regroupement : la première capture des mots individuels ainsi qu'un espace blanc, tandis que la seconde capture des mots individuels. Comme le montre le résultat de l'exemple, bien que l'expression régulière parvienne à capturer une phrase entière, le second groupe capture uniquement le dernier mot.  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/lastcapture1.cs#12)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/lastcapture1.vb#12)]  
@@ -352,5 +352,5 @@ ms.locfileid: "78159999"
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Text.RegularExpressions>
-- [Expressions régulières .NET](../../../docs/standard/base-types/regular-expressions.md)
-- [Langage des expressions régulières - Aide-mémoire](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [Expressions régulières .NET](../../../docs/standard/base-types/regular-expressions.md)
+- [Langage d’expression régulière - Référence rapide](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

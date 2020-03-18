@@ -7,10 +7,10 @@ helpviewer_keywords:
 - managed threading
 ms.assetid: 9b5ec2cd-121b-4d49-b075-222cf26f2344
 ms.openlocfilehash: 1d487edff2cdc2e63f81963bfaa1f68a06e5b36e
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75936843"
 ---
 # <a name="using-threads-and-threading"></a>Utilisation des threads et du threading
@@ -28,13 +28,13 @@ Pour créer un thread, vous devez créer une instance de la classe <xref:System.
 
 ## <a name="how-to-stop-a-thread"></a>Comment arrêter un thread
 
-Pour mettre fin à l’exécution d’un thread, utilisez l' <xref:System.Threading.CancellationToken?displayProperty=nameWithType>. Il offre un moyen unifié d’arrêter les threads de manière coopérative. Pour plus d’informations, consultez [Annulation dans les threads managés](cancellation-in-managed-threads.md).
+Pour mettre fin à l’exécution d’un thread, utilisez le <xref:System.Threading.CancellationToken?displayProperty=nameWithType>. Il fournit un moyen unifié d’arrêter les fils en coopération. Pour plus d’informations, consultez [Annulation dans les threads managés](cancellation-in-managed-threads.md).
 
-Parfois, il n’est pas possible d’arrêter un thread de manière coopérative, car il exécute du code tiers non conçu pour l’annulation coopérative. Dans ce cas, vous souhaiterez peut-être mettre fin à l’exécution de force. Pour mettre fin à l’exécution d’un thread de force, dans .NET Framework vous pouvez utiliser la méthode <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Cette méthode lève une <xref:System.Threading.ThreadAbortException> sur le thread sur lequel elle est appelée. Pour plus d’informations, consultez [Destruction de threads](destroying-threads.md). La méthode <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> n’est pas prise en charge dans .NET Core. Si vous devez mettre fin à l’exécution de code tiers de force dans .NET Core, exécutez-le dans le processus distinct et utilisez <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType>.
+Parfois, il n’est pas possible d’arrêter un thread en coopération, car il exécute un code tiers non conçu pour l’annulation coopérative. Dans ce cas, vous voudrez peut-être mettre fin à son exécution de force. Pour mettre fin à l’exécution d’un thread <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> de force, dans .NET Framework vous pouvez utiliser la méthode. Cette méthode lève une <xref:System.Threading.ThreadAbortException> sur le thread sur lequel elle est appelée. Pour plus d’informations, consultez [Destruction de threads](destroying-threads.md). La <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> méthode n’est pas prise en charge dans .NET Core. Si vous avez besoin de mettre fin à l’exécution du code tiers <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType>de force dans .NET Core, l’exécuter dans le processus séparé et l’utiliser .
 
-Le <xref:System.Threading.CancellationToken?displayProperty=nameWithType> n’est pas disponible avant .NET Framework 4. Pour arrêter un thread dans les anciennes versions de .NET Framework, vous devez implémenter l’annulation coopérative manuellement à l’aide des techniques de synchronisation de threads. Par exemple, vous pouvez créer le champ booléen volatile `shouldStop` et l’utiliser pour demander l’arrêt du code exécuté par le thread. Pour plus d’informations, consultez [volatile](../../csharp/language-reference/keywords/volatile.md) in C# Reference et <xref:System.Threading.Volatile?displayProperty=nameWithType>.
+Le <xref:System.Threading.CancellationToken?displayProperty=nameWithType> n’est pas disponible avant .NET Framework 4. Pour arrêter un thread dans les anciennes versions .NET Framework, vous devez implémenter l’annulation coopérative manuellement en utilisant les techniques de synchronisation des threads. Par exemple, vous pouvez créer `shouldStop` le champ boolean volatil et l’utiliser pour demander le code exécuté par le thread pour s’arrêter. Pour plus d’informations, voir <xref:System.Threading.Volatile?displayProperty=nameWithType> [volatile](../../csharp/language-reference/keywords/volatile.md) dans C Référence et .
 
-Utilisez la méthode <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> pour que le thread appelant attende la fin du thread en cours d’arrêt.
+Utilisez <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> la méthode pour faire attendre le fil d’appel pour la fin du fil arrêté.
 
 ## <a name="how-to-pause-or-interrupt-a-thread"></a>Comment suspendre ou interrompre un thread
 
@@ -44,7 +44,7 @@ Vous utilisez la méthode <xref:System.Threading.Thread.Sleep%2A?displayProperty
 
 Le tableau suivant présente certaines des propriétés de <xref:System.Threading.Thread> :  
   
-|Les|Description|  
+|Propriété|Description|  
 |--------------|-----------|  
 |<xref:System.Threading.Thread.IsAlive%2A>|Retourne `true` si un thread a été démarré et ne s’est pas encore arrêté normalement ou n’a pas été abandonné.|  
 |<xref:System.Threading.Thread.IsBackground%2A>|Obtient ou définit une valeur booléenne qui indique si un thread est un thread d’arrière-plan. Les threads d’arrière-plan ressemblent aux threads de premier plan, mais un thread d’arrière-plan n’empêche pas un processus de s’arrêter. Une fois que tous les threads de premier plan appartenant à un processus sont arrêtés, le common language runtime met fin au processus en appelant la méthode <xref:System.Threading.Thread.Abort%2A> sur les threads d’arrière-plan encore actifs. Pour plus d’informations, consultez [Threads de premier plan et d’arrière-plan](foreground-and-background-threads.md).|  
@@ -55,5 +55,5 @@ Le tableau suivant présente certaines des propriétés de <xref:System.Threadin
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Threading.Thread?displayProperty=nameWithType>
-- [Threads et threading](threads-and-threading.md)
+- [Fils et threading](threads-and-threading.md)
 - [Programmation parallèle](../parallel-programming/index.md)

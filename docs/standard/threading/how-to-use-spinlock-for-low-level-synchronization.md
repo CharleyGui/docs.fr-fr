@@ -9,10 +9,10 @@ helpviewer_keywords:
 - SpinLock, how to use
 ms.assetid: a9ed3e4e-4f29-4207-b730-ed0a51ecbc19
 ms.openlocfilehash: ad254cb6208bff868e5fc689c502b7ddcc175ad5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73137955"
 ---
 # <a name="how-to-use-spinlock-for-low-level-synchronization"></a>Guide pratique pour utiliser le verrouillage SpinLock pour une synchronisation de bas niveau

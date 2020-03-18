@@ -8,12 +8,12 @@ helpviewer_keywords:
 - parameters [C#], params
 - params keyword [C#]
 ms.assetid: 1690815e-b52b-4967-8380-5780aff08012
-ms.openlocfilehash: 90d224080f607cbac96514aaf5ac6d67affef9e0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: f462ccc2421fef3ea111d263ec035a701cf04775
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713233"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79173547"
 ---
 # <a name="params-c-reference"></a>params (référence C#)
 
@@ -25,11 +25,11 @@ Dans une déclaration de méthode, vous ne pouvez pas spécifier de paramètre s
 
 Le type déclaré du paramètre `params` doit être un tableau unidimensionnel, comme le montre l’exemple suivant. Sinon, une erreur du compilateur [CS0225](../../misc/cs0225.md) se produit.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre différentes façons d’envoyer des arguments à un paramètre `params`.
 
-[!code-csharp[csrefKeywordsMethodParams#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsMethodParams/CS/csrefKeywordsMethodParams.cs#5)] 
+[!code-csharp[csrefKeywordsMethodParams#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsMethodParams/CS/csrefKeywordsMethodParams.cs#5)]
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -37,7 +37,7 @@ L’exemple suivant montre différentes façons d’envoyer des arguments à un 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Paramètres de méthodes](method-parameters.md)

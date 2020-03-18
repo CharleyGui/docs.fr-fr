@@ -13,10 +13,10 @@ helpviewer_keywords:
 - assembly binding, strong-named
 ms.assetid: ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9
 ms.openlocfilehash: 18a0b7d657290835a34c705513d0d7a4ccbfc61c
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75738680"
 ---
 # <a name="create-and-use-strong-named-assemblies"></a>Créer et utiliser des assemblys avec nom fort
@@ -29,7 +29,7 @@ Un nom fort est constitué de l'identité de l'assembly (son simple nom textuel,
 Un assembly avec nom fort peut uniquement utiliser les types d'autres assemblys avec nom fort. Si ce n'était pas le cas, l’intégrité de l’assembly avec nom fort serait compromise.
 
 > [!NOTE]
-> Bien que .NET Core prenne en charge les assemblys avec nom fort et que tous les assemblys de la bibliothèque .NET Core soient signés, la majorité des assemblys tiers n’ont pas besoin de noms forts. Pour plus d’informations, consultez [signature avec nom fort](https://github.com/dotnet/runtime/blob/master/docs/project/strong-name-signing.md) sur GitHub.
+> Bien que .NET Core soutienne des assemblées de nom fort, et que toutes les assemblées de la bibliothèque .NET Core soient signées, la majorité des assemblées tierces n’ont pas besoin de noms forts. Pour plus d’informations, voir [Strong Name Signing](https://github.com/dotnet/runtime/blob/master/docs/project/strong-name-signing.md) sur GitHub.
 
 ## <a name="strong-name-scenario"></a>Scénario de nom fort
 
@@ -64,18 +64,18 @@ Cette fonctionnalité s’applique à tout assembly signé avec un nom fort qui 
 
 - Sans signature différée.
 
-Cette fonctionnalité peut être désactivée pour des applications individuelles ou pour un ordinateur. Consultez [Comment : désactiver la fonctionnalité de contournement de nom fort](disable-strong-name-bypass-feature.md).
+Cette fonctionnalité peut être désactivée pour des applications individuelles ou pour un ordinateur. Voir [comment : Désactiver la fonction de contournement de nom fort](disable-strong-name-bypass-feature.md).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-----------|-----------------|
 |[Guide pratique pour créer une paire de clés publique/privée](create-public-private-key-pair.md)|Décrit comment créer une paire de clés de chiffrement pour signer un assembly.|
-|[Comment : signer un assembly avec un nom fort](sign-strong-name.md)|Décrit comment créer un assembly avec nom fort.|
-|[Amélioration des noms forts](enhanced-strong-naming.md)|Décrit les améliorations apportées aux noms forts dans .NET Framework 4.5.|
-|[Comment : référencer un assembly avec nom fort](reference-strong-named.md)|Décrit comment référencer des types ou des ressources dans un assembly avec nom fort au moment de la compilation ou de l'exécution.|
-|[Comment : désactiver la fonctionnalité de contournement de nom fort](disable-strong-name-bypass-feature.md)|Décrit comment désactiver la fonctionnalité qui ignore la validation des signatures avec nom fort. Cette fonctionnalité peut être désactivée pour toutes les applications ou pour des applications spécifiques.|
+|[Comment: Signer une assemblée avec un nom fort](sign-strong-name.md)|Décrit comment créer un assembly avec nom fort.|
+|[Amélioration de l’utilisation de noms forts](enhanced-strong-naming.md)|Décrit les améliorations apportées aux noms forts dans .NET Framework 4.5.|
+|[Comment : Référencez une assemblée forte](reference-strong-named.md)|Décrit comment référencer des types ou des ressources dans un assembly avec nom fort au moment de la compilation ou de l'exécution.|
+|[Comment : Désactiver la fonction de contournement de nom fort](disable-strong-name-bypass-feature.md)|Décrit comment désactiver la fonctionnalité qui ignore la validation des signatures avec nom fort. Cette fonctionnalité peut être désactivée pour toutes les applications ou pour des applications spécifiques.|
 |[Créer des assemblys](create.md)|Fournit une vue d'ensemble des assemblys multifichiers et à fichier unique.|
-|[Comment différer la signature d’un assembly dans Visual Studio](/visualstudio/ide/managing-assembly-and-manifest-signing#how-to-sign-an-assembly-in-visual-studio)|Explique comment signer un assembly avec un nom fort après la création de l'assembly.|
-|[SN. exe (outil Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md)|Décrit l'outil inclus dans le .NET Framework qui facilite la création d'assemblys avec des noms forts. Cet outil fournit des options de gestion des clés, de génération des signatures et de vérification des signatures.|
-|[Al. exe (Assembly Linker)](../../framework/tools/al-exe-assembly-linker.md)|Décrit l'outil inclus dans le .NET Framework qui génère un fichier possédant un manifeste d'assembly à partir de modules ou de fichiers de ressources.|
+|[Comment retarder la signature d’un assemblage dans Visual Studio](/visualstudio/ide/managing-assembly-and-manifest-signing#how-to-sign-an-assembly-in-visual-studio)|Explique comment signer un assembly avec un nom fort après la création de l'assembly.|
+|[Sn.exe (outil Strong Name)](../../framework/tools/sn-exe-strong-name-tool.md)|Décrit l'outil inclus dans le .NET Framework qui facilite la création d'assemblys avec des noms forts. Cet outil fournit des options de gestion des clés, de génération des signatures et de vérification des signatures.|
+|[Al.exe (Lien de l’Assemblée)](../../framework/tools/al-exe-assembly-linker.md)|Décrit l'outil inclus dans le .NET Framework qui génère un fichier possédant un manifeste d'assembly à partir de modules ou de fichiers de ressources.|

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: 5289dbe3aff0a9e1f1024a293ff469df44d34a3b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 3d4315a09869b77b4ae8cbb43646f9a96280b678
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713025"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79173469"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (référence C#)
 
@@ -62,7 +62,7 @@ catch (FileNotFoundException e)
 }
 catch (IOException e)
 {
-    // Extract some information from this exception, and then 
+    // Extract some information from this exception, and then
     // throw it to the parent method.
     if (e.Source != null)
         Console.WriteLine("IOException source: {0}", e.Source);
@@ -73,7 +73,7 @@ catch (IOException e)
 Vous pouvez intercepter une seule exception et lever une exception différente. Dans ce cas, spécifiez l'exception que vous interceptez en tant qu'exception interne, comme illustré dans l'exemple suivant.
 
 ```csharp
-catch (InvalidCastException e) 
+catch (InvalidCastException e)
 {
     // Perform some action here, and then throw a new exception.
     throw new YourCustomException("Put your error message here.", e);
@@ -98,21 +98,21 @@ catch (InvalidCastException e)
 
 > [!NOTE]
 > Il est également possible d’utiliser un filtre d’exception pour obtenir un résultat similaire d’une manière souvent plus claire (sans modifier la pile, comme expliqué précédemment dans ce document). L’exemple suivant a un comportement similaire à l’exemple précédent pour les appelants. La fonction lève et retourne `InvalidCastException` à l’appelant quand `e.Data` a une valeur `null`.
-> 
+>
 > ```csharp
-> catch (InvalidCastException e) when (e.Data != null) 
+> catch (InvalidCastException e) when (e.Data != null)
 > {
 >     // Take some action.
 > }
-> ``` 
+> ```
 
 Dans un bloc `try`, initialisez uniquement les variables qui y sont déclarées. Sinon, une exception peut se produire avant la fin de l'exécution du bloc. Par exemple, dans l'exemple de code suivant, la variable `n` est initialisée à l'intérieur du bloc `try`. Une tentative d'utilisation de cette variable en dehors du bloc `try` dans l'instruction `Write(n)` génère une erreur du compilateur.
 
 ```csharp
-static void Main() 
+static void Main()
 {
     int n;
-    try 
+    try
     {
         // Do not initialize this variable here.
         n = 123;
@@ -139,7 +139,7 @@ Pour intercepter l'exception, attendez la tâche dans un bloc `try`, puis interc
 
 Une tâche peut être dans un état d'erreur car plusieurs exceptions se sont produites dans la méthode async attendue. Par exemple, la tâche peut être le résultat d'un appel à <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Quand vous attendez une telle tâche, une seule des exceptions est interceptée et vous ne pouvez pas prévoir laquelle. Pour obtenir un exemple, consultez la section [Exemple Task.WhenAll](#taskwhenall-example).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Dans l'exemple suivant, le bloc `try` contient un appel à la méthode `ProcessString` qui risque de provoquer une exception. La clause `catch` clause contient le gestionnaire d'exceptions qui affiche simplement un message à l'écran. Quand l'instruction `throw` est appelée depuis `MyMethod`, le système recherche l'instruction `catch` et affiche le message `Exception caught`.
 
@@ -179,10 +179,10 @@ Pour plus d’informations, consultez la section [Instruction try](~/_csharplang
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Instructions try, throw et catch (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)
-- [throw](throw.md)
+- [Jeter](throw.md)
 - [try-finally](try-finally.md)
-- [Guide pratique pour lever explicitement des exceptions](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
+- [Comment : Jeter explicitement des exceptions](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

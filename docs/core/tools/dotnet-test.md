@@ -2,16 +2,16 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 02/27/2020
-ms.openlocfilehash: 6e906ab396a788905c99f50e73390b765b240efc
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: bac2f0e613c34bc9f657551a5eac4038207a93ed
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78157009"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78847896"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
-**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 2.1 SDK et les versions ultérieures
 
 ## <a name="name"></a>Nom
 
@@ -20,11 +20,13 @@ ms.locfileid: "78157009"
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet test [<PROJECT>] [-a|--test-adapter-path] [--blame]
-    [-c|--configuration] [--collect] [-d|--diag] [-f|--framework]
-    [--filter] [-l|--logger] [--no-build] [--no-restore]
-    [-o|--output] [-r|--results-directory] [-s|--settings]
-    [-t|--list-tests] [-v|--verbosity] [-- <RunSettings arguments>]
+dotnet test [<PROJECT> | <SOLUTION>]
+    [-a|--test-adapter-path] [--blame] [-c|--configuration]
+    [--collect] [-d|--diag] [-f|--framework] [--filter]
+    [--interactive] [-l|--logger] [--no-build] [--nologo]
+    [--no-restore] [-o|--output] [-r|--results-directory]
+    [--runtime] [-s|--settings] [-t|--list-tests]
+    [-v|--verbosity] [[--] <RunSettings arguments>]
 
 dotnet test [-h|--help]
 ```
@@ -39,9 +41,9 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 ## <a name="arguments"></a>Arguments
 
-- **`PROJECT`**
+- **`PROJECT | SOLUTION`**
 
-  Chemin du projet de test. Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par défaut.
+  Chemin vers le projet d’essai ou la solution. Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par défaut.
 
 ## <a name="options"></a>Options
 
@@ -51,9 +53,9 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 - **`-blame`**
 
-  Exécute les tests en mode responsable. Cette option est utile pour isoler les tests problématiques qui provoquent le blocage de l’hôte de test. Elle crée un fichier de sortie dans le répertoire actif nommé *Sequence.xml* qui capture l’ordre d’exécution des tests avant le plantage.
+  Exécute les tests en mode responsable. Cette option est utile pour isoler les tests problématiques qui provoquent l’écrasement de l’hôte d’essai. Elle crée un fichier de sortie dans le répertoire actif nommé *Sequence.xml* qui capture l’ordre d’exécution des tests avant le plantage.
 
-- **`c|--configuration {Debug|Release}`**
+- **`c|--configuration <CONFIGURATION>`**
 
   Définit la configuration de build. La valeur par défaut est `Debug`, mais la configuration de votre projet peut remplacer ce paramètre du kit SDK par défaut.
 
@@ -71,11 +73,15 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 - **`--filter <EXPRESSION>`**
 
-  Filtre les tests dans le projet actuel à l’aide de l’expression donnée. Pour plus de détails, consultez la section [Détails de l’option de filtre](#filter-option-details). Pour plus d’informations et des exemples sur la façon d’utiliser le filtrage de test unitaire sélectif, consultez [Exécution de tests unitaires sélectifs](../testing/selective-unit-tests.md).
+  Filtre les tests dans le projet actuel à l’aide de l’expression donnée. Pour plus de détails, consultez la section [Détails de l’option de filtre](#filter-option-details). Pour plus d’informations et pour obtenir des exemples sur la façon d’utiliser le filtrage de test unitaire sélectif, consultez [Exécution de tests unitaires sélectifs](../testing/selective-unit-tests.md).
 
 - **`h|--help`**
 
   Affiche une aide brève pour la commande.
+
+- **`--interactive`**
+
+  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Option disponible à partir du kit SDK .NET Core 3.0.
 
 - **`l|--logger <LoggerUri/FriendlyName>`**
 
@@ -83,7 +89,11 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 - **`--no-build`**
 
-  Ne génère pas le projet de test avant son exécution. Il définit également implicitement l’indicateur-`--no-restore`.
+  Ne génère pas le projet de test avant son exécution. Il définit aussi implicitement le drapeau. `--no-restore`
+
+- **`--nologo`**
+
+  Exécutez des tests sans afficher la bannière Microsoft TestPlatform. Option disponible à partir du kit SDK .NET Core 3.0.
 
 - **`--no-restore`**
 
@@ -97,6 +107,10 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
   Répertoire où les résultats de test doivent être placés. Si le répertoire spécifié n’existe pas, il est créé.
 
+- **`--runtime <RUNTIME_IDENTIFIER>`**
+
+  Le temps d’exécution de la cible à tester.
+
 - **`-s|--settings <SETTINGS_FILE>`**
 
   Fichier `.runsettings` à utiliser pour exécuter les tests. [Configurez des tests unitaires à l’aide d’un fichier `.runsettings`.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
@@ -109,13 +123,13 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
   Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
 
-- arguments `RunSettings`
+- `RunSettings`Arguments
 
-  Les arguments sont passés en tant que `RunSettings` configurations pour le test. Les arguments sont spécifiés en tant que paires `[name]=[value]` après "-- " (notez l’espace après --). Un espace est utilisé pour séparer plusieurs paires `[name]=[value]`.
+  Les arguments `RunSettings` sont adoptés comme configurations pour le test. Les arguments sont spécifiés en tant que paires `[name]=[value]` après "-- " (notez l’espace après --). Un espace est utilisé pour séparer plusieurs paires `[name]=[value]`.
 
   Exemple : `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
 
-  Pour plus d’informations, consultez [VSTest. Console. exe : passage de RunSettings args](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
+  Pour plus d’informations, voir [vstest.console.exe: Passing RunSettings args](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
 
 ## <a name="examples"></a>Exemples
 
@@ -145,16 +159,16 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 `<property>` est un attribut de `Test Case`. Les propriétés suivantes sont prises en charge par les principales infrastructures de tests unitaires :
 
-| Infrastructure de test | Propriétés prises en charge                                                                                      |
+| Framework de test | Propriétés prises en charge                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| MSTest         | <ul><li>Nom complet</li><li>Nom</li><li>ClassName</li><li>Priorité</li><li>TestCategory</li></ul> |
-| xUnit          | <ul><li>Nom complet</li><li>DisplayName</li><li>Caractéristiques</li></ul>                                   |
+| MSTest         | <ul><li>FullyQualifiedName</li><li>Nom</li><li>ClassName</li><li>Priority</li><li>TestCategory</li></ul> |
+| xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Caractéristiques</li></ul>                                   |
 
 La section `<operator>` décrit la relation entre la propriété et la valeur :
 
 | Opérateur | Fonction        |
 | :------: | --------------- |
-| `=`      | Correspondance exacte     |
+| `=`      | Concordance exacte     |
 | `!=`     | Pas de correspondance exacte |
 | `~`      | Contient        |
 | `!~`     | Ne contient pas    |
@@ -167,12 +181,12 @@ Les expressions peuvent être associées à des opérateurs conditionnels :
 
 | Opérateur            | Fonction |
 | ------------------- | -------- |
-| <code>&#124;</code> | - OU -       |
+| <code>&#124;</code> | OR       |
 | `&`                 | AND      |
 
 Vous pouvez mettre des expressions entre parenthèses quand vous utilisez des opérateurs conditionnels (par exemple, `(Name~TestMethod1) | (Name~TestMethod2)`).
 
-Pour plus d’informations et des exemples sur la façon d’utiliser le filtrage de test unitaire sélectif, consultez [Exécution de tests unitaires sélectifs](../testing/selective-unit-tests.md).
+Pour plus d’informations et pour obtenir des exemples sur la façon d’utiliser le filtrage de test unitaire sélectif, consultez [Exécution de tests unitaires sélectifs](../testing/selective-unit-tests.md).
 
 ## <a name="see-also"></a>Voir aussi
 

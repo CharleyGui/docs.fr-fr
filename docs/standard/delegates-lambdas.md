@@ -7,10 +7,10 @@ ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
 ms.openlocfilehash: 0abcc73e31eab89c422513acf778bc8bd092e788
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75345552"
 ---
 # <a name="delegates-and-lambdas"></a>Délégués et expressions lambda
@@ -155,10 +155,10 @@ public MainWindow()
 }
 ```
 
-Dans ce contexte, l’opérateur `+=` est utilisé pour s’abonner à un [événement](../../docs/csharp/language-reference/keywords/event.md). Pour plus d’informations, consultez [Comment s’abonner et annuler l’abonnement à des événements](../../docs/csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
+Dans ce contexte, l’opérateur `+=` est utilisé pour s’abonner à un [événement](../../docs/csharp/language-reference/keywords/event.md). Pour plus d’informations, voir [Comment vous abonner et désabonner des événements](../../docs/csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 
 ## <a name="further-reading-and-resources"></a>Ressources et informations supplémentaires
 
 * [Délégués](../../docs/csharp/programming-guide/delegates/index.md)
 * [Fonctions anonymes](../../docs/csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
-* [Expressions lambda](../../docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
+* [Expressions Lambda](../../docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)

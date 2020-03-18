@@ -11,10 +11,10 @@ helpviewer_keywords:
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
 ms.openlocfilehash: a76cc40f308ac2f636a650cd4a17da0e94e23a34
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78160259"
 ---
 # <a name="managed-threading-best-practices"></a>Bonnes pratiques pour le threading managé
@@ -175,4 +175,4 @@ Utilisez la propriété <xref:System.Environment.ProcessorCount?displayProperty=
 ## <a name="see-also"></a>Voir aussi
 
 - [Thread](../../../docs/standard/threading/index.md)
-- [Threads et threading](../../../docs/standard/threading/threads-and-threading.md)
+- [Fils et threading](../../../docs/standard/threading/threads-and-threading.md)

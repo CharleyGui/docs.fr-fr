@@ -7,26 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - get keyword [C#]
 ms.assetid: a52de048-fbe0-41b0-82ec-8e4ac04d3a71
-ms.openlocfilehash: d6c0452a7890a6ade480054115c1383199a3f91c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 61d8c02aaf13f43ff8ea17c1e868ea9fd52893c9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713492"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79173625"
 ---
 # <a name="get-c-reference"></a>get (référence C#)
 
 Le mot clé `get` définit une méthode *Accessor* dans une propriété ou un indexeur qui retourne la valeur de la propriété ou l’élément de l’indexeur. Pour plus d’informations, consultez [Propriétés](../../programming-guide/classes-and-structs/properties.md), [Propriétés implémentées automatiquement](../../programming-guide/classes-and-structs/auto-implemented-properties.md) et [Indexeurs](../../programming-guide/indexers/index.md).  
   
 L’exemple suivant définit un accesseur `get` et un accesseur `set` pour une propriété nommée `Seconds`. Il utilise un champ privé nommé `_seconds` pour stocker la valeur de la propriété.  
- 
+
  [!code-csharp[get#1](../../../../samples/snippets/csharp/language-reference/keywords/get/get-1.cs)]  
   
 Souvent, l’accesseur `get` se compose d’une seule instruction qui retourne une valeur, comme dans l’exemple précédent. À compter de C# 7.0, vous pouvez implémenter l’accesseur `get` comme membre expression-bodied. L’exemple suivant implémente l’accesseur `get` et l’accesseur `set` en tant que membres expression-bodied.
 
- [!code-csharp[get#3](../../../../samples/snippets/csharp/language-reference/keywords/get/get-3.cs)]   
- 
-Pour les cas simples dans lesquels les accesseurs `get` et `set` d’une propriété n’effectuent aucune autre opération que la définition ou la récupération d’une valeur dans un champ de stockage privé, vous pouvez tirer parti de la prise en charge par le compilateur C# des propriétés implémentées automatiquement. L’exemple suivant implémente `Hours` en tant que propriété implémentée automatiquement. 
+ [!code-csharp[get#3](../../../../samples/snippets/csharp/language-reference/keywords/get/get-3.cs)]
+
+Pour les cas simples dans lesquels les accesseurs `get` et `set` de la propriété n’effectuent aucune autre opération que la définition ou la récupération d’une valeur dans un champ de stockage privé, vous pouvez tirer parti de la prise en charge des propriétés implémentées automatiquement fournies par le compilateur C#. L’exemple suivant implémente `Hours` en tant que propriété implémentée automatiquement.
   
  [!code-csharp[get#2](../../../../samples/snippets/csharp/language-reference/keywords/get/get-2.cs)]  
   
@@ -36,7 +36,7 @@ Pour les cas simples dans lesquels les accesseurs `get` et `set` d’une propri�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
 - [Propriétés](../../programming-guide/classes-and-structs/properties.md)

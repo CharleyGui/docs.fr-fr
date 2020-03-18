@@ -8,10 +8,10 @@ helpviewer_keywords:
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
 ms.openlocfilehash: 5193fc7aaae83cbc0c75e81835244eaaaece69a5
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75700196"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Utilisation d'espaces de noms (Guide de programmation C#)
@@ -30,13 +30,13 @@ Les espaces de noms sont largement utilisés dans les programmes C#, et ce de de
   
  [!code-csharp[csProgGuide#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#31)]  
   
- À la place de :  
+ À la place de :  
   
  [!code-csharp[csProgGuide#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#30)]  
   
 ## <a name="namespace-aliases"></a>Alias d'espaces de noms
 
- Vous pouvez aussi utiliser la [directive`using`](../../language-reference/keywords/using-directive.md) afin de créer un alias pour un espace de noms. Utilisez le [qualificateur d'alias d’espace de noms`::`](../../language-reference/operators/namespace-alias-qualifier.md) pour accéder aux membres de l'espace de noms avec alias. L'exemple suivant montre comment créer et utiliser un alias d’espace de noms :
+ Vous pouvez également [ `using` ](../../language-reference/keywords/using-directive.md) utiliser la directive pour créer un alias pour un espace nom. Utilisez le [qualificateur d'alias d’espace de noms`::`](../../language-reference/operators/namespace-alias-qualifier.md) pour accéder aux membres de l'espace de noms avec alias. L'exemple suivant montre comment créer et utiliser un alias d’espace de noms :
   
 [!code-csharp[csProgGuideNamespaces#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#5)]
   
@@ -94,6 +94,6 @@ Les espaces de noms sont largement utilisés dans les programmes C#, et ce de de
 
 - [Guide de programmation C#](../index.md)
 - [Espaces de noms](./index.md)
-- [., opérateur](../../language-reference/operators/member-access-operators.md#member-access-operator-)
+- [. Opérateur](../../language-reference/operators/member-access-operators.md#member-access-operator-)
 - [:: opérateur](../../language-reference/operators/namespace-alias-qualifier.md)
 - [alias extern](../../language-reference/keywords/extern-alias.md)

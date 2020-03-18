@@ -11,10 +11,10 @@ helpviewer_keywords:
 - observables [.NET Framework], in observer design pattern
 ms.assetid: 790b5d8b-d546-40a6-beeb-151b574e5ee5
 ms.openlocfilehash: f5bb3cda0caa39ba3fd094b80e0b769a4bfc1f85
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73141558"
 ---
 # <a name="how-to-implement-a-provider"></a>Comment : implémenter un fournisseur
@@ -52,7 +52,7 @@ Le modèle de design observateur requiert une division entre un fournisseur, qui
      [!code-csharp[Conceptual.ObserverDesign.HowTo#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#6)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#6)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant contient le code source complet permettant de définir une implémentation <xref:System.IObservable%601> pour une application de surveillance de la température. Il inclut la structure `Temperature`, qui correspond aux données envoyées aux observateurs, et la classe `TemperatureMonitor`, qui est l’implémentation <xref:System.IObservable%601>.  
   
  [!code-csharp[Conceptual.ObserverDesign.HowTo#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#7)]
@@ -62,5 +62,5 @@ Le modèle de design observateur requiert une division entre un fournisseur, qui
 
 - <xref:System.IObservable%601>
 - [Modèle de conception Observateur](../../../docs/standard/events/observer-design-pattern.md)
-- [Guide pratique pour implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md)
+- [Comment : implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md)
 - [Meilleures pratiques du modèle de design observateur](../../../docs/standard/events/observer-design-pattern-best-practices.md)

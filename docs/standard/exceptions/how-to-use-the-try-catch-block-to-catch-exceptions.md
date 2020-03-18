@@ -12,10 +12,10 @@ helpviewer_keywords:
 - catch blocks
 ms.assetid: a3ce6dfd-1f64-471b-8ad8-8cfaf406275d
 ms.openlocfilehash: 5a9218d394b76e897f4263708a10f1bc895ad4e1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75708464"
 ---
 # <a name="how-to-use-the-trycatch-block-to-catch-exceptions"></a>Guide pratique pour utiliser le bloc try/catch pour intercepter des exceptions

@@ -6,16 +6,16 @@ helpviewer_keywords:
 - indexers [C#], vs. properties
 ms.assetid: 3358a89f-44a0-4a4d-bf8c-07237a90af39
 ms.openlocfilehash: 330d222083ce599719698c023803196dfe88da84
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75712128"
 ---
 # <a name="comparison-between-properties-and-indexers-c-programming-guide"></a>Comparaison entre propriétés et indexeurs (Guide de programmation C#)
 Les indexeurs sont semblables aux propriétés. À l’exception des différences répertoriées dans le tableau suivant, toutes les règles définies pour les accesseurs des propriétés s’appliquent également aux accesseurs des indexeurs.  
   
-|Les|Indexation|  
+|Propriété|Indexeur|  
 |--------------|-------------|  
 |Permet aux méthodes d’être appelées comme si elles étaient des membres de données publics.|Permet aux éléments d’une collection interne d’un objet d’être accessibles à l’aide de la notation de tableau sur l’objet lui-même.|  
 |Accessible par le biais d’un nom simple.|Accessible par le biais d’un index.|  

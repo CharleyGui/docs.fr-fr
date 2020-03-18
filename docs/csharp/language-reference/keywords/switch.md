@@ -13,10 +13,10 @@ helpviewer_keywords:
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
 ms.openlocfilehash: e5580e81b9175cd95491fdba724bacbffa692a5e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75345390"
 ---
 # <a name="switch-c-reference"></a>switch (informations de référence sur C#)
@@ -35,7 +35,7 @@ Elle est équivalente à l’exemple suivant, qui utilise une construction `if`-
 
 ## <a name="the-match-expression"></a>Expression de correspondance
 
-L’expression de correspondance fournit la valeur à mettre en correspondance avec les modèles dans les étiquettes `case`. Sa syntaxe est la suivante :
+L’expression de correspondance fournit la valeur à mettre en correspondance avec les modèles dans les étiquettes `case`. Sa syntaxe est la suivante :
 
 ```csharp
    switch (expr)
@@ -44,10 +44,10 @@ L’expression de correspondance fournit la valeur à mettre en correspondance a
 Avec C# 6 (et les versions antérieures), l’expression de correspondance doit retourner une valeur d’un des types suivants :
 
 - [char](../builtin-types/char.md),
-- [string](../builtin-types/reference-types.md),
+- une [chaîne](../builtin-types/reference-types.md).
 - [bool](../builtin-types/bool.md),
-- valeur [intégrale](../builtin-types/integral-numeric-types.md) , telle qu’une `int` ou une `long`.
-- ou valeur [enum](../builtin-types/enum.md).
+- une valeur [intégrale,](../builtin-types/integral-numeric-types.md) telle qu’un `int` ou un `long`.
+- une valeur [enum.](../builtin-types/enum.md)
 
 À compter de C# 7.0, l’expression de correspondance peut être toute expression non Null.
 
@@ -59,7 +59,7 @@ Une instruction `switch` peut inclure un nombre quelconque de sections de commut
 
 [!code-csharp[switch#2](~/samples/snippets/csharp/language-reference/keywords/switch/switch2.cs#1)]
 
-Une seule section de commutation s’exécute dans une instruction switch. C# ne permet pas à l’exécution de passer d’une section switch à la suivante. Pour cette raison, le code suivant génère une erreur du compilateur, CS0163 : « le contrôle ne peut pas passer d’une étiquette case (\<étiquette case >) à une autre. »
+Une seule section de commutation s’exécute dans une instruction switch. C# ne permet pas à l’exécution de passer d’une section switch à la suivante. Pour cette raison, le code suivant génère une erreur de compilateur, CS0163: "Le contrôle ne peut pas passer d’une étiquette de cas (étiquette\<de cas>) à l’autre."
 
 ```csharp
 switch (caseSwitch)
@@ -112,16 +112,16 @@ Chaque instruction `case` définit un modèle qui, s’il correspond à l’expr
 
 ### <a name="constant-pattern"></a>Modèle de constante
 
-Le modèle de constante teste si l’expression de correspondance est égale à une constante spécifiée. Sa syntaxe est la suivante :
+Le modèle de constante teste si l’expression de correspondance est égale à une constante spécifiée. Sa syntaxe est la suivante :
 
 ```csharp
    case constant:
 ```
 
-où *constant* est la valeur à tester. *constant* peut être l’une quelconque des expressions constantes suivantes :
+où *constant* est la valeur à tester. *constant* peut correspondre à l’une des expressions constantes suivantes :
 
-- Littéral [bool](../builtin-types/bool.md) : `true` ou `false`.
-- Toute constante [intégrale](../builtin-types/integral-numeric-types.md) , telle qu’un `int`, un `long`ou un `byte`.
+- Un [bool](../builtin-types/bool.md) littéral: soit `true` ou `false`.
+- Toute constante [intégrale,](../builtin-types/integral-numeric-types.md) comme un `int`, un `long`, ou un `byte`.
 - Le nom d’une variable `const` déclarée
 - Une constante d’énumération
 - Un littéral de type [char](../builtin-types/char.md)
@@ -143,7 +143,7 @@ L’exemple suivant utilise le modèle de constante pour gérer l’entrée d’
 
 ### <a name="type-pattern"></a>Modèle de type
 
-Le modèle de type permet une évaluation et une conversion rapides de type. Lorsqu’il est utilisé avec l’instruction `switch` pour effectuer une mise en correspondance de modèle, il permet de tester si une expression peut être convertie en un type spécifié et, si tel est le cas, il effectue un cast de l’expression en une variable de ce type. Sa syntaxe est la suivante :
+Le modèle de type permet une évaluation et une conversion rapides de type. Lorsqu’il est utilisé avec l’instruction `switch` pour effectuer une mise en correspondance de modèle, il permet de tester si une expression peut être convertie en un type spécifié et, si tel est le cas, il effectue un cast de l’expression en une variable de ce type. Sa syntaxe est la suivante :
 
 ```csharp
    case type varname
@@ -199,8 +199,8 @@ Pour plus d’informations, consultez la section [Instruction switch](~/_csharpl
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [if-else](if-else.md)
-- [Critères spéciaux](../../pattern-matching.md)
+- [si-bien](if-else.md)
+- [Filtrage](../../pattern-matching.md)

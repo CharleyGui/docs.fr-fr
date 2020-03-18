@@ -1,15 +1,15 @@
 ---
-title: Comment joindre deux collections (LINQ to XML) (C#)
+title: Comment rejoindre deux collections (LINQ à XML) (C)
 ms.date: 07/20/2015
 ms.assetid: 7b817ede-911a-4cff-9dd3-639c3fc228c9
 ms.openlocfilehash: a5044778bbfd9529faf5fe63c72076f6a973c815
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75345858"
 ---
-# <a name="how-to-join-two-collections-linq-to-xml-c"></a>Comment joindre deux collections (LINQ to XML) (C#)
+# <a name="how-to-join-two-collections-linq-to-xml-c"></a>Comment rejoindre deux collections (LINQ à XML) (C)
 
 Un élément ou attribut dans un document XML peut parfois faire référence à un autre élément ou attribut. Par exemple, l’[Exemple de fichier XML : Clients et commandes (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md) contient une liste de clients et une liste de commandes. Chaque élément `Customer` contient un attribut `CustomerID`. Chaque élément `Order` contient un élément `CustomerID`. L'élément `CustomerID` dans chaque commande fait référence à l'attribut `CustomerID` dans un client.
 
@@ -17,11 +17,11 @@ La rubrique [Exemple de fichier XSD : Clients et commandes](./sample-xsd-file-c
 
 Avec [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], vous pouvez tirer parti de cette relation en utilisant la clause `join`.
 
-Étant donné qu’aucun index n’est disponible, une telle jointure aura des performances d’exécution médiocres.
+Étant donné qu’il n’y a pas d’indice disponible, une telle adhésion aura de mauvaises performances en temps de course.
 
 Pour obtenir des informations détaillées sur `join`, consultez [Opérations de jointure (C#)](./join-operations.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L'exemple suivant joint les éléments `Customer` aux éléments `Order` et génère un nouveau document XML qui inclut l'élément `CompanyName` dans les commandes.
 
@@ -33,7 +33,7 @@ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Clien
 
 Cet exemple utilise le schéma XSD suivant : [Exemple de fichier XSD : Clients et commandes](./sample-xsd-file-customers-and-orders1.md).
 
-La jointure de cette manière ne fonctionnera pas correctement. Les jointures sont effectuées par le biais d'une recherche linéaire. Il n'y a aucun index ou table de hachage pour améliorer les performances.
+Rejoindre de cette façon ne sera pas bien performer. Les jointures sont effectuées par le biais d'une recherche linéaire. Il n'y a aucun index ou table de hachage pour améliorer les performances.
 
 ```csharp
 XmlSchemaSet schemas = new XmlSchemaSet();

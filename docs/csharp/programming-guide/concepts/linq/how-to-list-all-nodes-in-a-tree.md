@@ -1,22 +1,22 @@
 ---
-title: Affichage de la liste de tous les nœudsC#d’une arborescence ()
+title: Comment inscrire tous les nœuds dans un arbre
 ms.date: 07/20/2015
 ms.assetid: 3e934371-f4c6-458b-9f6b-f9061b596f5b
 ms.openlocfilehash: e1b37c1d0801f2924e6811e630094524331a0d86
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75345878"
 ---
-# <a name="how-to-list-all-nodes-in-a-tree-c"></a>Affichage de la liste de tous les nœudsC#d’une arborescence ()
+# <a name="how-to-list-all-nodes-in-a-tree-c"></a>Comment inscrire tous les nœuds dans un arbre
 
 Il est parfois utile de répertorier tous les nœuds d’une arborescence. Cela peut être utile pour savoir exactement comment une méthode ou une propriété affecte l'arborescence. L'une des manières de répertorier tous les nœuds sous forme textuelle consiste à générer une expression XPath qui identifie exactement et spécifiquement tout nœud dans l'arborescence.
 
 Il n'est pas particulièrement utile d'exécuter des expressions XPath à l'aide de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Les expressions XPath procurent des performances inférieures aux requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], et les requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] sont beaucoup plus puissantes. Toutefois, XPath fonctionne bien comme méthode d’identification des nœuds de l’arborescence XML.
 
-## <a name="example"></a>Exemple
- Cet exemple illustre une fonction nommée `GetXPath` qui génère une expression XPath spécifique pour tout nœud de l’arborescence XML. Il génère des expressions XPath appropriées même lorsque des nœuds se trouvent dans un espace de noms. Les expressions XPath sont générées à l'aide de préfixes d'espaces de noms.
+## <a name="example"></a> Exemple
+ Cet exemple montre `GetXPath` une fonction nommée qui génère une expression XPath spécifique pour n’importe quel nœud dans l’arbre XML. Il génère des expressions XPath appropriées même lorsque des nœuds se trouvent dans un espace de noms. Les expressions XPath sont générées à l'aide de préfixes d'espaces de noms.
 
  L'exemple crée ensuite une petite arborescence XML qui contient un exemple de plusieurs types de nœuds. Il itère ensuite au sein des nœuds descendants et imprime l'expression XPath pour chaque nœud.
 
@@ -316,7 +316,7 @@ class Program
 }
 ```
 
- Cet exemple génère la sortie suivante :
+ Cet exemple produit la sortie suivante :
 
 ```output
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>

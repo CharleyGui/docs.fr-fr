@@ -13,10 +13,10 @@ helpviewer_keywords:
 - .NET Framework, asynchronous design patterns
 ms.assetid: 8cef1fcf-6f9f-417c-b21f-3fd8bac75007
 ms.openlocfilehash: 89c486618729c334bf74f0a1f4f9dd1b3cee8b0e
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78158166"
 ---
 # <a name="task-based-asynchronous-pattern-tap"></a>Modèle asynchrone basé sur les tâches (TAP)
@@ -24,7 +24,7 @@ Le modèle asynchrone basé sur des tâches (TAP) est basé sur les types <xref:
   
 ## <a name="naming-parameters-and-return-types"></a>Noms, paramètres et types de retour
 
-Le TAP utilise une méthode unique pour représenter le début et la fin d'une opération asynchrone. Ce fonctionnement le différencie du modèle de programmation asynchrone (APM ou `IAsyncResult`) et du modèle asynchrone basé sur les événements (EAP). Les méthodes `Begin` et `End` sont nécessaires pour le modèle APM. Le modèle EAP a besoin d’une méthode comportant le suffixe `Async`, ainsi que d’un ou plusieurs événements, de types de délégués de gestionnaire d’événements et de types dérivés de `EventArg`. Les méthodes asynchrones du modèle TAP qui retournent des types compatibles await, comme `Async`, <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601> et <xref:System.Threading.Tasks.ValueTask>, comprennent le suffixe <xref:System.Threading.Tasks.ValueTask%601> après le nom de l’opération. Par exemple, une opération `Get` asynchrone qui retourne une valeur `Task<String>` peut porter le nom `GetAsync`. Si vous ajoutez une méthode TAP à une classe qui contient déjà un nom de méthode EAP avec le suffixe `Async`, utilisez plutôt le suffixe `TaskAsync`. Par exemple, si la classe possède déjà une méthode `GetAsync`, utilisez le nom `GetTaskAsync`. Les méthodes qui lancent une opération asynchrone, mais ne retournent pas de type compatible await, doivent porter un nom qui commence par `Begin`, `Start` ou un autre verbe suggérant qu’elles ne retournent ni ne lèvent le résultat de l’opération.  
+Le TAP utilise une méthode unique pour représenter le début et la fin d'une opération asynchrone. Ce fonctionnement le différencie du modèle de programmation asynchrone (APM ou `IAsyncResult`) et du modèle asynchrone basé sur les événements (EAP). Les méthodes `Begin` et `End` sont nécessaires pour le modèle APM. Le modèle EAP a besoin d’une méthode comportant le suffixe `Async`, ainsi que d’un ou plusieurs événements, de types de délégués de gestionnaire d’événements et de types dérivés de `EventArg`. Les méthodes asynchrones du modèle TAP qui retournent des types compatibles await, comme <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.ValueTask> et <xref:System.Threading.Tasks.ValueTask%601>, comprennent le suffixe `Async` après le nom de l’opération. Par exemple, une opération `Get` asynchrone qui retourne une valeur `Task<String>` peut porter le nom `GetAsync`. Si vous ajoutez une méthode TAP à une classe qui contient déjà un nom de méthode EAP avec le suffixe `Async`, utilisez plutôt le suffixe `TaskAsync`. Par exemple, si la classe possède déjà une méthode `GetAsync`, utilisez le nom `GetTaskAsync`. Les méthodes qui lancent une opération asynchrone, mais ne retournent pas de type compatible await, doivent porter un nom qui commence par `Begin`, `Start` ou un autre verbe suggérant qu’elles ne retournent ni ne lèvent le résultat de l’opération.  
   
  Une méthode TAP retourne une <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> ou une <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>, selon que la méthode synchrone correspondante retourne void ou un type `TResult`.  
   
@@ -189,9 +189,9 @@ Public MethodNameAsync(…, cancellationToken As CancellationToken,
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Titre|Description|  
+|Intitulé|Description|  
 |-----------|-----------------|  
 |[Modèles de programmation asynchrone](../../../docs/standard/asynchronous-programming-patterns/index.md)|Présente les trois modèles permettant d'effectuer des opérations asynchrones : le modèle asynchrone basé sur des tâches (TAP), le modèle de programmation asynchrone (APM) et le modèle asynchrone basé sur des événements (EAP).|  
 |[Implémentation du modèle asynchrone basé sur des tâches](../../../docs/standard/asynchronous-programming-patterns/implementing-the-task-based-asynchronous-pattern.md)|Décrit comment implémenter le modèle asynchrone basé sur des tâches (TAP) de trois façons : à l'aide des compilateurs C# et Visual Basic dans Visual Studio, manuellement, ou par une combinaison des méthodes du compilateur et des méthodes manuelles.|  
-|[Utilisation du modèle asynchrone basé sur les tâches](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md)|Décrit comment utiliser des tâches et des rappels afin de terminer l’attente sans blocage.|  
+|[Consuming the Task-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md)|Décrit comment utiliser des tâches et des rappels afin de terminer l’attente sans blocage.|  
 |[Interopérabilité avec d’autres types et modèles asynchrones](../../../docs/standard/asynchronous-programming-patterns/interop-with-other-asynchronous-patterns-and-types.md)|Décrit comment utiliser le modèle asynchrone basé sur des tâches (TAP) pour implémenter le modèle de programmation asynchrone (APM) et le modèle asynchrone basé sur des événements (EAP).|

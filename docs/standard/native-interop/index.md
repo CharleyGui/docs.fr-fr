@@ -3,10 +3,10 @@ title: Interopérabilité native - .NET
 description: Découvrez comment interagir avec les composants natifs dans .NET.
 ms.date: 01/18/2019
 ms.openlocfilehash: 330466d74cc268214f74c4f575e6a2961f678972
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75706333"
 ---
 # <a name="native-interoperability"></a>Interopérabilité native
@@ -27,5 +27,5 @@ La liste précédente n’englobe pas toutes les situations et scénarios potent
 ## <a name="see-also"></a>Voir aussi
 
 - [Appel de code non managé (P/Invoke)](pinvoke.md)
-- [Marshaling de types](type-marshaling.md)
+- [Type de marshaling](type-marshaling.md)
 - [Meilleures pratiques pour l’interopérabilité native](best-practices.md)

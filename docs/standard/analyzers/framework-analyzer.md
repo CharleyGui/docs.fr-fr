@@ -1,15 +1,15 @@
 ---
-title: Analyseurs de .NET Framework-.NET
-description: Découvrez comment utiliser les analyseurs de .NET Framework dans le package des analyseurs de .NET Framework pour rechercher et résoudre les problèmes de sécurité
+title: .NET Analyseurs de cadre - .NET
+description: Apprenez à utiliser les analyseurs de cadre .NET dans le paquet .NET Framework Analyzers pour trouver et traiter les risques de sécurité
 author: billwagner
 ms.author: wiwagn
 ms.date: 01/25/2018
 ms.technology: dotnet-standard
 ms.openlocfilehash: dd69671e709549fe0ad0f582e4d09b43f7321df2
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78155995"
 ---
 # <a name="the-net-framework-analyzer"></a>L’analyseur .NET Framework
@@ -20,7 +20,7 @@ L’analyseur s’exécute de façon interactive dans Visual Studio au fil de l�
 
 ## <a name="installing-and-configuring-the-net-framework-analyzer"></a>Installation et configuration de l’Analyseur .NET Framework
 
-Les analyseurs de .NET Framework doivent être installés en tant que package NuGet sur chaque projet où vous souhaitez qu’ils s’exécutent. Il suffit qu’un seul développeur les ajoute au projet. Le package de l’analyseur est une dépendance de projet et il s’exécute sur la machine de chaque développeur une fois qu’il dispose de la solution mise à jour.
+Les analyseurs de cadre .NET doivent être installés comme un paquet NuGet sur chaque projet où vous voulez qu’ils fonctionnent. Il suffit qu’un seul développeur les ajoute au projet. Le package de l’analyseur est une dépendance de projet et il s’exécute sur la machine de chaque développeur une fois qu’il dispose de la solution mise à jour.
 
 L’Analyseur .NET Framework est livré dans le package NuGet [Microsoft.NetFramework.Analyzers](https://www.nuget.org/packages/Microsoft.NetFramework.Analyzers/). Ce package fournit seulement les analyseurs spécifiques à .NET Framework, qui comprend des analyseurs de sécurité. Dans la plupart des cas, vous allez utiliser le package NuGet [Microsoft.CodeAnalysis.FxCopAnalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers).
 Le package d’agrégation FxCopAnalyzers contient tous les analyseurs de framework inclus dans le package Framework.Analyzers, ainsi que les analyseurs suivants :
@@ -51,7 +51,7 @@ Vous ne devez rien dériver directement d’un petit nombre de types du .NET Fra
 
 **Catégorie :** Conception
 
-**Gravité :** Avertissement
+**Sévérité:** Avertissement
 
 Informations supplémentaires : [CA1058 : Les types ne doivent pas étendre certains types de base](/visualstudio/code-quality/ca1058-types-should-not-extend-certain-base-types)
 
@@ -61,7 +61,7 @@ L’interception des exceptions d’état endommagé pourrait masquer des erreur
 
 **Catégorie :** Sécurité
 
-**Gravité :** Avertissement
+**Sévérité:** Avertissement
 
 Informations supplémentaires : [## CA2153 : Ne pas intercepter les exceptions d’état endommagé](/visualstudio/code-quality/ca2153-avoid-handling-corrupted-state-exceptions)
 
@@ -82,7 +82,7 @@ public class MyItemType
 
 **Catégorie :** Utilisation
 
-**Gravité :** Avertissement
+**Sévérité:** Avertissement
 
 Informations supplémentaires : [CA2229 : Implémentez des constructeurs de sérialisation](/visualstudio/code-quality/ca2229-implement-serialization-constructors)
 
@@ -92,7 +92,7 @@ Un champ d'instance d'un type non sérialisable est déclaré dans un type séri
 
 **Catégorie :** Utilisation
 
-**Gravité :** Avertissement
+**Sévérité:** Avertissement
 
 Informations supplémentaires : [CA2235 : Marquez tous les champs non sérialisables](/visualstudio/code-quality/ca2235-mark-all-non-serializable-fields)
 
@@ -102,7 +102,7 @@ Pour être reconnus par le Common Language Runtime comme étant sérialisables, 
 
 **Catégorie :** Utilisation
 
-**Gravité :** Avertissement
+**Sévérité:** Avertissement
 
 Informations supplémentaires : [CA2237 : Marquez les types ISerializable comme étant sérialisables](/visualstudio/code-quality/ca2237-mark-iserializable-types-with-serializableattribute)
 
@@ -112,7 +112,7 @@ Si vous utilisez des instances de <xref:System.Xml.XmlReaderSettings.DtdProcessi
 
 **Catégorie :** Sécurité
 
-**Gravité :** Avertissement
+**Sévérité:** Avertissement
 
 Informations supplémentaires : [A3075 : Traitement du DTD non sécurisé dans XML](/visualstudio/code-quality/ca2237-mark-iserializable-types-with-serializableattribute)
 
@@ -122,7 +122,7 @@ Les algorithmes de chiffrement se dégradent au fil du temps, car les attaques d
 
 **Catégorie :** Sécurité
 
-**Gravité :** Avertissement
+**Sévérité:** Avertissement
 
 Informations supplémentaires : [CA5350 : N’utilisez pas d’algorithmes de chiffrement faibles](/visualstudio/code-quality/ca5350-do-not-use-weak-cryptographic-algorithms)
 
@@ -132,6 +132,6 @@ Il existe une attaque qui permet de casser cet algorithme par voie informatique.
 
 **Catégorie :** Sécurité
 
-**Gravité :** Avertissement
+**Sévérité:** Avertissement
 
 Informations supplémentaires : [CA5351 : N’utilisez pas d’algorithmes de chiffrement cassés](/visualstudio/code-quality/ca5351)

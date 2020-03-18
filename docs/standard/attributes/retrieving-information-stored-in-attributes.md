@@ -12,10 +12,10 @@ helpviewer_keywords:
 - attributes [.NET Framework], retrieving
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
 ms.openlocfilehash: 4f0f3555ae1ab7e662d5f88ac65739a7c791a964
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78158075"
 ---
 # <a name="retrieving-information-stored-in-attributes"></a>Récupération des informations stockées dans les attributs
@@ -26,11 +26,11 @@ La récupération d’un attribut personnalisé est un processus simple. Tout d�
   
  Cette section décrit les méthodes suivantes pour récupérer des attributs :  
   
-- [Récupération d’une seule instance d’un attribut](#cpconretrievingsingleinstanceofattribute)  
+- [Récupération d’une seule instance d’attribut](#cpconretrievingsingleinstanceofattribute)  
   
 - [Récupération de plusieurs instances d’un attribut appliqué à la même étendue](#cpconretrievingmultipleinstancesofattributeappliedtosamescope)  
   
-- [Récupération de plusieurs instances d’un attribut appliqué à différentes étendues](#cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes)  
+- [Récupération de multiples instances d’un attribut appliqué à différentes portées](#cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes)  
   
 <a name="cpconretrievingsingleinstanceofattribute"></a>
 ## <a name="retrieving-a-single-instance-of-an-attribute"></a>Récupération d’une seule instance d’un attribut  

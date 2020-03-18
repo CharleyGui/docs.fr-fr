@@ -3,10 +3,10 @@ title: Nouveautés de C# 7.2
 description: Vue d’ensemble des nouvelles fonctionnalités de C# 7.2.
 ms.date: 08/16/2017
 ms.openlocfilehash: 7febefb81bbea6f24690adb05488ad6a18bbf552
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75694593"
 ---
 # <a name="whats-new-in-c-72"></a>Nouveautés de C# 7.2
@@ -26,7 +26,7 @@ Les nouvelles fonctionnalités de langage de cette version sont :
   - Les arguments nommés peuvent être suivis par des arguments de position.
 - [Traits de soulignement de début dans les littéraux numériques](#leading-underscores-in-numeric-literals)
   - Les littéraux numériques peuvent maintenant comporter des traits de soulignement de début avant tout chiffre affiché.
-- [Modificateur d’accès `private protected`](#private-protected-access-modifier)
+- [`private protected`modifier d’accès](#private-protected-access-modifier)
   - Le modificateur d’accès `private protected` active l’accès pour les classes dérivées dans le même assembly.
 - [Expressions `ref` conditionnelles](#conditional-ref-expressions)
   - Le résultat d’une expression conditionnelle (`?:`) peut maintenant être une référence.
@@ -40,7 +40,7 @@ Le reste de cet article présente une vue d’ensemble de chaque fonctionnalité
 
 ## <a name="safe-efficient-code-enhancements"></a>Amélioration du code safe et efficace
 
-Les fonctionnalités de langage introduites dans 7.2 vous permettent de travailler avec les types valeur tout en utilisant la sémantique de référence. Elles sont conçues pour améliorer les performances en réduisant la copie des types valeur sans impliquer les allocations de mémoire associées à l’utilisation des types référence. Les fonctionnalités incluent :
+Les fonctionnalités de langage introduites dans 7.2 vous permettent de travailler avec les types valeur tout en utilisant la sémantique de référence. Elles sont conçues pour améliorer les performances en réduisant la copie des types valeur sans impliquer les allocations de mémoire associées à l’utilisation des types référence. Cette API offre les fonctionnalités suivantes :
 
 - Le modificateur `in` sur les paramètres pour spécifier qu’un argument est passé par référence, mais pas modifié par la méthode appelée. L’ajout du modificateur `in` à un argument est une [modification compatible avec la source](version-update-considerations.md#source-compatible-changes).
 - Le modificateur `ref readonly` sur les retours de méthode pour indiquer qu’une méthode retourne sa valeur par référence, mais n’autorise pas les écritures sur cet objet. L’ajout du modificateur `ref readonly` est une [modification compatible avec la source](version-update-considerations.md#source-compatible-changes), si une valeur est assignée au retour. Le fait d’ajouter le modificateur `readonly` à une instruction de retour `ref` existante représente une [modification incompatible](version-update-considerations.md#incompatible-changes). Cela nécessite que les appelants mettent à jour de la déclaration de variables locales `ref` pour inclure le modificateur `readonly`.

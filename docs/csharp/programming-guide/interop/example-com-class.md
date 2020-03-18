@@ -6,10 +6,10 @@ helpviewer_keywords:
 - COM, exposing Visual C# objects to
 ms.assetid: 6504dea9-ad1c-4993-a794-830fec5270af
 ms.openlocfilehash: 6af85d0314a44acbde0996cecbe6dad82cdcc8db
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75712076"
 ---
 # <a name="example-com-class-c-programming-guide"></a>Exemple de classe COM (Guide de programmation C#)
@@ -33,11 +33,11 @@ Voici un exemple de classe pouvant être exposée en tant qu’objet COM. Après
   
  La classe implémente l’interface de classe ; elle peut implémenter plusieurs interfaces, mais la première implémentation sera l’interface de classe par défaut. Implémentez ici les méthodes et propriétés exposées à COM. Elles doivent être marquées comme publiques et doivent correspondre aux déclarations dans l’interface de classe. Vous devez aussi déclarer ici les événements déclenchés par la classe. Ils doivent être marqués comme publics et doivent correspondre aux déclarations dans l’interface d’événement.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  [!code-csharp[csProgGuideInterop#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInterop/CS/ExampleCOM.cs#8)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
 - [Interopérabilité](./index.md)
-- [Page Générer, Concepteur de projet (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)
+- [Générer, page du Concepteur de projets (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)

@@ -23,10 +23,10 @@ helpviewer_keywords:
 - full weekday names
 ms.assetid: 1c9bef76-5634-46cf-b91c-9b9eb72091d7
 ms.openlocfilehash: 771bd0276310eecb534fb80836faadb1a8aa10bb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73084199"
 ---
 # <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>Comment : extraire le jour de la semaine à partir d'une date spécifique
@@ -77,7 +77,7 @@ Le .NET Framework permet de déterminer facilement le jour ordinal de la semaine
          [!code-csharp[Formatting.Howto.WeekdayName#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/fullname5.cs#5)]
          [!code-vb[Formatting.Howto.WeekdayName#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/fullname5.vb#5)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L'exemple montre comment appeler les propriétés <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> et <xref:System.DateTimeOffset.DayOfWeek%2A?displayProperty=nameWithType> et les méthodes <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> et <xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType> pour récupérer le nombre qui représente le jour de la semaine, le nom abrégé du jour de la semaine et le nom complet du jour de la semaine pour une date particulière.  
   
  [!code-csharp[Formatting.Howto.WeekdayName#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/example6.cs#6)]
@@ -102,4 +102,4 @@ Le .NET Framework permet de déterminer facilement le jour ordinal de la semaine
 
 - [Exécution d’opérations de mise en forme](../../../docs/standard/base-types/performing-formatting-operations.md)
 - [Chaînes de format de date et d'heure standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
-- [Chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Chaînes personnalisées de format de date et d’heure](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)

@@ -1,21 +1,21 @@
 ---
-title: Arborescences de l’expression
+title: Expression Trees
 description: En savoir plus sur les arborescences d’expressions dans .NET Core et comment les utiliser pour représenter le code en tant que structures que vous pouvez examiner, modifier et exécuter.
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: aceb4719-0d5a-4b19-b01f-b51063bcc54f
-ms.openlocfilehash: b7d039ea4585953473dc88cebcc516ea240cdc3a
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: e1026ef70860da519b688a9d67181b88d03f6f0b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036324"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79145837"
 ---
-# <a name="expression-trees"></a>Arborescences de l’expression
+# <a name="expression-trees"></a>Expression Trees
 
-Si vous avez déjà utilisé LINQ, vous connaissez une bibliothèque enrichie où les types `Func` font partie de l’ensemble d’API. (Si vous n’êtes pas familiarisé avec LINQ, vous souhaiterez probablement lire [le didacticiel LINQ](linq/index.md) et l’article sur les [expressions lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md) avant celui-ci.) Les *arborescences d’expressions* fournissent une interaction plus riche avec les arguments qui sont des fonctions.
+Si vous avez déjà utilisé LINQ, vous connaissez une bibliothèque enrichie où les types `Func` font partie de l’ensemble d’API. (Si vous n’êtes pas familier avec LINQ, vous voulez probablement lire [le tutoriel LINQ](linq/index.md) et l’article sur les [expressions lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md) avant celui-ci.) *Expression Arbres* fournir une interaction plus riche avec les arguments qui sont des fonctions.
 
-Vous écrivez des arguments de fonction, généralement à l’aide d’expressions lambda, quand vous créez des requêtes LINQ. Dans une requête LINQ classique, ces arguments de fonction sont transformés en un délégué créé par le compilateur. 
+Vous écrivez des arguments de fonction, généralement à l’aide d’expressions lambda, quand vous créez des requêtes LINQ. Dans une requête LINQ classique, ces arguments de fonction sont transformés en un délégué créé par le compilateur.
 
 Quand vous souhaitez avoir une interaction plus complète, vous devez utiliser des *arborescences d’expressions*.
 Les arborescences d’expressions représentent le code sous forme de structure que vous pouvez examiner, modifier ou exécuter. Ces outils vous permettent de manipuler le code au moment de l’exécution. Vous pouvez écrire du code qui examine les algorithmes en cours d’exécution ou injecte de nouvelles fonctionnalités. Dans des scénarios avancés, vous pouvez modifier les algorithmes en cours d’exécution, et même traduire les expressions C# dans une autre forme en vue d’une exécution dans un autre environnement.
@@ -28,11 +28,11 @@ Les sections suivantes de ce didacticiel expliquent en détail ce que sont les a
 1. [Explication des arborescences de l’expression](expression-trees-explained.md)
 
     Comprenez la structure et les concepts derrière les *arborescences d’expressions*.
-    
-2. [Types de frameworks prenant en charge les arborescences de l’expression](expression-classes.md)
-    
+
+2. [Types de frameworks prenant en charge les arborescences d’expressions](expression-classes.md)
+
     Découvrez les structures et les classes qui définissent et manipulent des arborescences d’expressions.
-    
+
 3. [Exécution d’expressions](expression-trees-execution.md)
 
     Découvrez comment convertir une arborescence d’expressions représentée sous forme d’expression lambda en un délégué, et comment exécuter le délégué résultant.
@@ -49,6 +49,6 @@ Les sections suivantes de ce didacticiel expliquent en détail ce que sont les a
 
     Découvrez comment générer une copie modifiée d’une arborescence d’expressions ou comment traduire une arborescence d’expressions dans un format différent.
 
-7. [Conclusion](expression-trees-summary.md)
+7. [Résumé](expression-trees-summary.md)
 
     Passez en revue les informations sur les arborescences d’expressions.

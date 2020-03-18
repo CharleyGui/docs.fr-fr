@@ -7,10 +7,10 @@ ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 1e38e9d9-8284-46ee-a15f-199adc4f26f4
 ms.openlocfilehash: d649bc3a92d3bb834b3bc4f7d3c1bcb0f9417375
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78159726"
 ---
 # <a name="async-overview"></a>Vue d’ensemble d’async
@@ -20,7 +20,7 @@ Il n’y a pas si longtemps, il suffisait d’acheter un PC ou un serveur plus r
 - Les applications clientes doivent être toujours actives, toujours connectées, constamment réactives à l’interaction de l’utilisateur (interface tactile, par exemple) et en haut du classement des magasins d’applications !
 - Les services doivent gérer les pics de trafic en ayant la possibilité de monter et descendre en puissance facilement.
 
-La programmation asynchrone est une technique clé qui facilite le blocage des E/S et des opérations simultanées sur plusieurs cœurs. .NET offre aux applications et services la possibilité d’être réactifs et élastiques avec des modèles de programmation asynchrone au niveau du langage et C#faciles à utiliser dans F#, Visual Basic et.
+La programmation asynchrone est une technique clé qui facilite le blocage des E/S et des opérations simultanées sur plusieurs cœurs. .NET permet aux applications et aux services d’être réactifs et élastiques avec des modèles de programmation asynchrones faciles à utiliser et au niveau du langage dans les modèles de programmation C, Visual Basic et F.
 
 ## <a name="why-write-async-code"></a>Pourquoi écrire du code asynchrone ?
 

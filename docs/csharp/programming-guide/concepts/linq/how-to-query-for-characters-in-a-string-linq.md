@@ -1,18 +1,18 @@
 ---
-title: Comment interroger des caractères dans une chaîne (LINQ) (C#)
+title: Comment interroger les personnages d’une chaîne (LINQ) (C)
 ms.date: 07/20/2015
 ms.assetid: 727a1be7-dbec-4ab8-b414-bc2d56feb6ff
 ms.openlocfilehash: d85e488a38a6167505732103b4c540cade6ea9bc
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75345677"
 ---
-# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Comment interroger des caractères dans une chaîne (LINQ) (C#)
+# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Comment interroger les personnages d’une chaîne (LINQ) (C)
 La classe <xref:System.String> implémente l’interface <xref:System.Collections.Generic.IEnumerable%601> générique. De ce fait, il est possible d’interroger n’importe quelle chaîne comme une séquence de caractères. Toutefois, ceci n’est pas une utilisation courante de LINQ. Pour les opérations de critères spéciaux complexes, utilisez la classe <xref:System.Text.RegularExpressions.Regex>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant interroge une chaîne pour déterminer le nombre de chiffres qu’elle contient. Notez que la requête est « réutilisée » après sa première exécution. Ceci est possible car la requête proprement dite ne stocke pas de résultats réels.  
   
 ```csharp  
@@ -60,4 +60,4 @@ class QueryAString
 ## <a name="see-also"></a>Voir aussi
 
 - [LINQ et chaînes (C#)](./linq-and-strings.md)
-- [Comment combiner des requêtes LINQ avec des expressions régulières (C#)](./how-to-combine-linq-queries-with-regular-expressions.md)
+- [Comment combiner les requêtes LINQ avec des expressions régulières (C)](./how-to-combine-linq-queries-with-regular-expressions.md)

@@ -6,10 +6,10 @@ helpviewer_keywords:
 - PLINQ, overview
 ms.assetid: 3d4d0cd3-bde4-490b-99e7-f4e41be96455
 ms.openlocfilehash: 1ea880c6403a5fc8b26ba67fe21dfce79c4683db
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73140037"
 ---
 # <a name="parallel-linq-plinq"></a>Parallel LINQ (PLINQ)
@@ -20,15 +20,15 @@ Parallel LINQ (PLINQ) est une implémentation parallèle de LINQ to Objects. PLI
 ## <a name="in-this-section"></a>Dans cette section  
  [Introduction à PLINQ](../../../docs/standard/parallel-programming/introduction-to-plinq.md)  
   
- [Fonctionnement de l’accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)  
+ [Fonctionnement de l'accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)  
   
- [Conservation de l’ordre dans PLINQ](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md)  
+ [Conservation de l'ordre en PLINQ](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md)  
   
  [Options de fusion en PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md)  
   
  [Comment : créer et exécuter une requête PLINQ simple](../../../docs/standard/parallel-programming/how-to-create-and-execute-a-simple-plinq-query.md)  
   
- [Comment : contrôler l’ordre dans une requête PLINQ](../../../docs/standard/parallel-programming/how-to-control-ordering-in-a-plinq-query.md)  
+ [Comment : contrôler l'ordre dans une requête PLINQ](../../../docs/standard/parallel-programming/how-to-control-ordering-in-a-plinq-query.md)  
   
  [Comment : combiner des requêtes LINQ parallèles et séquentielles](../../../docs/standard/parallel-programming/how-to-combine-parallel-and-sequential-linq-queries.md)  
   
@@ -36,9 +36,9 @@ Parallel LINQ (PLINQ) est une implémentation parallèle de LINQ to Objects. PLI
   
  [Comment : annuler une requête PLINQ](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md)  
   
- [Comment : écrire une fonction d’agrégation PLINQ personnalisée](../../../docs/standard/parallel-programming/how-to-write-a-custom-plinq-aggregate-function.md)  
+ [Comment : écrire une fonction d'agrégation PLINQ personnalisée](../../../docs/standard/parallel-programming/how-to-write-a-custom-plinq-aggregate-function.md)  
   
- [Comment : spécifier le mode d’exécution dans PLINQ](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md)  
+ [Comment : spécifier le mode d'exécution en PLINQ](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md)  
   
  [Comment : spécifier des options de fusion en PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)  
   
@@ -46,7 +46,7 @@ Parallel LINQ (PLINQ) est une implémentation parallèle de LINQ to Objects. PLI
   
  [Comment : mesurer les performances de requêtes PLINQ](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md)  
   
- [Exemple de données PLINQ](../../../docs/standard/parallel-programming/plinq-data-sample.md)  
+ [Données PLINQ, exemple](../../../docs/standard/parallel-programming/plinq-data-sample.md)  
   
 ## <a name="see-also"></a>Voir aussi
 

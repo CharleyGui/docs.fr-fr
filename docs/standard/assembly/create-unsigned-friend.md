@@ -1,26 +1,26 @@
 ---
-title: 'Comment : créer des assemblys friend non signés'
+title: 'Comment : Créer des assemblées d’amis non signées'
 ms.date: 08/19/2019
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
 dev_langs:
 - csharp
 - vb
 ms.openlocfilehash: f8fec064507553b8208083578165965de2303a33
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74352435"
 ---
-# <a name="how-to-create-unsigned-friend-assemblies"></a>Comment : créer des assemblys friend non signés
+# <a name="how-to-create-unsigned-friend-assemblies"></a>Comment : Créer des assemblées d’amis non signées
 
 Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui ne sont pas signés.
 
-## <a name="create-an-assembly-and-a-friend-assembly"></a>Créer un assembly et un assembly friend
+## <a name="create-an-assembly-and-a-friend-assembly"></a>Créer une assemblée et une assemblée d’amis
 
 1. Ouvrez une invite de commandes.
 
-2. Créez un C# fichier ou Visual Basic nommé *friend_unsigned_A* qui contient le code suivant. Le code utilise l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> pour déclarer *friend_unsigned_B* en tant qu’assembly friend.
+2. Créez un fichier de base visuelle ou C ou nommé *friend_unsigned_A* qui contient le code suivant. Le code <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> utilise l’attribut pour déclarer *friend_unsigned_B* comme un assemblage d’amis.
 
    ```csharp
    // friend_unsigned_A.cs
@@ -73,7 +73,7 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui 
    End Class
    ```
 
-3. Compilez et signez *friend_unsigned_A* à l’aide de la commande suivante :
+3. Compilez et *signez friend_unsigned_A* en utilisant la commande suivante :
 
    ```csharp
    csc /target:library friend_unsigned_A.cs
@@ -83,7 +83,7 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui 
    vbc -target:library friend_unsigned_A.vb
    ```
 
-4. Créez un C# fichier ou Visual Basic nommé *friend_unsigned_B* qui contient le code suivant. Étant donné que *friend_unsigned_A* spécifie *friend_unsigned_B* comme assembly friend, le code dans *friend_unsigned_B* peutC#accéder aux types et aux membres `internal` () ou `Friend` (Visual Basic) à partir de *friend_unsigned_A*.
+4. Créez un fichier de base visuelle ou C ou nommé *friend_unsigned_B* qui contient le code suivant. Parce *que friend_unsigned_A* spécifie *friend_unsigned_B* comme un assemblage d’amis, le code en `Friend` *friend_unsigned_B* peut accéder à `internal` des types (C) ou (Visual Basic) et les membres de *friend_unsigned_A*.
 
    ```csharp
    // friend_unsigned_B.cs
@@ -125,7 +125,7 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui 
    End Module
    ```
 
-5. Compilez *friend_unsigned_B* à l’aide de la commande suivante.
+5. Compiler *friend_unsigned_B* en utilisant la commande suivante.
 
    ```csharp
    csc /r:friend_unsigned_A.dll /out:friend_unsigned_B.exe friend_unsigned_B.cs
@@ -135,21 +135,21 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui 
    vbc -r:friend_unsigned_A.dll friend_unsigned_B.vb
    ```
 
-   Le nom de l’assembly qui est généré par le compilateur doit correspondre au nom de l’assembly friend qui est passé à l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>. Vous devez spécifier explicitement le nom de l’assembly de sortie ( *. exe* ou *. dll*) à l’aide de l’option du compilateur `-out`. Pour plus d’informations, consultez [-outC# (options du compilateur)](../../csharp/language-reference/compiler-options/out-compiler-option.md) ou [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md).
+   Le nom de l’assembly qui est généré par le compilateur doit correspondre au nom de l’assembly friend qui est passé à l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>. Vous devez spécifier explicitement le nom de l’assemblage de `-out` sortie (*.exe* ou *.dll*) en utilisant l’option compilateur. Pour plus d’informations, voir [-out (options de compilateur C)](../../csharp/language-reference/compiler-options/out-compiler-option.md) ou [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md)..
 
-6. Exécutez le fichier *friend_unsigned_B. exe* .
+6. Exécutez le fichier *friend_unsigned_B.exe.*
 
-   Le programme génère deux chaînes : **Class1. test** et **Classe2. test**.
+   Le programme produit deux chaînes : **Class1.Test** et **Class2.Test**.
 
 ## <a name="net-security"></a>Sécurité .NET
 
-Il existe des similitudes entre l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> et la classe <xref:System.Security.Permissions.StrongNameIdentityPermission>. La principale différence réside dans le fait que <xref:System.Security.Permissions.StrongNameIdentityPermission> pouvez demander des autorisations de sécurité pour exécuter une section de code particulière, tandis que l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> contrôle la visibilité des types et des membres `internal` ou `Friend` (Visual Basic).
+Il existe des similitudes entre l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> et la classe <xref:System.Security.Permissions.StrongNameIdentityPermission>. La principale différence <xref:System.Security.Permissions.StrongNameIdentityPermission> est que peut exiger des autorisations de <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> sécurité pour `internal` exécuter `Friend` une section particulière de code, tandis que l’attribut contrôle la visibilité ou (Visual Basic) types et les membres.
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
 - [Assemblys dans .NET](index.md)
 - [Assemblys friend](friend.md)
-- [Comment : créer des assemblys friend signés](create-signed-friend.md)
-- [Guide de programmation C#](../../csharp/programming-guide/index.md)
+- [Comment: Créer des assemblées d’amis signés](create-signed-friend.md)
+- [Guide de programmation CMD](../../csharp/programming-guide/index.md)
 - [Concepts de programmation (Visual Basic)](../../visual-basic/programming-guide/concepts/index.md)

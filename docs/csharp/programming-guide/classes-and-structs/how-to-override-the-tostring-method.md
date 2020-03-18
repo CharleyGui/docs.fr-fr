@@ -1,18 +1,18 @@
 ---
-title: Comment substituer le Guide de programmation de C# la méthode ToString
+title: Comment remplacer la méthode ToString - Guide de programmation C
 ms.date: 07/20/2015
 helpviewer_keywords:
 - ToString method, overriding in C#
 - inheritance [C#], overriding OnPaint and ToString
 ms.assetid: 8016db69-1f19-420c-8e17-98e8bebb7749
 ms.openlocfilehash: 7c7196df56821c134b31982d7956a75039e9f929
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75705572"
 ---
-# <a name="how-to-override-the-tostring-method-c-programming-guide"></a>Comment substituer la méthode ToString (C# Guide de programmation)
+# <a name="how-to-override-the-tostring-method-c-programming-guide"></a>Comment remplacer la méthode ToString (Guide de programmation C)
 
 En C#, chaque classe ou struct hérite implicitement de la classe <xref:System.Object>. Ainsi, chaque objet en C# obtient la méthode <xref:System.Object.ToString%2A>, qui retourne une représentation sous forme de chaîne de cet objet. Par exemple, toutes les variables de type `int` ont une méthode `ToString`, ce qui leur permet de retourner leur contenu sous forme de chaîne :  
   
@@ -48,8 +48,8 @@ Pour substituer la méthode `ToString` dans votre classe ou struct :
 - <xref:System.IFormattable>
 - [Guide de programmation C#](../index.md)
 - [Classes et structs](./index.md)
-- [Chaînes](../strings/index.md)
-- [string](../../language-reference/builtin-types/reference-types.md)
-- [override](../../language-reference/keywords/override.md)
-- [virtual](../../language-reference/keywords/virtual.md)
+- [Cordes](../strings/index.md)
+- [String](../../language-reference/builtin-types/reference-types.md)
+- [Substituer](../../language-reference/keywords/override.md)
+- [Virtuel](../../language-reference/keywords/virtual.md)
 - [Mise en forme des types](../../../standard/base-types/formatting-types.md)

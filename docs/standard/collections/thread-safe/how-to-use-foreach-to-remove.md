@@ -9,17 +9,17 @@ helpviewer_keywords:
 - thread-safe collections, how to enumerate blocking collection
 ms.assetid: 2096103c-22f7-420d-b631-f102bc33a6dd
 ms.openlocfilehash: f9a858dea74be63634f887c4204aefa8ac338ad0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75711231"
 ---
 # <a name="how-to-use-foreach-to-remove-items-in-a-blockingcollection"></a>Comment : utiliser la boucle ForEach pour supprimer les éléments d'un BlockingCollection
 
 Outre l’extraction d’éléments à partir d’un <xref:System.Collections.Concurrent.BlockingCollection%601> à l’aide des méthodes <xref:System.Collections.Concurrent.BlockingCollection%601.Take%2A> et <xref:System.Collections.Concurrent.BlockingCollection%601.TryTake%2A>, vous pouvez également utiliser une boucle [foreach](../../../csharp/language-reference/keywords/foreach-in.md) ([For Each](../../../visual-basic/language-reference/statements/for-each-next-statement.md) en Visual Basic) pour supprimer des éléments jusqu’à ce que l’ajout soit terminé et que la collection soit vide. Cela s’appelle une *énumération de mutation* ou *énumération de consommation* car, contrairement à une boucle `foreach` (`For Each`) typique, cet énumérateur modifie la collection source en supprimant ses éléments.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant indique comment supprimer tous les éléments d’un <xref:System.Collections.Concurrent.BlockingCollection%601> à l’aide d’une boucle `foreach` (`For Each`).
 

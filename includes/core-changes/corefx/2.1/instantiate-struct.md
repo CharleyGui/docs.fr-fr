@@ -1,20 +1,20 @@
 ---
-ms.openlocfilehash: dc5f608dc9eb4635e1282a9ca5e15ff1bf7d0e0d
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 711b51c590be149545fda3130148e2bcaef8be4f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449550"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78262164"
 ---
-### <a name="private-fields-added-to-built-in-struct-types"></a>Champs privés ajoutés aux types struct intégrés
+### <a name="private-fields-added-to-built-in-struct-types"></a>Champs privés ajoutés aux types de struct intégrés
 
-Les champs privés ont été ajoutés aux types struct intégrés dans les [assemblys de référence](../../../../docs/standard/assembly/reference-assemblies.md). Par conséquent, dans C#, les types struct doivent toujours être instanciés à l’aide de l' [opérateur New](../../../../docs/csharp/language-reference/operators/new-operator.md) ou du [littéral par défaut](../../../../docs/csharp/language-reference/operators/default.md#default-literal), ou en initialisant chacun des champs privés.
+Des champs privés ont été ajoutés à [certains types de struct](#affected-apis) dans [les assemblages de référence.](../../../../docs/standard/assembly/reference-assemblies.md) Par conséquent, dans le C, ces types de struct doivent toujours être instantanés en utilisant le [nouvel opérateur](../../../../docs/csharp/language-reference/operators/new-operator.md) ou par [défaut littérale](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
 
-#### <a name="change-description"></a>Modifier la description
+#### <a name="change-description"></a>Description de la modification
 
-Dans .NET Core 2,0 et versions antérieures, certains types struct intégrés, par exemple, <xref:System.ConsoleKeyInfo>, pouvaient être instanciés sans utiliser l’opérateur `new` ou le [littéral par défaut](../../../../docs/csharp/language-reference/operators/default.md#default-literal) dans C#. Cela était dû au fait que les [assemblys](../../../../docs/standard/assembly/reference-assemblies.md) de C# référence utilisés par le compilateur ne contenaient pas les champs privés pour les structs. Tous les champs privés pour les types struct .NET sont ajoutés aux assemblys de référence à partir de .NET Core 2,1.
+Dans .NET Core 2.0 et les versions précédentes, <xref:System.ConsoleKeyInfo>certains types de struct `new` fournis, par exemple, pourraient être instantanés sans utiliser l’opérateur ou [par défaut littéral](../../../../docs/csharp/language-reference/operators/default.md#default-literal) dans C. C’est parce que les [assemblages de référence](../../../../docs/standard/assembly/reference-assemblies.md) utilisés par le compilateur C ne contenait pas les champs privés pour les structs. Tous les champs privés pour les types de struct .NET sont ajoutés aux assemblages de référence à partir de .NET Core 2.1.
 
-Par exemple, le code C# suivant se compile dans .net Core 2,0, mais pas dans .net Core 2,1 :
+Par exemple, le code Cmd suivant compile en .NET Core 2.0, mais pas en .NET Core 2.1 :
 
 ```csharp
 ConsoleKeyInfo key;    // Struct type
@@ -25,7 +25,7 @@ if (key.ToString() == "y")
 }
 ```
 
-Dans .NET Core 2,1, le code précédent génère l’erreur de compilateur suivante : **CS0165-utilisation d’une variable locale non assignée’key'**
+Dans .NET Core 2.1, le code précédent se traduit par l’erreur compilateur suivante: **CS0165 - Utilisation de la variable locale non assignée 'clé'**
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -33,7 +33,7 @@ Dans .NET Core 2,1, le code précédent génère l’erreur de compilateur suiva
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Instanciez des types struct à l’aide de l’opérateur `new` ou du [littéral par défaut](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
+Instantiate struct types `new` en utilisant l’opérateur ou [par défaut littérale](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
 
 Par exemple :
 
@@ -49,16 +49,6 @@ ConsoleKeyInfo key = default;    // Struct type.
 
 if (key.ToString() == "y")
     Console.WriteLine("Yes!");
-```
-
-```csharp
-ConsoleKeyInfo[] keys = new ConsoleKeyInfo[5];    // Array of structs.
-
-for (int i = 0; i < keys.Length; i++)
-{
-    // Initialize each array element with the new operator.
-    keys[i] = new ConsoleKeyInfo();
-}
 ```
 
 #### <a name="category"></a>Category

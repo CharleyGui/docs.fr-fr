@@ -4,12 +4,12 @@ description: En savoir plus sur les modèles d’événement .NET et comment cr�
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 8a3133d6-4ef2-46f9-9c8d-a8ea8898e4c9
-ms.openlocfilehash: 517e46ffec163a9bd49baa58fc0b37b54b2b2809
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: dec516767e43a6bf4edfa555e34f3adcc21a46e3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78239857"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146139"
 ---
 # <a name="standard-net-event-patterns"></a>Modèles d’événement .NET standard
 
@@ -31,14 +31,14 @@ Le type de retour est void. Les événements sont basés sur des délégués et 
 
 La liste d’arguments contient deux arguments : l’expéditeur et les arguments de l’événement. Le type au moment de compilation de `sender` est `System.Object`, même si vous connaissez probablement un type plus dérivé qui serait toujours correct. Par convention, utilisez `object`.
 
-Le deuxième argument était traditionnellement un type dérivé de `System.EventArgs`. (Vous verrez dans la [section suivante](modern-events.md) que cette Convention n’est plus appliquée.) Si votre type d’événement n’a pas besoin d’arguments supplémentaires, vous devez toujours fournir les deux arguments.
+Le deuxième argument était traditionnellement un type dérivé de `System.EventArgs`. (Vous verrez dans la [section suivante](modern-events.md) que cette convention n’est plus appliquée.) Si votre type d’événement n’a pas besoin d’arguments supplémentaires, vous fournirez toujours les deux arguments.
 Il existe une valeur spéciale, `EventArgs.Empty`, que vous devez utiliser pour indiquer que votre événement ne contient pas d’informations supplémentaires.
 
 Commençons par créer une classe qui répertorie les fichiers contenus dans un répertoire ou dans l’un de ses sous-répertoires qui suivent un modèle. Ce composant déclenche un événement pour chaque fichier détecté qui correspond au modèle.
 
 L’utilisation d’un modèle d’événement offre certains avantages en matière de conception. Vous pouvez créer plusieurs détecteurs d’événements qui effectuent des actions différentes quand un fichier recherché est trouvé. La combinaison des différents détecteurs permet de créer des algorithmes plus robustes.
 
-Voici la déclaration d’argument d’événement initiale pour trouver un fichier recherché : 
+Voici la déclaration d’argument d’événement initiale pour trouver un fichier recherché :
 
 [!code-csharp[EventArgs](../../samples/snippets/csharp/events/Program.cs#EventArgsV1 "Define event arguments")]
 
@@ -76,7 +76,7 @@ Quand vous déclenchez l’événement détecté, les détecteurs doivent pouvoi
 
 Les gestionnaires d’événements ne retournant pas de valeur, vous devez communiquer cela par un autre moyen. Le modèle d’événement standard utilise l’objet EventArgs pour inclure des champs que les abonnés aux événements peuvent utiliser pour signaler une annulation.
 
-Deux modèles différents peuvent être utilisés, en fonction de la sémantique du contrat d’annulation. Dans les deux cas, vous ajouterez un champ booléen aux arguments d’événements pour l’événement de fichier trouvé. 
+Deux modèles différents peuvent être utilisés, en fonction de la sémantique du contrat d’annulation. Dans les deux cas, vous ajouterez un champ booléen aux arguments d’événements pour l’événement de fichier trouvé.
 
 L’un des modèles autorise n’importe quel abonné à annuler l’opération.
 Pour ce modèle, le nouveau champ est initialisé avec la valeur `false`. Tout abonné peut le changer et lui affecter la valeur `true`. Une fois que tous les abonnés ont vu l’événement déclenché, le composant FileSearcher examine la valeur booléenne et effectue une action.
@@ -122,7 +122,7 @@ Nous allons ajouter une autre fonctionnalité et illustrer d’autres idiomes de
 
 Cette opération pourrait prendre beaucoup de temps dans un répertoire contenant de nombreux sous-répertoires. Ajoutons un événement déclenché au début de chaque nouvelle recherche dans un répertoire. Cela permet aux abonnés de suivre la progression et de tenir l’utilisateur à jour. Tous les exemples que nous avons créés jusqu’à présent sont publics. Faisons de celui-ci un événement interne. Cela signifie que nous pouvons aussi rendre internes les types utilisés pour les arguments.
 
-Nous allons commencer par créer la nouvelle classe dérivée EventArgs pour signaler le nouveau répertoire et la progression. 
+Nous allons commencer par créer la nouvelle classe dérivée EventArgs pour signaler le nouveau répertoire et la progression.
 
 [!code-csharp[DirEventArgs](../../samples/snippets/csharp/events/Program.cs#SearchDirEventArgs "Define search directory event arguments")]
 
@@ -140,7 +140,7 @@ Ensuite, nous allons ajouter la surcharge de la méthode `Search` qui parcourt l
 
 À ce stade, nous pouvons exécuter l’application qui appelle la surcharge pour rechercher dans tous les sous-répertoires. Il n’existe aucun abonné sur le nouvel événement `ChangeDirectory`, mais l’utilisation de l’idiome `?.Invoke()` garantit que cela fonctionne correctement.
 
- Ajoutons un gestionnaire pour écrire une ligne qui affiche la progression dans la fenêtre de la console. 
+ Ajoutons un gestionnaire pour écrire une ligne qui affiche la progression dans la fenêtre de la console.
 
 [!code-csharp[Search](../../samples/snippets/csharp/events/Program.cs#Search "Declare event handler")]
 
@@ -149,4 +149,4 @@ En apprenant ces modèles et ces conventions, vous écrirez rapidement du code C
 
 Dans le prochain article, nous allons voir quelques changements apportés à ces modèles dans la version la plus récente de .NET.
 
-[Next](modern-events.md)
+[Suivant](modern-events.md)

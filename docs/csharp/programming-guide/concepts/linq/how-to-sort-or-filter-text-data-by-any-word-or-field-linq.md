@@ -1,22 +1,22 @@
 ---
-title: Guide pratique pour trier ou filtrer des données texte par mot ou par champ (LINQC#) ()
+title: Comment trier ou filtrer les données de texte par n’importe quel mot ou champ (LINQ) (C)
 ms.date: 07/20/2015
 ms.assetid: 7c04d42f-4a78-42c8-9ec8-57ef18fe13a9
 ms.openlocfilehash: e869d57c413d175c092cdc15a6fe54cab94e04b8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75347359"
 ---
-# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a>Guide pratique pour trier ou filtrer des données texte par mot ou par champ (LINQC#) ()
+# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a>Comment trier ou filtrer les données de texte par n’importe quel mot ou champ (LINQ) (C)
 L’exemple suivant montre comment trier les lignes d’un texte structuré, telles que des valeurs séparées par des virgules, à l’aide d’un champ de la ligne. Le champ peut être spécifié de manière dynamique lors de l’exécution. Supposons que les champs du fichier scores.csv correspondent au numéro d’identification d’un étudiant, suivi d’une série de quatre notes d’examen.  
   
 ### <a name="to-create-a-file-that-contains-data"></a>Pour créer un fichier contenant des données  
   
-1. Copiez les données scores. csv de la rubrique [Comment joindre du contenu provenant de fichiers non similaires (C#Linq) ()](./how-to-join-content-from-dissimilar-files-linq.md) et enregistrez-le dans votre dossier de solution.  
+1. Copiez les données scores.csv du sujet Comment joindre le [contenu des fichiers différents (LINQ) (C)](./how-to-join-content-from-dissimilar-files-linq.md) et l’enregistrer dans votre dossier de solution.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ```csharp  
 public class SortLines  

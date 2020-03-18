@@ -9,10 +9,10 @@ helpviewer_keywords:
 - tasks, exceptions
 ms.assetid: beb51e50-9061-4d3d-908c-56a4f7c2e8c1
 ms.openlocfilehash: 12777a5f34b8aadcc80977b8796fc2cd53c626a8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73134249"
 ---
 # <a name="exception-handling-task-parallel-library"></a>Gestion des exceptions (bibliothèque parallèle de tâches)
@@ -28,7 +28,7 @@ Même si une seule exception est levée, elle est encapsulée dans une exception
 
 Vous pouvez éviter une exception non gérée en interceptant l’exception <xref:System.AggregateException> et en n’observant aucune des exceptions internes. Toutefois, cela n’est pas recommandé car cela revient à intercepter le type <xref:System.Exception> de base dans des scénarios non parallèles. Intercepter une exception sans prendre de mesures spécifiques de récupération peut laisser votre programme dans un état indéterminé.
 
-Si vous ne voulez pas appeler la méthode <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> afin d’attendre la fin d’une tâche, vous pouvez également récupérer l’exception <xref:System.AggregateException> à partir de la propriété <xref:System.Threading.Tasks.Task.Exception%2A> de la tâche, comme le montre l’exemple suivant. Pour plus d’informations, consultez la section [Observation d’exceptions à l’aide de la propriété Task.Exception](#observing-exceptions-by-using-the-taskexception-property) dans cette rubrique.
+Si vous ne voulez pas appeler la méthode <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> afin d’attendre la fin d’une tâche, vous pouvez également récupérer l’exception <xref:System.AggregateException> à partir de la propriété <xref:System.Threading.Tasks.Task.Exception%2A> de la tâche, comme le montre l’exemple suivant. Pour plus d’informations, voir les [exceptions d’observation en utilisant la section propriété Task.Exception](#observing-exceptions-by-using-the-taskexception-property) dans ce sujet.
 
 [!code-csharp[TPL_Exceptions#29](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_exceptions/cs/handling22.cs#29)]
 [!code-vb[TPL_Exceptions#29](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_exceptions/vb/handling22.vb#29)]
@@ -63,7 +63,7 @@ Même si vous utilisez une continuation pour observer une exception dans une tâ
 
 ## <a name="exceptions-that-indicate-cooperative-cancellation"></a>Exceptions indiquant une annulation coopérative
 
-Lorsque le code utilisateur d’une tâche répond à une demande d’annulation, la procédure correcte consiste à lever une exception <xref:System.OperationCanceledException> qui passe le jeton d’annulation sur lequel la demande a été communiquée. Avant d’essayer de propager l’exception, l’instance de tâche compare le jeton de l’exception à celui qui lui a été passé lors de sa création. S’ils sont identiques, la tâche propage une exception <xref:System.Threading.Tasks.TaskCanceledException> encapsulée dans l’exception <xref:System.AggregateException>, et cette dernière peut être affichée au moment d’examiner les exceptions internes. Toutefois, si le thread appelant n’est pas en attente sur la tâche, cette exception spécifique n’est pas propagée. Pour plus d’informations, voir [Annulation de tâches](../../../docs/standard/parallel-programming/task-cancellation.md).
+Lorsque le code utilisateur d’une tâche répond à une demande d’annulation, la procédure correcte consiste à lever une exception <xref:System.OperationCanceledException> qui passe le jeton d’annulation sur lequel la demande a été communiquée. Avant d’essayer de propager l’exception, l’instance de tâche compare le jeton de l’exception à celui qui lui a été passé lors de sa création. S’ils sont identiques, la tâche propage une exception <xref:System.Threading.Tasks.TaskCanceledException> encapsulée dans l’exception <xref:System.AggregateException>, et cette dernière peut être affichée au moment d’examiner les exceptions internes. Toutefois, si le thread appelant n’est pas en attente sur la tâche, cette exception spécifique n’est pas propagée. Pour plus d'informations, consultez [Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md).
 
 [!code-csharp[TPL_Exceptions#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_exceptions/cs/exceptions.cs#4)]
 [!code-vb[TPL_Exceptions#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_exceptions/vb/tpl_exceptions.vb#4)]
@@ -97,4 +97,4 @@ Dans certains scénarios, tels que l’hébergement de plug-ins non approuvés, 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [La bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)
+- [Bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)

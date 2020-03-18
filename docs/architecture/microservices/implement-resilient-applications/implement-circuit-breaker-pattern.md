@@ -1,13 +1,13 @@
 ---
 title: Implémentation du modèle Disjoncteur
 description: Découvrez comment implémenter le modèle Disjoncteur en tant que système complémentaire aux nouvelles tentatives Http.
-ms.date: 10/16/2018
-ms.openlocfilehash: 00ca39b4b6fac37ff60adf128c3f4e22c5fc14e2
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 03/03/2020
+ms.openlocfilehash: a79c6fcca1e29f3c30d697cb369060d59a72c121
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73732853"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78847243"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>Implémenter le modèle Disjoncteur
 
@@ -15,7 +15,7 @@ Comme indiqué précédemment, vous devez gérer des erreurs dont le temps de r�
 
 Dans un environnement distribué, les appels à des ressources et services distants peuvent échouer en raison d’erreurs temporaires, telles que des connexions réseau lentes, l’expiration de délais d’attente, ou si des ressources ont un temps de réponse trop long ou sont temporairement indisponibles. En général, ces erreurs se corrigent d’elles-mêmes après un bref laps de temps, et une application cloud fiable doit être prête à les gérer à l’aide d’une stratégie comme le « modèle Nouvelle tentative ».
 
-Toutefois, dans certaines situations, les erreurs sont dues à des événements imprévus dont la correction peut prendre beaucoup plus de temps. La gravité de ces erreurs peut aller d’une perte partielle de connectivité à la défaillance complète d’un service. Dans ces cas de figure, il peut être inutile qu’une application effectue de nouvelles tentatives dont la réussite sera peu probable.
+Toutefois, dans certaines situations, les erreurs sont dues à des événements imprévus dont la correction peut prendre beaucoup plus de temps. Ces erreurs peuvent aller d’une perte partielle de connectivité à la défaillance complète d’un service. Dans ces cas de figure, il peut être inutile qu’une application effectue de nouvelles tentatives dont la réussite sera peu probable.
 
 L’application doit plutôt être codée pour reconnaître que l’opération a échoué et gérer l’échec en conséquence.
 
@@ -25,11 +25,11 @@ Par conséquent, vous avez besoin d’une sorte de barrière de défense afin d�
 
 L’objectif du modèle Disjoncteur est différent de celui du « modèle Nouvelle tentative ». Le « modèle Nouvelle tentative » permet à une application de retenter une opération en partant du principe qu’elle finira par réussir. Le modèle Disjoncteur empêche une application d’effectuer une opération qui échouera probablement. Une application peut combiner ces deux modèles. Toutefois, la logique de nouvelle tentative doit être sensible aux exceptions retournées par le disjoncteur et doit abandonner les nouvelles tentatives si le disjoncteur indique qu’une erreur n’est pas temporaire.
 
-## <a name="implement-circuit-breaker-pattern-with-httpclientfactory-and-polly"></a>Implémenter le modèle Disjoncteur avec HttpClientFactory et Polly
+## <a name="implement-circuit-breaker-pattern-with-ihttpclientfactory-and-polly"></a>Implémenter le `IHttpClientFactory` modèle de disjoncteur avec et Polly
 
-Comme lors de l’implémentation de nouvelles tentatives, l’approche recommandée pour les disjoncteurs consiste à tirer parti de bibliothèques .NET éprouvées comme Polly et de leur intégration native avec HttpClientFactory.
+Comme lors de la mise en œuvre des retries, l’approche recommandée pour les `IHttpClientFactory`disjoncteurs est de profiter de bibliothèques .NET prouvées comme Polly et son intégration indigène avec .
 
-L’ajout d’une stratégie de disjoncteur dans votre pipeline d’intergiciel (middleware) sortant HttpClientFactory est aussi simple que l’ajout d’un fragment de code incrémentiel individuel à ce que vous avez déjà lorsque vous utilisez HttpClientFactory.
+L’ajout d’une `IHttpClientFactory` politique de disjoncteur dans votre pipeline de middleware sortant `IHttpClientFactory`est aussi simple que l’ajout d’un seul morceau de code incrémental à ce que vous avez déjà lors de l’utilisation .
 
 Ici, le seul ajout au code utilisé pour les nouvelles tentatives d’appel HTTP est le code où vous ajoutez la stratégie Disjoncteur à la liste des stratégies à utiliser, comme indiqué dans le code incrémentiel suivant, inscrit dans la méthode ConfigureServices().
 
@@ -61,7 +61,7 @@ Les disjoncteurs doivent également être utilisés pour rediriger les requêtes
 
 Toutes ces fonctionnalités sont appropriées pour les cas où vous gérez le basculement à partir du code .NET, au lieu qu’il soit géré automatiquement par Azure, avec la transparence des emplacements.
 
-Du point de vue de l’utilisation, lorsque vous utilisez HttpClient, il est inutile d’ajouter quoi que ce soit de nouveau ici, car le code est le même que lors de l’utilisation de HttpClient avec HttpClientFactory, comme indiqué dans les sections précédentes.
+D’un point de vue d’utilisation, lors de l’utilisation de HttpClient, il `HttpClient` n’est pas nécessaire d’ajouter quelque chose de nouveau ici parce que le code est le même que lors de l’utilisation avec `IHttpClientFactory`, comme indiqué dans les sections précédentes.
 
 ## <a name="test-http-retries-and-circuit-breakers-in-eshoponcontainers"></a>Tester les disjoncteurs et les nouvelles tentatives Http dans eShopOnContainers
 
@@ -94,7 +94,7 @@ Par exemple, une fois que l’application est en cours d’exécution, vous pouv
 
 Vous pouvez alors vérifier l’état à l’aide de l’URI `http://localhost:5103/failing`, comme illustré à la Figure 8-5.
 
-![Capture d’écran de la vérification de l’état de la simulation d’un intergiciel (middleware) défaillant.](./media/implement-circuit-breaker-pattern/failing-middleware-simulation.png)
+![Capture d’écran de la vérification de l’état de la simulation middleware défaillante.](./media/implement-circuit-breaker-pattern/failing-middleware-simulation.png)
 
 **Figure 8-5**. Vérification de l’état du middleware ASP.NET (désactivé dans le cas présent) « Failing » (En échec).
 
@@ -134,7 +134,7 @@ public class CartController : Controller
 
 Voici un résumé. La stratégie Nouvelle tentative tente plusieurs fois d’exécuter la requête HTTP et obtient des erreurs HTTP. Quand le nombre maximal de nouvelles tentatives pour la stratégie Disjoncteur est atteint (dans le cas présent, 5), l’application lève une exception BrokenCircuitException. Le résultat est un message convivial, comme illustré à la Figure 8-6.
 
-![Capture d’écran de l’application Web MVC avec l’erreur inopérante du service de panier.](./media/implement-circuit-breaker-pattern/basket-service-inoperative.png)
+![Capture d’écran de l’application web MVC avec erreur inopérante du service de panier.](./media/implement-circuit-breaker-pattern/basket-service-inoperative.png)
 
 **Figure 8-6**. Disjoncteur retournant une erreur à l’interface utilisateur
 
@@ -144,9 +144,9 @@ Enfin, une autre solution pour la stratégie `CircuitBreakerPolicy` consiste à 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Modèle Disjoncteur**\
+- **Modèle de disjoncteur**\
   [https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker](/azure/architecture/patterns/circuit-breaker)
 
 >[!div class="step-by-step"]
->[Précédent](implement-http-call-retries-exponential-backoff-polly.md)
->[Suivant](monitor-app-health.md)
+>[Suivant précédent](implement-http-call-retries-exponential-backoff-polly.md)
+>[Next](monitor-app-health.md)

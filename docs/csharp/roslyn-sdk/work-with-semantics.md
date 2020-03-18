@@ -3,12 +3,12 @@ title: Utiliser le modèle sémantique du SDK .NET Compiler Platform
 description: Cette présentation fournit des informations sur le type que vous utilisez pour comprendre et manipuler le modèle sémantique de votre code.
 ms.date: 10/15/2017
 ms.custom: mvc
-ms.openlocfilehash: c594447bb553f488d60fe83900e2f141608b570f
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 8575988cd98a4c0ba3f24107788f065f7472f55d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105670"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156933"
 ---
 # <a name="work-with-semantics"></a>Utiliser la sémantique
 
@@ -19,7 +19,7 @@ Les [arborescences de syntaxe](work-with-syntax.md) représentent la structure l
 - Une méthode
 - Une variable locale
 
-Ces éléments se distinguent par des caractéristiques uniques. Toutefois, pour déterminer à quel élément un identificateur fait réellement référence, avoir une connaissance approfondie des règles de langage s’avère souvent indispensable. 
+Ces éléments se distinguent par des caractéristiques uniques. Toutefois, pour déterminer à quel élément un identificateur fait réellement référence, avoir une connaissance approfondie des règles de langage s’avère souvent indispensable.
 
 Certains éléments de programme sont représentés dans le code source, mais les programmes peuvent aussi faire référence à des bibliothèques précédemment compilées, empaquetées dans des fichiers d’assembly. Il n’y a pas de code source et donc pas d’arborescences ni nœuds de syntaxe disponibles pour les assemblys, mais les programmes peuvent faire référence à des éléments qu’ils contiennent.
 
@@ -29,7 +29,7 @@ Par rapport à un modèle syntaxique du code source, un modèle sémantique enca
 
 ## <a name="compilation"></a>Compilation
 
-Une compilation est une représentation de tous les éléments nécessaires à la compilation d’un programme C# ou Visual Basic, à savoir l’ensemble des références d’assembly, des options du compilateur et des fichiers sources. 
+Une compilation est une représentation de tous les éléments nécessaires à la compilation d’un programme C# ou Visual Basic, à savoir l’ensemble des références d’assembly, des options du compilateur et des fichiers sources.
 
 Toutes ces informations étant stockées au même emplacement, les éléments contenus dans le code source peuvent être décrits plus en détail. La compilation représente chaque élément déclaré (type, membre ou variable) sous forme de symbole. La compilation contient diverses méthodes qui vous aident à trouver et associer les symboles qui ont été déclarés dans le code source, ou importés en tant que métadonnées à partir d’un assembly.
 
@@ -37,7 +37,7 @@ De la même façon que les arborescences de syntaxe, les compilations sont immua
 
 ## <a name="symbols"></a>Symboles
 
-Un symbole représente un élément distinct qui est déclaré dans le code source, ou importé en tant que métadonnées à partir d’un assembly. Chaque élément (espace de noms, type, méthode, propriété, champ, événement, paramètre ou variable locale) est représenté par un symbole. 
+Un symbole représente un élément distinct qui est déclaré dans le code source, ou importé en tant que métadonnées à partir d’un assembly. Chaque élément (espace de noms, type, méthode, propriété, champ, événement, paramètre ou variable locale) est représenté par un symbole.
 
 Diverses méthodes et propriétés du type <xref:Microsoft.CodeAnalysis.Compilation> vous aident à trouver les symboles. Par exemple, vous pouvez rechercher un symbole d’un type déclaré par son nom de métadonnées commun. Vous pouvez aussi accéder à la table de symboles entière comme une arborescence de symboles ayant pour racine l’espace de noms global.
 
@@ -49,7 +49,7 @@ Sur un plan conceptuel, les symboles sont similaires au système de type CLR rep
 
 ## <a name="semantic-model"></a>Modèle sémantique
 
-Un modèle sémantique représente toutes les informations sémantiques relatives à un fichier source unique. Vous pouvez utiliser ce modèle pour découvrir les éléments suivants : 
+Un modèle sémantique représente toutes les informations sémantiques relatives à un fichier source unique. Vous pouvez utiliser ce modèle pour découvrir les éléments suivants :
 
 - Les symboles référencés à un emplacement spécifique dans le code source.
 - Le type résultant d’une expression.

@@ -1,18 +1,18 @@
 ---
-title: Comment interroger le contenu de fichiers texte dans un dossier (LINQ) (C#)
+title: Comment interroger le contenu des fichiers texte dans un dossier (LINQ) (C)
 ms.date: 07/20/2015
 ms.assetid: f5b4dce7-1a34-4eb4-9bf1-60d5bdda264c
-ms.openlocfilehash: 9487e00ac4cb69180ad3744183a3ef8467cbac28
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 998fddd3f59ee64df9adcee1acc720d82861c3d9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347686"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168737"
 ---
-# <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a>Comment interroger le contenu de fichiers texte dans un dossier (LINQ) (C#)
-Cet exemple montre comment interroger tous les fichiers d’une arborescence de répertoires spécifiée, comment ouvrir chaque fichier et comment inspecter son contenu. Ce type de technique peut être utilisé pour créer des index ou des index inversés à partir du contenu d’une arborescence de répertoires. Dans cet exemple, une recherche de chaîne simple est effectuée. Toutefois, il est possible d’effectuer une recherche avec des critères spéciaux plus complexes à l’aide d’une expression régulière. Pour plus d’informations, consultez Guide pratique [pour combiner des requêtes LINQ avecC#des expressions régulières ()](./how-to-combine-linq-queries-with-regular-expressions.md).  
+# <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a>Comment interroger le contenu des fichiers texte dans un dossier (LINQ) (C)
+Cet exemple montre comment interroger tous les fichiers d’une arborescence de répertoires spécifiée, comment ouvrir chaque fichier et comment inspecter son contenu. Ce type de technique peut être utilisé pour créer des index ou des index inversés à partir du contenu d’une arborescence de répertoires. Dans cet exemple, une recherche de chaîne simple est effectuée. Toutefois, il est possible d’effectuer une recherche avec des critères spéciaux plus complexes à l’aide d’une expression régulière. Pour plus d’informations, voir [Comment combiner les requêtes LINQ avec des expressions régulières ( CMD)](./how-to-combine-linq-queries-with-regular-expressions.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ```csharp  
 class QueryContents  
@@ -59,7 +59,7 @@ class QueryContents
     {  
         string fileContents = String.Empty;  
   
-        // If the file has been deleted since we took   
+        // If the file has been deleted since we took
         // the snapshot, ignore it and return the empty string.  
         if (System.IO.File.Exists(name))  
         {  

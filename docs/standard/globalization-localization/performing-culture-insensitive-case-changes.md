@@ -16,10 +16,10 @@ helpviewer_keywords:
 - culture parameter
 ms.assetid: 822d551c-c69a-4191-82f4-183d82c9179c
 ms.openlocfilehash: 7b2dee03619e24c5a2845699a06e88abab0c594b
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78160129"
 ---
 # <a name="performing-culture-insensitive-case-changes"></a>Exécution de changements de casse indépendants de la culture
@@ -32,7 +32,7 @@ Les méthodes <xref:System.String.ToUpper%2A?displayProperty=nameWithType>, <xre
 ## <a name="using-the-stringtoupper-and-stringtolower-methods"></a>Utilisation des méthodes String.ToUpper et String.ToLower  
  Pour la clarté du code, il est recommandé de toujours utiliser des surcharges des méthodes `String.ToUpper` et `String.ToLower` vous permettant de spécifier explicitement un paramètre `culture`. Par exemple, le code suivant effectue une recherche d’identificateur. L’opération `key.ToLower` est dépendante de la culture par défaut, mais ce comportement ne ressort pas clairement de la lecture du code.  
   
-### <a name="example"></a>Exemple  
+### <a name="example"></a> Exemple  
   
 ```vb  
 Shared Function LookupKey(key As String) As Object  
@@ -71,4 +71,4 @@ static object LookupKey(string key)
 - <xref:System.String.ToLower%2A?displayProperty=nameWithType>
 - <xref:System.Char.ToUpper%2A?displayProperty=nameWithType>
 - <xref:System.Char.ToLower%2A?displayProperty=nameWithType>
-- [Exécution d'opérations de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
+- [Exécution d’opérations de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)

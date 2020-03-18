@@ -12,10 +12,10 @@ helpviewer_keywords:
 - base types, parsing strings
 ms.assetid: e39324ee-72e5-42d4-a80d-bf3ee7fc6c59
 ms.openlocfilehash: ac44282a06b2b3710d3a9e5390c7a514c1632c3a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73127599"
 ---
 # <a name="parsing-numeric-strings-in-net"></a>Analyse de chaînes numériques dans .NET
@@ -84,5 +84,5 @@ Tous les types numériques disposent de deux méthodes d’analyse statiques, `P
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Globalization.NumberStyles>
-- [Analyse de chaînes](../../../docs/standard/base-types/parsing-strings.md)
+- [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)
 - [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)

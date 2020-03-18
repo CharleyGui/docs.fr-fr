@@ -9,10 +9,10 @@ helpviewer_keywords:
 - threads, cancellation
 ms.assetid: d2d6d5fd-e263-4fa0-847b-2fc3e0d82337
 ms.openlocfilehash: 1d1433ecf39974bf9e68fe07b9d0818ac16fb544
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73138125"
 ---
 # <a name="canceling-threads-cooperatively"></a>Annulation de threads de façon coopérative

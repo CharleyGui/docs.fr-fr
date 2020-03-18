@@ -1,73 +1,73 @@
 ---
-title: 'Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio'
+title: 'Procédure pas à pas : Intégrer les types d’assemblages gérés dans Visual Studio'
 ms.date: 08/19/2019
 ms.assetid: 55ed13c9-c5bb-4bc2-bcd8-0587eb568864
 dev_langs:
 - csharp
 - vb
 ms.openlocfilehash: f11fbedad766753ee462c5f597b823493cdaf7cf
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75338554"
 ---
-# <a name="walkthrough-embed-types-from-managed-assemblies-in-visual-studio"></a>Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio
+# <a name="walkthrough-embed-types-from-managed-assemblies-in-visual-studio"></a>Procédure pas à pas : Intégrer les types d’assemblages gérés dans Visual Studio
 
-Si vous incorporez des informations de type d’un assembly managé avec nom fort, vous pouvez coupler faiblement des types dans une application pour obtenir une indépendance de version. Autrement dit, votre programme peut être écrit pour utiliser des types à partir de n’importe quelle version d’une bibliothèque managée sans devoir être recompilé pour chaque nouvelle version.
+Si vous incorporez des informations de type d’un assembly managé avec nom fort, vous pouvez coupler faiblement des types dans une application pour obtenir une indépendance de version. Autrement dit, votre programme peut être écrit pour utiliser des types de n’importe quelle version d’une bibliothèque gérée sans avoir à être recompilé pour chaque nouvelle version.
 
-L’incorporation de type est fréquemment utilisée avec COM Interop, par exemple pour une application qui utilise des objets Automation de Microsoft Office. L’incorporation des informations de type permet à la même build d’un programme de fonctionner avec différentes versions de Microsoft Office sur plusieurs ordinateurs. Toutefois, vous pouvez également utiliser l’incorporation de type avec des solutions entièrement managées.
+L’incorporation de type est fréquemment utilisée avec COM Interop, par exemple pour une application qui utilise des objets Automation de Microsoft Office. L’incorporation des informations de type permet à la même build d’un programme de fonctionner avec différentes versions de Microsoft Office sur plusieurs ordinateurs. Cependant, vous pouvez également utiliser l’intégration de type avec des solutions entièrement gérées.
 
-Une fois que vous avez spécifié les interfaces publiques qui peuvent être incorporées, vous créez des classes d’exécution qui implémentent ces interfaces. Un programme client peut incorporer les informations de type pour les interfaces au moment du design en référençant l’assembly qui contient les interfaces publiques et en affectant à la propriété `Embed Interop Types` de la référence la valeur `True`. Le programme client peut ensuite charger les instances des objets de Runtime tapés comme ces interfaces. Cela équivaut à utiliser le compilateur de ligne de commande et à référencer l’assembly à l’aide de l' [option de compilateur-Link](../../csharp/language-reference/compiler-options/link-compiler-option.md).
+Après avoir spécifé les interfaces publiques qui peuvent être intégrées, vous créez des classes de temps d’exécution qui implémentent ces interfaces. Un programme client peut intégrer les informations de type pour les interfaces au moment de `Embed Interop Types` la conception `True`en faisant référence à l’assemblage qui contient les interfaces publiques et en définissant la propriété de la référence à . Le programme client peut ensuite charger les instances des objets en temps d’exécution tapés comme ces interfaces. Cela équivaut à utiliser le compilateur de la ligne de commande et le référencement de l’assemblage en utilisant [l’option compilateur -lien](../../csharp/language-reference/compiler-options/link-compiler-option.md).
 
-Si vous créez une nouvelle version de votre assembly de Runtime avec nom fort, le programme client n’a pas besoin d’être recompilé. Le programme client continue à utiliser la version de l’assembly de Runtime qui lui est accessible, à l’aide des informations de type incorporées pour les interfaces publiques.
+Si vous créez une nouvelle version de votre assemblage de temps d’exécution fort, le programme client n’a pas besoin d’être recompilé. Le programme client continue d’utiliser n’importe quelle version de l’assemblage de temps d’exécution qui lui est disponible, en utilisant les informations de type intégrée pour les interfaces publiques.
 
 Lors de cette procédure pas à pas, vous allez effectuer les opérations suivantes :
 
-1. Créez un assembly avec nom fort avec une interface publique contenant les informations de type qui peuvent être incorporées.
-1. Créez un assembly de Runtime avec nom fort qui implémente l’interface publique.
+1. Créez un assemblage fort avec une interface publique contenant des informations de type qui peuvent être intégrées.
+1. Créez un assemblage de temps d’exécution fort qui implémente l’interface publique.
 1. Créer un programme client qui incorpore les informations de type de l’interface publique et crée une instance de la classe à partir de l’assembly runtime.
 1. Modifier et régénérer l’assembly runtime.
-1. Exécutez le programme client pour voir qu’il utilise la nouvelle version de l’assembly du runtime sans devoir être recompilé.
+1. Exécutez le programme client pour s’en rendre compte qu’il utilise la nouvelle version de l’assemblage en temps d’exécution sans avoir à être recompilé.
 
 [!INCLUDE[note_settings_general](../../../includes/note-settings-general-md.md)]
 
 ## <a name="conditions-and-limitations"></a>Conditions et limitations
 
-Vous pouvez incorporer des informations de type à partir d’un assembly dans les conditions suivantes :
+Vous pouvez intégrer des informations de type à partir d’un assemblage dans les conditions suivantes :
 
 - L’assembly expose au moins une interface publique.
-- Les interfaces incorporées sont annotées avec des attributs `ComImport` et des attributs `Guid` avec des GUID uniques.
-- L’assembly est annoté avec l’attribut `ImportedFromTypeLib` ou l’attribut `PrimaryInteropAssembly` et un attribut `Guid` au niveau de l’assembly. Les modèles C# de projet Visual et Visual Basic incluent par défaut un attribut `Guid` au niveau de l’assembly.
+- Les interfaces intégrées sont `ComImport` annotées avec des attributs et `Guid` des attributs avec des GUID uniques.
+- L’assembly est annoté avec l’attribut `ImportedFromTypeLib` ou l’attribut `PrimaryInteropAssembly` et un attribut `Guid` au niveau de l’assembly. Les modèles de projet Visual C et Visual `Guid` Basic comprennent un attribut de niveau d’assemblage par défaut.
 
-Étant donné que la fonction principale de l’incorporation de type consiste à prendre en charge les assemblys COM Interop, les limitations suivantes s’appliquent quand vous incorporez des informations de type dans une solution entièrement managée :
+Étant donné que la fonction principale de l’intégration de type est de prendre en charge les assemblages interop COM, les limitations suivantes s’appliquent lorsque vous intégrez des informations de type dans une solution entièrement gérée :
 
-- Seuls les attributs spécifiques aux COM Interop sont incorporés. Les autres attributs sont ignorés.
-- Si un type utilise des paramètres génériques et que le type du paramètre générique est un type incorporé, ce type ne peut pas être utilisé dans les limites d’un assembly. Les exemples de franchissement d’une limite d’assembly incluent l’appel d’une méthode à partir d’un autre assembly ou la dérivation d’un type d’un type défini dans un autre assembly.
+- Seuls les attributs spécifiques à COM interop sont intégrés. D’autres attributs sont ignorés.
+- Si un type utilise des paramètres génériques et que le type de paramètre générique est un type intégré, ce type ne peut pas être utilisé à travers une limite d’assemblage. Parmi les exemples de franchissement d’une limite d’assemblage, mentionnons l’appel d’une méthode d’un autre assemblage ou la suppression d’un type d’un type défini dans un autre assemblage.
 - Les constantes ne sont pas incorporées.
 - La classe <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> ne prend pas en charge un type incorporé comme clé. Vous pouvez implémenter votre propre type de dictionnaire pour prendre en charge un type incorporé comme clé.
 
 ## <a name="create-an-interface"></a>Créer une interface
 
-La première étape consiste à créer l’assembly de l’interface d’équivalence de type.
+La première étape consiste à créer le type d’assemblage d’interface d’équivalence.
 
-1. Dans Visual Studio, sélectionnez **Fichier** > **Nouveau** > **Projet**.
+1. Dans Visual Studio, sélectionnez **File** > **New** > **Project**.
 
-1. Dans la boîte de dialogue **créer un nouveau projet** , tapez *bibliothèque de classes* dans la zone **Rechercher des modèles** . Sélectionnez le C# modèle ou Visual Basic **bibliothèque de classes (.NET Framework)** dans la liste, puis sélectionnez **suivant**.
+1. Dans la boîte de dialogue **Créer un nouveau projet,** *type bibliothèque de classe* dans la boîte de recherche **de modèles.** Sélectionnez le modèle de bibliothèque de classe de base visuelle **(.NET Framework)** de la liste, puis sélectionnez **Next**.
 
-1. Dans la boîte de dialogue **configurer votre nouveau projet** , sous **nom du projet**, tapez *TypeEquivalenceInterface*, puis sélectionnez **créer**. Le nouveau projet est créé.
+1. Dans la configuration de votre nouvelle boîte de dialogue **de projet,** sous **le nom de projet**, *tapez TypeEquivalenceInterface*, puis sélectionnez **Créer**. Le nouveau projet est créé.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le fichier *Class1.cs* ou *Class1. vb* , sélectionnez **Renommer**, puis renommez le fichier de *Class1* en *ISampleInterface*. Répondez **Oui** à l’invite pour renommer la classe en `ISampleInterface`. Cette classe représente l’interface publique de la classe.
+1. Dans **Solution Explorer**, cliquez à droite sur le fichier *Class1.cs* ou *Class1.vb,* **sélectionnez Rename**, et renommez le fichier de *classe1* à *ISampleInterface*. Répondre **Oui** à l’invite de également `ISampleInterface`renommer la classe à . Cette classe représente l’interface publique de la classe.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceInterface** , puis sélectionnez **Propriétés**.
+1. Dans **Solution Explorer**, cliquez à droite sur le projet **TypeEquivalenceInterface,** puis sélectionnez **Propriétés**.
 
-1. Sélectionnez **Build** dans le volet gauche de l’écran **Propriétés** , puis définissez le **chemin de sortie** sur un emplacement sur votre ordinateur, par exemple *C:\TypeEquivalenceSample*. Vous utilisez le même emplacement dans cette procédure pas à pas.
+1. Sélectionnez **Construire** sur la vitre gauche de l’écran **Propriétés,** et définissez le **chemin de sortie** à un emplacement sur votre ordinateur, tels que *C: 'TypeEquivalenceSample*. Vous utilisez le même emplacement tout au long de cette procédure pas à pas.
 
-1. Sélectionnez **signature** dans le volet gauche de l’écran **Propriétés** , puis activez la case à cocher **signer l’assembly** . Dans la liste déroulante **choisir un fichier de clé de nom fort**, sélectionnez **nouveau**.
+1. Sélectionnez **Signature** sur la vitre gauche de l’écran **Propriétés,** puis sélectionnez le Signe de la case à cocher **d’assemblage.** Dans le dropdown pour **Choisissez un fichier clé de nom fort**, sélectionnez **Nouveau**.
 
-1. Dans la boîte de dialogue **créer une clé de nom fort** , sous **nom du fichier de clé**, tapez *Key. snk*. Désactivez la case à cocher **protéger le fichier de clé avec un mot de passe** , puis sélectionnez **OK**.
+1. Dans le **dialogue Create Strong Name Key,** sous le nom de fichier **Key**, type *key.snk*. Déséllectez le **Fichier Protégez mon fichier clé avec une** case à cocher par mot de passe, puis sélectionnez **OK**.
 
-1. Ouvrez le fichier de la classe *ISampleInterface* dans l’éditeur de code, puis remplacez son contenu par le code suivant pour créer l’interface `ISampleInterface` :
+1. Ouvrez le fichier de classe *ISampleInterface* dans l’éditeur de `ISampleInterface` code, et remplacez son contenu par le code suivant pour créer l’interface :
 
    ```csharp
    using System;
@@ -96,11 +96,11 @@ La première étape consiste à créer l’assembly de l’interface d’équiva
    End Interface
    ```
 
-1. Dans le menu **Outils** , sélectionnez **créer un GUID**, puis dans la boîte de dialogue créer un **GUID** , sélectionnez **format du Registre**. Sélectionnez **copier**, puis **quitter**.
+1. Sur le menu **Tools,** sélectionnez **Create Guid**, et dans la boîte de dialogue **Create GUID,** sélectionnez **Format d’enregistrement**. Sélectionnez **La copie,** puis sélectionnez **Exit**.
 
-1. Dans l’attribut `Guid` de votre code, remplacez l’exemple de GUID par le GUID que vous avez copié, et supprimez les accolades ( **{}** ).
+1. Dans `Guid` l’attribut de votre code, remplacez l’échantillon GUID par le GUID que vous avez copié, et retirez les accolades **(**.
 
-1. Dans **Explorateur de solutions**, développez le dossier **Propriétés** et sélectionnez le fichier *AssemblyInfo.cs* ou *AssemblyInfo. vb* . Dans l’éditeur de code, ajoutez l’attribut suivant au fichier :
+1. Dans **Solution Explorer**, étendre le dossier **Propriétés** et sélectionnez le fichier *AssemblyInfo.cs* ou *AssemblyInfo.vb.* Dans l’éditeur de code, ajoutez l’attribut suivant au fichier :
 
    ```csharp
    [assembly: ImportedFromTypeLib("")]
@@ -110,37 +110,37 @@ La première étape consiste à créer l’assembly de l’interface d’équiva
    <Assembly: ImportedFromTypeLib("")>
    ```
 
-1. Sélectionnez **fichier** > **enregistrer tout** ou appuyez sur **CTRL**+**MAJ**+**S** pour enregistrer les fichiers et le projet.
+1. Sélectionnez **Fichier** > **Enregistrer tous** ou appuyez sur **Ctrl**+**Shift**+**S** pour enregistrer les fichiers et le projet.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceInterface** , puis sélectionnez **générer**. Le fichier DLL de la bibliothèque de classes est compilé et enregistré dans le chemin de sortie de la génération spécifié, par exemple *C:\TypeEquivalenceSample*.
+1. Dans **Solution Explorer**, cliquez à droite sur le projet **TypeEquivalenceInterface** et sélectionnez **Build**. Le fichier DLL de bibliothèque de classe est compilé et enregistré sur le chemin de sortie de construction spécifié, par exemple *C : 'TypeEquivalenceSample*.
 
-## <a name="create-a-runtime-class"></a>Créer une classe d’exécution
+## <a name="create-a-runtime-class"></a>Créer une classe de temps d’exécution
 
-Ensuite, créez la classe d’exécution d’équivalence de type.
+Ensuite, créez la classe de runtime d’équivalence type.
 
-1. Dans Visual Studio, sélectionnez **Fichier** > **Nouveau** > **Projet**.
+1. Dans Visual Studio, sélectionnez **File** > **New** > **Project**.
 
-1. Dans la boîte de dialogue **créer un nouveau projet** , tapez *bibliothèque de classes* dans la zone **Rechercher des modèles** . Sélectionnez le C# modèle ou Visual Basic **bibliothèque de classes (.NET Framework)** dans la liste, puis sélectionnez **suivant**.
+1. Dans la boîte de dialogue **Créer un nouveau projet,** *type bibliothèque de classe* dans la boîte de recherche **de modèles.** Sélectionnez le modèle de bibliothèque de classe de base visuelle **(.NET Framework)** de la liste, puis sélectionnez **Next**.
 
-1. Dans la boîte de dialogue **configurer votre nouveau projet** , sous **nom du projet**, tapez *TypeEquivalenceRuntime*, puis sélectionnez **créer**. Le nouveau projet est créé.
+1. Dans la configuration de votre nouvelle boîte de dialogue **de projet,** sous **le nom de projet**, type *TypeEquivalenceRuntime*, puis sélectionnez **Créer**. Le nouveau projet est créé.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le fichier *Class1.cs* ou *Class1. vb* , sélectionnez **Renommer**, puis renommez le fichier de *Class1* en *SampleClass*. Répondez **Oui** à l’invite pour renommer la classe en `SampleClass`. Cette classe implémente l'interface `ISampleInterface` .
+1. Dans **Solution Explorer**, cliquez à droite sur le fichier *Class1.cs* ou *Class1.vb,* **sélectionnez Rename**, et renommez le fichier de *Class1* à *SampleClass*. Répondre **Oui** à l’invite de également `SampleClass`renommer la classe à . Cette classe implémente l’interface `ISampleInterface`.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceInterface** et sélectionnez **Propriétés**.
+1. Dans **Solution Explorer**, cliquez à droite sur le projet **TypeEquivalenceInterface** et sélectionnez **Propriétés**.
 
-1. Sélectionnez **Build** dans le volet gauche de l’écran **Propriétés** , puis définissez le **chemin de sortie** sur le même emplacement que celui que vous avez utilisé pour le projet TypeEquivalenceInterface, par exemple *C:\TypeEquivalenceSample*.
+1. Sélectionnez **Construire** sur le volet gauche de l’écran **Propriétés,** puis définir le **chemin de sortie** au même endroit que vous avez utilisé pour le projet TypeEquivalenceInterface, par exemple, *C: 'TypeEquivalenceSample*.
 
-1. Sélectionnez **signature** dans le volet gauche de l’écran **Propriétés** , puis activez la case à cocher **signer l’assembly** . Dans la liste déroulante **choisir un fichier de clé de nom fort**, sélectionnez **nouveau**.
+1. Sélectionnez **Signature** sur la vitre gauche de l’écran **Propriétés,** puis sélectionnez le Signe de la case à cocher **d’assemblage.** Dans le dropdown pour **Choisissez un fichier clé de nom fort**, sélectionnez **Nouveau**.
 
-1. Dans la boîte de dialogue **créer une clé de nom fort** , sous **nom du fichier de clé**, tapez *Key. snk*. Désactivez la case à cocher **protéger le fichier de clé avec un mot de passe** , puis sélectionnez **OK**.
+1. Dans le **dialogue Create Strong Name Key,** sous le nom de fichier **Key**, type *key.snk*. Déséllectez le **Fichier Protégez mon fichier clé avec une** case à cocher par mot de passe, puis sélectionnez **OK**.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceRuntime** , puis sélectionnez **Ajouter** une **référence**de > .
+1. Dans **Solution Explorer**, cliquez à droite sur le projet **TypeEquivalenceRuntime** et **sélectionnez Ajouter** > **référence**.
 
-1. Dans la boîte de dialogue **Gestionnaire de références** , sélectionnez **Parcourir** et accédez au dossier du chemin de sortie. Sélectionnez le fichier *TypeEquivalenceInterface. dll* , sélectionnez **Ajouter**, puis sélectionnez **OK**.
+1. Dans le dialogue **de Reference Manager,** **sélectionnez Parcourir** et naviguez vers le dossier de sortie. Sélectionnez le fichier *TypeEquivalenceInterface.dll,* sélectionnez **Ajouter,** puis sélectionnez **OK**.
 
-1. Dans **Explorateur de solutions**, développez le dossier **références** et sélectionnez la référence **TypeEquivalenceInterface** . Dans le volet **Propriétés** , affectez à **version spécifique** la **valeur false** si ce n’est pas déjà fait.
+1. Dans **Solution Explorer**, élargissez le dossier **Références** et sélectionnez la référence **TypeEquivalenceInterface.** Dans le volet **Propriétés,** définissez **la version spécifique** à **False** si ce n’est pas déjà le cas.
 
-1. Ouvrez le fichier de classe *SampleClass* dans l’éditeur de code, puis remplacez son contenu par le code suivant pour créer la classe `SampleClass` :
+1. Ouvrez le fichier de classe *SampleClass* dans l’éditeur de `SampleClass` code et remplacez son contenu par le code suivant pour créer la classe :
 
    ```csharp
    using System;
@@ -182,31 +182,31 @@ Ensuite, créez la classe d’exécution d’équivalence de type.
    End Class
    ```
 
-1. Sélectionnez **fichier** > **enregistrer tout** ou appuyez sur **CTRL**+**MAJ**+**S** pour enregistrer les fichiers et le projet.
+1. Sélectionnez **Fichier** > **Enregistrer tous** ou appuyez sur **Ctrl**+**Shift**+**S** pour enregistrer les fichiers et le projet.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceRuntime** et sélectionnez **générer**. Le fichier DLL de la bibliothèque de classes est compilé et enregistré dans le chemin de sortie de la génération spécifié.
+1. Dans **Solution Explorer**, cliquez à droite sur le projet **TypeEquivalenceRuntime** et sélectionnez **Build**. Le fichier DLL de bibliothèque de classe est compilé et enregistré sur le chemin de sortie de construction spécifié.
 
 ## <a name="create-a-client-project"></a>Créer un projet client
 
-Enfin, créez un programme client d’équivalence de type qui référence l’assembly d’interface.
+Enfin, créez un programme client d’équivalence type qui fait référence à l’assemblage de l’interface.
 
-1. Dans Visual Studio, sélectionnez **Fichier** > **Nouveau** > **Projet**.
+1. Dans Visual Studio, sélectionnez **File** > **New** > **Project**.
 
-1. Dans la boîte de dialogue **créer un nouveau projet** , tapez *console* dans la zone **Rechercher des modèles** . Sélectionnez le C# modèle ou Visual Basic **application console (.NET Framework)** dans la liste, puis sélectionnez **suivant**.
+1. Dans la boîte de dialogue **Créer un nouveau projet,** *typez la console* dans la boîte de recherche de **modèles.** Sélectionnez le modèle C ou Visual Basic **Console App (.NET Framework)** de la liste, puis sélectionnez **Next**.
 
-1. Dans la boîte de dialogue **configurer votre nouveau projet** , sous **nom du projet**, tapez *TypeEquivalenceClient,* , puis sélectionnez **créer**. Le nouveau projet est créé.
+1. Dans la configuration de votre nouvelle boîte de dialogue **de projet,** sous **le nom de projet**, type *TypeEquivalenceClient*, puis sélectionnez **Créer**. Le nouveau projet est créé.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceClient,** , puis sélectionnez **Propriétés**.
+1. Dans **Solution Explorer**, cliquez à droite sur le projet **TypeEquivalenceClient** et sélectionnez **Propriétés**.
 
-1. Sélectionnez **Build** dans le volet gauche de l’écran **Propriétés** , puis définissez le **chemin de sortie** sur le même emplacement que celui que vous avez utilisé pour le projet TypeEquivalenceInterface, par exemple *C:\TypeEquivalenceSample*.
+1. Sélectionnez **Construire** sur le volet gauche de l’écran **Propriétés,** puis définir le **chemin de sortie** au même endroit que vous avez utilisé pour le projet TypeEquivalenceInterface, par exemple, *C: 'TypeEquivalenceSample*.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceClient,** et sélectionnez **Ajouter** une **référence**de > .
+1. Dans **Solution Explorer**, cliquez à droite sur le projet **TypeEquivalenceClient** et **sélectionnez Ajouter** > **référence**.
 
-1. Dans la boîte de dialogue **Gestionnaire de références** , si le fichier **TypeEquivalenceInterface. dll** est déjà listé, sélectionnez-le. Si ce n’est pas le cas, sélectionnez **Parcourir**, accédez au dossier du chemin de sortie, sélectionnez le fichier *TypeEquivalenceInterface. dll* (pas le fichier *TypeEquivalenceRuntime. dll*), puis sélectionnez **Ajouter**. Sélectionnez **OK**.
+1. Dans le dialogue **du gestionnaire de référence,** si le fichier **TypeEquivalenceInterface.dll** est déjà répertorié, sélectionnez-le. Si ce n’est pas le cas, **sélectionnez Parcourir,** naviguez vers le dossier de sortie, sélectionnez le fichier *TypeEquivalenceInterface.dll* (pas le *TypeEquivalenceRuntime.dll*), et sélectionnez **Ajouter**. Sélectionnez **OK**.
 
-1. Dans **Explorateur de solutions**, développez le dossier **références** et sélectionnez la référence **TypeEquivalenceInterface** . Dans le volet **Propriétés** , affectez à **incorporer les types d’interopérabilité** la **valeur true**.
+1. Dans **Solution Explorer**, élargissez le dossier **Références** et sélectionnez la référence **TypeEquivalenceInterface.** Dans le volet **Propriétés,** mettre **Embed Interop Types** à **True**.
 
-1. Ouvrez le fichier *Program.cs* ou *Module1. vb* dans l’éditeur de code, puis remplacez son contenu par le code suivant pour créer le programme client :
+1. Ouvrez le *fichier Program.cs* ou *Module1.vb* dans l’éditeur de code, et remplacez son contenu par le code suivant pour créer le programme client :
 
    ```csharp
    using System;
@@ -250,23 +250,23 @@ Enfin, créez un programme client d’équivalence de type qui référence l’a
    End Module
    ```
 
-1. Sélectionnez **fichier** > **enregistrer tout** ou appuyez sur **CTRL**+**MAJ**+**S** pour enregistrer les fichiers et le projet.
+1. Sélectionnez **Fichier** > **Enregistrer tous** ou appuyez sur **Ctrl**+**Shift**+**S** pour enregistrer les fichiers et le projet.
 
-1. Appuyez sur **Ctrl**+**F5** pour générer et exécuter le programme. Notez que la sortie de la console retourne la version de l’assembly **1.0.0.0**.
+1. Appuyez sur **Ctrl**+**F5** pour construire et exécuter le programme. Notez que la sortie de la console renvoie la version d’assemblage **1.0.0.0**.
 
 ## <a name="modify-the-interface"></a>Modifier l’interface
 
-À présent, modifiez l’assembly d’interface et modifiez sa version.
+Maintenant, modifiez l’assemblage de l’interface et modifiez sa version.
 
-1. Dans Visual Studio, sélectionnez **fichier** > **ouvrir** > **projet/solution**, puis ouvrez le projet **TypeEquivalenceInterface** .
+1. Dans Visual Studio, sélectionnez **File** > **Open** > **Project/Solution**et ouvrez le projet **TypeEquivalenceInterface.**
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceInterface** et sélectionnez **Propriétés**.
+1. Dans **Solution Explorer**, cliquez à droite sur le projet **TypeEquivalenceInterface** et sélectionnez **Propriétés**.
 
-1. Sélectionnez **application** dans le volet gauche de l’écran **Propriétés** , puis sélectionnez informations de l' **assembly**.
+1. Sélectionnez **l’application** sur le volet gauche de l’écran **propriétés,** puis sélectionnez **l’information d’assemblage**.
 
-1. Dans la boîte de dialogue informations de l' **assembly** , modifiez les valeurs version de l' **assembly** et **version du fichier** sur *2.0.0.0*, puis sélectionnez **OK**.
+1. Dans la boîte de dialogue **d’information de l’Assemblée,** modifiez les valeurs de la **version de l’Assemblée** et **de la version Fichier** à *2.0.0.0*, puis sélectionnez **OK**.
 
-1. Ouvrez le fichier *SampleInterface.cs* ou *SampleInterface. vb* et ajoutez la ligne de code suivante à l’interface `ISampleInterface` :
+1. Ouvrez le *fichier SampleInterface.cs* ou *SampleInterface.vb,* et ajoutez la `ISampleInterface` ligne de code suivante à l’interface :
 
    ```csharp
    DateTime GetDate();
@@ -276,23 +276,23 @@ Enfin, créez un programme client d’équivalence de type qui référence l’a
    Function GetDate() As Date
    ```
 
-1. Sélectionnez **fichier** > **enregistrer tout** ou appuyez sur **CTRL**+**MAJ**+**S** pour enregistrer les fichiers et le projet.
+1. Sélectionnez **Fichier** > **Enregistrer tous** ou appuyez sur **Ctrl**+**Shift**+**S** pour enregistrer les fichiers et le projet.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceInterface** , puis sélectionnez **générer**. Une nouvelle version du fichier DLL de la bibliothèque de classes est compilée et enregistrée dans le chemin de sortie de la génération.
+1. Dans **Solution Explorer**, cliquez à droite sur le projet **TypeEquivalenceInterface** et sélectionnez **Build**. Une nouvelle version du fichier DLL de bibliothèque de classe est compilée et enregistrée sur le chemin de sortie de construction.
 
-## <a name="modify-the-runtime-class"></a>Modifier la classe d’exécution
+## <a name="modify-the-runtime-class"></a>Modifier la classe de temps d’exécution
 
-Modifiez également la classe Runtime et mettez à jour sa version.
+Modifiez également la classe de temps d’exécution et mettez à jour sa version.
 
-1. Dans Visual Studio, sélectionnez **fichier** > **ouvrir** > **projet/solution**, puis ouvrez le projet **TypeEquivalenceRuntime** .
+1. Dans Visual Studio, sélectionnez **File** > **Open** > **Project/Solution**et ouvrez le projet **TypeEquivalenceRuntime.**
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceRuntime** et sélectionnez **Propriétés**.
+1. Dans **Solution Explorer**, cliquez à droite sur le projet **TypeEquivalenceRuntime** et sélectionnez **propriétés**.
 
-1. Sélectionnez **application** dans le volet gauche de l’écran **Propriétés** , puis sélectionnez informations de l' **assembly**.
+1. Sélectionnez **l’application** sur le volet gauche de l’écran **propriétés,** puis sélectionnez **l’information d’assemblage**.
 
-1. Dans la boîte de dialogue informations de l' **assembly** , modifiez les valeurs version de l' **assembly** et **version du fichier** sur *2.0.0.0*, puis sélectionnez **OK**.
+1. Dans la boîte de dialogue **d’information de l’Assemblée,** modifiez les valeurs de la **version de l’Assemblée** et **de la version Fichier** à *2.0.0.0*, puis sélectionnez **OK**.
 
-1. Ouvrez le fichier *SampleClass.cs* ou *SampleClass. vb* , puis ajoutez le code suivant à la classe `SampleClass` :
+1. Ouvrez le fichier *SampleClass.cs* ou *SampleClass.vb,* et ajoutez `SampleClass` le code suivant à la classe :
 
    ```csharp
     public DateTime GetDate()
@@ -307,18 +307,18 @@ Modifiez également la classe Runtime et mettez à jour sa version.
    End Function
    ```
 
-1. Sélectionnez **fichier** > **enregistrer tout** ou appuyez sur **CTRL**+**MAJ**+**S** pour enregistrer les fichiers et le projet.
+1. Sélectionnez **Fichier** > **Enregistrer tous** ou appuyez sur **Ctrl**+**Shift**+**S** pour enregistrer les fichiers et le projet.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceRuntime** et sélectionnez **générer**. Une nouvelle version du fichier DLL de la bibliothèque de classes est compilée et enregistrée dans le chemin de sortie de la génération.
+1. Dans **Solution Explorer**, cliquez à droite sur le projet **TypeEquivalenceRuntime** et sélectionnez **Build**. Une nouvelle version du fichier DLL de bibliothèque de classe est compilée et enregistrée sur le chemin de sortie de construction.
 
 ## <a name="run-the-updated-client-program"></a>Exécuter le programme client mis à jour
 
-Accédez à l’emplacement du dossier de sortie de la génération et exécutez *TypeEquivalenceClient,. exe*. Notez que la sortie de la console reflète désormais la nouvelle version de l’assembly `TypeEquivalenceRuntime`, *2.0.0.0*, sans le programme en cours de recompilation.
+Aller à l’emplacement du dossier de sortie de construction et exécuter *TypeEquivalenceClient.exe*. Notez que la sortie de la `TypeEquivalenceRuntime` console reflète désormais la nouvelle version de l’assemblage, *2.0.0.0*, sans que le programme soit recompilé.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [-link (Options du compilateur C#)](../../csharp/language-reference/compiler-options/link-compiler-option.md)
-- [-Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md)
-- [Guide de programmation C#](../../csharp/programming-guide/index.md)
+- [-lien (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md)
+- [Guide de programmation CMD](../../csharp/programming-guide/index.md)
 - [Concepts de programmation (Visual Basic)](../../visual-basic/programming-guide/concepts/index.md)
 - [Assemblys dans .NET](index.md)

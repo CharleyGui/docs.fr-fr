@@ -11,10 +11,10 @@ helpviewer_keywords:
 - task scheduler, linking from TPL
 ms.assetid: 27ece374-ed5b-49ef-9cec-b20db34a65e8
 ms.openlocfilehash: 2abac1ccf45fc9c9c28e27c132e72fe483a24d75
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73122218"
 ---
 # <a name="how-to-specify-a-task-scheduler-in-a-dataflow-block"></a>Comment : spécifier un planificateur de tâches dans un bloc de flux de données
@@ -28,7 +28,7 @@ Ce document montre comment associer un planificateur de tâches spécifique lors
   
 2. Dans le concepteur de formulaires pour le formulaire principal, Form1.cs (Form1.vb pour Visual Basic), ajoutez quatre contrôles <xref:System.Windows.Forms.CheckBox>. Définissez la propriété <xref:System.Windows.Forms.Control.Text%2A> sur **Lecteur 1** pour `checkBox1`, **Lecteur 2** pour `checkBox2`, **Lecteur 3** pour `checkBox3`, et **Enregistreur** pour `checkBox4`. Définissez la propriété <xref:System.Windows.Forms.Control.Enabled%2A> pour chaque contrôle sur `False`.  
   
-3. Ajoutez un contrôle <xref:System.Windows.Forms.Timer> au formulaire. Affectez à la propriété <xref:System.Windows.Forms.Timer.Interval%2A> la valeur `2500`.  
+3. Ajoutez un contrôle <xref:System.Windows.Forms.Timer> au formulaire. Attribuez à la propriété <xref:System.Windows.Forms.Timer.Interval%2A> la valeur `2500`.  
   
 ## <a name="adding-dataflow-functionality"></a>Ajout de fonctionnalités de flux de données  
  Cette section décrit comment créer des blocs de flux de données participant à l'application et comment associer chacun d'entre eux à un planificateur de tâches.  
@@ -73,7 +73,7 @@ Ce document montre comment associer un planificateur de tâches spécifique lors
   
  Cet exemple utilise également une classe <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> pour permettre à des blocs de flux de données d'agir simultanément, et à un autre bloc de flux de données d'agir de façon exclusive par rapport à tous les autres blocs de flux de données qui s'exécutent sur le même objet <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair>. Cette technique est utile lorsque plusieurs blocs de flux de données partagent une ressource et que certains requièrent un accès exclusif à cette ressource, car elle élimine le besoin de synchroniser manuellement l'accès à cette ressource. L'élimination de la synchronisation manuelle peut rendre le code plus efficace.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant montre le code complet pour Form1.cs (Form1.vb pour Visual Basic).  
   
  [!code-csharp[TPLDataflow_WriterReadersWinForms#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#100)]
@@ -81,4 +81,4 @@ Ce document montre comment associer un planificateur de tâches spécifique lors
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Le flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

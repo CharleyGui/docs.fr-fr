@@ -9,10 +9,10 @@ helpviewer_keywords:
 - cancellation in .NET, overview
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
 ms.openlocfilehash: d4bbf30923d65ad7aeced80efa626136ae27491b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73138140"
 ---
 # <a name="cancellation-in-managed-threads"></a>Annulation dans les threads managés
@@ -29,11 +29,11 @@ ms.locfileid: "73138140"
 - Appelez la méthode <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> pour fournir une notification d'annulation.  
   
 > [!IMPORTANT]
-> La classe <xref:System.Threading.CancellationTokenSource> implémente l'interface <xref:System.IDisposable>. Quand vous aurez terminé d'utiliser la source du jeton d'annulation, vous devrez appeler la méthode <xref:System.Threading.CancellationTokenSource.Dispose%2A?displayProperty=nameWithType> pour libérer les ressources non managées qu'elle contient.  
+> La classe <xref:System.Threading.CancellationTokenSource> implémente l’interface <xref:System.IDisposable>. Quand vous aurez terminé d'utiliser la source du jeton d'annulation, vous devrez appeler la méthode <xref:System.Threading.CancellationTokenSource.Dispose%2A?displayProperty=nameWithType> pour libérer les ressources non managées qu'elle contient.  
   
  L'illustration suivante montre la relation entre une source de jeton et toutes les copies de ce jeton.  
   
- ![CancellationTokenSource and cancellation tokens](../../../docs/standard/threading/media/vs-cancellationtoken.png "VS_CancellationToken")  
+ ![CancellationTokenSource et CancellationTokens](../../../docs/standard/threading/media/vs-cancellationtoken.png "VS_CancellationToken")  
   
  Le nouveau modèle d’annulation facilite la création d’applications et de bibliothèques prenant en charge l’annulation. De plus, il prend en charge les fonctionnalités suivantes :  
   
@@ -43,7 +43,7 @@ ms.locfileid: "73138140"
   
 - L'objet demandeur émet la demande d'annulation vers toutes les copies du jeton à l'aide d'un seul appel de méthode.  
   
-- Un écouteur peut écouter plusieurs jetons simultanément en les rassemblant sous la forme d'un même *jeton lié*.  
+- Un écouteur peut écouter plusieurs jetons simultanément en les rassemblant sous la forme d'un même* jeton lié*.  
   
 - Le code utilisateur peut remarquer et répondre aux demandes d'annulation à partir du code de bibliothèque, et ce dernier peut remarquer et répondre aux demandes d'annulation à partir du code utilisateur.  
   
@@ -84,7 +84,7 @@ ms.locfileid: "73138140"
   
  Toutefois, dans des cas plus complexes, le délégué utilisateur devra notifier le code de bibliothèque qu'une annulation s'est produite. Dans ce cas, il convient de terminer l'opération en appelant le délégué de la méthode <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A>, ce qui entraînera la levée de <xref:System.OperationCanceledException>. Le code de bibliothèque peut intercepter cette exception sur le thread du délégué utilisateur et examiner le jeton de l'exception pour déterminer si l'exception indique une annulation coopérative ou une autre situation exceptionnelle.  
   
- La classe <xref:System.Threading.Tasks.Task> gère <xref:System.OperationCanceledException> de cette façon. Pour plus d’informations, voir [Annulation de tâches](../../../docs/standard/parallel-programming/task-cancellation.md).  
+ La classe <xref:System.Threading.Tasks.Task> gère <xref:System.OperationCanceledException> de cette façon. Pour plus d'informations, consultez [Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md).  
   
 ### <a name="listening-by-polling"></a>Écoute par interrogation  
  Pour les calculs de longue durée qui effectuent des boucles récursives ou non, vous pouvez écouter une demande d'annulation en interrogeant régulièrement la valeur de la propriété <xref:System.Threading.CancellationToken.IsCancellationRequested%2A?displayProperty=nameWithType>. Si sa valeur est de `true`, la méthode doit effectuer un nettoyage et se terminer aussi rapidement que possible. La fréquence d'interrogation optimale varie selon le type d'application. Il incombe au développeur de déterminer la meilleure fréquence d'interrogation pour un programme donné. L'interrogation elle-même n'altère pas beaucoup les performances. L'exemple suivant montre une méthode d'interrogation.  
@@ -144,8 +144,8 @@ ms.locfileid: "73138140"
   
 - Les délégués utilisateurs doivent tenter de répondre aux demandes d'annulation du code de bibliothèque en temps voulu.  
   
- <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> et <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> sont des exemples de classes qui suivent ces recommandations. For more information, see [Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md) and [How to: Cancel a PLINQ Query](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md).  
+ <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> et <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> sont des exemples de classes qui suivent ces recommandations. Pour plus d’informations, voir [Annulation de tâches](../../../docs/standard/parallel-programming/task-cancellation.md) et Comment : Annuler une requête [PLINQ](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Éléments fondamentaux du threading managé](../../../docs/standard/threading/managed-threading-basics.md)
+- [Base de threading gérée](../../../docs/standard/threading/managed-threading-basics.md)

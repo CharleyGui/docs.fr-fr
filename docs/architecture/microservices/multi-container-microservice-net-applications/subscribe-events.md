@@ -3,10 +3,10 @@ title: S’abonner à des événements
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre les détails de la publication et de l’abonnement à des événements d’intégration.
 ms.date: 01/30/2020
 ms.openlocfilehash: 544af8035ed23dd6507dfed4944b0c327c81d943
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77501812"
 ---
 # <a name="subscribing-to-events"></a>S’abonner à des événements
@@ -32,7 +32,7 @@ Lorsque ce code est exécuté, le microservice abonné écoute via les canaux Ra
 
 ## <a name="publishing-events-through-the-event-bus"></a>Publication d’événements via le bus d’événements
 
-Enfin, l’expéditeur du message (le microservice d’origine) publie les événements d’intégration avec du code similaire à celui de l’exemple suivant. (Il s’agit d’un exemple simplifié qui ne prend pas en compte l’atomicité.) Vous devez implémenter un code similaire chaque fois qu’un événement doit être propagé sur plusieurs microservices, généralement juste après la validation des données ou des transactions du microservice d’origine.
+Enfin, l’expéditeur du message (le microservice d’origine) publie les événements d’intégration avec du code similaire à celui de l’exemple suivant. (Il s’agit d’un exemple simplifié qui ne tient pas compte de l’atome.) Vous implémentez un code similaire chaque fois qu’un événement doit être propagé dans plusieurs microservices, généralement juste après avoir commis des données ou des transactions à partir du microservice d’origine.
 
 Tout d’abord, l’objet d’implémentation du bus d’événements (basé sur RabbitMQ ou sur un bus de services) est injecté dans le constructeur du contrôleur, comme dans le code suivant :
 
@@ -103,7 +103,7 @@ Comme déjà mentionné dans la section relative à l’architecture, plusieurs 
 
 - Utiliser la version complète du [modèle d’approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
 
-- Utilisation de [l’exploration des données du journal des transactions](https://www.scoop.it/t/sql-server-transaction-log-mining).
+- Utiliser [l’exploration des données du journal des transactions](https://www.scoop.it/t/sql-server-transaction-log-mining)
 
 - Utiliser le [modèle de boîte d’envoi](https://www.kamilgrzybek.com/design/the-outbox-pattern/) Il s’agit d’une table transactionnelle permettant de stocker les événements d’intégration (en étendant la transaction locale).
 
@@ -139,7 +139,7 @@ Lorsque vous implémentez les étapes de publication des événements, vous avez
 
 La figure 6-22 montre l’architecture de la première de ces approches.
 
-![Diagramme de l’atomicité lors de la publication sans un microservice de travail.](./media/subscribe-events/atomicity-publish-event-bus.png)
+![Diagramme de l’atome lors de la publication sans microservice de travailleur.](./media/subscribe-events/atomicity-publish-event-bus.png)
 
 **Figure 6-22.** Atomicité lors de la publication d’événements dans le bus d’événements
 
@@ -147,7 +147,7 @@ Il manque à l’approche illustrée à la figure 6-22 un microservice de worke
 
 Pour la deuxième approche, vous devez utiliser la table EventLog comme une file d’attente et toujours utiliser un microservice de worker pour publier les messages. Dans ce cas, le processus est similaire à celui illustré dans la figure 6-23. On y voit un microservice supplémentaire, ainsi que la table qui est la seule source lors de la publication d’événements.
 
-![Diagramme de l’atomicité lors de la publication avec un microservice de travail.](./media/subscribe-events/atomicity-publish-worker-microservice.png)
+![Diagramme de l’atome lors de la publication avec un microservice de travailleur.](./media/subscribe-events/atomicity-publish-worker-microservice.png)
 
 **Figure 6-23.** Atomicité lors de la publication d’événements dans le bus d’événements avec un microservice de worker
 
@@ -279,7 +279,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 
 Le gestionnaire d’événements doit vérifier si le produit se trouve dans une des instances du panier d’achat. Il met également à jour le prix de chaque article associé. Enfin, il crée une alerte pour l’utilisateur concernant le changement de prix, comme indiqué dans la figure 6-24.
 
-![Capture d’écran d’un navigateur montrant la notification de changement de prix sur le panier de l’utilisateur.](./media/subscribe-events/display-item-price-change.png)
+![Capture d’écran d’un navigateur montrant la notification de changement de prix sur le panier d’utilisateur.](./media/subscribe-events/display-item-price-change.png)
 
 **Figure 6-24.** Affichage du changement de prix d’un article du panier, communiqué par les événements d’intégration
 
@@ -301,7 +301,7 @@ Le traitement des messages est fondamentalement idempotent. Par exemple, si un s
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- Respect de la \ de **message idempotence**
+- **Honorer l’idempotence du message** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/jj591565(v=pandp.10)#honoring-message-idempotency>
 
 ## <a name="deduplicating-integration-event-messages"></a>Déduplication des messages d’événements d’intégration
@@ -322,63 +322,63 @@ Si l’indicateur de redistribution est défini, le récepteur doit en tenir com
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Forked eShopOnContainers using NServiceBus (Particular Software)**  \
+- **Fourche eShopOnContainers à l’aide de NServiceBus (Logiciel particulier)** \
     <https://go.particular.net/eShopOnContainers>
 
-- **Event Driven Messaging** \
+- **Messagerie axée sur l’événement** \
     <https://patterns.arcitura.com/soa-patterns/design_patterns/event_driven_messaging>
 
-- **Jimmy bogard. Refactorisation en vue de la résilience : évaluation du couplage** \
+- **Jimmy Bogard. Refactoring Vers la résilience : évaluer le couplage** \
     <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
-- **Publish-Subscribe channel** \
+- **Chaîne De publication-Abonnez-vous** \
     <https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html>
 
-- **Communication entre contextes délimités** \
+- **Communiquer entre les contextes liés** \
     <https://docs.microsoft.com/previous-versions/msp-n-p/jj591572(v=pandp.10)>
 
-- **Eventual Consistency** \
+- **Cohérence éventuelle** \
     <https://en.wikipedia.org/wiki/Eventual_consistency>
 
 - **Philip Brown. Stratégies d’intégration des contextes délimités** \
     <https://www.culttt.com/2014/11/26/strategies-integrating-bounded-contexts/>
 
-- **Chris Richardson. Développement de microservices transactionnels à l’aide d’agrégats, de l’approvisionnement en événements et de CQRS-partie 2** \
+- **Chris Richardson. Développer des microservices transactionnels à l’aide d’agrégats, d’approvisionnement en événements et de CQRS - Partie 2** \
     <https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson>
 
-- **Chris Richardson.**  \ du modèle d’approvisionnement en événements
+- **Chris Richardson. Modèle d’approvisionnement d’événements** \
     <https://microservices.io/patterns/data/event-sourcing.html>
 
-- **Introducing Event Sourcing** \
+- **Présentation de l’approvisionnement en événements** \
     <https://docs.microsoft.com/previous-versions/msp-n-p/jj591559(v=pandp.10)>
 
 - **Base de données du magasin d’événements**. Site officiel. \
     <https://geteventstore.com/>
 
-- **Patrick Nommensen. Gestion des données pilotée par les événements pour les microservices** \
+- **Patrick Nommensen. Gestion des données axée sur les événements pour les microservices** \
     <https://dzone.com/articles/event-driven-data-management-for-microservices-1>
 
-- **The CAP Theorem** \
+- **Le théorème de la PAC** \
     <https://en.wikipedia.org/wiki/CAP_theorem>
 
 - **What is CAP Theorem?** \
     <https://www.quora.com/What-Is-CAP-Theorem-1>
 
-- **Data Consistency Primer** \
+- **Apprêt de cohérence de données** \
     <https://docs.microsoft.com/previous-versions/msp-n-p/dn589800(v=pandp.10)>
 
-- **Rick salingue. CAP CAP : pourquoi « tout est différent » avec le Cloud et Internet** \
+- **Rick Saling. Le théorème de la PAC : pourquoi « tout est différent » avec le Cloud et Internet** \
     <https://docs.microsoft.com/archive/blogs/rickatmicrosoft/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/>
 
-- **Eric brasser. CAP 12 ans plus tard : comment les « règles » ont changé** \
+- **Eric Brewer. CAP douze ans plus tard : comment les « règles » ont changé** \
     <https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed>
 
-- **Azure Service bus. Messagerie** répartie :  \ de détection des doublons
+- **Bus de service Azure. Messagerie négociée : Détection en double**  \
     <https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25>
 
 - **Reliability Guide** (RabbitMQ documentation) \
     <https://www.rabbitmq.com/reliability.html#consumer>
 
 > [!div class="step-by-step"]
-> [Précédent](rabbitmq-event-bus-development-test-environment.md)
-> [Suivant](test-aspnet-core-services-web-apps.md)
+> [Suivant précédent](rabbitmq-event-bus-development-test-environment.md)
+> [Next](test-aspnet-core-services-web-apps.md)

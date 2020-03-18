@@ -7,10 +7,10 @@ ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
 ms.openlocfilehash: 61d4792b1f1b92dd59442ee38810da96c6cf63bd
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78241141"
 ---
 # <a name="tour-of-net"></a>Présentation de .NET
@@ -27,13 +27,13 @@ Pour savoir comment configurer un environnement de développement pour exécuter
 
 .NET prend en charge plusieurs langages de programmation. Les implémentations de .NET implémentent le [Common Language Infrastructure (CLI)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/), qui, entre autres, spécifie un runtime indépendant du langage et une interopérabilité des langages. Cela signifie que vous choisissez n’importe quel langage .NET pour générer des applications et services sur .NET.
 
-Microsoft développe et prend en charge activement trois langages .net : C#, F#et Visual Basic.
+Microsoft développe et prend en charge activement trois langues .NET : C, F et Visual Basic.
 
 * C# est simple, puissant, de type sécurisé et orienté objet, tout en conservant l’expressivité et l’élégance des langages de style C. Les utilisateurs familiarisés avec le langage C et les langages similaires ont peu de difficultés à s’adapter à C#. Consultez le [Guide C#](../csharp/index.yml) pour en savoir plus sur C#.
 
 * F# est un langage de programmation multiplateforme et fonctionnel qui prend également en charge la programmation orientée objet et impérative traditionnelle. Consultez le [Guide F#](../fsharp/index.yml) pour en savoir plus sur F#.
 
-* Visual Basic est un langage facile à apprendre que vous utilisez pour créer une variété d’applications qui s’exécutent sur .NET. Dans les langages .NET, la syntaxe de Visual Basic est la plus proche de la langue de l’utilisateur ordinaire, ce qui facilite le développement logiciel.
+* Visual Basic est un langage facile à apprendre que vous utilisez pour créer une variété d’applications qui s’exécutent sur .NET. Parmi les langues .NET, la syntaxe de Visual Basic est la plus proche du langage humain ordinaire, ce qui rend souvent plus facile pour les personnes nouvelles au développement de logiciels.
 
 ## <a name="automatic-memory-management"></a>Gestion automatique de la mémoire
 
@@ -55,17 +55,17 @@ Dans l’exemple suivant, le runtime lève une exception <xref:System.IndexOutOf
 
 Certains objets font référence à des *ressources non managées*. Les ressources non managées sont des ressources qui ne sont pas automatiquement gérées par le runtime .NET. Par exemple, un handle de fichier est une ressource non managée. Un objet <xref:System.IO.FileStream> est un objet managé, mais il fait référence à un handle de fichier qui ne l’est pas. Quand vous avez fini d’utiliser l’objet <xref:System.IO.FileStream>, vous devez libérer le handle de fichier.
 
-Dans .NET, les objets qui font référence à des ressources non managées implémentent l’interface <xref:System.IDisposable>. Quand vous avez fini d’utiliser l’objet, vous appelez la méthode <xref:System.IDisposable.Dispose> de l’objet qui est chargée de libérer les ressources non managées. Les langages .NET fournissent une [instruction`using`](../csharp/language-reference/keywords/using.md) pratique pour ces objets, comme illustré dans l’exemple suivant :
+Dans .NET, les objets qui font référence à des ressources non managées implémentent l’interface <xref:System.IDisposable>. Quand vous avez fini d’utiliser l’objet, vous appelez la méthode <xref:System.IDisposable.Dispose> de l’objet qui est chargée de libérer les ressources non managées. .Les langues NET fournissent une [ `using` déclaration](../csharp/language-reference/keywords/using.md) pratique pour ces objets, comme le montre l’exemple suivant :
 
 [!code-csharp[UnmanagedResources](../../samples/snippets/csharp/snippets/tour/UnmanagedResources.csx#L1-L6)]
 
-Une fois que le bloc `using` est fini, le runtime .NET appelle automatiquement la méthode `stream` de l’objet <xref:System.IDisposable.Dispose> qui libère le handle de fichier. Le runtime agit également ainsi quand une exception entraîne le contrôle à laisser le bloc.
+Une fois que le bloc `using` est fini, le runtime .NET appelle automatiquement la méthode <xref:System.IDisposable.Dispose> de l’objet `stream` qui libère le handle de fichier. Le runtime agit également ainsi quand une exception entraîne le contrôle à laisser le bloc.
 
 Pour plus de détails, consultez les rubriques suivantes :
 
 * Pour C#, consultez la rubrique [using, instruction (référence C#)](../csharp/language-reference/keywords/using-statement.md).
 * Pour F#, consultez [Gestion des ressources : mot clé use](../fsharp/language-reference/resource-management-the-use-keyword.md).
-* Pour Visual Basic, consultez la rubrique relative [à l’instruction using (Visual Basic)](../visual-basic/language-reference/statements/using-statement.md) .
+* Pour Visual Basic, voir le sujet [Using Statement (Visual Basic).](../visual-basic/language-reference/statements/using-statement.md)
 
 ## <a name="type-safety"></a>Cohérence des types
 
@@ -83,7 +83,7 @@ C#, Visual Basic et F# prennent en charge l’*inférence de type* locale. L’i
 
 [!code-csharp[TypeSafety](../../samples/snippets/csharp/snippets/tour/TypeSafety.csx#L28-L34)]
 
-F#offre encore plus de fonctionnalités d’inférence de type que la méthode-inférence de C# type local trouvée dans et Visual Basic. Pour plus d’informations, consultez [Type Inference](../fsharp/language-reference/type-inference.md) (Inférence de type).
+F a encore plus de capacités d’inférence de type que l’inférence de type type type méthode-locale trouvée dans C et Visual Basic. Pour plus d’informations, consultez [Type Inference](../fsharp/language-reference/type-inference.md) (Inférence de type).
 
 ## <a name="delegates-and-lambdas"></a>Délégués et expressions lambda
 
@@ -97,7 +97,7 @@ Dans .NET, les délégués sont souvent utilisés dans les gestionnaires d’év
 
 Les génériques permettent au programmeur d’introduire un *paramètre de type* quand il désigne leurs classes qui permet au code client (les utilisateurs du type) de spécifier le type exact à utiliser à la place du paramètre de type.
 
-Les génériques ont été ajoutés pour aider les programmeurs à implémenter des structures de données génériques. Avant leur arrivée, pour qu’un type, tel que le type `List` soit générique, il faudrait utiliser des éléments qui étaient de type `object`. Cela comportait de nombreux problèmes de performances et de sémantique, ainsi que d’éventuelles erreurs d’exécution subtiles. Une erreur d’exécution courante se produit quand une structure de données contient, par exemple, des entiers et des chaînes, et une <xref:System.InvalidCastException> est levée lors du traitement des membres de la liste.
+Les génériques ont été ajoutés pour aider les programmeurs à implémenter des structures de données génériques. Avant leur arrivée, pour qu’un `List` type tel que le type soit générique, `object`il faudrait travailler avec des éléments de type . Cela a eu diverses performances et problèmes sémantiques, ainsi que d’éventuelles erreurs subtiles de temps de course. Une erreur de temps de ruissellement commune est lorsqu’une structure de données contient, par exemple, des intégraux et des cordes, et qu’une <xref:System.InvalidCastException> erreur est lancée pendant le traitement des membres de la liste.
 
 L’exemple suivant montre une exécution de programme de base utilisant une instance des types <xref:System.Collections.Generic.List%601> :
 
@@ -113,7 +113,7 @@ Pour en savoir plus sur la programmation asynchrone dans .NET, commencez par la 
 
 ## <a name="language-integrated-query-linq"></a>LINQ (Language-Integrated Query)
 
-LINQ est un ensemble puissant de fonctionnalités pour C# et Visual Basic qui vous permettent d’écrire du code simple et déclaratif pour l’exploitation des données. Les données peuvent se présenter sous plusieurs formes (comme des objets en mémoire, une base de données SQL ou un document XML), mais le code LINQ que vous écrivez ne diffère généralement pas d’une source de données à l’autre.
+LINQ est un ensemble puissant de fonctionnalités pour C et Visual Basic qui vous permet d’écrire un code simple et déclaratif pour l’exploitation de données. Les données peuvent se présenter sous plusieurs formes (comme des objets en mémoire, une base de données SQL ou un document XML), mais le code LINQ que vous écrivez ne diffère généralement pas d’une source de données à l’autre.
 
 Pour en savoir plus et obtenir des exemples, consultez la rubrique [LINQ (Language Integrated Query)](using-linq.md).
 
@@ -135,7 +135,7 @@ L’exemple suivant est une version modifiée de la méthode `ToString()` à par
 
 [!code-csharp[Unsafe](../../samples/snippets/csharp/snippets/tour/Unsafe.csx)]
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 Si vous êtes intéressé par une présentation des fonctionnalités de C#, consultez [Tour of C#](../csharp/tour-of-csharp/index.md) (Présentation de C#).
 

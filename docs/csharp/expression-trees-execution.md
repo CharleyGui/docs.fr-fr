@@ -4,12 +4,12 @@ description: En savoir plus sur l’exécution des arborescences d’expressions
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 109e0ac5-2a9c-48b4-ac68-9b6219cdbccf
-ms.openlocfilehash: 9af4b346962cb743daddf774e8b3c1f8fa722ae4
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 802a83f52f9c05a99c3f49f8f6511eff81ef3eaa
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037110"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146019"
 ---
 # <a name="executing-expression-trees"></a>Exécution d’arborescences d’expressions
 
@@ -20,8 +20,8 @@ Il ne s’agit pas de code compilé et exécutable. Si vous souhaitez exécuter 
 
 ## <a name="lambda-expressions-to-functions"></a>Des expressions lambda aux fonctions
 
-Vous pouvez convertir n’importe quelle LambdaExpression ou n’importe quel type dérivé de LambdaExpression en langage intermédiaire exécutable. Les autres types d’expressions ne peuvent pas être convertis directement en code. Cette restriction a peu d’effet dans la pratique. Les expressions lambda sont les seuls types d’expressions que vous pourriez souhaiter exécuter par l’intermédiaire d’une conversion en langage intermédiaire exécutable. (Pensez à ce que cela signifierait d’exécuter directement une `ConstantExpression`. Cela signifie-t-il quelque chose d’utile ?) Toute arborescence d’expressions qui est un `LambdaExpression`ou un type dérivé de `LambdaExpression` peut être converti en IL.
-Le type d’expression `Expression<TDelegate>` est le seul exemple concret dans les bibliothèques .NET Core. Il sert à représenter une expression mappée à un type délégué quelconque. Ce type étant mappé à un type délégué, .NET peut examiner l’expression et générer le langage intermédiaire pour un délégué approprié qui correspond à la signature de l’expression lambda. 
+Vous pouvez convertir n’importe quelle LambdaExpression ou n’importe quel type dérivé de LambdaExpression en langage intermédiaire exécutable. Les autres types d’expressions ne peuvent pas être convertis directement en code. Cette restriction a peu d’effet dans la pratique. Les expressions lambda sont les seuls types d’expressions que vous pourriez souhaiter exécuter par l’intermédiaire d’une conversion en langage intermédiaire exécutable. (Pensez à ce que cela signifierait d’exécuter directement une `ConstantExpression`. Cela signifierait-il quelque chose d’utile?) Tout arbre d’expression qui est `LambdaExpression` `LambdaExpression` un , ou un type dérivé peut être converti en IL.
+Le type d’expression `Expression<TDelegate>` est le seul exemple concret dans les bibliothèques .NET Core. Il sert à représenter une expression mappée à un type délégué quelconque. Ce type étant mappé à un type délégué, .NET peut examiner l’expression et générer le langage intermédiaire pour un délégué approprié qui correspond à la signature de l’expression lambda.
 
 Dans la plupart des cas, cela crée un mappage simple entre une expression et son délégué correspondant. Par exemple, une arborescence d’expressions représentée par `Expression<Func<int>>` serait convertie en un délégué du type `Func<int>`. Pour une expression lambda avec tout type de retour et liste d’arguments, il existe un type délégué qui est le type cible pour le code exécutable représenté par cette expression lambda.
 
@@ -48,9 +48,9 @@ Ce délégué représente le code dans l’arborescence d’expressions. Vous po
 
 Je vous déconseille d’essayer de créer des mécanismes de mise en cache plus complexes pour améliorer les performances en évitant les appels de compilation inutiles. Comparer deux arborescences d’expressions arbitraires pour déterminer si elles représentent le même algorithme prend également beaucoup de temps. Vous vous rendrez sans doute compte que le temps de calcul économisé en évitant tout appel supplémentaire à `LambdaExpression.Compile()` sera largement contrebalancé par le temps passé à exécuter le code qui détermine si deux arborescences d’expressions génèrent le même code exécutable.
 
-## <a name="caveats"></a>Avertissements
+## <a name="caveats"></a>Mises en garde
 
-Compiler une expression lambda en un délégué et appeler ce délégué sont l’une des opérations les plus simples que vous puissiez effectuer avec une arborescence d’expressions. Toutefois, même avec cette simple opération, il existe des pièges dont vous devez être conscient. 
+Compiler une expression lambda en un délégué et appeler ce délégué sont l’une des opérations les plus simples que vous puissiez effectuer avec une arborescence d’expressions. Toutefois, même avec cette simple opération, il existe des pièges dont vous devez être conscient.
 
 Les expressions lambda créent des fermetures sur toutes les variables locales qui sont référencées dans l’expression. Vous devez vérifier que toutes les variables qui font partie du délégué sont utilisables à l’emplacement où vous appelez `Compile` et quand vous exécutez le délégué résultant.
 
@@ -108,7 +108,7 @@ private static Func<int, int> CreateBoundResource()
 }
 ```
 
-Le délégué retourné par cette méthode a fermé l’objet `constant`, qui a été supprimé. (Il a été supprimé car il a été déclaré dans une instruction `using`.) 
+Le délégué retourné par cette méthode a fermé l’objet `constant`, qui a été supprimé. (Il a été supprimé car il a été déclaré dans une instruction `using`.)
 
 Désormais, quand vous exécuterez le délégué retourné par cette méthode, une `ObjectDisposedException` sera levée au moment de l’exécution.
 
@@ -118,7 +118,7 @@ Comme il existe de nombreuses permutations de ce problème, il est difficile de 
 
 Le code dans votre expression peut référencer des méthodes ou des propriétés dans d’autres assemblys. Ces assemblys doivent être accessibles quand l’expression est définie, quand elle est compilée et quand le délégué résultant est appelé. S’il n’est pas présent, vous recevrez une `ReferencedAssemblyNotFoundException`.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Les arborescences d’expressions qui représentent des expressions lambda peuvent être compilées pour créer un délégué exécutable. Cela fournit un mécanisme pour exécuter le code représenté par une arborescence d’expressions.
 

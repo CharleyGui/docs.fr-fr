@@ -4,14 +4,14 @@ description: Ce tutoriel avancé montre comment utiliser des techniques de crit�
 ms.date: 03/13/2019
 ms-technology: csharp-whats-new
 ms.custom: mvc
-ms.openlocfilehash: fd08e707402bfcd552997111a9c3fa58841a5466
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: df1054d8e0ec2b2539e6a1d00bf353d8ca927397
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240052"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156530"
 ---
-# <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Didacticiel : utilisation des fonctionnalités de critères spéciaux pour étendre des types de données
+# <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Tutorial: Utilisation des fonctionnalités d’appariement des modèles pour étendre les types de données
 
 C# 7 a introduit des fonctionnalités de critères spéciaux de base. Elles ont été étendues dans C# 8 par de nouvelles expressions et de nouveaux modèles. Il est possible d’écrire des fonctionnalités qui se comportent comme si des types provenant potentiellement d’autres bibliothèques avaient été étendus. Une autre utilisation des modèles consiste à créer des fonctionnalités requises par une application qui ne sont pas essentielles pour le type étendu.
 
@@ -23,9 +23,9 @@ Ce didacticiel vous montre comment effectuer les opérations suivantes :
 > - Utiliser des expressions de critères spéciaux pour implémenter des comportements en fonction des types et des valeurs de propriété.
 > - Combiner des critères spéciaux avec d’autres techniques pour créer des algorithmes complets.
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Conditions préalables requises
 
-Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download).
+Vous aurez besoin de configurer votre machine pour exécuter .NET Core, y compris le compilateur C 8.0. Le compilateur C 8 est disponible à partir de [Visual Studio 2019 version 16.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download).
 
 Ce tutoriel suppose de connaître C# et .NET, y compris Visual Studio ou l’interface CLI .NET Core.
 
@@ -138,7 +138,7 @@ namespace toll_calculator
 }
 ```
 
-Ce code est inclus dans le projet de démarrage, mais il est commenté. Supprimez les commentaires et vous pouvez tester ce que vous avez écrit.
+Ce code est inclus dans le projet de démarrage, mais est commenté. Supprimez les commentaires, et vous pouvez tester ce que vous avez écrit.
 
 On commence à voir comment les modèles peuvent nous aider à créer des algorithmes dans lesquels le code et les données sont séparés. L’ expression `switch` teste le type et produit différentes valeurs en fonction des résultats. Ce n’est que le début.
 
@@ -241,7 +241,7 @@ vehicle switch
     DeliveryTruck t when (t.GrossWeightClass > 5000) => 10.00m + 5.00m,
     DeliveryTruck t when (t.GrossWeightClass < 3000) => 10.00m - 2.00m,
     DeliveryTruck t => 10.00m,
-    
+
     { }     => throw new ArgumentException(message: "Not a known vehicle type", paramName: nameof(vehicle)),
     null    => throw new ArgumentNullException(nameof(vehicle))
 };
@@ -298,24 +298,24 @@ Pour cette fonctionnalité, nous allons utiliser les critères spéciaux, mais e
 
 Le tableau suivant montre les combinaisons de valeurs d’entrée et le multiplicateur tarifaire :
 
-| jour        | Heure         | Direction | Premium |
+| jour        | Temps         | Sens | Premium |
 | ---------- | ------------ | --------- |--------:|
-| Jour de la semaine    | Heure de pointe du matin | entrante   | x 2,00  |
-| Jour de la semaine    | Heure de pointe du matin | en sortie  | x 1,00  |
-| Jour de la semaine    | Journée      | entrante   | x 1,50  |
-| Jour de la semaine    | Journée      | en sortie  | x 1,50  |
-| Jour de la semaine    | Heure de pointe du soir | entrante   | x 1,00  |
-| Jour de la semaine    | Heure de pointe du soir | en sortie  | x 2,00  |
-| Jour de la semaine    | Nuit    | entrante   | x 0,75  |
-| Jour de la semaine    | Nuit    | en sortie  | x 0,75  |
-| Week-end    | Heure de pointe du matin | entrante   | x 1,00  |
-| Week-end    | Heure de pointe du matin | en sortie  | x 1,00  |
-| Week-end    | Journée      | entrante   | x 1,00  |
-| Week-end    | Journée      | en sortie  | x 1,00  |
-| Week-end    | Heure de pointe du soir | entrante   | x 1,00  |
-| Week-end    | Heure de pointe du soir | en sortie  | x 1,00  |
-| Week-end    | Nuit    | entrante   | x 1,00  |
-| Week-end    | Nuit    | en sortie  | x 1,00  |
+| Jour de la semaine    | Heure de pointe du matin | Vers l’intérieur de la ville   | x 2,00  |
+| Jour de la semaine    | Heure de pointe du matin | Vers l’extérieur de la ville  | x 1,00  |
+| Jour de la semaine    | Journée      | Vers l’intérieur de la ville   | x 1,50  |
+| Jour de la semaine    | Journée      | Vers l’extérieur de la ville  | x 1,50  |
+| Jour de la semaine    | Heure de pointe du soir | Vers l’intérieur de la ville   | x 1,00  |
+| Jour de la semaine    | Heure de pointe du soir | Vers l’extérieur de la ville  | x 2,00  |
+| Jour de la semaine    | Nuit    | Vers l’intérieur de la ville   | x 0,75  |
+| Jour de la semaine    | Nuit    | Vers l’extérieur de la ville  | x 0,75  |
+| Week-end    | Heure de pointe du matin | Vers l’intérieur de la ville   | x 1,00  |
+| Week-end    | Heure de pointe du matin | Vers l’extérieur de la ville  | x 1,00  |
+| Week-end    | Journée      | Vers l’intérieur de la ville   | x 1,00  |
+| Week-end    | Journée      | Vers l’extérieur de la ville  | x 1,00  |
+| Week-end    | Heure de pointe du soir | Vers l’intérieur de la ville   | x 1,00  |
+| Week-end    | Heure de pointe du soir | Vers l’extérieur de la ville  | x 1,00  |
+| Week-end    | Nuit    | Vers l’intérieur de la ville   | x 1,00  |
+| Week-end    | Nuit    | Vers l’extérieur de la ville  | x 1,00  |
 
 Les trois variables produisent 16 combinaisons différentes. On peut simplifier l’expression switch finale en associant certaines conditions.
 
@@ -386,6 +386,6 @@ Cet exemple met en évidence un des avantages des critères spéciaux : les bra
 
 Les critères spéciaux rendent certains types de code plus lisibles et offrent une alternative aux techniques orientées objet quand vous ne pouvez pas ajouter de code à vos classes. Le cloud est à l’origine d’une séparation entre les données et les fonctionnalités. La *forme* des données et les *opérations* effectuées sur ces dernières ne sont pas nécessairement décrites ensemble. Dans ce tutoriel, nous avons exploité les données existantes d’une manière totalement différente de leur fonction d’origine. Les critères spéciaux offrent la possibilité d’écrire des fonctionnalités qui remplacent ces types, même sans pouvoir les étendre.
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 Vous pouvez télécharger le code terminé dans référentiel GitHub [dotnet/samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/patterns/finished). Explorez les modèles par vous-même et ajoutez cette technique à vos activités de codage régulières. Ces techniques représentent une autre façon d’aborder les problèmes et de créer de nouvelles fonctionnalités.

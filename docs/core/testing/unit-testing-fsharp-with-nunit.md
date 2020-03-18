@@ -6,10 +6,10 @@ ms.date: 10/04/2018
 dev_langs:
 - fsharp
 ms.openlocfilehash: 3347e5b90c31589e9a0f99ac0d9298927a717f56
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75715445"
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-nunit"></a>Effectuer des tests unitaires des bibliothèques F# dans .NET Core à l’aide de dotnet test et de NUnit
@@ -18,7 +18,7 @@ Ce didacticiel vous guide pas à pas dans la création d’un exemple de solutio
 
 [!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 
 - [Kit SDK .NET Core 2.1](https://dotnet.microsoft.com/download) (ou version ultérieure).
 - Un éditeur de texte ou un éditeur de code de votre choix.
@@ -137,7 +137,7 @@ type TestClass () =
      member this.FailEveryTime() = Assert.True(false)
 ```
 
-L’attribut `[<TestFixture>]` désigne une classe qui contient des tests. L’attribut `[<Test>]` désigne une méthode de test qui est exécutée par le Test Runner. À partir du répertoire *Unit-Testing-with-FSharp* , exécutez `dotnet test` pour générer les tests et la bibliothèque de classes, puis exécutez les tests. Le Test Runner NUnit contient le point d’entrée de programme qui permet d’exécuter vos tests. `dotnet test` démarre le Test Runner à l’aide du projet de test unitaire que vous avez créé.
+L’attribut `[<TestFixture>]` désigne une classe qui contient des tests. L’attribut `[<Test>]` désigne une méthode de test qui est exécutée par le Test Runner. À partir du répertoire *unit-testing-with-fsharp*, exécutez `dotnet test` pour générer les tests et la bibliothèque de classes, puis exécutez les tests. Le Test Runner NUnit contient le point d’entrée de programme qui permet d’exécuter vos tests. `dotnet test` démarre le Test Runner à l’aide du projet de test unitaire que vous avez créé.
 
 Ces deux tests illustrent les tests de réussite et d’échec les plus basiques. `My test` réussit et `Fail every time` échoue. À présent, créez un test pour la méthode `squaresOfOdds`. La méthode `squaresOfOdds` retourne une séquence des carrés de toutes les valeurs de nombre entier impair qui font partie de la séquence d’entrée. Au lieu d’essayer d’écrire toutes ces fonctions simultanément, vous pouvez créer de manière itérative des tests qui valident les fonctionnalités. La réussite de chaque test correspond à la création de la fonctionnalité nécessaire pour la méthode.
 
@@ -213,4 +213,4 @@ Vous avez créé une petite bibliothèque et un ensemble de tests unitaires pour
 ## <a name="see-also"></a>Voir aussi
 
 - [dotnet add reference](../tools/dotnet-add-reference.md)
-- [dotnet test](../tools/dotnet-test.md)
+- [test dotnet](../tools/dotnet-test.md)

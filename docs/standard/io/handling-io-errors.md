@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 51eb0e758f1ae8fb41c842ef9b32a9f8928af9ac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73120739"
 ---
 # <a name="handling-io-errors-in-net"></a>Gestion des erreurs E/S dans .NET
@@ -23,12 +23,12 @@ ms.locfileid: "73120739"
 Outre les exceptions qui peuvent être levées dans n’importe quel appel de méthode (comme <xref:System.OutOfMemoryException> lorsqu’un système est sous contrainte ou <xref:System.NullReferenceException> en raison d’erreurs de programmation), les méthodes du système de fichiers .NET peuvent lever les exceptions suivantes :
 
 - <xref:System.IO.IOException?displayProperty=nameWithType>, la classe de base de tous les types d’exceptions <xref:System.IO>. Elle est levée pour les erreurs dont les codes d’erreur à partir du système d’exploitation ne sont pas directement mappés vers un autre type d’exception.
-- <xref:System.IO.FileNotFoundException?displayProperty=nameWithType>.,
-- <xref:System.IO.DirectoryNotFoundException?displayProperty=nameWithType>.,
-- <xref:System.IO.DriveNotFoundException??displayProperty=nameWithType>.,
-- <xref:System.IO.PathTooLongException?displayProperty=nameWithType>.,
-- <xref:System.OperationCanceledException?displayProperty=nameWithType>.,
-- <xref:System.UnauthorizedAccessException?displayProperty=nameWithType>.,
+- <xref:System.IO.FileNotFoundException?displayProperty=nameWithType>.
+- <xref:System.IO.DirectoryNotFoundException?displayProperty=nameWithType>.
+- <xref:System.IO.DriveNotFoundException??displayProperty=nameWithType>.
+- <xref:System.IO.PathTooLongException?displayProperty=nameWithType>.
+- <xref:System.OperationCanceledException?displayProperty=nameWithType>.
+- <xref:System.UnauthorizedAccessException?displayProperty=nameWithType>.
 - <xref:System.ArgumentException?displayProperty=nameWithType>, qui est levée pour les caractères de chemin non valides sur le .NET Framework et .NET Core 2.0 et les versions précédentes.
 - <xref:System.NotSupportedException?displayProperty=nameWithType>, qui est levée pour les deux-points non valides dans le .NET Framework.
 - <xref:System.Security.SecurityException?displayProperty=nameWithType>, qui est levée pour les applications exécutées en mode de confiance limitée et qui ne disposent pas des autorisations nécessaires sur le .NET Framework uniquement. (La confiance totale est la valeur par défaut sur le .NET Framework.)
@@ -45,7 +45,7 @@ Toutefois, les conditions précises sous lesquelles le système d’exploitation
 
 En raison de cette dépendance envers le système d’exploitation, des conditions d’exception identiques (par exemple, l’erreur répertoire introuvable dans ce cas) peuvent faire qu’une méthode E/S lève l’une des exceptions de la classe entière d’exceptions E/S. Cela signifie que, lors de l’appel d’API E/S, votre code doit être prêt à gérer la plupart ou toutes ces exceptions, comme indiqué dans le tableau suivant :
 
-| Type d'exception | .NET Core | .NET Framework |
+| Type d'exception | .NET Core | .NET Framework |
 |---|---|---|
 | <xref:System.IO.IOException> | Oui | Oui |
 | <xref:System.IO.FileNotFoundException> | Oui | Oui |
@@ -55,8 +55,8 @@ En raison de cette dépendance envers le système d’exploitation, des conditio
 | <xref:System.OperationCanceledException> | Oui | Oui |
 | <xref:System.UnauthorizedAccessException> | Oui | Oui |
 | <xref:System.ArgumentException> | .NET Core 2.0 et versions antérieures| Oui |
-| <xref:System.NotSupportedException> | Non | Oui |
-| <xref:System.Security.SecurityException> | Non | Confiance limitée uniquement |
+| <xref:System.NotSupportedException> | Non  | Oui |
+| <xref:System.Security.SecurityException> | Non  | Confiance limitée uniquement |
 
 ## <a name="handling-ioexception"></a>Gestion d’IOException
 
@@ -71,7 +71,7 @@ Notez que, dans votre code gestion des exceptions, vous devez toujours gérer <x
 
 Dans le cas de <xref:System.IO.IOException>, vous pouvez obtenir des informations supplémentaires sur l’erreur à partir de la propriété [IOException.HResult](xref:System.Exception.HResult). Pour convertir la valeur HResult en un code d’erreur Win32, éliminez les 16 bits supérieurs de la valeur de 32 bits. Le tableau suivant répertorie les codes d’erreur qui peuvent être encapsulés dans <xref:System.IO.IOException>.
 
-| HResult | Constante | Description |
+| HResult | Constant | Description |
 | --- | --- | --- |
 | ERROR_SHARING_VIOLATION | 32 | Le nom de fichier est manquant ou le fichier ou le répertoire est en cours d’utilisation. |
 | ERROR_FILE_EXISTS | 80 | Le fichier existe déjà. |
@@ -87,5 +87,5 @@ Vous pouvez les gérer à l’aide d’une clause `When` dans une instruction ca
 
 - [Gestion et levée d’exceptions dans .NET](../exceptions/index.md)
 - [Gestion des exceptions (bibliothèque parallèle de tâches)](../parallel-programming/exception-handling-task-parallel-library.md)
-- [Meilleures pratiques pour les exceptions](../exceptions/best-practices-for-exceptions.md)
+- [Bonnes pratiques pour les exceptions](../exceptions/best-practices-for-exceptions.md)
 - [Utiliser des exceptions spécifiques dans un bloc Catch](../exceptions/how-to-use-specific-exceptions-in-a-catch-block.md)

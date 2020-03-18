@@ -2,18 +2,18 @@
 title: Commande dotnet add package
 description: La commande « dotnet add package » est une option pratique pour ajouter une référence de package NuGet à un projet.
 ms.date: 02/14/2020
-ms.openlocfilehash: cb44805f91ac4047dd50fd7e88d4eac5f15f2508
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 8121539a50d2ac2837693ccc35581f7fde1d1fc1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503800"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146604"
 ---
 # <a name="dotnet-add-package"></a>dotnet add package
 
-**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 2.x SDK et les versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet add package` : Ajoute une référence de package à un fichier projet.
 
@@ -30,7 +30,7 @@ La commande `dotnet add package` est une option pratique pour ajouter une réfé
 Par exemple, l’ajout de `Newtonsoft.Json` à *ToDo.csproj* produit une sortie similaire à l’exemple suivant :
 
 ```console
-  Writing C:\Users\mairaw\AppData\Local\Temp\tmp95A8.tmp
+Writing C:\Users\me\AppData\Local\Temp\tmp95A8.tmp
 info : Adding PackageReference for package 'Newtonsoft.Json' into project 'C:\projects\ToDo\ToDo.csproj'.
 log  : Restoring packages for C:\Temp\projects\consoleproj\consoleproj.csproj...
 info :   GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/index.json

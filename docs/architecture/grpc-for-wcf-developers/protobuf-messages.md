@@ -1,23 +1,23 @@
 ---
-title: Messages Protobuf-gRPC pour les développeurs WCF
-description: Découvrez comment les messages Protobuf sont définis dans l’IDL et générés dans C#.
+title: Messages Protobuf - gRPC pour les développeurs WCF
+description: Découvrez comment les messages Protobuf sont définis dans l’IDL et générés en C.
 ms.date: 09/09/2019
-ms.openlocfilehash: c7375bafb7572b0eaa0458b0310a0114e3fd078c
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 5b3d4383de39a3785ef804fec21939a740f54669
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543038"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79147982"
 ---
 # <a name="protobuf-messages"></a>Messages Protobuf
 
-Cette section explique comment déclarer des messages de tampon de protocole (Protobuf) dans des fichiers `.proto`. Il explique les concepts fondamentaux des nombres de champs et des types, et il examine C# le code généré par le compilateur `protoc`. 
+Cette section couvre la façon de déclarer les `.proto` messages De mémoire tampon (Protobuf) dans les fichiers. Il explique les concepts fondamentaux des nombres et des types `protoc` de terrain, et il examine le code Cmd que le compilateur génère.
 
-Le reste du chapitre aborde plus en détail la façon dont les différents types de données sont représentés dans Protobuf.
+Le reste du chapitre examinera plus en détail comment différents types de données sont représentés dans Protobuf.
 
-## <a name="declaring-a-message"></a>Déclaration d’un message
+## <a name="declaring-a-message"></a>Déclarer un message
 
-Dans Windows Communication Foundation (WCF), une classe de `Stock` pour une application commerciale boursière peut être définie comme dans l’exemple suivant :
+Dans Windows Communication Foundation (WCF), une `Stock` classe pour une application de négociation boursière peut être définie comme l’exemple suivant :
 
 ```csharp
 namespace TraderSys
@@ -37,7 +37,7 @@ namespace TraderSys
 }
 ```
 
-Pour implémenter la classe équivalente dans Protobuf, vous devez la déclarer dans le fichier `.proto`. Le compilateur `protoc` générera ensuite la classe .NET dans le cadre du processus de génération.
+Pour implémenter la classe équivalente dans `.proto` Protobuf, vous devez la déclarer dans le fichier. Le `protoc` compilateur générera ensuite la classe .NET dans le cadre du processus de construction.
 
 ```protobuf
 syntax "proto3";
@@ -54,28 +54,28 @@ message Stock {
 }  
 ```
 
-La première ligne déclare la version de syntaxe utilisée. La version 3 de la langue a été publiée en 2016. C’est la version que nous recommandons pour les services gRPC.
+La première ligne déclare la version syntaxe utilisée. La version 3 de la langue est sortie en 2016. C’est la version que nous recommandons pour les services gRPC.
 
-La ligne `option csharp_namespace` spécifie l’espace de noms à utiliser pour C# les types générés. Cette option est ignorée lorsque le fichier `.proto` est compilé pour d’autres langues. Les fichiers Protobuf contiennent souvent des options spécifiques à la langue pour plusieurs langues.
+La `option csharp_namespace` ligne spécifie l’espace nom à utiliser pour les types C générés. Cette option sera ignorée lorsque le `.proto` fichier sera compilé pour d’autres langues. Les fichiers Protobuf contiennent souvent des options spécifiques à la langue pour plusieurs langues.
 
-La définition de message `Stock` spécifie quatre champs. Chaque a un type, un nom et un numéro de champ.
+La `Stock` définition du message spécifie quatre champs. Chacun a un type, un nom et un numéro de champ.
 
-## <a name="field-numbers"></a>Numéros de champ
+## <a name="field-numbers"></a>Numéros de terrain
 
-Les numéros de champ constituent une partie importante de Protobuf. Elles sont utilisées pour identifier les champs dans les données binaires codées, ce qui signifie qu’elles ne peuvent pas passer d’une version à une version de votre service. L’avantage est que la compatibilité descendante et la compatibilité ascendante sont possibles. Les clients et les services ignorent simplement les numéros de champ qu’ils ne connaissent pas, à condition que la possibilité de valeurs manquantes soit gérée.
+Les numéros de terrain sont une partie importante de Protobuf. Ils sont utilisés pour identifier les champs dans les données codées binaires, ce qui signifie qu’ils ne peuvent pas changer de la version à la version de votre service. L’avantage est que la compatibilité vers l’arrière et la compatibilité vers l’avant sont possibles. Les clients et les services ignoreront simplement les numéros de terrain qu’ils ne connaissent pas, tant que la possibilité de manquer des valeurs est gérée.
 
-Dans le format binaire, le numéro de champ est associé à un identificateur de type. Les numéros de champ de 1 à 15 peuvent être encodés avec leur type comme un seul octet. Les nombres compris entre 16 et 2 047 prennent 2 octets. Vous pouvez aller plus haut si vous avez besoin de plus de 2 047 champs sur un message pour une raison quelconque. Les identificateurs à un seul octet pour les numéros de champ 1 à 15 offrent de meilleures performances. vous devez donc les utiliser pour les champs les plus basiques et les plus fréquemment utilisés.
+Dans le format binaire, le numéro de champ est combiné avec un identifiant de type. Les numéros de champ de 1 à 15 peuvent être codés avec leur type comme un seul byte. Les numéros de 16 à 2 047 prennent 2 octets. Vous pouvez aller plus haut si vous avez besoin de plus de 2 047 champs sur un message pour n’importe quelle raison. Les identifiants d’endo unique pour les numéros de champ 1 à 15 offrent de meilleures performances, de sorte que vous devriez les utiliser pour les champs les plus basiques, fréquemment utilisés.
 
 ## <a name="types"></a>Types
 
-Les déclarations de type utilisent les types de données scalaires natives de Protobuf, qui sont décrits plus en détail dans [la section suivante](protobuf-data-types.md). Le reste de ce chapitre traite des types intégrés de Protobuf et montre comment ils se rapportent aux types .NET courants.
+Les déclarations de type utilisent les types de données scalaires indigènes de Protobuf, qui sont discutés plus en détail dans [la section suivante](protobuf-data-types.md). Le reste de ce chapitre couvrira les types intégrés de Protobuf et montrera comment ils se rapportent aux types .NET communs.
 
 > [!NOTE]
-> Protobuf ne prend pas en charge de manière native un type `decimal`, donc `double` est utilisé à la place. Pour les applications qui requièrent une précision décimale complète, reportez-vous à la [section sur les décimales](protobuf-data-types.md#decimals) dans la partie suivante de ce chapitre.
+> Protobuf ne supporte pas `decimal` un `double` type natif, est donc utilisé à la place. Pour les applications qui nécessitent une précision décimale complète, se référer à la [section sur les décimales](protobuf-data-types.md#decimals) dans la prochaine partie de ce chapitre.
 
 ## <a name="the-generated-code"></a>Code généré
 
-Quand vous générez votre application, Protobuf crée des classes pour chacun de vos messages, en mappant ses C# types natifs aux types. Le type de `Stock` généré aurait la signature suivante :
+Lorsque vous construisez votre application, Protobuf crée des classes pour chacun de vos messages, cartographiant ses types natifs en types C. Le `Stock` type généré aurait la signature suivante :
 
 ```csharp
 public class Stock
@@ -87,12 +87,12 @@ public class Stock
 }
 ```
 
-Le code réel qui est généré est beaucoup plus complexe que celui-ci. La raison en est que chaque classe contient tout le code nécessaire pour sérialiser et désérialiser lui-même au format de câble binaire.
+Le code réel qui est généré est beaucoup plus compliqué que cela. La raison en est que chaque classe contient tout le code nécessaire pour sérialiser et se déséialiser au format de fil binaire.
 
-### <a name="property-names"></a>Noms des propriétés
+### <a name="property-names"></a>Noms de propriété
 
-Notez que le compilateur Protobuf appliqué `PascalCase` aux noms des propriétés, bien qu’ils aient été `snake_case` dans le fichier `.proto`. Le [Guide de style Protobuf](https://developers.google.com/protocol-buffers/docs/style) recommande l’utilisation de `snake_case` dans vos définitions de message afin que la génération de code pour d’autres plateformes produise la casse attendue pour leurs conventions.
+Notez que le compilateur `PascalCase` Protobuf s’est `snake_case` appliqué `.proto` aux noms de propriété, bien qu’ils étaient dans le fichier. Le [guide de style Protobuf](https://developers.google.com/protocol-buffers/docs/style) recommande d’utiliser `snake_case` dans vos définitions de messages afin que la génération de code pour d’autres plates-formes produise le cas prévu pour leurs conventions.
 
 >[!div class="step-by-step"]
->[Précédent](protocol-buffers.md)
->[Suivant](protobuf-data-types.md)
+>[Suivant précédent](protocol-buffers.md)
+>[Next](protobuf-data-types.md)

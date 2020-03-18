@@ -1,15 +1,15 @@
 ---
-title: Comment combiner et comparer des collections de chaînes (LINQ)C#()
+title: Comment combiner et comparer les collections de cordes (LINQ) (C)
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: 23089835e710a7905693f8e3e3b57173085d0694
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: f73a31e109933a4b6dd0078934d89d3bb770de5c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141419"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169452"
 ---
-# <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Comment combiner et comparer des collections de chaînes (LINQ)C#()
+# <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Comment combiner et comparer les collections de cordes (LINQ) (C)
 Cet exemple montre comment fusionner des fichiers qui contiennent des lignes de texte, puis comment trier les résultats. Il montre plus précisément comment effectuer une concaténation simple, une union et une intersection avec les deux ensembles de lignes de texte.  
   
 ### <a name="to-set-up-the-project-and-the-text-files"></a>Pour configurer le projet et les fichiers texte  
@@ -44,7 +44,7 @@ Cet exemple montre comment fusionner des fichiers qui contiennent des lignes de 
     El Yassir, Mehdi  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ```csharp  
 class MergeStrings  
@@ -74,7 +74,7 @@ class MergeStrings
                 fileA.Intersect(fileB);  
             OutputQueryResults(commonNamesQuery, "Merge based on intersect:");  
   
-            // Find the matching fields in each list. Merge the two   
+            // Find the matching fields in each list. Merge the two
             // results by using Concat, and then  
             // sort using the default string comparer.  
             string nameMatch = "Garcia";  

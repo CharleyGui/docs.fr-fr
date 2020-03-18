@@ -16,16 +16,16 @@ helpviewer_keywords:
 - removing characters
 ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
 ms.openlocfilehash: bdbe267bb178e90c0008422e6543a23178c2c4d8
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78159986"
 ---
 # <a name="trimming-and-removing-characters-from-strings-in-net"></a>Suppression d’espaces et de caractères dans .NET
 Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mots incluant des espaces vides (également appelés espaces blancs) à chaque extrémité du mot. Dans ce cas, vous pouvez utiliser l’une des méthodes de suppression de la classe **System.String** pour supprimer n’importe quel nombre d’espaces ou d’autres caractères à partir d’une position spécifiée dans la chaîne. Le tableau suivant décrit les méthodes de suppression disponibles.  
   
-|Nom de la méthode|Utilisez|  
+|Nom de la méthode|Utilisation|  
 |-----------------|---------|  
 |<xref:System.String.Trim%2A?displayProperty=nameWithType>|Supprime les espaces blancs ou caractères spécifiés dans un tableau de caractères à partir du début et la fin d’une chaîne.|  
 |<xref:System.String.TrimEnd%2A?displayProperty=nameWithType>|Supprime les caractères spécifiés dans un tableau de caractères à partir de la fin d’une chaîne.|  
@@ -49,7 +49,7 @@ Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mo
 
  La méthode **String.TrimEnd** supprime les caractères à partir de la fin d’une chaîne, créant ainsi un objet String. Un tableau de caractères est passé à cette méthode pour spécifier les caractères à supprimer. L’ordre des éléments dans le tableau de caractères n’affecte pas l’opération de suppression. La suppression s’arrête lorsqu’un caractère non spécifié dans le tableau est trouvé.  
   
- L’exemple suivant supprime les dernières lettres d’une chaîne à l’aide de la méthode **TrimEnd**. Dans cet exemple, la position du caractère `'r'` et du caractère `'W'` est inversée pour illustrer que l’ordre des caractères dans le tableau n’a pas d’importance. Remarquez que ce code supprime le dernier mot de `MyString` plus une partie du premier.  
+ L’exemple suivant supprime les dernières lettres d’une chaîne à l’aide de la méthode **TrimEnd.** Dans cet exemple, la position du caractère `'r'` et du caractère `'W'` est inversée pour illustrer que l’ordre des caractères dans le tableau n’a pas d’importance. Remarquez que ce code supprime le dernier mot de `MyString` plus une partie du premier.  
   
  [!code-cpp[Conceptual.String.BasicOps#18](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/trimming.cpp#18)]
  [!code-csharp[Conceptual.String.BasicOps#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trimming.cs#18)]
@@ -87,7 +87,7 @@ Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mo
  [!code-csharp[Conceptual.String.BasicOps#21](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trimming.cs#21)]
  [!code-vb[Conceptual.String.BasicOps#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/trimming.vb#21)]  
   
-## <a name="replace"></a>Remplacer
+## <a name="replace"></a>Replace
 
  Vous pouvez également supprimer un caractère spécifié ou une sous-chaîne spécifiée d’une chaîne en appelant la méthode <xref:System.String.Replace%28System.String%2CSystem.String%29?displayProperty=nameWithType> et en spécifiant une chaîne vide (<xref:System.String.Empty?displayProperty=nameWithType>) comme valeur de remplacement. L’exemple suivant supprime toutes les virgules d’une chaîne.  
   
@@ -96,4 +96,4 @@ Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mo
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérations de chaînes de base](../../../docs/standard/base-types/basic-string-operations.md)
+- [Opérations de base des cordes](../../../docs/standard/base-types/basic-string-operations.md)

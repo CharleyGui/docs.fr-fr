@@ -8,10 +8,10 @@ helpviewer_keywords:
 - Windows Forms, and TPL
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
 ms.openlocfilehash: 794253514edf63f02276e1ece21c60a85c534390
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78159765"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Procédure pas à pas : utilisation de flux de données dans une application Windows Forms
@@ -19,7 +19,7 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
   
  Dans cet exemple, on charge des fichiers image à partir du dossier spécifié, on crée une image composite, et on affiche le résultat. L’exemple utilise le modèle de flux de données pour acheminer les images via le réseau. Dans le modèle de flux de données, les composants indépendants d’un programme communiquent entre eux en envoyant des messages. Lorsqu’un composant reçoit un message, il effectue une action, puis transmet le résultat à un autre composant. Comparez cela avec le modèle de flux de contrôle, dans lequel une application utilise des structures de contrôle (par exemple, des instructions conditionnelles, des boucles, etc.) pour contrôler l’ordre des opérations dans un programme.  
   
-## <a name="prerequisites"></a>Composants requis  
+## <a name="prerequisites"></a>Conditions préalables requises  
  Lisez la rubrique [Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) avant de démarrer cette procédure pas à pas.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -67,7 +67,7 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
   
      [!code-csharp[TPLDataflow_CompositeImages#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#2)]  
   
-4. Ajoutez la méthode `CreateImageProcessingNetwork` suivante à la classe `Form1`. Cette méthode crée le réseau de traitement des images.  
+4. Ajoutez la méthode suivante, `CreateImageProcessingNetwork`, à la classe `Form1`. Cette méthode crée le réseau de traitement des images.  
   
      [!code-csharp[TPLDataflow_CompositeImages#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#3)]  
   
@@ -131,4 +131,4 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Le flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

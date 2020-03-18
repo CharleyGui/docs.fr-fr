@@ -1,29 +1,29 @@
 ---
-title: Comment lire un fichier texte sur une ligne à la fois- C# Guide de programmation
+title: Comment lire un fichier texte une ligne à la fois - Guide de programmation C
 ms.date: 07/20/2015
 helpviewer_keywords:
 - ReadLine method [C#]
 - reading text files, line by line
 - text files [C#]
 ms.assetid: d62e22c5-a13c-48db-af9b-f10c801b0cb1
-ms.openlocfilehash: a6af48cdacd836465d776a3fd4e1d17aa0298b77
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: e4a9ba2da2548991f442c2f5ab09d39243137875
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635338"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79167509"
 ---
-# <a name="how-to-read-a-text-file-one-line-at-a-time-c-programming-guide"></a>Guide pratique pour lire un fichier texte ligne par ligne (C# Guide de programmation)
+# <a name="how-to-read-a-text-file-one-line-at-a-time-c-programming-guide"></a>Comment lire un fichier texte une ligne à la fois (Guide de programmation C)
 Cet exemple lit le contenu d’une chaîne d’un fichier texte, ligne par ligne, à l’aide de la méthode `ReadLine` de la classe `StreamReader`. Chaque ligne de texte est stockée dans la chaîne `line` et s’affiche à l’écran.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ```csharp
 int counter = 0;  
 string line;  
   
 // Read the file and display it line by line.  
-System.IO.StreamReader file =   
+System.IO.StreamReader file =
     new System.IO.StreamReader(@"c:\test.txt");  
 while((line = file.ReadLine()) != null)  
 {  
@@ -47,7 +47,7 @@ System.Console.ReadLine();
   
 - Le fichier n’existe pas.  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
+## <a name="net-framework-security"></a>Sécurité du .NET Framework  
  Ne vous basez pas sur le nom d'un fichier pour en déterminer le contenu. Par exemple, le fichier `myFile.cs` peut ne pas être un fichier source C#.  
   
 ## <a name="see-also"></a>Voir aussi

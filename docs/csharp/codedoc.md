@@ -4,38 +4,38 @@ description: Découvrez comment documenter votre code avec des commentaires de d
 ms.date: 01/21/2020
 ms.technology: csharp-fundamentals
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 1ec088db1de7c953bdb20b1129c5fd40f9e31454
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.openlocfilehash: 1ed39c4733c36b3932fcb85bf50d4f4c0e53aa6f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965930"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146315"
 ---
-# <a name="document-your-code-with-xml-comments"></a>Documenter votre code avec des commentaires XML
+# <a name="document-your-code-with-xml-comments"></a>Documentez votre code avec les commentaires de XML
 
 Les commentaires de documentation XML sont un genre particulier de commentaire, ajouté au-dessus de la définition d’un type ou d’un membre défini par l’utilisateur.
 Ils sont spéciaux, car ils peuvent être traités par le compilateur pour générer un fichier de documentation XML au moment de la compilation.
-Le fichier XML généré par le compilateur peut être distribué avec votre assembly .NET afin que Visual Studio et d’autres IDE puissent utiliser IntelliSense pour afficher des informations rapides sur les types ou les membres. De plus, le fichier XML peut être exécuté par l’intermédiaire d’outils tels que [DocFX](https://dotnet.github.io/docfx/) et [Sandcastle](https://github.com/EWSoftware/SHFB) pour générer des sites web de références d’API.
+Le fichier XML généré par le compilateur peut être distribué à côté de votre assemblage .NET afin que Visual Studio et d’autres IDE puissent utiliser IntelliSense pour afficher des informations rapides sur les types ou les membres. De plus, le fichier XML peut être exécuté par l’intermédiaire d’outils tels que [DocFX](https://dotnet.github.io/docfx/) et [Sandcastle](https://github.com/EWSoftware/SHFB) pour générer des sites web de références d’API.
 
 Les commentaires de documentation XML, comme tous les autres commentaires, sont ignorés par le compilateur.
 
 Vous pouvez générer le fichier XML au moment de la compilation en procédant comme suit :
 
-- Si vous développez une application avec .NET Core à partir de la ligne de commande, vous pouvez ajouter un élément `GenerateDocumentationFile` à la section `<PropertyGroup>` de votre fichier projet. csproj. Vous pouvez également spécifier le chemin d’accès au fichier de documentation directement à l’aide de [`DocumentationFile` élément](/visualstudio/msbuild/common-msbuild-project-properties). L’exemple suivant génère un fichier XML dans le répertoire du projet avec le même nom de fichier racine que l’assembly :
+- Si vous développez une application avec .NET Core à `GenerateDocumentationFile` partir `<PropertyGroup>` de la ligne de commande, vous pouvez ajouter un élément à la section de votre fichier de projet .csproj. Vous pouvez également spécifier le chemin vers le fichier de documentation directement à l’aide de [ `DocumentationFile` l’élément](/visualstudio/msbuild/common-msbuild-project-properties). L’exemple suivant génère un fichier XML dans le répertoire du projet avec le même nom de fichier racine que l’assembly :
 
    ```xml
    <GenerateDocumentationFile>true</GenerateDocumentationFile>
    ```
-   
+
    est équivalente à celle-ci :
-   
+
    ```xml
    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
    ```
 
 - Si vous développez une application à l’aide de Visual Studio, cliquez avec le bouton droit sur le projet, puis sélectionnez **Propriétés**. Dans la boîte de dialogue des propriétés, sélectionnez l’onglet **Générer**, puis cochez **Fichier de documentation XML**. Vous pouvez également changer l’emplacement dans lequel le compilateur écrit le fichier.
 
-- Si vous compilez une application .NET Framework à partir de la ligne de commande, ajoutez l' [option de compilateur-doc](language-reference/compiler-options/doc-compiler-option.md) lors de la compilation.  
+- Si vous compilez une application cadre .NET à partir de la ligne de commande, ajoutez [l’option compilateur -doc](language-reference/compiler-options/doc-compiler-option.md) lors de la compilation.  
 
 Les commentaires de documentation XML utilisent des barres obliques triples (`///`) et le corps d’un commentaire au format XML. Par exemple :
 
@@ -43,15 +43,15 @@ Les commentaires de documentation XML utilisent des barres obliques triples (`/
 
 ## <a name="walkthrough"></a>Procédure pas à pas
 
-Passons en revue la documentation d’une bibliothèque mathématique très basique pour permettre aux nouveaux développeurs de comprendre et de contribuer facilement et aux développeurs tiers de les utiliser.
+Passons à documenter une bibliothèque de mathématiques très basique pour faciliter la compréhension/contribution des nouveaux développeurs et de l’utilisation des développeurs tiers.
 
 Voici le code de la bibliothèque mathématique simple :
 
 [!code-csharp[Sample Library](../../samples/snippets/csharp/concepts/codedoc/sample-library.cs)]
 
-L’exemple de bibliothèque prend en charge quatre opérations arithmétiques principales (`add`, `subtract`, `multiply`et `divide`) sur les types de données `int` et `double`.
+La bibliothèque d’échantillons prend en`add`charge `subtract` `multiply`quatre `divide`opérations `int` arithmétiques majeures ( , , , et ) sur et `double` les types de données.
 
-Vous souhaitez maintenant être en mesure de créer un document de référence d’API à partir de votre code pour les développeurs tiers qui utilisent votre bibliothèque, mais n’ont pas accès au code source.
+Vous souhaitez maintenant pouvoir créer un document de référence API à partir de votre code pour les développeurs tiers qui utilisent votre bibliothèque mais n’ont pas accès au code source.
 Comme nous l’avons déjà mentionné, vous pouvez pour cela utiliser les balises de documentation XML. Vous allez maintenant découvrir les balises XML standard prises en charge par le compilateur C#.
 
 ## <a name="summary"></a>\<summary>
@@ -61,7 +61,7 @@ Je vais expliquer son utilisation en l’ajoutant à la définition de la classe
 
 [!code-csharp[Summary Tag](~/samples/snippets/csharp/concepts/codedoc/summary-tag.cs)]
 
-La balise `<summary>` est importante et nous vous recommandons de l’inclure, car son contenu est la principale source d’informations sur les types ou les membres dans IntelliSense ou un document de référence sur les API.
+L’étiquette `<summary>` est importante, et nous vous recommandons de l’inclure parce que son contenu est la principale source d’informations de type ou de membre dans IntelliSense ou un document de référence API.
 
 ## <a name="remarks"></a>\<remarks>
 
@@ -137,7 +137,7 @@ Il peut s’agir de tout type défini dans le projet ou dans un assembly référ
 
 ## <a name="param"></a>\<param>
 
-La balise `<param>` permet de décrire les paramètres d’une méthode. Voici un exemple de la méthode double `Add` : le paramètre que la balise décrit est spécifié dans l’attribut `name` **requis** .
+La balise `<param>` permet de décrire les paramètres d’une méthode. Voici un exemple sur `Add` la méthode double : le paramètre décrit par l’étiquette est spécifié dans l’attribut **requis.** `name`
 
 [!code-csharp[Param Tag](~/samples/snippets/csharp/concepts/codedoc/param-tag.cs)]
 
@@ -150,7 +150,7 @@ Ajoutez une méthode générique rapide à votre classe `Math` pour vérifier si
 
 ## <a name="paramref"></a>\<paramref>
 
-Alors que vous décrivez ce que fait une méthode dans ce qui pourrait être une balise `<summary>`, vous souhaiterez peut-être créer une référence à un paramètre. La balise `<paramref>` est idéale pour cette tâche précise. Mettons à jour le récapitulatif de notre méthode `Add` double. À l’instar de la balise `<param>`, le nom du paramètre est spécifié dans l’attribut `name` **requis** .
+Alors que vous décrivez ce que fait une méthode dans ce qui pourrait être une balise `<summary>`, vous souhaiterez peut-être créer une référence à un paramètre. La balise `<paramref>` est idéale pour cette tâche précise. Mettons à jour le récapitulatif de notre méthode `Add` double. Comme `<param>` l’étiquette, le nom du paramètre est spécifié dans l’attribut **requis.** `name`
 
 [!code-csharp[Paramref Tag](~/samples/snippets/csharp/concepts/codedoc/paramref-tag.cs)]
 
@@ -163,19 +163,19 @@ Vous pouvez utiliser la même méthode générique que celle créée précédemm
 
 ## <a name="list"></a>\<list>
 
-Vous utilisez la balise `<list>` pour mettre en forme les informations de documentation sous la forme d’une liste triée, d’une liste non triée ou d’une table. Créez une liste non triée de toutes les opérations mathématiques prises en charge par votre bibliothèque `Math`.
+Vous utilisez `<list>` l’étiquette pour formater les informations de documentation comme une liste commandée, une liste non ordonnée ou un tableau. Créez une liste non triée de toutes les opérations mathématiques prises en charge par votre bibliothèque `Math`.
 
 [!code-csharp[List Tag](~/samples/snippets/csharp/concepts/codedoc/list-tag.cs)]
 
 Vous pouvez créer une liste triée ou un tableau en remplaçant l’attribut `type` par `number` ou `table`, respectivement.
 
-## <a name="inheritdoc"></a>\<inheritdoc >
+## <a name="inheritdoc"></a>\<> d’héritage
 
-Vous pouvez utiliser la balise `<inheritdoc>` pour hériter des commentaires XML des classes de base, des interfaces et des méthodes similaires. Cela élimine la copie et le collage indésirables de commentaires XML en double et conserve automatiquement les commentaires XML synchronisés.
+Vous pouvez `<inheritdoc>` utiliser l’étiquette pour hériter des commentaires XML des classes de base, des interfaces et des méthodes similaires. Cela élimine la copie et le coller indésirables des commentaires XML en double et maintient automatiquement les commentaires XML synchronisés.
 
 [!code-csharp-interactive[InheritDoc Tag](~/samples/snippets/csharp/concepts/codedoc/inheritdoc-tag.cs)]
 
-### <a name="put-it-all-together"></a>Rassemblez tous les éléments
+### <a name="put-it-all-together"></a>Assemblage
 
 Si vous avez suivi ce didacticiel et appliqué les balises à votre code au besoin, votre code doit maintenant ressembler à ce qui suit :
 
@@ -206,12 +206,12 @@ L’attribut `path` représente une requête [XPath](../standard/data/xml/xpath-
 
 L’attribut `name` représente le spécificateur de nom dans la balise qui précède les commentaires.
 
-L’attribut `id`, qui peut être utilisé à la place de `name`, représente l’ID de la balise qui précède les commentaires.
+L’attribut, `id` qui peut être `name`utilisé à la place de , représente l’ID pour l’étiquette qui précède les commentaires.
 
 ### <a name="user-defined-tags"></a>Balises définies par l’utilisateur
 
 Toutes les balises décrites ci-dessus représentent celles qui sont reconnues par le compilateur C#. Toutefois, un utilisateur est libre de définir ses propres balises.
-Les outils tels que Sandcastle apportent la prise en charge de balises supplémentaires telles que [\<événement >](https://ewsoftware.github.io/XMLCommentsGuide/html/81bf7ad3-45dc-452f-90d5-87ce2494a182.htm) et [\<note >](https://ewsoftware.github.io/XMLCommentsGuide/html/4302a60f-e4f4-4b8d-a451-5f453c4ebd46.htm), et même prendre en charge la [documentation des espaces de noms](https://ewsoftware.github.io/XMLCommentsGuide/html/BD91FAD4-188D-4697-A654-7C07FD47EF31.htm).
+Des outils comme Sandcastle apportent un support pour [ \< ](https://ewsoftware.github.io/XMLCommentsGuide/html/4302a60f-e4f4-4b8d-a451-5f453c4ebd46.htm)des balises supplémentaires comme [ \<les>d’événements](https://ewsoftware.github.io/XMLCommentsGuide/html/81bf7ad3-45dc-452f-90d5-87ce2494a182.htm) et de noter>, et même prendre en charge [la documentation des espaces de noms](https://ewsoftware.github.io/XMLCommentsGuide/html/BD91FAD4-188D-4697-A654-7C07FD47EF31.htm).
 Des outils de génération de documentation personnalisés ou internes peuvent également être utilisés avec les balises standard, et plusieurs formats de sortie, du format HTML au format PDF, peuvent être pris en charge.
 
 ## <a name="recommendations"></a>Recommandations
@@ -223,10 +223,10 @@ La documentation du code est recommandée pour de nombreuses raisons. Voici quel
 - Au minimum, les types et leurs membres doivent avoir une balise `<summary>`, car son contenu est nécessaire pour IntelliSense.
 - Le texte de la documentation doit être écrit à l’aide de phrases complètes se terminant par un point.
 - Les classes partielles sont entièrement prises en charge, et les informations de documentation seront concaténées dans une seule entrée pour ce type.
-- Le compilateur vérifie la syntaxe des balises `<exception>`, `<include>`, `<param>`, `<see>`, `<seealso>`et `<typeparam>`.
+- Le compilateur vérifie la syntaxe `<see>`de `<seealso>`la `<typeparam>` `<exception>`, `<include>`, `<param>`, , et les étiquettes.
 - Le compilateur valide les paramètres qui contiennent des chemins de fichiers et des références à d’autres parties du code.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Commentaires de documentation XML (Guide de programmation C#)](programming-guide/xmldoc/index.md)
-- [Balises recommandées pour les commentaires de documentation (Guide de programmation C#)](programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+- [Commentaires de documentation XML (Guide de programmation C#)](programming-guide/xmldoc/index.md)
+- [Balises recommandées pour les commentaires de documentation (Guide de programmation C#)](programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)

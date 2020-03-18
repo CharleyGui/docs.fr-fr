@@ -9,12 +9,12 @@ helpviewer_keywords:
 - dynamic objects
 - dynamic objects [C#]
 ms.assetid: 568f1645-1305-4906-8625-5d77af81e04f
-ms.openlocfilehash: aa902ffaf93c8e1f273ed476dc7d413bcfce914c
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 3b5a92948a3e692a734f3ddee3c7238d5d27588f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417577"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79157050"
 ---
 # <a name="walkthrough-creating-and-using-dynamic-objects-c-and-visual-basic"></a>Procédure pas à pas : création et utilisation d'objets dynamiques (C# et Visual Basic)
 
@@ -32,7 +32,7 @@ Les objets dynamiques exposent des membres tels que les propriétés et les mét
   
 - Créer un projet qui utilise une bibliothèque `IronPython`.  
   
-## <a name="prerequisites"></a>Configuration requise  
+## <a name="prerequisites"></a>Conditions préalables requises  
 
 Pour effectuer cette procédure pas à pas, vous devez utiliser [IronPython](https://ironpython.net/) pour .NET. Accédez à la [page de téléchargement](https://ironpython.net/download/) pour obtenir la version la plus récente.
   
@@ -46,7 +46,7 @@ Le premier projet que vous créez dans cette procédure pas à pas définit un o
   
 1. Démarrez Visual Studio.  
   
-2. Dans le menu **Fichier** , pointez sur **Nouveau** , puis cliquez sur **Projet**.  
+2. Sur le menu **du fichier,** pointez vers **New** puis cliquez sur **Le projet**.  
   
 3. Dans la boîte de dialogue **Nouveau projet**, dans le volet **Types de projets**, vérifiez que **Windows** est sélectionné. Sélectionnez **Application console** dans le volet **Modèles**. Dans la zone **Nom**, tapez `DynamicSample`, puis cliquez sur **OK**. Le nouveau projet est créé.  
   
@@ -104,10 +104,10 @@ Le premier projet que vous créez dans cette procédure pas à pas définit un o
     Customer: Preston, Chris  
     Customer: Hines, Patrick  
     Customer: Cameron, Maria  
-    Supplier: Graphic Design Institute (https://www.graphicdesigninstitute.com/)   
-    Supplier: Fabrikam, Inc. (https://www.fabrikam.com/)   
+    Supplier: Graphic Design Institute (https://www.graphicdesigninstitute.com/)
+    Supplier: Fabrikam, Inc. (https://www.fabrikam.com/)
     Customer: Seubert, Roxanne  
-    Supplier: Proseware, Inc. (http://www.proseware.com/)   
+    Supplier: Proseware, Inc. (http://www.proseware.com/)
     Customer: Adolphi, Stephan  
     Customer: Koch, Paul  
     ```  
@@ -131,11 +131,11 @@ Le projet suivant que vous créez dans cette procédure pas à pas permet d’ac
   
 ### <a name="to-create-a-custom-dynamic-class"></a>Pour créer une classe dynamique personnalisée
   
-1. Dans Visual Studio, dans le menu **Fichier**,pointez sur **Nouveau**, puis cliquez sur **Projet**.  
+1. Dans Visual Studio, sur le menu **Du fichier,** pointez vers **New** puis cliquez sur **Project**.  
   
 2. Dans la boîte de dialogue **Nouveau projet**, dans le volet **Types de projets**, vérifiez que **Windows** est sélectionné. Sélectionnez **Application console** dans le volet **Modèles**. Dans la zone **Nom**, tapez `DynamicIronPythonSample`, puis cliquez sur **OK**. Le nouveau projet est créé.  
   
-3. Si vous utilisez Visual Basic, cliquez avec le bouton droit sur le projet DynamicIronPythonSample, puis cliquez sur **Propriétés**. Cliquez sur l’onglet **références** . cliquez sur le bouton **Ajouter** . Si vous utilisez Visual C#, dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le dossier **Références**, puis cliquez sur **Ajouter une référence**.  
+3. Si vous utilisez Visual Basic, cliquez avec le bouton droit sur le projet DynamicIronPythonSample, puis cliquez sur **Propriétés**. Cliquez sur l’onglet **Références.** Cliquez sur le bouton **Ajouter.** Si vous utilisez Visual C#, dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le dossier **Références**, puis cliquez sur **Ajouter une référence**.  
   
 4. Sous l’onglet **Parcourir**, naviguez jusqu’au dossier dans lequel sont installées les bibliothèques IronPython. Par exemple, C:\Program Files\IronPython 2.6 pour .NET 4.0. Sélectionnez les bibliothèques **IronPython.dll**, **IronPython.Modules.dll**, **Microsoft.Scripting.dll** et **Microsoft.Dynamic.dll**. Cliquez sur **OK**.  
   
@@ -164,5 +164,5 @@ Le projet suivant que vous créez dans cette procédure pas à pas permet d’ac
 - <xref:System.Dynamic.DynamicObject?displayProperty=nameWithType>
 - [Utilisation du type dynamic](./using-type-dynamic.md)
 - [Liaison anticipée et liaison tardive](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
-- [dynamic](../../language-reference/builtin-types/reference-types.md)
-- [Implémentation des interfaces dynamiques (PDF téléchargeable à partir de Microsoft TechNet)](https://download.microsoft.com/download/5/4/B/54B83DFE-D7AA-4155-9687-B0CF58FF65D7/implementing-dynamic-interfaces.pdf)
+- [Dynamique](../../language-reference/builtin-types/reference-types.md)
+- [Implémenter des interfaces dynamiques (PDF téléchargeable sur Microsoft TechNet)](https://download.microsoft.com/download/5/4/B/54B83DFE-D7AA-4155-9687-B0CF58FF65D7/implementing-dynamic-interfaces.pdf)

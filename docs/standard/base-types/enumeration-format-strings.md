@@ -11,10 +11,10 @@ helpviewer_keywords:
 - formatting [.NET Framework], enumeration
 ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
 ms.openlocfilehash: da7634758f5c4319fa18612d216682dc141318fd
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78155956"
 ---
 # <a name="enumeration-format-strings"></a>Chaînes de format d’énumération
@@ -51,7 +51,7 @@ Affiche l’entrée d’énumération comme valeur hexadécimale. La valeur est 
 [!code-csharp[Formatting.Enum#4](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#4)]
 [!code-vb[Formatting.Enum#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#4)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant définit une énumération appelée `Colors` qui se compose de trois entrées : `Red`, `Blue` et `Green`.
 

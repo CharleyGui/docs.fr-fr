@@ -11,10 +11,10 @@ helpviewer_keywords:
 - generics [.NET Framework], delegates
 ms.assetid: 416be383-cc61-4102-9b1b-88b51adb963e
 ms.openlocfilehash: baf8497289ee71c2dbdc544607212de90928289c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75708382"
 ---
 # <a name="generic-delegates-for-manipulating-arrays-and-lists"></a>Délégués génériques pour la manipulation de tableaux et de listes
@@ -46,4 +46,4 @@ Cette rubrique donne une vue d’ensemble des délégués génériques pour les 
 - [Génériques](../../../docs/standard/generics/index.md)
 - [Collections génériques dans le .NET Framework](../../../docs/standard/generics/collections.md)
 - [Interfaces génériques](../../../docs/standard/generics/interfaces.md)
-- [Covariance et contravariance](../../../docs/standard/generics/covariance-and-contravariance.md)
+- [Covariance et Contravariance](../../../docs/standard/generics/covariance-and-contravariance.md)

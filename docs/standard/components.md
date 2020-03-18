@@ -4,12 +4,12 @@ description: Décrit les composants architecturaux de .NET tels que .NET Standar
 author: cartermp
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: af28863ac98ff5ffb5a8133fb98f2f1e7036985d
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: eadcf05069edfa32a52c5e73045b4cebd1a9a6ac
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124388"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79400476"
 ---
 # <a name="net-architectural-components"></a>Composants architecturaux de .NET
 
@@ -29,7 +29,7 @@ Chaque implémentation de .NET inclut les composants suivants :
 
 - Un ou plusieurs runtimes. Exemples : CLR pour .NET Framework, CoreCLR et CoreRT pour .NET Core.
 - Une bibliothèque de classes qui implémente .NET Standard et qui peut implémenter des API supplémentaires. Exemples : bibliothèque de classes de base .NET Framework, bibliothèque de classes de base .NET Core.
-- Le cas échéant, un ou plusieurs frameworks d’application. Exemples : [ASP.NET](https://www.asp.net/), [Windows Forms](../framework/winforms/windows-forms-overview.md) et [Windows Presentation Foundation (WPF)](../framework/wpf/index.md) sont inclus dans le .NET Framework et dans .NET Core.
+- Le cas échéant, un ou plusieurs frameworks d’application. Exemples : [ASP.NET](https://www.asp.net/), [Windows Forms](../framework/winforms/windows-forms-overview.md)et Windows Presentation [Foundation (WPF)](../framework/wpf/index.md) sont inclus dans le cadre .NET et .NET Core.
 - Le cas échéant, des outils de développement. Certains outils de développement sont partagés entre plusieurs implémentations.
 
 Il existe quatre implémentations de .NET principales que Microsoft développe et gère activement : .NET Core, .NET Framework, Mono et UWP.
@@ -48,7 +48,7 @@ Pour en savoir plus sur le .NET Framework, consultez [.NET Framework Guide](../f
 
 ### <a name="mono"></a>Mono
 
-Mono est une implémentation de .NET qui est principalement utilisée quand un runtime réduit est requis. C’est le runtime qui alimente les applications Xamarin sur Android, macOS, iOS, tvOS et Watchos, et se concentre principalement sur un faible encombrement. Mono alimente également les jeux créés à l’aide du moteur Unity.
+Mono est une implémentation de .NET qui est principalement utilisée quand un runtime réduit est requis. C’est le temps d’exécution qui alimente les applications Xamarin sur Android, macOS, iOS, tvOS, et watchOS et se concentre principalement sur une petite empreinte. Mono alimente également les jeux créés à l’aide du moteur Unity.
 
 Il prend en charge toutes les versions de .NET Standard publiées.
 
@@ -60,7 +60,7 @@ Pour en savoir plus sur Mono, consultez la [documentation Mono](https://www.mono
 
 ### <a name="universal-windows-platform-uwp"></a>Plateforme Windows universelle (UWP)
 
-UWP est une implémentation de .NET qui sert à générer des logiciels et des applications Windows tactiles modernes pour l’Internet des objets (IoT). Elle vise à unifier les différents types d’appareils que vous pouvez cibler, y compris les PC, les tablettes, les phablettes, les téléphones et même la Xbox. UWP fournit de nombreux services, comme un magasin d’applications centralisé, un environnement d’exécution (AppContainer) et un ensemble d’API Windows à utiliser à la place de Win32 (WinRT). Les applications peuvent être écrites C++en C#,, Visual Basic et JavaScript. Lorsque vous C# utilisez et Visual Basic, les API .net sont fournies par .net core.
+UWP est une implémentation de .NET qui sert à générer des logiciels et des applications Windows tactiles modernes pour l’Internet des objets (IoT). Elle vise à unifier les différents types d’appareils que vous pouvez cibler, y compris les PC, les tablettes, les phablettes, les téléphones et même la Xbox. UWP fournit de nombreux services, comme un magasin d’applications centralisé, un environnement d’exécution (AppContainer) et un ensemble d’API Windows à utiliser à la place de Win32 (WinRT). Les applications peuvent être écrites en C, C, Visual Basic et JavaScript. Lors de l’utilisation de C et Visual Basic, les API .NET sont fournis par .NET Core.
 
 Pour en savoir plus sur UWP, consultez [Introduction à la plateforme Windows universelle](/windows/uwp/get-started/universal-application-platform-guide).
 
@@ -70,7 +70,7 @@ Un runtime est l’environnement d’exécution d’un programme managé. Le sys
 
 - CLR (Common Language Runtime) pour .NET Framework
 - CoreCLR (Core Common Language Runtime) pour .NET Core
-- .NET Native pour la plateforme Windows universelle 
+- .NET Native pour la plateforme Windows universelle
 - Le runtime Mono pour Xamarin.iOS, Xamarin.Android, Xamarin.Mac et le framework de bureau Mono
 
 ## <a name="net-tooling-and-common-infrastructure"></a>Outils .NET et infrastructure commune
@@ -79,29 +79,29 @@ Vous avez accès à un ensemble complet d’outils et de composants d’infrastr
 
 - Les langages .NET et leurs compilateurs
 - Le système de projet .NET (basé sur les fichiers *.csproj*, *.vbproj* et *.fsproj*)
-- [MSBuild](/visualstudio/msbuild/msbuild), moteur de génération utilisé pour générer les projets
-- [NuGet](/nuget/), gestionnaire de package de Microsoft pour .NET
+- [MSBuild](/visualstudio/msbuild/msbuild), le moteur de construction utilisé pour construire des projets
+- [NuGet](/nuget/), le gestionnaire de paquets de Microsoft pour .NET
 - Outils d’orchestration de génération open source, tels que [CAKE](https://cakebuild.net/) et [FAKE](https://fake.build/)
 
 ## <a name="applicable-standards"></a>Normes applicables
 
-Les C# spécifications de langage et de Common Language Infrastructure (CLI) sont standardisées par [ECMA International®](https://www.ecma-international.org/). Les premières éditions de ces normes ont été publiées par l’ECMA en décembre 2001.
+Les spécifications de la langue et de l’infrastructure de langue commune (CLI) sont normalisées par [l’intermédiaire d’Ecma International®](https://www.ecma-international.org/). Les premières éditions de ces normes ont été publiées par Ecma en décembre 2001.
 
-Les révisions ultérieures des normes ont été développées par les groupes de tâchesC#TC49-TG2 () et TC49-TG3 (CLI) au sein du Comité technique des langages de programmation ([TC49](https://www.ecma-international.org/memento/tc49.htm)) et adoptés par l’assembly général de l’ECMA et par la suite par la norme ISO/IEC JTC 1 via le processus ISO Fast-Track.
+Des révisions ultérieures des normes ont été élaborées par les groupes de travail TC49-TG2 (C) et TC49-TG3 (CLI) au sein du Comité technique des langues de programmation[(TC49),](https://www.ecma-international.org/memento/tc49.htm)et adoptées par l’Assemblée générale d’Ecma et par la suite par l’ISO/IEC JTC 1 par le biais du processus ISO Fast-Track.
 
 ### <a name="latest-standards"></a>Dernières normes
 
-Les documents ECMA officiels suivants sont disponibles pour [C#](http://www.ecma-international.org/publications/standards/Ecma-334.htm) et l' [interface CLI](http://www.ecma-international.org/publications/standards/Ecma-335.htm) ([TR-84](http://www.ecma-international.org/publications/techreports/E-TR-084.htm)) :
+Les documents officiels Ecma suivants sont disponibles pour [le C et](http://www.ecma-international.org/publications/standards/Ecma-334.htm) le [CLI](http://www.ecma-international.org/publications/standards/Ecma-335.htm) [(TR-84](http://www.ecma-international.org/publications/techreports/E-TR-084.htm)) :
 
-- **Norme C# du langage (version 5,0)**: [ECMA-334. pdf](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf)
-- **Common Language Infrastructure**: Elle est disponible au format [PDF](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.pdf) et au format [zip](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.zip) .
-- **Informations dérivées du fichier XML de partition IV**: Il est disponible au format [PDF](https://www.ecma-international.org/publications/files/ECMA-TR/ECMA%20TR-084.pdf) et [zip](https://www.ecma-international.org/publications/files/ECMA-TR/TR-084.zip) .
- 
-Les documents ISO/CEI officiels sont disponibles à partir de la page normes ISO/CEI [disponibles publiquement](https://standards.iso.org/ittf/PubliclyAvailableStandards/) . Ces liens sont directement à partir de cette page :
+- **La norme linguistique CMD (version 5.0)**: [ECMA-334.pdf](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf)
+- **L’infrastructure de langue commune**: Ceci est disponible sous forme [pdf](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.pdf) et sous forme [de zip.](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.zip)
+- **Informations dérivées du fichier Partition IV XML**: Ceci est disponible en [format pdf](https://www.ecma-international.org/publications/files/ECMA-TR/ECMA%20TR-084.pdf) et [zip.](https://www.ecma-international.org/publications/files/ECMA-TR/TR-084.zip)
 
-- **Technologies de l’information-Langages de programmation- C# **: [ISO/IEC 23270:2018](https://standards.iso.org/ittf/PubliclyAvailableStandards/c075178_ISO_IEC_23270_2018.zip)
-- **Technologies de l’information : partitions d’Common Language Infrastructure (CLI) I à VI**: [ISO/IEC 23271:2012](https://standards.iso.org/ittf/PubliclyAvailableStandards/c058046_ISO_IEC_23271_2012(E).zip)
-- **Technologie de l’information : Common Language Infrastructure (CLI) : rapport technique sur les informations dérivées du fichier XML partition IV**: [ISO/IEC TR 23272:2011](https://standards.iso.org/ittf/PubliclyAvailableStandards/c057955_ISO_IEC_TR_23272_2011.zip)
+Les documents officiels isO/IEC sont disponibles sur la page [normes publiques](https://standards.iso.org/ittf/PubliclyAvailableStandards/) ISO/IEC. Ces liens sont directement à partir de cette page:
+
+- **Technologies de l’information - Langages de programmation - C '**: [ISO/IEC 23270:2018](https://standards.iso.org/ittf/PubliclyAvailableStandards/c075178_ISO_IEC_23270_2018.zip)
+- **Technologies de l’information — Common Language Infrastructure (CLI) Partitions I to VI**: [ISO/IEC 23271:2012](https://standards.iso.org/ittf/PubliclyAvailableStandards/c058046_ISO_IEC_23271_2012(E).zip)
+- **Technologies de l’information — Infrastructure linguistique commune (CLI) — Rapport technique sur l’information dérivé du fichier Partition IV XML**: [ISO/IEC TR 23272:2011](https://standards.iso.org/ittf/PubliclyAvailableStandards/c057955_ISO_IEC_TR_23272_2011.zip)
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -109,6 +109,6 @@ Les documents ISO/CEI officiels sont disponibles à partir de la page normes ISO
 - [.NET Standard](net-standard.md)
 - [Guide .NET Core](../core/index.md)
 - [Guide du .NET Framework](../framework/index.md)
-- [Guide C#](../csharp/index.yml)
-- [Guide F#](../fsharp/index.yml)
+- [Guide de voyage CMD](../csharp/index.yml)
+- [F# Guide](../fsharp/index.yml)
 - [Guide Visual Basic](../visual-basic/index.yml)

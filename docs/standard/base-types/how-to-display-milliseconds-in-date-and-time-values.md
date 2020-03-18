@@ -13,10 +13,10 @@ helpviewer_keywords:
 - milliseconds [.NET Framework]
 ms.assetid: ae1a0610-90b9-4877-8eb6-4e30bc5e00cf
 ms.openlocfilehash: 36d99753503d9ba4b1bde4143c86ba184674e53e
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74960394"
 ---
 # <a name="how-to-display-milliseconds-in-date-and-time-values"></a>Comment : afficher les millisecondes dans les valeurs de date et d'heure
@@ -28,7 +28,7 @@ Les méthodes de mise en forme de date et d’heure par défaut, telles que <xre
   
 2. Pour extraire la représentation sous forme de chaîne du composant « millisecondes » d’une heure, appelez la méthode <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> ou <xref:System.DateTimeOffset.ToString%2A> de la valeur de date et d’heure, puis transmettez le modèle de format personnalisé `fff` ou `FFF` seul ou avec d’autres spécificateurs de format personnalisé comme paramètre de `format`.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple affiche le composant « milliseconde » d’une valeur <xref:System.DateTime> et d’une valeur <xref:System.DateTimeOffset> sur la console, à la fois seul et inclus dans une chaîne de date et d’heure plus longue.  
   
  [!code-csharp[Formatting.HowTo.Millisecond#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.Millisecond/cs/Millisecond.cs#1)]
@@ -47,9 +47,9 @@ Les méthodes de mise en forme de date et d’heure par défaut, telles que <xre
  [!code-vb[Formatting.HowTo.Millisecond#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.Millisecond/vb/Millisecond.vb#3)]  
   
 > [!NOTE]
-> Il est possible d’afficher de très petites unités fractionnaires d’une seconde, telles que les dix millièmes de seconde ou les cent millièmes de seconde. Toutefois, ces valeurs peuvent ne pas être significatives. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur Windows NT 3,5 et versions ultérieures, ainsi que sur les systèmes d’exploitation Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.  
+> Il est possible d’afficher de très petites unités fractionnaires d’une seconde, telles que les dix millièmes de seconde ou les cent millièmes de seconde. Toutefois, ces valeurs peuvent ne pas être significatives. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur Windows NT 3.5 et plus tard, et les systèmes d’exploitation Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Globalization.DateTimeFormatInfo>
-- [Chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Chaînes personnalisées de format de date et d’heure](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)

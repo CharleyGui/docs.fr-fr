@@ -3,10 +3,10 @@ title: Bibliothèques Source Link et .NET
 description: Bonnes pratiques relatives à l’utilisation de Source Link pour améliorer le débogage des bibliothèques .NET
 ms.date: 01/15/2019
 ms.openlocfilehash: 3d768ae6e79efa23a8402ea37bc34cd58cd52c8c
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "76744541"
 ---
 # <a name="source-link"></a>Source Link
@@ -21,11 +21,11 @@ Source Link est une technologie qui permet aux développeurs de déboguer le cod
 
 Vous trouverez des instructions sur l’utilisation de Source Link dans le dépôt GitHub [dotnet/sourcelink](https://github.com/dotnet/sourcelink/blob/master/README.md).
 
-Vous pouvez utiliser [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) pour vérifier que les métadonnées Source Link ont été correctement incorporées dans le package. Vérifiez que les métadonnées `Repository` sont présentes avec un identificateur de validation et que les fichiers. pdb sont situés avec le fichier. dll de chaque cible.
+Vous pouvez utiliser [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) pour vérifier que les métadonnées Source Link ont été correctement incorporées dans le package. Vérifiez `Repository` que les métadonnées sont présentes avec un identifiant de validation et que les fichiers .pdb sont situés avec le .dll de chaque cible.
 
-![Lien source dans l’Explorateur de package NuGet](./media/sourcelink/nuget-package-explorer-sourcelink.png "Lien source dans l’Explorateur de package NuGet")
+![Source Link dans NuGet Package Explorer](./media/sourcelink/nuget-package-explorer-sourcelink.png "Source Link dans NuGet Package Explorer")
 
-✔️ envisagez d’utiliser le lien source pour ajouter des métadonnées de contrôle de code source à vos assemblys et packages NuGet.
+✔️ À ENVISAGER : Utiliser Source Link pour ajouter des métadonnées de contrôle de code source à vos assemblys et packages NuGet.
 
 > [!TIP]
 > Vous pouvez améliorer davantage l’expérience de débogage d’un développeur en ajoutant des attributs de débogueur à vos types.
@@ -34,10 +34,10 @@ Vous pouvez utiliser [NuGet Package Explorer](https://github.com/NuGetPackageExp
 > * <xref:System.Diagnostics.DebuggerStepThroughAttribute> demande au débogueur de parcourir le code au lieu d’y effectuer un pas à pas détaillé.
 > * <xref:System.Diagnostics.DebuggerBrowsableAttribute> contrôle si un membre est affiché dans les fenêtres de variables du débogueur.
 
-✔️ envisagez de publier des fichiers de symboles (`*.pdb`).
+✔️ À ENVISAGER : publication des fichiers de symboles (`*.pdb`).
 
 > Pour une meilleure expérience de débogage, votre bibliothèque doit publier les fichiers de symboles et utiliser Source Link. Pour plus d’informations sur les fichiers de symboles et les packages de symboles, consultez [Packages de symboles](./nuget.md#symbol-packages).
 
 >[!div class="step-by-step"]
->[Précédent](dependencies.md)
->[Suivant](publish-nuget-package.md)
+>[Suivant précédent](dependencies.md)
+>[Next](publish-nuget-package.md)

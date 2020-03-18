@@ -13,10 +13,10 @@ helpviewer_keywords:
 - data types [.NET Framework], converting
 ms.assetid: 0ea65c59-85eb-4a52-94ca-c36d3bd13058
 ms.openlocfilehash: aa1ef8397338af949bd147fd3252b2d9ecaf53ef
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73103887"
 ---
 # <a name="type-conversion-tables-in-net"></a>Table de conversion de type dans .NET
@@ -25,7 +25,7 @@ Une conversion étendue se produit quand une valeur d’un type est convertie en
 ## <a name="widening-conversions"></a>conversions étendues  
  Le tableau suivant décrit les conversions étendues qui peuvent être effectuées sans perte d’informations.  
   
-|Tapez|Peut être converti sans perte de données en|  
+|Type|Peut être converti sans perte de données en|  
 |----------|-------------------------------------------|  
 |<xref:System.Byte>|<xref:System.UInt16>, <xref:System.Int16>, <xref:System.UInt32>, <xref:System.Int32>, <xref:System.UInt64>, <xref:System.Int64>, <xref:System.Single>, <xref:System.Double>, <xref:System.Decimal>|  
 |<xref:System.SByte>|<xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.Single>, <xref:System.Double>, <xref:System.Decimal>|  
@@ -40,7 +40,7 @@ Une conversion étendue se produit quand une valeur d’un type est convertie en
   
  Certaines conversions étendues à <xref:System.Single> ou <xref:System.Double> peuvent entraîner une perte de précision. Le tableau suivant décrit les conversions étendues qui entraînent parfois une perte d’informations.  
   
-|Tapez|Peut être converti en|  
+|Type|Peut être converti en|  
 |----------|-------------------------|  
 |<xref:System.Int32>|<xref:System.Single>|  
 |<xref:System.UInt32>|<xref:System.Single>|  
@@ -55,7 +55,7 @@ Une conversion étendue se produit quand une valeur d’un type est convertie en
   
  Le tableau suivant répertorie les conversions qui lèvent une <xref:System.OverflowException> à l’aide de <xref:System.Convert?displayProperty=nameWithType> ou de toute conversion contrôlée si la valeur du type converti se situe en dehors de la plage définie du type résultant.  
   
-|Tapez|Peut être converti en|  
+|Type|Peut être converti en|  
 |----------|-------------------------|  
 |<xref:System.Byte>|<xref:System.SByte>|  
 |<xref:System.SByte>|<xref:System.Byte>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>|  
@@ -72,4 +72,4 @@ Une conversion étendue se produit quand une valeur d’un type est convertie en
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Convert?displayProperty=nameWithType>
-- [Conversion de type dans .NET](../../../docs/standard/base-types/type-conversion.md)
+- [Conversion de types dans .NET](../../../docs/standard/base-types/type-conversion.md)

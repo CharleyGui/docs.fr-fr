@@ -8,10 +8,10 @@ helpviewer_keywords:
 - public keyword [C#]
 ms.assetid: 0ae45d16-a551-4b74-9845-57208de1328e
 ms.openlocfilehash: 19906d7fd0f7d41ef9e4cdaf951c77825e0bbead
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713168"
 ---
 # <a name="public-c-reference"></a>public (référence C#)
@@ -27,7 +27,7 @@ class SampleClass
 
 Pour plus d’informations, consultez [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md) et [Niveaux d’accessibilité](accessibility-levels.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Dans l’exemple suivant, deux classes sont déclarées, `PointTest` et `MainClass`. L’accès aux membres publics `x` et `y` de `PointTest` s’effectue directement à partir de `MainClass`.
 
@@ -43,13 +43,13 @@ Pour plus d’informations, consultez [Accessibilité déclarée](~/_csharplang/
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md)
 - [Mots clés C#](index.md)
 - [Modificateurs d’accès](access-modifiers.md)
 - [Niveaux d’accessibilité](accessibility-levels.md)
 - [Modificateurs](index.md)
-- [private](private.md)
-- [protected](protected.md)
-- [internal](internal.md)
+- [Privé](private.md)
+- [Protégé](protected.md)
+- [Interne](internal.md)

@@ -17,10 +17,10 @@ helpviewer_keywords:
 - attribute classes, declaring
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
 ms.openlocfilehash: 6570c6994c0f2e6571361c3eadc73b02a55f1584
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73140589"
 ---
 # <a name="writing-custom-attributes"></a>Écriture des attributs personnalisés
@@ -32,7 +32,7 @@ Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de
   
 - [Déclaration de la classe d’attributs](#declaring-the-attribute-class)  
   
-- [Déclaration des constructeurs](#declaring-constructors)  
+- [Déclarer les constructeurs](#declaring-constructors)  
   
 - [Déclaration des propriétés](#declaring-properties)  
   
@@ -125,7 +125,7 @@ Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de
  [!code-vb[Conceptual.Attributes.Usage#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#17)]  
   
 ## <a name="declaring-properties"></a>Déclaration des propriétés  
- Si vous voulez définir un paramètre nommé ou fournir un moyen facile de retourner les valeurs stockées par votre attribut, déclarez une [propriété](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)). Les propriétés d’attribut doivent être déclarées comme des entités publiques avec une description du type de données à retourner. Définissez la variable qui contient la valeur de votre propriété et associez-la aux méthodes **get** et **set**. L’exemple de code suivant montre comment implémenter une propriété simple dans votre attribut.  
+ Si vous voulez définir un paramètre nommé ou fournir un moyen facile de retourner les valeurs stockées par votre attribut, déclarez une [propriété](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)). Les propriétés d’attribut doivent être déclarées comme des entités publiques avec une description du type de données à retourner. Définissez la variable qui contient la valeur de votre propriété et associez-la aux méthodes **get** et **set** . L’exemple de code suivant montre comment implémenter une propriété simple dans votre attribut.  
   
  [!code-cpp[Conceptual.Attributes.Usage#16](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#16)]
  [!code-csharp[Conceptual.Attributes.Usage#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#16)]

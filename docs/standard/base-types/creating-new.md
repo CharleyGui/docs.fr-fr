@@ -14,10 +14,10 @@ helpviewer_keywords:
 - Insert method
 ms.assetid: 06fdf123-2fac-4459-8904-eb48ab908a30
 ms.openlocfilehash: ef65c50111d6ba91ab70d0b9c8cb90c606f9366c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73103817"
 ---
 # <a name="creating-new-strings-in-net"></a>Création de nouvelles chaînes dans .NET
@@ -32,7 +32,7 @@ Le .NET Framework permet de créer des chaînes à l’aide d’une assignation 
 ## <a name="methods-that-return-strings"></a>Méthodes retournant des chaînes  
  Le tableau suivant présente plusieurs méthodes utiles qui retournent de nouveaux objets String.  
   
-|Nom de la méthode|Utilisez|  
+|Nom de la méthode|Utilisation|  
 |-----------------|---------|  
 |<xref:System.String.Format%2A?displayProperty=nameWithType>|Génère une chaîne mise en forme à partir d’un ensemble d’objets en entrée.|  
 |<xref:System.String.Concat%2A?displayProperty=nameWithType>|Génère des chaînes à partir de deux ou de plusieurs chaînes.|  
@@ -64,7 +64,7 @@ Le .NET Framework permet de créer des chaînes à l’aide d’une assignation 
  [!code-csharp[Strings.Creating#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#3)]
  [!code-vb[Strings.Creating#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#3)]  
   
-### <a name="insert"></a>Insert  
+### <a name="insert"></a>Insérer  
  La méthode **String.Insert** crée une chaîne en insérant une chaîne à une position spécifiée dans une autre chaîne. Cette méthode utilise un index de base zéro. L’exemple suivant insère une chaîne à la cinquième position d’index de `MyString` et crée une chaîne avec cette valeur.  
   
  [!code-csharp[Strings.Creating#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#4)]
@@ -80,5 +80,5 @@ Le .NET Framework permet de créer des chaînes à l’aide d’une assignation 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérations de chaînes de base](../../../docs/standard/base-types/basic-string-operations.md)
+- [Opérations de base des cordes](../../../docs/standard/base-types/basic-string-operations.md)
 - [Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md)

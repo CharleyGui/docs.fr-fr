@@ -19,16 +19,16 @@ helpviewer_keywords:
 - StartsWith method
 ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
 ms.openlocfilehash: e63b2a8ac44d6171f9c48990882780ea420f8c76
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73101671"
 ---
 # <a name="comparing-strings-in-net"></a>Comparer des chaînes dans . NET
 .NET fournit plusieurs méthodes permettant de comparer les valeurs de chaînes. Le tableau suivant répertorie et décrit les méthodes de comparaison de valeurs.  
   
-|Nom de la méthode|Utilisez|  
+|Nom de la méthode|Utilisation|  
 |-----------------|---------|  
 |<xref:System.String.Compare%2A?displayProperty=nameWithType>|Compare les valeurs de deux chaînes. Retourne une valeur entière.|  
 |<xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType>|Compare deux chaînes sans tenir compte de la culture locale. Retourne une valeur entière.|  
@@ -42,11 +42,11 @@ ms.locfileid: "73101671"
 ## <a name="compare"></a>Comparer  
  La méthode statique <xref:System.String.Compare%2A?displayProperty=nameWithType> fournit un moyen de comparer deux chaînes de façon approfondie. Cette méthode prend en compte la culture. Vous pouvez utiliser cette fonction pour comparer deux chaînes ou les sous-chaînes de deux chaînes. En outre, des surcharges sont fournies, qui prennent ou non en compte les différences de casse et de culture. Le tableau suivant montre les trois valeurs entières que cette méthode peut retourner.  
   
-|Valeur de retour|Condition|  
+|Valeur retournée|Condition|  
 |------------------|---------------|  
-|Entier négatif|La première chaîne précède la seconde chaîne dans l'ordre de tri.<br /><br /> ou<br /><br /> La première chaîne est `null`.|  
-|0|La première chaîne et la seconde chaîne sont égales.<br /><br /> ou<br /><br /> Les deux chaînes sont `null`.|  
-|Entier positif<br /><br /> ou<br /><br /> 1|La première chaîne suit la seconde chaîne dans l'ordre de tri.<br /><br /> ou<br /><br /> La seconde chaîne est `null`.|  
+|Entier négatif|La première chaîne précède la seconde chaîne dans l'ordre de tri.<br /><br /> -ou-<br /><br /> La première chaîne est `null`.|  
+|0|La première chaîne et la seconde chaîne sont égales.<br /><br /> -ou-<br /><br /> Les deux chaînes sont `null`.|  
+|Entier positif<br /><br /> -ou-<br /><br /> 1|La première chaîne suit la seconde chaîne dans l'ordre de tri.<br /><br /> -ou-<br /><br /> La seconde chaîne est `null`.|  
   
 > [!IMPORTANT]
 > La méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> est principalement destinée à être utilisée lors du classement ou du tri de chaînes. Vous ne devez pas utiliser la méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> pour tester l'égalité (c'est-à-dire rechercher explicitement une valeur de retour égale à 0 sans savoir si une chaîne est inférieure ou supérieure à l'autre). Pour déterminer si deux chaînes sont égales, utilisez à la place la méthode <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> .  
@@ -81,7 +81,7 @@ ms.locfileid: "73101671"
 > [!IMPORTANT]
 > La méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> est principalement destinée à être utilisée lors du classement ou du tri de chaînes. Vous ne devez pas utiliser la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> pour tester l'égalité (c'est-à-dire rechercher explicitement une valeur de retour égale à 0 sans savoir si une chaîne est inférieure ou supérieure à l'autre). Pour déterminer si deux chaînes sont égales, utilisez à la place la méthode <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> .  
   
- L’exemple suivant utilise la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> pour comparer l’objet `string1` à l’objet `string2` .  
+ L’exemple suivant utilise la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> pour comparer l’objet `string1` à l’objet `string2`.  
   
  [!code-cpp[Conceptual.String.BasicOps#8](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#8)]
  [!code-csharp[Conceptual.String.BasicOps#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#8)]
@@ -91,7 +91,7 @@ ms.locfileid: "73101671"
   
  Toutes les surcharges de la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> effectuent par défaut des comparaisons dépendantes de la culture et qui respectent la casse. Aucune surcharge de cette méthode n'est fournie pour vous permettre d'effectuer une comparaison indépendante de la culture. Pour la clarté du code, nous vous recommandons d’utiliser à la place la méthode **String.Compare**, en spécifiant <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> pour les opérations dépendantes de la culture ou <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> pour les opérations indépendantes de la culture. Pour un exemple montrant comment utiliser la méthode **String.Compare** pour effectuer des comparaisons dépendantes et indépendantes de la culture, consultez [Réalisation de comparaisons de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).  
   
-## <a name="equals"></a>Equals  
+## <a name="equals"></a>Égal à  
  La méthode **String.Equals** peut facilement déterminer si deux chaînes sont identiques. Cette méthode respectant la casse retourne une valeur booléenne **true** ou **false** . Elle peut être utilisée à partir d'une classe existante, comme illustré dans l'exemple suivant. L'exemple suivant utilise la méthode **Equals** pour déterminer si un objet chaîne contient la phrase "Hello World".  
   
  [!code-cpp[Conceptual.String.BasicOps#9](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#9)]
@@ -150,7 +150,7 @@ ms.locfileid: "73101671"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérations de chaînes de base](../../../docs/standard/base-types/basic-string-operations.md)
-- [Exécution d'opérations de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
+- [Opérations de base des cordes](../../../docs/standard/base-types/basic-string-operations.md)
+- [Exécution d’opérations de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
 - [Sorting Weight Tables (pour .NET sur Windows)](https://www.microsoft.com/download/details.aspx?id=10921)
 - [Default Unicode Collation Element Table (pour .NET Core sur Linux et macOS)](https://www.unicode.org/Public/UCA/latest/allkeys.txt)

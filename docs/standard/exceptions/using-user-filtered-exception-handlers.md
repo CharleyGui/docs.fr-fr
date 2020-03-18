@@ -7,10 +7,10 @@ helpviewer_keywords:
 - exceptions, user-filtered
 ms.assetid: aa80d155-060d-41b4-a636-1ceb424afee8
 ms.openlocfilehash: 5537404178b746310f720c5b0c075c77287dda4c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75708451"
 ---
 # <a name="using-user-filtered-exception-handlers"></a>Utilisation de gestionnaires filtrés par l'utilisateur

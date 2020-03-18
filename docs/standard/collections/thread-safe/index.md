@@ -6,10 +6,10 @@ helpviewer_keywords:
 - thread-safe collections, overview
 ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
 ms.openlocfilehash: 790543118b18b0422f41c3249512b62aae0cfb03
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75938111"
 ---
 # <a name="thread-safe-collections"></a>Collections thread-safe
@@ -43,15 +43,15 @@ ms.locfileid: "75938111"
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Titre|Description|  
+|Intitulé|Description|  
 |-----------|-----------------|  
 |[Vue d'ensemble de BlockingCollection](../../../../docs/standard/collections/thread-safe/blockingcollection-overview.md)|Décrit la fonctionnalité fournie par le type <xref:System.Collections.Concurrent.BlockingCollection%601>.|  
-|[Guide pratique pour ajouter et supprimer des éléments d'un ConcurrentDictionary](../../../../docs/standard/collections/thread-safe/how-to-add-and-remove-items.md)|Décrit comment ajouter et supprimer des éléments dans un <xref:System.Collections.Concurrent.ConcurrentDictionary%602>.|  
+|[Guide pratique : ajouter et supprimer des éléments d'un ConcurrentDictionary](../../../../docs/standard/collections/thread-safe/how-to-add-and-remove-items.md)|Décrit comment ajouter et supprimer des éléments dans un <xref:System.Collections.Concurrent.ConcurrentDictionary%602>.|  
 |[Guide pratique pour ajouter et prendre des éléments individuellement dans un BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-add-and-take-items.md)|Décrit comment ajouter et récupérer des éléments dans une collection de blocage sans utiliser l’énumérateur en lecture seule.|  
-|[Guide pratique pour ajouter des fonctionnalités de délimitation et de blocage à une collection](../../../../docs/standard/collections/thread-safe/how-to-add-bounding-and-blocking.md)|Décrit comment utiliser une classe de collection comme mécanisme de stockage sous-jacent pour une collection <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>.|  
-|[Guide pratique pour utiliser la boucle ForEach pour supprimer les éléments d'un BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-use-foreach-to-remove.md)|Décrit comment utiliser `foreach`, (`For Each` dans Visual Basic) pour supprimer tous les éléments d’une collection de blocage.|  
-|[Guide pratique pour utiliser des tableaux de collections de blocage dans un pipeline](../../../../docs/standard/collections/thread-safe/how-to-use-arrays-of-blockingcollections.md)|Décrit comment utiliser simultanément plusieurs collections de blocage pour implémenter un pipeline.|  
+|[Comment : ajouter des fonctionnalités de liaison et de blocage à une collection](../../../../docs/standard/collections/thread-safe/how-to-add-bounding-and-blocking.md)|Décrit comment utiliser une classe de collection comme mécanisme de stockage sous-jacent pour une collection <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>.|  
+|[Comment : utiliser la boucle ForEach pour supprimer les éléments d'un BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-use-foreach-to-remove.md)|Décrit comment utiliser `foreach`, (`For Each` dans Visual Basic) pour supprimer tous les éléments d’une collection de blocage.|  
+|[Comment : utiliser des tableaux de collections de blocage dans un pipeline](../../../../docs/standard/collections/thread-safe/how-to-use-arrays-of-blockingcollections.md)|Décrit comment utiliser simultanément plusieurs collections de blocage pour implémenter un pipeline.|  
 |[Guide pratique pour créer un pool d'objets à l'aide d'un ConcurrentBag](../../../../docs/standard/collections/thread-safe/how-to-create-an-object-pool.md)|Montre comment utiliser un conteneur simultané pour améliorer les performances dans les scénarios où vous pouvez réutiliser des objets au lieu d’en créer continuellement de nouveaux.|  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Informations de référence  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>

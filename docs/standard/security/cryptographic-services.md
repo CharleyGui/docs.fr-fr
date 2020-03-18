@@ -1,5 +1,5 @@
 ---
-title: Services de chiffrement
+title: services de chiffrement
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -24,20 +24,20 @@ helpviewer_keywords:
 - cryptography [.NET Framework], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-ms.openlocfilehash: 66af8126ab61d37065b9a328d5e088ed7bf4cbef
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: c1783a578d0b55b0b62a1ffb870802faca97623f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709203"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79187007"
 ---
-# <a name="cryptographic-services"></a>Services de chiffrement
+# <a name="cryptographic-services"></a>services de chiffrement
 
 Les réseaux publics, tels qu'Internet, n'offrent aucun moyen de sécuriser les communications entre les entités. Les communications qui transitent par ces réseaux sont susceptibles d'être lues voire modifiées par des tiers non autorisés. Le chiffrement permet de prévenir la consultation des données, offre des moyens de détecter si les données ont été modifiées et fournit un mode de communication sécurisé via des canaux qui autrement ne sont pas sécurisés. Par exemple, les données peuvent être chiffrées à l'aide d'un algorithme de chiffrement, transmises dans un état chiffré et par la suite déchiffrées par le destinataire prévu. Si un tiers intercepte les données chiffrées, il lui sera difficile de les déchiffrer.
 
 Dans le .NET Framework, les classes de l'espace de noms <xref:System.Security.Cryptography?displayProperty=nameWithType> gèrent automatiquement divers détails liés au chiffrement. Certaines d'entre elles sont des wrappers pour l'API de chiffrement Microsoft non managée (CryptoAPI), tandis que d'autres sont de pures implémentations managées. Vous n'avez pas besoin d'être un expert en chiffrement pour utiliser ces classes. Quand vous créez une instance de l'une des classes d'algorithme de chiffrement, les clés sont générées automatiquement pour une plus grande facilité d'utilisation, et les propriétés par défaut sont aussi sûres et sécurisées que possible.
 
-Cette vue d’ensemble fournit un résumé des méthodes et pratiques de chiffrement prises en charge par le .NET Framework, notamment les manifestes ClickOnce, les Suite B et la prise en charge de CNG (Cryptography Next Generation) introduite dans le .NET Framework 3,5.
+Cette vue d’ensemble fournit un résumé des méthodes et pratiques de cryptage prises en charge par le cadre .NET, y compris les manifestes ClickOnce, Suite B et Cryptographie Next Generation (CNG) support introduit dans le cadre .NET 3.5.
 
 Pour plus d'informations sur le chiffrement et les services, composants et outils Microsoft qui permettent d'ajouter à vos applications une sécurité par chiffrement, consultez la section relative au développement et à la sécurité Win32 et COM de cette documentation.
 
@@ -57,7 +57,7 @@ Le chiffrement vise à atteindre les objectifs suivants :
 
 Pour atteindre ces objectifs, vous pouvez utiliser une combinaison d'algorithmes et de pratiques appelés primitives de chiffrement pour créer un modèle de chiffrement. Le tableau suivant répertorie les primitives de chiffrement et leurs fonctions.
 
-|Primitive de chiffrement|Utiliser|
+|Primitive de chiffrement|Utilisation|
 |-----------------------------|---------|
 |Chiffrement à clé secrète (chiffrement symétrique)|Transforme les données pour empêcher des tiers de les lire. Ce type de chiffrement fait appel à une clé partagée, secrète et unique pour chiffrer et déchiffrer des données.|
 |Chiffrement à clé publique (chiffrement asymétrique)|Transforme les données pour empêcher des tiers de les lire. Ce type de chiffrement fait appel à une paire de clés publique/privée pour chiffrer et déchiffrer les données.|
@@ -82,11 +82,11 @@ Une façon de compromettre des données chiffrées avec un chiffrement CBC est d
 
 L'inconvénient du chiffrement à clé secrète est qu'il suppose que les deux parties se sont mises d'accord sur une clé et un vecteur d'initialisation et qu'elles se sont communiqué leurs valeurs. Le vecteur d'initialisation n'est pas considéré comme un secret et peut être transmis en texte en clair avec le message. Cependant, la clé doit être tenue secrète des utilisateurs non autorisés. Du fait de ces problèmes, le chiffrement à clé secrète est souvent employé conjointement avec le chiffrement à clé publique pour communiquer de manière confidentielle les valeurs de la clé et du vecteur d'initialisation.
 
-Si l'on considère qu'Alice et Jean sont deux parties qui désirent communiquer sur un canal non sécurisé, ils peuvent utiliser le chiffrement à clé secrète comme suit : Alice et Jean conviennent ensemble d'utiliser un certain algorithme (AES, par exemple) avec une clé et un vecteur d'initialisation déterminés. Alice compose un message et crée un flux réseau (peut-être un canal nommé ou une messagerie réseau) sur lequel le message doit être envoyé. Ensuite, elle chiffre le texte à l'aide de la clé et du vecteur d'initialisation, puis envoie le message chiffré et le vecteur d'initialisation à Jean via l'intranet. Jean reçoit le texte chiffré et le déchiffre à l'aide du vecteur d'initialisation et de la clé convenue précédemment. Si la transmission est interceptée, l'intercepteur ne peut pas récupérer le message d'origine, car il ne connaît pas la clé. Dans ce scénario, seule la clé doit rester secrète. Dans un scénario réel, Alice ou Jean génère une clé secrète et utilise un chiffrement (asymétrique) à clé publique pour transférer la clé (symétrique) secrète à l'autre partie. Pour plus d'informations sur le chiffrement à clé publique, consultez la section suivante.
+Si l'on considère qu'Alice et Jean sont deux parties qui désirent communiquer sur un canal non sécurisé, ils peuvent utiliser le chiffrement à clé secrète comme suit : Alice et Jean conviennent ensemble d'utiliser un certain algorithme (AES, par exemple) avec une clé et un vecteur d'initialisation déterminés. Alice compose un message et crée un flux réseau (peut-être un tuyau nommé ou un e-mail réseau) sur lequel envoyer le message. Ensuite, elle chiffre le texte à l'aide de la clé et du vecteur d'initialisation, puis envoie le message chiffré et le vecteur d'initialisation à Jean via l'intranet. Jean reçoit le texte chiffré et le déchiffre à l'aide du vecteur d'initialisation et de la clé convenue précédemment. Si la transmission est interceptée, l’intercepteur ne peut pas récupérer le message original, car il ne connaît pas la clé. Dans ce scénario, seule la clé doit rester secrète. Dans un scénario réel, Alice ou Jean génère une clé secrète et utilise un chiffrement (asymétrique) à clé publique pour transférer la clé (symétrique) secrète à l'autre partie. Pour plus d'informations sur le chiffrement à clé publique, consultez la section suivante.
 
-Le .NET Framework fournit les classes suivantes qui implémentent des algorithmes de chiffrement à clé secrète :
+Le cadre .NET fournit les classes suivantes qui implémenter des algorithmes de cryptage à clé secrète :
 
-- <xref:System.Security.Cryptography.AesManaged> (introduite dans le .NET Framework 3,5).
+- <xref:System.Security.Cryptography.AesManaged>(introduit dans le cadre .NET 3.5).
 
 - <xref:System.Security.Cryptography.DESCryptoServiceProvider>.
 
@@ -122,7 +122,7 @@ La liste suivante propose une comparaison entre les algorithmes de chiffrement �
 
 - Les algorithmes à clé publique sont très plus lents par rapport aux algorithmes à clé secrète et ne sont pas conçus pour chiffrer de grandes quantités de données. Les algorithmes à clé publique ne sont utiles que pour le transfert de très petites quantités de données. En règle générale, le chiffrement à clé publique est utilisé pour chiffrer la clé et le vecteur d'initialisation destiné à être utilisé par un algorithme à clé secrète. Une fois la clé et le vecteur d'initialisation transférés, le chiffrement à clé secrète est utilisé pour le reste de la session.
 
-Le .NET Framework fournit les classes suivantes qui implémentent des algorithmes de chiffrement à clé publique :
+Le cadre .NET fournit les classes suivantes qui implémenter des algorithmes de cryptage à clé publique :
 
 - <xref:System.Security.Cryptography.DSACryptoServiceProvider>
 
@@ -149,7 +149,7 @@ Pour utiliser le chiffrement à clé publique pour signer numériquement un mess
 > [!NOTE]
 > Une signature peut être vérifiée par n'importe qui, car la clé publique de l'expéditeur est connue de tous et est généralement incluse dans le format de signature numérique. Cette méthode ne préserve pas le caractère confidentiel du message ; pour être secret, le message doit aussi être chiffré.
 
-Le .NET Framework fournit les classes suivantes qui implémentent des algorithmes de signature numérique :
+Le cadre .NET fournit les classes suivantes qui implémenter des algorithmes de signature numérique :
 
 - <xref:System.Security.Cryptography.DSACryptoServiceProvider>
 
@@ -167,7 +167,7 @@ Les deux parties que constituent Alice et Jean peuvent utiliser une fonction de 
 
 - Alice envoie le message de texte en clair et le message haché (signature numérique) à Jean. Jean reçoit et hache le message et compare sa valeur de hachage à celle qu'il a reçue d'Alice. Si les valeurs de hachage sont identiques, cela signifie que le message n'a pas été modifié. Si les valeurs ne sont pas identiques, le message a été modifié après avoir été rédigé par Alice.
 
-  Malheureusement, cette méthode ne permet pas d'établir l'authenticité de l'expéditeur. N'importe qui peut emprunter l'identité d'Alice et envoyer un message à Jean. L'usurpateur peut utiliser le même algorithme de hachage pour signer son message et tout ce que Jean pourra constater, c'est que le message présente la même signature. Il s'agit d'une forme d'attaque de l'intercepteur. Pour plus d’informations, consultez [exemple de communication sécurisée CNG (Cryptography Next Generation)](https://docs.microsoft.com/previous-versions/cc488018(v=vs.100)).
+  Malheureusement, cette méthode ne permet pas d'établir l'authenticité de l'expéditeur. N'importe qui peut emprunter l'identité d'Alice et envoyer un message à Jean. L'usurpateur peut utiliser le même algorithme de hachage pour signer son message et tout ce que Jean pourra constater, c'est que le message présente la même signature. Il s'agit d'une forme d'attaque de l'intercepteur. Pour plus d’informations, voir [Cryptographie Next Generation (CNG) Secure Communication Exemple](https://docs.microsoft.com/previous-versions/cc488018(v=vs.100)).
 
 - Alice envoie le message de texte en clair à Jean via un canal public non sécurisé. Elle envoie le message haché à Jean via un canal privé sécurisé. Jean reçoit le message de texte en clair, le hache et compare le hachage à celui échangé en privé. Si les hachages correspondent, Jean peut en déduire deux choses :
 
@@ -183,7 +183,7 @@ Les deux parties que constituent Alice et Jean peuvent utiliser une fonction de 
 
 Aucune des méthodes précédentes n'empêchera quiconque de lire les messages d'Alice, car ils sont transmis sous forme de texte en clair. Pour bénéficier d'une sécurité complète, les signatures numériques (signature des messages) et le chiffrement s'avèrent nécessaires.
 
-Le .NET Framework fournit les classes suivantes qui implémentent des algorithmes de hachage :
+Le cadre .NET fournit les classes suivantes qui implémentent des algorithmes de hachage :
 
 - <xref:System.Security.Cryptography.HMACSHA1>.
 
@@ -212,13 +212,13 @@ Le .NET Framework fournit les classes suivantes qui implémentent des algorithme
 
 ## <a name="random-number-generation"></a>génération de nombres aléatoires
 
-La génération de nombres aléatoires est un élément indispensable de nombreuses opérations de chiffrement. Par exemple, les clés de chiffrement doivent être aussi aléatoires que possible de sorte qu'il soit impossible de les reproduire. Les générateurs de nombres aléatoires de chiffrement doivent générer des sorties qu'il est impossible de prédire du point de vue informatique avec une probabilité de plus de 50 %. Par conséquent, toute méthode de prédiction du bit de sortie suivant ne doit pas pas se montrer plus performante que le hasard. Les classes du .NET Framework utilisent des générateurs de nombres aléatoires pour générer des clés de chiffrement.
+La génération de nombres aléatoires est un élément indispensable de nombreuses opérations de chiffrement. Par exemple, les clés de chiffrement doivent être aussi aléatoires que possible de sorte qu'il soit impossible de les reproduire. Les générateurs de nombres aléatoires de chiffrement doivent générer des sorties qu'il est impossible de prédire du point de vue informatique avec une probabilité de plus de 50 %. Par conséquent, toute méthode de prédiction du bit de sortie suivant ne doit pas pas se montrer plus performante que le hasard. Les classes du cadre .NET utilisent des générateurs de nombres aléatoires pour générer des clés cryptographiques.
 
 La classe <xref:System.Security.Cryptography.RNGCryptoServiceProvider> est une implémentation d'un algorithme de génération de nombres aléatoires.
 
 ## <a name="clickonce-manifests"></a>Manifestes ClickOnce
 
-Dans la .NET Framework 3,5, les classes de chiffrement suivantes vous permettent d’obtenir et de vérifier des informations sur les signatures de manifeste pour les applications qui sont déployées à l’aide de la [technologie ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment):
+Dans le cadre .NET 3.5, les classes de cryptographie suivantes vous permettent d’obtenir et de vérifier des informations sur les signatures manifestes pour les applications déployées à l’aide de [la technologie ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment):
 
 - La classe <xref:System.Security.Cryptography.ManifestSignatureInformation> obtient des informations sur une signature de manifeste quand vous utilisez ses surcharges de méthode <xref:System.Security.Cryptography.ManifestSignatureInformation.VerifySignature%2A> .
 
@@ -238,7 +238,7 @@ Dans la .NET Framework 3,5, les classes de chiffrement suivantes vous permettent
 
 ## <a name="suite-b-support"></a>Prise en charge de Suite B
 
-Le .NET Framework 3,5 prend en charge l’ensemble Suite B d’algorithmes de chiffrement publiés par la NSA (National Security Agency). Pour plus d’informations sur Suite B, consultez le [descriptif de la NSA sur le chiffrement Suite B](https://www.nsa.gov/what-we-do/information-assurance/).
+Le cadre .NET 3.5 prend en charge l’ensemble de suiteS B d’algorithmes cryptographiques publié par la National Security Agency (NSA). Pour plus d’informations sur Suite B, consultez le [descriptif de la NSA sur le chiffrement Suite B](https://www.nsa.gov/what-we-do/information-assurance/).
 
 Les algorithmes inclus sont les suivants :
 
@@ -254,11 +254,11 @@ Des wrappers de code managé pour les implémentations certifiées FIPS (Federal
 
 ## <a name="cryptography-next-generation-cng-classes"></a>Classes CNG (Cryptography Next Generation)
 
-Les classes CNG fournissent un wrapper managé autour des fonctions CNG natives. (CNG est le remplacement de CryptoAPI.) Ces classes ont « CNG » dans leur nom. Au cœur des classes du wrapper CNG se trouve la classe de conteneur de clés <xref:System.Security.Cryptography.CngKey> , qui s'approprie le stockage et l'utilisation des clés CNG. Cette classe vous permet de stocker une paire de clés ou une clé publique en toute sécurité et d'y faire référence en utilisant un nom de chaîne simple. La classe de signature <xref:System.Security.Cryptography.ECDsaCng> à courbe elliptique et la classe de chiffrement <xref:System.Security.Cryptography.ECDiffieHellmanCng> peuvent utiliser des objets <xref:System.Security.Cryptography.CngKey> .
+Les classes CNG fournissent un wrapper managé autour des fonctions CNG natives. (Le GNC remplace CryptoAPI.) Ces classes ont "Cng" dans le cadre de leurs noms. Au cœur des classes du wrapper CNG se trouve la classe de conteneur de clés <xref:System.Security.Cryptography.CngKey> , qui s'approprie le stockage et l'utilisation des clés CNG. Cette classe vous permet de stocker une paire de clés ou une clé publique en toute sécurité et d'y faire référence en utilisant un nom de chaîne simple. La classe de signature <xref:System.Security.Cryptography.ECDsaCng> à courbe elliptique et la classe de chiffrement <xref:System.Security.Cryptography.ECDiffieHellmanCng> peuvent utiliser des objets <xref:System.Security.Cryptography.CngKey> .
 
 La classe <xref:System.Security.Cryptography.CngKey> sert à diverses autres opérations, notamment à ouvrir, créer, supprimer et exporter des clés. Elle permet aussi d'accéder au handle de clé sous-jacent à utiliser quand il s'agit d'appeler des fonctions natives directement.
 
-Le .NET Framework 3,5 comprend également diverses classes CNG de prise en charge, telles que les suivantes :
+Le cadre .NET 3.5 comprend également une variété de classes de GNL de soutien, telles que les suivantes :
 
 - <xref:System.Security.Cryptography.CngProvider> dispose d'un fournisseur de stockage de clés.
 
@@ -268,8 +268,8 @@ Le .NET Framework 3,5 comprend également diverses classes CNG de prise en charg
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-----------|-----------------|
 |[Modèle de chiffrement](../../../docs/standard/security/cryptography-model.md)|Explique comment le chiffrement est implémenté dans la bibliothèque de classes de base.|
-|[Procédure pas à pas : création d’une application de chiffrement](../../../docs/standard/security/walkthrough-creating-a-cryptographic-application.md)|Présente des tâches de chiffrement et de déchiffrement de base.|
-|[Configuration des classes de chiffrement](../../../docs/framework/configure-apps/configure-cryptography-classes.md)|Explique comment mapper des noms d'algorithmes à des classes de chiffrement et comment mapper des identificateurs d'objets à un algorithme de chiffrement.|
+|[Procédure pas à pas : création d'une application de chiffrement](../../../docs/standard/security/walkthrough-creating-a-cryptographic-application.md)|Présente des tâches de chiffrement et de déchiffrement de base.|
+|[Configuration de classes de chiffrement](../../../docs/framework/configure-apps/configure-cryptography-classes.md)|Explique comment mapper des noms d'algorithmes à des classes de chiffrement et comment mapper des identificateurs d'objets à un algorithme de chiffrement.|

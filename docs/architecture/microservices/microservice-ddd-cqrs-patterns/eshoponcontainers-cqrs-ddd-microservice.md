@@ -1,13 +1,13 @@
 ---
 title: Application des approches CQRS et CQS dans un microservice DDD dans eShopOnContainers
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre la façon dont CQRS est implémenté dans le microservice Ordering de l’application eShopOnContainers.
-ms.date: 10/08/2018
-ms.openlocfilehash: 0380e759595e8a159e89f858a5ced4dacfa4e9b4
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.date: 03/03/2020
+ms.openlocfilehash: 16fe46189a5b43591adebbb764d4acef2f7efbfb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674126"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78847152"
 ---
 # <a name="apply-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>Appliquer des approches CQRS et CQS dans un microservice DDD dans eShopOnContainers
 
@@ -23,7 +23,7 @@ Les modèles DDD présentés dans ce guide ne doivent pas être appliqués de ma
 
 Un modèle de ce type est le modèle Agrégat, que nous examinerons plus en détail dans les sections suivantes. Brièvement, dans le modèle Agrégat, vous traitez un grand nombre d’objets de domaine comme un seul ensemble en raison de leur relation dans le domaine. Il est possible que vous n’obteniez pas toujours des avantages avec ce modèle dans les requêtes, car celui-ci peut augmenter la complexité de la logique de requête. Pour les requêtes en lecture seule, vous n’obtenez pas les avantages de traitement de plusieurs objets comme un seul agrégat, juste la complexité.
 
-Comme le montre la figure 7-2, ce guide propose d’utiliser des modèles DDD seulement dans la zone transactionnelle/de mises à jour de votre microservice (c’est-à-dire avec un déclenchement par des commandes). Les requêtes peuvent suivre une approche plus simple et doivent être séparées des commandes, suite à une approche CQRS.
+Comme le montre la figure 7-2 de la section précédente, ce guide suggère d’utiliser des modèles DDD uniquement dans la zone transactionnelle/mise à jour de votre microservice (c’est-à-dire, comme le déclenchent les commandes). Les requêtes peuvent suivre une approche plus simple et doivent être séparées des commandes, suite à une approche CQRS.
 
 Pour implémenter le « côté requêtes », vous pouvez choisir entre plusieurs méthodes, à partir de votre ORM complet comme EF Core, des projections AutoMapper, des procédures stockées, des vues, des vues matérialisées ou un micro-ORM.
 
@@ -41,15 +41,15 @@ Il n’existe qu’une seule architecture des applications : l’architecture de
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Martin Fowler. CQRS** \
+- **Martin Fowler. CQRS (en)** \
   <https://martinfowler.com/bliki/CQRS.html>
 
 - **Greg Young. CQRS Documents** \
   <https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf>
 
-- **Udi Dahan. Clarified CQRS** \
+- **Udi Dahan. CQRS clarifié** \
   <http://udidahan.com/2009/12/09/clarified-cqrs/>
 
 >[!div class="step-by-step"]
->[Précédent](apply-simplified-microservice-cqrs-ddd-patterns.md)
->[Suivant](cqrs-microservice-reads.md)
+>[Suivant précédent](apply-simplified-microservice-cqrs-ddd-patterns.md)
+>[Next](cqrs-microservice-reads.md)

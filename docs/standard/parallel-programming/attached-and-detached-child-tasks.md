@@ -9,10 +9,10 @@ helpviewer_keywords:
 - tasks, child tasks
 ms.assetid: c95788bf-90a6-4e96-b7bc-58e36a228cc5
 ms.openlocfilehash: 8f15ee4f136e3e2df1a4e1c7683467f2a4bc9bc0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73123186"
 ---
 # <a name="attached-and-detached-child-tasks"></a>Tâches enfants attachées et détachées
@@ -22,9 +22,9 @@ Une *tâche enfant* (ou *tâche imbriquée*) est une instance <xref:System.Threa
   
 |Category|Tâches enfants détachées|Tâches enfants attachées|  
 |--------------|--------------------------|--------------------------|  
-|Le parent attend que les tâches enfants soient terminées.|Non|Oui|  
-|Le parent propage les exceptions levées par les tâches enfants.|Non|Oui|  
-|Le statut du parent dépend du statut de l'enfant.|Non|Oui|  
+|Le parent attend que les tâches enfants soient terminées.|Non |Oui|  
+|Le parent propage les exceptions levées par les tâches enfants.|Non |Oui|  
+|Le statut du parent dépend du statut de l'enfant.|Non |Oui|  
   
  Dans la plupart des scénarios, nous vous recommandons d’utiliser des tâches enfants détachées, car leurs relations avec les autres tâches sont moins complexes. C'est pourquoi les tâches créées à l'intérieur de tâches parentes sont détachées par défaut et vous devez spécifier explicitement l'option <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> pour créer une tâche enfant attachée.  
   
@@ -59,7 +59,7 @@ Une *tâche enfant* (ou *tâche imbriquée*) est une instance <xref:System.Threa
  L'annulation de tâche est coopérative. Autrement dit, pour être annulable, chaque tâche enfant attachée ou détachée doit surveiller l'état du jeton d'annulation. Pour annuler un parent et tous ses enfants à l'aide d'une demande d'annulation, vous passez le même jeton en tant qu'argument à toutes les tâches et fournissez dans chaque tâche la logique pour répondre à la demande. Pour plus d’informations, consultez [Annulation de tâches](../../../docs/standard/parallel-programming/task-cancellation.md) et [Comment : annuler une tâche et ses enfants](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
   
 ### <a name="when-the-parent-cancels"></a>Annulation d'un parent  
- Si un parent s’annule avant le démarrage de sa tâche enfant, celle-ci ne démarre jamais. Si un parent s’annule une fois que sa tâche enfant a démarré, celle-ci s’exécute jusqu’à son terme sauf si elle possède sa propre logique d’annulation. Pour plus d’informations, voir [Annulation de tâches](../../../docs/standard/parallel-programming/task-cancellation.md).  
+ Si un parent s’annule avant le démarrage de sa tâche enfant, celle-ci ne démarre jamais. Si un parent s’annule une fois que sa tâche enfant a démarré, celle-ci s’exécute jusqu’à son terme sauf si elle possède sa propre logique d’annulation. Pour plus d'informations, consultez [Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md).  
   
 ### <a name="when-a-detached-child-task-cancels"></a>Annulation d’une tâche enfant détachée  
  Si une tâche enfant détachée s’annule à l’aide du jeton passé au parent et que celui-ci n’attend pas la tâche enfant, aucune exception n’est propagée, car l’exception est traitée comme une annulation de coopération bénigne. Ce comportement est identique à celui de toute tâche de niveau supérieur.  

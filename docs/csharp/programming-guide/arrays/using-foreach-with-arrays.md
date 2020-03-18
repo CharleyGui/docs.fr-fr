@@ -6,10 +6,10 @@ helpviewer_keywords:
 - foreach statement [C#], using with arrays
 ms.assetid: 5f2da2a9-1f56-4de5-94cc-e07f4f7a0244
 ms.openlocfilehash: bb121b0f5d990ef6e596b34a45606e2abde6811a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75705676"
 ---
 # <a name="using-foreach-with-arrays-c-programming-guide"></a>Utiliser foreach avec des tableaux (Guide de programmation C#)
@@ -33,4 +33,4 @@ Cependant, dans le cas de tableaux multidimensionnels, l’utilisation d’une b
 - [Tableaux](index.md)
 - [Tableaux unidimensionnels](single-dimensional-arrays.md)
 - [Tableaux multidimensionnels](multidimensional-arrays.md)
-- [Tableaux en escalier](jagged-arrays.md)
+- [Arrays déchiquetés](jagged-arrays.md)

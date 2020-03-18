@@ -6,10 +6,10 @@ helpviewer_keywords:
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
 ms.openlocfilehash: c0f28716926d4c9d74cde58fd00e27d1fdfa7ce1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75705364"
 ---
 # <a name="delegates-c-programming-guide"></a>Délégués (Guide de programmation C#)
@@ -43,7 +43,7 @@ Un [délégué](../../language-reference/builtin-types/reference-types.md) est u
   
 ## <a name="in-this-section"></a>Dans cette section  
   
-- [Utilisation de délégués](./using-delegates.md)  
+- [Utilisation des délégués](./using-delegates.md)  
   
 - [Quand utiliser des délégués à la place d’interfaces (Guide de programmation C#)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms173173(v=vs.100))  
   
@@ -51,7 +51,7 @@ Un [délégué](../../language-reference/builtin-types/reference-types.md) est u
   
 - [Utilisation de la variance dans les délégués](../concepts/covariance-contravariance/using-variance-in-delegates.md)  
   
-- [Comment combiner des délégués (délégués multicast)](./how-to-combine-delegates-multicast-delegates.md)  
+- [Comment combiner les délégués (délégués multicast)](./how-to-combine-delegates-multicast-delegates.md)  
   
 - [Comment déclarer, instancier et utiliser un délégué](./how-to-declare-instantiate-and-use-a-delegate.md)
 

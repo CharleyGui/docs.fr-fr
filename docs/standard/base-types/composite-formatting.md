@@ -14,11 +14,11 @@ helpviewer_keywords:
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
 ms.openlocfilehash: b1ec8cfc0f8c6e660d716c51bf3c3387b73a278f
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159310"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79400343"
 ---
 # <a name="composite-formatting"></a>Mise en forme composite
 
@@ -43,7 +43,7 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
 - La méthode <xref:System.Diagnostics.TraceSource.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, qui écrit une méthode à caractère informatif pour les écouteurs Trace.  
   
 ## <a name="composite-format-string"></a>Chaîne de format composite  
- Une chaîne de format composite et une liste d'objets sont utilisées comme arguments des méthodes qui prennent en charge la fonctionnalité de mise en forme composite. Une chaîne de format composite se compose de zéro ou plusieurs séquences de texte fixe mélangées à un ou plusieurs éléments de format. Le texte fixe correspond à toute chaîne que vous choisissez, et chaque élément de format correspond à un objet ou une structure boxed dans la liste. La fonctionnalité de mise en forme composite retourne une nouvelle chaîne résultante, dans laquelle chaque élément de format est remplacé par la représentation sous forme de chaîne de l’objet correspondant dans la liste.  
+ Une chaîne de format composite et une liste d'objets sont utilisées comme arguments des méthodes qui prennent en charge la fonctionnalité de mise en forme composite. Une chaîne de format composite est constituée de zéro, une ou plusieurs séquences de texte fixe mélangées à un ou plusieurs éléments de format. Le texte fixe correspond à toute chaîne que vous choisissez, et chaque élément de format correspond à un objet ou une structure boxed dans la liste. La fonctionnalité de mise en forme composite retourne une nouvelle chaîne résultante, dans laquelle chaque élément de format est remplacé par la représentation sous forme de chaîne de l’objet correspondant dans la liste.  
   
  Prenons le fragment de code <xref:System.String.Format%2A> suivant.  
   
@@ -55,7 +55,7 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
 ## <a name="format-item-syntax"></a>Syntaxe des éléments de format  
  Chaque élément de format prend la forme suivante et comprend les composants suivants :  
   
- *index*`{` [ *alignement*`,`] [`:`*FormatString*]`}`  
+ `{`*index*`,`*alignment*[ alignement`:`] [*formatString*]`}`  
   
  Les accolades correspondantes (« { » et « } ») sont nécessaires.  
   
@@ -65,12 +65,12 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
  [!code-csharp[Formatting.Composite#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#7)]
  [!code-vb[Formatting.Composite#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#7)]  
   
- Plusieurs éléments de format peuvent faire référence au même élément de la liste d'objets en indiquant le même spécificateur de paramètre. Par exemple, vous pouvez mettre en forme la même valeur numérique au format hexadécimal, scientifique et numérique en spécifiant une chaîne de format composite telle que : « 0x{0:X} {0:E} {0:N}», comme le montre l’exemple suivant.  
+ Plusieurs éléments de format peuvent faire référence au même élément de la liste d'objets en indiquant le même spécificateur de paramètre. Par exemple, vous pouvez formater la même valeur numérique en format hexadecimal, scientifique et numéro{0:X} {0:E} {0:N}en spécifiant une chaîne de format composite comme : « 0x », comme le montre l’exemple suivant.  
   
  [!code-csharp[Formatting.Composite#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#10)]
  [!code-vb[Formatting.Composite#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#10)]  
   
- Chaque élément de format peut faire référence à n'importe quel objet de la liste. Par exemple, s’il y a trois objets, vous pouvez mettre en forme le deuxième, le premier et le troisième objet en spécifiant une chaîne de format composite comme suit : «{1} {0} {2}». Un objet qui n'est pas référencé par un élément de format est ignoré. Une exception <xref:System.FormatException> est levée à l'exécution si un spécificateur de paramètres désigne un élément situé en dehors des limites de la liste d'objets.  
+ Chaque élément de format peut faire référence à n'importe quel objet de la liste. Par exemple, s’il y a trois objets, vous pouvez formater le deuxième, le{1} {0} {2}premier et le troisième objet en spécifiant une chaîne de format composite comme celle-ci : « . Un objet qui n'est pas référencé par un élément de format est ignoré. Une exception <xref:System.FormatException> est levée à l'exécution si un spécificateur de paramètres désigne un élément situé en dehors des limites de la liste d'objets.  
   
 ### <a name="alignment-component"></a>Composant d'alignement  
  Le composant facultatif *alignment* est un entier signé indiquant la largeur préférée du champ mis en forme. Si la valeur du composant *alignment* est inférieure à la longueur de la chaîne mise en forme, *alignment*est ignoré et la longueur de la chaîne mise en forme est utilisée comme largeur de champ. Les données mises en forme dans le champ sont alignées à droite si *alignment* est positif et alignées à gauche si *alignment* est négatif. Si un remplissage est nécessaire, des espaces blancs sont utilisés. La virgule est obligatoire si *alignment* est spécifié.  
@@ -87,9 +87,9 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
   
 |Type ou catégorie de type|Consultez|  
 |---------------------------|---------|  
-|Types de date et d'heure (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [Chaînes de format de date et d'heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
+|Types de date et d'heure (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Chaînes de format de date et d'heure standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [Chaînes personnalisées de format de date et d’heure](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
 |Types d'énumération (tous les types dérivés de <xref:System.Enum?displayProperty=nameWithType>)|[Chaînes de format d’énumération](../../../docs/standard/base-types/enumeration-format-strings.md)|  
-|Types numériques (<xref:System.Numerics.BigInteger>, <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>)|[Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
+|Types numériques (<xref:System.Numerics.BigInteger>, <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>)|[Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [Chaînes de format numérique personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
 |<xref:System.Guid>|<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|  
 |<xref:System.TimeSpan>|[Chaînes de format TimeSpan standard](../../../docs/standard/base-types/standard-timespan-format-strings.md)<br /><br /> [Chaînes de format TimeSpan personnalisées](../../../docs/standard/base-types/custom-timespan-format-strings.md)|  
   
@@ -164,10 +164,10 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
 - [Interpolation de chaîne (C#)](../../csharp/language-reference/tokens/interpolated.md)
 - [Interpolation de chaîne (Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
 - [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
-- [Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)
-- [Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
-- [Chaînes de format de date et d'heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)
+- [Chaînes de format numérique personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)
+- [Chaînes de format de date et d'heure standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
+- [Chaînes personnalisées de format de date et d’heure](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
 - [Chaînes de format TimeSpan standard](../../../docs/standard/base-types/standard-timespan-format-strings.md)
 - [Chaînes de format TimeSpan personnalisées](../../../docs/standard/base-types/custom-timespan-format-strings.md)
 - [Chaînes de format d’énumération](../../../docs/standard/base-types/enumeration-format-strings.md)

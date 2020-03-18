@@ -9,10 +9,10 @@ helpviewer_keywords:
 - tasks, how to cancel
 ms.assetid: 08574301-8331-4719-ad50-9cf7f6ff3048
 ms.openlocfilehash: 4e0e783a4dfe3bf3a55795d7baef461369d7405a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73134202"
 ---
 # <a name="how-to-cancel-a-task-and-its-children"></a>Comment : annuler une tâche et ses enfants
@@ -28,7 +28,7 @@ Ces exemples montrent comment effectuer les tâches suivantes :
   
  Le thread appelant ne force pas l’arrêt de la tâche. Il signale seulement que son annulation a été demandée. Si la tâche est déjà en cours d’exécution, il incombe au délégué d’utilisateur de notifier la demande et d’y répondre de façon appropriée. Si l’annulation a été demandée avant l’exécution de la tâche, le délégué d’utilisateur n’est jamais exécuté et l’objet de tâche passe à l’état Canceled.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Cet exemple montre comment arrêter une <xref:System.Threading.Tasks.Task> et ses enfants en réponse à une demande d’annulation. Il montre également que quand un délégué d’utilisateur se termine en levant une <xref:System.Threading.Tasks.TaskCanceledException>, le thread appelant peut éventuellement utiliser la méthode <xref:System.Threading.Tasks.Task.Wait%2A> ou <xref:System.Threading.Tasks.Task.WaitAll%2A>pour attendre la fin des tâches. Dans ce cas, vous devez utiliser un bloc `try/catch` pour gérer les exceptions sur le thread appelant.  
   
  [!code-csharp[TPL_Cancellation#04](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_cancellation/cs/cancel1.cs#04)]

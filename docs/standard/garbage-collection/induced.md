@@ -6,10 +6,10 @@ helpviewer_keywords:
 - garbage collection, forced
 ms.assetid: 019008fe-4708-4e65-bebf-04fd9941e149
 ms.openlocfilehash: 604b49ef577a46204b523ebf5a8575a30b81635e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73120921"
 ---
 # <a name="induced-collections"></a>Collections forcées
@@ -20,7 +20,7 @@ Dans la plupart des cas, le Garbage collector peut déterminer le meilleur momen
 ## <a name="gc-collection-mode"></a>Mode de collection GC  
  Vous pouvez utiliser l’une des surcharges de méthode <xref:System.GC.Collect%2A?displayProperty=nameWithType> qui inclut une valeur <xref:System.GCCollectionMode> pour spécifier le comportement d’une collection forcée, comme suit.  
   
-|Valeur`GCCollectionMode`|Description|  
+|Valeur `GCCollectionMode`|Description|  
 |------------------------------|-----------------|  
 |<xref:System.GCCollectionMode.Default>|Utilise le paramètre de garbage collection par défaut pour la version en cours d’exécution de .NET.|  
 |<xref:System.GCCollectionMode.Forced>|Force l’exécution immédiate du garbage collection. Cela équivaut à appeler la surcharge <xref:System.GC.Collect?displayProperty=nameWithType>. Il en résulte une collection de blocage complète de toutes les générations.<br /><br /> Vous pouvez également compacter le tas d’objets volumineux en définissant la propriété <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> sur <xref:System.Runtime.GCLargeObjectHeapCompactionMode.CompactOnce?displayProperty=nameWithType> avant de forcer un garbage collection de blocage complet immédiat.|  
@@ -37,4 +37,4 @@ Dans la plupart des cas, le Garbage collector peut déterminer le meilleur momen
 ## <a name="see-also"></a>Voir aussi
 
 - [Modes de latence](../../../docs/standard/garbage-collection/latency.md)
-- [Nettoyage de la mémoire](../../../docs/standard/garbage-collection/index.md)
+- [Garbage collection](../../../docs/standard/garbage-collection/index.md)

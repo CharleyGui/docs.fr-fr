@@ -7,10 +7,10 @@ helpviewer_keywords:
 - scheduling threads
 ms.assetid: 67e4a0eb-3095-4ea7-b20f-908faa476277
 ms.openlocfilehash: abcdf56b90513b937adefc38583e0312fec69785
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73106231"
 ---
 # <a name="scheduling-threads"></a>Planification de threads

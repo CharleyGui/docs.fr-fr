@@ -1,26 +1,26 @@
 ---
 title: Commande dotnet publish
-description: La commande dotnet publish publie un projet ou une solution .NET Core dans un répertoire.
+description: La commande de publication dotnet publie un projet ou une solution .NET Core à un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: cf41ee09244faad03feb8ccda19135b8c7780106
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: c34618409c9a539043c84c7e03daa8aa249d64f6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78156996"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146553"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
-**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 2.1 SDK et les versions ultérieures
 
 ## <a name="name"></a>Nom
 
-`dotnet publish`-publie l’application et ses dépendances dans un dossier pour le déploiement sur un système d’hébergement.
+`dotnet publish`- Publie l’application et ses dépendances à un dossier pour le déploiement dans un système d’hébergement.
 
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet publish [<PROJECT>|<SOLUTION>] [-c|--configuration] 
+dotnet publish [<PROJECT>|<SOLUTION>] [-c|--configuration]
     [-f|--framework] [--force] [--interactive] [--manifest]
     [--no-build] [--no-dependencies] [--no-restore] [--nologo]
     [-o|--output] [-r|--runtime] [--self-contained]
@@ -34,8 +34,8 @@ dotnet publish [-h|--help]
 `dotnet publish` compile l’application, parcourt ses dépendances spécifiées dans le fichier projet et publie l’ensemble de fichiers obtenus dans un répertoire. La sortie inclut les ressources suivantes :
 
 - Le code de langage intermédiaire (IL) dans un assembly avec l’extension *dll*.
-- Un fichier *. DEPS. JSON* qui contient toutes les dépendances du projet.
-- Un fichier *. runtimeconfig. JSON* qui spécifie le runtime partagé attendu par l’application, ainsi que d’autres options de configuration pour le runtime (par exemple, garbage collection type).
+- Un fichier *.deps.json* qui comprend toutes les dépendances du projet.
+- Un fichier *.runtimeconfig.json* qui spécifie le temps d’exécution partagé que l’application attend, ainsi que d’autres options de configuration pour le temps d’exécution (par exemple, type de collecte des ordures).
 - Les dépendances de l’application, qui sont copiées à partir du cache NuGet dans le dossier de sortie.
 
 La sortie de la commande `dotnet publish` est prête pour le déploiement sur un système d’hébergement (par exemple, un serveur, PC, Mac, ordinateur portable) à des fins d’exécution. Il s’agit de la seule façon officiellement prise en charge pour préparer l’application au déploiement. En fonction du type de déploiement que spécifie le projet, le runtime .NET Core partagé peut ou non être installé sur le système d’hébergement.
@@ -44,17 +44,17 @@ La sortie de la commande `dotnet publish` est prête pour le déploiement sur un
 
 - **`PROJECT|SOLUTION`**
 
-  Projet ou solution à publier.
+  Le projet ou la solution à publier.
   
-  * `PROJECT` est le chemin d’accès et le [C#](csproj.md)nom F#de fichier d’un fichier projet, ou Visual Basic, ou le chemin d’accès C#à F#un répertoire qui contient un fichier projet, ou Visual Basic. Si le répertoire n’est pas spécifié, le répertoire actif est utilisé par défaut.
+  * `PROJECT`est le nom de voie et de fichier [d’un](csproj.md)fichier de projet de C, de F, ou de base visuelle, ou le chemin vers un répertoire qui contient un fichier de projet de C, de F, ou de base visuelle. Si l’annuaire n’est pas spécifié, il est par défaut à l’annuaire actuel.
 
-  * `SOLUTION` est le chemin d’accès et le nom de fichier d’un fichier solution (extension *. sln* ), ou le chemin d’accès à un répertoire qui contient un fichier solution. Si le répertoire n’est pas spécifié, le répertoire actif est utilisé par défaut. **Disponible à partir du kit de développement logiciel (SDK) .NET Core 3,0.** 
+  * `SOLUTION`est le chemin et le nom de fichier d’un fichier de solution *(extension .sln),* ou le chemin vers un répertoire qui contient un fichier de solution. Si l’annuaire n’est pas spécifié, il est par défaut à l’annuaire actuel. Option disponible à partir du kit SDK .NET Core 3.0.
 
 ## <a name="options"></a>Options
 
 - **`-c|--configuration <CONFIGURATION>`**
 
-  Définit la configuration de build. La valeur par défaut pour la plupart des projets est `Debug`, mais vous pouvez remplacer les paramètres de configuration de build dans votre projet.
+  Définit la configuration de build. La valeur par `Debug`défaut pour la plupart des projets est, mais vous pouvez remplacer les paramètres de configuration de construction dans votre projet.
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -68,13 +68,13 @@ La sortie de la commande `dotnet publish` est prête pour le déploiement sur un
 
   Affiche une aide brève pour la commande.
 
-- **`--interactive`** **disponibles à partir du kit de développement logiciel (SDK) .net Core 3,0.**
+- **`--interactive`**
 
-  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. 
+  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Option disponible à partir du kit SDK .NET Core 3.0.
 
 - **`--manifest <PATH_TO_MANIFEST_FILE>`**
 
-  Spécifie un ou plusieurs [manifestes cibles](../deploying/runtime-store.md) à utiliser pour épurer l’ensemble des packages publiés avec l’application. Le fichier manifeste fait partie de la sortie de la [commande `dotnet store`](dotnet-store.md). Pour spécifier plusieurs manifestes, ajoutez une option `--manifest` pour chaque manifeste.
+  Spécifie un ou plusieurs [manifestes cibles](../deploying/runtime-store.md) à utiliser pour épurer l’ensemble des packages publiés avec l’application. Le fichier manifeste fait partie [ `dotnet store` ](dotnet-store.md)de la sortie de la commande . Pour spécifier plusieurs manifestes, ajoutez une option `--manifest` pour chaque manifeste.
 
 - **`--no-build`**
 
@@ -84,9 +84,9 @@ La sortie de la commande `dotnet publish` est prête pour le déploiement sur un
 
   Ignore les références entre projets et restaure uniquement le projet racine.
 
-- **`--nologo`** **disponibles à partir du kit de développement logiciel (SDK) .net Core 3,0.**
+- **`--nologo`**
 
-  N’affiche pas la bannière de démarrage ni le message de copyright. 
+  N’affiche pas la bannière de démarrage ni le message de copyright. Option disponible à partir du kit SDK .NET Core 3.0.
 
 - **`--no-restore`**
 
@@ -94,25 +94,25 @@ La sortie de la commande `dotnet publish` est prête pour le déploiement sur un
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Spécifie le chemin d’accès du répertoire de sortie. S’il n’est pas spécifié, la valeur par défaut est *./bin/[Configuration]/[Framework]/Publish/* pour un exécutable dépendant du runtime et des binaires multiplateforme. La valeur par défaut est *./bin/[Configuration]/[Framework]/[Runtime]/Publish/* pour un exécutable autonome.
+  Spécifie le chemin d’accès du répertoire de sortie. S’il n’est pas précisé, il ne fait pas défaut à *./bin/[configuration]/[cadre]/publier/* pour un délai exécutable et multiplateforme. Il ne fait pas défaut à *./bin/[configuration]/[cadre]/[runtime]/publish/* pour un exécutable autonome.
 
   Si le chemin est relatif, le répertoire de sortie généré est relatif à l’emplacement du fichier projet, et non au répertoire de travail actuel.
 
 - **`--self-contained [true|false]`**
 
-  Publie le runtime .NET Core avec votre application ; ainsi, vous n’avez pas besoin d’installer le runtime sur l’ordinateur cible. La valeur par défaut est `true` si un identificateur de Runtime est spécifié. Pour plus d’informations, consultez [publication d’applications .net Core](../deploying/index.md) et [publication d’applications .net core avec le CLI .net Core](../deploying/deploy-with-cli.md).
+  Publie le runtime .NET Core avec votre application ; ainsi, vous n’avez pas besoin d’installer le runtime sur l’ordinateur cible. Par `true` défaut, si un identifiant de temps d’exécution est spécifié. Pour plus d’informations, voir [.NET Core application publishing](../deploying/index.md) and [Publish .NET Core apps with the .NET Core CLI](../deploying/deploy-with-cli.md).
 
-- **`--no-self-contained`** **disponibles à partir du kit de développement logiciel (SDK) .net Core 3,0.**  
+- **`--no-self-contained`**
 
-  Équivaut à `--self-contained false`.
+  Équivaut à `--self-contained false`. Option disponible à partir du kit SDK .NET Core 3.0.
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  Publie l’application pour un runtime donné. Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Pour plus d’informations, consultez [publication d’applications .net Core](../deploying/index.md) et [publication d’applications .net core avec le CLI .net Core](../deploying/deploy-with-cli.md).
+  Publie l’application pour un runtime donné. Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Pour plus d’informations, voir [.NET Core application publishing](../deploying/index.md) and [Publish .NET Core apps with the .NET Core CLI](../deploying/deploy-with-cli.md).
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
+  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `minimal`.
 
 - **`--version-suffix <VERSION_SUFFIX>`**
 
@@ -120,43 +120,43 @@ La sortie de la commande `dotnet publish` est prête pour le déploiement sur un
 
 ## <a name="examples"></a>Exemples
 
-- Créez un [binaire multiplateforme dépendant du runtime](../deploying/index.md#produce-a-cross-platform-binary) pour le projet dans le répertoire actif :
+- Créez un [binaire multiplateforme dépendant du temps d’exécution](../deploying/index.md#produce-a-cross-platform-binary) pour le projet dans l’annuaire actuel :
 
   ```dotnetcli
   dotnet publish
   ```
 
-  À compter du kit de développement logiciel (SDK) .NET Core 3,0, cet exemple crée également un [exécutable dépendant du runtime](../deploying/index.md#publish-runtime-dependent) pour la plateforme actuelle.
+  En commençant par .NET Core 3.0 SDK, cet exemple crée également un [runtime-dépendant exécutable](../deploying/index.md#publish-runtime-dependent) pour la plate-forme actuelle.
 
-- Créer un [exécutable autonome](../deploying/index.md#publish-self-contained) pour le projet dans le répertoire actif, pour un Runtime spécifique :
+- Créez un [exécutable autonome](../deploying/index.md#publish-self-contained) pour le projet dans l’annuaire actuel, pour une durée de course spécifique :
 
   ```dotnetcli
   dotnet publish --runtime osx.10.11-x64
   ```
 
-  Le RID doit se trouver dans le fichier projet.
+  Le RID doit être dans le dossier du projet.
 
-- Créez un [exécutable dépendant du runtime](../deploying/index.md#publish-runtime-dependent) pour le projet dans le répertoire actif, pour une plateforme spécifique :
+- Créez un [runtime-dépendant exécutable](../deploying/index.md#publish-runtime-dependent) pour le projet dans l’annuaire actuel, pour une plate-forme spécifique :
 
   ```dotnetcli
   dotnet publish --runtime osx.10.11-x64 --self-contained false
   ```
 
-  Le RID doit se trouver dans le fichier projet. Cet exemple s’applique au kit de développement logiciel (SDK) .NET Core 3,0 et versions ultérieures.
+  Le RID doit être dans le dossier du projet. Cet exemple s’applique à .NET Core 3.0 SDK et aux versions ultérieures.
 
-- Publiez le projet dans le répertoire actif, pour un Runtime spécifique et une version cible du .NET Framework :
+- Publier le projet dans l’annuaire actuel, pour un cadre spécifique de temps d’exécution et de cible :
 
   ```dotnetcli
   dotnet publish --framework netcoreapp3.1 --runtime osx.10.11-x64
   ```
 
-- Publier le fichier projet spécifié :
+- Publier le fichier de projet spécifié :
 
   ```dotnetcli
   dotnet publish ~/projects/app1/app1.csproj
   ```
 
-- Publier l’application actuelle, mais ne pas restaurer les références entre projets (P2P), uniquement le projet racine pendant l’opération de restauration :
+- Publiez l’application actuelle mais ne restaurez pas les références du projet au projet (P2P), juste le projet racine pendant l’opération de restauration :
 
   ```dotnetcli
   dotnet publish --no-dependencies
@@ -164,9 +164,9 @@ La sortie de la commande `dotnet publish` est prête pour le déploiement sur un
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la publication d’applications .NET Core](../deploying/index.md)
-- [Publier des applications .NET Core avec le CLI .NET Core](../deploying/deploy-with-cli.md)
-- [Frameworks cibles](../../standard/frameworks.md)
-- [Catalogue d’identificateurs de runtime (RID)](../rid-catalog.md)
-- [Utilisation de la notaire Catalina MacOS](../install/macos-notarization-issues.md) Pour plus d’informations, consultez les ressources suivantes :
-- [Structure de répertoires d’une application publiée](/aspnet/core/hosting/directory-structure)
+- [.NET Aperçu de publication d’applications de base](../deploying/index.md)
+- [Publier des applications .NET Core avec le CLI core .NET](../deploying/deploy-with-cli.md)
+- [Cadres cibles](../../standard/frameworks.md)
+- [Catalogue Runtime IDentifier (RID)](../rid-catalog.md)
+- [Travailler avec macOS Catalina Notarization](../install/macos-notarization-issues.md) Pour plus d’informations, voir qu’il suit les ressources :
+- [Structure d’annuaire d’une application publiée](/aspnet/core/hosting/directory-structure)

@@ -6,33 +6,33 @@ ms.date: 01/21/2020
 ms.technology: dotnet-standard
 ms.assetid: 81c07080-acdf-4aef-a66d-0ab52fab2c04
 ms.openlocfilehash: af0ce454a986f22dfb00888cab6e34901930c5a9
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "77124258"
 ---
 # <a name="get-started"></a>Bien démarrer
 
-Il existe plusieurs façons de bien démarrer avec .NET. .NET étant une plateforme massive, il existe plusieurs articles dans cette documentation qui peuvent vous aider à démarrer avec .NET, chacun d’un point de vue différent.
+Il existe plusieurs façons de bien démarrer avec .NET. Parce que .NET est une plate-forme massive, il ya plusieurs articles dans cette documentation qui peut vous aider à démarrer avec .NET, chacun d’un point de vue différent.
 
 ## <a name="get-started-using-net-languages"></a>Commencer à utiliser les langages .NET
 
-* Les Articles de [ C# prise](../csharp/getting-started/index.md) en main et [ C# les didacticiels](../csharp/tutorials/index.md) vous permettent de C#commencer à utiliser de manière centralisée.
+* Les articles [de démarrage](../csharp/getting-started/index.md) et [les tutoriels CMD](../csharp/tutorials/index.md) offrent des moyens de commencer d’une manière centrée sur le C.
 
-* Les [ F# ](../fsharp/get-started/index.md) didacticiels de prise en main couvrent les trois principales façons F#d’utiliser : avec Visual Studio, Visual Studio code ou des outils en ligne de commande.
+* Les tutoriels de démarrage de [FMD](../fsharp/get-started/index.md) couvrent les trois principales façons dont vous pouvez utiliser FMD : avec Visual Studio, Visual Studio Code, ou outils de ligne de commande.
 
-* Les Articles de [prise en main Visual Basic](../visual-basic/getting-started/index.md) fournissent des guides pour l’utilisation de Visual Basic dans Visual Studio.
+* Les articles [de création de Visual Basic](../visual-basic/getting-started/index.md) fournissent des guides pour l’utilisation de Visual Basic dans Visual Studio.
 
 ## <a name="get-started-using-net-core"></a>Bien démarrer avec .NET Core
 
-* [Prise en main de .net Core](../core/get-started.md) fournit une vue d’ensemble des articles qui montrent comment prendre en main .net Core sur différents systèmes d’exploitation et utiliser différents outils.
+* [Démarrer avec .NET Core](../core/get-started.md) fournit un aperçu des articles qui montrent comment commencer avec .NET Core sur différents systèmes d’exploitation et en utilisant différents outils.
 
-* Les [didacticiels .net Core](../core/tutorials/index.md) décrivent de façon détaillée comment démarrer avec .net core à l’aide de votre système d’exploitation et des outils de votre choix.
+* Les [tutoriels .NET Core](../core/tutorials/index.md) détaillent les moyens que vous pouvez commencer avec .NET Core en utilisant votre système d’exploitation et l’outillage de choix.
 
-## <a name="get-started-using-net-standard"></a>Prise en main de .NET Standard
+## <a name="get-started-using-net-standard"></a>Commencer à utiliser .NET Standard
 
-* Pour obtenir un didacticiel d’introduction, consultez [créer une bibliothèque de .NET standard dans Visual Studio](../core/tutorials/library-with-visual-studio.md).
+* Pour un tutoriel d’introduction, voir [Construire une bibliothèque .NET Standard dans Visual Studio](../core/tutorials/library-with-visual-studio.md).
 
 ## <a name="get-started-using-net-core-on-docker"></a>Bien démarrer avec .NET Core sur Docker
 

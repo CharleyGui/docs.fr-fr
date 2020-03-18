@@ -4,12 +4,12 @@ description: Découvrez comment CTS et CLS permettent à .NET de prendre en char
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 3b1f5725-ac94-4f17-8e5f-244442438a4d
-ms.openlocfilehash: d162a736b8f7b56293fc75a445c2a80cce597768
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 8983e456b051ace434fda9f6ed9cf9028c2ec2d7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664519"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79187677"
 ---
 # <a name="common-type-system--common-language-specification"></a>Système de type commun (CTS, Common Type System) et spécification CLS (Common Language Specification)
 
@@ -17,7 +17,7 @@ Là encore, ce sont deux termes largement utilisés dans l’environnement .NET�
 
 ## <a name="common-type-system"></a>Système de type commun
 
-Pour commencer, n’oubliez pas qu’une implémentation de .NET est _indépendante du langage_. Cela ne signifie pas seulement qu’un programmeur peut écrire son code dans n’importe quel langage compilable en langage intermédiaire. Cela signifie également qu’il doit être en mesure d’interagir avec le code écrit dans d’autres langages utilisables sur une implémentation de .NET.
+Pour commencer, n’oubliez pas qu’une implémentation de .NET est _indépendante du langage_. Cela ne signifie pas seulement qu’un programmeur peut écrire son code dans n’importe quelle langue qui peut être compilée à l’IL. Cela signifie également qu’ils doivent être en mesure d’interagir avec le code écrit dans d’autres langues qui sont en mesure d’être utilisés sur une implémentation .NET.
 
 Pour que cela se fasse de manière transparente, il doit exister un moyen commun de décrire tous les types pris en charge. C’est ce que fait le système de type commun (CTS). Il a été créé pour effectuer plusieurs opérations :
 
@@ -28,7 +28,7 @@ Pour que cela se fasse de manière transparente, il doit exister un moyen commun
 
 CTS définit deux grandes sortes de types qui doivent être pris en charge : les types valeur et référence. Leur nom pointe sur leur définition.
 
-Les objets des types référence sont représentés par une référence à la valeur réelle de l’objet. Ici, une référence s’apparente à un pointeur en C/C++. Ils référencent simplement un emplacement de mémoire où se trouvent les valeurs des objets. Cela a un profond impact sur l’utilisation de ces types. Si vous attribuez un type référence à une variable et que vous passez ensuite cette variable dans une méthode, par exemple, les modifications de l’objet sont reflétées sur l’objet principal, il n’y a pas de copie.
+Les objets des types de référence sont représentés par une référence à la valeur réelle de l’objet; une référence ici est similaire à un pointeur dans C / C. Il se réfère simplement à un endroit de mémoire où les valeurs des objets sont. Cela a un profond impact sur l’utilisation de ces types. Si vous attribuez un type référence à une variable et que vous passez ensuite cette variable dans une méthode, par exemple, les modifications de l’objet sont reflétées sur l’objet principal, il n’y a pas de copie.
 
 Les types valeur sont l’opposé, c’est-à-dire que les objets sont représentés par leurs valeurs. Si vous attribuez un type valeur à une variable, vous copiez en fait une valeur de l’objet.
 
@@ -50,7 +50,7 @@ CLS est un sous-ensemble du système CTS. Cela signifie que toutes les règles d
 
 Vous pouvez consulter les documents de la section [Autres ressources](#more-resources) ci-dessous pour obtenir une vue d’ensemble de toutes les fonctionnalités de la spécification CLS.
 
-## <a name="more-resources"></a>Autres ressources
+## <a name="more-resources"></a>Plus de ressources
 
 * [Système de type commun](./base-types/common-type-system.md)
 * [CLS (Common Language Specification)](language-independence-and-language-independent-components.md)

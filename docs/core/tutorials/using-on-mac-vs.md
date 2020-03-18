@@ -3,29 +3,29 @@ title: Bien démarrer avec .NET Core à l’aide de Visual Studio pour Mac
 description: Cette rubrique vous guide lors de la création d’une application console simple à l’aide de Visual Studio pour Mac et de .NET Core.
 ms.date: 12/19/2019
 ms.openlocfilehash: 4cd7e311411bce62698e291e763227496877ea39
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75740494"
 ---
 # <a name="get-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Bien démarrer avec .NET Core sur macOS à l’aide de Visual Studio pour Mac
 
-Visual Studio pour Mac fournit un environnement de développement intégré (IDE) complet pour le développement d’applications .NET Core. Cet article vous guide tout au long de la création d’une application console simple à l’aide de Visual Studio pour Mac et de .NET Core.
+Visual Studio pour Mac fournit un environnement de développement intégré (IDE) complet pour le développement d’applications .NET Core. Cet article vous guide à travers la construction d’une application de console simple en utilisant Visual Studio pour Mac et .NET Core.
 
 > [!NOTE]
 > Vos commentaires sont extrêmement précieux. Il existe deux moyens de transmettre vos commentaires à l’équipe de développement sur Visual Studio pour Mac :
 >
-> * Dans Visual Studio pour Mac, sélectionnez **Aide** > **Signaler un problème** dans le menu ou **Signaler un problème** sur l’écran d’accueil, ce qui ouvre une fenêtre permettant de soumettre un rapport de bogue. Vous pouvez effectuer le suivi de vos commentaires dans le portail de la [communauté des développeurs](https://developercommunity.visualstudio.com/spaces/8/index.html).
-> * Pour soumettre une suggestion, sélectionnez **Aide** > **Faire une suggestion** dans le menu ou **Faire une suggestion** sur l’écran d’accueil, ce qui vous amène à la [page web de la communauté des développeurs Visual Studio pour Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
+> * Dans Visual Studio for Mac, sélectionnez **Help** > **Report a Problem** du menu ou **signalez un problème** à partir de l’écran De bienvenue, qui ouvrira une fenêtre pour le dépôt d’un rapport de bogue. Vous pouvez effectuer le suivi de vos commentaires dans le portail de la [communauté des développeurs](https://developercommunity.visualstudio.com/spaces/8/index.html).
+> * Pour faire une suggestion, sélectionnez **Aide** > **Fournir une suggestion** dans le menu ou fournir une **suggestion** à partir de l’écran de bienvenue, qui vous mènera au studio visuel pour Mac Developer Community [page Web](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 
-Consultez l’article sur les [dépendances et la configuration requise pour .net Core](../install/dependencies.md?pivots=os-macos) .
+Voir l’article [.NET Core dependencies and requirements.](../install/dependencies.md?pivots=os-macos)
 
-Consultez l’article sur la [prise en charge de .net Core](/visualstudio/mac/net-core-support) pour vous assurer que vous utilisez une version prise en charge de .net core.
+Consultez l’article [.NET Core Support](/visualstudio/mac/net-core-support) pour vous assurer que vous utilisez une version prise en charge de .NET Core.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 Si vous avez déjà installé les composants requis et Visual Studio pour Mac, ignorez cette section et passez à la [création d’un projet](#creating-a-project). Suivez ces étapes pour installer les composants requis et Visual Studio pour Mac :
 
@@ -33,7 +33,7 @@ Téléchargez le [programme d’installation de Visual Studio pour Mac](https://
 
 ## <a name="creating-a-project"></a>Création d'un projet
 
-1. Sélectionnez **nouveau** dans la fenêtre démarrer.
+1. Sélectionnez **Nouveau** sur la fenêtre de départ.
 
    ![Bouton Nouveau sur l’écran Démarrer de Visual Studio pour Mac](./media/using-on-mac-vs/visual-studio-mac-new-project.png)
 
@@ -51,7 +51,7 @@ Téléchargez le [programme d’installation de Visual Studio pour Mac](https://
 
    ![Fenêtre principale avec le fichier Program.cs ouvert](./media/using-on-mac-vs/visual-studio-mac-editor.png)
 
-## <a name="run-the-application"></a>Exécuter l'application
+## <a name="run-the-application"></a>Exécuter l’application
 
 Exécutez l’application en mode débogage à l’aide de ⌘ ↵ (commande + entrée) ou en mode mise en production en utilisant ⌥ ⌘ ↵ (option + commande + entrée).
 

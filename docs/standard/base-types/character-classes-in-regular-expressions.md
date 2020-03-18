@@ -13,39 +13,39 @@ helpviewer_keywords:
 - .NET Framework regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
 ms.openlocfilehash: 07bd63c90bc8d78c9831e2007695a232a85111b1
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78159336"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Classes de caractères dans les expressions régulières
 
 Une classe de caractères définit un jeu de caractères, chacun d'entre eux pouvant apparaître dans une chaîne d'entrée pour aboutir à une correspondance. Le langage d’expression régulière dans .NET prend en charge les classes de caractères suivantes :  
   
-- Groupes de caractères positifs. Un caractère de la chaîne d'entrée doit correspondre à l'un des jeux de caractères spécifié. Pour plus d’informations, consultez [Groupe de caractères positif](#PositiveGroup).  
+- Groupes de caractères positifs. Un caractère de la chaîne d'entrée doit correspondre à l'un des jeux de caractères spécifié. Pour plus d’informations, voir [Positive Character Group](#PositiveGroup).  
   
-- Groupes de caractères négatifs. Un caractère de la chaîne d'entrée ne doit pas correspondre à l'un des jeux de caractères spécifié. Pour plus d’informations, consultez [Groupe de caractères négatif](#NegativeGroup).  
+- Groupes de caractères négatifs. Un caractère de la chaîne d'entrée ne doit pas correspondre à l'un des jeux de caractères spécifié. Pour plus d’informations, voir [Negative Character Group](#NegativeGroup).  
   
-- Tout caractère. Le caractère `.` (point) dans une expression régulière est un caractère générique qui correspond à n'importe quel caractère sauf `\n`. Pour plus d’informations, consultez [N’importe quel caractère](#AnyCharacter).  
+- Tout caractère. Le caractère `.` (point) dans une expression régulière est un caractère générique qui correspond à n'importe quel caractère sauf `\n`. Pour plus d’informations, voir [n’importe quel personnage](#AnyCharacter).  
   
-- Catégorie Unicode générale ou bloc nommé. Un caractère de la chaîne d'entrée doit être membre d'une catégorie Unicode particulière ou doit figurer dans une plage contiguë de caractères Unicode pour aboutir à une correspondance. Pour plus d’informations, consultez [Catégorie Unicode ou bloc Unicode](#CategoryOrBlock).  
+- Catégorie Unicode générale ou bloc nommé. Un caractère de la chaîne d'entrée doit être membre d'une catégorie Unicode particulière ou doit figurer dans une plage contiguë de caractères Unicode pour aboutir à une correspondance. Pour plus d’informations, voir [Unicode Category ou Unicode Block](#CategoryOrBlock).  
   
-- Catégorie Unicode générale négative ou bloc nommé. Un caractère de la chaîne d'entrée ne doit pas être membre d'une catégorie Unicode particulière ou ne doit pas figurer dans une plage contiguë de caractères Unicode pour aboutir à une correspondance. Pour plus d’informations, consultez [Catégorie ou bloc Unicode négatifs](#NegativeCategoryOrBlock).  
+- Catégorie Unicode générale négative ou bloc nommé. Un caractère de la chaîne d'entrée ne doit pas être membre d'une catégorie Unicode particulière ou ne doit pas figurer dans une plage contiguë de caractères Unicode pour aboutir à une correspondance. Pour plus d’informations, voir [Negative Unicode Category ou Unicode Block](#NegativeCategoryOrBlock).  
   
-- Caractère de mot. Un caractère de la chaîne d'entrée peut appartenir à l'une des catégories Unicode appropriées aux caractères contenus dans les mots. Pour plus d’informations, consultez [Caractère de mot](#WordCharacter).  
+- Caractère de mot. Un caractère de la chaîne d'entrée peut appartenir à l'une des catégories Unicode appropriées aux caractères contenus dans les mots. Pour plus d’informations, voir [Word Character](#WordCharacter).  
   
-- Caractère autre qu'un caractère de mot. Un caractère de la chaîne d'entrée peut appartenir à n'importe quelle catégorie Unicode qui n'est pas un caractère de mot. Pour plus d’informations, consultez [Caractère autre qu’un caractère de mot](#NonWordCharacter).  
+- Caractère autre qu'un caractère de mot. Un caractère de la chaîne d'entrée peut appartenir à n'importe quelle catégorie Unicode qui n'est pas un caractère de mot. Pour plus d’informations, voir [Caractère Non-Word](#NonWordCharacter).  
   
-- Espace blanc. Un caractère de la chaîne d'entrée peut être n'importe quel caractère Unicode de séparation, ainsi que n'importe quel nombre de caractères de contrôle. Pour plus d’informations, consultez [Espace blanc](#WhitespaceCharacter).  
+- Espace blanc. Un caractère de la chaîne d'entrée peut être n'importe quel caractère Unicode de séparation, ainsi que n'importe quel nombre de caractères de contrôle. Pour plus d’informations, voir [Caractère Espace Blanc](#WhitespaceCharacter).  
   
-- Caractère autre qu'un espace blanc. Un caractère de la chaîne d'entrée peut être n'importe quel caractère qui n'est pas un espace blanc. Pour plus d’informations, consultez [Caractère autre qu’un espace blanc](#NonWhitespaceCharacter).  
+- Caractère autre qu'un espace blanc. Un caractère de la chaîne d'entrée peut être n'importe quel caractère qui n'est pas un espace blanc. Pour plus d’informations, voir [Caractère Non-White-Space](#NonWhitespaceCharacter).  
   
-- Chiffre décimal. Un caractère de la chaîne d'entrée peut être n'importe quel nombre de caractères classifiés en tant que chiffres décimaux Unicode. Pour plus d’informations, consultez [Chiffre décimal](#DigitCharacter).  
+- Chiffre décimal. Un caractère de la chaîne d'entrée peut être n'importe quel nombre de caractères classifiés en tant que chiffres décimaux Unicode. Pour plus d’informations, voir [Decimal Digit Character](#DigitCharacter).  
   
-- Chiffre non décimal. Un caractère de la chaîne d'entrée peut correspondre à autre chose qu'un chiffre décimal Unicode. Pour plus d’informations, consultez [Chiffre décimal](#NonDigitCharacter).  
+- Chiffre non décimal. Un caractère de la chaîne d'entrée peut correspondre à autre chose qu'un chiffre décimal Unicode. Pour plus d’informations, voir [Decimal Digit Character](#NonDigitCharacter).  
   
- .NET prend en charge les expressions de soustraction de classe de caractères, ce qui vous permet de définir un jeu de caractères comme résultat de l’exclusion d’une classe de caractères d’une autre classe de caractères. Pour plus d’informations, consultez [Soustraction de classe de caractères](#CharacterClassSubtraction).  
+ .NET prend en charge les expressions de soustraction de classe de caractères, ce qui vous permet de définir un jeu de caractères comme résultat de l’exclusion d’une classe de caractères d’une autre classe de caractères. Pour plus d’informations, voir [Soustraction de classe de caractère](#CharacterClassSubtraction).  
   
 > [!NOTE]
 > Les classes de caractères qui font correspondre les caractères par catégorie, comme [\w](#WordCharacter) pour faire correspondre les caractères alphabétiques, ou [\p{}](#CategoryOrBlock) pour les faire correspondre à une catégorie Unicode, s’appuient sur la classe <xref:System.Globalization.CharUnicodeInfo> pour fournir des informations sur les catégories de caractères.  À compter de .NET Framework 4.6.2, les catégories de caractères sont basées sur la [norme Unicode version 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). De .NET Framework 4 à .NET Framework 4.6.1, elles sont basées sur la [norme Unicode version 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
@@ -58,13 +58,13 @@ Une classe de caractères définit un jeu de caractères, chacun d'entre eux pou
 
 `[*character_group*]`
 
- où *groupe_caractères* est la liste des différents caractères pouvant apparaître dans la chaîne d’entrée pour qu’une correspondance soit établie. *groupe_caractères* peut être constitué de n’importe quelle combinaison d’un ou de plusieurs caractères littéraux, de [caractères d’échappement](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md) ou de classes de caractères.  
+ où *groupe_caractères* est la liste des différents caractères pouvant apparaître dans la chaîne d’entrée pour qu’une correspondance soit établie. *character_group* peut consister en n’importe quelle combinaison d’un ou plusieurs personnages littérals, [personnages d’évasion,](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)ou des classes de personnages.  
   
  La syntaxe de la spécification d'une plage de caractères est comme suit :  
   
 `[firstCharacter-lastCharacter]`  
   
- où *premierCaractère* est le caractère qui commence la plage et *dernierCaractère* est celui qui la termine. Une plage de caractères est une série contiguë de caractères définie par la spécification du premier caractère de la série, d'un trait d'union (-), puis du dernier caractère de la série. Deux caractères sont contigus s'ils présentent des points de code Unicode adjacents. *premierCaractère* doit être le caractère avec le code de caractère le plus faible et *dernierCaractère* doit être le caractère avec le code de caractère le plus élevé.
+ où *firstCharacter* est le personnage qui commence la gamme et *lastCharacter* est le personnage qui termine la gamme. Une plage de caractères est une série contiguë de caractères définie par la spécification du premier caractère de la série, d'un trait d'union (-), puis du dernier caractère de la série. Deux caractères sont contigus s'ils présentent des points de code Unicode adjacents. *premierCaractère* doit être le caractère avec le code de caractère le plus faible et *dernierCaractère* doit être le caractère avec le code de caractère le plus élevé.
 
 > [!NOTE]
 > Étant donné qu’un groupe de caractères positif peut inclure à la fois un jeu de caractères et une plage de caractères, un trait d’union (`-`) est toujours interprété comme le séparateur de plage, sauf s’il s’agit du premier ou dernier caractère du groupe.
@@ -87,7 +87,7 @@ Quelques modèles d'expressions régulières courants qui contiennent des classe
 |Modèle|Description|  
 |-------------|-----------------|  
 |`gr`|Mettre en correspondance les caractères littéraux « gr ».|  
-|`[ae]`|Mettre en correspondance un « a » ou un « e ».|  
+|`[ae]`|Mettre en correspondance un « a » ou un « e ».|  
 |`y\s`|Mettre en correspondance le caractère littéral « y » suivi d'un espace blanc.|  
 |`\S+?`|Mettre en correspondance un ou plusieurs caractères autres que des espaces blancs, mais le moins possible.|  
 |`[\s\p{P}]`|Mettre en correspondance un espace blanc ou un signe de ponctuation.|  
@@ -114,23 +114,23 @@ La syntaxe de la spécification d'une liste de différents caractères est comme
 
 `[*^character_group*]`
 
- où *groupe_caractères* est la liste des différents caractères qui ne peuvent pas apparaître dans la chaîne d’entrée pour qu’une correspondance soit établie. *groupe_caractères* peut être constitué de n’importe quelle combinaison d’un ou de plusieurs caractères littéraux, de [caractères d’échappement](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md) ou de classes de caractères.  
+ où *groupe_caractères* est la liste des différents caractères qui ne peuvent pas apparaître dans la chaîne d’entrée pour qu’une correspondance soit établie. *character_group* peut consister en n’importe quelle combinaison d’un ou plusieurs personnages littérals, [personnages d’évasion,](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)ou des classes de personnages.  
   
  La syntaxe de la spécification d'une plage de caractères est comme suit :  
 
 `[^*firstCharacter*-*lastCharacter*]`
 
-où *premierCaractère* est le caractère qui commence la plage et *dernierCaractère* est celui qui la termine. Une plage de caractères est une série contiguë de caractères définie par la spécification du premier caractère de la série, d'un trait d'union (-), puis du dernier caractère de la série. Deux caractères sont contigus s'ils présentent des points de code Unicode adjacents. *premierCaractère* doit être le caractère avec le code de caractère le plus faible et *dernierCaractère* doit être le caractère avec le code de caractère le plus élevé.
+où *firstCharacter* est le personnage qui commence la gamme et *lastCharacter* est le personnage qui termine la gamme. Une plage de caractères est une série contiguë de caractères définie par la spécification du premier caractère de la série, d'un trait d'union (-), puis du dernier caractère de la série. Deux caractères sont contigus s'ils présentent des points de code Unicode adjacents. *premierCaractère* doit être le caractère avec le code de caractère le plus faible et *dernierCaractère* doit être le caractère avec le code de caractère le plus élevé.
 
 > [!NOTE]
 > Étant donné qu’un groupe de caractères négatif peut inclure à la fois un jeu de caractères et une plage de caractères, un trait d’union (`-`) est toujours interprété comme le séparateur de plage, sauf s’il s’agit du premier ou dernier caractère du groupe.
   
  Deux ou plusieurs plages de caractères peuvent être concaténées. Par exemple, pour spécifier la plage de chiffres décimaux de « 0 » à « 9 », la plage de lettres minuscules de « a » à « f » et la plage de lettres majuscules de « A » à « F », utilisez `[0-9a-fA-F]`.  
   
- Le caractère de signe insertion de début (`^`) dans un groupe de caractères négatif est obligatoire et indique que le groupe de caractères est un groupe de caractères négatif et non un groupe de caractères positif.  
+ Le personnage principal`^`caret ( ) dans un groupe de caractère négatif est obligatoire et indique que le groupe de caractère est un groupe de caractère négatif au lieu d’un groupe de caractère positif.  
   
 > [!IMPORTANT]
-> Un groupe de caractères négatifs d’un plus grand modèle d’expressions régulières n’est pas une assertion de largeur nulle. Autrement dit, après avoir évalué le groupe de caractères négatif, le moteur des expressions régulières avance d'un caractère dans la chaîne d'entrée.  
+> Un groupe de caractères négatifs d'un plus grand modèle d'expressions régulières n'est pas une assertion de largeur nulle. Autrement dit, après avoir évalué le groupe de caractères négatif, le moteur des expressions régulières avance d'un caractère dans la chaîne d'entrée.  
   
  Quelques modèles d'expressions régulières courants qui contiennent des groupes de caractères négatifs apparaissent dans le tableau suivant.  
   
@@ -158,7 +158,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="any-character-"></a>N’importe quel caractère : .  
  Le point (.) correspond à n'importe quel caractère à l'exception de `\n` (caractère de saut de ligne, \u000A), avec les deux qualifications suivantes :  
   
-- Si un modèle d'expression régulière est modifié par l'option <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> ou si la partie du modèle qui contient la classe de caractères `.` est modifiée par l'option `s`, `.` correspond à n'importe quel caractère. Pour plus d'informations, consultez [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
+- Si un modèle d'expression régulière est modifié par l'option <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> ou si la partie du modèle qui contient la classe de caractères `.` est modifiée par l'option `s`, `.` correspond à n'importe quel caractère. Pour plus d’informations, consultez [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
   
      L'exemple suivant illustre le comportement différent de la classe de caractères `.` par défaut et avec l'option <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType>. L'expression régulière `^.+` commence au début de la chaîne et correspond à tous les caractères. Par défaut, la correspondance se termine à la fin de la première ligne ; le modèle d'expression régulière correspond au retour chariot, à `\r` ou à \u000D, mais il ne correspond pas à `\n`. Étant donné que l'option <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> interprète la chaîne d'entrée entière comme une ligne unique, il correspond à chaque caractère de la chaîne d'entrée, notamment `\n`.  
   
@@ -174,7 +174,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
      [!code-vb[Conceptual.RegEx.Language.CharacterClasses#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/any1.vb#4)]  
   
 > [!NOTE]
-> Étant donné qu'il correspond à n'importe quel caractère, l'élément de langage `.` est souvent utilisé avec un quantificateur limitatif si un modèle d'expression régulière essaie de correspondre plusieurs fois à n'importe quel caractère. Pour plus d'informations, consultez [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
+> Étant donné qu'il correspond à n'importe quel caractère, l'élément de langage `.` est souvent utilisé avec un quantificateur limitatif si un modèle d'expression régulière essaie de correspondre plusieurs fois à n'importe quel caractère. Pour plus d’informations, consultez [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
   
 <a name="CategoryOrBlock"></a>
 ## <a name="unicode-category-or-unicode-block-p"></a>Catégorie Unicode ou bloc Unicode : \p{}  
@@ -182,11 +182,11 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
   
  La construction d'expression régulière  
   
- *nom* de l' `\p{` `}`  
+ `\p{`*nom*`}`  
   
- correspond à n’importe quel caractère qui appartient à une catégorie Unicode générale ou à un bloc nommé, où *nom* est l’abréviation de la catégorie ou le nom du bloc nommé. Pour obtenir la liste des abréviations des catégories, consultez la section [Catégories générales Unicode prises en charge](#SupportedUnicodeGeneralCategories) plus loin dans cette rubrique. Pour obtenir la liste des blocs nommés, consultez la section [Blocs nommés pris en charge](#SupportedNamedBlocks) plus loin dans cette rubrique.  
+ correspond à tout personnage appartenant à une catégorie générale Unicode ou à un bloc nommé, où le *nom* est l’abréviation de catégorie ou le nom de bloc nommé. Pour une liste d’abréviations de catégorie, consultez la section [Catégories générales Unicode soutenue plus](#SupportedUnicodeGeneralCategories) tard dans ce sujet. Pour une liste de blocs nommés, voir la section [Blocs nommés pris](#SupportedNamedBlocks) en charge plus tard dans ce sujet.  
   
- L’exemple suivant utilise la construction `\p{`*nom*`}` pour mettre en correspondance une catégorie Unicode générale (dans ce cas, la catégorie `Pd` ou Punctuation, Dash) et un bloc nommé (les blocs nommés `IsGreek` et `IsBasicLatin`).  
+ L’exemple suivant `\p{`utilise la construction de *nom* `}` pour correspondre à `Pd`la fois à une catégorie générale Unicode (dans ce cas, la catégorie , ou ponctuation, Dash) et un bloc nommé (les `IsGreek` blocs et `IsBasicLatin` nommés).  
   
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/category1.cs#6)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/category1.vb#6)]  
@@ -211,11 +211,11 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
   
  La construction d'expression régulière  
   
- *nom* de l' `\P{` `}`  
+ `\P{`*nom*`}`  
   
- correspond à n'importe quel caractère qui n'appartient pas à une catégorie générale Unicode ou à un bloc nommé, où *nom* est l'abréviation de la catégorie ou le nom du bloc nommé. Pour obtenir la liste des abréviations des catégories, consultez la section [Catégories générales Unicode prises en charge](#SupportedUnicodeGeneralCategories) plus loin dans cette rubrique. Pour obtenir la liste des blocs nommés, consultez la section [Blocs nommés pris en charge](#SupportedNamedBlocks) plus loin dans cette rubrique.  
+ correspond à n'importe quel caractère qui n'appartient pas à une catégorie générale Unicode ou à un bloc nommé, où *nom* est l'abréviation de la catégorie ou le nom du bloc nommé. Pour une liste d’abréviations de catégorie, consultez la section [Catégories générales Unicode soutenue plus](#SupportedUnicodeGeneralCategories) tard dans ce sujet. Pour une liste de blocs nommés, voir la section [Blocs nommés pris](#SupportedNamedBlocks) en charge plus tard dans ce sujet.  
   
- L'exemple suivant utilise la construction `\P{`*nom*`}` pour supprimer tous les symboles monétaires (dans ce cas, la catégorie `Sc` ou Symbol, Currency) des chaînes numériques.  
+ L’exemple suivant `\P{`utilise la construction de *nom* `}` pour `Sc`supprimer tous les symboles de devise (dans ce cas, la catégorie , ou Symbole, Monnaie) des chaînes numériques.  
   
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/notcategory1.cs#7)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/notcategory1.vb#7)]  
@@ -226,21 +226,21 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="word-character-w"></a>Caractère de mot : \w  
  `\w` correspond à n'importe quel caractère alphabétique. Un caractère de mot est un membre d'une des catégories Unicode répertoriées dans le tableau suivant.  
   
-|Catégorie|Description|  
+|Category|Description|  
 |--------------|-----------------|  
 |Ll|Letter, Lowercase|  
 |Lu|Letter, Uppercase|  
 |Lt|Letter, Titlecase|  
-|Em|Letter, Other|  
+|Lo|Letter, Other|  
 |Lm|Letter, Modifier|  
 |Mn|Mark, Nonspacing|  
 |Nd|Number, Decimal Digit|  
 |Pc|Punctuation, Connector. Cette catégorie inclut dix caractères dont le plus souvent utilisé est le caractère LOWLINE (_), u+005F.|  
   
- Si un comportement conforme à ECMAScript est spécifié, `\w` est équivalent à `[a-zA-Z_0-9]`. Pour plus d’informations sur les expressions régulières ECMAScript, consultez la section « Comportement de correspondance ECMAScript » dans [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
+ Si un comportement conforme à ECMAScript est spécifié, `\w` est équivalent à `[a-zA-Z_0-9]`. Pour plus d’informations sur les expressions régulières d’ECMAScript, consultez la section « EcMAScript Matching Behavior » dans [Les options d’expression régulière](../../../docs/standard/base-types/regular-expression-options.md).  
   
 > [!NOTE]
-> Étant donné qu'il correspond à n'importe quel caractère alphabétique, l'élément de langage `\w` est souvent utilisé avec un quantificateur limitatif si un modèle d'expression régulière essaie de correspondre plusieurs fois à n'importe quel caractère alphabétique, suivi par un caractère alphabétique spécifique. Pour plus d'informations, consultez [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
+> Étant donné qu'il correspond à n'importe quel caractère alphabétique, l'élément de langage `\w` est souvent utilisé avec un quantificateur limitatif si un modèle d'expression régulière essaie de correspondre plusieurs fois à n'importe quel caractère alphabétique, suivi par un caractère alphabétique spécifique. Pour plus d’informations, consultez [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
   
  L'exemple suivant utilise l'élément de langage `\w` pour le faire corresponde à des caractères en double dans un mot. L'exemple définit un modèle d'expression régulière, `(\w)\1`, qui peut être interprété comme suit.  
   
@@ -260,21 +260,21 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
   
  En d’autres termes, il correspond à n’importe quel caractère à l’exception de ceux inclus dans les catégories Unicode répertoriées dans le tableau suivant.  
   
-|Catégorie|Description|  
+|Category|Description|  
 |--------------|-----------------|  
 |Ll|Letter, Lowercase|  
 |Lu|Letter, Uppercase|  
 |Lt|Letter, Titlecase|  
-|Em|Letter, Other|  
+|Lo|Letter, Other|  
 |Lm|Letter, Modifier|  
 |Mn|Mark, Nonspacing|  
 |Nd|Number, Decimal Digit|  
 |Pc|Punctuation, Connector. Cette catégorie inclut dix caractères dont le plus souvent utilisé est le caractère LOWLINE (_), u+005F.|  
   
- Si un comportement conforme à ECMAScript est spécifié, `\W` est équivalent à `[^a-zA-Z_0-9]`. Pour plus d’informations sur les expressions régulières ECMAScript, consultez la section « Comportement de correspondance ECMAScript » dans [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
+ Si un comportement conforme à ECMAScript est spécifié, `\W` est équivalent à `[^a-zA-Z_0-9]`. Pour plus d’informations sur les expressions régulières d’ECMAScript, consultez la section « EcMAScript Matching Behavior » dans [Les options d’expression régulière](../../../docs/standard/base-types/regular-expression-options.md).  
   
 > [!NOTE]
-> Étant donné qu'il correspond à n'importe quel caractère non alphabétique, l'élément de langage `\W` est souvent utilisé avec un quantificateur limitatif si un modèle d'expression régulière essaie de correspondre plusieurs fois à n'importe quel caractère non alphabétique suivi d'un caractère non alphabétique spécifique. Pour plus d'informations, consultez [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
+> Étant donné qu'il correspond à n'importe quel caractère non alphabétique, l'élément de langage `\W` est souvent utilisé avec un quantificateur limitatif si un modèle d'expression régulière essaie de correspondre plusieurs fois à n'importe quel caractère non alphabétique suivi d'un caractère non alphabétique spécifique. Pour plus d’informations, consultez [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
   
  L'exemple suivant illustre la classe de caractères `\W`.  Il définit un modèle d'expression régulière, `\b(\w+)(\W){1,2}`, qui correspond à un mot suivi d'un ou deux caractères non alphabétiques, comme un espace ou un signe de ponctuation. L'expression régulière est interprétée comme indiqué dans le tableau suivant.  
   
@@ -293,7 +293,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="whitespace-character-s"></a>Espace : \s  
  `\s` correspond à n'importe quel espace. Il est équivalent aux séquences d'échappement et catégories Unicode répertoriées dans le tableau suivant.  
   
-|Catégorie|Description|  
+|Category|Description|  
 |--------------|-----------------|  
 |`\f`|Saut de page, \u000C.|  
 |`\n`|Saut de ligne, \u000A.|  
@@ -303,7 +303,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 |`\x85`|Points de suspension ou caractère À LA LIGNE (NEL) (…), \u0085.|  
 |`\p{Z}`|Correspond à n'importe quel caractère de séparation.|  
   
- Si un comportement conforme à ECMAScript est spécifié, `\s` est équivalent à `[ \f\n\r\t\v]`. Pour plus d’informations sur les expressions régulières ECMAScript, consultez la section « Comportement de correspondance ECMAScript » dans [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
+ Si un comportement conforme à ECMAScript est spécifié, `\s` est équivalent à `[ \f\n\r\t\v]`. Pour plus d’informations sur les expressions régulières d’ECMAScript, consultez la section « EcMAScript Matching Behavior » dans [Les options d’expression régulière](../../../docs/standard/base-types/regular-expression-options.md).  
   
  L'exemple suivant illustre la classe de caractères `\s`. Il définit un modèle d'expression régulière, `\b\w+(e)?s(\s|$)`, qui correspond à un mot se terminant par "s" ou par "es", suivi d'un espace ou de la fin de la chaîne d'entrée. L'expression régulière est interprétée comme indiqué dans le tableau suivant.  
   
@@ -322,7 +322,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="non-whitespace-character-s"></a>Caractère autre qu’un espace : \S  
  `\S` correspond à tout caractère autre qu'un espace. Il est équivalent au modèle d'expression régulière `[^\f\n\r\t\v\x85\p{Z}]` ou à l'opposé du modèle d'expression régulière qui est équivalent à `\s`, qui met en correspondance des espaces. Pour plus d'informations, consultez [Espace blanc : \s](#WhitespaceCharacter).  
   
- Si un comportement conforme à ECMAScript est spécifié, `\S` est équivalent à `[^ \f\n\r\t\v]`. Pour plus d’informations sur les expressions régulières ECMAScript, consultez la section « Comportement de correspondance ECMAScript » dans [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
+ Si un comportement conforme à ECMAScript est spécifié, `\S` est équivalent à `[^ \f\n\r\t\v]`. Pour plus d’informations sur les expressions régulières d’ECMAScript, consultez la section « EcMAScript Matching Behavior » dans [Les options d’expression régulière](../../../docs/standard/base-types/regular-expression-options.md).  
   
  L'exemple suivant illustre l'élément de langage `\S`. Le modèle d'expression régulière `\b(\S+)\s?` met en correspondance des chaînes délimitées par des espaces blancs. Le deuxième élément de l'objet <xref:System.Text.RegularExpressions.GroupCollection> de la correspondance contient la chaîne correspondante. L'expression régulière peut être interprétée comme indiqué dans le tableau suivant.  
   
@@ -339,7 +339,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="decimal-digit-character-d"></a>Caractère numérique décimal : \d  
  `\d` correspond à n'importe quel chiffre décimal. Il est équivalent au modèle d'expression régulière `\p{Nd}`, qui inclut les chiffres décimaux standard de 0 à 9, ainsi que les chiffres décimaux de plusieurs autres jeux de caractères.  
   
- Si un comportement conforme à ECMAScript est spécifié, `\d` est équivalent à `[0-9]`. Pour plus d’informations sur les expressions régulières ECMAScript, consultez la section « Comportement de correspondance ECMAScript » dans [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
+ Si un comportement conforme à ECMAScript est spécifié, `\d` est équivalent à `[0-9]`. Pour plus d’informations sur les expressions régulières d’ECMAScript, consultez la section « EcMAScript Matching Behavior » dans [Les options d’expression régulière](../../../docs/standard/base-types/regular-expression-options.md).  
   
  L'exemple suivant illustre l'élément de langage `\d`. Il teste si une chaîne d'entrée représente un numéro de téléphone valide aux États-Unis et au Canada. Le modèle d'expression régulière `^(\(?\d{3}\)?[\s-])?\d{3}-\d{4}$` est défini comme indiqué dans le tableau suivant.  
   
@@ -361,7 +361,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="non-digit-character-d"></a>Caractère autre qu’un chiffre : \D  
  `\D` correspond à n'importe quel caractère autre qu'un chiffre. Il est équivalent au modèle d'expression régulière `\P{Nd}`.  
   
- Si un comportement conforme à ECMAScript est spécifié, `\D` est équivalent à `[^0-9]`. Pour plus d’informations sur les expressions régulières ECMAScript, consultez la section « Comportement de correspondance ECMAScript » dans [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
+ Si un comportement conforme à ECMAScript est spécifié, `\D` est équivalent à `[^0-9]`. Pour plus d’informations sur les expressions régulières d’ECMAScript, consultez la section « EcMAScript Matching Behavior » dans [Les options d’expression régulière](../../../docs/standard/base-types/regular-expression-options.md).  
   
  L'exemple suivant illustre l'élément de langage \D. Il teste si une chaîne telle qu'un numéro de référence se compose de la combinaison appropriée de caractères décimaux et autres que des décimaux. Le modèle d'expression régulière `^\D\d{1,5}\D*$` est défini comme indiqué dans le tableau suivant.  
   
@@ -380,7 +380,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="supported-unicode-general-categories"></a>Catégories générales Unicode prises en charge  
  La norme Unicode définit les catégories générales répertoriées dans le tableau suivant. Pour plus d’informations, consultez les sous-rubriques « Format de fichier UCD » et « Valeurs des catégories générales » dans la [Base de données de caractères Unicode](https://www.unicode.org/reports/tr44/).  
   
-|Catégorie|Description|  
+|Category|Description|  
 |--------------|-----------------|  
 |`Lu`|Letter, Uppercase|  
 |`Ll`|Letter, Lowercase|  
@@ -544,9 +544,9 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
   
  Une expression de soustraction de classe de caractères a la forme suivante :  
   
- `[` *base_group* `-[` *excluded_group* `]]`  
+ `[``-[` *base_group excluded_group* *base_group*`]]`  
   
- Les crochets (`[]`) et le trait d'union (`-`) sont obligatoires. Le *groupe_base* est un [groupe de caractères positif](#PositiveGroup) ou [négatif](#NegativeGroup). Le composant *groupe_exclu* est un autre groupe de caractères positif ou négatif, ou une autre expression de soustraction de classe de caractères (autrement dit, vous pouvez imbriquer des expressions de soustraction de classe de caractères).  
+ Les crochets (`[]`) et le trait d'union (`-`) sont obligatoires. Le *base_group* est un [groupe de caractère positif](#PositiveGroup) ou un groupe de caractère [négatif](#NegativeGroup). Le composant *groupe_exclu* est un autre groupe de caractères positif ou négatif, ou une autre expression de soustraction de classe de caractères (autrement dit, vous pouvez imbriquer des expressions de soustraction de classe de caractères).  
   
  Par exemple, supposons que vous disposiez d'un groupe de base composé de la plage de caractères « a » à « z ». Pour définir le jeu de caractères composé du groupe de base, à l'exception du caractère « m », utilisez `[a-z-[m]]`. Pour définir le jeu de caractères composé du groupe de base, à l'exception du jeu de caractères « d », « j » et « p », utilisez `[a-z-[djp]]`. Pour définir le jeu de caractères composé du groupe de base, à l'exception de la plage de caractères allant de « m » à « p », utilisez `[a-z-[m-p]]`.  
   
@@ -570,5 +570,5 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Char.GetUnicodeCategory%2A>
-- [Langage des expressions régulières - Aide-mémoire](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [Langage d’expression régulière - Référence rapide](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
 - [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md)

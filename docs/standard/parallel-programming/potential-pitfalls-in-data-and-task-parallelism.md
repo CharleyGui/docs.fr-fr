@@ -9,10 +9,10 @@ helpviewer_keywords:
 - parallel programming, pitfalls
 ms.assetid: 1e357177-e699-4b8f-9e49-56d3513ed128
 ms.openlocfilehash: ff6ac9e8c41ee203ae72e1b28c088f462ddf6a54
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73140023"
 ---
 # <a name="potential-pitfalls-in-data-and-task-parallelism"></a>Pièges potentiels dans le parallélisme des données et des tâches
@@ -53,10 +53,10 @@ Dans de nombreux cas, <xref:System.Threading.Tasks.Parallel.For%2A?displayProper
  Certaines technologies, par exemple, les composants STA (Single-Threaded Apartment), Windows Forms et Windows Presentation Foundation (WPF) imposent des restrictions d’affinité de thread qui requièrent l’exécution de code sur un thread spécifique. Par exemple, dans Windows Forms et WPF, un contrôle est uniquement accessible sur le thread sur lequel il a été créé. Cela signifie, par exemple, que vous ne pouvez pas mettre à jour un contrôle de liste à partir d’une boucle parallèle, sauf si vous configurez le planificateur de threads de sorte qu’il planifie le travail uniquement sur le thread d’interface utilisateur. Pour plus d’informations, consultez [Spécification d’un contexte de synchronisation](xref:System.Threading.Tasks.TaskScheduler#specifying-a-synchronization-context).  
   
 ## <a name="use-caution-when-waiting-in-delegates-that-are-called-by-parallelinvoke"></a>Être vigilant lors de l’attente dans des délégués appelés par Parallel.Invoke  
- Dans certaines circonstances, la bibliothèque parallèle de tâches intègre une tâche, ce qui signifie qu’elle s’exécute sur la tâche du thread en cours d’exécution. (Pour plus d’informations, consultez [planificateurs de tâches](xref:System.Threading.Tasks.TaskScheduler).) Cette optimisation des performances peut entraîner un blocage dans certains cas. Par exemple, deux tâches peuvent exécuter le même code de délégué, qui signale la survenue d’un événement et attend l’autre tâche à signaler. Si la seconde tâche est incluse sur le même thread que la première et que cette dernière passe à l’état En attente, la seconde tâche ne pourra jamais signaler son événement. Pour éviter une telle situation, vous pouvez spécifier un délai d’expiration sur l’opération d’attente, ou utiliser les constructeurs de thread explicites pour s’assurer qu’une tâche ne peut pas bloquer l’autre.  
+ Dans certaines circonstances, la bibliothèque parallèle de tâches intègre une tâche, ce qui signifie qu’elle s’exécute sur la tâche du thread en cours d’exécution. (Pour plus d’informations, voir [Task Schedulers](xref:System.Threading.Tasks.TaskScheduler).) Cette optimisation des performances peut conduire à une impasse dans certains cas. Par exemple, deux tâches peuvent exécuter le même code de délégué, qui signale la survenue d’un événement et attend l’autre tâche à signaler. Si la seconde tâche est incluse sur le même thread que la première et que cette dernière passe à l’état En attente, la seconde tâche ne pourra jamais signaler son événement. Pour éviter une telle situation, vous pouvez spécifier un délai d’expiration sur l’opération d’attente, ou utiliser les constructeurs de thread explicites pour s’assurer qu’une tâche ne peut pas bloquer l’autre.  
   
 ## <a name="do-not-assume-that-iterations-of-foreach-for-and-forall-always-execute-in-parallel"></a>Ne pas supposer que les itérations de ForEach, For et ForAll s’exécutent toujours en parallèle  
- Il est important de garder à l’esprit que les itérations individuelles dans une boucle <xref:System.Threading.Tasks.Parallel.For%2A>, <xref:System.Threading.Tasks.Parallel.ForEach%2A> ou <xref:System.Linq.ParallelEnumerable.ForAll%2A> peuvent, mais ne doivent pas forcément s’exécuter en parallèle. Par conséquent, vous devez éviter d’écrire du code dont l’exactitude dépend de l’exécution parallèle d’itérations ou de l’exécution d’itérations dans un ordre particulier. Par exemple, ce code est susceptible d’interbloquer :  
+ Il est important de garder à l’esprit que les itérations individuelles dans une boucle <xref:System.Threading.Tasks.Parallel.For%2A>, <xref:System.Threading.Tasks.Parallel.ForEach%2A> ou <xref:System.Linq.ParallelEnumerable.ForAll%2A> peuvent, mais ne doivent pas forcément, s’exécuter en parallèle. Par conséquent, vous devez éviter d’écrire du code dont l’exactitude dépend de l’exécution parallèle d’itérations ou de l’exécution d’itérations dans un ordre particulier. Par exemple, ce code est susceptible d’interbloquer :  
   
  [!code-csharp[TPL_Pitfalls#01](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_pitfalls/cs/pitfalls.cs#01)]
  [!code-vb[TPL_Pitfalls#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_pitfalls/vb/pitfalls_vb.vb#01)]  

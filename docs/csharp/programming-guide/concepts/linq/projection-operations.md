@@ -2,12 +2,12 @@
 title: Opérations de projection (C#)
 ms.date: 07/20/2015
 ms.assetid: 98df573a-aad9-4b8c-9a71-844be2c4fb41
-ms.openlocfilehash: a2a2ae762d63d5ff26c7018caef1a83558042fb5
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: f76eeeb779ab08a575e758a9d974573b700ae652
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346521"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168334"
 ---
 # <a name="projection-operations-c"></a>Opérations de projection (C#)
 La projection désigne l’opération de transformation d’un objet en une nouvelle forme qui se compose souvent uniquement des propriétés à utiliser ensuite. À l'aide de la projection, vous pouvez créer un nouveau type qui est généré à partir de chaque objet. Vous pouvez projeter une propriété et effectuer une fonction mathématique sur celle-ci. Vous pouvez également projeter l’objet d’origine sans le modifier.  
@@ -16,14 +16,14 @@ La projection désigne l’opération de transformation d’un objet en une nouv
   
 ## <a name="methods"></a>Méthodes  
   
-|Nom de la méthode|Description|Syntaxe d'expression de requête C#|Plus d’informations|  
+|Nom de la méthode|Description|Syntaxe d'expression de requête C#|Informations complémentaires|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|Select|Projette les valeurs qui sont basées sur une fonction de transformation.|`select`|<xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType>|  
+|Sélectionnez|Projette les valeurs qui sont basées sur une fonction de transformation.|`select`|<xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType>|  
 |SelectMany|Projette les séquences de valeurs qui sont basées sur une fonction de transformation, puis les aplatit en une seule séquence.|Utilisation de plusieurs clauses `from`|<xref:System.Linq.Enumerable.SelectMany%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SelectMany%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-examples"></a>Exemples de syntaxe d'expression de requête  
   
-### <a name="select"></a>Select  
+### <a name="select"></a>Sélectionnez  
  L’exemple suivant utilise la clause `select` pour projeter la première lettre de chaque chaîne dans une liste de chaînes.  
   
 ```csharp  
@@ -101,7 +101,7 @@ static void SelectVsSelectMany()
         new Bouquet{ Flowers = new List<string> { "larkspur", "lilac", "iris", "dahlia" }}  
     };  
   
-    // *********** Select ***********              
+    // *********** Select ***********
     IEnumerable<List<string>> query1 = bouquets.Select(bq => bq.Flowers);  
   
     // ********* SelectMany *********  
@@ -163,6 +163,6 @@ static void SelectVsSelectMany()
 
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
-- [select, clause](../../../language-reference/keywords/select-clause.md)
-- [Comment remplir des collections d’objets à partir de plusieurs sources (C#Linq) ()](./how-to-populate-object-collections-from-multiple-sources-linq.md)
-- [Comment fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQC#) ()](./how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+- [clause de sélection](../../../language-reference/keywords/select-clause.md)
+- [Comment remplir les collections d’objets à partir de sources multiples (LINQ) (C)](./how-to-populate-object-collections-from-multiple-sources-linq.md)
+- [Comment diviser un fichier en plusieurs fichiers en utilisant des groupes (LINQ) (C)](./how-to-split-a-file-into-many-files-by-using-groups-linq.md)

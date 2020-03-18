@@ -16,10 +16,10 @@ helpviewer_keywords:
 - culture parameter
 ms.assetid: 5cdc9396-a64b-4615-a1cd-b605db4c5983
 ms.openlocfilehash: 13a9f4896a37be4297f2a1a11435b85ade381c66
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74353671"
 ---
 # <a name="performing-culture-insensitive-string-operations-in-collections"></a>Exécution d’opérations de chaînes indépendantes de la culture dans des collections
@@ -27,7 +27,7 @@ ms.locfileid: "74353671"
 Des classes et des membres dans l’espace de noms <xref:System.Collections> génèrent un comportement dépendant de la culture par défaut. Les constructeurs sans paramètre pour les classes <xref:System.Collections.CaseInsensitiveComparer> et <xref:System.Collections.CaseInsensitiveHashCodeProvider> initialisent une nouvelle instance en utilisant la propriété <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>. Toutes les surcharges de la méthode <xref:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable%2A?displayProperty=nameWithType> créent une nouvelle instance de la classe <xref:System.Collections.Hashtable> en utilisant la propriété `Thread.CurrentCulture` par défaut. Les surcharges de la méthode <xref:System.Collections.ArrayList.Sort%2A?displayProperty=nameWithType> effectuent des tris dépendants de la culture par défaut en utilisant `Thread.CurrentCulture`. Le tri et la recherche dans <xref:System.Collections.SortedList> peuvent être affectés par `Thread.CurrentCulture` lorsque des chaînes sont utilisées en tant que clés. Suivez les recommandations d’utilisation fournies dans cette section pour obtenir des résultats indépendants de la culture à partir de ces classes et méthodes dans l’espace de noms `Collections`.
 
 > [!NOTE]
-> Le passage d' <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> à une méthode de comparaison effectue une comparaison indépendante de la culture. Toutefois, elle n’entraîne pas une comparaison non linguistique, par exemple, pour les chemins d’accès de fichier, les clés de Registre et les variables d’environnement. Elle ne prend pas non plus en charge les décisions de sécurité basées sur le résultat de la comparaison. Pour une comparaison non linguistique ou la prise en charge des décisions de sécurité basées sur le résultat, l’application doit utiliser une méthode de comparaison qui accepte une valeur <xref:System.StringComparison>. L’application doit ensuite transmettre <xref:System.StringComparison>.
+> Passer <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> à une méthode de comparaison effectue une comparaison culturelle-insensible. Toutefois, elle n’entraîne pas une comparaison non linguistique, par exemple, pour les chemins d’accès de fichier, les clés de Registre et les variables d’environnement. Elle ne prend pas non plus en charge les décisions de sécurité basées sur le résultat de la comparaison. Pour une comparaison non linguistique ou la prise en charge des décisions de sécurité basées sur le résultat, l’application doit utiliser une méthode de comparaison qui accepte une valeur <xref:System.StringComparison>. L’application doit ensuite transmettre <xref:System.StringComparison>.
 
 ## <a name="using-the-caseinsensitivecomparer-and-caseinsensitivehashcodeprovider-classes"></a>Utilisation des classes CaseInsensitiveComparer et CaseInsensitiveHashCodeProvider
 
@@ -145,5 +145,5 @@ Les surcharges de la méthode `ArrayList.Sort` effectuent des tris dépendants d
 - <xref:System.Collections.SortedList>
 - <xref:System.Collections.Hashtable>
 - <xref:System.Collections.IComparer>
-- [Exécution d'opérations de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
+- [Exécution d’opérations de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
 - <xref:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable%2A?displayProperty=nameWithType>

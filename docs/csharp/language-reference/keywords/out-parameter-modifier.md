@@ -4,19 +4,19 @@ ms.date: 03/26/2019
 helpviewer_keywords:
 - parameters [C#], out
 - out parameters [C#]
-ms.openlocfilehash: bc3814b91ed4327f4af1a4a1bfbda632b0393bb8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: f963188d77685bb81f7dc9fb3794e343114fe3c0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713269"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79173560"
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out, modificateur de paramètre (référence C#)
 Le mot clé `out` entraîne le passage des arguments par référence. Il fait du paramètre formel un alias de l’argument, qui doit être une variable. En d’autres termes, toute opération portant sur le paramètre est effectuée sur l’argument. Il est similaire au mot clé [ref](ref.md), à la différence que `ref` nécessite que la variable soit initialisée avant d’être passée. Il est également similaire au mot clé [in](in-parameter-modifier.md), à la différence que `in` n’autorise pas la méthode appelée à modifier la valeur d’argument. Pour utiliser un paramètre `out`, la définition de la méthode et la méthode d'appel doivent utiliser explicitement le mot clé `out`. Par exemple :  
   
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#1)]  
 
-> [!NOTE] 
+> [!NOTE]
 > Le mot clé `out` peut également être utilisé avec un paramètre de type générique pour spécifier que le paramètre de type est covariant. Pour plus d’informations sur l’utilisation du mot clé `out` dans ce contexte, consultez [out, modificateur générique](out-generic-modifier.md).
   
 Les variables passées comme arguments `out` n’ont pas à être initialisées avant d’être passées dans un appel de méthode. Toutefois, la méthode appelée doit assigner une valeur avant le retour de la méthode.  
@@ -26,7 +26,7 @@ Les mots clés `in`, `ref` et `out` ne sont pas considérés comme faisant parti
 ```csharp
 class CS0663_Example
 {
-    // Compiler error CS0663: "Cannot define overloaded 
+    // Compiler error CS0663: "Cannot define overloaded
     // methods that differ only on ref and out".
     public void SampleMethod(out int i) { }
     public void SampleMethod(ref int i) { }
@@ -38,7 +38,7 @@ Toutefois, la surcharge est autorisée si une méthode prend un argument `ref`, 
 [!code-csharp[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#2)]  
 
 Le compilateur choisit la meilleure surcharge en mettant en correspondance les modificateurs de paramètre sur le site d’appel et les modificateurs de paramètre utilisés dans l’appel de méthode.
- 
+
 Les propriétés ne sont pas des variables et, par conséquent, ne peuvent pas être passées en tant que paramètres `out`.
   
 Vous ne pouvez pas utiliser les mots clés `in`, `ref` ou `out` pour les types de méthodes suivants :  
@@ -47,7 +47,7 @@ Vous ne pouvez pas utiliser les mots clés `in`, `ref` ou `out` pour les types d
   
 - Les méthodes Iterator, qui incluent une instruction [yield return](./yield.md) ou `yield break`.  
 
-## <a name="declaring-out-parameters"></a>Déclarer des paramètres `out`   
+## <a name="declaring-out-parameters"></a>Déclarer des paramètres `out`
 
 Il arrive souvent que l’on déclare une méthode avec des arguments `out` pour qu’elle retourne plusieurs valeurs. À compter de C# 7.0, vous pouvez recourir aux [tuples](../../tuples.md) dans ce type de scénario. L'exemple suivant utilise `out` pour retourner trois variables avec un seul appel de méthode. Notez que le troisième argument reçoit la valeur null. Cela permet aux méthodes de retourner des valeurs le cas échéant.  
   
@@ -62,17 +62,17 @@ Dans C# 6 et les versions antérieures, vous devez déclarer une variable dans 
 À compter de C# 7.0, vous pouvez déclarer la variable `out` dans la liste d’arguments de l’appel de méthode au lieu de le faire dans une déclaration de variable distincte. Cette technique rend le code plus simple et plus lisible, et vous empêche également d’assigner par inadvertance une valeur à la variable avant l’appel de méthode. L’exemple suivant est semblable au précédent, sauf qu’il définit la variable `number` dans l’appel de la méthode [Int32.TryParse](xref:System.Int32.TryParse(System.String,System.Int32@)).
 
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#5)]  
-   
+
 Dans l’exemple précédent, la variable `number` est fortement typée en `int`. Vous pouvez également déclarer une variable locale implicitement typée, comme dans l’exemple suivant.
 
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#6)]  
-   
+
 ## <a name="c-language-specification"></a>Spécification du langage C#  
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
 - [Paramètres de méthodes](./method-parameters.md)

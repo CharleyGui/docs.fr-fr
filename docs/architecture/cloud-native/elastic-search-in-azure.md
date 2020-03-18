@@ -1,87 +1,87 @@
 ---
-title: Elasticsearch dans les applications Cloud natives
-description: En savoir plus sur l’ajout de fonctionnalités de recherche élastique aux applications Cloud natives.
+title: Elasticsearch dans les applications cloud-native
+description: Découvrez l’ajout de capacités de recherche élastique aux applications cloud-natives.
 author: robvet
 ms.date: 01/22/2020
-ms.openlocfilehash: 6ea237eddc89a8c6843d6b34b05b1b71515a99b6
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 1bce255b6315006b11e0b6ac77040300f67ed984
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794876"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79141287"
 ---
-# <a name="elasticsearch-in-a-cloud-native-app"></a>Elasticsearch dans une application Cloud Native
+# <a name="elasticsearch-in-a-cloud-native-app"></a>Elasticsearch dans une application cloud-native
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Elasticsearch est un système de recherche et d’analyse distribué qui permet des fonctionnalités de recherche complexes sur divers types de données. Il est open source et largement populaire. Prenez en compte la façon dont les entreprises suivantes intègrent Elasticsearch dans leur application :
+Elasticsearch est un système de recherche et d’analyse distribué qui permet des capacités de recherche complexes à travers divers types de données. Il est open source et très populaire. Considérez comment les entreprises suivantes intègrent Elasticsearch dans leur application :
 
-- Recherche de texte intégral et de recherche incrémentielle (recherche au fur [et à mesure](https://blog.wikimedia.org/2014/01/06/wikimedia-moving-to-elasticsearch/) que vous tapez).
-- [GitHub](https://www.elastic.co/customers/github) pour indexer et exposer plus de 8 millions référentiels de code.  
-- [Ancrer](https://www.elastic.co/customers/docker) pour rendre sa bibliothèque de conteneurs détectable.
+- [Wikipédia](https://blog.wikimedia.org/2014/01/06/wikimedia-moving-to-elasticsearch/) pour le texte intégral et la recherche incrémentale (recherche que vous tapez).
+- [GitHub](https://www.elastic.co/customers/github) pour indexer et exposer plus de 8 millions de dépôts de code.  
+- [Docker](https://www.elastic.co/customers/docker) pour rendre sa bibliothèque de conteneurs détectable.
 
-Elasticsearch repose sur le moteur de recherche en texte intégral [Apache Lucene](https://lucene.apache.org/core/) . Lucene fournit l’indexation et l’interrogation de documents à hautes performances. Il indexe les données avec un schéma d’indexation inversé : au lieu de mapper les pages aux mots clés, il mappe les mots clés aux pages comme un glossaire à la fin d’un livre. Lucene dispose de puissantes fonctionnalités de syntaxe de requête et peut interroger les données de la façon suivante :
+Elasticsearch est construit sur le moteur de recherche à texte complet [Apache Lucene.](https://lucene.apache.org/core/) Lucene fournit l’indexation et la requête de documents haute performance. Il indexe les données avec un système d’indexation inversé - au lieu de cartographier les pages à des mots clés, il cartographie les mots clés à des pages comme un glossaire à la fin d’un livre. Lucene a de puissantes capacités de syntaxe de requête et peut interroger les données en :
 
-- Terme (un mot complet) 
-- Préfixe (commençant par Word)
-- Caractère générique (à l’aide des filtres «\*» ou «  ? »)
-- Expression (une séquence de texte dans un document)
-- Valeur booléenne (recherches complexes combinant des requêtes)
+- Terme (un mot complet)
+- Préfixe (commence-avec mot)
+- Wildcard (à\*l’aide de filtres " ou " ? "
+- Phrase (une séquence de texte dans un document)
+- Valeur Boolean (recherches complexes combinant requêtes)
 
-Bien que Lucene fournisse des éléments de bas niveau pour la recherche, Elasticsearch fournit le serveur qui se trouve au-dessus de Lucene. Elasticsearch ajoute des fonctionnalités de niveau supérieur pour simplifier le travail Lucene, y compris une API RESTful pour accéder aux fonctionnalités d’indexation et de recherche de Lucene. Il fournit également une infrastructure distribuée, capable d’évoluer massivement, de tolérance de panne et de haute disponibilité.
+Alors que Lucene fournit une plomberie de bas niveau pour la recherche, Elasticsearch fournit le serveur qui se trouve au-dessus de Lucene. Elasticsearch ajoute des fonctionnalités de plus haut niveau pour simplifier le travail Lucene, y compris une API RESTful pour accéder à la fonctionnalité d’indexation et de recherche de Lucene. Il fournit également une infrastructure distribuée capable d’évolutivité massive, de tolérance aux défauts et d’une grande disponibilité.
 
-Pour les applications Cloud plus volumineuses avec des exigences de recherche complexes, Elasticsearch est disponible en tant que service géré dans Azure. Le Place de marché Microsoft Azure propose des modèles préconfigurés que les développeurs peuvent utiliser pour déployer un cluster Elasticsearch sur Azure.
+Pour les applications cloud-natives plus grandes avec des besoins de recherche complexes, Elasticsearch est disponible en tant que service géré en Azure. Le Microsoft Azure Marketplace propose des modèles préconfigurés que les développeurs peuvent utiliser pour déployer un cluster Elasticsearch sur Azure.
 
-Du Place de marché Microsoft Azure, les développeurs peuvent utiliser des modèles préconfigurés pour déployer rapidement un cluster Elasticsearch sur Azure. À l’aide de l’offre gérée par Azure, vous pouvez déployer jusqu’à 50 nœuds de données, 20 nœuds de coordination et trois nœuds principaux dédiés.
+Depuis Microsoft Azure Marketplace, les développeurs peuvent utiliser des modèles préconfigurés conçus pour déployer rapidement un cluster Elasticsearch sur Azure. Grâce à l’offre gérée par Azure, vous pouvez déployer jusqu’à 50 nœuds de données, 20 nœuds de coordination et trois nœuds maîtres dédiés.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
-Ce chapitre a présenté une vue détaillée des données dans les systèmes Cloud natifs. Nous avons commencé par comparer le stockage des données dans les applications monolithiques avec les modèles de stockage des données dans les systèmes natifs du Cloud. Nous avons examiné les modèles de données implémentés dans les systèmes Cloud natifs, notamment les requêtes entre services, les transactions distribuées et les modèles pour gérer les systèmes à volume élevé. Nous avons comparé SQL avec les données NoSQL. Nous avons examiné les options de stockage de données disponibles dans Azure qui incluent des options orientées Microsoft et open source. Enfin, nous avons abordé Caching et Elasticsearch dans une application Cloud native.
+Ce chapitre a présenté un regard détaillé sur les données des systèmes cloud-autochtones. Nous avons commencé par contraster le stockage de données dans des applications monolithiques avec des modèles de stockage de données dans les systèmes cloud-natifs. Nous avons examiné les modèles de données mis en œuvre dans les systèmes natifs du cloud, y compris les requêtes inter-services, les transactions distribuées et les modèles pour traiter les systèmes à volume élevé. Nous avons contrasté SQL avec les données NoSQL. Nous avons examiné les options de stockage de données disponibles dans Azure qui incluent à la fois des options microsoft-centriques et open-source. Enfin, nous avons discuté de la mise en cache et de l’elasticsearch dans une application cloud-native.
 
-### <a name="references"></a>Références
+### <a name="references"></a>References
 
-- [Modèle séparation des responsabilités en matière de commande et de requête (CQRS)](https://docs.microsoft.com/azure/architecture/patterns/cqrs)
+- [Modèle de séparation des responsabilités en matière de commande et de requête (CQRS)](https://docs.microsoft.com/azure/architecture/patterns/cqrs)
 
-- [Modèle d’approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
+- [Modèle d'approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
 
-- [SGBDR et bases de données NoSQL : vue d’ensemble](https://maxivak.com/rdbms-vs-nosql-databases/)
+- [RDBMS vs Bases de données NoSQL : Aperçu](https://maxivak.com/rdbms-vs-nosql-databases/)
 
-- [Pourquoi la partition de SGBDR n’est-elle pas tolérante dans le CAP CAP et pourquoi est-elle disponible ?](https://stackoverflow.com/questions/36404765/why-isnt-rdbms-partition-tolerant-in-cap-theorem-and-why-is-it-available)
+- [Pourquoi la partition RDBMS n’est-elle pas tolérante dans le théorème cap et pourquoi est-elle disponible ?](https://stackoverflow.com/questions/36404765/why-isnt-rdbms-partition-tolerant-in-cap-theorem-and-why-is-it-available)
 
 - [Vue matérialisée](https://docs.microsoft.com/azure/architecture/patterns/materialized-view)
 
-- [Tout ce que vous devez savoir sur les bases de données Open source](https://www.ibm.com/blogs/systems/all-you-really-need-to-know-about-open-source-databases/)
+- [Tout ce que vous devez vraiment savoir sur les bases de données open source](https://www.ibm.com/blogs/systems/all-you-really-need-to-know-about-open-source-databases/)
 
 - [Modèle de transaction de compensation](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction)
 
-- [Modèle saga](https://microservices.io/patterns/data/saga.html)
+- [Modèle de saga](https://microservices.io/patterns/data/saga.html)
 
-- [Modèles saga | Comment implémenter des transactions commerciales à l’aide de microservices](https://blog.couchbase.com/saga-pattern-implement-business-transactions-using-microservices-part/)
+- [Modèles saga Comment mettre en œuvre les transactions commerciales à l’aide de microservices](https://blog.couchbase.com/saga-pattern-implement-business-transactions-using-microservices-part/)
 
 - [Modèle de transaction de compensation](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction)
 
-- [En arrière-plan des niveaux de cohérence 9 Ball : Cosmos DB expliqués](https://blog.jeremylikness.com/blog/2018-03-23_getting-behind-the-9ball-cosmosdb-consistency-levels/)
+- [Se mettre derrière le 9-Ball: Cosmos DB niveaux de cohérence expliqué](https://blog.jeremylikness.com/blog/2018-03-23_getting-behind-the-9ball-cosmosdb-consistency-levels/)
 
-- [Exploration des différents types de bases de données NoSQL, partie II](https://www.3pillarglobal.com/insights/exploring-the-different-types-of-nosql-databases)
+- [Explorer les différents types de bases de données NoSQL Partie II](https://www.3pillarglobal.com/insights/exploring-the-different-types-of-nosql-databases)
 
-- [Sur les bases de données de SGBDR, NoSQL et NewSQL. Entretien avec John Ryan](http://www.odbms.org/blog/2018/03/on-rdbms-nosql-and-newsql-databases-interview-with-john-ryan/)
+- [Sur les bases de données RDBMS, NoSQL et NewSQL. Entrevue avec John Ryan](http://www.odbms.org/blog/2018/03/on-rdbms-nosql-and-newsql-databases-interview-with-john-ryan/)
   
-- [SQL vs NoSQL vs NewSQL : comparaison complète](https://www.xenonstack.com/blog/sql-vs-nosql-vs-newsql/)
+- [SQL vs NoSQL vs NewSQL: La comparaison complète](https://www.xenonstack.com/blog/sql-vs-nosql-vs-newsql/)
 
-- [DASH : quatre propriétés des bases de données Kubernetes-natives](https://thenewstack.io/dash-four-properties-of-kubernetes-native-databases/)
+- [DASH: Quatre propriétés de bases de données Kubernetes-Native](https://thenewstack.io/dash-four-properties-of-kubernetes-native-databases/)
 
-- [CockroachDB](https://www.cockroachlabs.com/)
+- [CafardDB](https://www.cockroachlabs.com/)
 
-- [TiDB](https://pingcap.com/en/)
+- [TiDB (TiDB)](https://pingcap.com/en/)
 
 - [YugabyteDB](https://www.yugabyte.com/)
 
-- [Vitess](https://vitess.io/)
+- [Vitess Vitess](https://vitess.io/)
 
-- [Elasticsearch : le guide définitif](http://shop.oreilly.com/product/0636920028505.do)
+- [Elasticsearch: The Definitive Guide (Elasticsearch : le guide de référence)](http://shop.oreilly.com/product/0636920028505.do)
   
-- [Présentation d’Apache Lucene](https://www.baeldung.com/lucene)
+- [Introduction à Apache Lucene](https://www.baeldung.com/lucene)
 
 >[!div class="step-by-step"]
->[Précédent](azure-caching.md)
->[Suivant](resiliency.md) <!-- Next Chapter -->
+>[Suivant précédent](azure-caching.md)
+>[Next](resiliency.md) <!-- Next Chapter -->

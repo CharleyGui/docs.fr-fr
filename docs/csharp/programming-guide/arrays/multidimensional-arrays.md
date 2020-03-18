@@ -6,10 +6,10 @@ helpviewer_keywords:
 - multidimensional arrays [C#]
 ms.assetid: 020ce02e-7dff-4273-8e53-bf0b33747232
 ms.openlocfilehash: eb49f4386b6106328f1613b5ec70794ac26fc9b7
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75715040"
 ---
 # <a name="multidimensional-arrays-c-programming-guide"></a>Tableaux multidimensionnels (Guide de programmation C#)
@@ -53,4 +53,4 @@ Les tableaux peuvent avoir plusieurs dimensions. Par exemple, la déclaration su
 - [Guide de programmation C#](../index.md)
 - [Tableaux](./index.md)
 - [Tableaux unidimensionnels](./single-dimensional-arrays.md)
-- [Tableaux en escalier](./jagged-arrays.md)
+- [Arrays déchiquetés](./jagged-arrays.md)

@@ -8,10 +8,10 @@ helpviewer_keywords:
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
 ms.openlocfilehash: a70bd3070d8b1dcd06e55d330a01d29071293f6c
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78159388"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronisation des données pour le multithreading
@@ -30,11 +30,11 @@ Le .NET fournit plusieurs stratégies pour synchroniser l’accès aux membres s
   
  Le common language runtime fournit un modèle de thread dans lequel les classes se répartissent en plusieurs catégories qui peuvent être synchronisées de différentes manières, selon les besoins. Le tableau suivant indique le type de prise en charge de la synchronisation fourni pour les champs et méthodes dans une catégorie de synchronisation donnée.  
   
-|Catégorie|Champs globaux|Champs statiques|Méthodes statiques|Champs d'instance|Méthodes d’instance|Blocs de code spécifiques|  
+|Category|Champs globaux|Champs statiques|Méthodes statiques|Champs d'instance|Méthodes d’instance|Blocs de code spécifiques|  
 |--------------|-------------------|-------------------|--------------------|---------------------|----------------------|--------------------------|  
-|Aucune synchronisation|Non|Non|Non|Non|Non|Non|  
-|Contexte synchronisé|Non|Non|Non|Oui|Oui|Non|  
-|Régions de code synchronisées|Non|Non|Seulement en cas de marquage|Non|Seulement en cas de marquage|Seulement en cas de marquage|  
+|Aucune synchronisation|Non |Non |Non |Non |Non |Non |  
+|Contexte synchronisé|Non |Non |Non |Oui|Oui|Non |  
+|Régions de code synchronisées|Non |Non |Seulement en cas de marquage|Non |Seulement en cas de marquage|Seulement en cas de marquage|  
 |Synchronisation manuelle|Manuel|Manuel|Manuel|Manuel|Manuel|Manuel|  
   
 ## <a name="no-synchronization"></a>Aucune synchronisation  
@@ -61,7 +61,7 @@ Le .NET fournit plusieurs stratégies pour synchroniser l’accès aux membres s
 ### <a name="compiler-support"></a>Prise en charge du compilateur  
  Visual Basic et C# prennent en charge un mot clé de langage qui utilise <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> et <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> pour verrouiller l’objet. Visual Basic prend en charge l’instruction [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) et C#, l’instruction [lock](../../csharp/language-reference/keywords/lock-statement.md).  
   
- Dans les deux cas, si une exception est déclenchée dans le bloc de code, le verrou acquis par l’instruction **lock** ou **SyncLock** est automatiquement libéré. Les compilateurs C# et Visual Basic émettent un bloc **try**/**finally** avec **Monitor.Enter** au début de la tentative, et **Monitor.Exit** dans le bloc **finally**. Si une exception est déclenchée dans le bloc **lock** ou **SyncLock**, le gestionnaire **finally** s’exécute pour vous permettre d’effectuer d’éventuelles tâches de nettoyage.  
+ Dans les deux cas, si une exception est déclenchée dans le bloc de code, le verrou acquis par l’instruction **lock** ou **SyncLock** est automatiquement libéré. Les compilateurs de base de C et de visuel émettent un **essai**/**finalement** bloquer avec **Monitor.Enter** au début de l’essai, et **Monitor.Exit** dans le bloc **de finale.** Si une exception est déclenchée dans le bloc **lock** ou **SyncLock**, le gestionnaire **finally** s’exécute pour vous permettre d’effectuer d’éventuelles tâches de nettoyage.  
   
 ## <a name="synchronized-context"></a>Contexte synchronisé  
 
@@ -70,7 +70,7 @@ Dans les applications .NET Framework et Xamarin uniquement, vous pouvez utiliser
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>
-- [Threads et threading](../../../docs/standard/threading/threads-and-threading.md)
-- [Vue d’ensemble des primitives de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md)
+- [Fils et threading](../../../docs/standard/threading/threads-and-threading.md)
+- [Aperçu des primitifs de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md)
 - [SyncLock (instruction)](../../visual-basic/language-reference/statements/synclock-statement.md)
 - [lock, instruction](../../csharp/language-reference/keywords/lock-statement.md)

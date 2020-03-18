@@ -1,5 +1,5 @@
 ---
-title: 'Comment : énumérer des répertoires et des fichiers'
+title: 'Comment : Énumérer les répertoires et les fichiers'
 ms.date: 12/27/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,13 +9,13 @@ helpviewer_keywords:
 - I/O [.NET Framework], enumerating directories and files
 ms.assetid: 86b69a08-3bfa-4e5f-b4e1-3b7cb8478215
 ms.openlocfilehash: 6a26d0ef529b81976c4d2caafed34bb5f08d8d46
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75707743"
 ---
-# <a name="how-to-enumerate-directories-and-files"></a>Comment : énumérer des répertoires et des fichiers
+# <a name="how-to-enumerate-directories-and-files"></a>Comment : Énumérer les répertoires et les fichiers
 Les collections énumérables offrent de meilleures performances que les tableaux lorsque vous travaillez avec collections volumineuses de fichiers et de répertoires. Pour énumérer des répertoires et des fichiers, utilisez des méthodes qui retournent une collection énumérable de noms de répertoire ou de fichier ou leurs objets <xref:System.IO.DirectoryInfo>, <xref:System.IO.FileInfo> ou <xref:System.IO.FileSystemInfo>.  
   
 Si vous souhaitez parcourir et retourner uniquement les noms des répertoires ou des fichiers, utilisez les méthodes d’énumération de la classe <xref:System.IO.Directory>. Si vous souhaitez parcourir et retourner d’autres propriétés des répertoires ou des fichiers, utilisez les classes <xref:System.IO.DirectoryInfo> et <xref:System.IO.FileSystemInfo>.  
@@ -37,7 +37,7 @@ Le tableau suivant récapitule les méthodes qui retournent des collections énu
 > [!NOTE]
 > Bien que vous puissiez énumérer immédiatement tous les fichiers dans les sous-répertoires d’un répertoire parent à l’aide de l’option <xref:System.IO.SearchOption.AllDirectories> de l’énumération <xref:System.IO.SearchOption> facultative, des erreurs <xref:System.UnauthorizedAccessException> peuvent rendre l’énumération incomplète. Vous pouvez intercepter ces exceptions en énumérant d’abord les répertoires, puis les fichiers.  
   
-## <a name="examples-use-the-directory-class"></a>Exemples : utiliser la classe Directory  
+## <a name="examples-use-the-directory-class"></a>Exemples : Utilisez la classe d’annuaire  
   
 L’exemple suivant utilise la méthode <xref:System.IO.Directory.EnumerateDirectories%28System.String%29?displayProperty=nameWithType> pour obtenir une liste des noms de répertoires de niveau supérieur dans un chemin spécifié.  
 
@@ -49,7 +49,7 @@ L’exemple suivant utilise la méthode <xref:System.IO.Directory.EnumerateFiles
 [!code-csharp[System.IO.Directory.EnumerateFiles#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.directory.enumeratefiles/cs/program.cs#1)]
 [!code-vb[System.IO.Directory.EnumerateFiles#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.directory.enumeratefiles/vb/program.vb#1)]  
   
-## <a name="examples-use-the-directoryinfo-class"></a>Exemples : utiliser la classe DirectoryInfo  
+## <a name="examples-use-the-directoryinfo-class"></a>Exemples : Utilisez la classe DirectoryInfo  
   
 L’exemple suivant utilise la méthode <xref:System.IO.DirectoryInfo.EnumerateDirectories%2A?displayProperty=nameWithType> pour lister une collection de répertoires de niveau supérieur dont <xref:System.IO.FileSystemInfo.CreationTimeUtc> est antérieur à une certaine valeur <xref:System.DateTime>.  
 

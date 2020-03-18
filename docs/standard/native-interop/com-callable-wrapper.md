@@ -13,11 +13,11 @@ helpviewer_keywords:
 - COM callable wrappers
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
 ms.openlocfilehash: 6f2f4055a95dbcea8d7872b5c5fa3ccede8c2c8c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120731"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79400378"
 ---
 # <a name="com-callable-wrapper"></a>Wrapper pouvant être appelé par COM
 
@@ -60,7 +60,7 @@ Outre l’exposition des interfaces qui sont implémentées explicitement par un
 
 |Interface|Description|
 |---------------|-----------------|
-|Interface de la classe (\_*nomclasse*)|Interface, exposée par le runtime et non définie explicitement, qui expose l'ensemble des interfaces, méthodes, propriétés et champs publics qui sont exposés explicitement sur un objet managé.|
+|L’interface de classe\_*(nom de classe)*|Interface, exposée par le runtime et non définie explicitement, qui expose l'ensemble des interfaces, méthodes, propriétés et champs publics qui sont exposés explicitement sur un objet managé.|
 |**IConnectionPoint** et **IConnectionPointContainer**|Interface pour les objets qui émettent des événements basés sur les délégués (interface pour l'inscription des abonnés d'événements).|
 |**IDispatchEx** (.NET Framework uniquement)|Interface fournie par le runtime si la classe implémente **IExpando**. L’interface **IDispatchEx** est une extension de l’interface **IDispatch** qui, contrairement à l’interface **IDispatch**, permet l’énumération, l’ajout, la suppression et l’appel de la casse des membres.|
 |**IEnumVARIANT**|Interface pour les classes de type collection, qui énumère les objets d’une collection si la classe implémente **IEnumerable**.|
@@ -195,8 +195,8 @@ Si votre application exige des appels à liaison anticipée à des méthodes d�
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>
-- [Wrappers COM](com-wrappers.md)
-- [Exposition de composants .NET Framework à COM](../../framework/interop/exposing-dotnet-components-to-com.md)
+- [Emballages COM](com-wrappers.md)
+- [Exposition de composants .NET Framework à COM](../../framework/interop/exposing-dotnet-components-to-com.md)
 - [Exposition de composants .NET Core à COM](../../core/native-interop/expose-components-to-com.md)
-- [Qualifier des types .NET pour l'interopérabilité](qualify-net-types-for-interoperation.md)
+- [Qualification des types .NET pour l’interopérabilité](qualify-net-types-for-interoperation.md)
 - [Wrapper pouvant être appelé par le runtime](runtime-callable-wrapper.md)

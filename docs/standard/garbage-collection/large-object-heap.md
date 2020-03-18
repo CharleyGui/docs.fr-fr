@@ -1,5 +1,5 @@
 ---
-title: LOH sur Windows-.NET
+title: LOH sur Windows - .NET
 ms.date: 05/02/2018
 helpviewer_keywords:
 - large object heap (LOH)"
@@ -7,10 +7,10 @@ helpviewer_keywords:
 - garbage collection, large object heap
 - GC [.NET ], large object heap
 ms.openlocfilehash: 5125b76dd26ffa4fb363ecf8449f65b490f57b93
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74283618"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Tas de grands objets sur les systèmes Windows
@@ -22,7 +22,7 @@ Le récupérateur de mémoire .NET divise les objets en petits et grands objets.
 
 ## <a name="how-an-object-ends-up-on-the-large-object-heap-and-how-gc-handles-them"></a>Comment un objet arrive sur le tas de grands objets et comment il est géré par le récupérateur de mémoire
 
-Si la taille d’un objet est supérieure ou égale à 85 000 octets, il est considéré comme un objet volumineux. Ce chiffre a été déterminé par le réglage des performances. Quand une demande d’allocation d’objet est de 85 000 octets ou plus, le runtime l’alloue sur le tas de grands objets.
+Si un objet est supérieur ou égal à 85 000 octets de taille, il est considéré comme un objet de grande taille. Ce chiffre a été déterminé par le réglage des performances. Quand une demande d’allocation d’objet est de 85 000 octets ou plus, le runtime l’alloue sur le tas de grands objets.
 
 Pour comprendre ce que cela signifie, examinons quelques notions de base du récupérateur de mémoire .NET.
 
@@ -32,7 +32,7 @@ Les petits objets sont toujours alloués dans la génération 0 et, selon leur d
 
 Les grands objets appartiennent à la génération 2 parce qu’ils sont nettoyés uniquement lors d’un nettoyage de la génération 2. Quand une génération est nettoyée, ses générations plus jeunes sont également nettoyées. Par exemple, pendant le nettoyage de la mémoire (GC, Garbage Collection) de la génération 1, les générations 1 et 0 sont toutes deux nettoyées. De la même façon, pendant le GC de la génération 2, le tas tout entier est nettoyé. Pour cette raison, un GC de la génération 2 est également appelé *GC complet*. Cet article fait référence au GC de la génération 2 et non au GC complet, mais les termes sont interchangeables.
 
-Les générations fournissent une vue logique du tas du récupérateur de mémoire. Physiquement, les objets vivent dans des segments de tas managés. Un *segment de tas managé* est un bloc de mémoire que le récupérateur de mémoire réserve sur le système d’exploitation en appelant la [fonction VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) pour le compte du code managé. Lorsque le CLR est chargé, le garbage collector alloue deux segments de tas initiaux : un pour les petits objets (le tas de petits objets, ou SOH) et l’autre pour les objets volumineux (le tas d’objets volumineux).
+Les générations fournissent une vue logique du tas du récupérateur de mémoire. Physiquement, les objets vivent dans des segments de tas managés. Un *segment de tas managé* est un bloc de mémoire que le récupérateur de mémoire réserve sur le système d’exploitation en appelant la [fonction VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) pour le compte du code managé. Lorsque le CLR est chargé, le GC alloue deux segments de tas initiaux : l’un pour les petits objets (le tas de petit objet, ou SOH), et l’autre pour les gros objets (le tas de gros objets).
 
 Les demandes d’allocation sont alors traitées en plaçant des objets managés sur ces segments de tas managés. Si l’objet est inférieur à 85 000 octets, il est placé sur un segment SOH, sinon, sur un segment LOH. Les segments sont réservés (en blocs plus petits) à mesure que leur nombre d’objets alloués augmente.
 Pour le SOH, les objets qui survivent à un GC sont promus à la génération suivante. Les objets qui survivent à un nettoyage de la génération 0 sont considérés comme des objets de génération 1, et ainsi de suite. Toutefois, les objets qui survivent à la plus vieille génération sont toujours considérés comme des objets de cette génération. En d’autres termes, les survivants de la génération 2 sont des objets de la génération 2 et les survivants du LOH sont des objets du LOH (qui sont nettoyés avec la génération 2).
@@ -144,17 +144,17 @@ Vous pouvez utiliser les outils suivants pour collecter des données sur les per
 
 Ces compteurs de performances sont une bonne première étape pour rechercher les problèmes de performances (même si nous vous recommandons d’utiliser les [événements ETW](#etw-events)). Vous configurez le moniteur de performances en ajoutant les compteurs souhaités, comme le montre la Figure 4. Ceux qui sont pertinents pour le LOH sont les suivants :
 
-- **Nombre de nettoyages de la génération 2**
+- **Gen 2 Collections**
 
    Affiche le nombre d’occurrences de GC de la génération 2 depuis le démarrage du processus. Ce compteur est incrémenté à la fin de chaque nettoyage de la génération 2 (aussi appelé nettoyage complet de la mémoire). Ce compteur affiche la dernière valeur observée.
 
-- **Taille du tas des objets volumineux**
+- **Taille du tas d’objets volumineux**
 
    Affiche la taille actuelle du LOH en octets (y compris l’espace libre). Ce compteur est actualisé à la fin de chaque garbage collection, et non à chaque allocation.
 
 En général, vous surveillez les compteurs de performances par le biais du moniteur de performances (PerfMon.exe). Utilisez « Ajouter des compteurs » pour ajouter le compteur de votre choix pour les processus qui vous intéressent. Vous pouvez enregistrer les données des compteurs de performances dans un fichier journal, comme illustré dans la figure 4 :
 
-![capture d’écran qui montre comment ajouter des compteurs de performances.](media/large-object-heap/add-performance-counter.png)
+![Capture d’écran qui montre l’ajout de compteurs de performance.](media/large-object-heap/add-performance-counter.png)
 Figure 4 : LOH après un GC de la génération 2
 
 Les compteurs de performances peuvent également être interrogés par programmation. Beaucoup d’utilisateurs les collectent de cette façon dans le cadre de leur processus de test normal. S’ils repèrent des compteurs avec des valeurs anormales, ils utilisent d’autres moyens d’obtenir des données plus détaillées pour les aider dans leurs recherches.
@@ -162,11 +162,11 @@ Les compteurs de performances peuvent également être interrogés par programma
 > [!NOTE]
 > Nous vous recommandons d’utiliser les événements ETW au lieu des compteurs de performances, car ETW fournit des informations plus détaillées.
 
-### <a name="etw-events"></a>événements ETW
+### <a name="etw-events"></a>Événements ETW
 
 Le récupérateur de mémoire fournit un riche ensemble d’événements ETW pour vous aider à comprendre ce que fait le tas et pourquoi. Les billets de blog suivants décrivent comment collecter et comprendre les événements GC avec ETW :
 
-- [Événements ETW de GC - 1](https://devblogs.microsoft.com/dotnet/gc-etw-events-1/)
+- [Événements GC ETW - 1](https://devblogs.microsoft.com/dotnet/gc-etw-events-1/)
 
 - [Événements ETW de GC - 2](https://devblogs.microsoft.com/dotnet/gc-etw-events-2/)
 
@@ -306,9 +306,9 @@ Pour vérifier si le LOH provoque une fragmentation de mémoire virtuelle, vous 
 bp kernel32!virtualalloc "j (dwo(@esp+8)>800000) 'kb';'g'"
 ```
 
-Cette commande s’arrête dans le débogueur et affiche la pile des appels uniquement si [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) est appelé avec une taille d’allocation supérieure à 8 Mo (0x800000).
+Cette commande entre dans le débbugger et montre la pile d’appel que si [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) est appelé avec une taille d’allocation supérieure à 8 Mo (0x800000).
 
-CLR 2.0 a ajouté une fonctionnalité appelée *VM Hoarding* (Réserve de mémoire virtuelle) qui peut être utile dans les scénarios où des segments (y compris ceux des tas de petits et grands objets) sont fréquemment acquis et libérés. Pour utiliser la fonctionnalité VM Hoarding, vous spécifiez un indicateur de démarrage appelé `STARTUP_HOARD_GC_VM` via l’API d’hébergement. Au lieu de renvoyer des segments vides au système d’exploitation, le CLR annule la réservation de mémoire sur ces segments et les met sur liste d’attente. (Notez que le CLR ne le fait pas pour les segments trop grands.) Le CLR utilise ensuite ces segments pour répondre aux nouvelles demandes de segment. La prochaine fois que votre application a besoin d’un nouveau segment, le CLR en utilise un de cette liste d’attente, s’il est assez grand.
+CLR 2.0 a ajouté une fonctionnalité appelée *VM Hoarding* (Réserve de mémoire virtuelle) qui peut être utile dans les scénarios où des segments (y compris ceux des tas de petits et grands objets) sont fréquemment acquis et libérés. Pour utiliser la fonctionnalité VM Hoarding, vous spécifiez un indicateur de démarrage appelé `STARTUP_HOARD_GC_VM` via l’API d’hébergement. Au lieu de renvoyer des segments vides au système d’exploitation, le CLR annule la réservation de mémoire sur ces segments et les met sur liste d’attente. (Notez que le CLR ne le fait pas pour les segments qui sont trop grands.) Le CLR utilise plus tard ces segments pour satisfaire les nouvelles demandes de segment. La prochaine fois que votre application a besoin d’un nouveau segment, le CLR en utilise un de cette liste d’attente, s’il est assez grand.
 
 La fonctionnalité VM Hoarding est également utile pour les applications qui veulent garder les segments déjà acquis, comme certaines applications serveur qui sont les applications principales exécutées sur le système, pour éviter les exceptions de mémoire insuffisante.
 

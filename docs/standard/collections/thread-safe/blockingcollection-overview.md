@@ -9,10 +9,10 @@ helpviewer_keywords:
 - BlockingCollection, overview
 ms.assetid: 987ea3d7-0ad5-4238-8b64-331ce4eb3f0b
 ms.openlocfilehash: fb01d29c723962e28d8ec4afc984cb4d6c48f9b5
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75711322"
 ---
 # <a name="blockingcollection-overview"></a>Vue d'ensemble de BlockingCollection
@@ -82,4 +82,4 @@ BlockingCollection<string> bc = new BlockingCollection<string>(new ConcurrentBag
 
 - <xref:System.Collections.Concurrent?displayProperty=nameWithType>
 - [Collections et structures de données](../../../../docs/standard/collections/index.md)
-- [Collections thread-safe](../../../../docs/standard/collections/thread-safe/index.md)
+- [Thread-Safe Collections](../../../../docs/standard/collections/thread-safe/index.md)

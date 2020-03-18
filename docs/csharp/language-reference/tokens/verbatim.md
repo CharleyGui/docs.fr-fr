@@ -9,15 +9,15 @@ helpviewer_keywords:
 - '@ language element [C#]'
 ms.assetid: 89bc7e53-85f5-478a-866d-1cca003c4e8c
 ms.openlocfilehash: a3446eceb0d3c415e36ea1d2c7d8d6d34f65350d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75712414"
 ---
 # <a name="-c-reference"></a>@ (référence C#)
 
-Le caractère spécial `@` sert d’identificateur de chaîne textuelle. Il peut être utilisé des façons suivantes :
+Le caractère spécial `@` sert d’identificateur de chaîne textuelle. Il peut être utilisé selon les manières suivantes :
 
 1. Pour activer les mots clés C# à utiliser comme identificateurs. Le caractère `@` est le préfixe d’un élément de code que le compilateur doit interpréter comme un identificateur plutôt qu’un mot clé C#. L’exemple suivant utilise le caractère `@` pour définir un identificateur nommé `for` qu’il utilise dans une boucle `for`.
 
@@ -37,6 +37,6 @@ Le caractère spécial `@` sert d’identificateur de chaîne textuelle. Il peut
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
-- [Caractères spéciaux C#](./index.md)
+- [Caractères spéciaux CMD](./index.md)

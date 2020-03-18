@@ -17,10 +17,10 @@ helpviewer_keywords:
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
 ms.openlocfilehash: 1eb9c3c189d7bba3a12fdcd0c3d600a66bf819ca
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75348309"
 ---
 # <a name="custom-numeric-format-strings"></a>Chaînes de format numériques personnalisées
@@ -34,19 +34,19 @@ Les chaînes de format numérique personnalisées sont prises en charge par cert
 
 <a name="table"></a> Le tableau suivant décrit les spécificateurs de format numériques personnalisés et affiche un exemple de sortie produite par chaque spécificateur de format. Consultez la section [Remarques](#NotesCustomFormatting) pour plus d'informations sur l'utilisation de chaînes de format numériques personnalisées, et la section [Exemple](#example) pour obtenir une illustration complète de leur utilisation.
 
-|Spécificateur de format|Name|Description|Exemples|
+|Spécificateur de format|Nom|Description|Exemples|
 |----------------------|----------|-----------------|--------------|
 |"0"|Espace réservé du zéro|Remplace le zéro par le chiffre correspondant, le cas échéant ; sinon, le zéro s'affiche dans la chaîne de résultat.<br /><br /> Informations supplémentaires : [Spécificateur personnalisé « 0 »](#Specifier0).|1234.5678 ("00000") -> 01235<br /><br /> 0.45678 ("0.00", en-US) -> 0.46<br /><br /> 0.45678 ("0.00", fr-FR) -> 0,46|
 |"#"|Espace réservé de chiffre|Remplace le symbole « # » par le chiffre correspondant, le cas échéant ; sinon, aucun chiffre ne s'affiche dans la chaîne de résultat.<br /><br /> Notez qu’aucun chiffre n’apparaît dans la chaîne de résultat si le chiffre correspondant dans la chaîne d’entrée est un 0 non significatif. Exemple : 0003 ("####") -> 3.<br /><br /> Informations supplémentaires : [Spécificateur personnalisé « # »](#SpecifierD).|1234.5678 ("#####") -> 1235<br /><br /> 0.45678 ("#.##", en-US) -> .46<br /><br /> 0.45678 ("#.##", fr-FR) -> ,46|
-|"."|Virgule décimale|Détermine l'emplacement du séparateur décimal dans la chaîne de résultat.<br /><br /> Pour plus d’informations : [Le spécificateur personnalisé "."](#SpecifierPt)|0.45678 ("0.00", en-US) -> 0.46<br /><br /> 0.45678 ("0.00", fr-FR) -> 0,46|
-|","|Séparateur de groupes et mise à l'échelle des nombres|Sert à la fois de séparateur de groupes et de spécificateur de mise à l'échelle des nombres. En tant que séparateur de groupes, il insère un caractère de séparation des groupes localisé entre chaque groupe. En tant que spécificateur de mise à l'échelle des nombres, il divise un nombre par 1000 pour chaque virgule spécifiée.<br /><br /> Informations supplémentaires : [Spécificateur personnalisé « , »](#SpecifierTh).|Spécificateur de séparateur de groupes :<br /><br /> 2147483647 ("##,#", en-US) -> 2,147,483,647<br /><br /> 2147483647 ("##,#", es-ES) -> 2.147.483.647<br /><br /> Spécificateur de mise à l'échelle :<br /><br /> 2147483647 ("#,#,,", en-US) -> 2,147<br /><br /> 2147483647 ("#,#,,", es-ES) -> 2.147|
-|"%"|Espace réservé de pourcentage|Multiplie un nombre par 100 et insère un symbole de pourcentage localisé dans la chaîne de résultat.<br /><br /> Informations supplémentaires : [Spécificateur personnalisé « % »](#SpecifierPct).|0.3697 ("%#0.00", en-US) -> %36.97<br /><br /> 0.3697 ("%#0.00", el-GR) -> %36,97<br /><br /> 0.3697 ("##.0 %", en-US) -> 37.0 %<br /><br /> 0.3697 ("##.0 %", el-GR) -> 37,0 %|
-|"‰"|Espace réservé « pour mille »|Multiplie un nombre par 1000 et insère un symbole « pour mille » localisé dans la chaîne de résultat.<br /><br /> Informations supplémentaires : [Spécificateur personnalisé« ‰ »](#SpecifierPerMille).|0.03697 ("#0.00‰", en-US) -> 36.97‰<br /><br /> 0.03697 ("#0.00‰", ru-RU) -> 36,97‰|
+|"."|Virgule décimale|Détermine l'emplacement du séparateur décimal dans la chaîne de résultat.<br /><br /> Plus d’informations: [Le "." Spécification personnalisée](#SpecifierPt).|0.45678 ("0.00", en-US) -> 0.46<br /><br /> 0.45678 ("0.00", fr-FR) -> 0,46|
+|","|Séparateur de groupes et mise à l'échelle des nombres|Sert à la fois de séparateur de groupes et de spécificateur de mise à l'échelle des nombres. En tant que séparateur de groupes, il insère un caractère de séparation des groupes localisé entre chaque groupe. En tant que spécificateur de mise à l'échelle des nombres, il divise un nombre par 1000 pour chaque virgule spécifiée.<br /><br /> Plus d’informations: [Le "," Custom Specifier](#SpecifierTh).|Spécificateur de séparateur de groupes :<br /><br /> 2147483647 ("##,#", en-US) -> 2,147,483,647<br /><br /> 2147483647 ("##,#", es-ES) -> 2.147.483.647<br /><br /> Spécificateur de mise à l'échelle :<br /><br /> 2147483647 ("#,#,,", en-US) -> 2,147<br /><br /> 2147483647 ("#,#,,", es-ES) -> 2.147|
+|"%"|Espace réservé de pourcentage|Multiplie un nombre par 100 et insère un symbole de pourcentage localisé dans la chaîne de résultat.<br /><br /> Plus d’informations: [Le "%" Custom Specifier](#SpecifierPct).|0.3697 ("%#0.00", en-US) -> %36.97<br /><br /> 0.3697 ("%#0.00", el-GR) -> %36,97<br /><br /> 0.3697 ("##.0 %", en-US) -> 37.0 %<br /><br /> 0.3697 ("##.0 %", el-GR) -> 37,0 %|
+|"‰"|Espace réservé « pour mille »|Multiplie un nombre par 1000 et insère un symbole « pour mille » localisé dans la chaîne de résultat.<br /><br /> Plus d’informations: [Le " Specificateur personnalisé](#SpecifierPerMille)"|0.03697 ("#0.00‰", en-US) -> 36.97‰<br /><br /> 0.03697 ("#0.00‰", ru-RU) -> 36,97‰|
 |"E0"<br /><br /> "E+0"<br /><br /> "E-0"<br /><br /> "E0"<br /><br /> "E+0"<br /><br /> "E-0"|Notation exponentielle|Si le spécificateur est suivi d'au moins un zéro (0), met en forme le résultat à l'aide de la notation exponentielle. La casse de « E » ou « e » indique la casse du symbole d'exposant dans la chaîne de résultat. Le nombre des zéros qui suivent le caractère « E » ou « e » détermine le nombre minimal de chiffres dans l'exposant. Un signe plus (+) indique qu'un caractère de signe précède toujours l'exposant. Un signe moins (-) indique qu'un caractère de signe précède uniquement les exposants négatifs.<br /><br /> Informations supplémentaires : [Spécificateurs personnalisés « E » et « e »](#SpecifierExponent).|987654 ("#0.0e0") -> 98.8e4<br /><br /> 1503.92311 ("0.0##e+00") -> 1.504e+03<br /><br /> 1.8901385E-16 ("0.0e+00") -> 1.9e-16|
 |"\\"|Caractère d'échappement|Entraîne l'interprétation du caractère suivant comme un littéral plutôt que comme un spécificateur de format personnalisé.<br /><br /> Informations supplémentaires : [Caractère d'échappement « \\ »](#SpecifierEscape).|987654 ("\\###00\\#") -> #987654#|
-|'*chaîne*'<br /><br /> "*chaîne*"|Délimiteur de chaîne littérale|Indique que les caractères encadrés doivent être copiés inchangés dans la chaîne de résultat.<br/><br/>Plus d’informations : [Littéraux de caractère](#character-literals).|68 ("# 'degrees'") -> 68 degrees<br /><br /> 68 ("#' degrees'") -> 68 degrees|
+|'*string*'<br /><br /> "*chaîne*"|Délimiteur de chaîne littérale|Indique que les caractères encadrés doivent être copiés inchangés dans la chaîne de résultat.<br/><br/>Plus d’informations : [Littéraux de caractère](#character-literals).|68 ("# 'degrees'") -> 68 degrees<br /><br /> 68 ("#' degrees'") -> 68 degrees|
 |;|Séparateur de section|Définit des sections avec des chaînes de format distinctes pour les nombres positifs, négatifs et nuls.<br /><br /> Informations supplémentaires : [Séparateur de section « ; »](#SectionSeparator).|12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#);-\0-") -> -0-<br /><br /> -12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)<br /><br /> 12.345 ("#0.0#;(#0.0#)") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#)") -> 0.0<br /><br /> -12.345 ("#0.0#;(#0.0#)") -> (12.35)|
-|Autre|Tous les autres caractères|Le caractère est copié inchangé dans la chaîne de résultat.<br/><br/>Plus d’informations : [Littéraux de caractère](#character-literals).|68 ("# °") -> 68 °|
+|Autres|Tous les autres caractères|Le caractère est copié inchangé dans la chaîne de résultat.<br/><br/>Plus d’informations : [Littéraux de caractère](#character-literals).|68 ("# °") -> 68 °|
 
 Les sections suivantes fournissent des informations détaillées sur chacun des spécificateurs de format numériques personnalisés.
 
@@ -255,7 +255,7 @@ L’exemple suivant utilise les deux approches pour inclure des caractères rés
 
 <a name="NotesCustomFormatting"></a>
 
-## <a name="notes"></a>Remarques
+## <a name="notes"></a>Notes
 
 ### <a name="floating-point-infinities-and-nan"></a>Infinis à virgule flottante et NaN
 
@@ -275,7 +275,7 @@ Pour les chaînes de format à virgule fixe (c'est-à-dire les chaînes de forma
 
 <a name="example"></a>
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L'exemple suivant présente deux chaînes de format numériques personnalisées. Dans les deux cas, l'espace réservé de chiffre (`#`) affiche les données numériques, et tous les autres caractères sont copiés dans la chaîne de résultat.
 
@@ -290,6 +290,6 @@ L'exemple suivant présente deux chaînes de format numériques personnalisées.
 - <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>
 - [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
 - [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [Guide pratique pour remplir un nombre avec des zéros non significatifs](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
+- [Comment : remplir un nombre avec des zéros non significatifs](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)

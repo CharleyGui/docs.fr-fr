@@ -7,22 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
-ms.openlocfilehash: db653d0ed7f4835348484242b03392a8955c6392
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e5a5ca18828b689241abbb6d80c5adc51efb073c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713426"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79173599"
 ---
 # <a name="internal-c-reference"></a>internal (référence C#)
-Le mot clé `internal` est un [modificateur d’accès](./access-modifiers.md) pour les types et les membres de type. 
+Le mot clé `internal` est un [modificateur d’accès](./access-modifiers.md) pour les types et les membres de type.
   
- > Cette page traite de l’accès `internal`. Le mot clé `internal` fait également partie du modificateur d’accès [`protected internal`](./protected-internal.md).
+ > Cette page traite de l’accès `internal`. Le `internal` mot clé fait [`protected internal`](./protected-internal.md) également partie du modificateur d’accès.
   
 Les types et les membres internes (internal) sont accessibles uniquement dans les fichiers d’un même assembly, comme dans l’exemple suivant :  
   
 ```csharp  
-public class BaseClass   
+public class BaseClass
 {  
     // Only accessible within the same assembly.
     internal static int x = 0;
@@ -37,13 +37,13 @@ public class BaseClass
   
  Le fait de référencer un type ou un membre avec accès interne en dehors de l’assembly dans lequel il a été défini constitue une erreur.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Cet exemple contient deux fichiers : `Assembly1.cs` et `Assembly1_a.cs`. Le premier fichier contient la classe de base interne `BaseClass`. Dans le deuxième fichier, une tentative d’instanciation de `BaseClass` génère une erreur.  
   
 ```csharp  
 // Assembly1.cs  
 // Compile with: /target:library  
-internal class BaseClass   
+internal class BaseClass
 {  
    public static int intM = 0;  
 }  
@@ -52,22 +52,22 @@ internal class BaseClass
 ```csharp  
 // Assembly1_a.cs  
 // Compile with: /reference:Assembly1.dll  
-class TestAccess   
+class TestAccess
 {  
-   static void Main()   
+   static void Main()
    {  
       var myBase = new BaseClass();   // CS0122  
    }  
 }  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Dans cet exemple, utilisez les mêmes fichiers que vous avez utilisés dans l’exemple 1, et remplacez le niveau d’accessibilité `BaseClass` par `public`. Remplacez également le niveau d’accessibilité du membre `intM` par `internal`. Dans ce cas, vous pouvez instancier la classe, mais vous ne pouvez pas accéder au membre interne.  
   
 ```csharp  
 // Assembly2.cs  
 // Compile with: /target:library  
-public class BaseClass   
+public class BaseClass
 {  
    internal static int intM = 0;  
 }  
@@ -76,9 +76,9 @@ public class BaseClass
 ```csharp  
 // Assembly2_a.cs  
 // Compile with: /reference:Assembly2.dll  
-public class TestAccess   
+public class TestAccess
 {  
-   static void Main()   
+   static void Main()
    {  
       var myBase = new BaseClass();   // Ok.  
       BaseClass.intM = 444;    // CS0117  
@@ -92,12 +92,12 @@ Pour plus d’informations, consultez [Accessibilité déclarée](~/_csharplang/
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
 - [Modificateurs d’accès](./access-modifiers.md)
 - [Niveaux d’accessibilité](./accessibility-levels.md)
 - [Modificateurs](index.md)
 - [public](./public.md)
-- [private](./private.md)
-- [protected](./protected.md)
+- [Privé](./private.md)
+- [Protégé](./protected.md)

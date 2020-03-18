@@ -9,10 +9,10 @@ helpviewer_keywords:
 - tasks, how to unwrap nested tasks
 ms.assetid: a0769dd2-0f6d-48ca-8418-a9d39de7f450
 ms.openlocfilehash: c72654a2bc21035fe706d76018bb163d8ba01ee8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73106908"
 ---
 # <a name="how-to-unwrap-a-nested-task"></a>Comment : désencapsuler une tâche imbriquée
@@ -35,7 +35,7 @@ Vous pouvez retourner une tâche à partir d’une méthode, puis attendre ou po
   
  Les méthodes <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> peuvent être utilisées pour transformer toute `Task<Task>` ou `Task<Task<TResult>>` (`Task(Of Task)` ou `Task(Of Task(Of TResult))` en Visual Basic) en `Task` ou `Task<TResult>` (`Task(Of TResult)` en Visual Basic). La nouvelle tâche représente entièrement la tâche imbriquée interne et inclut l’état d’annulation ainsi que toutes les exceptions.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L'exemple suivant décrit comment utiliser la méthode d’extension <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A>.  
   
  [!code-csharp[TPL_UnWrap#04](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_unwrap/cs/unwrapprogram.cs#04)]

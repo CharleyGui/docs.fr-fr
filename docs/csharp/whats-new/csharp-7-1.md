@@ -3,11 +3,11 @@ title: Nouveautés de C# 7.1
 description: Vue d’ensemble des nouvelles fonctionnalités de C# 7.1.
 ms.date: 04/09/2019
 ms.openlocfilehash: 5d2d6f51b6422f5b4db5c6bd275b5ffce1f695f8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714591"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399706"
 ---
 # <a name="whats-new-in-c-71"></a>Nouveautés de C# 7.1
 
@@ -17,9 +17,9 @@ C# 7.1 ajoute l’élément de configuration de [sélection de la version du lan
 
 Les nouvelles fonctionnalités de langage de cette version sont :
 
-- [méthode `async` `Main`](#async-main)
+- [`async``Main` méthode](#async-main)
   - Le point d’entrée pour une application peut avoir le modificateur `async`.
-- [Expressions littérales `default`](#default-literal-expressions)
+- [`default`expressions littérales](#default-literal-expressions)
   - Vous pouvez utiliser des expressions littérales default dans les expressions de valeur par défaut quand le type cible peut être inféré.
 - [Noms des éléments de tuple inférés](#inferred-tuple-element-names)
   - Les noms des éléments de tuple peuvent être inférés dans de nombreux cas à partir de l’initialisation du tuple.
@@ -114,5 +114,5 @@ Pour plus d’informations sur cette fonctionnalité, voir l’article [Tuples](
 
 ## <a name="reference-assembly-generation"></a>Génération d’assemblys de références
 
-Il existe deux nouvelles options du compilateur qui génèrent des *assemblys de références uniquement* : [-refout](../language-reference/compiler-options/refout-compiler-option.md) et [-refonly](../language-reference/compiler-options/refonly-compiler-option.md).
+Il existe deux nouvelles options de compilateur qui génèrent *des assemblages de référence seulement*: [-refout](../language-reference/compiler-options/refout-compiler-option.md) et [-refonly](../language-reference/compiler-options/refonly-compiler-option.md).
 Les articles en lien décrivent plus en détail ces options et les assemblys de références.

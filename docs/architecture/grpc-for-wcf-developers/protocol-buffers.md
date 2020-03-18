@@ -1,28 +1,28 @@
 ---
-title: Mémoires tampons de protocole-gRPC pour les développeurs WCF
-description: Présentation du format de câble des mémoires tampons de protocole utilisé pour la mise en réseau gRPC.
+title: Protocole Buffers - gRPC pour les développeurs WCF
+description: Introduction au format de fil Protocol Buffers utilisé pour le réseautage gRPC.
 ms.date: 09/09/2019
-ms.openlocfilehash: cc4ff272a9912d6f2dd8f8ddb1972c7369f980fe
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 35319d299a8bc2866a87954b3e54bfda9314ffe8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503459"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79147930"
 ---
-# <a name="protocol-buffers"></a>Mémoires tampons de protocole
+# <a name="protocol-buffers"></a>Tampons de protocole
 
-les services gRPC envoient et reçoivent des données sous forme de *messages de tampon de protocole (Protobuf)* , similaires aux contrats de données dans Windows Communication Foundation (WCF). Protobuf est un moyen efficace de sérialiser des données structurées pour que les ordinateurs puissent les lire et les écrire, sans la surcharge que les formats explicites, tels que XML ou JSON, impliquent.
+les services gRPC envoient et reçoivent des données sous forme *de messages Protocol Buffer (Protobuf),* similaires aux contrats de données de la Windows Communication Foundation (WCF). Protobuf est un moyen efficace de sérialisation des données structurées pour les machines à lire et à écrire, sans les frais généraux que les formats lisibles par l’homme comme XML ou JSON encourent.
 
-Ce chapitre explique comment fonctionne Protobuf et comment définir vos propres messages Protobuf.
+Ce chapitre couvre le fonctionnement de Protobuf et la façon de définir vos propres messages Protobuf.
 
 ## <a name="how-protobuf-works"></a>Fonctionnement de Protobuf
 
-La plupart des techniques de sérialisation d’objets .NET, y compris les contrats de données WCF, fonctionnent à l’aide de la réflexion pour analyser la structure d’objets au moment de l’exécution. En revanche, la plupart des bibliothèques Protobuf nécessitent que vous définissiez la structure en amont à l’aide d’un langage dédié (langue de la*mémoire tampon du protocole*) dans un fichier de `.proto`. Un compilateur utilise ensuite ce fichier pour générer le code pour toutes les plateformes prises en charge. Les plateformes prises en charge incluent .NET,C++Java, C/, JavaScript et bien plus encore. 
+La plupart des techniques de sérialisation d’objets .NET, y compris les contrats de données de WCF, fonctionnent en utilisant la réflexion pour analyser la structure de l’objet au moment de l’exécution. En revanche, la plupart des bibliothèques Protobuf vous obligent à définir la `.proto` structure à l’avance en utilisant une langue dédiée ( Langage tampon de*protocole*) dans un fichier. Un compilateur utilise ensuite ce fichier pour générer du code pour l’une des plates-formes prises en charge. Les plates-formes prises en charge comprennent .NET, Java, C/C, JavaScript, et bien d’autres.
 
-Le compilateur Protobuf, `protoc`, est géré par Google, bien que d’autres implémentations soient disponibles. Le code généré est efficace et optimisé pour la sérialisation et la désérialisation rapides des données.
+Le compilateur Protobuf, `protoc`, est maintenu par Google, bien que d’autres implémentations sont disponibles. Le code généré est efficace et optimisé pour la sérialisation rapide et la désétérialisation des données.
 
-Le format de câble Protobuf est un encodage binaire. Il utilise des astuces astucieuses pour réduire le nombre d’octets utilisés pour représenter les messages. La connaissance du format d’encodage binaire n’est pas nécessaire pour utiliser Protobuf. Mais si cela vous intéresse, vous pouvez en savoir plus à ce sujet sur [le site Web de mémoires tampons de protocole](https://developers.google.com/protocol-buffers/docs/encoding).
+Le format de fil Protobuf est un codage binaire. Il utilise quelques astuces intelligentes pour minimiser le nombre d’octets utilisés pour représenter les messages. La connaissance du format d’encodage binaire n’est pas nécessaire pour utiliser Protobuf. Mais si vous êtes intéressé, vous pouvez en apprendre davantage à ce sujet sur [le site Protocol Buffers](https://developers.google.com/protocol-buffers/docs/encoding).
 
 >[!div class="step-by-step"]
->[Précédent](why-grpc.md)
->[Suivant](protobuf-messages.md)
+>[Suivant précédent](why-grpc.md)
+>[Next](protobuf-messages.md)

@@ -5,10 +5,10 @@ helpviewer_keywords:
 - new constraint keyword [C#]
 ms.assetid: 58850b64-cb97-4136-be50-1f3bc7fc1da9
 ms.openlocfilehash: cd67aeb82d736b8941b0637494089723e7815505
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713355"
 ---
 # <a name="new-constraint-c-reference"></a>new, contrainte (référence C#)
@@ -33,7 +33,7 @@ Pour plus d’informations, consultez la section [Contraintes de paramètre de t
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../language-reference/index.md)
+- [Référence C](../../language-reference/index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Génériques](../../programming-guide/generics/index.md)

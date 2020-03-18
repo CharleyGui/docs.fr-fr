@@ -9,12 +9,12 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: 9c1521f39dea72b51801a81b13e8a0203956731c
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: dbe4f4e95c2b99f1be47885e39d51db81ba3a97d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422797"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79173703"
 ---
 # <a name="foreach-in-c-reference"></a>foreach, instruction (C#)
 
@@ -23,11 +23,13 @@ L’instruction `foreach` exécute une instruction ou un bloc d’instructions p
 - comporte la méthode `GetEnumerator` sans paramètre publique dont le retour est de type classe, struct ou interface,
 - le type de retour de la méthode `GetEnumerator` contient la propriété publique `Current` et la méthode sans paramètre publique `MoveNext`, dont le type de retour est <xref:System.Boolean>.
 
-À partir de C# 7.3, si la propriété `Current` de l’énumérateur retourne une [valeur de retour de référence](ref.md#reference-return-values) (`ref T` où `T` est le type de l’élément de collection), vous pouvez déclarer la variable d’itération avec le modificateur `ref` ou `ref readonly`.
+En commençant par le C 7.3, si `Current` la propriété de l’énumérateur retourne une valeur de [rendement de référence](ref.md#reference-return-values) (où`ref T` `T` est le type de l’élément de collecte), vous pouvez déclarer la variable d’itération avec le ou `ref` `ref readonly` le modificateur.
+
+À partir de C 8.0, l’opérateur `await` peut être appliqué à l’instruction `foreach` lorsque le type de collection implémente l’interface. <xref:System.Collections.Generic.IAsyncEnumerable%601> Chaque itération de la boucle peut être suspendue pendant que l’élément suivant est récupéré asynchronement. Par défaut, les éléments de flux sont traités dans le contexte capturé. Si vous souhaitez désactiver la capture du <xref:System.Threading.Tasks.TaskAsyncEnumerableExtensions.ConfigureAwait%2A?displayProperty=nameWithType> contexte, utilisez la méthode d’extension. Pour plus d’informations sur les contextes de synchronisation et la capture du contexte actuel, voir [l’article sur la consommation du modèle asynchrone basé sur les tâches](../../../standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md).
 
 À tout moment dans le bloc d’instructions `foreach`, vous pouvez sortir de la boucle à l’aide de l’instruction [break](break.md), ou passer à l’itération suivante de la boucle à l’aide de l’instruction [continue](continue.md). Vous pouvez également quitter une boucle `foreach` en utilisant les instructions [goto](goto.md), [return](return.md) ou [throw](throw.md).
 
-Si l’instruction `foreach` est appliquée à `null`, une <xref:System.NullReferenceException> est levée. Si la collection source de l’instruction `foreach` est vide, le corps de la boucle `foreach` n’est pas exécuté et est ignoré.
+Si l’instruction `foreach` est appliquée à `null`, une <xref:System.NullReferenceException> est levée. Si la collecte `foreach` source de la déclaration `foreach` est vide, le corps de la boucle n’est pas exécuté et ignoré.
 
 ## <a name="examples"></a>Exemples
 
@@ -45,14 +47,18 @@ L’exemple suivant utilise une variable d’itération `ref` pour définir la v
 
 [!code-csharp[ref span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#RefSpan)]
 
+L’exemple `await foreach` suivant utilise pour itérer une collection qui génère chaque élément asynchronement:
+
+[!code-csharp[ref span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#AwaitForeach)]
+
 ## <a name="c-language-specification"></a>spécification du langage C#
 
 Pour plus d’informations, voir la section [Instruction foreach](~/_csharplang/spec/statements.md#the-foreach-statement) de la [spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [Utiliser foreach avec des tableaux](../../programming-guide/arrays/using-foreach-with-arrays.md)
-- [instruction for](for.md)
+- [Utilisation de l’avant-car avec des tableaux](../../programming-guide/arrays/using-foreach-with-arrays.md)
+- [pour déclaration](for.md)

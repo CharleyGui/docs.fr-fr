@@ -11,10 +11,10 @@ helpviewer_keywords:
 - grouping data in collections, selecting collection class
 ms.assetid: ba049f9a-ce87-4cc4-b319-3f75c8ddac8a
 ms.openlocfilehash: fb03200c810290c970f7aa56a0e15d385aca7ca8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75711348"
 ---
 # <a name="selecting-a-collection-class"></a>Sélection d’une classe de collection
@@ -86,4 +86,4 @@ Veillez à choisir votre classe de collection avec soin. L’utilisation d’un 
 - <xref:System.Collections>
 - <xref:System.Collections.Specialized>
 - <xref:System.Collections.Generic>
-- [Collections thread-safe](../../../docs/standard/collections/thread-safe/index.md)
+- [Thread-Safe Collections](../../../docs/standard/collections/thread-safe/index.md)
