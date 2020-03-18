@@ -1,36 +1,36 @@
 ---
-title: Types de RPC-gRPC pour les développeurs WCF
-description: Examen des types d’appel de procédure distante pris en charge par WCF et de leurs équivalents dans gRPC
+title: Types de RPC - gRPC pour les développeurs WCF
+description: Examen des types d’appels de procédure à distance soutenus par WCF et leurs équivalents dans gRPC
 ms.date: 09/02/2019
-ms.openlocfilehash: 58f097bac61395e6810155e8ae9a6bbf2219ec5e
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: b9d4ce7cae693ed7904229483cbccfe3b299b640
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503443"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79401682"
 ---
 # <a name="types-of-rpc"></a>Types de RPC
 
-En tant que développeur Windows Communication Foundation (WCF), vous êtes probablement employé pour traiter les types d’appel de procédure distante (RPC) suivants :
+En tant que développeur de la Windows Communication Foundation (WCF), vous êtes probablement habitué à traiter les types suivants d’appel de procédure à distance (RPC) :
 
 - Demande/réponse
-- Duplex
-  - Duplex unidirectionnel avec session
-  - Full duplex avec session
+- Duplex:
+  - Duplex à sens unique avec session
+  - Duplex complet avec session
 - Unidirectionnel
 
-Il est possible de mapper ces types RPC assez naturellement à des concepts gRPC existants. Ce chapitre aborde chacun de ces domaines. Le [Chapitre 5](migrate-wcf-to-grpc.md) présente des exemples similaires de manière plus approfondie.
+Il est possible de cartographier ces types RPC assez naturellement aux concepts gRPC existants. Ce chapitre examinera chacun de ces domaines à tour de rôle. [Le chapitre 5](migrate-wcf-to-grpc.md) explorera plus en profondeur des exemples similaires.
 
-| WCF | gRPC |
+| WCF | gRPC (en) |
 | --- | ---- |
 | Demande/réponse régulière | Unaire |
-| Service duplex avec session utilisant une interface de rappel client | Streaming de serveur |
-| Service Full duplex avec session | Diffusion bidirectionnelle |
-| Opérations unidirectionnelles | Diffusion en continu du client |
+| Service Duplex avec session à l’aide d’une interface de rappel client | Streaming serveur |
+| Service en duplex complet avec session | Streaming bidirectionnel |
+| Opérations à sens unique | Streaming client |
 
 ## <a name="requestreply"></a>Demande/réponse
 
-Pour les méthodes de requête/réponse simples qui acceptent et retournent de petites quantités de données, utilisez le modèle gRPC le plus simple, le RPC unaire.
+Pour les méthodes simples de demande/réponse qui prennent et retournent de petites quantités de données, utilisez le modèle gRPC le plus simple, le RPC unary.
 
 ```protobuf
 service Things {
@@ -57,19 +57,19 @@ public async Task ShowThing(int thingId)
 }
 ```
 
-Comme vous pouvez le voir, l’implémentation d’une méthode de service RPC unaire gRPC est semblable à l’implémentation d’une opération WCF. La différence réside dans le fait qu’avec gRPC, vous substituez une méthode de classe de base au lieu d’implémenter une interface. Sur le serveur, les méthodes de base gRPC retournent toujours <xref:System.Threading.Tasks.Task%601>, bien que le client fournisse des méthodes Async et Blocking pour appeler le service.
+Comme vous pouvez le voir, la mise en œuvre d’une méthode de service RPC nonaire gRPC est similaire à la mise en œuvre d’une opération WCF. La différence est qu’avec gRPC, vous remplacez une méthode de classe de base au lieu de mettre en œuvre une interface. Sur le serveur, les méthodes <xref:System.Threading.Tasks.Task%601>de base gRPC reviennent toujours, bien que le client fournisse à la fois des async et des méthodes de blocage pour appeler le service.
 
-## <a name="wcf-duplex-one-way-to-client"></a>Duplex WCF, une solution pour le client
+## <a name="wcf-duplex-one-way-to-client"></a>Duplex WCF, une façon de client
 
-Les applications WCF (avec certaines liaisons) peuvent créer une connexion permanente entre le client et le serveur. Le serveur peut envoyer de manière asynchrone des données au client jusqu’à ce que la connexion soit fermée, à l’aide d’une *interface de rappel* spécifiée dans la propriété <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType>.
+Les applications WCF (avec certaines liaisons) peuvent créer une connexion persistante entre le client et le serveur. Le serveur peut envoyer asynchronement des données au client jusqu’à ce <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> que la connexion soit fermée, en utilisant une interface de *rappel* spécifiée dans la propriété.
 
-les services gRPC offrent des fonctionnalités similaires à celles des flux de messages. Les flux ne sont pas mappés *exactement* aux services duplex WCF en termes d’implémentation, mais vous pouvez obtenir les mêmes résultats.
+les services gRPC offrent des fonctionnalités similaires avec des flux de messages. Les flux ne sont pas *exactement* cartographiés pour les services duplex WCF en termes de mise en œuvre, mais vous pouvez obtenir les mêmes résultats.
 
-### <a name="grpc-streaming"></a>diffusion en continu gRPC
+### <a name="grpc-streaming"></a>gRPC streaming
 
-gRPC prend en charge la création de flux persistants entre le client et le serveur, et du serveur au client. Les deux types de flux peuvent être actifs simultanément. Cette capacité est appelée diffusion bidirectionnelle. 
+gRPC prend en charge la création de flux persistants d’un client à l’autre, et d’un serveur à l’autre. Les deux types de flux peuvent être actifs en même temps. Cette capacité est appelée streaming bidirectionnel.
 
-Vous pouvez utiliser des flux pour la messagerie asynchrone arbitraire dans le temps. Vous pouvez également les utiliser pour transmettre des jeux de données volumineux qui sont trop volumineux pour être générés et envoyés dans une requête ou une réponse unique.
+Vous pouvez utiliser des flux pour des messages arbitraires et asynchrones au fil du temps. Ou vous pouvez les utiliser pour passer de grands ensembles de données qui sont trop grands pour générer et envoyer une seule demande ou réponse.
 
 L’exemple suivant montre un RPC de streaming de serveur.
 
@@ -96,7 +96,7 @@ public class ClockStreamerService : ClockStreamer.ClockStreamerBase
 }
 ```
 
-Ce flux de serveur peut être consommé à partir d’une application cliente, comme illustré dans le code suivant :
+Ce flux serveur peut être consommé à partir d’une application client, comme indiqué dans le code suivant :
 
 ```csharp
 public async Task TellTheTimeAsync(CancellationToken token)
@@ -115,19 +115,19 @@ public async Task TellTheTimeAsync(CancellationToken token)
 ```
 
 > [!NOTE]
-> Les RPC de streaming de serveur sont utiles pour les services de type abonnement. Elles sont également utiles pour l’envoi de jeux de données volumineux lorsqu’il est inefficace ou impossible de générer l’ensemble du jeu de données en mémoire. Toutefois, les réponses de diffusion en continu ne sont pas aussi rapides que l’envoi de `repeated` champs dans un seul message. En règle générale, la diffusion en continu ne doit pas être utilisée pour les petits jeux de données.
+> Les RPC en streaming de serveurs sont utiles pour les services de type abonnement. Ils sont également utiles pour l’envoi de grands ensembles de données quand il serait inefficace ou impossible de construire l’ensemble des données en mémoire. Cependant, les réponses en streaming n’est pas aussi rapide que l’envoi de `repeated` champs dans un seul message. En règle générale, le streaming ne devrait pas être utilisé pour de petits jeux de données.
 
 ### <a name="differences-from-wcf"></a>Différences par rapport à WCF
 
-Un service duplex WCF utilise une interface de rappel client qui peut avoir plusieurs méthodes. Un service de diffusion en continu gRPC Server peut uniquement envoyer des messages sur un seul flux. Si vous avez besoin de plusieurs méthodes, utilisez un type de message avec un [champ any ou](protobuf-any-oneof.md) un champ pour envoyer des messages différents et écrire du code sur le client pour les gérer.
+Un service en duplex WCF utilise une interface de rappel client qui peut avoir plusieurs méthodes. Un service de streaming de serveurs gRPC ne peut envoyer des messages que sur un seul flux. Si vous avez besoin de plusieurs méthodes, utilisez un type de message avec [un champ ou un champ quelconque](protobuf-any-oneof.md) pour envoyer différents messages, et écrivez du code dans le client pour les manipuler.
 
-Dans WCF, la classe [ServiceContract](xref:System.ServiceModel.ServiceContractAttribute) avec la session reste active jusqu’à ce que la connexion soit fermée. Plusieurs méthodes peuvent être appelées dans la session. Dans gRPC, la `Task` que la méthode d’implémentation retourne ne doit pas se terminer tant que la connexion n’est pas fermée.
+Dans WCF, la classe [ServiceContract](xref:System.ServiceModel.ServiceContractAttribute) avec la session est maintenue en vie jusqu’à ce que la connexion soit fermée. Plusieurs méthodes peuvent être appelées au cours de la session. Dans gRPC, `Task` le rendement de la méthode de mise en œuvre ne doit pas se terminer jusqu’à ce que la connexion soit fermée.
 
-## <a name="wcf-one-way-operations-and-grpc-client-streaming"></a>Opérations unidirectionnelles WCF et diffusion en continu du client gRPC
+## <a name="wcf-one-way-operations-and-grpc-client-streaming"></a>Opérations à sens unique WCF et flux de clients gRPC
 
-WCF fournit des opérations unidirectionnelles (marquées avec `[OperationContract(IsOneWay = true)]`) qui retournent un accusé de réception spécifique au transport. les méthodes de service gRPC retournent toujours une réponse, même si elle est vide. Le client doit toujours attendre cette réponse. Pour le style de messagerie « Fire-and-oublier » dans gRPC, vous pouvez créer un service de diffusion en continu client.
+WCF fournit des opérations à `[OperationContract(IsOneWay = true)]`sens unique (marquées par ) qui renvoient une reconnaissance spécifique au transport. les méthodes de service gRPC retournent toujours une réponse, même si elle est vide. Le client doit toujours attendre cette réponse. Pour le style de messagerie « fire-and-forget » dans gRPC, vous pouvez créer un service de streaming client.
 
-### <a name="thing_logproto"></a>thing_log. proto
+### <a name="thing_logproto"></a>thing_log.proto
 
 ```protobuf
 service ThingLog {
@@ -158,7 +158,7 @@ public class ThingLogService : Protos.ThingLog.ThingLogBase
 }
 ```
 
-### <a name="thinglog-client-example"></a>Exemple de client ThingLog
+### <a name="thinglog-client-example"></a>Exemple du client ThingLog
 
 ```csharp
 public class ThingLogger : IAsyncDisposable
@@ -189,13 +189,13 @@ public class ThingLogger : IAsyncDisposable
 }
 ```
 
-Vous pouvez utiliser les RPC de streaming client pour la messagerie de déclenchement et d’oubli, comme illustré dans l’exemple précédent. Vous pouvez également les utiliser pour envoyer des jeux de données très volumineux au serveur. Le même avertissement sur les performances s’applique : pour les jeux de données plus petits, utilisez `repeated` champs dans des messages ordinaires.
+Vous pouvez utiliser des RPC en streaming client pour la messagerie fire-and-forget, comme le montre l’exemple précédent. Vous pouvez également les utiliser pour envoyer de très grands jeux de données sur le serveur. Le même avertissement sur les performances s’applique : pour les jeux de données plus petits, utilisez `repeated` des champs dans les messages réguliers.
 
-## <a name="wcf-full-duplex-services"></a>Services en duplex intégral WCF
+## <a name="wcf-full-duplex-services"></a>WCF services en duplex complet
 
-La liaison duplex WCF prend en charge plusieurs opérations unidirectionnelles sur l’interface de service et l’interface de rappel du client. Cette prise en charge autorise les conversations en cours entre le client et le serveur. gRPC prend en charge des appels de manière similaire avec les RPC de diffusion bidirectionnelle, où les deux paramètres sont marqués avec le modificateur `stream`.
+La liaison en duplex WCF prend en charge plusieurs opérations aller simple sur l’interface de service et l’interface de rappel client. Ce support permet des conversations continues entre le client et le serveur. gRPC prend en charge quelque chose de similaire avec les CRP en streaming bidirectionnel, où les deux paramètres sont marqués avec le `stream` modificateur.
 
-### <a name="chatproto"></a>conversation. proto
+### <a name="chatproto"></a>chat.proto
 
 ```protobuf
 service Chatter {
@@ -228,9 +228,9 @@ public class ChatterService : Chatter.ChatterBase
 }
 ```
 
-Dans l’exemple précédent, vous pouvez voir que la méthode d’implémentation reçoit à la fois un flux de demande (`IAsyncStreamReader<MessageRequest>`) et un flux de réponse (`IServerStreamWriter<MessageResponse>`). La méthode peut lire et écrire des messages jusqu’à ce que la connexion soit fermée.
+Dans l’exemple précédent, vous pouvez voir que la`IAsyncStreamReader<MessageRequest>`méthode de mise`IServerStreamWriter<MessageResponse>`en œuvre reçoit à la fois un flux de demande ( ) et un flux de réponse ( ). La méthode peut lire et écrire des messages jusqu’à ce que la connexion soit fermée.
 
-### <a name="chatter-client"></a>Client chatter
+### <a name="chatter-client"></a>Client De chatter
 
 ```csharp
 public class Chat : IAsyncDisposable
@@ -271,5 +271,5 @@ public class Chat : IAsyncDisposable
 ```
 
 >[!div class="step-by-step"]
->[Précédent](wcf-bindings.md)
->[Suivant](metadata.md)
+>[Suivant précédent](wcf-bindings.md)
+>[Next](metadata.md)

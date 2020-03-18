@@ -2,12 +2,12 @@
 title: Utilisation de la variance pour les délégués génériques Func et Action (C#)
 ms.date: 07/20/2015
 ms.assetid: 1826774f-2b7a-470f-b110-17cfdd6abdae
-ms.openlocfilehash: bbfc41fb8ab3e7d800f1eb03098e02056e694872
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: 17f55d594ad4364fd29c8f6e41bd6ad2445b0986
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659907"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169790"
 ---
 # <a name="using-variance-for-func-and-action-generic-delegates-c"></a>Utilisation de la variance pour les délégués génériques Func et Action (C#)
 Ces exemples montrent comment utiliser la covariance et la contravariance dans les délégués génériques `Func` et `Action` pour permettre de réutiliser des méthodes et fournir davantage de flexibilité dans votre code.  
@@ -39,8 +39,8 @@ class Program
         // but you can assign it a method that returns Employee.  
         Func<String, Person> findPerson = FindByTitle;  
   
-        // You can also assign a delegate   
-        // that returns a more derived type   
+        // You can also assign a delegate
+        // that returns a more derived type
         // to a delegate that returns a less derived type.  
         findPerson = findEmployee;  
   
@@ -67,14 +67,14 @@ class Program
         // Create an instance of the delegate without using variance.  
         Action<Person> addPersonToContacts = AddToContacts;  
   
-        // The Action delegate expects   
+        // The Action delegate expects
         // a method that has an Employee parameter,  
         // but you can assign it a method that has a Person parameter  
         // because Employee derives from Person.  
         Action<Employee> addEmployeeToContacts = AddToContacts;  
   
-        // You can also assign a delegate   
-        // that accepts a less derived parameter to a delegate   
+        // You can also assign a delegate
+        // that accepts a less derived parameter to a delegate
         // that accepts a more derived parameter.  
         addEmployeeToContacts = addPersonToContacts;  
     }  

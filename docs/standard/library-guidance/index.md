@@ -3,10 +3,10 @@ title: Conseils sur la bibliothèque .NET open source
 description: Recommandations de bonne pratique à l’attention des développeurs qui créent des bibliothèques .NET de qualité.
 ms.date: 10/17/2018
 ms.openlocfilehash: 4c76dfae6ffc39df7f15381be64e33657067d79d
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "76731423"
 ---
 # <a name="open-source-library-guidance"></a>Conseils sur la bibliothèque open source
@@ -24,7 +24,7 @@ Aspects des bibliothèques .NET open source de qualité :
 > * **Approuvées** - Les bibliothèques .NET ont la confiance des développeurs en publiant sur NuGet à l’aide des bonnes pratiques de sécurité.
 
 > [!div class="nextstepaction"]
-> [Bien démarrer](./get-started.md)
+> [Découvrir](./get-started.md)
 
 ## <a name="types-of-recommendations"></a>Types de suggestions
 
@@ -32,19 +32,19 @@ Chaque article présente quatre types de suggestions : **À faire**, **Envisager
 
 Vous devez presque toujours suivre une suggestion **À faire**. Par exemple :
 
-✔️ distribuer votre bibliothèque à l’aide d’un package NuGet.
+✔️ À FAIRE : Distribuer votre bibliothèque à l’aide d’un package NuGet.
 
 En revanche, les recommandations **Envisager** doivent généralement être appliquées, mais il existe des exceptions à la règle qui sont fondées, c’est pourquoi vous ne devez pas vous inquiéter si vous ne les suivez pas :
 
-✔️ envisagez d’utiliser [SemVer 2.0.0](https://semver.org/) pour la version de votre package NuGet.
+✔️ ENVISAGER d’utiliser [SemVer 2.0.0](https://semver.org/) pour versionner votre package NuGet.
 
 Les suggestions **Éviter** indiquent quelque chose qui n’est généralement pas une bonne idée, mais enfreindre les règles peut parfois avoir du sens :
 
-❌ éviter les références de package NuGet qui demandent une version exacte.
+❌AVOID NuGet références paquet qui exigent une version exacte.
 
 Et enfin, les suggestions **À ne pas faire** désignent quelque chose que vous ne devez presque jamais faire :
 
-❌ ne publiez pas de versions avec nom fort et non avec nom fort de votre bibliothèque. Par exemple : `Contoso.Api` et `Contoso.Api.StrongNamed`.
+❌NE publiez PAS de versions de votre bibliothèque, nommées en force et non. Par exemple, `Contoso.Api` et `Contoso.Api.StrongNamed`.
 
 >[!div class="step-by-step"]
->[Next](get-started.md)
+>[Suivant](get-started.md)

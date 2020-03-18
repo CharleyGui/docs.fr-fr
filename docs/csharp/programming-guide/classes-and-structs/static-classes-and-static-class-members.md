@@ -9,10 +9,10 @@ helpviewer_keywords:
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
 ms.openlocfilehash: 7add512b262afbabe996f752c083566a2c394dfd
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75705429"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Classes statiques et membres de classe statique (Guide de programmation C#)
@@ -56,7 +56,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
   
  Les classes statiques sont scellées (sealed) et ne peuvent par conséquent pas être héritées. Elles ne peuvent hériter d’aucune classe à part <xref:System.Object>. Les classes statiques ne peuvent pas contenir un constructeur d’instance. Toutefois, elles peuvent contenir un constructeur statique. Les classes non statiques doivent également définir un constructeur statique si la classe contient des membres statiques qui requièrent une initialisation non triviale. Pour plus d’informations, consultez [Constructeurs statiques](./static-constructors.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Voici un exemple d’une classe statique qui contient deux méthodes qui convertissent la température des degrés Celsius en degrés Fahrenheit et des degrés Fahrenheit en degrés Celsius :  
   
  [!code-csharp[csProgGuideObjects#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#31)]  
@@ -91,8 +91,8 @@ Pour plus d’informations, voir [Classes statiques](~/_csharplang/spec/classes.
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [static](../../language-reference/keywords/static.md)
+- [Statique](../../language-reference/keywords/static.md)
 - [Classes](./classes.md)
-- [classe](../../language-reference/keywords/class.md)
+- [Classe](../../language-reference/keywords/class.md)
 - [Constructeurs statiques](./static-constructors.md)
-- [Constructeurs d’instances](./instance-constructors.md)
+- [Constructeurs d'instances](./instance-constructors.md)

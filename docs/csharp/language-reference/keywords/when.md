@@ -8,10 +8,10 @@ helpviewer_keywords:
 - when keyword [C#]
 ms.assetid: dd543335-ae37-48ac-9560-bd5f047b9aea
 ms.openlocfilehash: 6a61c42ba2d01e84ffae376bf95c99877437be85
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75712830"
 ---
 # <a name="when-c-reference"></a>when (référence C#)
@@ -23,7 +23,7 @@ Vous pouvez utiliser le mot clé contextuel `when` pour spécifier une condition
 
 ## <a name="when-in-a-catch-statement"></a>`when` dans une instruction `catch`
 
-Depuis C# 6, `when` peut être utilisé dans une instruction `catch` pour spécifier une condition qui doit avoir la valeur True pour que le gestionnaire d’une exception spécifique soit exécuté. Sa syntaxe est la suivante :
+Depuis C# 6, `when` peut être utilisé dans une instruction `catch` pour spécifier une condition qui doit avoir la valeur True pour que le gestionnaire d’une exception spécifique soit exécuté. Sa syntaxe est la suivante :
 
 ```csharp
 catch (ExceptionType [e]) when (expr)
@@ -37,7 +37,7 @@ L’exemple suivant utilise le mot clé `when` afin d’exécuter conditionnelle
 
 ## <a name="when-in-a-switch-statement"></a>`when` dans une instruction `switch`
 
-Depuis C# 7.0, les étiquettes `case` n’ont plus besoin de s’exclure mutuellement et l’ordre dans lequel les étiquettes `case` s’affichent dans une instruction `switch` peut déterminer le bloc switch exécuté. Le mot clé `when` peut être utilisé pour spécifier une condition de filtre qui fait que son étiquette case associée a la valeur True uniquement si la condition de filtre a également la valeur True. Sa syntaxe est la suivante :
+Depuis C# 7.0, les étiquettes `case` n’ont plus besoin de s’exclure mutuellement et l’ordre dans lequel les étiquettes `case` s’affichent dans une instruction `switch` peut déterminer le bloc switch exécuté. Le mot clé `when` peut être utilisé pour spécifier une condition de filtre qui fait que son étiquette case associée a la valeur True uniquement si la condition de filtre a également la valeur True. Sa syntaxe est la suivante :
 
 ```csharp
 case (expr) when (when-condition):
@@ -51,6 +51,6 @@ L’exemple suivant utilise le mot clé `when` pour tester les objets `Shape` ay
 
 ## <a name="see-also"></a>Voir aussi
 
-- [switch, instruction](switch.md)
+- [instruction switch](switch.md)
 - [try/catch, instruction](try-catch.md)
-- [try/catch/finally, instruction](try-catch-finally.md)
+- [essayer/attraper/enfin la déclaration](try-catch-finally.md)

@@ -4,12 +4,12 @@ description: En savoir plus sur les expressions de critères spéciaux en langag
 ms.date: 04/10/2019
 ms.technology: csharp-fundamentals
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: ffa59d073ad891fd93e0f8d7ad8889de0499b106
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 0c302499543c90bd01427e2791435968d580f644
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78241011"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79170382"
 ---
 # <a name="pattern-matching"></a>Critères spéciaux
 
@@ -47,7 +47,7 @@ Dans cette version mise à jour, l’expression `is` teste la variable et l’as
 
 Les règles de langage des expressions de critères spéciaux vous aident à éviter une utilisation incorrecte des résultats d’une expression de correspondance. Dans l’exemple ci-dessus, les variables `s`, `c` et `r` sont uniquement dans la portée et assignées de manière définitive quand les expressions de critères spéciaux respectives retournent le résultat `true`. Si vous essayez d’utiliser l’une de ces variables à un autre emplacement, votre code génère des erreurs de compilateur.
 
-Examinons ces deux règles en détail, en commençant par la portée. La variable `c` est dans la portée uniquement dans la branche `else` de la première instruction `if`. La variable `s` est dans la portée dans la méthode `ComputeAreaModernIs`. Cela est dû au fait que chaque branche d’une instruction `if` établit une portée distincte pour les variables, ce que ne fait pas l’instruction `if` proprement dite. Cela signifie que les variables déclarées dans l’instruction `if` se trouvent dans la même portée que l’instruction `if` (dans ce cas, la méthode). Ce comportement n’est pas spécifique aux critères spéciaux, mais il s’agit du comportement défini pour les étendues de variables et les instructions `if` et `else`.
+Examinons ces deux règles en détail, en commençant par la portée. La variable `c` est dans la portée uniquement dans la branche `else` de la première instruction `if`. La variable `s` est dans la portée dans la méthode `ComputeAreaModernIs`. Cela est dû au fait que chaque branche d’une instruction `if` établit une portée distincte pour les variables, ce que ne fait pas l’instruction `if` proprement dite. Cela signifie que `if` les variables déclarées dans `if` l’énoncé sont dans la même portée que l’énoncé (la méthode en l’espèce).) Ce comportement n’est pas spécifique à l’appariement `if` des `else` modèles, mais est le comportement défini pour les portées et les déclarations variables.
 
 Les variables `c` et `s` sont assignées quand les instructions `if` respectives ont la valeur true, selon la règle d’assignation définitive quand le résultat est true.
 
@@ -59,7 +59,7 @@ Ces règles limitent le risque d’accéder accidentellement au résultat d’un
 
 ## <a name="using-pattern-matching-switch-statements"></a>Utilisation des instructions de critères spéciaux `switch`
 
-Au fil du temps, vous aurez peut-être besoin de prendre en charge d’autres types de formes. Si vous avez de plus en plus de conditions à tester, utiliser les expressions de critères spéciaux `is` peut devenir compliqué. En plus de nécessiter des instructions `if` pour chaque type à vérifier, les expressions `is` permettent uniquement de vérifier si l’entrée correspond à un type unique. Dans ce cas, les expressions de critères spéciaux `switch` sont plus adaptées. 
+Au fil du temps, vous aurez peut-être besoin de prendre en charge d’autres types de formes. Si vous avez de plus en plus de conditions à tester, utiliser les expressions de critères spéciaux `is` peut devenir compliqué. En plus de nécessiter des instructions `if` pour chaque type à vérifier, les expressions `is` permettent uniquement de vérifier si l’entrée correspond à un type unique. Dans ce cas, les expressions de critères spéciaux `switch` sont plus adaptées.
 
 L’instruction `switch` standard était une expression de modèle, qui prenait en charge le modèle de constante.
 Vous pouviez comparer une variable à n’importe quelle constante utilisée dans une instruction `case` :
@@ -100,7 +100,7 @@ Après avoir ajouté ces formes de surface 0, ajoutez deux autres types de form
 
 [!code-csharp[AddRectangleAndTriangle](../../samples/snippets/csharp/PatternMatching/GeometricUtilities.cs#09_AddRectangleAndTriangle "Add rectangle and triangle")]
 
- Avec cet ensemble de modifications, vous avez ajouté des étiquettes `case` pour l’expression case dégénérée, ainsi que des étiquettes et des blocs pour chacune des nouvelles formes. 
+ Avec cet ensemble de modifications, vous avez ajouté des étiquettes `case` pour l’expression case dégénérée, ainsi que des étiquettes et des blocs pour chacune des nouvelles formes.
 
 Enfin, vous pouvez ajouter un cas `null` pour que l’argument ne soit pas `null` :
 
@@ -139,4 +139,4 @@ Comparez le code de cet exemple avec la conception qui résulterait de la créat
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Didacticiel : utilisation des fonctionnalités de critères spéciaux pour étendre des types de données](tutorials/pattern-matching.md)
+- [Tutorial: Utilisation des fonctionnalités d’appariement des modèles pour étendre les types de données](tutorials/pattern-matching.md)

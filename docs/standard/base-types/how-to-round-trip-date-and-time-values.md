@@ -13,10 +13,10 @@ helpviewer_keywords:
 - formatting strings [.NET Framework], round-trip values
 ms.assetid: b609b277-edc6-4c74-b03e-ea73324ecbdb
 ms.openlocfilehash: 2e3a58ffe8332e0afec62461f6897d673e1da09f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73132005"
 ---
 # <a name="how-to-round-trip-date-and-time-values"></a>Comment : effectuer un aller-retour de valeurs de date et d'heure
@@ -38,7 +38,7 @@ L’exemple suivant montre comment effectuer un aller-retour d’une valeur <xre
 [!code-csharp[Formatting.HowTo.RoundTrip#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/cs/RoundTrip.cs#1)]
 [!code-vb[Formatting.HowTo.RoundTrip#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/vb/RoundTrip.vb#1)]
 
-Durant l’aller-retour d’une valeur <xref:System.DateTime>, cette technique permet de conserver correctement l’heure pour toutes les heures locales et universelles. Par exemple, si une valeur de <xref:System.DateTime> locale est enregistrée sur un système situé dans le fuseau horaire Pacifique (États-Unis) et qu’elle est restaurée sur un système situé dans le fuseau horaire du Centre des États-Unis, la date et l’heure de restauration sont deux heures après l’heure d’origine. , qui reflète la différence d’heure entre les deux fuseaux horaires. En revanche, cette technique n’est pas nécessairement exacte pour les heures non spécifiées. Toutes les valeurs <xref:System.DateTime> dont la propriété <xref:System.DateTime.Kind%2A> est <xref:System.DateTimeKind.Unspecified> sont traitées comme s’il s’agissait d’heures locales. Si ce n’est pas le cas, la valeur <xref:System.DateTime> n’identifie pas correctement le point adéquat dans le temps. La solution pour contourner cette limitation consiste à associer étroitement une valeur de date et d’heure avec son fuseau horaire pour l’opération d’enregistrement et de restauration.
+Durant l’aller-retour d’une valeur <xref:System.DateTime>, cette technique permet de conserver correctement l’heure pour toutes les heures locales et universelles. Par exemple, si <xref:System.DateTime> une valeur locale est économisée sur un système dans le fuseau horaire standard du Pacifique des États-Unis et est rétablie sur un système dans le fuseau horaire standard central des États-Unis, la date et l’heure restaurées seront deux heures plus tard que l’heure d’origine, ce qui reflète le décalage horaire entre les deux fuseaux horaires. En revanche, cette technique n’est pas nécessairement exacte pour les heures non spécifiées. Toutes les valeurs <xref:System.DateTime> dont la propriété <xref:System.DateTime.Kind%2A> est <xref:System.DateTimeKind.Unspecified> sont traitées comme s’il s’agissait d’heures locales. Si ce n’est pas le cas, la valeur <xref:System.DateTime> n’identifie pas correctement le point adéquat dans le temps. La solution pour contourner cette limitation consiste à associer étroitement une valeur de date et d’heure avec son fuseau horaire pour l’opération d’enregistrement et de restauration.
 
 ### <a name="to-round-trip-a-datetimeoffset-value"></a>Pour effectuer un aller-retour d’une valeur DateTimeOffset
 
@@ -81,19 +81,19 @@ Cette technique devrait toujours refléter clairement le point dans le temps cor
 
 ## <a name="compiling-the-code"></a>Compilation du code
 
-Ces exemples nécessitent :
+Ces exemples requièrent les éléments suivants :
 
 - Que les espaces de noms suivants soient importés avec les instructions `using` en C# ou les instructions `Imports` en Visual Basic :
 
   - <xref:System> (C# uniquement).
 
-  - <xref:System.Globalization?displayProperty=nameWithType>.,
+  - <xref:System.Globalization?displayProperty=nameWithType>.
 
-  - <xref:System.IO?displayProperty=nameWithType>.,
+  - <xref:System.IO?displayProperty=nameWithType>.
 
-  - <xref:System.Runtime.Serialization?displayProperty=nameWithType>.,
+  - <xref:System.Runtime.Serialization?displayProperty=nameWithType>.
 
-  - <xref:System.Runtime.Serialization.Formatters.Binary?displayProperty=nameWithType>.,
+  - <xref:System.Runtime.Serialization.Formatters.Binary?displayProperty=nameWithType>.
 
 - Que chaque exemple de code, autre que la classe `DateInTimeZone`, soit inclus dans une classe ou un module Visual Basic, encapsulé dans des méthodes et appelé à partir de la méthode `Main`.
 

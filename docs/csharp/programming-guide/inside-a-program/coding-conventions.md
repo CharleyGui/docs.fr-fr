@@ -7,11 +7,11 @@ helpviewer_keywords:
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
 ms.openlocfilehash: 77b173a420f26834855e0bdca3c8d04406ac65d4
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452004"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399734"
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>Conventions de codage C# (Guide de programmation C#)
 
@@ -25,7 +25,7 @@ Les conventions de codage répondent aux objectifs suivants :
   
 - Elles illustrent les bonnes pratiques en C#.  
 
-Les instructions de cet article sont utilisées par Microsoft pour développer des exemples et de la documentation.  
+Les lignes directrices de cet article sont utilisées par Microsoft pour développer des échantillons et de la documentation.  
   
 ## <a name="naming-conventions"></a>Conventions de nommage  
   
@@ -97,20 +97,20 @@ Les sections suivantes décrivent les pratiques que l'équipe C# suit pour prép
   
 - Évitez d’utiliser `var` à la place de [dynamic](../../language-reference/builtin-types/reference-types.md).  
   
-- Utilisez le typage implicite pour déterminer le type de la variable de boucle dans les boucles [for](../../language-reference/keywords/for.md) .  
+- Utilisez la saisie implicite pour déterminer le type de variable de boucle [pour](../../language-reference/keywords/for.md) les boucles.  
   
      L'exemple suivant utilise un typage implicite dans une instruction `for`.  
   
      [!code-csharp[csProgGuideCodingConventions#7](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#7)]  
 
-- N’utilisez pas de typage implicite pour déterminer le type de la variable de boucle dans les boucles [foreach](../../language-reference/keywords/foreach-in.md) .
+- N’utilisez pas de dactylographie implicite pour déterminer le type de variable de boucle dans les boucles [de avant-premier.](../../language-reference/keywords/foreach-in.md)
 
-     L’exemple suivant utilise un typage explicite dans une instruction `foreach`.
+     L’exemple suivant utilise la `foreach` saisie explicite dans une déclaration.
 
      [!code-csharp[csProgGuideCodingConventions#12](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#12)]
 
      > [!NOTE]
-     > Veillez à ne pas modifier accidentellement un type d’élément de la collection Iterable. Par exemple, il est facile de passer de <xref:System.Linq.IQueryable?displayProperty=nameWithType> à <xref:System.Collections.IEnumerable?displayProperty=nameWithType> dans une instruction `foreach`, qui modifie l’exécution d’une requête.
+     > Veillez à ne pas changer accidentellement un type d’élément de la collection itérable. Par exemple, il est <xref:System.Linq.IQueryable?displayProperty=nameWithType> facile <xref:System.Collections.IEnumerable?displayProperty=nameWithType> de `foreach` passer à dans une déclaration, ce qui modifie l’exécution d’une requête.
 
 ### <a name="unsigned-data-type"></a>Type de données non signé  
   
@@ -142,7 +142,7 @@ Utilisez la syntaxe concise pour créer des instances d'un type délégué.
   
 ### <a name="-and-124124-operators"></a>Opérateurs && et &#124;&#124;  
   
-Pour éviter les exceptions et accroître les performances en ignorant les comparaisons superflues, utilisez [&&](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) au lieu de [&](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) et [&#124;&#124;](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) au lieu de [&#124;](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) quand vous effectuez des comparaisons, comme indiqué dans l’exemple suivant.  
+Pour éviter les exceptions et augmenter les [&&](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) performances [&](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) en sautant des comparaisons inutiles, utilisez au lieu et [&#124;&#124;](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) au lieu de [&#124;](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) lorsque vous effectuez des comparaisons, comme le montre l’exemple suivant.  
   
 [!code-csharp[csProgGuideCodingConventions#18](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#18)]  
   

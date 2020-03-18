@@ -16,10 +16,10 @@ helpviewer_keywords:
 - custom format strings
 ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
 ms.openlocfilehash: 151bf40cf042517b7441b89688122373259dc7dc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73140065"
 ---
 # <a name="how-to-define-and-use-custom-numeric-format-providers"></a>Comment : définir et utiliser des fournisseurs de format numérique personnalisés
@@ -49,7 +49,7 @@ Le .NET Framework vous donne un contrôle étendu sur la représentation sous fo
   
     1. Le cas échéant, vérifiez que la méthode est légitimement destinée à fournir des services de mise en forme en examinant le paramètre `provider`. Pour les objets de mise en forme qui implémentent à la fois <xref:System.IFormatProvider> et <xref:System.ICustomFormatter>, vous devez déterminer si le paramètre `provider` correspond à l’objet de mise en forme actuel.  
   
-    2. Déterminez si l’objet de mise en forme doit prendre en charge les spécificateurs de format personnalisés. (Par exemple, un spécificateur de format « N » peut indiquer qu’un numéro de téléphone américain doit être généré au format NANP, et un « I » peut indiquer une sortie au format E. 123 de la recommandation ITU-T.) Si les spécificateurs de format sont utilisés, la méthode doit gérer le spécificateur de format spécifique. Ill est passé à la méthode dans le paramètre `format`. Si aucun spécificateur n’est présent, la valeur du paramètre `format` est <xref:System.String.Empty?displayProperty=nameWithType>.  
+    2. Déterminez si l’objet de mise en forme doit prendre en charge les spécificateurs de format personnalisés. (Par exemple, un spécificateur de format « N » peut indiquer qu’un numéro de téléphone américain devrait être produit en format NANP, et qu’un « I » pourrait indiquer la sortie dans le format de recommandation E.123 de l’UIT-T.) Si des spéci on utilise des spécificateurs de format, la méthode doit gérer le spécificateur de format spécifique. Ill est passé à la méthode dans le paramètre `format`. Si aucun spécificateur n’est présent, la valeur du paramètre `format` est <xref:System.String.Empty?displayProperty=nameWithType>.  
   
     3. Récupérez la valeur numérique passée à la méthode comme paramètre `arg`. Effectuez toute opération requise pour le convertir en sa représentation sous forme de chaîne.  
   
@@ -61,7 +61,7 @@ Le .NET Framework vous donne un contrôle étendu sur la représentation sous fo
   
 2. Appelez la méthode de mise en forme <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> en lui passant l’objet de mise en forme personnalisée, le spécificateur de mise en forme (ou <xref:System.String.Empty?displayProperty=nameWithType>, si aucun n’est utilisé) et la valeur numérique à mettre en forme.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant définit un fournisseur de format numérique personnalisé nommé `TelephoneFormatter` qui convertit un nombre représentant un numéro de téléphone aux États-Unis au format NANP ou E.123 correspondant. La méthode gère deux spécificateurs de format, « N » (qui génère le format NANP) et « I » (qui génère le format E.123 international).  
   
  [!code-csharp[Formatting.HowTo.NumericValue#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.NumericValue/cs/Telephone1.cs#1)]

@@ -6,10 +6,10 @@ helpviewer_keywords:
 - data structures, multi-threading
 ms.assetid: bdc82f2f-4754-45a1-a81e-fe2e9c30cef9
 ms.openlocfilehash: a2271feae78100940b4ecac3c42c9bfefa7e1769
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73123152"
 ---
 # <a name="data-structures-for-parallel-programming"></a>Structures de données pour la programmation parallèle
@@ -20,7 +20,7 @@ La version 4 de .NET Framework introduit de nouveaux types très utiles pour la 
   
  Le tableau suivant liste les classes de collections simultanées :  
   
-|Tapez|Description|  
+|Type|Description|  
 |----------|-----------------|  
 |<xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType>|Fournit des fonctions bloquantes et englobantes pour les collections thread-safe qui implémentent <xref:System.Collections.Concurrent.IProducerConsumerCollection%601?displayProperty=nameWithType>. Les threads producteurs se bloquent si aucun emplacement n’est disponible ou que la collection est pleine. Les threads consommateurs se bloquent si la collection est vide. Ce type prend également en charge l’accès non bloquant par les producteurs et les consommateurs. <xref:System.Collections.Concurrent.BlockingCollection%601> peut être utilisé comme classe de base ou comme magasin de stockage pour assurer le blocage et la liaison des classes de collection qui prennent en charge <xref:System.Collections.Generic.IEnumerable%601>.|  
 |<xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType>|Implémentation de conteneur thread-safe qui effectue des opérations Add et Get évolutives.|  
@@ -35,7 +35,7 @@ La version 4 de .NET Framework introduit de nouveaux types très utiles pour la 
   
  Le tableau suivant liste les nouveaux types de synchronisation :  
   
-|Tapez|Description|  
+|Type|Description|  
 |----------|-----------------|  
 |<xref:System.Threading.Barrier?displayProperty=nameWithType>|Permet à plusieurs threads de fonctionner en parallèle sur un algorithme en fournissant un point auquel chaque tâche peut signaler son arrivée, puis se bloquer jusqu'à ce qu’une partie ou la totalité des tâches soient arrivées. Pour plus d’informations, voir [Cloisonnement](../../../docs/standard/threading/barrier.md).|  
 |<xref:System.Threading.CountdownEvent?displayProperty=nameWithType>|Simplifie les scénarios de duplication et de jointure en fournissant un mécanisme facile de réunion. Pour plus d'informations, consultez la page [CountdownEvent](../../../docs/standard/threading/countdownevent.md).|  
@@ -44,18 +44,18 @@ La version 4 de .NET Framework introduit de nouveaux types très utiles pour la 
 |<xref:System.Threading.SpinLock?displayProperty=nameWithType>|Primitive de verrou mutex obligeant le thread qui essaie d’acquérir le verrou à attendre dans une boucle ou à rester en *attente active* pendant un certain temps avant de transmettre son quantum. Dans les scénarios où l’attente du verrou est censée être courte, <xref:System.Threading.SpinLock> offre de meilleures performances que les autres types de verrouillage. Pour plus d'informations, consultez la page [SpinLock](../../../docs/standard/threading/spinlock.md).|  
 |<xref:System.Threading.SpinWait?displayProperty=nameWithType>|Type petit et léger qui restera en attente active pendant un certain temps et mettra le thread dans un état d’attente si le nombre est dépassé.  Pour plus d'informations, consultez la page [SpinWait](../../../docs/standard/threading/spinwait.md).|  
   
- Pour plus d'informations, voir :  
+ Pour plus d'informations, consultez les pages suivantes :  
   
-- [Guide pratique pour utiliser le verrouillage SpinLock pour une synchronisation de bas niveau](../../../docs/standard/threading/how-to-use-spinlock-for-low-level-synchronization.md)  
+- [Comment : Utilisez SpinLock pour la synchronisation de bas niveau](../../../docs/standard/threading/how-to-use-spinlock-for-low-level-synchronization.md)  
   
-- [Guide pratique : Synchroniser des opérations simultanées avec un objet Barrier](../../../docs/standard/threading/how-to-synchronize-concurrent-operations-with-a-barrier.md)  
+- [Comment : Synchroniser les opérations simultanées avec une barrière](../../../docs/standard/threading/how-to-synchronize-concurrent-operations-with-a-barrier.md).  
   
 ## <a name="lazy-initialization-classes"></a>Classes d’initialisation tardive  
  Avec l’initialisation tardive, la mémoire d’un objet n’est pas allouée tant qu’elle n’est pas nécessaire. L’initialisation tardive peut améliorer les performances en répartissant uniformément les allocations d’objets sur toute la durée de vie d’un programme. Vous pouvez l’activer sur n’importe quel type personnalisé en incluant le type <xref:System.Lazy%601> dans un wrapper.  
   
  Le tableau suivant liste les nouveaux types d’initialisation tardive :  
   
-|Tapez|Description|  
+|Type|Description|  
 |----------|-----------------|  
 |<xref:System.Lazy%601?displayProperty=nameWithType>|Assure une initialisation tardive légère et thread-safe.|  
 |<xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType>|Fournit une valeur initialisée tardivement thread par thread, chacun appelant de façon tardive la fonction d’initialisation.|  

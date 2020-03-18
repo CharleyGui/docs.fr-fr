@@ -11,16 +11,16 @@ helpviewer_keywords:
 - dataflow blocks, creating custom in TPL
 ms.assetid: a6147146-0a6a-4d9b-ab0f-237b3c1ac691
 ms.openlocfilehash: cb953952bbed90edd2db799e92d44ec9f062babf
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73139883"
 ---
 # <a name="walkthrough-creating-a-custom-dataflow-block-type"></a>Procédure pas à pas : création d'un type de bloc de flux de données personnalisé
 Bien que la bibliothèque de flux de données TPL fournisse plusieurs types de blocs de flux de données offrant une large gamme de fonctionnalités, vous pouvez aussi créer des types de blocs personnalisés. Ce document décrit comment créer un type de bloc de flux de données qui implémente un comportement personnalisé.  
   
-## <a name="prerequisites"></a>Configuration requise  
+## <a name="prerequisites"></a>Conditions préalables requises  
  Consultez [Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) avant de lire ce document.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -52,4 +52,4 @@ Bien que la bibliothèque de flux de données TPL fournisse plusieurs types de b
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Le flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

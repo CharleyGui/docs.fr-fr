@@ -2,12 +2,12 @@
 title: Les valeurs de retour de référence et variables locales ref (Guide C#)
 description: Découvrir comment définir et utiliser des valeurs de retour de référence et des variables locales ref
 ms.date: 04/04/2018
-ms.openlocfilehash: 7ade422b5b3805ef2e1f487252a98fb85cdfe70c
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 87a9538db60d69062f0fb48ed9683a9d4f972b91
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736820"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79170071"
 ---
 # <a name="ref-returns-and-ref-locals"></a>Retours ref et variables locales ref
 
@@ -25,7 +25,7 @@ Certaines restrictions s’appliquent à l’expression qu’une méthode peut r
 
 - La valeur de retour ne peut pas être le littéral `null`. Le retour de `null` génère l’erreur de compilateur CS8156, « Impossible d’utiliser une expression dans ce contexte, car elle ne peut pas être retournée par référence ».
 
-   Une méthode avec un retour de référence peut retourner un alias à une variable dont la valeur est actuellement la valeur null (non instanciée) ou un [type valeur Nullable](../../language-reference/builtin-types/nullable-value-types.md) pour un type valeur.
+   Une méthode avec un retour d’arbitre peut retourner un alias à une variable dont la valeur est actuellement la valeur nulle (non corroborée) ou un [type de valeur nul](../../language-reference/builtin-types/nullable-value-types.md) pour un type de valeur.
 
 - La valeur de retour ne peut pas être une constante, un membre d’énumération, la valeur de retour par valeur d’une propriété, ou une méthode d’une `class` ou d’un `struct`. Le non-respect de cette règle génère l’erreur de compilateur CS8156, « Impossible d’utiliser une expression dans ce contexte, car elle ne peut pas être retournée par référence ».
 
@@ -82,7 +82,7 @@ ref Person p = ref contacts.GetContactInformation("Brandie", "Best");
 
 L’utilisation ultérieure de `p` revient à utiliser la variable retournée par `GetContactInformation`, car `p` est un alias de cette variable. Les modifications apportées à `p` modifient également la variable retournée à partir de `GetContactInformation`.
 
-Le mot clé `ref` est utilisé à la fois avant la déclaration de la variable locale *et* avant l’appel de la méthode. 
+Le mot clé `ref` est utilisé à la fois avant la déclaration de la variable locale *et* avant l’appel de la méthode.
 
 Vous pouvez accéder à une valeur par référence de la même façon. Dans certains cas, l’accès à une valeur par référence augmente les performances en évitant une opération de copie potentiellement coûteuse. Par exemple, l’instruction suivante montre comment il est possible de définir une valeur locale ref qui est utilisée pour référencer une valeur.
 
@@ -90,7 +90,7 @@ Vous pouvez accéder à une valeur par référence de la même façon. Dans cert
 ref VeryLargeStruct reflocal = ref veryLargeStruct;
 ```
 
-Le mot clé `ref` est utilisé à la fois avant la déclaration de la variable locale *et* avant la valeur du second exemple. Si les deux mots clés `ref` ne sont pas inclus dans la déclaration et l’affectation de la variable dans les deux exemples, l’erreur du compilateur CS8172, « Impossible d’initialiser une variable par référence avec une valeur » est générée. 
+Le mot clé `ref` est utilisé à la fois avant la déclaration de la variable locale *et* avant la valeur du second exemple. Si les deux mots clés `ref` ne sont pas inclus dans la déclaration et l’affectation de la variable dans les deux exemples, l’erreur du compilateur CS8172, « Impossible d’initialiser une variable par référence avec une valeur » est générée.
 
 Dans les versions antérieures à C# 7.3, les variables locales ref ne pouvaient pas être réassignées pour référencer un stockage différent après avoir été initialisées. Cette restriction a été supprimée. L’exemple suivant illustre une réassignation :
 
@@ -103,7 +103,7 @@ refLocal = ref anotherVeryLargeStruct; // reassigned, refLocal refers to differe
 
 ## <a name="ref-returns-and-ref-locals-an-example"></a>Retours ref et variables locales ref : exemple
 
-L’exemple suivant définit une classe `NumberStore` qui stocke un tableau de valeurs entières. La méthode `FindNumber` retourne par référence le premier nombre supérieur ou égal au nombre passé comme argument. Si aucun nombre n’est supérieur ou égal à l’argument, la méthode retourne le nombre se trouvant à l’index 0. 
+L’exemple suivant définit une classe `NumberStore` qui stocke un tableau de valeurs entières. La méthode `FindNumber` retourne par référence le premier nombre supérieur ou égal au nombre passé comme argument. Si aucun nombre n’est supérieur ou égal à l’argument, la méthode retourne le nombre se trouvant à l’index 0.
 
 [!code-csharp[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/NumberStore.cs#1)]
 
@@ -122,4 +122,4 @@ Cette deuxième version est plus efficace avec des séquences plus longues dans 
 ## <a name="see-also"></a>Voir aussi
 
 - [ref, mot clé](../../language-reference/keywords/ref.md)
-- [Écrire du code safe et efficace](../../write-safe-efficient-code.md)
+- [Écrire du code sécurisé et efficace](../../write-safe-efficient-code.md)

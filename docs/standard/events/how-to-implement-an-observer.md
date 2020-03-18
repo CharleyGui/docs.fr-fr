@@ -10,10 +10,10 @@ helpviewer_keywords:
 - observer design pattern [.NET Framework], implementing observers
 ms.assetid: 8ecfa9f5-b500-473d-bcf0-5652ffb1e53d
 ms.openlocfilehash: e6aba4d85e502563291478640927bd0f234736a8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73139313"
 ---
 # <a name="how-to-implement-an-observer"></a>Comment : implémenter une méthode Observer
@@ -41,7 +41,7 @@ Le modèle de design observateur requiert une division entre un observateur, qui
      [!code-csharp[Conceptual.ObserverDesign.HowTo#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/observer.cs#11)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/observer.vb#11)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant contient le code source complet de la classe `TemperatureReporter`, qui fournit l’implémentation <xref:System.IObserver%601> pour une application de surveillance de la température.  
   
  [!code-csharp[Conceptual.ObserverDesign.HowTo#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/observer.cs#12)]
@@ -51,5 +51,5 @@ Le modèle de design observateur requiert une division entre un observateur, qui
 
 - <xref:System.IObserver%601>
 - [Modèle de conception Observateur](../../../docs/standard/events/observer-design-pattern.md)
-- [Guide pratique pour implémenter un fournisseur](../../../docs/standard/events/how-to-implement-a-provider.md)
+- [Comment : implémenter un fournisseur](../../../docs/standard/events/how-to-implement-a-provider.md)
 - [Meilleures pratiques du modèle de design observateur](../../../docs/standard/events/observer-design-pattern-best-practices.md)

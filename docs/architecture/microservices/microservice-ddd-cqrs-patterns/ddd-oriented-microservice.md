@@ -3,11 +3,11 @@ title: Conception d’un microservice orienté DDD
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre la conception du microservice orienté DDD (Domain Driven Design) et de ses couches d’application.
 ms.date: 10/08/2018
 ms.openlocfilehash: c5ac55978ca979a3ae055d9b0cd2d3c6b3187b4e
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739944"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79401696"
 ---
 # <a name="design-a-ddd-oriented-microservice"></a>Concevoir un microservice orienté DDD
 
@@ -37,13 +37,13 @@ Quand le problème de la complexité est abordé, il est important de disposer d
 
 La figure 7-5 montre l’implémentation d’une conception par couches dans l’application eShopOnContainers.
 
-![Diagramme montrant les couches dans un microservice de conception piloté par domaine.](./media/ddd-oriented-microservice/domain-driven-design-microservice.png)
+![Diagramme montrant les couches dans un microservice de conception axé sur le domaine.](./media/ddd-oriented-microservice/domain-driven-design-microservice.png)
 
 **Figure 7-5**. Couches DDD dans le microservice de commandes dans eShopOnContainers
 
 Les trois couches dans un microservice DDD comme Ordering. Chaque couche est un projet Visual Studio : la couche Application est Ordering.API, la couche Domaine est Ordering.Domain et la couche Infrastructure est Ordering.Infrastructure. Vous souhaitez concevoir le système afin que chaque couche communique uniquement avec certaines autres couches. Cela peut être plus facile à appliquer si les couches sont implémentées comme des bibliothèques de classes différentes, car vous pouvez identifier clairement les dépendances définies entre les bibliothèques. Par exemple, la couche de modèle de domaine ne nécessite pas de dépendance sur une autre couche (les classes de modèle de domaine doivent être des classes d’objets CLR traditionnels ou [OCT](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)). Comme illustré dans la figure 7-6, la bibliothèque de la couche **Ordering.Domain** a des dépendances de bibliothèques .NET Core ou de packages NuGet seulement, et n’a pas de dépendances d’autres bibliothèques personnalisées, comme la bibliothèque de données ou la bibliothèque de persistance.
 
-![Capture d’écran des dépendances de classement. domain.](./media/ddd-oriented-microservice/ordering-domain-dependencies.png)
+![Capture d’écran des dépendances de Ordering.Domain.](./media/ddd-oriented-microservice/ordering-domain-dependencies.png)
 
 **Figure 7-6**. Les couches implémentées comme des bibliothèques permettent de mieux contrôler les dépendances entre les couches
 
@@ -85,7 +85,7 @@ Conformément aux principes [d’ignorance de la persistance](https://deviq.com/
 
 Ainsi, vos couches ou vos bibliothèques et projets de classes doivent au final s’appuyer sur votre couche de modèle de domaine (bibliothèque), et pas l’inverse, comme illustré dans la figure 7-7.
 
-![Diagramme montrant les dépendances qui existent entre les couches de service de DDD.](./media/ddd-oriented-microservice/ddd-service-layer-dependencies.png)
+![Diagramme montrant les dépendances qui existent entre les couches de service DDD.](./media/ddd-oriented-microservice/ddd-service-layer-dependencies.png)
 
 **Figure 7-7**. Dépendances entre les couches dans DDD
 
@@ -93,15 +93,15 @@ Dépendances dans un service de conception DDD : la couche Application dépend 
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **DevIQ. Principe d’ignorance de la persistance** \
+- **DevIQ. Principe de persistance de l’ignorance** \
   <https://deviq.com/persistence-ignorance/>
 
-- **Oren Eini.**  \ d’ignorance de l’infrastructure
+- **Oren Eini. Ignorance de l’infrastructure** \
   <https://ayende.com/blog/3137/infrastructure-ignorance>
 
-- **Ange Lopez. Architecture en couches dans la conception pilotée par domaine** \
+- **Angel Lopez. Architecture en couches dans le design de domaine-conduit** \
   <https://ajlopez.wordpress.com/2008/09/12/layered-architecture-in-domain-driven-design/>
 
 >[!div class="step-by-step"]
->[Précédent](cqrs-microservice-reads.md)
->[Suivant](microservice-domain-model.md)
+>[Suivant précédent](cqrs-microservice-reads.md)
+>[Next](microservice-domain-model.md)

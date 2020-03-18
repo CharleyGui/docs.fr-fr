@@ -18,10 +18,10 @@ helpviewer_keywords:
 - AsyncCompletedEventArgs class
 ms.assetid: 43402d19-8d30-426d-8785-1a4478233bfa
 ms.openlocfilehash: 9865fa169e0776765f9a97ec0a7b4555bf253886
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67663706"
 ---
 # <a name="implementing-the-event-based-asynchronous-pattern"></a>Implémentation du modèle asynchrone basé sur des événements
@@ -30,9 +30,9 @@ Si vous écrivez une classe avec certaines opérations pouvant entraîner d’im
 
 Le modèle asynchrone basé sur des événements fournit une méthode standardisée pour empaqueter une classe incluant des fonctionnalités asynchrones. Si elle est implémentée avec des classes d’assistance comme <xref:System.ComponentModel.AsyncOperationManager>, votre classe fonctionnera correctement quel que soit le modèle d’application, notamment ASP.NET, les applications console et les applications Windows Forms.
 
-Pour obtenir un exemple qui implémente le modèle asynchrone basé sur des événements, consultez [Guide pratique : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).
+Pour obtenir un exemple qui implémente le modèle asynchrone basé sur des événements, consultez [Comment : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).
 
-Le composant <xref:System.ComponentModel.BackgroundWorker> pourra être adapté à des opérations asynchrones simples. Pour plus d’informations sur <xref:System.ComponentModel.BackgroundWorker>, consultez [Guide pratique pour : exécuter une opération en arrière-plan](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md).
+Le composant <xref:System.ComponentModel.BackgroundWorker> pourra être adapté à des opérations asynchrones simples. Pour plus d’informations sur <xref:System.ComponentModel.BackgroundWorker>, consultez la page [Guide pratique pour exécuter une opération en arrière-plan](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md).
 
 La liste suivante décrit les fonctionnalités du modèle asynchrone basé sur des événements décrites dans cette rubrique.
 
@@ -66,7 +66,7 @@ Pour plus d’informations sur le choix du moment auquel prendre en charge le mo
 
 Pour chaque méthode synchrone *MethodName* pour laquelle vous souhaitez fournir un équivalent asynchrone :
 
-Définissez une méthode _MethodName_**Async** qui :
+Décrivez une méthode _MethodName_**Async** qui :
 
 - Retourne `void`.
 
@@ -74,7 +74,7 @@ Définissez une méthode _MethodName_**Async** qui :
 
 - Accepte plusieurs appels.
 
-Vous pouvez éventuellement définir une surcharge _MethodName_**Async**, identique à _MethodName_**Async**, mais avec un paramètre objet supplémentaire nommé `userState`. Procédez ainsi si vous êtes prêt à gérer plusieurs appels simultanés de votre méthode, auquel cas la valeur `userState` est remise à tous les gestionnaires d’événements pour distinguer les appels de la méthode. Vous pouvez également choisir d’en faire un emplacement de stockage de l’état utilisateur pour une récupération ultérieure.
+Définir en option une surcharge _MethodName_**Async,** identique à _MethodName_**Async** `userState`, mais avec un paramètre supplémentaire de valeur d’objet appelé . Procédez ainsi si vous êtes prêt à gérer plusieurs appels simultanés de votre méthode, auquel cas la valeur `userState` est remise à tous les gestionnaires d’événements pour distinguer les appels de la méthode. Vous pouvez également choisir d’en faire un emplacement de stockage de l’état utilisateur pour une récupération ultérieure.
 
 Pour chaque signature de méthode _MethodName_**Async** distincte :
 
@@ -111,7 +111,7 @@ Pour chaque signature de méthode _MethodName_**Async** distincte :
     }
     ```
 
-    - Veillez à ce que la classe _MethodName_**CompletedEventArgs** expose ses membres en tant que propriétés en lecture seule et non en tant que champs, car les champs empêchent la liaison des données.
+    - Assurez-vous que la classe _MethodName_**CompletedEventArgs** expose ses membres comme des propriétés de lecture seulement, et non des champs, car les champs empêchent la liaison des données.
 
     - Ne définissez aucune classe dérivée de <xref:System.ComponentModel.AsyncCompletedEventArgs> pour les méthodes qui ne produisent pas de résultats. Utilisez simplement une instance de <xref:System.ComponentModel.AsyncCompletedEventArgs> directement.
 
@@ -124,7 +124,7 @@ Si votre classe prend en charge l’annulation des opérations asynchrones, l’
 
 - Votre classe, y compris ses ajouts futurs, comprend-elle une seule opération asynchrone prenant en charge l’annulation ?
 
-- Les opérations asynchrones prenant en charge l’annulation de prise en charge peuvent-elles prendre en charge plusieurs opérations en attente ? Autrement dit, la méthode _MethodName_**Async** accepte-t-elle un paramètre `userState`, et autorise-t-elle les appels multiples avant d’attendre que l’un d’eux se termine ?
+- Les opérations asynchrones prenant en charge l’annulation de prise en charge peuvent-elles prendre en charge plusieurs opérations en attente ? Autrement dit, la méthode _MethodName_**Async** prend-elle un `userState` paramètre, et permet-elle de multiples invocations avant d’attendre qu’une fin se termine ?
 
 Utilisez les réponses à ces deux questions dans le tableau ci-dessous pour déterminer la signature de votre méthode d’annulation.
 
@@ -144,17 +144,17 @@ Utilisez les réponses à ces deux questions dans le tableau ci-dessous pour dé
 
 Si vous définissez la méthode `CancelAsync(object userState)`, les clients doivent être prudents lorsqu’ils choisissent leurs valeurs d’état afin qu’elles soient capables de distinguer toutes les méthodes asynchrones appelées sur l’objet, et pas seulement tous les appels d’une seule méthode asynchrone.
 
-La décision de nommer la version de l’opération asynchrone simple _MethodName_**AsyncCancel** est motivée par la capacité à découvrir plus facilement la méthode dans un environnement de conception comme IntelliSense de Visual Studio. Il regroupe les membres associés et les distingue des autres membres qui n’ont rien à voir avec les fonctionnalités asynchrones. Si vous pensez que d’autres opérations asynchrones peuvent être ajoutées dans les versions ultérieures, il est préférable de définir `CancelAsync`.
+La décision de nommer la version à fonctionnement unique _MethodName_**AsyncCancel** est basée sur la possibilité de découvrir plus facilement la méthode dans un environnement de conception comme IntelliSense de Visual Studio. Il regroupe les membres associés et les distingue des autres membres qui n’ont rien à voir avec les fonctionnalités asynchrones. Si vous pensez que d’autres opérations asynchrones peuvent être ajoutées dans les versions ultérieures, il est préférable de définir `CancelAsync`.
 
 Ne définissez pas plusieurs méthodes du tableau ci-dessus dans la même classe. Ceci sera inutile ou risquera d’encombrer l’interface de classe d’un trop grand nombre de méthodes.
 
-Ces méthodes retournent généralement immédiatement et l’opération peut ou non être réellement annulée. Dans le gestionnaire d’événements de l’événement_MethodName_**Completed**, l’objet _MethodName_**CompletedEventArgs** contient un champ `Cancelled`, que les clients peuvent utiliser pour déterminer si l’annulation a eu lieu.
+Ces méthodes retournent généralement immédiatement et l’opération peut ou non être réellement annulée. Dans l’événement De l’événement _MethodName_**Completed,** l’objet _MethodName_**CompletedEventArgs** contient un `Cancelled` champ que les clients peuvent utiliser pour déterminer si l’annulation s’est produite.
 
 Respectez la sémantique d’annulation décrite dans [Meilleures pratiques pour implémenter le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md).
 
 ## <a name="optionally-support-the-isbusy-property"></a>Prise en charge facultative de la propriété IsBusy
 
-Si votre classe ne prend pas en charge plusieurs appels simultanés, envisagez d’exposer une propriété `IsBusy`. Cela permet aux développeurs de déterminer si une méthode _MethodName_**Async** s’exécute sans intercepter d’exception de la méthode _MethodName_**Async**.
+Si votre classe ne prend pas en charge plusieurs appels simultanés, envisagez d’exposer une propriété `IsBusy`. Cela permet aux développeurs de déterminer si une méthode _MethodName_**Async** est en cours d’exécution sans attraper une exception de la méthode _MethodName_**Async.**
 
 Respectez la sémantique `IsBusy` décrite dans [Meilleures pratiques pour implémenter le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md).
 
@@ -168,15 +168,15 @@ Il est généralement souhaitable qu’une opération asynchrone indique sa prog
 
   - `ProgressChanged` si la classe comporte plusieurs opérations asynchrones (ou est censée se développer pour inclure plusieurs opérations asynchrones dans les versions ultérieures) ;
 
-  - _MethodName_**ProgressChanged** si la classe comporte une seule opération asynchrone.
+  - _MethodName_**ProgressDm** si la classe a une seule opération asynchrone.
 
   Ce choix de désignation correspond à celui effectué pour la méthode d’annulation, comme décrit dans la section Annulation facultative de la prise en charge.
 
 Cet événement doit utiliser la signature du délégué <xref:System.ComponentModel.ProgressChangedEventHandler> et la classe <xref:System.ComponentModel.ProgressChangedEventArgs>. En revanche, si un indicateur de progression plus spécifique du domaine peut être fourni (par exemple, les octets lus et nombre total d’octets pour une opération de téléchargement), il est recommandé de définir une classe dérivée de <xref:System.ComponentModel.ProgressChangedEventArgs>.
 
-Notez qu’il n’existe qu’un seul événement `ProgressChanged` ou _MethodName_**ProgressChanged** pour la classe, quel que soit le nombre de méthodes asynchrones qu’elle prend en charge. Les clients sont censés utiliser l’objet `userState` transmis aux méthodes _MethodName_**Async** pour distinguer les mises à jour de progression sur différentes opérations simultanées.
+Notez qu’il `ProgressChanged` n’y a qu’un seul ou _MethodName_**ProgressChanged** événement pour la classe, quel que soit le nombre de méthodes asynchrones qu’il prend en charge. On s’attend `userState` à ce que les clients utilisent l’objet qui est transmis aux méthodes _MethodName_**Async** pour distinguer parmi les mises à jour de progression sur les opérations simultanées multiples.
 
-Dans certaines situations, plusieurs opérations prennent en charge la progression et chacune renvoie un indicateur de progression différent. Dans ce cas, un seul événement `ProgressChanged` n’est pas approprié, et vous pouvez envisager la prise en charge de plusieurs événements `ProgressChanged`. Utilisez dans ce cas un modèle de nom _MethodName_**ProgressChanged** pour chaque méthode _MethodName_**Async**.
+Dans certaines situations, plusieurs opérations prennent en charge la progression et chacune renvoie un indicateur de progression différent. Dans ce cas, un seul événement `ProgressChanged` n’est pas approprié, et vous pouvez envisager la prise en charge de plusieurs événements `ProgressChanged`. Dans ce cas, utilisez un modèle de nommage de _MethodName_**ProgressChanged** pour chaque _méthode MethodName_**Async.**
 
 Respectez la sémantique de rapport de progression décrite dans [Meilleures pratiques pour implémenter le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md).
 
@@ -188,17 +188,17 @@ Parfois, une opération asynchrone peut retourner des résultats incrémentiels 
 
 Si votre classe ne prend en charge qu’une seule opération asynchrone et que celle-ci peut retourner des résultats incrémentiels :
 
-- Étendez le type <xref:System.ComponentModel.ProgressChangedEventArgs> pour intégrer les données de résultat incrémentiel, et définissez un événement _MethodName_**ProgressChanged** avec ces données étendues.
+- Étendre <xref:System.ComponentModel.ProgressChangedEventArgs> le type pour transporter les données de résultat différentiel, et définir un événement**ProgressChanged** _MethodName_avec ces données étendues.
 
-- Déclenchez cet événement _MethodName_**ProgressChanged** lorsqu’il y a un résultat incrémentiel à signaler.
+- Soulevez cet événement _MethodName_**ProgressChanged** lorsqu’il y a un résultat progressif à signaler.
 
-Cette solution s’applique tout particulièrement à une classe d’opération asynchrone simple, car le fait que le même événement retourne des résultats incrémentiels sur « toutes les opérations », comme c’est le cas pour l’événement _MethodName_**ProgressChanged**, ne pose aucun problème.
+Cette solution s’applique spécifiquement à une classe d’exploitation unique parce qu’il n’y a aucun problème avec le même événement qui se produit pour retourner les résultats incrémentaux sur «toutes les opérations», comme le fait l’événement**ProgressChanged** _MethodName._
 
 ### <a name="multiple-operation-class-with-homogeneous-incremental-results"></a>Classe à plusieurs opérations avec des résultats incrémentiels homogènes
 
 Dans ce cas, votre classe prend en charge plusieurs méthodes asynchrones, chacune capable de retourner des résultats incrémentiels, et ces résultats incrémentiels possèdent tous le même type de données.
 
-Suivez le modèle décrit ci-dessus pour les classes à une opération, car la même structure <xref:System.EventArgs> fonctionne pour tous les résultats incrémentiels. Définissez un événement `ProgressChanged` à la place d’un événement_MethodName_**ProgressChanged**, étant donné qu’il s’applique à plusieurs méthodes asynchrones.
+Suivez le modèle décrit ci-dessus pour les classes à une opération, car la même structure <xref:System.EventArgs> fonctionne pour tous les résultats incrémentiels. Définissez `ProgressChanged` un événement au lieu d’un événement _MethodName_**ProgressChanged,** puisqu’il s’applique à de multiples méthodes asynchrones.
 
 ### <a name="multiple-operation-class-with-heterogeneous-incremental-results"></a>Classe à plusieurs opérations avec des résultats incrémentiels hétérogènes
 
@@ -206,7 +206,7 @@ Si votre classe prend en charge plusieurs méthodes asynchrones, chacune retourn
 
 - Séparez votre rapport de résultat incrémentiel de votre rapport de progression.
 
-- Définissez un événement _MethodName_**ProgressChanged** séparé avec des <xref:System.EventArgs> adéquats pour que chaque méthode asynchrone gère les données de résultat incrémentiel de cette méthode.
+- Définissez un événement _MethodName_ <xref:System.EventArgs> **ProgressChanged** séparé avec une méthode asynchrone appropriée pour traiter les données de résultat différentiels de cette méthode.
 
 Appelez ce gestionnaire d’événements sur le thread approprié comme décrit dans [Meilleures pratiques pour implémenter le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md).
 
@@ -216,11 +216,11 @@ Bien que l’utilisation de `out` et `ref` soit en règle générale déconseill
 
 Soit une méthode synchrone *MethodName* :
 
-- Les paramètres `out` passés à *MethodName* ne doivent pas faire partie de _MethodName_**Async**. Ils doivent plutôt faire partie de _MethodName_**CompletedEventArgs** avec le même nom que son paramètre équivalent dans*MethodName* (à moins qu’il n’en existe un plus adéquat).
+- `out`paramètres de *MethodName* ne doit pas faire partie de _MethodName_**Async**. Au lieu de cela, ils devraient faire partie de _MethodName_**CompletedEventArgs** avec le même nom que son équivalent paramètre dans *MethodName* (sauf s’il ya un nom plus approprié).
 
-- Les paramètres `ref` passés à *MethodName* doivent faire partie de _MethodName_**Async**, et faire partie de _MethodName_**CompletedEventArgs** avec le même nom que son paramètre équivalent dans *MethodName* (à moins qu’il n’en existe un plus adéquat).
+- `ref`paramètres de *MethodName* devrait apparaître dans le cadre de _MethodName_**Async**, et dans le cadre de _MethodName_**CompletedEventArgs** avec le même nom que son équivalent paramètre dans *MethodName* (sauf s’il ya un nom plus approprié).
 
-Par exemple, soit :
+Prenons l’exemple suivant :
 
 ```vb
 Public Function MethodName(ByVal arg1 As String, ByRef arg2 As String, ByRef arg3 As String) As Integer
@@ -261,9 +261,9 @@ public class MethodNameCompletedEventArgs : System.ComponentModel.AsyncCompleted
 
 - <xref:System.ComponentModel.ProgressChangedEventArgs>
 - <xref:System.ComponentModel.AsyncCompletedEventArgs>
-- [Guide pratique pour implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)
+- [Comment : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)
 - [Guide pratique pour exécuter une opération en arrière-plan](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
-- [Guide pratique pour implémenter un formulaire qui utilise une opération d’arrière-plan](../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)
+- [Comment : implémenter un formulaire qui utilise une opération d'arrière-plan](../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)
 - [Choix du moment auquel implémenter le modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/deciding-when-to-implement-the-event-based-asynchronous-pattern.md)
 - [Meilleures pratiques pour implémenter le modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
 - [Modèle asynchrone basé sur les événements (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)

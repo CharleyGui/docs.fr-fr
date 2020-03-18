@@ -7,12 +7,12 @@ helpviewer_keywords:
 - properties [C#]
 - C# language, properties
 ms.assetid: e295a8a2-b357-4ee7-a12e-385a44146fa8
-ms.openlocfilehash: 4f83d574357aa725b955870e3d93aa1f8222723a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: ee530e981e0c85302b2b11cc739d6c51d6650ddd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714709"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79170102"
 ---
 # <a name="properties-c-programming-guide"></a>Propriétés (Guide de programmation C#)
 
@@ -28,13 +28,13 @@ Une propriété est un membre qui fournit un mécanisme flexible pour la lecture
 - Les propriétés peuvent être *en lecture-écriture* (elles ont un accesseur `get` et un accesseur `set`), *en lecture seule* (elles ont un accesseur `get`, mais pas d’accesseur `set`) ou *en écriture seule* (elles ont un accesseur `set`, mais pas d’accesseur `get`). Les propriétés en écriture seule sont rares et sont généralement utilisées pour restreindre l’accès aux données sensibles.
 
 - Les propriétés simples qui ne nécessitent pas de code d’accesseur personnalisé peuvent être implémentées en tant que définitions de corps d’expression ou en tant que [propriétés implémentées automatiquement](./auto-implemented-properties.md).
- 
+
 ## <a name="properties-with-backing-fields"></a>Propriétés avec des champs de stockage
 
 Un modèle de base pour l’implémentation d’une propriété consiste à utiliser un champ de stockage privé pour définir et extraire la valeur de propriété. L’accesseur `get` retourne la valeur du champ privé et l’accesseur `set` peut effectuer une validation des données avant d’assigner une valeur au champ privé. Les deux accesseurs peuvent également effectuer des opérations de conversion ou de calcul sur les données avant de stocker ou retourner les données.
 
-L’exemple suivant illustre ce modèle. Dans cet exemple, la classe `TimePeriod` représente un intervalle de temps. La classe stocke l’intervalle de temps en secondes, en interne, dans un champ privé nommé `_seconds`. L’utilisateur peut éventuellement spécifier l’intervalle de temps en heures à l’aide de la propriété en lecture-écriture `Hours`. Les deux accesseurs de propriété `get` et `set` effectuent ensuite la conversion nécessaire des heures en secondes. De plus, l’accesseur `set` valide les données et lève une exception <xref:System.ArgumentOutOfRangeException> si le nombre d’heures n’est pas valide. 
-   
+L’exemple suivant illustre ce modèle. Dans cet exemple, la classe `TimePeriod` représente un intervalle de temps. La classe stocke l’intervalle de temps en secondes, en interne, dans un champ privé nommé `_seconds`. L’utilisateur peut éventuellement spécifier l’intervalle de temps en heures à l’aide de la propriété en lecture-écriture `Hours`. Les deux accesseurs de propriété `get` et `set` effectuent ensuite la conversion nécessaire des heures en secondes. De plus, l’accesseur `set` valide les données et lève une exception <xref:System.ArgumentOutOfRangeException> si le nombre d’heures n’est pas valide.
+
  [!code-csharp[Properties#1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-1.cs)]  
   
 ## <a name="expression-body-definitions"></a>Définitions de corps d’expression  
@@ -46,22 +46,22 @@ L’exemple suivant illustre ce modèle. Dans cet exemple, la classe `TimePeriod
  [!code-csharp[Properties#2](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-2.cs)]  
 
  À compter de C# 7.0, les accesseurs `get` et `set` peuvent être implémentés comme membres expression-bodied. Dans ce cas, les mots clés `get` et `set` doivent être spécifiés. L’exemple suivant illustre l’utilisation de définitions de corps d’expression pour les deux accesseurs. Notez que le mot clé `return` n’est pas utilisé avec l’accesseur `get`.
- 
+
   [!code-csharp[Properties#3](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-3.cs)]  
 
 ## <a name="auto-implemented-properties"></a>Propriétés implémentées automatiquement
 
-Dans certains cas, les accesseurs de propriété `get` et `set` ne font qu’assigner une valeur à un champ de stockage, ou récupérer une valeur d’un champ de stockage, sans inclure de logique supplémentaire. En utilisant des propriétés implémentées automatiquement, vous simplifiez votre code, tout en laissant le compilateur C# fournir le champ de stockage de manière transparente. 
+Dans certains cas, les accesseurs de propriété `get` et `set` ne font qu’assigner une valeur à un champ de stockage, ou récupérer une valeur d’un champ de stockage, sans inclure de logique supplémentaire. En utilisant des propriétés implémentées automatiquement, vous simplifiez votre code, tout en laissant le compilateur C# fournir le champ de stockage de manière transparente.
 
 Si une propriété a les accesseurs `get` et `set`, tous deux doivent être implémentés automatiquement. Vous définissez une propriété implémentée automatiquement à l’aide des mots clés `get` et `set` sans fournir d’implémentation. L’exemple suivant est identique à l’exemple précédent, sauf qu’il utilise les propriétés implémentées automatiquement `Name` et `Price`. Notez que l’exemple supprime également le constructeur paramétrable pour que les objets `SaleItem` soient initialisés avec un appel au constructeur sans paramètre et un [initialiseur d’objet](object-and-collection-initializers.md).
 
   [!code-csharp[Properties#4](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-4.cs)]  
 
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
   
 - [Utilisation de propriétés](./using-properties.md)  
   
-- [Propriétés de l’interface](./interface-properties.md)  
+- [Propriété d’une interface](./interface-properties.md)  
   
 - [Comparaison entre propriétés et indexeurs](../indexers/comparison-between-properties-and-indexers.md)  
   

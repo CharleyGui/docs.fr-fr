@@ -6,17 +6,17 @@ helpviewer_keywords:
 - .NET Framework development
 ms.assetid: 653da4ba-3752-4d1f-a08a-de017dc86ecc
 ms.openlocfilehash: 494f3305f225e0130df30433f3fa0d06ca218068
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73122549"
 ---
 # <a name="net-framework-application-essentials"></a>Application .NET Framework Essentials
 Cette section de la documentation .NET Framework fournit des informations sur des tâches de développement d’application de base dans le .NET Framework.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Types de base](../../docs/standard/base-types/index.md)  
+ [Base Types](../../docs/standard/base-types/index.md)  
  Présente les types de données de base de mise en forme et d'analyse et l'utilisation d'expressions régulières pour traiter un texte.  
   
  [Collections et structures de données](../../docs/standard/collections/index.md)  
@@ -34,13 +34,13 @@ Cette section de la documentation .NET Framework fournit des informations sur de
  [Exceptions](../../docs/standard/exceptions/index.md)  
  Décrit la gestion des erreurs fournie par le .NET Framework et les principaux aspects de la gestion des exceptions.  
   
- [Fichier et flux de données E/S](../../docs/standard/io/index.md)  
+ [Fichier et stream I/O](../../docs/standard/io/index.md)  
  Explique comment accéder de façon synchrone et asynchrone aux fichiers et aux flux de données et comment utiliser le stockage isolé.  
   
  [Dates, heures et fuseaux horaires](../../docs/standard/datetime/index.md)  
  Explique comment utiliser les fuseaux horaires et les conversions de fuseau horaire dans les applications prenant en charge les fuseaux horaires.  
   
- [Domaines d'application et assemblys](../../docs/framework/app-domains/index.md)  
+ [Domaines d’application et assemblys](../../docs/framework/app-domains/index.md)  
  Explique comment créer et utiliser des assemblys et des domaines d'application.  
   
  [Sérialisation](../../docs/standard/serialization/index.md)  
@@ -52,17 +52,17 @@ Cette section de la documentation .NET Framework fournit des informations sur de
  [Globalisation et localisation](../../docs/standard/globalization-localization/index.md)  
  Fournit des informations qui vous aident à concevoir et à développer des applications mondialisables.  
   
- [Accessibilité](../../docs/framework/ui-automation/index.md) Fournit des informations sur Microsoft UI Automation, qui est une infrastructure d’accessibilité qui répond aux besoins des produits de technologie d’assistance et des frameworks de tests automatisés en fournissant un accès par programmation aux informations sur l’interface utilisateur.  
+ [Accessibilité](../../docs/framework/ui-automation/index.md) Fournit des informations sur Microsoft UI Automation, qui est un cadre d’accessibilité qui répond aux besoins des produits de technologie d’assistance et des cadres de test automatisés en fournissant un accès programmatique à l’information sur l’interface utilisateur (UI).  
   
  [Attributs](../../docs/standard/attributes/index.md)  
  Explique comment utiliser les attributs pour personnaliser les métadonnées.  
   
- [Applications 64 bits](../../docs/framework/64-bit-apps.md)  
+ [Applications 64 bits](../../docs/framework/64-bit-apps.md)  
  Aborde des questions sur le développement d'applications à exécuter sur un système d'exploitation Windows 64 bits.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Guide de développement](../../docs/framework/development-guide.md)  
  Fournit un guide sur tous les domaines technologiques clés et les tâches relatives au développement d’applications, notamment la création, la configuration, le débogage, la sécurisation et le déploiement de votre application, ainsi que des informations sur la programmation dynamique, l’interopérabilité, l’extensibilité, la gestion de mémoire et les threads.  
   
- [Security](../../docs/standard/security/index.md)  
+ [Sécurité](../../docs/standard/security/index.md)  
  Fournit des informations sur les classes et services du Common Language Runtime et du .NET Framework, qui facilitent le développement d'applications sécurisées.

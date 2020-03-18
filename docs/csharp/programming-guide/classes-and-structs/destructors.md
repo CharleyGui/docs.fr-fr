@@ -6,17 +6,17 @@ helpviewer_keywords:
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: 9c00f14da9d79418e4fb204bac30e539b234197f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: c8ad738baa3ff76cf9ae8367f2fd2a1fb44a79d6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715014"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79170297"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finaliseurs (Guide de programmation C#)
 Les finaliseurs (également appelés **destructeurs**) servent à effectuer les derniers nettoyages nécessaires lorsqu’une instance de classe est collectée par le récupérateur de mémoire.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
   
 - Les finaliseurs ne peuvent pas être définis dans des structs. Ils sont utilisés uniquement avec les classes.  
   
@@ -57,9 +57,9 @@ protected override void Finalize()
 > [!NOTE]
 > Les finaliseurs vides ne doivent pas être utilisés. Quand une classe contient un finaliseur, une entrée est créée dans la file d’attente `Finalize`. Quand le finaliseur est appelé, le récupérateur de mémoire est appelé pour traiter la file d’attente. Un finaliseur vide entraîne une perte de performances inutile.  
   
- Le programmeur n’a aucun contrôle sur le moment où le finaliseur est appelé, car celui-ci est déterminé par le récupérateur de mémoire. Le récupérateur de mémoire recherche les objets qui ne sont plus utilisés par l’application. S’il considère qu’un objet peut être finalisé, il appelle le finaliseur (s’il y en a un) et libère la mémoire utilisée pour stocker l’objet. 
- 
- Dans les applications .NET Framework (mais pas dans les applications .NET Core), les finaliseurs sont également appelés quand le programme se termine. 
+ Le programmeur n’a aucun contrôle sur le moment où le finaliseur est appelé, car celui-ci est déterminé par le récupérateur de mémoire. Le récupérateur de mémoire recherche les objets qui ne sont plus utilisés par l’application. S’il considère qu’un objet peut être finalisé, il appelle le finaliseur (s’il y en a un) et libère la mémoire utilisée pour stocker l’objet.
+
+ Dans les applications .NET Framework (mais pas dans les applications .NET Core), les finaliseurs sont également appelés quand le programme se termine.
   
  Il est possible de forcer le nettoyage de la mémoire en appelant <xref:System.GC.Collect%2A>, mais la plupart du temps c’est à éviter car cela peut créer des problèmes de performances.  
   
@@ -71,13 +71,13 @@ protected override void Finalize()
   
  Pour plus d’informations sur le nettoyage des ressources, consultez les rubriques suivantes :  
   
-- [Nettoyage de ressources non managées](../../../standard/garbage-collection/unmanaged.md)  
+- [Nettoyage des ressources non gestions](../../../standard/garbage-collection/unmanaged.md)  
   
-- [Implémentation d’une méthode dispose](../../../standard/garbage-collection/implementing-dispose.md)  
+- [Mise en œuvre d’une méthode de cession](../../../standard/garbage-collection/implementing-dispose.md)  
   
-- [using, instruction](../../language-reference/keywords/using-statement.md)  
+- [à l’aide de l’Énoncé](../../language-reference/keywords/using-statement.md)  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant crée trois classes qui forment une chaîne d’héritage. La classe `First` est la classe de base, `Second` est dérivée de `First`, et `Third` est dérivée de `Second`. Toutes trois ont des finaliseurs. Dans `Main`, une instance de la classe la plus dérivée est créée. Quand le programme s’exécute, notez que les finaliseurs des trois classes sont appelés automatiquement, et dans l’ordre, de la plus dérivée à la moins dérivée.  
   
  [!code-csharp[csProgGuideObjects#85](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#85)]  
@@ -91,4 +91,4 @@ Pour plus d’informations, voir la section [Destructeurs](~/_csharplang/spec/cl
 - <xref:System.IDisposable>
 - [Guide de programmation C#](../index.md)
 - [Constructeurs](./constructors.md)
-- [Nettoyage de la mémoire](../../../standard/garbage-collection/index.md)
+- [Garbage collection](../../../standard/garbage-collection/index.md)

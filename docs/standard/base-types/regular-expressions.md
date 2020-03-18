@@ -21,10 +21,10 @@ helpviewer_keywords:
 - strings [.NET Framework], regular expressions
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
 ms.openlocfilehash: ac034ff37b0b39f41d6f58381286706f9a9ac602
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73121701"
 ---
 # <a name="net-regular-expressions"></a>Expressions régulières .NET
@@ -95,7 +95,7 @@ Les expressions régulières permettent de traiter un texte de façon puissante,
   
 |||  
 |-|-|  
-|`\$`|Rechercher une occurrence unique du symbole dollar (`$`) dans la chaîne d’entrée. La chaîne du modèle d'expression régulière comprend une barre oblique inverse pour indiquer que le symbole dollar doit être interprété littéralement et non comme une ancre d'expression régulière. (Le symbole `$` seul indiquerait que le moteur des expressions régulières doit essayer de commencer sa correspondance à la fin d’une chaîne.) Pour faire en sorte que le symbole monétaire de la culture actuelle ne soit pas interprété à tort comme un symbole d’expression régulière, l’exemple appelle la méthode <xref:System.Text.RegularExpressions.Regex.Escape%2A?displayProperty=nameWithType> pour échapper le caractère.|  
+|`\$`|Rechercher une occurrence unique du symbole dollar (`$`) dans la chaîne d’entrée. La chaîne du modèle d'expression régulière comprend une barre oblique inverse pour indiquer que le symbole dollar doit être interprété littéralement et non comme une ancre d'expression régulière. (Le `$` symbole seul indiquerait que le moteur d’expression ordinaire devrait essayer de commencer son match à la fin d’une chaîne.) Pour s’assurer que le symbole monétaire de la culture actuelle n’est <xref:System.Text.RegularExpressions.Regex.Escape%2A?displayProperty=nameWithType> pas mal interprété comme un symbole d’expression régulière, l’exemple appelle la méthode pour échapper au personnage.|  
 |`\s*`|Rechercher zéro occurrence, ou plus, d'un espace blanc.|  
 |`[-+]?`|Rechercher zéro ou une occurrence d'un signe positif ou d'un signe négatif.|  
 |`([0-9]{0,3}(,[0-9]{3})*(\.[0-9]+)?)`|Les parenthèses externes de cette expression définissent celle-ci en tant que groupe de capture ou que sous-expression. Si une correspondance est trouvée, les informations sur cette partie de la chaîne correspondante peuvent être récupérées du deuxième objet <xref:System.Text.RegularExpressions.Group> dans l'objet <xref:System.Text.RegularExpressions.GroupCollection> retourné par la propriété <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>. (Le premier élément de la collection représente la correspondance entière.)|  
@@ -109,15 +109,15 @@ Les expressions régulières permettent de traiter un texte de façon puissante,
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Titre|Description|  
+|Intitulé|Description|  
 |-----------|-----------------|  
-|[Langage des expressions régulières - Aide-mémoire](regular-expression-language-quick-reference.md)|Fournit des informations sur le jeu de caractères, d'opérateurs et de constructions permettant de définir des expressions régulières.|  
-|[Modèle objet d’expression régulière](the-regular-expression-object-model.md)|Fournit des informations et des exemples de code illustrant l'utilisation des classes d'expression régulière.|  
-|[Comportement détaillé des expressions régulières](details-of-regular-expression-behavior.md)|Fournit des informations sur les fonctionnalités et le comportement des expressions régulières .NET.|  
-|[Exemples d’expressions régulières](regular-expression-examples.md)|Fournit des exemples de code illustrant des utilisations courantes des expressions régulières.|  
+|[Langage d’expression régulière - Référence rapide](regular-expression-language-quick-reference.md)|Fournit des informations sur le jeu de caractères, d'opérateurs et de constructions permettant de définir des expressions régulières.|  
+|[Le modèle d’objet d’expression régulière](the-regular-expression-object-model.md)|Fournit des informations et des exemples de code illustrant l'utilisation des classes d'expression régulière.|  
+|[Détails du comportement d’expression régulière](details-of-regular-expression-behavior.md)|Fournit des informations sur les fonctionnalités et le comportement des expressions régulières .NET.|  
+|[Exemples d'expressions régulières](regular-expression-examples.md)|Fournit des exemples de code illustrant des utilisations courantes des expressions régulières.|  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Informations de référence  
  <xref:System.Text.RegularExpressions?displayProperty=nameWithType>  
  <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>  
  [Expressions régulières - Aide-mémoire (téléchargement au format Word)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
- [Expressions régulières - Aide-mémoire (téléchargement au format PDF)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)
+ [Expressions régulières - Aide-mémoire (téléchargement au format PDF)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)

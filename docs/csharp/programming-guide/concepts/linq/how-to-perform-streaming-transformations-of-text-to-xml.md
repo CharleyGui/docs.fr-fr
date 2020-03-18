@@ -1,21 +1,21 @@
 ---
-title: Comment effectuer des transformations de diffusion en continu de texteC#au format XML ()
+title: Comment effectuer des transformations en streaming du texte à XML (C)
 ms.date: 07/20/2015
 ms.assetid: 9b3bd941-d0ff-4f2d-ae41-7c3b81d8fae6
 ms.openlocfilehash: 496535b7f868095a62be2b72b1eea2b082e00a44
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75345798"
 ---
-# <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a>Comment effectuer des transformations de diffusion en continu de texteC#au format XML ()
+# <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a>Comment effectuer des transformations en streaming du texte à XML (C)
 
 L'une des façons de traiter un fichier texte consiste à écrire une méthode d'extension qui diffuse en continu le fichier texte une ligne à la fois à l'aide de la construction `yield return`. Vous pouvez alors écrire une requête LINQ qui traite le fichier texte de manière différée. Si vous utilisez ensuite <xref:System.Xml.Linq.XStreamingElement> pour diffuser la sortie en continu, vous pouvez créer une transformation du fichier texte en XML qui utilise une quantité minimale de mémoire, quelle que soit la taille du fichier texte source.
 
  Il existe certains points à noter concernant les transformations de streaming. Il est préférable d'appliquer une transformation de streaming dans les situations où vous pouvez traiter l'intégralité du fichier une seule fois et si vous pouvez traiter les lignes dans l'ordre dans lequel elles apparaissent dans le document source. Si vous devez traiter le fichier à plusieurs reprises, ou si vous devez trier les lignes avant de les traiter, vous perdez une grande partie des avantages offerts par l'utilisation d'une technique de streaming.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
  Le fichier texte suivant, People.txt, est la source pour cet exemple.
 
@@ -66,7 +66,7 @@ class Program
 }
 ```
 
- Cet exemple génère la sortie suivante :
+ Cet exemple produit la sortie suivante :
 
 ```xml
 <Root>

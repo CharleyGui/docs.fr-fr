@@ -10,19 +10,19 @@ helpviewer_keywords:
 - garbage collection, notifications
 ms.assetid: e12d8e74-31e3-4035-a87d-f3e66f0a9b89
 ms.openlocfilehash: d5646c4969c95350ab4cd63b16f6f99ffba3a4ec
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73131535"
 ---
 # <a name="garbage-collection-notifications"></a>Notifications de garbage collection
-Il existe des cas où une opération garbage collection complète (c’est-à-dire, une opération garbage collection de génération 2) par le CLR peut avoir des effets néfastes sur les performances. Cela peut être particulièrement problématique avec les serveurs qui traitent de gros volumes de requêtes ; dans ce cas, une longue garbage collection peut entraîner un délai d’attente de requête. Pour éviter qu’une collecte complète ne se produise pendant une période critique, vous pouvez être averti qu’une garbage collection complète approche, puis agir pour rediriger la charge de travail vers une autre instance de serveur. Vous pouvez également déclencher vous-même une collection, sous réserve que l’instance de serveur actuelle n’a pas besoin de traiter de requêtes.  
+Il existe des cas où une opération garbage collection complète (c’est-à-dire, une opération garbage collection de génération 2) par le CLR peut avoir des effets néfastes sur les performances. Cela peut être un problème en particulier avec les serveurs qui traitent de grands volumes de demandes; dans ce cas, une longue collecte des ordures peut entraîner un délai de demande. Pour éviter qu’une collecte complète ne se produise pendant une période critique, vous pouvez être informé qu’une collecte complète des ordures approche, puis prendre des mesures pour rediriger la charge de travail vers une autre instance serveur. Vous pouvez également déclencher vous-même une collection, sous réserve que l’instance de serveur actuelle n’a pas besoin de traiter de requêtes.  
   
  La méthode <xref:System.GC.RegisterForFullGCNotification%2A> permet de déclencher une notification lorsque le runtime détecte qu’un garbage collection complet est sur le point de se produire. Cette notification est divisée en deux parties : lorsqu’un garbage collection complet est imminent et lorsque le garbage collection complet est terminé.  
   
 > [!WARNING]
-> Seul le blocage des garbage collections génère des notifications. Lorsque l’élément de configuration [\<gcConcurrent>](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) est activé, les garbage collections en arrière-plan ne génèrent pas de notifications.  
+> Seul le blocage des garbage collections génère des notifications. Lorsque [ \<l’élément de configuration>gcConcurrent](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) est activé, les collectes d’ordures de fond n’augmenteront pas les notifications.  
   
  Pour déterminer quand une notification a été levée, utilisez les méthodes <xref:System.GC.WaitForFullGCApproach%2A> et <xref:System.GC.WaitForFullGCComplete%2A>. En général, vous utilisez ces méthodes dans une boucle `while` pour obtenir en permanence une énumération <xref:System.GCNotificationStatus> qui indique l’état de la notification. Si cette valeur est égale à <xref:System.GCNotificationStatus.Succeeded>, vous pouvez procéder comme suit :  
   
@@ -61,7 +61,7 @@ Il existe des cas où une opération garbage collection complète (c’est-à-di
   
  Si vous spécifiez une valeur trop faible, le runtime peut déclencher la collection avant que vous n’ayez eu le temps d’être averti.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ### <a name="description"></a>Description  
  Dans l’exemple suivant, un groupe de serveurs traitent des requêtes web entrantes. Pour simuler la charge de travail de traitement des requêtes, des tableaux d’octets sont ajoutés à une collection <xref:System.Collections.Generic.List%601>. Chaque serveur s’inscrit pour une notification de garbage collection, puis démarre un thread sur la méthode utilisateur `WaitForFullGCProc` afin de surveiller en permanence l’énumération <xref:System.GCNotificationStatus> retournée par les méthodes <xref:System.GC.WaitForFullGCApproach%2A> et <xref:System.GC.WaitForFullGCComplete%2A>.  
@@ -122,4 +122,4 @@ Il existe des cas où une opération garbage collection complète (c’est-à-di
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Nettoyage de la mémoire](../../../docs/standard/garbage-collection/index.md)
+- [Garbage collection](../../../docs/standard/garbage-collection/index.md)

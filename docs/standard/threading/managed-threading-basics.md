@@ -9,10 +9,10 @@ helpviewer_keywords:
 - managed threading
 ms.assetid: b2944911-0e8f-427d-a8bb-077550618935
 ms.openlocfilehash: bec769043ab630b37609bed12302ceff5b90474a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73139230"
 ---
 # <a name="managed-threading-basics"></a>Éléments fondamentaux du threading managé
@@ -22,11 +22,11 @@ Les cinq premières rubriques de cette section sont conçues pour vous aider à 
  Le reste des rubriques de cette section traitent des sujets avancés, y compris l’interaction du threading managé avec le système d’exploitation Windows.  
   
 > [!NOTE]
-> Dans .NET Framework 4, la bibliothèque parallèle de tâches et PLINQ fournissent des API pour le parallélisme des tâches et des données dans les programmes multithreads. Pour plus d’informations, consultez la page [Programmation parallèle](../../../docs/standard/parallel-programming/index.md).  
+> Dans .NET Framework 4, la bibliothèque parallèle de tâches et PLINQ fournissent des API pour le parallélisme des tâches et des données dans les programmes multithreads. Pour plus d’informations, voir [Programmation parallèle](../../../docs/standard/parallel-programming/index.md).  
   
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
- [Threads et threading](../../../docs/standard/threading/threads-and-threading.md)  
+ [Fils et threading](../../../docs/standard/threading/threads-and-threading.md)  
  Explique les avantages et les inconvénients de plusieurs threads et présente les scénarios dans lesquels vous pouvez créer des threads ou utiliser des threads du pool de threads.  
   
  [Exceptions dans les threads managés](../../../docs/standard/threading/exceptions-in-managed-threads.md)  
@@ -41,10 +41,10 @@ Les cinq premières rubriques de cette section sont conçues pour vous aider à 
  [Threading managé et non managé dans Windows](../../../docs/standard/threading/managed-and-unmanaged-threading-in-windows.md)  
  Décrit la relation entre le threading managé et non managé, répertorie les équivalents managés de l’API de threading Windows et explique l’interaction des cloisonnements COM et des threads managés.  
   
- [Stockage local des threads : champs statiques et emplacements de données relatifs à un thread](../../../docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)  
+ [Stockage local des threads : champs static et emplacements de données relatifs à un thread](../../../docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)  
  Décrit les mécanismes de stockage relatifs aux threads.  
   
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Informations de référence
 
  <xref:System.Threading.Thread>  
  Fournit la documentation de référence pour la classe **Thread** qui représente un thread managé, qu’elle provienne de code non managé ou qu’elle ait été créée dans une application managée.  
@@ -52,12 +52,12 @@ Les cinq premières rubriques de cette section sont conçues pour vous aider à 
  <xref:System.ComponentModel.BackgroundWorker>  
  Fournit un moyen sûr d’implémenter le multithreading conjointement avec des objets d’interface utilisateur.  
   
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
- [Vue d’ensemble des primitives de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md)  
+ [Aperçu des primitifs de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md)  
  Décrit les classes managées utilisées pour synchroniser les activités de plusieurs threads.  
   
- [Bonnes pratiques de threading géré](../../../docs/standard/threading/managed-threading-best-practices.md)  
+ [Gestion des meilleures pratiques de threading](../../../docs/standard/threading/managed-threading-best-practices.md)  
  Décrit les problèmes courants avec le multithreading et les stratégies pour les éviter.  
   
  [Programmation parallèle](../../../docs/standard/parallel-programming/index.md)  

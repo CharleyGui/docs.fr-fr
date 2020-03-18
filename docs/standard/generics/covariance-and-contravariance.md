@@ -12,14 +12,14 @@ helpviewer_keywords:
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
 ms.openlocfilehash: 909b03588d2a41f667bfa117a5cecb420b125088
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75708395"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Covariance et contravariance dans les génériques
-La covariance et la contravariance sont des termes qui font référence à la possibilité d’utiliser un type plus dérivé (plus spécifique) ou un type moins dérivé (moins spécifique) que celui spécifié à l’origine. Les paramètres de type générique prennent en charge la covariance et la contravariance afin de fournir une meilleure flexibilité dans l'assignation et l'utilisation des types génériques. Lorsque vous faites référence à un système de type, la covariance, la contravariance et l'invariance ont les définitions suivantes. Les exemples supposent qu'une classe de base est nommée `Base` et qu'une classe dérivée est nommée `Derived`.  
+ La covariance et la contravariance sont des termes qui font référence à la possibilité d’utiliser un type plus dérivé (plus spécifique) ou moins dérivé (moins spécifique) que celui spécifié à l’origine. Les paramètres de type générique prennent en charge la covariance et la contravariance afin de fournir une meilleure flexibilité dans l'assignation et l'utilisation des types génériques. Lorsque vous faites référence à un système de type, la covariance, la contravariance et l'invariance ont les définitions suivantes. Les exemples supposent qu'une classe de base est nommée `Base` et qu'une classe dérivée est nommée `Derived`.  
   
 - `Covariance`  
   
@@ -37,7 +37,7 @@ La covariance et la contravariance sont des termes qui font référence à la po
   
      Signifie que vous pouvez utiliser uniquement le type spécifié à l'origine ; pour un paramètre de type générique indifférent, il n'est ni covariant ni contravariant.  
   
-     Vous ne pouvez pas attribuer une instance de `List<Base>` (`List(Of Base)` en Visual Basic) à une variable de type `List<Derived>` et inversement.  
+     Vous ne pouvez pas attribuer une instance de `List<Base>` (`List(Of Base)` en Visual Basic) à une variable de type `List<Derived>` et inversement.  
   
  Les paramètres de type covariant vous permettent d'effectuer des assignations très similaires au [Polymorphisme](../../csharp/programming-guide/classes-and-structs/polymorphism.md) ordinaire, comme indiqué dans le code suivant.  
   
@@ -77,11 +77,11 @@ La covariance et la contravariance sont des termes qui font référence à la po
 ## <a name="generic-interfaces-with-contravariant-generic-type-parameters"></a>Interfaces génériques avec paramètres de type générique contravariant  
  À compter de .NET Framework 4, plusieurs interfaces génériques ont des paramètres de type contravariant, par exemple <xref:System.Collections.Generic.IComparer%601>, <xref:System.IComparable%601> et <xref:System.Collections.Generic.IEqualityComparer%601>. Ces interfaces ont des paramètres de type contravariant uniquement, par conséquent, les paramètres de type sont utilisés uniquement comme types de paramètre dans les membres des interfaces.  
   
- L'exemple suivant illustre les paramètres de type contravariant. L'exemple définit une classe abstraite (`MustInherit` dans Visual Basic) `Shape` avec une propriété `Area` . L'exemple définit également une classe `ShapeAreaComparer` qui implémente `IComparer<Shape>` (`IComparer(Of Shape)` dans Visual Basic). L'implémentation de la méthode <xref:System.Collections.Generic.IComparer%601.Compare%2A?displayProperty=nameWithType> est basée sur la valeur de la propriété `Area` , de sorte que `ShapeAreaComparer` peut être utilisé pour trier des objets `Shape` par zone.  
+ L'exemple suivant illustre les paramètres de type contravariant. L'exemple définit une classe abstraite (`MustInherit` dans Visual Basic) `Shape` avec une propriété `Area` . L'exemple définit également une classe `ShapeAreaComparer` qui implémente `IComparer<Shape>` (`IComparer(Of Shape)` dans Visual Basic). L'implémentation de la méthode <xref:System.Collections.Generic.IComparer%601.Compare%2A?displayProperty=nameWithType> est basée sur la valeur de la propriété `Area` , de sorte que `ShapeAreaComparer` peut être utilisé pour trier des objets `Shape` par zone.  
   
  La classe `Circle` hérite de `Shape` et remplace `Area`. L'exemple crée un <xref:System.Collections.Generic.SortedSet%601> d'objets `Circle` , à l'aide d'un constructeur qui accepte un `IComparer<Circle>` (`IComparer(Of Circle)` dans Visual Basic). Toutefois, au lieu de passer un `IComparer<Circle>`, l'exemple passe un objet `ShapeAreaComparer` qui implémente `IComparer<Shape>`. L'exemple peut passer un comparateur d'un type moins dérivé (`Shape`) lorsque le code appelle un comparateur d'un type plus dérivé (`Circle`), parce que le paramètre de type de l'interface générique <xref:System.Collections.Generic.IComparer%601> est contravariant.  
   
- Lorsqu'un nouvel objet `Circle` est ajouté au `SortedSet<Circle>`, la méthode `IComparer<Shape>.Compare` (méthode`IComparer(Of Shape).Compare` dans Visual Basic) de l'objet `ShapeAreaComparer` est appelée chaque fois que le nouvel élément est comparé à un élément existant. Le type de paramètre de la méthode (`Shape`) étant moins dérivé que le type passé (`Circle`), l'appel garantit la cohérence des types. La contravariance permet à `ShapeAreaComparer` de trier une collection d'un type unique, ainsi qu'une collection mixte de types, qui dérivent de `Shape`.  
+ Lorsqu'un nouvel objet `Circle` est ajouté au `SortedSet<Circle>`, la méthode `IComparer<Shape>.Compare` (méthode `IComparer(Of Shape).Compare` dans Visual Basic) de l'objet `ShapeAreaComparer` est appelée chaque fois que le nouvel élément est comparé à un élément existant. Le type de paramètre de la méthode (`Shape`) étant moins dérivé que le type passé (`Circle`), l'appel garantit la cohérence des types. La contravariance permet à `ShapeAreaComparer` de trier une collection d'un type unique, ainsi qu'une collection mixte de types, qui dérivent de `Shape`.  
   
  [!code-csharp[CoContravarianceInClrGenericI2#1](../../../samples/snippets/csharp/VS_Snippets_CLR/cocontravarianceinclrgenerici2/cs/example.cs#1)]
  [!code-vb[CoContravarianceInClrGenericI2#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontravarianceinclrgenerici2/vb/example.vb#1)]  
@@ -92,7 +92,7 @@ La covariance et la contravariance sont des termes qui font référence à la po
 > [!NOTE]
 > Le dernier paramètre de type générique des délégués génériques `Func` spécifie le type de la valeur de retour dans la signature du délégué. Il est covariant (mot clé`out` ), alors que les autres paramètres de type générique sont contravariants (mot clé`in` ).  
   
- Le code suivant illustre ce comportement : La première partie du code définit une classe nommée `Base`, une classe nommée `Derived` qui hérite de `Base`, et une autre classe avec une méthode `static` (`Shared` en Visual Basic) nommée `MyMethod`. La méthode prend une instance de `Base` et retourne une instance de `Derived`. (Si l’argument est une instance de `Derived`, `MyMethod` le retourne ; si l’argument est une instance de `Base`, `MyMethod` retourne une nouvelle instance de `Derived`.) Dans `Main()`, l’exemple crée une instance de `Func<Base, Derived>` (`Func(Of Base, Derived)` dans Visual Basic) qui représente `MyMethod`et le stocke dans la variable `f1`.  
+ Le code suivant illustre ce comportement : La première partie du code définit une classe nommée `Base`, une classe nommée `Derived` qui hérite de `Base`, et une autre classe avec une méthode `static` (`Shared` en Visual Basic) nommée `MyMethod`. La méthode prend une instance de `Base` et retourne une instance de `Derived`. (Si l’argument est `Derived` `MyMethod` un exemple de , il `Base`retourne; si l’argument est un exemple de , `MyMethod` renvoie une nouvelle instance de `Derived`.) Dans `Main()`, l’exemple `Func<Base, Derived>` crée`Func(Of Base, Derived)` un exemple de `MyMethod`(dans Visual Basic) qui représente , et le stocke dans la variable `f1`.  
   
  [!code-csharp[CoContravarianceDelegates#2](../../../samples/snippets/csharp/VS_Snippets_CLR/cocontravariancedelegates/cs/example.cs#2)]
  [!code-vb[CoContravarianceDelegates#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontravariancedelegates/vb/example.vb#2)]  
@@ -113,7 +113,7 @@ La covariance et la contravariance sont des termes qui font référence à la po
  [!code-vb[CoContravarianceDelegates#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontravariancedelegates/vb/example.vb#5)]  
   
 ### <a name="variance-in-generic-and-non-generic-delegates"></a>Variance dans les délégués génériques et non génériques  
- Dans le code précédent, la signature de `MyMethod` correspond exactement à la signature du délégué générique construit : `Func<Base, Derived>` (`Func(Of Base, Derived)` en Visual Basic). L'exemple montre que ce délégué générique peut être stocké dans des variables ou des paramètres de méthode qui ont des types de paramètres plus dérivés et des types de retour moins dérivés, tant que tous les types délégués sont construits à partir du type délégué générique <xref:System.Func%602>.  
+ Dans le code précédent, la signature de `MyMethod` correspond exactement à la signature du délégué générique construit : `Func<Base, Derived>` (`Func(Of Base, Derived)` en Visual Basic). L'exemple montre que ce délégué générique peut être stocké dans des variables ou des paramètres de méthode qui ont des types de paramètres plus dérivés et des types de retour moins dérivés, tant que tous les types délégués sont construits à partir du type délégué générique <xref:System.Func%602>.  
   
  Ceci est un point important. Les effets de la covariance et de la contravariance dans les paramètres de type des délégués génériques sont semblables aux effets de la covariance et de la contravariance dans la liaison de délégués ordinaire (consultez [Variance dans les délégués (C#)](../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) et [Variance dans les délégués (Visual Basic)](../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)). Toutefois, la variance dans la liaison de délégués fonctionne avec tous les types délégués, et pas seulement les types délégués génériques qui ont des paramètres de type variant. En outre, la variance dans la liaison de délégués permet de lier une méthode à tout délégué disposant de types de paramètres plus restrictifs et d'un type de retour moins restrictif, alors que l'assignation de délégués génériques fonctionne uniquement si les deux types délégués sont construits à partir de la même définition de type générique.  
   
@@ -128,7 +128,7 @@ La covariance et la contravariance sont des termes qui font référence à la po
 > [!NOTE]
 > Depuis le .NET Framework version 2.0, le Common Language Runtime prend en charge les annotations de variance sur les paramètres de type générique. Avant .NET Framework 4, la seule méthode pour définir une classe générique avec ces annotations consistait à utiliser le langage MSIL (Microsoft Intermediate Language), en compilant la classe avec [Ilasm.exe (Assembleur IL)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) ou en l’émettant dans un assembly dynamique.  
   
- Un paramètre de type covariant est marqué avec le mot clé `out` (mot clé`Out` en Visual Basic, `+` pour l' [assembleur MSIL](../../../docs/framework/tools/ilasm-exe-il-assembler.md)). Vous pouvez utiliser un paramètre de type covariant comme valeur de retour d'une méthode qui appartient à une interface ou comme type de retour d'un délégué. Vous ne pouvez pas utiliser un paramètre de type covariant comme contrainte de type générique pour les méthodes d'interface.  
+ Un paramètre de type covariant est marqué avec le mot clé `out` (mot clé `Out` en Visual Basic, `+` pour [l’assembleur MSIL](../../../docs/framework/tools/ilasm-exe-il-assembler.md)). Vous pouvez utiliser un paramètre de type covariant comme valeur de retour d'une méthode qui appartient à une interface ou comme type de retour d'un délégué. Vous ne pouvez pas utiliser un paramètre de type covariant comme contrainte de type générique pour les méthodes d'interface.  
   
 > [!NOTE]
 > Si une méthode d'une interface a un paramètre qui est un type délégué générique, un paramètre de type covariant du type d'interface peut être utilisé pour spécifier un paramètre de type contravariant du type délégué.  
@@ -146,11 +146,11 @@ La covariance et la contravariance sont des termes qui font référence à la po
   
 |Type|Paramètres de type covariant|Paramètres de type contravariant|  
 |----------|-------------------------------|-----------------------------------|  
-|<xref:System.Action%601> à <xref:System.Action%6016>||Oui|  
+|Il lance <xref:System.Action%601> sur <xref:System.Action%6016>.||Oui|  
 |<xref:System.Comparison%601>||Oui|  
 |<xref:System.Converter%602>|Oui|Oui|  
 |<xref:System.Func%601>|Oui||  
-|<xref:System.Func%602> à <xref:System.Func%6017>|Oui|Oui|  
+|Il lance <xref:System.Func%602> sur <xref:System.Func%6017>.|Oui|Oui|  
 |<xref:System.IComparable%601>||Oui|  
 |<xref:System.Predicate%601>||Oui|  
 |<xref:System.Collections.Generic.IComparer%601>||Oui|  

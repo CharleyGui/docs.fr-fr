@@ -1,19 +1,19 @@
 ---
-title: Mettre à niveau vers des types de référence Nullable
-description: Ce didacticiel avancé montre comment migrer du code existant avec des types de référence Nullable.
+title: Mise à niveau vers des types de référence nuls
+description: Ce tutoriel avancé démontre comment migrer le code existant avec des types de référence nuls.
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: 38619f9efa5da1f9b3264b3d4240103f0869afea
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 9767493059623e770cc100b83b9284e8d0bdf0f8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240026"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156452"
 ---
-# <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Didacticiel : migrer du code existant avec des types de référence Nullable
+# <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Tutorial: Migrer le code existant avec des types de référence nuls
 
-C# 8 introduit les **types référence Nullable**, qui viennent compléter les types référence de la même façon que les types valeur Nullable complètent les types valeur. Pour déclarer une variable comme étant un **type référence Nullable**, on ajoute `?` au type. Par exemple, `string?` représente une `string` Nullable. Vous pouvez utiliser ces nouveaux types pour exprimer plus clairement votre intention de conception : certaines variables *doivent toujours avoir une valeur*, d’autres *peuvent ne pas en avoir*. Toutes les variables existantes d’un type de référence sont interprétées comme un type de référence non nullable. 
+C# 8 introduit les **types référence Nullable**, qui viennent compléter les types référence de la même façon que les types valeur Nullable complètent les types valeur. Pour déclarer une variable comme étant un **type référence Nullable**, on ajoute `?` au type. Par exemple, `string?` représente une `string` Nullable. Vous pouvez utiliser ces nouveaux types pour exprimer plus clairement votre intention de conception : certaines variables *doivent toujours avoir une valeur*, d’autres *peuvent ne pas en avoir*. Toutes les variables existantes d’un type de référence sont interprétées comme un type de référence non nullable.
 
 Ce didacticiel vous montre comment effectuer les opérations suivantes :
 
@@ -24,15 +24,15 @@ Ce didacticiel vous montre comment effectuer les opérations suivantes :
 > - Gérer l’interface entre les contextes compatibles avec nullable et non compatibles avec nullable.
 > - Contrôler les contextes d’annotation nullable.
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Conditions préalables requises
 
-Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download).
+Vous aurez besoin de configurer votre machine pour exécuter .NET Core, y compris le compilateur C 8.0. Le compilateur C 8 est disponible à partir de [Visual Studio 2019 version 16.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download).
 
 Ce tutoriel suppose de connaître C# et .NET, y compris Visual Studio ou l’interface CLI .NET Core.
 
 ## <a name="explore-the-sample-application"></a>Explorer l’exemple d’application
 
-L’exemple d’application que vous allez migrer est une application web de lecteur de flux RSS. Il lit à partir d’un flux RSS unique et affiche des résumés des articles les plus récents. Vous pouvez sélectionner n’importe quel article pour visiter le site. L’application est relativement nouvelle, mais a été écrite avant que les types de référence nullable ne soient disponibles. Les décisions de conception de l’application constituent des principes solides, mais ne tirent pas parti de cette fonctionnalité de langage importante.
+L’exemple d’application que vous allez migrer est une application web de lecteur de flux RSS. Il lit à partir d’un flux RSS unique et affiche des résumés des articles les plus récents. Vous pouvez sélectionner l’un des articles pour visiter le site. L’application est relativement nouvelle, mais a été écrite avant que les types de référence nullable ne soient disponibles. Les décisions de conception de l’application constituent des principes solides, mais ne tirent pas parti de cette fonctionnalité de langage importante.
 
 L’exemple d’application inclut une bibliothèque de tests unitaires qui valide les fonctionnalités principales de l’application. Ce projet facilite la mise à niveau en toute sécurité, si vous modifiez l’implémentation basée sur les avertissements générés. Vous pouvez télécharger l’exemple de démarrage à partir du référentiel GitHub [dotnet/samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/nullable-reference-migration/start).
 
@@ -40,7 +40,7 @@ Votre objectif de migration d’un projet doit être de tirer parti des nouvelle
 
 ## <a name="upgrade-the-projects-to-c-8"></a>Mettre à niveau les projets vers C# 8
 
-La première étape consiste à déterminer l’étendue de la tâche de migration. Commencez par la mise à niveau du projet vers C# 8.0 (ou version ultérieure). Ajoutez l’élément `LangVersion` au PropertyGroup dans les deux fichiers csproj pour le projet Web et le projet de test unitaire :
+La première étape consiste à déterminer l’étendue de la tâche de migration. Commencez par la mise à niveau du projet vers C# 8.0 (ou version ultérieure). Ajoutez `LangVersion` l’élément au Groupe de propriété dans les deux fichiers csproj pour le projet Web et le projet de test unitaire :
 
 ```xml
 <LangVersion>8.0</LangVersion>
@@ -83,7 +83,7 @@ Ces deux propriétés provoquent `CS8618`, « Propriété non-nullable initiali
 
 [!code-csharp[StarterCreateNewsItem](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#CreateNewsItem)]
 
-Il se passe beaucoup de choses dans le bloc de code précédent. Cette application utilise le package NuGet [AutoMapper](https://automapper.org/) pour construire un élément d’article de presse à partir d’un `ISyndicationItem`. Vous avez découvert que les éléments d’articles de presse sont construits et que les propriétés sont définies dans cette seule instruction. Cela signifie que la conception de `NewsStoryViewModel` indique que ces propriétés ne doivent jamais avoir la valeur `null`. Ces propriétés doivent être des **types de référence non nullable**. C’est ce qui correspond le mieux à l’intention de conception d’origine. En fait, tout `NewsStoryViewModel` *est* correctement instancié avec des valeurs non null. Ce qui fait du code d’initialisation suivant un correctif valide :
+Il se passe beaucoup de choses dans le bloc de code précédent. Cette application utilise le package NuGet [AutoMapper](https://automapper.org/) pour construire un élément d’article de presse à partir d’un `ISyndicationItem`. Vous avez découvert que les éléments d’articles de presse sont construits et que les propriétés sont définies dans cette seule instruction. Cela signifie que la conception de `NewsStoryViewModel` indique que ces propriétés ne doivent jamais avoir la valeur `null`. Ces propriétés doivent être des **types de référence non nullable**. C’est ce qui correspond le mieux à l’intention de conception d’origine. En fait, n’importe quel `NewsStoryViewModel` *est* correctement instancié avec des valeurs non null. Ce qui fait du code d’initialisation suivant un correctif valide :
 
 ```csharp
 public class NewsStoryViewModel
@@ -94,7 +94,7 @@ public class NewsStoryViewModel
 }
 ```
 
-L’attribution de `Title` et `Uri` à `default` qui est `null` pour le type `string` ne change pas le comportement d’exécution du programme. `NewsStoryViewModel` est toujours construit avec des valeurs null, mais maintenant le compilateur ne signale aucun avertissement. **L’opérateur indulgent en null**, le caractère `!` qui suit l’expression `default` indique au compilateur que l’expression précédente n’est pas null. Cette technique peut être utile lorsque d’autres modifications forcent beaucoup plus les modifications apportées à une base de code, mais dans cette application, il existe une solution relativement rapide et plus performante : faire de la `NewsStoryViewModel` un type immuable dans lequel toutes les propriétés sont définies dans le constructeur. Dans `NewsStoryViewModel`, effectuez les changements suivants :
+L’attribution de `Title` et `Uri` à `default` qui est `null` pour le type `string` ne change pas le comportement d’exécution du programme. `NewsStoryViewModel` est toujours construit avec des valeurs null, mais maintenant le compilateur ne signale aucun avertissement. **L’opérateur indulgent en null**, le caractère `!` qui suit l’expression `default` indique au compilateur que l’expression précédente n’est pas null. Cette technique peut être opportune lorsque d’autres modifications forcent des modifications beaucoup plus importantes `NewsStoryViewModel` à une base de code, mais dans cette application il ya une solution relativement rapide et meilleure: Faire le type immuable où toutes les propriétés sont définies dans le constructeur. Dans `NewsStoryViewModel`, effectuez les changements suivants :
 
 [!code-csharp[FinishedViewModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/ViewModels/NewsStoryViewModel.cs#FinishedViewModel)]
 
@@ -108,7 +108,7 @@ Ce code mappe les propriétés de l’objet `ISyndicationItem` aux propriétés 
 
 Notez qu’étant donné que cette classe est petite, et que vous l’avez examinée avec soin, vous devez activer la directive `#nullable enable` au-dessus de cette déclaration de classe. La modification apportée au constructeur peut avoir rompu quelque chose, il est donc judicieux d’exécuter tous les tests et de tester l’application avant de continuer.
 
-Le premier ensemble de modifications vous a montré comment effectuer la détection lorsque la conception d’origine indiquait que les variables ne devaient pas être définies sur `null`. Cette technique est appelée **correcte par construction**. Vous déclarez qu’un objet et ses propriétés ne peuvent pas être `null` quand il est construit. L’analyse du flux du compilateur fournit la garantie que ces propriétés ne sont pas définies sur `null` après la construction. Notez que ce constructeur est appelé par du code externe, que ce code **oublie la valeur nullable**. La nouvelle syntaxe ne fournit pas la vérification lors de l’exécution. Le code externe peut contourner l’analyse du flux du compilateur. 
+Le premier ensemble de modifications vous a montré comment effectuer la détection lorsque la conception d’origine indiquait que les variables ne devaient pas être définies sur `null`. Cette technique est appelée **correcte par construction**. Vous déclarez qu’un objet et ses propriétés ne peuvent pas être `null` quand il est construit. L’analyse du flux du compilateur fournit la garantie que ces propriétés ne sont pas définies sur `null` après la construction. Notez que ce constructeur est appelé par du code externe, que ce code **oublie la valeur nullable**. La nouvelle syntaxe ne fournit pas la vérification lors de l’exécution. Le code externe peut contourner l’analyse du flux du compilateur.
 
 Parfois, la structure d’une classe fournit des différents indices sur l’intention. Ouvrez le fichier *Error.cshtml.cs* dans le dossier *Pages*. `ErrorViewModel` contient le code suivant :
 
@@ -126,7 +126,7 @@ Fréquemment, le correctif pour un ensemble d’avertissements crée de nouveaux
 
 [!code-csharp[StarterIndexModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Pages/Index.cshtml.cs#IndexModelStart)]
 
-Ajoutez la directive `#nullable enable` et vous verrez deux avertissements. Ni la propriété `ErrorText` ni la propriété `NewsItems` ne sont initialisées. Un examen de cette classe vous permettra de croire que les deux propriétés doivent être des types de référence Nullable : les deux ont des méthodes setter privées. Une seule exactement est attribuée dans la méthode `OnGet`. Avant d’apporter des modifications, examinez les consommateurs de ces deux propriétés. Dans la page elle-même, `ErrorText` est comparé à la valeur null avant de générer le balisage d’éventuelles erreurs. La collection `NewsItems` est vérifiée par rapport à `null` et afin de garantir que la collection comporte des éléments. Un correctif rapide serait d’attribuer le type de référence nullable aux deux propriétés. Un meilleur correctif consisterait à attribuer un type de référence non nullable à la collection et d’ajouter des éléments à la collection existante lors de la récupération des articles de presse. Le premier correctif consiste à ajouter `?` au type `string` pour `ErrorText` :
+Ajoutez la directive `#nullable enable` et vous verrez deux avertissements. Ni la propriété `ErrorText` ni la propriété `NewsItems` ne sont initialisées. Un examen de cette classe vous amènerait à croire que les deux propriétés devraient être des types de référence nuls : les deux ont des setters privés. Une seule exactement est attribuée dans la méthode `OnGet`. Avant d’apporter des modifications, examinez les consommateurs de ces deux propriétés. Dans la page elle-même, `ErrorText` est comparé à la valeur null avant de générer le balisage d’éventuelles erreurs. La collection `NewsItems` est vérifiée par rapport à `null` et afin de garantir que la collection comporte des éléments. Un correctif rapide serait d’attribuer le type de référence nullable aux deux propriétés. Un meilleur correctif consisterait à attribuer un type de référence non nullable à la collection et d’ajouter des éléments à la collection existante lors de la récupération des articles de presse. Le premier correctif consiste à ajouter `?` au type `string` pour `ErrorText` :
 
 [!code-csharp[UpdateErrorText](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#UpdateErrorText)]
 
@@ -167,4 +167,4 @@ Le paramètre `IMapper` est typé comme référence non nullable. Il est appelé
 
 Vous avez résolu les avertissements que vous avez identifiés dans la compilation du test initial, donc vous pouvez désormais activer le contexte d’annotation nullable pour les deux projets. Régénérez les projets ; le compilateur ne signale aucun avertissement. Vous pouvez obtenir le code pour le projet terminé dans le référentiel GitHub [dotnet/samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/nullable-reference-migration/finished).
 
-Les nouvelles fonctionnalités qui prennent en charge les types de référence nullable vous aident à trouver et à corriger les erreurs potentielles dans la façon dont vous gérez les valeurs `null` dans votre code. L’activation du contexte d’annotation nullable vous permet d’exprimer votre intention de conception : certaines variables ne doivent jamais être null, d’autres variables peuvent contenir des valeurs null. Ces fonctionnalités facilitent la déclaration de votre intention de conception. De même, le contexte d’avertissement nullable indique au compilateur d’émettre des avertissements lorsque vous avez enfreint cette intention. Ces avertissements vous guident pour effectuer des mises à jour qui rendent votre code plus robuste et moins susceptible de lever une `NullReferenceException` pendant l’exécution. Vous pouvez contrôler l’étendue de ces contextes afin de vous concentrer sur des zones locales de code à migrer alors que la base de code restante reste intacte. Dans la pratique, vous pouvez intégrer cette tâche de migration dans une maintenance régulière de vos classes. Ce tutoriel a présenté le processus de migration d’une application pour utiliser des types de référence nullable. Vous pouvez explorer un exemple réel plus complet de ce processus en examinant la demande de tirage effectuée par [Jon Skeet](https://github.com/jskeet) pour incorporer les types de référence nullable dans [NodaTime](https://github.com/nodatime/nodatime/pull/1240/commits). En outre, vous pouvez également découvrir des techniques permettant d’utiliser des types de référence Nullable avec Entity Framework Core dans [Entity Framework Core-Working avec des types de référence Nullable](/ef/core/miscellaneous/nullable-reference-types).
+Les nouvelles fonctionnalités qui prennent en charge les types de référence nullable vous aident à trouver et à corriger les erreurs potentielles dans la façon dont vous gérez les valeurs `null` dans votre code. L’activation du contexte d’annotation nullable vous permet d’exprimer votre intention de conception : certaines variables ne doivent jamais être null, d’autres variables peuvent contenir des valeurs null. Ces fonctionnalités facilitent la déclaration de votre intention de conception. De même, le contexte d’avertissement nullable indique au compilateur d’émettre des avertissements lorsque vous avez enfreint cette intention. Ces avertissements vous guident pour effectuer des mises à jour qui rendent votre code plus robuste et moins susceptible de lever une `NullReferenceException` pendant l’exécution. Vous pouvez contrôler l’étendue de ces contextes afin de vous concentrer sur des zones locales de code à migrer alors que la base de code restante reste intacte. Dans la pratique, vous pouvez intégrer cette tâche de migration dans une maintenance régulière de vos classes. Ce tutoriel a présenté le processus de migration d’une application pour utiliser des types de référence nullable. Vous pouvez explorer un exemple réel plus complet de ce processus en examinant la demande de tirage effectuée par [Jon Skeet](https://github.com/jskeet) pour incorporer les types de référence nullable dans [NodaTime](https://github.com/nodatime/nodatime/pull/1240/commits). Ou tout simplement En outre, vous pouvez apprendre des techniques pour l’utilisation de types de référence nuls avec Entity Framework Core dans [Entity Framework Core - Travailler avec des types de référence nuls](/ef/core/miscellaneous/nullable-reference-types).

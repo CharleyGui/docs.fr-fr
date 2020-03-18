@@ -4,14 +4,14 @@ description: Ce tutoriel avancé illustre des scénarios où la génération et 
 ms.date: 02/10/2019
 ms.technology: csharp-async
 ms.custom: mvc
-ms.openlocfilehash: 2fab2917a26a1774ad73866fa0448dbf47c94583
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: de090eb9cc1e8b511956313ab5169ee4d07a492f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240091"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156738"
 ---
-# <a name="tutorial-generate-and-consume-async-streams-using-c-80-and-net-core-30"></a>Didacticiel : générer et utiliser des flux asynchrones à l’aide C# de 8,0 et .net Core 3,0
+# <a name="tutorial-generate-and-consume-async-streams-using-c-80-and-net-core-30"></a>Tutorial: Générer et consommer des flux async à l’aide de C 8.0 et .NET Core 3.0
 
 C# 8.0 introduit des **flux asynchrones**, ce qui permet de modéliser une source de données en diffusion en continu lorsque les éléments du flux de données peuvent être récupérés ou générés de façon asynchrone. Les flux asynchrones sont basés sur de nouvelles interfaces introduites dans .NET Standard 2.1 et implémentées dans .NET Core 3.0 afin de fournir un modèle de programmation naturel pour les sources de données asynchrones en diffusion en continu.
 
@@ -23,9 +23,9 @@ Ce didacticiel vous montre comment effectuer les opérations suivantes :
 > - consommer cette source de données de façon asynchrone ;
 > - reconnaître quand l’interface et la source de données nouvelles sont préférables aux séquences de données synchrones précédentes.
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Conditions préalables requises
 
-Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download).
+Vous aurez besoin de configurer votre machine pour exécuter .NET Core, y compris le compilateur C 8.0. Le compilateur C 8 est disponible à partir de [Visual Studio 2019 version 16.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download).
 
 Vous devrez créer un [jeton d’accès GitHub](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token) afin de pouvoir accéder au point de terminaison GitHub GraphQL. Sélectionnez les autorisations suivantes pour votre jeton d’accès GitHub :
 
@@ -59,7 +59,7 @@ L’implémentation révèle pourquoi vous avez observé le comportement décrit
 
 [!code-csharp[RunPagedQueryStarter](~/samples/snippets/csharp/tutorials/AsyncStreams/start/IssuePRreport/IssuePRreport/Program.cs#RunPagedQuery)]
 
-Concentrons-nous sur l’algorithme de pagination et sur la structure asynchrone du code précédent. (Vous pouvez consulter la [documentation de GitHub GraphQL](https://developer.github.com/v4/guides/) pour plus d’informations sur l’API GraphQL github.) La méthode `runPagedQueryAsync` énumère les problèmes de la plus récente à la plus ancienne. Elle a besoin de 25 problèmes par page et examine la structure `pageInfo` de la réponse pour continuer avec la page précédente. Cela suit la prise en charge standard de la pagination de GraphQL pour les réponses multipages. La réponse inclut un objet `pageInfo` qui contient une valeur `hasPreviousPages` et une valeur `startCursor` utilisées pour demander la page précédente. Les problèmes se trouvent dans le tableau `nodes`. La méthode `runPagedQueryAsync` ajoute ces nœuds à un tableau qui contient tous les résultats de toutes les pages.
+Concentrons-nous sur l’algorithme de pagination et sur la structure asynchrone du code précédent. (Vous pouvez consulter la [documentation GitHub GraphQL](https://developer.github.com/v4/guides/) pour plus de détails sur l’API GitHub GraphQL.) La `runPagedQueryAsync` méthode énumère les questions du plus récent au plus ancien. Elle a besoin de 25 problèmes par page et examine la structure `pageInfo` de la réponse pour continuer avec la page précédente. Cela suit la prise en charge standard de la pagination de GraphQL pour les réponses multipages. La réponse inclut un objet `pageInfo` qui contient une valeur `hasPreviousPages` et une valeur `startCursor` utilisées pour demander la page précédente. Les problèmes se trouvent dans le tableau `nodes`. La méthode `runPagedQueryAsync` ajoute ces nœuds à un tableau qui contient tous les résultats de toutes les pages.
 
 Après la récupération et la restauration d’une page de résultats, `runPagedQueryAsync` signale la progression et vérifie l’annulation. Si l’annulation a été demandée, `runPagedQueryAsync` lève une <xref:System.OperationCanceledException>.
 
@@ -132,11 +132,13 @@ Remplacez-le par la boucle `await foreach` suivante :
 
 [!code-csharp[FinishedEnumerateAsyncStream](~/samples/snippets/csharp/tutorials/AsyncStreams/finished/IssuePRreport/IssuePRreport/Program.cs#EnumerateAsyncStream)]
 
+Par défaut, les éléments de flux sont traités dans le contexte capturé. Si vous souhaitez désactiver la capture du <xref:System.Threading.Tasks.TaskAsyncEnumerableExtensions.ConfigureAwait%2A?displayProperty=nameWithType> contexte, utilisez la méthode d’extension. Pour plus d’informations sur les contextes de synchronisation et la capture du contexte actuel, voir [l’article sur la consommation du modèle asynchrone basé sur les tâches](../../standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md).
+
 Vous pouvez obtenir le code du tutoriel terminé dans le référentiel [dotnet/samples](https://github.com/dotnet/samples), dossier [csharp/tutorials/AsyncStreams](https://github.com/dotnet/samples/tree/master/csharp/tutorials/AsyncStreams/finished).
 
 ## <a name="run-the-finished-application"></a>Exécutez l'application terminée
 
-Exécutez de nouveau l'application. Comparez son comportement avec le comportement de l’application de démarrage. La première page de résultats est énumérée dès qu’elle est disponible. Une pause peut être observée lorsque chaque nouvelle page est demandée et récupérée, puis les résultats de la page suivante sont rapidement énumérés. Le bloc `try` / `catch` n’est pas nécessaire pour gérer l’annulation : l’appelant peut arrêter l’énumération de la collection. Le rapport de progression est clair, car le flux asynchrone génère des résultats à mesure que chaque page est téléchargée. L’état de chaque problème renvoyé est inclus en toute transparence dans la boucle `await foreach`. Vous n’avez pas besoin d’un objet de rappel pour suivre la progression.
+Exécutez de nouveau l'application. Comparez son comportement avec le comportement de l’application de démarrage. La première page de résultats est énumérée dès qu’elle est disponible. Une pause peut être observée lorsque chaque nouvelle page est demandée et récupérée, puis les résultats de la page suivante sont rapidement énumérés. Le bloc `try` / `catch` n’est pas nécessaire pour gérer l’annulation : l’appelant peut arrêter l’énumération de la collection. Le rapport de progression est clair, car le flux asynchrone génère des résultats à mesure que chaque page est téléchargée. L’état de chaque numéro retourné `await foreach` est parfaitement inclus dans la boucle. Vous n’avez pas besoin d’un objet de rappel pour suivre les progrès.
 
 Vous pouvez voir des améliorations lors de l’utilisation de mémoire en examinant le code. Vous n’avez plus besoin d’allouer une collection pour stocker tous les résultats avant qu’ils ne soient énumérés. L’appelant peut déterminer comment utiliser les résultats et si une collection de stockage est nécessaire.
 

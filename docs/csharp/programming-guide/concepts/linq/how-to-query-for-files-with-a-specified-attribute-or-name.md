@@ -1,18 +1,18 @@
 ---
-title: Comment interroger des fichiers ayant un attribut ou un nom spécifiéC#()
+title: Comment interroger les fichiers avec un attribut ou un nom spécifié (C)
 ms.date: 07/20/2015
 ms.assetid: 560e3879-b0b3-4549-ad02-0a53aff2f83c
-ms.openlocfilehash: 8ecf3263dcee9b54d01dd0b577ba8bec2a199da9
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: fc6456f159887b7ad109e8ad48f0f79999d53e09
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346715"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168867"
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Comment interroger des fichiers ayant un attribut ou un nom spécifiéC#()
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Comment interroger les fichiers avec un attribut ou un nom spécifié (C)
 Cet exemple montre comment rechercher tous les fichiers ayant une extension de nom de fichier spécifiée (par exemple « .txt ») dans une arborescence de répertoires spécifiée. Il montre également comment retourner le fichier le plus récent ou le plus ancien dans l’arborescence en fonction de l’heure de création.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ```csharp  
 class FindFileByExtension  
@@ -44,8 +44,8 @@ class FindFileByExtension
             Console.WriteLine(fi.FullName);  
         }  
   
-        // Create and execute a new query by using the previous   
-        // query as a starting point. fileQuery is not   
+        // Create and execute a new query by using the previous
+        // query as a starting point. fileQuery is not
         // executed again until the call to Last()  
         var newestFile =  
             (from file in fileQuery  

@@ -4,12 +4,12 @@ description: En savoir plus sur les types tuple nommés et sans nom en C#
 ms.date: 05/15/2018
 ms.technology: csharp-fundamentals
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: f551a1df4a31c3311119a0327e02fbc6096ce0a0
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 9ce9e1d4395d1a75f36004384ec215c615cd9802
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039727"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156907"
 ---
 # <a name="c-tuple-types"></a>Types tuple C#
 
@@ -19,7 +19,7 @@ Dans cet article, vous allez apprendre les règles de langage régissant les tup
 
 > [!NOTE]
 > Les nouvelles fonctionnalités des tuples exigent les types <xref:System.ValueTuple>.
-> Vous devez ajouter le package NuGet [`System.ValueTuple`](https://www.nuget.org/packages/System.ValueTuple/) pour pouvoir l’utiliser sur les plateformes qui n’incluent pas les types.
+> Vous devez ajouter le [`System.ValueTuple`](https://www.nuget.org/packages/System.ValueTuple/) paquet NuGet afin de l’utiliser sur les plates-formes qui n’incluent pas les types.
 >
 > Ces fonctionnalités sont semblables à celles d’autres langages qui reposent sur les types fournis dans le framework. `async` et `await` qui reposent sur l’interface `INotifyCompletion`, et LINQ qui repose sur `IEnumerable<T>` en sont des exemples. Toutefois, le mécanisme de remise change à mesure que le .NET dépend de moins en moins de la plateforme. Le .NET Framework n’est pas toujours émis à la même cadence que le compilateur de langage. Quand les nouvelles fonctionnalités de langage reposent sur de nouveaux types, ces types sont disponibles sous la forme de packages NuGet au moment de l’émission des fonctionnalités de langage. À mesure que ces nouveaux types sont ajoutés à l’API .NET Standard et remis dans le cadre du framework, les packages NuGet ne sont plus obligatoires.
 
@@ -43,7 +43,7 @@ Ces noms sont les seuls noms que vous pouvez utiliser pour les *tuples sans nom*
 
 [!code-csharp[UnnamedTuple](../../samples/snippets/csharp/tuples/program.cs#01_UnNamedTuple "Unnamed tuple")]
 
-Le tuple dans l’exemple précédent a été initialisé à l’aide de constantes littérales et n’a pas de noms d’élément créés avec les *projections de nom de champ de tuple* dans C# 7.1.
+Le tuple dans l’exemple précédent a été paralé à l’aide de constantes littérales et n’aura pas de noms d’éléments créés à l’aide de *projections de noms de champ de tuple* dans C 7.1.
 
 Toutefois, quand vous initialisez un tuple, vous pouvez utiliser les nouvelles fonctionnalités de langage qui donnent de meilleurs noms aux différents champs. Cette opération crée un *tuple nommé*.
 Les tuples nommés ont toujours des éléments appelés `Item1`, `Item2`, `Item3`, etc.
@@ -54,7 +54,7 @@ Vous créez un tuple nommé en spécifiant le nom de chaque élément. Une méth
 
 Ces synonymes sont gérés par le compilateur et le langage pour vous permettre d’utiliser efficacement les tuples nommés. Les IDE et les éditeurs peuvent lire ces noms sémantiques à l’aide des API Roslyn. Vous pouvez référencer les éléments d’un tuple nommé par ces noms sémantiques n’importe où dans le même assembly. Le compilateur remplace les noms que vous avez définis par les équivalents `Item*` lors de la génération de la sortie compilée. Le langage MSIL (Microsoft Intermediate Language) compilé n’inclut pas les noms que vous avez donnés à ces éléments.
 
-À partir de C# 7.1, les noms de champ d’un tuple peuvent être fournis à partir de variables utilisées pour initialiser le tuple. Ils sont appelés  **[initialiseurs de projection de tuple](#tuple-projection-initializers)** . Le code suivant crée un tuple nommé `accumulation` avec les éléments `count` (un entier) et `sum` (un double).
+À partir de C# 7.1, les noms de champ d’un tuple peuvent être fournis à partir de variables utilisées pour initialiser le tuple. Ils sont appelés **[initialiseurs de projection de tuple](#tuple-projection-initializers)**. Le code suivant crée un tuple nommé `accumulation` avec les éléments `count` (un entier) et `sum` (un double).
 
 [!code-csharp[ProjectedTuple](../../samples/snippets/csharp/tuples/program.cs#ProjectedTupleNames "Named tuple")]
 
@@ -78,7 +78,7 @@ Pour tous les champs où un nom explicite n’est pas spécifié, un nom implici
 
 Il existe deux conditions où les noms de champ de candidat ne sont pas projetés sur le champ de tuple :
 
-1. Lorsque le nom du candidat est un nom de tuple réservé. `Item3`, `ToString`ou `Rest`sont des exemples.
+1. Lorsque le nom du candidat est un nom de tuple réservé. Exemples `Item3` `ToString`incluent `Rest`, , ou .
 1. Lorsque le nom du candidat est un doublon d’un autre nom de champ de tuple, explicite ou implicite.
 
 Ces conditions évitent toute ambiguïté. Ces noms provoqueraient une ambiguïté s’ils étaient utilisés comme noms de champ pour un champ dans un tuple. Aucune de ces conditions n’entraîne d’erreur au moment de la compilation. Au lieu de cela, les éléments sans noms projetés n’ont pas de noms sémantiques projetés.  Les exemples suivants illustrent ces conditions :
@@ -165,7 +165,7 @@ Mettons à jour cette méthode afin de stocker dans un tuple les trois valeurs c
 La prise en charge de la refactorisation par Visual Studio facilite l’extraction des fonctionnalités pour les statistiques principales dans une méthode privée. Cela vous donne une méthode `private static` qui retourne le type tuple avec les trois valeurs de `Sum`, `SumOfSquares` et `Count` :
 
 [!code-csharp[TupleMethodVersion](../../samples/snippets/csharp/tuples/statistics.cs#08_TupleMethodVersion "After extracting utility method")]
- 
+
 Le langage met à votre disposition plusieurs autres options, si vous souhaitez apporter quelques modifications rapides à la main. Tout d’abord, vous pouvez utiliser la déclaration `var` pour initialiser le résultat de tuple à partir de l’appel de la méthode `ComputeSumAndSumOfSquares`. Vous pouvez également créer trois variables discrètes à l’intérieur de la méthode `ComputeSumAndSumOfSquares`. Le code suivant montre la version finale :
 
 [!code-csharp[CleanedTupleVersion](../../samples/snippets/csharp/tuples/statistics.cs#09_CleanedTupleVersion "After final cleanup")]
@@ -225,7 +225,7 @@ Vous pouvez également déclarer des variables implicitement typées pour chaque
 
 [!code-csharp[DeconstructToVar](../../samples/snippets/csharp/tuples/statistics.cs#11_DeconstructToVar "Deconstruct to Var")]
 
-Il est également possible d’utiliser le mot clé `var` avec une ou toutes les déclarations de variables à l’intérieur des parenthèses. 
+Il est également possible d’utiliser le mot clé `var` avec une ou toutes les déclarations de variables à l’intérieur des parenthèses.
 
 ```csharp
 (double sum, var sumOfSquares, var count) = ComputeSumAndSumOfSquares(sequence);
@@ -282,15 +282,15 @@ if (("Althea", "Goodwin") == p)
     Console.WriteLine(p);
 ```
 
-La méthode `Deconstruct` pourrait convertir l’objet `Person` `p` en un tuple contenant les deux chaînes, mais elle ne s’applique pas dans le contexte des tests d’égalité.
+La méthode `Deconstruct` pourrait convertir l’objet `Person``p` en un tuple contenant les deux chaînes, mais elle ne s’applique pas dans le contexte des tests d’égalité.
 
-## <a name="tuples-as-out-parameters"></a>Tuples en tant que paramètres de sortie
+## <a name="tuples-as-out-parameters"></a>Tuples comme paramètres
 
-Les tuples peuvent être utilisés en tant *que paramètres de*sortie. À ne pas confondre avec toute ambiguïté mentionnée précédemment dans la section de [déconstruction](#deconstruction) . Dans un appel de méthode, vous devez uniquement décrire la forme du tuple :
+Tuples peut être utilisé comme paramètres *eux-mêmes*. À ne pas confondre avec toute ambiguïté mentionnée précédemment dans la section [Déconstruction.](#deconstruction) Dans un appel de méthode, vous n’avez qu’à décrire la forme du tuple :
 
 [!code-csharp[TuplesAsOutParameters](~/samples/snippets/csharp/tuples/program.cs#01_TupleAsOutVariable "Tuples as out parameters")]
 
-Vous pouvez également utiliser un Tuple [_sans nom_](#named-and-unnamed-tuples) et faire référence à ses champs comme `Item1` et `Item2` :
+Alternativement, vous pouvez utiliser un tuple [_anonyme_](#named-and-unnamed-tuples) `Item1` et `Item2`se référer à ses champs comme et :
 
 ```csharp
 dict.TryGetValue(2, out (int, string) pair);
@@ -298,6 +298,6 @@ dict.TryGetValue(2, out (int, string) pair);
 Console.WriteLine($"{pair.Item1}: {pair.Item2}");
 ```
 
-## <a name="conclusion"></a>Conclusion 
+## <a name="conclusion"></a>Conclusion
 
 La nouvelle prise en charge du langage et de la bibliothèque pour les tuples nommés facilite grandement l’utilisation de conceptions utilisant des structures de données qui stockent plusieurs éléments mais ne définissent pas de comportement, telles que les classes et les structs. Il est facile et rapide d’utiliser des tuples pour ces types. Vous obtenez tous les avantages d’une vérification de type statique, sans avoir à créer de types au moyen de la syntaxe `class` ou `struct` plus détaillée. Même ainsi, ils sont particulièrement utiles pour les méthodes utilitaires `private` ou `internal`. Créez des types définis par l’utilisateur, des types `class` ou `struct`, quand vos méthodes publiques retournent une valeur comportant plusieurs éléments.

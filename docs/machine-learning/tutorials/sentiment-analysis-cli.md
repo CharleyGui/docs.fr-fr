@@ -5,13 +5,13 @@ author: cesardl
 ms.author: cesardl
 ms.date: 12/23/2019
 ms.custom: mvc
-ms.topic: tutorial
-ms.openlocfilehash: 38ca93f62a066bade988a89b704fca26368b0b2b
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.topic: tutorial,mlnet-tooling
+ms.openlocfilehash: d817e173239d2848fb16e94cca8ead563bc900a5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504158"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79187625"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analyser les sentiments à l’aide de la CLI ML.NET
 
@@ -27,7 +27,7 @@ Dans ce tutoriel, vous allez effectuer les étapes suivantes :
 > - Explorer le code C# généré ayant servi à entraîner le modèle
 
 > [!NOTE]
-> Cette rubrique fait référence à l’outil CLI ML.NET, actuellement en préversion. Les ressources sont donc susceptibles d’être modifiées. Pour plus d’informations, consultez la page [ml.net](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet) .
+> Cette rubrique fait référence à l’outil CLI ML.NET, actuellement en préversion. Les ressources sont donc susceptibles d’être modifiées. Pour plus d’informations, visitez la page [ML.NET.](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet)
 
 Intégrée à ML.NET, l’interface CLI ML.NET a pour objectif principal de « démocratiser » ML.NET auprès des développeurs .NET qui débutent avec ML.NET afin de leur éviter d’écrire le code de zéro quand ils commencent.
 
@@ -48,7 +48,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 1. Téléchargez le [fichier zip du jeu de données UCI Sentiment Labeled Sentences (voir les citations dans la remarque ci-dessous)](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) et décompressez-le dans un dossier de votre choix.
 
     > [!NOTE]
-    > Les jeux de données utilisés dans ce tutoriel incluent un jeu de données provenant de « From Group to Individual Labels using Deep Features » (Kotzias et al,. KDD 2015 et hébergé dans le référentiel Machine Learning UCI-Dua, D. et karra Taniskidou, E. (2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml]. Irvine, Californie : Université de Californie, School of Information and Computer Science.
+    > Les jeux de données utilisés dans ce tutoriel incluent un jeu de données provenant de « From Group to Individual Labels using Deep Features » (Kotzias et al,. KDD 2015, et hébergé à l’UCI Machine Learning Repository - Dua, D. et Karra Taniskidou, E. (2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml]. Irvine, Californie : Université de Californie, School of Information and Computer Science.
 
 2. Copiez le fichier `yelp_labelled.txt` dans un dossier que vous avez créé précédemment (par exemple, `/cli-test`).
 
@@ -66,7 +66,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 
         | Texte (index de colonne 0) | Étiquette (index de colonne 1)|
         |--------------------------|-------|
-        | ... J’ai aimé cet endroit. | 1 |
+        | Wow... J’ai adoré cet endroit. | 1 |
         | La pâte n’est pas bonne. | 0 |
         | Elle n’avait aucun goût et sa texture n’était vraiment pas agréable. | 0 |
         | ...BEAUCOUP D’AUTRES LIGNES DE TEXTE... | ...(1 ou 0)... |
@@ -76,7 +76,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
     Maintenant, vous êtes prêt à commencer à utiliser la CLI pour ce scénario « Analyse des sentiments ».
 
     > [!NOTE]
-    > Quand vous aurez terminé ce tutoriel, vous pourrez également essayer avec vos propres jeux de données, si ceux-ci ont été préparés en vue d’être utilisés pour les tâches ML prises en charge dans la préversion de la CLI ML.NET, à savoir les tâches *« Classification binaire », « Classification multiclasse » et « Régression »* ).
+    > Quand vous aurez terminé ce tutoriel, vous pourrez également essayer avec vos propres jeux de données, si ceux-ci ont été préparés en vue d’être utilisés pour les tâches ML prises en charge dans la préversion de la CLI ML.NET, à savoir les tâches *« Classification binaire », « Classification multiclasse » et « Régression »*).
 
 ## <a name="run-the-mlnet-auto-train-command"></a>Exécuter la commande « mlnet auto-train »
 
@@ -86,10 +86,10 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
     mlnet auto-train --task binary-classification --dataset "yelp_labelled.txt" --label-column-index 1 --has-header false --max-exploration-time 10
     ```
 
-    Cette commande exécute la **commande `mlnet auto-train`**  :
+    Cette commande ** `mlnet auto-train` **exécute la commande :
     - pour une **tâche ML** de type **`binary-classification`**
     - en utilisant le **fichier de jeu de données `yelp_labelled.txt`** comme jeu de données d’entraînement et de test (en interne, la CLI utilise la validation croisée ou divise le jeu de données initial en deux jeux de données distincts pour l’entraînement et le test)
-    - où la **colonne objectif/cible** que vous voulez prédire (généralement appelée **« étiquette »** ) est la **colonne d’index 1** (soit la deuxième colonne puisqu’il s’agit ici d’un index de base zéro)
+    - où la **colonne objectif/cible** que vous voulez prédire (généralement appelée **« étiquette »**) est la **colonne d’index 1** (soit la deuxième colonne puisqu’il s’agit ici d’un index de base zéro)
     - qui **n’utilise pas d’en-tête de fichier** avec les noms de colonnes étant donné que ce fichier de jeu de données particulier n’a pas d’en-tête
     - où la **durée d’exploration ciblée** pour l’essai est de **10 secondes**
 
@@ -115,7 +115,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 
     Toutefois, dans certains cas, faire une évaluation seulement avec la métrique de précision ne suffit pas, en particulier quand l’étiquette (0 et 1 dans ce cas) n’est pas équilibrée dans le jeu de données de test.
 
-    Pour obtenir des métriques supplémentaires et des **informations plus détaillées sur les métriques** telles que la précision, AUC, AUCPR et le score F1 utilisé pour évaluer les différents modèles, consultez [présentation des mesures ml.net](../resources/metrics.md).
+    Pour des mesures supplémentaires et des informations plus **détaillées sur les mesures** telles que l’exactitude, l’AUC, l’AUCPR et le score F1 utilisés pour évaluer les différents modèles, voir Comprendre ML.NET les [mesures](../resources/metrics.md).
 
     > [!NOTE]
     > Vous pouvez essayer ce jeu de données très semblable et définir une durée de quelques minutes pour `--max-exploration-time` (par exemple, spécifiez 180 secondes pour une durée de trois minutes). Cela permet de vous trouver un modèle encore « meilleur », avec une configuration de pipeline d’entraînement différente pour ce jeu de données (qui est très petit, avec 1 000 lignes).
@@ -233,8 +233,8 @@ Pour le deuxième objet, l’objet `PredictionEngine`, l’optimisation n’est 
 
 Toutefois, les choses sont heureusement beaucoup plus simples pour vous que ce qui est expliqué dans ce billet de blog. Dans un souci de vous proposer une approche plus simple, nous avons créé un **« package d’intégration .NET Core »** très utile. Vous pouvez facilement vous en servir dans vos applications et services ASP.NET Core en l’inscrivant auprès des services DI, puis en l’utilisant directement à partir de votre code. Consultez le tutoriel et l’exemple ci-dessous pour savoir comment faire :
 
-- [Didacticiel : exécution de modèles ML.NET sur des applications Web et des API Web ASP.NET Core évolutives](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
-- [Exemple : modèle ML.NET évolutif sur ASP.NET Core WebAPI](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
+- [Tutorial: Exécution de modèles ML.NET sur des applications Web ASP.NET évolutives et WebAPIs](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Exemple : Modèle de ML.NET évolutif sur ASP.NET WebAPI de base](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 
 ## <a name="explore-the-generated-c-code-that-was-used-to-train-the-best-quality-model"></a>Explorer le code C# généré ayant servi à entraîner le modèle de « meilleure qualité »
 
@@ -244,7 +244,7 @@ Ce « code de modèle d’entraînement » est actuellement généré dans la 
 
 Plus important encore, pour ce scénario particulier (modèle « Analyse des sentiments »), vous pouvez également comparer ce code d’entraînement généré avec le code décrit dans le tutoriel suivant :
 
-- Compare : [Tutorial : utilisez ml.net dans un scénario de classification binaire d’analyse des sentiments](sentiment-analysis.md).
+- Comparer: [Tutorial: Utilisez ML.NET dans un scénario de classification binaire d’analyse de sentiment](sentiment-analysis.md).
 
 Il est intéressant de comparer la configuration d’algorithme et de pipeline choisie dans le tutoriel avec le code généré par l’outil CLI. Selon la durée d’itération et de recherche de meilleurs modèles, l’algorithme choisi peut être différent, tout comme sa configuration d’hyperparamètres et de pipeline.
 
@@ -260,7 +260,7 @@ Dans ce didacticiel, vous avez appris à :
 ## <a name="see-also"></a>Voir aussi
 
 - [Automatiser l’entraînement du modèle avec la CLI ML.NET](../automate-training-with-cli.md)
-- [Didacticiel : exécution de modèles ML.NET sur des applications Web et des API Web ASP.NET Core évolutives](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
-- [Exemple : modèle ML.NET évolutif sur ASP.NET Core WebAPI](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
+- [Tutorial: Exécution de modèles ML.NET sur des applications Web ASP.NET évolutives et WebAPIs](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Exemple : Modèle de ML.NET évolutif sur ASP.NET WebAPI de base](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 - [Informations de référence sur la commande auto-train de la CLI ML.NET](../reference/ml-net-cli-reference.md)
 - [Télémétrie dans la CLI ML.NET](../resources/ml-net-cli-telemetry.md)

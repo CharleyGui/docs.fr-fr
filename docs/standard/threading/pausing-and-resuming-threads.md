@@ -11,10 +11,10 @@ helpviewer_keywords:
 - pausing threads
 ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
 ms.openlocfilehash: 3020694b93479d5f1d64d31c203f8fe033a10320
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73129008"
 ---
 # <a name="pausing-and-interrupting-threads"></a>Suspension et interruption de threads
@@ -54,4 +54,4 @@ Les méthodes les plus courantes permettant de synchroniser les activités de th
 - <xref:System.Threading.ThreadAbortException>
 - [Thread](../../../docs/standard/threading/index.md)
 - [Utilisation des threads et du threading](../../../docs/standard/threading/using-threads-and-threading.md)
-- [Vue d’ensemble des primitives de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md)
+- [Aperçu des primitifs de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md)

@@ -40,8 +40,8 @@
           href: install/linux-package-manager-fedora29.md
         - name: "OpenSUSE\_15"
           href: install/linux-package-manager-opensuse15.md
-        - name: "RHEL\_8.1"
-          href: install/linux-package-manager-rhel81.md
+        - name: RHEL 8
+          href: install/linux-package-manager-rhel8.md
         - name: "RHEL\_7"
           href: install/linux-package-manager-rhel7.md
         - name: "SLES\_15"
@@ -230,8 +230,6 @@
       href: tools/elevated-access.md
     - name: Activer la complétion avec la touche TAB
       href: tools/enable-tab-autocomplete.md
-    - name: Modèle d’extensibilité
-      href: tools/extensibility.md
 - name: Outils de diagnostic
   items:
     - name: Vue d'ensemble

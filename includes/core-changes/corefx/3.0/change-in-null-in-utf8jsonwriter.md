@@ -1,20 +1,20 @@
 ---
 ms.openlocfilehash: 7c39fe7ffd59fa7a5564bb45f32a6a2fbe0ddb33
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74568205"
 ---
-### <a name="change-in-semantics-of-stringnull-in-utf8jsonwriter"></a>Modification de la sémantique des `(string)null` dans Utf8JsonWriter
+### <a name="change-in-semantics-of-stringnull-in-utf8jsonwriter"></a>Changement dans la sémantique de `(string)null` Dans Utf8JsonWriter
 
-Dans .NET Core 3,0 Preview 7, la chaîne NULL est traitée comme une chaîne vide dans <xref:System.Text.Json.Utf8JsonWriter>. À compter de .NET Core 3,0 Preview 8, la chaîne NULL lève une exception lorsqu’elle est utilisée comme nom de propriété et elle émet le jeton null JSON lorsqu’elle est utilisée comme valeur.
+Dans .NET Core 3.0 Aperçu 7, la corde nulle <xref:System.Text.Json.Utf8JsonWriter>est traitée comme la corde vide dans . En commençant par .NET Core 3.0 Aperçu 8, la corde nulle jette une exception lorsqu’elle est utilisée comme nom de propriété, et il émet le jeton nul JSON lorsqu’il est utilisé comme une valeur.
 
-#### <a name="change-description"></a>Modifier la description
+#### <a name="change-description"></a>Description de la modification
 
-Dans .NET Core 3,0 Preview 7, la chaîne `null` a été traitée comme `""` lors de l’écriture des noms de propriété et lors de l’écriture de valeurs.  
+Dans .NET Core 3.0 Aperçu `null` 7, `""` la chaîne a été traitée à la fois lors de l’écriture des noms de propriété et lors de l’écriture des valeurs.  
 
-À compter de .NET Core 3,0 Preview 8, un nom de propriété `null` lève une `ArgumentNullException`et une valeur de `null` est traitée comme un appel à <xref:System.Text.Json.Utf8JsonWriter.WriteNull%2A?displayProperty=nameWithType> ou <xref:System.Text.Json.Utf8JsonWriter.WriteNullValue?displayProperty=nameWithType>.
+En commençant par .NET Core 3.0 Aperçu 8, `null` un nom de propriété jette un `ArgumentNullException`, et `null` une valeur est traitée comme un appel à <xref:System.Text.Json.Utf8JsonWriter.WriteNull%2A?displayProperty=nameWithType> ou <xref:System.Text.Json.Utf8JsonWriter.WriteNullValue?displayProperty=nameWithType>.
 
 Examinons le code ci-dessous.
 
@@ -40,33 +40,33 @@ using (Utf8JsonWriter writer = new Utf8JsonWriter(stream))
 }
 ```
 
-Si vous exécutez avec .NET Core 3,0 Preview 7, l’enregistreur produit la sortie suivante :
+Si vous exécutez avec .NET Core 3.0 Aperçu 7, l’auteur produit la sortie suivante:
 
 ```js
 [{"":"","prop2":""},""]
 ```
 
-À compter de .NET Core 3,0 Preview 8, l’appel à `writer.WriteString(propertyName1, propertyValue1)` lève une <xref:System.ArgumentNullException>.  Si `propertyName1 = null` est remplacé par `propertyName1 = string.Empty`, la sortie est désormais :
+En commençant par .NET Core 3.0 `writer.WriteString(propertyName1, propertyValue1)` Aperçu 8, l’appel à jeter un <xref:System.ArgumentNullException>.  Si `propertyName1 = null` elle `propertyName1 = string.Empty`est remplacée par , la sortie serait maintenant:
 
 ```js
 [{"":null,"prop2":null},null]
 ```
 
-Cette modification a été apportée pour mieux correspondre aux attentes de l’appelant en ce qui concerne les valeurs `null`.
+Ce changement a été apporté pour `null` mieux s’aligner avec les attentes des appelants en matière de valeurs.
 
 #### <a name="version-introduced"></a>Version introduite
 
-3,0 Preview 8
+3.0 Aperçu 8
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Lors de l’écriture des noms de propriété et des valeurs avec la classe <xref:System.Text.Json.Utf8JsonWriter> :
+Lors de l’écriture <xref:System.Text.Json.Utf8JsonWriter> des noms et des valeurs des propriétés avec la classe:
 
-- Assurez-vous que les chaînes non`null` sont utilisées comme noms de propriété.
+- Assurez-vous`null` que les non-cordes sont utilisées comme noms de propriété.
 
-- Si le comportement précédent est souhaité, utilisez un appel de fusion Null ; par exemple, `writer.WriteString(propertyName1 ?? "", propertyValue1)`.
+- Si le comportement précédent est souhaité, utilisez une invocation de fusion nulle; par exemple, `writer.WriteString(propertyName1 ?? "", propertyValue1)`.
 
-- Si l’écriture d’un littéral `null` pour une `null` valeur de chaîne n’est pas souhaitable, utilisez un appel de fusion Null ; par exemple, `writer.WriteString(propertyName2, propertyValue2 ?? "")`.
+- Si l’écriture d’un `null` littéral pour une `null` valeur de chaîne n’est pas souhaitable, utilisez une invocation de fusion nulle; par exemple, `writer.WriteString(propertyName2, propertyValue2 ?? "")`.
 
 #### <a name="category"></a>Category
 

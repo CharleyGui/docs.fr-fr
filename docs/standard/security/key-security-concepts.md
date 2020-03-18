@@ -12,17 +12,17 @@ helpviewer_keywords:
 - security [.NET Framework], about security
 ms.assetid: 3cfced4f-ea02-4e66-ae98-d69286363e98
 ms.openlocfilehash: b7bcb7e56ca14d129eadcaeac19452d4a443713d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705970"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79400658"
 ---
 # <a name="key-security-concepts"></a>Concepts fondamentaux sur la sécurité
 Le Microsoft .NET Framework offre la sécurité basée sur les rôles pour aider à résoudre les problèmes de sécurité relatifs au code mobile et pour permettre aux composants de déterminer ce que les utilisateurs sont autorisés à faire.  
   
 ## <a name="type-safety-and-security"></a>Sécurité de type et sécurité  
- Le code de type sécurisé accède uniquement aux emplacements de mémoire auxquels il est autorisé à accéder. (Pour cette discussion, la sécurité de type fait spécifiquement référence à la sécurité de type de la mémoire et ne doit pas être confondue avec la sécurité de type dans un respect plus large.) Par exemple, le code de type sécurisé ne peut pas lire les valeurs des champs privés d’un autre objet. Il accède aux types uniquement de manière autorisée et bien définie.  
+ Le code de type sécurisé accède uniquement aux emplacements de mémoire auxquels il est autorisé à accéder. (Pour cette discussion, la sécurité du type se réfère spécifiquement à la sécurité du type de mémoire et ne doit pas être confondue avec la sécurité de type à un égard plus large.) Par exemple, le code de type-sécurité ne peut pas lire les valeurs des champs privés d’un autre objet. Il accède aux types uniquement de manière autorisée et bien définie.  
   
  Pendant la compilation juste-à-temps (JIT, Just-In-Time), un processus de vérification facultatif examine les métadonnées et le Microsoft Intermediate Language (MSIL) d'une méthode devant subir une compilation JIT en code machine natif pour vérifier qu'ils sont de type sécurisé. Ce processus est omis si le code est autorisé à ignorer la vérification. Pour plus d’informations sur la vérification, consultez [Processus d’exécution managée](../../../docs/standard/managed-execution-process.md).  
   
@@ -41,12 +41,12 @@ Le Microsoft .NET Framework offre la sécurité basée sur les rôles pour aider
   
  Pour plus d’informations, consultez [Objets Principal et Identity](../../../docs/standard/security/principal-and-identity-objects.md).  
   
-## <a name="authentication"></a>Authentification  
+## <a name="authentication"></a>Authentication  
  Le processus d'authentification consiste à établir et à vérifier l'identité d'un principal en examinant les informations d'identification de l'utilisateur et en les validant auprès de l'autorité appropriée. Votre code peut utiliser directement les informations obtenues au cours de l'authentification. Vous pouvez également utiliser la sécurité basée sur les rôles du .NET Framework pour authentifier l'utilisateur actuel et déterminer s'il faut ou non autoriser ce principal à accéder à votre code. Consultez les surcharges de la méthode <xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A?displayProperty=nameWithType> pour obtenir des exemples d'authentification du principal pour des rôles spécifiques. Par exemple, vous pouvez utiliser la surcharge <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.String%29?displayProperty=nameWithType> pour déterminer si l'utilisateur actuel est membre du groupe Administrateurs.  
   
  De nombreux mécanismes d'authentification sont utilisés de nos jours et la majorité d'entre eux peuvent être utilisés avec la sécurité basée sur les rôles de .NET Framework. Parmi les mécanismes les plus courants figurent notamment Basic, Digest, Passport, les mécanismes liés aux systèmes d'exploitation (tels que NTLM ou Kerberos) ou encore ceux définis par les applications.  
   
-### <a name="example"></a>Exemple  
+### <a name="example"></a> Exemple  
  L'exemple suivant nécessite que le principal actif soit un administrateur. Le paramètre `name` est `null`, qui autorise tout utilisateur ayant la qualité d'administrateur à passer la demande.  
   
 > [!NOTE]

@@ -5,39 +5,38 @@ helpviewer_keywords:
 - query keywords [C#]
 - LINQ [C#], query keywords
 ms.assetid: 6c9bec16-dbd7-4a7c-a060-fe4600b2021f
-ms.openlocfilehash: 3c08c2b6ecdaa4b875f118531e7e77f7164dd784
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 01134eda540c5141afbd11b2c89ff779da495a9a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713155"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79173521"
 ---
 # <a name="query-keywords-c-reference"></a>Mots clés de requête (référence C#)
 
 Cette section contient les mots clés contextuels utilisés dans les expressions de requête.
 
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
 |Clause|Description|
 |------------|-----------------|
-|[from](from-clause.md)|Spécifie une source de données et une variable de portée (semblable à une variable d’itération).|
-|[where](where-clause.md)|Filtre des éléments sources basés sur une ou plusieurs expressions booléennes séparées par des opérateurs AND et OR logiques (`&&` ou <code>&#124;&#124;</code>).|
-|[select](select-clause.md)|Spécifie le type et la forme que les éléments de la séquence retournée auront une fois la requête exécutée.|
-|[group](group-clause.md)|Regroupe les résultats de la requête d’après une valeur de clé spécifiée.|
-|[into](into.md)|Fournit un identificateur qui peut servir comme référence pour les résultats d’une clause join, group ou select.|
-|[orderby](orderby-clause.md)|Trie des résultats de la requête par ordre croissant ou décroissant selon le comparateur par défaut du type d’élément.|
-|[join](join-clause.md)|Joint deux sources de données selon une comparaison d’égalité entre deux critères de comparaison spécifiés.|
-|[let](let-clause.md)|Introduit une variable de portée pour stocker des résultats de sous-expression dans une expression de requête.|
-|[in](in.md)|Mot clé contextuel dans une clause [join](join-clause.md).|
+|[De](from-clause.md)|Spécifie une source de données et une variable de portée (semblable à une variable d’itération).|
+|[Où](where-clause.md)|Filtre des éléments sources basés sur une ou plusieurs expressions booléennes séparées par des opérateurs AND et OR logiques (`&&` ou <code>&#124;&#124;</code>).|
+|[Sélectionnez](select-clause.md)|Spécifie le type et la forme que les éléments de la séquence retournée auront une fois la requête exécutée.|
+|[groupe](group-clause.md)|Regroupe les résultats de la requête d’après une valeur de clé spécifiée.|
+|[en](into.md)|Fournit un identificateur qui peut servir comme référence pour les résultats d’une clause join, group ou select.|
+|[Orderby](orderby-clause.md)|Trie des résultats de la requête par ordre croissant ou décroissant selon le comparateur par défaut du type d’élément.|
+|[Rejoindre](join-clause.md)|Joint deux sources de données selon une comparaison d’égalité entre deux critères de comparaison spécifiés.|
+|[Laisser](let-clause.md)|Introduit une variable de portée pour stocker des résultats de sous-expression dans une expression de requête.|
+|[Dans](in.md)|Mot clé contextuel dans une clause [join](join-clause.md).|
 |[on](on.md)|Mot clé contextuel dans une clause [join](join-clause.md).|
-|[equals](equals.md)|Mot clé contextuel dans une clause [join](join-clause.md).|
-|[by](by.md)|Mot clé contextuel dans une clause [group](group-clause.md).|
-|[ascending](ascending.md)|Mot clé contextuel dans une clause [orderby](orderby-clause.md).|
-|[descending](descending.md)|Mot clé contextuel dans une clause [orderby](orderby-clause.md).|
+|[Égale](equals.md)|Mot clé contextuel dans une clause [join](join-clause.md).|
+|[Par](by.md)|Mot clé contextuel dans une clause [group](group-clause.md).|
+|[Ascendant](ascending.md)|Mot clé contextuel dans une clause [orderby](orderby-clause.md).|
+|[Descendant](descending.md)|Mot clé contextuel dans une clause [orderby](orderby-clause.md).|
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Mots clés C#](index.md)
 - [LINQ (Language Integrated Query)](../../programming-guide/concepts/linq/index.md)
 - [LINQ en C#](../../linq/index.md)
-- [Bien démarrer avec LINQ en C#](/dotnet/csharp/programming-guide/concepts/linq/)

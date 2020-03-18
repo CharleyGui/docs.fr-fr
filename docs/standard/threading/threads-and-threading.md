@@ -8,10 +8,10 @@ helpviewer_keywords:
 - threading [.NET], multiple threads
 ms.assetid: 5baac3aa-e603-4fa6-9f89-0f2c1084e6b1
 ms.openlocfilehash: ad36789579b95e0129e402765194b9f5e45a4cc1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73127504"
 ---
 # <a name="threads-and-threading"></a>Threads et threading
@@ -23,7 +23,7 @@ Le multithreading vous permet d’accélérer la réactivité de votre applicati
 Un *processus* est un programme d’exécution. Un système d’exploitation utilise des processus pour séparer les applications qui sont en cours d’exécution. Un *thread* est l’unité de base à laquelle un système d’exploitation alloue du temps processeur. Chaque thread a une [priorité de planification](scheduling-threads.md) et maintient un ensemble de structures utilisé par le système pour enregistrer le contexte du thread quand l’exécution du thread est en pause. Le contexte du thread comprend toutes les informations dont le thread a besoin pour reprendre l’exécution sans interruption, notamment son ensemble de registres de CPU et de pile. Plusieurs threads peuvent s’exécuter dans le contexte d’un processus. Tous les threads d’un processus partagent son espace d’adressage virtuel. Un thread peut exécuter n’importe quelle partie du code du programme, y compris les parties exécutées par un autre thread.
 
 > [!NOTE]
-> Le .NET Framework fournit un moyen d’isoler les applications dans un processus à l’aide de *domaines d’application*. (Les domaines d’application ne sont pas disponibles sur .NET Core.) Pour plus d’informations, consultez la section [domaines d’application et threads](../../framework/app-domains/application-domains.md#application-domains-and-threads) de l’article [domaines d’application](../../framework/app-domains/application-domains.md) .
+> Le .NET Framework fournit un moyen d’isoler les applications dans un processus à l’aide de *domaines d’application*. (Les domaines d’application ne sont pas disponibles sur .NET Core.) Pour plus d’informations, consultez la section [domaines et threads d’application](../../framework/app-domains/application-domains.md#application-domains-and-threads) de l’article [des domaines d’application.](../../framework/app-domains/application-domains.md)
 
 Par défaut, un programme .NET est démarré avec un thread unique, souvent appelé thread *principal*. Toutefois, il peut créer des threads supplémentaires pour exécuter du code en parallèle ou en même temps que le thread principal. Ces threads sont souvent appelés threads *de travail*.
 
@@ -45,11 +45,11 @@ Enfin, vous pouvez utiliser la classe <xref:System.Threading.Thread?displayPrope
 
 Plusieurs threads peuvent avoir besoin d’accéder à une ressource partagée. Pour garder la ressource dans un état non endommagé et éviter des conditions de concurrence, vous devez synchroniser l’accès des threads à cette ressource. Vous voudrez peut-être aussi coordonner l’interaction de plusieurs threads. .NET fournit un éventail de types que vous pouvez utiliser pour synchroniser l’accès à une ressource partagée ou coordonner l’interaction des threads. Pour plus d’informations, consultez [Vue d’ensemble des primitives de synchronisation](overview-of-synchronization-primitives.md).
 
-Ne gérez pas les exceptions dans les threads. Les exceptions non gérées dans les threads entraînent généralement la fin du processus. Pour plus d’informations, consultez [Exceptions dans les threads managés](exceptions-in-managed-threads.md).
+Ne gérez pas les exceptions dans les threads. Les exceptions non gérées dans les threads entraînent généralement la fin du processus. Pour plus d’informations, voir [Exceptions en threads gérés](exceptions-in-managed-threads.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Fonctionnalités et objets de threading](threading-objects-and-features.md)
-- [Bonnes pratiques de threading managé](managed-threading-best-practices.md)
+- [Bonnes pratiques pour le threading managé](managed-threading-best-practices.md)
 - [Traitement parallèle, accès concurrentiel et programmation asynchrone dans .NET](../parallel-processing-and-concurrency.md)
 - [À propos des processus et des threads](/windows/desktop/procthread/about-processes-and-threads)

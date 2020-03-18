@@ -7,10 +7,10 @@ helpviewer_keywords:
 - manipulating strings
 ms.assetid: d4568ff3-9f83-4549-acd8-47aec2194ac0
 ms.openlocfilehash: 5188c4f1099aad486e921dfba0c6c4216613ba4e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73135232"
 ---
 # <a name="manipulating-strings-in-net"></a>Manipulation de chaînes dans .NET
@@ -20,18 +20,18 @@ ms.locfileid: "73135232"
  [Bonnes pratiques pour l’utilisation de chaînes](../../../docs/standard/base-types/best-practices-strings.md)  
  Examine les méthodes de casse, de comparaison et de tri de chaînes dans .NET, puis fournit des recommandations pour la sélection d’une méthode de gestion des chaînes.  
   
- [Expressions régulières .NET](../../../docs/standard/base-types/regular-expressions.md)  
+ [Expressions régulières .NET](../../../docs/standard/base-types/regular-expressions.md)  
  Fournit des informations détaillées sur les expressions régulières .NET, notamment les éléments de langage, le comportement des expressions régulières et des exemples.  
   
- [Opérations de chaînes de base](../../../docs/standard/base-types/basic-string-operations.md)  
+ [Opérations de base des cordes](../../../docs/standard/base-types/basic-string-operations.md)  
  Décrit les opérations de chaînes fournies par les classes <xref:System.String?displayProperty=nameWithType> et <xref:System.Text.StringBuilder?displayProperty=nameWithType>, notamment la création de chaînes à partir de tableaux d’octets, la comparaison de valeurs de chaîne et la modification de chaînes existantes.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Conversion de type dans .NET](../../../docs/standard/base-types/type-conversion.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Conversion de types dans .NET](../../../docs/standard/base-types/type-conversion.md)  
  Explique les techniques et les règles utilisées pour convertir les types à l’aide de .NET.  
   
  [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)  
  Décrit comment utiliser la bibliothèque de classes de base pour implémenter la mise en forme, comment mettre en forme des types numériques et des types de chaîne, et comment effectuer la mise en forme pour une culture spécifique.  
   
- [Analyse de chaînes](../../../docs/standard/base-types/parsing-strings.md)  
+ [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)  
  Décrit comment initialiser des objets aux valeurs décrites par des représentations sous forme de chaîne de ces objets. L'analyse est l'opération inverse de la mise en forme.

@@ -10,10 +10,10 @@ helpviewer_keywords:
 - .NET Framework, asynchronous design patterns
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
 ms.openlocfilehash: f80e6ae520ab03c0f5f4edc30c0b7102193ee6c5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73139817"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Utilisation du modèle asynchrone basé sur les tâches
@@ -298,7 +298,7 @@ foreach(Task recommendation in recommendations)
 }
 ```
 
- ou :
+ ou :
 
 ```csharp
 foreach(Task recommendation in recommendations)
@@ -379,7 +379,7 @@ while(imageTasks.Count > 0)
 }
 ```
 
-#### <a name="throttling"></a>Throttling
+#### <a name="throttling"></a>Limitation
  Prenons l’exemple de l’entrelacement, sauf qu’ici l’utilisateur télécharge tant d’images que les téléchargements doivent être limités. Par exemple, vous ne souhaitez qu’un certain nombre de téléchargements simultanés. Pour ce faire, vous pouvez démarrer un sous-ensemble d’opérations asynchrones.  Lorsque les opérations sont terminées, vous pouvez démarrer des opérations supplémentaires pour prendre leur place :
 
 ```csharp
@@ -631,7 +631,7 @@ double currentPrice = await NeedOnlyOne(
 ```
 
 ### <a name="interleaved-operations"></a>Opérations entrelacées
- Il existe un problème potentiel de performances avec l’utilisation de la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A> pour prendre en charge un scénario d’entrelacement quand vous travaillez avec de très grands ensembles de tâches. Chaque appel à <xref:System.Threading.Tasks.Task.WhenAny%2A> entraîne une continuation enregistrée avec chaque tâche. Pour N nombre de tâches, cela entraîne la création de continuations O (N<sup>2</sup>) au cours de la durée de vie de l’opération d’entrelacement. Si vous utilisez un grand nombre de tâches, vous pouvez utiliser un combinateur (`Interleaved` dans l’exemple suivant) pour résoudre le problème de performances :
+ Il existe un problème potentiel de performances avec l’utilisation de la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A> pour prendre en charge un scénario d’entrelacement quand vous travaillez avec de très grands ensembles de tâches. Chaque appel à <xref:System.Threading.Tasks.Task.WhenAny%2A> entraîne une continuation enregistrée avec chaque tâche. Pour le nombre N de tâches, cela se traduit par des continuations O(N<sup>2</sup>) créées au cours de la durée de vie de l’opération d’entrelacage. Si vous travaillez avec un grand nombre de tâches,`Interleaved` vous pouvez utiliser un combinateur (dans l’exemple suivant) pour résoudre le problème de performance :
 
 ```csharp
 static IEnumerable<Task<T>> Interleaved<T>(IEnumerable<Task<T>> tasks)

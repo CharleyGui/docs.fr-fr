@@ -13,17 +13,17 @@ helpviewer_keywords:
 - culture-insensitive string operations
 ms.assetid: e6e2bb94-a95d-44e2-b68c-cfdd1db77784
 ms.openlocfilehash: 06c46033936e16355b8d2eb6650e8731a04af6e9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73141277"
 ---
 # <a name="culture-insensitive-string-operations"></a>Opérations de chaînes indépendantes de la culture
 
 Les opérations de chaînes dépendantes de la culture peuvent présenter un avantage si vous créez des applications conçues pour afficher des résultats en fonction de la culture des utilisateurs. Par défaut, les méthodes dépendantes de la culture obtiennent la culture à utiliser à partir de la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A> du thread.
 
-Cependant, les opérations de chaînes dépendantes de la culture ne correspondent pas toujours au comportement souhaité. L'utilisation d'opérations dépendantes de la culture dans des scénarios où les résultats doivent être indépendants de la culture peut entraîner l'échec du code de l'application sur les cultures avec des mappages de casse personnalisés et des règles de tri. Pour obtenir un exemple, consultez la section [« Comparaisons de chaînes qui utilisent la culture actuelle »](../../../docs/standard/base-types/best-practices-strings.md#string-comparisons-that-use-the-current-culture) dans l’article [Bonnes pratiques pour l’utilisation de chaînes](../../../docs/standard/base-types/best-practices-strings.md).
+Cependant, les opérations de chaînes dépendantes de la culture ne correspondent pas toujours au comportement souhaité. L'utilisation d'opérations dépendantes de la culture dans des scénarios où les résultats doivent être indépendants de la culture peut entraîner l'échec du code de l'application sur les cultures avec des mappages de casse personnalisés et des règles de tri. Par exemple, voir la section [« Comparaisons de cordes qui utilisent la culture actuelle »](../../../docs/standard/base-types/best-practices-strings.md#string-comparisons-that-use-the-current-culture) dans [l’article Best Practices for Using Strings.](../../../docs/standard/base-types/best-practices-strings.md)
 
 La manière avec laquelle votre application utilise les résultats détermine si des opérations de chaînes sont dépendantes ou non de la culture. Les opérations de chaînes qui affichent des résultats à l'utilisateur final doivent être généralement dépendantes de la culture. Par exemple, si une application affiche une liste triée de chaînes localisées dans une zone de liste, l'application doit effectuer un tri dépendant de la culture.
 

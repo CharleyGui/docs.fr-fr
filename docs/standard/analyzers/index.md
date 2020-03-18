@@ -6,10 +6,10 @@ ms.author: wiwagn
 ms.date: 01/24/2018
 ms.technology: dotnet-standard
 ms.openlocfilehash: 436cfb3904f0891f8c18bb5890563a13d65e2d1c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "62003052"
 ---
 # <a name="the-roslyn-based-analyzers"></a>Les analyseurs de Roslyn
@@ -33,6 +33,6 @@ Vous installez des analyseurs de Roslyn sous forme de packages NuGet dans votre 
 
 Les analyseurs suivants sont couverts dans la présente section :
 
-* [Analyseur d’API](api-analyzer.md) : Cet analyseur examine votre code à la recherche de risques potentiels de compatibilité ou d’utilisations d’API dépréciées.
-* [Analyseur de framework](framework-analyzer.md) : Cet outil examine votre code pour s’assurer qu’il suit les instructions pour les applications .NET Framework. Ces règles incluent plusieurs recommandations de sécurité.
-* [Analyseur de portabilité .NET](portability-analyzer.md) : Cet analyseur examine votre code afin de déterminer la quantité de travail nécessaire pour rendre votre application compatible avec d’autres profils et implémentations .NET, notamment .NET Core, .NET Standard, UWP et Xamarin pour iOS, Android et Mac.
+* [Analyseur d’API](api-analyzer.md) : cet analyseur examine votre code à la recherche de risques potentiels de compatibilité ou utilisations d’API déconseillées.
+* [Analyseur d’infrastructure](framework-analyzer.md) : cet outil examine votre code pour s’assurer qu’il suit les instructions pour les applications .NET Framework. Ces règles incluent plusieurs recommandations de sécurité.
+* [.NET Portability Analyzer](portability-analyzer.md): cet analyseur examine votre code afin de déterminer la quantité de travail nécessaire pour rendre votre application compatible avec d’autres profils et implémentations .NET, notamment .NET Core, .NET Standard, UWP et Xamarin pour iOS, Android et Mac.

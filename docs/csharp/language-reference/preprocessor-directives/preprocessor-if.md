@@ -7,15 +7,15 @@ helpviewer_keywords:
 - '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
 ms.openlocfilehash: d047b88f202341a795834809d0b601706c30fcb4
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75899852"
 ---
-# <a name="if-c-reference"></a>#if (C# référence)
+# <a name="if-c-reference"></a>#if (référence C)
 
-Quand le compilateur C# rencontre une directive `#if`, suivie éventuellement d’une directive [#endif](preprocessor-endif.md), il compile le code entre les directives uniquement si le symbole spécifié est défini. Contrairement à C et C++, vous ne pouvez pas attribuer de valeur numérique à un symbole. L’instruction `#if` dans C# est booléenne et teste uniquement si le symbole a été défini ou non. Par exemple :
+Quand le compilateur C# rencontre une directive `#if`, suivie éventuellement d’une directive [#endif](preprocessor-endif.md), il compile le code entre les directives uniquement si le symbole spécifié est défini. Contrairement à C et C++, vous ne pouvez pas attribuer de valeur numérique à un symbole. L’énoncé `#if` dans C est Boolean et ne teste que si le symbole a été défini ou non. Par exemple :
 
 ```csharp
 #if DEBUG
@@ -23,28 +23,28 @@ Quand le compilateur C# rencontre une directive `#if`, suivie éventuellement d�
 #endif
 ```
 
-Vous pouvez utiliser les opérateurs [==](../operators/equality-operators.md#equality-operator-) (égalité) et [! =](../operators/equality-operators.md#inequality-operator-) (inégalité) uniquement pour tester les valeurs [bool](../builtin-types/bool.md) `true` ou `false`. `true` signifie que le symbole est défini. L’instruction `#if DEBUG` a la même signification que `#if (DEBUG == true)`. Vous pouvez utiliser les [& & (and)](../operators/boolean-logical-operators.md#conditional-logical-and-operator-), [ &#124; &#124; (ou)](../operators/boolean-logical-operators.md#conditional-logical-or-operator-)et [! (not)](../operators/boolean-logical-operators.md#logical-negation-operator-) opérateurs permettant d’évaluer si plusieurs symboles ont été définis. Vous pouvez également regrouper des symboles et des opérateurs à l’aide de parenthèses.
+Vous pouvez utiliser [==](../operators/equality-operators.md#equality-operator-) les opérateurs (égalité) et [!'](../operators/equality-operators.md#inequality-operator-) (inégalité) `true` `false`seulement pour tester les valeurs [bool](../builtin-types/bool.md) ou . `true`signifie que le symbole est défini. L’instruction `#if DEBUG` a la même signification que `#if (DEBUG == true)`. Vous pouvez utiliser le [&&  (et)](../operators/boolean-logical-operators.md#conditional-logical-and-operator-), [&#124;&#124;  (ou)](../operators/boolean-logical-operators.md#conditional-logical-or-operator-), et [! (non)](../operators/boolean-logical-operators.md#logical-negation-operator-) d’évaluer si plusieurs symboles ont été définis. Vous pouvez également regrouper des symboles et des opérateurs à l’aide de parenthèses.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-`#if`, ainsi que les directives [#else](preprocessor-else.md), [#elif](preprocessor-elif.md), [#endif](preprocessor-endif.md), [#define](preprocessor-define.md) et [#undef](preprocessor-undef.md), vous permettent d’inclure ou d’exclure du code en fonction de l’existence d’un ou plusieurs symboles. Cela peut être utile lors de la compilation du code pour une version Debug ou lors de la compilation d’une configuration spécifique.
+`#if`, avec le [#else](preprocessor-else.md), [#elif](preprocessor-elif.md), [#endif](preprocessor-endif.md), [#define](preprocessor-define.md), et [#undef](preprocessor-undef.md) directives, vous permet d’inclure ou d’exclure le code en fonction de l’existence d’un ou plusieurs symboles. Cela peut être utile lors de la compilation du code pour une version Debug ou lors de la compilation d’une configuration spécifique.
 
 Une directive conditionnelle commençant par une directive `#if` doit se terminer explicitement par une directive `#endif`.
 
 `#define` vous permet de définir un symbole. En utilisant ensuite ce dernier comme expression passée à la directive `#if`, l’expression correspond à `true`.
 
-Vous pouvez aussi définir un symbole avec l’option du compilateur [-define](../compiler-options/define-compiler-option.md). Vous pouvez annuler la définition d’un symbole avec [#undef](preprocessor-undef.md).
+Vous pouvez également définir un symbole avec l’option [compilateur-définir.](../compiler-options/define-compiler-option.md) Vous pouvez annuler la définition d’un symbole avec [#undef](preprocessor-undef.md).
 
 Un symbole que vous définissez avec `-define` ou `#define` n’est pas en conflit avec une variable du même nom. Autrement dit, un nom de variable ne doit pas être passé à une directive de préprocesseur, et un symbole ne peut être évalué que par une directive de préprocesseur.
 
 La portée d’un symbole créé avec `#define` est le fichier dans lequel il a été défini.
 
-Le système de génération est également conscient des symboles de préprocesseur prédéfinis qui représentent différents [frameworks cibles](../../../standard/frameworks.md) dans les projets de type SDK. Ils sont utiles durant la création d’applications pouvant cibler plusieurs versions ou implémentations de .NET.
+Le système de construction est également conscient des symboles préprocesseurs prédéfinis représentant différents cadres cibles dans [des projets](../../../standard/frameworks.md) de type SDK. Ils sont utiles durant la création d’applications pouvant cibler plusieurs versions ou implémentations de .NET.
 
 [!INCLUDE [Preprocessor symbols](~/includes/preprocessor-symbols.md)]
 
 > [!NOTE]
-> Pour les projets de .NET Framework traditionnels, vous devez configurer manuellement les symboles de compilation conditionnelle pour les différents frameworks cibles dans Visual Studio via les pages de propriétés du projet.
+> Pour les projets cadres .NET traditionnels, vous devez configurer manuellement les symboles de compilation conditionnelles pour les différents cadres cibles de Visual Studio via les pages propriétés du projet.
 
 Parmi les autres symboles prédéfinis se trouvent les constantes DEBUG et TRACE. Vous pouvez remplacer les valeurs définies pour le projet à l’aide de `#define`. Le symbole DEBUG, par exemple, est automatiquement défini en fonction de vos propriétés de configuration de build (mode « Debug » ou « Release »).
 
@@ -91,7 +91,7 @@ public class MyClass
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
-- [Directives de préprocesseur C#](index.md)
-- [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
+- [Directives de préprocesseur de CMD](index.md)
+- [Comment : effectuer une compilation conditionnelle avec Trace et Debug](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)

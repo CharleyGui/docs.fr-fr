@@ -10,10 +10,10 @@ helpviewer_keywords:
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
 ms.openlocfilehash: f3d3269ccf56954f963762503d2bc1c53b9e6b83
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78238986"
 ---
 # <a name="implementing-a-dispose-method"></a>Implémentation d’une méthode Dispose
@@ -33,7 +33,7 @@ Le modèle de suppression comporte deux variantes :
   
 Pour que les ressources soient toujours assurées d'être correctement nettoyées, une méthode <xref:System.IDisposable.Dispose%2A> doit pouvoir être appelée à plusieurs reprises sans lever d'exception.  
   
-L’exemple de code fourni pour la méthode <xref:System.GC.KeepAlive%2A?displayProperty=nameWithType> montre comment garbage collection peut provoquer l’exécution d’un finaliseur, alors qu’une référence non managée à l’objet ou à ses membres est toujours en cours d’utilisation. Il peut être judicieux d’utiliser <xref:System.GC.KeepAlive%2A?displayProperty=nameWithType> pour rendre l’objet inéligible pour garbage collection du début de la routine actuelle jusqu’au point où cette méthode est appelée.
+L’exemple de <xref:System.GC.KeepAlive%2A?displayProperty=nameWithType> code fourni pour la méthode montre comment la collecte des ordures peut faire fonctionner un finalisateur, alors qu’une référence non gérée à l’objet ou à ses membres est toujours en usage. Il peut être <xref:System.GC.KeepAlive%2A?displayProperty=nameWithType> judicieux d’utiliser pour rendre l’objet inadmissible à la collecte des ordures depuis le début de la routine actuelle jusqu’au point où cette méthode est appelée.
   
 <a name="Dispose2"></a>
 ## <a name="dispose-and-disposeboolean"></a>Dispose() et Dispose(Boolean)  
@@ -103,7 +103,7 @@ Voici le modèle général d’implémentation du modèle de suppression d’une
   
 ## <a name="implementing-the-dispose-pattern-for-a-derived-class"></a>Implémentation du modèle de suppression d’une classe dérivée
 
-Une classe dérivée d'une classe qui implémente l'interface <xref:System.IDisposable> ne doit pas implémenter <xref:System.IDisposable>, car l'implémentation de la classe de base de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> est héritée par les classes dérivées. Au lieu de cela, pour libérer des ressources d’une classe dérivée, vous fournissez les éléments suivants :  
+Une classe dérivée d'une classe qui implémente l'interface <xref:System.IDisposable> ne doit pas implémenter <xref:System.IDisposable>, car l'implémentation de la classe de base de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> est héritée par les classes dérivées. Au lieu de cela, pour libérer les ressources d’une classe dérivée, vous fournissez ce qui suit :  
   
 - Une méthode `protected Dispose(Boolean)` qui substitue la méthode de la classe de base et effectue le travail réel de libération des ressources de la classe dérivée. Cette méthode doit également appeler la méthode `Dispose(Boolean)` de la classe de base et lui passer son état disposing pour l’argument.  
   

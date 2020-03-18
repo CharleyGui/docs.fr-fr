@@ -11,10 +11,10 @@ helpviewer_keywords:
 - attributes [.NET Framework], applying
 ms.assetid: dd7604eb-9fa3-4b60-b2dd-b47739fa3148
 ms.openlocfilehash: 14cd6fef80ff9ae3a9d78531785edab0da7cc6b9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73130913"
 ---
 # <a name="applying-attributes"></a>Application des attributs
@@ -42,7 +42,7 @@ Effectuez la procédure suivante pour appliquer un attribut à un élément de v
  [!code-vb[Conceptual.Attributes.Usage#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source1.vb#3)]  
   
 ## <a name="applying-attributes-at-the-assembly-level"></a>Application d’attributs au niveau de l’assembly  
- Si vous souhaitez appliquer un attribut au niveau de l’assembly, utilisez le mot-clé **assembly** (`Assembly` en Visual Basic). Le code suivant illustre l’attribut **AssemblyTitleAttribute** appliqué au niveau de l’assembly.  
+ Si vous souhaitez appliquer un attribut au niveau`Assembly` de l’assemblage, utilisez le mot clé **(dans** Visual Basic). Le code suivant illustre l’attribut **AssemblyTitleAttribute** appliqué au niveau de l’assembly.  
   
  [!code-cpp[Conceptual.Attributes.Usage#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source1.cpp#2)]
  [!code-csharp[Conceptual.Attributes.Usage#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source1.cs#2)]
@@ -54,6 +54,6 @@ Effectuez la procédure suivante pour appliquer un attribut à un élément de v
 
 - [Attributs](../../../docs/standard/attributes/index.md)
 - [Récupération des informations stockées dans les attributs](../../../docs/standard/attributes/retrieving-information-stored-in-attributes.md)
-- [Concepts](/cpp/windows/attributed-programming-concepts)
+- [Concepts liés à la](/cpp/windows/attributed-programming-concepts)
 - [Attributs (C#)](../../csharp/programming-guide/concepts/attributes/index.md)
 - [Vue d’ensemble des attributs (Visual Basic)](../../visual-basic/programming-guide/concepts/attributes/index.md)

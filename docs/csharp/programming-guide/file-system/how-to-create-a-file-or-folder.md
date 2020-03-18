@@ -1,5 +1,5 @@
 ---
-title: Comment créer un fichier ou un dossier- C# Guide de programmation
+title: Comment créer un fichier ou un dossier - Guide de programmation C
 ms.date: 07/20/2015
 helpviewer_keywords:
 - folders [C#]
@@ -7,17 +7,17 @@ helpviewer_keywords:
 - files [C#]
 - creating folders [C#]
 ms.assetid: 4582ee2d-d72d-4687-bcb9-08d336c62c25
-ms.openlocfilehash: e0d0a7fbbc7e6a5c9a0bd00dec1188c5cfdcf896
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: cdcc0a375aa1eca29c024d1e0c9008f337d0c772
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705247"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79167555"
 ---
-# <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Comment créer un fichier ou un dossier (C# Guide de programmation)
+# <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Comment créer un fichier ou un dossier (Guide de programmation C)
 Vous pouvez par programmationcréer un dossier sur votre ordinateur, créer un sous-dossier, créer un fichier dans le sous-dossier et écrire des données dans le fichier.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  [!code-csharp[csFilesandFolders#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#10)]  
   
  Si le dossier existe déjà, <xref:System.IO.Directory.CreateDirectory%2A> est sans effet et aucune exception n’est levée. Toutefois, <xref:System.IO.File.Create%2A?displayProperty=nameWithType> remplace un fichier existant par un nouveau fichier. L’exemple utilise une instruction `if`-`else` pour éviter qu’un fichier existant soit pas remplacé.  
@@ -37,7 +37,7 @@ Vous pouvez par programmationcréer un dossier sur votre ordinateur, créer un s
 - Remplacez l’instruction `if`-`else` par l’instruction `using` dans le code suivant.  
   
     ```csharp  
-    using (System.IO.FileStream fs = new System.IO.FileStream(pathString, FileMode.Append))   
+    using (System.IO.FileStream fs = new System.IO.FileStream(pathString, FileMode.Append))
     {  
         for (byte i = 0; i < 100; i++)  
         {  
@@ -62,7 +62,7 @@ Vous pouvez par programmationcréer un dossier sur votre ordinateur, créer un s
   
 - Le nom du dossier est uniquement un signe deux-points, « : » (classe <xref:System.IO.PathTooLongException>).  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
+## <a name="net-framework-security"></a>Sécurité du .NET Framework  
  Une instance de la classe <xref:System.Security.SecurityException> peut être levée dans les situations de confiance partielle.  
   
  Si vous n’êtes pas autorisé à créer le dossier, l’exemple lève une instance de la classe <xref:System.UnauthorizedAccessException>.  

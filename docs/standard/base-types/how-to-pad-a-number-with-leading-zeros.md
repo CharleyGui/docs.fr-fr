@@ -12,10 +12,10 @@ helpviewer_keywords:
 - numbers [.NET Framework], format strings
 ms.assetid: 0b2c2cb5-c580-4891-8d81-cb632f5ec384
 ms.openlocfilehash: bc3c4b75c484274c214141d8fbfcf8ac592b0b99
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73131976"
 ---
 # <a name="how-to-pad-a-number-with-leading-zeros"></a>Comment : remplir un nombre avec des zéros non significatifs
@@ -83,7 +83,7 @@ L’exemple suivant met en forme plusieurs valeurs numériques avec des zéros n
 
     1. Si tel est le cas, déterminez le nombre de caractères à gauche du séparateur décimal.
 
-         ou
+         -ou-
 
          Sinon, déterminez la longueur de la chaîne.
 
@@ -102,6 +102,6 @@ L'exemple suivant remplit deux valeurs <xref:System.Double> avec cinq zéros non
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)
-- [Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md)
+- [Chaînes de format numérique personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)
+- [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)
 - [Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md)

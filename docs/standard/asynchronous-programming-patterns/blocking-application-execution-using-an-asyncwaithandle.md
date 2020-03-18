@@ -14,10 +14,10 @@ helpviewer_keywords:
 - blocking application execution
 ms.assetid: 3e32daf2-8161-4e8f-addd-9fd9ff101b03
 ms.openlocfilehash: 16b5a297c13cd9096548ed489e4994b72a48da67
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73121428"
 ---
 # <a name="blocking-application-execution-using-an-asyncwaithandle"></a>Blocage de l'exécution d'applications à l'aide d'un AsyncWaitHandle
@@ -29,7 +29,7 @@ Les applications qui ne peuvent pas continuer à effectuer d’autres tâches en
   
  Les applications qui utilisent un ou plusieurs objets <xref:System.Threading.WaitHandle> pour se bloquer jusqu’à la fin d’une opération asynchrone appellent généralement la méthode **Begin**_NomOpération_, effectuent tout le travail réalisable sans les résultats de l’opération, puis se bloquent jusqu’à la fin de la ou des opérations asynchrones. Une application peut se bloquer sur une seule opération en appelant l’une des méthodes <xref:System.Threading.WaitHandle.WaitOne%2A> à l’aide du <xref:System.IAsyncResult.AsyncWaitHandle%2A>. Pour imposer un blocage en attendant qu’un ensemble d’opérations asynchrones se termine, stockez les objets <xref:System.IAsyncResult.AsyncWaitHandle%2A> associés dans un tableau et appelez l’une des méthodes <xref:System.Threading.WaitHandle.WaitAll%2A>. Pour imposer un blocage en attendant que l’une des opérations asynchrones se termine, stockez les objets <xref:System.IAsyncResult.AsyncWaitHandle%2A> associés dans un tableau et appelez l’une des méthodes <xref:System.Threading.WaitHandle.WaitAny%2A>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple de code suivant montre comment utiliser des méthodes asynchrones dans la classe DNS afin de récupérer les informations DNS (Domain Name System) pour un ordinateur spécifié par l’utilisateur. Il illustre le blocage avec la <xref:System.Threading.WaitHandle> associée à l’opération asynchrone. Notez que `null` (`Nothing` en Visual Basic) est transmis aux paramètres <xref:System.Net.Dns.BeginGetHostByName%2A>`requestCallback` et `stateObject`, car ils ne sont pas requis dans cette approche.  
   
  [!code-csharp[AsyncDesignPattern#2](../../../samples/snippets/csharp/VS_Snippets_CLR/AsyncDesignPattern/CS/Async_EndBlockWait.cs#2)]
@@ -38,4 +38,4 @@ Les applications qui ne peuvent pas continuer à effectuer d’autres tâches en
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle asynchrone basé sur les événements (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
-- [Vue d’ensemble du modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
+- [Vue d’ensemble du modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)

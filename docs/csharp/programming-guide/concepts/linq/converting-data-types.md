@@ -3,10 +3,10 @@ title: Conversion des types de données (C#)
 ms.date: 07/20/2015
 ms.assetid: 46e5682f-77a1-4302-8f93-a2b53c408808
 ms.openlocfilehash: 328c790a1a360907c91f69b3b6330b0b25eb414b
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75347201"
 ---
 # <a name="converting-data-types-c"></a>Conversion des types de données (C#)
@@ -25,7 +25,7 @@ Les méthodes de conversion changent le type d’objets en entrée.
 
  Les méthodes de conversion de ce tableau dont les noms commencent par "As" modifient le type statique de la collection source mais ne l’énumèrent pas. Les méthodes dont les noms commencent par "To" énumèrent la collection source et placent les éléments dans le type de collection correspondant.
 
-|Nom de la méthode|Description|Syntaxe d'expression de requête C#|Plus d’informations|
+|Nom de la méthode|Description|Syntaxe d'expression de requête C#|Informations complémentaires|
 |-----------------|-----------------|---------------------------------|----------------------|
 |AsEnumerable|Retourne l’entrée typée comme <xref:System.Collections.Generic.IEnumerable%601>.|Non applicable.|<xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=nameWithType>|
 |AsQueryable|Convertit un <xref:System.Collections.IEnumerable> (générique) en <xref:System.Linq.IQueryable> (générique).|Non applicable.|<xref:System.Linq.Queryable.AsQueryable%2A?displayProperty=nameWithType>|
@@ -38,7 +38,7 @@ Les méthodes de conversion changent le type d’objets en entrée.
 
 ## <a name="query-expression-syntax-example"></a>Exemple de syntaxe d’expression de requête
 
-L’exemple de code suivant utilise une variable de portée explicitement typée pour effectuer un cast d’un type en un sous-type avant d’accéder à un membre qui est disponible uniquement sur le sous-type.
+L’exemple de code suivant utilise une variable de plage explicitement tapée pour jeter un type à un sous-type avant d’accéder à un membre qui n’est disponible que sur le sous-type.
 
 ```csharp
 class Plant
@@ -79,6 +79,6 @@ static void Cast()
 
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
-- [from, clause](../../../language-reference/keywords/from-clause.md)
+- [de la clause](../../../language-reference/keywords/from-clause.md)
 - [Expressions de requête LINQ](../../../linq/index.md)
-- [Comment interroger un ArrayList avec LINQ (C#)](./how-to-query-an-arraylist-with-linq.md)
+- [Comment interroger un ArrayList avec LINQ (C)](./how-to-query-an-arraylist-with-linq.md)

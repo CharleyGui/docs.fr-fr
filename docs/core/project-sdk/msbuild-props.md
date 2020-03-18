@@ -1,31 +1,31 @@
 ---
-title: Propriétés MSBuild pour Microsoft. NET. Sdk
-description: Référence pour les propriétés MSBuild comprises par l’kit SDK .NET Core.
+title: Propriétés MSBuild pour Microsoft.NET.Sdk
+description: Référence pour les propriétés MSBuild qui sont compris par le .NET Core SDK.
 ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: 00d9152d864ac0727a511f4c3c15abba82aab904
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: d4a204a1e0216313418d278ec3bd333f72db8751
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503813"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399181"
 ---
-# <a name="msbuild-properties-for-net-core-sdk-projects"></a>Propriétés MSBuild pour les projets kit SDK .NET Core
+# <a name="msbuild-properties-for-net-core-sdk-projects"></a>Propriétés MSBuild pour les projets SDK de base .NET
 
-Cette page décrit les propriétés MSBuild pour la configuration des projets .NET Core.
+Cette page décrit les propriétés MSBuild pour configurer des projets .NET Core.
 
 > [!NOTE]
-> Cette page est un travail en cours et ne répertorie pas toutes les propriétés MSBuild utiles pour le kit SDK .NET Core. Pour obtenir la liste des propriétés MSBuild courantes, consultez [propriétés MSBuild communes](/visualstudio/msbuild/common-msbuild-project-properties).
+> Cette page est un travail en cours et n’énumère pas toutes les propriétés utiles MSBuild pour le .NET Core SDK. Pour une liste des propriétés COMMUNES MSBuild, voir [propriétés communes MSBuild](/visualstudio/msbuild/common-msbuild-project-properties).
 
-## <a name="framework-properties"></a>Propriétés du Framework
+## <a name="framework-properties"></a>Propriétés-cadres
 
-- [TargetFramework](#targetframework)
-- [TargetFrameworks](#targetframeworks)
+- [TargetFramework (TargetFramework)](#targetframework)
+- [TargetFrameworks (TargetFrameworks)](#targetframeworks)
 - [NetStandardImplicitPackageVersion](#netstandardimplicitpackageversion)
 
-### <a name="targetframework"></a>TargetFramework
+### <a name="targetframework"></a>TargetFramework (TargetFramework)
 
-La propriété `TargetFramework` spécifie la version cible de .NET Framework pour l’application, qui référence implicitement un [repackage](../packages.md#metapackages). Pour obtenir la liste des monikers du Framework cible valides, consultez [frameworks cibles dans les projets de type SDK](../../standard/frameworks.md#supported-target-framework-versions).
+La `TargetFramework` propriété spécifie la version cadre cible de l’application, qui fait implicitement référence à un [métapackage](../packages.md#metapackages). Pour une liste de nom-cadre cible valide, voir [les cadres Target dans les projets de type SDK](../../standard/frameworks.md#supported-target-framework-versions).
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -35,14 +35,14 @@ La propriété `TargetFramework` spécifie la version cible de .NET Framework po
 </Project>
 ```
 
-Pour plus d’informations, consultez [frameworks cibles dans les projets de type SDK](../../standard/frameworks.md).
+Pour plus d’informations, voir [les cadres Target dans les projets de style SDK](../../standard/frameworks.md).
 
-### <a name="targetframeworks"></a>TargetFrameworks
+### <a name="targetframeworks"></a>TargetFrameworks (TargetFrameworks)
 
-Utilisez la propriété `TargetFrameworks` lorsque vous souhaitez que votre application cible plusieurs plateformes. Pour obtenir la liste des monikers du Framework cible valides, consultez [frameworks cibles dans les projets de type SDK](../../standard/frameworks.md#supported-target-framework-versions).
+Utilisez `TargetFrameworks` la propriété lorsque vous souhaitez que votre application cible plusieurs plates-formes. Pour une liste de nom-cadre cible valide, voir [les cadres Target dans les projets de type SDK](../../standard/frameworks.md#supported-target-framework-versions).
 
 > [!NOTE]
-> Cette propriété est ignorée si `TargetFramework` (singulier) est spécifié.
+> Cette propriété est `TargetFramework` ignorée si (singulier) est spécifié.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -52,14 +52,14 @@ Utilisez la propriété `TargetFrameworks` lorsque vous souhaitez que votre appl
 </Project>
 ```
 
-Pour plus d’informations, consultez [frameworks cibles dans les projets de type SDK](../../standard/frameworks.md).
+Pour plus d’informations, voir [les cadres Target dans les projets de style SDK](../../standard/frameworks.md).
 
 ### <a name="netstandardimplicitpackageversion"></a>NetStandardImplicitPackageVersion
 
 > [!NOTE]
-> Cette propriété s’applique uniquement aux projets qui utilisent `netstandard1.x`. Elle ne s’applique pas aux projets qui utilisent `netstandard2.x`.
+> Cette propriété ne s’applique qu’aux projets utilisant `netstandard1.x`. Il ne s’applique pas `netstandard2.x`aux projets qui utilisent .
 
-Utilisez la propriété `NetStandardImplicitPackageVersion` lorsque vous souhaitez spécifier une version de Framework inférieure à la version de l' [ensemble de packages](../packages.md#metapackages) . Le fichier projet dans l’exemple suivant cible `netstandard1.3` mais utilise la version 1.6.0 de `NETStandard.Library`.
+Utilisez `NetStandardImplicitPackageVersion` la propriété lorsque vous souhaitez spécifier une version-cadre inférieure à la version [métapackage.](../packages.md#metapackages) Le fichier de projet `netstandard1.3` dans l’exemple suivant vise mais utilise `NETStandard.Library`la version 1.6.0 de .
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -74,11 +74,11 @@ Utilisez la propriété `NetStandardImplicitPackageVersion` lorsque vous souhait
 
 - [RuntimeIdentifier](#runtimeidentifier)
 - [RuntimeIdentifiers](#runtimeidentifiers)
-- [UseAppHost](#useapphost)
+- [UtiliserAppHost](#useapphost)
 
 ### <a name="runtimeidentifier"></a>RuntimeIdentifier
 
-La propriété `RuntimeIdentifier` vous permet de spécifier un [identificateur de Runtime unique (RID)](../rid-catalog.md) pour le projet. Le RID permet de publier un déploiement autonome.
+La `RuntimeIdentifier` propriété vous permet de spécifier un [identifiant d’exécution unique (RID)](../rid-catalog.md) pour le projet. Le RID permet de publier un déploiement autonome.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -90,10 +90,10 @@ La propriété `RuntimeIdentifier` vous permet de spécifier un [identificateur 
 
 ### <a name="runtimeidentifiers"></a>RuntimeIdentifiers
 
-La propriété `RuntimeIdentifiers` vous permet de spécifier une liste délimitée par des points-virgules des [identificateurs de Runtime (RID)](../rid-catalog.md) pour le projet. Utilisez cette propriété si vous devez publier pour plusieurs runtimes. `RuntimeIdentifiers` est utilisé au moment de la restauration pour s’assurer que les ressources appropriées sont dans le graphique.
+La `RuntimeIdentifiers` propriété vous permet de spécifier une liste d’identifiants de [temps d’exécution (RID)](../rid-catalog.md) pour le projet. Utilisez cette propriété si vous avez besoin de publier pour plusieurs runtimes. `RuntimeIdentifiers`est utilisé au moment de la restauration pour s’assurer que les bons actifs sont dans le graphique.
 
 > [!TIP]
-> `RuntimeIdentifier` (singulier) peut fournir des builds plus rapides quand un seul Runtime est requis.
+> `RuntimeIdentifier`(singulier) peut fournir des constructions plus rapides quand un seul temps d’exécution est nécessaire.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -103,11 +103,11 @@ La propriété `RuntimeIdentifiers` vous permet de spécifier une liste délimit
 </Project>
 ```
 
-### <a name="useapphost"></a>UseAppHost
+### <a name="useapphost"></a>UtiliserAppHost
 
-La propriété `UseAppHost` a été introduite dans la version 2.1.400 de l’kit SDK .NET Core. Il contrôle si un exécutable natif est créé ou non pour un déploiement. Un exécutable natif est requis pour les déploiements autonomes.
+La `UseAppHost` propriété a été introduite dans la version 2.1.400 du .NET Core SDK. Il contrôle si un natif exécutable est créé pour un déploiement. Un autochtone exécutable est nécessaire pour les déploiements autonomes.
 
-Dans .NET Core 3,0 et versions ultérieures, un fichier exécutable dépendant du Framework est créé par défaut. Affectez à la propriété `UseAppHost` la valeur `false` pour désactiver la génération du fichier exécutable.
+Dans .NET Core 3.0 et les versions ultérieures, un cadre dépendant exécutable est créé par défaut. Définissez `UseAppHost` la `false` propriété pour désactiver la génération de l’exécutable.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -117,13 +117,13 @@ Dans .NET Core 3,0 et versions ultérieures, un fichier exécutable dépendant d
 </Project>
 ```
 
-Pour plus d’informations sur le déploiement, consultez [déploiement d’applications .net Core](../deploying/index.md).
+Pour plus d’informations sur le déploiement, voir [déploiement d’applications .NET Core](../deploying/index.md).
 
-## <a name="compile-properties"></a>Propriétés de compilation
+## <a name="compile-properties"></a>Propriétés Compile
 
-### <a name="langversion"></a>LangVersion
+### <a name="langversion"></a>LangVersion (LangVersion)
 
-La propriété `LangVersion` vous permet de spécifier une version spécifique du langage de programmation. Par exemple, si vous souhaitez accéder aux C# fonctionnalités en version préliminaire, définissez `LangVersion` sur `preview`.
+La `LangVersion` propriété vous permet de spécifier une version linguistique de programmation spécifique. Par exemple, si vous souhaitez accéder aux `LangVersion` `preview`fonctionnalités d’aperçu de C, définissez pour .
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -133,15 +133,16 @@ La propriété `LangVersion` vous permet de spécifier une version spécifique d
 </Project>
 ```
 
-Pour plus d’informations, [ C# ](../../csharp/language-reference/configure-language-version.md#override-a-default)consultez contrôle de version de langage.
+Pour plus d’informations, voir [la version linguistique C .](../../csharp/language-reference/configure-language-version.md#override-a-default)
 
 ## <a name="nuget-packages"></a>Packages NuGet
 
 - [PackageReference](#packagereference)
+- [AssetTargetFallback (en)](#assettargetfallback)
 
 ### <a name="packagereference"></a>PackageReference
 
-L’élément `PackageReference` vous permet de spécifier une dépendance NuGet. Par exemple, vous souhaiterez peut-être référencer un package unique au lieu d’un sous- [package](../packages.md#metapackages). L’attribut `Include` spécifie l’ID du package. L’extrait de code du fichier projet dans l’exemple suivant référence le package [System. Runtime](https://www.nuget.org/packages/System.Runtime/) .
+L’article `PackageReference` vous permet de spécifier une dépendance NuGet. Par exemple, vous pouvez faire référence à un seul paquet au lieu d’un [métapackage](../packages.md#metapackages). L’attribut `Include` spécifie l’ID du package. L’extrait de fichier de projet dans l’exemple suivant fait référence au paquet [System.Runtime.](https://www.nuget.org/packages/System.Runtime/)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -152,16 +153,31 @@ L’élément `PackageReference` vous permet de spécifier une dépendance NuGet
 </Project>
 ```
 
-Pour plus d’informations, consultez [références de package dans les fichiers projet](/nuget/consume-packages/package-references-in-project-files).
+Pour plus d’informations, voir [références Paquet dans les fichiers de projet](/nuget/consume-packages/package-references-in-project-files).
 
-### <a name="pack-and-restore-targets"></a>Cibles de Pack et de restauration
+### <a name="assettargetfallback"></a>AssetTargetFallback (en)
 
-MSBuild 15,1 a introduit `pack` et `restore` cibles pour la création et la restauration de packages NuGet dans le cadre d’une build. Pour plus d’informations sur les propriétés MSBuild pour ces cibles, y compris `PackageTargetFallback`, consultez [NuGet Pack et Restore en tant que cibles MSBuild](/nuget/reference/msbuild-targets).
+La `AssetTargetFallback` propriété vous permet de spécifier des versions-cadres compatibles supplémentaires pour les projets que vos références de projet et les forfaits NuGet que votre projet consomme. Par exemple, si vous spécifiez une dépendance au forfait à l’aide de l’emballage, `PackageReference` mais que ce paquet ne contient pas d’actifs `TargetFramework`compatibles avec vos projets, la `AssetTargetFallback` propriété entre en jeu. La compatibilité du paquet référencé est revérifié à `AssetTargetFallback`l’aide de chaque cadre cible spécifié dans .
+
+Vous pouvez `AssetTargetFallback` définir la propriété à une ou plusieurs [versions de cadre cible](../../standard/frameworks.md#supported-target-framework-versions).
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  ...
+  <PropertyGroup>
+    <AssetTargetFallback>net461</AssetTargetFallback>
+  </PropertyGroup>
+</Project>
+```
+
+### <a name="pack-and-restore-targets"></a>Emballez et rétablissez les cibles
+
+MSBuild 15.1 `pack` `restore` introduit et des objectifs pour la création et la restauration des paquets NuGet dans le cadre d’une construction. Pour plus d’informations sur les propriétés `PackageTargetFallback`MSBuild pour ces cibles, y compris , voir [NuGet pack et restaurer comme cibles MSBuild](/nuget/reference/msbuild-targets).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence du schéma MSBuild](/visualstudio/msbuild/msbuild-project-file-schema-reference)
 - [Propriétés MSBuild communes](/visualstudio/msbuild/common-msbuild-project-properties)
-- [Propriétés MSBuild pour le Pack NuGet](/nuget/reference/msbuild-targets#pack-target)
+- [Propriétés MSBuild pour Pack NuGet](/nuget/reference/msbuild-targets#pack-target)
 - [Propriétés MSBuild pour la restauration NuGet](/nuget/reference/msbuild-targets#restore-properties)
 - [Personnaliser une build](/visualstudio/msbuild/customize-your-build)

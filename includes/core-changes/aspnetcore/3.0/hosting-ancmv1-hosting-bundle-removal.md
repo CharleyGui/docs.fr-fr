@@ -1,18 +1,18 @@
 ---
 ms.openlocfilehash: 82103d82a6f68c62f3532608718bc71b0ba126bf
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901959"
 ---
-### <a name="hosting-aspnetcoremodule-v1-removed-from-windows-hosting-bundle"></a>Hébergement : AspNetCoreModule v1 supprimé du bundle d’hébergement Windows
+### <a name="hosting-aspnetcoremodule-v1-removed-from-windows-hosting-bundle"></a>Hébergement: AspNetCoreModule V1 supprimé de Windows Hosting Bundle
 
-À compter de ASP.NET Core 3,0, le bundle d’hébergement Windows ne contient pas AspNetCoreModule (ANCM) v1.
+En commençant par ASP.NET Core 3.0, le Windows Hosting Bundle ne contiendra pas aspNetCoreModule (ANCM) V1.
 
-ANCM V2 offre une compatibilité descendante avec ANCM OutOfProcess et il est recommandé de l’utiliser avec les applications ASP.NET Core 3,0.
+ANCM V2 est compatible vers l’arrière avec ANCM OutOfProcess et est recommandé pour une utilisation avec ASP.NET applications Core 3.0.
 
-Pour plus d’informations, consultez [dotnet/aspnetcore # 7095](https://github.com/dotnet/aspnetcore/issues/7095).
+Pour discussion, voir [dotnet/aspnetcore 7095](https://github.com/dotnet/aspnetcore/issues/7095).
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -20,34 +20,34 @@ Pour plus d’informations, consultez [dotnet/aspnetcore # 7095](https://github.
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-ANCM v1 est inclus dans le bundle d’hébergement Windows.
+ANCM V1 est inclus dans le Windows Hosting Bundle.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-ANCM v1 n’est pas inclus dans le bundle d’hébergement Windows.
+ANCM V1 n’est pas inclus dans le Windows Hosting Bundle.
 
-#### <a name="reason-for-change"></a>Motif de modification
+#### <a name="reason-for-change"></a>Raison du changement
 
-ANCM V2 offre une compatibilité descendante avec ANCM OutOfProcess et il est recommandé de l’utiliser avec les applications ASP.NET Core 3,0.
+ANCM V2 est compatible vers l’arrière avec ANCM OutOfProcess et est recommandé pour une utilisation avec ASP.NET applications Core 3.0.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Utilisez ANCM v2 avec les applications ASP.NET Core 3,0.
+Utilisez ANCM V2 avec ASP.NET applications Core 3.0.
 
-Si ANCM v1 est requis, il peut être installé à l’aide de l’offre groupée d’hébergement Windows ASP.NET Core 2,1 ou 2,2.
+Si ANCM V1 est nécessaire, il peut être installé à l’aide du ASP.NET Core 2.1 ou 2.2 Windows Hosting Bundle.
 
-Cette modification s’interrompt ASP.NET Core applications 3,0 qui :
+Ce changement va briser ASP.NET applications Core 3.0 qui:
 
-- Optez explicitement pour l’utilisation de ANCM v1 avec `<AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>`.
-- Avoir un fichier *Web. config* personnalisé avec `<add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModule" resourceType="Unspecified" />`.
+- Explicitement choisi d’utiliser ANCM V1 avec `<AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>`.
+- Avoir un fichier *web.config* personnalisé avec `<add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModule" resourceType="Unspecified" />`.
 
-#### <a name="category"></a>Catégorie
+#### <a name="category"></a>Category
 
 ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-Aucun
+None
 
 <!-- 
 

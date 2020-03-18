@@ -8,10 +8,10 @@ helpviewer_keywords:
 - Parallel Programming
 ms.assetid: b8f99f43-9104-45fd-9bff-385a20488a23
 ms.openlocfilehash: 487fe48462803ac19318f450f2576989f196a9be
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73139957"
 ---
 # <a name="task-parallel-library-tpl"></a>Bibliothèque parallèle de tâches
@@ -21,11 +21,11 @@ La bibliothèque parallèle de tâches est un ensemble de types publics et d’A
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Titre|Description|  
+|Intitulé|Description|  
 |-|-|  
 |[Parallélisme de données](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)|Décrit comment créer des boucles parallèles `for` et `foreach` (`For` et `For Each` en Visual Basic).|  
 |[Programmation asynchrone basée sur les tâches](../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md)|Décrit comment créer et exécuter implicitement des tâches à l’aide de <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType> ou explicitement en utilisant des objets <xref:System.Threading.Tasks.Task> directement.|  
-|[Le flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)|Explique comment utiliser les composants de flux de données dans la bibliothèque de flux de données de TPL pour effectuer plusieurs opérations qui doivent communiquer entre elles ou pour traiter les données lorsqu'elles sont disponibles.|  
+|[Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)|Explique comment utiliser les composants de flux de données dans la bibliothèque de flux de données de TPL pour effectuer plusieurs opérations qui doivent communiquer entre elles ou pour traiter les données lorsqu'elles sont disponibles.|  
 |[Utilisation de la bibliothèque parallèle de tâches (TPL) avec d’autres modèles asynchrones](../../../docs/standard/parallel-programming/using-tpl-with-other-asynchronous-patterns.md)|Décrit comment utiliser la bibliothèque parallèle de tâches avec d’autres modèles asynchrones dans .NET.|  
 |[Pièges potentiels dans le parallélisme des données et des tâches](../../../docs/standard/parallel-programming/potential-pitfalls-in-data-and-task-parallelism.md)|Décrit des pièges courants et la manière de les éviter.|  
 |[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)|Décrit comment atteindre le parallélisme des données avec les requêtes LINQ.|  

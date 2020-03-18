@@ -1,5 +1,5 @@
 ---
-title: Processus d'exécution managée
+title: processus d'exécution managée
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -11,13 +11,13 @@ helpviewer_keywords:
 - common language runtime, managed execution process
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
 ms.openlocfilehash: 46a266849f137076170287aeb10becedf83ccf78
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78160220"
 ---
-# <a name="managed-execution-process"></a>Processus d'exécution managée
+# <a name="managed-execution-process"></a>processus d'exécution managée
 <a name="introduction"></a> Le processus d'exécution managé inclut les étapes suivantes,qui sont décrites en détail plus loin dans cette rubrique :  
   
 1. [Choix d'un compilateur](#choosing_a_compiler)  
@@ -40,7 +40,7 @@ ms.locfileid: "78160220"
 ## <a name="choosing-a-compiler"></a>Choix d'un compilateur  
  Pour bénéficier des avantages qu'offre le Common Language Runtime (CLR), vous devez utiliser un ou plusieurs compilateurs de langage ciblant le runtime, tels que les compilateurs Visual Basic, C#, Visual C++, F# ou l'un des nombreux compilateurs tiers tels que les compilateurs Eiffel, Perl ou COBOL.  
   
- Dans la mesure où il représente un environnement d'exécution multilangage, le runtime prend en charge une grande variété de types de données et de fonctionnalités de langage. Le compilateur de langage que vous utilisez détermine les fonctionnalités du runtime qui sont disponibles et que vous utilisez pour concevoir votre code. C'est votre compilateur et non le runtime qui établit la syntaxe à laquelle votre code doit se conformer. Si votre composant doit être entièrement utilisable par des composants écrits dans d’autres langages, les types exportés de votre composant doivent exposer uniquement les fonctionnalités de langage qui font partie de la spécification [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md) . Vous pouvez utiliser l'attribut <xref:System.CLSCompliantAttribute> pour vous assurer que votre code est conforme CLS. Pour plus d’informations, consultez [Indépendance du langage et composants indépendants du langage](../../docs/standard/language-independence-and-language-independent-components.md).  
+ Dans la mesure où il représente un environnement d'exécution multilangage, le runtime prend en charge une grande variété de types de données et de fonctionnalités de langage. Le compilateur de langage que vous utilisez détermine les fonctionnalités du runtime qui sont disponibles et que vous utilisez pour concevoir votre code. C'est votre compilateur et non le runtime qui établit la syntaxe à laquelle votre code doit se conformer. Si votre composant doit être entièrement utilisable par des composants écrits dans d’autres langages, les types exportés de votre composant doivent exposer uniquement les fonctionnalités de langage qui font partie de la spécification [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md) . Vous pouvez utiliser l'attribut <xref:System.CLSCompliantAttribute> pour vous assurer que votre code est conforme CLS. Pour plus d'informations, consultez [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md).  
   
  [Retour au début](#introduction)  
   
@@ -95,7 +95,7 @@ ms.locfileid: "78160220"
   
  Pendant l'exécution, le code managé bénéficie de services tels que le garbage collection, la sécurité, l'interopérabilité avec le code non managé, la prise en charge du débogage interlangage ainsi que la prise en charge améliorée du déploiement et du versioning.  
   
- Dans Microsoft Windows Vista, le chargeur du système d’exploitation recherche des modules managés en examinant un bit dans l’en-tête COFF. Le bit défini indique un module managé. Si le chargeur détecte des modules managés, il charge mscoree.dll. `_CorValidateImage` et `_CorImageUnloading` informent le chargeur quand les images de modules managés sont chargées et déchargées. `_CorValidateImage` effectue les actions suivantes :  
+ Dans Microsoft Windows Vista, le chargeur de système d’exploitation vérifie les modules gérés en examinant un peu l’en-tête COFF. Le bit défini indique un module managé. Si le chargeur détecte des modules managés, il charge mscoree.dll. `_CorValidateImage` et `_CorImageUnloading` informent le chargeur quand les images de modules managés sont chargées et déchargées. `_CorValidateImage` effectue les actions suivantes :  
   
 1. garantit que le code est du code managé valide ;  
   
@@ -107,12 +107,12 @@ ms.locfileid: "78160220"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d'ensemble](../../docs/framework/get-started/overview.md)
+- [Vue d’ensemble](../../docs/framework/get-started/overview.md)
 - [Indépendance du langage et composants indépendants du langage](../../docs/standard/language-independence-and-language-independent-components.md)
 - [Métadonnées et composants autodescriptifs](../../docs/standard/metadata-and-self-describing-components.md)
-- [Ilasm.exe (assembleur IL)](../../docs/framework/tools/ilasm-exe-il-assembler.md)
+- [Ilasm.exe (Assembleur IL)](../../docs/framework/tools/ilasm-exe-il-assembler.md)
 - [Sécurité](../../docs/standard/security/index.md)
-- [Interopération avec du code non managé](../../docs/framework/interop/index.md)
+- [Interopération avec code non traité](../../docs/framework/interop/index.md)
 - [Déploiement](../../docs/framework/deployment/net-framework-applications.md)
 - [Assemblys dans .NET](assembly/index.md)
-- [Domaines d’application](../../docs/framework/app-domains/application-domains.md)
+- [Domaines d'application](../../docs/framework/app-domains/application-domains.md)

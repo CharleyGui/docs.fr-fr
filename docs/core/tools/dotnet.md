@@ -3,37 +3,37 @@ title: Commande dotnet
 description: En savoir plus sur la commande dotnet (le pilote générique pour le CLI .NET Core) et son utilisation.
 ms.date: 02/13/2020
 ms.openlocfilehash: da37c5cc3b019851e245fa3f65ae9dfb8a3fef54
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240868"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79398894"
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
-**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 2.1 SDK et les versions ultérieures
 
 ## <a name="name"></a>Nom
 
-`dotnet`-pilote générique du CLI .NET Core.
+`dotnet`- Le pilote générique pour le CLI .NET Core.
 
 ## <a name="synopsis"></a>Synopsis
 
-Pour obtenir des informations sur les commandes disponibles et l’environnement :
+Pour obtenir des informations sur les commandes disponibles et l’environnement :
 
 ```dotnetcli
 dotnet [-h|--help] [--version] [--info]
     [--list-runtimes] [--list-sdks]
 ```
 
-Pour exécuter une commande (installation du kit de développement logiciel (SDK) requise) :
+Pour exécuter une commande (nécessite l’installation SDK):
 
 ```dotnetcli
 dotnet <COMMAND> [-d|--diagnostics] [-h|--help] [--verbosity]
     [command-options] [arguments]
 ```
 
-Pour exécuter une application :
+Pour exécuter une application :
 
 ```dotnetcli
 dotnet [--additionalprobingpath] [--additional-deps]
@@ -45,27 +45,27 @@ dotnet exec [--additionalprobingpath] [--additional-deps]
     <PATH_TO_APPLICATION> [arguments]
 ```
 
-`--roll-forward` est disponible depuis .NET Core 3. x. Utilisez `--roll-forward-on-no-candidate-fx` pour .NET Core 2. x.
+`--roll-forward`est disponible depuis .NET Core 3.x. Utilisation `--roll-forward-on-no-candidate-fx` pour .NET Core 2.x.
 
 ## <a name="description"></a>Description
 
-La commande `dotnet` a deux fonctions :
+La `dotnet` commande a deux fonctions :
 
-- Il fournit des commandes pour travailler avec les projets .NET Core.
+- Il fournit des commandes pour travailler avec des projets .NET Core.
 
-  Par exemple, [`dotnet build`](dotnet-build.md) génère un projet. Chaque commande définit ses propres options et arguments. Toutes les commandes prennent en charge l’option `--help` pour imprimer une brève documentation sur la façon d’utiliser la commande.
+  Par exemple, [`dotnet build`](dotnet-build.md) construit un projet. Chaque commande définit ses propres options et arguments. Toutes les commandes `--help` prennent en charge l’option d’imprimer de la documentation brève sur la façon d’utiliser la commande.
 
 - Il exécute des applications .NET Core.
 
-  Vous spécifiez le chemin d’accès à un fichier d' `.dll` d’application pour exécuter l’application. Par exemple, `dotnet myapp.dll` exécute l’application `myapp`. Consultez [déploiement d’applications .net Core](../deploying/index.md) pour en savoir plus sur les options de déploiement.
+  Vous spécifiez `.dll` le chemin vers un fichier de demande pour exécuter l’application. Par exemple, `dotnet myapp.dll` `myapp` exécute l’application. Voir [le déploiement de l’application .NET Core](../deploying/index.md) pour en savoir plus sur les options de déploiement.
 
 ## <a name="options"></a>Options
 
-Différentes options sont disponibles pour la `dotnet` seule, pour exécuter une commande et pour exécuter une application.
+Différentes options sont `dotnet` disponibles pour lui-même, pour l’exécution d’une commande, et pour l’exécution d’une application.
 
-### <a name="options-for-dotnet-by-itself"></a>Options de dotnet par lui-même
+### <a name="options-for-dotnet-by-itself"></a>Options pour dotnet par lui-même
 
-Les options suivantes sont destinées à `dotnet` par elle-même. Par exemple : `dotnet --info`. Ils affichent des informations sur l’environnement.
+Les options suivantes `dotnet` sont pour lui-même. Par exemple : `dotnet --info`. Ils impriment des informations sur l’environnement.
 
 - **`--info`**
 
@@ -77,19 +77,19 @@ Les options suivantes sont destinées à `dotnet` par elle-même. Par exemple :
 
 - **`--list-runtimes`**
 
-  Imprime une liste des runtimes .NET Core installés.
+  Imprime une liste des temps d’exécution .NET Core installés.
 
 - **`--list-sdks`**
 
-  Affiche la liste des kits de développement logiciel (SDK) .NET Core installés.
+  Imprime une liste des SDKs .NET Core installés.
 
 - **`-h|--help`**
 
-  Imprime une liste des commandes disponibles.
+  Imprime une liste de commandes disponibles.
 
-### <a name="sdk-options-for-running-a-command"></a>Options du kit de développement logiciel pour exécuter une commande
+### <a name="sdk-options-for-running-a-command"></a>Options SDK pour l’exécution d’une commande
 
-Les options suivantes concernent `dotnet` avec une commande. Par exemple : `dotnet build --help`.
+Les options suivantes `dotnet` sont pour avec une commande. Par exemple : `dotnet build --help`.
 
 - **`-d|--diagnostics`**
 
@@ -97,7 +97,7 @@ Les options suivantes concernent `dotnet` avec une commande. Par exemple : `dot
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. Non pris en charge dans chaque commande. Consultez la page de commande spécifique pour déterminer si cette option est disponible.
+  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. Pas pris en charge dans tous les commandements. Voir la page de commande spécifique pour déterminer si cette option est disponible.
 
 - **`-h|--help`**
 
@@ -105,11 +105,11 @@ Les options suivantes concernent `dotnet` avec une commande. Par exemple : `dot
 
 - **`command options`**
 
-  Chaque commande définit des options spécifiques à cette commande. Pour obtenir la liste des options disponibles, consultez la page de commande spécifique.
+  Chaque commande définit les options spécifiques à cette commande. Voir la page de commande spécifique pour une liste d’options disponibles.
 
 ### <a name="runtime-options"></a>Options d’exécution
 
-Les options suivantes sont disponibles lorsque `dotnet` exécute une application. Par exemple : `dotnet myapp.dll --fx-version 3.1.1`.
+Les options suivantes `dotnet` sont disponibles lors de l’exécution d’une application. Par exemple : `dotnet myapp.dll --fx-version 3.1.1`.
 
 - **`--additionalprobingpath <PATH>`**
 
@@ -117,7 +117,7 @@ Les options suivantes sont disponibles lorsque `dotnet` exécute une application
 
 - **`--additional-deps <PATH>`**
 
-  Chemin d’un fichier *.deps.json* supplémentaire. Un fichier *DEPS. JSON* contient une liste de dépendances, de dépendances de compilation et d’informations de version utilisées pour traiter les conflits d’assembly. Pour plus d’informations, consultez [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) sur GitHub.
+  Chemin d’un fichier *.deps.json* supplémentaire. Un fichier *deps.json* contient une liste de dépendances, de dépendances de compilation et d’informations de version utilisées pour résoudre les conflits d’assemblage. Pour plus d’informations, consultez [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) sur GitHub.
 
 - **`--fx-version <VERSION>`**
 
@@ -125,9 +125,9 @@ Les options suivantes sont disponibles lorsque `dotnet` exécute une application
 
 - **`--runtimeconfig`**
 
-  Chemin d’un fichier *runtimeconfig.json*. Un fichier *runtimeconfig. JSON* est un fichier de configuration qui contient des paramètres d’exécution. Pour plus d’informations, consultez [paramètres de configuration du Runtime .net Core](../run-time-config/index.md#runtimeconfigjson).
+  Chemin d’un fichier *runtimeconfig.json*. Un fichier *runtimeconfig.json* est un fichier de configuration qui contient des paramètres de temps d’exécution. Pour plus d’informations, voir [paramètres de configuration .NET Core run-time](../run-time-config/index.md#runtimeconfigjson).
 
-- **`--roll-forward-on-no-candidate-fx <N>`** **disponibles dans le kit de développement logiciel (SDK) .net Core 2. x.**
+- **`--roll-forward-on-no-candidate-fx <N>`****Disponible en .NET Core 2.x SDK.**
 
   Définit le comportement quand le framework partagé requis n’est pas disponible. Voici à quoi `N` peut correspondre :
 
@@ -137,20 +137,20 @@ Les options suivantes sont disponibles lorsque `dotnet` exécute une application
 
    Pour plus d'informations, consultez [Restauration par progression](../whats-new/dotnet-core-2-1.md#roll-forward).
 
-- **`--roll-forward <SETTING>`** **disponibles à partir de kit SDK .net Core 3,0.**
+- **`--roll-forward <SETTING>`****Disponible en commençant par .NET Core SDK 3.0.**
 
-  Contrôle la façon dont la restauration par progression est appliquée à l’application. L' `SETTING` peut prendre l’une des valeurs suivantes. S’il n’est pas spécifié, `Minor` est la valeur par défaut.
+  Contrôle la façon dont le rouleau vers l’avant est appliqué à l’application. La `SETTING` peut être l’une des valeurs suivantes. S’il `Minor` n’est pas spécifié, est la valeur par défaut.
 
-  - `LatestPatch` : restauration par progression vers la version de correctif la plus récente. Cette valeur désactive la restauration par progression d’une version mineure.
-  - `Minor`-restaurer à la version mineure la plus basse, si la version mineure demandée est manquante. Si la version mineure demandée est présente, la stratégie LatestPatch est utilisée.
-  - `Major`-restaurer la version principale la plus basse, et la version mineure la plus faible, si la version principale demandée est manquante. Si la version principale demandée est présente, la stratégie mineure est utilisée.
-  - `LatestMinor` : restauration par progression vers la version mineure la plus élevée, même si la version mineure demandée est présente. Conçu pour les scénarios d’hébergement de composant.
-  - `LatestMajor` : restauration par progression vers la version mineure la plus élevée et la plus élevée, même si la version principale demandée est présente. Conçu pour les scénarios d’hébergement de composant.
-  - `Disable`-ne pas restaurer par progression. Lier uniquement à la version spécifiée. Cette stratégie n’est pas recommandée pour une utilisation générale, car elle désactive la possibilité d’effectuer une restauration par progression vers les derniers correctifs. Cette valeur est recommandée uniquement à des fins de test.
+  - `LatestPatch`- Roulez vers la version patch la plus élevée. Cette valeur désactive la restauration par progression d’une version mineure.
+  - `Minor`- Rouler vers l’avant à la version mineure supérieure la plus basse, si la version mineure demandée est manquante. Si la version mineure demandée est présente, la stratégie LatestPatch est utilisée.
+  - `Major`- Rouler vers l’avant à la version principale supérieure la plus basse, et la version mineure la plus basse, si la version majeure demandée est manquante. Si la version majeure demandée est présente, la stratégie Minor est utilisée.
+  - `LatestMinor`- Rouler vers la version mineure la plus élevée, même si la version mineure demandée est présente. Conçu pour les scénarios d’hébergement de composant.
+  - `LatestMajor`- Rouler vers l’avant à la plus haute version mineure majeure et la plus élevée, même si demandé majeur est présent. Conçu pour les scénarios d’hébergement de composant.
+  - `Disable`- Ne roulez pas vers l’avant. Lier uniquement à la version spécifiée. Cette stratégie n’est pas recommandée pour une utilisation générale, car elle désactive la possibilité d’effectuer une restauration par progression vers les derniers correctifs. Cette valeur est recommandée uniquement à des fins de test.
 
-À l’exception de `Disable`, tous les paramètres utilisent la version de correctif la plus élevée disponible.
+À l’exception de `Disable`, tous les paramètres utiliseront la version patch disponible la plus élevée.
 
-Le comportement de restauration par progression peut également être configuré dans une propriété de fichier projet, une propriété de fichier de configuration au moment de l’exécution et une variable d’environnement. Pour plus d’informations, consultez [restauration par progression du runtime de version principale](../whats-new/dotnet-core-3-0.md#major-version-runtime-roll-forward).
+Le comportement de roll forward peut également être configuré dans une propriété de fichier de projet, une propriété de fichier de configuration de temps d’exécution, et une variable d’environnement. Pour plus d’informations, voir [Le roll time de la version majeure vers l’avant](../whats-new/dotnet-core-3-0.md#major-version-runtime-roll-forward).
 
 ## <a name="dotnet-commands"></a>Commandes dotnet
 
@@ -171,7 +171,7 @@ Le comportement de restauration par progression peut également être configuré
 | [dotnet run](dotnet-run.md)                   | Exécute l’application à partir de la source.                                   |
 | [dotnet sln](dotnet-sln.md)                   | Options pour ajouter, supprimer et lister des projets dans un fichier solution.       |
 | [dotnet store](dotnet-store.md)               | Stocke les assemblys dans le magasin de packages de runtime.                     |
-| [dotnet test](dotnet-test.md)                 | Exécute des tests à l’aide d’un lanceur de tests.                                     |
+| [test dotnet](dotnet-test.md)                 | Exécute des tests à l’aide d’un lanceur de tests.                                     |
 
 ### <a name="project-references"></a>Références de projets
 
@@ -196,16 +196,16 @@ Commande | Fonction
 [dotnet nuget locals](dotnet-nuget-locals.md) | Efface ou liste les ressources NuGet locales telles que le cache de requête HTTP, le cache temporaire ou le dossier de packages globaux à l’échelle de l’ordinateur.
 [dotnet nuget push](dotnet-nuget-push.md) | Effectue une transmission de type push d’un package sur le serveur et le publie.
 
-### <a name="global-tool-path-and-local-tools-commands"></a>Commandes globales, de chemin d’accès d’outil et d’outils locaux
+### <a name="global-tool-path-and-local-tools-commands"></a>Commandes d’outils mondiaux, d’outils et d’outils locaux
 
-Les outils sont des applications console qui sont installées à partir de packages NuGet et sont appelées à partir de l’invite de commandes. Vous pouvez écrire vous-même des outils ou installer des outils écrits par des tiers. Les outils sont également appelés outils globaux, outils de chemin d’accès d’outil et outils locaux. Pour plus d’informations, consultez [vue d’ensemble des outils .net Core](global-tools.md). Les outils globaux et de chemin d’accès aux outils sont disponibles à partir de kit SDK .NET Core 2,1. Les outils locaux sont disponibles à partir de kit SDK .NET Core 3,0.
+Les outils sont des applications de console qui sont installées à partir de paquets NuGet et sont invoquées à partir de l’invite de commande. Vous pouvez écrire des outils vous-même ou installer des outils écrits par des tiers. Les outils sont également connus sous le nom d’outils globaux, d’outils de chemin à outils et d’outils locaux. Pour plus d’informations, voir [.NET Core outils aperçu](global-tools.md). Des outils globaux et de chemin d’outils sont disponibles à partir de .NET Core SDK 2.1. Les outils locaux sont disponibles à partir de .NET Core SDK 3.0.
 
 Commande | Fonction
 --- | ---
-[dotnet tool install](dotnet-tool-install.md) | Installe un outil sur votre ordinateur.
-[dotnet tool list](dotnet-tool-list.md) | Répertorie tous les outils globaux, de chemin d’accès d’outil ou locaux actuellement installés sur votre ordinateur.
-[dotnet tool uninstall](dotnet-tool-uninstall.md) | Désinstalle un outil de votre ordinateur.
-[dotnet tool update](dotnet-tool-update.md) | Met à jour un outil qui est installé sur votre ordinateur.
+[dotnet tool install](dotnet-tool-install.md) | Installe un outil sur votre machine.
+[dotnet tool list](dotnet-tool-list.md) | Répertorie tous les outils globaux, de chemin d’outils ou locaux actuellement installés sur votre machine.
+[dotnet tool uninstall](dotnet-tool-uninstall.md) | Désinstalle un outil de votre machine.
+[dotnet tool update](dotnet-tool-update.md) | Mise à jour d’un outil qui est installé sur votre machine.
 
 ### <a name="additional-tools"></a>Outils supplémentaires
 
@@ -214,16 +214,16 @@ Commande | Fonction
 | Outil                                              | Fonction                                                     |
 | ------------------------------------------------- | ------------------------------------------------------------ |
 | dev-certs                                         | Crée et gère les certificats de développement.                |
-| [ef](/ef/core/miscellaneous/cli/dotnet)           | Outils en ligne de commande Entity Framework Core.                    |
+| [Ef](/ef/core/miscellaneous/cli/dotnet)           | Outils en ligne de commande Entity Framework Core.                    |
 | sql-cache                                         | Outils en ligne de commande du cache SQL Server.                         |
 | [user-secrets](/aspnet/core/security/app-secrets) | Gère les secrets de développement de l’utilisateur.                            |
-| [watch](/aspnet/core/tutorials/dotnet-watch)      | Démarre un observateur de fichier qui exécute une commande à chaque modification de fichier. |
+| [Regarder](/aspnet/core/tutorials/dotnet-watch)      | Démarre un observateur de fichier qui exécute une commande à chaque modification de fichier. |
 
 Pour plus d’informations sur chaque outil, tapez `dotnet <tool-name> --help`.
 
 ## <a name="examples"></a>Exemples
 
-Créez une application de console .NET Core :
+Créez une nouvelle application de console .NET Core :
 
 ```dotnetcli
 dotnet new console
@@ -235,7 +235,7 @@ Générez un projet et ses dépendances dans un répertoire donné :
 dotnet build
 ```
 
-Exécuter une application :
+Exécuter une application:
 
 ```dotnetcli
 dotnet myapp.dll
@@ -245,7 +245,7 @@ dotnet myapp.dll
 
 - `DOTNET_ROOT`, `DOTNET_ROOT(x86)`
 
-  Spécifie l’emplacement des runtimes .NET Core, s’ils ne sont pas installés à l’emplacement par défaut. L’emplacement par défaut sur Windows est `C:\Program Files\dotnet`. L’emplacement par défaut sur Linux et macOS est `/usr/share/dotnet`. Cette variable d’environnement est utilisée uniquement lors de l’exécution d’applications via des exécutables générés (apphosts). `DOTNET_ROOT(x86)` est utilisé à la place lors de l’exécution d’un fichier exécutable 32 bits sur un système d’exploitation 64 bits.
+  Spécifie l’emplacement des temps d’exécution .NET Core, s’ils ne sont pas installés dans l’emplacement par défaut. L’emplacement par `C:\Program Files\dotnet`défaut sur Windows est . L’emplacement par défaut sur `/usr/share/dotnet`Linux et macOS est . Cette variable d’environnement n’est utilisée que lorsque vous exécutez des applications via des exécutables générés (apphosts). `DOTNET_ROOT(x86)`est utilisé à la place lors de l’exécution d’un 32 bits exécutable sur un système d’exploitation 64 bits.
 
 - `DOTNET_PACKAGES`
 
@@ -261,27 +261,27 @@ dotnet myapp.dll
 
 - `DOTNET_MULTILEVEL_LOOKUP`
 
-  Spécifie si le runtime .NET Core, le framework partagé ou le SDK sont résolus à partir de l’emplacement global. S’il n’est pas défini, la valeur par défaut est 1 (`true`logique). Affectez la valeur 0 (`false`logique) pour ne pas résoudre à partir de l’emplacement global et disposer d’installations .NET Core isolées. Pour plus d’informations sur la recherche multiniveau, consultez [Recherche SharedFX multiniveau](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
+  Spécifie si le runtime .NET Core, le framework partagé ou le SDK sont résolus à partir de l’emplacement global. Si elle n’est pas réglée, `true`elle par défaut à 1 (logique). Set à 0 `false`(logique) pour ne pas résoudre à partir de l’emplacement global et ont isolé les installations .NET Core. Pour plus d’informations sur la recherche multiniveau, consultez [Recherche SharedFX multiniveau](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
 
-- `DOTNET_ROLL_FORWARD` **disponibles à partir du kit de développement logiciel (SDK) .net Core 3. x.**
+- `DOTNET_ROLL_FORWARD`**Disponible en commençant par .NET Core 3.x SDK.**
 
-  Détermine le comportement de restauration par progression. Pour plus d’informations, consultez l’option `--roll-forward` plus haut dans cet article.
+  Détermine le comportement de rouler vers l’avant. Pour plus d’informations, voir l’option `--roll-forward` plus tôt dans cet article.
 
-- `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX` **disponibles dans le kit de développement logiciel (SDK) .net Core 2. x.**
+- `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX`**Disponible en .NET Core 2.x SDK.**
 
   Désactive la restauration par progression d’une version mineure, si la valeur est `0`. Pour plus d'informations, consultez [Restauration par progression](../whats-new/dotnet-core-2-1.md#roll-forward).
 
 - `DOTNET_CLI_UI_LANGUAGE`
 
-  Définit la langue de l’interface utilisateur CLI à l’aide d’une valeur de paramètres régionaux telle que `en-us`. Les valeurs prises en charge sont les mêmes que pour Visual Studio. Pour plus d’informations, consultez la section relative à la modification du langage d’installation dans la [documentation d’installation de Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2019). Les règles .NET Resource Manager s’appliquent. vous n’avez donc pas besoin de choisir une correspondance exacte&mdash;vous pouvez également choisir des descendants dans l’arborescence des `CultureInfo`. Par exemple, si vous affectez la valeur `fr-CA`, l’interface CLI trouvera et utilisera les traductions `fr`. Si vous définissez une langue qui n’est pas prise en charge, l’interface CLI revient à l’anglais.
+  Définit la langue de l’interface utilisateur CLI en utilisant une valeur locale telle que `en-us`. Les valeurs prises en charge sont les mêmes que pour Visual Studio. Pour plus d’informations, voir la section sur la modification de la langue de l’installateur dans la [documentation d’installation Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2019). Les règles de gestionnaire de ressources .NET s’appliquent, de sorte que vous n’avez pas à choisir un match&mdash;exact, vous pouvez également choisir les descendants dans l’arbre. `CultureInfo` Par exemple, si vous `fr-CA`le définissez, le `fr` CLI trouvera et utilisera les traductions. Si vous le définissez dans une langue qui n’est pas prise en charge, l’IMC retombe à l’anglais.
 
 - `DOTNET_DISABLE_GUI_ERRORS`
 
-  Pour les exécutables générés par l’interface utilisateur graphique : désactive la boîte de dialogue qui apparaît normalement pour certaines classes d’erreurs. Il écrit uniquement dans `stderr` et se termine dans ces cas.
+  Pour les exécutables générés par l’INTERFACE graphique - désactive le popup de dialogue qui s’affiche normalement pour certaines classes d’erreurs. Il n’écrit `stderr` et sort que dans ces cas.
   
 - `DOTNET_ADDITIONAL_DEPS`
 
-  Équivalent de l’option `--additional-deps`de l’interface CLI.
+  Équivalent à l’option `--additional-deps`CLI .
 
 - `DOTNET_RUNTIME_ID`
 
@@ -289,17 +289,17 @@ dotnet myapp.dll
 
 - `DOTNET_SHARED_STORE`
 
-  Emplacement du « magasin partagé » dans lequel la résolution de l’assembly revient dans certains cas.
+  L’emplacement du « magasin partagé » auquel la résolution d’assemblage revient dans certains cas.
 
 - `DOTNET_STARTUP_HOOKS`
 
-  Liste des assemblys à partir desquels charger et exécuter des raccordements de démarrage.
+  Liste des assemblages à charger et exécuter des crochets de démarrage à partir de.
 
 - `COREHOST_TRACE`, `COREHOST_TRACEFILE`, `COREHOST_TRACE_VERBOSITY`
 
-  Contrôle le suivi des diagnostics à partir des composants d’hébergement, tels que `dotnet.exe`, `hostfxr`et `hostpolicy`.
+  Contrôle les diagnostics traçant à `dotnet.exe`partir `hostfxr`des `hostpolicy`composants d’hébergement, tels que , , et .
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md)
-- [Paramètres de configuration du Runtime .NET Core](../run-time-config/index.md)
+- [paramètres de configuration de temps d’exécution .NET Core](../run-time-config/index.md)

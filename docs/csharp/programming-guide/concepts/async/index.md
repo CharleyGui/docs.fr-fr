@@ -2,12 +2,12 @@
 title: Programmation asynchrone en C#
 description: Vue d’ensemble de la prise en charge du langage C# pour la programmation asynchrone avec Async, Await, Task et Task<T>
 ms.date: 03/18/2019
-ms.openlocfilehash: 633da9485c5f74efb6e57234a31f0404e39605ec
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 4cbbff0f2c48f0ec2f8befa234ea5023465a1c5d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552433"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79169907"
 ---
 # <a name="asynchronous-programming-with-async-and-await"></a>Programmation asynchrone avec Async et Await
 
@@ -26,13 +26,13 @@ Si vous avez l’habitude de cuisiner, vous savez que ces instructions doivent �
 
 La préparation du petit-déjeuner est un bon exemple de travail asynchrone mais non parallèle. Une personne (ou un thread) peut gérer toutes ces tâches. Pour poursuivre l’analogie avec le petit-déjeuner, une personne peut préparer le petit-déjeuner de façon asynchrone en démarrant une tâche avant que la précédente ne soit terminée. En outre, la cuisson se poursuit, que vous la surveilliez ou non. Dès que vous commencez à faire chauffer la poêle pour les œufs, vous pouvez mettre le bacon à frire. Quand le bacon est en train de frire, vous pouvez mettre les tranches de pain dans le grille-pain.
 
-Pour un algorithme parallèle, vous auriez besoin de plusieurs cuisiniers (ou threads). L’un d’eux s’occuperait des œufs, un autre du bacon, etc. Chacun d’eux serait concentré sur une seule tâche. Chaque cuisinier (ou thread) serait bloqué de façon synchrone, car il devrait attendre que le bacon soit prêt à être retourné ou que le pain soit grillé. 
+Pour un algorithme parallèle, vous auriez besoin de plusieurs cuisiniers (ou threads). L’un d’eux s’occuperait des œufs, un autre du bacon, etc. Chacun d’eux serait concentré sur une seule tâche. Chaque cuisinier (ou thread) serait bloqué de façon synchrone, car il devrait attendre que le bacon soit prêt à être retourné ou que le pain soit grillé.
 
 Écrivons maintenant ces instructions sous la forme d’instructions C# :
 
 [!code-csharp[SynchronousBreakfast](~/samples/snippets/csharp/tour-of-async/AsyncBreakfast-starter/Program.cs#Main)]
 
-Les ordinateurs n’interprètent pas ces instructions de la même façon que les humains. L’ordinateur se bloque à chaque instruction jusqu’à ce que le travail soit terminé, avant de passer à l’instruction suivante. Avec une telle manière de procéder, notre petit-déjeuner risque de ne pas être très satisfaisant. En effet, chacune des tâches ne pourrait être démarrée qu’une fois la précédente terminée. De cette façon, la préparation du petit-déjeuner prendrait beaucoup plus de temps, et certains aliments refroidiraient avant d’être servis. 
+Les ordinateurs n’interprètent pas ces instructions de la même façon que les humains. L’ordinateur se bloque à chaque instruction jusqu’à ce que le travail soit terminé, avant de passer à l’instruction suivante. Avec une telle manière de procéder, notre petit-déjeuner risque de ne pas être très satisfaisant. En effet, chacune des tâches ne pourrait être démarrée qu’une fois la précédente terminée. De cette façon, la préparation du petit-déjeuner prendrait beaucoup plus de temps, et certains aliments refroidiraient avant d’être servis.
 
 Si vous souhaitez que l’ordinateur exécute les instructions ci-dessus de façon asynchrone, vous devez écrire du code asynchrone.
 
@@ -42,7 +42,7 @@ Une application moderne efficace a besoin de code asynchrone. Avant la prise en 
 
 ## <a name="dont-block-await-instead"></a>Éviter les blocages avec Await
 
-Le code précédent montre une pratique déconseillée : écrire du code synchrone pour effectuer des opérations asynchrones. Comme nous l’avons vu, ce code bloque le thread, qui ne peut pas exécuter d’autres tâches. Il ne sera pas interrompu tant que l’une des tâches est en cours d’exécution. Ce serait comme rester les yeux fixés sur le grille-pain après avoir mis le pain dedans. Vous n’écouteriez personne tant que le pain ne serait pas ressorti du grille-pain. 
+Le code précédent montre une pratique déconseillée : écrire du code synchrone pour effectuer des opérations asynchrones. Comme nous l’avons vu, ce code bloque le thread, qui ne peut pas exécuter d’autres tâches. Il ne sera pas interrompu tant que l’une des tâches est en cours d’exécution. Ce serait comme rester les yeux fixés sur le grille-pain après avoir mis le pain dedans. Vous n’écouteriez personne tant que le pain ne serait pas ressorti du grille-pain.
 
 Commençons par mettre à jour ce code pour que le thread ne se bloque pas pendant l’exécution des tâches. Le mot clé `await` permet de démarrer une tâche sans bloquer le thread, puis de poursuivre l’exécution une fois cette tâche terminée. La version asynchrone du code de préparation du petit-déjeuner ressemblerait à l’extrait de code suivant :
 

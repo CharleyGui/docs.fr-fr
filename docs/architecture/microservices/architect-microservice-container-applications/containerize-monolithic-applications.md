@@ -3,10 +3,10 @@ title: Mise en conteneur d’applications monolithiques
 description: Même si la conteneurisation d’applications monolithiques ne bénéficie pas de tous les avantages de l’architecture des microservices, elle présente des avantages importants relatifs au déploiement et disponibles immédiatement.
 ms.date: 01/30/2020
 ms.openlocfilehash: 0e6f7504a91d2b1a89193471746168fc34f50956
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77503283"
 ---
 # <a name="containerizing-monolithic-applications"></a>Mise en conteneur d’applications monolithiques
@@ -15,15 +15,15 @@ Vous pouvez créer une application ou un service web simple, déployé de façon
 
 Pour gérer ce modèle, vous déployez un seul conteneur pour représenter l’application. Pour augmenter la capacité, effectuez un scale-out. En d’autres termes, ajoutez simplement plus de copies avec un équilibreur de charge frontal. Cette simplicité provient de la gestion d’un seul déploiement dans un seul conteneur ou une seule machine virtuelle.
 
-![Diagramme montrant les composants d’une application en conteneur monolithique.](./media/containerize-monolithic-applications/monolithic-containerized-application.png)
+![Diagramme montrant les composants d’une application conteneurisée monolithique.](./media/containerize-monolithic-applications/monolithic-containerized-application.png)
 
 **Figure 4-1**. Exemple d’architecture d’une application monolithique en conteneur
 
-Vous pouvez inclure plusieurs composants, bibliothèques ou couches internes dans chaque conteneur, comme illustré dans la figure 4-1. Une application en conteneur monolithique possède la plupart de ses fonctionnalités au sein d’un seul conteneur, avec des couches ou des bibliothèques internes, et est mise à l’échelle en clonant le conteneur sur plusieurs serveurs/machines virtuelles. Toutefois, ce modèle monolithique peut être en conflit avec le principe des conteneurs, selon lequel « un conteneur fait une chose et la fait dans un seul processus ». Mais dans certains cas, cela peut convenir.
+Vous pouvez inclure plusieurs composants, bibliothèques ou couches internes dans chaque conteneur, comme illustré dans la figure 4-1. Une application monolithique conteneurisée a la plupart de ses fonctionnalités dans un seul conteneur, avec des couches internes ou des bibliothèques, et les échelles en clonant le conteneur sur plusieurs serveurs / VM. Toutefois, ce modèle monolithique peut être en conflit avec le principe des conteneurs, selon lequel « un conteneur fait une chose et la fait dans un seul processus ». Mais dans certains cas, cela peut convenir.
 
 L’inconvénient de cette approche devient évident si l’application grandit, nécessitant sa mise à l’échelle. Si la scalabilité de l’ensemble de l’application est possible, cela n’est pas réellement un problème. Cependant, dans la plupart des cas, seules quelques parties de l’application sont des goulots d’étranglement qui nécessitent une mise à l’échelle, tandis que d’autres composants sont moins utilisés.
 
-Par exemple, dans une application de e-commerce classique, il est probablement nécessaire de mettre à l’échelle le sous-système des informations sur les produits, car bien plus de clients les parcourent que ceux qui les achètent. Plus de clients utilisent leur panier d’achat que ceux qui utilisent le pipeline de paiement. Moins de clients ajoutent des commentaires ou consultent leur historique d’achat. Et vous n’avez peut-être que quelques employés qui doivent gérer le contenu et les campagnes marketing. Si vous mettez à l’échelle la conception monolithique, tout le code pour ces différentes tâches est déployé plusieurs fois et est mis à l’échelle au même niveau.
+Par exemple, dans une application de e-commerce classique, il est probablement nécessaire de mettre à l’échelle le sous-système des informations sur les produits, car bien plus de clients les parcourent que ceux qui les achètent. Plus de clients utilisent leur panier d’achat que ceux qui utilisent le pipeline de paiement. Moins de clients ajoutent des commentaires ou consultent leur historique d’achat. Et vous pourriez avoir seulement une poignée d’employés qui ont besoin de gérer le contenu et les campagnes de marketing. Si vous mettez à l’échelle la conception monolithique, tout le code pour ces différentes tâches est déployé plusieurs fois et est mis à l’échelle au même niveau.
 
 La scalabilité d’une application est possible de plusieurs façons : déduplication horizontale, division des différentes zones de l’application et partitionnement des concepts ou des données métier similaires. Toutefois, en plus du problème de mise à l’échelle de tous les composants, les modifications apportées à un seul composant nécessitent un nouveau test complet de l’application entière, ainsi qu’un redéploiement complet de toutes les instances.
 
@@ -39,7 +39,7 @@ Les applications monolithiques dans Microsoft Azure peuvent être déployées en
 
 Dans un environnement d’assurance qualité ou un environnement de production limité, vous pouvez déployer plusieurs machines virtuelles hôtes de Docker et les équilibrer avec l’équilibreur de charge d’Azure, comme le montre la figure 4-3. Ceci vous permet de gérer la mise à l’échelle avec une approche plus approximative, car la totalité de l’application se trouve dans un même conteneur.
 
-![Diagramme montrant plusieurs hôtes exécutant les conteneurs d’applications monolithiques.](./media/containerize-monolithic-applications/docker-infrastructure-monolithic-application.png)
+![Diagramme montrant plusieurs hôtes exécutant les conteneurs d’application monolithique.](./media/containerize-monolithic-applications/docker-infrastructure-monolithic-application.png)
 
 **Figure 4-3**. Exemple de plusieurs hôtes effectuant la montée en charge d’une application dans un seul conteneur
 
@@ -59,9 +59,9 @@ Bien que les applications monolithiques puissent tirer parti de Docker, nous n�
 
 Que vous vouliez obtenir la validation d’un conteneur déployé sur Azure ou quand une application est simplement une application avec un seul conteneur, Azure App Service offre un excellent moyen de fournir des services évolutifs basés sur un seul conteneur. L’utilisation d’Azure App Service est simple. Il fournit une intégration étroite avec Git qui permet de prendre facilement votre code, de générer l’application correspondante dans Visual Studio et de la déployer directement sur Azure.
 
-![Capture d’écran de la boîte de dialogue créer un App Service montrant une Container Registry.](./media/containerize-monolithic-applications/publish-azure-app-service-container.png)
+![Capture d’écran du dialogue Create App Service montrant un registre des conteneurs.](./media/containerize-monolithic-applications/publish-azure-app-service-container.png)
 
-**Figure 4-4**. Publication d’une application à conteneur unique sur Azure App Service à partir de Visual Studio 2019
+**Figure 4-4**. Publication d’une application à conteneur unique à Azure App Service à partir de Visual Studio 2019
 
 Sans Docker, si vous avez besoin d’autres fonctionnalités, frameworks ou dépendances qui ne sont pas pris en charge dans Azure App Service, vous devez attendre que l’équipe Azure mette à jour ces dépendances dans App Service. Vous pouviez aussi passer à d’autres services, comme Azure Cloud Services ou des machines virtuelles, où vous aviez davantage de contrôle et où vous pouviez installer un composant ou un framework nécessaire à votre application.
 
@@ -70,5 +70,5 @@ La prise en charge des conteneurs dans Visual Studio 2017 et versions ultérieu
 Comme le montre la figure 4-4, le flux de publication pousse (push) une image via un registre de conteneurs. Il peut s’agir d’Azure Container Registry (registre proche de vos déploiements dans Azure, et sécurisé par des comptes et des groupes Azure Active Directory), ou de tout autre registre Docker, comme Docker Hub ou un registre local.
 
 >[!div class="step-by-step"]
->[Précédent](index.md)
->[Suivant](docker-application-state-data.md)
+>[Suivant précédent](index.md)
+>[Next](docker-application-state-data.md)

@@ -3,10 +3,10 @@ title: Affectation de noms forts et bibliothèques .NET
 description: Meilleures pratiques recommandées pour l’affectation de noms forts aux bibliothèques .NET.
 ms.date: 10/16/2018
 ms.openlocfilehash: db268093b07a2ece7cdb8329fd789b52da9c5c32
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "76744537"
 ---
 # <a name="strong-naming"></a>Affectation de noms forts
@@ -43,11 +43,11 @@ Les avantages de l’affectation de noms forts sont les suivants :
 Vous devez donner à vos bibliothèques .NET open source des noms forts. L’affectation d’un nom fort à un assembly garantit que la plupart des personnes peuvent l’utiliser, et le chargement d’assembly strict affecte uniquement le .NET Framework.
 
 > [!NOTE]
-> Ce guide est spécifique aux bibliothèques .NET publiquement distribuées, telles que les bibliothèques .NET publiées sur NuGet.org. L’attribution d’un nom fort n’est pas requise par la plupart des applications .NET et ne doit pas être effectuée par défaut.
+> Ces directives sont spécifiques aux bibliothèques .NET distribuées publiquement, telles que les bibliothèques .NET publiées sur NuGet.org. La plupart des applications .NET ne sont pas requises par la plupart des applications .NET et ne doivent pas être faites par défaut.
 
-✔️ envisagez d’utiliser un nom fort pour les assemblys de votre bibliothèque.
+✔️ ENVISAGEZ de donner un nom fort aux assemblys de votre bibliothèque.
 
-✔️ envisagez d’ajouter la clé de nom fort à votre système de contrôle de code source.
+✔️ ENVISAGEZ d’ajouter la clé d’affectation de noms forts à votre système de contrôle source.
 
 > Une clé disponible publiquement permet aux développeurs de modifier et de recompiler le code source de votre bibliothèque avec la même clé.
 >
@@ -56,18 +56,18 @@ Vous devez donner à vos bibliothèques .NET open source des noms forts. L’aff
 > [!IMPORTANT]
 > Lorsque l’identité de l’éditeur du code est requise, [Authenticode](/windows-hardware/drivers/install/authenticode) et [Signature du package NuGet](/nuget/create-packages/sign-a-package) sont recommandés. La sécurité d’accès du code (CAS) ne doit pas être utilisée comme atténuation des risques de sécurité.
 
-✔️ envisagez d’incrémenter la version de l’assembly uniquement sur les modifications de version majeures pour aider les utilisateurs à réduire les redirections de liaison et la fréquence à laquelle elles sont mises à jour.
+✔️ ENVISAGEZ d’incrémenter la version de l’assembly sur les modifications de version principales uniquement afin d’aider les utilisateurs à réduire les redirections de liaison et la fréquence de mise à jour.
 
 > En savoir plus sur [le contrôle de version et la version de l’assembly](./versioning.md#assembly-version).
 
-❌ n’ajoutez pas, ne supprimez pas ou ne modifiez pas la clé de nom fort.
+❌NE PAS ajouter, supprimer ou modifier la clé de nommage forte.
 
 > La modification de la clé d’affectation de noms forts d’un assembly modifie l’identité de l’assembly et altère le code compilé qui l’utilise. Pour plus d'informations, consultez [Modifications importantes binaires](./breaking-changes.md#binary-breaking-change).
 
-❌ ne publiez pas de versions avec nom fort et non avec nom fort de votre bibliothèque. Par exemple : `Contoso.Api` et `Contoso.Api.StrongNamed`.
+❌NE publiez PAS de versions de votre bibliothèque, nommées en force et non. Par exemple, `Contoso.Api` et `Contoso.Api.StrongNamed`.
 
 > La publication deux packages duplique (fork) votre écosystème de développeur. En outre, si une application dépend des deux packages, le développeur peut rencontrer des conflits de noms de type. En ce qui concerne .NET, il existe des types différents dans des assemblys différents.
 
 >[!div class="step-by-step"]
->[Précédent](cross-platform-targeting.md)
->[Suivant](nuget.md)
+>[Suivant précédent](cross-platform-targeting.md)
+>[Next](nuget.md)

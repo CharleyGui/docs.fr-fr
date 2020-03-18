@@ -3,25 +3,25 @@ title: Seedwork (interfaces et classes de base réutilisables pour votre modèle
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Utiliser le concept de seedwork comme point de départ pour démarrer l’implémentation d’un modèle de domaine orienté DDD.
 ms.date: 10/08/2018
 ms.openlocfilehash: ab0aadc28dbd1175c75b04dadca29b7b0947f29b
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76116570"
 ---
 # <a name="seedwork-reusable-base-classes-and-interfaces-for-your-domain-model"></a>Seedwork (interfaces et classes de base réutilisables pour votre modèle de domaine)
 
-Le dossier solution contient un dossier *SeedWork*. Ce dossier contient des classes de base personnalisées que vous pouvez utiliser comme base pour les entités et les objets de valeur de votre domaine. Utilisez ces classes de base afin de ne pas avoir de code redondant dans la classe d’objets de chaque domaine. Le dossier de ces types de classes s’appelle *SeedWork* et non pas *Framework*. Il s’agit de *SeedWork* , car le dossier ne contient qu’un petit sous-ensemble de classes réutilisables qui ne peuvent pas vraiment être considérées comme une infrastructure. *Seedwork* est un terme introduit par [Michael Feathers](https://www.artima.com/forums/flat.jsp?forum=106&thread=8826) que [Martin Fowler](https://martinfowler.com/bliki/Seedwork.html) a rendu populaire, mais vous pouvez également donner à ce dossier le nom Common, SharedKernel ou un autre nom similaire.
+Le dossier solution contient un dossier *SeedWork*. Ce dossier contient des classes de base personnalisées que vous pouvez utiliser comme base pour les entités et les objets de valeur de votre domaine. Utilisez ces classes de base afin de ne pas avoir de code redondant dans la classe d’objets de chaque domaine. Le dossier de ces types de classes s’appelle *SeedWork* et non pas *Framework*. C’est ce qu’on appelle *SeedWork* parce que le dossier ne contient qu’un petit sous-ensemble de classes réutilisables qui ne peuvent pas vraiment être considérés comme un cadre. *Seedwork* est un terme introduit par [Michael Feathers](https://www.artima.com/forums/flat.jsp?forum=106&thread=8826) que [Martin Fowler](https://martinfowler.com/bliki/Seedwork.html) a rendu populaire, mais vous pouvez également donner à ce dossier le nom Common, SharedKernel ou un autre nom similaire.
 
 La figure 7-12 montre les classes qui constituent le seedwork du modèle de domaine dans le microservice Ordering. Il comporte quelques classes de base personnalisées comme Entity, ValueObject et Enumeration, ainsi que quelques interfaces. Ces interfaces (IRepository et IUnitOfWork) informent la couche d’infrastructure sur ce qui doit être implémenté. Elles sont également utilisées par injection de dépendances à partir de la couche Application.
 
 :::image type="complex" source="./media/seedwork-domain-model-base-classes-interfaces/vs-solution-seedwork-classes.png" alt-text="Capture d’écran des classes contenues dans le dossier SeedWork.":::
-Contenu détaillé du dossier SeedWork, contenant les classes et interfaces de base : Entity.cs, Enumeration.cs, IAggregateRoot.cs, IRepository.cs, IUnitOfWork.cs et ValueObject.cs.
+Le contenu détaillé du dossier SeedWork, contenant des classes de base et des interfaces : Entity.cs, Enumeration.cs, IAggregateRoot.cs, IRepository.cs, IUnitOfWork.cs et ValueObject.cs.
 :::image-end:::
 
 **Figure 7-12**. Exemple d’ensemble de classes de base et d’interfaces « seedwork » de modèle de domaine
 
-Il s’agit du type de réutilisation par copier- coller que de nombreux développeurs partagent entre les projets, et non d’un framework formel. Vous pouvez avoir des seedworks dans n’importe quelle couche ou bibliothèque. Toutefois, si l’ensemble de classes et d’interfaces est suffisamment grand, vous pouvez créer une bibliothèque de classes unique.
+Il s’agit du type de réutilisation par copier- coller que de nombreux développeurs partagent entre les projets, et non d’un framework formel. Vous pouvez avoir des seedworks dans n’importe quelle couche ou bibliothèque. Cependant, si l’ensemble des classes et des interfaces devient assez grand, vous voudrez peut-être créer une bibliothèque de classe unique.
 
 ## <a name="the-custom-entity-base-class"></a>Classe de base Entity personnalisée
 
@@ -143,5 +143,5 @@ public interface IRepository<T> where T : IAggregateRoot
   <https://www.martinfowler.com/eaaCatalog/separatedInterface.html>
 
 >[!div class="step-by-step"]
->[Précédent](net-core-microservice-domain-model.md)
->[Suivant](implement-value-objects.md)
+>[Suivant précédent](net-core-microservice-domain-model.md)
+>[Next](implement-value-objects.md)

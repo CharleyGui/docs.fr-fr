@@ -9,10 +9,10 @@ helpviewer_keywords:
 - garbage collection, weak references
 ms.assetid: 6a600fe5-3af3-4c64-82da-10a0a8e2d79b
 ms.openlocfilehash: 120777ca3c26b1634bd2143863547cfa4ea5deac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73141333"
 ---
 # <a name="weak-references"></a>Références faibles
@@ -31,11 +31,11 @@ Le Garbage collector ne peut pas collecter un objet actuellement utilisé par un
 ## <a name="short-and-long-weak-references"></a>Références faibles courtes et longues  
  Vous pouvez créer une référence faible courte ou une référence faible longue :  
   
-- Courte  
+- Court  
   
      La cible d’une référence faible courte devient `null` quand l’objet est récupéré par le garbage collection. La référence faible est elle-même un objet managé et fait l’objet d’un garbage collection comme tout autre objet managé.  Une référence faible courte est le constructeur sans paramètre pour <xref:System.WeakReference>.  
   
-- Longue  
+- Long  
   
      Une référence faible longue est conservée après l’appel de la méthode <xref:System.Object.Finalize%2A>. Cela permet à l’objet d’être recréé, mais l’état de l’objet reste imprévisible. Pour utiliser une référence longue, spécifiez `true` dans le constructeur <xref:System.WeakReference>.  
   
@@ -52,4 +52,4 @@ Le Garbage collector ne peut pas collecter un objet actuellement utilisé par un
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Nettoyage de la mémoire](../../../docs/standard/garbage-collection/index.md)
+- [Garbage collection](../../../docs/standard/garbage-collection/index.md)

@@ -3,16 +3,16 @@ title: Concepts et modèle objet du SDK .NET Compiler Platform
 description: Cette présentation fournit les informations dont vous avez besoin pour utiliser efficacement le SDK .NET Compiler Platform. Vous allez découvrir les différentes couches d’API, les principaux types utilisés et le modèle objet global.
 ms.date: 10/10/2017
 ms.custom: mvc
-ms.openlocfilehash: ee8f902bf1df8b63e229fd518e7a0c592fcd47ca
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: HT
+ms.openlocfilehash: e563260e21fb8807017db90ff63e30fec0415a48
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57675704"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156959"
 ---
 # <a name="understand-the-net-compiler-platform-sdk-model"></a>Comprendre le modèle du SDK .NET Compiler Platform
 
-Les compilateurs traitent le code que vous écrivez en suivant des règles structurées qui diffèrent souvent de la façon dont vous pouvez vous-même lire et comprendre le code. Pour bien comprendre le fonctionnement des API dont vous avez besoin pour créer des outils Roslyn, vous devez connaître les concepts de base du modèle utilisé par les compilateurs. 
+Les compilateurs traitent le code que vous écrivez en suivant des règles structurées qui diffèrent souvent de la façon dont vous pouvez vous-même lire et comprendre le code. Pour bien comprendre le fonctionnement des API dont vous avez besoin pour créer des outils Roslyn, vous devez connaître les concepts de base du modèle utilisé par les compilateurs.
 
 ## <a name="compiler-pipeline-functional-areas"></a>Zones fonctionnelles du pipeline de compilateur
 
@@ -30,7 +30,7 @@ Pour chacune de ces phases, le SDK .NET Compiler Platform expose un modèle obje
 
 Chaque compilateur combine ces composants en une solution de bout en bout unique.
 
-Ces API sont les mêmes que celles utilisées par Visual Studio. Par exemple, les fonctionnalités de mise en forme et en plan du code utilisent les arborescences de syntaxe, les fonctionnalités de l’Explorateur d’objets et de navigation utilisent la table de symboles, les fonctionnalités de refactorisation et Atteindre la définition utilisent le modèle sémantique, et la fonctionnalité Modifier et Continuer utilise tous ces éléments, y compris l’API d’émission. 
+Ces API sont les mêmes que celles utilisées par Visual Studio. Par exemple, les fonctionnalités de mise en forme et en plan du code utilisent les arborescences de syntaxe, les fonctionnalités de l’Explorateur d’objets et de navigation utilisent la table de symboles, les fonctionnalités de refactorisation et Atteindre la définition utilisent le modèle sémantique, et la fonctionnalité Modifier et Continuer utilise tous ces éléments, y compris l’API d’émission.
 
 ## <a name="api-layers"></a>Couches d’API
 

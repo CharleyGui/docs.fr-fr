@@ -1,15 +1,15 @@
 ---
-title: Comment combiner des délégués (délégués multicast)- C# Guide de programmation
+title: Comment combiner les délégués (délégués multicast) - Guide de programmation C
 ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], combining
 - multicast delegates [C#]
 ms.assetid: 4e689450-6d0c-46de-acfd-f961018ae5dd
 ms.openlocfilehash: 7b5b9ba5c9bf70983fac9f869836b4c8c5449eca
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75705377"
 ---
 # <a name="how-to-combine-delegates-multicast-delegates-c-programming-guide"></a>Comment combiner des délégués (délégués multicast) (Guide de programmation C#)
@@ -17,7 +17,7 @@ Cet exemple explique comment créer des délégués multicast. Une propriété u
   
  Vous pouvez utiliser l’opérateur `-` pour supprimer un délégué de composant d’un délégué multicast.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  [!code-csharp[csProgGuideDelegates#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#11)]  
   
 ## <a name="see-also"></a>Voir aussi

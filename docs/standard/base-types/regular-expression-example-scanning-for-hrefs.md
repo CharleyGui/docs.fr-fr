@@ -14,17 +14,17 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, examples
 ms.assetid: fae2c15b-7adf-4b15-b118-58eb3906994f
 ms.openlocfilehash: d8546980dd0cf58ca7c095750f2749d5a6bc7723
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73084226"
 ---
 # <a name="regular-expression-example-scanning-for-hrefs"></a>Exemple d'expression régulière : recherche de valeurs HREF
 L’exemple suivant recherche une chaîne d’entrée et affiche toutes les valeurs href="…" et leurs emplacements dans la chaîne.  
   
 ## <a name="the-regex-object"></a>Objet Regex  
- Étant donné que la méthode `DumpHRefs` peut être appelée plusieurs fois à partir du code utilisateur, la méthode <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> `static`(`Shared` dans Visual Basic) est utilisée. Ainsi, le moteur d’expression régulière peut mettre en cache l’expression régulière et éviter le traitement de l’instanciation d’un nouvel objet <xref:System.Text.RegularExpressions.Regex> chaque fois que la méthode est appelée. Un objet <xref:System.Text.RegularExpressions.Match> est alors utilisé pour effectuer une itération dans toutes les correspondances dans la chaîne.  
+ Étant donné que la méthode `DumpHRefs` peut être appelée plusieurs fois à partir du code utilisateur, la méthode <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType>`static`(`Shared` dans Visual Basic) est utilisée. Ainsi, le moteur d’expression régulière peut mettre en cache l’expression régulière et éviter le traitement de l’instanciation d’un nouvel objet <xref:System.Text.RegularExpressions.Regex> chaque fois que la méthode est appelée. Un objet <xref:System.Text.RegularExpressions.Match> est alors utilisé pour effectuer une itération dans toutes les correspondances dans la chaîne.  
   
  [!code-csharp[RegularExpressions.Examples.HREF#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.HREF/cs/example.cs#1)]
  [!code-vb[RegularExpressions.Examples.HREF#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.HREF/vb/example.vb#1)]  
@@ -36,7 +36,7 @@ L’exemple suivant recherche une chaîne d’entrée et affiche toutes les vale
   
  Le modèle d'expression régulière `href\s*=\s*(?:["'](?<1>[^"']*)["']|(?<1>\S+))` est interprété comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`href`|Correspond à la chaîne littérale « href ». La recherche de correspondance ne respecte pas la casse.|  
 |`\s*`|Correspond à zéro, un ou plusieurs espaces blancs.|  
@@ -56,4 +56,4 @@ L’exemple suivant recherche une chaîne d’entrée et affiche toutes les vale
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Expressions régulières .NET](../../../docs/standard/base-types/regular-expressions.md)
+- [Expressions régulières .NET](../../../docs/standard/base-types/regular-expressions.md)

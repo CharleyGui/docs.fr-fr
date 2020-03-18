@@ -3,10 +3,10 @@ title: Filtrage des données (C#)
 ms.date: 07/20/2015
 ms.assetid: fbaece0d-0f23-47f7-89c5-f3ea8db692b6
 ms.openlocfilehash: 74399244990f8ff2deaa1d10576ea94a57c16bee
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75346992"
 ---
 # <a name="filtering-data-c"></a>Filtrage des données (C#)
@@ -20,10 +20,10 @@ Le filtrage fait référence à l’opération de restriction du jeu de résulta
   
 ## <a name="methods"></a>Méthodes  
   
-|Nom de la méthode|Description|Syntaxe d'expression de requête C#|Plus d’informations|  
+|Nom de la méthode|Description|Syntaxe d'expression de requête C#|Informations complémentaires|  
 |-----------------|-----------------|---------------------------------|----------------------|  
 |OfType|Sélectionne des valeurs, en fonction de leur capacité à être castées en un type spécifié.|Non applicable.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|  
-|Où|Sélectionne les valeurs qui sont basées sur une fonction de prédicat.|`where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|  
+|Where|Sélectionne les valeurs qui sont basées sur une fonction de prédicat.|`where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Exemple de syntaxe d’expression de requête  
  L’exemple suivant utilise la clause `where` pour filtrer les chaînes d’un tableau qui ont une longueur spécifique.  
@@ -49,8 +49,8 @@ foreach (string str in query)
 
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
-- [where, clause](../../../language-reference/keywords/where-clause.md)
-- [Spécifier dynamiquement des filtres de prédicat au moment de l’exécution](../../../linq/dynamically-specify-predicate-filters-at-runtime.md)
-- [Comment interroger les métadonnées d’un assembly avec la réflexionC#(LINQ) ()](./how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
-- [Comment interroger des fichiers ayant un attribut ou un nom spécifiéC#()](./how-to-query-for-files-with-a-specified-attribute-or-name.md)
-- [Guide pratique pour trier ou filtrer des données texte par mot ou par champ (LINQC#) ()](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+- [où la clause](../../../language-reference/keywords/where-clause.md)
+- [Spécifier dynamiquement les filtres de prédication au moment de l’exécution](../../../linq/dynamically-specify-predicate-filters-at-runtime.md)
+- [Comment interroger les métadonnées d’une assemblée avec Réflexion (LINQ) (C)](./how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
+- [Comment interroger les fichiers avec un attribut ou un nom spécifié (C)](./how-to-query-for-files-with-a-specified-attribute-or-name.md)
+- [Comment trier ou filtrer les données de texte par n’importe quel mot ou champ (LINQ) (C)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

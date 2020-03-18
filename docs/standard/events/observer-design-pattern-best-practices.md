@@ -7,10 +7,10 @@ helpviewer_keywords:
 - best practices [.NET Framework], observer design pattern
 ms.assetid: c834760f-ddd4-417f-abb7-a059679d5b8c
 ms.openlocfilehash: 2da29e0baf429142707d0ddd39b1a11c13a17a90
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73141541"
 ---
 # <a name="observer-design-pattern-best-practices"></a>Meilleures pratiques du modèle de design observateur
@@ -54,5 +54,5 @@ Dans le .NET Framework, le modèle de conception observateur est implémenté co
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle de conception Observateur](../../../docs/standard/events/observer-design-pattern.md)
-- [Guide pratique pour implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md)
-- [Guide pratique pour implémenter un fournisseur](../../../docs/standard/events/how-to-implement-a-provider.md)
+- [Comment : implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md)
+- [Comment : implémenter un fournisseur](../../../docs/standard/events/how-to-implement-a-provider.md)

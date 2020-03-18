@@ -4,12 +4,12 @@ description: Découvrez toute la souplesse apportée par le modèle d’événem
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 9aa627c3-3222-4094-9ca8-7e88e1071e06
-ms.openlocfilehash: a916a09b622f8df9bf99fafe52f35c706220f484
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c8858158ede761db8a3002beb26e521880f77feb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039791"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79170434"
 ---
 # <a name="the-updated-net-core-event-pattern"></a>Modèle d’événement .NET Core mis à jour
 
@@ -59,7 +59,7 @@ Vous devez rapprocher ces deux nécessités opposées. D’une façon ou d’une
 ```csharp
 worker.StartWorking += async (sender, eventArgs) =>
 {
-    try 
+    try
     {
         await DoWorkAsync();
     }
@@ -72,7 +72,7 @@ worker.StartWorking += async (sender, eventArgs) =>
 };
 ```
 
-Notez d’abord que le gestionnaire est marqué en tant que gestionnaire asynchrone. Comme il est affecté à un type délégué de gestionnaire d’événements, il a un type de retour void. Cela signifie que vous devez suivre le modèle indiqué dans le gestionnaire et interdire la levée d’exceptions en dehors du contexte du gestionnaire asynchrone. Comme il ne retourne pas une tâche, aucune tâche ne peut signaler l’erreur en passant à l’état d’erreur. Comme la méthode est asynchrone, elle ne peut tout simplement pas lever l’exception. (La méthode d’appel a continué à s’exécuter, car elle est `async`.) Le comportement réel du runtime sera défini différemment pour différents environnements. Elle peut arrêter le thread ou le processus qui possède le thread, ou conserver le processus dans un état indéterminé. Tous ces résultats potentiels sont très indésirables.
+Notez d’abord que le gestionnaire est marqué en tant que gestionnaire asynchrone. Comme il est affecté à un type délégué de gestionnaire d’événements, il a un type de retour void. Cela signifie que vous devez suivre le modèle indiqué dans le gestionnaire et interdire la levée d’exceptions en dehors du contexte du gestionnaire asynchrone. Comme il ne retourne pas une tâche, aucune tâche ne peut signaler l’erreur en passant à l’état d’erreur. Comme la méthode est asynchrone, elle ne peut tout simplement pas lever l’exception. (La méthode d’appel a `async`continué l’exécution parce qu’elle est .) Le comportement réel en temps d’exécution sera défini différemment pour différents environnements. Il peut mettre fin au thread ou au processus qui possède le thread, ou laisser le processus dans un état indéterminé. Tous ces résultats potentiels sont très indésirables.
 
 C’est pourquoi vous devez encapsuler l’instruction await pour la tâche asynchrone dans votre propre bloc try. Si elle entraîne une erreur dans une tâche, vous pouvez consigner cette erreur. Si c’est une erreur dont votre application ne peut pas récupérer, vous pouvez quitter le programme rapidement et normalement.
 

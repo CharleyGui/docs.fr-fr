@@ -1,15 +1,15 @@
 ---
-title: Comment interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ)C#()
+title: Comment interroger le plus grand fichier ou fichiers dans un arbre d’annuaire (LINQ) (C)
 ms.date: 07/20/2015
 ms.assetid: 20c8a917-0552-4514-b489-0b8b6a4c3b4c
-ms.openlocfilehash: dee501dc8d0cabd718307b45c99ca049ae4250aa
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: ed7d610bd292be4062db89f3c94af280e851141f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344564"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168763"
 ---
-# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>Comment interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ)C#()
+# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>Comment interroger le plus grand fichier ou fichiers dans un arbre d’annuaire (LINQ) (C)
 Cet exemple montre cinq requêtes liées à la taille des fichiers en octets :  
   
 - Comment récupérer la taille en octets du plus grand fichier.  
@@ -22,7 +22,7 @@ Cet exemple montre cinq requêtes liées à la taille des fichiers en octets :
   
 - Comment regrouper des fichiers selon leur taille en octets, en ignorant les fichiers qui sont inférieurs à une taille spécifiée.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant contient cinq requêtes distinctes qui montrent comment interroger et regrouper des fichiers selon leur taille en octets. Vous pouvez facilement modifier ces exemples pour baser la requête sur une autre propriété de l’objet <xref:System.IO.FileInfo>.  
   
 ```csharp  
@@ -96,7 +96,7 @@ class QueryBySize
         }  
   
         // Group the files according to their size, leaving out  
-        // files that are less than 200000 bytes.   
+        // files that are less than 200000 bytes.
         var querySizeGroups =  
             from file in fileList  
             let len = GetFileLength(file)  
@@ -144,7 +144,7 @@ class QueryBySize
   
 ## <a name="compiling-the-code"></a>Compilation du code  
 Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.
- 
+
 ## <a name="see-also"></a>Voir aussi
 
 - [LINQ to Objects (C#)](./linq-to-objects.md)

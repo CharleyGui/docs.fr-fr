@@ -7,12 +7,12 @@ helpviewer_keywords:
 - indexers [C#]
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
-ms.openlocfilehash: c00f506a682ec5d9805537b80159fd41d2174b67
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 539b2861e975c0c758c43c8a5d4cca86e3d2bb2c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75702946"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79167537"
 ---
 # <a name="indexers-c-programming-guide"></a>Indexeurs (Guide de programmation C#)
 
@@ -26,12 +26,12 @@ Les indexeurs permettent aux instances d'une classe ou d'un struct d'être index
 > Pour plus d’exemples, consultez [Rubriques connexes](./index.md#BKMK_RelatedSections).  
   
 ## <a name="expression-body-definitions"></a>Définitions de corps d'expression  
- 
+
 Il est courant pour l’accesseur get ou set d’un indexeur d’être constitué d’une instruction unique qui retourne ou définit une valeur. Les membres expression-bodied fournissent une syntaxe simplifiée pour prendre en charge ce scénario. À partir de C# 6, un indexeur en lecture seule peut être implémenté comme un membre expression-bodied, comme le montre l’exemple suivant.
 
 [!code-csharp[indexers#2](../../../../samples/snippets/csharp/programming-guide/indexers/indexer-2.cs)]  
 
-Notez que `=>` introduit le corps de l’expression et que le mot clé `get` n’est pas utilisé. 
+Notez que `=>` introduit le corps de l’expression et que le mot clé `get` n’est pas utilisé.
 
 À partir de C# 7.0, l’accesseur get et l’accesseur set peuvent être implémentés en tant que membres expression-bodied. Dans ce cas, les deux mots clés `get` et `set` doivent être utilisés. Par exemple :
 
@@ -53,9 +53,9 @@ Notez que `=>` introduit le corps de l’expression et que le mot clé `get` n�
   
 - Les indexeurs peuvent avoir plusieurs paramètres formels, par exemple, quand vous accédez à un tableau à deux dimensions.  
   
-## <a name="BKMK_RelatedSections"></a> Rubriques connexes  
+## <a name="BKMK_RelatedSections"></a>Sections connexes  
   
-- [Utilisation d’indexeurs](./using-indexers.md)  
+- [Utilisation des indexeurs](./using-indexers.md)  
   
 - [Indexeurs dans les interfaces](./indexers-in-interfaces.md)  
   

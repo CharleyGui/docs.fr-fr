@@ -9,10 +9,10 @@ helpviewer_keywords:
 - international applications [.NET Framework], best practices
 ms.assetid: f08169c7-aad8-4ec3-9a21-9ebd3b89986c
 ms.openlocfilehash: a2cd1039f95a763002922fc2fa24eff77838de80
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73141303"
 ---
 # <a name="best-practices-for-developing-world-ready-applications"></a>Meilleures pratiques pour développer des applications internationales
@@ -49,7 +49,7 @@ Cette section décrit les meilleures pratiques pour développer des applications
 
 9. Testez les fonctionnalités de votre application sur des versions internationales des systèmes d'exploitation, en utilisant des données internationales.
 
-10. Si une décision relative à la sécurité est basée sur le résultat d’une opération de comparaison de chaînes ou de changement de casse, utilisez une opération de chaînes indépendante de la culture. Cette pratique garantit que le résultat n'est pas affecté par la valeur de `CultureInfo.CurrentCulture`. Consultez la section [« Comparaisons de chaînes qui utilisent la culture actuelle »](../../../docs/standard/base-types/best-practices-strings.md#string-comparisons-that-use-the-current-culture) du document [Bonnes pratiques pour l’utilisation de chaînes](../../../docs/standard/base-types/best-practices-strings.md) pour voir un exemple montrant comment les comparaisons de chaînes dépendantes de la culture peuvent produire des résultats incohérents.
+10. Si une décision relative à la sécurité est basée sur le résultat d’une opération de comparaison de chaînes ou de changement de casse, utilisez une opération de chaînes indépendante de la culture. Cette pratique garantit que le résultat n'est pas affecté par la valeur de `CultureInfo.CurrentCulture`. Voir la section [« Comparaisons de cordes qui utilisent la culture actuelle »](../../../docs/standard/base-types/best-practices-strings.md#string-comparisons-that-use-the-current-culture) des meilleures pratiques pour [l’utilisation des cordes,](../../../docs/standard/base-types/best-practices-strings.md) par exemple, qui démontre comment les comparaisons de chaînes sensibles à la culture peuvent produire des résultats incohérents.
 
 ## <a name="localization-best-practices"></a>Meilleures pratiques de localisation
 
@@ -91,7 +91,7 @@ Cette section décrit les meilleures pratiques pour développer des applications
 
 4. Spécifiez les valeurs des attributs requestEncoding, responseEncoding, fileEncoding, culture et uiCulture aux trois emplacements suivants dans une application ASP.NET :
 
-    - Dans la section globalisation d'un fichier Web.config. Ce fichier est externe à l'application ASP.NET. Pour plus d'informations, consultez la page [\<globalization> Element](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hy4kkhe0(v=vs.100)).
+    - Dans la section globalisation d'un fichier Web.config. Ce fichier est externe à l'application ASP.NET. Pour plus d’informations, voir [ \<la mondialisation> Element](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hy4kkhe0(v=vs.100)).
 
     - Dans une directive de page. Notez que lorsqu'une application se trouve dans une page, le fichier a déjà été lu. De ce fait, il est trop tard pour spécifier fileEncoding et requestEncoding. Seuls uiCulture, Culture et responseEncoding peuvent être spécifiés dans une directive de page.
 

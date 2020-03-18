@@ -8,10 +8,10 @@ helpviewer_keywords:
 - multifile assemblies
 ms.assetid: 54832ee9-dca8-4c8b-913c-c0b9d265e9a4
 ms.openlocfilehash: 81fffb2b2e1d56d6068bf6f663a13fad6968a383
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73740509"
 ---
 # <a name="create-assemblies"></a>Créer des assemblys
@@ -22,7 +22,7 @@ Vous pouvez créer un assembly multifichier à partir de plusieurs modules de co
 
 Vous disposez de plusieurs options quand vous regroupez des modules de code et des ressources dans des assemblys, en fonction des facteurs suivants :
 
-- Gestion de version
+- Contrôle de version
 
      Regroupez les modules qui doivent avoir les mêmes informations de version.
 
@@ -38,16 +38,16 @@ Vous disposez de plusieurs options quand vous regroupez des modules de code et d
 
      Regroupez les modules contenant des types qui nécessitent les mêmes autorisations de sécurité.
 
-- Portée
+- Scoping
 
      Regroupez les modules contenant des types dont la visibilité doit être limitée au même assembly.
 
-Des considérations particulières sont à prendre en compte lors de la mise à disposition des assemblys de common language runtime pour les applications COM non managées. Pour plus d’informations sur l’utilisation de code non managé, consultez [exposer des .NET Framework Components à com](../../framework/interop/exposing-dotnet-components-to-com.md).
+Il y a des considérations particulières lorsque l’on peut mettre des assemblages de temps d’exécution de langage commun à la disposition des applications COM non gérées. Pour plus d’informations sur le travail avec le code non-gestion, voir [Expose .NET Composants cadre à COM](../../framework/interop/exposing-dotnet-components-to-com.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Contrôle de version des assemblys](versioning.md)
-- [Comment : générer un assembly à fichier unique](../../framework/app-domains/build-single-file-assembly.md)
-- [Comment : générer un assembly multifichier](../../framework/app-domains/build-multifile-assembly.md)
-- [Méthode de localisation des assemblys par le runtime](../../framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Comment : Construire un assemblage à un seul fichier](../../framework/app-domains/build-single-file-assembly.md)
+- [Comment : Construire un assemblage multifils](../../framework/app-domains/build-multifile-assembly.md)
+- [Comment le temps d’exécution localise les assemblages](../../framework/deployment/how-the-runtime-locates-assemblies.md)
 - [Assemblys multifichiers](../../framework/app-domains/multifile-assemblies.md)

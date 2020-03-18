@@ -12,10 +12,10 @@ helpviewer_keywords:
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
 ms.openlocfilehash: e5815058898cac165e7a47d761ee86bb9c4cb940
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73091591"
 ---
 # <a name="numerics-in-net"></a>Valeurs numériques dans .NET
@@ -26,14 +26,14 @@ ms.locfileid: "73091591"
 
 .NET prend en charge à la fois les types d’entier signés et non signés 8, 16, 32 et 64 bits, répertoriés dans le tableau suivant :
   
-|Tapez|Signé/Non signé|Taille (en octets)|Valeur minimale|Valeur maximale|  
+|Type|Signé/Non signé|Taille (en octets)|Valeur minimale|Valeur maximale|  
 |----------|----------------------|--------------------|-------------------|-------------------|  
 |<xref:System.Byte?displayProperty=nameWithType>|Non signé|1|0|255|  
-|<xref:System.Int16?displayProperty=nameWithType>|Signé|2|-32,768|32,767|  
-|<xref:System.Int32?displayProperty=nameWithType>|Signé|4|-2,147,483,648|2,147,483,647|  
+|<xref:System.Int16?displayProperty=nameWithType>|Signé|2|-32,768|32 767|  
+|<xref:System.Int32?displayProperty=nameWithType>|Signé|4|-2,147,483,648|2 147 483 647|  
 |<xref:System.Int64?displayProperty=nameWithType>|Signé|8|-9,223,372,036,854,775,808|9,223,372,036,854,775,807|  
 |<xref:System.SByte?displayProperty=nameWithType>|Signé|1|-128|127|  
-|<xref:System.UInt16?displayProperty=nameWithType>|Non signé|2|0|65,535|  
+|<xref:System.UInt16?displayProperty=nameWithType>|Non signé|2|0|65 535|  
 |<xref:System.UInt32?displayProperty=nameWithType>|Non signé|4|0|4,294,967,295|  
 |<xref:System.UInt64?displayProperty=nameWithType>|Non signé|8|0|18 446 744 073 709 551 615|  
   
@@ -52,10 +52,10 @@ La structure <xref:System.Numerics.BigInteger?displayProperty=nameWithType> est 
 
 .NET comprend trois types à virgule flottante primitifs, qui sont répertoriés dans le tableau suivant :
   
-|Tapez|Taille (en octets)|Plage approximative|Précision|  
+|Type|Taille (en octets)|Plage approximative|Precision|  
 |----------|--------|---------------------|--------------------|  
 |<xref:System.Single?displayProperty=nameWithType>|4|±1,5 x 10<sup>−45</sup> à ±3,4 x 10<sup>38</sup>|~6-9 chiffres|  
-|<xref:System.Double?displayProperty=nameWithType>|8|De ±5,0 × 10<sup>−324</sup> à ±1,7 × 10<sup>308</sup>|~15-17 chiffres|  
+|<xref:System.Double?displayProperty=nameWithType>|8|De ±5,0 × 10<sup>−324</sup> à ±1,7 × 10<sup>308</sup>|~15-17 chiffres|  
 |<xref:System.Decimal?displayProperty=nameWithType>|16|±1,0 x 10<sup>-28</sup> to ±7,9228 x 10<sup>28</sup>|28 à 29 chiffres|  
   
 Les deux types <xref:System.Single> et <xref:System.Double> prennent en charge des valeurs spéciales qui représentent une valeur NaN (N’est pas un nombre) et l’infini. Par exemple, le type <xref:System.Double> fournit les valeurs suivantes : <xref:System.Double.NaN?displayProperty=nameWithType>, <xref:System.Double.NegativeInfinity?displayProperty=nameWithType> et <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>. Vous utilisez les méthodes <xref:System.Double.IsNaN%2A?displayProperty=nameWithType>, <xref:System.Double.IsInfinity%2A?displayProperty=nameWithType>, <xref:System.Double.IsPositiveInfinity%2A?displayProperty=nameWithType> et <xref:System.Double.IsNegativeInfinity%2A?displayProperty=nameWithType> pour tester ces valeurs spéciales.
@@ -96,4 +96,4 @@ Les types compatibles SIMD sont implémentés de telle sorte qu’ils peuvent ê
 ## <a name="see-also"></a>Voir aussi
 
 - [Application Essentials](application-essentials.md)
-- [Chaînes de format numériques standard](base-types/standard-numeric-format-strings.md)
+- [Standard Numeric Format Strings](base-types/standard-numeric-format-strings.md)

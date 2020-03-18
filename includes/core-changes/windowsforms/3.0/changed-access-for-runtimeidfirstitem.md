@@ -1,26 +1,26 @@
 ---
 ms.openlocfilehash: 5bbbf9075683b0f124e126b661b4ab85011e6c2e
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74644046"
 ---
-### <a name="change-of-access-for-accessibleobjectruntimeidfirstitem"></a>Changement d’accès pour AccessibleObject. RuntimeIDFirstItem
+### <a name="change-of-access-for-accessibleobjectruntimeidfirstitem"></a>Changement d’accès pour AccessibleObject.RuntimeIDFirstItem
 
-À compter de .NET Core 3,0 RC1, l’accessibilité de `AccessibleObject.RuntimeIDFirstItem` est passée de `protected` à `internal`.
+À partir de .NET Core 3.0 `AccessibleObject.RuntimeIDFirstItem` RC1, l’accessibilité de a changé de `protected` . `internal`
 
-#### <a name="change-description"></a>Modifier la description
+#### <a name="change-description"></a>Description de la modification
 
-À compter de .NET Core 3,0 Preview 4, le champ `AccessibleObject.RuntimeIDFirstItem` était `protected`. À compter de .NET Core 3,0 RC1, il est passé de `protected` à `internal` pour s’aligner avec l’accessibilité du champ dans le .NET Framework.
+En commençant par .NET Core 3.0 Aperçu 4, le `AccessibleObject.RuntimeIDFirstItem` champ a été `protected`. À partir de .NET Core 3.0 `protected` RC1, il est passé de l’autre `internal` pour s’aligner sur l’accessibilité du champ dans le cadre .NET.
 
 #### <a name="version-introduced"></a>Version introduite
 
-3,0 RC1
+3.0 RC1
 
 #### <a name="recommended-action"></a>Action recommandée
 
-La modification peut vous affecter si vous avez développé une application .NET Core avec un type dérivant de <xref:System.Windows.Forms.AccessibleObject> et que vous accédez au champ `RuntimeIDFirstItem`. Si c’est le cas, vous pouvez définir une constante locale comme suit :
+La modification peut vous affecter si vous avez développé une application <xref:System.Windows.Forms.AccessibleObject> .NET Core `RuntimeIDFirstItem` avec un type qui dérive et accède au champ. Si c’est le cas, vous pouvez définir une constante locale comme suit :
 
 ```csharp
 const int RuntimeIDFirstItem = 0x2a;
@@ -32,7 +32,7 @@ Windows Forms
 
 #### <a name="affected-apis"></a>API affectées
 
-- Non détectable via l’analyse des API.
+- Non détectable par l’analyse de l’API.
 
 <!-- 
 

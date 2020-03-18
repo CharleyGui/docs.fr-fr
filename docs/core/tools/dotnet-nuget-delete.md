@@ -4,15 +4,15 @@ description: La commande nuget-dotnet-delete supprime ou retire un package du se
 author: karann-msft
 ms.date: 06/26/2019
 ms.openlocfilehash: 0950f03c0986bde17ae3e2e7170d402ea8222853
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76733124"
 ---
 # <a name="dotnet-nuget-delete"></a>dotnet nuget delete
 
-**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 1. x et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 1.x SDK et les versions ultérieures
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
@@ -22,7 +22,7 @@ ms.locfileid: "76733124"
 
 `dotnet nuget delete` -Supprime ou retire un package du serveur.
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
 dotnet nuget delete [<PACKAGE_NAME> <PACKAGE_VERSION>] [--force-english-output] [--interactive] [-k|--api-key] [--no-service-endpoint]
@@ -32,7 +32,7 @@ dotnet nuget delete [-h|--help]
 
 ## <a name="description"></a>Description
 
-La commande `dotnet nuget delete` supprime ou retire un package du serveur. Pour [nuget.org](https://www.nuget.org/), l’action consiste à supprimer le package de la liste.
+La commande `dotnet nuget delete` supprime ou retire un package du serveur. Pour [nuget.org,](https://www.nuget.org/)l’action consiste à délister le paquet.
 
 ## <a name="arguments"></a>Arguments
 

@@ -16,10 +16,10 @@ helpviewer_keywords:
 - components [.NET Framework], metadata
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
 ms.openlocfilehash: a4f4c0e1af379d31c5b478472780d5c7de813bf6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73121935"
 ---
 # <a name="metadata-and-self-describing-components"></a>Métadonnées et composants autodescriptifs
@@ -157,11 +157,11 @@ Le compilateur JIT lit le code MSIL de la totalité de la méthode, l'analyse in
 
 Le tableau suivant montre une partie de la table **MethodDef** référencée par le jeton de métadonnées qui décrit la méthode `Add`. Bien qu'il existe d'autres tables de métadonnées dans cet assembly et qu'elles aient leurs propres valeurs uniques, seule cette table est prise en compte dans le tableau.
 
-|Ligne|Adresse RVA (Relative Virtual Address)|ImplFlags|Indicateurs|Name<br /><br /> (pointe vers le tas de chaîne)|Signature (pointe vers le tas de blob)|
+|Ligne|Adresse RVA (Relative Virtual Address)|ImplFlags|Indicateurs|Nom<br /><br /> (pointe vers le tas de chaîne)|Signature (pointe vers le tas de blob)|
 |---------|--------------------------------------|---------------|-----------|-----------------------------------------|----------------------------------------|
-|1|0x00002050|IL<br /><br /> Managé|Public<br /><br /> ReuseSlot<br /><br /> SpecialName<br /><br /> RTSpecialName<br /><br /> .ctor|.ctor (constructeur)||
-|2|0x00002058|IL<br /><br /> Managé|Public<br /><br /> Static<br /><br /> ReuseSlot|Main|Chaîne|
-|3|0x0000208c|IL<br /><br /> Managé|Public<br /><br /> Static<br /><br /> ReuseSlot|Ajouter|int, int, int|
+|1|0x00002050|IL<br /><br /> Adresses IP gérées|Public<br /><br /> ReuseSlot<br /><br /> SpecialName<br /><br /> RTSpecialName<br /><br /> .ctor|.ctor (constructeur)||
+|2|0x00002058|IL<br /><br /> Adresses IP gérées|Public<br /><br /> statique<br /><br /> ReuseSlot|Principal|String|
+|3|0x0000208c|IL<br /><br /> Adresses IP gérées|Public<br /><br /> statique<br /><br /> ReuseSlot|Ajouter|int, int, int|
 
 Chaque colonne de la table contient des informations importantes concernant votre code. La colonne **RVA** permet au runtime de calculer l’adresse mémoire de départ du code MSIL qui définit la méthode. Les colonnes **ImplFlags** et **Flags** contiennent des masques de bits qui décrivent la méthode (par exemple, ils indiquent si la méthode est publique ou privée). La colonne **Name** indexe le nom de la méthode à partir du tas de chaîne. La colonne **Signature** indexe la définition de la signature de la méthode dans le tas de blob.
 
@@ -171,6 +171,6 @@ Grâce aux métadonnées, le runtime a accès à toutes les informations dont il
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-----------|-----------------|
 |[Attributs](../../docs/standard/attributes/index.md)|Décrit comment appliquer les attributs, écrire des attributs personnalisés et récupérer les informations stockées dans les attributs.|

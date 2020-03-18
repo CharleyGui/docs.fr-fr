@@ -1,50 +1,50 @@
 ---
-title: Paramètres de configuration du garbage collector
-description: En savoir plus sur les paramètres d’exécution pour la configuration de la façon dont le garbage collector gère la mémoire pour les applications .NET Core.
+title: Arrangements de config de collecteur d’ordures
+description: Découvrez les paramètres de course pour configurer comment le collecteur d’ordures gère la mémoire des applications .NET Core.
 ms.date: 01/09/2020
 ms.topic: reference
 ms.openlocfilehash: 044083d69601f5092724a46d358b2ee5673d428d
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76733519"
 ---
-# <a name="run-time-configuration-options-for-garbage-collection"></a>Options de configuration au moment de l’exécution pour garbage collection
+# <a name="run-time-configuration-options-for-garbage-collection"></a>Options de configuration en temps d’exécution pour la collecte des ordures
 
-Cette page contient des informations sur les paramètres de garbage collector (GC) qui peuvent être modifiés au moment de l’exécution. Si vous essayez d’atteindre les performances maximales d’une application en cours d’exécution, envisagez d’utiliser ces paramètres. Toutefois, les valeurs par défaut offrent des performances optimales pour la plupart des applications dans des situations typiques.
+Cette page contient des informations sur les paramètres de collecteur d’ordures (GC) qui peuvent être modifiés au moment de l’exécution. Si vous essayez d’atteindre les performances maximales d’une application en cours d’exécution, envisagez d’utiliser ces paramètres. Cependant, les défauts offrent des performances optimales pour la plupart des applications dans des situations typiques.
 
-Les paramètres sont organisés en groupes dans cette page. Les paramètres de chaque groupe sont couramment utilisés conjointement les uns avec les autres pour obtenir un résultat spécifique.
+Les paramètres sont disposés en groupes sur cette page. Les paramètres de chaque groupe sont couramment utilisés en conjonction les uns avec les autres pour obtenir un résultat spécifique.
 
 > [!NOTE]
 >
-> - Ces paramètres peuvent également être modifiés dynamiquement par l’application en cours d’exécution, de sorte que tous les paramètres d’exécution que vous définissez peuvent être remplacés.
-> - Certains paramètres, tels que le [niveau de latence](../../standard/garbage-collection/latency.md), sont généralement définis uniquement par le biais de l’API au moment de la conception. Ces paramètres sont omis dans cette page.
-> - Pour les valeurs numériques, utilisez la notation décimale pour les paramètres dans le fichier *runtimeconfig. JSON* et la notation hexadécimale pour les paramètres de variable d’environnement. Pour les valeurs hexadécimales, vous pouvez les spécifier avec ou sans le préfixe « 0x ».
+> - Ces paramètres peuvent également être modifiés dynamiquement par l’application au fur et à mesure qu’elle est en cours d’exécution, de sorte que tous les paramètres de temps d’exécution que vous définissez peuvent être annulés.
+> - Certains paramètres, tels que [le niveau de latence,](../../standard/garbage-collection/latency.md)ne sont généralement définis que par l’API au moment de la conception. Ces paramètres sont omis à partir de cette page.
+> - Pour les valeurs de nombre, utilisez la notation décimale pour les paramètres du fichier *runtimeconfig.json* et la notation hexadecimal pour les paramètres variables de l’environnement. Pour les valeurs hexadecimales, vous pouvez les spécifier avec ou sans le préfixe "0x".
 
-## <a name="flavors-of-garbage-collection"></a>Versions de garbage collection
+## <a name="flavors-of-garbage-collection"></a>Saveurs de collecte des ordures
 
-Les deux principales versions de garbage collection sont GC de station de travail et garbage collection de serveur. Pour plus d’informations sur les différences entre les deux, consultez [principes de base de garbage collection](../../standard/garbage-collection/fundamentals.md#workstation-and-server-garbage-collection).
+Les deux principales saveurs de la collecte des ordures sont le poste de travail GC et le serveur GC. Pour plus d’informations sur les différences entre les deux, voir [Fondamentaux de la collecte des ordures](../../standard/garbage-collection/fundamentals.md#workstation-and-server-garbage-collection).
 
-Les sous-versions de garbage collection sont en arrière-plan et non simultanées.
+Les sous-composants de la collecte des ordures sont de fond et non simultanés.
 
-Utilisez les paramètres suivants pour sélectionner les versions de garbage collection :
+Utilisez les paramètres suivants pour sélectionner les saveurs de la collecte des ordures :
 
-### <a name="systemgcservercomplus_gcserver"></a>System. GC. Server/COMPlus_gcServer
+### <a name="systemgcservercomplus_gcserver"></a>System.GC.Server/COMPlus_gcServer
 
-- Configure si l’application utilise des garbage collection de station de travail ou des garbage collection de serveur.
-- Par défaut : station de travail garbage collection (`false`).
+- Configure si l’application utilise la collecte des ordures de poste de travail ou la collecte des ordures du serveur.
+- Défaut : Collecte des`false`ordures de poste de travail ().
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.Server` | `false`-station de travail<br/>serveur de `true` | .NET Core 1.0 |
-| **MSBuild, propriété** | `ServerGarbageCollection` | `false`-station de travail<br/>serveur de `true` | .NET Core 1.0 |
-| **Variable d'environnement** | `COMPlus_gcServer` | `0`-station de travail<br/>serveur de `1` | .NET Core 1.0 |
-| **App. config pour .NET Framework** | [GCServer](../../framework/configure-apps/file-schema/runtime/gcserver-element.md) | `false`-station de travail<br/>serveur de `true` |  |
+| **runtimeconfig.json** | `System.GC.Server` | `false`- poste de travail<br/>`true`- serveur | .NET Core 1.0 |
+| **Propriété MSBuild** | `ServerGarbageCollection` | `false`- poste de travail<br/>`true`- serveur | .NET Core 1.0 |
+| **Variable de l’environnement** | `COMPlus_gcServer` | `0`- poste de travail<br/>`1`- serveur | .NET Core 1.0 |
+| **app.config pour .NET Framework** | [GCServer (en)](../../framework/configure-apps/file-schema/runtime/gcserver-element.md) | `false`- poste de travail<br/>`true`- serveur |  |
 
 ### <a name="examples"></a>Exemples
 
-fichier *runtimeconfig. JSON* :
+*fichier runtimeconfig.json:*
 
 ```json
 {
@@ -68,22 +68,22 @@ Fichier projet :
 </Project>
 ```
 
-### <a name="systemgcconcurrentcomplus_gcconcurrent"></a>System. GC. concurrent/COMPlus_gcConcurrent
+### <a name="systemgcconcurrentcomplus_gcconcurrent"></a>System.GC.Concurrent/COMPlus_gcConcurrent
 
-- Configure si l’garbage collection d’arrière-plan (simultanée) est activée.
-- Valeur par défaut : activé (`true`).
-- Pour plus d’informations, consultez [garbage collection d’arrière-plan](../../standard/garbage-collection/fundamentals.md#background-workstation-garbage-collection) et [garbage collection de serveur d’arrière-plan](../../standard/garbage-collection/fundamentals.md#background-server-garbage-collection).
+- Configure si la collecte des ordures de fond (concurrente) est activée.
+- Défaut: Activé`true`( ).
+- Pour plus d’informations, voir [Collection d’ordures Background](../../standard/garbage-collection/fundamentals.md#background-workstation-garbage-collection) et [collecte des ordures serveur De fond](../../standard/garbage-collection/fundamentals.md#background-server-garbage-collection).
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.Concurrent` | `true`-arrière-plan GC<br/>`false`-GC non simultané | .NET Core 1.0 |
-| **MSBuild, propriété** | `ConcurrentGarbageCollection` | `true`-arrière-plan GC<br/>`false`-GC non simultané | .NET Core 1.0 |
-| **Variable d'environnement** | `COMPlus_gcConcurrent` | `true`-arrière-plan GC<br/>`false`-GC non simultané | .NET Core 1.0 |
-| **App. config pour .NET Framework** | [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) | `true`-arrière-plan GC<br/>`false`-GC non simultané |  |
+| **runtimeconfig.json** | `System.GC.Concurrent` | `true`- fond GC<br/>`false`- GC non concomitant | .NET Core 1.0 |
+| **Propriété MSBuild** | `ConcurrentGarbageCollection` | `true`- fond GC<br/>`false`- GC non concomitant | .NET Core 1.0 |
+| **Variable de l’environnement** | `COMPlus_gcConcurrent` | `true`- fond GC<br/>`false`- GC non concomitant | .NET Core 1.0 |
+| **app.config pour .NET Framework** | [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) | `true`- fond GC<br/>`false`- GC non concomitant |  |
 
 ### <a name="examples"></a>Exemples
 
-fichier *runtimeconfig. JSON* :
+*fichier runtimeconfig.json:*
 
 ```json
 {
@@ -109,25 +109,25 @@ Fichier projet :
 
 ## <a name="manage-resource-usage"></a>Gérer l’utilisation des ressources
 
-Utilisez les paramètres décrits dans cette section pour gérer la mémoire et l’utilisation du processeur du garbage collector.
+Utilisez les paramètres décrits dans cette section pour gérer la mémoire du collecteur d’ordures et l’utilisation du processeur.
 
-Pour plus d’informations sur certains de ces paramètres, consultez l’entrée de blog [Middle sol between station de travail et serveur gc](https://devblogs.microsoft.com/dotnet/middle-ground-between-server-and-workstation-gc/) .
+Pour plus d’informations sur certains de ces paramètres, voir le [terrain intermédiaire entre la poste de travail et l’entrée de blog serveur GC.](https://devblogs.microsoft.com/dotnet/middle-ground-between-server-and-workstation-gc/)
 
-### <a name="systemgcheapcountcomplus_gcheapcount"></a>System. GC. HeapCount/COMPlus_GCHeapCount
+### <a name="systemgcheapcountcomplus_gcheapcount"></a>System.GC.HeapCount/COMPlus_GCHeapCount
 
-- Limite le nombre de segments de mémoire créés par le garbage collector.
-- S’applique uniquement aux garbage collection serveur.
-- Si l’affinité du processeur GC est activée, ce qui correspond à la valeur par défaut, le nombre de segments de mémoire définissant affinité entre `n` les tas/threads GC sur les premiers processeurs `n`. (Utilisez les paramètres affinité Mask ou affinité Ranges pour spécifier exactement les processeurs à affinité.)
-- Si l’affinité du processeur GC est désactivée, ce paramètre limite le nombre de tas GC.
-- Pour plus d’informations, consultez les [Notes GCHeapCount](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md#remarks).
+- Limite le nombre de tas créés par le collecteur d’ordures.
+- S’applique uniquement à la collecte des ordures du serveur.
+- Si l’affinité du processeur GC est activée, ce qui `n` est la valeur par défaut, `n` le réglage du nombre de tas affinitise les tas/threads GC aux premiers processeurs. (Utilisez le masque affinitize ou affinitisez les paramètres des plages pour spécifier exactement les processeurs à affinitiser.)
+- Si l’affinité du processeur GC est désactivée, ce paramètre limite le nombre de tas de GC.
+- Pour plus d’informations, voir les [remarques GCHeapCount](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md#remarks).
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.HeapCount` | *valeur décimale* | .NET Core 3.0 |
-| **Variable d'environnement** | `COMPlus_GCHeapCount` | *valeur hexadécimale* | .NET Core 3.0 |
-| **App. config pour .NET Framework** | [GCHeapCount](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md) | *valeur décimale* | .NET Framework 4.6.2 |
+| **runtimeconfig.json** | `System.GC.HeapCount` | *valeur décimale* | .NET Core 3.0 |
+| **Variable de l’environnement** | `COMPlus_GCHeapCount` | *valeur hexadecimal* | .NET Core 3.0 |
+| **app.config pour .NET Framework** | [GCHeapCount (en)](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md) | *valeur décimale* | .NET Framework 4.6.2 |
 
-Exemple :
+Exemple :
 
 ```json
 {
@@ -140,22 +140,22 @@ Exemple :
 ```
 
 > [!TIP]
-> Si vous définissez l’option dans *runtimeconfig. JSON*, spécifiez une valeur décimale. Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour limiter le nombre de segments à 16, les valeurs sont 16 pour le fichier JSON et 0x10 ou 10 pour la variable d’environnement.
+> Si vous définissez l’option en *runtimeconfig.json*, spécifiez une valeur décimale. Si vous définissez l’option comme variable d’environnement, spécifiez une valeur hexadecimal. Par exemple, pour limiter le nombre de tas à 16, les valeurs seraient de 16 pour le fichier JSON et de 0x10 ou 10 pour la variable environnement.
 
-### <a name="systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask"></a>System. GC. HeapAffinitizeMask/COMPlus_GCHeapAffinitizeMask
+### <a name="systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask"></a>System.GC.HeapAffinitizeMask/COMPlus_GCHeapAffinitizeMask
 
-- Spécifie les processeurs exacts que les threads de garbage collector doivent utiliser.
-- Si l’affinité du processeur est désactivée en définissant `System.GC.NoAffinitize` sur `true`, ce paramètre est ignoré.
-- S’applique uniquement aux garbage collection serveur.
-- La valeur est un masque de bits qui définit les processeurs qui sont disponibles pour le processus. Par exemple, une valeur décimale de 1023 (ou une valeur hexadécimale de 0x3FF ou 3FF si vous utilisez la variable d’environnement) est 0011 1111 1111 en notation binaire. Cela spécifie que les 10 premiers processeurs doivent être utilisés. Pour spécifier les 10 processeurs suivants, autrement dit, les processeurs 10-19, spécifiez une valeur décimale de 1047552 (ou une valeur hexadécimale de 0xFFC00 ou FFC00), qui est équivalente à une valeur binaire de 1111 1111 1100 0000 0000.
+- Spécifie les processeurs exacts que les fils de collecteur d’ordures devraient utiliser.
+- Si l’affinité du `System.GC.NoAffinitize` `true`processeur est désactivée par réglage à , ce paramètre est ignoré.
+- S’applique uniquement à la collecte des ordures du serveur.
+- La valeur est un masque peu qui définit les processeurs qui sont disponibles pour le processus. Par exemple, une valeur décimale de 1023 (ou une valeur hexadecimale de 0x3FF ou 3FF si vous utilisez la variable de l’environnement) est 0011 1111 1111 en notation binaire. Cela spécifie que les 10 premiers processeurs doivent être utilisés. Pour spécifier les 10 processeurs suivants, c’est-à-dire les processeurs 10-19, spécifient une valeur décimale de 1047552 (ou une valeur hexadecimale de 0xFFC00 ou FFC00), ce qui équivaut à une valeur binaire de 1111 1111 1100 000 0000.
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.HeapAffinitizeMask` | *valeur décimale* | .NET Core 3.0 |
-| **Variable d'environnement** | `COMPlus_GCHeapAffinitizeMask` | *valeur hexadécimale* | .NET Core 3.0 |
-| **App. config pour .NET Framework** | [GCHeapAffinitizeMask](../../framework/configure-apps/file-schema/runtime/gcheapaffinitizemask-element.md) | *valeur décimale* | .NET Framework 4.6.2 |
+| **runtimeconfig.json** | `System.GC.HeapAffinitizeMask` | *valeur décimale* | .NET Core 3.0 |
+| **Variable de l’environnement** | `COMPlus_GCHeapAffinitizeMask` | *valeur hexadecimal* | .NET Core 3.0 |
+| **app.config pour .NET Framework** | [GCHeapAffinitizeMask](../../framework/configure-apps/file-schema/runtime/gcheapaffinitizemask-element.md) | *valeur décimale* | .NET Framework 4.6.2 |
 
-Exemple :
+Exemple :
 
 ```json
 {
@@ -167,21 +167,21 @@ Exemple :
 }
 ```
 
-### <a name="systemgcgcheapaffinitizerangescomplus_gcheapaffinitizeranges"></a>System. GC. GCHeapAffinitizeRanges/COMPlus_GCHeapAffinitizeRanges
+### <a name="systemgcgcheapaffinitizerangescomplus_gcheapaffinitizeranges"></a>System.GC.GCHeapAffinitizeRanges/COMPlus_GCHeapAffinitizeRanges
 
-- Spécifie la liste des processeurs à utiliser pour les threads de garbage collector.
-- Ce paramètre est similaire à `System.GC.HeapAffinitizeMask`, sauf qu’il vous permet de spécifier plus de 64 processeurs.
-- Pour les systèmes d’exploitation Windows, préfixez le numéro de processeur ou la plage avec le [groupe de processeurs](/windows/win32/procthread/processor-groups)correspondant, par exemple, « 0:1-10, 0:12, 1:50-52, 1:70 ».
-- Si l’affinité du processeur est désactivée en définissant `System.GC.NoAffinitize` sur `true`, ce paramètre est ignoré.
-- S’applique uniquement aux garbage collection serveur.
-- Pour plus d’informations, consultez [amélioration de la configuration de l’UC pour GC sur les ordinateurs avec > uc 64](https://devblogs.microsoft.com/dotnet/making-cpu-configuration-better-for-gc-on-machines-with-64-cpus/) sur le blog de maoni Stephens.
+- Spécifie la liste des processeurs à utiliser pour les fils de collecteur d’ordures.
+- Ce paramètre `System.GC.HeapAffinitizeMask`est similaire à , sauf qu’il vous permet de spécifier plus de 64 processeurs.
+- Pour les systèmes d’exploitation Windows, préfixez le numéro de processeur ou la plage avec le [groupe CPU](/windows/win32/procthread/processor-groups)correspondant, par exemple, "0:1-10,0:12,1:50-52,1:70".
+- Si l’affinité du `System.GC.NoAffinitize` `true`processeur est désactivée par réglage à , ce paramètre est ignoré.
+- S’applique uniquement à la collecte des ordures du serveur.
+- Pour plus d’informations, voir [Faire la configuration CPU mieux pour GC sur les machines avec > 64 processeurs](https://devblogs.microsoft.com/dotnet/making-cpu-configuration-better-for-gc-on-machines-with-64-cpus/) sur le blog de Maoni Stephens.
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.GCHeapAffinitizeRanges` | Liste séparée par des virgules des numéros de processeur ou des plages de numéros de processeur.<br/>Exemple UNIX : "1-10, 12, 50-52, 70"<br/>Exemple Windows : « 0:1-10, 0:12, 1:50-52, 1:70 » | .NET Core 3.0 |
-| **Variable d'environnement** | `COMPlus_GCHeapAffinitizeRanges` | Liste séparée par des virgules des numéros de processeur ou des plages de numéros de processeur.<br/>Exemple UNIX : "1-10, 12, 50-52, 70"<br/>Exemple Windows : « 0:1-10, 0:12, 1:50-52, 1:70 » | .NET Core 3.0 |
+| **runtimeconfig.json** | `System.GC.GCHeapAffinitizeRanges` | Liste séparée par comma des numéros de processeur ou des gammes de numéros de processeur.<br/>Exemple d’Unix : « 1-10,12,50-52,70 »<br/>Exemple windows: "0:1-10,0:12,1:50-52,1:70" | .NET Core 3.0 |
+| **Variable de l’environnement** | `COMPlus_GCHeapAffinitizeRanges` | Liste séparée par comma des numéros de processeur ou des gammes de numéros de processeur.<br/>Exemple d’Unix : « 1-10,12,50-52,70 »<br/>Exemple windows: "0:1-10,0:12,1:50-52,1:70" | .NET Core 3.0 |
 
-Exemple :
+Exemple :
 
 ```json
 {
@@ -195,36 +195,36 @@ Exemple :
 
 ### <a name="complus_gccpugroup"></a>COMPlus_GCCpuGroup
 
-- Configure si le garbage collector utilise ou non des [groupes de processeurs](/windows/win32/procthread/processor-groups) .
+- Configure si le collecteur d’ordures utilise ou non [des groupes de processeurs.](/windows/win32/procthread/processor-groups)
 
-  Quand un ordinateur Windows 64 bits a plusieurs groupes de PROCESSEURs, autrement dit, il y a plus de 64 processeurs, l’activation de cet élément étend garbage collection sur tous les groupes de PROCESSEURs. Le garbage collector utilise tous les cœurs pour créer et équilibrer les tas.
+  Lorsqu’un ordinateur Windows 64 bits a plusieurs groupes de processeurs, c’est-à-dire qu’il y a plus de 64 processeurs, ce qui permet à cet élément d’étendre la collecte des ordures dans tous les groupes de processeurs. Le collecteur d’ordures utilise tous les noyaux pour créer et équilibrer les tas.
 
-- S’applique aux garbage collection serveur sur les systèmes d’exploitation Windows 64 bits uniquement.
-- Valeur par défaut : désactivé (`0`).
-- Pour plus d’informations, consultez [amélioration de la configuration de l’UC pour GC sur les ordinateurs avec > uc 64](https://devblogs.microsoft.com/dotnet/making-cpu-configuration-better-for-gc-on-machines-with-64-cpus/) sur le blog de maoni Stephens.
+- S’applique uniquement à la collecte des ordures du serveur sur les systèmes d’exploitation Windows 64 bits.
+- Défaut: Désactivé`0`( ).
+- Pour plus d’informations, voir [Faire la configuration CPU mieux pour GC sur les machines avec > 64 processeurs](https://devblogs.microsoft.com/dotnet/making-cpu-configuration-better-for-gc-on-machines-with-64-cpus/) sur le blog de Maoni Stephens.
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | N/A | N/A | N/A |
-| **Variable d'environnement** | `COMPlus_GCCpuGroup` | `0`-désactivé<br/>activé `1` | .NET Core 1.0 |
-| **App. config pour .NET Framework** | [GCCpuGroup](../../framework/configure-apps/file-schema/runtime/gccpugroup-element.md) | `false`-désactivé<br/>activé `true` |  |
+| **runtimeconfig.json** | N/A | N/A | N/A |
+| **Variable de l’environnement** | `COMPlus_GCCpuGroup` | `0`- désactivé<br/>`1`- activé | .NET Core 1.0 |
+| **app.config pour .NET Framework** | [GCCpuGroup](../../framework/configure-apps/file-schema/runtime/gccpugroup-element.md) | `false`- désactivé<br/>`true`- activé |  |
 
 > [!NOTE]
-> Pour configurer le common language runtime (CLR) pour distribuer également des threads à partir du pool de threads sur tous les groupes de PROCESSEURs, activez l’option d' [élément Thread_UseAllCpuGroups](../../framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md) . Pour les applications .NET Core, vous pouvez activer cette option en définissant la valeur de la variable d’environnement `COMPlus_Thread_UseAllCpuGroups` sur `1`.
+> Pour configurer l’heure de l’exécution de la langue commune (CLR) pour également distribuer les fils du pool de threads dans tous les groupes de processeur, activez [l’option Thread_UseAllCpuGroups élément.](../../framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md) Pour les applications .NET Core, vous pouvez activer cette option en définissant la valeur de la variable de l’environnement `COMPlus_Thread_UseAllCpuGroups` à `1`.
 
-### <a name="systemgcnoaffinitizecomplus_gcnoaffinitize"></a>System. GC. NoAffinitize/COMPlus_GCNoAffinitize
+### <a name="systemgcnoaffinitizecomplus_gcnoaffinitize"></a>System.GC.NoAffinitize/COMPlus_GCNoAffinitize
 
-- Spécifie s’il faut *affinité* garbage collection threads avec des processeurs. La affinité d’un thread GC signifie qu’il ne peut s’exécuter que sur son UC spécifique. Un segment de mémoire est créé pour chaque thread GC.
-- S’applique uniquement aux garbage collection serveur.
-- Par défaut : affinité garbage collection threads avec processeurs (`false`).
+- Précise s’il faut *affinitiser les* fils de collecte des ordures avec les transformateurs. Pour affinitiser un thread GC signifie qu’il ne peut fonctionner que sur son processeur spécifique. Un tas est créé pour chaque thread GC.
+- S’applique uniquement à la collecte des ordures du serveur.
+- Défaut : Affinitiser les fils de`false`collecte des ordures avec les transformateurs ( ).
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.NoAffinitize` | `false` affinité<br/>`true`-ne pas affinité | .NET Core 3.0 |
-| **Variable d'environnement** | `COMPlus_GCNoAffinitize` | `0` affinité<br/>`1`-ne pas affinité | .NET Core 3.0 |
-| **App. config pour .NET Framework** | [GCNoAffinitize](../../framework/configure-apps/file-schema/runtime/gcnoaffinitize-element.md) | `false` affinité<br/>`true`-ne pas affinité | .NET Framework 4.6.2 |
+| **runtimeconfig.json** | `System.GC.NoAffinitize` | `false`- affinitiser<br/>`true`- n’affinitez pas | .NET Core 3.0 |
+| **Variable de l’environnement** | `COMPlus_GCNoAffinitize` | `0`- affinitiser<br/>`1`- n’affinitez pas | .NET Core 3.0 |
+| **app.config pour .NET Framework** | [GCNoAffinitize](../../framework/configure-apps/file-schema/runtime/gcnoaffinitize-element.md) | `false`- affinitiser<br/>`true`- n’affinitez pas | .NET Framework 4.6.2 |
 
-Exemple :
+Exemple :
 
 ```json
 {
@@ -236,16 +236,16 @@ Exemple :
 }
 ```
 
-### <a name="systemgcheaphardlimitcomplus_gcheaphardlimit"></a>System. GC. HeapHardLimit/COMPlus_GCHeapHardLimit
+### <a name="systemgcheaphardlimitcomplus_gcheaphardlimit"></a>System.GC.HeapHardLimit/COMPlus_GCHeapHardLimit
 
-- Spécifie la taille maximale de validation, en octets, pour le tas GC et la comptabilité du catalogue global.
+- Spécifie la taille maximale de commit, dans les octets, pour le tas GC et la comptabilité GC.
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.HeapHardLimit` | *valeur décimale* | .NET Core 3.0 |
-| **Variable d'environnement** | `COMPlus_GCHeapHardLimit` | *valeur hexadécimale* | .NET Core 3.0 |
+| **runtimeconfig.json** | `System.GC.HeapHardLimit` | *valeur décimale* | .NET Core 3.0 |
+| **Variable de l’environnement** | `COMPlus_GCHeapHardLimit` | *valeur hexadecimal* | .NET Core 3.0 |
 
-Exemple :
+Exemple :
 
 ```json
 {
@@ -258,18 +258,18 @@ Exemple :
 ```
 
 > [!TIP]
-> Si vous définissez l’option dans *runtimeconfig. JSON*, spécifiez une valeur décimale. Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour spécifier une limite inconditionnelle de segment de mémoire de 200 mebibytes (MiB), les valeurs sont 209715200 pour le fichier JSON et 0xC800000 ou C800000 pour la variable d’environnement.
+> Si vous définissez l’option en *runtimeconfig.json*, spécifiez une valeur décimale. Si vous définissez l’option comme variable d’environnement, spécifiez une valeur hexadecimal. Par exemple, pour spécifier une limite de 200 mebioctets (MiB), les valeurs seraient 209715200 pour le fichier JSON et 0xC800000 ou C800000 pour la variable environnement.
 
-### <a name="systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent"></a>System. GC. HeapHardLimitPercent/COMPlus_GCHeapHardLimitPercent
+### <a name="systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent"></a>System.GC.HeapHardLimitPercent/COMPlus_GCHeapHardLimitPercent
 
-- Spécifie l’utilisation du tas GC comme pourcentage de la mémoire totale.
+- Spécifie l’utilisation du tas GC en pourcentage de la mémoire totale.
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.HeapHardLimitPercent` | *valeur décimale* | .NET Core 3.0 |
-| **Variable d'environnement** | `COMPlus_GCHeapHardLimitPercent` | *valeur hexadécimale* | .NET Core 3.0 |
+| **runtimeconfig.json** | `System.GC.HeapHardLimitPercent` | *valeur décimale* | .NET Core 3.0 |
+| **Variable de l’environnement** | `COMPlus_GCHeapHardLimitPercent` | *valeur hexadecimal* | .NET Core 3.0 |
 
-Exemple :
+Exemple :
 
 ```json
 {
@@ -282,22 +282,22 @@ Exemple :
 ```
 
 > [!TIP]
-> Si vous définissez l’option dans *runtimeconfig. JSON*, spécifiez une valeur décimale. Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour limiter l’utilisation du tas à 30%, les valeurs sont 30 pour le fichier JSON et 0x1E ou 1E pour la variable d’environnement.
+> Si vous définissez l’option en *runtimeconfig.json*, spécifiez une valeur décimale. Si vous définissez l’option comme variable d’environnement, spécifiez une valeur hexadecimal. Par exemple, pour limiter l’utilisation du tas à 30 %, les valeurs seraient de 30 pour le fichier JSON et de 0x1E ou 1E pour la variable de l’environnement.
 
-### <a name="systemgcretainvmcomplus_gcretainvm"></a>System. GC. RetainVM/COMPlus_GCRetainVM
+### <a name="systemgcretainvmcomplus_gcretainvm"></a>System.GC.RetainVM/COMPlus_GCRetainVM
 
-- Configure si les segments qui doivent être supprimés sont placés dans une liste d’attente pour une utilisation ultérieure ou sont remis dans le système d’exploitation.
-- Valeur par défaut : relâcher les segments sur le système d’exploitation (`false`).
+- Configure si les segments qui doivent être supprimés sont mis sur une liste de veille pour une utilisation future ou sont libérés vers le système d’exploitation (OS).
+- Défaut : Les segments de`false`sortie retournent au système d’exploitation ().
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.RetainVM` | `false`-version du système d’exploitation<br/>`true`-mettre en veille | .NET Core 1.0 |
-| **MSBuild, propriété** | `RetainVMGarbageCollection` | `false`-version du système d’exploitation<br/>`true`-mettre en veille | .NET Core 1.0 |
-| **Variable d'environnement** | `COMPlus_GCRetainVM` | `0`-version du système d’exploitation<br/>`1`-mettre en veille | .NET Core 1.0 |
+| **runtimeconfig.json** | `System.GC.RetainVM` | `false`- sortie à OS<br/>`true`- mis en veille | .NET Core 1.0 |
+| **Propriété MSBuild** | `RetainVMGarbageCollection` | `false`- sortie à OS<br/>`true`- mis en veille | .NET Core 1.0 |
+| **Variable de l’environnement** | `COMPlus_GCRetainVM` | `0`- sortie à OS<br/>`1`- mis en veille | .NET Core 1.0 |
 
 ### <a name="examples"></a>Exemples
 
-fichier *runtimeconfig. JSON* :
+*fichier runtimeconfig.json:*
 
 ```json
 {
@@ -325,44 +325,44 @@ Fichier projet :
 
 ### <a name="complus_gclargepages"></a>COMPlus_GCLargePages
 
-- Spécifie si les pages de grande taille doivent être utilisées lorsqu’une limite matérielle de tas est définie.
-- Valeur par défaut : désactivé (`0`).
-- Il s’agit d’un paramètre expérimental.
+- Précise si de grandes pages doivent être utilisées lorsqu’une limite de tas est définie.
+- Défaut: Désactivé`0`( ).
+- C’est un cadre expérimental.
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | N/A | N/A | N/A |
-| **Variable d'environnement** | `COMPlus_GCLargePages` | `0`-désactivé<br/>activé `1` | .NET Core 3.0 |
+| **runtimeconfig.json** | N/A | N/A | N/A |
+| **Variable de l’environnement** | `COMPlus_GCLargePages` | `0`- désactivé<br/>`1`- activé | .NET Core 3.0 |
 
-## <a name="large-objects"></a>Objets volumineux
+## <a name="large-objects"></a>Grands objets
 
 ### <a name="complus_gcallowverylargeobjects"></a>COMPlus_gcAllowVeryLargeObjects
 
-- Configure la prise en charge du garbage collector sur les plateformes 64 bits pour les tableaux dont la taille totale est supérieure à 2 gigaoctets (Go).
-- Valeur par défaut : activé (`1`).
+- Configure le support des collecteurs d’ordures sur les plates-formes 64 bits pour les tableaux de plus de 2 gigaoctets (GB) en taille totale.
+- Défaut: Activé`1`( ).
 - Cette option peut devenir obsolète dans une future version de .NET.
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | N/A | N/A | N/A |
-| **Variable d'environnement** | `COMPlus_gcAllowVeryLargeObjects` | activé `1`<br/> `0`-désactivé | .NET Core 1.0 |
-| **App. config pour .NET Framework** | [gcAllowVeryLargeObjects](../../framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) | activé `1`<br/> `0`-désactivé | .NET Framework 4.5 |
+| **runtimeconfig.json** | N/A | N/A | N/A |
+| **Variable de l’environnement** | `COMPlus_gcAllowVeryLargeObjects` | `1`- activé<br/> `0`- désactivé | .NET Core 1.0 |
+| **app.config pour .NET Framework** | [gcAllowVeryLargeObjects](../../framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) | `1`- activé<br/> `0`- désactivé | .NET Framework 4.5 |
 
-## <a name="large-object-heap-threshold"></a>Seuil du tas des objets volumineux
+## <a name="large-object-heap-threshold"></a>Grand seuil de tas d’objets
 
-### <a name="systemgclohthresholdcomplus_gclohthreshold"></a>System. GC. LOHThreshold/COMPlus_GCLOHThreshold
+### <a name="systemgclohthresholdcomplus_gclohthreshold"></a>System.GC.LOHThreshold/COMPlus_GCLOHThreshold
 
-- Spécifie la taille du seuil, en octets, qui fait que les objets sont placés sur le tas d’objets volumineux (LOH).
+- Spécifie la taille du seuil, dans les octets, qui provoque des objets à aller sur le tas de gros objets (LOH).
 - Le seuil par défaut est de 85 000 octets.
 - La valeur que vous spécifiez doit être supérieure au seuil par défaut.
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.LOHThreshold` | *valeur décimale* | .NET Core 1.0 |
-| **Variable d'environnement** | `COMPlus_GCLOHThreshold` | *valeur hexadécimale* | .NET Core 1.0 |
-| **App. config pour .NET Framework** | [GCLOHThreshold](../../framework/configure-apps/file-schema/runtime/gclohthreshold-element.md) | *valeur décimale* | .NET Framework 4.8 |
+| **runtimeconfig.json** | `System.GC.LOHThreshold` | *valeur décimale* | .NET Core 1.0 |
+| **Variable de l’environnement** | `COMPlus_GCLOHThreshold` | *valeur hexadecimal* | .NET Core 1.0 |
+| **app.config pour .NET Framework** | [GCLOHThreshold](../../framework/configure-apps/file-schema/runtime/gclohthreshold-element.md) | *valeur décimale* | .NET Framework 4.8 |
 
-Exemple :
+Exemple :
 
 ```json
 {
@@ -375,16 +375,16 @@ Exemple :
 ```
 
 > [!TIP]
-> Si vous définissez l’option dans *runtimeconfig. JSON*, spécifiez une valeur décimale. Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour définir une taille de seuil de 120 000 octets, les valeurs sont 120000 pour le fichier JSON et 0x1D4C0 ou 1D4C0 pour la variable d’environnement.
+> Si vous définissez l’option en *runtimeconfig.json*, spécifiez une valeur décimale. Si vous définissez l’option comme variable d’environnement, spécifiez une valeur hexadecimal. Par exemple, pour fixer un seuil de 120 000 octets, les valeurs seraient de 120000 pour le fichier JSON et de 0x1D4C0 ou 1D4C0 pour la variable environnement.
 
 ## <a name="standalone-gc"></a>GC autonome
 
 ### <a name="complus_gcname"></a>COMPlus_GCName
 
-- Spécifie un chemin d’accès à la bibliothèque contenant le garbage collector que le runtime envisage de charger.
-- Pour plus d’informations, consultez [conception de chargeur gc autonome](https://github.com/dotnet/runtime/blob/master/docs/design/features/standalone-gc-loading.md).
+- Spécifie un chemin vers la bibliothèque contenant le éboueur que le temps d’exécution a l’intention de charger.
+- Pour plus d’informations, voir [La conception de chargeur Standalone GC](https://github.com/dotnet/runtime/blob/master/docs/design/features/standalone-gc-loading.md).
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | N/A | N/A | N/A |
-| **Variable d'environnement** | `COMPlus_GCName` | *string_path* | .NET Core 2.0 |
+| **runtimeconfig.json** | N/A | N/A | N/A |
+| **Variable de l’environnement** | `COMPlus_GCName` | *string_path* | .NET Core 2.0 |

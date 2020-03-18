@@ -1,46 +1,55 @@
 ---
 title: Commande dotnet tool update
-description: La commande de mise à jour de l’outil dotnet met à jour l’outil .NET Core spécifié sur votre ordinateur.
+description: La commande de mise à jour d’outil pointnet met à jour l’outil net Core spécifié sur votre machine.
 ms.date: 02/14/2020
-ms.openlocfilehash: 80e807a0fc06ad762334f888e701f6d9c448369a
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 497b052a8b9cfa9dca8d80316075fe7565d6b35a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78156944"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78847818"
 ---
 # <a name="dotnet-tool-update"></a>dotnet tool update
 
-**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 2.1 SDK et les versions ultérieures
 
 ## <a name="name"></a>Nom
 
-`dotnet tool update` : met à jour l' [outil .net Core](global-tools.md) spécifié sur votre ordinateur.
+`dotnet tool update`- Mise à jour de [l’outil net Core](global-tools.md) spécifié sur votre machine.
 
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet tool update <PACKAGE_NAME> <-g|--global> [--configfile] [--framework] [-v|--verbosity] [--add-source]
-dotnet tool update <PACKAGE_NAME> <--tool-path> [--configfile] [--framework] [-v|--verbosity] [--add-source]
-dotnet tool update <PACKAGE_NAME> [--configfile] [--framework] [-v|--verbosity] [--add-source]
+dotnet tool update <PACKAGE_NAME> <-g|--global>
+    [--configfile] [--framework] [-v|--verbosity]
+    [--add-source]
+
+dotnet tool update <PACKAGE_NAME> <--tool-path>
+    [--configfile] [--framework] [-v|--verbosity]
+    [--add-source]
+
+dotnet tool update <PACKAGE_NAME>
+    [--configfile] [--framework] [-v|--verbosity]
+    [--add-source]
+
 dotnet tool update <-h|--help>
 ```
 
 ## <a name="description"></a>Description
 
-La commande `dotnet tool update` vous permet de mettre à jour les outils .NET Core sur votre ordinateur vers la dernière version stable du package. La commande désinstalle et réinstalle un outil en le mettant à jour. Pour utiliser la commande, vous spécifiez l’une des options suivantes :
+La `dotnet tool update` commande vous permet de mettre à jour les outils .NET Core de votre machine à la dernière version stable du paquet. La commande désinstalle et réinstalle un outil en le mettant à jour. Pour utiliser la commande, vous spécifiez l’une des options suivantes :
 
-* Pour mettre à jour un outil global qui a été installé à l’emplacement par défaut, utilisez l’option `--global`
-* Pour mettre à jour un outil global qui a été installé dans un emplacement personnalisé, utilisez l’option `--tool-path`.
-* Pour mettre à jour un outil local, omettez les options `--global` et `--tool-path`.
+* Pour mettre à jour un outil global qui `--global` a été installé dans l’emplacement par défaut, utilisez l’option
+* Pour mettre à jour un outil global qui `--tool-path` a été installé dans un emplacement personnalisé, utilisez l’option.
+* Pour mettre à jour un `--global` `--tool-path` outil local, omettre les options et les options.
 
-**Les outils locaux sont disponibles à partir de kit SDK .NET Core 3,0.**
+**Les outils locaux sont disponibles à partir de .NET Core SDK 3.0.**
 
 ## <a name="arguments"></a>Arguments
 
 - **`PACKAGE_NAME`**
 
-  Nom/ID du package NuGet qui contient l’outil Global .NET Core à mettre à jour. Vous pouvez trouver le nom du package à l’aide de la commande [dotnet tool list](dotnet-tool-list.md).
+  Nom/ID du paquet NuGet qui contient l’outil mondial .NET Core à mettre à jour. Vous pouvez trouver le nom du package à l’aide de la commande [dotnet tool list](dotnet-tool-list.md).
 
 ## <a name="options"></a>Options
 
@@ -58,7 +67,7 @@ La commande `dotnet tool update` vous permet de mettre à jour les outils .NET C
 
 - **`-g|--global`**
 
-  Spécifie que la mise à jour concerne un outil à l’échelle de l’utilisateur. Non combinable avec l’option `--tool-path`. L’omission de `--global` et `--tool-path` spécifie que l’outil à mettre à jour est un outil local.
+  Spécifie que la mise à jour concerne un outil à l’échelle de l’utilisateur. Non combinable avec l’option `--tool-path`. L’omission `--global` à `--tool-path` la fois et précise que l’outil à mettre à jour est un outil local.
 
 - **`-h|--help`**
 
@@ -66,7 +75,7 @@ La commande `dotnet tool update` vous permet de mettre à jour les outils .NET C
 
 - **`--tool-path <PATH>`**
 
-  Spécifie l’emplacement d’installation de l’outil Global. Le chemin peut être absolu ou relatif. Non combinable avec l’option `--global`. L’omission de `--global` et `--tool-path` spécifie que l’outil à mettre à jour est un outil local.
+  Précise l’emplacement où l’outil global est installé. Le chemin peut être absolu ou relatif. Non combinable avec l’option `--global`. L’omission `--global` à `--tool-path` la fois et précise que l’outil à mettre à jour est un outil local.
 
 - **`-v|--verbosity <LEVEL>`**
 
@@ -76,20 +85,22 @@ La commande `dotnet tool update` vous permet de mettre à jour les outils .NET C
 
 - **`dotnet tool update -g dotnetsay`**
 
-  Met à jour l’outil Global [dotnetsay](https://www.nuget.org/packages/dotnetsay/) .
+  Mise à jour de l’outil mondial [dotnetsay.](https://www.nuget.org/packages/dotnetsay/)
 
 - **`dotnet tool update dotnetsay --tool-path c:\global-tools`**
 
-  Met à jour l’outil Global [dotnetsay](https://www.nuget.org/packages/dotnetsay/) situé dans un répertoire Windows spécifique.
+  Mise à jour de [l’outil global dotnetsay](https://www.nuget.org/packages/dotnetsay/) situé dans un répertoire Windows spécifique.
 
 - **`dotnet tool update dotnetsay --tool-path ~/bin`**
 
-  Met à jour l’outil Global [dotnetsay](https://www.nuget.org/packages/dotnetsay/) situé dans un répertoire Linux/MacOS spécifique.
+  Mise à jour de [l’outil mondial dotnetsay](https://www.nuget.org/packages/dotnetsay/) situé dans un répertoire Linux/macOS spécifique.
 
 - **`dotnet tool update dotnetsay`**
 
-  Met à jour l’outil local [dotnetsay](https://www.nuget.org/packages/dotnetsay/) installé pour le répertoire actif.
+  Mise à jour de [l’outil local dotnetsay](https://www.nuget.org/packages/dotnetsay/) installé pour l’annuaire actuel.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils .NET Core](global-tools.md)
+- [.NET Outils de base](global-tools.md)
+- [Tutorial: Installer et utiliser un outil mondial .NET Core en utilisant le CLI CLI .NET Core](global-tools-how-to-use.md)
+- [Tutorial: Installer et utiliser un outil local .NET Core en utilisant le CLI .NET Core](local-tools-how-to-use.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements'
+title: 'Comment : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -19,22 +19,22 @@ helpviewer_keywords:
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
 ms.openlocfilehash: 44a1019ac8169138aa95b03e2027d9539cbf8391
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71957371"
 ---
-# <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>Procédure : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements
+# <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>Comment : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements
 Si vous écrivez une classe qui comporte certaines opérations pouvant entraîner d’importants ralentissements, pensez à lui affecter des fonctionnalités asynchrones en implémentant la [Vue d’ensemble du modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
   
  Cette procédure pas à pas montre comment créer un composant qui applique le modèle asynchrone basé sur les événements. Il est implémenté à l’aide de classes d’assistance provenant de l’espace de noms <xref:System.ComponentModel?displayProperty=nameWithType>, ce qui garantit son bon fonctionnement quel que soit le modèle d’application, notamment ASP.NET, les applications console et les applications Windows Forms. Vous pouvez également le concevoir avec un contrôle <xref:System.Windows.Forms.PropertyGrid> et vos propres concepteurs personnalisés.  
   
  À la fin, vous disposerez d’une application qui calcule les nombres premiers de manière asynchrone. Votre application aura un thread d’interface utilisateur (IU) principal et un thread pour chaque calcul de nombres premiers. Bien qu’il puisse être long de tester si un grand nombre est un nombre premier, le thread d’UI principal ne sera pas interrompu par ce ralentissement, et le formulaire restera réactif tout au long des calculs. Vous pourrez lancer autant de calculs que vous le souhaiterez simultanément, et annuler de manière sélective des calculs en attente.  
   
- Cette procédure pas à pas décrit notamment les tâches suivantes :  
+ Cette procédure pas à pas décrit notamment les tâches suivantes :  
   
-- Créer le composant  
+- Création du composant  
   
 - Définir des délégués et des événements asynchrones publics  
   
@@ -48,9 +48,9 @@ Si vous écrivez une classe qui comporte certaines opérations pouvant entraîne
   
 - Implémenter des méthodes de démarrage et d’annulation  
   
- Pour copier le code dans cette rubrique sous la forme d’une liste unique, consultez [Guide pratique pour implémenter un client du modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
+ Pour copier le code dans cette rubrique sous la forme d’une liste unique, consultez [Comment : implémenter un client du modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
   
-## <a name="creating-the-component"></a>Créer le composant  
+## <a name="creating-the-component"></a>Création du composant  
  La première étape consiste à créer le composant qui implémentera le modèle asynchrone basé sur les événements.  
   
 ### <a name="to-create-the-component"></a>Pour créer le composant :  
@@ -99,7 +99,7 @@ Si vous écrivez une classe qui comporte certaines opérations pouvant entraîne
      Ces avertissements seront effacés dans la section suivante.  
   
 ## <a name="defining-private-delegates"></a>Définir des délégués privés  
- Les aspects asynchrones du composant `PrimeNumberCalculator` sont implémentés en interne avec un délégué spécial appelé <xref:System.Threading.SendOrPostCallback>. <xref:System.Threading.SendOrPostCallback> représente une méthode de rappel qui s’exécute sur un thread <xref:System.Threading.ThreadPool>. Elle doit avoir une signature qui prend un seul paramètre de type <xref:System.Object>, ce qui signifie qu’il vous faudra transmettre l’état entre les délégués dans une classe wrapper. Pour plus d'informations, consultez <xref:System.Threading.SendOrPostCallback>.  
+ Les aspects asynchrones du composant `PrimeNumberCalculator` sont implémentés en interne avec un délégué spécial appelé <xref:System.Threading.SendOrPostCallback>. <xref:System.Threading.SendOrPostCallback> représente une méthode de rappel qui s’exécute sur un thread <xref:System.Threading.ThreadPool>. Elle doit avoir une signature qui prend un seul paramètre de type <xref:System.Object>, ce qui signifie qu’il vous faudra transmettre l’état entre les délégués dans une classe wrapper. Pour plus d’informations, consultez <xref:System.Threading.SendOrPostCallback>.  
   
 ### <a name="to-implement-your-components-internal-asynchronous-behavior"></a>Pour implémenter le comportement asynchrone interne du composant :  
   
@@ -176,7 +176,7 @@ Si vous écrivez une classe qui comporte certaines opérations pouvant entraîne
  La méthode `CalculateWorker` est incluse dans un délégué et invoquée de façon asynchrone avec un appel à `BeginInvoke`.  
   
 > [!NOTE]
-> Le signalement de la progression est implémenté dans la méthode `BuildPrimeNumberList`. Sur les ordinateurs rapides, il est possible de déclencher les événements `ProgressChanged` à courts intervalles. Le thread du client, sur lequel ces événements sont déclenchés, doit être en mesure de gérer cette situation. Le code de l’interface utilisateur pourrait être submergé par les messages et incapable de suivre le rythme, ce qui provoquerait une absence de réponse. Pour un exemple d’interface utilisateur qui gère cette situation, consultez [Guide pratique pour implémenter un client du modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
+> Le signalement de la progression est implémenté dans la méthode `BuildPrimeNumberList`. Sur les ordinateurs rapides, il est possible de déclencher les événements `ProgressChanged` à courts intervalles. Le thread du client, sur lequel ces événements sont déclenchés, doit être en mesure de gérer cette situation. Le code de l’interface utilisateur pourrait être submergé par les messages et incapable de suivre le rythme, ce qui provoquerait une absence de réponse. Vous trouverez un exemple de client qui gère cette situation sur la page [Guide pratique : implémenter un client du modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
   
 ### <a name="to-execute-the-prime-number-calculation-asynchronously"></a>Pour exécuter de façon asynchrone le calcul de nombres premiers :  
   
@@ -242,7 +242,7 @@ Si vous écrivez une classe qui comporte certaines opérations pouvant entraîne
   
  Le composant `PrimeNumberCalculator` est maintenant terminé et prêt à être utilisé.  
   
- Pour un exemple de client qui utilise le composant `PrimeNumberCalculator`, consultez [Guide pratique pour : implémenter un client du modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
+ Vous trouverez un exemple de client qui utilise le composant `PrimeNumberCalculator` sur la page [Guide pratique : implémenter un client du modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
   
 ## <a name="next-steps"></a>Étapes suivantes  
  Vous pouvez remplir cet exemple en écrivant `CalculatePrime`, l’équivalent synchrone de la méthode `CalculatePrimeAsync`. Cela rendra le composant `PrimeNumberCalculator` entièrement compatible avec le modèle asynchrone basé sur les événements.  
@@ -254,5 +254,5 @@ Si vous écrivez une classe qui comporte certaines opérations pouvant entraîne
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide pratique pour exécuter une opération en arrière-plan](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
-- [Vue d’ensemble du modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
+- [Vue d’ensemble du modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
 - [Modèle asynchrone basé sur les événements (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)

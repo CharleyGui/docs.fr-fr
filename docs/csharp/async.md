@@ -6,10 +6,10 @@ ms.date: 06/20/2016
 ms.technology: csharp-async
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
 ms.openlocfilehash: 38d7c856e9a536db9ef26349175ad440a49f5fe2
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713951"
 ---
 # <a name="asynchronous-programming"></a>Programmation asynchrone
@@ -48,7 +48,7 @@ downloadButton.Clicked += async (o, e) =>
 };
 ```
 
-C’est tout ! Le code exprime l’intention (télécharger des données de façon asynchrone) sans que cela nécessite des interactions compliquées avec les objets Task.
+Vous avez terminé. Le code exprime l’intention (télécharger des données de façon asynchrone) sans que cela nécessite des interactions compliquées avec les objets Task.
 
 ### <a name="cpu-bound-example-performing-a-calculation-for-a-game"></a>Exemple de code utilisant le processeur de manière intensive : effectuer un calcul dans un jeu
 
@@ -74,7 +74,7 @@ calculateButton.Clicked += async (o, e) =>
 };
 ```
 
-Et voilà !  Ce code exprime clairement l’intention de l’événement de clic du bouton. Il ne nécessite pas de gérer un thread d’arrière-plan manuellement et il effectue le travail de façon non bloquante.
+Et le tour est joué !  Ce code exprime clairement l’intention de l’événement de clic du bouton. Il ne nécessite pas de gérer un thread d’arrière-plan manuellement et il effectue le travail de façon non bloquante.
 
 ### <a name="what-happens-under-the-covers"></a>Les dessous du code
 
@@ -106,13 +106,13 @@ Voici deux questions à vous poser avant d’écrire du code :
 
     Si la réponse est « oui », le travail **utilise le processeur de manière intensive**.
 
-Si le travail que vous avez est **lié aux e/s**, utilisez `async` et `await` *sans* `Task.Run`.  Vous *ne devez pas* utiliser la bibliothèque parallèle de tâches.  La raison à cela est expliquée dans l’article [Async en détail](../standard/async-in-depth.md).
+Si le travail à faire **utilise les E/S de manière intensive**, utilisez `async` et `await` *sans* `Task.Run`.  Vous *ne devez pas* utiliser la bibliothèque parallèle de tâches.  La raison à cela est expliquée dans l’article [Async en détail](../standard/async-in-depth.md).
 
-Si le travail que vous avez est lié à l' **UC** et que vous vous souciez de la réactivité, utilisez `async` et `await`, mais générez le travail sur un autre thread *avec* `Task.Run`.  S’il accepte la concurrence et le parallélisme, vous pouvez également utiliser la [bibliothèque parallèle de tâches](../standard/parallel-programming/task-parallel-library-tpl.md).
+Si le travail à faire **utilise le processeur de manière intensive** et que la réactivité est une exigence, utilisez `async` et `await`, mais transférez le travail sur un autre thread *avec* `Task.Run`.  S’il accepte la concurrence et le parallélisme, vous pouvez également utiliser la [bibliothèque parallèle de tâches](../standard/parallel-programming/task-parallel-library-tpl.md).
 
 De plus, vous devez toujours mesurer les performances d’exécution de votre code.  Par exemple, vous constaterez peut-être que le coût d’un travail utilisant le processeur de manière intensive n’est pas si élevé que cela par rapport à la surcharge des changements de contexte induits par le multithreading.  Chaque solution ayant ses compromis, choisissez le meilleur compromis pour votre scénario.
 
-## <a name="more-examples"></a>Autres exemples
+## <a name="more-examples"></a>Plus d'exemples
 
 Les exemples suivants montrent diverses façons d’écrire du code asynchrone dans C#.  Ils correspondent à plusieurs scénarios différents que vous êtes susceptible de rencontrer.
 
@@ -218,15 +218,15 @@ Si vous choisissez de combiner LINQ avec du code asynchrone, pour réduire la qu
 
 La programmation asynchrone est relativement simple, mais il y a quelques points à garder à l’esprit pour éviter un comportement inattendu du code.
 
-* les **méthodes de `async` doivent avoir un** **mot clé `await` dans leur corps ou elles ne seront jamais en cours.**
+* `async` **Les méthodes doivent contenir un mot clé** `await` **dans leur corps pour pouvoir être suspendues.**
 
 Il ne faut pas oublier ce point.  Si `await` n’est pas utilisé dans le corps d’une méthode `async`, le compilateur C# génère un avertissement, mais le code est compilé et exécuté comme s’il s’agissait d’une méthode standard.  Notez également que cela n’aurait aucune utilité, car la machine à états générée par le compilateur C# pour la méthode async n’accomplirait aucune opération dans ce cas.
 
-* **Vous devez ajouter le suffixe « Async » au nom de chaque méthode async que vous écrivez.**
+* **Vous devez ajouter "Async" comme suffixe de chaque nom de méthode async que vous écrivez.**
 
 Cette convention de .NET aide à différencier les méthodes synchrones et asynchrones. Notez que cela n’est pas obligatoire pour certaines méthodes qui ne sont pas explicitement appelées par votre code (par exemple, les gestionnaires d’événements et les méthodes de contrôleur web). L’attribution d’un nom explicite pour ces méthodes a moins d’importance.
 
-* `async void` **doit être utilisé uniquement pour les gestionnaires d’événements.**
+* `async void` **ne doit être utilisé que pour les gestionnaires d’événements.**
 
 L’utilisation de `async void` est le seul moyen de permettre le fonctionnement des gestionnaires d’événements asynchrones, car les événements n’ont pas de types de retour (et ne peuvent donc pas utiliser les objets `Task` et `Task<T>`). Toute autre utilisation de la méthode `async void` ne suit pas le modèle TAP et peut être difficile à implémenter, comme expliqué ci-après :
 
@@ -238,11 +238,11 @@ L’utilisation de `async void` est le seul moyen de permettre le fonctionnement
 
 Dans LINQ, les expressions lambda utilisent l’exécution différée, ce qui signifie que l’exécution du code peut s’arrêter à un point que vous n’aviez pas prévu. L’introduction de tâches bloquantes dans ce code peut facilement provoquer un interblocage si le code n’est pas écrit correctement. De plus, l’imbrication de code asynchrone peut rendre la logique d’exécution du code plus compliquée. Combiner du code asynchrone et du code LINQ offre beaucoup de possibilités, mais nécessite d’être fait avec précaution et de manière claire.
 
-* **Écrivez le code qui attend certaines tâches de façon non bloquante.**
+* **Écrivez du code qui attend certaines tâches de façon non bloquante.**
 
 Si vous choisissez de bloquer le thread actuel pour attendre la fin d’une tâche, vous risquez de provoquer des interblocages et le blocage de threads de contexte, et de gérer moins facilement les erreurs. Le tableau suivant fournit des conseils pour attendre la fin de tâches de façon non bloquante :
 
-| Utilisez... | Au lieu de... | Pour |
+| Élément à utiliser... | Au lieu de... | Pour |
 | --- | --- | --- |
 | `await` | `Task.Wait` ou `Task.Result` | Extraire le résultat d’une tâche en arrière-plan |
 | `await Task.WhenAny` | `Task.WaitAny` | Attendre la fin d’une tâche |
@@ -251,7 +251,7 @@ Si vous choisissez de bloquer le thread actuel pour attendre la fin d’une tâc
 
 * **Limitez l’écriture de code avec état.**
 
-Écrivez du code qui ne dépend pas de l’état d’objets globaux ou de l’exécution de certaines méthodes. Le code doit uniquement dépendre des valeurs de retour des méthodes. Pourquoi ?
+Écrivez du code qui ne dépend pas de l’état d’objets globaux ou de l’exécution de certaines méthodes. Le code doit uniquement dépendre des valeurs de retour des méthodes. Pourquoi ?
 
 * La logique du code sera plus facile à comprendre.
 * Le code sera plus facile à tester.
@@ -265,5 +265,5 @@ L’objectif recommandé est d’atteindre une [transparence référentielle](ht
 ## <a name="other-resources"></a>Autres ressources
 
 * L’article [Async en détail](../standard/async-in-depth.md) fournit des informations supplémentaires sur le fonctionnement des tâches.
-* [Programmation asynchrone avec async et await (C#)](./programming-guide/concepts/async/index.md)
+* [Programmation asynchrone avec async et attente (C)](./programming-guide/concepts/async/index.md)
 * Les vidéos [Six Essential Tips for Async](https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async) de Lucian Wischik sont une ressource très utile pour la programmation asynchrone.

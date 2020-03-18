@@ -4,24 +4,24 @@ description: Découvrez comment utiliser des types délégués génériques pour
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 564a683d-352b-4e57-8bac-b466529daf6b
-ms.openlocfilehash: efdbef39d0e6bf2f07cde2c9621cec173e921752
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 798e8b597389bc99d10e587ec417a4e717f28abc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037361"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146201"
 ---
 # <a name="strongly-typed-delegates"></a>Délégués fortement typés
 
 [Précédent](delegate-class.md)
 
-Dans l’article précédent, vous avez vu que vous pouviez créer des types délégués spécifiques à l’aide du mot clé `delegate`. 
+Dans l’article précédent, vous avez vu que vous pouviez créer des types délégués spécifiques à l’aide du mot clé `delegate`.
 
 La classe abstraite Delegate fournit l’infrastructure pour l’invocation et le couplage faible. Les types délégués concrets deviennent beaucoup plus utiles en adoptant et en appliquant la sécurité de type pour les méthodes qui sont ajoutées à la liste d’invocation d’un objet délégué. Quand vous utilisez le mot clé `delegate` et que vous définissez un type délégué concret, le compilateur génère ces méthodes.
 
 Dans la pratique, cela conduirait à la création de types délégués chaque fois que vous avez besoin d’une signature de méthode différente. Ce travail peut devenir fastidieux au bout d’un moment. Chaque nouvelle fonctionnalité nécessite de nouveaux types délégués.
 
-Heureusement, cela n’est pas nécessaire. Le framework .NET Core contient plusieurs types que vous pouvez réutiliser chaque fois que vous avez besoin de types délégués. Il s’agit de définitions [génériques](programming-guide/generics/index.md). Vous pouvez ainsi déclarer des personnalisations quand vous avez besoin de nouvelles déclarations de méthode. 
+Heureusement, cela n’est pas nécessaire. Le framework .NET Core contient plusieurs types que vous pouvez réutiliser chaque fois que vous avez besoin de types délégués. Il s’agit de définitions [génériques](programming-guide/generics/index.md). Vous pouvez ainsi déclarer des personnalisations quand vous avez besoin de nouvelles déclarations de méthode.
 
 Le premier de ces types est le type <xref:System.Action> et plusieurs variantes :
 
@@ -55,8 +55,8 @@ Par convention, le type du résultat est toujours le dernier paramètre de type 
 
 Utilisez l’un des types `Func` pour tout type délégué qui retourne une valeur.
 
-Il y a également une <xref:System.Predicate%601> spécialisée 
-type pour un délégué qui retourne un test sur une valeur unique :
+Il y a aussi une<xref:System.Predicate%601>
+type pour un délégué qui retourne un test sur une seule valeur :
 
 ```csharp
 public delegate bool Predicate<in T>(T obj);
@@ -72,7 +72,7 @@ Predicate<string> AnotherTestForString;
 Ces deux types peuvent vous sembler équivalents, mais ils ne le sont pas.
 Ces deux variables ne sont pas interchangeables. Une variable d’un type ne peut pas être assignée à l’autre type. Le système de type C# utilise les noms des types définis, pas la structure.
 
-Toutes ces définitions de types délégués dans la bibliothèque .NET Core doivent signifier que vous n’avez pas besoin de définir un nouveau type délégué pour toute nouvelle fonctionnalité que vous créez et qui nécessite des délégués. Ces définitions génériques doivent fournir tous les types délégués dont vous avez besoin dans la plupart des situations. Il vous suffit d’instancier l’un de ces types avec les paramètres de type nécessaires. Dans le cas des algorithmes qui peuvent être rendus génériques, ces délégués peuvent être utilisés en tant que types génériques. 
+Toutes ces définitions de types délégués dans la bibliothèque .NET Core doivent signifier que vous n’avez pas besoin de définir un nouveau type délégué pour toute nouvelle fonctionnalité que vous créez et qui nécessite des délégués. Ces définitions génériques doivent fournir tous les types délégués dont vous avez besoin dans la plupart des situations. Il vous suffit d’instancier l’un de ces types avec les paramètres de type nécessaires. Dans le cas des algorithmes qui peuvent être rendus génériques, ces délégués peuvent être utilisés en tant que types génériques.
 
 Cela devrait vous procurer un gain de temps et réduire le nombre de nouveaux types que vous devez créer pour travailler avec des délégués.
 

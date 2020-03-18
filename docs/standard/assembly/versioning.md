@@ -9,10 +9,10 @@ helpviewer_keywords:
 - versioning, assemblies
 ms.assetid: 775ad4fb-914f-453c-98ef-ce1089b6f903
 ms.openlocfilehash: bbb3dae2ce66c93d05a2a1c0f7e426901fa7b2e0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73140180"
 ---
 # <a name="assembly-versioning"></a>Contrôle de version des assemblys
@@ -30,13 +30,13 @@ Le runtime procède en plusieurs étapes pour résoudre une demande de liaison d
   
 3. Il détermine l'assembly correct à partir de la référence de l'assembly d'origine et de toute redirection spécifiée dans les fichiers de configuration et il définit la version qui doit être liée à l'assembly d'appel.  
   
-4. Vérifie la Global Assembly Cache, les codes base spécifiés dans les fichiers de configuration, puis vérifie le répertoire et les sous-répertoires de l’application à l’aide des règles de détection expliquées dans la [manière dont le runtime localise les assemblys](../../framework/deployment/how-the-runtime-locates-assemblies.md).  
+4. Vérifie le cache d’assemblage global, les bases de code spécifiées dans les fichiers de configuration, puis vérifie l’annuaire de l’application et les sous-directeurs en utilisant les règles de sondage expliquées dans [Comment le temps d’exécution localise les assemblages](../../framework/deployment/how-the-runtime-locates-assemblies.md).  
   
 L’illustration suivante indique ces étapes :  
   
 ![Diagramme qui montre les étapes de la résolution des demandes de liaison d’assemblys.](./media/versioning/resolve-assembly-binding-request.gif)
   
-Pour plus d’informations sur la configuration des applications, consultez [configurer](../../framework/configure-apps/index.md)des applications. Pour plus d’informations sur la stratégie de liaison, consultez [Comment le runtime localise les assemblys](../../framework/deployment/how-the-runtime-locates-assemblies.md).  
+Pour plus d’informations sur les applications configurées, voir [configurer les applications](../../framework/configure-apps/index.md). Pour plus d’informations sur la politique contraignante, voir [Comment le temps d’exécution localise les assemblages](../../framework/deployment/how-the-runtime-locates-assemblies.md).  
   
 ## <a name="version-information"></a>Informations sur la version  
 
@@ -50,7 +50,7 @@ Chaque assembly possède deux modes distincts d'expression d'informations sur la
 
 Chaque assembly possède un numéro de version faisant partie de son identité. Deux assemblys dont les numéros de versions diffèrent sont de ce fait considérés par le runtime comme étant des assemblys complètement différents. Ce numéro de version est physiquement représenté par une chaîne en quatre parties au format suivant :  
   
-\<*version majeure*>.\< *version mineure*>.\< *numéro de build*>.\< *révision*>  
+\<*version majeure*>.\<*version mineure*>.\<*numéro de build*>.\<*révision*>  
   
 Par exemple, la version 1.5.1254.0 indique que 1 est la version principale, 5 la version secondaire, 1254 le numéro de build et 0 le numéro de révision.  
   
@@ -60,7 +60,7 @@ Lors de la génération d'un assembly, l'outil de développement enregistre des 
   
 Le runtime fait la différence entre les assemblys normaux et les assemblys avec nom fort à des fins de versioning. La vérification de la version n'est effectuée qu'avec les assemblys avec nom fort.  
   
-Pour plus d’informations sur la spécification des stratégies de liaison de version, consultez [configurer des applications](../../framework/configure-apps/index.md). Pour plus d’informations sur la façon dont le runtime utilise les informations de version pour rechercher un assembly particulier, consultez [Comment le runtime localise les assemblys](../../framework/deployment/how-the-runtime-locates-assemblies.md).  
+Pour plus d’informations sur la spécifier les stratégies de liaison de la version, voir [configurer les applications](../../framework/configure-apps/index.md). Pour plus d’informations sur la façon dont le temps d’exécution utilise les informations de version pour trouver un assemblage particulier, voir [comment le temps d’exécution localise les assemblages](../../framework/deployment/how-the-runtime-locates-assemblies.md).  
   
 ### <a name="assembly-informational-version"></a>Version des informations sur l'assembly  
 
@@ -69,11 +69,11 @@ La version d'informations correspond à une chaîne qui attache des informations
 > [!NOTE]
 > Même si tout type de texte peut être spécifié, un message d'avertissement apparaît à la compilation si le format de la chaîne n'est pas celui qui est utilisé par le numéro de version de l'assembly ou si le format est correct mais contient des caractères génériques. Cet avertissement est sans incidence.  
   
-La version d'informations est représentée à l'aide de l'attribut personnalisé <xref:System.Reflection.AssemblyInformationalVersionAttribute?displayProperty=nameWithType>. Pour plus d’informations sur l’attribut de version d’informations, consultez [définir des attributs d’assembly](set-attributes.md).  
+La version d'informations est représentée à l'aide de l'attribut personnalisé <xref:System.Reflection.AssemblyInformationalVersionAttribute?displayProperty=nameWithType>. Pour plus d’informations sur l’attribut de version d’information, voir [attributs d’assemblage De set](set-attributes.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Méthode de localisation des assemblys par le runtime](../../framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Comment le temps d’exécution localise les assemblages](../../framework/deployment/how-the-runtime-locates-assemblies.md)
 - [Configurer des applications](../../framework/configure-apps/index.md)
 - [Définir des attributs d’assembly](set-attributes.md)
 - [Assemblys dans .NET](index.md)

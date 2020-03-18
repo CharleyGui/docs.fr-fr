@@ -1,5 +1,5 @@
 ---
-title: Comment concaténer plusieurs chaînes (C# Guide)
+title: Comment concatenate plusieurs cordes (Guide de C)
 description: Il existe plusieurs façons de concaténer des chaînes dans C#. Découvrez les options et les raisons de les choisir.
 ms.date: 02/20/2018
 helpviewer_keywords:
@@ -8,13 +8,13 @@ helpviewer_keywords:
 - strings [C#], concatenation
 ms.assetid: 8e16736f-4096-4f3f-be0f-9d4c3ff63520
 ms.openlocfilehash: 9a0640a7ce73fa8454442cd301157bf5c265f9de
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713897"
 ---
-# <a name="how-to-concatenate-multiple-strings-c-guide"></a>Comment concaténer plusieurs chaînes (C# Guide)
+# <a name="how-to-concatenate-multiple-strings-c-guide"></a>Comment concatenate plusieurs cordes (Guide de C)
 
 La *concaténation* consiste à ajouter une chaîne à la fin d’une autre chaîne. Vous concaténez les chaînes à l’aide de l’opérateur `+`. Pour les littéraux de chaîne et les constantes de chaîne, la concaténation se produit au moment de la compilation ; aucune concaténation ne se produit au moment de l’exécution. Pour les variables de chaîne, la concaténation se produit uniquement au moment de l’exécution.
 
@@ -24,7 +24,7 @@ L’exemple suivant utilise la concaténation pour diviser un long littéral de 
   
  [!code-csharp-interactive[Combining strings at compile time](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#1)]  
 
-Pour concaténer des variables de chaîne, vous pouvez utiliser les opérateurs `+` ou `+=`, l’[interpolation de chaînes](../language-reference/tokens/interpolated.md), ou encore les méthodes <xref:System.String.Format%2A?displayProperty=nameWithType>, <xref:System.String.Concat%2A?displayProperty=nameWithType>, <xref:System.String.Join%2A?displayProperty=nameWithType> ou <xref:System.Text.StringBuilder.Append%2A?displayProperty=nameWithType>. L’opérateur `+` est facile à utiliser et convient au code intuitif. Même si vous utilisez plusieurs opérateurs `+` dans une instruction, le contenu de la chaîne est copié une seule fois. Le code suivant montre des exemples d’utilisation des opérateurs `+` et `+=` pour concaténer des chaînes :
+Pour concatenate variables de chaîne, `+=` vous pouvez utiliser <xref:System.String.Format%2A?displayProperty=nameWithType>le <xref:System.String.Concat%2A?displayProperty=nameWithType> `+` <xref:System.String.Join%2A?displayProperty=nameWithType> ou les opérateurs, [l’interpolation de chaîne](../language-reference/tokens/interpolated.md) ou le , , ou <xref:System.Text.StringBuilder.Append%2A?displayProperty=nameWithType> des méthodes. L’opérateur `+` est facile à utiliser et convient au code intuitif. Même si vous utilisez plusieurs opérateurs `+` dans une instruction, le contenu de la chaîne est copié une seule fois. Le code suivant montre des exemples d’utilisation des opérateurs `+` et `+=` pour concaténer des chaînes :
 
 [!code-csharp-interactive[combining strings using +](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#2)]  
 
@@ -41,7 +41,7 @@ Dans d’autres cas, vous pouvez combiner des chaînes dans une boucle quand vou
   
 [!code-csharp-interactive[string concatenation using string builder](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#4)]  
 
-Vous pouvez en savoir plus sur les [raisons pour choisir la concaténation de chaînes ou la classe `StringBuilder`](xref:System.Text.StringBuilder#StringAndSB).
+Vous pouvez en savoir plus sur les [raisons `StringBuilder` de choisir la concatenation des cordes ou la classe](xref:System.Text.StringBuilder#StringAndSB).
 
 Une autre option permettant de joindre les chaînes d’une collection consiste à utiliser la méthode <xref:System.String.Concat%2A?displayProperty=nameWithType>. Utilisez la méthode <xref:System.String.Join%2A?displayProperty=nameWithType> si les chaînes sources doivent être séparées par un délimiteur. Le code suivant combine un tableau de mots en utilisant ces deux méthodes :
 
@@ -51,11 +51,11 @@ Enfin, vous pouvez utiliser [LINQ](../programming-guide/concepts/linq/index.md) 
 
 [!code-csharp-interactive[string concatenation using LINQ expressions](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#6)]  
 
-Vous pouvez essayer ces exemples en examinant le code dans notre [dépôt GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
+Vous pouvez essayer ces échantillons en regardant le code dans notre [référentiel GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.String>
 - <xref:System.Text.StringBuilder>
 - [Guide de programmation C#](../programming-guide/index.md)
-- [Chaînes](../programming-guide/strings/index.md)
+- [Cordes](../programming-guide/strings/index.md)

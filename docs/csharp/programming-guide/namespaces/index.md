@@ -6,15 +6,15 @@ helpviewer_keywords:
 - namespaces [C#]
 ms.assetid: b1c4ab46-3fad-4ffa-9deb-dd50a2d8c65a
 ms.openlocfilehash: 21452e259596c9ab10b3d653ec1d8fb90fad131d
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75937615"
 ---
 # <a name="namespaces-c-programming-guide"></a>Espaces de noms (Guide de programmation C#)
 
-Les espaces de noms sont largement utilisés de deux façons dans la programmation avec C#. Tout d’abord, .NET utilise des espaces de noms pour organiser ses nombreuses classes, comme suit :  
+Les espaces de noms sont largement utilisés de deux façons dans la programmation avec C#. Tout d’abord, .NET utilise des espaces nominaux pour organiser ses nombreuses classes, comme suit:  
 
 [!code-csharp[csProgGuide#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#22)]
 
@@ -32,7 +32,7 @@ Deuxièmement, la déclaration de vos propres espaces de noms peut vous aider à
 
 Le nom de l’espace de noms doit être un [nom d’identificateur](../inside-a-program/identifier-names.md) C# valide.
 
-## <a name="namespaces-overview"></a>Vue d’ensemble des espaces de noms
+## <a name="namespaces-overview"></a>Aperçu des espaces de noms
 
 Les espaces de noms ont les propriétés suivantes :
 
@@ -48,8 +48,8 @@ Pour plus d’informations, voir la section [Espace de noms](~/_csharplang/spec/
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [Utilisation d’espaces de noms](using-namespaces.md)
-- [Utilisation de l’espace de noms My](how-to-use-the-my-namespace.md)
-- [Noms d’identificateur](../inside-a-program/identifier-names.md)
-- [using, directive](../../language-reference/keywords/using-directive.md)
-- [::, opérateur](../../language-reference/operators/namespace-alias-qualifier.md)
+- [Utilisation de Namespaces](using-namespaces.md)
+- [Comment utiliser l’espace de noms My](how-to-use-the-my-namespace.md)
+- [Noms d’identificateurs](../inside-a-program/identifier-names.md)
+- [en utilisant la directive](../../language-reference/keywords/using-directive.md)
+- [:: Opérateur](../../language-reference/operators/namespace-alias-qualifier.md)

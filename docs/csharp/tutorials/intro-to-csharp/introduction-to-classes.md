@@ -3,20 +3,20 @@ title: Classes et objets – Présentation du tutoriel C#
 description: Créez votre premier programme C# et explorez les concepts orientés objet
 ms.date: 10/11/2017
 ms.custom: mvc
-ms.openlocfilehash: 5715124a307c7b7fe41b584df82dd328c873ae29
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: b6ad72997647b80b981f1a1871e384791404bdf7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240078"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156591"
 ---
 # <a name="explore-object-oriented-programming-with-classes-and-objects"></a>Explorez la programmation orientée objet avec des classes et des objets
 
-Ce tutoriel suppose que vous disposez d’un ordinateur que vous pouvez utiliser pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur Windows, Linux ou MacOS. Vous trouverez une brève vue d’ensemble des commandes utilisées dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
+Ce tutoriel suppose que vous disposez d’un ordinateur que vous pouvez utiliser pour le développement. Le tutoriel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a des instructions pour configurer votre environnement de développement local sur Windows, Linux ou macOS. Vous trouverez une brève vue d’ensemble des commandes utilisées dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
 
 ## <a name="create-your-application"></a>Créer votre application
 
-Dans une fenêtre de terminal, créez un répertoire nommé *classes*. Vous y créerez votre application. Sélectionnez ce répertoire et tapez `dotnet new console` dans la fenêtre de console. Cette commande crée votre application. Ouvrez *Program.cs*. Il doit se présenter comme suit :
+Dans une fenêtre de terminal, créez un répertoire nommé *classes*. Vous y créerez votre application. Sélectionnez ce répertoire et tapez `dotnet new console` dans la fenêtre de console. Cette commande crée votre application. Ouvrir *Program.cs*. Il doit se présenter comme suit :
 
 ```csharp
 using System;
@@ -33,7 +33,7 @@ namespace classes
 }
 ```
 
-Dans ce tutoriel, vous allez créer des types qui représentent un compte bancaire. Les développeurs définissent généralement chaque classe dans un fichier texte différent. Cela simplifie la gestion au fur et à mesure qu’un programme augmente en taille. Créez un fichier nommé *BankAccount.cs* dans le répertoire *classes*. 
+Dans ce tutoriel, vous allez créer des types qui représentent un compte bancaire. Les développeurs définissent généralement chaque classe dans un fichier texte différent. Cela simplifie la gestion au fur et à mesure qu’un programme augmente en taille. Créez un fichier nommé *BankAccount.cs* dans le répertoire *classes*.
 
 Ce fichier contiendra la définition d’un ***compte bancaire***. La programmation orientée objet organise le code en créant des types sous la forme de ***classes***. Ces classes contiennent le code qui représente une entité spécifique. La classe `BankAccount` représente un compte bancaire. Le code implémente des opérations spécifiques à travers des méthodes et des propriétés. Dans ce tutoriel, le compte bancaire prend en charge le comportement suivant :
 
@@ -71,13 +71,13 @@ namespace classes
 }
 ```
 
-Avant de poursuivre, examinons ce que vous venez de créer.  La déclaration `namespace` permet d’organiser logiquement votre code. Ce tutoriel étant relativement petit, vous allez placer tout le code dans un même espace de noms. 
+Avant de poursuivre, examinons ce que vous venez de créer.  La déclaration `namespace` permet d’organiser logiquement votre code. Ce tutoriel étant relativement petit, vous allez placer tout le code dans un même espace de noms.
 
-`public class BankAccount` définit la classe ou le type que vous créez. Tout ce qui se trouve à l’intérieur du `{` et `}` qui suit la déclaration de classe définit l’État et le comportement de la classe. La classe ***a cinq***membres`BankAccount`. Les trois premiers sont des ***propriétés***. Les propriétés sont des éléments de données qui peuvent avoir un code qui applique la validation ou d’autres règles. Les deux derniers sont des ***méthodes***. Les méthodes sont des blocs de code qui effectuent une fonction unique. La lecture des noms de chacun des membres doit fournir suffisamment d’informations pour vous permettre (ou à tout autre développeur) de comprendre ce que fait la classe.
+`public class BankAccount` définit la classe ou le type que vous créez. Tout à `{` `}` l’intérieur de la et qui suit la déclaration de classe définit l’état et le comportement de la classe. La classe `BankAccount` a cinq ***membres***. Les trois premiers sont des ***propriétés***. Les propriétés sont des éléments de données qui peuvent avoir un code qui applique la validation ou d’autres règles. Les deux derniers sont des ***méthodes***. Les méthodes sont des blocs de code qui effectuent une fonction unique. La lecture des noms de chacun des membres doit fournir suffisamment d’informations pour vous permettre (ou à tout autre développeur) de comprendre ce que fait la classe.
 
 ## <a name="open-a-new-account"></a>Ouvrir un nouveau compte
 
-La première fonctionnalité à implémenter est l’ouverture d’un compte bancaire. Quand un client ouvre un compte, il doit fournir un solde initial, ainsi que des informations sur le ou les détenteurs du compte. 
+La première fonctionnalité à implémenter est l’ouverture d’un compte bancaire. Quand un client ouvre un compte, il doit fournir un solde initial, ainsi que des informations sur le ou les détenteurs du compte.
 
 La création d’un objet du type `BankAccount` suppose la définition d’un ***constructeur*** qui assigne ces valeurs. Un ***constructeur*** est un membre qui porte le même nom que la classe. Il est utilisé pour initialiser des objets de ce type de classe. Ajoutez le constructeur suivant au type `BankAccount` :
 
@@ -89,7 +89,7 @@ public BankAccount(string name, decimal initialBalance)
 }
 ```
 
-Les constructeurs sont appelés quand vous créez un objet à l’aide de [`new`](../../language-reference/operators/new-operator.md). Remplacez la ligne `Console.WriteLine("Hello World!");` dans *Program.cs* par le code suivant (remplacez `<name>` par votre nom) :
+Les constructeurs sont appelés lorsque [`new`](../../language-reference/operators/new-operator.md)vous créez un objet à l’aide de . Remplacer la `Console.WriteLine("Hello World!");` ligne en *Program.cs* par le `<name>` code suivant (remplacer par votre nom):
 
 ```csharp
 var account = new BankAccount("<name>", 1000);
@@ -106,7 +106,7 @@ Ajoutez la déclaration de membre suivante à la classe `BankAccount` :
 private static int accountNumberSeed = 1234567890;
 ```
 
-Il s’agit d’un membre de données. Celui-ci est `private`, ce qui signifie qu’il est uniquement accessible par code dans la classe `BankAccount`. C’est un moyen de séparer les responsabilités publiques (comme la présence d’un numéro de compte) de l’implémentation privée (comment les numéros de compte sont générés). Il est également `static`, ce qui signifie qu’il est partagé par toutes les objets `BankAccount`. La valeur d’une variable non statique est unique pour chaque instance de l’objet `BankAccount`. Ajoutez les deux lignes suivantes au constructeur pour assigner le numéro de compte :
+Il s’agit d’un membre de données. Celui-ci est `private`, ce qui signifie qu’il est uniquement accessible par code dans la classe `BankAccount`. C’est une façon de séparer les responsabilités publiques (comme avoir un numéro de compte) de la mise en œuvre privée (comment les numéros de compte sont générés). Il est également `static`, ce qui signifie qu’il est partagé par toutes les objets `BankAccount`. La valeur d’une variable non statique est unique pour chaque instance de l’objet `BankAccount`. Ajoutez les deux lignes suivantes au constructeur pour assigner le numéro de compte :
 
 ```csharp
 this.Number = accountNumberSeed.ToString();
@@ -139,13 +139,13 @@ Nous allons à présent modifier la façon dont le `Balance` est présenté.  Il
 
 Cet exemple montre un aspect important des ***propriétés***. Vous calculez à présent le solde quand un autre programmeur en demande la valeur. Votre calcul énumère toutes les transactions et retourne la somme en tant que solde actuel.
 
-Implémentez ensuite les méthodes `MakeDeposit` et `MakeWithdrawal`. Ces méthodes appliquent les deux règles finales suivantes : le solde initial doit être positif et un retrait ne doit pas générer de solde négatif. 
+Implémentez ensuite les méthodes `MakeDeposit` et `MakeWithdrawal`. Ces méthodes appliquent les deux règles finales suivantes : le solde initial doit être positif et un retrait ne doit pas générer de solde négatif.
 
 Cela introduit le concept d’***exceptions***. Le moyen typique d’indiquer qu’une méthode ne peut pas effectuer correctement son travail consiste à lever une exception. Le type d’exception et le message associé décrivent l’erreur. Ici, la méthode `MakeDeposit` lève une exception si le montant du dépôt est négatif. La méthode `MakeWithdrawal` lève une exception si le montant du retrait est négatif ou si l’application du retrait génère un solde négatif :
 
 [!code-csharp[DepositAndWithdrawal](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#DepositAndWithdrawal)]
 
-L’instruction [`throw`](../../language-reference/keywords/throw.md)**lève** une exception. L’exécution du bloc actuel se termine et le contrôle est transféré au premier bloc correspondant `catch` trouvé dans la pile des appels. Vous ajouterez un bloc `catch` pour tester ce code un peu plus tard.
+La [`throw`](../../language-reference/keywords/throw.md) déclaration **jette** une exception. L’exécution du bloc actuel se termine et le contrôle est transféré au premier bloc correspondant `catch` trouvé dans la pile des appels. Vous ajouterez un bloc `catch` pour tester ce code un peu plus tard.
 
 Le constructeur devrait obtenir une modification lui permettant d’ajouter une transaction initiale au lieu de mettre directement le solde à jour. Étant donné que vous avez déjà écrit la méthode `MakeDeposit`, appelez-la à partir de votre constructeur. Le constructeur terminé doit être semblable à ce qui suit :
 
@@ -175,7 +175,7 @@ catch (ArgumentOutOfRangeException e)
 }
 ```
 
-Vous utilisez les [`try` instructions `catch` et ](../../language-reference/keywords/try-catch.md) pour marquer un bloc de code pouvant lever des exceptions et intercepter les erreurs que vous attendez. Vous pouvez utiliser la même technique pour tester le code qui lève une exception de solde négatif :
+Vous utilisez [ `try` `catch` ](../../language-reference/keywords/try-catch.md) les instructions et les instructions pour marquer un bloc de code qui peut jeter des exceptions et pour attraper les erreurs que vous attendez. Vous pouvez utiliser la même technique pour tester le code qui lève une exception de solde négatif :
 
 ```csharp
 // Test for a negative balance.
@@ -208,8 +208,8 @@ Console.WriteLine(account.GetAccountHistory());
 
 Tapez `dotnet run` pour afficher les résultats.
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
-Si vous vous êtes bloqué, vous pouvez voir la source de ce didacticiel [dans notre référentiel GitHub](https://github.com/dotnet/samples/tree/master/csharp/classes-quickstart/).
+Si vous êtes resté coincé, vous pouvez voir la source de ce tutoriel [dans notre repo GitHub](https://github.com/dotnet/samples/tree/master/csharp/classes-quickstart/).
 
-Félicitations, vous avez terminé toute notre présentation des tutoriels C#. Si vous souhaitez en savoir plus, essayez d’autres [didacticiels](../index.md).
+Félicitations, vous avez terminé toute notre présentation des tutoriels C#. Si vous êtes impatient d’en savoir plus, essayez plus de nos [tutoriels](../index.md).
