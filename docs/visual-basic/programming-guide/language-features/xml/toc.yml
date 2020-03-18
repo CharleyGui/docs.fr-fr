@@ -16,27 +16,27 @@
           href: xml-literals-and-the-xml-1-0-specification.md
         - name: Espaces blancs dans les littéraux XML
           href: white-space-in-xml-literals.md
-        - name: "Procédure\_: créer des littéraux XML"
+        - name: "Comment\_: créer des littéraux XML"
           href: how-to-create-xml-literals.md
-        - name: "Procédure\_: incorporer des expressions dans les littéraux XML"
+        - name: "Comment\_: incorporer des expressions dans des littéraux XML"
           href: how-to-embed-expressions-in-xml-literals.md
     - name: Manipulation de XML
       href: manipulating-xml.md
       items:
-        - name: "Procédure\_: charger du code XML à partir d’un fichier, d’une chaîne ou d’un flux"
+        - name: "Comment\_: charger du code XML à partir d'un fichier, d'une chaîne ou d'un flux"
           href: how-to-load-xml-from-a-file-string-or-stream.md
-        - name: "Procédure\_: transformer du code XML à l’aide de LINQ"
+        - name: "Comment\_: transformer du code XML à l'aide de LINQ"
           href: how-to-transform-xml-by-using-linq.md
-        - name: "Procédure\_: modifier des littéraux XML"
+        - name: "Comment\_: modifier des littéraux XML"
           href: how-to-modify-xml-literals.md
     - name: Accès à du code XML
       href: accessing-xml.md
       items:
-        - name: "Procédure\_: accéder aux éléments descendants XML"
+        - name: "Comment\_: accéder à des éléments descendants XML"
           href: how-to-access-xml-descendant-elements.md
-        - name: "Procédure\_: accéder aux éléments enfants XML"
+        - name: "Comment\_: accéder à des éléments enfants XML"
           href: how-to-access-xml-child-elements.md
-        - name: "Procédure\_: accéder aux attributs XML"
+        - name: "Comment\_: accéder à des attributs XML"
           href: how-to-access-xml-attributes.md
-        - name: "Procédure\_: déclarer et utiliser des préfixes d’espaces de noms XML"
+        - name: "Comment\_: déclarer et utiliser des préfixes d'espaces de noms XML"
           href: how-to-declare-and-use-xml-namespace-prefixes.md

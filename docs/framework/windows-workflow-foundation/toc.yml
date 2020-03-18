@@ -25,24 +25,24 @@
       items:
         - name: "Procédure\_: créer une activité"
           href: how-to-create-an-activity.md
-        - name: "Procédure\_: créer un workflow"
+        - name: 'Procédure : créer un workflow'
           href: how-to-create-a-workflow.md
           items:
-            - name: "Procédure\_: créer un workflow d’organigramme"
+            - name: "Procédure\_: créer un workflow d'organigramme"
               href: how-to-create-a-flowchart-workflow.md
             - name: "Procédure\_: créer un workflow séquentiel"
               href: how-to-create-a-sequential-workflow.md
-            - name: "Procédure\_: créer un flux de travail de machine à états"
+            - name: "Procédure\_: créer un workflow d'ordinateur d'état"
               href: how-to-create-a-state-machine-workflow.md
-        - name: "Procédure\_: exécuter un workflow"
+        - name: 'Procédure : exécuter un workflow'
           href: how-to-run-a-workflow.md
-        - name: "Procédure\_: créer et exécuter un workflow durable"
+        - name: "Procédure\_: créer et exécuter un workflow de longue durée"
           href: how-to-create-and-run-a-long-running-workflow.md
-        - name: "Procédure\_: créer un participant de suivi de personnalisé"
+        - name: "Procédure\_: créer un participant de suivi personnalisé"
           href: how-to-create-a-custom-tracking-participant.md
-        - name: "Procédure\_: héberger plusieurs versions d’un workflow côte à côte"
+        - name: "Procédure\_: héberger plusieurs versions d'un workflow côte à côte"
           href: how-to-host-multiple-versions-of-a-workflow-side-by-side.md
-        - name: "Procédure\_: mettre à jour la définition d’une instance de workflow en cours d’exécution"
+        - name: "Procédure\_: mettre à jour la définition d'une instance de workflow en cours d'exécution"
           href: how-to-update-the-definition-of-a-running-workflow-instance.md
     - name: Programmation Windows Workflow Foundation
       href: programming.md
@@ -73,7 +73,7 @@
                   href: flowchart-activities-in-wf.md
                 - name: Machine à états
                   href: state-machine-activities-in-wf.md
-                - name: Runtime
+                - name: Exécution
                   href: runtime-activities-in-wf.md
                 - name: Primitives
                   href: primitives-activities-in-wf.md
@@ -115,7 +115,7 @@
                       href: declarative-constraints.md
                     - name: Appel de la validation d'activité
                       href: invoking-activity-validation.md
-                - name: Création d’une activité au moment de l’exécution
+                - name: Création d'une activité en cours d'exécution
                   href: creating-an-activity-at-runtime-with-dynamicactivity.md
                 - name: Propriétés d'exécution de workflow
                   href: workflow-execution-properties.md
@@ -138,7 +138,7 @@
               href: expressions.md
             - name: 'Expressions C#'
               href: csharp-expressions.md
-            - name: Propriétés et Arguments
+            - name: Propriétés et arguments
               href: properties-vs-arguments.md
             - name: Exposition de données avec CacheMetadata
               href: exposing-data-with-cachemetadata.md
@@ -177,7 +177,7 @@
           href: dynamic-update.md
         - name: "Développement de services de workflow «\_contrat en premier\_»"
           href: contract-first-workflow-service-development.md
-        - name: "Procédure\_: créer un service de workflow qui consomme un contrat de service existant"
+        - name: "Procédure\_: créer un service de workflow qui utilise un contrat de service existant"
           href: how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md
         - name: Persistance du workflow
           href: workflow-persistence.md
@@ -200,7 +200,7 @@
                       href: runnable-instances-detection-period.md
                     - name: Chaîne de connexion et nom de la chaîne de connexion
                       href: connection-string-and-connection-string-name.md
-                - name: "Procédure\_: activer la persistance SQL pour les workflow et les services de workflow"
+                - name: "Procédure\_: activer la persistance SQL pour les workflows et les services de workflow"
                   href: how-to-enable-sql-persistence-for-workflows-and-workflow-services.md
                 - name: Activation d'instance
                   href: instance-activation.md
@@ -215,21 +215,21 @@
                   items:
                     - name: Schéma de la base de données de persistance
                       href: persistence-database-schema.md
-                    - name: "Procédure\_: désérialiser des propriétés de données d’instance"
+                    - name: "Comment\_: désérialiser des propriétés de données d'instance"
                       href: how-to-deserialize-instance-data-properties.md
-                    - name: "Procédure\_: interroger des instances non persistantes"
+                    - name: "Procédure\_: rechercher des instances non\_persistantes"
                       href: how-to-query-for-non-persisted-instances.md
             - name: Magasins d'instances
               href: instance-stores.md
               items:
-                - name: "Procédure\_: activer la persistance pour les workflow et les services de workflow"
+                - name: "Procédure\_: activer la persistance pour les workflows et les services de workflow"
                   href: how-to-enable-persistence-for-workflows-and-workflow-services.md
-                - name: "Procédure\_: créer un magasin d’instances personnalisé"
+                - name: "Procédure\_: créer un magasin d'instances personnalisé"
                   href: how-to-create-a-custom-instance-store.md
             - name: Participants de persistance
               href: persistence-participants.md
               items:
-                - name: "Procédure\_: créer un participant de persistance personnalisé"
+                - name: 'Procédure : créer un participant de persistance personnalisé'
                   href: how-to-create-a-custom-persistence-participant.md
             - name: Meilleures pratiques de persistance
               href: persistence-best-practices.md
@@ -523,9 +523,9 @@
             - name: Utilisation de concepteurs d'activités et de modèles d'activité personnalisés
               href: using-custom-activity-designers-and-templates.md
               items:
-                - name: "Procédure\_: créer un concepteur d’activités personnalisées"
+                - name: "Procédure\_: créer un concepteur d'activités personnalisées"
                   href: how-to-create-a-custom-activity-designer.md
-                - name: "Procédure\_: créer un modèle d’activité personnalisé"
+                - name: "Procédure\_: créer un modèle d'activité personnalisé"
                   href: how-to-create-a-custom-activity-template.md
                 - name: Utilisation du contexte d'édition ModelItem
                   href: using-the-modelitem-editing-context.md
@@ -534,11 +534,11 @@
             - name: Réhébergement du Workflow Designer
               href: rehosting-the-workflow-designer.md
               items:
-                - name: "Tâche\_1\_: créer une application Windows Presentation Foundation"
+                - name: 'Tâche 1 : créer une nouvelle application Windows Presentation Foundation.'
                   href: task-1-create-a-new-wpf-app.md
-                - name: "Tâche 2\_: héberger le concepteur de flux de travail"
+                - name: "Tâche\_2\_: héberger le Workflow Designer"
                   href: task-2-host-the-workflow-designer.md
-                - name: "Tâche\_3\_: créer les volets Toolbox et PropertyGrid"
+                - name: "Tâche 3\_: créer les volets de PropertyGrid et boîte à outils"
                   href: task-3-create-the-toolbox-and-propertygrid-panes.md
                 - name: "Procédure\_: afficher les erreurs de validation dans un concepteur réhébergé"
                   href: how-to-display-validation-errors-in-a-rehosted-designer.md

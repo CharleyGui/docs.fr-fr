@@ -7,9 +7,9 @@
       href: arithmetic-operators.md
     - name: Opérateurs de comparaison
       href: comparison-operators.md
-    - name: "Procédure\_: tester si deux objets sont identiques"
+    - name: "Comment\_: déterminer si deux objets sont identiques"
       href: how-to-test-whether-two-objects-are-the-same.md
-    - name: "Procédure\_: faire correspondre une chaîne à un modèle"
+    - name: "Comment\_: faire correspondre une chaîne à un modèle"
       href: how-to-match-a-string-against-a-pattern.md
     - name: Opérateurs de concaténation
       href: concatenation-operators.md
@@ -17,7 +17,7 @@
       href: logical-and-bitwise-operators.md
     - name: Association efficace d’opérateurs
       href: efficient-combination-of-operators.md
-    - name: "Procédure\_: calculer des valeurs numériques"
+    - name: "Comment\_: calculer des valeurs numériques"
       href: how-to-calculate-numeric-values.md
     - name: Comparaisons de valeurs
       href: value-comparisons.md

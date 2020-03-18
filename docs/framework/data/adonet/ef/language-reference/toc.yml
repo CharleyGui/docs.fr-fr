@@ -7,43 +7,43 @@
         - name: Requêtes dans LINQ to Entities
           href: queries-in-linq-to-entities.md
           items:
-            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: Projection"
+            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: projection"
               href: method-based-query-syntax-examples-projection.md
-            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: Filtrage"
+            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: filtrage"
               href: method-based-query-syntax-examples-filtering.md
-            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: Classement"
+            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: tri"
               href: method-based-query-syntax-examples-ordering.md
-            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: Opérateurs d’agrégation"
+            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: opérateurs d'agrégation"
               href: method-based-query-syntax-examples-aggregate-operators.md
-            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: Partitionnement"
+            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: partition"
               href: method-based-query-syntax-examples-partitioning.md
-            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: Conversion"
+            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: conversion"
               href: method-based-query-syntax-examples-conversion.md
-            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: Opérateurs de jointure"
+            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: opérateurs de jointure"
               href: method-based-query-syntax-examples-join-operators.md
-            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: Opérateurs d’élément"
+            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: opérateurs d'élément"
               href: method-based-query-syntax-examples-element-operators.md
-            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: Regroupement"
+            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: groupement"
               href: method-based-query-syntax-examples-grouping.md
-            - name: "Exemples de syntaxe de requête fondée sur une méthode\_: Exploration des relations"
+            - name: "Exemples de syntaxe de requête basée sur une méthode\_: parcours des relations"
               href: method-based-query-syntax-examples-navigating-relationships.md
-            - name: "Exemples de syntaxe d’expression de requête\_: Projection"
+            - name: "Exemples de syntaxe d'expression de requête\_: Projection"
               href: query-expression-syntax-examples-projection.md
-            - name: "Exemples de syntaxe d’expression de requête\_: Filtrage"
+            - name: "Exemples de syntaxe d'expression de requête\_: filtrage"
               href: query-expression-syntax-examples-filtering.md
-            - name: "Exemples de syntaxe d’expression de requête\_: Classement"
+            - name: "Exemples de syntaxe d'expression de requête\_: classement"
               href: query-expression-syntax-examples-ordering.md
-            - name: "Exemples de syntaxe d’expression de requête\_: Opérateurs d’agrégation"
+            - name: "Exemples de syntaxe d'expression de requête\_: opérateurs d'agrégation"
               href: query-expression-syntax-examples-aggregate-operators.md
-            - name: "Exemples de syntaxe d’expression de requête\_: Partitionnement"
+            - name: "Exemples de syntaxe d'expression de requête\_: partition"
               href: query-expression-syntax-examples-partitioning.md
-            - name: "Exemples de syntaxe d’expression de requête\_: Opérateurs de jointure"
+            - name: "Exemples de syntaxe d'expression de requête\_: opérateurs de jointure"
               href: query-expression-syntax-examples-join-operators.md
-            - name: "Exemples de syntaxe d’expression de requête\_: Opérateurs d’élément"
+            - name: "Exemples de syntaxe d'expression de requête\_: opérateurs d'élément"
               href: query-expression-syntax-examples-element-operators.md
-            - name: "Exemples de syntaxe d’expression de requête\_: Regroupement"
+            - name: "Exemples de syntaxe d'expression de requête\_: regroupement"
               href: query-expression-syntax-examples-grouping.md
-            - name: "Exemples de syntaxe d’expression de requête\_: Exploration des relations"
+            - name: "Exemples de syntaxe d'expression de requête\_: parcours des relations"
               href: query-expression-syntax-examples-navigating-relationships.md
         - name: Expressions dans les requêtes LINQ to Entities
           href: expressions-in-linq-to-entities-queries.md
@@ -59,15 +59,15 @@
         - name: Appel de fonctions dans les requêtes LINQ to Entities
           href: calling-functions-in-linq-to-entities-queries.md
           items:
-            - name: "Procédure\_: Appeler des fonctions canoniques"
+            - name: "Comment\_: appeler des fonctions de chaînes canoniques"
               href: how-to-call-canonical-functions.md
-            - name: "Procédure\_: Appeler des fonctions de base de données"
+            - name: "Comment\_: appeler des fonctions de base de données"
               href: how-to-call-database-functions.md
-            - name: "Procédure\_: Appeler des fonctions de base de données personnalisées"
+            - name: "Comment\_: appeler des fonctions de base de données personnalisées"
               href: how-to-call-custom-database-functions.md
-            - name: "Procédure\_: Appeler des fonctions définies par modèle dans les requêtes"
+            - name: "Comment\_: appeler des fonctions définies par modèle dans les requêtes"
               href: how-to-call-model-defined-functions-in-queries.md
-            - name: "Procédure\_: Appeler des fonctions définies par modèle comme méthodes d’objet"
+            - name: "Comment\_: appeler des fonctions définies par modèle comme méthodes d'objet"
               href: how-to-call-model-defined-functions-as-object-methods.md
         - name: Requêtes compilées (LINQ to Entities)
           href: compiled-queries-linq-to-entities.md
@@ -93,13 +93,13 @@
               href: how-entity-sql-differs-from-transact-sql.md
             - name: Aide-mémoire Entity SQL
               href: entity-sql-quick-reference.md
-            - name: Système de type
+            - name: système de type
               href: type-system-entity-sql.md
             - name: Définitions de types
               href: type-definitions-entity-sql.md
             - name: Construction de types
               href: constructing-types-entity-sql.md
-            - name: Mise en cache d’un plan de requête
+            - name: Mise en cache d'un plan de requête
               href: query-plan-caching-entity-sql.md
             - name: Espaces de noms
               href: namespaces-entity-sql.md
@@ -115,7 +115,7 @@
               href: literals-entity-sql.md
             - name: Littéraux null et inférence de type
               href: null-literals-and-type-inference-entity-sql.md
-            - name: Jeu de caractères d’entrée
+            - name: Jeu de caractères en entrée
               href: input-character-set-entity-sql.md
             - name: Expressions de requête
               href: query-expressions-entity-sql.md
@@ -136,7 +136,7 @@
               href: comparison-semantics-entity-sql.md
             - name: Composition de requêtes Entity SQL imbriquées
               href: composing-nested-entity-sql-queries.md
-            - name: Types structurés Nullable
+            - name: Types structurés autorisant la valeur null
               href: nullable-structured-types-entity-sql.md
         - name: Référence Entity SQL
           href: entity-sql-reference.md
@@ -153,7 +153,7 @@
               href: multiply-entity-sql.md
             - name: / (diviser)
               href: divide-entity-sql.md
-            - name: Pourcentage (modulo)
+            - name: Pourcentage (Modulo)
               href: modulo-entity-sql.md
             - name: '&& (AND)'
               href: and-entity-sql.md
@@ -175,7 +175,7 @@
               href: not-equal-to-entity-sql.md
             - name: . (accès aux membres)
               href: member-access-entity-sql.md
-            - name: '-- (commentaire)'
+            - name: '-- (Commentaire)'
               href: comment-entity-sql.md
             - name: ANYELEMENT
               href: anyelement-entity-sql.md
@@ -225,7 +225,7 @@
               href: multiset-entity-sql.md
             - name: Constructeur de type nommé
               href: named-type-constructor-entity-sql.md
-            - name: NAVIGATE
+            - name: NAVIGUER
               href: navigate-entity-sql.md
             - name: OFTYPE
               href: oftype-entity-sql.md

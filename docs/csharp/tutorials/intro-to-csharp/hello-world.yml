@@ -12,10 +12,10 @@ metadata:
   interactive: csharp
   ms.custom: mvc
   ms.openlocfilehash: 365cf0b2ef36dd0be624d022e3dea5e16a9eb58c
-  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 11/12/2019
+  ms.lasthandoff: 03/14/2020
   ms.locfileid: "73969407"
 items:
 - durationInMinutes: 1
@@ -24,7 +24,7 @@ items:
 - title: Exécuter votre premier programme C#
   durationInMinutes: 2
   content: >
-    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **entrer le mode Focus** . Ensuite, tapez le bloc de code suivant dans la fenêtre interactive et sélectionnez **exécuter**:
+    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **De mode Focus Enter.** Ensuite, tapez le bloc de code suivant dans la fenêtre interactive et sélectionnez **Run**:
 
 
     ```csharp
@@ -34,7 +34,7 @@ items:
     ```
 
 
-    Félicitations ! Vous avez exécuté votre premier programme C#. Il s’agit d’un programme simple qui affiche le message « Hello World! ». Il a utilisé la méthode <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> pour afficher ce message. `Console` est un type qui représente la fenêtre de console. `WriteLine` est une méthode du type `Console` qui affiche une ligne de texte sur cette console de texte.
+    Félicitations ! Vous avez exécuté votre premier programme C#. Il s’agit d’un programme simple qui affiche le message « Hello World! ». Il a utilisé la méthode <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> pour afficher ce message. `Console` est un type qui représente la fenêtre de console. `WriteLine` est une méthode du type `Console` qui affiche une ligne de texte sur cette console de texte.
 
 
     Poursuivons notre exploration. Le reste de cette leçon explore l’utilisation du type `string`, qui représente du texte en C#. À l’instar du type `Console`, le type `string` propose différentes méthodes. La méthode `string` fonctionne avec du texte.
@@ -96,7 +96,7 @@ items:
     ```
 
 
-    Sélectionnez **exécuter** à nouveau pour afficher les résultats.
+    Sélectionnez **Exécuter** à nouveau pour voir les résultats.
 
 
     Vous avez utilisé `+` pour générer des chaînes à partir de chaînes **variables** et **constantes**. Il existe une meilleure façon de procéder.
@@ -118,7 +118,7 @@ items:
     ```
 
 
-    Sélectionnez **exécuter** à nouveau pour afficher les résultats. Au lieu de « Hello {aFriend} », le message doit être « Hello Maira ».
+    Sélectionnez **Exécuter** à nouveau pour voir les résultats. Au lieu de « Hello {aFriend} », le message doit être « Hello Maira ».
 
 
     > [!NOTE]
@@ -130,7 +130,7 @@ items:
     Votre dernière modification a été notre introduction à ce que vous pouvez faire avec des chaînes. Poursuivons notre exploration.
 
 
-    Vous n’êtes pas limité à une seule variable entre les accolades. Écrivez ce code :
+    Vous n’êtes pas limité à une seule variable entre les accolades. Procédez comme suit :
 
 
     ```csharp
@@ -167,7 +167,7 @@ items:
 - title: Autres méthodes de chaînes
   durationInMinutes: 5
   content: >
-    Vous utilisez une **méthode**, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, pour afficher les messages. Une **méthode** est un bloc de code qui implémente une action. Elle porte un nom pour vous permettre d’y accéder facilement.
+    Vous avez utilisé une <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> **méthode,**, pour imprimer des messages. Une **méthode** est un bloc de code qui implémente une action. Elle porte un nom pour vous permettre d’y accéder facilement.
 
 
     Supposons que vos chaînes ont des espaces au début ou à la fin que vous ne souhaitez pas afficher. Vous souhaitez **supprimer** les espaces dans les chaînes.
@@ -202,7 +202,7 @@ items:
     Cet exemple met en avant quelques concepts importants concernant l’utilisation de chaînes. Les méthodes utilisant des chaînes retournent des objets de chaîne au lieu d’apporter des modifications. Vous pouvez observer que chaque appel à une méthode `Trim` retourne une nouvelle chaîne, mais que le message d’origine n’est pas modifié.
 
 
-    Il existe d’autres méthodes disponibles pour utiliser des chaînes. Par exemple, vous avez probablement déjà utilisé une commande de recherche et remplacement dans un éditeur ou un traitement de texte. La méthode <xref:System.String.Replace%2A> fonctionne de manière similaire dans une chaîne. Elle recherche une sous-chaîne et la remplace par un autre texte. La méthode <xref:System.String.Replace%2A> accepte deux **paramètres**. Il s’agit des chaînes entre parenthèses. La première chaîne correspond au texte à rechercher. La deuxième chaîne correspond au texte qui le remplacera. Essayez par vous-même. Ajoutez ce code. Tapez-le pour afficher les conseils lorsque vous commencez à taper `.Re` après la variable `sayHello` :
+    Il existe d’autres méthodes disponibles pour utiliser des chaînes. Par exemple, vous avez probablement déjà utilisé une commande de recherche et remplacement dans un éditeur ou un traitement de texte. La méthode <xref:System.String.Replace%2A> fonctionne de manière similaire dans une chaîne. Elle recherche une sous-chaîne et la remplace par un autre texte. La <xref:System.String.Replace%2A> méthode prend deux **paramètres**. Il s’agit des chaînes entre parenthèses. La première chaîne correspond au texte à rechercher. La deuxième chaîne correspond au texte qui le remplacera. Essayez par vous-même. Ajoutez ce code. Tapez-le pour afficher les conseils lorsque vous commencez à taper `.Re` après la variable `sayHello` :
 
 
     ```csharp
@@ -296,7 +296,7 @@ items:
 
     > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - content: >
-    Vous avez terminé la présentation du tutoriel C# « Hello C# ». Vous pouvez sélectionner les **numéros dans C# ** le lien ci-dessous pour démarrer le didacticiel interactif suivant, ou vous pouvez visiter le [site .net](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .net Core, créer un projet sur votre ordinateur et conserver le codage. La section « étapes suivantes » vous ramène à ces didacticiels.
+    Vous avez terminé la présentation du tutoriel C# « Hello C# ». Vous pouvez sélectionner le lien **Numéros en C ci-dessous** pour démarrer le prochain tutoriel interactif, ou vous pouvez visiter le [site .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le .NET Core SDK, créer un projet sur votre machine, et continuer à coder. La section "Prochaines étapes" vous ramène à ces tutoriels.
 
 
     Pour plus d’informations sur le type `string` :

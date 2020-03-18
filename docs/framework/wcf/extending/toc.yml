@@ -7,16 +7,16 @@
         - name: Extension de clients
           href: extending-clients.md
           items:
-            - name: "Procédure\_: inspecter ou modifier des messages sur le client"
+            - name: "Comment\_: inspecter ou modifier des messages sur le client"
               href: how-to-inspect-or-modify-messages-on-the-client.md
-            - name: "Procédure\_: inspecter ou modifier des paramètres"
+            - name: "Comment\_: inspecter ou modifier des paramètres"
               href: how-to-inspect-or-modify-parameters.md
         - name: Extension des répartiteurs
           href: extending-dispatchers.md
           items:
-            - name: "Procédure\_: inspecter et modifier des messages sur le service"
+            - name: "Comment\_: inspecter et modifier des messages sur le service"
               href: how-to-inspect-and-modify-messages-on-the-service.md
-            - name: "Procédure\_: verrouiller des points de terminaison dans l’entreprise"
+            - name: "Comment\_: verrouiller des points de terminaison dans l'entreprise"
               href: how-to-lock-down-endpoints-in-the-enterprise.md
         - name: Objets extensibles
           href: extensible-objects.md
@@ -32,7 +32,7 @@
         - name: Liaisons personnalisées
           href: custom-bindings.md
           items:
-            - name: "Procédure\_: personnaliser une liaison fournie par le système"
+            - name: "Comment\_: personnaliser une liaison fournie par le système"
               href: how-to-customize-a-system-provided-binding.md
         - name: Création de liaisons définies par l’utilisateur
           href: creating-user-defined-bindings.md
@@ -55,9 +55,9 @@
         - name: Développement de canaux
           href: developing-channels.md
           items:
-            - name: "Service\_: Écouteurs de canal et canaux"
+            - name: "Service\_: écouteurs de canal et canaux"
               href: service-channel-listeners-and-channels.md
-            - name: "Client\_: Fabrications de canaux et canaux"
+            - name: "Client\_: fabrications de canaux et canaux"
               href: client-channel-factories-and-channels.md
             - name: Création d’un élément de liaison
               href: creating-a-bindingelement.md
@@ -75,39 +75,39 @@
         - name: Informations d’identification personnalisées et validation d’informations d’identification
           href: custom-credential-and-credential-validation.md
           items:
-            - name: "Procédure pas à pas\_: création d’informations d’identification de client et de service personnalisées"
+            - name: "Procédure pas à pas\_: création d'informations d'identification de client et de service personnalisées"
               href: walkthrough-creating-custom-client-and-service-credentials.md
-            - name: "Procédure\_: créer un service qui utilise un validateur de certificat personnalisé"
+            - name: "Comment\_: créer un service qui utilise un validateur de certificat personnalisé"
               href: how-to-create-a-service-that-employs-a-custom-certificate-validator.md
-            - name: "Procédure\_: créer un fournisseur de jetons de sécurité personnalisé"
+            - name: "Comment\_: créer un fournisseur de jetons de sécurité personnalisé"
               href: how-to-create-a-custom-security-token-provider.md
-            - name: "Procédure\_: créer un authentificateur de jetons de sécurité personnalisé"
+            - name: "Comment\_: créer un authentificateur de jetons de sécurité personnalisé"
               href: how-to-create-a-custom-security-token-authenticator.md
         - name: Jetons personnalisés
           href: custom-tokens.md
           items:
-            - name: "Procédure\_: créer un jeton personnalisé"
+            - name: "Comment\_: créer un jeton personnalisé"
               href: how-to-create-a-custom-token.md
         - name: Autorisation personnalisée
           href: custom-authorization.md
           items:
-            - name: "Procédure\_: créer une stratégie d’autorisation personnalisée"
+            - name: "Comment\_: créer une stratégie d'autorisation personnalisée"
               href: how-to-create-a-custom-authorization-policy.md
-            - name: "Procédure\_: créer un gestionnaire d’autorisations personnalisé pour un service"
+            - name: "Comment\_: créer un gestionnaire d'autorisations personnalisé pour un service"
               href: how-to-create-a-custom-authorization-manager-for-a-service.md
-            - name: "Procédure\_: créer une revendication personnalisée"
+            - name: "Comment\_: créer une revendication personnalisée"
               href: how-to-create-a-custom-claim.md
-            - name: "Procédure\_: comparer des revendications"
+            - name: "Comment\_: comparer des revendications"
               href: how-to-compare-claims.md
-            - name: "Procédure\_: créer une identité de principal de sécurité personnalisée"
+            - name: "Comment\_: créer une identité d'principal de sécurité personnalisée"
               href: how-to-create-a-custom-principal-identity.md
         - name: Substitution de l'identité d'un service pour l'authentification
           href: overriding-the-identity-of-a-service-for-authentication.md
-        - name: "Procédure\_: créer un vérificateur d’identité du client personnalisé"
+        - name: "Comment\_: créer un vérificateur d'identité du client personnalisé"
           href: how-to-create-a-custom-client-identity-verifier.md
-        - name: "Procédure\_: utiliser des certificats X.509 distincts pour les signatures et le chiffrement"
+        - name: "Comment\_: utiliser des certificats X.509 distincts pour les signatures et le chiffrement"
           href: how-to-use-separate-x-509-certificates-for-signing-and-encryption.md
-        - name: "Procédure\_: remplacer le fournisseur de services de chiffrement par la clé privée d’un certificat X.509"
+        - name: "Comment\_: remplacer le fournisseur de services de chiffrement par la clé privée d'un certificat X.509"
           href: change-cryptographic-provider-x509-certificate-private-key.md
     - name: Extension du système de métadonnées
       href: extending-the-metadata-system.md
@@ -115,25 +115,25 @@
         - name: Exportation de métadonnées personnalisées pour une extension WCF
           href: exporting-custom-metadata-for-a-wcf-extension.md
           items:
-            - name: "Procédure\_: exporter un WSDL personnalisé"
+            - name: "Comment\_: exporter des informations WSDL personnalisées"
               href: how-to-export-custom-wsdl.md
-            - name: "Procédure\_: exporter des assertions de stratégie personnalisées"
+            - name: "Comment\_: exporter des assertions de stratégie personnalisées"
               href: how-to-export-custom-policy-assertions.md
         - name: Importation de métadonnées personnalisées pour une extension WCF
           href: importing-custom-metadata-for-a-wcf-extension.md
           items:
-            - name: "Procédure\_: importer un WSDL personnalisé"
+            - name: "Comment\_: importer un fichier WSDL personnalisé"
               href: how-to-import-custom-wsdl.md
-            - name: "Procédure\_: importer des assertions de stratégie personnalisées"
+            - name: "Comment\_: importer des assertions de stratégie personnalisées"
               href: how-to-import-custom-policy-assertions.md
-            - name: "Procédure\_: écrire une extension pour le ServiceContractGenerator"
+            - name: "Comment\_: écrire une extension pour le ServiceContractGenerator"
               href: how-to-write-an-extension-for-the-servicecontractgenerator.md
         - name: Publication et récupération de métadonnées sur une liaison personnalisée
           href: publishing-and-retrieving-metadata-over-a-custom-binding.md
           items:
             - name: Liaisons WS-MetadataExchange
               href: ws-metadataexchange-bindings.md
-            - name: "Procédure\_: configurer une liaison WS-Metadata Exchange personnalisée"
+            - name: "Comment\_: configurer une liaison WS-Metadata Exchange personnalisée"
               href: how-to-configure-a-custom-ws-metadata-exchange-binding.md
             - name: "Procédure\_: récupérer des métadonnées sur une liaison non-MEX"
               href: how-to-retrieve-metadata-over-a-non-mex-binding.md

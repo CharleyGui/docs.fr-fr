@@ -1,9 +1,9 @@
 - name: Liaison anticipée et liaison tardive
   href: index.md
   items:
-    - name: Détermination du type d’object
+    - name: Détermination du type Object
       href: determining-object-type.md
     - name: Appel d'une propriété ou méthode à l'aide d'un nom de chaîne
       href: calling-a-property-or-method-using-a-string-name.md
-    - name: Utilisation d’objets dynamiques
+    - name: Utilisation d'objets dynamiques
       href: working-with-dynamic-objects.md

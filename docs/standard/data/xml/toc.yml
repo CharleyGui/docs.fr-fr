@@ -170,7 +170,7 @@
                   href: script-blocks-using-msxsl-script.md
             - name: Erreurs XSLT récupérables
               href: recoverable-xslt-errors.md
-            - name: "Procédure\_: transformer un fragment de nœud"
+            - name: "Procédure\_: transformation d'un fragment de nœud"
               href: how-to-transform-a-node-fragment.md
         - name: Migration depuis la classe XslTransform
           href: migrating-from-the-xsltransform-class.md
@@ -182,7 +182,7 @@
         - name: XSLT Compiler (xsltc.exe)
           href: xslt-compiler-xsltc-exe.md
           items:
-            - name: "Procédure\_: effectuer une transformation XSLT à l’aide d’un assembly"
+            - name: "Procédure\_: effectuer une transformation XSLT à l'aide d'un assembly"
               href: how-to-perform-an-xslt-transformation-by-using-an-assembly.md
         - name: "Transformations\_XSLT avec la classe XslTransform"
           href: xslt-transformations-with-the-xsltransform-class.md
