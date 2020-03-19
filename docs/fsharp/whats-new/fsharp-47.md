@@ -1,25 +1,25 @@
 ---
-title: Nouveautés de F# 4,7- F# Guide
-description: Bénéficiez d’une vue d’ensemble des nouvelles F# fonctionnalités disponibles dans 4,7.
+title: Quoi de neuf dans le guide F 4.7 - Guide de F
+description: Obtenez un aperçu des nouvelles fonctionnalités disponibles dans le F 4.7.
 ms.date: 11/27/2019
-ms.openlocfilehash: 203b258466cb9f1f50215ecf8884e92e7e86416b
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 7a6e744a398719bcb55d168dd700459e0b122dd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74644067"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185877"
 ---
-# <a name="whats-new-in-f-47"></a>Nouveautés de F# 4,7
+# <a name="whats-new-in-f-47"></a>Quoi de neuf dans F 4.7
 
-F#4,7 ajoute plusieurs améliorations au F# langage.
+F 4.7 ajoute de multiples améliorations à la langue F.
 
 ## <a name="get-started"></a>Prise en main
 
-F#4,7 est disponible dans toutes les distributions .NET Core et les outils Visual Studio. [Commencez avec F# ](../get-started/index.md) pour en savoir plus.
+F 4.7 est disponible dans toutes les distributions .NET Core et l’outillage Visual Studio. [Commence avec F pour](../get-started/index.md) en savoir plus.
 
 ## <a name="language-version"></a>Version du langage
 
-Le F# compilateur 4,7 introduit la possibilité de définir votre version de langage effective par le biais d’une propriété dans votre fichier projet :
+Le compilateur F 4.7 introduit la possibilité de définir votre version linguistique efficace via une propriété dans votre dossier de projet :
 
 ```xml
 <PropertyGroup>
@@ -27,52 +27,52 @@ Le F# compilateur 4,7 introduit la possibilité de définir votre version de lan
 </PropertyGroup>
 ```
 
-Vous pouvez lui affecter les valeurs `4.6`, `4.7`, `latest`et `preview`. La valeur par défaut est `latest`,
+Vous pouvez le définir `4.6` `4.7`aux `latest`valeurs `preview`, , , et . Par défaut, il s’agit de `latest`.
 
-Si vous lui affectez la valeur `preview`, votre compilateur activera toutes les F# fonctionnalités d’aperçu qui sont implémentées dans votre compilateur.
+Si vous le `preview`définissez, votre compilateur activera toutes les fonctionnalités de prévisualisation de FMD qui sont implémentées dans votre compilateur.
 
 ## <a name="implicit-yields"></a>Rendements implicites
 
-Vous n’avez plus besoin d’appliquer le mot clé `yield` dans des tableaux, des listes, des séquences ou des expressions de calcul où le type peut être déduit. Dans l’exemple suivant, les deux expressions nécessitaient l’instruction `yield` pour chaque entrée F# antérieure à 4,7 :
+Vous n’avez plus `yield` besoin d’appliquer le mot clé dans les tableaux, les listes, les séquences ou les expressions de calcul où le type peut être déduit. Dans l’exemple suivant, `yield` les deux expressions nécessitaient l’énoncé pour chaque entrée avant le F 4.7 :
 
 ```fsharp
 let s = seq { 1; 2; 3; 4; 5 }
 
 let daysOfWeek includeWeekend =
-    [ 
+    [
         "Monday"
         "Tuesday"
         "Wednesday"
         "Thursday"
         "Friday"
-        if includeWeekend then 
+        if includeWeekend then
             "Saturday"
             "Sunday"
-    ] 
+    ]
 ```
 
-Si vous introduisez un seul mot clé de `yield`, un `yield` doit également être appliqué à chaque autre élément.
+Si vous introduisez un seul `yield` mot `yield` clé, tous les autres éléments doivent également s’y être appliqués.
 
-Les rendements implicites ne sont pas activés lorsqu’ils sont utilisés dans une expression qui utilise également `yield!` pour effectuer une opération d’aplatissement d’une séquence. Dans ce cas, vous devez continuer à utiliser `yield` aujourd’hui.
+Les rendements implicites ne sont pas `yield!` activés lorsqu’ils sont utilisés dans une expression qui utilise également pour faire quelque chose comme aplatir une séquence. Vous devez continuer `yield` à utiliser aujourd’hui dans ces cas.
 
-## <a name="wildcard-identifiers"></a>Identificateurs génériques
+## <a name="wildcard-identifiers"></a>Identifiants Wildcard
 
-Dans F# le code impliquant des classes, l’auto-identificateur doit toujours être explicite dans les déclarations de membre. Toutefois, dans les cas où l’auto-identificateur n’est jamais utilisé, il est traditionnellement conventionnel d’utiliser un trait de soulignement double pour indiquer les auto-identificateurs sans ID. Vous pouvez maintenant utiliser un trait de soulignement unique :
+Dans le code F impliquant les classes, l’auto-identifiant doit toujours être explicite dans les déclarations des membres. Mais dans les cas où l’auto-identifiant n’est jamais utilisé, il a toujours été convention d’utiliser un double-underscore pour indiquer un auto-identifiants sans nom. Vous pouvez maintenant utiliser un seul soulignement :
 
 ```fsharp
 type C() =
     member _.M() = ()
 ```
 
-Cela s’applique également aux boucles `for` :
+Cela s’applique également pour `for` les boucles:
 
 ```fsharp
 for _ in 1..10 do printfn "Hello!"
 ```
 
-## <a name="indentation-relaxations"></a>Assouplissements de la mise en retrait
+## <a name="indentation-relaxations"></a>Relaxations d’indentation
 
-Avant le F# 4,7, les exigences en matière de mise en retrait pour le constructeur principal et les arguments membres statiques nécessitaient une mise en retrait excessive. Ils n’ont à présent qu’une seule étendue de mise en retrait :
+Avant le F 4.7, les exigences d’indentation pour les arguments des constructeurs primaires et des membres statiques nécessitaient une indentation excessive. Ils n’ont maintenant besoin que d’une seule portée d’indentation :
 
 ```fsharp
 type OffsideCheck(a:int,

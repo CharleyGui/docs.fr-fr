@@ -1,48 +1,48 @@
 ---
-title: F#guide de style
-description: Découvrez les principes de cinq bonne F# code.
+title: Guide de style F#
+description: Apprenez les cinq principes d’un bon code F.
 ms.date: 12/10/2018
 ms.openlocfilehash: 9f47257626e04b09b546de2ae315d48d791678be
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61901847"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79400266"
 ---
-# <a name="f-style-guide"></a>F#guide de style
+# <a name="f-style-guide"></a>Guide de style F#
 
-Les articles suivants décrivent les instructions pour mettre en forme F# code et les conseils thématiques pour les fonctionnalités du langage et comment ils doivent être utilisés.
+Les articles suivants décrivent des lignes directrices pour le formatage du code F et des conseils d’actualité pour les caractéristiques de la langue et la façon dont elles doivent être utilisées.
 
-Ce guide a été formulé selon l’utilisation de F# dans des codes base volumineux avec un groupe diversifié des programmeurs. Ce guide conduit généralement à l’utilisation réussie de F# et réduit les frustrations lors de la configuration requise pour les programmes changer au fil du temps.
+Ces directives ont été formulées en fonction de l’utilisation de FMD dans de grandes bases de code avec un groupe diversifié de programmeurs. Ces lignes directrices mènent généralement à l’utilisation réussie de F et minimise les frustrations lorsque les exigences pour les programmes changent au fil du temps.
 
-## <a name="five-principles-of-good-f-code"></a>Cinq principes bonne F# code
+## <a name="five-principles-of-good-f-code"></a>Cinq principes de bon code F
 
-Gardez les principes suivants à l’esprit lorsque vous entrez F# code, en particulier dans les systèmes qui va changer au fil du temps. Chaque élément de conseils dans d’autres articles provient de ces cinq points.
+Gardez à l’esprit les principes suivants chaque fois que vous écrivez du code F, en particulier dans les systèmes qui changeront au fil du temps. Chaque élément d’orientation dans d’autres articles provient de ces cinq points.
 
-1. **Bonne F# code est succinct, expressif et composable**
+1. **Un bon code F est succinct, expressif et composable**
 
-    F#possède de nombreuses fonctionnalités qui vous permettent d’exprimer des actions dans moins de lignes de code et de réutiliser les fonctionnalités génériques. Le F# bibliothèque principale contient également de nombreux types utiles et des fonctions pour travailler avec des collections de données courantes. Composition de vos propres fonctions et de celles figurant dans le F# bibliothèque principale (ou autres bibliothèques) fait partie de la routine IDIOMATIQUE F# de programmation. En règle générale, si une solution à un problème dans moins de lignes de code, vous pouvez exprimer des autres développeurs (ou votre self futures) sera développeurs. Il est également recommandé que vous utilisez une bibliothèque de FSharp.Core, le [des bibliothèques .NET vastes](../../../api/index.md) qui F# s’exécute, ou un package tiers sur [NuGet](https://www.nuget.org/) lorsque vous avez besoin effectuer une tâche non triviale.
+    F a de nombreuses fonctionnalités qui vous permettent d’exprimer des actions dans moins de lignes de code et de réutiliser la fonctionnalité générique. La bibliothèque de base de FMD contient également de nombreux types et fonctions utiles pour travailler avec des collections communes de données. La composition de vos propres fonctions et de celles de la bibliothèque de base de F (ou d’autres bibliothèques) fait partie de la programmation Idiomatique de routine de F. En règle générale, si vous pouvez exprimer une solution à un problème dans moins de lignes de code, d’autres développeurs (ou votre futur soi) seront reconnaissants. Il est également fortement recommandé d’utiliser une bibliothèque comme FSharp.Core, les [vastes bibliothèques .NET](../../../api/index.md) que F ' fonctionne sur, ou un paquet tiers sur [NuGet](https://www.nuget.org/) lorsque vous avez besoin de faire une tâche non-trivial.
 
-2. **Bonne F# code est interopérable**
+2. **Un bon code F est interopérable**
 
-    L’interopérabilité peut prendre plusieurs formes, y compris la consommation du code dans différentes langues. Les limites de votre code qui interopèrent avec les autres appelants sont essentielles à coup, même si les appelants se trouvent également dans F#. Lors de l’écriture F#, vous devez toujours de penser sur la façon dont tout autre code appellera le code que vous écrivez, notamment s’ils le font à partir d’un autre langage tel que C#. Le [ F# les instructions de conception de composant](component-design-guidelines.md) décrivent l’interopérabilité en détail.
+    L’interopération peut prendre plusieurs formes, y compris la consommation de code dans différentes langues. Les limites de votre code avec lesquelles les autres appelants interopérent sont des éléments essentiels pour obtenir le droit, même si les appelants sont également en F. Lors de l’écriture de F, vous devriez toujours penser à la façon dont d’autres codes vont appeler dans le code que vous écrivez, y compris s’ils le font à partir d’une autre langue comme C. Les lignes directrices sur [la conception des composants FMD](component-design-guidelines.md) décrivent en détail l’interopérabilité.
 
-3. **Bonne F# code rend l’utilisation de la programmation de l’objet, pas l’objet orientation**
+3. **Un bon code FMD utilise la programmation d’objets, et non l’orientation de l’objet**
 
-    F#a une prise en charge complète pour la programmation avec des objets dans .NET, y compris [classes](../language-reference/classes.md), [interfaces](../language-reference/interfaces.md), [modificateurs d’accès](../language-reference/access-control.md), [declassesabstraites](../language-reference/abstract-classes.md), et ainsi de suite. Pour le code fonctionnel plus complexe, tels que les fonctions qui doivent être sensibles au contexte, les objets peuvent encapsuler facilement des informations contextuelles de façons qui ne peut pas de fonctions. Fonctionnalités telles que [paramètres facultatifs](../language-reference/members/methods.md#optional-arguments) et usage modéré des [surcharge](../language-reference/members/methods.md#overloaded-methods) peut faciliter la consommation de cette fonctionnalité pour les appelants.
+    F a un soutien complet pour la programmation avec des objets en .NET, y compris [les classes,](../language-reference/classes.md) [interfaces](../language-reference/interfaces.md), [modificateurs d’accès](../language-reference/access-control.md), [classes abstraites](../language-reference/abstract-classes.md), et ainsi de suite. Pour un code fonctionnel plus compliqué, comme les fonctions qui doivent être contextuelles, les objets peuvent facilement encapsuler des informations contextuelles d’une manière qui fonctionne. Des fonctionnalités telles que des [paramètres facultatifs](../language-reference/members/methods.md#optional-arguments) et une utilisation minutieuse de [la surcharge](../language-reference/members/methods.md#overloaded-methods) peuvent faciliter la consommation de cette fonctionnalité pour les appelants.
 
-4. **Bonne F# code effectue également sans exposer de mutation**
+4. **Un bon code FMD fonctionne bien sans exposer la mutation**
 
-    Il n’est aucun secret pour écrire du code de hautes performances, vous devez utiliser mutation. Il est ordinateurs fonctionnement, après tout. Ce code est souvent sujettes aux erreurs et difficile à réaliser correctement. Évitez d’exposer la mutation aux appelants. Au lieu de cela, [créer une interface fonctionnelle qui masque une implémentation basée sur une mutation](conventions.md#performance) lorsque la performance est critique.
+    Ce n’est un secret pour personne que pour écrire du code haute performance, vous devez utiliser la mutation. C’est comme ça que fonctionnent les ordinateurs, après tout. Un tel code est souvent sujet aux erreurs et difficile à obtenir à droite. Évitez d’exposer la mutation aux appelants. Au lieu de cela, [construire une interface fonctionnelle qui cache une implémentation basée sur la mutation](conventions.md#performance) lorsque les performances sont critiques.
 
-5. **Bonne F# code est compatible avec les outils**
+5. **Un bon code F est outilable**
 
-    Outils sont très utiles pour travailler dans les grandes bases de code, et vous pouvez écrire F# telles qu’il puisse être utilisé plus efficacement avec du code F# outils de langage. Un exemple consiste à s’assurer que vous ne pas abuser de cette possibilité avec un style libre de point de programmation, afin que les valeurs intermédiaires peuvent être inspectées avec un débogueur. À l’aide d’un autre exemple [commentaires de documentation XML](../language-reference/xml-documentation.md) décrivant les constructions telles que les info-bulles dans les éditeurs peuvent afficher ces commentaires sur le site d’appel. Envisagez toujours comment votre code est lu, cible de la navigation, de débogage et manipulé par d’autres programmeurs avec leurs outils.
+    Les outils sont inestimables pour travailler dans de grandes bases de code, et vous pouvez écrire du code F de telle sorte qu’il puisse être utilisé plus efficacement avec l’outillage linguistique F. Un exemple est de s’assurer que vous n’en faites pas trop avec un style de programmation sans point, de sorte que les valeurs intermédiaires peuvent être inspectées avec un débbuggeur. Un autre exemple est l’utilisation de [commentaires de documentation XML](../language-reference/xml-documentation.md) décrivant des constructions telles que les outils dans les éditeurs peuvent afficher ces commentaires sur le site d’appel. Réfléchissez toujours à la façon dont votre code sera lu, navigué, débogé et manipulé par d’autres programmeurs avec leurs outils.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Le [ F# code de mise en forme des lignes directrices](formatting.md) fournissent des conseils sur la mise en forme le code afin qu’il soit facile à lire.
+Les lignes directrices de [formatage du code FMD](formatting.md) fournissent des conseils sur la façon de formater le code afin qu’il soit facile à lire.
 
-Le [ F# conventions de codage](conventions.md) fournissent des conseils pour F# langages qui vous aide à la maintenance à long terme de la plus grande de programmation F# codes base.
+Les [conventions de codage FMD](conventions.md) fournissent des conseils pour les idiomes de programmation de FMD qui aideront à maintenir à long terme de plus grandes bases de code F.
 
-Le [ F# les instructions de conception de composant](component-design-guidelines.md) fournissent des conseils pour la création de F# composants, tels que les bibliothèques.
+Les lignes directrices sur [la conception des composants FMD](component-design-guidelines.md) fournissent des conseils pour la rédaction de composants F, tels que les bibliothèques.
