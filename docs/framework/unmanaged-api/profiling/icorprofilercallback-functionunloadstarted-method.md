@@ -15,40 +15,40 @@ helpviewer_keywords:
 ms.assetid: d6a5fa8b-09c6-47a5-b60e-6cf2e355df30
 topic_type:
 - apiref
-ms.openlocfilehash: 2b228337a55d50b94da966b45877e2000b3c03e4
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 988843559e55cc4cacd2a40bb3e6ac51721e99b6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866310"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175159"
 ---
 # <a name="icorprofilercallbackfunctionunloadstarted-method"></a>ICorProfilerCallback::FunctionUnloadStarted, méthode
-Notifie le profileur que le runtime a commencé à décharger une fonction.  
+Informe le profileur que le temps d’exécution a commencé à décharger une fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT FunctionUnloadStarted(  
-    [in] FunctionID functionId);   
+    [in] FunctionID functionId);
 ```  
   
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 - `functionId`
 
-  \[in] ID de la fonction en cours de déchargement.
+  \[dans] L’ID de la fonction qui est déchargée.
 
-## <a name="remarks"></a>Notes  
- La valeur du paramètre `functionId` n’est plus valide après le retour de cette méthode à l’appelant.  
+## <a name="remarks"></a>Notes   
+ La valeur `functionId` du paramètre n’est plus valide après le retour de cette méthode à l’appelant.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

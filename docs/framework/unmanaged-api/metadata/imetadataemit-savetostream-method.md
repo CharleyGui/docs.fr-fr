@@ -15,20 +15,20 @@ helpviewer_keywords:
 ms.assetid: e0290a49-3818-4a43-ad46-3014faa34f97
 topic_type:
 - apiref
-ms.openlocfilehash: 23f6186b2561cbcd52db767616d986084f33860b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 7db27670b72a5018a03d4614b69486f67bcef155
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435930"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175679"
 ---
 # <a name="imetadataemitsavetostream-method"></a>IMetaDataEmit::SaveToStream, méthode
-Enregistre toutes les métadonnées de l’étendue actuelle dans le `IStream`spécifié.  
+Enregistre toutes les métadonnées dans `IStream`la portée actuelle à la spécifiée .  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT SaveToStream (   
+HRESULT SaveToStream (
     [in]  IStream     *pIStream,  
     [in]  DWORD       dwSaveFlags  
 );  
@@ -36,19 +36,19 @@ HRESULT SaveToStream (
   
 ## <a name="parameters"></a>Paramètres  
  `pIStream`  
- dans Flux accessible en écriture dans lequel effectuer l’enregistrement.  
+ [dans] Le flux bref à économiser à.  
   
  `dwSaveFlags`  
- [in] Réservée. Doit être égal à zéro.  
+ [in] Réservée. Doit être zéro.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

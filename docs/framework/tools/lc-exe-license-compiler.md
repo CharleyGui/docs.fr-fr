@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows Forms, control licenses
 - licensed controls [Windows Forms]
 ms.assetid: 2de803b8-495e-4982-b209-19a72aba0460
-ms.openlocfilehash: 17ab7317ff1147dc79fae4ef3068cd9bc2143907
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 464514a241cc35fc821049ba0c29bec108d88253
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774205"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180396"
 ---
 # <a name="lcexe-license-compiler"></a>Lc.exe (License Compiler)
 L'outil License Compiler lit les fichiers texte comportant des informations sur les licences et génère un fichier binaire pouvant être incorporé dans un exécutable du Common Language Runtime en tant que ressource.  
@@ -28,7 +28,7 @@ L'outil License Compiler lit les fichiers texte comportant des informations sur 
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
- À l'invite de commandes, tapez le texte suivant :  
+ À l'invite de commandes, tapez :  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,12 +47,12 @@ targetPE /complist:filename [-outdir:path]
 |**/outdir:** *path*|Spécifie le répertoire dans lequel placer le fichier .licenses de sortie.|  
 |**/target:** *targetPE*|Spécifie l'exécutable pour lequel le fichier .licenses est en cours de génération.|  
 |**/v**|Spécifie le mode détaillé ; affiche des informations sur la progression de la compilation.|  
-|**@** *file*|Spécifie le fichier de réponse (.rsp).|  
+|**@***fichier*|Spécifie le fichier de réponse (.rsp).|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
-1. Si vous utilisez un contrôle sous licence `MyCompany.Samples.LicControl1` contenu dans `Samples.DLL`, dans une application appelée `HostApp.exe` *,* vous pouvez créer le fichier `HostAppLic.txt` contenant ce qui suit.  
+1. Si vous utilisez un contrôle sous licence `MyCompany.Samples.LicControl1` contenu dans `Samples.DLL`, dans une application appelée `HostApp.exe`*, *vous pouvez créer le fichier `HostAppLic.txt` contenant ce qui suit.  
   
     ```text
     MyCompany.Samples.LicControl1, Samples.DLL  
@@ -81,8 +81,8 @@ lc /target:myApp /complist:hostapplic.txt /complist:hostapplic2.txt /complist: h
   
 ```text  
 /target:hostapp.exe  
-/complist:hostapplic.txt   
-/i:WFCPrj.dll   
+/complist:hostapplic.txt
+/i:WFCPrj.dll
 /outdir:"C:\My Folder"  
 ```  
   

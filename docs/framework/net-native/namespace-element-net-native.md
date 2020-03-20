@@ -1,22 +1,22 @@
 ---
-title: Élément <Namespace> (.NET Native)
+title: <Namespace>Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 57c614e5-18a9-4e87-bfd5-d0fe3396a192
-ms.openlocfilehash: b6d7a45de14d0fb8eb2e27a02c86510f630be9e1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 06d88a7b0f95c7c1dbe98818b847c92e08a57a19
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128262"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180954"
 ---
-# <a name="namespace-element-net-native"></a>\<espace de noms >, élément (.NET Native)
+# <a name="namespace-element-net-native"></a>\<Namespace> Element (.NET Native)
 Applique la stratégie de réflexion runtime à tous les types dans un espace de noms spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<Namespace Name="namespace_name"   
-           Activate="policy_type"   
+<Namespace Name="namespace_name"
+           Activate="policy_type"
            Browse="policy_type"  
            Dynamic="policy_setting"  
            Serialize="policy_setting"  
@@ -49,13 +49,13 @@ Applique la stratégie de réflexion runtime à tous les types dans un espace de
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|*nom_espace_de_noms*|L'espace de noms. Si l’élément \<Namespace> est un enfant d’un élément [\<Application>](application-element-net-native.md), [\<Library>](library-element-net-native.md) ou [\<Assembly>](assembly-element-net-native.md), *nom_espace_de_noms* doit être un nom complet d’espace de noms. Si l’élément \<Namespace> est un enfant d’un autre élément \<Namespace>, *nom_espace_de_noms* doit être un nom d’espace de noms relatif.|  
+|*namespace_name*|L'espace de noms. Si \<l’élément Namespace> est un [ \< ](application-element-net-native.md)enfant d’une [ \< ](library-element-net-native.md)application>, bibliothèque>, ou [ \<l’élément>d’assemblage,](assembly-element-net-native.md) *namespace_name* doit être un nom de nom entièrement qualifié. Si l’élément \<Namespace> est un enfant d’un autre élément \<Namespace>, *nom_espace_de_noms* doit être un nom d’espace de noms relatif.|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*policy_setting*|Le paramètre s'applique à ce type de stratégie pour tous les types dans l'espace de noms. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
@@ -71,18 +71,18 @@ Applique la stratégie de réflexion runtime à tous les types dans un espace de
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<Application>](application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L’élément [\<Application>](application-element-net-native.md) peut avoir zéro, un ou plusieurs éléments [\<Assembly>](assembly-element-net-native.md).|  
-|[\<Assembly>](assembly-element-net-native.md)|Applique la stratégie de réflexion runtime à tous les types dans un assembly spécifié.|  
-|[\<Library>](library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L’élément [\<Library>](library-element-net-native.md) peut avoir zéro ou un élément [\<Assembly>](assembly-element-net-native.md).|  
+|[\<>d’application](application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. [ \<L’élément>d’application](application-element-net-native.md) peut avoir zéro, un ou plusieurs [ \<éléments>d’assemblage.](assembly-element-net-native.md)|  
+|[\<>de l’Assemblée](assembly-element-net-native.md)|Applique la stratégie de réflexion runtime à tous les types dans un assembly spécifié.|  
+|[\<>de bibliothèque](library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. [ \<L’élément>bibliothèque](library-element-net-native.md) peut avoir zéro ou un [ \<élément>d’assemblage.](assembly-element-net-native.md)|  
 |`<Namespace>`|Applique la stratégie de réflexion à tous les types dans un espace de noms parent.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Les attributs `Activate`, `Browse`, `Dynamic` et `Serialize` sont tous facultatifs. Si aucun n'est présent, l'élément `<Namespace>` sert uniquement de conteneur pour les éléments enfants. S'ils sont présents, l'élément `<Namespace>` applique la stratégie de réflexion runtime à tous les types dans l'espace de noms spécifié.  
   
- Quand il est un enfant de l’élément [\<Assembly>](assembly-element-net-native.md), l’élément `<Namespace>` substitue la stratégie de réflexion runtime définie par l’élément [\<Assembly>](assembly-element-net-native.md).  
+ Lorsqu’il s’agit d’un enfant de `<Namespace>` [ \<l’Assemblée>](assembly-element-net-native.md) élément, l’élément l’emporte sur la politique de réflexion sur le temps d’exécution définie par [ \<l’Assemblée>](assembly-element-net-native.md) élément.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Informations de référence sur le fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)

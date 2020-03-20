@@ -1,22 +1,22 @@
 ---
-title: Élément <Event> (.NET Native)
+title: <Event>Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: e53b029c-9d6d-4c0a-9cdc-5cfca8a5ca47
-ms.openlocfilehash: 6966caede63faafa718b760be879f6bc6cbd3ab9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 60da48d5872d7ce61afcffa7977411bc6e1efc7f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128490"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181036"
 ---
-# <a name="event-element-net-native"></a>Élément \<> d’événements (.NET Native)
+# <a name="event-element-net-native"></a>\<Événement> Element (.NET Native)
 Applique la stratégie de réflexion runtime à un événement.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<Event Name="event_name"   
-       Browse="policy_type"   
+<Event Name="event_name"
+       Browse="policy_type"
        Dynamic="policy_type" />  
 ```  
   
@@ -33,18 +33,18 @@ Applique la stratégie de réflexion runtime à un événement.
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|*nom_méthode*|Nom de l'événement. Le type de l’événement est défini par l’élément [\<Type>](type-element-net-native.md) ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md) parent.|  
+|*method_name*|Nom de l'événement. Le type de l’événement est défini par le [ \<parent Type>](type-element-net-native.md) ou [ \<TypeInstantiation>](typeinstantiation-element-net-native.md) élément.|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie pour l'événement. Les valeurs possibles sont `Auto`, `Excluded`, `Included` et `Required`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -53,11 +53,11 @@ Applique la stratégie de réflexion runtime à un événement.
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Si la stratégie d'un événement n'est pas définie explicitement, elle hérite la stratégie runtime de son élément parent.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Informations de référence sur le fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)

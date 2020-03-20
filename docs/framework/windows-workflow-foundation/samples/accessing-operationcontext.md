@@ -2,15 +2,15 @@
 title: Accès à OperationContext
 ms.date: 03/30/2017
 ms.assetid: 4e92efe8-7e79-41f3-b50e-bdc38b9f41f8
-ms.openlocfilehash: 83f3a6cacd3ee86050f65a886d446ab8da7d3690
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 5a2731c7918c216221b0adcafd5c804e80f36dfb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094707"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182862"
 ---
 # <a name="accessing-operationcontext"></a>Accès à OperationContext
-Cet exemple montre comment les activités de messagerie (<xref:System.ServiceModel.Activities.Receive> et <xref:System.ServiceModel.Activities.Send>) peuvent être utilisées avec une activité d’étendue personnalisée pour accéder à <xref:System.ServiceModel.OperationContext.Current%2A> et attacher ou récupérer un en-tête de message personnalisé dans un message sortant ou entrant.  
+Cet exemple montre comment les<xref:System.ServiceModel.Activities.Receive> <xref:System.ServiceModel.Activities.Send>activités de messagerie ( et ) <xref:System.ServiceModel.OperationContext.Current%2A> peuvent être utilisées avec une activité de portée personnalisée pour accéder et joindre ou récupérer un en-tête de message personnalisé dans un message sortant ou entrant.  
   
 ## <a name="demonstrates"></a>Illustre le  
  Activités de messagerie, <xref:System.ServiceModel.Activities.ISendMessageCallback>, <xref:System.ServiceModel.Activities.IReceiveMessageCallback>.  
@@ -20,7 +20,7 @@ Cet exemple montre comment les activités de messagerie (<xref:System.ServiceMod
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Cet exemple expose un service de workflow à l'aide de points de terminaison HTTP. Pour exécuter cet exemple, des listes de contrôle d’accès d’URL appropriées doivent être ajoutées (pour plus d’informations, consultez [configuration de http et HTTPS](../../wcf/feature-details/configuring-http-and-https.md) ), soit en exécutant Visual Studio en tant qu’administrateur, soit en exécutant la commande suivante à une invite de commandes avec élévation de privilèges pour ajouter les listes de contrôle d’accès appropriées. Vérifiez que vos domaine et nom d'utilisateur sont substitués.  
+1. Cet exemple expose un service de workflow à l'aide de points de terminaison HTTP. Pour exécuter cet exemple, des URL appropriées doivent être ajoutées (voir [Configurer HTTP et HTTPS](../../wcf/feature-details/configuring-http-and-https.md) pour plus de détails), soit en exécutant Visual Studio en tant qu’administrateur, soit en exécutant la commande suivante à une invite élevée pour ajouter les ACL appropriés. Vérifiez que vos domaine et nom d'utilisateur sont substitués.  
   
     ```console  
     netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%  
@@ -30,17 +30,17 @@ Cet exemple montre comment les activités de messagerie (<xref:System.ServiceMod
   
     1. Générez la solution.  
   
-    2. Pour définir plusieurs projets de démarrage, cliquez avec le bouton droit sur la solution et sélectionnez **définir les projets de démarrage**.  
+    2. Définissez plusieurs projets de démarrage en cliquant à droite sur la solution et en sélectionnant **Set Startup Projects**.  
   
-    3. Ajoutez le **service** et le **client** (dans cet ordre) en tant que plusieurs projets de démarrage.  
+    3. Ajoutez **service** et **client** (dans cet ordre) comme plusieurs projets de démarrage.  
   
     4. Exécutez l'application. La console cliente affiche un workflow qui est exécuté deux fois et la fenêtre Service affiche l'ID d'instance de ces workflows.  
   
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
->   
+>
+> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\Accessing Operation Context`

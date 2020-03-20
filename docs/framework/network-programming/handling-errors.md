@@ -31,12 +31,12 @@ helpviewer_keywords:
 - ConnectionClosed enumeration member
 - SecureChannelFailure enumeration member
 ms.assetid: 657141cd-5cf5-4fdb-a4b2-4c040eba84b5
-ms.openlocfilehash: 7084c4579dd5fca0075c7516754195f7cea9e27c
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: f5be5d8e14d7aa2d98009fc10c9cce314e745ed1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458042"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180873"
 ---
 # <a name="handling-errors"></a>Gestion des erreurs
 
@@ -46,7 +46,7 @@ Chaque **WebException** comprend une propriété <xref:System.Net.WebException.S
   
 Le tableau suivant décrit les valeurs possibles pour la propriété **Status**.  
   
-|Status|Description|  
+|Statut|Description|  
 |------------|-----------------|  
 |ConnectFailure|Le service distant n’a pas pu être contacté au niveau du transport.|  
 |ConnectionClosed|La connexion a été interrompue prématurément.|  
@@ -58,11 +58,11 @@ Le tableau suivant décrit les valeurs possibles pour la propriété **Status**.
 |SecureChannelFailure|Une erreur s’est produite dans un lien de canal sécurisé.|  
 |SendFailure|Une demande complète n’a pas pu être envoyée au serveur distant.|  
 |ServerProtocolViolation|La réponse du serveur n’était pas une réponse HTTP valide.|  
-|Opération réussie|Aucune erreur n’a été rencontrée.|  
-|Délai|Aucune réponse n’a été reçue pendant le délai défini pour la demande.|  
+|Succès|Aucune erreur n’a été rencontrée.|  
+|Délai d'expiration|Aucune réponse n’a été reçue pendant le délai défini pour la demande.|  
 |TrustFailure|Un certificat de serveur n’a pas pu être validé.|  
 |MessageLengthLimitExceeded|Un message a été reçu qui dépassait la limite spécifiée lors de l’envoi d’une demande ou de la réception d’une réponse du serveur.|  
-|En attente|Une demande asynchrone interne est en attente.|  
+|Pending|Une demande asynchrone interne est en attente.|  
 |PipelineFailure|Cette valeur prend en charge l’infrastructure .NET Framework et n’est pas destinée à être utilisée directement dans votre code.|  
 |ProxyNameResolutionFailure|Le service de résolution de nom n’a pas pu résoudre le nom d’hôte proxy.|  
 |UnknownError|Une exception de type inconnu s’est produite.|  
@@ -72,19 +72,19 @@ Quand la propriété **Status** a la valeur **WebExceptionStatus.ProtocolError**
 L’exemple suivant indique comment intercepter une **WebException**.  
   
 ```csharp  
-try   
+try
 {  
     // Create a request instance.  
-    WebRequest myRequest =   
+    WebRequest myRequest =
     WebRequest.Create("http://www.contoso.com");  
     // Get the response.  
     WebResponse myResponse = myRequest.GetResponse();  
-    //Get a readable stream from the server.   
+    //Get a readable stream from the server.
     Stream sr = myResponse.GetResponseStream();  
   
     //Read from the stream and write any data to the console.  
     bytesread = sr.Read( myBuffer, 0, length);  
-    while( bytesread > 0 )   
+    while( bytesread > 0 )
     {  
         for (int i=0; i<bytesread; i++) {  
             Console.Write( "{0}", myBuffer[i]);  
@@ -95,7 +95,7 @@ try
     sr.Close();  
     myResponse.Close();  
 }  
-catch (WebException webExcp)   
+catch (WebException webExcp)
 {  
     // If you reach this point, an exception has been caught.  
     Console.WriteLine("A WebException has been caught.");  
@@ -103,8 +103,8 @@ catch (WebException webExcp)
     Console.WriteLine(webExcp.ToString());  
     // Get the WebException status code.  
     WebExceptionStatus status =  webExcp.Status;  
-    // If status is WebExceptionStatus.ProtocolError,   
-    //   there has been a protocol error and a WebResponse   
+    // If status is WebExceptionStatus.ProtocolError,
+    //   there has been a protocol error and a WebResponse
     //   should exist. Display the protocol error.  
     if (status == WebExceptionStatus.ProtocolError) {  
         Console.Write("The server returned protocol error ");  
@@ -114,7 +114,7 @@ catch (WebException webExcp)
            + httpResponse.StatusCode);  
     }  
 }  
-catch (Exception e)   
+catch (Exception e)
 {  
     // Code to catch other exceptions goes here.  
 }  
@@ -126,10 +126,10 @@ Try
     Dim myRequest As WebRequest = WebRequest.Create("http://www.contoso.com")  
     ' Get the response.  
     Dim myResponse As WebResponse = myRequest.GetResponse()  
-    'Get a readable stream from the server.   
+    'Get a readable stream from the server.
     Dim sr As Stream = myResponse.GetResponseStream()  
   
-    Dim i As Integer      
+    Dim i As Integer
     'Read from the stream and write any data to the console.  
     bytesread = sr.Read(myBuffer, 0, length)  
     While bytesread > 0  
@@ -148,8 +148,8 @@ Catch webExcp As WebException
     Console.WriteLine(webExcp.ToString())  
     ' Get the WebException status code.  
     Dim status As WebExceptionStatus = webExcp.Status  
-    ' If status is WebExceptionStatus.ProtocolError,   
-    '   there has been a protocol error and a WebResponse   
+    ' If status is WebExceptionStatus.ProtocolError,
+    '   there has been a protocol error and a WebResponse
     '   should exist. Display the protocol error.  
     If status = WebExceptionStatus.ProtocolError Then  
         Console.Write("The server returned protocol error ")  

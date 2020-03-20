@@ -15,44 +15,44 @@ helpviewer_keywords:
 ms.assetid: d9e0f3b6-e106-4820-bada-5bfba34ce360
 topic_type:
 - apiref
-ms.openlocfilehash: da9a13a3dea34f6681f47e95c5b352a710d7458b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fb673666543bea3df44005ee3b20d311524f51d0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431211"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175913"
 ---
 # <a name="imetadatadispenserexgetcorsystemdirectory-method"></a>IMetaDataDispenserEx::GetCORSystemDirectory, méthode
-Obtient le répertoire qui contient le common language runtime actuel (CLR). Cette méthode est prise en charge uniquement par les débogueurs hors processus. Si elle est appelée à partir d’un autre composant, elle retourne E_NOTIMPL.  
+Obtient le répertoire qui détient l’heure courante de course de langue commune (CLR). Cette méthode n’est prise en charge que pour une utilisation par les débingiers hors-processus. S’il est appelé à partir d’un autre composant, il retournera E_NOTIMPL.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetCORSystemDirectory (  
-    [out] LPWSTR      szBuffer,   
-    [in]  DWORD       cchBuffer,   
+    [out] LPWSTR      szBuffer,
+    [in]  DWORD       cchBuffer,
     [out] DWORD*      pchBuffer  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `szBuffer`  
- à Mémoire tampon pour recevoir le nom du répertoire.  
+ [out] Le tampon pour recevoir le nom d’annuaire.  
   
  `cchBuffer`  
- dans Taille, en octets, de `szBuffer`.  
+ [dans] La taille, dans les `szBuffer`octets, de .  
   
  `pchBuffer`  
- à Nombre d’octets réellement retournés dans `szBuffer`.  
+ [out] Le nombre d’octets `szBuffer`effectivement retourné dans .  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateforme :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateforme:** Voir [Les exigences du système](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

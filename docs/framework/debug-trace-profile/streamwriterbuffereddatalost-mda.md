@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data buffering problems
 - streamWriterBufferedDataLost MDA
 ms.assetid: 6e5c07be-bc5b-437a-8398-8779e23126ab
-ms.openlocfilehash: 82940b40b302f4a928547f2e6a0c285727e13934
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 18b2a5a95756ed125d26b2846c0b1ddc320463ea
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216106"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181738"
 ---
 # <a name="streamwriterbuffereddatalost-mda"></a>streamWriterBufferedDataLost (MDA)
 L’Assistant Débogage managé `streamWriterBufferedDataLost` est activé lors d’une écriture dans <xref:System.IO.StreamWriter>, mais la méthode <xref:System.IO.StreamWriter.Flush%2A> ou <xref:System.IO.StreamWriter.Close%2A> n’est pas appelée par la suite avant la destruction de l’instance du <xref:System.IO.StreamWriter>. Quand cet Assistant Débogage managé est activé, le runtime détermine s’il existe encore des données mises en mémoire tampon dans <xref:System.IO.StreamWriter>. Si c’est le cas, l’Assistant Débogage managé est activé. L’appel aux méthodes <xref:System.GC.Collect%2A> et <xref:System.GC.WaitForPendingFinalizers%2A> peut forcer des finaliseurs à s’exécuter. Sinon, les finaliseurs s’exécuteront à des moments apparemment arbitraires, voire pas du tout lors de la sortie du processus. L’exécution explicite des finaliseurs avec cet Assistant Débogage managé activé aide à reproduire ce type de problème de façon plus fiable.  
@@ -30,7 +30,7 @@ L’Assistant Débogage managé `streamWriterBufferedDataLost` est activé lors 
   
 ```csharp  
 // Poorly written code.  
-void Write()   
+void Write()
 {  
     StreamWriter sw = new StreamWriter("file.txt");  
     sw.WriteLine("Data");  
@@ -49,7 +49,7 @@ GC.WaitForPendingFinalizers();
  Veillez à appeler <xref:System.IO.StreamWriter.Close%2A> ou <xref:System.IO.StreamWriter.Flush%2A> sur le <xref:System.IO.StreamWriter> avant de fermer une application ou tout bloc de code possédant une instance de <xref:System.IO.StreamWriter>. Pour ce faire, une des solutions les plus efficaces consiste à créer l’instance avec un bloc `using` C# (`Using` en Visual Basic) qui garantit l’appel à la méthode <xref:System.IO.StreamWriter.Dispose%2A> pour le writer, ce qui permet de fermer correctement l’instance.  
   
 ```csharp
-using(StreamWriter sw = new StreamWriter("file.txt"))   
+using(StreamWriter sw = new StreamWriter("file.txt"))
 {  
     sw.WriteLine("Data");  
 }  
@@ -59,24 +59,24 @@ using(StreamWriter sw = new StreamWriter("file.txt"))
   
 ```csharp
 StreamWriter sw;  
-try   
+try
 {  
     sw = new StreamWriter("file.txt"));  
     sw.WriteLine("Data");  
 }  
-finally   
+finally
 {  
     if (sw != null)  
         sw.Close();  
 }  
 ```  
   
- Si aucune de ces solutions ne peut être utilisée (par exemple, si un <xref:System.IO.StreamWriter> est stocké dans une variable statique et que vous ne pouvez pas exécuter facilement du code à la fin de sa durée de vie), l’appel à <xref:System.IO.StreamWriter.Flush%2A> sur le <xref:System.IO.StreamWriter> après sa dernière utilisation ou l’affectation de la valeur <xref:System.IO.StreamWriter.AutoFlush%2A> à la propriété `true` avant sa première utilisation doit éviter ce problème.  
+ Si aucune de ces solutions ne peut être utilisée (par exemple, si un <xref:System.IO.StreamWriter> est stocké dans une variable statique et que vous ne pouvez pas exécuter facilement du code à la fin de sa durée de vie), l’appel à <xref:System.IO.StreamWriter.Flush%2A> sur le <xref:System.IO.StreamWriter> après sa dernière utilisation ou l’affectation de la valeur `true` à la propriété <xref:System.IO.StreamWriter.AutoFlush%2A> avant sa première utilisation doit éviter ce problème.  
   
 ```csharp
 private static StreamWriter log;  
 // static class constructor.  
-static WriteToFile()   
+static WriteToFile()
 {  
     StreamWriter sw = new StreamWriter("log.txt");  
     sw.AutoFlush = true;  

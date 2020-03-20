@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4f86ff37-2dab-4e64-819a-76b3bfe828ff
 topic_type:
 - apiref
-ms.openlocfilehash: 718e41e16c07265d8a36b8f6124d99cd3490f7be
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0b613ebacdff82a29fdbc3f4caa0f2b8bb5d3f6a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436615"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176160"
 ---
 # <a name="cornativelinktype-enumeration"></a>CorNativeLinkType, énumération
 Fournit des valeurs qui indiquent le type lié en code natif.  
@@ -27,7 +27,7 @@ Fournit des valeurs qui indiquent le type lié en code natif.
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-typedef enum   
+typedef enum
 {  
     nltNone       = 1,  
     nltAnsi       = 2,  
@@ -45,18 +45,18 @@ typedef enum
 |`nltNone`|Indique qu’aucun des mots clés n’est spécifié.|  
 |`nltAnsi`|Indique qu’un mot clé ANSI est spécifié.|  
 |`nltUnicode`|Indique qu’un mot clé Unicode est spécifié|  
-|`nltAuto`|Indique qu’un mot clé auto est spécifié.|  
+|`nltAuto`|Indique qu’un mot clé automatique est spécifié.|  
 |`nltOle`|Indique qu’un mot clé OLE est spécifié.|  
 |`nltMaxValue`|Non utilisé.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -10,12 +10,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 887dee6f-5059-4d57-957d-7c6fcd4acb10
-ms.openlocfilehash: 791944bd9e8f5520a571e6fb415d69022aa0bead
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 672104db94826cfbe113a7ae0ea29546b0c3b9da
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991713"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181998"
 ---
 # <a name="providing-accessibility-information-for-controls-on-a-windows-form"></a>Informations d'accessibilité sur les contrôles d'un Windows Form
 Les aides à l’accessibilité sont des programmes et des dispositifs spécialisés qui aident les personnes handicapées à utiliser plus efficacement les ordinateurs. Tel est le cas notamment des lecteurs d’écran pour les non-voyants et des systèmes d’entrée vocale pour les personnes qui prononcent des commandes verbales au lieu d’utiliser la souris ou le clavier. Ces aides à l’accessibilité interagissent avec les propriétés d’accessibilité exposées par les contrôles Windows Forms. Ces propriétés sont :  
@@ -39,10 +39,10 @@ Les aides à l’accessibilité sont des programmes et des dispositifs spéciali
 ```vb  
 Button1.AccessibleDefaultActionDescription = _  
    "Closes the application."  
-``` 
+```
 
 ```csharp  
-Button1.AccessibleDefaultActionDescription =   
+Button1.AccessibleDefaultActionDescription =
    "Closes the application.";  
 ```
 
@@ -82,9 +82,9 @@ button1->AccessibleName = "Order";
 ```  
   
 ## <a name="accessiblerole-property"></a>Propriété AccessibleRole  
- Cette propriété, qui contient une <xref:System.Windows.Forms.AccessibleRole> , décrit le rôle du contrôle dans l’interface utilisateur. Un nouveau contrôle a la valeur `Default`. Cela signifie que, par défaut, un contrôle **Button** (bouton) agit en tant que **Button**. Vous pouvez éventuellement réinitialiser cette propriété si un contrôle a un autre rôle. Par exemple, si vous utilisez un contrôle **PictureBox** (zone d’image) en tant que **Chart**(graphique), vous pouvez faire en sorte que les aides à l’accessibilité indique le rôle **Chart**, et non **PictureBox**. Vous pouvez aussi spécifier cette propriété pour des contrôles personnalisés que vous avez développés. Cette propriété être définie dans la fenêtre Propriétés ou dans du code comme suit :  
+ Cette propriété, qui contient une <xref:System.Windows.Forms.AccessibleRole> , décrit le rôle du contrôle dans l’interface utilisateur. Un nouveau contrôle a la valeur définie sur `Default`. Cela signifie que, par défaut, un contrôle **Button** (bouton) agit en tant que **Button**. Vous pouvez éventuellement réinitialiser cette propriété si un contrôle a un autre rôle. Par exemple, si vous utilisez un contrôle **PictureBox** (zone d’image) en tant que **Chart**(graphique), vous pouvez faire en sorte que les aides à l’accessibilité indique le rôle **Chart**, et non **PictureBox**. Vous pouvez aussi spécifier cette propriété pour des contrôles personnalisés que vous avez développés. Cette propriété être définie dans la fenêtre Propriétés ou dans du code comme suit :  
   
-```vb 
+```vb
 PictureBox1.AccessibleRole = AccessibleRole.Chart  
 ```
 

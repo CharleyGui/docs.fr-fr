@@ -15,52 +15,52 @@ helpviewer_keywords:
 ms.assetid: 36cffbf7-82ca-4cf9-bf60-50ab491ac2d9
 topic_type:
 - apiref
-ms.openlocfilehash: 4e11a52c977de7796043868e80c147d8cfd1f506
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a0fd3fdb6dde9fd6b88ea6c64ed907c8a3e9e46d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431572"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175796"
 ---
 # <a name="imetadataemitdefinepermissionset-method"></a>IMetaDataEmit::DefinePermissionSet, méthode
-Crée une définition pour un jeu d’autorisations avec la signature de métadonnées spécifiée et obtient un jeton pour cette définition de jeu d’autorisations.  
+Crée une définition pour un ensemble d’autorisation avec la signature spécifiée de métadonnées, et obtient un jeton à cette définition définie d’autorisation.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT DefinePermissionSet (  
-    [in]  mdToken        tk,   
-    [in]  DWORD          dwAction,   
-    [in]  void const     *pvPermission,   
-    [in]  ULONG          cbPermission,   
-    [out] mdPermission   *ppm   
+    [in]  mdToken        tk,
+    [in]  DWORD          dwAction,
+    [in]  void const     *pvPermission,
+    [in]  ULONG          cbPermission,
+    [out] mdPermission   *ppm
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- dans Objet à décoréer.  
+ [dans] L’objet à décorer.  
   
  `dwAction`  
- dans Valeur [CorDeclSecurity,](../../../../docs/framework/unmanaged-api/metadata/cordeclsecurity-enumeration.md) qui spécifie le type de sécurité déclarative à utiliser.  
+ [dans] Une valeur [CorDeclSecurity](../../../../docs/framework/unmanaged-api/metadata/cordeclsecurity-enumeration.md) qui spécifie le type de sécurité déclarative à utiliser.  
   
  `pvPermission`  
- dans Objet BLOB d’autorisations.  
+ [dans] La permission BLOB.  
   
  `cbPermission`  
- dans Taille, en octets, de `pvPermission`.  
+ [dans] La taille, dans les `pvPermission`octets, de .  
   
  `ppm`  
- à Jeton d’autorisation retourné.  
+ [out] Le jeton de permission retourné.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

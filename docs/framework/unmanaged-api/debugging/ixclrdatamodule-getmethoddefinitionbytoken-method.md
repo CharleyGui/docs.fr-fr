@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataModule::GetMethodDefinitionByToken Method
+title: IXCLRDataModule::GetMethodDefinitionByToken Méthode
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataModule::GetMethodDefinitionByToken Method
@@ -15,14 +15,14 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 2c0cf56f108396226b7c7399f6da75e5f47d36f3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 294c5340caf2217f9337d654a11a63a43d46febd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744672"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176667"
 ---
-# <a name="ixclrdatamodulegetmethoddefinitionbytoken-method"></a>IXCLRDataModule::GetMethodDefinitionByToken Method
+# <a name="ixclrdatamodulegetmethoddefinitionbytoken-method"></a>IXCLRDataModule::GetMethodDefinitionByToken Méthode
 
 Obtient la définition de méthode correspondant à un jeton de métadonnées donné.
 
@@ -40,23 +40,23 @@ HRESULT GetMethodDefinitionByToken(
 ## <a name="parameters"></a>Paramètres
 
 `token`\
-[in] Le jeton de méthode.
+[dans] Le jeton de méthode.
 
 `methodDefinition`\
-[out] La définition de méthode.
+[out] La définition de la méthode.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-La méthode fournie fait partie de la `IXCLRDataModule` interface et correspond à l’emplacement de la table de la méthode virtuelle de 25.
+La méthode fournie fait `IXCLRDataModule` partie de l’interface et correspond à la 25ème fente de la table de méthode virtuelle.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun  
-**Bibliothèque :** Aucun  
-**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
- 
+**En-tête:** Aucun  
+**Bibliothèque:** Aucun  
+**.NET Versions-cadre:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Débogage](index.md)
-- [Interface de IXCLRDataModule](ixclrdatamodule-interface.md)
+- [IXCLRDataModule, interface](ixclrdatamodule-interface.md)

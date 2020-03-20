@@ -9,12 +9,12 @@ helpviewer_keywords:
 - marshaling, MsgBox sample
 - data marshaling, MsgBox sample
 ms.assetid: 9e0edff6-cc0d-4d5c-a445-aecf283d9c3a
-ms.openlocfilehash: 9f1e6d58742f60b6043a4be9218b80b323cd523e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b970a5a193f82ca141c030491febce5ef352eb70
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124109"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181346"
 ---
 # <a name="msgbox-sample"></a>MsgBox, exemple
 Cet exemple montre comment passer des types chaîne par valeur comme paramètres entrants, et quand utiliser les champs <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint>, <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> et <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>.  
@@ -24,7 +24,7 @@ Cet exemple montre comment passer des types chaîne par valeur comme paramètres
 - **MessageBox** exportée depuis User32.dll.  
   
     ```cpp
-    int MessageBox(HWND hWnd, LPCTSTR lpText, LPCTSTR lpCaption,   
+    int MessageBox(HWND hWnd, LPCTSTR lpText, LPCTSTR lpCaption,
        UINT uType);  
     ```  
   
@@ -47,4 +47,4 @@ Cet exemple montre comment passer des types chaîne par valeur comme paramètres
 - [Marshaling des chaînes](marshaling-strings.md)
 - [Marshaling par défaut pour les chaînes](default-marshaling-for-strings.md)
 - [Création de prototypes dans du code managé](creating-prototypes-in-managed-code.md)
-- [Spécification d'un jeu de caractères](specifying-a-character-set.md)
+- [Spécification d’un jeu de caractères](specifying-a-character-set.md)

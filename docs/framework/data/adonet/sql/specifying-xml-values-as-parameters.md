@@ -5,25 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2c4d08b8-fc29-4614-97fa-29c8ff7ca5b3
-ms.openlocfilehash: 8e57bfe23a80bf3913cd7fb8b96527870259e77a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: acb94efd8b6b6b66d0cc84309c2d68ad692b08d3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780874"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174496"
 ---
 # <a name="specifying-xml-values-as-parameters"></a>Spécification de valeurs XML comme paramètres
-Si une requête requiert un paramètre dont la valeur est une chaîne XML, les développeurs peuvent fournir cette valeur à l’aide d’une instance du type de données **SQLXML** . Il n’y a vraiment aucune Astuce ; Les colonnes XML dans SQL Server acceptent les valeurs de paramètre exactement de la même façon que les autres types de données.  
+Si une requête demande un paramètre dont la valeur est une chaîne XML, les développeurs peuvent fournir cette valeur à l’aide d’une instance du type de données **SqlXml**. Il n’y a réellement pas d’astuces ; les colonnes XML dans SQL Server acceptent les valeurs de paramètres exactement de la même manière que d’autres types de données.  
   
-## <a name="example"></a>Exemple  
- L’application console suivante crée une nouvelle table dans la base de données **AdventureWorks** . La nouvelle table comprend une colonne nommée **SalesID** et une colonne XML nommée **SalesInfo**.  
+## <a name="example"></a> Exemple  
+ L’application console suivante crée une table dans la base de données **AdventureWorks**. La nouvelle table inclut une colonne nommée **SalesID** et une colonne XML nommée **SalesInfo**.  
   
 > [!NOTE]
-> L’exemple de base de données **AdventureWorks** n’est pas installé par défaut lorsque vous installez SQL Server. Vous pouvez l'installer en exécutant l'Installation de SQL Server.  
+> L’exemple de base de données **AdventureWorks** n’est pas installé par défaut quand vous installez SQL Server. Vous pouvez l’installer en exécutant le programme d’installation de SQL Server.  
   
- L'exemple prépare un objet <xref:System.Data.SqlClient.SqlCommand> à insérer une ligne dans la nouvelle table. Un fichier enregistré fournit les données XML nécessaires pour la colonne **SalesInfo** .  
+ L’exemple prépare un objet <xref:System.Data.SqlClient.SqlCommand> pour insérer une ligne dans la nouvelle table. Un fichier enregistré fournit les données XML nécessaires pour la colonne **SalesInfo**.  
   
- Pour créer le fichier nécessaire pour l'exécution de l'exemple, créez un nouveau fichier texte dans le même dossier que votre projet. Nommez le fichier MyTestStoreData.xml. Ouvrez le fichier dans Bloc-notes, puis copiez et collez le texte suivant :  
+ Pour créer le fichier nécessaire à l’exécution de l’exemple, créez un nouveau fichier texte dans le même dossier que votre projet. Nommez le fichier MyTestStoreData.xml. Ouvrez le fichier dans Bloc-notes, puis copiez et collez le texte suivant :  
   
 ```xml  
 <StoreSurvey xmlns="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/StoreSurvey">  
@@ -74,7 +74,7 @@ Module Module1
   
         Dim command As New SqlCommand(commandText, connection)  
   
-        ' Read the saved XML document as a   
+        ' Read the saved XML document as a
         ' SqlXml-data typed variable.  
         Dim newXml As SqlXml = _  
          New SqlXml(New XmlTextReader("MyTestStoreData.xml"))  
@@ -90,8 +90,8 @@ Module Module1
 End Sub  
   
     Private Function GetConnectionString() As String  
-        ' To avoid storing the connection string in your code,              
-        ' you can retrieve it from a configuration file.   
+        ' To avoid storing the connection string in your code,
+        ' you can retrieve it from a configuration file.
         Return "Data Source=(local);Integrated Security=SSPI;" & _  
           "Initial Catalog=AdventureWorks"  
     End Function  
@@ -115,28 +115,28 @@ class Class1
         //  Create a sample table (dropping first if it already  
         //  exists.)  
   
-        string commandNewTable =   
-            "IF EXISTS (SELECT * FROM dbo.sysobjects " +   
+        string commandNewTable =
+            "IF EXISTS (SELECT * FROM dbo.sysobjects " +
             "WHERE id = " +  
-                  "object_id(N'[dbo].[XmlDataTypeSample]') " +   
-            "AND OBJECTPROPERTY(id, N'IsUserTable') = 1) " +   
-            "DROP TABLE [dbo].[XmlDataTypeSample];" +   
-            "CREATE TABLE [dbo].[XmlDataTypeSample](" +   
-            "[SalesID] [int] IDENTITY(1,1) NOT NULL, " +   
+                  "object_id(N'[dbo].[XmlDataTypeSample]') " +
+            "AND OBJECTPROPERTY(id, N'IsUserTable') = 1) " +
+            "DROP TABLE [dbo].[XmlDataTypeSample];" +
+            "CREATE TABLE [dbo].[XmlDataTypeSample](" +
+            "[SalesID] [int] IDENTITY(1,1) NOT NULL, " +
             "[SalesInfo] [xml])";  
-        SqlCommand commandAdd =   
+        SqlCommand commandAdd =
                    new SqlCommand(commandNewTable, connection);  
         commandAdd.ExecuteNonQuery();  
-        string commandText =   
-            "INSERT INTO [dbo].[XmlDataTypeSample] " +   
-            "([SalesInfo] ) " +   
+        string commandText =
+            "INSERT INTO [dbo].[XmlDataTypeSample] " +
+            "([SalesInfo] ) " +
             "VALUES(@xmlParameter )";  
-        SqlCommand command =   
+        SqlCommand command =
                   new SqlCommand(commandText, connection);  
   
-        //  Read the saved XML document as a   
+        //  Read the saved XML document as a
         //  SqlXml-data typed variable.  
-        SqlXml newXml =   
+        SqlXml newXml =
             new SqlXml(new XmlTextReader("MyTestStoreData.xml"));  
   
         //  Supply the SqlXml value for the value of the parameter.  
@@ -151,8 +151,8 @@ class Class1
   
     private static string GetConnectionString()  
     {  
-        // To avoid storing the connection string in your code,              
-        // you can retrieve it from a configuration file.   
+        // To avoid storing the connection string in your code,
+        // you can retrieve it from a configuration file.
         return "Data Source=(local);Integrated Security=true;" +  
         "Initial Catalog=AdventureWorks; ";  
     }  
@@ -163,4 +163,4 @@ class Class1
 
 - <xref:System.Data.SqlTypes.SqlXml>
 - [Données XML dans SQL Server](xml-data-in-sql-server.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

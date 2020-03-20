@@ -19,31 +19,30 @@ helpviewer_keywords:
 - page header
 - printing [Windows Forms], headers and footers
 ms.assetid: 1c7ccb02-ac62-4fc8-8e4f-c67b01a86802
-ms.openlocfilehash: 59c5599aa5d36e61b89e1a67ac3064d2c8358206
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: c17da91efcb1c8fc90fe61f58d0280a954d59e34
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868068"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182026"
 ---
 # <a name="pagesetupdialog-component-windows-forms"></a>PageSetupDialog, composant (Windows Forms)
-Le composant Windows Forms <xref:System.Windows.Forms.PageSetupDialog> est une boîte de dialogue préconfigurée utilisée pour définir les détails de la page d’impression dans les applications Windows. Utilisez-le au sein de votre application Windows comme une solution simple permettant aux utilisateurs de définir des préférences de page plutôt que de configurer votre propre boîte de dialogue. Vous pouvez permettre aux utilisateurs de définir des ajustements de bordure et de marge, des en-têtes et des pieds de page, ainsi que l’orientation portrait ou paysage. En vous appuyant sur des boîtes de dialogue Windows standard, vous pouvez créer des applications dont la fonction de base est immédiatement familière aux utilisateurs.  
+Le composant <xref:System.Windows.Forms.PageSetupDialog> Windows Forms est une boîte de dialogue préconfigurée utilisée pour définir les détails de la page pour l’impression dans les applications basées sur Windows. Utilisez-le dans votre application Windows comme une solution simple pour les utilisateurs de définir les préférences de page au lieu de configurer votre propre boîte de dialogue. Vous pouvez permettre aux utilisateurs de définir des ajustements de frontière et de marge, des en-têtes et des pieds, ainsi que l’orientation portrait/paysage. En vous appuyant sur des boîtes de dialogue Windows standard, vous pouvez créer des applications dont la fonction de base est immédiatement familière aux utilisateurs.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Vue d’ensemble du composant PageSetupDialog](pagesetupdialog-component-overview-windows-forms.md)  
- Présente les concepts généraux du composant <xref:System.Windows.Forms.PageSetupDialog>, que vous pouvez utiliser pour afficher une boîte de dialogue préconfigurée que les utilisateurs peuvent utiliser pour manipuler les paramètres de page.  
+ [Vue d'ensemble du composant PageSetupDialog](pagesetupdialog-component-overview-windows-forms.md)  
+ Introduit les concepts généraux <xref:System.Windows.Forms.PageSetupDialog> du composant, que vous pouvez utiliser pour afficher une boîte de dialogue préconfigurée que les utilisateurs peuvent utiliser pour manipuler les paramètres de la page.  
   
  [Guide pratique pour déterminer les propriétés de la page à l'aide du composant PageSetupDialog](how-to-determine-page-properties-using-the-pagesetupdialog-component.md)  
- Explique comment définir des propriétés de page à l’aide d’une instance du composant <xref:System.Windows.Forms.PageSetupDialog> au moment de l’exécution.  
+ Explique comment définir les propriétés de <xref:System.Windows.Forms.PageSetupDialog> la page en utilisant une instance du composant au moment de l’exécution.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Informations de référence  
  <xref:System.Windows.Forms.PageSetupDialog>  
  Fournit des informations de référence sur la classe et ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Contrôles à utiliser sur les formulaires Windows](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.  
   
  [Contrôles et composants de boîte de dialogue](dialog-box-controls-and-components-windows-forms.md)  
  Décrit un ensemble de contrôles et de composants qui permettent aux utilisateurs d'effectuer des interactions standard avec l'application ou le système.
- 

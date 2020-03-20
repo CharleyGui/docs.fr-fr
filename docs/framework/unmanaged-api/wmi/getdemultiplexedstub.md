@@ -1,6 +1,6 @@
 ---
-title: Fonction GetDemultiplexedStub (référence des API non managées)
-description: La fonction GetDemultiplexedStub crée un récepteur de redirecteur d’objet pour aider un client à recevoir des appels asynchrones de la gestion Windows.
+title: Fonction GetDemultiplexedStub (référence API non gémanisée)
+description: La fonction GetDemultiplexedStub crée un évier d’expéditeur d’objets pour aider un client à recevoir des appels asynchrones de Windows Management.
 ms.date: 11/06/2017
 api_name:
 - GetDemultiplexedStub
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - GetDemultiplexedStub function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 9cc028b3300b43f8a0fb3e29f8b5ac6e1817b8c1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d15fed261db2ca2cda6dbf824dc9cb0d5c56eed3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127470"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174964"
 ---
-# <a name="getdemultiplexedstub-function"></a>GetDemultiplexedStub fonction)
+# <a name="getdemultiplexedstub-function"></a>GetDemultiplexedStub, fonction
 Crée un récepteur de redirecteur d’objet pour aider un client lors de la réception des appels asynchrones WMI.
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -30,36 +30,36 @@ Crée un récepteur de redirecteur d’objet pour aider un client lors de la ré
   
 ```cpp  
 HRESULT GetDemultiplexedStub (
-   [in] IUnknown*    pObject, 
-   [in] boolean      isLocal, 
+   [in] IUnknown*    pObject,
+   [in] boolean      isLocal,
    [out] IUnknown**  ppObject
-); 
+);
 ```  
 
 ## <a name="parameters"></a>Paramètres
 
 `pObject`  
-dans Pointeur vers l’implémentation in-process du client de [IWbemObjectSink](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectsink).
+[dans] Un pointeur à la mise en œuvre en cours du client [d’IWbemObjectSink](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectsink).
 
 `isLocal`  
-dans Indicateur qui signale si l’événement est local (`true`); Sinon, `false`.
+[dans] Un drapeau qui indique si`true`l’événement est local (); autrement, `false`.
 
 `ppObject`  
-à Récepteur de redirecteur d’objet pour aider un client à recevoir des appels asynchrones de la gestion Windows.
+[out] Un expéditeur d’objets coule pour aider un client à recevoir des appels asynchrones de Windows Management.
 
-## <a name="return-value"></a>Valeur de retour
+## <a name="return-value"></a>Valeur retournée
 
-Si la fonction est réussie, la valeur de retour est `S_OK` (0).
+Si la fonction réussit, `S_OK` la valeur de rendement est (0).
 
-Si la fonction échoue, la valeur de retour est un code d’erreur différent de zéro. Pour afficher les informations d’erreur étendues, appelez la fonction [GetErrorInfo](geterrorinfo.md) .
-    
-## <a name="requirements"></a>spécifications  
+Si la fonction échoue, la valeur de retour est un code d’erreur non nul. Pour obtenir des informations d’erreur étendues, appelez la fonction [GetErrorInfo.](geterrorinfo.md)
+
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** WMINet_Utils. idl  
+ **En-tête:** WMINet_Utils.idl  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)
+- [WMI et compteurs de performances (référence des API non managées)](index.md)

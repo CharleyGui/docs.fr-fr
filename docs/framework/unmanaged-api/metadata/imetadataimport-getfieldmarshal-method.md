@@ -15,44 +15,44 @@ helpviewer_keywords:
 ms.assetid: 4e2d88c6-8a3a-4fbe-900b-b4f4c06bf6bf
 topic_type:
 - apiref
-ms.openlocfilehash: 1a4f7703536bcfdae75b0bcffae8dca0734e9e0f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 91a19e5e15dddd446208dfa3b2c32826282067eb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437563"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175393"
 ---
 # <a name="imetadataimportgetfieldmarshal-method"></a>IMetaDataImport::GetFieldMarshal, méthode
-Obtient un pointeur vers le type natif non managé du champ représenté par le jeton de métadonnées de champ spécifié.  
+Obtient un pointeur pour le natif, type non gestion du champ représenté par les métadonnées de champ spécifiées jeton.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetFieldMarshal (  
-   [in]  mdToken             tk,   
+   [in]  mdToken             tk,
    [out] PCCOR_SIGNATURE     *ppvNativeType,  
-   [out] ULONG               *pcbNativeType   
+   [out] ULONG               *pcbNativeType
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- dans Jeton de métadonnées qui représente le champ pour lequel obtenir des informations de marshaling d’interopérabilité.  
+ [dans] Le jeton des métadonnées qui représente le champ pour obtenir des informations interop marshaling pour.  
   
  `ppvNativeType`  
- à Pointeur vers la signature de métadonnées du type natif du champ.  
+ [out] Un pointeur à la signature des métadonnées du type natif du champ.  
   
  `pcbNativeType`  
- à Taille en octets de `ppvNativeType`.  
+ [out] La taille dans `ppvNativeType`les octets de .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

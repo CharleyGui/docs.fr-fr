@@ -15,54 +15,54 @@ helpviewer_keywords:
 ms.assetid: 958970d6-f6a2-4b84-b32a-f555cbaf8f61
 topic_type:
 - apiref
-ms.openlocfilehash: 66aab8081a5cce8c5ba986470bc91eb0604781a5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7198698edce48546c4f9a82ace18d5a6e71891ee
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121514"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176251"
 ---
 # <a name="ihostsecuritymanagergetsecuritycontext-method"></a>IHostSecurityManager::GetSecurityContext, méthode
-Obtient le [IHostSecurityContext](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md) demandé à partir de l’hôte.  
+Obtient le [IHostSecurityContext](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md) demandé de l’hôte.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp
 HRESULT GetSecurityContext (  
-    [in]  EContextType eContextType,   
+    [in]  EContextType eContextType,
     [out] IHostSecurityContext** ppSecurityContext  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `eContextType`  
- dans L’une des valeurs [EContextType,](../../../../docs/framework/unmanaged-api/hosting/econtexttype-enumeration.md) , indiquant le type de contexte de sécurité à retourner.  
+ [dans] L’une des valeurs [EContextType,](../../../../docs/framework/unmanaged-api/hosting/econtexttype-enumeration.md) indiquant quel type de contexte de sécurité à retourner.  
   
  `ppSecurityContext`  
- à Adresse d’un pointeur d’interface vers le `IHostSecurityContext` de `eContextType`.  
+ [out] L’adresse d’un `IHostSecurityContext` pointeur d’interface à la de `eContextType`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`GetSecurityContext` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
-|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
-|HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|S_OK|`GetSecurityContext`retourné avec succès.|  
+|HOST_E_CLRNOTAVAILABLE|L’heure courante de l’exécution de la langue (CLR) n’a pas été chargée dans un processus, ou le CLR est dans un état où il ne peut pas exécuter le code géré ou traiter l’appel avec succès.|  
+|HOST_E_TIMEOUT|L’appel s’est fait chronométrer.|  
+|HOST_E_NOT_OWNER|L’appelant n’est pas propriétaire de la serrure.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un fil bloqué ou une fibre l’attendait.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode revient E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels ultérieurs aux méthodes d’hébergement reviennent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes  
- Un hôte peut contrôler tout l’accès du code aux jetons de thread à la fois par le CLR et le code utilisateur. Il peut également s’assurer que les informations de contexte de sécurité complètes sont transmises sur des opérations asynchrones ou des points de code avec accès restreint au code. `IHostSecurityContext` encapsule ces informations de contexte de sécurité, qui sont opaques pour le CLR. Le CLR capture ces informations et les déplace dans la répartition des éléments de travail du pool de threads, l’exécution du finaliseur et la construction des modules et des classes.  
+## <a name="remarks"></a>Notes   
+ Un hôte peut contrôler l’accès au code aux jetons de thread par le CLR et le code utilisateur. Il peut également s’assurer que les informations complètes du contexte de sécurité sont transmises à travers des opérations asynchrones ou des points de code avec un accès restreint au code. `IHostSecurityContext`encapsule cette information de contexte de sécurité, qui est opaque pour le CLR. Le CLR capture cette information et les déplace à travers la répartition des éléments de la piscine de fil, l’exécution de finalisateur, et la construction de module et de classe.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE. h  
+ **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

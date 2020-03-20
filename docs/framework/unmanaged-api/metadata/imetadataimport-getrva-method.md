@@ -15,44 +15,44 @@ helpviewer_keywords:
 ms.assetid: ea422217-988b-4acd-b2db-c55357938275
 topic_type:
 - apiref
-ms.openlocfilehash: a3a5cadc1b5a9df7967aae271ff10296843121dd
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 190bcacc84646cfd9294cf2b6b53b0474f38758f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436958"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177215"
 ---
 # <a name="imetadataimportgetrva-method"></a>IMetaDataImport::GetRVA, méthode
-Obtient l’adresse virtuelle relative (RVA) et les indicateurs d’implémentation de la méthode ou du champ représenté par le jeton spécifié.  
+Obtient l’adresse virtuelle relative (RVA) et les drapeaux de mise en œuvre de la méthode ou du champ représentés par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetRVA (  
-   [in]  mdToken     tk,   
-   [out] ULONG       *pulCodeRVA,   
+   [in]  mdToken     tk,
+   [out] ULONG       *pulCodeRVA,
    [out]  DWORD      *pdwImplFlags  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- dans Un jeton de métadonnées MethodDef ou FieldDef qui représente l’objet de code pour lequel retourner l’adresse RVA. Si le jeton est un FieldDef, le champ doit être une variable globale.  
+ [dans] Un jeton de métadonnées MethodDef ou FieldDef qui représente l’objet de code pour retourner le RVA. Si le jeton est un FieldDef, le champ doit être une variable globale.  
   
  `pulCodeRVA`  
- à Pointeur vers l’adresse virtuelle relative de l’objet de code représenté par le jeton.  
+ [out] Un pointeur vers l’adresse virtuelle relative de l’objet de code représenté par le jeton.  
   
  `pdwImplFlags`  
- à Pointeur vers les indicateurs d’implémentation de la méthode. Cette valeur est un masque de masque de l’énumération [CorMethodImpl,](../../../../docs/framework/unmanaged-api/metadata/cormethodimpl-enumeration.md) . La valeur de `pdwImplFlags` est valide uniquement si `tk` est un jeton MethodDef.  
+ [out] Un pointeur pour les drapeaux de mise en œuvre pour la méthode. Cette valeur est un peumask de l’énumération [CorMethodImpl.](../../../../docs/framework/unmanaged-api/metadata/cormethodimpl-enumeration.md) La valeur `pdwImplFlags` de est `tk` valide seulement si est un jeton MethodDef.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

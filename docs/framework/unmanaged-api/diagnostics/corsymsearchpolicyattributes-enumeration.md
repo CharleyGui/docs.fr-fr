@@ -14,27 +14,27 @@ helpviewer_keywords:
 ms.assetid: 03abde84-930a-49d3-bac3-23abb34a0184
 topic_type:
 - apiref
-ms.openlocfilehash: 4fd31e6b752e13a5c43198760e9a4d62a8f77d10
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 786e53d43ecde0bc3a97fadb77184d25d41430bc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448564"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178347"
 ---
 # <a name="corsymsearchpolicyattributes-enumeration"></a>CorSymSearchPolicyAttributes, énumération
-Spécifie la stratégie à utiliser lors de la recherche d’un lecteur de symboles. Ces constantes sont utilisées par les méthodes [ISymUnmanagedBinder2 :: GetReaderForFile2,](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) et [ISymUnmanagedBinder3 :: GetReaderFromCallback,](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md) .  
+Spécifie la stratégie à utiliser lors de la recherche d’un lecteur de symbole. Ces constantes sont utilisées par les méthodes [ISymUnmanagedBinder2::GetReaderForFile2](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) et [ISymUnmanmanagedBinder3:GetReaderFromCallback](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md) méthodes.  
   
 > [!IMPORTANT]
-> L’ouverture d’un fichier de base de données du programme (PDB) à partir d’une source non fiable constitue un risque pour la sécurité.  
+> C’est un risque pour la sécurité d’ouvrir un fichier de base de données de programme (PDB) à partir d’une source non fiable.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 typedef enum CorSymSearchPolicyAttributes  
 {  
-    AllowRegistryAccess      = 0x1,       
+    AllowRegistryAccess      = 0x1,
     AllowSymbolServerAccess  = 0x2,  
-    AllowOriginalPathAccess  = 0x4,     //      
+    AllowOriginalPathAccess  = 0x4,     //
     AllowReferencePathAccess = 0x8  
 } CorSymSearchPolicyAttributes;  
 ```  
@@ -43,13 +43,13 @@ typedef enum CorSymSearchPolicyAttributes
   
 |Membre|Description|  
 |------------|-----------------|  
-|`AllowRegistryAccess`|Interroge le registre pour rechercher des chemins de recherche de symboles.|  
-|`AllowSymbolServerAccess`|Accède à un serveur de symboles.|  
-|`AllowOriginalPathAccess`|Recherche le chemin d’accès spécifié dans le répertoire de débogage.|  
-|`AllowReferencePathAccess`|Recherche le fichier PDB à l’emplacement où se trouve le fichier. exe.|  
+|`AllowRegistryAccess`|Interroge le registre pour les chemins de recherche de symboles.|  
+|`AllowSymbolServerAccess`|Accéde à un serveur symbole.|  
+|`AllowOriginalPathAccess`|Recherche le chemin spécifié dans l’annuaire Debug.|  
+|`AllowReferencePathAccess`|Recherche du PDB à l’endroit où se trouve le fichier .exe.|  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym. idl, CorSym. h  
+## <a name="requirements"></a>Spécifications  
+ **En-tête:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

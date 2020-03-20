@@ -15,52 +15,52 @@ helpviewer_keywords:
 ms.assetid: 21b5bcb8-ea75-4962-8acc-ad17584061e5
 topic_type:
 - apiref
-ms.openlocfilehash: 696389b51328e167212fb2292a873c34b9263811
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e371330336002c673f2c54d882e70dbed41b743c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431822"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175835"
 ---
 # <a name="imetadataemitdefinememberref-method"></a>IMetaDataEmit::DefineMemberRef, méthode
-Définit une référence à un membre d’un module à l’extérieur de la portée actuelle et obtient un jeton pour cette définition de référence.  
+Définit une référence à un membre d’un module en dehors de la portée actuelle, et obtient un jeton à cette définition de référence.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineMemberRef (   
-    [in]  mdToken           tkImport,   
-    [in]  LPCWSTR           szName,   
-    [in]  PCCOR_SIGNATURE   pvSigBlob,   
-    [in]  ULONG             cbSigBlob,   
-    [out] mdMemberRef       *pmr   
+HRESULT DefineMemberRef (
+    [in]  mdToken           tkImport,
+    [in]  LPCWSTR           szName,
+    [in]  PCCOR_SIGNATURE   pvSigBlob,
+    [in]  ULONG             cbSigBlob,
+    [out] mdMemberRef       *pmr
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `tkImport`  
- dans Jeton pour la classe ou l’interface du membre cible, si le membre n’est pas global ; Si le membre est global, le jeton `mdModuleRef` pour cet autre fichier.  
+ [dans] Jeton pour la classe ou l’interface du membre cible, si le membre n’est pas global; si le membre est `mdModuleRef` global, le jeton pour cet autre fichier.  
   
  `szName`  
- dans Nom du membre cible.  
+ [dans] Le nom du membre cible.  
   
  `pvSigBlob`  
- dans Signature du membre cible.  
+ [dans] La signature du membre cible.  
   
  `cbSigBlob`  
- dans Nombre d’octets dans `pvSigBlob`.  
+ [dans] Le compte d’octets dans `pvSigBlob`.  
   
  `pmr`  
- à Jeton `mdMemberRef` assigné.  
+ [out] Le `mdMemberRef` jeton assigné.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

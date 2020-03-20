@@ -15,23 +15,23 @@ helpviewer_keywords:
 ms.assetid: 845ab77e-9639-47f5-99fb-f3b619e3e779
 topic_type:
 - apiref
-ms.openlocfilehash: 34636f1ca8e42c452aa41f6145d439a26f01b0a7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 38b9ea2ffab439f55f0a6d34d7f42c7669629168
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436393"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177922"
 ---
 # <a name="iceegenallocatemethodbuffer-method"></a>ICeeGen::AllocateMethodBuffer, méthode
-Crée une mémoire tampon de la taille spécifiée pour une méthode et obtient l’adresse virtuelle relative de la méthode.  
+Crée un tampon de la taille spécifiée pour une méthode, et obtient l’adresse virtuelle relative de la méthode.  
   
  Cette méthode est obsolète et ne doit pas être utilisée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT AllocateMethodBuffer (   
-    [in]  ULONG    cchBuffer,   
+HRESULT AllocateMethodBuffer (
+    [in]  ULONG    cchBuffer,
     [out] UCHAR    **lpBuffer,  
     [out] ULONG    *RVA  
 );  
@@ -39,22 +39,22 @@ HRESULT AllocateMethodBuffer (
   
 ## <a name="parameters"></a>Paramètres  
  `cchBuffer`  
- dans Longueur de la mémoire tampon à créer.  
+ [dans] La longueur du tampon à créer.  
   
  `lpBuffer`  
- à Mémoire tampon retournée.  
+ [out] Le tampon retourné.  
   
  `RVA`  
- à Adresse virtuelle relative de la méthode.  
+ [out] L’adresse virtuelle relative de la méthode.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

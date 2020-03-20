@@ -1,5 +1,5 @@
 ---
-title: Fonction SpawnDerivedClass (référence des API non managées)
+title: Fonction SpawnDerivedClass (Référence API non gestion)
 description: La fonction SpawnDerivedClass crée un nouvel objet qui dérive d’un objet.
 ms.date: 11/06/2017
 api_name:
@@ -14,15 +14,15 @@ helpviewer_keywords:
 - SpawnDerivedClass function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: f72e6b1c356077a94b141e40d6efe485e77e7a9e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e9784f8a024c788823dc702794b2b86eea1827bb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120177"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174847"
 ---
-# <a name="spawnderivedclass-function"></a>SpawnDerivedClass fonction)
-Crée un objet de classe dérivé à partir d’un objet spécifié.    
+# <a name="spawnderivedclass-function"></a>SpawnDerivedClass, fonction
+Crée un objet de classe dérivé à partir d’un objet spécifié.
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -30,54 +30,54 @@ Crée un objet de classe dérivé à partir d’un objet spécifié.
   
 ```cpp  
 HRESULT SpawnDerivedClass (
-   [in] int                  vFunc, 
-   [in] IWbemClassObject*    ptr, 
+   [in] int                  vFunc,
+   [in] IWbemClassObject*    ptr,
    [in] LONG                 lFlags,
-   [out] IWbemClassObject**  ppNewClass); 
+   [out] IWbemClassObject**  ppNewClass);
 ```  
 
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`  
-dans Ce paramètre n’est pas utilisé.
+[dans] Ce paramètre n’est pas utilisé.
 
 `ptr`  
-dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
+[dans] Un pointeur à une instance [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
 
 `lFlags`  
-[in] Réservée. Ce paramètre doit avoir la valeur 0.
+[in] Réservée. Ce paramètre doit être de 0.
 
 `ppNewClass`  
-à Reçoit le pointeur vers le nouvel objet de définition de classe. Si une erreur se produit, aucun nouvel objet n’est retourné et `ppNewClass` reste inchangé. Sa valeur ne peut pas être `null`.
+[out] Reçoit le pointeur de la nouvelle définition de classe objet. Si une erreur se produit, un `ppNewClass` nouvel objet n’est pas retourné et n’est pas modifié. Sa valeur `null`ne peut pas être .
 
-## <a name="return-value"></a>Valeur de retour
+## <a name="return-value"></a>Valeur retournée
 
-Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli.h,* ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |valeur  |Description  |
+|Constant  |Valeur  |Description  |
 |---------|---------|---------|
-| `WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
-| `WBEM_E_INVALID_OPERATION` | 0x80041016 | Une opération non valide, telle que la génération d’une classe à partir d’une instance, a été demandée. |
-| `WBEM_E_INCOMPLETE_CLASS` | La classe source n’a pas été complètement définie ou inscrite avec la gestion de Windows, de sorte qu’une nouvelle classe dérivée n’est pas autorisée. |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | La mémoire disponible est insuffisante pour terminer l’opération. |
+| `WBEM_E_FAILED` | 0x80041001 | Il y a eu un échec général. |
+| `WBEM_E_INVALID_OPERATION` | 0x80041016 | Une opération invalide, comme le fait de frayer une classe à partir d’une instance, a été demandée. |
+| `WBEM_E_INCOMPLETE_CLASS` | La classe source n’a pas été entièrement définie ou enregistrée auprès de Windows Management, de sorte qu’une nouvelle classe dérivée n’est pas autorisée. |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | La mémoire n'est pas suffisante pour terminer cette opération. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `ppNewClass` a la valeur `null`. |
-| `WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
+| `WBEM_S_NO_ERROR` | 0 | L’appel de fonction a été réussi.  |
   
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-Cette fonction encapsule un appel à la méthode [IWbemClassObject :: SpawnDerivedClass](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-clone) .
+Cette fonction enveloppe un appel à [l’IWbemClassObject::SpawnDerivedClass](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-clone) méthode.
 
-`ptr` doit être une définition de classe qui devient la classe parente de l’objet généré. L’objet retourné devient une sous-classe de l’objet actuel.
+`ptr`doit être une définition de classe qui devient la classe parente de l’objet engendré. L’objet retourné devient une sous-classe de l’objet actuel.
 
-Le nouvel objet retourné dans `ppNewClass` devient automatiquement une sous-classe de l’objet actuel. Ce comportement ne peut pas être substitué. Il n’existe aucune autre méthode par laquelle les sous-classes (classes dérivées) peuvent être créées.
+Le nouvel objet `ppNewClass` retourné devient automatiquement une sous-classe de l’objet actuel. Ce comportement ne peut pas être remplacé. Il n’existe pas d’autre méthode par laquelle des sous-classes (classes dérivées) peuvent être créées.
 
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** WMINet_Utils. idl  
+ **En-tête:** WMINet_Utils.idl  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)
+- [WMI et compteurs de performances (référence des API non managées)](index.md)

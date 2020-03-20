@@ -2,19 +2,19 @@
 title: Utilisation d'un éditeur d'expressions personnalisé
 ms.date: 03/30/2017
 ms.assetid: 0901b58b-e037-44a8-8281-f6f54361cfca
-ms.openlocfilehash: 9e179914a56874ddc9f3f170d35ae04c97dd859e
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: a1cd92766c8897868920c1465ddb3eeabae1aa97
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988791"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182714"
 ---
 # <a name="using-a-custom-expression-editor"></a>Utilisation d'un éditeur d'expressions personnalisé
 Un éditeur d'expressions personnalisé peut être implémenté pour fournir une expérience d'édition d'expressions plus riche ou plus simple. Il existe plusieurs scénarios dans lesquels vous souhaiterez peut-être utiliser un éditeur d'expressions personnalisé :  
   
-- Pour assurer la prise en charge d'IntelliSense et d'autres fonctionnalités d'édition riches dans un concepteur de workflow réhébergé. Cette fonctionnalité doit être fournie, car l’éditeur d’expressions par défaut de Visual Studio ne peut pas être utilisé dans les applications réhébergées.  
+- Pour assurer la prise en charge d'IntelliSense et d'autres fonctionnalités d'édition riches dans un concepteur de workflow réhébergé. Cette fonctionnalité doit être fournie parce que l’éditeur d’expression Visual Studio par défaut ne peut pas être utilisé dans les applications rehosted.  
   
-- Pour simplifier l’expérience d’édition d’expressions pour les utilisateurs d’analystes d’entreprise, afin qu’ils ne soient pas, par exemple, nécessaires pour apprendre Visual Basic ou gérer des expressions Visual Basic.  
+- Pour simplifier l’expérience d’édition d’expression pour les utilisateurs d’analystes d’affaires, de sorte qu’ils ne sont pas, par exemple, tenus d’apprendre Visual Basic ou de traiter avec des expressions de base visuelle.  
   
  Trois étapes de base sont nécessaires pour implémenter un éditeur d'expressions personnalisé :  
   
@@ -222,7 +222,7 @@ namespace MyExpressionEditorService
 ```  
   
 ### <a name="publishing-a-custom-expression-editor-in-a-wpf-project"></a>Publication d'un éditeur d'expressions personnalisé dans un projet WPF  
- Voici le code qui montre comment réhéberger le concepteur dans une application WPF et comment créer et publier le `MyEditorService` service. Avant d'utiliser ce code, ajoutez une référence au projet de bibliothèque MyExpressionEditorService du projet qui contient l'application avalon2.  
+ Voici le code qui montre comment rehost le concepteur dans une application `MyEditorService` WPF et comment créer et publier le service. Avant d'utiliser ce code, ajoutez une référence au projet de bibliothèque MyExpressionEditorService du projet qui contient l'application avalon2.  
   
 ```csharp  
 using System.Windows;  
@@ -263,7 +263,7 @@ namespace WpfApplication1
   
             Grid.SetColumn(designer.View, 0);  
   
-            // Create ExpressionEditorService   
+            // Create ExpressionEditorService
             this.expressionEditorService = new MyEditorService();  
   
             // Publish the instance of MyEditorService.  
@@ -276,7 +276,7 @@ namespace WpfApplication1
 ```  
   
 ### <a name="notes"></a>Notes  
- Si vous utilisez un contrôle **ExpressionTextBox** dans un concepteur d’activités personnalisées, il n’est pas nécessaire de créer et de détruire des <xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A> éditeurs <xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A> d’expressions à <xref:System.Activities.Presentation.View.IExpressionEditorService> l’aide des méthodes et de l’interface. La classe <xref:System.Activities.Presentation.View.ExpressionTextBox> gère cet aspect pour vous.  
+ Si vous utilisez un contrôle **ExpressionTextBox** dans un concepteur d’activité personnalisé, il <xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A> <xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A> n’est <xref:System.Activities.Presentation.View.IExpressionEditorService> pas nécessaire de créer et de détruire les éditeurs d’expression en utilisant les et les méthodes de l’interface. La classe <xref:System.Activities.Presentation.View.ExpressionTextBox> gère cet aspect pour vous.  
   
 ## <a name="see-also"></a>Voir aussi
 

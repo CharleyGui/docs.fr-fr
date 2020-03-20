@@ -15,44 +15,44 @@ helpviewer_keywords:
 ms.assetid: a3546316-e24d-417f-9909-e45d42c9d471
 topic_type:
 - apiref
-ms.openlocfilehash: 2ac29de437e746f1524fc1427c47eb8f5c761be7
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 57df124f15f78daad053d9634e1baa969a65cc35
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937808"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175276"
 ---
 # <a name="imetadatatablesgetguid-method"></a>IMetaDataTables::GetGuid, méthode
-Obtient un GUID à partir de la ligne à l’index spécifié.  
+Obtient un GUID de la ligne à l’index spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT GetGuid (   
+HRESULT GetGuid (
     [in]  ULONG       ixGuid,  
     [out] const GUID  **ppGUID  
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `ixGuid`  
- dans Index de la ligne à partir de laquelle le GUID doit être obtenu.  
+ [dans] L’index de la ligne à partir de laquelle obtenir le GUID.  
   
  `ppGuid`  
- à Pointeur vers un pointeur vers le GUID.  
+ [out] Un pointeur à un pointeur à la GUID.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
 
-  Nous déconseillons l’utilisation de cette méthode, car elle ne retourne pas de résultats cohérents. Pour plus d’informations sur la table GUID, consultez la documentation de Common Language Infrastructure (CLI), en particulier « Partition II : définition et sémantique des métadonnées ». La documentation est disponible en ligne. consultez [les C# normes ECMA et Common Language Infrastructure](../../../standard/components.md#applicable-standards) [standard et ECMA-335-Common Language Infrastructure (CLI)](http://www.ecma-international.org/publications/standards/Ecma-335.htm).  
+  Nous ne recommandons pas l’utilisation de cette méthode, car elle ne donne pas de résultats cohérents. Pour plus d’informations sur le tableau GUID, consultez la documentation sur l’infrastructure linguistique commune (CLI), en particulier «Partition II: Metadata Definition and Semantics». La documentation est disponible en ligne; voir [ECMA C et Common Language Infrastructure Standards](../../../standard/components.md#applicable-standards) and Standard [ECMA-335 - Common Language Infrastructure (CLI)](http://www.ecma-international.org/publications/standards/Ecma-335.htm).  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -18,22 +18,22 @@ helpviewer_keywords:
 ms.assetid: 997e9e57-abb2-4217-bf20-1df621a75add
 topic_type:
 - apiref
-ms.openlocfilehash: b95c96efeb666f25d04118aa8cb9b0da3a2e7924
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 20be3114908ef78966eead05ae8ba6333a491404
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104162"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175055"
 ---
 # <a name="strongnametokenfrompublickey-function"></a>StrongNameTokenFromPublicKey, fonction
 Obtient un jeton représentant une clé publique. Un jeton de nom fort est la forme raccourcie d’une clé publique.  
   
- Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName :: StrongNameTokenFromPublicKey](../hosting/iclrstrongname-strongnametokenfrompublickey-method.md) à la place.  
+ Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName::StrongNameTokenFromPublicKey](../hosting/iclrstrongname-strongnametokenfrompublickey-method.md) méthode à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-BOOLEANStrongNameTokenFromPublicKey (   
+BOOLEANStrongNameTokenFromPublicKey (
     [in]  BYTE    *pbPublicKeyBlob,  
     [in]  ULONG   cbPublicKeyBlob,  
     [out] BYTE    **ppbStrongNameToken,  
@@ -43,33 +43,33 @@ BOOLEANStrongNameTokenFromPublicKey (
   
 ## <a name="parameters"></a>Paramètres  
  `pbPublicKeyBlob`  
- dans Structure de type [publicKeyBlob](publickeyblob-structure.md) qui contient la partie publique de la paire de clés utilisée pour générer la signature de nom fort.  
+ [dans] Une structure de type [PublicKeyBlob](publickeyblob-structure.md) qui contient la partie publique de la paire de clés utilisée pour générer la signature de nom fort.  
   
  `cbPublicKeyBlob`  
- dans Taille, en octets, de `pbPublicKeyBlob`.  
+ [dans] La taille, dans les `pbPublicKeyBlob`octets, de .  
   
  `ppbStrongNameToken`  
- à Jeton de nom fort correspondant à la clé passée dans `pbPublicKeyBlob`. Le common language runtime alloue la mémoire dans laquelle le jeton doit être retourné. L’appelant doit libérer cette mémoire à l’aide de la fonction [StrongNameFreeBuffer](strongnamefreebuffer-function.md) .  
+ [out] Le jeton de nom fort `pbPublicKeyBlob`correspondant à la clé passée dedans . Le runtime de langue commune alloue la mémoire dans laquelle retourner le jeton. L’appelant doit libérer cette mémoire en utilisant la fonction [StrongNameFreeBuffer.](strongnamefreebuffer-function.md)  
   
  `pcbStrongNameToken`  
- à Taille, en octets, du jeton de nom fort retourné.  
+ [out] La taille, dans les octets, du jeton de nom fort retourné.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `true` en cas de réussite de l’opération ; Sinon, `false`.  
+ `true`à la réussite; autrement, `false`.  
   
-## <a name="remarks"></a>Notes  
- Un jeton de nom fort est la forme raccourcie d’une clé publique utilisée pour économiser de l’espace lors du stockage des informations de clé dans les métadonnées. Plus précisément, les jetons de nom fort sont utilisés dans les références d’assembly pour faire référence à l’assembly dépendant.  
+## <a name="remarks"></a>Notes   
+ Un jeton de nom fort est la forme raccourcie d’une clé publique utilisée pour économiser de l’espace lors du stockage des informations clés dans les métadonnées. Plus précisément, des jetons de nom forts sont utilisés dans les références d’assemblage pour désigner l’assemblage dépendant.  
   
- Si la fonction `StrongNameTokenFromPublicKey` ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
+ Si `StrongNameTokenFromPublicKey` la fonction ne se termine pas avec succès, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** StrongName. h  
+ **En-tête:** StrongName.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans Mscoree. dll  
+ **Bibliothèque:** Inclus comme une ressource dans mscoree.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

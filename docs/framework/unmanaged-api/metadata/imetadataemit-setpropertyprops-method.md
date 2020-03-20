@@ -15,64 +15,64 @@ helpviewer_keywords:
 ms.assetid: e2501fc8-b2bc-4dcc-9205-e3acd5a53ffe
 topic_type:
 - apiref
-ms.openlocfilehash: 0fdec87324d6efa0f911e37573093c19b93c0349
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: dc6375f3e2cff1a744a8ff2e6a6adab27bbf8af3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440546"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177480"
 ---
 # <a name="imetadataemitsetpropertyprops-method"></a>IMetaDataEmit::SetPropertyProps, méthode
-Définit les fonctionnalités stockées dans les métadonnées d’une propriété définie par un appel antérieur à la [méthode DefineProperty](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
+Définit les fonctionnalités stockées dans les métadonnées pour une propriété définie par un appel préalable à [DefineProperty Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT SetPropertyProps (   
-    [in]  mdProperty      pr,   
-    [in]  DWORD           dwPropFlags,   
-    [in]  DWORD           dwCPlusTypeFlag,   
-    [in]  void const      *pValue,   
-    [in]  ULONG           cchValue,   
-    [in]  mdMethodDef     mdSetter,   
-    [in]  mdMethodDef     mdGetter,   
-    [in]  mdMethodDef     rmdOtherMethods[]   
+HRESULT SetPropertyProps (
+    [in]  mdProperty      pr,
+    [in]  DWORD           dwPropFlags,
+    [in]  DWORD           dwCPlusTypeFlag,
+    [in]  void const      *pValue,
+    [in]  ULONG           cchValue,
+    [in]  mdMethodDef     mdSetter,
+    [in]  mdMethodDef     mdGetter,
+    [in]  mdMethodDef     rmdOtherMethods[]
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `pr`  
- dans Jeton de la propriété à modifier.  
+ [dans] Le jeton pour que la propriété soit changée  
   
  `dwPropFlags`  
- dans Indicateurs de propriété.  
+ [dans] Drapeaux de propriété.  
   
  `dwCPlusTypeFlag`  
- dans Type de la valeur par défaut de la propriété.  
+ [dans] Le type de valeur par défaut de la propriété.  
   
  `pValue`  
- dans Valeur par défaut de la propriété.  
+ [dans] La valeur par défaut pour la propriété.  
   
  `cchValue`  
- dans Nombre de caractères (Unicode) dans `pValue`.  
+ [dans] Le nombre de caractères `pValue`(Unicode) dans .  
   
  `mdSetter`  
- dans Méthode qui définit la valeur de la propriété.  
+ [dans] La méthode qui définit la valeur de la propriété.  
   
  `mdGetter`  
- dans Méthode qui obtient la valeur de la propriété.  
+ [dans] La méthode qui obtient la valeur de la propriété.  
   
  `rmdOtherMethods[]`  
- dans Tableau d’autres méthodes associées à la propriété. Mettez fin à ce tableau avec un jeton `mdTokenNil`.  
+ [dans] Un éventail d’autres méthodes associées à la propriété. Terminez ce `mdTokenNil` tableau avec un jeton.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

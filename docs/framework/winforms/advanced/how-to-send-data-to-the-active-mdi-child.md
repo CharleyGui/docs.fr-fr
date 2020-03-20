@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : envoyer des données à l’enfant MDI actif'
+title: "Comment : envoyer des données à l'enfant MDI actif"
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,25 +10,25 @@ helpviewer_keywords:
 - Clipboard [Windows Forms], pasting
 - Clipboard [Windows Forms], getting data from
 ms.assetid: 1047d2fe-1235-46db-aad9-563aea1d743b
-ms.openlocfilehash: 0a7a2475891488d1fdd60f0db4a483c144a73f0d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 563be8494cb84dc74b45985d3ba74e4b6a07eb8a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947843"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182496"
 ---
-# <a name="how-to-send-data-to-the-active-mdi-child"></a>Procédure : envoyer des données à l’enfant MDI actif
-Souvent, dans le contexte des [applications d’interface multidocument (MDI, multiple-document interface)](multiple-document-interface-mdi-applications.md), vous devez envoyer des données à la fenêtre enfant active, par exemple lorsque l’utilisateur colle des données du presse-papiers dans une application MDI.  
+# <a name="how-to-send-data-to-the-active-mdi-child"></a>Comment : envoyer des données à l'enfant MDI actif
+Souvent, dans le cadre des [applications d’interface multi-documents (MDI),](multiple-document-interface-mdi-applications.md)vous devrez envoyer des données à la fenêtre active de l’enfant, par exemple lorsque l’utilisateur colle les données du Clipboard dans une application MDI.  
   
 > [!NOTE]
-> Pour plus d’informations sur la vérification de la fenêtre enfant qui a le focus et sur l’envoi de son contenu dans le presse-papiers, consultez [détermination de l’enfant MDI actif](how-to-determine-the-active-mdi-child.md).  
+> Pour plus d’informations sur la vérification de la fenêtre de l’enfant et l’envoi de son contenu au Clipboard, voir [Déterminer l’enfant actif MDI](how-to-determine-the-active-mdi-child.md).  
   
-### <a name="to-send-data-to-the-active-mdi-child-window-from-the-clipboard"></a>Pour envoyer des données à la fenêtre enfant MDI active à partir du presse-papiers  
+### <a name="to-send-data-to-the-active-mdi-child-window-from-the-clipboard"></a>Envoyer des données à la fenêtre active de l’enfant MDI à partir du Clipboard  
   
-1. Dans une méthode, copiez le texte dans le presse-papiers vers le contrôle actif du formulaire enfant actif.  
+1. Dans le cadre d’une méthode, copiez le texte sur le Clipboard au contrôle actif de la forme active de l’enfant.  
   
     > [!NOTE]
-    > Cet exemple suppose qu’il existe un formulaire MDI parent (`Form1`) avec une ou plusieurs fenêtres enfants MDI contenant un <xref:System.Windows.Forms.RichTextBox> contrôle. Pour plus d’informations, consultez [création de formulaires MDI parents](how-to-create-mdi-parent-forms.md).  
+    > Cet exemple suppose qu’il existe`Form1`un formulaire parent MDI ( ) <xref:System.Windows.Forms.RichTextBox> qui a une ou plusieurs fenêtres d’enfant MDI contenant un contrôle. Pour plus d’informations, voir [Créer des formulaires parent MDI](how-to-create-mdi-parent-forms.md).  
   
     ```vb  
     Public Sub mniPaste_Click(ByVal sender As Object, _  
@@ -45,7 +45,7 @@ Souvent, dans le contexte des [applications d’interface multidocument (MDI, mu
              If (Not theBox Is Nothing) Then  
                 ' Create a new instance of the DataObject interface.  
                 Dim data As IDataObject = Clipboard.GetDataObject()  
-                ' If the data is text, then set the text of the   
+                ' If the data is text, then set the text of the
                 ' RichTextBox to the text in the clipboard.  
                 If (data.GetDataPresent(DataFormats.Text)) Then  
                    theBox.SelectedText = data.GetData(DataFormats.Text).ToString()  
@@ -68,22 +68,22 @@ Souvent, dans le contexte des [applications d’interface multidocument (MDI, mu
        // in this example should be a RichTextBox.  
        if (activeChild != null)  
        {  
-          try   
+          try
           {  
              RichTextBox theBox = (RichTextBox)activeChild.ActiveControl;  
              if (theBox != null)  
              {  
                 // Create a new instance of the DataObject interface.  
                 IDataObject data = Clipboard.GetDataObject();  
-                // If the data is text, then set the text of the   
+                // If the data is text, then set the text of the
                 // RichTextBox to the text in the clipboard.  
                 if (data.GetDataPresent(DataFormats.Text))  
                 {  
-                   theBox.SelectedText = data.GetData(DataFormats.Text).ToString();                 
+                   theBox.SelectedText = data.GetData(DataFormats.Text).ToString();
                 }  
              }  
           }  
-          catch   
+          catch
           {  
              MessageBox.Show("You need to select a RichTextBox.");  
           }  
@@ -94,7 +94,7 @@ Souvent, dans le contexte des [applications d’interface multidocument (MDI, mu
 ## <a name="see-also"></a>Voir aussi
 
 - [Applications d’interface multidocument (MDI, Multiple Document Interface)](multiple-document-interface-mdi-applications.md)
-- [Guide pratique pour Créer des formulaires MDI parents](how-to-create-mdi-parent-forms.md)
-- [Guide pratique : Créer des formulaires MDI enfants](how-to-create-mdi-child-forms.md)
-- [Guide pratique pour Déterminer l’enfant MDI actif](how-to-determine-the-active-mdi-child.md)
-- [Guide pratique : Réorganiser les formulaires enfants MDI](how-to-arrange-mdi-child-forms.md)
+- [Guide pratique pour créer des formulaires MDI parents](how-to-create-mdi-parent-forms.md)
+- [Comment : créer des formulaires MDI enfants](how-to-create-mdi-child-forms.md)
+- [Comment : déterminer l'enfant MDI actif](how-to-determine-the-active-mdi-child.md)
+- [Guide pratique pour réorganiser des formulaires MDI enfants](how-to-arrange-mdi-child-forms.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - registration-free COM interop, configuring .NET-based components
 - activation, registration-free
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
-ms.openlocfilehash: 61f5f0f3ec9a4386fa12e7511b4a518f2b56a21c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: dedf5ab51ab5cf9befb5bd183968388406df4e5b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123667"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181464"
 ---
 # <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Comment : configurer les composants COM .NET Framework pour l'activation sans inscription
 L’activation sans inscription des composants .NET Framework n’est que légèrement plus compliquée que pour les composants COM. L’installation requiert deux manifestes :  
@@ -42,10 +42,10 @@ L’activation sans inscription des composants .NET Framework n’est que légè
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
-      <assemblyIdentity type="win32"   
-                        name="myOrganization.myDivision.myComApp"   
-                        version="1.0.0.0"   
-                        processorArchitecture="msil"   
+      <assemblyIdentity type="win32"
+                        name="myOrganization.myDivision.myComApp"
+                        version="1.0.0.0"
+                        processorArchitecture="msil"
       />  
     ```  
   
@@ -54,18 +54,18 @@ L’activation sans inscription des composants .NET Framework n’est que légè
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
-      <assemblyIdentity type="win32"   
-                        name="myOrganization.myDivision.myComApp"   
-                        version="1.0.0.0"   
-                        processorArchitecture="x86"   
+      <assemblyIdentity type="win32"
+                        name="myOrganization.myDivision.myComApp"
+                        version="1.0.0.0"
+                        processorArchitecture="x86"
                         publicKeyToken="8275b28176rcbbef"  
       />  
       <dependency>  
         <dependentAssembly>  
-          <assemblyIdentity type="win32"   
-                        name="myOrganization.myDivision.myManagedComp"   
-                        version="6.0.0.0"   
-                        processorArchitecture="X86"   
+          <assemblyIdentity type="win32"
+                        name="myOrganization.myDivision.myManagedComp"
+                        version="6.0.0.0"
+                        processorArchitecture="X86"
                         publicKeyToken="8275b28176rcbbef"  
           />  
         </dependentAssembly>  
@@ -106,12 +106,12 @@ L’activation sans inscription des composants .NET Framework n’est que légè
     |Attribut|Description|Obligatoire|  
     |---------------|-----------------|--------------|  
     |`clsid`|Identificateur qui spécifie la classe à activer.|Oui|  
-    |`description`|Chaîne qui informe l’utilisateur sur le composant. L’attribut par défaut est une chaîne vide.|Non|  
+    |`description`|Chaîne qui informe l’utilisateur sur le composant. L’attribut par défaut est une chaîne vide.|Non |  
     |`name`|Chaîne représentant la classe managée.|Oui|  
-    |`progid`|Identificateur à utiliser pour une activation à liaison tardive.|Non|  
-    |`threadingModel`|Modèle de thread COM. "Both" est la valeur par défaut.|Non|  
-    |`runtimeVersion`|Spécifie la version du CLR (Common Language Runtime) à utiliser. Si vous ne spécifiez pas cet attribut et que le CLR n’est pas déjà chargé, le composant est chargé avec la version du CLR la plus récente, antérieure à la version CLR 4. Si vous spécifiez v1.0.3705, v1.1.4322 ou v2.0.50727, la version passe automatiquement à la version du CLR installée la plus récente antérieure à la version CLR 4 (habituellement v2.0.50727). Si une autre version du CLR est déjà chargée et que la version spécifiée peut être chargée in-process côte à côte, la version spécifiée est chargée ; sinon, le CLR chargé est utilisé. Cela peut provoquer un échec de chargement.|Non|  
-    |`tlbid`|Identificateur de la bibliothèque de types qui contient les informations de type sur la classe.|Non|  
+    |`progid`|Identificateur à utiliser pour une activation à liaison tardive.|Non |  
+    |`threadingModel`|Modèle de thread COM. "Both" est la valeur par défaut.|Non |  
+    |`runtimeVersion`|Spécifie la version du CLR (Common Language Runtime) à utiliser. Si vous ne spécifiez pas cet attribut et que le CLR n’est pas déjà chargé, le composant est chargé avec la version du CLR la plus récente, antérieure à la version CLR 4. Si vous spécifiez v1.0.3705, v1.1.4322 ou v2.0.50727, la version passe automatiquement à la version du CLR installée la plus récente antérieure à la version CLR 4 (habituellement v2.0.50727). Si une autre version du CLR est déjà chargée et que la version spécifiée peut être chargée in-process côte à côte, la version spécifiée est chargée ; sinon, le CLR chargé est utilisé. Cela peut provoquer un échec de chargement.|Non |  
+    |`tlbid`|Identificateur de la bibliothèque de types qui contient les informations de type sur la classe.|Non |  
   
      Toutes les balises d’attribut respectent la casse. Vous pouvez obtenir des CLSID, des ProgID, des modèles de thread et la version du runtime en affichant la bibliothèque de types exportée de l’assembly à l’aide de l’explorateur d’objets OLE/COM (Oleview.exe).  
   
@@ -122,7 +122,7 @@ L’activation sans inscription des composants .NET Framework n’est que légè
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
            <assemblyIdentity  
                         name="myOrganization.myDivision.myManagedComp"  
-                        version="1.2.3.4"   
+                        version="1.2.3.4"
                         publicKeyToken="8275b28176rcbbef"  
            />  
            <clrClass  
@@ -156,7 +156,7 @@ L’activation sans inscription des composants .NET Framework n’est que légè
   
      Dans cette instruction, `myManagedComp.manifest` est le nom du manifeste de composant incorporé. Pour cet exemple, le nom du fichier de script est `myresource.rc`.  
   
-2. Compilez le script à l’aide de l’outil Compilateur de ressources Microsoft Windows (Rc.exe). À l'invite de commandes, tapez la commande suivante :  
+2. Compilez le script à l’aide de l’outil Compilateur de ressources Microsoft Windows (Rc.exe). Saisissez ensuite la commande suivante dans l’invite de commandes :  
   
      `rc myresource.rc`  
   
@@ -166,11 +166,11 @@ L’activation sans inscription des composants .NET Framework n’est que légè
   
     `/win32res:myresource.res`  
   
-     Là encore, `myresource.res` est le nom du fichier de ressources contenant des ressources incorporées.  
+     Encore `myresource.res` une fois, est le nom du fichier de ressources contenant des ressources intégrées.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [COM Interop sans inscription](registration-free-com-interop.md)
 - [Configuration requise pour COM Interop sans inscription](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f8h7012w(v=vs.100))
-- [Configuration des composants COM pour l’activation sans inscription](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x65a421a(v=vs.100))
+- [Configurer les composants COM pour l’activation sans inscription](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x65a421a(v=vs.100))
 - [Activation sans inscription de composants .NET : une procédure pas à pas](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973915(v=msdn.10))

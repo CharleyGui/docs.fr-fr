@@ -5,24 +5,24 @@ helpviewer_keywords:
 - UI Automation, control patterns for clients
 - control patterns, UI Automation clients
 ms.assetid: 571561d8-5f49-43a9-a054-87735194e013
-ms.openlocfilehash: 193049aed6da3375b687e465678dca4dc90e6b39
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1ee0df5b133f08ec3cf6ba617c80c480e207ddf6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448815"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179957"
 ---
 # <a name="ui-automation-control-patterns-for-clients"></a>Modèles de contrôle UI Automation pour les clients
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
- Cette vue d'ensemble présente des modèles de contrôle pour les clients UI Automation. Elle inclut des informations sur la façon dont un client UI Automation peut utiliser des modèles de contrôle pour accéder aux informations sur l’[!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)].  
+ Cette vue d’ensemble présente des modèles de contrôle pour les clients UI Automation. Elle inclut des informations sur la façon dont un client UI Automation peut utiliser des modèles de contrôle pour accéder aux informations sur l’[!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)].  
   
  Les modèles de contrôle permettent de catégoriser et d'exposer les fonctionnalités d'un contrôle, indépendamment du type de contrôle ou de l'apparence du contrôle. Les clients UI Automation peuvent examiner un <xref:System.Windows.Automation.AutomationElement> pour déterminer les modèles de contrôle pris en charge et s’assurer du comportement du contrôle.  
   
- Pour obtenir la liste complète des modèles de contrôle, consultez [UI Automation Control patterns Overview](ui-automation-control-patterns-overview.md).  
+ Pour une liste complète des modèles de contrôle, voir [UI Automation Control Patterns Aperçu](ui-automation-control-patterns-overview.md).  
   
-<a name="uiautomation_getting_control_patterns"></a>   
+<a name="uiautomation_getting_control_patterns"></a>
 ## <a name="getting-control-patterns"></a>Obtention de modèles de contrôle  
  Les clients récupèrent un modèle de contrôle d'un <xref:System.Windows.Automation.AutomationElement> en appelant <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A?displayProperty=nameWithType> ou <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A?displayProperty=nameWithType>.  
   
@@ -32,15 +32,15 @@ ms.locfileid: "74448815"
   
  [!code-csharp[UIATextPattern_snip#1037](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1037)]  
   
-<a name="uiautomation_properties_on_control_patterns"></a>   
+<a name="uiautomation_properties_on_control_patterns"></a>
 ## <a name="retrieving-properties-on-control-patterns"></a>Récupération de propriétés sur des modèles de contrôle  
- Les clients peuvent récupérer les valeurs de propriété sur les modèles de contrôle en appelant <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType> ou <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> et en effectuant le cast de l'objet retourné en un type approprié. Pour plus d’informations sur les propriétés de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [UI Automation Properties for clients](ui-automation-properties-for-clients.md).  
+ Les clients peuvent récupérer les valeurs de propriété sur les modèles de contrôle en appelant <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType> ou <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> et en effectuant le cast de l'objet retourné en un type approprié. Pour plus [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] d’informations sur les propriétés, voir [UI Automation Properties for Clients](ui-automation-properties-for-clients.md).  
   
- Outre les méthodes de `GetPropertyValue`, les valeurs de propriété peuvent être récupérées par le biais des accesseurs common language runtime (CLR) pour accéder aux propriétés de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sur un modèle.  
+ En plus `GetPropertyValue` des méthodes, les valeurs des propriétés peuvent être récupérées par [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] les accessoirphones de l’heure de circulation de langue commune (CLR) pour accéder aux propriétés sur un modèle.  
   
-<a name="uiautomation_with_variable_patterns"></a>   
+<a name="uiautomation_with_variable_patterns"></a>
 ## <a name="controls-with-variable-patterns"></a>Contrôles avec modèles variables  
- Certains types de contrôles prennent en charge différents modèles selon leur état ou la manière dont le contrôle est utilisé. Les affichages de liste (miniatures, mosaïques, icônes, liste, détails), les graphiques Microsoft Excel (secteurs, courbes, barres, valeurs de cellule avec une formule), la zone de document de Microsoft Word (normal, page Web, plan, impression, impression, imprimer) sont des exemples de contrôles qui peuvent avoir des modèles de variable. Version préliminaire) et Microsoft Windows Media Player.  
+ Certains types de contrôles prennent en charge différents modèles selon leur état ou la manière dont le contrôle est utilisé. Des exemples de contrôles qui peuvent avoir des modèles variables sont les vues de liste (vignettes, tuiles, icônes, liste, détails), Microsoft Excel Charts (Pie, Line, Bar, Cell Value with a formula), Microsoft Word’s document area (Normal, Web Layout, Outline, Print Layout, Print Print Aperçu), et Microsoft Windows Media Player skins.  
   
  Les contrôles implémentant des types de contrôles personnalisés peuvent disposer de n’importe quel jeu de modèles de contrôle nécessaires pour représenter leurs fonctionnalités.  
   
@@ -48,9 +48,9 @@ ms.locfileid: "74448815"
 
 - [Modèles de contrôle UI Automation](ui-automation-control-patterns.md)
 - [Modèle de texte UI Automation](ui-automation-text-pattern.md)
-- [Invoke a Control Using UI Automation](invoke-a-control-using-ui-automation.md)
-- [Get the Toggle State of a Check Box Using UI Automation](get-the-toggle-state-of-a-check-box-using-ui-automation.md)
-- [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md)
-- [Exemple d’insertion de texte TextPattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InsertText)
-- [Exemple de recherche et de sélection de TextPattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FindText)
-- [Exemple InvokePattern, ExpandCollapsePattern et TogglePattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InvokePattern)
+- [Appeler un contrôle à l’aide d’UI Automation](invoke-a-control-using-ui-automation.md)
+- [Obtenir l'état bascule d'une case à cocher à l'aide d'UI Automation](get-the-toggle-state-of-a-check-box-using-ui-automation.md)
+- [Mappage de modèle de contrôle pour les clients UI Automation](control-pattern-mapping-for-ui-automation-clients.md)
+- [TextPattern Insert Text Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InsertText)
+- [Échantillon de recherche et de sélection TextPattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FindText)
+- [InvokePattern, ExpandCollapsePattern, et TogglePattern Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InvokePattern)

@@ -8,19 +8,19 @@ helpviewer_keywords:
 - Type Library Exporter
 - type libraries [.NET Framework], exporting
 ms.assetid: a487d61b-d166-467b-a7ca-d8b52fbff42d
-ms.openlocfilehash: f421a9865e457a4e8e08644671efb55c731db28b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1d2380ff607836b5dc15e7194b90dd3a53d1d2c0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104341"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180268"
 ---
 # <a name="tlbexpexe-type-library-exporter"></a>Tlbexp.exe (exportateur de bibliothèques de types)
 L'outil Type Library Exporter (Exportateur de bibliothèques de types) génère une bibliothèque de types décrivant les types définis dans un assembly du Common Language Runtime.  
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
- À l'invite de commandes, tapez le texte suivant :  
+ À l'invite de commandes, tapez :  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,7 +32,7 @@ tlbexp assemblyName [options]
   
 |Argument|Description|  
 |--------------|-----------------|  
-|*assemblyName*|Assembly pour lequel exporter une bibliothèque de types.|  
+|*Assemblyname*|Assembly pour lequel exporter une bibliothèque de types.|  
   
 |Option|Description|  
 |------------|-----------------|  
@@ -43,7 +43,7 @@ tlbexp assemblyName [options]
 |**/oldnames**|Oblige Tlbexp.exe à exporter des noms de types décorés s'il y a un conflit de nom de type. Notez que c'était le comportement par défaut dans les versions antérieures à .NET Framework version 2.0.|  
 |**/out:** *fichier*|Spécifie le nom du fichier bibliothèque de types à générer. Si vous omettez cette option, Tlbexp.exe génère une bibliothèque de types portant le même nom que celui de l’assembly (le véritable nom de l’assembly, pas nécessairement identique à celui du fichier comportant l’assembly), ainsi qu’une extension .tlb.|  
 |**/silence:** `warningnumber`|Supprime l'affichage de l'avertissement spécifié. Cette option ne peut pas être utilisée avec **/silent**.|  
-|**/silent**|Supprime l'affichage des messages indiquant la réussite des opérations. Cette option ne peut pas être utilisée avec **/silence**.|  
+|**/silencieux**|Supprime l'affichage des messages indiquant la réussite des opérations. Cette option ne peut pas être utilisée avec **/silence**.|  
 |**/tlbreference:** *nom_bibliothèque_types*|Oblige Tlbexp.exe à résoudre explicitement les références à la bibliothèque de types sans consulter le Registre. Par exemple, si l'assembly B référence l'assembly A, vous pouvez utiliser cette option pour fournir une référence à la bibliothèque de types explicites, plutôt que de vous appuyer sur la bibliothèque de types spécifiée dans le Registre. Tlbexp.exe contrôle la version pour s'assurer que la version de la bibliothèque de types correspond à la version de l'assembly ; dans le cas contraire, il génère une erreur.<br /><br /> Notez que l’option **tlbreference** consulte toujours le Registre dans les cas où l’attribut <xref:System.Runtime.InteropServices.ComImportAttribute> est appliqué à une interface qui est ensuite implémentée par un autre type.|  
 |**/tlbrefpath:** *chemin*|Chemin complètement spécifié à une bibliothèque de types référencée.|  
 |**/win32**|Lors de la compilation sur un ordinateur 64 bits, cette option spécifie que Tlbexp.exe doit générer une bibliothèque de types 32 bits.|  
@@ -54,7 +54,7 @@ tlbexp assemblyName [options]
 > [!NOTE]
 > Les options de ligne de commande de Tlbexp.exe ne respectent pas la casse et peuvent être fournies dans n'importe quel ordre. Il vous suffit de spécifier les éléments de l'option nécessaires à son identification de manière unique. Par exemple, **/n** équivaut à **/nologo**, et **/o:** *outfile.tlb* à **/out:** *outfile.tlb*.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Tlbexp.exe génère une bibliothèque de types comportant les définitions des types définis dans l'assembly. Des applications, telles que Visual Basic 6.0, peuvent utiliser la bibliothèque de types générée pour créer une liaison vers les types .NET définis dans l'assembly.  
   
 > [!IMPORTANT]
@@ -79,7 +79,7 @@ tlbexp assemblyName [options]
   
  la bibliothèque de types suivante est générée :  
   
-```cpp 
+```cpp
 [id(0x60020004)]  
 HRESULT StructUnkSafe([out, retval] SAFEARRAY(IUnknown*)* pRetVal);  
 [id(0x60020005)]  
@@ -133,5 +133,5 @@ tlbexp Sample.dll
 - [Outils](index.md)
 - [Regasm.exe (outil d’inscription d’assemblys)](regasm-exe-assembly-registration-tool.md)
 - [Récapitulatif de la conversion d’un assembly en bibliothèque de types](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))
-- [Tlbimp.exe (importateur de bibliothèques de types)](tlbimp-exe-type-library-importer.md)
+- [Tlbimp.exe (Type Library Importer)](tlbimp-exe-type-library-importer.md)
 - [Invites de commandes](developer-command-prompt-for-vs.md)

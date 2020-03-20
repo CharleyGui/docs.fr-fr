@@ -14,32 +14,32 @@ helpviewer_keywords:
 ms.assetid: bd042f89-10b1-40ca-946e-46da082f5263
 topic_type:
 - apiref
-ms.openlocfilehash: 3d3fd88a2c1ac90f823b23d8d2bcb5b177a625c3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e3cdb648397ca4f4aa2326e4f2349a5a14c3edcc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73109013"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178288"
 ---
 # <a name="assemblycomparisonresult-enumeration"></a>AssemblyComparisonResult, énumération
-Indique l’équivalence de deux identités d’assembly, telle que déterminée par la fonction [CompareAssemblyIdentity](compareassemblyidentity-function.md) .  
+Indique l’équivalence de deux identités d’assemblage, déterminée par la fonction [CompareAssemblyIdentity.](compareassemblyidentity-function.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 typedef enum _tagAssemblyComparisonResult {  
-    ACR_Unknown,   
+    ACR_Unknown,
     ACR_EquivalentFullMatch,  
     ACR_EquivalentWeakNamed,  
     ACR_EquivalentFXUnified,  
-    ACR_EquivalentUnified,    
+    ACR_EquivalentUnified,
     ACR_NonEquivalentVersion,  
-    ACR_NonEquivalent,      
+    ACR_NonEquivalent,
     ACR_EquivalentPartialMatch,  
-    ACR_EquivalentPartialWeakNamed,    
+    ACR_EquivalentPartialWeakNamed,
     ACR_EquivalentPartialUnified,  
     ACR_EquivalentPartialFXUnified,  
-    ACR_NonEquivalentPartialVersion    
+    ACR_NonEquivalentPartialVersion
 } AssemblyComparisonResult;  
 ```  
   
@@ -47,27 +47,27 @@ typedef enum _tagAssemblyComparisonResult {
   
 |Nom de membre|Description|  
 |-----------------|-----------------|  
-|`ACR_EquivalentFullMatch`|Indique que tous les champs d’assembly de la comparaison correspondent.|  
-|`ACR_EquivalentFXUnified`|Indique que les assemblys sont considérés comme équivalents en fonction de l’unification de la version d’common language runtime (CLR) des numéros de version d’assembly dans la .NET Framework version 2,0.|  
-|`ACR_EquivalentPartialFXUnified`|Indique une correspondance partielle des assemblys en fonction de l’unification CLR des numéros de version d’assembly dans le .NET Framework 2,0.|  
-|`ACR_EquivalentPartialMatch`|Indique une correspondance partielle des assemblys.|  
-|`ACR_EquivalentPartialUnified`|Indique une correspondance partielle des assemblys en fonction de l’unification héritée des numéros de version.|  
-|`ACR_EquivalentPartialWeakNamed`|Indique une correspondance partielle d’assemblys simplement nommés.|  
-|`ACR_EquivalentUnified`|Indique que les assemblys sont considérés comme équivalents en fonction de l’unification du CLR des numéros de version dans les versions héritées du .NET Framework.|  
-|`ACR_EquivalentWeakNamed`|Indique une correspondance entre deux assemblys simplement nommés dont les numéros de version ont été ignorés.|  
-|`ACR_NonEquivalent`|Indique qu’aucune correspondance n’a été établie entre les deux assemblys.|  
-|`ACR_NonEquivalentPartialVersion`|Indique que les deux assemblys correspondent, à l’exception de leurs numéros de version, qui correspondent uniquement partiellement.|  
-|`ACR_NonEquivalentVersion`|Indique que les deux assemblys correspondent, à l’exception de leurs numéros de version, qui ne correspondent pas.|  
-|`ACR_Unknown`|Indique que la raison d’une non-équivalence n’est pas connue.|  
+|`ACR_EquivalentFullMatch`|Indique que tous les champs d’assemblage dans la correspondance de comparaison.|  
+|`ACR_EquivalentFXUnified`|Indique que les assemblages sont considérés comme équivalents en fonction de l’unification de la version en cours d’exécution (CLR) des numéros de version d’assemblage dans la version cadre .NET 2.0.|  
+|`ACR_EquivalentPartialFXUnified`|Indique une correspondance partielle des assemblées basée sur l’unification CLR des numéros de version d’assemblage dans le cadre .NET 2.0.|  
+|`ACR_EquivalentPartialMatch`|Indique une correspondance partielle des assemblées.|  
+|`ACR_EquivalentPartialUnified`|Indique une correspondance partielle des assemblages basée sur l’unification héritée des nombres de versions.|  
+|`ACR_EquivalentPartialWeakNamed`|Indique une correspondance partielle d’assemblages simplement nommés.|  
+|`ACR_EquivalentUnified`|Indique que les assemblages sont considérés comme équivalents en fonction de l’unification CLR des numéros de version dans les versions héritées du cadre .NET.|  
+|`ACR_EquivalentWeakNamed`|Indique une correspondance entre deux assemblées simplement nommées dont les numéros de version ont été ignorés.|  
+|`ACR_NonEquivalent`|Indique qu’aucun match n’a eu lieu entre les deux assemblées.|  
+|`ACR_NonEquivalentPartialVersion`|Indique que les deux assemblages correspondent à l’exception de leurs numéros de version, qui ne correspondent que partiellement.|  
+|`ACR_NonEquivalentVersion`|Indique que les deux assemblages correspondent à l’exception de leurs numéros de version, qui ne correspondent pas.|  
+|`ACR_Unknown`|Indique que la raison de la non-équivalence n’est pas connue.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Fusion. h  
+ **En-tête:** Fusion.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

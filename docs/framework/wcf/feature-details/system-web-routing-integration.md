@@ -2,18 +2,18 @@
 title: Intégration de System.Web.Routing
 ms.date: 03/30/2017
 ms.assetid: 31fe2a4f-5c47-4e5d-8ee1-84c524609d41
-ms.openlocfilehash: fdc355d4560294a16f3e9c488fdaf142d2982c0d
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: a80b5c3b336b4fd18b347a25ceaf509baf6461b4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76745341"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184397"
 ---
 # <a name="systemwebrouting-integration"></a>Intégration de System.Web.Routing
-Lors de l’hébergement d’un service Windows Communication Foundation (WCF) dans Internet Information Services (IIS), vous placez un fichier. svc dans le répertoire virtuel. Ce fichier .svc spécifie la fabrique hôte de service à utiliser ainsi que la classe qui implémente le service. Lorsque vous effectuez des demandes au service, vous spécifiez le fichier. svc dans l’URI, par exemple : `http://contoso.com/EmployeeServce.svc`. Pour les programmeurs qui écrivent des services REST, ce type d'URI n'est pas optimal. Les URI des services REST spécifient une ressource spécifique et n’ont généralement pas d’extension. La fonctionnalité d’intégration de <xref:System.Web.Routing> vous permet d’héberger un service WCF REST qui répond aux URI sans extension. Pour plus d’informations sur le routage, consultez [routage ASP.net](https://docs.microsoft.com/previous-versions/aspnet/cc668201(v=vs.100)).  
+Lors de l’hébergement d’un service de la Windows Communication Foundation (WCF) dans le service d’information Internet (IIS), vous placez un fichier .svc dans l’annuaire virtuel. Ce fichier .svc spécifie la fabrique hôte de service à utiliser ainsi que la classe qui implémente le service. Lorsque vous faites des demandes au service, vous spécifiez le fichier .svc dans l’URI, par exemple: `http://contoso.com/EmployeeServce.svc`. Pour les programmeurs qui écrivent des services REST, ce type d'URI n'est pas optimal. Les URI des services REST spécifient une ressource spécifique et n’ont généralement pas d’extension. La <xref:System.Web.Routing> fonction d’intégration vous permet d’héberger un service WCF REST qui répond aux URL sans extension. Pour plus d’informations sur le routage voir [ASP.NET Routing](https://docs.microsoft.com/previous-versions/aspnet/cc668201(v=vs.100)).  
   
 ## <a name="using-systemwebrouting-integration"></a>Utilisation de l'intégration System.Web.Routing  
- Pour utiliser la fonctionnalité d’intégration <xref:System.Web.Routing>, vous utilisez la classe <xref:System.ServiceModel.Activation.ServiceRoute> pour créer un ou plusieurs itinéraires et les ajouter à l’objet <xref:System.Web.Routing.RouteTable> dans un fichier Global.asax. Ces itinéraires spécifient les URI relatifs auxquels le service répond. L'exemple suivant montre comment effectuer cette opération.  
+ Pour utiliser la fonctionnalité d’intégration <xref:System.Web.Routing>, vous utilisez la classe <xref:System.ServiceModel.Activation.ServiceRoute> pour créer un ou plusieurs itinéraires et les ajouter à l’objet <xref:System.Web.Routing.RouteTable> dans un fichier Global.asax. Ces itinéraires spécifient les URI relatifs auxquels le service répond. L’exemple suivant vous montre comment procéder.  
   
 ```aspx-csharp  
 <%@ Application Language="C#" %>  
@@ -29,7 +29,7 @@ Lors de l’hébergement d’un service Windows Communication Foundation (WCF) d
   
     private void RegisterRoutes(RouteCollection routes)  
     {  
-        routes.Add(new ServiceRoute("Customers", new WebServiceHostFactory(), typeof(Service)));   
+        routes.Add(new ServiceRoute("Customers", new WebServiceHostFactory(), typeof(Service)));
    }  
 </script>  
 ```  
@@ -60,7 +60,7 @@ Lors de l’hébergement d’un service Windows Communication Foundation (WCF) d
   
  La classe qui implémente le service doit activer les exigences de compatibilité ASP.NET, comme indiqué dans l’exemple suivant.  
   
-```csharp 
+```csharp
 [ServiceContract]  
 [AspNetCompatibilityRequirements(RequirementsMode=AspNetCompatibilityRequirementsMode.Allowed)]  
     public class Service  
@@ -71,5 +71,5 @@ Lors de l’hébergement d’un service Windows Communication Foundation (WCF) d
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle de programmation HTTP web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Modèle de programmation HTTP Web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
 - [Routage ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/cc668201(v=vs.100))

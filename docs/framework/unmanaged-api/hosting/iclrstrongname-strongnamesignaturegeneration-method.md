@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4cdb1284-947a-4ed4-94c1-c5ff5cdfce56
 topic_type:
 - apiref
-ms.openlocfilehash: ced7540afe931fb91240c770d76d205400157a51
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: e58ac181c4e472c469076b880ff71e0c6afa30fe
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901100"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178049"
 ---
 # <a name="iclrstrongnamestrongnamesignaturegeneration-method"></a>Méthode ICLRStrongName::StrongNameSignatureGeneration
 Génère une signature de nom fort pour l’assembly spécifié.  
@@ -28,7 +28,7 @@ Génère une signature de nom fort pour l’assembly spécifié.
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT StrongNameSignatureGeneration (   
+HRESULT StrongNameSignatureGeneration (
     [in]  LPCWSTR   wszFilePath,  
     [in]  LPCWSTR   wszKeyContainer,  
     [in]  BYTE      *pbKeyBlob,  
@@ -38,49 +38,49 @@ HRESULT StrongNameSignatureGeneration (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `wszFilePath`  
- dans Chemin d’accès au fichier qui contient le manifeste de l’assembly pour lequel la signature de nom fort sera générée.  
+ [dans] Le chemin vers le fichier qui contient le manifeste de l’assemblage pour lequel la signature du nom fort sera générée.  
   
  `wszKeyContainer`  
- dans Nom du conteneur de clé qui contient la paire de clés publique/privée.  
+ [dans] Le nom du conteneur clé qui contient la paire de clés public/privé.  
   
- Si `pbKeyBlob` a la valeur null, `wszKeyContainer` devez spécifier un conteneur valide dans le fournisseur de services de chiffrement (CSP). Dans ce cas, la paire de clés stockée dans le conteneur est utilisée pour signer le fichier.  
+ S’il `pbKeyBlob` `wszKeyContainer` est nul, doit spécifier un conteneur valide au sein du fournisseur de services cryptographiques (CSP). Dans ce cas, la paire de clés stockée dans le conteneur est utilisée pour signer le fichier.  
   
- Si `pbKeyBlob` n’a pas la valeur null, la paire de clés est supposée être contenue dans l’objet BLOB (Binary Large Object) clé.  
+ Si `pbKeyBlob` elle n’est pas nulle, la paire de clés est supposée être contenue dans le grand objet binaire clé (BLOB).  
   
- Les clés doivent être des clés de signature RSA (Rivest-Shamir-Adleman) 1024 bits. Aucun autre type de clé n’est pris en charge pour l’instant.  
+ Les clés doivent être 1024 bits Rivest-Shamir-Adleman (RSA) clés de signature. Aucun autre type de clés n’est pris en charge pour le moment.  
   
  `pbKeyBlob`  
- dans Pointeur vers la paire de clés publique/privée. Cette paire est au format créé par la fonction de `CryptExportKey` Win32. Si `pbKeyBlob` a la valeur null, le conteneur de clé spécifié par `wszKeyContainer` est supposé contenir la paire de clés.  
+ [dans] Un pointeur à la paire de clés public/privé. Cette paire est dans le format `CryptExportKey` créé par la fonction Win32. S’il `pbKeyBlob` est nul, `wszKeyContainer` le conteneur clé spécifié par est supposé contenir la paire de clés.  
   
  `cbKeyBlob`  
- dans Taille, en octets, de `pbKeyBlob`.  
+ [dans] La taille, dans les `pbKeyBlob`octets, de .  
   
  `ppbSignatureBlob`  
- à Pointeur vers l’emplacement vers lequel le common language runtime retourne la signature. Si `ppbSignatureBlob` a la valeur null, le runtime stocke la signature dans le fichier spécifié par `wszFilePath`.  
+ [out] Un pointeur à l’endroit où le temps d’exécution de langue commune renvoie la signature. Si `ppbSignatureBlob` elle est nulle, le temps d’exécution stocke la signature dans le fichier spécifié par `wszFilePath`.  
   
- Si `ppbSignatureBlob` n’a pas la valeur null, le common language runtime alloue de l’espace dans lequel retourner la signature. L’appelant doit libérer cet espace à l’aide de la méthode [ICLRStrongName :: StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) .  
+ Si `ppbSignatureBlob` elle n’est pas nulle, le runtime de langue commune alloue l’espace pour retourner la signature. L’appelant doit libérer cet espace en utilisant la méthode [ICLRStrongName::StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) méthode.  
   
  `pcbSignatureBlob`  
- à Taille, en octets, de la signature retournée.  
+ [out] La taille, dans les octets, de la signature retournée.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
+ `S_OK`si la méthode est terminée avec succès; autrement, une valeur HRESULT qui indique l’échec (voir [valeurs RHESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
-## <a name="remarks"></a>Notes  
- Spécifiez NULL pour `wszFilePath` pour calculer la taille de la signature sans créer la signature.  
+## <a name="remarks"></a>Notes   
+ Spécifier null pour `wszFilePath` calculer la taille de la signature sans créer la signature.  
   
- La signature peut être stockée soit directement dans le fichier, soit retournée à l’appelant.  
+ La signature peut être stockée directement dans le fichier, soit retournée à l’appelant.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Metahost. h  
+ **En-tête:** MetaHost.h MetaHost.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

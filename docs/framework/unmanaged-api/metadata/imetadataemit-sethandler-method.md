@@ -15,41 +15,41 @@ helpviewer_keywords:
 ms.assetid: c6c1aaaf-e2cd-407c-b73e-fbe6ffd83bb3
 topic_type:
 - apiref
-ms.openlocfilehash: 6737275fb77e6f177832eb1d96214c37942bcd22
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 375c4b2cece0bdfd763ae383c5412c9e25614baf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442154"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177540"
 ---
 # <a name="imetadataemitsethandler-method"></a>IMetaDataEmit::SetHandler, méthode
-Définit la méthode référencée par le pointeur de `IUnknown` spécifié comme un rappel de notification pour les remappages de jetons.  
+Définit la méthode référencée par le pointeur spécifié `IUnknown` comme un rappel de notification pour les remaps symboliques.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT SetHandler (   
+HRESULT SetHandler (
     [in]  IUnknown    *pUnk  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `pUnk`  
- dans Gestionnaire à inscrire.  
+ [dans] Le gestionnaire de s’inscrire.  
   
-## <a name="remarks"></a>Notes  
- Le moteur de métadonnées envoie une notification à l’aide de la méthode fournie par `SetHandler`, aux compilateurs qui ne génèrent pas d’enregistrements de manière optimisée et qui souhaitent optimiser les enregistrements enregistrés.  
+## <a name="remarks"></a>Notes   
+ Le moteur de métadonnées envoie la `SetHandler`notification en utilisant la méthode qui est fournie par , pour les compilateurs qui ne génèrent pas d’enregistrements d’une manière optimisée et qui voudraient optimiser les enregistrements enregistrés.  
   
- Si la méthode de rappel n’est pas fournie par `SetHandler`, aucune optimisation n’est effectuée lors de l’enregistrement, sauf si plusieurs étendues d’importation ont été fusionnées à l’aide de `IMapToken` lors de la fusion pour chaque étendue.  
+ Si la méthode de rappel `SetHandler`n’est pas fournie par le biais, aucune optimisation `IMapToken` ne sera effectuée sur enregistrer, sauf lorsque plusieurs portées d’importation ont été fusionnées en utilisant sur la fusion pour chaque portée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

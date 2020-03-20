@@ -15,20 +15,20 @@ helpviewer_keywords:
 ms.assetid: 31214d3a-715e-49af-92b3-0fd11e4f218a
 topic_type:
 - apiref
-ms.openlocfilehash: 577a4f6bb8315cfb1cb462703dd0cb9b23b60704
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 64c70fe0b657047ae35dccb763fa57120403deef
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74434054"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177149"
 ---
 # <a name="imetadatatablesgetcodedtokeninfo-method"></a>IMetaDataTables::GetCodedTokenInfo, méthode
-Obtient un pointeur vers un tableau de jetons associé à l’index de ligne spécifié.  
+Obtient un pointeur à un tableau de jetons associés à l’index de ligne spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT GetCodedTokenInfo (   
+HRESULT GetCodedTokenInfo (
     [in]  ULONG       ixCdTkn,  
     [out] ULONG       *pcTokens,  
     [out] ULONG       **ppTokens,  
@@ -38,25 +38,25 @@ HRESULT GetCodedTokenInfo (
   
 ## <a name="parameters"></a>Paramètres  
  `ixCdTkn`  
- dans Type de jeton codé à retourner.  
+ [dans] Le genre de jeton codé pour revenir.  
   
  `pcTokens`  
- à Pointeur vers la longueur de `ppTokens`.  
+ [out] Un pointeur à `ppTokens`la longueur de .  
   
  `ppTokens`  
- à Pointeur vers un pointeur vers un tableau qui contient la liste des jetons retournés.  
+ [out] Un pointeur à un pointeur à un tableau qui contient la liste des jetons retournés.  
   
  `ppName`  
- à Pointeur vers un pointeur vers le nom du jeton au `ixCdTkn`.  
+ [out] Un pointeur à un pointeur au `ixCdTkn`nom du jeton à .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -6,18 +6,18 @@ helpviewer_keywords:
 - platform invoke, attribute fields
 - attribute fields in platform invoke, EntryPoint
 ms.assetid: d1247f08-0965-416a-b978-e0b50652dfe3
-ms.openlocfilehash: a55e460f565c33731c5b0b29ab42b8263d3690e2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c5f8f735dd3e8c359f88044a532c29303237acc8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125156"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181311"
 ---
 # <a name="specifying-an-entry-point"></a>Spécification d'un point d'entrée
 
 Un point d’entrée identifie l’emplacement d’une fonction dans une DLL. Dans un projet managé, le nom d’origine ou le point d’entrée ordinal d’une fonction cible identifie cette fonction dans les limites d’interopérabilité. De plus, vous pouvez mapper le point d’entrée à un autre nom pour renommer la fonction de façon plus appropriée.  
   
- La liste suivante répertorie les raisons possibles pour renommer une fonction DLL :  
+ Voici une liste des raisons possibles de renommer une fonction DLL :  
   
 - Éviter d’utiliser des noms de fonction API respectant la casse.  
   
@@ -30,7 +30,7 @@ Un point d’entrée identifie l’emplacement d’une fonction dans une DLL. Da
  Cette rubrique montre comment renommer une fonction DLL dans du code managé.  
   
 ## <a name="renaming-a-function-in-visual-basic"></a>Renommer une fonction dans Visual Basic  
- 
+
 Visual Basic utilise le mot clé **Function** dans l’instruction **Declare** pour définir le champ <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType>. L’exemple suivant illustre une déclaration simple.  
   
 ```vb
@@ -94,5 +94,5 @@ extern "C" int MsgBox(
 
 - <xref:System.Runtime.InteropServices.DllImportAttribute>
 - [Création de prototypes dans du code managé](creating-prototypes-in-managed-code.md)
-- [Exemples d'appel de code non managé](platform-invoke-examples.md)
+- [Exemples d’appel de code non managé](platform-invoke-examples.md)
 - [Marshaling de données à l’aide de l’appel de code managé](marshaling-data-with-platform-invoke.md)

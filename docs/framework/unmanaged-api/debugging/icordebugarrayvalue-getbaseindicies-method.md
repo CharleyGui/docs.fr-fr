@@ -15,38 +15,38 @@ helpviewer_keywords:
 ms.assetid: 868b339b-acdb-4fe0-91c7-b85f4fba99eb
 topic_type:
 - apiref
-ms.openlocfilehash: e103401b85626e53db53e1894c22b161774e5163
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7c6d1905cdbd12b960014e687034ea9d163b68d7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088691"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179040"
 ---
 # <a name="icordebugarrayvaluegetbaseindicies-method"></a>ICorDebugArrayValue::GetBaseIndicies, méthode
-Obtient l’index de base de chaque dimension du tableau.  
+Obtient l’index de base de chaque dimension dans le tableau.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetBaseIndicies (  
     [in] ULONG32          cdim,  
-    [out, size_is(cdim), length_is(cdim)]   
+    [out, size_is(cdim), length_is(cdim)]
         ULONG32           indicies[]  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `cdim`  
- dans Nombre de dimensions de cet objet `ICorDebugArrayValue`. Cette valeur est également la taille du tableau de `indicies`, car sa taille est égale au nombre de dimensions de l’objet `ICorDebugArrayValue`.  
+ [dans] Le nombre de `ICorDebugArrayValue` dimensions de cet objet. Cette valeur est également `indicies` la taille de la gamme parce que `ICorDebugArrayValue` sa taille est égale au nombre de dimensions de l’objet.  
   
  `indicies`  
- à Tableau d’entiers, chacun d’eux étant l’index de base (autrement dit, l’index de départ) d’une dimension de cet objet `ICorDebugArrayValue`.  
+ [out] Un tableau d’intégrants, dont chacun est l’indice de base (c’est-à-dire l’indice de départ) d’une dimension de cet `ICorDebugArrayValue` objet.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

@@ -15,59 +15,59 @@ helpviewer_keywords:
 ms.assetid: b50488a5-3cf0-483c-82dc-2892a3ec61ac
 topic_type:
 - apiref
-ms.openlocfilehash: d0377ade5265bba9b313d6ed2e91c446497fac6e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 55709e79cd8bdb36fe1e32ee8a699fccb1b1bbc8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428305"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175302"
 ---
 # <a name="imetadataimport2enumgenericparams-method"></a>IMetaDataImport2::EnumGenericParams, méthode
-Obtient un énumérateur pour un tableau de jetons de paramètres génériques associés au jeton TypeDef ou MethodDef spécifié.  
+Obtient un enumérateur pour une gamme de jetons de paramètres génériques associés au jeton typeDef ou MethodDef spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp
 HRESULT EnumGenericParams (  
-   [in, out] HCORENUM     *phEnum,   
+   [in, out] HCORENUM     *phEnum,
    [in]  mdToken          tk,  
-   [out] mdGenericParam   rGenericParams[],   
-   [in]  ULONG            cMax,   
+   [out] mdGenericParam   rGenericParams[],
+   [in]  ULONG            cMax,
    [out] ULONG            *pcGenericParams  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur.  
+ [dans, dehors] Un pointeur à l’enumérateur.  
   
  `tk`  
- dans Jeton TypeDef ou MethodDef dont les paramètres génériques doivent être énumérés.  
+ [dans] Le jeton TypeDef ou MethodDef dont les paramètres génériques doivent être énumérés.  
   
  `rGenericParams`  
- à Tableau de paramètres génériques à énumérer.  
+ [out] La gamme de paramètres génériques à énumérer.  
   
  `cMax`  
- dans Nombre maximal de jetons demandés à placer dans `rGenericParams`.  
+ [dans] Le nombre maximum demandé de jetons à placer dans `rGenericParams`.  
   
  `pcGenericParams`  
- à Nombre de jetons retournés placés dans `rGenericParams`.  
+ [out] Le nombre retourné de jetons placés en `rGenericParams`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumGenericParams` retourné avec succès.|  
-|`S_FALSE`|`phEnum` n’a aucun élément membre. Dans ce cas, `pcGenericParams` a la valeur 0 (zéro).|  
+|`S_OK`|`EnumGenericParams`retourné avec succès.|  
+|`S_FALSE`|`phEnum`n’a pas d’éléments membres. Dans ce `pcGenericParams` cas, est réglé à 0 (zéro).|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerCallback8 ::D méthode ynamicMethodJITCompilationFinished
+title: ICorProfilerCallback8::DynamicMethodJITCompilationLa méthode
 ms.date: 04/10/2018
 api_name:
 - ICorProfilerCallback8.DynamicMethodJITCompilationFinished
@@ -8,53 +8,52 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-ms.openlocfilehash: 0e04459614ca697908fb9b71ecc3931ac305a838
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c2e9489654a0fe5fa65ec638ed0f991a6c01415a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136582"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175107"
 ---
-# <a name="icorprofilercallback8dynamicmethodjitcompilationfinished-method"></a>ICorProfilerCallback8 ::D méthode ynamicMethodJITCompilationFinished
-[Pris en charge dans le .NET Framework 4,7 et versions ultérieures]  
+# <a name="icorprofilercallback8dynamicmethodjitcompilationfinished-method"></a>ICorProfilerCallback8::DynamicMethodJITCompilationLa méthode
+[Soutenu dans le cadre .NET 4.7 et les versions ultérieures]  
   
-Notifie le profileur chaque fois que la compilation JIT d’une méthode dynamique est terminée.  
+Informe le profileur chaque fois que la compilation JIT d’une méthode dynamique est terminée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT DynamicMethodJITCompilationFinished(  
-     [in]  FunctionID  functionId,   
-     [in]  BOOL        hrStatus,   
-     [in]  BOOL        fIsSafeToBlock   
+     [in]  FunctionID  functionId,
+     [in]  BOOL        hrStatus,
+     [in]  BOOL        fIsSafeToBlock
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
 [in] `functionId`  
-Identificateur de la fonction en mémoire pour laquelle la compilation JIT est démarrée.   
+L’identifiant de la fonction mémoire pour laquelle la compilation JIT est commencée.
 
-[in] `hrStatus`   
-Valeur qui indique si la compilation JIT a réussi.
+[dans] `hrStatus` Une valeur qui indique si la compilation JIT a été couronnée de succès.
 
-[in] `fIsSafeToBlock`   
-`true` pour indiquer que le blocage peut amener le runtime à attendre que le thread appelant retourne à partir de ce rappel ; `false` pour indiquer que le blocage n’affectera pas le fonctionnement du Runtime.  
+[dans] `fIsSafeToBlock` pour indiquer que le blocage peut faire attendre le temps d’exécution pour que le fil d’appel revienne de ce 
+ `true` rappel; `false` pour indiquer que le blocage n’affectera pas le fonctionnement de l’exécution.  
 
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes   
 
-Ce rappel est déclenché chaque fois que la compilation JIT d’une méthode dynamique est terminée. Cela comprend plusieurs stubs IL et méthodes LCG. Son objectif est de fournir aux rédacteurs de profileur suffisamment d’informations pour identifier la méthode compilée pour les utilisateurs.
+Ce rappel est déclenché chaque fois que la compilation JIT d’une méthode dynamique est terminée. Cela comprend divers talons IL et méthodes LCG. Son objectif est de fournir aux auteurs de profileur suffisamment d’informations pour identifier la méthode compilée aux utilisateurs.
 
 > [!NOTE]
-> les valeurs `functionId` ne peuvent pas être utilisées pour la résolution de leurs jetons de métadonnées, car les méthodes dynamiques n’ont pas de métadonnées.
+> `functionId`les valeurs ne peuvent pas être utilisées pour résoudre leurs jetons de métadonnées, parce que les méthodes dynamiques n’ont pas de métadonnées.
 
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

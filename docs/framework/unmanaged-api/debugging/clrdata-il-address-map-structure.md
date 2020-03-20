@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 3f6928832d822422177ebd7def142422953468a0
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: e680a7a0dc3209d1988f6c84be0864572a74b3a4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274292"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179377"
 ---
 # <a name="clrdata_il_address_map-structure"></a>CLRDATA_IL_ADDRESS_MAP, structure
 
-Définit un mappage IL à adresse.
+Définit un IL pour aborder la cartographie.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -44,21 +44,20 @@ typedef struct
 
 | Membre         | Description                                            |
 | -------------- | ------------------------------------------------------ |
-| `ilOffset`     | Offset IL pour la plage d’adresses contenue              |
-| `startAddress` | Adresse de début de la plage.                        |
-| `endAddress`   | Adresse de fin de la plage.                          |
-| `type`         | Type des données. Cette valeur n’est pas utilisée actuellement |
+| `ilOffset`     | DÉCALAGE IL pour la plage d’adresse contenue              |
+| `startAddress` | L’adresse de départ de la plage.                        |
+| `endAddress`   | L’adresse de fin de la plage.                          |
+| `type`         | Type des données. Cette valeur n’est actuellement pas utilisée |
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-Cette structure se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, définissez la structure comme indiqué ci-dessus `CLRDATA_ADDRESS` , où est un entier non signé 64 bits.
+Cette structure vit à l’intérieur du temps d’exécution et n’est pas exposée à travers des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, définissez la `CLRDATA_ADDRESS` structure comme indiqué ci-dessus, où est un integer non signé 64 bits.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
-**En-tête :** Aucun.  
-**Bibliothèque** Aucun.   
-**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+**En-tête:** Aucun  
+**Bibliothèque:** Aucune **version cadre .NET:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 

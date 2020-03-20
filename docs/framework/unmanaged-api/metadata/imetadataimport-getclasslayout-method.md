@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8f35414d-f40b-4b99-8768-9adb675c622a
 topic_type:
 - apiref
-ms.openlocfilehash: 8360a74e9e18e5b68ecc9edd7be2e3a711cb61c9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e02d7dd4b287d027b633ae9bf2e98e036062bdd0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437779"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175406"
 ---
 # <a name="imetadataimportgetclasslayout-method"></a>IMetaDataImport::GetClassLayout, méthode
 Obtient les informations de disposition pour la classe référencée par le jeton TypeDef spécifié.  
@@ -28,8 +28,8 @@ Obtient les informations de disposition pour la classe référencée par le jeto
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT GetClassLayout  (   
-   [in]  mdTypeDef          td,   
+HRESULT GetClassLayout  (
+   [in]  mdTypeDef          td,
    [out] DWORD              *pdwPackSize,  
    [out] COR_FIELD_OFFSET   rFieldOffset[],  
    [in]  ULONG              cMax,  
@@ -40,31 +40,31 @@ HRESULT GetClassLayout  (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- dans Jeton TypeDef pour la classe avec la disposition à retourner.  
+ [dans] Le jeton TypeDef pour la classe avec la mise en page à revenir.  
   
  `pdwPackSize`  
- à L’une des valeurs 1, 2, 4, 8 ou 16, représentant la taille de Pack de la classe.  
+ [out] L’une des valeurs 1, 2, 4, 8 ou 16, représentant la taille du pack de la classe.  
   
  `rFieldOffset`  
- à Tableau de valeurs [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) .  
+ [out] Un éventail de [valeurs COR_FIELD_OFFSET.](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md)  
   
  `cMax`  
  [in] Taille maximale du tableau `rFieldOffset`.  
   
  `pcFieldOffset`  
- à Nombre d’éléments retournés dans `rFieldOffset`.  
+ [out] Le nombre d’éléments retournés dans `rFieldOffset`.  
   
  `pulClassSize`  
- à Taille en octets de la classe représentée par `td`.  
+ [out] La taille dans les octets `td`de la classe représentée par .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

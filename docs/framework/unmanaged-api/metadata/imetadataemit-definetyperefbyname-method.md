@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c30a4ce3-2d3e-411a-98df-e62ac4a5dd50
 topic_type:
 - apiref
-ms.openlocfilehash: 3dfdd473b01bfe83def52f957c52e0f4d11375ad
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 23a6931b31ea2d7e4e8d1cb3dc8adf3a51216315
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74434383"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175744"
 ---
 # <a name="imetadataemitdefinetyperefbyname-method"></a>IMetaDataEmit::DefineTypeRefByName, méthode
 Obtient un jeton de métadonnées pour un type qui est défini dans la portée spécifiée, qui est en dehors de la portée actuelle.  
@@ -28,41 +28,41 @@ Obtient un jeton de métadonnées pour un type qui est défini dans la portée s
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineTypeRefByName (   
-    [in]  mdToken     tkResolutionScope,   
-    [in]  LPCWSTR     szName,   
-    [out] mdTypeRef   *ptr   
+HRESULT DefineTypeRefByName (
+    [in]  mdToken     tkResolutionScope,
+    [in]  LPCWSTR     szName,
+    [out] mdTypeRef   *ptr
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `tkResolutionScope`  
- dans Jeton spécifiant l’étendue de la résolution. Les types de jetons suivants sont valides :  
+ [dans] Le jeton précisant la portée de résolution. Les types de jetons suivants sont valides :  
   
-- `mdModuleRef`, si le type est défini dans le même assembly que celui dans lequel l’appelant est défini.  
+- `mdModuleRef`, si le type est défini dans le même assemblage dans lequel l’appelant est défini.  
   
-- `mdAssemblyRef`, si le type est défini dans un assembly autre que celui dans lequel l’appelant est défini.  
+- `mdAssemblyRef`, si le type est défini dans un assemblage autre que celui dans lequel l’appelant est défini.  
   
 - `mdTypeRef`, si le type est un type imbriqué.  
   
 - `mdModule`, si le type est défini dans le même module dans lequel l’appelant est défini.  
   
-- NULL, si le type est défini globalement.  
+- Null, si le type est défini globalement.  
   
  `szName`  
- dans Nom du type de cible au format Unicode.  
+ [dans] Le nom du type cible dans Unicode.  
   
  `ptr`  
- à Pointeur vers le jeton de `mdTypeRef` assigné au type.  
+ [out] Un pointeur `mdTypeRef` au jeton qui est attribué au type.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 29efe5e5-897b-46c2-a35f-e599a273acc8
-ms.openlocfilehash: 19b62c24d00903d1494a755dbeabb460935cdacd
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: f8db79db6c4a66dfe13ec936313c4cf2c3b93be5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205944"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174405"
 ---
 # <a name="implementing-an-explicit-transaction-using-committabletransaction"></a>Implémentation d'une transaction explicite à l'aide de CommittableTransaction
 La classe <xref:System.Transactions.CommittableTransaction> permet aux applications d’utiliser une transaction de façon explicite au lieu d’utiliser la classe <xref:System.Transactions.TransactionScope> de façon implicite. Cela se révèle utile pour les applications qui souhaitent utiliser une même transaction pour plusieurs appels de fonction ou plusieurs appels de thread. Contrairement à la classe <xref:System.Transactions.TransactionScope>, le writer d’application doit absolument appeler les méthodes <xref:System.Transactions.CommittableTransaction.Commit%2A> et <xref:System.Transactions.Transaction.Rollback%2A> pour valider ou abandonner la transaction.  
@@ -43,7 +43,7 @@ La classe <xref:System.Transactions.CommittableTransaction> permet aux applicati
   
  Vous pouvez appeler <xref:System.Transactions.CommittableTransaction.BeginCommit%2A> pour transmettre la suspension de la validation à un thread du pool de threads. Vous pouvez également appeler <xref:System.Transactions.CommittableTransaction.EndCommit%2A> pour contrôler si la transaction a bien été validée. Si la transaction n'a pas été validée, pour quelque raison que ce soit, <xref:System.Transactions.CommittableTransaction.EndCommit%2A> lève une exception de transaction. Si la transaction n'a toujours pas été validée lors de l'appel à <xref:System.Transactions.CommittableTransaction.EndCommit%2A>, l'appelant reste bloqué jusqu'à ce que la transaction soit validée ou abandonnée.  
   
- La méthode la plus simple pour réaliser une validation asynchrone consiste à fournir une méthode de rappel à appeler une fois la validation terminée. Vous devez toutefois appeler la méthode <xref:System.Transactions.CommittableTransaction.EndCommit%2A> sur l'objet <xref:System.Transactions.CommittableTransaction> d'origine utilisé pour l'appel. Pour obtenir cet objet, vous pouvez effectuer un cast aval du paramètre *IAsyncResult* de la méthode de <xref:System.Transactions.CommittableTransaction> rappel, étant <xref:System.IAsyncResult> donné que la classe implémente la classe.  
+ La méthode la plus simple pour réaliser une validation asynchrone consiste à fournir une méthode de rappel à appeler une fois la validation terminée. Vous devez toutefois appeler la méthode <xref:System.Transactions.CommittableTransaction.EndCommit%2A> sur l'objet <xref:System.Transactions.CommittableTransaction> d'origine utilisé pour l'appel. Pour obtenir cet objet, vous pouvez abattre le paramètre *IAsyncResult* de <xref:System.IAsyncResult> la méthode de rappel, puisque la classe implémente la <xref:System.Transactions.CommittableTransaction> classe.  
   
  L'exemple suivant illustre la réalisation d'une validation asynchrone.  
   
@@ -62,14 +62,14 @@ public void DoTransactionalWork()
      }  
      finally  
      {  
-          //Restore the ambient transaction   
+          //Restore the ambient transaction
           Transaction.Current = oldAmbient;  
      }  
 }  
 void OnCommitted(IAsyncResult asyncResult)  
 {  
      CommittableTransaction committableTransaction;  
-     committableTransaction = asyncResult as CommittableTransaction;     
+     committableTransaction = asyncResult as CommittableTransaction;
      Debug.Assert(committableTransaction != null);  
      try  
      {  
@@ -88,4 +88,4 @@ void OnCommitted(IAsyncResult asyncResult)
 ## <a name="see-also"></a>Voir aussi
 
 - [Implémentation d’une transaction implicite à l’aide de l’étendue de transaction](implementing-an-implicit-transaction-using-transaction-scope.md)
-- [Traitement transactionnel](index.md)
+- [Traitement des transactions](index.md)

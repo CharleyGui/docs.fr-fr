@@ -15,24 +15,24 @@ helpviewer_keywords:
 ms.assetid: 798513a0-68b1-4d04-bc5b-782a4445ea68
 topic_type:
 - apiref
-ms.openlocfilehash: a43c1883038e41cac1b58c78bc26f20d436ebbd1
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 61b5678a546bdbadbcc6d8ee86447cb17ce72b99
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440238"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175523"
 ---
 # <a name="imetadataimportenumcustomattributes-method"></a>IMetaDataImport::EnumCustomAttributes, méthode
-Énumère les jetons de définition d’attribut personnalisés associés au type ou au membre spécifié.  
+Énumère les jetons personnalisés d’attribut-définition associés au type ou au membre spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT EnumCustomAttributes (   
+HRESULT EnumCustomAttributes (
    [in, out] HCORENUM      *phEnum,  
-   [in]  mdToken            tk,   
-   [in]  mdToken            tkType,   
-   [out] mdCustomAttribute  rCustomAttributes[],   
+   [in]  mdToken            tk,
+   [in]  mdToken            tkType,
+   [out] mdCustomAttribute  rCustomAttributes[],
    [in]  ULONG              cMax,  
    [out, optional] ULONG   *pcCustomAttributes  
 );  
@@ -40,38 +40,38 @@ HRESULT EnumCustomAttributes (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur retourné.  
+ [dans, dehors] Un pointeur à l’enumérateur retourné.  
   
  `tk`  
- dans Jeton pour la portée de l’énumération, ou zéro pour tous les attributs personnalisés.  
+ [dans] Un jeton pour la portée de l’énumération, ou zéro pour tous les attributs personnalisés.  
   
  `tkType`  
- dans Jeton pour le constructeur du type des attributs à énumérer, ou `null` pour tous les types.  
+ [dans] Un jeton pour le constructeur du type d’attributs à `null` énumérer, ou pour tous les types.  
   
  `rCustomAttributes`  
- à Tableau de jetons d’attributs personnalisés.  
+ [out] Une gamme de jetons d’attribut personnalisés.  
   
  `cMax`  
  [in] Taille maximale du tableau `rCustomAttributes`.  
   
  `pcCustomAttributes`  
- [out, optional] Nombre réel de valeurs de jeton retournées dans `rCustomAttributes`.  
+ [out, facultatif] Le nombre réel de valeurs `rCustomAttributes`symboliques est retournée dans .  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumCustomAttributes` retourné avec succès.|  
-|`S_FALSE`|Il n’existe aucun attribut personnalisé à énumérer. Dans ce cas, `pcCustomAttributes` est égal à zéro.|  
+|`S_OK`|`EnumCustomAttributes`retourné avec succès.|  
+|`S_FALSE`|Il n’y a pas d’attributs personnalisés à énumérer. Dans ce `pcCustomAttributes` cas, c’est zéro.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

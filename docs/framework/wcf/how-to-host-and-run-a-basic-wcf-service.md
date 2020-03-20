@@ -1,5 +1,5 @@
 ---
-title: 'Tutoriel : Héberger et exécuter un service de Windows Communication Foundation de base'
+title: 'Tutorial: Hébergez et exécutez un service de base de la Fondation De communication Windows'
 ms.date: 03/19/2019
 dev_langs:
 - csharp
@@ -8,78 +8,78 @@ helpviewer_keywords:
 - WCF services [WCF]
 - WCF services [WCF], running
 ms.assetid: 31774d36-923b-4e2d-812e-aa190127266f
-ms.openlocfilehash: 984c5e73a8efc4e9c2d487485267868ffa2f60f3
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 30eb86987b83427b94c6fff22755cde3d73dd9f0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928726"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184082"
 ---
-# <a name="tutorial-host-and-run-a-basic-windows-communication-foundation-service"></a>Tutoriel : Héberger et exécuter un service de Windows Communication Foundation de base
+# <a name="tutorial-host-and-run-a-basic-windows-communication-foundation-service"></a>Tutorial: Hébergez et exécutez un service de base de la Fondation De communication Windows
 
-Ce didacticiel décrit la troisième des cinq tâches requises pour créer une application de base Windows Communication Foundation (WCF). Pour obtenir une vue d’ensemble des didacticiels, consultez [didacticiel : Prise en main des applications](getting-started-tutorial.md)Windows Communication Foundation.
+Ce tutoriel décrit la troisième des cinq tâches requises pour créer une application de base de la Windows Communication Foundation (WCF). Pour un aperçu des tutoriels, voir [Tutorial: Get started with Windows Communication Foundation applications](getting-started-tutorial.md).
 
-La tâche suivante pour créer une application WCF consiste à héberger un service WCF dans une application console. Un service WCF expose un ou plusieurs *points de terminaison*, chacun d’entre eux exposant une ou plusieurs opérations de service. Un point de terminaison de service spécifie les informations suivantes :
+La prochaine tâche pour créer une application WCF est d’héberger un service WCF dans une application console. Un service WCF expose un ou plusieurs critères de *terminaison,* chacun d’eux qui expose une ou plusieurs opérations de service. Un critère de service spécifie les informations suivantes :
 
-- Adresse à laquelle vous pouvez trouver le service.
-- Liaison qui contient les informations qui décrivent comment un client doit communiquer avec le service. 
-- Contrat qui définit les fonctionnalités fournies par le service à ses clients.
+- Une adresse où vous pouvez trouver le service.
+- Une liaison qui contient l’information qui décrit comment un client doit communiquer avec le service.
+- Un contrat qui définit la fonctionnalité que le service fournit à ses clients.
 
-Ce tutoriel vous montre comment effectuer les opérations suivantes :
+Dans ce tutoriel, vous allez apprendre à :
 > [!div class="checklist"]
 >
 > - Créez et configurez un projet d’application console pour l’hébergement d’un service WCF.
-> - Ajoutez du code pour héberger le service WCF.
-> - Mettez à jour le fichier de configuration.
+> - Ajoutez du code pour accueillir le service WCF.
+> - Mettre à jour le fichier de configuration.
 > - Démarrez le service WCF et vérifiez qu’il est en cours d’exécution.
 
-## <a name="create-and-configure-a-console-app-project-for-hosting-the-service"></a>Créer et configurer un projet d’application console pour héberger le service
+## <a name="create-and-configure-a-console-app-project-for-hosting-the-service"></a>Créer et configurer un projet d’application console pour l’hébergement du service
 
-1. Créez un projet d’application console dans Visual Studio : 
- 
-    1. Dans le menu **fichier** , sélectionnez **ouvrir** > un**projet/une solution** , puis accédez à la solution **gettingstarted** que vous avez créée précédemment (*gettingstarted. sln*). Sélectionnez **Ouvrir**.
+1. Créez un projet d’application console dans Visual Studio :
 
-    2. Dans le menu **affichage** , sélectionnez **Explorateur de solutions**.
-    
-    3. Dans la fenêtre **Explorateur de solutions** , sélectionnez la solution **gettingstarted** (nœud supérieur), puis sélectionnez **Ajouter** > **un nouveau projet** dans le menu contextuel. 
+    1. Du menu **Fichier,** sélectionnez **Open** > **Project/Solution** et naviguez vers la solution **GettingStarted** que vous avez déjà créée (*GettingStarted.sln*). Sélectionnez **uvrir**.
 
-    4. Dans la fenêtre **Ajouter un nouveau projet** , sur le côté gauche, sélectionnez la catégorie **Bureau Windows** sous  **C# Visual** ou **Visual Basic**. 
+    2. Du menu **View,** sélectionnez **Solution Explorer**.
 
-    5. Sélectionnez le modèle **application console (.NET Framework)** , puis entrez *GettingStartedHost* pour le **nom**. Sélectionnez **OK**.
+    3. Dans la fenêtre **Solution Explorer,** sélectionnez la solution **GettingStarted** (nœud supérieur), puis **sélectionnez Ajouter** > **un nouveau projet** dans le menu raccourci.
 
-2. Ajoutez une référence dans le projet **GettingStartedHost** au projet **GettingStartedLib** : 
+    4. Dans la fenêtre **Add New Project,** sur le côté gauche, sélectionnez la catégorie **Windows Desktop** sous Visual **C ou** **Visual Basic**.
 
-    1. Dans la fenêtre **Explorateur de solutions** , sélectionnez le dossier **références** sous le projet **GettingStartedHost** , puis sélectionnez Ajouter une **référence** dans le menu contextuel. 
+    5. Sélectionnez le modèle **Console App (.NET Framework)** et *entrez GettingStartedHost* pour le **nom**. Sélectionnez **OK**.
 
-    2. Dans la boîte de dialogue **Ajouter une référence** , sous **projets** sur le côté gauche de la fenêtre, sélectionnez **solution**. 
- 
-    3. Sélectionnez **GettingStartedLib** dans la section centrale de la fenêtre, puis sélectionnez **OK**. 
+2. Ajoutez une référence dans le projet **GettingStartedHost** au projet **GettingStartedLib** :
 
-       Cette action rend les types définis dans le projet **GettingStartedLib** disponibles pour le projet **GettingStartedHost** .
+    1. Dans la fenêtre **Solution Explorer,** sélectionnez le dossier **Références** dans le cadre du projet **GettingStartedHost,** puis **sélectionnez Ajouter la référence** dans le menu raccourci.
 
-3. Ajoutez une référence dans le projet **GettingStartedHost** à l' <xref:System.ServiceModel> assembly : 
+    2. Dans le dialogue **Add Reference,** dans le cadre **de Projets** sur le côté gauche de la fenêtre, sélectionnez **Solution**.
 
-    1. Dans la fenêtre **Explorateur de solutions** , sélectionnez le dossier **références** sous le projet **GettingStartedHost** , puis sélectionnez Ajouter une **référence** dans le menu contextuel.
-    
-    2. Dans la fenêtre **Ajouter une référence** , sous **assemblys** sur le côté gauche de la fenêtre, sélectionnez **Framework**. 
+    3. Sélectionnez **GettingStartedLib** dans la section centrale de la fenêtre, puis sélectionnez **OK**.
 
-    3. Sélectionnez **System. ServiceModel**, puis cliquez sur **OK**. 
-    
-    4. Enregistrez la solution en sélectionnant **fichier** > **enregistrer tout**.
+       Cette action met les types définis dans le projet **GettingStartedLib** à la disposition du projet **GettingStartedHost.**
+
+3. Ajoutez une référence dans le projet **GettingStartedHost** à l’assemblage <xref:System.ServiceModel> :
+
+    1. Dans la fenêtre **Solution Explorer,** sélectionnez le dossier **Références** dans le cadre du projet **GettingStartedHost,** puis **sélectionnez Ajouter la référence** dans le menu raccourci.
+
+    2. Dans la fenêtre **Add Reference,** sous **les assemblées** sur le côté gauche de la fenêtre, sélectionnez **Cadre**.
+
+    3. Sélectionnez **System.ServiceModel**, puis sélectionnez **OK**.
+
+    4. Enregistrer la solution en sélectionnant **File** > **Save All**.
 
 ## <a name="add-code-to-host-the-service"></a>Ajouter du code pour héberger le service
 
-Pour héberger le service, vous ajoutez du code pour effectuer les étapes suivantes : 
+Pour accueillir le service, vous ajoutez du code pour faire les étapes suivantes :
 
 1. Créez un URI pour l’adresse de base.
-2. Créez une instance de classe pour héberger le service.
-3. Créez un point de terminaison de service.
+2. Créez un exemple de classe pour l’hébergement du service.
+3. Créez un critère de service.
 4. Activer l'échange de métadonnées.
-5. Ouvrez l’hôte de service pour écouter les messages entrants.
+5. Ouvrez l’hôte du service pour écouter les messages entrants.
   
-Apportez les modifications suivantes au code:
+Apportez les modifications suivantes au code :
 
-1. Ouvrez le fichier **Program.cs** ou **Module1. vb** dans le projet **GettingStartedHost** et remplacez son code par le code suivant :
+1. Ouvrez le fichier **Program.cs** ou **Module1.vb** dans le projet **GettingStartedHost** et remplacez son code par le code suivant :
 
     ```csharp
     using System;
@@ -175,66 +175,66 @@ Apportez les modifications suivantes au code:
 
     End Module
     ```
-    
-    Pour plus d’informations sur le fonctionnement de ce code, consultez [étapes du programme d’hébergement de services](#service-hosting-program-steps).
 
-2. Mettez à jour les propriétés du projet :
+    Pour plus d’informations sur le fonctionnement de ce code, voir [les étapes du programme d’hébergement service](#service-hosting-program-steps).
 
-   1. Dans la fenêtre **Explorateur de solutions** , sélectionnez le dossier **GettingStartedHost** , puis sélectionnez **Propriétés** dans le menu contextuel.
+2. Mettre à jour les propriétés du projet :
 
-   2. Sur la page Propriétés de **GettingStartedHost** , sélectionnez l’onglet **application** :
+   1. Dans la fenêtre **Solution Explorer,** sélectionnez le dossier **GettingStartedHost,** puis sélectionnez **les propriétés** du menu raccourci.
 
-      - Pour C# les projets, sélectionnez **GettingStartedHost. Program** dans la liste **objet de démarrage** .
+   2. Sur la page des propriétés **GettingStartedHost,** sélectionnez **l’onglet Application** :
 
-      - Pour Visual Basic projets, sélectionnez **service. Program** dans la liste **objet de démarrage** .
+      - Pour les projets C, **sélectionnez GettingStartedHost.Program** dans la liste **d’objets Startup.**
 
-   3. Dans le menu **fichier** , sélectionnez **enregistrer tout**.
+      - Pour les projets Visual Basic, sélectionnez **Service.Program** de la liste **d’objets Startup.**
 
-## <a name="verify-the-service-is-working"></a>Vérifier que le service fonctionne
+   3. Dans le menu **Fichier,** sélectionnez **Enregistrer tous**.
 
-1. Générez la solution, puis exécutez l’application console **GettingStartedHost** à partir de Visual Studio. 
+## <a name="verify-the-service-is-working"></a>Vérifier le fonctionnement du service
 
-    Le service doit être exécuté avec des privilèges d’administrateur. Étant donné que vous avez ouvert Visual Studio avec des privilèges d’administrateur, lorsque vous exécutez **GettingStartedHost** dans Visual Studio, l’application est également exécutée avec des privilèges d’administrateur. Vous pouvez également ouvrir une nouvelle invite de commandes en tant qu’administrateur (sélectionnez **plus** > **exécuter en tant qu’administrateur** dans le menu contextuel) et exécutez **GettingStartedHost. exe** dans celui-ci.
+1. Construisez la solution, puis exécutez l’application de console **GettingStartedHost** depuis Visual Studio.
 
-2. Ouvrez un navigateur Web et accédez à la page du service à `http://localhost:8000/GettingStarted/CalculatorService`l’adresse.
-   
+    Le service doit être exécuté avec les privilèges de l’administrateur. Parce que vous avez ouvert Visual Studio avec des privilèges d’administrateur, lorsque vous **exécutez GettingStartedHost** dans Visual Studio, l’application est gérée avec des privilèges d’administrateur ainsi. Comme alternative, vous pouvez ouvrir une nouvelle invite de commande en tant qu’administrateur (sélectionnez **More** > **Run comme administrateur** du menu raccourci) et exécuter **GettingStartedHost.exe** en elle.
+
+2. Ouvrez un navigateur Web et naviguez `http://localhost:8000/GettingStarted/CalculatorService`sur la page du service à .
+
    > [!NOTE]
-   > Les services tels que celui-ci requièrent l’autorisation appropriée pour inscrire des adresses HTTP sur l’ordinateur pour l’écoute. Les comptes Administrateur possèdent cette autorisation, mais l'autorisation pour les espaces de noms HTTP doit être accordée aux comptes qui ne sont pas administrateur. Pour plus d’informations sur la configuration des réservations d’espaces de noms, consultez [Configuration de HTTP et HTTPS](feature-details/configuring-http-and-https.md). 
+   > Des services comme celui-ci nécessitent la permission appropriée d’enregistrer les adresses HTTP sur la machine pour l’écoute. Les comptes Administrateur possèdent cette autorisation, mais l'autorisation pour les espaces de noms HTTP doit être accordée aux comptes qui ne sont pas administrateur. Pour plus d’informations sur la configuration des réservations d’espaces de noms, consultez [Configuration de HTTP et HTTPS](feature-details/configuring-http-and-https.md).
 
-## <a name="service-hosting-program-steps"></a>Étapes du programme d’hébergement de service
+## <a name="service-hosting-program-steps"></a>Étapes du programme d’hébergement de services
 
-Les étapes du code que vous avez ajouté pour héberger le service sont décrites comme suit :
+Les étapes du code que vous avez ajoutée pour héberger le service sont décrites comme suit :
 
-- **Étape 1** : Créez une instance de la `Uri` classe pour contenir l’adresse de base du service. Une URL qui contient une adresse de base a un URI facultatif qui identifie un service. L’adresse de base est mise en forme `<transport>://<machine-name or domain><:optional port #>/<optional URI segment>`comme suit :. L’adresse de base pour le service de calculatrice utilise le transport HTTP, localhost, le port 8000 et le segment d’URI, GettingStarted.
+- **Étape 1**: Créez `Uri` une instance de la classe pour tenir l’adresse de base du service. Une URL qui contient une adresse de base dispose d’une URI facultative qui identifie un service. L’adresse de base est `<transport>://<machine-name or domain><:optional port #>/<optional URI segment>`formatée comme suit: . L’adresse de base pour le service de calculatrice utilise le transport HTTP, localhost, port 8000, et le segment URI, GettingStarted.
 
-- **Étape 2** : Créez une instance de la <xref:System.ServiceModel.ServiceHost> classe, que vous utilisez pour héberger le service. Le constructeur prend deux paramètres : le type de la classe qui implémente le contrat de service et l’adresse de base du service.
+- **Étape 2**: Créez <xref:System.ServiceModel.ServiceHost> une instance de la classe, que vous utilisez pour accueillir le service. Le constructeur prend deux paramètres : le type de classe qui met en œuvre le contrat de service et l’adresse de base du service.
 
-- **Étape 3** : Créez une instance <xref:System.ServiceModel.Description.ServiceEndpoint>. Un point de terminaison de service est composé d'une adresse, d'une liaison et d'un contrat de service. Le <xref:System.ServiceModel.Description.ServiceEndpoint> constructeur est composé du type d’interface de contrat de service, d’une liaison et d’une adresse. Le contrat de service est `ICalculator`, que vous définissez et implémentez dans le type de service. La liaison de cet exemple est <xref:System.ServiceModel.WSHttpBinding>, qui est une liaison intégrée et se connecte aux points de terminaison conformes aux spécifications WS-*. Pour plus d’informations sur les liaisons WCF, consultez [vue d’ensemble des liaisons WCF](bindings-overview.md). Vous ajoutez l’adresse à l’adresse de base pour identifier le point de terminaison. Le code spécifie l’adresse comme CalculatorService et l’adresse complète du point de terminaison `http://localhost:8000/GettingStarted/CalculatorService`en tant que.
+- **Étape 3**: <xref:System.ServiceModel.Description.ServiceEndpoint> Créer une instance. Un point de terminaison de service est composé d'une adresse, d'une liaison et d'un contrat de service. Le <xref:System.ServiceModel.Description.ServiceEndpoint> constructeur est composé du type d’interface de contrat de service, d’une liaison et d’une adresse. Le contrat de service est `ICalculator`, que vous définissez et implémentez dans le type de service. La liaison pour <xref:System.ServiceModel.WSHttpBinding>cet échantillon est , qui est une liaison intégrée et se connecte à des points de terminaison qui se conforment aux spécifications WS-MD. Pour plus d’informations sur les liaisons WCF, voir [aperçu des liaisons WCF](bindings-overview.md). Vous appendicez l’adresse à l’adresse de base pour identifier le point de terminaison. Le code spécifie l’adresse en tant que `http://localhost:8000/GettingStarted/CalculatorService`CalculatorService et l’adresse entièrement qualifiée pour le point de terminaison comme .
 
     > [!IMPORTANT]
-    > Pour .NET Framework version 4 et versions ultérieures, l’ajout d’un point de terminaison de service est facultatif. Pour ces versions, si vous n’ajoutez pas votre code ou votre configuration, WCF ajoute un point de terminaison par défaut pour chaque combinaison d’adresse de base et de contrat implémentée par le service. Pour plus d’informations sur les points de terminaison par défaut, consultez [spécification d’une adresse de point de terminaison](specifying-an-endpoint-address.md). Pour plus d’informations sur les points de terminaison, les liaisons et les comportements par défaut, consultez [configuration simplifiée](simplified-configuration.md) et [configuration simplifiée pour les services WCF](samples/simplified-configuration-for-wcf-services.md).
+    > Pour .NET Framework Version 4 et plus tard, l’ajout d’un critère de service est facultatif. Pour ces versions, si vous n’ajoutez pas votre code ou configuration, WCF ajoute un point de terminaison par défaut pour chaque combinaison d’adresse de base et de contrat implémenté par le service. Pour plus d’informations sur les paramètres par défaut, voir [Spécifier une adresse de point final](specifying-an-endpoint-address.md). Pour plus d’informations sur les paramètres, les liaisons et les comportements par défaut, voir [configuration simplifiée](simplified-configuration.md) et [configuration simplifiée pour les services WCF](samples/simplified-configuration-for-wcf-services.md).
 
-- **Étape 4** : Activer l'échange de métadonnées. Les clients utilisent l’échange de métadonnées pour générer des proxies afin d’appeler les opérations de service. Pour activer l’échange de métadonnées <xref:System.ServiceModel.Description.ServiceMetadataBehavior> , créez une instance <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled> , affectez à `true`sa propriété `ServiceMetadataBehavior` la valeur et <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> ajoutez l’objet <xref:System.ServiceModel.ServiceHost> à la collection de l’instance.
+- **Étape 4**: Activez l’échange de métadonnées. Les clients utilisent l’échange de métadonnées pour générer des procurations pour appeler les opérations de service. Pour permettre l’échange de <xref:System.ServiceModel.Description.ServiceMetadataBehavior> métadonnées, `true`créez une `ServiceMetadataBehavior` instance, <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> définissez <xref:System.ServiceModel.ServiceHost> sa <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled> propriété et ajoutez l’objet à la collection de l’instance.
 
-- **Étape 5** : Ouvrir <xref:System.ServiceModel.ServiceHost> pour écouter les messages entrants. L’application attend que vous appuyiez sur **entrée**. Une fois l’application instanciée <xref:System.ServiceModel.ServiceHost>, elle exécute un bloc try/catch. Pour plus d’informations sur l’interception en toute sécurité <xref:System.ServiceModel.ServiceHost>des exceptions levées par, consultez la rubrique [utilisation de Close et Abort pour libérer des ressources clientes WCF](samples/use-close-abort-release-wcf-client-resources.md).
+- **Étape 5** <xref:System.ServiceModel.ServiceHost> : Ouvert pour écouter les messages entrants. L’application vous attend pour appuyer **sur Enter**. Après l’application <xref:System.ServiceModel.ServiceHost>instantiates , il exécute un bloc d’essai/ capture. Pour plus d’informations sur <xref:System.ServiceModel.ServiceHost>la capture en toute sécurité des exceptions jetées par , voir [Use Close et Abort pour libérer les ressources des clients WCF](samples/use-close-abort-release-wcf-client-resources.md).
 
 > [!IMPORTANT]
-> Lorsque vous ajoutez une bibliothèque de service WCF, Visual Studio l’héberge pour vous si vous la déboguez en démarrant un hôte de service. Pour éviter les conflits, vous pouvez empêcher Visual Studio d’héberger la bibliothèque du service WCF. 
+> Lorsque vous ajoutez une bibliothèque de service WCF, Visual Studio l’héberge pour vous si vous la déboçonnez en lançant un hôte de service. Pour éviter les conflits, vous pouvez empêcher Visual Studio d’accueillir la bibliothèque de services WCF.
 >
-> 1. Sélectionnez le projet **GettingStartedLib** dans **Explorateur de solutions** , puis choisissez **Propriétés** dans le menu contextuel.
-> 2. Sélectionnez **options WCF** et désactivez **Démarrer l’hôte de service WCF lors du débogage d’un autre projet dans la même solution**.
+> 1. Sélectionnez le projet **GettingStartedLib** dans **Solution Explorer** et choisissez **les propriétés** dans le menu raccourci.
+> 2. Sélectionnez **WCF Options** et décocher **Démarrer WCF Service Host lors de débogage d’un autre projet dans la même solution**.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce tutoriel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 >
 > - Créez et configurez un projet d’application console pour l’hébergement d’un service WCF.
-> - Ajoutez du code pour héberger le service WCF.
-> - Mettez à jour le fichier de configuration.
+> - Ajoutez du code pour accueillir le service WCF.
+> - Mettre à jour le fichier de configuration.
 > - Démarrez le service WCF et vérifiez qu’il est en cours d’exécution.
 
-Passez au didacticiel suivant pour apprendre à créer un client WCF.
+Avancez au tutoriel suivant pour apprendre à créer un client WCF.
 
 > [!div class="nextstepaction"]
-> [Tutoriel : Créer un client WCF](how-to-create-a-wcf-client.md)
+> [Tutorial: Créer un client WCF](how-to-create-a-wcf-client.md)

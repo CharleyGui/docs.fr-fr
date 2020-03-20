@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1d23247e-c58c-45db-afd8-83aa89cde18e
 topic_type:
 - apiref
-ms.openlocfilehash: 2d32dc8ae59fc1a4a189d849437cc95ea3b94a4d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: be2845d1d660d86447cfbb6f2845a8e68b727e66
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449539"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175510"
 ---
 # <a name="imetadataimportenumfields-method"></a>IMetaDataImport::EnumFields, méthode
 Énumère les jetons FieldDef pour le type référencé par le jeton TypeDef spécifié.  
@@ -28,46 +28,46 @@ ms.locfileid: "74449539"
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT EnumFields (   
-   [in, out] HCORENUM    *phEnum,   
-   [in]      mdTypeDef   cl,   
-   [out]     mdFieldDef  rFields[],   
-   [in]      ULONG       cMax,   
+HRESULT EnumFields (
+   [in, out] HCORENUM    *phEnum,
+   [in]      mdTypeDef   cl,
+   [out]     mdFieldDef  rFields[],
+   [in]      ULONG       cMax,
    [out]     ULONG       *pcTokens  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur.  
+ [dans, dehors] Un pointeur à l’enumérateur.  
   
  `cl`  
- dans Jeton TypeDef de la classe dont les champs doivent être énumérés.  
+ [dans] Le jeton TypeDef de la classe dont les champs doivent être énumérés.  
   
  `rFields`  
- à Liste des jetons FieldDef.  
+ [out] La liste des jetons FieldDef.  
   
  `cMax`  
  [in] Taille maximale du tableau `rFields`.  
   
  `pcTokens`  
- à Nombre réel de jetons FieldDef retournés dans `rFields`.  
+ [out] Le nombre réel de jetons FieldDef retourné dans `rFields`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFields` retourné avec succès.|  
-|`S_FALSE`|Il n’y a aucun champ à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
+|`S_OK`|`EnumFields`retourné avec succès.|  
+|`S_FALSE`|Il n’y a pas de champs à énumérer. Dans ce `pcTokens` cas, c’est zéro.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

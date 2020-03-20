@@ -15,44 +15,44 @@ helpviewer_keywords:
 ms.assetid: be232314-7f69-4855-bfab-63361bd22307
 topic_type:
 - apiref
-ms.openlocfilehash: cdbcdb9359d295ad9bed2050ed36499feba74d9e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1037cd4210605192870d43d88979b89af6536380
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442275"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175653"
 ---
 # <a name="imetadataemitsetfieldmarshal-method"></a>IMetaDataEmit::SetFieldMarshal, méthode
-Définit les informations de marshaling PInvoke pour le champ, le retour de méthode ou le paramètre de méthode référencé par le jeton spécifié.  
+Définit les informations de marshaling PInvoke pour le champ, le retour de méthode, ou le paramètre de méthode référencé par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT SetFieldMarshal (  
-    [in]  mdToken          tk,   
-    [in]  PCCOR_SIGNATURE  pvNativeType,   
-    [in]  ULONG            cbNativeType   
+    [in]  mdToken          tk,
+    [in]  PCCOR_SIGNATURE  pvNativeType,
+    [in]  ULONG            cbNativeType
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- dans Jeton pour l’élément de données cibles. Il s’agit soit d’un `mdFieldDef`, soit d’un jeton `mdParamDef`.  
+ [dans] Le jeton pour l’élément de données cible. C’est `mdFieldDef` soit `mdParamDef` un ou un jeton.  
   
  `pvNativeType`  
- dans Signature pour le type non managé.  
+ [dans] La signature pour type non-gestion.  
   
  `cbNativeType`  
- dans Nombre d’octets dans `pvNativeType`.  
+ [dans] Le compte d’octets dans `pvNativeType`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

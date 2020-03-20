@@ -15,68 +15,68 @@ helpviewer_keywords:
 ms.assetid: 6b5be4fc-2e86-499c-8b09-833160bca767
 topic_type:
 - apiref
-ms.openlocfilehash: 40f24a4ea628ce92a27ab1bfe97fc87a57dfa4f0
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8ca5ab70f60de4d783800fb18612a8f04cb9cee1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432547"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177711"
 ---
 # <a name="imetadataemitdefinefield-method"></a>IMetaDataEmit::DefineField, méthode
-Crée une définition pour un champ avec la signature de métadonnées spécifiée et obtient un jeton pour cette définition de champ.  
+Crée une définition pour un champ avec la signature spécifiée de métadonnées, et obtient un jeton à cette définition de champ.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineField (   
-    [in]  mdTypeDef   td,   
-    [in]  LPCWSTR     szName,   
-    [in]  DWORD       dwFieldFlags,   
-    [in]  PCCOR_SIGNATURE pvSigBlob,   
-    [in]  ULONG       cbSigBlob,   
-    [in]  DWORD       dwCPlusTypeFlag,   
-    [in]  void const  *pValue,   
-    [in]  ULONG       cchValue,   
-    [out] mdFieldDef  *pmd   
+HRESULT DefineField (
+    [in]  mdTypeDef   td,
+    [in]  LPCWSTR     szName,
+    [in]  DWORD       dwFieldFlags,
+    [in]  PCCOR_SIGNATURE pvSigBlob,
+    [in]  ULONG       cbSigBlob,
+    [in]  DWORD       dwCPlusTypeFlag,
+    [in]  void const  *pValue,
+    [in]  ULONG       cchValue,
+    [out] mdFieldDef  *pmd
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- dans Jeton `mdTypeDef` pour l’interface ou la classe englobante.  
+ [dans] Le `mdTypeDef` jeton pour la classe ou l’interface d’enceinte.  
   
  `szName`  
- dans Nom du champ en Unicode.  
+ [dans] Le nom de champ dans Unicode.  
   
  `dwFieldFlags`  
- dans Attributs du champ. Il s’agit d’un masque de ré`CorFieldAttr` valeurs.  
+ [dans] Le champ attribue. C’est un peu `CorFieldAttr` de valeur.  
   
  `pvSigBlob`  
- dans Signature de champ en tant qu’objet BLOB.  
+ [dans] La signature de champ comme un BLOB.  
   
  `cbSigBlob`  
- dans Nombre d’octets dans `pvSigBlob`.  
+ [dans] Le compte d’octets dans `pvSigBlob`.  
   
  `dwCPlusTypeFlag`  
- dans `ELEMENT_TYPE_` *\** pour la valeur de constante. Il s’agit d’une valeur `CorElementType`. Si vous ne définissez pas de valeur de constante pour le champ, utilisez `ELEMENT_TYPE_END`.  
+ [dans] Le `ELEMENT_TYPE_` *\** pour la valeur constante. C’est `CorElementType` une valeur. Si ce n’est pas définir `ELEMENT_TYPE_END`une valeur constante pour le champ, utilisez .  
   
  `pValue`  
- dans Valeur de constante pour le champ.  
+ [dans] La valeur constante pour le domaine.  
   
  `cchValue`  
- dans Taille en caractères (Unicode) de `pValue`.  
+ [dans] La taille dans (Unicode) caractères de `pValue`.  
   
  `pmd`  
- à Jeton `mdFieldDef` assigné.  
+ [out] Le `mdFieldDef` jeton assigné.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: f241b620-9ec5-42fd-92ef-3b22329db72a
 topic_type:
 - apiref
-ms.openlocfilehash: f7cd45a90a750c357706f720453ff23697875b58
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 45268929b6e9ad6ac6423aa0fa2b7b5022bc9179
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446237"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176615"
 ---
 # <a name="isymunmanagedscope2getconstants-method"></a>ISymUnmanagedScope2::GetConstants, méthode
-Obtient les constantes locales définies dans cette portée.  
+Obtient les constantes locales définies dans ce champ d’application.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,25 +32,25 @@ HRESULT GetConstants(
      [in]  ULONG32  cConstants,  
      [out] ULONG32  *pcConstants,  
      [out, size_is(cConstants),  
-         length_is(*pcConstants)] ISymUnmanagedConstant*   
+         length_is(*pcConstants)] ISymUnmanagedConstant*
              constants[]);  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `cConstants`  
- dans Longueur de la mémoire tampon vers laquelle pointe le paramètre `pcConstants`.  
+ [dans] La longueur du tampon `pcConstants` que le paramètre indique.  
   
  `pcConstants`  
- à Pointeur vers un `ULONG32` qui reçoit la taille, en caractères, de la mémoire tampon requise pour contenir les constantes.  
+ [out] Un pointeur `ULONG32` à un qui reçoit la taille, en caractères, de la mémoire tampon nécessaire pour contenir les constantes.  
   
  `constants`  
- à Mémoire tampon qui stocke les constantes.  
+ [out] Le tampon qui stocke les constantes.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK si la méthode réussit; autrement, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym. idl, CorSym. h  
+## <a name="requirements"></a>Spécifications  
+ **En-tête:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

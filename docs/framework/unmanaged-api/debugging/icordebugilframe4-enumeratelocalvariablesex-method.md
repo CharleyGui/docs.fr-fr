@@ -12,12 +12,12 @@ api_type:
 ms.assetid: 6f60aae6-70ec-4c4c-963a-138df98c4668
 topic_type:
 - apiref
-ms.openlocfilehash: afeec3df03fc2b122ca8deb8123b79314b5e3837
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 341a86f4c1c8367f979e193a6284bf89f1b03ca0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76782419"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178800"
 ---
 # <a name="icordebugilframe4enumeratelocalvariablesex-method"></a>ICorDebugILFrame4::EnumerateLocalVariablesEx, méthode
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
@@ -28,34 +28,34 @@ ms.locfileid: "76782419"
   
 ```cpp
 HRESULT EnumerateLocalVariablesEx(  
-   [in] ILCodeKind flags,   
+   [in] ILCodeKind flags,
    [out] ICorDebugValueEnum **ppValueEnum  
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `flags`  
- dans Membre de l’énumération [ILCodeKind](ilcodekind-enumeration.md) qui spécifie si les variables ajoutées dans l’instrumentation ReJIT du profileur sont incluses dans le frame.  
+ [dans] Un membre de l’énumération [ILCodeKind](ilcodekind-enumeration.md) qui précise si les variables ajoutées dans l’instrumentation du profileur ReJIT sont incluses dans le cadre.  
   
  `ppValueEnum`  
- à Pointeur vers l’adresse d’un objet « ICorDebugValueEnum » qui est l’énumérateur pour les variables locales dans ce frame.  
+ [out] Un pointeur à l’adresse d’un objet "ICorDebugValueEnum" qui est l’enumérateur pour les variables locales dans ce cadre.  
   
-## <a name="remarks"></a>Notes  
- Cette méthode est similaire à la méthode [EnumerateLocalVariables](icordebugilframe-enumeratelocalvariables-method.md) , à ceci près qu’elle accède éventuellement aux variables ajoutées dans l’instrumentation ReJIT du profileur. La définition de `flags` sur `ILCODE_ORIGINAL_IL` revient à appeler [ICorDebugILFrame :: EnumerateLocalVariables](icordebugilframe-enumeratelocalvariables-method.md). La définition de `flags` à `ILCODE_REJIT_IL` autorise le débogueur à accéder aux variables locales ajoutées dans l'instrumentation ReJIT du profileur. Si le langage intermédiaire n'est pas instrumenté, l'énumération est vide et la méthode retourne `S_OK`.  
+## <a name="remarks"></a>Notes   
+ Cette méthode est similaire à la méthode [EnumerateLocalVariables,](icordebugilframe-enumeratelocalvariables-method.md) sauf qu’elle accède optionnellement aux variables ajoutées dans l’instrumentation profiler ReJIT. Réglage `flags` `ILCODE_ORIGINAL_IL` à est équivalent à appeler [ICorDebugILFrame::EnumerateLocalVariables](icordebugilframe-enumeratelocalvariables-method.md). La définition de `flags` à `ILCODE_REJIT_IL` autorise le débogueur à accéder aux variables locales ajoutées dans l'instrumentation ReJIT du profileur. Si le langage intermédiaire n'est pas instrumenté, l'énumération est vide et la méthode retourne `S_OK`.  
   
  L'énumérateur peut ne pas inclure toutes les variables locales dans la méthode en cours d'exécution, car il est possible que certaines d'entre elles ne soient pas actives.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [ICorDebugILFrame4, interface](icordebugilframe4-interface.md)
 - [Interfaces de débogage](debugging-interfaces.md)
-- [ReJIT : Guide pratique](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)
+- [ReJIT: Un guide de comment se passer](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)

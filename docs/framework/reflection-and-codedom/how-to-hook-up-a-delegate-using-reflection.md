@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : raccorder un délégué à l’aide de la réflexion'
+title: Guide pratique pour raccorder un délégué à l'aide de la réflexion
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - reflection, adding event-handler delegates
 - delegates [.NET Framework], adding event handlers with reflection
 ms.assetid: 076ee62d-a964-449e-a447-c31b33518b81
-ms.openlocfilehash: 14a9694708b36b23ecef453d530ad3b939a046ba
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d748d9f8bdd0b4d831880548d4aceb1c77a0b0c4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130116"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180501"
 ---
-# <a name="how-to-hook-up-a-delegate-using-reflection"></a>Procédure : raccorder un délégué à l’aide de la réflexion
-Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous ne pouvez pas utiliser des fonctionnalités de langage telles que l’opérateur C# `+=` ou l’[instruction Visual Basic AddHandler](../../visual-basic/language-reference/statements/addhandler-statement.md) pour raccorder des événements. Les procédures suivantes montrent comment raccorder une méthode existante à un événement en obtenant tous les types nécessaires par réflexion, et comment créer une méthode dynamique à l’aide de l’émission de réflexion et la raccorder à un événement.  
+# <a name="how-to-hook-up-a-delegate-using-reflection"></a>Guide pratique pour raccorder un délégué à l'aide de la réflexion
+Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous ne pouvez pas utiliser des fonctionnalités de langage telles que l’opérateur C#  ou l’instruction Visual BasicAddHandler pour raccorder des événements. Les procédures suivantes montrent comment raccorder une méthode existante à un événement en obtenant tous les types nécessaires par réflexion, et comment créer une méthode dynamique à l’aide de l’émission de réflexion et la raccorder à un événement.  
   
 > [!NOTE]
 > Pour découvrir une autre manière de raccorder un délégué de gestion des événements, consultez l’exemple de code relatif à la méthode <xref:System.Reflection.EventInfo.AddEventHandler%2A> de la classe <xref:System.Reflection.EventInfo>.  
@@ -67,7 +67,7 @@ Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous 
      [!code-csharp[HookUpDelegate#12](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#12)]
      [!code-vb[HookUpDelegate#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HookUpDelegate/vb/source.vb#12)]  
   
-<a name="procedureSection1"></a>   
+<a name="procedureSection1"></a>
 ### <a name="to-generate-an-event-handler-at-run-time-by-using-a-dynamic-method"></a>Pour générer un gestionnaire d’événements au moment de l’exécution à l’aide d’une méthode dynamique  
   
 1. Vous pouvez générer des méthodes de gestionnaire d’événements au moment de l’exécution, à l’aide de méthodes dynamiques légères et de l’émission de réflexion. Pour créer un gestionnaire d’événements, vous avez besoin du type de retour et des types de paramètres du délégué. Vous pouvez les obtenir en examinant la méthode `Invoke` du délégué. Le code suivant utilise les méthodes `GetDelegateReturnType` et `GetDelegateParameterTypes` pour obtenir ces informations. Vous trouverez le code de ces méthodes dans la section Exemple plus loin dans cette rubrique.  
@@ -96,7 +96,7 @@ Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous 
      [!code-csharp[HookUpDelegate#12](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#12)]
      [!code-vb[HookUpDelegate#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HookUpDelegate/vb/source.vb#12)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple de code suivant montre comment raccorder une méthode existante à un événement à l’aide de la réflexion, et également comment utiliser la classe <xref:System.Reflection.Emit.DynamicMethod> pour émettre une méthode au moment de l’exécution et la raccorder à un événement.  
   
  [!code-cpp[HookUpDelegate#1](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#1)]
@@ -109,5 +109,5 @@ Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous 
 - <xref:System.Reflection.Emit.DynamicMethod>
 - <xref:System.Activator.CreateInstance%2A>
 - <xref:System.Delegate.CreateDelegate%2A>
-- [Guide pratique : définir et exécuter des méthodes dynamiques](how-to-define-and-execute-dynamic-methods.md)
+- [Guide pratique pour définir et exécuter des méthodes dynamiques](how-to-define-and-execute-dynamic-methods.md)
 - [Réflexion](reflection.md)

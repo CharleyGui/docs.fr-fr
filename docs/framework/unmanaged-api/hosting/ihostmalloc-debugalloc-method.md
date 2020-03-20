@@ -15,67 +15,67 @@ helpviewer_keywords:
 ms.assetid: 0bfbc527-bea2-43ce-b041-69186f4440dd
 topic_type:
 - apiref
-ms.openlocfilehash: a2a752f23ed64795f9208b9101c21bc585d5f431
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 20ad5485b8603cc7de1c27c00d53c8939871d525
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136816"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178039"
 ---
 # <a name="ihostmallocdebugalloc-method"></a>IHostMAlloc::DebugAlloc, méthode
-Requests that the host allocate the specified amount of memory from the heap, and additionally track where the memory was allocated.  
+Demande que l’hôte alloue la quantité spécifiée de mémoire du tas, et en outre suivre où la mémoire a été allouée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT DebugAlloc (  
-    [in]  SIZE_T  cbSize,   
-    [in]  EMemoryCriticalLevel dwCriticalLevel,   
-    [in]  char*   pszFileName,   
-    [in]  int     iLineNo,   
+    [in]  SIZE_T  cbSize,
+    [in]  EMemoryCriticalLevel dwCriticalLevel,
+    [in]  char*   pszFileName,
+    [in]  int     iLineNo,
     [out] void**  ppMem  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `cbSize`  
- [in] The size, in bytes, of the current memory allocation request.  
+ [dans] La taille, dans les octets, de la demande actuelle d’allocation de mémoire.  
   
  `dwCriticalLevel`  
- dans L’une des valeurs [EMemoryCriticalLevel,](../../../../docs/framework/unmanaged-api/hosting/ememorycriticallevel-enumeration.md) , indiquant l’impact d’un échec d’allocation.  
+ [dans] L’une des valeurs [EMemoryCriticalLevel,](../../../../docs/framework/unmanaged-api/hosting/ememorycriticallevel-enumeration.md) indiquant l’impact d’une défaillance de l’allocation.  
   
  `pszFileName`  
- dans Fichier de code de l’exécutable en cours de débogage.  
+ [dans] Le fichier de code de l’exécutable étant débogé.  
   
  `iLineNo`  
- dans Numéro de ligne dans `pszFileName` où l’allocation a été demandée.  
+ [dans] Le numéro `pszFileName` de ligne dans lequel l’allocation a été demandée.  
   
  `ppMem`  
- à Pointeur vers la mémoire allouée, ou null si la demande n’a pas pu être effectuée.  
+ [out] Un pointeur à la mémoire allouée, ou nul si la demande ne pouvait pas être complétée.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`DebugAlloc` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
-|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
-|HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
-|E_OUTOFMEMORY|Mémoire disponible insuffisante pour terminer la demande d’allocation.|  
+|S_OK|`DebugAlloc`retourné avec succès.|  
+|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un état dans lequel il ne peut pas exécuter le code géré ou traiter l’appel avec succès.|  
+|HOST_E_TIMEOUT|L’appel s’est fait chronométrer.|  
+|HOST_E_NOT_OWNER|L’appelant n’est pas propriétaire de la serrure.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un fil bloqué ou une fibre l’attendait.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode revient E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels ultérieurs aux méthodes d’hébergement reviennent HOST_E_CLRNOTAVAILABLE.|  
+|E_OUTOFMEMORY|Il n’y avait pas assez de mémoire disponible pour remplir la demande d’allocation.|  
   
-## <a name="remarks"></a>Notes  
- Le CLR obtient un pointeur d’interface vers une instance [IHostMalloc](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) en appelant la méthode [IHostMemoryManager :: CreateMAlloc](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-createmalloc-method.md) . `DebugAlloc` permet au runtime d’obtenir des informations de fichier de code à utiliser pendant le débogage.  
+## <a name="remarks"></a>Notes   
+ Le CLR obtient un pointeur d’interface à une instance [IHostMalloc](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) en appelant le [IHostMemoryManager::CreateMalloc](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-createmalloc-method.md) méthode. `DebugAlloc`permet au temps d’exécution d’obtenir des informations de fichier de code pour une utilisation pendant le débogage.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE. h  
+ **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

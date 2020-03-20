@@ -17,12 +17,12 @@ helpviewer_keywords:
 - protocols, sockets
 - Internet, sockets
 ms.assetid: 813489a9-3efd-41b6-a33f-371d55397676
-ms.openlocfilehash: 11ed53a4e51ba6993fd4e240116b0e1de910a01e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 467804e685d800643c421ed1aad040a842b42886
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71047044"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180635"
 ---
 # <a name="using-an-asynchronous-server-socket"></a>Utilisation d’un socket serveur asynchrone
 Les sockets serveur asynchrones utilisent le modèle de programmation asynchrone de .NET Framework pour traiter les demandes de service réseau. La classe <xref:System.Net.Sockets.Socket> respecte la convention de nommage standard de .NET Framework pour les méthodes asynchrones. Par exemple, la méthode synchrone <xref:System.Net.Sockets.Socket.Accept%2A> correspond aux méthodes asynchrones <xref:System.Net.Sockets.Socket.BeginAccept%2A> et <xref:System.Net.Sockets.Socket.EndAccept%2A>.  
@@ -101,7 +101,7 @@ public void StartListening()
   
     Socket listener = new Socket(localEP.Address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);  
   
-    try 
+    try
     {  
         listener.Bind(localEP);  
         listener.Listen(10);  
@@ -125,7 +125,7 @@ public void StartListening()
 }  
 ```  
   
- La méthode de rappel d’acceptation (`AcceptCallback` dans l’exemple précédent) est chargée de signaler au thread d’application principal la reprise possible de l’exécution, d’établir la connexion avec le client et de démarrer la lecture asynchrone des données du client. L’exemple suivant montre la première partie d’une implémentation de la méthode `AcceptCallback`. Cette section de la méthode indique au thread d’application principal qu’il peut reprendre l’exécution et établir la connexion au client. L’exemple suppose l’utilisation d’un **ManualResetEvent** global nommé `allDone`.  
+ La méthode de rappel d’acceptation (`AcceptCallback` dans l’exemple précédent) est chargée de signaler au thread d’application principal la reprise possible de l’exécution, d’établir la connexion avec le client et de démarrer la lecture asynchrone des données du client. L’exemple suivant montre la première partie d’une implémentation de la méthode `AcceptCallback`. Cette section de la méthode indique au thread d’application principal qu’il peut reprendre l’exécution et établir la connexion au client. Il suppose l’utilisation d’un **ManualResetEvent** global nommé `allDone`.  
   
 ```vb  
 Public Sub AcceptCallback(ar As IAsyncResult)  
@@ -139,14 +139,14 @@ End Sub 'AcceptCallback
 ```  
   
 ```csharp  
-public void AcceptCallback(IAsyncResult ar) 
+public void AcceptCallback(IAsyncResult ar)
 {  
     allDone.Set();  
   
     Socket listener = (Socket) ar.AsyncState;  
     Socket handler = listener.EndAccept(ar);  
   
-    // Additional code to read data goes here.    
+    // Additional code to read data goes here.
 }  
 ```  
   
@@ -162,7 +162,7 @@ End Class 'StateObject
 ```  
   
 ```csharp  
-public class StateObject 
+public class StateObject
 {  
     public Socket workSocket = null;  
     public const int BufferSize = 1024;  
@@ -219,7 +219,7 @@ Public Shared Sub ReadCallback(ar As IAsyncResult)
     Dim state As StateObject = CType(ar.AsyncState, StateObject)  
     Dim handler As Socket = state.workSocket  
   
-    ' Read data from the client socket.   
+    ' Read data from the client socket.
     Dim read As Integer = handler.EndReceive(ar)  
   
     ' Data was read from the client socket.  
@@ -253,10 +253,10 @@ public static void ReadCallback(IAsyncResult ar)
         state.sb.Append(Encoding.ASCII.GetString(state.buffer,0,read));  
         handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,  
             new AsyncCallback(ReadCallback), state);  
-    } 
-    else 
+    }
+    else
     {  
-        if (state.sb.Length > 1) 
+        if (state.sb.Length > 1)
         {  
             // All the data has been read from the client;  
             // display it on the console.  

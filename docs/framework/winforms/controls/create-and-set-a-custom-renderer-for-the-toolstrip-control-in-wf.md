@@ -1,5 +1,5 @@
 ---
-title: 'Comment : créer et définir un convertisseur personnalisé pour le contrôle ToolStrip'
+title: 'Comment : Créer et définir un rendu personnalisé pour le contrôle ToolStrip'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,32 +10,32 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - ToolStrip control [Windows Forms], rendering
 ms.assetid: 88a804ba-679f-4ba3-938a-0dc396199c5b
-ms.openlocfilehash: ad5ced42754fba6a714452220dd824c4f54fb5e5
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 49db0d785155f19b7220ac64011eaf4253aaa7e9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743408"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182405"
 ---
 # <a name="how-to-create-and-set-a-custom-renderer-for-the-toolstrip-control-in-windows-forms"></a>Comment : créer et définir un convertisseur personnalisé pour le contrôle ToolStrip dans les Windows Forms
-les contrôles <xref:System.Windows.Forms.ToolStrip> offrent un support facile pour les thèmes et les styles. Vous pouvez obtenir une apparence et un comportement entièrement personnalisés (apparence) en affectant à la propriété <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> ou à la propriété <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> la valeur d’un convertisseur personnalisé.  
+<xref:System.Windows.Forms.ToolStrip>les contrôles donnent un soutien facile aux thèmes et aux styles. Vous pouvez atteindre l’apparence et le comportement complètement <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> personnalisés <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> (regardez et sentez) en définissant soit la propriété ou la propriété à un rendu personnalisé.  
   
- Vous pouvez assigner des convertisseurs à chaque <xref:System.Windows.Forms.ToolStrip>individuel, <xref:System.Windows.Forms.MenuStrip>, <xref:System.Windows.Forms.ContextMenuStrip>ou <xref:System.Windows.Forms.StatusStrip> contrôle, ou vous pouvez utiliser la propriété <xref:System.Windows.Forms.ToolStripManager.Renderer%2A> pour affecter tous les objets en affectant à la propriété <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> la valeur <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode?displayProperty=nameWithType>.  
+ Vous pouvez attribuer des <xref:System.Windows.Forms.ToolStrip>rendus <xref:System.Windows.Forms.MenuStrip> <xref:System.Windows.Forms.ContextMenuStrip>à <xref:System.Windows.Forms.StatusStrip> chaque individu, , <xref:System.Windows.Forms.ToolStripManager.Renderer%2A> , ou le contrôle, <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> ou <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode?displayProperty=nameWithType>vous pouvez utiliser la propriété pour affecter tous les objets en définissant la propriété à .  
   
 > [!NOTE]
-> <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> retourne <xref:System.Windows.Forms.ToolStripRenderMode.Custom> uniquement si la valeur de <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> n’est pas `null`.  
+> <xref:System.Windows.Forms.ToolStrip.RenderMode%2A>rendements <xref:System.Windows.Forms.ToolStripRenderMode.Custom> seulement si <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> la `null`valeur de n’est pas .  
   
-### <a name="to-create-a-custom-renderer"></a>Pour créer un convertisseur personnalisé  
+### <a name="to-create-a-custom-renderer"></a>Pour créer un rendu personnalisé  
   
-1. Étendez la classe <xref:System.Windows.Forms.ToolStripRenderer>.  
+1. Prolongez <xref:System.Windows.Forms.ToolStripRenderer> la classe.  
   
-2. Implémentez le rendu personnalisé souhaité en remplaçant *le approprié sur...* membres  
+2. Implémentez le rendu personnalisé souhaité en dominant approprié *on...* membres  
   
     ```vb  
     Public Class RedTextRenderer  
         Inherits System.Windows.Forms.ToolStripRenderer  
         Protected Overrides Sub OnRenderItemText(ByVal e As _  
-            ToolStripItemTextRenderEventArgs)   
+            ToolStripItemTextRenderEventArgs)
             e.TextColor = Color.Red  
             e.TextFont = New Font("Helvetica", 7, FontStyle.Bold)  
             MyBase.OnRenderItemText(e)  
@@ -57,9 +57,9 @@ les contrôles <xref:System.Windows.Forms.ToolStrip> offrent un support facile p
     }  
     ```  
   
-### <a name="to-set-the-custom-renderer-to-be-the-current-renderer"></a>Pour définir le convertisseur personnalisé comme le convertisseur actuel  
+### <a name="to-set-the-custom-renderer-to-be-the-current-renderer"></a>Pour définir le rendu personnalisé pour être le rendu actuel  
   
-1. Pour définir le convertisseur personnalisé pour une <xref:System.Windows.Forms.ToolStrip>, définissez la propriété <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> sur le convertisseur personnalisé.  
+1. Pour définir le rendu <xref:System.Windows.Forms.ToolStrip>personnalisé pour <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> un, définissez la propriété sur le rendu personnalisé.  
   
     ```vb  
     toolStrip1.Renderer = New RedTextRenderer()  
@@ -69,7 +69,7 @@ les contrôles <xref:System.Windows.Forms.ToolStrip> offrent un support facile p
     toolStrip1.Renderer = new RedTextRenderer();  
     ```  
   
-2. Ou pour définir le convertisseur personnalisé pour toutes les classes <xref:System.Windows.Forms.ToolStrip> contenues dans votre application : définissez la propriété <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> sur le convertisseur personnalisé et définissez la propriété <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> sur <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>.  
+2. Ou pour définir le rendu <xref:System.Windows.Forms.ToolStrip> personnalisé pour toutes les <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> classes contenues dans votre <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> application: Réglez la propriété au rendu personnalisé et définissez la propriété à <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>.  
   
     ```vb  
     toolStrip1.RenderMode = ToolStripRenderMode.ManagerRenderMode  

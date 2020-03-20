@@ -15,44 +15,44 @@ helpviewer_keywords:
 ms.assetid: 90eab7b3-1fae-4af4-8bce-f7bc0e188a99
 topic_type:
 - apiref
-ms.openlocfilehash: 9da4e34fa948db2fc73cbde813bac9b3430605ca
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ef573eb9a572c27e685289b2740a55e898be2093
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436250"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177628"
 ---
 # <a name="imetadataconvertergettypelibfrommetadata-method"></a>IMetaDataConverter::GetTypeLibFromMetaData, méthode
-Obtient un pointeur vers une instance de `ITypeLib` qui représente la bibliothèque de types qui a la bibliothèque et les noms de modules spécifiés.  
+Obtient un pointeur à une `ITypeLib` instance qui représente la bibliothèque de type qui a les noms spécifiés de bibliothèque et de module.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetTypeLibFromMetaData (  
-    [in]  BSTR     strModule,   
-    [in]  BSTR     strTlbName,   
+    [in]  BSTR     strModule,
+    [in]  BSTR     strTlbName,
     [out] ITypeLib **ppITL  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `strModule`  
- dans Nom du module de la bibliothèque de types.  
+ [dans] Le nom du module de la bibliothèque de type.  
   
  `strTlbName`  
- dans Nom de la bibliothèque de types.  
+ [dans] Le nom de la bibliothèque de type.  
   
  `ppITL`  
- à Pointeur vers un emplacement qui reçoit l’adresse de l’instance de `ITypeLib` qui représente la bibliothèque de types.  
+ [out] Un pointeur à un endroit `ITypeLib` qui reçoit l’adresse de l’instance qui représente la bibliothèque de type.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateforme :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateforme:** Voir [Les exigences du système](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

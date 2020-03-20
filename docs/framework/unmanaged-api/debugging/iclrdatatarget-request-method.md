@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4723bd1c-eddb-4ed2-897a-010024a47e01
 topic_type:
 - apiref
-ms.openlocfilehash: 0a7e764d89dd42bcaf81da5cf6a16991b6b8a16e
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 336ba38bc80fcb2649a12c78691e52c5e4d70bfe
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793703"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179113"
 ---
 # <a name="iclrdatatargetrequest-method"></a>ICLRDataTarget::Request, méthode
-Appelée par les services d’accès aux données common language runtime (CLR) pour demander une opération, comme défini par l’implémentation.  
+Appelés par les services d’accès aux données de l’heure courante (CLR) pour demander une opération, tel que défini par la mise en œuvre.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,43 +31,43 @@ Appelée par les services d’accès aux données common language runtime (CLR) 
 HRESULT Request (  
     [in] ULONG32            reqCode,  
     [in] ULONG32            inBufferSize,  
-    [in, size_is(inBufferSize)]   
+    [in, size_is(inBufferSize)]
         BYTE                *inBuffer,  
     [in] ULONG32            outBufferSize,  
-    [out, size_is(outBufferSize)]   
+    [out, size_is(outBufferSize)]
         BYTE                *outBuffer  
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `reqCode`  
- dans Défini par l’utilisateur.  
+ [dans] Défini par l’utilisateur.  
   
  `inBufferSize`  
- dans Taille de la mémoire tampon d’entrée utilisée pour la demande entrante.  
+ [dans] La taille du tampon d’entrée, qui est utilisé pour la demande entrante.  
   
  `inBuffer`  
- dans Mémoire tampon contenant la demande.  
+ [dans] Un tampon contenant la demande.  
   
  `outBufferSize`  
- dans Taille de la mémoire tampon de sortie, qui est utilisée pour la réponse.  
+ [dans] La taille du tampon de sortie, qui est utilisé pour la réponse.  
   
  `outBuffer`  
- à Mémoire tampon contenant la réponse.  
+ [out] Un tampon contenant la réponse.  
   
-## <a name="remarks"></a>Notes  
- La méthode `Request` facilite l’ajout d’opérations personnalisées non spécifiées. Autrement dit, cette méthode fournit l’extensibilité sans nécessiter de révision de la définition de l’interface.  
+## <a name="remarks"></a>Notes   
+ La `Request` méthode facilite l’ajout d’opérations personnalisées non spécifiées. C’est-à-dire que cette méthode fournit l’extéponsabilité sans nécessiter la révision de la définition de l’interface.  
   
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData. idl, ClrData. h  
+ **En-tête:** ClrData.idl, ClrData.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
