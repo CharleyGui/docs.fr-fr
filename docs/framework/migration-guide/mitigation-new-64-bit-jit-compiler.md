@@ -6,12 +6,12 @@ helpviewer_keywords:
 - JIT compilation, 64-bit
 - RyuJIT compiler
 ms.assetid: 0332dabc-72c5-4bdc-8975-20d717802b17
-ms.openlocfilehash: dd8c2c6b3cfa919970f68f2faae2044568f6c9ac
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 883aaf032bde632b08f965d3450cfbea4feb8e65
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73457913"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79181254"
 ---
 # <a name="mitigation-new-64-bit-jit-compiler"></a>Atténuation : Nouveau compilateur JIT 64 bits
 À compter du .NET Framework 4.6, le runtime comprend un nouveau compilateur JIT 64 bits pour la compilation juste-à-temps. Ce changement n’affecte pas la compilation avec le compilateur JIT 32 bits.  
@@ -36,7 +36,7 @@ ms.locfileid: "73457913"
   
 - Sous certaines conditions, si une instruction `if` est utilisée pour tester une condition avant d’entrer dans un bloc `try` et dans la sortie du bloc `try`, et que la même condition est évaluée dans le bloc `catch` ou `finally`, le nouveau compilateur JIT 64 bits supprime la condition `if` du bloc `catch` ou `finally` lorsqu’il optimise le code. Par conséquent, le code à l’intérieur de l’instruction `if` dans le bloc `catch` ou `finally` est exécuté de manière non conditionnelle.  
   
-<a name="General"></a>   
+<a name="General"></a>
 ## <a name="mitigation-of-known-issues"></a>Atténuation des problèmes connus  
  Si vous rencontrez les problèmes répertoriés ci-dessus, vous pouvez les traiter en procédant d’une des façons suivantes :  
   
@@ -46,11 +46,11 @@ ms.locfileid: "73457913"
   
 - Compilez avec l’ancien compilateur JIT 64 bits. Consultez la section [Atténuation des autres problèmes](#Other) pour plus d’informations sur cette procédure.  
   
-<a name="Other"></a>   
+<a name="Other"></a>
 ## <a name="mitigation-of-other-issues"></a>Atténuation des autres problèmes  
  Si vous rencontrez une autre différence de comportement entre le code compilé avec l’ancien compilateur JIT 64 bits et celui compilé avec le nouveau compilateur, ou entre les versions Debug et Release de votre application lorsque les deux sont compilées avec le nouveau compilateur JIT 64 bits, vous pouvez procéder comme suit pour compiler votre application avec l’ancien compilateur JIT 64 bits :  
   
-- Pour chaque application le nécessitant, vous pouvez ajouter l’élément [ \<useLegacyJit>](../configure-apps/file-schema/runtime/uselegacyjit-element.md) au fichier de configuration de votre application. Ce qui suit désactive la compilation avec le nouveau compilateur JIT 64 bits et utilise l’ancien compilateur à la place.  
+- Sur une base par application, vous pouvez ajouter [ \<l’utilisationLegacyJit>](../configure-apps/file-schema/runtime/uselegacyjit-element.md) élément au fichier de configuration de votre application. Ce qui suit désactive la compilation avec le nouveau compilateur JIT 64 bits et utilise l’ancien compilateur à la place.  
   
     ```xml  
     <?xml version ="1.0"?>  
@@ -70,4 +70,4 @@ ms.locfileid: "73457913"
 ## <a name="see-also"></a>Voir aussi
 
 - [Compatibilité des applications](application-compatibility.md)
-- [Élément \<useLegacyJit>](../configure-apps/file-schema/runtime/uselegacyjit-element.md)
+- [\<utiliserLegacyJit> Element](../configure-apps/file-schema/runtime/uselegacyjit-element.md)

@@ -15,58 +15,58 @@ helpviewer_keywords:
 ms.assetid: a746a849-463c-44f5-a2f0-9e812ed8bcc3
 topic_type:
 - apiref
-ms.openlocfilehash: e23dfb86c2129a02a0ca95de8c89d8294e97ad81
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: adc8ea16f0ab2bf383f8a63c49ba7d61c6bac113
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136838"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176446"
 ---
 # <a name="createdebugginginterfacefromversion-function"></a>CreateDebuggingInterfaceFromVersion, fonction
-Creates an [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) object based on the specified version information.  
+Crée un objet [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) basé sur les informations de version spécifiées.  
   
- This function is obsolete in the .NET Framework 4. Instead, to get an interface for the common language runtime (CLR) 2.0, use the [ICLRRuntimeInfo::GetInterface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getinterface-method.md) method and specify the class identifier CLSID_CLRDebuggingLegacy and the interface identifier IID_ICorDebug. To get an interface for CLR 4 or later, call the [CLRCreateInstance](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md) function and specify the class identifier CLSID_CLRDebugging and the interface identifier IID_ICLRDebugging.  
+ Cette fonction est obsolète dans le cadre .NET 4. Au lieu de cela, pour obtenir une interface pour l’heure de fonctionnement de la langue commune (CLR) 2.0, utilisez la méthode [ICLRRuntimeInfo::GetInterface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getinterface-method.md) et spécifier l’identifiant de classe CLSID_CLRDebuggingLegacy et l’identifiant d’interface IID_ICorDebug. Pour obtenir une interface pour CLR 4 ou plus tard, appelez la fonction [CLRCreateInstance](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md) et spécifiez l’identifiant de classe CLSID_CLRDebugging et l’identifiant d’interface IID_ICLRDebugging.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT CreateDebuggingInterfaceFromVersion (  
-    [in]  int      iDebuggerVersion,   
-    [in]  LPCWSTR  szDebuggeeVersion,   
+    [in]  int      iDebuggerVersion,
+    [in]  LPCWSTR  szDebuggeeVersion,
     [out] IUnknown **ppCordb  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `iDebuggerVersion`  
- [in] The version of `ICorDebug` that is expected by the debugger. See the [CorDebugInterfaceVersion](../../../../docs/framework/unmanaged-api/debugging/cordebuginterfaceversion-enumeration.md) enumeration for valid values.  
+ [dans] La version `ICorDebug` de cela est attendue par le débbugger. Voir le recensement [de CorDebugInterfaceVersion](../../../../docs/framework/unmanaged-api/debugging/cordebuginterfaceversion-enumeration.md) pour les valeurs valides.  
   
  `szDebuggeeVersion`  
- [in] The common language runtime version associated with the application or process to be debugged. See the [GetVersionFromProcess](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md) or [GetRequestedRuntimeVersion](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md) method for information on retrieving this value.  
+ [dans] La version courante de l’heure d’exécution de langue associée à l’application ou au processus à déboguer. Consultez la méthode [GetVersionFromProcess](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md) ou [GetRequestedRuntimeVersion](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md) pour plus d’informations sur la récupération de cette valeur.  
   
  `ppCordb`  
- [out] The location that receives a pointer to the `ICorDebug` object.  
+ [out] L’emplacement qui reçoit `ICorDebug` un pointeur de l’objet.  
   
 ## <a name="return-value"></a>Valeur de retour  
- This method returns standard COM error codes as defined in the WinError.h file in addition to the following values.  
+ Cette méthode renvoie les codes d’erreur COM standard tels que définis dans le fichier WinError.h en plus des valeurs suivantes.  
   
 |Code de retour|Description|  
 |-----------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
-|E_INVALIDARG|`szDebuggeeVersion` or `ppCordb` is null, or the version string is incorrect.|  
+|E_INVALIDARG|`szDebuggeeVersion`ou `ppCordb` est nul, ou la chaîne de version est incorrecte.|  
   
-## <a name="remarks"></a>Notes  
- The `szDebuggeeVersion` parameter maps to the corresponding version of MSCorDbi.dll.  
+## <a name="remarks"></a>Notes   
+ Les `szDebuggeeVersion` cartes de paramètres à la version correspondante de MSCorDbi.dll.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** MSCorEE.h  
+ **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
   
- **Library:** MSCorEE.dll  
+ **Bibliothèque:** MSCorEE.dll MSCorEE.dll MSCorEE.dll MSCor  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions d’hébergement CLR dépréciées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Fonction d'hébergement du CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

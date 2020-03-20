@@ -15,59 +15,59 @@ helpviewer_keywords:
 ms.assetid: a3007f5e-d75d-4b37-842b-704e9edced5e
 topic_type:
 - apiref
-ms.openlocfilehash: 9837e4e3428a0293c8e689b3f3e081aa07f055b2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: dded37fdef02963f60883b289462aa6a96693b3d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73192065"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176303"
 ---
 # <a name="ihostmallocalloc-method"></a>IHostMAlloc::Alloc, méthode
-Demande que l’hôte alloue la quantité de mémoire spécifiée à partir du tas.  
+Demande que l’hôte alloue la quantité spécifiée de mémoire du tas.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT Alloc (  
-    [in] SIZE_T  cbSize,   
-    [in] EMemoryCriticalLevel dwCriticalLevel,   
+    [in] SIZE_T  cbSize,
+    [in] EMemoryCriticalLevel dwCriticalLevel,
     [out] void** ppMem  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `cbSize`  
- dans Taille, en octets, de la demande d’allocation de mémoire actuelle.  
+ [dans] La taille, dans les octets, de la demande actuelle d’allocation de mémoire.  
   
  `dwCriticalLevel`  
- dans L’une des valeurs [EMemoryCriticalLevel,](../../../../docs/framework/unmanaged-api/hosting/ememorycriticallevel-enumeration.md) , indiquant l’impact d’un échec d’allocation.  
+ [dans] L’une des valeurs [EMemoryCriticalLevel,](../../../../docs/framework/unmanaged-api/hosting/ememorycriticallevel-enumeration.md) indiquant l’impact d’une défaillance de l’allocation.  
   
  `ppMem`  
- à Pointeur vers la mémoire allouée, ou null si la demande n’a pas pu être effectuée.  
+ [out] Un pointeur à la mémoire allouée, ou nul si la demande ne pouvait pas être complétée.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`Alloc` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
-|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
-|HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
-|E_OUTOFMEMORY|Mémoire disponible insuffisante pour terminer la demande d’allocation.|  
+|S_OK|`Alloc`retourné avec succès.|  
+|HOST_E_CLRNOTAVAILABLE|L’heure courante de l’exécution de la langue (CLR) n’a pas été chargée dans un processus, ou le CLR est dans un état où il ne peut pas exécuter le code géré ou traiter l’appel avec succès.|  
+|HOST_E_TIMEOUT|L’appel s’est fait chronométrer.|  
+|HOST_E_NOT_OWNER|L’appelant n’est pas propriétaire de la serrure.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un fil bloqué ou une fibre l’attendait.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode revient E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels ultérieurs aux méthodes d’hébergement reviennent HOST_E_CLRNOTAVAILABLE.|  
+|E_OUTOFMEMORY|Il n’y avait pas assez de mémoire disponible pour remplir la demande d’allocation.|  
   
-## <a name="remarks"></a>Notes  
- Le CLR obtient un pointeur d’interface vers une instance de `IHostMalloc` en appelant la méthode [IHostMemoryManager :: CreateMAlloc](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-createmalloc-method.md) .  
+## <a name="remarks"></a>Notes   
+ Le CLR obtient un `IHostMalloc` pointeur d’interface à une instance en appelant le [IHostMemoryManager::CreateMalloc](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-createmalloc-method.md) méthode.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE. h  
+ **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

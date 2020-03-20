@@ -15,38 +15,38 @@ helpviewer_keywords:
 ms.assetid: 2debcaab-6005-4245-afdb-4268bb7e74bd
 topic_type:
 - apiref
-ms.openlocfilehash: 7e43f58f619aaa63fa2294dd3e989026dcdfc604
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: fcfdddbd5316c098754ea7b0d4714b050c64fe55
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866128"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175146"
 ---
 # <a name="icorprofilercallbackmoduleunloadstarted-method"></a>ICorProfilerCallback::ModuleUnloadStarted, méthode
-Notifie le profileur qu’un module est en cours de déchargement.  
+Informe le profileur qu’un module est déchargé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT ModuleUnloadStarted(  
-    [in] ModuleID moduleId);   
+    [in] ModuleID moduleId);
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `moduleId`  
- dans ID du module en cours de déchargement.  
+ [dans] L’ID du module qui est déchargé.  
   
-## <a name="remarks"></a>Notes  
- La valeur de `moduleId` n’est pas valide pour une demande d’informations après le retour de la méthode `ModuleUnloadStarted`, il s’agit de la dernière chance du profileur d’obtenir des informations sur ce module.  
+## <a name="remarks"></a>Notes   
+ La valeur `moduleId` de n’est pas `ModuleUnloadStarted` valide pour une demande d’information après le retour de la méthode - c’est la dernière chance du profileur d’obtenir des informations sur ce module.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

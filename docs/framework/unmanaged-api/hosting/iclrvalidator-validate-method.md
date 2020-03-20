@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0b1b432a-d234-4002-839b-81366c3a8bdc
 topic_type:
 - apiref
-ms.openlocfilehash: 497a115b980bb58a3906fda68d7ff564efe78089
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 427895ffea94e6c657d775ebdeb8571070a61c6e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127828"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178060"
 ---
 # <a name="iclrvalidatorvalidate-method"></a>ICLRValidator::Validate, méthode
-Valide l’exécutable portable (PE) ou le langage MSIL (Microsoft Intermediate Language) dans le fichier spécifié.  
+Valide la langue intermédiaire portable exécutable (PE) ou Microsoft (MSIL) dans le fichier spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,53 +37,53 @@ HRESULT Validate (
     [in] LPWSTR             fileName,  
     [in, size_is(ulSize)] BYTE *pe,  
     [in] unsigned long      ulSize  
-);      
+);
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `veh`  
- dans Pointeur vers une instance de `IVEHandler` qui gère les erreurs de validation.  
+ [dans] Un pointeur `IVEHandler` à une instance qui gère les erreurs de validation.  
   
  `ulAppDomainId`  
- dans Identificateur du <xref:System.AppDomain>actuel.  
+ [dans] L’identifiant pour <xref:System.AppDomain>le courant .  
   
  `ulFlags`  
- dans Combinaison de valeurs [ValidatorFlags,](../../../../docs/framework/unmanaged-api/hosting/validatorflags-enumeration.md) indiquant le type de validation à effectuer.  
+ [dans] Une combinaison de valeurs [ValidatorFlags,](../../../../docs/framework/unmanaged-api/hosting/validatorflags-enumeration.md) indiquant le type de validation qui doit être effectuée.  
   
  `ulMaxError`  
- dans Nombre maximal d’erreurs à autoriser avant de quitter la validation.  
+ [dans] Le nombre maximum d’erreurs à autoriser avant de sortir de la validation.  
   
  `token`  
- dans Inutilisé.  
+ [in] Inutilisé.  
   
  `fileName`  
- dans Nom du fichier à valider.  
+ [dans] Le nom du fichier à valider.  
   
  `pe`  
- dans Pointeur vers la mémoire tampon de fichier.  
+ [dans] Un pointeur vers le tampon de fichier.  
   
  `ulSize`  
- dans Taille, en octets, du fichier à valider.  
+ [dans] La taille, dans les octets, du fichier à valider.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`Validate` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
-|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
-|HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|S_OK|`Validate`retourné avec succès.|  
+|HOST_E_CLRNOTAVAILABLE|L’heure courante de l’exécution de la langue (CLR) n’a pas été chargée dans un processus, ou le CLR est dans un état où il ne peut pas exécuter le code géré ou traiter l’appel avec succès.|  
+|HOST_E_TIMEOUT|L’appel s’est fait chronométrer.|  
+|HOST_E_NOT_OWNER|L’appelant n’est pas propriétaire de la serrure.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un fil bloqué ou une fibre l’attendait.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode revient E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels ultérieurs aux méthodes d’hébergement reviennent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** IValidator. idl, IValidator. h  
+ **En-tête:** IValidator.idl, IValidator.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

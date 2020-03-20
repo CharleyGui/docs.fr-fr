@@ -3,24 +3,24 @@ title: <activityScheduledQueries>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: ca6e82f1-54f2-48d6-899c-9873065b5547
-ms.openlocfilehash: a43242e2f22c48a57c11f6f03657d7d3de27ff48
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 763754b95a7f39c7f35e05df28589b69352168e6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70398979"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79152422"
 ---
-# <a name="activityscheduledqueries"></a>\<activityScheduledQueries>
+# <a name="activityscheduledqueries"></a>\<activitéScheduledQueries>
 Représente une collection de requêtes qui permettent d'effectuer le suivi d'une activité dont l'exécution par une activité parent est planifiée. La requête est nécessaire pour qu'un participant au suivi puisse s'abonner aux enregistrements d'une activité planifiée.  
   
- Pour plus d’informations sur le suivi des requêtes de profils, consultez modèles de [suivi](../../../windows-workflow-foundation/tracking-profiles.md)  
+ Pour plus d’informations sur les requêtes de profil de suivi, voir [Profils de suivi](../../../windows-workflow-foundation/tracking-profiles.md)  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<requise. > ServiceModel**](system-servicemodel-of-workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<suivi des >** ](tracking.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<trackingProfile >** ](trackingprofile.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de flux de travail**](workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<activityScheduledQueries >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<Système. ServiceModel>**](system-servicemodel-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<suivi des>**](tracking.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<suiviProfile>**](trackingprofile.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<flux de travail>**](workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<activitéScheduledQueries>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,7 +29,7 @@ Représente une collection de requêtes qui permettent d'effectuer le suivi d'un
   <trackingProfile name="Name">
     <workflow>
       <activityScheduledQueries>
-        <activityScheduledQuery activityName="String" 
+        <activityScheduledQuery activityName="String"
                                 childActivityName="String" />
       </activityScheduledQueries>
     </workflow>
@@ -47,13 +47,13 @@ Représente une collection de requêtes qui permettent d'effectuer le suivi d'un
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<activityScheduledQuery>](activityscheduledquery.md)|Requête qui permet d'effectuer le suivi d'une activité dont l'exécution par une activité parent est planifiée.|  
+|[\<activitéScheduledQuery>](activityscheduledquery.md)|Requête qui permet d'effectuer le suivi d'une activité dont l'exécution par une activité parent est planifiée.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<workflow>](workflow.md)|Élément de configuration qui contient toutes les requêtes pour un flux de travail spécifique identifié par la propriété **ActivityDefinitionId** .|  
+|[\<flux de travail>](workflow.md)|Un élément de configuration qui contient toutes les requêtes pour un flux de travail spécifique identifié par la propriété **activitéDefinitionId.**|  
   
 ## <a name="see-also"></a>Voir aussi
 

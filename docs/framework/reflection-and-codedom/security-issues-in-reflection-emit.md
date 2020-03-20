@@ -11,12 +11,12 @@ helpviewer_keywords:
 - emitting dynamic assemblies,partial trust scenarios
 - dynamic assemblies, security
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
-ms.openlocfilehash: f04b40edde0755315f3b4fd4284fc7c804a54313
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 11eb4c9bc4ba1b1fe9051a04d12f893e693fb175
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130045"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180464"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Problèmes de sécurité dans l'émission de réflexion
 Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Intermediate Language), chacune avec ses propres problèmes de sécurité :  
@@ -32,9 +32,9 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
 > [!NOTE]
 > Les autorisations nécessaires pour la réflexion sur le code et pour l’émission de code ont changé avec les versions successives du .NET Framework. Consultez [Informations sur la version](#Version_Information) plus loin dans cette rubrique.  
   
-<a name="Dynamic_Assemblies"></a>   
+<a name="Dynamic_Assemblies"></a>
 ## <a name="dynamic-assemblies"></a>Assemblys dynamiques  
- Les assemblys dynamiques sont créés à l'aide de surcharges de la méthode <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType>. La plupart des surcharges de cette méthode sont dépréciées dans .NET Framework 4, en raison de la suppression de la stratégie de sécurité à l’échelle de l’ordinateur. (Voir [modifications de sécurité](../security/security-changes.md).) Les surcharges restantes peuvent être exécutées par n’importe quel code, quel que soit le niveau de confiance. Ces surcharges sont réparties en deux groupes : celles qui spécifient une liste d'attributs à appliquer à l'assembly dynamique lors de sa création, et celles qui ne les spécifient pas. Si vous ne spécifiez pas le modèle de transparence pour l’assembly, en appliquant l’attribut <xref:System.Security.SecurityRulesAttribute> au moment de sa création, le modèle de transparence est hérité de l’assembly émetteur.  
+ Les assemblys dynamiques sont créés à l'aide de surcharges de la méthode <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType>. La plupart des surcharges de cette méthode sont dépréciées dans .NET Framework 4, en raison de la suppression de la stratégie de sécurité à l’échelle de l’ordinateur. (Voir [changements de sécurité](../security/security-changes.md).) Les surcharges restantes peuvent être exécutées par n’importe quel code, quel que soit le niveau de confiance. Ces surcharges sont réparties en deux groupes : celles qui spécifient une liste d'attributs à appliquer à l'assembly dynamique lors de sa création, et celles qui ne les spécifient pas. Si vous ne spécifiez pas le modèle de transparence pour l’assembly, en appliquant l’attribut <xref:System.Security.SecurityRulesAttribute> au moment de sa création, le modèle de transparence est hérité de l’assembly émetteur.  
   
 > [!NOTE]
 > Les attributs que vous appliquez à l'assembly dynamique après sa création, en utilisant la méthode <xref:System.Reflection.Emit.AssemblyBuilder.SetCustomAttribute%2A>, ne prennent pas effet tant que l'assembly n'a pas été enregistré sur le disque et rechargé en mémoire.  
@@ -57,7 +57,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
   
 - Les symboles de débogage ne sont pas générés. (Les jeux d'autorisations `Internet` et `LocalIntranet` n'incluent pas les autorisations nécessaires.)  
   
-<a name="Anonymously_Hosted_Dynamic_Methods"></a>   
+<a name="Anonymously_Hosted_Dynamic_Methods"></a>
 ## <a name="anonymously-hosted-dynamic-methods"></a>Méthodes dynamiques hébergées anonymement  
  Les méthodes dynamiques hébergées anonymement sont créées à l'aide des deux constructeurs de <xref:System.Reflection.Emit.DynamicMethod> qui ne spécifient pas un type ou un module associé, <xref:System.Reflection.Emit.DynamicMethod.%23ctor%28System.String%2CSystem.Type%2CSystem.Type%5B%5D%29> et <xref:System.Reflection.Emit.DynamicMethod.%23ctor%28System.String%2CSystem.Type%2CSystem.Type%5B%5D%2CSystem.Boolean%29>. Ces constructeurs placent les méthodes dynamiques dans un assembly fourni par le système, entièrement fiable et transparent quant à la sécurité. Aucune autorisation n'est requise pour utiliser ces constructeurs ou pour émettre du code pour les méthodes dynamiques.  
   
@@ -90,7 +90,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
 > [!NOTE]
 > Les méthodes dynamiques ne prennent pas en charge les symboles de débogage.  
   
-<a name="Dynamic_Methods_Associated_with_Existing_Assemblies"></a>   
+<a name="Dynamic_Methods_Associated_with_Existing_Assemblies"></a>
 ## <a name="dynamic-methods-associated-with-existing-assemblies"></a>Méthodes dynamiques associées à des assemblys existants  
  Pour associer une méthode dynamique à un type ou un module d'un assembly existant, utilisez les constructeurs de <xref:System.Reflection.Emit.DynamicMethod> qui spécifient le type ou le module associé. Les autorisations requises pour appeler ces constructeurs varient, car l'association d'une méthode dynamique à un type ou un module existant donne à la méthode dynamique l'accès aux types et aux membres non publics :  
   
@@ -135,7 +135,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
 > [!NOTE]
 > Les méthodes dynamiques ne prennent pas en charge les symboles de débogage.  
   
-<a name="Version_Information"></a>   
+<a name="Version_Information"></a>
 ## <a name="version-information"></a>Informations sur la version  
  À compter de .NET Framework 4, la stratégie de sécurité à l’échelle de l’ordinateur est supprimée et la transparence de sécurité devient le mécanisme d’application par défaut. Consultez [Changements en matière de sécurité](../security/security-changes.md).  
   

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - garbage collection, run-time errors
 - delegates [.NET Framework], garbage collection
 ms.assetid: 398b0ce0-5cc9-4518-978d-b8263aa21e5b
-ms.openlocfilehash: eb14e0df5396d92eb223dde2e562684c4c318295
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: d4ca777fa5b41433eec227762fe315f22ab33cf6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217569"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174223"
 ---
 # <a name="callbackoncollecteddelegate-mda"></a>callbackOnCollectedDelegate (MDA)
 L'Assistant Débogage managé (MDA) `callbackOnCollectedDelegate` est activé si un délégué est marshalé du code managé vers du code non managé en tant que pointeur de fonction et si un rappel est placé sur ce pointeur de fonction après la récupération du délégué par le garbage collector.  
@@ -56,7 +56,7 @@ L'Assistant Débogage managé (MDA) `callbackOnCollectedDelegate` est activé si
 </mdaConfig>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L'exemple suivant illustre une situation qui peut activer cet Assistant Débogage managé :  
   
 ```cpp
@@ -96,7 +96,7 @@ public class Entry
     }  
   
     public static void Target()  
-    {          
+    {
     }  
   
     [DllImport("Library", CallingConvention = CallingConvention.StdCall)]  
@@ -113,5 +113,5 @@ public class Entry
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)
+- [Marshaling d’interopérabilité](../interop/interop-marshaling.md)
 - [gcUnmanagedToManaged](gcunmanagedtomanaged-mda.md)

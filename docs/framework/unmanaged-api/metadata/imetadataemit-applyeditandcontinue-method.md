@@ -15,38 +15,38 @@ helpviewer_keywords:
 ms.assetid: 35991289-f389-495d-8caa-a6384fb1d557
 topic_type:
 - apiref
-ms.openlocfilehash: b9cad4c9647983e5b39f9b7a5d03736f2848e1c9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f876187624d066b9e672fbf44a984d6d02a54c43
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432698"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175874"
 ---
 # <a name="imetadataemitapplyeditandcontinue-method"></a>IMetaDataEmit::ApplyEditAndContinue, méthode
-Met à jour la portée de l’assembly actuel avec les modifications apportées aux métadonnées spécifiées.  
+Mise à jour de la portée actuelle de l’assemblage avec les modifications apportées dans les métadonnées spécifiées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT ApplyEditAndContinue (   
+HRESULT ApplyEditAndContinue (
     [in]  IUnknown    *pImport  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `pImport`  
- \[dans\] pointeur vers un objet [IUnknown](/cpp/atl/iunknown) qui représente les métadonnées Delta du fichier exécutable portable (PE).
+ \[dans\] Pointer à un objet [IUnknown](/cpp/atl/iunknown) qui représente les métadonnées delta à partir du fichier portable exécutable (PE).
   
- Les métadonnées Delta sont le bloc de métadonnées qui comprend les modifications apportées à la copie des métadonnées réelles du module.  
+ Les métadonnées delta sont le bloc de métadonnées qui comprend les modifications qui ont été apportées à la copie des métadonnées réelles du module.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

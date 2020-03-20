@@ -1,5 +1,5 @@
 ---
-title: Activer l’affichage en mosaïque dans le contrôle ListView
+title: Activez Tile View dans le contrôle ListView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Windows Forms, controls
 - ListView control [Windows Forms], tile view
 ms.assetid: c20e67a3-2d94-413d-9fcf-ecbd0fe251da
-ms.openlocfilehash: 8ccbd42d870e44fc6fd80169327922409ea4f6e7
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 1478ba5e4f175cd7d9ec7ab5c3c4bc9050ce02fb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76745463"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182149"
 ---
 # <a name="how-to-enable-tile-view-in-a-windows-forms-listview-control"></a>Comment : activer l'affichage en mosaïque dans un contrôle ListView Windows Forms
 Avec la fonctionnalité d'affichage en mosaïque du contrôle <xref:System.Windows.Forms.ListView>, vous pouvez fournir un équilibre visuel entre les informations graphiques et textuelles. Les informations textuelles affichées pour un élément dans l'affichage en mosaïque sont identiques aux informations de colonne définies pour le mode Détails. L'affichage en mosaïque fonctionne en association avec les fonctionnalités de regroupement ou de marques d'insertion du contrôle <xref:System.Windows.Forms.ListView>.  
@@ -24,8 +24,8 @@ Avec la fonctionnalité d'affichage en mosaïque du contrôle <xref:System.Windo
  L'affichage en mosaïque utilise une icône de 32 x 32 pixels et plusieurs lignes de texte, comme illustré dans les images suivantes.  
   
  ![Affichage en mosaïque dans un contrôle ListView](./media/how-to-enable-tile-view-in-a-windows-forms-listview-control/tile-view-in-listview-control.gif "Texte et icônes de l'affichage en mosaïque")  
- 
- Pour activer l'affichage en mosaïque, affectez la valeur <xref:System.Windows.Forms.ListView.View%2A> à la propriété <xref:System.Windows.Forms.View.Tile>. Vous pouvez ajuster la taille des mosaïques en définissant la propriété <xref:System.Windows.Forms.ListView.TileSize%2A> et le nombre de lignes de texte affichées dans la mosaïque en ajustant la collection <xref:System.Windows.Forms.ListView.Columns%2A>.  
+
+ Pour activer l'affichage en mosaïque, affectez la valeur <xref:System.Windows.Forms.View.Tile> à la propriété <xref:System.Windows.Forms.ListView.View%2A>. Vous pouvez ajuster la taille des mosaïques en définissant la propriété <xref:System.Windows.Forms.ListView.TileSize%2A> et le nombre de lignes de texte affichées dans la mosaïque en ajustant la collection <xref:System.Windows.Forms.ListView.Columns%2A>.  
   
 ### <a name="to-set-tile-view-programmatically"></a>Pour définir l'affichage en mosaïque par programmation  
   
@@ -39,7 +39,7 @@ Avec la fonctionnalité d'affichage en mosaïque du contrôle <xref:System.Windo
     listView1.View = View.Tile;  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L'exemple de code complet suivant illustre l'affichage en mosaïque avec des mosaïques modifiées pour afficher trois lignes de texte. La taille des mosaïques a été ajustée pour empêcher le retour à la ligne.  
   
  [!code-cpp[System.Windows.Forms.ListView.Tiling#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Tiling/CPP/listviewtilingexample.cpp#1)]
@@ -47,9 +47,9 @@ Avec la fonctionnalité d'affichage en mosaïque du contrôle <xref:System.Windo
  [!code-vb[System.Windows.Forms.ListView.Tiling#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView.Tiling/VB/listviewtilingexample.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
-- des références aux assemblys System et System.Windows.Forms.  
+- des références aux assemblys System et System.Windows.Forms ;  
   
 - un fichier d'icône nommé book.ico dans le même répertoire que le fichier exécutable.  
   
@@ -58,4 +58,4 @@ Avec la fonctionnalité d'affichage en mosaïque du contrôle <xref:System.Windo
 - <xref:System.Windows.Forms.ListView>
 - <xref:System.Windows.Forms.ListView.TileSize%2A>
 - [Contrôle ListView](listview-control-windows-forms.md)
-- [Vue d’ensemble du contrôle ListView](listview-control-overview-windows-forms.md)
+- [Vue d'ensemble du contrôle ListView](listview-control-overview-windows-forms.md)

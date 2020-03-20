@@ -15,40 +15,40 @@ helpviewer_keywords:
 ms.assetid: f2833594-d90b-4a71-9a53-34b12470c64a
 topic_type:
 - apiref
-ms.openlocfilehash: c736eccfd5d05ec9b65e6ed26187e7c7b4387c5d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 94261b7796166cf482a7de990551890e4722dd3b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431729"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177737"
 ---
 # <a name="imetadataemitdefinemoduleref-method"></a>IMetaDataEmit::DefineModuleRef, méthode
-Crée la signature de métadonnées pour un module avec le nom spécifié.  
+Crée la signature des métadonnées pour un module avec le nom spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineModuleRef (     
-    [in]  LPCWSTR           szName,   
-    [out] mdModuleRef       *pmur   
+HRESULT DefineModuleRef (
+    [in]  LPCWSTR           szName,
+    [out] mdModuleRef       *pmur
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `szName`  
- dans Nom des autres fichiers de métadonnées, en général une DLL. Il s’agit du nom de fichier uniquement. N’utilisez pas un nom de chemin d’accès complet.  
+ [dans] Le nom de l’autre fichier de métadonnées, généralement un DLL. C’est le nom du fichier seulement. N’utilisez pas un nom de chemin complet.  
   
  `pmur`  
- à Jeton `mdModuleRef` assigné.  
+ [out] Le `mdModuleRef` jeton assigné.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

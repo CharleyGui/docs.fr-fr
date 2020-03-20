@@ -15,60 +15,60 @@ helpviewer_keywords:
 ms.assetid: d5999052-8bf0-4a9e-8621-da6284406b18
 topic_type:
 - apiref
-ms.openlocfilehash: 2ced153798355aff882f0244f3dd946c39dea2bd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 11d042ea9eecc8d428761da6eaa15f7c2907ebd8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121471"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176264"
 ---
 # <a name="ihostsecuritymanageropenthreadtoken-method"></a>IHostSecurityManager::OpenThreadToken, méthode
-Ouvre le jeton d’accès discrétionnaire associé au thread en cours d’exécution.  
+Ouvre le jeton d’accès discrétionnaire associé au fil d’exécution actuel.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT OpenThreadToken (  
-    [in]  DWORD    dwDesiredAccess,   
-    [in]  BOOL     bOpenAsSelf,   
+    [in]  DWORD    dwDesiredAccess,
+    [in]  BOOL     bOpenAsSelf,
     [out] HANDLE   *phThreadToken  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `dwDesiredAccess`  
- dans Masque des valeurs d’accès qui spécifient les types d’accès demandés au jeton de thread. Ces valeurs sont définies dans la fonction de `OpenThreadToken` Win32. Les types d’accès demandés sont conciliés par rapport à la liste de contrôle d’accès discrétionnaire (DACL) du jeton pour déterminer les types d’accès à accorder ou refuser.  
+ [dans] Masque de valeurs d’accès qui spécifient les types d’accès demandés au jeton de thread. Ces valeurs sont définies `OpenThreadToken` dans la fonction Win32. Les types d’accès demandés sont conciliés avec la liste discrétionnaire de contrôle d’accès (DACL) du jeton afin de déterminer quels types d’accès à l’octroi ou au refus.  
   
  `bOpenAsSelf`  
- [in] `true` pour spécifier que le contrôle d’accès doit être effectué à l’aide du contexte de sécurité du processus pour le thread appelant ; `false` pour spécifier que le contrôle d’accès doit être effectué à l’aide du contexte de sécurité du thread appelant lui-même. Si le thread emprunte l’identité d’un client, le contexte de sécurité peut être celui d’un processus client.  
+ [dans] `true` spécifier que la vérification d’accès doit être effectuée en utilisant le contexte de sécurité du processus pour le thread d’appel; `false` spécifier que la vérification d’accès doit être effectuée en utilisant le contexte de sécurité du fil d’appel lui-même. Si le thread se fait passer pour un client, le contexte de sécurité peut être celui d’un processus client.  
   
  `phThreadToken`  
- à Pointeur vers le jeton d’accès récemment ouvert.  
+ [out] Un pointeur sur le jeton d’accès nouvellement ouvert.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`OpenThreadToken` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
-|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
-|HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|S_OK|`OpenThreadToken`retourné avec succès.|  
+|HOST_E_CLRNOTAVAILABLE|L’heure courante de l’exécution de la langue (CLR) n’a pas été chargée dans un processus, ou le CLR est dans un état où il ne peut pas exécuter le code géré ou traiter l’appel avec succès.|  
+|HOST_E_TIMEOUT|L’appel s’est fait chronométrer.|  
+|HOST_E_NOT_OWNER|L’appelant n’est pas propriétaire de la serrure.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un fil bloqué ou une fibre l’attendait.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode revient E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels ultérieurs aux méthodes d’hébergement reviennent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes  
- `IHostSecurityManager::OpenThreadToken` se comporte de la même façon que la fonction Win32 correspondante du même nom, sauf que la fonction Win32 permet à l’appelant de passer un handle à un thread arbitraire, tandis que `IHostSecurityManager::OpenThreadToken` ouvre uniquement le jeton associé au thread appelant.  
+## <a name="remarks"></a>Notes   
+ `IHostSecurityManager::OpenThreadToken`se comporte de la même manière que la fonction Win32 correspondante du même nom, sauf que la fonction `IHostSecurityManager::OpenThreadToken` Win32 permet à l’appelant de passer dans une poignée à un thread arbitraire, tout en n’ouvrant que le jeton associé au fil d’appel.  
   
- Le type de `HANDLE` n’est pas conforme à COM, c’est-à-dire que sa taille est spécifique au système d’exploitation et qu’il nécessite un marshaling personnalisé. Ainsi, ce jeton est destiné à être utilisé uniquement dans le processus, entre le CLR et l’hôte.  
+ Le `HANDLE` type n’est pas conforme à com, c’est-à-dire que sa taille est spécifique au système d’exploitation, et il nécessite un marshaling personnalisé. Ainsi, ce jeton n’est utilisé que dans le processus, entre le CLR et l’hôte.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE. h  
+ **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,59 +15,59 @@ helpviewer_keywords:
 ms.assetid: 1ccda329-d752-4d89-abe8-511af3c3f4c9
 topic_type:
 - apiref
-ms.openlocfilehash: 59512cc1c1b280d7fe6deb2f9d721ad53547e356
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d8b8bfd0e70e75c702f32555c10f433a1ff4ae10
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437957"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175419"
 ---
 # <a name="imetadataimportfindmemberref-method"></a>IMetaDataImport::FindMemberRef, méthode
-Obtient un pointeur vers le jeton MemberRef pour la référence de membre qui est incluse dans la <xref:System.Type> spécifiée et qui a le nom et la signature de métadonnées spécifiés.  
+Obtient un pointeur vers le jeton MemberRef pour la <xref:System.Type> référence du membre qui est inclus par le spécifié et qui a le nom spécifié et la signature des métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT FindMemberRef (  
    [in]  mdTypeRef          td,  
-   [in]  LPCWSTR            szName,   
-   [in]  PCCOR_SIGNATURE    pvSigBlob,   
-   [in]  ULONG              cbSigBlob,   
+   [in]  LPCWSTR            szName,
+   [in]  PCCOR_SIGNATURE    pvSigBlob,
+   [in]  ULONG              cbSigBlob,
    [out] mdMemberRef        *pmr  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- dans Jeton TypeRef pour la classe ou l’interface qui englobe la référence de membre à rechercher. Si cette valeur est `mdTokenNil`, la recherche est effectuée pour une variable globale ou une référence de fonction globale.  
+ [dans] Le jeton TypeRef pour la classe ou l’interface qui entoure la référence du membre à la recherche. Si cette `mdTokenNil`valeur est, la recherche est faite pour une variable globale ou une référence fonction globale.  
   
  `szName`  
- dans Nom de la référence de membre à rechercher.  
+ [dans] Le nom de la référence du membre à la recherche.  
   
  `pvSigBlob`  
- dans Pointeur vers la signature de métadonnées binaires de la référence de membre.  
+ [dans] Un pointeur à la signature binaire métadonnées de la référence du membre.  
   
  `cbSigBlob`  
- dans Taille en octets de `pvSigBlob`.  
+ [dans] La taille dans `pvSigBlob`les octets de .  
   
  `pmr`  
- à Pointeur vers le jeton MemberRef correspondant.  
+ [out] Un pointeur pour le jeton De MemberRef correspondant.  
   
-## <a name="remarks"></a>Notes  
- Vous spécifiez le membre à l’aide de l’interface ou de la classe englobante (`td`), son nom (`szName`) et éventuellement sa signature (`pvSigBlob`).  
+## <a name="remarks"></a>Notes   
+ Vous spécifiez le membre`td`en utilisant`szName`sa classe ou son`pvSigBlob`interface d’enceinte ( ), son nom ( ), et en option sa signature ().  
   
- La signature transmise à `FindMemberRef` doit avoir été générée dans l’étendue actuelle, car les signatures sont liées à une portée particulière. Une signature peut incorporer un jeton qui identifie la classe englobante ou le type valeur. Le jeton est un index dans la table TypeDef locale. Vous ne pouvez pas générer de signature au moment de l’exécution en dehors du contexte de l’étendue actuelle et utiliser cette signature comme entrée pour `FindMemberRef`.  
+ La signature `FindMemberRef` transmise doit avoir été générée dans la portée actuelle, parce que les signatures sont liées à une portée particulière. Une signature peut intégrer un jeton qui identifie la classe d’enceinte ou le type de valeur. Le jeton est un index dans le tableau local TypeDef. Vous ne pouvez pas construire une signature en temps d’exécution `FindMemberRef`en dehors du contexte de la portée actuelle et utiliser cette signature comme entrée à .  
   
- `FindMemberRef` recherche uniquement les références de membre qui ont été définies directement dans la classe ou l’interface ; il ne trouve pas les références de membre héritées.  
+ `FindMemberRef`ne trouve que les références des membres qui ont été définies directement dans la classe ou l’interface; il ne trouve pas de références de membres héritées.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

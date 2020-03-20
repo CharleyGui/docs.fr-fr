@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : ajouter des améliorations aux ToolStripMenuItems'
+title: 'Comment : ajouter des améliorations aux ToolStripMenuItems'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -24,71 +24,71 @@ helpviewer_keywords:
 - images [Windows Forms], adding to menus
 - ToolStripMenuItems [Windows Forms], showing separator bars
 ms.assetid: aa5f19bb-b545-4378-bfa6-36ba592f0d7c
-ms.openlocfilehash: 9e95c3623bf9bad8395f586392a0557ad1cde880
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 61a79b9bbe101d7bf694240bdffdecee5187adf2
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912581"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182318"
 ---
-# <a name="how-to-add-enhancements-to-toolstripmenuitems"></a>Procédure : ajouter des améliorations aux ToolStripMenuItems
-Vous pouvez améliorer la facilité d' <xref:System.Windows.Forms.MenuStrip> utilisation <xref:System.Windows.Forms.ContextMenuStrip> des contrôles et des manières suivantes:  
+# <a name="how-to-add-enhancements-to-toolstripmenuitems"></a>Comment : ajouter des améliorations aux ToolStripMenuItems
+Vous pouvez améliorer la <xref:System.Windows.Forms.MenuStrip> <xref:System.Windows.Forms.ContextMenuStrip> facilité d’utilisation et les contrôles de la manière suivante :  
   
-- Ajoutez des coches pour indiquer si une fonctionnalité est activée ou désactivée, par exemple si une règle est affichée le long de la marge d’une application de traitement de texte, ou pour indiquer quel fichier dans une liste de fichiers est affiché, par exemple dans un menu **fenêtre** .  
+- Ajoutez des points de contrôle pour indiquer si une fonctionnalité est activée ou désactivée, par exemple si une règle est affichée le long de la marge d’une application de traitement de texte, ou pour indiquer quel fichier dans une liste de fichiers est affiché, comme sur un menu **fenêtre.**  
   
-- Ajoutez des images qui représentent visuellement des commandes de menu.  
+- Ajoutez des images qui représentent visuellement les commandes de menu.  
   
-- Affichez les touches de raccourci pour fournir une alternative clavier à la souris pour exécuter des commandes. Par exemple, si vous appuyez sur CTRL + C, la commande **copier** est exécutée.  
+- Affichez des touches de raccourci pour fournir une alternative de clavier à la souris pour effectuer des commandes. Par exemple, appuyer sur CTRL-C effectue la commande **Copy.**  
   
-- Affichez les touches d’accès pour fournir une alternative clavier à la souris pour la navigation dans les menus. Par exemple, en appuyant sur ALT + F, vous choisissez le menu **fichier** .  
+- Affichez les touches d’accès pour fournir une alternative de clavier à la souris pour la navigation de menu. Par exemple, appuyer sur ALT-F choisit le menu **Fichier.**  
   
-- Affichez les barres de séparation pour regrouper les commandes associées et rendre les menus plus lisibles.  
+- Afficher les barres de séparateur aux commandes liées au groupe et rendre les menus plus lisibles.  
   
-### <a name="to-display-a-check-mark-on-a-menu-command"></a>Pour afficher une coche sur une commande de menu  
+### <a name="to-display-a-check-mark-on-a-menu-command"></a>Pour afficher une marque de contrôle sur une commande de menu  
   
-- Affectez <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> à `true`sa propriété la valeur.  
+- Définissez <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> sa `true`propriété à .  
   
-     Cela affecte également à <xref:System.Windows.Forms.ToolStripMenuItem.CheckState%2A> la propriété `true`la valeur. Utilisez cette procédure uniquement si vous souhaitez que la commande de menu apparaisse comme étant activée par défaut, qu’elle soit ou non sélectionnée.  
+     Cela définit <xref:System.Windows.Forms.ToolStripMenuItem.CheckState%2A> également `true`la propriété à . Utilisez cette procédure uniquement si vous souhaitez que la commande du menu s’affiche comme vérifiée par défaut, qu’elle soit sélectionnée ou non.  
   
-### <a name="to-display-a-check-mark-that-changes-state-with-each-click"></a>Pour afficher une coche qui modifie l’État à chaque clic  
+### <a name="to-display-a-check-mark-that-changes-state-with-each-click"></a>Pour afficher une marque de contrôle qui change d’état à chaque clic  
   
-- Affectez à `true`la propriété <xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A> de la commande de menu la valeur.  
+- Réglez la <xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A> propriété `true`de la commande du menu à .  
   
 ### <a name="to-add-an-image-to-a-menu-command"></a>Pour ajouter une image à une commande de menu  
   
-- Définissez la <xref:System.Windows.Forms.ToolStripItem.Image%2A> propriété de la commande de menu sur le nom de l’image. Si la <xref:System.Windows.Forms.ToolStripItemDisplayStyle> propriété de cette commande de menu a la <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> valeur <xref:System.Windows.Forms.ToolStripItemDisplayStyle.None>ou, l’image ne peut pas être affichée.  
+- Définissez la propriété <xref:System.Windows.Forms.ToolStripItem.Image%2A> de la commande du menu au nom de l’image. Si <xref:System.Windows.Forms.ToolStripItemDisplayStyle> la propriété de cette <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> commande <xref:System.Windows.Forms.ToolStripItemDisplayStyle.None>de menu est réglée ou, l’image ne peut pas être affichée.  
   
 > [!NOTE]
-> La marge de l’image peut également afficher une coche si vous le souhaitez. En outre, vous pouvez affecter <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> à `true`la propriété de l’image la valeur, et l’image s’affichera avec une bordure hachurée autour de celle-ci au moment de l’exécution.  
+> La marge d’image peut également afficher une marque de contrôle si vous le souhaitez. En outre, vous <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> pouvez définir `true`la propriété de l’image à , et l’image apparaîtra avec une bordure éclose autour d’elle au moment de l’exécution.  
   
-### <a name="to-display-a-shortcut-key-for-a-menu-command"></a>Pour afficher une touche de raccourci pour une commande de menu  
+### <a name="to-display-a-shortcut-key-for-a-menu-command"></a>Pour afficher une clé de raccourci pour une commande de menu  
   
-- <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys%2A> Définissez la propriété de la commande de menu sur la combinaison de touches souhaitée, telle que CTRL + O pour la commande de menu **ouvrir** , et affectez à <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> `true`la propriété la valeur.  
+- Réglez la <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys%2A> propriété de la commande du menu à la combinaison de clavier désirée, `true`telle que CTRL-O pour la commande de menu **ouvert,** et définissez la <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> propriété à .  
   
-### <a name="to-display-custom-shortcut-keys-for-a-menu-command"></a>Pour afficher les touches de raccourci personnalisées pour une commande de menu  
+### <a name="to-display-custom-shortcut-keys-for-a-menu-command"></a>Pour afficher des touches de raccourci personnalisées pour une commande de menu  
   
-- Définissez la propriété de <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeyDisplayString%2A> la commande de menu sur la combinaison de touches souhaitée, telle que Ctrl + Maj + o plutôt que MAJ + CTRL + o, et affectez à `true`la propriété la <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> valeur.  
+- Réglez la <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeyDisplayString%2A> propriété de la commande du menu à la combinaison de clavier désirée, comme CTRL-SHIFT-O plutôt que SHIFT-CTRL-O, et définissez la <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> propriété à `true`.  
   
-### <a name="to-display-an-access-key-for-a-menu-command"></a>Pour afficher une touche d’accès pour une commande de menu  
+### <a name="to-display-an-access-key-for-a-menu-command"></a>Pour afficher une clé d’accès pour une commande de menu  
   
-- Lorsque vous définissez la <xref:System.Windows.Forms.ToolStripItem.Text%2A> propriété de la commande de menu, entrez une esperluette (&) avant la lettre que vous souhaitez utiliser comme touche d’accès. Par exemple, `&Open` <u></u> <xref:System.Windows.Forms.ToolStripItem.Text%2A> si vous tapez comme propriété d’un élément de menu, une commande de menu s’affiche en tant que stylet.
+- Lorsque vous <xref:System.Windows.Forms.ToolStripItem.Text%2A> définissez la propriété pour la commande du menu, entrez un ampersand (&) avant la lettre que vous souhaitez être souligné comme la clé d’accès. Par exemple, `&Open` la <xref:System.Windows.Forms.ToolStripItem.Text%2A> dactylographie comme propriété d’un élément de menu entraînera une commande de menu qui apparaît sous forme de stylo <u>O.</u>
   
-     Pour accéder à cette commande de menu, appuyez sur ALT pour activer le <xref:System.Windows.Forms.MenuStrip>, puis appuyez sur la touche d’accès du nom de menu. Lorsque le menu s’ouvre et affiche des éléments avec des touches d’accès, vous devez simplement appuyer sur la touche d’accès pour sélectionner la commande de menu.  
+     Pour naviguer jusqu’à cette commande de <xref:System.Windows.Forms.MenuStrip>menu, appuyez sur ALT pour mettre l’accent sur le , et appuyez sur la clé d’accès du nom du menu. Lorsque le menu s’ouvre et affiche des éléments avec des clés d’accès, vous n’avez qu’à appuyer sur la clé d’accès pour sélectionner la commande du menu.  
   
 > [!NOTE]
-> Évitez de définir des clés d’accès en double, telles que la définition de ALT + F à deux reprises dans le même système de menu. L’ordre de sélection des clés d’accès en double ne peut pas être garanti.  
+> Évitez de définir les touches d’accès en double, telles que la définition d’ALT-F deux fois dans le même système de menu. L’ordre de sélection des clés d’accès en double ne peut être garanti.  
   
-### <a name="to-display-a-separator-bar-between-menu-commands"></a>Pour afficher une barre de séparation entre les commandes de menu  
+### <a name="to-display-a-separator-bar-between-menu-commands"></a>Pour afficher une barre de séparateur entre les commandes de menu  
   
-- Une fois que vous <xref:System.Windows.Forms.MenuStrip> avez défini et les éléments qu’il contiendra <xref:System.Windows.Forms.ToolStripItemCollection.AddRange%2A> , <xref:System.Windows.Forms.ToolStripItemCollection.Add%2A> utilisez la méthode ou pour <xref:System.Windows.Forms.MenuStrip> ajouter les <xref:System.Windows.Forms.ToolStripSeparator> commandes de menu et les contrôles au dans l’ordre de votre choix.  
+- Après avoir <xref:System.Windows.Forms.MenuStrip> défini votre et les éléments <xref:System.Windows.Forms.ToolStripItemCollection.AddRange%2A> <xref:System.Windows.Forms.ToolStripItemCollection.Add%2A> qu’il contiendra, <xref:System.Windows.Forms.ToolStripSeparator> utilisez <xref:System.Windows.Forms.MenuStrip> la méthode ou la méthode pour ajouter les commandes et les commandes du menu à l’ordre que vous voulez.  
   
     ```vb  
     ' This code adds a top-level File menu to the MenuStrip.  
     Me.menuStrip1.Items.Add(New ToolStripMenuItem() _  
     {Me.fileToolStripMenuItem})  
   
-    ' This code adds the New and Open menu commands, a separator bar,   
-    ' and the Save and Exit menu commands to the top-level File menu,   
+    ' This code adds the New and Open menu commands, a separator bar,
+    ' and the Save and Exit menu commands to the top-level File menu,
     ' in that order.  
     Me.fileToolStripMenuItem.DropDownItems.AddRange(New _  
     ToolStripMenuItem() {Me.newToolStripMenuItem, _  
@@ -101,8 +101,8 @@ Vous pouvez améliorer la facilité d' <xref:System.Windows.Forms.MenuStrip> uti
     this.menuStrip1.Items.Add(new ToolStripItem[]_  
     {this.fileToolStripMenuItem});  
   
-    // This code adds the New and Open menu commands, a separator bar,   
-    // and the Save and Exit menu commands to the top-level File menu,   
+    // This code adds the New and Open menu commands, a separator bar,
+    // and the Save and Exit menu commands to the top-level File menu,
     // in that order.  
     this.fileToolStripMenuItem.DropDownItems.AddRange(new _  
     ToolStripItem[] {  

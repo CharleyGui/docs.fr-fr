@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 42145e8d-000f-4d0b-ae43-c08201190fa2
 topic_type:
 - apiref
-ms.openlocfilehash: b240be3e5b0127de42cea43dd8e89a2cc656b28e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: bb8b531a884c9d3c2f33aa4aec5c4dbeaafe2b66
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449513"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177342"
 ---
 # <a name="imetadataimportenumfieldswithname-method"></a>IMetaDataImport::EnumFieldsWithName, méthode
 Énumère les jetons FieldDef du type spécifié avec le nom spécifié.  
@@ -29,52 +29,52 @@ ms.locfileid: "74449513"
   
 ```cpp  
 HRESULT EnumFieldsWithName (  
-   [in, out] HCORENUM    *phEnum,   
-   [in]  mdTypeDef       cl,   
-   [in]  LPCWSTR         szName,   
-   [out] mdFieldDef      rFields[],   
-   [in]  ULONG           cMax,   
-   [out] ULONG           *pcTokens   
+   [in, out] HCORENUM    *phEnum,
+   [in]  mdTypeDef       cl,
+   [in]  LPCWSTR         szName,
+   [out] mdFieldDef      rFields[],
+   [in]  ULONG           cMax,
+   [out] ULONG           *pcTokens
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur.  
+ [dans, dehors] Un pointeur à l’enumérateur.  
   
  `cl`  
- dans Jeton du type dont les champs doivent être énumérés.  
+ [dans] Le jeton du type dont les champs doivent être énumérés.  
   
  `szName`  
- dans Nom du champ qui limite la portée de l’énumération.  
+ [dans] Le nom de champ qui limite la portée de l’énumération.  
   
  `rFields`  
- à Tableau utilisé pour stocker les jetons FieldDef.  
+ [out] Array utilisé pour stocker les jetons FieldDef.  
   
  `cMax`  
  [in] Taille maximale du tableau `rFields`.  
   
  `pcTokens`  
- à Nombre réel de jetons FieldDef retournés dans `rFields`.  
+ [out] Le nombre réel de jetons FieldDef retourné dans `rFields`.  
   
-## <a name="remarks"></a>Notes  
- Contrairement à [IMetaDataImport :: EnumFields](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md), `EnumFieldsWithName` ignore tous les jetons de champ qui n’ont pas le nom spécifié.  
+## <a name="remarks"></a>Notes   
+ Contrairement à [IMetaDataImport::EnumFields](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md), `EnumFieldsWithName` jette tous les jetons de champ qui n’ont pas le nom spécifié.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFieldsWithName` retourné avec succès.|  
-|`S_FALSE`|Il n’y a aucun champ à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
+|`S_OK`|`EnumFieldsWithName`retourné avec succès.|  
+|`S_FALSE`|Il n’y a pas de champs à énumérer. Dans ce `pcTokens` cas, c’est zéro.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

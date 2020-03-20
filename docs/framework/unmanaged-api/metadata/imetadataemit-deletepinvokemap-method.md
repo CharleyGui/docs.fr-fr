@@ -15,36 +15,36 @@ helpviewer_keywords:
 ms.assetid: 3c4f6b54-5ce7-4a2a-83e1-6dec16441f50
 topic_type:
 - apiref
-ms.openlocfilehash: 1621e955795fcdbb651114c60eb6a1126a23d037
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 45f40dcd419e8e2fdf8a3349ccc9461854ad9aaf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74434360"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175731"
 ---
 # <a name="imetadataemitdeletepinvokemap-method"></a>IMetaDataEmit::DeletePinvokeMap, méthode
-Détruit les métadonnées de mappage PInvoke pour l’objet référencé par le jeton spécifié.  
+Détruit les métadonnées de cartographie PInvoke pour l’objet référencé par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DeletePinvokeMap (   
-    [in]  mdToken     tk   
+HRESULT DeletePinvokeMap (
+    [in]  mdToken     tk
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- dans Jeton `mdFieldDef` ou `mdMethodDef` qui représente l’objet pour lequel supprimer les métadonnées de mappage PInvoke.  
+ [dans] Un `mdFieldDef` `mdMethodDef` ou un jeton qui représente l’objet pour lequel supprimer les métadonnées de cartographie PInvoke.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

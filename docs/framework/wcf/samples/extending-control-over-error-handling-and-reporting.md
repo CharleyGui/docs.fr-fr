@@ -2,22 +2,22 @@
 title: Extending Control Over Error Handling and Reporting
 ms.date: 03/30/2017
 ms.assetid: 45f996a7-fa00-45cb-9d6f-b368f5778aaa
-ms.openlocfilehash: b7a3e0fa9b0799d98ea3df8df760e26851febf90
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 68f3381e8db9d7c0222720dda335b47e30f57ac7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716412"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183682"
 ---
 # <a name="extending-control-over-error-handling-and-reporting"></a>Extending Control Over Error Handling and Reporting
-Cet exemple montre comment étendre le contrôle sur la gestion des erreurs et le rapport d’erreurs dans un service Windows Communication Foundation (WCF) à l’aide de l’interface <xref:System.ServiceModel.Dispatcher.IErrorHandler>. L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) avec un code supplémentaire ajouté au service pour gérer les erreurs. Le client force plusieurs conditions d'erreur. Le service intercepte les erreurs et les enregistre dans un fichier.  
+Cet exemple montre comment étendre le contrôle sur la gestion des erreurs et <xref:System.ServiceModel.Dispatcher.IErrorHandler> les rapports d’erreur dans un service de la Fondation De communication Windows (WCF) à l’aide de l’interface. L’échantillon est basé sur le [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) avec un code supplémentaire ajouté au service pour gérer les erreurs. Le client force plusieurs conditions d'erreur. Le service intercepte les erreurs et les enregistre dans un fichier.  
   
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
  Les services peuvent intercepter des erreurs, effectuez le traitement, et avoir une influence sur la manière dont les erreurs sont signalées à l'aide de l'interface <xref:System.ServiceModel.Dispatcher.IErrorHandler>. L'interface possède deux méthodes qui peuvent être implémentées : <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%28System.Exception%2CSystem.ServiceModel.Channels.MessageVersion%2CSystem.ServiceModel.Channels.Message%40%29> et <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A>. La méthode <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%28System.Exception%2CSystem.ServiceModel.Channels.MessageVersion%2CSystem.ServiceModel.Channels.Message%40%29> vous permet d'ajouter, de modifier ou de supprimer un message d'erreur généré en réponse à une exception. La méthode <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> permet au traitement des erreurs d'avoir lieu dans l'événement d'une erreur et contrôle l'exécution possible d'autres activités de gestion des erreurs.  
   
- Dans cet exemple, le type `CalculatorErrorHandler` implémente l'interface <xref:System.ServiceModel.Dispatcher.IErrorHandler>. Dans la section  
+ Dans cet exemple, le type `CalculatorErrorHandler` implémente l'interface <xref:System.ServiceModel.Dispatcher.IErrorHandler>. Dans la  
   
  méthode <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A>, le `CalculatorErrorHandler` écrit l'erreur dans un fichier texte Error.txt dans c:\logs. Notez que l'exemple enregistre l'erreur et ne la supprime pas, ce qui permet de la signaler au client.  
   
@@ -91,7 +91,7 @@ public class ErrorBehaviorAttribute : Attribute, IServiceBehavior
         {  
             ChannelDispatcher channelDispatcher = channelDispatcherBase as ChannelDispatcher;  
             channelDispatcher.ErrorHandlers.Add(errorHandler);  
-        }                                                  
+        }
     }  
 }  
 ```  
@@ -132,7 +132,7 @@ FaultException: FaultException - Invalid Argument: The argument must be greater 
 Press <ENTER> to terminate client.  
 ```  
   
- Le fichier c:\logs\errors.txt contient les informations enregistrées à propos des erreurs par le service. Notez que pour que le service écrive dans le répertoire, vous devez vous assurer que le processus sous lequel le service est en cours d’exécution (généralement ASP.NET ou service réseau) a l’autorisation d’écrire dans le répertoire.  
+ Le fichier c:\logs\errors.txt contient les informations enregistrées à propos des erreurs par le service. Notez que pour que le service écrive à l’annuaire, vous devez vous assurer que le processus en vertu duquel le service est en cours d’exécution (généralement ASP.NET ou service réseau) a la permission d’écrire à l’annuaire.  
   
 ```txt
 Fault: Reason = Invalid Argument: The second argument must not be zero.  
@@ -141,19 +141,19 @@ Fault: Reason = Invalid Argument: The argument must be greater than zero.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les échantillons de la Fondation De communication Windows.](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)  
   
-2. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pour construire la solution, suivez les instructions dans [la construction des échantillons de la Fondation De communication Windows](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 3. Assurez-vous d'avoir créé le répertoire c:\logs pour le fichier error.txt. Ou modifiez le nom du fichier utilisé dans `CalculatorErrorHandler.HandleError`.  
   
-4. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Pour exécuter l’échantillon dans une configuration mono-ou cross-machine, suivez les instructions dans [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
->   
+>
+> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\ErrorHandling`  

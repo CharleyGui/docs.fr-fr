@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b558e766-4c11-4628-ae47-b4e0a1800168
 topic_type:
 - apiref
-ms.openlocfilehash: dce9b9c20cbc73c6a70a34afa6c348c23164ed9e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f46033b9e643ef6b4a0063c4995b8c024b8c1f7e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437317"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175354"
 ---
 # <a name="imetadataimportgetmodulerefprops-method"></a>IMetaDataImport::GetModuleRefProps, méthode
 Obtient le nom du module référencé par le jeton de métadonnées spécifié.  
@@ -30,33 +30,33 @@ Obtient le nom du module référencé par le jeton de métadonnées spécifié.
 ```cpp  
 HRESULT GetModuleRefProps (  
    [in]  mdModuleRef         mur,  
-   [out] LPWSTR              szName,   
-   [in]  ULONG               cchName,   
-   [out] ULONG               *pchName   
+   [out] LPWSTR              szName,
+   [in]  ULONG               cchName,
+   [out] ULONG               *pchName
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `mur`  
- dans Jeton de métadonnées ModuleRef qui référence le module pour lequel obtenir les informations de métadonnées.  
+ [dans] Les métadonnées ModuleRef qui fait référence au module pour obtenir des informations sur les métadonnées.  
   
  `szName`  
- à Mémoire tampon destinée à contenir le nom du module.  
+ [out] Un tampon pour tenir le nom du module.  
   
  `cchName`  
- dans Taille de `szName` demandée en caractères larges.  
+ [dans] La taille `szName` demandée en caractères larges.  
   
  `pchName`  
- à Taille retournée de `szName` en caractères larges.  
+ [out] La taille `szName` retournée de dans les caractères larges.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

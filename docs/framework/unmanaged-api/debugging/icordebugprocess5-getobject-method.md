@@ -15,43 +15,43 @@ helpviewer_keywords:
 ms.assetid: c8111502-5a20-447f-9dc2-76e8acd7ed5a
 topic_type:
 - apiref
-ms.openlocfilehash: 540ca78c5548d4fbdd3338671ea02314736f15cd
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 4b48132ee60bcaebb218d8f583de6558372f5055
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792361"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178609"
 ---
 # <a name="icordebugprocess5getobject-method"></a>ICorDebugProcess5::GetObject, méthode
-Convertit une adresse d’objet en objet « ICorDebugObjectValue ».  
+Convertit une adresse d’objet en objet "ICorDebugObjectValue".  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetObject(  
-    [in] CORDB_ADDRESS addr,   
+    [in] CORDB_ADDRESS addr,
     [out] ICorDebugObjectValue **ppObject  
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `addr`  
- dans Adresse de l’objet.  
+ [dans] L’adresse de l’objet.  
   
  `ppObject`  
- à Pointeur vers l’adresse d’un objet « ICorDebugObjectValue ».  
+ [out] Un pointeur à l’adresse d’un objet "ICorDebugObjectValue".  
   
-## <a name="remarks"></a>Notes  
- Si `addr` ne pointe pas vers un objet managé valide, la méthode `GetObject` retourne `E_FAIL`.  
+## <a name="remarks"></a>Notes   
+ Si `addr` elle ne pointe pas vers `GetObject` un `E_FAIL`objet géré valide, la méthode renvoie .  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

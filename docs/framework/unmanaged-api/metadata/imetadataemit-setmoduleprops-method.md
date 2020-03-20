@@ -15,36 +15,36 @@ helpviewer_keywords:
 ms.assetid: b74d7629-5f46-458f-8d67-2456a1e7030c
 topic_type:
 - apiref
-ms.openlocfilehash: 2d3c820975488fa722e7af6070611ba7e9686ce8
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 69c3ee366dbb8505e0df744037c480da996bb836
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445444"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175614"
 ---
 # <a name="imetadataemitsetmoduleprops-method"></a>IMetaDataEmit::SetModuleProps, méthode
-Met à jour les références à un module défini par un appel antérieur à [IMetaDataEmit ::D efinemoduleref](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemoduleref-method.md).  
+Mise à jour des références à un module défini par un appel antérieur à [IMetaDataEmit::DefineModuleRef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemoduleref-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT SetModuleProps (   
+HRESULT SetModuleProps (
     [in]  LPCWSTR     szName  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `szName`  
- dans Nom du module en Unicode. Il s’agit du nom de fichier uniquement, et non du nom de chemin d’accès complet.  
+ [dans] Le nom du module dans Unicode. C’est le nom de fichier seulement et pas le nom complet de chemin.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

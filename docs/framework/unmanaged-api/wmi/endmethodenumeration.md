@@ -1,6 +1,6 @@
 ---
-title: Fonction EndMethodEnumeration (référence des API non managées)
-description: La fonction EndMethodEnumeration termine une séquence d’énumération de méthode.
+title: Fonction EndMethodEnumeration (Référence API non managérée)
+description: La fonction EndMethodEnumeration met fin à une séquence d’énumération de méthode.
 ms.date: 11/06/2017
 api_name:
 - EndMethodEnumeration
@@ -14,57 +14,57 @@ helpviewer_keywords:
 - EndMethodEnumeration function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 174cf76d4b0ddf07e67e02bff20a983dca08819a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 63667d0668f905ded2aedd961be0d1831faf838c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132018"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175003"
 ---
 # <a name="endmethodenumeration-function"></a>EndMethodEnumeration, fonction
-Termine une séquence d’énumération démarrée avec un appel à la [fonction BeginMethodEnumeration](beginmethodenumeration.md).  
+Termine une séquence de recensement commencée par un appel à la [fonction BeginMethodEnumeration](beginmethodenumeration.md).  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EndMethodEnumeration (
-   [in] int               vFunc, 
-   [in] IWbemClassObject* ptr 
-); 
+   [in] int               vFunc,
+   [in] IWbemClassObject* ptr
+);
 ```  
 
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`  
-dans Ce paramètre n’est pas utilisé.
+[dans] Ce paramètre n’est pas utilisé.
 
 `ptr`  
-dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
+[dans] Un pointeur à une instance [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
 
-## <a name="return-value"></a>Valeur de retour
+## <a name="return-value"></a>Valeur retournée
 
-Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli.h,* ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |valeur  |Description  |
+|Constant  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_UNEXPECTED` | 0x8004101d | Une erreur interne s’est produite. |
-|`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
+|`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a été réussi.  |
   
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-Cette fonction encapsule un appel à la méthode [IWbemClassObject :: EndMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-endmethodenumeration) .
+Cette fonction enveloppe un appel à [l’IWbemClassObject::EndMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-endmethodenumeration) méthode.
 
-L’appelant commence la séquence d’énumération à l’aide de la [fonction BeginMethodEnumeration](beginmethodenumeration.md), puis appelle la [fonction NextMethod](nextmethod.md )jusqu’à ce que la méthode retourne `WBEM_S_NO_MORE_DATA`. L’appelant termine éventuellement la séquence en appelant `EndMethodEnumeration`. L’appelant peut arrêter l’énumération tôt en appelant `EndMethodEnumeration` à tout moment.
+L’appelant commence la séquence de recensement à l’aide de la [fonction BeginMethodEnumeration,](beginmethodenumeration.md)puis appelle la [fonction NextMethod](nextmethod.md )jusqu’à ce que la méthode revient `WBEM_S_NO_MORE_DATA`. L’appelant termine optionnellement `EndMethodEnumeration`la séquence en appelant . L’appelant peut mettre fin à `EndMethodEnumeration` l’énumération tôt en appelant à tout moment.
 
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** WMINet_Utils. idl  
+ **En-tête:** WMINet_Utils.idl  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)
+- [WMI et compteurs de performances (référence des API non managées)](index.md)

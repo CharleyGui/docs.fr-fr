@@ -3,22 +3,22 @@ title: <issuerTokenResolver>
 ms.date: 03/30/2017
 ms.assetid: f74392f6-3f5b-4880-bd8a-3a9130d31e65
 author: BrucePerlerMS
-ms.openlocfilehash: 451750a1facd9a886b53427a8d54580d1a939fa5
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 67d7e0aa5b6b05bfe8b17a1b1efebb1fbddbb0eb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73968510"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79152669"
 ---
-# <a name="issuertokenresolver"></a>\<issuerTokenResolver >
-Inscrit le programme de résolution de jetons d’émetteur utilisé par les gestionnaires dans la collection de gestionnaires de jetons. Le programme de résolution de jetons d’émetteur est utilisé pour résoudre le jeton de signature sur les jetons et les messages entrants.  
+# <a name="issuertokenresolver"></a>\<émetteurTokenResolver>
+Enregistre le résa résolveur de jetons de l’émetteur qui est utilisé par les gestionnaires dans la collection de gestionnaires de jetons. Le résolveur de jetons de l’émetteur est utilisé pour résoudre le jeton de signature sur les jetons entrants et les messages.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration**](identityconfiguration.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**securityTokenHandlers**](securitytokenhandlers.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<securityTokenHandlerConfiguration**](securitytokenhandlerconfiguration.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**issuerTokenResolver >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identitéConfiguration>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<sécuritéTokenHandlers>**](securitytokenhandlers.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<sécuritéTokenHandlerConfiguration>**](securitytokenhandlerconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<émetteurTokenResolver>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,27 +42,27 @@ Inscrit le programme de résolution de jetons d’émetteur utilisé par les ges
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|type|Spécifie le type de programme de résolution de jetons d’émetteur. Il doit s’agir de la classe <xref:System.IdentityModel.Tokens.IssuerTokenResolver> ou d’un type qui dérive de la classe <xref:System.IdentityModel.Tokens.IssuerTokenResolver>. Requis.|  
+|type|Spécifie le type de résouteur de jetons de l’émetteur. Doit être <xref:System.IdentityModel.Tokens.IssuerTokenResolver> soit la classe ou un <xref:System.IdentityModel.Tokens.IssuerTokenResolver> type qui dérive de la classe. Obligatoire.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- aucune.  
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<securityTokenHandlerConfiguration >](securitytokenhandlerconfiguration.md)|Fournit la configuration pour une collection de gestionnaires de jetons de sécurité.|  
+|[\<sécuritéTokenHandlerConfiguration>](securitytokenhandlerconfiguration.md)|Fournit la configuration pour une collection de gestionnaires de jetons de sécurité.|  
   
-## <a name="remarks"></a>Notes  
- Le programme de résolution de jetons d’émetteur est utilisé pour résoudre le jeton de signature sur les jetons et les messages entrants. Il est utilisé pour récupérer le matériel de chiffrement utilisé pour vérifier la signature. Vous devez spécifier l’attribut `type`. Le type spécifié peut être <xref:System.IdentityModel.Tokens.IssuerTokenResolver> ou un type personnalisé qui dérive de la classe <xref:System.IdentityModel.Tokens.IssuerTokenResolver>.  
+## <a name="remarks"></a>Notes   
+ Le résolveur de jetons de l’émetteur est utilisé pour résoudre le jeton de signature sur les jetons entrants et les messages. Il est utilisé pour récupérer le matériel cryptographique qui est utilisé pour vérifier la signature. Vous devez `type` spécifier l’attribut. Le type spécifié <xref:System.IdentityModel.Tokens.IssuerTokenResolver> peut être soit ou un <xref:System.IdentityModel.Tokens.IssuerTokenResolver> type personnalisé qui dérive de la classe.  
   
- Certains gestionnaires de jetons vous permettent de spécifier les paramètres du programme de résolution de jetons d’émetteur dans la configuration. Les paramètres sur des gestionnaires de jetons individuels remplacent ceux spécifiés dans la collection de gestionnaires de jetons de sécurité.  
+ Certains gestionnaires de jetons vous permettent de spécifier les paramètres de résolution de jetons de l’émetteur dans la configuration. Les paramètres des manutentionnaires individuels remplacent ceux spécifiés sur la collection de gestionnaires de jetons de sécurité.  
   
 > [!NOTE]
-> La spécification de l’élément `<issuerTokenResolver>` en tant qu’élément enfant de l’élément [\<identityConfiguration >](identityconfiguration.md) est dépréciée, mais est toujours prise en charge pour la compatibilité descendante. Les paramètres de l’élément `<securityTokenHandlerConfiguration>` substituent ceux qui se trouvent sur l’élément `<identityConfiguration>`.  
+> Spécifier l’élément `<issuerTokenResolver>` comme élément enfant de [ \<l’identitéConfiguration>](identityconfiguration.md) élément a été déprécié, mais est toujours pris en charge pour la compatibilité vers l’arrière. Les paramètres `<securityTokenHandlerConfiguration>` de l’élément `<identityConfiguration>` l’emportent sur ceux de l’élément.  
   
-## <a name="example"></a>Exemple  
- Le code XML suivant montre la configuration d’un programme de résolution de jetons d’émetteur basé sur une classe personnalisée qui dérive de <xref:System.IdentityModel.Tokens.IssuerTokenResolver>. Le programme de résolution de jetons gère un dictionnaire de paires de clés d’audience qui est initialisé à partir d’un élément de configuration personnalisé (`<AddAudienceKeyPair>`) défini pour la classe. La classe substitue la méthode <xref:System.IdentityModel.Selectors.SecurityTokenResolver.LoadCustomConfiguration%2A> pour traiter cet élément. Le remplacement est illustré dans l’exemple suivant : Toutefois, les méthodes qu’il appelle ne sont pas affichées par souci de concision. Pour obtenir un exemple complet, consultez l’exemple `CustomToken`.  
+## <a name="example"></a> Exemple  
+ Le XML suivant affiche la configuration d’un résolveur de jetons <xref:System.IdentityModel.Tokens.IssuerTokenResolver>d’émetteur qui est basé sur une classe personnalisée qui dérive de . Le résolveur de jetons maintient un dictionnaire de paires d’audience-clé qui est parascé à partir d’un élément de configuration personnalisé (`<AddAudienceKeyPair>`) défini pour la classe. La classe l’emporte sur la <xref:System.IdentityModel.Selectors.SecurityTokenResolver.LoadCustomConfiguration%2A> méthode pour traiter cet élément. La dérogation est illustrée dans l’exemple suivant; cependant, les méthodes qu’il appelle ne sont pas indiquées pour la brièveté. Pour l’exemple complet, voir l’échantillon. `CustomToken`  
   
 ```xml  
 <issuerTokenResolver type="SimpleWebToken.CustomIssuerTokenResolver, SimpleWebToken">  
@@ -70,7 +70,7 @@ Inscrit le programme de résolution de jetons d’émetteur utilisé par les ges
 </issuerTokenResolver>  
 ```  
   
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
   
 ```csharp
 public override void LoadCustomConfiguration(System.Xml.XmlNodeList nodelist)  
@@ -86,7 +86,7 @@ public override void LoadCustomConfiguration(System.Xml.XmlNodeList nodelist)
         this.AddAudienceKeyPair(audience, symmetricKey);  
     }  
 }  
-``` 
+```
   
 ## <a name="see-also"></a>Voir aussi
 

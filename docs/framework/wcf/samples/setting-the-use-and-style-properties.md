@@ -1,13 +1,13 @@
 ---
-title: Définition des exemples de propriétés use et style
+title: Définir les échantillons des propriétés d’utilisation et de style
 ms.date: 03/30/2017
 ms.assetid: c09a0600-116f-41cf-900a-1b7e4ea4e300
-ms.openlocfilehash: 36111aa05680fb8b369cde6b42d22c9c3b8474ad
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: f400c0bc08588afa951ae33f221663b47b37602c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345130"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79144030"
 ---
 # <a name="setting-the-use-and-style-properties"></a>Setting the Use and Style Properties
 
@@ -53,13 +53,13 @@ Encoded signifie que les schémas en WSDL sont des spécifications abstraites en
 
 Le profil WS-I Basic Profile 1.0 ne permet pas d'utiliser <xref:System.ServiceModel.OperationFormatUse.Encoded>. Vous devez uniquement utiliser ce profil lorsque requis par les services hérités. Le format de message `Encoded` est disponible uniquement lorsque le sérialiseur XmlSerializer est utilisé.
 
-Pour vous permettre de voir les messages envoyés et reçus, cet exemple est basé sur le [suivi et la journalisation des messages](tracing-and-message-logging.md). La configuration du service et le code source ont été modifiés pour activer le suivi et l'enregistrement des messages et permettre leur utilisation. En outre, la liaison <xref:System.ServiceModel.WSHttpBinding> a été configurée sans mode de sécurité. Les messages enregistrés peuvent donc être affichés dans un format non chiffré. Les journaux de suivi résultants (System. ServiceModel. E2E et message. log) doivent être affichés à l’aide de l' [outil Service Trace Viewer (SvcTraceViewer. exe)](../service-trace-viewer-tool-svctraceviewer-exe.md). Les suivis sont configurés de sorte à être créés dans le dossier C:\LOGS. Créez ce dossier avant d’exécuter l’exemple. Pour afficher le contenu d’un message dans l’outil Trace Viewer, sélectionnez **messages** dans les volets de gauche et de droite de l’outil.
+Pour vous permettre de voir les messages envoyés et reçus, cet échantillon est basé sur le [traçage et l’enregistrement des messages](tracing-and-message-logging.md). La configuration du service et le code source ont été modifiés pour activer le suivi et l'enregistrement des messages et permettre leur utilisation. En outre, la liaison <xref:System.ServiceModel.WSHttpBinding> a été configurée sans mode de sécurité. Les messages enregistrés peuvent donc être affichés dans un format non chiffré. Les journaux de traces qui en résultent (System.ServiceModel.e2e et Message.log) doivent être consultés à l’aide de [l’outil de visionneuse de traces de service (SvcTraceViewer.exe).](../service-trace-viewer-tool-svctraceviewer-exe.md) Les suivis sont configurés de sorte à être créés dans le dossier C:\LOGS. Créez ce dossier avant d’exécuter l’exemple. Pour afficher le contenu du message dans l’outil Trace Viewer, sélectionnez **les messages** dans les vitres gauche et droite de l’outil.
 
 Dans le contrat de service défini par le code suivant, la propriété <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> a la valeur <xref:System.ServiceModel.OperationFormatUse> et le format du corps du message au lieu d'avoir la valeur par défaut <xref:System.ServiceModel.OperationFormatStyle> a la valeur <xref:System.ServiceModel.OperationFormatStyle.Document>.
 
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples"),
-XmlSerializerFormat(Style = OperationFormatStyle.Rpc, 
+XmlSerializerFormat(Style = OperationFormatStyle.Rpc,
                                  Use = OperationFormatUse.Encoded)]
 public interface IUseAndStyleCalculator
 {
@@ -74,23 +74,23 @@ public interface IUseAndStyleCalculator
 }
 ```
 
-Pour se rendre compte des différences existant entre les paramètres <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> et <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A>, modifiez-les au niveau du service, régénérez le client, exécutez l'exemple, puis examinez le fichier c:\logs\message.logs à l'aide de l'outil Service Trace Viewer. Observez également l’impact sur les métadonnées en affichant `http://localhost/ServiceModelSamples/service.svc?wsdl`. En principe, les métadonnées des services sont réparties sur plusieurs pages. La page WSDL principale contient les liaisons WSDL, mais les `http://localhost/ServiceModelSamples/service.svc?wsdl=wsdl0` d’affichage pour observer les définitions des messages.
+Pour se rendre compte des différences existant entre les paramètres <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> et <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A>, modifiez-les au niveau du service, régénérez le client, exécutez l'exemple, puis examinez le fichier c:\logs\message.logs à l'aide de l'outil Service Trace Viewer. Observez également l’impact sur `http://localhost/ServiceModelSamples/service.svc?wsdl`les métadonnées en regardant . En principe, les métadonnées des services sont réparties sur plusieurs pages. La page wsdl principale contient les liaisons `http://localhost/ServiceModelSamples/service.svc?wsdl=wsdl0` WSDL, mais vue pour observer les définitions du message.
 
 ## <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
 
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les échantillons de la Fondation De communication Windows.](one-time-setup-procedure-for-the-wcf-samples.md)
 
 2. Créez un répertoire C:\LOGS pour l'enregistrement des messages. Accordez à l'utilisateur des droits d'accès en écriture au service réseau pour ce répertoire.
 
 3. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).
 
-4. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md).
+4. Pour exécuter l’échantillon dans une configuration mono-ou cross-machine, suivez les instructions dans [Running the Windows Communication Foundation Samples](running-the-samples.md).
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
-> 
+> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\UseAndStyle`

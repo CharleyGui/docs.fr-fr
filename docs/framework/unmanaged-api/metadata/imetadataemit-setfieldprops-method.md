@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 47132dda-fa92-4bd1-ae4b-24cd9a60665a
 topic_type:
 - apiref
-ms.openlocfilehash: efc627619d9abf9cfa6010e1c0ca709989b9cad3
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b921118f7c43edef3c07cbb34cbbd9119d36ce51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445464"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177555"
 ---
 # <a name="imetadataemitsetfieldprops-method"></a>IMetaDataEmit::SetFieldProps, méthode
 Définit ou met à jour la valeur par défaut pour le champ référencé par le jeton de champ spécifié.  
@@ -29,38 +29,38 @@ Définit ou met à jour la valeur par défaut pour le champ référencé par le 
   
 ```cpp  
 HRESULT SetFieldProps (  
-    [in]  mdFieldDef  fd,   
-    [in]  DWORD       dwFieldFlags,   
-    [in]  DWORD       dwCPlusTypeFlag,   
-    [in]  void const  *pValue,   
-    [in]  ULONG       cchValue   
+    [in]  mdFieldDef  fd,
+    [in]  DWORD       dwFieldFlags,
+    [in]  DWORD       dwCPlusTypeFlag,
+    [in]  void const  *pValue,
+    [in]  ULONG       cchValue
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `fd`  
- dans Jeton pour le champ cible.  
+ [dans] Le jeton pour le champ cible.  
   
  `dwFieldFlags`  
- dans Attributs du champ. Il s’agit d’un masque de ré`CorFieldAttr` valeurs.  
+ [dans] Attributs de champ. C’est un peu `CorFieldAttr` de valeur.  
   
  `dwCPlusTypeFlag`  
- dans `ELEMENT_TYPE_` *\** pour la valeur de constante. Il s’agit d’une valeur `CorElementType`. Si une constante n’est pas définie, définissez cette valeur sur `ELEMENT_TYPE_END`.  
+ [dans] Le `ELEMENT_TYPE_` *\** pour la valeur constante. C’est `CorElementType` une valeur. Si une constante n’est pas `ELEMENT_TYPE_END`définie, définissez cette valeur à .  
   
  `pValue`  
- dans Valeur de constante pour le champ.  
+ [dans] La valeur constante pour le domaine.  
   
  `cchValue`  
- dans Taille, en caractères Unicode, de `pValue`.  
+ [dans] La taille, dans les `pValue`caractères Unicode, de .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

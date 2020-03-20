@@ -9,12 +9,12 @@ helpviewer_keywords:
 - CER calls
 - managed debugging assistants (MDAs), CER calls
 ms.assetid: 1eb18c7a-f5e0-443f-80fb-67bfbb047da2
-ms.openlocfilehash: 49ba4e7ca0b8ed2e433053130bc9ca2742c72ec9
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: a2112baed863b1035cbee4e956c1b6e271ff6e3c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217196"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181710"
 ---
 # <a name="virtualcercall-mda"></a>virtualCERCall (MDA)
 L’Assistant Débogage managé `virtualCERCall` est activé comme un avertissement indiquant qu’un site d’appel dans un graphique des appels d’une région d’exécution limitée fait référence à une cible virtuelle, c’est-à-dire un appel virtuel à une méthode virtuelle non finale ou un appel à l’aide d’une interface. Le CLR (Common Language Runtime) ne peut pas prédire la méthode de destination de ces appels uniquement à partir du langage intermédiaire et de l’analyse des métadonnées. En conséquence, l’arborescence des appels ne peut pas être préparée dans le cadre du graphique d’une région d’exécution limitée et les interruptions de threads dans cette sous-arborescence ne peuvent pas être automatiquement bloquées. Cet Assistant Débogage managé vous avertit des cas où il peut s’avérer nécessaire d’étendre une région d’exécution limitée en utilisant des appels explicites à la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> dès que les informations supplémentaires requises pour calculer la cible de l’appel sont connues au moment de l’exécution.  
@@ -54,7 +54,7 @@ declaringType name="VirtualCERCall+MyClass"
 </mdaConfig>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ```csharp
 class MyClass  
@@ -87,7 +87,7 @@ void MethodWithCer(MyClass object)
         // Start of the CER.  
   
         // Cannot tell at analysis time whether object is a MyClass  
-        // or a MyDerivedClass, so we do not know which version of   
+        // or a MyDerivedClass, so we do not know which version of
         // VirtualMethod we are going to call.  
         object.VirtualMethod();  
     }  
@@ -98,4 +98,4 @@ void MethodWithCer(MyClass object)
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)
+- [Marshaling d’interopérabilité](../interop/interop-marshaling.md)

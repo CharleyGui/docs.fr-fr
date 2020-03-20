@@ -2,12 +2,12 @@
 title: Sessions and Queues
 ms.date: 03/30/2017
 ms.assetid: 47d7c5c2-1e6f-4619-8003-a0ff67dcfbd6
-ms.openlocfilehash: 719212d908b9d5b5207dd5b4e7701ef903de31a0
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 8a342b185c7965e9ee0ff9941a09e00fc392ad4b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715066"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79144097"
 ---
 # <a name="sessions-and-queues"></a>Sessions and Queues
 Cet exemple montre comment envoyer et recevoir un ensemble de messages connexes dans une communication en file d'attente sur le transport (Message Queuing ou MSMQ). Cet exemple utilise la liaison `netMsmqBinding`. Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.  
@@ -17,11 +17,11 @@ Cet exemple montre comment envoyer et recevoir un ensemble de messages connexes 
   
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
->   
+>
+> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Session`  
   
  Dans le cadre d'une communication en file d'attente, le client communique avec le service à l'aide d'une file d'attente. Cela signifie que le client envoie ses messages à cette file d'attente. Le service reçoit des messages de la file d'attente. Par conséquent, dans le cadre d'une communication en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.  
@@ -55,7 +55,7 @@ public class OrderTakerService : IOrderTaker
 {  
     PurchaseOrder po;  
   
-    [OperationBehavior(TransactionScopeRequired = true,   
+    [OperationBehavior(TransactionScopeRequired = true,
                                  TransactionAutoComplete = false)]  
     public void OpenPurchaseOrder(string customerId)  
     {  
@@ -63,16 +63,16 @@ public class OrderTakerService : IOrderTaker
         po = new PurchaseOrder(customerId);  
     }  
   
-    [OperationBehavior(TransactionScopeRequired = true,   
+    [OperationBehavior(TransactionScopeRequired = true,
                                   TransactionAutoComplete = false)]  
     public void AddProductLineItem(string productId, int quantity)  
     {  
         po.AddProductLineItem(productId, quantity);  
-        Console.WriteLine("Product " + productId + " quantity " +   
+        Console.WriteLine("Product " + productId + " quantity " +
                             quantity + " added to purchase order");  
     }  
   
-    [OperationBehavior(TransactionScopeRequired = true,   
+    [OperationBehavior(TransactionScopeRequired = true,
                                   TransactionAutoComplete = true)]  
     public void EndPurchaseOrder()  
     {  
@@ -109,7 +109,7 @@ public static void Main()
         Console.ReadLine();  
   
         // Close the ServiceHost to shutdown the service.  
-        serviceHost.Close();   
+        serviceHost.Close();
     }  
 }  
 ```
@@ -162,7 +162,7 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Requ
     client.EndPurchaseOrder();  
   
     //Closing the client gracefully closes the connection and cleans up resources.  
-    client.Close();                  
+    client.Close();
   
     // Complete the transaction.  
     scope.Complete();  
@@ -207,13 +207,13 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les échantillons de la Fondation De communication Windows.](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)  
   
-2. Pour générer C#, C++ou Visual Basic Édition .net de la solution, suivez les instructions de la création des exemples de [Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pour construire l’édition C, C OU Visual Basic .NET de la solution, suivez les instructions dans [La construction des échantillons de la Fondation De communication Windows](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Pour exécuter l’échantillon dans une configuration mono-ou cross-machine, suivez les instructions dans [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
- Avec <xref:System.ServiceModel.NetMsmqBinding>, la sécurité du transport est activée par défaut. Il existe deux propriétés pertinentes pour la sécurité de transport MSMQ, à savoir <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> et <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` par défaut, le mode d’authentification est défini sur `Windows` et le niveau de protection est défini sur `Sign`. Pour que MSMQ fournisse la fonctionnalité d’authentification et de signature, il doit faire partie d’un domaine et l’option d’intégration d’Active Directory doit être installée pour MSMQ. Si vous exécutez cet exemple sur un ordinateur qui ne satisfait pas ces critères vous recevez une erreur.  
+ Avec <xref:System.ServiceModel.NetMsmqBinding>, la sécurité du transport est activée par défaut. Il existe deux propriétés pertinentes pour <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> la <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` sécurité des transports MSMQ `Windows` à savoir, et `Sign`par défaut, le mode d’authentification est réglé et le niveau de protection est fixé à . Pour que MSMQ fournisse la fonctionnalité d’authentification et de signature, il doit faire partie d’un domaine et l’option d’intégration d’Active Directory doit être installée pour MSMQ. Si vous exécutez cet exemple sur un ordinateur qui ne satisfait pas ces critères vous recevez une erreur.  
   
 ### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a>Pour exécuter l'exemple sur un ordinateur joint à un groupe de travail ou sans intégration Active Directory  
   
@@ -237,7 +237,7 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
               binding="netMsmqBinding"  
               bindingConfiguration="Binding1"  
            contract="Microsoft.ServiceModel.Samples.IOrderTaker" />  
-          <!-- The mex endpoint is exposed at-->      
+          <!-- The mex endpoint is exposed at-->
           <!--http://localhost:8000/ServiceModelSamples/service/mex. -->  
           <endpoint address="mex"  
                     binding="mexHttpBinding"  

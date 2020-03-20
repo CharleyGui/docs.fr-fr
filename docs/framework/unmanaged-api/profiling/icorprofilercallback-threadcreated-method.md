@@ -15,38 +15,38 @@ helpviewer_keywords:
 ms.assetid: cca0f799-09b8-4689-a33c-6d6537943a9b
 topic_type:
 - apiref
-ms.openlocfilehash: 6514606290bf006443d7011c1a428bebb4cca0f6
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 7fb58c0eb2446253bd658434fc9d68bb857fe0e6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865827"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175120"
 ---
 # <a name="icorprofilercallbackthreadcreated-method"></a>ICorProfilerCallback::ThreadCreated, méthode
-Notifie le profileur qu’un thread a été créé.  
+Informe le profileur qu’un fil a été créé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT ThreadCreated(  
-    [in] ThreadID threadId);   
+    [in] ThreadID threadId);
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `threadId`  
- dans ID du thread qui a été créé.  
+ [dans] L’ID du fil qui a été créé.  
   
-## <a name="remarks"></a>Notes  
- La valeur `threadId` est immédiatement valide.  
+## <a name="remarks"></a>Notes   
+ La `threadId` valeur est immédiatement valide.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,23 +2,23 @@
 title: Suivi personnalisé
 ms.date: 03/30/2017
 ms.assetid: 2d191c9f-62f4-4c63-92dd-cda917fcf254
-ms.openlocfilehash: 9a2ad2004c47ce76dcc35baf4ca28aa174409581
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 2b100b877bbc8c6d830f09a4a59decffde511511
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094655"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182842"
 ---
 # <a name="custom-tracking"></a>Suivi personnalisé
 Cet exemple montre comment créer un participant de suivi personnalisé et écrire le contenu des données de suivi sur la console. De plus, il montre comment émettre des objets <xref:System.Activities.Tracking.CustomTrackingRecord> remplis avec des données définies par l'utilisateur. Le participant de suivi basé sur la console filtre les objets <xref:System.Activities.Tracking.TrackingRecord> émis par le workflow à l'aide d'un objet de modèle de suivi créé dans le code.
 
 ## <a name="sample-details"></a>Détails de l'exemple
- Windows Workflow Foundation (WF) fournit une infrastructure de suivi pour suivre l’exécution d’une instance de Workflow. Le runtime de suivi implémente une instance de workflow pour émettre des événements liés au cycle de vie du workflow, des événements des activités de workflow et des événements de suivi personnalisé. Le tableau suivant détaille les composants principaux de l'infrastructure de suivi.
+ Windows Workflow Foundation (WF) fournit une infrastructure de suivi pour suivre l’exécution d’une instance de flux de travail. Le runtime de suivi implémente une instance de workflow pour émettre des événements liés au cycle de vie du workflow, des événements des activités de workflow et des événements de suivi personnalisé. Le tableau suivant détaille les composants principaux de l'infrastructure de suivi.
 
 |Composant|Description|
 |---------------|-----------------|
 |Runtime de suivi|Fournit l'infrastructure permettant d'émettre des enregistrements de suivi.|
-|Participants de suivi|Consomme les enregistrements de suivi. .NET Framework 4 est fourni avec un participant de suivi qui écrit des enregistrements de suivi en tant qu’événements de Suivi d’v nements pour Windows (ETW).|
+|Participants de suivi|Consomme les enregistrements de suivi. .NET Framework 4 navires avec un participant de suivi qui écrit des enregistrements de suivi comme Event Tracing pour Windows (ETW) événements.|
 |Modèle de suivi|Mécanisme de filtrage qui permet à un participant de suivi de s'abonner à un sous-ensemble des enregistrements de suivi émis à partir d'une instance de workflow.|
 
  Le tableau suivant détaille les enregistrements de suivi que l'exécution de workflow émet.
@@ -47,7 +47,7 @@ public abstract class TrackingParticipant
 }
 ```
 
- Le participant de suivi complet est implémenté dans le fichier ConsoleTrackingParticipant.cs. L’exemple de code suivant est la méthode <xref:System.Activities.Tracking.TrackingParticipant.Track%2A> pour le participant de suivi personnalisé.
+ Le participant au suivi complet est mis en œuvre dans le fichier ConsoleTrackingParticipant.cs. L’exemple de <xref:System.Activities.Tracking.TrackingParticipant.Track%2A> code suivant est la méthode pour le participant de suivi personnalisé.
 
 ```csharp
 protected override void Track(TrackingRecord record, TimeSpan timeout)
@@ -112,7 +112,7 @@ invoker.Extensions.Add(customTrackingParticipant);
 
 - Les objets <xref:System.Activities.Tracking.CustomTrackingRecord> sont créés et remplis avec les données définies par l'utilisateur qui doivent être émises avec l'enregistrement.
 
-- Le <xref:System.Activities.Tracking.CustomTrackingRecord> est émis en appelant la méthode Track du <xref:System.Activities.ActivityContext>.
+- Le <xref:System.Activities.Tracking.CustomTrackingRecord> est émis en appelant la <xref:System.Activities.ActivityContext>méthode de piste de la .
 
  L'exemple suivant montre comment émettre des objets <xref:System.Activities.Tracking.CustomTrackingRecord> dans une activité personnalisée.
 
@@ -133,7 +133,7 @@ context.Track(customRecord);
 
 #### <a name="to-use-this-sample"></a>Pour utiliser cet exemple
 
-1. À l’aide de Visual Studio 2010, ouvrez le fichier solution CustomTrackingSample. sln.
+1. À l’aide de Visual Studio 2010, ouvrez le fichier de solution CustomTrackingSample.sln.
 
 2. Pour générer la solution, appuyez sur Ctrl+Maj+B.
 
@@ -141,13 +141,13 @@ context.Track(customRecord);
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
->   
+>
+> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\CustomTracking`  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de surveillance AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Exemples d'analyse AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

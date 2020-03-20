@@ -15,60 +15,60 @@ helpviewer_keywords:
 ms.assetid: c5e6216f-ae3d-4697-9688-66b69c1251ec
 topic_type:
 - apiref
-ms.openlocfilehash: beb697d80417b937876a0887e4376341185a47d9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: dae4a36537eeac58ffb17ebc1b78d935ec807cd8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447211"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175978"
 ---
 # <a name="imetadataassemblyimportgetfileprops-method"></a>IMetaDataAssemblyImport::GetFileProps, méthode
-Obtient les propriétés du fichier avec la signature de métadonnées spécifiée.  
+Obtient les propriétés du fichier avec la signature spécifiée de métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetFileProps (  
-    [in]  mdFile      mdf,   
-    [out] LPWSTR      szName,   
-    [in]  ULONG       cchName,   
-    [out] ULONG       *pchName,   
-    [out] const void  **ppbHashValue,   
-    [out] ULONG       *pcbHashValue,   
+    [in]  mdFile      mdf,
+    [out] LPWSTR      szName,
+    [in]  ULONG       cchName,
+    [out] ULONG       *pchName,
+    [out] const void  **ppbHashValue,
+    [out] ULONG       *pcbHashValue,
     [out] DWORD       *pdwFileFlags  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `mdf`  
- dans `mdFile` jeton de métadonnées qui représente le fichier pour lequel obtenir les propriétés.  
+ [dans] Le `mdFile` jeton de métadonnées qui représente le fichier pour lequel obtenir les propriétés.  
   
  `szName`  
- à Nom simple du fichier.  
+ [out] Le nom simple du fichier.  
   
  `cchName`  
- dans Taille, en caractères larges, de `szName`.  
+ [dans] La taille, en chars `szName`larges, de .  
   
  `pchName`  
- à Nombre de caractères larges réellement retournés dans `szName`.  
+ [out] Le nombre de chars `szName`larges effectivement retourné dans .  
   
  `ppbHashValue`  
- à Pointeur vers la valeur de hachage. Il s’agit du hachage, à l’aide de l’algorithme SHA-1, du fichier.  
+ [out] Un pointeur à la valeur de hachage. C’est le hachage, en utilisant l’algorithme SHA-1, du fichier.  
   
  `pcbHashValue`  
- à Nombre de caractères larges dans la valeur de hachage retournée.  
+ [out] Le nombre de chars larges dans la valeur de hachage retourné.  
   
  `pdwFileFlags`  
- à Pointeur vers les indicateurs qui décrivent les métadonnées appliquées à un fichier. La valeur flags est une combinaison d’une ou plusieurs valeurs [CorFileFlags,](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md) .  
+ [out] Un pointeur pour les drapeaux qui décrivent les métadonnées appliquées à un fichier. La valeur des drapeaux est une combinaison d’une ou plusieurs valeurs [CorFileFlags.](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md)  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateforme :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateforme:** Voir [Les exigences du système](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

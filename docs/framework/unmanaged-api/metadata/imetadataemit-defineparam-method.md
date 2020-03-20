@@ -15,67 +15,67 @@ helpviewer_keywords:
 ms.assetid: d86a3d14-4796-4909-9591-dfafe3de5ce4
 topic_type:
 - apiref
-ms.openlocfilehash: 5c81bc82e19bce658336e4860a61f2721e17423d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2807458549db02598ba05f2aa80fa6ea6fbc5a13
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431686"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177694"
 ---
 # <a name="imetadataemitdefineparam-method"></a>IMetaDataEmit::DefineParam, méthode
-Crée une définition de paramètre avec la signature spécifiée pour la méthode référencée par le jeton spécifié et obtient un jeton pour cette définition de paramètre.  
+Crée une définition de paramètre avec la signature spécifiée pour la méthode référencée par le jeton spécifié, et obtient un jeton pour cette définition de paramètre.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT DefineParam (  
-    [in]  mdMethodDef md,   
-    [in]  ULONG       ulParamSeq,   
-    [in]  LPCWSTR     szName,   
-    [in]  DWORD       dwParamFlags,   
-    [in]  DWORD       dwCPlusTypeFlag,   
+    [in]  mdMethodDef md,
+    [in]  ULONG       ulParamSeq,
+    [in]  LPCWSTR     szName,
+    [in]  DWORD       dwParamFlags,
+    [in]  DWORD       dwCPlusTypeFlag,
     [in]  void const  *pValue,  
-    [in]  ULONG       cchValue,   
-    [out] mdParamDef  *ppd   
+    [in]  ULONG       cchValue,
+    [out] mdParamDef  *ppd
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `md`  
- dans Jeton pour la méthode dont le paramètre est défini.  
+ [dans] Le jeton de la méthode dont le paramètre est défini.  
   
  `ulParamSeq`  
- dans Numéro de séquence du paramètre.  
+ [dans] Le numéro de séquence de paramètres.  
   
  `szName`  
- dans Nom du paramètre en Unicode.  
+ [dans] Le nom du paramètre dans Unicode.  
   
  `dwParamFlags`  
- dans Indicateurs pour le paramètre. Il s’agit d’un masque de ré`CorParamAttr` valeurs.  
+ [dans] Drapeaux pour le paramètre. C’est un peu `CorParamAttr` de valeur.  
   
  `dwCPlusTypeFlag`  
- [in] `ELEMENT_TYPE_` *\** pour la valeur constante.  
+ [dans] `ELEMENT_TYPE_` pour la valeur *\** constante.  
   
  `pValue`  
- dans Valeur de constante pour le paramètre.  
+ [dans] La valeur constante du paramètre.  
   
  `cchValue`  
- dans Taille, en caractères Unicode, de `pValue`.  
+ [dans] La taille, dans les `pValue`caractères Unicode, de .  
   
  `ppd`  
- à Jeton `mdParamDef` assigné.  
+ [out] Le `mdParamDef` jeton assigné.  
   
-## <a name="remarks"></a>Notes  
- Les valeurs de séquence dans `ulParamSeq` commencent par 1 pour les paramètres. Une valeur de retour a un numéro de séquence égal à 0.  
+## <a name="remarks"></a>Notes   
+ Les valeurs `ulParamSeq` de séquence commencent par 1 pour les paramètres. Une valeur de retour a un nombre de séquences de 0.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

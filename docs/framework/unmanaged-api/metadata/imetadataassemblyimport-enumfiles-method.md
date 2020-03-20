@@ -15,55 +15,55 @@ helpviewer_keywords:
 ms.assetid: f0d721e2-b946-426d-8e20-9124bd04e4cb
 topic_type:
 - apiref
-ms.openlocfilehash: e4549789ea1af584c0850a535d9f6bb54f844ce0
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 70f76318f51047cb81262f744a6fbed5fe401692
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443544"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177814"
 ---
 # <a name="imetadataassemblyimportenumfiles-method"></a>IMetaDataAssemblyImport::EnumFiles, méthode
-Énumère les fichiers référencés dans le manifeste de l’assembly actuel.  
+Énumère les fichiers mentionnés dans le manifeste actuel de l’assemblage.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EnumFiles (  
-    [in, out] HCORENUM    *phEnum,   
-    [out] mdFile          rFiles[],   
-    [in]  ULONG           cMax,   
+    [in, out] HCORENUM    *phEnum,
+    [out] mdFile          rFiles[],
+    [in]  ULONG           cMax,
     [out] ULONG           *pcTokens  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur null pour le premier appel de cette méthode.  
+ [dans, dehors] Un pointeur à l’enumérateur. Cela doit être une valeur nulle pour le premier appel de cette méthode.  
   
  `rFiles`  
- à Tableau utilisé pour stocker les jetons de métadonnées de `mdFile`.  
+ [out] Le tableau utilisé `mdFile` pour stocker les jetons de métadonnées.  
   
  `cMax`  
- dans Nombre maximal de jetons de `mdFile` qui peuvent être placés dans `rFiles`.  
+ [dans] Le nombre `mdFile` maximum de jetons qui `rFiles`peuvent être placés en .  
   
  `pcTokens`  
- à Nombre de jetons de `mdFile` placés en `rFiles`.  
+ [out] Le nombre `mdFile` de jetons `rFiles`effectivement placés en .  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFiles` retourné avec succès.|  
-|`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTokens` a la valeur zéro.|  
+|`S_OK`|`EnumFiles`retourné avec succès.|  
+|`S_FALSE`|Il n’y a pas de jetons à énumérer. Dans ce `pcTokens` cas, est réglé à zéro.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

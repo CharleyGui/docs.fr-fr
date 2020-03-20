@@ -14,20 +14,20 @@ helpviewer_keywords:
 ms.assetid: 8d3080ee-39fe-4c57-8950-51323632d045
 topic_type:
 - apiref
-ms.openlocfilehash: 79a9e4513a98a29edc11cc76c599f03c9c3a72b4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8fe6216e11a64ea182d796247d888b862b1e8377
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450111"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177925"
 ---
 # <a name="corregflags-enumeration"></a>CorRegFlags, énumération
-Fournit des valeurs d’indicateur utilisées pour l’inscription lors de l’installation d’un module ou d’une image composite.  
+Fournit les valeurs de drapeau utilisées pour l’enregistrement lors de l’installation d’un module ou d’une image composite.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-typedef enum   
+typedef enum
 {  
     regNoCopy  = 0x00000001,  
     regConfig  = 0x00000002,  
@@ -39,18 +39,18 @@ typedef enum
   
 |Membre|Description|  
 |------------|-----------------|  
-|`regNoCopy`|Spécifie que les fichiers ne doivent pas être copiés dans la destination.|  
-|`regConfig`|Spécifie que le module ou composite est une configuration.|  
+|`regNoCopy`|Précise que les fichiers ne doivent pas être copiés dans la destination.|  
+|`regConfig`|Spécifie que le module ou le composite est une configuration.|  
 |`regHasRefs`|Spécifie que le module ou le composite a des références de classe.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

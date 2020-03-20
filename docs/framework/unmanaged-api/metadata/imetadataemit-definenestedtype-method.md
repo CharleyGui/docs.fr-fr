@@ -15,56 +15,56 @@ helpviewer_keywords:
 ms.assetid: 1e994de6-4628-459c-b967-b34be1e9fe4f
 topic_type:
 - apiref
-ms.openlocfilehash: 5d985e22ba77053127610445374b8c13ca6b97f1
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3b8fd9876563bace52a6088747d1ca4ed26ea872
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431705"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175809"
 ---
 # <a name="imetadataemitdefinenestedtype-method"></a>IMetaDataEmit::DefineNestedType, méthode
-Crée la signature de métadonnées d’une définition de type, retourne un jeton `mdTypeDef` pour ce type et spécifie que le type défini est un membre du type référencé par le paramètre `tdEncloser`.  
+Crée la signature des métadonnées `mdTypeDef` d’une définition de type, renvoie un jeton pour ce type, et spécifie que le type défini est un membre du type référencé par le `tdEncloser` paramètre.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineNestedType (   
+HRESULT DefineNestedType (
     [in]  LPCWSTR     szTypeDef,  
-    [in]  DWORD       dwTypeDefFlags,   
-    [in]  mdToken     tkExtends,   
-    [in]  mdToken     rtkImplements[],   
-    [in]  mdTypeDef   tdEncloser,   
+    [in]  DWORD       dwTypeDefFlags,
+    [in]  mdToken     tkExtends,
+    [in]  mdToken     rtkImplements[],
+    [in]  mdTypeDef   tdEncloser,
     [out] mdTypeDef   *ptd  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `szTypeDef`  
- dans Nom du type en Unicode.  
+ [dans] Le nom du type dans Unicode.  
   
  `dwTypeDefFlags`  
- [in] attributs `TypeDef`. Il s’agit d’un masque de ré`CorTypeAttr` valeurs.  
+ [dans] `TypeDef` attributs. C’est un peu `CorTypeAttr` de valeur.  
   
  `tkExtends`  
- dans Jeton de la classe de base. Il s’agit soit d’un `mdTypeDef`, soit d’un jeton `mdTypeRef`.  
+ [dans] Le jeton de la classe de base. C’est `mdTypeDef` soit `mdTypeRef` un ou un jeton.  
   
  `rtkImplements`[]  
- dans Tableau de jetons qui spécifient les interfaces implémentées par cette classe ou cette interface.  
+ [dans] Une gamme de jetons qui spécifient les interfaces que cette classe ou interface implémente.  
   
  `tdEncloser`  
- dans Jeton du type englobant. Le dernier élément du tableau doit être `mdTokenNil`.  
+ [dans] Le jeton du type d’enclos. Le dernier élément du `mdTokenNil`tableau doit être .  
   
  `ptd`  
- à Jeton `mdTypeDef` assigné.  
+ [out] Le `mdTypeDef` jeton assigné.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

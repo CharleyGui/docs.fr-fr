@@ -15,47 +15,47 @@ helpviewer_keywords:
 ms.assetid: 76d4f93a-5e25-4399-abcc-a1389549481d
 topic_type:
 - apiref
-ms.openlocfilehash: 049324baec02fbb03c2db80391ade8a24920a15c
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: e789996af3aedd17251fc52cde52a336f65053ec
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901091"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176342"
 ---
 # <a name="iclrstrongnamestrongnamesignaturesize-method"></a>Méthode ICLRStrongName::StrongNameSignatureSize
-Retourne la taille de la signature de nom fort. Cette méthode est généralement utilisée par les compilateurs pour déterminer la quantité d’espace à réserver dans le fichier lors de la création d’un assembly à signature différée.  
+Retourne la taille de la signature de nom fort. Cette méthode est généralement utilisée par les compilateurs pour déterminer combien d’espace réserver dans le fichier lors de la création d’un assemblage signé retard.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT StrongNameSignatureSize (   
+HRESULT StrongNameSignatureSize (
     [in]  BYTE   *pbPublicKeyBlob,  
-    [in]  ULONG  cbPublicKeyBlob,   
+    [in]  ULONG  cbPublicKeyBlob,
     [in]  DWORD  *pcbSize  
-);   
+);
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `pbPublicKeyBlob`  
- dans Structure de type [publicKeyBlob](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) qui contient la partie publique de la paire de clés utilisée pour générer la signature de nom fort.  
+ [dans] Une structure de type [PublicKeyBlob](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) qui contient la partie publique de la paire de clés utilisée pour générer la signature de nom fort.  
   
  `cbPublicKeyBlob`  
- dans Taille, en octets, de `pbPublicKeyBlob`.  
+ [dans] La taille, dans les `pbPublicKeyBlob`octets, de .  
   
  `pcbSize`  
- dans Nombre d’octets requis pour stocker la signature de nom fort.  
+ [dans] Le nombre d’octets requis pour stocker la signature du nom fort.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
+ `S_OK`si la méthode est terminée avec succès; autrement, une valeur HRESULT qui indique l’échec (voir [valeurs RHESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Metahost. h  
+ **En-tête:** MetaHost.h MetaHost.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

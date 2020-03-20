@@ -5,28 +5,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6bee5da4-adf7-42e6-8f78-63a9e5c6dbad
-ms.openlocfilehash: ec5db7a305a63ac7ae9c2e2a7bb1c9c7691b8daa
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 9be571d7be020aef546fdd7ec7cb7519a48ea350
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320885"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184053"
 ---
 # <a name="how-to-specify-a-client-binding-in-code"></a>Comment : spécifier une liaison client dans le code
 Dans cet exemple, un client est créé afin d’utiliser un service de calculatrice et la liaison du client est spécifiée de manière impérative dans le code. Le client accède au service `CalculatorService`, lequel implémente l'interface `ICalculator`. Le service et le client utilisent la classe <xref:System.ServiceModel.BasicHttpBinding>.  
   
- Cette procédure part du principe que le service de calculatrice est en cours d'exécution. Pour plus d’informations sur la création du service, consultez [Comment : spécifier une liaison de service dans la configuration](how-to-specify-a-service-binding-in-configuration.md). Il utilise également l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)Windows Communication Foundation (WCF) fournit pour générer automatiquement les composants du client. Cet outil génère le code client permettant d'accéder au service.  
+ Cette procédure part du principe que le service de calculatrice est en cours d'exécution. Pour plus d’informations sur la construction du service, voir [comment : Spécifier une liaison de service en configuration](how-to-specify-a-service-binding-in-configuration.md). Il utilise également le [ServiceModel Metadata Utility Tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)Windows Communication Foundation (WCF) fournit de générer automatiquement les composants du client. Cet outil génère le code client permettant d'accéder au service.  
   
  La construction du client se divise en deux parties. L'outil Svcutil.exe génère la calculatrice `ClientCalculator` qui implémente l'interface `ICalculator`. Cette application cliente est ensuite créée en construisant une instance de `ClientCalculator`, puis en spécifiant la liaison et l'adresse du service dans le code.  
   
- Pour obtenir la copie source de cet exemple, consultez l’exemple [BasicBinding](./samples/basicbinding.md) .  
+ Pour la copie source de cet exemple, voir l’échantillon [BasicBinding.](./samples/basicbinding.md)  
   
 ### <a name="to-specify-a-custom-binding-in-code"></a>Pour spécifier une liaison personnalisée dans le code  
   
 1. Utilisez l'outil Svcutil.exe depuis la ligne de commande pour générer le code à partir des métadonnées de service.  
   
     ```console  
-    Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>   
+    Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
     ```  
   
 2. Le client généré contient l'interface `ICalculator` qui définit le contrat de service auquel l'implémentation du client doit satisfaire.  

@@ -9,12 +9,12 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: d83033b0-a4cb-4d40-835e-5c1a176cde5b
-ms.openlocfilehash: a01f77ea6fab7bab94f79bd8a059b133db9200e0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a00aa9e46d98f2de3b7e026ef143b8678c43e1a5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945738"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79152116"
 ---
 # <a name="microsoftvisualstudioactivitiesasrclientactivitybuilderbuild"></a>Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder.Build
 Crée et configure un objet <xref:System.Activities.ActivityBuilder> qui fournit des données pour une activité de workflow.  
@@ -22,11 +22,11 @@ Crée et configure un objet <xref:System.Activities.ActivityBuilder> qui fournit
 ## <a name="syntax"></a>Syntaxe  
   
 ```csharp  
-public ActivityBuilder Build();   
+public ActivityBuilder Build();
 ```  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne un objet <xref:System.Activities.ActivityBuilder>.  
+ Retourne un objet <xref:System.Activities.ActivityBuilder>  
   
 ## <a name="see-also"></a>Voir aussi
 

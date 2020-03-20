@@ -2,26 +2,26 @@
 title: Protection des informations de connexion
 ms.date: 03/30/2017
 ms.assetid: 1471f580-bcd4-4046-bdaf-d2541ecda2f4
-ms.openlocfilehash: 37aab00a967b9912ba01cc3f27f68f8a3e85fdb2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1039d3fd797a16391876b59aa018b30b7f397aeb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783058"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149217"
 ---
 # <a name="protecting-connection-information"></a>Protection des informations de connexion
-La protection de l'accès à votre source de données représente l'un de vos principaux objectifs lorsque vous sécurisez une application. Une chaîne de connexion présente une vulnérabilité potentielle si elle n'est pas sécurisée. Le stockage d'informations de connexion au format texte brut ou sa conservation dans la mémoire risque de compromettre l'ensemble de votre système. Les chaînes de connexion incorporées dans votre code source peuvent être lues à l’aide d' [Ildasm. exe (Désassembleur il)](../../tools/ildasm-exe-il-disassembler.md) pour afficher le langage MSIL (Microsoft Intermediate Language) dans un assembly compilé.  
+La protection de l'accès à votre source de données représente l'un de vos principaux objectifs lorsque vous sécurisez une application. Une chaîne de connexion présente une vulnérabilité potentielle si elle n'est pas sécurisée. Le stockage d'informations de connexion au format texte brut ou sa conservation dans la mémoire risque de compromettre l'ensemble de votre système. Les chaînes de connexion intégrées dans votre code source peuvent être lues à l’aide de [l’Ildasm.exe (il Disassembler)](../../tools/ildasm-exe-il-disassembler.md) pour afficher la langue intermédiaire Microsoft (MSIL) dans un assemblage compilé.  
   
  Des vulnérabilités de sécurité impliquant des chaînes de connexion peuvent se produire en fonction du type d'authentification utilisé, de la manière dont les chaînes de connexion sont conservées dans la mémoire et sur le disque, et des techniques utilisées pour les construire au moment de l'exécution.  
   
 ## <a name="use-windows-authentication"></a>Utiliser l'authentification Windows  
- Pour aider à limiter l'accès à votre source de données, vous devez sécuriser des informations de connexion telles que l'ID utilisateur, le mot de passe et le nom de source de données. Afin d’éviter d’exposer les informations utilisateur, nous vous recommandons d’utiliser l’authentification Windows (parfois appelée *sécurité intégrée*) dans la mesure du possible. L'authentification Windows est spécifiée dans une chaîne de connexion à l'aide des mots clés `Integrated Security` ou `Trusted_Connection`, ce qui supprime le recours à un ID utilisateur et à un mot de passe. Lors de l'utilisation de l'authentification Windows, les utilisateurs sont authentifiés par Windows et l'accès aux ressources de serveur et de base de données est déterminé en octroyant des autorisations aux utilisateurs et aux groupes Windows.  
+ Pour aider à limiter l'accès à votre source de données, vous devez sécuriser des informations de connexion telles que l'ID utilisateur, le mot de passe et le nom de source de données. Afin d’éviter d’exposer les informations utilisateur, nous vous recommandons d’utiliser l’authentification Windows (parfois appelée *sécurité intégrée)* dans la mesure du possible. L'authentification Windows est spécifiée dans une chaîne de connexion à l'aide des mots clés `Integrated Security` ou `Trusted_Connection`, ce qui supprime le recours à un ID utilisateur et à un mot de passe. Lors de l'utilisation de l'authentification Windows, les utilisateurs sont authentifiés par Windows et l'accès aux ressources de serveur et de base de données est déterminé en octroyant des autorisations aux utilisateurs et aux groupes Windows.  
   
- Dans les cas où l'utilisation de l'authentification Windows n'est pas possible, vous devez être extrêmement prudent, car les informations d'authentification utilisateur sont exposées dans la chaîne de connexion. Dans une application ASP.NET, vous pouvez configurer un compte Windows en tant qu'identité fixe utilisée pour la connexion à des bases de données et autres ressources réseau. Vous activez l’emprunt d’identité dans l’élément Identity du fichier **Web. config** et spécifiez un nom d’utilisateur et un mot de passe.  
+ Dans les cas où l'utilisation de l'authentification Windows n'est pas possible, vous devez être extrêmement prudent, car les informations d'authentification utilisateur sont exposées dans la chaîne de connexion. Dans une application ASP.NET, vous pouvez configurer un compte Windows en tant qu'identité fixe utilisée pour la connexion à des bases de données et autres ressources réseau. Vous activez l’usurpation d’identité dans l’élément d’identité du fichier **web.config** et spécifiez un nom d’utilisateur et un mot de passe.  
   
 ```xml  
-<identity impersonate="true"   
-        userName="MyDomain\UserAccount"   
+<identity impersonate="true"
+        userName="MyDomain\UserAccount"
         password="*****" />  
 ```  
   
@@ -37,11 +37,11 @@ La protection de l'accès à votre source de données représente l'un de vos pr
  La valeur par défaut pour `Persist Security Info` est False ; nous vous recommandons d'utiliser cette valeur par défaut dans toutes les chaînes de connexion. Le paramétrage de `Persist Security Info` avec la valeur `true` ou `yes` permet d'obtenir des informations sensibles pour la sécurité, dont l'ID utilisateur et le mot de passe, à partir d'une connexion une fois celle-ci ouverte. Lorsque `Persist Security Info` possède la valeur `false` ou `no`, les informations de sécurité sont ignorées après leur utilisation pour ouvrir la connexion, ce qui garantit qu'une source qui n'est pas digne de confiance ne dispose pas d'un accès à des informations sensibles sur la sécurité.  
   
 ## <a name="encrypt-configuration-files"></a>Chiffrez les fichiers de configuration  
- Vous pouvez également stocker des chaînes de connexion dans des fichiers de configuration, ce qui évite d'avoir à les incorporer dans le code de votre application. Les fichiers de configuration sont des fichiers XML standard pour lesquels le .NET Framework a défini un ensemble commun d'éléments. Les chaînes de connexion dans les fichiers de configuration sont généralement stockées à l’intérieur de l'  **\<élément connectionStrings >** dans le fichier **app. config** pour une application Windows, ou dans le fichier **Web. config** d’une application ASP.net. Pour plus d’informations sur les principes de base du stockage, de l’extraction et du chiffrement des chaînes de connexion à partir de fichiers de configuration, consultez [chaînes de connexion et fichiers de configuration](connection-strings-and-configuration-files.md).  
+ Vous pouvez également stocker des chaînes de connexion dans des fichiers de configuration, ce qui évite d'avoir à les incorporer dans le code de votre application. Les fichiers de configuration sont des fichiers XML standard pour lesquels le .NET Framework a défini un ensemble commun d'éléments. Les chaînes de connexion dans les fichiers de configuration sont généralement stockées à l’intérieur de ** \<l’élément>connectionStrings** dans **l’app.config** pour une application Windows, ou le fichier **web.config** pour une application ASP.NET. Pour plus d’informations sur les bases du stockage, de la récupération et du cryptage des chaînes de connexion à partir de fichiers de configuration, voir [les chaînes de connexion et les fichiers de configuration](connection-strings-and-configuration-files.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Sécurisation des applications ADO.NET](securing-ado-net-applications.md)
-- [Chiffrement des informations de configuration à l’aide de la configuration protégée](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100))
+- [Chiffrer les informations de configuration à l’aide d’une configuration protégée](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100))
 - [Sécurité dans .NET](../../../standard/security/index.md)
-- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

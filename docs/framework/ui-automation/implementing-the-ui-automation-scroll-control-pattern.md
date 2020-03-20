@@ -6,12 +6,12 @@ helpviewer_keywords:
 - control patterns, Scroll
 - Scroll control pattern
 ms.assetid: 73d64242-6cbb-424c-92dd-dc69530b7899
-ms.openlocfilehash: d146ba67f4fe3f5fda6196231f96f428f702086a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0420adaefb91f0c9f0d34d5bdf5863373a0b652b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447159"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180147"
 ---
 # <a name="implementing-the-ui-automation-scroll-control-pattern"></a>Implémentation du modèle de contrôle Scroll d’UI Automation
 > [!NOTE]
@@ -21,12 +21,12 @@ ms.locfileid: "74447159"
   
  Le modèle de contrôle <xref:System.Windows.Automation.ScrollPattern> permet de prendre en charge un contrôle qui agit comme un conteneur à défilement pour une collection d’objets enfants. Le contrôle n’est pas tenu d’utiliser les barres de défilement pour prendre en charge les fonctionnalités de défilement, bien que ce soit généralement le cas.  
   
- ![Contrôle Scroll sans barres de défilement.](./media/uia-scrollpattern-without-scrollbars.PNG "UIA_ScrollPattern_Without_Scrollbars")  
+ ![Contrôle du défilement sans barres de défilement.](./media/uia-scrollpattern-without-scrollbars.PNG "UIA_ScrollPattern_Without_Scrollbars")  
 Exemple d’un contrôle de défilement qui n’utilise pas les barres de défilement  
   
  Pour obtenir des exemples de contrôles implémentant ce contrôle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
   
-<a name="Implementation_Guidelines_and_Conventions"></a>   
+<a name="Implementation_Guidelines_and_Conventions"></a>
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
  Quand vous implémentez le modèle de contrôle Scroll, notez les conventions et recommandations suivantes :  
   
@@ -42,28 +42,28 @@ Exemple d’un contrôle de défilement qui n’utilise pas les barres de défil
   
 - <xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A> est spécifique aux paramètres régionaux. Le paramètre HorizontalScrollPercent = 100.0 doit définir l’emplacement de défilement du contrôle sur l’équivalent de sa position la plus à droite pour des langues telles que le français qui sont lues de gauche à droite. Par ailleurs, pour des langues telles que l’arabe, qui sont lues de droite à gauche, le paramètre HorizontalScrollPercent = 100.0 doit définir l’emplacement de défilement sur la position la plus à gauche.  
   
-<a name="Required_Members_for_IScrollProvider"></a>   
+<a name="Required_Members_for_IScrollProvider"></a>
 ## <a name="required-members-for-iscrollprovider"></a>Membres requis pour IScrollProvider  
  Les propriétés et méthodes suivantes sont nécessaires à l'implémentation d' <xref:System.Windows.Automation.Provider.IScrollProvider>.  
   
-|Membre requis|Type de membre|Remarques|  
+|Membre obligatoire|Type de membre|Notes|  
 |---------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalScrollPercent%2A>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalViewSize%2A>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalViewSize%2A>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontallyScrollable%2A>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticallyScrollable%2A>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A>|Méthode|Aucune|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A>|Méthode|Aucune|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A>|Propriété|None|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalScrollPercent%2A>|Propriété|None|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalViewSize%2A>|Propriété|None|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalViewSize%2A>|Propriété|None|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontallyScrollable%2A>|Propriété|None|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticallyScrollable%2A>|Propriété|None|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A>|Méthode|None|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A>|Méthode|None|  
   
  Ce modèle de contrôle n’est associé aucun événement.  
   
-<a name="Exceptions"></a>   
+<a name="Exceptions"></a>
 ## <a name="exceptions"></a>Exceptions  
  Les fournisseurs doivent lever les exceptions suivantes.  
   
-|Type d'exception|Condition|  
+|Type d’exception|Condition|  
 |--------------------|---------------|  
 |<xref:System.ArgumentException>|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> lève cette exception si un contrôle prend en charge les valeurs <xref:System.Windows.Automation.ScrollAmount.SmallIncrement> exclusivement pour le défilement horizontal ou vertical, mais qu’une valeur <xref:System.Windows.Automation.ScrollAmount.LargeIncrement> est passée.|  
 |<xref:System.ArgumentException>|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> lève cette exception quand une valeur ne pouvant pas être convertie en valeur double est passée.|  
@@ -72,8 +72,8 @@ Exemple d’un contrôle de défilement qui n’utilise pas les barres de défil
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Vue d'ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
-- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
-- [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [UI Automation Tree Overview](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

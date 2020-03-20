@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e1efedcb-3dd7-42ae-a399-21c24728aec5
 topic_type:
 - apiref
-ms.openlocfilehash: 4faf8646b81f92ddf65eff15fdc610d275b37864
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: bd50d63b1f7080f510c29f90979b7b36242af1c0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440011"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177368"
 ---
 # <a name="imetadataimportenumevents-method"></a>IMetaDataImport::EnumEvents, méthode
 Énumère les jetons de définition d'événements pour le jeton TypeDef spécifié.  
@@ -28,10 +28,10 @@ ms.locfileid: "74440011"
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT EnumEvents (   
-   [in, out] HCORENUM    *phEnum,   
-   [in]      mdTypeDef   td,   
-   [out]     mdEvent     rEvents[],   
+HRESULT EnumEvents (
+   [in, out] HCORENUM    *phEnum,
+   [in]      mdTypeDef   td,
+   [out]     mdEvent     rEvents[],
    [in]      ULONG       cMax,  
    [out]    ULONG        *pcEvents  
 );  
@@ -39,35 +39,35 @@ HRESULT EnumEvents (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur.  
+ [dans, dehors] Un pointeur à l’enumérateur.  
   
  `td`  
- dans Jeton TypeDef dont les définitions d’événements doivent être énumérées.  
+ [dans] Le jeton TypeDef dont les définitions d’événements doivent être énumérées.  
   
  `rEvents`  
- à Tableau d’événements retournés.  
+ [out] La gamme d’événements retournés.  
   
  `cMax`  
  [in] Taille maximale du tableau `rEvents`.  
   
  `pcEvents`  
- à Nombre réel d’événements retournés dans `rEvents`.  
+ [out] Le nombre réel d’événements retournés dans `rEvents`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumEvents` retourné avec succès.|  
-|`S_FALSE`|Il n’y a aucun événement à énumérer. Dans ce cas, `pcEvents` est égal à zéro.|  
+|`S_OK`|`EnumEvents`retourné avec succès.|  
+|`S_FALSE`|Il n’y a pas d’événements à énumérer. Dans ce `pcEvents` cas, c’est zéro.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

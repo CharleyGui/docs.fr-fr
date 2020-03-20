@@ -15,52 +15,52 @@ helpviewer_keywords:
 ms.assetid: 7dd14854-b756-4401-b167-88ca576dc8f0
 topic_type:
 - apiref
-ms.openlocfilehash: e6a732b98ae02ba2b273b45921b7de61ab4fd29f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 9c4ed282e259aa46fc0cb0175214dc51d3d5fbee
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432639"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175887"
 ---
 # <a name="imetadataemitdefinecustomattribute-method"></a>IMetaDataEmit::DefineCustomAttribute, méthode
-Crée une définition pour un attribut personnalisé avec la signature de métadonnées spécifiée, à attacher à l’objet spécifié et obtient un jeton pour cette définition d’attribut personnalisé.  
+Crée une définition pour un attribut personnalisé avec la signature spécifiée de métadonnées, à attacher à l’objet spécifié, et obtient un jeton à cette définition d’attribut personnalisé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineCustomAttribute (   
-    [in]  mdToken     tkObj,   
-    [in]  mdToken     tkType,   
-    [in]  void const  *pCustomAttribute,   
-    [in]  ULONG       cbCustomAttribute,   
-    [out] mdCustomAttribute *pcv   
+HRESULT DefineCustomAttribute (
+    [in]  mdToken     tkObj,
+    [in]  mdToken     tkType,
+    [in]  void const  *pCustomAttribute,
+    [in]  ULONG       cbCustomAttribute,
+    [out] mdCustomAttribute *pcv
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `tkObj`  
- dans Jeton pour l’élément propriétaire.  
+ [dans] Le jeton pour l’article propriétaire.  
   
  `tkType`  
- dans Jeton qui identifie l’attribut personnalisé.  
+ [dans] Le jeton qui identifie l’attribut personnalisé.  
   
  `pCustomAttribute`  
- dans Pointeur vers l’attribut personnalisé.  
+ [dans] Un pointeur à l’attribut personnalisé.  
   
  `cbCustomAttribute`  
- dans Nombre d’octets dans `pCustomAttribute`.  
+ [dans] Le compte d’octets dans `pCustomAttribute`.  
   
  `pcv`  
- à Jeton `mdCustomAttribute` assigné.  
+ [out] Le `mdCustomAttribute` jeton assigné.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

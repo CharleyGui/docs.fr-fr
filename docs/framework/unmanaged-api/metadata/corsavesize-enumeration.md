@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: eb95ce39-5688-43c1-a34d-578794b32faa
 topic_type:
 - apiref
-ms.openlocfilehash: 0f870d9d7d1bc292b213d690df508a6c28bac2ab
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 13a4364244f7d0076d77d14c3e3ef161e3872bcb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450102"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176134"
 ---
 # <a name="corsavesize-enumeration"></a>CorSaveSize, énumération
 Contient des valeurs indiquant le niveau de précision requis lors de l'interrogation de la taille d'une opération d'enregistrement.  
@@ -28,8 +28,8 @@ Contient des valeurs indiquant le niveau de précision requis lors de l'interrog
   
 ```cpp  
 typedef enum CorSaveSize {  
-    cssAccurate                = 0x0000,   
-    cssQuick                   = 0x0001,   
+    cssAccurate                = 0x0000,
+    cssQuick                   = 0x0001,
     cssDiscardTransientCAs     = 0x0002  
 } CorSaveSize;  
 ```  
@@ -38,18 +38,18 @@ typedef enum CorSaveSize {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`cssAccurate`|Spécifie que la valeur de retour doit être exacte.|  
-|`cssQuick`|Spécifie que la valeur de retour doit être estimée.|  
-|`cssDiscardTransientCAs`|Spécifie que les types pouvant être éliminés doivent être supprimés.|  
+|`cssAccurate`|Spécifie que la valeur de rendement doit être exacte.|  
+|`cssQuick`|Spécifie que la valeur de rendement doit être estimée.|  
+|`cssDiscardTransientCAs`|Spécifie que les types jetables doivent être supprimés.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorHdr. h  
+ **En-tête:** CorHdr.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,20 +15,20 @@ helpviewer_keywords:
 ms.assetid: 63d8260c-fb32-4f8f-a357-768afd570f68
 topic_type:
 - apiref
-ms.openlocfilehash: 834292192aa447a113372bc8807041954b39a115
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 93afe1afd9ea9637d039a8b4a4e81267d49c08b6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937770"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176225"
 ---
 # <a name="strongnamegetpublickeyex-method"></a>StrongNameGetPublicKeyEx, méthode
-Obtient la clé publique à partir d’une paire de clés publique/privée et spécifie un algorithme de hachage et un algorithme de signature.  
+Obtient la clé publique d’une paire de clés publique/privée, et spécifie un algorithme de hachage et un algorithme de signature.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT StrongNameGetPublicKey (   
+HRESULT StrongNameGetPublicKey (
     [in]  LPCWSTR   pwzKeyContainer,  
     [in]  BYTE      *pbKeyBlob,  
     [in]  ULONG     cbKeyBlob,  
@@ -39,57 +39,57 @@ HRESULT StrongNameGetPublicKey (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `pwzKeyContainer`  
- dans Nom du conteneur de clé qui contient la paire de clés publique/privée. Si `pbKeyBlob` a la valeur null, `szKeyContainer` devez spécifier un conteneur valide dans le fournisseur de services de chiffrement (CSP). Dans ce cas, la méthode `StrongNameGetPublicKeyEx` extrait la clé publique de la paire de clés stockée dans le conteneur.  
+ [dans] Le nom du conteneur clé qui contient la paire de clés public/privé. S’il `pbKeyBlob` `szKeyContainer` est nul, doit spécifier un conteneur valide au sein du fournisseur de services cryptographiques (CSP). Dans ce cas, la `StrongNameGetPublicKeyEx` méthode extrait la clé publique de la paire de clés stockée dans le conteneur.  
   
- Si `pbKeyBlob` n’a pas la valeur null, la paire de clés est supposée être contenue dans l’objet BLOB (Binary Large Object) clé.  
+ Si `pbKeyBlob` elle n’est pas nulle, la paire de clés est supposée être contenue dans le grand objet binaire clé (BLOB).  
   
- Les clés doivent être des clés de signature RSA (Rivest-Shamir-Adleman) 1024 bits. Aucun autre type de clé n’est pris en charge pour l’instant.  
+ Les clés doivent être 1024 bits Rivest-Shamir-Adleman (RSA) clés de signature. Aucun autre type de clés n’est pris en charge pour le moment.  
   
  `pbKeyBlob`  
- dans Pointeur vers la paire de clés publique/privée. Cette paire est au format créé par la fonction de `CryptExportKey` Win32. Si `pbKeyBlob` a la valeur null, le conteneur de clé spécifié par `szKeyContainer` est supposé contenir la paire de clés.  
+ [dans] Un pointeur à la paire de clés public/privé. Cette paire est dans le format `CryptExportKey` créé par la fonction Win32. S’il `pbKeyBlob` est nul, `szKeyContainer` le conteneur clé spécifié par est supposé contenir la paire de clés.  
   
  `cbKeyBlob`  
- dans Taille, en octets, de `pbKeyBlob`.  
+ [dans] La taille, dans les `pbKeyBlob`octets, de .  
   
  `ppbPublicKeyBlob`  
- à Objet BLOB de clé publique retourné. Le paramètre `ppbPublicKeyBlob` est alloué par le common language runtime et retourné à l’appelant. L’appelant doit libérer la mémoire à l’aide de la méthode [ICLRStrongName :: StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) .  
+ [out] Le BLOB clé publique retourné. Le `ppbPublicKeyBlob` paramètre est attribué par l’heure de l’exécution de la langue commune et retourné à l’appelant. L’appelant doit libérer la mémoire en utilisant la méthode [ICLRStrongName::StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) méthode.  
   
  `pcbPublicKeyBlob`  
- à Taille de l’objet BLOB de clé publique retourné.  
+ [out] La taille de la clé publique retournée BLOB.  
   
  `uHashAlgId`  
- dans Algorithme de hachage de l’assembly. Consultez la section Notes pour obtenir la liste des valeurs acceptées.  
+ [dans] L’algorithme de hachage d’assemblage. Consultez la section Remarques pour une liste de valeurs acceptées.  
   
  `uReserved`  
- dans Réservé à une utilisation ultérieure ; la valeur par défaut est null.  
+ [dans] Réservé à une utilisation future; par défaut à null.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
+ `S_OK`si la méthode est terminée avec succès; autrement, une valeur HRESULT qui indique l’échec (voir [valeurs RHESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
-## <a name="remarks"></a>Notes  
- La clé publique est contenue dans une structure [publicKeyBlob](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) .  
+## <a name="remarks"></a>Notes   
+ La clé publique est contenue dans une structure [PublicKeyBlob.](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)  
   
-## <a name="remarks"></a>Notes  
- Le tableau suivant présente l’ensemble des valeurs acceptées pour le paramètre `uHashAlgId`.  
+## <a name="remarks"></a>Notes   
+ Le tableau suivant montre l’ensemble `uHashAlgId` des valeurs acceptées pour le paramètre.  
   
-|Name|Value|  
+|Nom|Valeur|  
 |----------|-----------|  
-|Aucun|0|  
+|None|0|  
 |SHA-1|0x8004|  
 |SHA-256|0x800c|  
 |SHA-384|0x800d|  
 |SHA-512|0x800e|  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Metahost. h  
+ **En-tête:** MetaHost.h MetaHost.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

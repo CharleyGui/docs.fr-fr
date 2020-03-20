@@ -6,17 +6,17 @@ helpviewer_keywords:
 - Impersonating the Client Sample [Windows Communication Foundation]
 - impersonation, Windows Communication Foundation sample
 ms.assetid: 8bd974e1-90db-4152-95a3-1d4b1a7734f8
-ms.openlocfilehash: e9e85729b10d1c992a22f6c0bea65dfd1e21e7e4
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 10a8d243b3f053879f183864e955d9260c07865b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76742555"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183612"
 ---
 # <a name="impersonating-the-client"></a>Emprunt de l'identité du client
 Cet exemple montre comment emprunter l'identité de l'application de l'appelant au niveau du service afin que ce dernier puisse accéder aux ressources système pour le compte de l'appelant.  
   
- Cet exemple est basé sur l’exemple d' [auto-hébergement](../../../../docs/framework/wcf/samples/self-host.md) . Les fichiers de configuration du service et du client sont les mêmes que ceux de l’exemple [auto-hôte](../../../../docs/framework/wcf/samples/self-host.md) .  
+ Cet échantillon est basé sur l’échantillon [d’auto-hôte.](../../../../docs/framework/wcf/samples/self-host.md) Les fichiers de configuration de service et de client sont les mêmes que ceux de l’échantillon [Self-Host.](../../../../docs/framework/wcf/samples/self-host.md)  
   
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
@@ -44,7 +44,7 @@ static void DisplayIdentityInformation()
 {  
     Console.WriteLine("\t\tThread Identity            :{0}",  
          WindowsIdentity.GetCurrent().Name);  
-    Console.WriteLine("\t\tThread Identity level  :{0}",   
+    Console.WriteLine("\t\tThread Identity level  :{0}",
          WindowsIdentity.GetCurrent().ImpersonationLevel);  
     Console.WriteLine("\t\thToken                     :{0}",  
          WindowsIdentity.GetCurrent().Token.ToString());  
@@ -69,8 +69,8 @@ public double Subtract(double n1, double n2)
         // Impersonate.  
         using (ServiceSecurityContext.Current.WindowsIdentity.Impersonate())  
         {  
-            // Make a system call in the caller's context and ACLs   
-            // on the system resource are enforced in the caller's context.   
+            // Make a system call in the caller's context and ACLs
+            // on the system resource are enforced in the caller's context.
             Console.WriteLine("Impersonating the caller imperatively");  
             DisplayIdentityInformation();  
         }  
@@ -102,18 +102,18 @@ client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationL
  Lorsque vous exécutez l'exemple, les requêtes et réponses de l'opération s'affichent dans les fenêtres de console du service et du client. Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.  
   
 > [!NOTE]
-> Le service doit s’exécuter sous un compte d’administration ou le compte sous lequel il s’exécute doit disposer des droits d’inscription de l’URI de la `http://localhost:8000/ServiceModelSamples` auprès de la couche HTTP. Ces droits peuvent être accordés en configurant une [réservation d’espace de noms](/windows/win32/http/namespace-reservations-registrations-and-routing) à l’aide de l' [outil HttpCfg. exe](/windows/win32/http/httpcfg-exe).  
+> Le service doit soit fonctionner sous un compte administratif, soit le `http://localhost:8000/ServiceModelSamples` compte qu’il court en vertu doit se voir accorder le droit d’enregistrer l’URI avec la couche HTTP. Ces droits peuvent être accordés en mettant en place une [réservation Namespace](/windows/win32/http/namespace-reservations-registrations-and-routing) à l’aide de l’outil [Httpcfg.exe](/windows/win32/http/httpcfg-exe).  
   
 > [!NOTE]
-> Sur les ordinateurs exécutant Windows Server 2003, l’emprunt d’identité est pris en charge uniquement si l’application Host. exe dispose du privilège d’emprunt d’identité. (Par défaut, seuls les administrateurs ont cette autorisation.) Pour ajouter ce privilège à un compte sous lequel le service s’exécute, accédez à **Outils d’administration**, ouvrez **stratégie de sécurité locale**, ouvrez **stratégies locales**, cliquez sur **attribution des droits utilisateur**, puis sélectionnez **emprunter l’identité d’un client après l’authentification** et double-cliquez sur **Propriétés** pour ajouter un utilisateur ou un groupe.  
+> Sur les ordinateurs exécutant Windows Server 2003, l’usurpation d’identité n’est prise en charge que si l’application Host.exe a le privilège d’usurpation d’identité. (Par défaut, seuls les administrateurs ont cette autorisation.) Pour ajouter ce privilège à un compte que le service est en cours d’exécution comme, aller à **des outils administratifs**, ouvrir **la politique de sécurité locale**, ouvrir les politiques **locales**, cliquez sur **l’affectation des droits des utilisateurs**, et **sélectionnez Impersonate un client après l’authentification** et double clic **Propriétés** pour ajouter un utilisateur ou un groupe.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les échantillons de la Fondation De communication Windows.](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)  
   
 2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Pour exécuter l’échantillon dans une configuration mono-ou cross-machine, suivez les instructions dans [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 4. Pour montrer que le service emprunte l'identité de l'appelant, exécutez le client sous un autre compte que celui sous lequel le service s'exécute. Pour ce faire, à l'invite de commandes tapez :  
   

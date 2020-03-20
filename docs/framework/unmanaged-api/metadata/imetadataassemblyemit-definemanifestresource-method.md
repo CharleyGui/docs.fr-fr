@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 27f6d295-0fe9-4cda-b77e-6e7d5c53df09
 topic_type:
 - apiref
-ms.openlocfilehash: 83170815f4aa65988bb6a6394bd466a0ba376ebf
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5aa5d78faa8ca9261594e2a649b11088e1d78ee7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432054"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177867"
 ---
 # <a name="imetadataassemblyemitdefinemanifestresource-method"></a>IMetaDataAssemblyEmit::DefineManifestResource, méthode
 Crée une structure `ManifestResource` contenant les métadonnées pour la ressource de manifeste spécifiée et retourne le jeton de métadonnées associé.  
@@ -29,9 +29,9 @@ Crée une structure `ManifestResource` contenant les métadonnées pour la resso
   
 ```cpp  
 HRESULT DefineManifestResource (  
-    [in] LPCWSTR                szName,   
-    [in] mdToken                tkImplementation,   
-    [in] DWORD                  dwOffset,   
+    [in] LPCWSTR                szName,
+    [in] mdToken                tkImplementation,
+    [in] DWORD                  dwOffset,
     [in] DWORD                  dwResourceFlags,  
     [out] mdManifestResource    *pmdmr  
 );  
@@ -39,31 +39,31 @@ HRESULT DefineManifestResource (
   
 ## <a name="parameters"></a>Paramètres  
  `szName`  
- dans Nom de la ressource.  
+ [in] Nom de la ressource.  
   
  `tkImplementation`  
- dans Un jeton de métadonnées de type `mdtFile` ou `mdtAssemblyRef` qui est mappé au fournisseur de ressources. Une valeur NULL indique que le fichier dans lequel les métadonnées sont incorporées est le fournisseur de ressources.  
+ [dans] Un jeton de métadonnées de type `mdtFile` ou `mdtAssemblyRef` qui cartes au fournisseur de ressources. Une valeur NULL indique que le fichier dans lequel les métadonnées sont intégrées est le fournisseur de ressources.  
   
  `dwOffset`  
- dans Offset au début de la ressource dans le fichier. Pour les ressources de fichiers autonomes, cette valeur est toujours égale à zéro. Si la ressource est incorporée dans un fichier PE (exécutable portable), il s’agit d’un décalage de l’objet BLOB de ressources, qui démarre à l’emplacement spécifié dans le fichier d’en-tête Cor. h.  
+ [dans] La compensation au début de la ressource dans le fichier. Pour les ressources dans les fichiers autonomes, ce sera toujours zéro. Si la ressource est intégrée dans un fichier PE (portable exécutable), il s’agit d’un décalage de la ressource BLOB, qui commence à l’emplacement spécifié dans le fichier d’en-tête cor.h.  
   
  `dwResourceFlags`  
- dans Combinaison d’opérations de bits de valeurs d’indicateur qui spécifient des paramètres de propriété pour la définition de ressource.  
+ [dans] Une combinaison peu sage de valeurs de drapeau qui spécifient les paramètres de propriété pour la définition de ressource.  
   
  `pmdmr`  
- à Pointeur vers le jeton de métadonnées retourné.  
+ [out] Un pointeur sur le jeton des métadonnées retournées.  
   
-## <a name="remarks"></a>Notes  
- Une `ManifestResource` structure de métadonnées doit être définie pour chaque ressource implémentée dans chacun des fichiers de l’assembly.  
+## <a name="remarks"></a>Notes   
+ Une `ManifestResource` structure de métadonnées doit être définie pour chaque ressource mise en œuvre dans chacun des dossiers de l’assemblée.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateforme :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateforme:** Voir [Les exigences du système](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

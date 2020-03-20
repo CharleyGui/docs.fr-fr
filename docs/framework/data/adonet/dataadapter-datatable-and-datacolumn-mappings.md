@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d023260a-a66a-4c39-b8f4-090cd130e730
-ms.openlocfilehash: a9c81c8554c0fb393c10ed69f84c8b2d936ec1e6
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 6380dd0512bd7834f50b87f90f445cb01b7a8b95
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040130"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151557"
 ---
 # <a name="dataadapter-datatable-and-datacolumn-mappings"></a>Mappages de DataAdapter DataTable et DataColumn
-Un **DataAdapter** contient une collection de zéro ou plusieurs objets <xref:System.Data.Common.DataTableMapping> dans sa propriété **TableMappings** . Un **DataTableMapping** fournit un mappage principal entre les données retournées par une requête sur une source de données et un <xref:System.Data.DataTable>. Le nom **DataTableMapping** peut être passé à la place du nom du **DataTable** à la méthode **Fill** du **DataAdapter**. L’exemple suivant crée un **DataTableMapping** nommé **AuthorsMapping** pour la table **Authors** .  
+Un **DataAdapter** contient une collection <xref:System.Data.Common.DataTableMapping> d’objets nuls ou plus dans sa propriété **TableMappings.** Un **DataTableMapping** fournit une cartographie principale entre les données retournées <xref:System.Data.DataTable>à partir d’une requête contre une source de données, et un . Le nom **DataTableMapping** peut être transmis à la place du nom **DataTable** à la méthode **De remplissage** du **DataAdapter**. L’exemple suivant crée un **DataTableMapping** nommé **AuthorsMapping** pour la table **des auteurs.**  
   
 ```vb  
 workAdapter.TableMappings.Add("AuthorsMapping", "Authors")  
@@ -23,11 +23,11 @@ workAdapter.TableMappings.Add("AuthorsMapping", "Authors")
 workAdapter.TableMappings.Add("AuthorsMapping", "Authors");  
 ```  
   
- Un **DataTableMapping** vous permet d’utiliser des noms de colonnes dans un **DataTable** qui sont différents de ceux de la base de données. Le **DataAdapter** utilise le mappage pour faire correspondre les colonnes lorsque la table est mise à jour.  
+ Un **DataTableMapping** vous permet d’utiliser des noms de colonnes dans un **DataTable** qui sont différents de ceux de la base de données. Le **DataAdapter** utilise la cartographie pour correspondre aux colonnes lorsque la table est mise à jour.  
   
- Si vous ne spécifiez pas de nom **TableName** ou **DataTableMapping** lors de l’appel de la méthode **Fill** ou **Update** du **DataAdapter**, le **DataAdapter** recherche un **DataTableMapping** nommé « table ». Si ce **DataTableMapping** n’existe pas, le **TableName** du **DataTable** est « table ». Vous pouvez spécifier un **DataTableMapping** par défaut en créant un **DataTableMapping** portant le nom « table ».  
+ Si vous ne spécifiez pas un **nom TableName** ou un nom **DataTableMapping** lors de l’appel de la méthode **De remplissage** ou de mise **à jour** du **DataAdapter**, le **DataAdapter** recherche un **DataTableMapping** nommé "Table". Si celui **DataTableMapping n’existe** pas, le Nom de **table** de la **Table est** "Table". Vous pouvez spécifier un défaut **DataTableMapping** en créant un **DataTableMapping** avec le nom de "Table".  
   
- L’exemple de code suivant crée un **DataTableMapping** (à partir de l’espace de noms <xref:System.Data.Common>) et en fait le mappage par défaut pour le **DataAdapter** spécifié en le nommant « table ». L’exemple mappe ensuite les colonnes de la première table du résultat de la requête (la table **Customers** de la base de données **Northwind** ) à un ensemble de noms plus conviviaux dans la table **Customers** de la <xref:System.Data.DataSet>. Pour les colonnes qui ne sont pas mappées, le nom de la colonne de la source de données est utilisé.  
+ L’exemple de code suivant crée un <xref:System.Data.Common> **DataTableMapping** (à partir de l’espace de nom) et en fait la cartographie par défaut pour le **DataAdapter** spécifié en le nommant "Table". L’exemple cartographie ensuite les colonnes du premier tableau du résultat de la requête (la table **des clients** de la base de données **Northwind)** à un ensemble de noms plus conviviaux dans le tableau **des clients Northwind** dans le <xref:System.Data.DataSet>. Pour les colonnes qui ne sont pas mappées, le nom de la colonne de la source de données est utilisé.  
   
 ```vb  
 Dim mapping As DataTableMapping = _  
@@ -40,7 +40,7 @@ adapter.Fill(custDS)
 ```  
   
 ```csharp  
-DataTableMapping mapping =   
+DataTableMapping mapping =
   adapter.TableMappings.Add("Table", "NorthwindCustomers");  
 mapping.ColumnMappings.Add("CompanyName", "Company");  
 mapping.ColumnMappings.Add("ContactName", "Contact");  
@@ -49,11 +49,11 @@ mapping.ColumnMappings.Add("PostalCode", "ZIPCode");
 adapter.Fill(custDS);  
 ```  
   
- Dans les situations plus avancées, vous pouvez décider que vous souhaitez que le même **DataAdapter** prenne en charge le chargement de différentes tables avec des mappages différents. Pour ce faire, ajoutez simplement des objets **DataTableMapping** supplémentaires.  
+ Dans des situations plus avancées, vous pouvez décider que vous voulez que le même **DataAdapter** supporte le chargement de différentes tables avec différentes cartes. Pour ce faire, il suffit d’ajouter des objets **De dataTableMapping** supplémentaires.  
   
- Quand la méthode **Fill** reçoit une instance d’un **DataSet** et un nom **DataTableMapping** , si un mappage portant ce nom existe, il est utilisé ; dans le cas contraire, un **DataTable** portant ce nom est utilisé.  
+ Lorsque la méthode **De remplissage** est adoptée, une instance d’un **DataSet** et d’un nom **DataTableMapping,** si une cartographie avec ce nom existe, elle est utilisée; autrement, un **DataTable** avec ce nom est utilisé.  
   
- Les exemples suivants créent un **DataTableMapping** avec un nom **Customers** et un nom **DataTable** **BizTalkSchema**. L’exemple mappe ensuite les lignes retournées par l’instruction SELECT au **DataTable** **BizTalkSchema** .  
+ Les exemples suivants créent un **DataTableMapping** avec un nom de **clients** et un nom **DataTable** de **BizTalkSchema**. L’exemple cartographie ensuite les lignes retournées par la déclaration SELECT à la **BizTalkSchema** **DataTable**.  
   
 ```vb  
 Dim mapping As ITableMapping = _  
@@ -67,7 +67,7 @@ adapter.Fill(custDS, "Customers")
 ```  
   
 ```csharp  
-ITableMapping mapping =   
+ITableMapping mapping =
   adapter.TableMappings.Add("Customers", "BizTalkSchema");  
 mapping.ColumnMappings.Add("CustomerID", "ClientID");  
 mapping.ColumnMappings.Add("CompanyName", "ClientName");  
@@ -78,13 +78,13 @@ adapter.Fill(custDS, "Customers");
 ```  
   
 > [!NOTE]
-> Si aucun nom de colonne source n'est fourni pour un mappage de colonne ou aucun nom de table source n'est fourni pour un mappage de table, les noms par défaut sont automatiquement générés. Si aucune colonne source n’est fournie pour un mappage de colonnes, le mappage de colonnes reçoit un nom incrémentiel par défaut de **SourceColumn** *N,* en commençant par **SourceColumn1**. Si aucun nom de table source n’est fourni pour un mappage de table, le mappage de table reçoit un nom incrémentiel par défaut de **SourceTable** *N*, en commençant par **SourceTable1**.  
+> Si aucun nom de colonne source n'est fourni pour un mappage de colonne ou aucun nom de table source n'est fourni pour un mappage de table, les noms par défaut sont automatiquement générés. Si aucune colonne source n’est fournie pour une cartographie de colonne, la cartographie de colonne est donnée un nom par défaut progressif de **SourceColumn** *N,* à commencer par **SourceColumn1**. Si aucun nom de table source n’est fourni pour une cartographie de table, la cartographie de table est donnée un nom par défaut progressif de **SourceTable** *N*, à commencer par **SourceTable1**.  
   
 > [!NOTE]
-> Nous vous recommandons d’éviter la Convention d’affectation de noms de **SourceColumn** *n* pour un mappage de colonnes, ou **SourceTable** *n* pour un mappage de table, car le nom que vous fournissez peut être en conflit avec un nom de mappage de colonne par défaut existant dans le  **ColumnMappingCollection** ou nom du mappage de table dans le **DataTableMappingCollection**. Si le nom fourni existe déjà, une exception sera levée.  
+> Nous vous recommandons d’éviter la convention de nommage de **SourceColumn** *N* pour une cartographie de colonne, ou **SourceTable** *N* pour une cartographie de table, parce que le nom que vous fournissez peut entrer en conflit avec un nom de cartographie de colonne par défaut existant dans le **ColumnMappingCollection** ou nom de cartographie de table dans le **DataTableMappingCollection**. Si le nom fourni existe déjà, une exception sera levée.  
   
 ## <a name="handling-multiple-result-sets"></a>Gestion de jeux de résultats multiples  
- Si votre **SelectCommand** retourne plusieurs tables, **Fill** génère automatiquement des noms de table avec des valeurs incrémentielles pour les tables du **DataSet**, en commençant par le nom de table spécifié et en continuant sous la forme **TableName** *N*, commençant par **TableName1**. Vous pouvez utiliser des mappages de table pour mapper le nom de table généré automatiquement à un nom que vous souhaitez spécifier pour la table dans le **jeu de données**. Par exemple, pour un **SelectCommand** qui retourne deux tables, **Customers** et **Orders**, émettez l’appel suivant à **Fill**.  
+ Si votre **SelectCommand** retourne plusieurs tables, **Fill** génère automatiquement des noms de table avec des valeurs incrémentielles pour les tables dans le **DataSet**, en commençant par le nom de table spécifié et en continuant sous la forme **TableName** *N*, à commencer par **TableName1**. Vous pouvez utiliser des cartes de table pour cartographier le nom de table généré automatiquement à un nom que vous souhaitez spécifié pour la table dans le **DataSet**. Par exemple, pour un **SelectCommand** qui renvoie deux tables, **clients** et **commandes,** émettent l’appel suivant à **Remplir**.  
   
 ```vb  
 adapter.Fill(customersDataSet, "Customers")  
@@ -94,7 +94,7 @@ adapter.Fill(customersDataSet, "Customers")
 adapter.Fill(customersDataSet, "Customers");  
 ```  
 
- Deux tables sont créées dans le **jeu de données**: **Customers** et **Customers1**. Vous pouvez utiliser des mappages de table pour vous assurer que la deuxième table est nommée **Orders** au lieu de **Customers1**. Pour ce faire, mappez la table source de **Customers1** à la table **Orders**du **DataSet** , comme indiqué dans l’exemple suivant.  
+ Deux tables sont créées dans le **DataSet**: **Clients** et **Clients1**. Vous pouvez utiliser des cartes de table pour vous assurer que la deuxième table est nommée **Commandes** au lieu de **Customers1**. Pour ce faire, cartographiez le tableau source des **clients1** sur les **commandes**de table **DataSet,** comme le montre l’exemple suivant.  
   
 ```vb  
 adapter.TableMappings.Add("Customers1", "Orders")  
@@ -110,4 +110,4 @@ adapter.Fill(customersDataSet, "Customers");
 
 - [DataAdapters et DataReaders](dataadapters-and-datareaders.md)
 - [Extraction et modification de données dans ADO.NET](retrieving-and-modifying-data.md)
-- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, marshaling
 - marshaling behavior
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
-ms.openlocfilehash: abb8b507b21ca8f40461192c37e6c2fbe73b684e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 18282d14540027e4fae4fe152d3867ad8c223c37
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123601"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181479"
 ---
 # <a name="default-marshaling-behavior"></a>comportement de marshaling par défaut
 Le marshaling d'interopérabilité agit sur les règles qui définissent le comportement des données associées aux paramètres de méthode quand elles sont passées de la mémoire managée à la mémoire non managée. Ces règles intégrées contrôlent les activités de marshaling telles que les transformations de types de données, le fait qu’un appelant puisse modifier les données transmises et renvoyer ces modifications à l’appelant, ainsi que les circonstances dans lesquelles le marshaleur fournit des optimisations de performances.  
@@ -90,10 +90,10 @@ using System.Runtime.InteropServices;
   
 public interface DelegateTest {  
 void m1(Delegate d);  
-void m2([MarshalAs(UnmanagedType.Interface)] Delegate d);     
-void m3([MarshalAs(UnmanagedType.Interface)] ref Delegate d);    
-void m4([MarshalAs(UnmanagedType.FunctionPtr)] Delegate d);   
-void m5([MarshalAs(UnmanagedType.FunctionPtr)] ref Delegate d);     
+void m2([MarshalAs(UnmanagedType.Interface)] Delegate d);
+void m3([MarshalAs(UnmanagedType.Interface)] ref Delegate d);
+void m4([MarshalAs(UnmanagedType.FunctionPtr)] Delegate d);
+void m5([MarshalAs(UnmanagedType.FunctionPtr)] ref Delegate d);
 }  
 ```  
   
@@ -132,10 +132,10 @@ public class CallBackClass {
 internal class DelegateTest {  
    public static void Test() {  
       CallBackClass cb = new CallBackClass();  
-      // Caution: The following reference on the cb object does not keep the   
-      // object from being garbage collected after the Main method   
+      // Caution: The following reference on the cb object does not keep the
+      // object from being garbage collected after the Main method
       // executes.  
-      ExternalAPI.SetChangeHandler(new ChangeDelegate(cb.OnChange));     
+      ExternalAPI.SetChangeHandler(new ChangeDelegate(cb.OnChange));
    }  
 }  
 ```  
@@ -152,7 +152,7 @@ internal class DelegateTest {
    }  
    // Called after using the callback function for the last time.  
    public static void RemoveChangeHandler() {  
-      // The cb object can be collected now. The unmanaged code is   
+      // The cb object can be collected now. The unmanaged code is
       // finished with the callback function.  
       cb = null;  
    }  
@@ -207,7 +207,7 @@ using System.Runtime.InteropServices;
 public struct Point {  
    public int x;  
    public int y;  
-}     
+}
   
 [StructLayout(LayoutKind.Explicit)]  
 public struct Rect {  
@@ -269,14 +269,14 @@ End Class
 ```csharp  
 [StructLayout(LayoutKind.Sequential)]  
    public class SystemTime {  
-   public ushort wYear;   
+   public ushort wYear;
    public ushort wMonth;  
-   public ushort wDayOfWeek;   
-   public ushort wDay;   
-   public ushort wHour;   
-   public ushort wMinute;   
-   public ushort wSecond;   
-   public ushort wMilliseconds;   
+   public ushort wDayOfWeek;
+   public ushort wDay;
+   public ushort wHour;
+   public ushort wMinute;
+   public ushort wSecond;
+   public ushort wMilliseconds;
 }  
 ```  
   
@@ -321,7 +321,7 @@ End Class
 [StructLayout(LayoutKind.Sequential)]  
 public class Point {  
    int x, y;  
-   public void SetXY(int x, int y){   
+   public void SetXY(int x, int y){
       this.x = x;  
       this.y = y;  
    }  
@@ -331,7 +331,7 @@ public class Point {
 ### <a name="value-types-used-in-com-interop"></a>Types valeur utilisés dans COM Interop  
  Les types mis en forme peuvent également être passés aux appels de méthode d'interopérabilité COM. En effet, quand ils sont exportés vers une bibliothèque de types, les types valeur sont convertis automatiquement en structures. Comme dans l'exemple suivant, le type valeur `Point` devient une définition de type (typedef) portant le nom `Point`. Toutes les références au type valeur `Point` situées ailleurs que dans la bibliothèque de types sont remplacées par le typedef `Point`.  
   
- **Représentation d’une bibliothèque de types**  
+ **Représentation de bibliothèque de type**  
   
 ```cpp  
 typedef struct tagPoint {  
@@ -376,9 +376,9 @@ interface _Graphics {
   
 |Type de valeur système|Type IDL|  
 |-----------------------|--------------|  
-|<xref:System.DateTime?displayProperty=nameWithType>|**DATE**|  
-|<xref:System.Decimal?displayProperty=nameWithType>|**DECIMAL**|  
-|<xref:System.Guid?displayProperty=nameWithType>|**GUID**|  
+|<xref:System.DateTime?displayProperty=nameWithType>|**Date**|  
+|<xref:System.Decimal?displayProperty=nameWithType>|**Decimales**|  
+|<xref:System.Guid?displayProperty=nameWithType>|**Guid**|  
 |<xref:System.Drawing.Color?displayProperty=nameWithType>|**OLE_COLOR**|  
   
  Le code suivant montre la définition des types non managés **DATE**, **GUID**, **DECIMAL** et **OLE_COLOR** dans la bibliothèque de types Stdole2.  
@@ -440,7 +440,7 @@ interface IValueTypes : IDispatch {
 ## <a name="see-also"></a>Voir aussi
 
 - [Types blittable et non blittable](blittable-and-non-blittable-types.md)
-- [Copie et épinglage](copying-and-pinning.md)
+- [copie et épinglage](copying-and-pinning.md)
 - [Marshaling par défaut pour les tableaux](default-marshaling-for-arrays.md)
 - [Marshaling par défaut pour les objets](default-marshaling-for-objects.md)
 - [Marshaling par défaut pour les chaînes](default-marshaling-for-strings.md)

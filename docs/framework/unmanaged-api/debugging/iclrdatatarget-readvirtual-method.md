@@ -15,49 +15,49 @@ helpviewer_keywords:
 ms.assetid: da3769eb-1828-4aa1-b9ed-db4842136a43
 topic_type:
 - apiref
-ms.openlocfilehash: 83e2d1231b85086c2e65813cf427df3de36405b7
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 0332fae46d6a65cfb7cc0b929cc2fd0d97e1790e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76785309"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179155"
 ---
 # <a name="iclrdatatargetreadvirtual-method"></a>ICLRDataTarget::ReadVirtual, méthode
-Lit les données à partir de l’adresse mémoire virtuelle spécifiée dans la mémoire tampon spécifiée.  
+Lit les données de l’adresse mémoire virtuelle spécifiée dans le tampon spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT ReadVirtual (  
     [in] CLRDATA_ADDRESS    address,  
-    [out, size_is(bytesRequested), length_is(*bytesRead)]   
+    [out, size_is(bytesRequested), length_is(*bytesRead)]
         BYTE                *buffer,  
     [in] ULONG32            bytesRequested,  
     [out] ULONG32           *bytesRead  
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `address`  
- dans CLRDATA_ADDRESS qui stocke l’adresse mémoire virtuelle.  
+ [dans] Une CLRDATA_ADDRESS qui stocke l’adresse mémoire virtuelle.  
   
  `buffer`  
- à Pointeur vers une mémoire tampon qui reçoit les données.  
+ [out] Un pointeur vers un tampon qui reçoit les données.  
   
  `bytesRequested`  
- dans Longueur de la mémoire tampon.  
+ [dans] La longueur du tampon.  
   
  `bytesRead`  
- à Pointeur vers le nombre d’octets retournés.  
+ [out] Un pointeur sur le nombre d’octets retournés.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData. idl, ClrData. h  
+ **En-tête:** ClrData.idl, ClrData.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

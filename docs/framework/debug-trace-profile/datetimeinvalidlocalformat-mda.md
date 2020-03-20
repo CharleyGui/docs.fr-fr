@@ -12,12 +12,12 @@ helpviewer_keywords:
 - time formatting
 - UTC formatting
 ms.assetid: c4a942bb-2651-4b65-8718-809f892a0659
-ms.openlocfilehash: 2fdace8a9c7bcc090fd801be3bd717e4a2b34a87
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: b01f030c474e426cb87fb907f99f241eeb76a7fd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217550"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174756"
 ---
 # <a name="datetimeinvalidlocalformat-mda"></a>dateTimeInvalidLocalFormat (MDA)
 L’Assistant Débogage managé (MDA, Managed Debugging Assistant) `dateTimeInvalidLocalFormat` est activé quand une instance de <xref:System.DateTime> stockée en temps universel (UTC, Universal Coordinated Time) est mise en forme à l’aide d’un format conçu uniquement pour des instances de <xref:System.DateTime> locales. Cet Assistant Débogage managé n’est pas activé pour les instances de <xref:System.DateTime> par défaut ou non spécifiées.  
@@ -64,7 +64,7 @@ Serialize(myDateTime.ToString("o"));
 </mdaConfig>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Prenons l’exemple d’une application qui sérialise indirectement une valeur <xref:System.DateTime> en temps universel en utilisant la classe <xref:System.Xml.XmlConvert> ou <xref:System.Data.DataSet> de la manière suivante.  
   
 ```csharp
@@ -76,11 +76,11 @@ String serialized = XMLConvert.ToString(myDateTime);
   
  Pour cet exemple précis, passez `XmlDateTimeSerializationMode.RoundtripKind` à l’appel `ToString` sur `XmlConvert`. Les données sont sérialisées en heure UTC.  
   
- Si vous utilisez un <xref:System.Data.DataSet>, affectez la valeur <xref:System.Data.DataColumn.DateTimeMode%2A> à la propriété <xref:System.Data.DataColumn> sur l’objet <xref:System.Data.DataSetDateTime.Utc>.  
+ Si vous utilisez un <xref:System.Data.DataSet>, affectez la valeur <xref:System.Data.DataSetDateTime.Utc> à la propriété <xref:System.Data.DataColumn.DateTimeMode%2A> sur l’objet <xref:System.Data.DataColumn>.  
   
 ```csharp
 DateTime myDateTime = DateTime.UtcNow;  
-String serialized = XmlConvert.ToString(myDateTime,   
+String serialized = XmlConvert.ToString(myDateTime,
     XmlDateTimeSerializationMode.RoundtripKind);  
 ```  
   

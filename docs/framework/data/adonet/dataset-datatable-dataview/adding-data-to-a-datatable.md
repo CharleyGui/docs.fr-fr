@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d6aa8474-7bde-48f7-949d-20dc38a1625b
-ms.openlocfilehash: 2a001ac8b3d4b8cd9618b3ced7bdf578ebae2e22
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 02d7f94259cc56513be404c5539ca7015d5f3533
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786592"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151531"
 ---
 # <a name="adding-data-to-a-datatable"></a>Ajout de données à un DataTable
-Après avoir créé un objet <xref:System.Data.DataTable> et défini sa structure à l'aide de colonnes et de contraintes, vous pouvez ajouter de nouvelles lignes de données à la table. Pour ajouter une nouvelle ligne, déclarez une nouvelle variable comme type <xref:System.Data.DataRow>. Un nouvel objet **DataRow** est retourné lorsque vous appelez la <xref:System.Data.DataTable.NewRow%2A> méthode. Le **DataTable** crée ensuite l’objet **DataRow** en fonction de la structure de la table, comme <xref:System.Data.DataColumnCollection>défini par.  
+Après avoir créé un objet <xref:System.Data.DataTable> et défini sa structure à l'aide de colonnes et de contraintes, vous pouvez ajouter de nouvelles lignes de données à la table. Pour ajouter une nouvelle ligne, déclarez une nouvelle variable comme type <xref:System.Data.DataRow>. Un nouvel objet **DataRow** est <xref:System.Data.DataTable.NewRow%2A> retourné lorsque vous appelez la méthode. Le **DataTable** crée ensuite l’objet **DataRow** en fonction de <xref:System.Data.DataColumnCollection>la structure de la table, tel que défini par le .  
   
- L’exemple suivant montre comment créer une nouvelle ligne en appelant la méthode **NewRow** .  
+ L’exemple suivant montre comment créer une nouvelle ligne en appelant la méthode **NewRow.**  
   
 ```vb  
 Dim workRow As DataRow = workTable.NewRow()  
@@ -37,7 +37,7 @@ workRow["CustLName"] = "Smith";
 workRow[1] = "Smith";  
 ```  
   
- Une fois que les données sont insérées dans la nouvelle ligne, la méthode **Add** est utilisée pour ajouter <xref:System.Data.DataRowCollection>la ligne à, comme indiqué dans le code suivant.  
+ Une fois que les données sont **Add** insérées dans la nouvelle <xref:System.Data.DataRowCollection>ligne, la méthode Add est utilisée pour ajouter la ligne au , indiqué dans le code suivant.  
   
 ```vb  
 workTable.Rows.Add(workRow)  
@@ -47,7 +47,7 @@ workTable.Rows.Add(workRow)
 workTable.Rows.Add(workRow);  
 ```  
   
- Vous pouvez également appeler la méthode **Add** pour ajouter une nouvelle ligne en passant un tableau de valeurs, de type <xref:System.Object>, comme indiqué dans l’exemple suivant.  
+ Vous pouvez également appeler la méthode **Add** pour ajouter une nouvelle ligne <xref:System.Object>en passant dans un tableau de valeurs, tapé comme , comme indiqué dans l’exemple suivant.  
   
 ```vb  
 workTable.Rows.Add(new Object() {1, "Smith"})  
@@ -57,9 +57,9 @@ workTable.Rows.Add(new Object() {1, "Smith"})
 workTable.Rows.Add(new Object[] {1, "Smith"});  
 ```  
   
- Le passage d’un tableau de valeurs, typé en tant qu' **objet**, à la méthode **Add** crée une nouvelle ligne à l’intérieur de la table et définit ses valeurs de colonne avec les valeurs du tableau d’objets. Notez que les valeurs du tableau correspondent de façon séquentielle aux colonnes, en fonction de leur ordre d'apparition dans la table.  
+ En passant un tableau de valeurs, tapé comme **objet,** à la méthode **Add** crée une nouvelle ligne à l’intérieur de la table et définit ses valeurs de colonne aux valeurs dans le tableau d’objets. Notez que les valeurs du tableau correspondent de façon séquentielle aux colonnes, en fonction de leur ordre d'apparition dans la table.  
   
- L’exemple suivant ajoute 10 lignes à la table **Customers** nouvellement créée.  
+ L’exemple suivant ajoute 10 lignes à la table **des clients** nouvellement créée.  
   
 ```vb  
 Dim workRow As DataRow  
@@ -76,7 +76,7 @@ Next
 ```csharp  
 DataRow workRow;  
   
-for (int i = 0; i <= 9; i++)   
+for (int i = 0; i <= 9; i++)
 {  
   workRow = workTable.NewRow();  
   workRow[0] = i;  
@@ -92,4 +92,4 @@ for (int i = 0; i <= 9; i++)
 - <xref:System.Data.DataRowCollection>
 - <xref:System.Data.DataTable>
 - [Manipulation des données dans un DataTable](manipulating-data-in-a-datatable.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

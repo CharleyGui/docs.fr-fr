@@ -3,24 +3,24 @@ title: <cancelRequestedQueries>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: eab5af7e-76fa-434d-9d36-873e995cee05
-ms.openlocfilehash: 0d08612ce5d74f4f7f505c538187ddecea610132
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 89297b3a7d64f4300a735d8512230d441836c634
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70398826"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79152305"
 ---
-# <a name="cancelrequestedqueries"></a>\<cancelRequestedQueries>
+# <a name="cancelrequestedqueries"></a>\<annulerRequestedQueries>
 Représente une collection de requêtes qui permettent d’effectuer le suivi des demandes d’annulation d’une activité enfant par l’activité parent. La requête est nécessaire pour qu'un participant au suivi puisse s'abonner à des objets d'enregistrement de demande d'annulation.  
   
- Pour plus d’informations sur le suivi des requêtes de profils, consultez modèles de [suivi](../../../windows-workflow-foundation/tracking-profiles.md)  
+ Pour plus d’informations sur les requêtes de profil de suivi, voir [Profils de suivi](../../../windows-workflow-foundation/tracking-profiles.md)  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<requise. > ServiceModel**](system-servicemodel-of-workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<suivi des >** ](tracking.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<trackingProfile >** ](trackingprofile.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de flux de travail**](workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<cancelRequestedQueries >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<Système. ServiceModel>**](system-servicemodel-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<suivi des>**](tracking.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<suiviProfile>**](trackingprofile.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<flux de travail>**](workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<annulerRequestedQueries>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,7 +29,7 @@ Représente une collection de requêtes qui permettent d’effectuer le suivi de
   <trackingProfile name="Name">
     <workflow>
       <cancelRequestQueries>
-        <cancelRequestQuery activityName="String" 
+        <cancelRequestQuery activityName="String"
                             childActivityName="String"/>
       </cancelRequestQueries>
     </workflow>
@@ -47,13 +47,13 @@ Représente une collection de requêtes qui permettent d’effectuer le suivi de
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<cancelRequestedQuery>](cancelrequestedquery.md)|Requête qui permet d'effectuer le suivi des demande d'annulation d'une activité enfant par l'activité parent.|  
+|[\<annulerRequestedQuery>](cancelrequestedquery.md)|Requête qui permet d'effectuer le suivi des demande d'annulation d'une activité enfant par l'activité parent.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<workflow>](workflow.md)|Élément de configuration qui contient toutes les requêtes pour un flux de travail spécifique identifié par la propriété **ActivityDefinitionId** .|  
+|[\<flux de travail>](workflow.md)|Un élément de configuration qui contient toutes les requêtes pour un flux de travail spécifique identifié par la propriété **activitéDefinitionId.**|  
   
 ## <a name="see-also"></a>Voir aussi
 

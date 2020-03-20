@@ -15,36 +15,36 @@ helpviewer_keywords:
 ms.assetid: a4926d0a-261b-46b1-9994-82633661a64b
 topic_type:
 - apiref
-ms.openlocfilehash: e8c145632911817e8e19d587bb8afead0a6c33af
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3b8aed6522b1c7eb2d8916f71d8a66b367623765
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74434350"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177606"
 ---
 # <a name="imetadataemitdeletetoken-method"></a>IMetaDataEmit::DeleteToken, méthode
-Supprime le jeton spécifié de la portée de métadonnées actuelle.  
+Supprime le jeton spécifié à partir de la portée actuelle des métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DeleteToken (   
-    [in]  mdToken     tkObj   
+HRESULT DeleteToken (
+    [in]  mdToken     tkObj
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `tkObj`  
- dans Jeton à supprimer.  
+ [dans] Le jeton à supprimer.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

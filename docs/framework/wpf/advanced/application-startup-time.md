@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application startup [WPF]
 - performance [WPF], startup time
 ms.assetid: f0ec58d8-626f-4d8a-9873-c20f95e08b96
-ms.openlocfilehash: 8bdd70a6eaea8aff196e2156d88460a6d24b5d3f
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 0fae3ac1769163101dcdb183f4c5c2135354b1fc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487186"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79145421"
 ---
 # <a name="application-startup-time"></a>Temps de démarrage d'une application
 La quantité de temps nécessaire pour démarrer une application WPF peut varier considérablement. Cette rubrique décrit les différentes techniques permettant de réduire le temps de démarrage (perçu et réel) pour une application Windows Presentation Foundation (WPF).  
@@ -24,9 +24,9 @@ La quantité de temps nécessaire pour démarrer une application WPF peut varier
  Le démarrage à chaud se produit lorsque la plupart des pages pour les principaux composants du common language runtime (CLR) sont déjà chargés en mémoire, ce qui réduit le temps d’accès disque coûteux. C’est pourquoi une application managée démarre plus vite lorsqu’elle s’exécute une deuxième fois.  
   
 ## <a name="implement-a-splash-screen"></a>Implémentation d’un écran de démarrage  
- Dans les cas où il y a un délai notable et inévitable entre le démarrage d’une application et l’affichage de la première interface utilisateur, optimisez le temps de démarrage perçu à l’aide un *écran de démarrage*. Cette approche affiche une image presque immédiatement après que l’utilisateur démarre l’application. Lorsque l’application est prête à afficher sa première interface utilisateur, l’écran de démarrage disparaît en fondu. À compter de .NET Framework 3.5 SP1, vous pouvez utiliser la <xref:System.Windows.SplashScreen> classe pour implémenter un écran de démarrage. Pour plus d’informations, consultez [Ajouter un écran de démarrage dans une application WPF](../app-development/how-to-add-a-splash-screen-to-a-wpf-application.md).  
+ Dans les cas où il y a un délai notable et inévitable entre le démarrage d’une application et l’affichage de la première interface utilisateur, optimisez le temps de démarrage perçu à l’aide un *écran de démarrage*. Cette approche affiche une image presque immédiatement après que l’utilisateur démarre l’application. Lorsque l’application est prête à afficher sa première interface utilisateur, l’écran de démarrage disparaît en fondu. En commençant par le .NET Framework 3.5 <xref:System.Windows.SplashScreen> SP1, vous pouvez utiliser la classe pour implémenter un écran d’éclaboussure. Pour plus d’informations, consultez [Ajouter un écran de démarrage dans une application WPF](../app-development/how-to-add-a-splash-screen-to-a-wpf-application.md).  
   
- Vous pouvez également implémenter votre propre écran de démarrage à l’aide des graphiques Win32 natifs. Affichez votre implémentation avant le <xref:System.Windows.Application.Run%2A> méthode est appelée.  
+ Vous pouvez également implémenter votre propre écran de démarrage à l’aide des graphiques Win32 natifs. Affichez votre <xref:System.Windows.Application.Run%2A> implémentation avant que la méthode ne soit appelée.  
   
 ## <a name="analyze-the-startup-code"></a>Analyse du code de démarrage  
  Déterminez la raison pour un démarrage à froid lent. Les E/S du disque peuvent être en cause, mais cela n’est pas toujours le cas. En général, vous devez réduire l’utilisation des ressources externes, comme le réseau, les services web ou le disque.  
@@ -65,7 +65,7 @@ La quantité de temps nécessaire pour démarrer une application WPF peut varier
  La présence à la fois de modules Ngen et JIT peut avoir le pire effet. En effet, mscorjit.dll doit être chargé, et lorsque le compilateur JIT travaille sur votre code, l’accès à de nombreuses pages dans les images Ngen est nécessaire lorsque le compilateur JIT lit les métadonnées des assemblys.  
   
 ### <a name="ngen-and-clickonce"></a>ClickOnce et Ngen  
- La façon dont vous prévoyez de déployer votre application peut également faire une différence dans le temps de chargement. Déploiement d’application ClickOnce ne prend pas en charge Ngen. Si vous décidez d’utiliser Ngen.exe pour votre application, vous devez utiliser un autre mécanisme de déploiement, comme Windows Installer.  
+ La façon dont vous prévoyez de déployer votre application peut également faire une différence dans le temps de chargement. Le déploiement de l’application ClickOnce ne prend pas en charge Ngen. Si vous décidez d’utiliser Ngen.exe pour votre application, vous devez utiliser un autre mécanisme de déploiement, comme Windows Installer.  
   
  Pour plus d’informations, consultez [Ngen.exe (Native Image Generator)](../../tools/ngen-exe-native-image-generator.md).  
   
@@ -81,17 +81,17 @@ La quantité de temps nécessaire pour démarrer une application WPF peut varier
   
  Envisagez d’installer le certificat d’autorité de certification sur l’ordinateur client, ou évitez d’utiliser Authenticode lorsque c’est possible. Si vous savez que votre application ne nécessite pas de preuve de l’éditeur, vous n’avez pas à payer le coût de la vérification de la signature.  
   
- À compter de .NET Framework 3.5, il existe une option de configuration qui permet d’ignorer la vérification Authenticode. Pour ce faire, ajoutez le paramètre suivant au fichier app.exe.config :  
+ À partir de .NET Framework 3.5, il existe une option de configuration qui permet de contourner la vérification Authenticode. Pour ce faire, ajoutez le paramètre suivant au fichier app.exe.config :  
   
 ```xml  
 <configuration>  
     <runtime>  
-        <generatePublisherEvidence enabled="false"/>   
+        <generatePublisherEvidence enabled="false"/>
     </runtime>  
 </configuration>  
 ```  
   
- Pour plus d’informations, consultez [\<generatePublisherEvidence> Element](../../configure-apps/file-schema/runtime/generatepublisherevidence-element.md).  
+ Pour plus d’informations, voir [ \<générerPublisherEvidence> Element](../../configure-apps/file-schema/runtime/generatepublisherevidence-element.md).  
   
 ## <a name="compare-performance-on-windows-vista"></a>Comparaison des performances sur Windows Vista  
  Le gestionnaire de mémoire dans Windows Vista possède une technologie appelée SuperFetch. SuperFetch analyse les modèles d’utilisation de la mémoire au fil du temps pour déterminer le contenu de mémoire optimal pour un utilisateur spécifique. Il fonctionne en continu pour conserver ce contenu à tout moment.  
@@ -104,23 +104,23 @@ La quantité de temps nécessaire pour démarrer une application WPF peut varier
  Pour des performances optimales, appliquez une communication interdomaine efficace en réduisant les appels interdomaines. Si possible, utilisez des appels sans arguments ou avec des arguments de type primitif.  
   
 ## <a name="use-the-neutralresourceslanguage-attribute"></a>Utilisation de l’attribut NeutralResourcesLanguage  
- Utilisez le <xref:System.Resources.NeutralResourcesLanguageAttribute> pour spécifier la culture neutre pour le <xref:System.Resources.ResourceManager>. Cette approche évite les échecs de recherche d’assembly.  
+ Utilisez <xref:System.Resources.NeutralResourcesLanguageAttribute> le pour spécifier la culture neutre pour le <xref:System.Resources.ResourceManager>. Cette approche évite les échecs de recherche d’assembly.  
   
 ## <a name="use-the-binaryformatter-class-for-serialization"></a>Utilisation de la classe BinaryFormatter pour la sérialisation  
- Si vous devez utiliser la sérialisation, utilisez la <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> classe au lieu du <xref:System.Xml.Serialization.XmlSerializer> classe. Le <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> classe est implémentée dans la bibliothèque de classes de Base (BCL) de l’assembly mscorlib.dll. Le <xref:System.Xml.Serialization.XmlSerializer> est implémentée dans l’assembly System.Xml.dll, qui peut être une DLL supplémentaire à charger.  
+ Si vous devez utiliser la <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> sérialisation, utilisez la classe au lieu de la <xref:System.Xml.Serialization.XmlSerializer> classe. La <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> classe est mise en œuvre dans la Bibliothèque de classe de base (BCL) dans l’assemblage mscorlib.dll. Le <xref:System.Xml.Serialization.XmlSerializer> est implémenté dans l’assemblage System.Xml.dll, qui pourrait être un DLL supplémentaire à charger.  
   
- Si vous devez utiliser le <xref:System.Xml.Serialization.XmlSerializer> (classe), vous pouvez obtenir de meilleures performances si vous prégénérez l’assembly de sérialisation.  
+ Si vous devez <xref:System.Xml.Serialization.XmlSerializer> utiliser la classe, vous pouvez obtenir de meilleures performances si vous pré-générer l’assemblage de sérialisation.  
   
 ## <a name="configure-clickonce-to-check-for-updates-after-startup"></a>Configuration de ClickOnce pour vérifier les mises à jour après le démarrage  
- Si votre application utilise ClickOnce, évitez l’accès réseau au démarrage en configurant ClickOnce pour vérifier le site de déploiement des mises à jour après le démarrage de l’application.  
+ Si votre application utilise ClickOnce, évitez l’accès au réseau sur le démarrage en configurant ClickOnce pour vérifier le site de déploiement pour les mises à jour après le début de l’application.  
   
- Si vous utilisez le modèle d’application (XBAP) de navigateur XAML, n’oubliez pas que ClickOnce vérifie le site de déploiement des mises à jour, même si le XBAP se trouve déjà dans le cache ClickOnce. Pour plus d'informations, consultez [ClickOnce Security and Deployment](/visualstudio/deployment/clickonce-security-and-deployment).  
+ Si vous utilisez le modèle d’application de navigateur XAML (XBAP), gardez à l’esprit que ClickOnce vérifie le site de déploiement pour les mises à jour, même si le XBAP est déjà dans le cache ClickOnce. Pour plus d'informations, consultez [ClickOnce Security and Deployment](/visualstudio/deployment/clickonce-security-and-deployment).  
   
 ## <a name="configure-the-presentationfontcache-service-to-start-automatically"></a>Configuration du service PresentationFontCache pour qu’il démarre automatiquement  
  La première application WPF qui s’exécute après un redémarrage est le service PresentationFontCache. Le service met en cache les polices système améliore l’accès aux polices et augmente les performances globales. Il existe une surcharge du démarrage du service, et dans certains environnements contrôlés, envisagez de configurer le service pour démarrer automatiquement lors du redémarrage du système.  
   
 ## <a name="set-data-binding-programmatically"></a>Définition des données de liaison par programmation  
- Au lieu d’utiliser XAML pour définir le <xref:System.Windows.FrameworkElement.DataContext%2A> déclarative pour la fenêtre principale, vous pouvez la définir par programmation dans le <xref:System.Windows.Application.OnActivated%2A> (méthode).  
+ Au lieu d’utiliser XAML pour définir le <xref:System.Windows.FrameworkElement.DataContext%2A> déclarativement pour la <xref:System.Windows.Application.OnActivated%2A> fenêtre principale, envisager de le définir programmatiquement dans la méthode.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -129,5 +129,5 @@ La quantité de temps nécessaire pour démarrer une application WPF peut varier
 - <xref:System.Resources.NeutralResourcesLanguageAttribute>
 - <xref:System.Resources.ResourceManager>
 - [Ajouter un écran de démarrage dans une application WPF](../app-development/how-to-add-a-splash-screen-to-a-wpf-application.md)
-- [Ngen.exe (générateur d’images natives)](../../tools/ngen-exe-native-image-generator.md)
-- [\<generatePublisherEvidence> Element](../../configure-apps/file-schema/runtime/generatepublisherevidence-element.md)
+- [Ngen.exe (Native Image Generator)](../../tools/ngen-exe-native-image-generator.md)
+- [\<générerPublisherEvidence> Element](../../configure-apps/file-schema/runtime/generatepublisherevidence-element.md)

@@ -6,32 +6,32 @@ f1_keywords:
 helpviewer_keywords:
 - UI Automation
 ms.assetid: e7ec856e-41ee-47b1-9d57-b75a3dad088c
-ms.openlocfilehash: 7305258570ad853afa88a231592fd4b6cd2dd74e
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.openlocfilehash: 49d2988cbad33497f2214098bcde68f7d5434b5e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965865"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180021"
 ---
 # <a name="microsoft-ui-automation"></a>Microsoft UI Automation
 
 > [!NOTE]
-> Cette documentation est destinée aux développeurs .NET qui souhaitent utiliser les classes UI Automation managées définies dans l’espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les plus récentes sur UI Automation, consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).
+> Cette documentation est destinée aux développeurs .NET qui veulent utiliser <xref:System.Windows.Automation> les classes d’automatisation d’interface utilisateur gérée définies dans l’espace de nom. Pour les dernières informations sur l’automatisation de l’interface utilisateur, voir [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).
 
- Microsoft UI Automation est une infrastructure d’accessibilité pour Microsoft Windows. Elle répond aux besoins des produits de technologie d’assistance et des frameworks de tests automatisés en fournissant un accès par programmation aux informations sur l’interface utilisateur. En outre, UI Automation permet aux développeurs de contrôles et d’applications de rendre leurs produits accessibles.
+ Microsoft UI Automation est un cadre d’accessibilité pour Microsoft Windows. Il répond aux besoins des produits de technologie d’assistance et des cadres de test automatisés en fournissant un accès programmatique à l’information sur l’interface utilisateur (interface utilisateur). En outre, UI Automation permet aux développeurs de contrôle et d’application de rendre leurs produits accessibles.
 
- Cette documentation décrit l’API UI Automation pour le code managé. Pour plus d’informations sur la programmation de C++l’Automation d’interface utilisateur dans, consultez [UI Automation pour les applications Win32](/windows/desktop/winauto/windows-automation-api-portal).
+ Cette documentation décrit l’interface utilisateur automation pour le code géré. Pour plus d’informations sur la programmation de l’interface utilisateur Automation dans le C, voir [UI Automation pour Win32 Applications](/windows/desktop/winauto/windows-automation-api-portal).
 
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
-- [Bonnes pratiques en matière d’accessibilité](accessibility-best-practices.md)
-- [Notions de base d’UI Automation](ui-automation-fundamentals.md)
+- [Meilleures pratiques d'accessibilité](accessibility-best-practices.md)
+- [Principes fondamentaux de l’automatisation de l’interface utilisateur](ui-automation-fundamentals.md)
 - [Fournisseurs UI Automation pour le code managé](ui-automation-providers-for-managed-code.md)
 - [Clients UI Automation pour le code managé](ui-automation-clients-for-managed-code.md)
 - [Modèles de contrôle UI Automation](ui-automation-control-patterns.md)
 - [Modèle de texte UI Automation](ui-automation-text-pattern.md)
 - [UI Automation Control Types](ui-automation-control-types.md)
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
-- [Exemples d’accessibilité](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility) 
+- [Exemples d’accessibilité](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility)

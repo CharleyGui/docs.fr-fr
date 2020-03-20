@@ -15,31 +15,31 @@ helpviewer_keywords:
 ms.assetid: 5eaf3b4a-92b7-4d5b-97e0-1e83721e0052
 topic_type:
 - apiref
-ms.openlocfilehash: 18fe0c834506d0ac4cd15fd7af4c4f15904b0f81
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 306c1748b4997309ee15fb7751bc818b0287aaf0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437577"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177270"
 ---
 # <a name="imetadataimportgeteventprops-method"></a>IMetaDataImport::GetEventProps, méthode
-Obtient des informations de métadonnées pour l’événement représenté par le jeton d’événement spécifié, y compris le type déclarant, les méthodes d’ajout et de suppression pour les délégués et tous les indicateurs et autres données associées.  
+Obtient des informations sur les métadonnées pour l’événement représentées par le jeton d’événement spécifié, y compris le type de déclaration, les méthodes d’ajout et de suppression pour les délégués, et tous les drapeaux et autres données associées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetEventProps (  
    [in]  mdEvent       ev,  
-   [out] mdTypeDef     *pClass,   
-   [out] LPCWSTR       szEvent,   
-   [in]  ULONG         cchEvent,   
-   [out] ULONG         *pchEvent,   
+   [out] mdTypeDef     *pClass,
+   [out] LPCWSTR       szEvent,
+   [in]  ULONG         cchEvent,
+   [out] ULONG         *pchEvent,
    [out] DWORD         *pdwEventFlags,  
    [out] mdToken       *ptkEventType,  
-   [out] mdMethodDef   *pmdAddOn,   
-   [out] mdMethodDef   *pmdRemoveOn,   
-   [out] mdMethodDef   *pmdFire,   
-   [out] mdMethodDef   rmdOtherMethod[],   
+   [out] mdMethodDef   *pmdAddOn,
+   [out] mdMethodDef   *pmdRemoveOn,
+   [out] mdMethodDef   *pmdFire,
+   [out] mdMethodDef   rmdOtherMethod[],
    [in]  ULONG         cMax,  
    [out] ULONG         *pcOtherMethod  
 );  
@@ -47,49 +47,49 @@ HRESULT GetEventProps (
   
 ## <a name="parameters"></a>Paramètres  
  `ev`  
- dans Jeton de métadonnées d’événement représentant l’événement pour lequel obtenir les métadonnées.  
+ [dans] Le jeton des métadonnées de l’événement représentant l’événement pour obtenir des métadonnées pour.  
   
  `pClass`  
- à Pointeur vers le jeton TypeDef représentant la classe qui déclare l’événement.  
+ [out] Un pointeur pour le jeton TypeDef représentant la classe qui déclare l’événement.  
   
  `szEvent`  
- à Nom de l’événement référencé par `ev`.  
+ [out] Le nom de l’événement référencé par `ev`.  
   
  `pchEvent`  
- dans Longueur demandée en caractères larges de `szEvent`.  
+ [dans] La longueur demandée `szEvent`en caractères larges de .  
   
  `pdwEventFlags`  
- à Longueur retournée en caractères larges de `szEvent`.  
+ [out] La longueur retournée dans `szEvent`de larges caractères de .  
   
  `ptkEventType`  
- à Pointeur vers un jeton de métadonnées TypeRef ou TypeDef représentant le type de <xref:System.Delegate> de l’événement.  
+ [out] Un pointeur vers un jeton de métadonnées <xref:System.Delegate> TypeRef ou TypeDef représentant le type de l’événement.  
   
  `pmdAddOn`  
- à Pointeur vers le jeton de métadonnées représentant la méthode qui ajoute des gestionnaires pour l’événement.  
+ [out] Un pointeur sur le jeton des métadonnées représentant la méthode qui ajoute des gestionnaires pour l’événement.  
   
  `pmdRemoveOn`  
- à Pointeur vers le jeton de métadonnées représentant la méthode qui supprime les gestionnaires de l’événement.  
+ [out] Un pointeur sur le jeton des métadonnées représentant la méthode qui supprime les gestionnaires pour l’événement.  
   
  `pmdFire`  
- à Pointeur vers le jeton de métadonnées représentant la méthode qui déclenche l’événement.  
+ [out] Un pointeur sur le jeton des métadonnées représentant la méthode qui soulève l’événement.  
   
  `rmdOtherMethod`  
- à Tableau de pointeurs de jeton vers d’autres méthodes associées à l’événement.  
+ [out] Un éventail de pointeurs symboliques à d’autres méthodes associées à l’événement.  
   
  `cMax`  
  [in] Taille maximale du tableau `rmdOtherMethod`.  
   
  `pcOtherMethod`  
- à Nombre de jetons retournés dans `rmdOtherMethod`.  
+ [out] Le nombre de jetons `rmdOtherMethod`retournés dans .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,22 +15,22 @@ helpviewer_keywords:
 ms.assetid: 10093e3d-26b6-4ad7-8ef3-bbf66243fc02
 topic_type:
 - apiref
-ms.openlocfilehash: adcfbf1207ad7895ab55f7e5cf9581905cb826bf
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e9b32980a5606629676549905d3c9956633f25b0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73096104"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178699"
 ---
 # <a name="icordebugobjectenumnext-method"></a>ICorDebugObjectEnum::Next, méthode
-Obtient les adresses virtuelles relatives (RVA) du nombre d’objets spécifié à partir de l’énumération, en commençant à la position actuelle.  
+Obtient les adresses virtuelles relatives (RVAs) du nombre spécifié d’objets de l’énumération, à partir de la position actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT Next (  
     [in] ULONG celt,  
-    [out, size_is(celt), length_is(*pceltFetched)]    
+    [out, size_is(celt), length_is(*pceltFetched)]
         CORDB_ADDRESS objects[],  
     [out] ULONG *pceltFetched  
 );  
@@ -41,18 +41,18 @@ HRESULT Next (
  [in] Nombre d'objets à récupérer.  
   
  `objects`  
- à Tableau de pointeurs, chacun pointant vers un objet CORDB_ADDRESS.  
+ [out] Un tableau de pointeurs, chacun pointant vers un objet CORDB_ADDRESS.  
   
  `pceltFetched`  
- à Pointeur vers le nombre d’objets réellement retournés. Cette valeur peut être null si `celt` est un.  
+ [out] Pointeur sur le nombre d’objets effectivement retournés. Cette valeur peut `celt` être nulle si elle en est une.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi

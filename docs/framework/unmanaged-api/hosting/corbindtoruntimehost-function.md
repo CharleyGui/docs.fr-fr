@@ -14,77 +14,77 @@ helpviewer_keywords:
 ms.assetid: 5c826ba3-8258-49bc-a417-78807915fcaf
 topic_type:
 - apiref
-ms.openlocfilehash: a6d9708e7281a72c88ba28012006784f7b0ee9d9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6566adc442034763e0209869404b60b5afa63866
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124358"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176485"
 ---
 # <a name="corbindtoruntimehost-function"></a>CorBindToRuntimeHost, fonction
-Permet aux hôtes de charger une version spécifiée du common language runtime (CLR) dans un processus.  
+Permet aux hôtes de charger une version spécifiée de l’heure d’exécution de la langue commune (CLR) dans un processus.  
   
- Cette fonction a été dépréciée dans le .NET Framework 4.  
+ Cette fonction a été dépréciée dans le cadre .NET 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT CorBindToRuntimeHost (  
-    [in] LPCWSTR       pwszVersion,   
-    [in] LPCWSTR       pwszBuildFlavor,   
-    [in] LPCWSTR       pwszHostConfigFile,   
-    [in] VOID*         pReserved,   
-    [in] DWORD         startupFlags,   
-    [in] REFCLSID      rclsid,   
-    [in] REFIID        riid,   
+    [in] LPCWSTR       pwszVersion,
+    [in] LPCWSTR       pwszBuildFlavor,
+    [in] LPCWSTR       pwszHostConfigFile,
+    [in] VOID*         pReserved,
+    [in] DWORD         startupFlags,
+    [in] REFCLSID      rclsid,
+    [in] REFIID        riid,
     [out] LPVOID FAR  *ppv  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `pwszVersion`  
- dans Chaîne qui décrit la version du CLR que vous souhaitez charger.  
+ [dans] Une chaîne qui décrit la version du CLR que vous souhaitez charger.  
   
- Un numéro de version dans le .NET Framework se compose de quatre parties séparées par des points : *major. minor. Build. Revision*. La chaîne transmise en tant que `pwszVersion` doit commencer par le caractère « v » suivi des trois premières parties du numéro de version (par exemple, « v 1.0.1529 »).  
+ Un numéro de version dans le cadre .NET se compose de quatre parties séparées par des périodes: *major.minor.build.revision*. La chaîne `pwszVersion` est passée comme il faut commencer par le personnage "v" suivi des trois premières parties du numéro de version (par exemple, "v1.0.1529").  
   
- Certaines versions du CLR sont installées avec une instruction de stratégie qui spécifie la compatibilité avec les versions précédentes du CLR. Par défaut, le shim de démarrage évalue `pwszVersion` par rapport aux instructions de stratégie et charge la version la plus récente du runtime qui est compatible avec la version demandée. Un hôte peut forcer le shim à ignorer l’évaluation de la stratégie et charger la version exacte spécifiée dans `pwszVersion` en passant une valeur de STARTUP_LOADER_SAFEMODE pour le paramètre `startupFlags`.  
+ Certaines versions du CLR sont installées avec un énoncé de politique qui spécifie la compatibilité avec les versions précédentes du CLR. Par défaut, le cale de démarrage évalue par rapport aux énoncés `pwszVersion` de politique et charge la dernière version du temps d’exécution qui est compatible avec la version demandée. Un hôte peut forcer le cale à sauter `pwszVersion` l’évaluation de la politique et `startupFlags` charger la version exacte spécifiée en passant une valeur de STARTUP_LOADER_SAFEMODE pour le paramètre.  
   
- Si `pwszVersion` est `null,` la méthode ne charge pas de version du CLR. Au lieu de cela, elle retourne CLR_E_SHIM_RUNTIMELOAD, ce qui indique qu’elle n’a pas pu charger le Runtime.  
+ Si `pwszVersion` `null,` c’est la méthode ne charge aucune version du CLR. Au lieu de cela, il retourne CLR_E_SHIM_RUNTIMELOAD, ce qui indique qu’il n’a pas réussi à charger le temps d’exécution.  
   
  `pwszBuildFlavor`  
- dans Chaîne qui spécifie s’il faut charger le serveur ou la build de station de travail du CLR. Les valeurs valides sont `svr` et `wks`. La build du serveur est optimisée pour tirer parti de plusieurs processeurs pour les nettoyages de la mémoire, et la build de la station de travail est optimisée pour les applications clientes exécutées sur un ordinateur à un seul processeur.  
+ [dans] Une chaîne qui précise s’il faut charger le serveur ou la construction du poste de travail du CLR. Les valeurs valides sont `svr` et `wks`. La construction du serveur est optimisée pour tirer parti de plusieurs processeurs pour les collectes d’ordures, et la construction du poste de travail est optimisée pour les applications client fonctionnant sur une machine à processeur unique.  
   
- Si `pwszBuildFlavor` a la valeur null, la build de station de travail est chargée. Lors de l’exécution sur un ordinateur à un seul processeur, la build de station de travail est toujours chargée, même si `pwszBuildFlavor` est défini sur `svr`. Toutefois, si `pwszBuildFlavor` est défini sur `svr` et que garbage collection simultané est spécifié (voir la description du paramètre `startupFlags`), la build du serveur est chargée.  
+ S’il `pwszBuildFlavor` est réglé pour annuler, la construction du poste de travail est chargée. Lorsque vous exécutez sur une machine à processeur unique, `pwszBuildFlavor` la `svr`construction du poste de travail est toujours chargée, même si elle est réglée à . Toutefois, `pwszBuildFlavor` si la `svr` collecte des ordures est définie et `startupFlags` concomitante (voir la description du paramètre), la construction du serveur est chargée.  
   
 > [!NOTE]
-> Le garbage collection simultané n’est pas pris en charge dans les applications exécutant l’émulateur WOW64 x86 sur les systèmes 64 bits qui implémentent l’architecture Intel Itanium (anciennement appelée IA-64). Pour plus d’informations sur l’utilisation de WOW64 sur les systèmes Windows 64 bits, consultez [exécution d’Applications 32 bits](/windows/desktop/WinProg64/running-32-bit-applications).  
+> La collecte simultanée des ordures n’est pas prise en charge dans les applications exécutant l’émulateur WOW64 x86 sur les systèmes 64 bits qui implémentent l’architecture Intel Itanium (anciennement appelée IA-64). Pour plus d’informations sur l’utilisation de WOW64 sur les systèmes Windows 64 bits, voir [Exécution des applications 32 bits](/windows/desktop/WinProg64/running-32-bit-applications).  
   
  `pwszHostConfigFile`  
- dans Nom d’un fichier de configuration d’hôte qui spécifie la version du CLR à charger. Si le nom de fichier n’inclut pas de chemin d’accès qualifié complet, le fichier est supposé être dans le même répertoire que l’exécutable qui effectue l’appel.  
+ [dans] Le nom d’un fichier de configuration hôte qui spécifie la version du CLR à charger. Si le nom du fichier n’inclut pas un chemin entièrement qualifié, le fichier est supposé être dans le même répertoire que l’exécutable qui fait l’appel.  
   
  `pReserved`  
- dans Réservé pour une future extensibilité.  
+ [dans] Réservé à l’extensibility future.  
   
  `startupFlags`  
- dans Jeu d’indicateurs qui contrôle les garbage collection simultanées, le code indépendant du domaine et le comportement du paramètre `pwszVersion`. La valeur par défaut est un domaine unique si aucun indicateur n’est défini. Pour obtenir la liste des valeurs prises en charge, consultez l' [énumération STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md).  
+ [dans] Un ensemble de drapeaux qui contrôle la collecte simultanée des `pwszVersion` ordures, le code neutre sur le domaine et le comportement du paramètre. La valeur par défaut est un domaine unique si aucun indicateur n’est défini. Pour une liste de valeurs soutenues, voir le [STARTUP_FLAGS énumération](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md).  
   
  `rclsid`  
- dans `CLSID` de la coclasse qui implémente l’interface [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) ou [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) . Les valeurs prises en charge sont CLSID_CorRuntimeHost ou CLSID_CLRRuntimeHost.  
+ [dans] La `CLSID` coclasse qui met en œuvre soit [l’interface ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) ou [l’interface ICLRRuntimeHost.](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) Les valeurs soutenues sont CLSID_CorRuntimeHost ou CLSID_CLRRuntimeHost.  
   
  `riid`  
- dans `IID` de l’interface que vous demandez. Les valeurs prises en charge sont IID_ICorRuntimeHost ou IID_ICLRRuntimeHost.  
+ [dans] L’interface `IID` que vous demandez. Les valeurs soutenues sont IID_ICorRuntimeHost ou IID_ICLRRuntimeHost.  
   
  `ppv`  
- à Pointeur d’interface vers la version du runtime qui a été chargée.  
+ [out] Un pointeur d’interface à la version du temps d’exécution qui a été chargé.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE. idl  
+ **En-tête:** MSCorEE.idl MSCorEE.idl  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque:** MSCorEE.dll MSCorEE.dll MSCorEE.dll MSCor  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -93,4 +93,4 @@ HRESULT CorBindToRuntimeHost (
 - [CorBindToRuntimeByCfg, fonction](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md)
 - [CorBindToRuntimeEx, fonction](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)
 - [ICorRuntimeHost, interface](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
-- [Fonctions d’hébergement CLR dépréciées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Fonction d'hébergement du CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

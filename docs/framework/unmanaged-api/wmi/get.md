@@ -1,6 +1,6 @@
 ---
-title: Fonction d’extraction (référence des API non managées)
-description: La fonction obtenir récupère la valeur de propriété spécifiée.
+title: Obtenez la fonction (référence API non gestion)
+description: La fonction Get récupère la valeur de la propriété spécifiée.
 ms.date: 11/06/2017
 api_name:
 - Get
@@ -14,16 +14,16 @@ helpviewer_keywords:
 - Get function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 60f29b91000fd3c07efea88dcc319eb283a4af78
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 67fcfb301eebfcf4ed4fdcaa5c9ddf85c47a6073
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120326"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174977"
 ---
 # <a name="get-function"></a>Get, fonction
 
-Récupère la valeur de propriété spécifiée, si elle existe.
+Récupère la valeur de la propriété spécifiée si elle existe.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -31,73 +31,73 @@ Récupère la valeur de propriété spécifiée, si elle existe.
 
 ```cpp
 HRESULT Get (
-   [in] int               vFunc, 
-   [in] IWbemClassObject* ptr, 
+   [in] int               vFunc,
+   [in] IWbemClassObject* ptr,
    [in] LPCWSTR           wszName,
    [in] LONG              lFlags,
    [out] VARIANT*         pVal,
    [out] CIMTYPE*         pvtType,
    [out] LONG*            plFlavor
-); 
+);
 ```
 
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`\
-dans Ce paramètre n’est pas utilisé.
+[dans] Ce paramètre n’est pas utilisé.
 
 `ptr`\
-dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
+[dans] Un pointeur à une instance [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
 
 `wszName`\
-dans Nom de la propriété.
+[in] Nom de la propriété.
 
 `lFlags`\
-[in] Réservée. Ce paramètre doit avoir la valeur 0.
+[in] Réservée. Ce paramètre doit être de 0.
 
 `pVal`\
-à Si la fonction est correctement retournée, contient la valeur de la propriété `wszName`. Le type et la valeur corrects du qualificateur sont attribués à l’argument `pval`.
+[out] Si la fonction revient avec `wszName` succès, contient la valeur de la propriété. L’argument `pval` est attribué le bon type et la valeur pour le qualificatif.
 
 `pvtType`\
-à Si la fonction est correctement retournée, contient une [constante de type CIM](/windows/win32/api/wbemcli/ne-wbemcli-cimtype_enumeration) qui indique le type de propriété. Sa valeur peut également être `null`. 
+[out] Si la fonction revient avec succès, contient une [constante de type CIM](/windows/win32/api/wbemcli/ne-wbemcli-cimtype_enumeration) qui indique le type de propriété. Sa valeur peut `null`également être .
 
 `plFlavor`\
-à Si la fonction est correctement retournée, reçoit des informations sur l’origine de la propriété. Sa valeur peut être `null`, ou l’une des constantes WBEM_FLAVOR_TYPE suivantes définies dans le fichier d’en-tête *WbemCli. h* : 
+[out] Si la fonction revient avec succès, reçoit des informations sur l’origine de la propriété. Sa valeur `null`peut être, ou l’une des constantes WBEM_FLAVOR_TYPE suivantes définies dans le fichier d’en-tête *WbemCli.h:*
 
-|Constante  |valeur  |Description  |
+|Constant  |Valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_ORIGIN_SYSTEM` | 0x40 | La propriété est une propriété système standard. |
-| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pour une classe : la propriété est héritée de la classe parente. <br> Pour une instance : la propriété, alors qu’elle est héritée de la classe parente, n’a pas été modifiée par l’instance.  |
-| `WBEM_FLAVOR_ORIGIN_LOCAL` | 0 | Pour une classe : la propriété appartient à la classe dérivée. <br> Pour une instance : la propriété est modifiée par l’instance ; autrement dit, une valeur a été fournie ou un qualificateur a été ajouté ou modifié. |
+| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pour une classe : La propriété est héritée de la classe mère. <br> Par exemple : La propriété, bien qu’héritée de la classe mère, n’a pas été modifiée par l’exemple.  |
+| `WBEM_FLAVOR_ORIGIN_LOCAL` | 0 | Pour une classe: La propriété appartient à la classe dérivée. <br> Par exemple : La propriété est modifiée par l’exemple; c’est-à-dire qu’une valeur a été fournie, ou qu’un qualificatif a été ajouté ou modifié. |
 
-## <a name="return-value"></a>Valeur de retour
+## <a name="return-value"></a>Valeur retournée
 
-Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli.h,* ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |valeur  |Description  |
+|Constant  |Valeur  |Description  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
+|`WBEM_E_FAILED` | 0x80041001 | Il y a eu un échec général. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un ou plusieurs paramètres ne sont pas valides. |
-|`WBEM_E_NOT_FOUND` | 0x80041002 | La propriété spécifiée est introuvable. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | La mémoire disponible est insuffisante pour terminer l’opération. |
-|`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
+|`WBEM_E_NOT_FOUND` | 0x80041002 | La propriété spécifiée n’a pas été trouvée. |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | La mémoire n'est pas suffisante pour terminer cette opération. |
+|`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a été réussi.  |
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-Cette fonction encapsule un appel à la méthode [IWbemClassObject :: obtenir](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-get) .
+Cette fonction enveloppe un appel à [l’IWbemClassObject::Get](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-get) méthode.
 
-La fonction `Get` peut également retourner des propriétés système.
+La `Get` fonction peut également retourner les propriétés du système.
 
-Le type et la valeur corrects pour le qualificateur et la fonction [VARIANTINIT](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit) com sont assignés à l’argument `pVal`
+L’argument `pVal` est attribué le bon type et la valeur pour le qualificatif et la fonction COM [VariantInit](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit)
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
- **En-tête :** WMINet_Utils. idl
+ **En-tête:** WMINet_Utils.idl
 
- **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)
+- [WMI et compteurs de performances (référence des API non managées)](index.md)

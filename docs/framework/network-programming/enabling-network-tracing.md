@@ -11,21 +11,21 @@ helpviewer_keywords:
 - logs, trace
 - destination for tracing output
 ms.assetid: 5fff458c-51a6-4134-ba47-8a6137ddc41e
-ms.openlocfilehash: 62a24e45339b93af2c62db440f0611f16705116d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 61ffd422463ca70cc34c39dd216ce8e660809dcb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71048534"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180878"
 ---
 # <a name="enabling-network-tracing"></a>Activation du suivi réseau
 Le traçage réseau fournit l’accès aux informations sur les appels de méthodes et le trafic réseau généré par une application managée. Vous devez effectuer les tâches suivantes pour activer le traçage réseau dans votre application :  
   
-- Compiler votre code avec le traçage activé. Voir [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](../debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md) pour plus d’informations sur les commutateurs du compilateur nécessaires pour activer le traçage.  
+- Compiler votre code avec le traçage activé. Pour plus d’informations sur les commutateurs du compilateur nécessaires pour activer le traçage, consultez [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](../debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md).  
   
 - Spécifier une destination de sortie de traçage.  
   
-- Configurer le comportement du traçage réseau. Voir [Guide pratique pour configurer le traçage réseau](how-to-configure-network-tracing.md) pour obtenir des informations détaillées.  
+- Configurer le comportement du traçage réseau. Pour obtenir des informations détaillées, consultez [Guide pratique pour configurer le traçage réseau](how-to-configure-network-tracing.md).  
   
  Les destinations de trace les plus courantes, également appelées écouteurs de suivi, sont l’écouteur par défaut et le fichier journal.  
   
@@ -40,7 +40,7 @@ Le traçage réseau fournit l’accès aux informations sur les appels de métho
   <trace autoflush="true" indentsize="4">  
     <listeners>  
       <add name="file" type="System.Diagnostics.TextWriterTraceListener" initializeData="trace.log"/>  
-    </listeners>   
+    </listeners>
   </trace>  
 </system.diagnostics>  
 ```  
@@ -49,4 +49,4 @@ Le traçage réseau fournit l’accès aux informations sur les appels de métho
 
 - [Interprétation du suivi réseau](interpreting-network-tracing.md)
 - [Traçage réseau dans .NET Framework](network-tracing.md)
-- [Suivi et instrumentation d’applications](../debug-trace-profile/tracing-and-instrumenting-applications.md)
+- [Traçage et instrumentation d'applications](../debug-trace-profile/tracing-and-instrumenting-applications.md)

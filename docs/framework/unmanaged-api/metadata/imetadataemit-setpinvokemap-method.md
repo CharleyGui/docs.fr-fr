@@ -15,48 +15,48 @@ helpviewer_keywords:
 ms.assetid: c6bfd574-1da3-4ba7-82f2-46ca5efcbaba
 topic_type:
 - apiref
-ms.openlocfilehash: 4e2a78e2d049e952aa1be0b3a8fd640eb18d0320
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 4c68754bc44fe035fd8e7143c52895928beae395
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440569"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175588"
 ---
 # <a name="imetadataemitsetpinvokemap-method"></a>IMetaDataEmit::SetPinvokeMap, méthode
-Définit ou modifie les fonctionnalités de la signature PInvoke d’une méthode, comme défini par un appel antérieur à [IMetaDataEmit ::D efinepinvokemap](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepinvokemap-method.md).  
+Définit ou modifie les caractéristiques de la signature PInvoke d’une méthode, tel que défini par un appel antérieur à [IMetaDataEmit::DefinePinvokeMap](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepinvokemap-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT SetPinvokeMap (   
-    [in]  mdToken      tk,   
+HRESULT SetPinvokeMap (
+    [in]  mdToken      tk,
     [in]  DWORD        dwMappingFlags,  
-    [in]  LPCWSTR      szImportName,   
-    [in]  mdModuleRef  mrImportDLL   
+    [in]  LPCWSTR      szImportName,
+    [in]  mdModuleRef  mrImportDLL
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- dans `mdToken` auquel les informations de mappage s’appliquent.  
+ [dans] L’information `mdToken` cartographique s’applique.  
   
  `dwMappingFlags`  
- dans Indicateurs utilisés par PInvoke pour effectuer le mappage. Il s’agit d’un masque de ré`CorPinvokeMap` valeurs.  
+ [dans] Drapeaux utilisés par PInvoke pour faire la cartographie. C’est un peu `CorPinvokeMap` de valeur.  
   
  `szImportName`  
- dans Nom de l’exportation cible dans la DLL native.  
+ [dans] Le nom de l’exportation cible dans le DLL indigène.  
   
  `mrImportDLL`  
- dans Jeton `mdModuleRef` pour la DLL non managée cible.  
+ [dans] Le `mdModuleRef` jeton pour la cible non gestion DLL.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

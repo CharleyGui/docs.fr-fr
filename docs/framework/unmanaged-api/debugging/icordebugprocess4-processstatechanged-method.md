@@ -1,5 +1,5 @@
 ---
-title: ICorDebugProcess4::ProcessStateChanged (méthode)
+title: ICorDebugProcess4::ProcessStateChanged Method
 ms.date: 02/07/2019
 api_name:
 - ICorDebugProcess4::ProcessStateChanged
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: adfd563e19389642ac0ed0a3cef4aae8a32fa466
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a6f36f5b86b4fa58ce2a4ef4aa23d527f797a5a5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767186"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178630"
 ---
-# <a name="icordebugprocess4processstatechanged-method"></a>ICorDebugProcess4::ProcessStateChanged (méthode)
+# <a name="icordebugprocess4processstatechanged-method"></a>ICorDebugProcess4::ProcessStateChanged Method
 
-Notifie le pipeline ICorDebug que hors du débogueur de processus se poursuit l’exécution du programme débogué.
+Informe le pipeline ICorDebug que le débbuggeur hors processus poursuit l’exécution du débbugee.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -37,24 +37,24 @@ HRESULT ProcessStateChanged(
 ## <a name="parameters"></a>Paramètres
 
  `eChange`\
-[in] Un membre de la [cordebugstatechange, énumération](cordebugstatechange-enumeration.md) décrivant une modification dans l’état d’exécution du processus.
+[dans] Un membre du [recensement corDebugStateChange](cordebugstatechange-enumeration.md) décrivant un changement dans l’état d’exécution du processus.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-La méthode fournie fait partie de la `ICorDebugProcess4` interface et correspond à l’emplacement de quatrième de la table de la méthode virtuelle.
+La méthode fournie fait `ICorDebugProcess4` partie de l’interface et correspond à la quatrième fente de la table de méthode virtuelle.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 
- **En-tête :** Aucun
+ **En-tête:** Aucun
 
- **Bibliothèque :** Aucun
- 
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
+ **Bibliothèque:** Aucun
+
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugProcess4 Interface](icordebugprocess4-interface.md)
+- [ICorDebugProcess4, interface](icordebugprocess4-interface.md)
 - [Interfaces de débogage](debugging-interfaces.md)
 - [Débogage](index.md)

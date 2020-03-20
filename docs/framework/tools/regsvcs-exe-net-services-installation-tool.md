@@ -9,12 +9,12 @@ helpviewer_keywords:
 - type libraries
 - registering assemblies
 ms.assetid: 5220fe58-5aaf-4e8e-8bc3-b78c63025804
-ms.openlocfilehash: 1af93ae89d027bccdd52b9cd9c49f8e620303677
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: aecd2f6894558b45898c7f22dd333617d9e2e327
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104943"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180362"
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe (outil .NET Services Installation)
 L'outil .NET Services Installation (Installation des services .NET) effectue les actions suivantes :  
@@ -27,14 +27,14 @@ L'outil .NET Services Installation (Installation des services .NET) effectue les
   
  Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
- À l'invite de commandes, tapez le texte suivant :  
+ À l'invite de commandes, tapez :  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
       regsvcs [/c | /fc | /u] [/tlb:typeLibraryFile] [/extlb]  
 [/reconfig] [/componly] [/appname:applicationName]  
-[/nologo] [/quiet]assemblyFile.dll   
+[/nologo] [/quiet]assemblyFile.dll
 ```  
   
 ## <a name="parameters"></a>Paramètres  
@@ -56,13 +56,13 @@ L'outil .NET Services Installation (Installation des services .NET) effectue les
 |**/noreconfig**|Ne reconfigure pas une application cible existante.|  
 |**/nologo**|Supprime l'affichage de la bannière de démarrage Microsoft.|  
 |**/parname:** *name*|Spécifie le nom ou l'identificateur de l'application COM+ à rechercher ou à créer.|  
-|**/reconfig**|Reconfigure une application cible existante. Il s'agit de la valeur par défaut.|  
+|**/reconfig**|Reconfigure une application cible existante. Il s’agit de la valeur par défaut.|  
 |**/tlb:** *typelibraryfile*|Spécifie le fichier bibliothèque de types à installer.|  
 |**/u**|Désinstalle l'application cible.|  
-|**/quiet**|Spécifie le mode silencieux ; supprime le logo et l'affichage des messages de réussite.|  
+|**/calme**|Spécifie le mode silencieux ; supprime le logo et l'affichage des messages de réussite.|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Regsvcs.exe nécessite un fichier d’assembly source spécifié par *assemblyFile.dll*. Cet assembly doit être signé avec un nom fort. Pour plus d’informations sur la signature avec un nom fort, consultez [Signature d’un assembly avec un nom fort](../../standard/assembly/sign-strong-name.md). Le nom de l'application cible et le nom du fichier bibliothèque de types sont facultatifs. L’argument *applicationName* peut être généré à partir du fichier d’assembly source et sera créé par Regsvcs.exe, s’il n’existe pas déjà. L’argument *typelibraryfile* peut spécifier un nom de bibliothèque de types. Si vous ne spécifiez pas de nom de bibliothèque de types, Regsvcs.exe utilise alors par défaut le nom de l'assembly.  
   
  Quand Regsvcs.exe inscrit les méthodes d’un composant, il est soumis aux [demandes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/9kc0c6st(v=vs.100)) et aux [demandes de liaison](../misc/link-demands.md) sur ces méthodes. Étant donné que l'outil s'exécute dans un environnement de niveau de confiance total, la plupart des demandes d'autorisation aboutissent. Toutefois, Regsvcs.exe ne peut pas inscrire de composants avec des méthodes protégées par une demande ou une demande de liaison pour les autorisations <xref:System.Security.Permissions.StrongNameIdentityPermission> ou <xref:System.Security.Permissions.PublisherIdentityPermission>.  

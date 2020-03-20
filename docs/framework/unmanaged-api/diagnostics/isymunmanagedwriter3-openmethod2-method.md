@@ -15,20 +15,20 @@ helpviewer_keywords:
 ms.assetid: 025e358c-448f-4423-a2f2-57acf437c8a5
 topic_type:
 - apiref
-ms.openlocfilehash: 3a628aec0823c5db07d31d33813a020606906163
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0c112819ef3bc4f9a7146ee80f55202ff89d689a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438124"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178318"
 ---
 # <a name="isymunmanagedwriter3openmethod2-method"></a>ISymUnmanagedWriter3::OpenMethod2, méthode
-Ouvre une méthode et fournit son décalage de section réel dans l’image.  
+Ouvre une méthode et fournit sa section réelle compensée dans l’image.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT OpenMethod2(   
+HRESULT OpenMethod2(
     [in] mdMethodDef method,  
     [in] ULONG32 isect,  
     [in] ULONG32 offset);  
@@ -36,19 +36,19 @@ HRESULT OpenMethod2(
   
 ## <a name="parameters"></a>Paramètres  
  `method`  
- dans Jeton de métadonnées de la méthode à ouvrir.  
+ [dans] Les métadonnées symboliques pour l’ouverture de la méthode.  
   
  `isect`  
- dans Décalage de la section dans l’image.  
+ [dans] La section compensée dans l’image.  
   
  `offset`  
- dans Décalage dans l’image.  
+ [dans] Le décalage dans l’image.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK si la méthode réussit; autrement, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym. idl, CorSym. h  
+## <a name="requirements"></a>Spécifications  
+ **En-tête:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

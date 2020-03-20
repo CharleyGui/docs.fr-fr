@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: a0637d66-74bf-4f2d-8137-9ff838bccece
 topic_type:
 - apiref
-ms.openlocfilehash: 20628e708261076c6e172ff30c366a0d69c2e0f2
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 14bd352099890e4ca36321d550b8e982d4373231
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432120"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177890"
 ---
 # <a name="imetadataassemblyemitdefineassembly-method"></a>IMetaDataAssemblyEmit::DefineAssembly, méthode
-Crée une structure `Assembly` contenant des métadonnées pour l’assembly spécifié et retourne le jeton de métadonnées associé.  
+Crée `Assembly` une structure contenant des métadonnées pour l’assemblage spécifié et renvoie le jeton des métadonnées associées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,7 +32,7 @@ HRESULT DefineAssembly (
     [in]  void                 *pbPublicKey,  
     [in]  ULONG                cbPublicKey,  
     [in]  ULONG                uHashAlgId,  
-    [in]  LPCWSTR              szName,   
+    [in]  LPCWSTR              szName,
     [in]  ASSEMBLYMETADATA     *pMetaData,  
     [in]  DWORD                dwAssemblyFlags,  
     [out] mdAssembly           *pmda  
@@ -41,37 +41,37 @@ HRESULT DefineAssembly (
   
 ## <a name="parameters"></a>Paramètres  
  `pbPublicKey`  
- dans Clé publique qui identifie le serveur de publication de l’assembly, ou NULL si l’assembly n’a pas un nom fort.  
+ [dans] La clé publique qui identifie l’éditeur de l’assemblée, ou NULL si l’assemblée n’est pas fortement nommée.  
   
  `cbPublicKey`  
- dans Taille en octets de `pbPublicKey`.  
+ [dans] La taille dans `pbPublicKey`les octets de .  
   
  `uHashAlgId`  
- dans Identificateur de l’algorithme de hachage à utiliser pour chiffrer les fichiers de l’assembly, ou NULL pour spécifier l’algorithme SHA-1.  
+ [dans] L’identifiant de l’algorithme de hachage à utiliser pour chiffrer les fichiers dans l’assemblage, ou NULL pour spécifier l’algorithme SHA-1.  
   
  `szName`  
- dans Nom de texte explicite de l’assembly. Cette valeur ne doit pas dépasser 1024 caractères.  
+ [dans] Le nom de texte lisible par l’homme de l’assemblée. Cette valeur ne doit pas dépasser 1024 caractères.  
   
  `pMetaData`  
- dans Pointeur vers une instance ASSEMBLYMETADATA qui contient les informations relatives à la version, à la plateforme et aux paramètres régionaux de l’assembly.  
+ [dans] Un pointeur à une instance ASSEMBLYMETADATA qui contient la version, la plate-forme et les informations locales pour l’assemblage.  
   
  `dwAssemblyFlags`  
- dans Combinaison de valeurs [CorAssemblyFlags,](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) qui décrivent les fonctionnalités de l’assembly.  
+ [dans] Une combinaison de valeurs [CorAssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) qui décrivent les caractéristiques de l’assemblage.  
   
  `pmda`  
- à Pointeur vers le jeton de métadonnées.  
+ [out] Un pointeur vers le jeton des métadonnées.  
   
-## <a name="remarks"></a>Notes  
- Une seule `Assembly` structure de métadonnées peut être définie dans un manifeste.  
+## <a name="remarks"></a>Notes   
+ Une `Assembly` seule structure de métadonnées peut être définie dans un manifeste.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
