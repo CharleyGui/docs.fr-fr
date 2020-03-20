@@ -9,10 +9,10 @@ helpviewer_keywords:
 - removing stores
 ms.assetid: b81202b8-d91d-4b23-9c53-4a112f74a44a
 ms.openlocfilehash: 46e846eaf92835fb2a9130b85ed20749934ca5a1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75715713"
 ---
 # <a name="storeadmexe-isolated-storage-tool"></a>Storeadm.exe (outil Isolated Storage)
@@ -20,7 +20,7 @@ L'outil Isolated Storage (Stockage isolé) répertorie ou supprime tous les maga
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
- À l'invite de commandes, tapez le texte suivant :  
+ À l'invite de commandes, tapez :  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,19 +28,19 @@ L'outil Isolated Storage (Stockage isolé) répertorie ou supprime tous les maga
 storeadm [/list][/machine][/remove][/roaming][/quiet]  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
   
 |Option|Description|  
 |------------|-----------------|  
 |**/h**[**elp**]|Affiche la syntaxe et les options de commande de l'outil.|  
-|**/list**|Affiche tous les magasins existants de l'utilisateur en cours. Sont inclus les magasins de toutes les applications ou de tous les assemblys exécutés par cet utilisateur.|  
+|**/liste**|Affiche tous les magasins existants de l'utilisateur en cours. Sont inclus les magasins de toutes les applications ou de tous les assemblys exécutés par cet utilisateur.|  
 |**/machine**|Sélectionne le magasin de l'ordinateur. Utilisez cette option avec l’option **/list** ou **/remove** pour spécifier que l’action doit s’appliquer au magasin de l’ordinateur.<br /><br /> Nouveau dans le .NET Framework 2.0|  
-|**/quiet**|Spécifie le mode silencieux ; supprime la sortie d'informations pour n'afficher que les messages d'erreur.|  
-|**/remove**|Supprime définitivement tous les magasins existants de l'utilisateur en cours.|  
+|**/calme**|Spécifie le mode silencieux ; supprime la sortie d'informations pour n'afficher que les messages d'erreur.|  
+|**/supprimer**|Supprime définitivement tous les magasins existants de l'utilisateur en cours.|  
 |**/roaming**|Sélectionne le magasin itinérant. Utilisez cette option avec l’option **/list** ou **/remove** pour spécifier que cette action doit s’appliquer au magasin itinérant.|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Lorsque vous exécutez Storeadm.exe à partir de la ligne de commande sans spécifier d'options, la syntaxe et les options de l'outil s'affichent.  
   
  Les options **/list** et **/remove** sont généralement utilisées l’une après l’autre ; si deux options ou plus sont spécifiées, elles sont alors exécutées dans leur ordre d’apparition sur la ligne de commande.  

@@ -4,10 +4,10 @@ ms.custom: updateeachrelease
 description: Découvrez comment installer le .NET Framework sur Windows 8
 ms.date: 04/18/2019
 ms.openlocfilehash: 1db8ac9837821eb7111b9d0015787509bc27b398
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "76965995"
 ---
 # <a name="install-the-net-framework-on-windows-8-and-windows-server-2012"></a>Installer le .NET Framework sur Windows 8 et Windows Server 2012
@@ -21,19 +21,19 @@ Ces instructions ont pour but de vous aider à installer les versions du .NET Fr
 ## <a name="net-framework-48"></a>.NET Framework 4.8
 
 > [!div class="button"]
-> [Télécharger .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+> [Télécharger .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
 .NET Framework 4.8 est pris en charge sur Windows Server 2012. Cette version n’est pas prise en charge sur Windows 8.
 
 [.NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) peut être utilisé pour exécuter des applications conçues pour .NET Framework version 4.0 ou ultérieure.
 
-## <a name="net-framework-46"></a>.NET Framework 4.6
+## <a name="net-framework-46"></a>.NET Framework 4.6
 
 Le [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46) est la dernière version prise en charge du .NET Framework sur Windows 8.
 
 Le .NET Framework 4.6 prend en charge les applications conçues pour le .NET Framework 4.0 à 4.6.
 
-## <a name="net-framework-35"></a>.NET Framework 3.5
+## <a name="net-framework-35"></a>.NET Framework 3.5
 
 Suivez les instructions pour installer le [.NET Framework 3.5 sur Windows 8 et 10](dotnet-35-windows-10.md).
 
@@ -45,6 +45,6 @@ Vous pouvez [contacter Microsoft pour obtenir de l’aide](mailto:dotnet-install
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Télécharger le .NET Framework](https://dotnet.microsoft.com/download)
+- [Télécharger le cadre .NET](https://dotnet.microsoft.com/download)
 - [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md)
 - [Installer le .NET Framework pour les développeurs](guide-for-developers.md)

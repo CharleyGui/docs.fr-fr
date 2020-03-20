@@ -3,10 +3,10 @@ title: Integrated Windows Authentication with Extended Protection (en anglais)
 ms.date: 03/30/2017
 ms.assetid: 81731998-d5e7-49e4-ad38-c8e6d01689d0
 ms.openlocfilehash: c4afc008f600c9be0040f8d7623f5e20623dfd7d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74444232"
 ---
 # <a name="integrated-windows-authentication-with-extended-protection"></a>Integrated Windows Authentication with Extended Protection (en anglais)
@@ -18,7 +18,7 @@ Certaines améliorations apportées changent la manière dont l’authentificati
   
  Les modifications pour la prise en charge de la protection étendue concernent uniquement les applications s’exécutant sur Windows 7 et Windows Server 2008 R2. Les fonctionnalités de protection étendue ne sont pas disponibles dans les versions antérieures de Windows.  
   
-## <a name="overview"></a>Overview  
+## <a name="overview"></a>Vue d’ensemble  
  La conception de l’authentification Windows intégrée permet à certaines réponses aux demandes d’informations d’identification d’être universelles, ce qui signifie qu’elles peuvent être réutilisées ou transférées. Les réponses aux demandes doivent être construites au minimum avec des informations spécifiques à la cible et, de préférence, avec également des informations spécifiques au canal. Les services peuvent alors fournir une protection étendue pour garantir que les réponses aux demandes d’informations d’identification contiennent des informations propres aux services, telles qu’un nom de principal du service (SPN). Grâce à la présence de ces informations dans les échanges d’informations d’identification, les services assurent une meilleure protection contre l’utilisation malveillante de certaines réponses aux demandes d’informations d’identification qui ont été utilisées de manière incorrecte.  
   
  La conception de la protection étendue est une amélioration apportée aux protocoles d’authentification qui vise à atténuer les risques d’attaques par relais d’authentification. Elle repose sur le concept d’informations de liaison de service et de canal.  
@@ -84,7 +84,7 @@ Certaines améliorations apportées changent la manière dont l’authentificati
   
  L’espace de noms <xref:System.Security.Authentication.ExtendedProtection.Configuration> fournit la prise en charge de la configuration de l’authentification avec protection étendue pour les applications.  
   
- Plusieurs modifications ont été apportées aux fonctionnalités pour permettre la prise en charge de la protection étendue dans l’espace de noms <xref:System.Net> existant. Ces modifications sont les suivantes :  
+ Plusieurs modifications ont été apportées aux fonctionnalités pour permettre la prise en charge de la protection étendue dans l’espace de noms <xref:System.Net> existant. Elles incluent notamment les suivantes :  
   
 - Ajout d’une nouvelle classe <xref:System.Net.TransportContext> à l’espace de noms <xref:System.Net> qui représente un contexte de transport.  
   
@@ -96,7 +96,7 @@ Certaines améliorations apportées changent la manière dont l’authentificati
   
 - Une propriété <xref:System.Net.Mail.SmtpClient.TargetName%2A> dans la classe <xref:System.Net.Mail.SmtpClient> qui représente le nom de principal du service à utiliser lors de l’authentification avec protection étendue dans les applications clientes SMTP.  
   
- Plusieurs modifications ont été apportées aux fonctionnalités pour permettre la prise en charge de la protection étendue dans l’espace de noms <xref:System.Net.Security> existant. Ces modifications sont les suivantes :  
+ Plusieurs modifications ont été apportées aux fonctionnalités pour permettre la prise en charge de la protection étendue dans l’espace de noms <xref:System.Net.Security> existant. Elles incluent notamment les suivantes :  
   
 - Ajout des nouvelles méthodes de surcharge <xref:System.Net.Security.NegotiateStream.BeginAuthenticateAsClient%2A> et <xref:System.Net.Security.NegotiateStream.AuthenticateAsClient%2A> dans la classe <xref:System.Net.Security.NegotiateStream> qui permettent le passage d’un jeton de liaison de canal pour prendre en charge la protection étendue dans les applications clientes.  
   
@@ -128,7 +128,7 @@ Certaines améliorations apportées changent la manière dont l’authentificati
   
 3. Le client spécifie la liaison de canal appropriée ou bien il est autorisé à se connecter sans spécifier de liaison de canal du fait que la stratégie de protection étendue sur le serveur est configurée avec le paramètre <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported>. La demande est retournée à l’application pour être traitée. Aucune vérification de nom de service n’est effectuée automatiquement. Une application peut choisir d’effectuer elle-même la validation des noms de service à l’aide de la propriété <xref:System.Net.HttpListenerRequest.ServiceName%2A>, mais dans ce cas, cela est inutile.  
   
- Si une application effectue elle-même des appels SSPI dans le cadre d’une authentification basée sur les objets blob échangés dans le corps d’une requête HTTP et qu’elle souhaite prendre en charge la liaison de canal, elle doit récupérer la liaison de canal attendue du canal sécurisé externe en utilisant <xref:System.Net.HttpListener> pour la passer ensuite à la fonction [AcceptSecurityContext](/windows/win32/api/sspi/nf-sspi-acceptsecuritycontext) Win32. Pour cela, utilisez la propriété <xref:System.Net.HttpListenerRequest.TransportContext%2A> et appelez la méthode <xref:System.Net.TransportContext.GetChannelBinding%2A> qui permet de récupérer le jeton de liaison de canal. Seules les liaisons de point de terminaison sont prises en charge. Si une autre liaison que la liaison <xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint> est spécifiée, une <xref:System.NotSupportedException> est levée. Si le système d’exploitation sous-jacent prend en charge la liaison de canal, la méthode <xref:System.Net.TransportContext.GetChannelBinding%2A> retourne un <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding><xref:System.Runtime.InteropServices.SafeHandle> enveloppant (wrap) un pointeur dans une liaison de canal qui permet de passer la fonction [AcceptSecurityContext](/windows/win32/api/sspi/nf-sspi-acceptsecuritycontext) comme membre pvBuffer d’une structure SecBuffer elle-même passée dans le paramètre `pInput`. La propriété <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding.Size%2A> contient la longueur, en octets, de la liaison de canal. Si le système d’exploitation sous-jacent ne prend pas en charge les liaisons de canal, la fonction retourne la valeur `null`.  
+ Si une application effectue elle-même des appels SSPI dans le cadre d’une authentification basée sur les objets blob échangés dans le corps d’une requête HTTP et qu’elle souhaite prendre en charge la liaison de canal, elle doit récupérer la liaison de canal attendue du canal sécurisé externe en utilisant <xref:System.Net.HttpListener> pour la passer ensuite à la fonction [AcceptSecurityContext](/windows/win32/api/sspi/nf-sspi-acceptsecuritycontext) Win32. Pour cela, utilisez la propriété <xref:System.Net.HttpListenerRequest.TransportContext%2A> et appelez la méthode <xref:System.Net.TransportContext.GetChannelBinding%2A> qui permet de récupérer le jeton de liaison de canal. Seules les liaisons de point de terminaison sont prises en charge. Si une autre liaison que la liaison <xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint> est spécifiée, une <xref:System.NotSupportedException> est levée. Si le système d’exploitation <xref:System.Net.TransportContext.GetChannelBinding%2A> sous-jacent <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding> <xref:System.Runtime.InteropServices.SafeHandle> prend en charge la liaison du canal, la méthode retournera un pointeur d’emballage à une `pInput` liaison de canal appropriée pour passer à la fonction [AcceptSecurityContext](/windows/win32/api/sspi/nf-sspi-acceptsecuritycontext) en tant que membre pvBuffer d’une structure SecBuffer passé dans le paramètre. La propriété <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding.Size%2A> contient la longueur, en octets, de la liaison de canal. Si le système d’exploitation sous-jacent ne prend pas en charge les liaisons de canal, la fonction retourne la valeur `null`.  
   
  Un autre scénario possible consiste à activer la protection étendue pour les préfixes HTTP:// quand les proxies ne sont pas utilisés. Dans ce cas, définissez <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> à <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>, où <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> a la valeur <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> ou <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> et où <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> a la valeur <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected>. La valeur <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> met <xref:System.Net.HttpListener> en mode partiellement sécurisé, tandis que <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> correspond au mode entièrement sécurisé.  
   

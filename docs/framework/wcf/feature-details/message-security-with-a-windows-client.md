@@ -5,22 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 01e7d0b8-10f9-45c3-a4c5-53d44dc61eb8
-ms.openlocfilehash: d3c1661acf4d4aa2de8b6eca7015c74ba7f80af1
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: bcfeb5f863b1dd6cf9171a7fc53c8984ea68ecb3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76212013"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184627"
 ---
 # <a name="message-security-with-a-windows-client"></a>Sécurité de message avec un client Windows
-Ce scénario montre un client Windows Communication Foundation (WCF) et un serveur sécurisés par le mode de sécurité de message. Le client et le service sont authentifiés à l'aide des informations d'identification Windows.  
+Ce scénario montre un client et un serveur de la Windows Communication Foundation (WCF) sécurisés par mode de sécurité des messages. Le client et le service sont authentifiés à l'aide des informations d'identification Windows.  
   
  ![Sécurité des messages avec un client Windows](../../../../docs/framework/wcf/feature-details/media/1c8618d4-0005-4022-beb6-32fd087a8c3c.gif "1c8618d4-0005-4022-beb6-32fd087a8c3c")  
   
 |Caractéristique|Description|  
 |--------------------|-----------------|  
 |Mode de sécurité|Message|  
-|Interopérabilité|WCF uniquement|  
+|Interopérabilité|WCF seulement|  
 |Authentification (serveur)|Authentification mutuelle du serveur et du client|  
 |Authentification (client)|Authentification mutuelle du serveur et du client|  
 |Intégrité|Oui, à l'aide du contexte de sécurité partagé|  
@@ -29,7 +29,7 @@ Ce scénario montre un client Windows Communication Foundation (WCF) et un serve
 |Liaison|<xref:System.ServiceModel.NetTcpBinding>|  
   
 ## <a name="service"></a>Service  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
@@ -73,7 +73,7 @@ Ce scénario montre un client Windows Communication Foundation (WCF) et un serve
 ```  
   
 ## <a name="client"></a>Client  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
   
 - Créez un client autonome à l'aide du code (et du code client).  
   
@@ -105,11 +105,11 @@ Ce scénario montre un client Windows Communication Foundation (WCF) et un serve
       </netTcpBinding>  
     </bindings>  
     <client>  
-      <endpoint address="net.tcp://machineName:8008/Calculator"   
+      <endpoint address="net.tcp://machineName:8008/Calculator"
                 binding="netTcpBinding"  
                 bindingConfiguration="NetTcpBinding_ICalculator"  
                 contract="ICalculator"  
-                name="NetTcpBinding_ICalculator">          
+                name="NetTcpBinding_ICalculator">
       </endpoint>  
     </client>  
   </system.serviceModel>  
@@ -119,4 +119,4 @@ Ce scénario montre un client Windows Communication Foundation (WCF) et un serve
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

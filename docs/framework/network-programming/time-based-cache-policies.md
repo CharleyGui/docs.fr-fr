@@ -18,10 +18,10 @@ helpviewer_keywords:
 - age of cached resources
 ms.assetid: 74f0bcaf-5c95-40c1-9967-f3bbf1d2360a
 ms.openlocfilehash: 0edde8e716d5ce3b1444e994234def5835341475
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047125"
 ---
 # <a name="time-based-cache-policies"></a>stratégies de cache basées sur la durée
@@ -41,7 +41,7 @@ Une stratégie de cache basée sur la durée définit l’actualisation des entr
 > [!NOTE]
 > Utiliser la stratégie de cache basée sur la durée par défaut n’équivaut pas à définir une stratégie de cache par défaut pour votre application. La stratégie basée sur la durée par défaut est une stratégie spécifique qui peut être utilisée au niveau de la requête ou de l’application. La stratégie de cache par défaut pour votre application est une stratégie (basée sur l’emplacement ou sur la durée) qui est appliquée quand aucune stratégie n’est définie au niveau d’une requête. Pour plus d’informations sur la définition d’une stratégie de cache par défaut pour votre application, consultez <xref:System.Net.WebRequest.DefaultCachePolicy%2A>.  
   
-### <a name="maximum-age"></a>Ancienneté maximale  
+### <a name="maximum-age"></a>Maximum Age  
  Le critère de stratégie d’ancienneté maximale spécifie la durée pendant laquelle une copie en cache d’une ressource peut être utilisée. Si la copie en cache de la ressource est plus ancienne que la durée spécifiée, la ressource doit être revalidée en la vérifiant par rapport au contenu sur le serveur. Si l’ancienneté maximale permet l’utilisation de la ressource après son expiration, ce critère n’est pas appliqué, sauf si une valeur d’obsolescence maximale est également spécifiée.  
   
 ### <a name="maximum-staleness"></a>Obsolescence maximale  
@@ -57,9 +57,9 @@ Une stratégie de cache basée sur la durée définit l’actualisation des entr
   
  Les rubriques suivantes fournissent des informations sur les effets de la combinaison de plusieurs critères d’une stratégie de cache basée sur la durée :  
   
-- [Interaction de la stratégie de cache : ancienneté maximale et obsolescence maximale](cache-policy-interaction-maximum-age-and-maximum-staleness.md)  
+- [Interaction de la stratégie de cache : ancienneté maximale et péremption maximale](cache-policy-interaction-maximum-age-and-maximum-staleness.md)  
   
-- [Interaction de la stratégie de cache : ancienneté maximale et actualisation minimale](cache-policy-interaction-maximum-age-and-minimum-freshness.md)  
+- [Interaction de la stratégie de cache : ancienneté maximale et actualisation minimale](cache-policy-interaction-maximum-age-and-minimum-freshness.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -67,4 +67,4 @@ Une stratégie de cache basée sur la durée définit l’actualisation des entr
 - [Stratégie de cache](cache-policy.md)
 - [Stratégies de cache basées sur l’emplacement](location-based-cache-policies.md)
 - [Configuration de la mise en cache dans les applications réseau](configuring-caching-in-network-applications.md)
-- [\<requestCaching>, élément (paramètres réseau)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+- [\<demandeCaching> Element (Paramètres réseau)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)

@@ -2,17 +2,17 @@
 title: Liste des types de suivis
 ms.date: 03/30/2017
 ms.assetid: e639410b-d1d1-479c-b78e-a4701d4e4085
-ms.openlocfilehash: 8f54f71ef63338708a29fac5557c7c7e8f257f58
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 8ed6dceb19caa52f928f285064c60337e3f15a87
+ms.sourcegitcommit: 515469828d0f040e01bde01df6b8e4eb43630b06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856008"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78674839"
 ---
 # <a name="trace-type-summary"></a>Liste des types de suivis
-Les [niveaux source](https://go.microsoft.com/fwlink/?LinkID=94943) définissent différents niveaux de suivi : Critique, Error, Warning, information et Verbose, ainsi que fournit une description de l' `ActivityTracing` indicateur, qui bascule la sortie des événements de limite de suivi et de transfert d’activité.  
+[Les niveaux de source](xref:System.Diagnostics.SourceLevels) définissent divers niveaux de trace : critiques, erreurs, avertissement, `ActivityTracing` information et Verbose, ainsi qu’une description du drapeau, qui bascule la sortie des événements de limite de trace et de transfert d’activité.  
   
- Vous pouvez également consulter [TraceEventType](https://go.microsoft.com/fwlink/?LinkId=95169) pour connaître les types de traces qui peuvent être émises <xref:System.Diagnostics>à partir de.  
+ Vous pouvez <xref:System.Diagnostics.TraceEventType> également passer en revue pour les <xref:System.Diagnostics>types de traces qui peuvent être émises à partir de .  
   
  Le tableau suivant répertorie les plus importants.  
   
@@ -20,10 +20,10 @@ Les [niveaux source](https://go.microsoft.com/fwlink/?LinkID=94943) définissent
 |----------------|-----------------|  
 |Critique|Erreur irrécupérable ou panne d'application.|  
 |Error|Erreur récupérable.|  
-|Warning|Message d'informations.|  
+|Avertissement|Message d’information.|  
 |Information|Problème non critique.|  
-|Détaillé|Suivi de débogage.|  
-|Start|Démarrage d'une unité logique de traitement.|  
+|Commentaires|Suivi de débogage.|  
+|Démarrer|Démarrage d'une unité logique de traitement.|  
 |Interrompre|Interruption d'une unité logique de traitement.|  
 |Reprendre|Reprise d'une unité logique de traitement.|  
 |Arrêter|Arrêt d'une unité logique de traitement.|  

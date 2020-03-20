@@ -7,10 +7,10 @@ helpviewer_keywords:
 - metadata [.NET Framework], using the unmanaged API
 ms.assetid: 10cfea92-db5e-4bcb-b301-ef029bcf77a3
 ms.openlocfilehash: 4e8e59d1c8b413d15c55eb8f9478118f1f645293
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74443285"
 ---
 # <a name="metadata-unmanaged-api-reference"></a>Métadonnées (Informations de référence sur les API non managées)

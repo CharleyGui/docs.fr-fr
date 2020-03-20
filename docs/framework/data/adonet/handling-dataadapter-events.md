@@ -1,18 +1,18 @@
 ---
-title: Gestion des événements DataAdapter
+title: 'Gestion des événements DataAdapter '
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 11515b25-ee49-4b1d-9294-a142147c1ec5
-ms.openlocfilehash: 8438a7b54ca19625687ab96386384cf62ae62d11
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d01198d158c4e1c64f12e8a0756c3d4e599fce74
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783798"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149542"
 ---
-# <a name="handling-dataadapter-events"></a>Gestion des événements DataAdapter
+# <a name="handling-dataadapter-events"></a>Gestion des événements DataAdapter 
 <xref:System.Data.Common.DataAdapter> ADO.NET expose trois événements que vous pouvez utiliser pour répondre aux modifications apportées aux données au niveau de la source de données. Le tableau ci-dessous répertorie les événements `DataAdapter`.  
   
 |Événement|Description|  
@@ -39,7 +39,7 @@ ms.locfileid: "70783798"
   
  Vous pouvez aussi utiliser la propriété `ContinueUpdateOnError` pour gérer les erreurs des lignes mises à jour. Si `DataAdapter.ContinueUpdateOnError` a la valeur `true`, lorsqu'une mise à jour de ligne entraîne la levée d'une exception, le texte de celle-ci est placé dans les informations `RowError` de la ligne particulière et le traitement continue sans lever d'exception. Vous pouvez ainsi répondre aux erreurs lorsque `Update` est terminé, contrairement à l'événement `RowUpdated`, qui vous permet d'y répondre au moment de l'erreur.  
   
- L'exemple de code suivant montre comment ajouter et supprimer les gestionnaires d'événements. Le gestionnaire d'événements `RowUpdating` écrit un journal de tous les enregistrements supprimés avec un horodatage. Le `RowUpdated` gestionnaire d’événements ajoute des informations d' `RowError` erreur à la propriété de la `DataSet`ligne dans le, supprime l’exception et continue le traitement (en miroir le `ContinueUpdateOnError`comportement de  =  `true`).  
+ L'exemple de code suivant montre comment ajouter et supprimer les gestionnaires d'événements. Le gestionnaire d'événements `RowUpdating` écrit un journal de tous les enregistrements supprimés avec un horodatage. Le `RowUpdated` gestionnaire d’événements `RowError` ajoute des informations `DataSet`d’erreur à la propriété de la rangée `ContinueUpdateOnError`  =  `true`dans le , supprime l’exception, et continue le traitement (reflétant le comportement de ).  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection object.  
@@ -107,7 +107,7 @@ protected static void OnRowUpdating(
   {  
     System.IO.TextWriter tw = System.IO.File.AppendText("Deletes.log");  
     tw.WriteLine(  
-      "{0}: Customer {1} Deleted.", DateTime.Now,   
+      "{0}: Customer {1} Deleted.", DateTime.Now,
        args.Row["CustomerID", DataRowVersion.Original]);  
     tw.Close();  
   }  
@@ -178,7 +178,7 @@ protected static void FillError(object sender, FillErrorEventArgs args)
     DataRow myRow = args.DataTable.Rows.Add(new object[]  
        {args.Values[0], args.Values[1], DBNull.Value});  
     //Set the RowError containing the value for the third column.  
-    myRow.RowError =   
+    myRow.RowError =
        "OverflowException Encountered. Value from data source: " +  
        args.Values[2];  
     args.Continue = true;  
@@ -192,4 +192,4 @@ protected static void FillError(object sender, FillErrorEventArgs args)
 - [Gestion des événements de DataSet](./dataset-datatable-dataview/handling-dataset-events.md)
 - [Gestion des événements de DataTable](./dataset-datatable-dataview/handling-datatable-events.md)
 - [Événements](../../../standard/events/index.md)
-- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

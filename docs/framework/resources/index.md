@@ -12,21 +12,21 @@ helpviewer_keywords:
 - localizing resources
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
 ms.openlocfilehash: f7db871c6643973ab18a5bb6bbfac7ab85a11a76
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75346739"
 ---
 # <a name="resources-in-net-apps"></a>Ressources dans les applications .NET
 
-Presque toutes les applications d'une qualité de niveau "production" doivent utiliser des ressources. Une ressource est une donnée non exécutable qui est déployée logiquement avec une application. Une ressource peut être affichée dans une application sous la forme de messages d'erreur ou comme faisant partie de l'interface utilisateur. Les ressources peuvent contenir des données sous plusieurs formes, telles que des chaînes, des images et des objets rendus persistants. (Pour écrire des objets persistants dans un fichier de ressources, les objets doivent être sérialisables.) Le stockage de vos données dans un fichier de ressources vous permet de modifier les données sans avoir à recompiler l’intégralité de votre application. Il vous permet également de stocker des données dans un emplacement unique, et élimine la nécessité d'avoir recours à des données codées en dur stockées dans plusieurs emplacements.
+Presque toutes les applications d'une qualité de niveau "production" doivent utiliser des ressources. Une ressource est une donnée non exécutable qui est déployée logiquement avec une application. Une ressource peut être affichée dans une application sous la forme de messages d'erreur ou comme faisant partie de l'interface utilisateur. Les ressources peuvent contenir des données sous plusieurs formes, telles que des chaînes, des images et des objets rendus persistants. (Pour écrire des objets persistants à un fichier de ressources, les objets doivent être sérialisables.) Le stockage de vos données dans un fichier de ressources vous permet de modifier les données sans recompiler l’ensemble de votre application. Il vous permet également de stocker des données dans un emplacement unique, et élimine la nécessité d'avoir recours à des données codées en dur stockées dans plusieurs emplacements.
 
 Le .NET Framework et .NET Core fournissent une prise en charge complète de la création et de la localisation des ressources. De plus, .NET prend en charge un modèle simple pour la compression et le déploiement de ressources localisées.
 
 Pour plus d’informations sur les ressources dans ASP.NET, consultez [Vue d’ensemble des ressources des pages Web ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/ms227427(v=vs.100)).
 
-## <a name="create-and-localize-resources"></a>Créer et localiser des ressources
+## <a name="create-and-localize-resources"></a>Créer et localiser les ressources
 
 Dans une application non localisée, vous pouvez utiliser des fichiers de ressources comme référentiel pour les données d'application, notamment pour les chaînes qui auraient pu être codées en dur dans plusieurs emplacements de code source. En règle générale, vous créez des ressources sous forme de fichier texte (.txt) ou de fichiers XML (.resx), et vous utilisez [Resgen.exe (Resource File Generator)](../tools/resgen-exe-resource-file-generator.md) pour les compiler dans des fichiers binaires .resources. Ces fichiers peuvent être incorporés dans le fichier exécutable de l'application par un compilateur de langage. Pour plus d’informations sur la création des ressources, consultez [Création de fichiers de ressources](creating-resource-files-for-desktop-apps.md).
 
@@ -48,11 +48,11 @@ Au moment de l'exécution, une application charge les ressources localisées app
 
 - Si une culture n'est pas explicitement assignée, en extrayant la culture d'interface utilisateur par défaut du thread de la propriété <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType>.
 
-- Si une culture d’interface utilisateur par défaut du thread n’est pas explicitement assignée, en extrayant la culture de l’utilisateur actuel sur l’ordinateur local. Les implémentations de .NET s’exécutant sur Windows le font en appelant la fonction Windows [`GetUserDefaultUILanguage`](/windows/desktop/api/winnls/nf-winnls-getuserdefaultuilanguage).
+- Si une culture d’interface utilisateur par défaut du thread n’est pas explicitement assignée, en extrayant la culture de l’utilisateur actuel sur l’ordinateur local. .NET implémentations en cours [`GetUserDefaultUILanguage`](/windows/desktop/api/winnls/nf-winnls-getuserdefaultuilanguage) d’exécution sur Windows faire cela en appelant la fonction Windows.
 
 Pour plus d'informations sur la façon dont la culture d'interface utilisateur actuelle est définie, consultez les pages de référence <xref:System.Globalization.CultureInfo> et <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>.
 
-Vous pouvez ensuite extraire des ressources pour la culture de l'interface utilisateur actuelle ou pour une culture spécifique en utilisant la classe <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Bien que la classe <xref:System.Resources.ResourceManager> soit la plus fréquemment utilisée pour extraire des ressources, l’espace de noms <xref:System.Resources?displayProperty=nameWithType> contient des types supplémentaires que vous pouvez utiliser pour récupérer des ressources. Elles incluent notamment :
+Vous pouvez ensuite extraire des ressources pour la culture de l'interface utilisateur actuelle ou pour une culture spécifique en utilisant la classe <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Bien que la classe <xref:System.Resources.ResourceManager> soit la plus fréquemment utilisée pour extraire des ressources, l’espace de noms <xref:System.Resources?displayProperty=nameWithType> contient des types supplémentaires que vous pouvez utiliser pour récupérer des ressources. notamment :
 
 - La classe <xref:System.Resources.ResourceReader>, qui vous permet d'énumérer des ressources incorporées dans un assembly ou stockées dans un fichier .resources binaire. C'est utile lorsque vous ne connaissez pas les noms exacts des ressources disponibles au moment de l'exécution.
 
@@ -68,6 +68,6 @@ Vous pouvez ensuite extraire des ressources pour la culture de l'interface utili
 - <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>
 - [Application Essentials](../../standard/application-essentials.md)
 - [Création de fichiers de ressources](creating-resource-files-for-desktop-apps.md)
-- [Empaquetage et déploiement de ressources](packaging-and-deploying-resources-in-desktop-apps.md)
+- [Packaging and Deploying Resources](packaging-and-deploying-resources-in-desktop-apps.md)
 - [Création d’assemblys satellites](creating-satellite-assemblies-for-desktop-apps.md)
 - [Récupération de ressources](retrieving-resources-in-desktop-apps.md)

@@ -9,25 +9,25 @@ helpviewer_keywords:
 - dependentAssembly element
 - <dependentAssembly> element
 ms.assetid: 14e95627-dd79-4b82-ac85-e682aa3a31d8
-ms.openlocfilehash: 33309ed89b4d31580da5de3aeb38e9e1fd8ae4d0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2de8c752867d00708173d11d1851f415a2e8518d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73117596"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154203"
 ---
-# <a name="dependentassembly-element"></a>\<élément > dependentAssembly
-Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utilisez un élément `dependentAssembly` pour chaque assembly.  
+# <a name="dependentassembly-element"></a>\<dependentAssembly> Element
+Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utilisez `dependentAssembly` un élément pour chaque assemblage.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding**](assemblybinding-element-for-runtime.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**dependentAssembly** >  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<>de temps d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<assemblageBinding>**](assemblybinding-element-for-runtime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<dépendantAssembly>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<dependentAssembly>   
+<dependentAssembly>
 </dependentAssembly>  
 ```  
   
@@ -35,16 +35,16 @@ Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utili
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|`assemblyIdentity`|Contient des informations d’identification sur l’assembly. Cet élément doit être inclus dans chaque élément `dependentAssembly`.|  
-|`codeBase`|Spécifie l’emplacement où le runtime peut trouver un assembly partagé s’il n’est pas installé sur l’ordinateur.|  
+|`assemblyIdentity`|Contient des informations d’identification sur l’assemblage. Cet élément doit être `dependentAssembly` inclus dans chaque élément.|  
+|`codeBase`|Précise où l’heure d’exécution peut trouver un assemblage partagé s’il n’est pas installé sur l’ordinateur.|  
 |`bindingRedirect`|Redirige une version d'assembly vers une autre.|  
-|`publisherPolicy`|Spécifie si le runtime applique la stratégie d’éditeur pour cet assembly.|  
+|`publisherPolicy`|Précise si le temps d’exécution applique la politique de l’éditeur pour cette assemblée.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -54,8 +54,8 @@ Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utili
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment encapsuler des informations d’assembly pour deux assemblys.  
+## <a name="example"></a> Exemple  
+ L’exemple suivant montre comment encapsuler l’information d’assemblage pour deux assemblées.  
   
 ```xml  
 <configuration>  
@@ -80,6 +80,6 @@ Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utili
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma des paramètres d'exécution](index.md)
+- [Configuration Fichier Schema](../index.md)
 - [Redirection des versions d'assemblys](../../redirect-assembly-versions.md)

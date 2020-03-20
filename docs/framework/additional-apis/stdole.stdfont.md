@@ -1,5 +1,5 @@
 ---
-title: StdFont Interface (stdole)
+title: Interface StdFont (stdole)
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,23 +9,23 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: ae4e2a0e0914251ddc5b7e18202047546b97907f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 703a8dd6134ad6045fc46d4d0a9c652feb204ff5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675245"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155807"
 ---
 # <a name="stdfont-interface"></a>StdFont, interface
 
 ```csharp
 [GuidAttribute("BEF6E003-A874-101A-8BBA-00AA00300CAB")]
-public interface StdFont : Font, 
+public interface StdFont : Font,
   FontEvents_Event
 ```
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** `stdole`
+**Espace nom:**`stdole`
 
-**Assembly :** stdole (dans stdole.dll)
+**Assemblée:** stdole (en stdole.dll)

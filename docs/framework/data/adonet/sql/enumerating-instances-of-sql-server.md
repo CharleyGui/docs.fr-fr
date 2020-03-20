@@ -1,22 +1,22 @@
 ---
-title: Énumération des instances de SQL Server
+title: Énumérer les instances du serveur SQL
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: ddf1c83c-9d40-45e6-b04d-9828c6cbbfdc
-ms.openlocfilehash: c59db5869ed848071611cdbf985b45dc59790d69
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: a707df533216613e34d9f357c7b9e035f73b9561
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76979987"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79148684"
 ---
 # <a name="enumerating-instances-of-sql-server-adonet"></a>Énumération des instances de SQL Server (ADO.NET)
-SQL Server permet aux applications de trouver des instances de SQL Server dans le réseau actuel. La classe <xref:System.Data.Sql.SqlDataSourceEnumerator> expose ces informations au développeur d'applications, en fournissant un <xref:System.Data.DataTable> contenant des informations sur tous les serveurs visibles. Cette table retournée contient une liste d’instances de serveurs disponibles sur le réseau qui correspond à la liste fournie lorsqu’un utilisateur tente de créer une nouvelle connexion, puis développe la liste déroulante contenant tous les serveurs disponibles dans la boîte de dialogue **Propriétés de connexion** . Les résultats affichés ne sont pas toujours complets.  
+SQL Server permet aux applications de trouver des instances dans le réseau actuel. La classe <xref:System.Data.Sql.SqlDataSourceEnumerator> expose ces informations au développeur d’applications, en fournissant une <xref:System.Data.DataTable> contenant des informations sur tous les serveurs visibles. Cette table retournée contient une liste des instances de serveur disponibles sur le réseau, qui correspond à celle fournie quand un utilisateur tente de créer une nouvelle connexion et développe la liste déroulante contenant tous les serveurs disponibles dans la boîte de dialogue **Propriétés des connexions**. Les résultats affichés ne sont pas toujours complets.  
   
 > [!NOTE]
-> Comme avec la plupart des services Windows, il est préférable d'exécuter le service SQL Browser avec le moins possible de privilèges. Pour plus d'informations sur le service SQL Browser et sur la manière de gérer son comportement, voir la documentation en ligne de SQL Server.  
+> Comme pour la plupart des services Windows, il est préférable d’exécuter le service SQL Browser avec le moins de privilèges possible. Pour plus d’informations sur le service SQL Browser et sur la manière de gérer son comportement, consultez la Documentation en ligne de SQL Server.  
   
 ## <a name="retrieving-an-enumerator-instance"></a>Extraction d'une instance d'énumérateur  
  Pour extraire la table contenant des informations sur les instances de SQL Server disponibles, vous devez commencer par extraire un énumérateur en utilisant la propriété partagée/statique <xref:System.Data.Sql.SqlDataSourceEnumerator.Instance%2A> :  
@@ -27,11 +27,11 @@ Dim instance As System.Data.Sql.SqlDataSourceEnumerator = _
 ```  
   
 ```csharp  
-System.Data.Sql.SqlDataSourceEnumerator instance =   
+System.Data.Sql.SqlDataSourceEnumerator instance =
    System.Data.Sql.SqlDataSourceEnumerator.Instance  
 ```  
   
- Après avoir extrait l'instance statique, vous pouvez appeler la méthode <xref:System.Data.Sql.SqlDataSourceEnumerator.GetDataSources%2A> qui retourne un <xref:System.Data.DataTable> contenant des informations sur les serveurs disponibles :  
+ Une fois que vous avez récupéré l’instance statique, vous pouvez appeler la méthode <xref:System.Data.Sql.SqlDataSourceEnumerator.GetDataSources%2A>, qui retourne une <xref:System.Data.DataTable> contenant des informations sur les serveurs disponibles :  
   
 ```vb  
 Dim dataTable As System.Data.DataTable = instance.GetDataSources()  
@@ -41,27 +41,27 @@ Dim dataTable As System.Data.DataTable = instance.GetDataSources()
 System.Data.DataTable dataTable = instance.GetDataSources();  
 ```  
   
- La table retournée par l'appel de la méthode comprend les colonnes suivantes qui contiennent toutes des valeurs `string` :  
+ La table retournée par l’appel de méthode contient les colonnes suivantes, qui contiennent toutes des valeurs de `string` :  
   
 |Colonne|Description|  
 |------------|-----------------|  
-|**ServerName**|Nom du serveur.|  
-|**InstanceName**|Nom de l'instance du serveur. Vide si le serveur s'exécute comme instance par défaut.|  
-|**IsClustered**|Indique si le serveur fait partie d'un cluster.|  
-|**Version**|Version du serveur. Par exemple :<br /><br /> -9,00. x (SQL Server 2005)<br />-10.0. XX (SQL Server 2008)<br />-10,50. x (SQL Server 2008 R2)<br />-11.0. XX (SQL Server 2012)|  
+|**Servername**|Nom du serveur.|  
+|**Instancename**|Nom de l'instance du serveur. Vide si le serveur s’exécute en tant qu’instance par défaut.|  
+|**IsClustered**|Indique si SQL Server fait partie ou non d'un cluster.|  
+|**Version**|Version du serveur. Par exemple :<br /><br /> -   9.00.x (SQL Server 2005)<br />-   10.0.xx (SQL Server 2008)<br />-   10.50.x (SQL Server 2008 R2)<br />-   11.0.xx (SQL Server 2012)|  
   
 ## <a name="enumeration-limitations"></a>Limitations des énumérations  
- Tous les serveurs disponibles peuvent être répertoriés ou ne pas l'être. La liste peut varier en fonction de facteurs tels que des délais d'attente et le trafic réseau. Cela peut avoir pour effet que la liste diffère sur deux appels consécutifs. Seuls des serveurs sur le même réseau sont répertoriés. Les paquets de diffusion ne traversent généralement pas les routeurs, ce qui explique pourquoi vous pouvez ne pas voir un serveur dans la liste, alors qu'il est stable dans l'ensemble des appels.  
+ Tous les serveurs disponibles peuvent être ou non répertoriés. La liste peut varier en fonction de facteurs tels que les délais d’expiration et le trafic. Cela peut entraîner la différence entre la liste et deux appels consécutifs. Seuls les serveurs sur le même réseau sont répertoriés. En général, les paquets diffusés ne traversent pas les routeurs, ce qui explique pourquoi vous ne voyez pas de serveur répertorié, mais il sera stable entre les appels.  
   
- Les serveurs répertoriés peuvent avoir ou non des informations supplémentaires, telles qu'un `IsClustered` et une version. Cela dépend de la manière dont la liste a été obtenue. Les serveurs répertoriés à l'aide du service de navigateur de SQL Server offrent plus de détails que ceux trouvés via l'infrastructure Windows dont seul le nom est indiqué.  
+ Les serveurs répertoriés peuvent ou non avoir des informations supplémentaires comme `IsClustered` et version. Cela dépend de la façon dont la liste a été obtenue. Les serveurs listés à l’aide du service de navigateur de SQL Server offrent plus de détails que ceux trouvés par le biais de l’infrastructure Windows, qui n’indique que le nom.  
   
 > [!NOTE]
-> L'énumération des serveurs n'est disponible qu'en mode d'exécution avec un niveau de confiance totale. Les assemblys s'exécutant dans un environnement bénéficiant d'un niveau de confiance partielle ne peuvent pas l'utiliser, même s'ils disposent de l'autorisation de sécurité d'accès du code CAS (Code Access Security) <xref:System.Data.SqlClient.SqlClientPermission>.  
+> L’énumération de serveurs est disponible uniquement lors de l’exécution avec un niveau de confiance totale. Les assemblies qui s’exécutent dans un environnement de confiance partielle ne peuvent pas l’utiliser, même s’ils disposent de l’autorisation <xref:System.Data.SqlClient.SqlClientPermission> Code Access Security (CAS).  
   
- SQL Server fournit des informations sur la <xref:System.Data.Sql.SqlDataSourceEnumerator> par le biais de l’utilisation d’un service Windows externe nommé SQL Browser. Ce service est activé par défaut mais les administrateurs peuvent l'arrêter ou le désactiver, ce qui rend l'instance du serveur invisible pour cette classe.  
+ SQL Server fournit des informations pour <xref:System.Data.Sql.SqlDataSourceEnumerator> en utilisant un service Windows externe nommé SQL Browser. Ce service est activé par défaut, mais les administrateurs peuvent l’activer ou le désactiver, ce qui rend l’instance de serveur invisible pour cette classe.  
   
-## <a name="example"></a>Exemple  
- L'application console suivante extrait des informations sur toutes les instances de SQL Server visibles et affiche les informations dans la fenêtre de console.  
+## <a name="example"></a> Exemple  
+ L’application console suivante extrait des informations sur toutes les instances de SQL Server visibles et affiche les informations dans la fenêtre de console.  
   
 ```vb  
 Imports System.Data.Sql  
@@ -127,4 +127,4 @@ class Program
 ## <a name="see-also"></a>Voir aussi
 
 - [SQL Server et ADO.NET](index.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

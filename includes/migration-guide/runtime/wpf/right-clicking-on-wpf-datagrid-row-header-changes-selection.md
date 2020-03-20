@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 3b36bc1ed9c35722478bdb31b82a79bed1a18914
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
-ms.translationtype: HT
+ms.openlocfilehash: 8332aca6e72346c92e80ce28979b83eec496b0e7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67858638"
 ---
 ### <a name="right-clicking-on-a-wpf-datagrid-row-header-changes-the-datagrid-selection"></a>Un clic droit sur l’en-tête de ligne d’un DataGrid WPF modifie la sélection de la grille de données
@@ -11,9 +11,8 @@ ms.locfileid: "67858638"
 |   |   |
 |---|---|
 |Détails|Un clic droit sur un en-tête de ligne de <xref:System.Windows.Controls.DataGrid?displayProperty=name> sélectionné alors que plusieurs lignes sont sélectionnées fait que la sélection de <xref:System.Windows.Controls.DataGrid?displayProperty=name> est réduite à cette seule ligne.|
-|Suggestion|Ce problème a été corrigé dans .NET Framework 4.6 et vous pouvez le résoudre en effectuant une mise à niveau vers cette version du .NET Framework.|
-|Portée|Microsoft Edge|
+|Suggestion|Ce problème a été corrigé dans .NET Framework 4.6 et vous pouvez le résoudre en effectuant la mise à niveau vers cette version du .NET Framework.|
+|Étendue|Edge|
 |Version|4.5|
 |Type|Runtime|
 |API affectées|<ul><li><xref:System.Windows.Controls.DataGrid.%23ctor?displayProperty=nameWithType></li></ul>|
-

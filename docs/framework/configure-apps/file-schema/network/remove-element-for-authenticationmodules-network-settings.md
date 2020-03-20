@@ -10,26 +10,26 @@ helpviewer_keywords:
 - <remove> element, authenticationModules
 - authenticationModules, remove element
 ms.assetid: abf79949-b05c-465a-b51c-bbeda9a74173
-ms.openlocfilehash: 2113b2b81ae347b398b0f25028dc6c361aec8447
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: d171fea193bbae068e69b8976abb8e56a5623f02
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089180"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154775"
 ---
-# <a name="remove-element-for-authenticationmodules-network-settings"></a>\<supprimer > élément pour authenticationModules (paramètres réseau)
+# <a name="remove-element-for-authenticationmodules-network-settings"></a>\<supprimer> Element pour l’authentificationModules (Paramètres réseau)
 Supprime un module d’authentification de l’application.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<authenticationModules**](authenticationmodules-element-network-settings.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**supprimer >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<authentificationModules>**](authenticationmodules-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<supprimer>**
 
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<remove   
-   type="authentication module name"   
+<remove
+   type="authentication module name"
 />  
 ```  
   
@@ -40,26 +40,26 @@ Supprime un module d’authentification de l’application.
   
 |**Attribut**|**Description**|  
 |-------------------|---------------------|  
-|**type**|Nom du module d’authentification à supprimer.|  
+|**type**|Le nom du module d’authentification à supprimer.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[authenticationModules](authenticationmodules-element-network-settings.md)|Spécifie les modules utilisés pour authentifier les demandes réseau.|  
+|[authenticationModules](authenticationmodules-element-network-settings.md)|Spécifie les modules utilisés pour authentifier les demandes de réseau.|  
   
-## <a name="remarks"></a>Notes  
- L’élément `remove` supprime les modules d’authentification qui ont été définis précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.  
+## <a name="remarks"></a>Notes   
+ L’élément `remove` supprime les modules d’authentification qui ont été définis plus tôt dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.  
   
- La valeur de l’attribut `type` doit être un nom de classe valide.  
+ La valeur `type` de l’attribut doit être un nom de classe valide.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant supprime un module d’authentification.  
   
 ```xml  
@@ -76,4 +76,4 @@ Supprime un module d’authentification de l’application.
 
 - <xref:System.Net.IAuthenticationModule>
 - <xref:System.Net.AuthenticationManager>
-- [Schéma des paramètres réseau](index.md)
+- [Paramètres réseau Schema](index.md)

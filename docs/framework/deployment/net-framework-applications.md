@@ -6,10 +6,10 @@ helpviewer_keywords:
 - .NET Framework, deploying apps
 ms.assetid: 139d4cb1-5972-40f4-bdd8-1ce68e4dfb80
 ms.openlocfilehash: c025643b6dd103e35231df5c983a06c899af02b1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75716440"
 ---
 # <a name="deploying-net-framework-applications"></a>Déploiement d'applications .NET Framework

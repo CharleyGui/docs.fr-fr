@@ -1,5 +1,5 @@
 ---
-title: Méthode XmlReader. CreateSqlReader (System. Xml)
+title: XmlReader.CreateSqlReader Méthode (System.Xml)
 ms.date: 10/17/2019
 topic_type:
 - apiref
@@ -9,19 +9,19 @@ api_location:
 - system.xml.dll
 api_type:
 - Assembly
-ms.openlocfilehash: c65ef7c073175488c11c5e912a44d46fd4319209
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 7bd2ef5158516acede47f73f9937d06159bc16c9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215448"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155737"
 ---
 # <a name="xmlreadercreatesqlreader-method"></a>XmlReader.CreateSqlReader, méthode
 
 Crée une instance de <xref:System.Xml.XmlReader> à l’aide du flux, des paramètres et des informations de contexte d’analyse spécifiés.
 
 ```csharp
-internal static XmlReader CreateSqlReader(Stream input, 
+internal static XmlReader CreateSqlReader(Stream input,
   XmlReaderSettings settings, XmlParserContext inputContext)
 ```
 
@@ -41,17 +41,17 @@ internal static XmlReader CreateSqlReader(Stream input,
 <xref:System.Xml.XmlReader>  
 Objet permettant de lire les données XML contenues dans le flux de données.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 > [!WARNING]
-> La méthode `XmlReader.CreateSqlReader` est interne et n’est pas destinée à être utilisée directement dans votre code.
+> La `XmlReader.CreateSqlReader` méthode est interne et n’est pas destinée à être utilisée directement dans votre code.
 >
-> Microsoft ne prend pas en charge l’utilisation de cette méthode dans une application de production en l’absence de toute circonstance.
+> Microsoft ne prend en charge l’utilisation de cette méthode dans une application de production en aucune circonstance.
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Xml>
+**Espace nom:**<xref:System.Xml>
 
-**Assembly :** System. Xml. dll
+**Assemblée:** System.Xml.dll
 
-**Versions de .NET Framework :** Disponible depuis 2,0.
+**.NET Versions du Cadre:** Disponible depuis 2.0.

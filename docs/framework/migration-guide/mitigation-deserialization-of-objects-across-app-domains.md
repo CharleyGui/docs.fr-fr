@@ -3,10 +3,10 @@ title: 'Atténuation : désérialisation des objets à travers les domaines d�
 ms.date: 03/30/2017
 ms.assetid: 30c2d66c-04a8-41a5-ad31-646b937f61b5
 ms.openlocfilehash: e2d90a77cab699646bd31eaa162d1bd1744fd51b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73457925"
 ---
 # <a name="mitigation-deserialization-of-objects-across-app-domains"></a>Atténuation : désérialisation des objets à travers les domaines d’application
@@ -35,7 +35,7 @@ Dans certains cas, lorsqu'une application utilise plusieurs domaines d'applicati
   
 6. Parce que les types qui sont dans le contexte d'appel logique ne peuvent pas être résolus dans le domaine d'application par défaut, une exception est levée.  
   
-## <a name="mitigation"></a>Atténuation  
+## <a name="mitigation"></a>Limitation des risques  
  Pour contourner ce problème, procédez comme suit  
   
 1. Recherchez l'appel à `get_Evidence` dans la pile des appels lorsque l'exception est levée. L'exception peut faire partie d'un grand sous-ensemble d'exceptions, notamment <xref:System.IO.FileNotFoundException> et <xref:System.Runtime.Serialization.SerializationException>.  

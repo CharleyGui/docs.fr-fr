@@ -6,19 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - custom element
 ms.assetid: e62056c6-b351-40eb-afc0-cc13fc44e45e
-ms.openlocfilehash: 1d0431085a04d3fb817dfe0883779acc4d693084
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 04360a796b18cf1e414f1f84bff247a1e9d8ef9c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77214784"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155152"
 ---
 # <a name="custom-element-for-singletagsectionhandler"></a>Élément personnalisé pour SingleTagSectionHandler
 
-Définit des paramètres dans une section de configuration personnalisée définie par une \<section > élément et utilise la classe <xref:System.Configuration.SingleTagSectionHandler>.
+Définit les paramètres d’une section de \<configuration personnalisée qui est <xref:System.Configuration.SingleTagSectionHandler> définie par une section> élément et utilise la classe.
 
-[ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp; *\<* de la >
+&nbsp; &nbsp; [** \<section**](configuration-element.md) *>Name \<>*
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,36 +33,36 @@ Les attributs et les valeurs d’attribut sont définis par l’utilisateur.
 
 |     | Description |
 | --- | ----------- |
-| [ **\<configuration>** ](configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
+| [**\<configuration>**](configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
 None
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-L’élément\<de l’élément de **>** est un élément personnalisé défini par un [ **\<section >** ](section-element.md) balise dans l’élément [ **\<configSections >** ](configsections-element-for-configuration.md) . Le système de configuration retourne un objet <xref:System.Collections.IDictionary> lorsque vous appelez <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.
+La ** \<sectionName>** élément est un élément personnalisé défini par une [** \<section>**](section-element.md) tag dans les [** \<configSections>**](configsections-element-for-configuration.md) élément. Le système de <xref:System.Collections.IDictionary> configuration renvoie un objet lorsque vous appelez <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
-L’exemple suivant déclare un élément personnalisé appelé **\<sampleSection >** contenant les paramètres lus par la classe <xref:System.Configuration.SingleTagSectionHandler> :
+L’exemple suivant déclare un élément personnalisé appelé <xref:System.Configuration.SingleTagSectionHandler> ** \<sampleSection>** qui contient des paramètres lus par la classe :
 
 ```xml
 <configuration>
   <configSections>
-    <section name="sampleSection" 
+    <section name="sampleSection"
              type="System.Configuration.SingleTagSectionHandler" />
   </configSections>
-  <sampleSection setting1="Value1" 
-                 setting2="value two" 
+  <sampleSection setting1="Value1"
+                 setting2="value two"
                  setting3="third value" />
 </configuration>
 ```
 
 ## <a name="configuration-file"></a>Fichier de configuration
 
-Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
+Cet élément peut être utilisé dans le fichier de configuration d’application, fichier de configuration de machine (*Machine.config*), et les fichiers *Web.config* qui ne sont pas au niveau de l’annuaire d’application.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma du fichier de configuration pour le .NET Framework](index.md)
+- [Schéma de fichier de configuration pour le cadre .NET](index.md)

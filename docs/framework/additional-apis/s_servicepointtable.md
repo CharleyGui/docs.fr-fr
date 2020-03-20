@@ -1,5 +1,5 @@
 ---
-title: ServicePointManager. s_ServicePointTable Field
+title: ServicePointManager.s_ServicePointTable Champ
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,16 +10,16 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 24459679-291c-401a-9def-e42b29466fcf
-ms.openlocfilehash: 272a0c113fd70d804c763ba0e7e6e9a4a4ee04ce
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 6a56ecd6fc85005f5987c3c2ad0d1680ca63c398
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77214918"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155810"
 ---
-# <a name="servicepointmanagers_servicepointtable-field"></a>ServicePointManager. s\_champ ServicePointTable
+# <a name="servicepointmanagers_servicepointtable-field"></a>ServicePointManager.s\_ServicePointTable Field (en anglais)
 
-`ServicePointManager.s_ServicePointTable` est un <xref:System.Collections.Hashtable> qui contient la liste des connexions HTTP actives (<xref:System.Net.ServicePoint>s) dans le <xref:System.AppDomain>.
+`ServicePointManager.s_ServicePointTable`est <xref:System.Collections.Hashtable> un qui contient la liste<xref:System.Net.ServicePoint>des connexions HTTP actives (s) dans le <xref:System.AppDomain>.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -28,14 +28,14 @@ private static Hashtable s_ServicePointTable
 ```
 
 > [!WARNING]
-> Le champ `ServicePointManager.s_ServicePointTable` est privé et n’est pas destiné à être utilisé directement dans votre code.
-> 
-> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
+> Le `ServicePointManager.s_ServicePointTable` champ est privé et n’est pas destiné à être utilisé directement dans votre code.
+>
+> Microsoft ne prend en charge l’utilisation de ce champ dans une application de production en aucune circonstance.
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Net>
+**Espace nom:**<xref:System.Net>
 
-**Assembly :** Système (dans System. dll)
+**Assemblée:** Système (dans System.dll)
 
-**Versions de .NET Framework :** Disponible depuis 2,0.
+**.NET Versions du Cadre:** Disponible depuis 2.0.

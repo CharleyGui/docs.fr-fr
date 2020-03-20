@@ -9,10 +9,10 @@ helpviewer_keywords:
 - certificates, Software Publisher's Certificate
 ms.assetid: be434d7d-9c0d-46e7-8392-58a9b542d11d
 ms.openlocfilehash: 809b7d0383f172a5fbcb2ac4ac3ffb96ff0b8e20
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73129888"
 ---
 # <a name="cert2spcexe-software-publisher-certificate-test-tool"></a>Cert2spc.exe (outil de test de certificat d'éditeur de logiciels)
@@ -20,7 +20,7 @@ L'outil Software Publisher Certificate Test (Test de certificat d'édition de lo
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
- À l'invite de commandes, tapez le texte suivant :  
+ À l'invite de commandes, tapez :  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -56,5 +56,5 @@ cert2spc oneCertificate.cer twoCertificate.cer mySPCFile.spc
 ## <a name="see-also"></a>Voir aussi
 
 - [Outils](index.md)
-- [Makecert.exe (outil de création du certificat)](/windows/desktop/SecCrypto/makecert)
+- [Makecert.exe (outil de la création du certificat)](/windows/desktop/SecCrypto/makecert)
 - [Invites de commandes](developer-command-prompt-for-vs.md)

@@ -1,26 +1,26 @@
 ---
-title: 'Procédure : inspecter ou modifier des messages sur le client'
+title: 'Comment : inspecter ou modifier des messages sur le client'
 ms.date: 03/30/2017
 ms.assetid: b8256335-f1c2-419f-b862-9f220ccad84c
-ms.openlocfilehash: 14c24c16a36be600881de402de50086dd18b30b4
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: db1a99d2ed1f765e39815e6b6c70d6ada1db1d15
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796987"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185537"
 ---
-# <a name="how-to-inspect-or-modify-messages-on-the-client"></a>Procédure : inspecter ou modifier des messages sur le client
-Vous pouvez inspecter ou modifier les messages entrants ou sortants sur un client WCF <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> en implémentant un et en l’insérant dans le runtime client. Pour plus d’informations, consultez [extension de clients](extending-clients.md). La fonctionnalité équivalente sur le service est <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType>. Pour obtenir un exemple de code complet, consultez l’exemple [message Inspectors](../samples/message-inspectors.md) .  
+# <a name="how-to-inspect-or-modify-messages-on-the-client"></a>Comment : inspecter ou modifier des messages sur le client
+Vous pouvez inspecter ou modifier les messages entrants ou <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> sortants sur un client WCF en implémentant un et en l’insérant dans l’exécution du client. Pour plus d’informations, voir [Extending Clients](extending-clients.md). La fonctionnalité équivalente sur le service est <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType>. Pour un exemple de code complet, consultez l’échantillon [des inspecteurs de messages.](../samples/message-inspectors.md)  
   
 ### <a name="to-inspect-or-modify-messages"></a>Pour inspecter ou modifier des messages  
   
 1. Implémentez l'interface <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType>.  
   
-2. Implémentez <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> ou <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> en fonction de la portée à laquelle vous souhaitez insérer facilement l'inspecteur de message client. <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType>vous permet de modifier le comportement au niveau du point de terminaison. <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType>vous permet de modifier le comportement au niveau du contrat.  
+2. Implémentez <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> ou <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> en fonction de la portée à laquelle vous souhaitez insérer facilement l'inspecteur de message client. <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType>vous permet de changer de comportement au niveau de la fin. <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType>vous permet de changer de comportement au niveau du contrat.  
   
-3. Insérez le comportement avant d'appeler la méthode <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> ou <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> sur <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>. Pour plus d’informations, consultez [configuration et extension du runtime à l’aide de comportements](configuring-and-extending-the-runtime-with-behaviors.md).  
+3. Insérez le comportement avant d'appeler la méthode <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> ou <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> sur <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>. Pour plus de détails, voir [Configuring and Extending the Runtime with Behaviors](configuring-and-extending-the-runtime-with-behaviors.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Les exemples de code suivants affichent, dans l'ordre :  
   
 - Une implémentation d'inspecteur client.  
@@ -38,13 +38,13 @@ public class SimpleMessageInspector : IClientMessageInspector
     public void AfterReceiveReply(ref System.ServiceModel.Channels.Message reply, object correlationState)  
     {  
         // Implement this method to inspect/modify messages after a message  
-        // is received but prior to passing it back to the client   
+        // is received but prior to passing it back to the client
         Console.WriteLine("AfterReceiveReply called");  
     }  
   
     public object BeforeSendRequest(ref System.ServiceModel.Channels.Message request, IClientChannel channel)  
     {  
-        // Implement this method to inspect/modify messages before they   
+        // Implement this method to inspect/modify messages before they
         // are sent to the service  
         Console.WriteLine("BeforeSendRequest called");  
         return null;  
@@ -79,7 +79,7 @@ public class SimpleEndpointBehavior : IEndpointBehavior
 ```  
   
 ```csharp  
-// Configuration element   
+// Configuration element
 public class SimpleBehaviorExtensionElement : BehaviorExtensionElement  
 {  
     public override Type BehaviorType  
@@ -101,7 +101,7 @@ public class SimpleBehaviorExtensionElement : BehaviorExtensionElement
 <configuration>  
     <system.serviceModel>  
         <client>  
-            <endpoint address="http://localhost:8080/SimpleService/"   
+            <endpoint address="http://localhost:8080/SimpleService/"
                       binding="wsHttpBinding"
                       behaviorConfiguration="clientInspectorsAdded"
                       contract="ServiceReference1.IService1"  
@@ -130,4 +130,4 @@ public class SimpleBehaviorExtensionElement : BehaviorExtensionElement
 
 - <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType>
-- [Configuration et extension de l’exécution à l’aide de comportements](configuring-and-extending-the-runtime-with-behaviors.md)
+- [Configuration et extension de l'exécution à l'aide de comportements](configuring-and-extending-the-runtime-with-behaviors.md)

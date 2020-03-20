@@ -10,10 +10,10 @@ helpviewer_keywords:
 - age of cached resources
 ms.assetid: 7f775925-89a1-4956-ba90-c869c1749a94
 ms.openlocfilehash: e21cfc28407ba67afdce8d72e5e52c12ab359059
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71048839"
 ---
 # <a name="cache-policy-interactionmaximum-age-and-maximum-staleness"></a>Interaction de la stratégie de cache : ancienneté maximale et péremption maximale
@@ -42,4 +42,4 @@ Pour vous assurer que le contenu le plus récent est renvoyé à l’application
 - [Stratégies de cache basées sur l’emplacement](location-based-cache-policies.md)
 - [Stratégies de cache basées sur la durée](time-based-cache-policies.md)
 - [Configuration de la mise en cache dans les applications réseau](configuring-caching-in-network-applications.md)
-- [Interaction de la stratégie de cache : ancienneté maximale et actualisation minimale](cache-policy-interaction-maximum-age-and-minimum-freshness.md)
+- [Interaction de la stratégie de cache : ancienneté maximale et actualisation minimale](cache-policy-interaction-maximum-age-and-minimum-freshness.md)

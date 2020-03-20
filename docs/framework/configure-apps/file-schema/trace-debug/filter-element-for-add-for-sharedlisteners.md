@@ -1,5 +1,5 @@
 ---
-title: <filter>, élément de <add> pour <sharedListeners>
+title: <filter>Élément <add> pour pour<sharedListeners>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sharedListeners/add/filter
@@ -10,26 +10,26 @@ helpviewer_keywords:
 - filters, trace listeners
 - trace listeners, filters
 ms.assetid: 7d4e7faa-2e4e-4379-ac76-f6cd7f2f8fac
-ms.openlocfilehash: e04ecd773bd6aa7791858711edbd72128dc391ea
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 6fb52cdfa5792ab6059b60d8dbb91c107cd666ca
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088879"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79153451"
 ---
-# <a name="filter-element-for-add-for-sharedlisteners"></a>\<> un élément de filtre pour \<> d’ajout pour \<sharedListeners >
+# <a name="filter-element-for-add-for-sharedlisteners"></a>\<filtrer> Element \<pour ajouter \<de la> pour les> d'>
 Ajoute un filtre à un écouteur dans la collection `sharedListeners`.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<sharedListeners**](sharedlisteners-element.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**Ajouter**](add-element-for-sharedlisteners.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **&nbsp;&nbsp;\<** >
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<sharedListeners>**](sharedlisteners-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<ajouter>**](add-element-for-sharedlisteners.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<filtrer>**
 
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<filter type="System.Diagnostics.EventTypeFilter"   
+<filter type="System.Diagnostics.EventTypeFilter"
   initializeData="Warning" />  
 ```  
   
@@ -40,11 +40,11 @@ Ajoute un filtre à un écouteur dans la collection `sharedListeners`.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|**type**|Attribut requis.<br /><br /> Spécifie le type du filtre. Vous pouvez utiliser uniquement le nom complet du type (au format de la propriété <xref:System.Type.FullName%2A?displayProperty=nameWithType>), ou vous pouvez utiliser le nom de type qualifié complet, y compris les informations de l’assembly (au format de la propriété <xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType>). Pour plus d’informations sur la création d’un nom de type qualifié complet, consultez [spécification de noms de types qualifiés complets](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
-|**initializeData**|Attribut facultatif.<br /><br /> Chaîne passée au constructeur pour la classe spécifiée.|  
+|**type**|Attribut requis.<br /><br /> Spécifie le type de filtre. Vous ne pouvez utiliser que le nom complet <xref:System.Type.FullName%2A?displayProperty=nameWithType> du type (dans le format de la propriété), ou vous <xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType> pouvez utiliser le nom de type entièrement qualifié, y compris les informations d’assemblage (dans le format de la propriété). Pour plus d’informations sur la création d’un nom de type entièrement qualifié, voir [Spécifier des noms de type entièrement qualifiés](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|**initialiserData**|Attribut facultatif.<br /><br /> La chaîne passa au constructeur pour la classe spécifiée.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -52,16 +52,16 @@ Ajoute un filtre à un écouteur dans la collection `sharedListeners`.
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
-|`sharedListeners`|Collection d’écouteurs qui peut faire référence à n’importe quel élément source ou trace.|  
-|`add`|Ajoute un écouteur à la collection **sharedListeners** .|  
+|`sharedListeners`|Une collection d’auditeurs que toute source ou élément de trace peut référencer.|  
+|`add`|Ajoute un auditeur à la collection **sharedListeners.**|  
   
-## <a name="remarks"></a>Notes  
- Si un écouteur est défini dans un élément `<add>` de l’élément `<sharedListeners>`, le filtre de cet écouteur doit être défini dans un élément `<filter>` qui est un enfant de l’élément `<add>`.  
+## <a name="remarks"></a>Notes   
+ Si un auditeur est `<add>` défini dans `<sharedListeners>` un élément de l’élément, le `<filter>` filtre de cet `<add>` auditeur doit être défini dans un élément qui est un enfant de l’élément.  
   
- Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
+ Cet élément peut être utilisé dans le fichier de configuration de la machine (Machine.config) et le fichier de configuration d’application.  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l’élément `<filter>` pour ajouter un filtre à l’écouteur de la trace `console` dans la collection de `sharedListeners`.  
+## <a name="example"></a> Exemple  
+ L’exemple suivant montre `<filter>` comment utiliser l’élément pour `console` ajouter `sharedListeners` un filtre à l’auditeur de traces de la collection.  
   
 ```xml  
 <configuration>  
@@ -75,9 +75,9 @@ Ajoute un filtre à un écouteur dans la collection `sharedListeners`.
       </source>  
     </sources>  
     <sharedListeners>  
-      <add name="console"   
+      <add name="console"
         type="System.Diagnostics.ConsoleTraceListener" >  
-        <filter type="System.Diagnostics.EventTypeFilter"   
+        <filter type="System.Diagnostics.EventTypeFilter"
           initializeData="Error" />  
       </add>  
     </sharedListeners>  
@@ -90,4 +90,4 @@ Ajoute un filtre à un écouteur dans la collection `sharedListeners`.
 - <xref:System.Diagnostics.TraceFilter>
 - <xref:System.Diagnostics.TraceListener>
 - <xref:System.Diagnostics.TraceSource>
-- [Schéma des paramètres de trace et de débogage](index.md)
+- [Trace et Debug Paramètres Schema](index.md)

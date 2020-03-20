@@ -14,10 +14,10 @@ helpviewer_keywords:
 - reporting installation progress
 ms.assetid: 3f9d0533-f895-4897-b4ea-528284e0241d
 ms.openlocfilehash: caca946617c681ce6516b7184a9ea506cc67158d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73105076"
 ---
 # <a name="installutilexe-installer-tool"></a>Installutil.exe (outil Installer Tool)
@@ -26,7 +26,7 @@ L'outil Installer est un utilitaire en ligne de commande qui vous permet d'insta
 
 Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
-À l'invite de commandes, tapez le texte suivant :
+À l'invite de commandes, tapez :
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -46,11 +46,11 @@ installutil [/u[ninstall]] [options] assembly [[options] assembly] ...
 
 |Option|Description|
 |------------|-----------------|
-|`/h[elp]`<br /><br /> ou<br /><br /> `/?`|Affiche la syntaxe et les options de commande de l'outil.|
-|`/help` *assembly*<br /><br /> ou<br /><br /> `/?` *assembly*|Affiche les options supplémentaires reconnues par des programmes d'installation individuels dans l'assembly spécifié, avec la syntaxe et les options de commande d'InstallUtil.exe. Cette option ajoute le texte retourné par la propriété <xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=nameWithType> de chaque composant de programme d'installation au texte d'aide d'InstallUtil.exe.|
-|`/AssemblyName` "*assemblyName*<br /><br /> ,Version=*major.minor.build.revision*<br /><br /> ,Culture=*locale*<br /><br /> ,PublicKeyToken=*publicKeyToken*"|Spécifie le nom fort d'un assembly, qui doit être enregistré dans le Global Assembly Cache. Le nom de l'assembly doit être qualifié complet avec la version, la culture et le jeton de clé publique de l'assembly. Le nom qualifié complet doit être placé entre guillemets.<br /><br /> Par exemple, "myAssembly, Culture=neutral, PublicKeyToken=0038abc9deabfle5, Version=4.0.0.0" est un nom d'assembly qualifié complet.|
-|`/InstallStateDir=[` *directoryName* `]`|Spécifie le répertoire du fichier .InstallState contenant les données utilisées pour désinstaller l'assembly. La valeur par défaut est le répertoire qui contient l'assembly.|
-|`/LogFile=`[*filename*]|Spécifie le nom du fichier journal dans lequel la progression de l'installation est enregistrée. Par défaut, si l'option `/LogFile` est omise, un fichier journal nommé *assemblyname*.InstallLog est créé. Si *filename* est omis, aucun fichier journal n'est généré.|
+|`/h[elp]`<br /><br /> -ou-<br /><br /> `/?`|Affiche la syntaxe et les options de commande de l'outil.|
+|`/help`*assemblage*<br /><br /> -ou-<br /><br /> `/?`*assemblage*|Affiche les options supplémentaires reconnues par des programmes d'installation individuels dans l'assembly spécifié, avec la syntaxe et les options de commande d'InstallUtil.exe. Cette option ajoute le texte retourné par la propriété <xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=nameWithType> de chaque composant de programme d'installation au texte d'aide d'InstallUtil.exe.|
+|`/AssemblyName`"*assemblyName*<br /><br /> ,Version=*major.minor.build.revision*<br /><br /> ,Culture=*locale*<br /><br /> ,PublicKeyToken=*publicKeyToken*"|Spécifie le nom fort d'un assembly, qui doit être enregistré dans le Global Assembly Cache. Le nom de l'assembly doit être qualifié complet avec la version, la culture et le jeton de clé publique de l'assembly. Le nom qualifié complet doit être placé entre guillemets.<br /><br /> Par exemple, "myAssembly, Culture=neutral, PublicKeyToken=0038abc9deabfle5, Version=4.0.0.0" est un nom d'assembly qualifié complet.|
+|`/InstallStateDir=[`*directoryName*`]`|Spécifie le répertoire du fichier .InstallState contenant les données utilisées pour désinstaller l'assembly. La valeur par défaut est le répertoire qui contient l'assembly.|
+|`/LogFile=`[*nom de fichier*]|Spécifie le nom du fichier journal dans lequel la progression de l'installation est enregistrée. Par défaut, si l'option `/LogFile` est omise, un fichier journal nommé *assemblyname*.InstallLog est créé. Si *filename* est omis, aucun fichier journal n'est généré.|
 |`/LogToConsole`={`true`&#124;`false`}|Si la valeur est `true`, affiche la sortie dans la console. Si la valeur est `false`, supprime la sortie dans la console.|
 |`/ShowCallStack`|Sort la pile des appels dans le journal si une exception se produit à tout moment de l'installation.|
 |`/u`[`ninstall`]|Désinstalle les assemblys spécifiés. À la différence des autres options, `/u` s'applique à tous les assemblys, quel que soit l'endroit où l'option apparaît sur la ligne de commande.|
@@ -69,7 +69,7 @@ Tous les paramètres de ligne de commande et options sont écrits dans le fichie
 > [!IMPORTANT]
 > Dans certains cas, les paramètres passés au programme d'installation peuvent comprendre des informations sensibles ou personnellement identifiables qui, par défaut, sont écrites dans un fichier journal de texte brut. Pour empêcher ce comportement, vous pouvez supprimer le fichier journal en spécifiant `/LogFile=` (sans l'argument *filename*) après Installutil.exe sur la ligne de commande.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 Les applications .NET Framework comportent des fichiers programme traditionnels et des ressources associées, comme les files d'attente de messages, les journaux des événements et les compteurs de performance qui doivent être créés lors du déploiement de l'application. Vous pouvez utiliser les composants du programme d'installation d'un assembly pour créer ces ressources lors de l'installation de l'application et les supprimer lors de la désinstallation de l'application. Installutil.exe détecte et exécute les composants de ce programme d'installation.
 

@@ -4,10 +4,10 @@ description: Découvrez comment installer le .NET Framework sur Windows 10 ou Wi
 ms.date: 04/18/2019
 ms.custom: updateeachrelease
 ms.openlocfilehash: eed15b9088d6ba46d8f5bc6d16ba779dd6115b0d
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "76965969"
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016-and-later"></a>Installer le .NET Framework sur Windows 10 et Windows Server 2016 et ultérieur
@@ -22,10 +22,10 @@ Votre présence ici s’explique peut-être par l’apparition sur votre ordinat
 
 La version .NET Framework 4.8 est fournie avec :
 
-- [Mise à jour du Windows 10 de mai 2019](https://support.microsoft.com/help/4028685/windows-10-get-the-update)
+- [Mise à jour de Windows 10 de mai 2019](https://support.microsoft.com/help/4028685/windows-10-get-the-update)
 
 > [!div class="button"]
-> [Télécharger .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+> [Télécharger .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
 [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48) peut être utilisé pour exécuter des applications créées pour .NET Framework versions 4.0 via 4.7.2.
 
@@ -54,7 +54,7 @@ Le [.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework
 
 Le .NET Framework 4.6.2 prend en charge les applications conçues pour le .NET Framework 4.0 à 4.6.2.
 
-## <a name="net-framework-35"></a>.NET Framework 3.5
+## <a name="net-framework-35"></a>.NET Framework 3.5
 
 Suivez les instructions pour installer le [.NET Framework 3.5 sur Windows 10](dotnet-35-windows-10.md).
 
@@ -78,6 +78,6 @@ Si vous ne parvenez pas à installer la bonne version du .NET Framework, [contac
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Téléchargements .NET](https://dotnet.microsoft.com/download)
+- [Téléchargements ASP.NET](https://dotnet.microsoft.com/download)
 - [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md)
 - [Installer le .NET Framework pour les développeurs](guide-for-developers.md)

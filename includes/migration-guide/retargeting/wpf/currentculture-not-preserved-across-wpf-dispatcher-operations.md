@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: cce19d6c9afa5f5ce9bb17b5b5d92f2060a08414
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
-ms.translationtype: HT
+ms.openlocfilehash: 190bca720504535cb54e498ca8da23fbb6634ad4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67804535"
 ---
 ### <a name="currentculture-is-not-preserved-across-wpf-dispatcher-operations"></a>CurrentCulture n’est pas conservé d’une opération de répartiteur WPF à l’autre
@@ -12,7 +12,6 @@ ms.locfileid: "67804535"
 |---|---|
 |Détails|À compter du .NET Framework 4.6, les changements apportés à <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> ou <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> dans un <xref:System.Windows.Threading.Dispatcher?displayProperty=name> sont perdus à la fin de l’opération de ce répartiteur. De même, les changements apportés à <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> ou <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> en dehors d’une opération de répartiteur peuvent ne pas être reflétés quand cette opération s’exécute. Concrètement, cela signifie que les changements <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> et <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> peuvent ne pas circuler entre les rappels d’IU WPF et tout autre code dans une application WPF. Cela est dû à un changement dans <xref:System.Threading.ExecutionContext?displayProperty=name> qui provoque le stockage de <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> et de <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> dans le contexte d’exécution à compter des applications ciblant le .NET Framework 4.6. Les opérations de répartiteur WPF stockent le contexte d’exécution utilisé pour commencer l’opération et restaurer le contexte précédent lorsque l’opération est terminée. Étant donné que <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> et <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> font désormais partie de ce contexte, les modifications qui leur sont apportées dans une opération de répartiteur ne sont pas conservées en dehors de cette opération.|
 |Suggestion|Si vos applications sont affectées par ce changement, vous pouvez le contourner en stockant la valeur <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> ou <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> souhaitée dans un champ, puis en vérifiant dans tous les corps d’opérations de répartiteur (notamment les gestionnaires de rappels d’événements de l’interface utilisateur) que les bons <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> et <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> sont définis. Étant donné que le changement d’ExecutionContext sous-jacent à ce changement WPF affecte uniquement les applications qui ciblent le .NET Framework 4.6 ou ultérieur, vous pouvez éviter le problème en ciblant le .NET Framework 4.5.2. Pour les applications qui ciblent le .NET Framework 4.6 ou ultérieur, vous pouvez également contourner ce changement en définissant le commutateur de compatibilité suivant :<pre><code class="lang-csharp">AppContext.SetSwitch(&quot;Switch.System.Globalization.NoAsyncCurrentCulture&quot;, true);&#13;&#10;</code></pre>Ce problème a été résolu par WPF dans le .NET Framework 4.6.2. Il a également été résolu dans .NET Framework versions 4.6 et 4.6.1 par le biais du correctif décrit dans [l’article 3139549 de la Base de connaissances](https://support.microsoft.com/kb/3139549). Les applications qui ciblent .NET Framework 4.6 ou ultérieur obtiennent automatiquement le comportement approprié dans les applications WPF. <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name>/<xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> est conservé d’une opération de répartiteur à l’autre.|
-|Portée|Mineur|
+|Étendue|Secondaire|
 |Version|4.6|
 |Type|Reciblage|
-

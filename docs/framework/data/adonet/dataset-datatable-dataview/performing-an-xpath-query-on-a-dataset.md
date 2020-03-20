@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
-ms.openlocfilehash: 6082a171d24c55ea52c153bbd920bb7486be78a7
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5e9a00ab78a57c3c1686d7c87ed8b45d9b2649af
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784372"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150829"
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>Exécution d’une requête XPath sur un DataSet
-La relation entre une synchronisée <xref:System.Data.DataSet> et <xref:System.Xml.XmlDataDocument> vous permet d’utiliser des services XML, tels que la requête XPath (XML Path Language), qui accèdent au **XmlDataDocument** et peuvent exécuter certaines fonctionnalités plus facilement que accès direct au **jeu de données** . Par exemple, au lieu d’utiliser la méthode **Select** d' <xref:System.Data.DataTable> un objet pour parcourir les relations vers d’autres tables dans un **DataSet**, vous pouvez exécuter une requête XPath sur un **XmlDataDocument** synchronisé avec le **DataSet**, pour obtenir un liste d’éléments XML sous la forme d’un <xref:System.Xml.XmlNodeList>. Les nœuds de **XmlNodeList**, castés <xref:System.Xml.XmlElement> en tant que nœuds, peuvent ensuite être passés à la méthode **GetRowFromElement** de **XmlDataDocument**pour <xref:System.Data.DataRow> retourner des références correspondantes aux lignes de la table dans le  **Jeu de données**.  
+La relation entre un <xref:System.Data.DataSet> <xref:System.Xml.XmlDataDocument> synchronisé et vous permet d’utiliser des services XML, tels que la requête XML Path Language (XPath), qui accèdent au **XmlDataDocument** et peut effectuer certaines fonctionnalités plus facilement que l’accès au **DataSet** directement. Par exemple, plutôt que d’utiliser la méthode **Select** d’un <xref:System.Data.DataTable> pour naviguer les relations vers d’autres tables dans un **DataSet**, vous pouvez effectuer une requête XPath sur <xref:System.Xml.XmlNodeList>un **XmlDataDocument** qui est synchronisé avec le **DataSet**, pour obtenir une liste d’éléments XML sous la forme d’un . Les nœuds dans le **XmlNodeList**, moulé <xref:System.Xml.XmlElement> comme nœuds, peuvent alors être passés à la méthode **GetRowDeEnement** de la **XmlDataDocument**, pour retourner des références correspondantes <xref:System.Data.DataRow> aux lignes de la table dans le **DataSet**synchronisé .  
   
- Ainsi, l'exemple de code suivant exécute une requête XPath « petit-enfant ». Le **jeu de données** est rempli avec trois tables : **Customers**, **Orders**et **OrderDetails**. Dans l’exemple, une relation parent-enfant est d’abord créée entre les tables **Customers** et **Orders** , et entre les tables **Orders** et **OrderDetails** . Une requête XPath est ensuite exécutée pour retourner un **XmlNodeList** de nœuds **Customers** où un nœud petit-enfant **OrderDetails** a un nœud **ProductID** avec la valeur 43. Fondamentalement, l’exemple utilise la requête XPath pour déterminer quels sont les clients qui ont commandé le produit dont le **ProductID** est 43.  
+ Ainsi, l'exemple de code suivant exécute une requête XPath « petit-enfant ». Le **DataSet** est rempli de trois tables: **Clients**, **Commandes**, et **OrderDetails**. Dans l’échantillon, une relation parent-enfant est créée d’abord entre les tableaux **Clients** et **Commandes,** et entre les tableaux **Ordres** et **OrderDetails.** Une requête XPath est ensuite effectuée pour retourner un **XmlNodeList** of **Customers** noeuds où un nœud **petit-enfant OrderDetails** a un nœud **ProductID** d’une valeur de 43. Essentiellement, l’échantillon utilise la requête XPath pour déterminer quels clients ont commandé le produit qui a le **ProductID** de 43.  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection.  
@@ -43,7 +43,7 @@ dataSet.Relations.Add("OrderDetail", _
   dataSet.Tables("Orders").Columns("OrderID"), _  
 dataSet.Tables("OrderDetails").Columns("OrderID"), false).Nested = true  
   
-Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)   
+Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)
   
 Dim nodeList As XmlNodeList = xmlDoc.DocumentElement.SelectNodes( _  
   "descendant::Customers[*/OrderDetails/ProductID=43]")  
@@ -84,10 +84,10 @@ dataSet.Relations.Add("CustOrders",
   
 dataSet.Relations.Add("OrderDetail",  
   dataSet.Tables["Orders"].Columns["OrderID"],  
-  dataSet.Tables["OrderDetails"].Columns["OrderID"],   
+  dataSet.Tables["OrderDetails"].Columns["OrderID"],
   false).Nested = true;  
   
-XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);   
+XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);
   
 XmlNodeList nodeList = xmlDoc.DocumentElement.SelectNodes(  
   "descendant::Customers[*/OrderDetails/ProductID=43]");  
@@ -104,4 +104,4 @@ foreach (XmlNode xmlNode in nodeList)
 ## <a name="see-also"></a>Voir aussi
 
 - [Synchronisation DataSet et XmlDataDocument](dataset-and-xmldatadocument-synchronization.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

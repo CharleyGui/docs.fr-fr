@@ -8,10 +8,10 @@ helpviewer_keywords:
 - registering assemblies
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
 ms.openlocfilehash: 45b4c6c08d3afb948444a8c97dc32bd41f2615ce
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73104952"
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (outil Assembly Registration Tool)
@@ -20,7 +20,7 @@ L'outil Assembly Registration Tool (Inscription de l'assembly) lit les métadonn
 
 Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio. Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
-À l'invite de commandes, tapez le texte suivant :
+À l'invite de commandes, tapez :
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -36,13 +36,13 @@ regasm assemblyFile [options]
 
 |Option|Description|
 |------------|-----------------|
-|**/codebase**|Crée une entrée Codebase dans le Registre. L'entrée Codebase spécifie le chemin d'accès du fichier d'un assembly qui n'est pas installé dans le Global Assembly Cache. Vous ne devez pas spécifier cette option si vous devez installer par la suite l'assembly que vous inscrivez dans le Global Assembly Cache. L’argument *assemblyFile* que vous spécifiez avec l’option **/codebase** doit être un [assembly avec nom fort](../../standard/assembly/strong-named.md).|
-|**/registered**|Spécifie que cet outil fera uniquement référence aux bibliothèques de types qui ont déjà été inscrites.|
+|**/base de code**|Crée une entrée Codebase dans le Registre. L'entrée Codebase spécifie le chemin d'accès du fichier d'un assembly qui n'est pas installé dans le Global Assembly Cache. Vous ne devez pas spécifier cette option si vous devez installer par la suite l'assembly que vous inscrivez dans le Global Assembly Cache. L’argument *assemblyFile* que vous spécifiez avec l’option **/codebase** doit être un [assembly avec nom fort](../../standard/assembly/strong-named.md).|
+|**/enregistré**|Spécifie que cet outil fera uniquement référence aux bibliothèques de types qui ont déjà été inscrites.|
 |**/asmpath:directory**|Spécifie un répertoire contenant des références d'assembly. Doit être utilisé avec l’option **/regfile**.|
 |**/nologo**|Supprime l'affichage de la bannière de démarrage Microsoft.|
-|**/regfile** [ **:** *regFile*]|Génère le fichier .reg spécifié pour l'assembly, qui comporte les entrées du Registre nécessaires. La spécification de cette option ne modifie pas le Registre. Vous ne pouvez pas utiliser cette option avec les options **/u** ou **/tlb**.|
+|**/regfile** [**:** *regFile*]|Génère le fichier .reg spécifié pour l'assembly, qui comporte les entrées du Registre nécessaires. La spécification de cette option ne modifie pas le Registre. Vous ne pouvez pas utiliser cette option avec les options **/u** ou **/tlb**.|
 |**/silent** ou **/s**|Supprime l'affichage des messages indiquant la réussite des opérations.|
-|**/tlb** [ **:** *typeLibFile*]|Génère, à partir de l'assembly spécifié, une bibliothèque de types comportant les définitions des types accessibles définis dans l'assembly.|
+|**/tlb** [**:** *typeLibFile*]|Génère, à partir de l'assembly spécifié, une bibliothèque de types comportant les définitions des types accessibles définis dans l'assembly.|
 |**/unregister** ou **/u**|Annule l’inscription des classes pouvant être créées figurant dans *assemblyFile*. Si cette option n'est pas spécifiée, Regasm.exe inscrit les classes pouvant être créées dans l'assembly.|
 |**/verbose**|Spécifie le mode détaillé ; affiche la liste de tous les assemblys référencés pour lesquels une bibliothèque de types doit être générée, en cas de spécification avec l’option **/tlb**.|
 |**/?** ou **/help**|Affiche la syntaxe et les options de commande de l'outil.|
@@ -50,7 +50,7 @@ regasm assemblyFile [options]
 > [!NOTE]
 > Les options de ligne de commande de Regasm.exe ne respectent pas la casse. Il vous suffit d'indiquer les éléments de l'option nécessaires à son identification de manière unique. Par exemple, **/n** équivaut à **/nologo**, et **/t:** *outfile.tlb* à **/tlb:** *outfile.tlb*.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 Vous pouvez utiliser l’option **/regfile** pour générer un fichier .reg comportant les entrées du Registre plutôt que d’apporter directement les modifications au Registre. Vous pouvez mettre à jour le Registre d'un ordinateur en important le fichier .reg à l'aide de l'Éditeur du Registre (Regedit.exe). Notez que le fichier .reg ne comporte pas de mises à jour du Registre pouvant être effectuées par des fonctions de Registre définies par l'utilisateur.  Notez que l’option **/regfile** émet seulement des entrées du Registre pour les classes managées.  Cette option n'émet pas d'entrée pour `TypeLibID` ou `InterfaceID`.
 
@@ -86,6 +86,6 @@ regasm myTest.dll /tlb:myTest.tlb
 
 - [Outils](index.md)
 - [Tlbexp.exe (exportateur de bibliothèques de types)](tlbexp-exe-type-library-exporter.md)
-- [Tlbimp.exe (importateur de bibliothèques de types)](tlbimp-exe-type-library-importer.md)
+- [Tlbimp.exe (Type Library Importer)](tlbimp-exe-type-library-importer.md)
 - [Inscription d’assemblys dans COM](../interop/registering-assemblies-with-com.md)
 - [Invites de commandes](developer-command-prompt-for-vs.md)

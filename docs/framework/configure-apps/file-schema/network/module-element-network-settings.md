@@ -8,26 +8,26 @@ helpviewer_keywords:
 - module element
 - <module> element
 ms.assetid: 10318725-9666-4d65-ab61-b94c64e59f13
-ms.openlocfilehash: 78f6418160b80096214c6e37268a5a90498d6d4d
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: ed28ae4a52085cbfa781b4baf2ee1eafbeff6eb4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089242"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154827"
 ---
-# <a name="module-element-network-settings"></a>\<module >, élément (paramètres réseau)
+# <a name="module-element-network-settings"></a>\<module> Element (Paramètres réseau)
 Ajoute un nouveau module proxy à l'application.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<defaultProxy**](defaultproxy-element-network-settings.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp; **&nbsp;&nbsp;\<** >
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<défautProxy>**](defaultproxy-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<module>**
 
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<module   
-  type="type_fullname, assembly_fullname"   
+<module
+  type="type_fullname, assembly_fullname"
 />  
 ```  
   
@@ -38,10 +38,10 @@ Ajoute un nouveau module proxy à l'application.
   
 |**Attribut**|**Description**|  
 |-------------------|---------------------|  
-|`type`|Nom de type qualifié complet (indiqué par la propriété <xref:System.Type.FullName%2A>) et nom de l’assembly (indiqué par la propriété <xref:System.Reflection.Assembly.FullName%2A>), séparés par une virgule, qui implémente le proxy.|  
+|`type`|Le nom de type entièrement <xref:System.Type.FullName%2A> qualifié (indiqué par la <xref:System.Reflection.Assembly.FullName%2A> propriété) et le nom d’assemblage (indiqué par la propriété), séparés par une virgule, qui implémente le proxy.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -49,16 +49,16 @@ Ajoute un nouveau module proxy à l'application.
 |-----------------|---------------------|  
 |[defaultProxy](defaultproxy-element-network-settings.md)|Configure le serveur proxy HTTP (Hypertext Transfer Protocol).|  
   
-## <a name="remarks"></a>Notes  
- L’élément `module` inscrit des classes proxy qui implémentent l’interface <xref:System.Net.IWebProxy>. Une fois la classe proxy inscrite, `module` peut être utilisé pour demander des informations via le proxy pris en charge.  
+## <a name="remarks"></a>Notes   
+ L’élément `module` enregistre les classes <xref:System.Net.IWebProxy> proxy qui implémenter l’interface. Après l’enregistrement de `module` la classe de procuration, peut être utilisé pour demander des informations par l’intermédiaire de la procuration prise en charge.  
   
- La valeur de l’attribut `type` doit être le nom de classe du module et le nom de la bibliothèque de liens dynamiques (DLL) correspondante.  
+ La valeur `type` de l’attribut doit être le nom de classe du module et le nom de sa bibliothèque dynamique correspondante (DLL).  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant inscrit une classe proxy personnalisée.  
+## <a name="example"></a> Exemple  
+ L’exemple suivant enregistre une classe de proxy personnalisée.  
   
 ```xml  
 <configuration>  
@@ -75,4 +75,4 @@ Ajoute un nouveau module proxy à l'application.
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Net.IWebProxy?displayProperty=nameWithType>
-- [Schéma des paramètres réseau](index.md)
+- [Paramètres réseau Schema](index.md)

@@ -1,5 +1,5 @@
 ---
-title: HttpWebRequest. _HttpResponse Field
+title: HttpWebRequest._HttpResponse Champ
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,16 +10,16 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: eab9b789-beb4-4c28-b2d8-78debc7ba129
-ms.openlocfilehash: 236298921ecd286ddba4e74dbce1b63e96055412
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 0c5bfc56299aa06dd59c2598588044e81a69933a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215095"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79156244"
 ---
-# <a name="httpwebrequest_httpresponse-field"></a>HttpWebRequest.\_le champ HttpResponse
+# <a name="httpwebrequest_httpresponse-field"></a>HttpWebRequest. \_Champ httpResponse
 
-`HttpWebRequest._HttpResponse` est un <xref:System.Net.HttpWebResponse> contenant les détails de la réponse HTTP à partir d’une requête HTTP. Il peut être `null` jusqu’à la réception d’une réponse HTTP.
+`HttpWebRequest._HttpResponse`est <xref:System.Net.HttpWebResponse> un contenu des détails de réponse HTTP d’une demande HTTP. Il peut `null` être jusqu’à ce qu’une réponse HTTP est reçue.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -28,14 +28,14 @@ internal HttpWebResponse _HttpResponse
 ```
 
 > [!WARNING]
-> Le champ `HttpWebRequest._HttpResponse` est interne et n’est pas destiné à être utilisé directement dans votre code.
-> 
-> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
+> Le `HttpWebRequest._HttpResponse` champ est interne et n’est pas destiné à être utilisé directement dans votre code.
+>
+> Microsoft ne prend en charge l’utilisation de ce champ dans une application de production en aucune circonstance.
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Net>
+**Espace nom:**<xref:System.Net>
 
-**Assembly :** Système (dans System. dll)
+**Assemblée:** Système (dans System.dll)
 
-**Versions de .NET Framework :** Disponible depuis 2,0.
+**.NET Versions du Cadre:** Disponible depuis 2.0.

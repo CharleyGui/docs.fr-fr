@@ -8,15 +8,15 @@ helpviewer_keywords:
 - WPF pointer-based touch and stylus stack
 ms.assetid: f99126b5-c396-48f9-8233-8f36b4c9e717
 ms.openlocfilehash: 023c38f66611bd0022699d3f62d90c3923585012
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "77094473"
 ---
 # <a name="mitigation-pointer-based-touch-and-stylus-support"></a>Atténuation : Prise en charge du pointeur tactile et du stylet
 
-Les applications WPF qui ciblent le .NET Framework 4,7 et s’exécutent sur Windows à partir de Windows 10 Creators Update peuvent activer une pile tactile/de stylet WPF basée sur `WM_POINTER`facultative.
+Les applications WPF qui ciblent le cadre .NET 4.7 et s’exécutent `WM_POINTER`sur Windows en commençant par Windows 10 Creators Update peuvent activer une pile WPF touch/stylus basée en option.
 
 ## <a name="impact"></a>Impact
 
@@ -40,7 +40,7 @@ Voici des problèmes connus avec le paramètre de pile facultative tactile/de st
 
 ## <a name="opting-in-to-wm_pointer-based-touchstylus-support"></a>Si vous activez la prise en charge tactile/du stylet basée sur WM_POINTER
 
-Les développeurs qui souhaitent activer cette pile peuvent ajouter les éléments suivants au fichier *app. config* de l’application.
+Les développeurs qui souhaitent activer cette pile peuvent ajouter ce qui suit au fichier *app.config* de leur application.
 
 ```xml
 <configuration>

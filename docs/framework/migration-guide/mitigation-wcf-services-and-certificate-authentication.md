@@ -3,10 +3,10 @@ title: 'Atténuation : Services WCF et authentification par certificat'
 ms.date: 03/30/2017
 ms.assetid: ef19c91a-b9df-4bf0-a28e-eb1e99c4bc95
 ms.openlocfilehash: 8c8493efa2c3223809ad87e01e3faddaea859ca8
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73457798"
 ---
 # <a name="mitigation-wcf-services-and-certificate-authentication"></a>Atténuation : Services WCF et authentification par certificat
@@ -17,7 +17,7 @@ Le .NET Framework 4.6 ajoute TLS 1.1 et TLS 1.2 à la liste des protocoles W
 
 TLS 1.2 ne prend pas en charge l’authentification par certificat MD5. Par conséquent, si un client utilise un certificat SSL employant MD5 comme algorithme de hachage, le client WCF ne parvient pas à se connecter au service WCF. Pour plus d’informations, consultez [Atténuation : Services WCF et authentification par certificat](mitigation-wcf-services-and-certificate-authentication.md).
 
-## <a name="mitigation"></a>Atténuation
+## <a name="mitigation"></a>Limitation des risques
 
 Vous pouvez contourner ce problème afin qu’un client WCF puisse se connecter à un serveur WCF en effectuant une des opérations suivantes :
 

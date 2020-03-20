@@ -7,19 +7,19 @@ helpviewer_keywords:
 - dynamic Web applications [ASP.NET]
 ms.assetid: b7861df0-690a-4a58-bd12-f9d0123e40df
 ms.openlocfilehash: 9f939fa0f03aa00ea35405ce569d762486f4cb33
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73975644"
 ---
 # <a name="developing-web-apps-with-aspnet"></a>Développement d’applications web avec ASP.NET
 
 ASP.NET est une technologie .NET Framework permettant de créer des applications Web. Pour plus d'informations sur ASP.NET, voir :
 
-- [Documentation d’ASP.NET](/aspnet/overview)
+- [documentation ASP.NET](/aspnet/overview)
 - [ASP.NET MVC](https://dotnet.microsoft.com/apps/aspnet/mvc)
-- [Pages Web ASP.NET](https://dotnet.microsoft.com/apps/aspnet/web-apps)
+- [Pages web ASP.NET](https://dotnet.microsoft.com/apps/aspnet/web-apps)
 - [API Web ASP.NET](https://dotnet.microsoft.com/apps/aspnet/apis)  
 - [Créer une application web ASP.NET Framework dans Azure](/azure/app-service/app-service-web-get-started-dotnet-framework)
 
@@ -36,7 +36,7 @@ Consultez [Pourquoi utiliser ASP.NET Core ?](/aspnet/core#why-choose-aspnet-cor
 Pour plus d’informations sur ASP.NET Core](/aspnet/core), consultez :
 
 - [Bien démarrer avec les pages Razor](/aspnet/core/tutorials/razor-pages/razor-pages-start)
-- [Créer une API web](/aspnet/core/tutorials/first-web-api)
+- [Créer une API Web](/aspnet/core/tutorials/first-web-api)
 - [Créer une application web ASP.NET Core dans Azure](/azure/app-service/app-service-web-get-started-dotnet)
   
 ## <a name="see-also"></a>Voir aussi

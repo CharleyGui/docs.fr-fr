@@ -8,18 +8,18 @@ helpviewer_keywords:
 - ASP.NET configuration system
 - configuration files [ASP.NET]
 ms.assetid: 24c4cf4f-ad32-42b2-b040-8e4549e2855e
-ms.openlocfilehash: 5c5c857d4494b6d78b819e56bae4213abc5e2035
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: b37b05bdf90630251cbfcf86751243a3a8b77663
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699090"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79152839"
 ---
-# <a name="systemweb-element-web-settings"></a>\<l’élément System. Web > (paramètres Web)
-Contient des informations sur la façon dont la couche d’hébergement ASP.NET gère le comportement à l’ensemble du processus.  
+# <a name="systemweb-element-web-settings"></a>\<system.web> Element (Paramètres Web)
+Contient des informations sur la façon dont la couche d’hébergement ASP.NET gère le comportement à l’échelle du processus.  
   
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp;&nbsp; **\<System. web >**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;**\<system.web>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,36 +32,36 @@ Contient des informations sur la façon dont la couche d’hébergement ASP.NET 
 
 Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### <a name="attributes"></a>Attributes  
+### <a name="attributes"></a>Attributs  
 
-Aucune.  
+Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<applicationPool>](applicationpool-element-web-settings.md)|Spécifie les paramètres de configuration des pools d’applications IIS dans un fichier Aspnet. config.|  
+|[\<applicationPool>](applicationpool-element-web-settings.md)|Spécifie les paramètres de configuration des pools d’applications IIS dans un fichier aspnet.config.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<configuration>](../configuration-element.md)|Spécifie l’élément racine dans chaque fichier de configuration utilisé par les applications common language runtime et .NET Framework.|  
+|[\<configuration>](../configuration-element.md)|Spécifie l’élément racine de chaque fichier de configuration utilisé par les applications ordinaires de l’exécution de la langue et .NET Framework.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes   
 
-L’élément `system.web` et son élément `applicationPool` enfant ont été ajoutés à la .NET Framework à partir de .NET Framework 3,5 SP1. Lorsque vous exécutez IIS 7,0 ou des versions ultérieures en mode intégré, cette combinaison d’éléments vous permet de configurer la manière dont ASP.NET gère les threads et la façon dont il met en file d’attente les demandes lorsque ASP.NET est hébergé dans un pool d’applications IIS. Si vous exécutez IIS 7,0 ou des versions ultérieures en mode classique ou ISAPI, ces paramètres sont ignorés.  
+L’élément `system.web` et `applicationPool` son élément enfant ont été ajoutés au cadre .NET à partir du cadre .NET 3.5 SP1. Lorsque vous exécutez des versions IIS 7.0 ou ultérieures en mode intégré, cette combinaison d’éléments vous permet de configurer la façon dont ASP.NET gère les threads et comment il fait la queue des demandes lorsque ASP.NET est hébergé dans un pool d’applications IIS. Si vous exécutez des versions IIS 7.0 ou ultérieures en mode Classic ou ISAPI, ces paramètres sont ignorés.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
 
-L’exemple suivant montre comment configurer le comportement à l’ensemble du processus ASP.NET dans le fichier Aspnet. config lorsque ASP.NET est hébergé dans un pool d’applications IIS. L’exemple suppose qu’IIS s’exécute en mode intégré et que l’application utilise le .NET Framework 3,5 SP1 ou une version ultérieure. Ce comportement ne se produit pas dans les versions de la .NET Framework antérieures à la .NET Framework 3,5 SP1. Les valeurs de l’exemple sont les valeurs par défaut.  
+L’exemple suivant montre comment configurer ASP.NET comportement à l’échelle du processus dans le fichier aspnet.config lorsque ASP.NET est hébergé dans un pool d’applications IIS. L’exemple suppose que l’IIS est en cours d’exécution en mode intégré et que l’application utilise le cadre .NET 3.5 SP1 ou une version ultérieure. Ce comportement ne se produit pas dans les versions du cadre .NET plus tôt que le cadre .NET 3.5 SP1. Les valeurs dans l’exemple sont les valeurs par défaut.  
   
 ```xml  
 <configuration>  
   <system.web>  
-    <applicationPool   
-        maxConcurrentRequestsPerCPU="5000"   
-        maxConcurrentThreadsPerCPU="0"   
+    <applicationPool
+        maxConcurrentRequestsPerCPU="5000"
+        maxConcurrentThreadsPerCPU="0"
         requestQueueLimit="5000" />  
   </system.web>  
 </configuration>  
@@ -78,4 +78,4 @@ L’exemple suivant montre comment configurer le comportement à l’ensemble du
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<applicationPool >, élément (paramètres Web)](applicationpool-element-web-settings.md)
+- [\<applicationPool> Element (Paramètres Web)](applicationpool-element-web-settings.md)

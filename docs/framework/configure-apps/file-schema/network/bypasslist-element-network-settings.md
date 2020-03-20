@@ -8,25 +8,25 @@ helpviewer_keywords:
 - bypasslist element
 - <bypasslist> element
 ms.assetid: 124446b7-abb1-4e5e-a492-b64398f268f1
-ms.openlocfilehash: 7a6c1282c9ca8381d2dbb21ffdc82f95732c42b3
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 97e69a4978aa4700d13a994619a65312cf70aeaa
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74087526"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154944"
 ---
-# <a name="bypasslist-element-network-settings"></a>\<BypassList >, élément (paramètres réseau)
-Fournit un ensemble d’expressions régulières qui décrivent les adresses qui n’utilisent pas de proxy.  
+# <a name="bypasslist-element-network-settings"></a>\<bypasslist> Element (Paramètres réseau)
+Fournit un ensemble d’expressions régulières qui décrivent les adresses qui n’utilisent pas un proxy.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<defaultProxy**](defaultproxy-element-network-settings.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<bypasslist >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<défautProxy>**](defaultproxy-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<>de la liste de contournement**
 
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<bypasslist>   
+<bypasslist>
 </bypasslist>  
 ```  
   
@@ -34,15 +34,15 @@ Fournit un ensemble d’expressions régulières qui décrivent les adresses qui
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[add](add-element-for-bypasslist-network-settings.md)|Ajoute une adresse IP ou un nom DNS à la liste de contournement du proxy.|  
-|[clear](clear-element-for-bypasslist-network-settings.md)|Efface la liste de contournement.|  
-|[remove](remove-element-for-bypasslist-network-settings.md)|Supprime une adresse IP ou un nom DNS de la liste de contournement du proxy.|  
+|[ajouter](add-element-for-bypasslist-network-settings.md)|Ajoute une adresse IP ou un nom DNS à la liste de contournement par procuration.|  
+|[Clair](clear-element-for-bypasslist-network-settings.md)|Efface la liste de contournement.|  
+|[retirer](remove-element-for-bypasslist-network-settings.md)|Supprime une adresse IP ou un nom DNS de la liste de contournement par procuration.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -50,18 +50,18 @@ Fournit un ensemble d’expressions régulières qui décrivent les adresses qui
 |-----------------|---------------------|  
 |[defaultProxy](defaultproxy-element-network-settings.md)|Configure le serveur proxy HTTP (Hypertext Transfer Protocol).|  
   
-## <a name="remarks"></a>Notes  
- La liste de contournement contient des expressions régulières qui décrivent les URI auxquels <xref:System.Net.WebRequest> instances accèdent directement au lieu de passer par le serveur proxy.  
+## <a name="remarks"></a>Notes   
+ La liste de contournement contient <xref:System.Net.WebRequest> des expressions régulières qui décrivent les URL qui s’ent entrent directement au lieu de via le serveur proxy.  
   
- Vous devez faire attention lorsque vous spécifiez une expression régulière pour cet élément. L’expression régulière "[a-z] +\\. contoso\\. com" correspond à n’importe quel hôte dans le domaine contoso.com, mais correspond également à n’importe quel hôte dans le domaine contoso.com.cpandl.com. Pour correspondre uniquement à un hôte dans le domaine contoso.com, utilisez un point d’ancrage (« $ ») : « [a-z] +\\. contoso\\. com $ ».  
+ Vous devez faire preuve de prudence lorsque vous spécifiez une expression régulière pour cet élément. L’expression régulière "[a-z]md\\\\.contoso .com" correspond à n’importe quel hôte dans le domaine contoso.com, mais elle correspond également à n’importe quel hôte dans le domaine contoso.com.cpandl.com. Pour n’égaler qu’un hôte dans le domaine contoso.com, utilisez une ancre\\(«$») : « [a-z]md .contoso\\.com$.  
   
- Pour plus d’informations sur les expressions régulières, consultez. [.NET Framework des expressions régulières](../../../../standard/base-types/regular-expressions.md).  
+ Pour plus d’informations sur les expressions régulières, voir . [.NET Framework Expressions régulières](../../../../standard/base-types/regular-expressions.md).  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant ajoute deux adresses à la liste de contournement. La première contourne le proxy pour tous les serveurs dans le domaine contoso.com. la deuxième contourne le proxy pour tous les serveurs dont les adresses IP commencent par 192,168.  
+## <a name="example"></a> Exemple  
+ L’exemple suivant ajoute deux adresses à la liste de contournement. Le premier contourne le proxy pour tous les serveurs du domaine contoso.com ; le second contourne le proxy pour tous les serveurs dont les adresses IP commencent par 192.168.  
   
 ```xml  
 <configuration>  
@@ -79,4 +79,4 @@ Fournit un ensemble d’expressions régulières qui décrivent les adresses qui
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
-- [Schéma des paramètres réseau](index.md)
+- [Paramètres réseau Schema](index.md)

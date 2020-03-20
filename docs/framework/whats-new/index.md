@@ -8,14 +8,14 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 00026fee12e447b7fba56b42cd86699aba38cc52
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: fa7138127379b069b646c4b2488d1973a3ddd628
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094681"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79143315"
 ---
-# <a name="whats-new-in-net-framework"></a>Nouveautés de .NET Framework
+# <a name="whats-new-in-net-framework"></a>Quoi de neuf dans le cadre .NET
 
 Cet article résume les principales nouvelles fonctionnalités et améliorations des versions suivantes du .NET Framework :
 
@@ -24,8 +24,8 @@ Cet article résume les principales nouvelles fonctionnalités et améliorations
 - [.NET Framework 4.7.1](#v471)
 - [.NET Framework 4.7](#v47)
 - [.NET Framework 4.6.2](#v462)
-- [.NET Framework 4.6.1](#v461)
-- [.NET 2015 et .NET Framework 4.6](#v46)
+- [.NET Framework 4.6.1](#v461)
+- [.NET 2015 et .NET Framework 4.6](#v46)
 - [.NET Framework 4.5.2](#v452)
 - [.NET Framework 4.5.1](#v451)
 - [.NET Framework 4.5](#v45)
@@ -33,7 +33,7 @@ Cet article résume les principales nouvelles fonctionnalités et améliorations
 Cet article ne fournit pas d'informations complètes sur chacune des nouvelles fonctionnalités et peut faire l'objet de modifications. Pour obtenir des informations générales sur le .NET Framework, consultez [Prise en main](../get-started/index.md). Pour connaître les plateformes prises en charge, consultez [Configuration requise](../get-started/system-requirements.md). Pour obtenir des liens de téléchargement et des instructions d’installation, consultez [Guide d’installation](../install/guide-for-developers.md).
 
 > [!NOTE]
-> L’équipe .NET Framework diffuse aussi des fonctionnalités hors bande avec NuGet pour étendre la prise en charge des plateformes et introduire des nouveautés, telles que les collections immuables et les types de vecteurs compatibles SIMD. Pour plus d’informations, consultez [Autres bibliothèques de classes et API](../additional-apis/index.md) et [Versions finales hors plage de .NET Framework](../get-started/the-net-framework-and-out-of-band-releases.md).
+> L’équipe .NET Framework publie aussi des fonctionnalités hors bande avec NuGet pour étendre la prise en charge des plateformes et introduire des nouveautés, telles que les collections immuables et les types de vecteurs compatibles SIMD. Pour plus d’informations, consultez [Autres bibliothèques de classes et API](../additional-apis/index.md) et [Versions finales hors plage de .NET Framework](../get-started/the-net-framework-and-out-of-band-releases.md).
 > Consultez la [liste complète des packages NuGet](https://www.nuget.org/profiles/dotnetframework) pour .NET Framework.
 
 <a name="v48" />
@@ -59,9 +59,9 @@ Vous pouvez cibler .NET Framework 4.8 dans Visual Studio 2012 ou ultérieur en i
 .NET Framework 4.8 introduit de nouvelles fonctionnalités dans les domaines suivants :
 
 - [Classes de base](#core48)
-- [Windows Communication Foundation (WCF)](#wcf48)
+- [Fondation De communication Windows (WCF)](#wcf48)
 - [Windows Presentation Foundation (WPF)](#wpf48)
-- [Common Language Runtime](#clr48)
+- [Temps courant de la langue](#clr48)
 
 L’amélioration de l’accessibilité, pour qu’une application puisse fournir une expérience appropriée aux utilisateurs de technologies d’assistance, reste un objectif majeur de .NET Framework 4.8. Pour plus d’informations sur les améliorations apportées à .NET Framework 4.8 dans le domaine de l’accessibilité, consultez [Nouveautés du .NET Framework dans le domaine de l’accessibilité](whats-new-in-accessibility.md).
 
@@ -202,7 +202,7 @@ Le runtime de .NET Framework 4.8 comprend les nouvelles modifications et amélio
 - [Classes de base](#core-472)
 - [ASP.NET](#asp-net472)
 - [Mise en réseau](#net472)
-- [SQL](#sql472)
+- [Sql](#sql472)
 - [WPF](#wpf472)
 - [ClickOnce](#clickonce)
 
@@ -308,7 +308,7 @@ End Function
 
 **Prise en charge des clés éphémères**
 
-L’importation PFX peut éventuellement charger des clés privées directement à partir de la mémoire, en ignorant le disque dur. Quand le nouvel indicateur de <xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags.EphemeralKeySet?displayProperty=nameWithType> est spécifié dans un constructeur <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> ou l’une des surcharges de la méthode <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.Import%2A?displayProperty=nameWithType>, les clés privées sont chargées en tant que clés éphémères. Cela empêche que les clés soient visibles sur le disque. Toutefois :
+L’importation PFX peut éventuellement charger des clés privées directement à partir de la mémoire, en ignorant le disque dur.Quand le nouvel indicateur <xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags.EphemeralKeySet?displayProperty=nameWithType> est spécifié dans un constructeur <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> ou l’une des surcharges de la méthode <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.Import%2A?displayProperty=nameWithType>, les clés privées sont chargées en tant que clés éphémères. Cela empêche que les clés soient visibles sur le disque. Toutefois :
 
 - Étant donné que les clés ne sont pas conservées sur le disque, les certificats chargés avec cet indicateur ne sont pas de bons candidats pour être ajoutés à un X509Store.
 
@@ -326,9 +326,9 @@ Pour plus d’informations et des exemples de code, consultez « Programmatic c
 
 À compter de .NET Framework 4.7.2, la classe <xref:System.Security.Cryptography.Pkcs.SignerInfo> expose davantage d’informations sur la signature. Vous pouvez récupérer la valeur de la propriété <xref:System.Security.Cryptography.Pkcs.SignerInfo.SignatureAlgorithm?displayProperty=fullName> pour déterminer l’algorithme de signature utilisé par le signataire. <xref:System.Security.Cryptography.Pkcs.SignerInfo.GetSignature%2A?displayProperty=nameWithType> peut être appelée afin d’obtenir une copie de la signature de chiffrement pour ce signataire.
 
-**Laisser un flux encapsulé ouvert après avoir supprimé CryptoStream**
+**Laisser un flux encapsulé ouvert après la suppression de CryptoStream**
 
-À compter de .NET Framework 4.7.2, la classe <xref:System.Security.Cryptography.CryptoStream> a un constructeur supplémentaire qui permet à <xref:System.Security.Cryptography.CryptoStream.Dispose%2A> de ne pas fermer le flux wrappé. Pour que le flux encapsulé ne s’ouvre pas après la suppression de l’instance de <xref:System.Security.Cryptography.CryptoStream>, appelez le nouveau constructeur <xref:System.Security.Cryptography.CryptoStream> comme suit :
+À compter de .NET Framework 4.7.2, la classe <xref:System.Security.Cryptography.CryptoStream> a un constructeur supplémentaire qui permet à <xref:System.Security.Cryptography.CryptoStream.Dispose%2A> de ne pas fermer le flux wrappé.Pour laisser le flux wrappé ouvert après la suppression de l’instance <xref:System.Security.Cryptography.CryptoStream>, appelez le nouveau constructeur <xref:System.Security.Cryptography.CryptoStream> comme suit :
 
 ```csharp
 var cStream = new CryptoStream(stream, transform, mode, leaveOpen: true);
@@ -354,18 +354,18 @@ La prise en charge de la décompression à l’aide des API Windows est activée
 
 - Des méthodes `TryGetValue` qui étendent le modèle try utilisé dans d’autres types de collection à ces deux types. Ces méthodes sont les suivantes :
 
-  - [public bool HashSet\<T>.TryGetValue(T equalValue, out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
-  - [public bool SortedSet\<T>.TryGetValue(T equalValue, out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
+  - [bool public HashSet\<T>. TryGetValue (T equalValue, T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
+  - [bool public SortedSet\<T>. TryGetValue (T equalValue, T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
 
 - Des méthodes d’extension `Enumerable.To*` qui convertissent une collection en <xref:System.Collections.Generic.HashSet%601> :
 
-  - [public static HashSet\<TSource> ToHashSet\<TSource>(this IEnumerable\<TSource> source)](xref:System.Linq.Enumerable.ToHashSet%2A)
-  - [public static HashSet\<TSource> ToHashSet\<TSource>(this IEnumerable\<TSource> source, IEqualityComparer\<TSource> comparer)](xref:System.Linq.Enumerable.ToHashSet%2A)
+  - [public statique HashSet\<TSource> ToHashSet\<TSource> (cette source\<IEnumerable TSource>)](xref:System.Linq.Enumerable.ToHashSet%2A)
+  - [public\<statique HashSet TSource> ToHashSet\<TSource> (cette source\<IEnumerable TSource>, IEqualityComparer\<TSource> comparer)](xref:System.Linq.Enumerable.ToHashSet%2A)
 
 - De nouveaux constructeurs <xref:System.Collections.Generic.HashSet%601> qui vous permettent de définir la capacité de la collection, ce qui génère un gain de performances quand vous connaissez à l’avance la taille de <xref:System.Collections.Generic.HashSet%601> :
 
   - [public HashSet(int capacity)](xref:System.Collections.Generic.HashSet%601.%23ctor(System.Int32))
-  - [public HashSet(int capacity, IEqualityComparer\<T> comparer)](xref:System.Collections.Generic.HashSet%601.%23ctor(System.Int32,System.Collections.Generic.IEqualityComparer%7B%600%7D))
+  - [public HashSet (capacité int, IEqualityComparer\<T> comparer)](xref:System.Collections.Generic.HashSet%601.%23ctor(System.Int32,System.Collections.Generic.IEqualityComparer%7B%600%7D))
 
 La classe <xref:System.Collections.Concurrent.ConcurrentDictionary%602> comprend de nouvelles surcharges des méthodes <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> et <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> pour récupérer une valeur à partir du dictionnaire ou l’ajouter si elle est introuvable, et pour ajouter une valeur au dictionnaire ou la mettre à jour si elle existe déjà.
 
@@ -385,7 +385,7 @@ Public GetOrAdd(Of TArg)(key As TKey, valueFactory As Func(Of TKey, TArg, TValue
 
 #### <a name="aspnet"></a>ASP.NET
 
-**Prise en charge de l’injection de dépendances dans les Web Forms**
+**Prise en charge de l’injection de dépendances dans Web Forms**
 
 L’[injection de dépendances](/aspnet/core/fundamentals/dependency-injection#overview-of-dependency-injection) dissocie les objets et leurs dépendances afin qu’il ne soit plus obligatoire de modifier le code d’un objet simplement parce qu’une dépendance a changé. Lors du développement d’applications ASP.NET qui ciblent .NET Framework 4.7.2, vous pouvez :
 
@@ -472,7 +472,7 @@ Le fichier de configuration d’application spécifie ensuite une implémentatio
 ```xml
 <configuration>
   <configSections>
-    <section name="SqlColumnEncryptionEnclaveProviders" type="System.Data.SqlClient.SqlColumnEncryptionEnclaveProviderConfigurationSection,System.Data,Version=4.0.0.0,Culture=neutral,PublicKeyToken=b77a5c561934e089"/> 
+    <section name="SqlColumnEncryptionEnclaveProviders" type="System.Data.SqlClient.SqlColumnEncryptionEnclaveProviderConfigurationSection,System.Data,Version=4.0.0.0,Culture=neutral,PublicKeyToken=b77a5c561934e089"/>
   </configSections>
   <SqlColumnEncryptionEnclaveProviders>
     <providers>
@@ -497,13 +497,13 @@ Le flux de base d’Always Encrypted basé sur enclave est le suivant :
 
 **Recherche de ResourceDictionaries par source**
 
-À compter de .NET Framework 4.7.2, un Assistant de diagnostic peut localiser les  <xref:System.Windows.Xps.Packaging.IXpsFixedPageReader.ResourceDictionaries> qui ont été créés à partir d’un URI source donné. (Cette fonctionnalité est destinée aux assistants de diagnostic, et non aux applications de production.) Un assistant de diagnostic, tel que la fonctionnalité « modifier et continuer » de Visual Studio, permet à l’utilisateur de modifier un ResourceDictionary dans le but que les modifications soient appliquées à l’application en cours d’exécution. Dans ce but, l’une des étapes consiste à trouver tous les ResourceDictionaries créés par l’application en cours d’exécution à partir du dictionnaire en cours de modification. Par exemple, une application peut déclarer un ResourceDictionary dont le contenu est copié à partir d’un URI source donné :
+À compter de .NET Framework 4.7.2, un Assistant de diagnostic peut localiser les  <xref:System.Windows.Xps.Packaging.IXpsFixedPageReader.ResourceDictionaries> qui ont été créés à partir d’un URI source donné.(Cette fonctionnalité est destinée aux assistants diagnostiques, et non aux applications de production.) Un assistant diagnostique tel que l’installation « Edit-and-Continue » de Visual Studio permet à son utilisateur de modifier un ResourceDictionary dans l’intention d’appliquer les modifications à l’application en cours d’exécution. Dans ce but, l’une des étapes consiste à trouver tous les ResourceDictionaries créés par l’application en cours d’exécution à partir du dictionnaire en cours de modification. Par exemple, une application peut déclarer un ResourceDictionary dont le contenu est copié à partir d’un URI source donné :
 
 ```xml
 <ResourceDictionary Source="MyRD.xaml">
 ```
 
-Un Assistant de diagnostic qui modifie le balisage d’origine dans *MyRD.xaml* peut utiliser la nouvelle fonctionnalité pour trouver le dictionnaire. La fonctionnalité est implémentée par une nouvelle méthode statique, <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetResourceDictionariesForSource%2A?displayProperty=nameWithType>. L’Assistant de diagnostic appelle la nouvelle méthode à l’aide d’un URI absolu qui identifie le balisage d’origine, comme illustré par le code suivant :
+Un assistant diagnostique qui modifie la majoration originale dans *MyRD.xaml* peut utiliser la nouvelle fonctionnalité pour localiser le dictionnaire.La fonctionnalité est implémentée par une nouvelle méthode statique, <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetResourceDictionariesForSource%2A?displayProperty=nameWithType>. L’Assistant de diagnostic appelle la nouvelle méthode à l’aide d’un URI absolu qui identifie le balisage d’origine, comme illustré par le code suivant :
 
 ```csharp
 IEnumerable<ResourceDictionary> dictionaries = ResourceDictionaryDiagnostics.GetResourceDictionariesForSource(new Uri("pack://application:,,,/MyApp;component/MyRD.xaml"));
@@ -513,13 +513,13 @@ IEnumerable<ResourceDictionary> dictionaries = ResourceDictionaryDiagnostics.Get
 Dim dictionaries As IEnumerable(Of ResourceDictionary) = ResourceDictionaryDiagnostics.GetResourceDictionariesForSource(New Uri("pack://application:,,,/MyApp;component/MyRD.xaml"))
 ```
 
-La méthode retourne un énumérable vide, sauf si  <xref:System.Windows.Diagnostics.VisualDiagnostics> est activé et que la variable d’environnement [`ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO`](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A) est définie.
+La méthode renvoie un vide <xref:System.Windows.Diagnostics.VisualDiagnostics> enumerable à moins d’être activé et la variable de l’environnement [`ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO`](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A)  est définie.
 
 **Recherche de propriétaires de ResourceDictionary**
 
-À compter de .NET Framework 4.7.2, un Assistant de diagnostic peut localiser les propriétaires d’un <xref:Windows.UI.Xaml.ResourceDictionary> donné. (Cette fonctionnalité est destinée aux assistants de diagnostic et non aux applications de production.) Chaque fois qu’une modification est apportée à un <xref:Windows.UI.Xaml.ResourceDictionary>, WPF recherche automatiquement toutes les références [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md) qui peuvent être affectées par la modification.
+À compter de .NET Framework 4.7.2, un Assistant de diagnostic peut localiser les propriétaires d’un <xref:Windows.UI.Xaml.ResourceDictionary> donné.(La fonction est utilisée par les assistants diagnostiques et non par les applications de production.) Chaque fois qu’un <xref:Windows.UI.Xaml.ResourceDictionary>changement est apporté à un , WPF trouve automatiquement toutes les références [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md) qui pourraient être affectées par le changement.
 
-Un assistant de diagnostic, tel que la fonctionnalité « modifier et continuer » de Visual Studio, peut souhaiter l’étendre pour gérer les références [StaticResource](../wpf/advanced/staticresource-markup-extension.md) . La première étape de ce processus consiste à rechercher les propriétaires du dictionnaire, autrement dit à rechercher tous les objets dont la propriété `Resources` fait référence au dictionnaire (directement ou indirectement par le biais de la propriété <xref:System.Windows.ResourceDictionary.MergedDictionaries?displayProperty=nameWithType>). Trois nouvelles méthodes statiques implémentées sur la classe <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics?displayProperty=nameWithType>, une pour chacun des types de base ayant une propriété `Resources`, prennent en charge cette étape :
+Un assistant diagnostique tel que l’installation « Edit-and-Continue » de Visual Studio peut vouloir étendre cette extension pour traiter les références [StaticResource.](../wpf/advanced/staticresource-markup-extension.md) La première étape de ce processus consiste à rechercher les propriétaires du dictionnaire, autrement dit à rechercher tous les objets dont la propriété `Resources` fait référence au dictionnaire (directement ou indirectement par le biais de la propriété <xref:System.Windows.ResourceDictionary.MergedDictionaries?displayProperty=nameWithType>). Trois nouvelles méthodes statiques implémentées sur la classe <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics?displayProperty=nameWithType>, une pour chacun des types de base ayant une propriété `Resources`, prennent en charge cette étape :
 
 - [`public static IEnumerable<FrameworkElement> GetFrameworkElementOwners(ResourceDictionary dictionary);`](xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetFrameworkElementOwners%2A)
 
@@ -527,11 +527,11 @@ Un assistant de diagnostic, tel que la fonctionnalité « modifier et continuer
 
 - [`public static IEnumerable<Application> GetApplicationOwners(ResourceDictionary dictionary);`](xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetApplicationOwners%2A)
 
-Ces méthodes retournent un énumérable vide, sauf si  <xref:System.Windows.Diagnostics.VisualDiagnostics> est activé et que la variable d’environnement [`ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO`](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A) est définie.
+Ces méthodes renvoient un vide <xref:System.Windows.Diagnostics.VisualDiagnostics> enumerable à moins d’être activé et la variable de l’environnement [`ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO`](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A)  est définie.
 
 **Recherche de références StaticResource**
 
-Un Assistant de diagnostic peut maintenant recevoir une notification chaque fois qu’une référence [StaticResource](../wpf/advanced/staticresource-markup-extension.md) est résolue. (Cette fonctionnalité est destinée aux assistants de diagnostic, et non aux applications de production.) Un assistant de diagnostic, tel que la fonctionnalité « modifier et continuer » de Visual Studio, peut souhaiter mettre à jour toutes les utilisations d’une ressource lorsque sa valeur dans un <xref:Windows.UI.Xaml.ResourceDictionary> change. WPF le fait automatiquement pour les références [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md), mais il ne le fait pas (intentionnellement) pour les références [StaticResource](../wpf/advanced/staticresource-markup-extension.md). À compter de .NET Framework 4.7.2, l’Assistant de diagnostic peut utiliser ces notifications pour localiser ces utilisations de la ressource statique.
+Un Assistant de diagnostic peut maintenant recevoir une notification chaque fois qu’une référence [StaticResource](../wpf/advanced/staticresource-markup-extension.md) est résolue.(La fonction est utilisée par les assistants diagnostiques, et non par des applications de production.) Un assistant diagnostique tel que l’installation « Edit-and-Continue » de Visual Studio peut <xref:Windows.UI.Xaml.ResourceDictionary> vouloir mettre à jour toutes les utilisations d’une ressource lorsque sa valeur dans un changement. WPF le fait automatiquement pour les références [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md), mais il ne le fait pas (intentionnellement) pour les références [StaticResource](../wpf/advanced/staticresource-markup-extension.md). À compter de .NET Framework 4.7.2, l’Assistant de diagnostic peut utiliser ces notifications pour localiser ces utilisations de la ressource statique.
 
 La notification est implémentée par le nouvel événement <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.StaticResourceResolved?displayProperty=nameWithType> :
 
@@ -543,7 +543,7 @@ public static event EventHandler<StaticResourceResolvedEventArgs> StaticResource
 Public Shared Event StaticResourceResolved As EventHandler(Of StaticResourceResolvedEventArgs)
 ```
 
-Cet événement est déclenché chaque fois que le runtime résout une référence [StaticResource](../wpf/advanced/staticresource-markup-extension.md). Les arguments <xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs> décrivent la résolution et indiquent l’objet et la propriété qui hébergent la référence [StaticResource](../wpf/advanced/staticresource-markup-extension.md) et les <xref:Windows.UI.Xaml.ResourceDictionary> et clés utilisés pour la résolution :
+Cet événement est déclenché chaque fois que le runtime résout une référence [StaticResource](../wpf/advanced/staticresource-markup-extension.md).Les arguments <xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs> décrivent la résolution et indiquent l’objet et la propriété qui hébergent la référence [StaticResource](../wpf/advanced/staticresource-markup-extension.md) ainsi que la clé  <xref:Windows.UI.Xaml.ResourceDictionary> utilisée pour la résolution :
 
 ```csharp
 public class StaticResourceResolvedEventArgs : EventArgs
@@ -567,7 +567,7 @@ Public Class StaticResourceResolvedEventArgs : Inherits EventArgs
 End Class
 ```
 
-L’événement n’est pas déclenché (et son accesseur `add` est ignoré), sauf si  <xref:System.Windows.Diagnostics.VisualDiagnostics> est activé et que la variable d’environnement [`ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO`](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A) est définie.
+L’événement n’est `add` pas soulevé (et <xref:System.Windows.Diagnostics.VisualDiagnostics> son accesseur est ignoré) à moins d’être activé et la variable de l’environnement [`ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO`](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A)  est définie.
 
 #### <a name="clickonce"></a>ClickOnce
 
@@ -588,7 +588,7 @@ Pour une application Windows Forms, la solution de contournement précédente co
 .NET Framework 4.7.1 apporte de nouvelles fonctionnalités dans les domaines suivants :
 
 - [Classes de base](#core471)
-- [Common Language Runtime (CLR)](#clr)
+- [Temps courant (CLR)](#clr)
 - [Mise en réseau](#net471)
 - [ASP.NET](#asp-net471)
 
@@ -598,9 +598,9 @@ Pour une application Windows Forms, la solution de contournement précédente co
 
 #### <a name="base-classes"></a>Classes de base
 
-**Prise en charge de .NET Standard 2.0**
+**Prise en charge de .NET 2.0 Standard**
 
-[.NET Standard](../../standard/net-standard.md) définit un ensemble d’API qui doivent être disponibles sur chaque implémentation .NET prenant en charge cette version de la norme. .NET Framework 4.7.1 prend entièrement en charge .NET Standard 2.0 et ajoute [200 API environ](https://github.com/dotnet/standard/blob/master/src/netstandard/src/ApiCompatBaseline.net461.txt) qui sont définies dans .NET Standard 2.0 et qui ne figurent pas dans .NET Framework 4.6.1, 4.6.2 et 4.7. (Notez que ces versions du .NET Framework prennent en charge .NET Standard 2,0 uniquement si des fichiers de prise en charge .NET Standard supplémentaires sont également déployés sur le système cible.) Pour plus d’informations, consultez « BCL-.NET Standard 2,0 support » dans le billet de blog [.NET Framework 4.7.1 Runtime and compiler features](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-runtime-and-compiler-features/) .
+[.NET Standard](../../standard/net-standard.md) définit un ensemble d’API qui doivent être disponibles sur chaque implémentation .NET prenant en charge cette version de la norme. .NET Framework 4.7.1 prend entièrement en charge .NET Standard 2.0 et ajoute [200 API environ](https://github.com/dotnet/standard/blob/master/src/netstandard/src/ApiCompatBaseline.net461.txt) qui sont définies dans .NET Standard 2.0 et qui ne figurent pas dans .NET Framework 4.6.1, 4.6.2 et 4.7. (Notez que ces versions du support .NET Framework .NET Standard 2.0 seulement si des fichiers de support .NET Standard supplémentaires sont également déployés sur le système cible.) Pour plus d’informations, voir "BCL - .NET Standard 2.0 Support" dans le [.NET Framework 4.7.1 Runtime and Compiler Features](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-runtime-and-compiler-features/) blog post.
 
 **Prise en charge des générateurs de configuration**
 
@@ -626,7 +626,7 @@ La classe <xref:System.Runtime.CompilerServices.RuntimeFeature?displayProperty=n
 
 **Amélioration des performances du garbage collection**
 
-Les modifications apportées à garbage collection (GC) dans .NET Framework 4.7.1 améliorent les performances globales, en particulier pour les allocations de tas d’objets volumineux (LOH). Dans .NET Framework 4.7.1, des verrous distincts sont utilisés pour les allocations de tas d’objets de petite taille (SOH) et LOH, ce qui permet d’obtenir des allocations LOH quand le garbage collector d’arrière-plan nettoie l’SOH. Les applications qui créent un grand nombre d’allocations LOH bénéficient donc d’une réduction de la contention de verrouillage des allocations et de meilleures performances. Pour plus d’informations, consultez la section « Runtime -- GC Performance Improvements » dans le billet de blog [.NET Framework 4.7.1 Runtime and Compiler Features](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-runtime-and-compiler-features/).
+Les modifications apportées à la collecte des ordures (GC) dans le cadre .NET 4.7.1 améliorent les performances globales, en particulier pour les allocations de tas d’objets volumines (LOH). Dans .NET Framework 4.7.1, des serrures séparées sont utilisées pour les allocations de tas de petits objets (SOH) et LOH, ce qui permet aux allocations LOH de se produire lorsque le GC de fond balaie le SOH. Les applications qui créent un grand nombre d’allocations LOH bénéficient donc d’une réduction de la contention de verrouillage des allocations et de meilleures performances. Pour plus d’informations, consultez la section « Runtime -- GC Performance Improvements » dans le billet de blog [.NET Framework 4.7.1 Runtime and Compiler Features](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-runtime-and-compiler-features/).
 
 <a name="net471"/>
 
@@ -673,11 +673,11 @@ Dans .NET Framework 4.7 et versions antérieures, ASP.NET permettait aux dévelo
 - [Classes de base](#Core47)
 - [Mise en réseau](#net47)
 - [ASP.NET](#ASP-NET47)
-- [Windows Communication Foundation (WCF)](#wcf47)
+- [Fondation De communication Windows (WCF)](#wcf47)
 - [Windows Forms](#wf47)
 - [Windows Presentation Foundation (WPF)](#WPF47)
 
-Pour obtenir la liste des nouvelles API ajoutées à .NET Framework 4.7, consultez la page [Changements au niveau des API de .NET Framework 4.7](https://github.com/Microsoft/dotnet/blob/master/releases/net47/dotnet47-api-changes.md) sur GitHub. Pour obtenir la liste des fonctionnalités améliorées et des correctifs de bogues apportés à .NET Framework 4.7, consultez la page [Liste des changements de .NET Framework 4.7](https://github.com/Microsoft/dotnet/blob/master/releases/net47/dotnet47-changes.md) sur GitHub. Pour plus d’informations, consultez [annonce du .NET Framework 4,7](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-7/) dans le blog .net.
+Pour obtenir la liste des nouvelles API ajoutées à .NET Framework 4.7, consultez la page [Changements au niveau des API de .NET Framework 4.7](https://github.com/Microsoft/dotnet/blob/master/releases/net47/dotnet47-api-changes.md) sur GitHub. Pour obtenir la liste des fonctionnalités améliorées et des correctifs de bogues apportés à .NET Framework 4.7, consultez la page [Liste des changements de .NET Framework 4.7](https://github.com/Microsoft/dotnet/blob/master/releases/net47/dotnet47-changes.md) sur GitHub. Pour plus d’informations, voir [Annoncez le .NET Framework 4.7](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-7/) dans le blog .NET.
 
 <a name="Core47" />
 
@@ -685,7 +685,7 @@ Pour obtenir la liste des nouvelles API ajoutées à .NET Framework 4.7, consult
 
 .NET Framework 4.7 améliore la sérialisation par le <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> :
 
-**Fonctionnalités améliorées avec chiffrement à courbe elliptique (ECC)** *
+**Fonctionnalité améliorée avec Cryptographie de courbe elliptique (ECC)***
 
 Dans .NET Framework 4.7, des méthodes `ImportParameters(ECParameters)` ont été ajoutées aux classes <xref:System.Security.Cryptography.ECDsa> et <xref:System.Security.Cryptography.ECDiffieHellman> pour permettre à un objet de représenter une clé déjà établie. En outre, une méthode `ExportParameters(Boolean)` a été ajoutée pour exporter la clé à l’aide de paramètres de courbes explicites.
 
@@ -703,7 +703,7 @@ Dans .NET Framework 4.7, le <xref:System.Runtime.Serialization.Json.DataContract
 
 .NET Framework 4.7 ajoute les fonctionnalités liées au réseau suivantes :
 
-**Prise en charge du système d’exploitation par défaut pour les protocoles TLS***
+**Support système d’exploitation par défaut pour les protocoles TLS***
 
 La pile TLS, qui est utilisée par <xref:System.Net.Security.SslStream?displayProperty=nameWithType> et les composants au-dessus de la pile, comme HTTP, FTP et SMTP, permet aux développeurs d’utiliser les protocoles TLS par défaut pris en charge par le système d’exploitation. Les développeurs n’ont plus besoin de coder en dur une version TLS.
 
@@ -729,7 +729,7 @@ Dans .NET Framework 4.7, ASP.NET propose les nouvelles fonctionnalités suivante
 
 Windows Communication Foundation (WCF) ajoute les fonctionnalités et les modifications suivantes :
 
-**Possibilité de configurer les paramètres de sécurité de message par défaut avec TLS 1.1 ou TLS 1.2**
+**Possibilité de configurer les paramètres de sécurité de message par défaut avec TLS 1.1 ou TLS 1.2**
 
 À compter de .NET Framework 4.7, WCF vous permet de configurer TSL 1.1 ou TLS 1.2 en plus de SSL 3.0 et TSL 1.0 en tant que protocole de sécurité de message par défaut. Il s’agit d’un paramètre à activer ; pour cela, vous devez ajouter l’entrée suivante à votre fichier de configuration d’application :
 
@@ -754,11 +754,11 @@ WCF inclut plusieurs modifications du code qui éliminent la concurrence critiqu
 
 Dans .NET Framework 4.7, Windows Forms améliore la prise en charge pour les moniteurs à haute résolution.
 
-**Prise en charge de la haute résolution**
+**Soutien DPI élevé**
 
 À partir des applications qui ciblent .NET Framework 4.7, le .NET Framework prend en charge la haute résolution et la haute résolution dynamique pour les applications Windows Forms. La prise en charge de la haute résolution améliore la disposition et l’apparence des formulaires et des contrôles sur les moniteurs à haute résolution. La haute résolution dynamique change la disposition et l’apparence des formulaires et contrôles lorsque l’utilisateur modifie la haute résolution ou le facteur d’échelle d’affichage d’une application en cours d’exécution.
 
-La prise en charge de la haute résolution est une fonctionnalité à activer que vous configurez en définissant une section [\<System.Windows.Forms.ConfigurationSection >](../configure-apps/file-schema/winforms/index.md) dans votre fichier de configuration d’application. Pour plus d’informations sur l’ajout de la prise en charge de la haute résolution et de la haute résolution dynamique à votre application Windows Forms, consultez [Prise en charge de la haute résolution dans Windows Forms](../winforms/high-dpi-support-in-windows-forms.md).
+Le support DPI élevé est une fonction d’opt-in que vous configurez en définissant une [ \<section system.Windows.Forms.ConfigurationSection>](../configure-apps/file-schema/winforms/index.md) dans votre fichier de configuration d’application. Pour plus d’informations sur l’ajout de la prise en charge de la haute résolution et de la haute résolution dynamique à votre application Windows Forms, consultez [Prise en charge de la haute résolution dans Windows Forms](../winforms/high-dpi-support-in-windows-forms.md).
 
 <a name="WPF47" />
 
@@ -788,7 +788,7 @@ Le .NET Framework 4.6.2 apporte de nouvelles fonctionnalités dans les domaines 
 
 - [SqlClient](#SQLClient)
 
-- [Windows Communication Foundation](#WCF)
+- [Fondation Windows Communication](#WCF)
 
 - [Windows Presentation Foundation (WPF)](#WPF462)
 
@@ -796,11 +796,11 @@ Le .NET Framework 4.6.2 apporte de nouvelles fonctionnalités dans les domaines 
 
 - [ClickOnce](#clickonce-1)
 
-- [Conversion des Windows Forms et des applications WPF en applications UWP](#UWPConvert)
+- [Convertir les formulaires Windows et les applications WPF en applications UWP](#UWPConvert)
 
-- [Améliorations du débogage](#Debug462)
+- [Amélioration de débogage](#Debug462)
 
-Pour obtenir la liste des nouvelles API ajoutées à .NET Framework 4.6.2, consultez la page [Changements au niveau des API de .NET Framework 4.6.2](https://github.com/Microsoft/dotnet/blob/master/releases/net462/dotnet462-api-changes.md) sur GitHub. Pour obtenir la liste des fonctionnalités améliorées et des correctifs de bogues apportés à .NET Framework 4.6.2, consultez la page [Liste des changements de .NET Framework 4.6.2](https://github.com/Microsoft/dotnet/blob/master/releases/net462/dotnet462-changes.md) sur GitHub. Pour plus d’informations, consultez [annonce de .NET Framework 4.6.2](https://devblogs.microsoft.com/dotnet/announcing-net-framework-4-6-2/) dans le blog .net.
+Pour obtenir la liste des nouvelles API ajoutées à .NET Framework 4.6.2, consultez la page [Changements au niveau des API de .NET Framework 4.6.2](https://github.com/Microsoft/dotnet/blob/master/releases/net462/dotnet462-api-changes.md) sur GitHub. Pour obtenir la liste des fonctionnalités améliorées et des correctifs de bogues apportés à .NET Framework 4.6.2, consultez la page [Liste des changements de .NET Framework 4.6.2](https://github.com/Microsoft/dotnet/blob/master/releases/net462/dotnet462-changes.md) sur GitHub. Pour plus d’informations, voir [Announcing .NET Framework 4.6.2](https://devblogs.microsoft.com/dotnet/announcing-net-framework-4-6-2/) dans le blog .NET.
 
 <a name="ASPNET462" />
 
@@ -808,7 +808,7 @@ Pour obtenir la liste des nouvelles API ajoutées à .NET Framework 4.6.2, consu
 
 Dans le .NET Framework 4.6.2, ASP.NET propose les améliorations suivantes :
 
-**Prise en charge améliorée des messages d’erreur localisés dans les validateurs d’annotations de données**
+**Prise en charge améliorée des messages d’erreur localisés dans les validateurs d’annotation de données**
 
 Les validateurs d’annotations de données vous permettent d’effectuer une validation en ajoutant un ou plusieurs attributs à une propriété de classe. L’élément <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType> de l’attribut définit le texte du message d’erreur en cas d’échec de la validation. À compter du .NET Framework 4.6.2, ASP.NET facilite la localisation des messages d’erreur. Les messages d’erreur sont localisés si les conditions suivantes sont réunies :
 
@@ -816,7 +816,7 @@ Les validateurs d’annotations de données vous permettent d’effectuer une va
 
 2. Le fichier de ressources est stocké dans le dossier App_LocalResources.
 
-3. Le nom du fichier de ressources localisées se présente sous la forme `DataAnnotation.Localization.{`*nom*`}.resx`, où *nom* est le nom de culture au format *code_languepays*`-`*code_région* ou *code_langue*.
+3. Le nom du fichier des ressources localisées a le `DataAnnotation.Localization.{` *nom*`}.resx`de formulaire , où le *nom* est un nom de culture dans le format *languageCode*`-`*pays/régionCode* ou *languageCode*.
 
 4. Le nom de clé de la ressource est la chaîne assignée à l’attribut <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType>, et sa valeur correspond au message d’erreur localisé.
 
@@ -841,7 +841,7 @@ End Class
 
 Vous pouvez ensuite créer un fichier de ressources DataAnnotation.Localization.fr.resx, dont la clé est la chaîne de message d’erreur et dont la valeur est le message d’erreur localisé. Le fichier doit se trouver dans le dossier `App.LocalResources`. Par exemple, voici la clé et sa valeur dans un message d’erreur localisé en français (fr) :
 
-| Name                                 | Valeur                                     |
+| Nom                                 | Valeur                                     |
 | ------------------------------------ | ----------------------------------------- |
 | The rating must be between 1 and 10. | La note doit être comprise entre 1 et 10. |
 
@@ -903,7 +903,7 @@ Pour en savoir plus sur l’évolution des catégories de caractères entre Unic
 
 ### <a name="cryptography"></a>Chiffrement
 
-**Prise en charge des certificats X509 contenant l’algorithme DSA FIPS 186-3**
+**Prise en charge des certificats X509 contenant l’algorithme DSA FIPS 186-3**
 
 Le .NET Framework 4.6.2 ajoute la prise en charge des certificats X509 DSA(Digital Signature Algorithm) dont les clés dépassent la limite de 1 024 bits de la norme FIPS 186-2.
 
@@ -1029,11 +1029,11 @@ Le fournisseur de données .NET Framework pour SQL Server (<xref:System.Data.Sq
 
 **Regroupement de connexions et expirations de délai avec les bases de données Azure SQL**
 
-Lorsque le regroupement de connexions est activé et qu’un délai d’attente ou une autre erreur de connexion se produit, une exception est mise en cache et l’exception mise en cache est levée lors d’une tentative de connexion suivante pendant les 5 secondes à 1 minute. Pour plus d’informations, consultez [Regroupement de connexions SQL Server (ADO.NET)](../data/adonet/sql-server-connection-pooling.md).
+Lorsque la mise en commun des connexions est activée et qu’un délai d’attente ou une autre erreur de connexion se produit, une exception est mise en cache, et l’exception mise en cache est lancée sur toute tentative de connexion ultérieure pour les 5 secondes à 1 minute suivantes. Pour plus d’informations, consultez [Regroupement de connexions SQL Server (ADO.NET)](../data/adonet/sql-server-connection-pooling.md).
 
 Ce comportement n’est pas souhaitable quand il s’agit d’établir des connexions à des bases de données Azure SQL Database, car les tentatives de connexion peuvent échouer avec des erreurs transitoires qui sont en général récupérées rapidement. Pour des nouvelles tentatives de connexion plus abouties, le comportement de période de blocage de pool de connexions est supprimé quand les connexions aux bases de données Azure SQL Database échouent.
 
-L’ajout du nouveau mot clé `PoolBlockingPeriod` vous permet de sélectionner la période de blocage la mieux adaptée à votre application. Ces valeurs comprennent :
+L’ajout du `PoolBlockingPeriod` nouveau mot clé vous permet de sélectionner la période de blocage la mieux adaptée à votre application. Ces valeurs comprennent :
 
 <xref:System.Data.SqlClient.PoolBlockingPeriod.Auto>
 
@@ -1073,7 +1073,7 @@ Dans le .NET Framework 4.6.2, Windows Communication Foundation a été amélior�
 
 La sécurité du transport WCF prend en charge les certificats stockés à l’aide de la bibliothèque de chiffrement Windows (CNG). Dans le .NET Framework 4.6.2, cette prise en charge se limite à l’utilisation de certificats avec une clé publique dont l’exposant ne dépasse pas 32 bits de longueur. Quand une application cible le .NET Framework 4.6.2, cette fonctionnalité est activée par défaut.
 
-Pour les applications qui ciblent .NET Framework 4.6.1 et les versions antérieures, mais qui s’exécutent sur .NET Framework 4.6.2, cette fonctionnalité peut être activée en ajoutant la ligne suivante à la section [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) du fichier app.config ou web.config.
+Pour les applications qui ciblent le cadre .NET 4.6.1 et plus tôt, mais sont en cours d’exécution sur le cadre .NET 4.6.2, cette fonctionnalité peut être activée en ajoutant la ligne suivante à [ \<l’heure d’exécution>](../configure-apps/file-schema/runtime/runtime-element.md) section de l’app.config ou web.config fichier.
 
 ```xml
 <AppContextSwitchOverrides
@@ -1134,9 +1134,9 @@ Quand vous utilisez NetTcp avec la sécurité du transport et un type d’inform
 
 - La propriété <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=nameWithType>
 
-- La section [\<transport>](../configure-apps/file-schema/wcf/transport-of-nettcpbinding.md) de la section [\<netTcpBinding>](../configure-apps/file-schema/wcf/nettcpbinding.md)
+- La [ \<](../configure-apps/file-schema/wcf/transport-of-nettcpbinding.md) section>de transport de la [ \<section>de netTcpBinding](../configure-apps/file-schema/wcf/nettcpbinding.md)
 
-- La section [\<sslStreamSecurity>](../configure-apps/file-schema/wcf/sslstreamsecurity.md) de la section [\<customBinding>](../configure-apps/file-schema/wcf/custombinding.md)
+- La [ \<section sslStreamSecurity>](../configure-apps/file-schema/wcf/sslstreamsecurity.md) de la [ \<section customBinding>](../configure-apps/file-schema/wcf/custombinding.md)
 
 <a name="WPF462" />
 
@@ -1168,11 +1168,11 @@ Par exemple, le code XAML suivant regroupe les données par âge, trie les group
 </SortDescriptions>
 ```
 
-**Prise en charge du clavier tactile**
+**Support clavier tactile**
 
-La prise en charge du clavier tactile permet le suivi du focus dans les applications WPF en appelant et en masquant automatiquement le clavier tactile dans Windows 10 lorsque l’entrée tactile est reçue par un contrôle qui peut prendre une entrée textuelle.
+Le support tactile permet le suivi de mise au point dans les applications WPF en invoquant et en rejetant automatiquement le clavier tactile dans Windows 10 lorsque l’entrée tactile est reçue par un contrôle qui peut prendre l’entrée textuelle.
 
-Dans les versions précédentes de .NET Framework, les applications WPF ne peuvent pas s’abonner au suivi du focus sans désactiver la prise en charge des mouvements tactiles/de stylet WPF. Par conséquent, les applications WPF doivent soit choisir la prise en charge complète des entrées tactiles WPF, soit privilégier la souris Windows.
+Dans les versions précédentes de .NET Framework, les applications WPF ne peuvent pas opter pour le suivi de mise au point sans désactiver le support de styleT/geste tactile WPF. Par conséquent, les applications WPF doivent soit choisir la prise en charge complète des entrées tactiles WPF, soit privilégier la souris Windows.
 
 **Résolution par moniteur**
 
@@ -1180,7 +1180,7 @@ Pour faire face à la prolifération récente des environnements à haute résol
 
 Dans les versions précédentes du .NET Framework, les applications WPF prennent en charge la résolution au niveau du système. En d’autres termes, l’interface utilisateur de l’application est éventuellement mise à l’échelle par le système d’exploitation, en fonction de la résolution du moniteur sur lequel l’application est affichée.
 
-Pour les applications s’exécutant sous le .NET Framework 4.6.2, vous pouvez désactiver les changements de résolution par moniteur dans les applications WPF en ajoutant une instruction de configuration à la section [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) du fichier de configuration de votre application, comme suit :
+Pour les applications fonctionnant sous le cadre .NET 4.6.2, vous pouvez désactiver les modifications [ \<](../configure-apps/file-schema/runtime/runtime-element.md) DPI par moniteur dans les applications WPF en ajoutant une déclaration de configuration à la section>de votre fichier de configuration d’application, comme suit :
 
 ```xml
 <runtime>
@@ -1194,11 +1194,11 @@ Pour les applications s’exécutant sous le .NET Framework 4.6.2, vous pouvez d
 
 Dans le .NET Framework 4.6.2, Windows Workflow Foundation a été amélioré dans les domaines suivants :
 
-**Prise en C# charge des expressions et IntelliSense dans le concepteur WF réhébergé**
+**Soutien aux expressions et IntelliSense dans le Rehosted WF Designer**
 
-À compter de .NET Framework 4,5, WF C# prend en charge les expressions dans le concepteur Visual Studio et dans les flux de travail de code. Le Concepteur de flux de travail réhébergé est une fonctionnalité clé de WF qui permet aux Concepteur de flux de travail d’être dans une application en dehors de Visual Studio (par exemple, dans WPF).  Windows Workflow Foundation offre la possibilité de prendre C# en charge les expressions et IntelliSense dans le concepteur de flux de travail réhébergé. Pour plus d’informations, consultez le [blog Windows Workflow Foundation](https://docs.microsoft.com/archive/blogs/workflowteam/building-c-expressions-support-and-intellisense-in-the-rehosted-workflow-designer).
+À partir de .NET Framework 4.5, WF prend en charge les expressions de CMD dans le Visual Studio Designer et dans les flux de travail de code. Le Rehosted Workflow Designer est une caractéristique clé de WF qui permet au concepteur de workflow d’être dans une application en dehors de Visual Studio (par exemple, dans WPF).  Windows Workflow Foundation offre la possibilité de prendre en charge les expressions C et IntelliSense dans le Rehosted Workflow Designer. Pour plus d’informations, consultez le [blog Windows Workflow Foundation](https://docs.microsoft.com/archive/blogs/workflowteam/building-c-expressions-support-and-intellisense-in-the-rehosted-workflow-designer).
 
-`Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio` dans les versions du .NET Framework antérieures à 4.6.2, la fonctionnalité IntelliSense du concepteur WF est rompue quand un client reconstruit un projet de flux de travail à partir de Visual Studio. Quand la génération du projet aboutit, les types de flux de travail ne se trouvent pas dans le concepteur, et IntelliSense affiche des avertissements dans la fenêtre **Liste d’erreurs** par rapport aux types de flux de travail manquants. .NET Framework 4.6.2 résout ce problème et rend IntelliSense disponible.
+`Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio`Dans les versions du cadre .NET avant 4.6.2, WF Designer IntelliSense est cassé quand un client reconstruit un projet de flux de travail de Visual Studio. Quand la génération du projet aboutit, les types de flux de travail ne se trouvent pas dans le concepteur, et IntelliSense affiche des avertissements dans la fenêtre **Liste d’erreurs** par rapport aux types de flux de travail manquants. .NET Framework 4.6.2 aborde ce problème et rend IntelliSense disponible.
 
 **Les applications Workflow V1 pour lesquelles le suivi de flux de travail est activé s’exécutent désormais en mode FIPS**
 
@@ -1210,7 +1210,7 @@ Les ordinateurs pour lesquels le mode de conformité FIPS est activé peuvent d�
 
 Si ce scénario n’est pas autorisé, l’exécution de l’application continue de générer une exception avec le message « Cette implémentation ne fait pas partie des algorithmes de chiffrement validés FIPS pour les plateformes Windows ».
 
-**Amélioration des flux de travail quand la mise à jour dynamique est utilisée avec le Concepteur de flux de travail Visual Studio**
+**Amélioration de flux de travail quand la mise à jour dynamique est utilisée avec le Concepteur de flux de travail Visual Studio**
 
 Le Concepteur de flux de travail, le Concepteur d’activités d’organigramme et les autres Concepteurs d’activité de flux de travail peuvent désormais charger et afficher les flux de travail qui ont été enregistrés consécutivement à l’appel de la méthode <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=nameWithType>. Dans les versions du .NET Framework antérieures à .NET Framework 4.6.2, le fait de charger un fichier XAML dans Visual Studio pour un workflow enregistré après avoir appelé <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=nameWithType> peut occasionner les problèmes suivants :
 
@@ -1264,7 +1264,7 @@ Pour plus d’informations sur .NET Framework 4.6.1, consultez les rubriques su
 
 - [Liste des changements de .NET Framework 4.6.1](https://github.com/Microsoft/dotnet/blob/master/releases/net461/dotnet461-changes.md)
 
-- [Compatibilité des applications dans la version 4.6.1](../migration-guide/application-compatibility.md)
+- [Compatibilité des applications dans la version 4.6.1](../migration-guide/application-compatibility.md)
 
 - [Différences de l’API .NET Framework](https://github.com/Microsoft/dotnet/blob/master/releases/net461/dotnet461-api-changes.md) (sur GitHub)
 
@@ -1292,13 +1292,13 @@ Cela contraste fortement avec le code nécessaire pour générer une signature d
 
 Les éléments suivants ont été ajoutés à ADO.NET :
 
-**Prise en charge de la fonctionnalité Always Encrypted pour les clés matérielles protégées**
+**Prise en charge de la fonctionnalité Chiffrement intégral pour les clés matérielles protégées**
 
 ADO.NET prend désormais en charge le stockage des clés principales de colonnes Toujours chiffré en mode natif dans les modules de sécurité matériels (HSM, Hardware Security Modules). Cette prise en charge permet aux clients de tirer profit des clés asymétriques stockées dans les modules HSM sans avoir à écrire des fournisseurs de magasins de clés principales de colonnes personnalisés et sans les inscrire dans les applications.
 
 Les clients doivent installer le fournisseur CSP fourni par le fabricant des modules HSM ou les fournisseurs de magasin de clés CNG sur les serveurs d’applications ou les ordinateurs clients pour accéder aux données Toujours chiffré protégées par des clés principales de colonnes stockées dans un module HSM.
 
-**Amélioration du comportement de connexion de <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> pour AlwaysOn**
+**Amélioration <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> du comportement de connexion pour AlwaysOn**
 
 Désormais, SqlClient fournit automatiquement une connexion plus rapide à un groupe de disponibilité AlwaysOn. Il détecte de façon transparente si votre application se connecte à un groupe de disponibilité AlwaysOn sur un autre sous-réseau, détecte rapidement le serveur actif actuel et fournit une connexion au serveur. Avant cette mise en production, une application devait définir la chaîne de connexion à inclure `"MultisubnetFailover=true"` pour indiquer qu’elle était connectée à un groupe de disponibilité AlwaysOn. Si le mot clé de connexion n’était pas défini sur `true`, une application pouvait rencontrer un dépassement du délai lors de la connexion à un groupe de disponibilité AlwaysOn. Avec cette version, une application *n’a plus* besoin de définir <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> sur `true`. Pour plus d’informations sur la prise en charge de SqlClient pour les groupes de disponibilité AlwaysOn, consultez [Prise en charge de SqlClient pour la haute disponibilité et la récupération d’urgence](../data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).
 
@@ -1324,7 +1324,7 @@ Comme dans les versions précédentes du .NET Framework, la langue d’un contr�
 
 - Culture de thread actuelle.
 
-Pour plus d’informations sur la prise en charge linguistique dans WPF, consultez le billet [de blog WPF sur les fonctionnalités de .NET Framework 4.6.1](https://devblogs.microsoft.com/wpf/wpf-in-net-4-6-1/).
+Pour plus d’informations sur le support linguistique dans WPF, voir le [blog WPF sur .NET Framework 4.6.1 fonctionnalités](https://devblogs.microsoft.com/wpf/wpf-in-net-4-6-1/).
 
 **Prise en charge supplémentaire des dictionnaires personnalisés par utilisateur**
 
@@ -1381,7 +1381,7 @@ L’API de profilage non managée a été améliorée comme suit :
 
 - Meilleure instrumentation avec l’interface ICorProfiler.
 
-  Les profileurs qui utilisent la fonctionnalité ReJit des API `ICorProfiler` pour l’instrumentation dynamique peuvent maintenant modifier certaines métadonnées. Précédemment, ces outils pouvaient instrumenter le langage intermédiaire à tout moment, mais les métadonnées ne pouvaient être modifiées qu’au moment du chargement du module. Étant donné que le langage intermédiaire fait référence aux métadonnées, cela limitait les types d’instrumentation qui pouvaient être effectuées. Nous avons levé certaines de ces limites en ajoutant la méthode [ICorProfilerInfo7::ApplyMetaData](../unmanaged-api/profiling/icorprofilerinfo7-applymetadata-method.md) pour prendre en charge un sous-ensemble des modifications de métadonnées après le chargement du module, notamment en ajoutant de nouveaux enregistrements `AssemblyRef`, `TypeRef`, `TypeSpec`, `MemberRef`, `MemberSpec` et `UserString`. Cette modification permet une plus large gamme d’instrumentations instantanées possibles.
+  Les profileurs qui utilisent la fonctionnalité ReJit des API `ICorProfiler` pour l’instrumentation dynamique peuvent maintenant modifier certaines métadonnées. Précédemment, ces outils pouvaient instrumenter le langage intermédiaire à tout moment, mais les métadonnées ne pouvaient être modifiées qu’au moment du chargement du module. Étant donné que le langage intermédiaire fait référence aux métadonnées, cela limitait les types d’instrumentation qui pouvaient être effectuées. Nous avons levé certaines de ces limites en ajoutant la méthode [ICorProfilerInfo7::ApplyMetaData](../unmanaged-api/profiling/icorprofilerinfo7-applymetadata-method.md) méthode pour prendre en charge `AssemblyRef` `TypeRef`un `TypeSpec` `MemberRef`sous-ensemble de modifications de métadonnées après les charges du module, en particulier en ajoutant de nouvelles , , , `MemberSpec`et `UserString` les enregistrements. Cette modification permet une plus large gamme d’instrumentations instantanées possibles.
 
 <a name="NGEN461" />
 
@@ -1405,13 +1405,13 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
   Pour plus d’informations, consultez [ASP.NET Core](/aspnet/core/).
 
-- **Mises à jour ASP.NET**
+- **Mises à jour d’ASP.NET**
 
   - **API basée sur des tâches pour le vidage de réponse asynchrone**
 
     ASP.NET fournit désormais une API simple basée sur des tâches pour le vidage de réponse asynchrone, <xref:System.Web.HttpResponse.FlushAsync%2A?displayProperty=nameWithType>, qui autorise les réponses à être vidées de façon asynchrone à l'aide du support `async/await` de votre langue.
 
-  - **La liaison de modèle prend en charge les méthodes retournant Task**
+  - **La liaison de modèle prend en charge les méthodes qui retournent des tâches**
 
     Dans le .NET Framework 4.5, ASP.NET a ajouté une fonctionnalité de liaison de modèle qui autorise une approche extensible, axée sur le code pour les opérations de données CRUD dans les contrôles utilisateur et les pages Web Forms. Le système de liaison de modèle prend désormais en charge les méthodes de liaison de modèle avec renvoi de <xref:System.Threading.Tasks.Task>. Cette fonctionnalité permet aux développeurs de Web Forms d'obtenir les avantages de la scalabilité du modèle asynchrone et la simplicité du système de liaison de données lorsqu'ils utilisent les versions plus récentes des ORM, y compris l'Entity Framework.
 
@@ -1442,7 +1442,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
   - **Prise en charge du protocole de liaison de jeton**
 
-    Microsoft et Google ont travaillé en collaboration sur une nouvelle approche de l’authentification, appelée le [Protocole de liaison de jeton](https://github.com/TokenBinding/Internet-Drafts). Le principe est que les jetons d’authentification (dans le cache de votre navigateur) peuvent être volés et utilisés par des criminels pour accéder à des ressources sécurisées (par exemple, votre compte bancaire) sans avoir besoin de votre mot de passe ou de toute autre connaissance privilégiée. Le nouveau protocole vise à contenir ce problème.
+    Microsoft et Google ont travaillé en collaboration sur une nouvelle approche de l’authentification, appelée le [Protocole de liaison de jeton](https://github.com/TokenBinding/Internet-Drafts). La prémisse est que les jetons d’authentification (dans votre cache de navigateur) peuvent être volés et utilisés par les criminels pour accéder à des ressources autrement sécurisées (par exemple, votre compte bancaire) sans exiger votre mot de passe ou toute autre connaissance privilégiée. Le nouveau protocole vise à contenir ce problème.
 
     Le protocole de liaison de jeton sera implémenté dans Windows 10 en tant que fonctionnalité du navigateur. Les applications ASP.NET participeront au protocole, en validant les jetons d'authentification pour qu'ils soient légitimes. Les implémentations côté client et serveur établissent la protection de bout en bout spécifiée par le protocole.
 
@@ -1482,7 +1482,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
     Les propriétés <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> et <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> sont désormais en lecture et en écriture, et non plus en lecture seule. Si vous affectez un nouvel objet <xref:System.Globalization.CultureInfo> à ces propriétés, la culture du thread actuel définie par la propriété `Thread.CurrentThread.CurrentCulture` et la culture du thread d'interface utilisateur actuel définie par les propriétés `Thread.CurrentThread.CurrentUICulture` changent également.
 
-  - **Améliorations apportées au garbage collection (GC)**
+  - **Améliorations du nettoyage de la mémoire (GC)**
 
     La classe <xref:System.GC> inclut désormais les méthodes <xref:System.GC.TryStartNoGCRegion%2A> et <xref:System.GC.EndNoGCRegion%2A>, qui vous permettent d'interdire le garbage collection durant l'exécution d'un chemin critique.
 
@@ -1514,7 +1514,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
       [!code-csharp[WhatsNew.Casting#2](~/samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#2)]
       [!code-vb[WhatsNew.Casting#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#2)]
 
-  - **Prise en charge de la conversion des dates et heures vers ou à partir d’Unix**
+  - **Prise en charge de la conversion des dates et heures vers ou à partir de Unix**
 
     Les nouvelles méthodes suivantes ont été ajoutées à la structure <xref:System.DateTimeOffset> pour prendre en charge la conversion des valeurs de date et d'heure vers ou depuis Unix :
 
@@ -1528,7 +1528,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
   - **Commutateurs de compatibilité**
 
-    La classe <xref:System.AppContext> ajoute une nouvelle fonctionnalité de compatibilité qui permet aux auteurs de bibliothèque de fournir un mécanisme d’annulation uniforme pour les nouvelles fonctionnalités de leurs utilisateurs. Il établit un contrat faiblement couplé entre les composants pour pouvoir communiquer une demande de refus. Cette fonctionnalité est particulièrement importante quand une modification est apportée aux fonctionnalités existantes. À l'inverse, il existe déjà une activation implicite des nouvelles fonctionnalités.
+    La <xref:System.AppContext> classe ajoute une nouvelle fonctionnalité de compatibilité qui permet aux rédacteurs de bibliothèques de fournir un mécanisme uniforme d’opt-out pour de nouvelles fonctionnalités pour leurs utilisateurs. Il établit un contrat vaguement couplé entre les composants afin de communiquer une demande d’opt-out. Cette fonctionnalité est particulièrement importante quand une modification est apportée aux fonctionnalités existantes. À l'inverse, il existe déjà une activation implicite des nouvelles fonctionnalités.
 
     Avec <xref:System.AppContext>, les bibliothèques définissent et exposent des commutateurs de compatibilité, tandis que le code qui en dépend peut définir ces commutateurs pour qu'ils aient un impact sur le comportement de la bibliothèque. Par défaut, les bibliothèques fournissent la nouvelle fonctionnalité et ne peuvent la modifier (c'est-à-dire fournir la version antérieure) que si le commutateur est défini.
 
@@ -1620,7 +1620,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
   - **Améliorations HDPI**
 
-    La prise en charge HDPI dans WPF est désormais mieux assurée dans le .NET Framework 4.6. Des améliorations ont été apportées à l'arrondi de disposition pour réduire les instances de découpage dans les contrôles avec bordures. Par défaut, cette fonctionnalité est activée uniquement si votre <xref:System.Runtime.Versioning.TargetFrameworkAttribute> a la valeur .NET 4.6.  Les applications qui ciblent les versions antérieures du framework mais qui s’exécutent sur le .NET Framework 4.6 peuvent adopter le nouveau comportement en ajoutant la ligne suivante à la section [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) du fichier app.config :
+    La prise en charge HDPI dans WPF est désormais mieux assurée dans le .NET Framework 4.6. Des améliorations ont été apportées à l'arrondi de disposition pour réduire les instances de découpage dans les contrôles avec bordures. Par défaut, cette fonctionnalité est activée uniquement si votre <xref:System.Runtime.Versioning.TargetFrameworkAttribute> a la valeur .NET 4.6.  Les applications qui ciblent les versions antérieures du cadre, mais sont en cours d’exécution sur le cadre .NET 4.6 peuvent opter pour le nouveau comportement en ajoutant la ligne suivante à [ \<l’heure d’exécution>](../configure-apps/file-schema/runtime/runtime-element.md) section du fichier app.config:
 
     ```xml
     <AppContextSwitchOverrides
@@ -1644,7 +1644,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
     WPF dans le .NET Framework 4.6. prend en charge les fenêtres enfants transparentes dans Windows 8.1 et versions ultérieures. Cela vous permet de créer des fenêtres enfants non rectangulaires et transparentes dans vos fenêtres de niveau supérieur. Vous pouvez désactiver cette fonctionnalité en affectant à la propriété <xref:System.Windows.Interop.HwndSourceParameters.UsesPerPixelTransparency%2A?displayProperty=nameWithType> la valeur `true`.
 
-- **Windows Communication Foundation (WCF)**
+- **Fondation De communication Windows (WCF)**
 
   - **Prise en charge SSL**
 
@@ -1715,7 +1715,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
     Windows 10 inclut un nouvel algorithme de mise en réseau à haute scalabilité qui améliore l'utilisation des ressources de l'ordinateur en réutilisant les ports locaux pour les connexions TCP sortantes. .NET Framework 4.6 prend en charge le nouvel algorithme, permettant aux applications .NET de tirer parti du nouveau comportement. Dans les précédentes versions de Windows, il y avait une limite artificielle de connexions simultanées (généralement 16 384, taille par défaut de la plage de ports dynamiques), ce qui pouvait limiter la scalabilité d'un service en provoquant l'épuisement du port sous charge.
 
-    Dans .NET Framework 4,6, deux API ont été ajoutées pour permettre la réutilisation de port, ce qui supprime la limite de 64 Ko sur les connexions simultanées :
+    Dans le cadre .NET 4.6, deux API ont été ajoutées pour permettre la réutilisation portuaire, ce qui supprime efficacement la limite de 64 KB sur les connexions simultanées :
 
     - Valeur de l'énumération <xref:System.Net.Sockets.SocketOptionName?displayProperty=nameWithType>.
 
@@ -1729,7 +1729,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
     Une nouvelle propriété, <xref:System.Uri.IdnHost%2A>, a été ajoutée à la classe <xref:System.Uri> pour mieux prendre en charge les noms de domaine internationaux et PunyCode.
 
-- **Redimensionnement dans les contrôles Windows Forms.**
+- **Redimensionnement dans les contrôles Windows Forms**
 
   Cette fonctionnalité a été développée dans .NET Framework 4.6 pour inclure les types <xref:System.Windows.Forms.DomainUpDown>, <xref:System.Windows.Forms.NumericUpDown>, <xref:System.Windows.Forms.DataGridViewComboBoxColumn>, <xref:System.Windows.Forms.DataGridViewColumn> et <xref:System.Windows.Forms.ToolStripSplitButton>, ainsi que le rectangle spécifié par la propriété <xref:System.Drawing.Design.PaintValueEventArgs.Bounds%2A> utilisée durant le dessin de <xref:System.Drawing.Design.UITypeEditor>.
 
@@ -1741,7 +1741,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
   </appSettings>
   ```
 
-- **Prise en charge des codages de pages de codes**
+- **Prise en charge des encodages de pages de codes**
 
   .NET Core prend en charge principalement les codages Unicode, et fournit par défaut une prise en charge limitée des codages de pages de codes. Vous pouvez ajouter la prise en charge des encodages de pages de codes disponibles dans .NET Framework, mais non pris en charge dans .NET Core, en inscrivant les encodages de pages de codes avec la méthode <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType>. Pour plus d’informations, consultez <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
 
@@ -1755,7 +1755,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
 - **Packages du .NET Framework open source**
 
-  Les packages .NET Core, tels que les collections immuables, les [API SIMD](https://www.nuget.org/packages/Microsoft.Bcl.Simd)et les API de mise en réseau telles que celles qui se trouvent dans l’espace de noms <xref:System.Net.Http>, sont désormais disponibles en tant que packages Open source sur [GitHub](https://github.com/). Pour accéder au code, consultez [.net sur GitHub](https://github.com/dotnet/runtime). Pour plus d’informations, notamment sur la manière de contribuer à ces packages, consultez [.NET Core et Open-Source](../get-started/net-core-and-open-source.md), la [page d’accueil .NET sur GitHub](https://github.com/dotnet/home).
+  .NET Core paquets tels que les collections immuables, [API SIMD](https://www.nuget.org/packages/Microsoft.Bcl.Simd), et le réseau de réseau apI tels que ceux trouvés dans l’espace de nom sont maintenant disponibles sous forme <xref:System.Net.Http> de paquets open-source sur [GitHub](https://github.com/). Pour accéder au code, voir [.NET sur GitHub](https://github.com/dotnet/runtime). Pour plus d’informations, notamment sur la manière de contribuer à ces packages, consultez [.NET Core et Open-Source](../get-started/net-core-and-open-source.md), la [page d’accueil .NET sur GitHub](https://github.com/dotnet/home).
 
 <a name="v452" />
 
@@ -1767,7 +1767,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
   Les nouvelles propriétés <xref:System.Web.HttpResponse.HeadersWritten?displayProperty=nameWithType> et <xref:System.Web.HttpResponseBase.HeadersWritten?displayProperty=nameWithType> retournent des valeurs booléennes qui indiquent si les en-têtes de réponse ont été écrits. Vous pouvez utiliser ces propriétés pour vous assurer que les appels d'API comme <xref:System.Web.HttpResponse.StatusCode%2A?displayProperty=nameWithType> (qui lèvent des exceptions si les en-têtes ont été écrits) vont réussir.
 
-- **Redimensionnement dans les contrôles Windows Forms.** Cette fonctionnalité a été étendue. Vous pouvez maintenant utiliser le paramètre PPP système pour redimensionner les composants des contrôles supplémentaires suivants (par exemple, la flèche déroulante vers le bas dans les zones de liste modifiable) :
+- **Redimensionnement dans les contrôles Windows Forms** Cette fonctionnalité a été étendue. Vous pouvez maintenant utiliser le paramètre PPP système pour redimensionner les composants des contrôles supplémentaires suivants (par exemple, la flèche déroulante vers le bas dans les zones de liste modifiable) :
 
   - <xref:System.Windows.Forms.ComboBox>
   - <xref:System.Windows.Forms.ToolStripComboBox>
@@ -1786,7 +1786,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
 - **Nouvelle fonctionnalité de flux de travail.** Un gestionnaire de ressources qui utilise la méthode <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> (et qui implémente donc l'interface <xref:System.Transactions.IPromotableSinglePhaseNotification>) peut utiliser la nouvelle méthode <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType> pour demander :
 
-  - la promotion de la transaction en transaction MSDTC (Microsoft Distributed Transaction Coordinator) ;
+  - La promotion de la transaction en transaction MSDTC (Microsoft Distributed Transaction Coordinator)
 
   - le remplacement de <xref:System.Transactions.IPromotableSinglePhaseNotification> par <xref:System.Transactions.ISinglePhaseNotification>, qui correspond à une inscription durable qui prend en charge les validations en une seule phase.
 
@@ -1874,9 +1874,9 @@ Les améliorations apportées à Windows Forms incluent :
 
   - <xref:System.Windows.Forms.PropertyGrid>
   - <xref:System.Windows.Forms.TreeView>
-  - Certains aspects de <xref:System.Windows.Forms.DataGridView> (voir [nouvelles fonctionnalités dans 4.5.2](#v452) pour connaître les autres contrôles pris en charge)
+  -     Certains aspects de <xref:System.Windows.Forms.DataGridView> (consultez [Nouvelles fonctionnalités dans 4.5.2](#v452) pour connaître les autres contrôles pris en charge)
 
-  Pour activer cette fonctionnalité, ajoutez un nouvel élément \<appSettings> au fichier de configuration (app.config) et affectez la valeur `EnableWindowsFormsHighDpiAutoResizing` à l'élément `true` :
+  Pour activer cette fonctionnalité, ajoutez un nouvel élément \<appSettings> au fichier de configuration (app.config) et affectez la valeur `true` à l'élément `EnableWindowsFormsHighDpiAutoResizing` :
 
   ```xml
   <appSettings>
@@ -1906,13 +1906,13 @@ Pour les nouvelles fonctionnalités dans ASP.NET 4.5.1, consultez [Notes de mis
 
 - Capacité à réduire les redémarrages du système en détectant et en fermant les applications .NET Framework 4 pendant le déploiement. Consultez [Réduction des redémarrages système durant les installations de .NET Framework 4.5](../deployment/reducing-system-restarts.md).
 
-- Prise en charge de tableaux supérieurs à 2 gigaoctets (Go) sur les plateformes 64 bits. Cette fonctionnalité peut être activée dans le fichier de configuration de l'application. Consultez l’[élément \<gcAllowVeryLargeObjects>](../configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md), qui répertorie également d’autres restrictions sur la taille des objets et la taille des tableaux.
+- Prise en charge de tableaux supérieurs à 2 gigaoctets (Go) sur les plateformes 64 bits. Cette fonctionnalité peut être activée dans le fichier de configuration de l'application. Voir le [ \<gcAllowVeryLargeObjects> élément](../configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md), qui énumère également d’autres restrictions sur la taille de l’objet et la taille du tableau.
 
 - Meilleures performances via une opération garbage collection en arrière-plan pour les serveurs. Lorsque vous utilisez le garbage collection de serveur dans .NET Framework 4.5, le garbage collection en arrière-plan est automatiquement activé. Consultez la section Garbage collection de serveur en arrière-plan, dans la rubrique [Notions de base du garbage collection](../../standard/garbage-collection/fundamentals.md).
 
 - Compilation juste-à-temps (JIT) en arrière-plan, disponible en option sur les processeurs multicœurs pour améliorer les performances de l'application. Consultez <xref:System.Runtime.ProfileOptimization>.
 
-- Possibilité de limiter la durée pendant laquelle le moteur d’expressions régulières tentera de résoudre une expression régulière avant d’expirer. Consultez la propriété <xref:System.Text.RegularExpressions.Regex.MatchTimeout%2A?displayProperty=nameWithType>.
+- Capacité de limiter combien de temps le moteur d’expression régulière tentera de résoudre une expression régulière avant qu’il ne s’évanouit. Voir <xref:System.Text.RegularExpressions.Regex.MatchTimeout%2A?displayProperty=nameWithType> la propriété.
 
 - Capacité à définir la culture par défaut d'un domaine d'application. Consultez la classe <xref:System.Globalization.CultureInfo>.
 
@@ -1926,11 +1926,11 @@ Pour les nouvelles fonctionnalités dans ASP.NET 4.5.1, consultez [Notes de mis
 
 - Possibilité de personnaliser un contexte de réflexion pour remplacer le comportement de réflexion par défaut par l'intermédiaire de la classe <xref:System.Reflection.Context.CustomReflectionContext>.
 
-- Prise en charge de la version 2008 de la norme IDNA (Internationalized Domain Names in applications) lorsque la classe <xref:System.Globalization.IdnMapping?displayProperty=nameWithType> est utilisée sur Windows 8.
+- Prise en charge de la version 2008 de la norme <xref:System.Globalization.IdnMapping?displayProperty=nameWithType> Internationalized Domain Names in Applications (IDNA) lorsque la classe est utilisée sur Windows 8.
 
 - Délégation de comparaison de chaînes au système d'exploitation, qui implémente Unicode 6.0, lorsque .NET Framework est utilisé dans Windows 8. Lorsqu'il s'exécute sur d'autres plateformes, .NET Framework inclut ses propres données de comparaison de chaînes, qui implémentent Unicode 5.x. Voir la classe <xref:System.String> et la section Notes de la classe <xref:System.Globalization.SortVersion>.
 
-- Possibilité de calculer les codes de hachage des chaînes par domaine d'application. Voir [\<UseRandomizedStringHashAlgorithm>, élément](../configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md).
+- Possibilité de calculer les codes de hachage des chaînes par domaine d'application. Voir [ \<UseRandomizedStringHashAlgorithm> Element](../configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md).
 
 - Prise en charge de la réflexion de type fractionnée entre les classes <xref:System.Type> et <xref:System.Reflection.TypeInfo>. Consultez [Réflexion dans le .NET Framework pour les applications du Windows Store](../reflection-and-codedom/reflection-for-windows-store-apps.md).
 
@@ -1976,7 +1976,7 @@ ASP.NET 4.5 et 4.5.1 ajoutent la liaison de modèle pour Web Forms, la prise e
 
 - [ASP.NET et Web Tools pour Visual Studio 2013 - Notes de publication](/aspnet/visual-studio/overview/2013/release-notes)
 
-### <a name="networking-a-namenetworking-"></a>Réseaux <a name="networking" />
+### <a name="networking"></a>Réseaux <a name="networking" />
 
 Le .NET Framework 4.5 fournit une nouvelle interface de programmation pour les applications HTTP. Pour plus d'informations, consultez les nouveaux espaces de noms <xref:System.Net.Http?displayProperty=nameWithType> et <xref:System.Net.Http.Headers?displayProperty=nameWithType>.
 
@@ -2116,19 +2116,19 @@ Pour plus d’informations, consultez [Nouveautés de Windows Workflow Foundatio
 
 <a name="tailored" />
 
-### <a name="net-for-windows-8x-store-apps"></a>.NET pour les applications du Windows Store sur Windows 8.x
+### <a name="net-for-windows-8x-store-apps"></a>.NET pour les applications Windows 8.x Store
 
-Les applications Windows 8.x Store sont conçues pour des facteurs de forme spécifiques et tirent parti de la puissance du système d'exploitation Windows. Un sous-ensemble du .NET Framework 4.5 ou 4.5.1 est disponible pour générer des applications Windows 8.x Store pour Windows à l'aide de C# ou de Visual Basic. Ce sous-ensemble est appelé .NET pour les applications du Windows 8. x Store et est abordé dans une [vue d’ensemble](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
+Les applications Windows 8.x Store sont conçues pour des facteurs de forme spécifiques et tirent parti de la puissance du système d'exploitation Windows. Un sous-ensemble du .NET Framework 4.5 ou 4.5.1 est disponible pour générer des applications Windows 8.x Store pour Windows à l'aide de C# ou de Visual Basic. Ce sous-ensemble est appelé .NET pour Windows 8.x Store applications et est discuté dans un [aperçu](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
 
-### <a name="portable-class-libraries-a-nameportable-"></a>Bibliothèques de classes portables<a name="portable" />
+### <a name="portable-class-libraries"></a>Bibliothèques de classes portables<a name="portable" />
 
-Le projet Bibliothèque de classes portable dans Visual Studio 2012 (et les versions ultérieures) vous permet d'écrire et de générer des assemblys managés qui fonctionnent sur plusieurs plateformes .NET Framework. À l’aide d’un projet de bibliothèque de classes portables, vous choisissez les plateformes (telles que Windows Phone et .NET pour les applications du Windows 8. x Store) à cibler. Les types et les membres disponibles dans votre projet sont automatiquement restreints aux types et aux membres communs entre ces plateformes. Pour plus d’informations, consultez [Bibliothèque de classes portable](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
+Le projet Bibliothèque de classes portable dans Visual Studio 2012 (et les versions ultérieures) vous permet d'écrire et de générer des assemblys managés qui fonctionnent sur plusieurs plateformes .NET Framework. À l’aide d’un projet de bibliothèque de classe portable, vous choisissez les plates-formes (telles que Windows Phone et .NET pour windows 8.x Store applications) à cibler. Les types et les membres disponibles dans votre projet sont automatiquement restreints aux types et aux membres communs entre ces plateformes. Pour plus d’informations, consultez [Bibliothèque de classes portable](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Versions finales hors plage de .NET Framework](../get-started/the-net-framework-and-out-of-band-releases.md)
-- [Nouveautés de l’accessibilité dans le .NET Framework](whats-new-in-accessibility.md)
-- [Nouveautés de Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
-- [Nouveautés de Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
+- [Nouveautés du .NET Framework dans le domaine de l’accessibilité](whats-new-in-accessibility.md)
+- [Nouveautés dans Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
+- [Nouveautés dans Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
 - [ASP.NET](/aspnet)
 - [Nouveautés de C++ dans Visual Studio](/cpp/what-s-new-for-visual-cpp-in-visual-studio)

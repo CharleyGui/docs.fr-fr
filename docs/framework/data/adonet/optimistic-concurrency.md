@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
-ms.openlocfilehash: ddb53c9224d56803c3528d79c5ccdf5534b9ab03
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: e8d24a3998ca97fdf45e647bc40c1f7d6018ec20
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039813"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149451"
 ---
 # <a name="optimistic-concurrency"></a>Accès concurrentiel optimiste
 Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à jour de données dans une base de données : l'accès simultané optimiste et l'accès simultané pessimiste. L'objet <xref:System.Data.DataSet> est conçu pour privilégier l'utilisation de l'accès simultané optimiste pour les activités longues, comme lors de la communication à distance de données ou de l'interaction avec ces dernières.  
@@ -30,9 +30,9 @@ Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à
   
  À 13h00, l'utilisateur 1 lit une ligne de la base de données contenant les valeurs suivantes :  
   
- **CustID LastName FirstName**  
+ **CustID     LastName     FirstName**  
   
- 101 Smith Bob  
+ 101          Smith             Bob  
   
 |Nom de la colonne|Valeur d'origine|Valeur actuelle|Valeur dans la base de données|  
 |-----------------|--------------------|-------------------|-----------------------|  
@@ -42,7 +42,7 @@ Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à
   
  À 13h01, l'utilisateur 2 lit la même ligne.  
   
- À 1:03 h 00, utilisateur2 remplace **FirstName** de « Bob » par « Robert » et met à jour la base de données.  
+ À 13 h 03, User2 passe de **«** Bob » à « Robert » et met à jour la base de données.  
   
 |Nom de la colonne|Valeur d'origine|Valeur actuelle|Valeur dans la base de données|  
 |-----------------|--------------------|-------------------|-----------------------|  
@@ -65,13 +65,13 @@ Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à
 ## <a name="testing-for-optimistic-concurrency-violations"></a>Recherche des violations d'accès simultané optimiste  
  Il existe plusieurs techniques qui permettent de déceler la présence d'une violation d'accès simultané optimiste. L'une d'entre elles consiste à inclure une colonne horodateur dans la table. Les bases de données proposent généralement une fonctionnalité d'horodatage qui peut être utilisée pour connaître la date et l'heure de la dernière mise à jour d'un enregistrement. En utilisant cette technique, une colonne horodateur est incluse dans la définition de la table. Chaque fois que l'enregistrement est mis à jour, l'horodatage est également mis à jour en fonction de la date et de l'heure actuelles. Dans un test visant à déceler la présence de violations d'accès simultané optimiste, la colonne horodateur est retournée avec toute requête liée au contenu de la table. Lors d'une tentative de mise à jour, la valeur d'horodatage figurant dans la base de données est comparée à la valeur d'origine contenue dans la ligne modifiée. Si les valeurs correspondent, la modification est apportée et la colonne horodateur est mise à jour en fonction de la date et de l'heure actuelles afin de refléter la modification. Si elles ne correspondent pas, une violation d'accès simultané optimiste s'est produite.  
   
- Une autre technique de recherche des violations d'accès simultané optimiste consiste à vérifier que toutes les valeurs de colonne d'origine d'une ligne correspondent toujours à celles qui figurent dans la base de données. Examinons, par exemple, la requête suivante :  
+ Une autre technique de recherche des violations d'accès simultané optimiste consiste à vérifier que toutes les valeurs de colonne d'origine d'une ligne correspondent toujours à celles qui figurent dans la base de données. Examinons, par exemple, la requête suivante :  
   
 ```sql
 SELECT Col1, Col2, Col3 FROM Table1  
 ```  
   
- Pour tester une violation de l’accès concurrentiel optimiste lors de la mise à jour d’une ligne dans **table1**, vous devez émettre l’instruction UPDATE suivante :  
+ Pour tester une violation optimiste de la concurrence lors de la mise à jour d’une ligne dans **le tableau1**, vous publieriez la déclaration UPDATE suivante:  
   
 ```sql
 UPDATE Table1 Set Col1 = @NewCol1Value,  
@@ -96,14 +96,14 @@ UPDATE Table1 Set Col1 = @NewVal1
  Vous pouvez aussi choisir d'appliquer des critères moins restrictifs lorsque vous utilisez un modèle d'accès simultané optimiste. Par exemple, utiliser uniquement les colonnes de clé primaire dans la clause WHERE aboutit au remplacement des données, que les autres colonnes aient ou non subi une mise à jour depuis la dernière requête. Vous pouvez aussi appliquer une clause WHERE à certaines colonnes uniquement, ce qui aura pour effet de remplacer les données, sauf si des champs spécifiques ont été mis à jour depuis la dernière requête les concernant.  
   
 ### <a name="the-dataadapterrowupdated-event"></a>Événement DataAdapter.RowUpdated  
- L’événement **RowUpdated** de l’objet <xref:System.Data.Common.DataAdapter> peut être utilisé conjointement avec les techniques décrites précédemment, afin de fournir une notification à votre application en cas de violations de l’accès concurrentiel optimiste. **RowUpdated** se produit après chaque tentative de mise à jour d’une ligne **modifiée** à partir d’un **DataSet**. Cela vous permet d'ajouter un code de gestion spécial, qui traitera les exceptions le cas échéant, ajoutera des informations d'erreur personnalisées, ajoutera une logique pour les nouvelles tentatives, etc. L’objet <xref:System.Data.Common.RowUpdatedEventArgs> retourne une propriété **RecordsAffected** contenant le nombre de lignes affectées par une commande de mise à jour particulière pour une ligne modifiée dans une table. En définissant la commande de mise à jour pour tester l’accès concurrentiel optimiste, la propriété **RecordsAffected** retourne la valeur 0 lorsqu’une violation d’accès concurrentiel optimiste s’est produite, car aucun enregistrement n’a été mis à jour. Dans ce cas, une exception est levée. L’événement **RowUpdated** vous permet de gérer cette occurrence et d’éviter l’exception en définissant une valeur **RowUpdatedEventArgs. Status** appropriée, telle que **UpdateStatus. SkipCurrentRow**. Pour plus d’informations sur l’événement **RowUpdated** , consultez [gestion des événements DataAdapter](handling-dataadapter-events.md).  
+ **L’événement RowUpdated** de l’objet <xref:System.Data.Common.DataAdapter> peut être utilisé en conjonction avec les techniques décrites plus tôt, pour fournir une notification à votre application de violations de la concurrence optimiste. **RowUpdated** se produit après chaque tentative de mettre à jour une ligne **modifiée** à partir **d’un DataSet**. Cela vous permet d'ajouter un code de gestion spécial, qui traitera les exceptions le cas échéant, ajoutera des informations d'erreur personnalisées, ajoutera une logique pour les nouvelles tentatives, etc. L’objet <xref:System.Data.Common.RowUpdatedEventArgs> renvoie une propriété **de RecordsAffected** contenant le nombre de lignes affectées par une commande de mise à jour particulière pour une rangée modifiée dans un tableau. En fixant la commande de mise à jour pour tester la concurrence optimiste, la propriété **de RecordsAffected,** par conséquent, retournera une valeur de 0 lorsqu’une violation de concurrence optimiste s’est produite, parce qu’aucun dossier n’a été mis à jour. Dans ce cas, une exception est levée. **L’événement RowUpdated** vous permet de gérer cet événement et d’éviter l’exception en définissant une valeur **appropriée RowUpdatedEventArgs.Status,** comme **UpdateStatus.SkipCurrentRow**. Pour plus d’informations sur l’événement **RowUpdated,** voir [Handling DataAdapter Events](handling-dataadapter-events.md).  
   
- Si vous le souhaitez, vous pouvez affecter à **DataAdapter. ContinueUpdateOnError** la **valeur true**, avant d’appeler **Update**, et répondre aux informations d’erreur stockées dans la propriété **RowError** d’une ligne particulière lorsque la **mise à jour** est terminée. Pour plus d’informations, consultez [informations sur les erreurs de ligne](./dataset-datatable-dataview/row-error-information.md).  
+ Optionnellement, vous pouvez définir **DataAdapter.ContinueUpdateOnError** à **vrai**, avant d’appeler **mise**à jour , et répondre aux informations d’erreur stockées dans la propriété **RowError** d’une rangée particulière lorsque la **mise à jour** est terminée. Pour plus d’informations, voir [Informations sur les erreurs de ligne](./dataset-datatable-dataview/row-error-information.md).  
   
 ## <a name="optimistic-concurrency-example"></a>Exemple d'accès simultané optimiste  
- Voici un exemple simple qui définit le **UpdateCommand** d’un **DataAdapter** pour tester l’accès concurrentiel optimiste, puis utilise l’événement **RowUpdated** pour tester les violations de l’accès concurrentiel optimiste. En cas de violation de l’accès concurrentiel optimiste, l’application définit le **RowError** de la ligne pour laquelle la mise à jour a été émise afin de refléter une violation d’accès concurrentiel optimiste.  
+ Ce qui suit est un exemple simple qui définit la **mise à jourCommand** d’un **DataAdapter** à tester pour la concurrence optimiste, puis utilise **l’événement RowUpdated** pour tester les violations de la concurrence optimiste. Lorsqu’une violation optimiste de la concurrence est rencontrée, la demande définit le **RowError** de la ligne que la mise à jour a été émise pour refléter une violation optimiste de la concurrence.  
   
- Notez que les valeurs de paramètre transmises à la clause WHERE de la commande UPDATE sont mappées aux valeurs **d’origine** de leurs colonnes respectives.  
+ Notez que les valeurs de paramètres transmises à la clause WHERE de la commande UPDATE sont cartographiées aux valeurs **originales** de leurs colonnes respectives.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -143,7 +143,7 @@ adapter.Update(dataSet, "Customers")
 Dim dataRow As DataRow  
   
 For Each dataRow In dataSet.Tables("Customers").Rows  
-    If dataRow.HasErrors Then   
+    If dataRow.HasErrors Then
        Console.WriteLine(dataRow (0) & vbCrLf & dataRow.RowError)  
     End If  
 Next  
@@ -198,7 +198,7 @@ foreach (DataRow dataRow in dataSet.Tables["Customers"].Rows)
   
 protected static void OnRowUpdated(object sender, SqlRowUpdatedEventArgs args)  
 {  
-  if (args.RecordsAffected == 0)   
+  if (args.RecordsAffected == 0)
   {  
     args.Row.RowError = "Optimistic Concurrency Violation Encountered";  
     args.Status = UpdateStatus.SkipCurrentRow;  
@@ -209,7 +209,7 @@ protected static void OnRowUpdated(object sender, SqlRowUpdatedEventArgs args)
 ## <a name="see-also"></a>Voir aussi
 
 - [Extraction et modification de données dans ADO.NET](retrieving-and-modifying-data.md)
-- [Mise à jour de sources de données avec des DataAdapters](updating-data-sources-with-dataadapters.md)
-- [Informations sur l’erreur de ligne](./dataset-datatable-dataview/row-error-information.md)
-- [Transactions et accès concurrentiel](transactions-and-concurrency.md)
-- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)
+- [Mise à jour des sources de données avec les DataAdapter](updating-data-sources-with-dataadapters.md)
+- [Informations sur l'erreur de ligne](./dataset-datatable-dataview/row-error-information.md)
+- [Transactions et accès simultané](transactions-and-concurrency.md)
+- [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

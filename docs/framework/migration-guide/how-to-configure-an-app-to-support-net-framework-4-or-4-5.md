@@ -1,18 +1,18 @@
 ---
-title: 'Comment : configurer une application pour prendre en charge .NET Framework 4 ou versions ultérieures'
+title: Comment configurer une application pour prendre en charge .NET Framework 4 ou versions ultérieures
 ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring apps to support .NET Framework
 - .NET Framework, configuring apps
 ms.assetid: 63c6b9a8-0088-4077-9aa3-521ab7290f79
 ms.openlocfilehash: 586f39fc9b50dcd45bb959ebd0063e3c38d9c3ed
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75716248"
 ---
-# <a name="how-to-configure-an-app-to-support-net-framework-4-or-later-versions"></a>Comment : configurer une application pour prendre en charge .NET Framework 4 ou versions ultérieures
+# <a name="how-to-configure-an-app-to-support-net-framework-4-or-later-versions"></a>Comment : Configurer une application pour prendre en charge .NET Framework 4 ou des versions ultérieures
 
 Toutes les applications qui hébergent le Common Langage Runtime (CLR) doivent démarrer, ou *activer*, le CLR afin d'exécuter le code managé. En général, une application .NET Framework s'exécute sur la version du CLR pour laquelle elle a été générée, mais vous pouvez modifier ce comportement pour les applications de bureau en utilisant un fichier de configuration d'application (parfois appelé fichier app.config). Toutefois, vous ne pouvez pas modifier le comportement d'activation par défaut des applications Windows Store ou des applications Windows Phone en utilisant un fichier de configuration d'application. Cet article explique comment permettre à votre application de bureau de s’exécuter sur une autre version du .NET Framework et fournit un exemple de la façon de cibler les versions 4 ou ultérieures.
 
@@ -20,7 +20,7 @@ Toutes les applications qui hébergent le Common Langage Runtime (CLR) doivent d
 
 - Fichier de configuration
 
-     Si le fichier de configuration de l'application inclut des entrées [\<supportedRuntime>](../configure-apps/file-schema/startup/supportedruntime-element.md) qui spécifient une ou plusieurs versions du .NET Framework, et que l'une de ces versions est présente sur l'ordinateur de l'utilisateur, l'application s'exécute sur cette version. Le fichier de configuration lit les entrées [\<supportedRuntime>](../configure-apps/file-schema/startup/supportedruntime-element.md) dans l'ordre où elles sont répertoriées et il utilise la première version du .NET Framework répertoriée qui est présente sur l'ordinateur de l'utilisateur. (Utilisez l'élément [\<requiredRuntime>](../configure-apps/file-schema/startup/requiredruntime-element.md) pour la version 1.0.)
+     Si le fichier [ \<](../configure-apps/file-schema/startup/supportedruntime-element.md) de configuration d’application inclut les entrées de>prises de position prises en charge qui spécifient une ou plusieurs versions cadres .NET, et que l’une de ces versions est présente sur l’ordinateur de l’utilisateur, l’application s’exécute sur cette version. Le fichier [ \<](../configure-apps/file-schema/startup/supportedruntime-element.md) de configuration lit les entrées supportRuntime>dans l’ordre où elles sont répertoriées, et utilise la première version cadre .NET répertoriée qui est présente sur l’ordinateur de l’utilisateur. (Utilisez [ \<l’élément> deruntime requis](../configure-apps/file-schema/startup/requiredruntime-element.md) pour la version 1.0.)
 
 - Version compilée
 
@@ -28,7 +28,7 @@ Toutes les applications qui hébergent le Common Langage Runtime (CLR) doivent d
 
 - Dernière version installée
 
-     Si la version du .NET Framework pour laquelle l'application a été générée n'est pas présente et si un fichier de configuration ne spécifie pas de version dans un élément [\<supportedRuntime>](../configure-apps/file-schema/startup/supportedruntime-element.md), l'application tente de s'exécuter sur la dernière version du .NET Framework présente sur l'ordinateur de l'utilisateur.
+     Si la version du cadre .NET sur lequel l’application a été construite n’est pas présente et qu’un fichier de configuration ne spécifie pas une version dans un [ \<élément> supportRuntime,](../configure-apps/file-schema/startup/supportedruntime-element.md)l’application tente de s’exécuter sur la dernière version du cadre .NET qui est présent sur l’ordinateur de l’utilisateur.
 
      Toutefois, les applications .NET Framework 1.0, 1.1, 2.0, 3.0 et 3.5 ne s'exécutent pas automatiquement sur .NET Framework 4 ou version ultérieure et, dans certains cas, l'utilisateur peut obtenir un message d'erreur et être invité à installer .NET Framework 3.5. Le comportement d'activation peut également dépendre du système d'exploitation de l'utilisateur, car les différentes versions du système Windows incluent différentes versions du .NET Framework. Si votre application prend en charge .NET Framework 3.5 et 4, ou version ultérieure, nous vous recommandons de l'indiquer à l'aide de plusieurs entrées dans le fichier de configuration, afin d'éviter des erreurs d'initialisation du .NET Framework. Pour plus d’informations, consultez [Versions et dépendances](versions-and-dependencies.md).
 
@@ -43,9 +43,9 @@ Toutes les applications qui hébergent le Common Langage Runtime (CLR) doivent d
 
 1. Ajoutez ou recherchez le fichier de configuration pour le projet .NET Framework. Le fichier de configuration d'une application se trouve dans le même répertoire et porte le même nom que l'application, mais il possède une extension .config. Par exemple, à une application nommée MyExecutable.exe correspond le fichier de configuration de l'application nommé MyExecutable.exe.config.
 
-     Pour ajouter un fichier de configuration, dans la barre de menus de Visual Studio, choisissez **Projet**, **Ajouter un nouvel élément**. Choisissez **Général** dans le volet gauche, puis choisissez **Fichier de configuration**. Nommez le fichier de configuration *appname*. exe. config. Ces options de menu ne sont pas disponibles pour les projets d’application Windows Store ou d’application Windows Phone, car vous ne pouvez pas modifier la stratégie d’activation sur ces plateformes.
+     Pour ajouter un fichier de configuration, dans la barre de menus de Visual Studio, choisissez **Projet**, **Ajouter un nouvel élément**. Choisissez **Général** dans le volet gauche, puis choisissez **Fichier de configuration**. Nommez l’application de fichier de *configurationName*.exe.config. Ces choix de menu ne sont pas disponibles pour les projets d’applications Windows Store ou Windows phone, car vous ne pouvez pas modifier la politique d’activation sur ces plates-formes.
 
-2. Ajoutez l'élément [\<supportedRuntime>](../configure-apps/file-schema/startup/supportedruntime-element.md) dans le fichier de configuration de l'application, comme suit :
+2. Ajoutez l’élément [ \<de>supportRuntime](../configure-apps/file-schema/startup/supportedruntime-element.md) comme suit au fichier de configuration d’application :
 
     ```xml
     <configuration>
@@ -55,7 +55,7 @@ Toutes les applications qui hébergent le Common Langage Runtime (CLR) doivent d
     </configuration>
     ```
 
-     où *\<version>* spécifie la version du CLR qui s'aligne sur la version du .NET Framework prise en charge par votre application. Utilisez les chaînes suivantes :
+     où la * \<version>* spécifie la version CLR qui s’aligne avec la version cadre .NET que votre application prend en charge. Utilisez les chaînes suivantes :
 
     - .NET Framework 1.0 : "v1.0.3705"
 
@@ -65,13 +65,13 @@ Toutes les applications qui hébergent le Common Langage Runtime (CLR) doivent d
 
     - .NET Framework version 4 et ultérieur : "v4.0"
 
-     Vous pouvez ajouter plusieurs éléments [\<supportedRuntime>](../configure-apps/file-schema/startup/supportedruntime-element.md), répertoriés par ordre de préférence, pour spécifier la prise en charge de plusieurs versions du .NET Framework.
+     Vous pouvez ajouter plusieurs [ \<éléments>SupportRuntime,](../configure-apps/file-schema/startup/supportedruntime-element.md) répertoriés par ordre de préférence, pour spécifier la prise en charge de plusieurs versions du cadre .NET.
 
  Le tableau ci-dessous montre comment les paramètres du fichier de configuration de l'application et les versions du .NET Framework installées sur un ordinateur déterminent la version sur laquelle une application .NET Framework 3.5 s'exécute. Les exemples sont spécifiques à une application .NET Framework 3.5, mais vous pouvez utiliser une logique similaire pour cibler des applications générées à l'aide de versions antérieures du .NET Framework. Notez que le numéro de version de .NET Framework 2.0 (v2.0.50727) est utilisé pour spécifier .NET Framework 3.5 dans le fichier de configuration de l'application.
 
 |Paramètre du fichier app.config|Sur un ordinateur doté de la version 3.5|Sur un ordinateur doté des versions 3.5, 4 ou ultérieures|Sur un ordinateur doté des versions 4 ou ultérieures|
 |-|-|-|-|
-|Aucun|S'exécute sur 3.5|S'exécute sur 3.5|Affiche un message d'erreur qui invite l'utilisateur à installer la version correcte*|
+|None|S'exécute sur 3.5|S'exécute sur 3.5|Affiche un message d'erreur qui invite l'utilisateur à installer la version correcte*|
 |`<supportedRuntime version="v2.0.50727"/>`|S'exécute sur 3.5|S'exécute sur 3.5|Affiche un message d'erreur qui invite l'utilisateur à installer la version correcte*|
 |`<supportedRuntime version="v2.0.50727"/>` <br /> `<supportedRuntime version="v4.0"/>`|S'exécute sur 3.5|S'exécute sur 3.5|S’exécute sur la version 4 ou ultérieur|
 |`<supportedRuntime version="v4.0"/>` <br /> `<supportedRuntime version="v2.0.50727"/>`|S'exécute sur 3.5|S’exécute sur la version 4 ou ultérieur|S’exécute sur la version 4 ou ultérieur|
@@ -82,4 +82,4 @@ Toutes les applications qui hébergent le Common Langage Runtime (CLR) doivent d
 ## <a name="see-also"></a>Voir aussi
 
 - [Migration à partir du .NET Framework 1.1](migrating-from-the-net-framework-1-1.md)
-- [Guide de migration](index.md)
+- [Migration Guide](index.md)

@@ -1,5 +1,5 @@
 ---
-title: XpsDocumentWriter. _WritingCompleted, événement (System. Windows. Xps)
+title: XpsDocumentWriter._WritingCompleted Event (System.Windows.Xps)
 ms.date: 10/17/2017
 api_location:
 - system.printing.dll
@@ -11,16 +11,16 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 902e491ce4c4a37f83d68888fc4b5d6a7665ffb6
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 0c233965638217ad5b25b9792fe07fb4d73dbe18
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524896"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155620"
 ---
-# <a name="xpsdocumentwriter_writingcompleted-event"></a>XpsDocumentWriter. Événement \_WritingCompleted
+# <a name="xpsdocumentwriter_writingcompleted-event"></a>XpsDocumentWriter. \_Ecrire l’événement inachevé
 
-Se produit lorsqu’une opération d’écriture se termine. 
+Se produit à la fin d'une opération d'écriture.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -28,10 +28,10 @@ Se produit lorsqu’une opération d’écriture se termine.
 internal event WritingCompletedEventHandler _WritingCompleted
 ```
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Windows.Xps>
+**Espace nom:**<xref:System.Windows.Xps>
 
-**Assembly :** System. Printing (dans System. Printing. dll)
+**Assemblée:** System.Printing (in system.printing.dll)
 
-**Versions de .NET Framework :** Disponible depuis 3,0
+**.NET Versions du Cadre:** Disponible depuis 3.0

@@ -8,10 +8,10 @@ helpviewer_keywords:
 - .NET Framework, installing
 ms.assetid: 0a1a3ba3-7e46-4df2-afd3-f3a8237e1c4f
 ms.openlocfilehash: cd81ad83aee80341d0334cfa8caa165b25ee0564
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75716487"
 ---
 # <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5
@@ -20,7 +20,7 @@ ms.locfileid: "75716487"
 
 - **Invocation**. Pour appeler le programme d’installation de .NET Framework 4.5 et recevoir des informations sur la progression à partir de la section MMIO, votre programme d’installation doit effectuer les opérations suivantes :
 
-    1. Appelez le programme redistribuable .NET Framework 4,5 :
+    1. Appelez le programme redistributif .NET Framework 4.5 :
 
         `dotNetFx45_Full_x86_x64.exe /q /norestart /pipe section-name`
 
@@ -32,7 +32,7 @@ ms.locfileid: "75716487"
 
         Remplacez ces noms par des noms uniques à votre programme d’installation.
 
-    2. Lisez à partir de la section MMIO. Dans le .NET Framework 4,5, les opérations de téléchargement et d’installation sont simultanées : une partie du .NET Framework peut être installée alors qu’une autre partie est en cours de téléchargement. Ainsi, la progression est renvoyée (autrement dit, écrite) dans la section MMIO sous forme de deux nombres (`m_downloadSoFar` et `m_installSoFar`) qui vont de 0 à 255. Quand la valeur 255 est écrite et que le .NET Framework se ferme, l’installation est terminée.
+    2. Lisez à partir de la section MMIO. Dans le cadre .NET 4.5, les opérations de téléchargement et d’installation sont simultanées : une partie du cadre .NET peut être installée pendant qu’une autre pièce est en téléchargement. Ainsi, la progression est renvoyée (autrement dit, écrite) dans la section MMIO sous forme de deux nombres (`m_downloadSoFar` et `m_installSoFar`) qui vont de 0 à 255. Quand la valeur 255 est écrite et que le .NET Framework se ferme, l’installation est terminée.
 
 - **Codes de sortie**. Les codes de sortie suivants de la commande d’appel du programme redistribuable de .NET Framework 4.5 indiquent si le programme d’installation a réussi ou échoué :
 

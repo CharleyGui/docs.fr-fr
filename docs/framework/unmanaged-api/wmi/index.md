@@ -3,10 +3,10 @@ title: WMI et compteurs de performances (référence des API non managées)
 description: Fournit une synthèse de l’API .NET Framework non managée pour les informations de compteurs de performance et WMI.
 ms.date: 11/06/2017
 ms.openlocfilehash: f28cd25ee6c3511dc5ac8a6dd4076c81f43fe74a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73127418"
 ---
 # <a name="windows-management-instrumentation-wmi-and-performance-counters-unmanaged-api-reference"></a>WMI (Windows Management Instrumentation) et compteurs de performances (référence des API non managées)
@@ -29,7 +29,7 @@ L’API comprend les fonctions suivantes :
 | [ConnectServerWmi, fonction](connectserverwmi.md) | Crée une connexion via DCOM à un espace de noms WMI sur un ordinateur spécifié. |
 | [CreateClassEnumWmi, fonction](createclassenumwmi.md) | Retourne un énumérateur pour toutes les classes qui remplissent les critères de sélection spécifiés. |
 | [CreateInstanceEnumWmi, fonction](createinstanceenumwmi.md) | Retourne un énumérateur qui retourne les instances d’une classe spécifiée remplissant les critères de sélection spécifiés. |
-| [Delete, fonction](delete.md) | Supprime une propriété spécifiée d’une définition de classe et tous ses qualificateurs. |
+| [Supprimer la fonction](delete.md) | Supprime une propriété spécifiée d’une définition de classe et tous ses qualificateurs. |
 | [DeleteMethod, fonction](deletemethod.md) | Supprime une méthode spécifiée d’une définition de classe CIM. |
 | [EndEnumeration, fonction](endenumeration.md) | Met fin à une séquence d’énumération. |
 | [EndMethodEnumeration, fonction](endmethodenumeration.md) | Met fin à une séquence d’énumération lancée en appelant la [fonction BeginMethodEnumeration](beginmethodenumeration.md). |

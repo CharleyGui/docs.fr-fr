@@ -1,20 +1,20 @@
 ---
-title: 'Procédure : Détecter la disponibilité réseau et les changements d’adresse'
+title: 'Comment : détecter la disponibilité réseau et les changements d’adresse'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Network
 ms.assetid: d4377115-4a76-4848-ab23-4898d65c771c
 ms.openlocfilehash: 9e265a97d339da59bb9d0af6ab6757e16af00e06
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "70894963"
 ---
-# <a name="how-to-detect-network-availability-and-address-changes"></a>Procédure : Détecter la disponibilité réseau et les changements d’adresse
+# <a name="how-to-detect-network-availability-and-address-changes"></a>Comment : détecter la disponibilité réseau et les changements d’adresse
 Cet exemple montre comment détecter les modifications de l’adresse réseau d’une interface.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
   
 ```csharp
 using System;  

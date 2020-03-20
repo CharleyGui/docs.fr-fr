@@ -6,22 +6,22 @@ helpviewer_keywords:
 - presence of WPT [WPF], detecting
 - detecting WPF presence [WPF]
 ms.assetid: 7f71d652-1749-4379-945a-aa2e3994cb43
-ms.openlocfilehash: 41010e615b6b3d10ebf6adc0e3f871873e94f409
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 60868661df442849db3f5421f8ea33f790fd83fc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124453"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79187367"
 ---
 # <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a>Comment : détecter si .NET Framework 3.0 est installé
-Pour que les administrateurs puissent déployer des applications Microsoft .NET Framework sur un système, ils doivent d’abord confirmer que le Runtime .NET Framework est présent. Cette rubrique fournit un script écrit en HTML/JavaScript que les administrateurs peuvent utiliser pour déterminer si le .NET Framework est présent sur un système.  
+Avant que les administrateurs puissent déployer des applications cadres Microsoft .NET sur un système, ils doivent d’abord confirmer que le temps d’exécution .NET Framework est présent. Ce sujet fournit un script écrit en HTML/JavaScript que les administrateurs peuvent utiliser pour déterminer si le cadre .NET est présent sur un système.  
   
 > [!NOTE]
-> Pour plus d’informations sur l’installation, le déploiement et la détection de l’infrastructure Microsoft .NET, consultez la discussion consacrée au [déploiement de Microsoft .NET Framework Version 3,0](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480198(v=msdn.10)).  
+> Pour plus d’informations détaillées sur l’installation, le déploiement et la détection du cadre Microsoft .NET, voir la discussion dans [le déploiement de Microsoft .NET Framework Version 3.0](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480198(v=msdn.10)).  
   
-<a name="content_expiration"></a>   
-## <a name="detect-the-net-clr-user-agent-string"></a>Détection de la chaîne de l’agent utilisateur « .NET CLR »  
- Lorsque .NET Framework est installé, le MSI ajoute « .NET CLR » et le numéro de version à la chaîne UserAgent. L’exemple suivant montre un script incorporé dans une page HTML simple. Le script recherche la chaîne UserAgent pour déterminer si .NET Framework est installé et affiche un message d’État sur les résultats de la recherche.  
+<a name="content_expiration"></a>
+## <a name="detect-the-net-clr-user-agent-string"></a>Détecter la chaîne utilisateur-agent "NET CLR"  
+ Lorsque .NET Framework est installé, le MSI ajoute ".NET CLR" et le numéro de version à la chaîne UserAgent. L’exemple suivant montre un script intégré dans une page HTML simple. Le script effectue une recherche sur la chaîne UserAgent pour déterminer si .NET Framework est installé et affiche un message d’état sur les résultats de la recherche.  
   
 ```html  
 <HTML>  
@@ -113,13 +113,13 @@ Pour que les administrateurs puissent déployer des applications Microsoft .NET 
 </HTML>  
 ```  
   
- Si la recherche de la version « .NET CLR » réussit, le type de message d’état suivant s’affiche :  
+ Si la recherche de la version ".NET CLR " est réussie, le type de message d’état suivant apparaît :  
   
  `This machine has the correct version of the .NET Framework 3.0: 3.0.04425.00`  
   
  `This machine's userAgent string is: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; InfoPath.1; .NET CLR 2.0.50727; .NET CLR 3.0.04425.00).`  
   
- Dans le cas contraire, le type de message d’état suivant s’affiche :  
+ Dans le cas contraire, le type de message d’état suivant apparaît :  
   
  `This machine does not have correct version of the .NET Framework 3.0.`  
   

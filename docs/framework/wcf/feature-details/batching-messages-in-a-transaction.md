@@ -4,27 +4,27 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - batching messages [WCF]
 ms.assetid: 53305392-e82e-4e89-aedc-3efb6ebcd28c
-ms.openlocfilehash: a517dc4e143b561a17bb3715b69be393bee2b21e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: be9661525c960ae558d21b05781007b81b8a3f56
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64585025"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185449"
 ---
 # <a name="batching-messages-in-a-transaction"></a>Traitement par lots des messages dans une transaction
-Les applications en file d’attente utilisent des transactions pour garantir l’exactitude et la remise fiable des messages. Toutefois, les transactions sont des opérations coûteuses et peuvent réduire considérablement le débit de message. L’une des méthodes utilisées pour améliorer le débit de message est de disposer d’une application capable de lire et de traiter plusieurs messages dans une transaction unique. Le compromis réside entre la performance et la récupération : à mesure que le nombre de messages dans un lot augmente, la quantité de travail de récupération nécessaire en cas de restauration des transactions augmente également. Il est important de noter la différence entre le traitement par lot des messages dans une transaction et dans des sessions. Un *session* est un regroupement de messages associés qui sont traités par une application unique et validée comme une seule unité. Les sessions sont en général utilisées lorsqu'un groupe de messages du même type doivent être traités ensemble. Un site Web d'achat en ligne en est un exemple. *Lots* servent à traiter plusieurs, les messages d’une manière qui augmente le débit de message de type différent. Pour plus d’informations sur les sessions, consultez [regrouper en file d’attente des Messages dans une Session](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md). Les messages d’un lot sont également traités par une application unique et sont validés en tant qu’unité unique, mais il peut n’y avoir aucune relation entre eux. Le traitement par lot des messages dans une transaction est une optimisation qui ne modifie pas la manière dont l’application s’exécute.  
+Les applications en file d’attente utilisent des transactions pour garantir l’exactitude et la remise fiable des messages. Toutefois, les transactions sont des opérations coûteuses et peuvent réduire considérablement le débit de message. L’une des méthodes utilisées pour améliorer le débit de message est de disposer d’une application capable de lire et de traiter plusieurs messages dans une transaction unique. Le compromis réside entre la performance et la récupération : à mesure que le nombre de messages dans un lot augmente, la quantité de travail de récupération nécessaire en cas de restauration des transactions augmente également. Il est important de noter la différence entre le traitement par lot des messages dans une transaction et dans des sessions. Une *session* est un regroupement de messages connexes qui sont traités par une seule application et commis comme une seule unité. Les sessions sont en général utilisées lorsqu'un groupe de messages du même type doivent être traités ensemble. Un site Web d'achat en ligne en est un exemple. *Les lots* sont utilisés pour traiter plusieurs messages sans rapport d’une manière qui augmente le débit de message. Pour plus d’informations sur les sessions, voir [Grouping File d’attente Messages dans une session](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md). Les messages d’un lot sont également traités par une application unique et sont validés en tant qu’unité unique, mais il peut n’y avoir aucune relation entre eux. Le traitement par lot des messages dans une transaction est une optimisation qui ne modifie pas la manière dont l’application s’exécute.  
   
 ## <a name="entering-batching-mode"></a>Passage en mode de traitement par lot  
- Le comportement de point de terminaison <xref:System.ServiceModel.Description.TransactedBatchingBehavior> contrôle le traitement par lot. Ajout de ce comportement de point de terminaison à un point de terminaison de service indique à Windows Communication Foundation (WCF) pour les messages dans une transaction par lot. Pas tous les messages requièrent une transaction, de sorte que seuls les messages qui requièrent une transaction soient placés dans un lot, et seuls les messages envoyés à partir d’opérations marquées avec `TransactionScopeRequired`  =  `true` et `TransactionAutoComplete`  =  `true` sont considéré comme pour un lot. Si toutes les opérations sur le contrat de service sont marquées avec `TransactionScopeRequired`  =  `false` et `TransactionAutoComplete`  =  `false`, mode de traitement par lot n’est jamais entré.  
+ Le comportement de point de terminaison <xref:System.ServiceModel.Description.TransactedBatchingBehavior> contrôle le traitement par lot. L’ajout de ce comportement de point de terminaison à un critère de service indique à Windows Communication Foundation (WCF) de regrouper les messages dans le but de transaction. Tous les messages ne nécessitent pas une transaction, de sorte que seuls les messages `TransactionScopeRequired`  =  `true` `TransactionAutoComplete`  =  `true` nécessitant une transaction sont placés dans un lot, et seuls les messages envoyés à partir d’opérations marquées et sont considérés pour un lot. Si toutes les opérations du `TransactionScopeRequired`  =  `false` contrat `TransactionAutoComplete`  =  `false`de service sont marquées avec et, alors le mode de lotage n’est jamais entré.  
   
-## <a name="committing-a-transaction"></a>Validation d’une transaction  
+## <a name="committing-a-transaction"></a>Validation d'une transaction  
  Une transaction par lot est validée selon les éléments suivants :  
   
 - `MaxBatchSize`. Propriété du comportement <xref:System.ServiceModel.Description.TransactedBatchingBehavior>. Cette propriété détermine le nombre maximal de messages placés dans un lot. Lorsque ce nombre est atteint, le lot est validé. Cette valeur n’est pas une limite stricte et il est possible de valider un lot avant d’avoir reçu ce nombre de messages.  
   
 - `Transaction Timeout`. Lorsque 80 pourcent du délai d’expiration de la transaction est écoulé, le lot est validé et un nouveau lot est créé. Cela signifie que s'il reste 20 pourcent ou moins du temps accordé à une transaction pour se terminer, le lot est validé.  
   
-- `TransactionScopeRequired`. Lors du traitement d’un lot de messages, si WCF trouve un qui a `TransactionScopeRequired`  =  `false`, il valide le lot et rouvre un nouveau lot à la réception du premier message avec `TransactionScopeRequired`  =  `true` et `TransactionAutoComplete`  = `true`.  
+- `TransactionScopeRequired`. Lors du traitement d’un lot de `TransactionScopeRequired`  =  `false`messages, si WCF trouve celui qui a , il `TransactionScopeRequired`  =  `true` `TransactionAutoComplete`  = engage le lot et rouvre un nouveau lot sur la réception du premier message avec et `true`.  
   
 - S’il n’y a plus de message dans la file d’attente, le lot actuel est validé, même si `MaxBatchSize` n’a pas été atteint ou que 80 pourcent du délai d’expiration de la transaction ne se sont pas écoulés.  
   
@@ -43,12 +43,12 @@ Les applications en file d’attente utilisent des transactions pour garantir l�
 ## <a name="concurrency-and-batching"></a>Traitement par lot simultané  
  Pour augmenter le débit, vous pouvez également exécuter un grand nombre de lots simultanément. Pour activer le traitement par lot simultané, définissez `ConcurrencyMode.Multiple` dans `ServiceBehaviorAttribute`.  
   
- *Limitation de service* est un comportement de service qui est utilisé pour indiquer le nombre maximal d’appels simultanés permettre être effectué sur le service. Lorsqu'il est utilisé en combinaison avec le traitement par lot, il permet d'indiquer le nombre de lots simultanés qui peuvent être exécutés. Si la limitation de service n’est pas définie, WCF par défaut est le nombre maximal d’appels simultané à 16. Par conséquent, si le comportement de traitement par lot a été ajouté par défaut, 16 lots au maximum peuvent être simultanément actifs. Il est préférable d'ajuster la limitation de service et le traitement par lot en fonction de votre capacité. Par exemple, si la file d’attente contient 100 messages et qu’un lot de 20 est souhaité, un nombre maximal d’appels simultanés à 16 n’est pas utile car, selon débit, 16 transactions pourraient être actives, ce qui revient au même que de ne pas avoir de traitement par lot activé. Par conséquent, lors de l'optimisation des performances, n'activez pas le traitement par lot simultané ou définissez également une taille de limitation de service correcte.  
+ *La limitation de service* est un comportement de service qui est utilisé pour indiquer combien d’appels simultanés maximum peuvent être effectués sur le service. Lorsqu'il est utilisé en combinaison avec le traitement par lot, il permet d'indiquer le nombre de lots simultanés qui peuvent être exécutés. Si la limitation du service n’est pas définie, WCF fait défaut aux appels simultanés maximums à 16. Par conséquent, si le comportement de traitement par lot a été ajouté par défaut, 16 lots au maximum peuvent être simultanément actifs. Il est préférable d'ajuster la limitation de service et le traitement par lot en fonction de votre capacité. Par exemple, si la file d’attente contient 100 messages et qu’un lot de 20 est souhaité, un nombre maximal d’appels simultanés à 16 n’est pas utile car, selon débit, 16 transactions pourraient être actives, ce qui revient au même que de ne pas avoir de traitement par lot activé. Par conséquent, lors de l'optimisation des performances, n'activez pas le traitement par lot simultané ou définissez également une taille de limitation de service correcte.  
   
 ## <a name="batching-and-multiple-endpoints"></a>Traitement par lot et points de terminaison multiples  
  Un point de terminaison est composé d'une adresse et d'un contrat. Plusieurs points de terminaison peuvent partager la même liaison. Deux points de terminaison peuvent partager la même liaison et écouter un URI (Uniform Resource Identifier) ou une adresse de file d’attente. Si deux points de terminaison lisent à partir de la même file d'attente, et que le comportement de traitement par lot avec transaction est ajouté à ces deux points de terminaison, un conflit dans les tailles de lot spécifiées peut se produire. Il est résolu en implémentant le traitement par lot à l'aide de la taille de lot minimale spécifiée entre les deux comportements de traitement par lot avec transaction. Dans ce scénario, si l'un des points de terminaison ne spécifie pas de traitement par lot avec transaction, les deux points de terminaison ne l'utiliseront pas.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L'exemple suivant indique comment spécifier `TransactedBatchingBehavior` dans un fichier de configuration.  
   
 ```xml  
@@ -67,7 +67,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))
 {
      ServiceEndpoint sep = ServiceHost.AddServiceEndpoint(typeof(IOrderProcessor), new NetMsmqBinding(), "net.msmq://localhost/private/ServiceModelSamplesTransacted");
      sep.Behaviors.Add(new TransactedBatchingBehavior(100));
-     
+
      // Open the ServiceHost to create listeners and start listening for messages.
     serviceHost.Open();
   
@@ -84,5 +84,5 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des files d’attente](../../../../docs/framework/wcf/feature-details/queues-overview.md)
-- [Mise en file d’attente dans WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
+- [Vue d'ensemble des files d'attente](../../../../docs/framework/wcf/feature-details/queues-overview.md)
+- [Mise en file d'attente dans WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)

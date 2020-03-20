@@ -4,10 +4,10 @@ ms.custom: updateeachrelease
 description: Découvrez comment installer le .NET Framework sur Windows 8.1
 ms.date: 04/18/2019
 ms.openlocfilehash: a13f31641be8a9289abbbac17bc4866b8f2dc4ee
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75716765"
 ---
 # <a name="install-the-net-framework-on-windows-81-and-windows-server-2012-r2"></a>Installer le .NET Framework sur Windows 8.1 et Windows Server 2012 R2
@@ -21,11 +21,11 @@ Ces instructions ont pour but de vous aider à installer les versions du .NET Fr
 ## <a name="net-framework-48"></a>.NET Framework 4.8
 
 > [!div class="button"]
-> [Télécharger .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+> [Télécharger .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
 [.NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) peut être utilisé pour exécuter des applications conçues pour .NET Framework version 4.0 ou ultérieure.
 
-## <a name="net-framework-35"></a>.NET Framework 3.5
+## <a name="net-framework-35"></a>.NET Framework 3.5
 
 Suivez les instructions pour installer le [.NET Framework 3.5 sur Windows 8.1 et 10](dotnet-35-windows-10.md).
 
@@ -37,6 +37,6 @@ Vous pouvez [contacter Microsoft pour obtenir de l’aide](mailto:dotnet-install
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Télécharger le .NET Framework](https://dotnet.microsoft.com/download)
+- [Télécharger le cadre .NET](https://dotnet.microsoft.com/download)
 - [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md)
 - [Installer le .NET Framework pour les développeurs](guide-for-developers.md)

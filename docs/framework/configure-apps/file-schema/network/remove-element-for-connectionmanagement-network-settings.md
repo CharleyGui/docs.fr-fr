@@ -10,26 +10,26 @@ helpviewer_keywords:
 - <connectionManagement>, remove element
 - remove element, connectionManagement
 ms.assetid: 94b81775-5a22-4975-8c47-8620c40c3f35
-ms.openlocfilehash: 287e36dce65be7a002499d2cd22481018a1f4742
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 39ce85c3c15a2d4bdfce801a35e9ca088bd5091b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089166"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154736"
 ---
-# <a name="remove-element-for-connectionmanagement-network-settings"></a>\<supprimer > élément pour connectionManagement (paramètres réseau)
+# <a name="remove-element-for-connectionmanagement-network-settings"></a>\<supprimer> Element pour la connexionManagement (Paramètres réseau)
 Supprime une adresse IP ou un nom DNS de la liste de gestion des connexions.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<connectionManagement**](connectionmanagement-element-network-settings.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**supprimer >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<connexionManagement>**](connectionmanagement-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<supprimer>**
 
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<remove   
-  address="server name or IP address"   
+<remove
+  address="server name or IP address"
 />  
 ```  
   
@@ -43,7 +43,7 @@ Supprime une adresse IP ou un nom DNS de la liste de gestion des connexions.
 |`address`|Une adresse IP ou un nom DNS.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -51,16 +51,16 @@ Supprime une adresse IP ou un nom DNS de la liste de gestion des connexions.
 |-----------------|---------------------|  
 |[connectionManagement](connectionmanagement-element-network-settings.md)|Spécifie le nombre maximal de connexions à un hôte réseau.|  
   
-## <a name="remarks"></a>Notes  
- L’élément `remove` supprime l’entrée de la liste de gestion des connexions pour le serveur spécifié.  
+## <a name="remarks"></a>Notes   
+ L’élément `remove` supprime l’entrée de la liste de gestion de connexion pour le serveur spécifié.  
   
- La valeur de l’attribut `address` doit être une adresse IP ou un nom d’hôte valide.  
+ La valeur `address` de l’attribut doit être une adresse IP valide ou un nom d’hôte.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant supprime toutes les entrées de liste de gestion des connexions pour le `www.adventure-works.com` serveur, puis configure une application pour qu’elle utilise quatre connexions au serveur `www.contoso.com` et deux connexions à tous les autres serveurs.  
+## <a name="example"></a> Exemple  
+ L’exemple suivant supprime toutes les entrées `www.adventure-works.com` de liste de gestion de connexion `www.contoso.com` pour le serveur, puis configure une application pour utiliser quatre connexions au serveur et deux connexions à tous les autres serveurs.  
   
 ```xml  
 <configuration>  
@@ -78,4 +78,4 @@ Supprime une adresse IP ou un nom DNS de la liste de gestion des connexions.
 
 - <xref:System.Net.ServicePoint>
 - <xref:System.Net.ServicePointManager>
-- [Schéma des paramètres réseau](index.md)
+- [Paramètres réseau Schema](index.md)
