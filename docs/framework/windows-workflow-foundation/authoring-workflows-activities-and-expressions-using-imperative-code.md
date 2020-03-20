@@ -2,15 +2,15 @@
 title: Création de workflows, d'activités et d'expressions à l'aide du code impératif
 ms.date: 03/30/2017
 ms.assetid: cefc9cfc-2882-4eb9-8c94-7a6da957f2b2
-ms.openlocfilehash: 97f57067e72be2ed2fb6b3846e2ab876c13e049f
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 7f22880a965274961006f999b1170634377fcf1c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802698"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183025"
 ---
 # <a name="authoring-workflows-activities-and-expressions-using-imperative-code"></a>Création de workflows, d'activités et d'expressions à l'aide du code impératif
-Une définition de workflow est une arborescence d’objets d’activité configurés. Cette arborescence d'activités peut être définie de nombreuses façons, notamment en modifiant manuellement des données XAML ou en utilisant le Workflow Designer pour produire  des données XAML. L'utilisation de XAML n'est toutefois pas impérative. Les définitions de workflow peuvent également être créées par programmation. Cette rubrique fournit une vue d'ensemble de la création des définitions, des activités et des expressions de workflow à l'aide du code. Pour obtenir des exemples d’utilisation de workflows XAML à l’aide de code, consultez [sérialisation de workflows et d’activités vers et à partir de XAML](serializing-workflows-and-activities-to-and-from-xaml.md).  
+Une définition de workflow est une arborescence d’objets d’activité configurés. Cette arborescence d'activités peut être définie de nombreuses façons, notamment en modifiant manuellement des données XAML ou en utilisant le Workflow Designer pour produire  des données XAML. L'utilisation de XAML n'est toutefois pas impérative. Les définitions de workflow peuvent également être créées par programmation. Cette rubrique fournit une vue d'ensemble de la création des définitions, des activités et des expressions de workflow à l'aide du code. Pour des exemples de travail avec XAML à l’aide de code, voir [Serializing Workflows and Activities à et en provenance de XAML](serializing-workflows-and-activities-to-and-from-xaml.md).  
   
 ## <a name="creating-workflow-definitions"></a>Création de définitions de workflow  
  Une définition de workflow peut être créée en instanciant une instance d'un type d'activité et configurant les propriétés de l'objet d'activité. Pour les activités qui ne contiennent pas d'activités enfants, cette opération peut être effectuée à l'aide de quelques lignes de code.  
@@ -18,7 +18,7 @@ Une définition de workflow est une arborescence d’objets d’activité config
  [!code-csharp[CFX_WorkflowApplicationExample#47](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#47)]  
   
 > [!NOTE]
-> Les exemples de cette rubrique utilisent <xref:System.Activities.WorkflowInvoker> pour exécuter les exemples de workflow. Pour plus d’informations sur l’appel de workflows, le passage d’arguments et les différents choix d’hébergement disponibles, consultez [utilisation de WorkflowInvoker et WorkflowApplication](using-workflowinvoker-and-workflowapplication.md).  
+> Les exemples de cette rubrique utilisent <xref:System.Activities.WorkflowInvoker> pour exécuter les exemples de workflow. Pour plus d’informations sur l’invocation des flux de travail, les arguments de passage, et les différents choix d’hébergement qui sont disponibles, voir [Using WorkflowInvoker et WorkflowApplication](using-workflowinvoker-and-workflowapplication.md).  
   
  Dans cet exemple, un workflow qui consiste en une activité <xref:System.Activities.Statements.WriteLine> unique est créé. L'argument <xref:System.Activities.Statements.WriteLine> de l'activité <xref:System.Activities.Statements.WriteLine.Text%2A> est défini et le workflow est appelé. Si une activité contient des activités enfants, la méthode de construction est semblable. L'exemple suivant utilise une activité <xref:System.Activities.Statements.Sequence> qui contient deux activités <xref:System.Activities.Statements.WriteLine>.  
   
@@ -29,7 +29,7 @@ Une définition de workflow est une arborescence d’objets d’activité config
   
  [!code-csharp[CFX_WorkflowApplicationExample#49](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#49)]  
   
- Pour plus d’informations sur les initialiseurs d’objets, consultez [Comment : initialiser des objets sans appelerC# de constructeur (Guide de programmation)](../../csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md) et [Comment : déclarer un objet à l’aide d’un initialiseur d’objet](../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md).  
+ Pour plus d’informations sur les initialisateurs d’objets, voir [comment initialiser les objets sans appeler un constructeur (Guide de programmation C)](../../csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md) et [comment : Déclarer un objet en utilisant un initialisateur d’objets.](../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)  
   
 ### <a name="working-with-variables-literal-values-and-expressions"></a>Utilisation de variables, de valeurs littérales et d'expressions  
  Lorsque vous créez une définition de workflow à l'aide de code, tenez compte de ce que le code exécute dans le cadre de la création de la définition de workflow et de ce qu'il exécute dans le cadre de l'exécution d'une instance de ce workflow. Par exemple, le workflow suivant est conçu pour générer un nombre aléatoire et l'écrire dans la console.  
@@ -50,7 +50,7 @@ new Assign<int>
 }  
 ```  
   
- Les expressions C# doivent être compilées avant que le workflow qui les contient ne soit appelé. Si les expressions C# ne sont pas compilées, une <xref:System.NotSupportedException> est levée lorsque le workflow est appelé avec un message similaire à celui-ci : ``Expression Activity type 'CSharpValue`1' requires compilation in order to run.  Please ensure that the workflow has been compiled.`` Dans la plupart des scénarios qui impliquent des workflows créés dans Visual Studio, les expressions C# sont compilées automatiquement, mais dans certains scénarios, tels que les workflows avec code, les expressions C# doivent être compilées manuellement. Pour obtenir un exemple de compilation C# d’expressions, consultez la section utilisation [ C# d’expressions dans les flux de travail de code](csharp-expressions.md#CodeWorkflows) de la [ C# rubrique expressions](csharp-expressions.md) .  
+ Les expressions C# doivent être compilées avant que le workflow qui les contient ne soit appelé. Si les expressions de C <xref:System.NotSupportedException> ne sont pas compilées, une est lancée lorsque ``Expression Activity type 'CSharpValue`1' requires compilation in order to run.  Please ensure that the workflow has been compiled.`` le flux de travail est invoqué avec un message similaire à ce qui suit : dans la plupart des scénarios impliquant des flux de travail créés dans Visual Studio, les expressions C sont compilées automatiquement, mais dans certains scénarios, tels que les flux de travail de code, les expressions de C doivent être compilées manuellement. Pour un exemple de la façon de compiler les expressions de C, voir les [expressions Using C DANS](csharp-expressions.md#CodeWorkflows) la section des flux de travail de code du sujet expressions [C.](csharp-expressions.md)  
   
  <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> représente une expression dans la syntaxe Visual Basic qui peut être utilisée comme r-value dans une expression et <xref:Microsoft.CSharp.Activities.CSharpValue%601> représente une expression dans la syntaxe C# qui peut être utilisée comme r-value dans une expression. Ces expressions sont évaluées chaque fois que l'activité conteneur est exécutée. Le résultat de l'expression est affecté à la variable de workflow `n` et ces résultats sont utilisés par l'activité suivante dans le workflow. Pour accéder à la valeur de la variable de workflow `n` au moment de l'exécution, le <xref:System.Activities.ActivityContext> est requis. Elle est accessible à l’aide de l’expression lambda suivante.  
   
@@ -61,7 +61,7 @@ new Assign<int>
   
  [!code-csharp[CFX_WorkflowApplicationExample#52](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#52)]  
   
- Pour plus d’informations sur les expressions lambda, consultez [expressionsC# lambda (Guide de programmation)](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) ou [expressions lambda (Visual Basic)](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+ Pour plus d’informations sur les expressions lambda, voir [Lambda Expressions (Guide de programmation de C)](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) ou [Lambda Expressions (Visual Basic)](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
  Les expressions lambda ne sont pas sérialisables au format XAML. Si une tentative de sérialiser un workflow avec les expressions lambda est faite, <xref:System.Activities.Expressions.LambdaSerializationException> est levée avec le message suivant : « Ce workflow contient des expressions lambda spécifiées dans le code. Ces expressions ne peuvent pas être sérialisées en XAML. Pour cela, utilisez VisualBasicValue/VisualBasicReference ou ExpressionServices.Convert(lambda). Cela convertira les expressions lambda en activités d'expressions. » Pour rendre cette expression compatible avec XAML, utilisez <xref:System.Activities.Expressions.ExpressionServices> et <xref:System.Activities.Expressions.ExpressionServices.Convert%2A>, comme illustré dans l'exemple suivant.  
   
@@ -71,7 +71,7 @@ new Assign<int>
   
  [!code-csharp[CFX_WorkflowApplicationExample#54](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#54)]  
   
- Au moment de l'exécution, les expressions Visual Basic sont compilées dans des expressions LINQ. Les deux exemples précédents sont sérialisables en XAML, mais si le code XAML sérialisé est conçu pour être affiché et modifié dans le concepteur de workflow, utilisez <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> pour vos expressions. Les workflows sérialisés qui utilisent `ExpressionServices.Convert` peuvent être ouverts dans le concepteur, mais la valeur de l'expression sera vide. Pour plus d’informations sur la sérialisation des flux de travail en XAML, consultez [sérialisation de workflows et d’activités vers et à partir de XAML](serializing-workflows-and-activities-to-and-from-xaml.md).  
+ Au moment de l'exécution, les expressions Visual Basic sont compilées dans des expressions LINQ. Les deux exemples précédents sont sérialisables en XAML, mais si le code XAML sérialisé est conçu pour être affiché et modifié dans le concepteur de workflow, utilisez <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> pour vos expressions. Les workflows sérialisés qui utilisent `ExpressionServices.Convert` peuvent être ouverts dans le concepteur, mais la valeur de l'expression sera vide. Pour plus d’informations sur la sérialisation des flux de travail à XAML, voir [Serializing Workflows and Activities à et en provenance de XAML](serializing-workflows-and-activities-to-and-from-xaml.md).  
   
 #### <a name="literal-expressions-and-reference-types"></a>Expressions littérales et types de référence  
  Les expressions littérales sont représentées dans les workflows par l'activité <xref:System.Activities.Expressions.Literal%601>. Les activités <xref:System.Activities.Statements.WriteLine> suivantes sont équivalentes du point de vue fonctionnel.  
@@ -107,7 +107,7 @@ new Assign
 },  
 ```  
   
- Pour plus d’informations sur les expressions, consultez [expressions](expressions.md).  
+ Pour plus d’informations sur les expressions, voir [Expressions](expressions.md).  
   
 #### <a name="invoking-methods-on-objects-using-expressions-and-the-invokemethod-activity"></a>Appeler des méthodes sur des objets à l'aide d'expressions et de l'activité InvokeMethod  
  L'activité <xref:System.Activities.Expressions.InvokeMethod%601> peut être utilisée pour appeler les méthodes statiques et d'instance des classes dans le .NET Framework. Dans un exemple précédent de cette rubrique, un nombre aléatoire a été généré à l'aide de la classe <xref:System.Random>.  
@@ -121,7 +121,7 @@ new InvokeMethod<int>
 {  
     TargetObject = new InArgument<Random>(new VisualBasicValue<Random>("New Random()")),  
     MethodName = "Next",  
-    Parameters =   
+    Parameters =
     {  
         new InArgument<int>(1),  
         new InArgument<int>(101)  
@@ -137,12 +137,12 @@ new InvokeMethod<int>
   
  [!code-csharp[CFX_WorkflowApplicationExample#55](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#55)]  
   
- Pour plus d’informations sur les activités dynamiques, consultez [création d’une activité au moment de l’exécution](creating-an-activity-at-runtime-with-dynamicactivity.md).  
+ Pour plus d’informations sur les activités dynamiques, voir [Créer une activité à Runtime](creating-an-activity-at-runtime-with-dynamicactivity.md).  
   
 ## <a name="compiled-activities"></a>Activités compilées  
- Les activités dynamiques sont un moyen de définir une activité qui contient des arguments à l’aide du code, mais les activités peuvent également être créées dans le code et être compilées en types. Il est possible de créer des activités simples qui dérivent de <xref:System.Activities.CodeActivity>, et des activités asynchrones qui dérivent de <xref:System.Activities.AsyncCodeActivity>. Ces activités peuvent avoir des arguments, des valeurs de retour, et définir leur logique en utilisant du code impératif. Pour obtenir des exemples de création de ces types d’activités, consultez [classe de base CodeActivity](workflow-activity-authoring-using-the-codeactivity-class.md) et [création d’activités asynchrones](creating-asynchronous-activities-in-wf.md).  
+ Les activités dynamiques sont un moyen de définir une activité qui contient des arguments à l’aide du code, mais les activités peuvent également être créées dans le code et être compilées en types. Il est possible de créer des activités simples qui dérivent de <xref:System.Activities.CodeActivity>, et des activités asynchrones qui dérivent de <xref:System.Activities.AsyncCodeActivity>. Ces activités peuvent avoir des arguments, des valeurs de retour, et définir leur logique en utilisant du code impératif. Pour des exemples de création de ces types d’activités, voir [CodeActivity Base Class](workflow-activity-authoring-using-the-codeactivity-class.md) et [Créer des activités asynchrones](creating-asynchronous-activities-in-wf.md).  
   
- Les activités qui dérivent de <xref:System.Activities.NativeActivity> peuvent définir leur logique à l'aide du code impératif et elles peuvent également contenir des activités enfants qui définissent la logique. Ils ont également un accès complet aux fonctionnalités du runtime telles que la création de signets. Pour obtenir des exemples de création d’une activité basée sur <xref:System.Activities.NativeActivity>, consultez [classe de base NativeActivity](nativeactivity-base-class.md), [Comment : créer une activité](how-to-create-an-activity.md)et l’exemple [composite personnalisé à l’aide d’une activité Native](./samples/custom-composite-using-native-activity.md) .  
+ Les activités qui dérivent de <xref:System.Activities.NativeActivity> peuvent définir leur logique à l'aide du code impératif et elles peuvent également contenir des activités enfants qui définissent la logique. Ils ont également un accès complet aux fonctionnalités du runtime telles que la création de signets. Pour des exemples de création <xref:System.Activities.NativeActivity>d’une activité basée sur native, voir [NativeActivity Base Class](nativeactivity-base-class.md), How [to: Create an Activity](how-to-create-an-activity.md), and the Custom Composite using Native [Activity](./samples/custom-composite-using-native-activity.md) sample.  
   
  Les activités qui dérivent de <xref:System.Activities.Activity> définissent leur logique uniquement via l'utilisation d'activités enfants. Ces activités sont généralement créées à l'aide du concepteur de workflow Designer, mais peuvent également être définies à l'aide du code. Dans l'exemple suivant, une activité `Square` qui dérive d'`Activity<int>` est définie. L'activité `Square` a un seul <xref:System.Activities.InArgument%601> nommé `Value`, et définit sa logique en spécifiant une activité <xref:System.Activities.Statements.Sequence> à l'aide de la propriété <xref:System.Activities.Activity.Implementation%2A>. L'activité <xref:System.Activities.Statements.Sequence> contient une activité <xref:System.Activities.Statements.WriteLine> et une activité <xref:System.Activities.Statements.Assign%601>. Ensemble, ces trois activités implémentent la logique de l'activité `Square`.  
   
@@ -183,5 +183,5 @@ Console.WriteLine("Result: {0}", result);
   
  Lorsque le workflow est appelé, la sortie suivante s'affiche sur la console :  
   
- **Inverser la valeur : 5**  
+ **Mise au carré de la valeur : 5**  
 **Résultat : 25**

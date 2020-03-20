@@ -1,21 +1,21 @@
 ---
-title: Élément <Assembly> (.NET Native)
+title: <Assembly>Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: cfe629eb-1106-4113-86e1-052f402d8d8b
-ms.openlocfilehash: bad2286c5306b9f8a8955ebef12e5e99aec5bb89
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f3cf65b185b1db3289a0dbb785c2b91431951cc2
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128509"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181078"
 ---
-# <a name="assembly-element-net-native"></a>Élément > assembly \<(.NET Native)
+# <a name="assembly-element-net-native"></a>\<Assemblage> Element (.NET Native)
 Applique la stratégie de réflexion runtime à tous les types dans un assembly spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<Assembly Name="assembly_name"   
+<Assembly Name="assembly_name"
           Activate="policy_setting"  
           Browse="policy_setting"  
           Dynamic="policy_setting"  
@@ -49,13 +49,13 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|*nom_assembly*|Nom simple de l’assembly, sans son extension de fichier. Cet attribut correspond à la propriété <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType>. Par exemple, le nom d’un assembly nommé Extensions.dll est « Extensions ».<br /><br /> Vous pouvez également spécifier la chaîne littérale `*Application*` pour appliquer la stratégie à tous les assemblys dans votre package d'application, que ces assemblys soient chargés ou non. `*Application*` n'applique jamais la stratégie aux assemblys .NET Framework.|  
+|*assembly_name*|Nom simple de l’assembly, sans son extension de fichier. Cet attribut correspond à la propriété <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType>. Par exemple, le nom d’un assembly nommé Extensions.dll est « Extensions ».<br /><br /> Vous pouvez également spécifier la chaîne littérale `*Application*` pour appliquer la stratégie à tous les assemblys dans votre package d'application, que ces assemblys soient chargés ou non. `*Application*` n'applique jamais la stratégie aux assemblys .NET Framework.|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*policy_setting*|Le paramètre s'applique à ce type de stratégie pour tous les types dans l'assembly. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
@@ -71,19 +71,19 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<Application>](application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L’élément [\<Application>](application-element-net-native.md) peut avoir zéro, un ou plusieurs éléments `<Assembly>`.|  
-|[\<Library>](library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L’élément [\<Library>](library-element-net-native.md) peut avoir zéro ou un élément `<Assembly>`.|  
+|[\<>d’application](application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. [ \<L’élément d’application>](application-element-net-native.md) peut avoir zéro, un ou plusieurs `<Assembly>` éléments.|  
+|[\<>de bibliothèque](library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. La [ \<Bibliothèque>](library-element-net-native.md) élément peut avoir `<Assembly>` zéro ou un élément.|  
   
-## <a name="remarks"></a>Notes  
- L'élément `<Assembly>` définit la stratégie runtime pour tous les types dans un assembly. Il diffère de l’élément [\<Library>](library-element-net-native.md) qui spécifie une bibliothèque, mais définit la stratégie de réflexion runtime en fonction de ses éléments enfants. L'élément `<Assembly>` s'applique à tous les types dans un assembly, sauf si elles sont remplacées par un élément enfant.  
+## <a name="remarks"></a>Notes   
+ L'élément `<Assembly>` définit la stratégie runtime pour tous les types dans un assembly. Il diffère de l’élément [ \<>de la Bibliothèque,](library-element-net-native.md) qui spécifie une bibliothèque, mais dépend de ses éléments pour enfants pour définir la politique de réflexion sur le temps d’exécution. L'élément `<Assembly>` s'applique à tous les types dans un assembly, sauf si elles sont remplacées par un élément enfant.  
   
- L’exemple suivant montre comment vous pouvez appliquer une stratégie runtime à tous les types dans les assemblys au sein de votre package d’application en affectant la valeur « *Application\* » à l’attribut `Name`. L’élément `<Assembly>` doit être un enfant de l’élément [\<Application>](application-element-net-native.md).  
+ L’exemple suivant montre comment vous pouvez appliquer une stratégie runtime à tous les types dans les assemblys au sein de votre package d’application en affectant la valeur « *Application\* » à l’attribut `Name`. L’élément `<Assembly>` doit être un enfant de [ \<l’élément>d’application.](application-element-net-native.md)  
   
 ```xml  
-<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">   
-  <Application>   
-     <Assembly Name="*Application*" Dynamic="Required All" />   
-  </Application>   
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Application>
+     <Assembly Name="*Application*" Dynamic="Required All" />
+  </Application>
 </Directives>  
 ```  
   
@@ -92,5 +92,5 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
 ## <a name="see-also"></a>Voir aussi
 
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Informations de référence sur le fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)

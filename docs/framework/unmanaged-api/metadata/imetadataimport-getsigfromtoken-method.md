@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ab894dc4-f7b6-4afc-bfcb-582a4b7e53a2
 topic_type:
 - apiref
-ms.openlocfilehash: 205f48fb417365565695c72095187d349127e536
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5af59e158a34b06d304a98db1dfaa46585b22eb6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436853"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177205"
 ---
 # <a name="imetadataimportgetsigfromtoken-method"></a>IMetaDataImport::GetSigFromToken, méthode
 Obtient la signature de métadonnées binaires associée au jeton spécifié.  
@@ -28,31 +28,31 @@ Obtient la signature de métadonnées binaires associée au jeton spécifié.
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT GetSigFromToken (   
-   [in]   mdSignature        mdSig,   
-   [out]  PCCOR_SIGNATURE    *ppvSig,   
-   [out]  ULONG              *pcbSig   
+HRESULT GetSigFromToken (
+   [in]   mdSignature        mdSig,
+   [out]  PCCOR_SIGNATURE    *ppvSig,
+   [out]  ULONG              *pcbSig
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `mdSig`  
- dans Jeton pour lequel retourner la signature de métadonnées binaires.  
+ [dans] Le jeton pour retourner la signature de métadonnées binaires pour.  
   
  `ppvSig`  
- à Pointeur vers la signature de métadonnées retournée.  
+ [out] Un pointeur à la signature des métadonnées retournées.  
   
  `pcbSig`  
- à Taille en octets de la signature de métadonnées binaires.  
+ [out] La taille dans les octets de la signature de métadonnées binaires.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

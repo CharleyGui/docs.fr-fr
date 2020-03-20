@@ -8,19 +8,19 @@ helpviewer_keywords:
 - marshaling, Arrays sample
 - data marshaling, Arrays sample
 ms.assetid: c5ac9920-5b6e-4dc9-bf2d-1f6f8ad3b0bf
-ms.openlocfilehash: 1490171c4dd423baa3b6c5f5e00cf133c2584cae
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 66c7ba5989952edb55f21aab960ad7395a92ae0d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124396"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181364"
 ---
 # <a name="marshaling-different-types-of-arrays"></a>Marshaling de différents types de tableaux
-Un tableau est un type référence compris dans du code managé qui contient un ou plusieurs éléments du même type. Même si les tableaux sont des types référence, ils sont passés comme des paramètres In aux fonctions non managées. Ce comportement est incohérent avec la manière dont les tableaux managés sont passés aux objets managés, c'est-à-dire en tant que paramètres In/Out. Pour plus de détails, consultez [Copie et épinglage](copying-and-pinning.md).  
+Un tableau est un type référence compris dans du code managé qui contient un ou plusieurs éléments du même type. Même si les tableaux sont des types référence, ils sont passés comme des paramètres In aux fonctions non managées. Ce comportement est incohérent avec la manière dont les tableaux managés sont passés aux objets managés, c'est-à-dire en tant que paramètres In/Out. Pour plus d'informations, voir [Copie et épinglage](copying-and-pinning.md).  
   
  Le tableau suivant répertorie les options de marshaling des tableaux et décrit leur utilisation.  
   
-|Tableau|Description|  
+|Array|Description|  
 |-----------|-----------------|  
 |D'entiers par valeur.|Passe un tableau d'entiers en tant que paramètre In.|  
 |D'entiers par référence.|Passe un tableau d'entiers en tant que paramètre In/Out.|  
@@ -29,7 +29,7 @@ Un tableau est un type référence compris dans du code managé qui contient un 
 |De structures avec des entiers.|Passe un tableau de structures contenant uniquement des entiers en tant que paramètre In.|  
 |De structures avec des chaînes.|Passe un tableau de structures contenant uniquement des chaînes en tant que paramètre In/Out. Les membres du tableau peuvent être modifiés.|  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Cet exemple montre comment passer les types de tableaux suivants :  
   
 - Tableau d'entiers par valeur.  
@@ -89,14 +89,14 @@ Un tableau est un type référence compris dans du code managé qui contient un 
 ```cpp
 typedef struct _MYPOINT  
 {  
-   int x;   
-   int y;   
+   int x;
+   int y;
 } MYPOINT;  
   
 typedef struct _MYPERSON  
 {  
-   char* first;   
-   char* last;   
+   char* first;
+   char* last;
 } MYPERSON;  
 ```  
   
@@ -114,5 +114,5 @@ typedef struct _MYPERSON
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données d’appel de plateforme](marshaling-data-with-platform-invoke.md#platform-invoke-data-types)
+- [Types de données d'appel de code non managé](marshaling-data-with-platform-invoke.md#platform-invoke-data-types)
 - [Création de prototypes dans du code managé](creating-prototypes-in-managed-code.md)

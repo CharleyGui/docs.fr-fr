@@ -12,12 +12,12 @@ helpviewer_keywords:
 - trace switches
 - trace switches, creating custom
 ms.assetid: 8ab913aa-f400-4406-9436-f45bc6e54fbe
-ms.openlocfilehash: c164e26c6757094b9820af14a098229ab11eb137
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: a8ce4ee5de4d330b88e98e85cce4b6547e969613
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217210"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181729"
 ---
 # <a name="trace-switches"></a>Commutateurs de traçage
 Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie de traçage, et de la filtrer. Ces commutateurs sont des objets présents dans votre code, mais ils peuvent être configurés en dehors du code via le fichier .config. Trois types de commutateurs de trace sont disponibles dans .NET Framework : la classe <xref:System.Diagnostics.BooleanSwitch> , la classe <xref:System.Diagnostics.TraceSwitch> et la classe <xref:System.Diagnostics.SourceSwitch> . La classe <xref:System.Diagnostics.BooleanSwitch> agit comme un bouton bascule qui active ou désactive diverses instructions de trace. Les classes <xref:System.Diagnostics.TraceSwitch> et <xref:System.Diagnostics.SourceSwitch> vous permettent d'activer un commutateur de trace pour un niveau de traçage spécifique. Les messages <xref:System.Diagnostics.Trace> ou <xref:System.Diagnostics.TraceSource> spécifiés pour ce niveau et tous les niveaux inférieurs seront alors affichés. Si vous désactivez le commutateur, les messages de trace ne seront pas affichés. Toutes ces classes dérivent de la classe abstraite (**MustInherit**) **Switch**, comme tous les commutateurs créés par l'utilisateur.  
@@ -68,10 +68,10 @@ MessageBox.Show(myTraceSwitch.TraceVerbose.ToString())
 ```  
   
 ```csharp  
-System.Diagnostics.TraceSwitch myTraceSwitch =   
+System.Diagnostics.TraceSwitch myTraceSwitch =
    new System.Diagnostics.TraceSwitch("SwitchOne", "The first switch");  
 myTraceSwitch.Level = System.Diagnostics.TraceLevel.Info;  
-// This message box displays true, because setting the level to   
+// This message box displays true, because setting the level to
 // TraceLevel.Info sets all lower levels to true as well.  
 MessageBox.Show(myTraceSwitch.TraceWarning.ToString());  
 // This message box displays false.  
@@ -84,5 +84,5 @@ MessageBox.Show(myTraceSwitch.TraceVerbose.ToString());
 ## <a name="see-also"></a>Voir aussi
 
 - [Écouteurs de suivi](trace-listeners.md)
-- [Guide pratique pour ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md)
-- [Suivi et instrumentation d’applications](tracing-and-instrumenting-applications.md)
+- [Comment : ajouter des instructions de traçage dans le code d'une application](how-to-add-trace-statements-to-application-code.md)
+- [Traçage et instrumentation d'applications](tracing-and-instrumenting-applications.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Value control pattern
 - Value control pattern
 ms.assetid: b0fcdd87-3add-4345-bca9-e891205e02ba
-ms.openlocfilehash: c178283b18aaf2c406292d9ab7e12a24c882c102
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: eb77f26bbe3546a3f90804c3648f8547fb6abad0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447045"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180089"
 ---
 # <a name="implementing-the-ui-automation-value-control-pattern"></a>Implémentation du modèle de contrôle Value d’UI Automation
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "74447045"
   
  Le modèle de contrôle <xref:System.Windows.Automation.ValuePattern> est utilisé pour prendre en charge les contrôles qui ont une valeur intrinsèque ne couvrant pas de plage et qui peuvent être représentés sous forme de chaîne. Cette chaîne peut être modifiée, en fonction du contrôle et de ses paramètres. Pour obtenir des exemples de contrôles implémentant ce modèle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
   
-<a name="Implementation_Guidelines_and_Conventions"></a>   
+<a name="Implementation_Guidelines_and_Conventions"></a>
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
  Quand vous implémentez le modèle de contrôle Value, notez les conventions et recommandations suivantes :  
   
@@ -36,38 +36,38 @@ Exemple d’élément de liste modifiable
   
 - <xref:System.Windows.Automation.Provider.IValueProvider> ne prend pas en charge la récupération des informations de mise en forme ou des valeurs d’une sous-chaîne. Implémentez <xref:System.Windows.Automation.Provider.ITextProvider> dans ces scénarios.  
   
-- <xref:System.Windows.Automation.Provider.IValueProvider> doit être implémenté par des contrôles tels que le contrôle de sélection du **Sélecteur de couleurs** de Microsoft Word (illustré ci-dessous), qui prend en charge le mappage de chaînes entre une valeur de couleur (par exemple, « jaune ») et une structure RVB interne équivalente.  
+- <xref:System.Windows.Automation.Provider.IValueProvider>doit être mis en œuvre par des contrôles tels que le contrôle de sélection **Color Picker** de Microsoft Word (illustré ci-dessous), qui prend en charge la cartographie des chaînes entre une valeur de couleur (par exemple, "jaune") et une structure interne équivalente RGB.  
   
- ![Sélecteur de couleurs jaune mis en surbrillance.](./media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
+ ![Sélecteur de couleurs avec jaune en surbrillance.](./media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
 Exemple de mappage d’une chaîne d’échantillons de couleurs  
   
 - Un contrôle doit avoir <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> défini sur `true` et <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty> défini sur `false` avant d’autoriser un appel à <xref:System.Windows.Automation.Provider.IValueProvider.SetValue%2A>.  
   
-<a name="Required_Members_for_the_IValueProvider_Interface"></a>   
+<a name="Required_Members_for_the_IValueProvider_Interface"></a>
 ## <a name="required-members-for-ivalueprovider"></a>Membres obligatoires pour IValueProvider  
  Les propriétés et méthodes suivantes sont nécessaires à l'implémentation d' <xref:System.Windows.Automation.Provider.IValueProvider>.  
   
-|Membres nécessaires|Type de membre|Remarques|  
+|Membres nécessaires|Type de membre|Notes|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.ValuePattern.ValueProperty>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.ValuePattern.SetValue%2A>|Méthode|Aucune|  
+|<xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty>|Propriété|None|  
+|<xref:System.Windows.Automation.ValuePattern.ValueProperty>|Propriété|None|  
+|<xref:System.Windows.Automation.ValuePattern.SetValue%2A>|Méthode|None|  
   
-<a name="Exceptions"></a>   
+<a name="Exceptions"></a>
 ## <a name="exceptions"></a>Exceptions  
  Les fournisseurs doivent lever les exceptions suivantes.  
   
-|Type d’exception|Condition|  
+|Type d'exception|Condition|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.ValuePattern.SetValue%2A><br /><br /> -Si des informations spécifiques aux paramètres régionaux sont passées à un contrôle dans un format incorrect, par exemple une date au format incorrect.|  
-|<xref:System.ArgumentException>|<xref:System.Windows.Automation.ValuePattern.SetValue%2A><br /><br /> -Si une nouvelle valeur ne peut pas être convertie d’une chaîne en un format reconnu par le contrôle.|  
-|<xref:System.Windows.Automation.ElementNotEnabledException>|<xref:System.Windows.Automation.ValuePattern.SetValue%2A><br /><br /> -Lorsqu’une tentative est effectuée pour manipuler un contrôle qui n’est pas activé.|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.ValuePattern.SetValue%2A><br /><br /> - Si des informations spécifiques à un local sont transmises à un contrôle dans un format incorrect, comme une date mal formatée.|  
+|<xref:System.ArgumentException>|<xref:System.Windows.Automation.ValuePattern.SetValue%2A><br /><br /> - Si une nouvelle valeur ne peut pas être convertie d’une chaîne à un format, le contrôle reconnaît.|  
+|<xref:System.Windows.Automation.ElementNotEnabledException>|<xref:System.Windows.Automation.ValuePattern.SetValue%2A><br /><br /> - Lorsqu’une tentative est faite de manipuler un contrôle qui n’est pas activé.|  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Vue d'ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
-- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
-- [Exemple d’insertion de texte ValuePattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InsertText)
-- [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [Échantillon de texte d’insert de ValuePattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InsertText)
+- [UI Automation Tree Overview](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

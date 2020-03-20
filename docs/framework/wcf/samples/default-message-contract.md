@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Message Contract
 ms.assetid: 5a200b78-1a46-4104-b7fb-da6dbab33893
-ms.openlocfilehash: dcdeeda0d6054c9cf6fefa31ea33d720c0c0f3f7
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 46b69697616ad7983daed16f8a180a4da7f61a16
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716582"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183767"
 ---
 # <a name="default-message-contract"></a>Default Message Contract
-Cet exemple présente un service dans lequel un message personnalisé défini par l'utilisateur est passé à et depuis des opérations de service. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente une interface de calculatrice en tant que service typé. Au lieu des opérations de service individuelles pour l’addition, la soustraction, la multiplication et la Division utilisées dans le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), cet exemple passe un message personnalisé qui contient à la fois les opérandes et l’opérateur, et retourne le résultat du calcul arithmétique.  
+Cet exemple présente un service dans lequel un message personnalisé défini par l'utilisateur est passé à et depuis des opérations de service. Cet échantillon est basé sur le [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente une interface de calculatrice comme un service dactylographique. Au lieu des opérations de service individuelles pour l’addition, la soustraction, la multiplication et la division utilisée dans le [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md), cet échantillon passe un message personnalisé qui contient à la fois les opérands et l’opérateur, et renvoie le résultat du calcul arithmétique.  
   
  Le client est un programme de console (.exe) et la bibliothèque de service (.dll) est hébergée par les services IIS. L'activité du client est affichée dans la fenêtre de console.  
   
@@ -48,7 +48,7 @@ public class MyMessage
   
     //Constructor - create a message and populate its members.  
   
-    public MyMessage(double n1, double n2, string operation,   
+    public MyMessage(double n1, double n2, string operation,
                      double result)  
     {  
         this.n1 = n1;  
@@ -131,7 +131,7 @@ public class CalculatorService : ICalculator
 }  
 ```  
   
- Le code client généré pour le client a été créé à l’aide de l’outil [ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) . L'outil crée automatiquement des types de contrats de message dans le code client généré si nécessaire. L'option de commande `/messageContract` peut être spécifiée pour forcer la génération de contrats de message.  
+ Le code client généré pour le client a été créé avec [l’outil ServiceModel Metadata Utility Tool (Svcutil.exe).](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) L'outil crée automatiquement des types de contrats de message dans le code client généré si nécessaire. L'option de commande `/messageContract` peut être spécifiée pour forcer la génération de contrats de message.  
   
 ```console  
 svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" /o:client\generatedClient.cs http://localhost/servicemodelsamples/service.svc/mex  
@@ -145,7 +145,7 @@ CalculatorClient client = new CalculatorClient();
   
 // Perform addition using a typed message.  
   
-MyMessage request = new MyMessage() 
+MyMessage request = new MyMessage()
                     {  
                         N1 = 100D,  
                         N2 = 15.99D,  
@@ -170,17 +170,17 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les échantillons de la Fondation De communication Windows.](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)  
   
 2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Pour exécuter l’échantillon dans une configuration mono-ou cross-machine, suivez les instructions dans [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
->   
+>
+> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Default`  

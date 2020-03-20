@@ -21,16 +21,16 @@ helpviewer_keywords:
 - discovering type information at run time
 - type system, reflection
 ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
-ms.openlocfilehash: 42944d8267d2e99fd9eb1a2cb28c0c81d3e9af75
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 90d9cf4c473d73d1eeeb5f2a1098f8626c20359f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744571"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180474"
 ---
 # <a name="reflection-in-net"></a>Réflexion dans .NET
 
-Les classes de l’espace de noms <xref:System.Reflection>, ainsi que <xref:System.Type?displayProperty=nameWithType>, vous permettent d’obtenir des informations sur les [assemblys](../../standard/assembly/index.md) chargés et les types définis dans ceux-ci, tels que les [classes](../../standard/base-types/common-type-system.md#classes), les [interfaces](../../standard/base-types/common-type-system.md#interfaces)et les types valeur (autrement dit, les [structures](../../standard/base-types/common-type-system.md#structures) et les [énumérations](../../standard/base-types/common-type-system.md#enumerations)). Vous pouvez également utiliser la réflexion pour créer des instances de types au moment de l'exécution, et pour les appeler et y accéder. Pour obtenir des informations sur des aspects spécifiques de la réflexion, consultez [Rubriques connexes](#related_topics) à la fin de cette vue d’ensemble.
+Les classes <xref:System.Reflection> dans l’espace <xref:System.Type?displayProperty=nameWithType>de nom, avec , vous permettent d’obtenir des informations sur [les assemblages](../../standard/assembly/index.md) chargés et les types définis en eux, tels que [les classes, les](../../standard/base-types/common-type-system.md#classes) [interfaces,](../../standard/base-types/common-type-system.md#interfaces)et les types de valeur (c’est-à-dire, [les structures](../../standard/base-types/common-type-system.md#structures) et [les énumérations](../../standard/base-types/common-type-system.md#enumerations)). Vous pouvez également utiliser la réflexion pour créer des instances de types au moment de l'exécution, et pour les appeler et y accéder. Pour obtenir des informations sur des aspects spécifiques de la réflexion, consultez [Rubriques connexes](#related_topics) à la fin de cette vue d’ensemble.
   
 Le chargeur du [common language runtime](../../standard/clr.md) gère les [domaines d’application](../app-domains/application-domains.md). Ceux-ci constituent des limites définies autour des objets qui ont la même portée d’application. Cette gestion comprend le chargement de chaque assembly dans le domaine d'application approprié et le contrôle de la disposition en mémoire de la hiérarchie des types dans chaque assembly.  
   
@@ -67,23 +67,23 @@ Par exemple, quand vous utilisez l'opérateur C# `typeof` (`GetType` en Visual B
   
 Ces classes d'exécution sont `internal` (`Friend` en Visual Basic). Elles ne sont pas documentées distinctement de leurs classes de base, car leur comportement est décrit par la documentation de la classe de base.  
   
-<a name="related_topics"></a>   
+<a name="related_topics"></a>
 
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Titre|Description|  
+|Intitulé|Description|  
 |-----------|-----------------|  
 |[Affichage des informations de type](viewing-type-information.md)|Décrit la classe <xref:System.Type> et fournit des exemples de code qui montrent comment utiliser <xref:System.Type> avec plusieurs classes de réflexion pour obtenir des informations sur les constructeurs, les méthodes, les champs, les propriétés et les événements.|  
 |[Réflexion et types génériques](reflection-and-generic-types.md)|Explique comment la réflexion gère les paramètres de types et les arguments de types des types génériques et des méthodes génériques.|  
-|[Considérations relatives à la sécurité de la réflexion](security-considerations-for-reflection.md)|Décrit les règles qui déterminent à quel degré la réflexion peut être utilisée pour découvrir des informations sur les types et accéder aux types.|  
+|[Considérations sur la sécurité de la réflexion](security-considerations-for-reflection.md)|Décrit les règles qui déterminent à quel degré la réflexion peut être utilisée pour découvrir des informations sur les types et accéder aux types.|  
 |[Chargement et utilisation dynamiques des types](dynamically-loading-and-using-types.md)|Décrit l’interface de liaison personnalisée de la réflexion qui prend en charge la liaison tardive.|  
 |[Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement](how-to-load-assemblies-into-the-reflection-only-context.md)|Décrit le contexte de chargement de réflexion seule. Montre comment charger un assembly, tester le contexte et examiner les attributs appliqués à un assembly dans le contexte de réflexion uniquement.|  
 |[Accès aux attributs personnalisés](accessing-custom-attributes.md)|Montre l'utilisation de la réflexion pour déterminer l'existence et les valeurs des attributs.|  
-|[Spécification des noms de types complets](specifying-fully-qualified-type-names.md)|Décrit le format des noms complets des types sous la forme Backus-Naur (BNF) et la syntaxe requise pour spécifier les caractères spéciaux, les noms d'assemblys, les pointeurs, les références et les tableaux.|  
+|[Spécification des noms de types qualifiés complets](specifying-fully-qualified-type-names.md)|Décrit le format des noms complets des types sous la forme Backus-Naur (BNF) et la syntaxe requise pour spécifier les caractères spéciaux, les noms d'assemblys, les pointeurs, les références et les tableaux.|  
 |[Guide pratique pour raccorder un délégué à l’aide de la réflexion](how-to-hook-up-a-delegate-using-reflection.md)|Explique comment créer un délégué pour une méthode et raccorder le délégué à un événement. Explique comment créer une méthode de gestion d'événements à l'exécution à l'aide de <xref:System.Reflection.Emit.DynamicMethod>.|  
 |[Émission d’assemblys et de méthodes dynamiques](emitting-dynamic-methods-and-assemblies.md)|Explique comment générer des assemblys dynamiques et des méthodes dynamiques.|  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
 
 <xref:System.Type?displayProperty=nameWithType>  
   

@@ -15,19 +15,19 @@ helpviewer_keywords:
 ms.assetid: d69796b4-5b6d-457c-85f6-2cf42e8a8773
 topic_type:
 - apiref
-ms.openlocfilehash: 25cd3e05bc80dd39d2ca558bb4dd5fb77d255f5a
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 680af5afa3ebef5bcaf9e34580e421dcc8093aaf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791395"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178462"
 ---
 # <a name="icordebugthread3getactiveinternalframes-method"></a>ICorDebugThread3::GetActiveInternalFrames, méthode
-Retourne un tableau de frames internes (objets[ICorDebugInternalFrame2](icordebuginternalframe2-interface.md) ) sur la pile.  
+Retourne une gamme d’images internes (objets[ICorDebugInternalFrame2)](icordebuginternalframe2-interface.md) sur la pile.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```cpp 
+```cpp
 HRESULT GetActiveInternalFrames  
       (  
       [in] ULONG32 cInternalFrames,  
@@ -37,44 +37,44 @@ HRESULT GetActiveInternalFrames
       );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `cInternalFrames`  
- dans Nombre de frames internes attendus dans `ppInternalFrames`.  
+ [dans] Le nombre de cadres `ppInternalFrames`internes attendus dans .  
   
  `pcInternalFrames`  
- à Pointeur vers un `ULONG32` qui contient le nombre de frames internes sur la pile.  
+ [out] Un pointeur `ULONG32` à un qui contient le nombre de cadres internes sur la pile.  
   
  `ppInternalFrames`  
- [in, out] Pointeur vers l’adresse d’un tableau de frames internes sur la pile.  
+ [dans, dehors] Un pointeur à l’adresse d’un tableau de cadres internes sur la pile.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|L’objet [ICorDebugInternalFrame2](icordebuginternalframe2-interface.md) a été créé avec succès.|  
-|E_INVALIDARG|`cInternalFrames` n’est pas égal à zéro et `ppInternalFrames` est `null`ou `pcInternalFrames` est `null`.|  
-|HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)|`ppInternalFrames` est plus petit que le nombre de frames internes.|  
+|S_OK|[L’objet ICorDebugInternalFrame2](icordebuginternalframe2-interface.md) a été créé avec succès.|  
+|E_INVALIDARG|`cInternalFrames`n’est `ppInternalFrames` pas `null`nul `pcInternalFrames` `null`et est , ou est .|  
+|HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)|`ppInternalFrames`est plus petit que le nombre de cadres internes.|  
   
 ## <a name="exceptions"></a>Exceptions  
   
-## <a name="remarks"></a>Notes  
- Les frames internes sont des structures de données envoyées dans la pile par le runtime pour stocker des données temporaires.  
+## <a name="remarks"></a>Notes   
+ Les cadres internes sont des structures de données poussées sur la pile par le temps d’exécution pour stocker des données temporaires.  
   
- Lorsque vous appelez pour la première fois `GetActiveInternalFrames`, vous devez affecter la valeur 0 (zéro) au paramètre `cInternalFrames` et le paramètre `ppInternalFrames` la valeur null. Lorsque `GetActiveInternalFrames` retourne pour la première fois, `pcInternalFrames` contient le nombre de frames internes sur la pile.  
+ Lorsque vous `GetActiveInternalFrames`appelez pour la `cInternalFrames` première fois, vous devez `ppInternalFrames` définir le paramètre à 0 (zéro), et le paramètre à annuler. Lors `GetActiveInternalFrames` de `pcInternalFrames` la première revient, contient le compte des cadres internes sur la pile.  
   
- `GetActiveInternalFrames` doit ensuite être appelée une deuxième fois. Vous devez passer le nombre correct (`pcInternalFrames`) dans le paramètre `cInternalFrames` et spécifier un pointeur vers un tableau de taille appropriée dans `ppInternalFrames`.  
+ `GetActiveInternalFrames`devrait alors être appelé une deuxième fois. Vous devez passer le`pcInternalFrames`bon nombre `cInternalFrames` ( ) dans le paramètre, `ppInternalFrames`et spécifier un pointeur à un tableau de taille appropriée dans .  
   
- Utilisez la méthode [ICorDebugStackWalk :: GetFrame](icordebugthread3-getactiveinternalframes-method.md) pour retourner des frames de pile réels.  
+ Utilisez la méthode [ICorDebugStackWalk::GetFrame](icordebugthread3-getactiveinternalframes-method.md) pour retourner les cadres de pile réels.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

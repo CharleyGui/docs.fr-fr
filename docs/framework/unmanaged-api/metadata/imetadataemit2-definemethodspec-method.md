@@ -15,48 +15,48 @@ helpviewer_keywords:
 ms.assetid: 3c24e552-fc69-4971-b65a-a3e4b5f7f1e8
 topic_type:
 - apiref
-ms.openlocfilehash: 7547d7557169b1279125141afb5b05e22341942a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a5d9342b8bfe650106ccf9daf2a91dfbcd575446
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432739"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175536"
 ---
 # <a name="imetadataemit2definemethodspec-method"></a>IMetaDataEmit2::DefineMethodSpec, méthode
-Crée une instance générique d’une méthode et obtient un jeton pour la définition.  
+Crée un exemple générique d’une méthode, et obtient un jeton à la définition.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT DefineMethodSpec (  
-    [in]  mdToken           tkParent,   
-    [in]  PCCOR_SIGNATURE   pvSigBlob,   
-    [in]  ULONG             cbSigBlob,   
+    [in]  mdToken           tkParent,
+    [in]  PCCOR_SIGNATURE   pvSigBlob,
+    [in]  ULONG             cbSigBlob,
     [out] mdMethodSpec      *pmi  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `tkParent`  
- dans Jeton pour la méthode pour laquelle créer l’instance générique. Le jeton doit être de type `mdMethodDef` ou `mdMemberRef`.  
+ [dans] Un jeton pour la méthode de créer l’instance générique. Le jeton doit `mdMethodDef` être `mdMemberRef`de type ou .  
   
  `pvSigBlob`  
- dans Pointeur vers la signature COM+ binaire de la méthode.  
+ [dans] Un pointeur à la signature binaire COM DE la méthode.  
   
  `cbSibBlob`  
- dans Taille, en octets, de `pvSigBlob`.  
+ [dans] La taille, dans les `pvSigBlob`octets, de .  
   
  `pmi`  
- à Jeton pour la définition de signature de métadonnées de la méthode.  
+ [out] Un jeton à la définition de signature des métadonnées de la méthode.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

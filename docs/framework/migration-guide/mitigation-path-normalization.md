@@ -2,12 +2,12 @@
 title: 'Atténuation : Normalisation des chemins d’accès'
 ms.date: 03/30/2017
 ms.assetid: 158d47b1-ba6d-4fa6-8963-a012666bdc31
-ms.openlocfilehash: 1e7b540975b84320d099ca004df5b6a87aa60f6a
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 61c8eec2043aa2fb9309ee6052e27fc2c91c6c6a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73457885"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79181237"
 ---
 # <a name="mitigation-path-normalization"></a>Atténuation : Normalisation des chemins d’accès
 À compter des applications qui ciblent .NET Framework 4.6.2, la normalisation des chemins d’accès dans le .NET Framework a été modifiée.  
@@ -42,20 +42,20 @@ Pour les applications qui ciblent .NET Framework 4.6.2 ou ultérieur, ces modifi
   
 Les applications qui ciblent .NET Framework 4.6.1 et les versions antérieures, mais s’exécutent sur .NET Framework 4.6.2 ou une version ultérieure ne sont pas concernées par ce changement.  
   
-## <a name="mitigation"></a>Atténuation  
- Les applications qui ciblent .NET Framework 4.6.2 ou ultérieur peuvent refuser ce changement et utiliser la normalisation héritée en ajoutant le code suivant à la section [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) du fichier de configuration de l’application :  
+## <a name="mitigation"></a>Limitation des risques  
+ Les applications qui ciblent le cadre .NET 4.6.2 ou plus tard peuvent se [ \<](../configure-apps/file-schema/runtime/runtime-element.md) retirer de cette modification et utiliser la normalisation héritée en ajoutant ce qui suit à la section>de temps d’exécution du fichier de configuration d’application :  
   
 ```xml  
 <runtime>  
-    <AppContextSwitchOverrides value="Switch.System.IO.UseLegacyPathHandling=true" />    
+    <AppContextSwitchOverrides value="Switch.System.IO.UseLegacyPathHandling=true" />
 </runtime>  
 ```  
   
-Les applications qui ciblent .NET Framework 4.6.1 ou antérieur, mais qui s’exécutent sous .NET Framework 4.6.2 ou ultérieur peuvent activer les changements apportés à la normalisation des chemins en ajoutant la ligne suivante à la section [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) du fichier .configuration de l’application :  
+Les applications qui ciblent le cadre .NET 4.6.1 ou plus tôt mais sont en cours d’exécution sur le cadre .NET 4.6.2 ou plus tard peuvent permettre les changements à la normalisation de la trajectoire en ajoutant la ligne suivante à [ \<l’heure d’exécution>](../configure-apps/file-schema/runtime/runtime-element.md) section du fichier .configuration d’application :  
   
 ```xml  
 <runtime>  
-    <AppContextSwitchOverrides value="Switch.System.IO.UseLegacyPathHandling=false" />    
+    <AppContextSwitchOverrides value="Switch.System.IO.UseLegacyPathHandling=false" />
 </runtime>  
 ```  
   

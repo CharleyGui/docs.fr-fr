@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 103c8502-81fe-40d7-9c1e-9008d8fb19e1
 topic_type:
 - apiref
-ms.openlocfilehash: cdf5776e1ac9907e63aba0e0d400e48aff683d51
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: d76a907434b12b85aaedeef169390ec6f0df724a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76785301"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179128"
 ---
 # <a name="iclrdatatargetsetthreadcontext-method"></a>ICLRDataTarget::SetThreadContext, méthode
-Définit le contexte actuel du thread spécifié dans le processus cible. Cette méthode est appelée par les services d’accès aux données common language runtime (CLR).  
+Définit le contexte actuel du thread spécifié dans le processus cible. Cette méthode est appelée par les services d’accès aux données de l’heure courante (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,34 +31,34 @@ Définit le contexte actuel du thread spécifié dans le processus cible. Cette 
 HRESULT SetThreadContext (  
     [in] ULONG32            threadID,  
     [in] ULONG32            contextSize,  
-    [in, size_is(contextSize)]   
+    [in, size_is(contextSize)]
          BYTE               *context  
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `threadID`  
- dans Identificateur de système d’exploitation d’un thread dans le processus cible.  
+ [dans] L’identifiant du système d’exploitation d’un thread dans le processus cible.  
   
  `contextSize`  
- dans Taille du contexte.  
+ [dans] La taille du contexte.  
   
  `context`  
- dans Pointeur vers une mémoire tampon contenant le contexte.  
+ [dans] Pointeur vers un tampon contenant le contexte.  
   
- Les données de la mémoire tampon de `context` seront au format de la structure de `CONTEXT` Win32. Le contexte spécifie des données de Registre spécifiques au processeur, donc la définition de la structure de `CONTEXT` Win32 dépend de l’architecture du processeur. Reportez-vous au fichier d’en-tête Winnt. h pour la définition de la structure de `CONTEXT` Win32.  
+ Les données `context` dans le tampon seront dans le `CONTEXT` format de la structure Win32. Le contexte spécifie les données d’enregistrement spécifiques `CONTEXT` au processeur, de sorte que la définition de la structure Win32 dépend de l’architecture du processeur. Consultez le fichier d’en-tête WinNT.h `CONTEXT` pour la définition de la structure Win32.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData. idl, ClrData. h  
+ **En-tête:** ClrData.idl, ClrData.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Range Value control pattern
 - UI Automation, Range Value control pattern
 ms.assetid: 225feaa4-918e-418b-938e-7389338d0a69
-ms.openlocfilehash: 04db9f97ccea10cf8c65df0f0117c272a5e868dd
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 847a8aae3fd0c3d6965c910d19a4cec11cd2a3b7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435100"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180182"
 ---
 # <a name="implementing-the-ui-automation-rangevalue-control-pattern"></a>Implémentation du modèle de contrôle RangeValue d’UI Automation
 > [!NOTE]
@@ -19,9 +19,9 @@ ms.locfileid: "74435100"
   
  Cette rubrique présente les conventions et recommandations à respecter pour implémenter <xref:System.Windows.Automation.Provider.IRangeValueProvider>, notamment des informations sur les événements et les propriétés. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
   
- Le modèle de contrôle <xref:System.Windows.Automation.RangeValuePattern> est utilisé pour prendre en charge les contrôles auxquels vous pouvez affecter une valeur comprise dans une plage. Pour obtenir des exemples de contrôles qui implémentent ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
+ Le modèle de contrôle <xref:System.Windows.Automation.RangeValuePattern> est utilisé pour prendre en charge les contrôles auxquels vous pouvez affecter une valeur comprise dans une plage. Pour obtenir des exemples de contrôles implémentant ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
   
-<a name="Implementation_Guidelines_and_Conventions"></a>   
+<a name="Implementation_Guidelines_and_Conventions"></a>
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
  Quand vous implémentez le modèle de contrôle RangeValue, notez les conventions et recommandations suivantes :  
   
@@ -32,33 +32,33 @@ ms.locfileid: "74435100"
  ![Barre de progression.](./media/uia-rangevaluepattern-progress-bar.PNG "UIA_RangeValuePattern_Progress_Bar")  
 Exemple d’une barre de progression où la valeur est de type entier, et où les valeurs de propriété minimale et maximale sont normalisées à 0 et 100, respectivement  
   
-<a name="Required_Members_for_the_IRangeValueProvider"></a>   
+<a name="Required_Members_for_the_IRangeValueProvider"></a>
 ## <a name="required-members-for-irangevalueprovider"></a>Membres obligatoires pour IRangeValueProvider  
   
-|Membre requis|Type de membre|Remarques|  
+|Membre obligatoire|Type de membre|Notes|  
 |---------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.RangeValuePattern.ValueProperty>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.RangeValuePattern.LargeChangeProperty>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.RangeValuePattern.SmallChangeProperty>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.RangeValuePattern.MaximumProperty>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A>|Méthodes|Aucune|  
+|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty>|Propriété|None|  
+|<xref:System.Windows.Automation.RangeValuePattern.ValueProperty>|Propriété|None|  
+|<xref:System.Windows.Automation.RangeValuePattern.LargeChangeProperty>|Propriété|None|  
+|<xref:System.Windows.Automation.RangeValuePattern.SmallChangeProperty>|Propriété|None|  
+|<xref:System.Windows.Automation.RangeValuePattern.MaximumProperty>|Propriété|None|  
+|<xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>|Propriété|None|  
+|<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A>|Méthodes|None|  
   
  Ce modèle de contrôle n’est associé aucun événement.  
   
-<a name="Exceptions"></a>   
+<a name="Exceptions"></a>
 ## <a name="exceptions"></a>Exceptions  
  Les fournisseurs doivent lever les exceptions suivantes.  
   
-|Type d’exception|Condition|  
+|Type d'exception|Condition|  
 |--------------------|---------------|  
 |<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A> est appelé avec une valeur supérieure à <xref:System.Windows.Automation.RangeValuePattern.MaximumProperty> , ou inférieure à <xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>.|  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Vue d'ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
-- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
-- [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [UI Automation Tree Overview](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

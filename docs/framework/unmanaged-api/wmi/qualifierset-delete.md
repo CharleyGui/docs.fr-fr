@@ -1,6 +1,6 @@
 ---
-title: Fonction QualifierSet_Delete (référence des API non managées)
-description: La fonction QualifierSet_Delete supprime un qualificateur par son nom.
+title: fonction QualifierSet_Delete (Référence API non gestion)
+description: La fonction QualifierSet_Delete supprime un qualificatif par nom.
 ms.date: 11/06/2017
 api_name:
 - QualifierSet_Delete
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - QualifierSet_Delete function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: e7bedcb5c56f9976f8dfd2619081971075d0d809
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0d2a02ba9d89ba16e776bb73563eaebf8a92f1fd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127301"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174899"
 ---
-# <a name="qualifierset_delete-function"></a>QualifierSet_Delete fonction)
+# <a name="qualifierset_delete-function"></a>QualifierSet_Delete, fonction
 Supprime un qualificateur spécifié par nom.  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -30,48 +30,46 @@ Supprime un qualificateur spécifié par nom.
   
 ```cpp  
 HRESULT QualifierSet_Delete (
-   [in] int                  vFunc, 
-   [in] IWbemQualifierSet*   ptr, 
+   [in] int                  vFunc,
+   [in] IWbemQualifierSet*   ptr,
    [in] LPCWSTR              wszName
-); 
+);
 ```  
 
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`  
-dans Ce paramètre n’est pas utilisé.
+[dans] Ce paramètre n’est pas utilisé.
 
-`ptr`   
-dans Pointeur vers une instance [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) .
+`ptr`[dans] Un pointeur à une instance [IWbemQualifierSet.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset)
 
-`wszName`   
-dans Nom du qualificateur à supprimer.
+`wszName`[dans] Le nom du qualificatif à supprimer.
 
-## <a name="return-value"></a>Valeur de retour
+## <a name="return-value"></a>Valeur retournée
 
-Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli.h,* ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |valeur  |Description  |
+|Constant  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Le paramètre `wszName` n’est pas valide. |
-|`WBEM_E_INVALID_OPERATION` | 0x80041016 | La suppression de ce qualificateur n’est pas conforme. |
-|`WBEM_E_NOT_FOUND` | 0x80041002 | Le qualificateur spécifié est introuvable. |
-|`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
-| `WBEM_S_RESET_TO_DEFAULT` | 0x40002 | La substitution locale a été supprimée et le qualificateur d’origine de l’objet parent a repris la portée. |
+|`WBEM_E_INVALID_OPERATION` | 0x80041016 | Supprimer ce qualificatif est illégal. |
+|`WBEM_E_NOT_FOUND` | 0x80041002 | Le qualificatif spécifié n’a pas été trouvé. |
+|`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a été réussi.  |
+| `WBEM_S_RESET_TO_DEFAULT` | 0x40002 | Le remplacement local a été supprimé et le qualificatif original de l’objet parent a repris la portée. |
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-Cette fonction encapsule un appel à la méthode [IWbemQualifierSet ::D supprim](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-delete) .
+Cette fonction enveloppe un appel à la méthode [IWbemQualifierSet::Delete.](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-delete)
 
-En raison des règles de propagation des qualificateurs, un qualificateur particulier peut avoir été hérité d’un autre objet et simplement substitué dans la classe ou l’instance actuelle. Dans ce cas, la méthode `QualifierSet_Delete` réinitialise le qualificateur à sa valeur héritée d’origine. Dans ce cas, la fonction retourne le code d’État `WBEM_S_RESET_TO_DEFAULT`.
+En raison des règles de propagation qualificatives, un qualificatif particulier peut avoir été hérité d’un autre objet et simplement remplacé dans la classe ou l’instance actuelle. Dans ce cas, la `QualifierSet_Delete` méthode réinitialise le qualificatif à sa valeur héritée originale. La fonction dans ce cas `WBEM_S_RESET_TO_DEFAULT`renvoie le code d’état .
 
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** WMINet_Utils. idl  
+ **En-tête:** WMINet_Utils.idl  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)
+- [WMI et compteurs de performances (référence des API non managées)](index.md)

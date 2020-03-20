@@ -15,31 +15,31 @@ helpviewer_keywords:
 ms.assetid: 42790918-4142-4938-b8f4-a56979a55846
 topic_type:
 - apiref
-ms.openlocfilehash: bc5bbba2fa4a95955e52a2e083a2097178b5d96a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 72e14ea0414ebdeb8f54a4bdef8ce5208fc8ef72
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437522"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177231"
 ---
 # <a name="imetadataimportgetmemberprops-method"></a>IMetaDataImport::GetMemberProps, méthode
-Obtient les informations stockées dans les métadonnées pour une définition de membre spécifiée, y compris le nom, la signature binaire et l’adresse virtuelle relative, du membre <xref:System.Type> référencé par le jeton de métadonnées spécifié. Il s’agit d’une méthode d’assistance simple : si *Mo* est un MethodDef, **GetMethodProps,** est appelé ; Si *Mo* est un FieldDef, **GetFieldProps,** est appelé. Pour plus d’informations, consultez ces autres méthodes. 
+Obtient les informations stockées dans les métadonnées pour une définition spécifiée du <xref:System.Type> membre, y compris le nom, la signature binaire et l’adresse virtuelle relative, du membre référencé par le jeton spécifié des métadonnées. Il s’agit d’une méthode d’aide simple: si *mb* est un MethodDef, puis **GetMethodProps** est appelé; si *mb* est un FieldDef, alors **GetFieldProps** est appelé. Voir ces autres méthodes pour plus de détails.
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetMemberProps (  
-   [in]  mdToken           mb,   
+   [in]  mdToken           mb,
    [out] mdTypeDef         *pClass,  
-   [out] LPWSTR            szMember,   
-   [in]  ULONG             cchMember,   
-   [out] ULONG             *pchMember,   
+   [out] LPWSTR            szMember,
+   [in]  ULONG             cchMember,
+   [out] ULONG             *pchMember,
    [out] DWORD             *pdwAttr,  
-   [out] PCCOR_SIGNATURE   *ppvSigBlob,   
-   [out] ULONG             *pcbSigBlob,   
-   [out] ULONG             *pulCodeRVA,   
-   [out] DWORD             *pdwImplFlags,   
-   [out] DWORD             *pdwCPlusTypeFlag,   
+   [out] PCCOR_SIGNATURE   *ppvSigBlob,
+   [out] ULONG             *pcbSigBlob,
+   [out] ULONG             *pulCodeRVA,
+   [out] DWORD             *pdwImplFlags,
+   [out] DWORD             *pdwCPlusTypeFlag,
    [out] UVCP_CONSTANT     *ppValue,  
    [out] ULONG             *pcchValue  
 );  
@@ -47,52 +47,52 @@ HRESULT GetMemberProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mb`  
- dans Jeton qui référence le membre pour lequel obtenir les métadonnées associées.  
+ [dans] Le jeton qui fait référence au membre pour obtenir les métadonnées associées pour.  
   
  `pClass`  
- à Pointeur vers le jeton de métadonnées qui représente la classe du membre.  
+ [out] Un pointeur vers le jeton des métadonnées qui représente la classe du membre.  
   
  `szMember`  
- à Nom du membre.  
+ [out] Le nom du membre.  
   
  `cchMember`  
- dans Taille en caractères larges de la mémoire tampon de `szMember`.  
+ [dans] La taille en caractères larges du `szMember` tampon.  
   
  `pchMember`  
- à Taille en caractères larges du nom retourné.  
+ [out] La taille dans les caractères larges du nom retourné.  
   
  `pdwAttr`  
- à Toutes les valeurs d’indicateur appliquées au membre.  
+ [out] Toutes les valeurs du drapeau s’appliquaient au membre.  
   
  `ppvSigBlob`  
- à Pointeur vers la signature de métadonnées binaires du membre.  
+ [out] Un pointeur à la signature binaire métadonnées du membre.  
   
  `pcbSigBlob`  
- à Taille en octets de `ppvSigBlob`.  
+ [out] La taille dans `ppvSigBlob`les octets de .  
   
  `pulCodeRVA`  
- à Pointeur vers l’adresse virtuelle relative du membre.  
+ [out] Un pointeur à l’adresse virtuelle relative du membre.  
   
  `pdwImplFlags`  
- à Indicateurs d’implémentation de méthode associés au membre.  
+ [out] Tous les indicateurs de mise en œuvre de méthode associés au membre.  
   
  `pdwCPlusTypeFlag`  
- à Indicateur qui marque un <xref:System.ValueType>. Il s’agit de l’une des valeurs `ELEMENT_TYPE_*`.
+ [out] Un drapeau qui <xref:System.ValueType>marque un . C’est l’une des `ELEMENT_TYPE_*` valeurs.
   
  `ppValue`  
- à Valeur de chaîne constante retournée par ce membre.  
+ [out] Une valeur de chaîne constante retournée par ce membre.  
   
  `pcchValue`  
- à Taille en caractères de `ppValue`, ou zéro si `ppValue` ne contient pas de chaîne.  
+ [out] La taille dans `ppValue`les caractères de , ou zéro si `ppValue` ne tient pas une chaîne.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

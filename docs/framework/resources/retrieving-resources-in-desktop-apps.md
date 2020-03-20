@@ -18,20 +18,20 @@ helpviewer_keywords:
 - translating resources into languages
 - localizing resources
 ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
-ms.openlocfilehash: 39bb518306b6e76aea1ae4a791fca79fbbb1b6c8
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 17795db2cdec419a31fe862793c88506f9535ff9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445744"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180449"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Récupération de ressources dans des applications de bureau
 
-Quand vous utilisez des ressources localisées dans des applications de bureau du .NET Framework, vous devez, dans l’idéal, empaqueter les ressources pour la culture neutre ou par défaut avec l’assembly principal et créer un assembly satellite séparé pour chaque langue ou culture prise en charge par votre application. Vous pouvez ensuite utiliser la classe <xref:System.Resources.ResourceManager> pour accéder aux ressources nommées, comme indiqué dans la section suivante. Si vous choisissez de ne pas incorporer les ressources dans l’assembly principal et les assemblys satellites, vous pouvez également accéder directement aux fichiers .resources binaires, comme cela est expliqué dans la section [Récupération de ressources de fichiers .resources](#from_file), plus loin dans cet article.  Pour récupérer des ressources dans les applications du Windows 8. x Store, consultez [création et récupération de ressources dans les applications du Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/hh694557(v=vs.140)).  
+Quand vous utilisez des ressources localisées dans des applications de bureau du .NET Framework, vous devez, dans l’idéal, empaqueter les ressources pour la culture neutre ou par défaut avec l’assembly principal et créer un assembly satellite séparé pour chaque langue ou culture prise en charge par votre application. Vous pouvez ensuite utiliser la classe <xref:System.Resources.ResourceManager> pour accéder aux ressources nommées, comme indiqué dans la section suivante. Si vous choisissez de ne pas incorporer les ressources dans l’assembly principal et les assemblys satellites, vous pouvez également accéder directement aux fichiers .resources binaires, comme cela est expliqué dans la section [Récupération de ressources de fichiers .resources](#from_file), plus loin dans cet article.  Pour récupérer des ressources dans les applications Windows 8.x Store, voir [Créer et récupérer des ressources dans les applications Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/hh694557(v=vs.140)).  
   
-<a name="from_assembly"></a>   
+<a name="from_assembly"></a>
 ## <a name="retrieving-resources-from-assemblies"></a>Récupération de ressources d’assemblys  
- La classe <xref:System.Resources.ResourceManager> fournit l’accès aux ressources au moment de l’exécution. Utilisez la méthode <xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType> pour récupérer des ressources de type chaîne et la méthode <xref:System.Resources.ResourceManager.GetObject%2A?displayProperty=nameWithType> ou <xref:System.Resources.ResourceManager.GetStream%2A?displayProperty=nameWithType> pour récupérer des ressources d’un autre type. Chaque méthode a deux surcharges :  
+ La classe <xref:System.Resources.ResourceManager> fournit l’accès aux ressources au moment de l’exécution. Utilisez la méthode <xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType> pour récupérer des ressources de type chaîne et la méthode <xref:System.Resources.ResourceManager.GetObject%2A?displayProperty=nameWithType> ou <xref:System.Resources.ResourceManager.GetStream%2A?displayProperty=nameWithType> pour récupérer des ressources d’un autre type. Chaque méthode a deux surcharges :  
   
 - Une surcharge dont le paramètre unique est une chaîne qui contient le nom de la ressource. La méthode tente de récupérer cette ressource pour la culture du thread actuel. Pour plus d’informations, consultez les méthodes <xref:System.Resources.ResourceManager.GetString%28System.String%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%29>et <xref:System.Resources.ResourceManager.GetStream%28System.String%29> .  
   
@@ -58,7 +58,7 @@ TimeHeader=L'heure actuelle est
 TimeHeader=Текущее время —  
 ```  
   
- Le code source de cet exemple provient d’un fichier GetString.cs pour la version C# du code et d’un fichier GetString.vb pour la version Visual Basic. Ce code définit un tableau de chaînes qui contient le nom de quatre cultures : les trois cultures pour lesquelles des ressources sont disponibles et la culture Espagnol (Espagne). Une boucle exécutée cinq fois de façon aléatoire sélectionne l’une de ces cultures et l’affecte aux propriétés <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> et <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> . Elle appelle ensuite la méthode <xref:System.Resources.ResourceManager.GetString%28System.String%29> pour récupérer la chaîne localisée, qui s’affiche avec l’heure actuelle.  
+ Le code source de cet exemple provient d’un fichier GetString.cs pour la version C# du code et d’un fichier GetString.vb pour la version Visual Basic. Ce code définit un tableau de chaînes qui contient le nom de quatre cultures : les trois cultures pour lesquelles des ressources sont disponibles et la culture Espagnol (Espagne). Une boucle exécutée cinq fois de façon aléatoire sélectionne l’une de ces cultures et l’affecte aux propriétés <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> et <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> . Elle appelle ensuite la méthode <xref:System.Resources.ResourceManager.GetString%28System.String%29> pour récupérer la chaîne localisée, qui s’affiche avec l’heure actuelle.  
   
  [!code-csharp[Conceptual.Resources.Retrieving#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/getstring.cs#3)]
  [!code-vb[Conceptual.Resources.Retrieving#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/getstring.vb#3)]  
@@ -80,7 +80,7 @@ al -embed:strings.ru-RU.resources -culture:ru-RU -out:ru-RU\GetString.resources.
   
  Quand la culture d’interface utilisateur actuelle est Espagnol (Espagne), l’exemple affiche les ressources en langue anglaise, car les ressources pour l’espagnol ne sont pas disponibles et l’anglais est la culture par défaut définie dans cet exemple.  
   
-### <a name="retrieving-object-data-two-examples"></a>Récupération de données d’objet : deux exemples  
+### <a name="retrieving-object-data-two-examples"></a>Récupération de données d’objet : deux exemples  
  Vous pouvez utiliser les méthodes <xref:System.Resources.ResourceManager.GetObject%2A> et <xref:System.Resources.ResourceManager.GetStream%2A> pour récupérer des données d’objet. Cela inclut les types de données primitives, les objets sérialisables et les objets qui sont stockés au format binaire (tels que les images).  
   
  L’exemple suivant utilise la méthode <xref:System.Resources.ResourceManager.GetStream%28System.String%29> pour récupérer une image bitmap qui s’affiche dans la fenêtre de démarrage à l’ouverture d’une application. Le code source ci-dessous provient d’un fichier nommé CreateResources.cs (pour C#) ou CreateResources.vb (pour Visual Basic). Ce code crée un fichier .resx qui contient l’image sérialisée. Dans cet exemple, l’image est chargée à partir d’un fichier SplashScreen.jpg. Vous pouvez remplacer ce nom de fichier par votre image.  
@@ -93,7 +93,7 @@ al -embed:strings.ru-RU.resources -culture:ru-RU -out:ru-RU\GetString.resources.
  [!code-csharp[Conceptual.Resources.Retrieving#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/getstream.cs#5)]
  [!code-vb[Conceptual.Resources.Retrieving#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/getstream.vb#5)]  
   
- Vous pouvez utiliser le fichier de commandes suivant pour générer l’exemple C#. Pour Visual Basic, remplacez `csc` par `vbc`, et modifiez l’extension du fichier de code source `.cs` en `.vb`.  
+ Vous pouvez utiliser le fichier de commandes suivant pour générer l’exemple C#. Pour Visual Basic, remplacez `csc` par `vbc`, et modifiez l’extension du fichier de code source `.cs` en `.vb`.  
   
 ```console
 csc CreateResources.cs  
@@ -104,7 +104,7 @@ resgen AppResources.resx
 csc GetStream.cs -resource:AppResources.resources  
 ```  
   
- L’exemple suivant utilise la méthode <xref:System.Resources.ResourceManager.GetObject%28System.String%29?displayProperty=nameWithType> pour désérialiser un objet personnalisé. Il inclut un fichier de code source UIElements.cs (UIElements.vb pour Visual Basic) qui définit la structure suivante nommée `PersonTable`. Cette structure est ensuite utilisée par une routine d’affichage de table générale qui affiche les noms localisés des colonnes de table. Notez que la structure `PersonTable` est marquée avec l’attribut <xref:System.SerializableAttribute>.  
+ L’exemple suivant utilise la méthode <xref:System.Resources.ResourceManager.GetObject%28System.String%29?displayProperty=nameWithType> pour désérialiser un objet personnalisé. Il inclut un fichier de code source UIElements.cs (UIElements.vb pour Visual Basic) qui définit la structure suivante nommée `PersonTable`. Cette structure est ensuite utilisée par une routine d’affichage de table générale qui affiche les noms localisés des colonnes de table. Notez que la structure `PersonTable` est marquée avec l’attribut <xref:System.SerializableAttribute> .  
   
  [!code-csharp[Conceptual.Resources.Retrieving#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/example.cs#6)]
  [!code-vb[Conceptual.Resources.Retrieving#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/example.vb#6)]  
@@ -143,19 +143,19 @@ GetObject.exe
   
  Pour plus d’informations sur le contrôle de version des assemblys, consultez [Versioning des assemblys](../../standard/assembly/versioning.md) et [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md).  
   
-<a name="from_file"></a>   
+<a name="from_file"></a>
 ## <a name="retrieving-resources-from-resources-files"></a>Récupération de ressources de fichiers .resources  
  Si vous choisissez de ne pas déployer de ressources dans des assemblys satellites, vous pouvez utiliser un objet <xref:System.Resources.ResourceManager> pour accéder directement aux ressources des fichiers .resources. Pour ce faire, vous devez déployer les fichiers .resources correctement. Ensuite, utilisez la méthode <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%2A?displayProperty=nameWithType> pour instancier un objet <xref:System.Resources.ResourceManager> et spécifiez le répertoire qui contient les fichiers .resources autonomes.  
   
 ### <a name="deploying-resources-files"></a>Déploiement de fichiers .resources  
- Quand vous incorporez des fichiers .resources dans un assembly d’application et des assemblys satellites, chaque assembly satellite porte le même nom de fichier, mais est placé dans un sous-répertoire qui reflète la culture de l’assembly satellite. En revanche, quand vous accédez directement aux ressources de fichiers .resources, vous pouvez placer tous les fichiers .resources dans le même répertoire, généralement un sous-répertoire du répertoire de l’application. Le nom du fichier .resources par défaut de l’application se compose uniquement d’un nom racine, sans indication de sa culture (par exemple, strings.resources). Les ressources de chaque culture localisée sont stockées dans un fichier dont le nom se compose du nom racine suivi de la culture (par exemple, strings.ja.resources ou strings.de-DE.resources). 
- 
+ Quand vous incorporez des fichiers .resources dans un assembly d’application et des assemblys satellites, chaque assembly satellite porte le même nom de fichier, mais est placé dans un sous-répertoire qui reflète la culture de l’assembly satellite. En revanche, quand vous accédez directement aux ressources de fichiers .resources, vous pouvez placer tous les fichiers .resources dans le même répertoire, généralement un sous-répertoire du répertoire de l’application. Le nom du fichier .resources par défaut de l’application se compose uniquement d’un nom racine, sans indication de sa culture (par exemple, strings.resources). Les ressources de chaque culture localisée sont stockées dans un fichier dont le nom se compose du nom racine suivi de la culture (par exemple, strings.ja.resources ou strings.de-DE.resources).
+
  L’illustration suivante montre où placer les fichiers de ressources dans la structure de répertoires. Elle donne également les conventions de nommage des fichiers .resource.  
 
  ![Illustration qui montre le répertoire principal de votre application.](./media/retrieving-resources-in-desktop-apps/resource-application-directory.gif)  
   
 ### <a name="using-the-resource-manager"></a>Utilisation du Gestionnaire des ressources  
- Une fois que vous avez créé vos ressources et les avez placées dans le répertoire approprié, créez un objet <xref:System.Resources.ResourceManager> qui utilise ces ressources en appelant la méthode <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%28System.String%2CSystem.String%2CSystem.Type%29> . Le premier paramètre spécifie le nom racine du fichier .resources par défaut de l’application (« strings » dans l’exemple de la section précédente). Le deuxième paramètre spécifie l’emplacement des ressources (« Resources » dans l’exemple précédent). Le troisième paramètre spécifie l’implémentation de <xref:System.Resources.ResourceSet> à utiliser. Si ce paramètre est `null`, le runtime par défaut <xref:System.Resources.ResourceSet> est utilisé.  
+ Une fois que vous avez créé vos ressources et les avez placées dans le répertoire approprié, créez un objet <xref:System.Resources.ResourceManager> qui utilise ces ressources en appelant la méthode <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%28System.String%2CSystem.String%2CSystem.Type%29> . Le premier paramètre spécifie le nom racine du fichier .resources par défaut de l’application (« strings » dans l’exemple de la section précédente). Le deuxième paramètre spécifie l’emplacement des ressources (« Resources » dans l’exemple précédent). Le troisième paramètre spécifie l’implémentation de <xref:System.Resources.ResourceSet> à utiliser. Si ce paramètre est `null`, le runtime par défaut <xref:System.Resources.ResourceSet> est utilisé.  
   
 > [!NOTE]
 > Ne déployez pas d’applications ASP.NET à l’aide de fichiers .resources autonomes, car cela peut entraîner des problèmes de verrouillage et l’arrêt du déploiement XCOPY. Nous vous recommandons de déployer les ressources ASP.NET dans des assemblys satellites. Pour plus d’informations, consultez [Vue d’ensemble des ressources des pages Web ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/ms227427(v=vs.100)).  
@@ -172,7 +172,7 @@ Prompt=What is your name?
   
  Les ressources pour la culture Français (France) sont stockées dans le fichier suivant, nommé Strings.fr-FR.txt :  
   
-```text 
+```text
 Greeting=Bon jour  
 Prompt=Comment vous appelez-vous?  
 ```  
@@ -204,6 +204,6 @@ csc Example.cs
 
 - <xref:System.Resources.ResourceManager>
 - [Ressources dans des applications de bureau](index.md)
-- [Empaquetage et déploiement de ressources](packaging-and-deploying-resources-in-desktop-apps.md)
+- [Packaging and Deploying Resources](packaging-and-deploying-resources-in-desktop-apps.md)
 - [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md)
 - [Création et récupération de ressources dans les applications du Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/hh694557(v=vs.140))

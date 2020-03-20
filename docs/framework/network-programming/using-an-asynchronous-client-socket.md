@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Internet, sockets
 - client sockets
 ms.assetid: fd85bc88-e06c-467d-a30d-9fd7cffcfca1
-ms.openlocfilehash: 22e7c670f93293bd37edcb181c8130cdbe9ceb26
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 748745ca6799005dccdbfcbcc37a8c2a38f2a88e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71047060"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180649"
 ---
 # <a name="using-an-asynchronous-client-socket"></a>Utilisation d’un socket client asynchrone
 Un socket client asynchrone n’interrompt pas l’exécution de l’application durant les opérations réseau. Au lieu de cela, il utilise le modèle de programmation asynchrone standard de .NET Framework pour traiter la connexion réseau sur un thread pendant que l’application continue de s’exécuter sur le thread d’origine. Les sockets asynchrones sont appropriés pour les applications qui utilisent le réseau de manière intensive ou qui ne peuvent pas être interrompues en attendant la fin des opérations réseau.  
@@ -33,7 +33,7 @@ Un socket client asynchrone n’interrompt pas l’exécution de l’application
   
  Les sockets asynchrones utilisent plusieurs threads du pool de threads système pour traiter les connexions réseau. Un seul thread est chargé du démarrage de l’envoi ou de la réception des données. Les autres threads terminent la connexion à l’appareil réseau et l’envoi ou la réception des données. Dans les exemples suivants, les instances de la classe <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> sont utilisées pour interrompre l’exécution du thread principal et signaler à ce thread la reprise possible de l’exécution.  
   
- Dans l’exemple suivant, pour connecter un socket asynchrone à un appareil réseau, la méthode `Connect` initialise un **Socket**, puis appelle la méthode <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=nameWithType>, en passant un point de terminaison distant qui représente le périphérique réseau, la méthode de rappel de connexion, ainsi qu’un objet d’état (le **Socket** client) qui sert à passer les informations d’état entre les appels asynchrones. L’exemple implémente la méthode `Connect` qui connecte le **Socket** spécifié au point de terminaison spécifié. L’exemple suppose l’utilisation d’un **ManualResetEvent** global nommé `connectDone`.  
+ Dans l’exemple suivant, pour connecter un socket asynchrone à un appareil réseau, la méthode `Connect` initialise un **Socket**, puis appelle la méthode <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=nameWithType>, en passant un point de terminaison distant qui représente le périphérique réseau, la méthode de rappel de connexion, ainsi qu’un objet d’état (le **Socket** client) qui sert à passer les informations d’état entre les appels asynchrones. L’exemple implémente la méthode `Connect` qui connecte le **Socket** spécifié au point de terminaison spécifié. Il suppose l’utilisation d’un **ManualResetEvent** global nommé `connectDone`.  
   
 ```vb  
 Public Shared Sub Connect(remoteEP As EndPoint, client As Socket)  
@@ -46,7 +46,7 @@ End Sub 'Connect
   
 ```csharp  
 public static void Connect(EndPoint remoteEP, Socket client) {  
-    client.BeginConnect(remoteEP,   
+    client.BeginConnect(remoteEP,
         new AsyncCallback(ConnectCallback), client );  
   
    connectDone.WaitOne();  
@@ -162,11 +162,11 @@ private static void SendCallback(IAsyncResult ar) {
 ```vb  
 Public Class StateObject  
     ' Client socket.  
-    Public workSocket As Socket = Nothing   
+    Public workSocket As Socket = Nothing
     ' Size of receive buffer.  
     Public BufferSize As Integer = 256  
     ' Receive buffer.  
-    Public buffer(256) As Byte   
+    Public buffer(256) As Byte
     ' Received data string.  
     Public sb As New StringBuilder()  
 End Class 'StateObject  
@@ -226,7 +226,7 @@ private static void Receive(Socket client) {
 ```vb  
 Private Shared Sub ReceiveCallback(ar As IAsyncResult)  
     Try  
-        ' Retrieve the state object and the client socket   
+        ' Retrieve the state object and the client socket
         ' from the asynchronous state object.  
         Dim state As StateObject = CType(ar.AsyncState, StateObject)  
         Dim client As Socket = state.workSocket  
@@ -259,7 +259,7 @@ End Sub 'ReceiveCallback
 ```csharp  
 private static void ReceiveCallback( IAsyncResult ar ) {  
     try {  
-        // Retrieve the state object and the client socket   
+        // Retrieve the state object and the client socket
         // from the asynchronous state object.  
         StateObject state = (StateObject) ar.AsyncState;  
         Socket client = state.workSocket;  

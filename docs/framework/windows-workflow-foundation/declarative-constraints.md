@@ -2,12 +2,12 @@
 title: Contraintes déclaratives
 ms.date: 03/30/2017
 ms.assetid: 67001ed1-7f4d-4ada-ae57-a31176901a53
-ms.openlocfilehash: e3ced8f6f88d698273ace5c8b74fe90b94fa9720
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 321021e3d73daecae07268f33807c992414a7b4c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945819"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182962"
 ---
 # <a name="declarative-constraints"></a>Contraintes déclaratives
 Les contraintes déclaratives fournissent une méthode puissante de validation d’une activité et de ses relations avec d’autres activités. Les contraintes sont configurées pour une activité pendant le processus de création, mais les contraintes supplémentaires peuvent également être spécifiées par l'hôte du workflow. Cette rubrique fournit une vue d’ensemble de l’utilisation de contraintes déclaratives afin de fournir la validation d’activité.  
@@ -16,7 +16,7 @@ Les contraintes déclaratives fournissent une méthode puissante de validation d
  Une contrainte est une activité qui contient la logique de validation. Cette activité de contrainte peut être créée dans le code ou en XAML. Une fois une activité de contrainte créée, les auteurs d’activités ajoutent cette contrainte à la propriété <xref:System.Activities.Activity.Constraints%2A> de l’activité à valider, ou ils utilisent la contrainte pour fournir la validation supplémentaire à l’aide de la propriété <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A> d’une instance <xref:System.Activities.Validation.ValidationSettings>. La logique de validation peut consister en validations simples telles que la validation des métadonnées d'une activité, mais il peut également effectuer une validation qui tient compte de la relation de l'activité actuelle à son parent, enfants et activités de mêmes parents. Les contraintes sont créées à l’aide de l’activité <xref:System.Activities.Validation.Constraint%601>, et plusieurs activités de validation supplémentaires sont fournies pour aider à la création d’erreurs de validation et avertissements et fournir des informations à propos des activités connexes dans le workflow.  
   
 ### <a name="assertvalidation-and-addvalidationerror"></a>AssertValidation et AddValidationError  
- L’activité <xref:System.Activities.Validation.AssertValidation> évalue l’expression référencée par sa propriété <xref:System.Activities.Validation.AssertValidation.Assertion%2A>, et si l’expression donne la valeur `false`, une erreur de validation ou un avertissement est ajoutée à <xref:System.Activities.Validation.ValidationResults>. La propriété <xref:System.Activities.Validation.AssertValidation.Message%2A> décrit l’erreur de validation et la propriété <xref:System.Activities.Validation.AssertValidation.IsWarning%2A> indique si l’échec de la validation est une erreur ou un avertissement. La valeur par défaut de <xref:System.Activities.Validation.AssertValidation.IsWarning%2A> est `false`.  
+ L’activité <xref:System.Activities.Validation.AssertValidation> évalue l’expression référencée par sa propriété <xref:System.Activities.Validation.AssertValidation.Assertion%2A>, et si l’expression donne la valeur `false`, une erreur de validation ou un avertissement est ajoutée à <xref:System.Activities.Validation.ValidationResults>. La propriété <xref:System.Activities.Validation.AssertValidation.Message%2A> décrit l’erreur de validation et la propriété <xref:System.Activities.Validation.AssertValidation.IsWarning%2A> indique si l’échec de la validation est une erreur ou un avertissement. La valeur par défaut pour <xref:System.Activities.Validation.AssertValidation.IsWarning%2A> est `false`.  
   
  Dans l'exemple suivant, une contrainte est déclarée et renvoie un avertissement de validation si le <xref:System.Activities.Activity.DisplayName%2A> de l'activité qui est validée comprend deux caractères ou moins. Le paramètre de type générique utilisé pour <xref:System.Activities.Validation.Constraint%601> spécifie le type d’activité validé par la contrainte. Cette contrainte utilise <xref:System.Activities.Activity> comme type générique et peut être utilisée pour valider tous les types d'activités.  
   
@@ -71,58 +71,58 @@ public sealed class CreateState : CodeActivity
     public CreateState()  
     {  
         base.Constraints.Add(CheckParent());  
-        this.Cities = new List<Activity>();              
+        this.Cities = new List<Activity>();
     }  
   
     public List<Activity> Cities { get; set; }  
   
-    public string Name { get; set; }    
+    public string Name { get; set; }
   
     static Constraint CheckParent()  
     {  
         DelegateInArgument<CreateState> element = new DelegateInArgument<CreateState>();  
-        DelegateInArgument<ValidationContext> context = new DelegateInArgument<ValidationContext>();                          
+        DelegateInArgument<ValidationContext> context = new DelegateInArgument<ValidationContext>();
         Variable<bool> result = new Variable<bool>();  
         DelegateInArgument<Activity> parent = new DelegateInArgument<Activity>();  
   
         return new Constraint<CreateState>  
-        {                                     
+        {
             Body = new ActivityAction<CreateState,ValidationContext>  
-            {                      
+            {
                 Argument1 = element,  
                 Argument2 = context,  
                 Handler = new Sequence  
                 {  
                     Variables =  
                     {  
-                        result   
+                        result
                     },  
                     Activities =  
                     {  
                         new ForEach<Activity>  
-                        {                                  
+                        {
                             Values = new GetParentChain  
                             {  
-                                ValidationContext = context                                      
+                                ValidationContext = context
                             },  
                             Body = new ActivityAction<Activity>  
-                            {     
-                                Argument = parent,   
+                            {
+                                Argument = parent,
                                 Handler = new If()  
-                                {                                            
-                                    Condition = new InArgument<bool>((env) => object.Equals(parent.Get(env).GetType(),typeof(CreateCountry))),                                          
+                                {
+                                    Condition = new InArgument<bool>((env) => object.Equals(parent.Get(env).GetType(),typeof(CreateCountry))),
                                     Then = new Assign<bool>  
                                     {  
                                         Value = true,  
                                         To = result  
                                     }  
                                 }  
-                            }                                  
+                            }
                         },  
                         new AssertValidation  
                         {  
                             Assertion = new InArgument<bool>(result),  
-                            Message = new InArgument<string> ("CreateState has to be inside a CreateCountry activity"),                                                                  
+                            Message = new InArgument<string> ("CreateState has to be inside a CreateCountry activity"),
                         }  
                     }  
                 }  
@@ -151,7 +151,7 @@ ValidationSettings settings = new ValidationSettings()
   
     AdditionalConstraints =  
     {  
-        {typeof(Activity), new List<Constraint> {ActivityDisplayNameIsNotSetWarning()}},       
+        {typeof(Activity), new List<Constraint> {ActivityDisplayNameIsNotSetWarning()}},
     }  
 };  
   
@@ -176,4 +176,4 @@ else
 }  
 ```  
   
- Si la propriété <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> de <xref:System.Activities.Validation.ValidationSettings> est définie sur `true`, seules les contraintes supplémentaires spécifiées sont évaluées lorsque la validation est appelée en invoquant <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>. Cela peut être utile pour inspecter les workflows et rechercher des configurations de validation spécifiques. Notez toutefois que lorsque le workflow est appelé, la logique de validation configurée dans le workflow est évaluée et doit aboutir pour que le workflow démarre avec succès. Pour plus d’informations sur l’appel de validation, consultez [appel de Validation d’activité](invoking-activity-validation.md).
+ Si la propriété <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> de <xref:System.Activities.Validation.ValidationSettings> est définie sur `true`, seules les contraintes supplémentaires spécifiées sont évaluées lorsque la validation est appelée en invoquant <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>. Cela peut être utile pour inspecter les workflows et rechercher des configurations de validation spécifiques. Notez toutefois que lorsque le workflow est appelé, la logique de validation configurée dans le workflow est évaluée et doit aboutir pour que le workflow démarre avec succès. Pour plus d’informations sur l’invocation de la validation, voir [Invoquant la validation de l’activité](invoking-activity-validation.md).

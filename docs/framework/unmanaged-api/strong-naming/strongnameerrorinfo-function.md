@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: e91bf8c3-7c26-4732-938e-2e5b04abfc99
 topic_type:
 - apiref
-ms.openlocfilehash: dd83fc6a7f553b54cc2acd5e9a93d8d58747d75a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d5eedc34b75d3a0c02969c06454b0f7ec942ed17
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141702"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176940"
 ---
 # <a name="strongnameerrorinfo-function"></a>StrongNameErrorInfo, fonction
 Obtient le dernier code d’erreur déclenché par l’une des fonctions de nom fort.  
@@ -33,20 +33,20 @@ Obtient le dernier code d’erreur déclenché par l’une des fonctions de nom 
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT StrongNameErrorInfo ();   
+HRESULT StrongNameErrorInfo ();
 ```  
   
 ## <a name="return-value"></a>Valeur de retour  
- Dernier code d’erreur COM défini par l’une des fonctions Strong Name.  
+ Le dernier code d’erreur COM défini par l’une des fonctions de nom fort.  
   
-## <a name="remarks"></a>Notes  
- La plupart des méthodes Strong Name renvoient une `true` simple ou `false` une indication de la réussite de l’opération. Utilisez la fonction `StrongNameErrorInfo` pour récupérer un HRESULT qui spécifie la dernière erreur générée par les fonctions Strong Name.  
+## <a name="remarks"></a>Notes   
+ La plupart des méthodes de `true` `false` nom forte renvoient une simple ou indication d’achèvement réussi. Utilisez `StrongNameErrorInfo` la fonction pour récupérer un HRESULT qui spécifie la dernière erreur générée par les fonctions de nom fort.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** StrongName. h  
+ **En-tête:** StrongName.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  

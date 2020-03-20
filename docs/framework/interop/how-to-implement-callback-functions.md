@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - callback function, implementing
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
-ms.openlocfilehash: 23355e16127b45c26a1d950c6a8b3cc27e265781
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b7aae1e70ac736d60bed1e79291235db1c220281
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123889"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181416"
 ---
 # <a name="how-to-implement-callback-functions"></a>Comment : implémenter des fonctions de rappel
 La procédure et l'exemple suivants montrent comment une application managée peut, à l'aide de l'appel de code non managé, imprimer la valeur de handle de chaque fenêtre sur l'ordinateur local. En particulier, ils utilisent la fonction **EnumWindows** pour parcourir la liste des fenêtres et une fonction de rappel managée (nommée CallBack) pour imprimer la valeur du handle des fenêtres.  
@@ -38,7 +38,7 @@ La procédure et l'exemple suivants montrent comment une application managée pe
   
      Si, toutefois, la fonction de rappel peut être appelée après le retour d'appel, l'appelant managé doit prendre des mesures pour s’assurer que le délégué n'est pas collecté jusqu’à ce que la fonction de rappel termine sa tâche. Pour plus d’informations sur la façon d’empêcher l’opération de garbage collection, consultez [Marshaling d’interopérabilité](interop-marshaling.md) avec l’appel de code non managé.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ```vb  
 Imports System  
@@ -74,16 +74,16 @@ public delegate bool CallBack(int hwnd, int lParam);
 public class EnumReportApp  
 {  
     [DllImport("user32")]  
-    public static extern int EnumWindows(CallBack x, int y);   
+    public static extern int EnumWindows(CallBack x, int y);
   
-    public static void Main()   
+    public static void Main()
     {  
         CallBack myCallBack = new CallBack(EnumReportApp.Report);  
         EnumWindows(myCallBack, 0);  
     }  
   
     public static bool Report(int hwnd, int lParam)  
-    {   
+    {
         Console.Write("Window handle is ");  
         Console.WriteLine(hwnd);  
         return true;  

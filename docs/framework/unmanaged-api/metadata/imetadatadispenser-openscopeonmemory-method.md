@@ -15,61 +15,61 @@ helpviewer_keywords:
 ms.assetid: 14218249-bdec-48ae-b5fc-9f57f7ca8501
 topic_type:
 - apiref
-ms.openlocfilehash: 04e0fabfc0d70c9d922e0715f32bd07237ce8741
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 492c37540ad68b5b134520218eedc59013c68519
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442309"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175926"
 ---
 # <a name="imetadatadispenseropenscopeonmemory-method"></a>IMetaDataDispenser::OpenScopeOnMemory, méthode
-Ouvre une zone de mémoire qui contient des métadonnées existantes. Autrement dit, cette méthode ouvre une zone de mémoire spécifiée dans laquelle les données existantes sont traitées en tant que métadonnées.  
+Ouvre une zone de mémoire qui contient des métadonnées existantes. C’est-à-dire que cette méthode ouvre une zone de mémoire spécifiée dans laquelle les données existantes sont traitées comme des métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT OpenScopeOnMemory (  
-    [in]  LPCVOID     pData,   
-    [in]  ULONG       cbData,   
-    [in]  DWORD       dwOpenFlags,   
-    [in]  REFIID      riid,   
+    [in]  LPCVOID     pData,
+    [in]  ULONG       cbData,
+    [in]  DWORD       dwOpenFlags,
+    [in]  REFIID      riid,
     [out] IUnknown    **ppIUnk  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `pData`  
- dans Pointeur qui spécifie l’adresse de début de la zone mémoire.  
+ [dans] Un pointeur qui spécifie l’adresse de départ de la zone de mémoire.  
   
  `cbData`  
- dans Taille de la zone de mémoire, en octets.  
+ [dans] La taille de la zone de mémoire, dans les octets.  
   
  `dwOpenFlags`  
- dans Valeur de l’énumération [CorOpenFlags](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) pour spécifier le mode (lecture, écriture, etc.) à ouvrir.  
+ [dans] Une valeur de l’énumération [CorOpenFlags](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) pour spécifier le mode (lire, écrire, etc.) pour l’ouverture.  
   
  `riid`  
- dans IID de l’interface de métadonnées souhaitée à retourner ; l’appelant utilisera l’interface pour importer (Lire) ou émettre (écrire) des métadonnées.  
+ [dans] L’IID de l’interface de métadonnée souhaitée à retourner; l’appelant utilisera l’interface pour importer (lire) ou émettre des métadonnées (écrire).  
   
- La valeur de `riid` doit spécifier l’une des interfaces « import » ou « Emit ». Les valeurs valides sont IID_IMetaDataEmit, IID_IMetaDataImport, IID_IMetaDataAssemblyEmit, IID_IMetaDataAssemblyImport, IID_IMetaDataEmit2 ou IID_IMetaDataImport2.  
+ La valeur `riid` de doit spécifier l’une des interfaces "importation" ou "émettre". Les valeurs valides sont IID_IMetaDataEmit, IID_IMetaDataImport, IID_IMetaDataAssemblyEmit, IID_IMetaDataAssemblyImport, IID_IMetaDataEmit2 ou IID_IMetaDataImport2.  
   
  `ppIUnk`  
- à Pointeur vers l’interface retournée.  
+ [out] Le pointeur de l’interface retournée.  
   
-## <a name="remarks"></a>Notes  
- La copie en mémoire des métadonnées peut être interrogée à l’aide de méthodes de l’une des interfaces d’importation ou ajoutée à l’aide de méthodes à partir de l’une des interfaces d’émission.  
+## <a name="remarks"></a>Notes   
+ La copie en mémoire des métadonnées peut être demandée à l’aide de méthodes à partir d’une des interfaces « d’importation », ou ajoutée à l’utilisation de méthodes de l’une des interfaces « émettrices ».  
   
- La méthode `OpenScopeOnMemory` est semblable à la méthode [IMetaDataDispenser :: OpenScope](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md) , sauf que les métadonnées d’intérêt existent déjà en mémoire, plutôt que dans un fichier sur le disque.  
+ La `OpenScopeOnMemory` méthode est similaire à la méthode [IMetaDataDispenser::OpenScope](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md) méthode, sauf que les métadonnées d’intérêt existe déjà dans la mémoire, plutôt que dans un fichier sur disque.  
   
- Si la zone cible de la mémoire ne contient pas de métadonnées common language runtime (CLR), la méthode `OpenScopeOnMemory` échouera.  
+ Si la zone cible de mémoire ne contient pas de métadonnées courantes (CLR), la `OpenScopeOnMemory` méthode échouera.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateforme :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateforme:** Voir [Les exigences du système](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

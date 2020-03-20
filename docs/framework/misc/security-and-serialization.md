@@ -10,12 +10,12 @@ helpviewer_keywords:
 - secure coding, serialization
 - security [.NET Framework], serialization
 ms.assetid: b921bc94-bd3a-4c91-9ede-2c8d4f78ea9a
-ms.openlocfilehash: cb0ba120eeb57788c0525d45b714ad8edd2c39ed
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 634388e3920e0b9dbee85aa3ea555471cee604ca
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216977"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181118"
 ---
 # <a name="security-and-serialization"></a>Sécurité et sérialisation
 Étant donné que la sérialisation peut permettre à tout autre code d’afficher ou de modifier les données d’instance d’objet qui seraient autrement inaccessibles, une autorisation spéciale est nécessaire pour que le code effectue la sérialisation : <xref:System.Security.Permissions.SecurityPermission> avec l’indicateur <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter> spécifié. Dans le cadre de la stratégie par défaut, cette autorisation n'est pas accordée à du code téléchargé depuis Internet ou un intranet ; seul le code sur l'ordinateur local reçoit cette autorisation.  
@@ -35,9 +35,9 @@ ms.locfileid: "77216977"
     ```  
   
     ```csharp  
-    [SecurityPermissionAttribute(SecurityAction.Demand,SerializationFormatter   
+    [SecurityPermissionAttribute(SecurityAction.Demand,SerializationFormatter
     =true)]  
-    public override void GetObjectData(SerializationInfo info,   
+    public override void GetObjectData(SerializationInfo info,
     StreamingContext context)  
     {  
     }  

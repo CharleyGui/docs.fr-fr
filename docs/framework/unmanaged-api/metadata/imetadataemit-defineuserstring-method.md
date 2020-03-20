@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 88fb7ef3-bbdf-429c-b678-c9c153456461
 topic_type:
 - apiref
-ms.openlocfilehash: aa5d66d2408010d7a7b52ec68a18f667097795ae
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a71d8694ec8c5bd35ecd3e98ed32e05bc7b382fc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450173"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177620"
 ---
 # <a name="imetadataemitdefineuserstring-method"></a>IMetaDataEmit::DefineUserString, méthode
 Obtient un jeton de métadonnées pour la chaîne littérale spécifiée.  
@@ -28,31 +28,31 @@ Obtient un jeton de métadonnées pour la chaîne littérale spécifiée.
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineUserString (   
-    [in]  LPCWSTR     szString,   
-    [in]  ULONG       cchString,   
-    [out] mdString    *pstk   
+HRESULT DefineUserString (
+    [in]  LPCWSTR     szString,
+    [in]  ULONG       cchString,
+    [out] mdString    *pstk
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `szString`  
- dans Chaîne utilisateur à stocker.  
+ [dans] La chaîne utilisateur à stocker.  
   
  `cchString`  
- dans Nombre de caractères larges dans `szString`.  
+ [dans] Le nombre de `szString`personnages larges dans .  
   
  `pstk`  
- à Jeton de chaîne assigné.  
+ [out] Le jeton de ficelle assigné.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

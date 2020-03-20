@@ -9,15 +9,15 @@ helpviewer_keywords:
 - sockets, code examples
 - sockets, synchronous server sockets
 ms.assetid: 5916c764-879f-4716-99fb-1d21c6237f1c
-ms.openlocfilehash: eee533e87c868fadc04e26b374b36a0256dcf38e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: e8924051a7087ac26793722457f934e58a75f23d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71047140"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180659"
 ---
 # <a name="synchronous-server-socket-example"></a>Exemple de socket serveur synchrone
-L’exemple de programme suivant crée un serveur qui reçoit des demandes de connexion de clients. Le serveur est créé avec un socket synchrone. L’exécution de l’application serveur est donc suspendue jusqu’à la réception d’une connexion à partir d’un client. L’application reçoit une chaîne du client, affiche la chaîne sur la console, puis renvoie la chaîne de réponse au client. La chaîne reçue du client doit contenir la chaîne « \<EOF> » qui indique la fin du message.  
+L’exemple de programme suivant crée un serveur qui reçoit les demandes de connexion des clients. Le serveur est créé avec un socket synchrone. L’exécution de l’application serveur est donc suspendue jusqu’à la réception d’une connexion à partir d’un client. L’application reçoit une chaîne du client, affiche la chaîne sur la console, puis renvoie la chaîne de réponse au client. La chaîne reçue du client doit contenir la chaîne « \<EOF> » qui indique la fin du message.  
   
 ```vb  
 Imports System  
@@ -36,7 +36,7 @@ Public Class SynchronousSocketListener
         Dim bytes() As Byte = New [Byte](1024) {}  
   
         ' Establish the local endpoint for the socket.  
-        ' Dns.GetHostName returns the name of the   
+        ' Dns.GetHostName returns the name of the
         ' host running the application.  
         Dim ipHostInfo As IPHostEntry = Dns.GetHostEntry(Dns.GetHostName())  
         Dim ipAddress As IPAddress = ipHostInfo.AddressList(0)  
@@ -46,7 +46,7 @@ Public Class SynchronousSocketListener
         Dim listener As New Socket(ipAddress.AddressFamily, _  
             SocketType.Stream, ProtocolType.Tcp)  
   
-        ' Bind the socket to the local endpoint and   
+        ' Bind the socket to the local endpoint and
         ' listen for incoming connections.  
   
         listener.Bind(localEndPoint)  
@@ -96,7 +96,7 @@ public class SynchronousSocketListener {
         byte[] bytes = new Byte[1024];  
   
         // Establish the local endpoint for the socket.  
-        // Dns.GetHostName returns the name of the   
+        // Dns.GetHostName returns the name of the
         // host running the application.  
         IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());  
         IPAddress ipAddress = ipHostInfo.AddressList[0];  
@@ -106,7 +106,7 @@ public class SynchronousSocketListener {
         Socket listener = new Socket(ipAddress.AddressFamily,  
             SocketType.Stream, ProtocolType.Tcp );  
   
-        // Bind the socket to the local endpoint and   
+        // Bind the socket to the local endpoint and
         // listen for incoming connections.  
         try {  
             listener.Bind(localEndPoint);  

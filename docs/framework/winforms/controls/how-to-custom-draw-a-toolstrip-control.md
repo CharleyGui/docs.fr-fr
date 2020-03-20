@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : personnaliser le dessin d’un contrôle ToolStrip'
+title: "Comment : personnaliser le dessin d'un contrôle ToolStrip"
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -16,14 +16,14 @@ helpviewer_keywords:
 - custom drawing
 - owner drawing
 ms.assetid: 94e7d7bd-a752-441c-b5b3-7acf98881163
-ms.openlocfilehash: 810a680a1a9d9065e80ed87453a728fe628a953d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a9f603efdb4b4a5f68154da9c6a8bd05b55b8f46
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935366"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182226"
 ---
-# <a name="how-to-custom-draw-a-toolstrip-control"></a>Procédure : personnaliser le dessin d’un contrôle ToolStrip
+# <a name="how-to-custom-draw-a-toolstrip-control"></a>Comment : personnaliser le dessin d'un contrôle ToolStrip
 Les contrôles <xref:System.Windows.Forms.ToolStrip> disposent des classes de rendu (peinture) associées suivantes :  
   
 - <xref:System.Windows.Forms.ToolStripSystemRenderer> fournit l'apparence et le style de votre système d'exploitation.  
@@ -60,7 +60,7 @@ Les contrôles <xref:System.Windows.Forms.ToolStrip> disposent des classes de re
         ToolStrip1.Renderer = New ToolStripProfessionalRenderer(t)  
     End Sub  
   
-    Class MyColorTable   
+    Class MyColorTable
     Inherits ProfessionalColorTable  
   
     Public Overrides ReadOnly Property ButtonPressedGradientBegin() As Color  
@@ -115,7 +115,7 @@ Les contrôles <xref:System.Windows.Forms.ToolStrip> disposent des classes de re
   
 ### <a name="to-turn-off-the-microsoft-office-colors-for-the-entire-application"></a>Pour désactiver les couleurs Microsoft Office pour l'application entière  
   
-- Réglez <xref:System.Windows.Forms.ToolStripManager.VisualStylesEnabled%2A?displayProperty=nameWithType> sur `false`.  
+- Définissez <xref:System.Windows.Forms.ToolStripManager.VisualStylesEnabled%2A?displayProperty=nameWithType> sur `false`.  
   
 ### <a name="to-turn-off-the-microsoft-office-colors-for-one-toolstrip-control"></a>Pour désactiver les couleurs Microsoft Office pour un contrôle ToolStrip  
   
@@ -139,5 +139,5 @@ Les contrôles <xref:System.Windows.Forms.ToolStrip> disposent des classes de re
 - <xref:System.Windows.Forms.ToolStripProfessionalRenderer>
 - <xref:System.Windows.Forms.ToolStripRenderer>
 - [Contrôles avec prise en charge intégrée du dessin owner-drawn](controls-with-built-in-owner-drawing-support.md)
-- [Guide pratique pour Créer et définir un convertisseur personnalisé pour le contrôle ToolStrip dans Windows Forms](create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)
+- [Comment : créer et définir un convertisseur personnalisé pour le contrôle ToolStrip dans les Windows Forms](create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)
 - [Vue d’ensemble du contrôle ToolStrip](toolstrip-control-overview-windows-forms.md)

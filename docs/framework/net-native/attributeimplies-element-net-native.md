@@ -1,15 +1,15 @@
 ---
-title: Élément <AttributeImplies> (.NET Native)
+title: <AttributeImplies>Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 82db7193-a860-418b-84fc-fff2fdf2e025
-ms.openlocfilehash: 94f7813938e2179a2355e6ab2eff22479122d4b1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2ab1fdc71bc43f61f69a0d9b7bea7acb35e14ea5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128483"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181067"
 ---
-# <a name="attributeimplies-element-net-native"></a>\<élément AttributeImplies > (.NET Native)
+# <a name="attributeimplies-element-net-native"></a>\<AttributImplies> Element (.NET Native)
 Définit la stratégie pour les éléments de code auxquels l'attribut conteneur est appliqué.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -18,7 +18,7 @@ Définit la stratégie pour les éléments de code auxquels l'attribut conteneur
 <AttributeImplies Activate="policy_type"  
                   Browse="policy_type"  
                   Dynamic="policy_type"  
-                  Serialize="policy_type"   
+                  Serialize="policy_type"
                   DataContractSerializer="policy_setting"  
                   DataContractJsonSerializer="policy_setting"  
                   XmlSerializer="policy_setting"  
@@ -47,12 +47,12 @@ Définit la stratégie pour les éléments de code auxquels l'attribut conteneur
   
 ## <a name="all-attributes"></a>Tous les attributs  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -60,14 +60,14 @@ Définit la stratégie pour les éléments de code auxquels l'attribut conteneur
 |-------------|-----------------|  
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  L'élément `<AttributeImplies>` est utilisé si son type conteneur est un attribut (autrement dit, une classe dérivée de <xref:System.Attribute?displayProperty=nameWithType>). Si l'attribut est appliqué à un élément de programme particulier, la stratégie définie par l'élément `<AttributeImplies>` s'applique à cet élément de programme.  
   
  Les attributs de réflexion, de sérialisation et d'interopérabilité sont tous facultatifs, même si un au moins doit être présent.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<> type, élément](type-element-net-native.md)
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [\<Type> Élément](type-element-net-native.md)
+- [Informations de référence sur le fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)

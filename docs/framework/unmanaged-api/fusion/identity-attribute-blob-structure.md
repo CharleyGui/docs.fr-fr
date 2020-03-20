@@ -16,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: af14ae5f-d226-47dd-ba90-8fc6e6605d4d
 topic_type:
 - apiref
-ms.openlocfilehash: 212a9f46dd33f98abd31e7a78c7a830cb3386cb6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8f838d5c812842e2a637065b25182b6a12609231
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73108011"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176550"
 ---
 # <a name="identity_attribute_blob-structure"></a>IDENTITY_ATTRIBUTE_BLOB, structure
-Contient des informations sur un attribut unique dans un assembly et se compose de trois `DWORD`s. Chaque `DWORD` est un offset dans une mémoire tampon de caractères produite par la méthode `CurrentIntoBuffer` de l’interface [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md)  
+Contient des informations sur un attribut unique `DWORD`dans un assemblage, et se compose de trois s. Chacun `DWORD` est un décalage dans un `CurrentIntoBuffer` tampon de caractère produit par la méthode de l’interface [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,20 +40,20 @@ typedef struct _IDENTITY_ATTRIBUTE_BLOB {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`ofsNamespace`|Premier offset dans la mémoire tampon de caractères. Cet offset n’est pas suivi de l’espace de noms de l’attribut, mais d’une série de caractères null. Par conséquent, il n’est pas utilisé.|  
-|`ofsName`|Deuxième offset dans la mémoire tampon de caractères. Cet emplacement marque le début du nom de l’attribut.|  
-|`ofsValue`|Troisième offset dans la mémoire tampon de caractères. Cet emplacement marque le début de la valeur de l’attribut.|  
+|`ofsNamespace`|Le premier décalage dans le tampon de caractère. Ce décalage n’est pas suivi par l’espace de nom de l’attribut, mais par une série de caractères nuls. Par conséquent, il n’est pas utilisé.|  
+|`ofsName`|Le second compensé dans le tampon de caractère. Cet emplacement marque le début du nom de l’attribut.|  
+|`ofsValue`|Le troisième décalage dans le tampon de caractère. Cet emplacement marque le début de la valeur de l’attribut.|  
   
 ## <a name="sample"></a>Exemple  
- L’exemple suivant illustre plusieurs étapes de base, ce qui finit par aboutir à une structure de `IDENTITY_ATTRIBUTE_BLOB` remplie :  
+ L’exemple suivant illustre plusieurs étapes de base, `IDENTITY_ATTRIBUTE_BLOB` qui finissent par aboutir à une structure peuplée :  
   
-1. Obtenez un [IReferenceIdentity](ireferenceidentity-interface.md) pour l’assembly.  
+1. Obtenir une [IReferenceIdentity](ireferenceidentity-interface.md) pour l’assemblée.  
   
-2. Appelez la méthode `IReferenceIdentity::EnumAttributes` et obtenez un [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md).  
+2. Appelez `IReferenceIdentity::EnumAttributes` la méthode, et obtenir un [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md).  
   
-3. Créez une mémoire tampon de caractères et effectuez un cast de celle-ci en structure `IDENTITY_ATTRIBUTE_BLOB`.  
+3. Créez un tampon de caractère, `IDENTITY_ATTRIBUTE_BLOB` et jetez-le comme une structure.  
   
-4. Appelez la méthode `CurrentIntoBuffer` de l’interface `IEnumIDENTITY_ATTRIBUTE`. Cette méthode copie les attributs `Namespace`, `Name`et `Value` dans la mémoire tampon de caractères. Les trois décalages de ces chaînes deviennent disponibles dans la structure `IDENTITY_ATTRIBUTE_BLOB`.  
+4. Appelez `CurrentIntoBuffer` la méthode `IEnumIDENTITY_ATTRIBUTE` de l’interface. Cette méthode copie `Namespace`les `Name`attributs , , et `Value` dans le tampon de caractère. Les trois compensations à ces cordes `IDENTITY_ATTRIBUTE_BLOB` seront disponibles dans la structure.  
   
 ```cpp  
 // EnumAssemblyAttributes.cpp : main project file.  
@@ -97,7 +97,7 @@ bool Init()
                                 (VOID **)&g_pfnGetIdentityAuthority);  
     }  
   
-    if (!g_pfnGetAssemblyIdentityFromFile ||   
+    if (!g_pfnGetAssemblyIdentityFromFile ||
         !g_pfnGetIdentityAuthority)  
     {  
         printf("Error: Cannot get required APIs from fusion.dll!\n");  
@@ -120,7 +120,7 @@ void Shutdown()
   
 void Usage()  
 {  
-    printf("EnumAssemblyAttributes: A tool to enumerate the identity   
+    printf("EnumAssemblyAttributes: A tool to enumerate the identity
             attributes of a given assembly.\n\n");  
     printf("Usage: EnumAssemblyAttributes AssemblyFilePath\n");  
     printf("\n");  
@@ -131,7 +131,7 @@ int _cdecl wmain(int argc, LPCWSTR argv[])
     int     iResult = 1;  
     IUnknown                    *pUnk  = NULL;  
     IReferenceIdentity          *pRef  = NULL;  
-    HRESULT                     hr     = S_OK;     
+    HRESULT                     hr     = S_OK;
     IEnumIDENTITY_ATTRIBUTE     *pEnum = NULL;  
     BYTE                        abData[1024];  
     DWORD                       cbAvailable;  
@@ -148,16 +148,16 @@ int _cdecl wmain(int argc, LPCWSTR argv[])
         goto Exit;  
     }  
   
-    hr = g_pfnGetAssemblyIdentityFromFile(argv[1],   
+    hr = g_pfnGetAssemblyIdentityFromFile(argv[1],
                             __uuidof(IReferenceIdentity), &pUnk);  
   
     if (FAILED(hr)) {  
-        printf("GetAssemblyIdentityFromFile failed with hr = 0x%x",   
+        printf("GetAssemblyIdentityFromFile failed with hr = 0x%x",
                 hr);  
         goto Exit;  
     }  
   
-    hr = pUnk->QueryInterface(__uuidof(IReferenceIdentity),   
+    hr = pUnk->QueryInterface(__uuidof(IReferenceIdentity),
                               (void**)&pRef);  
     if (FAILED(hr)) {  
         goto Exit;  
@@ -165,7 +165,7 @@ int _cdecl wmain(int argc, LPCWSTR argv[])
   
     hr = pRef->EnumAttributes(&pEnum);  
     if (FAILED(hr)) {  
-        printf("IReferenceIdentity::EnumAttributes failed with hr =   
+        printf("IReferenceIdentity::EnumAttributes failed with hr =
                 0x%x", hr);  
         goto Exit;  
     }  
@@ -175,7 +175,7 @@ int _cdecl wmain(int argc, LPCWSTR argv[])
         cbAvailable = sizeof(abData);  
         hr = pEnum->CurrentIntoBuffer(cbAvailable, abData, &cbUsed);  
         if (FAILED(hr)) {  
-            printf("IEnumIDENTITY_ATTRIBUTE::CurrentIntoBuffer failed   
+            printf("IEnumIDENTITY_ATTRIBUTE::CurrentIntoBuffer failed
                     with hr = 0x%x", hr);  
             goto Exit;  
         }  
@@ -191,7 +191,7 @@ int _cdecl wmain(int argc, LPCWSTR argv[])
   
         hr = pEnum->Skip(1);  
         if (FAILED(hr)) {  
-            printf("IEnumIDENTITY_ATTRIBUTE::Skip failed with hr =   
+            printf("IEnumIDENTITY_ATTRIBUTE::Skip failed with hr =
                     0x%x", hr);  
             goto Exit;  
         }  
@@ -219,26 +219,26 @@ Exit:
 }  
 ```  
   
-### <a name="to-run-the-sample"></a>Pour exécuter l'exemple  
- C :\\> EnumAssemblyAttributes. exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll  
+### <a name="to-run-the-sample"></a>Exécution de l'exemple  
+ D:\\> EnumAssemblyAttributes.exe C: 'WINDOWS’Microsoft.NET’Framework’v2.0.50727-System.dll  
   
-### <a name="sample-output"></a>Résultat de l'exemple  
- Culture = neutral  
+### <a name="sample-output"></a>Exemple de sortie  
+ Culture neutre  
   
- Name = System  
+ nom - Système  
   
- processorArchitecture = MSIL  
+ processeurArchitecture - MSIL  
   
- PublicKeyToken = b77a5c561934e089  
+ PublicKeyToken - b77a5c561934e089  
   
- Version = 2.0.0.0  
+ Version 2.0.0.0  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Isolation. h  
+ **En-tête:** Isolation.h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

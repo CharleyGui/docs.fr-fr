@@ -15,80 +15,80 @@ helpviewer_keywords:
 ms.assetid: 5c4c1dc2-d40d-4173-bbe6-7058fb21c98f
 topic_type:
 - apiref
-ms.openlocfilehash: f11b374ed0ecbfc137c43fb641ae691237604691
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: eb3ecbf39376e7126b5ec93a26badcbf5076d1db
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431526"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175783"
 ---
 # <a name="imetadataemitdefineproperty-method"></a>IMetaDataEmit::DefineProperty, méthode
-Crée une définition de propriété pour le type spécifié, avec les accesseurs de méthode `get` et `set` spécifiés, et obtient un jeton pour cette définition de propriété.  
+Crée une définition de propriété pour `get` le `set` type spécifié, avec les accesseurs spécifiés et la méthode, et obtient un jeton à cette définition de propriété.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineProperty (   
-    [in]  mdTypeDef          td,   
-    [in]  LPCWSTR            szProperty,   
-    [in]  DWORD              dwPropFlags,   
-    [in]  PCCOR_SIGNATURE    pvSig,   
-    [in]  ULONG              cbSig,   
-    [in]  DWORD              dwCPlusTypeFlag,   
-    [in]  void const         *pValue,   
-    [in]  ULONG              cchValue,   
-    [in]  mdMethodDef        mdSetter,   
-    [in]  mdMethodDef        mdGetter,   
-    [in]  mdMethodDef        rmdOtherMethods[],   
-    [out] mdProperty         *pmdProp   
+HRESULT DefineProperty (
+    [in]  mdTypeDef          td,
+    [in]  LPCWSTR            szProperty,
+    [in]  DWORD              dwPropFlags,
+    [in]  PCCOR_SIGNATURE    pvSig,
+    [in]  ULONG              cbSig,
+    [in]  DWORD              dwCPlusTypeFlag,
+    [in]  void const         *pValue,
+    [in]  ULONG              cchValue,
+    [in]  mdMethodDef        mdSetter,
+    [in]  mdMethodDef        mdGetter,
+    [in]  mdMethodDef        rmdOtherMethods[],
+    [out] mdProperty         *pmdProp
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- dans Jeton de la classe ou de l’interface sur laquelle la propriété est définie.  
+ [dans] Le jeton pour la classe ou l’interface sur laquelle la propriété est définie.  
   
  `szProperty`  
- dans Nom de la propriété.  
+ [in] Nom de la propriété.  
   
  `dwPropFlags`  
- dans Indicateurs de propriété.  
+ [dans] Les drapeaux de la propriété.  
   
  `pvSig`  
- dans Signature de la propriété.  
+ [dans] La signature de la propriété.  
   
  `cbSig`  
- dans Nombre d’octets dans `pvSig`.  
+ [dans] Le compte d’octets dans `pvSig`.  
   
  `dwCPlusTypeFlag`  
- dans Type de la valeur par défaut de la propriété.  
+ [dans] Le type de valeur par défaut de la propriété.  
   
  `pValue`  
- dans Valeur par défaut de la propriété.  
+ [dans] La valeur par défaut pour la propriété.  
   
  `cchValue`  
- dans Nombre de caractères (Unicode) dans `pValue`.  
+ [dans] Le nombre de caractères `pValue`(Unicode) dans .  
   
  `mdSetter`  
- dans Méthode qui définit la valeur de la propriété.  
+ [dans] La méthode qui définit la valeur de la propriété.  
   
  `mdGetter`  
- dans Méthode qui obtient la valeur de la propriété.  
+ [dans] La méthode qui obtient la valeur de la propriété.  
   
  `rmdOtherMethods[]`  
- dans Tableau d’autres méthodes associées à la propriété. Terminez le tableau par un `mdTokenNil`.  
+ [dans] Un éventail d’autres méthodes associées à la propriété. Terminez le `mdTokenNil`tableau avec un .  
   
  `pmdProp`  
- à Jeton `mdProperty` assigné.  
+ [out] Le `mdProperty` jeton assigné.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

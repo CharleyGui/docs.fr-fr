@@ -15,63 +15,63 @@ helpviewer_keywords:
 ms.assetid: ba6e178f-128b-4e47-a13c-b4be73eb106c
 topic_type:
 - apiref
-ms.openlocfilehash: ef7057ad19fd34750bd15d358e9c1ebb1289cd44
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: b535fdd5027a26cc4dd0eafec9883f0186773dd1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75338062"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175497"
 ---
 # <a name="imetadataimportenuminterfaceimpls-method"></a>IMetaDataImport::EnumInterfaceImpls, méthode
-Énumère toutes les interfaces implémentées par le `TypeDef`spécifié. 
+Énumère toutes les interfaces mises `TypeDef`en œuvre par les spécifiés .
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EnumInterfaceImpls (  
-   [in, out]  HCORENUM       *phEnum,   
+   [in, out]  HCORENUM       *phEnum,
    [in]   mdTypeDef          td,  
-   [out]  mdInterfaceImpl    rImpls[],   
+   [out]  mdInterfaceImpl    rImpls[],
    [in]   ULONG              cMax,  
    [out]  ULONG*             pcImpls  
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur.  
+ [dans, dehors] Un pointeur à l’enumérateur.  
   
  `td`  
- dans Jeton du TypeDef dont les jetons MethodDef représentant des implémentations d’interface doivent être énumérés.  
+ [dans] Le jeton du TypeDef dont les jetons MethodDef représentant les implémentations d’interface doivent être énumérés.  
   
  `rImpls`  
- à Tableau utilisé pour stocker les jetons MethodDef.  
+ [out] Le tableau utilisé pour stocker les jetons MethodDef.  
   
  `cMax`  
- dans Longueur maximale du tableau de `rImpls`.  
+ [dans] La longueur maximale `rImpls` du tableau.  
   
  `pcImpls`  
- à Nombre réel de jetons retournés dans `rImpls`.  
+ [out] Le nombre réel de jetons retournés dans `rImpls`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumInterfaceImpls` retourné avec succès.|  
-|`S_FALSE`|Il n’y a aucun jeton MethodDef à énumérer. Dans ce cas, `pcImpls` a la valeur zéro.|  
+|`S_OK`|`EnumInterfaceImpls`retourné avec succès.|  
+|`S_FALSE`|Il n’y a pas de jetons MethodDef à énumérer. Dans ce `pcImpls` cas, est réglé à zéro.|  
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-L’énumération retourne une collection de `mdInterfaceImpl` jetons pour chaque interface implémentée par le `TypeDef`spécifié. Les jetons d’interface sont retournés dans l’ordre dans lequel les interfaces ont été spécifiées (par `DefineTypeDef` ou `SetTypeDefProps`). Les propriétés des jetons de `mdInterfaceImpl` retournés peuvent être interrogées à l’aide de [GetInterfaceImplProps,](imetadataimport-getinterfaceimplprops-method.md).
+L’énumération renvoie `mdInterfaceImpl` une collection de jetons pour `TypeDef`chaque interface implémentée par le spécifié . Les jetons d’interface sont retournés dans `DefineTypeDef` l’ordre les interfaces ont été spécifiées (par ou). `SetTypeDefProps` Propriétés des `mdInterfaceImpl` jetons retournés peuvent être interrogés à l’aide [de GetInterfaceImplProps](imetadataimport-getinterfaceimplprops-method.md).
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,26 +2,26 @@
 title: Exemple Configuration
 ms.date: 03/30/2017
 ms.assetid: 75515b4a-8d70-44c8-99e0-7423df41380e
-ms.openlocfilehash: eb02b5d01b3f95ef741aa689cc66616fd598577b
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 5ac72db1fce0862381cd614499b5db4b9d95b2d0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741957"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183913"
 ---
 # <a name="configuration-sample"></a>Exemple Configuration
 Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un service détectable.  
   
 > [!NOTE]
-> Cet exemple implémente la découverte dans la configuration. Pour obtenir un exemple qui implémente la découverte dans le code, consultez [Basic](../../../../docs/framework/wcf/samples/basic-sample.md).  
+> Cet exemple implémente la découverte dans la configuration. Pour un échantillon qui implémente la découverte dans le code, voir [Basic](../../../../docs/framework/wcf/samples/basic-sample.md).  
   
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
->   
+>
+> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Configuration`  
   
 ## <a name="service-configuration"></a>Configuration du service  
@@ -47,8 +47,8 @@ Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un 
                     binding="wsHttpBinding"  
                     contract="Microsoft.Samples.Discovery.ICalculatorService"  
                     behaviorConfiguration="endpointBehaviorConfiguration" />  
-          <endpoint name="udpDiscovery"   
-                    kind="udpDiscoveryEndpoint"   
+          <endpoint name="udpDiscovery"
+                    kind="udpDiscoveryEndpoint"
                 endpointConfiguration="adhocDiscoveryEndpointConfiguration"/>        </service>  
       </services>  
 ```  
@@ -81,18 +81,18 @@ Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un 
               </scopes>  
             </endpointDiscovery>  
   
-          </behavior>            
+          </behavior>
         </endpointBehaviors>  
 ```  
   
- Pour plus d’informations sur les étendues, consultez [détection de découverte et FindCriteria](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md).  
+ Pour plus d’informations sur les portées, voir [Discovery Find et FindCriteria](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md).  
   
  Vous pouvez également contrôler des détails spécifiques du point de terminaison de découverte. Cette opération s'effectue via le <xref:System.ServiceModel.Configuration.StandardEndpointsSection>. Dans cet exemple, la version du protocole utilisée est modifiée et un attribut `maxResponseDelay` est ajouté, comme le montre l'exemple de code suivant.  
   
 ```xml  
 <standardEndpoints>  
    <udpDiscoveryEndpoint>  
-      <standardEndpoint name="adhocDiscoveryEndpointConfiguration" discoveryVersion="WSDiscovery11" maxResponseDelay="00:00:00.600" />    
+      <standardEndpoint name="adhocDiscoveryEndpointConfiguration" discoveryVersion="WSDiscovery11" maxResponseDelay="00:00:00.600" />
    </udpDiscoveryEndpoint>  
 </standardEndpoints>  
 ```  
@@ -110,7 +110,7 @@ Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un 
                     binding="wsHttpBinding"  
                     contract="Microsoft.Samples.Discovery.ICalculatorService"  
                     behaviorConfiguration="endpointBehaviorConfiguration" />  
-         <!-- Define the discovery endpoint -->            
+         <!-- Define the discovery endpoint -->
 <endpoint name="udpDiscovery" kind="udpDiscoveryEndpoint" endpointConfiguration="adhocDiscoveryEndpointConfiguration"/>        </service>  
       </services>  
   
@@ -138,7 +138,7 @@ Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un 
               </scopes>  
             </endpointDiscovery>  
   
-          </behavior>            
+          </behavior>
         </endpointBehaviors>  
   
       </behaviors>  
@@ -146,7 +146,7 @@ Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un 
       <standardEndpoints>  
         <udpDiscoveryEndpoint>  
          <!-- Configure the UDP discovery endpoint -->  
-          <standardEndpoint name="adhocDiscoveryEndpointConfiguration" discoveryVersion="WSDiscovery11" maxResponseDelay="00:00:00.600" />    
+          <standardEndpoint name="adhocDiscoveryEndpointConfiguration" discoveryVersion="WSDiscovery11" maxResponseDelay="00:00:00.600" />
         </udpDiscoveryEndpoint>  
       </standardEndpoints>  
   
@@ -154,7 +154,7 @@ Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un 
 </configuration>  
 ```  
   
-## <a name="client-configuration"></a>Configuration du client  
+## <a name="client-configuration"></a>Configuration client  
  Le fichier de configuration de l'application pour le client utilise un `standardEndpoint` de type `dynamicEndpoint` afin d'utiliser la découverte, comme indiqué dans l'extrait de configuration suivant.  
   
 ```xml  
@@ -193,14 +193,14 @@ Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un 
  Cet exemple étend cette fonctionnalité et modifie le <xref:System.ServiceModel.Discovery.FindCriteria> utilisé par le client, ainsi que certaines propriétés de l’`updDiscoveryEndpoint` standard utilisé pour la découverte. Les critères <xref:System.ServiceModel.Discovery.FindCriteria> sont modifiés de façon à utiliser une portée et un algorithme `scopeMatchBy` spécifiques, ainsi que des critères d'arrêt personnalisés. En outre, l'exemple montre également comment un client peut envoyer des éléments XML à l'aide de messages `Probe`. Enfin, certaines modifications sont apportées au <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>, comme la version du protocole utilisée et des paramètres propres au protocole UDP, ainsi que le montre le fichier de configuration suivant.  
   
 ```xml  
-<udpDiscoveryEndpoint>    
-        <!-- Specify the discovery protocol version and UDP transport settings. -->   
+<udpDiscoveryEndpoint>
+        <!-- Specify the discovery protocol version and UDP transport settings. -->
         <standardEndpoint name="adhocDiscoveryEndpointConfiguration" discoveryVersion="WSDiscovery11">  
           <transportSettings duplicateMessageHistoryLength="2048"  
                              maxPendingMessageCount="5"  
                              maxReceivedMessageSize="8192"  
                              maxBufferPoolSize="262144"/>  
-        </standardEndpoint>        
+        </standardEndpoint>
       </udpDiscoveryEndpoint>  
 ```  
   
@@ -222,7 +222,7 @@ Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un 
   
     <standardEndpoints>  
   
-      <dynamicEndpoint>        
+      <dynamicEndpoint>
         <standardEndpoint name="dynamicEndpointConfiguration">  
           <discoveryClientSettings>  
             <!-- Controls where the discovery happens. In this case, Probe message is sent over UdpDiscoveryEndpoint. -->  
@@ -239,17 +239,17 @@ Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un 
               </extensions>  
             </findCriteria>  
           </discoveryClientSettings>  
-        </standardEndpoint>     
+        </standardEndpoint>
       </dynamicEndpoint>  
   
-      <udpDiscoveryEndpoint>    
-        <!-- Specify the discovery protocol version and UDP transport settings. -->   
+      <udpDiscoveryEndpoint>
+        <!-- Specify the discovery protocol version and UDP transport settings. -->
         <standardEndpoint name="adhocDiscoveryEndpointConfiguration" discoveryVersion="WSDiscovery11">  
           <transportSettings duplicateMessageHistoryLength="2048"  
                              maxPendingMessageCount="5"  
                              maxReceivedMessageSize="8192"  
                              maxBufferPoolSize="262144"/>  
-        </standardEndpoint>        
+        </standardEndpoint>
       </udpDiscoveryEndpoint>  
   
     </standardEndpoints>  
@@ -259,7 +259,7 @@ Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un 
   
 #### <a name="to-use-this-sample"></a>Pour utiliser cet exemple  
   
-1. Cet exemple utilise des points de terminaison HTTP et pour exécuter cet exemple, des listes de contrôle d'accès (ACL) d'URL appropriées doivent être ajoutées. Pour plus d’informations, consultez [configuration de http et HTTPS](../feature-details/configuring-http-and-https.md). L'exécution de la commande suivante avec un privilège élevé doit ajouter les ACL appropriées. Vous pouvez substituer vos domaine et nom d’utilisateur aux arguments suivants si la commande ne fonctionne pas telle quelle. `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
+1. Cet exemple utilise des points de terminaison HTTP et pour exécuter cet exemple, des listes de contrôle d'accès (ACL) d'URL appropriées doivent être ajoutées. Pour plus d’informations, voir [Configuring HTTP et HTTPS](../feature-details/configuring-http-and-https.md). L'exécution de la commande suivante avec un privilège élevé doit ajouter les ACL appropriées. Vous pouvez substituer vos domaine et nom d’utilisateur aux arguments suivants si la commande ne fonctionne pas telle quelle. `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
   
 2. Générez la solution.  
   

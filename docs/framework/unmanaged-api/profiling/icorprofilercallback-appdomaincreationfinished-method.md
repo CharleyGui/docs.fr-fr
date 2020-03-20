@@ -15,47 +15,47 @@ helpviewer_keywords:
 ms.assetid: dbab7d90-d515-4dc9-8195-294d5d04bab6
 topic_type:
 - apiref
-ms.openlocfilehash: 1cf3f2b62b388b6c2d6fcd75b1b07a67d5b2e49f
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 8b3f7712436c001e5cd44f214f6edb06390abd41
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866700"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177070"
 ---
 # <a name="icorprofilercallbackappdomaincreationfinished-method"></a>ICorProfilerCallback::AppDomainCreationFinished, méthode
-Notifie le profileur qu’un domaine d’application a été créé.  
+Informe le profileur qu’un domaine d’application a été créé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT AppDomainCreationFinished(  
     [in] AppDomainID appDomainId,  
-    [in] HRESULT     hrStatus);   
+    [in] HRESULT     hrStatus);
 ```  
   
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 - `appDomainId`
 
-  \[in] identifie le domaine qui a été créé.
+  \[dans) Identifie le domaine qui a été créé.
 
 - `hrStatus`
 
-  \[dans] HRESULT qui indique si la création du domaine d’application s’est terminée avec succès.
+  \[dans] Un HRESULT qui indique si la création du domaine d’application a été complétée avec succès.
 
-## <a name="remarks"></a>Notes  
- L’ID d’application n’est pas valide pour toute demande d’informations jusqu’à ce que la méthode `AppDomainCreationFinished` soit appelée.  
+## <a name="remarks"></a>Notes   
+ L’ID de demande n’est `AppDomainCreationFinished` pas valide pour toute demande d’information jusqu’à ce que la méthode soit appelée.  
   
- Certaines parties du chargement du domaine d’application peuvent continuer après le rappel `AppDomainCreationFinished`. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie de la création du domaine d’application a réussi.  
+ Certaines parties du chargement du `AppDomainCreationFinished` domaine d’application peuvent continuer après le rappel. Un échec HRESULT dans `hrStatus` indique une défaillance. Cependant, un succès HRESULT indique `hrStatus` seulement que la première partie de la création du domaine de l’application a réussi.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

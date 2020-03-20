@@ -14,49 +14,49 @@ helpviewer_keywords:
 ms.assetid: b3222c85-da88-4485-97d7-3a6ee3e8d358
 topic_type:
 - apiref
-ms.openlocfilehash: f197c8802bd9e55391b3e3e20c64398736070a16
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f3b51c1b376fa9c664de53aa76ec724ca305ae6a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136333"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178177"
 ---
 # <a name="getfileversion-function"></a>GetFileVersion, fonction
-Obtient les informations de version du common language runtime (CLR) du fichier spécifié, à l’aide de la mémoire tampon spécifiée.  
+Obtient les informations courantes de version de l’heure d’exécution de langue (CLR) du fichier spécifié, en utilisant le tampon spécifié.  
   
- Cette fonction a été dépréciée dans le .NET Framework 4.  
+ Cette fonction a été dépréciée dans le cadre .NET 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetFileVersion (  
-    [in]  LPCWSTR      szFilename,   
-    [in, out] LPWSTR   szBuffer,   
-    [in]  DWORD        cchBuffer,   
+    [in]  LPCWSTR      szFilename,
+    [in, out] LPWSTR   szBuffer,
+    [in]  DWORD        cchBuffer,
     [out] DWORD        *dwLength  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `szFilename`  
- dans Chemin d’accès du fichier à examiner.  
+ [dans] La voie du dossier à examiner.  
   
  `szBuffer`  
- [in, out] Mémoire tampon allouée pour les informations de version retournées.  
+ [dans, dehors] Le tampon alloué pour les informations de version qui sont retournées.  
   
  `cchBuffer`  
- dans Taille, en caractères larges, de `szBuffer`.  
+ [dans] La taille, en caractères larges, de `szBuffer`.  
   
  `dwLength`  
- à Taille, en octets, de la `szBuffer`retournée.  
+ [out] La taille, dans les octets, du retour `szBuffer`.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE. h  
+ **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions d’hébergement CLR dépréciées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Fonction d'hébergement du CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Tutoriel : Implémenter un contrat de service Windows Communication Foundation'
+title: 'Tutorial: Mettre en œuvre un contrat de service Windows Communication Foundation'
 ms.date: 03/19/2019
 dev_langs:
 - csharp
@@ -7,28 +7,28 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF], implementing
 ms.assetid: d5ab51ba-61ae-403e-b3c8-e2669e326806
-ms.openlocfilehash: 05923dc0a2223da5e5fcda483abc1ee1dd2d643f
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: debdeeac7064f5bae21622b2d9de84a4d8a0e66f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928712"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184068"
 ---
-# <a name="tutorial-implement-a-windows-communication-foundation-service-contract"></a>Tutoriel : Implémenter un contrat de service Windows Communication Foundation
+# <a name="tutorial-implement-a-windows-communication-foundation-service-contract"></a>Tutorial: Mettre en œuvre un contrat de service Windows Communication Foundation
 
-Ce didacticiel décrit la deuxième des cinq tâches nécessaires à la création d’une application de base Windows Communication Foundation (WCF). Pour obtenir une vue d’ensemble des didacticiels, consultez [didacticiel : Prise en main des applications](getting-started-tutorial.md)Windows Communication Foundation.
+Ce tutoriel décrit la deuxième des cinq tâches requises pour créer une application de base de la Windows Communication Foundation (WCF). Pour un aperçu des tutoriels, voir [Tutorial: Get started with Windows Communication Foundation applications](getting-started-tutorial.md).
 
-L’étape suivante de la création d’une application WCF consiste à ajouter du code pour implémenter l’interface de service WCF que vous avez créée à l’étape précédente. Dans cette étape, vous allez créer une classe `CalculatorService` nommée qui implémente l’interface définie `ICalculator` par l’utilisateur. Chaque méthode dans le code suivant appelle une opération de calculatrice et écrit du texte dans la console pour la tester. 
+La prochaine étape pour la création d’une application WCF est d’ajouter du code pour implémenter l’interface de service WCF que vous avez créée dans l’étape précédente. Dans cette étape, vous `CalculatorService` créez une classe nommée `ICalculator` qui implémente l’interface définie par l’utilisateur. Chaque méthode dans le code suivant appelle une opération de calculatrice et écrit du texte à la console pour la tester.
 
-Ce tutoriel vous montre comment effectuer les opérations suivantes :
+Dans ce tutoriel, vous allez apprendre à :
 > [!div class="checklist"]
 >
-> - Ajoutez du code pour implémenter le contrat de service WCF.
+> - Ajouter du code pour implémenter le contrat de service WCF.
 > - Générez la solution.
 
 ## <a name="add-code-to-implement-the-wcf-service-contract"></a>Ajouter du code pour implémenter le contrat de service WCF
 
-Dans **GettingStartedLib**, ouvrez le fichier **Service1.cs** ou **Service1. vb** et remplacez son code par le code suivant :
+Dans **GettingStartedLib**, ouvrez le fichier **Service1.cs** ou **Service1.vb** et remplacez son code par le code suivant :
 
 ```csharp
 using System;
@@ -117,33 +117,33 @@ Namespace GettingStartedLib
 End Namespace
 ```
 
-## <a name="edit-appconfig"></a>Modifier le fichier app. config
+## <a name="edit-appconfig"></a>Modifier App.config
 
-Modifiez le **fichier app. config** dans **GettingStartedLib** pour refléter les modifications que vous avez apportées au code.
+Modifier **App.config** dans **GettingStartedLib** pour refléter les modifications que vous avez apportées au code.
 
-- Pour les C# projets visuels :
-  - Remplacez la ligne 14 par`<service name="GettingStartedLib.CalculatorService">`
-  - Remplacez la ligne 17 par`<add baseAddress = "http://localhost:8000/GettingStarted/CalculatorService" />`
-  - Remplacez la ligne 22 par`<endpoint address="" binding="wsHttpBinding" contract="GettingStartedLib.ICalculator">`
+- Pour les projets Visual CM :
+  - Changez la ligne 14 à`<service name="GettingStartedLib.CalculatorService">`
+  - Changez la ligne 17 à`<add baseAddress = "http://localhost:8000/GettingStarted/CalculatorService" />`
+  - Changez la ligne 22 à`<endpoint address="" binding="wsHttpBinding" contract="GettingStartedLib.ICalculator">`
 
 - Pour les projets Visual Basic :
-  - Remplacez la ligne 14 par`<service name="GettingStartedLib.GettingStartedLib.CalculatorService">`
-  - Remplacez la ligne 17 par`<add baseAddress = "http://localhost:8000/GettingStarted/CalculatorService" />`
-  - Remplacez la ligne 22 par`<endpoint address="" binding="wsHttpBinding" contract="GettingStartedLib.GettingStartedLib.ICalculator">`
+  - Changez la ligne 14 à`<service name="GettingStartedLib.GettingStartedLib.CalculatorService">`
+  - Changez la ligne 17 à`<add baseAddress = "http://localhost:8000/GettingStarted/CalculatorService" />`
+  - Changez la ligne 22 à`<endpoint address="" binding="wsHttpBinding" contract="GettingStartedLib.GettingStartedLib.ICalculator">`
 
 ## <a name="compile-the-code"></a>Compiler le code
 
-Générez la solution pour vérifier qu’il n’y a pas d’erreurs de compilation. Si vous utilisez Visual Studio, dans le menu **générer** , sélectionnez **générer la solution** (ou appuyez sur **CTRL**+**MAJ**+**B**).
+Construisez la solution pour vérifier qu’il n’y a pas d’erreurs de compilation. Si vous utilisez Visual Studio, sur le menu **Build** Select **Build Solution** (ou appuyez sur **Ctrl**+**Shift**+**B**).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce tutoriel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 >
-> - Ajoutez du code pour implémenter le contrat de service WCF.
+> - Ajouter du code pour implémenter le contrat de service WCF.
 > - Générez la solution.
 
-Passez au didacticiel suivant pour découvrir comment exécuter le service WCF.
+Avancez au tutoriel suivant pour apprendre à exécuter le service WCF.
 
 > [!div class="nextstepaction"]
-> [Tutoriel : Héberger et exécuter un service WCF de base](how-to-host-and-run-a-basic-wcf-service.md)
+> [Tutorial: Hôte et exécuter un service de base WCF](how-to-host-and-run-a-basic-wcf-service.md)

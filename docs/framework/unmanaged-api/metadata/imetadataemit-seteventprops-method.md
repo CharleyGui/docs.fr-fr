@@ -15,60 +15,60 @@ helpviewer_keywords:
 ms.assetid: 3b039e50-63ec-4730-99ff-2327408de477
 topic_type:
 - apiref
-ms.openlocfilehash: 506e13ad956a01b16e36d8c71737fe0efce4c01b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f664e694303691fb1132150037dcbcdb5549539a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450320"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177526"
 ---
 # <a name="imetadataemitseteventprops-method"></a>IMetaDataEmit::SetEventProps, méthode
-Définit ou met à jour la fonctionnalité spécifiée d’un événement défini par un appel antérieur à [IMetaDataEmit ::D efineevent](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineevent-method.md).  
+Définit ou met à jour la fonction spécifiée d’un événement défini par un appel antérieur à [IMetaDataEmit::DefineEvent](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineevent-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT SetEventProps (  
-    [in]  mdEvent     ev,   
-    [in]  DWORD       dwEventFlags,   
-    [in]  mdToken     tkEventType,   
-    [in]  mdMethodDef mdAddOn,   
-    [in]  mdMethodDef mdRemoveOn,   
-    [in]  mdMethodDef mdFire,   
-    [in]  mdMethodDef rmdOtherMethods[]   
+    [in]  mdEvent     ev,
+    [in]  DWORD       dwEventFlags,
+    [in]  mdToken     tkEventType,
+    [in]  mdMethodDef mdAddOn,
+    [in]  mdMethodDef mdRemoveOn,
+    [in]  mdMethodDef mdFire,
+    [in]  mdMethodDef rmdOtherMethods[]
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `ev`  
- dans Jeton d’événement.  
+ [dans] Le jeton de l’événement.  
   
  `dwEventFlags`  
- dans Indicateurs d’événement. Il s’agit d’un masque de ré`CorEventAttr` valeurs.  
+ [dans] Drapeaux de l’événement. C’est un peu `CorEventAttr` de valeur.  
   
  `tkEventType`  
- dans Jeton de la classe d’événements. Il s’agit soit d’un `mdTypeDef`, soit d’un jeton `mdTypeRef`.  
+ [dans] Le jeton pour la classe d’événement. C’est `mdTypeDef` soit `mdTypeRef` un ou un jeton.  
   
  `mdAddOn`  
- dans Méthode utilisée pour s’abonner à l’événement, ou null.  
+ [dans] La méthode utilisée pour s’abonner à l’événement, ou nulle.  
   
  `mdRemoveOn`  
- dans Méthode utilisée pour annuler l’abonnement à l’événement, ou null.  
+ [dans] La méthode utilisée pour se désabonner à l’événement, ou nulle.  
   
  `mdFire`  
- dans Méthode utilisée (par une classe dérivée) pour déclencher l’événement.  
+ [dans] La méthode utilisée (par une classe dérivée) pour élever l’événement.  
   
  `rmdOtherMethods[]`  
- dans Tableau de jetons pour d’autres méthodes associées à l’événement. Le dernier élément du tableau doit être `mdMethodDefNil`.  
+ [dans] Un éventail de jetons pour d’autres méthodes associées à l’événement. Le dernier élément du `mdMethodDefNil`tableau doit être .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

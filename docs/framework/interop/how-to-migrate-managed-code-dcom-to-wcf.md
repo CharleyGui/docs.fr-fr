@@ -1,15 +1,15 @@
 ---
-title: 'Comment : migrer du code DCOM managé vers WCF'
+title: 'Comment : migrer DCOM de code managé vers WCF'
 ms.date: 03/30/2017
 ms.assetid: 52961ffc-d1c7-4f83-832c-786444b951ba
-ms.openlocfilehash: 4d814d9c2e62af9aa5cc2a8d1f84738b69e36ad1
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 2576e88c25ae381e90ec7d613efb648048145b3b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217179"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181393"
 ---
-# <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Comment : migrer du code DCOM managé vers WCF
+# <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Comment : migrer DCOM de code managé vers WCF
 Pour des raisons de sécurité, il est recommandé d'utiliser Windows Communication Foundation (WCF) plutôt que le modèle DCOM pour les appels de code managé entre serveurs et clients dans un environnement distribué. Cet article explique comment migrer du code DCOM vers WCF pour les scénarios suivants.  
   
 - Le service distant retourne un objet par valeur au client  
@@ -64,7 +64,7 @@ public interface IRemoteService
 ```csharp  
 using System.Runtime.Serialization;  
 using System.ServiceModel;  
-using System.ServiceModel.Web;   
+using System.ServiceModel.Web;
 . . .  
 [ServiceContract]  
 public interface ICustomerManager  
@@ -72,7 +72,7 @@ public interface ICustomerManager
     [OperationContract]  
     void StoreCustomer(Customer customer);  
   
-    [OperationContract]     Customer GetCustomer(string firstName, string lastName);   
+    [OperationContract]     Customer GetCustomer(string firstName, string lastName);
   
 }  
 ```  
@@ -123,7 +123,7 @@ public class Address
  Ensuite, vous devez implémenter la classe du service WCF qui implémente l'interface que vous avez définie à l'étape précédente.  
   
 ```csharp  
-public class CustomerService: ICustomerManager    
+public class CustomerService: ICustomerManager
 {  
     public void StoreCustomer(Customer customer)  
     {  
@@ -144,7 +144,7 @@ public class CustomerService: ICustomerManager
   <system.serviceModel>  
     <services>  
       <service name="Server.CustomerService">  
-        <endpoint address="http://localhost:8083/CustomerManager"   
+        <endpoint address="http://localhost:8083/CustomerManager"
                   binding="basicHttpBinding"  
                   contract="Shared.ICustomerManager" />  
       </service>  
@@ -159,9 +159,9 @@ public class CustomerService: ICustomerManager
 <configuration>  
   <system.serviceModel>  
     <client>  
-      <endpoint name="customermanager"   
-                address="http://localhost:8083/CustomerManager"   
-                binding="basicHttpBinding"   
+      <endpoint name="customermanager"
+                address="http://localhost:8083/CustomerManager"
+                binding="basicHttpBinding"
                 contract="Shared.ICustomerManager"/>  
     </client>  
   </system.serviceModel>  
@@ -180,7 +180,7 @@ customerServiceHost.Open();
  Pour appeler le service depuis le client, vous devez créer une fabrique de canaux pour le service et demander un canal, ce qui vous permettra d'appeler directement la méthode `GetCustomer` depuis le client. Le canal implémente l'interface du service et gère la logique sous-jacente de demande/réponse à votre place.  La valeur de retour de cet appel de méthode est la copie désérialisée de la réponse du service.  
   
 ```csharp  
-ChannelFactory<ICustomerManager> factory =   
+ChannelFactory<ICustomerManager> factory =
      new ChannelFactory<ICustomerManager>("customermanager");  
 ICustomerManager service = factory.CreateChannel();  
 Customer customer = service.GetCustomer("Mary", "Smith");  
@@ -301,12 +301,12 @@ public interface ISessionBoundObject
     }  
 ```  
   
- Voici l’implémentation de ce service. Cette implémentation gère une fabrique de canaux singleton pour créer des objets de session.  Quand `GetInstanceAddress` est appelé, il crée un canal et un objet <xref:System.ServiceModel.EndpointAddress10> qui pointe vers l'adresse distante associée à ce canal.   <xref:System.ServiceModel.EndpointAddress10> est un type de données qui peut être renvoyé au client par valeur.
+ Ce qui suit est la mise en œuvre de ce service. Cette implémentation gère une fabrique de canaux singleton pour créer des objets de session.  Quand `GetInstanceAddress` est appelé, il crée un canal et un objet <xref:System.ServiceModel.EndpointAddress10> qui pointe vers l'adresse distante associée à ce canal.   <xref:System.ServiceModel.EndpointAddress10> est un type de données qui peut être renvoyé au client par valeur.
   
 ```csharp  
 public class SessionBoundFactory : ISessionBoundFactory  
     {  
-        public static ChannelFactory<ISessionBoundObject> _factory =   
+        public static ChannelFactory<ISessionBoundObject> _factory =
             new ChannelFactory<ISessionBoundObject>("sessionbound");  
   
         public SessionBoundFactory()  
@@ -328,7 +328,7 @@ public class SessionBoundFactory : ISessionBoundFactory
   
 2. Dans la section `<services>`, déclarez les points de terminaison de service pour la fabrique et l'objet de session.  Cela permet au client de communiquer avec les points de terminaison du service, d'acquérir <xref:System.ServiceModel.EndpointAddress10> et de créer le canal de session.  
   
- Voici un exemple de fichier de configuration avec ces paramètres :  
+ Ce qui suit est un fichier de configuration d’exemple avec ces paramètres :  
   
 ```xml  
 <configuration>  
@@ -343,12 +343,12 @@ public class SessionBoundFactory : ISessionBoundFactory
     <services>  
       <service name="Server.MySessionBoundObject">  
         <endpoint address="net.tcp://localhost:8081/SessionBoundObject"  
-                  binding="netTcpBinding"   
+                  binding="netTcpBinding"
                   contract="Shared.ISessionBoundObject" />  
       </service>  
       <service name="Server.SessionBoundFactory">  
         <endpoint address="net.tcp://localhost:8081/SessionBoundFactory"  
-                  binding="netTcpBinding"   
+                  binding="netTcpBinding"
                   contract="Shared.ISessionBoundFactory" />  
       </service>  
     </services>  
@@ -374,15 +374,15 @@ sessionBoundServiceHost.Open();
 <configuration>  
   <system.serviceModel>  
     <client>  
-      <endpoint name="sessionbound"   
-                address="net.tcp://localhost:8081/SessionBoundObject"   
-                binding="netTcpBinding"   
+      <endpoint name="sessionbound"
+                address="net.tcp://localhost:8081/SessionBoundObject"
+                binding="netTcpBinding"
                 contract="Shared.ISessionBoundObject"/>  
-      <endpoint name="factory"   
-                address="net.tcp://localhost:8081/SessionBoundFactory"   
-                binding="netTcpBinding"   
+      <endpoint name="factory"
+                address="net.tcp://localhost:8081/SessionBoundFactory"
+                binding="netTcpBinding"
                 contract="Shared.ISessionBoundFactory"/>  
-    </client>    
+    </client>
   </system.serviceModel>  
 </configuration>  
 ```  

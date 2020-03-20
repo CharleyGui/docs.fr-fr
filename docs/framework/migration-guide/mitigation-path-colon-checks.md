@@ -2,12 +2,12 @@
 title: 'Atténuation : Vérifications des signes deux-points dans les chemins d’accès'
 ms.date: 03/30/2017
 ms.assetid: a0bb52de-d279-419d-8f23-4b12d1a3f36e
-ms.openlocfilehash: e88643fea3bd507289436f41880a2de34117884f
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: c6e1106b6f5d8457417992941b9f28712d484442
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73457895"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79181243"
 ---
 # <a name="mitigation-path-colon-checks"></a>Atténuation : Vérifications des signes deux-points dans les chemins d’accès
 À compter des applications qui ciblent .NET Framework 4.6.2, plusieurs modifications ont été apportées pour prendre en charge les chemins d’accès non pris en charge précédemment (à la fois en termes de longueur et de format). En particulier, les vérifications de bonne syntaxe de séparateur de lecteur (le signe deux-points) ont été rendues plus correctes.  
@@ -15,7 +15,7 @@ ms.locfileid: "73457895"
 ## <a name="impact"></a>Impact  
  Ces modifications bloquent certains chemins d’URI que les méthodes <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=nameWithType> et <xref:System.IO.Path.GetPathRoot%2A?displayProperty=nameWithType> prenaient précédemment en charge.  
   
-## <a name="mitigation"></a>Atténuation  
+## <a name="mitigation"></a>Limitation des risques  
  Pour contourner le problème d’un chemin précédemment acceptable qui n’est plus pris en charge par les méthodes <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=nameWithType> et <xref:System.IO.Path.GetPathRoot%2A?displayProperty=nameWithType>, effectuez les étapes suivantes :  
   
 - Supprimez manuellement le schéma à partir d’une URL. Par exemple, supprimez `file://` à partir d’une URL.  
@@ -26,7 +26,7 @@ ms.locfileid: "73457895"
   
     ```xml  
     <runtime>  
-        <AppContextSwitchOverrides value="Switch.System.IO.UseLegacyPathHandling=true" />    
+        <AppContextSwitchOverrides value="Switch.System.IO.UseLegacyPathHandling=true" />
     </runtime>  
     ```  
   

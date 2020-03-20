@@ -18,51 +18,51 @@ helpviewer_keywords:
 ms.assetid: 58ba42c0-4857-43bf-a039-73a4dc6544c2
 topic_type:
 - apiref
-ms.openlocfilehash: 4e672030ae83b57da6f9ab66630513d79f28b8f1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7fbe0cf3e93d75749fa3f463f3f97dbd1bfe27a0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131989"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176537"
 ---
 # <a name="clrcreatemanagedinstance-function"></a>ClrCreateManagedInstance, fonction
-Crée une instance du type managé spécifié.  
+Crée une instance du type géré spécifié.  
   
- Cette fonction a été dépréciée dans le .NET Framework 4. Utilisez l’activation COM pour créer une instance du type managé ou utilisez l’hébergement (voir [interfaces d’hébergement CLR ajoutées au .NET Framework 4 et 4,5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)).  
+ Cette fonction a été dépréciée dans le cadre .NET 4. Utilisez l’activation COM pour créer une instance du type géré, ou utilisez l’hébergement (voir [interfaces d’hébergement CLR ajoutées dans le cadre .NET 4 et 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)).  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 STDAPI ClrCreateManagedInstance (  
-    [in]  LPCWSTR  pTypeName,   
-    [in]  REFIID   riid,   
+    [in]  LPCWSTR  pTypeName,
+    [in]  REFIID   riid,
     [out] void     **ppObject  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `pTypeName`  
- dans Pointeur vers le nom du type d’instance demandé.  
+ [dans] Un pointeur sur le nom du type d’instance demandé.  
   
  `riid`  
- dans `IID` du type d’instance demandé.  
+ [dans] Le `IID` type d’instance demandé.  
   
  `ppObject`  
- à Pointeur vers un pointeur vers une instance du type managé qui a été demandé par l’appelant.  
+ [out] Un pointeur à un pointeur à une instance du type géré qui a été demandé par l’appelant.  
   
-## <a name="remarks"></a>Notes  
- Le common language runtime doit déjà être chargé dans un processus. Par exemple, il peut être chargé à l’aide d’un appel à la fonction [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) avant l’appel de la fonction `ClrCreateManagedInstance`. Si le runtime n’est pas chargé, `ClrCreateManagedInstance` essaie tout d’abord de charger le v 1.0.3705 du Runtime. En cas d’échec, il tente de charger la version la plus récente du Runtime.  
+## <a name="remarks"></a>Notes   
+ L’heure d’exécution de langue commune devrait déjà être chargée dans un processus. Par exemple, il peut être chargé en utilisant un appel à `ClrCreateManagedInstance` la fonction [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) avant que la fonction ne soit appelée. Si le temps d’exécution n’est pas chargé, `ClrCreateManagedInstance` tente d’abord de charger v1.0.3705 du temps d’exécution. Si cela échoue, il tente de charger la dernière version de l’exécution.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE. h  
+ **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque:** MSCorEE.dll MSCorEE.dll MSCorEE.dll MSCor  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions d’hébergement CLR dépréciées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Fonction d'hébergement du CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
 - [Hébergement](../../../../docs/framework/unmanaged-api/hosting/index.md)

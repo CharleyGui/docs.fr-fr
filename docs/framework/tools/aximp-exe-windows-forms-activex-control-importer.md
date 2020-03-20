@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Aximp.exe
 - Windows Forms ActiveX Control Importer
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
-ms.openlocfilehash: a1b061b480b3e22b136a6373ddb87cf9d2233457
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 6d58d1df81780c3033eab7c1ac3e860adeb374b1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715783"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180428"
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a>Aximp.exe (Windows Forms ActiveX Control Importer)
 L'importateur de contrôles ActiveX convertit les définitions de types d'une bibliothèque de types COM associées à un contrôle ActiveX en un contrôle Windows Forms.  
@@ -24,7 +24,7 @@ L'importateur de contrôles ActiveX convertit les définitions de types d'une bi
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
- À l'invite de commandes, tapez le texte suivant :  
+ À l'invite de commandes, tapez :  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,22 +32,22 @@ L'importateur de contrôles ActiveX convertit les définitions de types d'une bi
 aximp [options]{file.dll | file.ocx}  
 ```  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
   
 |Argument|Description|  
 |--------------|-----------------|  
-|*fichier*|Nom du fichier source contenant le contrôle ActiveX à convertir. La valeur de cet argument doit présenter l'extension .dll ou .ocx.|  
+|*Fichier*|Nom du fichier source contenant le contrôle ActiveX à convertir. La valeur de cet argument doit présenter l'extension .dll ou .ocx.|  
   
 |Option|Description|  
 |------------|-----------------|  
 |`/delaysign`|Spécifie à Aximp.exe que le contrôle résultant doit être signé à l'aide du processus de signature différée. Vous devez spécifier cette option avec l’option `/keycontainer:`, `/keyfile:` ou `/publickey:`. Pour plus d’informations sur le processus de signature différée, consultez [Temporisation de signature d’un assembly](../../standard/assembly/delay-sign.md).|  
 |`/help`|Affiche la syntaxe et les options de commande de l'outil.|  
-|`/keycontainer:` *containerName*|Signe le contrôle obtenu avec un nom fort en utilisant la paire de clés publique/privée présente dans le conteneur de clé spécifié par *nom_conteneur*.|  
-|*nom de fichier* `/keyfile:`|Signe le contrôle résultant avec un nom fort en utilisant la paire de clés publique/privée officielle de l’éditeur présente dans *nom_fichier*.|  
+|`/keycontainer:`*containerName*|Signe le contrôle obtenu avec un nom fort en utilisant la paire de clés publique/privée présente dans le conteneur de clé spécifié par *nom_conteneur*.|  
+|`/keyfile:`*nom de fichier*|Signe le contrôle résultant avec un nom fort en utilisant la paire de clés publique/privée officielle de l’éditeur présente dans *nom_fichier*.|  
 |`/nologo`|Supprime l'affichage de la bannière de démarrage Microsoft.|  
-|*nom de fichier* `/out:`|Spécifie le nom de l'assembly à créer.|  
-|*nom de fichier* `/publickey:`|Signe le contrôle résultant avec un nom fort en utilisant la clé publique présente dans le fichier spécifié par *nom_fichier*.|  
-|*nom de fichier* `/rcw:`|Utilise le wrapper RCW spécifié plutôt que d'en générer un nouveau. Vous pouvez spécifier plusieurs instances. Le répertoire actif est utilisé pour les chemins d’accès relatifs. Pour plus d’informations, consultez [Wrapper pouvant être appelé par le runtime](../../standard/native-interop/runtime-callable-wrapper.md).|  
+|`/out:`*nom de fichier*|Spécifie le nom de l'assembly à créer.|  
+|`/publickey:`*nom de fichier*|Signe le contrôle résultant avec un nom fort en utilisant la clé publique présente dans le fichier spécifié par *nom_fichier*.|  
+|`/rcw:`*nom de fichier*|Utilise le wrapper RCW spécifié plutôt que d'en générer un nouveau. Vous pouvez spécifier plusieurs instances. Le répertoire actif est utilisé pour les chemins d’accès relatifs. Pour plus d’informations, consultez [Wrapper pouvant être appelé par le runtime](../../standard/native-interop/runtime-callable-wrapper.md).|  
 |`/silent`|Supprime l'affichage des messages indiquant la réussite des opérations.|  
 |`/source`|Génère le code source C# pour le wrapper Windows Forms.|  
 |`/verbose`|Spécifie le mode Commentaires ; affiche des informations supplémentaires sur la progression de l'opération.|  
@@ -70,10 +70,10 @@ aximp [options]{file.dll | file.ocx}
   
  L'utilisation d'Aximp.exe avec shdocvw.dll pour créer un assembly .NET en vue de son utilisation dans le développement d'une application peut également poser problème. Dans ce cas, votre application chargera la version système de shdocvw.dll ainsi que la version générée, et pourrait donner la priorité à la version système. Dans ce cas, lorsque vous essayez de charger une page web dans le contrôle webBrowser ActiveX, une boîte de dialogue Ouvrir/Enregistrer peut s’afficher. Si l’utilisateur clique sur **Ouvrir**, la page web s’ouvre dans Internet Explorer. Cela ne se produit que sur les ordinateurs exécutant Internet Explorer version 6 ou antérieure. Pour éviter ce problème, utilisez le contrôle <xref:System.Windows.Forms.WebBrowser> managé ou Visual Studio pour générer le fichier shdocvw.dll managé, comme décrit dans [Guide pratique pour ajouter des références aux bibliothèques de types](../interop/how-to-add-references-to-type-libraries.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  La commande suivante génère MediaPlayer.dll et AxMediaPlayer.dll pour le contrôle Media Player `msdxm.ocx`.  
   
-```console 
+```console
 aximp c:\systemroot\system32\msdxm.ocx  
 ```  
   

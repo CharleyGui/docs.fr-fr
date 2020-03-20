@@ -10,12 +10,12 @@ helpviewer_keywords:
 - SafeHandle class, run-time errors
 - MDAs (managed debugging assistants), handles
 ms.assetid: 44cd98ba-95e5-40a1-874d-e8e163612c51
-ms.openlocfilehash: 265344cb100a41cde5443cd0914dc66271aabf93
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 268acb01a6777315829378e6fd8c06c46d3136d2
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216114"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181748"
 ---
 # <a name="releasehandlefailed-mda"></a>releaseHandleFailed (MDA)
 L'Assistant Débogage managé (MDA) `releaseHandleFailed` est activé pour avertir les développeurs que la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> d'une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> ou de <xref:System.Runtime.InteropServices.CriticalHandle> retourne la valeur `false`.  
@@ -54,10 +54,10 @@ L'Assistant Débogage managé (MDA) `releaseHandleFailed` est activé pour avert
  Message indiquant qu’un <xref:System.Runtime.InteropServices.SafeHandle> ou un <xref:System.Runtime.InteropServices.CriticalHandle> n’a pas réussi à libérer correctement le handle. Par exemple :  
   
 ```output
-"A SafeHandle or CriticalHandle of type 'MyBrokenSafeHandle'   
-failed to properly release the handle with value 0x0000BEEF. This   
-usually indicates that the handle was released incorrectly via   
-another means (such as extracting the handle using DangerousGetHandle   
+"A SafeHandle or CriticalHandle of type 'MyBrokenSafeHandle'
+failed to properly release the handle with value 0x0000BEEF. This
+usually indicates that the handle was released incorrectly via
+another means (such as extracting the handle using DangerousGetHandle
 and closing it directly or building another SafeHandle around it."  
 ```  
   
@@ -71,18 +71,18 @@ and closing it directly or building another SafeHandle around it."
 </mdaConfig>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L'exemple de code suivant peut activer l'Assistant Débogage managé `releaseHandleFailed`.  
   
 ```csharp
 bool ReleaseHandle()  
 {  
-    // Calling the Win32 CloseHandle function to release the   
-    // native handle wrapped by this SafeHandle. This method returns   
-    // false on failure, but should only fail if the input is invalid   
-    // (which should not happen here). The method specifically must not   
-    // fail simply because of lack of resources or other transient   
-    // failures beyond the user’s control. That would make it unacceptable   
+    // Calling the Win32 CloseHandle function to release the
+    // native handle wrapped by this SafeHandle. This method returns
+    // false on failure, but should only fail if the input is invalid
+    // (which should not happen here). The method specifically must not
+    // fail simply because of lack of resources or other transient
+    // failures beyond the user’s control. That would make it unacceptable
     // to call CloseHandle as part of the implementation of this method.  
     return CloseHandle(handle);  
 }  
@@ -92,4 +92,4 @@ bool ReleaseHandle()
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)
+- [Marshaling d’interopérabilité](../interop/interop-marshaling.md)

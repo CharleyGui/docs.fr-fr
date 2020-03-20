@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 58ac8202-854d-4efd-acfb-d2da8b446e12
 topic_type:
 - apiref
-ms.openlocfilehash: 2d49a146a465210cea8466a75666ca3f800b090b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 95a798d662b44cf2e088af84d3b1eec97da8e7fb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450139"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177941"
 ---
 # <a name="corpropertyattr-enumeration"></a>CorPropertyAttr, énumération
 Contient des valeurs qui décrivent les métadonnées d'une propriété.  
@@ -29,7 +29,7 @@ Contient des valeurs qui décrivent les métadonnées d'une propriété.
 ```cpp  
 typedef enum CorPropertyAttr {  
   
-    prSpecialName           =   0x0200,   
+    prSpecialName           =   0x0200,
     prReservedMask          =   0xf400,  
     prRTSpecialName         =   0x0400,  
     prHasDefault            =   0x1000,  
@@ -42,18 +42,18 @@ typedef enum CorPropertyAttr {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`prSpecialName`|Spécifie que la propriété est spéciale et que son nom décrit comment.|  
-|`prReservedMask`|Réservé à un usage interne par la common language runtime.|  
-|`prRTSpecialName`|Spécifie que l’common language runtime les API internes de métadonnées doivent vérifier l’encodage du nom de la propriété.|  
+|`prSpecialName`|Précise que la propriété est spéciale, et que son nom décrit comment.|  
+|`prReservedMask`|Réservé à l’utilisation interne par l’heure courante de la langue commune.|  
+|`prRTSpecialName`|Spécifie que les métadonnées internes de métadonnées de langage courant doivent vérifier l’encodage du nom de la propriété.|  
 |`prHasDefault`|Spécifie que la propriété a une valeur par défaut.|  
-|`prUnused`|Non utilisé.|  
+|`prUnused`|Inutilisé.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorHdr. h  
+ **En-tête:** CorHdr.h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

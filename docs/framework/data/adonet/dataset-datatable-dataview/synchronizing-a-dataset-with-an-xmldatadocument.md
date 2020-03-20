@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fbc96fa9-b5d1-4f97-b099-c89b0e14ce2c
-ms.openlocfilehash: 272b76c0448da9e069fba331c3ae99c1de02ed16
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 2ee5b0937f24fac745f72cf6ef6e4bef9ec97ba8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784265"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150779"
 ---
 # <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>Synchronisation d'un DataSet et d'un XmlDataDocument
-Cette section décrit l’une des étapes du traitement d’un bon de commande à l’aide d’un objet <xref:System.Data.DataSet> fortement typé, synchronisé avec un objet <xref:System.Xml.XmlDataDocument>. Les exemples qui suivent créent un **jeu de données** avec un schéma réduit qui correspond uniquement à une partie du document XML source. Les exemples utilisent un **XmlDataDocument** pour préserver la fidélité du document XML source, ce qui permet d’utiliser le **DataSet** pour exposer un sous-ensemble du document XML.  
+Cette section décrit l’une des étapes du traitement d’un bon de commande à l’aide d’un objet <xref:System.Data.DataSet> fortement typé, synchronisé avec un objet <xref:System.Xml.XmlDataDocument>. Les exemples qui suivent créent un **Ensemble de données** avec un schéma minimisé qui ne correspond qu’à une partie du document source XML. Les exemples utilisent un **XmlDataDocument** pour préserver la fidélité du document source XML, permettant au **DataSet** d’être utilisé pour exposer un sous-ensemble du document XML.  
   
  Le document XML suivant contient toutes les informations relatives à un bon de commande : les informations client, les articles commandés, les informations de livraison, etc.  
   
@@ -109,15 +109,15 @@ Cette section décrit l’une des étapes du traitement d’un bon de commande �
 </PurchaseOrder>  
 ```  
   
- L'une des étapes du traitement des informations du bon de commande contenues dans le document XML précédent consiste à satisfaire la commande en allant chercher les articles dans le stock actuel de la société. L'employé chargé de cette tâche n'a pas besoin pour ce faire de voir l'intégralité du contenu du bon de commande ; il lui suffit de connaître les références des produits commandés. Pour exposer uniquement les informations sur les produits à partir du document XML, créez un **DataSet** fortement typé avec un schéma, écrit sous la forme d’un schéma en langage XSD (XML Schema Definition), qui mappe aux produits et aux quantités commandées. Pour plus d’informations sur les objets **DataSet** fortement typés, consultez [DataSets typés](typed-datasets.md).  
+ L'une des étapes du traitement des informations du bon de commande contenues dans le document XML précédent consiste à satisfaire la commande en allant chercher les articles dans le stock actuel de la société. L'employé chargé de cette tâche n'a pas besoin pour ce faire de voir l'intégralité du contenu du bon de commande ; il lui suffit de connaître les références des produits commandés. Pour exposer uniquement les informations du produit à partir du document XML, créez un **DataSet** fortement tapé avec un schéma, écrit sous le nom de schéma de définition XML Schema (XSD), qui cartographie les produits et les quantités commandés. Pour plus d’informations sur les objets **DataSet** fortement tapés, voir [Typed DataSets](typed-datasets.md).  
   
- Le code suivant montre le schéma à partir duquel le **DataSet** fortement typé est généré pour cet exemple.  
+ Le code suivant montre le schéma à partir duquel le **DataSet** fortement tapé est généré pour cet échantillon.  
   
 ```xml  
 <?xml version="1.0" standalone="yes"?>  
-<xs:schema id="OrderDetail" xmlns=""   
-                            xmlns:xs="http://www.w3.org/2001/XMLSchema"   
-                            xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"   
+<xs:schema id="OrderDetail" xmlns=""
+                            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                            xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"
                             xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
   <xs:element name="OrderDetail" msdata:IsDataSet="true">  
     <xs:complexType>  
@@ -157,11 +157,11 @@ Cette section décrit l’une des étapes du traitement d’un bon de commande �
 </xs:schema>  
 ```  
   
- Notez que seules les informations des éléments **OrderDetails** et **Products** du document XML d’origine sont incluses dans le schéma du **DataSet**. La synchronisation du **DataSet** avec un **XmlDataDocument** permet de s’assurer que les éléments qui ne sont pas inclus dans le **DataSet** seront conservés avec le document XML.  
+ Notez que seules les informations provenant des éléments **OrderDetails** and **Products** du document XML original sont incluses dans le schéma du **DataSet**. La synchronisation du **DataSet** avec un **XmlDataDocument** garantit que les éléments non inclus dans le **DataSet** persisteront avec le document XML.  
   
- Avec le **DataSet** fortement typé généré à partir du schéma XML (avec l’espace de noms **Northwind. FillOrder**), une partie du document XML d’origine peut être exposée via la synchronisation du **DataSet** avec le **XmlDataDocument** chargé à partir du document XML source. Notez que le **jeu** de données généré à partir du schéma contient une structure mais aucune donnée. Les données sont renseignées lorsque vous chargez le XML dans le **XmlDataDocument**. Si vous tentez de charger un **XmlDataDocument** qui a été synchronisé avec un **DataSet** qui contient déjà des données, une exception est levée.  
+ Avec le **DataSet** fortement tapé généré à partir de la schéma XML (avec un namespace de **Northwind.FillOrder**), une partie du document XML original peut être exposée en synchronisant le **DataSet** avec le **XmlDataDocument** chargé à partir du document source XML. Notez que le **DataSet** généré à partir du schéma contient la structure, mais pas de données. Les données sont remplies lorsque vous chargez le XML dans le **XmlDataDocument**. Si vous essayez de charger un **XmlDataDocument** qui a été synchronisé avec un **DataSet** qui contient déjà des données, une exception sera lancée.  
   
- Après la mise à jour du **DataSet** (et du **XmlDataDocument**), le **XmlDataDocument** peut ensuite écrire le document XML modifié avec les éléments ignorés par le **jeu de données** , comme indiqué ci-dessous. Dans le scénario du bon de commande, une fois que les articles commandés ont été sortis du magasin, le document XML modifié peut passer à l'étape suivante du traitement de la commande, peut-être au service livraison de la société.  
+ Après la mise à jour du **DataSet** (et du **XmlDataDocument),** le **XmlDataDocument** peut ensuite rédiger le document XML modifié avec les éléments ignorés par le **DataSet** encore intacts, comme indiqué ci-dessous. Dans le scénario du bon de commande, une fois que les articles commandés ont été sortis du magasin, le document XML modifié peut passer à l'étape suivante du traitement de la commande, peut-être au service livraison de la société.  
   
 ```vb  
 Imports System  
@@ -174,7 +174,7 @@ Public class Sample
   
     Dim orderDS As OrderDetail = New OrderDetail  
   
-    Dim xmlDocument As XmlDataDocument = New XmlDataDocument(orderDS)   
+    Dim xmlDocument As XmlDataDocument = New XmlDataDocument(orderDS)
   
     xmlDocument.Load("Order.xml")  
   
@@ -208,9 +208,9 @@ public class Sample
 {  
   public static void Main()  
   {  
-    OrderDetail orderDS = new OrderDetail();   
+    OrderDetail orderDS = new OrderDetail();
   
-    XmlDataDocument xmlDocument = new XmlDataDocument(orderDS);   
+    XmlDataDocument xmlDocument = new XmlDataDocument(orderDS);
   
     xmlDocument.Load("Order.xml");  
   
@@ -234,4 +234,4 @@ public class Sample
 ## <a name="see-also"></a>Voir aussi
 
 - [Synchronisation DataSet et XmlDataDocument](dataset-and-xmldatadocument-synchronization.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

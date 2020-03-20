@@ -1,15 +1,15 @@
 ---
-title: Élément <ImpliesType> (.NET Native)
+title: <ImpliesType>Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 3abd2071-0f28-40ba-b9a0-d52bd94cd2f6
-ms.openlocfilehash: 2f0ce1a1587e190627212cba07db298c12f4b30e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 57f4208233cd5e8544b4f1c254e3b0e0eaacd508
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128391"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181013"
 ---
-# <a name="impliestype-element-net-native"></a>\<élément ImpliesType > (.NET Native)
+# <a name="impliestype-element-net-native"></a>\<ImpliesType> Element (.NET Native)
 Applique la stratégie à un type, si cette stratégie a été appliquée à la méthode ou au type conteneur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -19,7 +19,7 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
              Activate="policy_type"  
              Browse="policy_type"  
              Dynamic="policy_type"  
-             Serialize="policy_type"   
+             Serialize="policy_type"
              DataContractSerializer="policy_setting"  
              DataContractJsonSerializer="policy_setting"  
              XmlSerializer="policy_setting"  
@@ -49,18 +49,18 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*type_name*|Nom du type. Si le type représenté par cet élément `<ImpliesType>` se trouve dans le même espace de noms que son élément `<Type>` conteneur, *type_name* peut inclure le nom du type sans son espace de noms. Dans le cas contraire, *type_name* doit inclure le nom de type complet.|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -68,9 +68,9 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
 |-------------|-----------------|  
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
-|[\<Method>](method-element-net-native.md)|Applique la stratégie de réflexion à une méthode.|  
+|[\<Méthode>](method-element-net-native.md)|Applique la stratégie de réflexion à une méthode.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  L'élément `<ImpliesType>` est essentiellement conçu pour une utilisation par des bibliothèques. Il traite le scénario suivant :  
   
 - Si une routine a besoin de réfléchir un type, elle doit nécessairement réfléchir un second type.  
@@ -89,7 +89,7 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
   
  Cette directive n'a d'effet que si une instanciation d'`Explicit` possède un paramètre de stratégie `Dynamic` défini. Par exemple, si c'est le cas pour `Explicit<Int32>`, `Implicit<Int32>` est instancié avec ses membres publics associés à une racine, et leurs métadonnées sont accessibles pour une programmation dynamique.  
   
- Voici un exemple concret qui s'applique à au moins un sérialiseur. Les directives capturent le fait que la réflexion d’un élément de type `IList<`*quelque chose*`>` implique nécessairement la réflexion du type `List<`*quelque chose*`>` correspondant sans nécessiter d’annotation par application.  
+ Voici un exemple concret qui s'applique à au moins un sérialiseur. Les directives saisissent l’exigence selon `IList<`laquelle la réflexion sur quelque chose dactylographie comme *quelque chose* `>` consiste également à réfléchir sur le type `List<` *de quelque chose* `>` correspondant sans exiger aucune annotation par application.  
   
 ```xml  
 <Type Name="System.Collections.Generic.IList{T}">  
@@ -97,7 +97,7 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
 </Type>  
 ```  
   
- L'élément `<ImpliesType>` peut également apparaître dans un élément `<Method>`, car dans certains cas l'instanciation d'une méthode générique implique la réflexion d'une instanciation de type. Par exemple, Imaginez une méthode générique `IEnumerable<T> MakeEnumerable<T>(string spelling, T defaultValue)` qu’une bibliothèque donnée accède dynamiquement aux types d' <xref:System.Collections.Generic.List%601> et de <xref:System.Array> associés. Cela peut être exprimé sous la forme :  
+ L'élément `<ImpliesType>` peut également apparaître dans un élément `<Method>`, car dans certains cas l'instanciation d'une méthode générique implique la réflexion d'une instanciation de type. Par exemple, imaginez une méthode générique `IEnumerable<T> MakeEnumerable<T>(string spelling, T defaultValue)` à laquelle une bibliothèque donnée accède dynamiquement, ainsi qu’aux types <xref:System.Collections.Generic.List%601> et <xref:System.Array> associés. Cela peut être exprimé sous la forme :  
   
 ```xml  
 <Type Name="MyType">  
@@ -110,6 +110,6 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Informations de référence sur le fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)

@@ -1,15 +1,15 @@
 ---
-title: Mise en forme de HTTP Web WCF
+title: Formatage WCF Web HTTP
 ms.date: 03/30/2017
 ms.assetid: e2414896-5463-41cd-b0a6-026a713eac2c
-ms.openlocfilehash: 884193dc26794be5e8a3c95e05be2ca43a90f6e2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b6c9728fe40e26977366b73337e72b1514a12a19
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64643468"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184199"
 ---
-# <a name="wcf-web-http-formatting"></a>Mise en forme de HTTP Web WCF
+# <a name="wcf-web-http-formatting"></a>Formatage WCF Web HTTP
 Le modèle de programmation HTTP Web WCF vous permet de déterminer dynamiquement le format le plus approprié pour permettre à une opération de service de retourner sa réponse. Deux méthodes pour déterminer le format approprié sont prises en charge : automatique et explicite.  
   
 ## <a name="automatic-formatting"></a>Mise en forme automatique  
@@ -23,10 +23,10 @@ Le modèle de programmation HTTP Web WCF vous permet de déterminer dynamiquemen
   
 4. Paramètre de format par défaut dans le WebHttpBehavior.  
   
- Si le message de demande contient un en-tête Accept l’infrastructure Windows Communication Foundation (WCF) recherche un type pris en charge. Si l'en-tête `Accept` spécifie des priorités pour ses types de médias, elles sont respectées. Si aucun format approprié ne se trouve dans l'en-tête `Accept`, le type de contenu du message de demande est utilisé. Si aucun type de contenu approprié n'est spécifié, le paramètre de format par défaut de l'opération est utilisé. Le format par défaut est défini par le paramètre `ResponseFormat` des attributs <xref:System.ServiceModel.Web.WebGetAttribute> et <xref:System.ServiceModel.Web.WebInvokeAttribute>. Si aucun format par défaut n'est spécifié sur l'opération, la valeur de la propriété <xref:System.ServiceModel.Description.WebHttpBehavior.DefaultOutgoingResponseFormat%2A> est utilisée. La mise en forme automatique s'appuie sur la propriété <xref:System.ServiceModel.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled%2A>. Lorsque cette propriété a la valeur `true`, l'infrastructure WCF détermine le meilleur format à utiliser. La sélection automatique du format est désactivée par défaut à des fins de compatibilité descendante. La sélection automatique du format peut être activée par programme ou par configuration. L'exemple suivant montre comment activer la sélection automatique du format dans le code.  
+ Si le message de demande contient un en-tête Accept, l’infrastructure de la Windows Communication Foundation (WCF) recherche un type qu’il prend en charge. Si l'en-tête `Accept` spécifie des priorités pour ses types de médias, elles sont respectées. Si aucun format approprié ne se trouve dans l'en-tête `Accept`, le type de contenu du message de demande est utilisé. Si aucun type de contenu approprié n'est spécifié, le paramètre de format par défaut de l'opération est utilisé. Le format par défaut est défini par le paramètre `ResponseFormat` des attributs <xref:System.ServiceModel.Web.WebGetAttribute> et <xref:System.ServiceModel.Web.WebInvokeAttribute>. Si aucun format par défaut n'est spécifié sur l'opération, la valeur de la propriété <xref:System.ServiceModel.Description.WebHttpBehavior.DefaultOutgoingResponseFormat%2A> est utilisée. La mise en forme automatique s'appuie sur la propriété <xref:System.ServiceModel.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled%2A>. Lorsque cette propriété a la valeur `true`, l'infrastructure WCF détermine le meilleur format à utiliser. La sélection automatique du format est désactivée par défaut à des fins de compatibilité descendante. La sélection automatique du format peut être activée par programme ou par configuration. L'exemple suivant montre comment activer la sélection automatique du format dans le code.  
   
 ```csharp
-// This code assumes the service name is MyService and the service contract is IMyContract     
+// This code assumes the service name is MyService and the service contract is IMyContract
 Uri baseAddress = new Uri("http://localhost:8000");  
   
 WebServiceHost host = new WebServiceHost(typeof(MyService), baseAddress)  
@@ -47,7 +47,7 @@ try
       sep.Behaviors.Add(webBehavior);  
    }  
          // Open host to start listening for messages  
-   host.Open();        
+   host.Open();
   
   // ...  
 }  
@@ -90,7 +90,7 @@ try
   </system.serviceModel>  
 ```  
   
-## <a name="explicit-formatting"></a>Explicit mise en forme  
+## <a name="explicit-formatting"></a>Formatage explicite  
  Comme son nom l'indique, dans une mise en forme explicite le développeur détermine le meilleur format à utiliser dans le code d'opération. Si le meilleur format est XML ou JSON, le développeur affecte à la propriété <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> la valeur <xref:System.ServiceModel.Web.WebMessageFormat.Xml> ou <xref:System.ServiceModel.Web.WebMessageFormat.Json>. Si la propriété <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> n'est pas définie de manière explicite, le format par défaut de l'opération est utilisé.  
   
  L'exemple suivant cherche un format à utiliser dans le paramètre de chaîne de demande du format. S'il a été spécifié, il définit le format de l'opération à l'aide de la propriété <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A>.  
@@ -167,7 +167,7 @@ public class Service : IService
 
 - <xref:System.UriTemplate>
 - <xref:System.UriTemplateMatch>
-- [Modèle de programmation HTTP web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Modèle de programmation HTTP Web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
 - [UriTemplate et UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)
-- [Vue d’ensemble du modèle de programmation HTTP web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+- [Vue d'ensemble du modèle de programmation Web HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
 - [Modèle objet de programmation HTTP web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)

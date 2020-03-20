@@ -4,12 +4,12 @@ ms.date: 09/07/2017
 helpviewer_keywords:
 - COM interop, data marshaling
 - marshaling data, COM interop
-ms.openlocfilehash: 24fa390c94baaa0fe009ebe513f2eb7aa34d34fa
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ae41713d5349321725599c0c38d7c6fc515c374b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73113998"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181374"
 ---
 # <a name="marshaling-data-with-com-interop"></a>marshaler des données avec COM Interop
 COM Interop prend en charge l'utilisation des objets COM à partir de code managé, ainsi que l'exposition des objets managés à COM. La prise en charge du marshaling des données vers et depuis COM est complète et fournit quasiment toujours le comportement de marshaling approprié.  
@@ -23,9 +23,8 @@ COM Interop prend en charge l'utilisation des objets COM à partir de code mana
  Les sections suivantes fournissent des liens vers des rubriques qui décrivent les processus de personnalisation des wrappers d’interopérabilité quand vous pouvez (ou devez) fournir au marshaleur des informations supplémentaires concernant les types.  
   
 ## <a name="in-this-section"></a>Dans cette section  
-[Guide pratique pour créer manuellement des wrappers](how-to-create-wrappers-manually.md)   
-Décrit comment créer manuellement un wrapper COM dans du code source managé. 
- 
+[Comment : Créer des emballages manuellement](how-to-create-wrappers-manually.md) Décrit comment créer un emballage COM manuellement dans le code source géré.
+
  [Comment : migrer DCOM de code managé vers WCF](how-to-migrate-managed-code-dcom-to-wcf.md)  
  Décrit comment migrer du code DCOM managé vers WCF pour obtenir la solution la plus sécurisée.  
   
@@ -36,7 +35,7 @@ Décrit comment créer manuellement un wrapper COM dans du code source managé.
  [Personnalisation des wrappers CCW (COM Callable Wrapper)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3bwc828w(v=vs.100))  
  Décrit comment marshaler explicitement des types de données à l’aide de l’attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute> au moment du design.  
   
- [Personnalisation des wrappers RCW (Runtime Callable Wrapper)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))  
+ [Personnaliser des wrappers RCW (Runtime Callable Wrapper)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))  
  Décrit comment ajuster le comportement de marshaling des types dans un assembly d'interopérabilité et comment définir des types COM manuellement.  
   
  [Interopérabilité COM avancée](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))  

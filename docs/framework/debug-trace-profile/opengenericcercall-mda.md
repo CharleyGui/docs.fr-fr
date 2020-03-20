@@ -10,12 +10,12 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), CER calls
 - generics [.NET Framework], open generic CER calls
 ms.assetid: da3e4ff3-2e67-4668-9720-fa776c97407e
-ms.openlocfilehash: de1735103314dfedbabe27623f579ce2c1e728af
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 7492a4c0547680a6ace85a5f7c98567770f5575a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217278"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181782"
 ---
 # <a name="opengenericcercall-mda"></a>openGenericCERCall (MDA)
 
@@ -29,7 +29,7 @@ Le code de la région d’exécution limitée ne s’exécute pas quand un threa
 
 Au moment de la compilation JIT, une instanciation contenant un type de référence d’objet est seulement représentative, car le code obtenu est partagé et chacune des variables de type de référence d’objet peut être n’importe quel type de référence d’objet. Ceci peut empêcher la préparation de certaines ressources préalablement à l’exécution.
 
-En particulier, les méthodes avec des variables de type générique peuvent allouer tardivement des ressources en arrière-plan. Celles-ci sont appelées des entrées de dictionnaire génériques. Par exemple, pour l’instruction `List<T> list = new List<T>();` où `T` est une variable de type générique, le runtime doit rechercher et éventuellement créer l’instanciation exacte au moment de l’exécution, par exemple, `List<Object>, List<String>`, etc. Cette opération peut échouer pour différentes raisons qui échappent au contrôle du développeur, comme l’insuffisance de mémoire.
+En particulier, les méthodes avec des variables de type générique peuvent allouer tardivement des ressources en arrière-plan. Celles-ci sont appelées des entrées de dictionnaire génériques. Par exemple, pour `List<T> list = new List<T>();` `T` l’énoncé où est une variable de type générique, le temps d’exécution doit lever les 200 heures et peut-être créer l’instantanéisation exacte au moment de l’exécution, par exemple, `List<Object>, List<String>`et ainsi de suite. Cette opération peut échouer pour différentes raisons qui échappent au contrôle du développeur, comme l’insuffisance de mémoire.
 
 Cet Assistant Débogage managé doit être activé seulement au moment de la compilation JIT, et non pas quand il existe une instanciation exacte.
 
@@ -45,11 +45,11 @@ Cet Assistant Débogage managé n'a aucun effet sur le CLR.
 
 ## <a name="output"></a>Output
 
-Voici un exemple de sortie de cet Assistant Débogage managé :
+Voici un échantillon de sortie de cette MDA :
   
  ```output
  Method 'GenericMethodWithCer', which contains at least one constrained execution region, cannot be prepared automatically since it has one or more unbound generic type parameters.
- The caller must ensure this method is prepared explicitly at run time prior to execution. 
+ The caller must ensure this method is prepared explicitly at run time prior to execution.
  method name="GenericMethodWithCer"
  declaringType name="OpenGenericCERCall"
  ```
@@ -64,7 +64,7 @@ Voici un exemple de sortie de cet Assistant Débogage managé :
 </mdaConfig>
 ```  
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Le code de la région d’exécution limitée n’est pas exécuté.
 
@@ -86,7 +86,7 @@ class Program
         MyClass.GenericMethodWithCer<int>();
 
         // This call is incorrect. A shared version of the method that
-        // cannot be completely analyzed will be JIT-compiled. The 
+        // cannot be completely analyzed will be JIT-compiled. The
         // MDA will be activated at JIT-compile time, not at run time.
         MyClass.GenericMethodWithCer<String>();
     }

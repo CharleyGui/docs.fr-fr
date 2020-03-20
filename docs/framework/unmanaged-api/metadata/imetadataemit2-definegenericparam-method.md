@@ -15,60 +15,60 @@ helpviewer_keywords:
 ms.assetid: 47b2a3b6-907d-43dc-858d-1ae7dca1316a
 topic_type:
 - apiref
-ms.openlocfilehash: 3898b095809e2b84f71aba2036f4d7a294dfdf6a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1868d13a9dbb73dbdf64e49c395bdbff02ce89d4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444652"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177455"
 ---
 # <a name="imetadataemit2definegenericparam-method"></a>IMetaDataEmit2::DefineGenericParam, méthode
-Crée une définition pour un paramètre de type générique et obtient un jeton pour ce paramètre de type générique.  
+Crée une définition pour un paramètre de type générique, et obtient un jeton à ce paramètre de type générique.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineGenericParam (   
-    [in]  mdToken         tk,   
-    [in]  ULONG           ulParamSeq,   
-    [in]  DWORD           dwParamFlags,   
-    [in]  LPCWSTR         szname,   
-    [in]  DWORD           reserved,   
-    [in]  mdToken         rtkConstraints[],   
+HRESULT DefineGenericParam (
+    [in]  mdToken         tk,
+    [in]  ULONG           ulParamSeq,
+    [in]  DWORD           dwParamFlags,
+    [in]  LPCWSTR         szname,
+    [in]  DWORD           reserved,
+    [in]  mdToken         rtkConstraints[],
     [out] mdGenericParam  *pgp  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- dans Jeton `mdTypeDef` ou `mdMethodDef` qui représente la méthode ou le constructeur pour lequel définir un paramètre générique.  
+ [dans] Un `mdTypeDef` `mdMethodDef` ou un jeton qui représente la méthode ou le constructeur pour lequel définir un paramètre générique.  
   
  `ulParamSeq`  
- dans Index du paramètre générique.  
+ [dans] L’index du paramètre générique.  
   
  `dwParamFlags`  
- dans Valeur de l’énumération [CorGenericParamAttr,](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) qui décrit le type du paramètre générique.  
+ [dans] Une valeur de l’énumération [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) qui décrit le type pour le paramètre générique.  
   
  `szname`  
- dans Nom du paramètre.  
+ [dans] Le nom du paramètre.  
   
  `reserved`  
- dans Ce paramètre est réservé pour une future extensibilité.  
+ [dans] Ce paramètre est réservé à l’extéabilité future.  
   
  `rtkConstraints`  
- dans Tableau de contraintes de type se terminant par zéro. Les membres de tableau doivent être un jeton de métadonnées `mdTypeDef`, `mdTypeRef`ou `mdTypeSpec`.  
+ [dans] Un éventail de contraintes de type à durée nulle. Les membres du `mdTypeDef` `mdTypeRef`tableau `mdTypeSpec` doivent être un jeton, ou métadonnées.  
   
  `pgp`  
- à Jeton qui représente le paramètre générique.  
+ [out] Un jeton qui représente le paramètre générique.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

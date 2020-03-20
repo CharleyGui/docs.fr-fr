@@ -11,12 +11,12 @@ helpviewer_keywords:
 - COM interop, HRESULTs
 - COM interop, exceptions
 ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
-ms.openlocfilehash: 13dcca5f35750ad3e8bd6ea4f6dd443fe9a8ee94
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e186228d1dc9a42ddfe92428f7dfad29a5789095
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123879"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181406"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>Comment : mapper des HRESULT et des exceptions
 Les méthodes COM signalent les erreurs en retournant des HRESULT ; les méthodes .NET les signalent en levant des exceptions. Le runtime gère la transition entre les deux. Chaque classe d’exception dans le .NET Framework est mappée à une valeur HRESULT.  
@@ -35,7 +35,7 @@ Les méthodes COM signalent les erreurs en retournant des HRESULT ; les méthod
     Class NoAccessException : public ApplicationException  
     {  
         NoAccessException () {  
-        HResult = E_ACCESSDENIED;   
+        HResult = E_ACCESSDENIED;
     }  
     }  
     CMyClass::MethodThatThrows  
@@ -59,16 +59,16 @@ CMyClass::MethodThatThrows
 |-------------|--------------------|  
 |**MSEE_E_APPDOMAINUNLOADED**|**AppDomainUnloadedException**|  
 |**COR_E_APPLICATION**|**ApplicationException**|  
-|**COR_E_ARGUMENT ou E_INVALIDARG**|**ArgumentException**|  
+|**COR_E_ARGUMENT or E_INVALIDARG**|**ArgumentException**|  
 |**COR_E_ARGUMENTOUTOFRANGE**|**ArgumentOutOfRangeException**|  
-|**COR_E_ARITHMETIC ou ERROR_ARITHMETIC_OVERFLOW**|**ArithmeticException**|  
+|**COR_E_ARITHMETIC or ERROR_ARITHMETIC_OVERFLOW**|**ArithmeticException**|  
 |**COR_E_ARRAYTYPEMISMATCH**|**ArrayTypeMismatchException**|  
-|**COR_E_BADIMAGEFORMAT ou ERROR_BAD_FORMAT**|**BadImageFormatException**|  
+|**COR_E_BADIMAGEFORMAT or ERROR_BAD_FORMAT**|**BadImageFormatException**|  
 |**COR_E_COMEMULATE_ERROR**|**COMEmulateException**|  
 |**COR_E_CONTEXTMARSHAL**|**ContextMarshalException**|  
-|**COR_E_CORE**|**CoreException**|  
+|**COR_E_CORE**|**CoreException (CoreException)**|  
 |**NTE_FAIL**|**CryptographicException**|  
-|**COR_E_DIRECTORYNOTFOUND ou ERROR_PATH_NOT_FOUND**|**DirectoryNotFoundException**|  
+|**COR_E_DIRECTORYNOTFOUND or ERROR_PATH_NOT_FOUND**|**DirectoryNotFoundException**|  
 |**COR_E_DIVIDEBYZERO**|**DivideByZeroException**|  
 |**COR_E_DUPLICATEWAITOBJECT**|**DuplicateWaitObjectException**|  
 |**COR_E_ENDOFSTREAM**|**EndOfStreamException**|  
@@ -76,10 +76,10 @@ CMyClass::MethodThatThrows
 |**COR_E_EXCEPTION**|**Exception**|  
 |**COR_E_EXECUTIONENGINE**|**ExecutionEngineException**|  
 |**COR_E_FIELDACCESS**|**FieldAccessException**|  
-|**COR_E_FILENOTFOUND ou ERROR_FILE_NOT_FOUND**|**FileNotFoundException**|  
+|**COR_E_FILENOTFOUND or ERROR_FILE_NOT_FOUND**|**FileNotFoundException**|  
 |**COR_E_FORMAT**|**FormatException**|  
 |**COR_E_INDEXOUTOFRANGE**|**IndexOutOfRangeException**|  
-|**COR_E_INVALIDCAST ou E_NOINTERFACE**|**InvalidCastException**|  
+|**COR_E_INVALIDCAST or E_NOINTERFACE**|**InvalidCastException**|  
 |**COR_E_INVALIDCOMOBJECT**|**InvalidComObjectException**|  
 |**COR_E_INVALIDFILTERCRITERIA**|**InvalidFilterCriteriaException**|  
 |**COR_E_INVALIDOLEVARIANTTYPE**|**InvalidOleVariantTypeException**|  
@@ -90,24 +90,24 @@ CMyClass::MethodThatThrows
 |**COR_E_MISSINGFIELD**|**MissingFieldException**|  
 |**COR_E_MISSINGMANIFESTRESOURCE**|**MissingManifestResourceException**|  
 |**COR_E_MISSINGMEMBER**|**MissingMemberException**|  
-|**COR_E_MISSINGMETHOD**|**MissingMethodException**|  
+|**COR_E_MISSINGMETHOD**|**MissingMethodException (en anglais)**|  
 |**COR_E_MULTICASTNOTSUPPORTED**|**MulticastNotSupportedException**|  
 |**COR_E_NOTFINITENUMBER**|**NotFiniteNumberException**|  
 |**E_NOTIMPL**|**NotImplementedException**|  
 |**COR_E_NOTSUPPORTED**|**NotSupportedException**|  
-|**COR_E_NULLREFERENCE ou E_POINTER**|**NullReferenceException**|  
-|**COR_E_OUTOFMEMORY ou**<br /><br /> **E_OUTOFMEMORY**|**OutOfMemoryException**|  
+|**COR_E_NULLREFERENCE orE_POINTER**|**NullReferenceException**|  
+|**COR_E_OUTOFMEMORY or**<br /><br /> **E_OUTOFMEMORY**|**OutOfMemoryException**|  
 |**COR_E_OVERFLOW**|**OverflowException**|  
-|**COR_E_PATHTOOLONG ou ERROR_FILENAME_EXCED_RANGE**|**PathTooLongException**|  
+|**COR_E_PATHTOOLONG or ERROR_FILENAME_EXCED_RANGE**|**PathTooLongException**|  
 |**COR_E_RANK**|**RankException**|  
 |**COR_E_REFLECTIONTYPELOAD**|**ReflectionTypeLoadException**|  
 |**COR_E_REMOTING**|**RemotingException**|  
 |**COR_E_SAFEARRAYTYPEMISMATCH**|**SafeArrayTypeMismatchException**|  
 |**COR_E_SECURITY**|**SecurityException**|  
 |**COR_E_SERIALIZATION**|**SerializationException**|  
-|**COR_E_STACKOVERFLOW ou ERROR_STACK_OVERFLOW**|**StackOverflowException**|  
+|**COR_E_STACKOVERFLOW orERROR_STACK_OVERFLOW**|**StackOverflowException**|  
 |**COR_E_SYNCHRONIZATIONLOCK**|**SynchronizationLockException**|  
-|**COR_E_SYSTEM**|**SystemException**|  
+|**COR_E_SYSTEM**|**Systemexception**|  
 |**COR_E_TARGET**|**TargetException**|  
 |**COR_E_TARGETINVOCATION**|**TargetInvocationException**|  
 |**COR_E_TARGETPARAMCOUNT**|**TargetParameterCountException**|  
@@ -130,12 +130,12 @@ CMyClass::MethodThatThrows
   
 |Champ d’exception|Source d’informations à partir de COM|  
 |---------------------|------------------------------------|  
-|**ErrorCode**|HRESULT retourné à l’issue de l’appel.|  
+|**Errorcode**|HRESULT retourné à l’issue de l’appel.|  
 |**HelpLink**|Si **IErrorInfo->HelpContext** est différent de zéro, la chaîne est formée en concaténant **IErrorInfo->GetHelpFile**, « # » et **IErrorInfo->GetHelpContext**. Sinon, la chaîne est retournée depuis **IErrorInfo->GetHelpFile**.|  
-|**InnerException**|Toujours une référence null (**Nothing** en Visual Basic).|  
+|**InnerException**|Toujours une référence nulle **(Rien** dans Visual Basic).|  
 |**Message**|Chaîne retournée depuis **IErrorInfo->GetDescription**.|  
-|**Source**|Chaîne retournée depuis **IErrorInfo->GetSource**.|  
-|**StackTrace**|Trace de la pile.|  
+|**source**|Chaîne retournée depuis **IErrorInfo->GetSource**.|  
+|**StackTrace (en)**|Trace de la pile.|  
 |**TargetSite**|Nom de la méthode ayant retourné la valeur HRESULT qui a échoué.|  
   
  Les champs d’exception, tels que **Message**, **Source** et **StackTrace** ne sont pas disponibles pour **StackOverflowException**.  

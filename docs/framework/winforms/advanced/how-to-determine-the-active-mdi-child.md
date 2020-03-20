@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : déterminer l’enfant MDI actif'
+title: "Comment : déterminer l'enfant MDI actif"
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,26 +11,26 @@ helpviewer_keywords:
 - MDI [Windows Forms], activating forms
 - MDI [Windows Forms], locating focus
 ms.assetid: 33880ec3-0207-4c2b-a616-ff140443cc0f
-ms.openlocfilehash: 91100b37e4cae9041479b209e40034efe376df5b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 57491faa10c182630d41565ba236d65e393929b3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946220"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182545"
 ---
-# <a name="how-to-determine-the-active-mdi-child"></a>Procédure : déterminer l’enfant MDI actif
-À l’occasion, vous souhaiterez peut-être fournir une commande qui opère sur le contrôle qui a le focus sur le formulaire enfant actif. Par exemple, supposons que vous souhaitiez copier le texte sélectionné de la zone de texte du formulaire enfant vers le presse-papiers. Vous créez une procédure qui copie le texte sélectionné dans le presse-papiers <xref:System.Windows.Forms.Control.Click> à l’aide de l’événement de l’élément de menu copier du menu Edition standard.  
+# <a name="how-to-determine-the-active-mdi-child"></a>Comment : déterminer l'enfant MDI actif
+À l’occasion, vous voudrez fournir une commande qui fonctionne sur le contrôle qui a mis l’accent sur la forme d’enfant actuellement actif. Supposons, par exemple, que vous souhaitez copier du texte sélectionné entre la boîte texte du formulaire enfant et le Clipboard. Vous créeriez une procédure qui copie le <xref:System.Windows.Forms.Control.Click> texte sélectionné au Clipboard en utilisant l’événement de l’élément du menu Copy sur le menu Edit standard.  
   
- Étant donné qu’une application MDI peut avoir plusieurs instances du même formulaire enfant, la procédure doit savoir quel formulaire utiliser. Pour spécifier la forme appropriée, utilisez la <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> propriété, qui retourne le formulaire enfant qui a le focus ou qui a été le plus récemment actif.  
+ Étant donné qu’une application MDI peut présenter de nombreux cas de la même forme d’enfant, la procédure doit savoir quelle forme utiliser. Pour spécifier le <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> formulaire correct, utilisez la propriété, qui renvoie la forme de l’enfant qui a la mise au point ou qui a été plus récemment active.  
   
- Quand vous disposez de plusieurs contrôles sur un formulaire, vous devez également spécifier le contrôle qui est actif. À l' <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> instar de <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> la propriété, la propriété retourne le contrôle ayant le focus sur le formulaire enfant actif. La procédure suivante illustre une procédure de copie qui peut être appelée à partir d’un menu de formulaire enfant, d’un menu sur le formulaire MDI ou d’un bouton de barre d’outils.  
+ Lorsque vous avez plusieurs contrôles sur un formulaire, vous devez également spécifier quel contrôle est actif. Comme <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> la propriété, la <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> propriété retourne le contrôle en mettant l’accent sur la forme active de l’enfant. La procédure ci-dessous illustre une procédure de copie qui peut être appelée à partir d’un menu de formulaire enfant, un menu sur le formulaire MDI, ou un bouton de barre d’outils.  
   
-### <a name="to-determine-the-active-mdi-child-to-copy-its-text-to-the-clipboard"></a>Pour déterminer l’enfant MDI actif (pour copier son texte dans le presse-papiers)  
+### <a name="to-determine-the-active-mdi-child-to-copy-its-text-to-the-clipboard"></a>Déterminer l’enfant MDI actif (pour copier son texte au Clipboard)  
   
-1. Dans une méthode, copiez le texte du contrôle actif du formulaire enfant actif dans le presse-papiers.  
+1. Dans le cadre d’une méthode, copiez le texte du contrôle actif de la forme active de l’enfant au Clipboard.  
   
     > [!NOTE]
-    > Cet exemple suppose qu’il existe un formulaire MDI parent (`Form1`) avec une ou plusieurs fenêtres enfants MDI contenant un <xref:System.Windows.Forms.RichTextBox> contrôle. Pour plus d’informations, consultez [création de formulaires MDI parents](how-to-create-mdi-parent-forms.md).  
+    > Cet exemple suppose qu’il existe`Form1`un formulaire parent MDI ( ) <xref:System.Windows.Forms.RichTextBox> qui a une ou plusieurs fenêtres d’enfant MDI contenant un contrôle. Pour plus d’informations, voir [Créer des formulaires parent MDI](how-to-create-mdi-parent-forms.md).  
   
     ```vb  
     Public Sub mniCopy_Click(ByVal sender As Object, _  
@@ -64,7 +64,7 @@ ms.locfileid: "69946220"
        // If there is an active child form, find the active control, which  
        // in this example should be a RichTextBox.  
        if (activeChild != null)  
-       {    
+       {
           try  
           {  
              RichTextBox theBox = (RichTextBox)activeChild.ActiveControl;  
@@ -86,7 +86,7 @@ ms.locfileid: "69946220"
 ## <a name="see-also"></a>Voir aussi
 
 - [Applications d’interface multidocument (MDI, Multiple Document Interface)](multiple-document-interface-mdi-applications.md)
-- [Guide pratique pour Créer des formulaires MDI parents](how-to-create-mdi-parent-forms.md)
-- [Guide pratique pour Créer des formulaires MDI enfants](how-to-create-mdi-child-forms.md)
-- [Guide pratique pour Envoyer des données à l’enfant MDI actif](how-to-send-data-to-the-active-mdi-child.md)
-- [Guide pratique pour Réorganiser les formulaires enfants MDI](how-to-arrange-mdi-child-forms.md)
+- [Guide pratique pour créer des formulaires MDI parents](how-to-create-mdi-parent-forms.md)
+- [Comment : créer des formulaires MDI enfants](how-to-create-mdi-child-forms.md)
+- [Comment : envoyer des données à l'enfant MDI actif](how-to-send-data-to-the-active-mdi-child.md)
+- [Guide pratique pour réorganiser des formulaires MDI enfants](how-to-arrange-mdi-child-forms.md)

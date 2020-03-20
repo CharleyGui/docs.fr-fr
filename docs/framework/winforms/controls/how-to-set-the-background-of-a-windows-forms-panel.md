@@ -11,19 +11,19 @@ helpviewer_keywords:
 - Panel control [Windows Forms], background
 - colors [Windows Forms], Windows Forms Panel controls
 ms.assetid: 096cbd8d-45cc-47b8-b1ef-a27f60ea8be0
-ms.openlocfilehash: ba2619354403793aea7ca15d43649da9637079a6
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 36e552475334c25b9d5a6fafb82155c6ebcba266
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744741"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182108"
 ---
 # <a name="how-to-set-the-background-of-a-windows-forms-panel"></a>Comment : définir l'arrière-plan d'un panneau Windows Forms
-Un contrôle Windows Forms <xref:System.Windows.Forms.Panel> peut afficher une couleur d’arrière-plan et une image d’arrière-plan. La propriété <xref:System.Windows.Forms.Control.BackColor%2A> définit la couleur d’arrière-plan des contrôles contenus, tels que les étiquettes et les cases d’option. Si la propriété <xref:System.Windows.Forms.Control.BackgroundImage%2A> n’est pas définie, la sélection <xref:System.Windows.Forms.Control.BackColor%2A> remplit tout le panneau. Si la propriété <xref:System.Windows.Forms.Control.BackgroundImage%2A> est définie, l’image est affichée derrière les contrôles contenus.  
+Un contrôle <xref:System.Windows.Forms.Panel> windows Forms peut afficher à la fois une couleur de fond et une image de fond. La <xref:System.Windows.Forms.Control.BackColor%2A> propriété définit la couleur de fond pour les commandes contenues, telles que les étiquettes et les boutons radio. Si <xref:System.Windows.Forms.Control.BackgroundImage%2A> la propriété n’est pas définie, la <xref:System.Windows.Forms.Control.BackColor%2A> sélection remplira l’ensemble du panneau. Si <xref:System.Windows.Forms.Control.BackgroundImage%2A> la propriété est définie, l’image s’affiche derrière les commandes contenues.  
   
-### <a name="to-set-the-background-programmatically"></a>Pour définir l’arrière-plan par programmation  
+### <a name="to-set-the-background-programmatically"></a>Définir l’arrière-plan de façon programmatique  
   
-1. Affectez à la propriété <xref:System.Windows.Forms.Control.BackColor%2A> du panneau une valeur de type <xref:System.Drawing.Color?displayProperty=nameWithType>.  
+1. Définissez la <xref:System.Windows.Forms.Control.BackColor%2A> propriété du panneau <xref:System.Drawing.Color?displayProperty=nameWithType>à une valeur de type .  
   
     ```vb  
     Panel1.BackColor = Color.AliceBlue  
@@ -37,10 +37,10 @@ Un contrôle Windows Forms <xref:System.Windows.Forms.Panel> peut afficher une c
     panel1->BackColor = Color::AliceBlue;  
     ```  
   
-2. Définissez la propriété <xref:System.Windows.Forms.Control.BackgroundImage%2A> du panneau à l’aide de la méthode <xref:System.Drawing.Image.FromFile%2A> de la classe <xref:System.Drawing.Image?displayProperty=nameWithType>.  
+2. Définissez la <xref:System.Windows.Forms.Control.BackgroundImage%2A> propriété du <xref:System.Drawing.Image.FromFile%2A> panneau <xref:System.Drawing.Image?displayProperty=nameWithType> en utilisant la méthode de la classe.  
   
     ```vb  
-    ' You should replace the bolded image   
+    ' You should replace the bolded image
     ' in the sample below with an image of your own choosing.  
     Panel1.BackgroundImage = Image.FromFile _  
         (System.Environment.GetFolderPath _  
@@ -49,7 +49,7 @@ Un contrôle Windows Forms <xref:System.Windows.Forms.Panel> peut afficher une c
     ```  
   
     ```csharp  
-    // You should replace the bolded image   
+    // You should replace the bolded image
     // in the sample below with an image of your own choosing.  
     // Note the escape character used (@) when specifying the path.  
     panel1.BackgroundImage = Image.FromFile  
@@ -59,7 +59,7 @@ Un contrôle Windows Forms <xref:System.Windows.Forms.Panel> peut afficher une c
     ```  
   
     ```cpp  
-    // You should replace the bolded image   
+    // You should replace the bolded image
     // in the sample below with an image of your own choosing.  
     panel1->BackgroundImage = Image::FromFile(String::Concat(  
        System::Environment::GetFolderPath  

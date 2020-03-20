@@ -1,15 +1,15 @@
 ---
-title: Élément <Method> (.NET Native)
+title: <Method>Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 348b49e5-589d-4eb2-a597-d6ff60ab52d1
-ms.openlocfilehash: 7b0e77e6dea29cbd5218ab3f6f992002efd51656
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8db32c660846b4f4071fff2a40c760a3d1ef2489
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128337"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180987"
 ---
-# <a name="method-element-net-native"></a>\<, méthode >, élément (.NET Native)
+# <a name="method-element-net-native"></a>\<Méthode> Element (.NET Native)
 Applique une stratégie de réflexion runtime à un constructeur ou à une méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,19 +35,19 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|*nom_méthode*|Nom de la méthode. Le type de la méthode est défini par le [\<Type>](type-element-net-native.md) parent ou l’élément [\<TypeInstantiation>](typeinstantiation-element-net-native.md).|  
+|*method_name*|Le nom de la méthode. Le type de méthode est [ \<](type-element-net-native.md) défini par le parent Type>ou [ \<TypeInstantiation>](typeinstantiation-element-net-native.md) élément.|  
   
 ## <a name="signature-attribute"></a>Attribut de signature  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*signature_méthode*|Types de paramètre qui constituent la signature de la méthode. Si plusieurs paramètres sont présents, ils sont séparés par des virgules. Par exemple : `"System.String,System.Int32,System.Int32)"`. Les noms de type de paramètre doivent être qualifiés complets.|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `Auto`, `Excluded`, `Included` et `Required`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
@@ -55,9 +55,9 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<Parameter>](parameter-element-net-native.md)|Applique la stratégie au type de l'argument passé à une méthode.|  
-|[\<GenericParameter>](genericparameter-element-net-native.md)|Applique la stratégie au type de paramètre d'un type ou d'une méthode générique.|  
-|[\<ImpliesType>](impliestype-element-net-native.md)|Applique la stratégie à un type, si cette stratégie a été appliquée à la méthode représentée par l'élément `<Method>` conteneur.|  
+|[\<>de paramètre](parameter-element-net-native.md)|Applique la stratégie au type de l'argument passé à une méthode.|  
+|[\<GénériqueParameter>](genericparameter-element-net-native.md)|Applique la stratégie au type de paramètre d'un type ou d'une méthode générique.|  
+|[\<ImpliqueType>](impliestype-element-net-native.md)|Applique la stratégie à un type, si cette stratégie a été appliquée à la méthode représentée par l'élément `<Method>` conteneur.|  
 |[\<TypeParameter>](typeparameter-element-net-native.md)|Applique la stratégie au type représenté par un argument <xref:System.Type> passé à une méthode.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -67,14 +67,14 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Un élément `<Method>` d'une méthode générique applique sa stratégie à toutes les instanciations qui n'ont pas leur propre stratégie.  
   
  Vous pouvez utiliser l'attribut `Signature` pour spécifier la stratégie d'une surcharge de méthode particulière. Sinon, si l'attribut `Signature` est absent, la directive runtime s'applique à toutes les surcharges de la méthode.  
   
- Vous ne pouvez pas définir la stratégie de réflexion runtime d'un constructeur à l'aide de l'élément `<Method>`. Utilisez plutôt l’attribut `Activate` de l’élément [\<Assembly>](assembly-element-net-native.md), [\<Namespace>](namespace-element-net-native.md), [\<Type>](type-element-net-native.md) ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md).  
+ Vous ne pouvez pas définir la stratégie de réflexion runtime d'un constructeur à l'aide de l'élément `<Method>`. Utilisez plutôt `Activate` l’attribut de [ \<l’Assemblée>](assembly-element-net-native.md), [ \<Namespace>](namespace-element-net-native.md), [ \<Type>](type-element-net-native.md), ou [ \<TypeInstantiation>](typeinstantiation-element-net-native.md) élément.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  La méthode `Stringify` dans l'exemple suivant est une méthode de mise en forme à usage général qui utilise la réflexion pour convertir un objet sous forme de chaîne. En plus d'appeler la méthode `ToString` par défaut de l'objet, la méthode peut produire une chaîne de résultat mise en forme en passant à la méthode `ToString` d'un objet une chaîne de format et/ou une implémentation <xref:System.IFormatProvider>. Elle peut également appeler l'une des surcharges <xref:System.Convert.ToString%2A?displayProperty=nameWithType> qui convertit un nombre au format binaire, hexadécimale ou octale.  
   
  [!code-csharp[ProjectN_Reflection#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/method1.cs#7)]  
@@ -85,7 +85,7 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
   
  Toutefois, quand il est compilé avec .NET Native, l’exemple peut lever de nombreuses exceptions au moment de l’exécution, notamment les exceptions <xref:System.NullReferenceException> et [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md). En effet, la méthode `Stringify` est principalement destinée à prendre en charge la mise en forme dynamique des types primitifs dans la bibliothèque de classes .NET Framework. Cependant, leurs métadonnées ne sont pas rendues disponibles par le fichier de directives par défaut. Toutefois, même quand leurs métadonnées sont rendues disponibles, l’exemple lève des exceptions [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md), car les implémentations `ToString` appropriées n’ont pas été incluses dans le code natif.  
   
- Toutes ces exceptions peuvent être éliminées en utilisant l’élément [\<Type>](type-element-net-native.md) pour définir les types dont les métadonnées doivent être présentes, et en ajoutant des éléments `<Method>` pour garantir la présence de l’implémentation de surcharges de méthode pouvant être appelées de façon dynamique. Voici le fichier default.rd.xml qui élimine ces exceptions et qui permet à l'exemple de s'exécuter sans erreur.  
+ Ces exceptions peuvent toutes être éliminées en utilisant [ \<l’élément type>](type-element-net-native.md) pour définir les `<Method>` types dont les métadonnées doivent être présentes, et en ajoutant des éléments pour s’assurer que la mise en œuvre de surcharges de méthode qui peuvent être appelées dynamiquement est également présente. Voici le fichier default.rd.xml qui élimine ces exceptions et qui permet à l'exemple de s'exécuter sans erreur.  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
@@ -124,10 +124,10 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
            <Method Name="ToString" Dynamic="Required" />  
         </Type>  
         <Type Name="Single" Browse="Required Public" >  
-          <Method Name="ToString" Dynamic="Required" />           
+          <Method Name="ToString" Dynamic="Required" />
         </Type>  
         <Type Name="TimeSpan" Browse="Required Public" >  
-          <Method Name="ToString" Dynamic="Required" />           
+          <Method Name="ToString" Dynamic="Required" />
         </Type>  
         <Type Name="UInt16" Browse="Required Public" >  
            <Method Name="ToString" Dynamic="Required" />  
@@ -145,7 +145,7 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Informations de référence sur le fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)
-- [\<MethodInstantiation>, élément](methodinstantiation-element-net-native.md)
+- [\<MéthodeInstantiation> Élément](methodinstantiation-element-net-native.md)
