@@ -16,10 +16,10 @@ helpviewer_keywords:
 - Internet, sockets
 ms.assetid: 10d22735-bd37-42c1-a2be-c1932f979a7d
 ms.openlocfilehash: cffad6b4677a880bd63f5ae0232c639f7a262c59
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047254"
 ---
 # <a name="sockets"></a>sockets
@@ -31,6 +31,6 @@ L’espace de noms <xref:System.Net.Sockets> contient une implémentation manag�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique : créer un Socket](how-to-create-a-socket.md)
+- [Comment : créer un socket](how-to-create-a-socket.md)
 
 - [Utilisation de protocoles d’application](using-application-protocols.md)

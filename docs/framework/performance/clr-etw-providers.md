@@ -5,19 +5,19 @@ helpviewer_keywords:
 - ETW, CLR providers
 - CLR ETW providers
 ms.assetid: 0beafad4-b2c8-47f4-b342-83411d57a51f
-ms.openlocfilehash: dbdd4ad862ae300c330dc56a82fcd65b866855b6
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 33ef7491c2bffeda4ef737ed8f826cdfbfbb119d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716183"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79400077"
 ---
 # <a name="clr-etw-providers"></a>Fournisseurs ETW du CLR
 Le Common Language Runtime (CLR) a deux fournisseurs : le fournisseur de runtime et le fournisseur d’arrêt.  
   
  Le fournisseur de runtime déclenche des événements en fonction des mots clés (catégories d’événements) activés. Par exemple, vous pouvez collecter des événements de chargeur en activant le mot clé `LoaderKeyword`.  
   
- Les événements de Suivi d’v nements pour Windows (ETW) sont enregistrés dans un fichier qui a une extension. etl, qui peut être postérieurement traité dans des fichiers de valeurs séparées par des virgules (. csv) si nécessaire. Pour plus d’informations sur la façon de convertir le fichier .etl en fichier .csv, consultez [Controlling .NET Framework Logging](controlling-logging.md) (Contrôle de la journalisation du .NET Framework).  
+ Les événements Event Tracing for Windows (ETW) sont connectés à un fichier qui dispose d’une extension .etl, qui peut plus tard être traitée par la suite dans des fichiers de valeur comma-séparés (.csv) au besoin. Pour plus d’informations sur la façon de convertir le fichier .etl en fichier .csv, consultez [Controlling .NET Framework Logging](controlling-logging.md) (Contrôle de la journalisation du .NET Framework).  
   
 ## <a name="the-runtime-provider"></a>Fournisseur de runtime  
  Le fournisseur de runtime est le principal fournisseur ETW du CLR.  
@@ -35,7 +35,7 @@ Le Common Language Runtime (CLR) a deux fournisseurs : le fournisseur de runtim
   
  Normalement, la journalisation ETW est activée avant le lancement d’un processus et désactivée une fois ce processus arrêté. Toutefois, si la journalisation ETW est activée pendant l’exécution du processus, des informations supplémentaires sur celui-ci sont demandées. Par exemple, pour la résolution des symboles, vous devez journaliser les événements de méthode pour les méthodes qui ont été chargées avant l’activation de la journalisation.  
   
- Les événements `DCStart` et `DCEnd` capturent l’état du processus au moment où la collecte de données a commencé et où elle s’est arrêtée. (L’État fait référence à des informations à un niveau élevé, y compris les méthodes qui étaient déjà compilées juste-à-temps (JIT) et les assemblys qui ont été chargés.) Ces deux événements peuvent fournir des informations sur ce qui s’est déjà produit dans le processus. par exemple, les méthodes qui ont été compilées juste-à-temps, et ainsi de suite.  
+ Les événements `DCStart` et `DCEnd` capturent l’état du processus au moment où la collecte de données a commencé et où elle s’est arrêtée. (L’État se réfère à des informations à un niveau élevé, y compris les méthodes qui étaient déjà juste-à-temps (JIT) compilés et les assemblages qui ont été chargés.) Ces deux événements peuvent fournir des renseignements sur ce qui s’est déjà passé dans le processus; par exemple, quelles méthodes ont été compilées par JIT, et ainsi de suite.  
   
  Seuls les événements dont le nom contient `DC`, `DCStart`, `DCEnd` ou `DCInit` sont déclenchés sous le fournisseur d’arrêt. Par ailleurs, ces événements sont déclenchés uniquement sous ce fournisseur.  
   
@@ -59,7 +59,7 @@ Le Common Language Runtime (CLR) a deux fournisseurs : le fournisseur de runtim
 1. Activez la journalisation ETW à l’aide du fournisseur de runtime du CLR :  
   
     ```console
-    xperf -start clr -on e13c0d23-ccbc-4e12-931b-d9cc2eee27e4:0x1CCBD:0x5 -f clr1.etl      
+    xperf -start clr -on e13c0d23-ccbc-4e12-931b-d9cc2eee27e4:0x1CCBD:0x5 -f clr1.etl
     ```  
   
      Le journal sera enregistré dans le fichier clr1.etl.  
@@ -67,7 +67,7 @@ Le Common Language Runtime (CLR) a deux fournisseurs : le fournisseur de runtim
 2. Pour arrêter le profilage alors que le processus continue à s’exécuter, démarrez le fournisseur d’arrêt pour capturer les événements `DCEnd` :  
   
     ```console
-    xperf -start clrRundown -on A669021C-C450-4609-A035-5AF59AF4DF18:0xB8:0x5 -f clr2.etl      
+    xperf -start clrRundown -on A669021C-C450-4609-A035-5AF59AF4DF18:0xB8:0x5 -f clr2.etl
     ```  
   
      Cela permet à la collecte d’événements `DCEnd` de démarrer une session d’arrêt. Vous devrez peut-être patienter 30 à 60 secondes pour que tous les événements soient collectés. Le journal sera enregistré dans le fichier clr1.et2.  
@@ -75,7 +75,7 @@ Le Common Language Runtime (CLR) a deux fournisseurs : le fournisseur de runtim
 3. Désactivez tout le profilage ETW :  
   
     ```console
-    xperf -stop clrRundown   
+    xperf -stop clrRundown
     xperf -stop clr  
     ```  
   

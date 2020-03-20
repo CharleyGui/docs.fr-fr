@@ -2,12 +2,12 @@
 title: System.ServiceModel.Channels.MsmqMessageRejected
 ms.date: 03/30/2017
 ms.assetid: 9b7c10a7-2af6-44a2-8b1a-90bba0c7cf26
-ms.openlocfilehash: 4feeb1b57d79c7445d51f5d688b0a9f55e761542
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8f783dcd4b966ed89c24d724918a3923c5a2d0b1
+ms.sourcegitcommit: 515469828d0f040e01bde01df6b8e4eb43630b06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61997506"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78674772"
 ---
 # <a name="systemservicemodelchannelsmsmqmessagerejected"></a>System.ServiceModel.Channels.MsmqMessageRejected
 MSMQ a refusé le message.  
@@ -15,16 +15,16 @@ MSMQ a refusé le message.
 ## <a name="description"></a>Description  
  Ce suivi indique qu'un message MSMQ a été refusé.  
   
- Messages MSMQ pouvant être rejetées lorsque Windows Communication Foundation (WCF) (utilisé avec NetMsmqBinding ou MsmqIntegrationBinding) ne peut pas les traiter. Ces messages sont appelés des messages incohérents. Un message incohérent est refusé lorsque la propriété `ReceiveErrorHandling` sur NetMsmqBinding ou MsmqIntegrationBinding a la valeur `Reject`. Un message refusé est remis à l’expéditeur [file d’attente de lettres mortes](https://go.microsoft.com/fwlink/?LinkID=99544).  
+ Les messages MSMQ peuvent être rejetés lorsque windows Communication Foundation (WCF) (utilisé avec le NetMsmqBinding ou MsmqIntegrationBinding) est incapable de les traiter. Ces messages sont appelés des messages incohérents. Un message incohérent est refusé lorsque la propriété `ReceiveErrorHandling` sur NetMsmqBinding ou MsmqIntegrationBinding a la valeur `Reject`. Un message rejeté est transmis à la [file d’attente de](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures)l’expéditeur Dead-Letter .  
   
- Consultez [des messages incohérents](https://go.microsoft.com/fwlink/?LinkID=99546) pour plus d’informations sur le moment où les messages deviennent incohérents et comment configurer votre service pour traiter de manière appropriée.  
+ Pour plus d’informations sur le moment où les messages deviennent du poison et comment configurer votre service pour les manipuler de manière appropriée, voir [Poison-Message Handling](../../feature-details/poison-message-handling.md).  
   
- Consultez [MQMarkMessageRejected](https://go.microsoft.com/fwlink/?LinkID=99548) pour plus d’informations sur ce que signifie un message refusé dans MSMQ.  
+ Pour plus d’informations sur ce qu’un message rejeté signifie dans MSMQ, voir [MQMarkMessageRejected](https://docs.microsoft.com/previous-versions/windows/desktop/msmq/ms707071(v%3dvs.85)).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [Traçage](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
 - [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
 - [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
-- [Messages incohérents](https://go.microsoft.com/fwlink/?LinkID=99546)
-- [MQMarkMessageRejected](https://go.microsoft.com/fwlink/?LinkID=99548)
+- [Gestion des messages incohérents](../../feature-details/poison-message-handling.md)
+- [MQMarkMessageR éjecté](https://docs.microsoft.com/previous-versions/windows/desktop/msmq/ms707071(v%3dvs.85))

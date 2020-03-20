@@ -3,10 +3,10 @@ title: Prise en charge de l’identifiant de ressource internationalisée dans S
 ms.date: 03/30/2017
 ms.assetid: b5e994c3-3535-4aff-8e1b-b69be22e9a22
 ms.openlocfilehash: f78fff250aae177b5f0360e77a1c41a2f2bb0527
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "64647334"
 ---
 # <a name="international-resource-identifier-support-in-systemuri"></a>Prise en charge de l’identifiant de ressource internationalisée dans System.Uri

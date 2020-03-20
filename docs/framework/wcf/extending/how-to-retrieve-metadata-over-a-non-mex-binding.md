@@ -2,19 +2,19 @@
 title: 'Procédure : récupérer des métadonnées sur une liaison non-MEX'
 ms.date: 03/30/2017
 ms.assetid: 2292e124-81b2-4317-b881-ce9c1ec66ecb
-ms.openlocfilehash: 3721657eb72663450261b4bc8627b250b1a4a14e
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: a006795c87a2ae845d03db90dce296692c4339fa
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856035"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186448"
 ---
 # <a name="how-to-retrieve-metadata-over-a-non-mex-binding"></a>Procédure : récupérer des métadonnées sur une liaison non-MEX
-Cette rubrique décrit comment récupérer les métadonnées d'un point de terminaison MEX sur une liaison non-MEX. Le code de cet exemple est basé sur l’exemple de [point de terminaison de métadonnées sécurisé personnalisé](../samples/custom-secure-metadata-endpoint.md) .  
+Cette rubrique décrit comment récupérer les métadonnées d'un point de terminaison MEX sur une liaison non-MEX. Le code de cet échantillon est basé sur l’échantillon [Custom Secure Metadata Endpoint.](../samples/custom-secure-metadata-endpoint.md)  
   
 ### <a name="to-retrieve-metadata-over-a-non-mex-binding"></a>Pour récupérer des métadonnées sur une liaison non-MEX  
   
-1. Déterminez la liaison utilisée par le point de terminaison MEX. Pour les services Windows Communication Foundation (WCF), vous pouvez déterminer la liaison MEX en accédant au fichier de configuration du service. Dans ce cas, la liaison MEX est définie dans la configuration de service suivante :  
+1. Déterminez la liaison utilisée par le point de terminaison MEX. Pour les services de la Windows Communication Foundation (WCF), vous pouvez déterminer la liaison MEX en accédant au fichier de configuration du service. Dans ce cas, la liaison MEX est définie dans la configuration de service suivante :  
   
     ```xml  
     <services>  
@@ -79,7 +79,7 @@ Cette rubrique décrit comment récupérer les métadonnées d'un point de termi
             </clientCredentials>  
           </behavior>  
         </endpointBehaviors>  
-      </behaviors>    
+      </behaviors>
     </system.serviceModel>  
     ```  
   
@@ -121,7 +121,7 @@ Cette rubrique décrit comment récupérer les métadonnées d'un point de termi
     ServiceEndpointCollection endpoints = importer.ImportAllEndpoints();  
     ```  
   
-5. À ce stade, vous disposez d’une collection de points de terminaison de service. Pour plus d’informations sur l’importation des [métadonnées, consultez Procédure : Importez des métadonnées](../feature-details/how-to-import-metadata-into-service-endpoints.md)dans des points de terminaison de service.  
+5. À ce stade, vous disposez d’une collection de points de terminaison de service. Pour plus d’informations sur l’importation de métadonnées, voir [Comment : Importer des métadonnées dans les points de terminaison de service.](../feature-details/how-to-import-metadata-into-service-endpoints.md)  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -10,33 +10,33 @@ helpviewer_keywords:
 - WCF, custom bindings
 - WCF, security
 ms.assetid: 8b847e91-69a3-49e1-9e5f-0c455e50d804
-ms.openlocfilehash: 450a99fc6604ccb3fa796e8a73e1ddc3e3adff9e
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 05bcddabf625e478616cce39f08b0ff8af282716
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964659"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184949"
 ---
 # <a name="how-to-enable-message-replay-detection"></a>Comment : activer la détection de relecture des messages
 Une attaque par relecture se produit lorsqu'un intrus copie un flux de messages entre deux correspondants et relit le flux à l'un ou plusieurs des correspondants. Sauf atténuation, les ordinateurs sujets à l'attaque traiteront le flux comme messages légitimes, ce qui a des conséquences néfastes telles que des ordres redondants d'un élément.  
   
- Pour plus d’informations sur la détection de relecture des messages, consultez [détection de relecture des messages](https://docs.microsoft.com/previous-versions/msp-n-p/ff649371(v=pandp.10)).  
+ Pour plus d’informations sur la détection de relecture de messages, voir [Détection de relecture de message](https://docs.microsoft.com/previous-versions/msp-n-p/ff649371(v=pandp.10)).  
   
- La procédure suivante montre différentes propriétés que vous pouvez utiliser pour contrôler la détection de relecture à l’aide de Windows Communication Foundation (WCF).  
+ La procédure suivante démontre diverses propriétés que vous pouvez utiliser pour contrôler la détection de relecture à l’aide de Windows Communication Foundation (WCF).  
   
 ### <a name="to-control-replay-detection-on-the-client-using-code"></a>Pour contrôler la détection de relecture sur le client à l'aide du code  
   
-1. Créez un <xref:System.ServiceModel.Channels.SecurityBindingElement> à utiliser dans un <xref:System.ServiceModel.Channels.CustomBinding>. Pour plus d’informations, consultez [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md). L'exemple suivant utilise un <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> créé avec le <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> de la classe <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
+1. Créez un <xref:System.ServiceModel.Channels.SecurityBindingElement> à utiliser dans un <xref:System.ServiceModel.Channels.CustomBinding>. Pour plus d’informations, voir [Comment : Créer une liaison personnalisée à l’aide de l’Element SecurityBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md). L'exemple suivant utilise un <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> créé avec le <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> de la classe <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
   
 2. Utilisez la propriété <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> pour retourner une référence à la classe <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> et définir les propriétés suivantes, selon le cas :  
   
-    1. `DetectReplay`. Valeur Boolean. Elle détermine si le client doit détecter les relectures à partir du serveur. La valeur par défaut est `true`,  
+    1. `DetectReplay`. Valeur booléenne. Elle détermine si le client doit détecter les relectures à partir du serveur. Par défaut, il s’agit de `true`.  
   
-    2. `MaxClockSkew`. Valeur <xref:System.TimeSpan>. Détermine l'inclinaison d'horloge que peut tolérer le mécanisme de relecture entre le client et le serveur. Le mécanisme de sécurité examine l'horodatage envoyé et détermine s'il a été envoyé il y a trop longtemps. La valeur par défaut est 5 minutes.  
+    2. `MaxClockSkew`. Valeur <xref:System.TimeSpan>. Détermine l'inclinaison d'horloge que peut tolérer le mécanisme de relecture entre le client et le serveur. Le mécanisme de sécurité examine l'horodatage envoyé et détermine s'il a été envoyé il y a trop longtemps. La valeur par défaut est 5 minutes.  
   
     3. `ReplayWindow`. Valeur `TimeSpan`. Détermine pendant combien de temps un message peut vivre sur le réseau après que le serveur l'a envoyé (par le biais d'intermédiaires) avant d'atteindre le client. Le client effectue le suivi des signatures des messages envoyés dans le `ReplayWindow` le plus récent pour les besoins de la détection de relecture.  
   
-    4. `ReplayCacheSize`. Valeur entière. Le client stocke les signatures du message dans un cache. Ce paramètre spécifie combien de signatures le cache peut stocker. Si le nombre de messages envoyés dans la dernière fenêtre de relecture atteint la limite de cache, les nouveaux messages sont rejetés jusqu'à ce que les signatures mises en cache les plus anciennes atteignent la limite de temps. La valeur par défaut est 500000.  
+    4. `ReplayCacheSize`. Valeur entière. Le client stocke les signatures du message dans un cache. Ce paramètre spécifie combien de signatures le cache peut stocker. Si le nombre de messages envoyés dans la dernière fenêtre de relecture atteint la limite de cache, les nouveaux messages sont rejetés jusqu'à ce que les signatures mises en cache les plus anciennes atteignent la limite de temps. La valeur par défaut est de 500000.  
   
 ### <a name="to-control-replay-detection-on-the-service-using-code"></a>Pour contrôler la détection de relecture sur le service à l'aide du code  
   
@@ -46,11 +46,11 @@ Une attaque par relecture se produit lorsqu'un intrus copie un flux de messages 
   
 ### <a name="to-control-replay-detection-in-configuration-for-the-client-or-service"></a>Pour contrôler la détection de relecture dans la configuration pour le client ou le service  
   
-1. Créez un [\<> CustomBinding](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+1. Créez un [ \<>customBinding ](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
 2. Créez un élément `<security>`.  
   
-3. Créez un > [\<localClientSettings >](../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md) ou [\<LocalServiceSettings](../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md).  
+3. Créez un [ \<localClientSettings>](../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md) ou [ \<localServiceSettings>](../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md).  
   
 4. Définissez les valeurs d'attributs suivantes, le cas échéant : `detectReplays`, `maxClockSkew`, `replayWindow` et `replayCacheSize`. L'exemple suivant définit les attributs d'un élément `<localServiceSettings>` et d'un élément `<localClientSettings>` :  
   
@@ -59,12 +59,12 @@ Une attaque par relecture se produit lorsqu'un intrus copie un flux de messages 
       <binding name="NewBinding0">  
        <textMessageEncoding />  
         <security>  
-         <localClientSettings   
-          replayCacheSize="800000"   
+         <localClientSettings
+          replayCacheSize="800000"
           maxClockSkew="00:03:00"  
           replayWindow="00:03:00" />  
-         <localServiceSettings   
-          replayCacheSize="800000"   
+         <localServiceSettings
+          replayCacheSize="800000"
           maxClockSkew="00:03:00"  
           replayWindow="00:03:00" />  
         <secureConversationBootstrap />  
@@ -74,7 +74,7 @@ Une attaque par relecture se produit lorsqu'un intrus copie un flux de messages 
     </customBinding>  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant crée un <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> à l’aide de la méthode <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> et définit les propriétés de relecture de la liaison.  
   
  [!code-csharp[c_ReplayDetection#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_replaydetection/cs/source.cs#1)]
@@ -108,4 +108,4 @@ Une attaque par relecture se produit lorsqu'un intrus copie un flux de messages 
 - <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>
 - [Conversations sécurisées et sessions sécurisées](../../../../docs/framework/wcf/feature-details/secure-conversations-and-secure-sessions.md)
 - [\<localClientSettings>](../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)
-- [Guide pratique pour créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)

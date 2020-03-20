@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 420ae24e-762b-4e09-b4c3-2112c470ee49
-ms.openlocfilehash: 012bddc0b4c29a0b50abc3a0df5c3cd34dc4725a
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: f55f6eccf3566a2391204e1ca4349ae5dff01954
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452394"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79148554"
 ---
 # <a name="large-udts"></a>UDT volumineux
 Les types définis par l’utilisateur (UDT) permettent au développeur d’étendre le système de type scalaire du serveur en stockant des objets CLR (Common Language Runtime) dans une base de données SQL Server. Les UDT peuvent contenir plusieurs éléments et avoir des comportements, contrairement aux types de données alias traditionnels, qui ne comprennent qu’un seul type de données système SQL Server.  
@@ -27,10 +27,10 @@ Les types définis par l’utilisateur (UDT) permettent au développeur d’éte
 1. [Types CLR définis par l’utilisateur](/sql/relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types)  
   
 ## <a name="retrieving-udt-schemas-using-getschema"></a>Récupération de schémas UDT à l'aide de GetSchema  
- La méthode <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> de <xref:System.Data.SqlClient.SqlConnection> retourne les informations de schéma de la base de données dans un objet <xref:System.Data.DataTable>. Pour plus d’informations, consultez [SQL Server collections de schémas](../sql-server-schema-collections.md).  
+ La méthode <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> de <xref:System.Data.SqlClient.SqlConnection> retourne les informations de schéma de base de données dans une <xref:System.Data.DataTable>. Pour plus d’informations, voir [SQL Server Schema Collections](../sql-server-schema-collections.md).  
   
 ### <a name="getschematable-column-values-for-udts"></a>Valeurs de colonne GetSchemaTable Column pour les UDT  
- La méthode <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> d'un objet <xref:System.Data.SqlClient.SqlDataReader> retourne un objet <xref:System.Data.DataTable> qui décrit les métadonnées des colonnes. Le tableau suivant décrit les différences dans les métadonnées des colonnes pour les UDT volumineux entre SQL Server 2005 et SQL Server 2008.  
+ La méthode <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> d’un <xref:System.Data.SqlClient.SqlDataReader> retourne une <xref:System.Data.DataTable> qui décrit les métadonnées de la colonne. La table suivante décrit les différences dans les métadonnées de colonne pour les UDT volumineux entre SQL Server 2005 et SQL Server 2008.  
   
 |Colonne SqlDataReader|SQL Server 2005|SQL Server 2008 et ultérieur|  
 |--------------------------|---------------------|-------------------------------|  
@@ -45,9 +45,9 @@ Les types définis par l’utilisateur (UDT) permettent au développeur d’éte
 |`IsLong`|Variable|Variable|  
   
 ## <a name="sqldatareader-considerations"></a>Considérations relatives à SqlDataReader  
- L’objet <xref:System.Data.SqlClient.SqlDataReader> a été étendu à compter de SQL Server 2008 pour prendre en charge la récupération des valeurs UDT volumineuses. La manière dont un <xref:System.Data.SqlClient.SqlDataReader> traite les valeurs UDT volumineuses par dépend de la version de SQL Server que vous utilisez, ainsi que du `Type System Version` spécifié dans la chaîne de connexion. Pour plus d’informations, consultez <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
+ L’objet <xref:System.Data.SqlClient.SqlDataReader> a été étendu à compter de SQL Server 2008 pour prendre en charge la récupération des valeurs UDT volumineuses. La façon dont les valeurs UDT volumineuses sont traitées par un <xref:System.Data.SqlClient.SqlDataReader> dépend de la version de SQL Server que vous utilisez, ainsi que de la `Type System Version` spécifiée dans la chaîne de connexion. Pour plus d’informations, consultez <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
   
- Les méthodes suivantes de <xref:System.Data.SqlClient.SqlDataReader> retournent un <xref:System.Data.SqlTypes.SqlBinary> au lieu d'un type défini par l'utilisateur lorsque `Type System Version` est défini à SQL Server 2005 :  
+ Les méthodes suivantes de <xref:System.Data.SqlClient.SqlDataReader> retournent un <xref:System.Data.SqlTypes.SqlBinary> au lieu d’un type défini par l’utilisateur (UDT) lorsque la `Type System Version` est définie sur SQL Server 2005 :  
   
 - <xref:System.Data.SqlClient.SqlDataReader.GetProviderSpecificFieldType%2A>  
   
@@ -59,28 +59,28 @@ Les types définis par l’utilisateur (UDT) permettent au développeur d’éte
   
 - <xref:System.Data.SqlClient.SqlDataReader.GetSqlValues%2A>  
   
- Les méthodes suivantes retournent un tableau de `Byte[]` au lieu d'un UDT lorsque `Type System Version` est défini à SQL Server 2005 :  
+ Les méthodes suivantes retournent un tableau de `Byte[]` au lieu d’un type défini par l’utilisateur (UDT) lorsque la `Type System Version` est définie sur SQL Server 2005 :  
   
 - <xref:System.Data.SqlClient.SqlDataReader.GetValue%2A>  
   
 - <xref:System.Data.SqlClient.SqlDataReader.GetValues%2A>  
   
- Notez qu'aucune conversion n'est effectuée pour la version actuelle d'ADO.NET.  
+ Notez qu’aucune conversion n’est effectuée pour la version actuelle de ADO.NET.  
   
 ## <a name="specifying-sqlparameters"></a>Spécification de SqlParameters  
- Les propriétés <xref:System.Data.SqlClient.SqlParameter> suivantes ont été étendues pour fonctionner avec des UDT volumineux.  
+ Les propriétés suivantes de <xref:System.Data.SqlClient.SqlParameter> ont été étendues pour fonctionner avec des UDT volumineux.  
   
 |Propriété SqlParameter|Description|  
 |---------------------------|-----------------|  
-|<xref:System.Data.SqlClient.SqlParameter.Value%2A>|Obtient ou définit un objet qui représente la valeur du paramètre. La valeur par défaut est null. La propriété peut être `SqlBinary`, `Byte[]` ou un objet managé.|  
-|<xref:System.Data.SqlClient.SqlParameter.SqlValue%2A>|Obtient ou définit un objet qui représente la valeur du paramètre. La valeur par défaut est null. La propriété peut être `SqlBinary`, `Byte[]` ou un objet managé.|  
-|<xref:System.Data.SqlClient.SqlParameter.Size%2A>|Obtient ou définit la taille de la valeur de paramètre à résoudre. La valeur par défaut est 0. La propriété peut être un nombre entier qui représente la taille de la valeur de paramètre. Pour les UDT volumineux, elle peut être la taille réelle de l’UDT, ou -1 pour inconnu.|  
+|<xref:System.Data.SqlClient.SqlParameter.Value%2A>|Obtient ou définit un objet représentant la valeur du paramètre. La valeur par défaut est null. La propriété peut être `SqlBinary`, `Byte[]` ou un objet managé.|  
+|<xref:System.Data.SqlClient.SqlParameter.SqlValue%2A>|Obtient ou définit un objet représentant la valeur du paramètre. La valeur par défaut est null. La propriété peut être `SqlBinary`, `Byte[]` ou un objet managé.|  
+|<xref:System.Data.SqlClient.SqlParameter.Size%2A>|Obtient ou définit la taille de la valeur du paramètre à résoudre. La valeur par défaut est 0. La propriété peut être un entier qui représente la taille de la valeur du paramètre. Pour les UDT volumineux, elle peut être la taille réelle de l’UDT, ou -1 pour inconnu.|  
   
 ## <a name="retrieving-data-example"></a>Exemple d'extraction de données  
- Le fragment de code suivant montre comment extraire des données UDT volumineuses. La variable `connectionString` suppose une connexion valide à une base de données SQL Server, et la variable `commandString` suppose une instruction SELECT valide avec la colonne de clé primaire apparaissant en premier.  
+ Le fragment de code suivant montre comment récupérer des donnée UDT volumineuses. La variable `connectionString` suppose une connexion valide à une base de données SQL Server et la variable `commandString` suppose une instruction SELECT valide avec la colonne de clé primaire qui est indiquée en premier.  
   
 ```csharp  
-using (SqlConnection connection = new SqlConnection(   
+using (SqlConnection connection = new SqlConnection(
     connectionString, commandString))  
 {  
   connection.Open();  
@@ -136,5 +136,5 @@ End Using
 - [Configuration des paramètres et des types de données des paramètres](../configuring-parameters-and-parameter-data-types.md)
 - [Récupération des informations de schéma de base de données](../retrieving-database-schema-information.md)
 - [Mappages de types de données SQL Server](../sql-server-data-type-mappings.md)
-- [Données binaires et de valeur élevée SQL Server](sql-server-binary-and-large-value-data.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [SqL Server Données binaires et à grande valeur](sql-server-binary-and-large-value-data.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

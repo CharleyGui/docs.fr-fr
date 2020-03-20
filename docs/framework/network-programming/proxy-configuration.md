@@ -12,10 +12,10 @@ helpviewer_keywords:
 - proxies, configuring
 ms.assetid: 353c0a8b-4cee-44f6-8e65-60e286743df9
 ms.openlocfilehash: 1fbfe25b90e810ff96924a2341582ff3f5ee5e5d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047358"
 ---
 # <a name="proxy-configuration"></a>Configuration du proxy
@@ -28,7 +28,7 @@ Un serveur proxy gère les demandes du client pour les ressources. Un proxy peut
   
  Les modifications apportées à l'environnement réseau peuvent nécessiter que le système utilise un nouvel ensemble de proxies. En cas de défaillance d'une connexion réseau ou d'initialisation d'une nouvelle connexion réseau, le système doit détecter la source appropriée du script de configuration dans le nouvel environnement et exécuter le nouveau script.  
   
- Vous pouvez utiliser l’attribut `usesystemdefault` de l’élément [`<proxy>`](../configure-apps/file-schema/network/proxy-element-network-settings.md) dans votre fichier de configuration. L’attribut `usesystemdefault` détermine si les paramètres de proxy statiques (adresse de proxy, liste de contournement et contournement en local) doivent être lus à partir des paramètres de proxy Internet Explorer de l’utilisateur. S’il a la valeur `true`, les paramètres de proxy statiques Internet Explorer sont utilisés. S’il a la valeur `false` ou s’il n’est pas défini, les paramètres de proxy statiques peuvent être spécifiés dans la configuration et remplacer les paramètres de proxy Internet Explorer. En outre, cet attribut doit avoir la valeur `false` ou ne pas être défini pour que les proxys adaptatifs soient activés.  
+ Vous pouvez `usesystemdefault` utiliser l’attribut de l’élément [`<proxy>`](../configure-apps/file-schema/network/proxy-element-network-settings.md) dans votre fichier de configuration. L’attribut `usesystemdefault` détermine si les paramètres de proxy statiques (adresse de proxy, liste de contournement et contournement en local) doivent être lus à partir des paramètres de proxy Internet Explorer de l’utilisateur. S’il a la valeur `true`, les paramètres de proxy statiques Internet Explorer sont utilisés. S’il a la valeur `false` ou s’il n’est pas défini, les paramètres de proxy statiques peuvent être spécifiés dans la configuration et remplacer les paramètres de proxy Internet Explorer. En outre, cet attribut doit avoir la valeur `false` ou ne pas être défini pour que les proxys adaptatifs soient activés.  
   
  L'exemple suivant illustre une configuration de proxy adaptatif classique.  
   

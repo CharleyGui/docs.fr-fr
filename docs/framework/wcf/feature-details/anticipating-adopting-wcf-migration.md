@@ -1,16 +1,16 @@
 ---
-title: 'Anticipation de l’adoption de Windows Communication Foundation : Facilitation de la migration future'
+title: 'Anticipation de l‘adoption de Windows Communication Foundation : faciliter la future migration'
 ms.date: 03/30/2017
 ms.assetid: f49664d9-e9e0-425c-a259-93f0a569d01b
-ms.openlocfilehash: 09bbb11c58992f0fabcb822f5f3d88fef273bea9
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 995bdaaaba96bf8697ea75c1f1a17fa8e51ec2d5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425283"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185470"
 ---
-# <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-migration"></a>Anticipation de l’adoption de Windows Communication Foundation : Facilitation de la migration future
-Afin de faciliter une future migration de nouvelles applications ASP.NET vers WCF, suivez les recommandations précédentes ainsi que les recommandations suivantes.  
+# <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-migration"></a>Anticipation de l‘adoption de Windows Communication Foundation : faciliter la future migration
+Afin d’assurer une migration future plus facile des nouvelles demandes de ASP.NET vers le WCF, suivez les recommandations précédentes ainsi que les recommandations suivantes.  
   
 ## <a name="protocols"></a>Protocoles  
  Désactivez la prise en charge d'ASP.NET 2.0 pour SOAP 1.2 :  
@@ -21,18 +21,18 @@ Afin de faciliter une future migration de nouvelles applications ASP.NET vers WC
       <webServices >  
           <protocols>  
            <remove name="HttpSoap12"/>  
-          </protocols>    
+          </protocols>
       </webServices>  
-     </system.web>   
+     </system.web>
 </configuration>  
 ```  
   
- Cela est recommandé, car WCF exige que les messages répondant à différents protocoles, tels que SOAP 1.1 et SOAP 1.2, accédez à l’aide de différents points de terminaison. Si Web ASP.NET 2.0 service est configuré pour prendre en charge SOAP 1.1 et SOAP 1.2, ce qui est la configuration par défaut, il ne peut pas être migré avant vers un point de terminaison WCF unique à l’adresse originale qui serait certainement être compatible avec l’ensemble du site Web ASP.NET clients existants du service. De plus, le choix de SOAP 1.2 au lieu de 1.1 restreint davantage la clientèle du service.  
+ Cela est conseillé parce que WCF nécessite des messages conformes à différents protocoles, comme SOAP 1.1 et SOAP 1.2, pour aller en utilisant différents critères d’évaluation. Si un service Web ASP.NET 2.0 est configuré pour prendre en charge à la fois SOAP 1.1 et SOAP 1.2, qui est la configuration par défaut, alors il ne peut pas être migré vers l’avant vers un seul point de terminaison WCF à l’adresse originale qui serait certainement compatible avec l’ensemble de la ASP.NET Web clients existants du service. De plus, le choix de SOAP 1.2 au lieu de 1.1 restreint davantage la clientèle du service.  
   
 ## <a name="service-development"></a>Développement des services  
- WCF vous permet de définir des contrats de service en appliquant la <xref:System.ServiceModel.ServiceContractAttribute> aux interfaces ou aux classes. Il est recommandé d'appliquer l'attribut à une interface plutôt qu'à une classe, afin de créer une définition d'un contrat qui peut être implémenté de différentes façons par un nombre illimité de classes. ASP.NET 2.0 prend en charge la possibilité d'appliquer l'attribut <xref:System.Web.Services.WebService> aux interfaces aussi bien qu'aux classes. Toutefois, comme indiqué précédemment, ASP.NET 2.0 présente un défaut qui fait que le paramètre Namespace de l'attribut <xref:System.Web.Services.WebService> n'a aucun effet lorsque cet attribut est appliqué à une interface plutôt qu'à une classe. Dans la mesure où il est généralement recommandé de modifier l’espace de noms d’un service à partir de la valeur par défaut, `http://tempuri.org`, utilisant le paramètre Namespace de le <xref:System.Web.Services.WebService> attribut, il faut continuer la définition des Services Web ASP.NET en appliquant la <xref:System.ServiceModel.ServiceContractAttribute> attribut aux interfaces ou aux classes.  
+ WCF vous permet de définir <xref:System.ServiceModel.ServiceContractAttribute> les contrats de service en appliquant les interfaces ou aux classes. Il est recommandé d'appliquer l'attribut à une interface plutôt qu'à une classe, afin de créer une définition d'un contrat qui peut être implémenté de différentes façons par un nombre illimité de classes. ASP.NET 2.0 prend en charge la possibilité d'appliquer l'attribut <xref:System.Web.Services.WebService> aux interfaces aussi bien qu'aux classes. Toutefois, comme indiqué précédemment, ASP.NET 2.0 présente un défaut qui fait que le paramètre Namespace de l'attribut <xref:System.Web.Services.WebService> n'a aucun effet lorsque cet attribut est appliqué à une interface plutôt qu'à une classe. Comme il est généralement conseillé de modifier l’espace de `http://tempuri.org`nom d’un service <xref:System.Web.Services.WebService> à partir de la valeur par défaut, <xref:System.ServiceModel.ServiceContractAttribute> en utilisant le paramètre Namespace de l’attribut, il faut continuer à définir ASP.NET services Web en appliquant l’attribut soit aux interfaces ou aux classes.  
   
-- Les méthodes chargées de définir ces interfaces doivent contenir un minimum de code. Faites-les déléguer leur tâche à d'autres classes. Nouveaux types de service WCF peuvent aussi déléguer les tâches importantes à ces classes.  
+- Les méthodes chargées de définir ces interfaces doivent contenir un minimum de code. Faites-les déléguer leur tâche à d'autres classes. De nouveaux types de services WCF pourraient alors également déléguer leur travail de fond à ces classes.  
   
 - Fournissez des noms explicites pour les opérations d'un service à l'aide du paramètre `MessageName` de <xref:System.Web.Services.WebMethodAttribute>.  
   
@@ -41,9 +41,9 @@ Afin de faciliter une future migration de nouvelles applications ASP.NET vers WC
     string Echo(string input);  
     ```  
   
-     Cela est important, étant donné que les noms par défaut pour les opérations dans ASP.NET sont différents des noms par défaut fournis par WCF. En fournissant des noms explicites, vous n'avez pas à vous reposer sur les noms par défaut.  
+     Cela est important, car les noms par défaut pour les opérations dans ASP.NET sont différents des noms par défaut fournis par WCF. En fournissant des noms explicites, vous n'avez pas à vous reposer sur les noms par défaut.  
   
-- N’implémentez pas les opérations de service Web ASP.NET avec des méthodes polymorphes, étant donné que WCF ne prend pas en charge l’implémentation des opérations avec des méthodes polymorphes.  
+- Ne mettez pas en œuvre ASP.NET opérations de service Web avec des méthodes polymorphes, parce que WCF ne prend pas en charge les opérations de mise en œuvre avec des méthodes polymorphes.  
   
 - Utilisez le <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute> afin de fournir des valeurs explicites pour les en-têtes HTTP SOAPAction chargés d'acheminer les demandes HTTP aux méthodes.  
   
@@ -53,12 +53,12 @@ Afin de faciliter une future migration de nouvelles applications ASP.NET vers WC
     string Echo(string input);  
     ```  
   
-     Cette approche résoudra de devoir compter sur la valeur par défaut des valeurs SOAPAction utilisés par ASP.NET et WCF qui est la même.  
+     Adopter cette approche permettra de contourner le fait de pouvoir s’appuyer sur les valeurs SOAPAction par défaut utilisées par ASP.NET et WCF étant les mêmes.  
   
-- Évitez l’utilisation des extensions SOAP. Si les extensions SOAP sont requises, puis déterminez si l’objectif pour lequel ils sont considérés comme est une fonctionnalité qui est déjà fournie par WCF. Si tel est effectivement le cas, reconsidérez le choix de ne pas adopter WCF tout de suite.  
+- Évitez l’utilisation des extensions SOAP. Si des extensions SOAP sont nécessaires, déterminez si l’objet pour lequel elles sont considérées est une caractéristique qui est déjà fournie par WCF. Si c’est effectivement le cas, alors réexaminez le choix de ne pas adopter WCF tout de suite.  
   
 ## <a name="state-management"></a>Gestion des états  
- Évitez de devoir maintenir l'état dans les services. Non seulement maintenir l’état ont tendance à compromettre l’évolutivité d’une application, mais les mécanismes de gestion d’état d’ASP.NET et WCF sont très différents, bien que WCF ne prend pas en charge les mécanismes ASP.NET en mode de compatibilité ASP.NET.  
+ Évitez de devoir maintenir l'état dans les services. Non seulement le maintien de l’État a tendance à compromettre l’évolutivité d’une application, mais les mécanismes de gestion de l’État de ASP.NET et WCF sont très différents, bien que WCF ne soutenir les mécanismes de ASP.NET en mode ASP.NET compatibilité.  
   
 ## <a name="exception-handling"></a>Gestion des exceptions  
  Lors de la conception des structures des types de données à envoyer et à recevoir par un service, concevez aussi des structures pour représenter les divers types d'exceptions qui peuvent se produire dans un service et qu'il faut décrire éventuellement à un client.  
@@ -66,13 +66,13 @@ Afin de faciliter une future migration de nouvelles applications ASP.NET vers WC
 ```csharp  
 [Serializable]  
 [XmlRoot(Namespace="ExplicitNamespace", IsNullable=true)]  
-public partial class AnticipatedException 
-{ 
+public partial class AnticipatedException
+{
     private string anticipatedExceptionInformationField;  
 
-    public string AnticipatedExceptionInformation 
+    public string AnticipatedExceptionInformation
     {  
-        get {   
+        get {
             return this.anticipatedExceptionInformationField;  
         }  
         set {  
@@ -113,17 +113,17 @@ throw new SoapException(
      exception.ToXML());  
 ```  
   
- Ces classes d’exceptions sera réutilisables avec WCF <xref:System.ServiceModel.FaultException%601> classe pour lever une nouvelle `FaultException<AnticipatedException>(anticipatedException);`  
+ Ces classes d’exception seront facilement réutilisables à la classe WCF <xref:System.ServiceModel.FaultException%601> pour`FaultException<AnticipatedException>(anticipatedException);`  
   
 ## <a name="security"></a>Sécurité  
  Les éléments suivants sont des recommandations de sécurité.  
   
-- Éviter à l’aide de profils ASP.NET 2.0, car leur utilisation peut restreindre l’utilisation du Mode intégration ASP.NET si le service a été migré vers WCF.  
+- Éviter d’utiliser ASP.NET 2.0 Profils, car leur utilisation limiterait l’utilisation du mode d’intégration ASP.NET si le service était migré vers WCF.  
   
-- Évitez d’utiliser des ACL pour contrôler l’accès aux services, en tant que services Web ASP.NET prend en charge les ACL à l’aide d’Internet Information Services (IIS), n’est pas le cas de WCF, étant donné que les services Web ASP.NET dépendent d’IIS pour l’hébergement et WCF ne doit pas nécessairement être hébergés dans IIS.  
+- Évitez d’utiliser les ACL pour contrôler l’accès aux services, car ASP.NET services Web prend en charge les ARL utilisant les services d’information Internet (IIS), le WCF ne le fait pas, parce que ASP.NET services Web dépendent de l’IIS pour l’hébergement, et WCF n’a pas nécessairement besoin d’être hébergé dans l’IIS.  
   
 - Vous pouvez faire appel à des fournisseurs de rôles ASP.NET 2.0 pour autoriser l'accès aux ressources d'un service.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Anticipation de l’adoption de Windows Communication Foundation : Faciliter l’intégration Future](../../../../docs/framework/wcf/feature-details/anticipating-adopting-the-wcf-easing-future-integration.md)
+- [Anticipation de l'adoption de Windows Communication Foundation : faciliter l'intégration future](../../../../docs/framework/wcf/feature-details/anticipating-adopting-the-wcf-easing-future-integration.md)

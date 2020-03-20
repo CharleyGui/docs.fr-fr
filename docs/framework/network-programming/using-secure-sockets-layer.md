@@ -16,10 +16,10 @@ helpviewer_keywords:
 - Internet, Secure Sockets Layer
 ms.assetid: 6e4289e6-d1b7-4e82-ab0d-e83e3b6063ed
 ms.openlocfilehash: ef2abc7574aea1b4f77ff93545ad84678c66ce48
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71046902"
 ---
 # <a name="using-secure-sockets-layer"></a>Utilisation du protocole Secure Sockets Layer
@@ -31,7 +31,7 @@ Les classes <xref:System.Net> utilisent le protocole SSL (Secure Sockets Layer) 
   
  La classe <xref:System.Net.Security.SslStream> fournit une abstraction de flux de données pour le protocole SSL et offre de nombreuses façons de configurer la connexion SSL.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ### <a name="code"></a>Code  
   
@@ -65,5 +65,5 @@ FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 ## <a name="see-also"></a>Voir aussi
 
 - [Sécurité dans la programmation réseau](security-in-network-programming.md)
-- [Programmation réseau dans le .NET Framework](index.md)
+- [Programmation réseau dans .NET Framework](index.md)
 - [Sélection et validation de certificats](certificate-selection-and-validation.md)

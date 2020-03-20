@@ -14,10 +14,10 @@ helpviewer_keywords:
 - HttpWebRequest class, sending and receiving data
 ms.assetid: 985fe5d8-eb71-4024-b361-41fbdc1618d8
 ms.openlocfilehash: c8c799a50e5d63bbf411c338eb9e93f85a942bb0
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71048013"
 ---
 # <a name="http"></a>HTTP
@@ -33,6 +33,6 @@ Avec les classes <xref:System.Net.HttpWebRequest> et <xref:System.Net.HttpWebRes
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Accès à Internet via un proxy](accessing-the-internet-through-a-proxy.md)
+- [Accès à Internet par le biais d’un proxy](accessing-the-internet-through-a-proxy.md)
 - [Utilisation de protocoles d’application](using-application-protocols.md)
-- [Guide pratique : accéder aux propriétés spécifiques à HTTP](how-to-access-http-specific-properties.md)
+- [Comment : accéder aux propriétés spécifiques à HTTP](how-to-access-http-specific-properties.md)

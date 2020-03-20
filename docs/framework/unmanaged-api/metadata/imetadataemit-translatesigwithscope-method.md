@@ -15,76 +15,76 @@ helpviewer_keywords:
 ms.assetid: 47915d33-b7bf-409e-b484-4ee1df15de22
 topic_type:
 - apiref
-ms.openlocfilehash: cea84f47a5289df4bc9c50381e18d7077b3b8dad
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2662af41fbd2cdc3ce8a6df1e036dfc5b22ff6a3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440474"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175549"
 ---
 # <a name="imetadataemittranslatesigwithscope-method"></a>IMetaDataEmit::TranslateSigWithScope, méthode
-Importe un assembly dans la portée actuelle et obtient une nouvelle signature de métadonnées pour la portée fusionnée.  
+Importe une assemblée dans la portée actuelle et obtient une nouvelle signature de métadonnées pour la portée fusionnée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT TranslateSigWithScope (   
-    [in]  IMetaDataAssemblyImport   *pAssemImport,   
-    [in]  const void                *pbHashValue,   
-    [in]  ULONG                     cbHashValue,   
-    [in]  IMetaDataImport           *import,   
-    [in]  PCCOR_SIGNATURE           pbSigBlob,   
+HRESULT TranslateSigWithScope (
+    [in]  IMetaDataAssemblyImport   *pAssemImport,
+    [in]  const void                *pbHashValue,
+    [in]  ULONG                     cbHashValue,
+    [in]  IMetaDataImport           *import,
+    [in]  PCCOR_SIGNATURE           pbSigBlob,
     [in]  ULONG                     cbSigBlob,  
-    [in]  IMetaDataAssemblyEmit     *pAssemEmit,   
-    [in]  IMetaDataEmit             *emit,   
-    [out] PCOR_SIGNATURE            pvTranslatedSig,   
-    [in]  ULONG                     cbTranslatedSigMax,   
-    [out] ULONG                     *pcbTranslatedSig   
+    [in]  IMetaDataAssemblyEmit     *pAssemEmit,
+    [in]  IMetaDataEmit             *emit,
+    [out] PCOR_SIGNATURE            pvTranslatedSig,
+    [in]  ULONG                     cbTranslatedSigMax,
+    [out] ULONG                     *pcbTranslatedSig
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `pAssemImport`  
- dans Interface pour l’assembly d’importation (où la signature est définie).  
+ [dans] L’interface pour l’assemblage d’importation (où la signature est définie).  
   
  `pbHashValue`  
- dans Objet blob de hachage pour l’assembly.  
+ [dans] Le blob de hachage pour l’assemblage.  
   
  `cbHashValue`  
- dans Nombre d’octets dans `pbHashValue`.  
+ [dans] Le compte d’octets dans `pbHashValue`.  
   
  `import`  
- dans Interface pour l’importation de la portée des métadonnées.  
+ [dans] L’interface pour la portée des métadonnées d’importation.  
   
  `pbSigBlob`  
- dans Signature à importer.  
+ [dans] La signature à importer.  
   
  `cbSigBlob`  
- dans Taille, en octets, de `pbSigBlob`.  
+ [dans] La taille, dans les `pbSigBlob`octets, de .  
   
  `pAssemEmit`  
- dans Interface pour l’assembly d’exportation.  
+ [dans] L’interface pour l’assemblage d’exportation.  
   
  `emit`  
- dans Interface pour l’exportation de la portée des métadonnées.  
+ [dans] L’interface pour la portée des métadonnées d’exportation.  
   
  `pvTranslatedSig`  
- à Mémoire tampon devant contenir l’objet blob de signature traduit.  
+ [out] Le tampon pour tenir le blob signature traduite.  
   
  `cbTranslatedSigMax`  
- dans Capacité, en octets, de `pvTranslatedSig`.  
+ [dans] La capacité, dans les `pvTranslatedSig`octets, de .  
   
  `pcbTranslatedSig`  
- à Nombre d’octets réels dans la signature traduite.  
+ [out] Le nombre d’octets réels dans la signature traduite.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

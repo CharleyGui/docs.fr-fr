@@ -1,19 +1,19 @@
 ---
-title: 'Procédure : activer le streaming'
+title: 'Comment : activer la diffusion en continu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6ca2cf4b-c7a1-49d8-a79b-843a90556ba4
-ms.openlocfilehash: bd1a52f1ce0f656af79928a20e3badc73661e89a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1d1eaa1ebf41ef86478dda795b3b199239cd37b4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64635301"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184936"
 ---
-# <a name="how-to-enable-streaming"></a>Procédure : activer le streaming
-Windows Communication Foundation (WCF) peut envoyer des messages à l’aide de transferts mis en mémoire tampon ou transmis en continu. En mode de transfert par mise en mémoire tampon, un message doit être complètement remis avant qu'un récepteur puisse le lire. En mode de transfert par diffusion en continu, le récepteur peut commencer à traiter le message avant qu'il ne soit complètement remis. Le mode de diffusion en continu est utile lorsque les informations passées sont volumineuses et peuvent être traitées en série. Le mode de diffusion en continu est également utile lorsque le message est trop volumineux pour être mis entièrement en mémoire tampon.  
+# <a name="how-to-enable-streaming"></a>Comment : activer la diffusion en continu
+Windows Communication Foundation (WCF) peut envoyer des messages en utilisant des transferts tamponnés ou en streaming. En mode de transfert par mise en mémoire tampon, un message doit être complètement remis avant qu'un récepteur puisse le lire. En mode de transfert par diffusion en continu, le récepteur peut commencer à traiter le message avant qu'il ne soit complètement remis. Le mode de diffusion en continu est utile lorsque les informations passées sont volumineuses et peuvent être traitées en série. Le mode de diffusion en continu est également utile lorsque le message est trop volumineux pour être mis entièrement en mémoire tampon.  
   
  Pour activer la diffusion en continu, définissez le `OperationContract` convenablement et activez la diffusion en continu au niveau du transport.  
   
@@ -48,7 +48,7 @@ Windows Communication Foundation (WCF) peut envoyer des messages à l’aide de 
   
     1. L’extrait de code de configuration suivant tiré de l’exemple présente l’affectation du mode de diffusion en continu à la propriété `TransferMode` sur la `basicHttpBinding` et sur une liaison HTTP personnalisée.  
   
-         [!code-xml[c_HowTo_EnableStreaming#103](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_enablestreaming/common/app.config#103)]   
+         [!code-xml[c_HowTo_EnableStreaming#103](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_enablestreaming/common/app.config#103)]
   
     2. L'extrait de code suivant affiche l'affectation à la propriété `TransferMode` la diffusion en continu sur la `basicHttpBinding` et sur une liaison HTTP personnalisée.  
   
@@ -76,5 +76,5 @@ Windows Communication Foundation (WCF) peut envoyer des messages à l’aide de 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Données volumineuses et streaming](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)
+- [Grandes données et streaming](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)
 - [Flux](../../../../docs/framework/wcf/samples/stream.md)

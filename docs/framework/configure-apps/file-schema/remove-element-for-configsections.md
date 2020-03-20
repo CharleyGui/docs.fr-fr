@@ -7,20 +7,20 @@ helpviewer_keywords:
 - remove Element
 - <remove> Element
 ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
-ms.openlocfilehash: 99d67bd621390789993caa4862e5ce379135eb92
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 6991e3f73ac180fc690ec48e1a0d15f40c915733
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215388"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154528"
 ---
-# <a name="remove-element-for-configsections"></a>\<supprimer > élément de \<configSections >
+# <a name="remove-element-for-configsections"></a>\<supprimer> élément \<pour les> de configSections
 
-Supprime un groupe de sections ou de sections prédéfini.
+Supprime une section prédéfinie ou un groupe de section.
 
-[ **\<configuration>** ](configuration-element.md)\
-&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<supprimer >**
+[**\<configuration>**](configuration-element.md)\
+&nbsp;&nbsp;[**\<les>**](configsections-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<supprimer>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,27 +32,27 @@ Supprime un groupe de sections ou de sections prédéfini.
 
 |           | Description |
 | --------- | ----------- |
-| **name**  | Attribut requis.<br><br>Spécifie le nom de la section ou du groupe de sections à supprimer. |
+| **name**  | Attribut requis.<br><br>Spécifie le nom de la section ou du groupe de section à supprimer. |
 
 ## <a name="parent-element"></a>Élément parent
 
 |     | Description |
 | --- | ----------- |
-| [ **\<configSections >** Appartient](configsections-element-for-configuration.md) | Contient la section de configuration et les déclarations d’espace de noms. |
+| [les>des configections ** \<** Élément](configsections-element-for-configuration.md) | Contient la section de configuration et les déclarations d’espace nom. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
 None
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-Vous pouvez utiliser l’élément **\<supprimer >** pour supprimer de votre application des sections et des groupes de sections qui ont été définis à un niveau supérieur dans la hiérarchie des fichiers de configuration.
+Vous pouvez ** \<** utiliser l’élément de suppression>pour supprimer les sections et les groupes de section de votre application qui ont été définis à un niveau supérieur dans la hiérarchie des fichiers de configuration.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
-L’exemple suivant montre comment utiliser l' **\<supprimer >** élément dans un fichier de configuration d’application pour supprimer une section précédemment définie dans le fichier de configuration de l’ordinateur.
+L’exemple suivant montre comment utiliser ** \<l’élément de suppression>** dans un fichier de configuration d’application pour supprimer une section précédemment définie dans le fichier de configuration de la machine.
 
-Le code de fichier de configuration d’ordinateur suivant déclare la section **\<> sampleSection**:
+Le code de fichier de configuration de la machine suivante déclare l’échantillon de ** \<sectionSection>**:
 
 ```xml
 <!-- Machine.config file -->
@@ -61,13 +61,13 @@ Le code de fichier de configuration d’ordinateur suivant déclare la section *
     <section name="sampleSection"
              type="System.Configuration.SingleTagSectionHandler" />
   </configSections>
-  <sampleSection setting1="Value1" 
-                 setting2="value two" 
+  <sampleSection setting1="Value1"
+                 setting2="value two"
                  setting3="third value" />
 </configuration>
 ```
 
-Le code de fichier de configuration d’application suivant supprime la section **\<sampleSection >** . Après la suppression, l’application ne peut pas récupérer les paramètres dans **\<> sampleSection**.
+Le code de fichier de ** \<** configuration d’application suivant supprime la section de>échantillons. Après la suppression, l’application ne peut pas récupérer les paramètres dans ** \<sampleSection>**.
 
 ```xml
 <!-- Application configuration file -->
@@ -80,8 +80,8 @@ Le code de fichier de configuration d’application suivant supprime la section 
 
 ## <a name="configuration-file"></a>Fichier de configuration
 
-Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
+Cet élément peut être utilisé dans le fichier de configuration d’application, fichier de configuration de machine (*Machine.config*), et les fichiers *Web.config* qui ne sont pas au niveau de l’annuaire d’application.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma du fichier de configuration pour le .NET Framework](index.md)
+- [Schéma de fichier de configuration pour le cadre .NET](index.md)

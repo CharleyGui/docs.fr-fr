@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Internet, security
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
-ms.openlocfilehash: bae6bf6a1a5d87241b619bf024c099c48af6af43
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 81ac469f75f925ea00c02ff94ade0e8793e7efff
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452680"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79546709"
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Meilleures pratiques du protocole TLS (Transport Layer Security) avec .NET Framework
 
@@ -29,7 +29,6 @@ Ce document est destiné aux développeurs qui :
 
 - utilisent directement les <xref:System.Net> API (par exemple, <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> et <xref:System.Net.Security.SslStream?displayProperty=nameWithType>).
 - utilisent directement des clients et des services WCF à l’aide de l’espace de noms <xref:System.ServiceModel?displayProperty=nameWithType>.
-- utilisent des rôles de travail et Web [Azure Cloud Services](https://azure.microsoft.com/services/cloud-services/) pour héberger et exécuter votre application. Consultez la section [Azure Cloud Services](#azure-cloud-services).
 
 Nous vous recommandons :
 
@@ -46,7 +45,7 @@ La section [Auditez votre code et apportez-lui des modifications](#audit-your-co
 
 Cet article explique comment activer la sécurité maximale disponible pour la version de .NET Framework que votre application cible et sur laquelle elle s’exécute. Lorsqu’une application définit explicitement une version et un protocole de sécurité, il refuse toute autre solution et le comportement de .NET Framework et du système d’exploitation par défaut. Si vous souhaitez que votre application soit en mesure de négocier une connexion TLS 1.2, la définition explicite d’une version antérieure de TLS empêche une connexion TLS 1.2.
 
-Si vous ne pouvez pas éviter de coder en dur une version de protocole, nous vous recommandons vivement de spécifier TLS 1.2. Pour obtenir des conseils sur l’identification et la suppression des dépendances TLS 1,0, téléchargez le livre blanc [résolution du problème tls 1,0](https://www.microsoft.com/download/details.aspx?id=55266) .
+Si vous ne pouvez pas éviter de coder en dur une version de protocole, nous vous recommandons vivement de spécifier TLS 1.2. Pour obtenir des conseils sur l’identification et la suppression des dépendances de TLS 1.0, téléchargez le livre blanc [sur les problèmes de SOLVING the TLS 1.0.](https://www.microsoft.com/download/details.aspx?id=55266)
 
 WCF prend en charge TLS1.0, 1.1 et 1.2 par la version par défaut dans .NET Framework 4.7. À compter de .NET Framework 4.7.1, WCF passe à la version configurée du système d’exploitation par défaut. Si une application est explicitement configurée avec `SslProtocols.None`, WCF utilise le paramètre par défaut du système d’exploitation lors de l’utilisation du transport NetTcp.
 
@@ -66,9 +65,9 @@ Les sections suivantes indiquent comment vérifier que vous n’utilisez pas une
 
 ### <a name="for-http-networking"></a>Pour la mise en réseau HTTP
 
-<xref:System.Net.ServicePointManager>, à l’aide de .NET Framework 4,7 et versions ultérieures, utilisera le protocole de sécurité par défaut configuré dans le système d’exploitation. Pour obtenir le choix du système d’exploitation par défaut, si possible, ne définissez pas de valeur pour la propriété <xref:System.Net.ServicePointManager.SecurityProtocol?displayProperty=nameWithType>, qui a comme valeur par défaut <xref:System.Net.SecurityProtocolType.SystemDefault?displayProperty=nameWithType>.
+<xref:System.Net.ServicePointManager>, en utilisant .NET Framework 4.7 et les versions ultérieures, utilisera le protocole de sécurité par défaut configuré dans le système d’exploitation. Pour obtenir le choix par défaut OS, si possible, ne définissez pas une valeur pour la <xref:System.Net.ServicePointManager.SecurityProtocol?displayProperty=nameWithType> propriété, qui manque à <xref:System.Net.SecurityProtocolType.SystemDefault?displayProperty=nameWithType>.
 
-Étant donné que le paramètre <xref:System.Net.SecurityProtocolType.SystemDefault?displayProperty=nameWithType> oblige l' <xref:System.Net.ServicePointManager> à utiliser le protocole de sécurité par défaut configuré par le système d’exploitation, votre application peut s’exécuter différemment selon le système d’exploitation sur lequel elle est exécutée. Par exemple, Windows 7 SP1 utilise TLS 1,0 alors que Windows 8 et Windows 10 utilisent TLS 1,2.
+Étant <xref:System.Net.SecurityProtocolType.SystemDefault?displayProperty=nameWithType> donné que <xref:System.Net.ServicePointManager> le paramètre provoque l’utilisation du protocole de sécurité par défaut configuré par le système d’exploitation, votre application peut fonctionner différemment en fonction du système d’exploitation sur qui il est exécuté. Par exemple, Windows 7 SP1 utilise TLS 1.0 tandis que Windows 8 et Windows 10 utilisent TLS 1.2.
 
 Le reste de cet article ne s’applique pas lorsque vous ciblez .NET Framework 4.7 ou versions ultérieures pour la mise en réseau HTTP.
 
@@ -104,7 +103,7 @@ Si vous n’utilisez **pas** de liaison personnalisée **et** que vous définiss
 
 ### <a name="for-wcf-message-security-with-certificate-credentials"></a>Pour la sécurité du message WCF avec les informations d’identification de certificat
 
-.NET Framework 4.7 et versions ultérieures utilise par défaut le protocole spécifié dans la propriété <xref:System.Net.ServicePointManager.SecurityProtocol>. Lorsque le `Switch.System.ServiceModel.DisableUsingServicePointManagerSecurityProtocols` [AppContextSwitch](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) est défini sur `true`, WCF choisit le protocole le plus approprié, jusqu’à TLS 1,0.
+.NET Framework 4.7 et versions ultérieures utilise par défaut le protocole spécifié dans la propriété <xref:System.Net.ServicePointManager.SecurityProtocol>. Lorsque [AppContextSwitch](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) `Switch.System.ServiceModel.DisableUsingServicePointManagerSecurityProtocols` est défini sur `true`, WCF choisit le meilleur protocole, jusqu'à TLS 1.0.
 
 ## <a name="if-your-app-targets-a-net-framework-version-earlier-than-47"></a>Si votre application cible une version de .NET Framework antérieure à 4.7
 
@@ -112,7 +111,7 @@ Auditez votre code pour vérifier que vous ne définissez pas une version spéci
 
 ### <a name="for-net-framework-46---462-and-not-wcf"></a>Pour le .NET Framework 4.6 - 4.6.2 et pas pour WCF
 
-Définissez le commutateur `DontEnableSystemDefaultTlsVersions` `AppContext` sur `false`. Consultez [Configuration de la sécurité via des commutateurs AppContext](#configuring-security-via-appcontext-switches).
+Réglez le `DontEnableSystemDefaultTlsVersions` `AppContext` commutateur à `false`. Consultez [Configuration de la sécurité via des commutateurs AppContext](#configuring-security-via-appcontext-switches).
 
 ### <a name="for-wcf-using-net-framework-46---462-using-tcp-transport-security-with-certificate-credentials"></a>Pour WCF utilisant .NET Framework 4.6 - 4.6.2, utilisant la sécurité de transport avec des informations d’identification de certificat
 
@@ -140,7 +139,7 @@ Ces versions de l’infrastructure WCF sont codées en dur pour utiliser les val
 
 ## <a name="if-your-app-targets-net-framework-35"></a>Si votre application cible .NET Framework 3.5
 
-Si vous devez définir explicitement un protocole de sécurité au lieu de laisser .NET ou le système d’exploitation sélectionner le protocole de sécurité, ajoutez `SecurityProtocolTypeExtensions` et `SslProtocolsExtension` énumérations à votre code. `SecurityProtocolTypeExtensions` et `SslProtocolsExtension` incluent des valeurs pour la valeur `Tls12`, `Tls11` et `SystemDefault`. Pour plus d’informations, consultez [prise en charge des versions par défaut du système TLS incluses dans .NET Framework 3,5 sur Windows 8.1 et Windows Server 2012 R2](https://support.microsoft.com/help/3154520/support-for-tls-system-default-versions-included-in-the--net-framework).
+Si vous devez définir explicitement un protocole de sécurité au lieu de `SecurityProtocolTypeExtensions` `SslProtocolsExtension` laisser .NET ou le système d’exploitation choisir le protocole de sécurité, ajouter et énumérer votre code. `SecurityProtocolTypeExtensions` et `SslProtocolsExtension` incluent des valeurs pour la valeur `Tls12`, `Tls11` et `SystemDefault`. Pour plus d’informations, voir [Support for TLS System Default Versions inclus dans .NET Framework 3.5 sur Windows 8.1 et Windows Server 2012 R2](https://support.microsoft.com/help/3154520/support-for-tls-system-default-versions-included-in-the--net-framework).
 
 <a name="configuring-security-via-appcontext-switches"></a>
 
@@ -176,7 +175,7 @@ La valeur de `false` pour `Switch.System.ServiceModel.DontEnableSystemDefaultTls
 
 Pour les applications ciblant le .NET Framework 4.7.1 et versions ultérieures, cette valeur par défaut est `false`. Pour les applications ciblant .NET Framework 4.7 et versions antérieures, cette valeur par défaut est `true`.
 
-Pour plus d’informations sur les protocoles TLS, consultez [Atténuation : protocoles TLS](../migration-guide/mitigation-tls-protocols.md). Pour plus d'informations sur les commutateurs `AppContext`, consultez [`<AppContextSwitchOverrides> Element`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md).
+Pour plus d’informations sur les protocoles TLS, consultez [Atténuation : protocoles TLS](../migration-guide/mitigation-tls-protocols.md). Pour plus `AppContext` d’informations [`<AppContextSwitchOverrides> Element`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md)sur les commutateurs, voir .
 
 ## <a name="configuring-security-via-the-windows-registry"></a>Configuration de la sécurité via le Registre Windows
 
@@ -195,7 +194,7 @@ Toutes les clés de Registre décrites ci-dessous ont le même effet, que vous p
 
 La clé de Registre `HKEY_LOCAL_MACHINE\SOFTWARE\[Wow6432Node\]Microsoft\.NETFramework\<VERSION>: SchUseStrongCrypto` a une valeur de type DWORD. La valeur de 1 incite votre application à utiliser un chiffrement fort. Le chiffrement fort utilise des protocoles de réseau plus sécurisés (TLS 1.2, TLS 1.1 et TLS 1.0) et bloque les protocoles qui ne sont pas sécurisés. La valeur de 0 désactive le chiffrement fort. Pour plus d’informations, consultez [L’indicateur SCH_USE_STRONG_CRYPTO](#the-sch_use_strong_crypto-flag).
 
-Si votre application cible .NET Framework 4.6 ou versions ultérieures, la valeur par défaut de cette clé est 1. Il s’agit d’une valeur par défaut sécurisée, que nous vous recommandons. Si votre application s’exécute sur .NET Framework 4.6, mais cible une version antérieure, la valeur par défaut de la clé est 0. Dans ce cas, vous devez le définir explicitement sa valeur sur 1.
+Si votre application cible .NET Framework 4.6 ou versions ultérieures, la valeur par défaut de cette clé est 1. Il s’agit d’une valeur par défaut sécurisée, que nous vous recommandons. Si votre application cible .NET Framework 4.5.2 ou des versions antérieures, les principales par défaut à 0. Dans ce cas, vous devez le définir explicitement sa valeur sur 1.
 
 Cette clé doit uniquement avoir une valeur de 0 si vous avez besoin de vous connecter à d’anciens services qui ne prennent pas en charge le chiffrement fort et ne peuvent pas être mis à niveau.
 
@@ -205,11 +204,11 @@ La clé de Registre `HKEY_LOCAL_MACHINE\SOFTWARE\[Wow6432Node\]Microsoft\.NETFra
 
 `<VERSION>` doit être v4.0.30319 (pour .NET Framework 4 et versions ultérieures) ou v2.0.50727 (pour .NET Framework 3.5).
 
-Si votre application cible .NET Framework 4.7 ou versions ultérieures, la valeur par défaut de cette clé est 1. Il s’agit d’une valeur par défaut sécurisée, que nous vous recommandons. Si votre application s’exécute sur .NET Framework 4.7 ou versions ultérieures, mais cible une version antérieure, la valeur par défaut de la clé est 0. Dans ce cas, vous devez le définir explicitement sa valeur sur 1.
+Si votre application cible .NET Framework 4.7 ou versions ultérieures, la valeur par défaut de cette clé est 1. Il s’agit d’une valeur par défaut sécurisée, que nous vous recommandons. Si votre application cible .NET Framework 4.6.1 ou des versions antérieures, les principales par défaut à 0. Dans ce cas, vous devez le définir explicitement sa valeur sur 1.
 
 Pour plus d’informations, consultez [Mise à jour cumulative pour Windows 10 Version 1511 et Windows Server 2016 Technical Preview 4 : 10 mai 2016](https://support.microsoft.com/help/3156421/cumulative-update-for-windows-10-version-1511-and-windows-server-2016).
 
-Pour plus d’informations sur .NET Framework 3.5.1, consultez [prise en charge des versions par défaut du système TLS incluses dans .NET Framework 3.5.1 sur Windows 7 SP1 et Server 2008 R2 SP1](https://support.microsoft.com/help/3154518/support-for-tls-system-default-versions-included-in-the--net-framework).
+Pour plus d’informations avec .NET Framework 3.5.1, voir [Support for TLS System Default Versions inclus dans .NET Framework 3.5.1 sur Windows 7 SP1 et Server 2008 R2 SP1](https://support.microsoft.com/help/3154518/support-for-tls-system-default-versions-included-in-the--net-framework).
 
 Le fichier _. REG_ suivant définit les clés de Registre et leurs variantes sur leurs valeurs les plus sûres :
 
@@ -239,7 +238,7 @@ Vous pouvez utiliser le Registre pour un contrôle affiné sur les protocoles n�
 
 Démarrez avec la clé de Registre `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols`. Sous cette clé, vous pouvez créer toutes les sous-clés dans l’ensemble `SSL 2.0`, `SSL 3.0`, `TLS 1.0`, `TLS 1.1` et `TLS 1.2`. Sous chacune de ces sous-clés, vous pouvez créer des sous-clés `Client` et/ou `Server`. Sous `Client` et `Server`, vous pouvez créer des valeurs DWORD `DisabledByDefault` (0 ou 1) et `Enabled` (0 ou 0xFFFFFFFF).
 
-## <a name="the-sch_use_strong_crypto-flag"></a>L’indicateur SCH_USE_STRONG_CRYPTO
+## <a name="the-sch_use_strong_crypto-flag"></a><a name="the-sch_use_strong_crypto-flag"></a>L’indicateur SCH_USE_STRONG_CRYPTO
 
 Lorsqu’elle est activée (par défaut, par un commutateur `AppContext`, ou par le Registre Windows), la version .NET Framework utilise l’indicateur `SCH_USE_STRONG_CRYPTO` lorsque votre application demande un protocole de sécurité TLS. L’indicateur `SCH_USE_STRONG_CRYPTO` peut être activé par défaut, avec le commutateur `AppContext` ou avec le Registre. Le système d’exploitation passe de l’indicateur sur `Schannel`pour lui demander de désactiver les algorithmes de chiffrement faibles connus, les suites de chiffrement et les versions du protocole TLS/SSL qui peuvent être également activées pour une meilleure interopérabilité. Pour plus d'informations, consultez les pages suivantes :
 
@@ -259,8 +258,8 @@ Pour mettre à jour .NET Framework afin de permettre au système d’exploitatio
 
 Voir aussi :
 
-- [Versions et dépendances de .NET Framework](../migration-guide/versions-and-dependencies.md)
-- [Comment : déterminer les versions du .NET Framework installées](../migration-guide/how-to-determine-which-versions-are-installed.md).
+- [Versions et dépendances du .NET Framework](../migration-guide/versions-and-dependencies.md)
+- [Comment: Déterminer quelles versions cadres .NET sont installés](../migration-guide/how-to-determine-which-versions-are-installed.md).
 
 ## <a name="support-for-tls-12"></a>Prise en charge de TLS 1.2
 
@@ -270,7 +269,7 @@ Pour que votre application négocie TLS 1.2, le système d’exploitation et la 
 
 Pour activer ou de réactiver TLS 1.2 et/ou TLS 1.1 sur un système qui les prend en charge, consultez [Paramètres de Registre de TLS (Transport Layer Security)](/windows-server/security/tls/tls-registry-settings).
 
-| **SE** | **Prise en charge de TLS 1.2** |
+| **Os** | **TLS 1.2 soutien** |
 | --- | --- |
 | Windows 10<br>Windows Server 2016 | Pris en charge, activé par défaut. |
 | Windows 8.1<br>Windows Server 2012 R2 | Pris en charge, activé par défaut. |
@@ -285,7 +284,7 @@ Pour plus d’informations sur les protocoles TLS/SSL activés par défaut sur c
 
 Ce tableau affiche la mise à jour du système d’exploitation dont vous avez besoin pour prendre en charge TLS 1.2 avec .NET Framework 3.5. Nous vous recommandons d'appliquer toutes les mises à jour du système d’exploitation.
 
-| **SE** | **Mise à jour minimale nécessaire pour prendre en charge TLS 1.2 avec .NET Framework 3.5** |
+| **Os** | **Mise à jour minimale nécessaire pour prendre en charge TLS 1.2 avec .NET Framework 3.5** |
 | --- | --- |
 | Windows 10<br>Windows Server 2016 | [Mise à jour cumulative pour Windows 10 Version 1511 et Windows Server 2016 Technical Preview 4 : 10 mai 2016](https://support.microsoft.com/help/3156421/cumulative-update-for-windows-10-version-1511-and-windows-server-2016) |
 | Windows 8.1<br>Windows Server 2012 R2 | [Prise en charge des versions par défaut du système TLS, inclues dans .NET Framework 3.5 sur Windows 8.1 et Windows Server 2012 R2](https://support.microsoft.com/help/3154520/support-for-tls-system-default-versions-included-in-the--net-framework) |
@@ -293,19 +292,3 @@ Ce tableau affiche la mise à jour du système d’exploitation dont vous avez b
 | Windows 7 SP1<br>Windows Server 2008 R2 SP1 | [Prise en charge des versions par défaut du système TLS, inclues dans .NET Framework 3.5.1 sur Windows 7 SP1 et Server 2008 R2 SP1](https://support.microsoft.com/help/3154518/support-for-tls-system-default-versions-included-in-the--net-framework) |
 | Windows Server 2008 | [Prise en charge des versions par défaut du système TLS, inclues dans .NET Framework 2.0 SP2 sur Windows Vista SP2 et Server 2008 SP2](https://support.microsoft.com/help/3154517/support-for-tls-system-default-versions-included-in-the--net-framework) |
 | Windows Vista | Non pris en charge |
-
-## <a name="azure-cloud-services"></a>Services cloud Azure
-
-Si vous utilisez les rôles de travail et Web [Azure Cloud Services](https://azure.microsoft.com/services/cloud-services/) pour héberger et exécuter votre application, il existe des considérations dont vous avez besoin pour prendre en compte la prise en charge TLS 1.2.
-
-### <a name="net-framework-47-is-not-installed-on-azure-guest-os-by-default"></a>.NET Framework 4.7 n’est pas installé par défaut sur le système d’exploitation Azure Guest
-
-La dernière version installée de la dernière version 5 de la famille du système d’exploitation Azure Guest (Windows Server 2016) est 4.6.2. Pour connaître les versions de .NET Framework sont installées sur chaque système d’exploitation Azure Guest, consultez la [matrice de compatibilité des versions et du Kit de développement logiciel (SDK) du système d’exploitation invité de Azure Guest](https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix).
-
-Si votre application cible une version de .NET Framework qui n’est pas disponible sur la version du système d’exploitation Azure Guest, vous devez l’installer vous-même. Consultez [installer .NET sur les rôles Azure Cloud Services](https://docs.microsoft.com/azure/cloud-services/cloud-services-dotnet-install-dotnet). Si l’installation de l’infrastructure nécessite un redémarrage, les rôles de service peuvent également redémarrer avant de passer à l’état Prêt.
-
-### <a name="azure-guest-os-registry-settings"></a>Paramètres du Registre du système d’exploitation Azure Guest
-
-L’image Family 5 du système d’exploitation Azure Guest pour [Azure Cloud Services](https://azure.microsoft.com/services/cloud-services/) possède déjà la clé de Registre `SchUseStrongCrypto` est définie sur une valeur de 1. Pour plus d’informations, consultez [SchUseStrongCrypto](#schusestrongcrypto).
-
-Définissez la clé de Registre [SystemDefaultTlsVersions](#systemdefaulttlsversions) sur 1. Consultez [Configuration de la sécurité via le Registre Windows](#configuring-security-via-the-windows-registry).

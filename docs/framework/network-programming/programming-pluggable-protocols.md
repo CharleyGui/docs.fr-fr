@@ -16,10 +16,10 @@ helpviewer_keywords:
 - protocols, pluggable
 ms.assetid: 66ef8456-7576-4e97-8956-959b216373db
 ms.openlocfilehash: 94dfedd317782b9e518df02c84d9af55b1ef2b69
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047399"
 ---
 # <a name="programming-pluggable-protocols"></a>programmation de protocoles enfichables
@@ -33,7 +33,7 @@ Les classes abstraites <xref:System.Net.WebRequest> et <xref:System.Net.WebRespo
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Dérivation de WebRequest](deriving-from-webrequest.md)
+- [Dérivation à partir de WebRequest](deriving-from-webrequest.md)
 - [Dérivation à partir de WebResponse](deriving-from-webresponse.md)
-- [Programmation réseau dans le .NET Framework](index.md)
-- [Guide pratique : caster une classe WebRequest en vue d’accéder aux propriétés spécifiques au protocole](how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)
+- [Programmation réseau dans .NET Framework](index.md)
+- [Comment : convertir une classe WebRequest pour accéder à des propriétés spécifiques au protocole](how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)

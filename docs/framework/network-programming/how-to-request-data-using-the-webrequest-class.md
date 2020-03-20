@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : demander des données à l’aide de la classe WebRequest'
+title: 'Comment : Demander des données en utilisant la classe WebRequest'
 ms.date: 03/21/2019
 dev_langs:
 - csharp
@@ -12,13 +12,13 @@ helpviewer_keywords:
 - Internet, requesting data
 ms.assetid: 368b8d0f-dc5e-4469-a8b8-b2adbf5dd800
 ms.openlocfilehash: e670a2a503ce704eff847e9e0b3ee340ab52fe62
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71048167"
 ---
-# <a name="how-to-request-data-by-using-the-webrequest-class"></a>Procédure : demander des données à l’aide de la classe WebRequest
+# <a name="how-to-request-data-by-using-the-webrequest-class"></a>Comment : Demander des données en utilisant la classe WebRequest
 
 La procédure suivante décrit les étapes nécessaires pour demander une ressource, comme une page web ou un fichier, auprès d’un serveur. La ressource doit être identifiée par un URI.
 
@@ -35,7 +35,7 @@ La procédure suivante décrit les étapes nécessaires pour demander une ressou
     ```
 
     > [!NOTE]
-    > Le .NET Framework fournit des classes spécifiques du protocole dérivées des classes <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> pour les URI qui commencent par *http:* , *https:* , *ftp:* et *file:* .
+    > Le .NET Framework fournit des classes spécifiques du protocole dérivées des classes <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> pour les URI qui commencent par *http:*, *https:*, *ftp:* et *file:*.
 
     Si vous avez besoin de définir ou lire des propriétés spécifiques du protocole, vous devez caster votre objet <xref:System.Net.WebRequest> ou <xref:System.Net.WebResponse> en type d’objet spécifique du protocole. Pour plus d’informations, consultez [Programmation de protocoles enfichables](programming-pluggable-protocols.md).
 
@@ -91,7 +91,7 @@ La procédure suivante décrit les étapes nécessaires pour demander une ressou
     response.Close()
     ```
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple de code suivant montre comment créer une demande auprès d’un serveur web et lire les données dans sa réponse :
 
@@ -100,8 +100,8 @@ L’exemple de code suivant montre comment créer une demande auprès d’un ser
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de requêtes Internet](creating-internet-requests.md)
-- [Utilisation de flux sur le réseau](using-streams-on-the-network.md)
+- [Création de demandes sur Internet](creating-internet-requests.md)
+- [Utilisation de streams sur le réseau](using-streams-on-the-network.md)
 - [Accès à Internet via un proxy](accessing-the-internet-through-a-proxy.md)
 - [Demande de données](requesting-data.md)
-- [Guide pratique : envoyer des données à l’aide de la classe WebRequest](how-to-send-data-using-the-webrequest-class.md)
+- [Comment : Envoyer des données en utilisant la classe WebRequest](how-to-send-data-using-the-webrequest-class.md)

@@ -2,15 +2,15 @@
 title: Membership and Role Provider
 ms.date: 03/30/2017
 ms.assetid: 0d11a31c-e75f-4fcf-9cf4-b7f26e056bcd
-ms.openlocfilehash: 7fba608d6d0ed3b7caab62ff16926d7b03516ed1
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 117be783c2d4a72ff9d1c4509566274b1043a43d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424666"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79144459"
 ---
 # <a name="membership-and-role-provider"></a>Membership and Role Provider
-L’exemple de fournisseur d’appartenances et de rôles montre comment un service peut utiliser les fournisseurs d’appartenances et de rôles ASP.NET pour authentifier et autoriser des clients.  
+L’échantillon de fournisseur d’adhésion et de rôle montre comment un service peut utiliser les ASP.NET les fournisseurs d’adhésion et de rôle pour authentifier et autoriser les clients.  
   
  Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
   
@@ -21,11 +21,11 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
   
 - Un client peut authentifier des utilisateurs à l'aide de la combinaison nom d'utilisateur et mot de passe.  
   
-- Le serveur peut valider les informations d’identification du client par rapport au fournisseur d’appartenances ASP.NET.  
+- Le serveur peut valider les informations d’identification du client par rapport au fournisseur d’adhésion ASP.NET.  
   
 - Le serveur peut être authentifié à l'aide du certificat X.509 du serveur.  
   
-- Le serveur peut mapper le client authentifié à un rôle à l’aide du fournisseur de rôles ASP.NET.  
+- Le serveur peut cartographier le client authentifié à un rôle en utilisant le fournisseur de rôle ASP.NET.  
   
 - Le serveur peut utiliser l'`PrincipalPermissionAttribute` pour contrôler l'accès à certaines méthodes exposées par le service.  
   
@@ -34,7 +34,7 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
 ```xml  
 <!-- Set the connection string for SQL Server -->  
 <connectionStrings>  
-  <add name="SqlConn"   
+  <add name="SqlConn"
        connectionString="Data Source=localhost;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />  
 </connectionStrings>  
   
@@ -43,9 +43,9 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
   <membership defaultProvider="SqlMembershipProvider" userIsOnlineTimeWindow="15">  
     <providers>  
       <clear />  
-      <add   
-        name="SqlMembershipProvider"   
-        type="System.Web.Security.SqlMembershipProvider"   
+      <add
+        name="SqlMembershipProvider"
+        type="System.Web.Security.SqlMembershipProvider"
         connectionStringName="SqlConn"  
         applicationName="MembershipAndRoleProviderSample"  
         enablePasswordRetrieval="false"  
@@ -57,19 +57,19 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
   </membership>  
   
   <!-- Configure the Sql Role Provider -->  
-  <roleManager enabled ="true"   
+  <roleManager enabled ="true"
                defaultProvider ="SqlRoleProvider" >  
     <providers>  
-      <add name ="SqlRoleProvider"   
-           type="System.Web.Security.SqlRoleProvider"   
-           connectionStringName="SqlConn"   
+      <add name ="SqlRoleProvider"
+           type="System.Web.Security.SqlRoleProvider"
+           connectionStringName="SqlConn"
            applicationName="MembershipAndRoleProviderSample"/>  
     </providers>  
   </roleManager>  
 </system.web>  
 ```  
   
- Le service expose un point de terminaison unique de communication avec le service, qui est défini à l'aide du fichier de configuration Web.config. Le point de terminaison se compose d'une adresse, d'une liaison et d'un contrat. La liaison est configurée avec une `wsHttpBinding`standard, qui utilise par défaut l'authentification Windows. Cet exemple définit la `wsHttpBinding` standard de manière à utiliser l'authentification du nom d'utilisateur. Le comportement spécifie que le certificat de serveur sera utilisé pour l'authentification du service. Le certificat de serveur doit contenir la même valeur pour le `SubjectName` que l’attribut `findValue` dans l’élément de configuration [\<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) . En outre, le comportement spécifie que l’authentification des paires nom d’utilisateur/mot de passe est effectuée par le fournisseur d’appartenances ASP.NET et que le mappage de rôle est effectué par le fournisseur de rôle ASP.NET en spécifiant les noms définis pour les deux fournisseurs.  
+ Le service expose un point de terminaison unique de communication avec le service, qui est défini à l'aide du fichier de configuration Web.config. Le point de terminaison se compose d'une adresse, d'une liaison et d'un contrat. La liaison est configurée avec une `wsHttpBinding`standard, qui utilise par défaut l'authentification Windows. Cet exemple définit la `wsHttpBinding` standard de manière à utiliser l'authentification du nom d'utilisateur. Le comportement spécifie que le certificat de serveur sera utilisé pour l'authentification du service. Le certificat serveur doit contenir `SubjectName` la `findValue` même valeur pour l’attribut que l’attribut dans le [ \<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) élément de configuration. En outre, le comportement spécifie que l’authentification des paires de mots de passe-passe de nom d’utilisateur est effectuée par le fournisseur d’adhésion ASP.NET et la cartographie des rôles est effectuée par le fournisseur de rôle ASP.NET en spécifiant les noms définis pour les deux fournisseurs.  
   
 ```xml  
 <system.serviceModel>  
@@ -97,11 +97,11 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
                               roleProviderName ="SqlRoleProvider" />  
         <serviceCredentials>  
           <!-- Configure user name authentication to use the Membership Provider -->  
-          <userNameAuthentication userNamePasswordValidationMode ="MembershipProvider"   
+          <userNameAuthentication userNamePasswordValidationMode ="MembershipProvider"
                                   membershipProviderName ="SqlMembershipProvider"/>  
           <!-- Configure the service certificate -->  
-          <serviceCertificate storeLocation ="LocalMachine"   
-                              storeName ="My"   
+          <serviceCertificate storeLocation ="LocalMachine"
+                              storeName ="My"
                               x509FindType ="FindBySubjectName"  
                               findValue ="localhost" />  
         </serviceCredentials>  
@@ -118,15 +118,15 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Pour générer l' C# édition .net ou Visual Basic de la solution, suivez les instructions de [la](../../../../docs/framework/wcf/samples/running-the-samples.md)procédure d’exécution des exemples de Windows Communication Foundation.  
+1. Pour créer l’édition C ou Visual Basic .NET de la solution, suivez les instructions dans [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-2. Vérifiez que vous avez configuré la [base de données ASP.NET services d’application](https://go.microsoft.com/fwlink/?LinkId=94997).  
-  
-    > [!NOTE]
-    > Si vous exécutez SQL Server Express Edition, le nom de votre serveur est .\SQLEXPRESS. Ce serveur doit être utilisé lors de la configuration de la base de données ASP.NET Services d’application ainsi que dans la chaîne de connexion Web. config.  
+2. Assurez-vous d’avoir configuré la [base de données ASP.NET services d’application](https://go.microsoft.com/fwlink/?LinkId=94997).  
   
     > [!NOTE]
-    > Le compte de processus de travail ASP.NET doit avoir des autorisations sur la base de données créée dans cette étape. Utilisez l'utilitaire sqlcmd ou SQL Server Management Studio pour ce faire.  
+    > Si vous exécutez SQL Server Express Edition, le nom de votre serveur est .\SQLEXPRESS. Ce serveur doit être utilisé lors de la configuration de la base de données ASP.NET services d’application ainsi que dans la chaîne de connexion Web.config.  
+  
+    > [!NOTE]
+    > Le compte de processus ASP.NET travailleur doit avoir des autorisations sur la base de données qui est créée dans cette étape. Utilisez l'utilitaire sqlcmd ou SQL Server Management Studio pour ce faire.  
   
 3. Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions ci-dessous.  
   
@@ -134,11 +134,11 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
   
 1. Assurez-vous que le chemin d'accès inclut le dossier dans lequel Makecert.exe se trouve.  
   
-2. Exécutez setup. bat à partir du dossier d’installation de l’exemple dans un Invite de commandes développeur pour Visual Studio exécuter avec des privilèges d’administrateur. Tous les certificats de service requis pour l'exécution de l'exemple sont ainsi installés.  
+2. Exécuter Setup.bat à partir de l’échantillon installer dossier dans un Developer Command Prompt pour Visual Studio exécuter avec les privilèges de l’administrateur. Tous les certificats de service requis pour l'exécution de l'exemple sont ainsi installés.  
   
 3. Lancez Client.exe à partir de \client\bin. L'activité du client s'affiche sur son application de console.  
   
-4. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. Si le client et le service ne sont pas en mesure de communiquer, voir [Conseils de dépannage pour les échantillons WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-computers"></a>Pour exécuter l'exemple sur plusieurs ordinateurs  
   
@@ -150,24 +150,24 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
   
 4. Copiez les fichiers programme du client dans le répertoire client de l'ordinateur client. Copiez également les fichiers Setup.bat, Cleanup.bat et ImportServiceCert.bat sur le client.  
   
-5. Sur le serveur, ouvrez une Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur et exécutez `setup.bat service`. L’exécution de `setup.bat` avec l’argument `service` crée un certificat de service avec le nom de domaine complet de l’ordinateur et exporte le certificat de service vers un fichier nommé service. cer.  
+5. Sur le serveur, ouvrir une invitation de commande de `setup.bat service`développeur pour Visual Studio avec des privilèges administratifs et exécuter . Exécution `setup.bat` avec `service` l’argument crée un certificat de service avec le nom de domaine entièrement qualifié de l’ordinateur et exporte le certificat de service à un fichier nommé Service.cer.  
   
-6. Modifiez le fichier Web. config pour refléter le nouveau nom de certificat (dans l’attribut `findValue` de la [\<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)), qui est identique au nom de domaine complet de l’ordinateur.  
+6. Modifier Web.config pour refléter le nouveau `findValue` nom de certificat (dans l’attribut dans le [ \<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)), qui est le même que le nom de domaine entièrement qualifié de l’ordinateur.  
   
 7. Copiez le fichier Service.cer du répertoire de service vers le répertoire client sur l'ordinateur client.  
   
 8. Dans le fichier Client.exe.config de l'ordinateur client, modifiez la valeur d'adresse du point de terminaison afin qu'elle corresponde à la nouvelle adresse de votre service.  
   
-9. Sur le client, ouvrez une Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur et exécutez ImportServiceCert. bat. Cette opération importe le certificat de service du fichier Service.cer dans le magasin CurrentUser - TrustedPeople.  
+9. Sur le client, ouvrez une invite de commande de développeur pour Visual Studio avec des privilèges administratifs et exécutez ImportServiceCert.bat. Cette opération importe le certificat de service du fichier Service.cer dans le magasin CurrentUser - TrustedPeople.  
   
-10. Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+10. Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes. Si le client et le service ne sont pas en mesure de communiquer, voir [Conseils de dépannage pour les échantillons WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-clean-up-after-the-sample"></a>Pour procéder au nettoyage après exécution de l'exemple  
   
 - Exécutez Cleanup.bat dans le dossier exemples une fois que vous avez terminé d'exécuter l'exemple.  
   
 > [!NOTE]
-> Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des exemples de Windows Communication Foundation (WCF) qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
+> Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des échantillons de la Windows Communication Foundation (WCF) qui utilisent des certificats sur les ordinateurs, assurez-vous d’effacer les certificats de service qui ont été installés dans le magasin CurrentUser - TrustedPeople. Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
   
 ## <a name="the-setup-batch-file"></a>Le fichier de commandes d'installation  
  Le fichier de commandes Setup.bat inclus avec cet exemple permet de configurer le serveur avec les certificats pertinents pour exécuter une application auto-hébergée qui requiert une sécurité basée sur le certificat du serveur. Ce fichier de commandes doit être modifié pour fonctionner sur plusieurs ordinateurs ou sans hébergement.  

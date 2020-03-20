@@ -14,10 +14,10 @@ helpviewer_keywords:
 - requesting data from Internet, application protocols
 ms.assetid: 3aab4bcc-8397-4e1a-a1b6-bbd837a21430
 ms.openlocfilehash: f9af668a30920daa4634e402ab1922946b014051
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71046997"
 ---
 # <a name="using-application-protocols"></a>Utilisation de protocoles d’application
@@ -25,5 +25,5 @@ ms.locfileid: "71046997"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Programmation réseau dans le .NET Framework](index.md)
+- [Programmation réseau dans .NET Framework](index.md)
 - [Exemples de programmation réseau](network-programming-samples.md)

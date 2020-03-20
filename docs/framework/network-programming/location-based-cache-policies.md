@@ -16,10 +16,10 @@ helpviewer_keywords:
 - Refresh policy
 ms.assetid: e41d7f1a-0a6a-4dee-97d1-c6a8b6a07fc2
 ms.openlocfilehash: e6896452fce89f69b40f1d03332355df72d93211
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047664"
 ---
 # <a name="location-based-cache-policies"></a>stratégies de cache basées sur l’emplacement
@@ -52,4 +52,4 @@ Une stratégie de cache basée sur l’emplacement définit l’actualisation de
 - [Stratégie de cache](cache-policy.md)
 - [Stratégies de cache basées sur la durée](time-based-cache-policies.md)
 - [Configuration de la mise en cache dans les applications réseau](configuring-caching-in-network-applications.md)
-- [\<requestCaching>, élément (paramètres réseau)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+- [\<demandeCaching> Element (Paramètres réseau)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)

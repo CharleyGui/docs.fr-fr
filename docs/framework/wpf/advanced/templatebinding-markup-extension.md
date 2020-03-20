@@ -8,17 +8,17 @@ helpviewer_keywords:
 - XAML [WPF], TemplateBinding markup extension
 - TemplateBinding markup extensions [WPF]
 ms.assetid: 1d25bbfc-dbc2-499d-9f12-419d23d4ac6a
-ms.openlocfilehash: 6d89978b907c8f124b5162c97de5edc034cf1e95
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 8cebbf717f66b072bc84b2068193ff2fe76ea87b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976668"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79187281"
 ---
 # <a name="templatebinding-markup-extension"></a>TemplateBinding, extension de balisage
 Cette extension lie la valeur d'une propriété dans un modèle de contrôle afin de la définir comme valeur d'une autre propriété exposée dans le contrôle basé sur un modèle.  
   
-## <a name="xaml-attribute-usage"></a>Utilisation d'attributs XAML  
+## <a name="xaml-attribute-usage"></a>Utilisation d'attributs XAML  
   
 ```xml  
 <object property="{TemplateBinding sourceProperty}" .../>  
@@ -35,14 +35,14 @@ Cette extension lie la valeur d'une propriété dans un modèle de contrôle afi
 |||  
 |-|-|  
 |`propertyName`|<xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType> de la propriété définie dans la syntaxe de méthode setter.|  
-|`sourceProperty`|Autre propriété de dépendance qui existe sur le type basé sur un modèle, spécifiée par <xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>.<br /><br /> ou<br /><br /> Nom de propriété « dotted-down » défini par un autre type que le type de cible basé sur un modèle. Il s'agit en réalité d'un <xref:System.Windows.PropertyPath>. Consultez [syntaxe XAML PropertyPath](propertypath-xaml-syntax.md).|  
+|`sourceProperty`|Autre propriété de dépendance qui existe sur le type basé sur un modèle, spécifiée par <xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>.<br /><br /> - ou -<br /><br /> Nom de propriété « dotted-down » défini par un autre type que le type de cible basé sur un modèle. Il s'agit en réalité d'un <xref:System.Windows.PropertyPath>. Voir [PropertyPath XAML Syntax](propertypath-xaml-syntax.md).|  
   
-## <a name="remarks"></a>Notes  
- Une `TemplateBinding` est une forme optimisée d’une [liaison](binding-markup-extension.md) pour les scénarios de modèle, analogue à une `Binding` construite avec `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}`. `TemplateBinding` est toujours une liaison unidirectionnelle, même si les propriétés ont comme valeur par défaut des liaisons bidirectionnelles. Les deux propriétés doivent toutes être des propriétés de dépendance. Pour obtenir une liaison bidirectionnelle à un parent basé sur un modèle, utilisez l’instruction de liaison suivante à la place `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=MyDependencyProperty}`. 
+## <a name="remarks"></a>Notes   
+ A `TemplateBinding` est une forme optimisée d’une [liaison](binding-markup-extension.md) pour `Binding` les `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}`scénarios de modèle, analogue à un construit avec . `TemplateBinding` est toujours une liaison unidirectionnelle, même si les propriétés ont comme valeur par défaut des liaisons bidirectionnelles. Les deux propriétés doivent toutes être des propriétés de dépendance. Afin d’atteindre la liaison bidirectionnel à un `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=MyDependencyProperty}`parent modélné utiliser l’instruction contraignante suivante à la place .
   
- [RelativeSource](relativesource-markupextension.md) est une autre extension de balisage qui est parfois utilisée conjointement avec ou au lieu de `TemplateBinding` pour effectuer une liaison de propriété relative dans un modèle.  
+ [RelativeSource](relativesource-markupextension.md) est une autre extension de balisage `TemplateBinding` qui est parfois utilisée en conjonction avec ou au lieu de afin d’effectuer la liaison relative de propriété dans un modèle.  
   
- La description des modèles de contrôle en tant que concept n’est pas abordée ici. Pour plus d’informations, consultez [styles et modèles de contrôle](../controls/control-styles-and-templates.md).  
+ Décrire les modèles de contrôle comme un concept n’est pas couvert ici; pour plus d’informations, voir [Styles de contrôle et Modèles](../controls/control-styles-and-templates.md).  
   
  La syntaxe d’attribut est la syntaxe la plus couramment utilisée avec cette extension de balisage. Le jeton de chaîne fourni après la chaîne d’identificateur `TemplateBinding` est assigné en tant que valeur <xref:System.Windows.TemplateBindingExtension.Property%2A> de la classe d’extension <xref:System.Windows.TemplateBindingExtension> sous-jacente.  
   
@@ -56,9 +56,9 @@ Cette extension lie la valeur d'une propriété dans un modèle de contrôle afi
   
  L'utilisation en clair est souvent utile pour les extensions qui comportent plusieurs propriétés définissables ou si certaines propriétés sont facultatives. `TemplateBinding` ne comportant qu'une seule propriété définissable (obligatoire), cette utilisation en clair n'est pas classique.  
   
- Dans l’implémentation du processeur XAML [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], la gestion de cette extension de balisage est définie par la classe <xref:System.Windows.TemplateBindingExtension>.  
+ Dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] la mise en œuvre du processeur XAML, la manipulation de cette extension de balisage est définie par la <xref:System.Windows.TemplateBindingExtension> classe.  
   
- `TemplateBinding` est une extension de balisage. Les extensions de balisage sont généralement implémentées pour éviter que les valeurs d’attribut ne soient autre chose que des valeurs littérales ou des noms de gestionnaire et lorsque l’exigence dépasse le cadre de la définition de convertisseurs de type sur certains types ou propriétés. Toutes les extensions de balisage en XAML utilisent les caractères `{` et `}` dans leur syntaxe d’attribut, qui est la Convention selon laquelle un processeur XAML reconnaît qu’une extension de balisage doit traiter l’attribut. Pour plus d’informations, consultez [Extensions de balisage et XAML WPF](markup-extensions-and-wpf-xaml.md).  
+ `TemplateBinding` est une extension de balisage. Les extensions de balisage sont généralement implémentées pour éviter que les valeurs d’attribut ne soient autre chose que des valeurs littérales ou des noms de gestionnaire et lorsque l’exigence dépasse le cadre de la définition de convertisseurs de type sur certains types ou propriétés. Toutes les extensions de balisage dans XAML utilisent le `{` syntaxe d’attribut, `}` qui est la convention par laquelle un processeur XAML reconnaît qu’une extension de balisage doit traiter l’attribut. Pour plus d’informations, consultez [Extensions de balisage et XAML WPF](markup-extensions-and-wpf-xaml.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

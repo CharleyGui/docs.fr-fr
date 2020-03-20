@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9544b711-e669-4eaf-8630-ee862e5e4489
 topic_type:
 - apiref
-ms.openlocfilehash: 6b5b3b3b5a3613668f4470f48083ae010cc9d336
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0bfbfec930c193ea05a01bd5bd9f46d2ec6714b1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445253"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175289"
 ---
 # <a name="imetadataimport2getmethodspecprops-method"></a>IMetaDataImport2::GetMethodSpecProps, méthode
-Obtient la signature de métadonnées de la méthode référencée par le jeton MethodSpec spécifié.  
+Obtient la signature des métadonnées de la méthode référencée par le jeton MethodSpec spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,32 +31,32 @@ Obtient la signature de métadonnées de la méthode référencée par le jeton 
 HRESULT GetMethodSpecProps (  
    [in]  mdMethodSpec     mi,  
    [out] mdToken          *tkParent,  
-   [out] PCCOR_SIGNATURE  *ppvSigBlob,   
+   [out] PCCOR_SIGNATURE  *ppvSigBlob,
    [out] ULONG            *pcbSigBlob  
-);   
+);
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `mi`  
- dans Jeton MethodSpec qui représente l’instanciation de la méthode.  
+ [dans] Un jeton MethodSpec qui représente l’instantanéisation de la méthode.  
   
  `tkParent`  
- à Pointeur vers le jeton MethodDef ou MethodRef qui représente la définition de méthode.  
+ [out] Un pointeur sur le jeton MethodDef ou MethodRef qui représente la définition de la méthode.  
   
  `ppvSigBlob`  
- à Pointeur vers la signature de métadonnées binaires de la méthode.  
+ [out] Un pointeur à la signature de métadonnées binaires de la méthode.  
   
  `pcbSigBlob`  
- à Taille, en octets, de `ppvSigBlob`.  
+ [out] La taille, dans les `ppvSigBlob`octets, de .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

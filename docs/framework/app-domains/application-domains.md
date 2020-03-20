@@ -13,11 +13,11 @@ helpviewer_keywords:
 - verification testing code
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
 ms.openlocfilehash: a5c9f4248e060d231941269f39cadbc7147ce27f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119968"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399874"
 ---
 # <a name="application-domains"></a>Domaines d'application
 
@@ -46,7 +46,7 @@ Les systèmes d'exploitation et les environnements d'exécution assurent génér
     > [!NOTE]
     > Vous ne pouvez pas décharger des assemblys ou des types individuels. Seul un domaine complet peut être déchargé.  
   
-- Le code en cours d'exécution dans une application ne peut pas directement accéder au code ou aux ressources d'une autre application. Le Common Language Runtime applique cette isolation en empêchant les appels directs entre les objets dans les différents domaines d'application. Les objets qui passent d'un domaine à un autre sont soit copiés, soit accédés par un proxy. Si l'objet est copié, l'appel à cet objet est alors local. Dans ce cas, l'appelant et l'objet référencé figurent dans le même domaine d'application. Si l'objet est accédé par un proxy, l'appel à cet objet est alors distant. Dans ce cas, l'appelant et l'objet référencé figurent dans des domaines d'application différents. Les appels interdomaines utilisent la même infrastructure d'appel distant que les appels entre deux processus ou deux ordinateurs. Les métadonnées de l'objet référencé doivent par conséquent être disponibles pour les deux domaines d'application pour que l'appel de méthode puisse faire l'objet d'une compilation JIT correcte. Si le domaine appelant n’a pas accès aux métadonnées pour l’objet qui est appelé, la compilation peut échouer avec une exception de type <xref:System.IO.FileNotFoundException>. Pour plus d'informations, consultez [Remote Objects](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)). Le mécanisme permettant de déterminer le mode d'accès des objets sur les domaines est défini par l'objet. Pour plus d'informations, consultez <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
+- Le code en cours d'exécution dans une application ne peut pas directement accéder au code ou aux ressources d'une autre application. Le Common Language Runtime applique cette isolation en empêchant les appels directs entre les objets dans les différents domaines d'application. Les objets qui passent d'un domaine à un autre sont soit copiés, soit accédés par un proxy. Si l'objet est copié, l'appel à cet objet est alors local. Dans ce cas, l'appelant et l'objet référencé figurent dans le même domaine d'application. Si l'objet est accédé par un proxy, l'appel à cet objet est alors distant. Dans ce cas, l'appelant et l'objet référencé figurent dans des domaines d'application différents. Les appels interdomaines utilisent la même infrastructure d'appel distant que les appels entre deux processus ou deux ordinateurs. Les métadonnées de l'objet référencé doivent par conséquent être disponibles pour les deux domaines d'application pour que l'appel de méthode puisse faire l'objet d'une compilation JIT correcte. Si le domaine appelant n’a pas accès aux métadonnées pour l’objet qui est appelé, la compilation peut échouer avec une exception de type <xref:System.IO.FileNotFoundException>. Pour plus d'informations, consultez [Remote Objects](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)). Le mécanisme permettant de déterminer le mode d'accès des objets sur les domaines est défini par l'objet. Pour plus d’informations, consultez <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
   
 - La portée du comportement de code est définie par l'application dans laquelle il s'exécute. En d'autres termes, le domaine d'application fournit des paramètres de configuration tels que les stratégies de version d'application, l'emplacement des assemblys distants auxquels il accède et des informations sur l'emplacement où se trouvent les assemblys qui sont chargés dans le domaine.  
   
@@ -110,7 +110,7 @@ Les systèmes d'exploitation et les environnements d'exécution assurent génér
   
 |Méthode AppDomain|Description|  
 |----------------------|-----------------|  
-|<xref:System.AppDomain.CreateDomain%2A>|Crée un nouveau domaine d'application. Il est recommandé d'utiliser une surcharge de cette méthode qui spécifie un objet <xref:System.AppDomainSetup>. C'est la manière recommandée pour définir les propriétés d'un nouveau domaine, à savoir la base de l'application ou le répertoire racine pour l'application, l'emplacement du fichier de configuration pour le domaine et le chemin de recherche utilisé par le Common Language Runtime pour charger les assemblys dans le domaine.|  
+|<xref:System.AppDomain.CreateDomain%2A>|Crée un nouveau domaine d'application. Il est recommandé d'utiliser une surcharge de cette méthode qui spécifie un objet <xref:System.AppDomainSetup>. C’est la manière recommandée pour définir les propriétés d’un nouveau domaine, à savoir la base de l’application ou le répertoire racine pour l’application, l’emplacement du fichier de configuration pour le domaine et le chemin de recherche utilisé par le Common Language Runtime pour charger les assemblys dans le domaine.|  
 |<xref:System.AppDomain.ExecuteAssembly%2A> et <xref:System.AppDomain.ExecuteAssemblyByName%2A>|Exécute un assembly dans le domaine d'application. Il s'agit d'une méthode d'instance, qui peut donc être utilisée pour exécuter du code dans un autre domaine d'application pour lequel vous avez une référence.|  
 |<xref:System.AppDomain.CreateInstanceAndUnwrap%2A>|Crée une instance du type spécifié dans le domaine d'application, et retourne un proxy. Utilisez cette méthode pour éviter de charger l'assembly qui contient le type créé dans l'assembly appelant.|  
 |<xref:System.AppDomain.Unload%2A>|Effectue un arrêt approprié du domaine. Le domaine d'application n'est pas déchargé tant que tous les threads en cours d'exécution dans le domaine ne sont pas arrêtés ou ne figurent plus dans le domaine.|  
@@ -130,7 +130,7 @@ Les systèmes d'exploitation et les environnements d'exécution assurent génér
 COMPLUS_LoaderOptimization = 1  
 ```  
   
-### <a name="remarks"></a>Notes
+### <a name="remarks"></a>Notes 
 
  Une application typique charge plusieurs assemblys dans un domaine d'application avant que le code qu'ils contiennent ne puisse être exécuté.  
   

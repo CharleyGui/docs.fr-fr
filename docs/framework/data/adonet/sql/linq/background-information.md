@@ -2,36 +2,36 @@
 title: Informations générales
 ms.date: 03/30/2017
 ms.assetid: 724888f2-d3f1-4bea-b9a1-a0adb8a00f3b
-ms.openlocfilehash: d7d00a0c64c6b25219403e8fd15eae85c09eafa0
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 3aa0cd4eaae38121cbb8c04c1c917f51dfbb0de1
+ms.sourcegitcommit: 515469828d0f040e01bde01df6b8e4eb43630b06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937543"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78848325"
 ---
 # <a name="background-information"></a>Informations générales
 Les rubriques de cette section présentent des concepts et des procédures plus approfondis sur l'utilisation de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
  Suivez ces étapes pour rechercher des exemples supplémentaires de code et d'applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] :  
   
-- Recherchez des problèmes spécifiques dans Microsoft Docs.  
+- Recherchez Microsoft Docs pour des problèmes spécifiques.  
   
-- Participez au [Forum LINQ](https://go.microsoft.com/fwlink/?LinkId=76488), où vous pouvez aborder des sujets plus complexes avec des experts.  
+- Participez au [Forum LINQ](https://social.msdn.microsoft.com/forums/home?forum=linqtosql), où vous pouvez discuter en détail de sujets plus complexes avec des experts.  
   
-- Étudiez le livre blanc qui décrit en détail la technologie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], C# avec Visual Basic et des exemples de code. Pour plus d’informations, consultez [LINQ to SQL : requête intégrée au langage .net pour les données relationnelles](https://go.microsoft.com/fwlink/?LinkId=93205).  
+- Étudiez le livre [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] blanc qui détaille la technologie, avec des exemples de code Visual Basic et C. Pour plus d’informations, voir [LINQ à SQL: .NET Language-Integrated Query for Relational Data](https://docs.microsoft.com/previous-versions/dotnet/articles/bb425822(v=msdn.10)).  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [ADO.NET et LINQ to SQL](ado-net-and-linq-to-sql.md)  
- Décrit la relation entre ADO.NET et [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+ Décrit la relation de ADO.NET [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]et .  
   
  [Analyse du code source LINQ to SQL](analyzing-linq-to-sql-source-code.md)  
  Décrit comment analyser le mappage [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] en générant et en affichant le code source de l'exemple de base de données Northwind.  
   
- [Personnalisation des opérations d’insertion, de mise à jour et de suppression](customizing-insert-update-and-delete-operations.md)  
+ [Personnalisation des opérations d'insertion, de mise à jour et de suppression](customizing-insert-update-and-delete-operations.md)  
  Décrit comment ajouter le code de validation et d’autres personnalisations.  
   
  [Liaison de données](data-binding.md)  
- Décrit comment [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] utilise <xref:System.ComponentModel.IListSource> pour prendre en charge la liaison de données.  
+ Décrit comment [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.ComponentModel.IListSource> les utilisations pour prendre en charge la liaison des données.  
   
  [Prise en charge de l’héritage](inheritance-support.md)  
  Décrit le rôle de l'héritage dans le modèle objet [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] et comment utiliser des opérateurs connexes dans vos requêtes.  
@@ -45,7 +45,7 @@ Les rubriques de cette section présentent des concepts et des procédures plus 
  [Identité d’un objet](object-identity.md)  
  Décrit l'identité d'objet dans le modèle objet [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] et explique comment cette fonctionnalité diffère de l'identité d'objet dans une base de données.  
   
- [Modèle objet LINQ to SQL](the-linq-to-sql-object-model.md)  
+ [Le modèle d’objet LINQ à SQL](the-linq-to-sql-object-model.md)  
  Décrit le modèle objet et sa relation au modèle de données relationnel.  
   
  [États des objets et suivi des modifications](object-states-and-change-tracking.md)  
@@ -55,9 +55,9 @@ Les rubriques de cette section présentent des concepts et des procédures plus 
  Décrit l'accès concurrentiel optimiste et définit des termes.  
   
  [Concepts relatifs aux requêtes](query-concepts.md)  
- Décrit les aspects des requêtes dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] qui diffèrent des requêtes dans LINQ.  
+ Décrit les aspects des [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] requêtes qui diffèrent des requêtes dans LINQ.  
   
- [Récupération d’objets du cache d’identité](retrieving-objects-from-the-identity-cache.md)  
+ [Récupération d'objets du cache d'identité](retrieving-objects-from-the-identity-cache.md)  
  Décrit les types de requêtes qui récupèrent des objets à partir du cache d'identité.  
   
  [Sécurité dans LINQ to SQL](security-in-linq-to-sql.md)  
@@ -81,6 +81,6 @@ Les rubriques de cette section présentent des concepts et des procédures plus 
  [Fonctions définies par l’utilisateur](user-defined-functions.md)  
  Décrit comment mapper des fonctions définies par l'utilisateur au moment du design et comment les appeler de votre application.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Guide de programmation](programming-guide.md)  
  Inclut des liens vers les sections qui expliquent les différents aspects de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], ordering members
 ms.assetid: 0658a47d-b6e5-4ae0-ba72-ababc3c6ff33
-ms.openlocfilehash: d717673139ba810c1593e5c60e488537426f1f64
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2a5d7430953bdc31644e92b9207cd2865209cce5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64754411"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185195"
 ---
 # <a name="data-member-order"></a>Classement des membres de données
 Dans certaines applications, il peut s'avérer utile de connaître l'ordre dans lequel les données émanant des divers membres de données sont envoyées ou l'ordre selon lequel leur réception est attendue (il peut, par exemple s'agir de l'ordre dans lequel les données apparaissent dans le langage XML sérialisé). Dans certains cas, la modification de cet ordre peut s'avérer nécessaire. Cette rubrique contient des explications sur les règles régissant ces types de classements.  
@@ -39,13 +39,13 @@ Dans certaines applications, il peut s'avérer utile de connaître l'ordre dans 
 ```xml  
 <DerivedType>  
     <!-- Zebra is a base data member, and appears first. -->  
-    <zebra/>   
+    <zebra/>
   
     <!-- Cat has no Order, appears alphabetically first. -->  
     <cat/>  
   
    <!-- Dog has no Order, appears alphabetically last. -->  
-    <dog/>   
+    <dog/>
   
     <!-- Bird is the member with the smallest Order value -->  
     <bird/>  
@@ -58,12 +58,12 @@ Dans certaines applications, il peut s'avérer utile de connaître l'ordre dans 
   
     <!-- Antelope is the member with the highest Order value. Note that   
     Order=2 is skipped -->  
-     <antelope/>   
+     <antelope/>
 </DerivedType>  
 ```  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.Serialization.DataContractAttribute>
-- [Équivalence des contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)
-- [Utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+- [Data Contract Equivalence](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)
+- [Using Data Contracts](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)

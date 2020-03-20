@@ -14,18 +14,18 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 5803d656d765f3f4fe3039e28b9c06202218fcfc
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 9bf0b168633bbf9f56694e79cf81f8051f9b8ac0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973986"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186380"
 ---
 # <a name="dependency-properties-overview"></a>Vue d’ensemble des propriétés de dépendance
 
 WPF (Windows Presentation Foundation) fournit un ensemble de services qui permettent d’étendre la fonctionnalité de la [propriété](../../../standard/base-types/common-type-system.md#Properties) d’un type. Ces services sont généralement regroupés sous le nom « système de propriétés WPF ». Une propriété qui repose sur le système de propriété WPF s’appelle une propriété de dépendance. Cette vue d’ensemble décrit le système de propriétés WPF et les fonctionnalités d’une propriété de dépendance. notamment comment utiliser les propriétés de dépendance existantes en XAML et dans le code. Elle introduit également des aspects spécialisés des propriétés de dépendance, tels que les métadonnées de propriétés de dépendance et comment créer votre propre propriété de dépendance dans une classe personnalisée.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 Cette rubrique part du principe que vous avez des connaissances de base relatives au système de types .NET et à la programmation orientée objet. Pour pouvoir suivre les exemples de cette rubrique, vous devez également comprendre le langage XAML et savoir comment écrire des applications WPF. Pour plus d’informations, consultez [Procédure pas à pas : ma première application de bureau WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).  
   
 ## <a name="dependency-properties-and-clr-properties"></a>Propriétés de dépendance et propriétés CLR
@@ -56,7 +56,7 @@ La convention de nommage de la propriété et de son champ <xref:System.Windows.
 ## <a name="setting-property-values"></a>Définition de valeurs de propriété
 Vous pouvez définir des propriétés dans le code ou en XAML.
 
-### <a name="setting-property-values-in-xaml"></a>Définition de valeurs de propriété en XAML 
+### <a name="setting-property-values-in-xaml"></a>Définition de valeurs de propriété en XAML
 L’exemple XAML suivant spécifie le rouge comme couleur d’arrière-plan d’un bouton. Cet exemple illustre un cas où le type d’une valeur de chaîne simple d’un attribut XAML est converti par l’analyseur XAML WPF en type WPF (<xref:System.Windows.Media.Color> via <xref:System.Windows.Media.SolidColorBrush>) dans le code généré.
 
 [!code-xaml[PropertiesOvwSupport#MostBasicProperty](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml#mostbasicproperty)]
@@ -68,7 +68,7 @@ En guise d’exemple de syntaxe de non-attribut, l’exemple XAML suivant montre
 [!code-xaml[PropertiesOvwSupport#PESyntaxProperty](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml#pesyntaxproperty)]
 
 ### <a name="setting-properties-in-code"></a>Définition de propriétés dans le code
- La définition des valeurs de propriété de dépendance dans le code n’est généralement qu’un appel à l’implémentation définie exposée par le « wrapper » CLR.
+ Définir la valeur des propriétés de dépendance dans le code n’est généralement qu’un appel à la mise en œuvre définie exposée par le « wrapper » du CLR.
 
 [!code-csharp[PropertiesOvwSupport#ProceduralPropertySet](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml.cs#proceduralpropertyset)]
 [!code-vb[PropertiesOvwSupport#ProceduralPropertySet](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page1.xaml.vb#proceduralpropertyset)]
@@ -78,7 +78,7 @@ Pour obtenir une valeur de propriété, il suffit aussi généralement d’appel
 [!code-csharp[PropertiesOvwSupport#ProceduralPropertyGet](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml.cs#proceduralpropertyget)]
  [!code-vb[PropertiesOvwSupport#ProceduralPropertyGet](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page1.xaml.vb#proceduralpropertyget)]
 
-Vous pouvez également appeler les API du système de propriétés <xref:System.Windows.DependencyObject.GetValue%2A> et <xref:System.Windows.DependencyObject.SetValue%2A> directement. Cela n’est généralement pas nécessaire si vous utilisez des propriétés existantes (les wrappers sont plus pratiques et offrent une meilleure exposition de la propriété pour les outils de développement), mais l’appel direct des API est approprié pour certains scénarios.
+Vous pouvez également appeler le <xref:System.Windows.DependencyObject.GetValue%2A> <xref:System.Windows.DependencyObject.SetValue%2A> système de propriété API et directement. Ce n’est généralement pas nécessaire si vous utilisez les propriétés existantes (les emballages sont plus pratiques, et de fournir une meilleure exposition de la propriété pour les outils de développeur), mais appeler les API directement est approprié pour certains scénarios.
 
 Vous pouvez aussi définir les propriétés en XAML et y accéder ultérieurement dans le code, par l’intermédiaire du code-behind. Pour plus d’informations, consultez [Code-behind et XAML dans WPF](code-behind-and-xaml-in-wpf.md).
 
@@ -95,9 +95,9 @@ Une propriété de dépendance fournit une fonctionnalité qui étend la fonctio
 
 - [Substitutions de métadonnées](#metadata-overrides)
 
-- [Héritage de valeur de propriété](#property-value-inheritance)
+- [Héritage d’une valeur de propriété](#property-value-inheritance)
 
-- [Intégration du concepteur WPF](#wpf-designer-integration)
+- [Intégration WPF Designer](#wpf-designer-integration)
 
 ### <a name="resources"></a>Ressources
 Une valeur de propriété de dépendance peut être définie en référençant une ressource. Les ressources sont généralement spécifiées en tant que valeur de propriété `Resources` d’un élément racine de page ou de l’application (ces emplacements autorisent l’accès le plus commode à la ressource). L’exemple suivant montre comment définir une ressource <xref:System.Windows.Media.SolidColorBrush>.
@@ -168,12 +168,12 @@ L’exemple suivant illustre une liaison et définit la propriété <xref:System
 Pour plus d’informations, consultez [Héritage de valeur de propriété](property-value-inheritance.md).
 
 ### <a name="wpf-designer-integration"></a>Intégration du concepteur WPF
-Un contrôle personnalisé avec des propriétés implémentées en tant que propriétés de dépendance recevra le Concepteur WPF approprié pour la prise en charge de Visual Studio. La possibilité de modifier des propriétés de dépendance directes et jointes avec la fenêtre **Propriétés** constitue un bon exemple. Pour plus d’informations, consultez [Vue d’ensemble de la création de contrôles](../controls/control-authoring-overview.md).
+Un contrôle personnalisé avec des propriétés qui sont mises en œuvre en tant que propriétés de dépendance recevra le concepteur WPF approprié pour le support visual studio. La possibilité de modifier des propriétés de dépendance directes et jointes avec la fenêtre **Propriétés** constitue un bon exemple. Pour plus d’informations, consultez [Vue d’ensemble de la création de contrôles](../controls/control-authoring-overview.md).
 
 ## <a name="dependency-property-value-precedence"></a>Priorité de la valeur d’une propriété de dépendance
 Quand vous obtenez la valeur d’une propriété de dépendance, vous obtenez potentiellement une valeur définie pour cette propriété via l’une des autres entrées basées sur des propriétés qui participent au système de propriétés WPF. Il existe une priorité de valeur de propriété de dépendance, afin que différents scénarios d’obtention des valeurs par les propriétés puissent interagir de manière prévisible.
 
-Prenons l'exemple suivant. L’exemple inclut un style qui s’applique à tous les boutons et à leurs propriétés <xref:System.Windows.Controls.Control.Background%2A>. Toutefois, il spécifie également un bouton avec une valeur <xref:System.Windows.Controls.Control.Background%2A> définie localement.
+Considérez l'exemple suivant. L’exemple inclut un style qui s’applique à tous les boutons et à leurs propriétés <xref:System.Windows.Controls.Control.Background%2A>. Toutefois, il spécifie également un bouton avec une valeur <xref:System.Windows.Controls.Control.Background%2A> définie localement.
 
 > [!NOTE]
 > La documentation du SDK utilise les termes « valeur locale » ou « valeur localement définie » occasionnellement lors de la discussion des propriétés de dépendance. Une valeur localement définie est une valeur de propriété qui est définie directement sur une instance d’objet dans le code, ou en tant qu’attribut d’élément en XAML.  
@@ -190,7 +190,7 @@ En règle générale, vous ne souhaitez pas que des styles s’appliquent en per
 
 ## <a name="learning-more-about-dependency-properties"></a>En savoir plus sur les propriétés de dépendance  
 
-- Une propriété jointe est un type de propriété qui prend en charge une syntaxe spécialisée en XAML. Une propriété jointe n’a souvent pas de correspondance 1:1 avec une propriété common language runtime (CLR) et n’est pas nécessairement une propriété de dépendance. L’objectif par défaut d’une propriété jointe est de permettre aux éléments enfants de signaler des valeurs de propriété à un élément parent, même si l’élément parent et l’élément enfant n’ont pas tous deux cette propriété dans leur liste de membres de classe. L’un des principaux scénarios consiste à permettre aux éléments enfants d’indiquer au parent comment ils doivent être présentés dans [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Pour obtenir un exemple, consultez <xref:System.Windows.Controls.DockPanel.Dock%2A> ou <xref:System.Windows.Controls.Canvas.Left%2A>. Pour plus d’informations, consultez [Vue d’ensemble des propriétés jointes](attached-properties-overview.md).
+- Une propriété jointe est un type de propriété qui prend en charge une syntaxe spécialisée en XAML. Une propriété jointe n’a souvent pas de correspondance de 1:1 avec une propriété commune de temps d’exécution de langue (CLR), et n’est pas nécessairement une propriété de dépendance. L’objectif par défaut d’une propriété jointe est de permettre aux éléments enfants de signaler des valeurs de propriété à un élément parent, même si l’élément parent et l’élément enfant n’ont pas tous deux cette propriété dans leur liste de membres de classe. L’un des principaux scénarios consiste à permettre aux éléments enfants d’indiquer au parent comment ils doivent être présentés dans [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Pour obtenir un exemple, consultez <xref:System.Windows.Controls.DockPanel.Dock%2A> ou <xref:System.Windows.Controls.Canvas.Left%2A>. Pour plus d’informations, consultez [Vue d’ensemble des propriétés jointes](attached-properties-overview.md).
 
 - Les développeurs de composants ou d’applications peuvent souhaiter créer leur propre propriété de dépendance, afin d’activer des fonctionnalités telles que la liaison de données ou la prise en charge des styles, ou pour prendre en charge l’invalidation et le forçage de valeur. Pour plus d’informations, consultez [Propriétés de dépendance personnalisées](custom-dependency-properties.md).
 

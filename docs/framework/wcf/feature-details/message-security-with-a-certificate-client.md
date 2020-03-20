@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
-ms.openlocfilehash: 4b282062040ccfc18534ad88effc4c0f1972c5a6
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 3660877194931c2be5b9b1c9aa54e2595701697f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76212052"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184655"
 ---
 # <a name="message-security-with-a-certificate-client"></a>Sécurité de message avec un client de certificat
-Le scénario suivant montre un client et un service Windows Communication Foundation (WCF) sécurisés à l’aide du mode de sécurité message. Le client et le service sont tous les deux authentifiés à l'aide de certificats. Pour plus d’informations, consultez [sécurité des applications distribuées](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).
+Le scénario suivant montre un client et un service de la Windows Communication Foundation (WCF) sécurisés en mode de sécurité des messages. Le client et le service sont tous les deux authentifiés à l'aide de certificats. Pour plus d’informations, voir [La sécurité des applications distribuées](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).
 
- ![Capture d’écran montrant un client avec un certificat.](./media/message-security-with-a-certificate-client/client-with-certificate.gif)  
+ ![Capture d’écran qui montre un client avec un certificat.](./media/message-security-with-a-certificate-client/client-with-certificate.gif)  
   
- Pour obtenir un exemple d’application, consultez [certificat de sécurité de message](../../../../docs/framework/wcf/samples/message-security-certificate.md).  
+ Pour une demande d’exemple, consultez [le certificat de sécurité des messages](../../../../docs/framework/wcf/samples/message-security-certificate.md).  
 
 |Caractéristique|Description|  
 |--------------------|-----------------|  
 |Mode de sécurité|Message|  
-|Interopérabilité|WCF uniquement|  
+|Interopérabilité|WCF seulement|  
 |Authentification (serveur)|Utilisation de certificat de service|  
 |Authentification (client)|Utilisation de certificat client|  
 |Intégrité|Oui|  
@@ -31,7 +31,7 @@ Le scénario suivant montre un client et un service Windows Communication Founda
 |Liaison|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>Service  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
@@ -61,11 +61,11 @@ Le scénario suivant montre un client et un service Windows Communication Founda
       </serviceBehaviors>  
     </behaviors>  
     <services>  
-      <service behaviorConfiguration="ServiceCredentialsBehavior"   
+      <service behaviorConfiguration="ServiceCredentialsBehavior"
                name="ServiceModel.Calculator">  
-        <endpoint address="http://localhost/Calculator"   
+        <endpoint address="http://localhost/Calculator"
                   binding="wsHttpBinding"  
-                  bindingConfiguration="MessageAndCertificateClient"   
+                  bindingConfiguration="MessageAndCertificateClient"
                   name="SecuredByClientCertificate"  
                   contract="ServiceModel.ICalculator" />  
       </service>  
@@ -85,7 +85,7 @@ Le scénario suivant montre un client et un service Windows Communication Founda
 ```  
   
 ## <a name="client"></a>Client  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
   
 - Créez un client autonome à l'aide du code (et du code client).  
   
@@ -101,7 +101,7 @@ Le scénario suivant montre un client et un service Windows Communication Founda
  [!code-vb[C_SecurityScenarios#17](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#17)]  
   
 ### <a name="configuration"></a>Configuration  
- La configuration ci-dessous spécifie le certificat client à l'aide d'un comportement de point de terminaison. Pour plus d’informations sur les certificats, consultez [Utilisation de certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md). Le code utilise également un élément <`identity`> pour spécifier un DNS (Domain Name System) de l’identité de serveur attendue. Pour plus d’informations sur l’identité, consultez [identité du service et authentification](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ La configuration ci-dessous spécifie le certificat client à l'aide d'un comportement de point de terminaison. Pour plus d’informations sur les certificats, consultez [Utilisation de certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md). Le code utilise également `identity` un élément> <pour spécifier un système de noms de domaine (DNS) de l’identité du serveur attendu. Pour plus d’informations sur l’identité, voir [Identité de service et authentification](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -111,7 +111,7 @@ Le scénario suivant montre un client et un service Windows Communication Founda
       <endpointBehaviors>  
         <behavior name="endpointCredentialsBehavior">  
           <clientCredentials>  
-            <clientCertificate findValue="Cohowinery.com"   
+            <clientCertificate findValue="Cohowinery.com"
                storeLocation="LocalMachine"  
               x509FindType="FindBySubjectName" />  
           </clientCredentials>  
@@ -128,7 +128,7 @@ Le scénario suivant montre un client et un service Windows Communication Founda
       </wsHttpBinding>  
     </bindings>  
     <client>  
-      <endpoint address="http://machineName/Calculator"   
+      <endpoint address="http://machineName/Calculator"
                 behaviorConfiguration="endpointCredentialsBehavior"  
                 binding="wsHttpBinding"  
                 bindingConfiguration="WSHttpBinding_ICalculator"  
@@ -147,5 +147,5 @@ Le scénario suivant montre un client et un service Windows Communication Founda
 
 - [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Identité du service et authentification](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Utilisation des certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

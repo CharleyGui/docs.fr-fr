@@ -1,5 +1,5 @@
 ---
-title: Champ ConnectionGroup. m_ConnectionList
+title: Champ ConnectionGroup.m_ConnectionList
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,16 +10,16 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 186083cf-8dff-4600-a2ab-6fed4b4de6af
-ms.openlocfilehash: d53eeb54d212adb011dae138e103ea5b30f7fb99
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 8eb6f215c36e214f7095eeba90bf0aed66dfcea0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215539"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155848"
 ---
-# <a name="connectiongroupm_connectionlist-field"></a>ConnectionGroup. m\_champ ConnectionList
+# <a name="connectiongroupm_connectionlist-field"></a>ConnectionGroup.m\_ConnectionList Field
 
-`ConnectionGroup.m_ConnectionList` est un <xref:System.Collections.ArrayList> d’objets de connexion qui sert le même URI et qui partagent les mêmes valeurs pour d’autres propriétés telles que l’expiration et l’authentification.
+`ConnectionGroup.m_ConnectionList`est <xref:System.Collections.ArrayList> un objet de connexion qui sert la même URI et partagent les mêmes valeurs pour certaines autres propriétés comme l’expiration et l’authentification.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -28,14 +28,14 @@ private ArrayList m_ConnectionList
 ```
 
 > [!WARNING]
-> Le champ `ConnectionGroup.m_ConnectionList` est privé et n’est pas destiné à être utilisé directement dans votre code.
-> 
-> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
+> Le `ConnectionGroup.m_ConnectionList` champ est privé et n’est pas destiné à être utilisé directement dans votre code.
+>
+> Microsoft ne prend en charge l’utilisation de ce champ dans une application de production en aucune circonstance.
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Net>
+**Espace nom:**<xref:System.Net>
 
-**Assembly :** Système (dans System. dll)
+**Assemblée:** Système (dans System.dll)
 
-**Versions de .NET Framework :** Disponible depuis 2,0.
+**.NET Versions du Cadre:** Disponible depuis 2.0.

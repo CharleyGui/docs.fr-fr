@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Spinner control type
 - control types, Spinner
 ms.assetid: 3a29d185-65d8-42e3-bcc3-7f43e96f40c5
-ms.openlocfilehash: 189773525a448befe670e2a62a1ee4134ff71b0f
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: d3cf972afdaaffaf1c0943c9cc11348bee23345d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76785961"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179580"
 ---
 # <a name="ui-automation-support-for-the-spinner-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle Spinner
 > [!NOTE]
@@ -21,9 +21,9 @@ ms.locfileid: "76785961"
   
  Les contrôles compteur sont utilisés pour effectuer une sélection parmi un domaine d’éléments ou une plage de nombres.  
   
- Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nécessaires au type de contrôle Spinner. Les spécifications de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’appliquent à tous les contrôles Spinner, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 ou Windows Forms.  
+ Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nécessaires au type de contrôle Spinner. Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] exigences s’appliquent [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]à tous les contrôles de filature, que ce soit, Win32, ou Windows Forms.  
   
-<a name="Required_UI_Automation_Tree_Structure"></a>   
+<a name="Required_UI_Automation_Tree_Structure"></a>
 ## <a name="required-ui-automation-tree-structure"></a>Arborescence UI Automation obligatoire  
  Le tableau suivant représente l’affichage de contrôle et l’affichage du contenu de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] relative aux contrôles compteur quand ils prennent en charge les modèles de contrôle RangeValue, Value et Selection. En outre, il décrit ce que peut contenir chaque affichage. Pour plus d’informations sur l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Tree Overview](ui-automation-tree-overview.md).  
   
@@ -31,23 +31,23 @@ ms.locfileid: "76785961"
   
 |Affichage de contrôle|Affichage de contenu|  
 |------------------|------------------|  
-|Spinner<br /><br /> -Edit (0 ou 1)<br />-Button (2)|Spinner|  
+|Spinner<br /><br /> - Modifier (0 ou 1)<br />- Bouton (2)|Spinner|  
   
  **Selection (modèle de contrôle)**  
   
 |Affichage de contrôle|Affichage de contenu|  
 |------------------|------------------|  
-|Spinner<br /><br /> -Edit (0 ou 1)<br />-Button (2)<br />-Item List (0 ou plus)|Spinner<br /><br /> -ListItem (0 ou plus)|  
+|Spinner<br /><br /> - Modifier (0 ou 1)<br />- Bouton (2)<br />- Article de liste (0 ou plus)|Spinner<br /><br /> - ListItem (0 ou plus)|  
   
- Pour vous assurer que les deux boutons de la sous-arborescence de la vue de contrôle peuvent être distingués par des outils de test automatisés, affectez le `SmallIncrement` ou `SmallDecrement` `AutomationId` selon le cas. Pour certaines implémentations, le contrôle d’édition associé peut être un homologue du contrôle compteur.  
+ Pour vous assurer que les outils de test automatisé peuvent distinguer les deux boutons de la sous-arborescence de l’affichage de contrôle, assignez `SmallIncrement` ou `SmallDecrement` `AutomationId` de manière appropriée. Pour certaines implémentations, le contrôle d’édition associé peut être un homologue du contrôle compteur.  
   
-<a name="Required_UI_Automation_Properties"></a>   
+<a name="Required_UI_Automation_Properties"></a>
 ## <a name="required-ui-automation-properties"></a>Propriétés UI Automation obligatoires  
- Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement pertinente pour les contrôles compteur. Pour plus d’informations sur les propriétés de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [UI Automation Properties for clients](ui-automation-properties-for-clients.md).  
+ Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement pertinente pour les contrôles compteur. Pour plus [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] d’informations sur les propriétés, voir [UI Automation Properties for Clients](ui-automation-properties-for-clients.md).  
   
-|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Value|Remarques|  
+|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Notes|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Consultez les remarques.|La valeur de cette propriété doit être unique pour tous les contrôles d’une application.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Consultez les remarques.|La valeur de cette propriété doit être unique dans tous les contrôles d’une application.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Consultez les remarques.|Rectangle externe qui contient l’ensemble du contrôle.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|Consultez les remarques.|Le point interactif du contrôle compteur donne le focus à la partie d’édition du contrôle.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Consultez les remarques.|Si le contrôle peut recevoir le focus clavier, il doit prendre en charge cette propriété.|  
@@ -58,34 +58,34 @@ ms.locfileid: "76785961"
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|Le contrôle compteur doit toujours être du contenu.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Le contrôle compteur doit toujours être un contrôle.|  
   
-<a name="Required_UI_Automation_Control_Patterns_and_Properties"></a>   
+<a name="Required_UI_Automation_Control_Patterns_and_Properties"></a>
 ## <a name="required-ui-automation-control-patterns-and-properties"></a>Modèles de contrôle et propriétés UI Automation requis  
  Le tableau suivant répertorie les modèles de contrôle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par les contrôles compteur. Pour plus d’informations sur les modèles de contrôle, consultez [UI Automation Control Patterns Overview](ui-automation-control-patterns-overview.md).  
   
-|Modèle de contrôle/Propriété de modèle|Prise en charge/valeur|Remarques|  
+|Modèle de contrôle/Propriété de modèle|Prise en charge/valeur|Notes|  
 |---------------------------------------|--------------------|-----------|  
-|<xref:System.Windows.Automation.Provider.ISelectionProvider>|Selon le cas|Les contrôles compteur qui comportent une liste d’éléments à sélectionner doivent prendre en charge ce modèle.|  
+|<xref:System.Windows.Automation.Provider.ISelectionProvider>|Dépend|Les contrôles compteur qui comportent une liste d’éléments à sélectionner doivent prendre en charge ce modèle.|  
 |<xref:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple%2A>|False|Les contrôles compteur sont toujours des conteneurs à sélection unique.|  
-|<xref:System.Windows.Automation.Provider.IRangeValueProvider>|Selon le cas|Les contrôles compteur qui couvrent une plage numérique peuvent prendre en charge ce modèle.|  
-|<xref:System.Windows.Automation.Provider.IValueProvider>|Selon le cas|Les contrôles compteur qui couvrent un ensemble discret d’options ou de nombres peuvent prendre en charge ce modèle.|  
+|<xref:System.Windows.Automation.Provider.IRangeValueProvider>|Dépend|Les contrôles compteur qui couvrent une plage numérique peuvent prendre en charge ce modèle.|  
+|<xref:System.Windows.Automation.Provider.IValueProvider>|Dépend|Les contrôles compteur qui couvrent un ensemble discret d’options ou de nombres peuvent prendre en charge ce modèle.|  
   
-<a name="Required_UI_Automation_Events"></a>   
+<a name="Required_UI_Automation_Events"></a>
 ## <a name="required-ui-automation-events"></a>Événements UI Automation obligatoires  
  Le tableau suivant répertorie les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par tous les contrôles compteur. Pour plus d’informations sur les événements, consultez [UI Automation Events Overview](ui-automation-events-overview.md).  
   
-|Événement[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Prise en charge de|Remarques|  
+|Événement[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Support|Notes|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Selon le cas|Aucun|  
-|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Obligatoire|Aucun|  
-|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>|Obligatoire|Aucun|  
-|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty>|Obligatoire|Aucun|  
-|Événement de modification de propriété<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty>|Selon le cas|Aucun|  
-|Événement de modification de propriété<xref:System.Windows.Automation.RangeValuePatternIdentifiers.ValueProperty>|Selon le cas|Aucun|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Obligatoire|Aucun|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Obligatoire|Aucun|  
+|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Dépend|None|  
+|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Obligatoire|None|  
+|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>|Obligatoire|None|  
+|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty>|Obligatoire|None|  
+|Événement de modification de propriété<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty>|Dépend|None|  
+|Événement de modification de propriété<xref:System.Windows.Automation.RangeValuePatternIdentifiers.ValueProperty>|Dépend|None|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Obligatoire|None|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Obligatoire|None|  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Automation.ControlType.Spinner>
-- [Vue d’ensemble des types de contrôle UI Automation](ui-automation-control-types-overview.md)
-- [Vue d’ensemble d’UI Automation](ui-automation-overview.md)
+- [Vue d'ensemble des types de contrôle UI Automation](ui-automation-control-types-overview.md)
+- [Vue d'ensemble d'UI Automation](ui-automation-overview.md)

@@ -1,30 +1,30 @@
 ---
-title: 'Procédure : Spécifier le FillBehavior pour une chronologie ayant atteint la fin de sa période active'
+title: 'Comment : spécifier le FillBehavior pour une chronologie ayant atteint la fin de sa période active'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - FillBehavior property for inactive timelines [WPF]
 - Timelines [WPF], FillBehavior property
 ms.assetid: db805f59-d513-4dac-af15-47005dae3199
-ms.openlocfilehash: 9f03c5b8d4585c32e0a9f119649dd15a23523033
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1f54f2c1bb49bb7a0301f112a109194ab1a8658e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973665"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79141171"
 ---
-# <a name="how-to-specify-the-fillbehavior-for-a-timeline-that-has-reached-the-end-of-its-active-period"></a>Procédure : Spécifier le FillBehavior pour une chronologie ayant atteint la fin de sa période active
-Cet exemple montre comment spécifier le <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> pour le texte inactif <xref:System.Windows.Media.Animation.Timeline> d’une propriété animée.  
+# <a name="how-to-specify-the-fillbehavior-for-a-timeline-that-has-reached-the-end-of-its-active-period"></a>Comment : spécifier le FillBehavior pour une chronologie ayant atteint la fin de sa période active
+Cet exemple montre comment <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> spécifier <xref:System.Windows.Media.Animation.Timeline> l’inactif d’une propriété animée.  
   
-## <a name="example"></a>Exemple  
- Le <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> propriété d’un <xref:System.Windows.Media.Animation.Timeline> détermine ce qui se passe à la valeur d’une propriété animée lorsqu’il n’est pas en cours d’animation, autrement dit, quand le <xref:System.Windows.Media.Animation.Timeline> est inactif, mais son parent <xref:System.Windows.Media.Animation.Timeline> est active ou d’une période d’attente. Par exemple, une propriété animée reste à sa fin valeur une fois que l’animation se termine ou qu’il fait revenir à la valeur qu’elle avait avant le démarrage de l’animation ?  
+## <a name="example"></a> Exemple  
+ La <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> propriété <xref:System.Windows.Media.Animation.Timeline> d’un détermine ce qui arrive à la valeur d’une propriété <xref:System.Windows.Media.Animation.Timeline> animée quand il <xref:System.Windows.Media.Animation.Timeline> n’est pas animé, c’est-à-dire, quand le est inactif, mais son parent est à l’intérieur de sa période active ou de retenue. Par exemple, une propriété animée reste-t-elle à sa valeur de fin après la fin de l’animation ou revient-elle à la valeur qu’elle avait avant le début de l’animation ?  
   
- L’exemple suivant utilise un <xref:System.Windows.Media.Animation.DoubleAnimation> pour animer la <xref:System.Windows.FrameworkElement.Width%2A> de deux rectangles. Chaque rectangle utilise un autre <xref:System.Windows.Media.Animation.Timeline> objet.  
+ L’exemple suivant <xref:System.Windows.Media.Animation.DoubleAnimation> utilise un <xref:System.Windows.FrameworkElement.Width%2A> pour animer les deux rectangles. Chaque rectangle utilise <xref:System.Windows.Media.Animation.Timeline> un objet différent.  
   
- Un <xref:System.Windows.Media.Animation.Timeline> a un <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> qui est défini sur <xref:System.Windows.Media.Animation.FillBehavior.Stop>, ce qui entraîne la largeur du rectangle à revenir à son non animées valeur lorsque le <xref:System.Windows.Media.Animation.Timeline> se termine. L’autre <xref:System.Windows.Media.Animation.Timeline> a un <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> de <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>, ce qui entraîne la largeur reste à sa fin valeur lorsque le <xref:System.Windows.Media.Animation.Timeline> se termine.  
+ On <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> un qui <xref:System.Windows.Media.Animation.FillBehavior.Stop>est réglé à , ce qui provoque la largeur <xref:System.Windows.Media.Animation.Timeline> du rectangle de revenir à sa valeur non-animée lorsque les extrémités. L’autre <xref:System.Windows.Media.Animation.Timeline> <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> a <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>un de , ce qui provoque <xref:System.Windows.Media.Animation.Timeline> la largeur de rester à sa valeur de fin lorsque les extrémités.  
   
  [!code-xaml[timingbehaviors_snip#FillBehaviorWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/FillBehaviorExample.xaml#fillbehaviorwholepage)]  
   
- Pour obtenir un exemple complet, consultez [Galerie d’exemples d’Animation](https://go.microsoft.com/fwlink/?LinkID=159969).  
+ Pour l’échantillon complet, voir [Animation Exemple Gallery](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/AnimationExamples).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -35,4 +35,4 @@ Cet exemple montre comment spécifier le <xref:System.Windows.Media.Animation.Ti
 - <xref:System.Windows.Media.Animation.FillBehavior.Stop>
 - <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>
 - [Vue d’ensemble de l’animation](animation-overview.md)
-- [L’animation et minutage des rubriques de procédures](animation-and-timing-how-to-topics.md)
+- [Rubriques "Comment" relatives à l'animation et au minutage](animation-and-timing-how-to-topics.md)

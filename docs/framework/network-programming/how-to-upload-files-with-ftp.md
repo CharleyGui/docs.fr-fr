@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Charger des fichiers avec FTP'
+title: Guide pratique pour charger des fichiers avec FTP
 description: Cet article montre un exemple de chargement de fichier sur un serveur FTP.
 ms.date: 06/26/2018
 dev_langs:
@@ -7,17 +7,17 @@ dev_langs:
 - vb
 ms.assetid: e40f17c5-dd12-4c62-9dbf-00ab491382dc
 ms.openlocfilehash: 670bbc65078e6530cffbcfa7d324c36238014ffb
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "65632806"
 ---
-# <a name="how-to-upload-files-with-ftp"></a>Procédure : Charger des fichiers avec FTP
+# <a name="how-to-upload-files-with-ftp"></a>Guide pratique pour charger des fichiers avec FTP
 
 Cet exemple montre comment charger un fichier sur un serveur FTP.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 ```csharp
 using System;

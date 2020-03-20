@@ -1,38 +1,38 @@
 ---
-title: 'Procédure : Appliquer des animations à du texte'
+title: 'Comment : appliquer des animations à du texte'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], animations
 - animation [WPF], text
 ms.assetid: eec3d26c-0a21-420f-8012-671621c47089
-ms.openlocfilehash: 38aa432fecc5b5e10d8eb90be9c1c596728ed613
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ed2f3beb904f724ac93e2c4033aa6b2eb3fa1290
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61776891"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174626"
 ---
-# <a name="how-to-apply-animations-to-text"></a>Procédure : Appliquer des animations à du texte
-Les animations peuvent modifier l’affichage et l’apparence du texte dans votre application. Les exemples suivants utilisent différents types d’animations pour changer l’affichage du texte dans un <xref:System.Windows.Controls.TextBlock> contrôle.  
+# <a name="how-to-apply-animations-to-text"></a>Comment : appliquer des animations à du texte
+Les animations peuvent modifier l’affichage et l’apparence du texte dans votre application. Les exemples suivants utilisent différents types d’animations <xref:System.Windows.Controls.TextBlock> pour affecter l’affichage du texte dans un contrôle.  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant utilise un <xref:System.Windows.Media.Animation.DoubleAnimation> pour animer la largeur du bloc de texte. La valeur de largeur change pour passer de la largeur du bloc de texte à 0 sur une durée de 10 secondes, puis les valeurs de largeur sont inversées et la procédure continue. Ce type d’animation crée un effet de balayage.  
+## <a name="example"></a> Exemple  
+ L’exemple suivant <xref:System.Windows.Media.Animation.DoubleAnimation> utilise un pour animer la largeur du bloc de texte. La valeur de largeur change pour passer de la largeur du bloc de texte à 0 sur une durée de 10 secondes, puis les valeurs de largeur sont inversées et la procédure continue. Ce type d’animation crée un effet de balayage.  
   
  [!code-xaml[TextAnimationSample#TextAnimationSample1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample1)]  
   
- L’exemple suivant utilise un <xref:System.Windows.Media.Animation.DoubleAnimation> pour animer l’opacité du bloc de texte. La valeur d’opacité passe de 1.0 à 0 sur une durée de 5 secondes, puis les valeurs d’opacité sont inversées et la procédure continue.  
+ L’exemple suivant <xref:System.Windows.Media.Animation.DoubleAnimation> utilise un pour animer l’opacité du bloc de texte. La valeur d’opacité passe de 1.0 à 0 sur une durée de 5 secondes, puis les valeurs d’opacité sont inversées et la procédure continue.  
   
  [!code-xaml[TextAnimationSample#TextAnimationSample2](~/samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample2)]  
   
- Le diagramme suivant montre l’effet de la <xref:System.Windows.Controls.TextBlock> contrôle quand son opacité passe de `1.00` à `0.00` pendant l’intervalle de 5 secondes défini par le <xref:System.Windows.Media.Animation.Timeline.Duration%2A>.  
+ Le diagramme suivant montre <xref:System.Windows.Controls.TextBlock> l’effet du contrôle `1.00` `0.00` changeant son opacité de <xref:System.Windows.Media.Animation.Timeline.Duration%2A>à l’intervalle de 5 secondes défini par le .  
   
- ![Opacité de 1.00 à 0.00 du texte.](./media/how-to-apply-animations-to-text/faded-text-opacity-change.png)  
-   
- L’exemple suivant utilise un <xref:System.Windows.Media.Animation.ColorAnimation> pour animer la couleur de premier plan du bloc de texte. La valeur de la couleur de premier plan passe d’une couleur à une autre sur une durée de 5 secondes, puis les valeurs de couleur sont inversées et la procédure continue.  
+ ![Opacité changeant de texte de 1.00 à 0.00.](./media/how-to-apply-animations-to-text/faded-text-opacity-change.png)  
+
+ L’exemple suivant <xref:System.Windows.Media.Animation.ColorAnimation> utilise un pour animer la couleur de premier plan du bloc de texte. La valeur de la couleur de premier plan passe d’une couleur à une autre sur une durée de 5 secondes, puis les valeurs de couleur sont inversées et la procédure continue.  
   
  [!code-xaml[TextAnimationSample#TextAnimationSample3](~/samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample3)]  
   
- L’exemple suivant utilise un <xref:System.Windows.Media.Animation.DoubleAnimation> pour faire pivoter le bloc de texte. Le bloc de texte effectue une rotation complète sur une durée de 20 secondes, puis la procédure de rotation se répète.  
+ L’exemple suivant <xref:System.Windows.Media.Animation.DoubleAnimation> utilise un pour faire pivoter le bloc de texte. Le bloc de texte effectue une rotation complète sur une durée de 20 secondes, puis la procédure de rotation se répète.  
   
  [!code-xaml[TextAnimationSample#TextAnimationSample4](~/samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample4)]  
   

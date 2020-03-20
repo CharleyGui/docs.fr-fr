@@ -1,5 +1,5 @@
 ---
-title: 'Comment : créer un authentificateur de jetons de sécurité personnalisé'
+title: 'Comment : créer un authentificateur de jetons de sécurité personnalisé'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,17 +7,17 @@ dev_langs:
 helpviewer_keywords:
 - WCF, authentication
 ms.assetid: 10e245f7-d31e-42e7-82a2-d5780325d372
-ms.openlocfilehash: b8e964b1124bb19faa79b0dc5e4ecebd83a56acf
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 7bbe59958f59f76046c0a112463cfa64d09c14d3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797066"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185586"
 ---
-# <a name="how-to-create-a-custom-security-token-authenticator"></a>Comment : créer un authentificateur de jetons de sécurité personnalisé
+# <a name="how-to-create-a-custom-security-token-authenticator"></a>Comment : créer un authentificateur de jetons de sécurité personnalisé
 Cette rubrique indique comment créer un authentificateur de jetons de sécurité personnalisé et comment l'intégrer à un gestionnaire de jetons de sécurité personnalisé. Un authentificateur de jetons de sécurité valide le contenu du jeton de sécurité fourni par le message entrant. Lorsque le processus de validation réussit, l’authentificateur retourne une collection d’instances <xref:System.IdentityModel.Policy.IAuthorizationPolicy> qui, après évaluation, retourne un ensemble de revendications.  
   
- Pour utiliser un authentificateur de jetons de sécurité personnalisé dans Windows Communication Foundation (WCF), vous devez d’abord créer des informations d’identification personnalisées et des implémentations de gestionnaire de jetons de sécurité. Pour plus d’informations sur la création d’informations d’identification personnalisées et d' [un gestionnaire de jetons de sécurité, consultez Procédure pas à pas : Création d’informations d’identification](walkthrough-creating-custom-client-and-service-credentials.md)de client et de service personnalisées.
+ Pour utiliser un authentificateur de jetons de sécurité personnalisé dans Windows Communication Foundation (WCF), vous devez d’abord créer des informations d’identification personnalisées et des implémentations de gestionnaires de gages de sécurité. Pour plus d’informations sur la création d’informations personnalisées et un gestionnaire de jetons de sécurité, voir [Procédure Pas à pas: Créer des informations personnalisées client et de service credentials](walkthrough-creating-custom-client-and-service-credentials.md).
   
 ## <a name="procedures"></a>Procédures  
   
@@ -32,7 +32,7 @@ Cette rubrique indique comment créer un authentificateur de jetons de sécurit�
      [!code-csharp[C_CustomTokenAuthenticator#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtokenauthenticator/cs/source.cs#1)]
      [!code-vb[C_CustomTokenAuthenticator#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtokenauthenticator/vb/source.vb#1)]  
   
- Le code précédent retourne une collection de stratégies d’autorisation dans la méthode <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator.CanValidateToken%28System.IdentityModel.Tokens.SecurityToken%29>. WCF ne fournit pas d’implémentation publique de cette interface. La procédure suivante indique comment procéder à cette implémentation publique, si requis par vos propres exigences.  
+ Le code précédent retourne une collection de stratégies d’autorisation dans la méthode <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator.CanValidateToken%28System.IdentityModel.Tokens.SecurityToken%29>. WCF ne fournit pas une mise en œuvre publique de cette interface. La procédure suivante indique comment procéder à cette implémentation publique, si requis par vos propres exigences.  
   
 #### <a name="to-create-a-custom-authorization-policy"></a>Pour créer une stratégie d'autorisation personnalisée  
   
@@ -42,12 +42,12 @@ Cette rubrique indique comment créer un authentificateur de jetons de sécurit�
   
 3. Implémentez la propriété en lecture seule <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Issuer%2A>. Cette propriété doit retourner l'émetteur correspondant à tous les ensembles de revendications obtenus à partir du jeton. Cet émetteur doit correspondre à l'émetteur du jeton ou à une autorité chargée de valider le contenu des jetons. L'exemple suivant utilise la revendication d'émetteur passée à cette classe à partir de l'authentificateur de jetons de sécurité personnalisé créé au cours de la procédure précédente. L'authentificateur de jetons de sécurité personnalisé utilise l'ensemble des revendications fournies par le système (ensemble retourné par la propriété <xref:System.IdentityModel.Claims.ClaimSet.System%2A>) pour représenter l'émetteur de jeton de nom d'utilisateur.  
   
-4. Implémentez la méthode <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A>. Cette méthode remplit une instance de la classe <xref:System.IdentityModel.Policy.EvaluationContext> (passée sous forme d’argument) avec les revendications basées sur le contenu des jetons de sécurité entrants. Cette méthode retourne la valeur `true` lorsque ce processus se déroule dans le cadre d'une évaluation. Lorsque l'implémentation s'appuie sur des stratégies d'autorisation fournissant des informations supplémentaires au contexte d'évaluation, cette méthode peut retourner la valeur `false` si les informations requises ne figurent pas encore dans le contexte d'évaluation. Dans ce cas, WCF appelle à nouveau la méthode après l’évaluation de toutes les autres stratégies d’autorisation générées pour le message entrant si au moins l’une de ces stratégies d’autorisation a modifié le contexte d’évaluation.  
+4. Implémentez la méthode <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A>. Cette méthode remplit une instance de la classe <xref:System.IdentityModel.Policy.EvaluationContext> (passée sous forme d’argument) avec les revendications basées sur le contenu des jetons de sécurité entrants. Cette méthode retourne la valeur `true` lorsque ce processus se déroule dans le cadre d'une évaluation. Lorsque l'implémentation s'appuie sur des stratégies d'autorisation fournissant des informations supplémentaires au contexte d'évaluation, cette méthode peut retourner la valeur `false` si les informations requises ne figurent pas encore dans le contexte d'évaluation. Dans ce cas, WCF appellera la méthode à nouveau après avoir évalué toutes les autres politiques d’autorisation générées pour le message entrant si au moins une de ces politiques d’autorisation modifié le contexte de l’évaluation.  
   
      [!code-csharp[c_CustomTokenAuthenticator#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtokenauthenticator/cs/source.cs#3)]
      [!code-vb[c_CustomTokenAuthenticator#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtokenauthenticator/vb/source.vb#3)]  
 
- [Procédure pas à pas : Création d’informations d’identification](walkthrough-creating-custom-client-and-service-credentials.md) de client et de service personnalisées décrit comment créer des informations d’identification personnalisées et un gestionnaire de jetons de sécurité personnalisé. Pour utiliser l'authentificateur de jetons de sécurité personnalisés créé ici, une implémentation du gestionnaire de jetons de sécurité est modifiée pour retourner l'authentificateur personnalisé à partir de la méthode <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%2A>. La méthode retourne un authentificateur lorsqu’une exigence de jeton de sécurité appropriée est passée.  
+ [Procédure pas à pas : La création d’informations d’identification personnalisées](walkthrough-creating-custom-client-and-service-credentials.md) pour les clients et les services décrit comment créer des informations d’identification personnalisées et un gestionnaire de jetons de sécurité personnalisé. Pour utiliser l'authentificateur de jetons de sécurité personnalisés créé ici, une implémentation du gestionnaire de jetons de sécurité est modifiée pour retourner l'authentificateur personnalisé à partir de la méthode <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%2A>. La méthode retourne un authentificateur lorsqu’une exigence de jeton de sécurité appropriée est passée.  
   
 #### <a name="to-integrate-a-custom-security-token-authenticator-with-a-custom-security-token-manager"></a>Pour intégrer un authentificateur de jetons de sécurité personnalisés à un gestionnaire de jetons de sécurité personnalisés  
   
@@ -57,12 +57,12 @@ Cette rubrique indique comment créer un authentificateur de jetons de sécurit�
   
      [!code-csharp[c_CustomTokenAuthenticator#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtokenauthenticator/cs/source.cs#2)]
      [!code-vb[c_CustomTokenAuthenticator#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtokenauthenticator/vb/source.vb#2)]  
- 
+
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator>
 - <xref:System.IdentityModel.Selectors.SecurityTokenRequirement>
 - <xref:System.IdentityModel.Selectors.SecurityTokenManager>
 - <xref:System.IdentityModel.Tokens.UserNameSecurityToken>
-- [Procédure pas à pas : Création d’informations d’identification de client et de service personnalisées](walkthrough-creating-custom-client-and-service-credentials.md)
-- [Guide pratique : Créer un fournisseur de jetons de sécurité personnalisé](how-to-create-a-custom-security-token-provider.md)
+- [Procédure pas à pas : création d’informations d’identification de client et de service personnalisées](walkthrough-creating-custom-client-and-service-credentials.md)
+- [Comment : créer un fournisseur de jetons de sécurité personnalisé](how-to-create-a-custom-security-token-provider.md)

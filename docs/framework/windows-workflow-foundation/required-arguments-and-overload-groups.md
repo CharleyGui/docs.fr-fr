@@ -2,12 +2,12 @@
 title: Arguments obligatoires et groupes surchargés
 ms.date: 03/30/2017
 ms.assetid: 4ca3ed06-b9af-4b85-8b70-88c2186aefa3
-ms.openlocfilehash: 84384e90be0036036477d9b4249832f544e17d08
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 4eb62306f52b8ff890d5a5333c3789bd84ad7f60
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989308"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142938"
 ---
 # <a name="required-arguments-and-overload-groups"></a>Arguments obligatoires et groupes surchargés
 Les activités peuvent être configurées de sorte que certains arguments doivent être liés pour que l'activité soit valide pour l'exécution. L’attribut `RequiredArgument` sert à indiquer que certains arguments sur une activité sont requis et l’attribut `OverloadGroup` à grouper des catégories d’arguments requis. En utilisant les attributs, les auteurs d'activités peuvent fournir des configurations de validation d'activités simples ou complexes.  
@@ -61,13 +61,13 @@ public sealed class Add : CodeActivity<int>
   
  Si l'activité est utilisée et l'un ou l'autre des arguments requis n'est pas lié, l'erreur de validation suivante est retournée :  
   
- **La valeur d’un argument d’activité’Operand1 'requis n’a pas été fournie.**  
+ **La valeur « Operand1 » d’un argument requis d’activité n’a pas été fournie.**  
 > [!NOTE]
-> Pour plus d’informations sur la vérification et la gestion des erreurs et des avertissements de validation, consultez [appel de validation d’activité](invoking-activity-validation.md).  
+> Pour plus d’informations sur la vérification et le traitement des erreurs et des avertissements de validation, voir [Invoquant la validation de l’activité](invoking-activity-validation.md).  
   
 ## <a name="using-overload-groups"></a>Utilisation des groupes surchargés
 
-Les groupes surchargés fournissent une méthode permettant d’indiquer quelles combinaisons d’arguments sont valides dans une activité. Les arguments sont groupés à l'aide de l'objet <xref:System.Activities.OverloadGroupAttribute>. Un nom spécifié par le <xref:System.Activities.OverloadGroupAttribute>est attribué à chaque groupe. L’activité est valide lorsqu’un seul jeu d’arguments dans un groupe surchargé est lié. Dans l'exemple suivant, une classe `CreateLocation` est définie.  
+Les groupes surchargés fournissent une méthode permettant d’indiquer quelles combinaisons d’arguments sont valides dans une activité. Les arguments sont groupés à l'aide de l'objet <xref:System.Activities.OverloadGroupAttribute>. Chaque groupe reçoit un nom qui <xref:System.Activities.OverloadGroupAttribute>est spécifié par le . L’activité est valide lorsqu’un seul ensemble d’arguments dans un groupe de surcharge est lié. Dans l'exemple suivant, une classe `CreateLocation` est définie.  
   
 ```csharp  
 class CreateLocation: Activity  
@@ -100,13 +100,13 @@ class CreateLocation: Activity
   
     [RequiredArgument]  
     [OverloadGroup("G3")]  
-    public InArgument<int> Zip { get; set; }                  
+    public InArgument<int> Zip { get; set; }
 }  
 ```  
   
  L'objectif de cette activité est de spécifier un emplacement aux États-Unis d'Amérique. Pour ce faire, l'utilisateur de l'activité peut spécifier l'emplacement à l'aide de l'un des trois groupes d'arguments. Pour spécifier les combinaisons valides des arguments, trois groupes surchargés sont définis. `G1` contient les arguments `Latitude` et `Longitude`. `G2` contient `Street`, `City` et `State`. `G3` contient `Street` et `Zip`. `Name` est également un argument obligatoire, mais il ne fait pas partie d'un groupe surchargé. Pour que cette activité soit valide, `Name` devrait être lié, ainsi que tous les arguments d'un seul et unique groupe surchargé.  
   
- Dans l’exemple suivant, extrait de l’exemple d’activités d’accès à la [base de données](./samples/database-access-activities.md) , `ConnectionString` il `ConfigFileSectionName`existe deux groupes surchargés : et. Pour que cette activité soit valide, les arguments `ProviderName` et `ConnectionString` doivent être liés, ou l’argument `ConfigName`, mais pas les deux.  
+ Dans l’exemple suivant, tiré de l’échantillon des activités `ConnectionString` `ConfigFileSectionName` [d’accès](./samples/database-access-activities.md) à la base de données, il existe deux groupes de surcharge : et . Pour que cette activité soit valide, les arguments `ProviderName` et `ConnectionString` doivent être liés, ou l’argument `ConfigName`, mais pas les deux.  
   
 ```csharp  
 public class DbUpdate: AsyncCodeActivity  
@@ -138,7 +138,7 @@ public class DbUpdate: AsyncCodeActivity
     public IDictionary<string, Argument> Parameters { get; }  
   
     [DependsOn("Parameters")]  
-    public OutArgument<int> AffectedRecords { get; set; }       
+    public OutArgument<int> AffectedRecords { get; set; }
 }  
 ```  
   

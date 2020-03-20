@@ -2,20 +2,20 @@
 title: Utilisation de la portée d'édition
 ms.date: 03/30/2017
 ms.assetid: 79306f9e-318b-4687-9863-8b93d1841716
-ms.openlocfilehash: 3e99610fda78e50f6d6eb72c38ecc82bdc96b5a2
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 13f23289f0b764b80f971d3e514f3b12acfbfffc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715554"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142652"
 ---
 # <a name="using-editing-scope"></a>Utilisation de la portée d'édition
 Cet exemple montre comment traiter par lot un ensemble de modifications afin qu'elles puissent être annulées dans une unité atomique unique. Par défaut, les actions effectuées par un auteur de concepteur d'activités sont automatiquement intégrées dans le système d'annulation/de rétablissement.  
   
-## <a name="demonstrates"></a>Montre  
+## <a name="demonstrates"></a>Illustre le  
  Portée d'édition et annulation/rétablissement.  
   
-## <a name="discussion"></a>Discussion  
+## <a name="discussion"></a>Discussions  
  Cet exemple montre comment traiter par lot un ensemble de modifications apportées à l'arborescence <xref:System.Activities.Presentation.Model.ModelItem> dans une unité de travail unique. Notez que, lors de la liaison à des valeurs <xref:System.Activities.Presentation.Model.ModelItem> directement à partir d'un concepteur WPF, les modifications sont appliquées automatiquement. Cet exemple montre ce qui doit être fait lorsque plusieurs modifications qui doivent être traitées par lot sont apportées via du code impératif, plutôt que par une modification unique.  
   
  Dans cet exemple, trois activités sont ajoutées. Lorsque la modification commence, <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A> est appelé sur une instance de <xref:System.Activities.Presentation.Model.ModelItem>. Les modifications apportées à l'arborescence <xref:System.Activities.Presentation.Model.ModelItem> dans cette portée d'édition sont traitées par lot. La commande <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A> retourne un <xref:System.Activities.Presentation.Model.EditingScope>, qui peut être utilisé pour contrôler cette instance. <xref:System.Activities.Presentation.Model.EditingScope.OnComplete%2A> ou <xref:System.Activities.Presentation.Model.EditingScope.OnRevert%2A> peut être appelé pour valider ou rétablir la portée d'édition.  
@@ -26,19 +26,19 @@ Cet exemple montre comment traiter par lot un ensemble de modifications afin qu'
   
 1. Générez et exécutez l'exemple, puis utilisez les boutons situés à gauche pour modifier le workflow.  
   
-2. Cliquez sur **ouvrir la portée d’édition**.  
+2. Cliquez **sur Open Editing Scope**.  
   
     1. Cette commande appelle <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A> qui crée une portée d'édition et le place sur la pile d'édition.  
   
     2. Trois activités sont ensuite ajoutées au <xref:System.Activities.Presentation.Model.ModelItem> sélectionné. Notez que si la portée d'édition n'avait pas été ouverte avec <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A>, trois nouvelles activités apparaitraient sur la zone de conception. Étant donné que cette opération est toujours en attente dans <xref:System.Activities.Presentation.Model.EditingScope>, le concepteur n'est pas encore mis à jour.  
   
-3. Appuyez sur **Fermer la portée d’édition** pour valider la portée d’édition. Trois activités apparaissent dans le concepteur.  
+3. Press **Close Editing Scope** pour engager la portée de montage. Trois activités apparaissent dans le concepteur.  
   
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
->   
+>
+> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\UsingEditingScope`

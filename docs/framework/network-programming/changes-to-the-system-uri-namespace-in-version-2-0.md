@@ -3,11 +3,11 @@ title: Modifications apportées à l’espace de noms System.Uri dans la version
 ms.date: 03/30/2017
 ms.assetid: 35883fe9-2d09-4d8b-80ca-cf23a941e459
 ms.openlocfilehash: 987010b8367069e8089df3f809d23f258bb68f2b
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188430"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "61642761"
 ---
 # <a name="changes-to-the-systemuri-namespace-in-version-20"></a>Modifications apportées à l’espace de noms System.Uri dans la version 2.0
 

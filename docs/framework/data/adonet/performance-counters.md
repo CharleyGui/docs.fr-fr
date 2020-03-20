@@ -1,44 +1,44 @@
 ---
-title: Compteurs de performances
+title: Compteurs de performance
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0b121b71-78f8-4ae2-9aa1-0b2e15778e57
-ms.openlocfilehash: 985951180a5c8ee09460b7fe4bf3213b986c3bb6
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: b68787980a8b64d9ee90ed8d834fab2c5c69006b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980065"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149334"
 ---
 # <a name="performance-counters-in-adonet"></a>Compteurs de performance dans ADO.NET
-ADO.NET 2.0 a introduit une prise en charge développée des compteurs de performance qui prend en charge à la fois <xref:System.Data.SqlClient> et <xref:System.Data.OracleClient>. Les compteurs de performance <xref:System.Data.SqlClient> disponibles dans les versions antérieures d'ADO.NET sont déconseillés et remplacés par les nouveaux compteurs de performance évoqués dans cette rubrique. Vous pouvez utiliser les compteurs de performance ADO.NET pour surveiller le statut de votre application et les ressources de connexion qu'elle utilise. Vous pouvez surveiller les compteurs de performance à l'aide de l'Analyseur de performances Windows ou accéder à ces derniers par programme à l'aide de la classe <xref:System.Diagnostics.PerformanceCounter> dans l'espace de noms <xref:System.Diagnostics>.  
+ADO.NET 2.0 a introduit une prise en charge développée des compteurs de performance qui prend en charge à la fois <xref:System.Data.SqlClient> et <xref:System.Data.OracleClient>. Les compteurs de performance <xref:System.Data.SqlClient> disponibles dans les versions antérieures d'ADO.NET sont déconseillés et remplacés par les nouveaux compteurs de performance évoqués dans cette rubrique.  Vous pouvez utiliser les compteurs de performance ADO.NET pour surveiller le statut de votre application et les ressources de connexion qu'elle utilise. Vous pouvez surveiller les compteurs de performance à l'aide de l'Analyseur de performances Windows ou accéder à ces derniers par programme à l'aide de la classe <xref:System.Diagnostics.PerformanceCounter> dans l'espace de noms <xref:System.Diagnostics>.  
   
 ## <a name="available-performance-counters"></a>Compteurs de performance disponibles  
  Actuellement, il existe 14 compteurs de performance différents disponibles pour <xref:System.Data.SqlClient> et <xref:System.Data.OracleClient>, comme décrit dans le tableau ci-dessous. Notez que les noms des compteurs individuels ne sont pas localisés dans les versions régionales de Microsoft .NET Framework.  
   
-|Compteur de performance|Description|  
+|Compteur de performances|Description|  
 |-------------------------|-----------------|  
 |`HardConnectsPerSecond`|Nombre de connexions par seconde qui sont établies à un serveur de base de données.|  
 |`HardDisconnectsPerSecond`|Nombre de déconnexions par seconde qui sont effectuées à un serveur de base de données.|  
 |`NumberOfActiveConnectionPoolGroups`|Nombre de groupes du pool de connexion unique qui sont actifs. Ce compteur est contrôlé par le nombre de chaînes de connexion uniques qui se trouvent dans AppDomain.|  
 |`NumberOfActiveConnectionPools`|Nombre total de regroupements de connexions.|  
-|`NumberOfActiveConnections`|Nombre de connexions actives en cours d'utilisation. **Remarque :**  Ce compteur de performance n’est pas activé par défaut. Pour activer ce compteur de performance, consultez [activation des compteurs désactivés par défaut](#ActivatingOffByDefault).|  
-|`NumberOfFreeConnections`|Nombre de connexions disponibles pour une utilisation dans les regroupements de connexions. **Remarque :**  Ce compteur de performance n’est pas activé par défaut. Pour activer ce compteur de performance, consultez [activation des compteurs désactivés par défaut](#ActivatingOffByDefault).|  
+|`NumberOfActiveConnections`|Nombre de connexions actives en cours d'utilisation. **Note:**  Ce compteur de performances n’est pas activé par défaut. Pour activer ce compteur de performances, voir [Activating Off-By-Default Counters](#ActivatingOffByDefault).|  
+|`NumberOfFreeConnections`|Nombre de connexions disponibles pour une utilisation dans les regroupements de connexions. **Note:**  Ce compteur de performances n’est pas activé par défaut. Pour activer ce compteur de performances, voir [Activating Off-By-Default Counters](#ActivatingOffByDefault).|  
 |`NumberOfInactiveConnectionPoolGroups`|Nombre de groupes du regroupement de connexions unique qui sont marqués pour le nettoyage. Ce compteur est contrôlé par le nombre de chaînes de connexion uniques qui se trouvent dans AppDomain.|  
 |`NumberOfInactiveConnectionPools`|Nombre de regroupements de connexions inactifs sans activité récente et en attente de suppression.|  
 |`NumberOfNonPooledConnections`|Nombre de connexions actives qui n'ont pas été regroupées.|  
 |`NumberOfPooledConnections`|Nombre de connexions actives qui sont gérées par l'infrastructure de regroupement de connexions.|  
 |`NumberOfReclaimedConnections`|Nombre de connexions ayant été récupérées par le biais du garbage collection dans lequel `Close` ou `Dispose` n'a pas été appelé par l'application. La fermeture ou la suppression non explicites des connexions nuit aux performances.|  
 |`NumberOfStasisConnections`|Nombre de connexions en attente de l'achèvement d'une action et par conséquent non disponibles pour une utilisation par votre application.|  
-|`SoftConnectsPerSecond`|Nombre de connexions actives en cours d'extraction du regroupement de connexions. **Remarque :**  Ce compteur de performance n’est pas activé par défaut. Pour activer ce compteur de performance, consultez [activation des compteurs désactivés par défaut](#ActivatingOffByDefault).|  
-|`SoftDisconnectsPerSecond`|Nombre de connexions actives retournées au regroupement de connexions. **Remarque :**  Ce compteur de performance n’est pas activé par défaut. Pour activer ce compteur de performance, consultez [activation des compteurs désactivés par défaut](#ActivatingOffByDefault).|  
+|`SoftConnectsPerSecond`|Nombre de connexions actives en cours d'extraction du regroupement de connexions. **Note:**  Ce compteur de performances n’est pas activé par défaut. Pour activer ce compteur de performances, voir [Activating Off-By-Default Counters](#ActivatingOffByDefault).|  
+|`SoftDisconnectsPerSecond`|Nombre de connexions actives retournées au regroupement de connexions. **Note:**  Ce compteur de performances n’est pas activé par défaut. Pour activer ce compteur de performances, voir [Activating Off-By-Default Counters](#ActivatingOffByDefault).|  
   
 ### <a name="connection-pool-groups-and-connection-pools"></a>Groupes du regroupement de connexions et regroupements de connexions  
- Lorsque vous utilisez l'authentification Windows (sécurité intégrée), vous devez surveiller les deux compteurs de performance `NumberOfActiveConnectionPoolGroups` et `NumberOfActiveConnectionPools`. En effet, les groupes du regroupement de connexions sont mappés à des chaînes de connexion uniques. Les regroupements de connexions sont mappés aux chaînes de connexion et créent des regroupements séparés pour des identités Windows individuelles, lors de l'utilisation de la sécurité intégrée. Par exemple, si Fred et Julie, qui appartiennent au même AppDomain, utilisent tous les deux la chaîne de connexion `"Data Source=MySqlServer;Integrated Security=true"`, un groupe de regroupement de connexions est créé pour la chaîne de connexion, et deux autres regroupements sont créés, un pour Fred et un pour Julie. Si John et Martha utilisent une chaîne de connexion avec une connexion SQL Server identique, `"Data Source=MySqlServer;User Id=lowPrivUser;Password=Strong?Password"`, un seul pool est créé pour l’identité **lowPrivUser** .  
+ Lorsque vous utilisez l'authentification Windows (sécurité intégrée), vous devez surveiller les deux compteurs de performance `NumberOfActiveConnectionPoolGroups` et `NumberOfActiveConnectionPools`. En effet, les groupes du regroupement de connexions sont mappés à des chaînes de connexion uniques. Les regroupements de connexions sont mappés aux chaînes de connexion et créent des regroupements séparés pour des identités Windows individuelles, lors de l'utilisation de la sécurité intégrée. Par exemple, si Fred et Julie, qui appartiennent au même AppDomain, utilisent tous les deux la chaîne de connexion `"Data Source=MySqlServer;Integrated Security=true"`, un groupe de regroupement de connexions est créé pour la chaîne de connexion, et deux autres regroupements sont créés, un pour Fred et un pour Julie. Si John et Martha utilisent une chaîne de connexion `"Data Source=MySqlServer;User Id=lowPrivUser;Password=Strong?Password"`avec une connexion SQL Server identique, alors seule une seule piscine est créée pour l’identité **lowPrivUser.**  
   
-<a name="ActivatingOffByDefault"></a>   
+<a name="ActivatingOffByDefault"></a>
 ### <a name="activating-off-by-default-counters"></a>Activation des compteurs désactivés par défaut  
  Les compteurs de performance `NumberOfFreeConnections`, `NumberOfActiveConnections`, `SoftDisconnectsPerSecond` et `SoftConnectsPerSecond` sont désactivés par défaut. Ajoutez les informations suivantes dans le fichier de configuration de l'application pour les activer :  
   
@@ -57,7 +57,7 @@ ADO.NET 2.0 a introduit une prise en charge développée des compteurs de perfo
 > [!NOTE]
 > Cet exemple utilise l’exemple de base de données **AdventureWorks** inclus avec SQL Server. Les chaînes de connexion fournies dans l'exemple de code sont basées sur l'hypothèse que la base de données est installée et disponible sur l'ordinateur local avec un nom d'instance de SqlExpress, et que vous avez créé des connexions SQL Server qui correspondent à celles fournies dans les chaînes de connexion. Vous devrez peut-être activer les connexions SQL Server si votre serveur est configuré à l'aide des paramètres de sécurité par défaut qui autorisent uniquement l'authentification Windows. Modifiez les chaînes de connexion en fonction de votre environnement.  
   
-### <a name="example"></a>Exemple  
+### <a name="example"></a> Exemple  
   
 ```vb  
 Option Explicit On  
@@ -74,7 +74,7 @@ Class Program
   
     Public Shared Sub Main()  
         Dim prog As Program = New Program  
-        ' Open a connection and create the performance counters.   
+        ' Open a connection and create the performance counters.
         prog.connection.ConnectionString = _  
            GetIntegratedSecurityConnectionString()  
         prog.SetUpPerformanceCounters()  
@@ -171,17 +171,17 @@ Class Program
     Private Declare Function GetCurrentProcessId Lib "kernel32.dll" () As Integer  
   
     Private Function GetInstanceName() As String  
-        'This works for Winforms apps.   
+        'This works for Winforms apps.
         Dim instanceName As String = _  
            System.Reflection.Assembly.GetEntryAssembly.GetName.Name  
   
-        ' Must replace special characters like (, ), #, /, \\   
+        ' Must replace special characters like (, ), #, /, \\
         Dim instanceName2 As String = _  
            AppDomain.CurrentDomain.FriendlyName.ToString.Replace("(", "[") _  
            .Replace(")", "]").Replace("#", "_").Replace("/", "_").Replace("\\", "_")  
   
-        'For ASP.NET applications your instanceName will be your CurrentDomain's   
-        'FriendlyName. Replace the line above that sets the instanceName with this:   
+        'For ASP.NET applications your instanceName will be your CurrentDomain's
+        'FriendlyName. Replace the line above that sets the instanceName with this:
         'instanceName = AppDomain.CurrentDomain.FriendlyName.ToString.Replace("(", "[") _  
         '    .Replace(")", "]").Replace("#", "_").Replace("/", "_").Replace("\\", "_")  
   
@@ -201,22 +201,22 @@ Class Program
     End Sub  
   
     Private Shared Function GetIntegratedSecurityConnectionString() As String  
-        ' To avoid storing the connection string in your code,   
-        ' you can retrieve it from a configuration file.   
-        Return ("Data Source=.\SqlExpress;Integrated Security=True;" &   
+        ' To avoid storing the connection string in your code,
+        ' you can retrieve it from a configuration file.
+        Return ("Data Source=.\SqlExpress;Integrated Security=True;" &
           "Initial Catalog=AdventureWorks")  
     End Function  
   
     Private Shared Function GetSqlConnectionString() As String  
-        ' To avoid storing the connection string in your code,   
-        ' you can retrieve it from a configuration file.   
-        Return ("Data Source=.\SqlExpress;User Id=LowPriv;Password=Data!05;" &   
+        ' To avoid storing the connection string in your code,
+        ' you can retrieve it from a configuration file.
+        Return ("Data Source=.\SqlExpress;User Id=LowPriv;Password=Data!05;" &
           "Initial Catalog=AdventureWorks")  
     End Function  
   
     Private Shared Function GetSqlConnectionStringDifferent() As String  
-        ' To avoid storing the connection string in your code,   
-        ' you can retrieve it from a configuration file.   
+        ' To avoid storing the connection string in your code,
+        ' you can retrieve it from a configuration file.
         Return ("Initial Catalog=AdventureWorks;Data Source=.\SqlExpress;" & _  
           "User Id=LowPriv;Password=Data!05;")  
     End Function  
@@ -347,7 +347,7 @@ class Program
             AppDomain.CurrentDomain.FriendlyName.ToString().Replace('(', '[')  
             .Replace(')', ']').Replace('#', '_').Replace('/', '_').Replace('\\', '_');  
   
-        // For ASP.NET applications your instanceName will be your CurrentDomain's   
+        // For ASP.NET applications your instanceName will be your CurrentDomain's
         // FriendlyName. Replace the line above that sets the instanceName with this:  
         // instanceName = AppDomain.CurrentDomain.FriendlyName.ToString().Replace('(','[')  
         // .Replace(')',']').Replace('#','_').Replace('/','_').Replace('\\','_');  
@@ -399,6 +399,6 @@ class Program
 - [Connexion à une source de données](connecting-to-a-data-source.md)
 - [Regroupement de connexions OLE DB, ODBC et Oracle](ole-db-odbc-and-oracle-connection-pooling.md)
 - [Compteurs de performances pour ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/fxk122b4(v=vs.100))
-- [Profilage d’exécution](../../debug-trace-profile/runtime-profiling.md)
-- [Présentation de l’analyse des seuils de performance](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bd20x32d(v=vs.90))
-- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)
+- [Profilage de temps d’exécution](../../debug-trace-profile/runtime-profiling.md)
+- [Introduction à la surveillance des seuils de rendement](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bd20x32d(v=vs.90))
+- [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

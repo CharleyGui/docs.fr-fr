@@ -5,30 +5,30 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97a10d79-3e7d-4bd1-9a99-fd9807fd70bc
-ms.openlocfilehash: 4a84b32664c16dad48dd415e430134c5fb98303a
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 7eb640576bc00bc767ba16f8dc4a5d5952a479c6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76211925"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184723"
 ---
 # <a name="internet-unsecured-client-and-service"></a>Service et client Internet non sécurisés
-L’illustration suivante montre un exemple de service et client public, non sécurisé Windows Communication Foundation (WCF) :  
+L’illustration suivante montre un exemple de client et de service publics et non sécurisés de la Windows Communication Foundation (WCF) :  
   
- ![Capture d’écran montrant un scénario Internet non sécurisé](./media/internet-unsecured-client-and-service/public-unsecured-internet.gif)  
+ ![Capture d’écran qui montre un scénario Internet non sécurisé](./media/internet-unsecured-client-and-service/public-unsecured-internet.gif)  
   
 |Caractéristique|Description|  
 |--------------------|-----------------|  
-|Mode de sécurité|Aucun|  
+|Mode de sécurité|None|  
 |Transport|HTTP|  
-|Liaison|<xref:System.ServiceModel.BasicHttpBinding> dans le code, ou l’élément [\<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) dans la configuration.|  
+|Liaison|<xref:System.ServiceModel.BasicHttpBinding>dans le code, ou la [ \<baseHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) élément dans la configuration.|  
 |Interopérabilité|Avec les clients de service Web et les services existants|  
-|Authentification|Aucun|  
-|Intégrité|Aucun|  
-|Confidentialité|Aucun|  
+|Authentication|None|  
+|Intégrité|None|  
+|Confidentialité|None|  
   
 ## <a name="service"></a>Service  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
@@ -50,9 +50,9 @@ L’illustration suivante montre un exemple de service et client public, non sé
     <behaviors />  
     <services>  
       <service behaviorConfiguration="" name="ServiceModel.Calculator">  
-        <endpoint address="http://localhost/Calculator"   
+        <endpoint address="http://localhost/Calculator"
                   binding="basicHttpBinding"  
-                  bindingConfiguration="Basic_Unsecured"   
+                  bindingConfiguration="Basic_Unsecured"
                   name="BasicHttp_ICalculator"  
                   contract="ServiceModel.ICalculator" />  
       </service>  
@@ -68,7 +68,7 @@ L’illustration suivante montre un exemple de service et client public, non sé
 ```  
   
 ## <a name="client"></a>Client  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
   
 - Créez un client autonome à l'aide du code (et du code client).  
   
@@ -78,12 +78,12 @@ L’illustration suivante montre un exemple de service et client public, non sé
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>Code  
- Le code suivant illustre un client WCF de base qui accède à un point de terminaison non sécurisé.  
+ Le code suivant affiche un client WCF de base qui accède à un critère d’évaluation non sécurisé.  
   
  [!code-csharp[C_UnsecuredClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#1)]
  [!code-vb[C_UnsecuredClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#1)]  
   
-### <a name="client-configuration"></a>Configuration du client  
+### <a name="client-configuration"></a>Configuration client  
  Le code ci-dessous configure le client.  
   
 ```xml  
@@ -100,9 +100,9 @@ L’illustration suivante montre un exemple de service et client public, non sé
     </bindings>  
     <client>  
       <endpoint address="http://localhost/Calculator/Unsecured"  
-          binding="basicHttpBinding"   
+          binding="basicHttpBinding"
           bindingConfiguration="BasicHttpBinding_ICalculator"  
-          contract="ICalculator"   
+          contract="ICalculator"
           name="BasicHttpBinding_ICalculator" />  
     </client>  
   </system.serviceModel>  
@@ -113,4 +113,4 @@ L’illustration suivante montre un exemple de service et client public, non sé
 
 - [Scénarios de sécurité courants](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)
 - [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

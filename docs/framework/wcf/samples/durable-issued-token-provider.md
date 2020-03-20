@@ -2,22 +2,22 @@
 title: Durable Issued Token Provider
 ms.date: 03/30/2017
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
-ms.openlocfilehash: 62e4cca50e9a2fbbf319d66fbe85cec6cdb73b23
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 08c6837f45ba1c422cdc3df2c884aa81b50a7f2b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716455"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79144745"
 ---
 # <a name="durable-issued-token-provider"></a>Durable Issued Token Provider
 Cet exemple montre comment implémenter un fournisseur de jetons émis client personnalisé.  
   
-## <a name="discussion"></a>Discussion  
- Un fournisseur de jetons dans Windows Communication Foundation (WCF) est utilisé pour fournir des informations d’identification à l’infrastructure de sécurité. En général, le fournisseur de jetons examine la cible et publie des informations d'identification appropriées afin que l'infrastructure de sécurité puisse sécuriser le message. WCF est fourni avec un fournisseur de jetons CardSpace. Les fournisseurs de jetons personnalisés sont utiles dans les cas suivants :  
+## <a name="discussion"></a>Discussions  
+ Un fournisseur de jetons de windows Communication Foundation (WCF) est utilisé pour fournir des informations d’identification à l’infrastructure de sécurité. En général, le fournisseur de jetons examine la cible et publie des informations d'identification appropriées afin que l'infrastructure de sécurité puisse sécuriser le message. WCF expédie avec un fournisseur de jetons CardSpace. Les fournisseurs de jetons personnalisés sont utiles dans les cas suivants :  
   
 - Si vous disposez d'un magasin d'informations d'identification avec lequel le fournisseur de jetons intégré ne peut pas fonctionner.  
   
-- Si vous souhaitez fournir votre propre mécanisme personnalisé pour transformer les informations d’identification à partir du moment où l’utilisateur fournit les détails lorsque le client WCF utilise les informations d’identification.  
+- Si vous souhaitez fournir votre propre mécanisme personnalisé pour transformer les informations d’identification à partir du moment où l’utilisateur fournit les détails au moment où le client WCF utilise les informations d’identification.  
   
 - si vous générez un jeton personnalisé.  
   
@@ -27,7 +27,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
   
 - la façon dont un client peut être configuré avec un fournisseur de jetons personnalisé ;  
   
-- Comment les jetons émis peuvent être mis en cache et fournis au client WCF.  
+- Comment les jetons émis peuvent-ils être mis en cache et fournis au client WCF.  
   
 - la façon dont le serveur est authentifié auprès du client à l'aide du certificat X.509 du serveur.  
   
@@ -36,16 +36,16 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération correspondant à cet exemple figurent en fin de rubrique.  
   
- Cet exemple expose le contrat ICalculator à l’aide de la [\<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). La configuration de cette liaison sur le client est présentée dans le code suivant.  
+ Cet échantillon expose le contrat ICalculator en utilisant le [ \<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). La configuration de cette liaison sur le client est présentée dans le code suivant.  
   
 ```xml  
 <bindings>
   <wsFederationHttpBinding>
     <binding name="ServiceFed">
       <security mode="Message">
-        <message issuedKeyType="SymmetricKey" 
+        <message issuedKeyType="SymmetricKey"
                  issuedTokenType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1">
-          <issuer address="http://localhost:8000/sts/windows" 
+          <issuer address="http://localhost:8000/sts/windows"
                   binding="wsHttpBinding" />
         </message>
       </security>
@@ -63,13 +63,13 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
   <wsFederationHttpBinding>
     <binding name="ServiceFed">
       <security mode="Message">
-        <message issuedKeyType="SymmetricKey" 
+        <message issuedKeyType="SymmetricKey"
                  issuedTokenType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1">
           <issuerMetadata address="http://localhost:8000/sts/mex">
             <identity>
-              <certificateReference storeLocation="CurrentUser" 
-                                    storeName="TrustedPeople" 
-                                    x509FindType="FindBySubjectDistinguishedName" 
+              <certificateReference storeLocation="CurrentUser"
+                                    storeName="TrustedPeople"
+                                    x509FindType="FindBySubjectDistinguishedName"
                                     findValue="CN=STS" />
             </identity>
           </issuerMetadata>
@@ -91,15 +91,15 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
   <serviceCredentials>
     <issuedTokenAuthentication>
       <knownCertificates>
-        <add storeLocation="LocalMachine" 
-              storeName="TrustedPeople" 
-              x509FindType="FindBySubjectDistinguishedName" 
+        <add storeLocation="LocalMachine"
+              storeName="TrustedPeople"
+              x509FindType="FindBySubjectDistinguishedName"
               findValue="CN=STS" />
       </knownCertificates>
     </issuedTokenAuthentication>
-    <serviceCertificate storeLocation="LocalMachine" 
-                        storeName="My" 
-                        x509FindType="FindBySubjectDistinguishedName" 
+    <serviceCertificate storeLocation="LocalMachine"
+                        storeName="My"
+                        x509FindType="FindBySubjectDistinguishedName"
                         findValue="CN=localhost" />
   </serviceCredentials>
 </behavior>  
@@ -110,7 +110,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
  Le service d'émission de jeton de sécurité expose un point de terminaison unique à l'aide du wsHttpBinding standard. Le service d'émission de jeton de sécurité répond pour demander des jetons aux clients et, à la condition que le client s'authentifie à l'aide d'un compte Windows, il émet un jeton qui contient le nom d'utilisateur du client comme revendication dans le jeton émis. Dans le cadre de la création du jeton, le service d'émission de jeton de sécurité le signe à l'aide de la clé privée associée au certificat CN=STS. Par ailleurs, il crée une clé symétrique et la chiffre à l'aide de la clé publique associée au certificat CN=localhost. Lors du retour du jeton au client, le service d'émission de jeton de sécurité retourne également la clé symétrique. Le client présente le jeton émis au service de calculatrice et prouve qu'il connaît la clé symétrique en signant le message à l'aide de celle-ci.  
   
 ## <a name="custom-client-credentials-and-token-provider"></a>Informations d'identification client personnalisées et fournisseur de jetons personnalisé  
- Les étapes suivantes indiquent comment développer un fournisseur de jetons personnalisé qui met en cache les jetons émis et les intègre à WCF : Security.  
+ Les étapes suivantes montrent comment développer un fournisseur de jetons personnalisé qui cache les jetons émis et l’intégrer à WCF : la sécurité.  
   
 ### <a name="to-develop-a-custom-token-provider"></a>Pour développer un fournisseur de jetons personnalisé  
   
@@ -225,7 +225,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
     clientFactory.Endpoint.Behaviors.Add(durableCreds);  
     ```  
   
-## <a name="running-the-sample"></a>Exécution de l'exemple  
+## <a name="running-the-sample"></a>Exécution de l’exemple  
  Consultez les instructions suivantes pour exécuter l'exemple. Lorsque vous exécutez l'exemple, la demande de jeton de sécurité s'affiche dans la fenêtre de console du service d'émission de jeton de sécurité. Les demandes et réponses d'opération s'affichent dans les fenêtres de console du client et du service. Appuyez sur ENTER dans l'une ou l'autre de ces fenêtres pour arrêter l'application leur correspondant.  
   
 ## <a name="the-setupcmd-batch-file"></a>Fichier de commandes Setup.cmd  
@@ -235,7 +235,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
   
 1. Exécutez le fichier Setup.cmd pour créer les certificats requis.  
   
-2. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Assurez-vous que tous les projets de la solution sont générés (Shared, RSTRSTR, Service, SecurityTokenService et Client).  
+2. Pour construire la solution, suivez les instructions dans [la construction des échantillons de la Fondation De communication Windows](../../../../docs/framework/wcf/samples/building-the-samples.md). Assurez-vous que tous les projets de la solution sont générés (Shared, RSTRSTR, Service, SecurityTokenService et Client).  
   
 3. Veillez à ce que Service.exe et SecurityTokenService.exe s'exécutent tous deux avec des privilèges d'administrateur.  
   
@@ -247,9 +247,9 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
   
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
->   
+>
+> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Security\DurableIssuedTokenProvider`  

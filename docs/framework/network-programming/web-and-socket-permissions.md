@@ -16,10 +16,10 @@ helpviewer_keywords:
 - positions [.NET Framework], granting
 ms.assetid: d51ad8cb-03ae-4a51-bfcd-cfcf6b98afa9
 ms.openlocfilehash: d1b993acbf20eac244e596075c3f826bba3211a1
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71046866"
 ---
 # <a name="web-and-socket-permissions"></a>Autorisations web et socket

@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 35900aa2-5615-4174-8212-ba184c6b82fb
-ms.openlocfilehash: d47f5b7eaf6b5f6a3174982e6b4cf43859c031a5
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 94ec554ca2dc5ed4eb6792b9b42ae6f1b856f51e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794152"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79148606"
 ---
 # <a name="inserting-an-image-from-a-file"></a>Insertion d'une image à partir d'un fichier
-Vous pouvez écrire des objets binaires volumineux (BLOB) dans une base de données sous forme de données de type binaire ou caractère en fonction du type du champ de votre source de données. BLOB est un terme générique qui fait référence aux types de données `text`, `ntext` et `image` qui contiennent généralement des documents et des images.  
+Vous pouvez écrire un objet binaire large (BLOB) dans une base de données sous forme de données binaires ou de caractères, selon le type de champ de votre source de données. L’objet BLOB est un terme générique qui fait référence aux types de données `text`, `ntext` et `image`, qui contiennent généralement des documents et des images.  
   
- Pour écrire une valeur d’objet BLOB dans votre base de données, émettez l’instruction INSERT ou UPDATE appropriée et transmettez la valeur de l’objet BLOB en tant que paramètre d’entrée (consultez [Configuration des paramètres et des types de données de paramètre](../configuring-parameters-and-parameter-data-types.md)). Si le BLOB est stocké sous forme de texte, dans le cas, par exemple, d'un champ `text` SQL Server, vous pouvez le passer en tant que paramètre de chaîne. Si le BLOB est stocké sous forme binaire, dans le cas, par exemple, d'un champ `image` SQL Server, vous pouvez passer un tableau de type `byte` en tant que paramètre binaire.  
+ Pour écrire une valeur BLOB à votre base de données, publiez l’énoncé INSERT ou UPDATE approprié et passez la valeur BLOB comme paramètre d’entrée (voir [Paramètres configurants et types de données de paramètres](../configuring-parameters-and-parameter-data-types.md)). Si votre objet BLOB est stocké sous forme de texte, tel qu’un champ SQL Server `text`, vous pouvez passer l’objet BLOB comme paramètre de chaîne. Si l’objet BLOB est stocké au format binaire, tel qu’un champ SQL Server `image`, vous pouvez passer un tableau de type `byte` comme paramètre binaire.  
   
-## <a name="example"></a>Exemples  
- L'exemple de code suivant ajoute les informations relatives à un employé dans la table Employees de la base de données Northwind. Une photo de l'employé est lue dans un fichier et ajoutée dans le champ Photo de la table, qui est un champ image.  
+## <a name="example"></a> Exemple  
+ L’exemple de code suivant ajoute des informations sur les employés à la table Employees de la base de données Northwind. Une photo de l’employé est lue à partir d’un fichier et ajoutée au champ photo dans la table, qui est un champ d’image.  
   
 ```vb  
 Public Shared Sub AddEmployee( _  
@@ -39,7 +39,7 @@ Public Shared Sub AddEmployee( _
     "INSERT INTO Employees (LastName, FirstName, Title, " & _  
     "HireDate, ReportsTo, Photo) " & _  
     "Values(@LastName, @FirstName, @Title, " & _  
-    "@HireDate, @ReportsTo, @Photo)", connection)   
+    "@HireDate, @ReportsTo, @Photo)", connection)
   
   command.Parameters.Add("@LastName",  _  
     SqlDbType.NVarChar, 20).Value = lastName  
@@ -77,12 +77,12 @@ End Function
   
 ```csharp  
 public static void AddEmployee(  
-  string lastName,   
-  string firstName,   
-  string title,   
-  DateTime hireDate,   
-  int reportsTo,   
-  string photoFilePath,   
+  string lastName,
+  string firstName,
+  string title,
+  DateTime hireDate,
+  int reportsTo,
+  string photoFilePath,
   string connectionString)  
 {  
   byte[] photo = GetPhoto(photoFilePath);  
@@ -94,17 +94,17 @@ public static void AddEmployee(
     "INSERT INTO Employees (LastName, FirstName, " +  
     "Title, HireDate, ReportsTo, Photo) " +  
     "Values(@LastName, @FirstName, @Title, " +  
-    "@HireDate, @ReportsTo, @Photo)", connection);   
+    "@HireDate, @ReportsTo, @Photo)", connection);
   
-  command.Parameters.Add("@LastName",    
+  command.Parameters.Add("@LastName",
      SqlDbType.NVarChar, 20).Value = lastName;  
-  command.Parameters.Add("@FirstName",   
+  command.Parameters.Add("@FirstName",
       SqlDbType.NVarChar, 10).Value = firstName;  
-  command.Parameters.Add("@Title",       
+  command.Parameters.Add("@Title",
       SqlDbType.NVarChar, 30).Value = title;  
-  command.Parameters.Add("@HireDate",   
+  command.Parameters.Add("@HireDate",
        SqlDbType.DateTime).Value = hireDate;  
-  command.Parameters.Add("@ReportsTo",   
+  command.Parameters.Add("@ReportsTo",
       SqlDbType.Int).Value = reportsTo;  
   
   command.Parameters.Add("@Photo",  
@@ -133,7 +133,7 @@ public static byte[] GetPhoto(string filePath)
 ## <a name="see-also"></a>Voir aussi
 
 - [Utilisation des commandes pour modifier les données](../using-commands-to-modify-data.md)
-- [Récupération de données binaires](../retrieving-binary-data.md)
-- [Données binaires et de valeur élevée SQL Server](sql-server-binary-and-large-value-data.md)
+- [Récupération des données binaires](../retrieving-binary-data.md)
+- [SqL Server Données binaires et à grande valeur](sql-server-binary-and-large-value-data.md)
 - [Mappages de types de données SQL Server](../sql-server-data-type-mappings.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

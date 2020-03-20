@@ -9,24 +9,24 @@ helpviewer_keywords:
 - switches element
 - trace switches, <switches> element
 ms.assetid: 4cf36786-b89a-40e2-a0f1-86bb9b783343
-ms.openlocfilehash: 4aeb3cb0cd75f0fb27e3b359b86da61a77b491c7
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 15cc9680d7a20341eb5d1d1df302c1e034e70e02
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088802"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79153228"
 ---
-# <a name="switches-element"></a>\<commutateurs > élément
+# <a name="switches-element"></a>\<commutateurs> Element
 Contient des commutateurs de traçage et le niveau auquel ils sont définis.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;des **commutateurs**\<
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<commutateurs>**
 
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-      <switches>   
+      <switches>
 </switches>  
 ```  
   
@@ -34,13 +34,13 @@ Contient des commutateurs de traçage et le niveau auquel ils sont définis.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<add>](add-element-for-switches.md)|Spécifie le niveau auquel un commutateur de trace est défini.|  
+|[\<ajouter>](add-element-for-switches.md)|Spécifie le niveau auquel un commutateur de trace est défini.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -49,11 +49,11 @@ Contient des commutateurs de traçage et le niveau auquel ils sont définis.
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`System.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
   
-## <a name="remarks"></a>Notes  
- Vous pouvez modifier le niveau d’un commutateur de trace en le plaçant dans un fichier de configuration. Si le commutateur est un <xref:System.Diagnostics.BooleanSwitch>, vous pouvez l’activer et le désactiver. Si le commutateur est un <xref:System.Diagnostics.TraceSwitch>, vous pouvez lui affecter différents niveaux pour spécifier les types de messages de trace ou de débogage que l’application génère.  
+## <a name="remarks"></a>Notes   
+ Vous pouvez modifier le niveau d’un commutateur de trace en le mettant dans un fichier de configuration. Si l’interrupteur est un, <xref:System.Diagnostics.BooleanSwitch>vous pouvez l’allumer et éteindre. Si le commutateur <xref:System.Diagnostics.TraceSwitch>est un , vous pouvez lui attribuer différents niveaux pour spécifier les types de traces ou de déboçons messages les sorties d’application.  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser le **commutateur\<** élément pour définir le commutateur de trace `General` au niveau de la <xref:System.Diagnostics.TraceLevel> et activer le commutateur de trace booléen `Data`.  
+## <a name="example"></a> Exemple  
+ L’exemple suivant montre comment utiliser ** \<l’interrupteur>** élément <xref:System.Diagnostics.TraceLevel> pour définir `Data` le `General` commutateur de trace au niveau, et activer le commutateur de trace Boolean.  
   
 ```xml  
 <configuration>  
@@ -71,4 +71,4 @@ Contient des commutateurs de traçage et le niveau auquel ils sont définis.
 - <xref:System.Diagnostics.Switch>
 - <xref:System.Diagnostics.TraceSwitch>
 - <xref:System.Diagnostics.BooleanSwitch>
-- [Schéma des paramètres de trace et de débogage](index.md)
+- [Trace et Debug Paramètres Schema](index.md)

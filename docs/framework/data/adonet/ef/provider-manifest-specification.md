@@ -2,32 +2,32 @@
 title: Spécification de manifeste du fournisseur
 ms.date: 03/30/2017
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
-ms.openlocfilehash: a9dca140588be26035b235109c48049ce01e9ce1
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 28bae8a6e249aa1fdab3c67759c8f8575cbdaa10
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973882"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149724"
 ---
 # <a name="provider-manifest-specification"></a>Spécification de manifeste du fournisseur
 Cette section explique comment un fournisseur de banques de données peut prendre en charge les types et les fonctions dans la banque de données.  
   
  Les Services d'entités fonctionnent indépendamment d'un fournisseur de banques de données spécifique, mais permettent encore à un fournisseur de données de définir explicitement la manière dont les modèles, les mappages et les requêtes interagissent avec une banque de données sous-jacente. Sans couche d'abstraction, les Services d'entités seraient uniquement destinés à une banque de données ou un fournisseur de données spécifique.  
   
- Les types pris en charge par le fournisseur sont pris en charge directement ou indirectement par la base de données sous-jacente. Ces types ne sont pas nécessairement les types de magasins exacts, mais les types utilisés par le fournisseur pour prendre en charge l’Entity Framework. Les types de fournisseurs/banques sont décrits en termes EDM (Entity Data Model).  
+ Les types pris en charge par le fournisseur sont pris en charge directement ou indirectement par la base de données sous-jacente. Ces types ne sont pas nécessairement les types exacts de magasin, mais les types que le fournisseur utilise pour soutenir le cadre d’entité. Les types de fournisseurs/banques sont décrits en termes EDM (Entity Data Model).  
   
  Les types de paramètres et les types de retour pour les fonctions prises en charge par la banque de données sont spécifiés en termes EDM.  
   
-## <a name="requirements"></a>spécifications  
- Le Entity Framework et le magasin de données doivent être en mesure de transmettre des données dans les types connus sans perte de données ni troncation.  
+## <a name="requirements"></a>Spécifications  
+ Le cadre d’entité et le magasin de données doivent être en mesure de transmettre des données dans les types connus sans aucune perte de données ou de troncation.  
   
  Le manifeste du fournisseur doit pouvoir être chargé par les outils au moment du design sans devoir ouvrir une connexion à la banque de données.  
   
- La Entity Framework est sensible à la casse, mais le magasin de données sous-jacent peut ne pas l’être. Lorsque les artefacts EDM (identificateurs et noms de type, par exemple) sont définis et utilisés dans le manifeste, ils doivent utiliser le respect de la casse Entity Framework. Si des éléments de la banque de données respectueux de la casse apparaissent dans le manifeste du fournisseur, cette casse doit être conservée dans le manifeste du fournisseur.  
+ Le cadre d’entité est sensible aux cas, mais le magasin de données sous-jacent peut ne pas l’être. Lorsque les artefacts EDM (identifiants et noms de type, par exemple) sont définis et utilisés dans le manifeste, ils doivent utiliser la sensibilité au cas du Cadre d’entité. Si des éléments de la banque de données respectueux de la casse apparaissent dans le manifeste du fournisseur, cette casse doit être conservée dans le manifeste du fournisseur.  
   
- L’Entity Framework nécessite un manifeste du fournisseur pour tous les fournisseurs de données. Si vous essayez d’utiliser un fournisseur qui n’a pas de manifeste de fournisseur avec le Entity Framework, vous obtiendrez une erreur.  
+ Le cadre d’entité exige un manifeste de fournisseur pour tous les fournisseurs de données. Si vous essayez d’utiliser un fournisseur qui n’a pas de manifeste fournisseur avec le cadre d’entité, vous obtiendrez une erreur.  
   
- Le tableau suivant décrit les types d’exceptions que le Entity Framework lèvera lorsque des exceptions surviennent lors de l’interaction du fournisseur :  
+ Le tableau suivant décrit les types d’exceptions que le Cadre d’entités ferait lorsque des exceptions se présentent au moyen de l’interaction avec le fournisseur :  
   
 |Problème|Exception|  
 |-----------|---------------|  
@@ -39,7 +39,7 @@ Cette section explique comment un fournisseur de banques de données peut prendr
  Un fournisseur doit prendre en charge les scénarios suivants :  
   
 ### <a name="writing-a-provider-with-symmetric-type-mapping"></a>Écriture d'un fournisseur avec mappage de type symétrique  
- Vous pouvez écrire un fournisseur pour le Entity Framework où chaque type de magasin est mappé à un type EDM unique, indépendamment du sens du mappage. Pour un type de fournisseur ayant un mappage très simple correspondant à un type EDM, vous pouvez utiliser une solution symétrique parce que le système de type est simple ou correspond à des types EDM.  
+ Vous pouvez écrire un fournisseur pour le cadre d’entité où chaque magasin tape des cartes à un seul type EDM, quelle que soit la direction de cartographie. Pour un type de fournisseur ayant un mappage très simple correspondant à un type EDM, vous pouvez utiliser une solution symétrique parce que le système de type est simple ou correspond à des types EDM.  
   
  Vous pouvez utiliser la simplicité de leur domaine et produire un manifeste du fournisseur déclaratif statique.  
   
@@ -50,7 +50,7 @@ Cette section explique comment un fournisseur de banques de données peut prendr
 - Liste de fonctions prises en charge par le fournisseur dans lesquelles les types de paramètres et les types de retour sont exprimés en termes EDM.  
   
 ### <a name="writing-a-provider-with-asymmetric-type-mapping"></a>Écriture d'un fournisseur avec mappage de type asymétrique  
- Lors de l’écriture d’un fournisseur de magasin de données pour le Entity Framework, le mappage de type EDM-à-fournisseur pour certains types peut être différent du mappage de type fournisseur-à-EDM. Par exemple, unbounded EDM PrimitiveTypeKind.String peut être mappé à nvarchar (4000) sur le fournisseur, alors que nvarchar (4000) est mappé à EDM PrimitiveTypeKind.String (MaxLength=4000).  
+ Lors de la rédaction d’un fournisseur de magasins de données pour le cadre d’entité, la cartographie de type EDM-fournisseur pour certains types peut être différente de la cartographie de type fournisseur à EDM. Par exemple, unbounded EDM PrimitiveTypeKind.String peut être mappé à nvarchar (4000) sur le fournisseur, alors que nvarchar (4000) est mappé à EDM PrimitiveTypeKind.String (MaxLength=4000).  
   
  Vous écrivez un fichier XML qui a deux sections :  
   
@@ -68,7 +68,7 @@ Cette section explique comment un fournisseur de banques de données peut prendr
 ### <a name="provider-manifest-token"></a>Jeton du manifeste du fournisseur.  
  Lorsqu'une connexion de banque de données est ouverte, le fournisseur peut demander des informations pour retourner le bon manifeste. Cela risque de ne pas être possible dans les scénarios hors connexion où les informations de connexion ne sont pas disponibles ou lorsqu'il est impossible de se connecter à la banque. Identifiez le manifeste en utilisant l'attribut `ProviderManifestToken` de l'élément `Schema` dans le fichier .ssdl. Il n'existe aucun format obligatoire pour cet attribut ; le fournisseur choisit les informations minimales nécessaires pour identifier un manifeste sans ouvrir une connexion à la banque.  
   
- Exemple :  
+ Par exemple :  
   
 ```xml  
 <Schema Namespace="Northwind" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:edm="http://schemas.microsoft.com/ado/2006/04/edm/ssdl" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">  
@@ -83,7 +83,7 @@ Cette section explique comment un fournisseur de banques de données peut prendr
  Le manifeste du fournisseur est chargé par le chargeur de métadonnées de la banque (StoreItemCollection), à l'aide d'une connexion de la banque de données ou d'un jeton du manifeste du fournisseur.  
   
 #### <a name="using-a-data-store-connection"></a>Utilisation d'une connexion de banque de données  
- Lorsque la connexion au magasin de données est disponible, appelez <xref:System.Data.Common.DbProviderServices.GetProviderManifestToken%2A?displayProperty=nameWithType> pour retourner le jeton qui est passé à la méthode <xref:System.Data.Common.DbProviderServices.GetProviderManifest%2A>, qui retourne <xref:System.Data.Common.DbProviderManifest>. Cette méthode délègue à l’implémentation du fournisseur de `GetDbProviderManifestToken`.  
+ Lorsque la connexion de magasin <xref:System.Data.Common.DbProviderServices.GetProviderManifestToken%2A?displayProperty=nameWithType> de données est disponible, <xref:System.Data.Common.DbProviderServices.GetProviderManifest%2A> appelez pour <xref:System.Data.Common.DbProviderManifest>retourner le jeton qui est transmis à la méthode, qui revient . Cette méthode délègue à `GetDbProviderManifestToken`la mise en œuvre du fournisseur de .  
   
 ```csharp
 public string GetProviderManifestToken(DbConnection connection);  
@@ -91,7 +91,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 ```  
   
 #### <a name="using-a-provider-manifest-token"></a>Utilisation d'un jeton du manifeste du fournisseur.  
- Pour le scénario hors connexion, le jeton est sélectionné dans une représentation SSDL. Le langage SSDL vous permet de spécifier un ProviderManifestToken (voir [élément Schema (SSDL)](/ef/ef6/modeling/designer/advanced/edmx/ssdl-spec#schema-element-ssdl) pour plus d’informations). Par exemple, si une connexion ne peut pas être ouverte, le langage SSDL a un jeton du manifeste du fournisseur qui spécifie des informations sur le manifeste.  
+ Pour le scénario hors connexion, le jeton est sélectionné dans une représentation SSDL. Le SSDL vous permet de spécifier un ProviderManifestToken (voir [Schema Element (SSDL)](/ef/ef6/modeling/designer/advanced/edmx/ssdl-spec#schema-element-ssdl) pour plus d’informations). Par exemple, si une connexion ne peut pas être ouverte, le langage SSDL a un jeton du manifeste du fournisseur qui spécifie des informations sur le manifeste.  
   
 ```csharp
 public DbProviderManifest GetProviderManifest(string manifestToken);  
@@ -210,7 +210,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
       <xs:enumeration value="Decimal"/>  
       <xs:enumeration value="DateTime"/>  
       <xs:enumeration value="Time"/>  
-      <xs:enumeration value="DateTimeOffset"/>          
+      <xs:enumeration value="DateTimeOffset"/>
       <xs:enumeration value="Double"/>  
       <xs:enumeration value="Guid"/>  
       <xs:enumeration value="Single"/>  
@@ -248,37 +248,37 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
   
  Pour exprimer ces informations de type dans le manifeste du fournisseur, chaque déclaration TypeInformation doit définir plusieurs descriptions de facette pour chaque Type :  
   
-|Nom d'attribut|Type de données|Obligatoire|Valeur par défaut|Description|  
+|Nom de l'attribut|Type de données|Obligatoire|Valeur par défaut|Description|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Name|Chaîne|Oui|N/A|Nom de type de données spécifique au fournisseur|  
-|PrimitiveTypeKind|PrimitiveTypeKind|Oui|N/A|Nom du type EDM|  
+|Nom|String|Oui|n/a|Nom de type de données spécifique au fournisseur|  
+|PrimitiveTypeKind|PrimitiveTypeKind|Oui|n/a|Nom du type EDM|  
   
 ###### <a name="function-node"></a>Nœud Function  
  Chaque Function définit une fonction unique disponible via le fournisseur.  
   
-|Nom d'attribut|Type de données|Obligatoire|Valeur par défaut|Description|  
+|Nom de l'attribut|Type de données|Obligatoire|Valeur par défaut|Description|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Name|Chaîne|Oui|N/A|Identificateur/nom de la fonction|  
-|ReturnType|Chaîne|Non|Void|Type de retour EDM de la fonction|  
-|Aggregate|Booléen|Non|False|True si la fonction est une fonction d'agrégation|  
-|BuiltIn|Booléen|Non|True|True si la fonction est intégrée à la banque de données|  
-|StoreFunctionName|Chaîne|Non|Nom de l' \<|Nom de fonction dans la banque de données.  Permet un niveau de redirection de noms de fonction.|  
-|NiladicFunction|Booléen|Non|False|True si la fonction ne requiert pas de paramètres et est appelée sans paramètre|  
-|ParameterType<br /><br /> Sémantique|ParameterSemantics|Non|AllowImplicit<br /><br /> Conversion|Choix de la façon dont le pipeline de requête doit gérer la substitution de type de paramètre :<br /><br /> - ExactMatchOnly<br />- AllowImplicitPromotion<br />- AllowImplicitConversion|  
+|Nom|String|Oui|n/a|Identificateur/nom de la fonction|  
+|ReturnType|String|Non |Void|Type de retour EDM de la fonction|  
+|Agrégat|Boolean|Non |False|True si la fonction est une fonction d'agrégation|  
+|BuiltIn|Boolean|Non |True|True si la fonction est intégrée à la banque de données|  
+|StoreFunctionName|String|Non |\<Name>|Nom de fonction dans la banque de données.  Permet un niveau de redirection de noms de fonction.|  
+|NiladicFunction|Boolean|Non |False|True si la fonction ne requiert pas de paramètres et est appelée sans paramètre|  
+|ParameterType<br /><br /> Sémantique|ParameterSemantics|Non |AllowImplicit<br /><br /> Conversion|Choix de la façon dont le pipeline de requête doit gérer la substitution de type de paramètre :<br /><br /> - ExactMatchOnly<br />- AutoriserImplicitPromotion<br />- AutoriserImplicitConversion|  
   
- **Nœud Paramètres**  
+ **Nœud de paramètres**  
   
  Chaque fonction a une collection d’un ou plusieurs nœuds de paramètre.  
   
-|Nom d'attribut|Type de données|Obligatoire|Valeur par défaut|Description|  
+|Nom de l'attribut|Type de données|Obligatoire|Valeur par défaut|Description|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Name|Chaîne|Oui|N/A|Identificateur/nom du paramètre.|  
-|Tapez|Chaîne|Oui|N/A|Type EDM du paramètre.|  
-|Mode|Paramètre<br /><br /> Sens|Oui|N/A|Direction de paramètre :<br /><br /> -in<br />-out<br />-INOUT|  
+|Nom|String|Oui|n/a|Identificateur/nom du paramètre.|  
+|Type|String|Oui|n/a|Type EDM du paramètre.|  
+|Mode|Paramètre<br /><br /> Sens|Oui|n/a|Direction de paramètre :<br /><br /> - dans<br />- out<br />- inout|  
   
 ##### <a name="namespace-attribute"></a>Attribut Namespace  
  Chaque fournisseur de banque de données doit définir un espace de noms ou un groupe d'espaces de noms pour les informations définies dans le manifeste. Cet espace de noms peut être utilisé dans les requêtes Entity SQL pour résoudre des noms de fonctions et de types. Par exemple : SqlServer. Cet espace de noms doit être différent de l'espace de noms canonique, EDM, défini par les Services d'entités pour les fonctions standard à prendre en charge par les requêtes Entity SQL.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Écriture d’un fournisseur de données Entity Framework](writing-an-ef-data-provider.md)
+- [Écriture d'un fournisseur de données Entity Framework](writing-an-ef-data-provider.md)

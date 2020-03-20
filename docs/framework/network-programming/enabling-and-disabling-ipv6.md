@@ -3,10 +3,10 @@ title: Activation et désactivation d’IPv6
 ms.date: 03/30/2017
 ms.assetid: 6408d3ef-c9ba-49d9-b15e-fe74bd3ef031
 ms.openlocfilehash: 66c802dd5feb865faf7469cb7da04fbffcb4a2d6
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71048561"
 ---
 # <a name="enabling-and-disabling-ipv6"></a>Activation et désactivation d’IPv6
@@ -17,14 +17,14 @@ Pour utiliser le protocole IPv6, vérifiez que vous exécutez une version du sys
   
 |Système d’exploitation compatible avec IPv6 ?|Classes de mise en réseau compatibles avec IPv6 ?|Description|  
 |-------------------------------------|---------------------------------------|-----------------|  
-|Non|Non|Peut analyser les adresses IPv6.|  
-|Non|Oui|Peut analyser les adresses IPv6.|  
-|Oui|Non|Peut analyser les adresses IPv6 et résoudre les adresses IPv6 à l’aide des méthodes de résolution de noms qui ne sont pas marquées comme obsolètes.|  
+|Non |Non |Peut analyser les adresses IPv6.|  
+|Non |Oui|Peut analyser les adresses IPv6.|  
+|Oui|Non |Peut analyser les adresses IPv6 et résoudre les adresses IPv6 à l’aide des méthodes de résolution de noms qui ne sont pas marquées comme obsolètes.|  
 |Oui|Oui|Peut analyser et résoudre les adresses IPv6 à l’aide de toutes les méthodes, notamment celles marquées comme obsolètes.|  
   
  Notez que pour activer la prise en charge du protocole IPv6 pour toutes les classes dans l’espace de noms System.Net, vous devez modifier le fichier de configuration d’ordinateur ou le fichier de configuration de l’application. Le fichier de configuration pour une application est prioritaire par rapport au fichier de configuration d’ordinateur.  
   
- Pour obtenir un exemple illustrant comment modifier le fichier de configuration d’ordinateur, *machine.config*, pour activer la prise en charge du protocole Ipv6, consultez [Guide pratique pour modifier le fichier config de l’ordinateur en vue d’activer la prise en charge IPv6](how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md). Vérifiez également que la prise en charge du protocole IPv6 est activée pour le système d’exploitation.  
+ Pour obtenir un exemple illustrant comment modifier le fichier de configuration d’ordinateur, *machine.config*, pour activer la prise en charge du protocole Ipv6, consultez [How to: Modify the Computer Configuration File to Enable Ipv6 Support](how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md) (Guide pratique pour modifier le fichier de configuration d’ordinateur pour activer la prise en charge du protocole IPv6). Vérifiez également que la prise en charge du protocole IPv6 est activée pour le système d’exploitation.  
   
  Le .NET Framework a un commutateur de configuration défini dans un fichier de configuration comme suit :  
   
@@ -46,7 +46,7 @@ Pour utiliser le protocole IPv6, vérifiez que vous exécutez une version du sys
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Protocole IPv6](internet-protocol-version-6.md)
+- [Version 6 du protocole Internet](internet-protocol-version-6.md)
 - [Sockets](sockets.md)
-- [Schéma des paramètres réseau](../configure-apps/file-schema/network/index.md)
-- [\<ipv6>, élément (paramètres réseau)](../configure-apps/file-schema/network/ipv6-element-network-settings.md)
+- [Paramètres réseau Schema](../configure-apps/file-schema/network/index.md)
+- [\<ipv6> Element (Paramètres réseau)](../configure-apps/file-schema/network/ipv6-element-network-settings.md)

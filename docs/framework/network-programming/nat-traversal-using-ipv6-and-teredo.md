@@ -3,11 +3,11 @@ title: Parcours NAT avec IPv6 et Teredo
 ms.date: 03/30/2017
 ms.assetid: 568cd245-3300-49ef-a995-d81bf845d961
 ms.openlocfilehash: f617dc8912091576727b90da1e9efb9ebd5f9bda
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768174"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "61642169"
 ---
 # <a name="nat-traversal-using-ipv6-and-teredo"></a>Parcours NAT avec IPv6 et Teredo
 Des améliorations ont été apportées à la prise en charge du parcours NAT. Ces changements prévoient l’utilisation d’IPv6 et de Teredo. Toutefois, d’autres technologies de tunneling IP peuvent être utilisées. Ces améliorations affectent les classes de <xref:System.Net> et les espaces de noms qui leur sont associés.  
@@ -16,7 +16,7 @@ Des améliorations ont été apportées à la prise en charge du parcours NAT. 
   
  Les modifications de prise en charge du parcours NAT sont disponibles uniquement pour les applications qui utilisent le .NET Framework version 4. Ces fonctionnalités ne sont pas disponibles dans les versions antérieures du .NET Framework.  
   
-## <a name="overview"></a>Vue d'ensemble  
+## <a name="overview"></a>Vue d’ensemble  
  Le protocole IPv4 définit une adresse IPv4 comme ayant une longueur de 32 bits. Par conséquent, il prend en charge environ 4 milliards d’adresses IP uniques (2^32). Lorsque le nombre d’ordinateurs et d’appareils réseau connectés à Internet a augmenté dans les années 1990, les limites de l’espace d’adressage IPv4 sont devenues évidentes.  
   
  L’une des techniques utilisées pour étendre la durée de vie d’IPv4 consiste à déployer le NAT pour permettre à une adresse IP publique unique de représenter un grand nombre d’adresses IP privées (intranet privé). Les adresses IP privées situées derrière un appareil NAT partagent une même adresse IPv4 publique. L’appareil NAT peut être un appareil matériel dédié (un point d’accès sans fil et un routeur peu coûteux, par exemple) ou un ordinateur exécutant un service NAT. L’appareil ou le service de cette adresse IP publique va traduire les paquets IP entre un Internet public et un intranet privé.  

@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: ad2f7bf981d56e06ec726942f1fd37dff6b5b09c
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
-ms.translationtype: HT
+ms.openlocfilehash: c8329fbaed68fde3a63a5c589896ffcdf64b1766
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67802608"
 ---
 ### <a name="performance-improvement-in-automation-tree-for-grouping-itemscontrols"></a>Amélioration des performances dans l’arborescence Automation pour regrouper les ItemsControls
@@ -11,7 +11,6 @@ ms.locfileid: "67802608"
 |   |   |
 |---|---|
 |Détails|Performances améliorées de la reconstruction de l’arborescence Automation d’un <xref:System.Windows.Controls.ItemsControl>, tel qu’un ListBox ou un DataGrid, dans lequel le regroupement est activé.|
-|Portée|Majeur|
+|Étendue|Majeure|
 |Version|4.8|
 |Type|Runtime|
-

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - trace listeners, filters
 - trace listeners, initializing
 ms.assetid: 21dc2169-947d-453a-b0e2-3dac3ba0cc9f
-ms.openlocfilehash: 53cdce767d437c47aab94e883381954f8cf70653
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 7d2b9da72ae0b2a5c60eb90da0b56b45634e6e05
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215917"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181816"
 ---
 # <a name="how-to-use-tracesource-and-filters-with-trace-listeners"></a>Comment : utiliser des TraceSource et des filtres avec des écouteurs de la trace
 L’une des nouveautés du .NET Framework version 2.0 est un système de suivi amélioré. Le principe de base reste inchangé : les messages de suivi sont envoyés par l’intermédiaire de commutateurs aux écouteurs qui transmettent les données à un support de sortie associé. Une différence majeure de la version 2.0 est que les suivis peuvent être lancés via des instances de la classe <xref:System.Diagnostics.TraceSource>. La classe <xref:System.Diagnostics.TraceSource> est conçue pour fonctionner comme système de suivi amélioré et peut être utilisée à la place des méthodes statiques des anciennes classes de suivi <xref:System.Diagnostics.Trace> et <xref:System.Diagnostics.Debug>. Les classes <xref:System.Diagnostics.Trace> et <xref:System.Diagnostics.Debug> existent encore, mais l’utilisation de la classe <xref:System.Diagnostics.TraceSource> est désormais la méthode recommandée pour le suivi.  
@@ -39,7 +39,7 @@ L’une des nouveautés du .NET Framework version 2.0 est un système de suivi 
     {  
         class Program  
         {  
-            private static TraceSource mySource =   
+            private static TraceSource mySource =
                 new TraceSource("TraceSourceApp");  
             static void Main(string[] args)  
             {  
@@ -49,9 +49,9 @@ L’une des nouveautés du .NET Framework version 2.0 est un système de suivi 
             }  
             static void Activity1()  
             {  
-                mySource.TraceEvent(TraceEventType.Error, 1,   
+                mySource.TraceEvent(TraceEventType.Error, 1,
                     "Error message.");  
-                mySource.TraceEvent(TraceEventType.Warning, 2,   
+                mySource.TraceEvent(TraceEventType.Warning, 2,
                     "Warning message.");  
             }  
         }  
@@ -66,13 +66,13 @@ L’une des nouveautés du .NET Framework version 2.0 est un système de suivi 
     <configuration>  
       <system.diagnostics>  
         <sources>  
-          <source name="TraceSourceApp"   
-            switchName="sourceSwitch"   
+          <source name="TraceSourceApp"
+            switchName="sourceSwitch"
             switchType="System.Diagnostics.SourceSwitch">  
             <listeners>  
-              <add name="console"   
+              <add name="console"
                 type="System.Diagnostics.ConsoleTraceListener">  
-                <filter type="System.Diagnostics.EventTypeFilter"   
+                <filter type="System.Diagnostics.EventTypeFilter"
                   initializeData="Warning"/>  
               </add>  
               <add name="myListener"/>  
@@ -84,10 +84,10 @@ L’une des nouveautés du .NET Framework version 2.0 est un système de suivi 
           <add name="sourceSwitch" value="Warning"/>  
         </switches>  
         <sharedListeners>  
-          <add name="myListener"   
-            type="System.Diagnostics.TextWriterTraceListener"   
+          <add name="myListener"
+            type="System.Diagnostics.TextWriterTraceListener"
             initializeData="myListener.log">  
-            <filter type="System.Diagnostics.EventTypeFilter"   
+            <filter type="System.Diagnostics.EventTypeFilter"
               initializeData="Error"/>  
           </add>  
         </sharedListeners>  
@@ -108,27 +108,27 @@ L’une des nouveautés du .NET Framework version 2.0 est un système de suivi 
     {  
         class Program  
         {  
-            private static TraceSource mySource =   
+            private static TraceSource mySource =
                 new TraceSource("TraceSourceApp");  
             static void Main(string[] args)  
             {  
                 Activity1();  
   
                 // Change the event type for which tracing occurs.  
-                // The console trace listener must be specified   
+                // The console trace listener must be specified
                 // in the configuration file. First, save the original  
                 // settings from the configuration file.  
-                EventTypeFilter configFilter =   
+                EventTypeFilter configFilter =
                     (EventTypeFilter)mySource.Listeners["console"].Filter;  
   
-                // Then create a new event type filter that ensures   
+                // Then create a new event type filter that ensures
                 // critical messages will be written.  
                 mySource.Listeners["console"].Filter =  
                     new EventTypeFilter(SourceLevels.Critical);  
                 Activity2();  
   
-                // Allow the trace source to send messages to listeners   
-                // for all event types. This statement will override   
+                // Allow the trace source to send messages to listeners
+                // for all event types. This statement will override
                 // any settings in the configuration file.  
                 mySource.Switch.Level = SourceLevels.All;  
   
@@ -140,20 +140,20 @@ L’une des nouveautés du .NET Framework version 2.0 est un système de suivi 
             }  
             static void Activity1()  
             {  
-                mySource.TraceEvent(TraceEventType.Error, 1,   
+                mySource.TraceEvent(TraceEventType.Error, 1,
                     "Error message.");  
-                mySource.TraceEvent(TraceEventType.Warning, 2,   
+                mySource.TraceEvent(TraceEventType.Warning, 2,
                     "Warning message.");  
             }  
             static void Activity2()  
             {  
-                mySource.TraceEvent(TraceEventType.Critical, 3,   
+                mySource.TraceEvent(TraceEventType.Critical, 3,
                     "Critical message.");  
                 mySource.TraceInformation("Informational message.");  
             }  
             static void Activity3()  
             {  
-                mySource.TraceEvent(TraceEventType.Error, 4,   
+                mySource.TraceEvent(TraceEventType.Error, 4,
                     "Error message.");  
                 mySource.TraceInformation("Informational message.");  
             }  
@@ -167,5 +167,5 @@ L’une des nouveautés du .NET Framework version 2.0 est un système de suivi 
 - <xref:System.Diagnostics.TextWriterTraceListener>
 - <xref:System.Diagnostics.ConsoleTraceListener>
 - <xref:System.Diagnostics.EventTypeFilter>
-- [Guide pratique pour créer et initialiser des sources de suivi](how-to-create-and-initialize-trace-sources.md)
+- [Comment : créer et initialiser les sources de trace](how-to-create-and-initialize-trace-sources.md)
 - [Écouteurs de suivi](trace-listeners.md)

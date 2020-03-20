@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - behaviors [WCF], system-provided client
 ms.assetid: d16d3405-be70-4edb-8f62-b5f614ddeca5
-ms.openlocfilehash: 075f62526ace1ac49d12e1bdec39d8df4b0a3ff1
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: f9c22d25bedc36b3515538a8785b488aaa547990
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321407"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79143237"
 ---
 # <a name="specifying-client-run-time-behavior"></a>Spécification du comportement du client au moment de l'exécution
-Les clients Windows Communication Foundation (WCF), comme les services Windows Communication Foundation (WCF), peuvent être configurés pour modifier le comportement au moment de l’exécution en fonction de l’application cliente. Trois attributs sont disponibles pour spécifier le comportement du client au moment de l'exécution. Les objets de rappel de client duplex peuvent utiliser les attributs <xref:System.ServiceModel.CallbackBehaviorAttribute> et <xref:System.ServiceModel.Description.CallbackDebugBehavior> pour modifier leur comportement à l'exécution. L'autre attribut, <xref:System.ServiceModel.Description.ClientViaBehavior>, peut être utilisé pour séparer la destination logique de la destination réseau immédiate. De plus, les types de rappel de client duplex peuvent utiliser certains des comportements du côté service. Pour plus d’informations, consultez [spécification du comportement du service au moment](specifying-service-run-time-behavior.md)de l’exécution.  
+Les clients de la Windows Communication Foundation (WCF), comme les services de la Windows Communication Foundation (WCF), peuvent être configurés pour modifier le comportement en temps de course en fonction de l’application client. Trois attributs sont disponibles pour spécifier le comportement du client au moment de l'exécution. Les objets de rappel de client duplex peuvent utiliser les attributs <xref:System.ServiceModel.CallbackBehaviorAttribute> et <xref:System.ServiceModel.Description.CallbackDebugBehavior> pour modifier leur comportement à l'exécution. L'autre attribut, <xref:System.ServiceModel.Description.ClientViaBehavior>, peut être utilisé pour séparer la destination logique de la destination réseau immédiate. De plus, les types de rappel de client duplex peuvent utiliser certains des comportements du côté service. Pour plus d’informations, voir [Specifying Service Run-Time Behavior](specifying-service-run-time-behavior.md).  
   
 ## <a name="using-the-callbackbehaviorattribute"></a>Utilisation de CallbackBehaviorAttribute  
  Vous pouvez configurer ou étendre le comportement d'exécution d'une implémentation de contrat de rappel dans une application cliente en utilisant la classe <xref:System.ServiceModel.CallbackBehaviorAttribute>. Cet attribut exécute pour la classe de rappel une fonction semblable à la classe <xref:System.ServiceModel.ServiceBehaviorAttribute>, à l'exception du comportement d'instanciation et des paramètres de transaction.  
@@ -36,10 +36,10 @@ Les clients Windows Communication Foundation (WCF), comme les services Windows C
   
 - de ne procéder ainsi que dans des scénarios de débogage contrôlés.  
   
- L’exemple de code suivant montre un fichier de configuration client qui indique à WCF de retourner des informations sur les exceptions managées à partir d’un objet de rappel client dans les messages SOAP.  
+ L’exemple de code suivant montre un fichier de configuration client qui demande à WCF de retourner les informations d’exception gérées à partir d’un objet de rappel client dans les messages SOAP.  
   
  [!code-xml[SCA.CallbackContract#4](../../../samples/snippets/csharp/VS_Snippets_CFX/sca.callbackcontract/cs/client.exe.config#4)]  
- 
+
 ## <a name="using-the-clientviabehavior-behavior"></a>Utilisation du comportement ClientViaBehavior  
  Vous pouvez utiliser le comportement <xref:System.ServiceModel.Description.ClientViaBehavior> pour spécifier l'URI pour lequel le canal de transport doit être créé. Utilisez ce comportement lorsque la destination réseau immédiate n'est pas le processeur prévu du message. Cela autorise les conversations à sauts multiples lorsque l'application appelante ne connaît pas nécessairement la destination ultime ou lorsque l'en-tête `Via` de destination n'est pas une adresse.  
   

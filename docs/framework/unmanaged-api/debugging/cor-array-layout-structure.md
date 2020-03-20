@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: aa20ac3d-6f60-4aa2-91c5-f3a86f82eba8
 topic_type:
 - apiref
-ms.openlocfilehash: f37bf545553045b9737b7057feed78e1f06ace4d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ca2d00611a7530dfb0d1c2a27123947bdf69820d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73099470"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179349"
 ---
 # <a name="cor_array_layout-structure"></a>COR_ARRAY_LAYOUT, structure
 Fournit des informations sur la disposition d'un objet Array en mémoire.  
@@ -32,10 +32,10 @@ typedef struct COR_ARRAY_LAYOUT {
     CorElementType componentType;  
     ULONG32 firstElementOffset;  
     ULONG32 elementSize;  
-    ULONG32 countOffset;   
-    ULONG32 rankSize;   
-    ULONG32 numRanks;   
-    ULONG32 rankOffset;   
+    ULONG32 countOffset;
+    ULONG32 rankSize;
+    ULONG32 numRanks;
+    ULONG32 rankOffset;
 } COR_ARRAY_LAYOUT;  
 ```  
   
@@ -43,28 +43,28 @@ typedef struct COR_ARRAY_LAYOUT {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`componentID`|Identificateur du type d’objets contenu dans le tableau.|  
-|`componentType`|Valeur d’énumération CorElementType qui indique si le composant est une référence garbage collection, une classe value ou une primitive.|  
-|`firstElementOffset`|Offset du premier élément dans le tableau.|  
-|`elementSize`|Taille de chaque élément.|  
-|`countOffset`|Offset du nombre d’éléments dans le tableau.|  
-|`rankSize`|Taille du rang, en octets.|  
-|`numRanks`|Nombre de rangs dans le tableau.|  
-|`rankOffset`|Décalage à partir duquel les rangs commencent.|  
+|`componentID`|L’identifiant du type d’objets que contient le tableau.|  
+|`componentType`|Une valeur d’énumération De CorElementType qui indique si le composant est une référence de collecte d’ordures, une classe de valeur, ou un primitif.|  
+|`firstElementOffset`|Le décalage au premier élément du tableau.|  
+|`elementSize`|La taille de chaque élément.|  
+|`countOffset`|Le décalage au nombre d’éléments dans le tableau.|  
+|`rankSize`|La taille du rang, dans les octets.|  
+|`numRanks`|Le nombre de rangs dans le tableau.|  
+|`rankOffset`|Le décalage auquel les rangs commencent.|  
   
-## <a name="remarks"></a>Notes  
- Le champ `rankSize` spécifie la taille d’un rang dans un tableau multidimensionnel. Il est également exact pour les tableaux unidimensionnels.  
+## <a name="remarks"></a>Notes   
+ Le `rankSize` champ spécifie la taille d’un rang dans un tableau multidimensionnel. Il est également exact pour les tableaux unidimensionnels.  
   
- La valeur de `numRanks` est 1 pour un tableau unidimensionnel et `N` pour un tableau multidimensionnel de dimensions de `N`.  
+ La valeur `numRanks` de 1 pour un `N` tableau unidimensionnel et `N` pour un éventail multidimensionnel de dimensions.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

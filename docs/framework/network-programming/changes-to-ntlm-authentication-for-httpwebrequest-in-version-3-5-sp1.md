@@ -3,17 +3,17 @@ title: Changements apportés à l’authentification NTLM pour HttpWebRequest da
 ms.date: 03/30/2017
 ms.assetid: 8bf0b428-5a21-4299-8d6e-bf8251fd978a
 ms.openlocfilehash: 388e6dc648e1fd68e24a852cb08de107f09f9c9f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "64754879"
 ---
 # <a name="changes-to-ntlm-authentication-for-httpwebrequest-in-version-35-sp1"></a>Changements apportés à l’authentification NTLM pour HttpWebRequest dans la version 3.5 SP1
 
 Des changements de sécurité apportés au .NET Framework version 3.5 SP1 et ultérieures affectent la manière dont l’intégration de l’authentification Windows est gérée par <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Security.NegotiateStream> et les classes associées dans l’espace de noms System.Net. Ces changements peuvent affecter les applications qui utilisent ces classes pour effectuer des requêtes web et recevoir des réponses dans lesquelles l’authentification Windows intégrée en fonction de NTLM est utilisée. Ce changement peut avoir un impact sur les serveurs web et les applications clientes configurés pour utiliser l’authentification Windows intégrée.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 La conception de l’authentification Windows intégrée permet à certaines réponses d’informations d’identification d’être universelles, ce qui signifie qu’elles peuvent être réutilisées ou transférées. Si cette fonctionnalité de conception n’est pas nécessaire, les protocoles d’authentification doivent comporter des informations propres à la cible et au canal. Les services peuvent ensuite fournir une protection étendue pour garantir que les réponses d’informations d’identification contiennent des informations propres aux services, telles qu’un nom de principal du service (SPN). Avec ces informations dans les échanges d’informations d’identification, les services peuvent offrir une meilleure protection contre toute utilisation malveillante des réponses d’informations d’identification qui pourraient avoir été obtenues de manière incorrecte.
 
@@ -43,7 +43,7 @@ Pour spécifier les noms d’hôtes qui sont mappés à l’adresse de bouclage 
 
 3. Cliquez avec le bouton droit sur MSV1_0, pointez sur Nouveau, puis cliquez sur Valeur de chaînes multiples.
 
-4. Tapez `BackConnectionHostNames`, puis appuyez sur Entrée.
+4. Saisissez `BackConnectionHostNames`, puis appuyez sur ENTRÉE.
 
 5. Cliquez avec le bouton droit sur `BackConnectionHostNames`, puis cliquez sur Modifier.
 

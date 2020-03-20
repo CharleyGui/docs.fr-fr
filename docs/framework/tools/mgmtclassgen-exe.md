@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Mgmtclassgen.exe
 - early-bound managed classes
 ms.assetid: 02ce6699-49b5-4a0b-b0d5-1003c491232e
-ms.openlocfilehash: 5002d7a180e480b0e1d38f1c1180fe565dc5e1dc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5e39670fbb40acb999a243ac86683219f3c89e4f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73105018"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180380"
 ---
 # <a name="mgmtclassgenexe-management-strongly-typed-class-generator"></a>Mgmtclassgen.exe (Management Strongly Typed Class Generator)
 L'outil Management Strongly Typed Class Generator vous permet de générer rapidement une classe managée à liaison anticipée pour une classe WMI (Windows Management Instrumentation) spécifiée. La classe générée simplifie le code à écrire pour accéder à une instance de la classe WMI.  
@@ -24,8 +24,8 @@ L'outil Management Strongly Typed Class Generator vous permet de générer rapid
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-mgmtclassgen   
-WMIClass [options]   
+mgmtclassgen
+WMIClass [options]
 ```  
   
 |Argument|Description|  
@@ -35,7 +35,7 @@ WMIClass [options]
 |Option|Description|  
 |------------|-----------------|  
 |**/l**  *language*|Spécifie le langage à utiliser pour générer la classe managée à liaison anticipée. Vous pouvez spécifier **CS** (C# par défaut), **VB** (Visual Basic), **MC** (C++) ou **JS** (JScript) comme argument de langage.|  
-|**/m**  *machine*|Spécifie l'ordinateur auquel se connecter, sur lequel la classe WMI se trouve. Par défaut, l'ordinateur local est sélectionné.|  
+|**/m**  *machine*|Spécifie l'ordinateur auquel se connecter, sur lequel la classe WMI se trouve. La valeur par défaut est l'ordinateur local.|  
 |**/n**  *path*|Spécifie le chemin vers l’espace de noms WMI qui contient la classe WMI. Si vous ne spécifiez pas cette option, l’outil génère le code pour *WMIClass* dans l’espace de noms **Root\cimv2** par défaut.|  
 |**/o**  *classnamespace*|Spécifie l'espace de noms .NET dans lequel générer la classe de code managé. Si vous ne spécifiez pas cette option, l'outil générera l'espace de noms en fonction de l'espace de noms WMI et du préfixe du schéma. Le préfixe du schéma est la partie du nom de la classe qui précède le trait de soulignement. Par exemple, pour la classe **Win32_OperatingSystem** qui se trouve dans l’espace de noms **Root\cimv2**, l’outil génère la classe dans **ROOT.CIMV2.Win32**.|  
 |**/p**  *filepath*|Spécifie le chemin vers le fichier dans lequel le code généré sera enregistré. Si vous ne spécifiez pas cette option, l'outil créera le fichier dans le répertoire actif. Il nomme la classe et le fichier dans lesquels il génère la classe à l’aide de l’argument *WMIClass*. Les noms de la classe et du fichier sont les mêmes que ceux de *WMIClass.* Si *WMIClass* contient un trait de soulignement, l’outil utilise la partie du nom de la classe qui suit le trait de soulignement. Par exemple, si le nom *WMIClass* est au format **Win32_LogicalDisk**, la classe et le fichier générés sont nommés « logicaldisk ». Si un fichier existe déjà, l'outil écrase le fichier existant.|  
@@ -43,7 +43,7 @@ WMIClass [options]
 |**/u**  *user name*|Définit le nom d’utilisateur à utiliser quand vous vous connectez à un ordinateur spécifié par l’option **/m**.|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Mgmtclassgen.exe utilise la méthode <xref:System.Management.ManagementClass.GetStronglyTypedClassCode%2A?displayProperty=nameWithType>. Vous pouvez donc utiliser n'importe quel fournisseur de code personnalisé pour générer le code dans des langages managés autres que C#, Visual Basic et JScript.  
   
  Notez que les classes générées sont liées au schéma pour lequel elles ont été créées. Si le schéma sous-jacent change, vous devez régénérer la classe pour que les modifications effectuées dans le schéma soient prises en compte.  
@@ -60,13 +60,13 @@ WMIClass [options]
 |SIM_UINT32|**UInt32**|  
 |CIM_SINT64|**Int64**|  
 |CIM_UINT64|**UInt64**|  
-|CIM_REAL32|**Single**|  
+|CIM_REAL32|**Seul**|  
 |CIM_REAL64|**Double**|  
 |CIM_BOOLEAN|**Boolean**|  
-|CIM_String|**String**|  
+|CIM_String|**Chaîne**|  
 |CIM_DATETIME|**DateTime** ou **TimeSpan**|  
 |CIM_REFERENCE|**ManagementPath**|  
-|CIM_CHAR16|**Char**|  
+|CIM_CHAR16|**Char Char**|  
 |CIM_OBJECT|**ManagementBaseObject**|  
 |CIM_IUNKNOWN|**Objet**|  
 |CIM_ARRAY|Tableau des objets mentionnés ci-dessus|  
@@ -105,11 +105,11 @@ Imports System
 Imports System.Management  
 Imports ROOT.CIMV2.Win32  
   
-Public Class App     
-   Public Shared Sub Main()        
+Public Class App
+   Public Shared Sub Main()
       ' Enumerate instances of the Win32_process.  
       ' Print the Name property of the instance.  
-      Dim ps As Process     
+      Dim ps As Process
       For Each ps In  Process.GetInstances()  
          Console.WriteLine(ps.Name)  
       Next ps  

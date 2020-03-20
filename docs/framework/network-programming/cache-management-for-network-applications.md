@@ -7,10 +7,10 @@ helpviewer_keywords:
 - Internet, caching
 ms.assetid: fc258a40-f370-434f-ae09-4a8cb11ddaeb
 ms.openlocfilehash: 7e131963999db3e3d5e0e6f3fa110da36e6452a1
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71048876"
 ---
 # <a name="cache-management-for-network-applications"></a>Gestion du cache pour les applications réseau
@@ -35,6 +35,6 @@ Cette rubrique et ses sous-rubriques associées décrivent la mise en cache pour
  [Configuration de la mise en cache dans les applications réseau](configuring-caching-in-network-applications.md)  
  Décrit comment créer par programmation des stratégies de cache et des demandes qui utilisent la mise en cache.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
  <xref:System.Net.Cache>  
  Définit les types et les énumérations utilisés pour définir des stratégies de cache applicables aux ressources obtenues à l’aide des classes <xref:System.Net.WebRequest>, <xref:System.Net.HttpWebRequest> et <xref:System.Net.FtpWebRequest>.

@@ -1,6 +1,6 @@
 ---
-title: Fonction clone (référence des API non managées)
-description: La fonction clone retourne un nouvel objet qui est un clone complet de l’objet actuel.
+title: Fonction clone (référence API non gestion)
+description: La fonction Clone renvoie un nouvel objet qui est un clone complet de l’actuel.
 ms.date: 11/06/2017
 api_name:
 - Clone
@@ -14,15 +14,15 @@ helpviewer_keywords:
 - Clone function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: c8e7781a3efe7679ef2e05747862911db88bcc5f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cb4951a1f289417482bfa1287028cc66349a5938
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141618"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176849"
 ---
 # <a name="clone-function"></a>Clone, fonction
-Retourne un nouvel objet qui est un clone complet de l’objet actuel.   
+Retourne un nouvel objet qui est un clone complet de l’objet actuel.
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -30,47 +30,47 @@ Retourne un nouvel objet qui est un clone complet de l’objet actuel.
   
 ```cpp  
 HRESULT Clone (
-   [in] int                  vFunc, 
-   [in] IWbemClassObject*    ptr, 
+   [in] int                  vFunc,
+   [in] IWbemClassObject*    ptr,
    [out] IWbemClassObject**  ppCopy
-); 
+);
 ```  
 
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`  
-dans Ce paramètre n’est pas utilisé.
+[dans] Ce paramètre n’est pas utilisé.
 
 `ptr`  
-dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
+[dans] Un pointeur à une instance [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
 
 `ppCopy`  
-à Nouvel objet qui est un seul de `ptr`. Cet argument ne peut pas être `null` s’il reçoit la copie de l’objet en cours.
+[out] Un nouvel objet qui est `ptr`un solitaire complet de . Cet argument `null` ne peut pas être si elle reçoit la copie de l’objet actuel.
 
-## <a name="return-value"></a>Valeur de retour
+## <a name="return-value"></a>Valeur retournée
 
-Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli.h,* ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |valeur  |Description  |
+|Constant  |Valeur  |Description  |
 |---------|---------|---------|
-| `WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
-| `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `null` a été spécifié en tant que paramètre et n’est pas conforme dans cette utilisation. |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Mémoire disponible insuffisante pour cloner l’objet. |
-| `WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
+| `WBEM_E_FAILED` | 0x80041001 | Il y a eu un échec général. |
+| `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `null`a été spécifié comme un paramètre, et il n’est pas légal dans cette utilisation. |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Pas assez de mémoire est disponible pour cloner l’objet. |
+| `WBEM_S_NO_ERROR` | 0 | L’appel de fonction a été réussi.  |
   
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-Cette fonction encapsule un appel à la méthode [IWbemClassObject :: Clone](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-clone) .
+Cette fonction enveloppe un appel à [l’IWbemClassObject::Méthode Clone.](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-clone)
 
 L’objet cloné est un objet COM qui a un nombre de références de 1.
 
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** WMINet_Utils. idl  
+ **En-tête:** WMINet_Utils.idl  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)
+- [WMI et compteurs de performances (référence des API non managées)](index.md)

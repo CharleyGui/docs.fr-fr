@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Mise à jour dynamique'
+title: 'Procédure : mise à jour dynamique'
 ms.date: 03/30/2017
 ms.assetid: 9b8f6e0d-edab-4a7e-86e3-8c66bebc64bb
-ms.openlocfilehash: 95d99afd09daf4d9bf3937a71d7773332ff1bc14
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: aaeb4d9d42c289cf34a6aee9212fc2d74b8f8c01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834720"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184964"
 ---
-# <a name="how-to-dynamic-update"></a>Procédure : Mise à jour dynamique
+# <a name="how-to-dynamic-update"></a>Procédure : mise à jour dynamique
 Cette rubrique présente les étapes de base nécessaires pour créer et mettre à jour de manière dynamique la configuration de routage. Dans cet exemple, la configuration de routage initiale provient du fichier de configuration et route tous les messages vers le service de calculatrice regularCalc, mais elle est ensuite mise à jour par programme pour modifier le point de terminaison de destination du service roundingCalc.  
   
 > [!NOTE]
@@ -64,7 +64,7 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
     </filterTables>  
     ```  
   
-3. Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant montre l’Association de « filterTable1 » au point de terminaison de service.  
+3. Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant montre l’association de «filterTable1» avec le critère de service.  
   
     ```xml  
     <behaviors>  
@@ -102,7 +102,7 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
         using (ServiceHost serviceHost =  
             new ServiceHost(typeof(RoutingService)))  
         {  
-            // Open the ServiceHost to create listeners           
+            // Open the ServiceHost to create listeners
             // and start listening for messages.  
             Console.WriteLine("The Routing Service configured, opening....");  
             serviceHost.Open();  
@@ -162,9 +162,9 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
     > [!NOTE]
     > Dans la mesure où la méthode qui permet de fournir un nouvel objet RoutingConfiguration est contenue dans l’extension de service RoutingExtension, les nouveaux objets RoutingConfiguration peuvent être fournis n’importe où dans le modèle d’extensibilité WCF qui détient ou peut obtenir une référence à ServiceHost ou aux ServiceExtensions (comme dans une autre ServiceExtension).
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
 
-Voici une liste complète de l’application console utilisée dans cet exemple :
+Voici une liste complète de l’application console utilisée dans cet exemple :
   
 ```csharp
 //-----------------------------------------------------------------  
@@ -185,12 +185,12 @@ namespace Microsoft.Samples.AdvancedFilters
     {  
         // Host the service within this EXE console application.  
         public static void Main()  
-        {             
+        {
             // Create a ServiceHost for the CalculatorService type.  
             using (ServiceHost serviceHost =  
                 new ServiceHost(typeof(RoutingService)))  
             {  
-                // Open the ServiceHost to create listeners           
+                // Open the ServiceHost to create listeners
                 // and start listening for messages.  
                 Console.WriteLine("The Routing Service configured, opening....");  
                 serviceHost.Open();  
@@ -241,9 +241,9 @@ namespace Microsoft.Samples.AdvancedFilters
 }  
 ```  
   
-## <a name="example"></a>Exemple  
- 
-Voici une liste complète du fichier de configuration utilisé dans cet exemple :
+## <a name="example"></a> Exemple  
+
+Voici une liste complète du fichier de configuration utilisé dans cet exemple :
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  

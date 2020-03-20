@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: ba72d648-9553-4849-b829-069ad5ea014b
 author: ghogen
 ms.openlocfilehash: 61f969c22ac06bd6ed20ccfa9124db3bb35d0692
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71053543"
 ---
 # <a name="develop-windows-service-apps"></a>Développer des applications de service Windows
@@ -25,13 +25,13 @@ Utilisez Visual Studio ou le SDK .NET Framework pour créer facilement des servi
 > [!NOTE]
 > Dans Visual Studio, vous pouvez créer un service dans le code managé en Visual C# ou Visual Basic, qui peut interagir avec le code C++ existant, si nécessaire. Ou, vous pouvez créer un service Windows en C++ natif à l’aide de [l’Assistant Projet ATL](/cpp/atl/reference/atl-project-wizard).
 
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
 [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
 
 Fournit une vue d’ensemble des applications de service Windows, de la durée de vie d’un service, et des différences entre les applications de service et les autres types de projets courants.
 
-[Procédure pas à pas : Création d’une application de service Windows dans le Concepteur de composants](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
+[Procédure pas à pas : création d’une application de service Windows dans le Concepteur de composants](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
 
 Fournit un exemple de création d’un service en Visual Basic et Visual C#.
 
@@ -43,7 +43,7 @@ Explique les éléments de langage utilisés dans la programmation d’un servic
 
 Décrit le processus de création et de configuration de services Windows à l’aide du modèle de projet de service Windows.
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
 <xref:System.ServiceProcess.ServiceBase> - Décrit les principales fonctionnalités de la classe <xref:System.ServiceProcess.ServiceBase> qui est utilisée pour créer des services.
 

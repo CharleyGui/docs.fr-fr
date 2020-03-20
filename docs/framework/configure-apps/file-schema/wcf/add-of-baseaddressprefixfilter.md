@@ -2,21 +2,21 @@
 title: <add> de <baseAddressPrefixFilter>
 ms.date: 03/30/2017
 ms.assetid: b226bede-8459-4de9-b2ac-3d39604ce2bc
-ms.openlocfilehash: 809e6d5504b56f86eb09a5d57931f922e1c18348
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 8fdae02b558708a9b3f4535123752dce12dd5cf5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973823"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79153138"
 ---
-# <a name="add-of-baseaddressprefixfilter"></a>\<Ajouter > de \<baseAddressPrefixFilter >
-Représente un élément de configuration qui spécifie un filtre direct, qui fournit un mécanisme permettant de sélectionner les liaisons d’Internet Information Services (IIS) appropriées lors de l’hébergement d’une application Windows Communication Foundation (WCF) dans IIS.  
+# <a name="add-of-baseaddressprefixfilter"></a>\<ajouter> de \<baseAddressPrefixFilter>
+Représente un élément de configuration qui spécifie un filtre de passage, qui fournit un mécanisme pour choisir les liaisons appropriées des services d’information Internet (IIS) lors de l’hébergement d’une application de la Fondation de communication Windows (WCF) dans l’IIS.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceHostingEnvironment**](servicehostingenvironment.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**baseAddressPrefixFilters**](baseaddressprefixfilters.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**Ajouter des >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceHostingEnvironment>**](servicehostingenvironment.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<baseAddressPrefixFilters>**](baseaddressprefixfilters.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<ajouter>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,24 +38,24 @@ Représente un élément de configuration qui spécifie un filtre direct, qui fo
 |prefix|URI utilisé pour correspondre à une partie d'une adresse de base.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<baseAddressPrefixFilters >](baseaddressprefixfilters.md)|Collection d’éléments de configuration qui spécifient des filtres directs qui fournissent un mécanisme pour choisir les liaisons IIS appropriées lors de l’hébergement d’une application Windows Communication Foundation (WCF) dans IIS.|  
+|[\<baseAddressPrefixFilters>](baseaddressprefixfilters.md)|Une collection d’éléments de configuration qui spécifient les filtres de passage, qui fournissent un mécanisme pour choisir les liaisons IIS appropriées lors de l’hébergement d’une application De la Fondation de communication Windows (WCF) dans l’IIS.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Un filtre de préfixe permet aux fournisseurs d'hébergement partagé de spécifier les URI que le service doit utiliser. Il permet aux hôtes partagés d'héberger plusieurs applications avec différentes adresses de base pour la même méthode sur le même site.  
   
  Les sites Web IIS sont des conteneurs d'applications virtuelles qui contiennent des répertoires virtuels. L’application dans un site est accessible par le biais d’une ou de plusieurs liaisons IIS. Les liaisons IIS fournissent deux informations : un protocole de liaison et des informations de liaison. Le protocole de liaison (par exemple, HTTP) définit le modèle sur lequel la communication se produit, tandis que les informations de liaison (par exemple, adresse IP, port, en-tête de l'hôte) contiennent les données servant à accéder au site.  
   
- IIS prend en charge la spécification de plusieurs liaisons IIS pour chaque site, ce qui génère plusieurs adresses de base pour chaque méthode. Étant donné qu’un service WCF hébergé sur un site autorise la liaison à une seule adresse de base pour chaque schéma, vous pouvez utiliser la fonctionnalité de filtre de préfixe pour choisir l’adresse de base requise du service hébergé. Les adresses de base entrantes, fournies par IIS, sont filtrées selon le filtre de la liste de préfixes facultative.  
+ IIS prend en charge la spécification de plusieurs liaisons IIS pour chaque site, ce qui génère plusieurs adresses de base pour chaque méthode. Étant donné qu’un service WCF hébergé sous un site permet de lier une seule adresse de base pour chaque schéma, vous pouvez utiliser la fonction de filtre préfixe pour choisir l’adresse de base requise du service hébergé. Les adresses de base entrantes, fournies par IIS, sont filtrées selon le filtre de la liste de préfixes facultative.  
   
- Par exemple, votre site peut contenir les adresses de base suivantes :
+ Par exemple, votre site peut contenir les adresses de base suivantes :
   
-``` 
+```
 http://testl.fabrikam.com/Service.svc  
 http://test2.fabrikam.com/Service.svc  
 ```  

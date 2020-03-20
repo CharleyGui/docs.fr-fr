@@ -15,52 +15,52 @@ helpviewer_keywords:
 ms.assetid: cd93a48d-1fed-4706-bec6-a05dc3b64fbd
 topic_type:
 - apiref
-ms.openlocfilehash: 7a93bbe0d7a9d9e6ff7505bbc215efa79176ad1f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fd7f149e806727d849cdceb3ffbc5dc7392fcf1d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440439"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177411"
 ---
 # <a name="imetadataemit2setgenericparamprops-method"></a>IMetaDataEmit2::SetGenericParamProps, méthode
-Définit des valeurs de propriété pour la définition de paramètre générique référencée par le jeton spécifié.  
+Définit la valeur de la propriété pour la définition de paramètre générique référencée par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT SetGenericParamProps (  
-    [in] mdGenericParam   gp,   
-    [in] DWORD            dwParamFlags,   
-    [in] LPCWSTR          szName,   
-    [in] DWORD            reserved,   
+    [in] mdGenericParam   gp,
+    [in] DWORD            dwParamFlags,
+    [in] LPCWSTR          szName,
+    [in] DWORD            reserved,
     [in] mdToken          rtkConstraints[]  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `gp`  
- dans Jeton pour la définition de paramètre générique pour laquelle définir des valeurs.  
+ [dans] Le jeton pour la définition de paramètre générique pour laquelle définir les valeurs.  
   
  `dwParamFlags`  
- dans Valeur de l’énumération [CorGenericParamAttr,](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) qui décrit le type du paramètre générique.  
+ [dans] Une valeur de l’énumération [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) qui décrit le type pour le paramètre générique.  
   
  `szName`  
- [in] Facultatif. Nom du paramètre pour lequel des valeurs doivent être définies.  
+ [in] Facultatif. Le nom du paramètre pour lequel définir des valeurs.  
   
  `reserved`  
- dans Réservé pour une future extensibilité.  
+ [dans] Réservé à l’extensibility future.  
   
  `rtkConstraints`  
- [in] Facultatif. Tableau de contraintes de type se terminant par zéro. Les membres de tableau doivent être un jeton de métadonnées `mdTypeDef`, `mdTypeRef`ou `mdTypeSpec`.  
+ [in] Facultatif. Un éventail de contraintes de type à durée nulle. Les membres du `mdTypeDef` `mdTypeRef`tableau `mdTypeSpec` doivent être un jeton, ou métadonnées.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

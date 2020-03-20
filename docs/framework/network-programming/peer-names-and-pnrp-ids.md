@@ -3,10 +3,10 @@ title: Noms d’homologues et ID PNRP
 ms.date: 03/30/2017
 ms.assetid: afa538e8-948f-4a98-aa9f-305134004115
 ms.openlocfilehash: 15b74317507f69d2339a2e5e49b54ae72cda1a7b
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047503"
 ---
 # <a name="peer-names-and-pnrp-ids"></a>Noms d’homologues et ID PNRP
@@ -24,7 +24,7 @@ Un nom de pair représente un point de terminaison pour la communication. Il peu
   
  Les ID PNRP sont formés des composants suivants :  
   
-- Les 128 bits d’ordre haut (appelés ID pair à pair (P2P)) correspondent au hachage d’un nom de pair attribué au point de terminaison. Le nom de pair est au format suivant : *Authority.Classifier*. Pour les noms sécurisés, *l’autorité* correspond au hachage SHA1 de la clé publique du nom de pair en caractères hexadécimaux. Pour les noms non sécurisés, *l’autorité* correspond au caractère « 0 ». Le *classifieur* est une chaîne qui identifie l’application. Aucun classifieur de nom de pair ne peut dépasser les 149 caractères, terminateur `null` compris.  
+- Les 128 bits d’ordre haut (appelés ID pair à pair (P2P)) correspondent au hachage d’un nom de pair attribué au point de terminaison. Le nom de pair est au format suivant : *Autorité.Classifieur*. Pour les noms sécurisés, *l’autorité* correspond au hachage SHA1 de la clé publique du nom de pair en caractères hexadécimaux. Pour les noms non sécurisés, *l’autorité* correspond au caractère « 0 ». Le *classifieur* est une chaîne qui identifie l’application. Aucun classifieur de nom de pair ne peut dépasser les 149 caractères, terminateur `null` compris.  
   
 - Les 128 bits d’ordre bas sont utilisés pour l’emplacement du service, qui est un nombre généré qui identifie les différentes instances du même ID P2P dans un même cloud.  
   

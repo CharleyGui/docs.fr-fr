@@ -4,21 +4,21 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Tracing and logging
 ms.assetid: a4f39bfc-3c5e-4d51-a312-71c5c3ce0afd
-ms.openlocfilehash: 448eef6ea147b725600b774026155acc1fca6d36
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 9ffb7a99540b953fc93a22d2296caf86f294d25d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094863"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79143822"
 ---
 # <a name="tracing-and-message-logging"></a>Tracing and Message Logging
-Cet exemple illustre comment activer l'enregistrement des suivis et des messages. Les journaux de suivi et de message résultants sont affichés à l’aide de l' [outil Service Trace Viewer (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
+Cet exemple illustre comment activer l'enregistrement des suivis et des messages. Les traces et les journaux de messages qui en résultent sont visualisés à l’aide de [l’outil de visionneuse de traces de service (SvcTraceViewer.exe).](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) Cet échantillon est basé sur le [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
   
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
 ## <a name="tracing"></a>Traçage  
- Windows Communication Foundation (WCF) utilise le mécanisme de suivi défini dans l’espace de noms <xref:System.Diagnostics>. Dans ce modèle de suivi, les données de suivi sont générées par les sources de suivi implémentées par les applications. Chacune de ces sources est identifiée à l'aide d'un nom. Les consommateurs de suivis créent des écouteurs pour les sources de suivi à partir desquelles ils souhaitent récupérer des informations. Pour recevoir des données de suivi d'une source, vous devez créer un écouteur pour cette source. Dans WCF, vous pouvez effectuer cette opération en ajoutant le code suivant au fichier de configuration du client ou du service en définissant la source de suivi du modèle de service `switchValue`:  
+ Windows Communication Foundation (WCF) utilise le <xref:System.Diagnostics> mécanisme de traçage défini dans l’espace de nom. Dans ce modèle de suivi, les données de suivi sont générées par les sources de suivi implémentées par les applications. Chacune de ces sources est identifiée à l'aide d'un nom. Les consommateurs de suivis créent des écouteurs pour les sources de suivi à partir desquelles ils souhaitent récupérer des informations. Pour recevoir des données de suivi d'une source, vous devez créer un écouteur pour cette source. Dans WCF, cela peut se faire en ajoutant le code suivant au fichier de configuration `switchValue`du service ou du client en définissant la source de traces du modèle de service :  
   
 ```xml  
 <system.diagnostics>  
@@ -43,12 +43,12 @@ Cet exemple illustre comment activer l'enregistrement des suivis et des messages
 </system.diagnostics>  
 ```  
   
- Pour plus d’informations sur les sources de suivi, consultez la section source de suivi dans la rubrique [configuration du suivi](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md) .  
+ Pour plus d’informations sur les sources de traces, consultez la section Trace Source dans le sujet [Configuring Tracing.](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
   
 ## <a name="activity-tracing-and-propagation"></a>Suivi et propagation d'activité  
- Si `ActivityTracing` est activé et `propagateActivity` défini sur `true` dans les sources de suivi `system.ServiceModel` pour le client et le service, il fournit la corrélation des traces au sein d’unités logiques de traitement (activités), entre les activités au sein des points de terminaison (via les transferts d’activité) et entre les activités couvrant plusieurs points de terminaison (par le biais de la propagation d’ID d’activité).  
+ Le `ActivityTracing` fait `propagateActivity` d’avoir permis et placé `true` dans les sources de traces pour le client et le service fournit une corrélation des traces au sein des unités logiques de traitement (activités), entre les activités dans les `system.ServiceModel` points de terminaison (par le biais de transferts d’activités), et entre les activités couvrant plusieurs critères de terminaison (par la propagation d’ID d’activité).  
   
- Ces trois mécanismes (activités, transfert et propagation) peuvent vous permettre de localiser plus facilement la cause racine d’une erreur, notamment en utilisant l’outil Service Trace Viewer. Pour plus d’informations, consultez [utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).  
+ Ces trois mécanismes (activités, transfert et propagation) peuvent vous permettre de localiser plus facilement la cause racine d’une erreur, notamment en utilisant l’outil Service Trace Viewer. Pour plus d’informations, voir [Using Service Trace Viewer pour afficher des traces corrélées et dépannage](../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).  
   
  Il est possible d'étendre le suivi fourni par le ServiceModel en créant des suivis d'activité définis par l'utilisateur. Les suivis d'activité définis par l'utilisateur permettent :  
   
@@ -56,12 +56,12 @@ Cet exemple illustre comment activer l'enregistrement des suivis et des messages
   
 - De mettre en relation les activités à l'aide du transfert et de la propagation.  
   
-- Réduire le coût de performance du suivi WCF (par exemple, le coût d’espace disque d’un fichier journal).  
+- Réduire le coût de performance du traçage WCF (par exemple, le coût de l’espace disque d’un fichier journal).  
   
- Pour plus d’informations sur la trace d’activité définie par l’utilisateur, consultez l’exemple [extension du traçage](../../../../docs/framework/wcf/samples/extending-tracing.md) .  
+ Pour plus d’informations sur la trace d’activité définie par l’utilisateur, veuillez consulter l’échantillon [de traçage.](../../../../docs/framework/wcf/samples/extending-tracing.md)  
   
 ## <a name="message-logging"></a>Journalisation des messages  
- L’enregistrement des messages peut être activé à la fois sur le client et le service d’une application WCF. Pour activer l'enregistrement des messages, vous devez ajouter le code suivant au client ou au service :  
+ L’enregistrement des messages peut être activé à la fois sur le client et le service de n’importe quelle application WCF. Pour activer l'enregistrement des messages, vous devez ajouter le code suivant au client ou au service :  
   
 ```xml  
 <configuration>  
@@ -111,28 +111,28 @@ Cet exemple illustre comment activer l'enregistrement des suivis et des messages
 > [!NOTE]
 > Les fichiers de suivi ne peuvent pas être créés si un répertoire de journal n'est pas créé auparavant. Assurez-vous que le répertoire C:\logs\ existe ou définissez un autre répertoire d'enregistrement dans la configuration de l'écouteur. Consultez les instructions initiales de configuration figurant en fin de rubrique pour plus d'informations.  
   
- Pour plus d’informations sur la journalisation des messages, consultez la rubrique Configuration de l' [enregistrement des messages](../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md) .  
+ Pour plus d’informations sur l’enregistrement des messages, consultez le sujet [Configuring Message Logging.](../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les échantillons de la Fondation De communication Windows.](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)  
   
 2. Avant d'exécuter l'exemple Tracing and Message Logging, créez le répertoire C:\logs\ dans lequel le service stockera les fichiers .svclog. Le nom de ce répertoire est défini dans le fichier de configuration sous la forme d’un chemin d’accès indiquant où les suivis et les messages doivent être enregistrés. Ce chemin peut être modifié. Accordez à l'utilisateur des droits d'accès en écriture de service réseau au répertoire des journaux.  
   
-3. Pour générer C#, C++ou Visual Basic Édition .net de la solution, suivez les instructions de la création des exemples de [Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Pour construire l’édition C, C OU Visual Basic .NET de la solution, suivez les instructions dans [La construction des échantillons de la Fondation De communication Windows](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Pour exécuter l’échantillon dans une configuration mono-ou cross-computer, suivez les instructions dans [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
->   
+>
+> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\TracingAndLogging`  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Suivi](../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Exemples de surveillance AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Traçage](../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [Exemples d'analyse AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

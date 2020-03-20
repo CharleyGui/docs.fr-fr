@@ -2,12 +2,12 @@
 title: Filtres personnalisés
 ms.date: 03/30/2017
 ms.assetid: 97cf247d-be0a-4057-bba9-3be5c45029d5
-ms.openlocfilehash: ade387524c9ca6c8ef337ccf6a5b3453b7df976b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ae020173544372c3ce097c8ac57e53f3fde37514
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945377"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185209"
 ---
 # <a name="custom-filters"></a>Filtres personnalisés
 Les filtres personnalisés vous permettent de définir une logique de correspondance qui ne peut pas être réalisée à l'aide des filtres de messages fournis par le système. Par exemple, vous pouvez créer un filtre personnalisé qui hache un élément de message particulier, puis examine la valeur pour déterminer si le filtre doit retourner la valeur true ou false.  
@@ -39,7 +39,7 @@ public class MyMessageFilter: MessageFilter
 ```  
   
 > [!NOTE]
-> Dans une implémentation réelle, la ou les méthodes match contiennent une logique qui examine le message pour déterminer si ce filtre de messages doit retourner **true** ou **false**.  
+> Dans une implémentation réelle, la méthode Match contient une logique qui examinera le message pour déterminer si ce filtre de message doit revenir **vrai** ou **faux**.  
   
 ### <a name="performance"></a>Performances  
  Lors de l'implémentation d'un filtre personnalisé, il est important de prendre en considération le temps maximal nécessaire au filtre pour procéder à l'évaluation d'un message. Dans la mesure où un message peut être évalué selon plusieurs filtres avant qu'une correspondance ne soit trouvée, il est essentiel de s'assurer que la demande du client n'expirera pas avant l'évaluation de tous les filtres. Par conséquent, un filtre personnalisé doit contenir uniquement le code nécessaire pour évaluer le contenu ou les attributs d'un message afin de déterminer s'il correspond aux critères de filtre.  
@@ -55,7 +55,7 @@ public class MyMessageFilter: MessageFilter
  Avant d'utiliser un filtre personnalisé dans un environnement de production, vous devez exécuter des tests de performance pour déterminer la durée moyenne nécessaire au filtre pour évaluer un message. En combinaison avec le temps de traitement moyen des autres filtres utilisés dans la table de filtres, cela vous permettra de déterminer correctement la valeur maximale de délai d'attente qui doit être spécifiée par l'application cliente.  
   
 ## <a name="usage"></a>Usage  
- Pour pouvoir utiliser votre filtre personnalisé avec le service de routage, vous devez l’ajouter à la table de filtres en spécifiant une nouvelle entrée de filtre de type «personnalisé», le nom de type complet du filtre de messages et le nom de votre assembly.  Comme avec d'autres MessageFilters, vous pouvez spécifier le filterData de chaîne qui sera transmis au constructeur de votre filtre personnalisé.  
+ Afin d’utiliser votre filtre personnalisé avec le service de routage, vous devez l’ajouter à la table de filtre en spécifiant une nouvelle entrée de filtre du type "Custom", le nom de type entièrement qualifié du filtre de message, et le nom de votre assemblage.  Comme avec d'autres MessageFilters, vous pouvez spécifier le filterData de chaîne qui sera transmis au constructeur de votre filtre personnalisé.  
   
  Les exemples suivants montrent l'utilisation d'un filtre personnalisé avec le service de routage :  
   
@@ -63,8 +63,8 @@ public class MyMessageFilter: MessageFilter
 <!--ROUTING SECTION -->  
 <routing>  
   <filters>  
-    <filter name="CustomFilter1" filterType="Custom"   
-            customType="CustomAssembly.MyMessageFilter,   
+    <filter name="CustomFilter1" filterType="Custom"
+            customType="CustomAssembly.MyMessageFilter,
             CustomAssembly" filterData="custom data" />  
   </filters>  
   <filterTables>  

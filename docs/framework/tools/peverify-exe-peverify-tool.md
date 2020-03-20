@@ -11,10 +11,10 @@ helpviewer_keywords:
 - PE files, PEVerify
 ms.assetid: f4f46f9e-8d08-4e66-a94b-0c69c9b0bbfa
 ms.openlocfilehash: 9d5f8c80937c36e975d42d6efb0a83295cb28be9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73104982"
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (outil PEVerify)
@@ -22,7 +22,7 @@ L’outil PEVerify Tool permet aux développeurs générant du langage MSIL (Mic
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
- À l'invite de commandes, tapez le texte suivant :  
+ À l'invite de commandes, tapez :  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,12 +34,12 @@ peverify filename [options]
   
 |Argument|Description|  
 |--------------|-----------------|  
-|*filename*|Fichier exécutable portable dont le langage MSIL et les métadonnées sont à vérifier.|  
+|*Fichier*|Fichier exécutable portable dont le langage MSIL et les métadonnées sont à vérifier.|  
   
 |Option|Description|  
 |------------|-----------------|  
 |**/break=** *maxErrorCount*|Abandonne la vérification si le nombre d’erreurs atteint *maxErrorCount* erreurs.<br /><br /> Ce paramètre n'est pas pris en charge dans les versions 2.0 et ultérieures du .NET Framework.|  
-|**/clock**|Calcule et indique la durée des vérifications suivantes, en millisecondes :<br /><br /> **MD Val. cycle**<br /> Cycle de validation des métadonnées<br /><br /> **MD Val. pure**<br /> Validation simple des métadonnées<br /><br /> **IL Ver. cycle**<br /> Cycle de vérification MSIL<br /><br /> **IL Ver pure**<br /> Vérification MSIL simple<br /><br /> Les temps **MD Val. cycle** et **IL Ver. cycle** incluent le temps qu’il faut pour effectuer les procédures de démarrage et d’arrêt nécessaires. Les temps **MD Val. pure** et **IL Ver pure** reflètent le temps qu’il faut pour effectuer la validation ou la vérification uniquement.|  
+|**/horloge**|Calcule et indique la durée des vérifications suivantes, en millisecondes :<br /><br /> **MD Val. cycle**<br /> Cycle de validation des métadonnées<br /><br /> **MD Val. pure**<br /> Validation simple des métadonnées<br /><br /> **IL Ver. cycle**<br /> Cycle de vérification MSIL<br /><br /> **IL Ver pure**<br /> Vérification MSIL simple<br /><br /> Les temps **MD Val. cycle** et **IL Ver. cycle** incluent le temps qu’il faut pour effectuer les procédures de démarrage et d’arrêt nécessaires. Les temps **MD Val. pure** et **IL Ver pure** reflètent le temps qu’il faut pour effectuer la validation ou la vérification uniquement.|  
 |**/help**|Affiche la syntaxe et les options de commande de l'outil.|  
 |**/hresult**|Affiche les codes d'erreur au format hexadécimal.|  
 |**/ignore=** *hex.code* [, *hex.code*]|Ignore les codes d'erreur spécifiés.|  
@@ -48,13 +48,13 @@ peverify filename [options]
 |**/md**|Procède aux contrôles de validation des métadonnées sur l’assembly spécifié par *filename*. Parcourt l’intégralité de la structure des métadonnées figurant dans le fichier et fait état de tous les problèmes de validation rencontrés.|  
 |**/nologo**|Supprime l'affichage de version de produit et d'informations de copyright.|  
 |**/nosymbols**|Dans le .NET Framework version 2.0, il supprime les numéros de ligne pour la compatibilité descendante.|  
-|**/quiet**|Spécifie le mode silencieux ; supprime la sortie des états sur les problèmes de vérification. Peverify.exe continue à indiquer si le fichier est de type sécurisé, mais ne fait pas état d'informations sur les problèmes empêchant la vérification de la sécurité de type.|  
+|**/calme**|Spécifie le mode silencieux ; supprime la sortie des états sur les problèmes de vérification. Peverify.exe continue à indiquer si le fichier est de type sécurisé, mais ne fait pas état d'informations sur les problèmes empêchant la vérification de la sécurité de type.|  
 |`/transparent`|Vérifiez uniquement les méthodes transparentes.|  
 |**/unique**|Ignore les codes d'erreur récurrents.|  
 |**/verbose**|Dans le .NET Framework version 2.0, il affiche des informations supplémentaires dans les messages de vérification MSIL.|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Le Common Language Runtime repose sur l'exécution de type sécurisé du code de l'application pour permettre de mettre en œuvre des mécanismes de sécurité et d'isolation. Le code qui n’est pas de [type sécurisé vérifié](../../standard/security/key-security-concepts.md#type-safety-and-security) ne peut normalement pas être exécuté, même si vous pouvez définir une stratégie de sécurité permettant l’exécution d’un code de confiance, mais non vérifiable.  
   
  Si ni l’option **/md** ni l’option **/il** ne sont spécifiées, Peverify.exe effectue ces deux types de contrôles. Peverify.exe procède en premier lieu aux contrôles **/md**. En l’absence d’erreurs, il effectue ensuite les contrôles **/il**. Si vous spécifiez à la fois les contrôles **/md** et **/il**, les contrôles **/il** sont effectués, y compris en cas d’erreurs dans les métadonnées. En l’absence d’erreurs dans les métadonnées, **peverify** *filename* équivaut alors à **peverify** *filename* **/md** **/il**.  

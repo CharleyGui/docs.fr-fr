@@ -15,56 +15,56 @@ helpviewer_keywords:
 ms.assetid: e8138f6e-a0a4-48d4-8dae-9466b4dc6180
 topic_type:
 - apiref
-ms.openlocfilehash: 2210dcd9e8a8af92b7905ec680c53c1119e6a3cf
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 88acd50c83eb1ff4d59aa50d677db2383912659a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136704"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176277"
 ---
 # <a name="ihostmemorymanagergetmemoryload-method"></a>IHostMemoryManager::GetMemoryLoad, méthode
-Obtient la quantité de mémoire physique actuellement utilisée et, par conséquent, non disponible, comme indiqué par l’hôte.  
+Obtient la quantité de mémoire physique qui est actuellement en usage, et donc indisponible, tel que rapporté par l’hôte.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetMemoryLoad (  
-    [out] DWORD*  pMemoryLoad,   
+    [out] DWORD*  pMemoryLoad,
     [out] SIZE_T  *pAvailableBytes  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `pMemoryLoad`  
- à Pointeur vers le pourcentage approximatif de la mémoire physique totale en cours d’utilisation.  
+ [out] Un pointeur sur le pourcentage approximatif de la mémoire physique totale qui est actuellement utilisé.  
   
  `pAvailableBytes`  
- à Pointeur vers le nombre d’octets disponibles pour le common language runtime (CLR).  
+ [out] Un pointeur sur le nombre d’octets disponibles à l’heure courante (CLR).  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`GetMemoryLoad` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
-|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
-|HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|S_OK|`GetMemoryLoad`retourné avec succès.|  
+|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un état dans lequel il ne peut pas exécuter le code géré ou traiter l’appel avec succès.|  
+|HOST_E_TIMEOUT|L’appel s’est fait chronométrer.|  
+|HOST_E_NOT_OWNER|L’appelant n’est pas propriétaire de la serrure.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un fil bloqué ou une fibre l’attendait.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode revient E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels ultérieurs aux méthodes d’hébergement reviennent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes  
- `GetMemoryLoad` encapsule la fonction Win32 `GlobalMemoryStatus`. La valeur de `pMemoryLoad` est l’équivalent du champ `dwMemoryLoad` dans la structure de `MEMORYSTATUS` retournée à partir de `GlobalMemoryStatus`.  
+## <a name="remarks"></a>Notes   
+ `GetMemoryLoad`enveloppe la fonction `GlobalMemoryStatus` Win32. La valeur `pMemoryLoad` de est `dwMemoryLoad` l’équivalent `MEMORYSTATUS` du `GlobalMemoryStatus`champ dans la structure restitué de .  
   
- Le runtime utilise la valeur de retour comme heuristique pour le garbage collector. Par exemple, si l’hôte signale que la majorité de la mémoire est en cours d’utilisation, le garbage collector peut choisir de collecter à partir de plusieurs générations pour augmenter la quantité de mémoire qui peut potentiellement devenir disponible.  
+ Le temps d’exécution utilise la valeur de retour comme un heuristique pour le collecteur d’ordures. Par exemple, si l’hôte signale que la majorité de la mémoire est utilisée, le collecteur d’ordures peut choisir de recueillir de plusieurs générations pour augmenter la quantité de mémoire qui peut potentiellement devenir disponible.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE. h  
+ **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

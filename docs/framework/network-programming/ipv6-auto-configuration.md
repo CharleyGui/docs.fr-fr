@@ -3,10 +3,10 @@ title: IPv6, configuration automatique
 ms.date: 03/30/2017
 ms.assetid: 581c1d21-1013-43a3-bf3e-2d9ead62b79c
 ms.openlocfilehash: 95d9dce36c70b8f6c6b9f963c0842305a111d436
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047810"
 ---
 # <a name="ipv6-auto-configuration"></a>IPv6, configuration automatique
@@ -22,9 +22,9 @@ Un objectif important du protocole IPv6 est de prendre en charge le Plug-and-Pl
  Quelle que soit la manière dont l’adresse est déterminée, le nœud doit vérifier que son adresse potentielle est unique sur la liaison locale. Pour cela, un message de sollicitation de voisin est envoyé à l’adresse potentielle. Si le nœud reçoit une réponse, il sait que l’adresse est déjà utilisée et doit donc trouver une autre adresse.  
   
 ## <a name="ipv6-mobility"></a>Mobilité IPv6  
- La prolifération des appareils mobiles a créé un besoin, qui est celui de pouvoir changer d’emplacement de manière arbitraire sur un réseau Internet IPv6 tout en maintenant les connexions existantes. Pour fournir cette fonctionnalité, un nœud mobile reçoit une adresse racine à laquelle il est toujours joignable. Lorsque le nœud mobile se trouve à la racine, il se connecte à la liaison racine et utilise son adresse racine. Lorsque le nœud mobile ne se trouve pas à la racine, un agent interne (généralement, un routeur) relaie les messages entre le nœud mobile et les nœuds avec lesquels il communique.  
+ La prolifération des appareils mobiles a créé un nouveau besoin, qui est celui de pouvoir changer d’emplacement de manière arbitraire sur un réseau Internet IPv6 tout en maintenant les connexions existantes. Pour fournir cette fonctionnalité, un nœud mobile reçoit une adresse racine à laquelle il est toujours joignable. Lorsque le nœud mobile se trouve à la racine, il se connecte à la liaison racine et utilise son adresse racine. Lorsque le nœud mobile ne se trouve pas à la racine, un agent interne (généralement, un routeur) relaie les messages entre le nœud mobile et les nœuds avec lesquels il communique.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Protocole IPv6](internet-protocol-version-6.md)
+- [Version 6 du protocole Internet](internet-protocol-version-6.md)
 - [Sockets](sockets.md)

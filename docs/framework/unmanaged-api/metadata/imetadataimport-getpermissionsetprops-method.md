@@ -15,48 +15,48 @@ helpviewer_keywords:
 ms.assetid: 9855f0e4-12c0-4d3d-ab5d-d6bc52d25eae
 topic_type:
 - apiref
-ms.openlocfilehash: a020a0343eecceb4a85ebbddffe323c7f7bdca3d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5faf1a6ae89045b2ef17fab789ee6e5bf23eecf2
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437110"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175341"
 ---
 # <a name="imetadataimportgetpermissionsetprops-method"></a>IMetaDataImport::GetPermissionSetProps, méthode
-Obtient les métadonnées associées au <xref:System.Security.PermissionSet?displayProperty=nameWithType> représenté par le jeton d’autorisation spécifié.  
+Obtient les métadonnées <xref:System.Security.PermissionSet?displayProperty=nameWithType> associées à la représentation par le jeton autorisation spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetPermissionSetProps (  
    [in]  mdPermission      pm,  
-   [out] DWORD             *pdwAction,   
-   [out] void const        **ppvPermission,   
+   [out] DWORD             *pdwAction,
+   [out] void const        **ppvPermission,
    [out] ULONG             *pcbPermission  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `pm`  
- dans Jeton de métadonnées d’autorisation qui représente le jeu d’autorisations pour lequel obtenir les propriétés de métadonnées.  
+ [dans] Le jeton de métadonnées d’autorisation qui représente l’ensemble d’autorisation pour obtenir les propriétés de métadonnées pour.  
   
  `pdwAction`  
- à Pointeur vers le jeu d’autorisations.  
+ [out] Un pointeur à l’ensemble d’autorisation.  
   
  `ppvPermission`  
- à Pointeur vers la signature de métadonnées binaires du jeu d’autorisations.  
+ [out] Un pointeur à la signature des métadonnées binaires de l’ensemble d’autorisation.  
   
  `pcbPermission`  
- à Taille en octets de `ppvPermission`.  
+ [out] La taille dans `ppvPermission`les octets de .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

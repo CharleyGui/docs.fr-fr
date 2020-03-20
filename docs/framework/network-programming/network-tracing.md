@@ -19,10 +19,10 @@ helpviewer_keywords:
 - method invocations
 ms.assetid: e993b7c3-087f-45d8-9c02-9dded936d804
 ms.openlocfilehash: afb9c3a04258b543e373b6973e576f71f90d7003
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047595"
 ---
 # <a name="network-tracing-in-the-net-framework"></a>Traçage réseau dans le .NET Framework
@@ -37,7 +37,7 @@ Le traçage réseau dans .NET Framework fournit l'accès aux informations sur le
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Activation du suivi réseau](enabling-network-tracing.md)
+- [Activation du traçage réseau](enabling-network-tracing.md)
 - [Guide pratique pour configurer le traçage réseau](how-to-configure-network-tracing.md)
 - [Interprétation du suivi réseau](interpreting-network-tracing.md)
-- [Suivi et instrumentation d’applications](../debug-trace-profile/tracing-and-instrumenting-applications.md)
+- [Traçage et instrumentation d'applications](../debug-trace-profile/tracing-and-instrumenting-applications.md)

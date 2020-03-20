@@ -1,15 +1,15 @@
 ---
-title: 'Client : Fabrications de canaux et canaux'
+title: 'Client : fabrications de canaux et canaux'
 ms.date: 03/30/2017
 ms.assetid: ef245191-fdab-4468-a0da-7c6f25d2110f
-ms.openlocfilehash: 3dfcca0d5492a3fa376ec184f4bdd9bfa03b53c0
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 25e2c034d1fefc7728667231040a97c3aeecabbd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795858"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185690"
 ---
-# <a name="client-channel-factories-and-channels"></a>Client : Fabrications de canaux et canaux
+# <a name="client-channel-factories-and-channels"></a>Client : fabrications de canaux et canaux
 Cette rubrique décrit la création de fabrications de canaux et de canaux.  
   
 ## <a name="channel-factories-and-channels"></a>Fabrications de canaux et canaux  
@@ -20,17 +20,17 @@ Une fabrication de canal crée des canaux.
   
  Une fois fermées, les fabrications de canaux sont chargées de fermer tous les canaux qu'elles ont créés et qui ne sont pas déjà fermés. Notez que le modèle présenté ici est asymétrique car lorsqu'un écouteur de canal est fermé, il cesse seulement d'accepter de nouveaux canaux mais laisse les canaux existants ouverts afin qu'ils puissent continuer à recevoir des messages.  
   
- WCF fournit des applications auxiliaires de classe de base pour ce processus. (Pour obtenir un diagramme des classes d’assistance de canal abordées dans cette rubrique, consultez [vue d’ensemble du modèle de canal](channel-model-overview.md).)  
+ WCF fournit des aides de classe de base pour ce processus. (Pour un diagramme des classes d’aide de canal discuté dans ce sujet, voir [Aperçu de modèle de canal](channel-model-overview.md).)  
   
-- La <xref:System.ServiceModel.Channels.CommunicationObject> classe<xref:System.ServiceModel.ICommunicationObject> implémente et applique l’ordinateur d’état décrit à l’étape 2 du [développement de canaux](developing-channels.md).  
+- La <xref:System.ServiceModel.Channels.CommunicationObject> classe <xref:System.ServiceModel.ICommunicationObject> met en œuvre et applique la machine d’état décrite dans l’étape 2 des [canaux en développement](developing-channels.md).  
   
-- La <xref:System.ServiceModel.Channels.ChannelManagerBase> classe <xref:System.ServiceModel.Channels.ChannelFactoryBase?displayProperty=nameWithType> <xref:System.ServiceModel.Channels.ChannelListenerBase?displayProperty=nameWithType>implémente et fournit une classe de base unifiée pour et. <xref:System.ServiceModel.Channels.CommunicationObject> La classe <xref:System.ServiceModel.Channels.ChannelManagerBase> fonctionne avec <xref:System.ServiceModel.Channels.ChannelBase>, qui est une classe de base implémentant <xref:System.ServiceModel.Channels.IChannel>.
+- La <xref:System.ServiceModel.Channels.ChannelManagerBase> classe <xref:System.ServiceModel.Channels.CommunicationObject> met en œuvre <xref:System.ServiceModel.Channels.ChannelFactoryBase?displayProperty=nameWithType> <xref:System.ServiceModel.Channels.ChannelListenerBase?displayProperty=nameWithType>et fournit une classe de base unifiée pour et . La classe <xref:System.ServiceModel.Channels.ChannelManagerBase> fonctionne avec <xref:System.ServiceModel.Channels.ChannelBase>, qui est une classe de base implémentant <xref:System.ServiceModel.Channels.IChannel>.
   
-- La <xref:System.ServiceModel.Channels.ChannelFactoryBase> <xref:System.ServiceModel.Channels.IChannelFactory> classe `CreateChannel` implémente `OnCreateChannel` et consolide les surcharges dans une méthode abstraite. <xref:System.ServiceModel.Channels.ChannelManagerBase>
+- La <xref:System.ServiceModel.Channels.ChannelFactoryBase> classe <xref:System.ServiceModel.Channels.ChannelManagerBase> met <xref:System.ServiceModel.Channels.IChannelFactory> en œuvre et consolide les `CreateChannel` surcharges en une seule `OnCreateChannel` méthode abstraite.
   
-- La <xref:System.ServiceModel.Channels.ChannelListenerBase> classe<xref:System.ServiceModel.Channels.IChannelListener>implémente. Elle se charge de la gestion d'état de base. 
+- La <xref:System.ServiceModel.Channels.ChannelListenerBase> classe <xref:System.ServiceModel.Channels.IChannelListener>met en œuvre . Elle se charge de la gestion d'état de base.
   
- La discussion suivante est basée sur le [transport : Exemple](../samples/transport-udp.md) UDP.  
+ La discussion suivante est basée sur l’échantillon [transport: UDP.](../samples/transport-udp.md)  
   
 ### <a name="creating-a-channel-factory"></a>Création d'une fabrication de canal  
  `UdpChannelFactory` dérive de <xref:System.ServiceModel.Channels.ChannelFactoryBase>. L'exemple substitue <xref:System.ServiceModel.Channels.ChannelFactoryBase.GetProperty%2A> pour fournir un accès à la version du message de l'encodeur de message. L'exemple substitue également <xref:System.ServiceModel.Channels.ChannelFactoryBase.OnClose%2A> pour détruire notre instance de <xref:System.ServiceModel.Channels.BufferManager> lors des transitions d'ordinateurs d'état.  
@@ -40,7 +40,7 @@ Une fabrication de canal crée des canaux.
   
  La substitution de la méthode <xref:System.ServiceModel.Channels.CommunicationObject.OnOpen%2A> crée un socket qui est utilisé pour envoyer des messages à ce <xref:System.Net.EndPoint>.  
   
- ```csharp 
+ ```csharp
 this.socket = new Socket(  
 this.remoteEndPoint.AddressFamily,
    SocketType.Dgram,
@@ -55,7 +55,7 @@ this.socket.Close();
 base.OnClose(timeout);  
 ```  
   
- `Send()` Implémentez `BeginSend()`et ./ `EndSend()` Deux phases peuvent alors être distinguées. Tout d'abord, la sérialisation du message dans un tableau d'octets :  
+ Implémenter `Send()` et `BeginSend()` / `EndSend()`. Deux phases peuvent alors être distinguées. Tout d'abord, la sérialisation du message dans un tableau d'octets :  
   
 ```csharp  
 ArraySegment<byte> messageBuffer = EncodeMessage(message);  
@@ -65,10 +65,10 @@ ArraySegment<byte> messageBuffer = EncodeMessage(message);
   
 ```csharp  
 this.socket.SendTo(  
-  messageBuffer.Array,   
-  messageBuffer.Offset,   
-  messageBuffer.Count,   
-  SocketFlags.None,   
+  messageBuffer.Array,
+  messageBuffer.Offset,
+  messageBuffer.Count,
+  SocketFlags.None,
   this.remoteEndPoint  
 );  
 ```  

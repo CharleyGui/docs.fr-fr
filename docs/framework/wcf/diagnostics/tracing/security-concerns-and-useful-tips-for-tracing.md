@@ -2,12 +2,12 @@
 title: Problèmes de sécurité et conseils utiles pour le suivi
 ms.date: 03/30/2017
 ms.assetid: 88bc2880-ecb9-47cd-9816-39016a07076f
-ms.openlocfilehash: d1b2c13cacc792ecedacfc3ede7c38e072841263
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5ced4f3a3a5e83564703db88b28ee2b3c6eeb1a0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64600050"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185720"
 ---
 # <a name="security-concerns-and-useful-tips-for-tracing"></a>Problèmes de sécurité et conseils utiles pour le suivi
 Cette rubrique décrit comment empêcher l'exposition des informations sensibles et fournit également des conseils utiles en cas d'utilisation de WebHost.  
@@ -35,7 +35,7 @@ Cette rubrique décrit comment empêcher l'exposition des informations sensibles
    <system.ServiceModel>  
       <machineSettings enableLoggingKnownPii="Boolean"/>  
    </system.ServiceModel>  
-</configuration>   
+</configuration>
 ```  
   
  Un responsable du déploiement d'applications peut ensuite utiliser l'attribut `logKnownPii` dans le fichier App.config ou Web.config pour activer la journalisation PII comme suit :  
@@ -70,7 +70,7 @@ Cette rubrique décrit comment empêcher l'exposition des informations sensibles
                 initializeData="c:\logs\messages.svclog" />  
           </listeners>  
       </source>  
-      <source name="System.ServiceModel"   
+      <source name="System.ServiceModel"
          logKnownPii="true">  
          <listeners>  
             <add name="xml" />  
@@ -84,12 +84,12 @@ Cette rubrique décrit comment empêcher l'exposition des informations sensibles
   
  Les modifications ne sont effectives qu'au démarrage ou redémarrage de l'application. Un événement est enregistré au démarrage lorsque les deux attributs ont la valeur `true`. Un événement est également enregistré si `logKnownPii` a la valeur `true` mais que `enableLoggingKnownPii` a la valeur `false`.  
   
- Pour plus d’informations sur la journalisation PII, consultez [verrouillage de sécurité des informations d’identification personnelle](../../../../../docs/framework/wcf/samples/pii-security-lockdown.md) exemple.  
+ Pour plus d’informations sur l’exploitation forestière des IIP, consultez [l’échantillon de verrouillage de sécurité piI.](../../../../../docs/framework/wcf/samples/pii-security-lockdown.md)  
   
- L'administrateur d'ordinateur et le responsable du déploiement d'applications doivent observer la plus grande prudence lorsqu'ils utilisent ces deux commutateurs. Si la journalisation PII est activée, les clés de sécurité et les informations personnelles sont enregistrées. Si elle est désactivée, les données sensibles et spécifiques aux applications sont toujours enregistrées dans les corps et en-têtes des messages. Pour une discussion plus détaillée sur la confidentialité et protection des informations d’identification personnelle empêcher l’exposition, consultez [la confidentialité des utilisateurs](https://go.microsoft.com/fwlink/?LinkID=94647).  
+ L'administrateur d'ordinateur et le responsable du déploiement d'applications doivent observer la plus grande prudence lorsqu'ils utilisent ces deux commutateurs. Si la journalisation PII est activée, les clés de sécurité et les informations personnelles sont enregistrées. Si elle est désactivée, les données sensibles et spécifiques aux applications sont toujours enregistrées dans les corps et en-têtes des messages. Pour une discussion plus approfondie sur la vie privée et la protection de l’IPI contre l’exposition, voir [la confidentialité des utilisateurs](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480490(v=msdn.10)).  
   
  De plus, l'adresse IP de l'expéditeur du message est enregistrée une fois par connexion pour les transports orientés connexion, et une fois par message envoyé par d'autres transports. Cette opération est effectuée sans le consentement de l'expéditeur. Toutefois, cet enregistrement se produit uniquement aux niveaux de suivi Information ou Verbose, qui ne sont pas les niveaux de suivi par défaut ou recommandés dans les environnements de production, hormis pour le débogage en direct.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [Traçage](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
