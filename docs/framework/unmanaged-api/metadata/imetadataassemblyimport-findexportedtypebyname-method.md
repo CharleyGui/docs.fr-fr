@@ -15,47 +15,47 @@ helpviewer_keywords:
 ms.assetid: 46264b2c-574d-4dde-aafc-77187a104fdd
 topic_type:
 - apiref
-ms.openlocfilehash: 3e470250fa0e86610fcc9a6d6e2ca03569d62b54
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: edfe5de9c9d7ef9607a2eea5146194bbd4393a92
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449451"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175991"
 ---
 # <a name="imetadataassemblyimportfindexportedtypebyname-method"></a>IMetaDataAssemblyImport::FindExportedTypeByName, méthode
-Obtient un pointeur vers un type exporté, en fonction de son nom et du type englobant.  
+Obtient un pointeur vers un type exporté, donné son nom et le type d’enclos.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT FindExportedTypeByName (  
-    [in]  LPCWSTR           szName,   
-    [in]  mdToken           mdtExportedType,   
+    [in]  LPCWSTR           szName,
+    [in]  mdToken           mdtExportedType,
     [out] mdExportedType    *ptkExportedType  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `szName`  
- dans Nom du type exporté.  
+ [dans] Le nom du type exporté.  
   
  `mdtExportedType`  
- dans Jeton de métadonnées pour la classe englobante du type exporté. Cette valeur est `mdExportedTypeNil` si le type exporté demandé n’est pas un type imbriqué.  
+ [dans] Les métadonnées symboliques pour la classe d’enceinte du type exporté. Cette valeur `mdExportedTypeNil` est si le type exporté demandé n’est pas un type imbriqué.  
   
  `ptkExportedType`  
- à Pointeur vers le jeton de `mdExportedType` qui représente le type exporté.  
+ [out] Un pointeur `mdExportedType` vers le jeton qui représente le type exporté.  
   
-## <a name="remarks"></a>Notes  
- La méthode `FindExportedTypeByName` utilise les règles standard utilisées par le common language runtime pour résoudre les références.  
+## <a name="remarks"></a>Notes   
+ La `FindExportedTypeByName` méthode utilise les règles standard employées par l’heure d’exécution de langue commune pour résoudre des références.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -10,16 +10,16 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: fd0ffb982c22b0a8b6cb5dd677faafb9921bf5d9
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 39a14a3df5059cc47cd4879e4d4ba351cc7b655b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741021"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79156114"
 ---
 # <a name="coreresponsedata-class"></a>CoreResponseData, classe
 
-La classe `CoreResponseData` représente l’analyse des en-têtes HTTP et du corps de la réponse.
+La `CoreResponseData` classe représente l’analyse des en-têtes HTTP et du corps de réponse.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -28,14 +28,14 @@ internal class CoreResponseData
 ```
 
 > [!WARNING]
-> Cette API est interne et n’est pas destinée à être utilisée directement dans votre code. Au lieu de cela, vous devez utiliser un <xref:System.Diagnostics.DiagnosticSource> pour raccorder du code réseau. Consultez le [Guide de l’utilisateur DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
-> 
-> Microsoft ne prend pas en charge l’utilisation de cette classe dans une application de production en l’absence de toute circonstance.
+> Cette API est interne, et elle n’est pas destinée à être utilisée directement dans votre code. Au lieu de <xref:System.Diagnostics.DiagnosticSource> cela, vous devriez utiliser un code de réseautage pour crocheter. Voir [Le guide de l’utilisateur de DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
+>
+> Microsoft ne prend en charge l’utilisation de cette classe dans une application de production en aucune circonstance.
 
-## <a name="requirements"></a>Configuration requise pour
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Net>
+**Espace nom:**<xref:System.Net>
 
-**Assembly :** Système (dans System. dll)
+**Assemblée:** Système (dans System.dll)
 
-**Versions de .NET Framework :** Disponible depuis 2,0.
+**.NET Versions du Cadre:** Disponible depuis 2.0.

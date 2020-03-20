@@ -15,43 +15,43 @@ helpviewer_keywords:
 ms.assetid: 86c397c3-81d8-463e-a248-3cbe06c44d9d
 topic_type:
 - apiref
-ms.openlocfilehash: 81993f108ae9b59300b5d29402d7a423c3657757
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: a97c14d83f99c847bb8569a33e175ab6eb5bccd8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792446"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178618"
 ---
 # <a name="icordebugprocess5enumerategcreferences-method"></a>ICorDebugProcess5::EnumerateGCReferences, méthode
-Obtient un énumérateur pour tous les objets qui doivent être récupérés par le garbage collector dans un processus.  
+Obtient un enumérateur pour tous les objets qui doivent être collectés dans les ordures dans un processus.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EnumerateGCReferences(  
-    [in] Bool enumerateWeakReferences,   
+    [in] Bool enumerateWeakReferences,
     [out] ICorDebugGCReferenceEnum **ppEnum  
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `enumerateWeakReferences`  
- dans Valeur booléenne qui indique si les références faibles doivent également être énumérées. Si `enumerateWeakReferences` est `true`, l’énumérateur `ppEnum` contient à la fois des références fortes et des références faibles. Si `enumerateWeakReferences` est `false`, l’énumérateur comprend uniquement des références fortes.  
+ [dans] Une valeur Boolean qui indique si des références faibles doivent également être énumérées. Si `enumerateWeakReferences` `true`c’est le cas, l’énumérateur `ppEnum` comprend à la fois des références fortes et des références faibles. Si `enumerateWeakReferences` `false`c’est le cas, l’énumérateur ne comprend que des références fortes.  
   
  `ppEnum`  
- à Pointeur vers l’adresse d’un [icordebuggcreferenceenum,](icordebuggcreferenceenum-interface.md) qui est un énumérateur pour les objets qui doivent être récupérés par le garbage collector.  
+ [out] Un pointeur à l’adresse d’un [ICorDebugGCReferenceEnum](icordebuggcreferenceenum-interface.md) qui est un enumérateur pour les objets à collecter.  
   
-## <a name="remarks"></a>Notes  
- Cette méthode fournit un moyen de déterminer la chaîne de racine complète pour tout objet managé dans un processus et peut être utilisée pour déterminer la raison pour laquelle un objet est toujours actif.  
+## <a name="remarks"></a>Notes   
+ Cette méthode fournit un moyen de déterminer la chaîne d’enracinement complète pour tout objet géré dans un processus et peut être utilisé pour déterminer pourquoi un objet est encore en vie.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

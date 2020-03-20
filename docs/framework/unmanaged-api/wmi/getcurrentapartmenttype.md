@@ -1,6 +1,6 @@
 ---
-title: Fonction GetCurrentApartmentType (référence des API non managées)
-description: La fonction GetCurrentApartmentType récupère le type de cloisonnement dans lequel l’appelant s’exécute.
+title: Fonction GetCurrentApartmentType (Référence API non gestion)
+description: La fonction GetCurrentApartmentType récupère le type d’appartement dans lequel l’appelant exécute.
 ms.date: 11/06/2017
 api_name:
 - GetCurrentApartmentType
@@ -14,15 +14,15 @@ helpviewer_keywords:
 - GetCurrentApartmentType function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 6ecd2b49d6850a8fae25ddca54f855fdda2ccabb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3fc88f7997ee5a6c25359243e1ee97a041050eb7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120357"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176823"
 ---
-# <a name="getcurrentapartmenttype-function"></a>GetCurrentApartmentType fonction)
-Récupère le type de cloisonnement dans lequel l’appelant s’exécute.   
+# <a name="getcurrentapartmenttype-function"></a>GetCurrentApartmentType, fonction
+Récupère le type de cloisonnement dans lequel l’appelant s’exécute.
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -30,41 +30,41 @@ Récupère le type de cloisonnement dans lequel l’appelant s’exécute.
   
 ```cpp  
 HRESULT GetCurrentApartmentType (
-   [in] int                   vFunc, 
-   [in] IComThreadingInfo*    ptr, 
+   [in] int                   vFunc,
+   [in] IComThreadingInfo*    ptr,
    [out] APTTYPE*             aptType
-); 
+);
 ```  
 
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`  
-dans Ce paramètre n’est pas utilisé.
+[dans] Ce paramètre n’est pas utilisé.
 
 `ptr`  
-dans Pointeur vers une instance [IComThreadingInfo](/windows/desktop/api/objidlbase/nn-objidlbase-icomthreadinginfo) .
+[dans] Un pointeur à une instance [IComThreadingInfo.](/windows/desktop/api/objidlbase/nn-objidlbase-icomthreadinginfo)
 
 `aptType`  
-à Pointeur vers une valeur d’énumération [APTTYPE](/windows/win32/api/objidlbase/ne-objidlbase-apttype) qui indique le cloisonnement de l’appelant.
+[out] Un pointeur à une valeur de recensement [APTTYPE](/windows/win32/api/objidlbase/ne-objidlbase-apttype) qui indique l’appartement de l’appelant.
 
-## <a name="return-value"></a>Valeur de retour
+## <a name="return-value"></a>Valeur retournée
 
-|Constante  |valeur  |Description  |
+|Constant  |Valeur  |Description  |
 |---------|---------|---------|
 | `S_OK` | 0 | La fonction s’est terminée avec succès. |
-| `E_FAIL` | 0x80000008 | L’appelant ne s’exécute pas dans un cloisonnement. |
+| `E_FAIL` | 0x80000008 | L’appelant ne s’exécute pas dans un appartement. |
   
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-Cette fonction encapsule un appel à la méthode [IComThreadingInfo :: GetCurrentApartmentType](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) .
+Cette fonction enveloppe un appel à [l’IComThreadingInfo::GetCurrentApartmentType](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) méthode.
 
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** WMINet_Utils. idl  
+ **En-tête:** WMINet_Utils.idl  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)
+- [WMI et compteurs de performances (référence des API non managées)](index.md)

@@ -9,19 +9,19 @@ helpviewer_keywords:
 - trace sources
 - <sources> element
 ms.assetid: c727b2e2-423a-4463-a223-013f40ff16a3
-ms.openlocfilehash: a903d009f2056e65414c1792494fbbd20e224413
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 2a76816ee73f516b3c7544877a77531acaa8e09c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088817"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79153267"
 ---
-# <a name="sources-element"></a>Élément > sources \<
-Spécifie les sources de suivi qui initialisent les messages de suivi.  
+# <a name="sources-element"></a>\<sources> Element
+Spécifie les sources de traces qui déclenchent des messages de traçage.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;**sources**\<
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<sources>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +35,7 @@ Spécifie les sources de suivi qui initialisent les messages de suivi.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -50,22 +50,22 @@ Spécifie les sources de suivi qui initialisent les messages de suivi.
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
   
-## <a name="remarks"></a>Notes  
- Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
+## <a name="remarks"></a>Notes   
+ Cet élément peut être utilisé dans le fichier de configuration de la machine (Machine.config) et le fichier de configuration d’application.  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l’élément `<sources>` pour ajouter la source de suivi `mySource` et pour définir le niveau du commutateur source nommé `sourceSwitch`. Un écouteur de suivi de console est ajouté pour écrire des informations de traçage dans la console.  
+## <a name="example"></a> Exemple  
+ L’exemple suivant montre `<sources>` comment utiliser l’élément pour ajouter la source `mySource` `sourceSwitch`de trace et pour définir le niveau pour le commutateur source nommé . Un auditeur de trace de console est ajouté qui écrit des informations de trace à la console.  
   
 ```xml  
 <configuration>  
    <system.diagnostics>  
       <sources>  
-         <source name="mySource" switchName="sourceSwitch"   
+         <source name="mySource" switchName="sourceSwitch"
             switchType="System.Diagnostics.SourceSwitch"  >  
             <listeners>  
-               <add name="console"   
+               <add name="console"
                   type="System.Diagnostics.ConsoleTraceListener" >  
-                  <filter type="System.Diagnostics.EventTypeFilter"   
+                  <filter type="System.Diagnostics.EventTypeFilter"
                      initializeData="Error" />  
                </add>  
                <remove name="Default" />  
@@ -74,8 +74,8 @@ Spécifie les sources de suivi qui initialisent les messages de suivi.
       </sources>  
       <switches>  
          <add name="sourceSwitch" value="Warning" />  
-      </switches>    
-   </system.diagnostics>   
+      </switches>
+   </system.diagnostics>
 </configuration>  
 ```  
   
@@ -87,5 +87,5 @@ Spécifie les sources de suivi qui initialisent les messages de suivi.
 - <xref:System.Diagnostics.ConsoleTraceListener>
 - <xref:System.Diagnostics.EventLogTraceListener>
 - <xref:System.Diagnostics.XmlWriterTraceListener>
-- [Schéma des paramètres de trace et de débogage](index.md)
+- [Trace et Debug Paramètres Schema](index.md)
 - [\<source>](source-element.md)

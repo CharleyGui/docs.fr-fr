@@ -1,5 +1,5 @@
 ---
-title: Éléments obsolètes dans .NET Framework
+title: Ce qui est obsolète dans le cadre .NET
 ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
@@ -7,21 +7,21 @@ helpviewer_keywords:
 - what's obsolete [.NET Framework]
 - deprecated [.NET Framework]
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
-ms.openlocfilehash: eda60ce9e1396805541229c9756b13cdd167dc72
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 7cfebfde859a95495e9d2d5e42bd034ad5d55e61
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901331"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79143133"
 ---
 # <a name="whats-obsolete-in-the-net-framework-class-library"></a>Éléments obsolètes dans la bibliothèque de classes .NET Framework
 
-.NET évolue dans le temps. Chaque nouvelle version comporte de nouveaux types et membres de type qui fournissent de nouvelles fonctionnalités. Les types existants et leurs membres évoluent aussi. Par exemple, certains types deviennent moins importants, car la technologie qu’ils prennent en charge est remplacée par une nouvelle technologie, et certaines méthodes sont remplacées par des méthodes plus récentes qui sont supérieures d’une certaine façon.
+.NET change au fil du temps. Chaque nouvelle version comporte de nouveaux types et membres de type qui fournissent de nouvelles fonctionnalités. Les types existants et leurs membres évoluent aussi. Par exemple, certains types deviennent moins importants à mesure que la technologie qu’ils soutiennent est remplacée par une nouvelle technologie, et certaines méthodes sont remplacées par de nouvelles méthodes supérieures d’une certaine façon.
 
-.NET Framework et le common language runtime s’efforcent de prendre en charge la compatibilité descendante (ce qui permet aux applications développées avec une version de .NET Framework de s’exécuter sur la prochaine version de .NET Framework). Il est donc difficile de simplement supprimer un type ou un membre de type. Au lieu de cela, .NET indique qu’un type ou un membre de type ne doit plus être utilisé en le marquant comme obsolète ou déconseillé. Le fait de déprécier un type ou un membre implique de le marquer afin que les développeurs soient informés de sa future suppression et qu'ils aient le temps de réagir. Toutefois, le code existant qui utilise le type ou le membre continue à s’exécuter dans la nouvelle version de .NET.
+.NET Framework et le temps courant de course de langue s’efforcent de soutenir la compatibilité rétrograde (permettant aux applications qui ont été développées avec une version de .NET Framework de s’exécuter sur la prochaine version de .NET Framework). Il est donc difficile de simplement supprimer un type ou un membre de type. Au lieu de cela, .NET indique qu’un type ou un membre de type ne doit plus être utilisé en le marquant comme obsolète ou déprécié. Le fait de déprécier un type ou un membre implique de le marquer afin que les développeurs soient informés de sa future suppression et qu'ils aient le temps de réagir. Cependant, le code existant qui utilise le type ou le membre continue à s’exécuter dans la nouvelle version de .NET.
 
 > [!NOTE]
-> Les termes *obsolètes* et *déconseillés* ont la même signification lorsqu’ils sont appliqués aux types et aux membres .net.
+> Les termes *obsolètes* et *dépréciés* ont le même sens lorsqu’ils sont appliqués aux types .NET et aux membres.
 
 ## <a name="the-obsoleteattribute-attribute"></a>Attribut ObsoleteAttribute
 
@@ -37,25 +37,25 @@ Quand vous mettez à niveau et recompilez du code existant, l'utilisation d'un t
 
 - Modifiez votre code en supprimant l'utilisation du type ou membre, si possible.
 
-     \- ou -
+     -ou-
 
 - Examinez la documentation de ce domaine technologique pour savoir que faire face à des éléments obsolètes.
 
 Vous pouvez choisir de ne pas recompiler le code existant avec une version ultérieure du .NET Framework. À la place, vous pouvez spécifier la version du .NET Framework sur laquelle votre code compilé existant est exécuté. Supposez, par exemple, que vous avez une application nommée app1.exe qui a été compilée avec .NET Framework 3.5, mais que vous souhaitez que l’application s’exécute avec .NET Framework 4.5. Ce processus implique les étapes suivantes :
 
-1. Créez un fichier de configuration pour votre fichier exécutable principal et nommez-le *Nom_app*.exe.config, où *Nom_app* est le nom du fichier exécutable de l’application. Pour l’application nommée *App1. exe* dans notre exemple, vous devez créer un fichier de configuration nommé *App1. exe. config*.
+1. Créez un fichier de configuration pour votre fichier exécutable principal et nommez-le *Nom_app*.exe.config, où *Nom_app* est le nom du fichier exécutable de l’application. Pour l’application nommée *app1.exe* dans notre exemple, vous créeriez un fichier de configuration nommé *app1.exe.config*.
 
 2. Ajoutez le code suivant au fichier de configuration.
 
     ```xml
     <configuration>
-       <startup> 
+       <startup>
           <supportedRuntime version="v4.0" />
        </startup>
     </configuration>
     ```
 
-Pour cibler une version spécifique de .NET Framework, assignez l’une des valeurs de chaîne suivantes à l’attribut `version` :
+Pour cibler une version spécifique du cadre .NET, attribuez l’une des valeurs de chaîne suivantes à l’attribut `version` :
 
 |Version du .NET Framework|Chaîne `version`|
 |-|-|
@@ -64,12 +64,12 @@ Pour cibler une version spécifique de .NET Framework, assignez l’une des vale
 |4.6 (y compris 4.6.1 et 4.6.2)|v4.0|
 |4.5 (y compris 4.5.1 et 4.5.2)|v4.0|
 |4|v4.0|
-|3.5|v2.0.50727|
-|2.0|v2.0.50727|
+|3,5|v2.0.50727|
+|2|v2.0.50727|
 |1.1|v1.1.4322|
 |1.0|v1.0.3705|
 
-## <a name="obsolete-apis-for-net-framework-45-and-later-versions"></a>API obsolètes pour .NET Framework 4,5 et versions ultérieures
+## <a name="obsolete-apis-for-net-framework-45-and-later-versions"></a>API obsolètes pour .NET Framework 4.5 et versions ultérieures
 
 - [Types obsolètes](obsolete-types.md)
 - [Membres obsolètes](obsolete-members.md)
@@ -77,10 +77,10 @@ Pour cibler une version spécifique de .NET Framework, assignez l’une des vale
 ## <a name="obsolete-apis-for-previous-versions"></a>API obsolètes pour les versions précédentes
 
 - [Types obsolètes dans .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee461503(v=vs.100))
-- [Membres obsolètes dans .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee471421(v=vs.100))
+- [Membres obsolètes dans le cadre .NET 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee471421(v=vs.100))
 - [Liste des éléments obsolètes pour le .NET Framework 3.5](https://docs.microsoft.com/previous-versions/cc835481(v=msdn.10))
 - [Liste des éléments obsolètes pour le .NET Framework 2.0](https://docs.microsoft.com/previous-versions/aa497286(v=msdn.10))
 
 ## <a name="see-also"></a>Voir aussi
 
-- [\<supportedRuntime>, élément](../configure-apps/file-schema/startup/supportedruntime-element.md)
+- [\<supportedRuntime> Element](../configure-apps/file-schema/startup/supportedruntime-element.md)

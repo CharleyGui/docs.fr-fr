@@ -15,59 +15,59 @@ helpviewer_keywords:
 ms.assetid: 65063ad5-e0d9-4c01-8f8b-9a5950109fa6
 topic_type:
 - apiref
-ms.openlocfilehash: 5ce1af82631531f8f7105fbf92ba78db3cca437b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5185fb6663910c85ce5dae1225b9b10c5dd8bb28
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442329"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175939"
 ---
 # <a name="imetadatadispenseropenscope-method"></a>IMetaDataDispenser::OpenScope, méthode
-Ouvre un fichier sur disque existant et mappe ses métadonnées en mémoire.  
+Ouvre un fichier existant sur disque et cartographie ses métadonnées en mémoire.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT OpenScope (  
-    [in]  LPCWSTR     szScope,   
-    [in]  DWORD       dwOpenFlags,   
-    [in]  REFIID      riid,   
+    [in]  LPCWSTR     szScope,
+    [in]  DWORD       dwOpenFlags,
+    [in]  REFIID      riid,
     [out] IUnknown    **ppIUnk  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `szScope`  
- dans Nom du fichier à ouvrir. Le fichier doit contenir des métadonnées common language runtime (CLR).  
+ [dans] Le nom du fichier à ouvrir. Le fichier doit contenir des métadonnées courantes (CLR).  
   
  `dwOpenFlags`  
- dans Valeur de l’énumération [CorOpenFlags](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) pour spécifier le mode (lecture, écriture, etc.) à ouvrir.  
+ [dans] Une valeur de l’énumération [CorOpenFlags](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) pour spécifier le mode (lire, écrire, etc.) pour l’ouverture.  
   
  `riid`  
- dans IID de l’interface de métadonnées souhaitée à retourner ; l’appelant utilisera l’interface pour importer (Lire) ou émettre (écrire) des métadonnées.  
+ [dans] L’IID de l’interface de métadonnée souhaitée à retourner; l’appelant utilisera l’interface pour importer (lire) ou émettre des métadonnées (écrire).  
   
- La valeur de `riid` doit spécifier l’une des interfaces « import » ou « Emit ». Les valeurs valides sont IID_IMetaDataEmit, IID_IMetaDataImport, IID_IMetaDataAssemblyEmit, IID_IMetaDataAssemblyImport, IID_IMetaDataEmit2 ou IID_IMetaDataImport2.  
+ La valeur `riid` de doit spécifier l’une des interfaces "importation" ou "émettre". Les valeurs valides sont IID_IMetaDataEmit, IID_IMetaDataImport, IID_IMetaDataAssemblyEmit, IID_IMetaDataAssemblyImport, IID_IMetaDataEmit2 ou IID_IMetaDataImport2.  
   
  `ppIUnk`  
- à Pointeur vers l’interface retournée.  
+ [out] Le pointeur de l’interface retournée.  
   
-## <a name="remarks"></a>Notes  
- La copie en mémoire des métadonnées peut être interrogée à l’aide de méthodes de l’une des interfaces d’importation ou ajoutée à l’aide de méthodes à partir de l’une des interfaces d’émission.  
+## <a name="remarks"></a>Notes   
+ La copie en mémoire des métadonnées peut être demandée à l’aide de méthodes à partir d’une des interfaces « d’importation », ou ajoutée à l’utilisation de méthodes de l’une des interfaces « émettrices ».  
   
- Si le fichier cible ne contient pas de métadonnées CLR, la méthode `OpenScope` échoue.  
+ Si le fichier cible ne contient pas `OpenScope` de métadonnées CLR, la méthode échouera.  
   
- Dans .NET Framework les versions 1,0 et 1,1, si une étendue est ouverte avec `dwOpenFlags` définie sur ofRead, elle est éligible au partage. Autrement dit, si des appels suivants à `OpenScope` passer le nom d’un fichier qui a été ouvert précédemment, l’étendue existante est réutilisée et un nouvel ensemble de structures de données n’est pas créé. Toutefois, des problèmes peuvent survenir en raison de ce partage.  
+ Dans la version cadre .NET 1.0 et la version 1.1, si une portée est ouverte avec `dwOpenFlags` l’ensemble deRead, il est admissible au partage. Autrement dit, si `OpenScope` les appels ultérieurs doivent être transmis au nom d’un fichier qui a été ouvert auparavant, la portée existante est réutilisée et un nouvel ensemble de structures de données n’est pas créé. Cependant, des problèmes peuvent survenir en raison de ce partage.  
   
- Dans la version .NET Framework 2,0, les étendues ouvertes avec `dwOpenFlags` définies sur ofRead ne sont plus partagées. Utilisez la valeur ofReadOnly pour autoriser le partage de l’étendue. Lorsqu’une étendue est partagée, les requêtes qui utilisent des interfaces de métadonnées en lecture/écriture échouent.  
+ Dans la version cadre .NET 2.0, les portées ouvertes avec `dwOpenFlags` set to ofRead ne sont plus partagées. Utilisez la valeur deReadOnly pour permettre de partager la portée. Lorsqu’une portée est partagée, les requêtes qui utilisent des interfaces métadonnées « lire/écrire » échouent.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

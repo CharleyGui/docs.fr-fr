@@ -5,24 +5,24 @@ helpviewer_keywords:
 - generatePublisherEvidence element
 - <generatePublisherEvidence> element
 ms.assetid: 7d208f50-e8d5-4a42-bc1a-1cf3590706a8
-ms.openlocfilehash: b04ef53d6e9c3d954b0925ea8634b3d220b36af7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 24a5ea02992a5bce681b5bab4fb7f75505bd225d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73116569"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154112"
 ---
-# <a name="generatepublisherevidence-element"></a>\<élément generatePublisherEvidence >
-Spécifie si le runtime crée <xref:System.Security.Policy.Publisher> preuve pour la sécurité d’accès du code (CAS).  
+# <a name="generatepublisherevidence-element"></a>\<generatePublisherEvidence> Element
+Précise si le temps <xref:System.Security.Policy.Publisher> d’exécution crée des preuves pour la sécurité d’accès au code (CAS).  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<generatePublisherEvidence** >  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<>de temps d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<générerPublisherEvidence>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<generatePublisherEvidence    
+<generatePublisherEvidence
    enabled="true|false"/>  
 ```  
   
@@ -33,17 +33,17 @@ Spécifie si le runtime crée <xref:System.Security.Policy.Publisher> preuve pou
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Spécifie si le runtime crée <xref:System.Security.Policy.Publisher> preuve.|  
+|`enabled`|Attribut requis.<br /><br /> Précise si le temps <xref:System.Security.Policy.Publisher> d’exécution crée des preuves.|  
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|`false`|Ne crée pas <xref:System.Security.Policy.Publisher> preuve.|  
-|`true`|Crée <xref:System.Security.Policy.Publisher> preuve. Il s'agit de la valeur par défaut.|  
+|`false`|Ne crée <xref:System.Security.Policy.Publisher> pas de preuves.|  
+|`true`|Crée <xref:System.Security.Policy.Publisher> des preuves. Il s’agit de la valeur par défaut.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -52,21 +52,21 @@ Spécifie si le runtime crée <xref:System.Security.Policy.Publisher> preuve pou
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
   
 > [!NOTE]
-> Dans le .NET Framework 4 et versions ultérieures, cet élément n’a aucun effet sur les temps de chargement des assemblys. Pour plus d’informations, consultez la section « simplification de la stratégie de sécurité » dans [modifications de sécurité](../../../security/security-changes.md).  
+> Dans le cadre .NET 4 et plus tard, cet élément n’a aucun effet sur les temps de chargement d’assemblage. Pour plus d’informations, consultez la section « Simplification de la politique de sécurité » dans [les changements de sécurité](../../../security/security-changes.md).  
   
- Le common language runtime (CLR) tente de vérifier la signature Authenticode au moment du chargement pour créer <xref:System.Security.Policy.Publisher> preuve pour l’assembly. Toutefois, par défaut, la plupart des applications n’ont pas besoin de <xref:System.Security.Policy.Publisher> preuve. La stratégie CAS standard ne repose pas sur la <xref:System.Security.Policy.PublisherMembershipCondition>. Vous devez éviter les coûts de démarrage inutiles associés à la vérification de la signature de l’éditeur, sauf si votre application s’exécute sur un ordinateur avec une stratégie CAS personnalisée ou s’il a l’intention de satisfaire les demandes de <xref:System.Security.Permissions.PublisherIdentityPermission> dans un environnement de confiance partielle. (Les demandes d’autorisations d’identité fonctionnent toujours dans un environnement de confiance totale.)  
+ Le temps courant de course de langue (CLR) essaye <xref:System.Security.Policy.Publisher> de vérifier la signature Authenticode au moment de la charge pour créer des preuves pour l’assemblage. Toutefois, par défaut, la <xref:System.Security.Policy.Publisher> plupart des applications n’ont pas besoin de preuves. La politique standard de <xref:System.Security.Policy.PublisherMembershipCondition>la SAE ne repose pas sur le . Vous devez éviter les coûts inutiles de démarrage associés à la vérification de la signature de l’éditeur <xref:System.Security.Permissions.PublisherIdentityPermission> à moins que votre application ne s’exécute sur un ordinateur avec la politique de CAS personnalisée, ou a l’intention de satisfaire les demandes dans un environnement de confiance partielle. (Les demandes d’autorisations d’identité réussissent toujours dans un environnement de confiance.)  
   
 > [!NOTE]
-> Nous recommandons que les services utilisent l’élément `<generatePublisherEvidence>` pour améliorer les performances de démarrage.  L’utilisation de cet élément peut également aider à éviter des retards qui peuvent entraîner un délai d’attente et l’annulation du démarrage du service.  
+> Nous recommandons que `<generatePublisherEvidence>` les services utilisent cet élément pour améliorer les performances des startups.  L’utilisation de cet élément peut également aider à éviter les retards qui peuvent entraîner un délai d’utilisation et l’annulation de la start-up de service.  
   
 ## <a name="configuration-file"></a>Fichier de configuration  
- Cet élément peut être utilisé uniquement dans le fichier de configuration de l’application.  
+ Cet élément ne peut être utilisé que dans le fichier de configuration d’application.  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l’élément `<generatePublisherEvidence>` pour désactiver la vérification de la stratégie d’éditeur CAS pour une application.  
+## <a name="example"></a> Exemple  
+ L’exemple suivant montre `<generatePublisherEvidence>` comment utiliser l’élément pour désactiver la vérification de la politique d’éditeur de la SAE pour une demande.  
   
 ```xml  
 <configuration>  
@@ -78,5 +78,5 @@ Spécifie si le runtime crée <xref:System.Security.Policy.Publisher> preuve pou
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma des paramètres d'exécution](index.md)
+- [Configuration Fichier Schema](../index.md)

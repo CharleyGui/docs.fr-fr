@@ -15,22 +15,22 @@ helpviewer_keywords:
 ms.assetid: 0eaa4aa9-9441-444a-920c-e4b2a2db899e
 topic_type:
 - apiref
-ms.openlocfilehash: c3c57074ae53e2e1d8d41aa04cb6eb6089db58b5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: dfa900e2184a8c415d75f5702c572b14c4018749
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449432"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177789"
 ---
 # <a name="imetadataassemblyimportgetassemblyprops-method"></a>IMetaDataAssemblyImport::GetAssemblyProps, méthode
-Obtient le jeu de propriétés de l’assembly avec la signature de métadonnées spécifiée.  
+Obtient l’ensemble des propriétés pour l’assemblage avec la signature spécifiée de métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetAssemblyProps (  
     [in]  mdAssembly          mda,  
-    [out] const void          **ppbPublicKey,   
+    [out] const void          **ppbPublicKey,
     [out] ULONG               *pcbPublicKey,  
     [out] ULONG               *pulHashAlgId,  
     [out] LPWSTR              szName,  
@@ -43,40 +43,40 @@ HRESULT GetAssemblyProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mda`  
- [in]. `mdAssembly` jeton de métadonnées qui représente l’assembly pour lequel obtenir les propriétés.  
+ [in]. Le `mdAssembly` jeton de métadonnées qui représente l’assemblage pour lequel obtenir les propriétés.  
   
  `ppbPublicKey`  
- à Pointeur vers la clé publique ou le jeton de métadonnées.  
+ [out] Un pointeur à la clé publique ou le jeton des métadonnées.  
   
  `pcbPublicKey`  
- à Nombre d’octets dans la clé publique retournée.  
+ [out] Le nombre d’octets dans la clé publique retournée.  
   
  `pulHashAlgId`  
- à Pointeur vers l’algorithme utilisé pour hacher les fichiers dans l’assembly.  
+ [out] Un pointeur à l’algorithme utilisé pour hachage les fichiers dans l’assemblage.  
   
  `szName`  
- à Nom simple de l’assembly.  
+ [out] Le nom simple de l’assemblée.  
   
  `cchName`  
- dans Taille, en caractères larges, de `szName`.  
+ [dans] La taille, en chars `szName`larges, de .  
   
  `pchName`  
- à Nombre de caractères larges réellement retournés dans `szName`.  
+ [out] Le nombre de chars `szName`larges effectivement retourné dans .  
   
  `pMetaData`  
- à Pointeur vers une structure ASSEMBLYMETADATA qui contient les métadonnées de l’assembly.  
+ [out] Un pointeur vers une structure ASSEMBLYMETADATA qui contient les métadonnées d’assemblage.  
   
  `pdwAssemblyFlags`  
- à Indicateurs qui décrivent les métadonnées appliquées à un assembly. Cette valeur est une combinaison d’une ou plusieurs valeurs [CorAssemblyFlags,](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) .  
+ [out] Drapeaux qui décrivent les métadonnées appliquées à un assemblage. Cette valeur est une combinaison d’une ou plusieurs valeurs [CorAssemblyFlags.](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md)  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

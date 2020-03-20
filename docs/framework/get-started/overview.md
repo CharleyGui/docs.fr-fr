@@ -7,18 +7,18 @@ helpviewer_keywords:
 - common language runtime, about
 - common language runtime, overview
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
-ms.openlocfilehash: 397a78514dc5878e83708882ceeb4d92160d9a78
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: de9cbdab5d5786b9d59d23ba675fa3f78f807716
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975658"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79181591"
 ---
-# <a name="overview-of-the-net-framework"></a>Vue d’ensemble du .NET Framework
+# <a name="overview-of-net-framework"></a>Aperçu du cadre .NET
 
-Le .NET Framework est une technologie qui prend en charge la création et l’exécution de la nouvelle génération d’applications et de services web XML. Le .NET Framework est conçu pour remplir les objectifs suivants :
+.NET Framework est une technologie qui prend en charge la création et l’exécution d’applications Windows et de services Web. .NET Framework est conçu pour atteindre les objectifs suivants :
 
-- Fournir un environnement cohérent de programmation orientée objet que le code objet soit stocké et exécuté localement, exécuté localement mais distribué sur Internet ou exécuté à distance.
+- Fournir un environnement de programmation cohérent axé sur les objets, que le code d’objet soit stocké et exécuté localement, exécuté localement mais distribué sur le Web ou exécuté à distance.
 
 - Fournir un environnement d'exécution de code qui minimise le déploiement de logiciel et de conflits de versions.
 
@@ -28,16 +28,16 @@ Le .NET Framework est une technologie qui prend en charge la création et l’ex
 
 - Fournir au développeur un environnement cohérent entre une grande variété de types d’applications comme les applications Windows et les applications web.
 
-- Générer toutes les communications à partir des normes du secteur pour s’assurer que le code basé sur le .NET Framework s’intègre à n’importe quel autre code.
+- Construire toutes les communications sur les normes de l’industrie pour s’assurer que le code basé sur .NET Framework s’intègre à tout autre code.
 
 > [!NOTE]
-> Pour une présentation générale du .NET Framework à destination des utilisateurs et des développeurs, consultez [Bien démarrer](index.md).
+> Pour une introduction générale à .NET Framework pour les utilisateurs et les développeurs, voir [Getting Started](index.md).
 
-Le .NET Framework se compose du Common Language Runtime (CLR) et de la bibliothèque de classes .NET Framework. Le Common Language Runtime est la base du .NET Framework. Le runtime est un agent qui manage le code au moment de l’exécution, fournit des services essentiels comme la gestion de la mémoire, la gestion des threads et la communication à distance. Il applique également une cohérence stricte des types et d’autres formes de précision qui favorisent un code sécurisé et robuste. En fait, le concept de gestion de code est un principe fondamental du runtime. Pour le code qui cible le runtime, on parle de code managé, tandis que pour le code qui ne cible pas le runtime, on parle de code non managé. La bibliothèque de classes est une collection complète orientée objet de types réutilisables que vous pouvez utiliser pour développer des applications, qu’il s’agisse d’applications en ligne de commande ou à interface graphique utilisateur traditionnelles ou d’applications basées sur les dernières innovations fournies par ASP.NET, comme les services web XML et Web Forms.
+.NET Framework se compose de l’heure courante (CLR) et de la bibliothèque de classe cadre .NET. Le runtime linguistique commun est à la base de .NET Framework. Le runtime est un agent qui manage le code au moment de l’exécution, fournit des services essentiels comme la gestion de la mémoire, la gestion des threads et la communication à distance. Il applique également une cohérence stricte des types et d’autres formes de précision qui favorisent un code sécurisé et robuste. En fait, le concept de gestion de code est un principe fondamental du runtime. Pour le code qui cible le runtime, on parle de code managé, tandis que pour le code qui ne cible pas le runtime, on parle de code non managé. La bibliothèque de classe est une collection complète et orientée objet de types réutilisables que vous utilisez pour développer des applications allant des applications traditionnelles de ligne de commande ou d’interface utilisateur graphique (GUI) aux applications basées sur les dernières innovations fournies par ASP.NET, telles que web Formulaires et services Web XML.
 
-Le .NET Framework peut être hébergé par des composants non managés qui chargent le Common Language Runtime dans leurs processus et lancent l’exécution du code managé, créant ainsi un environnement logiciel qui exploite à la fois les fonctionnalités managées et non managées. Le .NET Framework fournit non seulement plusieurs hôtes de runtime, mais il prend également en charge le développement d’hôtes de runtime tiers.
+.NET Framework peut être hébergé par des composants non gérés qui chargent le temps d’exécution de la langue commune dans leurs processus et initient l’exécution du code géré, créant ainsi un environnement logiciel qui exploite à la fois les fonctionnalités gérées et non gérées. .NET Framework fournit non seulement plusieurs hôtes de runtime, mais soutient également le développement d’hôtes de course tiers.
 
-Par exemple, ASP.NET héberge le runtime pour fournir un environnement côté serveur, évolutif pour le code managé. ASP.NET fonctionne directement avec le runtime pour activer des applications ASP.NET et des services web XML, deux sujets qui sont évoqués plus loin dans cette rubrique.
+Par exemple, ASP.NET héberge le runtime pour fournir un environnement côté serveur, évolutif pour le code managé. ASP.NET fonctionne directement avec le temps d’exécution pour activer ASP.NET applications et les services Web XML, qui sont tous deux discutés plus tard dans cet article.
 
 Internet Explorer est un exemple d’application non managée qui héberge le runtime (sous la forme d’une extension de type MIME). L'utilisation d'Internet Explorer pour héberger le runtime vous permet d'incorporer des composants managés ou des contrôles Windows Forms dans des documents HTML. Ainsi hébergé, le runtime rend possible le code mobile managé, avec toutefois des améliorations significatives que seul le code managé permet, telles que l’exécution d’un niveau de confiance partielle et le stockage de fichiers isolés.
 
@@ -45,7 +45,7 @@ L’illustration suivante montre les relations du Common Language Runtime et de 
 
 ![Capture d’écran montrant comment le code managé opère au sein d’une architecture plus grande.](./media/overview/language-runtime-class-library-relationship.gif)
 
-Les sections suivantes décrivent les principales fonctionnalités du .NET Framework.
+Les sections suivantes décrivent plus en détail les principales caractéristiques du cadre .NET.
 
 ## <a name="features-of-the-common-language-runtime"></a>Fonctionnalités du Common Language Runtime
 
@@ -79,7 +79,7 @@ Comme pour toute bibliothèque de classes orientée objet, les types .NET Framew
 
 - Applications Windows Presentation Foundation (WPF). Consultez [Windows Presentation Foundation](../wpf/index.md).
 
-- Applications ASP.NET. Consultez [Applications Web avec ASP.NET](../develop-web-apps-with-aspnet.md).
+- Applications ASP.NET. Consultez [Applications web avec ASP.NET](../develop-web-apps-with-aspnet.md).
 
 - Les services Windows. Consultez [Introduction aux applications de service Windows](../windows-services/introduction-to-windows-service-applications.md).
 
@@ -91,9 +91,9 @@ Les classes Windows Forms sont un ensemble complet de types réutilisables qui s
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration système requise](system-requirements.md)
-- [Guide d’installation](../install/index.md)
+- [Exigences du système](system-requirements.md)
+- [Guide d'installation](../install/index.md)
 - [Guide de développement](../development-guide.md)
 - [Outils](../tools/index.md)
 - [Exemples et tutoriels .NET](../../samples-and-tutorials/index.md)
-- [Navigateur de l’API .NET](../../../api/index.md)
+- [Navigateur API .NET](../../../api/index.md)

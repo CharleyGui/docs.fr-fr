@@ -14,11 +14,11 @@ helpviewer_keywords:
 - DLL functions
 ms.assetid: eca7606e-ebfb-4f47-b8d9-289903fdc045
 ms.openlocfilehash: 7ec1f129dcc19300dd5a4e7c5e627d9e0edf29a1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123647"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399972"
 ---
 # <a name="consuming-unmanaged-dll-functions"></a>Consommation de fonctions DLL non managées
 L’appel de code non managé est un service qui permet au code managé d’appeler des fonctions non managées implémentées dans des bibliothèques de liens dynamiques (DLL), telles que celles de l’API Windows. Il localise et appelle une fonction exportée, puis marshale ses arguments (entiers, chaînes, tableaux, structures, etc) au-delà des limites d’interopérabilité, selon les besoins.  
@@ -39,9 +39,9 @@ L’appel de code non managé est un service qui permet au code managé d’appe
   
      [Visual Basic] Utilisez l’instruction **Declare** avec les mots clés **Function** et **Lib**. Dans certains cas rares, vous pouvez utiliser **DllImportAttribute** avec les mots clés **Shared Function**. Ces cas sont expliqués plus loin dans cette section.  
   
-     [C#] Utilisez **DllImportAttribute** pour identifier la DLL et la fonction. Marquez la méthode avec les modificateurs **static** et **extern**.  
+     [C] Utilisez le **DllImportAttribute** pour identifier le DLL et la fonction. Marquez la méthode avec les modificateurs **static** et **extern**.  
   
-     [C++] Utilisez **DllImportAttribute** pour identifier la DLL et la fonction. Marquez la méthode ou la fonction wrapper avec **extern "C"** .  
+     [C++] Utilisez **DllImportAttribute** pour identifier la DLL et la fonction. Marquez la méthode ou la fonction wrapper avec **extern "C"**.  
   
 4. [Appelez une fonction DLL](calling-a-dll-function.md).  
   
@@ -50,7 +50,7 @@ L’appel de code non managé est un service qui permet au code managé d’appe
  Pour afficher des exemples montrant comment construire des déclarations .NET à utiliser avec l’appel de code non managé, consultez [Marshaling de données à l’aide de l’appel de code non managé](marshaling-data-with-platform-invoke.md).  
   
 ## <a name="a-closer-look-at-platform-invoke"></a>Présentation détaillée de l'appel de code non managé  
- L’appel de code non managé s’appuie sur les métadonnées pour localiser les fonctions exportées et marshaler leurs arguments au moment de l’exécution. L'illustration suivante montre ce processus.  
+ L’appel de code non managé s’appuie sur les métadonnées pour localiser les fonctions exportées et marshaler leurs arguments au moment de l’exécution. L'illustration ci-dessous montre ce processus.  
   
  ![Diagramme illustrant un appel de code non managé.](./media/consuming-unmanaged-dll-functions/platform-invoke-call.gif)  
   
@@ -71,6 +71,6 @@ L’appel de code non managé est un service qui permet au code managé d’appe
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interopération avec du code non managé](index.md)
-- [Exemples d'appel de code non managé](platform-invoke-examples.md)
-- [Marshaling d'interopérabilité](interop-marshaling.md)
+- [Interopération avec code non traité](index.md)
+- [Exemples d’appel de code non managé](platform-invoke-examples.md)
+- [Marshaling d’interopérabilité](interop-marshaling.md)

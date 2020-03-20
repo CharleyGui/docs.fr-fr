@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 90820e49-9d46-41f6-9a3d-6c0741bbd8eb
-ms.openlocfilehash: 51ea09965c423f04c220260248c3501e061820cb
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 7c81619bf4ac6ed084ea63349345dbf3b7f139b0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784142"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150686"
 ---
 # <a name="dataview-performance"></a>Performances des DataViews
 Cette rubrique décrit les avantages en termes de performances de l'utilisation des méthodes <xref:System.Data.DataView.Find%2A> et <xref:System.Data.DataView.FindRows%2A> de la classe <xref:System.Data.DataView>, et de la mise en cache d'un <xref:System.Data.DataView> dans une application Web.  
   
 ## <a name="find-and-findrows"></a>Find et FindRows  
- Le <xref:System.Data.DataView> construit un index. Il contient des clés créées à partir d'une ou plusieurs colonnes de la table ou de la vue. Ces clés sont stockées dans une structure qui permet au <xref:System.Data.DataView> de trouver rapidement et efficacement la ou les lignes associées aux valeurs de clé. Les opérations qui utilisent l’index, telles que le filtrage et le tri, voient les performances significatives. L'index d'un <xref:System.Data.DataView> est construit à la fois lors de la création du <xref:System.Data.DataView> et lorsque l'une des informations de tri ou de filtrage est modifiée. La création d'un <xref:System.Data.DataView>, suivie de la définition des informations de tri et de filtrage, entraîne la construction de l'index deux fois au moins : une fois lors de la création du <xref:System.Data.DataView>, puis à nouveau lorsqu'une des propriétés de tri ou de filtrage est modifiée. Pour plus d’informations sur le filtrage et <xref:System.Data.DataView>le tri avec, consultez [filtrage avec DataView](filtering-with-dataview-linq-to-dataset.md) et [Tri avec DataView](sorting-with-dataview-linq-to-dataset.md).  
+ Le <xref:System.Data.DataView> construit un index. Il contient des clés créées à partir d'une ou plusieurs colonnes de la table ou de la vue. Ces clés sont stockées dans une structure qui permet au <xref:System.Data.DataView> de trouver rapidement et efficacement la ou les lignes associées aux valeurs de clé. Les opérations qui utilisent l’indice, comme le filtrage et le tri, voient des augmentations significatives des performances. L'index d'un <xref:System.Data.DataView> est construit à la fois lors de la création du <xref:System.Data.DataView> et lorsque l'une des informations de tri ou de filtrage est modifiée. La création d'un <xref:System.Data.DataView>, suivie de la définition des informations de tri et de filtrage, entraîne la construction de l'index deux fois au moins : une fois lors de la création du <xref:System.Data.DataView>, puis à nouveau lorsqu'une des propriétés de tri ou de filtrage est modifiée. Pour plus d’informations sur <xref:System.Data.DataView>le filtrage et le tri avec , voir [Filtering with DataView](filtering-with-dataview-linq-to-dataset.md) et [Trier avec DataView](sorting-with-dataview-linq-to-dataset.md).  
   
- Si vous souhaitez retourner les résultats d'une requête particulière exécutée sur les données, vous pouvez, au lieu de fournir une vue dynamique d'un sous-ensemble des données, utiliser l'une des méthodes <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A> du <xref:System.Data.DataView>, plutôt que de définir la propriété <xref:System.Data.DataView.RowFilter%2A>. L'utilisation de la propriété <xref:System.Data.DataView.RowFilter%2A> est optimale dans une application de liaison de données où un contrôle lié affiche des résultats filtrés. Le paramétrage de la propriété <xref:System.Data.DataView.RowFilter%2A> entraîne une nouvelle génération de l'index des données, ce qui accroît la charge sur votre application et, par voie de conséquence, fait baisser les performances. Les méthodes <xref:System.Data.DataView.Find%2A> et <xref:System.Data.DataView.FindRows%2A> utilisent l'index en cours sans qu'il soit nécessaire de le reconstruire. Si vous ne souhaitez appeler <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A> qu'une seule fois, il est préférable d'utiliser le <xref:System.Data.DataView> existant. Si vous souhaitez appeler <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A> plusieurs fois, vous devez créer un nouveau <xref:System.Data.DataView> pour reconstruire l'index sur la colonne où vous voulez effectuer la recherche, pour appeler la méthode <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A>. Pour plus d’informations sur <xref:System.Data.DataView.Find%2A> les <xref:System.Data.DataView.FindRows%2A> méthodes et, consultez [recherche de lignes](./dataset-datatable-dataview/finding-rows.md).  
+ Si vous souhaitez retourner les résultats d'une requête particulière exécutée sur les données, vous pouvez, au lieu de fournir une vue dynamique d'un sous-ensemble des données, utiliser l'une des méthodes <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A> du <xref:System.Data.DataView>, plutôt que de définir la propriété <xref:System.Data.DataView.RowFilter%2A>. L'utilisation de la propriété <xref:System.Data.DataView.RowFilter%2A> est optimale dans une application de liaison de données où un contrôle lié affiche des résultats filtrés. Le paramétrage de la propriété <xref:System.Data.DataView.RowFilter%2A> entraîne une nouvelle génération de l'index des données, ce qui accroît la charge sur votre application et, par voie de conséquence, fait baisser les performances. Les méthodes <xref:System.Data.DataView.Find%2A> et <xref:System.Data.DataView.FindRows%2A> utilisent l'index en cours sans qu'il soit nécessaire de le reconstruire. Si vous ne souhaitez appeler <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A> qu'une seule fois, il est préférable d'utiliser le <xref:System.Data.DataView> existant. Si vous souhaitez appeler <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A> plusieurs fois, vous devez créer un nouveau <xref:System.Data.DataView> pour reconstruire l'index sur la colonne où vous voulez effectuer la recherche, pour appeler la méthode <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A>. Pour plus d’informations sur le et <xref:System.Data.DataView.Find%2A> <xref:System.Data.DataView.FindRows%2A> les méthodes, voir Finding [Rows](./dataset-datatable-dataview/finding-rows.md).  
   
  L'exemple suivant utilise la méthode <xref:System.Data.DataView.Find%2A> pour rechercher un contact nommé « Zhu ».  
   
@@ -65,7 +65,7 @@ GridView1.DataBind()
 ```csharp  
 if (Cache["ordersView"] == null)  
 {  
-   // Fill the DataSet.                  
+   // Fill the DataSet.
    DataSet dataSet = FillDataSet();  
   
    DataTable orders = dataSet.Tables["SalesOrderHeader"];  

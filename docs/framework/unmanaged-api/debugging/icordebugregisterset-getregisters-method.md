@@ -15,50 +15,50 @@ helpviewer_keywords:
 ms.assetid: fdf91864-48ea-4aa6-b70c-361b7a3184c7
 topic_type:
 - apiref
-ms.openlocfilehash: 737993ac80b26d490915af3e97fd6a9552246aee
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 32e899622b9c649a08e3bca1b6645f70dcbcbb19
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792118"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178541"
 ---
 # <a name="icordebugregistersetgetregisters-method"></a>ICorDebugRegisterSet::GetRegisters, méthode
-Obtient la valeur de chaque registre (sur l’ordinateur qui exécute actuellement le code) spécifié par le masque de bits.  
+Obtient la valeur de chaque registre (sur l’ordinateur qui exécute actuellement le code) qui est spécifié par le masque bit.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetRegisters (  
-    [in] ULONG64       mask,   
+    [in] ULONG64       mask,
     [in] ULONG32       regCount,  
     [out, size_is(regCount), length_is(regCount)]  
         CORDB_REGISTER regBuffer[]  
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `mask`  
- dans Masque de bits qui spécifie les valeurs de Registre à récupérer. Chaque bit correspond à un registre. Si un bit est défini sur un, la valeur du Registre est Récupérée ; dans le cas contraire, la valeur du Registre n’est pas récupérée.  
+ [dans] Un masque qui précise quelles valeurs d’enregistrement doivent être récupérées. Chaque bit correspond à un registre. Si un peu est réglé à un, la valeur du registre est récupérée; autrement, la valeur du registre n’est pas récupérée.  
   
  `regCount`  
- dans Nombre de valeurs de Registre à récupérer.  
+ [dans] Nombre de valeurs de registre à récupérer.  
   
  `regBuffer`  
- à Tableau d’objets `CORDB_REGISTER`, chacun d’entre eux recevant une valeur de registre.  
+ [out] Une gamme `CORDB_REGISTER` d’objets, dont chacun reçoit une valeur d’un registre.  
   
-## <a name="remarks"></a>Notes  
- La taille du tableau doit être égale au nombre de bits défini sur un dans le masque de bits. Le paramètre `regCount` spécifie le nombre d’éléments dans la mémoire tampon qui recevront les valeurs de registre. Si la valeur `regCount` est trop petite pour le nombre de registres indiqué par le masque, les registres numérotés les plus élevés sont tronqués de l’ensemble. Si la valeur `regCount` est trop grande, les éléments `regBuffer` inutilisés ne seront pas modifiés.  
+## <a name="remarks"></a>Notes   
+ La taille du tableau doit être égale au nombre de bits réglés à un dans le masque de bit. Le `regCount` paramètre précise le nombre d’éléments dans le tampon qui recevront les valeurs du registre. Si `regCount` la valeur est trop faible pour le nombre de registres indiqués par le masque, les registres numérotés plus élevés seront tronqués à partir de l’ensemble. Si `regCount` la valeur est trop `regBuffer` grande, les éléments inutilisés ne seront pas modifiés.  
   
- Si le masque de bits spécifie un registre qui n’est pas disponible, `GetRegisters` retourne une valeur indéterminée pour ce registre.  
+ Si le masque bit spécifie `GetRegisters` un registre qui n’est pas disponible, renvoie une valeur indéterminée pour ce registre.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

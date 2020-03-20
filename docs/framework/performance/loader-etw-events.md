@@ -5,12 +5,12 @@ helpviewer_keywords:
 - loader events [.NET Framework]
 - ETW, loader events (CLR)
 ms.assetid: cb403cc6-56f8-4609-b467-cdfa09f07909
-ms.openlocfilehash: 73665915a70225c2b1da47c7b60347b089564884
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 0f8f96cf73882ef6556e5b9e64cf9adf389a2318
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716033"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180562"
 ---
 # <a name="loader-etw-events"></a>Événements ETW de chargeur
 Ces événements collectent des informations relatives au chargement et déchargement des domaines d'application, des assemblys et des modules.  
@@ -20,7 +20,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 ## <a name="application-domain-events"></a>Événements de domaine d'application
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Event|Niveau|  
+|Mot clé pour déclencher l'événement|Événement|Level|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`AppDomainLoad_V1` et `AppDomainUnLoad_V1`|Informatif (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AppDomainDCStart_V1`|Informatif (4)|  
@@ -28,7 +28,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Description|  
+|Événement|ID de l’événement|Description|  
 |-----------|--------------|-----------------|  
 |`AppDomainLoad_V1` (journalisé pour tous les domaines d'application)|156|Déclenché chaque fois qu'un domaine d'application est créé pendant la durée de vie d'un processus.|  
 |`AppDomainUnLoad_V1`|157|Déclenché chaque fois qu'un domaine d'application est détruit pendant la durée de vie d'un processus.|  
@@ -37,7 +37,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |AppDomainID|win:UInt64|Identificateur unique d’un domaine d'application.|  
 |AppDomainFlags|win:UInt32|0x1 : domaine par défaut.<br /><br /> 0x2 : exécutable.<br /><br /> 0x4 : domaine d'application, bit 28-31 : partage de la stratégie de ce domaine.<br /><br /> 0 : domaine partagé.|  
@@ -48,7 +48,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 ## <a name="clr-loader-assembly-events"></a>Événements d'assembly de chargeur du CLR  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Event|Niveau|  
+|Mot clé pour déclencher l'événement|Événement|Level|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`AssemblyLoad` et `AssemblyUnload`|Informatif (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AssemblyDCStart`|Informatif (4)|  
@@ -56,7 +56,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Description|  
+|Événement|ID de l’événement|Description|  
 |-----------|--------------|-----------------|  
 |`AssemblyLoad_V1`|154|Déclenché quand un assembly est chargé.|  
 |`AssemblyUnload_V1`|155|Déclenché quand un assembly est déchargé.|  
@@ -65,19 +65,19 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |AssemblyID|win:UInt64|ID unique de l'assembly.|  
 |AppDomainID|win:UInt64|ID du domaine de cet assembly.|  
 |BindingID|win:UInt64|ID qui identifie de façon unique la liaison d'assembly.|  
 |AssemblyFlags|win:UInt32|0x1 : assembly indépendant du domaine.<br /><br /> 0x2 : assembly dynamique.<br /><br /> 0x4 : l’assembly possède une image native.<br /><br /> 0x8 : assembly pouvant être collecté.|  
 |AssemblyName|win:UnicodeString|Nom qualifié complet de l'assembly.|  
-|ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|   
+|ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|
 
 ## <a name="module-events"></a>Événements de module
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Event|Niveau|  
+|Mot clé pour déclencher l'événement|Événement|Level|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`ModuleLoad_V2` et `ModuleUnload_V2`|Informatif (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`ModuleDCStart_V2`|Informatif (4)|  
@@ -86,7 +86,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Description|  
+|Événement|ID de l’événement|Description|  
 |-----------|--------------|-----------------|  
 |`ModuleLoad_V2`|152|Déclenché quand un module est chargé pendant la durée de vie d'un processus.|  
 |`ModuleUnload_V2`|153|Déclenché quand un module est déchargé pendant la durée de vie d'un processus.|  
@@ -95,7 +95,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt64|ID unique du module.|  
 |AssemblyID|win:UInt64|ID de l'assembly dans lequel ce module réside.|  
@@ -111,7 +111,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 |NativePdbAge|win:UInt32|Nombre relatif à l’âge écrit dans le fichier PDB NGen qui correspond à ce module, le cas échéant. (Consultez la section Notes.)|  
 |NativePdbBuildPath|win:UnicodeString|Chemin d'accès à l'emplacement où le fichier PDB NGen qui correspond à ce module a été créé, le cas échéant. Dans certains cas, cela peut simplement être un nom de fichier. (Consultez la section Notes.)|  
   
-### <a name="remarks"></a>Notes  
+### <a name="remarks"></a>Notes   
   
 - Les champs dont le nom contient « Pdb » peuvent être utilisés par les outils de profilage pour localiser les fichiers PDB qui correspondent aux modules qui ont été chargés au cours de la session de profilage. Les valeurs de ces champs correspondent aux données écrites dans les sections IMAGE_DIRECTORY_ENTRY_DEBUG du module normalement utilisé par les débogueurs pour favoriser la localisation des fichiers PDB qui correspondent aux modules chargés.  
   
@@ -122,7 +122,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 ## <a name="clr-domain-module-events"></a>Événements de module de domaine du CLR
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Event|Niveau|  
+|Mot clé pour déclencher l'événement|Événement|Level|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`DomainModuleLoad_V1`|Informatif (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`DomainModuleDCStart_V1`|Informatif (4)|  
@@ -130,7 +130,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Description|  
+|Événement|ID de l’événement|Description|  
 |-----------|--------------|-----------------|  
 |`DomainModuleLoad_V1`|151|Déclenché quand un module est chargé pour un domaine d'application.|  
 |`DomainModuleDCStart_V1`|151|Énumère les modules chargés pour un domaine d'application pendant un arrêt de début, et est consigné pour tous les domaines d'application.|  
@@ -138,7 +138,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt64|Identifie l'assembly auquel ce module appartient.|  
 |AssemblyID|win:UInt64|ID de l'assembly dans lequel ce module réside.|  
@@ -152,7 +152,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 ## <a name="module-range-events"></a>Événements de plage de module
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Event|Niveau|  
+|Mot clé pour déclencher l'événement|Événement|Level|  
 |-----------------------------------|-----------|-----------|  
 |`PerfTrackKeyWord`)|`ModuleRange`|Informatif (4)|  
 |`PerfTrackKeyWord`|`ModuleRangeDCStart`|Informatif (4)|  
@@ -160,7 +160,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Description|  
+|Événement|ID de l’événement|Description|  
 |-----------|--------------|-----------------|  
 |`ModuleRange`|158|Cet événement est présent si une image Native Image Generator (NGen) chargée a été optimisée à l’aide d’IBC et contient des informations sur les sections à chaud de l'image NGen.|  
 |`ModuleRangeDCStart`|160|Événement `ModuleRange` déclenché au début d'un arrêt.|  
@@ -168,7 +168,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |ClrInstanceID|win:UInt16|Identifie de façon unique une instance spécifique du CLR dans un processus si plusieurs instances du CLR sont chargées.|  
 |ModuleID|win:UInt64|Identifie l'assembly auquel ce module appartient.|  
@@ -178,7 +178,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 |RangeSize1|win:UInt32|0 indique des données incorrectes.|  
 |RangeBegin2|win:UnicodeString||  
   
-### <a name="remarks"></a>Notes  
+### <a name="remarks"></a>Notes   
  Si une image NGen chargée dans un processus du .NET Framework a été optimisée à l’aide d’IBC, l’événement `ModuleRange` qui contient les plages à chaud dans l'image NGen est consigné avec ses `moduleID` et `ClrInstanceID`.  Si l'image NGen n'est pas optimisée à l’aide d’IBC, cet événement n'est pas consigné. Pour déterminer le nom du module, cet événement doit être assemblé avec les événements ETW de chargement de module.  
   
  La taille de charge utile pour cet événement est variable. Le champ `Count` indique le nombre de décalages de plages contenus dans cet événement.  Cet événement doit être assemblé avec l’événement `IStart` de Windows afin de déterminer les plages réelles. L'événement de chargement d'image Windows est consigné chaque fois qu'une image est chargée, et il contient l'adresse virtuelle de l'image chargée.  

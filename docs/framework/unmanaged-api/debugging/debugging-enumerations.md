@@ -6,22 +6,22 @@ helpviewer_keywords:
 - unmanaged enumerations [.NET Framework], debugging
 - enumerations [.NET Framework debugging]
 ms.assetid: 3af9f584-f1b4-4154-aeaa-8fce7c9f8b50
-ms.openlocfilehash: a83b1aa0b2cc068ed2f73dca04083b1085d45201
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: c37b6ff42b428184d301d63b6dbbd9d80a72bf3f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789159"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179139"
 ---
 # <a name="debugging-enumerations"></a>Énumérations de débogage
 Cette section décrit les énumérations non managées utilisées par l'API de débogage.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [CLR_DEBUGGING_PROCESS_FLAGS, énumération](clr-debugging-process-flags-enumeration.md)  
- Fournit des valeurs utilisées par la méthode [ICLRDebugging :: OpenVirtualProcess](iclrdebugging-openvirtualprocess-method.md) .  
+ Fournit des valeurs qui sont utilisées par la méthode [ICLRDebugging::OpenVirtualProcess](iclrdebugging-openvirtualprocess-method.md) méthode.  
   
  [CLRDataEnumMemoryFlags, énumération](clrdataenummemoryflags-enumeration.md)  
- Indique les régions de mémoire qu’un appel à la méthode [ICLRDataEnumMemoryRegions :: EnumMemoryRegions](iclrdataenummemoryregions-enummemoryregions-method.md) doit inclure.  
+ Indique quelles régions de mémoire un appel à [l’ICLRDataEnumMemoryRegions::EnumMemoryRegions](iclrdataenummemoryregions-enummemoryregions-method.md) méthode devrait inclure.  
   
  [COR_PUB_ENUMPROCESS, énumération](cor-pub-enumprocess-enumeration.md)  
  Identifie le type de processus à énumérer.  
@@ -39,16 +39,16 @@ Cette section décrit les énumérations non managées utilisées par l'API de d
  Indique pourquoi une fonction exportée appelle du code managé.  
   
  CorDebugCreateProcessFlags  
- Fournit des options de débogage supplémentaires qui peuvent être utilisées dans un appel à la méthode [ICorDebug :: CreateProcess](icordebug-createprocess-method.md) .  
+ Fournit des options de débogage supplémentaires qui peuvent être utilisés dans un appel à la méthode [ICorDebug:CreateProcess.](icordebug-createprocess-method.md)  
   
  [CorDebugDebugEventKind, énumération](cordebugdebugeventkind-enumeration.md)  
- Indique le type d’événement dont les informations sont décodées par la méthode [DecodeEvent](icordebugprocess6-decodeevent-method.md) .  
+ Indique le type d’événement dont les informations sont décodées par la méthode [DecodeEvent.](icordebugprocess6-decodeevent-method.md)  
   
  [CorDebugDecodeEventFlagsWindows, énumération](cordebugdecodeeventflagswindows-enumeration.md)  
  Fournit des informations supplémentaires sur les événements de débogage propres à la plateforme Windows.  
   
  CorDebugExceptionCallbackType  
- Indique le type de rappel effectué à partir d’un événement [ICorDebugManagedCallback2 :: exception](icordebugmanagedcallback2-exception-method.md) .  
+ Indique le type de rappel qui est fait à partir d’un [ICorDebugManagedCallback2::Événement d’exception.](icordebugmanagedcallback2-exception-method.md)  
   
  [CorDebugExceptionFlags, énumération](cordebugexceptionflags-enumeration.md)  
  Fournit des informations supplémentaires sur une exception.  
@@ -81,7 +81,7 @@ Cette section décrit les énumérations non managées utilisées par l'API de d
  Contient des valeurs qui influencent le comportement du compilateur juste-à-temps managé.  
   
  [CorDebugJITCompilerFlagsDeprecated, énumération](cordebugjitcompilerflagsdeprecated-enumeration.md)  
- Obsolète. Utilisez à la place le membre `CORDEBUG_JIT_DEFAULT` de l’énumération [CorDebugJITCompilerFlags](cordebugjitcompilerflags-enumeration.md) .  
+ Obsolète. Utilisez `CORDEBUG_JIT_DEFAULT` plutôt le membre du co-état de l’en énumération des énumérations [de CorDebugJITCompilerFlags.](cordebugjitcompilerflags-enumeration.md)  
   
  CorDebugMappingResult  
  Fournit les détails sur la façon dont la valeur du pointeur d'instruction a été obtenue.  
@@ -93,7 +93,7 @@ Cette section décrit les énumérations non managées utilisées par l'API de d
  Fournit une valeur qui détermine si un débogueur charge les images natives (NGen) depuis le cache d'images natives.  
   
  [CorDebugPlatform, énumération](cordebugplatform-enumeration.md)  
- Fournit les valeurs de plateforme cible utilisées par la méthode [ICorDebugDataTarget :: GetPlatform](icordebugdatatarget-getplatform-method.md) .  
+ Fournit des valeurs de plate-forme cibles qui sont utilisées par la méthode [ICorDebugDataTarget::GetPlatform.](icordebugdatatarget-getplatform-method.md)  
   
  [CorDebugRecordFormat, énumération](cordebugrecordformat-enumeration.md)  
  Décrit le format des données dans un tableau d'octets qui contient des informations sur un événement de débogage d'exception native.  
@@ -135,15 +135,15 @@ Cette section décrit les énumérations non managées utilisées par l'API de d
  Indique le type d’emplacement natif d’une variable.  
   
  [WriteableMetadataUpdateMode, énumération](writeablemetadataupdatemode-enumeration.md)  
- Fournit des valeurs qui spécifient si les mises à jour en mémoire apportées aux métadonnées sont visibles par un débogueur. 
+ Fournit des valeurs qui spécifient si les mises à jour en mémoire apportées aux métadonnées sont visibles par un débogueur.
 
- [Énumération ClrDataSourceType](clrdatasourcetype-enumeration.md) Fournit des valeurs utilisées par la structure CLRDATA_IL_ADDRESS_MAP.
+ [Énumération ClrDataSourceType](clrdatasourcetype-enumeration.md) Fournit des valeurs qui sont utilisées par la structure CLRDATA_IL_ADDRESS_MAP.
 
-## <a name="related-sections"></a>Rubriques connexes  
- [Coclasses de débogage](debugging-coclasses.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Débogage des coclasses](debugging-coclasses.md)  
   
  [Interfaces de débogage](debugging-interfaces.md)  
   
- [Fonctions statiques globales de débogage](debugging-global-static-functions.md)  
+ [Fonctions statiques globales du débogage](debugging-global-static-functions.md)  
   
  [Structures de débogage](debugging-structures.md)

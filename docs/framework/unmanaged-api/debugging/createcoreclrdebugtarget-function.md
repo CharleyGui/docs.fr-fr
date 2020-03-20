@@ -1,5 +1,5 @@
 ---
-title: CreateCoreClrDebugTarget, fonction
+title: Fonction CreateCoreClrDebugTarget
 ms.date: 03/30/2017
 api_name:
 - CreateCorClrDebugTarget
@@ -16,31 +16,31 @@ helpviewer_keywords:
 ms.assetid: 1cf4ca8e-d9bb-4633-9adf-5e24315bf87a
 topic_type:
 - apiref
-ms.openlocfilehash: a7fed8cb70785f0ccfcadf1e16181db303ac98e0
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 0b210f105495fa3f5595adbcb0805e1d1fb62310
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789193"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179217"
 ---
-# <a name="createcoreclrdebugtarget-function"></a>CreateCoreClrDebugTarget, fonction
-Creates a connection to a debugger proxy that is running on a remote machine, and returns an [ICoreClrDebugTarget](icoreclrdebugtarget-interface.md) object that can be used to query running processes and loaded runtimes on the remote machine.  
+# <a name="createcoreclrdebugtarget-function"></a>Fonction CreateCoreClrDebugTarget
+Crée une connexion à un proxy de débbugger qui fonctionne sur une machine à distance, et renvoie un objet [ICoreClrDebugTarget](icoreclrdebugtarget-interface.md) qui peut être utilisé pour interroger les processus d’exécution et les temps d’exécution chargés sur la machine à distance.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT CreateCoreClrDebugTarget (  
-       [in]  DWORD    dwAddress,   
+       [in]  DWORD    dwAddress,
        [out] ICoreClrDebugTarget**     ppTarget  
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `dwAddress`  
  [in] Adresse IPv4 d'un ordinateur cible distant.  
   
  `ppTarget`  
- [out] Pointer to a pointer to an [ICoreClrDebugTarget](icoreclrdebugtarget-interface.md) object that will be created.  
+ [out] Pointeur à un pointeur à un objet [ICoreClrDebugTarget](icoreclrdebugtarget-interface.md) qui sera créé.  
   
 ## <a name="return-value"></a>Valeur de retour  
  S_OK  
@@ -52,11 +52,11 @@ HRESULT CreateCoreClrDebugTarget (
  E_FAIL (ou autres codes de retour E_)  
  Autres échecs.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CoreClrRemoteDebuggingInterfaces.h  
+ **En-tête:** CoreClrRemoteDebuggingInterfaces.h  
   
- **Library:** mscordbi_macx86.dll  
+ **Bibliothèque:** mscordbi_macx86.dll  
   
- **.NET Framework Versions:** 3.5 SP1
+ **Versions cadre .NET:** 3.5 SP1

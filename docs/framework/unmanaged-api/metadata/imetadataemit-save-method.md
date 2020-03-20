@@ -15,40 +15,40 @@ helpviewer_keywords:
 ms.assetid: c1de8400-adfe-4a71-b828-a1d0cc1ea505
 topic_type:
 - apiref
-ms.openlocfilehash: afd60cdf566bea459816ee890d44cc09258de516
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 76f18336808e6832b2ded94349efd7948f23a1ee
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435949"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175692"
 ---
 # <a name="imetadataemitsave-method"></a>IMetaDataEmit::Save, méthode
-Enregistre toutes les métadonnées de l’étendue actuelle dans le fichier à l’adresse spécifiée.  
+Enregistre toutes les métadonnées dans la portée actuelle du fichier à l’adresse spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT Save (   
-    [in]  LPCWSTR     szFile,   
+HRESULT Save (
+    [in]  LPCWSTR     szFile,
     [in]  DWORD       dwSaveFlags  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `wzFile`  
- dans Nom du fichier dans lequel enregistrer. Si cette valeur est null, la copie en mémoire sera enregistrée dans le dernier emplacement utilisé.  
+ [dans] Le nom du fichier à enregistrer. Si cette valeur est nulle, la copie en mémoire sera enregistrée au dernier endroit qui a été utilisé.  
   
  `dwSaveFlags`  
- [in] Réservée. Doit être égal à zéro.  
+ [in] Réservée. Doit être zéro.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

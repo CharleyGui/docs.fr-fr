@@ -15,44 +15,44 @@ helpviewer_keywords:
 ms.assetid: 9dcc8b3d-33ee-4c7c-8d6f-322c57b94a0f
 topic_type:
 - apiref
-ms.openlocfilehash: 99f529a151a42cf4a9ee1f74bd3a76a5b6b1b35f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 64d76efa8c2f29fda559e5c84217b865540027ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445265"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175822"
 ---
 # <a name="imetadataemitdefinemethodimpl-method"></a>IMetaDataEmit::DefineMethodImpl, méthode
-Crée une définition pour l’implémentation d’une méthode héritée d’une interface et retourne un jeton à cette définition d’implémentation de méthode.  
+Crée une définition pour la mise en œuvre d’une méthode héritée d’une interface, et renvoie un jeton à cette définition de la méthode de mise en œuvre.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineMethodImpl (   
-    [in]  mdTypeDef         td,   
-    [in]  mdToken           tkBody,   
+HRESULT DefineMethodImpl (
+    [in]  mdTypeDef         td,
+    [in]  mdToken           tkBody,
     [in]  mdToken           tkDecl  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- dans Jeton `mdTypedef` de la classe d’implémentation.  
+ [dans] Le `mdTypedef` jeton de la classe d’implémentation.  
   
  `tkBody`  
- dans `mdMethodDef` ou `mdMemberRef` jeton du corps du code.  
+ [dans] Le `mdMethodDef` `mdMemberRef` ou le jeton du corps de code.  
   
  `tkDecl`  
- dans Jeton `mdMethodDef` ou `mdMemberRef` de la méthode d’interface en cours d’implémentation.  
+ [dans] Le `mdMethodDef` `mdMemberRef` ou le jeton de la méthode d’interface en cours d’implémenté.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

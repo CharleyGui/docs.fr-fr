@@ -5,51 +5,51 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
-ms.openlocfilehash: 091fde9a6149f72577e0cf38c8ebf1536abdf6ea
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: c64f11c00174981925342f1493ef0b809a57ecb0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738206"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79148645"
 ---
 # <a name="handling-null-values"></a>Gestion des valeurs null
-Une valeur null dans une base de données relationnelle est utilisée lorsque la valeur d'une colonne est inconnue ou manquante. Une valeur null n'est ni une chaîne vide (pour les types de données caractère ou datetime) ni une valeur zéro (pour les types de données numériques). La spécification ANSI SQL-92 stipule qu'une valeur null doit être la même pour tous les types de données afin que toutes les valeurs null soient traitées de manière cohérente. L'espace de noms <xref:System.Data.SqlTypes> fournit des sémantiques de valeurs null en implémentant l'interface <xref:System.Data.SqlTypes.INullable>. Chacun des types de données de l'espace de noms <xref:System.Data.SqlTypes> possède sa propre propriété `IsNull` et une valeur `Null` qui peut être assignée à une instance de ce type de données.  
+Une valeur Null dans une base de données relationnelle est utilisée lorsque la valeur d’une colonne est inconnue ou manquante. Une valeur Null n’est ni une chaîne vide (pour les types de données caractère ou DateHeure), ni une valeur zéro (pour les types de données numériques). La spécification SQL-92 ANSI indique qu’une valeur Null doit être la même pour tous les types de données, de sorte que toutes les valeurs Null sont gérées de manière cohérente. L’espace de noms <xref:System.Data.SqlTypes> fournit une sémantique Null en implémentant l’interface <xref:System.Data.SqlTypes.INullable>. Chacun des types de données de <xref:System.Data.SqlTypes> a sa propre propriété `IsNull` et une valeur `Null` qui peut être assignée à une instance de ce type de données.  
   
 > [!NOTE]
-> L'une des nouveautés de la version 2.0 du .NET Framework est la prise en charge des types Nullable qui permettent aux programmeurs d'étendre un type de valeur pour représenter toutes les valeurs du type sous-jacent. Ces types Nullable CLR représentent une instance de la structure <xref:System.Nullable>. Cette fonctionnalité est tout particulièrement utile lorsque des types de valeurs sont boxed et unboxed, ce qui améliore la compatibilité avec les types d'objets. Les types Nullable CLR ne sont pas destinés au stockage de valeurs de base de données null, car une valeur null SQL ANSI ne se comporte pas de la même manière qu'une référence `null` (ou `Nothing` en Visual Basic). Pour travailler avec des valeurs de base de données null SQL ANSI , utilisez des valeurs null <xref:System.Data.SqlTypes> plutôt que <xref:System.Nullable>. Pour plus d’informations sur l’utilisation des types CLR Nullable dans Visual Basic consultez [types valeur Nullable](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)et C# pour consulter les [types valeur Nullable](../../../../csharp/language-reference/builtin-types/nullable-value-types.md).  
+> L'une des nouveautés de la version 2.0 du .NET Framework est la prise en charge des types Nullable qui permettent aux programmeurs d'étendre un type de valeur pour représenter toutes les valeurs du type sous-jacent. Ces types Nullable CLR représentent une instance de la structure <xref:System.Nullable>. Cette fonctionnalité est particulièrement utile lorsque les types valeur sont boxed et unboxed, ce qui offre une meilleure compatibilité avec les types d’objets. Les types Nullable CLR ne sont pas destinés au stockage des valeurs Null de base de données, car une valeur Null SQL ANSI ne se comporte pas de la même façon qu’une référence `null` (ou `Nothing` dans Visual Basic). Pour travailler avec les valeurs Null SQL ANSI de la base de données, utilisez les valeurs Null <xref:System.Data.SqlTypes> au lieu de <xref:System.Nullable>. Pour plus d’informations sur le travail avec les types nuls CLR dans Visual Basic voir [Les types de valeur nulable](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md), et pour C - voir les types de valeur [nulable](../../../../csharp/language-reference/builtin-types/nullable-value-types.md).  
   
 ## <a name="nulls-and-three-valued-logic"></a>Valeurs null et logique à trois valeurs  
- Permettre des valeurs null dans des définitions de colonnes introduit une logique à trois valeurs dans votre application. Une comparaison peut correspondre à l'une des trois conditions :  
+ L’autorisation de valeurs Null dans les définitions de colonne introduit une logique ternaire dans votre application. Une comparaison peut évaluer entre une et trois conditions :  
   
 - True  
   
 - False  
   
-- Inconnu  
+- Unknown  
   
- Comme la valeur null est considérée comme inconnue, les deux valeurs null comparées l'une à l'autre ne sont pas considérées comme égales. Dans des expressions utilisant des opérateurs arithmétiques, si l’un des opérandes est une valeur null, le résultat est une valeur null également.  
+ Étant donné que la valeur Null est considérée comme inconnue, deux valeurs Null comparées l’une avec l’autre ne sont pas considérées comme égales. Dans les expressions utilisant des opérateurs arithmétiques, si l’un des opérandes a la valeur Null, le résultat est également Null.  
   
-## <a name="nulls-and-sqlboolean"></a>Valeurs null et SqlBoolean  
- La comparaison entre tout <xref:System.Data.SqlTypes> retournera un <xref:System.Data.SqlTypes.SqlBoolean>. La fonction `IsNull` de chaque `SqlType` retourne un <xref:System.Data.SqlTypes.SqlBoolean> et peut être utilisée pour vérifier les valeurs null. Les tables de vérité suivantes montrent comment les opérateurs AND, OR et NOT fonctionnent en présence d'une valeur null (T=true, F=false et U=inconnu ou null).  
+## <a name="nulls-and-sqlboolean"></a>Valeurs Null et SqlBoolean  
+ La comparaison entre tout <xref:System.Data.SqlTypes> retourne une <xref:System.Data.SqlTypes.SqlBoolean>. La fonction `IsNull` pour chaque `SqlType` retourne un <xref:System.Data.SqlTypes.SqlBoolean> et peut être utilisée pour vérifier les valeurs Null. Les tables de vérité suivantes montrent comment les opérateurs AND, OR et NOT fonctionnent dans la présence d’une valeur Null. (T = true (vrai), F = false (faux) et U = unknown (inconnu) ou Null.)  
   
  ![Table de vérité](./media/truthtable-bpuedev11.gif "TruthTable_bpuedev11")  
   
 ### <a name="understanding-the-ansi_nulls-option"></a>Compréhension de l'option ANSI_NULLS  
- <xref:System.Data.SqlTypes> offre les mêmes sémantiques que lorsque l'option ANSI_NULLS est définie dans SQL Server. Tous les opérateurs arithmétiques (+,-, \*,/,%), les opérateurs de bits (~, &, \|) et la plupart des fonctions retournent Null si l’un des opérandes ou arguments a la valeur null, à l’exception de la propriété `IsNull`.  
+ <xref:System.Data.SqlTypes> fournit la même sémantique que lorsque l’option ANSI_NULLS est activée dans SQL Server. Tous les opérateurs arithmétiques \*(, -, ,, /, %), \|les opérateurs bitwise (, &, ), et la plupart des `IsNull`fonctions reviennent nulles si l’un des opérands ou des arguments est nul, sauf pour la propriété .  
   
- La norme ANSI SQL-92 ne prend pas en charge *ColumnName* = null dans une clause WHERE. Dans SQL Server, l'option ANSI_NULLS contrôle la possibilité de nullité par défaut dans la base de données et l'évaluation des comparaisons par rapport à des valeurs null. Si ANSI_NULLS est activée (par défaut), l'opérateur IS NULL doit être utilisé dans des expressions lors du test des valeurs null. Par exemple, la comparaison suivante entraîne toujours une valeur inconnue si ANSI_NULLS est activée :  
+ La norme ANSI SQL-92 ne prend pas en charge *columnName* = NULL dans une clause WHERE. Dans SQL Server, l’option ANSI_NULLS contrôle à la fois la possibilité de valeur Null par défaut dans la base de données et l’évaluation des comparaisons par rapport aux valeurs Null. Si ANSI_NULLS est activé (valeur par défaut), l’opérateur IS NULL doit être utilisé dans les expressions lors du test des valeurs Null. Par exemple, la comparaison suivante donne toujours un résultat inconnu quand ANSI_NULLS est activé :  
   
 ```sql
 colname > NULL  
 ```  
   
- La comparaison avec une variable contenant une valeur null entraîne également une valeur inconnue :  
+ La comparaison avec une variable contenant une valeur Null génère également Inconnu :  
   
 ```sql
 colname > @MyVariable  
 ```  
   
- Utilisez le prédicat IS NULL ou IS NOT NULL pour tester une valeur null. Cela peut compliquer la clause WHERE. Par exemple, la colonne TerritoryID de la table AdventureWorks Customer autorise les valeurs null. Si une instruction SELECT doit tester des valeurs null en plus des autres, elle doit inclure un prédicat IS NULL :  
+ Utilisez le prédicat IS NULL ou IS NOT NULL pour tester si une valeur est NULL. Ceci peut compliquer encore la clause WHERE. Par exemple, la colonne TerritoryID de la table AdventureWorks Customer autorise les valeurs Null. Si une instruction SELECT doit rechercher des valeurs NULL en plus des autres, elle doit inclure un prédicat IS NULL :  
   
 ```sql
 SELECT CustomerID, AccountNumber, TerritoryID  
@@ -58,59 +58,59 @@ WHERE TerritoryID IN (1, 2, 3)
    OR TerritoryID IS NULL  
 ```  
   
- Si vous désactivez ANSI_NULLS dans SQL Server, vous pouvez créer des expressions qui utilisent l'opérateur d'égalité pour effectuer une comparaison par rapport à une valeur null. Cependant, vous ne pouvez pas empêcher des connexions différentes de définir des options null pour cette connexion. L'utilisation de IS NULL pour tester des valeurs null fonctionne toujours, indépendamment des paramètres ANSI_NULLS pour une connexion.  
+ Si vous désactivez ANSI_NULLS dans SQL Server, vous pouvez créer des expressions qui utilisent l’opérateur d’égalité pour effectuer une comparaison avec la valeur Null. Toutefois, vous ne pouvez pas empêcher des connexions différentes de définir des options Null pour cette connexion. L’utilisation de IS NULL pour tester les valeurs Null fonctionne toujours, quels que soient les paramètres de ANSI_NULLS pour une connexion.  
   
- La désactivation de ANSI_NULLS n'est pas prise en charge dans un `DataSet`, qui respecte toujours la norme ANSI SQL-92 relative à la gestion des valeurs null dans <xref:System.Data.SqlTypes>.  
+ La désactivation de ANSI_NULLS n’est pas prise en charge dans un `DataSet`, qui suit toujours la norme ANSI SQL-92 pour la gestion des valeurs Null dans <xref:System.Data.SqlTypes>.  
   
 ## <a name="assigning-null-values"></a>Assignation de valeurs null  
- Les valeurs null sont spéciales et leurs sémantiques de stockage et d'assignation varient selon les systèmes de types et de stockage. Un `Dataset` est conçu pour être utilisé avec différents systèmes de types et de stockage.  
+ Les valeurs Null sont spéciales et leur sémantique de stockage et d’affectation diffère selon les systèmes de stockage et systèmes de type. Un `Dataset` est conçu pour être utilisé avec différents systèmes de type et de stockage.  
   
- Cette section décrit la sémantique des valeurs null pour l'assignation des valeurs null à un <xref:System.Data.DataColumn> dans un <xref:System.Data.DataRow> dans différents systèmes de types.  
+ Cette section décrit la sémantique Null pour l’affectation de valeurs Null à un <xref:System.Data.DataColumn> dans un <xref:System.Data.DataRow> sur les différents systèmes de type.  
   
  `DBNull.Value`  
- Cette assignation est valide pour un `DataColumn` de n'importe quel type. Si le type implémente `INullable`, `DBNull.Value` est converti dans la valeur null fortement typée appropriée.  
+ Cette affectation est valide pour un `DataColumn` de n’importe quel type. Si le type implémente `INullable`, `DBNull.Value` est forcé dans la valeur Null fortement typée appropriée.  
   
  `SqlType.Null`  
- Tous les types de données <xref:System.Data.SqlTypes> implémentent `INullable`. Si la valeur null fortement typée peut être convertie dans le type données de la colonne à l'aide des opérateurs cast implicites, l'assignation doit continuer. Si tel n'est pas le cas, une exception cast non valide est levée.  
+ Tous les types de données <xref:System.Data.SqlTypes> implémentent `INullable`. Si la valeur Null fortement typée peut être convertie dans le type de données de la colonne à l’aide d’opérateurs de forçage de type implicite, l’affectation doit y être soumise. Sinon, une exception de forçage de type non valide est levée.  
   
  `null`  
- Si 'null' est une valeur autorisée pour le type de données `DataColumn`, elle est convertie en `DbNull.Value` ou `Null` approprié en association avec le type `INullable` (`SqlType.Null`)  
+ Si « Null » est une valeur autorisée pour le type de données `DataColumn` donné, il est converti en `DbNull.Value` approprié ou `Null` associé au type de `INullable` (`SqlType.Null`)  
   
  `derivedUdt.Null`  
- Pour les colonnes UDT, les valeurs null sont toujours stockées en fonction du type associé à `DataColumn`. Considérons le cas d'un UDT associé à un `DataColumn` qui n'implémente pas `INullable` contrairement à sa sous-classe. Dans ce cas, si une valeur null fortement typée associée à la classe dérivée est assignée, elle est stockée en tant que `DbNull.Value` non typé, car le stockage de valeurs null est toujours cohérent avec le type de données de DataColumn.  
+ Pour les colonnes UDT, les valeurs Null sont toujours stockées en fonction du type associé à `DataColumn`. Prenons le cas d’un UDT associé à un `DataColumn` qui n’implémente pas `INullable` alors que sa sous-classe le fait. Dans ce cas, si une valeur Null fortement typée associée à la classe dérivée est attribuée, elle est stockée en tant que `DbNull.Value` non typée, car le stockage Null est toujours cohérent avec le type de données de DataColumn.  
   
 > [!NOTE]
-> La structure `Nullable<T>` ou <xref:System.Nullable> n'est actuellement pas prise en charge dans le `DataSet`.  
+> La structure `Nullable<T>` ou <xref:System.Nullable> n’est pas prise en charge actuellement dans le `DataSet`.  
   
 ### <a name="multiple-column-row-assignment"></a>Assignation de plusieurs colonnes (lignes)  
- `DataTable.Add`, `DataTable.LoadDataRow` ou toute autre API acceptant une propriété <xref:System.Data.DataRow.ItemArray%2A> qui obtient le mappage à une ligne, mappe 'null' à la valeur par défaut de DataColumn. Si un objet du tableau contient `DbNull.Value` ou son équivalent fortement typé, les mêmes règles que celles décrites précédemment s'appliquent.  
+ `DataTable.Add`, `DataTable.LoadDataRow` ou d’autres API acceptant une <xref:System.Data.DataRow.ItemArray%2A> mappée à une ligne, mappez « Null » à la valeur par défaut de DataColumn. Si un objet du tableau contient `DbNull.Value` ou son équivalent fortement typé, les mêmes règles que celles décrites ci-dessus sont appliquées.  
   
- Par ailleurs, les règles suivantes s'appliquent à une instance des assignations null `DataRow.["columnName"]` :  
+ En outre, les règles suivantes s’appliquent à une instance des affectations Null `DataRow.["columnName"]` :  
   
-1. La valeur par *défaut* est `DbNull.Value` pour toutes les colonnes à l’exception des colonnes null fortement typées où il s’agit de la valeur null fortement typée appropriée.  
+1. La valeur par défaut *default* est `DbNull.Value` pour tout, à l’exception des colonnes null fortement typées contenant la valeur null fortement typée appropriée.  
   
-2. Les valeurs null ne sont jamais écrites durant la sérialisation en fichiers XML (comme dans « xsi:nil »).  
+2. Les valeurs Null ne sont jamais écrites lors de la sérialisation vers des fichiers XML (comme dans « xsi:nil »).  
   
-3. Toutes les valeurs non null, y compris les valeurs par défaut, sont toujours écrites durant la sérialisation en XML. Cela est contraire à la sémantique XSD/XML où une valeur null (xsi:nil) est explicite et la valeur par défaut est implicite (s'il n'est pas présent dans XML, un analyseur validant peut l'obtenir d'un schéma XSD associé). Le contraire est vrai pour `DataTable` : une valeur null est implicite et la valeur par défaut est explicite.  
+3. Toutes les valeurs non Null, y compris les valeurs par défaut, sont toujours écrites lors de la sérialisation en XML. Contrairement à la sémantique XSD/XML, où une valeur Null (xsi:nil) est explicite et que la valeur par défaut est implicite (si elle n’est pas présente dans XML, un analyseur de validation peut l’obtenir à partir d’un schéma XSD associé). Le contraire est vrai pour une `DataTable` : une valeur Null est implicite et la valeur par défaut est explicite.  
   
-4. La valeur NULL est assignée à toutes les valeurs de colonne manquantes pour les lignes lues à partir de l'entrée XML. La valeur par défaut de DataColumn est assignée aux lignes créées à l'aide de <xref:System.Data.DataTable.NewRow%2A> ou de méthodes similaires.  
+4. La Valeur Null est attribuée à toutes les valeurs de colonne manquantes pour les lignes lues à partir de l’entrée XML. La valeur par défaut de DataColumn est attribuée aux lignes créées à l’aide de <xref:System.Data.DataTable.NewRow%2A> ou à des méthodes similaires.  
   
-5. La méthode <xref:System.Data.DataRow.IsNull%2A> retourne `true` pour  `DbNull.Value` et `INullable.Null`.  
+5. La méthode <xref:System.Data.DataRow.IsNull%2A> renvoie `true` pour `DbNull.Value` et `INullable.Null`.  
   
 ## <a name="assigning-null-values"></a>Assignation de valeurs null  
- La valeur par défaut pour toute instance <xref:System.Data.SqlTypes> est null.  
+ La valeur par défaut pour toute instance <xref:System.Data.SqlTypes> est Null.  
   
- Les valeurs null dans <xref:System.Data.SqlTypes> sont spécifiques aux types et ne peuvent pas être représentées par une simple valeur, telle que `DbNull`. Utilisez la propriété `IsNull` pour vérifier les valeurs null.  
+ Les valeurs Null dans <xref:System.Data.SqlTypes> sont spécifiques au type et ne peuvent pas être représentées par une valeur unique, telle que `DbNull`. Utilisez la propriété `IsNull` pour vérifier les valeurs Null.  
   
- Les valeurs null peuvent être assignées à un <xref:System.Data.DataColumn> comme illustré dans l'exemple de code suivant. Vous pouvez assigner directement des valeurs null à des variables `SqlTypes` sans lever une exception.  
+ Les valeurs Null peuvent être attribuées à un <xref:System.Data.DataColumn> comme indiqué dans l’exemple de code suivant. Vous pouvez attribuer directement des valeurs Null à des variables `SqlTypes` sans déclencher d’exception.  
   
-### <a name="example"></a>Exemple  
- L'exemple de code suivant crée un <xref:System.Data.DataTable> avec deux colonnes définies comme <xref:System.Data.SqlTypes.SqlInt32> et <xref:System.Data.SqlTypes.SqlString>. Le code ajoute une ligne de valeurs connues, une ligne de valeurs null, puis itère au sein du <xref:System.Data.DataTable>, assignant les valeurs à des variables et affichant la sortie dans la fenêtre de console.  
+### <a name="example"></a> Exemple  
+ L’exemple de code suivant crée une <xref:System.Data.DataTable> avec deux colonnes définies comme <xref:System.Data.SqlTypes.SqlInt32> et <xref:System.Data.SqlTypes.SqlString>. Le code ajoute une ligne de valeurs connues, une ligne de valeurs Null, puis itère au sein de la <xref:System.Data.DataTable>, en attribuant les valeurs aux variables et en affichant le résultat dans la fenêtre de console.  
   
  [!code-csharp[DataWorks SqlTypes.IsNull#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlTypes.IsNull/CS/source.cs#1)]
  [!code-vb[DataWorks SqlTypes.IsNull#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlTypes.IsNull/VB/source.vb#1)]  
   
- Cet exemple affiche les résultats suivants :  
+ Cet exemple produit les résultats suivants :  
   
 ```output
 isColumnNull=False, ID=123, Description=Side Mirror  
@@ -118,14 +118,14 @@ isColumnNull=True, ID=Null, Description=Null
 ```  
   
 ## <a name="comparing-null-values-with-sqltypes-and-clr-types"></a>Comparaison de valeurs null à SqlTypes et des types CLR  
- Lors de la comparaison de valeurs null, il est important de comprendre la différence entre la manière dont la méthode `Equals` évalue les valeurs null dans <xref:System.Data.SqlTypes> et celle dont elle fonctionne avec les types CLR. Toutes les méthodes <xref:System.Data.SqlTypes>`Equals` utilisent des sémantiques de base de données pour évaluer des valeurs null : si au moins une des valeurs est null, la comparaison produit null. Par ailleurs, l'utilisation de la méthode CLR `Equals` sur deux <xref:System.Data.SqlTypes> produira true si les deux sont null. Cela reflète la différence entre l'utilisation d'une méthode d'instance, telle que la méthode CLR `String.Equals`, et l'utilisation d'une méthode statique/partagée, `SqlString.Equals`.  
+ Lors de la comparaison de valeurs Null, il est important de comprendre la différence entre la façon dont la méthode `Equals` évalue les valeurs Null dans les <xref:System.Data.SqlTypes> par rapport à la façon dont elle fonctionne avec les types CLR. Toutes les méthodes <xref:System.Data.SqlTypes>`Equals` utilisent la sémantique de base de données pour évaluer les valeurs Null : si une des valeurs ou les deux sont Null, la comparaison génère la valeur Null. En revanche, l’utilisation de la méthode `Equals` CLR sur deux <xref:System.Data.SqlTypes> produira la valeur true si les deux sont Null. Cela reflète la différence entre l’utilisation d’une méthode d’instance telle que la méthode `String.Equals` CLR et l’utilisation de la méthode statique/partagée, `SqlString.Equals`.  
   
- L'exemple suivant montre la différence de résultats entre les méthodes `SqlString.Equals` et `String.Equals` lorsque chacune passe une paire de valeurs null puis une paire de chaînes vides.  
+ L’exemple suivant illustre la différence de résultats entre la méthode `SqlString.Equals` et la méthode `String.Equals` quand chacun reçoit une paire de valeurs Null, puis une paire de chaînes vides.  
   
  [!code-csharp[DataWorks SqlTypes.CompareNulls#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlTypes.CompareNulls/CS/source.cs#1)]
  [!code-vb[DataWorks SqlTypes.CompareNulls#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlTypes.CompareNulls/VB/source.vb#1)]  
   
- Le code génère la sortie suivante :  
+ Ce code produit la sortie suivante :  
   
 ```output
 SqlString.Equals shared/static method:  
@@ -138,10 +138,10 @@ SqlString.Equals shared/static method:
   Two empty strings=True  
   
 String.Equals instance method:  
-  Two empty strings=True   
+  Two empty strings=True
 ```  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données SQL Server et ADO.NET](sql-server-data-types.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Types de données et ADO.NET de données de serveur SQL](sql-server-data-types.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

@@ -8,61 +8,61 @@ helpviewer_keywords:
 - visual layer [WPF], DrawingVisual objects
 - DrawingVisual objects in visual layer [WPF]
 ms.assetid: 0b4e711d-e640-40cb-81c3-8f5c59909b7d
-ms.openlocfilehash: 4e6fc89b64f7b0acc1a0077708d567eb97e2868e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9d67fbc0d9716c9df3935232c6c7e579b50d55bb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962831"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79148320"
 ---
 # <a name="using-drawingvisual-objects"></a>Utilisation d'objets DrawingVisual
-Cette rubrique fournit une vue d’ensemble de l' <xref:System.Windows.Media.DrawingVisual> utilisation des objets [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans la couche visuelle.  
+Ce sujet donne un aperçu <xref:System.Windows.Media.DrawingVisual> de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] la façon d’utiliser des objets dans la couche visuelle.  
   
-<a name="drawingvisual_object"></a>   
+<a name="drawingvisual_object"></a>
 ## <a name="drawingvisual-object"></a>Objet DrawingVisual  
- <xref:System.Windows.Media.DrawingVisual> Est une classe de dessin légère qui est utilisée pour restituer des formes, des images ou du texte. Cette classe est dite légère, car elle n’assure pas la gestion des dispositions ni des événements, ce qui améliore ses performances. C’est pourquoi, les dessins de ce type sont idéaux pour les arrière-plans et les images clipart.  
+ Il <xref:System.Windows.Media.DrawingVisual> s’agit d’une classe de dessin léger qui est utilisée pour rendre des formes, des images ou du texte. Cette classe est dite légère, car elle n’assure pas la gestion des dispositions ni des événements, ce qui améliore ses performances. C’est pourquoi, les dessins de ce type sont idéaux pour les arrière-plans et les images clipart.  
   
-<a name="drawingvisual_host_container"></a>   
+<a name="drawingvisual_host_container"></a>
 ## <a name="drawingvisual-host-container"></a>Conteneur hôte DrawingVisual  
- Pour pouvoir utiliser <xref:System.Windows.Media.DrawingVisual> des objets, vous devez créer un conteneur hôte pour les objets. L’objet conteneur de l’hôte doit dériver de la <xref:System.Windows.FrameworkElement> classe, qui fournit la prise en charge de la gestion des événements et de la disposition que la <xref:System.Windows.Media.DrawingVisual> classe manque. L’objet de type conteneur hôte n’affiche pas de propriétés visibles, dans la mesure où son but principal est de contenir des objets enfants. Toutefois, la <xref:System.Windows.UIElement.Visibility%2A> propriété du conteneur hôte doit avoir la <xref:System.Windows.Visibility.Visible>valeur; sinon, aucun de ses éléments enfants ne sera visible.  
+ Afin d’utiliser des <xref:System.Windows.Media.DrawingVisual> objets, vous devez créer un conteneur d’hôte pour les objets. L’objet de conteneur <xref:System.Windows.FrameworkElement> hôte doit dériver de la classe, qui fournit le support de mise en page et de gestion d’événements qui manque à la <xref:System.Windows.Media.DrawingVisual> classe. L’objet de type conteneur hôte n’affiche pas de propriétés visibles, dans la mesure où son but principal est de contenir des objets enfants. Toutefois, <xref:System.Windows.UIElement.Visibility%2A> la propriété du conteneur hôte <xref:System.Windows.Visibility.Visible>doit être réglée à ; autrement, aucun de ses éléments enfant ne sera visible.  
   
- Lorsque vous créez un objet de conteneur hôte pour des objets visuels, vous devez stocker les références d’objet visuel <xref:System.Windows.Media.VisualCollection>dans un. Utilisez la <xref:System.Windows.Media.VisualCollection.Add%2A> méthode pour ajouter un objet visuel au conteneur hôte. Dans l’exemple suivant, un objet conteneur hôte est créé et trois objets visuels sont ajoutés à son <xref:System.Windows.Media.VisualCollection>.  
+ Lorsque vous créez un objet de conteneur d’hôte pour les <xref:System.Windows.Media.VisualCollection>objets visuels, vous devez stocker les références d’objets visuels dans un . Utilisez <xref:System.Windows.Media.VisualCollection.Add%2A> la méthode pour ajouter un objet visuel au conteneur hôte. Dans l’exemple suivant, un objet de conteneur d’hôte <xref:System.Windows.Media.VisualCollection>est créé, et trois objets visuels sont ajoutés à son .  
   
  [!code-csharp[DrawingVisualSample#100](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#100)]
  [!code-vb[DrawingVisualSample#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#100)]  
   
 > [!NOTE]
-> Pour consulter l’intégralité de l’exemple de code duquel l’exemple de code précédent a été extrait, référez-vous à la section [Hit Test Using DrawingVisuals Sample](https://go.microsoft.com/fwlink/?LinkID=159994) (Test de positionnement à l’aide d’exemples de DrawingVisuals).  
+> Pour consulter l’intégralité de l’exemple de code duquel l’exemple de code précédent a été extrait, référez-vous à la section [Hit Test Using DrawingVisuals Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Visual%20Layer/DrawingVisual) (Test de positionnement à l’aide d’exemples de DrawingVisuals).  
   
-<a name="creating_drawingvisual_objects"></a>   
+<a name="creating_drawingvisual_objects"></a>
 ## <a name="creating-drawingvisual-objects"></a>Création d'objets DrawingVisual  
- Lorsque vous créez un <xref:System.Windows.Media.DrawingVisual> objet, il n’a pas de contenu de dessin. Vous pouvez ajouter du texte, des graphiques ou du <xref:System.Windows.Media.DrawingContext> contenu d’image en extrayant l’objet et en le dessinant dans celui-ci. Un <xref:System.Windows.Media.DrawingContext> est retourné en appelant la <xref:System.Windows.Media.DrawingVisual.RenderOpen%2A> méthode d’un <xref:System.Windows.Media.DrawingVisual> objet.  
+ Lorsque vous <xref:System.Windows.Media.DrawingVisual> créez un objet, il n’a pas de contenu de dessin. Vous pouvez ajouter du texte, des graphiques ou du <xref:System.Windows.Media.DrawingContext> contenu d’image en récupérant l’objet et en y attirant. A <xref:System.Windows.Media.DrawingContext> est retourné <xref:System.Windows.Media.DrawingVisual.RenderOpen%2A> en appelant <xref:System.Windows.Media.DrawingVisual> la méthode d’un objet.  
   
- Pour dessiner un rectangle dans le <xref:System.Windows.Media.DrawingContext>, utilisez la <xref:System.Windows.Media.DrawingContext.DrawRectangle%2A> méthode de l' <xref:System.Windows.Media.DrawingContext> objet. Il existe des méthodes similaires pour dessiner d’autres types de contenu. Lorsque vous avez terminé de dessiner du contenu <xref:System.Windows.Media.DrawingContext>dans le, <xref:System.Windows.Media.DrawingContext.Close%2A> appelez la méthode pour <xref:System.Windows.Media.DrawingContext> fermer et rendre persistant le contenu.  
+ Pour dessiner un <xref:System.Windows.Media.DrawingContext>rectangle dans <xref:System.Windows.Media.DrawingContext.DrawRectangle%2A> le <xref:System.Windows.Media.DrawingContext> , utilisez la méthode de l’objet. Il existe des méthodes similaires pour dessiner d’autres types de contenu. Lorsque vous avez fini <xref:System.Windows.Media.DrawingContext>de dessiner <xref:System.Windows.Media.DrawingContext.Close%2A> du contenu <xref:System.Windows.Media.DrawingContext> dans le , appelez la méthode pour fermer le et de persister le contenu.  
   
- Dans l’exemple suivant, un <xref:System.Windows.Media.DrawingVisual> objet est créé et un rectangle est dessiné dans son. <xref:System.Windows.Media.DrawingContext>  
+ Dans l’exemple <xref:System.Windows.Media.DrawingVisual> suivant, un objet est créé, <xref:System.Windows.Media.DrawingContext>et un rectangle est entraîné dans son .  
   
  [!code-csharp[DrawingVisualSample#101](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#101)]
  [!code-vb[DrawingVisualSample#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#101)]  
   
-<a name="creating_overrides"></a>   
+<a name="creating_overrides"></a>
 ## <a name="creating-overrides-for-frameworkelement-members"></a>Création de remplacements pour les membres FrameworkElement  
- L’objet de type conteneur hôte est chargé de gérer sa collection d’objets visuels. Cela nécessite que le conteneur hôte implémente les substitutions de membre pour <xref:System.Windows.FrameworkElement> la classe dérivée.  
+ L’objet de type conteneur hôte est chargé de gérer sa collection d’objets visuels. Cela exige que le membre de mise <xref:System.Windows.FrameworkElement> en œuvre du conteneur hôte remplace la classe dérivée.  
   
  La liste suivante décrit les deux membres que vous devez substituer :  
   
-- <xref:System.Windows.FrameworkElement.GetVisualChild%2A>: Retourne un enfant à l’index spécifié de la collection d’éléments enfants.  
+- <xref:System.Windows.FrameworkElement.GetVisualChild%2A>: Renvoie un enfant à l’index spécifié de la collection d’éléments pour enfants.  
   
-- <xref:System.Windows.FrameworkElement.VisualChildrenCount%2A>: Obtient le nombre d’éléments enfants visuels dans cet élément.  
+- <xref:System.Windows.FrameworkElement.VisualChildrenCount%2A>: Obtient le nombre d’éléments visuels de l’enfant dans cet élément.  
   
- Dans l’exemple suivant, les substitutions pour les deux <xref:System.Windows.FrameworkElement> membres sont implémentées.  
+ Dans l’exemple suivant, des <xref:System.Windows.FrameworkElement> dérogations pour les deux membres sont mises en œuvre.  
   
  [!code-csharp[DrawingVisualSample#102](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#102)]
  [!code-vb[DrawingVisualSample#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#102)]  
   
-<a name="providing_hit_testing_support"></a>   
+<a name="providing_hit_testing_support"></a>
 ## <a name="providing-hit-testing-support"></a>Prise en charge du test de positionnement  
- L’objet conteneur hôte peut fournir la gestion des événements même s’il n’affiche pas de propriétés visibles; toutefois <xref:System.Windows.UIElement.Visibility%2A> , sa propriété doit avoir <xref:System.Windows.Visibility.Visible>la valeur. Cela vous permet de créer une routine de gestion des événements pour le conteneur hôte, capable de détecter les événements de la souris, tels que le relâchement du bouton gauche de la souris. La routine de gestion des événements peut ensuite implémenter le test de <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> positionnement en appelant la méthode. Le paramètre de <xref:System.Windows.Media.HitTestResultCallback> la méthode fait référence à une procédure définie par l’utilisateur que vous pouvez utiliser pour déterminer l’action résultante d’un test de positionnement.  
+ L’objet de conteneur hôte peut fournir la manipulation d’événement <xref:System.Windows.UIElement.Visibility%2A> même s’il n’affiche aucune propriété visible, cependant, sa propriété doit être réglée à <xref:System.Windows.Visibility.Visible>. Cela vous permet de créer une routine de gestion des événements pour le conteneur hôte, capable de détecter les événements de la souris, tels que le relâchement du bouton gauche de la souris. La routine de gestion de l’événement <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> peut ensuite mettre en œuvre des tests de frappe en invoquant la méthode. Le paramètre <xref:System.Windows.Media.HitTestResultCallback> de la méthode fait référence à une procédure définie par l’utilisateur que vous pouvez utiliser pour déterminer l’action résultante d’un test à succès.  
   
  Dans l’exemple suivant, la prise en charge du test de positionnement est implémentée pour l’objet de type conteneur hôte et ses enfants.  
   

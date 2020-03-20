@@ -13,12 +13,12 @@ helpviewer_keywords:
 - trace switches, conditional writes based on switches
 - WriteIf method
 ms.assetid: f3a93fa7-1717-467d-aaff-393e5c9828b4
-ms.openlocfilehash: 21df0e8129505e50e6b7f29c4f4f5aea94f380e3
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 9903a0357d1d8ceade21b590fd54c8cab517f134
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217467"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174743"
 ---
 # <a name="how-to-add-trace-statements-to-application-code"></a>Comment : ajouter des instructions de traçage dans le code d'une application
 Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permettant d’écrire la sortie dans des écouteurs : **Write**, **WriteIf**, **WriteLine**, **WriteLineIf**, **Assert** et **Fail**. Ces méthodes peuvent être réparties en deux catégories : **Write**, **WriteLine** et **Fail** émettent toutes la sortie de manière inconditionnelle, tandis que **WriteIf**, **WriteLineIf** et **Assert** testent une condition booléenne, et écrivent ou n’écrivent pas en fonction de la valeur de la condition. **WriteIf** et **WriteLineIf** émettent une sortie si la condition est `true` et **Assert** émet une sortie si la condition est `false`.  
@@ -40,7 +40,7 @@ Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permet
     ```csharp  
     bool errorFlag = false;  
     System.Diagnostics.Trace.WriteLine ("Error in AppendData procedure.");  
-    System.Diagnostics.Trace.WriteLineIf(errorFlag,   
+    System.Diagnostics.Trace.WriteLineIf(errorFlag,
        "Error in AppendData procedure.");  
     ```  
   
@@ -59,7 +59,7 @@ Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permet
   
     ```csharp  
     bool errorFlag = false;  
-    System.Diagnostics.Trace.WriteIf(errorFlag,   
+    System.Diagnostics.Trace.WriteIf(errorFlag,
        "Error in AppendData procedure.");  
     System.Diagnostics.Debug.WriteIf(errorFlag, "Transaction abandoned.");  
     Trace.Write("Invalid value for data request");  
@@ -88,7 +88,7 @@ Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permet
 - <xref:System.Diagnostics.Debug.WriteLineIf%2A?displayProperty=nameWithType>
 - <xref:System.Diagnostics.Trace.WriteIf%2A?displayProperty=nameWithType>
 - <xref:System.Diagnostics.Trace.WriteLineIf%2A?displayProperty=nameWithType>
-- [Suivi et instrumentation d’applications](tracing-and-instrumenting-applications.md)
-- [Guide pratique pour créer, initialiser et configurer des commutateurs de suivi](how-to-create-initialize-and-configure-trace-switches.md)
-- [Commutateurs de suivi](trace-switches.md)
+- [Traçage et instrumentation d'applications](tracing-and-instrumenting-applications.md)
+- [Comment : créer, initialiser et configurer les commutateurs de traçage](how-to-create-initialize-and-configure-trace-switches.md)
+- [Commutateurs de traçage](trace-switches.md)
 - [Écouteurs de suivi](trace-listeners.md)
