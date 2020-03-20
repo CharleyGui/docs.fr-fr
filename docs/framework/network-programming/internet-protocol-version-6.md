@@ -9,10 +9,10 @@ helpviewer_keywords:
 - Internet Protocol version 6
 ms.assetid: e6fa8ebd-010a-4c48-a5ec-a5102c53c06f
 ms.openlocfilehash: 367db4fa4e585d6066009dbd1afacb154829319a
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047875"
 ---
 # <a name="internet-protocol-version-6"></a>Protocole Internet version 6
@@ -42,9 +42,9 @@ Le protocole IPv6 (protocole Internet version 6) est une nouvelle suite de prot
   
 - Authentification et confidentialité intégrées.  
   
- Pour plus d’informations, consultez [Adressage IPv6](ipv6-addressing.md), [Routage IPv6](ipv6-routing.md), [Configuration automatique IPv6](ipv6-auto-configuration.md), [Activation et désactivation d’IPv6](enabling-and-disabling-ipv6.md) et [Guide pratique pour modifier le fichier config de l’ordinateur en vue d’activer la prise en charge IPv6](how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md).  
+ Pour plus d’informations, consultez [Adressage IPv6](ipv6-addressing.md), [Routage IPv6](ipv6-routing.md), [Configuration automatique IPv6](ipv6-auto-configuration.md), [Activation et désactivation d’IPv6](enabling-and-disabling-ipv6.md) et [Guide pratique pour modifier le fichier de configuration de l’ordinateur en vue de la prise en charge d’IPv6](how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md).  
   
-## <a name="references"></a>Références  
+## <a name="references"></a>References  
  Voici une sélection de normes RFC que vous pouvez consulter sur le site web [Internet Engineering Task Force (IETF)](https://www.ietf.org/) :  
   
 - RFC 1287 : Towards the Future Internet Architecture.  

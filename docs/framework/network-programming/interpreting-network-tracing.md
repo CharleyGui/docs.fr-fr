@@ -10,10 +10,10 @@ helpviewer_keywords:
 - includehex
 ms.assetid: ad22b4b8-00af-4778-9cca-cb609ce1f8ff
 ms.openlocfilehash: fd617e152b1e86cc71dd8e3cc8a01f1d2f52c30a
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047904"
 ---
 # <a name="interpreting-network-tracing"></a>Interprétation du traçage réseau
@@ -26,7 +26,7 @@ Quand le traçage réseau est activé, vous pouvez utiliser cette fonctionnalit�
   
  Dans l’exemple précédent, [588] est l’identificateur unique du thread actuel. (4357) et (4387) sont des timestamps qui indiquent le nombre de millisecondes écoulées depuis le démarrage de l’application. Les données après les timestamps montrent l’entrée et la sortie de la méthode **Socket.Send** dans l’application. L’objet qui exécute la méthode **Send** a la valeur 33574638 comme identificateur unique. La trace de sortie de la méthode inclut la valeur de retour (61 dans l’exemple précédent).  
   
- Les traces réseau peuvent capturer le trafic réseau qui transite par votre application à l’aide de protocoles de niveau application comme le protocole HTTP. Ces données sont capturées au format texte et, éventuellement, au format hexadécimal. Les données hexadécimales sont disponibles si vous spécifiez la valeur **includehex** pour l’attribut **tracemode**. (Pour plus d’informations sur cet attribut, consultez [Guide pratique pour configurer le traçage réseau](how-to-configure-network-tracing.md).) L’exemple de trace suivant a été généré avec la valeur **includehex**.  
+ Les traces réseau peuvent capturer le trafic réseau qui transite par votre application à l’aide de protocoles de niveau application comme le protocole HTTP. Ces données sont capturées au format texte et, éventuellement, au format hexadécimal. Les données hexadécimales sont disponibles si vous spécifiez la valeur **includehex** pour l’attribut **tracemode**. (Pour des informations détaillées sur cet attribut, voir [comment configurer le tracé du réseau](how-to-configure-network-tracing.md).) L’exemple suivant trace a été générée en utilisant **includehex**.  
   
  `[1692]   (1142)   00000000 : 47 45 54 20 2F 77 70 61-64 2E 64 61 74 20 48 54 : GET /wpad.dat HT`  
   
@@ -46,6 +46,6 @@ Quand le traçage réseau est activé, vous pouvez utiliser cette fonctionnalit�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Activation du suivi réseau](enabling-network-tracing.md)
+- [Activation du traçage réseau](enabling-network-tracing.md)
 - [Guide pratique pour configurer le traçage réseau](how-to-configure-network-tracing.md)
 - [Traçage réseau dans .NET Framework](network-tracing.md)

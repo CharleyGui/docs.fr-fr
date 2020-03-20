@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Contrôle des versions du service'
+title: 'Procédure : contrôle des versions du service'
 ms.date: 03/30/2017
 ms.assetid: 4287b6b3-b207-41cf-aebe-3b1d4363b098
-ms.openlocfilehash: 5ce9e7fc896f1ebc46dd25777fc629532339cbe2
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 3cd52e1f52a93e408ebed846894cc5686652cc91
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988706"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184843"
 ---
-# <a name="how-to-service-versioning"></a>Procédure : Contrôle des versions du service
+# <a name="how-to-service-versioning"></a>Procédure : contrôle des versions du service
 Cette rubrique présente les étapes de base nécessaires pour créer une configuration de routage qui route les messages vers des versions différentes du même service. Dans cet exemple, les messages sont routés vers deux versions différentes d'un service de calculatrice, `roundingCalc` (v1) et `regularCalc` (v2). Les deux implémentations prennent en charge les mêmes opérations ; toutefois, le service le plus ancien, `roundingCalc`, arrondit tous les calculs à la valeur entière la plus proche avant de les retourner. Une application cliente doit être en mesure d'indiquer s'il faut utiliser le service `regularCalc` plus récent.  
   
 > [!WARNING]
@@ -21,7 +21,7 @@ Cette rubrique présente les étapes de base nécessaires pour créer une config
   
 - Soustraire  
   
-- Multiplication  
+- Multiplier  
   
 - Diviser  
   
@@ -69,7 +69,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
         </client>  
     ```  
   
-2. Définissez les filtres utilisés pour router les messages vers les points de terminaison de destination.  Pour cet exemple, le filtre XPath est utilisé pour détecter la valeur de l’en-tête personnalisé «CalcVer» afin de déterminer la version vers laquelle le message doit être routé. Un filtre XPath est également utilisé pour détecter les messages qui ne contiennent pas l’en-tête «CalcVer». L'exemple suivant définit les filtres et la table d'espace de noms nécessaires.  
+2. Définissez les filtres utilisés pour router les messages vers les points de terminaison de destination.  Pour cet exemple, le filtre XPath est utilisé pour détecter la valeur de l’en-tête personnalisé "CalcVer" pour déterminer à quelle version le message doit être acheminé. Un filtre XPath est également utilisé pour détecter les messages qui ne contiennent pas l’en-tête "CalcVer". L'exemple suivant définit les filtres et la table d'espace de noms nécessaires.  
   
     ```xml  
     <!-- use the namespace table element to define a prefix for our custom namespace-->  
@@ -94,9 +94,9 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
     ```  
   
     > [!NOTE]
-    > Le préfixe d’espace de noms S12 est défini par défaut dans la table d’espace `http://www.w3.org/2003/05/soap-envelope`de noms et représente l’espace de noms.
+    > Le préfixe s12 namespace est défini par défaut dans `http://www.w3.org/2003/05/soap-envelope`le tableau namespace, et représente l’espace nom .
   
-3. Définissez la table de filtres, qui associe chaque filtre à un point de terminaison client. Si le message contient l’en-tête «CalcVer» avec la valeur 1, il sera envoyé au service regularCalc. Si l'en-tête contient la valeur 2, il sera envoyé au service roundingCalc. Si aucun en-tête n'est présent, le message sera routé vers regularCalc.  
+3. Définissez la table de filtres, qui associe chaque filtre à un point de terminaison client. Si le message contient l’en-tête "CalcVer" d’une valeur de 1, il sera envoyé au service régulierCalc. Si l'en-tête contient la valeur 2, il sera envoyé au service roundingCalc. Si aucun en-tête n'est présent, le message sera routé vers regularCalc.  
   
      Les éléments suivants définissent la table de filtres et ajoutent les filtres définis précédemment.  
   
@@ -117,7 +117,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
     </filterTables>  
     ```  
   
-4. Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant illustre l’Association `filterTable1` avec les points de terminaison de service:  
+4. Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant démontre `filterTable1` l’association avec les critères de service :  
   
     ```xml  
     <behaviors>  
@@ -130,7 +130,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
     </behaviors>  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L'intégralité du fichier de configuration est présentée ci-dessous.  
   
 ```xml  
@@ -213,7 +213,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
 </configuration>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L'intégralité de l'application cliente est présentée ci-dessous.  
   
 ```csharp  
@@ -269,7 +269,7 @@ namespace Microsoft.Samples.AdvancedFilters
                     //if they wanted to create the header, go ahead and add it to the outgoing message  
                     if (header != null && (header=="1" || header=="2"))  
                     {  
-                        //create a new header "RoundingCalculator", no specific namespace, and set the value to   
+                        //create a new header "RoundingCalculator", no specific namespace, and set the value to
                         //the value of header.  
                         //the Routing Service will look for this header in order to determine if the message  
                         //should be routed to the RoundingCalculator  

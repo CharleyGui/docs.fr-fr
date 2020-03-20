@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerCallback8 ::D méthode ynamicMethodJITCompilationStarted
+title: ICorProfilerCallback8::DynamicMethodJITCompilationLa méthode
 ms.date: 04/10/2018
 api_name:
 - ICorProfilerCallback8.DynamicMethodJITCompilationStarted
@@ -8,59 +8,57 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-ms.openlocfilehash: 1eaf29e1c93f352facde4af2ee57910783d82e5d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e8b1a243b691d8d5eb364fd16821fd9156505c60
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136462"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177044"
 ---
-# <a name="icorprofilercallback8dynamicmethodjitcompilationstarted-method"></a>ICorProfilerCallback8 ::D méthode ynamicMethodJITCompilationStarted
-[Pris en charge dans le .NET Framework 4,7 et versions ultérieures]  
+# <a name="icorprofilercallback8dynamicmethodjitcompilationstarted-method"></a>ICorProfilerCallback8::DynamicMethodJITCompilationLa méthode
+[Soutenu dans le cadre .NET 4.7 et les versions ultérieures]  
   
-Notifie le profileur chaque fois que la compilation JIT d’une méthode dynamique a démarré.  
+Informe le profileur chaque fois que la compilation JIT d’une méthode dynamique a commencé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT DynamicMethodJITCompilationStarted(  
-     [in]  FunctionID  functionId,   
-     [in]  BOOL        fIsSafeToBlock,   
-     [in]  LPCBYTE     pILHeader,   
-     [in]  LONG        cbILHeader   
+     [in]  FunctionID  functionId,
+     [in]  BOOL        fIsSafeToBlock,
+     [in]  LPCBYTE     pILHeader,
+     [in]  LONG        cbILHeader
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
 [in] `functionId`  
-Identificateur de la fonction en mémoire pour laquelle la compilation JIT est démarrée.   
+L’identifiant de la fonction mémoire pour laquelle la compilation JIT est commencée.
 
-[in] `fIsSafeToBlock`   
-`true` pour indiquer que le blocage peut amener le runtime à attendre que le thread appelant retourne à partir de ce rappel ; `false` pour indiquer que le blocage n’affectera pas le fonctionnement du Runtime.  
+[dans] `fIsSafeToBlock` pour indiquer que le blocage peut faire attendre le temps d’exécution pour que le fil d’appel revienne de ce 
+ `true` rappel; `false` pour indiquer que le blocage n’affectera pas le fonctionnement de l’exécution.  
 
-[in] `pILHeader`    
-Pointeur vers le premier octet de l’en-tête IL de la méthode.   
+[dans] `pILHeader` Un pointeur au premier byte de l’en-tête il de la méthode.
 
-[in] `cbILHeader`    
-Nombre d’octets dans l’en-tête IL. 
+[dans] `cbILHeader` Le nombre d’octets dans l’en-tête de l’IL.
 
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes   
 
-Ce rappel est déclenché chaque fois qu’une méthode dynamique est compilée juste-à-temps. Cela comprend plusieurs stubs IL et méthodes LCG. Son objectif est de fournir aux rédacteurs de profileur suffisamment d’informations pour identifier la méthode compilée pour les utilisateurs.
+Ce rappel est déclenché chaque fois qu’une méthode dynamique est compilée par JIT. Cela comprend divers talons IL et méthodes LCG. Son objectif est de fournir aux auteurs de profileur suffisamment d’informations pour identifier la méthode compilée aux utilisateurs.
 
 > [!NOTE]
-> les valeurs `functionId` ne peuvent pas être utilisées pour la résolution de leurs jetons de métadonnées, car les méthodes dynamiques n’ont pas de métadonnées.
+> `functionId`les valeurs ne peuvent pas être utilisées pour résoudre leurs jetons de métadonnées, parce que les méthodes dynamiques n’ont pas de métadonnées.
 
-Le pointeur de `pILHeader` est valide uniquement pendant le rappel.
+Le `pILHeader` pointeur n’est valable que pendant le rappel.
 
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

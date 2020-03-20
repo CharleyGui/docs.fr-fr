@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b4896b8f-8e97-469c-8089-e72a025661b5
 topic_type:
 - apiref
-ms.openlocfilehash: 778ebf1d4fad0c8703964be88fdc3ff8c033bc28
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e5d4ddd43b27d733a63c2e0dc5e92ffd2ba94a7f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449983"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175432"
 ---
 # <a name="imetadataimportenumtyperefs-method"></a>IMetaDataImport::EnumTypeRefs, méthode
 Énumère les jetons TypeRef définis dans la portée des métadonnées actuelle.  
@@ -29,44 +29,44 @@ ms.locfileid: "74449983"
   
 ```cpp  
 HRESULT EnumTypeRefs (  
-   [in, out] HCORENUM    *phEnum,   
+   [in, out] HCORENUM    *phEnum,
    [out] mdTypeRef       rTypeRefs[],  
-   [in]  ULONG           cMax,   
+   [in]  ULONG           cMax,
    [out] ULONG           *pcTypeRefs  
 );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
+ [dans, dehors] Un pointeur à l’enumérateur. Cela doit être NULL pour le premier appel de cette méthode.  
   
  `rTypeRefs`  
- à Tableau utilisé pour stocker les jetons TypeRef.  
+ [out] Le tableau utilisé pour stocker les jetons TypeRef.  
   
  `cMax`  
  [in] Taille maximale du tableau `rTypeRefs`.  
   
  `pcTypeRefs`  
- à Pointeur vers le nombre de jetons TypeRef retournés dans `rTypeRefs`.  
+ [out] Un pointeur sur le nombre de jetons TypeRef retournés dans `rTypeRefs`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeRefs` retourné avec succès.|  
-|`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTypeRefs` est égal à zéro.|  
+|`S_OK`|`EnumTypeRefs`retourné avec succès.|  
+|`S_FALSE`|Il n’y a pas de jetons à énumérer. Dans ce `pcTypeRefs` cas, c’est zéro.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Un jeton TypeRef représente une référence à un type.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **En-tête:** Cor.h (en)  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
