@@ -10,24 +10,24 @@ helpviewer_keywords:
 - trace element
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
-ms.openlocfilehash: 02fd794eb7b7b7f46f7f7bc4e43036cb4a4758ed
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 7d8a989219d84e8604e767456c84c0092bc73b22
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699182"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79153164"
 ---
-# <a name="trace-element"></a>Élément de > de trace \<
+# <a name="trace-element"></a>\<trace> Élément
 Contient les écouteurs qui collectent, stockent et acheminent les messages de traçage.  
   
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<de trace** >  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<trace>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<trace autoflush="true|false"   
+<trace autoflush="true|false"
        indentsize="indent value"  
        useGlobalLock="true| false"/>  
 ```  
@@ -35,33 +35,33 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### <a name="attributes"></a>Attributes  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`autoflush`|Attribut facultatif.<br /><br /> Spécifie si les écouteurs de la trace vident automatiquement la mémoire tampon de sortie après chaque opération d’écriture.|  
-|`indentsize`|Attribut facultatif.<br /><br /> Spécifie le nombre d’espaces à mettre en retrait.|  
-|`useGlobalLock`|Attribut facultatif.<br /><br /> Indique si le verrouillage global doit être utilisé.|  
+|`autoflush`|Attribut facultatif.<br /><br /> Précise si les auditeurs trace automatiquement rincer le tampon de sortie après chaque opération d’écriture.|  
+|`indentsize`|Attribut facultatif.<br /><br /> Spécifie le nombre d’espaces à en retrait.|  
+|`useGlobalLock`|Attribut facultatif.<br /><br /> Indique si le verrou global doit être utilisé.|  
   
-## <a name="autoflush-attribute"></a>Attribut de vidage automatique  
+## <a name="autoflush-attribute"></a>Attribut autoflush  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|`false`|N’efface pas automatiquement la mémoire tampon de sortie. Il s'agit de la valeur par défaut.|  
-|`true`|Vide automatiquement la mémoire tampon de sortie.|  
+|`false`|Ne chasse pas automatiquement le tampon de sortie. Il s’agit de la valeur par défaut.|  
+|`true`|Rincer automatiquement le tampon de sortie.|  
   
-## <a name="usegloballock-attribute"></a>Attribut useGlobalLock  
+## <a name="usegloballock-attribute"></a>utilisationGlobalLock Attribut  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|`false`|N’utilise pas le verrou global si l’écouteur est thread-safe ; dans le cas contraire, utilise le verrou global.|  
-|`true`|Utilise le verrou global indépendamment du fait que l’écouteur soit thread-safe. Il s'agit de la valeur par défaut.|  
+|`false`|N’utilise pas le verrou global si l’auditeur est sans danger de thread; autrement, utilise le verrou global.|  
+|`true`|Utilise le verrou global indépendamment du fait que l’auditeur soit sans danger pour le thread. Il s’agit de la valeur par défaut.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<listeners>](listeners-element-for-trace.md)|Spécifie un écouteur qui collecte, stocke et achemine des messages.|  
+|[\<auditeurs>](listeners-element-for-trace.md)|Spécifie un auditeur qui recueille, stocke et achemine les messages.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -70,8 +70,8 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l’élément `<trace>` pour ajouter l’écouteur `MyListener` à la collection de `Listeners`. `MyListener` crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. L’attribut `useGlobalLock` est défini sur `false`, ce qui empêche l’utilisation du verrou global si l’écouteur de la trace est thread-safe. L’attribut `autoflush` est défini sur `true`, ce qui entraîne l’écriture de l’écouteur de la trace dans le fichier, que la méthode <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> soit appelée ou non. L’attribut `indentsize` a la valeur 0 (zéro), ce qui amène l’écouteur à mettre en retrait les espaces nuls lorsque la méthode <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> est appelée.  
+## <a name="example"></a> Exemple  
+ L’exemple suivant montre `<trace>` comment utiliser l’élément pour ajouter l’auditeur `MyListener` à la `Listeners` collection. `MyListener`crée un fichier `MyListener.log` qui est nommé et écrit la sortie au fichier. L’attribut `useGlobalLock` est `false`défini à , ce qui provoque la serrure globale de ne pas être utilisé si l’auditeur trace est thread safe. L’attribut `autoflush` est `true`défini à , ce qui provoque l’auditeur <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> trace d’écrire au fichier indépendamment du fait que la méthode est appelée. L’attribut `indentsize` est réglé à 0 (zéro), ce qui provoque <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> l’auditeur à l’auditeur à l’indent zéro espace lorsque la méthode est appelée.  
   
 ```xml  
 <configuration>  
@@ -91,4 +91,4 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
 - <xref:System.Diagnostics.DefaultTraceListener>
 - <xref:System.Diagnostics.TextWriterTraceListener>
 - <xref:System.Diagnostics.EventLogTraceListener>
-- [Schéma des paramètres de trace et de débogage](index.md)
+- [Trace et Debug Paramètres Schema](index.md)

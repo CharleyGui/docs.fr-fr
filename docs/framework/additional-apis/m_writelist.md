@@ -1,5 +1,5 @@
 ---
-title: Connection. m_WriteList Field
+title: Connection.m_WriteList Field
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,16 +10,16 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 235503c1-1d01-4f59-895f-ae2cf15b3345
-ms.openlocfilehash: 22f939d13cceac4d1c0b39e9e8fe20cdc0ab9387
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 6c60831ddf23ce8ac9afcf244383d24732c3ef8b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77214905"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155835"
 ---
-# <a name="connectionm_writelist-field"></a>Connection. m\_champ WriteList
+# <a name="connectionm_writelist-field"></a>Connection.m\_Champ WriteList
 
-`Connection.m_WriteList` est un <xref:System.Collections.ArrayList> d' <xref:System.Net.HttpWebRequest> objets mis en file d’attente pour être envoyés via HTTP.
+`Connection.m_WriteList`est <xref:System.Collections.ArrayList> un <xref:System.Net.HttpWebRequest> des objets qui sont mis en file d’attente pour être envoyé sur HTTP.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -28,14 +28,14 @@ private ArrayList m_WriteList
 ```
 
 > [!WARNING]
-> Le champ `Connection.m_WriteList` est privé et n’est pas destiné à être utilisé directement dans votre code.
-> 
-> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
+> Le `Connection.m_WriteList` champ est privé et n’est pas destiné à être utilisé directement dans votre code.
+>
+> Microsoft ne prend en charge l’utilisation de ce champ dans une application de production en aucune circonstance.
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Net>
+**Espace nom:**<xref:System.Net>
 
-**Assembly :** Système (dans System. dll)
+**Assemblée:** Système (dans System.dll)
 
-**Versions de .NET Framework :** Disponible depuis 2,0.
+**.NET Versions du Cadre:** Disponible depuis 2.0.

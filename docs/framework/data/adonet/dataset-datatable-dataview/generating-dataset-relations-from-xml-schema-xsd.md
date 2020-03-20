@@ -2,53 +2,53 @@
 title: Génération de relations de DataSet à partir du schéma XML (XSD)
 ms.date: 03/30/2017
 ms.assetid: 1c9a1413-c0d2-4447-88ba-9a2b0cbc0aa8
-ms.openlocfilehash: d00f07ee3338941b7de1bb890f71cd3c2d120246
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: feb0be7f66bf0f407e54ef0830c13f0c4a8a6418
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784643"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151128"
 ---
 # <a name="generating-dataset-relations-from-xml-schema-xsd"></a>Génération de relations de DataSet à partir du schéma XML (XSD)
-Dans un objet <xref:System.Data.DataSet>, vous créez une association entre deux ou plusieurs colonnes en établissant une relation parent-enfant. Il existe trois façons de représenter une relation de **DataSet** dans un schéma en langage XSD (XML Schema Definition) :  
+Dans un objet <xref:System.Data.DataSet>, vous créez une association entre deux ou plusieurs colonnes en établissant une relation parent-enfant. Il existe trois façons de représenter une relation **DataSet** dans un schéma de définition XML Schema (XSD) :  
   
 - spécifier des types complexes imbriqués ;  
   
-- Utilisez l’annotation **msdata : Relationship** .  
+- Utilisez l’annotation **msdata:Relation.**  
   
-- Spécifiez un **XS : keyref** sans l’annotation **msdata : ConstraintOnly** .  
+- Spécifier un **xs:keyref** sans la **msdata:ConstraintOnly** annotation.  
   
 ## <a name="nested-complex-types"></a>Types complexes imbriqués  
- Les définitions de types complexes imbriqués dans un schéma indiquent les relations parent-enfant des éléments. Le fragment de schéma XML suivant montre que **OrderDetail** est un élément enfant de l’élément **Order** .  
+ Les définitions de types complexes imbriqués dans un schéma indiquent les relations parent-enfant des éléments. Le fragment XML Schema suivant montre que **OrderDetail** est un élément enfant de l’élément **De l’Ordre.**  
   
 ```xml  
 <xs:element name="Order">  
   <xs:complexType>  
-     <xs:sequence>          
+     <xs:sequence>
        <xs:element name="OrderDetail" />  
-           <xs:complexType>               
+           <xs:complexType>
            </xs:complexType>  
      </xs:sequence>  
   </xs:complexType>  
 </xs:element>  
 ```  
   
- Le processus de mappage de schéma XML crée dans le **DataSet** des tables qui correspondent aux types complexes imbriqués dans le schéma. Il crée également des colonnes supplémentaires qui sont utilisées comme **-** colonnes enfants parentes pour les tables générées. Notez que ces colonnes **-** enfants parentes spécifient des relations, ce qui n’est pas le même que la spécification de contraintes de clé primaire/clé étrangère.  
+ Le processus de cartographie XML Schema crée des tables dans le **DataSet** qui correspondent aux types complexes imbriqués dans le schéma. Il crée également des colonnes**-** supplémentaires qui sont utilisées comme colonnes d’enfant parent pour les tables générées. Notez que**-** ces colonnes d’enfants parents spécifient les relations, ce qui n’est pas la même chose que de spécifier les contraintes clés principales primaires/étrangères.  
   
 ## <a name="msdatarelationship-annotation"></a>Annotation msdata:Relationship  
- L’annotation **msdata : Relationship** vous permet de spécifier explicitement les relations parent-enfant entre les éléments du schéma qui ne sont pas imbriqués. L’exemple suivant illustre la structure de l’élément **Relationship** .  
+ L’annotation **msdata:Relation** vous permet de spécifier explicitement les relations parent-enfant entre les éléments du schéma qui ne sont pas imbriqués. L’exemple suivant montre la structure de l’élément **relationnel.**  
   
 ```xml  
-<msdata:Relationship name="CustOrderRelationship"    
-msdata:parent=""    
-msdata:child=""    
-msdata:parentkey=""    
+<msdata:Relationship name="CustOrderRelationship"
+msdata:parent=""
+msdata:child=""
+msdata:parentkey=""
 msdata:childkey="" />  
 ```  
   
- Les attributs de l’annotation **msdata : Relationship** identifient les éléments impliqués dans la relation parent-enfant, ainsi que les éléments et attributs **ParentKey** et **childkey** impliqués dans la relation. Le processus de mappage utilise ces informations pour générer des tables dans le **jeu de données** et pour créer la relation clé primaire/clé étrangère entre ces tables.  
+ Les attributs de l’annotation **msdata:Relation** identifient les éléments impliqués dans la relation parent-enfant, ainsi que les éléments **parentkey** et **childkey** et les attributs impliqués dans la relation. Le processus de cartographie utilise ces informations pour générer des tableaux dans le **DataSet** et pour créer la principale relation clé clé/étrangère entre ces tables.  
   
- Par exemple, le fragment de schéma suivant spécifie les éléments **Order** et **OrderDetail** au même niveau (non imbriqué). Le schéma spécifie une annotation **msdata : Relationship** , qui spécifie la relation parent-enfant entre ces deux éléments. Dans ce cas, une relation explicite doit être spécifiée à l’aide de l’annotation **msdata : Relationship** .  
+ Par exemple, le fragment de schéma suivant spécifie les éléments **de l’Ordre** et **de l’Ordre à** la même échelle (non imbriqués). Le schéma spécifie une **msdata:Relationship** annotation, qui spécifie la relation parent-enfant entre ces deux éléments. Dans ce cas, une relation explicite doit être spécifiée à l’aide de **l’annotation msdata:Relation.**  
   
 ```xml  
  <xs:element name="MyDataSet" msdata:IsDataSet="true">  
@@ -71,32 +71,32 @@ msdata:childkey="" />
      <xs:appinfo>  
        <msdata:Relationship name="OrdOrdDetailRelation"  
           msdata:parent="Order"  
-          msdata:child="OrderDetail"   
+          msdata:child="OrderDetail"
           msdata:parentkey="OrderNumber"  
           msdata:childkey="OrderNo"/>  
      </xs:appinfo>  
   </xs:annotation>  
 ```  
   
- Le processus de mappage utilise l’élément **Relationship** pour créer une relation parent-enfant entre la colonne **OrderNumber** de la table **Order** et la colonne **OrderNo** de la table **OrderDetail** du **DataSet**. Il ne spécifie que la relation ; il ne spécifie pas automatiquement de contraintes sur les valeurs de ces colonnes comme le font des contraintes de clé primaire/clé étrangère dans des bases de données relationnelles.  
+ Le processus de cartographie utilise **l’élément relationnel** pour créer une relation parent-enfant entre la colonne **OrderNumber** dans le tableau **de l’Ordre** et la colonne **OrderNo** dans le tableau **OrderDetail** dans le **DataSet**. Il ne spécifie que la relation ; il ne spécifie pas automatiquement de contraintes sur les valeurs de ces colonnes comme le font des contraintes de clé primaire/clé étrangère dans des bases de données relationnelles.  
   
 ### <a name="in-this-section"></a>Dans cette section  
  [Mapper les relations implicites entre éléments de schéma imbriqués](map-implicit-relations-between-nested-schema-elements.md)  
- Décrit les contraintes et les relations qui sont créées implicitement dans un **DataSet** lorsque des éléments imbriqués sont rencontrés dans le schéma XML.  
+ Décrit les contraintes et les relations qui sont implicitement créées dans un **ensemble de données** lorsque des éléments imbriqués sont rencontrés dans XML Schema.  
   
  [Mapper les relations spécifiées pour les éléments imbriqués](map-relations-specified-for-nested-elements.md)  
- Décrit comment définir explicitement des relations dans un **DataSet** pour les éléments imbriqués dans le schéma XML.  
+ Décrit comment définir explicitement les relations dans un **DataSet** pour les éléments imbriqués dans XML Schema.  
   
  [Spécifier les relations entre éléments sans imbrication](specify-relations-between-elements-with-no-nesting.md)  
- Décrit comment créer des relations dans un **DataSet** entre des éléments de schéma XML qui ne sont pas imbriqués.  
+ Décrit comment créer des relations dans un **ensemble de données** entre les éléments XML Schema qui ne sont pas imbriqués.  
   
-### <a name="related-sections"></a>Rubriques connexes  
- [Dérivation de la structure relationnelle des DataSets à partir du schéma XML (XSD)](deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
- Décrit la structure relationnelle, ou schéma, d’un **DataSet** créé à partir du schéma en langage XSD (XML Schema Definition).  
+### <a name="related-sections"></a>Sections connexes  
+ [Dérivation de la structure relationnelle des DataSet à partir du schéma XML (XSD)](deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
+ Décrit la structure relationnelle, ou schéma, d’un **DataSet** qui est créé à partir de XML Schema langage de définition (XSD) schéma.  
   
  [Mappage des contraintes de schéma XML (XSD) aux contraintes de DataSet](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- Décrit les éléments de schéma XML utilisés pour créer des contraintes de clé étrangère et uniques dans un **DataSet**.  
+ Décrit les éléments XML Schema utilisés pour créer des contraintes clés uniques et étrangères dans un **DataSet**.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)
