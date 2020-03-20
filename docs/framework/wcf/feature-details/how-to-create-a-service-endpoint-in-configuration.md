@@ -1,19 +1,19 @@
 ---
-title: 'Procédure : créer un point de terminaison de service dans la configuration'
+title: 'Comment : créer un point de terminaison de service dans la configuration.'
 ms.date: 06/16/2016
 ms.assetid: f474e25d-2a27-4f31-84c5-395c442b8e70
-ms.openlocfilehash: 63a40576b805952197cec5af2f89a5dc4b5d3545
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9687d9537d6f166a02b79261743050168f677261
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787645"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184999"
 ---
-# <a name="how-to-create-a-service-endpoint-in-configuration"></a><span data-ttu-id="ba2b5-102">Procédure : créer un point de terminaison de service dans la configuration</span><span class="sxs-lookup"><span data-stu-id="ba2b5-102">How to: Create a Service Endpoint in Configuration</span></span>
-<span data-ttu-id="ba2b5-103">Points de terminaison fournissent aux clients l’accès à la fonctionnalité proposée par un service Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="ba2b5-103">Endpoints provide clients with access to the functionality a Windows Communication Foundation (WCF) service offers.</span></span> <span data-ttu-id="ba2b5-104">Vous pouvez définir un ou plusieurs points de terminaison pour un service en utilisant une combinaison d'adresses de point de terminaison relative et absolue. Si vous ne définissez aucun point de terminaison de service, le runtime vous en fournit automatiquement par défaut.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-104">You can define one or more endpoints for a service by using a combination of relative and absolute endpoint addresses, or if you do not define any service endpoints, the runtime provides some by default for you.</span></span> <span data-ttu-id="ba2b5-105">Cette rubrique montre comment ajouter des points de terminaison en utilisant un fichier de configuration qui contient à la fois des adresses absolues et relatives.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-105">This topic shows how to add endpoints using a configuration file that contain both relative and absolute addresses.</span></span>  
+# <a name="how-to-create-a-service-endpoint-in-configuration"></a><span data-ttu-id="47191-102">Comment : créer un point de terminaison de service dans la configuration.</span><span class="sxs-lookup"><span data-stu-id="47191-102">How to: Create a Service Endpoint in Configuration</span></span>
+<span data-ttu-id="47191-103">Les points de terminaison permettent aux clients d’accéder aux fonctionnalités qu’offre un service de la Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="47191-103">Endpoints provide clients with access to the functionality a Windows Communication Foundation (WCF) service offers.</span></span> <span data-ttu-id="47191-104">Vous pouvez définir un ou plusieurs points de terminaison pour un service en utilisant une combinaison d'adresses de point de terminaison relative et absolue. Si vous ne définissez aucun point de terminaison de service, le runtime vous en fournit automatiquement par défaut.</span><span class="sxs-lookup"><span data-stu-id="47191-104">You can define one or more endpoints for a service by using a combination of relative and absolute endpoint addresses, or if you do not define any service endpoints, the runtime provides some by default for you.</span></span> <span data-ttu-id="47191-105">Cette rubrique montre comment ajouter des points de terminaison en utilisant un fichier de configuration qui contient à la fois des adresses absolues et relatives.</span><span class="sxs-lookup"><span data-stu-id="47191-105">This topic shows how to add endpoints using a configuration file that contain both relative and absolute addresses.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ba2b5-106">Exemple</span><span class="sxs-lookup"><span data-stu-id="ba2b5-106">Example</span></span>  
- <span data-ttu-id="ba2b5-107">La configuration de service suivante spécifie une adresse de base et cinq points de terminaison.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-107">The following service configuration specifies a base address and five endpoints.</span></span>  
+## <a name="example"></a><span data-ttu-id="47191-106"> Exemple</span><span class="sxs-lookup"><span data-stu-id="47191-106">Example</span></span>  
+ <span data-ttu-id="47191-107">La configuration de service suivante spécifie une adresse de base et cinq points de terminaison.</span><span class="sxs-lookup"><span data-stu-id="47191-107">The following service configuration specifies a base address and five endpoints.</span></span>  
   
 ```xml  
 <configuration>  
@@ -69,11 +69,11 @@ ms.locfileid: "61787645"
 </configuration>  
 ```  
   
-## <a name="example"></a><span data-ttu-id="ba2b5-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="ba2b5-108">Example</span></span>  
- <span data-ttu-id="ba2b5-109">L'adresse de base est spécifiée à l'aide de l'élément `add`, sous service/host/baseAddresses, comme illustré dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-109">The base address is specified using the `add` element, under service/host/baseAddresses, as shown in the following sample.</span></span>  
+## <a name="example"></a><span data-ttu-id="47191-108"> Exemple</span><span class="sxs-lookup"><span data-stu-id="47191-108">Example</span></span>  
+ <span data-ttu-id="47191-109">L'adresse de base est spécifiée à l'aide de l'élément `add`, sous service/host/baseAddresses, comme illustré dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="47191-109">The base address is specified using the `add` element, under service/host/baseAddresses, as shown in the following sample.</span></span>  
   
 ```xml  
-<service   
+<service
     name="Microsoft.ServiceModel.Samples.CalculatorService">  
   <host>  
     <baseAddresses>  
@@ -82,17 +82,17 @@ ms.locfileid: "61787645"
   </host>  
 ```  
   
-## <a name="example"></a><span data-ttu-id="ba2b5-110">Exemple</span><span class="sxs-lookup"><span data-stu-id="ba2b5-110">Example</span></span>  
- <span data-ttu-id="ba2b5-111">La première définition de point de terminaison affichée dans l'exemple suivant spécifie une adresse relative, ce qui signifie que l'adresse de point de terminaison est une combinaison de l'adresse de base et de l'adresse relative selon les règles de composition de l'URI (Uniform Resource Identifier).</span><span class="sxs-lookup"><span data-stu-id="ba2b5-111">The first endpoint definition shown in the following sample specifies a relative address, which means the endpoint address is a combination of the base address and the relative address following the rules of Uniform Resource Identifier (URI) composition.</span></span> <span data-ttu-id="ba2b5-112">L'adresse relative est vide (""), donc l'adresse de point de terminaison est la même que l'adresse de base.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-112">The relative address is empty (""), so the endpoint address is the same as the base address.</span></span> <span data-ttu-id="ba2b5-113">L’adresse de point de terminaison réel est `http://localhost:8000/servicemodelsamples/service`.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-113">The actual endpoint address is `http://localhost:8000/servicemodelsamples/service`.</span></span>  
+## <a name="example"></a><span data-ttu-id="47191-110"> Exemple</span><span class="sxs-lookup"><span data-stu-id="47191-110">Example</span></span>  
+ <span data-ttu-id="47191-111">La première définition de point de terminaison affichée dans l'exemple suivant spécifie une adresse relative, ce qui signifie que l'adresse de point de terminaison est une combinaison de l'adresse de base et de l'adresse relative selon les règles de composition de l'URI (Uniform Resource Identifier).</span><span class="sxs-lookup"><span data-stu-id="47191-111">The first endpoint definition shown in the following sample specifies a relative address, which means the endpoint address is a combination of the base address and the relative address following the rules of Uniform Resource Identifier (URI) composition.</span></span> <span data-ttu-id="47191-112">L'adresse relative est vide (""), donc l'adresse de point de terminaison est la même que l'adresse de base.</span><span class="sxs-lookup"><span data-stu-id="47191-112">The relative address is empty (""), so the endpoint address is the same as the base address.</span></span> <span data-ttu-id="47191-113">L’adresse de `http://localhost:8000/servicemodelsamples/service`point de terminaison réelle est .</span><span class="sxs-lookup"><span data-stu-id="47191-113">The actual endpoint address is `http://localhost:8000/servicemodelsamples/service`.</span></span>  
   
 ```xml  
-<endpoint address=""   
+<endpoint address=""
     binding="wsHttpBinding"  
     contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
-## <a name="example"></a><span data-ttu-id="ba2b5-114">Exemple</span><span class="sxs-lookup"><span data-stu-id="ba2b5-114">Example</span></span>  
- <span data-ttu-id="ba2b5-115">La deuxième définition de point de terminaison spécifie également une adresse relative, comme affiché dans l'exemple de configuration suivant.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-115">The second endpoint definition also specifies a relative address, as shown in the following sample configuration.</span></span> <span data-ttu-id="ba2b5-116">L'adresse relative, "test", est ajoutée à l'adresse de base.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-116">The relative address, "test", is appended to the base address.</span></span> <span data-ttu-id="ba2b5-117">L’adresse de point de terminaison réel est `http://localhost:8000/servicemodelsamples/service/test`.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-117">The actual endpoint address is `http://localhost:8000/servicemodelsamples/service/test`.</span></span>  
+## <a name="example"></a><span data-ttu-id="47191-114"> Exemple</span><span class="sxs-lookup"><span data-stu-id="47191-114">Example</span></span>  
+ <span data-ttu-id="47191-115">La deuxième définition de point de terminaison spécifie également une adresse relative, comme affiché dans l'exemple de configuration suivant.</span><span class="sxs-lookup"><span data-stu-id="47191-115">The second endpoint definition also specifies a relative address, as shown in the following sample configuration.</span></span> <span data-ttu-id="47191-116">L'adresse relative, "test", est ajoutée à l'adresse de base.</span><span class="sxs-lookup"><span data-stu-id="47191-116">The relative address, "test", is appended to the base address.</span></span> <span data-ttu-id="47191-117">L’adresse de `http://localhost:8000/servicemodelsamples/service/test`point de terminaison réelle est .</span><span class="sxs-lookup"><span data-stu-id="47191-117">The actual endpoint address is `http://localhost:8000/servicemodelsamples/service/test`.</span></span>  
   
 ```xml  
 <endpoint address="/test"  
@@ -100,8 +100,8 @@ ms.locfileid: "61787645"
     contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
-## <a name="example"></a><span data-ttu-id="ba2b5-118">Exemple</span><span class="sxs-lookup"><span data-stu-id="ba2b5-118">Example</span></span>  
- <span data-ttu-id="ba2b5-119">La troisième définition de point de terminaison spécifie une adresse absolue, comme affiché dans l'exemple de configuration suivant.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-119">The third endpoint definition specifies an absolute address, as shown in the following sample configuration.</span></span> <span data-ttu-id="ba2b5-120">L'adresse de base ne joue aucun rôle dans l'adresse.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-120">The base address plays no role in the address.</span></span> <span data-ttu-id="ba2b5-121">L’adresse de point de terminaison réel est `http://localhost:8001/hello/servicemodelsamples`.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-121">The actual endpoint address is `http://localhost:8001/hello/servicemodelsamples`.</span></span>  
+## <a name="example"></a><span data-ttu-id="47191-118"> Exemple</span><span class="sxs-lookup"><span data-stu-id="47191-118">Example</span></span>  
+ <span data-ttu-id="47191-119">La troisième définition de point de terminaison spécifie une adresse absolue, comme affiché dans l'exemple de configuration suivant.</span><span class="sxs-lookup"><span data-stu-id="47191-119">The third endpoint definition specifies an absolute address, as shown in the following sample configuration.</span></span> <span data-ttu-id="47191-120">L'adresse de base ne joue aucun rôle dans l'adresse.</span><span class="sxs-lookup"><span data-stu-id="47191-120">The base address plays no role in the address.</span></span> <span data-ttu-id="47191-121">L’adresse de `http://localhost:8001/hello/servicemodelsamples`point de terminaison réelle est .</span><span class="sxs-lookup"><span data-stu-id="47191-121">The actual endpoint address is `http://localhost:8001/hello/servicemodelsamples`.</span></span>  
   
 ```xml  
 <endpoint address="http://localhost:8001/hello/servicemodelsamples"  
@@ -109,8 +109,8 @@ ms.locfileid: "61787645"
     contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
-## <a name="example"></a><span data-ttu-id="ba2b5-122">Exemple</span><span class="sxs-lookup"><span data-stu-id="ba2b5-122">Example</span></span>  
- <span data-ttu-id="ba2b5-123">La quatrième adresse de point de terminaison spécifie une adresse absolue et un transport différent - TCP.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-123">The fourth endpoint address specifies an absolute address and a different transport—TCP.</span></span> <span data-ttu-id="ba2b5-124">L'adresse de base ne joue aucun rôle dans l'adresse.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-124">The base address plays no role in the address.</span></span> <span data-ttu-id="ba2b5-125">La véritable adresse de point de terminaison est net.tcp://localhost:9000/servicemodelsamples/service.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-125">The actual endpoint address is net.tcp://localhost:9000/servicemodelsamples/service.</span></span>  
+## <a name="example"></a><span data-ttu-id="47191-122"> Exemple</span><span class="sxs-lookup"><span data-stu-id="47191-122">Example</span></span>  
+ <span data-ttu-id="47191-123">La quatrième adresse de point de terminaison spécifie une adresse absolue et un transport différent - TCP.</span><span class="sxs-lookup"><span data-stu-id="47191-123">The fourth endpoint address specifies an absolute address and a different transport—TCP.</span></span> <span data-ttu-id="47191-124">L'adresse de base ne joue aucun rôle dans l'adresse.</span><span class="sxs-lookup"><span data-stu-id="47191-124">The base address plays no role in the address.</span></span> <span data-ttu-id="47191-125">La véritable adresse de point de terminaison est net.tcp://localhost:9000/servicemodelsamples/service.</span><span class="sxs-lookup"><span data-stu-id="47191-125">The actual endpoint address is net.tcp://localhost:9000/servicemodelsamples/service.</span></span>  
   
 ```xml  
 <endpoint address="net.tcp://localhost:9000/servicemodelsamples/service"  
@@ -118,8 +118,8 @@ ms.locfileid: "61787645"
     contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
-## <a name="example"></a><span data-ttu-id="ba2b5-126">Exemple</span><span class="sxs-lookup"><span data-stu-id="ba2b5-126">Example</span></span>  
- <span data-ttu-id="ba2b5-127">Pour utiliser les points de terminaison par défaut fournis par le runtime, ne spécifiez aucun point de terminaison de service dans le code ou dans le fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-127">To use the default endpoints provided by the runtime, do not specify any service endpoints in either the code or the configuration file.</span></span> <span data-ttu-id="ba2b5-128">Dans cet exemple, le runtime crée les points de terminaison par défaut lors de l'ouverture du service.</span><span class="sxs-lookup"><span data-stu-id="ba2b5-128">In this example, the runtime creates the default endpoints when the service is opened.</span></span> <span data-ttu-id="ba2b5-129">Pour plus d’informations sur les points de terminaison, les liaisons et les comportements par défaut, consultez [Configuration simplifiée](../../../../docs/framework/wcf/simplified-configuration.md) et [Configuration simplifiée pour les services WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span><span class="sxs-lookup"><span data-stu-id="ba2b5-129">For more information about default endpoints, bindings, and behaviors, see [Simplified Configuration](../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="47191-126"> Exemple</span><span class="sxs-lookup"><span data-stu-id="47191-126">Example</span></span>  
+ <span data-ttu-id="47191-127">Pour utiliser les points de terminaison par défaut fournis par le runtime, ne spécifiez aucun point de terminaison de service dans le code ou dans le fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="47191-127">To use the default endpoints provided by the runtime, do not specify any service endpoints in either the code or the configuration file.</span></span> <span data-ttu-id="47191-128">Dans cet exemple, le runtime crée les points de terminaison par défaut lors de l'ouverture du service.</span><span class="sxs-lookup"><span data-stu-id="47191-128">In this example, the runtime creates the default endpoints when the service is opened.</span></span> <span data-ttu-id="47191-129">Pour plus d’informations sur les points de terminaison, les liaisons et les comportements par défaut, consultez [Configuration simplifiée](../../../../docs/framework/wcf/simplified-configuration.md) et [Configuration simplifiée pour les services WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span><span class="sxs-lookup"><span data-stu-id="47191-129">For more information about default endpoints, bindings, and behaviors, see [Simplified Configuration](../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>  
   
 ```xml  
 <configuration>  

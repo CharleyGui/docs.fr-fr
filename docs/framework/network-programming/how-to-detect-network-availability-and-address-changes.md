@@ -1,20 +1,20 @@
 ---
-title: 'Procédure : Détecter la disponibilité réseau et les changements d’adresse'
+title: 'Comment : détecter la disponibilité réseau et les changements d’adresse'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Network
 ms.assetid: d4377115-4a76-4848-ab23-4898d65c771c
 ms.openlocfilehash: 9e265a97d339da59bb9d0af6ab6757e16af00e06
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "70894963"
 ---
-# <a name="how-to-detect-network-availability-and-address-changes"></a><span data-ttu-id="31b31-102">Procédure : Détecter la disponibilité réseau et les changements d’adresse</span><span class="sxs-lookup"><span data-stu-id="31b31-102">How to: Detect Network Availability and Address Changes</span></span>
-<span data-ttu-id="31b31-103">Cet exemple montre comment détecter les modifications de l’adresse réseau d’une interface.</span><span class="sxs-lookup"><span data-stu-id="31b31-103">This sample shows how to detect changes in the network address of an interface.</span></span>  
+# <a name="how-to-detect-network-availability-and-address-changes"></a><span data-ttu-id="ab9ab-102">Comment : détecter la disponibilité réseau et les changements d’adresse</span><span class="sxs-lookup"><span data-stu-id="ab9ab-102">How to: Detect Network Availability and Address Changes</span></span>
+<span data-ttu-id="ab9ab-103">Cet exemple montre comment détecter les modifications de l’adresse réseau d’une interface.</span><span class="sxs-lookup"><span data-stu-id="ab9ab-103">This sample shows how to detect changes in the network address of an interface.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="31b31-104">Exemples</span><span class="sxs-lookup"><span data-stu-id="31b31-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="ab9ab-104"> Exemple</span><span class="sxs-lookup"><span data-stu-id="ab9ab-104">Example</span></span>  
   
 ```csharp
 using System;  
@@ -45,7 +45,7 @@ namespace Examples.Net.AddressChanges
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="31b31-105">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="31b31-105">Compiling the Code</span></span>  
- <span data-ttu-id="31b31-106">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="31b31-106">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="ab9ab-105">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="ab9ab-105">Compiling the Code</span></span>  
+ <span data-ttu-id="ab9ab-106">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="ab9ab-106">This example requires:</span></span>  
   
-- <span data-ttu-id="31b31-107">Références à l’espace de noms **System.Net**.</span><span class="sxs-lookup"><span data-stu-id="31b31-107">References to the **System.Net** namespace.</span></span>
+- <span data-ttu-id="ab9ab-107">Références à l’espace de noms **System.Net**.</span><span class="sxs-lookup"><span data-stu-id="ab9ab-107">References to the **System.Net** namespace.</span></span>

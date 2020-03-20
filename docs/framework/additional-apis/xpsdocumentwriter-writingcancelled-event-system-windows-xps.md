@@ -1,5 +1,5 @@
 ---
-title: XpsDocumentWriter. _WritingCancelled, événement (System. Windows. Xps)
+title: XpsDocumentWriter._WritingCancelled Event (System.Windows.Xps)
 ms.date: 10/17/2017
 api_location:
 - system.printing.dll
@@ -11,27 +11,27 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: c05736e68fa094a0bc408ef76bf62d4fa9898f58
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 79f9d3c4163b05719d2296d30b87a35a4c282212
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524917"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155607"
 ---
-# <a name="xpsdocumentwriter_writingcancelled-event"></a><span data-ttu-id="e7591-102">XpsDocumentWriter. Événement \_WritingCancelled</span><span class="sxs-lookup"><span data-stu-id="e7591-102">XpsDocumentWriter.\_WritingCancelled Event</span></span>
+# <a name="xpsdocumentwriter_writingcancelled-event"></a><span data-ttu-id="df107-102">XpsDocumentWriter. \_WritingCancelled Event (en)</span><span class="sxs-lookup"><span data-stu-id="df107-102">XpsDocumentWriter.\_WritingCancelled Event</span></span>
 
-<span data-ttu-id="e7591-103">Se produit lorsqu’une opération de <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> ou de <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> est annulée.</span><span class="sxs-lookup"><span data-stu-id="e7591-103">Occurs when a <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> or <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> operation is canceled.</span></span> 
+<span data-ttu-id="df107-103">Se produit lorsqu'une opération <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> ou <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> est annulée.</span><span class="sxs-lookup"><span data-stu-id="df107-103">Occurs when a <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> or <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> operation is canceled.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="e7591-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e7591-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="df107-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="df107-104">Syntax</span></span>
 
 ``` csharp
 internal event WritingCancelledEventHandler _WritingCancelled
 ```
 
-## <a name="requirements"></a><span data-ttu-id="e7591-105">spécifications</span><span class="sxs-lookup"><span data-stu-id="e7591-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="df107-105">Spécifications</span><span class="sxs-lookup"><span data-stu-id="df107-105">Requirements</span></span>
 
-<span data-ttu-id="e7591-106">**Espace de noms :** <xref:System.Windows.Xps></span><span class="sxs-lookup"><span data-stu-id="e7591-106">**Namespace:** <xref:System.Windows.Xps></span></span>
+<span data-ttu-id="df107-106">**Espace nom:**<xref:System.Windows.Xps></span><span class="sxs-lookup"><span data-stu-id="df107-106">**Namespace:** <xref:System.Windows.Xps></span></span>
 
-<span data-ttu-id="e7591-107">**Assembly :** System. Printing (dans System. Printing. dll)</span><span class="sxs-lookup"><span data-stu-id="e7591-107">**Assembly:** System.Printing (in system.printing.dll)</span></span>
+<span data-ttu-id="df107-107">**Assemblée:** System.Printing (in system.printing.dll)</span><span class="sxs-lookup"><span data-stu-id="df107-107">**Assembly:** System.Printing (in system.printing.dll)</span></span>
 
-<span data-ttu-id="e7591-108">**Versions de .NET Framework :** Disponible depuis 3,0</span><span class="sxs-lookup"><span data-stu-id="e7591-108">**.NET Framework versions:** Available since 3.0</span></span>
+<span data-ttu-id="df107-108">**.NET Versions du Cadre:** Disponible depuis 3.0</span><span class="sxs-lookup"><span data-stu-id="df107-108">**.NET Framework versions:** Available since 3.0</span></span>
