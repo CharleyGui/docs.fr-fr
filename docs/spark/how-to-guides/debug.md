@@ -4,20 +4,20 @@ description: Découvrez comment déboguer votre application .NET pour Apache Spa
 ms.date: 01/29/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 25f5291c47dc1cdf2668cb077fae7439e330cc1c
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: dac6aed1f7faba7f07b722a6dac0da930ab9ec66
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76919927"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79185806"
 ---
 # <a name="debug-a-net-for-apache-spark-application"></a>Déboguer une application .NET pour Apache Spark
 
-Cette procédure fournit les étapes permettant de déboguer votre application .NET pour Apache Spark sur Windows.
+Cette façon de fournir les étapes pour déboiser votre .NET pour Apache Spark application sur Windows.
 
 ## <a name="debug-your-application"></a>Déboguer votre application
 
-Ouvrez une nouvelle fenêtre d’invite de commandes et exécutez la commande suivante :
+Ouvrez une nouvelle fenêtre d’invite de commande et exécutez la commande suivante :
 
 ```shell
 spark-submit \
@@ -35,22 +35,22 @@ Quand vous exécutez la commande, vous voyez la sortie suivante :
 ***********************************************************************
 ```
 
-En mode débogage, DotnetRunner ne lance pas l’application .NET, mais attend que vous démarriez l’application .NET. Laissez cette fenêtre d’invite de commandes ouverte et démarrez votre application C# .NET par le biais du débogueur pour déboguer votre application. Démarrez votre application .net à l' C# aide d’un débogueur (débogueur[Visual Studio pour Windows/MacOS](https://visualstudio.microsoft.com/vs/) ou [ C# extension du débogueur dans Visual Studio code](https://code.visualstudio.com/Docs/editor/debugging)) pour déboguer votre application.
+En mode débogé, DotnetRunner ne lance pas l’application .NET, mais attend plutôt que vous commenciez l’application .NET. Laissez cette fenêtre d’invitation de commande ouverte et démarrez votre application .NET par le biais de débbugger C pour déboquer votre application. Démarrez votre application .NET avec un débbugger CMD[(Visual Studio Debugger pour Windows/macOS](https://visualstudio.microsoft.com/vs/) ou [C’Debugger Extension in Visual Studio Code](https://code.visualstudio.com/Docs/editor/debugging)) pour déboiser votre application.
 
-## <a name="debug-a-user-defined-function-udf"></a>Déboguer une fonction définie par l’utilisateur (UDF)
+## <a name="debug-a-user-defined-function-udf"></a>Débogé d’une fonction définie par l’utilisateur (UDF)
 
 > [!NOTE]
-> Les fonctions définies par l’utilisateur sont uniquement prises en charge sur Windows avec le débogueur Visual Studio.
+> Les fonctions définies par l’utilisateur ne sont prises en charge que sur Windows avec Visual Studio Debugger.
 
-Avant d’exécuter `spark-submit`, définissez la variable d’environnement suivante :
+Avant `spark-submit`d’exécuter, définissez la variable d’environnement suivante :
 
 ```bat
 set DOTNET_WORKER_DEBUG=1
 ```
 
-Quand vous exécutez votre application Spark, une fenêtre de `Choose Just-In-Time Debugger` s’affiche. Choisissez un débogueur Visual Studio.
+Lorsque vous exécutez votre `Choose Just-In-Time Debugger` application Spark, une fenêtre apparaît. Choisissez un débbugger Visual Studio.
 
-Le débogueur s’arrête à l’emplacement suivant dans [TaskRunner.cs](https://github.com/dotnet/spark/blob/5e9c08b430b4bc56b5f42252c4b73437377afaed/src/csharp/Microsoft.Spark.Worker/TaskRunner.cs#L52):
+Le débbuggeur se cassera à l’endroit suivant dans [TaskRunner.cs](https://github.com/dotnet/spark/blob/5e9c08b430b4bc56b5f42252c4b73437377afaed/src/csharp/Microsoft.Spark.Worker/TaskRunner.cs#L52):
 
 ```csharp
 if (EnvironmentUtils.GetEnvironmentVariableAsBool("DOTNET_WORKER_DEBUG"))
@@ -59,16 +59,16 @@ if (EnvironmentUtils.GetEnvironmentVariableAsBool("DOTNET_WORKER_DEBUG"))
 }
 ```
 
-Accédez au fichier *. cs* contenant l’UDF que vous envisagez de déboguer, puis [définissez un point d’arrêt](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2019). Le point d’arrêt indique `The breakpoint will not currently be hit` car le Worker n’a pas encore chargé l’assembly qui contient la fonction définie par l’employé.
+Naviguez vers le fichier *.cs* qui contient l’UDF que vous prévoyez de déboiffer, et [définissez un point d’arrêt](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2019). Le point d’arrêt dira `The breakpoint will not currently be hit` parce que le travailleur n’a pas chargé l’assemblage qui contient UDF encore.
 
-Appuyez sur `F5` pour continuer votre application et le point d’arrêt sera finalement atteint.
+Frappez `F5` pour continuer votre application et le point d’arrêt sera finalement touché.
 
-> [!NOTE] 
-> La fenêtre choisir le débogueur juste-à-temps s’affiche pour chaque tâche. Pour éviter des fenêtres contextuelles excessives, définissez le nombre d’exécuteurs sur un nombre faible. Par exemple, vous pouvez utiliser l’option **--Master local [1]** pour Spark-submit pour définir le nombre de tâches sur 1, ce qui lance une seule instance du débogueur.
+> [!NOTE]
+> La fenêtre Choisir Juste-à-Temps Debugger apparaît pour chaque tâche. Pour éviter les pop-ups excessifs, définissez le nombre d’exécuteurs à un faible nombre. Par exemple, vous pouvez utiliser **l’option --master local[1]** pour l’étincelle-soumettre pour définir le nombre de tâches à 1, qui lance une seule instance de débbugger.
 
 ## <a name="debug-scala-code"></a>Déboguer du code Scala
 
-Si vous avez besoin de déboguer le code scalaire (`DotnetRunner`, `DotnetBackendHandler`, etc.), vous pouvez utiliser la commande suivante et attacher un débogueur au processus en cours d’exécution à l’aide de [IntelliJ](https://www.jetbrains.com/help/idea/attaching-to-local-process.html):
+Si vous avez besoin de déboguer`DotnetRunner`le `DotnetBackendHandler`code côté Scala (, , etc.), vous pouvez utiliser la commande suivante et attacher un débbugger au processus d’exécution en utilisant [IntelliJ](https://www.jetbrains.com/help/idea/attaching-to-local-process.html):
 
 ```shell
 spark-submit \
@@ -81,7 +81,7 @@ spark-submit \
 
 Après avoir exécuté la commande, attachez un débogueur au processus en cours d’exécution avec [Intellij](https://www.jetbrains.com/help/idea/attaching-to-local-process.html).
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 * [Bien démarrer avec .NET pour Apache Spark](../tutorials/get-started.md)
 * [Déployer une application .NET pour Apache Spark sur Azure HDInsight](../tutorials/hdinsight-deployment.md)

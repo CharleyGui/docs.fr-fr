@@ -1,55 +1,55 @@
 ---
-title: Créer une application .NET pour Apache Spark sur Windows
-description: Apprenez à créer votre application .NET pour Apache Spark sur Windows.
+title: Construire une application .NET pour Apache Spark sur Windows
+description: Découvrez comment construire votre application .NET pour Apache Spark sur Windows.
 ms.date: 01/29/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 640459c8c80b6d798718b89d4965802cdacd6c63
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: cb7154185fc9aa08bc447cb846798995301a6651
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628655"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79185758"
 ---
-# <a name="learn-how-to-build-your-net-for-apache-spark-application-on-windows"></a>Apprenez à créer votre application .NET pour Apache Spark sur Windows
+# <a name="learn-how-to-build-your-net-for-apache-spark-application-on-windows"></a>Apprenez à construire votre application .NET pour Apache Spark sur Windows
 
-Cet article vous apprend à créer votre .NET pour les applications Apache Spark sur Windows.
+Cet article vous apprend à construire votre .NET pour les applications Apache Spark sur Windows.
 
 ## <a name="prerequisites"></a>Conditions préalables requises
 
-Si vous disposez déjà de toutes les conditions préalables suivantes, passez aux étapes de [génération](#build) .
+Si vous avez déjà toutes les conditions préalables suivantes, sautez aux étapes [de construction.](#build)
 
-  1. Télécharger et installer le **[Kit SDK .net Core](https://dotnet.microsoft.com/download/dotnet-core/2.1)** : l’installation du kit de développement logiciel (SDK) ajoute les chaîne d’outils `dotnet` à votre chemin. .NET Core 2,1, 2,2 et 3,1 sont pris en charge.
-  2. Installez **[Visual Studio 2019](https://www.visualstudio.com/downloads/)** (version 16,3 ou ultérieure). La version de la communauté est entièrement gratuite. Lors de la configuration de votre installation, incluez au minimum les composants suivants :
+  1. Téléchargez et installez le **[.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)** - `dotnet` l’installation du SDK ajoutera la chaîne à outils à votre chemin. .NET Core 2.1, 2.2 et 3.1 sont pris en charge.
+  2. Installez **[Visual Studio 2019](https://www.visualstudio.com/downloads/)** (Version 16.3 ou plus tard). La version Communautaire est entièrement gratuite. Lors de la configuration de votre installation, inclure ces composants au minimum:
      * Développement .NET Desktop
        * Tous les composants requis
          * Outils de développement .NET Framework 4.6.1
      * Développement multiplateforme .NET Core
        * Tous les composants requis
-  3. Installez **[Java 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)** . 
-     - Sélectionnez la version appropriée pour votre système d’exploitation. Par exemple, *JDK-8u201-Windows-x64. exe* pour Windows x64 machine.
-     - Installez à l’aide du programme d’installation et vérifiez que vous pouvez exécuter `java` à partir de votre ligne de commande.
-  4. Installez **[Apache Maven 3.6.0 +](https://maven.apache.org/download.cgi)** .
+  3. Installer **[Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)**.
+     - Sélectionnez la version appropriée pour votre système d’exploitation. Par exemple, *jdk-8u201-windows-x64.exe* pour Windows x64 machine.
+     - Installez à l’aide de `java` l’installateur et vérifiez que vous êtes en mesure de courir à partir de votre ligne de commande.
+  4. Installer **[Apache Maven 3.6.0 .](https://maven.apache.org/download.cgi)**
      - Téléchargez [Apache Maven 3.6.0](http://mirror.metrocast.net/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip).
-     - Extrayez-le dans un répertoire local. Par exemple, * C:\bin\apache-Maven-3.6.0\*.
-     - Ajoutez Apache Maven à votre [variable d’environnement PATH](https://www.java.com/en/download/help/path.xml). Par exemple, *C:\bin\apache-Maven-3.6.0\Bin*.
-     - Vérifiez que vous pouvez exécuter `mvn` à partir de votre ligne de commande.
-  5. Installez **[Apache Spark 2.3 +](https://spark.apache.org/downloads.html)** .
-     - Téléchargez [Apache Spark 2.3 +](https://spark.apache.org/downloads.html) et extrayez-le dans un dossier local (par exemple, *C:\bin\spark-2.3.2-bin-hadoop2.7\*) à l’aide de [7-zip](https://www.7-zip.org/). (Les versions Spark prises en charge sont 2,3.* , 2.4.0, 2.4.1, 2.4.3 et 2.4.4)
-     - Ajoutez une [nouvelle variable d’environnement](https://www.java.com/en/download/help/path.xml) `SPARK_HOME`. Par exemple, * C:\bin\spark-2.3.2-bin-hadoop2.7\*.
+     - Extrayez-le dans un répertoire local. Par exemple, 'C:'bin’apache-maven-3.6.0\*.
+     - Ajoutez Apache Maven à votre [variable d’environnement PATH](https://www.java.com/en/download/help/path.xml). Par exemple, *C: 'bin’apache-maven-3.6.0'bin*.
+     - Vérifiez que vous `mvn` êtes en mesure de courir à partir de votre ligne de commande.
+  5. Installez **[Apache Spark 2.3 .](https://spark.apache.org/downloads.html)**
+     - Téléchargez [Apache Spark 2.3 et](https://spark.apache.org/downloads.html) extrait dans un dossier local (par exemple, *C: 'bin’spark-2.3.2-bin-hadoop2.7\*) à l’aide de [7 zip](https://www.7-zip.org/). (Les versions d’étincelles prises en charge sont 2.3.*, 2.4.0, 2.4.1, 2.4.3 et 2.4.4)
+     - Ajouter une nouvelle `SPARK_HOME` [variable d’environnement](https://www.java.com/en/download/help/path.xml) . Par exemple, 'C:'bin’spark-2.3.2-bin-hadoop2.7\*.
 
        ```powershell
-       set SPARK_HOME=C:\bin\spark-2.3.2-bin-hadoop2.7\       
+       set SPARK_HOME=C:\bin\spark-2.3.2-bin-hadoop2.7\
        ```
 
-     - Ajoutez Apache Spark à votre [variable d’environnement PATH](https://www.java.com/en/download/help/path.xml). Par exemple, *C:\bin\spark-2.3.2-bin-hadoop2.7\bin*.
+     - Ajoutez Apache Spark à votre [variable d’environnement PATH](https://www.java.com/en/download/help/path.xml). Par exemple, *C: 'bin’spark-2.3.2-bin-hadoop2.7'bin*.
 
-       ```powershell       
+       ```powershell
        set PATH=%SPARK_HOME%\bin;%PATH%
        ```
-     
-     - Vérifiez que vous pouvez exécuter `spark-shell` à partir de votre ligne de commande.        
-        Exemple de sortie de console :
+
+     - Vérifiez que vous `spark-shell` êtes en mesure de courir à partir de votre ligne de commande.
+        Sortie de la console d’échantillon :
 
         ```
         Welcome to
@@ -69,57 +69,57 @@ Si vous disposez déjà de toutes les conditions préalables suivantes, passez a
 
         </details>
 
-  6. Installez **[winutils](https://github.com/steveloughran/winutils)** .
-     - Téléchargez `winutils.exe` fichier binaire à partir du [référentiel winutils](https://github.com/steveloughran/winutils). Vous devez sélectionner la version de Hadoop avec laquelle la distribution Spark a été compilée. Pour exammple, utilisez Hadoop-2.7.1 pour Spark 2.3.2.
-     - Enregistrez `winutils.exe` fichier binaire dans le répertoire de votre choix. Par exemple, *C:\hadoop\bin*.
-     - Définissez `HADOOP_HOME` pour refléter le répertoire avec winutils. exe (sans bin). Par exemple, à l’aide de la ligne de commande :
+  6. Installer **[WinUtils](https://github.com/steveloughran/winutils)**.
+     - Télécharger `winutils.exe` binaire à partir du [référentiel WinUtils](https://github.com/steveloughran/winutils). Vous devez sélectionner la version de Hadoop la distribution Spark a été compilée avec. Pour l’examen, utilisez hadoop-2.7.1 pour Spark 2.3.2.
+     - Enregistrer `winutils.exe` binaire à un répertoire de votre choix. Par exemple, *C: hadoop-bin*.
+     - Définir `HADOOP_HOME` pour refléter le répertoire avec winutils.exe (sans bac). Par exemple, à l’aide de la ligne de commande :
 
        ```powershell
        set HADOOP_HOME=C:\hadoop
        ```
 
-     - Définissez la variable d’environnement PATH pour inclure `%HADOOP_HOME%\bin`. Par exemple, à l’aide de la ligne de commande :
+     - Définir path variable `%HADOOP_HOME%\bin`de l’environnement pour inclure . Par exemple, à l’aide de la ligne de commande :
 
        ```powershell
        set PATH=%HADOOP_HOME%\bin;%PATH%
        ```
 
-Assurez-vous que vous êtes en mesure d’exécuter `dotnet`, `java`, `mvn`, `spark-shell` à partir de votre ligne de commande avant de passer à la section suivante. Vous avez l’impression d’avoir une meilleure solution ? [Ouvrez un problème](https://github.com/dotnet/spark/issues) et n’hésitez pas à contribuer.
+Assurez-vous que vous `dotnet` `java`êtes `mvn` `spark-shell` en mesure d’exécuter , , à partir de votre ligne de commande avant de passer à la section suivante. Vous pensez qu’il y a une meilleure façon? [Ouvrez un problème](https://github.com/dotnet/spark/issues) et n’hésitez pas à contribuer.
 
 > [!NOTE]
-> Une nouvelle instance de la ligne de commande peut être requise si des variables d’environnement ont été mises à jour.
+> Une nouvelle instance de la ligne de commande peut être nécessaire si des variables de l’environnement ont été mises à jour.
 
 ## <a name="build"></a>Build
 
-Pour le reste de ce guide, vous devez avoir cloné le .NET pour Apache Spark référentiel sur votre machine. Vous pouvez choisir n’importe quel emplacement pour le référentiel cloné. Par exemple, * C:\github\dotnet-Spark\*.
+Pour le reste de ce guide, vous aurez besoin d’avoir cloné le référentiel .NET pour Apache Spark dans votre machine. Vous pouvez choisir n’importe quel emplacement pour le référentiel cloné. Par exemple, 'C:'github’dotnet-spark\*.
 
 ```bash
 git clone https://github.com/dotnet/spark.git C:\github\dotnet-spark
 ```
 
-### <a name="build-net-for-apache-spark-scala-extensions-layer"></a>Build .NET pour Apache Spark couche d’extensions Scala
+### <a name="build-net-for-apache-spark-scala-extensions-layer"></a>Construire .NET pour Apache Spark Scala extensions couche
 
-Lorsque vous soumettez une application .NET, .NET pour Apache Spark a la logique nécessaire écrite en Scala qui informe Apache Spark de la gestion de vos demandes (par exemple, la demande de création d’une nouvelle session Spark, la demande de transfert des données du côté .NET vers JVM, etc.). Cette logique se trouve dans le [.net pour le code source Scala Spark](https://github.com/dotnet/spark/tree/master/src/scala).
+Lorsque vous soumettez une demande .NET, .NET pour Apache Spark a la logique nécessaire écrite dans Scala qui informe Apache Spark comment traiter vos demandes (par exemple, la demande de créer une nouvelle session Spark, demander de transférer des données de côté .NET côté JVM, etc.). Cette logique peut être trouvée dans le [.NET pour Spark Scala Source Code](https://github.com/dotnet/spark/tree/master/src/scala).
 
-Que vous utilisiez .NET Framework ou .NET Core, vous devrez générer le .NET pour la couche d’extension Scala Apache Spark :
+Peu importe si vous utilisez .NET Framework ou .NET Core, vous aurez besoin de construire le .NET pour Apache Spark Scala couche d’extension:
 
 ```powershell
 cd src\scala
-mvn clean package 
+mvn clean package
 ```
 
-Vous devez voir les fichiers jar créés pour les versions Spark prises en charge :
+Vous devriez voir LES créés pour les versions Spark prises en charge :
 
 * `microsoft-spark-2.3.x\target\microsoft-spark-2.3.x-<version>.jar`
 * `microsoft-spark-2.4.x\target\microsoft-spark-2.4.x-<version>.jar`
 
-### <a name="build-the-net-for-spark-sample-applications"></a>Générer les exemples d’applications Spark .NET pour Spark
+### <a name="build-the-net-for-spark-sample-applications"></a>Construire le .NET pour les applications d’échantillons Spark
 
-Cette section explique comment créer les [exemples d’applications](https://github.com/dotnet/spark/tree/master/examples) pour .net pour Apache Spark. Ces étapes vous aideront à comprendre le processus global de création pour n’importe quelle application .NET pour Spark.
+Cette section explique comment construire les [applications d’échantillon](https://github.com/dotnet/spark/tree/master/examples) pour .NET pour Apache Spark. Ces étapes aideront à comprendre le processus global de construction pour n’importe quel .NET pour l’application Spark.
 
 #### <a name="using-visual-studio-for-net-framework"></a>Utilisation de Visual Studio pour .NET Framework
 
-  1. Ouvrez `src\csharp\Microsoft.Spark.sln` dans Visual Studio et générez le projet `Microsoft.Spark.CSharp.Examples` dans le dossier `examples` (cela génère également le projet de liaison .NET). Si vous le souhaitez, vous pouvez écrire votre propre code dans le projet `Microsoft.Spark.Examples` (le’input_file. JSON’dans cet exemple est un fichier JSON avec les données avec lesquelles vous souhaitez créer le tableau) :
+  1. Ouvrez `src\csharp\Microsoft.Spark.sln` en Visual `Microsoft.Spark.CSharp.Examples` Studio et `examples` construisez le projet sous le dossier (ce qui permettra à son tour de construire le projet de liaisons .NET ainsi). Si vous le souhaitez, vous pouvez `Microsoft.Spark.Examples` écrire votre propre code dans le projet (le «input_file.json» dans cet exemple est un fichier json avec les données que vous voulez créer le dataframe avec):
   
       ```csharp
         // Instantiate a session
@@ -138,9 +138,9 @@ Cette section explique comment créer les [exemples d’applications](https://gi
         df.Filter(df["age"] > 21).Show();
       ```
 
-     Une fois la génération réussie, vous verrez les fichiers binaires appropriés produits dans le répertoire de sortie.     
-     Exemple de sortie de console :
-     
+     Une fois la construction réussie, vous verrez les binaires appropriés produits dans le répertoire de sortie.
+     Sortie de la console d’échantillon :
+
       ```powershell
             Directory: C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\net461
 
@@ -159,21 +159,21 @@ Cette section explique comment créer les [exemples d’applications](https://gi
         -a----        3/16/2019  12:00 AM          23552 Microsoft.Spark.Worker.xml
         -a----        3/16/2019  12:00 AM         332363 Microsoft.Spark.xml
         ------------------------------------------- More framework files -------------------------------------
-      ```     
+      ```
 
-#### <a name="using-net-core-cli-for-net-core"></a>Utilisation de CLI .NET Core pour .NET Core
+#### <a name="using-net-core-cli-for-net-core"></a>Utilisation de .NET Core CLI pour .NET Core
 
 > [!NOTE]
-> Nous travaillons actuellement sur l’automatisation des builds .NET Core pour Spark .NET. Jusqu’à présent, nous vous remercions de votre patience en effectuant certaines étapes manuellement.
+> Nous travaillons actuellement sur l’automatisation .NET Core construit pour Spark .NET. Jusque-là, nous apprécions votre patience dans l’exécution de certaines des étapes manuellement.
 
-  1. Générez le Worker :
+  1. Construire le travailleur:
 
       ```powershell
       cd C:\github\dotnet-spark\src\csharp\Microsoft.Spark.Worker\
       dotnet publish -f netcoreapp2.1 -r win10-x64
       ```
-      
-      Exemple de sortie de console :
+
+      Sortie de la console d’échantillon :
 
       ```powershell
       PS C:\github\dotnet-spark\src\csharp\Microsoft.Spark.Worker> dotnet publish -f netcoreapp2.1 -r win10-x64
@@ -185,16 +185,16 @@ Cette section explique comment créer les [exemples d’applications](https://gi
         Microsoft.Spark -> C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark\Debug\netstandard2.0\Microsoft.Spark.dll
         Microsoft.Spark.Worker -> C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.Worker\Debug\netcoreapp2.1\win10-x64\Microsoft.Spark.Worker.dll
         Microsoft.Spark.Worker -> C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.Worker\Debug\netcoreapp2.1\win10-x64\publish\
-      ```    
+      ```
 
-  2. Générez les exemples :
+  2. Construire les échantillons:
 
       ```powershell
       cd C:\github\dotnet-spark\examples\Microsoft.Spark.CSharp.Examples\
       dotnet publish -f netcoreapp2.1 -r win10-x64
       ```
-   
-      Exemple de sortie de console :
+
+      Sortie de la console d’échantillon :
 
       ```powershell
       PS C:\github\dotnet-spark\examples\Microsoft.Spark.CSharp.Examples> dotnet publish -f netcoreapp2.1 -r win10-x64
@@ -206,25 +206,25 @@ Cette section explique comment créer les [exemples d’applications](https://gi
         Microsoft.Spark -> C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark\Debug\netstandard2.0\Microsoft.Spark.dll
         Microsoft.Spark.CSharp.Examples -> C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\netcoreapp2.1\win10-x64\Microsoft.Spark.CSharp.Examples.dll
         Microsoft.Spark.CSharp.Examples -> C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\netcoreapp2.1\win10-x64\publish\
-      ```     
+      ```
 
-## <a name="run-the-net-for-spark-sample-applications"></a>Exécuter les exemples d’applications Spark .NET
+## <a name="run-the-net-for-spark-sample-applications"></a>Exécuter le .NET pour les applications d’échantillons Spark
 
-Une fois que vous avez généré les exemples, vous devez les exécuter à l’aide de `spark-submit` que vous cibliez .NET Framework ou .NET Core. Vérifiez que vous avez suivi la section [conditions préalables](#prerequisites) et que vous avez installé Apache Spark.
+Une fois que vous construisez `spark-submit` les échantillons, les exécuter sera à travers indépendamment du fait que vous ciblez .NET Framework ou .NET Core. Assurez-vous d’avoir suivi la section [préalables](#prerequisites) et installé Apache Spark.
 
-  1. Définissez la variable d’environnement `DOTNET_WORKER_DIR` ou `PATH` pour inclure le chemin d’accès où le fichier binaire `Microsoft.Spark.Worker` a été généré (par exemple, *C:\github\dotnet\spark\artifacts\bin\Microsoft.Spark.Worker\Debug\net461* pour .NET Framework, *C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.Worker\Debug\netcoreapp2.1\win10-x64\publish* pour .net Core) :
+  1. Définissez `DOTNET_WORKER_DIR` `PATH` la variable ou l’environnement pour inclure le chemin où le `Microsoft.Spark.Worker` binaire a été généré (par exemple, *C: 'github’dotnet’sparks’artifacts-microsoft.Spark.Worker’Debug’net461* pour .NET Framework, *C:'github’dotnet-sparks’ts-Microsoft.Spark.Worker’Debug’netcoreapp2.1-win10-x64*
 
       ```powershell
       set DOTNET_WORKER_DIR=C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.Worker\Debug\netcoreapp2.1\win10-x64\publish
       ```
   
-  2. Ouvrez PowerShell et accédez au répertoire dans lequel votre fichier binaire d’application a été généré (par exemple, *C:\github\dotnet\spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\net461* pour .NET Framework, *C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\netcoreapp2.1\win10-x64\publish* pour .net Core) :
+  2. Ouvrez Powershell et rendez-vous à l’annuaire où votre application binaire a été générée (par exemple, *C : 'github’dotnet’spark’artefacts-bin-Microsoft.Spark.CSharp.Examples-Debug-net461* pour .NET Framework, *C:'github’dotnet-spark’artifacts-microsoft.Spark.CSharp.Examples-Debug-netcoreapp2.1-win10-x64 publish.NET* Core)
 
       ```powershell
       cd C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\netcoreapp2.1\win10-x64\publish
       ```
 
-  3. L’exécution de votre application suit la structure de base :
+  3. L’exécution de votre application suit la structure de base :
 
      ```powershell
      spark-submit.cmd `
@@ -235,9 +235,9 @@ Une fois que vous avez généré les exemples, vous devez les exécuter à l’a
        <path-to-your-app-exe> <argument(s)-to-your-app>
      ```
 
-     Voici quelques exemples que vous pouvez exécuter :
+     Voici quelques exemples que vous pouvez exécuter :
 
-     - **[Microsoft. Spark. examples. Sql. batch. Basic](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Batch/Basic.cs)**
+     - **[Microsoft.Spark.Examples.Sql.Batch.Basic Microsoft.Spark.Examples.Sql.Batch.Basic Microsoft.Spark.Examples.Sql.Batch.Basic Microsoft.](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Batch/Basic.cs)**
 
          ```powershell
          spark-submit.cmd `
@@ -247,7 +247,7 @@ Une fois que vous avez généré les exemples, vous devez les exécuter à l’a
          Microsoft.Spark.CSharp.Examples.exe Sql.Batch.Basic %SPARK_HOME%\examples\src\main\resources\people.json
          ```
 
-     - **[Microsoft. Spark. examples. Sql. streaming. StructuredNetworkWordCount](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs)**
+     - **[Microsoft.Spark.Examples.Sql.Streaming.StructuredNetworkWordCount (en anglais seulement)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs)**
 
          ```powershell
          spark-submit.cmd `
@@ -257,7 +257,7 @@ Une fois que vous avez généré les exemples, vous devez les exécuter à l’a
          Microsoft.Spark.CSharp.Examples.exe Sql.Streaming.StructuredNetworkWordCount localhost 9999
          ```
 
-     - **[Microsoft. Spark. examples. Sql. streaming. StructuredKafkaWordCount (Maven accessible)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**
+     - **[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (maven accessible)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**
 
          ```powershell
          spark-submit.cmd `
@@ -268,10 +268,10 @@ Une fois que vous avez généré les exemples, vous devez les exécuter à l’a
          Microsoft.Spark.CSharp.Examples.exe Sql.Streaming.StructuredKafkaWordCount localhost:9092 subscribe test
          ```
 
-     - **[Microsoft. Spark. examples. Sql. streaming. StructuredKafkaWordCount (fichiers jar fournis)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**
+     - **[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (jars fournis)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**
 
          ```powershell
-         spark-submit.cmd 
+         spark-submit.cmd
          --jars path\to\net.jpountz.lz4\lz4-1.3.0.jar,path\to\org.apache.kafka\kafka-clients-0.10.0.1.jar,path\to\org.apache.spark\spark-sql-kafka-0-10_2.11-2.3.2.jar,`path\to\org.slf4j\slf4j-api-1.7.6.jar,path\to\org.spark-project.spark\unused-1.0.0.jar,path\to\org.xerial.snappy\snappy-java-1.1.2.6.jar `
          --class org.apache.spark.deploy.dotnet.DotnetRunner `
          --master local `
