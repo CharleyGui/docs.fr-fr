@@ -11,10 +11,10 @@ helpviewer_keywords:
 - components [.NET Framework], interoperation with unmanaged code
 ms.assetid: ccb68ce7-b0e9-4ffb-839d-03b1cd2c1258
 ms.openlocfilehash: 12183f390a5178f038c6dd2122a72a33e31ae0ee
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73457970"
 ---
 # <a name="interoperating-with-unmanaged-code"></a>Interopération avec du code non managé
@@ -23,18 +23,18 @@ Le .NET Framework assure l’interaction avec les composants COM, les services C
 
 Le code qui s’exécute sous le contrôle du runtime est appelé code managé. Inversement, le code qui s’exécute en dehors du runtime est appelé code non managé. Les composants COM, les interfaces ActiveX et les fonctions API Windows sont des exemples de code non managé.
 
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
 [Exposition de composants COM au .NET Framework](exposing-com-components.md)  
 Explique comment utiliser des composants COM à partir d’applications .NET Framework.
 
-[Exposition de composants .NET Framework à COM](exposing-dotnet-components-to-com.md)  
+[Exposition de composants .NET Framework à COM](exposing-dotnet-components-to-com.md)  
 Explique comment utiliser des composants .NET Framework à partir d’applications COM.
 
 [Consommation de fonctions DLL non managées](consuming-unmanaged-dll-functions.md)  
 Décrit comment appeler des fonctions DLL non managées à l’aide de l’appel de code non managé.
 
-[Marshaling d'interopérabilité](interop-marshaling.md)  
+[Marshaling d’interopérabilité](interop-marshaling.md)  
 Décrit le marshaling de COM Interop et de l’appel de code non managé.
 
 [Guide pratique pour mapper des HRESULT et des exceptions](how-to-map-hresults-and-exceptions.md)  
@@ -55,7 +55,7 @@ Décrit comment COM Interop peut activer des composants sans utiliser le Registr
 [Comment : configurer les composants COM .NET Framework pour l'activation sans inscription](configure-net-framework-based-com-components-for-reg.md)  
 Décrit comment créer un manifeste d’application, puis explique comment créer et incorporer un manifeste de composant.
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
-[Wrappers COM](../../standard/native-interop/com-wrappers.md)  
+[Emballages COM](../../standard/native-interop/com-wrappers.md)  
 Décrit les wrappers fournis par COM Interop.

@@ -1,5 +1,5 @@
 ---
-title: Champ CoreResponseData. m_StatusCode
+title: CoreResponseData.m_StatusCode Champ
 ms.date: 01/29/2018
 topic_type:
 - apiref
@@ -10,16 +10,16 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: 8abe619a57cc61fc3502807f60deccbbd578f382
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: dfed9a748e959f0f751408566c7cbb4d2fa13e3c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740991"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79156071"
 ---
-# <a name="coreresponsedatam_statuscode-field"></a>CoreResponseData. m\_champ StatusCode
+# <a name="coreresponsedatam_statuscode-field"></a>CoreResponseData.m\_StatusCode Field (en)
 
-`CoreResponseData.m_StatusCode` est un <xref:System.Net.HttpStatusCode> contenant l’état de la réponse.
+`CoreResponseData.m_StatusCode`est <xref:System.Net.HttpStatusCode> un contenant l’état de la réponse.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -28,14 +28,14 @@ public HttpStatusCode m_StatusCode
 ```
 
 > [!WARNING]
-> Cette API n’est pas destinée à être utilisée directement dans votre code. Au lieu de cela, vous devez utiliser un <xref:System.Diagnostics.DiagnosticSource> pour raccorder du code réseau. Consultez le [Guide de l’utilisateur DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
-> 
-> Microsoft ne prend pas en charge l’utilisation de cette classe dans une application de production en l’absence de toute circonstance.
+> Cette API n’est pas destinée à être utilisée directement dans votre code. Au lieu de <xref:System.Diagnostics.DiagnosticSource> cela, vous devriez utiliser un code de réseautage pour crocheter. Voir [Le guide de l’utilisateur de DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
+>
+> Microsoft ne prend en charge l’utilisation de cette classe dans une application de production en aucune circonstance.
 
-## <a name="requirements"></a>Configuration requise pour
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Net>
+**Espace nom:**<xref:System.Net>
 
-**Assembly :** Système (dans System. dll)
+**Assemblée:** Système (dans System.dll)
 
-**Versions de .NET Framework :** Disponible depuis 2,0.
+**.NET Versions du Cadre:** Disponible depuis 2.0.

@@ -2,12 +2,12 @@
 title: Utilisation du contexte d'édition ModelItem
 ms.date: 03/30/2017
 ms.assetid: 7f9f1ea5-0147-4079-8eca-be94f00d3aa1
-ms.openlocfilehash: a47cb53e50d221c0ae07cf0841688fe4f8ced7d4
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: e1481d96e39f837d72834222d2839c520e880cc6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988918"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142512"
 ---
 # <a name="using-the-modelitem-editing-context"></a>Utilisation du contexte d'édition ModelItem
 Le contexte d'édition <xref:System.Activities.Presentation.Model.ModelItem> est l'objet que l'application hôte utilise pour communiquer avec le concepteur. <xref:System.Activities.Presentation.EditingContext> expose deux méthodes, <xref:System.Activities.Presentation.EditingContext.Items%2A> et <xref:System.Activities.Presentation.EditingContext.Services%2A>, qui peuvent être utilisées  
@@ -57,8 +57,8 @@ public interface IMyService
     {  
         public IEnumerable<string> GetValues(string DisplayName)  
         {  
-            return new string[]  {   
-                DisplayName + " One",   
+            return new string[]  {
+                DisplayName + " One",
                 DisplayName + " Two",  
                 "Three " + DisplayName  
             } ;  
@@ -87,7 +87,7 @@ protected override void OnModelItemChanged(object newItem)
                 listBox1.ItemsSource = servInstance.GetValues(this.ModelItem.Properties["DisplayName"].ComputedValue.ToString());  
             }  
             );  
-        subscribed = true;   
+        subscribed = true;
     }  
 }  
 ```  
@@ -96,52 +96,52 @@ protected override void OnModelItemChanged(object newItem)
  L'utilisation de la collection Items est similaire à celle de la collection Services, à ceci près que <xref:System.Activities.Presentation.ContextItemManager.SetValue%2A> est utilisé à la place de Publish. Cette collection est plus appropriée pour le partage de données simples entre les concepteurs et l’hôte qu’une fonctionnalité complexe.  
   
 ## <a name="editingcontext-host-items-and-services"></a>Éléments et services de l'hôte EditingContext  
- Le .NET Framework fournit un certain nombre d’éléments intégrés et de services accessibles via le contexte d’édition.  
+ Le cadre .NET fournit un certain nombre d’articles et de services intégrés accessibles dans le contexte de l’édition.  
   
  Éléments :  
   
-- <xref:System.Activities.Presentation.Hosting.AssemblyContextControlItem>: Gère la liste des assemblys locaux référencés qui seront utilisés dans le flux de travail pour les contrôles (tels que l’éditeur d’expressions).  
+- <xref:System.Activities.Presentation.Hosting.AssemblyContextControlItem> : gère la liste d'assemblys locaux référencés qui seront utilisés dans le workflow pour les contrôles (tels que l'éditeur d'expression).  
   
-- <xref:System.Activities.Presentation.Hosting.ReadOnlyState>: Indique si le concepteur est en lecture seule.  
+- <xref:System.Activities.Presentation.Hosting.ReadOnlyState> : indique si le concepteur affiche un état de lecture seule.  
   
-- <xref:System.Activities.Presentation.View.Selection>: Définit la collection d’objets actuellement sélectionnés.  
+- <xref:System.Activities.Presentation.View.Selection> : définit la collection d'objets actuellement sélectionnés.  
   
 - <xref:System.Activities.Presentation.Hosting.WorkflowCommandExtensionItem>:  
   
-- <xref:System.Activities.Presentation.WorkflowFileItem>: Fournit des informations sur le fichier sur lequel la session d’édition actuelle est basée.  
+- <xref:System.Activities.Presentation.WorkflowFileItem> : fournit des informations sur le fichier sur lequel la session d'édition active repose.  
   
- Services :  
+ Services :  
   
-- <xref:System.Activities.Presentation.Model.AttachedPropertiesService>: Autorise l’ajout de propriétés à l’instance actuelle, à <xref:System.Activities.Presentation.Model.AttachedPropertiesService.AddProperty%2A>l’aide de.  
+- <xref:System.Activities.Presentation.Model.AttachedPropertiesService> : permet d'ajouter les propriétés à l'instance actuelle, à l'aide de <xref:System.Activities.Presentation.Model.AttachedPropertiesService.AddProperty%2A>.  
   
-- <xref:System.Activities.Presentation.View.DesignerView>: Autorise l’accès aux propriétés de la zone de dessin du concepteur.  
+- <xref:System.Activities.Presentation.View.DesignerView> : permet d'accéder aux propriétés de la zone de conception.  
   
-- <xref:System.Activities.Presentation.IActivityToolboxService>: Permet de mettre à jour le contenu de la boîte à outils.  
+- <xref:System.Activities.Presentation.IActivityToolboxService> : permet de mettre à jour le contenu de la boîte à outils.  
   
-- <xref:System.Activities.Presentation.Hosting.ICommandService>: Utilisé pour intégrer les commandes du concepteur (telles que le menu contextuel) aux implémentations de service personnalisées.  
+- <xref:System.Activities.Presentation.Hosting.ICommandService> : permet d'intégrer les commandes du concepteur (telles que le menu contextuel) avec les implémentations de service fournies sur demande.  
   
-- <xref:System.Activities.Presentation.Debug.IDesignerDebugView>: Fournit des fonctionnalités pour le débogueur du concepteur.  
+- <xref:System.Activities.Presentation.Debug.IDesignerDebugView> : fournit les fonctionnalités du débogueur du concepteur.  
   
-- <xref:System.Activities.Presentation.View.IExpressionEditorService>: Donne accès à la boîte de dialogue Éditeur d’expressions.  
+- <xref:System.Activities.Presentation.View.IExpressionEditorService> : fournit l'accès à la boîte de dialogue Éditeur d'expressions.  
   
-- <xref:System.Activities.Presentation.IIntegratedHelpService>: Fournit le concepteur avec des fonctionnalités d’aide intégrées.  
+- <xref:System.Activities.Presentation.IIntegratedHelpService> : fournit le concepteur avec une fonctionnalité d'aide.  
   
-- <xref:System.Activities.Presentation.Validation.IValidationErrorService>: Fournit l’accès aux erreurs de <xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A>validation à l’aide de.  
+- <xref:System.Activities.Presentation.Validation.IValidationErrorService> : fournit l'accès aux erreurs de validation à l'aide de <xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A>.  
   
-- <xref:System.Activities.Presentation.IWorkflowDesignerStorageService>: Fournit un service interne pour stocker et récupérer des données. Ce service est utilisé en interne par le .NET Framework et n’est pas destiné à un usage externe.  
+- <xref:System.Activities.Presentation.IWorkflowDesignerStorageService> : fournit un service interne pour stocker et récupérer des données. Ce service est utilisé en interne par le cadre .NET, et n’est pas destiné à un usage externe.  
   
-- <xref:System.Activities.Presentation.IXamlLoadErrorService>: Fournit l’accès à la collection d’erreurs de <xref:System.Activities.Presentation.IXamlLoadErrorService.ShowXamlLoadErrors%2A>chargement XAML à l’aide de.  
+- <xref:System.Activities.Presentation.IXamlLoadErrorService> : fournit l'accès à la collection d'erreurs de chargement XAML à l'aide de <xref:System.Activities.Presentation.IXamlLoadErrorService.ShowXamlLoadErrors%2A>.  
   
-- <xref:System.Activities.Presentation.Services.ModelService>: Utilisé par le concepteur pour interagir avec le modèle du workflow en cours de modification.  
+- <xref:System.Activities.Presentation.Services.ModelService> : permet au concepteur d'interagir avec le modèle du workflow en cours de modification.  
   
-- <xref:System.Activities.Presentation.Model.ModelTreeManager>: Fournit l’accès à la racine de l’arborescence d’éléments <xref:System.Activities.Presentation.Model.ModelItem.Root%2A>de modèle à l’aide de.  
+- <xref:System.Activities.Presentation.Model.ModelTreeManager> : fournit l'accès à la racine de l'arborescence d'éléments de modèle à l'aide de <xref:System.Activities.Presentation.Model.ModelItem.Root%2A>.  
   
-- <xref:System.Activities.Presentation.UndoEngine>: Fournit les fonctionnalités d’annulation et de rétablissement.  
+- <xref:System.Activities.Presentation.UndoEngine> : fournit des fonctionnalités d'annulation et de rétablissement.  
   
-- <xref:System.Activities.Presentation.Services.ViewService>: Mappe des éléments visuels à des éléments de modèle sous-jacents.  
+- <xref:System.Activities.Presentation.Services.ViewService> : mappe les éléments visuels à des éléments de modèles sous-jacents.  
   
-- <xref:System.Activities.Presentation.View.ViewStateService>: Stocke les États d’affichage pour les éléments de modèle.  
+- <xref:System.Activities.Presentation.View.ViewStateService> : stocke des états d'affichage pour les éléments de modèles.  
   
-- <xref:System.Activities.Presentation.View.VirtualizedContainerService>: Utilisé pour personnaliser le comportement de l’interface utilisateur du conteneur virtuel.  
+- <xref:System.Activities.Presentation.View.VirtualizedContainerService> : utilisé pour personnaliser le comportement de l'interface utilisateur du conteneur virtuel.  
   
-- <xref:System.Activities.Presentation.Hosting.WindowHelperService>: Permet d’inscrire et d’annuler l’enregistrement des délégués pour les notifications d’événements. Permet également de définir un propriétaire de la fenêtre.
+- <xref:System.Activities.Presentation.Hosting.WindowHelperService> : permet d'enregistrer et d'annuler l'enregistrement des délégués pour les notifications d'événements. Permet également de définir un propriétaire de la fenêtre.

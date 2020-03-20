@@ -9,10 +9,10 @@ helpviewer_keywords:
 - retargeting changes
 ms.assetid: 8d575722-4fb6-49a2-8a06-f72d62dc3766
 ms.openlocfilehash: 021d22e90ba39a4d01cf7d64588fab2d724b6640
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73457737"
 ---
 # <a name="mitigation-ziparchiveentryfullname-path-separator"></a>Atténuation : Séparateur de chemin ZipArchiveEntry.FullName
@@ -25,8 +25,8 @@ ms.locfileid: "73457737"
   
  L’impact de ce changement sur les fichiers .ZIP qui sont décompressés sur le système d’exploitation Windows par les API dans l’espace de noms <xref:System.IO> du .NET Framework doit être minimal, étant donné que ces API peuvent gérer sans problème aussi bien une barre oblique (« / ») qu’une barre oblique inverse (« \\ ») comme séparateur de chemin.  
   
-## <a name="mitigation"></a>Atténuation  
- Si ce comportement n’est pas souhaitable, vous pouvez choisir de l’annuler en ajoutant un paramètre de configuration pour la section [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) du fichier de configuration de votre application. L’exemple suivant montre la section `<runtime>` et l’option d’annulation.  
+## <a name="mitigation"></a>Limitation des risques  
+ Si ce comportement n’est pas souhaitable, vous pouvez vous [ \<](../configure-apps/file-schema/runtime/runtime-element.md) désinscrier en ajoutant un paramètre de configuration à la section de configuration>de votre fichier de configuration d’application. L’exemple suivant montre la section `<runtime>` et l’option d’annulation.  
   
 ```xml  
 <runtime>  
@@ -34,7 +34,7 @@ ms.locfileid: "73457737"
 </runtime>  
 ```  
   
- De plus, les applications qui ciblent des versions antérieures du .NET Framework mais qui s’exécutent sur .NET Framework 4.6.1 ou les versions ultérieures peuvent accepter ce comportement en ajoutant un paramètre de configuration à la section [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) du fichier de configuration de l’application. L’exemple suivant montre la section `<runtime>` et l’option d’activation.  
+ En outre, les applications qui ciblent les versions précédentes du cadre .NET mais sont en cours d’exécution sur le cadre [ \<](../configure-apps/file-schema/runtime/runtime-element.md) .NET 4.6.1 et les versions ultérieures peuvent opter pour ce comportement en ajoutant un paramètre de configuration à la section de temps d’exécution>du fichier de configuration d’application. L’exemple suivant montre la section `<runtime>` et l’option d’activation.  
   
 ```xml  
 <runtime>  
@@ -44,5 +44,5 @@ ms.locfileid: "73457737"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modifications de reciblage](retargeting-changes-in-the-net-framework-4-6-1.md)
+- [Reciblage des modifications](retargeting-changes-in-the-net-framework-4-6-1.md)
 - [Compatibilité des applications](application-compatibility.md)

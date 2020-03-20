@@ -8,17 +8,17 @@ helpviewer_keywords:
 - unmanaged API reference [.NET Framework]
 ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
 ms.openlocfilehash: f7dd78b889129998dee31a22f5dd23325613b8ea
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73092027"
 ---
 # <a name="unmanaged-api-reference"></a>Informations de référence sur les API non managées
 Cette section contient des informations sur les API non managées qui peuvent être utilisées par les applications associées à du code managé, comme les hôtes de runtime, les compilateurs, les désassembleurs, les obscurcisseurs, les débogueurs et les profileurs.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Types de données communs](common-data-types-unmanaged-api-reference.md)  
+ [Types de données courants](common-data-types-unmanaged-api-reference.md)  
  Répertorie les types de données courants qui sont utilisés, en particulier dans les API de profilage et de débogage non managées.  
   
  [ALink](./alink/index.md)  
@@ -36,7 +36,7 @@ Cette section contient des informations sur les API non managées qui peuvent ê
  [Débogage](./debugging/index.md)  
  Décrit l'API de débogage, qui permet à un débogueur de déboguer du code qui s'exécute dans un environnement CLR (Common Language Runtime).  
   
- [Magasin de symboles de diagnostics](./diagnostics/index.md)  
+ [Magasin de symboles des diagnostics](./diagnostics/index.md)  
  Décrit l'API du magasin de symboles des diagnostics, qui permet à un compilateur de générer des informations de symbole utilisables par un débogueur.  
   
  [Fusion](./fusion/index.md)  
@@ -51,14 +51,14 @@ Cette section contient des informations sur les API non managées qui peuvent ê
  [Profilage](./profiling/index.md)  
  Décrit l'API de profilage, qui permet à un profileur de surveiller l'exécution d'un programme par le CLR.  
   
- [Utilisation de noms forts](./strong-naming/index.md)  
+ [Nommage fort](./strong-naming/index.md)  
  Décrit l'API de nommage fort, qui permet à un client d'administrer la signature par noms forts pour les assemblys.  
 
- [WMI et compteurs de performance](wmi/index.md)  
+ [Compteurs WMI et Performance](wmi/index.md)  
  Décrit les API qui encapsulent des appels aux bibliothèques de Windows Management Instrumentation (WMI).
   
- [Fonctions d’assistance Tlbexp](./tlbexp/index.md)  
+ [Fonctions d'assistance Tlbexp](./tlbexp/index.md)  
  Décrit les deux fonctions et l'interface d'assistance utilisées par l'exportateur de bibliothèques de types (Tlbexp.exe) lors du processus de conversion « assembly vers bibliothèque de types ».  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Guide de développement](../../../docs/framework/development-guide.md)  

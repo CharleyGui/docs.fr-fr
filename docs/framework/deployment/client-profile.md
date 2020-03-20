@@ -10,10 +10,10 @@ helpviewer_keywords:
 - .NET Framework Client Profile
 ms.assetid: f0219919-1f02-4588-8704-327a62fd91f1
 ms.openlocfilehash: 32fc29500a8a2e95b52ba16847020cdb390caceb
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75716572"
 ---
 # <a name="net-framework-client-profile"></a>.NET Framework Client Profile
@@ -30,4 +30,4 @@ ms.locfileid: "75716572"
 - [.NET Framework Client Profile (.NET Framework 4)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc656912%28v=vs.100%29)
 - [Vue d’ensemble du multiciblage Visual Studio](/visualstudio/ide/visual-studio-multi-targeting-overview)
 - [Dépannage des erreurs de ciblage du .NET Framework](/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors)
-- [Guide pratique pour cibler une version du .NET Framework](/visualstudio/ide/visual-studio-multi-targeting-overview)
+- [Comment : Cibler une version du cadre .NET](/visualstudio/ide/visual-studio-multi-targeting-overview)
