@@ -15,58 +15,58 @@ helpviewer_keywords:
 ms.assetid: 1e994de6-4628-459c-b967-b34be1e9fe4f
 topic_type:
 - apiref
-ms.openlocfilehash: 5d985e22ba77053127610445374b8c13ca6b97f1
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3b8fd9876563bace52a6088747d1ca4ed26ea872
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431705"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175809"
 ---
-# <a name="imetadataemitdefinenestedtype-method"></a><span data-ttu-id="e0043-102">IMetaDataEmit::DefineNestedType, méthode</span><span class="sxs-lookup"><span data-stu-id="e0043-102">IMetaDataEmit::DefineNestedType Method</span></span>
-<span data-ttu-id="e0043-103">Crée la signature de métadonnées d’une définition de type, retourne un jeton `mdTypeDef` pour ce type et spécifie que le type défini est un membre du type référencé par le paramètre `tdEncloser`.</span><span class="sxs-lookup"><span data-stu-id="e0043-103">Creates the metadata signature of a type definition, returns an `mdTypeDef` token for that type, and specifies that the defined type is a member of the type referenced by the `tdEncloser` parameter.</span></span>  
+# <a name="imetadataemitdefinenestedtype-method"></a><span data-ttu-id="ae341-102">IMetaDataEmit::DefineNestedType, méthode</span><span class="sxs-lookup"><span data-stu-id="ae341-102">IMetaDataEmit::DefineNestedType Method</span></span>
+<span data-ttu-id="ae341-103">Crée la signature des métadonnées `mdTypeDef` d’une définition de type, renvoie un jeton pour ce type, et spécifie que le type défini est un membre du type référencé par le `tdEncloser` paramètre.</span><span class="sxs-lookup"><span data-stu-id="ae341-103">Creates the metadata signature of a type definition, returns an `mdTypeDef` token for that type, and specifies that the defined type is a member of the type referenced by the `tdEncloser` parameter.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e0043-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e0043-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ae341-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ae341-104">Syntax</span></span>  
   
 ```cpp  
-HRESULT DefineNestedType (   
+HRESULT DefineNestedType (
     [in]  LPCWSTR     szTypeDef,  
-    [in]  DWORD       dwTypeDefFlags,   
-    [in]  mdToken     tkExtends,   
-    [in]  mdToken     rtkImplements[],   
-    [in]  mdTypeDef   tdEncloser,   
+    [in]  DWORD       dwTypeDefFlags,
+    [in]  mdToken     tkExtends,
+    [in]  mdToken     rtkImplements[],
+    [in]  mdTypeDef   tdEncloser,
     [out] mdTypeDef   *ptd  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e0043-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="e0043-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="ae341-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="ae341-105">Parameters</span></span>  
  `szTypeDef`  
- <span data-ttu-id="e0043-106">dans Nom du type en Unicode.</span><span class="sxs-lookup"><span data-stu-id="e0043-106">[in] The name of the type in Unicode.</span></span>  
+ <span data-ttu-id="ae341-106">[dans] Le nom du type dans Unicode.</span><span class="sxs-lookup"><span data-stu-id="ae341-106">[in] The name of the type in Unicode.</span></span>  
   
  `dwTypeDefFlags`  
- <span data-ttu-id="e0043-107">[in] attributs `TypeDef`.</span><span class="sxs-lookup"><span data-stu-id="e0043-107">[in] `TypeDef` attributes.</span></span> <span data-ttu-id="e0043-108">Il s’agit d’un masque de ré`CorTypeAttr` valeurs.</span><span class="sxs-lookup"><span data-stu-id="e0043-108">This is a bitmask of `CorTypeAttr` values.</span></span>  
+ <span data-ttu-id="ae341-107">[dans] `TypeDef` attributs.</span><span class="sxs-lookup"><span data-stu-id="ae341-107">[in] `TypeDef` attributes.</span></span> <span data-ttu-id="ae341-108">C’est un peu `CorTypeAttr` de valeur.</span><span class="sxs-lookup"><span data-stu-id="ae341-108">This is a bitmask of `CorTypeAttr` values.</span></span>  
   
  `tkExtends`  
- <span data-ttu-id="e0043-109">dans Jeton de la classe de base.</span><span class="sxs-lookup"><span data-stu-id="e0043-109">[in] The token of the base class.</span></span> <span data-ttu-id="e0043-110">Il s’agit soit d’un `mdTypeDef`, soit d’un jeton `mdTypeRef`.</span><span class="sxs-lookup"><span data-stu-id="e0043-110">This is either a `mdTypeDef` or a `mdTypeRef` token.</span></span>  
+ <span data-ttu-id="ae341-109">[dans] Le jeton de la classe de base.</span><span class="sxs-lookup"><span data-stu-id="ae341-109">[in] The token of the base class.</span></span> <span data-ttu-id="ae341-110">C’est `mdTypeDef` soit `mdTypeRef` un ou un jeton.</span><span class="sxs-lookup"><span data-stu-id="ae341-110">This is either a `mdTypeDef` or a `mdTypeRef` token.</span></span>  
   
- <span data-ttu-id="e0043-111">`rtkImplements`[]</span><span class="sxs-lookup"><span data-stu-id="e0043-111">`rtkImplements`[]</span></span>  
- <span data-ttu-id="e0043-112">dans Tableau de jetons qui spécifient les interfaces implémentées par cette classe ou cette interface.</span><span class="sxs-lookup"><span data-stu-id="e0043-112">[in] An array of tokens that specify the interfaces that this class or interface implements.</span></span>  
+ <span data-ttu-id="ae341-111">`rtkImplements`[]</span><span class="sxs-lookup"><span data-stu-id="ae341-111">`rtkImplements`[]</span></span>  
+ <span data-ttu-id="ae341-112">[dans] Une gamme de jetons qui spécifient les interfaces que cette classe ou interface implémente.</span><span class="sxs-lookup"><span data-stu-id="ae341-112">[in] An array of tokens that specify the interfaces that this class or interface implements.</span></span>  
   
  `tdEncloser`  
- <span data-ttu-id="e0043-113">dans Jeton du type englobant.</span><span class="sxs-lookup"><span data-stu-id="e0043-113">[in] The token of the enclosing type.</span></span> <span data-ttu-id="e0043-114">Le dernier élément du tableau doit être `mdTokenNil`.</span><span class="sxs-lookup"><span data-stu-id="e0043-114">The last element of the array must be `mdTokenNil`.</span></span>  
+ <span data-ttu-id="ae341-113">[dans] Le jeton du type d’enclos.</span><span class="sxs-lookup"><span data-stu-id="ae341-113">[in] The token of the enclosing type.</span></span> <span data-ttu-id="ae341-114">Le dernier élément du `mdTokenNil`tableau doit être .</span><span class="sxs-lookup"><span data-stu-id="ae341-114">The last element of the array must be `mdTokenNil`.</span></span>  
   
  `ptd`  
- <span data-ttu-id="e0043-115">à Jeton `mdTypeDef` assigné.</span><span class="sxs-lookup"><span data-stu-id="e0043-115">[out] The `mdTypeDef` token assigned.</span></span>  
+ <span data-ttu-id="ae341-115">[out] Le `mdTypeDef` jeton assigné.</span><span class="sxs-lookup"><span data-stu-id="ae341-115">[out] The `mdTypeDef` token assigned.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e0043-116">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="e0043-116">Requirements</span></span>  
- <span data-ttu-id="e0043-117">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e0043-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ae341-116">Spécifications</span><span class="sxs-lookup"><span data-stu-id="ae341-116">Requirements</span></span>  
+ <span data-ttu-id="ae341-117">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ae341-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e0043-118">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="e0043-118">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="ae341-118">**En-tête:** Cor.h (en)</span><span class="sxs-lookup"><span data-stu-id="ae341-118">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="e0043-119">**Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="e0043-119">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="ae341-119">**Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="ae341-119">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="e0043-120">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e0043-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="ae341-120">**.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ae341-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e0043-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e0043-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ae341-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ae341-121">See also</span></span>
 
-- [<span data-ttu-id="e0043-122">IMetaDataEmit, interface</span><span class="sxs-lookup"><span data-stu-id="e0043-122">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="e0043-123">IMetaDataEmit2, interface</span><span class="sxs-lookup"><span data-stu-id="e0043-123">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="ae341-122">IMetaDataEmit, interface</span><span class="sxs-lookup"><span data-stu-id="ae341-122">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="ae341-123">IMetaDataEmit2, interface</span><span class="sxs-lookup"><span data-stu-id="ae341-123">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

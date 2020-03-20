@@ -15,42 +15,42 @@ helpviewer_keywords:
 ms.assetid: 025e358c-448f-4423-a2f2-57acf437c8a5
 topic_type:
 - apiref
-ms.openlocfilehash: 3a628aec0823c5db07d31d33813a020606906163
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0c112819ef3bc4f9a7146ee80f55202ff89d689a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438124"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178318"
 ---
-# <a name="isymunmanagedwriter3openmethod2-method"></a><span data-ttu-id="a1982-102">ISymUnmanagedWriter3::OpenMethod2, méthode</span><span class="sxs-lookup"><span data-stu-id="a1982-102">ISymUnmanagedWriter3::OpenMethod2 Method</span></span>
-<span data-ttu-id="a1982-103">Ouvre une méthode et fournit son décalage de section réel dans l’image.</span><span class="sxs-lookup"><span data-stu-id="a1982-103">Opens a method and provides its real section offset in the image.</span></span>  
+# <a name="isymunmanagedwriter3openmethod2-method"></a><span data-ttu-id="fe6b9-102">ISymUnmanagedWriter3::OpenMethod2, méthode</span><span class="sxs-lookup"><span data-stu-id="fe6b9-102">ISymUnmanagedWriter3::OpenMethod2 Method</span></span>
+<span data-ttu-id="fe6b9-103">Ouvre une méthode et fournit sa section réelle compensée dans l’image.</span><span class="sxs-lookup"><span data-stu-id="fe6b9-103">Opens a method and provides its real section offset in the image.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a1982-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a1982-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="fe6b9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fe6b9-104">Syntax</span></span>  
   
 ```cpp  
-HRESULT OpenMethod2(   
+HRESULT OpenMethod2(
     [in] mdMethodDef method,  
     [in] ULONG32 isect,  
     [in] ULONG32 offset);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="a1982-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="a1982-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="fe6b9-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="fe6b9-105">Parameters</span></span>  
  `method`  
- <span data-ttu-id="a1982-106">dans Jeton de métadonnées de la méthode à ouvrir.</span><span class="sxs-lookup"><span data-stu-id="a1982-106">[in] The metadata token for the method to be opened.</span></span>  
+ <span data-ttu-id="fe6b9-106">[dans] Les métadonnées symboliques pour l’ouverture de la méthode.</span><span class="sxs-lookup"><span data-stu-id="fe6b9-106">[in] The metadata token for the method to be opened.</span></span>  
   
  `isect`  
- <span data-ttu-id="a1982-107">dans Décalage de la section dans l’image.</span><span class="sxs-lookup"><span data-stu-id="a1982-107">[in] The section offset in the image.</span></span>  
+ <span data-ttu-id="fe6b9-107">[dans] La section compensée dans l’image.</span><span class="sxs-lookup"><span data-stu-id="fe6b9-107">[in] The section offset in the image.</span></span>  
   
  `offset`  
- <span data-ttu-id="a1982-108">dans Décalage dans l’image.</span><span class="sxs-lookup"><span data-stu-id="a1982-108">[in] The offset in the image.</span></span>  
+ <span data-ttu-id="fe6b9-108">[dans] Le décalage dans l’image.</span><span class="sxs-lookup"><span data-stu-id="fe6b9-108">[in] The offset in the image.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="a1982-109">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="a1982-109">Return Value</span></span>  
- <span data-ttu-id="a1982-110">S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="a1982-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="fe6b9-109">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="fe6b9-109">Return Value</span></span>  
+ <span data-ttu-id="fe6b9-110">S_OK si la méthode réussit; autrement, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="fe6b9-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a1982-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="a1982-111">Requirements</span></span>  
- <span data-ttu-id="a1982-112">**En-tête :** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="a1982-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="fe6b9-111">Spécifications</span><span class="sxs-lookup"><span data-stu-id="fe6b9-111">Requirements</span></span>  
+ <span data-ttu-id="fe6b9-112">**En-tête:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="fe6b9-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a1982-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a1982-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fe6b9-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fe6b9-113">See also</span></span>
 
-- [<span data-ttu-id="a1982-114">ISymUnmanagedWriter3, interface</span><span class="sxs-lookup"><span data-stu-id="a1982-114">ISymUnmanagedWriter3 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)
-- [<span data-ttu-id="a1982-115">OpenMethod, méthode</span><span class="sxs-lookup"><span data-stu-id="a1982-115">OpenMethod Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)
+- [<span data-ttu-id="fe6b9-114">ISymUnmanagedWriter3, interface</span><span class="sxs-lookup"><span data-stu-id="fe6b9-114">ISymUnmanagedWriter3 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)
+- [<span data-ttu-id="fe6b9-115">OpenMethod, méthode</span><span class="sxs-lookup"><span data-stu-id="fe6b9-115">OpenMethod Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)

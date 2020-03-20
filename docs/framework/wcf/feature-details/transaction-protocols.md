@@ -2,146 +2,146 @@
 title: Protocoles de transaction
 ms.date: 03/30/2017
 ms.assetid: 2820b0ec-2f32-430c-b299-1f0e95e1f2dc
-ms.openlocfilehash: 32c5da24eb7b23145d79c33a9ca1f5e5bcc22c06
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 5ae8aa5112f737d3000e221d0a199c3ee36eac46
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76742729"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184365"
 ---
-# <a name="transaction-protocols"></a><span data-ttu-id="562ee-102">Protocoles de transaction</span><span class="sxs-lookup"><span data-stu-id="562ee-102">Transaction Protocols</span></span>
-<span data-ttu-id="562ee-103">Windows Communication Foundation (WCF) implémente les protocoles WS-Atomic transaction et WS-coordination.</span><span class="sxs-lookup"><span data-stu-id="562ee-103">Windows Communication Foundation (WCF) implements WS-Atomic Transaction and WS-Coordination protocols.</span></span>  
+# <a name="transaction-protocols"></a><span data-ttu-id="ce764-102">Protocoles de transaction</span><span class="sxs-lookup"><span data-stu-id="ce764-102">Transaction Protocols</span></span>
+<span data-ttu-id="ce764-103">Windows Communication Foundation (WCF) met en œuvre les protocoles WS-Atomic Transaction et WS-Coordination.</span><span class="sxs-lookup"><span data-stu-id="ce764-103">Windows Communication Foundation (WCF) implements WS-Atomic Transaction and WS-Coordination protocols.</span></span>  
   
-|<span data-ttu-id="562ee-104">Spécification/Document</span><span class="sxs-lookup"><span data-stu-id="562ee-104">Specification/Document</span></span>|<span data-ttu-id="562ee-105">cible</span><span class="sxs-lookup"><span data-stu-id="562ee-105">Version</span></span>|<span data-ttu-id="562ee-106">Lien</span><span class="sxs-lookup"><span data-stu-id="562ee-106">Link</span></span>|  
+|<span data-ttu-id="ce764-104">Spécification/Document</span><span class="sxs-lookup"><span data-stu-id="ce764-104">Specification/Document</span></span>|<span data-ttu-id="ce764-105">Version</span><span class="sxs-lookup"><span data-stu-id="ce764-105">Version</span></span>|<span data-ttu-id="ce764-106">Lien</span><span class="sxs-lookup"><span data-stu-id="ce764-106">Link</span></span>|  
 |-----------------------------|-------------|----------|  
-|<span data-ttu-id="562ee-107">WS-Coordination</span><span class="sxs-lookup"><span data-stu-id="562ee-107">WS-Coordination</span></span>|<span data-ttu-id="562ee-108">1.0</span><span class="sxs-lookup"><span data-stu-id="562ee-108">1.0</span></span><br /><br /> <span data-ttu-id="562ee-109">1.1</span><span class="sxs-lookup"><span data-stu-id="562ee-109">1.1</span></span>|<http://schemas.xmlsoap.org/ws/2004/10/wscoor/><br /><br /> <https://docs.oasis-open.org/ws-tx/wscoor/2006/06>|  
-|<span data-ttu-id="562ee-110">WS-AtomicTransaction</span><span class="sxs-lookup"><span data-stu-id="562ee-110">WS-AtomicTransaction</span></span>|<span data-ttu-id="562ee-111">1.0</span><span class="sxs-lookup"><span data-stu-id="562ee-111">1.0</span></span><br /><br /> <span data-ttu-id="562ee-112">1.1</span><span class="sxs-lookup"><span data-stu-id="562ee-112">1.1</span></span>|<http://schemas.xmlsoap.org/ws/2004/10/wsat/><br /><br /> <https://docs.oasis-open.org/ws-tx/wsat/2006/06>|  
+|<span data-ttu-id="ce764-107">WS-Coordination</span><span class="sxs-lookup"><span data-stu-id="ce764-107">WS-Coordination</span></span>|<span data-ttu-id="ce764-108">1.0</span><span class="sxs-lookup"><span data-stu-id="ce764-108">1.0</span></span><br /><br /> <span data-ttu-id="ce764-109">1.1</span><span class="sxs-lookup"><span data-stu-id="ce764-109">1.1</span></span>|<http://schemas.xmlsoap.org/ws/2004/10/wscoor/><br /><br /> <https://docs.oasis-open.org/ws-tx/wscoor/2006/06>|  
+|<span data-ttu-id="ce764-110">WS-AtomicTransaction</span><span class="sxs-lookup"><span data-stu-id="ce764-110">WS-AtomicTransaction</span></span>|<span data-ttu-id="ce764-111">1.0</span><span class="sxs-lookup"><span data-stu-id="ce764-111">1.0</span></span><br /><br /> <span data-ttu-id="ce764-112">1.1</span><span class="sxs-lookup"><span data-stu-id="ce764-112">1.1</span></span>|<http://schemas.xmlsoap.org/ws/2004/10/wsat/><br /><br /> <https://docs.oasis-open.org/ws-tx/wsat/2006/06>|  
   
- <span data-ttu-id="562ee-113">L’interopérabilité sur ces spécifications de protocole est requise à deux niveaux : entre les applications et entre les gestionnaires de transactions (consultez la figure suivante).</span><span class="sxs-lookup"><span data-stu-id="562ee-113">Interoperability on these protocol specifications is required at two levels: between applications and between transaction managers (see the following figure).</span></span> <span data-ttu-id="562ee-114">Les spécifications décrivent de manière très détaillée les formats de message et l'échange de messages pour les deux niveaux d'interopérabilité.</span><span class="sxs-lookup"><span data-stu-id="562ee-114">Specifications describe in great detail the message formats and message exchange for both interoperability levels.</span></span> <span data-ttu-id="562ee-115">Une certain niveau de sécurité, de fiabilité et des encodages pour l'échange interapplication s'appliquent de la même manière que pour l'échange entre applications normal.</span><span class="sxs-lookup"><span data-stu-id="562ee-115">Certain security, reliability, and encodings for application-to-application exchange apply as they do for regular application exchange.</span></span> <span data-ttu-id="562ee-116">Toutefois, l'interopérabilité réussie entre les gestionnaires de transactions requiert un contrat sur la liaison spécifique, car il n'est généralement pas configuré par l'utilisateur.</span><span class="sxs-lookup"><span data-stu-id="562ee-116">However, successful interoperability between transaction managers requires agreement on the particular binding, because it is usually not configured by the user.</span></span>  
+ <span data-ttu-id="ce764-113">L’interopérabilité sur ces spécifications de protocole est requise à deux niveaux : entre les applications et entre les gestionnaires de transactions (consultez la figure suivante).</span><span class="sxs-lookup"><span data-stu-id="ce764-113">Interoperability on these protocol specifications is required at two levels: between applications and between transaction managers (see the following figure).</span></span> <span data-ttu-id="ce764-114">Les spécifications décrivent de manière très détaillée les formats de message et l'échange de messages pour les deux niveaux d'interopérabilité.</span><span class="sxs-lookup"><span data-stu-id="ce764-114">Specifications describe in great detail the message formats and message exchange for both interoperability levels.</span></span> <span data-ttu-id="ce764-115">Une certain niveau de sécurité, de fiabilité et des encodages pour l'échange interapplication s'appliquent de la même manière que pour l'échange entre applications normal.</span><span class="sxs-lookup"><span data-stu-id="ce764-115">Certain security, reliability, and encodings for application-to-application exchange apply as they do for regular application exchange.</span></span> <span data-ttu-id="ce764-116">Toutefois, l'interopérabilité réussie entre les gestionnaires de transactions requiert un contrat sur la liaison spécifique, car il n'est généralement pas configuré par l'utilisateur.</span><span class="sxs-lookup"><span data-stu-id="ce764-116">However, successful interoperability between transaction managers requires agreement on the particular binding, because it is usually not configured by the user.</span></span>  
   
- <span data-ttu-id="562ee-117">Cette rubrique décrit une composition de la spécification WS-AT (WS-Atomic Transaction) avec sécurité et décrit la liaison sécurisée utilisée pour la communication entre les gestionnaires de transactions.</span><span class="sxs-lookup"><span data-stu-id="562ee-117">This topic describes a composition of the WS-Atomic Transaction (WS-AT) specification with security and describes the secure binding used for communication between transaction managers.</span></span> <span data-ttu-id="562ee-118">L'approche décrite dans ce document a été testée avec succès avec d'autres implémentations de WS-AT et WS-Coordination, dont IBM, IONA, Sun Microsystems, etc.</span><span class="sxs-lookup"><span data-stu-id="562ee-118">The approach described in this document has been successfully tested with other implementations of WS-AT and WS-Coordination including IBM, IONA, Sun Microsystems, and others.</span></span>  
+ <span data-ttu-id="ce764-117">Cette rubrique décrit une composition de la spécification WS-AT (WS-Atomic Transaction) avec sécurité et décrit la liaison sécurisée utilisée pour la communication entre les gestionnaires de transactions.</span><span class="sxs-lookup"><span data-stu-id="ce764-117">This topic describes a composition of the WS-Atomic Transaction (WS-AT) specification with security and describes the secure binding used for communication between transaction managers.</span></span> <span data-ttu-id="ce764-118">L'approche décrite dans ce document a été testée avec succès avec d'autres implémentations de WS-AT et WS-Coordination, dont IBM, IONA, Sun Microsystems, etc.</span><span class="sxs-lookup"><span data-stu-id="ce764-118">The approach described in this document has been successfully tested with other implementations of WS-AT and WS-Coordination including IBM, IONA, Sun Microsystems, and others.</span></span>  
   
- <span data-ttu-id="562ee-119">La figure suivante illustre l’interopérabilité entre deux gestionnaires de transactions, le gestionnaire de transactions 1 et le gestionnaire de transactions 2, ainsi que deux applications, application 1 et application 2 :</span><span class="sxs-lookup"><span data-stu-id="562ee-119">The following figure depicts the interoperability between two transaction managers, Transaction Manager 1 and Transaction Manager 2, and two applications, Application 1 and Application 2:</span></span>  
+ <span data-ttu-id="ce764-119">Le chiffre suivant illustre l’interopérabilité entre deux gestionnaires de transactions, le gestionnaire de transaction 1 et le gestionnaire de transaction 2, et deux applications, l’application 1 et l’application 2 :</span><span class="sxs-lookup"><span data-stu-id="ce764-119">The following figure depicts the interoperability between two transaction managers, Transaction Manager 1 and Transaction Manager 2, and two applications, Application 1 and Application 2:</span></span>  
   
- ![Capture d’écran montrant l’interaction entre les gestionnaires de transactions.](./media/transaction-protocols/transaction-managers-flow.gif)  
+ ![Capture d’écran qui montre l’interaction entre les gestionnaires de transactions.](./media/transaction-protocols/transaction-managers-flow.gif)  
   
- <span data-ttu-id="562ee-121">Examinons un scénario WS-Coordination/WS-Atomic Transaction classique avec un Initiateur (I) et un Participant (P).</span><span class="sxs-lookup"><span data-stu-id="562ee-121">Consider a typical WS-Coordination/WS-Atomic Transaction scenario with one Initiator (I) and one Participant (P).</span></span> <span data-ttu-id="562ee-122">L’Initiateur et le Participant ont des Gestionnaires de transactions (ITM et PTM, respectivement).</span><span class="sxs-lookup"><span data-stu-id="562ee-122">Both Initiator and Participant have Transaction Managers, (ITM and PTM, respectively).</span></span> <span data-ttu-id="562ee-123">La validation en deux phases est désignée sous le terme « 2PC » dans cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="562ee-123">Two-phase commit is referred to as 2PC in this topic.</span></span>  
+ <span data-ttu-id="ce764-121">Examinons un scénario WS-Coordination/WS-Atomic Transaction classique avec un Initiateur (I) et un Participant (P).</span><span class="sxs-lookup"><span data-stu-id="ce764-121">Consider a typical WS-Coordination/WS-Atomic Transaction scenario with one Initiator (I) and one Participant (P).</span></span> <span data-ttu-id="ce764-122">L’Initiateur et le Participant ont des Gestionnaires de transactions (ITM et PTM, respectivement).</span><span class="sxs-lookup"><span data-stu-id="ce764-122">Both Initiator and Participant have Transaction Managers, (ITM and PTM, respectively).</span></span> <span data-ttu-id="ce764-123">La validation en deux phases est désignée sous le terme « 2PC » dans cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="ce764-123">Two-phase commit is referred to as 2PC in this topic.</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="562ee-124">1. CreateCoordinationContext</span><span class="sxs-lookup"><span data-stu-id="562ee-124">1. CreateCoordinationContext</span></span>|<span data-ttu-id="562ee-125">12. réponse aux messages d’application</span><span class="sxs-lookup"><span data-stu-id="562ee-125">12. Application Message Response</span></span>|  
-|<span data-ttu-id="562ee-126">2. CreateCoordinationContextResponse</span><span class="sxs-lookup"><span data-stu-id="562ee-126">2. CreateCoordinationContextResponse</span></span>|<span data-ttu-id="562ee-127">13. validation (achèvement)</span><span class="sxs-lookup"><span data-stu-id="562ee-127">13. Commit (Completion)</span></span>|  
-|<span data-ttu-id="562ee-128">3. inscrire (achèvement)</span><span class="sxs-lookup"><span data-stu-id="562ee-128">3. Register (Completion)</span></span>|<span data-ttu-id="562ee-129">14. Prepare (2PC)</span><span class="sxs-lookup"><span data-stu-id="562ee-129">14. Prepare (2PC)</span></span>|  
-|<span data-ttu-id="562ee-130">4. RegisterResponse</span><span class="sxs-lookup"><span data-stu-id="562ee-130">4. RegisterResponse</span></span>|<span data-ttu-id="562ee-131">15. Prepare (2PC)</span><span class="sxs-lookup"><span data-stu-id="562ee-131">15. Prepare (2PC)</span></span>|  
-|<span data-ttu-id="562ee-132">5. message de l’application</span><span class="sxs-lookup"><span data-stu-id="562ee-132">5. Application Message</span></span>|<span data-ttu-id="562ee-133">16. préparé (2PC)</span><span class="sxs-lookup"><span data-stu-id="562ee-133">16. Prepared (2PC)</span></span>|  
-|<span data-ttu-id="562ee-134">6. CreateCoordinationContext avec contexte</span><span class="sxs-lookup"><span data-stu-id="562ee-134">6. CreateCoordinationContext with Context</span></span>|<span data-ttu-id="562ee-135">17. Prepared (2PC)</span><span class="sxs-lookup"><span data-stu-id="562ee-135">17. Prepared (2PC)</span></span>|  
-|<span data-ttu-id="562ee-136">7. inscrire (durable)</span><span class="sxs-lookup"><span data-stu-id="562ee-136">7. Register (Durable)</span></span>|<span data-ttu-id="562ee-137">18. validé (achèvement)</span><span class="sxs-lookup"><span data-stu-id="562ee-137">18. Committed (Completion)</span></span>|  
-|<span data-ttu-id="562ee-138">8. RegisterResponse</span><span class="sxs-lookup"><span data-stu-id="562ee-138">8. RegisterResponse</span></span>|<span data-ttu-id="562ee-139">19. Commit (2PC)</span><span class="sxs-lookup"><span data-stu-id="562ee-139">19. Commit (2PC)</span></span>|  
-|<span data-ttu-id="562ee-140">9. CreateCoordinationContextResponse</span><span class="sxs-lookup"><span data-stu-id="562ee-140">9. CreateCoordinationContextResponse</span></span>|<span data-ttu-id="562ee-141">20. Commit (2PC)</span><span class="sxs-lookup"><span data-stu-id="562ee-141">20. Commit (2PC)</span></span>|  
-|<span data-ttu-id="562ee-142">10. Register (durable)</span><span class="sxs-lookup"><span data-stu-id="562ee-142">10. Register (Durable)</span></span>|<span data-ttu-id="562ee-143">21. validé (2PC)</span><span class="sxs-lookup"><span data-stu-id="562ee-143">21. Committed (2PC)</span></span>|  
-|<span data-ttu-id="562ee-144">11. RegisterResponse</span><span class="sxs-lookup"><span data-stu-id="562ee-144">11. RegisterResponse</span></span>|<span data-ttu-id="562ee-145">22. validé (2PC)</span><span class="sxs-lookup"><span data-stu-id="562ee-145">22. Committed (2PC)</span></span>|  
+|<span data-ttu-id="ce764-124">1. CréerCoordinationContexte</span><span class="sxs-lookup"><span data-stu-id="ce764-124">1. CreateCoordinationContext</span></span>|<span data-ttu-id="ce764-125">12. Réponse de message d’application</span><span class="sxs-lookup"><span data-stu-id="ce764-125">12. Application Message Response</span></span>|  
+|<span data-ttu-id="ce764-126">2. CreateCoordinationContextResponse</span><span class="sxs-lookup"><span data-stu-id="ce764-126">2. CreateCoordinationContextResponse</span></span>|<span data-ttu-id="ce764-127">13. Commit (Achèvement)</span><span class="sxs-lookup"><span data-stu-id="ce764-127">13. Commit (Completion)</span></span>|  
+|<span data-ttu-id="ce764-128">3. Registre (achèvement)</span><span class="sxs-lookup"><span data-stu-id="ce764-128">3. Register (Completion)</span></span>|<span data-ttu-id="ce764-129">14. Préparer (2PC)</span><span class="sxs-lookup"><span data-stu-id="ce764-129">14. Prepare (2PC)</span></span>|  
+|<span data-ttu-id="ce764-130">4. RegisterResponse</span><span class="sxs-lookup"><span data-stu-id="ce764-130">4. RegisterResponse</span></span>|<span data-ttu-id="ce764-131">15. Préparer (2PC)</span><span class="sxs-lookup"><span data-stu-id="ce764-131">15. Prepare (2PC)</span></span>|  
+|<span data-ttu-id="ce764-132">5. Message d’application</span><span class="sxs-lookup"><span data-stu-id="ce764-132">5. Application Message</span></span>|<span data-ttu-id="ce764-133">16. Préparé (2PC)</span><span class="sxs-lookup"><span data-stu-id="ce764-133">16. Prepared (2PC)</span></span>|  
+|<span data-ttu-id="ce764-134">6. CréerCoordinationContexte avec contexte</span><span class="sxs-lookup"><span data-stu-id="ce764-134">6. CreateCoordinationContext with Context</span></span>|<span data-ttu-id="ce764-135">17. Préparé (2PC)</span><span class="sxs-lookup"><span data-stu-id="ce764-135">17. Prepared (2PC)</span></span>|  
+|<span data-ttu-id="ce764-136">7. Registre (Durable)</span><span class="sxs-lookup"><span data-stu-id="ce764-136">7. Register (Durable)</span></span>|<span data-ttu-id="ce764-137">18. Engagé (achèvement)</span><span class="sxs-lookup"><span data-stu-id="ce764-137">18. Committed (Completion)</span></span>|  
+|<span data-ttu-id="ce764-138">8. RegisterResponse</span><span class="sxs-lookup"><span data-stu-id="ce764-138">8. RegisterResponse</span></span>|<span data-ttu-id="ce764-139">19. S’engager (2PC)</span><span class="sxs-lookup"><span data-stu-id="ce764-139">19. Commit (2PC)</span></span>|  
+|<span data-ttu-id="ce764-140">9. CreateCoordinationContextResponse</span><span class="sxs-lookup"><span data-stu-id="ce764-140">9. CreateCoordinationContextResponse</span></span>|<span data-ttu-id="ce764-141">20. S’engager (2PC)</span><span class="sxs-lookup"><span data-stu-id="ce764-141">20. Commit (2PC)</span></span>|  
+|<span data-ttu-id="ce764-142">10. Registre (Durable)</span><span class="sxs-lookup"><span data-stu-id="ce764-142">10. Register (Durable)</span></span>|<span data-ttu-id="ce764-143">21. Engagé (2PC)</span><span class="sxs-lookup"><span data-stu-id="ce764-143">21. Committed (2PC)</span></span>|  
+|<span data-ttu-id="ce764-144">11. RegisterResponse</span><span class="sxs-lookup"><span data-stu-id="ce764-144">11. RegisterResponse</span></span>|<span data-ttu-id="ce764-145">22. Engagé (2PC)</span><span class="sxs-lookup"><span data-stu-id="ce764-145">22. Committed (2PC)</span></span>|  
   
- <span data-ttu-id="562ee-146">Ce document décrit une composition de la spécification WS-AtomicTransaction avec sécurité et décrit la liaison sécurisée utilisée pour la communication entre les gestionnaires de transactions.</span><span class="sxs-lookup"><span data-stu-id="562ee-146">This document describes a composition of the WS-AtomicTransaction specification with security and describes the secure binding used for communication between transaction managers.</span></span> <span data-ttu-id="562ee-147">L'approche décrite dans ce document a été testée avec succès avec d'autres implémentations de WS-AT et WS-Coordination.</span><span class="sxs-lookup"><span data-stu-id="562ee-147">The approach described in this document has been successfully tested with other implementations of WS-AT and WS-Coordination.</span></span>  
+ <span data-ttu-id="ce764-146">Ce document décrit une composition de la spécification WS-AtomicTransaction avec sécurité et décrit la liaison sécurisée utilisée pour la communication entre les gestionnaires de transactions.</span><span class="sxs-lookup"><span data-stu-id="ce764-146">This document describes a composition of the WS-AtomicTransaction specification with security and describes the secure binding used for communication between transaction managers.</span></span> <span data-ttu-id="ce764-147">L'approche décrite dans ce document a été testée avec succès avec d'autres implémentations de WS-AT et WS-Coordination.</span><span class="sxs-lookup"><span data-stu-id="ce764-147">The approach described in this document has been successfully tested with other implementations of WS-AT and WS-Coordination.</span></span>  
   
- <span data-ttu-id="562ee-148">La figure et le tableau présentent quatre classes de messages du point de vue de sécurité :</span><span class="sxs-lookup"><span data-stu-id="562ee-148">The figure and table illustrate four classes of messages from the viewpoint of security:</span></span>  
+ <span data-ttu-id="ce764-148">La figure et le tableau présentent quatre classes de messages du point de vue de sécurité :</span><span class="sxs-lookup"><span data-stu-id="ce764-148">The figure and table illustrate four classes of messages from the viewpoint of security:</span></span>  
   
-- <span data-ttu-id="562ee-149">Messages d'activation (CreateCoordinationContext et CreateCoordinationContextResponse).</span><span class="sxs-lookup"><span data-stu-id="562ee-149">Activation messages (CreateCoordinationContext and CreateCoordinationContextResponse).</span></span>  
+- <span data-ttu-id="ce764-149">Messages d'activation (CreateCoordinationContext et CreateCoordinationContextResponse).</span><span class="sxs-lookup"><span data-stu-id="ce764-149">Activation messages (CreateCoordinationContext and CreateCoordinationContextResponse).</span></span>  
   
-- <span data-ttu-id="562ee-150">Messages d'inscription (Register et RegisterResponse)</span><span class="sxs-lookup"><span data-stu-id="562ee-150">Registration messages (Register and RegisterResponse)</span></span>  
+- <span data-ttu-id="ce764-150">Messages d'inscription (Register et RegisterResponse)</span><span class="sxs-lookup"><span data-stu-id="ce764-150">Registration messages (Register and RegisterResponse)</span></span>  
   
-- <span data-ttu-id="562ee-151">Messages de protocole (Prepare, Rollback, Commit, Aborted, etc).</span><span class="sxs-lookup"><span data-stu-id="562ee-151">Protocol messages (Prepare, Rollback, Commit, Aborted, and so on).</span></span>  
+- <span data-ttu-id="ce764-151">Messages de protocole (Prepare, Rollback, Commit, Aborted, etc).</span><span class="sxs-lookup"><span data-stu-id="ce764-151">Protocol messages (Prepare, Rollback, Commit, Aborted, and so on).</span></span>  
   
-- <span data-ttu-id="562ee-152">Messages d'application</span><span class="sxs-lookup"><span data-stu-id="562ee-152">Application messages.</span></span>  
+- <span data-ttu-id="ce764-152">Messages d'application</span><span class="sxs-lookup"><span data-stu-id="ce764-152">Application messages.</span></span>  
   
- <span data-ttu-id="562ee-153">Les trois premières classes de message sont considérées comme des messages de gestionnaire de transactions et leur configuration de liaison est décrite dans la section « Échange de messages d’application » développée ultérieurement dans cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="562ee-153">The first three message classes are considered Transaction Manager messages and their binding configuration is described in the "Application Message Exchange" later in this topic.</span></span> <span data-ttu-id="562ee-154">La quatrième classe de message concerne les messages interapplication et est décrite dans la section « Exemples de message » développée ultérieurement dans cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="562ee-154">The fourth class of message is application to application messages and is described in the "Message Examples" section later in this topic.</span></span> <span data-ttu-id="562ee-155">Cette section décrit les liaisons de protocole utilisées pour chacune de ces classes par WCF.</span><span class="sxs-lookup"><span data-stu-id="562ee-155">This section describes the protocol bindings used for each of these classes by WCF.</span></span>  
+ <span data-ttu-id="ce764-153">Les trois premières classes de message sont considérées comme des messages de gestionnaire de transactions et leur configuration de liaison est décrite dans la section « Échange de messages d’application » développée ultérieurement dans cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="ce764-153">The first three message classes are considered Transaction Manager messages and their binding configuration is described in the "Application Message Exchange" later in this topic.</span></span> <span data-ttu-id="ce764-154">La quatrième classe de message concerne les messages interapplication et est décrite dans la section « Exemples de message » développée ultérieurement dans cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="ce764-154">The fourth class of message is application to application messages and is described in the "Message Examples" section later in this topic.</span></span> <span data-ttu-id="ce764-155">Cette section décrit les liaisons protocolaires utilisées pour chacune de ces classes par WCF.</span><span class="sxs-lookup"><span data-stu-id="ce764-155">This section describes the protocol bindings used for each of these classes by WCF.</span></span>  
   
- <span data-ttu-id="562ee-156">Les espaces de noms XML suivants et préfixes associés sont utilisés dans l'ensemble de ce document.</span><span class="sxs-lookup"><span data-stu-id="562ee-156">The following XML Namespaces and associated prefixes are used throughout this document.</span></span>  
+ <span data-ttu-id="ce764-156">Les espaces de noms XML suivants et préfixes associés sont utilisés dans l'ensemble de ce document.</span><span class="sxs-lookup"><span data-stu-id="ce764-156">The following XML Namespaces and associated prefixes are used throughout this document.</span></span>  
   
-|<span data-ttu-id="562ee-157">Préfixe</span><span class="sxs-lookup"><span data-stu-id="562ee-157">Prefix</span></span>|<span data-ttu-id="562ee-158">cible</span><span class="sxs-lookup"><span data-stu-id="562ee-158">Version</span></span>|<span data-ttu-id="562ee-159">URI d'espace de noms</span><span class="sxs-lookup"><span data-stu-id="562ee-159">Namespace URI</span></span>|  
+|<span data-ttu-id="ce764-157">Préfixe</span><span class="sxs-lookup"><span data-stu-id="ce764-157">Prefix</span></span>|<span data-ttu-id="ce764-158">Version</span><span class="sxs-lookup"><span data-stu-id="ce764-158">Version</span></span>|<span data-ttu-id="ce764-159">URI d’espace de noms</span><span class="sxs-lookup"><span data-stu-id="ce764-159">Namespace URI</span></span>|  
 |------------|-------------|-------------------|  
-|<span data-ttu-id="562ee-160">s11</span><span class="sxs-lookup"><span data-stu-id="562ee-160">s11</span></span>||<https://schemas.xmlsoap.org/soap/envelope/>|  
-|<span data-ttu-id="562ee-161">wsa</span><span class="sxs-lookup"><span data-stu-id="562ee-161">wsa</span></span>|<span data-ttu-id="562ee-162">Pré-1,0</span><span class="sxs-lookup"><span data-stu-id="562ee-162">Pre-1.0</span></span><br /><br /> <span data-ttu-id="562ee-163">1.0</span><span class="sxs-lookup"><span data-stu-id="562ee-163">1.0</span></span>|`http://www.w3.org/2004/08/addressing`<br /><br /> <https://www.w3.org/2005/08/addressing/>|  
-|<span data-ttu-id="562ee-164">wscoor</span><span class="sxs-lookup"><span data-stu-id="562ee-164">wscoor</span></span>|<span data-ttu-id="562ee-165">1.0</span><span class="sxs-lookup"><span data-stu-id="562ee-165">1.0</span></span><br /><br /> <span data-ttu-id="562ee-166">1.1</span><span class="sxs-lookup"><span data-stu-id="562ee-166">1.1</span></span>|<http://schemas.xmlsoap.org/ws/2004/10/wscoor/><br /><br /> <https://docs.oasis-open.org/ws-tx/wscoor/2006/06>|  
-|<span data-ttu-id="562ee-167">wsat</span><span class="sxs-lookup"><span data-stu-id="562ee-167">wsat</span></span>|<span data-ttu-id="562ee-168">1.0</span><span class="sxs-lookup"><span data-stu-id="562ee-168">1.0</span></span><br /><br /> <span data-ttu-id="562ee-169">1.1</span><span class="sxs-lookup"><span data-stu-id="562ee-169">1.1</span></span>|<http://schemas.xmlsoap.org/ws/2004/10/wsat/><br /><br /> <https://docs.oasis-open.org/ws-tx/wsat/2006/06>|  
-|<span data-ttu-id="562ee-170">t</span><span class="sxs-lookup"><span data-stu-id="562ee-170">t</span></span>|<span data-ttu-id="562ee-171">Pre-1.3</span><span class="sxs-lookup"><span data-stu-id="562ee-171">Pre-1.3</span></span><br /><br /> <span data-ttu-id="562ee-172">1.3</span><span class="sxs-lookup"><span data-stu-id="562ee-172">1.3</span></span>|<http://schemas.xmlsoap.org/ws/2005/02/trust/><br /><br /> <https://docs.oasis-open.org/ws-sx/ws-trust/200512>|  
-|<span data-ttu-id="562ee-173">o</span><span class="sxs-lookup"><span data-stu-id="562ee-173">o</span></span>||<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd>|  
-|<span data-ttu-id="562ee-174">xsd</span><span class="sxs-lookup"><span data-stu-id="562ee-174">xsd</span></span>||<https://www.w3.org/2001/XMLSchema>|  
+|<span data-ttu-id="ce764-160">s11</span><span class="sxs-lookup"><span data-stu-id="ce764-160">s11</span></span>||<https://schemas.xmlsoap.org/soap/envelope/>|  
+|<span data-ttu-id="ce764-161">wsa</span><span class="sxs-lookup"><span data-stu-id="ce764-161">wsa</span></span>|<span data-ttu-id="ce764-162">Avant 1,0</span><span class="sxs-lookup"><span data-stu-id="ce764-162">Pre-1.0</span></span><br /><br /> <span data-ttu-id="ce764-163">1.0</span><span class="sxs-lookup"><span data-stu-id="ce764-163">1.0</span></span>|`http://www.w3.org/2004/08/addressing`<br /><br /> <https://www.w3.org/2005/08/addressing/>|  
+|<span data-ttu-id="ce764-164">wscoor</span><span class="sxs-lookup"><span data-stu-id="ce764-164">wscoor</span></span>|<span data-ttu-id="ce764-165">1.0</span><span class="sxs-lookup"><span data-stu-id="ce764-165">1.0</span></span><br /><br /> <span data-ttu-id="ce764-166">1.1</span><span class="sxs-lookup"><span data-stu-id="ce764-166">1.1</span></span>|<http://schemas.xmlsoap.org/ws/2004/10/wscoor/><br /><br /> <https://docs.oasis-open.org/ws-tx/wscoor/2006/06>|  
+|<span data-ttu-id="ce764-167">wsat</span><span class="sxs-lookup"><span data-stu-id="ce764-167">wsat</span></span>|<span data-ttu-id="ce764-168">1.0</span><span class="sxs-lookup"><span data-stu-id="ce764-168">1.0</span></span><br /><br /> <span data-ttu-id="ce764-169">1.1</span><span class="sxs-lookup"><span data-stu-id="ce764-169">1.1</span></span>|<http://schemas.xmlsoap.org/ws/2004/10/wsat/><br /><br /> <https://docs.oasis-open.org/ws-tx/wsat/2006/06>|  
+|<span data-ttu-id="ce764-170">t</span><span class="sxs-lookup"><span data-stu-id="ce764-170">t</span></span>|<span data-ttu-id="ce764-171">Pre-1.3</span><span class="sxs-lookup"><span data-stu-id="ce764-171">Pre-1.3</span></span><br /><br /> <span data-ttu-id="ce764-172">1.3</span><span class="sxs-lookup"><span data-stu-id="ce764-172">1.3</span></span>|<http://schemas.xmlsoap.org/ws/2005/02/trust/><br /><br /> <https://docs.oasis-open.org/ws-sx/ws-trust/200512>|  
+|<span data-ttu-id="ce764-173">o</span><span class="sxs-lookup"><span data-stu-id="ce764-173">o</span></span>||<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd>|  
+|<span data-ttu-id="ce764-174">xsd</span><span class="sxs-lookup"><span data-stu-id="ce764-174">xsd</span></span>||<https://www.w3.org/2001/XMLSchema>|  
   
-## <a name="transaction-manager-bindings"></a><span data-ttu-id="562ee-175">Liaisons de gestionnaire de transactions</span><span class="sxs-lookup"><span data-stu-id="562ee-175">Transaction Manager Bindings</span></span>  
- <span data-ttu-id="562ee-176">R1001 : les gestionnaires de transactions qui participent à une transaction WS-AT 1,0 doivent utiliser SOAP 1,1 et WS-Addressing 2004/08 pour les échanges de messages WS-Atomic transaction et WS-coordination.</span><span class="sxs-lookup"><span data-stu-id="562ee-176">R1001: Transaction Managers participating in a WS-AT 1.0 transaction must use SOAP 1.1 and WS-Addressing 2004/08 for WS-Atomic Transaction and WS-Coordination message exchanges.</span></span>  
+## <a name="transaction-manager-bindings"></a><span data-ttu-id="ce764-175">Liaisons de gestionnaire de transactions</span><span class="sxs-lookup"><span data-stu-id="ce764-175">Transaction Manager Bindings</span></span>  
+ <span data-ttu-id="ce764-176">R1001 : Les gestionnaires de transactions participant à une transaction WS-AT 1.0 doivent utiliser SOAP 1.1 et WS-Addressing 2004/08 pour les échanges de messages WS-Atomic Transaction et WS-Coordination.</span><span class="sxs-lookup"><span data-stu-id="ce764-176">R1001: Transaction Managers participating in a WS-AT 1.0 transaction must use SOAP 1.1 and WS-Addressing 2004/08 for WS-Atomic Transaction and WS-Coordination message exchanges.</span></span>  
   
- <span data-ttu-id="562ee-177">R1002 : les gestionnaires de transactions qui participent à une transaction WS-AT 1.1 doivent utiliser SOAP 1.1 et WS-Addressing 2005/08 pour les échanges WS-Atomic Transaction et WS-Coordination.</span><span class="sxs-lookup"><span data-stu-id="562ee-177">R1002: Transaction Managers participating in a WS-AT 1.1 transaction must use SOAP 1.1 and WS-Addressing 2005/08 for WS-Atomic Transaction and WS-Coordination message exchanges.</span></span>  
+ <span data-ttu-id="ce764-177">R1002 : les gestionnaires de transactions qui participent à une transaction WS-AT 1.1 doivent utiliser SOAP 1.1 et WS-Addressing 2005/08 pour les échanges WS-Atomic Transaction et WS-Coordination.</span><span class="sxs-lookup"><span data-stu-id="ce764-177">R1002: Transaction Managers participating in a WS-AT 1.1 transaction must use SOAP 1.1 and WS-Addressing 2005/08 for WS-Atomic Transaction and WS-Coordination message exchanges.</span></span>  
   
- <span data-ttu-id="562ee-178">Les messages d’application ne sont pas contraints à ces liaisons et sont décrits ultérieurement.</span><span class="sxs-lookup"><span data-stu-id="562ee-178">Application messages are not constrained to these bindings and are described later.</span></span>  
+ <span data-ttu-id="ce764-178">Les messages d’application ne sont pas contraints à ces liaisons et sont décrits ultérieurement.</span><span class="sxs-lookup"><span data-stu-id="ce764-178">Application messages are not constrained to these bindings and are described later.</span></span>  
   
-### <a name="transaction-manager-https-binding"></a><span data-ttu-id="562ee-179">Liaison HTTPS de gestionnaire de transactions</span><span class="sxs-lookup"><span data-stu-id="562ee-179">Transaction Manager HTTPS Binding</span></span>  
- <span data-ttu-id="562ee-180">La liaison HTTPS de gestionnaire de transactions s'appuie uniquement sur le transport de sécurité pour assurer la sécurité et établir la confiance entre chaque paire expéditeur-récepteur dans l'arborescence de transactions.</span><span class="sxs-lookup"><span data-stu-id="562ee-180">The transaction manager HTTPS binding relies solely on transport security to achieve security and establish trust between each sender-receiver pair in the transaction tree.</span></span>  
+### <a name="transaction-manager-https-binding"></a><span data-ttu-id="ce764-179">Liaison HTTPS de gestionnaire de transactions</span><span class="sxs-lookup"><span data-stu-id="ce764-179">Transaction Manager HTTPS Binding</span></span>  
+ <span data-ttu-id="ce764-180">La liaison HTTPS de gestionnaire de transactions s'appuie uniquement sur le transport de sécurité pour assurer la sécurité et établir la confiance entre chaque paire expéditeur-récepteur dans l'arborescence de transactions.</span><span class="sxs-lookup"><span data-stu-id="ce764-180">The transaction manager HTTPS binding relies solely on transport security to achieve security and establish trust between each sender-receiver pair in the transaction tree.</span></span>  
   
-#### <a name="https-transport-configuration"></a><span data-ttu-id="562ee-181">Configuration du transport HTTPS</span><span class="sxs-lookup"><span data-stu-id="562ee-181">HTTPS Transport Configuration</span></span>  
- <span data-ttu-id="562ee-182">Les certificats X.509 permettent d'établir l'identité de gestionnaire de transactions.</span><span class="sxs-lookup"><span data-stu-id="562ee-182">X.509 certificates are used to establish Transaction Manager Identity.</span></span> <span data-ttu-id="562ee-183">L'authentification client/serveur est requise, et l'autorisation client/serveur est considérée comme un détail d'implémentation :</span><span class="sxs-lookup"><span data-stu-id="562ee-183">Client/server authentication is required, and client/server authorization is left as an implementation detail:</span></span>  
+#### <a name="https-transport-configuration"></a><span data-ttu-id="ce764-181">Configuration du transport HTTPS</span><span class="sxs-lookup"><span data-stu-id="ce764-181">HTTPS Transport Configuration</span></span>  
+ <span data-ttu-id="ce764-182">Les certificats X.509 permettent d'établir l'identité de gestionnaire de transactions.</span><span class="sxs-lookup"><span data-stu-id="ce764-182">X.509 certificates are used to establish Transaction Manager Identity.</span></span> <span data-ttu-id="ce764-183">L'authentification client/serveur est requise, et l'autorisation client/serveur est considérée comme un détail d'implémentation :</span><span class="sxs-lookup"><span data-stu-id="ce764-183">Client/server authentication is required, and client/server authorization is left as an implementation detail:</span></span>  
   
-- <span data-ttu-id="562ee-184">R1111 : les certificats X.509 présentés sur le câble doivent avoir un nom de sujet qui correspond au nom de domaine complet de l'ordinateur d'origine.</span><span class="sxs-lookup"><span data-stu-id="562ee-184">R1111: X.509 certificates presented over the wire must have a subject name that matches the fully qualified domain name (FQDN) of the originating machine.</span></span>  
+- <span data-ttu-id="ce764-184">R1111 : les certificats X.509 présentés sur le câble doivent avoir un nom de sujet qui correspond au nom de domaine complet de l'ordinateur d'origine.</span><span class="sxs-lookup"><span data-stu-id="ce764-184">R1111: X.509 certificates presented over the wire must have a subject name that matches the fully qualified domain name (FQDN) of the originating machine.</span></span>  
   
-- <span data-ttu-id="562ee-185">B1112 : le DNS doit être fonctionnel entre chaque paire expéditeur-récepteur du système pour que les vérifications du nom de sujet X.509 réussissent.</span><span class="sxs-lookup"><span data-stu-id="562ee-185">B1112: DNS must be functional between each sender-receiver pair in the system for X.509 subject name checks to succeed.</span></span>  
+- <span data-ttu-id="ce764-185">B1112 : le DNS doit être fonctionnel entre chaque paire expéditeur-récepteur du système pour que les vérifications du nom de sujet X.509 réussissent.</span><span class="sxs-lookup"><span data-stu-id="ce764-185">B1112: DNS must be functional between each sender-receiver pair in the system for X.509 subject name checks to succeed.</span></span>  
   
-#### <a name="activation-and-registration-binding-configuration"></a><span data-ttu-id="562ee-186">Configuration de liaison d'activation et d'inscription</span><span class="sxs-lookup"><span data-stu-id="562ee-186">Activation and Registration Binding Configuration</span></span>  
- <span data-ttu-id="562ee-187">WCF requiert une liaison duplex de demande/réponse avec corrélation sur HTTPs.</span><span class="sxs-lookup"><span data-stu-id="562ee-187">WCF requires request/reply duplex binding with correlation over HTTPS.</span></span> <span data-ttu-id="562ee-188">(Pour plus d'informations sur la corrélation et les descriptions des modèles d'échange de messages demande/réponse, consultez WS-Atomic Transaction, section 8.)</span><span class="sxs-lookup"><span data-stu-id="562ee-188">(For more information about correlation and descriptions of the request/reply message exchange patterns, see WS-Atomic Transaction, Section 8.)</span></span>  
+#### <a name="activation-and-registration-binding-configuration"></a><span data-ttu-id="ce764-186">Configuration de liaison d'activation et d'inscription</span><span class="sxs-lookup"><span data-stu-id="ce764-186">Activation and Registration Binding Configuration</span></span>  
+ <span data-ttu-id="ce764-187">WCF exige une liaison duplex de demande/réponse avec une corrélation sur HTTPS.</span><span class="sxs-lookup"><span data-stu-id="ce764-187">WCF requires request/reply duplex binding with correlation over HTTPS.</span></span> <span data-ttu-id="ce764-188">(Pour plus d'informations sur la corrélation et les descriptions des modèles d'échange de messages demande/réponse, consultez WS-Atomic Transaction, section 8.)</span><span class="sxs-lookup"><span data-stu-id="ce764-188">(For more information about correlation and descriptions of the request/reply message exchange patterns, see WS-Atomic Transaction, Section 8.)</span></span>  
   
-#### <a name="2pc-protocol-binding-configuration"></a><span data-ttu-id="562ee-189">Configuration de liaison de protocole 2PC</span><span class="sxs-lookup"><span data-stu-id="562ee-189">2PC Protocol Binding Configuration</span></span>  
- <span data-ttu-id="562ee-190">WCF prend en charge les messages unidirectionnels (datagrammes) sur HTTPs.</span><span class="sxs-lookup"><span data-stu-id="562ee-190">WCF supports one-way (datagram) messages over HTTPS.</span></span> <span data-ttu-id="562ee-191">La corrélation au sein des messages est considérée comme un détail d'implémentation.</span><span class="sxs-lookup"><span data-stu-id="562ee-191">Correlation among the messages is left as an implementation detail.</span></span>  
+#### <a name="2pc-protocol-binding-configuration"></a><span data-ttu-id="ce764-189">Configuration de liaison de protocole 2PC</span><span class="sxs-lookup"><span data-stu-id="ce764-189">2PC Protocol Binding Configuration</span></span>  
+ <span data-ttu-id="ce764-190">WCF prend en charge les messages à sens unique (datagram) sur HTTPS.</span><span class="sxs-lookup"><span data-stu-id="ce764-190">WCF supports one-way (datagram) messages over HTTPS.</span></span> <span data-ttu-id="ce764-191">La corrélation au sein des messages est considérée comme un détail d'implémentation.</span><span class="sxs-lookup"><span data-stu-id="ce764-191">Correlation among the messages is left as an implementation detail.</span></span>  
   
- <span data-ttu-id="562ee-192">B1131 : les implémentations doivent prendre en charge les `wsa:ReferenceParameters` comme décrit dans WS-Addressing pour obtenir la corrélation des messages 2PC de WCF.</span><span class="sxs-lookup"><span data-stu-id="562ee-192">B1131: Implementations must support `wsa:ReferenceParameters` as described in WS-Addressing to achieve correlation of WCF’s 2PC messages.</span></span>  
+ <span data-ttu-id="ce764-192">B1131 : Les `wsa:ReferenceParameters` implémentations doivent être étayés, comme le décrit WS-Addressing, afin d’établir une corrélation entre les messages 2PC de WCF.</span><span class="sxs-lookup"><span data-stu-id="ce764-192">B1131: Implementations must support `wsa:ReferenceParameters` as described in WS-Addressing to achieve correlation of WCF’s 2PC messages.</span></span>  
   
-### <a name="transaction-manager-mixed-security-binding"></a><span data-ttu-id="562ee-193">Liaison de sécurité mixte de gestionnaire de transactions</span><span class="sxs-lookup"><span data-stu-id="562ee-193">Transaction Manager Mixed Security Binding</span></span>  
- <span data-ttu-id="562ee-194">Cette autre liaison (mode mixte) utilise le transport de sécurité combiné avec le modèle WS-Coordination Issued Token à des fins d’établissement d’identité.</span><span class="sxs-lookup"><span data-stu-id="562ee-194">This is an alternate (mixed mode) binding that uses transport security combined with the WS-Coordination Issued Token model for identity establishment purposes.</span></span> <span data-ttu-id="562ee-195">L’activation et l’inscription sont les seuls éléments qui diffèrent entre les deux liaisons.</span><span class="sxs-lookup"><span data-stu-id="562ee-195">Activation and Registration are the only elements that differ between the two bindings.</span></span>  
+### <a name="transaction-manager-mixed-security-binding"></a><span data-ttu-id="ce764-193">Liaison de sécurité mixte de gestionnaire de transactions</span><span class="sxs-lookup"><span data-stu-id="ce764-193">Transaction Manager Mixed Security Binding</span></span>  
+ <span data-ttu-id="ce764-194">Cette autre liaison (mode mixte) utilise le transport de sécurité combiné avec le modèle WS-Coordination Issued Token à des fins d’établissement d’identité.</span><span class="sxs-lookup"><span data-stu-id="ce764-194">This is an alternate (mixed mode) binding that uses transport security combined with the WS-Coordination Issued Token model for identity establishment purposes.</span></span> <span data-ttu-id="ce764-195">L’activation et l’inscription sont les seuls éléments qui diffèrent entre les deux liaisons.</span><span class="sxs-lookup"><span data-stu-id="ce764-195">Activation and Registration are the only elements that differ between the two bindings.</span></span>  
   
-#### <a name="https-transport-configuration"></a><span data-ttu-id="562ee-196">Configuration du transport HTTPS</span><span class="sxs-lookup"><span data-stu-id="562ee-196">HTTPS Transport Configuration</span></span>  
- <span data-ttu-id="562ee-197">Les certificats X.509 permettent d'établir l'identité de gestionnaire de transactions.</span><span class="sxs-lookup"><span data-stu-id="562ee-197">X.509 certificates are used to establish Transaction Manager Identity.</span></span> <span data-ttu-id="562ee-198">L'authentification client/serveur est requise, et l'autorisation client/serveur est considérée comme un détail d'implémentation.</span><span class="sxs-lookup"><span data-stu-id="562ee-198">Client/Server authentication is required, and client/server authorization is left as an implementation detail.</span></span>  
+#### <a name="https-transport-configuration"></a><span data-ttu-id="ce764-196">Configuration du transport HTTPS</span><span class="sxs-lookup"><span data-stu-id="ce764-196">HTTPS Transport Configuration</span></span>  
+ <span data-ttu-id="ce764-197">Les certificats X.509 permettent d'établir l'identité de gestionnaire de transactions.</span><span class="sxs-lookup"><span data-stu-id="ce764-197">X.509 certificates are used to establish Transaction Manager Identity.</span></span> <span data-ttu-id="ce764-198">L'authentification client/serveur est requise, et l'autorisation client/serveur est considérée comme un détail d'implémentation.</span><span class="sxs-lookup"><span data-stu-id="ce764-198">Client/Server authentication is required, and client/server authorization is left as an implementation detail.</span></span>  
   
-#### <a name="activation-message-binding-configuration"></a><span data-ttu-id="562ee-199">Configuration de liaison de message d’activation</span><span class="sxs-lookup"><span data-stu-id="562ee-199">Activation Message Binding Configuration</span></span>  
- <span data-ttu-id="562ee-200">En général, les messages d’activation ne participent pas à l’interopérabilité car ils se produisent habituellement entre une application et son gestionnaire de transactions local.</span><span class="sxs-lookup"><span data-stu-id="562ee-200">Activation Messages usually do not participate in interoperability because they typically occur between an application and its local Transaction Manager.</span></span>  
+#### <a name="activation-message-binding-configuration"></a><span data-ttu-id="ce764-199">Configuration de liaison de message d’activation</span><span class="sxs-lookup"><span data-stu-id="ce764-199">Activation Message Binding Configuration</span></span>  
+ <span data-ttu-id="ce764-200">En général, les messages d’activation ne participent pas à l’interopérabilité car ils se produisent habituellement entre une application et son gestionnaire de transactions local.</span><span class="sxs-lookup"><span data-stu-id="ce764-200">Activation Messages usually do not participate in interoperability because they typically occur between an application and its local Transaction Manager.</span></span>  
   
- <span data-ttu-id="562ee-201">B1221 : WCF utilise la liaison HTTPs duplex (décrite dans [protocoles de messagerie](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) pour les messages d’activation.</span><span class="sxs-lookup"><span data-stu-id="562ee-201">B1221: WCF uses duplex HTTPS binding (described in [Messaging Protocols](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) for Activation messages.</span></span> <span data-ttu-id="562ee-202">Les messages de demande et de réponse sont corrélés à l'aide de WS-Addressing 2004/08 pour WS-AT 1.0 et WS-Addressing 2005/08 pour WS-AT 1.1.</span><span class="sxs-lookup"><span data-stu-id="562ee-202">Request and Reply messages are correlated using WS-Addressing 2004/08 for WS-AT 1.0 and WS-Addressing 2005/08 for WS-AT 1.1.</span></span>  
+ <span data-ttu-id="ce764-201">B1221: WCF utilise la liaison HTTPS en duplex (décrite dans [les protocoles de messagerie](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) pour les messages d’activation.</span><span class="sxs-lookup"><span data-stu-id="ce764-201">B1221: WCF uses duplex HTTPS binding (described in [Messaging Protocols](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) for Activation messages.</span></span> <span data-ttu-id="ce764-202">Les messages de demande et de réponse sont corrélés à l'aide de WS-Addressing 2004/08 pour WS-AT 1.0 et WS-Addressing 2005/08 pour WS-AT 1.1.</span><span class="sxs-lookup"><span data-stu-id="ce764-202">Request and Reply messages are correlated using WS-Addressing 2004/08 for WS-AT 1.0 and WS-Addressing 2005/08 for WS-AT 1.1.</span></span>  
   
- <span data-ttu-id="562ee-203">La spécification WS-Atomic Transaction, section 8, fournit des informations supplémentaires sur la corrélation et les modèles d'échange de messages.</span><span class="sxs-lookup"><span data-stu-id="562ee-203">WS-Atomic Transaction specification, Section 8, describes further details about correlation and the message exchange patterns.</span></span>  
+ <span data-ttu-id="ce764-203">La spécification WS-Atomic Transaction, section 8, fournit des informations supplémentaires sur la corrélation et les modèles d'échange de messages.</span><span class="sxs-lookup"><span data-stu-id="ce764-203">WS-Atomic Transaction specification, Section 8, describes further details about correlation and the message exchange patterns.</span></span>  
   
-- <span data-ttu-id="562ee-204">R1222 : après réception de `CreateCoordinationContext`, le coordinateur doit émettre `SecurityContextToken` avec le `STx` secret associé.</span><span class="sxs-lookup"><span data-stu-id="562ee-204">R1222: Upon receiving a `CreateCoordinationContext`, the Coordinator must issue a `SecurityContextToken` with associated secret `STx`.</span></span> <span data-ttu-id="562ee-205">Ce jeton est retourné à l'intérieur d'un en-tête `t:IssuedTokens` selon la spécification WS-Trust.</span><span class="sxs-lookup"><span data-stu-id="562ee-205">This token is returned inside a `t:IssuedTokens` header following WS-Trust specification.</span></span>  
+- <span data-ttu-id="ce764-204">R1222 : après réception de `CreateCoordinationContext`, le coordinateur doit émettre `SecurityContextToken` avec le `STx` secret associé.</span><span class="sxs-lookup"><span data-stu-id="ce764-204">R1222: Upon receiving a `CreateCoordinationContext`, the Coordinator must issue a `SecurityContextToken` with associated secret `STx`.</span></span> <span data-ttu-id="ce764-205">Ce jeton est retourné à l'intérieur d'un en-tête `t:IssuedTokens` selon la spécification WS-Trust.</span><span class="sxs-lookup"><span data-stu-id="ce764-205">This token is returned inside a `t:IssuedTokens` header following WS-Trust specification.</span></span>  
   
-- <span data-ttu-id="562ee-206">R1223 : si l'activation se produit dans un contexte de coordination existant, l'en-tête `t:IssuedTokens` avec `SecurityContextToken` associé au contexte existant doit transmettre sur le message `CreateCoordinationContext`.</span><span class="sxs-lookup"><span data-stu-id="562ee-206">R1223: If Activation occurs within an existing Coordination Context, the `t:IssuedTokens` header with the `SecurityContextToken` associated with existing Context must flow on the `CreateCoordinationContext` message.</span></span>  
+- <span data-ttu-id="ce764-206">R1223 : si l'activation se produit dans un contexte de coordination existant, l'en-tête `t:IssuedTokens` avec `SecurityContextToken` associé au contexte existant doit transmettre sur le message `CreateCoordinationContext`.</span><span class="sxs-lookup"><span data-stu-id="ce764-206">R1223: If Activation occurs within an existing Coordination Context, the `t:IssuedTokens` header with the `SecurityContextToken` associated with existing Context must flow on the `CreateCoordinationContext` message.</span></span>  
   
- <span data-ttu-id="562ee-207">Un nouvel en-tête de `t:IssuedTokens` doit être généré pour être attaché au message de `wscoor:CreateCoordinationContextResponse` sortant.</span><span class="sxs-lookup"><span data-stu-id="562ee-207">A new `t:IssuedTokens` header should be generated for attaching to the outgoing `wscoor:CreateCoordinationContextResponse` message.</span></span>  
+ <span data-ttu-id="ce764-207">Un `t:IssuedTokens` nouvel en-tête doit être `wscoor:CreateCoordinationContextResponse` généré pour attacher au message sortant.</span><span class="sxs-lookup"><span data-stu-id="ce764-207">A new `t:IssuedTokens` header should be generated for attaching to the outgoing `wscoor:CreateCoordinationContextResponse` message.</span></span>  
   
-#### <a name="registration-message-binding-configuration"></a><span data-ttu-id="562ee-208">Configuration de liaison de message d'inscription</span><span class="sxs-lookup"><span data-stu-id="562ee-208">Registration Message Binding Configuration</span></span>  
- <span data-ttu-id="562ee-209">B1231 : WCF utilise la liaison HTTPs duplex (décrite dans [protocoles de messagerie](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)).</span><span class="sxs-lookup"><span data-stu-id="562ee-209">B1231: WCF uses duplex HTTPS binding (described in [Messaging Protocols](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)).</span></span> <span data-ttu-id="562ee-210">Les messages de demande et de réponse sont corrélés à l'aide de WS-Addressing 2004/08 pour WS-AT 1.0 et WS-Addressing 2005/08 pour WS-AT 1.1.</span><span class="sxs-lookup"><span data-stu-id="562ee-210">Request and Reply messages are correlated using WS-Addressing 2004/08 for WS-AT 1.0 and WS-Addressing 2005/08 for WS-AT 1.1.</span></span>  
+#### <a name="registration-message-binding-configuration"></a><span data-ttu-id="ce764-208">Configuration de liaison de message d'inscription</span><span class="sxs-lookup"><span data-stu-id="ce764-208">Registration Message Binding Configuration</span></span>  
+ <span data-ttu-id="ce764-209">B1231: WCF utilise la liaison DUplex HTTPS (décrit dans [les protocoles de messagerie](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)).</span><span class="sxs-lookup"><span data-stu-id="ce764-209">B1231: WCF uses duplex HTTPS binding (described in [Messaging Protocols](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)).</span></span> <span data-ttu-id="ce764-210">Les messages de demande et de réponse sont corrélés à l'aide de WS-Addressing 2004/08 pour WS-AT 1.0 et WS-Addressing 2005/08 pour WS-AT 1.1.</span><span class="sxs-lookup"><span data-stu-id="ce764-210">Request and Reply messages are correlated using WS-Addressing 2004/08 for WS-AT 1.0 and WS-Addressing 2005/08 for WS-AT 1.1.</span></span>  
   
- <span data-ttu-id="562ee-211">WS-AtomicTransaction, section 8, fournit des informations supplémentaires sur la corrélation et des descriptions des modèles d’échange de messages.</span><span class="sxs-lookup"><span data-stu-id="562ee-211">WS-AtomicTransaction, Section 8, describes further details about correlation and descriptions of the message exchange patterns.</span></span>  
+ <span data-ttu-id="ce764-211">WS-AtomicTransaction, section 8, fournit des informations supplémentaires sur la corrélation et des descriptions des modèles d’échange de messages.</span><span class="sxs-lookup"><span data-stu-id="ce764-211">WS-AtomicTransaction, Section 8, describes further details about correlation and descriptions of the message exchange patterns.</span></span>  
   
- <span data-ttu-id="562ee-212">R1232 : les messages `wscoor:Register` sortants doivent utiliser le mode d’authentification `IssuedTokenOverTransport` décrit dans [protocoles de sécurité](../../../../docs/framework/wcf/feature-details/security-protocols.md).</span><span class="sxs-lookup"><span data-stu-id="562ee-212">R1232: Outgoing `wscoor:Register` messages must use the `IssuedTokenOverTransport` authentication mode described in [Security Protocols](../../../../docs/framework/wcf/feature-details/security-protocols.md).</span></span>  
+ <span data-ttu-id="ce764-212">R1232: `wscoor:Register` Les messages `IssuedTokenOverTransport` sortants doivent utiliser le mode d’authentification décrit dans [les protocoles de sécurité](../../../../docs/framework/wcf/feature-details/security-protocols.md).</span><span class="sxs-lookup"><span data-stu-id="ce764-212">R1232: Outgoing `wscoor:Register` messages must use the `IssuedTokenOverTransport` authentication mode described in [Security Protocols](../../../../docs/framework/wcf/feature-details/security-protocols.md).</span></span>  
   
- <span data-ttu-id="562ee-213">L’élément `wsse:Timestamp` doit être signé à l’aide du `SecurityContextToken STx` émis.</span><span class="sxs-lookup"><span data-stu-id="562ee-213">The `wsse:Timestamp` element must be signed using the `SecurityContextToken STx` issued.</span></span> <span data-ttu-id="562ee-214">Cette signature est une preuve de possession du jeton associée à une transaction spécifique et est utilisée pour authentifier un participant qui s’inscrit à la transaction.</span><span class="sxs-lookup"><span data-stu-id="562ee-214">This signature is a proof of possession of the token associated with particular transaction and is used to authenticate a participant enlisting in the transaction.</span></span> <span data-ttu-id="562ee-215">Le message RegistrationResponse est renvoyé sur HTTPS.</span><span class="sxs-lookup"><span data-stu-id="562ee-215">The RegistrationResponse message is sent back over HTTPS.</span></span>  
+ <span data-ttu-id="ce764-213">L’élément `wsse:Timestamp` doit être `SecurityContextToken STx` signé à l’aide de l’émission.</span><span class="sxs-lookup"><span data-stu-id="ce764-213">The `wsse:Timestamp` element must be signed using the `SecurityContextToken STx` issued.</span></span> <span data-ttu-id="ce764-214">Cette signature est une preuve de possession du jeton associée à une transaction spécifique et est utilisée pour authentifier un participant qui s’inscrit à la transaction.</span><span class="sxs-lookup"><span data-stu-id="ce764-214">This signature is a proof of possession of the token associated with particular transaction and is used to authenticate a participant enlisting in the transaction.</span></span> <span data-ttu-id="ce764-215">Le message RegistrationResponse est renvoyé sur HTTPS.</span><span class="sxs-lookup"><span data-stu-id="ce764-215">The RegistrationResponse message is sent back over HTTPS.</span></span>  
   
-#### <a name="2pc-protocol-binding-configuration"></a><span data-ttu-id="562ee-216">Configuration de liaison de protocole 2PC</span><span class="sxs-lookup"><span data-stu-id="562ee-216">2PC Protocol Binding Configuration</span></span>  
- <span data-ttu-id="562ee-217">WCF prend en charge les messages unidirectionnels (datagrammes) sur HTTPs.</span><span class="sxs-lookup"><span data-stu-id="562ee-217">WCF supports one-way (datagram) messages over HTTPS.</span></span> <span data-ttu-id="562ee-218">La corrélation au sein des messages est considérée comme un détail d'implémentation.</span><span class="sxs-lookup"><span data-stu-id="562ee-218">Correlation among the messages is left as an implementation detail.</span></span>  
+#### <a name="2pc-protocol-binding-configuration"></a><span data-ttu-id="ce764-216">Configuration de liaison de protocole 2PC</span><span class="sxs-lookup"><span data-stu-id="ce764-216">2PC Protocol Binding Configuration</span></span>  
+ <span data-ttu-id="ce764-217">WCF prend en charge les messages à sens unique (datagram) sur HTTPS.</span><span class="sxs-lookup"><span data-stu-id="ce764-217">WCF supports one-way (datagram) messages over HTTPS.</span></span> <span data-ttu-id="ce764-218">La corrélation au sein des messages est considérée comme un détail d'implémentation.</span><span class="sxs-lookup"><span data-stu-id="ce764-218">Correlation among the messages is left as an implementation detail.</span></span>  
   
- <span data-ttu-id="562ee-219">B1241 : les implémentations doivent prendre en charge les `wsa:ReferenceParameters` comme décrit dans WS-Addressing pour obtenir la corrélation des messages 2PC de WCF.</span><span class="sxs-lookup"><span data-stu-id="562ee-219">B1241: Implementations must support `wsa:ReferenceParameters` as described in WS-Addressing to achieve correlation of WCF’s 2PC messages.</span></span>  
+ <span data-ttu-id="ce764-219">B1241 : Les `wsa:ReferenceParameters` implémentations doivent être étayés, comme le décrit WS-Addressing, afin d’établir une corrélation entre les messages 2PC de WCF.</span><span class="sxs-lookup"><span data-stu-id="ce764-219">B1241: Implementations must support `wsa:ReferenceParameters` as described in WS-Addressing to achieve correlation of WCF’s 2PC messages.</span></span>  
   
-## <a name="application-message-exchange"></a><span data-ttu-id="562ee-220">Échange de messages d'application</span><span class="sxs-lookup"><span data-stu-id="562ee-220">Application Message Exchange</span></span>  
- <span data-ttu-id="562ee-221">Les applications sont libres d’utiliser n’importe quelle liaison spécifique pour les messages interapplication, tant que la liaison satisfait aux exigences de sécurité suivantes :</span><span class="sxs-lookup"><span data-stu-id="562ee-221">Applications are free to use any particular binding for application-to-application messages, as long as the binding meets the following security requirements:</span></span>  
+## <a name="application-message-exchange"></a><span data-ttu-id="ce764-220">Échange de messages d'application</span><span class="sxs-lookup"><span data-stu-id="ce764-220">Application Message Exchange</span></span>  
+ <span data-ttu-id="ce764-221">Les applications sont libres d’utiliser n’importe quelle liaison spécifique pour les messages interapplication, tant que la liaison satisfait aux exigences de sécurité suivantes :</span><span class="sxs-lookup"><span data-stu-id="ce764-221">Applications are free to use any particular binding for application-to-application messages, as long as the binding meets the following security requirements:</span></span>  
   
-- <span data-ttu-id="562ee-222">R2001 : les messages interapplication doivent transmettre l'en-tête `t:IssuedTokens` avec `CoordinationContext` dans l'en-tête du message.</span><span class="sxs-lookup"><span data-stu-id="562ee-222">R2001: Application-to-application messages must flow the `t:IssuedTokens` header along with the `CoordinationContext` in the header of the message.</span></span>  
+- <span data-ttu-id="ce764-222">R2001 : les messages interapplication doivent transmettre l'en-tête `t:IssuedTokens` avec `CoordinationContext` dans l'en-tête du message.</span><span class="sxs-lookup"><span data-stu-id="ce764-222">R2001: Application-to-application messages must flow the `t:IssuedTokens` header along with the `CoordinationContext` in the header of the message.</span></span>  
   
-- <span data-ttu-id="562ee-223">R2002 : l'intégrité et la confidentialité de `t:IssuedToken` doivent être assurées.</span><span class="sxs-lookup"><span data-stu-id="562ee-223">R2002: Integrity and confidentiality of `t:IssuedToken` must be provided.</span></span>  
+- <span data-ttu-id="ce764-223">R2002 : l'intégrité et la confidentialité de `t:IssuedToken` doivent être assurées.</span><span class="sxs-lookup"><span data-stu-id="ce764-223">R2002: Integrity and confidentiality of `t:IssuedToken` must be provided.</span></span>  
   
- <span data-ttu-id="562ee-224">L'en-tête `CoordinationContext` contient `wscoor:Identifier`.</span><span class="sxs-lookup"><span data-stu-id="562ee-224">The `CoordinationContext` header contains `wscoor:Identifier`.</span></span> <span data-ttu-id="562ee-225">Bien que la définition de `xsd:AnyURI` autorise l’utilisation d’URI absolus et relatifs, WCF prend en charge uniquement les `wscoor:Identifiers`, qui sont des URI absolus.</span><span class="sxs-lookup"><span data-stu-id="562ee-225">While the definition of `xsd:AnyURI` allows the use of both absolute and relative URIs, WCF supports only `wscoor:Identifiers`, which are absolute URIs.</span></span>  
+ <span data-ttu-id="ce764-224">L'en-tête `CoordinationContext` contient `wscoor:Identifier`.</span><span class="sxs-lookup"><span data-stu-id="ce764-224">The `CoordinationContext` header contains `wscoor:Identifier`.</span></span> <span data-ttu-id="ce764-225">Bien que `xsd:AnyURI` la définition de permette l’utilisation d’URI absolues et relatives, WCF ne prend en charge que `wscoor:Identifiers`, qui sont des URI absolues.</span><span class="sxs-lookup"><span data-stu-id="ce764-225">While the definition of `xsd:AnyURI` allows the use of both absolute and relative URIs, WCF supports only `wscoor:Identifiers`, which are absolute URIs.</span></span>  
   
- <span data-ttu-id="562ee-226">B2003 : si le `wscoor:Identifier` du `wscoor:CoordinationContext` est un URI relatif, des erreurs sont retournées à partir des services WCF transactionnels.</span><span class="sxs-lookup"><span data-stu-id="562ee-226">B2003: If the `wscoor:Identifier` of the `wscoor:CoordinationContext` is a relative URI, faults will be returned from transactional WCF services.</span></span>  
+ <span data-ttu-id="ce764-226">B2003: Si `wscoor:Identifier` `wscoor:CoordinationContext` l’URI est un relatif URI, les défauts seront retournés à partir de services transactionnels WCF.</span><span class="sxs-lookup"><span data-stu-id="ce764-226">B2003: If the `wscoor:Identifier` of the `wscoor:CoordinationContext` is a relative URI, faults will be returned from transactional WCF services.</span></span>  
   
-## <a name="message-examples"></a><span data-ttu-id="562ee-227">Exemples de message</span><span class="sxs-lookup"><span data-stu-id="562ee-227">Message Examples</span></span>  
+## <a name="message-examples"></a><span data-ttu-id="ce764-227">Exemples de message</span><span class="sxs-lookup"><span data-stu-id="ce764-227">Message Examples</span></span>  
   
-### <a name="createcoordinationcontext-requestresponse-messages"></a><span data-ttu-id="562ee-228">Messages de demande/réponse CreateCoordinationContext</span><span class="sxs-lookup"><span data-stu-id="562ee-228">CreateCoordinationContext Request/Response Messages</span></span>  
- <span data-ttu-id="562ee-229">Les messages suivants suivent un modèle de demande/réponse.</span><span class="sxs-lookup"><span data-stu-id="562ee-229">The following messages follow a request/response pattern.</span></span>  
+### <a name="createcoordinationcontext-requestresponse-messages"></a><span data-ttu-id="ce764-228">Messages de demande/réponse CreateCoordinationContext</span><span class="sxs-lookup"><span data-stu-id="ce764-228">CreateCoordinationContext Request/Response Messages</span></span>  
+ <span data-ttu-id="ce764-229">Les messages suivants suivent un modèle de demande/réponse.</span><span class="sxs-lookup"><span data-stu-id="ce764-229">The following messages follow a request/response pattern.</span></span>  
   
-#### <a name="createcoordinationcontext-with-wscoor-10"></a><span data-ttu-id="562ee-230">CreateCoordinationContext avec WSCoor 1,0</span><span class="sxs-lookup"><span data-stu-id="562ee-230">CreateCoordinationContext with WSCoor 1.0</span></span>  
+#### <a name="createcoordinationcontext-with-wscoor-10"></a><span data-ttu-id="ce764-230">CreateCoordinationContext avec WSCoor 1.0</span><span class="sxs-lookup"><span data-stu-id="ce764-230">CreateCoordinationContext with WSCoor 1.0</span></span>  
   
 ```xml  
 <s:Envelope>  
@@ -167,24 +167,24 @@ ms.locfileid: "76742729"
 </s11:Envelope>  
 ```  
   
-#### <a name="createcoordinationcontext-with-wscoor-11"></a><span data-ttu-id="562ee-231">CreateCoordinationContext avec WSCoor 1.1</span><span class="sxs-lookup"><span data-stu-id="562ee-231">CreateCoordinationContext with WSCoor 1.1</span></span>  
+#### <a name="createcoordinationcontext-with-wscoor-11"></a><span data-ttu-id="ce764-231">CreateCoordinationContext avec WSCoor 1.1</span><span class="sxs-lookup"><span data-stu-id="ce764-231">CreateCoordinationContext with WSCoor 1.1</span></span>  
   
 ```xml  
-<s:Envelope>   
+<s:Envelope>
 <s:Header>  
 <a:Action>http://docs.oasis-open.org/ws-tx/wscoor/2006/06/CreateCoordinationContext</Action>  
 <a:MessageID>urn:uuid:069f5104-fd88-4264-9f99-60032a82854e</MessageID>  
-<a:ReplyTo>   
-<Address>https://...</a:Address>   
-</a:ReplyTo>   
-<a:To>https://...</a:To>   
+<a:ReplyTo>
+<Address>https://...</a:Address>
+</a:ReplyTo>
+<a:To>https://...</a:To>
 <wsse:Security>  
  <u:Timestamp>  
 <wsu:Created>2005-12-15T23:36:09.921Z</u:Created>  
 <wsu:Expires>2005-12-15T23:41:09.921Z</u:Expires>  
-</u:Timestamp>   
-</wsse:Security>   
-</s:Header>   
+</u:Timestamp>
+</wsse:Security>
+</s:Header>
 <s:Body xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">  
 <wscoor:CreateCoordinationContext>  
 <wscoor:CoordinationType>...</wscoor:CoordinationType>  
@@ -193,7 +193,7 @@ ms.locfileid: "76742729"
 </s11:Envelope>  
 ```  
   
-#### <a name="createcoordinationcontextresponse-with-trust-pre-13-and-wscoor-10"></a><span data-ttu-id="562ee-232">CreateCoordinationContextResponse avec Trust Pre-1.3 et WSCoor 1.0</span><span class="sxs-lookup"><span data-stu-id="562ee-232">CreateCoordinationContextResponse with Trust Pre-1.3 and WSCoor 1.0</span></span>  
+#### <a name="createcoordinationcontextresponse-with-trust-pre-13-and-wscoor-10"></a><span data-ttu-id="ce764-232">CreateCoordinationContextResponse avec Trust Pre-1.3 et WSCoor 1.0</span><span class="sxs-lookup"><span data-stu-id="ce764-232">CreateCoordinationContextResponse with Trust Pre-1.3 and WSCoor 1.0</span></span>  
   
 ```xml  
 <s:Envelope>  
@@ -204,9 +204,9 @@ ms.locfileid: "76742729"
     <a:RelatesTo>urn:uuid:069f5104-fd88-4264-9f99-60032a82854e</a:RelatesTo>  
     <a:To s:mustUnderstand="1">https://... </a:To>  
     <t:IssuedTokens>  
- <wst:RequestSecurityTokenResponse     
+ <wst:RequestSecurityTokenResponse
     xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"  
-    xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"   
+    xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
     xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust"  
     xmlns:wsc="http://schemas.xmlsoap.org/ws/2005/02/sc"  
     xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">  
@@ -216,27 +216,27 @@ ms.locfileid: "76742729"
         <wssu:Identifier>  
           http://fabrikam123.com/SCTi  
         </wssu:Identifier>  
-      </wsc:SecurityContextToken>   
+      </wsc:SecurityContextToken>
     </wst:RequestedSecurityToken>  
     <wsp:AppliesTo>  
         http://fabrikam123.com/CCi  
-    </wsp:AppliesTo>    
+    </wsp:AppliesTo>
     <wst:RequestedAttachedReference>  
       <wsse:SecurityTokenReference >  
-        <wsse:Reference   
+        <wsse:Reference
            ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct"  
            URI="http://fabrikam123.com/SCTi"/>  
       </wsse:SecurityTokenReference>  
     </wst:RequestedAttachedReference>  
     <wst:RequestedUnattachedReference>  
       <wsse:SecurityTokenReference>  
-        <wsse:Reference   
+        <wsse:Reference
           ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct"  
           URI="http://fabrikam123.com/SCTi"/>  
       </wsse:SecurityTokenReference>  
     </wst:RequestedUnattachedReference>  
     <wst:RequestedProofToken>  
-      <wst:BinarySecret   
+      <wst:BinarySecret
         Type="http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey">  
         <!-- base64 encoded value -->  
       </wst:BinarySecret>  
@@ -275,86 +275,86 @@ ms.locfileid: "76742729"
 </s:Envelope>  
 ```  
   
-#### <a name="createcoordinationcontextresponse-with-trust-13-and-wscoor-11"></a><span data-ttu-id="562ee-233">CreateCoordinationContextResponse avec Trust 1.3 et WSCoor 1.1</span><span class="sxs-lookup"><span data-stu-id="562ee-233">CreateCoordinationContextResponse with Trust 1.3 and WSCoor 1.1</span></span>  
+#### <a name="createcoordinationcontextresponse-with-trust-13-and-wscoor-11"></a><span data-ttu-id="ce764-233">CreateCoordinationContextResponse avec Trust 1.3 et WSCoor 1.1</span><span class="sxs-lookup"><span data-stu-id="ce764-233">CreateCoordinationContextResponse with Trust 1.3 and WSCoor 1.1</span></span>  
   
 ```xml  
 <s:Envelope>  
-<!-- Data below is shown in the clear for illustration purposes only. -->   
-<s:Header>   
+<!-- Data below is shown in the clear for illustration purposes only. -->
+<s:Header>
 <a:Action>http://docs.oasis-open.org/ws-tx/wscoor/2006/06/CreateCoordinationContextResponse </a:Action>  
 <a:RelatesTo>urn:uuid:069f5104-fd88-4264-9f99-60032a82854e</a:RelatesTo>  
-<a:To s:mustUnderstand="1">https://... </a:To>   
-<t:IssuedTokens>   
-<wst:RequestSecurityTokenResponse   
-xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"   
-xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"   
+<a:To s:mustUnderstand="1">https://... </a:To>
+<t:IssuedTokens>
+<wst:RequestSecurityTokenResponse
+xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
 xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512"  
 xmlns:wsc="http://schemas.xmlsoap.org/ws/2005/02/sc"  
 xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">  
 <wst:TokenType>http://schemas.xmlsoap.org/ws/2005/02/sc/sct</wst:TokenType>  
-<wst:RequestedSecurityToken>   
-<wsc:SecurityContextToken>   
+<wst:RequestedSecurityToken>
+<wsc:SecurityContextToken>
 <wssu:Identifier> http://fabrikam123.com/SCTi  
-</wssu:Identifier>   
-</wsc:SecurityContextToken>   
-</wst:RequestedSecurityToken>   
+</wssu:Identifier>
+</wsc:SecurityContextToken>
+</wst:RequestedSecurityToken>
 <wsp:AppliesTo> http://fabrikam123.com/CCi </wsp:AppliesTo>  
-<wst:RequestedAttachedReference>   
-<wsse:SecurityTokenReference >   
+<wst:RequestedAttachedReference>
+<wsse:SecurityTokenReference >
 <wsse:Reference  
   ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct"  
   URI="http://fabrikam123.com/SCTi"/>  
-</wsse:SecurityTokenReference>   
-</wst:RequestedAttachedReference>   
-<wst:RequestedUnattachedReference>   
-<wsse:SecurityTokenReference>   
+</wsse:SecurityTokenReference>
+</wst:RequestedAttachedReference>
+<wst:RequestedUnattachedReference>
+<wsse:SecurityTokenReference>
 <wsse:Reference  
  ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct"  
  URI="http://fabrikam123.com/SCTi"/>  
-</wsse:SecurityTokenReference>   
-</wst:RequestedUnattachedReference>   
-<wst:RequestedProofToken>   
+</wsse:SecurityTokenReference>
+</wst:RequestedUnattachedReference>
+<wst:RequestedProofToken>
 <wst:BinarySecret  
   Type="http://docs.oasis-open.org/ws-sx/ws-trust/200512/SymmetricKey">  
-  <!-- base64 encoded value -->   
-</wst:BinarySecret>   
-</wst:RequestedProofToken>   
-<wst:Lifetime>   
+  <!-- base64 encoded value -->
+</wst:BinarySecret>
+</wst:RequestedProofToken>
+<wst:Lifetime>
 <wssu:Created>2005-10-24T20:19:26.526Z</wssu:Created>  
 <wssu:Expires>2005-10-25T06:24:26.526Z</wssu:Expires>  
-</wst:Lifetime>   
-<wst:KeySize>256</wst:KeySize>   
-</wst:RequestSecurityTokenResponse>   
-</t:IssuedTokens>   
-<o:Security xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">   
-<u:Timestamp u:Id="_0">   
-<u:Created>2005-12-15T23:36:12.015Z</u:Created>   
-<u:Expires>2005-12-15T23:41:12.015Z</u:Expires>   
-</u:Timestamp>   
-</o:Security>   
-</s:Header>   
-<s:Body>   
-<wscoor:CreateCoordinationContextResponse>   
-<wscoor:CoordinationContext>   
+</wst:Lifetime>
+<wst:KeySize>256</wst:KeySize>
+</wst:RequestSecurityTokenResponse>
+</t:IssuedTokens>
+<o:Security xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+<u:Timestamp u:Id="_0">
+<u:Created>2005-12-15T23:36:12.015Z</u:Created>
+<u:Expires>2005-12-15T23:41:12.015Z</u:Expires>
+</u:Timestamp>
+</o:Security>
+</s:Header>
+<s:Body>
+<wscoor:CreateCoordinationContextResponse>
+<wscoor:CoordinationContext>
 <wscoor:Identifier> http://fabrikam123.com/CCi  
-</wscoor:Identifier>   
+</wscoor:Identifier>
 <wscoor:Expires>...</wscoor:Expires>  
 <wscoor:CoordinationType>...</wscoor:CoordinationType>  
-<wscoor:RegistrationService>   
+<wscoor:RegistrationService>
 <a:Address>https://...</a:Address>  
 <a:ReferenceParameters> ...  
 </a:ReferenceParameters>  
-</wscoor:RegistrationService>   
-</wscoor:CoordinationContext>   
-</wscoor:CreateCoordinationContextResponse>   
-</s:Body>   
+</wscoor:RegistrationService>
+</wscoor:CoordinationContext>
+</wscoor:CreateCoordinationContextResponse>
+</s:Body>
 </s:Envelope>  
 ```  
   
-### <a name="registration-messages"></a><span data-ttu-id="562ee-234">Messages d'inscription</span><span class="sxs-lookup"><span data-stu-id="562ee-234">Registration Messages</span></span>  
- <span data-ttu-id="562ee-235">Les messages suivants sont des messages d'inscription.</span><span class="sxs-lookup"><span data-stu-id="562ee-235">The following messages are registration messages.</span></span>  
+### <a name="registration-messages"></a><span data-ttu-id="ce764-234">Messages d'inscription</span><span class="sxs-lookup"><span data-stu-id="ce764-234">Registration Messages</span></span>  
+ <span data-ttu-id="ce764-235">Les messages suivants sont des messages d'inscription.</span><span class="sxs-lookup"><span data-stu-id="ce764-235">The following messages are registration messages.</span></span>  
   
-#### <a name="register-with-wscoor-10"></a><span data-ttu-id="562ee-236">Inscrivez-vous auprès de WSCoor 1,0</span><span class="sxs-lookup"><span data-stu-id="562ee-236">Register with WSCoor 1.0</span></span>  
+#### <a name="register-with-wscoor-10"></a><span data-ttu-id="ce764-236">Inscrivez-vous auprès de WSCoor 1.0</span><span class="sxs-lookup"><span data-stu-id="ce764-236">Register with WSCoor 1.0</span></span>  
   
 ```xml  
 <s:Envelope>  
@@ -362,11 +362,11 @@ xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
     <a:Action>http://schemas.xmlsoap.org/ws/2004/10/wscoor/Register</a:Action>  
     <a:MessageID>urn:uuid:ed418b86-a75e-4aea-9d4e-a5d0cb5c088e</a:MessageID>  
     <a:ReplyTo>  
-      <a:Address>https://...</a:Address>        
+      <a:Address>https://...</a:Address>
     </a:ReplyTo>  
     <a:To>https://...</a:To>  
-    <wsse:Security   
-      s:mustUnderstand="1"   
+    <wsse:Security
+      s:mustUnderstand="1"
       xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"  
       xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">  
       <wssu:Timestamp wssu:Id="_0" >  
@@ -397,7 +397,7 @@ xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
         <ds:KeyInfo>  
           <wsse:SecurityTokenReference  
             xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">  
-            <wsse:Reference   
+            <wsse:Reference
               URI="http://fabrikam123.com/SCTi"/>  
           </wsse:SecurityTokenReference>  
         </ds:KeyInfo>  
@@ -415,66 +415,66 @@ xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
 </s:Envelope>  
 ```  
   
-#### <a name="register-with-wscoor-11"></a><span data-ttu-id="562ee-237">Register avec WSCoor 1.1</span><span class="sxs-lookup"><span data-stu-id="562ee-237">Register with WSCoor 1.1</span></span>  
+#### <a name="register-with-wscoor-11"></a><span data-ttu-id="ce764-237">Register avec WSCoor 1.1</span><span class="sxs-lookup"><span data-stu-id="ce764-237">Register with WSCoor 1.1</span></span>  
   
 ```xml  
 <s:Envelope>  
-<s:Header>   
-<a:Action>http://docs.oasis-open.org/ws-tx/wscoor/2006/06/Register</a:Action>   
+<s:Header>
+<a:Action>http://docs.oasis-open.org/ws-tx/wscoor/2006/06/Register</a:Action>
 <a:MessageID>urn:uuid:ed418b86-a75e-4aea-9d4e-a5d0cb5c088e</a:MessageID>  
-<a:ReplyTo>   
-<a:Address>https://...</a:Address>   
+<a:ReplyTo>
+<a:Address>https://...</a:Address>
 </a:ReplyTo>  
-<a:To>https://...</a:To>   
-<wsse:Security   
-s:mustUnderstand="1"   
-xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"   
+<a:To>https://...</a:To>
+<wsse:Security
+s:mustUnderstand="1"
+xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
 xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">  
-<wssu:Timestamp wssu:Id="_0" >   
+<wssu:Timestamp wssu:Id="_0" >
 <wssu:Created>2005-12-15T23:36:13.827Z</wssu:Created>  
 <wssu:Expires>2005-12-15T23:41:13.827Z</wssu:Expires>  
-</wssu:Timestamp>   
-<wsc:SecurityContextToken>   
+</wssu:Timestamp>
+<wsc:SecurityContextToken>
 <wssu:Identifier> http://fabrikam123.com/SCTi  
-</wssu:Identifier>   
-</wsc:SecurityContextToken>   
+</wssu:Identifier>
+</wsc:SecurityContextToken>
 <!-- supporting signature over the timestamp -->  
 <wsse:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">  
-<ds:SignedInfo>   
-<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>   
-<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#hmac-sha1"/>   
-<ds:Reference URI="#_0">   
-<ds:Transforms>   
-<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>   
-</ds:Transforms>   
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#hmac-sha1"/>
+<ds:Reference URI="#_0">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+</ds:Transforms>
 <ds:DigestMethod  
-Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>   
+Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
 <ds:DigestValue> alRzyhjLgoUOYoh8cx4n75eTcUk=  
-</ds:DigestValue>   
-</ds:Reference>   
+</ds:DigestValue>
+</ds:Reference>
 </ds:SignedInfo>  
 <ds:SignatureValue>YZYjnVvSOVasAQqQxaaviTSWtqI=  
 </ds:SignatureValue>  
-<ds:KeyInfo>   
+<ds:KeyInfo>
 <wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">  
   <wsse:Reference URI="http://fabrikam123.com/SCTi"/>  
-</wsse:SecurityTokenReference>   
-</ds:KeyInfo>   
-</wsse:Signature>   
-</wsse:Security>   
-</s:Header>   
-<s:Body xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">   
-<wscoor:Register>   
+</wsse:SecurityTokenReference>
+</ds:KeyInfo>
+</wsse:Signature>
+</wsse:Security>
+</s:Header>
+<s:Body xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+<wscoor:Register>
 <wscoor:ProtocolIdentifier>...</wscoor:ProtocolIdentifier>  
-<wscoor:ParticipantProtocolService>   
+<wscoor:ParticipantProtocolService>
 <a:Address>https://... </a:Address>  
-</wscoor:ParticipantProtocolService>   
-</wscoor:Register>   
-</s:Body>   
+</wscoor:ParticipantProtocolService>
+</wscoor:Register>
+</s:Body>
 </s:Envelope>  
 ```  
   
-#### <a name="register-response-with-wscoor-10"></a><span data-ttu-id="562ee-238">Inscrire la réponse avec WSCoor 1,0</span><span class="sxs-lookup"><span data-stu-id="562ee-238">Register Response with WSCoor 1.0</span></span>  
+#### <a name="register-response-with-wscoor-10"></a><span data-ttu-id="ce764-238">Réponse d’enregistrement avec WSCoor 1.0</span><span class="sxs-lookup"><span data-stu-id="ce764-238">Register Response with WSCoor 1.0</span></span>  
   
 ```xml  
 <s:Envelope>  
@@ -484,11 +484,11 @@ Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
     </a:Action>  
     <a:MessageID>urn:uuid:ed418b86-a75e-4aea-9d4e-a5d0cb5c088d</a:MessageID>  
     <a:RelatesTo>  
-      urn:uuid:ed418b86-a75e-4aea-9d4e-a5d0cb5c088e        
+      urn:uuid:ed418b86-a75e-4aea-9d4e-a5d0cb5c088e
     </a:RelatesTo>  
     <a:To>https://...</a:To>  
-    <wsse:Security   
-      s:mustUnderstand="1"   
+    <wsse:Security
+      s:mustUnderstand="1"
       xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"  
       xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">  
       <wssu:Timestamp>  
@@ -510,49 +510,49 @@ Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
 </s:Envelope>  
 ```  
   
-#### <a name="register-response-with-wscoor-11"></a><span data-ttu-id="562ee-239">Register Response avec WSCoor 1.1</span><span class="sxs-lookup"><span data-stu-id="562ee-239">Register Response with WSCoor 1.1</span></span>  
+#### <a name="register-response-with-wscoor-11"></a><span data-ttu-id="ce764-239">Register Response avec WSCoor 1.1</span><span class="sxs-lookup"><span data-stu-id="ce764-239">Register Response with WSCoor 1.1</span></span>  
   
 ```xml  
 <s:Envelope>  
-<s:Header>   
+<s:Header>
 <a:Action> http://docs.oasis-open.org/ws-tx/wscoor/2006/06/RegisterResponse  
-</a:Action>   
+</a:Action>
 <a:MessageID>urn:uuid:ed418b86-a75e-4aea-9d4e-a5d0cb5c088d</a:MessageID>  
 <a:RelatesTo> urn:uuid:ed418b86-a75e-4aea-9d4e-a5d0cb5c088e </a:RelatesTo>  
-<a:To>https://...</a:To>   
-<wsse:Security   
-s:mustUnderstand="1"   
-xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"   
-xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">   
-<wssu:Timestamp>   
+<a:To>https://...</a:To>
+<wsse:Security
+s:mustUnderstand="1"
+xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+<wssu:Timestamp>
 <wssu:Created>2005-12-15T23:36:13.827Z</wssu:Created>  
 <wssu:Expires>2005-12-15T23:41:13.827Z</wssu:Expires>  
-</wssu:Timestamp>   
-</wsse:Security>   
-</s:Header>   
-<s:Body xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">   
-<wscoor:RegisterResponse>   
+</wssu:Timestamp>
+</wsse:Security>
+</s:Header>
+<s:Body xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+<wscoor:RegisterResponse>
 <wscoor:CoordinatorProtocolService>  
 <a:Address>https://...</a:Address>  
 <a:ReferenceParameters> ... </a:ReferenceParameters>  
-</wscoor:CoordinatorProtocolService>   
-</wscoor:RegisterResponse>   
-</s:Body>   
+</wscoor:CoordinatorProtocolService>
+</wscoor:RegisterResponse>
+</s:Body>
 </s:Envelope>  
 ```  
   
-### <a name="two-phase-commit-protocol-messages"></a><span data-ttu-id="562ee-240">Messages de protocole de validation à deux phases</span><span class="sxs-lookup"><span data-stu-id="562ee-240">Two Phase Commit Protocol Messages</span></span>  
- <span data-ttu-id="562ee-241">Le message suivant concerne le protocole de validation en deux phases (2PC).</span><span class="sxs-lookup"><span data-stu-id="562ee-241">The following message relates to the two-phase commit (2PC) protocol.</span></span>  
+### <a name="two-phase-commit-protocol-messages"></a><span data-ttu-id="ce764-240">Messages de protocole de validation à deux phases</span><span class="sxs-lookup"><span data-stu-id="ce764-240">Two Phase Commit Protocol Messages</span></span>  
+ <span data-ttu-id="ce764-241">Le message suivant concerne le protocole de validation en deux phases (2PC).</span><span class="sxs-lookup"><span data-stu-id="ce764-241">The following message relates to the two-phase commit (2PC) protocol.</span></span>  
   
-#### <a name="commit-with-wsat-10"></a><span data-ttu-id="562ee-242">Valider avec WSAT 1,0</span><span class="sxs-lookup"><span data-stu-id="562ee-242">Commit with WSAT 1.0</span></span>  
+#### <a name="commit-with-wsat-10"></a><span data-ttu-id="ce764-242">Engagez-vous avec WSAT 1.0</span><span class="sxs-lookup"><span data-stu-id="ce764-242">Commit with WSAT 1.0</span></span>  
   
 ```xml  
 <s:Envelope>  
   <s:Header>  
     <a:Action>http://.../ws/2004/10/wsat/Commit</a:Action>  
     <a:To>https://...</a:To>  
-    <wsse:Security   
-      s:mustUnderstand="1"   
+    <wsse:Security
+      s:mustUnderstand="1"
       xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"  
       xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">  
       <wssu:Timestamp wssu:Id="_0" >  
@@ -567,51 +567,51 @@ xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-u
 </s:Envelope>  
 ```  
   
-#### <a name="commit-with-wsat-11"></a><span data-ttu-id="562ee-243">Commit avec WSAT 1.1</span><span class="sxs-lookup"><span data-stu-id="562ee-243">Commit with WSAT 1.1</span></span>  
+#### <a name="commit-with-wsat-11"></a><span data-ttu-id="ce764-243">Commit avec WSAT 1.1</span><span class="sxs-lookup"><span data-stu-id="ce764-243">Commit with WSAT 1.1</span></span>  
   
 ```xml  
 <s:Envelope>  
-<s:Header>   
+<s:Header>
 <a:Action>http://docs.oasis-open.org/ws-tx/wsat/2006/06</a:Action>  
-<a:To>https://...</a:To>   
-<wsse:Security   
-s:mustUnderstand="1"   
-xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"   
-xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">   
-<wssu:Timestamp wssu:Id="_0" >   
+<a:To>https://...</a:To>
+<wsse:Security
+s:mustUnderstand="1"
+xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+<wssu:Timestamp wssu:Id="_0" >
 <wssu:Created>2005-12-15T23:36:13.827Z</wssu:Created>  
 <wssu:Expires>2005-12-15T23:41:13.827Z</wssu:Expires>  
-</wssu:Timestamp>   
-</wsse:Security>   
-</s:Header>   
-<s:Body xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">   
-<wsat:Commit />   
-</s:Body>   
+</wssu:Timestamp>
+</wsse:Security>
+</s:Header>
+<s:Body xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+<wsat:Commit />
+</s:Body>
 </s:Envelope>  
 ```  
   
-### <a name="application-messages"></a><span data-ttu-id="562ee-244">Messages d'application</span><span class="sxs-lookup"><span data-stu-id="562ee-244">Application Messages</span></span>  
- <span data-ttu-id="562ee-245">Les messages suivants sont des messages d'application.</span><span class="sxs-lookup"><span data-stu-id="562ee-245">The following messages are application messages.</span></span>  
+### <a name="application-messages"></a><span data-ttu-id="ce764-244">Messages d'application</span><span class="sxs-lookup"><span data-stu-id="ce764-244">Application Messages</span></span>  
+ <span data-ttu-id="ce764-245">Les messages suivants sont des messages d'application.</span><span class="sxs-lookup"><span data-stu-id="ce764-245">The following messages are application messages.</span></span>  
   
-#### <a name="application-message-request"></a><span data-ttu-id="562ee-246">Message d'application - demande</span><span class="sxs-lookup"><span data-stu-id="562ee-246">Application message-Request</span></span>  
+#### <a name="application-message-request"></a><span data-ttu-id="ce764-246">Message d'application - demande</span><span class="sxs-lookup"><span data-stu-id="ce764-246">Application message-Request</span></span>  
   
 ```xml  
 <s:Envelope>  
   <s:Header>  
 <!-- Addressing headers, all signed-->  
     <wsse:Security s:mustUnderstand="1">  
-      <wssu:Timestamp wssu:Id="timestamp">   
+      <wssu:Timestamp wssu:Id="timestamp">
         <wssu:Created>2005-10-25T06:29:18.703Z</wssu:Created>  
         <wssu:Expires>2005-10-25T06:34:18.703Z</wssu:Expires>  
       </wssu:Timestamp>  
-      <wsse:BinarySecurityToken   
-          wssu:Id="IA_Certificate"   
-          ValueType="...#X509v3"   
+      <wsse:BinarySecurityToken
+          wssu:Id="IA_Certificate"
+          ValueType="...#X509v3"
           EncodingType="...#Base64Binary">  
         <!-- IA certificate -->  
       </wsse:BinarySecurityToken>  
       <e:EncryptedKey Id="encrypted_key">  
-            <!-- ephemeral key encrypted for PA certificate -->    
+            <!-- ephemeral key encrypted for PA certificate -->
         <e:ReferenceList xmlns:e="http://www.w3.org/2001/04/xmlenc#">  
           <e:DataReference URI="#encrypted_body"/>  
           <e:DataReference URI="#encrypted_CCi"/>  
@@ -625,15 +625,15 @@ xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-u
     <wsse11:EncryptedHeader >  
      <!-- encrypted wscoor:CoordinationContext header containing CCi -->  
     </wsse11:EncryptedHeader>  
-    <wsse11:EncryptedHeader   
+    <wsse11:EncryptedHeader
       <!-- encrypted wst:IssuedTokens header containing SCTi -->  
       <!-- wst:IssuedTokens header is taken verbatim from message #2 above, omitted for brevity -->  
     </wsse11:EncryptedHeader>  
   </s:Header>  
   <s:Body wssu:Id="body">  
-    <!-- encrypted content of the Body element of the application message -->      
-    <e:EncryptedData Id="encrypted_body"   
-           Type="http://www.w3.org/2001/04/xmlenc#Content"   
+    <!-- encrypted content of the Body element of the application message -->
+    <e:EncryptedData Id="encrypted_body"
+           Type="http://www.w3.org/2001/04/xmlenc#Content"
            xmlns:e="http://www.w3.org/2001/04/xmlenc#">  
 ...  
     </e:EncryptedData>  
