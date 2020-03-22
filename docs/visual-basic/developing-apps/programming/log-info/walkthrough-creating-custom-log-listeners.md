@@ -6,10 +6,10 @@ helpviewer_keywords:
 - My.Application.Log object, custom log listeners
 ms.assetid: 0e019115-4b25-4820-afb1-af8c6e391698
 ms.openlocfilehash: 7b611e93119dc66a9404cf271ea201676d7b5318
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74353623"
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>Procédure pas à pas : création d'écouteurs de journalisation personnalisés (Visual Basic)
@@ -39,13 +39,13 @@ La procédure suivante fournit des étapes simples pour créer un assembly d’�
 
 #### <a name="to-strongly-name-the-log-listener-assembly"></a>Pour attribuer un nom fort à l’assembly de l’écouteur de journalisation
 
-1. Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet** , choisissez **Propriétés**.
+1. Sélectionnez un projet dans l' **Explorateur de solutions**. Sur le menu du **projet,** choisissez **Propriétés**.
 
-2. Cliquez sur l’onglet **Signature**.
+2. Cliquez sur l'onglet **Signature** .
 
-3. Sélectionnez la zone **Signer l’assembly**.
+3. Sélectionnez la zone **Signer l'assembly** .
 
-4. Sélectionnez **\<Nouveau** dans la liste déroulante **Choisir un fichier de clé de nom fort**.
+4. Sélectionnez ** \<New>** de la liste d’abandon de **fichiers clés De nom fort.**
 
      La boîte de dialogue **Créer une clé de nom fort** s’ouvre.
 
@@ -111,6 +111,6 @@ Avec le nom fort, vous pouvez ajouter l’écouteur à la collection de l’éco
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Guide pratique : enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [Comment : enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
 - [Guide pratique : écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
-- [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [Procédure pas à pas : modification de l'emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)

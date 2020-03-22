@@ -9,10 +9,10 @@ helpviewer_keywords:
 - Visual Basic, writing to files
 ms.assetid: ac6fb453-0d6c-4ce4-93b4-1bbcd06de83e
 ms.openlocfilehash: 8511a96c7abcc28997c293a09ef10bad543dc261
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74352136"
 ---
 # <a name="writing-to-files-in-visual-basic"></a>Écriture dans des fichiers en Visual Basic
@@ -21,22 +21,22 @@ Cette section explique comment effectuer des tâches qui impliquent l’écritur
   
 ## <a name="in-this-section"></a>Dans cette section  
 
- [Guide pratique : insérer du texte dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)  
+ [Comment : insérer du texte dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)  
  Montre comment écrire dans des fichiers texte.  
   
- [Guide pratique : effectuer un ajout à des fichiers texte](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-append-to-text-files.md)  
+ [Comment : effectuer un ajout à des fichiers texte](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-append-to-text-files.md)  
  Montre comment ajouter du texte à un fichier texte.  
   
- [Guide pratique : écrire dans des fichiers binaires](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-to-binary-files.md)  
+ [Comment : écrire dans des fichiers binaires](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-to-binary-files.md)  
  Montre comment écrire dans un fichier binaire.  
   
- [Guide pratique : insérer du texte dans les fichiers du répertoire Mes Documents](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-in-the-my-documents-directory.md)  
+ [Comment : insérer du texte dans les fichiers du répertoire Mes Documents](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-in-the-my-documents-directory.md)  
  Montre comment créer et écrire dans un nouveau fichier texte du répertoire **Mes documents**.  
   
- [Guide pratique : écrire du texte dans des fichiers à l'aide de Streamwriter](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)  
+ [Comment : écrire du texte dans des fichiers à l'aide de Streamwriter](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)  
  Montre comment écrire dans un fichier avec un objet <xref:System.IO.StreamWriter?displayProperty=nameWithType>.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
 
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  Décrit l’objet `My.Computer.FileSystem`, ses méthodes et ses propriétés.  
@@ -61,5 +61,5 @@ Cette section explique comment effectuer des tâches qui impliquent l’écritur
  [Stockage de données dans le Presse-papiers et lecture du Presse-papiers](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
  Explique comment effectuer les tâches associées à `My.Computer.Clipboard`, telles que la lecture ou l’écriture de données dans le Presse-papiers.  
   
- [Codages de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)  
+ [Encodages de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)  
  Fournit une vue d’ensemble des encodages de fichiers.

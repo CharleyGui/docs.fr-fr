@@ -1,5 +1,5 @@
 ---
-title: 'Comment : lire des fichiers texte'
+title: 'Comment: Lire à partir de fichiers texte'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - extended characters [Visual Basic], reading
@@ -9,10 +9,10 @@ helpviewer_keywords:
 - text files [Visual Basic], reading
 ms.assetid: 735fe9d7-0f7a-4185-ba02-f35e580ec4b8
 ms.openlocfilehash: 8af088ad269cc77bc5c83aedb86bde9af2e37a15
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74334593"
 ---
 # <a name="how-to-read-from-text-files-in-visual-basic"></a>Guide pratique pour lire des fichiers texte dans Visual Basic
@@ -48,7 +48,7 @@ Les conditions ci-dessous peuvent générer une exception.
 
 - Le fichier est utilisé par un autre processus, ou une erreur E/S se produit (<xref:System.IO.IOException>).
 
-- Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).
+- Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).
 
 - Un nom de fichier ou de répertoire du chemin contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).
 
@@ -65,9 +65,9 @@ Vérifiez toutes les entrées avant d'utiliser les données dans votre applicati
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllText%2A>
 - [Lecture à partir de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [Guide pratique : lire des fichiers texte délimités par des virgules](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)
-- [Guide pratique : lire des fichiers texte de largeur fixe](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)
-- [Guide pratique : lire des fichiers texte avec plusieurs formats](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)
+- [Comment : lire des fichiers texte délimités par des virgules](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)
+- [Comment : lire des fichiers texte de largeur fixe](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)
+- [Comment : lire des fichiers texte avec plusieurs formats](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)
 - [Dépannage : lecture et écriture dans des fichiers texte](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)
-- [Procédure pas à pas : manipulation de fichiers et de répertoires dans Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)
-- [Codages de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)
+- [Procédure pas à pas : manipulation de fichiers et de répertoires en Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)
+- [Encodages de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)

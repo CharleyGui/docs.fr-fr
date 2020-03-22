@@ -7,10 +7,10 @@ helpviewer_keywords:
 - troubleshooting event logs
 ms.assetid: ac6eb760-3d5d-461e-aedd-40599ee22e49
 ms.openlocfilehash: dd139935dae7fe4d1334b861e6590df29bab7202
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74346857"
 ---
 # <a name="troubleshooting-log-listeners-visual-basic"></a>Dépannage : écouteurs de journalisation (Visual Basic)
@@ -37,10 +37,10 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
   
      [!code-vb[VbVbalrMyApplicationLog#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#19)]  
   
-     Pour plus d'informations, consultez <xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A>.  
+     Pour plus d’informations, consultez <xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A>.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
+- [Procédure pas à pas : détermination de l'emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)

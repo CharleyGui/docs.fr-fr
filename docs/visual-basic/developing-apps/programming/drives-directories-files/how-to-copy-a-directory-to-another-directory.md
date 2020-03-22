@@ -8,10 +8,10 @@ helpviewer_keywords:
 - directories [Visual Basic], copying
 ms.assetid: 2a370bd7-10ba-4219-afc4-4519d031eb6c
 ms.openlocfilehash: a23079f093f53ab8e20eb71c684a594dcf7f894b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74348862"
 ---
 # <a name="how-to-copy-a-directory-to-another-directory-in-visual-basic"></a>Guide pratique pour copier un répertoire vers un autre répertoire en Visual Basic
@@ -26,7 +26,7 @@ Lors de la copie des fichiers dans un répertoire, des exceptions provoquées pa
 
     [!code-vb[VbVbcnMyFileSystem#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#16)]
 
-    Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Système de fichiers - Traitement des lecteurs, dossiers et fichiers**. Pour plus d'informations, consultez [Code Snippets](/visualstudio/ide/code-snippets).
+    Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Système de fichiers - Traitement des lecteurs, dossiers et fichiers**. Pour plus d’informations, consultez [Extraits de code](/visualstudio/ide/code-snippets).
 
 ## <a name="robust-programming"></a>Programmation fiable
 
@@ -54,7 +54,7 @@ Les conditions ci-dessous peuvent générer une exception.
 
 - Le chemin contient un signe deux-points (:) (<xref:System.NotSupportedException>).
 
-- Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).
+- Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).
 
 - Un nom de fichier ou de dossier dans le chemin contient un signe deux-points (:) ou n’a pas un format correct (<xref:System.NotSupportedException>).
 
@@ -65,5 +65,5 @@ Les conditions ci-dessous peuvent générer une exception.
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A>
-- [Guide pratique : rechercher des sous-répertoires avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)
-- [Guide pratique : placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+- [Comment : rechercher des sous-répertoires avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)
+- [Comment : placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)

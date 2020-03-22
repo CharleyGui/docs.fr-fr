@@ -6,10 +6,10 @@ helpviewer_keywords:
 - Visual Basic, get started
 ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
 ms.openlocfilehash: 0221889f6d736b41546b564273ebb41d49dfb039
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75559883"
 ---
 # <a name="get-started-with-visual-basic"></a>Bien démarrer avec Visual Basic
@@ -18,15 +18,15 @@ Cette section de la documentation vous aide à commencer à développer des appl
 
 ## <a name="get-started-with-visual-basic-and-net-core"></a>Bien démarrer avec Visual Basic et .NET Core
 
-[Créer une application Hello World avec .NET Core dans Visual Studio](../../core/tutorials/with-visual-studio.md)
+[Construire une application Hello World avec .NET Core dans Visual Studio](../../core/tutorials/with-visual-studio.md)
 
-[Créer une bibliothèque de classes avec .NET Standard dans Visual Studio](../../core/tutorials/library-with-visual-studio.md)
+[Construire une bibliothèque de classe avec .NET Standard en Visual Studio](../../core/tutorials/library-with-visual-studio.md)
 
 ## <a name="additional-information"></a>Informations supplémentaires
 
-- [Nouveautés de Visual Basic](whats-new.md) Répertorie les nouvelles fonctionnalités de chacune des versions de Visual Basic .NET.
+- [Quoi de neuf pour Visual Basic](whats-new.md) Répertorie les nouvelles fonctionnalités dans chacune des versions de Visual Basic .NET.
 
-- [Ressources supplémentaires pour les programmeurs Visual Basic](additional-resources.md) Fournit une liste de sites Web et de groupes de discussion qui peuvent vous aider à trouver des réponses aux problèmes courants.
+- [Ressources supplémentaires pour les programmeurs de base visuelle](additional-resources.md) Fournit une liste de sites Web et de groupes de discussion qui peuvent vous aider à trouver des réponses aux problèmes courants.
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -38,7 +38,7 @@ Cette section de la documentation vous aide à commencer à développer des appl
 
 - [Procédures pas à pas](../walkthroughs.md) Fournit une liste de pages d’aide qui illustrent les aspects du langage Visual Basic.
 
-- [Options de commentaires pour Visual Studio](/visualstudio/ide/feedback-options) Explique comment recevoir un support technique et envoyer des commentaires.
+- [Options de rétroaction pour Visual Studio](/visualstudio/ide/feedback-options) Couvre la façon de recevoir du soutien et de donner des commentaires.
 
 - [Visual Studio](/visualstudio/) Fournit des liens vers la documentation Visual Studio.
 

@@ -12,10 +12,10 @@ helpviewer_keywords:
 - examples [Visual Basic], registry
 ms.assetid: ab9aca0e-42b0-4ff7-8ff9-845a4bfdf9f2
 ms.openlocfilehash: f38301a3a717a35b98e55804d6435d046bbbbab4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74345654"
 ---
 # <a name="how-to-delete-a-registry-key-in-visual-basic"></a>Guide pratique pour supprimer une clé de Registre en Visual Basic
@@ -44,7 +44,7 @@ Vous pouvez utiliser les méthodes<xref:Microsoft.Win32.RegistryKey.DeleteSubKey
   
 - La clé de Registre est en lecture seule (<xref:System.UnauthorizedAccessException>).  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
+## <a name="net-framework-security"></a>Sécurité du .NET Framework  
 
  Les appels au Registre échouent quand l’utilisateur ne dispose pas des autorisations d’exécution nécessaires (<xref:System.Security.Permissions.RegistryPermission>) ou de l’accès correct (tel que déterminé par les listes de contrôle d’accès) pour créer ou écrire des paramètres. Par exemple, une application locale qui dispose de l’autorisation de sécurité d’accès du code peut ne pas disposer des autorisations de système d’exploitation.  
   

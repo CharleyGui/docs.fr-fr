@@ -3,13 +3,13 @@ title: Collections
 ms.date: 07/20/2015
 ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
 ms.openlocfilehash: ba16d04e781bcf69356b1f603d92e104816a0860
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347096"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79400826"
 ---
-# <a name="collections-visual-basic"></a>Collections (Visual Basic)
+# <a name="collections-visual-basic"></a>Collections (Visual Basic)
 
 Pour de nombreuses applications, vous voulez créer et gérer des groupes d’objets connexes. Il existe deux manières de grouper des objets : en créant des tableaux d’objets ou des collections d’objets.
 
@@ -19,10 +19,10 @@ Les collections offrent plus de souplesse quand il s’agit d’utiliser des gro
 
 Une collection est une classe, vous devez déclarer une instance de la classe avant de pouvoir ajouter des éléments à la collection.
 
-Si votre collection contient des éléments d’un seul type de données, vous pouvez utiliser l’une des classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType> . Une collection générique applique la cohérence des types pour éviter qu’un autre type puisse y être ajouté. Quand vous récupérez un élément d’une collection générique, il n’est pas utile de déterminer son type de données ou de le convertir.
+Si votre collection contient des éléments d’un seul type de données, vous pouvez utiliser une des classes dans l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType>. Une collection générique applique la cohérence des types pour éviter qu’un autre type puisse y être ajouté. Quand vous récupérez un élément d’une collection générique, il n’est pas utile de déterminer son type de données ou de le convertir.
 
 > [!NOTE]
-> Pour les exemples de cette rubrique, incluez les instructions [Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pour les espaces de noms `System.Collections.Generic` et `System.Linq`.
+> Pour les exemples dans ce sujet, `System.Linq` inclure [les déclarations d’importations](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pour les `System.Collections.Generic` espaces et les noms.
 
 <a name="BKMK_SimpleCollection"></a>
 
@@ -30,7 +30,7 @@ Si votre collection contient des éléments d’un seul type de données, vous p
 
 Les exemples de cette section utilisent la classe <xref:System.Collections.Generic.List%601> générique, qui vous permet d’utiliser une liste d’objets fortement typée.
 
-L’exemple suivant crée une liste de chaînes, puis itère au sein des chaînes à l’aide d’une boucle [for each... Instruction suivante](../../../visual-basic/language-reference/statements/for-each-next-statement.md) .
+L’exemple suivant crée une liste de cordes, puis itère à travers les cordes en utilisant un [Pour chaque ... Prochaine](../../../visual-basic/language-reference/statements/for-each-next-statement.md) déclaration.
 
 ```vb
 ' Create a list of strings.
@@ -63,7 +63,7 @@ Next
 'Output: chinook coho pink sockeye
 ```
 
-Vous pouvez utiliser une [pour... Instruction Next](../../../visual-basic/language-reference/statements/for-next-statement.md) au lieu d’une instruction `For Each` pour itérer au sein d’une collection. Pour cela, accédez aux éléments de la collection à la position d’index. L’index des éléments commence à 0 et se termine au nombre d’éléments moins 1.
+Vous pouvez utiliser un [For... Déclaration suivante](../../../visual-basic/language-reference/statements/for-next-statement.md) au `For Each` lieu d’une déclaration à itérer à travers une collection. Pour cela, accédez aux éléments de la collection à la position d’index. L’index des éléments commence à 0 et se termine au nombre d’éléments moins 1.
 
 L’exemple suivant itère au sein des éléments d’une collection à l’aide de `For…Next` au lieu de `For Each`.
 
@@ -95,7 +95,7 @@ Next
 'Output: chinook pink sockeye
 ```
 
-L’exemple suivant supprime les éléments d’une liste générique. Au lieu d’une instruction `For Each`, une instruction [for... Next](../../../visual-basic/language-reference/statements/for-next-statement.md) Statement qui itère dans l’ordre décroissant est utilisé. En effet, avec la méthode <xref:System.Collections.Generic.List%601.RemoveAt%2A>, les éléments après l’élément supprimé ont une valeur d’index moins élevée.
+L’exemple suivant supprime les éléments d’une liste générique. Au lieu `For Each` d’une déclaration, un [Pour ... La déclaration suivante](../../../visual-basic/language-reference/statements/for-next-statement.md) selon laquelle les itérations dans l’ordre décroissant est utilisée. En effet, avec la méthode <xref:System.Collections.Generic.List%601.RemoveAt%2A>, les éléments après l’élément supprimé ont une valeur d’index moins élevée.
 
 ```vb
 Dim numbers As New List(Of Integer) From
@@ -173,7 +173,7 @@ Vous pouvez créer une collection générique en utilisant l’une des classes d
 
 Le tableau suivant liste quelques classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType> fréquemment utilisées :
 
-|Class|Description|
+|Classe|Description|
 |---|---|
 |<xref:System.Collections.Generic.Dictionary%602>|Représente une collection de paires clé/valeur organisées en fonction de la clé.|
 |<xref:System.Collections.Generic.List%601>|Représente une liste d’objets accessibles par index. Fournit des méthodes de recherche, de tri et de modification de listes.|
@@ -203,7 +203,7 @@ Si possible, vous devez utiliser les collections génériques dans l’espace de
 
 Le tableau suivant répertorie certaines des classes fréquemment utilisées de l’espace de noms `System.Collections` :
 
-|Class|Description|
+|Classe|Description|
 |---|---|
 |<xref:System.Collections.ArrayList>|Représente un tableau d’objets dont la taille est augmentée de manière dynamique selon les besoins.|
 |<xref:System.Collections.Hashtable>|Représente une collection de paires clé/valeur qui sont organisées en fonction du code de hachage de la clé.|
@@ -224,7 +224,7 @@ Quand vous utilisez la classe Visual Basic `Collection`, le premier élément d�
 
 Si possible, vous devez utiliser les collections génériques dans l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType> ou <xref:System.Collections.Concurrent> à la place de la classe Visual Basic `Collection`.
 
-Pour plus d'informations, consultez <xref:Microsoft.VisualBasic.Collection>.
+Pour plus d’informations, consultez <xref:Microsoft.VisualBasic.Collection>.
 
 <a name="BKMK_KeyValuePairs"></a>
 
@@ -296,7 +296,7 @@ Private Function BuildDictionary2() As Dictionary(Of String, Element)
 End Function
 ```
 
-L’exemple suivant utilise la méthode <xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> et la propriété <xref:System.Collections.Generic.Dictionary%602.Item%2A> de `Dictionary` pour rechercher rapidement un élément par clé. La propriété `Item` vous permet d’accéder à un élément dans la collection `elements` à l’aide du code `elements(symbol)` dans Visual Basic.
+L’exemple suivant utilise la méthode <xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> et la propriété <xref:System.Collections.Generic.Dictionary%602.Item%2A> de `Dictionary` pour rechercher rapidement un élément par clé. La `Item` propriété vous permet d’accéder à un élément de la `elements` collection en utilisant le `elements(symbol)` code dans Visual Basic.
 
 ```vb
 Private Sub FindInDictionary(ByVal symbol As String)
@@ -330,7 +330,7 @@ End Sub
 
 ## <a name="using-linq-to-access-a-collection"></a>Utilisation de LINQ pour accéder à une collection
 
-LINQ (Language-Integrated Query) peut être utilisé pour accéder aux collections. Les requêtes LINQ fournissent des fonctionnalités de filtrage, de classement et de regroupement. Pour plus d’informations, consultez [prise en main avec LINQ dans Visual Basic](../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md).
+LINQ (Language-Integrated Query) peut être utilisé pour accéder aux collections. Les requêtes LINQ fournissent des fonctionnalités de filtrage, de classement et de regroupement. Pour plus d’informations, voir [Getting Started avec LINQ dans Visual Basic](../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md).
 
 L’exemple suivant exécute une requête LINQ sur un `List` générique. La requête LINQ retourne une autre collection qui contient les résultats.
 
@@ -458,7 +458,7 @@ End Class
 
 ## <a name="defining-a-custom-collection"></a>Définition d’une collection personnalisée
 
-Vous pouvez définir une collection en implémentant l’interface <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Collections.IEnumerable>. Pour plus d’informations, consultez [énumération d’une collection](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hwyysy67(v=vs.100)).
+Vous pouvez définir une collection en implémentant l’interface <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Collections.IEnumerable>. Pour plus d’informations, voir [Énumérer une collection](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hwyysy67(v=vs.100)).
 
 Même si vous pouvez définir une collection personnalisée, il est généralement préférable d’utiliser les collections comprises dans le .NET Framework, lesquelles sont décrites dans [Types de collections](#kinds-of-collections), plus haut dans cette rubrique.
 
@@ -536,15 +536,15 @@ End Class
 
 <a name="BKMK_Iterators"></a>
 
-## <a name="iterators"></a>Itérateurs
+## <a name="iterators"></a>Iterators
 
-Un *itérateur* est utilisé pour exécuter une itération personnalisée sur une collection. Un itérateur peut être une méthode ou un accesseur `get`. Un itérateur utilise une instruction [yield](../../../visual-basic/language-reference/statements/yield-statement.md) pour retourner chaque élément de la collection un par un.
+Un *itérateur* est utilisé pour exécuter une itération personnalisée sur une collection. Un itérateur peut être une méthode ou un accesseur `get`. Un itérateur utilise une déclaration [de rendement](../../../visual-basic/language-reference/statements/yield-statement.md) pour renvoyer chaque élément de la collection un à la fois.
 
-Vous appelez un itérateur à l’aide d’un [pour chaque... Instruction suivante](../../../visual-basic/language-reference/statements/for-each-next-statement.md) . Chaque itération de la boucle `For Each` appelle l’itérateur. Quand une instruction `Yield` est atteinte dans l’itérateur, une expression est retournée et la localisation actuelle dans le code est retenue. L’exécution est redémarrée à partir de cet emplacement la prochaine fois que l’itérateur est appelé.
+Vous appelez un itérateur en utilisant un [Pour chaque... Prochaine](../../../visual-basic/language-reference/statements/for-each-next-statement.md) déclaration. Chaque itération de la boucle `For Each` appelle l’itérateur. Quand une instruction `Yield` est atteinte dans l’itérateur, une expression est retournée et la localisation actuelle dans le code est retenue. L’exécution est redémarrée à partir de cet emplacement la prochaine fois que l’itérateur est appelé.
 
-Pour plus d’informations, consultez [itérateurs (Visual Basic)](../../../visual-basic/programming-guide/concepts/iterators.md).
+Pour plus d’informations, voir [Iterators (Visual Basic)](../../../visual-basic/programming-guide/concepts/iterators.md).
 
-L'exemple suivant utilise une méthode Iterator. La méthode Iterator a une instruction `Yield` qui se trouve à l’intérieur d’une instruction [for... Next](../../../visual-basic/language-reference/statements/for-next-statement.md) . Dans la méthode `ListEvenNumbers`, chaque itération du corps de l’instruction `For Each` crée un appel à la méthode Iterator, qui continue sur l’instruction `Yield` suivante.
+L'exemple suivant utilise une méthode Iterator. La méthode itérateur `Yield` a une déclaration qui est à l’intérieur [d’un For ... Prochaine](../../../visual-basic/language-reference/statements/for-next-statement.md) boucle. Dans la méthode `ListEvenNumbers`, chaque itération du corps de l’instruction `For Each` crée un appel à la méthode Iterator, qui continue sur l’instruction `Yield` suivante.
 
 ```vb
 Public Sub ListEvenNumbers()
@@ -570,7 +570,7 @@ End Function
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Initialiseurs de collection](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
+- [Initialisateurs de collection](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
 - [Concepts de programmation (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)
 - [Option Strict (instruction)](../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [LINQ to Objects (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)

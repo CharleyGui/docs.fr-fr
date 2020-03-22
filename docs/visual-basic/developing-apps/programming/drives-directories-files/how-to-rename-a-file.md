@@ -6,10 +6,10 @@ helpviewer_keywords:
 - files [Visual Basic], renaming
 ms.assetid: 0ea7e0c8-2cb2-4bf5-a00d-7b6e3c08a3bc
 ms.openlocfilehash: e69dad9ad7f59002ad62b7a06299ff012488e534
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74334551"
 ---
 # <a name="how-to-rename-a-file-in-visual-basic"></a>Guide pratique pour renommer un fichier en Visual Basic
@@ -22,7 +22,7 @@ Utilisez la méthode `RenameFile` de l’objet `My.Computer.FileSystem` pour ren
   
      [!code-vb[VbVbcnMyFileSystem#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#9)]  
   
- Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Système de fichiers - Traitement des lecteurs, dossiers et fichiers**. Pour plus d'informations, consultez [Code Snippets](/visualstudio/ide/code-snippets).  
+ Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Système de fichiers - Traitement des lecteurs, dossiers et fichiers**. Pour plus d’informations, consultez [Extraits de code](/visualstudio/ide/code-snippets).  
   
 ## <a name="robust-programming"></a>Programmation fiable  
 
@@ -40,7 +40,7 @@ Utilisez la méthode `RenameFile` de l’objet `My.Computer.FileSystem` pour ren
   
 - Un fichier ou un répertoire porte déjà le nom spécifié dans `newName` (<xref:System.IO.IOException>).  
   
-- Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
+- Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
 - Un nom de fichier ou de répertoire du chemin contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).  
   
@@ -51,7 +51,7 @@ Utilisez la méthode `RenameFile` de l’objet `My.Computer.FileSystem` pour ren
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.RenameFile%2A>
-- [Guide pratique : déplacer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)
+- [Comment : déplacer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)
 - [Création, suppression et déplacement de fichiers et de répertoires](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)
-- [Guide pratique : créer une copie d'un fichier dans le même répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)
-- [Guide pratique : créer une copie d'un fichier dans un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)
+- [Comment : créer une copie d'un fichier dans le même répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)
+- [Comment : créer une copie d'un fichier dans un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)

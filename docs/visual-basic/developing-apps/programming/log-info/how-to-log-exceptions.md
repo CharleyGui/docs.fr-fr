@@ -6,10 +6,10 @@ helpviewer_keywords:
 - exceptions, tracking
 ms.assetid: a26c60e2-ae39-444a-aebb-33eccadc0eeb
 ms.openlocfilehash: fe6949d727fae0c230ce7421b32fdaf2a498edbc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74352089"
 ---
 # <a name="how-to-log-exceptions-in-visual-basic"></a>Guide pratique pour enregistrer des exceptions en Visual Basic
@@ -44,7 +44,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
   
 ### <a name="to-log-an-unhandled-exception"></a>Pour enregistrer une exception non gérée  
   
-1. Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet** , choisissez **Propriétés**.  
+1. Sélectionnez un projet dans l' **Explorateur de solutions**. Sur le menu du **projet,** choisissez **Propriétés**.  
   
 2. Cliquez sur l’onglet **Application** .  
   
@@ -73,5 +73,5 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
 - [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
 - [Guide pratique : écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
-- [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
-- [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [Procédure pas à pas : détermination de l'emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
+- [Procédure pas à pas : modification de l'emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)

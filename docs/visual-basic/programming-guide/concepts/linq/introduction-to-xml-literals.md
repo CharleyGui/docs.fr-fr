@@ -1,20 +1,20 @@
 ---
-title: Introduction aux littéraux XML dans Visual BASIC2
+title: Introduction aux littérales XML dans Visual Basic2
 ms.date: 07/20/2015
 ms.assetid: 94fc0e03-978e-4c08-ab6c-0dc3c1e64f10
-ms.openlocfilehash: 5355a3c0f01bb247e38e52816693ee47d7d50556
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 9f5c54574e51c537d9ea58d307afda10736d0d88
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834997"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78266948"
 ---
 # <a name="introduction-to-xml-literals-in-visual-basic"></a>Introduction aux littéraux XML en Visual Basic
-Cette section fournit des informations sur la création d’arborescences XML dans Visual Basic.  
+Cette section fournit des informations sur la création d’arbres XML dans Visual Basic.  
   
- Pour plus d’informations sur l’utilisation des résultats de requêtes LINQ comme contenu pour une arborescence XML, consultez [construction fonctionnelle (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).  
+ Pour plus d’informations sur l’utilisation des résultats des requêtes LINQ comme contenu d’un arbre XML, voir [Construction fonctionnelle (LINQ à XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).  
   
- Pour plus d’informations sur les littéraux XML dans Visual Basic, consultez [vue d’ensemble des LINQ to XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).  
+ Pour plus d’informations sur les littérals XML dans Visual Basic, voir [Aperçu de LINQ à XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).  
   
 ## <a name="creating-xml-trees"></a>Création d'arborescences XML  
  L'exemple suivant montre comment créer un objet <xref:System.Xml.Linq.XElement>, dans le cas présent `contacts` :  
@@ -40,10 +40,10 @@ Dim contacts As XElement = _
   
 ```vb  
 Dim n as XElement = <Customer>Adventure Works</Customer>  
-Console.WriteLine(n)   
+Console.WriteLine(n)
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Customer>Adventure Works</Customer>  
@@ -57,7 +57,7 @@ Dim n As XElement = <Customer/>
 Console.WriteLine(n)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Customer />  
@@ -84,7 +84,7 @@ Dim xmlTree2 As XElement = _
 Console.WriteLine(xmlTree2)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Root>  
@@ -102,7 +102,7 @@ Dim root As XElement = <Root><%= str %></Root>
 Console.WriteLine(root)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Root>Some content</Root>  
@@ -122,7 +122,7 @@ Dim n As XElement = _
 Console.WriteLine(n)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Root>  
@@ -149,7 +149,7 @@ Dim n As XElement = _
 Console.WriteLine(n)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Root att="aValue">  
@@ -188,7 +188,7 @@ Console.WriteLine("Child2 was {0}", _
     "attached", "cloned"))  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```console  
 Child1 was cloned  
@@ -197,4 +197,4 @@ Child2 was attached
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Création d’arborescences XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [Création d’arbres XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

@@ -8,10 +8,10 @@ helpviewer_keywords:
 - I/O [Visual Basic], copying files
 ms.assetid: 88e2145c-d414-45a5-ad03-6f5d58ecca26
 ms.openlocfilehash: e9a14e1f3743979548b92a3db653d09a470a1875
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74348832"
 ---
 # <a name="how-to-create-a-copy-of-a-file-in-a-different-directory-in-visual-basic"></a>Guide pratique pour créer une copie d'un fichier dans un autre répertoire en Visual Basic
@@ -50,7 +50,7 @@ La méthode `My.Computer.FileSystem.CopyFile` permet de copier des fichiers. Ses
   
 - `ShowUI`a la valeur `True`, `onUserCancel` a la valeur `ThrowException` et une erreur d’E/S non spécifiée se produit (<xref:System.OperationCanceledException>).  
   
-- Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
+- Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
 - L’utilisateur ne dispose pas de l’autorisation nécessaire (<xref:System.UnauthorizedAccessException>).  
   
@@ -61,7 +61,7 @@ La méthode `My.Computer.FileSystem.CopyFile` permet de copier des fichiers. Ses
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%2A>
 - <xref:Microsoft.VisualBasic.FileIO.UICancelOption>
-- [Guide pratique : copier des fichiers avec un modèle spécifique dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)
-- [Guide pratique : créer une copie d'un fichier dans le même répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)
-- [Guide pratique : copier un répertoire vers un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)
-- [Guide pratique : renommer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)
+- [Comment : copier des fichiers avec un modèle spécifique dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)
+- [Comment : créer une copie d'un fichier dans le même répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)
+- [Comment : copier un répertoire vers un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)
+- [Comment : renommer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)

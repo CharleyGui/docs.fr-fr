@@ -8,10 +8,10 @@ helpviewer_keywords:
 - event logs, writing to
 ms.assetid: cadbc8c1-87af-4746-934e-55b79a4f6e2b
 ms.openlocfilehash: 511bb8fb16851872c1a16ae7627ed0fc6594337c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74352045"
 ---
 # <a name="how-to-write-to-an-application-event-log-visual-basic"></a>Comment : écrire dans le journal des événements de l'application (Visual Basic)
@@ -20,7 +20,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour écrire de
 
 Vous ne pouvez pas écrire dans le journal de sécurité. Pour pouvoir écrire dans le journal système, vous devez être membre du compte LocalSystem ou Administrateur.
 
-Pour afficher un journal des événements, vous pouvez utiliser l’ **Explorateur de serveurs** ou l’ **Observateur d’événements Windows**. Pour plus d'informations, consultez [ETW Events in the .NET Framework](../../../../framework/performance/etw-events.md).
+Pour afficher un journal des événements, vous pouvez utiliser l’ **Explorateur de serveurs** ou l’ **Observateur d’événements Windows**. Pour plus d’informations, consultez [Événements ETW dans le .NET Framework](../../../../framework/performance/etw-events.md).
 
 ## <a name="to-add-and-configure-the-event-log-listener"></a>Pour ajouter et configurer l’écouteur de journalisation des événements
 
@@ -73,5 +73,5 @@ Une fois l’écouteur de journalisation des événements configuré pour un ass
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
 - [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Guide pratique : enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
-- [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
+- [Comment : enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [Procédure pas à pas : détermination de l'emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)

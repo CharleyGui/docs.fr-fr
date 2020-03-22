@@ -2,14 +2,14 @@
 title: Démarrer plusieurs tâches Asynch et les traiter une fois terminées
 ms.date: 07/20/2015
 ms.assetid: 57ffb748-af40-4794-bedd-bdb7fea062de
-ms.openlocfilehash: 5293c2f6e1a17d3645fd1ce5a4ba61eac4d8b3a2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b14171196a95e9a6a12f6b13f6f17d3cfe352bce
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346680"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78266844"
 ---
-# <a name="start-multiple-async-tasks-and-process-them-as-they-complete-visual-basic"></a>Démarrer plusieurs tâches Async et les traiter à mesure qu’elles se terminent (Visual Basic)
+# <a name="start-multiple-async-tasks-and-process-them-as-they-complete-visual-basic"></a>Démarrer plusieurs tâches Asynch et les traiter une fois terminées (Visual Basic)
 En utilisant <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>, vous pouvez démarrer plusieurs tâches en même temps et les traiter une par une, une fois qu’elles sont terminées, au lieu de les traiter dans l’ordre dans lequel elles ont démarré.  
   
  L’exemple suivant utilise une requête pour créer une collection de tâches. Chaque tâche télécharge le contenu d’un site web spécifié. À chaque itération d’une boucle while, un appel attendu à `WhenAny` retourne la tâche de la collection de tâches dont le téléchargement se termine en premier. Cette tâche est supprimée de la collection et traitée. La boucle se répète jusqu’à ce que la collection ne contienne plus aucune tâche.  
@@ -37,7 +37,7 @@ En utilisant <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWi
  Si vous ne souhaitez pas télécharger le projet, vous pouvez passer en revue le fichier MainWindow.xaml.vb à la fin de cette rubrique.  
   
 ## <a name="building-the-example"></a>Génération de l’exemple  
- Cet exemple ajoute au code développé dans [annuler les tâches asynchrones restantes après l’achèvement de l’opération (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-remaining-async-tasks-after-one-is-complete.md) et utilise la même interface utilisateur.  
+ Cet exemple s’ajoute au code développé dans [Cancel Remaining Async Tasks after One Is Complete (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-remaining-async-tasks-after-one-is-complete.md) et utilise la même interface utilisateur.  
   
  Pour générer l’exemple vous-même, pas à pas, suivez les instructions de la section « Téléchargement de l’exemple », mais choisissez **CancelAfterOneTask** comme **Projet de démarrage**. Ajoutez les modifications de cette rubrique à la méthode `AccessTheWebAsync` dans ce projet. Les modifications sont marquées par des astérisques.  
   
@@ -48,7 +48,7 @@ Dim downloadTasksQuery As IEnumerable(Of Task(Of Integer)) =
     From url In urlList Select ProcessURLAsync(url, client, ct)  
 ```  
   
- Dans le fichier MainWindow. Xaml. vb du projet, apportez les modifications suivantes à la méthode `AccessTheWebAsync`.  
+ Dans le fichier MainWindow.xaml.vb du projet, apporter `AccessTheWebAsync` les modifications suivantes à la méthode.  
   
 - Exécutez la requête en appliquant <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> au lieu de <xref:System.Linq.Enumerable.ToArray%2A>.  
   
@@ -83,7 +83,7 @@ Dim downloadTasksQuery As IEnumerable(Of Task(Of Integer)) =
 > Vous pouvez utiliser `WhenAny` dans une boucle, comme décrit dans l’exemple, pour résoudre les problèmes qui impliquent un petit nombre de tâches. Cependant, d’autres approches sont plus efficaces si vous avez un grand nombre de tâches à traiter. Pour plus d’informations et d’exemples, consultez l’article relatif au [traitement des tâches une fois terminées](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/).  
   
 ## <a name="complete-example"></a>Exemple complet  
- Le code suivant est le texte complet du fichier MainWindow.xaml.vb de l’exemple. Les astérisques signalent les éléments ajoutés à cet exemple.  
+ Le code suivant est le texte complet du fichier MainWindow.xaml.vb de l’exemple. Des astérisques marquent les éléments ajoutés pour cet exemple.  
   
  Notez que vous devez ajouter une référence pour <xref:System.Net.Http>.  
   
@@ -144,7 +144,7 @@ Class MainWindow
         Dim downloadTasksQuery As IEnumerable(Of Task(Of Integer)) =  
             From url In urlList Select ProcessURLAsync(url, client, ct)  
   
-        ' ***Use ToList to execute the query and start the download tasks.   
+        ' ***Use ToList to execute the query and start the download tasks.
         Dim downloadTasks As List(Of Task(Of Integer)) = downloadTasksQuery.ToList()  
   
         ' ***Add a loop to process the tasks one at a time until none remain.  
@@ -166,7 +166,7 @@ Class MainWindow
     ' Bundle the processing steps for a website into one async method.  
     Async Function ProcessURLAsync(url As String, client As HttpClient, ct As CancellationToken) As Task(Of Integer)  
   
-        ' GetAsync returns a Task(Of HttpResponseMessage).   
+        ' GetAsync returns a Task(Of HttpResponseMessage).
         Dim response As HttpResponseMessage = Await client.GetAsync(url, ct)  
   
         ' Retrieve the website contents from the HttpResponseMessage.  
@@ -210,4 +210,4 @@ End Class
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
 - [Ajuster une application Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
 - [Programmation asynchrone avec Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Exemple Async : ajuster une application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

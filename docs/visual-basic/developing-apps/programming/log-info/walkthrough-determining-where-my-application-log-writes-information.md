@@ -10,13 +10,13 @@ helpviewer_keywords:
 - applications [Visual Basic], output location
 ms.assetid: 5b70143a-7741-45f2-ae1d-03324a3a4189
 ms.openlocfilehash: f3fd0ed0388276f1400bf77d0abfb488634a45a5
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74353604"
 ---
-# <a name="walkthrough-determining-where-myapplicationlog-writes-information-visual-basic"></a>Procédure pas à pas : détermination de l'emplacement des informations My.Application.Log (Visual Basic)
+# <a name="walkthrough-determining-where-myapplicationlog-writes-information-visual-basic"></a>Procédure pas à pas : détermination de l'emplacement des informations My.Application.Log (Visual Basic)
 
 L’objet `My.Application.Log` peut écrire des informations dans plusieurs écouteurs de journalisation. Les écouteurs de journalisation sont configurés par le fichier de configuration de l’ordinateur et peuvent être remplacés par un fichier de configuration d’une application. Cette rubrique décrit les paramètres par défaut et explique comment déterminer les paramètres de votre application.
 
@@ -55,9 +55,9 @@ Pour plus d’informations sur les emplacements de sortie par défaut, consultez
 
     - Un écouteur <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType> écrit dans un fichier journal, comme décrit dans l’introduction.
 
-    - Un écouteur <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> écrit les informations dans le journal des événements de l’ordinateur spécifié par le paramètre `initializeData`. Pour afficher un journal des événements, vous pouvez utiliser l’ **Explorateur de serveurs** ou l’ **Observateur d’événements Windows**. Pour plus d'informations, consultez [ETW Events in the .NET Framework](../../../../framework/performance/etw-events.md).
+    - Un écouteur <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> écrit les informations dans le journal des événements de l’ordinateur spécifié par le paramètre `initializeData` . Pour afficher un journal des événements, vous pouvez utiliser l’ **Explorateur de serveurs** ou l’ **Observateur d’événements Windows**. Pour plus d’informations, consultez [Événements ETW dans le .NET Framework](../../../../framework/performance/etw-events.md).
 
-    - Les écouteurs <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> et <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> écrivent dans le fichier spécifié par le paramètre `initializeData`.
+    - Les écouteurs <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> et <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> écrivent dans le fichier spécifié par le paramètre `initializeData` .
 
     - Un écouteur <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType> écrit dans la console de ligne de commande.
 
@@ -73,8 +73,8 @@ Pour plus d’informations sur les emplacements de sortie par défaut, consultez
 - <xref:System.Diagnostics.ConsoleTraceListener>
 - <xref:System.Diagnostics>
 - [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Guide pratique : enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [Comment : enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
 - [Guide pratique : écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
-- [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
-- [Événements ETW dans le .NET Framework](../../../../framework/performance/etw-events.md)
+- [Procédure pas à pas : modification de l'emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [ETW Events in the .NET Framework](../../../../framework/performance/etw-events.md)
 - [Dépannage : écouteurs de journalisation](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)

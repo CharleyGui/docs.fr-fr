@@ -5,10 +5,10 @@ helpviewer_keywords:
 - files [Visual Basic], moving
 ms.assetid: 53a7457b-5815-41ad-b37d-28537c1fb77a
 ms.openlocfilehash: 29c64a7a81028d47bf489212e6d8faec5e8dda75
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74335357"
 ---
 # <a name="how-to-move-a-file-in-visual-basic"></a>Guide pratique pour déplacer un fichier en Visual Basic
@@ -45,7 +45,7 @@ Vous pouvez utiliser la méthode `My.Computer.FileSystem.MoveFile` pour déplace
   
 - `showUI` a la valeur `True`, `onUserCancel` a la valeur `ThrowException`et l’utilisateur a annulé l’opération ou une erreur d’E/S non spécifiée s’est produite (<xref:System.OperationCanceledException>).  
   
-- Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
+- Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
 - L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin (<xref:System.Security.SecurityException>).  
   
@@ -54,6 +54,6 @@ Vous pouvez utiliser la méthode `My.Computer.FileSystem.MoveFile` pour déplace
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.MoveFile%2A>
-- [Guide pratique : renommer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)
-- [Guide pratique : créer une copie d'un fichier dans un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)
-- [Guide pratique : analyser des chemins d’accès](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+- [Comment : renommer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)
+- [Comment : créer une copie d'un fichier dans un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)
+- [Comment : analyser des chemins d'accès](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)

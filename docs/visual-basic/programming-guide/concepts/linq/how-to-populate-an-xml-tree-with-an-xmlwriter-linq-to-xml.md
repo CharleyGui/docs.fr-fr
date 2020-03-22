@@ -2,24 +2,24 @@
 title: 'Comment : remplir une arborescence XML avec un XmlWriter (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 5792a0eb-94ee-440d-b601-58cca8c0ee0b
-ms.openlocfilehash: ec44f6e21453a1333f842030bae0c4f80dedb9c3
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: fecf57eac570a9ca57dd1fe2f7a0b54cd78c33b5
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74333774"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78267000"
 ---
-# <a name="how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml-visual-basic"></a>Comment : remplir une arborescence XML avec un XmlWriter (LINQ to XML) (Visual Basic)
+# <a name="how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml-visual-basic"></a>Comment: Peupler un arbre XML avec un XmlWriter (LINQ à XML) (Visual Basic)
 L’une des manières de remplir une arborescence XML consiste à utiliser <xref:System.Xml.Linq.XContainer.CreateWriter%2A> pour créer un objet <xref:System.Xml.XmlWriter>, puis à écrire dans l’objet <xref:System.Xml.XmlWriter>. L’arborescence XML est remplie avec tous les nœuds écrits dans l’objet <xref:System.Xml.XmlWriter>.  
   
  Cette méthode est généralement utilisée quand [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est utilisé avec une autre classe censée écrire dans un objet <xref:System.Xml.XmlWriter>, comme <xref:System.Xml.Xsl.XslCompiledTransform>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Une utilisation possible de <xref:System.Xml.Linq.XContainer.CreateWriter%2A> est lors de l'appel à une transformation XSLT. Cet exemple crée une arborescence XML, crée un objet <xref:System.Xml.XmlReader> à partir de l’arborescence XML, crée un nouveau document, puis crée un objet <xref:System.Xml.XmlWriter> pour écrire dans le nouveau document. Il appelle ensuite la transformation XSLT, en passant <xref:System.Xml.XmlReader> et <xref:System.Xml.XmlWriter>. Une fois la transformation terminée avec succès, la nouvelle arborescence XML est remplie avec les résultats de la transformation.  
   
 ```vb  
 Dim xslMarkup As XDocument = _  
-    <?xml version='1.0'?>   
+    <?xml version='1.0'?>
     <xsl:stylesheet xmlns:xsl='http://www.w3.org/1999/XSL/Transform' version='1.0'>  
         <xsl:template match='/Parent'>  
             <Root>  
@@ -53,7 +53,7 @@ End Using
 Console.WriteLine(newTree)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Root>  
@@ -67,4 +67,4 @@ Console.WriteLine(newTree)
 - <xref:System.Xml.Linq.XContainer.CreateWriter%2A>
 - <xref:System.Xml.XmlWriter>
 - <xref:System.Xml.Xsl.XslCompiledTransform>
-- [Création d’arborescences XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [Création d’arbres XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

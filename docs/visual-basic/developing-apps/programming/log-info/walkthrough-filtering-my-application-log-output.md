@@ -7,10 +7,10 @@ helpviewer_keywords:
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
 ms.openlocfilehash: f18556bbe1ca2d77925482319246d403892d31ef
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74353588"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Procédure pas à pas : filtrage de la sortie de My.Application.Log (Visual Basic)
@@ -61,9 +61,9 @@ Ce tableau affiche le niveau de gravité requis pour le journal afin d’écrire
 |`Critical`|`Critical`|
 |`Error`|`Critical` ou `Error`|
 |`Warning`|`Critical`, `Error` ou `Warning`|
-|`Information`|`Critical`, `Error`, `Warning`ou `Information`|
-|`Verbose`|`Critical`, `Error`, `Warning`, `Information` ou `Verbose`|
-|`ActivityTracing`|`Start`, `Stop`, `Suspend`, `Resume` ou `Transfer`|
+|`Information`|`Critical`, `Error`, `Warning` ou `Information`|
+|`Verbose`|`Critical`, `Error`, `Warning`, `Information` ou`Verbose`|
+|`ActivityTracing`|`Start`, `Stop`, `Suspend`, `Resume` ou`Transfer`|
 |`All`|Tous les messages sont autorisés.|
 |`Off`|Tous les messages sont bloqués.|
 
@@ -253,9 +253,9 @@ Pour plus d’informations sur la modification des paramètres de journal après
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
-- [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
-- [Procédure pas à pas : création d’écouteurs de journalisation personnalisés](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)
+- [Procédure pas à pas : détermination de l'emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
+- [Procédure pas à pas : modification de l'emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [Procédure pas à pas : création d'écouteurs de journalisation personnalisés](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)
 - [Guide pratique : écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
-- [Commutateurs de suivi](../../../../framework/debug-trace-profile/trace-switches.md)
-- [Enregistrement d’informations provenant de l’application](../../../../visual-basic/developing-apps/programming/log-info/index.md)
+- [Commutateurs de traçage](../../../../framework/debug-trace-profile/trace-switches.md)
+- [Enregistrement d'informations provenant de l'application](../../../../visual-basic/developing-apps/programming/log-info/index.md)

@@ -6,10 +6,10 @@ helpviewer_keywords:
 - Web services [Visual Basic], accessing
 ms.assetid: ff8046f4-f1f2-4d8b-90b7-95e3f7415418
 ms.openlocfilehash: d288cc1f2991a8f504dc9f1b206bba76fa378b75
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "76794562"
 ---
 # <a name="how-to-call-a-web-service-asynchronously-visual-basic"></a>Guide pratique pour appeler un service web de manière asynchrone (Visual Basic)
@@ -23,7 +23,7 @@ La classe proxy vous permet d'appeler les méthodes du service web de manière s
 > [!NOTE]
 > Ce code ne fonctionne pas dans les applications web, car ASP.NET ne prend pas en charge l'objet `My.WebServices`.
 
-## <a name="call-a-web-service-asynchronously"></a>Appeler un service Web de façon asynchrone
+## <a name="call-a-web-service-asynchronously"></a>Appelez un service Web asynchroneously
 
 1. Faites référence au service web DemoTemperatureService disponible sur `http://www.xmethods.net`. L'adresse est
 
@@ -68,5 +68,5 @@ La classe proxy vous permet d'appeler les méthodes du service web de manière s
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Accès aux services web d’une application](accessing-application-web-services.md)
+- [Accès aux services web d’application](accessing-application-web-services.md)
 - [My.WebServices (objet)](../../language-reference/objects/my-webservices-object.md)

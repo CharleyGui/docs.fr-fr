@@ -10,10 +10,10 @@ helpviewer_keywords:
 - streams, definition
 ms.assetid: 49d837c0-cf28-416f-8606-4d83d7b479ef
 ms.openlocfilehash: 5d60d0089d042c0be343c741c26de0b4b7778d6d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74348942"
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>Concepts de base du système de fichiers et des E/S de fichier du .NET Framework (Visual Basic)
@@ -55,16 +55,16 @@ Il existe de nombreux types de flux, mais dans le cadre de l’utilisation des e
 
 - <xref:System.IO.MemoryStream>
 
-- <xref:System.Net.Sockets.NetworkStream>
+- <xref:System.Net.Sockets.NetworkStream>.
 
 Le tableau suivant répertorie les tâches couramment accomplies avec un flux :
 
-|Pour|Consultez|
+|À|Consultez|
 |---|---|
-|Lire et écrire dans un fichier de données|[Comment : lire et écrire dans un fichier de données créé récemment](../../../../standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|
-|Lire le texte d’un fichier|[Comment : lire du texte dans un fichier](../../../../standard/io/how-to-read-text-from-a-file.md)|
+|Lire et écrire dans un fichier de données|[Comment : lire et écrire dans un fichier de données créé récemment](../../../../standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|
+|Lire le texte d’un fichier|[Comment : lire du texte dans un fichier](../../../../standard/io/how-to-read-text-from-a-file.md)|
 |Écrire du texte dans un fichier|[Comment : écrire du texte dans un fichier](../../../../standard/io/how-to-write-text-to-a-file.md)|
-|Lire les caractères d’une chaîne|[Comment : lire les caractères d’une chaîne](../../../../standard/io/how-to-read-characters-from-a-string.md)|
+|Lire les caractères d’une chaîne|[Comment : lire les caractères d'une chaîne](../../../../standard/io/how-to-read-characters-from-a-string.md)|
 |Écrire des caractères dans une chaîne|[Comment : écrire des caractères dans une chaîne](../../../../standard/io/how-to-write-characters-to-a-string.md)|
 |Chiffrer les données|[Chiffrement de données](../../../../standard/security/encrypting-data.md)|
 |Déchiffrer des données|[Déchiffrement de données](../../../../standard/security/decrypting-data.md)|
@@ -75,16 +75,16 @@ Vous pouvez contrôler la façon dont les fichiers sont créés, ouverts et part
 
 L’énumération <xref:System.IO.FileAttributes> vous permet de recueillir des informations propres au fichier. L’énumération <xref:System.IO.FileAttributes> retourne les attributs stockés du fichier, par exemple s’il est compressé, chiffré, caché, en lecture seule, s’il s’agit d’une archive, d’un répertoire, d’un fichier système ou d’un fichier temporaire.
 
-Le tableau suivant répertorie les tâches qui impliquent l’accès aux fichiers et les attributs de fichiers :
+Le tableau suivant répertorie les tâches qui impliquent l’accès aux fichiers et les attributs de fichiers :
 
-|Pour|Consultez|
+|À|Consultez|
 |---|---|
 |Ouvrir un fichier journal et y ajouter du texte|[Comment : ouvrir un fichier journal et y ajouter des éléments](../../../../standard/io/how-to-open-and-append-to-a-log-file.md)|
 |Déterminer les attributs d’un fichier|<xref:System.IO.FileAttributes>|
 
 ## <a name="file-permissions"></a>Autorisations de fichiers
 
-Vous pouvez contrôler l’accès aux fichiers et aux répertoires avec la classe <xref:System.Security.Permissions.FileIOPermission>. Cela peut être particulièrement important pour les développeurs qui travaillent avec des Web Forms, qui s’exécutent par défaut dans le contexte d’un compte d’utilisateur local spécial nommé ASPNET, créé dans le cadre des installations d’ASP.NET et .NET Framework. Quand une telle application demande l’accès à une ressource, le compte d’utilisateur ASPNET dispose d’autorisations limitées, ce qui peut empêcher l’utilisateur d’effectuer des actions telles que l’écriture dans un fichier à partir d’une application web. Pour plus d'informations, consultez <xref:System.Security.Permissions.FileIOPermission>.
+Vous pouvez contrôler l’accès aux fichiers et aux répertoires avec la classe <xref:System.Security.Permissions.FileIOPermission>. Cela peut être particulièrement important pour les développeurs qui travaillent avec des Web Forms, qui s’exécutent par défaut dans le contexte d’un compte d’utilisateur local spécial nommé ASPNET, créé dans le cadre des installations d’ASP.NET et .NET Framework. Quand une telle application demande l’accès à une ressource, le compte d’utilisateur ASPNET dispose d’autorisations limitées, ce qui peut empêcher l’utilisateur d’effectuer des actions telles que l’écriture dans un fichier à partir d’une application web. Pour plus d’informations, consultez <xref:System.Security.Permissions.FileIOPermission>.
 
 ## <a name="isolated-file-storage"></a>Stockage de fichiers isolé
 
@@ -92,7 +92,7 @@ Le stockage isolé est une tentative de résolution des problèmes créés lors 
 
 Le tableau suivant répertorie les tâches couramment associées au stockage de fichiers isolé.
 
-|Pour|Consultez|
+|À|Consultez|
 |---|---|
 |Créer un magasin isolé|[Obtention de magasins](../../../../standard/io/how-to-obtain-stores-for-isolated-storage.md)|
 |Énumérer les magasins isolés|[Énumération de magasins](../../../../standard/io/how-to-enumerate-stores-for-isolated-storage.md)|
@@ -108,7 +108,7 @@ Le composant <xref:System.IO.FileSystemWatcher> vous permet de surveiller les mo
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Composition de flux](../../../../standard/io/composing-streams.md)
-- [Fichier et flux de données E/S](../../../../standard/io/index.md)
+- [Composing Streams](../../../../standard/io/composing-streams.md)
+- [Fichier et stream I/O](../../../../standard/io/index.md)
 - [E/S sur fichier asynchrones](../../../../standard/io/asynchronous-file-i-o.md)
 - [Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/classes-used-in-net-framework-file-io-and-the-file-system.md)

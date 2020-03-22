@@ -1,5 +1,5 @@
 ---
-title: Stockage des données dans le presse-papiers et lecture
+title: Stockage des données à et lecture à partir du Clipboard
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Clipboard, storing data to (My.Computer.Clipboard)
@@ -10,10 +10,10 @@ helpviewer_keywords:
 - reading data, from Clipboard
 ms.assetid: f690119a-4378-4f7d-b20e-d9377ef49496
 ms.openlocfilehash: 243fb237f3f9ba53f8b29079df08531c102c78dd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74349733"
 ---
 # <a name="storing-data-to-and-reading-from-the-clipboard-visual-basic"></a>Stockage de données dans le Presse-papiers et lecture du Presse-papiers (Visual Basic)
@@ -26,7 +26,7 @@ Le Presse-papiers peut être utilisé pour stocker des données, telles que du t
   
  [!code-vb[VbVbcnMyClipboard#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#4)]  
   
- Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Applications Windows Forms > Presse-papiers**. Pour plus d'informations, consultez [Code Snippets](/visualstudio/ide/code-snippets).  
+ Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Applications Windows Forms > Presse-papiers**. Pour plus d’informations, consultez [Extraits de code](/visualstudio/ide/code-snippets).  
   
  Utilisez la méthode <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetImage%2A> pour récupérer une image à partir du Presse-papiers. Cet exemple vérifie si une image se trouve dans le Presse-papiers avant de la récupérer et de l’assigner à `PictureBox1`.  
   
@@ -62,7 +62,7 @@ Le Presse-papiers peut être utilisé pour stocker des données, telles que du t
   
  [!code-vb[VbVbcnMyClipboard#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#2)]  
   
- Utilisez la méthode <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData%2A> pour écrire des données dans le Presse-papiers. Cet exemple écrit `DataObject` `dataChunk` dans le Presse-papiers au format personnalisé `specialFormat`.  
+ Utilisez la méthode <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData%2A> pour écrire des données dans le Presse-papiers. Cet exemple `DataObject` `dataChunk` écrit le Clipboard dans `specialFormat`le format personnalisé .  
   
  [!code-vb[VbVbcnMyClipboard#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#7)]  
   
@@ -78,5 +78,5 @@ Le Presse-papiers peut être utilisé pour stocker des données, telles que du t
 - <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>
 - <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetAudioStream%2A>
 - <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetDataObject%2A>
-- [Guide pratique : lire des données d’objet à partir d’un fichier XML](../../../programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)
-- [Guide pratique : écrire des données d’objet dans un fichier XML](../../../programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)
+- [Comment : Lire les données d’objets à partir d’un fichier XML](../../../programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)
+- [Comment : Écrire des données d’objet à un fichier XML](../../../programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)

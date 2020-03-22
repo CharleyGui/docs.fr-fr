@@ -9,10 +9,10 @@ helpviewer_keywords:
 - forms [Visual Basic], accessing all open
 ms.assetid: 9aaf5aaf-2012-4f97-89c7-6e62b9d17863
 ms.openlocfilehash: 332b6a7563160528b6c17210170af0db6e9bc0e7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74349237"
 ---
 # <a name="accessing-application-forms-visual-basic"></a>Accès aux formulaires de l’application (Visual Basic)
@@ -23,9 +23,9 @@ L’objet `My.Forms` permet d’accéder facilement à une instance de chaque Wi
 
  Le tableau suivant donne des exemples montrant comment accéder aux formulaires d’une application.  
   
-|Pour|Consultez|  
+|À|Consultez|  
 |---|---|  
-|Accéder à un formulaire à partir d’un autre formulaire d’une application.|[My.Forms (objet)](../../../visual-basic/language-reference/objects/my-forms-object.md)|  
+|Accéder à un formulaire à partir d’un autre formulaire d’une application.|[My.Forms, objet](../../../visual-basic/language-reference/objects/my-forms-object.md)|  
 |Afficher les titres de tous les formulaires ouverts de l’application.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>|  
 |Mettre à jour l’écran de démarrage avec les informations d’état au démarrage de l’application.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A>|  
   
@@ -33,4 +33,4 @@ L’objet `My.Forms` permet d’accéder facilement à une instance de chaque Wi
 
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A>
-- [My.Forms (objet)](../../../visual-basic/language-reference/objects/my-forms-object.md)
+- [My.Forms, objet](../../../visual-basic/language-reference/objects/my-forms-object.md)

@@ -1,15 +1,15 @@
 ---
-title: 'Comment : créer un répertoire'
+title: Création d’un répertoire
 ms.date: 07/20/2015
 helpviewer_keywords:
 - directories [Visual Basic], creating
 - folders [Visual Basic], creating
 ms.assetid: 0351a2ca-24d8-43b5-bb39-9b99e6401cff
 ms.openlocfilehash: 3d838352a0a3dd69a1555dc34b8acba3afba278b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74348815"
 ---
 # <a name="how-to-create-a-directory-in-visual-basic"></a>Guide pratique pour créer un répertoire en Visual Basic

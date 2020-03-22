@@ -1,51 +1,51 @@
 ---
-title: Valeurs de retour de référence
+title: Valeurs de retour Ref
 ms.date: 04/28/2017
 helpviewer_keywords:
 - variables [Visual Basic]
 - ref return values [Visual Basic]
 - ref returns [Visual Basic]
 ms.assetid: 5ef0cc69-eb3a-4a67-92a2-78585f223cb5
-ms.openlocfilehash: 2d2a302a899fbde549161469f281d3e580bcb71f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f2a92c584dbb12a322e28435d797fa4d7c2f6dbb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352535"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186934"
 ---
-# <a name="support-for-reference-return-values-visual-basic"></a>Prise en charge des valeurs de retour de référence (Visual Basic)
+# <a name="support-for-reference-return-values-visual-basic"></a>Prise en charge des valeurs de rendement de référence (Visual Basic)
 
-À partir C# de 7,0, C# le langage prend en charge les *valeurs de retour de référence*. L’une des façons de comprendre les valeurs de retour de référence est qu’elles sont l’opposé des arguments passés par référence à une méthode. Lorsqu’un argument passé par référence est modifié, les modifications sont reflétées dans la valeur de la variable sur l’appelant. Lorsqu’une méthode fournit une valeur de retour de référence à un appelant, les modifications apportées à la valeur de retour de référence par l’appelant sont répercutées dans les données de la méthode appelée.
+À partir de C 7.0, la langue CMD prend en charge les *valeurs de retour de référence*. Une façon de comprendre les valeurs de rendement de référence est qu’elles sont à l’opposé des arguments qui sont adoptés en se référant à une méthode. Lorsqu’un argument adopté par référence est modifié, les modifications sont reflétées dans la valeur de la variable sur l’appelant. Lorsqu’une méthode fournit une valeur de retour de référence à un appelant, les modifications apportées à la valeur de rendement de référence par l’appelant sont reflétées dans les données de la méthode appelée.
 
-Visual Basic ne vous autorise pas à créer des méthodes avec des valeurs de retour de référence, mais vous permet d’utiliser des valeurs de retour de référence. En d’autres termes, vous pouvez appeler une méthode avec une valeur de retour de référence et modifier cette valeur de retour, et les modifications apportées à la valeur de retour de référence sont reflétées dans les données de la méthode appelée.
+Visual Basic ne vous permet pas d’écrire des méthodes avec des valeurs de retour de référence, mais il vous permet de consommer des valeurs de retour de référence. En d’autres termes, vous pouvez appeler une méthode avec une valeur de rendement de référence et modifier cette valeur de rendement, et les modifications apportées à la valeur de rendement de référence sont reflétées dans les données de la méthode appelées.
 
-## <a name="modifying-the-ref-return-value-directly"></a>Modification directe de la valeur de retour de référence
+## <a name="modifying-the-ref-return-value-directly"></a>Modification directe de la valeur de retour de l’arbitre
 
-Pour les méthodes qui s’exécutent toujours et qui n’ont pas de paramètres `ByRef`, vous pouvez modifier directement la valeur de retour de référence. Pour ce faire, affectez la nouvelle valeur aux expressions qui retourne la valeur de retour de référence.
+Pour les méthodes qui `ByRef` réussissent toujours et n’ont pas de paramètres, vous pouvez modifier directement la valeur de retour de référence. Pour ce faire, vous attribuez la nouvelle valeur aux expressions qui retournent la valeur de rendement de référence.
 
-L’exemple C# suivant définit une méthode `NumericValue.IncrementValue` qui incrémente une valeur interne et la retourne en tant que valeur de retour de référence.
+L’exemple CMD suivant `NumericValue.IncrementValue` définit une méthode qui incrémente une valeur interne et la renvoie comme valeur de rendement de référence.
 
 [!code-csharp[Ref-Return](../../../../../samples/snippets/visualbasic/programming-guide/language-features/procedures/ref-returns1.cs)]
 
-La valeur de retour de référence est ensuite modifiée par l’appelant dans l’exemple de Visual Basic suivant. Notez que la ligne avec l’appel de méthode `NumericValue.IncrementValue` n’affecte pas de valeur à la méthode. Au lieu de cela, elle assigne une valeur à la valeur de retour de référence retournée par la méthode.
+La valeur de retour de référence est ensuite modifiée par l’appelant dans l’exemple visual basic suivant. Notez que la `NumericValue.IncrementValue` ligne avec l’appel de méthode n’attribue pas une valeur à la méthode. Au lieu de cela, il attribue une valeur à la valeur de rendement de référence retournée par la méthode.
 
 [!code-vb[Ref-Return](../../../../../samples/snippets/visualbasic/programming-guide/language-features/procedures/use-ref-returns1.vb)]
 
-## <a name="using-a-helper-method"></a>Utilisation d’une méthode d’assistance
+## <a name="using-a-helper-method"></a>Utilisation d’une méthode d’aide
 
-Dans d’autres cas, la modification directe de la valeur de retour de référence d’un appel de méthode peut ne pas toujours être souhaitable. Par exemple, une méthode de recherche qui retourne une chaîne peut ne pas toujours trouver de correspondance. Dans ce cas, vous souhaitez modifier la valeur de retour de référence uniquement si la recherche est réussie.
+Dans d’autres cas, il n’est pas toujours souhaitable de modifier directement la valeur de retour de référence d’un appel de méthode. Par exemple, une méthode de recherche qui renvoie une chaîne peut ne pas toujours trouver une correspondance. Dans ce cas, vous souhaitez modifier la valeur de retour de référence uniquement si la recherche est réussie.
 
-L’exemple C# suivant illustre ce scénario. Il définit une classe `Sentence` écrite dans C# comprend une méthode `FindNext` qui recherche le mot suivant dans une phrase qui commence par une sous-chaîne spécifiée. La chaîne est retournée comme valeur de retour de référence et une variable `Boolean` passée par référence à la méthode indique si la recherche a réussi. La valeur de retour de référence indique que l’appelant peut non seulement lire la valeur retournée ; Il peut également le modifier, et cette modification est reflétée dans les données contenues en interne dans la classe `Sentence`.
+L’exemple suivant de CMD illustre ce scénario. Il définit `Sentence` une classe écrite en `FindNext` C comprend une méthode qui trouve le mot suivant dans une phrase qui commence par un sous-corde spécifié. La chaîne est retournée comme valeur de retour de référence et une variable `Boolean` passée par référence à la méthode indique si la recherche a réussi. La valeur de rendement de référence indique qu’en plus de lire la valeur retournée, l’appelant `Sentence` peut également la modifier et que la modification est reflétée dans les données contenues à l’interne dans la catégorie.
 
 [!code-csharp[Ref-Return](../../../../../samples/snippets/visualbasic/getting-started/ref-returns.cs)]
 
-La modification directe de la valeur de retour de référence dans ce cas n’est pas fiable, car l’appel de la méthode peut ne pas trouver de correspondance et retourner le premier mot de la phrase. Dans ce cas, l’appelant va modifier par inadvertance le premier mot de la phrase. Cela peut être évité par l’appelant qui retourne une `null` (ou `Nothing` dans Visual Basic). Mais dans ce cas, toute tentative de modification d’une chaîne dont la valeur est `Nothing` lève une <xref:System.NullReferenceException>. Si peut également être évité par l’appelant qui retourne <xref:System.String.Empty?displayProperty=nameWithType>, mais cela nécessite que l’appelant définisse une variable de chaîne dont la valeur est <xref:System.String.Empty?displayProperty=nameWithType>. Alors que l’appelant peut modifier cette chaîne, la modification elle-même n’a aucun effet, car la chaîne modifiée n’a aucune relation avec les mots de la phrase stockée par la classe `Sentence`.
+Modifier directement la valeur de déclaration de référence dans ce cas n’est pas fiable, puisque l’appel de méthode peut ne pas trouver une correspondance et retourner le premier mot dans la phrase. Dans ce cas, l’appelant modifiera par inadvertance le premier mot de la phrase. Cela pourrait être empêché par `null` l’appelant de retourner un (ou `Nothing` dans Visual Basic). Mais dans ce cas, tenter de `Nothing` modifier une <xref:System.NullReferenceException>chaîne dont la valeur est jette un . Si cela peut également être <xref:System.String.Empty?displayProperty=nameWithType>empêché par le retour de l’appelant, <xref:System.String.Empty?displayProperty=nameWithType>mais cela exige que l’appelant définisse une variable de chaîne dont la valeur est . Bien que l’appelant puisse modifier cette chaîne, la modification elle-même ne sert à rien, puisque la chaîne modifiée n’a aucun rapport avec les mots de la phrase stockées par la `Sentence` classe.
 
-La meilleure façon de gérer ce scénario consiste à passer la valeur de retour de référence par référence à une méthode d’assistance. La méthode d’assistance contient ensuite la logique permettant de déterminer si l’appel de la méthode a réussi et, si tel est le cas, de modifier la valeur de retour de référence. L’exemple suivant fournit une implémentation possible.
+La meilleure façon de gérer ce scénario est de passer la valeur de retour de référence par référence à une méthode d’aide. La méthode de l’aide contient alors la logique pour déterminer si l’appel de méthode a réussi et, si elle l’a fait, de modifier la valeur de retour de référence. L’exemple suivant fournit une mise en œuvre possible.
 
 [!code-vb[Ref-Return](../../../../../samples/snippets/visualbasic/getting-started/ref-return-helper.vb#1)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Passage d’arguments par valeur et par référence](passing-arguments-by-value-and-by-reference.md)
+- [Passer les arguments par valeur et par référence](passing-arguments-by-value-and-by-reference.md)
 - [Procédures dans Visual Basic](index.md)

@@ -22,19 +22,19 @@ helpviewer_keywords:
 - MyBase keyword [Visual Basic], relationship to similar programming elements
 ms.assetid: f8e241ae-b1ed-4886-9aa0-08c632154029
 ms.openlocfilehash: a21dfeb12e8d99f5f8b8afede084846711c299ab
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347335"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79400847"
 ---
 # <a name="me-my-mybase-and-myclass-in-visual-basic"></a>Me, My, MyBase et MyClass dans Visual Basic
-`Me`, `My`, `MyBase`et `MyClass` dans Visual Basic ont des noms similaires, mais à des fins différentes. Cette rubrique décrit chacune de ces entités afin de les distinguer.  
+`Me`, `My` `MyBase`, `MyClass` et dans Visual Basic ont des noms similaires, mais des buts différents. Ce sujet décrit chacune de ces entités afin de les distinguer.  
   
-## <a name="me"></a>Me  
- Le mot clé `Me` permet de faire référence à l’instance spécifique d’une classe ou d’une structure dans laquelle le code est en cours d’exécution. `Me` se comporte comme une variable objet ou une variable de structure faisant référence à l’instance actuelle. L’utilisation de `Me` est particulièrement utile pour transmettre des informations sur l’instance en cours d’exécution d’une classe ou d’une structure à une procédure d’une autre classe, structure ou module.  
+## <a name="me"></a>Moi  
+ Le `Me` mot clé fournit un moyen de se référer à l’instance spécifique d’une classe ou d’une structure dans laquelle le code est actuellement en cours d’exécution. `Me`se comporte comme une variable d’objet ou une variable de structure se référant à l’instance actuelle. L’utilisation `Me` est particulièrement utile pour transmettre des informations sur l’instance actuellement exécutante d’une classe ou d’une structure à une procédure dans une autre classe, structure ou module.  
   
- Par exemple, supposons que vous ayez la procédure suivante dans un module.  
+ Supposons, par exemple, que vous ayez la procédure suivante dans un module.  
   
 ```vb  
 Sub ChangeFormColor(FormName As Form)  
@@ -43,20 +43,20 @@ Sub ChangeFormColor(FormName As Form)
 End Sub  
 ```  
   
- Vous pouvez appeler cette procédure et passer l’instance actuelle de la classe <xref:System.Windows.Forms.Form> en tant qu’argument à l’aide de l’instruction suivante.  
+ Vous pouvez appeler cette procédure et passer <xref:System.Windows.Forms.Form> l’instance actuelle de la classe comme un argument en utilisant la déclaration suivante.  
   
 ```vb  
 ChangeFormColor(Me)  
 ```  
   
 ## <a name="my"></a>My  
- La fonctionnalité `My` fournit un accès facile et intuitif à un certain nombre de .NET Framework classes, ce qui permet à l’utilisateur Visual Basic d’interagir avec l’ordinateur, l’application, les paramètres, les ressources, etc.  
+ La `My` fonctionnalité offre un accès facile et intuitif à un certain nombre de classes cadre .NET, permettant à l’utilisateur visual basic d’interagir avec l’ordinateur, l’application, les paramètres, les ressources, et ainsi de suite.  
   
 ## <a name="mybase"></a>MyBase  
- Le mot clé `MyBase` se comporte comme une variable objet qui fait référence à la classe de base de l’instance actuelle d’une classe. `MyBase` est couramment utilisé pour accéder aux membres de la classe de base qui sont substitués ou occultés dans une classe dérivée. `MyBase.New` est utilisé pour appeler explicitement un constructeur de classe de base à partir d’un constructeur de classe dérivée.  
+ Le `MyBase` mot clé se comporte comme une variable d’objet se référant à la classe de base de l’instance actuelle d’une classe. `MyBase`est couramment utilisé pour accéder aux membres de la classe de base qui sont remplacés ou ombragés dans une classe dérivée. `MyBase.New`est utilisé pour appeler explicitement un constructeur de classe de base à partir d’un constructeur de classe dérivé.  
   
-## <a name="myclass"></a>Classe  
- Le mot clé `MyClass` se comporte comme une variable objet qui fait référence à l’instance actuelle d’une classe telle qu’elle a été implémentée à l’origine. `MyClass` est semblable à `Me`, mais tous les appels de méthode sur celui-ci sont traités comme si la méthode était `NotOverridable`.  
+## <a name="myclass"></a>MyClass  
+ Le `MyClass` mot clé se comporte comme une variable d’objet se référant à l’instance actuelle d’une classe telle qu’elle a été mise en œuvre à l’origine. `MyClass`est similaire `Me`à , mais tous les appels méthode `NotOverridable`sur elle sont traitées comme si la méthode étaient .  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -9,10 +9,10 @@ helpviewer_keywords:
 - registry [Visual Basic], reading
 ms.assetid: 775d0a57-68c9-464e-8949-9a39bd29cc64
 ms.openlocfilehash: 73c32aefe06a68bb42fcb5f4615da0927e57e892
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74345613"
 ---
 # <a name="how-to-read-a-value-from-a-registry-key-in-visual-basic"></a>Guide pratique pour lire une valeur à partir d'une clé de Registre en Visual Basic
@@ -31,7 +31,7 @@ La méthode `GetValue` de l’objet `My.Computer.Registry` peut être utilisée 
   
      [!code-vb[VbResourceTasks#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#4)]  
   
- Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Système d’exploitation Windows > Registre**. Pour plus d'informations, consultez [Code Snippets](/visualstudio/ide/code-snippets).  
+ Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Système d’exploitation Windows > Registre**. Pour plus d’informations, consultez [Extraits de code](/visualstudio/ide/code-snippets).  
   
 ### <a name="to-determine-whether-a-value-exists-in-a-registry-key"></a>Pour déterminer si une clé existe dans une clé de Registre  
   
@@ -51,9 +51,9 @@ La méthode `GetValue` de l’objet `My.Computer.Registry` peut être utilisée 
   
 - Le nom de la clé dépasse la limite de 255 caractères (<xref:System.ArgumentException>).  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
+## <a name="net-framework-security"></a>Sécurité du .NET Framework  
 
- Pour exécuter ce processus, votre assembly nécessite un niveau de privilège accordé par la classe <xref:System.Security.Permissions.RegistryPermission>. Si vous l’exécutez dans un contexte de confiance partielle, le processus peut lever une exception en raison de privilèges insuffisants. De même, l’utilisateur doit disposer de listes de contrôle d’accès (ACL) valides pour créer ou écrire des paramètres. Par exemple, une application locale qui dispose de l’autorisation de sécurité d’accès du code peut ne pas disposer des autorisations de système d’exploitation. Pour plus d'informations, consultez [Code Access Security Basics](../../../../framework/misc/code-access-security-basics.md).  
+ Pour exécuter ce processus, votre assembly nécessite un niveau de privilège accordé par la classe <xref:System.Security.Permissions.RegistryPermission>. Si vous l’exécutez dans un contexte de confiance partielle, le processus peut lever une exception en raison de privilèges insuffisants. De même, l’utilisateur doit disposer de listes de contrôle d’accès (ACL) valides pour créer ou écrire des paramètres. Par exemple, une application locale qui dispose de l’autorisation de sécurité d’accès du code peut ne pas disposer des autorisations de système d’exploitation. Pour plus d’informations, consultez [Notions fondamentales de la sécurité d’accès du code](../../../../framework/misc/code-access-security-basics.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -7,10 +7,10 @@ helpviewer_keywords:
 - binary files [Visual Basic], writing in Visual Basic
 ms.assetid: 59fae125-de5b-4c96-883c-209f4a55112c
 ms.openlocfilehash: 72d019f5f49868bd84d0507535e8ebc547b50e25
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74334432"
 ---
 # <a name="how-to-write-to-binary-files-in-visual-basic"></a>Guide pratique pour écrire dans des fichiers binaires en Visual Basic
@@ -37,7 +37,7 @@ Les conditions ci-dessous peuvent générer une exception :
 
 - Le fichier est utilisé par un autre processus, ou une erreur E/S se produit (<xref:System.IO.IOException>).
 
-- Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).
+- Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).
 
 - Un nom de fichier ou de répertoire du chemin contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).
 
@@ -46,4 +46,4 @@ Les conditions ci-dessous peuvent générer une exception :
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A>
-- [Guide pratique : insérer du texte dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)
+- [Comment : insérer du texte dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)

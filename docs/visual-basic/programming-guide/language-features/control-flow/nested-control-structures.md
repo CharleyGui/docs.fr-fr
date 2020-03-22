@@ -10,20 +10,20 @@ helpviewer_keywords:
 - structures [Visual Basic], nested control
 - nested control statements [Visual Basic]
 ms.assetid: cf60b061-65d9-44a8-81f2-b0bdccd23a05
-ms.openlocfilehash: 5818b13661fb4415c6f531b741b8a963a80bd2b8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b696c79cd3cada4416b3f4b6cdf96f00b89a5a0a
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348152"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78266922"
 ---
 # <a name="nested-control-structures-visual-basic"></a>Structures de contrôle imbriquées (Visual Basic)
-Vous pouvez placer des instructions de contrôle dans d’autres instructions de contrôle, par exemple un bloc `If...Then...Else` dans une boucle `For...Next`. Une instruction de contrôle placée à l’intérieur d’une autre instruction de contrôle est dite *imbriquée*.  
+Vous pouvez placer des instructions de contrôle `If...Then...Else` à `For...Next` l’intérieur d’autres instructions de contrôle, par exemple un bloc dans une boucle. Une déclaration de contrôle placée à l’intérieur d’une autre déclaration de contrôle serait *imbriquée.*  
   
-## <a name="nesting-levels"></a>Niveaux d’imbrication  
- Les structures de contrôle dans Visual Basic peuvent être imbriquées à autant de niveaux que vous le souhaitez. Il est courant de rendre les structures imbriquées plus lisibles en mettant en retrait le corps de chacune d’elles. L’éditeur de l’environnement de développement intégré (IDE) effectue automatiquement cette procédure.  
+## <a name="nesting-levels"></a>Niveaux de nidification  
+ Les structures de contrôle dans Visual Basic peuvent être imbriquées à autant de niveaux que vous le souhaitez. Il est courant de rendre les structures imbriquées plus lisibles en en enfermant le corps de chacun. C’est ce qu’effectue automatiquement l’éditeur intégré d’environnement de développement (IDE).  
   
- Dans l’exemple suivant, la procédure `sumRows` ajoute les éléments positifs de chaque ligne de la matrice.  
+ Dans l’exemple suivant, la procédure `sumRows` additionne les éléments positifs de chaque rangée de la matrice.  
   
 ```vb
 Public Sub sumRows(ByVal a(,) As Double, ByRef r() As Double)  
@@ -39,15 +39,15 @@ Public Sub sumRows(ByVal a(,) As Double, ByRef r() As Double)
 End Sub  
 ```  
   
- Dans l’exemple précédent, la première instruction `Next` ferme la boucle de `For` interne et la dernière instruction `Next` ferme la boucle de `For` externe.  
+ Dans l’exemple précédent, la `Next` première `For` déclaration ferme `Next` la boucle `For` intérieure et la dernière déclaration ferme la boucle extérieure.  
   
- De même, dans les instructions `If` imbriquées, les instructions `End If` s’appliquent automatiquement à l’instruction `If` antérieure la plus proche. Les boucles de `Do` imbriquées fonctionnent de la même manière, avec l’instruction `Loop` la plus profonde qui correspond à l’instruction `Do` la plus profonde.  
+ De même, `If` dans les `End If` relevés imbriqués, les déclarations s’appliquent automatiquement à l’instruction antérieure `If` la plus proche. Les `Do` boucles imbriquées fonctionnent de la `Loop` même manière, `Do` la déclaration la plus intime correspondant à la déclaration la plus intime.  
   
 > [!NOTE]
-> Pour de nombreuses structures de contrôle, lorsque vous cliquez sur un mot clé, tous les mots clés de la structure sont mis en surbrillance. Par exemple, lorsque vous cliquez sur `If` dans une construction de `If...Then...Else`, toutes les instances de `If`, `Then`, `ElseIf`, `Else`et `End If` de la construction sont mises en surbrillance. Pour passer au mot clé en surbrillance suivant ou précédent, appuyez sur CTRL + MAJ + flèche bas ou CTRL + MAJ + haut.  
+> Pour de nombreuses structures de contrôle, lorsque vous cliquez sur un mot clé, tous les mots clés de la structure sont mis en surbrillance. Par exemple, lorsque `If` vous `If...Then...Else` cliquez dans `If`une `Then` `ElseIf`construction, tous les cas de , , , `Else`et `End If` dans la construction sont mis en évidence. Pour passer au mot clé surlignée suivant ou précédent, appuyez sur CTRL-SHIFT-DOWN ARROW ou CTRL-SHIFT-UP ARROW.  
   
-## <a name="nesting-different-kinds-of-control-structures"></a>Imbrication de différents genres de structures de contrôle  
- Vous pouvez imbriquer un type de structure de contrôle à l’intérieur d’un autre type. L’exemple suivant utilise un bloc `With` à l’intérieur d’une boucle `For Each` et des blocs `If` imbriqués à l’intérieur du bloc `With`.  
+## <a name="nesting-different-kinds-of-control-structures"></a>Nidification de différents types de structures de contrôle  
+ Vous pouvez nicher un type de structure de contrôle dans un autre type. L’exemple suivant `With` utilise `For Each` un bloc `If` à l’intérieur d’une boucle et des blocs imbriqués à l’intérieur du `With` bloc.  
   
 ```vb
 For Each ctl As System.Windows.Forms.Control In Me.Controls  
@@ -64,12 +64,12 @@ For Each ctl As System.Windows.Forms.Control In Me.Controls
 Next ctl  
 ```  
   
-## <a name="overlapping-control-structures"></a>Superposition de structures de contrôle  
- Vous ne pouvez pas chevaucher les structures de contrôle. Cela signifie que toute structure imbriquée doit être entièrement contenue dans la structure la plus profonde suivante. Par exemple, la disposition suivante n’est pas valide, car la boucle `For` se termine avant la fin du bloc `With` interne.  
+## <a name="overlapping-control-structures"></a>Structures de contrôle qui se chevauchent  
+ Vous ne pouvez pas chevaucher les structures de contrôle. Cela signifie que toute structure imbriquée doit être entièrement contenue dans la structure la plus intime suivante. Par exemple, l’arrangement suivant `For` est invalide `With` parce que la boucle se termine avant la fin du bloc intérieur.  
   
- ![Diagramme qui montre un exemple d’imbrication non valide.](./media/nested-control-structures/example-invalid-nesting.gif) 
+ ![Diagramme qui montre un exemple de nidification invalide.](./media/nested-control-structures/example-invalid-nesting.gif)
   
- Le compilateur de Visual Basic détecte ces structures de contrôle qui se chevauchent et signale une erreur de compilation.  
+ Le compilateur Visual Basic détecte ces structures de contrôle qui se chevauchent et signale une erreur de compilation.  
   
 ## <a name="see-also"></a>Voir aussi
 

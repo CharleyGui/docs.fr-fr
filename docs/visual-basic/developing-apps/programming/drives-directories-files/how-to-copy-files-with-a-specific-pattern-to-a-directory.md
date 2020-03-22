@@ -8,10 +8,10 @@ helpviewer_keywords:
 - I/O [Visual Basic], copying files
 ms.assetid: f205d2ad-bbe5-4d55-8a40-acda21aa82dd
 ms.openlocfilehash: ee3951e967436a1b8aec09b8e42dc6d1b547bc02
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74348850"
 ---
 # <a name="how-to-copy-files-with-a-specific-pattern-to-a-directory-in-visual-basic"></a>Guide pratique pour copier des fichiers avec un modèle spécifique dans un répertoire en Visual Basic
@@ -36,13 +36,13 @@ La méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> 
   
      [!code-vb[VbVbcnMyFileSystem#89](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#89)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
 
  L’exemple suivant, qui présente les extraits de code ci-dessus dans leur intégralité, copie tous les fichiers .rtf du répertoire spécifié dans le répertoire nommé `testdirectory`.  
   
  [!code-vb[VbFileIOMisc#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/Class1.vb#37)]  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
+## <a name="net-framework-security"></a>Sécurité du .NET Framework  
 
  Les conditions ci-dessous peuvent générer une exception.  
   
@@ -54,7 +54,7 @@ La méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> 
   
 - Le répertoire pointe vers un fichier existant (<xref:System.IO.IOException>).  
   
-- Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
+- Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
 - Un nom de fichier ou de répertoire du chemin contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).  
   
@@ -64,6 +64,6 @@ La méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> 
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%2A>
 - <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A>
-- [Guide pratique : rechercher des sous-répertoires avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)
+- [Comment : rechercher des sous-répertoires avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)
 - [Dépannage : lecture et écriture dans des fichiers texte](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)
-- [Guide pratique : placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+- [Comment : placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)

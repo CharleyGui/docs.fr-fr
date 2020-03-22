@@ -2,14 +2,14 @@
 title: Programmation à l'aide de nœuds
 ms.date: 07/20/2015
 ms.assetid: d8422a9b-dd37-44a3-8aac-2237ed9561e0
-ms.openlocfilehash: 447c462f95536cd40291f9b0d54ab85dcde200db
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b2c9022cb57cf122af47bbe6d1a7fe2b4d41327c
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346637"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78266961"
 ---
-# <a name="programming-with-nodes-visual-basic"></a>Programmation avec des nœuds (Visual Basic)
+# <a name="programming-with-nodes-visual-basic"></a>Programmation avec nœuds (Visual Basic)
 Les développeurs [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] qui doivent écrire des programmes tels qu'un éditeur XML, un système de transformation ou un générateur de rapports doivent souvent écrire des programmes qui fonctionnent à un niveau de granularité plus élevé que les éléments et attributs. Ils doivent souvent travailler au niveau des nœuds, manipuler des nœuds de texte et traiter des instructions et des commentaires. Cette rubrique fournit quelques détails sur la programmation au niveau nœud.  
   
 ## <a name="node-details"></a>Détails concernant les nœuds  
@@ -26,7 +26,7 @@ Console.WriteLine(doc.Nodes().OfType(Of XComment).First().Parent Is Nothing)
 Console.WriteLine(doc.Root.Parent Is Nothing)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```console  
 True  
@@ -51,7 +51,7 @@ xmlTree.Add(New XText("more text"))
 Console.WriteLine(xmlTree.Nodes().OfType(Of XText)().Count())  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```console  
 1  
@@ -73,7 +73,7 @@ Dim textNode2 As XText = xmlTree.Nodes().OfType(Of XText)().First()
 Console.WriteLine(">>{0}<<", textNode2)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```console  
 >><<  
@@ -91,7 +91,7 @@ Console.WriteLine(child1)
 Console.WriteLine(child2)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Child1></Child1>  
@@ -104,7 +104,7 @@ Console.WriteLine(child2)
  La propriété <xref:System.Xml.Linq.XAttribute.IsNamespaceDeclaration%2A> indique si un attribut est une déclaration d'espace de noms.  
   
 ```vb  
-Dim root As XElement = _   
+Dim root As XElement = _
 <Root  
     xmlns='http://www.adventure-works.com'  
     xmlns:fc='www.fourthcoffee.com'  
@@ -115,7 +115,7 @@ For Each att As XAttribute In root.Attributes()
 Next  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```console  
 xmlns="http://www.adventure-works.com"  IsNamespaceDeclaration:True  
@@ -124,7 +124,7 @@ AnAttribute="abc"  IsNamespaceDeclaration:False
 ```  
   
 ### <a name="xpath-axis-methods-do-not-return-child-white-space-of-xdocument"></a>Les méthodes d'axe XPath ne retournent pas les espaces blancs enfants de XDocument  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] permet les nœuds de texte enfants d’une <xref:System.Xml.Linq.XDocument>, à condition que les nœuds de texte contiennent uniquement des espaces blancs. Toutefois, le modèle objet XPath n’inclut pas d’espace blanc comme nœuds enfants d’un document ; par conséquent, lorsque vous itérez au sein des enfants d’un objet <xref:System.Xml.Linq.XDocument> à l’aide de l’axe <xref:System.Xml.Linq.XContainer.Nodes%2A>, des nœuds de texte avec espaces blancs sont retournés. Toutefois, lorsque vous itérez au sein des enfants d'un objet <xref:System.Xml.Linq.XDocument> à l'aide des méthodes d'axe XPath, aucun nœud de texte avec espaces blancs n'est retourné.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] autorise l'existence des nœuds de texte enfants d'un objet <xref:System.Xml.Linq.XDocument>, à condition que les nœuds de texte contiennent uniquement des espaces blancs. Toutefois, le modèle objet XPath n’inclut pas d’espace blanc comme nœuds enfants d’un document ; par conséquent, lorsque vous itérez au sein des enfants d’un objet <xref:System.Xml.Linq.XDocument> à l’aide de l’axe <xref:System.Xml.Linq.XContainer.Nodes%2A>, des nœuds de texte avec espaces blancs sont retournés. Toutefois, lorsque vous itérez au sein des enfants d'un objet <xref:System.Xml.Linq.XDocument> à l'aide des méthodes d'axe XPath, aucun nœud de texte avec espaces blancs n'est retourné.  
   
 ```vb  
 ' Create a document with some white space child nodes of the document.  
@@ -141,7 +141,7 @@ Dim nodes As IEnumerable = CType(root.XPathEvaluate("text()"), IEnumerable)
 Console.WriteLine(nodes.OfType(Of XText)().Count())  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```console  
 3  
@@ -163,7 +163,7 @@ Console.WriteLine(File.ReadAllText("Temp.xml"))
 Console.WriteLine(doc.Nodes().Count())  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
@@ -173,4 +173,4 @@ Console.WriteLine(doc.Nodes().Count())
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Visual Basic (Advanced LINQ to XML Programming)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Advanced LINQ à XML Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

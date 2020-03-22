@@ -8,10 +8,10 @@ helpviewer_keywords:
 - File object
 ms.assetid: 4b721769-3e45-4be7-b7fe-b08dc4141b44
 ms.openlocfilehash: 57182f1a1d92b7fe954fd26b32c5e4b1107823ee
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74348783"
 ---
 # <a name="how-to-delete-a-file-in-visual-basic"></a>Guide pratique pour supprimer un fichier dans Visual Basic
@@ -44,7 +44,7 @@ La méthode `DeleteFile` de l’objet `My.Computer.FileSystem` vous permet de su
   
 - Le chemin n'est pas valide, car il a la valeur `Nothing` (<xref:System.ArgumentNullException>).  
   
-- Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
+- Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
 - Un nom de fichier ou de dossier dans le chemin contient un signe deux-points (:) ou n’a pas un format correct (<xref:System.NotSupportedException>).  
   
@@ -66,4 +66,4 @@ La méthode `DeleteFile` de l’objet `My.Computer.FileSystem` vous permet de su
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.UIOption>
 - <xref:Microsoft.VisualBasic.FileIO.RecycleOption>
-- [Guide pratique : placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+- [Comment : placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)

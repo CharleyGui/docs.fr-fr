@@ -7,10 +7,10 @@ helpviewer_keywords:
 - registry [Visual Basic], reading
 ms.assetid: a13da106-185b-41d7-b23c-416da65e21e4
 ms.openlocfilehash: 89db9ef9db4235c069d6239d32e4f8679fbabf0b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74349761"
 ---
 # <a name="reading-from-and-writing-to-the-registry-visual-basic"></a>Lecture et écriture dans le Registre (Visual Basic)
@@ -21,7 +21,7 @@ Cette rubrique décrit les rubriques de concepts et de tâches associées au Reg
   
 ## <a name="in-this-section"></a>Dans cette section  
 
- [Guide pratique : créer une clé de Registre et définir sa valeur](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)  
+ [Comment : créer une clé de Registre et définir sa valeur](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)  
  Décrit comment utiliser les méthodes `CreateSubKey` et `SetValue` de l’objet `My.Computer.Registry` pour créer une clé de Registre et définir sa valeur.  
   
  [Guide pratique : lire une valeur à partir d’une clé de Registre](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-read-a-value-from-a-registry-key.md)  

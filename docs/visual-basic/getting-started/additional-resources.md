@@ -9,10 +9,10 @@ helpviewer_keywords:
 - Visual Basic, videos
 ms.assetid: 9bfb42e9-327f-439b-935e-8884f6aca80c
 ms.openlocfilehash: 9e55910573b3aa3aecf9082f1b77659a45f883a1
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73196983"
 ---
 # <a name="additional-resources"></a>Ressources supplémentaires
@@ -46,12 +46,12 @@ Les sites web suivants fournissent des instructions et peuvent vous aider à tro
 |----------|----------------|
 |[Channel9](https://channel9.msdn.com/)|Propose des vidéos, des Wikis et des forums à une communauté permanente.|
 
-### <a name="support"></a>Assistance
+### <a name="support"></a>Support
 
 |URL|Description|
 |----------|----------------|
-|[Support technique Microsoft](https://support.microsoft.com)|Permet d'accéder aux articles de la Base de connaissances, ainsi qu'aux téléchargements, mises à jour, webcasts de support technique et autres services.|
-|[Questions sur Visual Studio](https://developercommunity.visualstudio.com)|Permet de signaler des bogues ou d'envoyer des suggestions à Microsoft à propos de .Net et Visual Studio. Vous pouvez également signaler un bogue en sélectionnant **Aide** > **Envoyer des commentaires** > **Signaler un problème** dans Visual Studio.|
+|[Microsoft Support](https://support.microsoft.com)|Permet d'accéder aux articles de la Base de connaissances, ainsi qu'aux téléchargements, mises à jour, webcasts de support technique et autres services.|
+|[Questions sur Visual Studio](https://developercommunity.visualstudio.com)|Permet de signaler des bogues ou d'envoyer des suggestions à Microsoft à propos de .Net et Visual Studio. Vous pouvez également signaler un bogue en sélectionnant **Help** > **Send Feedback** > **Report a Problem** in Visual Studio.|
 
 ## <a name="third-party-resources"></a>Ressources tierces
 
@@ -59,7 +59,7 @@ Les sites web suivants fournissent des instructions et peuvent vous aider à tro
 |----------|----------------|
 |[VBForums](http://www.vbforums.com/)|Propose un forum pour discuter de Visual Basic, .NET et bien plus encore.|
 |[vbCity](http://vbcity.com/)|Site communautaire pour en apprendre davantage sur Visual Basic et .NET et poser des questions.|
-|[Dépassement de capacité de la pile](https://stackoverflow.com/questions/tagged/vb.net)|Stack Overflow est un site de questions et réponses pour les développeurs.|
+|[Stack Overflow](https://stackoverflow.com/questions/tagged/vb.net)|Stack Overflow est un site de questions et réponses pour les développeurs.|
 
 ## <a name="see-also"></a>Voir aussi
 

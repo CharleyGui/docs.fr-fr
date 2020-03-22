@@ -10,19 +10,19 @@ helpviewer_keywords:
 - My.Log object, logging
 ms.assetid: 67624d05-cddf-48b7-8c36-5c99baa4c621
 ms.openlocfilehash: 5a4ef3888ba8371d26204c3569b5fb9bae1f15f2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74352096"
 ---
-# <a name="how-to-log-messages-when-the-application-starts-or-shuts-down-visual-basic"></a>Guide pratique pour enregistrer des messages quand l'application démarre ou s'arrête (Visual Basic)
+# <a name="how-to-log-messages-when-the-application-starts-or-shuts-down-visual-basic"></a>Comment : enregistrer des messages lorsque l'application démarre ou s'arrête (Visual Basic)
 
 Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistrer des informations sur les événements qui se produisent dans votre application. Cet exemple montre comment utiliser la méthode `My.Application.Log.WriteEntry` avec les événements `Startup` et `Shutdown` pour enregistrer des informations de traçage.  
   
 ### <a name="to-access-the-applications-event-handler-code"></a>Pour accéder au code du gestionnaire d’événements de l’application  
   
-1. Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet** , choisissez **Propriétés**.  
+1. Sélectionnez un projet dans l' **Explorateur de solutions**. Sur le menu du **projet,** choisissez **Propriétés**.  
   
 2. Cliquez sur l’onglet **Application** .  
   
@@ -54,7 +54,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
   
      [!code-vb[VbVbalrMyApplicationLog#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/MyEventsFake.vb#2)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
 
  Vous pouvez utiliser le **Concepteur de projets** pour accéder aux événements de l’application dans l’éditeur de code. Pour plus d'informations, consultez [Application Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   

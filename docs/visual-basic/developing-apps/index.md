@@ -6,10 +6,10 @@ helpviewer_keywords:
 - applications [Visual Basic]
 ms.assetid: 1e1c0c81-6d95-4167-a98b-44b1efb6d25f
 ms.openlocfilehash: f8eed001ed1daccdfb861b1bcc13337122133ab0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74349249"
 ---
 # <a name="developing-applications-with-visual-basic"></a>Développement d’applications avec Visual Basic
@@ -27,7 +27,7 @@ Cette section décrit la documentation conceptuelle du langage Visual Basic.
  [Accès aux données dans les applications Visual Basic](../../visual-basic/developing-apps/accessing-data.md)  
  Contient l’aide sur l’accès aux données dans Visual Basic.  
   
- [Création et utilisation de composants dans Visual Basic](../../visual-basic/developing-apps/creating-and-using-components.md)  
+ [Création et utilisation de composants en Visual Basic](../../visual-basic/developing-apps/creating-and-using-components.md)  
  Définit le terme *composant* et explique quand et comment créer des composants.  
   
  [Concepts de base de l’application Windows Forms](../../visual-basic/developing-apps/windows-forms/index.md)  
@@ -41,5 +41,5 @@ Cette section décrit la documentation conceptuelle du langage Visual Basic.
  [Guide de programmation Visual Basic](../../visual-basic/programming-guide/index.md)  
  Décrit les éléments essentiels de la programmation avec Visual Basic.  
   
- [Informations de référence sur le langage Visual Basic](../../visual-basic/language-reference/index.md)  
+ [Référence visuelle de style de base](../../visual-basic/language-reference/index.md)  
  Contient la documentation de référence du langage Visual Basic.

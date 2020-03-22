@@ -6,17 +6,17 @@ helpviewer_keywords:
 - files [Visual Basic], creating
 ms.assetid: 0253bb6d-5519-4a50-b882-b93ef5cca0d9
 ms.openlocfilehash: 20533ec01d3198d499312ed0c15ec8cca2ff70bd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74348793"
 ---
 # <a name="how-to-create-a-file-in-visual-basic"></a>Guide pratique pour créer un fichier en Visual Basic
 
 Cet exemple crée un fichier texte vide à l’emplacement spécifié à l’aide de la méthode <xref:System.IO.File.Create%2A> de la classe <xref:System.IO.File>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
 
  [!code-vb[VbFileIOMisc#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/class2.vb#1)]  
   
@@ -42,7 +42,7 @@ Cet exemple crée un fichier texte vide à l’emplacement spécifié à l’aid
   
 - Le chemin n’est constitué que d’un signe deux-points « : » (<xref:System.NotSupportedException>).  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
+## <a name="net-framework-security"></a>Sécurité du .NET Framework  
 
  Une <xref:System.Security.SecurityException> peut être levée dans les environnements de confiance partielle.  
   

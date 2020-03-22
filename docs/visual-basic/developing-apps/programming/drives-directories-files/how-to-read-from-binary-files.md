@@ -8,10 +8,10 @@ helpviewer_keywords:
 - My.Computer.FileSystem object, reading from binary files
 ms.assetid: d2b1269e-24b6-42e0-9414-ae708db282d8
 ms.openlocfilehash: c33bc72a5c79901e3715ed6a587ffdb8e3565e48
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74335295"
 ---
 # <a name="how-to-read-from-binary-files-in-visual-basic"></a>Guide pratique pour lire des fichiers binaires en Visual Basic
@@ -40,7 +40,7 @@ L’objet `My.Computer.FileSystem` fournit la méthode `ReadAllBytes` pour la le
   
 - Le fichier est utilisé par un autre processus, ou une erreur E/S se produit (<xref:System.IO.IOException>).  
   
-- Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
+- Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
 - Un nom de fichier ou de répertoire du chemin contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).  
   
@@ -57,5 +57,5 @@ L’objet `My.Computer.FileSystem` fournit la méthode `ReadAllBytes` pour la le
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllBytes%2A>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A>
 - [Lecture à partir de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [Guide pratique : lire des fichiers texte avec plusieurs formats](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)
+- [Comment : lire des fichiers texte avec plusieurs formats](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)
 - [Stockage de données dans le Presse-papiers et lecture du Presse-papiers](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)

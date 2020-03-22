@@ -5,10 +5,10 @@ helpviewer_keywords:
 - registry [Visual Basic]
 ms.assetid: 4a0dcce0-c27b-4199-baa8-ee4528da6a56
 ms.openlocfilehash: 841344186b8e56717b81e90397aabc608bdc6dab
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74345497"
 ---
 # <a name="reading-from-and-writing-to-the-registry-using-the-microsoftwin32-namespace-visual-basic"></a>Lecture et écriture dans le Registre à l'aide de l'espace de noms Microsoft.Win32 (Visual Basic)
@@ -19,7 +19,7 @@ Même si `My.Computer.Registry` doit normalement couvrir vos besoins de base qua
 
  La classe <xref:Microsoft.Win32.Registry> fournit les clés de Registre de base qui peuvent être utilisées pour accéder aux sous-clés et à leurs valeurs. Les clés de base proprement dites sont en lecture seule. Le tableau suivant répertorie et décrit les sept clés exposées par la classe <xref:Microsoft.Win32.Registry>.  
   
-|**Key**|**Description**|  
+|**Clé**|**Description**|  
 |-------------|---------------------|  
 |<xref:Microsoft.Win32.Registry.ClassesRoot>|Définit les types de documents et les propriétés associées à ces types.|  
 |<xref:Microsoft.Win32.Registry.CurrentConfig>|Contient des informations sur la configuration matérielle qui ne sont pas propres à l’utilisateur.|  

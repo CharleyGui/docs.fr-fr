@@ -16,10 +16,10 @@ helpviewer_keywords:
 - I/O [Visual Basic], reading text from files
 ms.assetid: 7d2109eb-f98a-4389-b43d-30f384aaa7d5
 ms.openlocfilehash: 02cdbcc59e8817ff4ec06c2f78f835cad77b10f2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74333785"
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Procédure pas à pas : manipulation de fichiers à l'aide de méthodes du .NET Framework (Visual Basic)
@@ -38,17 +38,17 @@ Démarrez Visual Studio et commencez le projet par la création d’un formulair
 
 2. Dans le volet **Nouveau projet**, cliquez sur **Application Windows**.
 
-3. Dans la zone **Nom**, tapez `MyDiary` et cliquez sur **OK**.
+3. Dans le type `MyDiary` de boîte de **nom** et cliquez SUR **OK**.
 
-     Visual Studio ajoute le projet à l’**Explorateur de solutions** et le **Concepteur Windows Forms** s’ouvre.
+     Visual Studio ajoute le projet à **Solution Explorer**, et le Windows **Forms Designer** s’ouvre.
 
 4. Ajoutez au formulaire les contrôles répertoriés dans le tableau ci-après et définissez les valeurs de propriété correspondantes.
 
 |**Objet**|**Propriétés**|**Valeur**|
 |---|---|---|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**|`Submit`<br /><br /> **Envoyer une entrée**|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**|`Clear`<br /><br /> **Effacer l’entrée**|
-|<xref:System.Windows.Forms.TextBox>|**Nom**<br /><br /> **Texte**<br /><br /> **Multiline**|`Entry`<br /><br /> **Entrez quelque chose.**<br /><br /> `False`|
+|<xref:System.Windows.Forms.Button>|**Nom   **<br /><br /> **Texte**|`Submit`<br /><br /> **Envoyer l’entrée**|
+|<xref:System.Windows.Forms.Button>|**Nom   **<br /><br /> **Texte**|`Clear`<br /><br /> **Effacer l’entrée**|
+|<xref:System.Windows.Forms.TextBox>|**Nom   **<br /><br /> **Texte**<br /><br /> **Multiline**|`Entry`<br /><br /> **Saisissez quelque chose.**<br /><br /> `False`|
 
 ## <a name="writing-to-the-file"></a>Écriture dans le fichier
 
@@ -83,7 +83,7 @@ Pour permettre l’écriture dans un fichier via l’application, utilisez la cl
 
      [!code-vb[VbVbcnMyFileSystem#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#39)]
 
-4. Pour finir, attachez le code pour effacer <xref:System.Windows.Forms.TextBox>. Ajoutez le code suivant à l’événement `Clear` du bouton <xref:System.Windows.Forms.Control.Click>.
+4. Pour finir, attachez le code pour effacer <xref:System.Windows.Forms.TextBox>. Ajoutez le code suivant à l’événement <xref:System.Windows.Forms.Control.Click> du bouton `Clear`.
 
      [!code-vb[VbVbcnMyFileSystem#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#40)]
 
@@ -93,12 +93,12 @@ Dans cette section, vous ajoutez une fonctionnalité qui affiche la dernière en
 
 Pour cette section de la procédure pas à pas, ajoutez au formulaire les contrôles répertoriés dans le tableau ci-après et définissez les valeurs de propriété correspondantes.
 
-|Contrôle|Propriétés|Valeurs|
+|Control|Propriétés|Valeurs|
 |-------------|----------------|------------|
-|<xref:System.Windows.Forms.TextBox>|**Nom**<br /><br /> **Visible**<br /><br /> **Size**<br /><br /> **Multiline**|`DisplayEntry`<br /><br /> `False`<br /><br /> `120,60`<br /><br /> `True`|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**|`Display`<br /><br /> **Afficher**|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**|`GetEntries`<br /><br /> **Obtenir des entrées**|
-|<xref:System.Windows.Forms.ComboBox>|**Nom**<br /><br /> **Texte**<br /><br /> **Activé**|`PickEntries`<br /><br /> **Sélectionner une entrée**<br /><br /> `False`|
+|<xref:System.Windows.Forms.TextBox>|**Nom   **<br /><br /> **Visible**<br /><br /> **Taille**<br /><br /> **Multiline**|`DisplayEntry`<br /><br /> `False`<br /><br /> `120,60`<br /><br /> `True`|
+|<xref:System.Windows.Forms.Button>|**Nom   **<br /><br /> **Texte**|`Display`<br /><br /> **Affichage**|
+|<xref:System.Windows.Forms.Button>|**Nom   **<br /><br /> **Texte**|`GetEntries`<br /><br /> **Obtenir des entrées**|
+|<xref:System.Windows.Forms.ComboBox>|**Nom   **<br /><br /> **Texte**<br /><br /> **Activé**|`PickEntries`<br /><br /> **Sélectionner une entrée**<br /><br /> `False`|
 
 ### <a name="to-populate-the-combo-box"></a>Pour remplir la zone de liste déroulante
 
@@ -122,15 +122,15 @@ Enfin, vous pouvez inclure des fonctionnalités supplémentaires qui permettent 
 
 Ajoutez au formulaire les contrôles répertoriés dans le tableau ci-après et définissez les valeurs de propriété correspondantes.
 
-|Contrôle|Propriétés|Valeurs|
+|Control|Propriétés|Valeurs|
 |-------------|----------------|------------|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**<br /><br /> **Activé**|`DeleteEntry`<br /><br /> **Supprimer l’entrée**<br /><br /> `False`|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**<br /><br /> **Activé**|`EditEntry`<br /><br /> **Modifier l’entrée**<br /><br /> `False`|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**<br /><br /> **Activé**|`SubmitEdit`<br /><br /> **Envoyer la modification**<br /><br /> `False`|
+|<xref:System.Windows.Forms.Button>|**Nom   **<br /><br /> **Texte**<br /><br /> **Activé**|`DeleteEntry`<br /><br /> **Supprimer l’entrée**<br /><br /> `False`|
+|<xref:System.Windows.Forms.Button>|**Nom   **<br /><br /> **Texte**<br /><br /> **Activé**|`EditEntry`<br /><br /> **Modifier l’entrée**<br /><br /> `False`|
+|<xref:System.Windows.Forms.Button>|**Nom   **<br /><br /> **Texte**<br /><br /> **Activé**|`SubmitEdit`<br /><br /> **Envoyer la modification**<br /><br /> `False`|
 
 ### <a name="to-enable-deletion-and-modification-of-entries"></a>Pour activer la suppression et la modification d’entrées
 
-1. Ajoutez le code suivant à l’événement `Display` du bouton <xref:System.Windows.Forms.Control.Click>, après `DisplayEntry.Text = ReadString`.
+1. Ajoutez le code suivant à l’événement <xref:System.Windows.Forms.Control.Click> du bouton `Display`, après `DisplayEntry.Text = ReadString`.
 
      [!code-vb[VbVbcnMyFileSystem#43](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#43)]
 
@@ -150,10 +150,10 @@ Ajoutez au formulaire les contrôles répertoriés dans le tableau ci-après et 
 
      [!code-vb[VbVbcnMyFileSystem#47](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#47)]
 
-Pour tester votre code, appuyez sur F5 pour compiler l’application. Cliquez sur **Obtenir des entrées**, sélectionnez une entrée, puis cliquez sur **Afficher**. L’entrée s’affiche dans le `DisplayEntry`<xref:System.Windows.Forms.TextBox>. Cliquez sur **Modifier l’entrée**. L’entrée s’affiche dans le `Entry`<xref:System.Windows.Forms.TextBox>. Modifiez l’entrée dans le `Entry`<xref:System.Windows.Forms.TextBox> et cliquez sur **Envoyer la modification**. Ouvrez le fichier `MyDiary.txt` pour confirmer vos corrections. À présent, sélectionnez une entrée et cliquez sur **Supprimer l’entrée**. Quand le <xref:System.Windows.Forms.MessageBox> demande confirmation, cliquez sur **OK**. Fermez l’application et ouvrez `MyDiary.txt` pour confirmer la suppression.
+Pour tester votre code, appuyez sur F5 pour compiler l’application. Cliquez sur **Obtenir des entrées**, sélectionnez une entrée, puis cliquez sur **Afficher**. L’entrée s’affiche dans le `DisplayEntry`<xref:System.Windows.Forms.TextBox>. Cliquez sur **Modifier l’entrée**. L’entrée s’affiche dans le `Entry`<xref:System.Windows.Forms.TextBox>. Modifier l’entrée `Entry` <xref:System.Windows.Forms.TextBox> dans le et cliquez sur **Soumettre Modifier**. Ouvrez le fichier `MyDiary.txt` pour confirmer vos corrections. À présent, sélectionnez une entrée et cliquez sur **Supprimer l’entrée**. Quand le <xref:System.Windows.Forms.MessageBox> demande confirmation, cliquez sur **OK**. Fermez l’application et ouvrez `MyDiary.txt` pour confirmer la suppression.
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.IO.StreamReader>
 - <xref:System.IO.StreamWriter>
-- [Procédures pas à pas](../../../../visual-basic/walkthroughs.md)
+- [Procédures pas à pas](../../../../visual-basic/walkthroughs.md)

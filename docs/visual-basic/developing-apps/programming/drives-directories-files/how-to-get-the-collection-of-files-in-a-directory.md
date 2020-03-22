@@ -6,10 +6,10 @@ helpviewer_keywords:
 - files [Visual Basic], accessing
 ms.assetid: 6c8ba7e8-dd37-4853-92bf-762b67c98160
 ms.openlocfilehash: bb07ae25b413334f94456b378f0a2339402ac668
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74335334"
 ---
 # <a name="how-to-get-the-collection-of-files-in-a-directory-in-visual-basic"></a>Guide pratique pour obtenir la collection de fichiers dans un répertoire en Visual Basic
@@ -20,7 +20,7 @@ Les surcharges de la méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetF
   
 - Utilisez la surcharge <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(System.String,Microsoft.VisualBasic.FileIO.SearchOption,System.String[])> pour spécifier des options supplémentaires pour votre recherche. Vous pouvez utiliser le paramètre `wildCards` pour spécifier un modèle de recherche. Pour inclure des sous-répertoires dans la recherche, affectez la valeur `searchType` au paramètre <xref:Microsoft.VisualBasic.FileIO.SearchOption.SearchAllSubDirectories?displayProperty=nameWithType>.  
   
- Une collection vide est retournée si aucun fichier correspondant au modèle spécifié n’est détecté.  
+ Une collection vide est retournée si aucun fichier correspondant au modèle spécifié n'est détecté.  
   
 ### <a name="to-list-files-in-a-directory"></a>Pour énumérer les fichiers contenus dans un répertoire  
   
@@ -40,7 +40,7 @@ Les surcharges de la méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetF
   
 - `directory` pointe vers un fichier existant (<xref:System.IO.IOException>).  
   
-- Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
+- Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
 - Un nom de fichier ou de répertoire du chemin contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).  
   
@@ -51,5 +51,5 @@ Les surcharges de la méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetF
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A>
-- [Guide pratique : rechercher des fichiers avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)
-- [Guide pratique : rechercher des sous-répertoires avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)
+- [Comment : rechercher des fichiers avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)
+- [Comment : rechercher des sous-répertoires avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)

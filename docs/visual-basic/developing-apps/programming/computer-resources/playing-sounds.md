@@ -12,10 +12,10 @@ helpviewer_keywords:
 - playing sounds
 ms.assetid: f0d9e4ab-57c7-47b6-86d3-99ff07078040
 ms.openlocfilehash: 416fedd011ff35d2b32d1b64932e3908a73ed14e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74345520"
 ---
 # <a name="playing-sounds-visual-basic"></a>Lecture de sons (Visual Basic)
@@ -44,7 +44,7 @@ L’objet `My.Computer.Audio` fournit des méthodes permettant de lire des sons.
   
  [!code-vb[VbVbalrMyComputer#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#12)]  
   
- L’exemple de code précédent est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Applications Windows Forms > Son**. Pour plus d'informations, consultez [Code Snippets](/visualstudio/ide/code-snippets).  
+ L’exemple de code précédent est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Applications Windows Forms > Son**. Pour plus d’informations, consultez [Extraits de code](/visualstudio/ide/code-snippets).  
   
  En général, quand une application lit un son en boucle, elle doit finir par l’arrêter.  
   
@@ -58,7 +58,7 @@ L’objet `My.Computer.Audio` fournit des méthodes permettant de lire des sons.
   
  [!code-vb[VbVbalrMyComputer#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#18)]  
   
- L’exemple de code précédent est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Applications Windows Forms > Son**. Pour plus d'informations, consultez [Code Snippets](/visualstudio/ide/code-snippets).  
+ L’exemple de code précédent est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Applications Windows Forms > Son**. Pour plus d’informations, consultez [Extraits de code](/visualstudio/ide/code-snippets).  
   
 ## <a name="playing-system-sounds"></a>Lecture de sons système  
 

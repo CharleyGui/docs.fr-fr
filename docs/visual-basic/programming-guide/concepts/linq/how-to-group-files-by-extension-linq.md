@@ -2,17 +2,17 @@
 title: 'Comment : regrouper des fichiers par extension (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 904dc6d7-7162-4655-a7f4-5785d669bc5a
-ms.openlocfilehash: 67beec0d3681bf7f0b04d9a402566076fd27ceba
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 4d2c51fa62b3ec144bc5ad51b4a9f8305476645e
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347480"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78267026"
 ---
-# <a name="how-to-group-files-by-extension-linq-visual-basic"></a>Comment : regrouper des fichiers par extension (LINQ) (Visual Basic)
+# <a name="how-to-group-files-by-extension-linq-visual-basic"></a>Comment : Fichiers de groupe par extension (LINQ) (Visual Basic)
 Cet exemple montre comment utiliser LINQ pour effectuer des opérations de regroupement et de tri avancées sur des listes de fichiers ou de dossiers. Il montre également comment parcourir les résultats dans la fenêtre de console à l’aide des méthodes <xref:System.Linq.Enumerable.Skip%2A> et <xref:System.Linq.Enumerable.Take%2A>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  La requête suivante montre comment regrouper le contenu d’une arborescence de répertoires spécifiée en fonction de l’extension de nom de fichier.  
   
 ```vb  
@@ -39,7 +39,7 @@ Module GroupByExtension
         ' page the display with good performance.  
         Dim groupByExtList = queryGroupByExt.ToList()  
   
-        ' Display one group at a time. If the number of   
+        ' Display one group at a time. If the number of
         ' entries is greater than the number of lines  
         ' in the console window, then page the output.  
         Dim trimLength = startFolder.Length  
@@ -94,7 +94,7 @@ End Module
  La sortie de ce programme peut être longue, en fonction des détails du système de fichiers local et de la valeur de `startFolder`. Pour permettre l’affichage de tous les résultats, cet exemple montre comment parcourir les résultats. Les mêmes techniques sont applicables aux applications Windows et web. Notez qu’étant donné que le code organise les éléments dans un groupe, une boucle `For Each` imbriquée est nécessaire. Il existe également une logique supplémentaire pour calculer la position actuelle dans la liste et pour permettre aux utilisateurs d’arrêter la pagination et de quitter le programme. Dans ce cas particulier, la requête de pagination est exécutée par rapport aux résultats de la requête d’origine mis en cache. Dans d’autres contextes, tels que LINQ to SQL, ce type de mise en cache n’est pas nécessaire.  
   
 ## <a name="compile-the-code"></a>Compiler le code  
-Créez un projet d’application console Visual Basic, avec une instruction `Imports` pour l’espace de noms System. Linq.
+Créez un projet d’application `Imports` de console de base visuelle, avec une déclaration pour l’espace de nom System.Linq.
   
 ## <a name="see-also"></a>Voir aussi
 

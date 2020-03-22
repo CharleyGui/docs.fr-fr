@@ -16,17 +16,17 @@ helpviewer_keywords:
 - I/O [Visual Basic], reading text from files
 ms.assetid: cae77565-9f78-4e46-8e42-eb2f9f8e1ffd
 ms.openlocfilehash: 83dc6ce0d29c1c368c36b51fc84ecad34d72e01f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74333805"
 ---
 # <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>Procédure pas à pas : manipulation de fichiers et de répertoires en Visual Basic
 
 Cette procédure pas à pas présente les notions de base d’E/S de fichier dans Visual Basic. Elle décrit comment créer une petite application qui répertorie et examine des fichiers texte dans un répertoire. Pour chaque fichier texte sélectionné, l’application fournit des attributs de fichier et la première ligne de contenu. Elle comprend une option pour écrire des informations dans un fichier journal.  
   
- Cette procédure pas à pas utilise des membres de `My.Computer.FileSystem Object`, qui sont disponibles dans Visual Basic. Pour plus d'informations, voir <xref:Microsoft.VisualBasic.FileIO.FileSystem>. À la fin de la procédure pas à pas, un exemple équivalent est fourni, qui utilise des classes de l’espace de noms <xref:System.IO>.  
+ Cette procédure pas à pas utilise des membres de `My.Computer.FileSystem Object`, qui sont disponibles dans Visual Basic. Consultez la rubrique <xref:Microsoft.VisualBasic.FileIO.FileSystem> (éventuellement en anglais) pour plus d'informations. À la fin de la procédure pas à pas, un exemple équivalent est fourni, qui utilise des classes de l’espace de noms <xref:System.IO>.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -44,17 +44,17 @@ Cette procédure pas à pas présente les notions de base d’E/S de fichier dan
   
 4. Ajoutez au formulaire les contrôles répertoriés dans le tableau ci-après et définissez les valeurs de propriété correspondantes.  
   
-    |Contrôle|Propriété|Valeur|  
+    |Control|Propriété|Valeur|  
     |-------------|--------------|-----------|  
-    |**ListBox**|**Nom**|`filesListBox`|  
-    |**Button**|**Nom**<br /><br /> **Texte**|`browseButton`<br /><br /> **Parcourir**|  
-    |**Button**|**Nom**<br /><br /> **Texte**|`examineButton`<br /><br /> **Examiner**|  
-    |**CheckBox**|**Nom**<br /><br /> **Texte**|`saveCheckBox`<br /><br /> **Enregistrer les résultats**|  
-    |**FolderBrowserDialog**|**Nom**|`FolderBrowserDialog1`|  
+    |**Zone de liste**|**Nom   **|`filesListBox`|  
+    |**Bouton**|**Nom   **<br /><br /> **Texte**|`browseButton`<br /><br /> **Parcourir**|  
+    |**Bouton**|**Nom   **<br /><br /> **Texte**|`examineButton`<br /><br /> **Examiner**|  
+    |**Case**|**Nom   **<br /><br /> **Texte**|`saveCheckBox`<br /><br /> **Enregistrer les résultats**|  
+    |**FolderBrowserDialog**|**Nom   **|`FolderBrowserDialog1`|  
   
 ### <a name="to-select-a-folder-and-list-files-in-a-folder"></a>Pour sélectionner un dossier et répertorier les fichiers dans un dossier  
   
-1. Créez un gestionnaire d’événements `Click` pour `browseButton` en double-cliquant sur le contrôle sur le formulaire. L'Éditeur de code s'ouvre.  
+1. Créez un gestionnaire d’événements `Click` pour `browseButton` en double-cliquant sur le contrôle sur le formulaire. L'éditeur de code s'ouvre.  
   
 2. Ajoutez le code ci-après au gestionnaire d'événements `Click`.  
   
@@ -72,7 +72,7 @@ Cette procédure pas à pas présente les notions de base d’E/S de fichier dan
   
      Les chaînes qui sont retournées par la méthode `GetFiles` sont ensuite ajoutées à **ListBox**.  
   
-4. Exécutez l'application. Cliquez sur le bouton **Parcourir**. Dans la boîte de dialogue **Rechercher un dossier**, accédez à un dossier qui contient des fichiers .txt, puis sélectionnez le dossier et cliquez sur **OK**.  
+4. Exécutez l'application. Cliquez sur le bouton **Parcourir** . Dans la boîte de dialogue **Rechercher un dossier**, accédez à un dossier qui contient des fichiers .txt, puis sélectionnez le dossier et cliquez sur **OK**.  
   
      `ListBox` contient une liste des fichiers.txt du dossier sélectionné.  
   
@@ -167,4 +167,4 @@ Cette procédure pas à pas présente les notions de base d’E/S de fichier dan
 - <xref:System.IO>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CurrentDirectory%2A>
-- [Procédure pas à pas : manipulation de fichiers à l’aide de méthodes du .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)
+- [Procédure pas à pas : manipulation de fichiers à l'aide de méthodes du .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)

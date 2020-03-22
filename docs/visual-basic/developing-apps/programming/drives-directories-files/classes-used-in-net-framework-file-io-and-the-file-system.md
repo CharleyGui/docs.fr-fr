@@ -1,14 +1,14 @@
 ---
-title: Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers
+title: Classes utilisées dans les E/S de fichiers .NET Framework et le système de fichiers
 ms.date: 07/20/2015
 helpviewer_keywords:
 - file I/O classes
 ms.assetid: 4a5ca924-eea8-4a95-a5f0-6ac10de276a3
 ms.openlocfilehash: fe70f8fb655579049bb36fc324d04530259d25f2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74348927"
 ---
 # <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a>Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers (Visual Basic)
@@ -21,7 +21,7 @@ Pour obtenir une liste plus complète, consultez [Vue d’ensemble de la bibliot
 
  Le tableau suivant répertorie et décrit les principales classes utilisées pour les E/S de fichier.  
   
-|Class|Description|  
+|Classe|Description|  
 |-----------|-----------------|  
 |<xref:System.IO.Directory?displayProperty=nameWithType>|Fournit des méthodes statiques pour la création, le déplacement et l’énumération dans les répertoires et les sous-répertoires.|  
 |<xref:System.IO.DirectoryInfo?displayProperty=nameWithType>|Fournit des méthodes d’instance pour la création, le déplacement et l’énumération dans les répertoires et les sous-répertoires.|  
@@ -39,7 +39,7 @@ Pour obtenir une liste plus complète, consultez [Vue d’ensemble de la bibliot
 
  Le tableau suivant répertorie et décrit les principales classes utilisées pour créer des flux.  
   
-|Class|Description|  
+|Classe|Description|  
 |-----------|-----------------|  
 |<xref:System.IO.BufferedStream?displayProperty=nameWithType>|Ajoute une couche de mise en mémoire tampon aux opérations de lecture et d’écriture sur un autre flux.|  
 |<xref:System.IO.FileStream?displayProperty=nameWithType>|Prend en charge l’accès aléatoire aux fichiers par le biais de sa méthode <xref:System.IO.FileStream.Seek%2A>. <xref:System.IO.FileStream> ouvre par défaut les fichiers de façon synchrone, mais prend également en charge les opérations asynchrones.|  
@@ -62,7 +62,7 @@ Pour obtenir une liste plus complète, consultez [Vue d’ensemble de la bibliot
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Composition de flux](../../../../standard/io/composing-streams.md)
-- [Fichier et flux de données E/S](../../../../standard/io/index.md)
+- [Composing Streams](../../../../standard/io/composing-streams.md)
+- [Fichier et stream I/O](../../../../standard/io/index.md)
 - [E/S sur fichier asynchrones](../../../../standard/io/asynchronous-file-i-o.md)
 - [Concepts de base du système de fichiers et des E/S de fichier du .NET Framework (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)

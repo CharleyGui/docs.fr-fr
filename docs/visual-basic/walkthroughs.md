@@ -1,6 +1,6 @@
 ---
-title: Procédures pas à pas du langage
-description: Instructions pas à pas pour les scénarios courants de développement Visual Basic
+title: Procédure de procédure linguistique
+description: Instructions étape par étape pour les scénarios communs dans le développement visual basic
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic, walkthroughs
@@ -9,10 +9,10 @@ helpviewer_keywords:
 - walkthroughs [Visual Basic]
 ms.assetid: e4e1f849-e1ce-4cf7-8483-d9b4c4887a8e
 ms.openlocfilehash: 76f9b428bc5f613296e24d893f49f124bb13c089
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75636040"
 ---
 # <a name="visual-basic-language-walkthroughs"></a>Procédures pas à pas relatives au langage Visual Basic
@@ -20,7 +20,7 @@ ms.locfileid: "75636040"
 Les procédures pas à pas fournissent des instructions détaillées pour les scénarios courants, ce qui en fait un bon point de départ pour apprendre à utiliser le produit ou une fonctionnalité particulière.
 
 - [Écriture d’un programme asynchrone](./programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
- Explique comment créer une solution asynchrone avec [Async](language-reference/modifiers/async.md) et [Await](language-reference/operators/await-operator.md).
+ Montre comment créer une solution asynchrone en utilisant [Async](language-reference/modifiers/async.md) et [Await](language-reference/operators/await-operator.md).
 
 - [Déclaration et déclenchement des événements](programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)  
  Explique comment les événements sont déclarés et déclenchés en Visual Basic.
@@ -35,7 +35,7 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
  Décrit comment déclarer une classe et ses champs, propriétés, méthodes et événements.
 
 - [Écriture de requêtes dans Visual Basic](programming-guide/concepts/linq/walkthrough-writing-queries.md)  
- Montre comment vous pouvez utiliser des fonctionnalités de langage Visual Basic pour écrire des expressions de requête LINQ (Language-Integrated Query).
+ Démontre comment vous pouvez utiliser les caractéristiques du langage visual basic pour écrire des expressions de requêtes en requête intégrées au langage (LINQ).
 
 - [Implémentation d’IEnumerable (Of T) en Visual Basic](programming-guide/language-features/control-flow/walkthrough-implementing-ienumerable-of-t.md)  
  Montre comment créer une classe qui implémente l’interface `IEnumerable(Of String)` et une classe qui implémente l’interface `IEnumerator(Of String)` pour lire un fichier texte ligne par ligne.
@@ -49,19 +49,19 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
 - [Implémentation de l’héritage avec les objets COM](programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
  Montre comment créer un objet COM contenant une classe à l’aide de Visual Basic 6.0, puis l’utiliser comme classe de base dans Visual Basic.
 
-- [Détermination de l’emplacement des informations My.Application.Log](developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)  
+- [Déterminer où my.Application.Log écrit des informations](developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)  
  Décrit les paramètres `My.Application.Log` par défaut et explique comment déterminer les paramètres de votre application.
 
-- [Modification de l’emplacement des informations My.Application.Log](developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)  
+- [Changer où my.application.Log écrit des informations](developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)  
  Indique comment substituer les paramètres `My.Application.Log` et `My.Log` par défaut pour enregistrer des informations sur les événements et forcer l’objet `Log` à écrire dans d’autres écouteurs de journalisation.
 
-- [Filtrage de la sortie de My.Application.Log](developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)  
+- [Filtrage de la sortie My.Application.Log](developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)  
  Montre comment modifier le filtrage de journal par défaut pour l’objet `My.Application.Log`.
 
-- [Création d’écouteurs de journalisation personnalisés](developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)  
+- [Création d’auditeurs de journaux personnalisés](developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)  
  Illustre comment créer un écouteur de journalisation personnalisé et le configurer pour écouter la sortie de l’objet `My.Application.Log`.
 
-- [Incorporation de types provenant d’assemblys managés](../standard/assembly/embed-types-visual-studio.md)  
+- [incorporation de types provenant d’assemblys managés](../standard/assembly/embed-types-visual-studio.md)  
  Décrit comment créer un assembly et un programme client qui incorpore des types à partir de celui-ci.
 
 - [Validation de la complexité des mots de passe (Visual Basic)](programming-guide/language-features/strings/walkthrough-validating-that-passwords-are-complex.md)  

@@ -1,5 +1,5 @@
 ---
-title: Codages de fichiers
+title: Encodages de fichiers
 ms.date: 07/20/2015
 helpviewer_keywords:
 - character encodings
@@ -8,10 +8,10 @@ helpviewer_keywords:
 - file encoding
 ms.assetid: ea2c5f5f-bbb1-4150-9928-b9951fa6bc57
 ms.openlocfilehash: 52770187568d0ba0f54ec36ee2c3d754a9b4d9a8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74348893"
 ---
 # <a name="file-encodings-visual-basic"></a>Encodages de fichiers (Visual Basic)
@@ -41,4 +41,4 @@ La classe <xref:System.Text.Encoding> représente un encodage de caractères. Ce
 ## <a name="see-also"></a>Voir aussi
 
 - [Lecture à partir de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [Écriture dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [Rédaction de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)

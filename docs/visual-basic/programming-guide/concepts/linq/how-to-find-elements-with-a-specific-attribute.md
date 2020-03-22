@@ -2,25 +2,25 @@
 title: 'Comment : rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 4bb38d2c-bc7c-4196-8909-aaf41fb86b28
-ms.openlocfilehash: ef8dd26d40f15d3d5a27f0ca5d62f7337f2054ca
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 36f725a7684dc009dbfb956a1584fd6ca5e487b0
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74343685"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78267039"
 ---
-# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-visual-basic"></a>Comment : Rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (Visual Basic)
+# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-visual-basic"></a>Comment : Trouver des éléments avec un attribut spécifique (XPath-LINQ à XML) (Visual Basic)
 Parfois, vous souhaitez rechercher tous les éléments qui ont un attribut spécifique. Vous ne vous souciez pas du contenu de l'attribut. Au lieu de cela, vous souhaitez sélectionner les éléments en fonction de l'existence de l'attribut.  
   
- L'expression XPath est la suivante :  
+ L’expression XPath est la suivante :  
   
  `./*[@Select]`  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Le code suivant sélectionne simplement les éléments qui ont l'attribut `Select`.  
   
 ```vb  
-Dim doc As XElement = _   
+Dim doc As XElement = _
     <Root>  
         <Child1>1</Child1>  
         <Child2 Select='true'>2</Child2>  
@@ -51,7 +51,7 @@ For Each el As XElement In list1
 Next  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```console
 Results are identical  
@@ -61,4 +61,4 @@ Results are identical
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ à XML pour les utilisateurs de XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

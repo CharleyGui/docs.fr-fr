@@ -7,10 +7,10 @@ helpviewer_keywords:
 - events [Visual Basic], writing event information to a text file
 ms.assetid: 9ca7cc03-bf99-4933-9e5e-61ee28e9a6b4
 ms.openlocfilehash: c3c81e331eb3d8ee450ba0cac38e57976846ee63
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74352073"
 ---
 # <a name="how-to-write-event-information-to-a-text-file-visual-basic"></a>Guide pratique pour écrire des informations sur des événements dans un fichier texte (Visual Basic)
@@ -72,4 +72,4 @@ Une fois l’écouteur de journalisation du fichier configuré pour un assembly,
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
 - [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Guide pratique : enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [Comment : enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)

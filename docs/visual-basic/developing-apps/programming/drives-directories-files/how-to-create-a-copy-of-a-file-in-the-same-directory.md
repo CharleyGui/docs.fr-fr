@@ -10,10 +10,10 @@ helpviewer_keywords:
 - I/O [Visual Basic], copying files
 ms.assetid: b2fdda86-e666-42c2-9706-9527e9fa68ff
 ms.openlocfilehash: 33a4f5424ac50de7b5dc988034ca15127dc1ed02
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74348823"
 ---
 # <a name="how-to-create-a-copy-of-a-file-in-the-same-directory-in-visual-basic"></a>Guide pratique pour créer une copie d'un fichier dans le même répertoire en Visual Basic
@@ -28,7 +28,7 @@ Utilisez la méthode `My.Computer.FileSystem.CopyFile` pour copier des fichiers.
   
 ### <a name="to-create-a-copy-of-a-file-in-the-same-folder-overwriting-existing-files"></a>Pour créer une copie d’un fichier dans le même dossier en remplaçant les fichiers existants  
   
-- Utilisez la méthode `CopyFile`, en fournissant le fichier cible et l’emplacement, et en affectant la valeur `overwrite` à `True`. L’exemple suivant crée une copie de `test.txt` nommée `test2.txt` et remplace les fichiers existants portant ce nom.  
+- Utilisez la méthode `CopyFile`, en fournissant le fichier cible et l’emplacement, et en affectant la valeur `True` à `overwrite`. L’exemple suivant crée une copie de `test.txt` nommée `test2.txt` et remplace les fichiers existants portant ce nom.  
   
      [!code-vb[VbVbcnMyFileSystem#52](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#52)]  
   
@@ -58,7 +58,7 @@ Utilisez la méthode `My.Computer.FileSystem.CopyFile` pour copier des fichiers.
   
 - `ShowUI`a la valeur `True`, `onUserCancel` a la valeur `ThrowException` et une erreur d’E/S non spécifiée se produit (<xref:System.OperationCanceledException>).  
   
-- Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
+- Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
 - L’utilisateur ne dispose pas de l’autorisation nécessaire (<xref:System.UnauthorizedAccessException>).  
   
@@ -69,7 +69,7 @@ Utilisez la méthode `My.Computer.FileSystem.CopyFile` pour copier des fichiers.
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%2A>
 - <xref:Microsoft.VisualBasic.FileIO.UICancelOption>
-- [Guide pratique : copier des fichiers avec un modèle spécifique dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)
-- [Guide pratique : créer une copie d'un fichier dans un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)
-- [Guide pratique : copier un répertoire vers un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)
-- [Guide pratique : renommer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)
+- [Comment : copier des fichiers avec un modèle spécifique dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)
+- [Comment : créer une copie d'un fichier dans un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)
+- [Comment : copier un répertoire vers un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)
+- [Comment : renommer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)

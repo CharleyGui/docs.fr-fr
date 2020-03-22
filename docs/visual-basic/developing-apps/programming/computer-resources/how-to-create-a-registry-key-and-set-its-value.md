@@ -12,10 +12,10 @@ helpviewer_keywords:
 - examples [Visual Basic], registry
 ms.assetid: d3e40f74-c283-480c-ab18-e5e9052cd814
 ms.openlocfilehash: 459c4b3f971009ee4b6b669c55bc058db0826595
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74349198"
 ---
 # <a name="how-to-create-a-registry-key-and-set-its-value-in-visual-basic"></a>Guide pratique pour créer une clé de Registre et définir sa valeur en Visual Basic
@@ -40,9 +40,9 @@ Vous pouvez utiliser la méthode `CreateSubKey` de l’objet `My.Computer.Regist
 
     [!code-vb[VbResourceTasks#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#14)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
-Cet exemple crée la clé de Registre `MyTestKey` sous HKEY_CURRENT_USER, puis affecte `MyTestKeyValue` comme valeur de chaîne `This is a test value`.
+Cet exemple crée la clé de Registre `MyTestKey` sous HKEY_CURRENT_USER, puis affecte `This is a test value` comme valeur de chaîne `MyTestKeyValue`.
 
 [!code-vb[VbResourceTasks#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#15)]
 
@@ -70,9 +70,9 @@ Les conditions ci-dessous peuvent générer une exception.
 
 - La clé de Registre est en lecture seule (<xref:System.UnauthorizedAccessException>).
 
-## <a name="net-framework-security"></a>Sécurité .NET Framework
+## <a name="net-framework-security"></a>Sécurité du .NET Framework
 
-Pour exécuter ce processus, votre assembly nécessite un niveau de privilège accordé par la classe <xref:System.Security.Permissions.RegistryPermission>. Si vous l’exécutez dans un contexte de confiance partielle, le processus peut lever une exception en raison de privilèges insuffisants. De même, l’utilisateur doit disposer de listes de contrôle d’accès (ACL) valides pour créer ou écrire des paramètres. Par exemple, une application locale qui dispose de l’autorisation de sécurité d’accès du code peut ne pas disposer des autorisations de système d’exploitation. Pour plus d'informations, consultez [Code Access Security Basics](../../../../framework/misc/code-access-security-basics.md).
+Pour exécuter ce processus, votre assembly nécessite un niveau de privilège accordé par la classe <xref:System.Security.Permissions.RegistryPermission>. Si vous l’exécutez dans un contexte de confiance partielle, le processus peut lever une exception en raison de privilèges insuffisants. De même, l’utilisateur doit disposer de listes de contrôle d’accès (ACL) valides pour créer ou écrire des paramètres. Par exemple, une application locale qui dispose de l’autorisation de sécurité d’accès du code peut ne pas disposer des autorisations de système d’exploitation. Pour plus d’informations, consultez [Notions fondamentales de la sécurité d’accès du code](../../../../framework/misc/code-access-security-basics.md).
 
 ## <a name="see-also"></a>Voir aussi
 

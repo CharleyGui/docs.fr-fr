@@ -7,10 +7,10 @@ helpviewer_keywords:
 - application event logs
 ms.assetid: 2581afd1-5791-4bc4-86b2-46244e9fe468
 ms.openlocfilehash: 617b940d2cf15779ae3c10e4663b63c9771d44b6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74345898"
 ---
 # <a name="working-with-application-logs-in-visual-basic"></a>Utilisation des journaux des applications dans Visual Basic
@@ -43,13 +43,13 @@ Voici une valeur habituelle de `BasePath` .
 
 C:\Documents and Settings\\`username`\Application Data
 
-Les valeurs de `CompanyName`, de `ProductName`et de `ProductVersion` proviennent des informations d’assembly de l’application. La forme du nom du fichier journal est *nom_assembly*.log, où *nom_assembly* est le nom de fichier de l’assembly sans l’extension. Si plusieurs fichiers journaux sont nécessaires, par exemple dans le cas où le journal d’origine n’est pas disponible au moment où l’application tente d’écrire dans le journal, la forme du nom du fichier journal est *nom_assembly*-*iteration*.log, où `iteration` est un nombre positif de type `Integer`.
+Les valeurs de `CompanyName`, de `ProductName`et de `ProductVersion` proviennent des informations d’assembly de l’application. La forme du nom du fichier journal est *nom_assembly*.log, où *nom_assembly* est le nom de fichier de l’assembly sans l’extension. Si plus d’un fichier de journal est nécessaire, par exemple lorsque le journal d’origine n’est pas disponible lorsque l’application tente `Integer`d’écrire au journal, le formulaire pour le nom du fichier journal est*l’itération* *AssemblyName*-.log, où `iteration` est positif .
 
 Vous pouvez remplacer le comportement par défaut en ajoutant ou en modifiant les fichiers de configuration de l’ordinateur et de l’application. Pour plus d'informations, consultez [Walkthrough: Changing Where My.Application.Log Writes Information](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md).
 
 ## <a name="configuring-log-settings"></a>Configuration des paramètres de journalisation
 
-L’objet `Log` a une implémentation par défaut qui fonctionne sans fichier de configuration d’application, app. config. Pour modifier les valeurs par défaut, vous devez ajouter un fichier de configuration avec les nouveaux paramètres. Pour plus d'informations, consultez [Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
+L’objet `Log` dispose d’une implémentation par défaut qui fonctionne sans fichier de configuration d’application, app.config. Pour modifier les défauts, vous devez ajouter un fichier de configuration avec les nouveaux paramètres. Pour plus d'informations, consultez [Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
 
 Les sections de configuration de la journalisation se trouvent dans le nœud `<system.diagnostics>` du nœud `<configuration>` principal du fichier app.config. Les informations de la journalisation sont définies dans plusieurs nœuds :
 
@@ -109,4 +109,4 @@ Prenez en compte les éléments suivants lors de l’écriture de données dans 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
-- [Enregistrement d’informations provenant de l’application](../../../../visual-basic/developing-apps/programming/log-info/index.md)
+- [Enregistrement d'informations provenant de l'application](../../../../visual-basic/developing-apps/programming/log-info/index.md)
