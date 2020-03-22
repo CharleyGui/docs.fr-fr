@@ -2,12 +2,12 @@
 title: 'Comment : interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 8c1c9f0c-95dd-4222-9be2-9ec026a13e81
-ms.openlocfilehash: 34f2cd97cafbe142c9462e8d0cf7c17f9f0d16f9
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 723a42e79f1def171a08b28986049ffa04945fc4
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346071"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78266987"
 ---
 # <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-visual-basic"></a>Comment : interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (Visual Basic)
 Cet exemple montre cinq requêtes liées à la taille des fichiers en octets :  
@@ -22,7 +22,7 @@ Cet exemple montre cinq requêtes liées à la taille des fichiers en octets :
   
 - Comment regrouper des fichiers selon leur taille en octets, en ignorant les fichiers qui sont inférieurs à une taille spécifiée.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant contient cinq requêtes distinctes qui montrent comment interroger et regrouper des fichiers selon leur taille en octets. Vous pouvez facilement modifier ces exemples pour baser la requête sur une autre propriété de l’objet <xref:System.IO.FileInfo>.  
   
 ```vb  
@@ -104,7 +104,7 @@ Module QueryBySize
             retval = fi.Length  
         Catch ex As FileNotFoundException  
             ' If a file is no longer present,  
-            ' just return zero bytes.   
+            ' just return zero bytes.
             retval = 0  
         End Try  
   
@@ -118,7 +118,7 @@ End Module
  La requête appelle une méthode distincte pour obtenir la taille du fichier en octets et ainsi permettre l’utilisation de l’exception éventuellement levée si un fichier a été supprimé sur un autre thread depuis la création de l’objet <xref:System.IO.FileInfo> dans l’appel à `GetFiles`. Même si l’objet <xref:System.IO.FileInfo> a déjà été créé, l’exception peut être levée, car un objet <xref:System.IO.FileInfo> essaiera d’actualiser sa propriété <xref:System.IO.FileInfo.Length%2A> en utilisant la taille en octets la plus récente lors du premier accès à la propriété. En plaçant cette opération dans un bloc try-catch en dehors de la requête, nous respectons la règle qui consiste à éviter les opérations dans les requêtes qui peuvent avoir des effets secondaires. En règle générale, il faut faire très attention lors de l’utilisation d’exceptions et s’assurer que l’application ne reste pas dans un état inconnu.  
   
 ## <a name="compile-the-code"></a>Compiler le code  
-Créez un projet d’application console Visual Basic, avec une instruction `Imports` pour l’espace de noms System. Linq.
+Créez un projet d’application `Imports` de console de base visuelle, avec une déclaration pour l’espace de nom System.Linq.
   
 ## <a name="see-also"></a>Voir aussi
 
