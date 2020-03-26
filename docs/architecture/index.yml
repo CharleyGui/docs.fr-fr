@@ -1,31 +1,55 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Guide sur les architectures des applications .NET
+### YamlMime:Landing
+title: .NET documentation d’architecture d’application
+summary: Découvrez comment créer des applications .NET prêtes à la production ou migrer des applications existantes vers le cloud.
 metadata:
-  title: Guide sur les architectures des applications .NET
-  meta.description: 'Learn about recommended practices for architecting, designing and building .NET software.'
+  title: .NET documentation d’architecture d’application
+  description: Apprenez les pratiques recommandées pour l’architecture, la construction et la migration des applications .NET.
   ms.topic: landing-page
-  ms.date: 10/22/2019
-abstract:
-  description: Apprenez à créer des applications .NET prêtes pour la production avec des guides d’architecture d’application gratuits.
-sections:
-  - title: Livres électroniques publiés
-    items:
-      - html: <ul><li><p><a href="grpc-for-wcf-developers/index">gRPC ASP.NET Core pour les développeurs WCF</a></p>
-      - html: '<p>Ce guide explique ce qu’est le gRPC, reliant chaque concept aux caractéristiques équivalentes de WCF, et offre des conseils pour la migration d’une application WCF existante à gRPC.</p></li></ul>'
-      - html: <ul><li><p><a href="containerized-lifecycle/index">Cycle de vie de l’application Docker conteneurisé avec la plate-forme et les outils Microsoft</a></p>
-      - html: '<p>Ce guide est une introduction aux processus de bout en bout du cycle de vie recommandés que vous utiliserez pour développer, valider et déployer des applications Docker en conteneur à l’aide de Visual Studio et de Microsoft Azure.</p></li></ul>'
-      - html: <ul><li><p><a href="modernize-with-azure-containers/index">Moderniser les applications .NET existantes avec le cloud Azure et les conteneurs Windows</a></p>
-      - html: '<p>Ce guide est une introduction aux stratégies dont vous aurez besoin pour migrer les applications web existantes vers le cloud Azure et les conteneurs Windows. Vous allez découvrir les stratégies de code, la migration des données, les orchestrateurs et les processus CI/CD.</p></li></ul>'
-      - html: <ul><li><p><a href="modern-web-apps-azure/index">Architecturer des applications web modernes avec ASP.NET Core et Azure</a></p>
-      - html: '<p>Ce guide est une introduction aux processus d’architecture, de conception et de déploiement recommandés que vous utiliserez pour générer des applications ASP.NET et ASP.NET Core et héberger ces applications dans Azure.</p></li></ul>'
-      - html: <ul><li><p><a href="microservices/index">Architecture d’applications conteneur et basées sur des microservices</a></p>
-      - html: <p>Ce guide est une introduction au développement d’applications basées sur les microservices et à la gestion de celles-ci au moyen de conteneurs. Il traite de la conception architecturale et des approches d’implémentation utilisant .NET Core et les conteneurs Docker.</p></li></ul>
-      - html: '<ul><li><p><a href="serverless/index">Applications serverless : Architecture, modèles et implémentation Azure</a></p>'
-      - html: '<p>Il s’agit d’un guide pour générer des applications serverless avec des exemples utilisant Azure. Il aborde diverses approches d’architecture et de conception, ainsi que les avantages et les défis liés au modèle serverless, et fournit des scénarios et des cas d’usage pour les applications serverless.</p></li></ul>'
-  - title: Aperçu des livres électroniques
-    items:
-      - html: <ul><li><p><a href="cloud-native/index">Architecture d’applications .NET cloud natives pour Azure</a></p>
-      - html: '<p>Ce guide définit ce qu’est le cloud natif, introduit une application d’échantillon construite à l’aide de principes cloud-natifs, et couvre les sujets communs à la plupart des applications cloud-native.</p></li></ul>'
-      - html: <ul><li><p><a href="blazor-for-web-forms-developers/index">Blazor pour les développeurs ASP.NET Web Forms</a></p>
-      - html: <p>Une introduction à Blazor pour ASP.NET développeurs Web Forms. Apprenez à créer des applications Web pleine pile avec .NET en utilisant Blazor et .NET Core d’une manière simple et familière.</p></li></ul>
+  ms.date: 03/19/2020
+  ms.openlocfilehash: 6e3573416191603e1e166979f955eaae6b74022c
+  ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 03/24/2020
+  ms.locfileid: "80228597"
+landingContent:
+- title: Développer des applications ASP.NET Core
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Architecte applications web modernes avec ASP.NET Core et Azure
+      url: modern-web-apps-azure/index.md
+    - text: Blazor pour ASP.NET les développeurs de formulaires Web (Aperçu)
+      url: blazor-for-web-forms-developers/index.md
+    - text: gRPC ASP.NET Core pour les développeurs WCF
+      url: grpc-for-wcf-developers/index.md
+- title: Développer des applications .NET natives pour Azure
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Architecting cloud-native .NET apps for Azure (Preview)
+      url: cloud-native/index.md
+    - text: 'Applications serverless : architecture, modèles et implémentation Azure'
+      url: serverless/index.md
+    - text: '.NET Microservices: Architecture pour les applications conteneurisées .NET'
+      url: microservices/index.md
+  - linkListType: learn
+    links:
+    - text: Tutoriel Hello World Microservice
+      url: https://dotnet.microsoft.com/learn/aspnet/microservice-tutorial/intro
+- title: Migrer les applications .NET vers Azure
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Moderniser les applications .NET existantes avec le cloud Azure et les conteneurs Windows
+      url: modernize-with-azure-containers/index.md
+    - text: Migrez votre application .NET vers Azure
+      url: https://dotnet.microsoft.com/apps/cloud/migrate-to-azure
+- title: Comprendre DevOps pour .NET
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Cycle de vie des applications Docker conteneurisées avec la plateforme et les outils Microsoft
+      url: containerized-lifecycle/index.md
+    - text: ASP.NET Core DevOps avec Azure
+      url: /aspnet/core/azure/devops/

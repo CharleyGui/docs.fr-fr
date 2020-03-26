@@ -11,12 +11,12 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: 365cf0b2ef36dd0be624d022e3dea5e16a9eb58c
-  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  ms.openlocfilehash: 6e3742991820a8805b3c9b57767079940899d8fc
+  ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/14/2020
-  ms.locfileid: "73969407"
+  ms.lasthandoff: 03/18/2020
+  ms.locfileid: "79507007"
 items:
 - durationInMinutes: 1
   content: >
@@ -250,7 +250,7 @@ items:
     ```
 
 
-    La méthode <xref:System.String.Contains%2A> retourne une valeur **booléenne** qui indique si la chaîne recherchée a été trouvée. Un **booléen** stocke une valeur `true` ou `false`. Vous en saurez plus sur les valeurs **booléennes** dans une leçon ultérieure.
+    La méthode <xref:System.String.Contains%2A> retourne une valeur **booléenne** qui indique si la chaîne recherchée a été trouvée. Un **booléen** stocke une valeur `true` ou `false`. Lorsqu’ils sont affichés sous `True` forme `False`de sortie de texte, ils sont capitalisés : et, respectivement. Vous en saurez plus sur les valeurs **booléennes** dans une leçon ultérieure.
 
 
     ***Test***
