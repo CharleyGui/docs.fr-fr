@@ -4,12 +4,12 @@ description: .NET Core est une implémentation modulaire et haute performance de
 author: richlander
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 3db98d21a7cdc80d8a98b23782a81ffa37520937
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6d2ce5951fa01ca3945ce0e64aa58fbadc8ab5af
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75740747"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79546547"
 ---
 # <a name="net-core-guide"></a>Guide .NET Core
 
@@ -21,7 +21,7 @@ Consultez les [Tutoriels .NET Core](tutorials/index.md) pour apprendre à créer
 
 ## <a name="download-net-core"></a>Télécharger .NET Core
 
-Téléchargez le [.NET Core SDK](https://www.microsoft.com/net/download) pour essayer .NET Core sur votre Windows, macOS ou Linux machine. Et si vous préférez utiliser des conteneurs Docker, visitez le [.NET Core Docker Hub](https://hub.docker.com/_/microsoft-dotnet-core/).
+Téléchargez le [.NET Core SDK](https://dotnet.microsoft.com/download) pour essayer .NET Core sur votre Windows, macOS ou Linux machine. Et si vous préférez utiliser des conteneurs Docker, visitez le [.NET Core Docker Hub](https://hub.docker.com/_/microsoft-dotnet-core/).
 
 Toutes les versions de .NET Core sont disponibles sur [Téléchargements de .NET Core](https://dotnet.microsoft.com/download/dotnet-core) si vous recherchez une autre version de .NET Core.
 

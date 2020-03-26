@@ -3,19 +3,21 @@ title: Installer .NET Core sur CentOS 7 - gestionnaire de paquets - .NET Core
 description: Utilisez un gestionnaire de paquets pour installer .NET Core SDK et l’exécution sur CentOS 7.
 author: thraka
 ms.author: adegeo
-ms.date: 12/04/2019
-ms.openlocfilehash: 66e78aadf933d3e10b99e3d2c7258733e96164f6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 03/17/2020
+ms.openlocfilehash: d6cec51422dc59b7f667e36001b7db4742b53a6f
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76920856"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134353"
 ---
 # <a name="centos-7-package-manager---install-net-core"></a>CentOS 7 Package Manager - Installer .NET Core
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-switcher.md)]
 
-Cet article décrit comment utiliser un gestionnaire de paquets pour installer .NET Core sur CentOS 7. Si vous installez le temps d’exécution, nous vous suggérons d’installer le [ASP.NET’arrêt Core,](#install-the-aspnet-core-runtime)car il comprend à la fois .NET Core et ASP.NET les temps d’exécution Core.
+Cet article décrit comment utiliser un gestionnaire de paquets pour installer .NET Core sur CentOS 7.
+
+[!INCLUDE [package-manager-intro-sdk-vs-runtime](includes/package-manager-intro-sdk-vs-runtime.md)]
 
 ## <a name="register-microsoft-key-and-feed"></a>Inscrire la clé et le flux Microsoft
 

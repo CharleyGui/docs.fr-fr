@@ -2,12 +2,12 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 02/27/2020
-ms.openlocfilehash: bac2f0e613c34bc9f657551a5eac4038207a93ed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a11814f9fdc6326e681a09d7d2654b968014f318
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847896"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507306"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -51,7 +51,7 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
   Utilise les adaptateurs de tests personnalisés à partir du chemin spécifié dans la série de tests.
 
-- **`-blame`**
+- **`--blame`**
 
   Exécute les tests en mode responsable. Cette option est utile pour isoler les tests problématiques qui provoquent l’écrasement de l’hôte d’essai. Elle crée un fichier de sortie dans le répertoire actif nommé *Sequence.xml* qui capture l’ordre d’exécution des tests avant le plantage.
 

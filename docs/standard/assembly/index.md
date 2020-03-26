@@ -12,12 +12,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework]
 - version boundaries
 - type boundaries
-ms.openlocfilehash: f85fef37ac952c91ac73570f26d80d8a46f4eedf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b61d079a86bdd4a809d44ad128f19a7b358c8384
+ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78156503"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80228675"
 ---
 # <a name="assemblies-in-net"></a>Assemblys dans .NET
 
@@ -104,7 +104,7 @@ Dans C, vous pouvez utiliser deux versions d’un même assemblage dans une seul
 |[Envoyer des assemblys et des méthodes dynamiques](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|Comment créer des assemblages dynamiques.|
 |[Comment le temps d’exécution localise les assemblages](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Comment le cadre .NET résout les références d’assemblage au moment de l’exécution.|
 
-## <a name="reference"></a>Informations de référence
+## <a name="reference"></a>Référence
 
 <xref:System.Reflection.Assembly?displayProperty=nameWithType>
 
@@ -116,3 +116,4 @@ Dans C, vous pouvez utiliser deux versions d’un même assemblage dans une seul
 - [Comment : Charger et décharger les assemblages](load-unload.md)
 - [Comment: Utiliser et débouger l’impré chargement de l’assemblage en .NET Core](unloadability.md)
 - [Comment : Déterminer si un fichier est un assemblage](identify.md)
+- [Comment : Inspecter le contenu de l’assemblage à l’aide de MetadataLoadContext](inspect-contents-using-metadataloadcontext.md)

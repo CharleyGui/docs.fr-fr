@@ -5,12 +5,12 @@ helpviewer_keywords:
 - configuring apps to support .NET Framework
 - .NET Framework, configuring apps
 ms.assetid: 63c6b9a8-0088-4077-9aa3-521ab7290f79
-ms.openlocfilehash: 586f39fc9b50dcd45bb959ebd0063e3c38d9c3ed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 30fb1da8d758b0e8996b4fcdebbb7fbf545a46c1
+ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75716248"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80228759"
 ---
 # <a name="how-to-configure-an-app-to-support-net-framework-4-or-later-versions"></a>Comment : Configurer une application pour prendre en charge .NET Framework 4 ou des versions ultérieures
 
@@ -50,7 +50,7 @@ Toutes les applications qui hébergent le Common Langage Runtime (CLR) doivent d
     ```xml
     <configuration>
       <startup>
-        <supportedRuntime version="<version>"/>
+        <supportedRuntime version="version"/>
       </startup>
     </configuration>
     ```

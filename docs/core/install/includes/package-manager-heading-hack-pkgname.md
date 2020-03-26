@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 51b3c1b3e3d61b23a0511ca807afef0269ac9ee4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4340ed7444681b4601dea50c93926b0ee0c07eec
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77466081"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134106"
 ---
 
 Les paquets ajoutés aux flux de gestionnaire de `{product}-{type}-{version}`paquets sont nommés dans un format hackable: .
@@ -34,7 +34,7 @@ La version du SDK ou l’heure d’exécution à installer. Cet article donnera 
 
 - Installer le ASP.NET cœur 3.1 temps d’exécution:`aspnetcore-runtime-3.1`
 - Installer le temps d’exécution .NET Core 2.1 :`dotnet-runtime-2.1`
-- Installer le .NET Core 3.0 SDK:`dotnet-sdk-3.0`
+- Installer le .NET Core 3.1 SDK:`dotnet-sdk-3.1`
 
 ### <a name="package-missing"></a>Paquet manquant
 

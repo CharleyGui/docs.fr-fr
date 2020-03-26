@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 2b347442c4a9b7b6cf912ec461248f901dc45417
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fa87fdba830398786cce8951d353e86bc4ff7491
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79147489"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111047"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Tester des applications ASP.NET Core MVC
 
@@ -64,7 +64,7 @@ Les développeurs novices dans l’écriture de tests automatisés ont souvent d
 
 Vous pouvez organiser vos projets de test de la façon qui vous convient le mieux. Il est conseillé de séparer les tests par type (test unitaire, test d’intégration) et par élément testé (projet, espace de noms). Vous pouvez choisir d’implémenter cette séparation en utilisant plusieurs dossiers au sein d’un seul projet de test, ou plusieurs projets de test distincts. L’utilisation d’un projet unique est plus simple, mais si vous avez des projets volumineux avec beaucoup de tests ou si vous voulez exécuter plus facilement différentes séries de tests, il peut être préférable de créer différents projets de test. Les équipes de développement organisent souvent les projets de test en fonction du projet testé. Pour les applications avec de nombreux projets, cette pratique peut entraîner une multiplication des projets de test, en particulier si vous continuez à organiser ces projets selon la sorte de tests qu’ils contiennent. Une solution de compromis consiste à avoir un projet par sorte de tests et par application, avec des dossiers dans chaque projet de test pour indiquer quel projet (et quelle classe) est testé.
 
-Une approche courante est d’organiser les projets d’application dans un dossier « src » et les projets de test de l’application dans un dossier « tests » parallèle. Vous pouvez créer des dossiers de solution correspondants dans Visual Studio, si vous trouvez cette organisation utile.
+Une approche commune consiste à organiser les projets d’application dans un dossier «src», et les projets de test de l’application dans un dossier parallèle de «tests». Vous pouvez créer des dossiers de solution correspondants dans Visual Studio, si vous trouvez cette organisation utile.
 
 ![Organisation de test dans votre solution](./media/image9-2.png)
 
@@ -145,7 +145,7 @@ public IActionResult GetImage(int id)
 
 `_logger`et `_imageService` sont tous deux injectés comme dépendances. Maintenant, vous pouvez tester que la même pièce d’identité qui est passé à la méthode d’action est passé à `_imageService`, et que les octets résultants sont retournés dans le cadre de la FileResult. Vous pouvez également tester que l’enregistrement d’erreur se passe comme prévu, et qu’un `NotFound` résultat est retourné si l’image est manquante, en supposant que c’est un comportement d’application important (c’est-à-dire, pas seulement le code temporaire du développeur ajouté pour diagnostiquer un problème). La logique du fichier réel a été déplacée dans un service d’implémentation distinct et a été augmentée pour retourner une exception d’application liée au fichier manquant. Vous pouvez tester cette implémentation indépendamment, à l’aide d’un test d’intégration.
 
-Dans la plupart des cas, vous souhaiterez utiliser des gestionnaires d’exceptions globaux dans vos contrôleurs, afin que la quantité de logique impliquée soit minimale et ne justifie probablement pas les tests unitaires. Vous devez effectuer la plupart des tests des actions de contrôleur à l’aide de tests fonctionnels et de la classe `TestServer` décrite ci-dessous.
+Dans la plupart des cas, vous voudrez utiliser des gestionnaires d’exception globales dans vos contrôleurs, de sorte que la quantité de logique en eux devrait être minime et probablement pas la valeur des tests unitaires. Faites la plupart de vos tests d’actions de contrôleur à l’aide de tests fonctionnels et de la `TestServer` classe décrite ci-dessous.
 
 ## <a name="integration-testing-aspnet-core-apps"></a>Tests d’intégration dans les applications ASP.NET Core
 
@@ -153,7 +153,7 @@ La plupart des tests d’intégration figurant dans vos applications ASP.NET Cor
 
 ## <a name="functional-testing-aspnet-core-apps"></a>Tests fonctionnels dans les applications ASP.NET Core
 
-Pour les applications ASP.NET Core, la classe `TestServer` facilite grandement l’écriture de tests fonctionnels. Vous `TestServer` configurez `WebHostBuilder` un `HostBuilder`à l’aide d’un (ou) directement `WebApplicationFactory` (comme vous le faites normalement pour votre application), ou avec le type (disponible depuis la version 2.1). Vous devez essayer de calquer aussi fidèlement que possible votre hôte de test sur votre hôte de production, de sorte que vos tests affichent un comportement similaire à celui de l’application une fois en production. La classe `WebApplicationFactory` s’avère utile pour configurer la clé ContentRoot de TestServer, dont se sert ASP.NET Core pour localiser les ressources statiques telles que les vues.
+Pour les applications ASP.NET Core, la classe `TestServer` facilite grandement l’écriture de tests fonctionnels. Vous `TestServer` configurez `WebHostBuilder` un `HostBuilder`à l’aide d’un (ou) directement `WebApplicationFactory` (comme vous le faites normalement pour votre application), ou avec le type (disponible depuis la version 2.1). Essayez de faire correspondre votre hôte de test à votre hôte de production aussi étroitement que possible, de sorte que vos tests exercer un comportement similaire à ce que l’application va faire en production. La classe `WebApplicationFactory` s’avère utile pour configurer la clé ContentRoot de TestServer, dont se sert ASP.NET Core pour localiser les ressources statiques telles que les vues.
 
 Vous pouvez créer des tests fonctionnels simples en créant une classe de test qui implémente IClassFixture\<WebApplicationFactory\<TEntry>>, TEntry étant la classe Startup de votre application web. Une fois tout cela en place, votre fixture de test peut créer un client en utilisant la méthode CreateClient de la fabrique :
 
@@ -290,7 +290,7 @@ namespace Microsoft.eShopWeb.FunctionalTests.WebRazorPages
 }
 ```
 
-Ce test fonctionnel utilise la pile entière de l’application ASP.NET Core MVC/Razor Pages, notamment tous les intergiciels (middleware), filtres, classeurs, etc. existants. Il vérifie qu’un itinéraire donné (« / ») retourne le code d’état de réussite attendu et la sortie HTML. Il effectue cette opération sans configurer de serveur web réel, ce qui permet d’éviter une grande part des problèmes de fiabilité que pose l’utilisation d’un serveur web réel pour les tests (par exemple, les problèmes liés aux paramètres de pare-feu). Les tests fonctionnels exécutés sur le TestServer sont généralement plus lents que les tests d’intégration et les tests unitaires, mais ils sont beaucoup plus rapides que les tests exécutés sur un serveur web de test via le réseau. Vous devez utiliser des tests fonctionnels pour garantir que la pile front-end de votre application fonctionne comme prévu. Ces tests sont particulièrement utiles quand vous trouvez un doublon dans vos contrôleurs ou pages et que vous corrigez ce problème en ajoutant des filtres. Dans l’idéal, cette refactorisation ne modifie pas le comportement de l’application, et une suite de tests fonctionnels vérifie que c’est bien le cas.
+Ce test fonctionnel utilise la pile entière de l’application ASP.NET Core MVC/Razor Pages, notamment tous les intergiciels (middleware), filtres, classeurs, etc. existants. Il vérifie qu’un itinéraire donné (« / ») retourne le code d’état de réussite attendu et la sortie HTML. Il effectue cette opération sans configurer de serveur web réel, ce qui permet d’éviter une grande part des problèmes de fiabilité que pose l’utilisation d’un serveur web réel pour les tests (par exemple, les problèmes liés aux paramètres de pare-feu). Les tests fonctionnels exécutés sur le TestServer sont généralement plus lents que les tests d’intégration et les tests unitaires, mais ils sont beaucoup plus rapides que les tests exécutés sur un serveur web de test via le réseau. Utilisez des tests fonctionnels pour vous assurer que la pile frontale de votre application fonctionne comme prévu. Ces tests sont particulièrement utiles quand vous trouvez un doublon dans vos contrôleurs ou pages et que vous corrigez ce problème en ajoutant des filtres. Dans l’idéal, cette refactorisation ne modifie pas le comportement de l’application, et une suite de tests fonctionnels vérifie que c’est bien le cas.
 
 > ### <a name="references--test-aspnet-core-mvc-apps"></a>Références – Tester des applications ASP.NET Core MVC
 >

@@ -20,12 +20,12 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 7c95fe07220a78b388a5c6850e4123feb029d951
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fd25cd419f8c3bfe905850e6a252f4a8cf65478c
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399545"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507098"
 ---
 # <a name="pointer-related-operators-c-reference"></a>Opérateurs associés au pointeur (référence C#)
 
@@ -42,7 +42,7 @@ Pour plus d’informations sur les types de pointeurs, consultez [Types pointeur
 > [!NOTE]
 > Toutes les opérations impliquant des pointeurs nécessitent un contexte [unsafe](../keywords/unsafe.md). Le code qui contient des blocs [`-unsafe`](../compiler-options/unsafe-compiler-option.md) dangereux doit être compilé avec l’option compilateur.
 
-## <a name="address-of-operator-"></a>Adresse de l’opérateur&amp;
+## <a name="address-of-operator-amp"></a><a name="address-of-operator-"></a>Adresse de l’opérateur&amp;
 
 L’opérateur unaire `&` retourne l’adresse de son opérande :
 
@@ -70,7 +70,7 @@ L’opérateur binaire `*` calcule le [produit](arithmetic-operators.md#multipli
 
 ## <a name="pointer-member-access-operator--"></a>Opérateur d’accès aux membres de pointeur ->
 
-L’opérateur `->` associe l’[indirection de pointeur](#pointer-indirection-operator-) à l’[accès aux membres](member-access-operators.md#member-access-operator-). Autrement dit, `x` si est `T*` un `y` pointeur de `T`type et est un membre accessible de type , une expression de la forme
+L’opérateur `->` associe l’[indirection de pointeur](#pointer-indirection-operator-) à l’[accès aux membres](member-access-operators.md#member-access-expression-). Autrement dit, `x` si est `T*` un `y` pointeur de `T`type et est un membre accessible de type , une expression de la forme
 
 ```csharp
 x->y
@@ -96,7 +96,7 @@ L’exemple suivant montre comment accéder à des éléments tableau avec un po
 
 [!code-csharp[pointer element access](snippets/PointerOperators.cs#ElementAccess)]
 
-L’exemple utilise [ `stackalloc` l’opérateur](stackalloc.md) pour allouer un bloc de mémoire sur la pile.
+Dans l’exemple [ `stackalloc` ](stackalloc.md) précédent, une expression alloue un bloc de mémoire sur la pile.
 
 > [!NOTE]
 > L’opérateur d’accès aux éléments de pointeur ne recherche pas les erreurs de dépassement des limites.
@@ -192,5 +192,5 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [Types de pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [mot clé unsafe](../keywords/unsafe.md)
 - [mot-clé fixe](../keywords/fixed-statement.md)
-- [Opérateur stackalloc](stackalloc.md)
+- [stackalloc](stackalloc.md)
 - [sizeof, opérateur](sizeof.md)

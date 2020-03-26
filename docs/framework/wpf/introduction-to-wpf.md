@@ -7,12 +7,12 @@ ms.assetid: b8d7cf43-d1f2-4f3d-adb0-4f3a6428edc0
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 511ea04a522804b4b2ea2ff173d6cdd738e5c7bc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 759c1ca20ac139ef856df08ec42fb259fc3920d1
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186222"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112009"
 ---
 # <a name="wpf-overview"></a>Vue d’ensemble de WPF
 
@@ -141,7 +141,7 @@ Le chiffre suivant indique le résultat lorsque le bouton est cliqué :
 
 ![MessageBox](media/introduction-to-wpf/wpfintrofigure25.png)
 
-## <a name="controls"></a>Commandes
+## <a name="controls"></a>Contrôles
 
 Les expériences utilisateur fournies par le modèle d’application sont des contrôles construits Dans WPF, *contrôle* est un terme général qui s’applique à une catégorie de classes WPF qui sont hébergées dans une fenêtre ou une page, qui ont une interface utilisateur et qui implémentent un certain comportement.
 
@@ -309,7 +309,7 @@ Pour plus d’informations, consultez [Vue d’ensemble des pinceaux WPF](graphi
 
 ### <a name="3d-rendering"></a>Rendu 3D
 
-WPF comprend également des fonctionnalités de rendu 3D qui s’intègrent aux graphiques 2D, permettant ainsi la création d’interfaces utilisateur plus intéressantes. Par exemple, le chiffre suivant montre des images 2D rendues sur des formes 3D :
+WPF inclut également des capacités de rendu 3D qui s’intègrent avec des graphismes 2D pour permettre la création d’interfaces utilisateur plus excitantes et intéressantes. Par exemple, le chiffre suivant montre des images 2D rendues sur des formes 3D :
 
 ![Capture d'écran : exemple Visual3D](media/introduction-to-wpf/wpfintrofigure13.png)
 

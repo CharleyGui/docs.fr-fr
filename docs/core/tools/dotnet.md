@@ -2,12 +2,12 @@
 title: Commande dotnet
 description: En savoir plus sur la commande dotnet (le pilote générique pour le CLI .NET Core) et son utilisation.
 ms.date: 02/13/2020
-ms.openlocfilehash: da37c5cc3b019851e245fa3f65ae9dfb8a3fef54
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8692d419afd528bf49e1dc7dc1a7a5fd698b363b
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398894"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134078"
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
@@ -193,8 +193,14 @@ Commande | Fonction
 Commande | Fonction
 --- | ---
 [dotnet nuget delete](dotnet-nuget-delete.md) | Supprime ou retire un package du serveur.
-[dotnet nuget locals](dotnet-nuget-locals.md) | Efface ou liste les ressources NuGet locales telles que le cache de requête HTTP, le cache temporaire ou le dossier de packages globaux à l’échelle de l’ordinateur.
 [dotnet nuget push](dotnet-nuget-push.md) | Effectue une transmission de type push d’un package sur le serveur et le publie.
+[dotnet nuget locals](dotnet-nuget-locals.md) | Efface ou liste les ressources NuGet locales telles que le cache de requête HTTP, le cache temporaire ou le dossier de packages globaux à l’échelle de l’ordinateur.
+[dotnet nuget ajouter source](dotnet-nuget-add-source.md) | Ajoute une source NuGet.
+[dotnet nuget source désactiver](dotnet-nuget-disable-source.md) | Désactive une source NuGet.
+[dotnet nuget activer la source](dotnet-nuget-enable-source.md) | Permet une source NuGet.
+[dotnet nuget liste source](dotnet-nuget-list-source.md) | Répertorie toutes les sources NuGet configurées.
+[dotnet nuget supprimer la source](dotnet-nuget-remove-source.md) | Supprime une source NuGet.
+[source de mise à jour de nuget dotnet](dotnet-nuget-update-source.md) | Mise à jour d’une source NuGet.
 
 ### <a name="global-tool-path-and-local-tools-commands"></a>Commandes d’outils mondiaux, d’outils et d’outils locaux
 
@@ -255,6 +261,10 @@ dotnet myapp.dll
 
   Spécifie l’emplacement de l’index de service que doit utiliser l’hôte partagé lors du chargement de l’exécution.
 
+- `DOTNET_NOLOGO`
+
+  Précise si les messages de bienvenue et de télémétrie .NET Core sont affichés en première diffusion. Configurez `true` pour couper ces `true` `1`messages `yes` (valeurs, , `false` ou acceptés) ou définis pour permettre (valeurs, `false` `0`, ou `no` accepté). Si elle n’est `false` pas définie, la valeur par défaut est et les messages seront affichés en première exécution. Notez que ce drapeau n’a `DOTNET_CLI_TELEMETRY_OPTOUT` aucun effet sur la télémétrie (voir pour refuser d’envoyer de la télémétrie).
+
 - `DOTNET_CLI_TELEMETRY_OPTOUT`
 
   Spécifie si les données concernant l’utilisation des outils .NET Core doivent être collectées et envoyées à Microsoft. Définie sur `true` pour ne pas adhérer à la fonctionnalité de télémétrie (valeurs acceptées : `true`, `1` ou `yes`). Sinon, définie sur `false` pour adhérer aux fonctionnalités de télémétrie (valeurs acceptées : `false`, `0` ou `no`). Si elle n’est pas définie, la valeur par défaut est `false`, et la fonctionnalité de télémétrie est active.
@@ -277,7 +287,7 @@ dotnet myapp.dll
 
 - `DOTNET_DISABLE_GUI_ERRORS`
 
-  Pour les exécutables générés par l’INTERFACE graphique - désactive le popup de dialogue qui s’affiche normalement pour certaines classes d’erreurs. Il n’écrit `stderr` et sort que dans ces cas.
+  Pour les exécutables générés par l’INTERFACE graphique - désactive le dialogue popup, qui montre normalement pour certaines classes d’erreurs. Il n’écrit `stderr` et sort que dans ces cas.
   
 - `DOTNET_ADDITIONAL_DEPS`
 

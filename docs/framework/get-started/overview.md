@@ -7,12 +7,12 @@ helpviewer_keywords:
 - common language runtime, about
 - common language runtime, overview
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
-ms.openlocfilehash: de9cbdab5d5786b9d59d23ba675fa3f78f807716
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ace42738118cde4bcda4b78607d7bdb045d3501e
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79181591"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80248919"
 ---
 # <a name="overview-of-net-framework"></a>Aperçu du cadre .NET
 
@@ -31,7 +31,7 @@ ms.locfileid: "79181591"
 - Construire toutes les communications sur les normes de l’industrie pour s’assurer que le code basé sur .NET Framework s’intègre à tout autre code.
 
 > [!NOTE]
-> Pour une introduction générale à .NET Framework pour les utilisateurs et les développeurs, voir [Getting Started](index.md).
+> Pour une introduction générale à .NET Framework pour les utilisateurs et les développeurs, voir [Get started](index.md).
 
 .NET Framework se compose de l’heure courante (CLR) et de la bibliothèque de classe cadre .NET. Le runtime linguistique commun est à la base de .NET Framework. Le runtime est un agent qui manage le code au moment de l’exécution, fournit des services essentiels comme la gestion de la mémoire, la gestion des threads et la communication à distance. Il applique également une cohérence stricte des types et d’autres formes de précision qui favorisent un code sécurisé et robuste. En fait, le concept de gestion de code est un principe fondamental du runtime. Pour le code qui cible le runtime, on parle de code managé, tandis que pour le code qui ne cible pas le runtime, on parle de code non managé. La bibliothèque de classe est une collection complète et orientée objet de types réutilisables que vous utilisez pour développer des applications allant des applications traditionnelles de ligne de commande ou d’interface utilisateur graphique (GUI) aux applications basées sur les dernières innovations fournies par ASP.NET, telles que web Formulaires et services Web XML.
 
@@ -71,7 +71,7 @@ La bibliothèque de classes .NET Framework est une collection de types réutilis
 
 Par exemple, les classes de collection du .NET Framework implémentent un jeu d’interfaces pour développer vos propres classes de collection. Vos classes de collection s’intègrent parfaitement aux classes du .NET Framework.
 
-Comme pour toute bibliothèque de classes orientée objet, les types .NET Framework vous permettent d'accomplir un éventail de tâches courantes de programmation y compris des tâches comme la gestion de chaînes, la collection de données, la connectivité de bases de données, et l'accès aux fichiers. En plus de ces tâches courantes, la bibliothèque de classes comprend des types qui prennent en charge une variété de scénarios de développement spécialisé. Utilisez le .NET Framework pour développer les types d’applications et de services suivants :
+Comme vous vous y attendez d’une bibliothèque de classe orientée objet, les types .NET Framework vous permettent d’accomplir une gamme de tâches de programmation courantes, y compris la gestion des chaînes, la collecte de données, la connectivité de base de données et l’accès aux fichiers. En plus de ces tâches courantes, la bibliothèque de classes comprend des types qui prennent en charge une variété de scénarios de développement spécialisé. Vous pouvez utiliser .NET Framework pour développer les types d’applications et de services suivants :
 
 - Applications de console. Consultez [Génération d'applications console](../../standard/building-console-apps.md).
 
@@ -92,8 +92,8 @@ Les classes Windows Forms sont un ensemble complet de types réutilisables qui s
 ## <a name="see-also"></a>Voir aussi
 
 - [Exigences du système](system-requirements.md)
-- [Guide d'installation](../install/index.md)
+- [Guide d’installation](../install/index.md)
 - [Guide de développement](../development-guide.md)
 - [Outils](../tools/index.md)
 - [Exemples et tutoriels .NET](../../samples-and-tutorials/index.md)
-- [Navigateur API .NET](../../../api/index.md)
+- [Navigateur d’API .NET](../../../api/index.md)

@@ -6,12 +6,12 @@ f1_keywords:
 - fixed
 helpviewer_keywords:
 - fixed keyword [C#]
-ms.openlocfilehash: e527e8a54a739391d18b180532372b5b70f34d37
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 53bee82bf24a847b0b21ed2375d09a6303d4fe48
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713518"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507189"
 ---
 # <a name="fixed-statement-c-reference"></a>fixed, instruction (référence C#)
 
@@ -62,7 +62,7 @@ fixed (byte* ps = srcarray, pd = dstarray)
 }
 ```
 
-Vous pouvez allouer de la mémoire à la pile, où elle n’est pas soumise au nettoyage de la mémoire et n’a donc pas besoin d’être épinglée. Pour ce faire, utilisez [ `stackalloc` l’opérateur](../operators/stackalloc.md).
+Vous pouvez allouer de la mémoire à la pile, où elle n’est pas soumise au nettoyage de la mémoire et n’a donc pas besoin d’être épinglée. Pour ce faire, [ `stackalloc` ](../operators/stackalloc.md)utilisez une expression .
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

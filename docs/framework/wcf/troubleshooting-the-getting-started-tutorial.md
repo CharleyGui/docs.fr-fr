@@ -2,12 +2,12 @@
 title: Dépannage de la Get a commencé avec Windows Communication Foundation tutoriels
 ms.date: 01/25/2019
 ms.assetid: 69a21511-0871-4c41-9a53-93110e84d7fd
-ms.openlocfilehash: 92e986370fe1b6e067d9f8aebc73179c1ac6a20f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 73aa0f5784784cb788a7532f8e22cbe925429c41
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183092"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249615"
 ---
 # <a name="troubleshoot-the-get-started-with-windows-communication-foundation-tutorials"></a>Dépannage de la Get a commencé avec Windows Communication Foundation tutoriels
 
@@ -93,7 +93,9 @@ Pour désactiver la sécurité :
 - Pour le client, dans le fichier de configuration, mettre à jour ** \<l’élément de sécurité>** sous l’élément ** \<de liaison>** comme suit :  
   
     ```xml
-    <binding name="WSHttpBinding_ICalculator" security mode="None" />
+    <binding name="WSHttpBinding_ICalculator">
+      <security mode="None" />
+    </binding
     ```  
 
 ## <a name="see-also"></a>Voir aussi  

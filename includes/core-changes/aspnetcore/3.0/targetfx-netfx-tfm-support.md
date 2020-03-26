@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b60f74947a537c602c7bd1a89587b76bd847c82a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ec6724ab378dd614c55a024ede18d997d27be3a3
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75937284"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79549606"
 ---
 ### <a name="target-framework-net-framework-support-dropped"></a>Cadre cible : le soutien cadre net supprimé
 
@@ -14,7 +14,7 @@ ms.locfileid: "75937284"
 
 .NET Framework 4.8 est la dernière version majeure du cadre .NET. Les nouvelles applications ASP.NET Core devraient être construites sur .NET Core. En commençant par la version .NET Core 3.0, vous pouvez penser à ASP.NET Core 3.0 comme faisant partie de .NET Core.
 
-Les clients utilisant ASP.NET Core avec .NET Framework peuvent continuer d’une manière entièrement pris en charge en utilisant la [version 2.1 LTS](https://www.microsoft.com/net/download/dotnet-core/2.1). Le soutien et l’entretien de 2,1 se poursuivent au moins jusqu’au 21 août 2021. Cette date est de trois ans après la déclaration de la version LTS par la [politique de soutien .NET](https://www.microsoft.com/net/platform/support-policy). Le soutien aux paquets ASP.NET Core 2.1 **sur le cadre .NET** s’étendra indéfiniment, semblable à la [politique de service pour d’autres cadres ASP.NET fondés sur des paquets](https://dotnet.microsoft.com/platform/support/policy/aspnet).
+Les clients utilisant ASP.NET Core avec .NET Framework peuvent continuer d’une manière entièrement pris en charge en utilisant la [version 2.1 LTS](https://dotnet.microsoft.com/download/dotnet-core/2.1). Le soutien et l’entretien de 2,1 se poursuivent au moins jusqu’au 21 août 2021. Cette date est de trois ans après la déclaration de la version LTS par la [politique de soutien .NET](https://dotnet.microsoft.com/platform/support-policy). Le soutien aux paquets ASP.NET Core 2.1 **sur le cadre .NET** s’étendra indéfiniment, semblable à la [politique de service pour d’autres cadres ASP.NET fondés sur des paquets](https://dotnet.microsoft.com/platform/support/policy/aspnet).
 
 Pour plus d’informations sur le portage de .NET Framework à .NET Core, voir [Porting à .NET Core](~/docs/core/porting/index.md).
 

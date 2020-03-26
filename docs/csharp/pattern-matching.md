@@ -4,12 +4,12 @@ description: En savoir plus sur les expressions de critères spéciaux en langag
 ms.date: 04/10/2019
 ms.technology: csharp-fundamentals
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: 0c302499543c90bd01427e2791435968d580f644
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb6baf3771024d02b2027f81fd35b8be4872cf6e
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170382"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249231"
 ---
 # <a name="pattern-matching"></a>Critères spéciaux
 
@@ -106,7 +106,7 @@ Enfin, vous pouvez ajouter un cas `null` pour que l’argument ne soit pas `null
 
 [!code-csharp[NullCase](../../samples/snippets/csharp/PatternMatching/GeometricUtilities.cs#10_NullCase "Add null case")]
 
-Le comportement spécial du modèle `null` est intéressant, car sa constante `null` n’a pas de type, mais peut être convertie en un type référence ou un type Nullable. Plutôt que de convertir une valeur `null` en un type quelconque, le langage définit qu’une valeur `null` ne correspond à aucun modèle de type, quel que soit le type de la variable au moment de la compilation. En raison de ce comportement, le nouveau modèle de type basé sur `switch` est cohérent par rapport à l’instruction `is` : les instructions `is` retournent toujours `false` quand la valeur vérifiée est `null`. Il est aussi plus simple : une fois le type vérifié, aucun autre contrôle de valeur Null n’est nécessaire. On constate en effet qu’aucune vérification de ce type ne figure dans les blocs de cas des exemples ci-dessus : ces contrôles ne sont pas requis dans la mesure où la correspondance avec le modèle de type garantit une valeur non Null.
+Le comportement spécial `null` pour le modèle `null` est intéressant parce que la constante dans le modèle n’a pas un type, mais peut être convertie à n’importe quel type de référence ou de type de valeur nulle. Plutôt que de convertir une valeur `null` en un type quelconque, le langage définit qu’une valeur `null` ne correspond à aucun modèle de type, quel que soit le type de la variable au moment de la compilation. En raison de ce comportement, le nouveau modèle de type basé sur `switch` est cohérent par rapport à l’instruction `is` : les instructions `is` retournent toujours `false` quand la valeur vérifiée est `null`. Il est aussi plus simple : une fois le type vérifié, aucun autre contrôle de valeur Null n’est nécessaire. On constate en effet qu’aucune vérification de ce type ne figure dans les blocs de cas des exemples ci-dessus : ces contrôles ne sont pas requis dans la mesure où la correspondance avec le modèle de type garantit une valeur non Null.
 
 ## <a name="var-declarations-in-case-expressions"></a>Déclarations `var` dans les expressions `case`
 

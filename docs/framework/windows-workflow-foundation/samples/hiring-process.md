@@ -2,12 +2,12 @@
 title: Processus d'embauche
 ms.date: 03/30/2017
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
-ms.openlocfilehash: c7e99d41d009ee9ab9ccf322f082d3e253ca03ce
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ade72422d29d170e9c80f602f151ce765a1a00f7
+ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79182833"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80291684"
 ---
 # <a name="hiring-process"></a>Processus d'embauche
 Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'activités de messagerie et de deux workflows hébergés en tant que services de workflow. Ces workflows font partie de l'infrastructure informatique d'une société fictive nommée Contoso, Inc.  
@@ -62,7 +62,7 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
   
 1. Un employé (le demandeur) démarre la demande de processus d'embauche.  
   
-2. Le responsable du demandeur doit approuver la demande :  
+2. Le gestionnaire du demandeur doit approuver la demande :  
   
     1. Le responsable peut refuser la demande.  
   
@@ -72,7 +72,7 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
   
     3. Le responsable peut approuver la demande.  
   
-3. Une fois que le responsable du demandeur a approuvé la demande, le propriétaire du service doit approuver la demande.  
+3. Une fois que le gestionnaire du demandeur a approuvé, le propriétaire du département doit approuver la demande :  
   
     1. Le propriétaire du service peut la refuser.  
   
@@ -97,7 +97,7 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
   
 |Projet|Description|  
 |-------------|-----------------|  
-|ContosoHR|Contient les contrats de données, les objets métiers et les classes de référentiel.|  
+|ContosoHR|Contient des contrats de données, des objets d’affaires et des classes de dépôt.|  
 |HiringRequestService|Contient la définition du workflow Processus de demande d'embauche.<br /><br /> Ce projet est implémenté en tant qu'application console qui héberge automatiquement le workflow (fichier xaml) en tant service.|  
 |ResumeRequestService|Service de workflow qui collecte les CV des candidats jusqu'à ce qu'un délai expire ou que quelqu'un décide que le processus doit être arrêté.<br /><br /> Ce projet est implémenté en tant que service de workflow déclaratif (xamlx).|  
 |OrgService|Service qui expose les informations organisationnelles (Employees, Positions, PositionTypes et Departments). Ce service s'apparente au module Organigramme d'un projet ERP classique.<br /><br /> Ce projet est mis en œuvre comme une application de console qui expose un service de la Windows Communication Foundation (WCF).|  
@@ -122,7 +122,7 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
 |Activités parallèles|-   <xref:System.Activities.Statements.ParallelForEach%601>est utilisé pour s’inscrire dans la boîte de réception du PDG et des responsables RH en parallèle (en attendant deux étapes d’approbation des directeurs RH).<br />-   <xref:System.Activities.Statements.Parallel>est utilisé pour effectuer des tâches de nettoyage dans les étapes terminées et rejetées|HiringRequestService|  
 |Annulation de modèle|L'organigramme utilise <xref:System.Activities.Statements.CancellationScope> pour créer le comportement d'annulation (dans ce cas, pour procéder à un nettoyage).|HiringRequestService|  
 |Participant de persistance client|`HiringRequestPersistenceParticipant` enregistre les données d'une variable de workflow dans une table stockée dans la base de données des Ressources Humaines de Contoso.|HiringRequestService|  
-|Services de workflow|`ResumeRequestService` est implémenté à l'aide de services de workflow. La définition du workflow et les informations sur les services se trouvent dans le fichier ResumeRequestService.xamlx. Le service est configuré pour utiliser la persistance et le suivi.|ResumeRequestService|  
+|Services de workflow|`ResumeRequestService` est implémenté à l'aide de services de workflow. La définition de flux de travail et les informations de service sont contenues dans ResumeRequestService.xamlx. Le service est configuré pour utiliser la persistance et le suivi.|ResumeRequestService|  
 |Minuteurs durables|`ResumeRequestService` utilise des minuteurs durables pour définir la durée de validité d'une offre d'emploi (une fois le délai arrivé à expiration, l'offre d'emploi est fermée).|ResumeRequestService|  
 |Transactions|<xref:System.Activities.Statements.TransactionScope> est utilisé pour garantir la cohérence des données lors de l'exécution de plusieurs activités (lors de la réception d'un nouveau CV).|ResumeRequestService|  
 |Transactions|Le participant de persistance personnalisé (`HiringRequestPersistenceParticipant`) et le participant de suivi personnalisé (`HistoryFileTrackingParticipant`) utilisent la même transaction.|HiringRequestService|  
@@ -181,17 +181,17 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
   
 2. Après avoir été créé, la demande apparaît dans la boîte de réception de Michael (cliquez sur **Refresh** si vous ne voyez pas la demande) en attente de l’approbation de Peter Brehm, qui est le manager de Michael.  
   
-3. Peter souhaite agir sur la demande de Michael. Il pense que le poste exige cinq ans d'expérience en C# plutôt que trois. Il renvoie donc son commentaire pour révision.  
+3. Peter veut donner suite à la demande de Michael. Il pense que le poste exige cinq ans d'expérience en C# plutôt que trois. Il renvoie donc son commentaire pour révision.  
   
 4. Michael voit un message dans sa boîte de réception de son manager et veut agir. Michael voit l’historique de la demande de poste et est d’accord avec Peter. Michael modifie la description pour exiger cinq ans d'expérience en C#, puis il accepte la modification.  
   
-5. Peter prend connaissance de la demande telle que Michael l'a modifiée et l'accepte. La demande doit désormais être approuvée par le Director of Engineering, Tsvi Reiter.  
+5. Peter agit sur la demande modifiée de Michael et l’accepte. La demande doit désormais être approuvée par le Director of Engineering, Tsvi Reiter.  
   
 6. Tsvi Reiter souhaite accélérer la demande. Il entre donc un commentaire indiquant qu'elle est urgente et l'accepte.  
   
 7. La demande doit désormais être approuvée par deux responsables des Ressources Humaines ou le CEO. Le CEO, Brian Richard Goldstein, voit la demande urgente de Tsvi. Il traite la demande en l'acceptant, et ce faisant il passe outre le processus normal qui exige que la demande soit approuvée par deux responsables des Ressources Humaines.  
   
-8. La demande est supprimée de la boîte de réception de Michael et le processus d'embauche d'un SDET a désormais commencé.  
+8. La demande est retirée de la boîte de réception de Michael et le processus d’embauche d’un SDET a maintenant commencé.  
   
 ### <a name="start-resume-request"></a>Commencer la demande de CV  
   

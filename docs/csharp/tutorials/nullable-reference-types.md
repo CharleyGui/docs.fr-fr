@@ -4,12 +4,12 @@ description: Ce tutoriel avancé présente les types référence Nullable. Il ex
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: b00050c1d151b95e330f94eb9393a4031e47d5a8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 54cf9d812999cae837483b48cdedd89d9dc40fc9
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240065"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249127"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Tutoriel : Exprimer plus clairement une intention de conception avec les types référence Nullable et non Nullable
 
@@ -24,7 +24,7 @@ Ce didacticiel vous montre comment effectuer les opérations suivantes :
 > - écrire du code permettant au compilateur d’appliquer ces décisions de conception ;
 > - utiliser la fonctionnalité de référence Nullable dans vos propres conceptions.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Vous aurez besoin de configurer votre machine pour exécuter .NET Core, y compris le compilateur C 8.0. Le compilateur C 8.0 est disponible avec [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), ou [.NET Core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
@@ -72,7 +72,7 @@ L’application que vous allez créer fait les étapes suivantes :
 1. Communiquer avec les répondants jusqu’à ce que la taille du sondage terminé atteigne le nombre d’objectifs.
 1. Rédige des statistiques importantes sur les réponses à l’enquête.
 
-## <a name="build-the-survey-with-nullable-and-non-nullable-types"></a>Créer l’enquête avec des types Nullable et non Nullable
+## <a name="build-the-survey-with-nullable-and-non-nullable-reference-types"></a>Construire l’enquête avec des types de référence nuls et non annulables
 
 La première partie du code crée l’enquête. Vous allez écrire des classes pour modéliser une question et une enquête. L’enquête comporte trois types de questions, en fonction du format de la réponse : réponses par oui ou non, réponses chiffrées et réponses textuelles. Créer `public SurveyQuestion` une classe :
 

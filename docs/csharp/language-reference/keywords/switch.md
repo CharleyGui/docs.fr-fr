@@ -12,14 +12,16 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: e5580e81b9175cd95491fdba724bacbffa692a5e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 49b3836f17e91ae8de10d68e97fd662aae80d1ff
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345390"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249316"
 ---
 # <a name="switch-c-reference"></a>switch (informations de référence sur C#)
+
+Cet article `switch` couvre la déclaration. Pour plus `switch` d’informations sur l’expression (introduite dans C 8.0), voir l’article sur [ `switch` ](../operators/switch-expression.md) les expressions dans la section [expressions et opérateurs.](../operators/index.md)
 
 `switch` est une instruction de sélection qui choisit une *section de commutation* unique à exécuter à partir d’une liste de candidats en fonction d’une mise en correspondance de modèle avec l’*expression de correspondance*.
 
@@ -106,7 +108,7 @@ L’étiquette case `default` spécifie la section switch à exécuter si l’ex
 
 L’étiquette case `default` peut apparaître à n’importe quelle position dans l’instruction `switch`. Quelle que soit sa position dans le code source, il est toujours évalué en dernier, une fois que toutes les étiquettes `case` ont été évaluées.
 
-## <a name="a-namepattern--pattern-matching-with-the-switch-statement"></a><a name="pattern" /> Critères spéciaux avec l’instruction `switch`
+## <a name="pattern-matching-with-the-switch-statement"></a><a name="pattern" /> Critères spéciaux avec l’instruction `switch`
 
 Chaque instruction `case` définit un modèle qui, s’il correspond à l’expression de correspondance, entraîne l’exécution de la section de commutation qui le contient. Toutes les versions de C# prennent en charge le modèle de constante. Les autres modèles sont pris en charge à compter de C# 7.0.
 
@@ -183,7 +185,7 @@ Sans critères spéciaux, ce code peut être écrit comme suit. L’utilisation 
 
 [!code-csharp[type-pattern2#1](~/samples/snippets/csharp/language-reference/keywords/switch/type-pattern2.cs#1)]
 
-## <a name="a-namewhen--the-case-statement-and-the-when-clause"></a><a name="when" /> L’instruction `case` et la clause `when`
+## <a name="the-case-statement-and-the-when-clause"></a><a name="when" /> L’instruction `case` et la clause `when`
 
 À compter de C# 7.0, comme les instructions case ne s’excluent pas nécessairement mutuellement, vous pouvez ajouter une clause `when` pour spécifier une condition supplémentaire qui doit être satisfaite pour que l’instruction case soit évaluée à true. La clause `when` peut être toute expression qui retourne une valeur booléenne.
 

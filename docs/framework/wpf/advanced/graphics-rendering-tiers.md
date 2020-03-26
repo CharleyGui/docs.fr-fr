@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics rendering tiers [WPF]
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-ms.openlocfilehash: 3c21ae3d00aa9f1b48a89650430b89ceccb2a1b7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 05847271cf82739a6a0b609771043c02a7ffc0e9
+ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186016"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80291589"
 ---
 # <a name="graphics-rendering-tiers"></a>Couches de rendu graphiques
 Une couche de rendu définit un niveau des capacités et des performances du matériel graphique pour un appareil qui exécute une application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -45,7 +45,7 @@ Une couche de rendu définit un niveau des capacités et des performances du mat
 ### <a name="rendering-tier-0"></a>Couche de rendu 0  
  La valeur de couche de rendu 0 signifie qu’aucune accélération matérielle graphique n’est disponible pour l’application sur l’appareil. À ce niveau de la couche, vous devez supposer que tous les graphiques seront restitués par le logiciel sans accélération matérielle. La fonctionnalité de ce niveau correspond à une version DirectX inférieure à 9,0.  
   
-### <a name="rendering-tier-1-and-rendering-tier-2"></a>Couche de rendu 1 et couche de rendu 2  
+### <a name="rendering-tier-1-and-rendering-tier-2"></a>Couche de rendu 1 et couche de rendu 2
   
 > [!NOTE]
 > À partir du cadre .NET 4, le rendu de niveau 1 a été redéfini pour inclure uniquement le matériel graphique qui prend en charge DirectX 9.0 ou plus. Le matériel graphique qui prend en charge DirectX 7 ou 8 est maintenant défini comme le rendu de niveau 0.  
@@ -57,7 +57,7 @@ Une couche de rendu définit un niveau des capacités et des performances du mat
 |Fonctionnalité|Niveau 1|Niveau 2|  
 |-------------|------------|------------|  
 |Version DirectX|Doit être supérieure ou égale à 9.0.|Doit être supérieure ou égale à 9.0.|  
-|RAM vidéo|Doit être supérieure ou égale à 60 Mo.|Doit être supérieure ou égale à 120 Mo.|  
+|RAM vidéo|Doit être supérieur ou égal à 60 Mo.|Doit être supérieur ou égal à 120 Mo.|  
 |Nuanceur de pixels|Le niveau de version doit être supérieur ou égal à 2.0.|Le niveau de version doit être supérieur ou égal à 2.0.|  
 |Nuanceur de sommets|Aucune spécification.|Le niveau de version doit être supérieur ou égal à 2.0.|  
 |Unités de multitexture|Aucune spécification.|Le nombre d’unités doit être supérieur ou égal à 4.|  
@@ -72,7 +72,7 @@ Une couche de rendu définit un niveau des capacités et des performances du mat
 |Mappage MIP 3D|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] tente d’utiliser le mappage MIP lors de l’affichage du contenu 3D. La cartographie du MIP améliore la qualité du rendu de texture <xref:System.Windows.Controls.Viewport3D>lorsqu’une texture occupe un champ de vision plus petit dans un .|  
 |Dégradés radiaux|Bien que pris en <xref:System.Windows.Media.RadialGradientBrush> charge, évitez l’utilisation de grands objets.|  
 |Calculs d’éclairage 3D|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] exécute l’éclairage par sommet, ce qui signifie qu’une intensité légère doit être calculée à chaque sommet pour chaque matériel appliqué à un maillage.|  
-|Rendu de texte|Le rendu de police de sous-pixel utilise les nuanceurs de pixels disponibles sur le matériel graphique.|  
+|Rendu de texte|Le rendu de police de sous-pixel utilise les ombrageurs de pixels disponibles sur le matériel graphique.|  
   
  Les fonctionnalités et fonctions suivantes sont à accélération matérielle uniquement pour la couche de rendu 2 :  
   
@@ -101,7 +101,7 @@ Une couche de rendu définit un niveau des capacités et des performances du mat
 |Paramètre|Description|  
 |-------------|-----------------|  
 |**Option Désactiver l’accélération matérielle**|Spécifie si l’accélération matérielle doit être activée.|  
-|**Valeur d’échantillonnage multiple maximale**|Spécifie le degré de multisampling pour antialiasing contenu 3-D.|  
+|**Valeur d’échantillonnage multiple maximale**|Spécifie le degré de multisampling pour anti-étiquetage du contenu 3D.|  
 |**Paramètre Date de pilote vidéo requise**|Spécifie si le système désactive l’accélération matérielle pour les pilotes commercialisés avant novembre 2004.|  
 |**Option Utiliser le rastériseur de référence**|Spécifie si [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] doit utiliser le rastériseur de référence.|  
   
@@ -124,7 +124,7 @@ Une couche de rendu définit un niveau des capacités et des performances du mat
   
  Lorsque vous exécutez l’outil de diagnostic DirectX, la fenêtre principale contient un ensemble d’onglets qui vous permettent d’afficher et de diagnostiquer les informations relatives à DirectX. Par exemple, l’onglet **Système** fournit des informations système sur votre ordinateur et spécifie la version de DirectX qui est installée sur votre ordinateur.  
   
- ![Capture d’écran : outil de diagnostic DirectX](./media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")  
+ ![Capture d’écran: DirectX Diagnostic Tool](./media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")  
 Fenêtre principale de l’outil de diagnostic DirectX  
   
 ## <a name="see-also"></a>Voir aussi

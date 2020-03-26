@@ -8,12 +8,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: b85d0df086f3ca65ed995594dd374286e1c3ba5c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b126706ff9c881e5c2d5cc7ee4833ac8896e3fcc
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847727"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507241"
 ---
 # <a name="structure-types-c-reference"></a>Types de structure (référence C)
 
@@ -43,7 +43,7 @@ Lorsque vous concevez un type de structure, vous avez les mêmes capacités qu�
 
 Dans le C, vous devez initialiser une variable déclarée avant qu’elle puisse être utilisée. Étant donné qu’une `null` variable de type structure ne peut pas être (sauf s’il s’agit d’une variable d’un type de [valeur nul),](nullable-value-types.md)vous devez instantanéiser une instance du type correspondant. Il y a plusieurs façons de le faire.
 
-En règle générale, vous instantanéez un type de [`new`](../operators/new-operator.md) structure en appelant un constructeur approprié avec l’opérateur. Chaque type de structure a au moins un constructeur. C’est un constructeur implicite sans paramètres, qui produit la [valeur par défaut](default-values.md) du type. Vous pouvez également utiliser l’opérateur [par défaut](../operators/default.md) ou littéralement pour produire la valeur par défaut d’un type.
+En règle générale, vous instantanéez un type de [`new`](../operators/new-operator.md) structure en appelant un constructeur approprié avec l’opérateur. Chaque type de structure a au moins un constructeur. C’est un constructeur implicite sans paramètres, qui produit la [valeur par défaut](default-values.md) du type. Vous pouvez également utiliser une [expression de valeur par défaut](../operators/default.md) pour produire la valeur par défaut d’un type.
 
 Si tous les champs d’instance d’un type de `new` structure sont accessibles, vous pouvez également l’instantanér sans l’opérateur. Dans ce cas, vous devez initialiser tous les champs d’instance avant la première utilisation de l’instance. L’exemple suivant montre comment effectuer cette opération :
 

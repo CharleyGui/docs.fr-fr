@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: d2fd879203932ea3f2211e38a2efdd626928962b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 828543b95ed82f465c92212748c6250b7fc84051
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713909"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249381"
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Introduction à la langue C et au cadre .NET
 
@@ -22,7 +22,7 @@ C# est un langage élégant et de type sécurisé orienté objet qui permet aux 
   
 ## <a name="c-language"></a>langage C#
 
-La syntaxe C# est très expressive, mais elle est également simple et facile à apprendre. La syntaxe bouclée de Cmd sera immédiatement reconnaissable à toute personne familière avec C, C OU Java. Les développeurs qui connaissent un de ces langages peuvent généralement commencer à travailler efficacement en C# en très peu de temps. La syntaxe C simplifie bon nombre des complexités de la Cmd et fournit des caractéristiques puissantes telles que des types de valeur nuls, des énumérations, des délégués, des expressions lambda et un accès direct à la mémoire. C# prend en charge des méthodes et types génériques qui fournissent de meilleures performances et plus de sécurité pour les types, et des itérateurs, qui permettent aux implémenteurs de classes de collection de définir des comportements d’itération personnalisés qui peuvent être utilisés facilement par le code client. Les expressions de requêtes intégrées par la langue (LINQ) font de la requête fortement tapée une construction linguistique de première classe.  
+La syntaxe C# est très expressive, mais elle est également simple et facile à apprendre. La syntaxe bouclée de Cmd sera immédiatement reconnaissable à toute personne familière avec C, C OU Java. Les développeurs qui connaissent un de ces langages peuvent généralement commencer à travailler efficacement en C# en très peu de temps. La syntaxe C simplifie bon nombre des complexités de la Cmd et fournit des caractéristiques puissantes telles que les types nuls, les énumérations, les délégués, les expressions lambda et l’accès direct à la mémoire. C# prend en charge des méthodes et types génériques qui fournissent de meilleures performances et plus de sécurité pour les types, et des itérateurs, qui permettent aux implémenteurs de classes de collection de définir des comportements d’itération personnalisés qui peuvent être utilisés facilement par le code client. Les expressions de requêtes intégrées par la langue (LINQ) font de la requête fortement tapée une construction linguistique de première classe.  
   
  En tant que langage orienté objet, C# prend en charge les concepts d’encapsulation, d’héritage et de polymorphisme. Toutes les variables et méthodes, y compris la méthode `Main`, le point d’entrée de l’application, sont encapsulées dans des définitions de classe. Une classe peut hériter directement d'une classe parent, mais peut implémenter un nombre quelconque d'interfaces. Les méthodes qui substituent des méthodes virtuelles dans une classe parente requièrent le mot-clé `override` pour éviter toute redéfinition accidentelle. En C#, un struct est comme une classe légère : il s’agit d’un type alloué par la pile qui peut implémenter des interfaces mais ne prend pas en charge l’héritage.  
   

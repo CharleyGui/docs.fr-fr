@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: cdb35b212d5bfc4cc685fbfd6c294066983709df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ec67d8ec5c0b102ea0b2434119c99f93a0bbe8dd
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847298"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507111"
 ---
 # <a name="operator-overloading-c-reference"></a>Surcharge d’opérateur (référence C#)
 
@@ -43,7 +43,7 @@ Le tableau suivant fournit des informations sur la possibilité de surcharge des
 |[a&#91;i&#93;](member-access-operators.md#indexer-operator-)|L’accès à un élément n’est pas considéré comme un opérateur surchargeable, mais vous pouvez définir un [indexeur](../../programming-guide/indexers/index.md).|
 |[(T)x](type-testing-and-cast.md#cast-operator-)|L’opérateur de cast ne peut pas être surchargé, mais vous pouvez définir de nouveaux opérateurs de conversion. Pour plus d’informations, consultez [Opérateurs de conversion définie par l’utilisateur](user-defined-conversion-operators.md).|
 |[+=](arithmetic-operators.md#compound-assignment), [-=](arithmetic-operators.md#compound-assignment) [ \* ](arithmetic-operators.md#compound-assignment), [/=](arithmetic-operators.md#compound-assignment) [%=](arithmetic-operators.md#compound-assignment), [&=](boolean-logical-operators.md#compound-assignment), , [&#124;](boolean-logical-operators.md#compound-assignment) [^=](boolean-logical-operators.md#compound-assignment), [ \< \< ](bitwise-and-shift-operators.md#compound-assignment), ,[>>=](bitwise-and-shift-operators.md#compound-assignment)|Les opérateurs d’assignation composée ne peuvent pas être surchargés explicitement. Toutefois, quand vous surchargez un opérateur binaire, l’opérateur d’assignation composée correspondant, le cas échéant, est aussi implicitement surchargé. Par exemple, `+=` est évalué à l’aide de l’opérateur `+`, qui peut être surchargé.|
-|[X](member-access-operators.md#index-from-end-operator-), [x y](assignment-operator.md), [x.y](member-access-operators.md#member-access-operator-), [c ? t : f](conditional-operator.md), x [?? y](null-coalescing-operator.md), x [?? y](null-coalescing-operator.md), [x.. y](member-access-operators.md#range-operator-), [x->](pointer-related-operators.md#pointer-member-access-operator--)y [=>](lambda-operator.md), , [f.x)](member-access-operators.md#invocation-operator-), [as](type-testing-and-cast.md#as-operator), [await](await.md), [checked](../keywords/checked.md), [unchecked](../keywords/unchecked.md), [par défaut](default.md), [délégué](delegate-operator.md), [est](type-testing-and-cast.md#is-operator), [nom de](nameof.md), [nouveau](new-operator.md), [taille de](sizeof.md), [stackalloc](stackalloc.md), [typeof](type-testing-and-cast.md#typeof-operator)|Ces opérateurs ne peuvent pas être surchargés.|
+|[X](member-access-operators.md#index-from-end-operator-), [x y](assignment-operator.md), [x.y](member-access-operators.md#member-access-expression-), [c ? t : f](conditional-operator.md), x [?? y](null-coalescing-operator.md), x [?? y](null-coalescing-operator.md), [x.. y](member-access-operators.md#range-operator-), [x->](pointer-related-operators.md#pointer-member-access-operator--)y [=>](lambda-operator.md), , [f.x)](member-access-operators.md#invocation-expression-), [as](type-testing-and-cast.md#as-operator), [await](await.md), [checked](../keywords/checked.md), [unchecked](../keywords/unchecked.md), [par défaut](default.md), [délégué](delegate-operator.md), [est](type-testing-and-cast.md#is-operator), [nom de](nameof.md), [nouveau](new-operator.md), [taille de](sizeof.md), [stackalloc](stackalloc.md), [typeof](type-testing-and-cast.md#typeof-operator)|Ces opérateurs ne peuvent pas être surchargés.|
 
 > [!NOTE]
 > Les opérateurs de comparaison doivent être surchargés par paires. Autrement dit, si l’un des opérateurs d’une paire est surchargé, l’autre doit également l’être. Il s’agit de paires telles que les suivantes :

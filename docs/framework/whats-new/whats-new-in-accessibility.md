@@ -7,12 +7,12 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - what's new [.NET Framework]
-ms.openlocfilehash: 4dbc2024aa2e956b23030ae6eab987e65e006d12
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4243599f44749e7b38ebe78ca88b8ec2a9390650
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400182"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249719"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Nouveautés du .NET Framework dans le domaine de l’accessibilité
 
@@ -566,7 +566,7 @@ Dans .NET Framework 4.7.1, WinForms (Windows Forms) présente des modifications
 
 ```xml
 <!-- Windows 10 -->
-<supportedOS Id=”{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}” />
+<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
 ```
 
 Voici quelques exemples de modifications du contraste élevé :

@@ -3,12 +3,12 @@ title: Télémétrie du kit SDK .NET Core
 description: Découvrez les fonctionnalités de télémétrie du kit SDK .NET Core, qui collecte des informations d’utilisation à des fins d’analyse, les types de données collectées et comment désactiver la télémétrie.
 author: KathleenDollard
 ms.date: 08/27/2019
-ms.openlocfilehash: 9d5d7ff09ade89712f2fbbe35224851bb1c28b4c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a79b791abc99331ff39f5e281ee0fdc62b258989
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78156684"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507280"
 ---
 # <a name="net-core-sdk-telemetry"></a>Télémétrie du kit SDK .NET Core
 
@@ -45,6 +45,8 @@ The .NET Core tools collect usage data in order to help us improve your experien
 
 Read more about .NET Core CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
 ```
+
+Pour désactiver ce message et le message de `DOTNET_NOLOGO` bienvenue `true`.NET Core, définissez la variable de l’environnement à . Notez que cette variable n’a aucun effet sur la télémétrie opt out.
 
 ## <a name="data-points"></a>Points de données
 

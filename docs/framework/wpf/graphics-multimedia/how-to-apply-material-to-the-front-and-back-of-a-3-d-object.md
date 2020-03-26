@@ -1,31 +1,31 @@
 ---
-title: 'Procédure : Appliquer un matériau à l’avant et l’arrière d’un objet 3D'
+title: 'Comment : Appliquer du matériel à l’avant et au dos d’un objet 3D'
 ms.date: 03/30/2017
 helpviewer_keywords:
-- 3-D objects [WPF], applying Material class
-- Material class [WPF], applying to both sides of 3-D object
+- 3D objects [WPF], applying Material class
+- Material class [WPF], applying to both sides of 3D object
 - classes [WPF], Material
 ms.assetid: d93c8ad6-4939-4d29-9544-4d16d98093c1
-ms.openlocfilehash: 1d3f6a0622b5e0ccccf14af99782bb78dfe87ccb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5c24879d97e7857fb07fcef4a9ba8efa901e4a39
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698956"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112139"
 ---
-# <a name="how-to-apply-material-to-the-front-and-back-of-a-3-d-object"></a>Procédure : Appliquer un matériau à l’avant et l’arrière d’un objet 3D
-L’exemple suivant montre comment appliquer un <xref:System.Windows.Media.Media3D.Material> de l’objet à l’avant et arrière 3D et animer l’objet pour afficher les deux côtés de l’objet. Le <xref:System.Windows.Media.Media3D.GeometryModel3D.Material%2A> propriété d’un <xref:System.Windows.Media.Media3D.GeometryModel3D> est utilisé pour appliquer une croix rouge <xref:System.Windows.Media.Brush> à la face avant de l’objet et le <xref:System.Windows.Media.Media3D.GeometryModel3D.BackMaterial%2A> propriété du <xref:System.Windows.Media.Media3D.GeometryModel3D> est utilisé pour appliquer un bleu <xref:System.Windows.Media.Brush> à l’arrière de l’objet. Le code ci-dessous montre l’application des matériaux à l’objet :  
+# <a name="how-to-apply-material-to-the-front-and-back-of-a-3d-object"></a>Comment : Appliquer du matériel à l’avant et au dos d’un objet 3D
+L’exemple suivant montre <xref:System.Windows.Media.Media3D.Material> comment appliquer un à l’avant et à l’arrière d’un objet 3D et animer l’objet pour montrer les deux côtés de l’objet. La <xref:System.Windows.Media.Media3D.GeometryModel3D.Material%2A> propriété <xref:System.Windows.Media.Media3D.GeometryModel3D> d’un est <xref:System.Windows.Media.Brush> utilisée pour appliquer un rouge <xref:System.Windows.Media.Media3D.GeometryModel3D.BackMaterial%2A> sur <xref:System.Windows.Media.Media3D.GeometryModel3D> le côté avant <xref:System.Windows.Media.Brush> de l’objet et la propriété de l’est utilisé pour appliquer un bleu sur le côté arrière de l’objet. Le code ci-dessous affiche l’application des matériaux à l’objet :  
   
  [!code-xaml[Animation3DGallery_snip#BackMaterialAnimationExampleInline1](~/samples/snippets/csharp/VS_Snippets_Wpf/Animation3DGallery_snip/CS/BackMaterialAnimationExample.xaml#backmaterialanimationexampleinline1)]  
   
 ## <a name="example"></a>Exemple  
- Le code suivant montre l’exemple complet.  
+ Le code suivant affiche l’échantillon entier.  
   
  [!code-xaml[Animation3DGallery_snip#BackMaterialAnimationExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/Animation3DGallery_snip/CS/BackMaterialAnimationExample.xaml#backmaterialanimationexamplewholepage)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Créer une scène 3D](how-to-create-a-3-d-scene.md)
-- [Vue d’ensemble des graphiques 3D](3-d-graphics-overview.md)
-- [Animer les propriétés de matériel dans une scène 3D](how-to-animate-material-properties-in-a-3-d-scene.md)
-- [Appliquer un matériau émissif à un objet 3D](how-to-apply-emissive-material-to-a-3-d-object.md)
+- [Aperçu graphique 3D](3-d-graphics-overview.md)
+- [Animer les propriétés matérielles dans une scène 3D](how-to-animate-material-properties-in-a-3-d-scene.md)
+- [Appliquer le matériel Emissive sur un objet 3D](how-to-apply-emissive-material-to-a-3-d-object.md)

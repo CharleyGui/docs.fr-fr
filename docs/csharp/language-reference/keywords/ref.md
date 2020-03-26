@@ -1,18 +1,18 @@
 ---
 title: ref, mot clé - Référence C#
-ms.date: 03/26/2019
+ms.date: 03/19/2020
 f1_keywords:
 - ref_CSharpKeyword
 - ref
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 05f0bd8566851678203a3f064b96bfff7dee18b6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 61ee0e320f85925e4d804a6032e01c0485a31451
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399363"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249329"
 ---
 # <a name="ref-c-reference"></a>ref (référence C#)
 
@@ -25,7 +25,7 @@ Le mot clé `ref` indique une valeur qui est passée par référence. Il est ut
 
 ## <a name="passing-an-argument-by-reference"></a>Passage d’un argument par référence
 
-Quand il est utilisé dans la liste de paramètres d’une méthode, le mot clé `ref` indique qu’un argument est passé par référence, et non par valeur. Le mot clé `ref` fait du paramètre formel un alias de l’argument, qui doit être une variable. En d’autres termes, toute opération portant sur le paramètre est effectuée sur l’argument. Par exemple, si l’appelant passe une expression de variable locale ou une expression d’accès à un élément de tableau et que la méthode appelée remplace l’objet auquel fait référence le paramètre ref, la variable locale de l’appelant ou l’élément de tableau fait désormais référence au nouvel objet quand la méthode retourne une valeur.
+Quand il est utilisé dans la liste de paramètres d’une méthode, le mot clé `ref` indique qu’un argument est passé par référence, et non par valeur. Le mot clé `ref` fait du paramètre formel un alias de l’argument, qui doit être une variable. En d’autres termes, toute opération portant sur le paramètre est effectuée sur l’argument. Par exemple, si l’appelant passe une expression variable locale ou une expression d’accès à l’élément de tableau, et que la méthode appelée remplace l’objet auquel le paramètre de l’arbitre se réfère, alors la variable locale de l’appelant ou l’élément de tableau se réfère maintenant au nouvel objet lorsque le la méthode revient.
 
 > [!NOTE]
 > Ne confondez pas le concept de passage par référence avec celui de types de référence. Les deux concepts ne sont pas identiques. Un paramètre de méthode peut être modifié par `ref`, qu'il s'agisse d'un type valeur ou d'un type référence. Il n'y a aucun boxing d'un type valeur lorsqu'il est passé par référence.  
@@ -59,7 +59,13 @@ Toutefois, les méthodes peuvent être surchargées quand une méthode a un para
  Vous ne pouvez pas utiliser les mots clés `ref`, `in` ou `out` pour les types de méthodes suivants :  
   
 - Méthodes async, que vous définissez à l’aide du modificateur [async](async.md).  
-- Les méthodes Iterator, qui incluent une instruction [yield return](yield.md) ou `yield break`.  
+- Les méthodes Iterator, qui incluent une instruction [yield return](yield.md) ou `yield break`.
+
+En outre, les [méthodes d’extension](../../programming-guide/classes-and-structs/extension-methods.md) ont les restrictions suivantes :
+
+- Le `out` keywoard ne peut pas être utilisé sur le premier argument d’une méthode d’extension.
+- Le `ref` mot clé ne peut pas être utilisé sur le premier argument d’une méthode d’extension lorsque l’argument n’est pas une struction, ou un type générique non contraint d’être une struction.
+- Le `in` mot clé ne peut pas être utilisé à moins que le premier argument soit une struction. Le `in` mot clé ne peut pas être utilisé sur n’importe quel type générique, même lorsqu’il est contraint d’être une struction.
 
 ## <a name="passing-an-argument-by-reference-an-example"></a>Passage d’un argument par référence : exemple
 

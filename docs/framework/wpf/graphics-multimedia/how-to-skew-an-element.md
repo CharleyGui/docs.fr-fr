@@ -6,12 +6,12 @@ helpviewer_keywords:
 - graphics [WPF], skewing elements
 - classes [WPF], SkewTransform
 ms.assetid: 56b65f2f-dc6e-4238-923f-ca44ec53c52f
-ms.openlocfilehash: 370ac28b07427345b52822133b5414b45d4462eb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 10b00044c1c518641281e2e72cdb5a68474b5170
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187660"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112022"
 ---
 # <a name="how-to-skew-an-element"></a>Comment : incliner un élément
 Cet exemple montre comment <xref:System.Windows.Media.SkewTransform> utiliser un élément pour biaiser. Une inclinaison est une transformation qui étire l’espace de coordonnées de façon non uniforme. Une utilisation typique <xref:System.Windows.Media.SkewTransform> d’un est pour simuler la profondeur 3D dans des objets 2D.  
@@ -24,7 +24,7 @@ Cet exemple montre comment <xref:System.Windows.Media.SkewTransform> utiliser un
   
  L’exemple suivant applique un biais horizontal <xref:System.Windows.Shapes.Rectangle> de 45 degrés à un point central de (0,0).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  [!code-xaml[transformsSample#41](~/samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/SkewTransformExample.xaml#41)]  
   
  L’exemple suivant applique un biais horizontal <xref:System.Windows.Shapes.Rectangle> de 45 degrés à un point central de (25,25).  
@@ -40,7 +40,7 @@ Cet exemple montre comment <xref:System.Windows.Media.SkewTransform> utiliser un
  ![Exemples de SkewTransform](./media/img-wcpsdk-graphicsmm-skewtransformexample.gif "img_wcpsdk_graphicsmm_skewtransformexample")  
 Les trois exemples SkewTransform illustrés  
   
- Pour voir l’exemple complet, consultez la page [2-D Transforms Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms) (Exemple de transformations 2D).  
+ Pour l’échantillon complet, voir [2D Transforms Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms).  
   
 ## <a name="see-also"></a>Voir aussi
 

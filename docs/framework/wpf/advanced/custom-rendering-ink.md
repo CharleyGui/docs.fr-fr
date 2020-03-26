@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ink [WPF], custom-rendering
 - classes [WPF], InkCanvas
 ms.assetid: 65c978a7-0ee0-454f-ac7f-b1bd2efecac5
-ms.openlocfilehash: 3cf0d98c40e71a380b218c76d6e52d00cdd05342
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0ceb831057a9a92aa7319d2004f04d7cf5ac820e
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186348"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111827"
 ---
 # <a name="custom-rendering-ink"></a>Encre de rendu personnalisé
 La <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> propriété d’un accident vasculaire cérébral vous permet de spécifier l’apparence d’un accident vasculaire cérébral, <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> comme sa taille, sa couleur et sa forme, mais il peut y avoir des moments où vous voulez personnaliser l’apparence au-delà de ce que vous autorisez. Vous souhaiterez peut-être personnaliser l’apparence de l’encre en appliquant des effets tels qu’aérographe, peinture à l’huile et autres. La Windows Presentation Foundation (WPF) vous permet de rendre <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> <xref:System.Windows.Ink.Stroke> l’encre personnalisée en implémentant une coutume et un objet.  

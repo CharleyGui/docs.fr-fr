@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1b97afeb-03f8-41e2-8eb3-58aff65f7d18
-ms.openlocfilehash: 4b95ec5a3e83fa5553a154ed64704312726153cf
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 46e977088cd6eca7842565ae6b258f70ca5920a9
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785630"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111814"
 ---
 # <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a>Création d'un DataTable à partir d'une requête (LINQ to DataSet)
 La liaison de données est une utilisation courante de l’objet <xref:System.Data.DataTable>. La méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> prend les résultats d'une requête et copie les données dans un objet <xref:System.Data.DataTable> qui peut ensuite être utilisé pour la liaison de données. Une fois les opérations de données effectuées, le nouveau <xref:System.Data.DataTable> est refusionné dans le <xref:System.Data.DataTable> source.  
   
  La méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> utilise le processus suivant pour créer un <xref:System.Data.DataTable> à partir d'une requête :  
   
-1. La méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> clone une <xref:System.Data.DataTable> de la table source (un objet <xref:System.Data.DataTable> qui implémente l'interface <xref:System.Linq.IQueryable%601>). La <xref:System.Collections.IEnumerable> source provient généralement d’une expression LINQ to DataSet ou d’une requête de méthode.  
+1. La méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> clone une <xref:System.Data.DataTable> de la table source (un objet <xref:System.Data.DataTable> qui implémente l'interface <xref:System.Linq.IQueryable%601>). La <xref:System.Collections.IEnumerable> source provient généralement d’une requête en expression ou en méthode LINQ à DataSet.  
   
 2. Le schéma de la <xref:System.Data.DataTable> clonée est créé à partir des colonnes du premier objet <xref:System.Data.DataRow> énuméré dans la table source et le nom de la table clonée est celui de la table source auquel le mot « query » est accolé.  
   
@@ -25,19 +25,19 @@ La liaison de données est une utilisation courante de l’objet <xref:System.Da
   
 4. Le <xref:System.Data.DataTable> cloné est retourné une fois que tous les objets <xref:System.Data.DataRow> de la table d'entrée interrogeable ont été copiés. Si la séquence source ne contient aucun objet <xref:System.Data.DataRow>, la méthode retourne un <xref:System.Data.DataTable> vide.  
   
- Notez que l'appel de la méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> entraîne l'exécution de la requête liée à la table source.  
+L’appel de la <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> méthode provoque l’exécution de la requête liée à la table source.  
   
  Lorsque la méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> rencontre une référence Null ou un type valeur Nullable dans une ligne de la table source, elle remplace la valeur par <xref:System.DBNull.Value>. De cette manière, les valeurs Null sont gérées correctement dans le <xref:System.Data.DataTable> retourné.  
   
- Remarque : La <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> méthode accepte comme entrée une requête qui peut retourner des lignes à <xref:System.Data.DataTable> partir <xref:System.Data.DataSet> de plusieurs objets ou. La méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> copie les données mais pas les propriétés à partir des objets <xref:System.Data.DataTable> ou <xref:System.Data.DataSet> sources vers le <xref:System.Data.DataTable> retourné. Vous devrez définir explicitement les propriétés sur le <xref:System.Data.DataTable> retourné, tel que <xref:System.Data.DataTable.Locale%2A> et <xref:System.Data.DataTable.TableName%2A>.  
+ Remarque : la méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> accepte en entrée une requête qui peut retourner des lignes de plusieurs objets <xref:System.Data.DataTable> ou <xref:System.Data.DataSet>. La méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> copie les données mais pas les propriétés à partir des objets <xref:System.Data.DataTable> ou <xref:System.Data.DataSet> sources vers le <xref:System.Data.DataTable> retourné. Vous devrez définir explicitement les propriétés sur le <xref:System.Data.DataTable> retourné, tel que <xref:System.Data.DataTable.Locale%2A> et <xref:System.Data.DataTable.TableName%2A>.  
   
  L'exemple ci-dessous interroge la table SalesOrderHeader pour obtenir les commandes postérieures au 8 août 2001 et utilise la méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> pour créer un <xref:System.Data.DataTable> à partir de cette requête. Le <xref:System.Data.DataTable> est ensuite lié à une <xref:System.Windows.Forms.BindingSource> qui agit en tant que proxy pour une <xref:System.Windows.Forms.DataGridView>.  
   
  [!code-csharp[DP LINQ to DataSet Examples#CopyToDataTable1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#copytodatatable1)]
  [!code-vb[DP LINQ to DataSet Examples#CopyToDataTable1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#copytodatatable1)]  
   
-## <a name="creating-a-custom-copytodatatablet-method"></a>Création d’une méthode\<CopyToDataTable T > personnalisée  
- Les méthodes <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> existantes ne fonctionneront que sur une source <xref:System.Collections.Generic.IEnumerable%601> où le paramètre générique `T` est de type <xref:System.Data.DataRow>. Bien qu'utile, cela ne permet pas de créer des tables à partir d'une séquence de types scalaires, de requêtes qui retournent des types anonymes ou de requêtes qui effectuent des jointures de tables. Pour obtenir un exemple d’implémentation de deux méthodes `CopyToDataTable` personnalisées qui chargent une table à partir d’une séquence de types scalaires ou anonymes, consultez [procédure : Implémentez\<CopyToDataTable T > où le type générique T n’est pas](implement-copytodatatable-where-type-not-a-datarow.md)un DataRow.  
+## <a name="creating-a-custom-copytodatatablet-method"></a>Création d’une méthode\<de> CopyToDataTable T personnalisée  
+ Les méthodes <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> existantes ne fonctionneront que sur une source <xref:System.Collections.Generic.IEnumerable%601> où le paramètre générique `T` est de type <xref:System.Data.DataRow>. Bien qu'utile, cela ne permet pas de créer des tables à partir d'une séquence de types scalaires, de requêtes qui retournent des types anonymes ou de requêtes qui effectuent des jointures de tables. Pour un exemple de la `CopyToDataTable` façon de mettre en œuvre deux méthodes personnalisées qui chargent une table à partir d’une séquence de types scalaires ou anonymes, voir [comment: Implémenter CopyToDataTable\<T> Où le type générique T n’est pas un DataRow](implement-copytodatatable-where-type-not-a-datarow.md)s.  
   
  Les exemples de cette section utilisent les types personnalisés suivants :  
   
@@ -50,7 +50,7 @@ La liaison de données est une utilisation courante de l’objet <xref:System.Da
  [!code-csharp[DP Custom CopyToDataTable Examples#Join](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#join)]
  [!code-vb[DP Custom CopyToDataTable Examples#Join](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#join)]  
   
-### <a name="example"></a>Exemples  
+### <a name="example"></a>Exemple  
  L’exemple suivant interroge une collection d’articles dont le prix est supérieur à 9,99 $ et crée une table à partir des résultats de la requête.  
   
  [!code-csharp[DP Custom CopyToDataTable Examples#LoadItemsIntoTable](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#loaditemsintotable)]
@@ -62,7 +62,7 @@ La liaison de données est une utilisation courante de l’objet <xref:System.Da
  [!code-csharp[DP Custom CopyToDataTable Examples#LoadItemsIntoExistingTable](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#loaditemsintoexistingtable)]
  [!code-vb[DP Custom CopyToDataTable Examples#LoadItemsIntoExistingTable](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#loaditemsintoexistingtable)]  
   
-### <a name="example"></a>Exemples  
+### <a name="example"></a>Exemple  
  L’exemple suivant interroge une collection d’articles dont le prix est supérieur à 9,99 $ et projette les résultats. La séquence de types anonymes retournée est chargée dans une table existante. Le schéma de la table est automatiquement développé car les types `Book` et `Movies` sont dérivés du type `Item`.  
   
  [!code-csharp[DP Custom CopyToDataTable Examples#LoadItemsExpandSchema](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#loaditemsexpandschema)]

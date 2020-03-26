@@ -10,12 +10,12 @@ helpviewer_keywords:
 - namespace [C#]
 - global keyword [C#]
 ms.assetid: 698b5a73-85cf-4e0e-9e8e-6496887f8527
-ms.openlocfilehash: a18e52ea05d49bf2b3a468923f1433f09fff9a8b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 84c418627462f83630fe5072a0b0e2089f6588f6
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712674"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507124"
 ---
 # <a name="-operator-c-reference"></a>Opérateur :: (référence C#)
 
@@ -56,7 +56,7 @@ Utilisez le nomspace `::` alias qualifier pour accéder à un membre d’un espa
   > [!NOTE]
   > Le mot clé `global` est l’alias d’espace de noms global seulement quand il s’agit de l’identificateur de gauche du qualificateur `::`.
 
-Vous pouvez également utiliser [l’opérateur `.` d’accès](member-access-operators.md#member-access-operator-) membre pour accéder à un membre d’un espace nom alias. Toutefois, `.` l’opérateur est également utilisé pour accéder à un membre type. Le qualificateur `::` garantit que son identificateur de gauche référence toujours un alias d’espace de noms, même s’il existe un type ou un espace de noms portant le même nom.
+Vous pouvez également utiliser le [ `.` jeton](member-access-operators.md#member-access-expression-) pour accéder à un membre d’un espace nom alias. Cependant, `.` le jeton est également utilisé pour accéder à un membre type. Le qualificateur `::` garantit que son identificateur de gauche référence toujours un alias d’espace de noms, même s’il existe un type ou un espace de noms portant le même nom.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

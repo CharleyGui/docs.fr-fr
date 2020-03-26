@@ -3,12 +3,12 @@ title: Bienvenue dans .NET
 description: Bien démarrer avec la famille de technologies .NET.
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 20332f4dcc0664287873a27e0064a4765b1ecde7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bfc9b55f06a5830c13df52f992d2630f1f45d8be
+ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77124219"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80228795"
 ---
 # <a name="welcome-to-net"></a>Bienvenue dans .NET
 
@@ -42,12 +42,12 @@ Pour plus d’informations sur les dernières fonctionnalités ajoutées aux imp
 
 Cette documentation couvre les plateformes et les langages compatibles avec .NET. Pour démarrer avec .NET et ses langages, consultez l’une des sections suivantes :
 
-- [Guide de .NET](standard/index.md)
-- [Guide .NET Core](core/index.md)
-- [Guide du .NET Framework](framework/index.md)
+- [Guide de voyage .NET](standard/index.md)
+- [Guide de base .NET](core/index.md)
+- [Guide du .NET Framework](framework/index.yml)
 - [Guide de voyage CMD](csharp/index.yml)
-- [F# Guide](fsharp/index.yml)
-- [Guide Visual Basic](visual-basic/index.yml)
+- [Guide de voyage F](fsharp/index.yml)
+- [Guide de base visuel](visual-basic/index.yml)
 - [ML.NET Guide](machine-learning/index.yml)
 - [.NET pour Apache Spark](spark/index.yml)
 - [Architecture de l’application .NET](architecture/index.yml)

@@ -3,18 +3,18 @@ title: Prise en main de C# et Visual Studio Code
 description: Découvrez comment créer et déboguer votre première application .NET Core en C# à l’aide de Visual Studio Code.
 author: kendrahavens
 ms.date: 12/05/2018
-ms.openlocfilehash: 8eaf1ba2314dcab96db615a8691afed82c5011a7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 49a1271f2bf74224e189e70bebf0d22c49408e5d
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398880"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111060"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Prise en main de C# et Visual Studio Code
 
 .NET Core vous offre une plateforme rapide et évolutive pour la création d’applications qui s’exécutent sur Windows, Linux et Mac OS. Utilisez Visual Studio Code avec l’extension de langage C# pour une expérience d’édition puissante avec prise en charge complète de C# IntelliSense (saisie semi-automatique intelligente de code).
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 1. Installer [Visual Studio Code](https://code.visualstudio.com/).
 2. Installer le [.NET Core SDK](https://dotnet.microsoft.com/download).
@@ -79,7 +79,7 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
     ![Définition d'un point d'arrêt](media/with-visual-studio-code/set-breakpoint-vs-code.png)
 
 6. Pour commencer à débogage, appuyez sur <kbd>F5</kbd> ou sélectionnez la flèche verte. Le débogueur arrête l’exécution de votre programme lorsqu’il atteint le point d’arrêt que vous avez défini à l’étape précédente.
-    - Pendant le débogage, vous pouvez afficher vos variables locales dans le volet supérieur gauche ou utiliser la console de débogage.
+    - Tout en débogage, vous pouvez afficher vos variables locales dans la vitre en haut à gauche ou utiliser la console de débogé.
 
 7. Sélectionnez la flèche bleue en haut pour continuer le débogage, ou le carré rouge en haut pour l’arrêter.
 

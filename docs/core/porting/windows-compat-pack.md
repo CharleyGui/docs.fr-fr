@@ -3,12 +3,12 @@ title: Utiliser le pack de compatibilité Windows pour porter du code vers .NET 
 description: Découvrez le pack de compatibilité Windows et comment pouvez-vous l’utiliser pour porter le code cadre .NET existant à .NET Core.
 author: terrajobst
 ms.date: 12/07/2018
-ms.openlocfilehash: 91a653b2345d414c18ebdb6e8b7d6d49bbdbb83e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 166259ca37a2005d67f6c545e4843a940f05fb71
+ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76733612"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80228638"
 ---
 # <a name="use-the-windows-compatibility-pack-to-port-code-to-net-core"></a>Utiliser le pack de compatibilité Windows pour porter du code vers .NET Core
 
@@ -40,9 +40,9 @@ Il fournit environ 20 000 API, dont des API Windows uniquement ainsi des API mul
 - Mise en cache Windows Runtime
 - Services Windows
 
-Pour plus d’informations, consultez la [spécification du pack de compatibilité](https://github.com/dotnet/designs/blob/master/accepted/compat-pack/compat-pack.md).
+Pour plus d’informations, consultez la [spécification du pack de compatibilité](https://github.com/dotnet/designs/blob/master/accepted/2018/compat-pack/compat-pack.md).
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 1. Avant le portage, assurez-vous de jeter un oeil au [processus de portage](index.md).
 

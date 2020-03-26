@@ -6,19 +6,19 @@ helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-ms.openlocfilehash: 0fffbb2f1b58d8ba65d9c5ca8b7c8edc583af2da
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cd27f2fb893def9e186504cc9973bae71473f005
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400014"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80248906"
 ---
 # <a name="get-started-with-net-framework"></a>Démarrer avec .NET Framework
 
 .NET Framework est un environnement d’exécution en temps de course qui gère les applications qui ciblent .NET Framework. Il se compose d’un Common Language Runtime qui assure la gestion de la mémoire et d’autres services système, et d’une bibliothèque de classes étendue qui permet aux programmeurs de tirer parti d’un code solide et fiable dans tous les principaux aspects du développement d'applications.
 
 > [!NOTE]
-> .NET Framework est disponible uniquement sur les systèmes Windows. Vous pouvez utiliser [.NET Core](../../core/index.md) pour exécuter des applications sur Windows, MacOS et Linux.
+> .NET Framework est disponible uniquement sur les systèmes Windows. Vous pouvez utiliser [.NET Core](../../core/index.md) pour développer et exécuter des applications sur Windows, MacOS et Linux.
 
 ## <a name="what-is-net-framework"></a>Qu’est-ce que le cadre NET?
 
@@ -76,7 +76,7 @@ Pour plus d’informations sur le développement d’applications qui ciblent .N
 | Intitulé | Description |
 | ----- |------------ |
 | [Vue d’ensemble](overview.md) | Fournit des informations détaillées pour les développeurs qui construisent des applications qui ciblent .NET Framework. |
-| [Guide d'installation](../install/index.md) | Fournit des informations sur l’installation du cadre .NET. |  
+| [Guide d’installation](../install/index.md) | Fournit des informations sur l’installation du cadre .NET. |  
 | [.NET Framework et Out-of-Band Releases](the-net-framework-and-out-of-band-releases.md) | Décrit les versions finales hors plage du .NET Framework et leur utilisation dans votre application. |
 | [Exigences du système](system-requirements.md) | Répertorie les exigences matérielles et logicielles pour l’exécution du cadre .NET. |
 | [.NET Core et Open-Source](net-core-and-open-source.md) | Décrit .NET Core par rapport à .NET Framework et comment accéder aux projets open-source .NET Core. |
@@ -85,7 +85,7 @@ Pour plus d’informations sur le développement d’applications qui ciblent .N
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide du .NET Framework](../index.md)
+- [.NET Guide-cadre](../index.yml)
 - [Nouveautés](../whats-new/index.md)
 - [Navigateur d’API .NET](../../../api/index.md)
 - [Guide de développement](../development-guide.md)

@@ -1,5 +1,5 @@
 ---
-title: Opérateurs d’accès aux membres - Référence C#
+title: Opérateurs et expressions d’accès aux membres - Référence C
 description: Découvrez les opérateurs C# que vous pouvez utiliser pour accéder aux membres de type.
 ms.date: 09/18/2019
 author: pkulikov
@@ -32,25 +32,25 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 4d4bc0c192912b5fa87a8e91bc5ba0e1d4ce3598
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: da2ca4517bd007678d74ae9b76e10cad4c2696b4
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399510"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79546638"
 ---
-# <a name="member-access-operators-c-reference"></a>Opérateurs d’accès aux membres (référence C#)
+# <a name="member-access-operators-and-expressions-c-reference"></a>Opérateurs et expressions d’accès aux membres (référence C)
 
-Vous pouvez utiliser les opérateurs suivants lorsque vous accédez à un membre type :
+Vous pouvez utiliser les opérateurs et expressions suivants lorsque vous accédez à un membre type :
 
-- (accès des membres) : accéder à un membre d’un espace de nom ou d’un type [ `.` ](#member-access-operator-)
+- (accès des membres) : accéder à un membre d’un espace de nom ou d’un type [ `.` ](#member-access-expression-)
 - [(accès à l’élément de tableau ou à l’indexeur) : accéder à un élément de tableau ou à un indexeur de type `[]` ](#indexer-operator-)
 - [et `?[]` (opérateurs non conditionnels) : effectuer une opération d’accès à un membre ou à un élément uniquement si un opérande n’est pas `?.` ](#null-conditional-operators--and-)nul
-- (invocation) : appeler une méthode consultée ou invoquer un délégué [ `()` ](#invocation-operator-)
+- (invocation) : appeler une méthode consultée ou invoquer un délégué [ `()` ](#invocation-expression-)
 - [(index à partir de la fin) : indiquer que la position de l’élément est à partir de la fin d’une séquence `^` ](#index-from-end-operator-)
 - (gamme) : pour spécifier une gamme d’indices que vous pouvez utiliser pour obtenir une gamme d’éléments séquences [ `..` ](#range-operator-)
 
-## <a name="member-access-operator-"></a>Opérateur d’accès aux membres .
+## <a name="member-access-expression-"></a>Expression d’accès des membres .
 
 Le jeton `.` sert à accéder à l’un des membres d’un espace de noms ou d’un type, comme le montrent les exemples suivants :
 
@@ -109,7 +109,7 @@ void TraceMethod() {}
 
 ## <a name="null-conditional-operators--and-"></a>Opérateurs conditionnels Null ?. et ?[]
 
-Disponible en C 6 et plus tard, un opérateur `?.`sans condition `?[]`applique un accès de [membre,](#member-access-operator-), ou [l’accès à l’élément](#indexer-operator-), , opération à son opérande seulement si cet opérand évalue à non-null; sinon, il `null`revient . C'est
+Disponible en C 6 et plus tard, un opérateur `?.`sans condition `?[]`applique un accès de [membre,](#member-access-expression-), ou [l’accès à l’élément](#indexer-operator-), , opération à son opérande seulement si cet opérand évalue à non-null; sinon, il `null`revient . C'est
 
 - Si `a` évalue `null`à , `a?.x` le `a?[x]` `null`résultat ou est .
 - Si `a` l’on évalue à non-null, le résultat `a?.x` ou `a?[x]` est le même que le résultat ou `a.x` `a[x]`, respectivement.
@@ -150,7 +150,7 @@ if (handler != null)
 }
 ```
 
-## <a name="invocation-operator-"></a>Opérateur d’appel ()
+## <a name="invocation-expression-"></a>Expression d’invocation ()
 
 Utilisez des parenthèses, `()`, pour appeler une [méthode](../../programming-guide/classes-and-structs/methods.md) ou un [délégué](../../programming-guide/delegates/index.md).
 

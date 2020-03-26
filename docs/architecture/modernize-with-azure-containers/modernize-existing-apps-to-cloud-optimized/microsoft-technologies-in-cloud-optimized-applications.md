@@ -2,12 +2,12 @@
 title: Technologies Microsoft dans les applications Cloud-Optimized
 description: Moderniser les applications .NET existantes avec les conteneurs Azure Cloud et Windows (fr) Technologies Microsoft dans les applications Cloud-Optimized
 ms.date: 04/28/2018
-ms.openlocfilehash: 915aa99d2331c5b9c46eabef3335fb809baa9370
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5222ba13258f9c8a40ca3b9ce240aeb9f41da63
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69578222"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79546508"
 ---
 # <a name="microsoft-technologies-in-cloud-optimized-applications"></a>Technologies Microsoft dans les applications optimisées pour le cloud
 
@@ -19,7 +19,7 @@ La liste suivante décrit les outils, les technologies et les solutions qui sont
 
 - **Cloud géré**: Lorsque vous choisissez une option cloud gérée, vous pouvez éviter les dépenses et la complexité de la gestion et du support de l’infrastructure sous-jacente, des machines virtuelles, des correctifs OS et de la configuration du réseautage. Si vous choisissez de migrer en utilisant IaaS, vous êtes responsable de toutes ces tâches, et des coûts associés. Dans une option cloud gérée, vous ne gérez que les applications et services que vous développez. Le fournisseur de services cloud gère généralement tout le reste. Parmi les exemples de services cloud gérés chez Azure, citons [Azure SQL Database](https://azure.microsoft.com/services/sql-database), [Azure Redis Cache](https://azure.microsoft.com/services/cache/), [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/), [Azure Storage](https://azure.microsoft.com/services/storage/), [Azure Database for MySQL](https://azure.microsoft.com/services/mysql/), [Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/), [Azure Active Directory](https://azure.microsoft.com/services/active-directory/), et managed compute services like [VM scale sets](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [Azure App Service](https://azure.microsoft.com/services/app-service/), et [Azure Kubernetes Service](https://azure.microsoft.com/services/container-service/).
 
-- **Développement d’applications**: Vous pouvez choisir parmi de nombreuses langues lorsque vous créez des applications qui s’exécutent dans des conteneurs. Ce guide se concentre sur [.NET](https://www.microsoft.com/net), mais, vous pouvez développer des applications basées sur des conteneurs en utilisant d’autres langues, comme Node.js, Python, Printemps / Java, ou Go.
+- **Développement d’applications**: Vous pouvez choisir parmi de nombreuses langues lorsque vous créez des applications qui s’exécutent dans des conteneurs. Ce guide se concentre sur [.NET](https://dotnet.microsoft.com), mais, vous pouvez développer des applications basées sur des conteneurs en utilisant d’autres langues, comme Node.js, Python, Printemps / Java, ou Go.
 
 - **Surveillance, télémétrie, enregistrement et audit**: La capacité de surveiller et d’auditer les applications et les conteneurs qui fonctionnent dans le cloud est essentielle pour toute application optimisée pour le Cloud. [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) et [Microsoft Operations Management Suite](https://www.microsoft.com/cloud-platform/operations-management-suite) sont les principaux outils Microsoft qui fournissent la surveillance et l’audit pour les applications Cloud-Optimized.
 

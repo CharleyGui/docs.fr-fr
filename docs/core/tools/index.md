@@ -3,14 +3,14 @@ title: CLI .NET Core
 titleSuffix: ''
 description: Un aperçu de l’ERC de base de .NET et de ses caractéristiques.
 ms.date: 02/13/2020
-ms.openlocfilehash: 45a40063f70a621e807abf5e01ceecb125aecd7c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ac5988bacbef41326f2501a2cff6c3f5aa0be798
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399118"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110839"
 ---
-# <a name="net-core-cli-overview"></a>vue d’ensemble CLI de base de .NET
+# <a name="net-core-cli-overview"></a>Vue d’ensemble de CLI .NET Core
 
 **Cet article s’applique à:** ✔️ .NET Core 2.1 SDK et les versions ultérieures
 
@@ -95,11 +95,11 @@ La commande exécute une action. Par exemple, `dotnet build` génère le code. `
 
 ### <a name="arguments"></a>Arguments
 
-Les arguments que vous passez sur la ligne de commande sont les arguments de la commande appelée. Par exemple, lorsque vous exécutez `dotnet publish my_app.csproj`, l’argument `my_app.csproj` indique le projet à publier et est transmis à la commande `publish`.
+Les arguments que vous passez sur la ligne de commande sont les arguments de la commande appelée. Par exemple, lorsque `dotnet publish my_app.csproj`vous `my_app.csproj` exécutez, l’argument indique `publish` le projet à publier et est transmis à la commande.
 
 ### <a name="options"></a>Options
 
-Les options que vous passez sur la ligne de commande sont les options de la commande appelée. Par exemple, lorsque vous exécutez `dotnet publish --output /build_output`, l’option `--output` et sa valeur sont passés à la commande `publish`.
+Les options que vous passez sur la ligne de commande sont les options de la commande appelée. Par exemple, lorsque `dotnet publish --output /build_output`vous `--output` exécutez, l’option `publish` et sa valeur sont transmises à la commande.
 
 ## <a name="see-also"></a>Voir aussi
 

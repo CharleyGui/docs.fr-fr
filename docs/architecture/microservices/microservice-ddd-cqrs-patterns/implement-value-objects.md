@@ -2,12 +2,12 @@
 title: Implémentation d’objets de valeur
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Découvrez les explications détaillées et les options disponibles pour implémenter des objets de valeur à l’aide des nouvelles fonctionnalités d’Entity Framework.
 ms.date: 01/30/2020
-ms.openlocfilehash: 4ace5c141b1cbd2dcfefb7ea7165a4006b130479
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 919b23f7c1a0cd0aec8c4417f3af98469a0743dd
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77502511"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249420"
 ---
 # <a name="implement-value-objects"></a>Implémenter des objets de valeur
 
@@ -31,7 +31,7 @@ Voici les deux principales caractéristiques des objets de valeur :
 
 - Ils sont immuables.
 
-Nous avons déjà évoqué la première caractéristique. L’immuabilité est une exigence importante. Une fois l’objet de valeur créé, ses valeurs doivent être immuables. Vous devez donc fournir les valeurs demandées au moment de la construction de l’objet, mais vous devez interdire tout changement de ces valeurs pendant la durée de vie de l’objet.
+Nous avons déjà évoqué la première caractéristique. L’immuabilité est une exigence importante. Une fois l’objet de valeur créé, ses valeurs doivent être immuables. Par conséquent, lorsque l’objet est construit, vous devez fournir les valeurs requises, mais vous ne devez pas leur permettre de changer pendant la durée de vie de l’objet.
 
 De par la nature immuable des objets de valeur, vous pouvez recourir à certains stratagèmes pour améliorer les performances. Cela vaut particulièrement pour les systèmes comprenant des milliers d’instances d’objet de valeur, bon nombre d’entre elles ayant les mêmes valeurs. Du fait que ces objets sont immuables, vous pouvez les réutiliser. Il sont aussi interchangeables puisque leurs valeurs sont identiques et qu’ils n’ont pas d’identité. C’est ce type d’optimisation qui fait parfois la différence entre un logiciel qui fonctionne lentement et un autre qui offre de bonnes performances. Bien entendu, tous ces cas dépendent de l’environnement de l’application et du contexte de déploiement.
 
@@ -168,9 +168,9 @@ Même avec quelques écarts entre le modèle d’objet de valeur canonique dans 
 
 La fonctionnalité des types d’entité détenus est proposée dans EF Core depuis la version 2.0.
 
-Un type d’entité détenu vous permet de mapper les types dont l’identité n’est pas explicitement définie dans le modèle de domaine et qui sont utilisés en tant que propriétés, par exemple un objet de valeur, dans l’une de vos entités. Un type d’entité détenu partage le même type CLR avec un autre type d’entité (comme une classe standard). L’entité contenant la navigation de définition est l’entité du propriétaire. Quand le propriétaire fait l’objet d’une interrogation, les types détenus sont inclus par défaut.
+Un type d’entité détenu vous permet de mapper les types dont l’identité n’est pas explicitement définie dans le modèle de domaine et qui sont utilisés en tant que propriétés, par exemple un objet de valeur, dans l’une de vos entités. Un type d’entité possédé partage le même type DE CLR avec un autre type d’entité (c’est-à-dire, c’est juste une classe régulière). L’entité contenant la navigation de définition est l’entité du propriétaire. Quand le propriétaire fait l’objet d’une interrogation, les types détenus sont inclus par défaut.
 
-Un simple coup d’œil au modèle de domaine suffit pour constater qu’un type détenu n’a apparemment pas d’identité. Les types détenus ont toutefois une identité, mais la propriété de navigation du propriétaire fait partie de cette identité.
+Juste en regardant le modèle de domaine, un type possédé ressemble à il n’a pas d’identité. Les types détenus ont toutefois une identité, mais la propriété de navigation du propriétaire fait partie de cette identité.
 
 L’identité des instances de types détenus ne leur appartient pas entièrement. Elle est formée de trois composants :
 
@@ -295,7 +295,7 @@ public class Address
 
 - Vous ne pouvez `ModelBuilder.Entity<T>()` pas faire appel sur les types possédés (actuellement par conception).
 
-- Aucun support pour les types de propriété facultatif (c’est-à-dire nuls) qui sont cartographiés avec le propriétaire dans le même tableau (c’est-à-dire en utilisant le fractionnement de table). Cela est dû au fait que le mappage est effectué pour chaque propriété, et nous n’avons pas de sentinelle séparée pour traiter globalement la valeur complexe Null.
+- Aucun support pour les types de propriété facultatif (c’est-à-dire nuls) qui sont cartographiés avec le propriétaire dans le même tableau (c’est-à-dire en utilisant le fractionnement de table). C’est parce que la cartographie est faite pour chaque propriété, nous n’avons pas une sentinelle séparée pour la valeur complexe nulle dans son ensemble.
 
 - Le mappage d’héritage pour les types détenus n’est pas pris en charge, mais vous pouvez normalement mapper deux types feuilles des mêmes hiérarchies d’héritage en tant que types détenus différents. EF Core ne réalise pas qu’ils font partie de la même hiérarchie.
 

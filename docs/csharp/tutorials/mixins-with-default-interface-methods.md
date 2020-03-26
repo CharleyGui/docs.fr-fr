@@ -3,12 +3,12 @@ title: Créez des types de mixine à l’aide de méthodes d’interface par dé
 description: En utilisant des membres d’interface par défaut, vous pouvez étendre les interfaces avec des implémentations par défaut facultatives pour les implémenteurs.
 ms.technology: csharp-advanced-concepts
 ms.date: 10/04/2019
-ms.openlocfilehash: aaf8d34e27c9c56d95560656eb7a7b24b152c053
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ee0536ef51f9bea3e6851be23cc19fa28cc6916b
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240104"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134373"
 ---
 # <a name="tutorial-mix-functionality-in-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Tutorial: Mix fonctionnalité dans la création de classes en utilisant des interfaces avec des méthodes d’interface par défaut
 
@@ -22,7 +22,7 @@ Ce didacticiel vous montre comment effectuer les opérations suivantes :
 > * Créez des classes qui utilisent les implémentations par défaut.
 > * Créez des classes qui remplacent une partie ou la totalité des implémentations par défaut.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Vous aurez besoin de configurer votre machine pour exécuter .NET Core, y compris le compilateur C 8.0. Le compilateur C 8.0 est disponible à partir de [Visual Studio 2019 version 16.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), ou le [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core) ou plus tard.
 
@@ -117,7 +117,7 @@ Ce scénario affiche une interface de base sans aucune implémentation. L’ajou
 
 [!code-csharp[Enumeration for power status](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetPowerStatus)]
 
-La mise en œuvre par défaut suppose la puissance DE l’AC :
+La mise en œuvre par défaut n’assume aucune puissance :
 
 [!code-csharp[Report a default power status](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetILightInterface)]
 

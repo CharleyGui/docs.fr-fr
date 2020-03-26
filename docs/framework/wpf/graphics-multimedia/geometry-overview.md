@@ -8,12 +8,12 @@ helpviewer_keywords:
 - geometry classes [WPF]
 - graphics [WPF], geometry classes
 ms.assetid: 9fba8934-98b7-4af6-82f6-f4ef887f963a
-ms.openlocfilehash: 1329f26e588b90fcd25052fb805058915b8825e3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ff42e59edd9d98b0b52dc3bdd3ace0c35df60878
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186476"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112373"
 ---
 # <a name="geometry-overview"></a>Vue d'ensemble de Geometry
 Cette vue d’ensemble [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Media.Geometry> décrit comment utiliser les classes pour décrire les formes. Ce sujet contraste également avec <xref:System.Windows.Media.Geometry> les <xref:System.Windows.Shapes.Shape> différences entre les objets et les éléments.  
@@ -28,11 +28,11 @@ Cette vue d’ensemble [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
   
 <a name="wcpsdk_graphics_geometry_geometryandshapes"></a>
 ## <a name="geometries-vs-shapes"></a>Géométries vs Formes  
- Les <xref:System.Windows.Media.Geometry> <xref:System.Windows.Shapes.Shape> classes et les classes semblent similaires en ce <xref:System.Windows.Media.EllipseGeometry> <xref:System.Windows.Shapes.Ellipse> qu’elles décrivent toutes les deux des formes 2D (comparer et par exemple), mais il y a des différences importantes.  
+ Les <xref:System.Windows.Media.Geometry> <xref:System.Windows.Shapes.Shape> classes et les classes semblent similaires en <xref:System.Windows.Media.EllipseGeometry> ce <xref:System.Windows.Shapes.Ellipse> qu’elles décrivent toutes les deux des formes 2D (comparer et par exemple), mais il y a des différences importantes.  
   
  D’une <xref:System.Windows.Media.Geometry> part, la <xref:System.Windows.Freezable> classe hérite de la classe tandis que la <xref:System.Windows.Shapes.Shape> classe hérite de <xref:System.Windows.FrameworkElement>. Parce qu’ils <xref:System.Windows.Shapes.Shape> sont des éléments, les objets <xref:System.Windows.Media.Geometry> peuvent se rendre et participer au système de mise en page, tandis que les objets ne peuvent pas.  
   
- Bien <xref:System.Windows.Shapes.Shape> que les objets soient <xref:System.Windows.Media.Geometry> plus <xref:System.Windows.Media.Geometry> facilement utilisables que les objets, les objets sont plus polyvalents. Alors <xref:System.Windows.Shapes.Shape> qu’un objet est utilisé pour rendre <xref:System.Windows.Media.Geometry> des graphiques 2D, un objet peut être utilisé pour définir la région géométrique pour les graphiques 2D, définir une région pour la coupure, ou définir une région pour les tests à succès, par exemple.  
+ Bien <xref:System.Windows.Shapes.Shape> que les objets soient <xref:System.Windows.Media.Geometry> plus <xref:System.Windows.Media.Geometry> facilement utilisables que les objets, les objets sont plus polyvalents. Alors <xref:System.Windows.Shapes.Shape> qu’un objet est utilisé pour <xref:System.Windows.Media.Geometry> rendre des graphiques 2D, un objet peut être utilisé pour définir la région géométrique pour les graphiques 2D, définir une région pour la coupure, ou définir une région pour les tests à succès, par exemple.  
   
 ### <a name="the-path-shape"></a>La forme Tracé  
  Un <xref:System.Windows.Shapes.Shape>, <xref:System.Windows.Shapes.Path> la classe, <xref:System.Windows.Media.Geometry> utilise en fait un pour décrire son contenu. En <xref:System.Windows.Shapes.Path.Data%2A> définissant la <xref:System.Windows.Shapes.Path> propriété <xref:System.Windows.Media.Geometry> de <xref:System.Windows.Shapes.Shape.Fill%2A> l’avec un et le réglage de son et <xref:System.Windows.Shapes.Shape.Stroke%2A> ses propriétés, vous pouvez rendre un <xref:System.Windows.Media.Geometry>.  
@@ -111,7 +111,7 @@ Une EllipseGeometry utilisée pour découper une commande Image
   
  Il existe un grand nombre de segments.  
   
-|Type de segment|Description| Exemple|  
+|Type de segment|Description|Exemple|  
 |------------------|-----------------|-------------|  
 |<xref:System.Windows.Media.ArcSegment>|Crée un arc elliptique entre deux points.|[Créez un arc elliptique](how-to-create-an-elliptical-arc.md).|  
 |<xref:System.Windows.Media.BezierSegment>|Crée une courbe de Bézier cubique entre deux points.|[Créez une courbe de Bézier Cub .](how-to-create-a-cubic-bezier-curve.md)|  

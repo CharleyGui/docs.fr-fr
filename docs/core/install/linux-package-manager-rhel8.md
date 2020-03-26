@@ -3,19 +3,21 @@ title: Installer .NET Core sur Linux RHEL 8 package manager - .NET Core
 description: Utilisez un gestionnaire de paquets pour installer .NET Core SDK et l’exécution sur RHEL 8.
 author: thraka
 ms.author: adegeo
-ms.date: 12/03/2019
-ms.openlocfilehash: 054494a9b77e1c7803e42c947e067d3eb290f73c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 03/17/2020
+ms.openlocfilehash: b564a386eb67b6e414a832ad3bca10d3d09022bd
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78849809"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134193"
 ---
 # <a name="rhel-8-package-manager---install-net-core"></a>RHEL 8 Package Manager - Installer .NET Core
 
 [!INCLUDE [package-manager-switcher](includes/package-manager-switcher.md)]
 
 Cet article décrit comment utiliser un gestionnaire de paquets pour installer .NET Core sur RHEL 8.
+
+[!INCLUDE [package-manager-intro-sdk-vs-runtime](includes/package-manager-intro-sdk-vs-runtime.md)]
 
 ## <a name="register-your-red-hat-subscription"></a>Enregistrez votre abonnement Red Hat
 

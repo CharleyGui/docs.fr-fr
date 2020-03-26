@@ -2,12 +2,12 @@
 title: Applications gRPC auto-hébergées - gRPC pour les développeurs WCF
 description: Déploiement d’applications ASP.NET Core gRPC en tant que services auto-hébergés.
 ms.date: 09/02/2019
-ms.openlocfilehash: 00fb1453e19a02469f80af79672e0c1f72c7280f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 69f70e4077247fd07eba7abeee82f257dd1f4f90
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79147800"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110904"
 ---
 # <a name="self-hosted-grpc-applications"></a>Applications gRPC auto-hébergées
 
@@ -152,7 +152,7 @@ sudo journalctl -u myapp
 > [!TIP]
 > Si vous disposez d’un environnement GUI disponible sur votre hôte, quelques internautes graphiques sont disponibles pour Linux, tels que *QJournalctl* et *gnome-logs*.
 
-Pour en savoir plus `systemd` sur la requête du `journalctl`journal à partir de la ligne de commande en utilisant , voir [les pages de l’homme](https://manpages.debian.org/buster/systemd/journalctl.1).
+Pour en savoir plus `systemd` sur la requête du `journalctl`journal de la ligne de commande en utilisant , voir [les pages d’homme](https://manpages.debian.org/buster/systemd/journalctl.1).
 
 ## <a name="https-certificates-for-self-hosted-applications"></a>Certificats HTTPS pour les demandes auto-hébergées
 

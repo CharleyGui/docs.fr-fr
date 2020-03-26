@@ -15,19 +15,19 @@ helpviewer_keywords:
 - serialization, examples
 - serialization, attributes
 ms.assetid: 47d4c39d-30e1-4c7b-8a2e-301325390647
-ms.openlocfilehash: d4e30984a232b17d1f40e300655c519ec1a6e191
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: e11152dc626b1e3619b9ecbc04d8a237ca9f13d3
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159908"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80248041"
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>Contrôle de la sérialisation XML à l'aide d'attributs
 
 Les attributs peuvent être utilisés pour contrôler la sérialisation XML d'un objet ou pour créer un flux de données XML différent à partir du même ensemble de classes. Pour plus d’informations sur la création d’un flux de données XML différent, consultez [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
 
 > [!NOTE]
-> Si le code XML généré doit se conformer à la section 5 du document World Wide Web Consortium (W3C) intitulé [simple Object Access Protocol (SOAP) 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), utilisez les attributs listés dans [attributs qui contrôlent la sérialisation encodée](attributes-that-control-encoded-soap-serialization.md)selon le protocole SOAP.
+> Si le XML généré doit se conformer à l’article 5 du document world Wide Web Consortium (W3C) intitulé [Simple Object Access Protocol (SOAP) 1.1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), utilisez les attributs énumérés dans [Attributes That Control Encoded SOAP Serialization](attributes-that-control-encoded-soap-serialization.md).
 
 Par défaut, un nom d'élément XML est déterminé par le nom de la classe ou du membre. Dans une classe simple nommée `Book`, un champ nommé `ISBN` génère une balise d’élément XML \<ISBN>, comme illustré dans l’exemple suivant.
 
@@ -241,7 +241,7 @@ Une instance sérialisée peut se présenter comme suit.
 </Group>
 ```
 
-Pour différencier les deux flux de données XML, vous pouvez également utiliser l'outil XML Schema Definition pour générer des fichiers de document de schéma XML (XSD) à partir du code compilé. (Pour plus d’informations sur l’utilisation de l’outil, consultez [l’outil XML Schema Definition et SÉRIALISATION XML](the-xml-schema-definition-tool-and-xml-serialization.md).) Quand aucun attribut n’est appliqué au champ, le schéma décrit l’élément de la manière suivante.
+Pour différencier les deux flux de données XML, vous pouvez également utiliser l'outil XML Schema Definition pour générer des fichiers de document de schéma XML (XSD) à partir du code compilé. (Pour plus de détails sur l’utilisation de l’outil, voir [The XML Schema Definition Tool et XML Serialization](the-xml-schema-definition-tool-and-xml-serialization.md).) Lorsqu’aucun attribut n’est appliqué au champ, le schéma décrit l’élément de la manière suivante.
 
 ```xml
 <xs:element minOccurs="0" maxOccurs ="1" name="Employees" type="ArrayOfEmployee" />
@@ -300,7 +300,7 @@ public class Group {
 Si cette classe est compilée et que l'outil XML Schema Definition est utilisé pour générer son schéma, vous obtenez le code XML suivant qui décrit `Group`.
 
 ```xml
-<xs:element name="NewGroupName" type="NewTypeName">
+<xs:element name="NewGroupName" type="NewTypeName" />
 ```
 
 En revanche, si vous deviez sérialiser une instance de la classe, vous obtiendriez uniquement `NewGroupName` dans le document XML.

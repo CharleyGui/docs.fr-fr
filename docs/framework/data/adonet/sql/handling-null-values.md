@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
-ms.openlocfilehash: c64f11c00174981925342f1493ef0b809a57ecb0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c45c6672983866df6c47ec84981cc7bd11637c0c
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79148645"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249075"
 ---
 # <a name="handling-null-values"></a>Gestion des valeurs null
 Une valeur Null dans une base de données relationnelle est utilisée lorsque la valeur d’une colonne est inconnue ou manquante. Une valeur Null n’est ni une chaîne vide (pour les types de données caractère ou DateHeure), ni une valeur zéro (pour les types de données numériques). La spécification SQL-92 ANSI indique qu’une valeur Null doit être la même pour tous les types de données, de sorte que toutes les valeurs Null sont gérées de manière cohérente. L’espace de noms <xref:System.Data.SqlTypes> fournit une sémantique Null en implémentant l’interface <xref:System.Data.SqlTypes.INullable>. Chacun des types de données de <xref:System.Data.SqlTypes> a sa propre propriété `IsNull` et une valeur `Null` qui peut être assignée à une instance de ce type de données.  
   
 > [!NOTE]
-> L'une des nouveautés de la version 2.0 du .NET Framework est la prise en charge des types Nullable qui permettent aux programmeurs d'étendre un type de valeur pour représenter toutes les valeurs du type sous-jacent. Ces types Nullable CLR représentent une instance de la structure <xref:System.Nullable>. Cette fonctionnalité est particulièrement utile lorsque les types valeur sont boxed et unboxed, ce qui offre une meilleure compatibilité avec les types d’objets. Les types Nullable CLR ne sont pas destinés au stockage des valeurs Null de base de données, car une valeur Null SQL ANSI ne se comporte pas de la même façon qu’une référence `null` (ou `Nothing` dans Visual Basic). Pour travailler avec les valeurs Null SQL ANSI de la base de données, utilisez les valeurs Null <xref:System.Data.SqlTypes> au lieu de <xref:System.Nullable>. Pour plus d’informations sur le travail avec les types nuls CLR dans Visual Basic voir [Les types de valeur nulable](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md), et pour C - voir les types de valeur [nulable](../../../../csharp/language-reference/builtin-types/nullable-value-types.md).  
+> La version cadre .NET 2.0 a introduit un support pour les types de valeur nulle, qui permettent aux programmeurs d’étendre un type de valeur pour représenter toutes les valeurs du type sous-jacent. Ces types de valeur nullable CLR représentent un exemple de la <xref:System.Nullable> structure. Cette fonctionnalité est particulièrement utile lorsque les types valeur sont boxed et unboxed, ce qui offre une meilleure compatibilité avec les types d’objets. Les types de valeur annulée CLR ne sont pas destinés au stockage des nulls `null` de base `Nothing` de données parce qu’un NULL ANSI SQL ne se comporte pas de la même manière qu’une référence (ou dans Visual Basic). Pour travailler avec les valeurs Null SQL ANSI de la base de données, utilisez les valeurs Null <xref:System.Data.SqlTypes> au lieu de <xref:System.Nullable>. Pour plus d’informations sur le travail avec les types de valeur CLR annulable dans Visual Basic voir [Nullable Value Types](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md), et pour C - voir [Types de valeur nulable](../../../../csharp/language-reference/builtin-types/nullable-value-types.md).  
   
 ## <a name="nulls-and-three-valued-logic"></a>Valeurs null et logique à trois valeurs  
  L’autorisation de valeurs Null dans les définitions de colonne introduit une logique ternaire dans votre application. Une comparaison peut évaluer entre une et trois conditions :  
@@ -104,7 +104,7 @@ WHERE TerritoryID IN (1, 2, 3)
   
  Les valeurs Null peuvent être attribuées à un <xref:System.Data.DataColumn> comme indiqué dans l’exemple de code suivant. Vous pouvez attribuer directement des valeurs Null à des variables `SqlTypes` sans déclencher d’exception.  
   
-### <a name="example"></a> Exemple  
+### <a name="example"></a>Exemple  
  L’exemple de code suivant crée une <xref:System.Data.DataTable> avec deux colonnes définies comme <xref:System.Data.SqlTypes.SqlInt32> et <xref:System.Data.SqlTypes.SqlString>. Le code ajoute une ligne de valeurs connues, une ligne de valeurs Null, puis itère au sein de la <xref:System.Data.DataTable>, en attribuant les valeurs aux variables et en affichant le résultat dans la fenêtre de console.  
   
  [!code-csharp[DataWorks SqlTypes.IsNull#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlTypes.IsNull/CS/source.cs#1)]

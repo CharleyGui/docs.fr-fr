@@ -1,13 +1,14 @@
 ---
-ms.openlocfilehash: 9d64c22c02a877f32ed8aa47d51a79f800b9926a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f36faeba4b4be029618f06d71ab5ab24eb5169bf
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75343731"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80272795"
 ---
 > [!div class="op_multi_selector" title1="De la version cible" title2="Pour la version migrée"]
 >
+> - [(3.1 000 euros)](~/docs/core/compatibility/3.1-5.0.md)
 > - [(3.0 ' 3.1)](~/docs/core/compatibility/3.0-3.1.md)
 > - [(2.2 ' 3.1)](~/docs/core/compatibility/2.2-3.1.md)
 > - [(2.2 ' 3.0)](~/docs/core/compatibility/2.2-3.0.md)

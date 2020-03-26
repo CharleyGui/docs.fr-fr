@@ -1,25 +1,30 @@
 ---
-title: opérateur par défaut - référence C#
-description: Utilisez l’opérateur par défaut pour produire la valeur par défaut d’un type
-ms.date: 08/01/2019
+title: expressions de valeur par défaut - Référence C
+description: Utilisez les expressions de valeur par défaut pour obtenir la valeur par défaut d’un type
+ms.date: 03/13/2020
+f1_keywords:
+- default_CSharpKeyword
+- default
 helpviewer_keywords:
 - default keyword [C#]
-ms.openlocfilehash: 0d37fe952e71e74f014872231a2e58663dea9d18
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2adfd8d24066e9dad50c3c18407d3ade71b4b68e
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399482"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507176"
 ---
-# <a name="default-operator-c-reference"></a>opérateur par défaut (référence C#)
+# <a name="default-value-expressions-c-reference"></a>expressions de valeur par défaut (référence C)
 
-L’opérateur `default` produit la [valeur par défaut](../builtin-types/default-values.md) d’un type. L’argument de l’opérateur `default` doit avoir le nom d’un type ou d’un paramètre de type.
-
-L’exemple suivant illustre l’utilisation de l’opérateur `default` :
-
-[!code-csharp-interactive[default of T](snippets/DefaultOperator.cs#WithOperand)]
+Une expression de valeur par défaut produit la [valeur par défaut](../builtin-types/default-values.md) d’un type. Il existe deux types d’expressions de valeur par défaut : l’appel [par défaut de l’opérateur](#default-operator) et un [défaut littéral.](#default-literal)
 
 Vous utilisez `default` également le mot clé comme étiquette de cas par défaut dans une [ `switch` déclaration](../keywords/switch.md).
+
+## <a name="default-operator"></a>Opérateur default
+
+L’argument de l’opérateur `default` doit avoir le nom d’un type ou d’un paramètre de type, comme le montre l’exemple suivant :
+
+[!code-csharp-interactive[default of T](snippets/DefaultOperator.cs#WithOperand)]
 
 ## <a name="default-literal"></a>littéral par défaut
 

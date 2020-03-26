@@ -3,12 +3,12 @@ title: Outil désinstaller
 description: Un aperçu de l’outil .NET Core Uninstall, un outil guidé qui permet le nettoyage contrôlé des SDKs et des runtimes .NET Core.
 author: sfoslund
 ms.date: 01/06/2020
-ms.openlocfilehash: bd20cba133cbb754dcca48e48b76a391a9efacba
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 816aef6ab8bc0e51bb8befb14fde60513d4fadfc
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847032"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507319"
 ---
 # <a name="net-core-uninstall-tool"></a>Outil de désinstallation de .NET Core
 
@@ -44,6 +44,9 @@ Les étapes suivantes montrent l’approche recommandée pour l’exécution de 
 ### <a name="step-1---display-installed-net-core-sdks-and-runtimes"></a>Étape 1 - Affichage installé .NET Core SDKs et runtimes
 
 La `dotnet-core-uninstall list` commande répertorie les SDKs et les temps d’exécution .NET core installés qui peuvent être supprimés avec cet outil. Certains SDK et les durées d’exécution peuvent être nécessaires par Visual Studio et ils sont affichés avec une note de pourquoi il n’est pas recommandé de les désinstaller.
+
+> [!NOTE]
+> La sortie `dotnet-core-uninstall list` de la commande ne correspondra pas à `dotnet --info` la liste des versions installées dans la sortie de dans la plupart des cas. Plus précisément, cet outil n’affichera pas les versions installées par des fichiers zip ou gérées par Visual Studio (toute version installée avec Visual Studio 2019 16.3 ou plus tard). Une façon de vérifier si une version est gérée `Add or Remove Programs`par Visual Studio est de la voir dans , où Visual Studio versions gérées sont marqués comme tels dans leurs noms d’affichage.
 
 **liste dotnet-core-uninstall**
 

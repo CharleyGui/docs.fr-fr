@@ -4,12 +4,12 @@ description: Dans ce tutoriel, vous apprendrez à conteneuriser une application 
 ms.date: 01/09/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: e1904430a591b0e74a69d50a53869a130fc0a248
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8be12792e4a9e8511dba87e657f700cc4ec97a16
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78157828"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79546573"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Tutorial: Containerize a .NET Core app
 
@@ -26,10 +26,10 @@ Vous apprendrez à :
 
 Vous découvrirez la création d’un conteneur Docker et les tâches de déploiement pour une application .NET Core. La *plate-forme Docker* utilise le *moteur Docker* pour construire et emballer rapidement des applications comme des *images Docker*. Ces images sont écrites au format *Dockerfile* pour être déployées et exécutées dans un conteneur en couches.
 
-> [!TIP]
-> Si vous travaillez avec une application ASP.NET Core existante, découvrez comment conteneuriser un tutoriel [d’application ASP.NET Core.](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
+> [!WARNING]
+> **Ce tutoriel n’est pas pour ASP.NET applications Core.** Si vous utilisez ASP.NET Core, lisez le Apprendre à conteneuriser un tutoriel [d’application ASP.NET Core.](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Installez les éléments requis suivants :
 
@@ -370,7 +370,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 La commande `docker run` vous permet également de modifier la commande `ENTRYPOINT` depuis le *Dockerfile* , puis d’exécuter un autre élément, mais uniquement pour ce conteneur. Par exemple, utilisez la commande suivante pour exécuter `bash` ou `cmd.exe`. Modifiez la commande selon vos besoins.
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 Dans cet exemple, `ENTRYPOINT` est remplacé par `cmd.exe`. <kbd>CTRL</kbd>+<kbd>C</kbd> est pressé pour mettre fin au processus et arrêter le conteneur.
 

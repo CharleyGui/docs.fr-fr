@@ -5,12 +5,12 @@ ms.date: 12/18/2019
 helpviewer_keywords:
 - default [C#]
 - parameterless constructor [C#]
-ms.openlocfilehash: 93b6079b9a3bbf6d537094cab9dfb305ace7f6bf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5e34d291ec15c738f3bc9409df321ede454b6710
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77625863"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507254"
 ---
 # <a name="default-values-of-c-types-c-reference"></a>Valeurs par défaut des types C (référence C)
 
@@ -27,7 +27,7 @@ Le tableau suivant présente les valeurs par défaut des types C# :
 |[struct](struct.md)|Valeur produite en affectant à tous les champs de type valeur leur valeur par défaut et à tous les champs de type référence la valeur `null`.|
 |Tout [type valeur Nullable](nullable-value-types.md)|Instance pour laquelle la propriété <xref:System.Nullable%601.HasValue%2A> a la valeur `false` et la propriété <xref:System.Nullable%601.Value%2A> n’est pas définie. Cette valeur par défaut est également connue sous le nom de valeur *nulle* d’un type de valeur nulle.|
 
-Utilisez l’[opérateur par défaut](../operators/default.md) pour produire la valeur par défaut d’un type, comme illustré dans l’exemple suivant :
+Utilisez [ `default` l’opérateur](../operators/default.md#default-operator) pour produire la valeur par défaut d’un type, comme le montre l’exemple suivant :
 
 ```csharp
 int a = default(int);

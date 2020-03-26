@@ -3,21 +3,21 @@ title: Vue d'ensemble des transformations
 ms.date: 03/30/2017
 helpviewer_keywords:
 - transformations [WPF], about transformations
-- classes [WPF], 2-D transform
-- transform classes [WPF], 2-D
-- 2-D transform classes
+- classes [WPF], 2D transform
+- transform classes [WPF], 2D
+- 2D transform classes
 - FrameworkElement objects [WPF], rotating
 - FrameworkElement objects [WPF], skewing
 - FrameworkElement objects [WPF], translating
 - Transforms [WPF], about Transforms
 - FrameworkElement objects [WPF], scaling
 ms.assetid: 8f153d5e-ed61-4aa5-a7cd-286f0c427a13
-ms.openlocfilehash: 49fb0109e1d7db065f7e241955f30cb038699020
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5f29404a301eb023ff24b2890531dede6440ec4
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187469"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111957"
 ---
 # <a name="transforms-overview"></a>Vue d'ensemble des transformations
 Ce sujet décrit comment utiliser les <xref:System.Windows.Media.Transform> classes 2D pour faire pivoter, évoluer, déplacer (traduire) et biaiser les <xref:System.Windows.FrameworkElement> objets.  
@@ -31,7 +31,7 @@ Ce sujet décrit comment utiliser les <xref:System.Windows.Media.Transform> clas
   
  Le tableau suivant montre la structure d’une matrice [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
-### <a name="a-2-d-transformation-matrix"></a>Une matrice de transformation en 2D  
+### <a name="a-2d-transformation-matrix"></a>Une matrice de transformation 2D  
   
 ||||  
 |-|-|-|  
@@ -45,9 +45,9 @@ Ce sujet décrit comment utiliser les <xref:System.Windows.Media.Transform> clas
   
 <a name="transformClassesSection"></a>
 ## <a name="transform-classes"></a>Classes de transformation  
- Windows Presentation Foundation (WPF) offre les <xref:System.Windows.Media.Transform> classes 2D suivantes pour les opérations de transformation communes :  
+ Windows Presentation Foundation (WPF) fournit <xref:System.Windows.Media.Transform> les classes 2D suivantes pour les opérations de transformation communes :  
   
-|Classe|Description| Exemple|Illustration|  
+|Classe|Description|Exemple|Illustration|  
 |-----------|-----------------|-------------|------------------|  
 |<xref:System.Windows.Media.RotateTransform>|Tourne un élément par <xref:System.Windows.Media.RotateTransform.Angle%2A>le spécifié .|[Faire pivoter un objet](how-to-rotate-an-object.md)|![Pivoter l'illustration](./media/graphicsmm-thumbnails-rotate.png "graphicsmm_thumbnails_rotate")|  
 |<xref:System.Windows.Media.ScaleTransform>|Échelles d’un <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> élément <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> par les spécifiés et les montants.|[Mettre à l'échelle un élément](how-to-scale-an-element.md)|![Mettre à l'échelle l'illustration](./media/graphicsmm-thumbnails-scale.png "graphicsmm_thumbnails_scale")|  
@@ -56,7 +56,7 @@ Ce sujet décrit comment utiliser les <xref:System.Windows.Media.Transform> clas
   
  Pour créer des transformations plus complexes, Windows Presentation Foundation (WPF) propose les deux classes suivantes :  
   
-|Classe|Description| Exemple|  
+|Classe|Description|Exemple|  
 |-----------|-----------------|-------------|  
 |<xref:System.Windows.Media.TransformGroup>|Regroupe <xref:System.Windows.Media.TransformGroup> plusieurs objets <xref:System.Windows.Media.Transform> en un seul que vous pouvez ensuite appliquer pour transformer les propriétés.|[Apply Multiple Transforms to an Object](how-to-apply-multiple-transforms-to-an-object.md) (Appliquer plusieurs transformations à un objet)|  
 |<xref:System.Windows.Media.MatrixTransform>|Crée des transformations personnalisées qui <xref:System.Windows.Media.Transform> ne sont pas fournies par les autres classes. Lorsque vous <xref:System.Windows.Media.MatrixTransform>utilisez un , vous manipulez une matrice directement.|[Use a MatrixTransform to Create Custom Transforms](how-to-use-a-matrixtransform-to-create-custom-transforms.md) (Utiliser la classe MatrixTransform pour créer des transformations personnalisées)|  
@@ -142,7 +142,7 @@ Classe LayoutTransform utilisée pour faire pivoter le bouton
   
  [!code-xaml[Transforms_snip#GraphicsMMAnimatedRotateButtonExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonAnimatedRotateTransformExample.xaml#graphicsmmanimatedrotatebuttonexamplewholepage)]  
   
- Pour voir l’exemple complet, consultez la page [2-D Transforms Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms) (Exemple de transformations 2D). Pour plus d’informations sur les animations, consultez l’article [Vue d’ensemble de l’animation](animation-overview.md).  
+ Pour l’échantillon complet, voir [2D Transforms Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms). Pour plus d’informations sur les animations, consultez l’article [Vue d’ensemble de l’animation](animation-overview.md).  
   
 <a name="freezable_features"></a>
 ## <a name="freezable-features"></a>Fonctionnalités Freezable  
@@ -153,4 +153,4 @@ Classe LayoutTransform utilisée pour faire pivoter le bouton
 - <xref:System.Windows.Media.Transform>
 - <xref:System.Windows.Media.Matrix>
 - [Sujets comment se passer](transformations-how-to-topics.md)
-- [Exemple de transformations 2D](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms)
+- [2D transforme l’échantillon](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms)

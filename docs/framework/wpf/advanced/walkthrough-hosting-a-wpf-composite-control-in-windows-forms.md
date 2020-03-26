@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 ms.assetid: 0ac41286-4c1b-4b17-9196-d985cb844ce1
-ms.openlocfilehash: e3326f654e05ef7d487a76f076f8ad0da3637096
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 88efab8adf36989938ba5aa887a28b41eb8820f3
+ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187246"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80291620"
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Procédure pas à pas : hébergement d'un contrôle composite WPF dans les Windows Forms
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] propose un environnement de création d'applications élaboré. Cependant, lorsque vous avez un investissement substantiel dans le code Windows Forms, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] il peut être plus efficace d’étendre votre application Windows Forms existante avec plutôt que de le réécrire à partir de zéro. Un scénario courant est lorsque vous souhaitez intégrer [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] un ou plusieurs contrôles implémentés avec dans votre application Windows Forms. Pour plus d’informations sur la personnalisation des contrôles WPF, voir [Personnalisation de contrôle](../controls/control-customization.md).  
@@ -27,7 +27,7 @@ ms.locfileid: "79187246"
   
  Pour une liste complète du code des tâches illustrées dans cette procédure pas à pas, voir [Hébergement d’un contrôle composite WPF dans Windows Forms Sample](https://github.com/microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WindowsFormsHostingWpfControl).  
   
-## <a name="prerequisites"></a>Conditions préalables requises  
+## <a name="prerequisites"></a>Prérequis  
 
 Cette procédure pas à pas nécessite Visual Studio.  
   
@@ -181,11 +181,11 @@ namespace MyControls
   
 <a name="winforms_host_section"></a>
 ## <a name="implementing-the-windows-forms-host-application"></a>Implémentation de l’application hôte Windows Forms  
- L’application d’hôte <xref:System.Windows.Forms.Integration.ElementHost> Windows Forms [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise un objet pour héberger le contrôle composite. L’application gère `OnButtonClick` l’événement pour recevoir les données du contrôle composite. L’application comprend également un ensemble de cases d’option que vous pouvez utiliser pour modifier l’apparence du contrôle. L’illustration suivante présente l’application.  
+ L’application d’hôte <xref:System.Windows.Forms.Integration.ElementHost> Windows Forms [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise un objet pour héberger le contrôle composite. L’application gère `OnButtonClick` l’événement pour recevoir les données du contrôle composite. L’application dispose également d’un ensemble de boutons d’option que vous pouvez utiliser pour modifier l’apparence du contrôle. L’illustration suivante présente l’application.  
 
 L’image suivante montre un contrôle composite WPF hébergé dans une application Windows Forms"  
 
- ![Scteenshot qui affiche un formulaire Windows Hébergeant le contrôle Avalon.](./media/walkthrough-hosting-a-wpf-composite-control-in-windows-forms/windows-form-hosting-avalon-control.png)  
+ ![Capture d’écran qui montre un formulaire Windows Hébergeant le contrôle Avalon.](./media/walkthrough-hosting-a-wpf-composite-control-in-windows-forms/windows-form-hosting-avalon-control.png)  
   
 ### <a name="creating-the-project"></a>Création du projet  
  Pour démarrer le projet :  
@@ -329,4 +329,4 @@ L’image suivante montre un contrôle composite WPF hébergé dans une applicat
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Concevoir en XAML dans Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
 - [Procédure pas à pas : hébergement d’un contrôle composite Windows Forms dans WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
-- [Procédure pas à pas : hébergement d'un contrôle composite 3-D WPF dans les Windows Forms](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md)
+- [Procédure pas à pas : Hébergement d’un contrôle composite WPF 3D dans les formulaires Windows](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md)

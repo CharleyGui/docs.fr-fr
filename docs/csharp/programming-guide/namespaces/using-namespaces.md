@@ -7,12 +7,12 @@ helpviewer_keywords:
 - fully qualified names [C#]
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
-ms.openlocfilehash: 5193fc7aaae83cbc0c75e81835244eaaaece69a5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0947e597da93d6db1c5965b3685a509961778586
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75700196"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507046"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Utilisation d'espaces de noms (Guide de programmation C#)
 
@@ -42,7 +42,7 @@ Les espaces de noms sont largement utilisés dans les programmes C#, et ce de de
   
 ## <a name="using-namespaces-to-control-scope"></a>Utilisation d’espaces de noms pour contrôler la portée
 
- Le mot clé `namespace` est utilisé pour déclarer une portée. La possibilité de créer des portées au sein de votre projet facilite l’organisation du code et vous permet de créer des types globalement uniques. Dans l’exemple suivant, une classe intitulée `SampleClass` est définie dans deux espaces de noms, l’un étant imbriqué à l’intérieur de l’autre. L’[opérateur `.` d’accès aux membres](../../language-reference/operators/member-access-operators.md#member-access-operator-) est utilisé pour différencier la méthode appelée.  
+ Le mot clé `namespace` est utilisé pour déclarer une portée. La possibilité de créer des portées au sein de votre projet facilite l’organisation du code et vous permet de créer des types globalement uniques. Dans l’exemple suivant, une classe intitulée `SampleClass` est définie dans deux espaces de noms, l’un étant imbriqué à l’intérieur de l’autre. Le [ `.` jeton](../../language-reference/operators/member-access-operators.md#member-access-expression-) est utilisé pour différencier quelle méthode est appelée.  
   
  [!code-csharp[csProgGuideNamespaces#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#8)]  
   
@@ -94,6 +94,6 @@ Les espaces de noms sont largement utilisés dans les programmes C#, et ce de de
 
 - [Guide de programmation C#](../index.md)
 - [Espaces de noms](./index.md)
-- [. Opérateur](../../language-reference/operators/member-access-operators.md#member-access-operator-)
+- [Expression d’accès des membres](../../language-reference/operators/member-access-operators.md#member-access-expression-)
 - [:: opérateur](../../language-reference/operators/namespace-alias-qualifier.md)
 - [alias extern](../../language-reference/keywords/extern-alias.md)

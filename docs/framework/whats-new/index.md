@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: fa7138127379b069b646c4b2488d1973a3ddd628
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d5657f4081577b2a27bc3c2f6880784015c56060
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79143315"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249693"
 ---
 # <a name="whats-new-in-net-framework"></a>Quoi de neuf dans le cadre .NET
 
@@ -427,14 +427,14 @@ Vous pouvez ajouter SameSite pour des cookies <xref:System.Web.Security.FormsAut
       <forms cookieSameSite="Lax">
          <!-- ...   -->
       </forms>
-   <authentication />
+   </authentication>
    <sessionState cookieSameSite="Lax"></sessionState>
 </system.web>
 ```
 
 <a name="net472" />
 
-#### <a name="networking"></a>Mise en réseau
+#### <a name="networking"></a>Réseau
 
 **Implémentation des propriétés HttpClientHandler**
 
@@ -500,7 +500,7 @@ Le flux de base d’Always Encrypted basé sur enclave est le suivant :
 À compter de .NET Framework 4.7.2, un Assistant de diagnostic peut localiser les  <xref:System.Windows.Xps.Packaging.IXpsFixedPageReader.ResourceDictionaries> qui ont été créés à partir d’un URI source donné.(Cette fonctionnalité est destinée aux assistants diagnostiques, et non aux applications de production.) Un assistant diagnostique tel que l’installation « Edit-and-Continue » de Visual Studio permet à son utilisateur de modifier un ResourceDictionary dans l’intention d’appliquer les modifications à l’application en cours d’exécution. Dans ce but, l’une des étapes consiste à trouver tous les ResourceDictionaries créés par l’application en cours d’exécution à partir du dictionnaire en cours de modification. Par exemple, une application peut déclarer un ResourceDictionary dont le contenu est copié à partir d’un URI source donné :
 
 ```xml
-<ResourceDictionary Source="MyRD.xaml">
+<ResourceDictionary Source="MyRD.xaml" />
 ```
 
 Un assistant diagnostique qui modifie la majoration originale dans *MyRD.xaml* peut utiliser la nouvelle fonctionnalité pour localiser le dictionnaire.La fonctionnalité est implémentée par une nouvelle méthode statique, <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetResourceDictionariesForSource%2A?displayProperty=nameWithType>. L’Assistant de diagnostic appelle la nouvelle méthode à l’aide d’un URI absolu qui identifie le balisage d’origine, comme illustré par le code suivant :
@@ -630,7 +630,7 @@ Les modifications apportées à la collecte des ordures (GC) dans le cadre .NET 
 
 <a name="net471"/>
 
-#### <a name="networking"></a>Mise en réseau
+#### <a name="networking"></a>Réseau
 
 **Prise en charge de SHA-2 pour Message.HashAlgorithm**
 
@@ -699,7 +699,7 @@ Dans .NET Framework 4.7, le <xref:System.Runtime.Serialization.Json.DataContract
 
 <a name="net47" />
 
-#### <a name="networking"></a>Mise en réseau
+#### <a name="networking"></a>Réseau
 
 .NET Framework 4.7 ajoute les fonctionnalités liées au réseau suivantes :
 
@@ -784,11 +784,11 @@ Le .NET Framework 4.6.2 apporte de nouvelles fonctionnalités dans les domaines 
 
 - [Catégories de caractères](#Strings)
 
-- [Cryptographie](#Crypto462)
+- [Chiffrement](#Crypto462)
 
 - [SqlClient](#SQLClient)
 
-- [Fondation Windows Communication](#WCF)
+- [Windows Communication Foundation](#WCF)
 
 - [Windows Presentation Foundation (WPF)](#WPF462)
 
@@ -1248,7 +1248,7 @@ L’*API de débogage non managée* a été améliorée dans .NET Framework 4.6
 
 Le .NET Framework 4.6.1 apporte de nouvelles fonctionnalités dans les domaines suivants :
 
-- [Cryptographie](#Crypto)
+- [Chiffrement](#Crypto)
 
 - [ADO.NET](#ADO.NET461)
 

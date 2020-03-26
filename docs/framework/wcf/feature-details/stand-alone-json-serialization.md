@@ -2,12 +2,12 @@
 title: Sérialisation autonome de JSON à l’aide de DataContractJsonSerializer
 ms.date: 03/30/2017
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
-ms.openlocfilehash: 36945f2d42f22ef3aa4f27bcbe403466f124a279
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 614776a905ec319624f76876762c25bfca15a357
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184423"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249446"
 ---
 # <a name="stand-alone-json-serialization-using-datacontractjsonserializer"></a>Sérialisation autonome de JSON à l’aide de DataContractJsonSerializer
 
@@ -42,7 +42,7 @@ Le tableau suivant indique la correspondance entre les types .NET et les types J
 |Collections, dictionnaires et tableaux|Array|Voir la section Collections, dictionnaires et tableaux de cette rubrique.|
 |Types complexes (avec <xref:System.Runtime.Serialization.DataContractAttribute> ou <xref:System.SerializableAttribute> appliqué)|Type complexe|Les membres de données deviennent membres du type complexe JavaScript.|
 |Types complexes implémentant l'interface <xref:System.Runtime.Serialization.ISerializable>)|Type complexe|Identique à d'autres types complexes mais certains types <xref:System.Runtime.Serialization.ISerializable> ne sont pas pris en charge ; consultez Prise en charge de l'interface ISerializable dans la section Informations avancées de cette rubrique.|
-|Valeur `Null` pour tout type|Null|Les types Nullable sont également pris en charge et mappés à JSON de la même manière que les types non Nullable.|
+|Valeur `Null` pour tout type|Null|Les types de valeur nulables sont également pris en charge et cartographient JSON de la même manière que les types de valeur non annulables.|
 
 ### <a name="enumerations-and-json"></a>Énumérations et JSON
 
@@ -117,7 +117,7 @@ Lorsque vous travaillez avec vos propres types dérivés et de base, l'utilisati
 
 Pour obtenir des informations détaillées sur le fonctionnement de la sérialisation polymorphique et connaître certaines limitations qui doivent être respectées lors de son utilisation, consultez la section Informations avancées ci-après dans cette rubrique.
 
-### <a name="versioning"></a>Contrôle de version
+### <a name="versioning"></a>Gestion de version
 
 Les fonctionnalités de contrôle de version des contrats de données, notamment l’interface <xref:System.Runtime.Serialization.IExtensibleDataObject>, sont intégralement prises en charge dans JSON. Qui plus est, dans la plupart des cas, il est possible de désérialiser un type dans un format (par exemple, XML) puis de le sérialiser dans un autre format (par exemple, JSON) tout en préservant les données dans <xref:System.Runtime.Serialization.IExtensibleDataObject>. Pour plus d’informations, consultez [Contrats de données compatibles avec des versions ultérieures](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md). Rappelez-vous que l'ordre n'intervient pas dans JSON et que les informations sur l'ordre sont donc perdues. De plus, JSON ne prend pas en charge plusieurs paires clé/valeur dotées du même nom de clé. En dernier lieu, toutes les opérations sur <xref:System.Runtime.Serialization.IExtensibleDataObject> sont polymorphiques par nature, c'est-à-dire que leur type dérivé est assigné à <xref:System.Object>, le type de base pour tous les types.
 

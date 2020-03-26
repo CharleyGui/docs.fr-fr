@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: c4e29e6437edfe549b36a04a2050f63caa0d3d2a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8727e47e13082e8550fb174c92139dfd5c17ec36
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846520"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134341"
 ---
 # <a name="char-c-reference"></a>char (référence C)
 
@@ -57,5 +57,6 @@ Pour plus d’informations, consultez la section [des types intégrales](~/_csha
 
 - [Référence C#](../index.md)
 - [Types de valeur](value-types.md)
-- [Cordes](../../programming-guide/strings/index.md)
+- [Chaînes](../../programming-guide/strings/index.md)
 - <xref:System.Text.Rune?displayProperty=nameWithType>
+- [Encodage de caractère dans .NET](../../../standard/base-types/character-encoding-introduction.md)

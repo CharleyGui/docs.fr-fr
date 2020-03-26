@@ -3,19 +3,21 @@ title: Installer .NET Core sur Ubuntu 19.10 package manager - .NET Core
 description: Utilisez un gestionnaire de paquets pour installer .NET Core SDK et l’exécution sur Ubuntu 19.10.
 author: thraka
 ms.author: adegeo
-ms.date: 01/16/2020
-ms.openlocfilehash: b8fec2afa6f03e3dabbf1ff449431759087163ba
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 03/17/2020
+ms.openlocfilehash: aac63ba74a8bfaba63e9d23882c9350a7d3d84f3
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76920642"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134133"
 ---
 # <a name="ubuntu-1910-package-manager---install-net-core"></a>Ubuntu 19.10 Package Manager - Installer .NET Core
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-switcher.md)]
 
-Cet article décrit comment utiliser un gestionnaire de paquets pour installer .NET Core sur Ubuntu 19.10. Si vous installez le temps d’exécution, nous vous suggérons d’installer le [ASP.NET’arrêt Core,](#install-the-aspnet-core-runtime)car il comprend à la fois .NET Core et ASP.NET les temps d’exécution Core.
+Cet article décrit comment utiliser un gestionnaire de paquets pour installer .NET Core sur Ubuntu 19.10.
+
+[!INCLUDE [package-manager-intro-sdk-vs-runtime](includes/package-manager-intro-sdk-vs-runtime.md)]
 
 ## <a name="register-microsoft-key-and-feed"></a>Inscrire la clé et le flux Microsoft
 
@@ -30,7 +32,7 @@ Vous ne devez faire ces opérations qu’une seule fois par machine.
 Ouvrez un terminal et exécutez les commandes suivantes.
 
 ```bash
-wget -q https://packages.microsoft.com/config/ubuntu/19.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+wget https://packages.microsoft.com/config/ubuntu/19.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 ```
 
@@ -98,9 +100,9 @@ Si cela ne fonctionne pas, vous pouvez exécuter une installation manuelle avec 
 
 ```bash
 sudo apt-get install -y gpg
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o microsoft.asc.gpg
+wget O- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o microsoft.asc.gpg
 sudo mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
-wget -q https://packages.microsoft.com/config/ubuntu/19.10/prod.list
+wget https://packages.microsoft.com/config/ubuntu/19.10/prod.list
 sudo mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
 sudo chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
 sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list

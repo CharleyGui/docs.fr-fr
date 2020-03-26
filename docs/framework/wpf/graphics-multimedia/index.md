@@ -12,12 +12,12 @@ helpviewer_keywords:
 - graphics features [WPF]
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
-ms.openlocfilehash: 56a69c10a420e399478a0d617d30380ff5217e9c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8636afcc5b63b71dc729812a7f3eb4945ba49494
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186732"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112035"
 ---
 # <a name="graphics-and-multimedia"></a>Graphiques et multimédia
 
@@ -55,9 +55,9 @@ Plusieurs modifications ont été apportées aux graphiques et aux animations.
 
 ## <a name="graphics-and-rendering"></a>Graphiques et rendu
 
-WPF inclut la prise en charge des graphiques 2D de haute qualité. La fonctionnalité inclut des pinceaux, des géométries, des images, des formes et des transformations. Pour plus d’informations, consultez [Graphiques](graphics.md). Le rendu des éléments graphiques <xref:System.Windows.Media.Visual> est basé sur la classe. La structure des objets visuels à l’écran est décrite par l’arborescence visuelle. Pour plus d’informations, consultez [Vue d’ensemble du rendu graphique WPF](wpf-graphics-rendering-overview.md).
+WPF inclut le support pour des graphismes 2D de haute qualité. La fonctionnalité inclut des pinceaux, des géométries, des images, des formes et des transformations. Pour plus d’informations, consultez [Graphiques](graphics.md). Le rendu des éléments graphiques <xref:System.Windows.Media.Visual> est basé sur la classe. La structure des objets visuels à l’écran est décrite par l’arborescence visuelle. Pour plus d’informations, consultez [Vue d’ensemble du rendu graphique WPF](wpf-graphics-rendering-overview.md).
 
-### <a name="2-d-shapes"></a>Formes 2D
+### <a name="2d-shapes"></a>Formes 2D
 
 WPF fournit une bibliothèque de formes 2D couramment utilisées et dessinées par vecteur, telles que des rectangles et des ellipses, que l’illustration suivante montre.
 
@@ -99,7 +99,7 @@ L’illustration suivante montre la sortie de l’exemple de balisage et code-be
 
 Pour plus d’informations, consultez [Vue d’ensemble des formes et dessins de base dans WPF](shapes-and-basic-drawing-in-wpf-overview.md). Pour obtenir un exemple d’introduction, consultez [Exemples d’éléments de forme](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/ShapeElements).
 
-### <a name="2-d-geometries"></a>Géométries 2D
+### <a name="2d-geometries"></a>Géométries 2D
 
 Lorsque les formes 2D que WPF fournit ne sont pas suffisantes, vous pouvez utiliser le support WPF pour les géométries et les chemins pour créer votre propre. L’illustration suivante montre comment vous pouvez utiliser des géométries pour créer des formes, comme un pinceau à dessin, et pour couper d’autres éléments WPF.
 
@@ -107,9 +107,9 @@ Lorsque les formes 2D que WPF fournit ne sont pas suffisantes, vous pouvez utili
 
 Pour plus d’informations, voir [Aperçu de la géométrie](geometry-overview.md). Pour obtenir un exemple d’introduction, consultez [Exemples de géométries](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Geometry).
 
-### <a name="2-d-effects"></a>Effets 2D
+### <a name="2d-effects"></a>Effets 2D
 
-WPF fournit une bibliothèque de classes 2D que vous pouvez utiliser pour créer une variété d’effets. La capacité de rendu 2D de WPF [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] offre la possibilité de peindre des éléments qui ont des gradients, des bitmaps, des dessins et des vidéos; et de les manipuler en utilisant la rotation, l’échelle et la faussement. L’illustration suivante donne un exemple des nombreux effets que vous pouvez réaliser en utilisant des pinceaux WPF.
+WPF fournit une bibliothèque de classes 2D que vous pouvez utiliser pour créer une variété d’effets. La capacité de rendu 2D de WPF offre la possibilité de peindre [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] des éléments qui ont des gradients, des bitmaps, des dessins et des vidéos; et de les manipuler en utilisant la rotation, l’échelle et la faussement. L’illustration suivante donne un exemple des nombreux effets que vous pouvez réaliser en utilisant des pinceaux WPF.
 
 ![Illustration montrant les différents pinceaux WPF et éléments de peinture.](./media/index/brushes-paint-elements.png)
 
@@ -117,13 +117,13 @@ Pour plus d’informations, voir [WPF Brushes Aperçu](wpf-brushes-overview.md).
 
 <a name="rendering"></a>
 
-## <a name="3-d-rendering"></a>Rendu 3D
+## <a name="3d-rendering"></a>Rendu 3D
 
-WPF fournit un ensemble de capacités de rendu 3D qui s’intègrent avec le support graphique [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]2D dans WPF afin que vous créiez une mise en page plus excitante, et la visualisation des données. À une extrémité du spectre, WPF vous permet de rendre des images 2D sur les surfaces des formes 3D, ce que l’illustration suivante démontre.
+WPF fournit un ensemble de capacités de rendu 3D qui s’intègrent avec le support [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]graphique 2D dans WPF afin que vous créiez une mise en page plus excitante, et la visualisation des données. À une extrémité du spectre, WPF vous permet de rendre des images 2D sur les surfaces des formes 3D, ce que l’illustration suivante démontre.
 
 ![Capture d’écran d’un échantillon montrant des formes 3D avec des textures différentes.](./media/index/visual-three-dimensional-shape.png)
 
-Pour plus d’informations, voir [3-D Graphics Overview](3-d-graphics-overview.md). Pour obtenir un exemple d’introduction, consultez [Exemples de solides 3D](https://go.microsoft.com/fwlink/?LinkID=159964).
+Pour plus d’informations, voir [3D Graphics Overview](3-d-graphics-overview.md). Pour un échantillon d’introduction, voir [3D Solids Sample](https://go.microsoft.com/fwlink/?LinkID=159964).
 
 <a name="animation"></a>
 
@@ -171,5 +171,5 @@ Pour plus d'informations, consultez [Vue d’ensemble du multimédia](multimedia
 - [Vue d'ensemble de la peinture avec des couleurs unies ou des dégradés](painting-with-solid-colors-and-gradients-overview.md)
 - [Peinture avec des images, des dessins et des objets visuels](painting-with-images-drawings-and-visuals.md)
 - [Rubriques "Comment" relatives à l'animation et au minutage](animation-and-timing-how-to-topics.md)
-- [Vue d’ensemble des graphiques 3D](3-d-graphics-overview.md)
+- [Aperçu graphique 3D](3-d-graphics-overview.md)
 - [Vue d’ensemble multimédia](multimedia-overview.md)

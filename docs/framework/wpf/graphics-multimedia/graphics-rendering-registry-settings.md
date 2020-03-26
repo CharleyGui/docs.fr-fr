@@ -8,12 +8,12 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: 85e32c99674cc95f670a4cb483b55865b996cb31
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 642dfdd784af4b85672cf5b0c8e60079763f4c47
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186425"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112282"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Paramètres du Registre pour le rendu des graphiques
 Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le rendu des graphiques [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] qui affectent les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -33,7 +33,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
 |Paramètre|Description|  
 |-------------|-----------------|  
 |**Option Désactiver l’accélération matérielle**|Spécifie si l’accélération matérielle doit être activée.|  
-|**Valeur d’échantillonnage multiple maximale**|Spécifie le degré de multisampling pour antialiasing contenu 3-D.|  
+|**Valeur d’échantillonnage multiple maximale**|Spécifie le degré de multisampling pour anti-étiquetage du contenu 3D.|  
 |**Paramètre Date de pilote vidéo requise**|Spécifie si le système désactive l’accélération matérielle pour les pilotes commercialisés avant novembre 2004.|  
 |**Option Utiliser le rastériseur de référence**|Spécifie si [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] doit utiliser le rastériseur de référence.|  
   
@@ -57,9 +57,9 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\MaxMultisampleType`|DWORD|  
   
- La **valeur multisample maximale** vous permet d’ajuster la quantité maximale d’anti-analyse de contenu 3D. Utilisez ce niveau pour désactiver l’antialiasing 3D dans Windows Vista.  
+ La **valeur multisample maximale** vous permet d’ajuster la quantité maximale d’anti-analyse du contenu 3D. Utilisez ce niveau pour désactiver l’antialiasing 3D dans Windows Vista.  
   
- La **valeur d’échantillonnage multiple maximale** est une valeur DWORD comprise entre 0 et 16. La valeur 0 spécifie que l’anticrénelage d’échantillonnage multiple du contenu 3D doit être désactivé, et la valeur 16 essaye d’utiliser jusqu’à 16 anticrénelages d’échantillonnage multiple, si cela est pris en charge par la carte vidéo. Méfiez-vous que le réglage de cette valeur clé de registre sur les ordinateurs utilisant des pilotes XPDM entraînera des applications à utiliser une grande quantité de mémoire vidéo supplémentaire, diminuer les performances du rendu 3D, et a le potentiel d’introduire des erreurs de rendu et de stabilité Problèmes.  
+ La **valeur d’échantillonnage multiple maximale** est une valeur DWORD comprise entre 0 et 16. Une valeur de 0 spécifie que l’anti-analyse multisample du contenu 3D doit être désactivé, et une valeur de 16 tentera d’utiliser jusqu’à 16x antialiasing multisample, si elle est prise en charge par la carte vidéo. Méfiez-vous que le réglage de cette valeur clé de registre sur les ordinateurs utilisant des pilotes XPDM entraînera des applications à utiliser une grande quantité de mémoire vidéo supplémentaire, diminuer les performances du rendu 3D, et a le potentiel d’introduire des erreurs de rendu et de stabilité Problèmes.  
   
  Si cette clé de Registre n’est pas définie, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise la valeur par défaut de 0 pour les pilotes XPDM et de 4 pour les pilotes WDDM.  
   

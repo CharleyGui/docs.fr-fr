@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d899d43c-335a-433e-a589-cd187192984f
 dev_langs:
 - CSharp
-ms.openlocfilehash: a2dde9f795dfe31ff6ef821272a0d5e8d20e8b2f
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: ce86f7897c5c117c4fd6f1eabc4c8b802103261c
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159947"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80248028"
 ---
 # <a name="basic-serialization"></a>Sérialisation de base
 
@@ -68,9 +68,7 @@ Si la portabilité est une exigence, utilisez plutôt le <xref:System.Runtime.Se
   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"  
   xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"  
-  SOAP-ENV:encodingStyle=  
-  "http://schemas.microsoft.com/soap/encoding/clr/1.0"  
-  "http://schemas.xmlsoap.org/soap/encoding/"  
+  SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"  
   xmlns:a1="http://schemas.microsoft.com/clr/assem/ToFile">  
   
   <SOAP-ENV:Body>  

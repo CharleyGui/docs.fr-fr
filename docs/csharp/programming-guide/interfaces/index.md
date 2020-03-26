@@ -5,16 +5,16 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: f4ee269f41e79562c113a7627816f797b083095e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb1b812fdbf1d521ed3fd86e23f430bcd04d00f6
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79157076"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249179"
 ---
 # <a name="interfaces-c-programming-guide"></a>Interfaces (Guide de programmation C#)
 
-Une interface contient des définitions pour un groupe de fonctionnalités connexes qu’une [classe](../../language-reference/keywords/class.md) non abstraite ou une [struct doit](../../language-reference/builtin-types/struct.md) mettre en œuvre. Une interface `static` peut définir des méthodes, qui doivent avoir une implémentation. Une interface peut fournir une implémentation par défaut pour l’un ou l’autre de ses membres d’instance déclarés. Une interface ne peut pas déclarer les données d’instance telles que les champs, les propriétés auto-mises en œuvre, ou des événements de propriété-comme.
+Une interface contient des définitions pour un groupe de fonctionnalités connexes qu’une [classe](../../language-reference/keywords/class.md) non abstraite ou une [struct doit](../../language-reference/builtin-types/struct.md) mettre en œuvre. Une interface `static` peut définir des méthodes, qui doivent avoir une implémentation. En commençant par le C 8.0, une interface peut définir une implémentation par défaut pour les membres. Une interface ne peut pas déclarer les données d’instance telles que les champs, les propriétés auto-mises en œuvre, ou des événements de propriété-comme.
 
 En utilisant des interfaces, vous pouvez, par exemple, inclure le comportement de plusieurs sources dans une classe. Cette fonctionnalité est importante en C#, car le langage ne prend pas en charge l'héritage multiple de classes. De plus, vous devez utiliser une interface si vous voulez simuler l'héritage pour des structs, car ils ne peuvent en fait pas hériter d'un autre struct ou d'une autre classe.
 
@@ -54,12 +54,12 @@ Une interface possède les propriétés suivantes :
 - Une interface ne peut pas être instanciée directement. Ses membres sont implémentées par une classe ou un struct qui implémentent l'interface.
 - Une classe ou un struct peuvent implémenter plusieurs interfaces. Une classe peut hériter d'une classe de base et également implémenter une ou plusieurs interfaces.
 
-## <a name="BKMK_RelatedSections"></a>Sections connexes
+## <a name="related-sections"></a><a name="BKMK_RelatedSections"></a>Sections connexes
 
 - [Propriété d’une interface](../classes-and-structs/interface-properties.md)  
 - [Indexeurs dans les interfaces](../indexers/indexers-in-interfaces.md)  
 - [Comment implémenter des événements d’interface](../events/how-to-implement-interface-events.md)
-- [Classes et structs](../classes-and-structs/index.md)  
+- [Classes et Structs](../classes-and-structs/index.md)  
 - [Héritage](../classes-and-structs/inheritance.md)  
 - [Méthodes](../classes-and-structs/methods.md)  
 - [Polymorphisme](../classes-and-structs/polymorphism.md)  

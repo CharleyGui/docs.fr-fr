@@ -9,12 +9,12 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 11c544e7fc923b0820141fb2e096ef7707f0a95f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 341d5a2e62ca7f94a8448fa0c1286cf7e599c759
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74552479"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79546664"
 ---
 # <a name="c-operators-c-reference"></a>Opérateur C# (Référence C#)
 
@@ -42,9 +42,10 @@ La table suivante répertorie les opérateurs C# de la priorité la plus élevé
 
 | Opérateurs | Catégorie ou nom |
 | --------- | ---------------- |
-| [x.y](member-access-operators.md#member-access-operator-), [x?.y](member-access-operators.md#null-conditional-operators--and-), [x?[y]](member-access-operators.md#null-conditional-operators--and-), [f(x)](member-access-operators.md#invocation-operator-), [a&#91;i&#93;](member-access-operators.md#indexer-operator-), [x++](arithmetic-operators.md#increment-operator-), [x--](arithmetic-operators.md#decrement-operator---), [nouveau](new-operator.md), [typeof](type-testing-and-cast.md#typeof-operator), [vérifié](../keywords/checked.md), [non vérifié](../keywords/unchecked.md), [par défaut](default.md), [nameof](nameof.md), [délégué](delegate-operator.md), [sizeof](sizeof.md), [stackalloc](stackalloc.md), [x->y](pointer-related-operators.md#pointer-member-access-operator--) | Principal |
+| [x.y](member-access-operators.md#member-access-expression-), [x?.y](member-access-operators.md#null-conditional-operators--and-), [x?[y]](member-access-operators.md#null-conditional-operators--and-), [f(x)](member-access-operators.md#invocation-expression-), [a&#91;i&#93;](member-access-operators.md#indexer-operator-), [x++](arithmetic-operators.md#increment-operator-), [x--](arithmetic-operators.md#decrement-operator---), [nouveau](new-operator.md), [typeof](type-testing-and-cast.md#typeof-operator), [vérifié](../keywords/checked.md), [non vérifié](../keywords/unchecked.md), [par défaut](default.md), [nameof](nameof.md), [délégué](delegate-operator.md), [sizeof](sizeof.md), [stackalloc](stackalloc.md), [x->y](pointer-related-operators.md#pointer-member-access-operator--) | Principal |
 | [X](arithmetic-operators.md#unary-plus-and-minus-operators), [-x](arithmetic-operators.md#unary-plus-and-minus-operators), [ \!x](boolean-logical-operators.md#logical-negation-operator-), [x](bitwise-and-shift-operators.md#bitwise-complement-operator-), [x](arithmetic-operators.md#increment-operator-), [--x](arithmetic-operators.md#decrement-operator---), [x](member-access-operators.md#index-from-end-operator-), [(T)x](type-testing-and-cast.md#cast-operator-), [attendez](await.md), [&x](pointer-related-operators.md#address-of-operator-), [x](pointer-related-operators.md#pointer-indirection-operator-), vrai [et faux](true-false-operators.md) | Unaire |
 | [X.. y](member-access-operators.md#range-operator-) | Plage |
+| [Interrupteur](../../whats-new/csharp-8.md#switch-expressions) | Expression `switch` |
 | [x * y](arithmetic-operators.md#multiplication-operator-), [x / y](arithmetic-operators.md#division-operator-), [x % y](arithmetic-operators.md#remainder-operator-) | Multiplicatif|
 | [x + y](arithmetic-operators.md#addition-operator-), [x – y](arithmetic-operators.md#subtraction-operator--) | Additive |
 | [ \< x \< y](bitwise-and-shift-operators.md#left-shift-operator-), [x >> y](bitwise-and-shift-operators.md#right-shift-operator-) | Shift |

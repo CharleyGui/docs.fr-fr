@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a8146db1fb54d63d4716b879ce793f7d817cef59
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 64e854b06895ca54a9ab9870b85868788a731c00
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75937287"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79549598"
 ---
 ### <a name="shared-framework-assemblies-removed-from-microsoftaspnetcoreapp"></a>Cadre partagé : Assemblées supprimées de Microsoft.AspNetCore.App
 
@@ -36,7 +36,7 @@ Une référence `Microsoft.AspNetCore.App` à ne `<PackageReference>` plus néce
 
 Pour plus d’informations, voir [dotnet/aspnetcore 3612](https://github.com/dotnet/aspnetcore/issues/3612).
 
-Entity Framework Core navires comme paquets NuGet. Cette modification aligne le modèle d’expédition avec toutes les autres bibliothèques d’accès aux données sur .NET. Il fournit Entity Framework Core la voie la plus simple pour continuer à innover tout en soutenant les différentes plates-formes .NET. Le transfert de Entity Framework Core hors du cadre partagé n’a aucun impact sur son statut de bibliothèque développée, soutenue et utilisable par Microsoft. La [politique de soutien de base .NET](https://www.microsoft.com/net/platform/support-policy) continue de la couvrir.
+Entity Framework Core navires comme paquets NuGet. Cette modification aligne le modèle d’expédition avec toutes les autres bibliothèques d’accès aux données sur .NET. Il fournit Entity Framework Core la voie la plus simple pour continuer à innover tout en soutenant les différentes plates-formes .NET. Le transfert de Entity Framework Core hors du cadre partagé n’a aucun impact sur son statut de bibliothèque développée, soutenue et utilisable par Microsoft. La [politique de soutien de base .NET](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) continue de la couvrir.
 
 Json.NET et le noyau cadre d’entité continuent de travailler avec ASP.NET Core. Ils ne seront toutefois pas inclus dans le cadre commun.
 

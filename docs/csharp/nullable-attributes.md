@@ -3,12 +3,12 @@ title: Améliorer les API pour les types de référence nuls avec des attributs 
 description: Apprenez à utiliser les attributs descriptifs AllowNull, DisallowNull, MaybeNull, NotNull et plus encore pour décrire pleinement l’état nul de vos API.
 ms.technology: csharp-null-safety
 ms.date: 07/31/2019
-ms.openlocfilehash: a4b1f851bcbe27dd4884d45eb6d1209ab54271d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ca04db800271b9b01b5b9f1482dd5a0db2cc1c35
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79170361"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249243"
 ---
 # <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Mettre à jour les bibliothèques pour qu’elles utilisent des types de référence nuls et communiquent des règles in annulables aux appelants
 
@@ -30,7 +30,7 @@ La mise à jour de votre bibliothèque `?` pour les références annulées néce
 
 Ce travail prend du temps. Commençons par des stratégies pour rendre votre bibliothèque ou votre application in annulable, tout en équilibrant d’autres exigences et livrables. Vous verrez comment équilibrer le développement en cours permettant des types de référence nuls. Vous apprendrez des défis pour les définitions de type générique. Vous apprendrez à appliquer des attributs pour décrire les conditions préalables et post-conditions sur les API individuelles.
 
-## <a name="choose-a-nullable-strategy"></a>Choisissez une stratégie in nullable
+## <a name="choose-a-strategy-for-nullable-reference-types"></a>Choisissez une stratégie pour les types de référence nuls
 
 Le premier choix est de savoir si les types de référence nuls doivent être allumés ou annulés par défaut. Vous avez deux stratégies :
 
@@ -41,7 +41,7 @@ La première stratégie fonctionne mieux lorsque vous ajoutez d’autres fonctio
 
 Suite à cette première stratégie, vous faites ce qui suit :
 
-1. Activez les types nuls pour `<Nullable>enable</Nullable>` l’ensemble du projet en ajoutant l’élément à vos fichiers *csproj.*
+1. Activez les types de référence nuls pour l’ensemble du projet en ajoutant l’élément `<Nullable>enable</Nullable>` à vos fichiers *csproj.*
 1. Ajoutez `#nullable disable` le pragma à chaque fichier source de votre projet.
 1. Lorsque vous travaillez sur chaque fichier, retirez le pragma et adressez les avertissements.
 
@@ -129,7 +129,7 @@ L’exemple précédent montre ce qu’il faut rechercher lors de l’ajout de l
 
 Le plus souvent, vous aurez besoin `in` `out`de `ref` cet attribut pour les propriétés, ou , et les arguments. L’attribut `AllowNull` est le meilleur choix lorsqu’une variable n’est généralement pas nulle, mais vous devez le permettre `null` comme condition préalable.
 
-Comparez cela avec `DisallowNull`les scénarios pour l’utilisation : Vous utilisez cet attribut `null`pour spécifier qu’une variable d’entrée d’un type nul ne devrait pas être . Considérez une `null` propriété où est la valeur par défaut, mais les clients ne peuvent la définir qu’à une valeur non nulle. Examinons le code ci-dessous.
+Comparez cela avec `DisallowNull`les scénarios pour l’utilisation : Vous utilisez cet attribut pour `null`spécifier qu’une variable d’entrée d’un type de référence nul ne devrait pas être . Considérez une `null` propriété où est la valeur par défaut, mais les clients ne peuvent la définir qu’à une valeur non nulle. Examinons le code ci-dessous.
 
 ```csharp
 public string ReviewComment
@@ -189,7 +189,7 @@ public T Find<T>(IEnumerable<T> sequence, Func<T, bool> match)
 
 Le code précédent informe les appelants que le contrat implique un type non annulable, mais la valeur de déclaration *peut* en fait être nulle.  Utilisez `MaybeNull` l’attribut lorsque votre API devrait être un type non-nullable, généralement `null` un paramètre de type générique, mais il peut y avoir des cas où serait retourné.
 
-Vous pouvez également spécifier `out` `ref` qu’une valeur de retour ou un ou un argument n’est pas nul, même si le type est un type nul. Considérez une méthode qui garantit qu’un tableau est assez grand pour contenir un certain nombre d’éléments. Si l’argument de l’entrée n’a pas de capacité, la routine allouerait un nouveau tableau et copierait tous les éléments existants. Si l’argument `null`de l’entrée est, la routine allouerait un nouveau stockage. S’il y a une capacité suffisante, la routine ne fait rien :
+Vous pouvez également spécifier `out` `ref` qu’une valeur de retour ou un ou un argument n’est pas nul, même si le type est un type de référence nul. Considérez une méthode qui garantit qu’un tableau est assez grand pour contenir un certain nombre d’éléments. Si l’argument de l’entrée n’a pas de capacité, la routine allouerait un nouveau tableau et copierait tous les éléments existants. Si l’argument `null`de l’entrée est, la routine allouerait un nouveau stockage. S’il y a une capacité suffisante, la routine ne fait rien :
 
 ```csharp
 public void EnsureCapacity<T>(ref T[] storage, int size)
@@ -219,7 +219,7 @@ Vous spécifiez les conditions post-conditions inconditionnelles à l’aide des
 
 ## <a name="specify-conditional-post-conditions-notnullwhen-maybenullwhen-and-notnullifnotnull"></a>Spécifier les `NotNullWhen` `MaybeNullWhen`conditions post-conditions conditionnelles: , et`NotNullIfNotNull`
 
-Vous êtes probablement familier `string` <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType>avec la méthode . Cette méthode `true` revient lorsque l’argument est nul ou une chaîne vide. C’est une forme de null-check: Les appelants n’ont pas `false`besoin de vérifier l’argument si la méthode revient . Pour faire prendre conscience à une méthode comme celle-ci, vous définissez `NotNullWhen` l’argument à un type nul et ajoutez l’attribut :
+Vous êtes probablement familier `string` <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType>avec la méthode . Cette méthode `true` revient lorsque l’argument est nul ou une chaîne vide. C’est une forme de null-check: Les appelants n’ont pas `false`besoin de vérifier l’argument si la méthode revient . Pour faire prendre conscience à une méthode comme celle-ci, vous définissez `NotNullWhen` l’argument à un type de référence nul et ajoutez l’attribut :
 
 ```csharp
 bool IsNullOrEmpty([NotNullWhen(false)]string? value);
