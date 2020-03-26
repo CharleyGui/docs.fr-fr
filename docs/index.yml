@@ -11,12 +11,12 @@ metadata:
   author: BillWagner
   ms.author: wiwagn
   ms.date: 12/19/2019
-  ms.openlocfilehash: 6b23ab2f0214f23d45499fcf8ab7c3f2771be15c
-  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  ms.openlocfilehash: f0660cf23bcbc6520d7b0d853e1b214dee785300
+  ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/16/2020
-  ms.locfileid: "79416325"
+  ms.lasthandoff: 03/24/2020
+  ms.locfileid: "80228553"
 highlightedContent:
   items:
   - title: Présentation de C#. Démarrage interactif rapide.
@@ -80,7 +80,7 @@ conceptualContent:
     - url: standard/components.md
       itemType: concept
       text: Composants architecturaux de .NET
-    - url: framework/index.md
+    - url: framework/index.yml
       itemType: overview
       text: Applications .NET Framework (Windows)
   - title: Développer des applications .NET
