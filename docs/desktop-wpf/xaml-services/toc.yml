@@ -1,7 +1,7 @@
 - name: Informations de référence du langage XAML
   href: index.md
   items:
-    - name: "Fonctionnalités de langage pour les espaces de noms XAML\_(x:)"
+    - name: 'Espace de noms XAML (x:) Fonctionnalités de langage'
       href: namespace-language-features.md
       items:
         - name: "Fonctionnalités de langage XAML\_2009 (pas WPF)"
@@ -59,8 +59,6 @@
           href: xml-language-handling.md
         - name: 'Gestion de xml:space en XAML'
           href: xml-space-handling.md
-    - name: Types migrés de WPF vers System.Xaml
-      href: types-migrated-from-wpf-to-system.md
     - name: Fonctionnement des concepts et structures du flux de nœud XAML
       href: understanding-xaml-node-stream-structures-and-concepts.md
     - name: Classe XAMLServices et lecture ou écriture XAML de base

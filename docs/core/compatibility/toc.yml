@@ -7,6 +7,8 @@
 - name: Par version
   expanded: true
   items:
+    - name: 3.1 à 5.0
+      href: 3.1-5.0.md
     - name: 3.0 à 3.1
       href: 3.0-3.1.md
     - name: 2.2 à 3.1
@@ -38,7 +40,7 @@
       href: globalization.md
     - name: MSBuild
       href: msbuild.md
-    - name: Mise en réseau
+    - name: Réseau
       href: networking.md
     - name: Visual Basic
       href: visualbasic.md
