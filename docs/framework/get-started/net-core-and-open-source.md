@@ -2,16 +2,16 @@
 title: .NET Core et Open-Source
 ms.date: 03/30/2017
 ms.assetid: e6bd4655-ce37-4003-8462-468a6fe2c40f
-ms.openlocfilehash: b5aa42d0460d743bffe8f17a2603773c03c09ce0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a8f44eedddc4424b39f7aedceb4bb8f02c6feb42
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79181609"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345035"
 ---
-# <a name="net-core-and-open-source"></a>.NET Core et open source
+# <a name="net-core-and-open-source"></a>.NET Core et l’open source
 
-Cet article fournit un bref aperçu de ce que .NET Core est et montre comment vous pouvez trouver plus d’informations. Pour trouver la liste complète de la documentation pour .NET Core, visitez le [guide .NET Core](../../core/index.md).
+Cet article fournit un bref aperçu de ce que .NET Core est et montre comment vous pouvez trouver plus d’informations. Pour trouver la liste complète de la documentation pour .NET Core, visitez le [guide .NET Core](../../core/index.yml).
 
 ## <a name="what-is-net-core"></a>Qu'est-ce que le .NET Core ?  
 
@@ -46,5 +46,5 @@ La plate-forme .NET Core est composée de plusieurs composants, y compris les co
 ## <a name="see-also"></a>Voir aussi
 
 - [.NET tutoriel - Bonjour monde en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)
-- [Guide de base .NET](../../core/index.md)
+- [Guide .NET Core](../../core/index.yml)
 - [ASP.NET docs de base](/aspnet/core/)

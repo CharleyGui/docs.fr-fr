@@ -2,12 +2,12 @@
 title: Didacticiels C#
 description: Explorez ces didacticiels C# pour savoir comment générer des programmes C# et découvrez les fonctionnalités du langage C#.
 ms.date: 10/25/2018
-ms.openlocfilehash: 8adbec3311c7a0e88475734312ecc3621042c3f3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 57d2471ef8ad06eb821a1d1d88210dfbb8dc732e
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75346795"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345092"
 ---
 # <a name="c-tutorials"></a>Didacticiels C#
 
@@ -56,7 +56,7 @@ Tous les tutoriels de présentation proposés après la leçon Hello World sont 
 
 ## <a name="general-tutorials"></a>Tutoriels généraux
 
-Les didacticiels suivants vous permettent de générer des programmes C# à l’aide de [.NET Core](../../core/index.md) :
+Les didacticiels suivants vous permettent de générer des programmes C# à l’aide de [.NET Core](../../core/index.yml) :
 
 * [Application console](console-teleprompter.md) : ce tutoriel présente les fonctionnalités d’E/S de la console, la structure d’une application console et les concepts de base du modèle de programmation asynchrone basé sur les tâches.
 * [Client REST](console-webapiclient.md) : ce tutoriel présente les communications web, la sérialisation JSON et les fonctionnalités orientées objet du langage C#.

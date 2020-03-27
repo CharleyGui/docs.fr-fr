@@ -2,15 +2,15 @@
 title: 'Procédure : ajouter la détectabilité par programme à un service et un client WCF'
 ms.date: 03/30/2017
 ms.assetid: 4f7ae7ab-6fc8-4769-9730-c14d43f7b9b1
-ms.openlocfilehash: dd96bc168413eef99260a5251e74971aa1309ff4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bf89c793cbd72a0a3980e6ec8e42c688dcedec26
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184886"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80344979"
 ---
 # <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>Procédure : ajouter la détectabilité par programme à un service et un client WCF
-Ce sujet explique comment rendre un service de la Windows Communication Foundation (WCF) détectable. Il est basé sur l’échantillon [d’auto-hôte.](https://go.microsoft.com/fwlink/?LinkId=145523)  
+Ce sujet explique comment rendre un service de la Windows Communication Foundation (WCF) détectable. Il est basé sur l’échantillon [d’auto-hôte.](https://docs.microsoft.com/dotnet/framework/wcf/samples/self-host)  
   
 ### <a name="to-configure-the-existing-self-host-service-sample-for-discovery"></a>Pour configurer l'exemple existant de service Self-Host pour la découverte  
   
@@ -124,7 +124,7 @@ Ce sujet explique comment rendre un service de la Windows Communication Foundati
   
      Cette méthode utilise l'adresse du point de terminaison retournée par l'objet `FindCalculatorServiceAddress` pour appeler le service de calculatrice.  
   
-11. À l'intérieur de la méthode `InvokeCalculatorService`, créez une instance de la classe `CalculatorServiceClient`. Cette classe est définie par l’échantillon [d’auto-hôte.](https://go.microsoft.com/fwlink/?LinkId=145523) Elle a été générée à l'aide de Svcutil.exe.  
+11. À l'intérieur de la méthode `InvokeCalculatorService`, créez une instance de la classe `CalculatorServiceClient`. Cette classe est définie par l’échantillon [d’auto-hôte.](https://docs.microsoft.com/dotnet/framework/wcf/samples/self-host) Elle a été générée à l'aide de Svcutil.exe.  
   
     ```csharp  
     // Create a client  
@@ -219,8 +219,8 @@ Ce sujet explique comment rendre un service de la Windows Communication Foundati
     Press <ENTER> to exit.  
     ```  
   
-## <a name="example"></a> Exemple  
- L'intégralité du code utilisé dans cet exemple est présentée ci-dessous. Étant donné que ce code est basé sur l’échantillon [d’auto-hôte,](https://go.microsoft.com/fwlink/?LinkId=145523) seuls les fichiers modifiés sont répertoriés. Pour plus d’informations sur l’échantillon d’auto-hôte, voir [Instructions d’installation](https://go.microsoft.com/fwlink/?LinkId=145522).  
+## <a name="example"></a>Exemple  
+ L'intégralité du code utilisé dans cet exemple est présentée ci-dessous. Étant donné que ce code est basé sur l’échantillon [d’auto-hôte,](https://docs.microsoft.com/dotnet/framework/wcf/samples/self-host) seuls les fichiers modifiés sont répertoriés. Pour plus d’informations sur l’échantillon d’auto-hôte, voir [Instructions d’installation](https://docs.microsoft.com/dotnet/framework/wcf/samples/set-up-instructions).  
   
 ```csharp  
 // Service.cs  

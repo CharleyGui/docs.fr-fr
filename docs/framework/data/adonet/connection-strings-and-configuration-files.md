@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-ms.openlocfilehash: 30198930a260b7370d061e85efe4935e88ad4d8a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8862aa34c2d2677f5bc3e737c01cc61036c243e1
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151625"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345056"
 ---
 # <a name="connection-strings-and-configuration-files"></a>Chaînes de connexion et fichiers de configuration
+
 L'incorporation de chaînes de connexion dans le code de votre application peut entraîner des vulnérabilités de sécurité et des problèmes de maintenance. Les chaînes de connexion non chiffrées compilées dans le code source d’une application peuvent être affichées à l’aide de l’outil [Ildasm.exe (IL Disassembler)](../../tools/ildasm-exe-il-disassembler.md). En outre, si la chaîne de connexion change, votre application doit être recompilée. Pour ces raisons, nous vous recommandons de stocker les chaînes de connexion dans un fichier de configuration de l'application.  
   
 ## <a name="working-with-application-configuration-files"></a>Utilisation de fichiers de configuration de l'application  
@@ -125,9 +126,9 @@ L'incorporation de chaînes de connexion dans le code de votre application peut 
 <configProtectedData defaultProvider="RsaProtectedConfigurationProvider">  
   <providers>  
     <add name="RsaProtectedConfigurationProvider"
-      type="System.Configuration.RsaProtectedConfigurationProvider, ... />  
+      type="System.Configuration.RsaProtectedConfigurationProvider" />  
     <add name="DataProtectionConfigurationProvider"
-      type="System.Configuration.DpapiProtectedConfigurationProvider, ... />  
+      type="System.Configuration.DpapiProtectedConfigurationProvider" />  
   </providers>  
 </configProtectedData>  
 ```  

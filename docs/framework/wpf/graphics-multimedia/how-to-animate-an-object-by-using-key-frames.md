@@ -1,37 +1,37 @@
 ---
-title: 'Procédure : Animer un objet à l’aide d’images clés'
+title: "Comment : animer un objet à l'aide d'images clés"
 ms.date: 03/30/2017
 helpviewer_keywords:
 - animation [WPF], objects with key frames
 - key frames [WPF], animating objects with
 ms.assetid: b1f15ba9-cac7-4cea-8699-5c6b55c05c5e
-ms.openlocfilehash: ffbe1845b634c8f94eb6a10dfa44fcf9903e0cd5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0bc33b189fd856dbe8106c1db35bc18e27ea131e
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933905"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80344704"
 ---
-# <a name="how-to-animate-an-object-by-using-key-frames"></a>Procédure : Animer un objet à l’aide d’images clés
-Cet exemple montre comment animer un objet, qui, dans cet exemple, <xref:System.Windows.Controls.Page.Background%2A> est la propriété <xref:System.Windows.Controls.Page> d’un contrôle, à l’aide d’images clés.  
+# <a name="how-to-animate-an-object-by-using-key-frames"></a>Comment : animer un objet à l'aide d'images clés
+Cet exemple montre comment animer un objet, qui <xref:System.Windows.Controls.Page.Background%2A> dans <xref:System.Windows.Controls.Page> cet exemple est la propriété d’un contrôle, en utilisant des cadres clés.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise la <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> classe pour animer des modifications de <xref:System.Windows.Controls.Page.Background%2A> couleur pour la <xref:System.Windows.Controls.Page> propriété d’un contrôle. L’exemple d’animation change en un pinceau d’arrière-plan différent à intervalles réguliers. Cette animation utilise la <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> classe pour créer trois images clés différentes. L’animation utilise des images clés de la manière suivante:  
+ L’exemple suivant <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> utilise la classe pour <xref:System.Windows.Controls.Page.Background%2A> animer <xref:System.Windows.Controls.Page> les changements de couleur pour la propriété d’un contrôle. L’exemple de l’animation change à un pinceau d’arrière-plan différent à intervalles réguliers. Cette animation <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> utilise la classe pour créer trois cadres clés différents. L’animation utilise des cadres clés de la manière suivante :  
   
-1. À la fin de la première seconde, anime une instance de la <xref:System.Windows.Media.LinearGradientBrush> classe. Cette section de l’exemple applique un dégradé linéaire à la couleur d’arrière-plan afin que la couleur passe du jaune au rouge.  
+1. À la fin de la première seconde, <xref:System.Windows.Media.LinearGradientBrush> anime un exemple de la classe. Cette section de l’exemple applique un gradient linéaire à la couleur de fond de sorte que la couleur passe du jaune à l’orange au rouge.  
   
-2. À la fin de la seconde suivante, anime une instance de la <xref:System.Windows.Media.RadialGradientBrush> classe. Cette section de l’exemple applique un dégradé radial à la couleur d’arrière-plan afin que la couleur passe du blanc au bleu et au noir.  
+2. À la fin de la seconde suivante, <xref:System.Windows.Media.RadialGradientBrush> anime un exemple de la classe. Cette section de l’exemple applique un gradient radial à la couleur de fond de sorte que la couleur passe du blanc au bleu au noir.  
   
-3. À la fin de la troisième seconde, anime une instance de la <xref:System.Windows.Media.DrawingBrush> classe. Cette section de l’exemple applique un modèle de damier à l’arrière-plan.  
+3. À la fin de la troisième seconde, <xref:System.Windows.Media.DrawingBrush> anime un exemple de la classe. Cette section de l’exemple applique un modèle de damier à l’arrière-plan.  
   
 4. L’animation recommence et se répète indéfiniment.  
   
 > [!NOTE]
-> <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame>est le seul type d’image clé que vous pouvez utiliser avec la <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> classe. Les images clés <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> telles que créent des changements soudains dans les valeurs, autrement dit, les modifications de couleur dans cet exemple se produisent soudainement.  
+> <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame>est le seul type de cadre clé <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> que vous pouvez utiliser avec la classe. Les cadres <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> clés comme créer des changements soudains dans les valeurs, c’est-à-dire, les changements de couleur dans cet exemple se produisent soudainement.  
   
  [!code-xaml[keyframes_snip#ObjectAnimationUsingKeyFramesWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/ObjectAnimationUsingKeyFramesExample.xaml#objectanimationusingkeyframeswholepage)]  
   
- Pour l’exemple complet, consultez la page [Animation d’image clé, exemple](https://go.microsoft.com/fwlink/?LinkID=160012).  
+ Pour l’exemple complet, consultez la page [Animation d’image clé, exemple](https://github.com/microsoft/WPF-Samples/tree/master/Animation/KeyFrameAnimation).  
   
 ## <a name="see-also"></a>Voir aussi
 

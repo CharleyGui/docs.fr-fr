@@ -4,12 +4,12 @@ description: Décrit les composants architecturaux de .NET tels que .NET Standar
 author: cartermp
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: 4329830d6cec5032517ea3fa02cb24dd7322e23f
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.openlocfilehash: 027fdb4cec47550f88f6930a4bbdff4ab5cdfb36
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80291785"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80344165"
 ---
 # <a name="net-architectural-components"></a>Composants architecturaux de .NET
 
@@ -38,7 +38,7 @@ Il existe quatre implémentations de .NET principales que Microsoft développe e
 
 .NET Core est une implémentation multiplateforme de .NET conçue pour gérer les charges de travail serveur et cloud à l’échelle. Il s’exécute sur Windows, macOS et Linux. Comme il implémente .NET Standard, tout code qui cible .NET Standard peut s’exécuter sur .NET Core. [ASP.NET](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core), [Windows Forms](../framework/winforms/windows-forms-overview.md) et [Windows Presentation Foundation (WPF)](../framework/wpf/index.md) s’exécutent tous sur .NET Core.
 
-Pour en savoir plus sur .NET Core, consultez le [Guide .NET Core](../core/index.md) et [Choix entre .NET Core et .NET Framework pour les applications serveur](choosing-core-framework-server.md).
+Pour en savoir plus sur .NET Core, consultez le [Guide .NET Core](../core/index.yml) et [Choix entre .NET Core et .NET Framework pour les applications serveur](choosing-core-framework-server.md).
 
 ### <a name="net-framework"></a>.NET Framework
 
@@ -107,8 +107,8 @@ Les documents officiels isO/IEC sont disponibles sur la page [normes publiques](
 
 - [Choix entre .NET Core et .NET Framework pour les applications serveur](choosing-core-framework-server.md)
 - [.NET Standard](net-standard.md)
-- [Guide de base .NET](../core/index.md)
-- [Guide du .NET Framework](../framework/index.yml)
+- [Guide de base .NET](../core/index.yml)
+- [Guide-cadre .NET](../framework/index.yml)
 - [Guide de voyage CMD](../csharp/index.yml)
 - [Guide de voyage F](../fsharp/index.yml)
 - [Guide de base visuel](../visual-basic/index.yml)

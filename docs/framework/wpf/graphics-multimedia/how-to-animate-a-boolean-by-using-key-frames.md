@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Animer une valeur booléenne à l’aide d’images clés'
+title: "Comment : animer une valeur booléenne à l'aide d'images clés"
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,24 +9,24 @@ helpviewer_keywords:
 - animation [WPF], Booleans with key frames
 - key frames [WPF], animating Booleans with
 ms.assetid: 4b0fac96-6231-4fcf-9775-4dd673ddc785
-ms.openlocfilehash: 59a72916721cccbe66f704253f148828fa8cd418
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 35704996dcf21fe463169dc13572941bcd8fbad1
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62020203"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80344936"
 ---
-# <a name="how-to-animate-a-boolean-by-using-key-frames"></a>Procédure : Animer une valeur booléenne à l’aide d’images clés
-Cet exemple montre comment animer la valeur de propriété booléenne d’un <xref:System.Windows.Controls.Button> contrôle à l’aide d’images clés.  
+# <a name="how-to-animate-a-boolean-by-using-key-frames"></a>Comment : animer une valeur booléenne à l'aide d'images clés
+Cet exemple montre comment animer la valeur <xref:System.Windows.Controls.Button> de propriété Boolean d’un contrôle en utilisant des cadres clés.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise le <xref:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames> classe pour animer la <xref:System.Windows.UIElement.IsEnabled%2A> propriété d’un <xref:System.Windows.Controls.Button> contrôle. Toutes les images clés dans cet exemple montre comment utilisent une instance de la <xref:System.Windows.Media.Animation.DiscreteBooleanKeyFrame> classe. Images clés discrètes comme <xref:System.Windows.Media.Animation.DiscreteBooleanKeyFrame> créent des changements soudains entre les valeurs, autrement dit, le déplacement de l’animation est saccadé.  
+ L’exemple suivant <xref:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames> utilise la classe <xref:System.Windows.UIElement.IsEnabled%2A> pour <xref:System.Windows.Controls.Button> animer la propriété d’un contrôle. Tous les cadres clés de cet exemple <xref:System.Windows.Media.Animation.DiscreteBooleanKeyFrame> utilisent un exemple de la classe. Des cadres discrets <xref:System.Windows.Media.Animation.DiscreteBooleanKeyFrame> comme créer des sauts soudains entre les valeurs, c’est-à-dire que le mouvement de l’animation est saccadédant.  
   
  [!code-csharp[keyframes_snip#BooleanAnimationUsingKeyFramesWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_snip/CSharp/BooleanAnimationUsingKeyFramesExample.cs#booleananimationusingkeyframeswholepage)]
  [!code-vb[keyframes_snip#BooleanAnimationUsingKeyFramesWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/keyframes_snip/visualbasic/booleananimationusingkeyframesexample.vb#booleananimationusingkeyframeswholepage)]
  [!code-xaml[keyframes_snip#BooleanAnimationUsingKeyFramesWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/BooleanAnimationUsingKeyFramesExample.xaml#booleananimationusingkeyframeswholepage)]  
   
- Pour l’exemple complet, consultez la page [Animation d’image clé, exemple](https://go.microsoft.com/fwlink/?LinkID=160012).  
+ Pour l’exemple complet, consultez la page [Animation d’image clé, exemple](https://github.com/microsoft/WPF-Samples/tree/master/Animation/KeyFrameAnimation).  
   
 ## <a name="see-also"></a>Voir aussi
 

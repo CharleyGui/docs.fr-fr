@@ -1,18 +1,18 @@
 ---
 title: readonly, mot clé - Référence C#
-ms.date: 06/21/2018
+ms.date: 03/26/2020
 f1_keywords:
 - readonly_CSharpKeyword
 - readonly
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: 165b6287e1610e013b289601e1535a08fdd3b5c9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 344d5e54fcd500e283c52fa7953c6366823f13f0
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399356"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345148"
 ---
 # <a name="readonly-c-reference"></a>readonly (référence C#)
 
@@ -28,7 +28,7 @@ Le `readonly` mot clé est un modificateur qui peut être utilisé dans quatre c
   > [!WARNING]
   > Un type externement visible qui contient un champ de lecture-seulement visible à l’extérieur qui est un type de référence mutable peut être une vulnérabilité de sécurité et peut déclencher l’avertissement [CA2104](/visualstudio/code-quality/ca2104) : « Ne déclarez pas lu que les types de référence mutables. »
 
-- Dans [ `readonly struct` ](#readonly-struct-example)une `readonly` définition , `struct` indique que le est immuable.
+- Dans `readonly struct` une définition `readonly` de type, indique que le type de structure est immuable. Pour plus d’informations, consultez la [ `readonly` ](../builtin-types/struct.md#readonly-struct) section struct de l’article des types [structure.](../builtin-types/struct.md)
 - Dans [ `readonly` ](#readonly-member-examples)une définition `readonly` de membre , `struct` indique qu’un membre d’un ne mute pas l’état interne de la struct.
 - Dans [ `ref readonly` ](#ref-readonly-return-example)un retour `readonly` de méthode , le modificateur indique que la méthode renvoie une référence et écrit ne sont pas autorisés à cette référence.
 
@@ -71,28 +71,6 @@ p2.y = 66;        // Error
 vous recevrez le message d’erreur du compilateur :
 
 **Un champ de lecture ne peut pas être affecté à (sauf dans un constructeur ou un initialisateur variable)**
-
-## <a name="readonly-struct-example"></a>Exemple de struct readonly
-
-Le modificateur `readonly` dans une définition `struct` déclare que le struct est **immuable**. Chaque champ d’instance du `struct` doit être marqué `readonly`, comme dans l’exemple suivant :
-
-[!code-csharp[readonly struct example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#ReadonlyStruct)]
-
-L’exemple précédent utilise les [propriétés automatiques readonly](../../properties.md#read-only) pour déclarer son stockage. Il donne l’instruction au compilateur de créer des champs de stockage `readonly` pour ces propriétés. Vous pouvez aussi déclarer des champs `readonly` directement :
-
-```csharp
-public readonly struct Point
-{
-    public readonly double X;
-    public readonly double Y;
-
-    public Point(double x, double y) => (X, Y) = (x, y);
-
-    public override string ToString() => $"({X}, {Y})";
-}
-```
-
-L’ajout d’un champ non marqué `readonly` génère l’erreur `CS8340` du compilateur : « Les champs d’instance de structs readonly doivent être en lecture seule ».
 
 ## <a name="readonly-member-examples"></a>Exemples de membres Readonly
 
@@ -144,6 +122,7 @@ Vous pouvez `readonly` ajouter le modificateur dans ces endroits, mais il n’au
 Le `readonly` modificateur `ref return` sur un indique que la référence retournée ne peut pas être modifiée. L’exemple suivant retourne une référence à l’origine. Il utilise `readonly` le modificateur pour indiquer que les appelants ne peuvent pas modifier l’origine :
 
 [!code-csharp[readonly struct example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#ReadonlyReturn)]
+
 Le type retourné ne doit pas nécessairement être un `readonly struct`. Tout type pouvant être retourné par `ref` peut être retourné par `ref readonly`.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
@@ -158,8 +137,8 @@ Vous pouvez également voir les propositions de spécification linguistique :
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
-- [Mots clés C#](index.md)
+- [Guide de programmation CMD](../../programming-guide/index.md)
+- [Mots-clés C](index.md)
 - [Modificateurs](index.md)
 - [const](const.md)
 - [Champs](../../programming-guide/classes-and-structs/fields.md)

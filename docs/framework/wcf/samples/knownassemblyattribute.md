@@ -2,12 +2,12 @@
 title: KnownAssemblyAttribute
 ms.date: 03/30/2017
 ms.assetid: b3bc7f31-95ff-46e1-8308-d206ec426f6e
-ms.openlocfilehash: 1a94acde3d0726808deebcae1437e7318f5392df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3aacc7c73167771a632bb31164f2c551d60ce8f0
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183559"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345234"
 ---
 # <a name="knownassemblyattribute"></a>KnownAssemblyAttribute
 Cet exemple montre comment les processus de sérialisation et de désérialisation peuvent être personnalisés à l'aide de la classe <xref:System.Runtime.Serialization.DataContractResolver>. Cet exemple montre comment ajouter dynamiquement des types connus pendant la sérialisation et la désérialisation.  
@@ -356,11 +356,11 @@ Lists combined:
   
 5. Si l'application ne s'exécute pas correctement, procédez comme suit pour vous assurer que votre environnement a été correctement configuré :  
   
-6. Assurez-vous d’avoir effectué la [procédure de mise en place unique pour les échantillons de la Fondation De communication Windows.](https://go.microsoft.com/fwlink/?LinkId=150774)  
+6. Assurez-vous d’avoir effectué la [procédure de mise en place unique pour les échantillons de la Fondation De communication Windows.](https://docs.microsoft.com/dotnet/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples)  
   
-7. Pour construire la solution, suivez les instructions dans [la construction de l’échantillon de la Fondation De communication Windows](https://go.microsoft.com/fwlink/?LinkId=150775).  
+7. Pour construire la solution, suivez les instructions dans [la construction de l’échantillon de la Fondation De communication Windows](https://docs.microsoft.com/dotnet/framework/wcf/samples/building-the-samples).  
   
-8. Pour exécuter l’échantillon dans une configuration mono-ou cross-machine, suivez les instructions dans [Running the Windows Communication Foundation Samples](https://go.microsoft.com/fwlink/?LinkId=150776).  
+8. Pour exécuter l’échantillon dans une configuration mono-ou cross-machine, suivez les instructions dans [Running the Windows Communication Foundation Samples](https://docs.microsoft.com/dotnet/framework/wcf/samples/running-the-samples).  
   
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  

@@ -1,6 +1,6 @@
 ---
 title: Types de structure - Référence C
-ms.date: 02/24/2020
+ms.date: 03/26/2020
 f1_keywords:
 - struct_CSharpKeyword
 helpviewer_keywords:
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: b126706ff9c881e5c2d5cc7ee4833ac8896e3fcc
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 6a2c97b93a8f6d1d62bd8a96865a4fe6587f55d3
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507241"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345134"
 ---
 # <a name="structure-types-c-reference"></a>Types de structure (référence C)
 
@@ -24,6 +24,24 @@ Un *type de structure* (ou type *struct*) est un [type de valeur](value-types.md
 Les types de structure ont *la sémantique de valeur.* Autrement dit, une variable d’un type de structure contient une instance du type. Par défaut, les valeurs variables sont copiées sur l’affectation, en transmettant un argument à une méthode et en retournant un résultat de méthode. Dans le cas d’une variable de type structure, un cas du type est copié. Pour plus d’informations, voir [types de valeur](value-types.md).
 
 En règle générale, vous utilisez des types de structure pour concevoir de petits types axés sur les données qui fournissent peu ou pas de comportement. Par exemple, .NET utilise des types de structure pour représenter un nombre (à la fois [integer](integral-numeric-types.md) et [réel](floating-point-numeric-types.md)), une [valeur Boolean](bool.md), un [personnage Unicode](char.md), une [instance temporelle](xref:System.DateTime). Si vous êtes concentré sur le comportement d’un type, envisagez de définir une [classe](../keywords/class.md). Les types de classes ont *la sémantique de référence.* Autrement dit, une variable d’un type de classe contient une référence à une instance du type, et non à l’instance elle-même.
+
+Étant donné que les types de structure ont de la sémantique de valeur, nous vous recommandons de définir les types de structure *immuable.*
+
+## <a name="readonly-struct"></a>`readonly`Struct
+
+En commençant par le C 7.2, vous utilisez le `readonly` modificateur pour déclarer qu’un type de structure est immuable :
+
+[!code-csharp[readonly struct](snippets/StructType.cs#ReadonlyStruct)]
+
+Tous les membres `readonly` de données d’une struct doivent être lus uniquement comme suit :
+
+- Toute déclaration de terrain doit avoir le [ `readonly` modificateur](../keywords/readonly.md)
+- Toute propriété, y compris les propriétés auto-mises en œuvre, doit être lue-seulement
+
+Cela garantit qu’aucun `readonly` membre d’une structure ne modifie l’état de la struction.
+
+> [!NOTE]
+> Dans `readonly` une struct, un membre des données d’un type de référence mutable peut encore muter son propre état. Par exemple, vous <xref:System.Collections.Generic.List%601> ne pouvez pas remplacer une instance, mais vous pouvez y ajouter de nouveaux éléments.
 
 ## <a name="limitations-with-the-design-of-a-structure-type"></a>Limitations avec la conception d’un type de structure
 
@@ -62,6 +80,8 @@ Pour n’importe quel type de structure, il existe <xref:System.ValueType?displa
 ## <a name="c-language-specification"></a>spécification du langage C#
 
 Pour plus d’informations, consultez la section [Structs](~/_csharplang/spec/structs.md) de la [spécification linguistique C .](~/_csharplang/spec/introduction.md)
+
+Pour plus `readonly` d’informations sur les structs, voir la [note de proposition de fonctionnalité](~/_csharplang/proposals/csharp-7.2/readonly-ref.md#readonly-structs).
 
 ## <a name="see-also"></a>Voir aussi
 
