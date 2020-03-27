@@ -10,7 +10,7 @@
           href: container-docker-introduction/docker-terminology.md
         - name: 'Conteneurs, images et registres Docker'
           href: container-docker-introduction/docker-containers-images-registries.md
-    - name: Choix entre .NET Core et .NET Framework pour les conteneurs Docker
+    - name: Choisir entre .NET Core et .NET Framework pour les conteneurs Docker
       href: net-core-net-framework-containers/index.md
       items:
         - name: Recommandations générales
@@ -25,7 +25,7 @@
           href: net-core-net-framework-containers/net-container-os-targets.md
         - name: Images officielles .NET Docker
           href: net-core-net-framework-containers/official-net-docker-images.md
-    - name: Architecture des applications basées sur des conteneurs et des microservices
+    - name: Architecture d’applications conteneurs et d’applications basées sur des microservices
       href: architect-microservice-container-applications/index.md
       items:
         - name: Mise en conteneur d’applications monolithiques
@@ -65,7 +65,7 @@
       items:
         - name: Workflow de développement des applications Docker
           href: docker-application-development-process/docker-app-development-workflow.md
-    - name: "Conception et développement d’applications\_.NET à plusieurs conteneurs et basées sur des microservices"
+    - name: Concevoir et développer des applications .NET multiconteneurs et basées sur des microservices
       href: multi-container-microservice-net-applications/index.md
       items:
         - name: Conception d’une application orientée microservices
@@ -88,7 +88,7 @@
           href: multi-container-microservice-net-applications/background-tasks-with-ihostedservice.md
         - name: Implémentation de passerelles d’API avec Ocelot
           href: multi-container-microservice-net-applications/implement-api-gateways-with-ocelot.md
-    - name: Lutte contre la complexité d’entreprise dans un microservice disposant des modèles DDD et CQRS
+    - name: Lutter contre la complexité d’entreprise dans un microservice disposant des modèles DDD et CQRS
       href: microservice-ddd-cqrs-patterns/index.md
       items:
         - name: Application de modèles CQRS et DDD simplifiés dans un microservice
@@ -125,7 +125,7 @@
           href: microservice-ddd-cqrs-patterns/microservice-application-layer-web-api-design.md
         - name: Implémentation de la couche Application de microservices à l’aide de l’API web
           href: microservice-ddd-cqrs-patterns/microservice-application-layer-implementation-web-api.md
-    - name: Implémentation d’applications résilientes
+    - name: Implémenter des applications résilientes
       href: implement-resilient-applications/index.md
       items:
         - name: Gestion d’une défaillance partielle
@@ -144,7 +144,7 @@
           href: implement-resilient-applications/implement-circuit-breaker-pattern.md
         - name: Surveillance de l’intégrité
           href: implement-resilient-applications/monitor-app-health.md
-    - name: Sécurisation des microservices .NET et des applications web
+    - name: Sécuriser les microservices .NET et les applications web
       href: secure-net-microservices-web-applications/index.md
       items:
         - name: À propos de l’autorisation dans les microservices .NET et les applications web
