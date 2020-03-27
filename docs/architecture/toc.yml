@@ -1,4 +1,4 @@
-- name: Guide de l’architecture des applications .NET
+- name: Guide d’architecture des applications .NET
   href: index.yml
 - name: Livres électroniques
   expanded: true
@@ -11,9 +11,9 @@
       href: modernize-with-azure-containers/
     - name: Cycle de vie des applications Docker conteneurisées avec la plateforme et les outils Microsoft
       href: containerized-lifecycle/
-    - name: "Microservices\_.NET :\_architecture pour les applications\_.NET conteneurisées"
+    - name: 'Microservices .NET : Architecture des applications .NET conteneurisées'
       href: microservices/
-    - name: "Applications serverless\_: Architecture, modèles et implémentation Azure"
+    - name: "Applications serverless\_: architecture, modèles et implémentation Azure"
       href: serverless/
 - name: Aperçu des livres électroniques
   expanded: true

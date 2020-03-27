@@ -64,3 +64,5 @@
   href: load-unload.md
 - name: "Procédure pas à pas\_: Incorporer des types d’assemblys managés dans Visual Studio"
   href: embed-types-visual-studio.md
+- name: Inspecter le contenu des assemblys à l’aide de MetadataLoadContext
+  href: inspect-contents-using-metadataloadcontext.md

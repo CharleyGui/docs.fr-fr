@@ -49,7 +49,7 @@
               href: propertypath-xaml-syntax.md
             - name: 'PresentationOptions:Freeze, attribut'
               href: presentationoptions-freeze-attribute.md
-        - name: 'Fonctionnalités de langage pour la compatibilité du balisage (mc:)'
+        - name: 'Compatibilité du balisage (mc:) Fonctionnalités de langage'
           href: markup-compatibility-mc-language-features.md
           items:
             - name: 'mc:Ignorable, attribut'
@@ -70,23 +70,23 @@
           items:
             - name: Rendre un UIElement transparent ou semi-transparent
               href: how-to-make-a-uielement-transparent-or-semi-transparent.md
-            - name: Animer la taille d'un FrameworkElement
+            - name: Animer la taille d’un FrameworkElement
               href: how-to-animate-the-size-of-a-frameworkelement.md
             - name: Déterminer si un Freezable est gelé
               href: how-to-determine-whether-a-freezable-is-frozen.md
             - name: Gérer un événement chargé
               href: how-to-handle-a-loaded-event.md
-            - name: Définir les marges d'éléments et de contrôles
+            - name: Définir les marges des éléments et contrôles
               href: how-to-set-margins-of-elements-and-controls.md
             - name: Mettre un Freezable en lecture seule
               href: how-to-make-a-freezable-read-only.md
-            - name: Obtenir une copie en écriture d'un Freezable en lecture seule
+            - name: Obtenir une copie en écriture d’un Freezable en lecture seule
               href: how-to-obtain-a-writable-copy-of-a-read-only-freezable.md
             - name: Retourner un UIElement horizontalement ou verticalement
               href: how-to-flip-a-uielement-horizontally-or-vertically.md
             - name: Utiliser un objet ThicknessConverter
               href: how-to-use-a-thicknessconverter-object.md
-            - name: Gérer l'événement ContextMenuOpening
+            - name: Gérer l’événement ContextMenuOpening
               href: how-to-handle-the-contextmenuopening-event.md
     - name: Sérialisation et arborescence d'éléments
       href: element-tree-and-serialization.md
@@ -123,7 +123,7 @@
           href: dependency-property-value-precedence.md
         - name: Propriétés de dépendance en lecture seule
           href: read-only-dependency-properties.md
-        - name: Héritage de valeur de propriété
+        - name: Héritage de la valeur de propriété
           href: property-value-inheritance.md
         - name: Sécurité de propriété de dépendance
           href: dependency-property-security.md
@@ -138,13 +138,13 @@
           items:
             - name: Implémenter une propriété de dépendance
               href: how-to-implement-a-dependency-property.md
-            - name: Ajouter un type propriétaire d'une propriété de dépendance
+            - name: Ajouter un type propriétaire d’une propriété de dépendance
               href: how-to-add-an-owner-type-for-a-dependency-property.md
             - name: Enregistrer une propriété jointe
               href: how-to-register-an-attached-property.md
-            - name: Substituer les métadonnées d'une propriété de dépendance
+            - name: Substituer les métadonnées d’une propriété de dépendance
               href: how-to-override-metadata-for-a-dependency-property.md
-    - name: événements
+    - name: Événements
       href: events-wpf.md
       items:
         - name: Vue d'ensemble des événements routés
@@ -166,15 +166,15 @@
         - name: Rubriques Comment
           href: events-how-to-topics.md
           items:
-            - name: Ajouter un gestionnaire d'événements à l'aide de code
+            - name: Ajouter un gestionnaire d’événements à l’aide de code
               href: how-to-add-an-event-handler-using-code.md
             - name: Gérer un événement routé
               href: how-to-handle-a-routed-event.md
             - name: Créer un événement routé personnalisé
               href: how-to-create-a-custom-routed-event.md
-            - name: Rechercher l'élément source dans un gestionnaire d'événements
+            - name: Rechercher l’élément source dans un gestionnaire d’événements
               href: how-to-find-the-source-element-in-an-event-handler.md
-            - name: Ajouter la gestion de classe d'un événement routé
+            - name: Ajouter la gestion de classe d’un événement routé
               href: how-to-add-class-handling-for-a-routed-event.md
     - name: Entrée
       href: input-wpf.md
@@ -187,7 +187,7 @@
           href: focus-overview.md
         - name: FocusVisualStyle et application d'un style au focus dans les contrôles
           href: styling-for-focus-in-controls-and-focusvisualstyle.md
-        - name: "Procédure pas à pas\_: création de votre première application Touch"
+        - name: "Procédure pas à pas\_: création de votre première application tactile"
           href: walkthrough-creating-your-first-touch-application.md
         - name: Rubriques Comment
           href: input-and-commands-how-to-topics.md
@@ -196,23 +196,23 @@
               href: how-to-enable-a-command.md
             - name: Modifier le type de curseur
               href: how-to-change-the-cursor-type.md
-            - name: Modifier la couleur d'un élément à l'aide d'événements Focus
+            - name: Modifier la couleur d’un élément à l’aide d’événements Focus
               href: how-to-change-the-color-of-an-element-using-focus-events.md
             - name: Appliquer un FocusVisualStyle à un contrôle
               href: how-to-apply-a-focusvisualstyle-to-a-control.md
-            - name: Effectuer une détection en cas d'appui sur la touche Entrée
+            - name: Détecter les appuis sur la touche Entrée
               href: how-to-detect-when-the-enter-key-pressed.md
             - name: Créer un effet de substitution à l’aide d’événements
               href: how-to-create-a-rollover-effect-using-events.md
-            - name: Faire en sorte qu'un objet suive le pointeur de la souris
+            - name: Faire en sorte qu’un objet suive le pointeur de la souris
               href: how-to-make-an-object-follow-the-mouse-pointer.md
             - name: Créer un RoutedCommand
               href: how-to-create-a-routedcommand.md
             - name: Implémenter ICommandSource
               href: how-to-implement-icommandsource.md
-            - name: Raccorder une commande à un contrôle sans prise en charge de commande
+            - name: Accrocher une commande à un contrôle sans prise en charge de la commande
               href: how-to-hook-up-a-command-to-a-control-with-no-command-support.md
-            - name: Raccorder une commande à un contrôle avec prise en charge de commande
+            - name: Accrocher une commande à un contrôle avec prise en charge de la commande
               href: how-to-hook-up-a-command-to-a-control-with-command-support.md
         - name: Encre numérique
           href: digital-ink.md
@@ -220,7 +220,7 @@
             - name: Vues d'ensemble
               href: digital-ink-overviews.md
               items:
-                - name: Débuter avec l'encre
+                - name: Bien démarrer avec l’encre
                   href: getting-started-with-ink.md
                 - name: Collecte d'encre
                   href: collecting-ink.md
@@ -228,7 +228,7 @@
                   href: handwriting-recognition.md
                 - name: Stockage de l'encre
                   href: storing-ink.md
-                - name: "Modèle objet encre\_: Windows Forms et COM ou WPF"
+                - name: "Le modèle objet encre\_: Windows Forms et COM comparé à WPF"
                   href: the-ink-object-model-windows-forms-and-com-versus-wpf.md
                 - name: Gestion avancée de l'encre
                   href: advanced-ink-handling.md
@@ -244,21 +244,21 @@
             - name: Rubriques Comment
               href: digital-ink-how-to-topics.md
               items:
-                - name: Sélectionner une encre à partir d'un contrôle personnalisé
+                - name: Sélectionner une entrée manuscrite à partir d’un contrôle personnalisé
                   href: how-to-select-ink-from-a-custom-control.md
-                - name: Ajouter des données personnalisées aux données de l'encre
+                - name: Ajouter des données personnalisées aux données de l’entrée manuscrite
                   href: how-to-add-custom-data-to-ink-data.md
-                - name: Effacer l'encre sur un contrôle personnalisé
+                - name: Effacer l’entrée manuscrite sur un contrôle personnalisé
                   href: how-to-erase-ink-on-a-custom-control.md
-                - name: Reconnaître des gestes d'application
+                - name: Reconnaître les mouvements d’application
                   href: how-to-recognize-application-gestures.md
-                - name: Glisser et déposer de l'encre
+                - name: Glisser et déplacer une entrée manuscrite
                   href: how-to-drag-and-drop-ink.md
                 - name: Lier des données à un InkCanvas
                   href: how-to-data-bind-to-an-inkcanvas.md
-                - name: Analyser l'encre avec des indications d'analyse
+                - name: Analyser l’entrée manuscrite avec des indications d’analyse
                   href: how-to-analyze-ink-with-analysis-hints.md
-                - name: Faire pivoter l'entrée manuscrite
+                - name: Faire pivoter l’entrée manuscrite
                   href: how-to-rotate-ink.md
                 - name: Désactiver RealTimeStylus pour les applications WPF
                   href: disable-the-realtimestylus-for-wpf-applications.md
@@ -269,7 +269,7 @@
           href: drag-and-drop-overview.md
         - name: Données et objets de données
           href: data-and-data-objects.md
-        - name: "Procédure pas à pas\_: activation de la fonction glisser-déplacer sur un contrôle utilisateur"
+        - name: "Procédure pas à pas\_: activation de Glisser-déplacer sur un contrôle utilisateur"
           href: walkthrough-enabling-drag-and-drop-on-a-user-control.md
         - name: Rubriques Comment
           href: drag-and-drop-how-to-topics.md
@@ -280,7 +280,7 @@
               href: how-to-create-a-data-object.md
             - name: Déterminer si un format de données est présent dans un objet de données
               href: how-to-determine-if-a-data-format-is-present-in-a-data-object.md
-            - name: Répertorier les formats de données dans un objet de données
+            - name: Lister les formats de données dans un objet de données
               href: how-to-list-the-data-formats-in-a-data-object.md
             - name: Récupérer des données dans un format de données particulier
               href: how-to-retrieve-data-in-a-particular-data-format.md
@@ -301,15 +301,15 @@
               items:
                 - name: Définir et référencer une ressource
                   href: how-to-define-and-reference-a-resource.md
-                - name: Utiliser des ressources d'application
+                - name: Utiliser des ressources d’application
                   href: how-to-use-application-resources.md
-                - name: Utiliser des SystemFonts
+                - name: Utiliser SystemFonts
                   href: how-to-use-systemfonts.md
                 - name: Utiliser des clés de polices système
                   href: how-to-use-system-fonts-keys.md
                 - name: Utiliser SystemParameters
                   href: how-to-use-systemparameters.md
-                - name: Utiliser les clés des paramètres système
+                - name: Utiliser des clés de paramètres système
                   href: how-to-use-system-parameters-keys.md
     - name: Documents
       href: documents.md
@@ -337,31 +337,31 @@
             - name: Rubriques Comment
               href: flow-content-elements-how-to-topics.md
               items:
-                - name: Ajuster l'espacement entre les paragraphes
+                - name: Ajuster l’espacement entre les paragraphes
                   href: how-to-adjust-spacing-between-paragraphs.md
                 - name: Générer une table par programmation
                   href: how-to-build-a-table-programmatically.md
-                - name: Modifier la propriété FlowDirection d'un contenu par programmation
+                - name: Modifier la propriété FlowDirection d’un contenu par programmation
                   href: how-to-change-the-flowdirection-of-content-programmatically.md
                 - name: Modifier la propriété TextWrapping par programmation
                   href: how-to-change-the-textwrapping-property-programmatically.md
                 - name: Définir une table avec XAML
                   href: how-to-define-a-table-with-xaml.md
-                - name: Modifier la typographie d'un texte
+                - name: Modifier la typographie d’un texte
                   href: how-to-alter-the-typography-of-text.md
                 - name: Activer la suppression de texte
                   href: how-to-enable-text-trimming.md
                 - name: Insérer un élément dans du texte par programmation
                   href: how-to-insert-an-element-into-text-programmatically.md
-                - name: Manipuler des éléments de contenu de flux avec la propriété Blocks
+                - name: Manipuler des éléments de contenu dynamique avec la propriété Blocks
                   href: how-to-manipulate-flow-content-elements-through-the-blocks-property.md
                 - name: Manipuler des éléments de contenu de flux avec la propriété Inlines
                   href: how-to-manipulate-flow-content-elements-through-the-inlines-property.md
                 - name: Manipuler un FlowDocument avec la propriété Blocks
                   href: how-to-manipulate-a-flowdocument-through-the-blocks-property.md
-                - name: Manipuler les colonnes d'un tableau avec la propriété Columns
+                - name: Manipuler les colonnes d’un tableau avec la propriété Columns
                   href: how-to-manipulate-table-columns-through-the-columns-property.md
-                - name: Manipuler les groupes de lignes d'un tableau avec la propriété RowGroups
+                - name: Manipuler les groupes de lignes d’un tableau avec la propriété RowGroups
                   href: how-to-manipulate-table-row-groups-through-the-rowgroups-property.md
                 - name: Utiliser les éléments de contenu de flux
                   href: how-to-use-flow-content-elements.md
@@ -392,7 +392,7 @@
                 - name: Rubriques Comment
                   href: fonts-how-to-topics.md
                   items:
-                    - name: Énumérer des polices système
+                    - name: Énumérer les polices système
                       href: how-to-enumerate-system-fonts.md
                     - name: Utiliser la classe FontSizeConverter
                       href: how-to-use-the-fontsizeconverter-class.md
@@ -401,7 +401,7 @@
               items:
                 - name: Introduction à l'objet GlyphRun et à l'élément Glyphs
                   href: introduction-to-the-glyphrun-object-and-glyphs-element.md
-                - name: "Comment\_: dessiner du texte à l'aide de glyphes"
+                - name: "Procédure\_: Dessiner du texte à l'aide de glyphes"
                   href: draw-text-using-glyphs.md
             - name: Rubriques Comment
               href: typography-how-to-topics.md
@@ -418,9 +418,9 @@
                   href: how-to-create-text-with-a-shadow.md
                 - name: Créer du texte avec contour
                   href: how-to-create-outlined-text.md
-                - name: Dessiner du texte sur l'arrière-plan d'un contrôle
+                - name: Dessiner du texte sur l’arrière-plan d’un contrôle
                   href: how-to-draw-text-to-a-control-background.md
-                - name: Ajouter du texte à un Visual
+                - name: Ajouter du texte à un visuel
                   href: how-to-draw-text-to-a-visual.md
                 - name: Utiliser des caractères spéciaux en XAML
                   href: how-to-use-special-characters-in-xaml.md
@@ -436,17 +436,17 @@
                   href: how-to-invoke-a-print-dialog.md
                 - name: Cloner une imprimante
                   href: how-to-clone-a-printer.md
-                - name: Diagnostiquer un travail d'impression problématique
+                - name: Diagnostiquer un travail d’impression problématique
                   href: how-to-diagnose-problematic-print-job.md
-                - name: Déterminer si un travail d'impression peut être imprimé à cette heure de la journée
+                - name: Déterminer si un travail d’impression peut être imprimé à cette heure de la journée
                   href: how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day.md
-                - name: Énumérer un sous-ensemble de files d'attente à l'impression
+                - name: Énumérer un sous-ensemble de files d’attente à l’impression
                   href: how-to-enumerate-a-subset-of-print-queues.md
-                - name: Obtenir les propriétés de l'objet de système d'impression sans réflexion
+                - name: Obtenir les propriétés de l’objet de système d’impression sans réflexion
                   href: how-to-get-print-system-object-properties-without-reflection.md
                 - name: Imprimer des fichiers XPS par programmation
                   href: how-to-programmatically-print-xps-files.md
-                - name: Observer à distance l'état d'imprimantes
+                - name: Observer à distance l’état d’imprimantes
                   href: how-to-remotely-survey-the-status-of-printers.md
                 - name: Valider et fusionner des PrintTicket
                   href: how-to-validate-and-merge-printtickets.md
@@ -481,6 +481,8 @@
     - name: Migration et interopérabilité
       href: migration-and-interoperability.md
       items:
+        - name: "Migration de WPF\_3.X vers WPF\_4.5"
+          href: types-migrated-from-wpf-to-system.md
         - name: "Interopérabilité WPF et Windows\_Forms"
           href: wpf-and-windows-forms-interoperation.md
           items:
@@ -494,29 +496,29 @@
               href: windows-forms-and-wpf-property-mapping.md
             - name: Dépannage des applications hybrides
               href: troubleshooting-hybrid-applications.md
-            - name: "Procédure pas à pas\_: hébergement d'un contrôle Windows Forms dans WPF"
+            - name: "Procédure pas à pas\_: hébergement d’un contrôle Windows Forms dans WPF"
               href: walkthrough-hosting-a-windows-forms-control-in-wpf.md
-            - name: "Procédure pas à pas\_: hébergement d'un contrôle Windows Forms dans WPF avec XAML"
+            - name: "Procédure pas à pas\_: hébergement d’un contrôle Windows Forms dans WPF à l’aide de XAML"
               href: walkthrough-hosting-a-windows-forms-control-in-wpf-by-using-xaml.md
-            - name: "Procédure pas à pas\_: hébergement d'un contrôle composite Windows Forms dans WPF"
+            - name: "Procédure pas à pas\_: hébergement d’un contrôle composite Windows Forms dans WPF"
               href: walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md
-            - name: "Procédure pas à pas\_: hébergement d'un contrôle ActiveX dans WPF"
+            - name: "Procédure pas à pas\_: hébergement d’un contrôle ActiveX dans WPF"
               href: walkthrough-hosting-an-activex-control-in-wpf.md
-            - name: "Comment\_: activer des styles visuels dans une application hybride"
+            - name: "Procédure\_: activer des styles visuels dans une application hybride"
               href: how-to-enable-visual-styles-in-a-hybrid-application.md
             - name: "Procédure pas à pas\_: organisation des contrôles Windows Forms dans WPF"
               href: walkthrough-arranging-windows-forms-controls-in-wpf.md
             - name: "Procédure pas à pas\_: liaison de données dans des applications hybrides"
               href: walkthrough-binding-to-data-in-hybrid-applications.md
-            - name: "Procédure pas à pas\_: hébergement d'un contrôle composite\_3-D\_WPF dans les Windows Forms"
+            - name: "Procédure pas à pas\_: Hébergement d’un contrôle composite WPF 3D dans Windows Forms"
               href: walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md
-            - name: "Procédure pas à pas\_: hébergement d'un contrôle composite WPF dans les Windows Forms"
+            - name: "Procédure pas à pas\_: hébergement d’un contrôle composite WPF dans Windows Forms"
               href: walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md
-            - name: "Procédure pas à pas\_: mappage de propriété à l'aide du contrôle ElementHost"
+            - name: "Procédure pas à pas\_: mappage de propriétés à l’aide du contrôle ElementHost"
               href: walkthrough-mapping-properties-using-the-elementhost-control.md
-            - name: "Procédure pas à pas\_: mappage de propriétés à l'aide de l'élément WindowsFormsHost"
+            - name: "Procédure pas à pas\_: mappage de propriétés à l’aide de l’élément WindowsFormsHost"
               href: walkthrough-mapping-properties-using-the-windowsformshost-element.md
-            - name: "Procédure pas à pas\_: localisation d'une application hybride"
+            - name: "Procédure pas à pas\_: localisation d’une application hybride"
               href: walkthrough-localizing-a-hybrid-application.md
         - name: Interopérabilité WPF et Win32
           href: wpf-and-win32-interoperation.md
@@ -527,11 +529,11 @@
               href: sharing-message-loops-between-win32-and-wpf.md
             - name: Hébergement de contenu Win32 dans WPF
               href: hosting-win32-content-in-wpf.md
-            - name: "Procédure pas à pas\_: hébergement d'un contrôle\_Win32 dans\_WPF"
+            - name: "Procédure pas à pas\_: hébergement d’un contrôle Win32 dans WPF"
               href: walkthrough-hosting-a-win32-control-in-wpf.md
             - name: "Procédure pas à pas\_: hébergement de contenu WPF dans Win32"
               href: walkthrough-hosting-wpf-content-in-win32.md
-            - name: "Procédure pas à pas\_: hébergement d'un WPF\_Clock dans Win32"
+            - name: "Procédure pas à pas\_: hébergement d’une horloge WPF dans Win32"
               href: walkthrough-hosting-a-wpf-clock-in-win32.md
         - name: Interopérabilité WPF et Direct3D9
           href: wpf-and-direct3d9-interoperation.md
@@ -556,11 +558,11 @@
               href: optimizing-performance-taking-advantage-of-hardware.md
             - name: Disposition et conception
               href: optimizing-performance-layout-and-design.md
-            - name: "Graphiques\_2D et acquisition d'images"
+            - name: Graphisme 2D et acquisition d’images
               href: optimizing-performance-2d-graphics-and-imaging.md
-            - name: Comportement d'objets
+            - name: Comportement de l’objet
               href: optimizing-performance-object-behavior.md
-            - name: Ressources d'application
+            - name: Ressources d’application
               href: optimizing-performance-application-resources.md
             - name: Texte
               href: optimizing-performance-text.md
@@ -572,7 +574,7 @@
               href: optimizing-performance-other-recommendations.md
             - name: Temps de démarrage d'une application
               href: application-startup-time.md
-        - name: "Procédure pas à pas\_: mise en cache de données d'application dans une application WPF"
+        - name: "Procédure pas à pas\_: mise en cache des données d’application dans une application WPF"
           href: walkthrough-caching-application-data-in-a-wpf-application.md
     - name: Modèle de thread
       href: threading-model.md

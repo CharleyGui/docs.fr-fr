@@ -1569,7 +1569,7 @@
               href: language-reference/keywords/by.md
             - name: in
               href: language-reference/keywords/in.md
-    - name: 'Opérateurs C#'
+    - name: 'Opérateurs et expressions C#'
       items:
         - name: Vue d'ensemble
           href: language-reference/operators/index.md
@@ -1589,7 +1589,7 @@
         - name: Opérateurs de comparaison
           href: language-reference/operators/comparison-operators.md
           displayName: '>, <, >=, <=, greater, less'
-        - name: Opérateurs d’accès au membre
+        - name: Opérateurs et expressions d’accès aux membres
           href: language-reference/operators/member-access-operators.md
           displayName: '., [], ?., ?[], (), indexer, null-conditional, Elvis, invocation, ^, index from end, hat, .., range'
         - name: Opérateurs de conversion et de test de type
@@ -1628,21 +1628,26 @@
         - name: Opérateur await
           href: language-reference/operators/await.md
           displayName: async
-        - name: Opérateur default
+        - name: Expressions de valeur par défaut
           href: language-reference/operators/default.md
-          displayName: 'default value, default literal, type default'
+          displayName: 'default value, default operator, default literal, type default'
         - name: Opérateur delegate
           href: language-reference/operators/delegate-operator.md
           displayName: anonymous
-        - name: Opérateur nameof
+        - name: 'nameof, expression'
           href: language-reference/operators/nameof.md
+          displayName: nameof operator
         - name: Opérateur new
           href: language-reference/operators/new-operator.md
           displayName: constructor
         - name: Opérateur sizeof
           href: language-reference/operators/sizeof.md
-        - name: Opérateur stackalloc
+        - name: 'stackalloc, expression'
           href: language-reference/operators/stackalloc.md
+          displayName: 'stack allocation, span, stackalloc operator'
+        - name: 'switch, expression'
+          href: language-reference/operators/switch-expression.md
+          displayName: 'switch, pattern matching, patterns'
         - name: opérateurs true et false
           href: language-reference/operators/true-false-operators.md
         - name: Surcharge d’opérateur
