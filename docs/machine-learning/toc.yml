@@ -3,18 +3,28 @@
 - name: Vue d'ensemble
   expanded: true
   items:
-    - name: API
-      items:
-        - name: API ML.NET
-          href: how-does-mldotnet-work.md
     - name: Générateur de modèles et CLI
       items:
         - name: Outil générateur de modèles ML.NET
           href: automate-training-with-model-builder.md
         - name: Interface de ligne de commande ML.NET
           href: automate-training-with-cli.md
+    - name: API
+      items:
+        - name: API ML.NET
+          href: how-does-mldotnet-work.md
 - name: Didacticiels
   items:
+    - name: Générateur de modèles et CLI
+      items:
+        - name: Prédire les prix (Générateur de modèles et régression)
+          href: tutorials/predict-prices-with-model-builder.md
+        - name: Analyser les sentiments à l’aide de la CLI ML.NET
+          href: tutorials/sentiment-analysis-cli.md
+        - name: Analyser les sentiments dans Razor Pages (Générateur de modèles et classification binaire)
+          href: tutorials/sentiment-analysis-model-builder.md
+        - name: Catégoriser les violations d’intégrité (Générateur de modèles et classification multiclasse)
+          href: tutorials/health-violation-classification-model-builder.md
     - name: API
       items:
         - name: Vue d'ensemble
@@ -41,16 +51,6 @@
           href: tutorials/object-detection-onnx.md
         - name: Classifier les sentiments avec TensorFlow (classification de texte)
           href: tutorials/text-classification-tf.md
-    - name: Générateur de modèles et CLI
-      items:
-        - name: Prédire les prix (Générateur de modèles et régression)
-          href: tutorials/predict-prices-with-model-builder.md
-        - name: Analyser les sentiments à l’aide de la CLI ML.NET
-          href: tutorials/sentiment-analysis-cli.md
-        - name: Analyser les sentiments dans Razor Pages (Générateur de modèles et classification binaire)
-          href: tutorials/sentiment-analysis-model-builder.md
-        - name: Catégoriser les violations d’intégrité (Générateur de modèles et classification multiclasse)
-          href: tutorials/health-violation-classification-model-builder.md
     - name: Infer.NET
       items:
         - name: Programmation probabiliste avec Infer.NET
@@ -69,6 +69,16 @@
       href: resources/improve-machine-learning-model-ml-net.md
 - name: Guides pratiques
   items:
+    - name: Générateur de modèles et CLI
+      items:
+        - name: Charger des données dans le générateur d’images
+          href: how-to-guides/load-data-model-builder.md
+        - name: Installer le Générateur de modèles
+          href: how-to-guides/install-model-builder.md
+        - name: Installer CLI
+          href: how-to-guides/install-ml-net-cli.md
+        - name: Utiliser l’API ML automatisée
+          href: how-to-guides/how-to-use-the-automl-api.md
     - name: API
       items:
         - name: Charger les données
@@ -97,16 +107,6 @@
               href: how-to-guides/serve-model-serverless-azure-functions-ml-net.md
             - name: Déployer un modèle sur une API web
               href: how-to-guides/serve-model-web-api-ml-net.md
-    - name: Générateur de modèles et CLI
-      items:
-        - name: Charger des données dans le générateur d’images
-          href: how-to-guides/load-data-model-builder.md
-        - name: Installer le Générateur de modèles
-          href: how-to-guides/install-model-builder.md
-        - name: Installer CLI
-          href: how-to-guides/install-ml-net-cli.md
-        - name: Utiliser l’API ML automatisée
-          href: how-to-guides/how-to-use-the-automl-api.md
 - name: Référence
   items:
     - name: Informations de référence sur l’API ML.NET

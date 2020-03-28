@@ -1,4 +1,4 @@
-- name: Guide .NET Framework
+- name: "Documentation de .NET\_Framework"
   href: index.yml
 - name: Vue d’ensemble de .NET Framework
   href: get-started/overview.md
