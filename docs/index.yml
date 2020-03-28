@@ -11,12 +11,12 @@ metadata:
   author: BillWagner
   ms.author: wiwagn
   ms.date: 12/19/2019
-  ms.openlocfilehash: f0660cf23bcbc6520d7b0d853e1b214dee785300
-  ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
+  ms.openlocfilehash: ca2ac70c2d55a2731ce3020753b6e36cd7307533
+  ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/24/2020
-  ms.locfileid: "80228553"
+  ms.lasthandoff: 03/27/2020
+  ms.locfileid: "80344651"
 highlightedContent:
   items:
   - title: Présentation de C#. Démarrage interactif rapide.
@@ -32,13 +32,13 @@ highlightedContent:
     itemType: whats-new
     url: whats-new/index.yml
 conceptualContent:
-  title: '.NET : Libre. Multiplateforme. Open source.'
+  title: '.NET : Libre. Multiplateformes. Open source.'
   summary: 'Plateforme de développement pour la création de toutes vos applications : web, mobile, bureau, gaming, IoT, etc. Pris en charge sur Windows, Linux et macOS.'
   items:
   - title: .NET open source
     summary: Découvrir plus en détail .NET Core
     links:
-    - url: core/index.md
+    - url: core/index.yml
       itemType: overview
       text: Vue d’ensemble de .NET Core
     - url: core/whats-new/dotnet-core-3-1.md
