@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-ms.openlocfilehash: 0abcc73e31eab89c422513acf778bc8bd092e788
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 34bfa4c6007ec771f784e927675f4e24d52e194f
+ms.sourcegitcommit: a9b8945630426a575ab0a332e568edc807666d1b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75345552"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391232"
 ---
 # <a name="delegates-and-lambdas"></a>Délégués et expressions lambda
 
@@ -46,9 +46,9 @@ public class Program
 
 Pour simplifier le processus de développement, .NET inclut un ensemble de types délégués que les programmeurs peuvent réutiliser sans avoir à en créer. Il s’agit de `Func<>`, `Action<>` et `Predicate<>`. Ils peuvent être utilisés à plusieurs endroits dans les API .NET, sans avoir à définir de nouveaux types délégués. Bien sûr, il existe certaines différences entre ces trois types, comme vous pouvez le constater dans leurs signatures, qui sont principalement liées à la manière dont ils doivent être utilisés :
 
-* `Action<>` est utilisé quand une action doit être effectuée à l’aide des arguments du délégué.
-* `Func<>` est généralement utilisé dans le cas d’une transformation, autrement dit, quand vous devez transformer les arguments du délégué en un résultat différent. C’est le cas, par exemple, des projections.
-* `Predicate<>` est utilisé quand vous devez déterminer si l’argument répond à la condition du délégué. Il peut également être écrit comme un `Func<T, bool>`.
+* `Action<>` est utilisé quand une action doit être effectuée à l’aide des arguments du délégué. La méthode qu’il encapsule ne retourne pas une valeur.
+* `Func<>` est généralement utilisé dans le cas d’une transformation, autrement dit, quand vous devez transformer les arguments du délégué en un résultat différent. C’est le cas, par exemple, des projections. La méthode qu’il encapsule renvoie une valeur spécifiée.
+* `Predicate<>` est utilisé quand vous devez déterminer si l’argument répond à la condition du délégué. Il peut également être `Func<T, bool>`écrit comme un , ce qui signifie que la méthode retourne une valeur boolean.
 
 Nous pouvons maintenant reprendre notre exemple ci-dessus et le réécrire à l’aide du délégué `Func<>` au lieu d’un type personnalisé. Le programme continue à s’exécuter exactement de la même façon.
 
@@ -110,7 +110,7 @@ Comme vous pouvez le voir, le corps du délégué n’est qu’un ensemble d’e
 
 Toutefois, même avec cette approche, nous avons encore beaucoup de code inutile. C’est là que les **expressions lambda** interviennent.
 
-Les expressions lambda ont été initialement introduites dans C# 3.0 comme l’un des principaux blocs de construction de la requête LINQ (Language-Integrated Query). Il s’agit simplement d’une syntaxe plus pratique pour l’utilisation des délégués. Elles déclarent une signature et un corps de méthode, mais n’ont pas d’identité formelle propre, sauf si elles sont attribuées à un délégué. Contrairement aux délégués, elles peuvent être directement affectées comme côté gauche de l’inscription d’un événement, ou dans plusieurs clauses et méthodes LINQ.
+Les expressions lambda ont été initialement introduites dans C# 3.0 comme l’un des principaux blocs de construction de la requête LINQ (Language-Integrated Query). Il s’agit simplement d’une syntaxe plus pratique pour l’utilisation des délégués. Ils déclarent une signature et un organisme de méthode, mais n’ont pas leur propre identité formelle, à moins qu’ils ne soient affectés à un délégué. Contrairement aux délégués, elles peuvent être directement affectées comme côté gauche de l’inscription d’un événement, ou dans plusieurs clauses et méthodes LINQ.
 
 Dans la mesure où une expression lambda est simplement une autre façon de spécifier un délégué, nous pouvons réécrire l’exemple ci-dessus pour utiliser une expression lambda au lieu d’un délégué anonyme.
 
@@ -161,4 +161,4 @@ Dans ce contexte, l’opérateur `+=` est utilisé pour s’abonner à un [évé
 
 * [Délégués](../../docs/csharp/programming-guide/delegates/index.md)
 * [Fonctions anonymes](../../docs/csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
-* [Expressions Lambda](../../docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
+* [Expressions lambda](../../docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)

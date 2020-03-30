@@ -4,18 +4,18 @@ description: Apprenez à utiliser l’héritage dans les bibliothèques et appli
 ms.date: 07/05/2018
 ms.technology: csharp-fundamentals
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: b72badb7833e018dfcbf5d2583b17f17c800c382
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 78833110db0e4f0382e5c0c6de7c6c8be9a16c8d
+ms.sourcegitcommit: a9b8945630426a575ab0a332e568edc807666d1b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156751"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391147"
 ---
 # <a name="inheritance-in-c-and-net"></a>Héritage dans C# et .NET
 
 Ce didacticiel vous présente l’héritage dans C#. L’héritage est une fonctionnalité des langages de programmation orientés objet qui vous permet de définir une classe de base qui fournit des fonctionnalités spécifiques (données et comportement) et de définir des classes dérivées qui héritent ou substituent cette fonctionnalité.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Ce tutoriel suppose que vous avez installé le .NET Core SDK. Visitez la page [.NET Core Downloads](https://dotnet.microsoft.com/download) pour la télécharger. Il vous faut également un éditeur de code. Ce didacticiel utilise [Visual Studio Code](https://code.visualstudio.com), mais vous pouvez utiliser l’éditeur de code de votre choix.
 
@@ -28,7 +28,7 @@ Pour créer et exécuter les exemples de ce didacticiel, vous utilisez l’utili
 1. Copiez et collez le code de l’exemple dans votre éditeur de code.
 1. Entrez la commande [dotnet restore](../../core/tools/dotnet-restore.md) à partir de la ligne de commande pour charger ou restaurer les dépendances du projet.
 
-  [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+   [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 1. Entrez la commande [dotnet run](../../core/tools/dotnet-run.md) pour compiler et exécuter l’exemple.
 
