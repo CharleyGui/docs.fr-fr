@@ -6,12 +6,12 @@ author: luisquintanilla
 ms.author: luquinta
 ms.topic: tutorial
 ms.custom: mvc,mlnet-tooling
-ms.openlocfilehash: 3419afb36d73599b8fdb0417a8c0cc4057f60089
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 98c9f28ca4ce6365ed4cf4ff1566a33dbe8f35ca
+ms.sourcegitcommit: 2ff49dcf9ddf107d139b4055534681052febad62
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79187634"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80438230"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>Tutorial: Analyser le sentiment des commentaires du site Web dans une application web en utilisant ML.NET Model Builder
 
@@ -275,7 +275,7 @@ Les résultats retournés par le `OnGetAnalyzeSentiment` seront `Index` affiché
 
         [!code-javascript [UpdateSentimentEvtHandler](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/js/site.js#L36)]
 
-## <a name="run-the-application"></a>Exécuter l’application
+## <a name="run-the-application"></a>Exécution de l'application
 
 Maintenant que votre application est configuré, exécutez l’application qui doit être lancée dans votre navigateur.
 
@@ -302,6 +302,6 @@ Dans ce didacticiel, vous avez appris à :
 
 Pour en savoir plus sur les rubriques mentionnées dans ce tutoriel, consultez les ressources suivantes :
 
-- [Scénarios du Générateur de modèles](../automate-training-with-model-builder.md#scenarios)
+- [Scénarios du Générateur de modèles](../automate-training-with-model-builder.md#scenario)
 - [Classification binaire](../resources/glossary.md#binary-classification)
 - [Mesures du modèle de classification binaire](../resources/metrics.md#evaluation-metrics-for-binary-classification)

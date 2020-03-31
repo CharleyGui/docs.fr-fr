@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 11/21/2019
 ms.topic: tutorial
 ms.custom: mvc,mlnet-tooling
-ms.openlocfilehash: e94313277a025d482105a6d78b6608d4df442c43
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6a36989f9453208e436ef8a4db2d4440aa0a1382
+ms.sourcegitcommit: 2ff49dcf9ddf107d139b4055534681052febad62
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79185842"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80438191"
 ---
 # <a name="tutorial-classify-the-severity-of-restaurant-health-violations-with-model-builder"></a>Tutorial: Classify the severity of restaurant health violations with Model Builder
 
@@ -31,7 +31,7 @@ Dans ce tutoriel, vous allez apprendre à :
 > [!NOTE]
 > Model Builder est actuellement en préversion.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Pour une liste de conditions préalables et d’instructions d’installation, visitez le [guide d’installation Model Builder](../how-to-guides/install-model-builder.md).
 
@@ -150,6 +150,6 @@ Félicitations ! Vous avez réussi à construire un modèle d’apprentissage au
 
 Pour en savoir plus sur les rubriques mentionnées dans ce tutoriel, consultez les ressources suivantes :
 
-- [Scénarios du Générateur de modèles](../automate-training-with-model-builder.md#scenarios)
+- [Scénarios du Générateur de modèles](../automate-training-with-model-builder.md#scenario)
 - [Classification multiclasse](../resources/glossary.md#multiclass-classification)
 - [Mesures du modèle de classification multiclasse](../resources/metrics.md#evaluation-metrics-for-multi-class-classification)
