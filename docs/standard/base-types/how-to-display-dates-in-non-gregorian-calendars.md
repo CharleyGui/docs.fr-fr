@@ -1,5 +1,5 @@
 ---
-title: 'Comment : afficher des dates dans des calendriers non grégoriens'
+title: 'Procédure : afficher des dates dans des calendriers non grégoriens'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - calendars [.NET Framework], displaying dates
 - displaying date and time data
 ms.assetid: ed324eff-4aff-4a76-b6c0-04e6c0d8f5a9
-ms.openlocfilehash: 455996d091f92367667e7077a4524898cd8face6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8d02b74f63ec5b6260679ae4cea04791681ec238
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73138755"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523927"
 ---
-# <a name="how-to-display-dates-in-non-gregorian-calendars"></a>Comment : afficher des dates dans des calendriers non grégoriens
+# <a name="how-to-display-dates-in-non-gregorian-calendars"></a>Procédure : afficher des dates dans des calendriers non grégoriens
 Les types <xref:System.DateTime> et <xref:System.DateTimeOffset> utilisent le calendrier grégorien comme calendrier par défaut. Cela signifie que l’appel de la méthode `ToString` d’une valeur de date et d’heure affiche la représentation sous forme de chaîne de la date et de l’heure dans le calendrier grégorien, même si ces date et heure ont été créées à l’aide d’un autre calendrier. Cela est illustré dans l’exemple suivant, qui utilise deux méthodes différentes pour créer une valeur de date et d’heure avec le calendrier persan, mais affiche toujours ces valeurs de date et d’heure dans le calendrier grégorien quand il appelle la méthode <xref:System.DateTime.ToString%2A>. Cet exemple reflète deux techniques couramment utilisées, mais incorrectes, pour l’affichage de la date dans un calendrier particulier.  
   
  [!code-csharp[Formatting.HowTo.Calendar#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.Calendar/cs/Calendar1.cs#1)]
@@ -63,7 +63,7 @@ Les types <xref:System.DateTime> et <xref:System.DateTimeOffset> utilisent le ca
   
     - <xref:System.Globalization.Calendar.GetMilliseconds%2A>, pour afficher les millisecondes de la seconde dans le calendrier approprié.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple affiche une date à l’aide de deux calendriers différents. Il affiche la date après avoir défini le calendrier hégirien comme calendrier par défaut pour la culture ar-JO et affiche la date à l’aide du calendrier persan, qui n’est pas pris en charge comme calendrier facultatif par la culture fa-IR.  
   
  [!code-csharp[Formatting.HowTo.Calendar#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.Calendar/cs/Calendar1.cs#2)]
@@ -81,8 +81,4 @@ Les types <xref:System.DateTime> et <xref:System.DateTimeOffset> utilisent le ca
   
 - `DisplayDate`, méthode publique surchargée qui reçoit deux paramètres : une valeur <xref:System.DateTime> ou <xref:System.DateTimeOffset> à exprimer dans le calendrier représenté par l’objet `CalendarUtility` et la culture dont les règles de mise en forme doivent être utilisées. La façon dont elle retourne la représentation sous forme de chaîne d’une date varie selon que le calendrier cible est pris en charge ou non par la culture dont les règles de mise en forme doivent être utilisées.  
   
- Quel que soit le calendrier utilisé pour créer une valeur <xref:System.DateTime> ou <xref:System.DateTimeOffset> dans cet exemple, la valeur est généralement exprimée sous la forme d’une date du calendrier grégorien. En effet, les types <xref:System.DateTime> et <xref:System.DateTimeOffset> ne conservent pas les informations de calendrier. En interne, elles sont représentées comme nombre de graduations qui se sont écoulées depuis le 1er janvier 0001 à minuit. L’interprétation de ce nombre dépend du calendrier. Pour la plupart des cultures, le calendrier par défaut est le calendrier grégorien.  
-  
-## <a name="see-also"></a>Voir aussi
-
-- [Exécution d’opérations de mise en forme](../../../docs/standard/base-types/performing-formatting-operations.md)
+ Quel que soit le calendrier utilisé pour créer une valeur <xref:System.DateTime> ou <xref:System.DateTimeOffset> dans cet exemple, la valeur est généralement exprimée sous la forme d’une date du calendrier grégorien. En effet, les types <xref:System.DateTime> et <xref:System.DateTimeOffset> ne conservent pas les informations de calendrier. En interne, elles sont représentées comme nombre de graduations qui se sont écoulées depuis le 1er janvier 0001 à minuit. L’interprétation de ce nombre dépend du calendrier. Pour la plupart des cultures, le calendrier par défaut est le calendrier grégorien.

@@ -2,12 +2,12 @@
 title: S’abonner à des événements
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre les détails de la publication et de l’abonnement à des événements d’intégration.
 ms.date: 01/30/2020
-ms.openlocfilehash: 544af8035ed23dd6507dfed4944b0c327c81d943
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3bfcdb1766a15b1a8e8deab46055f14e1791c2cc
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77501812"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523593"
 ---
 # <a name="subscribing-to-events"></a>S’abonner à des événements
 
@@ -211,7 +211,7 @@ public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem productToUp
       // Publish the integration event through the event bus
       _eventBus.Publish(priceChangedEvent);
 
-      integrationEventLogService.MarkEventAsPublishedAsync(
+      _integrationEventLogService.MarkEventAsPublishedAsync(
                                                 priceChangedEvent);
   }
 

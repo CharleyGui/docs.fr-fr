@@ -9,12 +9,12 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET Framework regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-ms.openlocfilehash: 504e315dda4e76f56a88d97149b1515b6743668b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 288bf4256670d34c600e23618b62ad81866daadf
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77124349"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523850"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Comportement détaillé des expressions régulières
 
@@ -87,7 +87,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 
      Pour plus d’informations sur les assertions de préanalyse négative, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
-- Évaluation `(?(`conditionnelle: *expression*`)` `(?(`*oui*`|`*non* `)` et *nom*`)`*oui*`|`*non*`)`, où *l’expression* est une sous-expression pour correspondre, le *nom* est le nom d’un groupe de capture, *oui* est la chaîne à assortir si *l’expression* est assortie ou le *nom* est un valide, non vide groupe capturé, et *non* est la sous-expression pour correspondre si l’expression * *n’est pas apparié ou *le nom* n’est pas un groupe capturé valide et non vide. Grâce à cette fonctionnalité, le moteur peut rechercher à l’aide de plusieurs autres modèles, selon le résultat d’une correspondance de sous-expression précédente ou le résultat d’une assertion de largeur nulle. Cette fonctionnalité permet une forme plus puissante de référence arrière qui permet, par exemple, de rechercher une sous-expression en fonction d’une sous-expression précédente trouvée. L’expression régulière utilisée dans l’exemple suivant trouve les paragraphes destinés à une utilisation à la fois interne et publique. Les paragraphes destinés à un usage interne uniquement commencent par une balise `<PRIVATE>`. Le modèle d’expression régulière `^(?<Pvt>\<PRIVATE\>\s)?(?(Pvt)((\w+\p{P}?\s)+)|((\w+\p{P}?\s)+))\r?$` utilise une évaluation conditionnelle pour assigner le contenu des paragraphes destinés à une utilisation publique et interne à des groupes de capture distincts. Ces paragraphes peuvent ensuite être gérés différemment.
+- Évaluation conditionnelle: `(?(` *expression*`)` `(?(`*oui*`|`*non* `)` et *nom*`)`*oui*`|`*non*`)`, lorsque *l’expression* est une sous-expression pour correspondre, le *nom* est le nom d’un groupe de capture, *oui* est la chaîne à assortir si *l’expression* est assortie ou le *nom* est un valide, non vide groupe capturé, et *non* est la sous-expression pour correspondre si *l’expression* n’est pas appariée ou le *nom* n’est pas un valide, non vide groupe capturé. Grâce à cette fonctionnalité, le moteur peut rechercher à l’aide de plusieurs autres modèles, selon le résultat d’une correspondance de sous-expression précédente ou le résultat d’une assertion de largeur nulle. Cette fonctionnalité permet une forme plus puissante de référence arrière qui permet, par exemple, de rechercher une sous-expression en fonction d’une sous-expression précédente trouvée. L’expression régulière utilisée dans l’exemple suivant trouve les paragraphes destinés à une utilisation à la fois interne et publique. Les paragraphes destinés à un usage interne uniquement commencent par une balise `<PRIVATE>`. Le modèle d’expression régulière `^(?<Pvt>\<PRIVATE\>\s)?(?(Pvt)((\w+\p{P}?\s)+)|((\w+\p{P}?\s)+))\r?$` utilise une évaluation conditionnelle pour assigner le contenu des paragraphes destinés à une utilisation publique et interne à des groupes de capture distincts. Ces paragraphes peuvent ensuite être gérés différemment.
 
      [!code-csharp[Conceptual.RegularExpressions.Design#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/conditional1.cs#4)]
      [!code-vb[Conceptual.RegularExpressions.Design#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/conditional1.vb#4)]
@@ -150,10 +150,9 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 |[Compilation et réutilisation](../../../docs/standard/base-types/compilation-and-reuse-in-regular-expressions.md)|Fournit des informations sur la compilation et la réutilisation des expressions régulières pour augmenter les performances.|
 |[Sécurité des threads](../../../docs/standard/base-types/thread-safety-in-regular-expressions.md)|Fournit des informations sur la sécurité des threads d’expression régulière et explique quand vous devez synchroniser l’accès aux objets d’expression régulière.|
 |[Expressions régulières du .NET Framework](../../../docs/standard/base-types/regular-expressions.md)|Fournit une vue d’ensemble de l’aspect du langage de programmation des expressions régulières.|
-|[Le modèle d’objet d’expression régulière](../../../docs/standard/base-types/the-regular-expression-object-model.md)|Fournit des informations et des exemples de code illustrant l’utilisation des classes d’expression régulière.|
-|[Exemples d'expressions régulières](../../../docs/standard/base-types/regular-expression-examples.md)|Contient des exemples de code qui illustrent l’utilisation des expressions régulières dans des applications courantes.|
-|[Langage d’expression régulière - Référence rapide](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Fournit des informations sur le jeu de caractères, d’opérateurs et de constructions permettant de définir des expressions régulières.|
+|[Modèle objet d'expression régulière](../../../docs/standard/base-types/the-regular-expression-object-model.md)|Fournit des informations et des exemples de code illustrant l’utilisation des classes d’expression régulière.|
+|[Langage des expressions régulières - Aide-mémoire](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Fournit des informations sur le jeu de caractères, d’opérateurs et de constructions permettant de définir des expressions régulières.|
 
-## <a name="reference"></a>Informations de référence
+## <a name="reference"></a>Référence
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>

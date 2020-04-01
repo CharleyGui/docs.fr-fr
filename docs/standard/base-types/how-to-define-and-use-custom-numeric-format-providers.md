@@ -1,5 +1,5 @@
 ---
-title: 'Comment : définir et utiliser des fournisseurs de format numérique personnalisés'
+title: 'Procédure : définir et utiliser des fournisseurs de formats numériques personnalisés'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - format providers [.NET Framework]
 - custom format strings
 ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
-ms.openlocfilehash: 151bf40cf042517b7441b89688122373259dc7dc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5345c90d966ea9ce0a0bbf6c884b8d8abc8b5fa7
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73140065"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523933"
 ---
-# <a name="how-to-define-and-use-custom-numeric-format-providers"></a>Comment : définir et utiliser des fournisseurs de format numérique personnalisés
+# <a name="how-to-define-and-use-custom-numeric-format-providers"></a>Procédure : définir et utiliser des fournisseurs de formats numériques personnalisés
 Le .NET Framework vous donne un contrôle étendu sur la représentation sous forme de chaîne de valeurs numériques. Il prend en charge les fonctionnalités suivantes pour personnaliser le format des valeurs numériques :  
   
 - Chaînes de format numériques standard, qui fournissent un ensemble prédéfini de formats pour convertir des nombres dans leur représentation sous forme de chaîne. Vous pouvez les utiliser avec toute méthode de mise en forme numérique, telle que <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, qui est dotée d’un paramètre `format`. Pour plus d’informations, consultez [Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md).  
@@ -61,7 +61,7 @@ Le .NET Framework vous donne un contrôle étendu sur la représentation sous fo
   
 2. Appelez la méthode de mise en forme <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> en lui passant l’objet de mise en forme personnalisée, le spécificateur de mise en forme (ou <xref:System.String.Empty?displayProperty=nameWithType>, si aucun n’est utilisé) et la valeur numérique à mettre en forme.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant définit un fournisseur de format numérique personnalisé nommé `TelephoneFormatter` qui convertit un nombre représentant un numéro de téléphone aux États-Unis au format NANP ou E.123 correspondant. La méthode gère deux spécificateurs de format, « N » (qui génère le format NANP) et « I » (qui génère le format E.123 international).  
   
  [!code-csharp[Formatting.HowTo.NumericValue#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.NumericValue/cs/Telephone1.cs#1)]
@@ -84,8 +84,4 @@ Le .NET Framework vous donne un contrôle étendu sur la représentation sous fo
  [!code-csharp[System.ICustomFormatter.Format#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.ICustomFormatter.Format/cs/format.cs#1)]
  [!code-vb[System.ICustomFormatter.Format#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ICustomFormatter.Format/vb/Format.vb#1)]  
   
- Dans le cas de cet exemple, la méthode qui implémente <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> est destinée à servir de méthode de rappel pour la méthode <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>. Ainsi, elle examine le paramètre `formatProvider` pour déterminer s’il contient une référence à l’objet `TelephoneFormatter` actuel. Toutefois, la méthode peut également être appelée directement à partir du code. Dans ce cas, vous pouvez utiliser le paramètre `formatProvider` pour fournir un objet <xref:System.Globalization.CultureInfo> ou <xref:System.Globalization.NumberFormatInfo> qui fournit des informations de mise en forme spécifiques à la culture.  
-  
-## <a name="see-also"></a>Voir aussi
-
-- [Exécution d’opérations de mise en forme](../../../docs/standard/base-types/performing-formatting-operations.md)
+ Dans le cas de cet exemple, la méthode qui implémente <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> est destinée à servir de méthode de rappel pour la méthode <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>. Ainsi, elle examine le paramètre `formatProvider` pour déterminer s’il contient une référence à l’objet `TelephoneFormatter` actuel. Toutefois, la méthode peut également être appelée directement à partir du code. Dans ce cas, vous pouvez utiliser le paramètre `formatProvider` pour fournir un objet <xref:System.Globalization.CultureInfo> ou <xref:System.Globalization.NumberFormatInfo> qui fournit des informations de mise en forme spécifiques à la culture.

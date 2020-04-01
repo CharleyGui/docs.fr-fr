@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 61ee0e320f85925e4d804a6032e01c0485a31451
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 8d04f888befae2cad815c88a0d27bd836f458c63
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249329"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523773"
 ---
 # <a name="ref-c-reference"></a>ref (référence C#)
 
@@ -25,7 +25,7 @@ Le mot clé `ref` indique une valeur qui est passée par référence. Il est ut
 
 ## <a name="passing-an-argument-by-reference"></a>Passage d’un argument par référence
 
-Quand il est utilisé dans la liste de paramètres d’une méthode, le mot clé `ref` indique qu’un argument est passé par référence, et non par valeur. Le mot clé `ref` fait du paramètre formel un alias de l’argument, qui doit être une variable. En d’autres termes, toute opération portant sur le paramètre est effectuée sur l’argument. Par exemple, si l’appelant passe une expression variable locale ou une expression d’accès à l’élément de tableau, et que la méthode appelée remplace l’objet auquel le paramètre de l’arbitre se réfère, alors la variable locale de l’appelant ou l’élément de tableau se réfère maintenant au nouvel objet lorsque le la méthode revient.
+Quand il est utilisé dans la liste de paramètres d’une méthode, le mot clé `ref` indique qu’un argument est passé par référence, et non par valeur. Le mot clé `ref` fait du paramètre formel un alias de l’argument, qui doit être une variable. En d’autres termes, toute opération portant sur le paramètre est effectuée sur l’argument. Par exemple, si l’appelant passe une expression variable locale ou une expression d’accès à l’élément de tableau, et que la méthode appelée remplace l’objet auquel le paramètre de réf se réfère, alors la variable locale de l’appelant ou l’élément de tableau se réfère maintenant au nouvel objet lorsque la méthode revient.
 
 > [!NOTE]
 > Ne confondez pas le concept de passage par référence avec celui de types de référence. Les deux concepts ne sont pas identiques. Un paramètre de méthode peut être modifié par `ref`, qu'il s'agisse d'un type valeur ou d'un type référence. Il n'y a aucun boxing d'un type valeur lorsqu'il est passé par référence.  
@@ -63,7 +63,7 @@ Toutefois, les méthodes peuvent être surchargées quand une méthode a un para
 
 En outre, les [méthodes d’extension](../../programming-guide/classes-and-structs/extension-methods.md) ont les restrictions suivantes :
 
-- Le `out` keywoard ne peut pas être utilisé sur le premier argument d’une méthode d’extension.
+- Le `out` mot clé ne peut pas être utilisé sur le premier argument d’une méthode d’extension.
 - Le `ref` mot clé ne peut pas être utilisé sur le premier argument d’une méthode d’extension lorsque l’argument n’est pas une struction, ou un type générique non contraint d’être une struction.
 - Le `in` mot clé ne peut pas être utilisé à moins que le premier argument soit une struction. Le `in` mot clé ne peut pas être utilisé sur n’importe quel type générique, même lorsqu’il est contraint d’être une struction.
 
@@ -160,11 +160,11 @@ Vous pouvez combiner des modificateurs pour déclarer une structure en tant que 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Écrire du code sécurisé et efficace](../../write-safe-efficient-code.md)
+- [Rédiger un code efficace en toute sécurité](../../write-safe-efficient-code.md)
 - [Retours ref et variables locales ref](../../programming-guide/classes-and-structs/ref-returns.md)
 - [Expression ref conditionnelle](../operators/conditional-operator.md#conditional-ref-expression)
 - [Paramètres de passage](../../programming-guide/classes-and-structs/passing-parameters.md)
 - [Paramètres de méthodes](method-parameters.md)
 - [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
-- [Mots clés C#](index.md)
+- [Guide de programmation CMD](../../programming-guide/index.md)
+- [Mots-clés C](index.md)

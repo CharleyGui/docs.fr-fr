@@ -2,12 +2,12 @@
 title: Terminologie Docker
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Terminologie Docker
 ms.date: 01/30/2020
-ms.openlocfilehash: 5ffc7e791df8cbc999c6ababf62670bae46e1d5e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fdcc5ec3603579c36d7339bd3ff651713b8eba88
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77502837"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523332"
 ---
 # <a name="docker-terminology"></a>Terminologie Docker
 
@@ -17,7 +17,9 @@ Cette section liste les termes et les définitions que vous devez connaître ava
 
 **Dockerfile** : fichier texte contenant des instructions pour la création d’une image Docker. C’est comme un script de commandes, la première ligne indique l’image de base avec laquelle commencer, puis suivez les instructions pour installer les programmes requis, copier les fichiers et ainsi de suite, jusqu’à ce que vous obteniez l’environnement de travail dont vous avez besoin.
 
-**Création (build)** : action de créer une image conteneur sur la base des informations et du contexte fournis par le fichier Dockerfile associé, plus des fichiers supplémentaires dans le dossier où l’image est créée. Vous pouvez créer des images à l’aide de la commande **docker build** de Docker.
+**Création (build)** : action de créer une image conteneur sur la base des informations et du contexte fournis par le fichier Dockerfile associé, plus des fichiers supplémentaires dans le dossier où l’image est créée. Vous pouvez construire des images avec la commande Docker :
+
+> `docker build`
 
 **Conteneur (container)** : instance d’une image Docker. Un conteneur représente l’exécution d’une application, d’un processus ou d’un service. Il renferme une image Docker, un environnement d’exécution et un ensemble standard d’instructions. Pour mettre un service à l’échelle, vous créez plusieurs instances d’un conteneur à partir de la même image. Cela peut également être fait par un traitement par lots, qui passe des paramètres différents à chaque instance.
 
@@ -25,7 +27,7 @@ Cette section liste les termes et les définitions que vous devez connaître ava
 
 **Balise (tag)** : marque ou étiquette que vous pouvez appliquer aux images pour identifier les différentes images ou versions de l’image initiale (selon le numéro de version de l’environnement cible).
 
-**Build en plusieurs étapes** : fonctionnalité, depuis Docker 17.05 ou une version ultérieure, qui permet de réduire la taille des images finales. En quelques phrases, avec un build en plusieurs étapes vous pouvez utiliser, par exemple, une grande image de base, qui contient le SDK pour compiler et publier l’application, puis utilisez le dossier de publication avec une petite image de base runtime uniquement, pour produire une image finale beaucoup plus petite
+**Build en plusieurs étapes** : fonctionnalité, depuis Docker 17.05 ou une version ultérieure, qui permet de réduire la taille des images finales. En quelques phrases, avec la construction en plusieurs étapes, vous pouvez utiliser, par exemple, une grande image de base, contenant le SDK, pour la compilation et la publication de l’application, puis en utilisant le dossier d’édition avec une petite image de base runtime-seulement, pour produire une image finale beaucoup plus petite.
 
 **Dépôt (repository)** : collection d’images Docker associées, identifiées par une balise qui indique la version de chaque image. Certains repos contiennent plusieurs variantes d’une image spécifique, comme une image contenant des SDK (plus lourd), une image contenant uniquement des runtimes (plus léger), etc. Ces variantes peuvent être marquées avec des étiquettes. Un dépôt peut contenir des variantes de plateforme, comme une image Linux et une image Windows.
 

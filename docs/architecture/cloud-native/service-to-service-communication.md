@@ -3,12 +3,12 @@ title: Communication service-service
 description: Découvrez comment les microservices natifs du cloud en arrière communiquent avec d’autres microservices back-end.
 author: robvet
 ms.date: 09/09/2019
-ms.openlocfilehash: a5124b8b83f62ff17b1230ead63db26e0c1f2a5b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 926be3c2eb4513c89ebcd1f31dceb7d58639dc6f
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401598"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523559"
 ---
 # <a name="service-to-service-communication"></a>Communication service-service
 
@@ -232,4 +232,4 @@ Pour les applications cloud-native qui doivent diffuser un grand nombre d’év�
 
 >[!div class="step-by-step"]
 >[Suivant précédent](front-end-communication.md)
->[Next](rest-grpc.md)
+>[Next](grpc.md)

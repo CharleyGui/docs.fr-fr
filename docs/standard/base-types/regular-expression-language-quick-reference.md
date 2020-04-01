@@ -14,12 +14,12 @@ helpviewer_keywords:
 - cheat sheet
 - .NET Framework regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-ms.openlocfilehash: 8acf0886215c2d31f949e38401c4705ac9e2aef5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0b553f44ebc512ffd1194254fe8ebc90bcb2f763
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77124310"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523913"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Langage des expressions régulières - Aide-mémoire
 
@@ -48,7 +48,7 @@ La barre oblique inverse (\\) dans une expression régulière indique que le ca
 |`\e`|Correspond à un caractère d’échappement, \u001B.|`\e`|`"\x001B"` dans `"\x001B"`|
 |`\` *nnn*|Utilise la représentation octale pour spécifier un caractère (*nnn* se compose de deux ou trois chiffres).|`\w\040\w`|`"a b"`, `"c d"` dans `"a bc d"`|
 |`\x` *nn*|Utilise une représentation hexadécimale pour spécifier un caractère (*nn* se compose de deux chiffres exactement).|`\w\x20\w`|`"a b"`, `"c d"` dans `"a bc d"`|
-|`\c`*X X*<br /><br /> `\c`*x*|Correspond au caractère de contrôle ASCII spécifié par *X* ou *x*, où *X* ou *x* représente la lettre du caractère de contrôle.|`\cC`|`"\x0003"` dans `"\x0003"` (Ctrl-C)|
+|`\c` *X*<br /><br /> `\c`*x*|Correspond au caractère de contrôle ASCII spécifié par *X* ou *x*, où *X* ou *x* représente la lettre du caractère de contrôle.|`\cC`|`"\x0003"` dans `"\x0003"` (Ctrl-C)|
 |`\u` *nnnn*|Correspond à un caractère Unicode en utilisant la représentation hexadécimale (quatre chiffres exactement, représentés par *nnnn*).|`\w\u0020\w`|`"a b"`, `"c d"` dans `"a bc d"`|
 |`\`|Lorsque ce caractère d'échappement est suivi d'un caractère non identifié comme caractère d'échappement, correspond au caractère lui-même. Par exemple, `\*` est identique à `\x2A`et `\.` est identique à `\x2E`. Cela permet au moteur des expressions régulières de lever l’ambiguïté d’éléments de langage (tels que \* ou ?) et de caractères littéraux (représentés par `\*` ou `\?`).|`\d+[\+-x\*]\d+`|`"2+2"` et `"3*9"` dans `"(2+2) * 3*9"`|
 
@@ -112,14 +112,14 @@ Un quantificateur indique combien d’instances de l’élément précédent (qu
 |`*`|Correspond zéro, une ou plusieurs fois à l’élément précédent.|`\d*\.\d`|`".0"`, `"19.9"`, `"219.9"`|
 |`+`|Correspond une ou plusieurs fois à l’élément précédent.|`"be+"`|`"bee"` dans `"been"`, `"be"` dans `"bent"`|
 |`?`|Correspond zéro ou une fois à l’élément précédent.|`"rai?n"`|`"ran"`, `"rain"`|
-|`{`*n*`}`|Correspond à l’élément précédent exactement *n* fois.|`",\d{3}"`|`",043"` dans `"1,043.6"`, `",876"`, `",543"` et `",210"` dans `"9,876,543,210"`|
-|`{`*n*`,}`|Correspond à l’élément précédent au moins *n* fois.|`"\d{2,}"`|`"166"`, `"29"`, `"1930"`|
+|`{` *n* `}`|Correspond à l’élément précédent exactement *n* fois.|`",\d{3}"`|`",043"` dans `"1,043.6"`, `",876"`, `",543"` et `",210"` dans `"9,876,543,210"`|
+|`{` *n* `,}`|Correspond à l’élément précédent au moins *n* fois.|`"\d{2,}"`|`"166"`, `"29"`, `"1930"`|
 |`{`*n* `,` *m*`}`|Correspond à l'élément précédent au moins *n* fois, mais pas plus de *m* fois.|`"\d{3,5}"`|`"166"`, `"17668"`<br /><br /> `"19302"` dans `"193024"`|
 |`*?`|Correspond zéro fois ou plus à l’élément précédent, mais le moins de fois possible.|`\d*?\.\d`|`".0"`, `"19.9"`, `"219.9"`|
 |`+?`|Correspond une ou plusieurs fois à l’élément précédent, mais le moins de fois possible.|`"be+?"`|`"be"` dans `"been"`, `"be"` dans `"bent"`|
 |`??`|Correspond zéro ou une fois à l’élément précédent, mais le moins de fois possible.|`"rai??n"`|`"ran"`, `"rain"`|
-|`{`*n*`}?`|Correspond exactement *n* fois à l’élément précédent.|`",\d{3}?"`|`",043"` dans `"1,043.6"`, `",876"`, `",543"` et `",210"` dans `"9,876,543,210"`|
-|`{`*n*`,}?`|Correspond au moins *n* fois à l’élément précédent, mais le moins de fois possible.|`"\d{2,}?"`|`"166"`, `"29"`, `"1930"`|
+|`{` *n* `}?`|Correspond exactement *n* fois à l’élément précédent.|`",\d{3}?"`|`",043"` dans `"1,043.6"`, `",876"`, `",543"` et `",210"` dans `"9,876,543,210"`|
+|`{` *n* `,}?`|Correspond au moins *n* fois à l’élément précédent, mais le moins de fois possible.|`"\d{2,}?"`|`"166"`, `"29"`, `"1930"`|
 |`{`*n* `,` *m*`}?`|Correspond entre *n* et *m* fois à l'élément précédent, mais le moins de fois possible.|`"\d{3,5}?"`|`"166"`, `"17668"`<br /><br /> `"193"`, `"024"` dans `"193024"`|
 
 ## <a name="backreference-constructs"></a>Constructions de référence arrière
@@ -128,7 +128,7 @@ Une backreference permet qu’une sous-expression précédemment mise en corresp
 
 |Construction de backreference|Description|Modèle|Correspondances|
 |-----------------------------|-----------------|-------------|-------------|
-|`\`*nombre*|Backreference. Correspond à la valeur d’une sous-expression numérotée.|`(\w)\1`|`"ee"` dans `"seek"`|
+|`\` *nombre*|Backreference. Correspond à la valeur d’une sous-expression numérotée.|`(\w)\1`|`"ee"` dans `"seek"`|
 |`\k<`*nom*`>`|Backreference nommée. Correspond à la valeur d’une expression nommée.|`(?<char>\w)\k<char>`|`"ee"` dans `"seek"`|
 
 ## <a name="alternation-constructs"></a>Constructions d’alternative
@@ -147,7 +147,7 @@ Les substitutions sont des éléments de langage d’expression régulière pris
 
 |Caractère|Description|Modèle|Modèle de remplacement|Chaîne d’entrée|Chaîne de résultat|
 |---------------|-----------------|-------------|-------------------------|------------------|-------------------|
-|`$`*nombre*|Remplace la sous-chaîne mise en correspondance par le groupe *nombre*.|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|`"one two"`|`"two one"`|
+|`$` *nombre*|Remplace la sous-chaîne mise en correspondance par le groupe *nombre*.|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|`"one two"`|`"two one"`|
 |`${`*nom*`}`|Remplace la sous-chaîne mise en correspondance par le groupe nommé *nom*.|`\b(?<word1>\w+)(\s)(?<word2>\w+)\b`|`${word2} ${word1}`|`"one two"`|`"two one"`|
 |`$$`|Remplace un "$" littéral.|`\b(\d+)\s?USD`|`$$$1`|`"103 USD"`|`"$103"`|
 |`$&`|Remplace une copie de la totalité de la correspondance.|`\$?\d*\.?\d+`|`**$&**`|`"$1.30"`|`"**$1.30**"`|
@@ -179,7 +179,7 @@ Le moteur d’expression régulière .NET prend en charge les options en ligne s
 
 Diverses constructions modifient un modèle d’expression régulière ou fournissent des informations le concernant. Le tableau suivant répertorie les diverses constructions prises en charge par .NET. Pour plus d'informations, consultez [Miscellaneous Constructs](miscellaneous-constructs-in-regular-expressions.md).
 
-|Construction|Définition| Exemple|
+|Construction|Définition|Exemple|
 |---------------|----------------|-------------|
 |`(?imnsx-imnsx)`|Active ou désactive des options telles que le non-respect de la casse au milieu d’un modèle. Pour plus d’informations, consultez [Options des expressions régulières](regular-expression-options.md).|`\bA(?i)b\w+\b` correspond à `"ABA"`, `"Able"` dans `"ABA Able Act"`|
 |`(?#`*commentaire*`)`|Commentaire inline. Le commentaire se termine à la première parenthèse fermante.|`\bA(?#Matches words starting with A)\w+\b`|
@@ -191,6 +191,5 @@ Diverses constructions modifient un modèle d’expression régulière ou fourni
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>
 - [Expressions régulières](regular-expressions.md)
 - [Classes d’expressions régulières](the-regular-expression-object-model.md)
-- [Exemples d'expressions régulières](regular-expression-examples.md)
 - [Expressions régulières - Aide-mémoire (téléchargement au format Word)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)
 - [Expressions régulières - Aide-mémoire (téléchargement au format PDF)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)

@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande de publication dotnet publie un projet ou une solution .NET Core à un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: ed5b87b3343210ca81486ef4b9a9d70d1b534464
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: 7e57a7b3cfe72653cc64c90055735795e4616260
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80110969"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523772"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -94,9 +94,21 @@ La sortie de la commande `dotnet publish` est prête pour le déploiement sur un
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Spécifie le chemin d’accès du répertoire de sortie. S’il n’est pas précisé, il ne fait pas défaut à *./bin/[configuration]/[cadre]/publier/* pour un délai exécutable et multiplateforme. Il ne fait pas défaut à *./bin/[configuration]/[cadre]/[runtime]/publish/* pour un exécutable autonome.
+  Spécifie le chemin d’accès du répertoire de sortie.
+  
+  S’il n’est pas précisé, il ne fait pas défaut à *[project_file_folder]./bin/[configuration]/[cadre]/publier/* pour un délai exécutable et multiplateforme. Il est par défaut à *[project_file_folder]/bin/[configuration]/[cadre]/[runtime]/publish/* pour un exécutable autonome.
 
-  Si le chemin est relatif, le répertoire de sortie généré est relatif à l’emplacement du fichier projet, et non au répertoire de travail actuel.
+  - .NET Core 3.x SDK et plus tard
+  
+    Si un chemin relatif est spécifié lors de la publication d’un projet, l’annuaire de sortie généré est relatif à l’annuaire de travail actuel, et non à l’emplacement du fichier du projet.
+
+    Si un chemin relatif est spécifié lors de la publication d’une solution, toutes les sorties pour tous les projets entrent dans le dossier spécifié par rapport à l’annuaire de travail actuel. Pour faire publier la sortie aller à des dossiers séparés pour chaque `PublishDir` projet, `--output` spécifier un chemin relatif en utilisant la propriété de msbuild au lieu de l’option. Par exemple, `dotnet publish -p:PublishDir=.\publish` envoie la sortie `publish` de publication pour chaque projet à un dossier sous le dossier qui contient le fichier de projet.
+
+  - .NET Core 2.x SDK
+  
+    Si un chemin relatif est spécifié lors de la publication d’un projet, l’annuaire de sortie généré est relatif à l’emplacement du fichier du projet, et non à l’annuaire de travail actuel.
+
+    Si un chemin relatif est spécifié lors de la publication d’une solution, la sortie de chaque projet est dans un dossier distinct par rapport à l’emplacement du fichier du projet. Si un chemin absolu est spécifié lors de la publication d’une solution, tous les documents de publication pour tous les projets entrent dans le dossier spécifié.
 
 - **`--self-contained [true|false]`**
 
