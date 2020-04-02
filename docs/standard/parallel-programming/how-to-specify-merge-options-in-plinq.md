@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to use merge options
 ms.assetid: 0f33b527-e91a-4550-a39a-e63e396fd831
-ms.openlocfilehash: 40abe2f101f6fa23d804ef30e27d642a36908196
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e98ede3664a8815c60a490239a789c69fa557895
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139275"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588562"
 ---
 # <a name="how-to-specify-merge-options-in-plinq"></a>Comment : spécifier des options de fusion en PLINQ
 Cet exemple montre comment spécifier les options de fusion qui seront appliquées à tous les opérateurs suivants dans une requête PLINQ. Il n’est pas nécessaire de définir explicitement les options de fusion, mais cela peut améliorer les performances. Pour plus d’informations sur les options de fusion, consultez [Options de fusion en PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).  
@@ -21,7 +21,7 @@ Cet exemple montre comment spécifier les options de fusion qui seront appliqué
 > [!WARNING]
 > Cet exemple, destiné à illustrer l'utilisation, peut ne pas s'exécuter plus rapidement que la requête LINQ to Objects séquentielle équivalente. Pour plus d’informations sur l’accélération, consultez [Fonctionnement de l’accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre le comportement des options de fusion dans un scénario de base qui a une source non ordonnée et qui applique une fonction coûteuse à chaque élément.  
   
  [!code-csharp[PLINQ#23](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#23)]
@@ -32,4 +32,4 @@ Cet exemple montre comment spécifier les options de fusion qui seront appliqué
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq.ParallelMergeOptions>
-- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)

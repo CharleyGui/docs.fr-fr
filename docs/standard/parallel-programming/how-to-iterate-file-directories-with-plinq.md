@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - PLINQ queries, how to iterate directories
 ms.assetid: 354e8ce3-35c4-431c-99ca-7661d1f3901b
-ms.openlocfilehash: 90afc767e422515c6122b8a6ef0e63ffc07caf3a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: de33561e2ef8e8fe62e8179272abe8adfffecd6f
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73091367"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80587758"
 ---
 # <a name="how-to-iterate-file-directories-with-plinq"></a>Comment : itérer les répertoires de fichiers avec PLINQ
 Cet exemple montre comment paralléliser des opérations sur des répertoires de fichiers de deux manières différentes. La première requête utilise la méthode <xref:System.IO.Directory.GetFiles%2A> pour renseigner un tableau de noms de fichiers dans un répertoire et tous ses sous-répertoires. Cette méthode ne retourne de résultats qu’une fois le tableau entièrement renseigné. Par conséquent, elle peut introduire une latence au début de l’opération. Mais une fois le tableau renseigné, PLINQ est capable de le traiter en parallèle très rapidement.  
@@ -20,12 +20,12 @@ Cet exemple montre comment paralléliser des opérations sur des répertoires de
 > [!WARNING]
 > Ces exemples, destinés à illustrer l'utilisation, peuvent ne pas s'exécuter plus rapidement que la requête LINQ to Objects séquentielle équivalente. Pour plus d’informations sur l’accélération, consultez [Fonctionnement de l’accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre comment itérer au sein de répertoires de fichiers dans des scénarios simples où vous avez accès à tous les répertoires de l’arborescence, où les tailles de fichier ne sont pas très grandes et où les temps d’accès ne sont pas significatifs. Cette approche implique une période de latence au début, le temps que le tableau de noms de fichiers soit créé.  
   
  [!code-csharp[PLINQ#33](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqfileiteration.cs#33)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre comment itérer au sein de répertoires de fichiers dans des scénarios simples où vous avez accès à tous les répertoires de l’arborescence, où les tailles de fichier ne sont pas très grandes et où les temps d’accès ne sont pas significatifs. Cette méthode commence à générer des résultats plus rapidement que l’exemple précédent.  
   
  [!code-csharp[PLINQ#34](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqfileiteration.cs#34)]  
@@ -36,4 +36,4 @@ Cet exemple montre comment paralléliser des opérations sur des répertoires de
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)

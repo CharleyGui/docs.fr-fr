@@ -4,12 +4,12 @@ description: Découvrez la différence entre les délégués et les événements
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
-ms.openlocfilehash: 04738ac2dd82da9c577e88598d0bb737a93333c1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4179330fe5e88da5d5034a150a057f63e31b178b
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146176"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588259"
 ---
 # <a name="distinguishing-delegates-and-events"></a>Différenciation des délégués et des événements
 
@@ -37,6 +37,11 @@ Les contrôles de l’expérience utilisateur fonctionneront toujours correcteme
 Une autre considération à prendre en compte est le prototype de méthode souhaité pour votre méthode déléguée. Comme nous l’avons vu, les délégués utilisés pour les événements ont tous un type de retour void. Nous avons également vu qu’il existait des idiomes pour créer des gestionnaires d’événements qui repassent des informations aux sources d’événements en modifiant des propriétés de l’objet d’argument d’événement. Bien que ces idiomes fonctionnent, ils ne sont pas aussi naturels que le retour d’une valeur à partir d’une méthode.
 
 Notez que ces heuristiques peuvent souvent être toutes deux présentes : si votre méthode déléguée retourne une valeur, elle aura probablement un impact sur l’algorithme.
+
+## <a name="events-have-private-invocation"></a>Les événements ont une invocation privée
+
+Les classes autres que celle dans lesquelles un événement est contenu ne peuvent qu’ajouter et supprimer les auditeurs de l’événement; seule la classe contenant l’événement peut invoquer l’événement. Les événements sont généralement des membres de la classe publique.
+En comparaison, les délégués sont souvent adoptés comme paramètres et stockés en tant que membres de la classe privée, s’ils sont stockés du tout.
 
 ## <a name="event-listeners-often-have-longer-lifetimes"></a>Les détecteurs d’événements ont souvent des durées de vie plus longues
 

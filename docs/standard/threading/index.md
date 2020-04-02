@@ -6,18 +6,18 @@ helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: 7b46a7d9-c6f1-46d1-a947-ae97471bba87
-ms.openlocfilehash: d6b8a0a4e16aa3169888958fa1376bfa61526dbd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5ca102dc98e50067d39d2f0c51a6ff75e342e9f
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73137926"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588665"
 ---
 # <a name="managed-threading"></a>Threading managé
 Que votre développement s’applique à des ordinateurs avec un ou plusieurs processeurs, votre application doit fournir l’interaction la plus réactive avec l’utilisateur, même si l’application effectue actuellement d’autres opérations. Utiliser plusieurs threads d’exécution est l’une des manières les plus efficaces pour maintenir la réactivité de votre application vis-à-vis de l’utilisateur, tout en exploitant le processeur entre voire pendant des événements utilisateur. Bien que cette section présente les concepts de base du threading, elle se concentre sur les concepts de threading managé et son utilisation.  
   
 > [!NOTE]
-> À compter de .NET Framework 4, la programmation multithread est considérablement simplifiée avec les classes <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md), de nouvelles classes de collections simultanées dans l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType> et un nouveau modèle de programmation basé sur le concept de tâches au lieu de threads. Pour plus d’informations, voir [Programmation parallèle](../../../docs/standard/parallel-programming/index.md).  
+> À compter de .NET Framework 4, la programmation multithread est considérablement simplifiée avec les classes <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md), de nouvelles classes de collections simultanées dans l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType> et un nouveau modèle de programmation basé sur le concept de tâches au lieu de threads. Pour plus d’informations, voir [Programmation parallèle](../../../docs/standard/parallel-programming/index.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Base de threading gérée](../../../docs/standard/threading/managed-threading-basics.md)  
@@ -32,7 +32,7 @@ Que votre développement s’applique à des ordinateurs avec un ou plusieurs pr
  [Objets et caractéristiques de threading](../../../docs/standard/threading/threading-objects-and-features.md)  
  Décrit les classes managées que vous pouvez utiliser pour synchroniser les activités de threads et les données d’objets ouvertes sur différents threads, et fournit une vue d’ensemble des threads du pool.  
   
-## <a name="reference"></a>Informations de référence  
+## <a name="reference"></a>Référence  
  <xref:System.Threading>  
  Contient des classes pour l’utilisation et la synchronisation de threads managés.  
   
@@ -58,5 +58,5 @@ Que votre développement s’applique à des ordinateurs avec un ou plusieurs pr
  [Programmation parallèle](../../../docs/standard/parallel-programming/index.md)  
  Décrit les bibliothèques de programmation parallèle qui simplifient l’utilisation de plusieurs threads dans les applications.  
   
- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)  
+ [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)  
  Décrit un système permettant d’exécuter des requêtes en parallèle afin de tirer parti de plusieurs processeurs.

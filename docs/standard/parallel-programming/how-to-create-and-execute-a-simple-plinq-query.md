@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to create
 ms.assetid: 983b4213-bddd-4a44-9262-cbe59186df4c
-ms.openlocfilehash: 349cc8d78e9a080d720e09a7e3e5e314752605c7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0cdef6d3826e4e7522bf3f6ed69060b8ef1c5e1b
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73106957"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588295"
 ---
 # <a name="how-to-create-and-execute-a-simple-plinq-query"></a>Comment : créer et exécuter une requête PLINQ simple
 L’exemple suivant montre comment créer une requête Parallel LINQ simple à l’aide de la méthode d’extension <xref:System.Linq.ParallelEnumerable.AsParallel%2A> sur la séquence source, et exécuter la requête à l’aide de la méthode <xref:System.Linq.ParallelEnumerable.ForAll%2A>.  
@@ -21,7 +21,7 @@ L’exemple suivant montre comment créer une requête Parallel LINQ simple à l
 > [!NOTE]
 > Cette documentation utilise des expressions lambda pour définir les délégués en PLINQ. Si les expressions lambda en C# ou Visual Basic ne vous sont pas familières, consultez la page [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  [!code-csharp[PLINQ#11](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/create1.cs#11)]
  [!code-vb[PLINQ#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/create1.vb#11)]  
   
@@ -29,4 +29,4 @@ L’exemple suivant montre comment créer une requête Parallel LINQ simple à l
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)

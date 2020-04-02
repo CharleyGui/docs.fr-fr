@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Collections classes
 - collections [.NET Framework]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
-ms.openlocfilehash: 3ca340e19d7340d7bea133fa62c6d8bbc3c0512a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ec14cf30159dda1f2c67ef0c0f5f0a3e52000c45
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160389"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588644"
 ---
 # <a name="collections-and-data-structures"></a>Collections et structures de données
 Des données similaires peuvent souvent être gérées plus efficacement quand elles sont stockées et manipulées en tant que collection. Vous pouvez utiliser la classe <xref:System.Array?displayProperty=nameWithType>, ou les classes qui se trouvent dans les espaces de noms <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent> et System.Collections.Immutable, pour ajouter, supprimer et modifier des éléments individuels ou une série d’éléments dans une collection.  
@@ -30,7 +30,7 @@ Des données similaires peuvent souvent être gérées plus efficacement quand e
   
 - **Possibilité d’énumérer la collection**  
   
-     Les collections du .NET Framework implémentent soit <xref:System.Collections.IEnumerable?displayProperty=nameWithType>, soit <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> pour permettre à la collection d'être parcourue. Un énumérateur peut être vu comme un pointeur mobile pointant vers n'importe quel élément d'une collection. L’instruction [foreach, in](../../csharp/language-reference/keywords/foreach-in.md) et [For Each...Next Instruction](../../visual-basic/language-reference/statements/for-each-next-statement.md) utilisent l’énumérateur exposé par la méthode <xref:System.Collections.IEnumerable.GetEnumerator%2A> et masquent la complexité de la manipulation de l’énumérateur. En outre, toute collection qui implémente <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> est considérée comme étant un *type requêtable* et peut être interrogée avec LINQ. Les requêtes LINQ fournissent un modèle commun d'accès aux données. Elles sont généralement plus concises et lisibles que les boucles `foreach` standard, et fournissent des fonctionnalités de filtrage, de tri et de regroupement. Les requêtes LINQ peuvent également améliorer les performances. Pour plus d’informations, consultez [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md), [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md), [Introduction aux requêtes LINQ (C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md) et [Opérations de requête de base (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).  
+     Les collections du .NET Framework implémentent soit <xref:System.Collections.IEnumerable?displayProperty=nameWithType>, soit <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> pour permettre à la collection d'être parcourue. Un énumérateur peut être vu comme un pointeur mobile pointant vers n'importe quel élément d'une collection. L’instruction [foreach, in](../../csharp/language-reference/keywords/foreach-in.md) et [For Each...Next Instruction](../../visual-basic/language-reference/statements/for-each-next-statement.md) utilisent l’énumérateur exposé par la méthode <xref:System.Collections.IEnumerable.GetEnumerator%2A> et masquent la complexité de la manipulation de l’énumérateur. En outre, toute collection qui implémente <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> est considérée comme étant un *type requêtable* et peut être interrogée avec LINQ. Les requêtes LINQ fournissent un modèle commun d'accès aux données. Elles sont généralement plus concises et lisibles que les boucles `foreach` standard, et fournissent des fonctionnalités de filtrage, de tri et de regroupement. Les requêtes LINQ peuvent également améliorer les performances. Pour plus d’informations, consultez [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md), [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md), [Introduction aux requêtes LINQ (C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md) et [Opérations de requête de base (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).  
   
 - **Possibilité de copier le contenu d’une collection dans un tableau**  
   
@@ -84,7 +84,7 @@ Des données similaires peuvent souvent être gérées plus efficacement quand e
 |System.Collections.Immutable|Présente les collections immuables et fournit des liens vers les types de collection.|  
   
 <a name="BKMK_Reference"></a>
-## <a name="reference"></a>Informations de référence  
+## <a name="reference"></a>Référence  
  <xref:System.Array?displayProperty=nameWithType>  
  <xref:System.Collections?displayProperty=nameWithType>  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>  

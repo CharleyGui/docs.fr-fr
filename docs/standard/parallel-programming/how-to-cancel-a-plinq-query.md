@@ -9,12 +9,12 @@ helpviewer_keywords:
 - PLINQ queries, how to cancel
 - cancellation, PLINQ
 ms.assetid: 80b14640-edfa-4153-be1b-3e003d3e9c1a
-ms.openlocfilehash: 272f25d62cb63c60209be3bc54dc5e76fb30df54
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1b34f0c1785c1a1c007db97f04c799a4b4bd0f8f
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73134232"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588571"
 ---
 # <a name="how-to-cancel-a-plinq-query"></a>Comment : annuler une requête PLINQ
 Les exemples suivants montrent deux façons de modifier une requête PLINQ. Le premier exemple montre comment annuler une requête principalement composée de parcours de données. Le deuxième exemple montre comment annuler une requête contenant une fonction d’utilisateur dont les calculs sont onéreux.
@@ -24,7 +24,7 @@ Les exemples suivants montrent deux façons de modifier une requête PLINQ. Le p
 >
 > Cet exemple, destiné à illustrer l'utilisation, peut ne pas s'exécuter plus rapidement que la requête LINQ to Objects séquentielle équivalente. Pour plus d’informations sur l’accélération, consultez [Fonctionnement de l’accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 [!code-csharp[PLINQ#16](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#16)]
 [!code-vb[PLINQ#16](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#16)]
@@ -37,7 +37,7 @@ Les recommandations générales pour l’annulation sont les suivantes :
 
 2. Si l’annulation se produit et qu’aucune autre exception n’est levée, vous devez gérer un <xref:System.OperationCanceledException> plutôt qu’un <xref:System.AggregateException>.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant montre comment gérer l’annulation lorsque vous avez une fonction de calcul onéreux dans le code utilisateur.
 
@@ -53,5 +53,5 @@ Lorsqu’un énumérateur est supprimé, par exemple lorsque le code quitte une 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq.ParallelEnumerable>
-- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
 - [Annulation dans les threads managés](../../../docs/standard/threading/cancellation-in-managed-threads.md)

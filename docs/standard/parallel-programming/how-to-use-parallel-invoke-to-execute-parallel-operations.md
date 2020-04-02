@@ -9,12 +9,12 @@ helpviewer_keywords:
 - task parallelism in .NET
 - parallel programming, task parallelism
 ms.assetid: 6b3ecd79-dec9-4ce1-abf4-62e5392a59c6
-ms.openlocfilehash: 665490601cad9ccd7881042aed576b95bbc07115
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7189c478e132a41971a364b833f0fabda6ff84d4
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139731"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588395"
 ---
 # <a name="how-to-use-parallelinvoke-to-execute-parallel-operations"></a>Comment : utiliser Parallel.Invoke pour exécuter des opérations parallèles
 
@@ -23,7 +23,7 @@ Cet exemple indique comment paralléliser des opérations à l'aide de <xref:Sys
 > [!NOTE]
 > Cette documentation utilise les expressions lambda pour définir les délégués de la bibliothèque parallèle de tâches. Si les expressions lambda en C# ou Visual Basic ne vous sont pas familières, consultez la page [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 [!code-csharp[TPL_Parallel#06](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/parallelinvoke.cs#06)]
 [!code-vb[TPL_Parallel#06](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/parallelinvoke.vb#06)]
@@ -40,4 +40,4 @@ Copiez et collez l'exemple entier dans un projet Microsoft Visual Studio et app
 
 - [Programmation parallèle](../../../docs/standard/parallel-programming/index.md)
 - [Comment : annuler une tâche et ses enfants](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)
-- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)

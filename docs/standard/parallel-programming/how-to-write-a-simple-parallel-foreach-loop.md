@@ -9,12 +9,12 @@ helpviewer_keywords:
 - foreach, parallel version
 - parallel programming, foreach
 ms.assetid: cb5fab92-1c19-499e-ae91-8b7525dd875f
-ms.openlocfilehash: 02b94b673dc4468e68a1dadd83aab0e3bfcfaa16
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0300f8900cd18159ba3a2170cfba96f302f282a0
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160298"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588143"
 ---
 # <a name="how-to-write-a-simple-parallelforeach-loop"></a>Comment: Écrire une boucle simple Parallel.ForEach
 
@@ -23,7 +23,7 @@ Cet exemple montre comment utiliser une boucle <xref:System.Threading.Tasks.Para
 > [!NOTE]
 > Cette documentation utilise des expressions lambda pour définir les délégués en PLINQ. Si vous n’êtes pas familier avec les expressions lambda dans C ou Visual Basic, voir [les expressions Lambda dans PLINQ et TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Cet exemple part du principe que vous disposez de plusieurs fichiers .jpg dans un dossier *C:\Users\Public\Pictures\Sample Pictures*, et crée un sous-dossier nommé *Modified* (Modifié). Lorsque vous exécutez l’exemple, il fait pivoter chaque image .jpg dans *Sample Pictures* (Exemples d’images) et les enregistre dans le sous-dossier *Modified*. Vous pouvez modifier les deux chemins d’accès en fonction des besoins.
 
@@ -39,7 +39,7 @@ Pour utiliser <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=n
 [!code-csharp[TPL_Parallel#07](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/nongeneric.cs#07)]
 [!code-vb[TPL_Parallel#07](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/nongeneric.vb#07)]
 
-Vous pouvez également utiliser PLINQ (Parallel LINQ) pour paralléliser le traitement des sources de données <xref:System.Collections.Generic.IEnumerable%601>. PLINQ vous permet d’utiliser la syntaxe de requête déclarative pour exprimer le comportement de la boucle. Pour plus d’informations, consultez [PLINQ (Parallel LINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).
+Vous pouvez également utiliser PLINQ (Parallel LINQ) pour paralléliser le traitement des sources de données <xref:System.Collections.Generic.IEnumerable%601>. PLINQ vous permet d’utiliser la syntaxe de requête déclarative pour exprimer le comportement de la boucle. Pour plus d’informations, consultez [PLINQ (Parallel LINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md).
 
 ## <a name="compile-and-run-the-code"></a>Compiler et exécuter le code
 
@@ -65,4 +65,4 @@ Pour exécuter votre application de console depuis Visual Studio, appuyez sur **
 
 - [Parallélisme des données](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
 - [Programmation parallèle](../../../docs/standard/parallel-programming/index.md)
-- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)

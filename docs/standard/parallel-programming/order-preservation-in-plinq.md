@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, order preservation
 ms.assetid: 10d202bc-19e1-4b5c-bbf1-9a977322a9ca
-ms.openlocfilehash: 5b067fa277816e6105d37047c6c4996a4cbb9b5a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0e9b4510757fc0f98b2edfbe1c656cdb5f6bce72
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73138220"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588636"
 ---
 # <a name="order-preservation-in-plinq"></a>Conservation de l'ordre en PLINQ
 Dans PLINQ, l’objectif est d’augmenter les performances tout en préservant l’exactitude. Une requête doit s’exécuter aussi rapidement que possible, mais toujours générer des résultats corrects. Dans certains cas, l’exactitude requiert que l’ordre de la séquence source soit conservé ; toutefois, le classement peut coûter cher en calcul. Par conséquent, par défaut, PLINQ ne conserve pas l’ordre de la séquence source. À cet égard, PLINQ est similaire à [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)], mais pas à LINQ to Objects, qui conserve le classement.  
@@ -122,5 +122,5 @@ Dans PLINQ, l’objectif est d’augmenter les performances tout en préservant 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
 - [Programmation parallèle](../../../docs/standard/parallel-programming/index.md)

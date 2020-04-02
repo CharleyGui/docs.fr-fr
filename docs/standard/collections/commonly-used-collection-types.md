@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Collections classes
 - generic collections
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
-ms.openlocfilehash: 1004a2f9a0594d9150d147dec1e16b56205e0d13
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dc590d712a49ea27fcc61181e0b8c9b3349e74e5
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75711400"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588338"
 ---
 # <a name="commonly-used-collection-types"></a>Types de collections couramment utilisés
 Les types de collections sont des variations courantes des collections de données, telles que les tables de hachage, les files d’attente, les piles, les conteneurs, les dictionnaires et les listes.  
@@ -28,7 +28,7 @@ Les types de collections sont des variations courantes des collections de donné
   
  Les collections peuvent varier, en fonction de la façon dont les éléments sont stockés et triés, ainsi que de la façon dont les recherches et les comparaisons sont effectuées. La classe <xref:System.Collections.Queue> et la classe générique <xref:System.Collections.Generic.Queue%601> fournissent des listes premier entré, premier sorti (FIFO), alors que la classe <xref:System.Collections.Stack> et la classe générique <xref:System.Collections.Generic.Stack%601> fournissent des listes dernier entré, premier sorti (LIFO). La classe <xref:System.Collections.SortedList> et la classe générique <xref:System.Collections.Generic.SortedList%602> fournissent des versions triées de la classe <xref:System.Collections.Hashtable> et de la classe générique <xref:System.Collections.Generic.Dictionary%602>. Les éléments d'un <xref:System.Collections.Hashtable> ou d'un <xref:System.Collections.Generic.Dictionary%602> sont accessibles uniquement via la clé de l'élément, alors que les éléments d'un <xref:System.Collections.SortedList> ou d'un <xref:System.Collections.ObjectModel.KeyedCollection%602> sont accessibles aussi bien via la clé que l'index de l'élément. Les index de toutes les collections sont de base zéro, à l'exception de <xref:System.Array>, qui acceptent les tableaux qui ne sont pas de base zéro.  
   
- La fonctionnalité LINQ to Objects permet d'utiliser des requêtes LINQ pour accéder aux objets en mémoire tant que le type d'objet implémente l'interface <xref:System.Collections.IEnumerable> ou <xref:System.Collections.Generic.IEnumerable%601>. Les requêtes LINQ fournissent un modèle commun pour accéder aux données, sont généralement plus concises et lisibles que les boucles `foreach` standard et intègrent des fonctions de filtrage, de classement et de regroupement. Les requêtes LINQ peuvent également améliorer les performances. Pour plus d’informations, consultez [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md) et [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).  
+ La fonctionnalité LINQ to Objects permet d'utiliser des requêtes LINQ pour accéder aux objets en mémoire tant que le type d'objet implémente l'interface <xref:System.Collections.IEnumerable> ou <xref:System.Collections.Generic.IEnumerable%601>. Les requêtes LINQ fournissent un modèle commun pour accéder aux données, sont généralement plus concises et lisibles que les boucles `foreach` standard et intègrent des fonctions de filtrage, de classement et de regroupement. Les requêtes LINQ peuvent également améliorer les performances. Pour plus d’informations, consultez [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md) et [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md).  
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
@@ -39,7 +39,7 @@ Les types de collections sont des variations courantes des collections de donné
 |[Types de collections triées](../../../docs/standard/collections/sorted-collection-types.md)|Décrit les classes qui fournissent une fonctionnalité de tri pour les listes et les ensembles.|  
 |[Génériques](../../../docs/standard/generics/index.md)|Décrit la fonctionnalité génériques, notamment les collections, délégués et interfaces génériques fournis par le .NET Framework. Fournit des liens vers de la documentation sur les fonctionnalités pour C#, Visual Basic et Visual C++, ainsi que vers des technologies de prise en charge comme la réflexion.|  
   
-## <a name="reference"></a>Informations de référence  
+## <a name="reference"></a>Référence  
  <xref:System.Collections?displayProperty=nameWithType>  
   
  <xref:System.Collections.Generic?displayProperty=nameWithType>  

@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, merge options
 ms.assetid: e8f7be3b-88de-4f33-ab14-dc008e76c1ba
-ms.openlocfilehash: 18f233ac4c5afa63ec31e83d5fff8f0a57f9146f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 623466e0e960ea991ae92e5de432171b70bad1d2
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74203998"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588618"
 ---
 # <a name="merge-options-in-plinq"></a>Options de fusion en PLINQ
 Quand une requête s’exécute en parallèle, PLINQ partitionne la séquence source pour que plusieurs threads puissent fonctionner simultanément sur différentes parties, généralement sur des threads distincts. Si les résultats doivent être utilisés sur un thread, par exemple, dans une boucle `foreach` (`For Each` en Visual Basic), les résultats de chaque thread doivent être fusionnés de nouveau en une séquence. Le type de fusion que PLINQ exécute dépend des opérateurs présents dans la requête. Par exemple, les opérateurs qui imposent un nouvel ordre des résultats doivent mettre en mémoire tampon tous les éléments de tous les threads. Du point de vue du thread utilisateur (qui est également celui de l’utilisateur de l’application), une requête entièrement mise en mémoire tampon peut s’exécuter pendant un certain temps avant qu’elle ne génère son premier résultat. D’autres opérateurs, par défaut, sont partiellement mis en mémoire tampon. Ils transmettent leurs résultats par lots. L’opérateur <xref:System.Linq.ParallelEnumerable.ForAll%2A> n’est pas mis en mémoire tampon par défaut. Il transmet immédiatement tous les éléments à partir de tous les threads.  
@@ -65,5 +65,5 @@ Quand une requête s’exécute en parallèle, PLINQ partitionne la séquence so
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
 - [Comment : spécifier des options de fusion en PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, creating dataflow pipeline
 ms.assetid: 69308f82-aa22-4ac5-833d-e748533b58e8
-ms.openlocfilehash: 284be7789b6411055a6421fd07cc1b0605f6ea0c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 339365381b1fa2c777cead3c75bfe783f7af800e
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139872"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588289"
 ---
 # <a name="walkthrough-creating-a-dataflow-pipeline"></a>Procédure pas à pas : création d'un pipeline de flux de données
 Bien que vous puissiez utiliser les méthodes <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A?displayProperty=nameWithType> pour recevoir des messages des blocs sources, vous pouvez également connecter des blocs de messages pour former un *pipeline de flux de données*. Un pipeline de flux de données est une série de composants, ou de *blocs de flux de données*, qui effectuent chacun une tâche spécifique qui contribue à un plus grand objectif. Chaque bloc de flux de données d'un pipeline de flux de données effectue un travail lorsqu'il reçoit un message d'un autre bloc de flux de données. Ce processus s'apparente à une chaîne de montage en construction automobile. Comme chaque véhicule passe via la ligne de montage, un poste assemble le châssis, le suivant installe le moteur, et ainsi de suite. Étant donné qu'une ligne d'assemblage permet à plusieurs véhicules d'être assemblés en même temps, cela fournit une productivité supérieure à l'assemblage un par un des véhicules.
@@ -34,7 +34,7 @@ Bien que vous puissiez utiliser les méthodes <xref:System.Threading.Tasks.Dataf
   
 6. Attendez que le pipeline termine tous les travaux.  
   
-## <a name="prerequisites"></a>Conditions préalables requises  
+## <a name="prerequisites"></a>Prérequis  
  Lisez la rubrique [Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) avant de démarrer cette procédure pas à pas.  
   
 ## <a name="creating-a-console-application"></a>Création d'une application console  
@@ -104,7 +104,7 @@ Bien que vous puissiez utiliser les méthodes <xref:System.Threading.Tasks.Dataf
 ## <a name="next-steps"></a>Étapes suivantes  
  Cet exemple envoie une URL à traiter via le pipeline de flux de données. Si vous devez envoyer plusieurs valeurs d'entrée via le pipeline, vous pouvez introduire un forme de parallélisme dans votre application similaire à la façon dont des parties peuvent parcourir une fabrique d'automobiles. Lorsque le premier membre du pipeline envoie son résultat au deuxième membre, il peut traiter un autre élément en parallèle alors que le deuxième membre traite le premier résultat.  
   
- Le parallélisme qui est effectué à l’aide de pipelines de flux de données s’appelle *le parallélisme de granularité grossière* parce qu’il comprend généralement moins de tâches, mais plus grosses. Vous pouvez également utiliser *le parallélisme de granularité fine* de plus petites tâches de courte durée dans un pipeline de flux de données. Dans cet exemple, le membre `findReversedWords` du pipeline utilise [PLINQ](parallel-linq-plinq.md) pour traiter plusieurs éléments dans la liste des travaux en parallèle. L'utilisation du parallélisme de granularité fine dans un pipeline de granularité grossière peut améliorer le débit global.  
+ Le parallélisme qui est effectué à l’aide de pipelines de flux de données s’appelle *le parallélisme de granularité grossière* parce qu’il comprend généralement moins de tâches, mais plus grosses. Vous pouvez également utiliser *le parallélisme de granularité fine* de plus petites tâches de courte durée dans un pipeline de flux de données. Dans cet exemple, le membre `findReversedWords` du pipeline utilise [PLINQ](introduction-to-plinq.md) pour traiter plusieurs éléments dans la liste des travaux en parallèle. L'utilisation du parallélisme de granularité fine dans un pipeline de granularité grossière peut améliorer le débit global.  
   
  Vous pouvez également adapter un bloc de flux de données source à plusieurs blocs cibles pour créer *un réseau de flux de données*. La version surchargée de la méthode <xref:System.Threading.Tasks.Dataflow.DataflowBlock.LinkTo%2A> accepte un objet <xref:System.Predicate%601> qui définit si le bloc cible reçoit les messages en fonction de sa valeur. La plupart des types de bloc de flux de données qui agissent comme sources envoient des messages à toutes les blocs cibles connectés, dans l'ordre dans lequel ils ont été connectés, jusqu'à ce que l'un des blocs reçoive ce message. En utilisant ce mécanisme de filtrage, vous pouvez créer des systèmes de blocs de flux de données connectés qui dirigent certaines données via un seul tracé et d’autres données via un autre tracé. Pour obtenir un exemple qui utilise le filtrage afin de créer un réseau de flux de données, consultez [Procédure pas à pas : utilisation de flux de données dans une application Windows Forms](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md).  
   

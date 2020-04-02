@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to handle exceptions
 ms.assetid: 8d56ff9b-a571-4d31-b41f-80c0b51b70a5
-ms.openlocfilehash: 3645f5dc470ef53710aa7f4c78c60431fb27ecfa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5ccddfb01d6b173900dfffc465292c7812626ddc
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73123089"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80587989"
 ---
 # <a name="how-to-handle-exceptions-in-a-plinq-query"></a>Comment : gérer des exceptions dans une requête PLINQ
 
@@ -26,7 +26,7 @@ Dans certains cas, quand PLINQ revient à l’exécution séquentielle et qu’u
 >
 > Cet exemple, destiné à illustrer l'utilisation, peut ne pas s'exécuter plus rapidement que la requête LINQ to Objects séquentielle équivalente. Pour plus d’informations sur l’accélération, consultez [Fonctionnement de l’accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Cet exemple montre comment placer les blocs try-catch autour du code qui exécute la requête pour intercepter toute exception <xref:System.AggregateException?displayProperty=nameWithType> levée.
 
@@ -35,7 +35,7 @@ Cet exemple montre comment placer les blocs try-catch autour du code qui exécut
 
 Dans cet exemple, la requête ne peut pas continuer une fois l’exception levée. Au moment où votre code d’application intercepte l’exception, PLINQ a déjà arrêté la requête sur tous les threads.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant montre comment placer un bloc try-catch dans un délégué pour pouvoir intercepter une exception et poursuivre l’exécution des requêtes.
 
@@ -53,4 +53,4 @@ N’interceptez pas d’exceptions, sauf si vous savez comment les gérer pour n
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq.ParallelEnumerable>
-- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)

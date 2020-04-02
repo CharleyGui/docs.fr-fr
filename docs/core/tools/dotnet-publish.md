@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande de publication dotnet publie un projet ou une solution .NET Core à un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: 7e57a7b3cfe72653cc64c90055735795e4616260
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 0e18220443f3713c86c257fcf401b98ddd716ebc
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523772"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588269"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -38,7 +38,23 @@ dotnet publish [-h|--help]
 - Un fichier *.runtimeconfig.json* qui spécifie le temps d’exécution partagé que l’application attend, ainsi que d’autres options de configuration pour le temps d’exécution (par exemple, type de collecte des ordures).
 - Les dépendances de l’application, qui sont copiées à partir du cache NuGet dans le dossier de sortie.
 
-La sortie de la commande `dotnet publish` est prête pour le déploiement sur un système d’hébergement (par exemple, un serveur, PC, Mac, ordinateur portable) à des fins d’exécution. Il s’agit de la seule façon officiellement prise en charge pour préparer l’application au déploiement. En fonction du type de déploiement que spécifie le projet, le runtime .NET Core partagé peut ou non être installé sur le système d’hébergement.
+La sortie de la commande `dotnet publish` est prête pour le déploiement sur un système d’hébergement (par exemple, un serveur, PC, Mac, ordinateur portable) à des fins d’exécution. Il s’agit de la seule façon officiellement prise en charge pour préparer l’application au déploiement. En fonction du type de déploiement que spécifie le projet, le runtime .NET Core partagé peut ou non être installé sur le système d’hébergement. Pour plus d’informations, voir [Publier .NET Apps Core avec le CLI .NET Core](../deploying/deploy-with-cli.md).
+
+### <a name="msbuild"></a>MSBuild
+
+La commande `dotnet publish` appelle MSBuild, qui appelle la cible de `Publish`. Les paramètres passés à `dotnet publish` sont passés à MSBuild. Les paramètres `-c` et `-o` correspondent aux propriétés `Configuration` et `OutputPath` de MSBuild, respectivement.
+
+La `dotnet publish` commande accepte les options MSBuild, telles que `-p` pour définir les propriétés et `-l` définir un bûcheron. Par exemple, vous pouvez définir une propriété MSBuild en utilisant le format : `-p:<NAME>=<VALUE>`. Vous pouvez également définir des propriétés liées à la publication en vous référant à un fichier *.pubxml,* par exemple :
+
+```dotnetcli
+dotnet publish -p:PublishProfile=Properties\PublishProfiles\FolderProfile.pubxml
+```
+
+Pour plus d’informations, consultez les ressources suivantes :
+
+- [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference)
+- [Visual Studio publie des profils (.pubxml) pour ASP.NET déploiement de l’application Core](/aspnet/core/host-and-deploy/visual-studio-publish-profiles)
+- [dotnet msbuild](dotnet-msbuild.md)
 
 ## <a name="arguments"></a>Arguments
 
@@ -112,7 +128,9 @@ La sortie de la commande `dotnet publish` est prête pour le déploiement sur un
 
 - **`--self-contained [true|false]`**
 
-  Publie le runtime .NET Core avec votre application ; ainsi, vous n’avez pas besoin d’installer le runtime sur l’ordinateur cible. Par `true` défaut, si un identifiant de temps d’exécution est spécifié. Pour plus d’informations, voir [.NET Core application publishing](../deploying/index.md) and [Publish .NET Core apps with the .NET Core CLI](../deploying/deploy-with-cli.md).
+  Publie le runtime .NET Core avec votre application ; ainsi, vous n’avez pas besoin d’installer le runtime sur l’ordinateur cible. La `true` valeur par défaut est si un identifiant de temps d’exécution est spécifié et que le projet est un projet exécutable (pas un projet de bibliothèque). Pour plus d’informations, voir [.NET Core application publishing](../deploying/index.md) and [Publish .NET Core apps with the .NET Core CLI](../deploying/deploy-with-cli.md).
+
+  Si cette option est `true` utilisée `false`sans spécifier ou , la valeur par défaut est `true`. Dans ce cas, ne mettez pas la `--self-contained`solution `true` ou `false` l’argument du projet immédiatement après , parce que ou est attendu dans cette position.
 
 - **`--no-self-contained`**
 
@@ -178,7 +196,10 @@ La sortie de la commande `dotnet publish` est prête pour le déploiement sur un
 
 - [.NET Aperçu de publication d’applications de base](../deploying/index.md)
 - [Publier des applications .NET Core avec le CLI core .NET](../deploying/deploy-with-cli.md)
-- [Cadres cibles](../../standard/frameworks.md)
+- [Versions cibles de .NET Framework](../../standard/frameworks.md)
 - [Catalogue Runtime IDentifier (RID)](../rid-catalog.md)
 - [Travailler avec macOS Catalina Notarization](../install/macos-notarization-issues.md)
 - [Structure d’annuaire d’une application publiée](/aspnet/core/hosting/directory-structure)
+- [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference)
+- [Visual Studio publie des profils (.pubxml) pour ASP.NET déploiement de l’application Core](/aspnet/core/host-and-deploy/visual-studio-publish-profiles)
+- [dotnet msbuild](dotnet-msbuild.md)
