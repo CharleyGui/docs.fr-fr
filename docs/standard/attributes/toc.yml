@@ -1,9 +1,0 @@
-- name: Attributs
-  href: index.md
-  items:
-    - name: Application des attributs
-      href: applying-attributes.md
-    - name: Écriture des attributs personnalisés
-      href: writing-custom-attributes.md
-    - name: Récupération des informations stockées dans les attributs
-      href: retrieving-information-stored-in-attributes.md
