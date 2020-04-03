@@ -1,7 +1,9 @@
 - name: Windows Presentation Foundation pour .NET Core
-  href: overview/index.md
+  href: index.yml
 - name: Prise en main
   items:
+    - name: Vue d'ensemble
+      href: overview/index.md
     - name: Créer une application WPF
       href: 'https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json'
 - name: Migration
