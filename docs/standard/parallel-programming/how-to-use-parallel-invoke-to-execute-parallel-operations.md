@@ -9,28 +9,28 @@ helpviewer_keywords:
 - task parallelism in .NET
 - parallel programming, task parallelism
 ms.assetid: 6b3ecd79-dec9-4ce1-abf4-62e5392a59c6
-ms.openlocfilehash: 7189c478e132a41971a364b833f0fabda6ff84d4
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: f61bbf10bbeef736f66710f50e621c3619355a1d
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588395"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635802"
 ---
 # <a name="how-to-use-parallelinvoke-to-execute-parallel-operations"></a>Comment : utiliser Parallel.Invoke pour exécuter des opérations parallèles
 
-Cet exemple indique comment paralléliser des opérations à l'aide de <xref:System.Threading.Tasks.Parallel.Invoke%2A> dans la bibliothèque parallèle de tâches. Trois opérations sont effectuées sur la source de données partagée. Étant donné qu'aucune des opérations ne modifie la source, elles peuvent être exécutées en parallèle de manière simple.
+Cet exemple indique comment paralléliser des opérations à l'aide de <xref:System.Threading.Tasks.Parallel.Invoke%2A> dans la bibliothèque parallèle de tâches. Trois opérations sont effectuées sur la source de données partagée. Les opérations peuvent être exécutées en parallèle d’une manière simple, car aucune d’entre elles ne modifie la source.
 
 > [!NOTE]
-> Cette documentation utilise les expressions lambda pour définir les délégués de la bibliothèque parallèle de tâches. Si les expressions lambda en C# ou Visual Basic ne vous sont pas familières, consultez la page [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
+> Cette documentation utilise les expressions lambda pour définir les délégués de la bibliothèque parallèle de tâches. Si vous n’êtes pas familier avec les expressions lambda dans C ou Visual Basic, voir [Lambda Expressions dans PLINQ et TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
 
 ## <a name="example"></a>Exemple
 
 [!code-csharp[TPL_Parallel#06](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/parallelinvoke.cs#06)]
 [!code-vb[TPL_Parallel#06](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/parallelinvoke.vb#06)]
 
-Notez qu'avec <xref:System.Threading.Tasks.Parallel.Invoke%2A>, vous exprimez seulement quelles actions doivent s'exécuter simultanément ; le runtime gère tous les détails de planification de threads, notamment la mise à l'échelle automatique du nombre de cœurs présents sur l'ordinateur hôte.
+Avec <xref:System.Threading.Tasks.Parallel.Invoke%2A>, vous exprimez simplement les actions que vous souhaitez exécuter simultanément, et le temps d’exécution gère tous les détails de planification de thread, y compris la mise à l’échelle automatiquement au nombre de cœurs sur l’ordinateur hôte.
 
-Cet exemple parallélise les opérations et non les données. Vous pouvez également paralléliser les requêtes LINQ à l'aide de PLINQ et exécuter les requêtes séquentiellement. Vous pouvez aussi paralléliser les données à l'aide de PLINQ. Une autre option consiste à paralléliser à la fois les requêtes et les tâches. Bien que la surcharge résultante diminue les performances des ordinateurs hôtes avec un nombre réduit de processeurs, cela permettrait une bien meilleure mise à l'échelle des ordinateurs avec de nombreux processeurs.
+Cet exemple parallélise les opérations et non les données. Vous pouvez également paralléliser les requêtes LINQ à l'aide de PLINQ et exécuter les requêtes séquentiellement. Vous pouvez aussi paralléliser les données à l'aide de PLINQ. Une autre option consiste à paralléliser à la fois les requêtes et les tâches. Bien que les frais généraux qui en résultent pourraient dégrader les performances sur les ordinateurs hôtes avec relativement peu de processeurs, il s’évolue mieux sur les ordinateurs avec de nombreux processeurs.
 
 ## <a name="compile-the-code"></a>Compiler le code
 

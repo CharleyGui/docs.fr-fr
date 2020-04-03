@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-ms.openlocfilehash: aca3b5c54bff9c2b4c5380c04dd0da162215b088
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: c5079237ff4c97dd9ef164061dc5e7499c1d6e38
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523317"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635998"
 ---
 # <a name="configuring-tracing"></a>Configuration du traçage
 Cette rubrique décrit comment activer le suivi, configurer des sources de suivi pour émettre des suivis et définir des niveaux de suivi, définir le suivi et la propagation d'activité afin de prendre en charge la corrélation de suivi de bout en bout, et définir des écouteurs de suivi pour accéder aux suivis.  
@@ -22,7 +22,7 @@ Cette rubrique décrit comment activer le suivi, configurer des sources de suivi
 ## <a name="enabling-tracing"></a>Activation du traçage  
  Windows Communication Foundation (WCF) produit les données suivantes pour le suivi diagnostique :  
   
-- Suivis des jalons de processus dans l'ensemble des composants des applications, tels que les appels d'opération, les exceptions de code, les avertissements et d'autres événements de traitement significatifs.  
+- Traces pour les jalons du processus sur tous les composants des applications, tels que les appels d’exploitation, les exceptions au code, les avertissements et d’autres événements de traitement importants.  
   
 - Événements d’erreur Windows en cas de dysfonctionnement de la fonctionnalité de suivi. Voir [l’enregistrement de l’événement](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md).  
   
@@ -32,7 +32,7 @@ Cette rubrique décrit comment activer le suivi, configurer des sources de suivi
   
  Si vous utilisez des points d’extabilité WCF tels que les invocateurs d’opérations personnalisées, vous devez émettre vos propres traces. C’est parce que si vous implémentez un point d’extabilité, WCF ne peut plus émettre les traces standard dans le chemin par défaut. Si vous n'implémentez par la prise en charge du suivi manuel à l'aide de l'émission de suivis, les suivis peuvent ne pas s'afficher comme prévu.  
   
- Vous pouvez configurer le suivi en modifiant le fichier de configuration de l'application : Web.config pour les applications hébergées sur le Web, ou Appname.exe.config pour les applications auto-hébergées. Vous trouverez ci-dessous un exemple de ce type de modification : Pour plus d’informations sur ces paramètres, consultez la section « Configurer traces auditeurs pour consommer des traces ».  
+ Vous pouvez configurer le traçage en modifiant le fichier de configuration de l’application, soit Web.config pour les applications hébergées sur le Web, soit Appname.exe.config pour les applications auto-hébergées. Vous trouverez ci-dessous un exemple de ce type de modification : Pour plus d’informations sur ces paramètres, consultez la section « Configurer traces auditeurs pour consommer des traces ».  
   
 ```xml  
 <configuration>  
@@ -136,7 +136,7 @@ Cette rubrique décrit comment activer le suivi, configurer des sources de suivi
  Pour plus d’informations sur la création de sources de traces définies par l’utilisateur, voir [Extending Tracing](../../../../../docs/framework/wcf/samples/extending-tracing.md).  
   
 ## <a name="configuring-trace-listeners-to-consume-traces"></a>Configuration d'écouteurs de suivi pour consommer des suivis  
- Au moment de l’exécution, WCF alimente les données de trace aux auditeurs qui traitent les données. WCF fournit plusieurs auditeurs <xref:System.Diagnostics>prédéfinis pour , qui diffèrent dans le format qu’ils utilisent pour la sortie. Vous pouvez également ajouter des types d'écouteurs personnalisés.  
+ Au moment de l’exécution, WCF alimente les données de trace aux auditeurs, qui traitent les données. WCF fournit plusieurs auditeurs <xref:System.Diagnostics>prédéfinis pour , qui diffèrent dans le format qu’ils utilisent pour la sortie. Vous pouvez également ajouter des types d'écouteurs personnalisés.  
   
  Vous pouvez utiliser `add` pour indiquer les nom et type de l'écouteur de suivi à utiliser. Dans notre exemple de configuration, nous avons nommé l'écouteur `traceListener` et ajouté l'écouteur de suivi standard .NET Framework (`System.Diagnostics.XmlWriterTraceListener`) comme type à utiliser. Vous pouvez ajouter un nombre quelconque d'écouteurs de suivi pour chaque source. Si l'écouteur de suivi émet le suivi dans un fichier, vous devez spécifier le nom et l'emplacement du fichier de sortie dans le fichier de configuration. Pour cela, vous devez affecter à `initializeData` le nom du fichier pour cet écouteur. Si vous ne spécifiez pas de nom de fichier, un nom de fichier aléatoire est généré en fonction du type d'écouteur utilisé. Si <xref:System.Diagnostics.XmlWriterTraceListener> est utilisé, un nom de fichier sans extension est généré. Si vous implémentez un écouteur personnalisé, vous pouvez également utiliser cet attribut pour recevoir des données d'initialisation autres qu'un nom de fichier. Par exemple, vous pouvez spécifier un identificateur de base de données pour cet attribut.  
   
@@ -157,7 +157,7 @@ Cette rubrique décrit comment activer le suivi, configurer des sources de suivi
 |Error|Événements « négatifs » : événements indiquant un traitement inattendu ou une condition d’erreur.|Un traitement inattendu s'est produit. L’application n’a pas pu effectuer une tâche comme prévu. Toutefois, l'application s'exécute encore.|Toutes les exceptions sont enregistrées.|Administrateurs<br /><br /> Développeurs d’applications|  
 |Avertissement|Événements « négatifs » : événements indiquant un traitement inattendu ou une condition d’erreur.|Un problème possible s'est produit ou peut se produire, mais l'application fonctionne encore correctement. Toutefois, elle risque de ne plus fonctionner correctement.|- L’application reçoit plus de demandes que ses paramètres de limitation ne le permettent.<br />- La file d’attente de réception est proche de sa capacité configurée maximale.<br />- Le délai d’attente a dépassé.<br />- Les titres de compétences sont rejetés.|Administrateurs<br /><br /> Développeurs d’applications|  
 |Information|Événements « positifs » : des événements qui marquent des jalons réussis|Jalons importants et atteints relatifs à l'exécution d'application, indépendamment du fonctionnement correct de l'application.|En général, des messages d'aide au contrôle et au diagnostic de l'état système, à la mesure des performances ou au profilage sont générés. Vous pouvez utiliser ces informations pour la planification de capacité et la gestion des performances :<br /><br /> - Des canaux sont créés.<br />- Les auditeurs de point de terminaison sont créés.<br />- Message entre /feuilles de transport.<br />- Le jeton de sécurité est récupéré.<br />- Le réglage de configuration est lu.|Administrateurs<br /><br /> Développeurs d’applications<br /><br /> Développeurs de produits.|  
-|Commentaires|Événements « positifs » : des événements qui marquent des jalons réussis.|Des événements de bas niveau pour le code utilisateur et la maintenance sont émis.|En général, vous pouvez utiliser ce niveau pour le débogage ou l'optimisation d'application.<br /><br /> - En-tête de message compris.|Administrateurs<br /><br /> Développeurs d’applications<br /><br /> Développeurs de produits.|  
+|Commentaires|Événements « positifs » : des événements qui marquent des jalons réussis.|Des événements de bas niveau pour le code utilisateur et l’entretien sont émis.|En général, vous pouvez utiliser ce niveau pour le débogage ou l'optimisation d'application.<br /><br /> - En-tête de message compris.|Administrateurs<br /><br /> Développeurs d’applications<br /><br /> Développeurs de produits.|  
 |ActivityTracing||Transfert d'événements entre des activités de traitement et des composants.|Ce niveau permet aux administrateurs et aux développeurs de corréler des applications dans le même domaine d'application :<br /><br /> - Traces pour les limites d’activité, telles que le démarrage/arrêt.<br />- Traces pour les transferts.|Tous|  
 |Tous||L'application peut fonctionner correctement. Tous les événements sont émis.|Tous les événements précédents.|Tous|  
   

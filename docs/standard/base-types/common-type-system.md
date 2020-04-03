@@ -16,14 +16,14 @@ helpviewer_keywords:
 - namespaces [.NET Framework], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.openlocfilehash: ec078ea89befedd26ce205c724193935dd08b82a
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: f079613f790121c000a312132e7135121ca721a6
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523961"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635910"
 ---
-# <a name="common-type-system"></a>Système de type commun (CTS, Common Type System)
+# <a name="common-type-system"></a>Système de type commun
 
 Le système de type commun (CTS, Common Type System) définit la façon dont les types sont déclarés, utilisés et managés dans le Common Language Runtime ; il constitue également une partie importante de la prise en charge, par le runtime, de l'intégration interlangage. Le système de type commun met en œuvre les fonctions suivantes :  
   
@@ -78,7 +78,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
   
 ### <a name="structures"></a>Structures
 
- Une structure est un type valeur qui dérive implicitement de <xref:System.ValueType?displayProperty=nameWithType> qui, à son tour, est dérivé de <xref:System.Object?displayProperty=nameWithType>. Une structure est très utile pour représenter des valeurs dont les besoins en ressources mémoire sont faibles, ainsi que pour passer des valeurs en tant que paramètres par valeur à des méthodes qui ont des paramètres fortement typés. Dans .NET, tous les types de données primitifs (<xref:System.Boolean>, <xref:System.Byte>, <xref:System.Char>, <xref:System.DateTime>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32> et <xref:System.UInt64>) sont définis en tant que structures.  
+ Une structure est un type valeur qui dérive implicitement de <xref:System.ValueType?displayProperty=nameWithType> qui, à son tour, est dérivé de <xref:System.Object?displayProperty=nameWithType>. Une structure est utile pour représenter les valeurs dont les exigences de mémoire sont faibles, et pour passer des valeurs comme paramètres de valeur partielle à des méthodes qui ont fortement tapé des paramètres. Dans .NET, tous les types de données primitifs (<xref:System.Boolean>, <xref:System.Byte>, <xref:System.Char>, <xref:System.DateTime>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32> et <xref:System.UInt64>) sont définis en tant que structures.  
   
  Comme les classes, les structures définissent à la fois les données (les champs de la structure) et les opérations qui peuvent être exécutées sur ces données (les méthodes de la structure). Cela signifie que vous pouvez appeler des méthodes sur des structures, notamment les méthodes virtuelles définies sur les classes <xref:System.Object?displayProperty=nameWithType> et <xref:System.ValueType?displayProperty=nameWithType>, ainsi que toute méthode définie sur le type valeur lui-même. En d'autres termes, les structures peuvent comporter des champs, des propriétés et des événements, ainsi que des méthodes statiques et non statiques. Vous pouvez créer des instances de structures, les passer en tant que paramètres, les stocker en tant que variables locales ou les stocker dans un champ d'un autre type valeur ou type référence. Les structures peuvent aussi implémenter des interfaces.  
   
@@ -308,4 +308,4 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
 
 - [Navigateur API .NET](/dotnet/api)
 - [Temps courant de course de langue](../../../docs/standard/clr.md)
-- [Conversion de types dans .NET](../../../docs/standard/base-types/type-conversion.md)
+- [Conversion de type en .NET](../../../docs/standard/base-types/type-conversion.md)

@@ -12,16 +12,16 @@ helpviewer_keywords:
 - time [.NET Framework], round-trip values
 - formatting strings [.NET Framework], round-trip values
 ms.assetid: b609b277-edc6-4c74-b03e-ea73324ecbdb
-ms.openlocfilehash: 4fc38b6b852f8a7b8f268fd9e8624bdf350744c8
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 3aa615dc7d7d1d49dce4897f8508b5210b364fc0
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523818"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635134"
 ---
 # <a name="how-to-round-trip-date-and-time-values"></a>Procédure : effectuer un aller-retour de valeurs de date et d’heure
 
-Dans de nombreuses applications, une valeur de date et d’heure est destinée à identifier clairement un point unique dans le temps. Cette rubrique montre comment enregistrer et restaurer une valeur <xref:System.DateTime>, une valeur <xref:System.DateTimeOffset> et une valeur de date et d’heure avec des informations de fuseau horaire pour que la valeur restaurée identifie la même heure que la valeur enregistrée.
+Dans de nombreuses applications, une valeur de date et d’heure est destinée à identifier clairement un point unique dans le temps. Cet article montre comment enregistrer <xref:System.DateTime> et <xref:System.DateTimeOffset> restaurer une valeur, une valeur, et une valeur de date et d’heure avec des informations de fuseau horaire de sorte que la valeur restaurée identifie le même temps que la valeur enregistrée.
 
 ## <a name="round-trip-a-datetime-value"></a>Aller-retour une valeur DateTime
 
@@ -38,7 +38,7 @@ L’exemple suivant montre comment effectuer un aller-retour d’une valeur <xre
 [!code-csharp[Formatting.HowTo.RoundTrip#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/cs/RoundTrip.cs#1)]
 [!code-vb[Formatting.HowTo.RoundTrip#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/vb/RoundTrip.vb#1)]
 
-Durant l’aller-retour d’une valeur <xref:System.DateTime>, cette technique permet de conserver correctement l’heure pour toutes les heures locales et universelles. Par exemple, si <xref:System.DateTime> une valeur locale est économisée sur un système dans le fuseau horaire standard du Pacifique des États-Unis et est rétablie sur un système dans le fuseau horaire standard central des États-Unis, la date et l’heure restaurées seront deux heures plus tard que l’heure d’origine, ce qui reflète le décalage horaire entre les deux fuseaux horaires. En revanche, cette technique n’est pas nécessairement exacte pour les heures non spécifiées. Toutes les valeurs <xref:System.DateTime> dont la propriété <xref:System.DateTime.Kind%2A> est <xref:System.DateTimeKind.Unspecified> sont traitées comme s’il s’agissait d’heures locales. Si ce n’est pas le cas, la valeur <xref:System.DateTime> n’identifie pas correctement le point adéquat dans le temps. La solution pour contourner cette limitation consiste à associer étroitement une valeur de date et d’heure avec son fuseau horaire pour l’opération d’enregistrement et de restauration.
+Durant l’aller-retour d’une valeur <xref:System.DateTime>, cette technique permet de conserver correctement l’heure pour toutes les heures locales et universelles. Par exemple, si <xref:System.DateTime> une valeur locale est économisée sur un système dans le fuseau horaire standard du Pacifique des États-Unis et est rétablie sur un système dans le fuseau horaire standard central des États-Unis, la date et l’heure restaurées seront deux heures plus tard que l’heure d’origine, ce qui reflète le décalage horaire entre les deux fuseaux horaires. En revanche, cette technique n’est pas nécessairement exacte pour les heures non spécifiées. Toutes les valeurs <xref:System.DateTime> dont la propriété <xref:System.DateTime.Kind%2A> est <xref:System.DateTimeKind.Unspecified> sont traitées comme s’il s’agissait d’heures locales. Si ce n’est pas <xref:System.DateTime> une heure locale, le ne réussit pas à identifier le point correct dans le temps. La solution pour contourner cette limitation consiste à associer étroitement une valeur de date et d’heure avec son fuseau horaire pour l’opération d’enregistrement et de restauration.
 
 ## <a name="round-trip-a-datetimeoffset-value"></a>Aller-retour une valeur DateTimeOffset
 
@@ -72,7 +72,7 @@ Cette technique identifie toujours clairement une valeur <xref:System.DateTimeOf
 
 5. Castez (en C#) ou convertissez (en Visual Basic) l’objet désérialisé en objet du type approprié.
 
-L’exemple suivant montre comment effectuer un aller-retour d’un objet qui stocke à la fois des informations de date et d’heure et de fuseau horaire.
+L’exemple suivant illustre comment faire aller-retour un objet qui stocke à la fois le fuseau horaire et les informations sur la date et l’heure.
 
 [!code-csharp[Formatting.HowTo.RoundTrip#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/cs/RoundTrip.cs#4)]
 [!code-vb[Formatting.HowTo.RoundTrip#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/vb/RoundTrip.vb#4)]
@@ -100,4 +100,4 @@ Ces exemples exigent que :
 ## <a name="see-also"></a>Voir aussi
 
 - [Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md)
-- [Chaînes de format de date et d'heure standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
+- [Chaînes de format standard de date et d’heure](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)

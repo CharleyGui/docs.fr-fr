@@ -5,15 +5,16 @@ helpviewer_keywords:
 - WS-Metadata Exchange [WCF]
 - WS-Metadata Exchange [WCF], configuring a custom binding
 ms.assetid: cdba4d73-da64-4805-bc56-9822becfd1e4
-ms.openlocfilehash: 9676ae4053553b84488602627b28790aae22eff6
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 6459e3f0cf0ab72af8027bd6802a0e7aa574aece
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345282"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635787"
 ---
 # <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>Comment : configurer une liaison WS-Metadata Exchange personnalisée
-Cette rubrique explique comment configurer une liaison d'échange WS-Metadata personnalisée. Windows Communication Foundation (WCF) comprend quatre reliures de métadonnées définies par le système, mais vous pouvez publier des métadonnées à l’aide de n’importe quelle liaison que vous souhaitez. Cette rubrique indique comment publier des métadonnées à l'aide du `wsHttpBinding`. Cette liaison vous donne la possibilité d’exposer des métadonnées de manière sécurisée. Le code de cet article est basé sur le [Getting Started](../samples/getting-started-sample.md).  
+
+Cet article explique comment configurer une liaison d’échange WS-Metadata personnalisée. Windows Communication Foundation (WCF) comprend quatre reliures de métadonnées définies par le système, mais vous pouvez publier des métadonnées à l’aide de n’importe quelle liaison que vous souhaitez. Cet article vous montre comment publier `wsHttpBinding`des métadonnées en utilisant le . Cette liaison vous donne la possibilité d’exposer des métadonnées de manière sécurisée. Le code de cet article est basé sur le [Getting Started](../samples/getting-started-sample.md).  
   
 ### <a name="using-a-configuration-file"></a>Utilisation d'un fichier de configuration  
   
@@ -44,7 +45,7 @@ Cette rubrique explique comment configurer une liaison d'échange WS-Metadata pe
               contract="IMetadataExchange" />  
     ```  
   
-4. Pour vérifier que le point de terminaison d’échange de métadonnées fonctionne correctement, ajoutez une étiquette de point de terminaison dans le fichier de configuration de client :  
+4. Pour vérifier que le point de terminaison d’échange de métadonnées fonctionne correctement, ajoutez une balise de point de terminaison dans le fichier de configuration client :  
   
     ```xml  
     <endpoint name="MyMexEndpoint"               address="http://localhost:8000/servicemodelsamples/service/mex"  

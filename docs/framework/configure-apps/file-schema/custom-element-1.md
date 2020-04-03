@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - custom element
 ms.assetid: e62056c6-b351-40eb-afc0-cc13fc44e45e
-ms.openlocfilehash: 0d765a9789ad566428b1fbda6c0863b10b98c363
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: a40f35838655f6021af0b2e966335803ec8c16b4
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345076"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635397"
 ---
 # <a name="custom-element-for-singletagsectionhandler"></a>Élément personnalisé pour SingleTagSectionHandler
 
@@ -39,7 +39,7 @@ Les attributs et les valeurs d’attribut sont définis par l’utilisateur.
 
 None
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
 La ** \<sectionName>** élément est un élément personnalisé défini par une [** \<section>**](section-element.md) tag dans les [** \<configSections>**](configsections-element-for-configuration.md) élément. Le système de <xref:System.Collections.IDictionary> configuration renvoie un objet lorsque vous appelez <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.
 
@@ -61,7 +61,7 @@ L’exemple suivant déclare un élément personnalisé appelé <xref:System.Con
 
 ## <a name="configuration-file"></a>Fichier de configuration
 
-Cet élément peut être utilisé dans le fichier de configuration d’application, fichier de configuration de machine (*Machine.config*), et les fichiers *Web.config* qui ne sont pas au niveau de l’annuaire d’application.
+Cet élément peut être utilisé dans le fichier de configuration d’application, le fichier de configuration de la machine (*Machine.config*), et les fichiers *Web.config* qui ne sont pas au niveau de l’annuaire d’application.
 
 ## <a name="see-also"></a>Voir aussi
 

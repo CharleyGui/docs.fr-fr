@@ -3,12 +3,12 @@ title: Utilisation des collections - Présentation du tutoriel C#
 description: Découvrez C# en explorant la collection de listes de ce guide de démarrage rapide.
 ms.date: 10/13/2017
 ms.custom: mvc
-ms.openlocfilehash: 25d20de2eae8ad1f544fa17553c173a6141ae464
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 554a4601157a7d4b873c22a46ee72b6601fc36d7
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156687"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635663"
 ---
 # <a name="learn-to-manage-data-collections-using-the-generic-list-type"></a>Apprenez à gérer les collections de données en utilisant le type de liste générique
 
@@ -230,4 +230,4 @@ Vous pouvez voir un exemple de solution en [consultant l’exemple de code termi
 
 Félicitations, vous avez terminé ce didacticiel sur les listes. Vous pouvez passer au tutoriel [Introduction aux classes](introduction-to-classes.md) dans votre propre environnement de développement.
 
-Pour plus d’informations sur l’utilisation du type `List`, consultez la rubrique du [Guide .NET](../../../standard/index.md) sur les [collections](../../../standard/collections/index.md). Vous allez également en découvrir plus sur de nombreux autres types de collection.
+Vous pouvez en apprendre `List` davantage sur le travail avec le type dans l’article [guide .NET](../../../standard/index.yml) sur [les collections](../../../standard/collections/index.md). Vous allez également en découvrir plus sur de nombreux autres types de collection.

@@ -20,12 +20,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions
 - strings [.NET Framework], regular expressions
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
-ms.openlocfilehash: 99a70fa1b56a45087ee380d063c66326976f5b41
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 819310891192833f0c71d0104fceec11b1b25375
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523795"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635723"
 ---
 # <a name="net-regular-expressions"></a>Expressions régulières .NET
 
@@ -99,7 +99,7 @@ La classe <xref:System.String> comprend de nombreuses méthodes de recherche et 
   
  La méthode <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> est appelée avec les options d'expression régulière définies sur <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>. Ainsi, l'opération de mise en correspondance ne fait pas la distinction entre minuscules et majuscules, et l'exemple identifie la sous-chaîne « This this » comme étant une duplication.  
   
- Notez que la chaîne d'entrée comprend la sous-chaîne « this? This ». Toutefois, en raison du signe de ponctuation intermédiaire, cette sous-chaîne n'est pas identifiée comme étant une duplication.  
+ La chaîne d’entrée comprend le sous-corde "ceci? This ». Toutefois, en raison du signe de ponctuation intermédiaire, cette sous-chaîne n'est pas identifiée comme étant une duplication.  
   
 ### <a name="example-3-dynamically-build-a-culture-sensitive-regular-expression"></a>Exemple 3 : Construire dynamiquement une expression régulière sensible à la culture  
 
@@ -134,7 +134,7 @@ La classe <xref:System.String> comprend de nombreuses méthodes de recherche et 
 |[Comportement détaillé des expressions régulières](details-of-regular-expression-behavior.md)|Fournit des informations sur les fonctionnalités et le comportement des expressions régulières .NET.|
 |[Utiliser des expressions régulières dans Visual Studio](/visualstudio/ide/using-regular-expressions-in-visual-studio)||
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>  
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>  

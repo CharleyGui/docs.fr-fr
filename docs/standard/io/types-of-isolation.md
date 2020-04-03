@@ -18,12 +18,12 @@ helpviewer_keywords:
 - isolated storage, types
 - user authentication, isolated storage
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
-ms.openlocfilehash: d85625b99603c0bd81346cf2076b8efe0e1bba42
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 9bbd2c3cdca9b2eaee268738bf99189b0be78eba
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523884"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635730"
 ---
 # <a name="types-of-isolation"></a>Types d'isolation
 L’accès au stockage isolé est toujours limité à l’utilisateur qui l’a créé. Pour implémenter ce type d’isolation, le Common Language Runtime utilise la même notion d’identité de l’utilisateur reconnue par le système d’exploitation, c’est-à-dire l’identité associée au processus par lequel le code s’exécute lorsque le magasin est ouvert. Cette identité est l’identité d’un utilisateur, mais l’emprunt d’identité peut provoquer un changement dynamique de l’identité actuelle de l’utilisateur.  
@@ -48,7 +48,7 @@ L’accès au stockage isolé est toujours limité à l’utilisateur qui l’a 
   
  ![Diagramme qui montre l’isolation par utilisateur et par assembly.](./media/types-of-isolation/isolated-storage-types.gif)  
   
- Notez que, à l’exception des magasins itinérants, le stockage isolé est toujours implicitement isolé par l’ordinateur car il utilise les installations de stockage locales d’un ordinateur donné.  
+ À l’exception des magasins d’itinérance, le stockage isolé est toujours implicitement isolé par ordinateur parce qu’il utilise les installations de stockage qui sont locales à un ordinateur donné.  
   
 > [!IMPORTANT]
 > Le stockage isolé n’est pas disponible pour les applications Windows 8.x Store. À la place, utilisez les classes de données d’application des espaces de noms `Windows.Storage` inclus dans l’API Windows Runtime pour stocker des données locales et des fichiers. Pour plus d’informations, consultez [Données d’applications](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) dans le Centre de développement Windows.  

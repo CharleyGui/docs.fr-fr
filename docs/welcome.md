@@ -3,12 +3,12 @@ title: Bienvenue dans .NET
 description: Bien démarrer avec la famille de technologies .NET.
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: f5673f91545b98fb706d8f1cc03ef7746f1b19b8
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: ecdbdf13aa64de0f07b09eb73953e64d66755bb0
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345305"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635962"
 ---
 # <a name="welcome-to-net"></a>Bienvenue dans .NET
 
@@ -42,7 +42,7 @@ Pour plus d’informations sur les dernières fonctionnalités ajoutées aux imp
 
 Cette documentation couvre les plateformes et les langages compatibles avec .NET. Pour démarrer avec .NET et ses langages, consultez l’une des sections suivantes :
 
-- [Guide de voyage .NET](standard/index.md)
+- [Guide de voyage .NET](standard/index.yml)
 - [Guide de base .NET](core/index.yml)
 - [Guide-cadre .NET](framework/index.yml)
 - [Guide de voyage CMD](csharp/index.yml)

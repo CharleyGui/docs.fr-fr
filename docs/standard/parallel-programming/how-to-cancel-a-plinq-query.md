@@ -9,12 +9,12 @@ helpviewer_keywords:
 - PLINQ queries, how to cancel
 - cancellation, PLINQ
 ms.assetid: 80b14640-edfa-4153-be1b-3e003d3e9c1a
-ms.openlocfilehash: 1b34f0c1785c1a1c007db97f04c799a4b4bd0f8f
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 312c71b787ac7b4aa092f1517d2ed5af314a22e4
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588571"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635877"
 ---
 # <a name="how-to-cancel-a-plinq-query"></a>Comment : annuler une requête PLINQ
 Les exemples suivants montrent deux façons de modifier une requête PLINQ. Le premier exemple montre comment annuler une requête principalement composée de parcours de données. Le deuxième exemple montre comment annuler une requête contenant une fonction d’utilisateur dont les calculs sont onéreux.
@@ -33,9 +33,9 @@ L’infrastructure PLINQ ne restaure pas un seul <xref:System.OperationCanceledE
 
 Les recommandations générales pour l’annulation sont les suivantes :
 
-1. Si vous exécutez une annulation de délégué utilisateur, vous devez informer PLINQ du <xref:System.Threading.CancellationToken> externe et lever une <xref:System.OperationCanceledException>(externalCT).
+1. Si vous effectuez l’annulation utilisateur-délégué, vous <xref:System.Threading.CancellationToken> devez <xref:System.OperationCanceledException>informer PLINQ de l’externe et lancer un (externalCT).
 
-2. Si l’annulation se produit et qu’aucune autre exception n’est levée, vous devez gérer un <xref:System.OperationCanceledException> plutôt qu’un <xref:System.AggregateException>.
+2. Si l’annulation se produit et aucune <xref:System.OperationCanceledException> autre <xref:System.AggregateException>exception n’est lancée, alors manipulez un plutôt que un .
 
 ## <a name="example"></a>Exemple
 
@@ -44,11 +44,11 @@ L’exemple suivant montre comment gérer l’annulation lorsque vous avez une f
 [!code-csharp[PLINQ#17](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#17)]
 [!code-vb[PLINQ#17](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#17)]
 
-Lorsque vous gérez l’annulation dans le code utilisateur, vous n’avez pas à utiliser <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> dans la définition de requête. Toutefois, nous vous recommandons de le faire, car <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> n’a pas d’effet sur la performance des requêtes et permet la gestion de l’annulation par des opérateurs de requête et votre code utilisateur.
+Lorsque vous gérez l’annulation dans le code utilisateur, vous n’avez pas à utiliser <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> dans la définition de requête. Cependant, nous vous avons <xref:System.Linq.ParallelEnumerable.WithCancellation%2A>recommandé <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> d’utiliser, car n’a aucun effet sur les performances de requête et il permet à l’annulation d’être traitée par les opérateurs de requête et votre code utilisateur.
 
 Pour garantir la réactivité du système, nous vous recommandons de vérifier les annulations toutes les millisecondes ; toutefois, une période jusqu'à 10 millisecondes est considérée comme acceptable. Cette fréquence ne doit pas avoir d’impact négatif sur le niveau de performance de votre code.
 
-Lorsqu’un énumérateur est supprimé, par exemple lorsque le code quitte une boucle foreach (For Each en Visual Basic) qui itère les résultats de requête, la requête est annulée, mais aucune exception n’est levée.
+Lorsqu’un enumérateur est éliminé, par exemple lorsque le code sort d’une boucle de préach (pour chacun dans Visual Basic) qui s’agite sur les résultats des requêtes, la requête est annulée, mais aucune exception n’est lancée.
 
 ## <a name="see-also"></a>Voir aussi
 

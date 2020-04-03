@@ -1,7 +1,7 @@
 ---
 title: Opérateurs et expressions d’accès aux membres - Référence C
 description: Découvrez les opérateurs C# que vous pouvez utiliser pour accéder aux membres de type.
-ms.date: 09/18/2019
+ms.date: 03/31/2020
 author: pkulikov
 f1_keywords:
 - ._CSharpKeyword
@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: da2ca4517bd007678d74ae9b76e10cad4c2696b4
-ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
+ms.openlocfilehash: a132e527deadcffb4826c1965987fc09da470a09
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2020
-ms.locfileid: "79546638"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635302"
 ---
 # <a name="member-access-operators-and-expressions-c-reference"></a>Opérateurs et expressions d’accès aux membres (référence C)
 
@@ -130,6 +130,12 @@ L’exemple suivant illustre l’utilisation des opérateurs `?.` et `?[]` :
 
 L’exemple précédent utilise également [l’opérateur `??` de fusion nulle](null-coalescing-operator.md) pour spécifier une expression `null`alternative à évaluer au cas où le résultat d’une opération non conditionnelle est .
 
+Si `a.x` `a[x]` ou est d’un type `T` `a?.x` de `a?[x]` valeur non-nullable , ou est du [type](../builtin-types/nullable-value-types.md) `T?`de valeur nulle correspondante . Si vous avez besoin `T`d’une expression de type, appliquez l’opérateur `??` de fusion nulle à une expression non conditionnelle, comme le montre l’exemple suivant :
+
+[!code-csharp-interactive[null-conditional with null-coalescing](snippets/MemberAccessOperators.cs#NullConditionalWithNullCoalescing)]
+
+Dans l’exemple précédent, si vous `??` n’utilisez pas l’opérateur, `numbers?.Length < 2` évalue à `false` quand `numbers` est `null`.
+
 L’opérateur d’accès aux membres conditionnels null `?.` est également appelé l’opérateur Elvis.
 
 ### <a name="thread-safe-delegate-invocation"></a>Appel de délégué thread-safe
@@ -214,4 +220,4 @@ Pour plus d’informations sur les indices et les plages, voir la [note de propo
 - [Référence C#](../index.md)
 - [Opérateurs CMD](index.md)
 - [?? (opérateur de fusion Null)](null-coalescing-operator.md)
-- [:: opérateur](namespace-alias-qualifier.md)
+- [:: (opérateur)](namespace-alias-qualifier.md)

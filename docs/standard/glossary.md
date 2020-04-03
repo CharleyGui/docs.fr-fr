@@ -3,12 +3,12 @@ title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: ed4dceed1a3f39c5c4ce7a278efc37bb38ed0d94
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: d8f16579ea4dcbc9260aac83e16d3fbd30db519c
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80344207"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635585"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -86,7 +86,7 @@ En général, ensemble complet d’API qui facilite le développement et le dép
 
 Le mot « framework » a une signification technique plus spécifique dans les termes suivants :
 
-- [.NET Framework](#net-framework)
+- [.NET Framework](#net-framework)
 - [cadre cible](#target-framework)
 - [TFM (moniker de la version cible de .Net Framework)](#tfm)
 
@@ -123,7 +123,7 @@ Une mise en œuvre de .NET comprend :
 
 Exemples d’implémentations de .NET :
 
-- [.NET Framework](#net-framework)
+- [.NET Framework](#net-framework)
 - [.NET Core](#net-core)
 - [Plateforme Windows universelle (UWP)](#uwp)
 
@@ -155,7 +155,7 @@ Pour en savoir plus sur Mono, consultez la [documentation Mono](https://www.mono
 
 Terme générique désignant [.NET Standard](#net-standard), ainsi que toutes les charges de travail et les [implémentations de .NET](#implementation-of-net). Toujours entièrement capitalisé, jamais ".Net".
 
-Consultez le [Guide de .NET](index.md).
+Voir le [guide .NET](index.yml)
 
 ## <a name="net-core"></a>.NET Core
 
@@ -175,7 +175,7 @@ Ensemble de bibliothèques et d’outils qui permettent aux développeurs de cr�
 
 Consultez [Vue d’ensemble du SDK .NET Core](../core/sdk.md).
 
-## <a name="net-framework"></a>.NET Framework
+## <a name="net-framework"></a>.NET Framework
 
 Implémentation de .NET qui s’exécute uniquement sur Windows. Inclut le Common Language Runtime (CLR), la bibliothèque de classes de base et des bibliothèques de framework d’application telles qu’ASP.NET, Windows Forms et WPF.
 
@@ -228,7 +228,7 @@ Environnement d’exécution d’un programme managé.
 
 Le système d’exploitation fait partie de l’environnement d’exécution, mais pas du runtime .NET. Voici quelques exemples de runtimes .NET :
 
-- CLR (Common Language Runtime)
+- Common Language Runtime (CLR)
 - Core Common Language Runtime (CoreCLR)
 - .NET Native (pour la plateforme Windows universelle)
 - Runtime Mono
@@ -273,7 +273,7 @@ Implémentation de .NET qui sert à générer des logiciels et des applications 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de voyage .NET](index.md)
+- [Guide de voyage .NET](index.yml)
 - [Guide-cadre .NET](../framework/index.yml)
 - [.NET Core](../core/index.yml)
 - [Vue d’ensemble ASP.NET](/aspnet/index#pivot=aspnet)

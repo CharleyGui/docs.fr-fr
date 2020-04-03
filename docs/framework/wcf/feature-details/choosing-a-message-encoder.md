@@ -2,15 +2,16 @@
 title: Sélection d'un encodeur de message
 ms.date: 03/30/2017
 ms.assetid: 2204d82d-d962-4922-a79e-c9a231604f19
-ms.openlocfilehash: a306896af7a73d43956638981908c12d86126a9f
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: d93d7039d034262cd47edd437d5d7d8d63890f02
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345257"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635776"
 ---
-# <a name="choosing-a-message-encoder"></a>Sélection d'un encodeur de message
-Ce sujet traite des critères de choix parmi les codeurs de messages qui sont inclus dans Windows Communication Foundation (WCF) : mécanisme d’optimisation de la transmission binaire, du texte et des messages (MTOM).  
+# <a name="choose-a-message-encoder"></a>Choisissez un Message Encoder
+
+Cet article traite des critères de choix parmi les codeurs de messages qui sont inclus dans Windows Communication Foundation (WCF) : mécanisme d’optimisation de la transmission binaire, du texte et des messages (MTOM).  
   
  Dans WCF, vous spécifiez comment transférer des données sur un réseau entre les points de terminaison au moyen d’une *liaison,* qui est composée d’une séquence *d’éléments contraignants*. Un encodeur de message est représenté par un élément de liaison d’encodage de message dans la pile de liaison. Une liaison inclut des éléments de liaison de protocole facultatifs, tels qu’un élément de liaison de sécurité ou un élément de liaison de messagerie fiable, un élément de liaison d’encodage de message requis, et un élément de liaison de transport requis.  
   
@@ -33,12 +34,12 @@ Ce sujet traite des critères de choix parmi les codeurs de messages qui sont in
 |Factor|Description|Encodeurs qui prennent en charge ce facteur|  
 |------------|-----------------|---------------------------------------|  
 |Jeux de caractères pris en charge|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>et <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> ne prennent en charge que les encodages UTF8 et UTF16 Unicode *(big-endian* et *little-endian).* Si d'autres encodages sont requis, tels qu'UTF7 ou ASCII, un encodeur personnalisé doit être utilisé. Pour un encoder personnalisé d’échantillon, voir [Custom Message Encoder](https://docs.microsoft.com/dotnet/framework/wcf/samples/custom-message-encoder-custom-text-encoder).|Texte|  
-|Inspection|L'inspection désigne la capacité à examiner des messages pendant la transmission. Les encodages de texte, avec ou sans l'utilisation de SOAP, autorisent l'inspection et l'analyse des messages par de nombreuses applications sans l'utilisation d'outils spécialisés. Notez que l'utilisation de sécurité de transfert, au niveau du message ou du transport, affecte votre capacité à inspecter des messages. La confidentialité et l'intégrité empêchent respectivement l'examen et la modification d'un message.|Texte|  
+|Inspection|L'inspection désigne la capacité à examiner des messages pendant la transmission. Les encodages de texte, avec ou sans l'utilisation de SOAP, autorisent l'inspection et l'analyse des messages par de nombreuses applications sans l'utilisation d'outils spécialisés. L’utilisation de la sécurité de transfert, soit au niveau du message ou du transport, affecte votre capacité à inspecter les messages. La confidentialité et l'intégrité empêchent respectivement l'examen et la modification d'un message.|Texte|  
 |Fiabilité|La fiabilité désigne la résilience d'un encodeur aux erreurs de transmission. La fiabilité peut également être fournie au niveau du message, du transport ou de la couche d'application. Tous les encodeurs WCF standard supposent qu’une autre couche fournit la fiabilité. L'encodeur a peu de possibilité de récupérer d'une erreur de transmission.|None|  
 |Simplicité|La simplicité représente la facilité avec laquelle vous pouvez créer des encodeurs et décodeurs pour une spécification d'encodage. Les encodages de texte sont particulièrement avantageux en termes de simplicité, et l'encodage de texte POX présente l'avantage supplémentaire de ne requérir aucune prise en charge pour le traitement SOAP.|Texte (POX)|  
-|Size|L'encodage détermine la quantité de charge mémoire imposée sur le contenu. La taille des messages encodés est directement associée au débit maximal des opérations de service. Les encodages binaires sont en général plus compacts que les encodages de texte. Lorsque la taille de message est importante, compressez également le contenu du message lors de l'encodage. Cependant, la compression augmente les coûts de traitement à la fois de l'expéditeur et du récepteur du message.|Binary|  
+|Taille|L'encodage détermine la quantité de charge mémoire imposée sur le contenu. La taille des messages encodés est directement associée au débit maximal des opérations de service. Les encodages binaires sont en général plus compacts que les encodages de texte. Lorsque la taille de message est importante, compressez également le contenu du message lors de l'encodage. Cependant, la compression augmente les coûts de traitement à la fois de l'expéditeur et du récepteur du message.|Binary|  
 |Diffusion en continu|La diffusion en continu permet aux applications de commencer à traiter un message avant qu'il ne soit totalement arrivé. L'utilisation efficace de la diffusion en continu requiert que les données importantes d'un message soient disponibles au début de celui-ci afin que l'application de réception n'ait pas à attendre qu'elles arrivent. De plus, les applications qui utilisent le transfert en continu doivent organiser les données du message de façon incrémentielle afin que le contenu n'ait pas de dépendances ascendantes. Dans de nombreux cas, vous devez trouver un compromis entre diffuser du contenu en continu et avoir la taille de transfert la plus petite possible pour celui-ci.|None|  
-|Prise en charge des outils tiers|La prise en charge d'un encodage inclut le développement et le diagnostic. Des développeurs tiers ont fait un investissement substantiel dans les bibliothèques et trousses à outils permettant de gérer les messages encodés au format POX.|Texte (POX)|  
+|Soutien aux outils tiers|La prise en charge d'un encodage inclut le développement et le diagnostic. Des développeurs tiers ont fait un investissement substantiel dans les bibliothèques et trousses à outils permettant de gérer les messages encodés au format POX.|Texte (POX)|  
 |Interopérabilité|Ce facteur fait référence à la capacité d’un encoder WCF d’interopérer avec les services non-WCF.|Texte<br /><br /> MTOM (partiel)|  
   
 Remarque : lors de l'utilisation de l'encodeur binaire, l'utilisation du paramètre IgnoreWhitespace lors de la création d'un XMLReader n'a aucun effet.  Par exemple, si vous procédez comme suit dans une opération de service :  
@@ -80,7 +81,7 @@ Puisque cette propriété n’est exposée que sur le binaireMessageEncodingBind
 </customBinding>
  ```
 
-Le client et le service doivent accepter d’envoyer et de recevoir des messages compressés et donc la propriété compressionFormat doit être configurée sur l’élément binaireMessageEncoding sur le client et le service. Une exception ProtocolException est levée si le service ou le client n'est pas configuré pour la compression, mais la compression is.Enabling de l'autre côté doit être soigneusement étudiée. La compression est essentiellement utile si la bande passante réseau est un goulot d'étranglement. Dans le cas où l'UC est un goulot d'étranglement, la compression diminuera le débit. Le test approprié doit être effectué dans un environnement simulé pour déterminer si cela offre des avantages à l'application  
+Le client et le service doivent accepter d’envoyer et de recevoir des messages compressés et donc la propriété compressionFormat doit être configurée sur l’élément binaireMessageEncoding sur le client et le service. Un ProtocoleException est lancé si le service ou le client n’est pas configuré pour la compression, mais l’autre côté est. Permettre la compression doit être soigneusement examiné. La compression est essentiellement utile si la bande passante réseau est un goulot d'étranglement. Dans le cas où l'UC est un goulot d'étranglement, la compression diminuera le débit. Le test approprié doit être effectué dans un environnement simulé pour déterminer si cela offre des avantages à l'application  
   
 ## <a name="see-also"></a>Voir aussi
 

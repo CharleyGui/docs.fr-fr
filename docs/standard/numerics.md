@@ -11,12 +11,12 @@ helpviewer_keywords:
 - numerics
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
-ms.openlocfilehash: 89d3eb709bb22913b9539d6ad384384ee701385f
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 3e9c817006930a36ebdce5c5965d78f1721c7056
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523289"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635156"
 ---
 # <a name="numerics-in-net"></a>Valeurs numériques dans .NET
 
@@ -60,11 +60,11 @@ La structure <xref:System.Numerics.BigInteger?displayProperty=nameWithType> est 
   
 Les deux types <xref:System.Single> et <xref:System.Double> prennent en charge des valeurs spéciales qui représentent une valeur NaN (N’est pas un nombre) et l’infini. Par exemple, le type <xref:System.Double> fournit les valeurs suivantes : <xref:System.Double.NaN?displayProperty=nameWithType>, <xref:System.Double.NegativeInfinity?displayProperty=nameWithType> et <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>. Vous utilisez les méthodes <xref:System.Double.IsNaN%2A?displayProperty=nameWithType>, <xref:System.Double.IsInfinity%2A?displayProperty=nameWithType>, <xref:System.Double.IsPositiveInfinity%2A?displayProperty=nameWithType> et <xref:System.Double.IsNegativeInfinity%2A?displayProperty=nameWithType> pour tester ces valeurs spéciales.
 
-Chaque type à virgule flottante prend en charge un ensemble d’opérateurs arithmétiques standard. La classe <xref:System.Math?displayProperty=nameWithType> fournit des méthodes pour un ensemble plus large de fonctions mathématiques. .NET Core 2.0 et versions ultérieures inclut la classe <xref:System.MathF?displayProperty=nameWithType>, qui fournit des méthodes acceptant des arguments du type <xref:System.Single>.
+Chaque type à virgule flottante prend en charge un ensemble d’opérateurs arithmétiques standard. La classe <xref:System.Math?displayProperty=nameWithType> fournit des méthodes pour un ensemble plus large de fonctions mathématiques. .NET Core 2.0 et <xref:System.MathF?displayProperty=nameWithType> plus tard comprend la classe, qui fournit des méthodes qui acceptent les arguments du <xref:System.Single> type.
 
 Vous pouvez également travailler avec les bits individuels de valeurs <xref:System.Double> et <xref:System.Single> en utilisant la classe <xref:System.BitConverter?displayProperty=nameWithType>. La structure <xref:System.Decimal?displayProperty=nameWithType> a ses propres méthodes, <xref:System.Decimal.GetBits%2A?displayProperty=nameWithType> et <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29?displayProperty=nameWithType> pour travailler avec les bits individuel d'une valeur décimale, ainsi que son propre ensemble de méthodes pour effectuer d'autres opérations mathématiques.
   
-Les types <xref:System.Double> et <xref:System.Single> sont destinés à être utilisé pour des valeurs par nature imprécises (par exemple, la distance entre deux étoiles) et les applications dans lesquelles un haut degré de précision et une erreur d'arrondi réduite ne sont pas des impératifs. Vous devez utiliser le type <xref:System.Decimal?displayProperty=nameWithType> pour les cas dans lesquels une plus grande précision est requise et où les erreurs d'arrondi doivent être minimisées.
+Les <xref:System.Double> <xref:System.Single> types et les types sont destinés à être utilisés pour des valeurs qui, de par leur nature, sont imprécises (par exemple, la distance entre deux étoiles) et pour les applications dans lesquelles un haut degré de précision et une petite erreur d’arrondissement n’est pas nécessaire. Utilisez <xref:System.Decimal?displayProperty=nameWithType> le type pour les cas où une plus grande précision est nécessaire et les erreurs d’arrondissement doivent être réduites au minimum.
 
 > [!NOTE]
 > Le type <xref:System.Decimal> n’élimine pas la nécessité d’arrondi. Au lieu de cela, il réduit les erreurs dues à l’arrondi.
@@ -95,4 +95,4 @@ Les types compatibles SIMD sont implémentés de telle sorte qu’ils peuvent ê
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Chaînes de format numériques standard](base-types/standard-numeric-format-strings.md)
+- [Chaînes de format numérique standard](base-types/standard-numeric-format-strings.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 1df75814c45a6f1c245d43e2390b8a6ce692a779
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 542e0a84e4c5cfc3750c33fe29cb40d3643e91e3
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80587808"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80636030"
 ---
 # <a name="dependency-properties-overview"></a>Vue d’ensemble des propriétés de dépendance
 
@@ -128,7 +128,7 @@ Les propriétés de dépendance, ou la classe <xref:System.Windows.DependencyObj
 ### <a name="styles"></a>Styles
 Les styles et modèles sont deux des principaux scénarios justifiant l’utilisation de propriétés de dépendance. Les styles sont particulièrement utiles pour configurer des propriétés qui définissent l’[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] de l’application. Ils sont généralement définis en tant que ressources en XAML. Ils interagissent avec le système de propriétés car ils contiennent généralement des « méthodes setter » pour des propriétés particulières, ainsi que des « déclencheurs » qui changent une valeur de propriété d’après la valeur en temps réel d’une autre propriété.
 
-L’exemple suivant crée un style très simple (défini dans un dictionnaire <xref:System.Windows.FrameworkElement.Resources%2A>, non illustré), puis l’applique directement à la propriété <xref:System.Windows.FrameworkElement.Style%2A> pour <xref:System.Windows.Controls.Button>. La méthode setter contenue dans le style définit la propriété <xref:System.Windows.Controls.Control.Background%2A> pour un <xref:System.Windows.Controls.Button> mis en vert.
+L’exemple suivant crée un style simple <xref:System.Windows.FrameworkElement.Resources%2A> (qui serait défini à l’intérieur <xref:System.Windows.FrameworkElement.Style%2A> d’un dictionnaire, non montré), puis applique ce style directement à la propriété pour un <xref:System.Windows.Controls.Button>. La méthode setter contenue dans le style définit la propriété <xref:System.Windows.Controls.Control.Background%2A> pour un <xref:System.Windows.Controls.Button> mis en vert.
 
 [!code-xaml[PropertiesOvwSupport#SimpleStyleDef](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#simplestyledef)]
 
@@ -146,7 +146,7 @@ L’exemple suivant anime <xref:System.Windows.Controls.Control.Background%2A> s
 Pour plus d’informations sur l’animation de propriétés, consultez [Vue d’ensemble des animations](../graphics-multimedia/animation-overview.md) et [Vue d’ensemble des plans conceptuels](../graphics-multimedia/storyboards-overview.md).
 
 ### <a name="metadata-overrides"></a>Substitutions de métadonnées
-Vous pouvez changer certains comportements d’une propriété de dépendance en substituant les métadonnées de cette propriété quand vous dérivez de la classe qui inscrit initialement la propriété de dépendance. La substitution de métadonnées repose sur l’identificateur <xref:System.Windows.DependencyProperty>. Elle ne nécessite pas la réimplémentation de la propriété. Le changement de métadonnées est géré de manière native par le système de propriétés. Chaque classe contient potentiellement des métadonnées individuelles pour toutes les propriétés qui sont héritées des classes de base, sur la base de chaque type.
+Vous pouvez changer certains comportements d’une propriété de dépendance en substituant les métadonnées de cette propriété quand vous dérivez de la classe qui inscrit initialement la propriété de dépendance. La substitution de métadonnées repose sur l’identificateur <xref:System.Windows.DependencyProperty>. Les métadonnées primordiales ne nécessitent pas la réimplantation de la propriété. Le changement de métadonnées est géré de manière native par le système de propriétés. Chaque classe contient potentiellement des métadonnées individuelles pour toutes les propriétés qui sont héritées des classes de base, sur la base de chaque type.
 
 L’exemple suivant remplace les métadonnées d’une propriété de dépendance <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A>. La substitution de ces métadonnées de propriété de dépendance particulières fait partie d’un modèle d’implémentation qui crée des contrôles capables d’utiliser les styles par défaut de thèmes.
 
@@ -183,18 +183,18 @@ En principe, pour le premier bouton, la propriété est définie à deux reprise
 [!code-xaml[PropertiesOvwSupport#MiniPrecedence](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#miniprecedence)]  
 
 ### <a name="why-does-dependency-property-precedence-exist"></a>Pourquoi la priorité des propriétés de dépendance existe-t-elle ?
-En règle générale, vous ne souhaitez pas que des styles s’appliquent en permanence et qu’ils dissimulent même la valeur définie localement d’un élément spécifique (sinon, il serait très difficile d’utiliser des styles ou des éléments en général). Par conséquent, les valeurs qui proviennent de styles opèrent à une priorité plus faible que les valeurs définies localement. Pour obtenir une liste plus complète de propriétés de dépendance et pour savoir d’où la valeur effective d’une propriété de dépendance peut provenir, consultez [Priorité de la valeur de propriété de dépendance](dependency-property-value-precedence.md).
+Typiquement, vous ne voudriez pas que les styles s’appliquent toujours et obscurcissent même une valeur définie localement d’un élément individuel (sinon, il serait difficile d’utiliser des styles ou des éléments en général). Par conséquent, les valeurs qui proviennent de styles opèrent à une priorité plus faible que les valeurs définies localement. Pour obtenir une liste plus complète de propriétés de dépendance et pour savoir d’où la valeur effective d’une propriété de dépendance peut provenir, consultez [Priorité de la valeur de propriété de dépendance](dependency-property-value-precedence.md).
 
 > [!NOTE]
 > Un certain nombre de propriétés définies sur des éléments WPF ne sont pas des propriétés de dépendance. De manière générale, les propriétés ont été implémentées en tant que propriétés de dépendance uniquement quand il fallait prendre en charge au moins l’un des scénarios activés par le système de propriétés : liaison de données, styles, animation, prise en charge de valeur par défaut, héritage, propriétés jointes ou invalidation.
 
 ## <a name="learning-more-about-dependency-properties"></a>En savoir plus sur les propriétés de dépendance  
 
-- Une propriété jointe est un type de propriété qui prend en charge une syntaxe spécialisée en XAML. Une propriété jointe n’a souvent pas de correspondance de 1:1 avec une propriété commune de temps d’exécution de langue (CLR), et n’est pas nécessairement une propriété de dépendance. L’objectif par défaut d’une propriété jointe est de permettre aux éléments enfants de signaler des valeurs de propriété à un élément parent, même si l’élément parent et l’élément enfant n’ont pas tous deux cette propriété dans leur liste de membres de classe. L’un des principaux scénarios consiste à permettre aux éléments enfants d’indiquer au parent comment ils doivent être présentés dans [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Pour obtenir un exemple, consultez <xref:System.Windows.Controls.DockPanel.Dock%2A> ou <xref:System.Windows.Controls.Canvas.Left%2A>. Pour plus d’informations, consultez [Vue d’ensemble des propriétés jointes](attached-properties-overview.md).
+- Une propriété jointe est un type de propriété qui prend en charge une syntaxe spécialisée en XAML. Une propriété jointe n’a souvent pas de correspondance de 1:1 avec une propriété commune de temps d’exécution de langue (CLR), et n’est pas nécessairement une propriété de dépendance. Le but typique d’une propriété jointe est de permettre aux éléments pour enfants de déclarer la valeur des propriétés à un élément parent, même si l’élément parent et l’élément enfant ne possèdent pas tous les deux cette propriété dans le cadre des listes des membres du groupe. L’un des principaux scénarios consiste à permettre aux éléments enfants d’indiquer au parent comment ils doivent être présentés dans [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Pour obtenir un exemple, consultez <xref:System.Windows.Controls.DockPanel.Dock%2A> ou <xref:System.Windows.Controls.Canvas.Left%2A>. Pour plus d’informations, consultez [Vue d’ensemble des propriétés jointes](attached-properties-overview.md).
 
 - Les développeurs de composants ou d’applications peuvent souhaiter créer leur propre propriété de dépendance, afin d’activer des fonctionnalités telles que la liaison de données ou la prise en charge des styles, ou pour prendre en charge l’invalidation et le forçage de valeur. Pour plus d’informations, consultez [Propriétés de dépendance personnalisées](custom-dependency-properties.md).
 
-- Les propriétés de dépendance doivent généralement être considérées comme des propriétés publiques, accessibles ou au moins détectables par tout appelant qui a accès à une instance. Pour plus d’informations, consultez [Sécurité des propriétés de dépendance](dependency-property-security.md).
+- Considérez les propriétés de dépendance comme des propriétés publiques, accessibles ou du moins détectables par tout appelant qui a accès à une instance. Pour plus d’informations, consultez [Sécurité des propriétés de dépendance](dependency-property-security.md).
 
 ## <a name="see-also"></a>Voir aussi
 

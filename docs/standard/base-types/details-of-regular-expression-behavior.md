@@ -9,12 +9,12 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET Framework regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-ms.openlocfilehash: 288bf4256670d34c600e23618b62ad81866daadf
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 0273d16028315452e35f83086dbc134d6fcb66c6
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523850"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635986"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Comportement détaillé des expressions régulières
 
@@ -71,7 +71,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 
      Pour plus d’informations sur les assertions de préanalyse positive, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
-- Lookahead négatif: `(?!` *sous-expression*`)`. Cette fonctionnalité ajoute la possibilité de mettre en correspondance une expression uniquement si une sous-expression ne correspond pas. Elle s’avère particulièrement efficace pour affiner une recherche, car il est souvent plus simple de fournir une expression pour un cas à éliminer qu’une expression pour les cas à inclure. Par exemple, il est difficile d’écrire une expression pour les mots qui ne commencent pas par « non ». L’exemple suivant utilise la préanalyse négative pour les exclure.
+- Lookahead négatif: `(?!` *sous-expression*`)`. Cette fonctionnalité ajoute la possibilité de mettre en correspondance une expression uniquement si une sous-expression ne correspond pas. Ceci est puissant pour l’élagage d’une recherche, car il est souvent plus simple de fournir une expression pour un cas qui devrait être éliminé qu’une expression pour les cas qui doivent être inclus. Par exemple, il est difficile d’écrire une expression pour les mots qui ne commencent pas par « non ». L’exemple suivant utilise la préanalyse négative pour les exclure.
 
      [!code-csharp[Conceptual.RegularExpressions.Design#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lookahead2.cs#3)]
      [!code-vb[Conceptual.RegularExpressions.Design#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lookahead2.vb#3)]
@@ -148,11 +148,11 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 |-----------|-----------------|
 |[Rétroaction](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)|Fournit des informations sur la manière dont la rétroaction d’expression régulière se ramifie pour trouver d’autres correspondances.|
 |[Compilation et réutilisation](../../../docs/standard/base-types/compilation-and-reuse-in-regular-expressions.md)|Fournit des informations sur la compilation et la réutilisation des expressions régulières pour augmenter les performances.|
-|[Sécurité des threads](../../../docs/standard/base-types/thread-safety-in-regular-expressions.md)|Fournit des informations sur la sécurité des threads d’expression régulière et explique quand vous devez synchroniser l’accès aux objets d’expression régulière.|
+|[Sécurité des fils](../../../docs/standard/base-types/thread-safety-in-regular-expressions.md)|Fournit des informations sur la sécurité des threads d’expression régulière et explique quand vous devez synchroniser l’accès aux objets d’expression régulière.|
 |[Expressions régulières du .NET Framework](../../../docs/standard/base-types/regular-expressions.md)|Fournit une vue d’ensemble de l’aspect du langage de programmation des expressions régulières.|
 |[Modèle objet d'expression régulière](../../../docs/standard/base-types/the-regular-expression-object-model.md)|Fournit des informations et des exemples de code illustrant l’utilisation des classes d’expression régulière.|
 |[Langage des expressions régulières - Aide-mémoire](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Fournit des informations sur le jeu de caractères, d’opérateurs et de constructions permettant de définir des expressions régulières.|
 
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Informations de référence
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>

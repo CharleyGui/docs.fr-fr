@@ -6,15 +6,16 @@ helpviewer_keywords:
 - collections [.NET Framework], generic
 - generic collections [.NET Framework]
 ms.assetid: e7b868b1-11fe-4ac5-bed3-de68aca47739
-ms.openlocfilehash: 131787c30e5249111f86f2793981e2b75e8f3862
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: bbf8ec7f61981332b6984488b369fee62959b92a
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588529"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635890"
 ---
 # <a name="when-to-use-generic-collections"></a>Quand utiliser les collections génériques
-L'utilisation de collections génériques est généralement recommandée, car elle permet de bénéficier immédiatement de la cohérence des types sans avoir à dériver d'un type de collection de base et à implémenter des membres spécifiques au type. Les types de collections génériques sont généralement plus performants que leurs équivalents non génériques (et mieux que les types dérivés de types de collections de base non génériques) quand les éléments de collection sont des types valeur, car grâce aux génériques, aucun boxing d'éléments n'est nécessaire.  
+
+L’utilisation de collections génériques vous donne l’avantage automatique de la sécurité de type sans avoir à dériver d’un type de collecte de base et à implémenter des membres spécifiques au type. Les types de collecte génériques sont également généralement plus performants que les types de collecte non-général correspondants (et mieux que les types qui sont dérivés de types de collecte de base non génériques) lorsque les éléments de collecte sont des types de valeur, parce qu’avec les génériques, il n’est pas nécessaire de boxer les éléments.  
   
  Pour les programmes qui ciblent .NET Framework 4 ou version ultérieure, vous devez utiliser les classes de collections génériques dans l’espace de noms <xref:System.Collections.Concurrent> quand plusieurs threads sont susceptibles d’ajouter ou de supprimer simultanément des éléments de la collection.  
   
@@ -24,7 +25,7 @@ L'utilisation de collections génériques est généralement recommandée, car e
   
 - <xref:System.Collections.Generic.Dictionary%602> et <xref:System.Collections.Concurrent.ConcurrentDictionary%602> sont les classes génériques qui correspondent à <xref:System.Collections.Hashtable>.  
   
-- <xref:System.Collections.ObjectModel.Collection%601> est la classe générique qui correspond à <xref:System.Collections.CollectionBase>. <xref:System.Collections.ObjectModel.Collection%601> peut être utilisée comme classe de base, mais contrairement à <xref:System.Collections.CollectionBase>, elle n'est pas abstraite. Cela la rend plus facile à utiliser.  
+- <xref:System.Collections.ObjectModel.Collection%601> est la classe générique qui correspond à <xref:System.Collections.CollectionBase>. <xref:System.Collections.ObjectModel.Collection%601>peut être utilisé comme une <xref:System.Collections.CollectionBase>classe de base, mais contrairement, il n’est pas abstrait, ce qui le rend beaucoup plus facile à utiliser.  
   
 - <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> est la classe générique qui correspond à <xref:System.Collections.ReadOnlyCollectionBase>. <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> n'est pas abstraite et possède un constructeur qui facilite l'exposition d'une <xref:System.Collections.Generic.List%601> existante sous la forme d'une collection en lecture seule.  
   
@@ -44,7 +45,7 @@ L'utilisation de collections génériques est généralement recommandée, car e
 - <xref:System.Collections.Concurrent.ConcurrentBag%601> permet une insertion et une suppression rapides des éléments non triés.  
   
 ## <a name="linq-to-objects"></a>LINQ to Objects  
- La fonctionnalité LINQ to Objects permet d'utiliser des requêtes LINQ pour accéder aux objets en mémoire tant que le type d'objet implémente l'interface <xref:System.Collections.IEnumerable?displayProperty=nameWithType> ou <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> . Les requêtes LINQ fournissent un modèle commun pour accéder aux données, sont généralement plus concises et lisibles que les boucles `foreach` standard et intègrent des fonctions de filtrage, de classement et de regroupement. Les requêtes LINQ peuvent également améliorer les performances. Pour plus d’informations, consultez [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md) et [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md).  
+ La fonctionnalité LINQ to Objects permet d'utiliser des requêtes LINQ pour accéder aux objets en mémoire tant que le type d'objet implémente l'interface <xref:System.Collections.IEnumerable?displayProperty=nameWithType> ou <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> . Les requêtes linQ fournissent un modèle commun pour accéder aux données; sont généralement plus concis et `foreach` lisibles que les boucles standard; et fournir des capacités de filtrage, de commande et de regroupement. Les requêtes LINQ peuvent également améliorer les performances. Pour plus d’informations, consultez [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md) et [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md).  
   
 ## <a name="additional-functionality"></a>Autres fonctionnalités  
  Certains types génériques ont des fonctionnalités que n'ont pas les types de collections non génériques. Par exemple, la classe <xref:System.Collections.Generic.List%601> , qui correspond à la classe non générique <xref:System.Collections.ArrayList> , possède plusieurs méthodes acceptant des délégués génériques, telles que le délégué <xref:System.Predicate%601> qui permet de spécifier des méthodes pour effectuer des recherches dans la liste, le délégué <xref:System.Action%601> , qui représente des méthodes qui agissent sur chaque élément de la liste, et le délégué <xref:System.Converter%602> qui permet de définir des conversions de types.  
