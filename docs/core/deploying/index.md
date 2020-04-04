@@ -1,13 +1,13 @@
 ---
 title: Publication d’applications
 description: Découvrez les façons de publier une application .NET Core. .NET Core peut publier des applications spécifiques à la plate-forme ou multiplateformes. Vous pouvez publier une application en tant qu’autonome ou en tant que dépendante de l’exécution. Chaque mode affecte la façon dont un utilisateur exécute votre application.
-ms.date: 01/31/2020
-ms.openlocfilehash: 3b9c3b7f29af12477874b7a31ef0de4750719de0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/01/2020
+ms.openlocfilehash: a4e5f9fe048d40c751f582bd49732cb903202db4
+ms.sourcegitcommit: 45cced471d59d5dac3f0c92abc9d4849716098a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399062"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80665536"
 ---
 # <a name="net-core-application-publishing-overview"></a>.NET Aperçu de publication d’applications de base
 
@@ -15,7 +15,7 @@ Les applications que vous créez avec .NET Core peuvent être publiées en deux 
 
 La publication de votre application en tant *qu’autonome* produit une application qui inclut le temps d’exécution et les bibliothèques .NET Core, ainsi que votre application et ses dépendances. Les utilisateurs de l’application peuvent l’exécuter sur une machine qui n’a pas le temps d’exécution .NET Core installé.
 
-La publication de votre application en tant que *dépendante de l’exécution* produit une application qui ne comprend que votre application elle-même et ses dépendances. Les utilisateurs de l’application doivent installer séparément le temps d’exécution .NET Core.
+La publication de votre application en tant que *dépendante du temps d’exécution* (précédemment connue sous le nom *de cadre-dépendante)* produit une application qui ne comprend que votre application elle-même et ses dépendances. Les utilisateurs de l’application doivent installer séparément le temps d’exécution .NET Core.
 
 Les deux modes de publication produisent une plate-forme spécifique exécutable par défaut. Les applications dépendantes de l’exécution peuvent être créées sans exécutable, et ces applications sont multiplateformes.
 
