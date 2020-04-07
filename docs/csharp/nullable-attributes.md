@@ -3,16 +3,16 @@ title: Améliorer les API pour les types de référence nuls avec des attributs 
 description: Apprenez à utiliser les attributs descriptifs AllowNull, DisallowNull, MaybeNull, NotNull et plus encore pour décrire pleinement l’état nul de vos API.
 ms.technology: csharp-null-safety
 ms.date: 07/31/2019
-ms.openlocfilehash: ca04db800271b9b01b5b9f1482dd5a0db2cc1c35
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 5d7a864ba1b66ad6b4ae7b0391d170a29147c537
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249243"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805842"
 ---
 # <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Mettre à jour les bibliothèques pour qu’elles utilisent des types de référence nuls et communiquent des règles in annulables aux appelants
 
-L’ajout de types de [référence in annulables](nullable-references.md) signifie que vous pouvez déclarer si une `null` valeur est autorisée ou attendue pour chaque variable. En outre, vous pouvez appliquer un `AllowNull` `DisallowNull`certain `MaybeNull` `NotNull`nombre `NotNullWhen` `MaybeNullWhen`d’attributs: , , , , , et `NotNullWhenNotNull` de décrire complètement les états nuls de l’argumentation et les valeurs de retour. Cela offre une grande expérience que vous écrivez du code. Vous obtenez des avertissements si une variable `null`non-nullable pourrait être définie à . Vous obtenez des avertissements si une variable nulle n’est pas vérifiée non vérifiée avant de la déreférencer. La mise à jour de vos bibliothèques peut prendre du temps, mais les retombées en valent la peine. Plus vous fournissez d’informations au `null` compilateur sur le *moment où* une valeur est autorisée ou interdite, les meilleurs avertissements que les utilisateurs de votre API obtiendront. Commençons par un exemple familier. Imaginez que votre bibliothèque dispose de l’API suivante pour récupérer une chaîne de ressources :
+L’ajout de types de [référence in annulables](nullable-references.md) signifie que vous pouvez déclarer si une `null` valeur est autorisée ou attendue pour chaque variable. En outre, vous pouvez appliquer un `AllowNull` `DisallowNull`certain `MaybeNull` `NotNull`nombre `NotNullWhen` `MaybeNullWhen`d’attributs: , , , , , et `NotNullIfNotNull` de décrire complètement les états nuls de l’argumentation et les valeurs de retour. Cela offre une grande expérience que vous écrivez du code. Vous obtenez des avertissements si une variable `null`non-nullable pourrait être définie à . Vous obtenez des avertissements si une variable nulle n’est pas vérifiée non vérifiée avant de la déreférencer. La mise à jour de vos bibliothèques peut prendre du temps, mais les retombées en valent la peine. Plus vous fournissez d’informations au `null` compilateur sur le *moment où* une valeur est autorisée ou interdite, les meilleurs avertissements que les utilisateurs de votre API obtiendront. Commençons par un exemple familier. Imaginez que votre bibliothèque dispose de l’API suivante pour récupérer une chaîne de ressources :
 
 ```csharp
 bool TryGetMessage(string key, out string message)

@@ -2,12 +2,12 @@
 title: Implémentation d’objets de valeur
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Découvrez les explications détaillées et les options disponibles pour implémenter des objets de valeur à l’aide des nouvelles fonctionnalités d’Entity Framework.
 ms.date: 01/30/2020
-ms.openlocfilehash: 919b23f7c1a0cd0aec8c4417f3af98469a0743dd
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 4a8a92a8dabcf09654ecd0e5dea2a7df25d7abf7
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249420"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805738"
 ---
 # <a name="implement-value-objects"></a>Implémenter des objets de valeur
 
@@ -133,7 +133,7 @@ Comme vous pouvez le voir, cette implémentation de l’objet de valeur Address 
 
 Le fait de ne pas avoir de champ d’identification dans une classe à utiliser par Entity Framework (EF) n’a pas été possible avant ef Core 2.0, ce qui contribue grandement à mettre en œuvre des objets de meilleure valeur sans pièce d’identité. C’est précisément ce que nous allons expliquer dans la section suivante.
 
-On pourrait soutenir que les objets de valeur, étant immuables, devraient être lus uniquement (c’est-à-dire avoir des propriétés obtiennent seulement), et c’est en effet vrai. Toutefois, ils sont généralement sérialisés et désérialisés dans les files d’attente ; or, s’ils sont en lecture seule, le désérialiseur arrête l’affectation de valeurs. Pour des raisons pratiques, nous allons simplement les laisser définis comme privés, ce qui constitue un niveau de lecture seule suffisant.
+On pourrait soutenir que les objets de valeur, étant immuables, devraient être lus uniquement (c’est-à-dire avoir des propriétés obtiennent seulement), et c’est en effet vrai. Cependant, les objets de valeur sont généralement sérialisés et déséialisés pour passer par les files d’attente de `private set`messages, et être lu seulement empêche le déséialisateur d’attribuer des valeurs, donc nous venons de les laisser comme , qui est lu-seulement assez pour être pratique.
 
 ## <a name="how-to-persist-value-objects-in-the-database-with-ef-core-20-and-later"></a>Comment maintenir la valeur des objets dans la base de données avec EF Core 2.0 et plus tard
 
@@ -186,7 +186,7 @@ Par convention, une clé primaire cachée est créée pour le type détenu et es
 
 Il est important de noter que les types détenus ne sont jamais découverts par convention dans EF Core. Vous devez donc les déclarer explicitement.
 
-Dans eShopOnContainers, au niveau d’OrderingContext.cs, dans la méthode OnModelCreating(), plusieurs configurations d’infrastructure sont appliquées. L’une d’entre elles est liée à l’entité Order.
+Dans eShopOnContainers, dans le fichier OrderingContext.cs, dans la `OnModelCreating()` méthode, plusieurs configurations d’infrastructure sont appliquées. L’une d’entre elles est liée à l’entité Order.
 
 ```csharp
 // Part of the OrderingContext.cs class at the Ordering.Infrastructure project
@@ -226,7 +226,7 @@ public void Configure(EntityTypeBuilder<Order> orderConfiguration)
 
 Dans le code précédent, la méthode `orderConfiguration.OwnsOne(o => o.Address)` spécifie que la propriété `Address` est une entité détenue de type `Order`.
 
-Par défaut, les conventions EF Core nomment les colonnes de base de données pour les propriétés du type d’entité détenu comme suit : `EntityProperty_OwnedEntityProperty`. Les propriétés internes liées à `Address` apparaissent donc dans la table `Orders` avec les noms `Address_Street`, `Address_City` (et ainsi de suite pour `State`, `Country` et `ZipCode`).
+Par défaut, les conventions EF Core nomment les colonnes de base de données pour les propriétés du type d’entité détenu comme suit : `EntityProperty_OwnedEntityProperty`. Par conséquent, les `Address` propriétés `Orders` internes de `Address_Street`apparaîtra `Address_City` dans le `State`tableau `Country`avec `ZipCode`les noms , (et ainsi de suite pour , , et ).
 
 Vous pouvez ajouter la méthode fluent `Property().HasColumnName()` pour renommer ces colonnes. Si `Address` est une propriété publique, les mappages ressemblent aux suivants :
 
@@ -281,7 +281,7 @@ public class Address
 
 - Vous pouvez mapper le même type CLR en tant que types détenus différents dans la même entité du propriétaire par le biais de propriétés de navigation distinctes.
 
-- Le fractionnement de table est configuré par convention, mais vous pouvez le refuser en mappant le type détenu à une autre table à l’aide de ToTable.
+- Le fractionnement de table est mis en place par convention, mais vous pouvez vous désinscrire en cartographiant le type appartenant à une table différente à l’aide de ToTable.
 
 - Le chargement enthousiaste est effectué automatiquement sur les types `.Include()` possédés, c’est-à-dire qu’il n’est pas nécessaire de faire appel à la requête.
 
@@ -297,7 +297,7 @@ public class Address
 
 - Aucun support pour les types de propriété facultatif (c’est-à-dire nuls) qui sont cartographiés avec le propriétaire dans le même tableau (c’est-à-dire en utilisant le fractionnement de table). C’est parce que la cartographie est faite pour chaque propriété, nous n’avons pas une sentinelle séparée pour la valeur complexe nulle dans son ensemble.
 
-- Le mappage d’héritage pour les types détenus n’est pas pris en charge, mais vous pouvez normalement mapper deux types feuilles des mêmes hiérarchies d’héritage en tant que types détenus différents. EF Core ne réalise pas qu’ils font partie de la même hiérarchie.
+- Aucun support de cartographie d’héritage pour les types possédés, mais vous devriez pouvoir cartographier deux types de feuilles des mêmes hiérarchies d’héritage que différents types possédés. EF Core ne réalise pas qu’ils font partie de la même hiérarchie.
 
 #### <a name="main-differences-with-ef6s-complex-types"></a>Principales différences avec les types complexes d’EF6
 

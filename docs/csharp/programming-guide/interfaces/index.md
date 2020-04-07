@@ -5,12 +5,12 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: bb1b812fdbf1d521ed3fd86e23f430bcd04d00f6
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 5e39279183f7e3745c9373df246d14d69d5ff99b
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249179"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805902"
 ---
 # <a name="interfaces-c-programming-guide"></a>Interfaces (Guide de programmation C#)
 
@@ -26,7 +26,7 @@ Le nom d’une interface doit être un [nom d’identifiant](../inside-a-program
 
 Toute classe ou tout struct qui implémentent l'interface <xref:System.IEquatable%601> doivent contenir une définition pour une méthode <xref:System.IEquatable%601.Equals%2A> qui correspond à la signature spécifiée par l'interface. Ainsi, vous pouvez compter sur une classe qui implémente `IEquatable<T>` pour contenir une méthode `Equals` avec laquelle une instance de la classe peut déterminer si elle est égale à une autre instance de la même classe.
 
-La définition de `IEquatable<T>` ne fournit pas d'implémentation pour `Equals`. Une classe ou une struct peut implémenter plusieurs interfaces, mais une classe ne peut hériter qu’à partir d’une seule classe.
+La définition `IEquatable<T>` de ne fournit `Equals`pas une mise en œuvre pour . Une classe ou une struct peut implémenter plusieurs interfaces, mais une classe ne peut hériter qu’à partir d’une seule classe.
 
 Pour plus d'informations sur les classes abstraites, consultez [Classes abstract et sealed et membres de classe](../classes-and-structs/abstract-and-sealed-classes-and-class-members.md).
 
@@ -56,10 +56,10 @@ Une interface possède les propriétés suivantes :
 
 ## <a name="related-sections"></a><a name="BKMK_RelatedSections"></a>Sections connexes
 
-- [Propriété d’une interface](../classes-and-structs/interface-properties.md)  
+- [Propriétés de l’interface](../classes-and-structs/interface-properties.md)  
 - [Indexeurs dans les interfaces](../indexers/indexers-in-interfaces.md)  
 - [Comment implémenter des événements d’interface](../events/how-to-implement-interface-events.md)
-- [Classes et Structs](../classes-and-structs/index.md)  
+- [Classes et structs](../classes-and-structs/index.md)  
 - [Héritage](../classes-and-structs/inheritance.md)  
 - [Méthodes](../classes-and-structs/methods.md)  
 - [Polymorphisme](../classes-and-structs/polymorphism.md)  
@@ -70,6 +70,6 @@ Une interface possède les propriétés suivantes :
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation CMD](../index.md)
 - [Héritage](../classes-and-structs/inheritance.md)
 - [Noms d’identificateurs](../inside-a-program/identifier-names.md)

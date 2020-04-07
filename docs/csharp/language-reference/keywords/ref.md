@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 8d04f888befae2cad815c88a0d27bd836f458c63
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: d54d932ca96f1966ecc05a532a2468b7e16fac46
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523773"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805851"
 ---
 # <a name="ref-c-reference"></a>ref (référence C#)
 
@@ -101,7 +101,7 @@ Par exemple, voir [A ref returns and ref locals example](#a-ref-returns-and-ref-
 
 ## <a name="ref-locals"></a>Variables locales ref
 
-Une variable locale ref est utilisée pour faire référence aux valeurs retournées à l’aide de `return ref`. Vous ne pouvez pas initialiser une variable locale ref en valeur de retour non ref. En d’autres termes, la partie droite de l’initialisation doit être une référence. Toute modification apportée à la valeur de la variable locale ref est reflétée dans l’état de l’objet dont la méthode a retourné la valeur par référence.
+Une variable locale ref est utilisée pour faire référence aux valeurs retournées à l’aide de `return ref`. Vous ne pouvez pas initialiser une variable locale ref en valeur de retour non ref. En d’autres termes, le côté droit de l’initialisation doit être une référence. Toute modification apportée à la valeur de la variable locale ref est reflétée dans l’état de l’objet dont la méthode a retourné la valeur par référence.
 
 Vous définissez une variable locale ref à l’aide du mot clé `ref` avant la déclaration de la variable, ainsi qu’immédiatement avant l’appel à la méthode qui retourne la valeur par référence.
 
@@ -117,7 +117,7 @@ Vous pouvez accéder à une valeur par référence de la même façon. Dans cert
 ref VeryLargeStruct reflocal = ref veryLargeStruct;
 ```
 
-Notez que dans les deux exemples, le mot clé `ref` doit être utilisé aux deux emplacements, sans quoi le compilateur génère l’erreur CS8172, « Impossible d’initialiser une variable par référence avec une valeur ».
+Dans les `ref` deux exemples, le mot clé doit être utilisé dans les deux endroits, ou le compilateur génère l’erreur CS8172, "Ne peut pas initialiser une variable de référence avec une valeur."
 
 À partir de C# 7.3, la variable d’itération de l’instruction `foreach` peut être une variable locale ref ou une variable locale ref readonly. Pour plus d’informations, voir l’article [Instruction foreach](foreach-in.md).
 
@@ -145,8 +145,8 @@ La conservation d’un type `ref struct` comme variable allouée par la pile int
 
 - Vous ne pouvez pas effectuer d’opération box sur un `ref struct`. Vous ne pouvez pas assigner un type `ref struct` à une variable de type `object`, `dynamic` ou tout type interface.
 - Les types `ref struct` ne peuvent pas implémenter les interfaces.
-- Vous ne pouvez pas déclarer `ref struct` comme membre de champ d’une classe ou d’un struct normal. Cela comprend la déclaration d’une propriété implémentée automatiquement, qui crée un champ de stockage généré par le compilateur.
-- Vous ne pouvez pas déclarer des variables locales qui sont des types `ref struct` dans des méthodes async. Vous pouvez les déclarer dans des méthodes synchrones qui retournent des types semblables à <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601> ou `Task`.
+- Vous ne pouvez pas déclarer `ref struct` comme membre de champ d’une classe ou d’un struct normal. Cela comprend la déclaration d’une propriété auto-mise en œuvre, qui crée un champ de soutien généré par compilateur.
+- Vous ne pouvez pas déclarer des variables locales qui sont des types `ref struct` dans des méthodes async. Vous pouvez les déclarer dans des <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601>méthodes `Task`synchrones qui reviennent , , ou -comme les types.
 - Vous ne pouvez pas déclarer de variables locales `ref struct` dans des itérateurs.
 - Vous ne pouvez pas capturer de variables `ref struct` dans des expressions lambda ou des fonctions locales.
 

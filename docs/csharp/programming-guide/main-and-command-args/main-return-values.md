@@ -4,12 +4,12 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: 3d97ab2b3f53179cb184f2ad3944ea29ff5566a2
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 7061b6c1988da9f6dfac115ee555a914531df863
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345125"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805930"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Valeurs de retour de Main() (Guide de programmation C#)
 
@@ -21,11 +21,11 @@ Elle peut également retourner un `int` :
 
  [!code-csharp[csProgGuideMain#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#13)]
 
-Si la valeur de retour de `Main` n’est pas utilisée, retourner `void` permet d’avoir un code un peu plus simple. Cependant, retourner un entier permet au programme de communiquer des informations d’état à d’autres programmes ou scripts qui appellent le fichier exécutable. La valeur de retour de `Main` est traitée comme le code de sortie du processus. Si `void` est retourné à partir de `Main`, le code de sortie est implicitement `0`. L’exemple suivant montre comment accéder à la valeur de retour de `Main`.
+Si la valeur de retour de `Main` n’est pas utilisée, retourner `void` permet d’avoir un code un peu plus simple. Cependant, retourner un entier permet au programme de communiquer des informations d’état à d’autres programmes ou scripts qui appellent le fichier exécutable. La valeur de retour de `Main` est traitée comme le code de sortie du processus. Si `void` elle `Main`est revenue, le code `0`de sortie sera implicitement . L’exemple suivant montre comment accéder à la valeur de retour de `Main`.
 
 ## <a name="example"></a>Exemple
 
-Cet exemple utilise les outils de ligne de commande [.NET Core](../../../core/index.yml). Si vous ne connaissez pas les outils de ligne de commande .NET Core, vous pouvez les découvrir dans cette [rubrique Bien démarrer](../../../core/tutorials/cli-create-console-app.md).
+Cet exemple utilise des outils de ligne de commande [.NET Core.](../../../core/index.yml) Si vous n’êtes pas familier avec les outils de ligne de commande .NET Core, vous pouvez en apprendre davantage à leur sujet dans cet [article qui a commencé](../../../core/tutorials/cli-create-console-app.md).
 
 Modifiez la méthode `Main` dans *program.cs* comme suit :
 
@@ -37,7 +37,7 @@ Vous pouvez générer l’application à l’aide de la commande [dotnet CLI](..
 
 Ensuite, créez un script PowerShell pour exécuter l’application et afficher le résultat. Collez le code suivant dans un fichier texte et enregistrez-le sous `test.ps1` dans le dossier qui contient le projet. Exécutez le script PowerShell en tapant `test.ps1` à l’invite de PowerShell.
 
-Comme le code retourne zéro, le fichier de commandes indique la réussite. Toutefois, si vous modifiez MainReturnValTest.cs pour qu’il retourne une valeur différente de zéro, puis que vous recompilez le programme, l’exécution suivante du script PowerShell indique un échec.
+Comme le code retourne zéro, le fichier de commandes indique la réussite. Toutefois, si vous changez MainReturnValTest.cs de retourner une valeur non nulle, puis de recomposer le programme, l’exécution ultérieure du script de coquille de puissance signalera l’échec.
 
 ```dotnetcli
 dotnet run

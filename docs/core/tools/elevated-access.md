@@ -3,12 +3,12 @@ title: Accès de niveau élevé pour les commandes dotnet
 description: Découvrez les bonnes pratiques concernant les commandes dotnet qui nécessitent un accès de niveau élevé.
 author: wli3
 ms.date: 06/26/2019
-ms.openlocfilehash: 4aff9badfa8ad9b83adc4496d4ebd6df29252e36
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f99e0b257772e0a73d4945f1129997d1d3308ed2
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78156762"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805792"
 ---
 # <a name="elevated-access-for-dotnet-commands"></a>Accès de niveau élevé pour les commandes dotnet
 
@@ -18,6 +18,7 @@ Les commandes suivantes peuvent être exécutées avec des privilèges élevés�
 
 - Commandes `dotnet tool`, comme [dotnet tool install](dotnet-tool-install.md).
 - `dotnet run --no-build`
+- `dotnet-core-uninstall`
 
 Il est déconseillé d’exécuter les autres commandes avec des privilèges élevés. Plus précisément, il est déconseillé d’utiliser des privilèges élevés avec les commandes qui utilisent MSBuild, telles que [dotnet restore](dotnet-restore.md), [dotnet build](dotnet-build.md) et [dotnet run](dotnet-run.md). Le problème le plus courant est celui qui est lié à la gestion des autorisations, lorsqu’un utilisateur passe régulièrement d’un compte racine à un compte restreint, après l’émission de commandes dotnet. Vous pouvez vous rendre compte, qu’en tant qu’utilisateur restreint, que vous ne pouvez pas accéder au fichier créé par un utilisateur racine. Il existe des moyens de résoudre ce problème, mais nous n’avons pas besoin de nous y intéresser tout de suite.
 

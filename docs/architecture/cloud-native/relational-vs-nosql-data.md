@@ -1,16 +1,16 @@
 ---
-title: Données relationnelles par rapport à NoSQL
+title: Modèles d'exploration de données relationnels et données NoSQL
 description: Renseignez-vous sur les données relationnelles et NoSQL dans les applications cloud-native
 author: robvet
 ms.date: 01/22/2020
-ms.openlocfilehash: 04693e30ba3848f1e51f1c69a75be5f18ead4cf1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3fb3dcc3a87e278c05f3e15d261245f4d61453d1
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79141417"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805805"
 ---
-# <a name="relational-vs-nosql-data"></a>Données relationnelles par rapport à NoSQL
+# <a name="relational-vs-nosql-data"></a>Modèles d'exploration de données relationnels et données NoSQL
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -284,5 +284,5 @@ L’une des tâches les plus longues est la migration des données d’une plate
 Le service fournit des recommandations pour vous guider à travers les changements nécessaires pour exécuter une migration, petites ou grandes.
 
 >[!div class="step-by-step"]
->[Suivant précédent](Database-per-microservice.md)
+>[Suivant précédent](database-per-microservice.md)
 >[Next](azure-caching.md)

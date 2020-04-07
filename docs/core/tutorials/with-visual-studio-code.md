@@ -3,12 +3,12 @@ title: Prise en main de C# et Visual Studio Code
 description: Découvrez comment créer et déboguer votre première application .NET Core en C# à l’aide de Visual Studio Code.
 author: kendrahavens
 ms.date: 12/05/2018
-ms.openlocfilehash: 49a1271f2bf74224e189e70bebf0d22c49408e5d
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: 6722b97cee5ca3672c9dddece6e61f4d13de05a9
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80111060"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805811"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Prise en main de C# et Visual Studio Code
 
@@ -34,7 +34,7 @@ Commençons par un programme « Hello World » simple sur .NET Core :
 
 2. Initialiser un projet C# :
 
-    - Ouvrez le terminal intégré à partir du code Visual Studio en sélectionnant **View** > **Integrated Terminal** à partir du menu principal.
+    - Ouvrez le Terminal à partir du code Visual Studio en sélectionnant **View** > **Terminal** à partir du menu principal.
     - Dans la fenêtre de Terminal, tapez `dotnet new console`.
     - Cette commande crée un fichier *Program.cs* dans votre dossier avec un simple "Hello World" programme déjà écrit, avec un fichier de projet C nommé *HelloWorld.csproj*.
 

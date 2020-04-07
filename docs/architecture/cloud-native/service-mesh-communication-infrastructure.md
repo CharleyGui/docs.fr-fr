@@ -3,12 +3,12 @@ title: Infrastructure de communication Service Mesh
 description: Découvrez comment les technologies de maillage de service rationalisent la communication microservice native en nuage
 author: robvet
 ms.date: 03/03/2020
-ms.openlocfilehash: 6b177ef33b804ec35f3acb919539a97683e5a487
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 8bb57e990dbf1baf8c246fe4aacfbb2904a251e6
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523519"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805753"
 ---
 # <a name="service-mesh-communication-infrastructure"></a>Infrastructure de communication Service Mesh
 
@@ -42,7 +42,7 @@ Dans ce chapitre, nous avons discuté des modèles de communication cloud-native
 
 L’accent a été mis sur les services Azure gérés qui peuvent aider à mettre en œuvre la communication dans les systèmes cloud-natifs :
 
-- [Azure Application Gateway](https://docs.microsoft.com/azure/application-gateway/overview)
+- [Passerelle d’application Azure](https://docs.microsoft.com/azure/application-gateway/overview)
 - [Gestion des API Azure](https://azure.microsoft.com/services/api-management/)
 - [Service Azure SignalR](https://azure.microsoft.com/services/signalr-service/)
 - [Files d’attente Stockage Azure](https://docs.microsoft.com/azure/storage/queues/storage-queues-introduction)
@@ -74,4 +74,4 @@ Nous passons ensuite à distribuer des données dans des systèmes cloud-autocht
 
 >[!div class="step-by-step"]
 >[Suivant précédent](grpc.md)
->[Next](Database-per-microservice.md)
+>[Next](database-per-microservice.md)

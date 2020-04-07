@@ -9,24 +9,24 @@ helpviewer_keywords:
 - templates [WPF], ToggleButton
 - parts [WPF], ToggleButton
 ms.assetid: 54f23f30-4bcb-4f09-8ce4-376a13a255a1
-ms.openlocfilehash: a4c449a561017659db7f54fd3cdb8964742650de
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e055dcbd557f9b90eb2fe99ad15a05b6f229fd28
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283675"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805909"
 ---
 # <a name="togglebutton-styles-and-templates"></a>Styles et modèles ToggleButton
 
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Primitives.ToggleButton>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).
+Ce sujet décrit les styles et <xref:System.Windows.Controls.Primitives.ToggleButton> les modèles pour le contrôle. Vous pouvez modifier <xref:System.Windows.Controls.ControlTemplate> la valeur par défaut pour donner au contrôle une apparence unique. Pour plus d’informations, voir [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).
 
-## <a name="togglebutton-parts"></a>Éléments ToggleButton
+## <a name="togglebutton-parts"></a>Pièces ToggleButton
 
-Le contrôle <xref:System.Windows.Controls.Primitives.ToggleButton> n’a pas de parties nommées.
+Le <xref:System.Windows.Controls.Primitives.ToggleButton> contrôle n’a pas de pièces nommées.
 
-## <a name="togglebutton-states"></a>États ToggleButton
+## <a name="togglebutton-states"></a>ToggleButton États
 
-Le tableau suivant répertorie les États visuels du contrôle <xref:System.Windows.Controls.Primitives.ToggleButton>.
+Le tableau suivant répertorie les états visuels pour le <xref:System.Windows.Controls.Primitives.ToggleButton> contrôle.
 
 |Nom VisualState|Nom VisualStateGroup|Description|
 |-|-|-|
@@ -36,19 +36,19 @@ Le tableau suivant répertorie les États visuels du contrôle <xref:System.Wind
 |Désactivé|CommonStates|Le contrôle est désactivé.|
 |Avec focus|FocusStates|Le contrôle a le focus.|
 |Sans focus|FocusStates|Le contrôle n’a pas le focus.|
-|Activé|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> est `true`.|
-|Désactivée|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> est `false`.|
-|Déterminée|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsThreeState%2A> est `true`et <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> est `null`.|
-|Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|
-|InvalidFocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le focus.|
-|InvalidUnfocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le contrôle n’a pas le focus.|
+|Activé|CheckStates (en)|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> a la valeur `true`.|
+|Désactivé|CheckStates (en)|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> a la valeur `false`.|
+|Indéterminé|CheckStates (en)|<xref:System.Windows.Controls.Primitives.ToggleButton.IsThreeState%2A> a la valeur `true` et <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> a la valeur `null`.|
+|Valide|ValidationStates|Le contrôle <xref:System.Windows.Controls.Validation> utilise la <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> classe `false`et la propriété ci-jointe est .|
+|InvalidFocused|ValidationStates|La <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété `true` ci-jointe est et le contrôle a mise au point.|
+|InvalidUnfocused|ValidationStates|La <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété `true` ci-jointe est et le contrôle n’a pas de mise au point.|
 
 > [!NOTE]
-> Si l’état visuel indéterminé n’existe pas dans votre modèle de contrôle, l’état visuel non vérifié sera utilisé comme état visuel par défaut.
+> Si l’état visuel indéterminé n’existe pas dans votre modèle de contrôle, alors l’état visuel non contrôlé sera utilisé comme état visuel par défaut.
 
-## <a name="togglebutton-controltemplate-example"></a>Exemple de ControlTemplate ToggleButton
+## <a name="togglebutton-controltemplate-example"></a>ToggleButton ControlTemplate Exemple
 
-L’exemple suivant montre comment définir une <xref:System.Windows.Controls.ControlTemplate> pour le contrôle <xref:System.Windows.Controls.Primitives.ToggleButton>.
+L’exemple suivant montre <xref:System.Windows.Controls.ControlTemplate> comment <xref:System.Windows.Controls.Primitives.ToggleButton> définir un pour le contrôle.
 
 [!code-xaml[ControlTemplateExamples#ToggleButton](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/combobox.xaml#togglebutton)]
 

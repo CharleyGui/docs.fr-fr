@@ -2,12 +2,12 @@
 title: S’abonner à des événements
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre les détails de la publication et de l’abonnement à des événements d’intégration.
 ms.date: 01/30/2020
-ms.openlocfilehash: 3bfcdb1766a15b1a8e8deab46055f14e1791c2cc
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 7e78970933fdad27d2be74e7d498b0797fc09bc0
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523593"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805496"
 ---
 # <a name="subscribing-to-events"></a>S’abonner à des événements
 
@@ -15,7 +15,7 @@ Pour utiliser Service Bus, vous devez d’abord abonner les microservices aux é
 
 L’exemple de code suivant montre ce que chaque microservice récepteur doit implémenter au démarrage du service (dans la classe `Startup`) pour s’abonner aux événements dont il a besoin. Dans ce cas, le microservice `basket-api` doit s’abonner à `ProductPriceChangedIntegrationEvent` et aux messages `OrderStartedIntegrationEvent`.
 
-Par exemple, lorsqu’il s’abonne à l’événement `ProductPriceChangedIntegrationEvent`, le microservice de panier d’achat est informé du changement de prix d’un produit et avertit l’utilisateur de ce changement si ce produit se trouve dans son panier.
+Par exemple, lors de l’abonnement à l’événement, `ProductPriceChangedIntegrationEvent` qui rend le microservice panier conscient de toute modification du prix du produit et lui permet d’avertir l’utilisateur au sujet de la modification si ce produit est dans le panier de l’utilisateur.
 
 ```csharp
 var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
@@ -56,7 +56,7 @@ public class CatalogController : ControllerBase
 }
 ```
 
-Ensuite, utilisez-le à partir des méthodes de votre contrôleur, comme dans la méthode UpdateProduct :
+Ensuite, vous l’utilisez à partir des méthodes de votre contrôleur, comme dans la méthode UpdateProduct:
 
 ```csharp
 [Route("items")]
@@ -95,9 +95,9 @@ Quand vous publiez des événements d’intégration par le biais d’un systèm
 
 Pour résumer, vous utilisez des microservices pour créer des systèmes évolutifs et hautement disponibles. Pour simplifier quelque peu, le théorème CAP dit qu’il n’est pas possible de générer une base de données (distribuée) (ou un microservice propriétaire de son modèle) qui soit continuellement disponible, fortement cohérente *et* tolérante à toutes les partitions. Vous ne pouvez avoir que deux de ces propriétés à la fois.
 
-Dans les architectures basées sur les microservices, vous devez choisir la disponibilité et la tolérance, et donner moins d’importance à la cohérence. Par conséquent, dans les applications de microservice les plus récentes, il n’est généralement pas souhaitable d’utiliser des transactions distribuées pour la messagerie, comme vous le feriez pour implémenter des [transactions distribuées](https://docs.microsoft.com/previous-versions/windows/desktop/ms681205(v=vs.85)) DTC avec [MSMQ](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx).
+Dans les architectures basées sur les microservices, vous devez choisir la disponibilité et la tolérance, et vous devez désaccentuer une forte cohérence. Par conséquent, dans les applications de microservice les plus récentes, il n’est généralement pas souhaitable d’utiliser des transactions distribuées pour la messagerie, comme vous le feriez pour implémenter des [transactions distribuées](https://docs.microsoft.com/previous-versions/windows/desktop/ms681205(v=vs.85)) DTC avec [MSMQ](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx).
 
-Revenons au problème de départ et à son exemple. Si le service tombe en panne après la mise à jour de la base de données (dans ce cas, juste après la ligne de code avec \_context.SaveChangesAsync()), mais avant la publication de l’événement d’intégration, l’ensemble du système risque de devenir incohérent. Cela peut être critique pour l’entreprise, selon le type d’opération.
+Revenons à la question initiale et à son exemple. Si le service s’écrase après la mise à jour de `_context.SaveChangesAsync()`la base de données (dans ce cas, juste après la ligne de code avec), mais avant la publication de l’événement d’intégration, le système global pourrait devenir incohérent. Cela peut être critique pour l’entreprise, selon le type d’opération.
 
 Comme déjà mentionné dans la section relative à l’architecture, plusieurs méthodes permettent de traiter ce problème :
 
@@ -109,15 +109,15 @@ Comme déjà mentionné dans la section relative à l’architecture, plusieurs 
 
 Pour ce scénario, l’utilisation du modèle d’approvisionnement en événements est l’une des meilleures approches, sinon *la* meilleure. Toutefois, dans de nombreux scénarios d’application, vous ne pourrez pas implémenter un système d’approvisionnement en événements complet. Avec l’approvisionnement en événements, vous stockez uniquement des événements de domaine dans votre base de données transactionnelle, au lieu de stocker les données de l’état actuel. Le fait de stocker uniquement les événements de domaine comporte des avantages, tels que la disponibilité de l’historique de votre système et la capacité à déterminer l’état antérieur de votre système. Toutefois, l’implémentation d’un système d’approvisionnement en événements complet nécessite la modification d’une grande partie de l’architecture de votre système, et ajoute de nombreuses exigences et davantage de complexité. Par exemple, vous pouvez utiliser une base de données créée spécialement pour l’approvisionnement en événements, telle qu’un [magasin d’événements](https://eventstore.org/), ou une base de données orientée documents, telle qu’Azure Cosmos DB, MongoDB, Cassandra, CouchDB ou RavenDB. L’approvisionnement en événements est une excellente approche pour ce problème, mais ce n’est pas la plus simple, sauf si vous êtes déjà familiarisé avec l’approvisionnement en événements.
 
-L’exploration du journal des transactions peut paraître simple au premier abord. Toutefois, pour cette méthode, vous devez associer le microservice à votre journal des transactions SGBDR, comme par exemple le journal des transactions SQL Server. Toutefois, cela n’est pas souhaitable. Un autre inconvénient à cela est que les mises à jour de bas niveau enregistrées dans le journal des transactions peuvent ne pas être au même niveau que les événements d’intégration de haut niveau. Si c’est le cas, il peut être difficile d’effectuer une rétroconception sur les opérations du journal des transactions.
+L’option d’utiliser l’extraction de journaux de transaction semble d’abord transparente. Toutefois, pour cette méthode, vous devez associer le microservice à votre journal des transactions SGBDR, comme par exemple le journal des transactions SQL Server. Toutefois, cela n’est pas souhaitable. Un autre inconvénient à cela est que les mises à jour de bas niveau enregistrées dans le journal des transactions peuvent ne pas être au même niveau que les événements d’intégration de haut niveau. Si c’est le cas, il peut être difficile d’effectuer une rétroconception sur les opérations du journal des transactions.
 
-La meilleure approche consiste à combiner une table de base de données transactionnelle et un modèle simplifié d’approvisionnement en événements. Vous pouvez utiliser un état du type « prêt à publier l’événement », que vous définissez dans l’événement d’origine lorsque vous le validez dans la table d’événements d’intégration. Ensuite, vous essayez de publier l’événement dans le bus d’événements. Si l’action de publication de l’événement réussit, démarrez une autre transaction dans le service d’origine, puis remplacez l’état « prêt à publier l’événement » par l’état « événement déjà publié ».
+La meilleure approche consiste à combiner une table de base de données transactionnelle et un modèle simplifié d’approvisionnement en événements. Vous pouvez utiliser un état tel que « prêt à publier l’événement », que vous définissez dans l’événement original lorsque vous l’engagez à la table des événements d’intégration. Ensuite, vous essayez de publier l’événement dans le bus d’événements. Si l’action de publication-événement réussit, vous démarrez une autre transaction dans le service d’origine et déplacez l’état de « prêt à publier l’événement » à « événement déjà publié ».
 
-Si l’action de publication de l’événement échoue dans le bus d’événements, les données ne seront toujours pas incohérentes dans le microservice d’origine. Elles continueront d’être signalées comme étant « prêtes à publier l’événement », et par rapport aux autres services, elles seront cohérentes à terme. Vous pouvez toujours avoir des tâches en arrière-plan qui vérifient l’état des transactions ou des événements d’intégration. Si la tâche détecte un événement avec l’état « prêt à publier l’événement », elle peut tenter de republier cet événement dans le bus d’événements.
+Si l’action de publication dans l’autobus de l’événement échoue, les données ne seront toujours pas incompatibles dans le microservice d’origine — elles sont toujours marquées comme étant « prêtes à publier l’événement », et en ce qui concerne le reste des services, elles finiront par être cohérentes. Vous pouvez toujours avoir des tâches en arrière-plan qui vérifient l’état des transactions ou des événements d’intégration. Si le travail trouve un événement dans l’état « prêt à publier l’événement », il peut essayer de rééditer cet événement à l’autobus de l’événement.
 
 Notez qu’avec cette approche, vous conservez uniquement les événements d’intégration de chaque microservice d’origine, et uniquement les événements que vous souhaitez communiquer aux autres microservices ou systèmes externes. En revanche, dans un système d’approvisionnement en événements complet, tous les événements de domaine sont également stockés.
 
-Par conséquent, cette approche mixte n’est autre qu’un système simplifié d’approvisionnement en événements. Vous avez besoin de la liste des événements d’intégration avec leur état actuel (« prêt pour la publication » ou« publié »). Toutefois, vous avez uniquement besoin d’implémenter ces états pour les événements d’intégration. En outre, avec cette approche, il n’est pas nécessaire de stocker toutes les données de votre domaine comme des événements dans la base de données transactionnelle, comme vous le feriez dans un système d’approvisionnement en événements complet.
+Par conséquent, cette approche mixte n’est autre qu’un système simplifié d’approvisionnement en événements. Vous avez besoin d’une liste d’événements d’intégration avec leur état actuel ("prêt à publier" par opposition à "publié"). Toutefois, vous avez uniquement besoin d’implémenter ces états pour les événements d’intégration. En outre, avec cette approche, il n’est pas nécessaire de stocker toutes les données de votre domaine comme des événements dans la base de données transactionnelle, comme vous le feriez dans un système d’approvisionnement en événements complet.
 
 Si vous utilisez déjà une base de données relationnelle, vous pouvez utiliser une table transactionnelle pour stocker les événements d’intégration. Pour obtenir l’atomicité de votre application, vous devez utiliser un processus en deux étapes basé sur les transactions locales. Pour résumer, une table IntegrationEvent doit se trouver dans la même base de données que vos entités de domaine. Cette table fonctionne comme une garantie d’obtention de l’atomicité, et vous permet d’inclure les événements d’intégration persistants dans les transactions qui valident vos données de domaine.
 
@@ -157,9 +157,9 @@ Par souci de simplicité, l’exemple eShopOnContainers utilise la première app
 
 Le code suivant montre comment vous pouvez créer une transaction impliquant plusieurs objets DbContext : un contexte lié aux données d’origine mises à jour, et le deuxième contexte lié à la table IntegrationEventLog.
 
-Notez que la transaction de l’exemple de code ci-dessous ne sera pas résiliente si les connexions à la base de données rencontrent un problème lorsque le code est exécuté. Cela peut se produire dans les systèmes cloud comme Azure SQL DB, qui sont susceptibles de déplacer des bases de données d’un serveur à un autre. Pour implémenter des transactions résilientes dans plusieurs contextes, consultez la section [Implémentation de connexions SQL à Entity Framework Core résilientes](../implement-resilient-applications/implement-resilient-entity-framework-core-sql-connections.md) plus loin dans ce guide.
+La transaction dans le code de l’exemple ci-dessous ne sera pas résiliente si les connexions à la base de données ont un problème au moment où le code est en cours d’exécution. Cela peut se produire dans les systèmes cloud comme Azure SQL DB, qui sont susceptibles de déplacer des bases de données d’un serveur à un autre. Pour implémenter des transactions résilientes dans plusieurs contextes, consultez la section [Implémentation de connexions SQL à Entity Framework Core résilientes](../implement-resilient-applications/implement-resilient-entity-framework-core-sql-connections.md) plus loin dans ce guide.
 
-Pour plus de clarté, l’exemple suivant montre l’ensemble du processus dans un même bloc de code. En réalité, l’implémentation d’eShopOnContainers est refactorisée, et la logique est fractionnée en plusieurs classes, pour faciliter sa gestion.
+Pour plus de clarté, l’exemple suivant montre l’ensemble du processus dans un même bloc de code. Cependant, la mise en œuvre eShopOnContainers est refactored et divise cette logique en plusieurs classes de sorte qu’il est plus facile à maintenir.
 
 ```csharp
 // Update Product from the Catalog microservice
@@ -285,7 +285,7 @@ Le gestionnaire d’événements doit vérifier si le produit se trouve dans une
 
 ## <a name="idempotency-in-update-message-events"></a>Idempotence des événements de mise à jour des messages
 
-Un aspect important des événements de mise à jour des messages est qu’une défaillance se produisant à n’importe quel moment de la communication doit entraîner une nouvelle tentative de publication du message. Sinon, une tâche en arrière-plan pourrait tenter de publier un événement qui a déjà été publié, ce qui aurait pour effet de créer une condition de concurrence. Vous devez faire en sorte que les mises à jour soient idempotentes ou qu’elles fournissent suffisamment d’informations pour que vous puissiez détecter le doublon, le supprimer et renvoyer une seule réponse.
+Un aspect important des événements de mise à jour des messages est qu’une défaillance se produisant à n’importe quel moment de la communication doit entraîner une nouvelle tentative de publication du message. Sinon, une tâche en arrière-plan pourrait tenter de publier un événement qui a déjà été publié, ce qui aurait pour effet de créer une condition de concurrence. Assurez-vous que les mises à jour sont soit idempotent ou qu’elles fournissent suffisamment d’informations pour vous assurer que vous pouvez détecter un double, le jeter et renvoyer une seule réponse.
 
 Comme indiqué précédemment, l’idempotence signifie qu’une opération peut être effectuée plusieurs fois sans que le résultat soit modifié. Dans un environnement de messagerie, comme lorsque vous communiquez des événements, un événement est idempotent s’il peut être remis plusieurs fois sans modifier le résultat pour le microservice récepteur. Cela peut être nécessaire en raison de la nature de l’événement, ou en raison de la façon dont le système gère l’événement. L’idempotence des messages est importante dans les applications qui utilisent la messagerie, et pas seulement dans les applications qui implémentent le modèle de bus d’événements.
 
@@ -293,7 +293,7 @@ Un exemple d’opération idempotente est une instruction SQL qui insère des do
 
 Il est possible de concevoir des messages idempotents. Par exemple, vous pouvez créer un événement indiquant « fixer le prix du produit à 25 $ » au lieu de « ajouter 5 $ au prix du produit ». Vous pouvez traiter le premier message autant de fois que vous voulez, le résultat sera le même. Cependant, ce n’est pas vrai pour le deuxième message. Mais même dans le premier cas, il n’est pas forcément souhaitable de traiter le premier événement, car le système peut avoir envoyé un événement de changement de prix plus récent et vous écraseriez ainsi le nouveau prix.
 
-Un autre exemple peut être un événement de commande terminée propagé vers plusieurs abonnés. Il est important que les informations de commande ne soient mises à jour qu’une seule fois dans les autres systèmes, même s’il existe des événements de message en double pour le même événement de commande terminée.
+Un autre exemple peut être un événement de commande terminée propagé vers plusieurs abonnés. Il est important que les informations de commande ne soient mises à jour dans d’autres systèmes qu’une seule fois, même s’il y a des événements de messages dupliqués pour le même événement complété par commande.
 
 Il peut être utile d’attribuer une identité à chaque événement, pour que vous puissiez créer une logique selon laquelle un événement ne doit être traité qu’une seule fois pour chaque récepteur.
 
@@ -306,19 +306,19 @@ Le traitement des messages est fondamentalement idempotent. Par exemple, si un s
 
 ## <a name="deduplicating-integration-event-messages"></a>Déduplication des messages d’événements d’intégration
 
-Vous pouvez faire en sorte que les événements de message ne soient envoyés et traités qu’une seule une fois par abonné à différents niveaux. L’une des méthodes possibles consiste à utiliser la fonctionnalité de déduplication proposée par l’infrastructure de messagerie que vous utilisez. Une autre consiste à implémenter une logique personnalisée dans votre microservice de destination. La meilleure solution est d’avoir des validations à la fois au niveau du transport et au niveau de l’application.
+Vous pouvez vous assurer que les événements de message sont envoyés et traités qu’une seule fois par abonné à différents niveaux. L’une des méthodes possibles consiste à utiliser la fonctionnalité de déduplication proposée par l’infrastructure de messagerie que vous utilisez. Une autre consiste à implémenter une logique personnalisée dans votre microservice de destination. La meilleure solution est d’avoir des validations à la fois au niveau du transport et au niveau de l’application.
 
 ### <a name="deduplicating-message-events-at-the-eventhandler-level"></a>Déduplication d’événements de message au niveau d’EventHandler
 
-Un moyen de s’assurer qu’un événement n’est traité qu’une seule fois par un récepteur est d’implémenter une logique spécifique lors du traitement des événements de message dans les gestionnaires d’événements. Il s’agit de l’approche utilisée dans l’application eShopOnContainers, comme vous pouvez le voir dans le [code source de la classe UserCheckoutAcceptedIntegrationEventHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) lors de la réception d’un événement d’intégration UserCheckoutAcceptedIntegrationEvent. (Dans le cas présent, nous wrappons la classe CreateOrderCommand avec un IdentifiedCommand, en utilisant eventMsg.RequestId comme identificateur, avant de l’envoyer au gestionnaire de commandes).
+Une façon de s’assurer qu’un événement n’est traité qu’une seule fois par un récepteur est de mettre en œuvre une certaine logique lors du traitement des événements de message dans les gestionnaires d’événements. Il s’agit de l’approche utilisée dans l’application eShopOnContainers, comme vous pouvez le voir dans le [code source de la classe UserCheckoutAcceptedIntegrationEventHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) lors de la réception d’un événement d’intégration UserCheckoutAcceptedIntegrationEvent. (Dans le cas présent, nous wrappons la classe CreateOrderCommand avec un IdentifiedCommand, en utilisant eventMsg.RequestId comme identificateur, avant de l’envoyer au gestionnaire de commandes).
 
 ### <a name="deduplicating-messages-when-using-rabbitmq"></a>Déduplication de messages lors de l’utilisation de RabbitMQ
 
 Lorsque des défaillances intermittentes du réseau se produisent, des messages peuvent être dupliqués et le récepteur des messages doit être prêt à gérer cette déduplication. Si possible, les récepteurs doivent gérer les messages de manière idempotente, ce qui est mieux que de les gérer explicitement avec la déduplication.
 
-Conformément à la [documentation RabbitMQ](https://www.rabbitmq.com/reliability.html#consumer), si un message est remis à un utilisateur, puis est replacé dans la file d’attente (parce qu’il n’a pas été accepté avant la perte de la connexion de l’utilisateur, par exemple), RabbitMQ lui associe l’indicateur de redistribution lorsqu’il est remis à nouveau (au même utilisateur ou à un autre).
+Selon la [documentation RabbitMQ](https://www.rabbitmq.com/reliability.html#consumer), « Si un message est livré à un consommateur, puis requeued (parce qu’il n’a pas été reconnu avant que la connexion du consommateur a chuté, par exemple), alors RabbitMQ mettra le drapeau redelivered sur elle quand il est livré à nouveau (que ce soit au même consommateur ou un autre).
 
-Si l’indicateur de redistribution est défini, le récepteur doit en tenir compte, car le message peut déjà avoir été traité. Toutefois, cela n’est pas garanti. Le message peut ne jamais avoir atteint le récepteur après avoir quitté le répartiteur de messages, peut-être en raison de problèmes de réseau. En revanche, si l’indicateur de redistribution n’est pas défini, il est garanti que le message n’a pas été envoyé plusieurs fois. Par conséquent, le récepteur doit dédupliquer les messages ou les traiter de manière idempotente uniquement si l’indicateur de redistribution est défini dans le message.
+Si le drapeau "redelivered" est défini, le récepteur doit en tenir compte, car le message a peut-être déjà été traité. Toutefois, cela n’est pas garanti. Le message peut ne jamais avoir atteint le récepteur après avoir quitté le répartiteur de messages, peut-être en raison de problèmes de réseau. D’autre part, si le drapeau "redelivered" n’est pas fixé, il est garanti que le message n’a pas été envoyé plus d’une fois. Par conséquent, le récepteur doit déduplicer des messages ou traiter des messages d’une manière idempotente que si le drapeau "redelivered" est placé dans le message.
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 

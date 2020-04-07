@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: 828543b95ed82f465c92212748c6250b7fc84051
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 9feca97b141b08d418f6833374cbe3c7a0c26d66
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249381"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805772"
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Introduction à la langue C et au cadre .NET
 
@@ -22,7 +22,7 @@ C# est un langage élégant et de type sécurisé orienté objet qui permet aux 
   
 ## <a name="c-language"></a>langage C#
 
-La syntaxe C# est très expressive, mais elle est également simple et facile à apprendre. La syntaxe bouclée de Cmd sera immédiatement reconnaissable à toute personne familière avec C, C OU Java. Les développeurs qui connaissent un de ces langages peuvent généralement commencer à travailler efficacement en C# en très peu de temps. La syntaxe C simplifie bon nombre des complexités de la Cmd et fournit des caractéristiques puissantes telles que les types nuls, les énumérations, les délégués, les expressions lambda et l’accès direct à la mémoire. C# prend en charge des méthodes et types génériques qui fournissent de meilleures performances et plus de sécurité pour les types, et des itérateurs, qui permettent aux implémenteurs de classes de collection de définir des comportements d’itération personnalisés qui peuvent être utilisés facilement par le code client. Les expressions de requêtes intégrées par la langue (LINQ) font de la requête fortement tapée une construction linguistique de première classe.  
+La syntaxe C# est très expressive, mais elle est également simple et facile à apprendre. La syntaxe bouclée de Cmd sera immédiatement reconnaissable à toute personne familière avec C, C OU Java. Les développeurs qui connaissent l’une de ces langues sont généralement en mesure de commencer à travailler de manière productive en C ' dans un court laps de temps. La syntaxe C simplifie bon nombre des complexités de la Cmd et fournit des caractéristiques puissantes telles que les types nuls, les énumérations, les délégués, les expressions lambda et l’accès direct à la mémoire. C# prend en charge des méthodes et types génériques qui fournissent de meilleures performances et plus de sécurité pour les types, et des itérateurs, qui permettent aux implémenteurs de classes de collection de définir des comportements d’itération personnalisés qui peuvent être utilisés facilement par le code client. Les expressions de requêtes intégrées par la langue (LINQ) font de la requête fortement tapée une construction linguistique de première classe.  
   
  En tant que langage orienté objet, C# prend en charge les concepts d’encapsulation, d’héritage et de polymorphisme. Toutes les variables et méthodes, y compris la méthode `Main`, le point d’entrée de l’application, sont encapsulées dans des définitions de classe. Une classe peut hériter directement d'une classe parent, mais peut implémenter un nombre quelconque d'interfaces. Les méthodes qui substituent des méthodes virtuelles dans une classe parente requièrent le mot-clé `override` pour éviter toute redéfinition accidentelle. En C#, un struct est comme une classe légère : il s’agit d’un type alloué par la pile qui peut implémenter des interfaces mais ne prend pas en charge l’héritage.  
   
@@ -60,7 +60,7 @@ La syntaxe C# est très expressive, mais elle est également simple et facile à
   
  ![Du code source C# à l'exécution machine](./media/introduction-to-the-csharp-language-and-the-net-framework/net-architecture-relationships.png)  
   
- L’interopérabilité des langages est une fonctionnalité essentielle du .NET Framework. Étant donné que le code de langage intermédiaire produit par le compilateur C# est conforme à la spécification de type commun (CTS), le code de langage intermédiaire généré à partir de C# peut interagir avec du code qui a été généré à partir des versions .NET de Visual Basic, Visual C++ ou un des plus de 20 autres langages compatibles CTS. Un seul assembly peut contenir plusieurs modules écrits dans différents langages .NET, et les types peuvent se référencent mutuellement comme s’ils avaient été écrits dans la même langue.  
+ L’interopérabilité des langages est une fonctionnalité essentielle du .NET Framework. Étant donné que le code de langage intermédiaire produit par le compilateur C# est conforme à la spécification de type commun (CTS), le code de langage intermédiaire généré à partir de C# peut interagir avec du code qui a été généré à partir des versions .NET de Visual Basic, Visual C++ ou un des plus de 20 autres langages compatibles CTS. Un seul assemblage peut contenir plusieurs modules écrits dans différentes langues .NET, et les types peuvent se référer les uns les autres comme s’ils étaient écrits dans la même langue.  
   
  Outre les services de runtime, le .NET Framework inclut également une bibliothèque étendue de plus de 4 000 classes organisées en espaces de noms qui fournissent une grande variété de fonctionnalités utiles pour tous les éléments allant de l’entrée et la sortie de fichiers pour la manipulation de chaînes à l’analyse de XML, en passant par les contrôles Windows Forms. Une application C# standard utilise la bibliothèque de classes du .NET Framework de façon intensive pour gérer les tâches fastidieuses.  
   
