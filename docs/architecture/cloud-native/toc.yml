@@ -44,10 +44,8 @@
         - name: Infrastructure de communication Service Mesh
           href: service-mesh-communication-infrastructure.md
     - name: Données distribuées
-      href: null
+      href: database-per-microservice.md
       items:
-        - name: Base de données par microservice
-          href: database-per-microservice.md
         - name: Modèles d'exploration de données relationnels et données NoSQL
           href: relational-vs-nosql-data.md
         - name: Mise en cache dans une application cloud native
