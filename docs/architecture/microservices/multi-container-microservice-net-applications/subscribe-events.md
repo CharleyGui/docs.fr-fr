@@ -2,12 +2,12 @@
 title: S’abonner à des événements
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre les détails de la publication et de l’abonnement à des événements d’intégration.
 ms.date: 01/30/2020
-ms.openlocfilehash: 7e78970933fdad27d2be74e7d498b0797fc09bc0
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: 426dcebe175e9db9a02bcdb2f21ad039154a7bda
+ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805496"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80888213"
 ---
 # <a name="subscribing-to-events"></a>S’abonner à des événements
 
@@ -93,7 +93,7 @@ Dans les microservices plus avancés, comme avec l’approche CQRS, vous pouvez 
 
 Quand vous publiez des événements d’intégration par le biais d’un système de messagerie distribuée comme votre bus d’événements, vous être confronté au problème de mettre à jour la base de données d’origine et de publier un événement de manière atomique (autrement dit, les deux opérations se terminent ou aucune des deux ne se termine). Par exemple, dans l’exemple simplifié précédent, le code valide les données dans la base de données lorsque le prix du produit est modifié, puis il publie un message ProductPriceChangedIntegrationEvent. Au début, il peut paraître essentiel que ces deux opérations soient effectuées de manière atomique. Toutefois, si vous utilisez une transaction distribuée impliquant la base de données et le répartiteur de messages, comme vous le feriez sur les anciens systèmes tels que [Microsoft Message Queuing (MSMQ)](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx), cette méthode n’est pas recommandée pour les raisons énoncées par le [théorème CAP](https://www.quora.com/What-Is-CAP-Theorem-1).
 
-Pour résumer, vous utilisez des microservices pour créer des systèmes évolutifs et hautement disponibles. Pour simplifier quelque peu, le théorème CAP dit qu’il n’est pas possible de générer une base de données (distribuée) (ou un microservice propriétaire de son modèle) qui soit continuellement disponible, fortement cohérente *et* tolérante à toutes les partitions. Vous ne pouvez avoir que deux de ces propriétés à la fois.
+Pour résumer, vous utilisez des microservices pour créer des systèmes évolutifs et hautement disponibles. Simplifiant quelque peu, le théorème de la PAC dit que vous ne pouvez pas construire une base de données (distribuée) (ou un microservice qui possède son modèle) qui est continuellement disponible, fortement cohérente *et* tolérante à toute partition. Vous ne pouvez avoir que deux de ces propriétés à la fois.
 
 Dans les architectures basées sur les microservices, vous devez choisir la disponibilité et la tolérance, et vous devez désaccentuer une forte cohérence. Par conséquent, dans les applications de microservice les plus récentes, il n’est généralement pas souhaitable d’utiliser des transactions distribuées pour la messagerie, comme vous le feriez pour implémenter des [transactions distribuées](https://docs.microsoft.com/previous-versions/windows/desktop/ms681205(v=vs.85)) DTC avec [MSMQ](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx).
 
@@ -151,7 +151,7 @@ Pour la deuxième approche, vous devez utiliser la table EventLog comme une file
 
 **Figure 6-23.** Atomicité lors de la publication d’événements dans le bus d’événements avec un microservice de worker
 
-Par souci de simplicité, l’exemple eShopOnContainers utilise la première approche (sans processus ou microservices de vérification supplémentaires), ainsi que le bus d’événements. Toutefois, l’exemple eShopOnContainers ne gère pas tous les cas de défaillance. Dans une application réelle déployée dans le cloud, vous devez accepter le fait que des problèmes surviendront un jour ou l’autre. Il est donc nécessaire d’implémenter cette logique de vérification et de renvoi. L’utilisation de la table comme une file d’attente peut se révéler plus efficace que la première approche si cette table est la seule source d’événements quand vous les publiez (avec le worker) à l’aide du bus d’événements.
+Par souci de simplicité, l’exemple eShopOnContainers utilise la première approche (sans processus ou microservices de vérification supplémentaires), ainsi que le bus d’événements. Toutefois, l’échantillon eShopOnContainers ne traite pas tous les cas d’échec possibles. Dans une application réelle déployée dans le cloud, vous devez accepter le fait que des problèmes surviendront un jour ou l’autre. Il est donc nécessaire d’implémenter cette logique de vérification et de renvoi. L’utilisation de la table comme une file d’attente peut se révéler plus efficace que la première approche si cette table est la seule source d’événements quand vous les publiez (avec le worker) à l’aide du bus d’événements.
 
 ### <a name="implementing-atomicity-when-publishing-integration-events-through-the-event-bus"></a>Implémentation de l’atomicité lors de la publication d’événements d’intégration via le bus d’événements
 
@@ -293,7 +293,7 @@ Un exemple d’opération idempotente est une instruction SQL qui insère des do
 
 Il est possible de concevoir des messages idempotents. Par exemple, vous pouvez créer un événement indiquant « fixer le prix du produit à 25 $ » au lieu de « ajouter 5 $ au prix du produit ». Vous pouvez traiter le premier message autant de fois que vous voulez, le résultat sera le même. Cependant, ce n’est pas vrai pour le deuxième message. Mais même dans le premier cas, il n’est pas forcément souhaitable de traiter le premier événement, car le système peut avoir envoyé un événement de changement de prix plus récent et vous écraseriez ainsi le nouveau prix.
 
-Un autre exemple peut être un événement de commande terminée propagé vers plusieurs abonnés. Il est important que les informations de commande ne soient mises à jour dans d’autres systèmes qu’une seule fois, même s’il y a des événements de messages dupliqués pour le même événement complété par commande.
+Un autre exemple pourrait être un événement complété par une commande qui est propagé à plusieurs abonnés. L’application doit s’assurer que les informations de commande ne sont mises à jour dans d’autres systèmes qu’une seule fois, même s’il y a des événements de messages dupliqués pour le même événement complété par commande.
 
 Il peut être utile d’attribuer une identité à chaque événement, pour que vous puissiez créer une logique selon laquelle un événement ne doit être traité qu’une seule fois pour chaque récepteur.
 
@@ -310,7 +310,7 @@ Vous pouvez vous assurer que les événements de message sont envoyés et trait�
 
 ### <a name="deduplicating-message-events-at-the-eventhandler-level"></a>Déduplication d’événements de message au niveau d’EventHandler
 
-Une façon de s’assurer qu’un événement n’est traité qu’une seule fois par un récepteur est de mettre en œuvre une certaine logique lors du traitement des événements de message dans les gestionnaires d’événements. Il s’agit de l’approche utilisée dans l’application eShopOnContainers, comme vous pouvez le voir dans le [code source de la classe UserCheckoutAcceptedIntegrationEventHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) lors de la réception d’un événement d’intégration UserCheckoutAcceptedIntegrationEvent. (Dans le cas présent, nous wrappons la classe CreateOrderCommand avec un IdentifiedCommand, en utilisant eventMsg.RequestId comme identificateur, avant de l’envoyer au gestionnaire de commandes).
+Une façon de s’assurer qu’un événement n’est traité qu’une seule fois par un récepteur est de mettre en œuvre une certaine logique lors du traitement des événements de message dans les gestionnaires d’événements. Par exemple, c’est l’approche utilisée dans l’application eShopOnContainers, comme vous pouvez le voir dans le [code source de la classe UserCheckoutAcceptedIntegrationEventHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) lorsqu’elle reçoit un événement d’intégration. `UserCheckoutAcceptedIntegrationEvent` (Dans ce cas, le `CreateOrderCommand` `IdentifiedCommand`est enveloppé `eventMsg.RequestId` d’un , en utilisant l’identifiant, avant de l’envoyer au gestionnaire de commande).
 
 ### <a name="deduplicating-messages-when-using-rabbitmq"></a>Déduplication de messages lors de l’utilisation de RabbitMQ
 

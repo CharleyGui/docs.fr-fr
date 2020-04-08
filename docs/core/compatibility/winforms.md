@@ -2,12 +2,12 @@
 title: Formulaires Windows brisant les changements
 description: Répertorie les modifications de rupture dans les formulaires Windows pour .NET Core.
 ms.date: 01/08/2020
-ms.openlocfilehash: 7fba78382d011bc9d489924fa185a44e598c5a76
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 25c568a8a0092a9c4874419c64c7dcebea4dce9e
+ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399097"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80888116"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Briser les changements dans les formulaires Windows
 
@@ -15,21 +15,30 @@ Windows Forms support a été ajouté à .NET Core dans la version 3.0. Cet arti
 
 Les modifications de rupture suivantes sont documentées sur cette page :
 
-- [Contrôles supprimés](#removed-controls)
-- [CellFormatting événement non soulevé si tooltip est montré](#cellformatting-event-not-raised-if-tooltip-is-shown)
-- [Control.DefaultFont changé en Segoe UI 9 pt](#default-control-font-changed-to-segoe-ui-9-pt)
-- [Modernisation du FolderBrowserDialog](#modernization-of-the-folderbrowserdialog)
-- [SerializableAttribute supprimé de certains types de formulaires Windows](#serializableattribute-removed-from-some-windows-forms-types)
-- [Commutateur de compatibilité AllowUpdateChildControlIndexForTabControls non pris en charge](#allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported)
-- [DomainUpDown.UseLegacyScrolling commutation compatibilité non pris en charge](#domainupdownuselegacyscrolling-compatibility-switch-not-supported)
-- [DoNotLoadLatestRichEditControl commutateur de compatibilité non pris en charge](#donotloadlatestricheditcontrol-compatibility-switch-not-supported)
-- [Commutateur de compatibilité DoNotSupportSelectAllShortcutInMultilineTextBox non pris en charge](#donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported)
-- [Commutateur de compatibilité DontSupportReentrantFilterMessage non pris en charge](#dontsupportreentrantfiltermessage-compatibility-switch-not-supported)
-- [Commutateur de compatibilité EnableVisualStyleValidation non pris en charge](#enablevisualstylevalidation-compatibility-switch-not-supported)
-- [UtiliserLegacyContextMenuStripSourceControlValue commutateur de compatibilité non pris en charge](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported)
-- [Commutateur de compatibilité UseLegacyImages non pris en charge](#uselegacyimages-compatibility-switch-not-supported)
-- [Changement d’accès pour AccessibleObject.RuntimeIDFirstItem](#change-of-access-for-accessibleobjectruntimeidfirstitem)
-- [API dupliquée supprimée des formulaires Windows](#duplicated-apis-removed-from-windows-forms)
+| Modification avec rupture | Version introduite |
+| - | :-: |
+| [WinForms API maintenant jeter ArgumentNullException](#winforms-apis-now-throw-argumentnullexception) | 5.0 |
+| [Contrôles supprimés](#removed-controls) | 3.1 |
+| [CellFormatting événement non soulevé si tooltip est montré](#cellformatting-event-not-raised-if-tooltip-is-shown) | 3.1 |
+| [Control.DefaultFont changé en Segoe UI 9 pt](#default-control-font-changed-to-segoe-ui-9-pt) | 3.0 |
+| [Modernisation du FolderBrowserDialog](#modernization-of-the-folderbrowserdialog) | 3.0 |
+| [SerializableAttribute supprimé de certains types de formulaires Windows](#serializableattribute-removed-from-some-windows-forms-types) | 3.0 |
+| [Commutateur de compatibilité AllowUpdateChildControlIndexForTabControls non pris en charge](#allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported) | 3.0 |
+| [DomainUpDown.UseLegacyScrolling commutation compatibilité non pris en charge](#domainupdownuselegacyscrolling-compatibility-switch-not-supported) | 3.0 |
+| [DoNotLoadLatestRichEditControl commutateur de compatibilité non pris en charge](#donotloadlatestricheditcontrol-compatibility-switch-not-supported) | 3.0 |
+| [Commutateur de compatibilité DoNotSupportSelectAllShortcutInMultilineTextBox non pris en charge](#donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported) | 3.0 |
+| [Commutateur de compatibilité DontSupportReentrantFilterMessage non pris en charge](#dontsupportreentrantfiltermessage-compatibility-switch-not-supported) | 3.0 |
+| [Commutateur de compatibilité EnableVisualStyleValidation non pris en charge](#enablevisualstylevalidation-compatibility-switch-not-supported) | 3.0 |
+| [UtiliserLegacyContextMenuStripSourceControlValue commutateur de compatibilité non pris en charge](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported) | 3.0 |
+| [Commutateur de compatibilité UseLegacyImages non pris en charge](#uselegacyimages-compatibility-switch-not-supported) | 3.0 |
+| [Changement d’accès pour AccessibleObject.RuntimeIDFirstItem](#change-of-access-for-accessibleobjectruntimeidfirstitem) | 3.0 |
+| [API dupliquée supprimée des formulaires Windows](#duplicated-apis-removed-from-windows-forms) | 3.0 |
+
+## <a name="net-50"></a>.NET 5.0
+
+[!INCLUDE [null-args-cause-argumentnullexception](../../../includes/core-changes/windowsforms/5.0/null-args-cause-argumentnullexception.md)]
+
+***
 
 ## <a name="net-core-31"></a>.NET Core 3.1
 

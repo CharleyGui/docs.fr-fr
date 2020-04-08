@@ -2,12 +2,12 @@
 title: Définition de votre application à plusieurs conteneurs avec docker-compose.yml
 description: Comment spécifier la composition des microservices pour une application multiconteneur avec docker-compose.yml.
 ms.date: 01/30/2020
-ms.openlocfilehash: 66775b573c46041475e9cddc622bbde78ae44bc4
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: 029fad8bb912457872dd5817a2f76aed57dc53c6
+ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805607"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80888226"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Définition de votre application à plusieurs conteneurs avec docker-compose.yml
 
@@ -201,7 +201,7 @@ Il est courant de définir plusieurs fichiers Compose pour cibler plusieurs envi
 
 **Figure 6-12.** Plusieurs fichiers docker-compose remplaçant des valeurs du fichier docker-compose.yml de base
 
-Vous pouvez combiner plusieurs fichiers docker-compose.yml pour gérer différents environnements. Vous commencez avec le fichier docker-compose.yml de base. Ce fichier de base doit contenir les paramètres de configuration de base ou statiques qui ne changent pas en fonction de l’environnement. Par exemple, l’eShopOnContainers a le fichier docker-compose.yml suivant (simplifié avec moins de services) comme fichier de base.
+Vous pouvez combiner plusieurs fichiers docker-compose.yml pour gérer différents environnements. Vous commencez avec le fichier docker-compose.yml de base. Ce fichier de base contient les paramètres de configuration de base ou statiques qui ne changent pas en fonction de l’environnement. Par exemple, l’application eShopOnContainers a le fichier docker-compose.yml suivant (simplifié avec moins de services) que le fichier de base.
 
 ```yml
 #docker-compose.yml (Base)

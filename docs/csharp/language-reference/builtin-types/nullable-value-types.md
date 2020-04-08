@@ -4,19 +4,19 @@ description: Renseignez-vous sur les types de valeur nulS de C et sur la façon 
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: a84b3d60269491846b783e5046a84a1d14e258a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c13ef6a091ec6aebd4608c5ed8d2c03b067c7312
+ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399587"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80888070"
 ---
 # <a name="nullable-value-types-c-reference"></a>Types de valeur nuls (référence C)
 
 Un *type* `T?` de valeur in nullable représente toutes les valeurs de son type `T` de [valeur](value-types.md) sous-jacente et une valeur [nulle](../keywords/null.md) supplémentaire. Par exemple, vous pouvez attribuer l’une `bool?` des `true` `false`trois `null`valeurs suivantes à une variable : , , ou . Un type `T` de valeur sous-jacent ne peut pas être un type de valeur nul lui-même.
 
 > [!NOTE]
-> C 8.0 introduit la fonction de type de référence nul. Pour plus d’informations, voir [Les types de référence Nullable](../../nullable-references.md). Les types de valeur nulles sont disponibles à partir de C 2.
+> C 8.0 introduit la fonction de type de référence nul. Pour plus d’informations, voir [Les types de référence Nullable](nullable-reference-types.md). Les types de valeur nulles sont disponibles à partir de C 2.
 
 Tout type de valeur in nullable est un exemple de la structure générique. <xref:System.Nullable%601?displayProperty=nameWithType> Vous pouvez vous référer à un type `T` de valeur nul avec `Nullable<T>` un `T?`type sous-jacent dans l’un des formulaires interchangeables suivants : ou .
 
@@ -120,7 +120,7 @@ Vous pouvez utiliser le code présenté dans l’exemple suivant pour détermine
 [!code-csharp-interactive[whether an instance is of a nullable type](snippets/NullableValueTypes.cs#IsInstanceNullable)]
 
 > [!NOTE]
-> Les méthodes décrites dans cet article ne s’appliquent pas dans le cas des types de [référence nuls](../../nullable-references.md).
+> Les méthodes décrites dans cet article ne s’appliquent pas dans le cas des types de [référence nuls](nullable-reference-types.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -139,4 +139,4 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - <xref:System.Nullable%601?displayProperty=nameWithType>
 - <xref:System.Nullable?displayProperty=nameWithType>
 - <xref:System.Nullable.GetUnderlyingType%2A?displayProperty=nameWithType>
-- [Types références Nullables](../../nullable-references.md)
+- [Types références Nullables](nullable-reference-types.md)

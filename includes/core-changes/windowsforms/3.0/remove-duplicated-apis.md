@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e609b8006846cd202a6a7eeec2529cf1fbb09e7c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0be59258df10aa13920551f011d68bc8efe20b93
+ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75937007"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80888114"
 ---
 ### <a name="duplicated-apis-removed-from-windows-forms"></a>API dupliquée supprimée des formulaires Windows
 
@@ -37,7 +37,7 @@ Windows Forms
 
 #### <a name="affected-apis"></a>API affectées
 
-- Non détectable par l’analyse de l’API.
+- Aucun.
 
 <!--
 
