@@ -2,12 +2,12 @@
 title: Résilience et haute disponibilité dans les microservices
 description: Les microservices doivent être conçus pour gérer les pannes de dépendances et de réseau temporaires auxquelles ils doivent être résilients pour assurer une haute disponibilité.
 ms.date: 09/20/2018
-ms.openlocfilehash: 1c0f75a8c68d1f84ba24c550e854edc5372cf7f6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 28f8b124cd59b2c3d621267cb437872af42c9ea8
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73094212"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988919"
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>Résilience et haute disponibilité dans les microservices
 
@@ -31,8 +31,8 @@ Dans la section [Implémentation de vérifications d’intégrité dans les serv
 
 Vous avez aussi la possibilité d’utiliser une excellente bibliothèque open source appelée Beat Pulse, disponible sur [GitHub](https://github.com/Xabaril/BeatPulse) et comme [package NuGet](https://www.nuget.org/packages/BeatPulse/). Cette bibliothèque effectue également des vérifications d’intégrité et gère étonnamment deux types de vérifications :
 
-- **Fonctionnement** : Vérifie si le microservice fonctionne, c’est-à-dire s’il est capable d’accepter des demandes et d’y répondre.
-- **Préparation** : Vérifie si les dépendances du microservice (base de données, services de file d’attente, etc.) sont elles-mêmes prêtes pour que le microservice puisse faire ce qu’il est supposé faire.
+- **Liveness**: Vérifie si le microservice est vivant, c’est-à-dire s’il est capable d’accepter les demandes et de répondre.
+- **Préparation**: Vérifie si les dépendances du microservice (Base de données, services de file d’attente, etc.) sont elles-mêmes prêtes, de sorte que le microservice peut faire ce qu’il est censé faire.
 
 ### <a name="using-diagnostics-and-logs-event-streams"></a>Utilisation des diagnostics et des flux d’événements des journaux
 

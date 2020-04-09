@@ -1,13 +1,13 @@
 ---
 title: Quoi de neuf dans le guide C 8.0 - Guide C
 description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0.
-ms.date: 09/20/2019
-ms.openlocfilehash: 0013f621268e2a4f1b916b226d83d18c68445ed1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/07/2020
+ms.openlocfilehash: 1a005750751129969f2d1e9caf156330dbe61cb2
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399678"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989205"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
@@ -25,6 +25,7 @@ C 8.0 ajoute les caractéristiques et les améliorations suivantes à la langue 
 - [Structs ref jetables](#disposable-ref-structs)
 - [Types références Nullables](#nullable-reference-types)
 - [Flux asynchrones](#asynchronous-streams)
+- [Asynchrone jetable](#asynchronous-disposable)
 - [Index et plages](#indices-and-ranges)
 - [Affectation de fusion nul](#null-coalescing-assignment)
 - [Types construits non mentés](#unmanaged-constructed-types)
@@ -392,6 +393,10 @@ await foreach (var number in GenerateSequence())
 ```
 
 Vous pouvez essayer par vous-même les flux asynchrones dans notre tutoriel [Créer et consommer des flux asynchrones](../tutorials/generate-consume-asynchronous-stream.md). Par défaut, les éléments de flux sont traités dans le contexte capturé. Si vous souhaitez désactiver la capture du <xref:System.Threading.Tasks.TaskAsyncEnumerableExtensions.ConfigureAwait%2A?displayProperty=nameWithType> contexte, utilisez la méthode d’extension. Pour plus d’informations sur les contextes de synchronisation et la capture du contexte actuel, voir [l’article sur la consommation du modèle asynchrone basé sur les tâches](../../standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md).
+
+## <a name="asynchronous-disposable"></a>Asynchrone jetable
+
+En commençant par le C 8.0, la langue prend <xref:System.IAsyncDisposable?displayProperty=nameWithType> en charge les types jetables asynchrones qui implémentent l’interface. L’opéra d’une `using` expression <xref:System.IDisposable> <xref:System.IAsyncDisposable>peut mettre en œuvre soit ou . Dans le `IAsyncDisposable`cas de , le compilateur génère du code pour `await` le <xref:System.Threading.Tasks.Task> retour de <xref:System.IAsyncDisposable.DisposeAsync%2A?displayProperty=nameWithType>. Pour plus d’informations, voir la [ `using` déclaration](../language-reference/keywords/using-statement.md).
 
 ## <a name="indices-and-ranges"></a>Index et plages
 

@@ -2,12 +2,12 @@
 title: Implémentation du modèle Disjoncteur
 description: Découvrez comment implémenter le modèle Disjoncteur en tant que système complémentaire aux nouvelles tentatives Http.
 ms.date: 03/03/2020
-ms.openlocfilehash: a79c6fcca1e29f3c30d697cb369060d59a72c121
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bebe0b4a622db928175f78f8d3e303d3d7adf170
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847243"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988883"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>Implémenter le modèle Disjoncteur
 
@@ -65,9 +65,9 @@ D’un point de vue d’utilisation, lors de l’utilisation de HttpClient, il `
 
 ## <a name="test-http-retries-and-circuit-breakers-in-eshoponcontainers"></a>Tester les disjoncteurs et les nouvelles tentatives Http dans eShopOnContainers
 
-Chaque fois que vous démarrez la solution eShopOnContainers sur un hôte Docker, celle-ci doit démarrer plusieurs conteneurs. Certains des conteneurs sont plus lents à démarrer et à initialiser, comme le conteneur SQL Server. C’est particulièrement vrai la première fois que vous déployez l’application eShopOnContainers dans Docker, car elle doit configurer les images et la base de données. Le fait que certains conteneurs démarrent plus lentement que d’autres peut entraîner la levée d’exceptions HTTP par le reste des services, même si vous définissez des dépendances entre les conteneurs au niveau de Docker Compose, comme expliqué dans les sections précédentes. Ces dépendances Docker Compose entre les conteneurs sont uniquement au niveau processus. Il est possible que le processus de point d’entrée du conteneur soit démarré alors que SQL Server n’est pas prêt pour les requêtes. Cela peut avoir pour conséquence une cascade d’erreurs, et l’application peut recevoir une exception lors d’une tentative d’utilisation de ce conteneur particulier.
+Chaque fois que vous démarrez la solution eShopOnContainers sur un hôte Docker, celle-ci doit démarrer plusieurs conteneurs. Certains des conteneurs sont plus lents à démarrer et à initialiser, comme le conteneur SQL Server. C’est particulièrement vrai la première fois que vous déployez l’application eShopOnContainers dans Docker, car elle doit configurer les images et la base de données. Le fait que certains conteneurs démarrent plus lentement que d’autres peut entraîner la levée d’exceptions HTTP par le reste des services, même si vous définissez des dépendances entre les conteneurs au niveau de Docker Compose, comme expliqué dans les sections précédentes. Ces dépendances Docker Compose entre les conteneurs sont uniquement au niveau processus. Le processus de point d’entrée du conteneur pourrait être lancé, mais SQL Server pourrait ne pas être prêt pour les requêtes. Cela peut avoir pour conséquence une cascade d’erreurs, et l’application peut recevoir une exception lors d’une tentative d’utilisation de ce conteneur particulier.
 
-Vous pouvez également voir ce type d’erreur au démarrage pendant le déploiement de l’application dans le cloud. Dans ce cas, il est possible que les orchestrateurs déplacent des conteneurs d’un nœud ou d’une machine virtuelle vers un autre nœud ou une autre machine virtuelle (autrement dit, de démarrer de nouvelles instances) lors de l’équilibrage du nombre de conteneurs entre les nœuds du cluster.
+Vous pouvez également voir ce type d’erreur au démarrage pendant le déploiement de l’application dans le cloud. Dans ce cas, les orchestrateurs peuvent déplacer des conteneurs d’un nœud ou d’une VM à un autre (c’est-à-dire à commencer de nouveaux cas) lorsqu’ils équilibrent le nombre de conteneurs dans les nœuds du cluster.
 
 La façon dont « eShopOnContainers » résout ces problèmes lors du démarrage de tous les conteneurs consiste à utiliser le modèle de nouvelle tentative illustré précédemment.
 
@@ -96,7 +96,7 @@ Vous pouvez alors vérifier l’état à l’aide de l’URI `http://localhost:5
 
 ![Capture d’écran de la vérification de l’état de la simulation middleware défaillante.](./media/implement-circuit-breaker-pattern/failing-middleware-simulation.png)
 
-**Figure 8-5**. Vérification de l’état du middleware ASP.NET (désactivé dans le cas présent) « Failing » (En échec).
+**Figure 8-5**. Vérification de l’état de la "Failing" ASP.NET middleware - Dans ce cas, désactivé.
 
 À ce stade, le microservice Basket répond avec le code d’état 500 chaque fois que vous l’appelez.
 
@@ -132,7 +132,7 @@ public class CartController : Controller
 }
 ```
 
-Voici un résumé. La stratégie Nouvelle tentative tente plusieurs fois d’exécuter la requête HTTP et obtient des erreurs HTTP. Quand le nombre maximal de nouvelles tentatives pour la stratégie Disjoncteur est atteint (dans le cas présent, 5), l’application lève une exception BrokenCircuitException. Le résultat est un message convivial, comme illustré à la Figure 8-6.
+Voici un récapitulatif. La stratégie Nouvelle tentative tente plusieurs fois d’exécuter la requête HTTP et obtient des erreurs HTTP. Quand le nombre maximal de nouvelles tentatives pour la stratégie Disjoncteur est atteint (dans le cas présent, 5), l’application lève une exception BrokenCircuitException. Le résultat est un message convivial, comme illustré à la Figure 8-6.
 
 ![Capture d’écran de l’application web MVC avec erreur inopérante du service de panier.](./media/implement-circuit-breaker-pattern/basket-service-inoperative.png)
 

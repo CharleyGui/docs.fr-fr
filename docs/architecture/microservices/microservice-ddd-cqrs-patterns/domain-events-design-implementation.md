@@ -2,12 +2,12 @@
 title: Événements de domaine. Conception et implémentation
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Obtenir une vue détaillée des événements de domaine, un concept essentiel pour établir la communication entre les agrégats.
 ms.date: 10/08/2018
-ms.openlocfilehash: 3bba18d4a77b47abee55c16bae8a64ed27ac9aba
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e03abba66945a6434f6a81eaa9f50d53998f346c
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74884226"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988714"
 ---
 # <a name="domain-events-design-and-implementation"></a>Événements de domaine : conception et implémentation
 
@@ -61,7 +61,7 @@ La gestion des événements de domaine est située au niveau de l’application.
 
 Les événements de domaine peuvent également servir à déclencher autant d’actions d’application que nécessaire, et plus important encore, ils doivent permettre l’augmentation future du nombre d’actions d’une manière découplée. Par exemple, lorsque vous démarrez la création de la commande, vous pouvez publier un événement de domaine pour propager ces informations sur d’autres agrégats ou même pour déclencher des actions telles que des notifications.
 
-Le point essentiel est le nombre ouvert d’actions à exécuter lorsqu’un événement de domaine se produit. Avec le temps, le nombre d’actions et de règles dans le domaine et dans l’application va augmenter. La complexité ou le nombre d’actions d’effet secondaire lors d’un événement vont augmenter avec le temps. Cependant, si votre code était fortement couplé (c’est-à-dire en créant des objets spécifiques avec `new`), chaque fois que vous avez besoin d’ajouter une nouvelle action, vous devez aussi changer le code en cours d’exécution et le code testé.
+Le point essentiel est le nombre ouvert d’actions à exécuter lorsqu’un événement de domaine se produit. Avec le temps, le nombre d’actions et de règles dans le domaine et dans l’application va augmenter. La complexité ou le nombre d’actions à effet secondaire lorsque quelque chose se produit va croître, mais si votre code a été couplé avec "colle" (c’est-à-dire, la création d’objets spécifiques avec `new`), alors chaque fois que vous avez besoin d’ajouter une nouvelle action, vous auriez également besoin de changer de code de travail et testé.
 
 Cette modification peut entraîner de nouveaux bogues, et cette approche va également à l’encontre du [principe ouvert/fermé](https://en.wikipedia.org/wiki/Open/closed_principle) de [SOLID](https://en.wikipedia.org/wiki/SOLID). En outre, le volume de la classe d’origine orchestrant les opérations ne ferait qu’augmenter, ce qui irait à l’encontre du [principe de responsabilité unique](https://en.wikipedia.org/wiki/Single_responsibility_principle).
 
@@ -82,7 +82,7 @@ Comme le montre la figure 7-15, à partir du même événement de domaine, vous 
 
 **Figure 7-15**. Gestion de plusieurs actions par domaine
 
-Il peut exister plusieurs gestionnaires pour le même événement de domaine dans la couche Application, un gestionnaire peut résoudre la cohérence entre les agrégats, et un autre gestionnaire peut publier un événement d’intégration, pour que d’autres microservices puissent en faire quelque chose. Les gestionnaires d’événements se trouvent en général dans la couche Application, car vous allez utiliser les objets d’infrastructure comme les dépôts ou une API d’application pour le comportement du microservice. Dans ce sens, les gestionnaires d’événements sont similaires aux gestionnaires de commandes, car tous deux font partie de la couche Application. La principale différence est qu’une commande ne doit être traitée qu’une seule fois. Un événement de domaine peut être traité zéro ou *n* fois, car il peut être reçu par plusieurs récepteurs ou gestionnaires d’événements, chacun ayant un objectif différent.
+Il peut exister plusieurs gestionnaires pour le même événement de domaine dans la couche Application, un gestionnaire peut résoudre la cohérence entre les agrégats, et un autre gestionnaire peut publier un événement d’intégration, pour que d’autres microservices puissent en faire quelque chose. Les gestionnaires d’événements sont généralement dans la couche d’application, parce que vous utiliserez des objets d’infrastructure comme des dépôts ou une application API pour le comportement du microservice. Dans ce sens, les gestionnaires d’événements sont similaires aux gestionnaires de commandes, car tous deux font partie de la couche Application. La principale différence est qu’une commande ne doit être traitée qu’une seule fois. Un événement de domaine peut être traité zéro ou *n* fois, car il peut être reçu par plusieurs récepteurs ou gestionnaires d’événements, chacun ayant un objectif différent.
 
 Avoir un nombre ouvert de gestionnaires par événement de domaine vous permet d’ajouter autant de règles de domaine que nécessaire, sans affecter le code actuel. Par exemple, pour implémenter la règle métier suivante, vous pouvez simplement ajouter quelques gestionnaires d’événements (voire un seul) :
 
@@ -124,7 +124,7 @@ En ce qui concerne le langage omniprésent du domaine, dans la mesure où un év
 
 Comme mentionné précédemment, l’une des caractéristiques les plus importantes des événements est, puisqu’ils se sont produits dans le passé, ils ne doivent pas changer. Par conséquent, il doit s’agir d’une classe immuable. Dans le code précédent, vous pouvez voir que les propriétés sont en lecture seule. Il n’existe aucun moyen de mettre à jour l’objet : vous pouvez seulement définir des valeurs quand vous le créez.
 
-Il est important de souligner ici que si les événements de domaine devaient être traités de façon asynchrone en utilisant une file d’attente qui a nécessité la sérialisation et la désérialisation des objets d’événement, les propriétés devraient être définies comme étant privées et non pas en lecture seule : le désérialiseur pourrait alors affecter les valeurs après extraction de la file d’attente. Ceci n’est pas un problème dans le microservice Ordering, car la publication/abonnement de l’événement de domaine est implémentée de façon synchrone avec MediatR.
+Il est important de souligner ici que si les événements de domaine devaient être traités asynchronement, en utilisant une file d’attente qui a nécessité la sérialisation et le déséialisation des objets de l’événement, les propriétés devraient être «ensemble privé» au lieu de lire-seulement, de sorte que le desérialisateur serait en mesure d’attribuer les valeurs lors de la déqueuing. Ceci n’est pas un problème dans le microservice Ordering, car la publication/abonnement de l’événement de domaine est implémentée de façon synchrone avec MediatR.
 
 ### <a name="raise-domain-events"></a>Déclencher des événements de domaine
 
@@ -248,7 +248,7 @@ Une autre façon de mapper des événements à plusieurs gestionnaires d’évé
 
 **Figure 7-16**. Répartiteur d’événements de domaine utilisant l’IoC
 
-Vous pouvez créer vous-même tous les éléments et artefacts pour implémenter cette approche. Cependant, vous pouvez aussi utiliser des bibliothèques comme [MediatR](https://github.com/jbogard/MediatR), qui utilisent votre conteneur IoC en arrière-plan. Vous pouvez donc directement utiliser les interfaces prédéfinies, ainsi que les méthodes de publication/distribution de l’objet _mediator.
+Vous pouvez créer vous-même tous les éléments et artefacts pour implémenter cette approche. Cependant, vous pouvez aussi utiliser des bibliothèques comme [MediatR](https://github.com/jbogard/MediatR), qui utilisent votre conteneur IoC en arrière-plan. Vous pouvez donc utiliser directement les interfaces prédéfinies et les méthodes de publication/expédition de l’objet médiateur.
 
 Dans le code, vous devez d’abord inscrire les types de gestionnaires d’événements dans votre conteneur IoC, comme le montre l’exemple suivant du [microservice de commande eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Infrastructure/AutofacModules/MediatorModule.cs) :
 

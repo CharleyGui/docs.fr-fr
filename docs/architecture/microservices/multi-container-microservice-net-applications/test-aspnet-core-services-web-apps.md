@@ -2,12 +2,12 @@
 title: Test d’applications web et de services ASP.NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer une architecture pour le test d’applications web et de services ASP.NET Core dans des conteneurs.
 ms.date: 01/30/2020
-ms.openlocfilehash: ab3ae6276ea4e4c741731f050913d956046271ca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f66d6184d913405c9372904f8072dda1dbfbe6ac
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77501986"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988230"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Test d’applications web et de services ASP.NET Core
 
@@ -19,7 +19,7 @@ Vous devez tester le comportement du contrôleur avec les entrées valides et no
 
 - Tests d’intégration. Ces tests permettent de vérifier que les interactions entre composants fonctionnent comme prévu, en se basant sur des artefacts externes comme les bases de données. Les assertions peuvent tester l’API des composants, l’interface utilisateur ou les effets secondaires des actions telles que les E/S de base de données, la journalisation, etc.
 
-- Tests fonctionnels pour chaque microservice. Ces tests permettent de vérifier que l’application fonctionne comme prévu du point de vue de l’utilisateur.
+- Tests fonctionnels pour chaque microservice. Ceux-ci garantissent que l’application fonctionne comme prévu du point de vue de l’utilisateur.
 
 - Tests de service. Ces tests permettent de garantir que les cas d’usage de service de bout en bout (y compris l’exécution simultanée de plusieurs services) sont testés. Pour ce type de test, vous devez d’abord préparer l’environnement. Dans ce cas, cela signifie démarrer les services (à l’aide de docker-compose up, par exemple).
 
@@ -113,7 +113,7 @@ public class PrimeWebDefaultRequestShould
 - **xUnit.net**. Site officiel. \
     <https://xunit.github.io/>
 
-- **Concepts de base des tests unitaires.** \
+- **Bases de test unitaire.** \
     [https://docs.microsoft.com/visualstudio/test/unit-test-basics](/visualstudio/test/unit-test-basics)
 
 - **Moq**. Dépôt GitHub. \

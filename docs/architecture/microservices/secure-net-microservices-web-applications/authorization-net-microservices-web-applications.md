@@ -3,18 +3,18 @@ title: À propos de l’autorisation dans les microservices .NET et les applicat
 description: Sécurité dans les microservices .NET et les applications web - Découvrez une vue d’ensemble des principales options d’autorisation dans les applications ASP.NET Core, basées sur le rôle et basées sur les stratégies.
 author: mjrousos
 ms.date: 01/30/2020
-ms.openlocfilehash: f6b69faceac9a9b4819212cc04f89080f3ddad56
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 27936a33ea2bb46cedb9d10ee47a2117e1843e14
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77501763"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988204"
 ---
 # <a name="about-authorization-in-net-microservices-and-web-applications"></a>À propos de l’autorisation dans les microservices .NET et les applications web
 
-Après l’authentification, les API web ASP.NET Core doivent autoriser l’accès. Ce processus permet à un service d’autoriser uniquement les utilisateurs authentifiés à accéder aux API. L’[autorisation](/aspnet/core/security/authorization/introduction) peut être basée sur les rôles des utilisateurs ou sur une stratégie personnalisée, ce qui peut-être impliquer l’inspection de revendications ou d’autres méthodes heuristiques.
+Après l’authentification, les API web ASP.NET Core doivent autoriser l’accès. Ce processus permet à un service d’autoriser uniquement les utilisateurs authentifiés à accéder aux API. [L’autorisation](/aspnet/core/security/authorization/introduction) peut être faite en fonction des rôles des utilisateurs ou en fonction de la politique personnalisée, qui peut inclure l’inspection des réclamations ou d’autres heuristiques.
 
-Il est tout aussi facile de restreindre l’accès à un itinéraire ASP.NET MVC que d’appliquer un attribut Authorize à la méthode d’action (ou à la classe du contrôleur si toutes les actions du contrôleur nécessitent une autorisation), comme dans l’exemple suivant :
+Restreindre l’accès à un ASP.NET’itinéraire Core MVC est aussi facile que l’application d’un attribut d’autorisation à la méthode d’action (ou à la catégorie du contrôleur si toutes les actions du contrôleur nécessitent une autorisation), comme le montre l’exemple suivant :
 
 ```csharp
 public class AccountController : Controller
@@ -36,7 +36,7 @@ Par défaut, l’ajout d’un attribut Authorize sans paramètres limite l’acc
 
 L’identité ASP.NET Core intègre un concept de rôles. En plus des utilisateurs, l’identité ASP.NET Core stocke des informations sur les différents rôles utilisés par l’application et assure le suivi des utilisateurs et des rôles qui leur sont attribués. Ces attributions peuvent être modifiées par programmation avec le type `RoleManager` qui met à jour des rôles dans le stockage persistant, et le type `UserManager` qui peut accorder ou révoquer des rôles d’utilisateurs.
 
-Si vous vous authentifiez avec des jetons de porteur JSON, l’intergiciel (middleware) d’authentification du porteur JWT ASP.NET Core renseignera les rôles des utilisateurs en fonction des revendications de rôle trouvées dans le jeton. Pour limiter l’accès à une action ou à un contrôleur MVC aux seuls utilisateurs ayant un rôle déterminé, vous pouvez inclure un paramètre Roles dans l’annotation (attribut) Authorize, comme illustré dans le fragment de code suivant :
+Si vous authentifiez avec des jetons de porteur JWT, le ASP.NET Core JWT bearer authentification middleware remplira les rôles d’un utilisateur en fonction des revendications de rôle trouvées dans le jeton. Pour limiter l’accès à une action ou à un contrôleur MVC aux seuls utilisateurs ayant un rôle déterminé, vous pouvez inclure un paramètre Roles dans l’annotation (attribut) Authorize, comme illustré dans le fragment de code suivant :
 
 ```csharp
 [Authorize(Roles = "Administrator, PowerUser")]
@@ -94,7 +94,7 @@ services.AddAuthorization(options =>
 });
 ```
 
-Comme le montre l’exemple, les stratégies peuvent être associées à différents types de conditions. Une fois inscrites, les stratégies peuvent être appliquées à une action ou à un contrôleur en passant le nom de la stratégie en tant qu’argument Policy de l’attribut Authorize (par exemple, `[Authorize(Policy="EmployeesOnly")]`). Les stratégies peuvent être assorties d’un grand nombre de conditions (comme le montrent ces exemples).
+Comme le montre l’exemple, les stratégies peuvent être associées à différents types de conditions. Une fois les polices enregistrées, elles peuvent être appliquées à une action ou à un contrôleur `[Authorize(Policy="EmployeesOnly")]`en adoptant le nom de la police comme argument de la politique de l’attribut autorisation (par exemple, ) les politiques peuvent avoir de multiples exigences, et pas seulement une (comme le montrent ces exemples).
 
 Dans l’exemple précédent, le premier appel AddPolicy est simplement une autre façon d’autoriser par rôle. Si `[Authorize(Policy="AdministratorsOnly")]` est appliqué à une API, seuls les utilisateurs ayant le rôle Administrator peuvent y accéder.
 
@@ -110,7 +110,7 @@ Si l’utilisateur remplit la condition, un appel à `context.Succeed` indique q
 
 En plus de la nécessité d’inscrire des conditions de stratégie personnalisée avec des appels `AddPolicy`, vous devez aussi inscrire des gestionnaires de conditions personnalisés par le biais de l’injection de dépendance (`services.AddTransient<IAuthorizationHandler, MinimumAgeHandler>()`).
 
-Un exemple de condition d’autorisation personnalisée et de gestionnaire destiné à vérifier l’âge d’un utilisateur (en fonction d’une revendication `DateOfBirth`) est disponible dans la [documentation traitant de l’autorisation](https://docs.asp.net/en/latest/security/authorization/policies.html) ASP.NET Core.
+Un exemple d’exigence d’autorisation personnalisée et de gestionnaire `DateOfBirth` pour vérifier l’âge d’un utilisateur (basé sur une réclamation) est disponible dans la documentation d’autorisation de base ASP.NET . [authorization documentation](https://docs.asp.net/en/latest/security/authorization/policies.html)
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

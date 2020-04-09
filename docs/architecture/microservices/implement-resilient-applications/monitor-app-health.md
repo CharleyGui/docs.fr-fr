@@ -2,20 +2,20 @@
 title: Surveillance de l’intégrité
 description: Explorez un moyen d’implémenter la supervision de l’intégrité.
 ms.date: 03/02/2020
-ms.openlocfilehash: d3d2bc72cf29b3d1ac93191e7ff2bd827c9ee68d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 88354ae0ae59dbfbe40dbe1b25320f8f93d042ce
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401710"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988854"
 ---
 # <a name="health-monitoring"></a>Surveillance de l’intégrité
 
 La surveillance de l’intégrité fournit des informations quasiment en temps réel sur l’état de vos conteneurs et microservices. La surveillance de l’intégrité est primordiale pour de multiples aspects du fonctionnement des microservices. Elle est particulièrement importante quand des orchestrateurs effectuent des mises à niveau d’application partielles par étapes, comme nous l’expliquerons plus tard.
 
-Les applications basées sur des microservices utilisent souvent des pulsations ou des vérifications d’intégrité pour permettre à leurs analyseurs de performances, planificateurs et orchestrateurs d’assurer le suivi des divers services. Si les services n’ont pas le moyen d’envoyer un signal de type « Je suis actif », à la demande ou selon une planification établie, votre application risque de connaître des problèmes quand vous déployez des mises à jour, ou elle risque simplement de détecter les défaillances trop tard et de ne pas être en mesure d’arrêter les défaillances en cascade, susceptibles au final d’entraîner des pannes majeures.
+Les applications basées sur des microservices utilisent souvent des pulsations ou des vérifications d’intégrité pour permettre à leurs analyseurs de performances, planificateurs et orchestrateurs d’assurer le suivi des divers services. Si les services ne peuvent pas envoyer une sorte de signal « Je suis vivant », que ce soit à la demande ou sur un calendrier, votre application pourrait être confrontée à des risques lorsque vous déployez des mises à jour, ou il pourrait simplement détecter les défaillances trop tard et ne pas être en mesure d’arrêter les défaillances en cascade qui peuvent se retrouver dans les pannes majeures.
 
-Dans le modèle standard, les services envoient des rapports sur leur état, et ces informations sont agrégées pour fournir une vue d’ensemble de l’état d’intégrité de votre application. Si vous utilisez un orchestrateur, vous pouvez envoyer des informations d’intégrité au cluster de l’orchestrateur, afin que le cluster sache quelles actions exécuter. Si vous optez pour des rapports d’intégrité complets et personnalisés pour votre application, vous pouvez détecter et résoudre les problèmes de votre application en cours d’exécution beaucoup plus facilement.
+Dans le modèle standard, les services envoient des rapports sur leur état, et ces informations sont agrégées pour fournir une vue d’ensemble de l’état d’intégrité de votre application. Si vous utilisez un orchestrateur, vous pouvez fournir des informations de santé au cluster de votre orchestrateur, afin que le cluster puisse agir en conséquence. Si vous optez pour des rapports d’intégrité complets et personnalisés pour votre application, vous pouvez détecter et résoudre les problèmes de votre application en cours d’exécution beaucoup plus facilement.
 
 ## <a name="implement-health-checks-in-aspnet-core-services"></a>Implémenter des vérifications d’intégrité dans les services ASP.NET Core
 
@@ -50,9 +50,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Dans le code précédent, la méthode `services.AddHealthChecks()` configure une vérification HTTP de base qui retourne un code d’état **200** (intègre).  En outre, la méthode d’extension `AddCheck()` configure un `SqlConnectionHealthCheck` personnalisé qui vérifie l’intégrité de la base de données SQL associée.
+Dans le code `services.AddHealthChecks()` précédent, la méthode configure une vérification HTTP de base qui renvoie un code **d’état 200** avec "Healthy".  De plus, la méthode `AddCheck()` `SqlConnectionHealthCheck` d’extension configure une coutume qui vérifie la santé de la base de données SQL connexe.
 
-La méthode `AddCheck()` ajoute une nouvelle vérification d’intégrité avec un nom spécifié et l’implémentation de type `IHealthCheck`. Vous pouvez ajouter plusieurs vérifications d’intégrité à l’aide de la méthode AddCheck ; ainsi, un microservice indique un état « sain » uniquement quand toutes ses vérifications aboutissent à cet état.
+La méthode `AddCheck()` ajoute une nouvelle vérification d’intégrité avec un nom spécifié et l’implémentation de type `IHealthCheck`. Vous pouvez ajouter plusieurs contrôles de santé en utilisant la méthode AddCheck, de sorte qu’un microservice ne fournira pas un statut « sain » jusqu’à ce que tous ses contrôles soient sains.
 
 `SqlConnectionHealthCheck` est une classe personnalisée qui implémente `IHealthCheck`, qui prend une chaîne de connexion comme paramètre de constructeur et exécute une requête simple pour vérifier si la connexion à la base de données SQL est établie. Elle retourne `HealthCheckResult.Healthy()` si la requête a été exécutée avec succès et un `FailureStatus` avec l’exception réelle en cas d’échec.
 
@@ -220,7 +220,7 @@ Heureusement, [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/A
 
 **Figure 8-9**. Exemple de rapport de vérification d’intégrité dans eShopOnContainers
 
-En résumé, ce service de surveillance interroge le point de terminaison « /hc » de chaque microservice. Ce point de terminaison exécute toutes les vérifications d’intégrité définies et retourne un état d’intégrité général si toutes ces vérifications sont intègres. Pour utiliser HealthChecksUI, il suffit de définir quelques entrées de configuration et d’ajouter deux lignes de code au fichier Startup.cs du service de surveillance.
+En résumé, ce service de surveillance interroge le point de terminaison «/hc » de chaque microservice. Ce point de terminaison exécute toutes les vérifications d’intégrité définies et retourne un état d’intégrité général si toutes ces vérifications sont intègres. Pour utiliser HealthChecksUI, il suffit de définir quelques entrées de configuration et d’ajouter deux lignes de code au fichier Startup.cs du service de surveillance.
 
 Exemple de fichier de configuration de l’interface utilisateur de la vérification d’intégrité :
 
@@ -257,7 +257,7 @@ public void ConfigureServices(IServiceCollection services)
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
     //…
-    app.UseHealthChecksUI(config=> config.UIPath = “/hc-ui”);
+    app.UseHealthChecksUI(config=> config.UIPath = "/hc-ui");
     //…
 }
 ```

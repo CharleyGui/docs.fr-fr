@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 7e879a44bd8056ac8753c1e86464fe14fd6b9e50
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: be5c26c81480dc2854b849dd7f2b1c46ee3e526a
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523580"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989166"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -140,7 +140,7 @@ Pour plus d’informations sur l’outil d’éditeur de liens de langage interm
 
 ### <a name="tiered-compilation"></a>Compilation hiérarchisée
 
-La [compilation hiérarchisée](https://github.com/dotnet/runtime/blob/master/docs/design/features/tiered-compilation-guide.md) est activée par défaut avec .NET Core 3.0. Cette fonctionnalité permet au temps d’exécution d’utiliser plus adaptativement le compilateur juste-à-temps (JIT) pour obtenir de meilleures performances.
+La [compilation hiérarchisée](https://github.com/dotnet/runtime/blob/master/docs/design/features/tiered-compilation.md) est activée par défaut avec .NET Core 3.0. Cette fonctionnalité permet au temps d’exécution d’utiliser plus adaptativement le compilateur juste-à-temps (JIT) pour obtenir de meilleures performances.
 
 Le principal avantage de la compilation à plusieurs niveaux est de fournir deux façons de jitting méthodes: dans un niveau de qualité inférieure, mais plus rapide ou un niveau de meilleure qualité, mais plus lent. La qualité se réfère à la façon dont la méthode est optimisée. TC contribue à améliorer les performances d’une application au fur et à mesure qu’elle passe par différentes étapes d’exécution, du démarrage à l’état stable. Lorsque la compilation à plusieurs niveaux est désactivée, chaque méthode est compilée d’une manière unique qui est biaisée à des performances à l’état stable sur les performances de démarrage.
 
@@ -506,7 +506,7 @@ Des API ont été ajoutées, qui permettent d’accéder à certaines instructio
 
 Le cas échéant, les bibliothèques .NET ont commencé à utiliser ces instructions pour améliorer les performances.
 
-Pour plus d’informations, consultez [Intrinsèques dépendant de la plateforme .NET](https://github.com/dotnet/designs/blob/master/accepted/platform-intrinsics.md).
+Pour plus d’informations, voir [.NET Plateforme-Dépendant Intrinsèques](https://github.com/dotnet/designs/blob/master/accepted/2018/platform-intrinsics.md).
 
 ### <a name="improved-net-core-version-apis"></a>API de version de .NET Core améliorées
 

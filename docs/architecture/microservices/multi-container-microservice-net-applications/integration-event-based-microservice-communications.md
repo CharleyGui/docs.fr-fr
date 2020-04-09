@@ -2,12 +2,12 @@
 title: Implémentation de la communication basée sur les événements entre les microservices (événements d’intégration)
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les événements d’intégration pour implémenter la communication basée sur les événements entre les microservices.
 ms.date: 10/02/2018
-ms.openlocfilehash: 6d4e324a05def91935a82df41c971a75cb75c3f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8a1d4950247d63e5684c85c029efccf8269e7435
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712401"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988321"
 ---
 # <a name="implementing-event-based-communication-between-microservices-integration-events"></a>Implémentation de la communication basée sur les événements entre les microservices (événements d’intégration)
 
@@ -29,7 +29,7 @@ Si vous souhaitez uniquement implémenter une preuve de concept de bus d’évé
 
 Si vous avez besoin d’un haut niveau d’abstraction et de fonctionnalités plus riches telles que [Sagas](https://docs.particular.net/nservicebus/sagas/) pour les processus longs qui facilitent le développement distribué, d’autres bus de services commerciaux et open source comme NServiceBus, MassTransit et Brighter méritent d’être évalués. Dans ce cas, les abstractions et l’API à utiliser sont généralement celles fournies par ces bus de services de haut niveau, et non vos propres abstractions (comme les [abstractions de bus d’événements simples fournies dans eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/BuildingBlocks/EventBus/EventBus/Abstractions/IEventBus.cs)). D’ailleurs, vous pouvez rechercher les [eShopOnContainers fourche à l’aide de NServiceBus](https://go.particular.net/eShopOnContainers) (échantillon dérivé supplémentaire mis en œuvre par Un logiciel particulier).
 
-Bien entendu, vous pouvez toujours créer vos propres fonctionnalités de bus de services par-dessus les technologies de bas niveau comme RabbitMQ et Docker. Toutefois, le travail que cela nécessite peut être trop coûteux pour une application d’entreprise personnalisée.
+Bien sûr, vous pouvez toujours construire vos propres fonctionnalités d’autobus de service au-dessus des technologies de niveau inférieur comme RabbitMQ et Docker, mais le travail nécessaire pour « réinventer la roue » pourrait être trop coûteux pour une application d’entreprise personnalisée.
 
 Pour réitérer : les exemples d’abstractions de bus d’événements et d’implémentation présentés dans l’exemple eShopOnContainers sont destinés à être utilisés uniquement comme preuve de concept. Une fois que vous avez décidé que vous souhaitez établir une communication asynchrone et pilotée par les événements, comme expliqué dans la section actuelle, vous devez choisir le produit Service Bus qui convient le mieux à vos besoins pour la production.
 
@@ -76,7 +76,7 @@ Dans le [modèle Observateur](https://en.wikipedia.org/wiki/Observer_pattern), v
 
 ### <a name="publishsubscribe-pubsub-pattern"></a>Modèle Publication/Abonnement
 
-L’objectif du [modèle Publication/Abonnement](https://docs.microsoft.com/previous-versions/msp-n-p/ff649664(v=pandp.10)) est le même que celui du modèle Observateur, c’est-à-dire que vous souhaitez informer les autres services de certains événements. Toutefois, il existe une différence importante entre ces deux modèles. Dans le modèle Observateur, la diffusion va directement de l’observable aux observateurs, pour qu’ils prennent connaissance des uns des autres. En revanche, lorsque vous utilisez un modèle Publication/Abonnement, un troisième élément est impliqué. Il s’agit du répartiteur (de messages) ou du bus d’événements, qui est connu à la fois de celui qui publie et de celui qui s’abonne. Par conséquent, lorsque vous utilisez le modèle Publication/Abonnement, celui qui publie et ses abonnés sont dissociés grâce au bus d’événements ou au répartiteur de messages.
+L’objectif du [modèle Publication/Abonnement](https://docs.microsoft.com/previous-versions/msp-n-p/ff649664(v=pandp.10)) est le même que celui du modèle Observateur, c’est-à-dire que vous souhaitez informer les autres services de certains événements. Toutefois, il existe une différence importante entre ces deux modèles. Dans le schéma d’observateur, l’émission est effectuée directement à partir de l’observable pour les observateurs, de sorte qu’ils «se connaissent». En revanche, lorsque vous utilisez un modèle Publication/Abonnement, un troisième élément est impliqué. Il s’agit du répartiteur (de messages) ou du bus d’événements, qui est connu à la fois de celui qui publie et de celui qui s’abonne. Par conséquent, lorsque vous utilisez le modèle Publication/Abonnement, celui qui publie et ses abonnés sont dissociés grâce au bus d’événements ou au répartiteur de messages.
 
 ### <a name="the-middleman-or-event-bus"></a>L’intermédiaire ou le bus d’événements
 
@@ -100,7 +100,7 @@ Il est judicieux de définir le bus d’événements par le biais d’une interf
 
 ### <a name="defining-an-event-bus-interface"></a>Définition de l’interface d’un bus d’événements
 
-Commençons par du code d’implémentation pour l’interface du bus d’événements, et par les implémentations possibles, à des fins d’exploration. L’interface doit être générique et simple, comme celle qui suit.
+Commençons par un certain code d’implémentation pour l’interface de bus événementiel et des implémentations possibles à des fins d’exploration. L’interface doit être générique et simple, comme celle qui suit.
 
 ```csharp
 public interface IEventBus

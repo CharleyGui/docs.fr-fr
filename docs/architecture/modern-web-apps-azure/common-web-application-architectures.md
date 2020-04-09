@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 7ec0d9cece40ba8a99e8ab5e028f7ac491ed6f4d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c9a8e9450d81ac2e63a8c8ea54592ed81e646e05
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77450174"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988126"
 ---
 # <a name="common-web-application-architectures"></a>Architectures courantes des applications web
 
@@ -219,7 +219,7 @@ Il n’est pas toujours évident de décomposer une application monolithique en 
 
 Une application n’est pas pour autant nécessairement amenée à mettre à l’échelle les fonctionnalités de façon indépendante. Bon nombre d’applications, quand elles ont besoin d’une mise à l’échelle qui va au-delà d’une instance unique, peuvent le faire par le biais du processus relativement simple de clonage intégral de cette instance. Le travail supplémentaire que demande la séparation de l’application en services discrets offre peu d’avantages, alors que la mise à l’échelle d’instances complètes de l’application est simple et économique.
 
-Au stade initial du développement d’une application, vous n’avez peut-être pas une idée précise de là où se trouvent les limites fonctionnelles naturelles. Même à un stade de développement où le produit est viable, il est possible que cette séparation naturelle ne se dégage toujours pas. Certaines de ces conditions peuvent être passagères. Vous pouvez commencer par créer une application monolithique et séparer par la suite certaines fonctionnalités en les développant et les déployant sous forme de microservices. D’autres conditions peuvent être essentielles à l’espace de problème de l’application, ce qui signifie que l’application risque de ne jamais être divisée en plusieurs microservices.
+Au stade initial du développement d’une application, vous n’avez peut-être pas une idée précise de là où se trouvent les limites fonctionnelles naturelles. Même à un stade de développement où le produit est viable, il est possible que cette séparation naturelle ne se dégage toujours pas. Certaines de ces conditions peuvent être passagères. Vous pouvez commencer par créer une application monolithique et séparer par la suite certaines fonctionnalités en les développant et les déployant sous forme de microservices. D’autres conditions peuvent être essentielles à l’espace problématique de l’application, ce qui signifie que l’application pourrait ne jamais être divisée en microservices multiples.
 
 Séparer une application en divers processus distincts induit aussi des coûts. Il est plus complexe de séparer des fonctionnalités en différents processus. Les protocoles de communication deviennent plus complexes. Au lieu d’appeler des méthodes, vous devez utiliser des communications asynchrones entre les services. Quand il s’agit de déplacer une architecture de microservices, vous devez ajouter la plupart des blocs de construction implémentés dans la version de microservices de l’application eShopOnContainers : gestion du bus d’événements, résilience des messages et nouvelles tentatives, cohérence éventuelle, etc.
 

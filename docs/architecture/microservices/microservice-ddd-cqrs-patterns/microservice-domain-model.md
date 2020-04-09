@@ -2,12 +2,12 @@
 title: Conception d’un modèle de domaine de microservice
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les concepts clés de la conception d’un modèle de domaine orienté DDD.
 ms.date: 01/30/2020
-ms.openlocfilehash: 628fb5c76362ec8f48367b3d69d16ea6ebd24f09
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 64860d75dca645904e973a4b8927a716a1603394
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77502334"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988412"
 ---
 # <a name="design-a-microservice-domain-model"></a>Concevoir un modèle de domaine de microservice
 
@@ -17,17 +17,17 @@ Votre objectif consiste à créer un seul modèle de domaine cohésif pour chaqu
 
 ## <a name="the-domain-entity-pattern"></a>Le modèle Entité de domaine
 
-Les entités représentent des objets de domaine. Elles sont principalement définies par leur identité, leur continuité et leur persistance dans le temps et non uniquement par les attributs qui les composent. Comme le décrit Eric Evans, « un objet principalement défini par son identité est appelé entité ». Les entités sont très importantes dans le modèle de domaine, puisqu’elles constituent la base d’un modèle. Par conséquent, vous devez les identifier et les concevoir soigneusement.
+Les entités représentent des objets de domaine. Elles sont principalement définies par leur identité, leur continuité et leur persistance dans le temps et non uniquement par les attributs qui les composent. Comme le dit Eric Evans, « un objet principalement défini par son identité s’appelle une entité ». Les entités sont très importantes dans le modèle de domaine, puisqu’elles constituent la base d’un modèle. Par conséquent, vous devez les identifier et les concevoir soigneusement.
 
-*L’identité d’une entité peut traverser plusieurs microservices ou contextes limités.*
+*L’identité d’une entité peut traverser plusieurs microservices ou contextes délimités.*
 
-La même identité (c’est-à-dire la même valeur `Id`, mais peut-être pas la même entité de domaine) peut être modélisée dans plusieurs contextes délimités ou microservices. Toutefois, cela n’implique pas que la même entité, avec les mêmes attributs et la même logique, peut être implémentée dans plusieurs contextes limités. En effet, les entités incluses dans chaque contexte limité limitent leurs attributs et comportements à ceux nécessaires dans le domaine du contexte limité.
+La même identité (c’est-à-dire la même valeur `Id`, mais peut-être pas la même entité de domaine) peut être modélisée dans plusieurs contextes délimités ou microservices. Toutefois, cela n’implique pas que la même entité, avec les mêmes attributs et la même logique, peut être implémentée dans plusieurs contextes limités. Au lieu de cela, les entités de chaque contexte limité limitent leurs attributs et leurs comportements à ceux requis dans le domaine de ce contexte lié.
 
-Par exemple, l’entité Buyer peut avoir la plupart des attributs d’une personne définis dans l’entité User dans le profil ou microservice d’identité, notamment son identité. Mais l’entité Buyer dans le microservice de passation de commandes peut avoir moins d’attributs, car seules certaines données sur l’acheteur sont liées au processus de commande. Le contexte de chaque microservice ou contexte limité exerce un impact sur son modèle de domaine.
+Par exemple, l’entité acheteur peut avoir la plupart des attributs d’une personne qui sont définis dans l’entité utilisateur dans le profil ou le microservice d’identité, y compris l’identité. Mais l’entité Buyer dans le microservice de passation de commandes peut avoir moins d’attributs, car seules certaines données sur l’acheteur sont liées au processus de commande. Le contexte de chaque microservice ou contexte limité exerce un impact sur son modèle de domaine.
 
 *Les entités de domaine doivent implémenter un comportement en plus des attributs de données.*
 
-Une entité de domaine en conception pilotée par le domaine (Domain Driver Design, DDD) doit implémenter la logique de domaine ou le comportement lié aux données de l’entité (objet auquel vous accédez dans la mémoire). Par exemple, dans le cadre d’une classe d’entité de commande, vous devez implémenter la logique et les opérations métier en tant que méthodes pour des tâches comme l’ajout d’un article, la validation des données et le calcul du total. Les méthodes de l’entité s’occupent des invariants et des règles de l’entité au lieu de répartir ces règles dans toute la couche Application.
+Une entité de domaine en conception pilotée par le domaine (Domain Driver Design, DDD) doit implémenter la logique de domaine ou le comportement lié aux données de l’entité (objet auquel vous accédez dans la mémoire). Par exemple, dans le cadre d’une classe d’entité de commande, vous devez implémenter la logique et les opérations métier en tant que méthodes pour des tâches comme l’ajout d’un article, la validation des données et le calcul du total. Les méthodes de l’entité s’occupent des invariants et des règles de l’entité au lieu d’avoir ces règles réparties sur la couche d’application.
 
 La figure 7-8 illustre une entité de domaine qui implémente non seulement des attributs de données, mais aussi des opérations ou des méthodes avec une logique de domaine associée.
 
@@ -51,7 +51,7 @@ Quand même, si votre microservice ou contexte limité est très simple (un serv
 
 C’est pourquoi les architectures des microservices conviennent parfaitement à une approche à plusieurs architectures dépendant de chaque contexte limité. Par exemple, dans eShopOnContainers, le microservice de passation de commandes implémente des modèles DDD, contrairement au microservice de catalogue, qui est un simple service CRUD.
 
-Certaines personnes disent que le modèle de domaine anémique est un anti-modèle. Il dépend vraiment de ce que vous implémentez. Si le microservice que vous créez est suffisamment simple (par exemple, un service CRUD), le modèle de domaine anémique n’est pas un anti-modèle. Toutefois, si vous avez besoin de vous confronter à la complexité du domaine d’un microservice dont le grand nombre de règles d’entreprise est en constante évolution, le modèle de domaine anémique peut être un anti-modèle pour ce microservice ou contexte limité. Dans ce cas, une conception en tant que modèle riche avec des entités contenant des données en plus d’un comportement, ainsi que l’implémentation de modèles DDD supplémentaires (agrégats, objets de valeur, etc.) peut offrir des avantages énormes pour le succès à long terme d’un tel microservice.
+Certaines personnes disent que le modèle de domaine anémique est un anti-modèle. Il dépend vraiment de ce que vous implémentez. Si le microservice que vous créez est suffisamment simple (par exemple, un service CRUD), le modèle de domaine anémique n’est pas un anti-modèle. Cependant, si vous avez besoin de s’attaquer à la complexité du domaine d’un microservice qui a beaucoup de règles d’affaires en constante évolution, le modèle de domaine anémique pourrait être un modèle anti-modèle pour ce microservice ou contexte limité. Dans ce cas, une conception en tant que modèle riche avec des entités contenant des données en plus d’un comportement, ainsi que l’implémentation de modèles DDD supplémentaires (agrégats, objets de valeur, etc.) peut offrir des avantages énormes pour le succès à long terme d’un tel microservice.
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
@@ -66,11 +66,11 @@ Certaines personnes disent que le modèle de domaine anémique est un anti-modè
 
 ### <a name="the-value-object-pattern"></a>Le modèle Objet de valeur
 
-Comme l’a noté Eric Evans, « de nombreux objets n’ont pas d’identité conceptuelle. Ces objets décrivent certaines caractéristiques d’une chose ».
+Comme Eric Evans l’a noté, « beaucoup d’objets n’ont pas d’identité conceptuelle. Ces objets décrivent certaines caractéristiques d’une chose.
 
 Une entité nécessite une identité, mais il existe de nombreux objets dans un système qui n’en ont pas besoin, comme le modèle Objet de valeur. Un objet de valeur est un objet sans identité conceptuelle qui décrit un aspect de domaine. Ce sont des objets que vous instanciez pour représenter des éléments de conception qui ne vous concernent que temporairement. Il vous importe de savoir *ce* qu’ils sont, pas *qui* ils sont. Les nombres et les chaînes en sont des exemples, mais il peut aussi s’agir de concepts plus généraux comme des groupes d’attributs.
 
-Une entité dans un microservice peut ne pas être une entité dans un autre microservice, puisque dans le deuxième cas, le contexte limité peut avoir une signification différente. Par exemple, une adresse dans une application de commerce électronique peut ne pas avoir du tout d’identité, puisqu’elle peut représenter uniquement un groupe d’attributs du profil de client d’une personne ou d’une entreprise. Dans ce cas, l’adresse doit être classée en tant qu’objet de valeur. Toutefois, dans une application destinée à un fournisseur d’énergie électrique, l’adresse du client peut s’avérer importante pour le domaine d’entreprise. Par conséquent, l’adresse doit avoir une identité pour que le système de facturation puisse être directement lié à l’adresse. Dans cet exemple, une adresse doit être classée en tant qu’entité de domaine.
+Une entité dans un microservice peut ne pas être une entité dans un autre microservice, puisque dans le deuxième cas, le contexte limité peut avoir une signification différente. Par exemple, une adresse d’une application de commerce électronique peut ne pas avoir d’identité du tout, car elle ne peut représenter qu’un groupe d’attributs du profil du client pour une personne ou une entreprise. Dans ce cas, l’adresse doit être classée en tant qu’objet de valeur. Toutefois, dans une application destinée à un fournisseur d’énergie électrique, l’adresse du client peut s’avérer importante pour le domaine d’entreprise. Par conséquent, l’adresse doit avoir une identité pour que le système de facturation puisse être directement lié à l’adresse. Dans cet exemple, une adresse doit être classée en tant qu’entité de domaine.
 
 Une personne désignée par un prénom et un nom est généralement une entité, car elle a une identité, même si ce prénom et ce nom coïncident avec un autre ensemble de valeurs, par exemple s’ils font également référence à une autre personne.
 
@@ -104,7 +104,7 @@ Il peut s’avérer difficile d’identifier les agrégats. Un agrégat est un g
 
 Un agrégat se compose d’au moins une entité : la racine d’agrégat, également appelée entité racine ou entité principale. De plus, il peut avoir plusieurs entités enfants et objets de valeur, qui fonctionnent tous ensemble pour implémenter le comportement et les transactions nécessaires.
 
-Une racine d’agrégat a pour but de garantir la cohérence de l’agrégat ; elle doit être le seul point d’entrée pour les mises à jour de l’agrégat par le biais de méthodes ou d’opérations dans la classe de racine d’agrégat. Vous devez apporter des modifications aux entités au sein de l’agrégat uniquement par le biais de la racine d’agrégat. Celle-ci protège la cohérence de l’agrégat, en tenant compte de tous les invariants et de toutes les règles de cohérence à respecter dans votre agrégat. Si vous modifiez séparément une entité enfant ou un objet de valeur, la racine d’agrégat ne peut pas vérifier que l’agrégat est dans un état valide. Il serait alors comme une table avec un pied qui bouge. Le maintien de la cohérence est le principal but de la racine d’agrégat.
+Une racine d’agrégat a pour but de garantir la cohérence de l’agrégat ; elle doit être le seul point d’entrée pour les mises à jour de l’agrégat par le biais de méthodes ou d’opérations dans la classe de racine d’agrégat. Vous devez apporter des modifications aux entités au sein de l’agrégat uniquement par le biais de la racine d’agrégat. Il est le gardien de cohérence de l’agrégat, compte tenu de toutes les invariants et les règles de cohérence que vous pourriez avoir besoin de se conformer à votre agrégat. Si vous modifiez séparément une entité enfant ou un objet de valeur, la racine d’agrégat ne peut pas vérifier que l’agrégat est dans un état valide. Il serait alors comme une table avec un pied qui bouge. Le maintien de la cohérence est le principal but de la racine d’agrégat.
 
 Dans la figure 7-9, vous pouvez voir des exemples d’agrégats, comme l’agrégat Buyer (Acheteur), qui contient une seule entité (la racine d’agrégat Buyer). L’agrégat de commande (Order) contient plusieurs entités et un objet de valeur.
 

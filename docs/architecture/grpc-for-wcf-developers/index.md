@@ -2,12 +2,12 @@
 title: ASP.NET Core gRPC pour WCF Developers - gRPC pour les développeurs WCF
 description: Introduction à la construction de services gRPC dans ASP.NET Core 3.0 pour les développeurs WCF
 ms.date: 09/02/2019
-ms.openlocfilehash: 40307124c521659a00339884bacf48881fa3e048
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 175dfbf1880a0937615543c248fba3bed0e25c23
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77543233"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988958"
 ---
 # <a name="aspnet-core-grpc-for-wcf-developers"></a>gRPC ASP.NET Core pour les développeurs WCF
 
@@ -27,11 +27,11 @@ Copyright © 2019 par Microsoft Corporation
 
 Tous droits réservés. Aucune partie du contenu de ce document ne peut être reproduite ou transmise sous quelque forme ou par quelque moyen que ce soit sans l’autorisation écrite de l’éditeur.
 
-Ce document est fourni « en l’état » et exprime les points de vue et les opinions de son auteur. Les points de vue, les opinions et les informations exprimés dans ce document, notamment l’URL et autres références à des sites web Internet, peuvent faire l’objet de modifications sans préavis.
+Ce document est fourni « en l’état » et exprime les points de vue et les opinions de son auteur. Les points de vue, les opinions et les informations exprimés dans ce document, notamment l’URL et autres références à des sites web Internet, peuvent faire l’objet de modifications sans préavis.
 
  Certains exemples sont fournis à titre indicatif uniquement et sont fictifs. Toute association ou lien est purement involontaire ou fortuit.
 
-Microsoft et les marques commerciales mentionnées dans la page web « Marques » à l’adresse https://www.microsoft.com sont des marques du groupe de sociétés Microsoft.
+Microsoft et les marques commerciales mentionnées dans la page web « Marques » sur https://www.microsoft.com sont des marques du groupe Microsoft.
 
 Le logo de la baleine Docker est une marque déposée de Docker, Inc. Utilisée par permission.
 

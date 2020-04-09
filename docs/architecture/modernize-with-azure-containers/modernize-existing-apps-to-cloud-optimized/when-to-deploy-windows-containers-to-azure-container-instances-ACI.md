@@ -2,12 +2,12 @@
 title: Quand déployer des conteneurs Windows dans les instances de conteneurs Azure (ACI)
 description: Moderniser les applications .NET existantes avec les conteneurs Azure Cloud et Windows (fr) Quand déployer des conteneurs Windows dans les instances de conteneurs Azure (ACI)
 ms.date: 04/29/2018
-ms.openlocfilehash: 3b6ae1ced9c4e01f5ab400e2575947a396064ebd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6c889db6f0475f24a196144c7fb62faec4c173ed
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69577932"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989153"
 ---
 # <a name="when-to-deploy-windows-containers-to-azure-container-instances-aci"></a>Quand déployer des conteneurs Windows dans les instances de conteneurs Azure (ACI)
 

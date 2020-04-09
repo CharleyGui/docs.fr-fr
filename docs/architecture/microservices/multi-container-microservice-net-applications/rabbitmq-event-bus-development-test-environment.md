@@ -2,18 +2,18 @@
 title: Implémentation d’un bus d’événements avec RabbitMQ pour un environnement de développement ou de test
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Utiliser RabbitMQ pour implémenter une messagerie de bus d’événements pour les événements d’intégration des environnements de développement ou de test.
 ms.date: 10/02/2018
-ms.openlocfilehash: ba1cea9384893955ae0743ac8d6a34c350224cd5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 12e37fabfe915b4d2089d27f7852528a9a037d3c
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74711199"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988295"
 ---
 # <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>Implémentation d’un bus d’événements avec RabbitMQ pour un environnement de développement ou de test
 
 Avant tout, nous tenons à préciser la chose suivante : si vous créez votre bus d’événements personnalisé en le basant sur l’exécution de RabbitMQ dans un conteneur, comme le fait l’application eShopOnContainers, utilisez ce bus d’événements personnalisé uniquement pour vos environnements de développement et de test. Ne l’utilisez pas pour votre environnement de production, sauf si vous le générez dans le cadre d’un Service Bus prêt pour la production. Dans un bus d’événements personnalisé simplifié, il manque de nombreuses fonctionnalités critiques prêtes pour la production, contrairement à un Service Bus commercial.
 
-L’une des implémentations personnalisées du bus d’événements dans eShopOnContainers repose essentiellement sur une bibliothèque qui utilise l’API RabbitMQ (il existe une autre implémentation basée sur Azure Service Bus).
+L’une des implémentations personnalisées d’autobus d’événement dans eShopOnContainers est essentiellement une bibliothèque utilisant l’API RabbitMQ. (Il y a une autre implémentation basée sur Azure Service Bus.)
 
 L’implémentation du bus d’événements avec RabbitMQ permet aux microservices de s’abonner aux événements, aux événements de publication et aux événements de réception, comme le montre la figure 6-21.
 
@@ -122,6 +122,6 @@ Une solution prête à la production avec le soutien de RabbitMQ.
 - **MassTransit MassTransit** \
   <https://masstransit-project.com/>
   
->[!div class="step-by-step"]
->[Suivant précédent](integration-event-based-microservice-communications.md)
->[Next](subscribe-events.md)
+> [!div class="step-by-step"]
+> [Suivant précédent](integration-event-based-microservice-communications.md)
+> [Next](subscribe-events.md)

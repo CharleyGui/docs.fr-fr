@@ -2,12 +2,12 @@
 title: Application des approches CQRS et CQS dans un microservice DDD dans eShopOnContainers
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre la façon dont CQRS est implémenté dans le microservice Ordering de l’application eShopOnContainers.
 ms.date: 03/03/2020
-ms.openlocfilehash: 16fe46189a5b43591adebbb764d4acef2f7efbfb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: eda0ee374b41a81811e92e2829b10dc8515e0ccd
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847152"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988490"
 ---
 # <a name="apply-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>Appliquer des approches CQRS et CQS dans un microservice DDD dans eShopOnContainers
 
@@ -15,7 +15,7 @@ La conception du microservice de commandes au niveau de l’application de réf�
 
 Le concept essentiel de ces modèles, et le point important ici, est que les requêtes sont idempotentes : quel que soit le nombre de fois où vous interrogez un système, son état ne change pas. En d’autres termes, les requêtes n’ont pas d’effet secondaire.
 
-Par conséquent, vous pourriez utiliser un modèle de données « lectures » différent de la logique transactionnelle « écritures », bien que le microservice de commandes utilise la même base de données. Il s’agit donc d’une approche CQRS simplifiée.
+Par conséquent, vous pouvez utiliser un modèle de données de « lectures » différent de la logique transactionnelle « écrit » le modèle de domaine, même si les microservices de commande utilisent la même base de données. Il s’agit donc d’une approche CQRS simplifiée.
 
 En revanche, les commandes qui déclenchent des transactions et mises à jour de données changent l’état du système. Avec les commandes, vous devez être prudent quand vous abordez le problème de la complexité et les règles métier en constante évolution. C’est là où vous souhaitez appliquer des techniques DDD pour obtenir un système mieux modélisé.
 
@@ -25,7 +25,7 @@ Un modèle de ce type est le modèle Agrégat, que nous examinerons plus en dét
 
 Comme le montre la figure 7-2 de la section précédente, ce guide suggère d’utiliser des modèles DDD uniquement dans la zone transactionnelle/mise à jour de votre microservice (c’est-à-dire, comme le déclenchent les commandes). Les requêtes peuvent suivre une approche plus simple et doivent être séparées des commandes, suite à une approche CQRS.
 
-Pour implémenter le « côté requêtes », vous pouvez choisir entre plusieurs méthodes, à partir de votre ORM complet comme EF Core, des projections AutoMapper, des procédures stockées, des vues, des vues matérialisées ou un micro-ORM.
+Pour la mise en œuvre du côté des « requêtes », vous pouvez choisir entre de nombreuses approches, à partir de votre ORM à part entière comme EF Core, des projections AutoMapper, des procédures stockées, des vues, des vues matérialisées ou un micro ORM.
 
 Dans ce guide et dans eShopOnContainers (en particulier le microservice de commandes), nous avons choisi d’implémenter des requêtes simples à l’aide d’un micro-ORM comme [Dapper](https://github.com/StackExchange/dapper-dot-net). Cela vous permet d’implémenter toute requête basée sur des instructions SQL pour obtenir des performances optimales, grâce à un framework léger avec très peu de surcharge.
 

@@ -2,12 +2,12 @@
 title: Étapes du workflow DevOps de la boucle externe pour une application Docker
 description: Découvrez les étapes de la « boucle externe » du workflow DevOps
 ms.date: 02/15/2019
-ms.openlocfilehash: 735f92c00cd6279649ec3b0c35cfb00543f21a8c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fdda1b6a2deb08ed97867583fcc8048d4dba880c
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75936779"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988971"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Étapes du workflow DevOps de la boucle externe pour une application Docker
 
@@ -184,7 +184,7 @@ Du point de vue du déploiement continu, et notamment d’Azure DevOps Services,
 
 **Figure 5-9**. Déploiement d’applications distribuées sur Container Service
 
-Pour effectuer un déploiement sur certains clusters ou orchestrateurs, vous utilisez probablement des mécanismes et des scripts de déploiement spécifiques suivant chaque orchestrateur (en d’autres termes, Kubernetes et Service Fabric ont des mécanismes de déploiement différents) au lieu de l’outil convivial `docker-compose` basé sur le fichier de définition `docker-compose.yml`. Toutefois, avec la tâche Déployer sur Kubernetes d’Azure DevOps Services, illustrée à la Figure 5-10, vous pouvez désormais également effectuer un déploiement sur les orchestrateurs pris en charge en utilisant simplement votre fichier `docker-compose.yml` familier, car l’outil effectue cette « traduction » pour vous (depuis votre fichier `docker-compose.yml` vers le format requis par l’orchestrateur).
+Pour effectuer un déploiement sur certains clusters ou orchestrateurs, vous utilisez probablement des mécanismes et des scripts de déploiement spécifiques suivant chaque orchestrateur (en d’autres termes, Kubernetes et Service Fabric ont des mécanismes de déploiement différents) au lieu de l’outil convivial `docker-compose` basé sur le fichier de définition `docker-compose.yml`. Cependant, grâce à la tâche Azure DevOps Services Docker Deploy, indiquée dans la figure 5-10, vous pouvez maintenant également vous déployer aux orchestrateurs pris en charge en utilisant simplement votre fichier familier `docker-compose.yml` parce que l’outil effectue cette «traduction» pour vous (de votre `docker-compose.yml` fichier au format requis par l’orchestrateur).
 
 ![Capture d’écran montrant la tâche Deploy to Kubernetes.](./media/docker-application-outer-loop-devops-workflow/add-deploy-to-kubernetes-task.png)
 

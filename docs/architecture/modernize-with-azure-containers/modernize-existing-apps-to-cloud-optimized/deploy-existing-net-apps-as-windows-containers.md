@@ -2,12 +2,12 @@
 title: Déployer des applications .NET existantes en tant que conteneurs Windows
 description: Moderniser les applications .NET existantes avec les conteneurs Azure Cloud et Windows (fr) Déployer les applications .NET existantes sous forme de conteneurs Windows
 ms.date: 04/29/2018
-ms.openlocfilehash: 28568ca363bfc8100f78b100f8a7f0242c4f04c9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c99c2e756320fc886203efcbf98a81e571d907e5
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73089557"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987970"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Déployer des applications .NET existantes en tant que conteneurs Windows
 
@@ -91,14 +91,14 @@ Dans les scénarios de migration pour les applications existantes ou héritées 
 
 Lorsque vous ajoutez le nom d’image à votre fichier Dockerfile, vous pouvez sélectionner le système d’exploitation et la version en utilisant une balise, comme dans les exemples suivants pour les images de conteneurs Windows basées sur le Cadre .NET :
 
-> | **étiquette** | **Système et version** |
+> | **Tag** | **Système et version** |
 > |---|---|
 > | **microsoft/dotnet-framework:4.x-windowsservercore** | .NET Framework 4.x sur Windows Server Core |
 > | **microsoft/aspnet:4.x-windowsservercore** | .NET Framework 4.x avec une personnalisation ASP.NET supplémentaire, sur Windows Server Core |
 
 Pour .NET Core (plateforme croisée pour Linux et Windows), les balises ressembleraient à ce qui suit :
 
-> | **étiquette** | **Système et version**
+> | **Tag** | **Système et version**
 > |---|---|
 > | **microsoft/dotnet:2.0.0-runtime** | .NET Core 2.0 runtime-seulement sur Linux |
 > | **microsoft/dotnet:2.0.0-runtime-nanoserver** | .NET Core 2.0 runtime-seulement sur Windows Nano Server |
@@ -152,7 +152,7 @@ De ces trois, ACI offre un grand avantage, qui est le fait que vous n’avez pas
 
 Les produits azuréens supportant les conteneurs qui sont en même temps positionnés davantage au niveau PaaS (Plateforme en tant que Service) sont les :
 
-- **Service d’application Azure**
+- **Azure App Service**
 - **Azure Kubernetes Service (AKS et ACS)**
 - **Azure Batch**
 

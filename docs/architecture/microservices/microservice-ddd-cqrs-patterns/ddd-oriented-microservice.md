@@ -2,12 +2,12 @@
 title: Conception d’un microservice orienté DDD
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre la conception du microservice orienté DDD (Domain Driven Design) et de ses couches d’application.
 ms.date: 10/08/2018
-ms.openlocfilehash: c5ac55978ca979a3ae055d9b0cd2d3c6b3187b4e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 583e103c8bd9d828731a658ea2fd2aa0758e7a12
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401696"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988737"
 ---
 # <a name="design-a-ddd-oriented-microservice"></a>Concevoir un microservice orienté DDD
 
@@ -71,7 +71,7 @@ En passant à la couche d’application, nous pouvons à nouveau citer le livre 
 
 **Couche d’application :** définit les travaux que le logiciel est supposé effectuer et dirige les objets de domaine expressifs pour résoudre les problèmes. Les tâches dont cette couche est responsable sont significatives pour l’entreprise ou nécessaires pour l’interaction avec les couches d’application d’autres systèmes. Cette couche reste mince. Elle ne contient pas de règles métier ni de connaissances métier, mais coordonne uniquement les tâches et le travail des délégués pour les collaborations des objets de domaine dans la couche suivante. Elle ne présente pas d’état reflétant la situation de l’entreprise, mais peut avoir un état qui reflète la progression d’une tâche pour l’utilisateur ou le programme.
 
-La couche d’application d’un microservice dans .NET est généralement codée comme un projet d’API web ASP.NET Core. Le projet implémente l’interaction du microservice, l’accès réseau à distance et les API web externes utilisées dans les applications clientes ou l’interface utilisateur. Il inclut des requêtes dans le cadre d’une approche CQRS, des commandes acceptées par le microservice et même la communication pilotée par événements entre les microservices (événements d’intégration). L’API web ASP.NET Core qui représente la couche d’application ne doit pas contenir de règles métier ni de connaissances de domaine (notamment des règles de domaine pour les transactions ou les mises à jour) : celles-ci doivent appartenir à la bibliothèque de classes de modèle de domaine. La couche d’application doit uniquement coordonner les tâches et ne doit pas contenir ni définir d’état de domaine (modèle de domaine). Elle délègue l’exécution des règles métier aux classes de modèle de domaine (racines d’agrégat et entités de domaine) qui vont finalement mettre à jour les données au sein de ces entités de domaine.
+La couche d’application d’un microservice en .NET est généralement codée comme un projet ASP.NET’API Web Core. Le projet met en œuvre l’interaction du microservice, l’accès à distance du réseau et les API Web externes utilisés à partir de l’interface utilisateur ou des applications client. Il inclut des requêtes dans le cadre d’une approche CQRS, des commandes acceptées par le microservice et même la communication pilotée par événements entre les microservices (événements d’intégration). L’API web ASP.NET Core qui représente la couche d’application ne doit pas contenir de règles métier ni de connaissances de domaine (notamment des règles de domaine pour les transactions ou les mises à jour) : celles-ci doivent appartenir à la bibliothèque de classes de modèle de domaine. La couche d’application doit uniquement coordonner les tâches et ne doit pas contenir ni définir d’état de domaine (modèle de domaine). Elle délègue l’exécution des règles métier aux classes de modèle de domaine (racines d’agrégat et entités de domaine) qui vont finalement mettre à jour les données au sein de ces entités de domaine.
 
 En fait, la logique d’application est l’endroit où vous implémentez tous les cas d’usage qui dépendent d’un frontend donné, par exemple l’implémentation liée à un service API web.
 
@@ -81,7 +81,7 @@ L’objectif est que la logique de domaine dans la couche de modèle de domaine,
 
 La couche d’infrastructure représente la façon dont les données qui sont initialement contenues dans les entités de domaine (en mémoire) sont conservées dans les bases de données ou un autre magasin persistant. Un exemple est l’utilisation de code Entity Framework Core pour implémenter les classes de modèle de dépôt qui utilisent un DBContext pour conserver les données dans une base de données relationnelle.
 
-Conformément aux principes [d’ignorance de la persistance](https://deviq.com/persistence-ignorance/) et [d’ignorance de l’infrastructure](https://ayende.com/blog/3137/infrastructure-ignorance) mentionnés précédemment, la couche d’infrastructure ne doit pas « contaminer » la couche de modèle de domaine. Les classes d’entité de modèle de domaine doivent rester étrangères à l’infrastructure qui vous permet de rendre persistantes des données (EF ou tout autre framework) en évitant les dépendances dures sur les frameworks. Votre bibliothèque de classes de couche de modèle de domaine doit avoir uniquement votre code de domaine, simplement des classes d’entité [OCT](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object) qui implémentent le cœur de votre logiciel et qui sont complètement découplées des technologies d’infrastructure.
+Conformément aux principes [d’ignorance](https://deviq.com/persistence-ignorance/) de persistance et [d’ignorance de l’infrastructure](https://ayende.com/blog/3137/infrastructure-ignorance) mentionnés précédemment, la couche d’infrastructure ne doit pas « contaminer » la couche du modèle de domaine. Les classes d’entité de modèle de domaine doivent rester étrangères à l’infrastructure qui vous permet de rendre persistantes des données (EF ou tout autre framework) en évitant les dépendances dures sur les frameworks. Votre bibliothèque de classes de couche de modèle de domaine doit avoir uniquement votre code de domaine, simplement des classes d’entité [OCT](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object) qui implémentent le cœur de votre logiciel et qui sont complètement découplées des technologies d’infrastructure.
 
 Ainsi, vos couches ou vos bibliothèques et projets de classes doivent au final s’appuyer sur votre couche de modèle de domaine (bibliothèque), et pas l’inverse, comme illustré dans la figure 7-7.
 

@@ -2,12 +2,12 @@
 title: Implémenter des tâches en arrière-plan dans les microservices avec IHostedService et la classe BackgroundService
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les nouvelles options pour utiliser IHostedService et BackgroundService afin d’implémenter des tâches d’arrière-plan dans des microservices .NET Core.
 ms.date: 01/30/2020
-ms.openlocfilehash: fab67c816e90c69a4d593422b4974cb9b8819807
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fd26d0444312d3525ad95b2273f28a6ceaa27911
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77502315"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988334"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>Implémenter des tâches en arrière-plan dans les microservices avec IHostedService et la classe BackgroundService
 
@@ -33,7 +33,7 @@ Chaque approche a des avantages et des inconvénients selon vos besoins professi
 
 ## <a name="registering-hosted-services-in-your-webhost-or-host"></a>Inscription de services hébergés sur WebHost ou Host
 
-Examinons plus en détail l’interface `IHostedService`, car son utilisation est assez similaire dans `WebHost` ou `Host`.
+Let’s drill down `IHostedService` plus loin sur l’interface `WebHost` puisque `Host`son utilisation est assez similaire dans un ou dans un .
 
 SignalR est un exemple d’artefact qui utilise des services hébergés, mais vous pouvez également l’employer pour des choses beaucoup plus simples, par exemple :
 
@@ -64,7 +64,7 @@ Dans ce code, le service hébergé `GracePeriodManagerService` correspond au cod
 
 L’exécution de la tâche en arrière-plan `IHostedService` est coordonnée avec la durée de vie de l’application (hôte ou microservice). Vous inscrivez des tâches quand l’application démarre, et vous pouvez effectuer des actions normales ou de nettoyage quand l’application s’arrête.
 
-Sans utiliser `IHostedService`, vous pouvez tout de même démarrer un thread d’arrière-plan pour exécuter une tâche. La différence se situe précisément au moment de l’arrêt de l’application, quand le thread est simplement tué sans avoir eu l’occasion d’exécuter des actions de nettoyage normales.
+Sans utiliser `IHostedService`, vous pouvez tout de même démarrer un thread d’arrière-plan pour exécuter une tâche. La différence est précisément à l’heure d’arrêt de l’application où ce thread serait tout simplement tué sans avoir la possibilité d’exécuter des actions de nettoyage gracieux.
 
 ## <a name="the-ihostedservice-interface"></a>Interface IHostedService
 
@@ -178,7 +178,7 @@ public class GracePeriodManagerService : BackgroundService
                                      IEventBus eventBus,
                                      ILogger<GracePeriodManagerService> logger)
     {
-        //Constructor’s parameters validations...
+        // Constructor's parameters validations...
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -249,6 +249,6 @@ L’interface `IHostedService` fournit un moyen pratique de commencer des tâche
 - **GenericHost Échantillon à l’aide de ASP.NET Core 2.1** \
   <https://github.com/aspnet/Hosting/tree/release/2.1/samples/GenericHostSample>
 
->[!div class="step-by-step"]
->[Suivant précédent](test-aspnet-core-services-web-apps.md)
->[Next](implement-api-gateways-with-ocelot.md)
+> [!div class="step-by-step"]
+> [Suivant précédent](test-aspnet-core-services-web-apps.md)
+> [Next](implement-api-gateways-with-ocelot.md)

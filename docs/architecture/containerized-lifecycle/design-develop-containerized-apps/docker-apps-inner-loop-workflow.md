@@ -2,12 +2,12 @@
 title: Workflow de développement de la boucle interne pour les applications Docker
 description: Découvrez le workflow de type « boucle interne » pour le développement des applications Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: 3d2fc889d22dbf02acccfbf9231ad98fca224cff
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 615cfd08f46609c4e100ea3e72b541fe2c1ae62a
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75936810"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989010"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Workflow de développement de la boucle interne pour les applications Docker
 
@@ -100,7 +100,7 @@ Dans la figure 4-24, vous pouvez voir comment le fichier docker-compose est ajo
 
 **Figure 4-24**. Fichiers Docker ajoutés à l’aide de la **commande Add Docker files to Workspace**
 
-Lorsque vous ajoutez un fichier DockerFile, vous devez spécifier quelle image Docker de base vous allez utiliser (par exemple, `FROM mcr.microsoft.com/dotnet/core/aspnet`). En général, vous créez votre image personnalisée sur l’image de base que vous pouvez obtenir dans n’importe quel dépôt officiel du [registre Docker Hub](https://hub.docker.com/) (comme une [image pour .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) ou [pour Node.js](https://hub.docker.com/_/node/)).
+Lorsque vous ajoutez un DockerFile, vous spécifiez quelle `FROM mcr.microsoft.com/dotnet/core/aspnet`image Docker de base vous utiliserez (comme l’utilisation). En général, vous créez votre image personnalisée sur l’image de base que vous pouvez obtenir dans n’importe quel dépôt officiel du [registre Docker Hub](https://hub.docker.com/) (comme une [image pour .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) ou [pour Node.js](https://hub.docker.com/_/node/)).
 
 ***Utiliser une image Docker officielle existante***
 

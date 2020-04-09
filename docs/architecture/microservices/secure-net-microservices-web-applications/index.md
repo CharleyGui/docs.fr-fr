@@ -3,12 +3,12 @@ title: Sécurisation des microservices .NET et des applications web
 description: 'Sécurité dans les microservices .NET et les applications web : Découvrez les options d’authentification dans les applications web ASP.NET Core.'
 author: mjrousos
 ms.date: 01/30/2020
-ms.openlocfilehash: 0ac2591f8650e9f8cf29560735a9ec803d29ee4f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 56ebd95c8a24c7c8d30d3c6acef6650cb63383c6
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77628330"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988113"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Sécuriser les microservices .NET et les applications web
 
@@ -16,7 +16,7 @@ La sécurité dans les microservices et les applications web est un sujet tellem
 
 ## <a name="implement-authentication-in-net-microservices-and-web-applications"></a>Implémenter l’authentification dans les microservices .NET et les applications web
 
-Il est souvent nécessaire de limiter l’accès aux ressources et aux API publiées par un service à certains utilisateurs ou clients approuvés. La première étape d’une telle décision d’approbation au niveau des API passe par l’authentification. L’authentification est le processus qui consiste à vérifier de manière fiable l’identité d’un utilisateur.
+Il est souvent nécessaire de limiter l’accès aux ressources et aux API publiées par un service à certains utilisateurs ou clients approuvés. La première étape d’une telle décision d’approbation au niveau des API passe par l’authentification. L’authentification est le processus de vérification fiable de l’identité d’un utilisateur.
 
 Dans les scénarios de microservices, l’authentification est généralement gérée de manière centralisée. Si vous utilisez une passerelle d’API, celle-ci est parfaitement indiquée pour l’authentification, comme l’illustre la figure 9-1. Si vous utilisez cette approche, vérifiez que les différents microservices ne sont pas directement accessibles (sans la passerelle d’API), à moins qu’un dispositif de sécurité supplémentaire ait été mis en place pour authentifier les messages en provenance ou non de la passerelle.
 
@@ -34,7 +34,7 @@ Quand les microservices sont accessibles directement, l’approbation, qui compr
 
 ### <a name="authenticate-with-aspnet-core-identity"></a>S’authentifier avec ASP.NET Core Identity
 
-Dans ASP.NET Core, le principal mécanisme d’identification des utilisateurs d’une application est le système d’appartenance [ASP.NET Core Identity](/aspnet/core/security/authentication/identity). ASP.NET Core Identity stocke les informations utilisateur (notamment les revendications, les rôles et les informations de connexion) dans un magasin de données configuré par le développeur. En règle générale, le magasin de données d’ASP.NET Core Identity est un magasin Entity Framework fourni dans le package `Microsoft.AspNetCore.Identity.EntityFrameworkCore`. Cependant, il est possible d’utiliser des magasins personnalisés ou d’autres packages tiers pour stocker les informations d’identité dans Stockage Table Azure, CosmosDB ou à d’autres emplacements.
+Le principal mécanisme de ASP.NET Core pour identifier les utilisateurs d’une application est le [système d’adhésion ASP.NET Core Identity.](/aspnet/core/security/authentication/identity) ASP.NET Core Identity stocke les informations utilisateur (notamment les revendications, les rôles et les informations de connexion) dans un magasin de données configuré par le développeur. En règle générale, le magasin de données d’ASP.NET Core Identity est un magasin Entity Framework fourni dans le package `Microsoft.AspNetCore.Identity.EntityFrameworkCore`. Cependant, il est possible d’utiliser des magasins personnalisés ou d’autres packages tiers pour stocker les informations d’identité dans Stockage Table Azure, CosmosDB ou à d’autres emplacements.
 
 > [!TIP]
 > ASP.NET Core 2.1 et fournit plus tard [ASP.NET Core Identity](/aspnet/core/security/authentication/identity) en tant que razor Class [Library](/aspnet/core/razor-pages/ui-class), de sorte que vous ne verrez pas beaucoup de code nécessaire dans votre projet, comme ce fut le cas pour les versions précédentes. Pour plus de détails sur la façon de personnaliser le code d’identité en fonction de vos besoins, voir [Scaffold Identity dans ASP.NET projets Core](/aspnet/core/security/authentication/scaffold-identity).
@@ -83,9 +83,9 @@ L’utilisation d’ASP.NET Core Identity autorise plusieurs scénarios :
 
 - Création d’informations utilisateur à l’aide du type UserManager (userManager.CreateAsync).
 
-- Authentification des utilisateurs à l’aide du type SignInManager. Vous pouvez utiliser `signInManager.SignInAsync` pour vous connecter directement, ou `signInManager.PasswordSignInAsync` pour confirmer que le mot de passe utilisateur est correct avant de vous connecter.
+- Authentification des utilisateurs à l’aide du type SignInManager. Vous pouvez `signInManager.SignInAsync` utiliser pour vous `signInManager.PasswordSignInAsync` connecter directement, ou pour confirmer que le mot de passe de l’utilisateur est correct, puis les connecter.
 
-- Identification d’un utilisateur en fonction des informations stockées dans un cookie (qui est lu par l’intergiciel ASP.NET Core Identity) de telle sorte que les requêtes suivantes d’un navigateur incluent l’identité et les revendications de l’utilisateur connecté.
+- Identifiez un utilisateur en fonction des informations stockées dans un cookie (qui est lu par ASP.NET Core Identity middleware) afin que les demandes ultérieures d’un navigateur incluront l’identité et les revendications d’un utilisateur connecté.
 
 Par ailleurs, ASP.NET Core Identity prend en charge l’[authentification à deux facteurs](/aspnet/core/security/authentication/2fa).
 
@@ -119,7 +119,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Les fournisseurs d’authentification externes courants et les packages NuGet qui leur sont associés vous sont présentés dans le tableau suivant :
 
-| **Fournisseur**  | **Paquet**                                          |
+| **Fournisseur**  | **Package**                                          |
 | ------------- | ---------------------------------------------------- |
 | **Microsoft** | **Microsoft.AspNetCore.Authentication.MicrosoftAccount** |
 | **Google**    | **Microsoft.AspNetCore.Authentication.Google**           |
@@ -215,7 +215,7 @@ Si vous préférez émettre des jetons de sécurité pour les utilisateurs locau
 
 [IdentityServer4](https://github.com/IdentityServer/IdentityServer4) et [OpenIddict](https://github.com/openiddict/openiddict-core) sont des fournisseurs OpenID Connect qui s’intègrent facilement à ASP.NET Core Identity pour vous permettre d’émettre des jetons de sécurité à partir d’un service ASP.NET Core. La [documentation IdentityServer4](https://identityserver4.readthedocs.io/en/latest/) explique en détail comment utiliser la bibliothèque. Ceci étant, voici sommairement comment émettre des jetons à l’aide d’IdentityServer4 :
 
-1. Appelez app.UseIdentityServer dans la méthode Startup.Configure pour ajouter IdentityServer4 au pipeline de traitement des requêtes HTTP de l’application. Cela permet à la bibliothèque de remettre les requêtes aux points de terminaison OpenID Connect et OAuth2 comme connect/token.
+1. Vous appelez l’application. UtilisezIdentityServer dans la méthode Startup.Configure pour ajouter IdentityServer4 au pipeline de traitement des demandes HTTP de l’application. Cela permet à la bibliothèque de remettre les requêtes aux points de terminaison OpenID Connect et OAuth2 comme connect/token.
 
 2. Configurez IdentityServer4 dans Startup.ConfigureServices en effectuant un appel à services.AddIdentityServer.
 

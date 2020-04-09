@@ -2,12 +2,12 @@
 title: Procédures pas à pas et vue d’ensemble technique pour le démarrage
 description: Moderniser les applications .NET existantes avec le cloud Azure et les conteneurs Windows (fr) Les procédures à pas et la technique commencent la vue d’ensemble
 ms.date: 04/28/2018
-ms.openlocfilehash: 190b33c4307b09bab0543d481e66ac9328074a0d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cff418d9b6e931a3082d8a2f8b818e7275139578
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69660883"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987867"
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>Procédures pas à pas et vue d’ensemble technique pour le démarrage
 
@@ -39,7 +39,7 @@ La procédure technique complète est disponible dans le wiki GitPo eShopModerni
 
 [eShopModernizing wiki pas à pas](https://github.com/dotnet-architecture/eShopModernizing/wiki)
 
-### <a name="overview"></a>Vue d’ensemble
+### <a name="overview"></a>Vue d'ensemble
 
 Dans cette procédure pas à pas, vous pouvez explorer la mise en œuvre initiale de trois applications héritées de l’échantillon. Les deux premières applications web d’échantillon ont une architecture monolithique, et ont été créées en utilisant des ASP.NET classiques. Une application est basée sur ASP.NET 4.x MVC; la deuxième application est basée sur ASP.NET 4.x Web Forms.
 La troisième application est une application à 3 niveaux composée par une application WinForms cliente et un service [de la Windows Communication Foundation (WCF)](../../framework/wcf/whats-wcf.md) côté serveur.
@@ -83,7 +83,7 @@ Explorez ce contenu plus en profondeur sur le wiki GitHub :
 
 ## <a name="walkthrough-2-containerize-your-existing-net-applications-with-windows-containers"></a>Procédure pas à pas 2 : Conteneurisez vos applications .NET existantes avec des conteneurs Windows
 
-### <a name="overview"></a>Vue d’ensemble
+### <a name="overview"></a>Vue d'ensemble
 
 Utilisez Windows Containers pour améliorer le déploiement d’applications .NET existantes, comme celles basées sur MVC, Web Forms ou WCF, dans les environnements de production, de développement et de test.
 
@@ -134,7 +134,7 @@ Explorez ce contenu plus en profondeur sur le wiki GitHub :
 
 La procédure technique complète est disponible dans le wiki GitPo eShopModernizing :<https://github.com/dotnet-architecture/eShopModernizing/wiki/06.-Deploying-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)>
 
-### <a name="overview"></a>Vue d’ensemble
+### <a name="overview"></a>Vue d'ensemble
 
 Le déploiement à un hôte Docker sur une machine virtuelle (VM) Windows Server 2016 dans Azure vous permet de configurer rapidement des environnements de développement/test/staging. Il vous donne également un endroit commun pour les testeurs ou les utilisateurs professionnels pour valider l’application. Les VM peuvent également être des environnements de production d’infrastructure valides en tant que service (IaaS).
 
@@ -188,7 +188,7 @@ La procédure technique complète est disponible dans le wiki GitPo eShopModerni
 
 [Déploiement des applications à l’ACI (Azure Container Instances)](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances))
 
-### <a name="overview"></a>Vue d’ensemble
+### <a name="overview"></a>Vue d'ensemble
 
 [Azure Container Instances (ACI)](https://docs.microsoft.com/azure/container-instances/) est le moyen le plus rapide d’avoir un environnement de test/de mise en scène de conteneurs où vous pouvez déployer des instances uniques de conteneurs.
 
@@ -204,11 +204,11 @@ Il peut y avoir des variations sur le déploiement des applications eShopModerni
 
 ### <a name="benefits"></a>Avantages
 
-Azure Container Instances facilite la création et la gestion de conteneurs Docker dans Azure, sans avoir à approvisionner les machines virtuelles ou à adopter un service de niveau supérieur. Avec ACI, vous pouvez déployer directement un conteneur Windows dans Azure et l’exposer à Internet avec un nom de domaine entièrement qualifié (FQDN) en quelques secondes (à condition que vous ayez l’image De conteneur Windows prêt dans un registre Docker comme Docker Hub ou Azure Container Registre).
+Azure Container Instances facilite la création et la gestion de conteneurs Docker dans Azure, sans avoir à approvisionner les machines virtuelles ou à adopter un service de niveau supérieur. Avec ACI, vous pouvez déployer directement un conteneur Windows dans Azure et l’exposer à Internet avec un nom de domaine entièrement qualifié (FQDN) en quelques secondes (à condition que vous ayez l’image De conteneur Windows prêt dans un registre Docker comme Docker Hub ou Azure Container Registry).
 
 ### <a name="considerations"></a>Considérations
 
-Déployer des conteneurs Windows avec un cadre .NET complet / ASP.NET ou SQL Server dans Azure Container Instances (ACI) n’est pas aussi rapide que le déploiement à un hôte Docker régulier (comme un serveur Windows 2016 avec des conteneurs Windows) parce que le L’image Docker doit être téléchargée (tirée du registre Docker) à chaque fois et les tailles de l’image de conteneur SQL (15,1 Go) et l’image de conteneur ASP.NET (13,9 Go) sont significativement grandes, cependant, il est beaucoup moins cher que de maintenir votre propre hôte docker (en ligne en permanence Windows Server 2016 avec Windows Containers VM en Azure) sans oublier tout un orchestrateur comme Kubernetes à Azure (AKS) qui est, d’autre part, un excellent choix pour les déploiements de production.
+Déployer des conteneurs Windows avec un cadre .NET complet / ASP.NET ou SQL Server dans Azure Container Instances (ACI) n’est pas aussi rapide que le déploiement à un hôte Docker régulier (comme un serveur Windows 2016 avec Des conteneurs Windows) parce que l’image Docker doit être téléchargé (tiré du registre Docker) à chaque fois et la taille de l’image conteneur SQL (201615.1 Go) et l’image de conteneur ASP.NET (13,9 Go) sont significativement grandes, mais il est beaucoup moins cher que de maintenir votre propre hôte docker (en ligne en ligne Windows Server 2016 avec Windows Containers VM en Azure) sans parler d’un orchestrateur entier comme Kubernetes en Azure (AKS) qui est, d’autre part, un excellent choix pour les déploiements de production.
 
 En conclusion principale, l’utilisation d’Azure Container Instances est une option très convaincante pour les scénarios Dev/Test et pour les pipelines CI/CD.
 
@@ -226,7 +226,7 @@ La procédure technique complète est disponible dans le wiki GitPo eShopModerni
 
 <https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-CI-CD)>
 
-### <a name="overview"></a>Vue d’ensemble
+### <a name="overview"></a>Vue d'ensemble
 
 Une application basée sur Windows Containers devra rapidement utiliser des plates-formes, s’éloignant encore plus des VM IaaS. Cela est nécessaire pour atteindre facilement une grande évolutivité et une meilleure évolutivité automatisée, et pour une amélioration significative des déploiements automatisés et de la version. Vous pouvez atteindre ces objectifs en utilisant l’orchestrateur [Kubernetes](https://kubernetes.io/), disponible dans [Azure Container Services](https://azure.microsoft.com/services/container-service/).
 
@@ -254,7 +254,7 @@ L’objectif de cette procédure pas à pas est d’apprendre à déployer une a
 
 ### <a name="benefits"></a>Avantages
 
-Le déploiement à un cluster à Kubernetes existe de nombreux avantages. Le plus grand avantage est que vous obtenez un environnement prêt à la production dans lequel vous pouvez échelle de l’application en fonction du nombre d’instances de conteneurs que vous souhaitez utiliser (évolutivité intérieure dans les nœuds existants), et en fonction du nombre de nœuds ou de VM dans le cluster ( évolutivité globale du cluster).
+Le déploiement à un cluster à Kubernetes existe de nombreux avantages. Le plus grand avantage est que vous obtenez un environnement prêt à la production dans lequel vous pouvez échelle de l’application en fonction du nombre d’instances de conteneurs que vous souhaitez utiliser (évolutivité intérieure dans les nœuds existants), et basé sur le nombre de nœuds ou de VM dans le cluster (évolutivité globale du cluster).
 
 Azure Container Service optimise les outils et technologies open source populaires spécifiquement pour Azure. Vous obtenez une solution ouverte qui offre la portabilité, à la fois pour vos conteneurs et pour votre configuration d’application. Vous sélectionnez la taille, le nombre d’hôtes et l’orchestrateur tools-Container Service gère tout le reste.
 
@@ -286,7 +286,7 @@ La procédure technique complète est disponible dans le wiki GitPo eShopModerni
 
 <https://github.com/dotnet-architecture/eShopModernizing/wiki/Deploy-Windows-Container-to-Azure-App-Service>
 
-### <a name="overview"></a>Vue d’ensemble
+### <a name="overview"></a>Vue d'ensemble
 
 Une simple application conteneurisée utilisant des conteneurs Windows peut facilement être déployée sur Azure App Service for Containers. Il s’agit de l’approche recommandée pour la plupart des applications basées sur les conteneurs Windows.
 

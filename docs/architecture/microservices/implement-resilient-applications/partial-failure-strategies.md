@@ -2,12 +2,12 @@
 title: Stratégies pour la gestion d’une défaillance partielle
 description: Découvrez plusieurs stratégies pour gérer normalement les défaillances partielles.
 ms.date: 10/16/2018
-ms.openlocfilehash: e96fe99ab44b924460e01abaad30aa3e2432117a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: abf87df5afed02b4d794a1307a0ed943cafb4db3
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "68674506"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988802"
 ---
 # <a name="strategies-to-handle-partial-failure"></a>Stratégies pour gérer une défaillance partielle
 
@@ -19,7 +19,7 @@ Les stratégies pour la gestion des défaillances partielles sont les suivantes.
 
 **Contournez les délais d’attente réseau**. En général, les clients doivent être conçus pour ne pas se bloquer indéfiniment et pour toujours utiliser des délais d’expiration lors de l’attente d’une réponse. L’utilisation de délais d’expiration garantit que les ressources ne sont jamais bloquées indéfiniment.
 
-**Utilisez le modèle Disjoncteur**. Dans cette approche, le processus client suit le nombre de requêtes ayant échoué. Si le taux d’erreurs dépasse une limite configurée, un « disjoncteur » est déclenché de sorte que les autres tentatives échouent immédiatement. (Si un grand nombre de demandes échouent, cela suggère que le service n’est pas disponible et que l’envoi de demandes est inutile.) Après une période de temps mort, le client devrait essayer à nouveau et, si les nouvelles demandes sont acceptées, fermer le disjoncteur.
+**Utilisez le modèle Disjoncteur**. Dans cette approche, le processus client suit le nombre de requêtes ayant échoué. Si le taux d’erreur dépasse une limite configurée, un « disjoncteur » trébuche de sorte que d’autres tentatives échouent immédiatement. (Si un grand nombre de demandes échouent, cela suggère que le service n’est pas disponible et que l’envoi de demandes est inutile.) Après une période de temps mort, le client devrait essayer à nouveau et, si les nouvelles demandes sont acceptées, fermer le disjoncteur.
 
 **Fournissez des solutions de secours**. Dans cette approche, le processus client exécute la logique de secours en cas d’échec d’une requête, comme le retour de données mises en cache ou d’une valeur par défaut. Il s’agit d’une approche appropriée pour les requêtes, mais qui est plus complexe pour les mises à jour ou les commandes.
 

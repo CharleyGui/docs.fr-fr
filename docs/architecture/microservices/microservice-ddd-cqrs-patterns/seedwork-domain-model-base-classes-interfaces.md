@@ -2,12 +2,12 @@
 title: Seedwork (interfaces et classes de base réutilisables pour votre modèle de domaine)
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Utiliser le concept de seedwork comme point de départ pour démarrer l’implémentation d’un modèle de domaine orienté DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: ab0aadc28dbd1175c75b04dadca29b7b0947f29b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 545be2723ba468a5fd65f81978799328234ca113
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76116570"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988308"
 ---
 # <a name="seedwork-reusable-base-classes-and-interfaces-for-your-domain-model"></a>Seedwork (interfaces et classes de base réutilisables pour votre modèle de domaine)
 
@@ -19,7 +19,7 @@ La figure 7-12 montre les classes qui constituent le seedwork du modèle de dom
 Le contenu détaillé du dossier SeedWork, contenant des classes de base et des interfaces : Entity.cs, Enumeration.cs, IAggregateRoot.cs, IRepository.cs, IUnitOfWork.cs et ValueObject.cs.
 :::image-end:::
 
-**Figure 7-12**. Exemple d’ensemble de classes de base et d’interfaces « seedwork » de modèle de domaine
+**Figure 7-12**. Un ensemble d’échantillons de modèles de domaine "seedwork" classes de base et des interfaces
 
 Il s’agit du type de réutilisation par copier- coller que de nombreux développeurs partagent entre les projets, et non d’un framework formel. Vous pouvez avoir des seedworks dans n’importe quelle couche ou bibliothèque. Cependant, si l’ensemble des classes et des interfaces devient assez grand, vous voudrez peut-être créer une bibliothèque de classe unique.
 
@@ -113,7 +113,7 @@ Les contrats de dépôt sont simplement des interfaces .NET qui expriment les sp
 
 Les référentiels eux-mêmes, avec du code EF Core ou avec d’autres dépendances et d’autre code d’infrastructure (LinQ, SQL, etc.), ne doivent pas être implémentés au sein du modèle de domaine : ils doivent implémenter seulement les interfaces que vous définissez dans le modèle de domaine.
 
-Le modèle lié à cette pratique (placer les interfaces de dépôt dans la couche du modèle de domaine) est le modèle Interface séparée. Comme l’[explique](https://www.martinfowler.com/eaaCatalog/separatedInterface.html) Martin Fowler, « utilisez une interface séparée pour définir une interface dans un premier paquet mais l’implémenter dans un autre. De cette manière, un client qui a besoin de la dépendance vis-à-vis de l’interface peut ne pas en connaître du tout l’implémentation ».
+Le modèle lié à cette pratique (placer les interfaces de dépôt dans la couche du modèle de domaine) est le modèle Interface séparée. Comme [l’explique](https://www.martinfowler.com/eaaCatalog/separatedInterface.html) Martin Fowler, « Utilisez l’interface séparée pour définir une interface dans un paquet, mais implémentez-la dans un autre. De cette façon, un client qui a besoin de la dépendance à l’interface peut être complètement inconscient de la mise en œuvre.
 
 Avec le modèle Interface séparée, la couche Application (dans ce cas, le projet d’API web pour le microservice) comporte une dépendance vis-à-vis des spécifications définies dans le modèle de domaine, mais pas une dépendance directe vis-à-vis de la couche d’infrastructure/de persistance. De plus, vous pouvez utiliser l’injection de dépendances pour isoler l’implémentation, qui est implémentée dans la couche d’infrastructure/de persistance à l’aide de dépôts.
 

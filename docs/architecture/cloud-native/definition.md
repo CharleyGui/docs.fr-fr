@@ -3,18 +3,18 @@ title: Définition du Cloud Native
 description: Renseignez-vous sur les piliers fondamentaux qui fournissent le socle des systèmes cloud-indigènes
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: 27191a67b2964ac2e1636a4d7dc55d5314b78439
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 756a2565bd77fcef19a5f15579987836ff0e75a4
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401570"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989088"
 ---
 # <a name="defining-cloud-native"></a>Définir le nuage natif
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Arrêtez ce que vous faites et envoyez un texto à 10 de vos collègues. Demandez-leur de définir le terme « Cloud Native ». Bonne chance que vous obteniez huit réponses différentes. Fait intéressant, dans six mois, à mesure que les technologies et les pratiques du cloud évolueront, leur définition évoluera également.
+Arrêtez ce que vous faites et envoyez un texto à dix de vos collègues. Demandez-leur de définir le terme « Cloud Native ». Bonne chance que vous obteniez huit réponses différentes.
 
 Cloud natif est tout au sujet de changer la façon dont nous pensons à construire des systèmes d’affaires critiques.
 

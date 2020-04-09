@@ -2,16 +2,16 @@
 title: Conception de la couche de persistance de l’infrastructure
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer le modèle de référentiel dans la conception de la couche de persistance de l’infrastructure.
 ms.date: 10/08/2018
-ms.openlocfilehash: e10c8c1569089d5c8274df655ad7a12f2ebb7c22
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1b2665e81ade60affa84563121c04bca08537f07
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846807"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988477"
 ---
 # <a name="design-the-infrastructure-persistence-layer"></a>Concevoir la couche de persistance de l’infrastructure
 
-Les composants de persistance des données fournissent l’accès aux données hébergées dans les limites d’un microservice (autrement dit, la base de données d’un microservice). Ils contiennent l’implémentation réelle des composants tels que les dépôts et les classes d’[unité de travail](https://martinfowler.com/eaaCatalog/unitOfWork.html), comme les objets <xref:Microsoft.EntityFrameworkCore.DbContext> Entity Framework (EF) personnalisés. EF DbContext implémente à la fois les modèles de référentiel et les modèles d’unité de travail.
+Les composantes de persistance des données donnent accès aux données hébergées dans les limites d’un microservice (c’est-à-dire la base de données d’un microservice). Ils contiennent l’implémentation réelle des composants tels que les dépôts et les classes d’[unité de travail](https://martinfowler.com/eaaCatalog/unitOfWork.html), comme les objets <xref:Microsoft.EntityFrameworkCore.DbContext> Entity Framework (EF) personnalisés. EF DbContext implémente à la fois les modèles de référentiel et les modèles d’unité de travail.
 
 ## <a name="the-repository-pattern"></a>Le modèle Dépôt
 
@@ -23,7 +23,7 @@ Le modèle Dépôt est une façon bien décrite d’utiliser une source de donn�
 
 ### <a name="define-one-repository-per-aggregate"></a>Définir un seul dépôt par agrégat
 
-Pour chaque agrégat ou racine d’agrégat, vous devez créer une seule classe de dépôt. Dans un microservice basé sur des modèles de conception pilotée par le domaine (DDD, Domain-Driven Design), le seul canal que vous devez utiliser pour mettre à jour la base de données doit être les référentiels. En effet, ils ont une relation un-à-un avec la racine d’agrégat, qui contrôle les invariants et la cohérence transactionnelle de l’agrégat. Il est possible d’interroger la base de données par le biais d’autres canaux (selon une approche CQRS par exemple), car les requêtes ne changent pas l’état de la base de données. Toutefois, la zone transactionnelle (à savoir les mises à jour) doit toujours être contrôlée par les dépôts et les racines d’agrégat.
+Pour chaque agrégat ou racine d’agrégat, vous devez créer une seule classe de dépôt. Dans un microservice basé sur des modèles de conception pilotée par le domaine (DDD, Domain-Driven Design), le seul canal que vous devez utiliser pour mettre à jour la base de données doit être les référentiels. C’est parce qu’ils ont une relation en tête-à-un avec la racine globale, qui contrôle les invariants de l’agrégat et la cohérence transactionnelle. Il est possible d’interroger la base de données par le biais d’autres canaux (selon une approche CQRS par exemple), car les requêtes ne changent pas l’état de la base de données. Toutefois, la zone transactionnelle (à savoir les mises à jour) doit toujours être contrôlée par les dépôts et les racines d’agrégat.
 
 En bref, un dépôt vous permet de renseigner les données en mémoire provenant de la base de données sous la forme d’entités de domaine. Une fois que les entités sont en mémoire, elles peuvent être modifiées et de nouveau rendues persistantes dans la base de données par le biais de transactions.
 
@@ -37,7 +37,7 @@ Il est important de souligner à nouveau que vous devez définir seulement un r�
 
 **Figure 7-17**. Relation entre les dépôts, les agrégats et les tables de base de données
 
-Le diagramme ci-dessus montre les relations entre les couches de domaine et d’infrastructure : l’agrégat d’acheteur dépend de l’IBuyerRepository et l’agrégat de commande dépend des interfaces IOrderRepository, ces interfaces sont implémentées dans la couche d’infrastructure par les dépôts correspondants qui dépendent d’UnitOfWork, également mis en œuvre là-bas, qui accède aux tables du niveau de données.
+Le diagramme ci-dessus montre les relations entre les couches de domaine et d’infrastructure : Buyer Aggregate dépend de l’IBuyerRepository et Order Aggregate dépend des interfaces IOrderRepository, ces interfaces sont implémentées dans la couche d’infrastructure par les dépôts correspondants qui dépendent d’UnitOfWork, également mis en œuvre là, qui accède aux tables dans le niveau de données.
 
 ### <a name="enforce-one-aggregate-root-per-repository"></a>Appliquer une seule racine d’agrégat par référentiel
 
@@ -84,7 +84,7 @@ Les connexions aux bases de données peuvent échouer et, ce qui est plus import
 
 En termes de séparation des responsabilités pour les tests unitaires, votre logique s’exécute sur des entités de domaine dans la mémoire. Elle suppose que la classe de dépôt les a remises. Une fois que votre logique modifie les entités de domaine, elle suppose que la classe de dépôt les stocke correctement. Il est important de créer des tests unitaires sur votre modèle de domaine et sa logique de domaine. Les racines d’agrégat correspondent aux limites de cohérence principales dans la conception DDD.
 
-Les référentiels implémentés dans eShopOnContainers s’appuient sur l’implémentation de DbContext d’EF Core des modèles de référentiel et d’unité de travail en utilisant son suivi des modifications, afin qu’ils ne dupliquent pas cette fonctionnalité.
+Les dépôts mis en œuvre dans eShopOnContainers s’appuient sur la mise en œuvre DbContext d’EF Core des modèles Repository et Unit of Work à l’aide de son tracker de changement, de sorte qu’ils ne duplifient pas cette fonctionnalité.
 
 ### <a name="the-difference-between-the-repository-pattern-and-the-legacy-data-access-class-dal-class-pattern"></a>La différence entre le modèle Dépôt et le modèle de la classe d’accès aux données héritée (classe DAL)
 
@@ -102,9 +102,9 @@ Les dépôts personnalisés sont utiles pour les raisons citées précédemment.
 
 Par exemple, Jimmy Bogard, en commentant directement le présent guide, a tenu les propos suivants :
 
-> Ces commentaires seront probablement mes plus longs. Je ne suis vraiment pas fan des dépôts, principalement parce qu’ils cachent les détails importants du mécanisme de persistance sous-jacent. C’est pour cela que je préfère MediatR pour les commandes, aussi. Je peux utiliser toute la puissance de la couche de persistance et transmettre tout ce comportement de domaine à mes racines d’agrégat. En général, je ne veux pas simuler mes dépôts. J’ai quand même besoin de confronter ce test d’intégration avec la réalité. L’adoption de CQRS signifie que nous n’avons plus vraiment besoin des dépôts.
+> Ce sera probablement mon plus grand retour. Je ne suis vraiment pas un fan de dépôts, principalement parce qu’ils cachent les détails importants du mécanisme de persistance sous-jacente. C’est pourquoi je vais pour MediatR pour les commandes, aussi. Je peux utiliser toute la puissance de la couche de persistance et transmettre tout ce comportement de domaine à mes racines d’agrégat. Je ne veux généralement pas me moquer de mes dépôts - j’ai encore besoin d’avoir ce test d’intégration avec la vraie chose. Aller CQRS signifiait que nous n’avions plus vraiment besoin de dépôts.
 
-Les référentiels peuvent être utiles, mais ils ne sont pas critiques pour votre conception pilotée par le domaine, comme le sont le modèle Agrégat et le modèle de domaine riche. Par conséquent, utilisez le modèle Dépôt ou ne l’utilisez pas, en fonction de vos besoins. Malgré tout, vous allez utiliser le modèle de référentiel quand vous utilisez EF Core, bien que dans ce cas, le référentiel couvre la totalité du microservice ou du contexte délimité.
+Les référentiels peuvent être utiles, mais ils ne sont pas critiques pour votre conception pilotée par le domaine, comme le sont le modèle Agrégat et le modèle de domaine riche. Par conséquent, utilisez le modèle Dépôt ou ne l’utilisez pas, en fonction de vos besoins. Quoi qu’il en soit, vous allez utiliser le modèle de dépôt chaque fois que vous utilisez EF Core bien que, dans ce cas, le référentiel couvre l’ensemble du microservice ou le contexte délimité.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

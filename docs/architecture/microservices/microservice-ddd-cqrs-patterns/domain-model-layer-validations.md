@@ -2,12 +2,12 @@
 title: Conception de validations dans la couche de modèle de domaine
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les concepts clés des validations de modèle de domaine.
 ms.date: 10/08/2018
-ms.openlocfilehash: 98ccc5df84c9f6f402ecbee83b077c806d6a76fc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d2efc5f3b3267c4573409952791c6e883a01aae2
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75899665"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988503"
 ---
 # <a name="design-validations-in-the-domain-model-layer"></a>Concevoir des validations dans la couche du modèle de domaine
 
@@ -49,21 +49,21 @@ public void SetAddress(string line1, string line2,
 
 Si la valeur de l’état n’est pas valide, la première ligne d’adresse et la ville ont déjà été modifiées. Cela peut rendre l’adresse non valide.
 
-Une approche similaire peut être utilisée dans le constructeur de l’entité, levant une exception pour vérifier que l’entité est valide une fois créée.
+Une approche similaire peut être utilisée dans le constructeur de l’entité, ce qui soulève une exception pour s’assurer que l’entité est valide une fois qu’elle est créée.
 
 ### <a name="use-validation-attributes-in-the-model-based-on-data-annotations"></a>Utiliser des attributs de validation dans le modèle basé sur des annotations de données
 
 Les annotations de données, comme les attributs Required ou MaxLength, peuvent être utilisées pour configurer des propriétés de champ de base de données EF Core, comme expliqué en détail dans la section [Mappage de table](infrastructure-persistence-layer-implemenation-entity-framework-core.md#table-mapping), mais [elles ne fonctionnent plus pour la validation des entités dans EF Core](https://github.com/dotnet/efcore/issues/3680) (tout comme la méthode <xref:System.ComponentModel.DataAnnotations.IValidatableObject.Validate%2A?displayProperty=nameWithType>), comme c’était le cas depuis EF 4.x dans .NET Framework.
 
-Les annotations de données et l’interface <xref:System.ComponentModel.DataAnnotations.IValidatableObject> peut toujours être utilisées pour la validation de modèle lors de la liaison de modèle, comme d’habitude avant l’appel des actions du contrôleur, mais ce modèle est destiné à être un ViewModel ou un objet DTO : il s’agit d’une préoccupation relevant de MVC ou de l’API, mais pas d’un modèle de domaine.
+Les annotations <xref:System.ComponentModel.DataAnnotations.IValidatableObject> de données et l’interface peuvent toujours être utilisées pour la validation du modèle pendant la liaison du modèle, avant l’invocation des actions du contrôleur comme d’habitude, mais ce modèle est censé être un ViewModel ou DTO et c’est une préoccupation MVC ou API pas une préoccupation de modèle de domaine.
 
-La différence conceptuelle étant claire, vous pouvez toujours utiliser des annotations de données et `IValidatableObject` dans la classe d’entité pour la validation si vos actions reçoivent un paramètre d’objet de classe d’entité, ce qui n’est pas recommandé. Dans ce cas, la validation a lieu après la liaison de modèle, juste avant l’appel de l’action, et vous pouvez vérifier la propriété ModelState.IsValid du contrôleur pour vérifier le résultat, mais à nouveau, cela se produit dans le contrôleur, et non pas avant de rendre persistant l’objet d’entité dans le DbContext, comme cela se faisait depuis EF 4.x.
+La différence conceptuelle étant claire, vous pouvez toujours utiliser des annotations de données et `IValidatableObject` dans la classe d’entité pour la validation si vos actions reçoivent un paramètre d’objet de classe d’entité, ce qui n’est pas recommandé. Dans ce cas, la validation se fera sur la liaison du modèle, juste avant d’invoquer l’action et vous pouvez vérifier la propriété ModelState.IsValid du contrôleur pour vérifier le résultat, mais là encore, il se produit dans le contrôleur, pas avant de persister l’objet de l’entité dans le DbContext, comme il l’avait fait depuis EF 4.x.
 
-Vous pouvez néanmoins toujours implémenter une validation personnalisée dans la classe d’entité avec des annotations de données et la méthode `IValidatableObject.Validate`, en remplaçant la méthode SaveChanges de DbContext.
+Vous pouvez toujours implémenter la validation personnalisée dans `IValidatableObject.Validate` la classe d’entités à l’aide d’annotations de données et de la méthode, en dépassant la méthode SaveChanges de DbContext.
 
 Vous pouvez voir un exemple d’implémentation pour la validation d’entités `IValidatableObject` dans [ce commentaire sur GitHub](https://github.com/dotnet/efcore/issues/3680#issuecomment-155502539). Cet échantillon ne fait pas de validations basées sur des attributs, mais ils devraient être faciles à implémenter à l’aide de la réflexion dans la même dérogation.
 
-Toutefois, du point de vue DDD, il est préférable de conserver le modèle de domaine épuré en utilisant des exceptions dans les méthodes de comportement de votre entité, ou en implémentant les modèles Spécification et Notification pour appliquer des règles de validation.
+Cependant, du point de vue du DDD, le modèle de domaine est mieux gardé maigre avec l’utilisation d’exceptions dans les méthodes de comportement de votre entité, ou en mettant en œuvre les modèles de spécification et de notification pour faire respecter les règles de validation.
 
 Il peut être judicieux d’utiliser des annotations de données au niveau de la couche Application dans les classes ViewModel (plutôt que des entités de domaine) qui accepteront des entrées, pour permettre la validation de modèle dans la couche d’interface utilisateur. Toutefois, cela ne doit pas être effectué à l’exclusion de la validation dans le modèle de domaine.
 

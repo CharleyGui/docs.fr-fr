@@ -2,12 +2,12 @@
 title: Implémentation d’un modèle de domaine de microservice avec .NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Accéder aux détails d’implémentation d’un modèle de domaine orienté DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: bff9cbda08e519038056268151a1721427f0ac01
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 24f700b371d998cf99cbcf260a5278d797cb39d4
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73972047"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988425"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implémenter un modèle de domaine de microservice avec .NET Core
 
@@ -23,9 +23,9 @@ La vue Explorateur de solutions pour le projet Ordering.Domain, montrant le doss
 
 **Figure 7-10.** Structure de modèle de domaine pour le microservice de commandes dans eShopOnContainers
 
-En outre, la couche de modèle de domaine inclut les contrats de dépôt (interfaces) qui représentent les exigences en matière d’infrastructure de votre modèle de domaine. En d’autres termes, ces interfaces indiquent les dépôts et les méthodes que la couche d’infrastructure doit implémenter. Il est essentiel que l’implémentation des dépôts figure en dehors de la couche de modèle de domaine, dans la bibliothèque de couche d’infrastructure, afin que la couche de modèle de domaine ne soit pas « contaminée » par l’API ou les classes de technologies d’infrastructure, comme Entity Framework.
+En outre, la couche de modèle de domaine inclut les contrats de dépôt (interfaces) qui représentent les exigences en matière d’infrastructure de votre modèle de domaine. En d’autres termes, ces interfaces indiquent les dépôts et les méthodes que la couche d’infrastructure doit implémenter. Il est essentiel que la mise en œuvre des dépôts soit placée en dehors de la couche du modèle de domaine, dans la bibliothèque de couches d’infrastructure, de sorte que la couche de modèle de domaine n’est pas « contaminée » par l’API ou les classes des technologies d’infrastructure, comme Entity Framework.
 
-Vous pouvez également voir un dossier [SeedWork](https://martinfowler.com/bliki/Seedwork.html) qui contient les classes de base personnalisées que vous pouvez utiliser comme base pour vos entités de domaine et objets de valeur, pour ne pas avoir ainsi de code redondant dans la classe d’objets de chaque domaine.
+Vous pouvez également voir un dossier [SeedWork](https://martinfowler.com/bliki/Seedwork.html) qui contient des classes de base personnalisées que vous pouvez utiliser comme base pour vos entités de domaine et des objets de valeur, de sorte que vous n’avez pas de code redondant dans la classe d’objets de chaque domaine.
 
 ## <a name="structure-aggregates-in-a-custom-net-standard-library"></a>Structurer des agrégats dans une bibliothèque .NET Standard personnalisée
 
@@ -101,7 +101,7 @@ En outre, la classe est décorée avec une interface nommée IAggregateRoot. Cet
 
 Une interface de marqueur est parfois considérée comme un anti-modèle ; toutefois, il s’agit également d’un moyen adéquat pour marquer une classe, en particulier quand cette interface peut évoluer. Un attribut peut représenter l’autre choix pour le marqueur, mais il est plus rapide d’afficher la classe de base (Entity) en regard de l’interface IAggregate au lieu de placer un marqueur d’attribut Aggregate au-dessus de la classe. Il s’agit d’une question de préférences dans tous les cas.
 
-Une racine d’agrégat signifie que la plupart du code lié à la cohérence et aux règles métier des entités de l’agrégat doit être implémenté en tant que méthodes dans la classe de racine d’agrégat Order (par exemple, AddOrderItem lors de l’ajout d’un objet OrderItem à l’agrégat). Vous ne devez pas créer ni mettre à jour des objets OrderItems indépendamment ou directement ; la classe AggregateRoot doit garder le contrôle et assurer la cohérence de toutes les opérations de mise à jour par rapport à ses entités enfants.
+Le fait d’avoir une racine globale signifie que la plupart du code lié à la cohérence et aux règles commerciales des entités de l’agrégat devraient être mis en œuvre comme méthodes dans la catégorie des racines agrégées de l’Ordre (par exemple, AddOrderItem lors de l’ajout d’un objet OrderItem à l’agrégat). Vous ne devez pas créer ni mettre à jour des objets OrderItems indépendamment ou directement ; la classe AggregateRoot doit garder le contrôle et assurer la cohérence de toutes les opérations de mise à jour par rapport à ses entités enfants.
 
 ## <a name="encapsulate-data-in-the-domain-entities"></a>Encapsuler des données dans les entités de domaine
 
@@ -132,14 +132,14 @@ Pour suivre les modèles DDD, les entités ne doivent pas avoir de méthodes set
 
 En outre, les collections dans l’entité (par exemple, les articles de la commande) doivent être des propriétés en lecture seule (méthode AsReadOnly abordée plus loin). Vous devez pouvoir effectuer la mise à jour uniquement à partir des méthodes de classe de la racine d’agrégat ou des méthodes de l’entité enfant.
 
-Comme vous pouvez le voir dans le code de la racine d’agrégat Order, toutes les méthodes setter doivent être privées ou au moins en lecture seule en externe afin que toute opération effectuée sur les données de l’entité ou ses entités enfants soit réalisée via des méthodes dans la classe d’entité. La cohérence est ainsi assurée de manière contrôlée et orientée objet au lieu d’implémenter un code de script transactionnel.
+Comme vous pouvez le voir dans le code de la racine agrégée de l’Ordre, tous les setters doivent être privés ou du moins lus uniquement à l’extérieur, de sorte que toute opération contre les données de l’entité ou ses entités enfant doit être effectuée par des méthodes dans la catégorie d’entités. La cohérence est ainsi assurée de manière contrôlée et orientée objet au lieu d’implémenter un code de script transactionnel.
 
 L’extrait de code suivant montre la façon correcte de coder la tâche d’ajout d’un objet OrderItem à l’agrégat Order.
 
 ```csharp
 // RIGHT ACCORDING TO DDD--CODE AT THE APPLICATION LAYER OR COMMAND HANDLERS
 // The code in command handlers or WebAPI controllers, related only to application stuff
-// There is NO code here related to OrderItem object’s business logic
+// There is NO code here related to OrderItem object's business logic
 myOrder.AddOrderItem(productId, productName, pictureUrl, unitPrice, discount, units);
 
 // The code related to OrderItem params validations or domain rules should
@@ -166,7 +166,7 @@ Quand vous utilisez EF Core 1.0 ou une version ultérieure, dans le DbContext,
 
 Avec la fonctionnalité dans EF Core 1.1 ou version ultérieure permettant de mapper des colonnes aux champs, il est également possible de ne pas utiliser de propriétés. Au lieu de cela, vous pouvez juste mapper des colonnes d’une table aux champs. Cette fonctionnalité est couramment utilisée dans le cadre des champs privés pour un état interne qui ne doit pas être accessible depuis l’extérieur de l’entité.
 
-Par exemple, dans l’exemple de code OrderAggregate précédent, il existe plusieurs champs privés, tels que le champ `_paymentMethodId`, sans propriété associée pour une méthode setter ou un accesseur Get. Ce champ peut également être calculé au sein de la logique métier de la commande et utilisé dans les méthodes de la commande, mais il doit aussi être conservé dans la base de données. Ainsi, dans EF Core (depuis la version 1.1), il existe un moyen de mapper un champ sans une propriété associée à une colonne dans la base de données. Cela est également expliqué dans la section [Couche d’infrastructure](ddd-oriented-microservice.md#the-infrastructure-layer) de ce guide.
+Par exemple, dans l’exemple de code OrderAggregate précédent, il existe plusieurs champs privés, tels que le champ `_paymentMethodId`, sans propriété associée pour une méthode setter ou un accesseur Get. Ce domaine pourrait également être calculé dans la logique commerciale de l’ordre et utilisé à partir des méthodes de l’ordre, mais il doit également être persisté dans la base de données. Ainsi, dans EF Core (depuis la version 1.1), il existe un moyen de mapper un champ sans une propriété associée à une colonne dans la base de données. Cela est également expliqué dans la section [Couche d’infrastructure](ddd-oriented-microservice.md#the-infrastructure-layer) de ce guide.
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 

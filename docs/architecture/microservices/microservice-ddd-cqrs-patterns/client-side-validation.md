@@ -2,12 +2,12 @@
 title: Validation côté client (validation dans les couches de présentation)
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer les concepts clés de la validation côté client.
 ms.date: 10/08/2018
-ms.openlocfilehash: 4e72dcafafc3144a75afe1fd23a4a779f5667459
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 44c1e9fa280b19fcee87d4d1cdfcaa2ab9462f27
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "68674356"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988699"
 ---
 # <a name="client-side-validation-validation-in-the-presentation-layers"></a>Validation côté client (validation dans les couches de présentation)
 
@@ -15,7 +15,7 @@ Même quand la source fiable est le modèle de domaine et que vous devez obtenir
 
 La validation côté client est très pratique pour les utilisateurs. Elle leur épargne le temps d’attente nécessaire à un aller-retour avec le serveur qui pourrait retourner des erreurs de validation. En termes d’activité de l’entreprise, même quelques fractions de secondes multipliées des centaines de fois par jour finissent par représenter un temps considérable, auquel s’ajoutent un coût et de la frustration. Une validation directe et immédiate permet aux utilisateurs de travailler plus efficacement, et de produire une meilleure qualité des entrées et des sorties.
 
-Alors que le modèle d’affichage et le modèle de domaine sont différents, leur validation peut être semblable, mais avec un objectif différent. Si vous vous souciez du principe DRY (Don’t Repeat Yourself), considérez que dans ce cas la réutilisation du code peut également impliquer un couplage et, dans les applications d’entreprise, il est plus important de ne pas associer le côté serveur au côté client que de respecter le principe DRY.
+Alors que le modèle d’affichage et le modèle de domaine sont différents, leur validation peut être semblable, mais avec un objectif différent. Si vous êtes préoccupé par DRY (le principe Don’t Repeat Yourself), considérez que dans ce cas, la réutilisation du code peut également signifier couplage, et dans les applications d’entreprise, il est plus important de ne pas coupler le côté serveur du côté client que de suivre le principe DRY.
 
 Même quand vous utilisez la validation côté client, vous devez toujours valider vos commandes ou DTO d’entrée dans le code serveur, car les API serveur représentent un vecteur d’attaque possible. En règle générale, il vaut mieux effectuer les deux opérations car, si vous avez une application cliente, il est recommandé du point de vue de l’expérience utilisateur d’être proactif et de ne pas autoriser l’utilisateur à entrer des informations non valides.
 
@@ -51,7 +51,7 @@ L’implémentation de la validation côté client dépend du type d’applicati
 
 En résumé, voici les concepts les plus importants en ce qui concerne la validation :
 
-- Les entités et les agrégats doivent appliquer leur propre cohérence et être « toujours valides ». Les racines d’agrégat sont responsables de la cohérence de plusieurs entités dans le même agrégat.
+- Les entités et les agrégats doivent faire respecter leur propre cohérence et être « toujours valides ». Les racines d’agrégat sont responsables de la cohérence de plusieurs entités dans le même agrégat.
 
 - Si vous pensez qu’une entité doit entrer dans un état non valide, envisagez d’utiliser un modèle d’objet différent, par exemple un DTO temporaire jusqu’à ce que l’entité de domaine finale soit créée.
 

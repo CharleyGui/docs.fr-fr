@@ -2,12 +2,12 @@
 title: Points importants à retenir
 description: 'Découvrez les points importants à retenir du guide/livre électronique Microservices .NET : Architecture pour les applications .NET conteneurisées, afin d’avoir une rapide vue d’ensemble des principaux facteurs impliqués lors de l’utilisation d’une architecture de microservices, tels que les avantages et les inconvénients, les modèles DDD pour la conception et le développement, ainsi que la résilience, la sécurité et l’utilisation d’orchestrateurs.'
 ms.date: 10/19/2018
-ms.openlocfilehash: 3b8b7be9b3903c64221cba7c6abdb1e38f5d944f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0e793a76fa59d6c131422480071d85ab3f18102c
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "68674456"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988776"
 ---
 # <a name="key-takeaways"></a>Points clés
 
@@ -29,7 +29,7 @@ En guise de récapitulatif et de conclusion, voici les principaux points importa
 
 **CLI ou IDE** : les outils Microsoft vous laissent le choix quant à l’approche à adopter pour développer des applications .NET en conteneur. Vous pouvez ainsi choisir de les développer dans une interface de ligne de commande (CLI) et un environnement basé sur un éditeur via l’interface CLI Docker et Visual Studio Code. Vous pouvez aussi opter pour une approche axée sur un environnement de développement intégré (IDE) avec Visual Studio et ses fonctionnalités uniques pour Docker, telles que le débogage multiconteneur.
 
-**Des applications cloud résilientes** : dans les systèmes basés sur le cloud et les systèmes distribués en général, il existe toujours un risque de défaillance partielle. Sachant que les clients et les services sont des processus (conteneurs) distincts, il peut arriver qu’un service ne puisse pas répondre à temps à une demande de client. Par exemple, un service peut être indisponible à la suite d’une défaillance partielle ou pour cause de maintenance, le service peut être surchargé et répondre lentement aux demandes, ou ne pas être accessible pendant un bref laps de temps en raison de problèmes réseau. Par conséquent, une application basée sur le cloud doit parer ces défaillances et disposer d’une stratégie pour y répondre. Ces stratégies peuvent inclure des stratégies de nouvelles tentatives (renvoi des messages ou nouvelles tentatives des demandes) et l’implémentation des modèles de disjoncteur pour éviter la charge exponentielle des demandes répétées. Avant tout, les applications basées sur le cloud doivent intégrer des mécanismes résilients (personnalisés ou basés sur une infrastructure cloud) comme les mécanismes généraux fournis par les orchestrateurs ou bus de services.
+**Des applications cloud résilientes** : dans les systèmes basés sur le cloud et les systèmes distribués en général, il existe toujours un risque de défaillance partielle. Étant donné que les clients et les services sont des processus distincts (conteneurs), un service pourrait ne pas être en mesure de répondre en temps opportun à la demande d’un client. Par exemple, un service peut être indisponible à la suite d’une défaillance partielle ou pour cause de maintenance, le service peut être surchargé et répondre lentement aux demandes, ou ne pas être accessible pendant un bref laps de temps en raison de problèmes réseau. Par conséquent, une application basée sur le cloud doit parer ces défaillances et disposer d’une stratégie pour y répondre. Ces stratégies peuvent inclure des stratégies de nouvelles tentatives (renvoi des messages ou nouvelles tentatives des demandes) et l’implémentation des modèles de disjoncteur pour éviter la charge exponentielle des demandes répétées. Avant tout, les applications basées sur le cloud doivent intégrer des mécanismes résilients (personnalisés ou basés sur une infrastructure cloud) comme les mécanismes généraux fournis par les orchestrateurs ou bus de services.
 
 **Sécurité.** notre monde moderne de conteneurs et de microservices peut présenter de nouvelles vulnérabilités. Il existe plusieurs façons d’implémenter la sécurité de base des applications à l’aide de l’authentification et de l’autorisation. Cependant, la sécurité des conteneurs doit prendre en considération d’autres composants essentiels qui profitent intrinsèquement à la sécurité des applications. Pour créer des applications plus sûres, il est essentiel de sécuriser la communication avec les autres applications et systèmes. Cela passe souvent par l’utilisation d’informations d’identification, de jetons, de mots de passe et autres, que l’on appelle souvent des secrets d’application. Une solution sécurisée doit suivre les bonnes pratiques de sécurité, comme le chiffrement des secrets en cours de transit et au repos, et la prévention des fuites de secrets lors de leur consommation par l’application finale. Ces secrets doivent être stockés et conservés en lieu sûr, comme lors de l’utilisation d’Azure Key Vault.
 
