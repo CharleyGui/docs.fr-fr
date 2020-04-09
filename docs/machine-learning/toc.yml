@@ -81,6 +81,8 @@
           href: how-to-guides/how-to-use-the-automl-api.md
     - name: API
       items:
+        - name: Installer des dépendances supplémentaires
+          href: how-to-guides/install-extra-dependencies.md
         - name: Charger les données
           href: how-to-guides/load-data-ml-net.md
         - name: Préparer les données
