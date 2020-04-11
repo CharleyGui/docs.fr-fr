@@ -11,12 +11,12 @@ helpviewer_keywords:
 - enumeration type [C#]
 - bit flags [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: ab5eb1679f846bf0e25d90a4d0e0a71f0bdb0096
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 15f5e9ccb1396277229ba935381812700f63ece8
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847705"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121156"
 ---
 # <a name="enumeration-types-c-reference"></a>Types d’énumération (référence C)
 
@@ -66,7 +66,7 @@ En commençant par le C 7.3, vous pouvez utiliser `System.Enum` dans une contrai
 
 ## <a name="conversions"></a>Conversions
 
-Pour tout type d’énumération, il existe des conversions explicites entre le type d’énumération et son type intégral sous-jacent. Si vous [lancez](../operators/type-testing-and-cast.md#cast-operator-) une valeur enum à son type sous-jacent, le résultat est la valeur intégrale associée d’un membre enum.
+Pour tout type d’énumération, il existe des conversions explicites entre le type d’énumération et son type intégral sous-jacent. Si vous [lancez](../operators/type-testing-and-cast.md#cast-expression) une valeur enum à son type sous-jacent, le résultat est la valeur intégrale associée d’un membre enum.
 
 [!code-csharp[enum conversions](snippets/EnumType.cs#Conversions)]
 
@@ -88,7 +88,7 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence C#](../index.md)
-- [Chaînes de format d'énumération](../../../standard/base-types/enumeration-format-strings.md)
+- [Chaînes de format d’énumération](../../../standard/base-types/enumeration-format-strings.md)
 - [Lignes directrices de conception - Conception Enum](../../../standard/design-guidelines/enum.md)
 - [Lignes directrices de conception - Enum nommant des conventions](../../../standard/design-guidelines/names-of-classes-structs-and-interfaces.md#naming-enumerations)
 - [instruction switch](../keywords/switch.md)

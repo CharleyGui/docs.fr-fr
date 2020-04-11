@@ -5,12 +5,12 @@ helpviewer_keywords:
 - COM,wrappers creating
 - COM,wrappers Visual Studio
 ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
-ms.openlocfilehash: 623df8aa86d25d9a57d3039bee01b0ee39d402a8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 035d6439ec90426d7b68e05043ea8b6722f81d28
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123940"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121602"
 ---
 # <a name="how-to-create-com-wrappers"></a>Comment : créer des wrappers COM
 
@@ -30,7 +30,7 @@ Dans Visual Studio 2005, vous pouvez ajouter le wrapper COM à votre projet en t
 
 2. Dans le menu **Projet**, cliquez sur **Afficher tous les fichiers**.
 
-3. Dans le menu **Projet**, cliquez sur **Ajouter une référence**.
+3. Sur le menu du **projet,** cliquez sur **Ajouter référence**.
 
 4. Dans la boîte de dialogue Ajouter une référence, cliquez sur l’onglet **COM**, sélectionnez le composant que vous souhaitez utiliser et cliquez sur **OK**.
 
@@ -39,7 +39,7 @@ Dans Visual Studio 2005, vous pouvez ajouter le wrapper COM à votre projet en t
 Vous pouvez maintenant écrire le code pour accéder à l’objet COM. Vous pouvez commencer par déclarer l’objet, par exemple avec une instruction `Imports` pour Visual Basic ou une instruction `Using` pour C#.
 
 > [!NOTE]
-> Si vous souhaitez programmer des composants Microsoft Office, installez d’abord les [assemblys PIA (Primary Interop Assembly) de Microsoft Office](https://go.microsoft.com/fwlink/?LinkId=50479) à partir du Centre de téléchargement Microsoft. À l’étape 4, sélectionnez la version la plus récente de la bibliothèque d’objets disponible pour le produit Office que vous voulez, comme la **bibliothèque d’objets Microsoft Word 11.0**.  
+> Si vous souhaitez programmer des composants Microsoft Office, installez d’abord les [assemblages Microsoft Office Primary Interop Redistributable](https://www.microsoft.com/Download/details.aspx?id=3508).
   
 ### <a name="to-create-a-runtime-callable-wrapper-using-net-framework-tools"></a>Pour créer un wrapper RCW à l’aide des outils .NET Framework  
   
@@ -55,7 +55,7 @@ Vous pouvez maintenant écrire le code pour accéder à l’objet COM. Vous pouv
   
      Vérifiez que vous disposez d’un numéro de version à quatre parties complet pour votre assembly dans le fichier AssemblyInfo. Ce numéro est requis pour assurer le contrôle de version dans le Registre Windows. Pour plus d’informations sur les numéros de version, consultez [Contrôle de version des assemblys](../../standard/assembly/versioning.md).  
   
-2. Dans le menu **Projet**, cliquez sur **Propriétés**.  
+2. Dans le menu **Projet** , cliquez sur **Propriétés**.  
   
 3. Cliquez sur l’onglet **Compiler**.  
   

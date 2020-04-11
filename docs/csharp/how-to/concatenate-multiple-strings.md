@@ -7,12 +7,12 @@ helpviewer_keywords:
 - concatenating strings [C#]
 - strings [C#], concatenation
 ms.assetid: 8e16736f-4096-4f3f-be0f-9d4c3ff63520
-ms.openlocfilehash: 9a0640a7ce73fa8454442cd301157bf5c265f9de
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 87ec5104f36d0c6cce12037e70dacf2752ef5e62
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713897"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121051"
 ---
 # <a name="how-to-concatenate-multiple-strings-c-guide"></a>Comment concatenate plusieurs cordes (Guide de C)
 
@@ -51,11 +51,11 @@ Enfin, vous pouvez utiliser [LINQ](../programming-guide/concepts/linq/index.md) 
 
 [!code-csharp-interactive[string concatenation using LINQ expressions](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#6)]  
 
-Vous pouvez essayer ces échantillons en regardant le code dans notre [référentiel GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
+Vous pouvez essayer ces échantillons en regardant le [code de l’échantillon](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings). Ou, vous pouvez télécharger les échantillons [comme un fichier zip](../../../samples/snippets/csharp/how-to/strings.zip).
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.String>
 - <xref:System.Text.StringBuilder>
-- [Guide de programmation C#](../programming-guide/index.md)
-- [Cordes](../programming-guide/strings/index.md)
+- [Guide de programmation CMD](../programming-guide/index.md)
+- [Chaînes](../programming-guide/strings/index.md)

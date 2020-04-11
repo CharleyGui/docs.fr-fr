@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: a132e527deadcffb4826c1965987fc09da470a09
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: 90066b1e9c219f66fc0c76423679e81aa3fa6770
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635302"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81120980"
 ---
 # <a name="member-access-operators-and-expressions-c-reference"></a>Opérateurs et expressions d’accès aux membres (référence C)
 
@@ -170,7 +170,7 @@ Vous utilisez également des parenthèses quand vous appelez un [constructeur](.
 
 Vous utilisez également des parenthèses pour ajuster l’ordre dans lequel évaluer les opérations dans une expression. Pour plus d’informations, consultez [Opérateurs C#](index.md).
 
-[Les expressions cast](type-testing-and-cast.md#cast-operator-), qui effectuent des conversions de type explicites, utilisent aussi des parenthèses.
+[Les expressions cast](type-testing-and-cast.md#cast-expression), qui effectuent des conversions de type explicites, utilisent aussi des parenthèses.
 
 ## <a name="index-from-end-operator-"></a>Indice de l’opérateur final
 

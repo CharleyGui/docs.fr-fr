@@ -3,12 +3,12 @@ title: Comment modifier le contenu des cordes - Guide C
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: ecedd9a9027aa925c753f8e187d611b19d3db991
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 260e4022c514db0cee3c1459b9d746a1c8e2addd
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77543259"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121135"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Comment modifier le contenu des cordes en C\#
 
@@ -70,9 +70,9 @@ L’exemple suivant montre comment remplacer un jeu de caractères dans une cha�
 
 Vous pouvez modifier une chaîne dans un bloc fixe avec un code dangereux, mais il est **fortement** déconseillé de modifier le contenu de la chaîne après la création d’une chaîne. Cela brisera les choses de façon imprévisible. Par exemple, si quelqu’un interne une chaîne qui a le même contenu que la vôtre, il recevra votre copie et ne s’attend pas du tout à modifier sa chaîne.
 
-Vous pouvez essayer ces échantillons en regardant le code dans notre [référentiel GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
+Vous pouvez essayer ces échantillons en regardant le code dans notre [référentiel GitHub](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](../../../samples/snippets/csharp/how-to/strings.zip).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Expressions régulières du .NET Framework](../../standard/base-types/regular-expressions.md)
-- [Langage d’expression régulière - Référence rapide](../../standard/base-types/regular-expression-language-quick-reference.md)
+- [Langage des expressions régulières - Aide-mémoire](../../standard/base-types/regular-expression-language-quick-reference.md)

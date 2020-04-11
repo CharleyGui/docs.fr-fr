@@ -18,12 +18,12 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: 95b7f266654bbbcdcd0f81e3aa11cfc94af9f0e5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a277215d438b5f6b0bbbef72e5e0121b6ce41990
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77215251"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121479"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Types numériques à virgule flottante (Référence C#)
 
@@ -33,7 +33,7 @@ Les *types numériques à point flottant* représentent des nombres réels. Tous
 
 C# prend en charge les types à virgule flottante prédéfinis suivants :
   
-|C# type/mot clé|Plage approximative|Precision|Size|Type .NET|
+|C# type/mot clé|Plage approximative|Precision|Taille|Type .NET|
 |----------|-----------------------|---------------|--------------|--------------|
 |`float`|±1,5 x 10<sup>−45</sup> à ±3,4 x 10<sup>38</sup>|~6-9 chiffres|4 octets|<xref:System.Single?displayProperty=nameWithType>|
 |`double`|De ±5,0 × 10<sup>−324</sup> à ±1,7 × 10<sup>308</sup>|~15-17 chiffres|8 octets|<xref:System.Double?displayProperty=nameWithType>|
@@ -107,7 +107,7 @@ Console.WriteLine(m);  // output: 1500000
 
 ## <a name="conversions"></a>Conversions
 
-Il n’y a qu’une seule `float` conversion `double`implicite entre les types numériques à point flottant : de . Cependant, vous pouvez convertir n’importe quel type de point flottant à n’importe quel autre type de point flottant avec le [casting explicite](../operators/type-testing-and-cast.md#cast-operator-). Pour plus d’informations, voir [conversions numériques intégrées](numeric-conversions.md).
+Il n’y a qu’une seule `float` conversion `double`implicite entre les types numériques à point flottant : de . Cependant, vous pouvez convertir n’importe quel type de point flottant à n’importe quel autre type de point flottant avec le [casting explicite](../operators/type-testing-and-cast.md#cast-expression). Pour plus d’informations, voir [conversions numériques intégrées](numeric-conversions.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -122,6 +122,6 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [Référence C#](../index.md)
 - [Types de valeur](value-types.md)
 - [Types intégraux](integral-numeric-types.md)
-- [Chaînes de format numérique standard](../../../standard/base-types/standard-numeric-format-strings.md)
+- [Chaînes de format numériques standard](../../../standard/base-types/standard-numeric-format-strings.md)
 - [Valeurs numériques dans .NET](../../../standard/numerics.md)
 - <xref:System.Numerics.Complex?displayProperty=nameWithType>

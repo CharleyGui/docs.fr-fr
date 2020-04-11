@@ -2,12 +2,12 @@
 title: Utilisation de Windows Management Instrumentation pour les diagnostics
 ms.date: 03/30/2017
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-ms.openlocfilehash: 0c803e3988f7a63980d991190db87c263c992b80
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b14f9401266bdf7edccd7dca12cb818cdd2cb348
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185674"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121546"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Utilisation de Windows Management Instrumentation pour les diagnostics
 Windows Communication Foundation (WCF) expose les données d’inspection d’un service à l’heure de l’exécution par l’intermédiaire d’un fournisseur WCF Windows Management Instrumentation (WMI).  
@@ -141,7 +141,7 @@ Windows Communication Foundation (WCF) expose les données d’inspection d’un
     ```  
   
 ### <a name="granting-access-to-arbitrary-users-or-groups"></a>Octroi de l'accès à des groupes ou des utilisateurs arbitraires  
- L'exemple de cette section octroie des privilèges d'inscription du fournisseur WMI à tous les utilisateurs locaux. Si vous souhaitez octroyer l'accès à un utilisateur ou à un groupe qui n'est pas intégré, vous devez obtenir l'identificateur de sécurité (SID) de cet utilisateur ou de ce groupe. Il n'existe aucune méthode simple pour obtenir l'identificateur SID d'un utilisateur arbitraire. Une méthode consiste à se connecter sous le nom de l'utilisateur choisi, puis à émettre la commande shell suivante.  
+ L'exemple de cette section octroie des privilèges d'inscription du fournisseur WMI à tous les utilisateurs locaux. Si vous souhaitez accorder l’accès à un utilisateur ou à un groupe qui n’est pas intégré, vous devez obtenir l’identifiant de sécurité (SID) de cet utilisateur ou de ce groupe. Il n'existe aucune méthode simple pour obtenir l'identificateur SID d'un utilisateur arbitraire. Une méthode consiste à se connecter sous le nom de l'utilisateur choisi, puis à émettre la commande shell suivante.  
   
 ```console
 Whoami /user  
@@ -152,10 +152,11 @@ Whoami /user
 ## <a name="accessing-remote-wmi-object-instances"></a>Accès aux instances d'objet WMI distantes  
  Si vous avez besoin d’accéder aux instances WCF WMI sur une machine à distance, vous devez activer la confidentialité des paquets sur les outils que vous utilisez pour y accéder. La section suivante décrit comment y parvenir à l'aide de WMI CIM Studio, Windows Management Instrumentation Tester, et le Kit de développement .Net SDK 2.0.  
   
-### <a name="wmi-cim-studio"></a>WMI CIM Studio  
- Si vous avez installé [WMI Administrative Tools](https://go.microsoft.com/fwlink/?LinkId=95185), vous pouvez utiliser le studio WMI CIM pour accéder aux instances WMI. Les outils sont dans le dossier suivant  
+### <a name="wmi-cim-studio"></a>WMI CIM Studio
+
+Si vous avez installé WMI Administrative Tools, vous pouvez utiliser le studio ICM WMI pour accéder aux instances WMI. Les outils sont dans le dossier suivant :
   
- **%windir%-Program Files-WMI Tools (en anglais)\\**  
+*%windir%-Program Files-WMI Tools (en anglais)\\*
   
 1. Dans le **Connect to namespace:** fenêtre, **tapez root-ServiceModel** et cliquez **sur OK.**  
   
@@ -166,7 +167,7 @@ Whoami /user
   
 1. Cliquez sur le bouton **Connect** sur le coin supérieur droit de la fenêtre.  
   
-2. Dans la nouvelle fenêtre, entrez **root-ServiceModel** pour le champ **Namespace,** et sélectionnez **la confidentialité de Packet** pour le niveau **d’authentification.** Cliquez sur **Se connecter**.  
+2. Dans la nouvelle fenêtre, entrez **root-ServiceModel** pour le champ **Namespace,** et sélectionnez **la confidentialité de Packet** pour le niveau **d’authentification.** Cliquez sur **Connecter**.  
   
 ### <a name="using-managed-code"></a>Utilisation du code managé  
  Vous pouvez aussi accéder par programme aux instances WMI distantes en utilisant des classes fournies par l'espace de noms <xref:System.Management>. L'exemple de code suivant montre comment procéder.  

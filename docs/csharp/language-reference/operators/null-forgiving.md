@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - null-forgiving operator [C#]
 - '! operator [C#]'
-ms.openlocfilehash: 36bfa46cebd2b35c4985dfc23dbe84f8f5dc9201
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 658043f8d5e149064f6da328657b2ccef9b5da94
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846299"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121444"
 ---
 # <a name="-null-forgiving-operator-c-reference"></a>! opérateur (null-forgiving) (référence C)
 
@@ -19,7 +19,7 @@ Disponible en C 8.0 et plus tard, l’opérateur de poteaufix `!` nonary est l�
 
 L’opérateur qui pardonne les nullités n’a aucun effet au moment de l’exécution. Il n’affecte que l’analyse statique du flux du compilateur en modifiant l’état nul de l’expression. Au moment de `x!` l’exécution, l’expression `x`évalue au résultat de l’expression sous-jacente .
 
-Pour plus d’informations sur la fonction de type de référence annulée, voir [les types de référence Nullable](../../nullable-references.md).
+Pour plus d’informations sur la fonction de type de référence annulée, voir [les types de référence Nullable](../builtin-types/nullable-reference-types.md).
 
 ## <a name="examples"></a>Exemples
 

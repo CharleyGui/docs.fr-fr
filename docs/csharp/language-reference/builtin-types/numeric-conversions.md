@@ -8,16 +8,16 @@ helpviewer_keywords:
 - numeric conversions [C#], explicit
 - conversions [C#], implicit numeric
 - conversions [C#], explicit numeric
-ms.openlocfilehash: 5380e8480c39d1940df13b2ecb50a0f394367388
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b7d53e508e4d585c746a3cc61824cdace7707deb
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399601"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121451"
 ---
 # <a name="built-in-numeric-conversions-c-reference"></a>Conversions numériques intégrées (référence C)
 
-Cmd fournit un ensemble de types [numériques intégrals](integral-numeric-types.md) et [flottants.](floating-point-numeric-types.md) Il existe une conversion entre deux types numériques, implicites ou explicites. Vous devez utiliser [l’opérateur `()` de distribution](../operators/type-testing-and-cast.md#cast-operator-) pour invoquer une conversion explicite.
+Cmd fournit un ensemble de types [numériques intégrals](integral-numeric-types.md) et [flottants.](floating-point-numeric-types.md) Il existe une conversion entre deux types numériques, implicites ou explicites. Vous devez utiliser une [expression de fonte](../operators/type-testing-and-cast.md#cast-expression) pour effectuer une conversion explicite.
 
 ## <a name="implicit-numeric-conversions"></a>Conversions numériques implicites
 
@@ -25,8 +25,8 @@ Le tableau suivant montre les conversions implicites prédéfinies entre les typ
 
 |À partir|À|
 |----------|--------|
-|[Sbyte](integral-numeric-types.md)|`short`, `int`, `long`, `float`, `double` ou `decimal`|
-|[Octet](integral-numeric-types.md)|`short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double` ou `decimal`|
+|[sbyte](integral-numeric-types.md)|`short`, `int`, `long`, `float`, `double` ou `decimal`|
+|[byte](integral-numeric-types.md)|`short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double` ou `decimal`|
 |[short](integral-numeric-types.md)|`int`, `long`, `float`, `double` ou`decimal`|
 |[ushort](integral-numeric-types.md)|`int`, `uint`, `long`, `ulong`, `float`, `double` ou `decimal`|
 |[int](integral-numeric-types.md)|`long`, `float`, `double` ou `decimal`|
@@ -61,8 +61,8 @@ Le tableau suivant montre les conversions explicites prédéfinies entre les typ
 
 |À partir|À|
 |----------|--------|
-|[Sbyte](integral-numeric-types.md)|`byte`, `ushort`, `uint` ou `ulong`|
-|[Octet](integral-numeric-types.md)|`sbyte`|
+|[sbyte](integral-numeric-types.md)|`byte`, `ushort`, `uint` ou `ulong`|
+|[byte](integral-numeric-types.md)|`sbyte`|
 |[short](integral-numeric-types.md)|`sbyte`, `byte`, `ushort`, `uint` ou`ulong`|
 |[ushort](integral-numeric-types.md)|`sbyte`, `byte` ou `short`|
 |[int](integral-numeric-types.md)|`sbyte`, `byte`, `short`, `ushort`, `uint` ou `ulong`|
@@ -70,7 +70,7 @@ Le tableau suivant montre les conversions explicites prédéfinies entre les typ
 |[Long](integral-numeric-types.md)|`sbyte`, `byte`, `short`, `ushort`, `int`, `uint` ou `ulong`|
 |[Ulong](integral-numeric-types.md)|`sbyte`, `byte`, `short`, `ushort`, `int`, `uint` ou `long`|
 |[Flotteur](floating-point-numeric-types.md)|`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong` ou `decimal`|
-|[Double](floating-point-numeric-types.md)|`sbyte`, `byte` `short`, `ushort` `int`, `uint` `long`, `ulong` `float`, , , , ,`decimal`|
+|[double](floating-point-numeric-types.md)|`sbyte`, `byte` `short`, `ushort` `int`, `uint` `long`, `ulong` `float`, , , , ,`decimal`|
 |[Decimales](floating-point-numeric-types.md)|`sbyte`, `byte` `short`, `ushort` `int`, `uint` `long`, `ulong` `float`, , , , ,`double`|
 
 > [!NOTE]
@@ -110,4 +110,4 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence C#](../index.md)
-- [Cast et conversions de types](../../programming-guide/types/casting-and-type-conversions.md)
+- [Casting et conversions de type](../../programming-guide/types/casting-and-type-conversions.md)

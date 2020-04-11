@@ -9,12 +9,12 @@ helpviewer_keywords:
 - casting [C#]
 - converting types [C#]
 ms.assetid: 568df58a-d292-4b55-93ba-601578722878
-ms.openlocfilehash: 252d509617ab5dbc53b282bac52e356396d82fab
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ae8f18deff5e96d7e475df8814ad64b38d14d585
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75711894"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121388"
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>Cast et conversions de types (guide de programmation C#)
 
@@ -29,7 +29,7 @@ i = "Hello"; // error CS0029: Cannot implicitly convert type 'string' to 'int'
   
 - **Conversions implicites** : aucune syntaxe spéciale n’est requise, car la conversion est de type sécurisé et les données ne sont pas perdues. Citons par exemple les conversions de types intégraux en d’autres plus importants, et les conversions de classes dérivées en classes de base.  
   
-- **Conversions explicites (casts)**: Les conversions explicites nécessitent [l’opérateur `()`de distribution ](../../language-reference/operators/type-testing-and-cast.md#cast-operator-). Un cast est exigé quand les informations peuvent être perdues durant la conversion, ou quand la conversion peut échouer pour d’autres raisons. Exemples classiques : conversion numérique en type qui a moins de précision ou une plus petite plage, et conversion d’une instance de classe de base en classe dérivée.  
+- **Conversions explicites (casts)**: Les conversions explicites nécessitent une [expression de distribution.](../../language-reference/operators/type-testing-and-cast.md#cast-expression) Un cast est exigé quand les informations peuvent être perdues durant la conversion, ou quand la conversion peut échouer pour d’autres raisons. Exemples classiques : conversion numérique en type qui a moins de précision ou une plus petite plage, et conversion d’une instance de classe de base en classe dérivée.  
   
 - **Conversions définies par l’utilisateur** : les conversions définies par l’utilisateur sont effectuées par des méthodes spéciales que vous pouvez définir pour permettre des conversions explicites ou implicites entre des types personnalisés qui n’ont pas de relation classe de base/classe dérivée. Pour plus d’informations, consultez [Opérateurs de conversion définie par l’utilisateur](../../language-reference/operators/user-defined-conversion-operators.md).  
   
@@ -90,9 +90,9 @@ Pour plus d’informations, consultez la section [Conversions](~/_csharplang/spe
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation CMD](../index.md)
 - [Types](./index.md)
-- [Opérateur de cast ()](../../language-reference/operators/type-testing-and-cast.md#cast-operator-)
+- [Expression Cast](../../language-reference/operators/type-testing-and-cast.md#cast-expression)
 - [Opérateurs de conversion définie par l’utilisateur](../../language-reference/operators/user-defined-conversion-operators.md)
 - [Conversion de type généralisée](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/yy580hbd(v=vs.120))
 - [Comment convertir une chaîne en nombre](./how-to-convert-a-string-to-a-number.md)

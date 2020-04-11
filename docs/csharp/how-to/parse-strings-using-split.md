@@ -9,12 +9,12 @@ helpviewer_keywords:
 - parse strings
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
-ms.openlocfilehash: b46429f3b55658e1f2a7d21eed714c1d02236c57
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fb11ff59705188f9425beedfbbbf3c244d21f587
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73973233"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121508"
 ---
 # <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Comment analyser les cordes à l’aide de String.Split (Guide C)
 
@@ -48,10 +48,10 @@ Les instances consécutives d’un séparateur produisent une chaîne vide dans 
   
 [!code-csharp-interactive[split strings using strings as separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#5)]
 
-Vous pouvez essayer ces échantillons en regardant le code dans notre [référentiel GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
+Vous pouvez essayer ces échantillons en regardant le code dans notre [référentiel GitHub](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](../../../samples/snippets/csharp/how-to/strings.zip).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../programming-guide/index.md)
-- [Cordes](../programming-guide/strings/index.md)
+- [Guide de programmation CMD](../programming-guide/index.md)
+- [Chaînes](../programming-guide/strings/index.md)
 - [Expressions régulières .NET](../../standard/base-types/regular-expressions.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: 15ea77d13a93d88bd996a22b6fe1aaad81df572d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f3e6d95eb4a01d48fac5b5e2c951b9c346206004
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74959700"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121492"
 ---
 # <a name="how-to-search-strings"></a>Comment rechercher les chaînes
 
@@ -72,14 +72,14 @@ Le code suivant utilise des expressions régulières pour valider le format de c
 
 Ce seul modèle de recherche correspond à de nombreuses chaînes valides. Les expressions régulières sont mieux adaptées pour rechercher un modèle ou pour effectuer une validation par rapport à un modèle, et le sont moins pour une seule chaîne de texte.
 
-Vous pouvez essayer ces échantillons en regardant le code dans notre [référentiel GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
+Vous pouvez essayer ces échantillons en regardant le code dans notre [référentiel GitHub](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](../../../samples/snippets/csharp/how-to/strings.zip).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../programming-guide/index.md)
-- [Cordes](../programming-guide/strings/index.md)
+- [Guide de programmation CMD](../programming-guide/index.md)
+- [Chaînes](../programming-guide/strings/index.md)
 - [LINQ et chaînes](../programming-guide/concepts/linq/linq-and-strings.md)
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>
 - [Expressions régulières du .NET Framework](../../standard/base-types/regular-expressions.md)
-- [Langage d’expression régulière - Référence rapide](../../standard/base-types/regular-expression-language-quick-reference.md)
+- [Langage des expressions régulières - Aide-mémoire](../../standard/base-types/regular-expression-language-quick-reference.md)
 - [Bonnes pratiques pour l’utilisation de chaînes dans .NET](../../standard/base-types/best-practices-strings.md)
