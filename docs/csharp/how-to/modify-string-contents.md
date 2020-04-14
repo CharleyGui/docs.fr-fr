@@ -3,12 +3,12 @@ title: Comment modifier le contenu des cordes - Guide C
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: 260e4022c514db0cee3c1459b9d746a1c8e2addd
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: f31fa94501ac2120e22e229dfc11babb8b8cc0f3
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81121135"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242853"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Comment modifier le contenu des cordes en C\#
 
@@ -58,7 +58,7 @@ La méthode <xref:System.Text.StringBuilder.ToString%2A?displayProperty=nameWith
 
 Vous pouvez générer un tableau de caractères à partir d’une chaîne, modifier le contenu du tableau, puis créer une autre chaîne à partir du contenu modifié du tableau.
 
-L’exemple suivant montre comment remplacer un jeu de caractères dans une chaîne. Tout d’abord, il utilise la méthode <xref:System.String.ToCharArray?displayProperty=nameWithName> pour créer un tableau de caractères. Il utilise la méthode <xref:System.String.IndexOf%2A> pour trouver l’index de départ du mot « fox ». Les trois caractères suivants sont remplacés par un autre mot. Enfin, une nouvelle chaîne est construite à partir du tableau de caractères mis à jour.
+L’exemple suivant montre comment remplacer un jeu de caractères dans une chaîne. Tout d’abord, il utilise la méthode <xref:System.String.ToCharArray?displayProperty=nameWithType> pour créer un tableau de caractères. Il utilise la méthode <xref:System.String.IndexOf%2A> pour trouver l’index de départ du mot « fox ». Les trois caractères suivants sont remplacés par un autre mot. Enfin, une nouvelle chaîne est construite à partir du tableau de caractères mis à jour.
 
 [!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#6)]
 

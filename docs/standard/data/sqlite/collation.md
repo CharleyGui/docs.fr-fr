@@ -2,12 +2,12 @@
 title: Classement
 ms.date: 12/13/2019
 description: Apprenez à créer une séquence de collation personnalisée.
-ms.openlocfilehash: b93c82a4ace154b8293b05effa8f9e9294fa7708
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 9879846cc191a62c4cb47a0fbaa47c59153ba61c
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79506539"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242970"
 ---
 # <a name="collation"></a>Classement
 
@@ -21,7 +21,7 @@ Les séquences de collation sont utilisées par SQLite pour comparer les valeurs
 
 ## <a name="custom-collation"></a>Collation personnalisée
 
-Vous pouvez également définir vos propres séquences de collation <xref:Microsoft.Data.Sqlite.SqliteConnection.CreateCollation%2A>ou remplacer les séquences intégrées à l’aide de . L’exemple suivant montre la collation NOCASE pour prendre en charge les caractères Unicode. Le [code d’échantillon complet](https://github.com/dotnet/samples/blob/master/snippets/standard/data/sqlite/CollationSample/Program.cs) est disponible sur GitHub.
+Vous pouvez également définir vos propres séquences de collation <xref:Microsoft.Data.Sqlite.SqliteConnection.CreateCollation%2A>ou remplacer les séquences intégrées à l’aide de . L’exemple suivant montre la collation NOCASE pour prendre en charge les caractères Unicode. Le [code d’échantillon complet](https://github.com/dotnet/docs/blob/master/samples/snippets/standard/data/sqlite/CollationSample/Program.cs) est disponible sur GitHub.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/CollationSample/Program.cs?name=snippet_Collation)]
 

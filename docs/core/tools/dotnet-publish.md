@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande de publication dotnet publie un projet ou une solution .NET Core à un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: 0e18220443f3713c86c257fcf401b98ddd716ebc
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 26dda33d04f3f7a23805627708b55233ef4e87ef
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588269"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242840"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -23,7 +23,8 @@ ms.locfileid: "80588269"
 dotnet publish [<PROJECT>|<SOLUTION>] [-c|--configuration]
     [-f|--framework] [--force] [--interactive] [--manifest]
     [--no-build] [--no-dependencies] [--no-restore] [--nologo]
-    [-o|--output] [-r|--runtime] [--self-contained]
+    [-o|--output] [-p:PublishReadyToRun] [-p:PublishSingleFile]
+    [-p:PublishTrimmed] [-r|--runtime] [--self-contained]
     [--no-self-contained] [-v|--verbosity] [--version-suffix]
 
 dotnet publish [-h|--help]
@@ -114,6 +115,12 @@ Pour plus d’informations, consultez les ressources suivantes :
   
   S’il n’est pas précisé, il ne fait pas défaut à *[project_file_folder]./bin/[configuration]/[cadre]/publier/* pour un délai exécutable et multiplateforme. Il est par défaut à *[project_file_folder]/bin/[configuration]/[cadre]/[runtime]/publish/* pour un exécutable autonome.
 
+  Dans un projet Web, si le dossier de sortie `dotnet publish` se trouve dans le dossier du projet, les commandes successives entraînent des dossiers de sortie imbriqués. Par exemple, si le dossier de projet est *monproject*, et le dossier `dotnet publish` de sortie de publication est *monproject/publier*, et vous exécutez deux fois, la deuxième exécution met des fichiers de contenu tels que *.config* et *.json* fichiers dans *monproject/ publier / publier*. Pour éviter de nichant les dossiers de publication, spécifiez un dossier de publication qui n’est pas directement sous le dossier du projet, ou excluez le dossier de publication du projet. Pour exclure un dossier de publication nommé *publieurputput*, ajoutez l’élément suivant à un `PropertyGroup` élément dans le fichier *.csproj:*
+
+  ```xml
+  <DefaultItemExcludes>$(DefaultItemExcludes);publishoutput**</DefaultItemExcludes>
+  ```
+
   - .NET Core 3.x SDK et plus tard
   
     Si un chemin relatif est spécifié lors de la publication d’un projet, l’annuaire de sortie généré est relatif à l’annuaire de travail actuel, et non à l’emplacement du fichier du projet.
@@ -125,6 +132,26 @@ Pour plus d’informations, consultez les ressources suivantes :
     Si un chemin relatif est spécifié lors de la publication d’un projet, l’annuaire de sortie généré est relatif à l’emplacement du fichier du projet, et non à l’annuaire de travail actuel.
 
     Si un chemin relatif est spécifié lors de la publication d’une solution, la sortie de chaque projet est dans un dossier distinct par rapport à l’emplacement du fichier du projet. Si un chemin absolu est spécifié lors de la publication d’une solution, tous les documents de publication pour tous les projets entrent dans le dossier spécifié.
+
+- **`-p:PublishReadyToRun`**
+
+  Compile les assemblages d’applications sous forme de format ReadyToRun (R2R). R2R est une forme de compilation ahead-of-time (AOT). Pour plus d’informations, voir [les images ReadyToRun](../whats-new/dotnet-core-3-0.md#readytorun-images). Option disponible à partir du kit SDK .NET Core 3.0.
+
+  Nous vous recommandons de spécifier cette option dans un profil de publication plutôt que sur la ligne de commande. Pour plus d’informations, consultez [MSBuild](#msbuild).
+
+- **`-p:PublishSingleFile`**
+
+  Emballe l’application dans un fichier unique spécifique à une plate-forme exécutable. L’exécutable est auto-extraction et contient toutes les dépendances (y compris indigène) qui sont nécessaires pour exécuter l’application. Lors de la première exécution de l’application, celle-ci est extraite d’un répertoire basé sur le nom de l’application et l’identificateur de la build. Le démarrage est plus rapide quand l’application est réexécutée. L’application n’a pas besoin de s’extraire une deuxième fois à moins qu’une nouvelle version ne soit utilisée. Option disponible à partir du kit SDK .NET Core 3.0.
+
+  Pour plus d’informations sur la publication monofichier, consultez le [document conceptuel sur l’outil de regroupement monofichier](https://github.com/dotnet/designs/blob/master/accepted/2020/single-file/design.md).
+
+  Nous vous recommandons de spécifier cette option dans un profil de publication plutôt que sur la ligne de commande. Pour plus d’informations, consultez [MSBuild](#msbuild).
+
+- **`-p:PublishTrimmed`**
+
+  Coupe les bibliothèques inutilisées pour réduire la taille du déploiement d’une application lors de la publication d’un exécutable autonome. Pour plus d’informations, voir [Trim déploiements autonomes et exécutables](../deploying/trim-self-contained.md). Option disponible à partir du kit SDK .NET Core 3.0.
+
+  Nous vous recommandons de spécifier cette option dans un profil de publication plutôt que sur la ligne de commande. Pour plus d’informations, consultez [MSBuild](#msbuild).
 
 - **`--self-contained [true|false]`**
 
@@ -203,3 +230,4 @@ Pour plus d’informations, consultez les ressources suivantes :
 - [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference)
 - [Visual Studio publie des profils (.pubxml) pour ASP.NET déploiement de l’application Core](/aspnet/core/host-and-deploy/visual-studio-publish-profiles)
 - [dotnet msbuild](dotnet-msbuild.md)
+- [ILLInk.Tâches](https://aka.ms/dotnet-illink)

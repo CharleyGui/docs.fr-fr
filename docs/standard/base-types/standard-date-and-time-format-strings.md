@@ -14,12 +14,12 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-ms.openlocfilehash: 5a3ba2838458d6e6833035186dfd69b34c780317
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 5db29046bfe67c530fe3a613c126c3841e6402e1
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80248132"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242749"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Chaînes de format de date et d’heure standard
 
@@ -440,7 +440,7 @@ L'exemple suivant utilise le spécificateur de format "y" pour afficher une val
 
 Les paramètres de l'élément **Options régionales et linguistiques** du Panneau de configuration influencent la chaîne résultante produite par une opération de mise en forme. Ces paramètres sont utilisés pour initialiser l'objet <xref:System.Globalization.DateTimeFormatInfo> associé à la culture du thread en cours qui fournit des valeurs utilisées pour indiquer la mise en forme. Les ordinateurs qui utilisent des paramètres différents génèrent des chaînes de résultat différentes.
 
-De plus, si vous utilisez le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> pour instancier un nouvel objet <xref:System.Globalization.CultureInfo> qui représente la même culture que la culture système en cours, toutes les personnalisations établies par l'élément **Options régionales et linguistiques** du Panneau de configuration seront appliquées au nouvel objet <xref:System.Globalization.CultureInfo> . Vous pouvez utiliser le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> pour créer un objet <xref:System.Globalization.CultureInfo> qui ne reflète pas les personnalisations d'un système.
+De plus, si vous utilisez le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29> pour instancier un nouvel objet <xref:System.Globalization.CultureInfo> qui représente la même culture que la culture système en cours, toutes les personnalisations établies par l'élément **Options régionales et linguistiques** du Panneau de configuration seront appliquées au nouvel objet <xref:System.Globalization.CultureInfo> . Vous pouvez utiliser le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> pour créer un objet <xref:System.Globalization.CultureInfo> qui ne reflète pas les personnalisations d'un système.
 
 ### <a name="datetimeformatinfo-properties"></a>Propriétés DateTimeFormatInfo
 

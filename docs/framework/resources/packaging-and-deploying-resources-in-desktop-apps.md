@@ -26,12 +26,12 @@ helpviewer_keywords:
 - localizing resources
 - neutral cultures
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
-ms.openlocfilehash: 9c8d459195693e8eb084f7e87427a3ea37dd63ba
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d64e3b5201e34541fdafa5724b0c7e8c3f6c0c0d
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129931"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243048"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>Packager et déployer des ressources dans des applications .NET
 
@@ -48,12 +48,12 @@ Ce modèle présente plusieurs avantages :
 - Vous devez gérer plusieurs ensembles de ressources.
 - Le coût initial du test d’une application augmente, car vous devez tester plusieurs configurations. À longue échéance, il sera plus facile et moins coûteux de tester une application principale et plusieurs satellites que de tester et de tenir à jour en parallèle plusieurs versions internationales.
 
-## <a name="resource-naming-conventions"></a>Conventions d’attribution de noms aux ressources
+## <a name="resource-naming-conventions"></a>Conventions de nommage des ressources
 
 Quand vous empaquetez les ressources de votre application, vous devez les nommer en utilisant les conventions d’affectation de noms pour les ressources que le Common Language Runtime attend. Le runtime identifie une ressource par son nom de culture. Chaque culture a un nom unique, qui est en général une combinaison d’un nom de culture à deux lettres en minuscules associé à une langue et, si nécessaire, un nom de sous-culture à deux lettres en majuscules associé à un pays ou une région. Le nom de la sous-culture suit le nom de la culture, séparés par un tiret (-). Les exemples incluent ja-JP pour le japonais tel qu’il est parlé au Japon, en-US pour l’anglais tel qu’il est parlé aux États-Unis, de-DE pour l’allemand tel qu’il est parlé en Allemagne ou de-AT pour l’allemand tel qu’il est parlé en Autriche. Consultez la colonne **Balise de langue** dans la [liste des noms de langue/région pris en charge par Windows](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c). Les noms de culture respectent la norme définie par [BCP 47](https://tools.ietf.org/html/bcp47).
 
 > [!NOTE]
-> Il existe certaines exceptions pour les noms de culture à deux lettres, par exemple `zh-Hans` pour le chinois (simplifié).
+> Il y a quelques exceptions pour les `zh-Hans` noms de culture de deux lettres, comme pour le chinois (simplifié).
 
 > [!NOTE]
 > Pour plus d’informations sur la création de fichiers de ressources, consultez [Création de fichiers de ressources](creating-resource-files-for-desktop-apps.md) et [Création d’assemblys satellites](creating-satellite-assemblies-for-desktop-apps.md).
@@ -71,7 +71,7 @@ Pour améliorer les performances de recherche, appliquez l’attribut <xref:Syst
 Le processus de secours pour les ressources .NET Framework comprend les étapes suivantes :
 
 > [!TIP]
-> Vous pouvez peut-être utiliser l’élément de configuration [\<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) pour optimiser le processus de secours pour les ressources et le processus selon lequel le runtime recherche des assemblys de ressources. Pour plus d’informations, consultez la section [Optimisation du processus de secours pour les ressources](packaging-and-deploying-resources-in-desktop-apps.md#Optimizing).
+> Vous pouvez être en mesure d’utiliser [ \<l’élément relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) configuration pour optimiser le processus de repli des ressources et le processus par lequel les sondes de temps d’exécution pour les assemblages de ressources. Pour plus d’informations, consultez la section [Optimisation du processus de secours pour les ressources](packaging-and-deploying-resources-in-desktop-apps.md#Optimizing).
 
 1. Le runtime recherche d’abord dans le [Global Assembly Cache](../app-domains/gac.md) un assembly qui correspond à la culture demandée pour votre application.
 
@@ -116,7 +116,7 @@ Dans les conditions suivantes, vous pouvez optimiser le processus par lequel le 
 
 - Le code d’application ne gère pas l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType>.
 
-Vous optimisez la recherche des assemblys satellites en incluant l’élément [\<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) et en affectant à son attribut `enabled` la valeur `true` dans le fichier de configuration de l’application, comme indiqué dans l’exemple suivant.
+Vous optimisez la sonde pour les assemblages de satellites en incluant les `enabled` `true` [ \<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) élément et en définissant son attribut dans le fichier de configuration d’application, comme indiqué dans l’exemple suivant.
 
 ```xml
 <configuration>
@@ -170,7 +170,7 @@ Le processus de secours pour les ressources .NET Core comprend les étapes suiva
 
 ### <a name="ultimate-fallback-to-satellite-assembly"></a>Secours ultime pour l’assembly satellite
 
-Vous pouvez éventuellement supprimer des ressources de l’assembly principal et spécifier que le runtime doit charger les ressources de secours ultime depuis un assembly satellite qui correspond à une culture spécifique. Pour contrôler le processus de secours, vous utilisez le constructeur <xref:System.Resources.NeutralResourcesLanguageAttribute.%23ctor%28System.String%2CSystem.Resources.UltimateResourceFallbackLocation%29?displayProperty=nameWithType> et fournissez une valeur pour le paramètre <xref:System.Resources.UltimateResourceFallbackLocation> qui spécifie si le gestionnaire des ressources doit extraire les ressources de secours à partir de l’assembly principal ou d’un assembly satellite.
+Vous pouvez éventuellement supprimer des ressources de l’assembly principal et spécifier que le runtime doit charger les ressources de secours ultime depuis un assembly satellite qui correspond à une culture spécifique. Pour contrôler le processus de secours, vous utilisez le constructeur <xref:System.Resources.NeutralResourcesLanguageAttribute.%23ctor%28System.String%2CSystem.Resources.UltimateResourceFallbackLocation%29> et fournissez une valeur pour le paramètre <xref:System.Resources.UltimateResourceFallbackLocation> qui spécifie si le gestionnaire des ressources doit extraire les ressources de secours à partir de l’assembly principal ou d’un assembly satellite.
 
 L’exemple .NET Framework suivant utilise l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute> pour stocker les ressources de secours d’une application dans un assembly satellite pour la langue française (`fr`). L’exemple comprend deux fichiers de ressources textuels qui définissent une ressource de type chaîne unique nommée `Greeting`. Le premier, resources.fr.txt, contient une ressource de langue française.
 
@@ -231,7 +231,7 @@ Des contraintes de temps ou de budget peuvent vous empêcher de créer un ensemb
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Ressources dans des applications de bureau](index.md)
-- [Global Assembly Cache](../app-domains/gac.md)
+- [Ressources dans les applications de bureau](index.md)
+- [Cache de l’Assemblée mondiale](../app-domains/gac.md)
 - [Création de fichiers de ressources](creating-resource-files-for-desktop-apps.md)
 - [Création d’assemblys satellites](creating-satellite-assemblies-for-desktop-apps.md)

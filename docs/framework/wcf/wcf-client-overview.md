@@ -7,18 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], architecture
 ms.assetid: f60d9bc5-8ade-4471-8ecf-5a07a936c82d
-ms.openlocfilehash: 7905d540e0f06dd2863cf80381210307e3021918
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c12579062b04cfb46e14d5c3d734a7c155f8d654
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183070"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278884"
 ---
-# <a name="wcf-client-overview"></a>Vue d'ensemble d'un client WCF
+# <a name="wcf-client-overview"></a>Aperçu des clients WCF
+
 Cette section décrit ce que font les applications client, comment configurer, créer et utiliser un client de la Fondation Windows Communication (WCF) et comment sécuriser les applications client.  
   
 ## <a name="using-wcf-client-objects"></a>Utilisation des objets clients WCF  
- Une application client est une application gérée qui utilise un client WCF pour communiquer avec une autre application. Pour créer une application client pour un service WCF, il faut les étapes suivantes :  
+ Une application client est une application gérée qui utilise un client WCF pour communiquer avec une autre application. La création d’une demande client pour un service WCF nécessite les étapes suivantes :  
   
 1. Obtenez le contrat de service, les informations de liaison et d'adresse pour un point de terminaison de service.  
   
@@ -28,7 +29,7 @@ Cette section décrit ce que font les applications client, comment configurer, c
   
 4. Fermez l’objet client WCF.  
   
- Les sections suivantes traitent de ces étapes et fournissent de brèves introductions aux problèmes suivants :  
+Les sections suivantes traitent de ces étapes et fournissent de brèves introductions aux problèmes suivants :  
   
 - Gestion des erreurs.  
   
@@ -70,7 +71,7 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
   
  Cette classe peut être créée comme un objet local à l'aide de l'un des constructeurs, elle peut être configurée, puis utilisée pour se connecter à un service du type `ISampleService`.  
   
- Il est recommandé de créer votre objet client WCF d’abord, puis l’utiliser et le fermer à l’intérieur d’un seul essai / bloc de capture. Vous ne devez `using` pas`Using` utiliser l’instruction (dans Visual Basic) car elle peut masquer les exceptions dans certains modes d’échec. Pour plus d’informations, voir les sections suivantes ainsi que [Use Close and Abort pour libérer les ressources des clients WCF](./samples/use-close-abort-release-wcf-client-resources.md).  
+ Il est recommandé de créer votre objet client WCF d’abord, puis l’utiliser et le fermer à l’intérieur d’un seul essai / bloc de capture. N’utilisez pas `using` l’instruction (dans`Using` Visual Basic) car elle peut masquer les exceptions dans certains modes d’échec. Pour plus d’informations, voir les sections suivantes ainsi que [Use Close and Abort pour libérer les ressources des clients WCF](./samples/use-close-abort-release-wcf-client-resources.md).  
   
 ### <a name="contracts-bindings-and-addresses"></a>Contrats, liaisons et adresses  
  Avant de pouvoir créer un objet client WCF, vous devez configurer l’objet client. Plus précisément, il doit avoir un *critère de service* à utiliser. Un point de terminaison est la combinaison d’un contrat de service, d’une liaison et d’une adresse. (Pour plus d’informations sur les points de terminaison, voir [points de terminaison : Adresses, liaisons et contrats](./feature-details/endpoints-addresses-bindings-and-contracts.md).) En règle générale, ces [ \<](../configure-apps/file-schema/wcf/endpoint-of-client.md) informations sont situées dans le critère>élément d’un fichier de configuration d’application client, comme celui que l’outil Svcutil.exe génère, et est chargée automatiquement lorsque vous créez votre objet client. Les deux types de clients WCF ont également des surcharges qui vous permettent de spécifier programmatiquement ces informations.  
@@ -79,7 +80,7 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
   
  [!code-xml[C_GeneratedCodeFiles#19](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/common/client.exe.config#19)]  
   
- Ce fichier de configuration spécifie un point de terminaison cible dans l'élément `<client>`. Pour plus d’informations sur l’utilisation <xref:System.ServiceModel.ClientBase%601.%23ctor%2A?displayProperty=nameWithType> de <xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A?displayProperty=nameWithType> plusieurs paramètres cibles, voir ou les constructeurs.  
+ Ce fichier de configuration spécifie un point de terminaison cible dans l'élément `<client>`. Pour plus d’informations sur l’utilisation <xref:System.ServiceModel.ClientBase%601.%23ctor%2A> de <xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A> plusieurs paramètres cibles, voir ou les constructeurs.  
   
 ## <a name="calling-operations"></a>Opérations appelantes  
  Une fois qu’un objet client a été créé et configuré, créez un bloc d’essai/capture, appelez les opérations de la même manière que vous le feriez si l’objet était local et fermez l’objet client WCF. Lorsque l’application client appelle la première opération, WCF ouvre automatiquement le canal sous-jacent, et le canal sous-jacent est fermé lorsque l’objet est recyclé. (Vous pouvez également ouvrir et fermer explicitement le canal avant ou après l'appel des autres opérations.)  
@@ -127,7 +128,7 @@ Namespace Microsoft.ServiceModel.Samples
 End Interface  
 ```  
   
- Vous pouvez appeler les opérations en créant un objet client WCF et en appelant ses méthodes, comme le montre l’exemple de code suivant. Notez que l’ouverture, l’appel et la fermeture de l’objet client WCF se produit dans un seul bloc d’essai/capture. Pour plus d’informations, voir [Accessing Services Using a WCF Client](./feature-details/accessing-services-using-a-client.md) and [Use Close and Abort pour libérer les ressources des clients de WCF](./samples/use-close-abort-release-wcf-client-resources.md).  
+ Vous pouvez appeler les opérations en créant un objet client WCF et en appelant ses méthodes, comme le montre l’exemple de code suivant. L’ouverture, l’appel et la fermeture de l’objet client WCF se produisent dans un seul bloc d’essai/capture. Pour plus d’informations, voir [Accessing Services Using a WCF Client](./feature-details/accessing-services-using-a-client.md) and [Use Close and Abort pour libérer les ressources des clients de WCF](./samples/use-close-abort-release-wcf-client-resources.md).  
   
  [!code-csharp[C_GeneratedCodeFiles#20](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#20)]  
   

@@ -4,12 +4,12 @@ description: Ce tutoriel vous montre comment créer une application console .NET
 ms.date: 09/30/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 47b9a9fe37cbcacab3797ed7fb1398b0c524d746
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c6e13cfca93c54648b1a0423c5983013d3e2a1a0
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78241128"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243295"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Tutorial: Analyser le sentiment des commentaires sur le site Web avec la classification binaire en ML.NET
 
@@ -28,11 +28,11 @@ Dans ce tutoriel, vous allez apprendre à :
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis).
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 - [Visual Studio 2017 version 15.6 ou plus tard](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail ".NET Core cross-platform development" installée
 
-- [Jeu de données « UCI Sentiment Labeled Sentences »](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) (fichier zip)
+- [Jeu de données « UCI Sentiment Labeled Sentences »](http://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) (fichier zip)
 
 ## <a name="create-a-console-application"></a>Création d’une application console
 
@@ -49,7 +49,7 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 > [!NOTE]
 > Les jeux de données utilisés dans ce tutoriel proviennent de « From Group to Individual Labels using Deep Features » (Kotzias et. al., KDD 2015, et hébergé à l’UCI Machine Learning Repository - Dua, D. et Karra Taniskidou, E. (2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml]. Irvine, Californie : Université de Californie, School of Information and Computer Science.
 
-1. Téléchargez le [fichier zip du jeu de données UCI Sentiment Labeled Sentences](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip), puis décompressez-le.
+1. Téléchargez le [fichier zip du jeu de données UCI Sentiment Labeled Sentences](http://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip), puis décompressez-le.
 
 2. Copiez le fichier `yelp_labelled.txt` dans le répertoire *Données* que vous avez créé.
 
@@ -131,7 +131,7 @@ Vous préparez l’application et chargez ensuite les données :
 
     [!code-csharp[LoadData](~/samples/snippets/machine-learning/SentimentAnalysis/csharp/Program.cs#LoadData "loading dataset")]
 
-    [LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) définit le schéma de données et lit le fichier. Elle prend les variables de chemin de données et retourne un `IDataView`.
+    La méthode [LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) définit le schéma de données et se lit dans le fichier. Elle prend les variables de chemin de données et retourne un `IDataView`.
 
 ### <a name="split-the-dataset-for-model-training-and-testing"></a>Fractionner le jeu de données pour l’apprentissage et le test du modèle
 
@@ -141,7 +141,7 @@ Quand vous préparez un modèle, vous utilisez une partie du jeu de données pou
 
     [!code-csharp[SplitData](~/samples/snippets/machine-learning/SentimentAnalysis/csharp/Program.cs#SplitData "Split the Data")]
 
-    Le code précédent utilise la méthode [TrainTestSplit()](xref:Microsoft.ML.DataOperationsCatalog.TrainTestSplit%2A) pour diviser le jeu de données chargé en deux jeux de données d’entraînement et de test, et les retourner dans la classe [TrainTestData](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData). Spécifiez le pourcentage de données du jeu de test avec le paramètre `testFraction`. La valeur par défaut est 10 %, mais dans cet exemple, vous spécifiez 20 % pour évaluer davantage de données.
+    Le code précédent utilise la méthode [TrainTestSplit()](xref:Microsoft.ML.DataOperationsCatalog.TrainTestSplit%2A) pour diviser le jeu de données <xref:Microsoft.ML.DataOperationsCatalog.TrainTestData> chargé en ensembles de données de train et d’essai et les retourner dans la classe. Spécifiez le pourcentage de données du jeu de test avec le paramètre `testFraction`. La valeur par défaut est 10 %, mais dans cet exemple, vous spécifiez 20 % pour évaluer davantage de données.
 
 2. Retournez `splitDataView` à la fin de la méthode `LoadData()` :
 

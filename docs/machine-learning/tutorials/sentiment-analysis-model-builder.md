@@ -6,18 +6,18 @@ author: luisquintanilla
 ms.author: luquinta
 ms.topic: tutorial
 ms.custom: mvc,mlnet-tooling
-ms.openlocfilehash: 98c9f28ca4ce6365ed4cf4ff1566a33dbe8f35ca
-ms.sourcegitcommit: 2ff49dcf9ddf107d139b4055534681052febad62
+ms.openlocfilehash: 7761240055c90ae9c713b1c460e9e83316d256f9
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80438230"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278949"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>Tutorial: Analyser le sentiment des commentaires du site Web dans une application web en utilisant ML.NET Model Builder
 
 Apprenez à analyser le sentiment à partir de commentaires en temps réel à l’intérieur d’une application web.
 
-Ce tutoriel vous montre comment créer une application ASP.NET Core Razor Pages qui classe le sentiment des commentaires du site En temps réel.
+Ce tutoriel vous montre comment créer une application ASP.NET Core Razor Pages qui classe le sentiment des commentaires sur les sites Web en temps réel.
 
 Dans ce tutoriel, vous allez apprendre à :
 
@@ -103,9 +103,9 @@ Le temps nécessaire pour l’entraînement du modèle est proportionnel à la q
 
 ## <a name="evaluate-the-model"></a>Évaluer le modèle
 
-Le résultat de l’étape d’entraînement sera le modèle qui a eu les meilleures performances. Dans l’étape d’évaluation de l’outil Model Builder, la section de sortie, contiendra l’algorithme utilisé par le modèle le plus performant dans **l’entrée du meilleur modèle** avec des mesures dans **la meilleure précision du modèle**. Vous voyez aussi un tableau récapitulatif contenant les cinq meilleurs modèles et leurs métriques.
+Le résultat de l’étape de formation sera un modèle qui a la meilleure performance. Dans l’étape d’évaluation de l’outil Model Builder, la section de sortie contiendra l’algorithme utilisé par le modèle le plus performant dans **l’entrée du meilleur modèle** avec des mesures dans **la meilleure précision du modèle**. En outre, un tableau sommaire contenant les cinq premiers modèles et leurs mesures est affiché.
 
-Si vous n’êtes pas satisfait de vos métriques de précision, un moyen facile pour améliorer la précision du modèle consiste à augmenter la quantité de temps pour entraîner le modèle ou à utiliser plus de données. Dans le cas contraire, sélectionnez le lien **de code** pour passer à l’étape finale de l’outil Model Builder.
+Si vous n’êtes pas satisfait de vos mesures de précision, certains moyens faciles d’essayer d’améliorer la précision du modèle sont d’augmenter la quantité de temps pour former le modèle ou utiliser plus de données. Dans le cas contraire, sélectionnez le lien **de code** pour passer à l’étape finale de l’outil Model Builder.
 
 ## <a name="add-the-code-to-make-predictions"></a>Ajouter le code pour effectuer des prédictions
 
@@ -124,7 +124,7 @@ Deux projets sont créés à la suite du processus d’entraînement.
 
 ### <a name="configure-the-predictionengine-pool"></a>Configurer la piscine PredictionEngine
 
-Pour faire une seule prédiction, [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)vous devez créer un . [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)n’est pas sans fil. En outre, vous devez créer une instance de celui-ci partout où il est nécessaire dans votre application. Au fur et à mesure que votre application se développe, ce processus peut devenir ingérable. Pour améliorer les performances et la sécurité des `PredictionEnginePool` fils, utilisez [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) une combinaison d’injection de dépendance et le service, qui crée un des objets à utiliser tout au long de votre application.
+Pour faire une seule prédiction, <xref:Microsoft.ML.PredictionEngine%602>vous devez créer un . <xref:Microsoft.ML.PredictionEngine%602> n’est pas thread-safe. En outre, vous devez créer une instance de celui-ci partout où il est nécessaire dans votre application. Au fur et à mesure que votre application se développe, ce processus peut devenir ingérable. Pour améliorer les performances et la sécurité des `PredictionEnginePool` fils, utilisez <xref:Microsoft.Extensions.ObjectPool.ObjectPool%601> <xref:Microsoft.ML.PredictionEngine%602> une combinaison d’injection de dépendance et le service, qui crée un des objets à utiliser tout au long de votre application.
 
 1. Installer le *paquet nuGet Microsoft.Extensions.ML* :
 
@@ -277,7 +277,7 @@ Les résultats retournés par le `OnGetAnalyzeSentiment` seront `Index` affiché
 
 ## <a name="run-the-application"></a>Exécution de l'application
 
-Maintenant que votre application est configuré, exécutez l’application qui doit être lancée dans votre navigateur.
+Maintenant que votre application est configuré, exécutez l’application, qui doit être lancée dans votre navigateur.
 
 Lorsque l’application est lancée, entrez *Model Builder est cool!* dans la zone de texte. Le sentiment prévu affiché ne doit pas être *toxique*.
 

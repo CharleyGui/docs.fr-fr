@@ -16,12 +16,12 @@ helpviewer_keywords:
 - formatting numbers [.NET Framework]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-ms.openlocfilehash: 1eb9c3c189d7bba3a12fdcd0c3d600a66bf819ca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5961cce4601a89b34708b7090207edfed63b5b08
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75348309"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242983"
 ---
 # <a name="custom-numeric-format-strings"></a>Chaînes de format numériques personnalisées
 
@@ -265,7 +265,7 @@ Quelle que soit la chaîne de format, si la valeur d'un type à virgule flottant
 
 Les paramètres de l'élément **Options régionales et linguistiques** du Panneau de configuration influencent la chaîne résultante produite par une opération de mise en forme. Ces paramètres sont utilisés pour initialiser l'objet <xref:System.Globalization.NumberFormatInfo> associé à la culture du thread en cours et la culture du thread en cours fournit des valeurs utilisées pour indiquer la mise en forme. Les ordinateurs qui utilisent des paramètres différents génèrent des chaînes de résultat différentes.
 
-De plus, si vous utilisez le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> pour instancier un nouvel objet <xref:System.Globalization.CultureInfo> qui représente la même culture que la culture système en cours, toutes les personnalisations établies par l'élément **Options régionales et linguistiques** du Panneau de configuration seront appliquées au nouvel objet <xref:System.Globalization.CultureInfo> . Vous pouvez utiliser le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> pour créer un objet <xref:System.Globalization.CultureInfo> qui ne reflète pas les personnalisations d'un système.
+De plus, si vous utilisez le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29> pour instancier un nouvel objet <xref:System.Globalization.CultureInfo> qui représente la même culture que la culture système en cours, toutes les personnalisations établies par l'élément **Options régionales et linguistiques** du Panneau de configuration seront appliquées au nouvel objet <xref:System.Globalization.CultureInfo> . Vous pouvez utiliser le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> pour créer un objet <xref:System.Globalization.CultureInfo> qui ne reflète pas les personnalisations d'un système.
 
 ### <a name="rounding-and-fixed-point-format-strings"></a>Arrondi et chaînes de format à virgule fixe
 
@@ -275,7 +275,7 @@ Pour les chaînes de format à virgule fixe (c'est-à-dire les chaînes de forma
 
 <a name="example"></a>
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L'exemple suivant présente deux chaînes de format numériques personnalisées. Dans les deux cas, l'espace réservé de chiffre (`#`) affiche les données numériques, et tous les autres caractères sont copiés dans la chaîne de résultat.
 
@@ -289,7 +289,7 @@ L'exemple suivant présente deux chaînes de format numériques personnalisées.
 
 - <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>
 - [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
-- [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [Comment : remplir un nombre avec des zéros non significatifs](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
+- [Chaînes de format numérique standard](../../../docs/standard/base-types/standard-numeric-format-strings.md)
+- [Procédure : remplir un nombre avec des zéros non significatifs](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)

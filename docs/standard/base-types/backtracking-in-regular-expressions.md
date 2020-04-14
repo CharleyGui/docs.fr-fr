@@ -17,12 +17,12 @@ helpviewer_keywords:
 - strings [.NET Framework], regular expressions
 - parsing text with regular expressions, backtracking
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
-ms.openlocfilehash: 1b61cc88de4f73abfe6d8e77f8f32c2c71e70a9d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9c525229eb1ba5ca00ad1042864f92621bb366d2
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78158062"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243230"
 ---
 # <a name="backtracking-in-regular-expressions"></a>Rétroaction dans les expressions régulières
 La rétroaction se produit quand un modèle d’expression régulière contient des [quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) ou des [constructions d’alternative](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md) facultatifs, et que le moteur d’expression régulière retourne à un état enregistré précédent pour poursuivre la recherche d’une correspondance. La rétroaction est essentielle à la puissance des expressions régulières ; elle permet aux expressions d'être puissantes et flexibles et de correspondre à des modèles très complexes. Cependant, cette puissance a un coût. La rétroaction est souvent le facteur le plus important qui affecte les performances du moteur des expressions régulières. Heureusement, le développeur contrôle le comportement du moteur des expressions régulières et comment il utilise la rétroaction. Cette rubrique explique comment la rétroaction fonctionne et comment elle peut être activée.  
@@ -106,14 +106,14 @@ La rétroaction se produit quand un modèle d’expression régulière contient 
  La rétroaction vous permet de créer des expressions régulières puissantes et flexibles. Toutefois, comme la section précédente l'indiquait, ces avantages peuvent s'accompagner de performances médiocres. Pour empêcher la rétroaction excessive, vous devez définir un intervalle de délai d'attente lorsque vous instanciez un objet <xref:System.Text.RegularExpressions.Regex> ou appelez une méthode de mise en correspondance statique d'expression régulière. Cette situation est présentée dans la section suivante. En outre, .NET soutient trois éléments de langage d’expression régulière qui limitent ou suppriment le retour en arrière et qui soutiennent des expressions régulières complexes avec peu ou pas de pénalité de performance : les groupes [atomiques, les affirmations de lookbehind,](#lookbehind-assertions)et [les affirmations de lookahead](#lookahead-assertions). [atomic groups](#atomic-groups) Pour plus d’informations sur chaque élément de langage, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
 
 ### <a name="defining-a-time-out-interval"></a>Définir un intervalle de délai d'attente  
- À partir de .NET Framework 4.5, vous pouvez définir un intervalle de délai d’attente qui représente la durée maximale pendant laquelle le moteur d’expression régulière recherche une correspondance avant d’abandonner la tentative et de lever une exception <xref:System.Text.RegularExpressions.RegexMatchTimeoutException>. Vous spécifiez l'intervalle de délai d'attente en donnant une valeur <xref:System.TimeSpan> au constructeur <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> pour les expressions régulières d'instances. De plus, chaque méthode de mise en correspondance statique possède une surcharge avec un paramètre <xref:System.TimeSpan> qui vous permet de spécifier une valeur de délai d'attente. Par défaut, l'intervalle de délai d'attente est défini sur <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType> et le moteur des expressions régulières n'expire pas.  
+ À partir de .NET Framework 4.5, vous pouvez définir un intervalle de délai d’attente qui représente la durée maximale pendant laquelle le moteur d’expression régulière recherche une correspondance avant d’abandonner la tentative et de lever une exception <xref:System.Text.RegularExpressions.RegexMatchTimeoutException>. Vous spécifiez l'intervalle de délai d'attente en donnant une valeur <xref:System.TimeSpan> au constructeur <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29> pour les expressions régulières d'instances. De plus, chaque méthode de mise en correspondance statique possède une surcharge avec un paramètre <xref:System.TimeSpan> qui vous permet de spécifier une valeur de délai d'attente. Par défaut, l'intervalle de délai d'attente est défini sur <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType> et le moteur des expressions régulières n'expire pas.  
   
 > [!IMPORTANT]
 > Il est recommandé de toujours définir un intervalle de délai d'attente si votre expression régulière repose sur la restauration.  
   
  Une exception <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> indique que le moteur des expressions régulières n’a pas pu trouver de correspondance dans l’intervalle de délai d’attente spécifié, mais n’indique pas pourquoi l’exception a été levée. Cela peut provenir de la rétroaction excessive, mais il est possible que l'intervalle de délai d'attente était trop faible étant donné la charge système au moment où l'exception a été levée. Lorsque vous gérez l'exception, vous pouvez choisir d'abandonner d'autres correspondances avec la chaîne d'entrée ou augmenter l'intervalle de délai d'attente et de retenter l'opération de mise en correspondance.  
   
- Par exemple, le code suivant appelle le constructeur <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> pour instancier un objet <xref:System.Text.RegularExpressions.Regex> avec un délai d'attente d'une seconde. Le modèle d'expression régulière `(a+)+$`, qui correspond à une ou plusieurs séquences d'un ou plusieurs caractères « a » à la fin d'une ligne, est soumis à une rétroaction excessive. Si une <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> est levée, l'exemple augmente la valeur du délai d'attente jusqu'à un intervalle maximal de trois secondes. Après cela, il abandonne la tentative pour mettre en correspondance le modèle.  
+ Par exemple, le code suivant appelle le constructeur <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29> pour instancier un objet <xref:System.Text.RegularExpressions.Regex> avec un délai d'attente d'une seconde. Le modèle d'expression régulière `(a+)+$`, qui correspond à une ou plusieurs séquences d'un ou plusieurs caractères « a » à la fin d'une ligne, est soumis à une rétroaction excessive. Si une <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> est levée, l'exemple augmente la valeur du délai d'attente jusqu'à un intervalle maximal de trois secondes. Après cela, il abandonne la tentative pour mettre en correspondance le modèle.  
   
  [!code-csharp[System.Text.RegularExpressions.Regex.ctor#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.regex.ctor/cs/ctor1.cs#1)]
  [!code-vb[System.Text.RegularExpressions.Regex.ctor#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.regex.ctor/vb/ctor1.vb#1)]  
@@ -191,7 +191,7 @@ La rétroaction se produit quand un modèle d’expression régulière contient 
 ## <a name="see-also"></a>Voir aussi
 
 - [Expressions régulières .NET](../../../docs/standard/base-types/regular-expressions.md)
-- [Langage d’expression régulière - Référence rapide](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [Langage des expressions régulières - Aide-mémoire](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
 - [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)
-- [Constructions d’alternative](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)
+- [Constructions d’alternance](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)
 - [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)

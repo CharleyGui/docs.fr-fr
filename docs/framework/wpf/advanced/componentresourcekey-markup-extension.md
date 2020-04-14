@@ -8,35 +8,35 @@ helpviewer_keywords:
 - ComponentResourceKey markup extension [WPF]
 - XAML [WPF], ComponentResourceKey markup extension
 ms.assetid: d6bcdbe6-61b3-40a7-b381-4e02185b5a85
-ms.openlocfilehash: 2ccc4f3154996a4e442a4092833f5c9ed9c8938a
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 4cdba2a61be4e9686cd2120fd90a213534c222c8
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559459"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243360"
 ---
 # <a name="componentresourcekey-markup-extension"></a>ComponentResourceKey, extension de balisage
-Définit et référence des clés pour les ressources qui sont chargées à partir d’assemblys externes. Cela permet à une recherche de ressource de spécifier un type de cible dans un assembly, plutôt qu’un dictionnaire de ressources explicite dans un assembly ou une classe.  
+Définit et référence les clés pour les ressources chargées à partir d’assemblages externes. Cela permet à une recherche de ressources de spécifier un type cible dans un assemblage, plutôt qu’un dictionnaire de ressources explicite dans une assemblée ou sur une classe.  
   
-## <a name="xaml-attribute-usage-setting-key-compact"></a>Utilisation des attributs XAML (clé de paramètre, compact)  
+## <a name="xaml-attribute-usage-setting-key-compact"></a>Utilisation d’attributs XAML (clé de réglage, compacte)  
   
 ```xml  
 <object x:Key="{ComponentResourceKey {x:Type targetTypeName}, targetID}" .../>  
 ```  
   
-## <a name="xaml-attribute-usage-setting-key-verbose"></a>Utilisation des attributs XAML (clé de paramètre, verbose)  
+## <a name="xaml-attribute-usage-setting-key-verbose"></a>Utilisation d’attributs XAML (clé de réglage, verbose)  
   
 ```xml  
 <object x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type targetTypeName}, ResourceID=targetID}" .../>  
 ```  
   
-## <a name="xaml-attribute-usage-requesting-resource-compact"></a>Utilisation des attributs XAML (demande de ressources, compact)  
+## <a name="xaml-attribute-usage-requesting-resource-compact"></a>Utilisation d’attributs XAML (ressource demandée, compacte)  
   
 ```xml  
 <object property="{DynamicResource {ComponentResourceKey {x:Type targetTypeName}, targetID}}" .../>  
 ```  
   
-## <a name="xaml-attribute-usage-requesting-resource-verbose"></a>Utilisation des attributs XAML (demande de ressource, commentaires)  
+## <a name="xaml-attribute-usage-requesting-resource-verbose"></a>Utilisation d’attributs XAML (demande de ressources, verbose)  
   
 ```xml  
 <object property="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type targetTypeName}, ResourceID=targetID}}" .../>  
@@ -46,31 +46,31 @@ Définit et référence des clés pour les ressources qui sont chargées à part
   
 |||  
 |-|-|  
-|`targetTypeName`|Nom du type de common language runtime public (CLR) défini dans l’assembly de ressource.|  
-|`targetID`|Clé pour la ressource. Lorsque les ressources sont recherchées, `targetID` est analogue à la [directive x :Key](../../../desktop-wpf/xaml-services/xkey-directive.md) de la ressource.|  
+|`targetTypeName`|Le nom du type public de l’heure courante de langue (CLR) qui est défini dans l’assemblage des ressources.|  
+|`targetID`|La clé de la ressource. Lorsque les ressources `targetID` seront examinées, elles seront analogues à la [directive x: Key](../../../desktop-wpf/xaml-services/xkey-directive.md) de la ressource.|  
   
 ## <a name="remarks"></a>Notes  
- Comme indiqué dans les utilisations ci-dessus, une utilisation d’extension de balisage {`ComponentResourceKey`} se trouve à deux emplacements :  
+ Comme on le voit dans`ComponentResourceKey`les utilisations ci-dessus, l’utilisation d’une extension de balisage se trouve à deux endroits :  
   
-- Définition d’une clé dans un dictionnaire de ressources de thème, telle qu’elle est fournie par un auteur de contrôle.  
+- La définition d’une clé dans un dictionnaire de ressources thématiques, telle qu’fournie par un auteur de contrôle.  
   
-- Accès à une ressource de thème à partir de l’assembly, lorsque vous recréationez le contrôle, mais que vous souhaitez utiliser des valeurs de propriété provenant de ressources fournies par les thèmes du contrôle.  
+- Accéder à une ressource thématique de l’assemblée, lorsque vous retemplating le contrôle, mais que vous voulez utiliser les valeurs de propriété qui proviennent des ressources fournies par les thèmes du contrôle.  
   
- Pour référencer des ressources de composant provenant de thèmes, il est généralement recommandé d’utiliser `{DynamicResource}` plutôt que `{StaticResource}`. Cela est illustré dans les utilisations. `{DynamicResource}` est recommandé, car le thème lui-même peut être modifié par l’utilisateur. Si vous souhaitez que la ressource de composant corresponde le mieux à l’intention de l’auteur du contrôle pour la prise en charge d’un thème, vous devez également activer la référence de ressource de votre composant comme étant dynamique.  
+ Pour le référencement des ressources de composants qui `{DynamicResource}` proviennent `{StaticResource}`de thèmes, il est généralement recommandé que vous utilisiez plutôt que . Ceci est indiqué dans les usages. `{DynamicResource}`est recommandé parce que le thème lui-même peut être changé par l’utilisateur. Si vous voulez que la ressource de composants qui correspond le plus étroitement à l’intention de l’auteur de contrôle pour soutenir un thème, vous devriez permettre à votre référence de ressource de composant d’être dynamique également.  
   
- Le <xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A> identifie un type qui existe dans l’assembly cible où la ressource est réellement définie. Une `ComponentResourceKey` peut être définie et utilisée indépendamment de la façon dont le <xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A> est défini, mais qui finit par résoudre le type par le biais d’assemblys référencés.  
+ Le <xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A> identifie un type qui existe dans l’assemblage cible où la ressource est effectivement définie. A `ComponentResourceKey` peut être défini et utilisé indépendamment <xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A> de savoir exactement où le est défini, mais doit éventuellement résoudre le type par des assemblages référencés.  
   
- Une utilisation courante de <xref:System.Windows.ComponentResourceKey> consiste à définir des clés qui sont ensuite exposées comme membres d’une classe. Pour cette utilisation, vous utilisez le constructeur de classe <xref:System.Windows.ComponentResourceKey>, et non l’extension de balisage. Pour plus d’informations, consultez <xref:System.Windows.ComponentResourceKey>ou la section « Définition et référencement de clés pour les ressources de thème » de la rubrique [vue d’ensemble](../controls/control-authoring-overview.md)de la création de contrôles.  
+ Une utilisation <xref:System.Windows.ComponentResourceKey> courante est de définir les clés qui sont ensuite exposées en tant que membres d’une classe. Pour cette utilisation, <xref:System.Windows.ComponentResourceKey> vous utilisez le constructeur de classe, pas l’extension de balisage. Pour plus d’informations, voir <xref:System.Windows.ComponentResourceKey>, ou la section " Définir et se référer des clés pour les ressources thématiques " du sujet Contrôle [Authoring Overview](../controls/control-authoring-overview.md).  
   
- Pour la création de clés et le référencement de ressources de clé, la syntaxe d’attribut est couramment utilisée pour l’extension de balisage `ComponentResourceKey`.  
+ Pour établir des clés et faire référence aux ressources clés, la syntaxe d’attribut est couramment utilisée pour l’extension de `ComponentResourceKey` balisage.  
   
- La syntaxe compact indiquée s’appuie sur la signature du constructeur <xref:System.Windows.ComponentResourceKey.%23ctor%2A?displayProperty=nameWithType> et l’utilisation des paramètres positionnels d’une extension de balisage. L’ordre dans lequel les `targetTypeName` et les `targetID` sont fournis est important. La syntaxe détaillée s’appuie sur le <xref:System.Windows.ComponentResourceKey.%23ctor%2A?displayProperty=nameWithType> constructeur sans paramètre, puis définit le <xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A> et le <xref:System.Windows.ComponentResourceKey.ResourceId%2A> d’une manière analogue à une syntaxe d’attribut vraie sur un élément objet. Dans la syntaxe détaillée, l’ordre dans lequel les propriétés sont définies n’est pas important. La relation et les mécanismes de ces deux solutions (compact et détaillé) sont décrits plus en détail dans la rubrique [extensions de balisage et XAML WPF](markup-extensions-and-wpf-xaml.md).  
+ La syntaxe compacte <xref:System.Windows.ComponentResourceKey.%23ctor%2A> indiquée repose sur la signature du constructeur et l’utilisation des paramètres de position d’une extension de balisage. L’ordre dans `targetTypeName` `targetID` lequel le et sont donnés est important. La syntaxe verbeuse <xref:System.Windows.ComponentResourceKey.%23ctor%2A> repose sur le constructeur <xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A> sans <xref:System.Windows.ComponentResourceKey.ResourceId%2A> paramètres, puis définit le et d’une manière qui est analogue à une syntaxe d’attribut réel sur un élément d’objet. Dans la syntaxe verbeuse, l’ordre dans lequel les propriétés sont définies n’est pas important. La relation et les mécanismes de ces deux alternatives (compactes et verbeuses) sont décrits plus en détail dans le thème [Markup Extensions et WPF XAML](markup-extensions-and-wpf-xaml.md).  
   
- Techniquement, la valeur de `targetID` peut être n’importe quel objet, il n’est pas nécessaire qu’il s’agit d’une chaîne. Toutefois, l’utilisation la plus courante dans WPF consiste à aligner la valeur `targetID` avec les formulaires qui sont des chaînes et où ces chaînes sont valides dans la [grammaire XamlName](../../../desktop-wpf/xaml-services/xamlname-grammar.md).  
+ Techniquement, la `targetID` valeur pour peut être n’importe quel objet, il n’a pas besoin d’être une chaîne. Cependant, l’utilisation la plus courante `targetID` dans WPF est d’aligner la valeur avec les formes qui sont des chaînes, et lorsque ces chaînes sont valides dans la [grammaire XamlName](../../../desktop-wpf/xaml-services/xamlname-grammar.md).  
   
- `ComponentResourceKey` peut être utilisé dans la syntaxe d’élément objet. Dans ce cas, il est nécessaire de spécifier la valeur des propriétés <xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A> et <xref:System.Windows.ComponentResourceKey.ResourceId%2A> pour initialiser correctement l’extension.  
+ `ComponentResourceKey`peut être utilisé dans la syntaxe d’élément d’objet. Dans ce cas, il est <xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A> nécessaire <xref:System.Windows.ComponentResourceKey.ResourceId%2A> de préciser la valeur de la valeur et des propriétés pour l’initialisation appropriée de l’extension.  
   
- Dans l’implémentation du lecteur [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], la gestion de cette extension de balisage est définie par la classe <xref:System.Windows.ComponentResourceKey>.  
+ Dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] l’implémentation du lecteur, la <xref:System.Windows.ComponentResourceKey> manipulation de cette extension de balisage est définie par la classe.  
   
  `ComponentResourceKey` est une extension de balisage. Les extensions de balisage sont généralement implémentées pour éviter que les valeurs d’attribut ne soient autre chose que des valeurs littérales ou des noms de gestionnaire et lorsque l’exigence dépasse le cadre de la définition de convertisseurs de type sur certains types ou propriétés. Toutes les extensions de balisage [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] utilisent les caractères { et } dans leur syntaxe d’attribut, convention selon laquelle un processeur [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] reconnaît qu’une extension de balisage doit traiter l’attribut. Pour plus d’informations, consultez [Extensions de balisage et XAML WPF](markup-extensions-and-wpf-xaml.md).  
   

@@ -1,24 +1,24 @@
 ---
-title: Extensions d'
+title: Extensions
 ms.date: 12/13/2019
-description: Découvrez comment charger des extensions SQLite.
-ms.openlocfilehash: a85b1227be4274dd20156d2475d6d2d68e250f99
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+description: Apprenez à charger les extensions SQLite.
+ms.openlocfilehash: 51c705349c25240fe42e0edda8004a3e3b013ca3
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901297"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242957"
 ---
-# <a name="extensions"></a>Extensions d'
+# <a name="extensions"></a>Extensions
 
-SQLite prend en charge le chargement des extensions au moment de l’exécution. Les extensions incluent des fonctions telles que les fonctions SQL supplémentaires, les classements, les tables virtuelles et bien plus encore.
+SQLite prend en charge les extensions de chargement au moment de l’exécution. Les extensions comprennent des choses comme des fonctions SQL supplémentaires, des collations, des tables virtuelles, et plus encore.
 
-.NET Core comprend une logique supplémentaire pour localiser les bibliothèques natives dans d’autres emplacements, tels que les packages NuGet référencés. Malheureusement, SQLite ne peut pas tirer parti de cette logique. Il appelle l’API de la plateforme directement pour charger des bibliothèques. Pour cette raison, vous devrez peut-être modifier les variables d’environnement PATH, LD_LIBRARY_PATH ou DYLD_LIBRARY_PATH avant de charger les extensions SQLite. [Un exemple](https://github.com/dotnet/samples/blob/master/snippets/standard/data/sqlite/ExtensionsSample/Program.cs) sur GitHub illustre la recherche de fichiers binaires pour le runtime actuel à l’intérieur d’un package NuGet référencé.
+.NET Core inclut une logique supplémentaire pour localiser les bibliothèques indigènes dans d’autres endroits comme les forfaits NuGet référencés. Malheureusement, SQLite ne peut pas tirer parti de cette logique; il appelle la plate-forme API directement pour charger les bibliothèques. Pour cette raison, vous devrez peut-être modifier les variables PATH, LD_LIBRARY_PATH ou DYLD_LIBRARY_PATH environnement avant de charger les extensions SQLite. Il ya [un échantillon](https://github.com/dotnet/docs/blob/master/samples/snippets/standard/data/sqlite/ExtensionsSample/Program.cs) sur GitHub qui démontre la recherche de binaires pour le temps d’exécution actuel à l’intérieur d’un paquet NuGet référencé.
 
-Pour charger une extension, appelez la méthode <xref:Microsoft.Data.Sqlite.SqliteConnection.LoadExtension%2A>. Microsoft. Data. sqlite garantit que l’extension reste chargée même si la connexion est fermée et rouverte.
+Pour charger une extension, appelez la <xref:Microsoft.Data.Sqlite.SqliteConnection.LoadExtension%2A> méthode. Microsoft.Data.Sqlite s’assurera que l’extension reste chargée même si la connexion est fermée et rouverte.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/ExtensionsSample/Program.cs?name=snippet_LoadExtension)]
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Extensions chargeable au moment de l’exécution](https://www.sqlite.org/loadext.html)
+* [Extensions chargeables à durée d’exécution](https://www.sqlite.org/loadext.html)

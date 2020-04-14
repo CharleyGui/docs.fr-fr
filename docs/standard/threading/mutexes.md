@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Mutex class, about Mutex class
 - threading [.NET Framework], cross-process synchronization
 ms.assetid: 9dd06e25-12c0-4a9e-855a-452dc83803e2
-ms.openlocfilehash: 874f879697db0b47c73626350eeb05a01b38e1bc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3f020db49bcdcbf6ce3d573348a93b06e87db199
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73127556"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242723"
 ---
 # <a name="mutexes"></a>Mutex
 Vous pouvez utiliser un objet <xref:System.Threading.Mutex> pour octroyer un droit d’accès exclusif à une ressource. La classe <xref:System.Threading.Mutex> utilise davantage de ressources système que la classe <xref:System.Threading.Monitor>. Cependant, elle peut être marshalée au-delà des limites du domaine d’application et utilisée avec plusieurs attentes, ainsi que pour synchroniser des threads dans différents processus. Pour consulter une comparaison des mécanismes de synchronisation gérés, consultez [Vue d’ensemble des primitives de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
@@ -50,7 +50,7 @@ Vous pouvez utiliser un objet <xref:System.Threading.Mutex> pour octroyer un dro
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Threading.Mutex?displayProperty=nameWithType>
-- <xref:System.Threading.Mutex.%23ctor%2A?displayProperty=nameWithType>
+- <xref:System.Threading.Mutex.%23ctor%2A>
 - <xref:System.Security.AccessControl.MutexSecurity?displayProperty=nameWithType>
 - <xref:System.Security.AccessControl.MutexAccessRule?displayProperty=nameWithType>
 - <xref:System.Threading.Monitor?displayProperty=nameWithType>

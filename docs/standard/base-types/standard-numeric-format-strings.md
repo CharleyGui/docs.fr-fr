@@ -16,12 +16,12 @@ helpviewer_keywords:
 - standard numeric format strings
 - formatting numbers [.NET Framework]
 - format specifiers, standard numeric format strings
-ms.openlocfilehash: 04ac99c6b5100c3749eefc219e51b4d0084bef06
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9b0c784a1c7b6b428636a1a4c99ec8e2bb76a9e0
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400322"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242710"
 ---
 # <a name="standard-numeric-format-strings"></a>Chaînes de format numériques standard
 
@@ -355,7 +355,7 @@ L'exemple suivant met en forme des valeurs <xref:System.Int32> avec le spécific
 
 Les paramètres de l'élément **Options régionales et linguistiques** du Panneau de configuration influencent la chaîne résultante produite par une opération de mise en forme. Ces paramètres sont utilisés pour initialiser l'objet <xref:System.Globalization.NumberFormatInfo> associé à la culture du thread actuel, laquelle fournit les valeurs utilisées pour déterminer la mise en forme. Les ordinateurs qui utilisent des paramètres différents génèrent des chaînes de résultat différentes.
 
-De plus, si le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> est utilisé pour instancier un nouvel objet <xref:System.Globalization.CultureInfo> qui représente la même culture que la culture système en cours, toutes les personnalisations établies par l’élément **Options régionales et linguistiques** dans le Panneau de configuration seront appliquées au nouvel objet <xref:System.Globalization.CultureInfo>. Vous pouvez utiliser le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> pour créer un objet <xref:System.Globalization.CultureInfo> qui ne reflète pas les personnalisations d'un système.
+De plus, si le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29> est utilisé pour instancier un nouvel objet <xref:System.Globalization.CultureInfo> qui représente la même culture que la culture système en cours, toutes les personnalisations établies par l’élément **Options régionales et linguistiques** dans le Panneau de configuration seront appliquées au nouvel objet <xref:System.Globalization.CultureInfo>. Vous pouvez utiliser le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> pour créer un objet <xref:System.Globalization.CultureInfo> qui ne reflète pas les personnalisations d'un système.
 
 ### <a name="numberformatinfo-properties"></a>Propriétés NumberFormatInfo
 
@@ -372,7 +372,7 @@ Certaines descriptions de spécificateurs de format numériques standard font r�
 
 Quelle que soit la chaîne de format, si la valeur d'un type à virgule flottante <xref:System.Single> ou <xref:System.Double> est l'infini positif, l'infini négatif ou une valeur non numérique (NaN), la chaîne mise en forme est la valeur de la propriété <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>, <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A> ou <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A> qui est spécifiée par l'objet <xref:System.Globalization.NumberFormatInfo> actuellement applicable.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-partial-note.md)]
 
@@ -386,7 +386,7 @@ L'exemple suivant met en forme une valeur numérique intégrale et à virgule fl
 - <xref:System.Globalization.NumberFormatInfo>
 - [Chaînes de format numérique personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)
 - [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
-- [Comment : remplir un nombre avec des zéros non significatifs](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
-- [Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md)
+- [Procédure : remplir un nombre avec des zéros non significatifs](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
+- [Formatage composite](../../../docs/standard/base-types/composite-formatting.md)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)

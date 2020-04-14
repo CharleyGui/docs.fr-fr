@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 51eb0e758f1ae8fb41c842ef9b32a9f8928af9ac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c592039b3b12eedcfceda45c2f54403a8e04b5d5
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73120739"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242671"
 ---
 # <a name="handling-io-errors-in-net"></a>Gestion des erreurs E/S dans .NET
 
@@ -39,7 +39,7 @@ Outre les exceptions qui peuvent être levées dans n’importe quel appel de m�
 
 Par exemple, sur le système d’exploitation Windows, un appel de méthode qui retourne un code d’erreur `ERROR_FILE_NOT_FOUND` (ou 0x02) est mappé à <xref:System.IO.FileNotFoundException> et le code d’erreur `ERROR_PATH_NOT_FOUND` (ou 0x03) correspond à <xref:System.IO.DirectoryNotFoundException>.
 
-Toutefois, les conditions précises sous lesquelles le système d’exploitation retourne des codes d’erreur particuliers sont souvent non documentées ou mal documentées. Par conséquent, des exceptions inattendues peuvent se produire. Par exemple, étant donné que vous travaillez avec un répertoire au lieu d’un fichier, vous pourriez penser que le fait de fournir un chemin d’accès de répertoire non valide au constructeur <xref:System.IO.DirectoryInfo.%23ctor%2A?displayProperty=nameWithType> lèverait une exception <xref:System.IO.DirectoryNotFoundException>. Toutefois, une exception <xref:System.IO.FileNotFoundException> peut également être levée.
+Toutefois, les conditions précises sous lesquelles le système d’exploitation retourne des codes d’erreur particuliers sont souvent non documentées ou mal documentées. Par conséquent, des exceptions inattendues peuvent se produire. Par exemple, étant donné que vous travaillez avec un répertoire au lieu d’un fichier, vous pourriez penser que le fait de fournir un chemin d’accès de répertoire non valide au constructeur <xref:System.IO.DirectoryInfo.%23ctor%2A> lèverait une exception <xref:System.IO.DirectoryNotFoundException>. Toutefois, une exception <xref:System.IO.FileNotFoundException> peut également être levée.
 
 ## <a name="exception-handling-in-io-operations"></a>Gestion des exceptions dans les opérations E/S
 
@@ -55,8 +55,8 @@ En raison de cette dépendance envers le système d’exploitation, des conditio
 | <xref:System.OperationCanceledException> | Oui | Oui |
 | <xref:System.UnauthorizedAccessException> | Oui | Oui |
 | <xref:System.ArgumentException> | .NET Core 2.0 et versions antérieures| Oui |
-| <xref:System.NotSupportedException> | Non  | Oui |
-| <xref:System.Security.SecurityException> | Non  | Confiance limitée uniquement |
+| <xref:System.NotSupportedException> | Non | Oui |
+| <xref:System.Security.SecurityException> | Non | Confiance limitée uniquement |
 
 ## <a name="handling-ioexception"></a>Gestion d’IOException
 

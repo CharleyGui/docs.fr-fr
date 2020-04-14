@@ -1,13 +1,13 @@
 ---
 title: Commande dotnet new
 description: La commande dotnet new crée des projets .NET Core basés sur le modèle spécifié.
-ms.date: 02/13/2020
-ms.openlocfilehash: d3c609419596b123f5bfb3ca85cf292a61154a70
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/10/2020
+ms.openlocfilehash: 1b1a6efa7bf2753b6c23cc7af1e26867f8632b96
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399125"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242879"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -198,7 +198,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="wpf"></a>wpf, wpflib, wpfcustomcontrollib, wpfusercontrollib
+### <a name="wpf-wpflib-wpfcustomcontrollib-wpfusercontrollib"></a><a name="wpf"></a>wpf, wpflib, wpfcustomcontrollib, wpfusercontrollib
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -216,7 +216,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="winforms"></a>winforms, winformslib
+### <a name="winforms-winformslib"></a><a name="winforms"></a>winforms, winformslib
 
 - **`--langVersion <VERSION_NUMBER>`**
 
@@ -230,7 +230,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="web-others"></a>travailleur, grpc
+### <a name="worker-grpc"></a><a name="web-others"></a>travailleur, grpc
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -246,7 +246,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="test"></a>mstest, xunit
+### <a name="mstest-xunit"></a><a name="test"></a>mstest, xunit
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -306,7 +306,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="namespace"></a>viewimports, proto
+### <a name="viewimports-proto"></a><a name="namespace"></a>viewimports, proto
 
 - **`-na|--namespace <NAMESPACE_NAME>`**
 
@@ -413,7 +413,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="web-options"></a>mvc, webapp
+### <a name="mvc-webapp"></a><a name="web-options"></a>mvc, webapp
 
 - **`-au|--auth <AUTHENTICATION_TYPE>`**
 
@@ -497,9 +497,13 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   Inclut BrowserLink dans le projet. Option non disponible en .NET Core 2.2 et 3.1 SDK.
 
+- **`-rrc|--razor-runtime-compilation`**
+
+  Détermine si le projet est configuré pour utiliser [la compilation Razor runtime](/aspnet/core/mvc/views/view-compilation#runtime-compilation) dans les versions Debug. Option disponible depuis .NET Core 3.1 SDK.
+
 ***
 
-### <a name="spa"></a>angulaire, réagir
+### <a name="angular-react"></a><a name="spa"></a>angulaire, réagir
 
 - **`-au|--auth <AUTHENTICATION_TYPE>`**
 

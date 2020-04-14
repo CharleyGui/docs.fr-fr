@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: 026421d7b1b2a0e39118ae712780ca7fc8f6e444
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 962c40ea0536d6b6057d936cfc4b95a49ddadbf8
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76921254"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243282"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Tutorial: Prévisions de la demande de service de location de vélos avec analyse des séries chrono temporelles et ML.NET
 
@@ -27,7 +27,7 @@ Dans ce tutoriel, vous allez apprendre à :
 > * Enregistrer un modèle de prévision
 > * Utiliser un modèle de prévision
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 - [Visual Studio 2017 version 15.6 ou plus tard](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec le ".NET Core cross-platform development" charge de travail installé.
 
@@ -60,7 +60,7 @@ L’algorithme utilisé dans ce tutoriel est [Single Spectrum Analysis (SSA)](ht
 1. Téléchargez le fichier de base de données [ *DailyDemand.mdf* ](https://github.com/dotnet/machinelearning-samples/raw/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Data/DailyDemand.mdf) et enregistrez-le sur le répertoire *Data.*
 
 > [!NOTE]
-> Les données utilisées dans ce tutoriel proviennent de [l’UCI Bike Sharing Dataset](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset). Fanaee-T, Hadi, et Gama, Joao, ' Event labeling combining ensemble detectors and background knowledge', Progress in Artificial Intelligence (2013): pp. 1-15, Springer Berlin Heidelberg, [Web Link](https://link.springer.com/article/10.1007%2Fs13748-013-0040-3).
+> Les données utilisées dans ce tutoriel proviennent de [l’UCI Bike Sharing Dataset](http://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset). Fanaee-T, Hadi, et Gama, Joao, ' Event labeling combining ensemble detectors and background knowledge', Progress in Artificial Intelligence (2013): pp. 1-15, Springer Berlin Heidelberg, [Web Link](https://link.springer.com/article/10.1007%2Fs13748-013-0040-3).
 
 Le jeu de données d’origine contient plusieurs colonnes correspondant à la saisonnalité et aux conditions météorologiques. Pour la brièveté et parce que l’algorithme utilisé dans ce tutoriel ne nécessite que les valeurs d’une seule colonne numérique, le jeu de données d’origine a été condensé pour inclure uniquement les colonnes suivantes:
 
@@ -245,7 +245,7 @@ Si vous êtes satisfait de votre modèle, enregistrez-le pour une utilisation ul
 
     [!code-csharp [DisplayForecast](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L111-L116)]
 
-## <a name="run-the-application"></a>Exécuter l’application
+## <a name="run-the-application"></a>Exécution de l'application
 
 1. À `Main` l’intérieur `Forecast` de la méthode, appelez la méthode.
 

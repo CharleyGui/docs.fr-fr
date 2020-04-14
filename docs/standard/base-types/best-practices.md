@@ -10,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.openlocfilehash: 9b09f5a2505888c6154a58a3512c94c51f89295b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ff04b4950f48f2ba06f60b65cc3a46f1295711f3
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77124420"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243152"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Meilleures pratiques pour les expressions régulières en .NET
 
@@ -219,7 +219,7 @@ Si une expression régulière traite une entrée qui correspond presque au modè
 
 L’intervalle de temps d’arrêt d’expression régulier définit la période de temps que le moteur d’expression régulière cherchera une seule correspondance avant qu’il ne s’avère. L’intervalle de temps <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>d’exécution par défaut est, ce qui signifie que l’expression régulière ne s’évanouira pas. Vous pouvez remplacer cette valeur et définir un intervalle de temps d’exécution comme suit :
 
-- En fournissant une valeur de délai d'attente quand vous instanciez un objet <xref:System.Text.RegularExpressions.Regex> en appelant le constructeur <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType>.
+- En fournissant une valeur de délai d'attente quand vous instanciez un objet <xref:System.Text.RegularExpressions.Regex> en appelant le constructeur <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29>.
 
 - En appelant une méthode de mise en correspondance de modèles statique, telle que <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> ou <xref:System.Text.RegularExpressions.Regex.Replace%28System.String%2CSystem.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType>, qui inclut un paramètre `matchTimeout`.
 
@@ -273,6 +273,6 @@ Vous pouvez désactiver les captures de l'une des façons suivantes :
 
 |Intitulé|Description|
 |-----------|-----------------|
-|[Détails du comportement d’expression régulière](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)|Aborde l’implémentation du moteur d’expression régulière dans .NET. Cette rubrique traite de la flexibilité des expressions régulières. Elle explique la responsabilité du développeur pour que le fonctionnement efficace et fiable du moteur des expressions régulières soit garanti.|
+|[Comportement détaillé des expressions régulières](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)|Aborde l’implémentation du moteur d’expression régulière dans .NET. Cette rubrique traite de la flexibilité des expressions régulières. Elle explique la responsabilité du développeur pour que le fonctionnement efficace et fiable du moteur des expressions régulières soit garanti.|
 |[Rétroaction](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)|Aborde la rétroaction et la façon dont elle affecte les performances des expressions régulières, ainsi que les éléments de langage, qui offrent des alternatives à la rétroaction.|
-|[Langage d’expression régulière - Référence rapide](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Décrit les éléments du langage d’expression régulière dans .NET et propose des liens vers la documentation détaillée pour chaque élément de langage.|
+|[Langage des expressions régulières - Aide-mémoire](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Décrit les éléments du langage d’expression régulière dans .NET et propose des liens vers la documentation détaillée pour chaque élément de langage.|

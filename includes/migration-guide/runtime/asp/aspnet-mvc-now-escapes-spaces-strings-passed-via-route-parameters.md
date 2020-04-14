@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2278d82d5362fe217ca4bce02a052d4b440843c2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7444ddbdd4a7c5f731fba8528ee2334374fc254e
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67803220"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81275406"
 ---
 ### <a name="aspnet-mvc-now-escapes-spaces-in-strings-passed-in-via-route-parameters"></a>ASP.NET MVC place désormais dans une séquence d’échappement les espaces dans les chaînes passées via des paramètres d’itinéraire
 
@@ -15,4 +15,4 @@ ms.locfileid: "67803220"
 |Étendue|Secondaire|
 |Version|4.5.2|
 |Type|Runtime|
-|API affectées|<ul><li><xref:System.Web.Mvc.RouteAttribute.%23ctor(System.String)?displayProperty=nameWithType></li></ul>|
+|API affectées|<ul><li><xref:System.Web.Mvc.RouteAttribute.%23ctor(System.String)></li></ul>|

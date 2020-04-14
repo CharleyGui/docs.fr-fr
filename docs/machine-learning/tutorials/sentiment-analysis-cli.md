@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 12/23/2019
 ms.custom: mvc,mlnet-tooling
 ms.topic: tutorial
-ms.openlocfilehash: 2243aad0e787a3a594bde3dfa9884f104eab74e8
-ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
+ms.openlocfilehash: 832124e6d027b240c4d06692ee87c84f57b982d3
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2020
-ms.locfileid: "79546690"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243334"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analyser les sentiments à l’aide de la CLI ML.NET
 
@@ -45,7 +45,7 @@ Une fois que les projets en C# ont été générés, vous pouvez les exécuter 
 
 Nous allons utiliser un jeu de données existant issu d’un scénario « Analyse des sentiments », qui est une tâche de machine learning de classification binaire. Vous pouvez utiliser votre propre jeu de données de la même façon, et le modèle et le code seront générés automatiquement.
 
-1. Téléchargez le [fichier zip du jeu de données UCI Sentiment Labeled Sentences (voir les citations dans la remarque ci-dessous)](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) et décompressez-le dans un dossier de votre choix.
+1. Téléchargez le [fichier zip du jeu de données UCI Sentiment Labeled Sentences (voir les citations dans la remarque ci-dessous)](http://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) et décompressez-le dans un dossier de votre choix.
 
     > [!NOTE]
     > Les jeux de données utilisés dans ce tutoriel incluent un jeu de données provenant de « From Group to Individual Labels using Deep Features » (Kotzias et al,. KDD 2015, et hébergé à l’UCI Machine Learning Repository - Dua, D. et Karra Taniskidou, E. (2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml]. Irvine, Californie : Université de Californie, School of Information and Computer Science.

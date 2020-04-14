@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 63959c240b2fe16e086b97881a5a1792035bb3f8
-ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
+ms.openlocfilehash: fc0eec26073c299887b4748d0ad37e21c7294e84
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888112"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81274827"
 ---
 ### <a name="winforms-apis-now-throw-argumentnullexception"></a>WinForms API maintenant jeter ArgumentNullException
 
@@ -33,9 +33,9 @@ Windows Forms
 
 À partir de .NET 5.0 Aperçu 1:
 
-- <xref:System.Windows.Forms.Control.ControlCollection.%23ctor(System.Windows.Forms.Control)?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.Control.ControlCollection.%23ctor(System.Windows.Forms.Control)>
 - <xref:System.Windows.Forms.TabControl.GetToolTipText(System.Object)?displayProperty=nameWithType>
-- <xref:System.Windows.Forms.TableLayoutControlCollection.%23ctor(System.Windows.Forms.TableLayoutPanel)?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.TableLayoutControlCollection.%23ctor(System.Windows.Forms.TableLayoutPanel)>
 - <xref:System.Windows.Forms.ToolStripRenderer.OnRenderArrow(System.Windows.Forms.ToolStripArrowRenderEventArgs)?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemImage(System.Windows.Forms.ToolStripItemImageRenderEventArgs)?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemCheck(System.Windows.Forms.ToolStripItemImageRenderEventArgs)?displayProperty=nameWithType>

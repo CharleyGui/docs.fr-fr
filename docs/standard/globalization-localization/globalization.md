@@ -13,12 +13,12 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-ms.openlocfilehash: fe03bbdd7d037a9f1fb4985b62b447c6ef9c6535
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c08f4309d7673d7e7fb1c6bd84307e4323411d9e
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79174782"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242684"
 ---
 # <a name="globalization"></a>Globalisation
 
@@ -336,9 +336,9 @@ En général, ne faites aucune supposition quant aux valeurs des propriétés <x
 
 - .NET prend en charge les cultures de remplacement. Cela permet de définir une nouvelle culture personnalisée qui complète les cultures standard existants ou qui remplace entièrement une culture standard existante.
 
-- Sur des systèmes Windows, l’utilisateur peut personnaliser les paramètres propres à une culture à l’aide de l’application **Région et langue** du Panneau de configuration. Quand vous instanciez un objet <xref:System.Globalization.CultureInfo>, vous pouvez déterminer s’il reflète ces personnalisations utilisateur en appelant le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>. En règle générale, pour les applications utilisateur final, vous devez respecter les préférences des utilisateurs afin que l’utilisateur soit présenté avec des données dans un format qu’il attend.
+- Sur des systèmes Windows, l’utilisateur peut personnaliser les paramètres propres à une culture à l’aide de l’application **Région et langue** du Panneau de configuration. Quand vous instanciez un objet <xref:System.Globalization.CultureInfo>, vous pouvez déterminer s’il reflète ces personnalisations utilisateur en appelant le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29>. En règle générale, pour les applications utilisateur final, vous devez respecter les préférences des utilisateurs afin que l’utilisateur soit présenté avec des données dans un format qu’il attend.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Globalisation et localisation](../../../docs/standard/globalization-localization/index.md)
-- [Bonnes pratiques pour l’utilisation de chaînes](../../../docs/standard/base-types/best-practices-strings.md)
+- [Mondialisation et localisation](../../../docs/standard/globalization-localization/index.md)
+- [Meilleures pratiques pour l’utilisation des cordes](../../../docs/standard/base-types/best-practices-strings.md)

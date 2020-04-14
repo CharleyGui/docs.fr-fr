@@ -5,12 +5,12 @@ author: pkulikov
 ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: 174907adac5741d5cc7d02cb134921debc586061
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 03ce1a5f3ef4d4da01f848cac0c520a5a6aaf4bf
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78241089"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242788"
 ---
 # <a name="tutorial-categorize-iris-flowers-using-k-means-clustering-with-mlnet"></a>Tutorial: Catégoriser les fleurs d’iris à l’aide de k-moyens clustering avec ML.NET
 
@@ -27,7 +27,7 @@ Dans ce tutoriel, vous allez apprendre à :
 > - Effectuer l’apprentissage du modèle
 > - Utiliser le modèle pour les prévisions
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 - [Visual Studio 2017 version 15.6 ou plus tard](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec le ".NET Core cross-platform development" charge de travail installé.
 
@@ -53,16 +53,16 @@ Comme vous ne savez pas à quel groupe appartient chaque fleur, vous choisissez 
 
 ## <a name="prepare-the-data"></a>Préparer les données
 
-1. Téléchargez le jeu de données [iris.data](https://github.com/dotnet/machinelearning/blob/master/test/data/iris.data) et enregistrez-le dans le dossier *Data* que vous avez créé à l’étape précédente. Pour plus d’informations sur le jeu de données Iris, consultez la page Wikipédia [Iris de Fisher](https://en.wikipedia.org/wiki/Iris_flower_data_set) et la page [Iris Data Set](https://archive.ics.uci.edu/ml/datasets/Iris), qui est la source du jeu de données.
+1. Téléchargez le jeu de données [iris.data](https://github.com/dotnet/machinelearning/blob/master/test/data/iris.data) et enregistrez-le dans le dossier *Data* que vous avez créé à l’étape précédente. Pour plus d’informations sur le jeu de données Iris, consultez la page Wikipédia [Iris de Fisher](https://en.wikipedia.org/wiki/Iris_flower_data_set) et la page [Iris Data Set](http://archive.ics.uci.edu/ml/datasets/Iris), qui est la source du jeu de données.
 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier *iris.data* et sélectionnez **Propriétés**. Sous **Advanced**, changer la valeur de **la copie à l’annuaire de sortie** à copier si plus **récent**.
 
 Le fichier *iris.data* contient cinq colonnes qui représentent :
 
-- la longueur des sépales en centimètres
-- la largeur des sépales en centimètres
-- la longueur des pétales en centimètres
-- la largeur des pétales en centimètres
+- longueur de sépale en centimètres
+- largeur de sépale en centimètres
+- longueur de pétale en centimètres
+- largeur de pétale en centimètres
 - le type d’iris
 
 Dans le cadre de cet exemple de clustering, ce tutoriel ignore la dernière colonne.

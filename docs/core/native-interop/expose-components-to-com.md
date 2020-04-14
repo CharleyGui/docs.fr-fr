@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 98d303c99693a8aadb23da509a700772db69c0e0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 17d85b9e9734fae0bb69f94da8c08669216ab0ae
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146656"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242866"
 ---
 # <a name="exposing-net-core-components-to-com"></a>Exposer les composants de base .NET à COM
 
@@ -24,7 +24,7 @@ Dans .NET Core, le processus d’exposition de vos objets .NET à COM a été co
 - Générer un serveur COM dans le cadre de la génération de votre bibliothèque .NET Core.
 - Générer automatiquement un manifeste de serveur côte à côte pour COM sans registre.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 - Installez [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download) ou une version plus récente.
 
@@ -92,5 +92,7 @@ Un [exemple de serveur COM](https://github.com/dotnet/samples/tree/master/core/e
 ## <a name="additional-notes"></a>Remarques supplémentaires
 
 Contrairement au .NET Framework, .NET Core ne prend pas en charge la génération d’une bibliothèque de types COM à partir d’un assembly .NET Core. L’orientation est soit d’écrire manuellement un fichier IDL ou un en-tête C /C pour les déclarations natives des interfaces COM.
+
+[Les déploiements autonomes](../deploying/index.md#publish-self-contained) de composants COM ne sont pas pris en charge. Seuls les [déploiements dépendants](../deploying/index.md#publish-runtime-dependent) de l’exécution des composants COM sont pris en charge.
 
 En outre, le chargement à la fois .NET Framework et .NET Core dans le même processus a des limitations diagnostiques. La principale limitation est le débogage des composants gérés car il n’est pas possible de déboguer à la fois .NET Framework et .NET Core en même temps. En outre, les deux instances de temps d’exécution ne partagent pas les assemblages gérés. Cela signifie qu’il n’est pas possible de partager les types .NET réels à travers les deux temps d’exécution et au lieu de cela toutes les interactions doivent être limitées aux contrats d’interface COM exposés.

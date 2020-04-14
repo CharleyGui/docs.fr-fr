@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Equals method
 - collections [.NET Framework], comparisons
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
-ms.openlocfilehash: 3360652f22ed39ccfd99f9863052fe584b78562f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b1c6be08dad37afe9e6627b15d93453aa23f6408
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159258"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242697"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Comparaisons et tris dans les collections
 Les classes <xref:System.Collections> effectuent des comparaisons dans quasiment tous les processus impliqués dans la gestion des collections, que ce soit pendant la recherche d'un élément à supprimer ou le renvoi d'une valeur d'une paire clé-valeur.  
@@ -32,7 +32,7 @@ Les classes <xref:System.Collections> effectuent des comparaisons dans quasiment
   
 - Si le type T n'implémente pas <xref:System.IEquatable%601>, <xref:System.Object.Equals%2A?displayProperty=nameWithType> est utilisé.  
   
- De plus, certaines surcharges de constructeur pour les collections de dictionnaires acceptent une implémentation <xref:System.Collections.Generic.IEqualityComparer%601>, qui est utilisée pour comparer l'égalité de clés. Pour obtenir un exemple, consultez le constructeur <xref:System.Collections.Generic.Dictionary%602.%23ctor%2A?displayProperty=nameWithType> .  
+ De plus, certaines surcharges de constructeur pour les collections de dictionnaires acceptent une implémentation <xref:System.Collections.Generic.IEqualityComparer%601>, qui est utilisée pour comparer l'égalité de clés. Pour obtenir un exemple, consultez le constructeur <xref:System.Collections.Generic.Dictionary%602.%23ctor%2A> .  
   
 <a name="BKMK_Determiningsortorder"></a>
 ## <a name="determining-sort-order"></a>Détermination de l'ordre de tri  

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - inline option constructs
 - options parameter
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
-ms.openlocfilehash: a53d7517485d2a0b02b6f11928f478a7da3f9503
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bf352d6494a823d4f7b24eb2876d9bffa5877b2b
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73972115"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242775"
 ---
 # <a name="regular-expression-options"></a>Options des expressions régulières
 
@@ -40,7 +40,7 @@ Par défaut, la comparaison d’une chaîne d’entrée avec des caractères lit
 
 Vous pouvez spécifier les options des expressions régulières de trois façons :
 
-- Dans le paramètre `options` d’un constructeur de classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> ou d’une méthode de mise en correspondance de modèle statique (`Shared` en Visual Basic), comme <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> ou <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType>. Le paramètre `options` est une combinaison OR au niveau du bit de valeurs énumérées <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>.
+- Dans le paramètre `options` d’un constructeur de classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> ou d’une méthode de mise en correspondance de modèle statique (`Shared` en Visual Basic), comme <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%29> ou <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType>. Le paramètre `options` est une combinaison OR au niveau du bit de valeurs énumérées <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>.
 
   Quand des options sont fournies à une instance de <xref:System.Text.RegularExpressions.Regex> à l'aide du paramètre `options` d'un constructeur de classe, les options sont affectées à la propriété <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>. Cependant, la propriété <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> ne reflète pas les options inline dans le modèle d'expression régulière lui-même.
 
@@ -377,4 +377,4 @@ L'exemple suivant est identique à l'exemple précédent, à la différence que 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Langage d’expression régulière - Référence rapide](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [Langage des expressions régulières - Aide-mémoire](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

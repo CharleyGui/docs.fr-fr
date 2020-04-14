@@ -11,12 +11,12 @@ helpviewer_keywords:
 - encoding, choosing
 - encoding, fallback strategy
 ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
-ms.openlocfilehash: 063cac1de6634125d7dabad9d627bceff877e567
-ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
+ms.openlocfilehash: 1a294a577d10b3e621871b168344f2b0610693dd
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2020
-ms.locfileid: "79546735"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242736"
 ---
 # <a name="how-to-use-character-encoding-classes-in-net"></a>Comment utiliser les classes d’encodage de caractère dans .NET
 
@@ -37,7 +37,7 @@ Toutes les classes d'encodage de caractères de .NET héritent de la classe <xre
 
 - Appelez le constructeur de classe de l'encodage. Les objets pour les encodages ASCII, UTF-7, UTF-8, UTF-16 et UTF-32 peuvent être instanciés de cette façon. Par défaut, chaque objet utilise la stratégie de secours pour les remplacements pour traiter les chaînes qu'il ne peut pas encoder et les octets qu'il ne peut pas décoder, mais vous pouvez spécifier qu'au lieu de cela, une exception doit être levée. Pour plus d’informations, voir [Reback de remplacement](../../../docs/standard/base-types/character-encoding.md#Replacement) et [repli Exception](../../../docs/standard/base-types/character-encoding.md#Exception).
 
-- Appelez le constructeur <xref:System.Text.Encoding.%23ctor%28System.Int32%29?displayProperty=nameWithType> et passez-lui un entier qui représente l'encodage. Les objets d'encodage standard utilisent la stratégie de secours pour les remplacements. Les objets d'encodage de page de codes et de jeu de caractères codés sur deux octets (DBCS) utilisent la stratégie de secours la mieux adaptée pour traiter les chaînes qu'ils ne peuvent pas encoder et les octets qu'ils ne peuvent pas décoder. Pour plus d’informations, voir [Le meilleur repli](../../../docs/standard/base-types/character-encoding.md#BestFit).
+- Appelez le constructeur <xref:System.Text.Encoding.%23ctor%28System.Int32%29> et passez-lui un entier qui représente l'encodage. Les objets d'encodage standard utilisent la stratégie de secours pour les remplacements. Les objets d'encodage de page de codes et de jeu de caractères codés sur deux octets (DBCS) utilisent la stratégie de secours la mieux adaptée pour traiter les chaînes qu'ils ne peuvent pas encoder et les octets qu'ils ne peuvent pas décoder. Pour plus d’informations, voir [Le meilleur repli](../../../docs/standard/base-types/character-encoding.md#BestFit).
 
 - Appelez la méthode <xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType>, qui retourne les encodages standard, de page de codes ou DBCS disponibles dans .NET. Les surcharges vous permettent de spécifier un objet de secours pour l'encodeur et pour le décodeur.
 
@@ -45,7 +45,7 @@ Vous pouvez récupérer des informations sur les encodages disponibles dans .NET
 
 |Cours d’encodage|Description|
 |--------------|-----------|
-|[Ascii](xref:System.Text.ASCIIEncoding)|Encode une plage de caractères limitée en utilisant les sept bits de poids le plus faible d'un octet. Étant donné que cet encodage prend en charge seulement des valeurs de caractère de U+0000 à U+007F, dans la plupart des cas, il ne convient pas aux applications internationalisées.|
+|[ASCII](xref:System.Text.ASCIIEncoding)|Encode une plage de caractères limitée en utilisant les sept bits de poids le plus faible d'un octet. Étant donné que cet encodage prend en charge seulement des valeurs de caractère de U+0000 à U+007F, dans la plupart des cas, il ne convient pas aux applications internationalisées.|
 |[UTF-7](xref:System.Text.UTF7Encoding)|Représente les caractères sous forme de séquences de caractères ASCII sur 7 bits. Les caractères Unicode non-ASCII sont représentés par une séquence d'échappement de caractères ASCII. UTF-7 prend en charge les protocoles tels que le courrier électronique et le groupe de discussion. UTF-7 n'est cependant pas particulièrement sécurisé ou robuste. Dans certains cas, la modification d'un seul bit peut changer radicalement l'interprétation de toute une chaîne UTF-7. Dans d'autres cas, des chaînes UTF-7 différentes peuvent correspondre à l'encodage d'un même texte. Pour les séquences incluant des caractères non-ASCII, UTF-7 nécessite davantage d'espace qu'UTF-8, et l'encodage/décodage est plus lent. Par conséquent, il est préférable d'utiliser UTF-8 au lieu d'UTF-7 si c'est possible.|
 |[UTF-8](xref:System.Text.UTF8Encoding)|Représente chaque point de code Unicode sous la forme d'une séquence de un à quatre octets. UTF-8 prend en charge des tailles de données de 8 bits et fonctionne bien avec de nombreux systèmes d'exploitation. Pour la plage de caractères ASCII, UTF-8 est identique à l'encodage ASCII et permet un ensemble de caractères plus large. Cependant, pour les scripts sino-japonais-coréens (CJK), UTF-8 peut nécessiter trois octets pour chaque personnage, et peut causer des tailles de données plus grandes que UTF-16. Parfois, la quantité de données ASCII, telles que les balises HTML, justifie la taille accrue de la gamme CJK.|
 |[UTF-16](xref:System.Text.UnicodeEncoding)|Représente chaque point de code Unicode sous la forme d'une séquence de un ou deux entiers sur 16 bits. La plupart des caractères Unicode courants ne nécessitent qu'un seul point de code UTF-16, tandis que les caractères Unicode additionnels (U+10000 et supérieurs) nécessitent deux points de code de substitution UTF-16. Les ordres des octets Little Endian et Big Endian sont pris en charge. L'encodage UTF-16 est utilisé par le common language runtime pour représenter les valeurs <xref:System.Char> et <xref:System.String> , et il est utilisé par le système d'exploitation Windows pour représenter les `WCHAR` .|
