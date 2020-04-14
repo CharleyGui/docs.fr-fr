@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Accélérer ou ralentir une animation'
+title: 'Comment : accélérer ou décélérer une animation'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - decelerating animation [WPF]
@@ -7,17 +7,18 @@ helpviewer_keywords:
 - animation [WPF], accelerating
 - animation [WPF], decelerating
 ms.assetid: 4f383b2c-f94d-4a4e-9a06-f56f5dae95f9
-ms.openlocfilehash: d4fcaf4a684c37590f27d603ef5cb2c86a6fb854
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7ab55ba44b866a992b9021284f170858f0108d15
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762161"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243009"
 ---
-# <a name="how-to-accelerate-or-decelerate-an-animation"></a><span data-ttu-id="f954d-102">Procédure : Accélérer ou ralentir une animation</span><span class="sxs-lookup"><span data-stu-id="f954d-102">How to: Accelerate or Decelerate an Animation</span></span>
-<span data-ttu-id="f954d-103">Cet exemple montre comment réaliser une animation d’accélération et une décélération au fil du temps.</span><span class="sxs-lookup"><span data-stu-id="f954d-103">This example demonstrates how to make an animation accelerate and decelerate over time.</span></span> <span data-ttu-id="f954d-104">Dans l’exemple suivant, plusieurs rectangles sont animés par des animations avec différents <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A> et <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A> paramètres.</span><span class="sxs-lookup"><span data-stu-id="f954d-104">In the following example, several rectangles are animated by animations with different <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A> and <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A> settings.</span></span>  
+# <a name="how-to-accelerate-or-decelerate-an-animation"></a><span data-ttu-id="7bdc3-102">Comment : Accélérer ou décélérer une animation</span><span class="sxs-lookup"><span data-stu-id="7bdc3-102">How to: Accelerate or decelerate an animation</span></span>
+
+<span data-ttu-id="7bdc3-103">Cet exemple montre comment faire une animation accélérer et décélérer au fil du temps.</span><span class="sxs-lookup"><span data-stu-id="7bdc3-103">This example demonstrates how to make an animation accelerate and decelerate over time.</span></span> <span data-ttu-id="7bdc3-104">Dans l’exemple suivant, plusieurs rectangles sont <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A> <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A> animés par des animations avec des réglages différents et différents.</span><span class="sxs-lookup"><span data-stu-id="7bdc3-104">In the following example, several rectangles are animated by animations with different <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A> and <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A> settings.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="f954d-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="f954d-105">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="7bdc3-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="7bdc3-105">Example</span></span>  
  [!code-xaml[timingbehaviors_snip#1](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/AccelDecelExample.xaml#1)]  
   
- <span data-ttu-id="f954d-106">Code a été omis de cet exemple.</span><span class="sxs-lookup"><span data-stu-id="f954d-106">Code has been omitted from this example.</span></span> <span data-ttu-id="f954d-107">Pour le code complet, consultez la [comportement de minuterie d’Animation (C#)](https://github.com/dotnet/samples/tree/master/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_procedural_snip/CSharp) ou [comportement de minuterie d’Animation (Visual Basic)](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_procedural_snip/visualbasic).</span><span class="sxs-lookup"><span data-stu-id="f954d-107">For the complete code, see the [Animation Timing Behavior (C#)](https://github.com/dotnet/samples/tree/master/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_procedural_snip/CSharp) or [Animation Timing Behavior (Visual Basic)](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_procedural_snip/visualbasic).</span></span>
+ <span data-ttu-id="7bdc3-106">Le code a été omis de cet exemple.</span><span class="sxs-lookup"><span data-stu-id="7bdc3-106">Code has been omitted from this example.</span></span> <span data-ttu-id="7bdc3-107">Pour le code complet, voir le [comportement de synchronisation d’animation (C)](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_procedural_snip/CSharp) ou [le comportement de synchronisation d’animation (visual basic)](https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_procedural_snip/visualbasic).</span><span class="sxs-lookup"><span data-stu-id="7bdc3-107">For the complete code, see the [Animation Timing Behavior (C#)](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_procedural_snip/CSharp) or [Animation Timing Behavior (Visual Basic)](https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_procedural_snip/visualbasic).</span></span>
