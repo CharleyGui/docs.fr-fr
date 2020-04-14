@@ -80,8 +80,6 @@
       href: how-to-clear-bindings.md
     - name: Rechercher des éléments générés par DataTemplate
       href: how-to-find-datatemplate-generated-elements.md
-    - name: Établir une liaison à un service web
-      href: how-to-bind-to-a-web-service.md
 - name: Liaison de données avec LINQ to XML
   items:
     - name: Vue d'ensemble
@@ -93,7 +91,7 @@
           href: linq-to-xml-dynamic-properties.md
         - name: Propriétés dynamiques XAttribute
           items:
-            - name: Valeur
+            - name: Value
               href: value-xattribute-dynamic-property.md
         - name: Propriétés dynamiques XElement
           items:
@@ -105,7 +103,7 @@
               href: elements-xelement-dynamic-property.md
             - name: Descendants
               href: descendants-xelement-dynamic-property.md
-            - name: Valeur
+            - name: Value
               href: value-xelement-dynamic-property.md
             - name: Xml
               href: xml-xelement-dynamic-property.md
