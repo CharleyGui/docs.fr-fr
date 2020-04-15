@@ -1,12 +1,12 @@
 ---
 title: Attributs (C#)
 ms.date: 04/26/2018
-ms.openlocfilehash: 2a07035ea97bb0ff1a8f4793fe8a30d3a42c34a7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 62424163303417746a67707d9ef34185954db316
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399748"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389541"
 ---
 # <a name="attributes-c"></a>Attributs (C#)
 
@@ -95,7 +95,7 @@ L’exemple suivant montre comment appliquer des attributs à des méthodes, des
 [!code-csharp[Applying attributes to different code elements](../../../../../samples/snippets/csharp/attributes/AttributesOverview.cs#6)]
 
 > [!NOTE]
-> Quelle que soit la cible sur laquelle `ValidatedContract` est défini comme étant valide, la cible `return` doit être spécifiée, même si `ValidatedContract` a été défini pour s’appliquer seulement aux valeurs de retour. En d’autres termes, le compilateur n’utilise pas les informations `AttributeUsage` pour résoudre les cibles d’attribut ambiguës. Pour plus d’informations, consultez [AttributeUsage (C#)](attributeusage.md).
+> Quelle que soit la cible sur laquelle `ValidatedContract` est défini comme étant valide, la cible `return` doit être spécifiée, même si `ValidatedContract` a été défini pour s’appliquer seulement aux valeurs de retour. En d’autres termes, le compilateur n’utilise pas les informations `AttributeUsage` pour résoudre les cibles d’attribut ambiguës. Pour plus d’informations, consultez [AttributeUsage (C#)](../../../language-reference/attributes/general.md).
 
 ## <a name="common-uses-for-attributes"></a>Utilisations courantes des attributs
 
@@ -121,11 +121,11 @@ Pour plus d'informations, consultez les pages suivantes :
 - [Accès à des attributs à l’aide de la réflexion (C#)](accessing-attributes-by-using-reflection.md)  
 - [Comment créer un syndicat C/CMD en utilisant des attributs (C)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
 - [Attributs courants (C#)](common-attributes.md)  
-- [Informations relatives à l’appelant (C#)](../caller-information.md)  
+- [Informations relatives à l’appelant (C#)](../../../language-reference/attributes/caller-information.md)  
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../index.md)
+- [Guide de programmation CMD](../../index.md)
 - [Réflexion (C#)](../reflection.md)
 - [Attributs](../../../../standard/attributes/index.md)
 - [Utilisation d’attributs en C #](../../../tutorials/attributes.md)

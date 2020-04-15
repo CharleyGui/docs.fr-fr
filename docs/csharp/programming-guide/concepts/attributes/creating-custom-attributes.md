@@ -2,12 +2,12 @@
 title: Création d’attributs personnalisés (C#)
 ms.date: 07/20/2015
 ms.assetid: 500e1977-c6de-462d-abce-78a0eb1eda22
-ms.openlocfilehash: c0f25adf0d562b659edaa8f36e72332fd0c1ee7e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ec959723c339a13a40fd62388421ceacb736dfca
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69595405"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389556"
 ---
 # <a name="creating-custom-attributes-c"></a>Création d’attributs personnalisés (C#)
 Vous pouvez créer vos propres attributs personnalisés en définissant une classe d’attributs. Cette classe dérive directement ou indirectement d’<xref:System.Attribute>, ce qui permet d’identifier rapidement et facilement des définitions d’attributs dans des métadonnées. Supposons que vous souhaitiez baliser des types avec le nom du programmeur qui les a écrits. Vous pouvez définir une classe d’attributs `Author` personnalisés :  
@@ -66,9 +66,9 @@ class SampleClass
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Reflection>
-- [Guide de programmation C#](../../index.md)
+- [Guide de programmation CMD](../../index.md)
 - [Écriture des attributs personnalisés](../../../../standard/attributes/writing-custom-attributes.md)
 - [Réflexion (C#)](../reflection.md)
 - [Attributs (C#)](./index.md)
 - [Accès à des attributs à l’aide de la réflexion (C#)](./accessing-attributes-by-using-reflection.md)
-- [AttributeUsage (C#)](./attributeusage.md)
+- [AttributeUsage (C#)](../../../language-reference/attributes/general.md)

@@ -2,12 +2,12 @@
 title: Sérialisation et métadonnées
 ms.date: 03/30/2017
 ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
-ms.openlocfilehash: 7c6fe241fbf92f52abfa0eb66c37bff4d227b4e5
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: cc9adf0e6627ef3190e74fea5d4f0f3afd581811
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81241917"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389229"
 ---
 # <a name="serialization-and-metadata"></a>Sérialisation et métadonnées
 
@@ -15,7 +15,7 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
   
 - Sérialiseurs tiers basés sur la réflexion. Ils nécessitent des modifications dans votre fichier de directives runtime et sont décrits dans la section suivante.  
   
-- Sérialiseurs non basés sur la réflexion figurant dans la bibliothèque de classes .NET Framework. Ceux-ci peuvent nécessiter des modifications dans votre fichier de directives runtime et sont décrits dans la section [Sérialiseurs Microsoft](#Microsoft).  
+- Sérialisateurs non-réflexion-basés trouvés dans la bibliothèque de classe cadre .NET. Ceux-ci peuvent nécessiter des modifications dans votre fichier de directives runtime et sont décrits dans la section [Sérialiseurs Microsoft](#Microsoft).  
   
 <a name="ThirdParty"></a>
 ## <a name="third-party-serializers"></a>Sérialiseurs tiers
@@ -59,13 +59,13 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
   
  [!code-csharp[ProjectN#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#7)]  
   
- Vous devez ajouter des entrées pour chaque type, telles que les entrées suivantes, au fichier de directives runtime :  
+Ajoutez des entrées telles que les suivantes pour chaque type au fichier des directives d’exécution :  
   
 ```xml  
 <Type Name="t" Browse="Required Public" />  
 ```  
   
- Pour plus d’informations sur la [ \<](type-element-net-native.md)syntaxe utilisée dans l’exemple, voir Type> Element .  
+Pour plus d’informations sur la [ \<](type-element-net-native.md)syntaxe utilisée dans l’exemple, voir Type> Element .  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,15 +1,15 @@
 ---
 title: Écrire du code C# sécurisé et efficace
 description: Les améliorations récentes apportées au langage C# vous permettent d’écrire du code sécurisé vérifiable que les performances associaient précédemment à du code non sécurisé.
-ms.date: 10/23/2018
+ms.date: 03/17/2020
 ms.technology: csharp-advanced-concepts
 ms.custom: mvc
-ms.openlocfilehash: 365320fef5a2f9cd123086c1baed9a786ede9f05
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: dc697d822c4d471d2b67ce074ab9af8fc2724b23
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345084"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389678"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Écrire du code C# sécurisé et efficace
 
@@ -22,7 +22,7 @@ Cet article met l’accent sur les techniques de gestion efficace des ressources
 Cet article met l’accent sur les techniques de gestion des ressources suivantes :
 
 - Déclarez [`readonly struct`](language-reference/builtin-types/struct.md#readonly-struct) un pour exprimer qu’un type est **immuable**. Cela permet au compilateur d’enregistrer des copies défensives lors de l’utilisation de [`in`](language-reference/keywords/in-parameter-modifier.md) paramètres.
-- Si un type ne peut pas `struct` être `readonly` immuable, déclarez aux membres qu’ils indiquent que le membre ne modifie pas l’état.
+- Si un type ne peut pas `struct` être [`readonly`](language-reference/builtin-types/struct.md#readonly-instance-members) immuable, déclarez aux membres qu’ils indiquent que le membre ne modifie pas l’état.
 - Utilisez [`ref readonly`](language-reference/keywords/ref.md#reference-return-values) un rendement lorsque la `struct` valeur <xref:System.IntPtr.Size?displayProperty=nameWithType> de retour est plus grande que la durée de vie de stockage est supérieure à la méthode de retour de la valeur.
 - Quand la taille d’une `readonly struct` plus grande que <xref:System.IntPtr.Size?displayProperty=nameWithType>, vous devez la passer comme paramètre `in` pour des raisons de performances.
 - Ne passez `struct` jamais `in` un paramètre à moins `readonly` qu’il ne `readonly` soit déclaré avec le modificateur ou la méthode n’appelle que les membres de la struct. La violation de ces directives peut avoir une incidence négative sur les performances et pourrait conduire à un comportement obscur.
@@ -113,7 +113,7 @@ public struct Point3D
 
 L’échantillon précédent montre de nombreux endroits `readonly` où vous pouvez appliquer le modificateur : méthodes, propriétés et accesseurs de propriété. Si vous utilisez des propriétés auto-mises `readonly` en `get` œuvre, le compilateur ajoute le modificateur à l’accesseur pour les propriétés de lecture-écriture. Le compilateur `readonly` ajoute le modificateur aux déclarations de `get` propriété auto-mises en œuvre pour les propriétés avec seulement un accesseur.
 
-L’ajout du `readonly` modificateur aux membres qui ne mutent pas l’état fournit deux avantages connexes. Tout d’abord, le compilateur applique votre intention. Ce membre ne peut pas muter l’état de la structure, ni `readonly`accéder à un membre qui n’est pas également marqué . Deuxièmement, le compilateur ne créera pas de copies défensives des paramètres lors de `in` l’accès à un `readonly` membre. Le compilateur peut faire cette optimisation en `struct` toute sécurité car `readonly` il garantit que le n’est pas modifié par un membre.
+L’ajout du `readonly` modificateur aux membres qui ne mutent pas l’état fournit deux avantages connexes. Tout d’abord, le compilateur applique votre intention. Ce membre ne peut pas muter l’état de la structure. Deuxièmement, le compilateur ne créera pas de copies défensives des paramètres lors de `in` l’accès à un `readonly` membre. Le compilateur peut faire cette optimisation en `struct` toute sécurité car `readonly` il garantit que le n’est pas modifié par un membre.
 
 ## <a name="use-ref-readonly-return-statements-for-large-structures-when-possible"></a>Quand c’est possible, utilisez des instructions `ref readonly return` pour les grandes structures.
 

@@ -2,12 +2,12 @@
 title: Commande dotnet
 description: En savoir plus sur la commande dotnet (le pilote générique pour le CLI .NET Core) et son utilisation.
 ms.date: 02/13/2020
-ms.openlocfilehash: 8692d419afd528bf49e1dc7dc1a7a5fd698b363b
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: 9446808d7f23d762c7a3c8a58252664fc5dade5b
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80134078"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389608"
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
@@ -57,7 +57,7 @@ La `dotnet` commande a deux fonctions :
 
 - Il exécute des applications .NET Core.
 
-  Vous spécifiez `.dll` le chemin vers un fichier de demande pour exécuter l’application. Par exemple, `dotnet myapp.dll` `myapp` exécute l’application. Voir [le déploiement de l’application .NET Core](../deploying/index.md) pour en savoir plus sur les options de déploiement.
+  Vous spécifiez `.dll` le chemin vers un fichier de demande pour exécuter l’application.  Pour exécuter l’application signifie trouver et exécuter le point d’entrée, qui dans le cas des applications console est la `Main` méthode. Par exemple, `dotnet myapp.dll` `myapp` exécute l’application. Voir [le déploiement de l’application .NET Core](../deploying/index.md) pour en savoir plus sur les options de déploiement.
 
 ## <a name="options"></a>Options
 
@@ -77,7 +77,7 @@ Les options suivantes `dotnet` sont pour lui-même. Par exemple : `dotnet --inf
 
 - **`--list-runtimes`**
 
-  Imprime une liste des temps d’exécution .NET Core installés.
+  Imprime une liste des temps d’exécution .NET Core installés. Une version x86 du SDK ne répertorie que les runtimes x86, et une version x64 du SDK ne répertorie que les runtimes x64.
 
 - **`--list-sdks`**
 
@@ -171,7 +171,7 @@ Le comportement de roll forward peut également être configuré dans une propri
 | [dotnet run](dotnet-run.md)                   | Exécute l’application à partir de la source.                                   |
 | [dotnet sln](dotnet-sln.md)                   | Options pour ajouter, supprimer et lister des projets dans un fichier solution.       |
 | [dotnet store](dotnet-store.md)               | Stocke les assemblys dans le magasin de packages de runtime.                     |
-| [test dotnet](dotnet-test.md)                 | Exécute des tests à l’aide d’un lanceur de tests.                                     |
+| [dotnet test](dotnet-test.md)                 | Exécute des tests à l’aide d’un lanceur de tests.                                     |
 
 ### <a name="project-references"></a>Références de projets
 
@@ -195,12 +195,12 @@ Commande | Fonction
 [dotnet nuget delete](dotnet-nuget-delete.md) | Supprime ou retire un package du serveur.
 [dotnet nuget push](dotnet-nuget-push.md) | Effectue une transmission de type push d’un package sur le serveur et le publie.
 [dotnet nuget locals](dotnet-nuget-locals.md) | Efface ou liste les ressources NuGet locales telles que le cache de requête HTTP, le cache temporaire ou le dossier de packages globaux à l’échelle de l’ordinateur.
-[dotnet nuget ajouter source](dotnet-nuget-add-source.md) | Ajoute une source NuGet.
-[dotnet nuget source désactiver](dotnet-nuget-disable-source.md) | Désactive une source NuGet.
-[dotnet nuget activer la source](dotnet-nuget-enable-source.md) | Permet une source NuGet.
-[dotnet nuget liste source](dotnet-nuget-list-source.md) | Répertorie toutes les sources NuGet configurées.
-[dotnet nuget supprimer la source](dotnet-nuget-remove-source.md) | Supprime une source NuGet.
-[source de mise à jour de nuget dotnet](dotnet-nuget-update-source.md) | Mise à jour d’une source NuGet.
+[dotnet nuget add source](dotnet-nuget-add-source.md) | Ajoute une source NuGet.
+[dotnet nuget disable source](dotnet-nuget-disable-source.md) | Désactive une source NuGet.
+[dotnet nuget enable source](dotnet-nuget-enable-source.md) | Permet une source NuGet.
+[dotnet nuget list source](dotnet-nuget-list-source.md) | Répertorie toutes les sources NuGet configurées.
+[dotnet nuget remove source](dotnet-nuget-remove-source.md) | Supprime une source NuGet.
+[dotnet nuget update source](dotnet-nuget-update-source.md) | Mise à jour d’une source NuGet.
 
 ### <a name="global-tool-path-and-local-tools-commands"></a>Commandes d’outils mondiaux, d’outils et d’outils locaux
 
@@ -209,9 +209,9 @@ Les outils sont des applications de console qui sont installées à partir de pa
 Commande | Fonction
 --- | ---
 [dotnet tool install](dotnet-tool-install.md) | Installe un outil sur votre machine.
-[dotnet tool list](dotnet-tool-list.md) | Répertorie tous les outils globaux, de chemin d’outils ou locaux actuellement installés sur votre machine.
+[dotnet tool list](dotnet-tool-list.md) | Répertorie tous les outils globaux, de chemin d’outils ou locaux actuellement installés sur votre machine.
 [dotnet tool uninstall](dotnet-tool-uninstall.md) | Désinstalle un outil de votre machine.
-[dotnet tool update](dotnet-tool-update.md) | Mise à jour d’un outil qui est installé sur votre machine.
+[dotnet tool update](dotnet-tool-update.md) | Mise à jour d’un outil qui est installé sur votre machine.
 
 ### <a name="additional-tools"></a>Outils supplémentaires
 

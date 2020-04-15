@@ -2,12 +2,12 @@
 title: Concepts de programmation (C#)
 ms.date: 07/20/2015
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-ms.openlocfilehash: 3fcb1ca76c49919b00b74d955b7aadaa2e882f2a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5349bfad5ed4601089f449af47cba0e32dc2f908
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "70168341"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389569"
 ---
 # <a name="programming-concepts-c"></a>Concepts de programmation (C#)
 Cette section explique les concepts de programmation du langage C#.  
@@ -19,7 +19,6 @@ Cette section explique les concepts de programmation du langage C#.
 |[Assemblys dans .NET](../../../standard/assembly/index.md)|Explique comment créer et utiliser des assemblys.|  
 |[Programmation asynchrone avec Async et Await (C#)](./async/index.md)|Explique comment écrire des solutions asynchrones à l’aide des mots clés [async](../../language-reference/keywords/async.md) et [await](../../language-reference/operators/await.md) en C#. Comprend une procédure pas à pas.|  
 |[Attributs (C#)](./attributes/index.md)|Explique comment fournir des informations supplémentaires sur des éléments de programmation tels que les types, les champs, les méthodes et les propriétés à l’aide d’attributs.|  
-|[Informations relatives à l’appelant (C#)](./caller-information.md)|Explique comment obtenir des informations sur l’appelant d’une méthode. Parmi ces informations figurent le chemin d’accès du fichier, le numéro de ligne dans le code source et le nom de membre de l’appelant.|  
 |[Collections (C#)](./collections.md)|Décrit quelques-uns des types de collections fournis par .NET Framework. Montre comment utiliser des collections simples et des collections de paires clé/valeur.|  
 |[Covariance et contravariance (C#)](./covariance-contravariance/index.md)|Montre comment activer la conversion implicite de paramètres de type générique dans les interfaces et les délégués.|  
 |[Arborescences d’expressions (C#)](./expression-trees/index.md)|Explique comment utiliser des arborescences d’expressions pour activer la modification dynamique de code exécutable.|  

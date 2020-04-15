@@ -1,6 +1,6 @@
 ---
 title: Types de structure - Référence C
-ms.date: 03/26/2020
+ms.date: 04/14/2020
 f1_keywords:
 - struct_CSharpKeyword
 helpviewer_keywords:
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 6a2c97b93a8f6d1d62bd8a96865a4fe6587f55d3
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 8013aab5580ac007875debc78208532a2d0ad1dc
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345134"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81388992"
 ---
 # <a name="structure-types-c-reference"></a>Types de structure (référence C)
 
@@ -42,6 +42,35 @@ Cela garantit qu’aucun `readonly` membre d’une structure ne modifie l’éta
 
 > [!NOTE]
 > Dans `readonly` une struct, un membre des données d’un type de référence mutable peut encore muter son propre état. Par exemple, vous <xref:System.Collections.Generic.List%601> ne pouvez pas remplacer une instance, mais vous pouvez y ajouter de nouveaux éléments.
+
+## <a name="readonly-instance-members"></a>`readonly`membres d’instance
+
+En commençant par le C 8.0, vous pouvez également utiliser le `readonly` modificateur pour déclarer qu’un membre de l’instance ne modifie pas l’état d’une struct. Si vous ne pouvez pas `readonly`déclarer `readonly` l’ensemble du type de structure comme , utilisez le modificateur pour marquer les membres d’instance qui ne modifient pas l’état de la structure. Dans `readonly` une struct, chaque membre `readonly`d’instance est implicitement .
+
+Dans `readonly` un cas membre, vous ne pouvez pas attribuer aux champs d’instance de la structure. Cependant, `readonly` un membre peut`readonly` appeler un non-membre. Dans ce cas, le compilateur crée une copie`readonly` de l’instance de la structure et appelle le non-membre sur cette copie. Par conséquent, l’instance de structure d’origine n’est pas modifiée.
+
+En règle générale, vous appliquez le `readonly` modificateur aux types suivants de membres d’instance :
+
+- Méthodes:
+
+  [!code-csharp[readonly method](snippets/StructType.cs#ReadonlyMethod)]
+
+  Vous pouvez également `readonly` appliquer le modificateur aux <xref:System.Object?displayProperty=nameWithType>méthodes qui remplacent les méthodes déclarées dans :
+
+  [!code-csharp[readonly override](snippets/StructType.cs#ReadonlyOverride)]
+
+- propriétés et indexateurs :
+
+  [!code-csharp[readonly property get](snippets/StructType.cs#ReadonlyProperty)]
+
+  Si vous devez `readonly` appliquer le modificateur aux deux accesseurs d’une propriété ou d’un indexeur, appliquez-le dans la déclaration de la propriété ou de l’indexeur.
+
+  > [!NOTE]
+  > Le compilateur déclare `get` un accessoiriste d’une [propriété auto-mise en œuvre](../../programming-guide/classes-and-structs/auto-implemented-properties.md) comme, `readonly`indépendamment de la `readonly` présence du modificateur dans une déclaration de propriété.
+
+Vous ne `readonly` pouvez pas appliquer le modificateur aux membres statiques d’un type de structure.
+
+Le compilateur peut utiliser `readonly` le modificateur pour les optimisations de performance. Pour plus d’informations, voir [Écrire un code Cmd sûr et efficace](../../write-safe-efficient-code.md).
 
 ## <a name="limitations-with-the-design-of-a-structure-type"></a>Limitations avec la conception d’un type de structure
 
@@ -81,7 +110,10 @@ Pour n’importe quel type de structure, il existe <xref:System.ValueType?displa
 
 Pour plus d’informations, consultez la section [Structs](~/_csharplang/spec/structs.md) de la [spécification linguistique C .](~/_csharplang/spec/introduction.md)
 
-Pour plus `readonly` d’informations sur les structs, voir la [note de proposition de fonctionnalité](~/_csharplang/proposals/csharp-7.2/readonly-ref.md#readonly-structs).
+Pour plus d’informations sur les fonctionnalités introduites dans C 7.2 et plus tard, voir les notes de proposition de fonctionnalités suivantes :
+
+- [Restructurations de Readonly](~/_csharplang/proposals/csharp-7.2/readonly-ref.md#readonly-structs)
+- [Membres d'instance en lecture seule](~/_csharplang/proposals/csharp-8.0/readonly-instance-members.md)
 
 ## <a name="see-also"></a>Voir aussi
 

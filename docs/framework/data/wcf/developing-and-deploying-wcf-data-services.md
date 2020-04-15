@@ -7,12 +7,12 @@ helpviewer_keywords:
 - deploying [WCF Data Services
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
-ms.openlocfilehash: 61527e51ea4d28cfe4589f6bed32b3c505443c22
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: 4591175da5078a194bfe69884701e5432a0c38a3
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81121167"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389730"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>Développer et déployer des services de données WCF
 
@@ -42,7 +42,7 @@ Lorsque vous développez un service de données WCF en tant qu’application ASP
 
 1. **Serveur IIS local**
 
-     Lorsque vous créez un service de données qui est une application ASP.NET ou ASP.NET site Web qui s’exécute sur les services d’information Internet (IIS), nous vous recommandons de développer et de tester votre service de données en utilisant l’IIS sur l’ordinateur local. L'exécution du service de données sur IIS facilite le suivi des demandes HTTP pendant le débogage. Elle permet également de prédéfinir les droits requis par IIS pour accéder aux fichiers, aux bases de données et aux autres ressources requises par le service de données. Pour exécuter votre service de données sur l’IIS, vous devez vous assurer que l’IIS et windows Communication Foundation (WCF) sont installés et configurés correctement et accordent l’accès aux comptes IIS dans le système de fichiers et les bases de données. Pour plus d'informations, consultez [How to: Develop a WCF Data Service Running on IIS](how-to-develop-a-wcf-data-service-running-on-iis.md).
+     Lorsque vous créez un service de données qui est une application ASP.NET ou ASP.NET site Web qui s’exécute sur les services d’information Internet (IIS), nous vous recommandons de développer et de tester votre service de données en utilisant l’IIS sur l’ordinateur local. L'exécution du service de données sur IIS facilite le suivi des demandes HTTP pendant le débogage. Elle permet également de prédéfinir les droits requis par IIS pour accéder aux fichiers, aux bases de données et aux autres ressources requises par le service de données. Pour exécuter votre service de données sur l’IIS, assurez-vous que l’IIS et windows Communication Foundation (WCF) sont installés et configurés correctement et accordez l’accès aux comptes IIS dans le système de fichiers et les bases de données. Pour plus d'informations, consultez [How to: Develop a WCF Data Service Running on IIS](how-to-develop-a-wcf-data-service-running-on-iis.md).
 
     > [!NOTE]
     > Vous devez exécuter Visual Studio avec les droits d’administrateur pour permettre à l’environnement de développement de configurer le serveur IIS local.
@@ -74,11 +74,11 @@ Lorsque vous développez un service de données WCF en tant qu’application ASP
 
 ### <a name="development-tips"></a>Conseils de développement
 
-Vous devez tenir compte de ce qui suit lorsque vous développez un service de données :
+Considérez ce qui suit lorsque vous développez un service de données :
 
-- Définissez les conditions de sécurité de votre service de données si vous planifiez d'utiliser des utilisateurs authentifiés ou un accès restreint pour des utilisateurs spécifiques. Pour plus d'informations, consultez [Securing WCF Data Services](securing-wcf-data-services.md).
+- Si vous prévoyez d’authentifier les utilisateurs ou de restreindre l’accès pour des utilisateurs spécifiques, déterminez les exigences de sécurité de votre service de données. Pour plus d'informations, consultez [Securing WCF Data Services](securing-wcf-data-services.md).
 
-- Un programme d'inspection HTTP peut être très utile pour le débogage d'un service de données, car il vous permet d'inspecter le contenu des messages de demande et de réponse. N'importe quel analyseur de paquets réseau en mesure d'afficher des paquets bruts peut être utilisé pour inspecter des demandes et des réponses HTTP à partir du service de données.
+- Un programme d’inspection HTTP peut être utile lors de la débogage d’un service de données en vous permettant d’inspecter le contenu des messages de demande et de réponse. N'importe quel analyseur de paquets réseau en mesure d'afficher des paquets bruts peut être utilisé pour inspecter des demandes et des réponses HTTP à partir du service de données.
 
 - Lorsque vous débogiez un service de données, vous pouvez obtenir plus d’informations sur une erreur du service de données que lors d’une opération régulière. Pour obtenir davantage d'informations sur l'erreur à partir du service de données, affectez à la propriété <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> dans <xref:System.Data.Services.DataServiceConfiguration> la valeur `true` et affectez à la propriété <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> de l'attribut <xref:System.ServiceModel.Description.ServiceDebugBehavior> sur la classe de service de données la valeur `true`. Pour plus d’informations, voir le post [Debugging WCF Data Services](https://docs.microsoft.com/archive/blogs/phaniraj/debugging-wcf-data-services). Vous pouvez également activer le traçage dans WCF pour afficher les exceptions soulevées dans la couche de messagerie HTTP. Pour plus d'informations, consultez [Configuring Tracing](../../wcf/diagnostics/tracing/configuring-tracing.md).
 
@@ -119,7 +119,7 @@ WCF Data Service permet de choisir le processus qui héberge le service de donn�
 
 ### <a name="deployment-considerations"></a>Points à prendre en considération pour le déploiement
 
-Vous devez tenir compte de ce qui suit lorsque vous déployez un service de données :
+Considérez ce qui suit lors du déploiement d’un service de données :
 
 - Lorsque vous déployez un service de données qui utilise le fournisseur De cadre d’entité pour accéder à une base de données SQL Server, vous devrez peut-être également propager des structures de données, des données ou les deux avec le déploiement de votre service de données. Visual Studio peut créer automatiquement des scripts (.fichiers sql) pour ce faire dans la base de données de destination, et ces scripts peuvent être inclus dans le paquet de déploiement Web d’une application ASP.NET. Pour plus d’informations, voir [Comment : Déployer une base de données avec un projet d’application Web](https://docs.microsoft.com/previous-versions/dd465343(v=vs.100)). Pour un site Web ASP.NET, vous pouvez le faire en utilisant le **Database Publishing Wizard** dans Visual Studio. Pour plus d’informations, voir [Publier une base de données SQL](https://docs.microsoft.com/previous-versions/aspnet/bb907585(v=vs.100)).
 

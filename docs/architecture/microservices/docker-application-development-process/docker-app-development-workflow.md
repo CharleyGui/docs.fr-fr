@@ -2,12 +2,12 @@
 title: Workflow de développement des applications Docker
 description: Découvrez les détails du workflow de développement des applications Docker. Commencez étape par étape et entrez dans les détails pour optimiser les fichiers Dockerfile, puis terminez par le workflow simplifié disponible avec Visual Studio.
 ms.date: 01/30/2020
-ms.openlocfilehash: c58ea2436027968143777a19286a1a0a72107717
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2f380c840e186c345f9222aa6b0cf1097a74874e
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401640"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389199"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Workflow de développement des applications Docker
 
@@ -286,7 +286,7 @@ Le fichier résultant est alors :
  7  COPY . .
  8  RUN dotnet restore /ignoreprojectextensions:.dcproj
  9  WORKDIR /src/src/Services/Catalog/Catalog.API
-10  RUN dotnet publish Catalog.API.csproj -c Release -0 /app
+10  RUN dotnet publish Catalog.API.csproj -c Release -o /app
 11
 12  FROM base AS final
 13  WORKDIR /app
@@ -479,7 +479,7 @@ Après l’exécution de la commande docker-compose up, l’application et ses 
 
 #### <a name="using-visual-studio"></a>Utilisation de Visual Studio
 
-L’exécution d’une application multi-conteneurs à l’aide de Visual Studio 2019 ne peut pas devenir plus simple. Appuyez simplement sur **Ctrl-F5** pour exécuter ou **F5** pour déboguer, comme d’habitude, en configurant le projet **docker-compose** comme projet de démarrage.  Visual Studio gère toutes les configurations nécessaires, de sorte que vous pouvez créer des points d’arrêt comme d’habitude et déboguer ce qui devient finalement des processus indépendants en cours d’exécution dans les «serveurs à distance», avec le débbugger déjà attaché. Comme ça.
+L’exécution d’une application multi-conteneurs à l’aide de Visual Studio 2019 ne peut pas devenir plus simple. Appuyez simplement sur **Ctrl-F5** pour exécuter ou **F5** pour déboguer, comme d’habitude, en configurant le projet **docker-compose** comme projet de démarrage.  Visual Studio gère toute la configuration nécessaire, de sorte que vous pouvez créer des points de rupture comme d’habitude et déboguer ce qui devient finalement des processus indépendants en cours d’exécution dans les «serveurs à distance», avec le débbugger déjà attaché, tout comme ça.
 
 Comme nous l’avons mentionné plus haut, chaque fois que vous ajoutez la prise en charge de la solution Docker à un projet dans une solution, ce projet est configuré dans le fichier docker-compose.yml global (au niveau de la solution), ce qui vous permet d’exécuter ou de déboguer la solution dans son intégralité. Visual Studio démarre un conteneur pour chaque projet pour lequel la prise en charge de la solution Docker est activée, puis il effectue automatiquement toutes les étapes internes (dotnet publish, docker build, etc.).
 

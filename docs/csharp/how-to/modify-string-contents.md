@@ -3,12 +3,12 @@ title: Comment modifier le contenu des cordes - Guide C
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: f31fa94501ac2120e22e229dfc11babb8b8cc0f3
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 8e9bbe76c689d3c3f9f238ca9dd95cc7fcf98b18
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242853"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389516"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Comment modifier le contenu des cordes en C\#
 
@@ -16,7 +16,7 @@ Cet article présente plusieurs techniques pour produire un `string` en modifian
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-Plusieurs techniques sont présentées dans cet article. Vous pouvez remplacer du texte existant. Vous pouvez rechercher des modèles et remplacer le texte correspondant par un autre texte. Vous pouvez traiter une chaîne en tant que séquence de caractères. Vous pouvez également utiliser des méthodes pratiques qui suppriment les espaces blancs. Choisissez les techniques les mieux adaptées à votre scénario.
+Plusieurs techniques sont présentées dans cet article. Vous pouvez remplacer du texte existant. Vous pouvez rechercher des modèles et remplacer le texte correspondant par un autre texte. Vous pouvez traiter une chaîne en tant que séquence de caractères. Vous pouvez également utiliser des méthodes pratiques qui suppriment les espaces blancs. Choisissez les techniques qui correspondent le plus étroitement à votre scénario.
 
 ## <a name="replace-text"></a>Remplacer du texte
 
@@ -48,7 +48,7 @@ Vous pouvez supprimer du texte d’une chaîne à l’aide de la méthode <xref:
 
 Vous pouvez utiliser des [expressions régulières](../../standard/base-types/regular-expressions.md) pour remplacer du texte correspondant à un modèle par un autre texte, éventuellement défini par un modèle. L’exemple suivant utilise la classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> pour trouver un modèle dans une chaîne source et le remplacer par du texte dont la casse est correcte. La méthode <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions)?displayProperty=nameWithType> accepte dans ses arguments une fonction qui fournit la logique du remplacement. Dans cet exemple, la fonction `LocalReplaceMatchCase` est une **fonction locale** déclarée à l’intérieur de l’exemple de méthode. `LocalReplaceMatchCase` utilise la classe <xref:System.Text.StringBuilder?displayProperty=nameWithType> pour générer la chaîne de remplacement avec la casse correcte.
 
-Les expressions régulières sont plus utiles pour rechercher et remplacer du texte qui suit un modèle que du texte connu. Voir [comment rechercher des chaînes pour](search-strings.md) plus de détails. Le modèle de recherche, « the\s », recherche le mot « the » suivi d’un espace blanc. Cette partie du modèle permet d’exclure le mot « there » qui figure dans la chaîne source. Pour plus d’informations sur les éléments du langage des expressions régulières, consultez [Langage des expressions régulières - Aide-mémoire](../../standard/base-types/regular-expression-language-quick-reference.md).
+Les expressions régulières sont plus utiles pour rechercher et remplacer du texte qui suit un modèle que du texte connu. Pour plus d’informations, voir [Comment rechercher des chaînes](search-strings.md). Le modèle de recherche, « the\s », recherche le mot « the » suivi d’un espace blanc. Cette partie du modèle permet d’exclure le mot « there » qui figure dans la chaîne source. Pour plus d’informations sur les éléments du langage des expressions régulières, consultez [Langage des expressions régulières - Aide-mémoire](../../standard/base-types/regular-expression-language-quick-reference.md).
 
 [!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#5)]
 

@@ -2,14 +2,14 @@
 title: dotnet outil restaurer la commande
 description: L’outil dotnet restaurer la commande installe sur votre machine les outils locaux .NET Core qui sont en portée pour l’annuaire actuel.
 ms.date: 02/14/2020
-ms.openlocfilehash: cb46f70afb58e482b6aedfddfbf5f3a0c40674f4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0d1e67ec809ddd725721698cc741f9acc99e1ce7
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146435"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389615"
 ---
-# <a name="dotnet-tool-restore"></a>dotnet outil restaurer
+# <a name="dotnet-tool-restore"></a>dotnet tool restore
 
 **Cet article s’applique à:** ✔️ .NET Core 3.0 SDK et les versions ultérieures
 
@@ -23,7 +23,7 @@ ms.locfileid: "79146435"
 dotnet tool restore <PACKAGE_NAME>
     [--configfile] [--add-source] [tool-manifest]
     [--disable-parallel] [--ignore-failed-sources]
-    [--no-cache] [-interactive] [-v|--verbosity]
+    [--no-cache] [--interactive] [-v|--verbosity]
 
 dotnet tool restore <-h|--help>
 ```
@@ -76,7 +76,7 @@ Nom/ID du paquet NuGet qui contient l’outil .NET Core à installer.
 
   Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 - **`dotnet tool restore`**
 

@@ -2,12 +2,12 @@
 title: Quoi de neuf dans le guide C 8.0 - Guide C
 description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0.
 ms.date: 04/07/2020
-ms.openlocfilehash: 1a005750751129969f2d1e9caf156330dbe61cb2
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 2998beb378c68bead7f34e2a0963c40cf610a442
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989205"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389089"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
@@ -76,7 +76,7 @@ Le compilateur vous avertit lorsqu’il a besoin de créer une copie défensive.
 public readonly double Distance => Math.Sqrt(X * X + Y * Y);
 ```
 
-Notez `readonly` que le modificateur est nécessaire sur une propriété lue uniquement. Le compilateur ne `get` suppose pas que les accesseurs ne modifient pas l’état; vous devez `readonly` déclarer explicitement. Les propriétés mises en œuvre automatiques sont une exception; le compilateur traitera tous les getters auto-mis en œuvre comme `readonly` readonly, ainsi ici il n’y a pas besoin d’ajouter le modificateur à la et `X` `Y` les propriétés.
+Notez `readonly` que le modificateur est nécessaire sur une propriété lue uniquement. Le compilateur ne `get` suppose pas que les accesseurs ne modifient pas l’état; vous devez `readonly` déclarer explicitement. Les propriétés mises en œuvre automatiques sont une exception; le compilateur traitera tous les `readonly`getters auto-mis en œuvre comme , donc ici il n’y a pas besoin d’ajouter le `readonly` modificateur à la et `X` `Y` les propriétés.
 
 Le compilateur applique la `readonly` règle selon laquelle les membres ne modifient pas l’état. La méthode suivante ne compile pas `readonly` à moins que vous supprimez le modificateur :
 
@@ -88,7 +88,9 @@ public readonly void Translate(int xOffset, int yOffset)
 }
 ```
 
-Cette fonctionnalité vous permet de spécifier votre intention de conception, afin que le compilateur puisse l’appliquer et procéder à des optimisations basées sur cette intention. Vous pouvez en apprendre davantage sur les membres [`readonly`](../language-reference/keywords/readonly.md#readonly-member-examples)lissésants dans l’article de référence linguistique sur .
+Cette fonctionnalité vous permet de spécifier votre intention de conception, afin que le compilateur puisse l’appliquer et procéder à des optimisations basées sur cette intention.
+
+Pour plus d’informations, consultez la [ `readonly` ](../language-reference/builtin-types/struct.md#readonly-instance-members) section des membres d’instance de l’article [de type Structure.](../language-reference/builtin-types/struct.md)
 
 ## <a name="default-interface-methods"></a>Méthodes d’interface par défaut
 

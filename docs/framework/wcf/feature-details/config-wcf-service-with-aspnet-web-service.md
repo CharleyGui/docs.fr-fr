@@ -5,21 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 48e1cd90-de80-4d6c-846e-631878955762
-ms.openlocfilehash: 6a06e1983a54581cfb89f008e9f063a671e992c2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 22713aba4f86fe493ba3d16ef09c2a71b6d55fe0
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185351"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389783"
 ---
 # <a name="how-to-configure-wcf-service-to-interoperate-with-aspnet-web-service-clients"></a>Comment : configurer le service WCF pour interagir avec des clients du service Web ASP.NET
+
 Pour configurer un critère de service de la Windows Communication Foundation (WCF) <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> pour être interopérable avec ASP.NET clients du service Web, utilisez le type comme type de liaison pour votre point de terminaison de service.  
   
  Vous pouvez éventuellement activer la prise en charge du protocole HTTPS et de l'authentification du client au niveau du transport sur la liaison. ASP.NET clients du service Web ne prennent pas en <xref:System.ServiceModel.BasicHttpBinding.MessageEncoding%2A?displayProperty=nameWithType> charge l’encodage de <xref:System.ServiceModel.WSMessageEncoding.Text?displayProperty=nameWithType>messages MTOM, de sorte que la propriété doit être laissée comme valeur par défaut, qui est . Les clients du service Web ASP.NET ne prennent pas en charge la spécification WS-Security, donc <xref:System.ServiceModel.BasicHttpBinding.Security%2A?displayProperty=nameWithType> doit avoir la valeur <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>.  
   
- Pour mettre les métadonnées d’un service WCF à la disposition de ASP.NET outils de génération de proxy de service Web [(c’est-à-dire l’outil linguistique de description des services Web (Wsdl.exe),](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7h3ystb6(v%3dvs.100)) [l’outil de découverte des services Web (Disco.exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cy2a3ybs(v=vs.100))et la fonction Add Web Reference dans Visual Studio), vous devez exposer un point de terminaison de métadonnées HTTP/GET.  
+ Pour mettre les métadonnées d’un service WCF à la disposition de ASP.NET outils de génération de proxys de service Web (c’est-à-dire [l’outil de langue de description des services Web (Wsdl.exe),](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7h3ystb6(v%3dvs.100)) [l’outil de découverte des services Web (Disco.exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cy2a3ybs(v=vs.100))et la fonction **Add Web Reference** dans Visual Studio), vous devez exposer un point de terminaison de métadonnées HTTP/GET.  
   
-### <a name="to-add-a-wcf-endpoint-that-is-compatible-with-aspnet-web-service-clients-in-code"></a>Pour ajouter un point de terminaison WCF compatible avec les clients du service Web ASP.NET dans du code  
+## <a name="add-an-endpoint-in-code"></a>Ajouter un point de terminaison dans le code  
   
 1. Créez une nouvelle instance <xref:System.ServiceModel.BasicHttpBinding>.  
   
@@ -29,7 +30,7 @@ Pour configurer un critère de service de la Windows Communication Foundation (W
   
 4. Activez un point de terminaison de métadonnées HTTP/GET pour votre service. Pour plus de détails, voir [comment : Publier des métadonnées pour un service utilisant le code](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md).  
   
-### <a name="to-add-a-wcf-endpoint-that-is-compatible-with-aspnet-web-service-clients-in-a-configuration-file"></a>Pour ajouter un point de terminaison WCF compatible avec les clients du service Web ASP.NET dans un fichier de configuration  
+## <a name="add-an-endpoint-in-a-configuration-file"></a>Ajouter un point de terminaison dans un fichier de configuration  
   
 1. Créez une configuration de liaison <xref:System.ServiceModel.BasicHttpBinding>. Pour plus de détails, voir comment [: Spécifier une liaison de service dans la configuration](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
   
@@ -39,7 +40,7 @@ Pour configurer un critère de service de la Windows Communication Foundation (W
   
 4. Activez un point de terminaison de métadonnées HTTP/GET pour votre service. Pour plus de détails, consultez le [comment : Publier des métadonnées pour un service à l’aide d’un fichier de configuration](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant, le code montre comment ajouter un point de terminaison WCF compatible avec ASP.NET clients du service Web dans le code et alternativement dans les fichiers de configuration.  
   
  [!code-csharp[C_HowTo-WCFServiceAndASMXClient#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto-wcfserviceandasmxclient/cs/program.cs#0)]
@@ -53,5 +54,5 @@ Pour configurer un critère de service de la Windows Communication Foundation (W
 - [Guide pratique pour spécifier une liaison de service dans la configuration](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)
 - [Comment : créer un point de terminaison de service dans la configuration.](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)
 - [Comment : publier les métadonnées d'un service à l'aide d'un fichier de configuration](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
-- [Sécurité des transports](../../../../docs/framework/wcf/feature-details/transport-security.md)
+- [Sécurité de transport](../../../../docs/framework/wcf/feature-details/transport-security.md)
 - [Utilisation des métadonnées](../../../../docs/framework/wcf/feature-details/using-metadata.md)

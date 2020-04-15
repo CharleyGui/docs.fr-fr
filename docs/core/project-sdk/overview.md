@@ -3,16 +3,16 @@ title: vue d’ensemble du projet SDK de base de NET
 description: En savoir plus sur le projet .NET Core SDKs.
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 32e14993326c6f17d6470249fe5a545180348631
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d0ac01dca31dffea482745126e00c34b1da20774
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399174"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389666"
 ---
 # <a name="net-core-project-sdks"></a>.NET Core projet SDKs
 
-.NET Les projets de base sont associés à un kit de développement logiciel (SDK). Chaque projet SDK est un ensemble [d’objectifs](/visualstudio/msbuild/msbuild-targets) MSBuild et [de tâches](/visualstudio/msbuild/msbuild-tasks) associées qui sont responsables de la compilation, de l’emballage et de la publication du code.
+.NET Les projets de base sont associés à un kit de développement logiciel (SDK). Chaque *projet SDK* est un ensemble d’objectifs MSBuild et [de tâches](/visualstudio/msbuild/msbuild-tasks) associées qui sont responsables de la compilation, de l’emballage et de la publication du code. [targets](/visualstudio/msbuild/msbuild-targets) Un projet qui fait référence à un projet SDK est parfois appelé un *projet de style SDK.*
 
 ## <a name="available-sdks"></a>SDKs disponibles
 

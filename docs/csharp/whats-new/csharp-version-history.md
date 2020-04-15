@@ -3,12 +3,12 @@ title: Histoire du langage C# | Guide C#
 description: À quoi ressemblait le langage dans ses versions antérieures et comment a-t-il évolué depuis ?
 author: erikdietrich
 ms.date: 04/08/2020
-ms.openlocfilehash: d9f50a7df7966f81366acb706d719cbdd40a45fa
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: f321b9c742fed6fb1efaf8fbb1914c203dd6391b
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989192"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389111"
 ---
 # <a name="the-history-of-c"></a>Histoire du langage C\#
 
@@ -120,7 +120,7 @@ La liaison dynamique offre la possibilité de commettre des erreurs, mais égale
 La version 5.0 de C, sortie avec Visual Studio 2012, était une version ciblée de la langue. Presque tous les efforts déployés pour cette version portaient sur un autre concept révolutionnaire du langage : le modèle `async` et `await` pour la programmation asynchrone.  Voici la liste des fonctionnalités principales :
 
 - [Membres asynchrones](../async.md)
-- [Attributs d’informations de l’appelant](../programming-guide/concepts/caller-information.md)
+- [Attributs d’informations de l’appelant](../language-reference/attributes/caller-information.md)
 
 ### <a name="see-also"></a>Voir aussi
 
@@ -158,7 +158,7 @@ La version 7.0 de C a été publiée avec Visual Studio 2017. Cette version prop
 
 - [Variables out](./csharp-7.md#out-variables)
 - [Tuples et déconstruction](./csharp-7.md#tuples)
-- [Filtrage](./csharp-7.md#pattern-matching)
+- [Critères spéciaux](./csharp-7.md#pattern-matching)
 - [Fonctions locales](./csharp-7.md#local-functions)
 - [Membres expression-bodied étendus](./csharp-7.md#more-expression-bodied-members)
 - [Variables locales et retours ref](./csharp-7.md#ref-locals-and-returns)
