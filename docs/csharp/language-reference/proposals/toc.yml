@@ -74,6 +74,8 @@
           href: ../../../../_csharplang/proposals/csharp-8.0/ranges.md
         - name: Déclarations using et using basées sur un modèle
           href: ../../../../_csharplang/proposals/csharp-8.0/using.md
+        - name: Fonctions locales statiques
+          href: ../../../../_csharplang/proposals/csharp-8.0/static-local-functions.md
         - name: Attribution de fusion Null
           href: ../../../../_csharplang/proposals/csharp-8.0/null-coalescing-assignment.md
         - name: Membres d'instance en lecture seule
