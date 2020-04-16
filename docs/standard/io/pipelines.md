@@ -9,12 +9,12 @@ helpviewer_keywords:
 - I/O [.NET], Pipelines
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: b18b2bf31787fa58e614cd4f057fba9037fe8ad8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8822e731ae805e83d4072c5bd78dff3fcf9a31a1
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77627550"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81462519"
 ---
 # <a name="systemiopipelines-in-net"></a>System.IO.Pipelines en .NET
 
@@ -172,7 +172,7 @@ Il est souvent efficace de `Pipe` réutiliser l’objet. Pour réinitialiser le 
 * Le premier argument détermine la quantité de mémoire consommée.
 * Le deuxième argument détermine la quantité de tampon observée.
 
-Le marquage des données consommées signifie que le tuyau peut retourner la mémoire dans le pool tampon sous-jacent. Le marquage des données observées `PipeReader.ReadAsync` contrôle ce que le prochain appel à faire. Marquer tout ce qui est `PipeReader.ReadAsync` observé signifie que le prochain appel à ne pas revenir jusqu’à ce qu’il y ait plus de données écrites sur le tuyau. Toute autre valeur fera le `PipeReader.ReadAsync` prochain appel pour revenir immédiatement avec les données observées *et* non observées, mais les données qui ont déjà été consommées.
+Le marquage des données consommées signifie que le tuyau peut retourner la mémoire dans le pool tampon sous-jacent. Le marquage des données observées `PipeReader.ReadAsync` contrôle ce que le prochain appel à faire. Marquer tout ce qui est `PipeReader.ReadAsync` observé signifie que le prochain appel à ne pas revenir jusqu’à ce qu’il y ait plus de données écrites sur le tuyau. Toute autre valeur fera le `PipeReader.ReadAsync` prochain appel pour revenir immédiatement avec les données observées *et* non observées, mais pas les données qui ont déjà été consommées.
 
 ### <a name="read-streaming-data-scenarios"></a>Lire les scénarios de données en streaming
 

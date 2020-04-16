@@ -2,12 +2,12 @@
 title: Comportements de sécurité dans WCF
 ms.date: 03/30/2017
 ms.assetid: 513232c0-39fd-4409-bda6-5ebd5e0ea7b0
-ms.openlocfilehash: f56bbd66aa61b8db9d6e720fb3a67ddbbf5e267e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9f96abac0f5f32279c5579dd01c3dd7f2dc1786c
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184539"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464049"
 ---
 # <a name="security-behaviors-in-wcf"></a>Comportements de sécurité dans WCF
 Dans Windows Communication Foundation (WCF), les comportements modifient le comportement en temps de course au niveau du service ou au niveau du point de terminaison. (Pour plus d’informations sur les comportements en général, voir [Specifying Service Run-Time Behavior](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md).) *Les comportements de sécurité* permettent le contrôle des informations d’identification, de l’authentification, de l’autorisation et de l’audit des journaux. Vous pouvez les utiliser via la programmation ou la configuration. Cette rubrique se concentre sur la configuration des comportements relatifs aux fonctions de sécurité suivants :  
@@ -112,6 +112,7 @@ Dans Windows Communication Foundation (WCF), les comportements modifient le comp
    </clientCredentials>  
   </behavior>  
  </endpointBehaviors>  
+</behaviors>  
 ```  
   
 #### <a name="clientcertificate-element"></a>\<clientCertificate> Element  
@@ -135,6 +136,9 @@ Dans Windows Communication Foundation (WCF), les comportements modifient le comp
       <issuerChannelBehaviors>  
          <add issuerAddress="http://www.contoso.com"  
                behaviorConfiguration="clientBehavior1" />
+      </issuerChannelBehaviors>  
+   </issuedToken>  
+</clientCredentials>
 ```  
   
 #### <a name="servicecertificate-element"></a>\<serviceCertificate> Element  
@@ -191,15 +195,15 @@ Dans Windows Communication Foundation (WCF), les comportements modifient le comp
  Utilisez le [ \<serviceSecurityAudit>](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md) pour spécifier le journal écrit et quels types d’événements enregistrer. Pour plus d’informations, voir [Auditing](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
 ```xml  
-<system.serviceModel>  
-<serviceBehaviors>  
+<behaviors>
+ <serviceBehaviors>  
   <behavior name="NewBehavior">  
     <serviceSecurityAudit auditLogLocation="Application"
              suppressAuditFailure="true"  
              serviceAuthorizationAuditLevel="Success"
              messageAuthenticationAuditLevel="Success" />  
-    </behavior>  
-  </serviceBehaviors>  
+  </behavior>  
+ </serviceBehaviors>  
 </behaviors>  
 ```  
   

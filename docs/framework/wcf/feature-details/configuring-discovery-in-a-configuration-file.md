@@ -2,12 +2,12 @@
 title: Configuration de la découverte dans un fichier de configuration
 ms.date: 03/30/2017
 ms.assetid: b9884c11-8011-4763-bc2c-c526b80175d0
-ms.openlocfilehash: b2e604f6168e4adff36bfb0c22861124743b358d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 934b04b51b9954cf943f57f33250951048e5671b
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185326"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464207"
 ---
 # <a name="configuring-discovery-in-a-configuration-file"></a>Configuration de la découverte dans un fichier de configuration
 Il existe quatre principaux groupes de paramètres de configuration utilisés dans la découverte. Cette rubrique décrit brièvement chaque groupe et montre des exemples de configuration. À la suite de chaque section, un lien vous permettra d'accéder à des informations détaillées sur chaque zone.  
@@ -26,6 +26,7 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
           </serviceDiscovery>  
         </behavior>  
       </serviceBehaviors>  
+</behaviors>  
 ```  
   
  Une fois que vous spécifiez `service` le comportement, référencez-le à partir d’un élément> <tel qu’indiqué dans l’échantillon suivant.  
@@ -41,7 +42,8 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
          <!-- Discovery Endpoints -->  
          <endpoint kind="udpDiscoveryEndpoint" />  
         </service>  
-    </service>  
+    </services>  
+</system.serviceModel>  
 ```  
   
  Pour qu'un service soit détectable, vous devez également ajouter un point de terminaison de découverte ; l'exemple ci-dessus ajoute un point de terminaison standard <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>.  
@@ -62,6 +64,7 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
    <service name="AnnouncementListener">  
       <endpoint kind="udpAnnouncementEndpoint" />  
    </service>  
+</services>
 ```  
   
  Le comportement <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> est utilisé pour activer ou désactiver la découverte d'un point de terminaison spécifique.  L'exemple suivant configure un service avec deux points de terminaison d'application, un avec la découverte activée et l'autre avec la découverte désactivée. Pour chaque point de terminaison un comportement <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> est ajouté.  
@@ -87,7 +90,7 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
         <endpoint kind="udpDiscoveryEndpoint" />  
       </service>  
    </services>  
-    <behaviors>  
+   <behaviors>  
       <serviceBehaviors>  
         <behavior name="helloWorldServiceBehavior">  
           <serviceDiscovery />  
@@ -102,6 +105,7 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
         </behavior>  
      </endpointBehaviors>  
    </behaviors>  
+</system.serviceModel>  
 ```  
   
  Le comportement <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> peut également être utilisé pour ajouter des métadonnées personnalisées aux métadonnées de point de terminaison retournées par le service. L’exemple suivant vous montre comment procéder.  
@@ -163,7 +167,9 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
           </discoveryClient>  
           <textMessageEncoding messageVersion="Soap11"/>  
           <httpTransport />  
-        </binding>  
+      </binding>
+   </customBinding>
+</bindings>  
 ```  
   
  Cette configuration de liaison personnalisée doit être référencée par un point de terminaison client :  
@@ -174,7 +180,7 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
                 binding="customBinding"  
                 bindingConfiguration="discoBindingConfiguration"  
                 contract="IHelloWorldService" />  
-    </client>  
+</client>  
 ```  
   
  Pour plus d’informations sur les critères de recherche voir [Discovery Find et FindCriteria](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md). Pour plus d’informations sur la découverte et les éléments contraignants voir, [WCF Discovery Overview](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
@@ -223,7 +229,8 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
             maxReceivedMessageSize="8192"  
             maxBufferPoolSize="262144"/>  
         </standardEndpoint>  
-      </udpDiscoveryEndpoint>  
+      </udpDiscoveryEndpoint>
+</standardEndpoints>
 ```  
   
  Une fois que vous avez ajouté la configuration standard du `endpoint` point de terminaison, faites référence à la configuration dans le <> élément pour chaque point de terminaison tel qu’indiqué dans l’échantillon suivant.  

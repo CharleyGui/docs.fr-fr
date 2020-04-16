@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 33178637c4fcfb21e8190c3d2593f09326ea5995
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73554847"
 ---
 # <a name="github-issues-process-and-policy"></a>Problèmes GitHub - Processus et stratégie
@@ -35,12 +35,12 @@ S’il est impossible de répondre à ces questions au cours de l’examen initi
 
 Certains types de problèmes sont fermés pendant la phase de diagnostic et de triage :
 
-- **Kudos** : nous remercions le client et fermons le problème.
-- **Problème lié au produit** : les problèmes liés au produit et non à sa documentation sont fermés. Nous pouvons également prendre des mesures supplémentaires, comme décrit ci-dessous.
-- **Violations CoC** : ces problèmes sont fermés et signalés si la [violation CoC](https://dotnetfoundation.org/code-of-conduct) mérite d’être signalée et bloquée.
-- **Doublons** : les doublons sont fermés avec un commentaire référençant le problème existant.
-- **Documentation correcte** : ce qui signifie que le client a tort.
-- **Forum** : les problèmes qui sont des demandes de support ou de forum sont dirigés vers Stack Overflow ou d’autres sites de support, puis fermés.
+- **bravo**: Nous exprimons nos remerciements et fermons la question.
+- **problème de produit**: Les questions liées au produit et non à sa documentation sont fermées. Nous pouvons également prendre des mesures supplémentaires, comme décrit ci-dessous.
+- **Violations du CdC**: Ces questions sont fermées et signalées si la violation du [CdC](https://dotnetfoundation.org/code-of-conduct) mérite d’être signalée et de bloquer.
+- **doublons**: Les Doublons sont fermés avec un commentaire faisant référence à la question existante.
+- **doc-ok**: Le client est incorrect, et le doc est correct.
+- **forum**: Les questions qui sont des demandes de soutien ou de forum sont dirigées vers Stack Overflow ou d’autres sites de support, et fermées.
 
 ### <a name="actions-on-product-issues"></a>Actions sur les problèmes de produit
 
@@ -62,20 +62,20 @@ Pour les autres problèmes, l’équipe :
 
 Les niveaux de priorité sont basés sur les recommandations suivantes, mais restent subjectifs. Les jalons, également subjectifs, sont basés sur d’autres priorités comme les planifications des versions de produit actuelles et les lancements à venir.
 
-- **P0** : une omission ou une erreur dans la documentation empêche les clients de mener à bien un scénario courant.
+- **P0**: Une omission ou une erreur de docs empêche les clients de réussir dans un scénario commun.
   - Les problèmes **P0** sont traités dans un délai de trois semaines et ont priorité sur les travaux précédemment planifiés.
-- **P1** : une omission ou une erreur dans la documentation rend beaucoup plus difficile un scénario courant ou bloque d’autres scénarios connus.
+- **P1**: Une omission ou une erreur de docs rend un scénario courant beaucoup plus difficile ou bloque d’autres scénarios bien connus.
   - Les problèmes **P1** sont planifiés en temps utile. Souvent, les problèmes P1 sont planifiés en même temps qu’un jalon à venir.
-- **P2** : problèmes entraînant des désagréments mineurs ou affectant un article peu consulté.
+- **P2**: Les problèmes qui causent des inconvénients mineurs, ou affectent un article de vue de basse page.
   - Les problèmes **P2** sont généralement résolus quand un article est mis à jour pour des motifs plus importants.
-- **P3** : problèmes qui sont des demandes pour des scénarios de cas limites.
+- **P3**: Questions qui sont des demandes de scénarios de cas de bord.
   - Les problèmes **P3** sont placés dans le backlog. Leur mise à jour est envisagée quand les articles correspondants sont mis à jour pour des motifs plus importants.
 
 Les membres de l’équipe consacrent un temps limité au diagnostic et au triage pour faire avancer le traitement des tâches planifiées. Chaque membre de l’équipe consacre au plus 30 minutes par jour au diagnostic et au triage.
 
 L’étiquette **up-for-grabs** est appliquée à un problème quand celui-ci est susceptible d’être corrigé par un membre de la communauté (éventuellement l’auteur). Le membre de l’équipe appliquant l’étiquette **up-for-grabs** aide les membres de la communauté à suivre le processus de création de la demande de tirage (pull request) ou trouve quelqu’un pour les aider. Les problèmes « up-for-grabs » sont souvent ajoutés aux [projets de contribution de la communauté ](https://github.com/dotnet/docs/projects/35)
 
-> REMARQUE : Nous avons récemment adopté la convention précédente. La personne qui a ajouté l’étiquette peut vous renvoyer à un autre membre de l’équipe qui vous aidera.
+> REMARQUE : Nous n’avons adopté que récemment la convention précédente. La personne qui a ajouté l’étiquette peut vous renvoyer à un autre membre de l’équipe qui vous aidera.
 
 ## <a name="resolution-phase"></a>Étape de résolution
 
@@ -83,9 +83,9 @@ Les problèmes générés par les clients sont pondérés dans le cadre de la pl
 
 Le traitement d’un problème résulte du niveau de priorité défini durant le diagnostic. Les problèmes entrants des clients sont traités avec d’autres travaux planifiés de priorité similaire.
 
-- **P0** : dès que possible, dans les trois semaines qui suivent.
-- **P1** : planifiés avec d’autres travaux P1 prévus, généralement dans les trois mois qui suivent.
-- **P2** : planifiés avec d’autres travaux P2 prévus. Les problèmes P2 sont régulièrement planifiés en fonction de la zone et de la visibilité. Le plus souvent, les problèmes P2 sont traités lors de la mise à jour d’un article.
-- **P3** : aucune garantie quant à la date d’un correctif n’est offerte. Quand un article est mis à jour, nous examinons le backlog à la recherche d’autres problèmes affectant le même article.
+- **P0**: Dès que c’est raisonnable, au cours des trois prochaines semaines.
+- **P1**: Programmé avec d’autres travaux P1 prévus. généralement dans les trois mois qui suivent.
+- **P2**: Programmé avec d’autres travaux P2 prévus. Les problèmes P2 sont régulièrement planifiés en fonction de la zone et de la visibilité. Le plus souvent, les problèmes P2 sont traités lors de la mise à jour d’un article.
+- **P3**: Aucune garantie sur la date fixe. Quand un article est mis à jour, nous examinons le backlog à la recherche d’autres problèmes affectant le même article.
 
 Le niveau de priorité des problèmes peut être révisé en fonction de nouveaux commentaires et de nouvelles données sur la visibilité des articles.

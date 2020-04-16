@@ -11,16 +11,16 @@ helpviewer_keywords:
 ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 ms.topic: tutorial
 ms.custom: mvc,vs-dotnet
-ms.openlocfilehash: 65b6fe31e86380162e90820c2cf118a9d1b96b4a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: facb9ebebd9ce1904886a946277185ac2c2e4bc4
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186587"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463923"
 ---
 # <a name="tutorial-create-your-first-wpf-application-in-visual-studio-2019"></a>Tutorial: Créez votre première application WPF dans Visual Studio 2019
 
-Cet article vous montre comment développer une application de bureau de la Windows Presentation Foundation (WPF) qui inclut les éléments qui sont communs à la plupart des applications WPF : Marge de balisage Extensible application Markup Language (XAML), code-behind, définitions d’applications, contrôles, la mise en page, la liaison de données et les styles. Pour développer l’application, vous utiliserez Visual Studio.
+Cet article vous montre comment développer une application de bureau de la Windows Presentation Foundation (WPF) qui comprend les éléments qui sont communs à la plupart des applications WPF : Marge de balisage extensible d’application (XAML), code-derrière, définitions d’applications, contrôles, mise en page, liaison de données et styles. Pour développer l’application, vous utiliserez Visual Studio.
 
 Dans ce tutoriel, vous allez apprendre à :
 > [!div class="checklist"]
@@ -40,7 +40,7 @@ Dans ce tutoriel, vous allez apprendre à :
 >
 > Vous pouvez basculer le langage de code du code de l’échantillon entre C et Visual Basic en utilisant le sélecteur de langue en haut de cette page.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail **de développement de bureau .NET** installé.
 
@@ -293,11 +293,11 @@ Dans cette section, vous mettrez à jour l’interface utilisateur de la page d�
 
 1. Dans *`ExpenseItHome.xaml`*, ajouter une <xref:System.Windows.Controls.Grid.ColumnDefinitions%2A> autre <xref:System.Windows.Controls.ColumnDefinition.Width%2A> colonne à l’avec un fixe de 230 pixels:
 
-    [!code-xaml[ExpenseIt#11](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseItHome.xaml?highlight=52-55)]
+    [!code-xaml[ExpenseIt#11](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseItHome.xaml?highlight=2#NewColumn)]
 
 2. Ajouter une autre <xref:System.Windows.Controls.Grid.RowDefinitions%2A>rangée à la , pour un total de quatre rangées:
 
-    [!code-xaml[ExpenseIt#11b](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseItHome.xaml?highlight=57-62)]
+    [!code-xaml[ExpenseIt#11b](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseItHome.xaml?highlight=2#NewRows)]
 
 3. Déplacez les commandes vers la <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType> deuxième colonne en définissant la propriété à 1 dans chacun des trois contrôles (Border, ListBox et Button).
 
@@ -482,15 +482,15 @@ Dans ce pas-là, vous avez appris un certain nombre de techniques pour créer un
 
 - [Architecture WPF](../advanced/wpf-architecture.md)
 - [Vue d’ensemble XAML (WPF)](../advanced/xaml-overview-wpf.md)
-- [Vue d’ensemble des propriétés de dépendance](../advanced/dependency-properties-overview.md)
-- [Disposition](../advanced/layout.md)
+- [Aperçu des propriétés de dépendance](../advanced/dependency-properties-overview.md)
+- [Mise en page](../advanced/layout.md)
 
 Pour plus d’informations sur la création d’applications, consultez les rubriques suivantes :
 
 - [Développement d’applications](../app-development/index.md)
-- [Commandes](../controls/index.md)
+- [Contrôles](../controls/index.md)
 - [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)
-- [Graphisme et multimédia](../graphics-multimedia/index.md)
+- [Graphiques et multimédia](../graphics-multimedia/index.md)
 - [Documents dans WPF](../advanced/documents-in-wpf.md)
 
 ## <a name="see-also"></a>Voir aussi

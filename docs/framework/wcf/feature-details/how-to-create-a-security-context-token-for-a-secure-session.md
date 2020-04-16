@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 640676b6-c75a-4ff7-aea4-b1a1524d71b2
-ms.openlocfilehash: 02e0403f9ae5bb437145fa3a015edc69b884c4d0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4e91580035d4de23ae90cd0d59a08f321ae70a1c
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185017"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464149"
 ---
 # <a name="how-to-create-a-security-context-token-for-a-secure-session"></a>Procédure : créer un jeton de contexte de sécurité pour une session sécurisée
 En utilisant un jeton de contexte de sécurité avec état (SCT) dans une session sécurisée, la session peut résister au service qui est recyclé. Par exemple, lorsqu'un SCT sans état est utilisé dans une session sécurisée et que les services IIS (Internet Information Services) sont réinitialisés, les données de session associées au service sont perdues. Ces données de session incluent un cache du jeton SCT. Ainsi, la prochaine fois qu'un client enverra au service un SCT sans état, une erreur sera retournée, parce que la clé associée au SCT ne peut pas être récupérée. Toutefois, si un SCT avec état est utilisé, la clé associée au SCT est contenue dans le SCT. Étant donné que la clé est contenue dans le SCT et donc contenue dans le message, la session sécurisée n'est pas affectée par le service qui est recyclé. Par défaut, Windows Communication Foundation (WCF) utilise des SCT apatrides dans une session sécurisée. Cette rubrique détaille la manière d’utiliser des SCT avec état dans une session sécurisée.  
@@ -32,6 +32,7 @@ En utilisant un jeton de contexte de sécurité avec état (SCT) dans une sessio
   
         ```xml  
         <customBinding>  
+        </customBinding>
         ```  
   
     2. Ajoutez [ \<](../../configure-apps/file-schema/wcf/bindings.md) un élément>enfant de liaison à la [ \<>customBinding ](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
@@ -40,6 +41,7 @@ En utilisant un jeton de contexte de sécurité avec état (SCT) dans une sessio
   
         ```xml  
         <binding name="StatefulSCTSecureSession">  
+        </binding>
         ```  
   
     3. Spécifier le mode d’authentification [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) pour les messages envoyés à et à partir de ce service en ajoutant un élément de sécurité>enfant à la [ \<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
@@ -48,7 +50,8 @@ En utilisant un jeton de contexte de sécurité avec état (SCT) dans une sessio
   
         ```xml  
         <security authenticationMode="SecureConversation"  
-                  requireSecurityContextCancellation="false">  
+                  requireSecurityContextCancellation="false">
+        </security>
         ```  
   
     4. Spécifiez comment le client est authentifié pendant que la session sécurisée est [ \< ](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)établie en ajoutant un [ \<élément sécuriséConversationBootstrap>](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) enfant à la sécurité>.  
@@ -86,7 +89,7 @@ En utilisant un jeton de contexte de sécurité avec état (SCT) dans une sessio
     </customBinding>  
     ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple de code suivant crée une liaison personnalisée qui utilise le mode d’authentification <xref:System.ServiceModel.Configuration.AuthenticationMode.MutualCertificate> pour démarrer une session sécurisée.  
   
  [!code-csharp[c_CreateStatefulSCT#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_createstatefulsct/cs/secureservice.cs#2)]
@@ -103,7 +106,7 @@ En utilisant un jeton de contexte de sécurité avec état (SCT) dans une sessio
         <security
             requireSecurityContextCancellation="false">  
               <secureConversationBootstrap />  
-      </security>  
+        </security>  
     <httpTransport />  
   </binding>  
 </customBinding>  

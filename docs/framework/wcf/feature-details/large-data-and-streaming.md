@@ -2,12 +2,12 @@
 title: Données volumineuses et diffusion en continu
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: 91e53f66fb0f2f94a315c318eb0b203d78427bae
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4b6275a27fb1e09ecac1f8f00f56068a80a214ef
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184676"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464078"
 ---
 # <a name="large-data-and-streaming"></a>Données volumineuses et diffusion en continu
 
@@ -88,7 +88,7 @@ Windows Communication Foundation (WCF) est une infrastructure de communication b
       </wsHttpBinding>  
     </bindings>  
      …  
-<system.serviceModel>  
+</system.serviceModel>  
 ```  
   
  Comme mentionné précédemment, la décision d'utiliser l'encodage MTOM dépend du volume des données que vous envoyez. En outre, parce que MTOM est activé au niveau de la liaison, l'activation de MTOM a des répercussions sur toutes les opérations sur un point de terminaison donné.  
@@ -178,7 +178,7 @@ class MyData
       </basicHttpBinding>  
     </bindings>  
      …  
-<system.serviceModel>  
+</system.serviceModel>  
 ```  
   
  Lorsque vous instanciez votre liaison dans le code, vous devez affecter à la propriété `TransferMode` respective de la liaison (ou à l’élément de la liaison de transport si vous composez une liaison personnalisée) l’une des valeurs mentionnées précédemment.  

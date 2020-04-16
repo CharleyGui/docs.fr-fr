@@ -2,12 +2,12 @@
 title: Commande dotnet sln
 description: La commande dotnet-sln offre une option pratique pour ajouter, supprimer et lister des projets dans un fichier solution.
 ms.date: 02/14/2020
-ms.openlocfilehash: 615e25e30a63b6ca36d9898cfcde565053830572
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 231287477d986f9ec4a5404cc5278e76c297faa4
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389636"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463400"
 ---
 # <a name="dotnet-sln"></a>dotnet sln
 
@@ -20,7 +20,9 @@ ms.locfileid: "81389636"
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet sln [<SOLUTION_FILE>] [command] [-h|--help]
+dotnet sln [<SOLUTION_FILE>] [command]
+
+dotnet sln [command] -h|--help
 ```
 
 ## <a name="description"></a>Description
@@ -76,7 +78,7 @@ Ajoute un ou plusieurs projets au fichier de solution.
 #### <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet sln [<SOLUTION_FILE>] add [--in-root] [-s|--solution-folder] <PROJECT_PATH> [<PROJECT_PATH>...]
+dotnet sln [<SOLUTION_FILE>] add [--in-root] [-s|--solution-folder <PATH>] <PROJECT_PATH> [<PROJECT_PATH>...]
 dotnet sln add [-h|--help]
 ```
 
@@ -100,7 +102,7 @@ dotnet sln add [-h|--help]
 
   Place les projets à la racine de la solution, plutôt que de créer un dossier de solution. Option disponible à partir du kit SDK .NET Core 3.0.
 
-- **`-s|--solution-folder`**
+- **`-s|--solution-folder <PATH>`**
 
   Le chemin de dossier de solution de destination pour ajouter les projets à. Option disponible à partir du kit SDK .NET Core 3.0.
 

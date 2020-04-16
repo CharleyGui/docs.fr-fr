@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande de publication dotnet publie un projet ou une solution .NET Core à un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: 26dda33d04f3f7a23805627708b55233ef4e87ef
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: ca6b6bd0151674a81e0beee7798dc6bde9c088f0
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242840"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463469"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -20,14 +20,16 @@ ms.locfileid: "81242840"
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet publish [<PROJECT>|<SOLUTION>] [-c|--configuration]
-    [-f|--framework] [--force] [--interactive] [--manifest]
-    [--no-build] [--no-dependencies] [--no-restore] [--nologo]
-    [-o|--output] [-p:PublishReadyToRun] [-p:PublishSingleFile]
-    [-p:PublishTrimmed] [-r|--runtime] [--self-contained]
-    [--no-self-contained] [-v|--verbosity] [--version-suffix]
+dotnet publish [<PROJECT>|<SOLUTION>] [-c|--configuration <CONFIGURATION>]
+    [-f|--framework <FRAMEWORK>] [--force] [--interactive]
+    [--manifest <PATH_TO_MANIFEST_FILE>] [--no-build] [--no-dependencies]
+    [--no-restore] [--nologo] [-o|--output <OUTPUT_DIRECTORY>]
+    [-p:PublishReadyToRun] [-p:PublishSingleFile] [-p:PublishTrimmed]
+    [-r|--runtime <RUNTIME_IDENTIFIER>] [--self-contained [true|false]]
+    [--no-self-contained] [-v|--verbosity <LEVEL>]
+    [--version-suffix <VERSION_SUFFIX>]
 
-dotnet publish [-h|--help]
+dotnet publish -h|--help
 ```
 
 ## <a name="description"></a>Description

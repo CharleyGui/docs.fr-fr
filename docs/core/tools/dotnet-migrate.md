@@ -2,12 +2,12 @@
 title: Commande dotnet migrate
 description: La commande dotnet migrate permet de migrer un projet et l’ensemble de ses dépendances.
 ms.date: 02/14/2020
-ms.openlocfilehash: 6148048c469c43320cc4459352fd2fb62f101740
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 71f587c1bfadd445aca818448bdd5f136f009fe0
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503700"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463637"
 ---
 # <a name="dotnet-migrate"></a>dotnet migrate
 
@@ -20,8 +20,12 @@ ms.locfileid: "77503700"
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet migrate [<SOLUTION_FILE|PROJECT_DIR>] [--format-report-file-json] [-r|--report-file] [-s|--skip-project-references] [--skip-backup] [-t|--template-file] [-v|--sdk-package-version] [-x|--xproj-file]
-dotnet migrate [-h|--help]
+dotnet migrate [<SOLUTION_FILE|PROJECT_DIR>] [--format-report-file-json <REPORT_FILE>]
+    [-r|--report-file <REPORT_FILE>] [-s|--skip-project-references [Debug|Release]]
+    [--skip-backup] [-t|--template-file <TEMPLATE_FILE>] [-v|--sdk-package-version]
+    [-x|--xproj-file]
+
+dotnet migrate -h|--help
 ```
 
 ## <a name="description"></a>Description

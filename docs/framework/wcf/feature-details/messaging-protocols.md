@@ -2,12 +2,12 @@
 title: Protocoles de messagerie
 ms.date: 03/30/2017
 ms.assetid: 5b20bca7-87b3-4c8f-811b-f215b5987104
-ms.openlocfilehash: d35cd496db32e1a2886f7ca06e7a3d0964f9c9b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 814347c77b54c4450aabf0a4f3966df223360663
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184582"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463831"
 ---
 # <a name="messaging-protocols"></a>Protocoles de messagerie
 
@@ -25,7 +25,7 @@ Ce sujet couvre les détails de mise <xref:System.ServiceModel.Channels.TextMess
 
 Spécification/Document:
 
-- [Xml](https://www.w3.org/TR/REC-xml)
+- [XML](https://www.w3.org/TR/REC-xml)
 - [SOAP 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/)
 - [SOAP 1.2 Core](https://www.w3.org/TR/soap12-part1/)
 - [WS-Addressing 2004/08](https://www.w3.org/Submission/2004/SUBM-ws-addressing-20040810/)
@@ -201,14 +201,14 @@ Lorsqu’un critère d’évaluation WCF est `Action` configuré pour un message
 ### <a name="web-services-addressing-faults"></a>Erreurs d'adressage des services Web
 R3411 : WCF produit les défauts suivants définis par WS-Addressing 2004/08.
 
-| Code | Cause : |
+| Code | Cause |
 |----------|-----------|
 | `wsa:DestinationUnreachable` | Le message est arrivé avec un `ReplyTo` différent de l'adresse de réponse établie pour ce canal ; il n'y a aucun point de terminaison qui écoute l'adresse spécifiée dans l'en-tête To. |
 | `wsa:ActionNotSupported` | les canaux de l'infrastructure ou le répartiteur associé au point de terminaison ne reconnaissent pas l'action spécifiée dans l'en-tête `Action`. |
 
 R3412: WCF produit les défauts suivants définis par WS-Addressing 1.0.
 
-| Code | Cause : |
+| Code | Cause |
 |----------|-----------|
 | `wsa10:InvalidAddressingHeader` | Dupliquer `wsa:To`, `wsa:ReplyTo`, `wsa:From` ou `wsa:MessageID`. Dupliquer `wsa:RelatesTo` `RelationshipType`avec le même . |
 | `wsa10:MessageAddressingHeaderRequired` | L'en-tête d'adressage requis est absent. |
@@ -566,7 +566,7 @@ Un point de terminaison WCF configuré pour utiliser MTOM enverra toujours des m
 WCF utilise l’affirmation de politique suivante pour indiquer l’utilisation de MTOM par point de terminaison :
 
 ```xml
-<wsoma:OptimizedMimeSerialization ... />
+<wsoma:OptimizedMimeSerialization />
 ```
 
 - R4211 : l'assertion de stratégie précédente a un objet de stratégie de point de terminaison et spécifie que tous les messages envoyés et reçus depuis le point de terminaison doivent être optimisés à l'aide de MTOM.

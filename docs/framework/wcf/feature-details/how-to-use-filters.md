@@ -2,12 +2,12 @@
 title: 'Procédure : utiliser des filtres'
 ms.date: 03/30/2017
 ms.assetid: f2c7255f-c376-460e-aa20-14071f1666e5
-ms.openlocfilehash: f99c2af623dacac3ebe46422815a7f42e2a4df2c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 34ea961b0ef5db51efcae0b86f2c06171d6d756c
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184814"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464099"
 ---
 # <a name="how-to-use-filters"></a>Procédure : utiliser des filtres
 Cette rubrique décrit les étapes de base requises pour créer une configuration de routage qui utilise plusieurs filtres. Dans cet exemple, les messages sont routés vers deux implémentations d'un service de calculatrice, regularCalc et roundingCalc. Les deux implémentations prennent en charge les mêmes opérations ; toutefois, l'un des services arrondit tous les calculs à la valeur entière la plus proche avant de les retourner. Une application cliente doit être en mesure d'indiquer s'il faut utiliser la version arrondie de ce service ; si aucune préférence de service n'est exprimée, le message est équilibré entre les deux services. Les opérations exposées par les deux services sont :  
@@ -180,7 +180,7 @@ Cette rubrique décrit les étapes de base requises pour créer une configuratio
                 <add filterName="XPathFilter" endpointName="roundingCalcEndpoint" priority="2"/>  
               </entries>  
             </table>  
-          <filterTables>  
+          </filterTables>  
     </routing>  
     ```  
   
@@ -225,7 +225,7 @@ Cette rubrique décrit les étapes de base requises pour créer une configuratio
     </behaviors>  
     ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'intégralité du fichier de configuration est présentée ci-dessous.  
   
 ```xml  

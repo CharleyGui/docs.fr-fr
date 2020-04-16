@@ -2,14 +2,14 @@
 title: commande d’exécution d’outil de dotnet
 description: La commande d’exécution d’outil de dotnet invoque un outil local.
 ms.date: 02/14/2020
-ms.openlocfilehash: a088cd0b7f4bba014234a8189a42a63aa6d88f4e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f79c239363e8b3abbd55c54dd1912443e6777fb7
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847844"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463328"
 ---
-# <a name="dotnet-tool-run"></a>dotnet outil exécuter
+# <a name="dotnet-tool-run"></a>dotnet tool run
 
 **Cet article s’applique à:** ✔️ .NET Core 3.0 SDK et les versions ultérieures
 
@@ -22,7 +22,7 @@ ms.locfileid: "78847844"
 ```dotnetcli
 dotnet tool run <COMMAND NAME>
 
-dotnet tool run <-h|--help>
+dotnet tool run -h|--help
 ```
 
 ## <a name="description"></a>Description
@@ -41,7 +41,7 @@ L’outil `dotnet tool run` de recherche de commande manifeste les fichiers qui 
 
   Affiche une aide brève pour la commande.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 - **`dotnet tool run dotnetsay`**
 

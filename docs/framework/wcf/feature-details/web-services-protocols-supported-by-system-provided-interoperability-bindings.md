@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Web services protocols
 - Windows Communication Foundation, Web service protocols
 ms.assetid: 1f7fc4ff-30fe-4e46-adda-91caad3b06c6
-ms.openlocfilehash: a1e67401a09370a46bc7a3e8546c95467bc18b67
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 25efda74d205a36332a801e91ddc508796f7df5d
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184149"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463991"
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>Protocoles de services Web pris en charge par des liaisons d’interopérabilité fournies par le système
 Windows Communication Foundation (WCF) est conçu pour interopérer avec les services Web qui prennent en charge un ensemble de spécifications connues sous le nom de spécifications des services Web. Afin de simplifier la configuration du service pour les meilleures pratiques d’interopérabilité, WCF introduit trois liaisons interopérables fournies par un système : <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>, <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, et <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>. Pour l’interopérabilité avec les normes de l’Organisation pour l’avancement des normes <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>d’information structurées (OASIS), le WCF comprend une liaison interopérable fournie par un système : . Pour la publication de métadonnées, WCF comprend deux liaisons interopérables fournies par le système : [ \<le>de méxHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) et [ \<le>de méxHttpsBinding ](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md). Cette rubrique répertorie les spécifications prises en charge par les liaisons interopérable fournies par le système.  
@@ -76,7 +76,7 @@ Windows Communication Foundation (WCF) est conçu pour interopérer avec les ser
        <message issuedKeyType="Symmetric"
                 issuedTokenType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1">  
          <issuerMetadata address =
-         'http://localhost/FederationSample/HomeRealmSTS/STS.svc/mex'>  
+         'http://localhost/FederationSample/HomeRealmSTS/STS.svc/mex'/>  
        </message>  
      </security>  
   </binding>  

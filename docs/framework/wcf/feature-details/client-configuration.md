@@ -2,12 +2,12 @@
 title: Configuration client
 ms.date: 03/30/2017
 ms.assetid: 5da5bd3b-65d9-43b7-91b9-cc9e989b1350
-ms.openlocfilehash: ff82f56639ec451c04624d22fff0bcb03f46d946
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 141b7f7fc04f98f267ce520544fb89451beac7b6
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185360"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463865"
 ---
 # <a name="client-configuration"></a>Configuration client
 Vous pouvez utiliser la configuration client de la Windows Communication Foundation (WCF) pour spécifier l’adresse, la liaison, le comportement et le contrat, les propriétés « ABC » du point de terminaison client, que les clients utilisent pour se connecter aux paramètres de service. [ \<L’élément>client](../../configure-apps/file-schema/wcf/client.md) a un [ \<critère de terminaison>](../../configure-apps/file-schema/wcf/endpoint-of-client.md) élément dont les attributs sont utilisés pour configurer le point final ABC. Ces attributs sont discutés dans la section [Configuring Endpoints.](#configuring-endpoints)  
@@ -41,7 +41,7 @@ Vous pouvez utiliser la configuration client de la Windows Communication Foundat
               <servicePrincipalName value="host/localhost" />  
             </identity>  
           </endpoint>  
-// Add another endpoint by adding another <endpoint> element.  
+            <!-- Add another endpoint by adding another <endpoint> element. -->
           <endpoint  
             name="endpoint2">  
            //Configure another endpoint here.  
@@ -62,10 +62,10 @@ Vous pouvez utiliser la configuration client de la Windows Communication Foundat
           </security>  
         </binding>  
         <binding name="Another Binding"  
-        //Configure this binding here.  
+          <!-- Configure this binding here. -->  
         </binding>  
           </wsHttpBinding>  
-        </bindings>  
+     </bindings>  
   
 //The behavior section references by the behaviorConfiguration endpoint attribute.  
         <behaviors>  

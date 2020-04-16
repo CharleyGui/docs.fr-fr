@@ -2,14 +2,14 @@
 title: dotnet nuget ajouter la commande source
 description: La commande source d’ajout de nuget dotnet ajoute une nouvelle source de paquet à vos fichiers de configuration NuGet.
 ms.date: 03/20/2020
-ms.openlocfilehash: c1e398699c7482a69b750cde718e6f9178b5c4bd
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: 319501e026f1c3102006b0be5357f127b8e366a7
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80148567"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463603"
 ---
-# <a name="dotnet-nuget-add-source"></a>dotnet nuget ajouter source
+# <a name="dotnet-nuget-add-source"></a>dotnet nuget add source
 
 **Cet article s’applique à:** ✔️ .NET Core 3.1.200 SDK et les versions ultérieures
 
@@ -20,10 +20,11 @@ ms.locfileid: "80148567"
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet nuget add source <PACKAGE_SOURCE_PATH> [--name] [--username]
-    [--password] [--store-password-in-clear-text] [--valid-authentication-types]
-    [--configfile]
-dotnet nuget add source [-h|--help]
+dotnet nuget add source <PACKAGE_SOURCE_PATH> [--name <SOURCE_NAME>] [--username <USER>]
+    [--password <PASSWORD>] [--store-password-in-clear-text]
+    [--valid-authentication-types <TYPES>] [--configfile <FILE>]
+
+dotnet nuget add source -h|--help
 ```
 
 ## <a name="description"></a>Description
@@ -38,15 +39,15 @@ La `dotnet nuget add source` commande ajoute une nouvelle source de paquet à vo
 
 ## <a name="options"></a>Options
 
-- **`--configfile`**
+- **`--configfile <FILE>`**
 
   Le fichier de configuration NuGet. Si spécifié, seuls les paramètres de ce fichier seront utilisés. S’il n’est pas précisé, la hiérarchie des fichiers de configuration de l’annuaire actuel sera utilisée. Pour plus d’informations, voir [Configurations NuGet communes](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior).
 
-- **`-n|--name`**
+- **`-n|--name <SOURCE_NAME>`**
 
   Nom de la source.
 
-- **`-p|--password`**
+- **`-p|--password <PASSWORD>`**
 
   Mot de passe à utiliser lors de la connexion à une source authentifiée.
 
@@ -54,11 +55,11 @@ La `dotnet nuget add source` commande ajoute une nouvelle source de paquet à vo
 
   Permet de stocker des informations d’identification portables de source de paquets en désactivant le chiffrement de mot de passe.
 
-- **`-u|--username`**
+- **`-u|--username <USER>`**
 
   Nom d’utilisateur à utiliser lors de la connexion à une source authentifiée.
 
-- **`--valid-authentication-types`**
+- **`--valid-authentication-types <TYPES>`**
 
   Liste séparée par comma de types d’authentification valides pour cette source. Définissez `basic` ceci à si le serveur annonce NTLM ou Négocier et vos informations d’identification doivent être envoyées à l’aide du mécanisme de base, par exemple lors de l’utilisation d’un PAT avec sur place Azure DevOps Server. D’autres `negotiate`valeurs `kerberos` `ntlm`valides `digest`incluent, , , et , mais ces valeurs sont peu susceptibles d’être utiles.
 

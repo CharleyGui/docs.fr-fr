@@ -2,12 +2,12 @@
 title: Extensibilité de l'hôte du service de workflow
 ms.date: 03/30/2017
 ms.assetid: c0e8f7bb-cb13-49ec-852f-b85d7c23972f
-ms.openlocfilehash: 776fc78cd3f5b012dd40576fe56f71835e949708
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: eb35b9211bc55ee66f5bb5600ef86f40d4145191
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184155"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463998"
 ---
 # <a name="workflow-service-host-extensibility"></a>Extensibilité de l'hôte du service de workflow
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] fournit la classe <xref:System.ServiceModel.Activities.WorkflowServiceHost> pour l'hébergement de services de workflow. Cette classe est utilisée lorsque vous auto-hébergez un service de workflow dans une application managée ou un service Windows. Cette classe est également utilisée lors de l'hébergement d'un service de workflow dans les services IIS (Internet Information Services) ou WAS (Windows Process Activation Service). La classe <xref:System.ServiceModel.Activities.WorkflowServiceHost> fournit des points d’extension qui vous permettent d’ajouter des extensions personnalisées, de modifier le comportement inactif et d’héberger des workflows sans service (workflows qui n’utilisent aucune activité de messagerie).  
@@ -43,6 +43,7 @@ host.Description.Behaviors.Add(new WorkflowUnhandledExceptionBehavior { Action =
           <workflowUnhandledExceptionBehavior action="Abandon" />
         </behavior>  
       </serviceBehaviors>  
+</behaviors>
 ```  
   
 ## <a name="hosting-non-service-workflows"></a>Hébergement de workflows sans service  

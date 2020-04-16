@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
-ms.openlocfilehash: f30b2c587d7f9b21c1f19fa1c3943621fc2607cd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6796ca0b16e65a07735aec075d63b0cdfe38d080
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184344"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464014"
 ---
 # <a name="transport-security-overview"></a>Vue d'ensemble de la sécurité des transports
 Les mécanismes de sécurité des transports de la Windows Communication Foundation (WCF) dépendent de la liaison et du transport utilisés. Par exemple, lors de l'utilisation de la classe <xref:System.ServiceModel.WSHttpBinding>, le transport correspond à HTTP et le mécanisme principal utilisé pour sécuriser ce transport correspond à SSL (Secure Sockets Layer) sur HTTP, c'est-à-dire à HTTPS. Ce sujet traite des principaux mécanismes de sécurité des transports utilisés dans les liaisons fournies par le système WCF.  
   
 > [!NOTE]
-> Lorsque la sécurité SSL est utilisée avec .NET Framework 3.5 et plus tard, un client de WCF utilise à la fois les certificats intermédiaires dans son magasin de certificats et les certificats intermédiaires reçus lors de la négociation SSL pour effectuer la validation de la chaîne de certificats sur le service Certificat. .NET Framework 3.0 n'utilise que les certificats intermédiaires installés dans le magasin de certificats local.  
+> Lorsque la sécurité SSL est utilisée avec .NET Framework 3.5 et plus tard, un client WCF utilise à la fois les certificats intermédiaires dans son magasin de certificats et les certificats intermédiaires reçus lors de la négociation SSL pour effectuer la validation de la chaîne de certificats sur le certificat du service. .NET Framework 3.0 n'utilise que les certificats intermédiaires installés dans le magasin de certificats local.  
   
 > [!WARNING]
 > Si la sécurité de transport est utilisée, la propriété <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> peut être remplacée. Pour éviter que cela <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A?displayProperty=nameWithType> <xref:System.ServiceModel.Description.PrincipalPermissionMode.None?displayProperty=nameWithType>se produise, rendez-vous. <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> est un comportement de service qui peut être défini dans la description du service.  
@@ -55,7 +55,7 @@ Les mécanismes de sécurité des transports de la Windows Communication Foundat
 #### <a name="digest"></a>Digest  
  L'authentification Digest s'apparente à l'authentification de base tout en présentant l'avantage supplémentaire de permettre l'envoi des informations d'identification dans un texte haché plutôt qu'en texte clair. Pour plus d’informations sur IIS 6.0, voir [Digest Authentication in IIS 6.0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10)). Pour plus d’informations sur IIS 7.0, voir [Configure Digest Authentication (IIS 7)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754104(v=ws.10)).  
   
-#### <a name="windows"></a> Windows  
+#### <a name="windows"></a>Windows  
  Il s'agit de l'authentification Windows intégrée à IIS. Lorsque ce mode d'authentification est activé, le serveur doit également figurer dans un domaine Windows utilisant le protocole Kerberos comme contrôleur. Dans le cas contraire ou si le système Kerberos connaît une défaillance, vous pouvez utiliser l'authentification NT LAN Manager (NTLM), abordée dans la section suivante. Pour plus d’informations sur IIS 6.0, voir [l’authentification intégrée de Windows dans IIS 6.0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738016(v=ws.10)). Pour plus d’informations sur IIS 7.0, voir [Configuring Server Certificates in IIS 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
   
 #### <a name="ntlm"></a>NTLM  
@@ -101,7 +101,7 @@ Les mécanismes de sécurité des transports de la Windows Communication Foundat
    <clientCredentials>  
      <clientCertificate findValue= "101010101010101010101010101010000000000"
       storeLocation="LocalMachine" storeName="My"
-      X509FindType="FindByThumbPrint"/>  
+      X509FindType="FindByThumbPrint">  
      </clientCertificate>  
    </clientCredentials>  
  </behavior>  

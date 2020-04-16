@@ -1,27 +1,27 @@
 ---
 title: Syntaxe détaillée
-description: Découvrez la différence entre la syntaxe détaillée et la syntaxe simplifiée dans le F# langage de programmation.
+description: Apprenez la différence entre la syntaxe verbeuse et la syntaxe légère dans le langage de programmation de F.
 ms.date: 05/16/2016
-ms.openlocfilehash: 575585b201acc1366980cfc5cf523c4117259084
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 722807695c56beb0d681b95a78ed8cb8c1df3ddf
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421177"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463903"
 ---
 # <a name="verbose-syntax"></a>Syntaxe détaillée
 
-Il existe deux formes de syntaxe disponibles pour de nombreuses constructions dans le F# langage : la *syntaxe détaillée* et la *syntaxe simplifiée*. La syntaxe détaillée n’est pas aussi couramment utilisée, mais elle présente l’avantage d’être moins sensible à la mise en retrait. La syntaxe simplifiée est plus petite et utilise la mise en retrait pour signaler le début et la fin des constructions, plutôt que des mots clés supplémentaires comme `begin`, `end`, `in`, etc. La syntaxe par défaut est la syntaxe simplifiée. Cette rubrique décrit la syntaxe des F# constructions lorsque la syntaxe simplifiée n’est pas activée. La syntaxe détaillée est toujours activée, donc même si vous activez la syntaxe légère, vous pouvez toujours utiliser la syntaxe détaillée pour certaines constructions. Vous pouvez désactiver la syntaxe simplifiée à l’aide de la directive `#light "off"`.
+Il existe deux formes de syntaxe disponibles pour de nombreuses constructions dans la langue F: *syntaxe verbeuse* et *syntaxe légère*. La syntaxe verbeuse n’est pas aussi couramment utilisée, mais a l’avantage d’être moins sensible à l’indentation. La syntaxe légère est plus courte et utilise l’indentation pour signaler `begin` `end`le `in`début et la fin des constructions, plutôt que des mots clés supplémentaires comme , , et ainsi de suite. La syntaxe par défaut est la syntaxe légère. Ce sujet décrit la syntaxe pour les constructions de F lorsque la syntaxe légère n’est pas activée. La syntaxe Verbose est toujours activée, donc même si vous activez la syntaxe légère, vous pouvez toujours utiliser la syntaxe verbeux pour certaines constructions. Vous pouvez désactiver la syntaxe légère en utilisant la `#light "off"` directive.
 
-## <a name="table-of-constructs"></a>Table de constructions
+## <a name="table-of-constructs"></a>Tableau des constructions
 
-Le tableau suivant montre la syntaxe légère et détaillée pour F# les constructions de langage dans les contextes où il existe une différence entre les deux formes. Dans ce tableau, les chevrons (&lt;&gt;) encadrent les éléments de syntaxe fournis par l’utilisateur. Reportez-vous à la documentation de chaque construction de langage pour obtenir des informations plus détaillées sur la syntaxe utilisée dans ces constructions.
+Le tableau suivant montre la syntaxe légère et verbeuse pour les constructions linguistiques de F dans des contextes où il y a une différence entre les deux formes. Dans ce tableau, les&lt;&gt;supports d’angle () enferment les éléments syntaxiques fournis par l’utilisateur. Consultez la documentation de chaque construction linguistique pour obtenir des informations plus détaillées sur la syntaxe utilisée dans ces constructions.
 
 <table>
 <tr>
-<th>Construction de langage</th>
-<th>Syntaxe simplifiée</th>
-<th>Syntaxe détaillée</th>
+<th>Construction linguistique</th>
+<th>Syntaxe légère</th>
+<th>Syntaxe Verbose</th>
 </tr>
 <tr>
 <td>
@@ -30,8 +30,8 @@ expressions composées
 <td>
 
 ```xml
-<expression1>
-<expression2>
+<expression1 />
+<expression2 />
 ```
 
 </td><td>
@@ -44,7 +44,7 @@ expressions composées
 </tr>
 <tr><td>
 
-liaisons de `let` imbriquées
+reliures `let` imbriquées
 
 </td><td>
 
@@ -164,7 +164,7 @@ in
 
 </td>
 </tr>
-<tr><td>Enregistrement
+<tr><td>enregistrement
 </td><td>
 
 ```fsharp
@@ -189,7 +189,7 @@ type <record-name> =
 
 </td>
 </tr>
-<tr><td>classe
+<tr><td>class
 </td><td>
 
 ```fsharp
@@ -227,7 +227,7 @@ type <structure-name> =
 
 </td>
 </tr>
-<tr><td>Union discriminée</td><td>
+<tr><td>syndicat discriminé</td><td>
 
 ```fsharp
 type <union-name> =
@@ -269,7 +269,7 @@ type <interface-name> =
 
 </td>
 </tr>
-<tr><td>expression d’objet</td><td>
+<tr><td>expression de l’objet</td><td>
 
 ```fsharp
 { new <type-name>
@@ -352,6 +352,6 @@ module <module-name> =
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur le langage F#](index.md)
+- [Référence linguistique F](index.md)
 - [Directives de compilateur](compiler-directives.md)
 - [Indications pour la mise en forme du code](../style-guide/formatting.md)

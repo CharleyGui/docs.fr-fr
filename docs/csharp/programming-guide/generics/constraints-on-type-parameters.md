@@ -6,31 +6,34 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 76cd00b9c84f128d2a181115293df910d8deb6cb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2962de53eab132ad02aaf679fdd6037bd24fa714
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399797"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463885"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Contraintes sur les paramètres de type (Guide de programmation C#)
 
-Les contraintes informent le compilateur sur les fonctionnalités que doit avoir un argument de type. Sans contrainte, l’argument de type peut être n’importe quel type. Le compilateur peut seulement deviner les membres de <xref:System.Object?displayProperty=nameWithType>, qui est la classe de base par excellence de tous les types .NET. Pour plus d’informations, consultez [Pourquoi utiliser des contraintes](#why-use-constraints). Si le code client essaie d’instancier votre classe à l’aide d’un type qui n’est pas autorisé par une contrainte, il en résulte une erreur de compilation. Les contraintes sont spécifiées à l’aide du mot clé contextuel `where`. Le tableau suivant liste les sept types de contrainte :
+Les contraintes informent le compilateur sur les fonctionnalités que doit avoir un argument de type. Sans contrainte, l’argument de type peut être n’importe quel type. Le compilateur peut seulement deviner les membres de <xref:System.Object?displayProperty=nameWithType>, qui est la classe de base par excellence de tous les types .NET. Pour plus d’informations, consultez [Pourquoi utiliser des contraintes](#why-use-constraints). Si le code client utilise un type qui ne satisfait pas à une contrainte, le compilateur émet une erreur. Les contraintes sont spécifiées à l’aide du mot clé contextuel `where`. Le tableau suivant liste les sept types de contrainte :
 
 |Contrainte|Description|
 |----------------|-----------------|
-|`where T : struct`|L’argument de type doit être un type de valeur non annulable. Pour plus d’informations sur les types de valeur nulable, voir [les types de valeur nulable](../../language-reference/builtin-types/nullable-value-types.md). Étant donné que tous les types de `struct` valeur ont `new()` un constructeur sans paramètres accessible, `new()` la contrainte implique la contrainte et ne peut pas être combinée avec la contrainte. Vous ne pouvez `struct` pas non `unmanaged` plus combiner la contrainte avec la contrainte.|
-|`where T : class`|L’argument de type doit être un type référence. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau.|
-|`where T : notnull`|L’argument de type doit être un type non-nullable. L’argument peut être un type de référence non annulable dans C 8.0 ou plus tard, ou un type de valeur non annulable. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau.|
+|`where T : struct`|L’argument de type doit être un type de valeur non annulable. Pour plus d’informations sur les types de valeur nulable, voir [les types de valeur nulable](../../language-reference/builtin-types/nullable-value-types.md). Étant donné que tous les types de `struct` valeur ont `new()` un constructeur sans paramètres accessible, `new()` la contrainte implique la contrainte et ne peut pas être combinée avec la contrainte. Vous ne pouvez pas `struct` combiner la `unmanaged` contrainte avec la contrainte.|
+|`where T : class`|L’argument de type doit être un type référence. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau. Dans un contexte in annulable dans le C `T` 8.0 ou plus tard, doit être un type de référence non annulable. |
+|`where T : class?`|L’argument type doit être un type de référence, soit in nullable, soit non annulable. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau.|
+|`where T : notnull`|L’argument de type doit être un type non-nullable. L’argument peut être un type de référence non annulable dans C 8.0 ou plus tard, ou un type de valeur non annulable. |
 |`where T : unmanaged`|L’argument de type doit être un type non-nullable [nonmané](../../language-reference/builtin-types/unmanaged-types.md). La `unmanaged` contrainte implique `struct` la contrainte et ne peut pas `struct` `new()` être combinée avec les ou les contraintes.|
 |`where T : new()`|L’argument de type doit avoir un constructeur sans paramètre public. Quand vous utilisez la contrainte `new()` avec d’autres contraintes, elle doit être spécifiée en dernier. La `new()` contrainte ne peut pas `struct` être `unmanaged` combinée avec les contraintes et les contraintes.|
-|`where T :` *\<nom_classe_de_base>*|L’argument de type doit être la classe de base spécifiée ou en dériver.|
-|`where T :`nom d’interface>* \<*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique.|
-|`where T : U`|L’argument de type fourni pour T doit être l’argument fourni pour U ou en dériver.|
+|`where T :` *\<nom_classe_de_base>*|L’argument de type doit être la classe de base spécifiée ou en dériver. Dans un contexte in annulable dans le C `T` 8.0 et plus tard, doit être un type de référence non annulable dérivé de la classe de base spécifiée. |
+|`where T :`*nom de classe de base>? \<*|L’argument de type doit être la classe de base spécifiée ou en dériver. Dans un contexte infiratable dans le `T` C 8.0 et plus tard, peut être soit un type nul ou non annulable dérivé de la classe de base spécifiée. |
+|`where T :`nom d’interface>* \<*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique. Dans un contexte in annulable dans C 8.0 et plus tard, `T` doit être un type non-nullable qui implémente l’interface spécifiée.|
+|`where T :`nom d’interface>? * \<*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique. Dans un contexte in annulable dans le `T` C 8.0, peut être un type de référence nul, un type de référence non annulable ou un type de valeur. `T`peut ne pas être un type de valeur nulle.|
+|`where T : U`|L’argument de `T` type fourni pour doit `U`être ou dériver de l’argument fourni pour . Dans un contexte in `U` annulable, s’il `T` s’agit d’un type de référence non annulable, doit être de type de référence non annulable. S’il `U` s’agit `T` d’un type de référence in annulable, peut être soit infiruble ou non annulable. |
 
 ## <a name="why-use-constraints"></a>Pourquoi utiliser des contraintes
 
-En limitant le paramètre de type, vous augmentez le nombre d’opérations et d’appels de méthode autorisés au niveau de celui pris en charge par le type de contrainte et tous les types dans sa hiérarchie d’héritage. Lorsque vous concevez des classes ou des méthodes génériques, si vous effectuez une <xref:System.Object?displayProperty=nameWithType>opération sur les membres génériques au-delà de la simple affectation ou d’appeler toutes les méthodes non prises en charge par, vous devrez appliquer des contraintes au paramètre de type. Par exemple, la contrainte de classe de base indique au compilateur que seuls les objets de ce type ou dérivés de ce type seront utilisés comme arguments de type. Une fois que le compilateur a cette garantie, il peut autoriser les méthodes de ce type à être appelées dans la classe générique. L’exemple de code suivant illustre la fonctionnalité que vous pouvez ajouter à la classe `GenericList<T>` (dans [Introduction aux génériques](../../../standard/generics/index.md)) en appliquant une contrainte de classe de base.
+Les contraintes spécifient les capacités et les attentes d’un paramètre de type. Déclarer ces contraintes signifie que vous pouvez utiliser les opérations et les appels de méthode du type de contrainte. Si votre classe ou méthode générique utilise une opération sur les membres <xref:System.Object?displayProperty=nameWithType>génériques au-delà de la simple affectation ou d’appeler des méthodes non prises en charge par, vous devrez appliquer des contraintes au paramètre de type. Par exemple, la contrainte de classe de base indique au compilateur que seuls les objets de ce type ou dérivés de ce type seront utilisés comme arguments de type. Une fois que le compilateur a cette garantie, il peut autoriser les méthodes de ce type à être appelées dans la classe générique. L’exemple de code suivant illustre la fonctionnalité que vous pouvez ajouter à la classe `GenericList<T>` (dans [Introduction aux génériques](../../../standard/generics/index.md)) en appliquant une contrainte de classe de base.
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#9)]
 
@@ -76,9 +79,11 @@ L’utilité des paramètres de type en tant que contraintes avec les classes g�
 
 ## <a name="notnull-constraint"></a>Contrainte NotNull
 
-En commençant par le C 8.0, vous pouvez utiliser la `notnull` contrainte pour spécifier que l’argument de type doit être un type de valeur non annulable ou un type de référence non annulable. La `notnull` contrainte ne peut être `nullable enable` utilisée que dans un contexte. Le compilateur génère un avertissement `notnull` si vous ajoutez la contrainte dans un contexte oubliable.
+En commençant par C 8.0 dans un contexte `notnull` in annulable, vous pouvez utiliser la contrainte pour spécifier que l’argument type doit être un type de valeur non annulable ou un type de référence non annulable. La `notnull` contrainte ne peut être `nullable enable` utilisée que dans un contexte. Le compilateur génère un avertissement `notnull` si vous ajoutez la contrainte dans un contexte oubliable.
 
 Contrairement à d’autres contraintes, `notnull` lorsqu’un argument type viole la contrainte, le `nullable enable` compilateur génère un avertissement lorsque ce code est compilé dans un contexte. Si le code est compilé dans un contexte inconsible, le compilateur ne génère pas d’avertissements ou d’erreurs.
+
+Commençant par le C 8.0 dans `class` un contexte où il est in annulable, la contrainte précise que l’argument type doit être un type de référence non annulable. Dans un contexte in annulable, lorsqu’un paramètre type est un type de référence nul, le compilateur génère un avertissement.
 
 ## <a name="unmanaged-constraint"></a>Contrainte non managée
 
@@ -119,7 +124,7 @@ Vous pouvez l’utiliser comme montré dans l’exemple suivant pour créer un e
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Collections.Generic>
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation CMD](../index.md)
 - [Introduction aux génériques](./index.md)
 - [Classes génériques](./generic-classes.md)
 - [nouvelle contrainte](../../language-reference/keywords/new-constraint.md)

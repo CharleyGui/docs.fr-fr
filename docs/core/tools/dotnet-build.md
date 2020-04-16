@@ -2,12 +2,12 @@
 title: Commande dotnet build
 description: La commande dotnet build permet de générer un projet et l’ensemble de ses dépendances.
 ms.date: 02/14/2020
-ms.openlocfilehash: 9f9a78ec0a6a25c54c8a727c05081ce6835514ee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 27deca4ab1c12314db5214c73660862a8a57a398
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503763"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463711"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -20,11 +20,13 @@ ms.locfileid: "77503763"
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--force]
-    [--interactive] [--no-dependencies] [--no-incremental] [--no-restore] [--nologo]
-    [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
+dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration <CONFIGURATION>]
+    [-f|--framework <FRAMEWORK>] [--force] [--interactive] [--no-dependencies]
+    [--no-incremental] [--no-restore] [--nologo] [-o|--output <OUTPUT_DIRECTORY>]
+    [-r|--runtime <RUNTIME_IDENTIFIER>] [-v|--verbosity <LEVEL>]
+    [--version-suffix <VERSION_SUFFIX>]
 
-dotnet build [-h|--help]
+dotnet build -h|--help
 ```
 
 ## <a name="description"></a>Description

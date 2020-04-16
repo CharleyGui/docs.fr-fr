@@ -2,12 +2,12 @@
 title: 'Procédure : configurer la persistance avec WorkflowServiceHost'
 ms.date: 03/30/2017
 ms.assetid: e31cd4df-13a3-4a9a-9be8-5243e0055356
-ms.openlocfilehash: 2974b6bcbb94c5b54d91025aeabe7c2d2e94c7e8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4bfa66a895ae9af9cb87ff110dc82c8a8a922b49
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185052"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463847"
 ---
 # <a name="how-to-configure-persistence-with-workflowservicehost"></a>Procédure : configurer la persistance avec WorkflowServiceHost
 Cette rubrique décrit comment configurer la fonctionnalité de magasin d'instances de workflow SQL pour activer la persistance des workflows hébergés dans <xref:System.ServiceModel.Activities.WorkflowServiceHost> à l'aide d'un fichier de configuration. Avant d’utiliser la fonctionnalité de magasin d’instances de workflow SQL, vous devez créer une base de données SQL utilisée pour rendre des instances de workflow persistantes. Pour plus d’informations, voir [Comment : Activer SQL Persistence for Workflows and Workflow Services](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md).  
@@ -26,7 +26,7 @@ Cette rubrique décrit comment configurer la fonctionnalité de magasin d'instan
                  instanceLockedExceptionAction="NoRetry | SimpleRetry | AggressiveRetry"  
                  hostLockRenewalPeriod="00:00:30"
                  runnableInstancesDetectionPeriod="00:00:05">  
-            <sqlWorkflowInstanceStore/>  
+            </sqlWorkflowInstanceStore>  
         </behavior>  
     </serviceBehaviors>  
     ```  

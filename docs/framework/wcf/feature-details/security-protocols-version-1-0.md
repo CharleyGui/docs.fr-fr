@@ -2,12 +2,12 @@
 title: Protocoles de sécurité version 1.0
 ms.date: 03/30/2017
 ms.assetid: ee3402d2-1076-410b-a3cb-fae0372bd7af
-ms.openlocfilehash: 2014e1f6f8fefa89ed44bd820c3712617ff51470
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0b86d870350d8728134cd2b42bbeb232183535bc
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184526"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463807"
 ---
 # <a name="security-protocols-version-10"></a>Protocoles de sécurité version 1.0
 Les protocoles Web Services Security fournissent des mécanismes de sécurité des services Web qui couvrent l’ensemble des exigences de sécurité de la messagerie de l’entreprise. Cette section décrit les détails de la version 1.0 de <xref:System.ServiceModel.Channels.SecurityBindingElement>la Windows Communication Foundation (WCF) (implémentées dans le ) pour les protocoles de sécurité des services Web suivants.  
@@ -42,7 +42,7 @@ Les protocoles Web Services Security fournissent des mécanismes de sécurité d
 |-------------------------|---------------------------|---------------------------|----------|  
 |UserNameOverTransport|Nom d'utilisateur/mot de passe|X509|Transport|  
 |CertificateOverTransport|X509|X509|Transport|  
-|KerberosOverTransport| Windows|X509|Transport|  
+|KerberosOverTransport|Windows|X509|Transport|  
 |IssuedTokenOverTransport|Adresses IP fédérées|X509|Transport|  
 |SspiNegotiatedOverTransport|Windows Sspi Negotiated|Windows Sspi Negotiated|Transport|  
 |AnonymousForCertificate|None|X509|Message|  
@@ -50,7 +50,7 @@ Les protocoles Web Services Security fournissent des mécanismes de sécurité d
 |MutualCertificate|X509|X509|Message|  
 |MutualCertificateDuplex|X509|X509|Message|  
 |IssuedTokenForCertificate|Adresses IP fédérées|X509|Message|  
-|Kerberos| Windows| Windows|Message|  
+|Kerberos|Windows|Windows|Message|  
 |IssuedToken|Adresses IP fédérées|Adresses IP fédérées|Message|  
 |SspiNegotiated|Windows Sspi Negotiated|Windows Sspi Negotiated|Message|  
 |AnonymousForSslNegotiated|None|X509, TLS-Nego|Message|  
@@ -62,7 +62,7 @@ Les protocoles Web Services Security fournissent des mécanismes de sécurité d
   
  WCF tire parti de WS-SecureConversation pour fournir un support de sessions sécurisé pour protéger les échanges multi-messages entre les applications.  Consultez la section « Sessions sécurisées » ci-après pour plus d'informations sur l'implémentation.  
   
- En plus des modes d’authentification, WCF fournit des paramètres pour contrôler les mécanismes de protection communs qui s’appliquent à la plupart des modes d’authentification basés sur la sécurité des messages, par exemple : ordre de signature par rapport aux opérations de cryptage, suites d’algorithmes, dérivation des clés , et confirmation de signature.  
+ En plus des modes d’authentification, WCF fournit des paramètres pour contrôler les mécanismes de protection communs qui s’appliquent à la plupart des modes d’authentification basés sur la sécurité des messages, par exemple : ordre de signature par rapport aux opérations de cryptage, suites d’algorithmes, dérivation des clés et confirmation de signature.  
   
  Les préfixes et espaces de noms suivants sont utilisés dans ce document.  
   
@@ -250,7 +250,7 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
   <wsu:Timestamp u:Id="_0">  
   ...  
   </wsu:Timestamp>  
-  <wsse:UsernameToken ... >  
+  <wsse:UsernameToken>  
   ...  
   </wsse:UsernameToken>  
 </wsse:Security>  
@@ -437,7 +437,7 @@ Namespace='http://www.w3.org/2005/08/addressing' />
   <wsu:Timestamp>  
   ...  
   </wsu:Timestamp>  
-  <saml:Assertion ...>  
+  <saml:Assertion>  
   ...  
   </saml:Assertion>  
   <ds:Signature>  
@@ -1856,7 +1856,7 @@ Jeton de protection : False
         <wsp:Policy>  
           <sp:ProtectionToken>  
             <wsp:Policy>  
-              <mssp:SslContextToken sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient' />  
+              <mssp:SslContextToken sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient'>  
                 <wsp:Policy>  
                   <sp:RequireDerivedKeys />
                 </wsp:Policy>  

@@ -2,12 +2,12 @@
 title: Configuration du service d'activation de processus de Windows pour son utilisation dans Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 1d50712e-53cd-4773-b8bc-a1e1aad66b78
-ms.openlocfilehash: 2da2653f3d2bd3d998b0ebbe87ea33760315f7df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 86e50b80d84479ca32b3d4d1fe3f205983640c76
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185302"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464170"
 ---
 # <a name="configuring-the-windows-process-activation-service-for-use-with-windows-communication-foundation"></a>Configuration du service d'activation de processus de Windows pour son utilisation dans Windows Communication Foundation
 Ce sujet décrit les étapes nécessaires pour configurer Windows Process Activation Service (également connu sous le nom WAS) dans Windows Vista pour héberger Windows Communication Foundation (WCF) services qui ne communiquent pas sur les protocoles réseau HTTP. Les sections suivantes définissent les étapes pour cette configuration :  
@@ -59,11 +59,11 @@ appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp
 ```xml  
 <sites>  
     <site name="Default Web Site" id="1">  
-    <application path="/">  
+      <application path="/">  
         <virtualDirectory path="/" physicalPath="D:\inetpub\wwwroot" />  
-    </application>  
-       <bindings>  
-            //The following two lines are added by the command.  
+      </application>  
+      <bindings>  
+            <!-- The following two lines are added by the command. -->
             <binding protocol="HTTP" bindingInformation="*:80:" />  
             <binding protocol="net.tcp" bindingInformation="808:*" />  
        </bindings>  
@@ -77,7 +77,7 @@ appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp
     </siteDefaults>  
     <applicationDefaults
       applicationPool="DefaultAppPool"
-      //The following line is inserted by the command.  
+      <!-- The following line is inserted by the command. -->
       enabledProtocols="http, net.tcp" />  
     <virtualDirectoryDefaults allowSubDirConfig="true" />  
 </sites>  

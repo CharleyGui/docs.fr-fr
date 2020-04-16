@@ -2,12 +2,12 @@
 title: Commande dotnet store
 description: La commande « dotnet store » stocke les assemblys spécifiés dans le magasin de packages de runtime.
 ms.date: 02/14/2020
-ms.openlocfilehash: da1d132b2b873ff55ec104b5bb092d0194889bdc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2f28a9bc287a87f600bda385c579e8070cbaa5ab
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503582"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463394"
 ---
 # <a name="dotnet-store"></a>dotnet store
 
@@ -20,7 +20,13 @@ ms.locfileid: "77503582"
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet store -m|--manifest -f|--framework -r|--runtime  [--framework-version] [-h|--help] [--output] [--skip-optimization] [--skip-symbols] [-v|--verbosity] [--working-dir]
+dotnet store -m|--manifest <PATH_TO_MANIFEST_FILE>
+    -f|--framework <FRAMEWORK_VERSION> -r|--runtime <RUNTIME_IDENTIFIER>
+    [--framework-version <FRAMEWORK_VERSION>] [--output <OUTPUT_DIRECTORY>]
+    [--skip-optimization] [--skip-symbols] [-v|--verbosity <LEVEL>]
+    [--working-dir <WORKING_DIRECTORY>]
+
+dotnet store -h|--help
 ```
 
 ## <a name="description"></a>Description
@@ -35,7 +41,7 @@ dotnet store -m|--manifest -f|--framework -r|--runtime  [--framework-version] [-
 
 - **`-m|--manifest <PATH_TO_MANIFEST_FILE>`**
 
-  Le *fichier manifeste du magasin de packages* est un fichier XML qui contient la liste des packages à stocker. Le format du fichier manifeste est compatible avec celui du projet de style SDK. Ainsi, vous pouvez utiliser un fichier projet qui référence les packages souhaités avec l’option `-m|--manifest` pour stocker des assemblys dans le magasin de packages de runtime. Pour spécifier plusieurs fichiers manifeste, répétez l’option et le chemin pour chaque fichier. Par exemple : `--manifest packages1.csproj --manifest packages2.csproj`.
+  Le *fichier manifeste du magasin de packages* est un fichier XML qui contient la liste des packages à stocker. Le format du fichier manifeste est compatible avec celui du projet de style SDK. Ainsi, vous pouvez utiliser un fichier projet qui référence les packages souhaités avec l’option `-m|--manifest` pour stocker des assemblys dans le magasin de packages de runtime. Pour spécifier plusieurs fichiers manifeste, répétez l’option et le chemin pour chaque fichier. Par exemple : `--manifest packages1.csproj --manifest packages2.csproj`.
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 

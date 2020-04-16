@@ -2,16 +2,16 @@
 title: Canal de segmentation
 ms.date: 03/30/2017
 ms.assetid: e4d53379-b37c-4b19-8726-9cc914d5d39f
-ms.openlocfilehash: 3811f7e7229dec1a46585a558b96f94bb202902f
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 7b436e2ce708a122a7eae3b07ad01515fb2dce96
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716028"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463980"
 ---
 # <a name="chunking-channel"></a>Canal de segmentation
 
-Lors de l’envoi de messages volumineux à l’aide d’Windows Communication Foundation (WCF), il est souvent préférable de limiter la quantité de mémoire utilisée pour mettre ces messages en mémoire tampon. L'une des solutions pour ce faire consiste à transmettre en continu le corps de ces messages (possible à condition que la plus grande partie des données figurent dans le corps des messages concernés). Certains protocoles, cependant, nécessitent la mise en mémoire tampon de l'intégralité des messages. Parmi ces protocoles figurent notamment ceux de la messagerie fiable et de la sécurité. L'une des autres solutions consiste à diviser les messages de grande taille en messages plus petits appelés segments, à envoyer ces segment un par un, puis à reconstituer les grands messages initiaux à partir de ces segments, côté destinataire. L'application peut effectuer ces opérations de segmentation et désegmentation elle-même ou utiliser un canal personnalisé pour ce faire. L'exemple de canal de segmentation suivant illustre la manière dont un protocole personnalisé ou un canal superposé peuvent être utilisés afin de segmenter ou désegmenter des messages de grande taille.
+Lors de l’envoi de grands messages à l’aide de Windows Communication Foundation (WCF), il est souvent souhaitable de limiter la quantité de mémoire utilisée pour amortir ces messages. L'une des solutions pour ce faire consiste à transmettre en continu le corps de ces messages (possible à condition que la plus grande partie des données figurent dans le corps des messages concernés). Certains protocoles, cependant, nécessitent la mise en mémoire tampon de l'intégralité des messages. Parmi ces protocoles figurent notamment ceux de la messagerie fiable et de la sécurité. L'une des autres solutions consiste à diviser les messages de grande taille en messages plus petits appelés segments, à envoyer ces segment un par un, puis à reconstituer les grands messages initiaux à partir de ces segments, côté destinataire. L'application peut effectuer ces opérations de segmentation et désegmentation elle-même ou utiliser un canal personnalisé pour ce faire. L'exemple de canal de segmentation suivant illustre la manière dont un protocole personnalisé ou un canal superposé peuvent être utilisés afin de segmenter ou désegmenter des messages de grande taille.
 
 La segmentation doit toujours être employée uniquement une fois le message à envoyer entièrement construit. Un canal de segmentation doit toujours être disposé en couche sous un canal de sécurité et un canal de session fiable.
 
@@ -23,7 +23,7 @@ La segmentation doit toujours être employée uniquement une fois le message à 
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\ChunkingChannel`
 
@@ -34,7 +34,7 @@ La segmentation doit toujours être employée uniquement une fois le message à 
 Les canaux de segmentation partent de l'hypothèse que la structure des messages est la suivante pour permettre leur segmentation :
 
 ```xml
-<soap:Envelope ...>
+<soap:Envelope>
   <!-- headers -->
   <soap:Body>
     <operationElement>
@@ -209,11 +209,11 @@ Les canaux de segmentation sont des canaux `IDuplexSessionChannel` dont l'archit
 
 Au niveau inférieur suivant, le canal `ChunkingChannel` s'appuie sur plusieurs composants afin d'implémenter le protocole de segmentation. Du côté expéditeur, ce canal utilise un <xref:System.Xml.XmlDictionaryWriter> personnalisé appelé `ChunkingWriter` qui procède à la segmentation effective des messages. `ChunkingWriter` utilise directement le canal interne pour envoyer les segments. L'utilisation d'un `XmlDictionaryWriter` personnalisé nous permet d'envoyer les segments pendant l'écriture du corps des messages initiaux de grande taille. Cela signifie que nous ne mettons pas en mémoire tampon l'intégralité des messages initiaux.
 
-![Diagramme qui montre l’architecture d’envoi du canal de segmentation.](./media/chunking-channel/chunking-channel-send.gif)
+![Diagramme qui montre le canal de gros morceau envoyer l’architecture.](./media/chunking-channel/chunking-channel-send.gif)
 
 Côté destinataire, `ChunkingChannel` extrait les messages du canal interne, puis les remet à un <xref:System.Xml.XmlDictionaryReader> personnalisé appelé `ChunkingReader`, qui reconstitue les messages initiaux à partir des segments entrants. `ChunkingChannel` encapsule ce `ChunkingReader` dans une implémentation de `Message` personnalisée appelée `ChunkingMessage` et retourne ce message à la couche supérieure. Cette combinaison de `ChunkingReader` et `ChunkingMessage` nous permet de désegmenter le corps des messages initiaux pendant leur lecture par la couche supérieure, nous évitant ainsi d'avoir à mettre la totalité de leur corps en mémoire tampon. `ChunkingReader` met en mémoire tampon un certain nombre de segments entrants, ce nombre étant configurable. Cette limite atteinte, le lecteur patiente jusqu'à ce que les messages soient extraits de la file d'attente par la couche supérieure (c'est-à-dire par simple lecture de leur corps) ou jusqu'à ce que le délai de réception arrive à échéance.
 
-![Diagramme qui montre l’architecture de réception du canal de segmentation.](./media/chunking-channel/chunking-channel-receive.gif)
+![Diagramme qui montre le canal de gros morceau recevoir l’architecture.](./media/chunking-channel/chunking-channel-receive.gif)
 
 ## <a name="chunking-programming-model"></a>Modèle de programmation de segmentation
 
@@ -256,7 +256,7 @@ Autres informations dignes d'intérêt :
 
 - Le délai passé à la méthode Send correspond au délai appliqué à l'intégralité de l'opération d'envoi, notamment à l'envoi de tous les segments.
 
-- Le <xref:System.Xml.XmlDictionaryWriter> a été spécialement conçu pour éviter la mise en mémoire tampon de la totalité du corps des messages initiaux. Si le <xref:System.Xml.XmlDictionaryReader> du corps des messages était obtenu à l'aide de `message.GetReaderAtBodyContents`, tout leur corps serait mis en mémoire tampon. Au lieu de cela, nous avons une <xref:System.Xml.XmlDictionaryWriter> personnalisée qui est transmise à `message.WriteBodyContents`. Les messages appelant WriteBase64 sur l'enregistreur, ce dernier emballe les segments dans des messages, puis les envoie à l'aide du canal interne. WriteBase64 est verrouillé jusqu'à l'envoi des segments.
+- Le <xref:System.Xml.XmlDictionaryWriter> a été spécialement conçu pour éviter la mise en mémoire tampon de la totalité du corps des messages initiaux. Si le <xref:System.Xml.XmlDictionaryReader> du corps des messages était obtenu à l'aide de `message.GetReaderAtBodyContents`, tout leur corps serait mis en mémoire tampon. Au lieu de <xref:System.Xml.XmlDictionaryWriter> cela, nous `message.WriteBodyContents`avons une coutume qui est passé à . Les messages appelant WriteBase64 sur l'enregistreur, ce dernier emballe les segments dans des messages, puis les envoie à l'aide du canal interne. WriteBase64 est verrouillé jusqu'à l'envoi des segments.
 
 ## <a name="implementing-the-receive-operation"></a>Implémentation de l'opération de réception
 
@@ -282,7 +282,7 @@ Autres informations dignes d'intérêt :
 
 ### <a name="onclose"></a>OnClose
 
-`OnClose` affecte d'abord à `stopReceive` la valeur `true` pour arrêter l'exécution de la boucle `ReceiveChunkLoop` en attente. Il attend ensuite la `receiveStopped` <xref:System.Threading.ManualResetEvent>, qui est définie lorsque `ReceiveChunkLoop` s’arrête. En partant de l'hypothèse que la boucle `ReceiveChunkLoop` s'arrête avant l'expiration du délai spécifié, la méthode `OnClose` appelle alors `innerChannel.Close` dans le temps encore imparti.
+`OnClose` affecte d'abord à `stopReceive` la valeur `true` pour arrêter l'exécution de la boucle `ReceiveChunkLoop` en attente. Il attend ensuite `receiveStopped` <xref:System.Threading.ManualResetEvent>le , qui `ReceiveChunkLoop` est réglé lorsque s’arrête. En partant de l'hypothèse que la boucle `ReceiveChunkLoop` s'arrête avant l'expiration du délai spécifié, la méthode `OnClose` appelle alors `innerChannel.Close` dans le temps encore imparti.
 
 ### <a name="onabort"></a>OnAbort
 
@@ -306,9 +306,9 @@ L'écouteur `ChunkingChannelListener` correspond à un wrapper autour d'un écou
 
 ## <a name="implementing-binding-element-and-binding"></a>Implémentation de l'élément de liaison et de la liaison
 
-L'élément `ChunkingBindingElement` est chargé de créer la fabrication `ChunkingChannelFactory` et l'écouteur `ChunkingChannelListener`. L' `ChunkingBindingElement` vérifie si T dans `CanBuildChannelFactory`\<T > et `CanBuildChannelListener`\<T > est de type `IDuplexSessionChannel` (le seul canal pris en charge par le canal de segmentation) et que les autres éléments de liaison de la liaison prennent en charge ce type de canal.
+L'élément `ChunkingBindingElement` est chargé de créer la fabrication `ChunkingChannelFactory` et l'écouteur `ChunkingChannelListener`. Les `ChunkingBindingElement` contrôles si `CanBuildChannelFactory` \<T dans T `CanBuildChannelListener` \<> et T> `IDuplexSessionChannel` est de type (le seul canal pris en charge par le canal de gros morceau) et que les autres éléments contraignants dans la liaison prennent en charge ce type de canal.
 
-`BuildChannelFactory`\<T > vérifie d’abord que le type de canal demandé peut être généré, puis obtient une liste d’actions de message à segmenter. Pour plus d'informations, consultez la section suivante. Cette méthode crée alors une nouvelle fabrication `ChunkingChannelFactory` à laquelle elle passe la fabrication de canal interne (telle que retournée depuis `context.BuildInnerChannelFactory<IDuplexSessionChannel>`), la liste d'actions de message et le nombre maximal de segments pouvant être mise en mémoire tampon. Ce nombre maximal est issu de la propriété appelée `MaxBufferedChunks`, laquelle est exposée par l'élément `ChunkingBindingElement`.
+`BuildChannelFactory`\<T> premiers contrôles que le type de canal demandé peut être construit, puis obtient une liste d’actions de message à en morceaux. Pour plus d’informations, consultez la section suivante : Cette méthode crée alors une nouvelle fabrication `ChunkingChannelFactory` à laquelle elle passe la fabrication de canal interne (telle que retournée depuis `context.BuildInnerChannelFactory<IDuplexSessionChannel>`), la liste d'actions de message et le nombre maximal de segments pouvant être mise en mémoire tampon. Ce nombre maximal est issu de la propriété appelée `MaxBufferedChunks`, laquelle est exposée par l'élément `ChunkingBindingElement`.
 
 `BuildChannelListener<T>` utilise une implémentation similaire pour créer `ChunkingChannelListener` et lui passer l'écouteur de canal interne.
 
@@ -320,29 +320,29 @@ Cet exemple de code contient une liaison appelée `TcpChunkingBinding`. Cette li
 
 Les canaux de segmentation segmentent uniquement les messages identifiés à l'aide de l'attribut `ChunkingBehavior`. La classe `ChunkingBehavior` implémente `IOperationBehavior` et est elle-même implémentée par l'appel de la méthode `AddBindingParameter`. Dans cette méthode, la classe `ChunkingBehavior` examine la valeur de sa propriété `AppliesTo` (`InMessage` ou `OutMessage` ou encore les deux) afin d'identifier les messages à segmenter. Elle obtient ensuite l’action correspondant à chacun de ces messages (depuis la collection Messages sur `OperationDescription`), puis ajoute chacune de ces actions aux collections de chaînes contenue dans les instances de `ChunkingBindingParameter`. Elle ajoute enfin ce `ChunkingBindingParameter` à la collection `BindingParameterCollection`.
 
-Cette `BindingParameterCollection` est passée à l’intérieur du `BindingContext` à chaque élément de la liaison lorsque ces éléments génèrent la fabrication de canal ou l’écouteur de canal. L’implémentation de `ChunkingBindingElement`de `BuildChannelFactory<T>` et `BuildChannelListener<T>` extraire ce `ChunkingBindingParameter` de `BindingContext’`s `BindingParameterCollection`. La collection d'actions contenue dans le `ChunkingBindingParameter` est passée à `ChunkingChannelFactory` ou à `ChunkingChannelListener`, qui la passe ensuite au `ChunkingDuplexSessionChannel`.
+Cette `BindingParameterCollection` est passée à l’intérieur du `BindingContext` à chaque élément de la liaison lorsque ces éléments génèrent la fabrication de canal ou l’écouteur de canal. La `ChunkingBindingElement`mise en `BuildChannelFactory<T>` `BuildChannelListener<T>` œuvre et le `ChunkingBindingParameter` retirer de l’éc `BindingContext’` `BindingParameterCollection`. La collection d'actions contenue dans le `ChunkingBindingParameter` est passée à `ChunkingChannelFactory` ou à `ChunkingChannelListener`, qui la passe ensuite au `ChunkingDuplexSessionChannel`.
 
 ## <a name="running-the-sample"></a>Exécution de l'exemple
 
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
 
-1. Installez ASP.NET 4,0 à l’aide de la commande suivante.
+1. Installez ASP.NET 4.0 à l’aide de la commande suivante.
 
     ```console
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable
     ```
 
-2. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+2. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les échantillons de la Fondation De communication Windows.](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)
 
-3. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Pour construire la solution, suivez les instructions dans [la construction des échantillons de la Fondation De communication Windows](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-4. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. Pour exécuter l’échantillon dans une configuration mono-ou cross-machine, suivez les instructions dans [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
 5. Exécutez en premier Service.exe, puis Client.exe. Regardez ensuite leurs fenêtres de console respectives pour connaître leur résultat.
 
 L'exécution de l'exemple est censée donner le résultat suivant.
 
-Client :
+Client :
 
 ```console
 Press enter when service is available
@@ -369,7 +369,7 @@ Press enter when service is available
  < Received chunk 10 of message 5b226ad5-c088-4988-b737-6a565e0563dd
 ```
 
-Serveur :
+Serveur : 
 
 ```console
 Service started, press enter to exit

@@ -2,14 +2,14 @@
 title: dotnet nuget mise à jour de la commande source
 description: La commande source de mise à jour de nuget dotnet met à jour une source existante dans vos fichiers de configuration NuGet.
 ms.date: 03/20/2020
-ms.openlocfilehash: 38335e07f91850756c7671413e1193c2578e7e7e
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: 42b1aec95cdd57e53f966400f6692a3d0150c16c
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80148546"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463479"
 ---
-# <a name="dotnet-nuget-update-source"></a>source de mise à jour de nuget dotnet
+# <a name="dotnet-nuget-update-source"></a>dotnet nuget update source
 
 **Cet article s’applique à:** ✔️ .NET Core 3.1.200 SDK et les versions ultérieures
 
@@ -20,10 +20,11 @@ ms.locfileid: "80148546"
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet nuget update source <NAME> [--source] [--username]
-    [--password] [--store-password-in-clear-text] [--valid-authentication-types]
-    [--configfile]
-dotnet nuget update source [-h|--help]
+dotnet nuget update source <NAME> [--source <SOURCE>] [--username <USER>]
+    [--password <PASSWORD>] [--store-password-in-clear-text]
+    [--valid-authentication-types <TYPES>] [--configfile <FILE>]
+
+dotnet nuget update source -h|--help
 ```
 
 ## <a name="description"></a>Description
@@ -38,15 +39,15 @@ La `dotnet nuget update source` commande met à jour une source existante dans v
 
 ## <a name="options"></a>Options
 
-- **`--configfile`**
+- **`--configfile <FILE>`**
 
   Le fichier de configuration NuGet. Si spécifié, seuls les paramètres de ce fichier seront utilisés. S’il n’est pas précisé, la hiérarchie des fichiers de configuration de l’annuaire actuel sera utilisée. Pour plus d’informations, voir [Configurations NuGet communes](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior).
 
-- **`-p|--password`**
+- **`-p|--password <PASSWORD>`**
 
   Mot de passe à utiliser lors de la connexion à une source authentifiée.
 
-- **`-s|--source`**
+- **`-s|--source <SOURCE>`**
 
   Chemin vers la source du paquet.
 
@@ -54,11 +55,11 @@ La `dotnet nuget update source` commande met à jour une source existante dans v
 
   Permet de stocker des informations d’identification portables de source de paquets en désactivant le chiffrement de mot de passe.
 
-- **`-u|--username`**
+- **`-u|--username <USER>`**
 
   Nom d’utilisateur à utiliser lors de la connexion à une source authentifiée.
 
-- **`--valid-authentication-types`**
+- **`--valid-authentication-types <TYPES>`**
 
   Liste séparée par comma de types d’authentification valides pour cette source. Définissez `basic` ceci à si le serveur annonce NTLM ou Négocier et vos informations d’identification doivent être envoyées à l’aide du mécanisme de base, par exemple lors de l’utilisation d’un PAT avec sur place Azure DevOps Server. D’autres `negotiate`valeurs `kerberos` `ntlm`valides `digest`incluent, , , et , mais ces valeurs sont peu susceptibles d’être utiles.
 
