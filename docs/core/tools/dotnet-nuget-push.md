@@ -3,138 +3,142 @@ title: Commande dotnet nuget push
 description: La commande dotnet nuget push exécute un envoi (push) d’un package sur le serveur et le publie.
 author: karann-msft
 ms.date: 02/14/2020
-ms.openlocfilehash: d4ef8e58908fe488c712debff3b313ac0908b43e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 96f8d008c8306a0782d5149360a24bb4097a1ec4
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503659"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463516"
 ---
-# <a name="dotnet-nuget-push"></a><span data-ttu-id="de33a-103">dotnet nuget push</span><span class="sxs-lookup"><span data-stu-id="de33a-103">dotnet nuget push</span></span>
+# <a name="dotnet-nuget-push"></a><span data-ttu-id="fe4ed-103">dotnet nuget push</span><span class="sxs-lookup"><span data-stu-id="fe4ed-103">dotnet nuget push</span></span>
 
-<span data-ttu-id="de33a-104">**Cet article s’applique à:** ✔️ .NET Core 2.x SDK et les versions ultérieures</span><span class="sxs-lookup"><span data-stu-id="de33a-104">**This article applies to:** ✔️ .NET Core 2.x SDK and later versions</span></span>
+<span data-ttu-id="fe4ed-104">**Cet article s’applique à:** ✔️ .NET Core 2.x SDK et les versions ultérieures</span><span class="sxs-lookup"><span data-stu-id="fe4ed-104">**This article applies to:** ✔️ .NET Core 2.x SDK and later versions</span></span>
 
-## <a name="name"></a><span data-ttu-id="de33a-105">Nom</span><span class="sxs-lookup"><span data-stu-id="de33a-105">Name</span></span>
+## <a name="name"></a><span data-ttu-id="fe4ed-105">Nom</span><span class="sxs-lookup"><span data-stu-id="fe4ed-105">Name</span></span>
 
-<span data-ttu-id="de33a-106">`dotnet nuget push` - Exécute un push d’un package sur le serveur et le publie.</span><span class="sxs-lookup"><span data-stu-id="de33a-106">`dotnet nuget push` - Pushes a package to the server and publishes it.</span></span>
+<span data-ttu-id="fe4ed-106">`dotnet nuget push` - Exécute un push d’un package sur le serveur et le publie.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-106">`dotnet nuget push` - Pushes a package to the server and publishes it.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="de33a-107">Synopsis</span><span class="sxs-lookup"><span data-stu-id="de33a-107">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="fe4ed-107">Synopsis</span><span class="sxs-lookup"><span data-stu-id="fe4ed-107">Synopsis</span></span>
 
 ```dotnetcli
-dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [--interactive] [-k|--api-key] [-n|--no-symbols]
-    [--no-service-endpoint] [-s|--source] [--skip-duplicate] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
-dotnet nuget push [-h|--help]
+dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output]
+    [--interactive] [-k|--api-key <API_KEY>] [-n|--no-symbols]
+    [--no-service-endpoint] [-s|--source <SOURCE>] [--skip-duplicate]
+    [-sk|--symbol-api-key <API_KEY>] [-ss|--symbol-source <SOURCE>]
+    [-t|--timeout <TIMEOUT>]
+
+dotnet nuget push -h|--help
 ```
 
-## <a name="description"></a><span data-ttu-id="de33a-108">Description</span><span class="sxs-lookup"><span data-stu-id="de33a-108">Description</span></span>
+## <a name="description"></a><span data-ttu-id="fe4ed-108">Description</span><span class="sxs-lookup"><span data-stu-id="fe4ed-108">Description</span></span>
 
-<span data-ttu-id="de33a-109">La commande `dotnet nuget push` exécute un push d’un package sur le serveur et le publie.</span><span class="sxs-lookup"><span data-stu-id="de33a-109">The `dotnet nuget push` command pushes a package to the server and publishes it.</span></span> <span data-ttu-id="de33a-110">La commande push utilise les informations serveur et d’identification trouvées dans le fichier ou la chaîne de fichiers de configuration NuGet du système.</span><span class="sxs-lookup"><span data-stu-id="de33a-110">The push command uses server and credential details found in the system's NuGet config file or chain of config files.</span></span> <span data-ttu-id="de33a-111">Pour plus d’informations sur les fichiers de configuration, consultez [Configuring NuGet Behavior](/nuget/consume-packages/configuring-nuget-behavior) (Configuration du comportement de NuGet ).</span><span class="sxs-lookup"><span data-stu-id="de33a-111">For more information on config files, see [Configuring NuGet Behavior](/nuget/consume-packages/configuring-nuget-behavior).</span></span> <span data-ttu-id="de33a-112">La configuration par défaut de NuGet est obtenue en chargeant *%AppData%\NuGet\NuGet.config* (Windows) ou *$HOME/.local/share* (Linux/macOS), puis en chargeant tout fichier *nuget.config* ou *.nuget\nuget.config* à partir de la racine du lecteur jusqu’au répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="de33a-112">NuGet's default configuration is obtained by loading *%AppData%\NuGet\NuGet.config* (Windows) or *$HOME/.local/share* (Linux/macOS), then loading any *nuget.config* or *.nuget\nuget.config* starting from the root of drive and ending in the current directory.</span></span>
+<span data-ttu-id="fe4ed-109">La commande `dotnet nuget push` exécute un push d’un package sur le serveur et le publie.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-109">The `dotnet nuget push` command pushes a package to the server and publishes it.</span></span> <span data-ttu-id="fe4ed-110">La commande push utilise les informations serveur et d’identification trouvées dans le fichier ou la chaîne de fichiers de configuration NuGet du système.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-110">The push command uses server and credential details found in the system's NuGet config file or chain of config files.</span></span> <span data-ttu-id="fe4ed-111">Pour plus d’informations sur les fichiers de configuration, consultez [Configuring NuGet Behavior](/nuget/consume-packages/configuring-nuget-behavior) (Configuration du comportement de NuGet ).</span><span class="sxs-lookup"><span data-stu-id="fe4ed-111">For more information on config files, see [Configuring NuGet Behavior](/nuget/consume-packages/configuring-nuget-behavior).</span></span> <span data-ttu-id="fe4ed-112">La configuration par défaut de NuGet est obtenue en chargeant *%AppData%\NuGet\NuGet.config* (Windows) ou *$HOME/.local/share* (Linux/macOS), puis en chargeant tout fichier *nuget.config* ou *.nuget\nuget.config* à partir de la racine du lecteur jusqu’au répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-112">NuGet's default configuration is obtained by loading *%AppData%\NuGet\NuGet.config* (Windows) or *$HOME/.local/share* (Linux/macOS), then loading any *nuget.config* or *.nuget\nuget.config* starting from the root of drive and ending in the current directory.</span></span>
 
-## <a name="arguments"></a><span data-ttu-id="de33a-113">Arguments</span><span class="sxs-lookup"><span data-stu-id="de33a-113">Arguments</span></span>
+## <a name="arguments"></a><span data-ttu-id="fe4ed-113">Arguments</span><span class="sxs-lookup"><span data-stu-id="fe4ed-113">Arguments</span></span>
 
 - **`ROOT`**
 
-  <span data-ttu-id="de33a-114">Spécifie le chemin de fichier au package devant faire l’objet d’un envoi (push).</span><span class="sxs-lookup"><span data-stu-id="de33a-114">Specifies the file path to the package to be pushed.</span></span>
+  <span data-ttu-id="fe4ed-114">Spécifie le chemin de fichier au package devant faire l’objet d’un envoi (push).</span><span class="sxs-lookup"><span data-stu-id="fe4ed-114">Specifies the file path to the package to be pushed.</span></span>
 
-## <a name="options"></a><span data-ttu-id="de33a-115">Options</span><span class="sxs-lookup"><span data-stu-id="de33a-115">Options</span></span>
+## <a name="options"></a><span data-ttu-id="fe4ed-115">Options</span><span class="sxs-lookup"><span data-stu-id="fe4ed-115">Options</span></span>
 
 - **`-d|--disable-buffering`**
 
-  <span data-ttu-id="de33a-116">Désactive la mise en mémoire tampon pendant le transfert push vers un serveur HTTP(S) afin de réduire l’utilisation de la mémoire.</span><span class="sxs-lookup"><span data-stu-id="de33a-116">Disables buffering when pushing to an HTTP(S) server to reduce memory usage.</span></span>
+  <span data-ttu-id="fe4ed-116">Désactive la mise en mémoire tampon pendant le transfert push vers un serveur HTTP(S) afin de réduire l’utilisation de la mémoire.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-116">Disables buffering when pushing to an HTTP(S) server to reduce memory usage.</span></span>
 
 - **`--force-english-output`**
 
-  <span data-ttu-id="de33a-117">Force l’application à s’exécuter avec les paramètres régionaux Anglais (culture indifférente).</span><span class="sxs-lookup"><span data-stu-id="de33a-117">Forces the application to run using an invariant, English-based culture.</span></span>
+  <span data-ttu-id="fe4ed-117">Force l’application à s’exécuter avec les paramètres régionaux Anglais (culture indifférente).</span><span class="sxs-lookup"><span data-stu-id="fe4ed-117">Forces the application to run using an invariant, English-based culture.</span></span>
 
 - **`-h|--help`**
 
-  <span data-ttu-id="de33a-118">Affiche une aide brève pour la commande.</span><span class="sxs-lookup"><span data-stu-id="de33a-118">Prints out a short help for the command.</span></span>
+  <span data-ttu-id="fe4ed-118">Affiche une aide brève pour la commande.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-118">Prints out a short help for the command.</span></span>
 
 - **`--interactive`**
 
-  <span data-ttu-id="de33a-119">Autorise la commande pour bloquer et exige une action manuelle pour des opérations comme l'authentification.</span><span class="sxs-lookup"><span data-stu-id="de33a-119">Allows the command to block and requires manual action for operations like authentication.</span></span> <span data-ttu-id="de33a-120">Option disponible à partir du SDK .NET Core 2.2.</span><span class="sxs-lookup"><span data-stu-id="de33a-120">Option available since .NET Core 2.2 SDK.</span></span>
+  <span data-ttu-id="fe4ed-119">Autorise la commande pour bloquer et exige une action manuelle pour des opérations comme l'authentification.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-119">Allows the command to block and requires manual action for operations like authentication.</span></span> <span data-ttu-id="fe4ed-120">Option disponible à partir du SDK .NET Core 2.2.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-120">Option available since .NET Core 2.2 SDK.</span></span>
 
 - **`-k|--api-key <API_KEY>`**
 
-  <span data-ttu-id="de33a-121">Clé d’API pour le serveur.</span><span class="sxs-lookup"><span data-stu-id="de33a-121">The API key for the server.</span></span>
+  <span data-ttu-id="fe4ed-121">Clé d’API pour le serveur.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-121">The API key for the server.</span></span>
 
 - **`-n|--no-symbols`**
 
-  <span data-ttu-id="de33a-122">N’envoie pas les symboles (même s’ils sont présents).</span><span class="sxs-lookup"><span data-stu-id="de33a-122">Doesn't push symbols (even if present).</span></span>
+  <span data-ttu-id="fe4ed-122">N’envoie pas les symboles (même s’ils sont présents).</span><span class="sxs-lookup"><span data-stu-id="fe4ed-122">Doesn't push symbols (even if present).</span></span>
 
 - **`--no-service-endpoint`**
 
-  <span data-ttu-id="de33a-123">N’ajoute pas « api/v2/package » à l’URL source.</span><span class="sxs-lookup"><span data-stu-id="de33a-123">Doesn't append "api/v2/package" to the source URL.</span></span> <span data-ttu-id="de33a-124">Option disponible à partir du kit SDK .NET Core 2.1.</span><span class="sxs-lookup"><span data-stu-id="de33a-124">Option available since .NET Core 2.1 SDK.</span></span>
+  <span data-ttu-id="fe4ed-123">N’ajoute pas « api/v2/package » à l’URL source.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-123">Doesn't append "api/v2/package" to the source URL.</span></span> <span data-ttu-id="fe4ed-124">Option disponible à partir du kit SDK .NET Core 2.1.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-124">Option available since .NET Core 2.1 SDK.</span></span>
 
 - **`-s|--source <SOURCE>`**
 
-  <span data-ttu-id="de33a-125">Spécifie l’URL du serveur.</span><span class="sxs-lookup"><span data-stu-id="de33a-125">Specifies the server URL.</span></span> <span data-ttu-id="de33a-126">Cette option est obligatoire, sauf si la valeur de configuration de `DefaultPushSource` est définie dans le fichier de configuration NuGet.</span><span class="sxs-lookup"><span data-stu-id="de33a-126">This option is required unless `DefaultPushSource` config value is set in the NuGet config file.</span></span>
+  <span data-ttu-id="fe4ed-125">Spécifie l’URL du serveur.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-125">Specifies the server URL.</span></span> <span data-ttu-id="fe4ed-126">Cette option est obligatoire, sauf si la valeur de configuration de `DefaultPushSource` est définie dans le fichier de configuration NuGet.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-126">This option is required unless `DefaultPushSource` config value is set in the NuGet config file.</span></span>
 
 - **`--skip-duplicate`**
 
-  <span data-ttu-id="de33a-127">Lorsque vous poussez plusieurs paquets vers un serveur HTTP(S), traite n’importe quelle réponse 409 Conflict comme un avertissement afin que la poussée puisse continuer.</span><span class="sxs-lookup"><span data-stu-id="de33a-127">When pushing multiple packages to an HTTP(S) server, treats any 409 Conflict response as a warning so that the push can continue.</span></span> <span data-ttu-id="de33a-128">Disponible depuis .NET Core 3.1 SDK.</span><span class="sxs-lookup"><span data-stu-id="de33a-128">Available since .NET Core 3.1 SDK.</span></span>
+  <span data-ttu-id="fe4ed-127">Lorsque vous poussez plusieurs paquets vers un serveur HTTP(S), traite n’importe quelle réponse 409 Conflict comme un avertissement afin que la poussée puisse continuer.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-127">When pushing multiple packages to an HTTP(S) server, treats any 409 Conflict response as a warning so that the push can continue.</span></span> <span data-ttu-id="fe4ed-128">Disponible depuis .NET Core 3.1 SDK.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-128">Available since .NET Core 3.1 SDK.</span></span>
 
 - **`-sk|--symbol-api-key <API_KEY>`**
 
-  <span data-ttu-id="de33a-129">Clé d’API pour le serveur de symboles.</span><span class="sxs-lookup"><span data-stu-id="de33a-129">The API key for the symbol server.</span></span>
+  <span data-ttu-id="fe4ed-129">Clé d’API pour le serveur de symboles.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-129">The API key for the symbol server.</span></span>
 
 - **`-ss|--symbol-source <SOURCE>`**
 
-  <span data-ttu-id="de33a-130">Spécifie l’URL du serveur de symboles.</span><span class="sxs-lookup"><span data-stu-id="de33a-130">Specifies the symbol server URL.</span></span>
+  <span data-ttu-id="fe4ed-130">Spécifie l’URL du serveur de symboles.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-130">Specifies the symbol server URL.</span></span>
 
 - **`-t|--timeout <TIMEOUT>`**
 
-  <span data-ttu-id="de33a-131">Spécifie le délai d’attente, en secondes, pour effectuer un push vers un serveur.</span><span class="sxs-lookup"><span data-stu-id="de33a-131">Specifies the timeout for pushing to a server in seconds.</span></span> <span data-ttu-id="de33a-132">La valeur par défaut est 300 secondes (5 minutes).</span><span class="sxs-lookup"><span data-stu-id="de33a-132">Defaults to 300 seconds (5 minutes).</span></span> <span data-ttu-id="de33a-133">Si vous spécifiez 0 (zéro seconde), la valeur par défaut s’applique.</span><span class="sxs-lookup"><span data-stu-id="de33a-133">Specifying 0 (zero seconds) applies the default value.</span></span>
+  <span data-ttu-id="fe4ed-131">Spécifie le délai d’attente, en secondes, pour effectuer un push vers un serveur.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-131">Specifies the timeout for pushing to a server in seconds.</span></span> <span data-ttu-id="fe4ed-132">La valeur par défaut est 300 secondes (5 minutes).</span><span class="sxs-lookup"><span data-stu-id="fe4ed-132">Defaults to 300 seconds (5 minutes).</span></span> <span data-ttu-id="fe4ed-133">Si vous spécifiez 0 (zéro seconde), la valeur par défaut s’applique.</span><span class="sxs-lookup"><span data-stu-id="fe4ed-133">Specifying 0 (zero seconds) applies the default value.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="de33a-134">Exemples</span><span class="sxs-lookup"><span data-stu-id="de33a-134">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="fe4ed-134">Exemples</span><span class="sxs-lookup"><span data-stu-id="fe4ed-134">Examples</span></span>
 
-- <span data-ttu-id="de33a-135">Envoie (push) *foo.nupkg* à la source de push par défaut, en spécifiant une clé API :</span><span class="sxs-lookup"><span data-stu-id="de33a-135">Pushes *foo.nupkg* to the default push source, specifying an API key:</span></span>
+- <span data-ttu-id="fe4ed-135">Envoie (push) *foo.nupkg* à la source de push par défaut, en spécifiant une clé API :</span><span class="sxs-lookup"><span data-stu-id="fe4ed-135">Pushes *foo.nupkg* to the default push source, specifying an API key:</span></span>
 
   ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
   ```
 
-- <span data-ttu-id="de33a-136">Poussez *foo.nupkg* sur le serveur officiel NuGet, en spécifiant une clé API :</span><span class="sxs-lookup"><span data-stu-id="de33a-136">Push *foo.nupkg* to the official NuGet server, specifying an API key:</span></span>
+- <span data-ttu-id="fe4ed-136">Poussez *foo.nupkg* sur le serveur officiel NuGet, en spécifiant une clé API :</span><span class="sxs-lookup"><span data-stu-id="fe4ed-136">Push *foo.nupkg* to the official NuGet server, specifying an API key:</span></span>
 
   ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://api.nuget.org/v3/index.json
   ```
   
-  * <span data-ttu-id="de33a-137">Envoyez (push) *foo.nupkg* à la source de push personnalisée `https://customsource`, en spécifiant une clé API :</span><span class="sxs-lookup"><span data-stu-id="de33a-137">Push *foo.nupkg* to the custom push source `https://customsource`, specifying an API key:</span></span>
+  * <span data-ttu-id="fe4ed-137">Envoyez (push) *foo.nupkg* à la source de push personnalisée `https://customsource`, en spécifiant une clé API :</span><span class="sxs-lookup"><span data-stu-id="fe4ed-137">Push *foo.nupkg* to the custom push source `https://customsource`, specifying an API key:</span></span>
 
   ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/
   ```
 
-- <span data-ttu-id="de33a-138">Effectuer une transmission de type push de *foo.nupkg* vers la source de push par défaut :</span><span class="sxs-lookup"><span data-stu-id="de33a-138">Pushes *foo.nupkg* to the default push source:</span></span>
+- <span data-ttu-id="fe4ed-138">Effectuer une transmission de type push de *foo.nupkg* vers la source de push par défaut :</span><span class="sxs-lookup"><span data-stu-id="fe4ed-138">Pushes *foo.nupkg* to the default push source:</span></span>
 
   ```dotnetcli
   dotnet nuget push foo.nupkg
   ```
 
-- <span data-ttu-id="de33a-139">Effectuer une transmission de type push de *foo.symbols.nupkg* vers la source de symboles par défaut :</span><span class="sxs-lookup"><span data-stu-id="de33a-139">Pushes *foo.symbols.nupkg* to the default symbols source:</span></span>
+- <span data-ttu-id="fe4ed-139">Effectuer une transmission de type push de *foo.symbols.nupkg* vers la source de symboles par défaut :</span><span class="sxs-lookup"><span data-stu-id="fe4ed-139">Pushes *foo.symbols.nupkg* to the default symbols source:</span></span>
 
   ```dotnetcli
   dotnet nuget push foo.symbols.nupkg
   ```
 
-- <span data-ttu-id="de33a-140">Envoie (push) *foo.nupkg* à la source de push par défaut, en spécifiant un délai d’attente de 360 secondes :</span><span class="sxs-lookup"><span data-stu-id="de33a-140">Pushes *foo.nupkg* to the default push source, specifying a 360-second timeout:</span></span>
+- <span data-ttu-id="fe4ed-140">Envoie (push) *foo.nupkg* à la source de push par défaut, en spécifiant un délai d’attente de 360 secondes :</span><span class="sxs-lookup"><span data-stu-id="fe4ed-140">Pushes *foo.nupkg* to the default push source, specifying a 360-second timeout:</span></span>
 
   ```dotnetcli
   dotnet nuget push foo.nupkg --timeout 360
   ```
 
-- <span data-ttu-id="de33a-141">Effectuer une transmission de type push de tous les fichiers *.nupkg* du répertoire actif vers la source de push par défaut :</span><span class="sxs-lookup"><span data-stu-id="de33a-141">Pushes all *.nupkg* files in the current directory to the default push source:</span></span>
+- <span data-ttu-id="fe4ed-141">Effectuer une transmission de type push de tous les fichiers *.nupkg* du répertoire actif vers la source de push par défaut :</span><span class="sxs-lookup"><span data-stu-id="fe4ed-141">Pushes all *.nupkg* files in the current directory to the default push source:</span></span>
 
   ```dotnetcli
   dotnet nuget push *.nupkg
   ```
 
   > [!NOTE]
-  > <span data-ttu-id="de33a-142">Si cette commande ne fonctionne pas, cela peut être dû à un bogue qui existait dans les versions antérieures du SDK (Kit SDK .NET Core 2.1 et versions antérieures).</span><span class="sxs-lookup"><span data-stu-id="de33a-142">If this command doesn't work, it might be due to a bug that existed in older versions of the SDK (.NET Core 2.1 SDK and earlier versions).</span></span>
-  > <span data-ttu-id="de33a-143">Pour résoudre ce problème, mettez à niveau votre version du SDK ou exécutez la commande suivante à la place : `dotnet nuget push **/*.nupkg`</span><span class="sxs-lookup"><span data-stu-id="de33a-143">To fix this, upgrade your SDK version or run the following command instead: `dotnet nuget push **/*.nupkg`</span></span>
+  > <span data-ttu-id="fe4ed-142">Si cette commande ne fonctionne pas, cela peut être dû à un bogue qui existait dans les versions antérieures du SDK (Kit SDK .NET Core 2.1 et versions antérieures).</span><span class="sxs-lookup"><span data-stu-id="fe4ed-142">If this command doesn't work, it might be due to a bug that existed in older versions of the SDK (.NET Core 2.1 SDK and earlier versions).</span></span>
+  > <span data-ttu-id="fe4ed-143">Pour résoudre ce problème, mettez à niveau votre version du SDK ou exécutez la commande suivante à la place : `dotnet nuget push **/*.nupkg`</span><span class="sxs-lookup"><span data-stu-id="fe4ed-143">To fix this, upgrade your SDK version or run the following command instead: `dotnet nuget push **/*.nupkg`</span></span>
 
-- <span data-ttu-id="de33a-144">Pousse tous les fichiers *.nupkg* même si une réponse 409 Conflict est retournée par un serveur HTTP(S) :</span><span class="sxs-lookup"><span data-stu-id="de33a-144">Pushes all *.nupkg* files even if a 409 Conflict response is returned by an HTTP(S) server:</span></span>
+- <span data-ttu-id="fe4ed-144">Pousse tous les fichiers *.nupkg* même si une réponse 409 Conflict est retournée par un serveur HTTP(S) :</span><span class="sxs-lookup"><span data-stu-id="fe4ed-144">Pushes all *.nupkg* files even if a 409 Conflict response is returned by an HTTP(S) server:</span></span>
 
   ```dotnetcli
   dotnet nuget push *.nupkg --skip-duplicate
