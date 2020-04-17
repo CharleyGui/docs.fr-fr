@@ -119,7 +119,7 @@
       href: programming-guide/types/index.md
     - name: Types références Nullables
       href: nullable-references.md
-    - name: Décrire les API Nullables à l’aide d’attributs et de contraintes
+    - name: Mettre à jour les signatures API vers des références Nullables
       href: nullable-attributes.md
     - name: Espaces de noms
       href: programming-guide/namespaces/index.md
@@ -355,16 +355,10 @@
               href: programming-guide/concepts/attributes/index.md
             - name: Création d'attributs personnalisés
               href: programming-guide/concepts/attributes/creating-custom-attributes.md
-            - name: AttributeUsage
-              href: programming-guide/concepts/attributes/attributeusage.md
             - name: Accès à des attributs à l'aide de la réflexion
               href: programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md
             - name: Guide pratique pour créer une union C/C++ en utilisant des attributs
               href: programming-guide/concepts/attributes/how-to-create-a-c-cpp-union-by-using-attributes.md
-            - name: Attributs courants
-              href: programming-guide/concepts/attributes/common-attributes.md
-        - name: Informations relatives à l’appelant
-          href: programming-guide/concepts/caller-information.md
         - name: Collections
           href: programming-guide/concepts/collections.md
         - name: Covariance et contravariance
@@ -1664,6 +1658,19 @@
           href: language-reference/tokens/interpolated.md
         - name: '@ -- identificateur textuel'
           href: language-reference/tokens/verbatim.md
+    - name: Attributs lus par le compilateur
+      items:
+        - name: Attributs globaux
+          displayName: 'AssemblyName, AssemblyVersion, AssemblyCulture, AssemblyFlags, AssemblyProduct, AssemblyTrademark, AssemblyInformationalVersion, AssemblyCompany, AssemblyCopyright, AssemblyFileVersion, CLSCompliant, AssemblyTitle, AssemblyDescription, AssemblyConfiguration, AssemblyDefaultAlias'
+        - name: Général
+          displayName: 'Conditional, Obsolete, AttributeUsage'
+          href: language-reference/attributes/general.md
+        - name: Informations relatives à l’appelant
+          displayName: 'CallerFilePath, CallerLineNumber, CallerMemberName'
+          href: language-reference/attributes/caller-information.md
+        - name: Analyse statique Nullable
+          displayName: 'AllowNull, DisallowNull, MaybeNull, NotNull, MaybeNullWhen, NotNullWhen, NotNullIfNotNull, DoesNotReturn, DoesNotReturnIf'
+          href: language-reference/attributes/nullable-analysis.md
     - name: 'Directives de préprocesseur C#'
       items:
         - name: Vue d'ensemble
