@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 11a322278ce3ff38964fe2fa389e0b4a58897ec4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f2299ac807c845dab482306cc4c710560bb7f1e7
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77449021"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607860"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Déployer des applications .NET Core avec Visual Studio
 
@@ -75,9 +75,9 @@ Pour exécuter un déploiement dépendant du framework avec une ou plusieurs dé
 
 1. Si `Newtonsoft.Json` est déjà installé sur votre système, ajoutez-le à votre projet en sélectionnant votre projet dans le volet droit de l’onglet **Gérer les packages de la solution**.
 
-Un déploiement dépendant du cadre avec des dépendances de tiers n’est aussi portable que ses dépendances de tiers. Par exemple, si une bibliothèque tierce prend uniquement en charge macOS, l’application n’est pas portable sur des systèmes Windows. Cela se produit si la dépendance tierce elle-même dépend du code natif. Un [serveur Kestrel](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel) constitue un bon exemple, car il nécessite une dépendance native à [libuv](https://github.com/libuv/libuv). Quand un déploiement dépendant du framework est créé pour une application avec ce type de dépendance tierce, le résultat publié contient un dossier pour chaque [identificateur de runtime](../rid-catalog.md) pris en charge par la dépendance native (et qui existe dans le package NuGet).
+Un déploiement dépendant du cadre avec des dépendances de tiers n’est aussi portable que ses dépendances de tiers. Par exemple, si une bibliothèque tierce prend uniquement en charge macOS, l’application n’est pas portable sur des systèmes Windows. Cela se produit si la dépendance tierce elle-même dépend du code natif. Un [serveur Kestrel](/aspnet/core/fundamentals/servers/kestrel) constitue un bon exemple, car il nécessite une dépendance native à [libuv](https://github.com/libuv/libuv). Quand un déploiement dépendant du framework est créé pour une application avec ce type de dépendance tierce, le résultat publié contient un dossier pour chaque [identificateur de runtime](../rid-catalog.md) pris en charge par la dépendance native (et qui existe dans le package NuGet).
 
-## <a name="simpleSelf"></a> Déploiement autonome sans dépendances tierces
+## <a name="self-contained-deployment-without-third-party-dependencies"></a><a name="simpleSelf"></a> Déploiement autonome sans dépendances tierces
 
 L’exécution d’un déploiement autonome sans aucune dépendance tierce implique la création du projet, la modification du fichier *csproj*, la génération, le test et la publication de l’application. Un exemple simple écrit en C# illustre le processus. Commencez par créer, coder et tester votre projet comme pour un déploiement dépendant du framework :
 

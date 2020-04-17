@@ -4,12 +4,12 @@ titleSuffix: ''
 description: Découvrir les technologies .NET Framework non disponibles sur .NET Core
 author: cartermp
 ms.date: 04/30/2019
-ms.openlocfilehash: bd2488de653ecdfed261100b4c9019bea58fcab3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7dfec63870950f12ec933ebf09041b3c8ce2cbb5
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77092939"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607795"
 ---
 # <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologies .NET Framework non disponibles sur .NET Core
 
@@ -29,7 +29,7 @@ Pour faciliter la migration de code à partir du .NET Framework, .NET Core expos
 
 Pour la communication entre les processus, considérez les mécanismes de communication interprofessionnelle (IPC) comme une alternative à la refonte, comme la <xref:System.IO.Pipes> classe ou la <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> classe.
 
-Pour la communication entre ordinateurs, utilisez plutôt une solution réseau. Choisissez de préférence un protocole de texte brut à faible charge, par exemple HTTP. Le [serveur web Kestrel](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), utilisé par ASP.NET Core, est une possibilité. En outre, <xref:System.Net.Sockets> envisager d’utiliser pour le réseau, les scénarios multi-machines. Pour plus d’options, consultez la page [Projets de développement .NET open source : messagerie](https://github.com/Microsoft/dotnet/blob/master/dotnet-developer-projects.md#messaging).
+Pour la communication entre ordinateurs, utilisez plutôt une solution réseau. Choisissez de préférence un protocole de texte brut à faible charge, par exemple HTTP. Le [serveur web Kestrel](/aspnet/core/fundamentals/servers/kestrel), utilisé par ASP.NET Core, est une possibilité. En outre, <xref:System.Net.Sockets> envisager d’utiliser pour le réseau, les scénarios multi-machines. Pour plus d’options, consultez la page [Projets de développement .NET open source : messagerie](https://github.com/Microsoft/dotnet/blob/master/dotnet-developer-projects.md#messaging).
 
 ## <a name="code-access-security-cas"></a>Sécurité d'accès du code
 

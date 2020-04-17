@@ -4,12 +4,12 @@ description: ML.NET vous donne la possibilité d’ajouter le Machine Learning a
 ms.date: 11/5/2019
 ms.topic: overview
 ms.custom: mvc
-ms.openlocfilehash: 169250adf81992ad0025e78eb9c8f151107bcf40
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0929005e02ad9b43636213735f8c7232aa6d4f42
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79185857"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607769"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Présentation de ML.NET et de son fonctionnement
 
@@ -105,7 +105,7 @@ Revoyons maintenant tous ces concepts un peu plus en détail.
 
 Un modèle ML.NET est un objet qui contient des transformations à effectuer sur vos données d’entrée pour produire la sortie prédite.
 
-### <a name="basic"></a>De base
+### <a name="basic"></a>Basic
 
 Le modèle de base, le plus simple, est la régression linéaire à deux dimensions, où une quantité continue est proportionnelle à une autre, comme dans l’exemple des prix de maisons ci-dessus.
 
@@ -230,7 +230,7 @@ Vous pouvez transformer les données d’entrée en prédictions soit en bloc, s
     var price = predEngine.Predict(size);
 ```
 
-La méthode `CreatePredictionEngine()` a une classe d’entrée et une classe de sortie. Les noms de champs et/ou les attributs de code déterminent les noms des colonnes de données utilisées durant l’entraînement du modèle et la prédiction de données. Pour savoir [comment effectuer une prédiction unique](./how-to-guides/single-predict-model-ml-net.md), consultez la section des guides pratiques.
+La méthode `CreatePredictionEngine()` a une classe d’entrée et une classe de sortie. Les noms de champs et/ou les attributs de code déterminent les noms des colonnes de données utilisées durant l’entraînement du modèle et la prédiction de données. Pour plus d’informations, voir [Faites des prédictions avec un modèle formé](how-to-guides/machine-learning-model-predictions-ml-net.md).
 
 ### <a name="data-models-and-schema"></a>Schéma et modèles de données
 

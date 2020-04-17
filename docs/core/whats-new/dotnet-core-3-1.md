@@ -6,18 +6,18 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 323a2390f079c17b81db01e4e3787916251943bf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b52615a3fb288a6ca0622deb83f4db3c8e3587fb
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78156554"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607904"
 ---
 # <a name="whats-new-in-net-core-31"></a>Nouveautés de .NET Core 3.1
 
 Cet article décrit ce qui est nouveau dans .NET Core 3.1. Cette version contient des améliorations mineures à .NET Core 3.0, en se concentrant sur les petites, mais importantes, correctifs. La caractéristique la plus importante sur .NET Core 3.1 est qu’il s’agit d’une [version de support à long terme (LTS).](#long-term-support)
 
-Si vous utilisez Visual Studio 2019, vous devez mettre à jour sur [Visual Studio 2019 version 16.4](https://visualstudio.microsoft.com/downloads/) pour travailler avec des projets .NET Core 3.1. Pour plus d’informations sur les nouveautés de Visual Studio, voir [What’s New in Visual Studio 2019 version 16.4](/visualstudio/releases/2019/release-notes#whats-new-in-visual-studio-2019-version-164).
+Si vous utilisez Visual Studio 2019, vous devez mettre à jour sur [Visual Studio 2019 version 16.4 ou plus tard](https://visualstudio.microsoft.com/downloads/) pour travailler avec des projets .NET Core 3.1. Pour plus d’informations sur ce qui est nouveau dans Visual Studio version 16.4, voir [What’s New in Visual Studio 2019 version 16.4](/visualstudio/releases/2019/release-notes-v16.4#whats-new-in-visual-studio-2019-version-164).
 
 Visual Studio for Mac prend également en charge et inclut .NET Core 3.1 dans Visual Studio pour Mac 8.4.
 
@@ -67,7 +67,7 @@ Pour plus d’informations sur le `UseAppHost` paramètre, voir [propriétés MS
 
 ## <a name="windows-forms"></a>Windows Forms
 
-*Windows uniquement*
+*Windows seulement*
 
 > [!WARNING]
 > Il y a des changements de rupture dans les formulaires Windows.
@@ -88,7 +88,7 @@ Nous vous recommandons de mettre à jour vos applications à .NET Core 3.1 et de
 
 ## <a name="ccli"></a>C++/CLI
 
-*Windows uniquement*
+*Windows seulement*
 
 Un soutien a été ajouté pour la création de projets CMD/CLI (également connus sous le nom de « C «géré ».). Les binaires produits à partir de ces projets sont compatibles avec .NET Core 3.0 et les versions ultérieures.
 

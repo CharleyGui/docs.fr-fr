@@ -3,14 +3,14 @@ title: Choisir entre .NET Core et .NET Framework pour les applications serveur
 description: Guide sur l’implémentation de .NET à envisager pour générer une application serveur dans .NET.
 author: cartermp
 ms.date: 06/19/2018
-ms.openlocfilehash: 393d6d89fb299e87edf55cf50991537e8afe9753
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 885a7fb3419eafa5d88ef621cf6ad04a8d48bb59
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80344147"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607491"
 ---
-# <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Choix entre .NET Core et .NET Framework pour les applications serveur
+# <a name="choose-between-net-core-and-net-framework-for-server-apps"></a>Choisir entre .NET Core et .NET Framework pour les applications serveur
 
 Il existe deux implémentations pour générer des applications serveur avec .NET : .NET Framework et .NET Core. Toutes deux partagent de nombreux composants et vous permettent de partager du code entre les deux. Toutefois, il existe des différences fondamentales entre les deux et votre choix dépend de ce que vous souhaitez accomplir.  Cet article fournit des conseils sur l’utilisation de chacune.
 
@@ -103,8 +103,8 @@ Certaines plateformes Microsoft ou tierces ne prennent pas en charge .NET Core. 
 ## <a name="see-also"></a>Voir aussi
 
 - [Choisir entre ASP.NET et ASP.NET Core](/aspnet/core/choose-aspnet-framework)
-- [ASP.NET Core ciblant .NET Framework](/aspnet/core#aspnet-core-targeting-net-framework)
-- [Cadres cibles](frameworks.md)
+- [ASP.NET Core ciblant .NET Framework](/aspnet/core/introduction-to-aspnet-core#aspnet-core-targeting-net-framework)
+- [Versions cibles de .NET Framework](frameworks.md)
 - [Guide de base .NET](../core/index.yml)
 - [Portage vers .NET Core à partir du .NET Framework](../core/porting/index.md)
 - [Introduction à .NET et à Docker](../core/docker/introduction.md)

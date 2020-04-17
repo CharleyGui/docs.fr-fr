@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 12/12/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 2dfa3cdab9de47b55f7a3f73f0d6e9460390700c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a050d7673f7ef00cf11d959d04e709222cb2be8f
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76920101"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607556"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>Tutorial: Inspection visuelle automatisée à l’aide de l’apprentissage de transfert avec l’API de classification des images ML.NET
 
@@ -26,9 +26,9 @@ Dans ce tutoriel, vous allez apprendre à :
 > - Utiliser l’apprentissage de transfert pour former un modèle personnalisé de classification d’image TensorFlow
 > - Classer les images avec le modèle personnalisé
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
-- [Visual Studio 2017 version 15.6 ou plus tard](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec le ".NET Core cross-platform development" charge de travail installé.
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou plus tard ou Visual Studio 2017 version 15.6 ou plus tard avec le ".NET Core cross-platform development" charge de travail installée.
 
 ## <a name="image-classification-transfer-learning-sample-overview"></a>Aperçu de l’échantillon d’apprentissage de transfert de classification d’image
 
@@ -343,7 +343,7 @@ Ci-dessous la `Main` méthode, créez `OutputPrediction` une nouvelle méthode u
 
     [!code-csharp [ClassifyImages](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L66)]
 
-## <a name="run-the-application"></a>Exécuter l’application
+## <a name="run-the-application"></a>Exécution de l'application
 
 Exécutez votre application console. La sortie devrait être similaire à celle ci-dessous. Des messages d’avertissement ou de traitement peuvent s’afficher, mais nous les avons supprimés dans les résultats suivants pour plus de clarté. Pour la brièveté, la sortie a été condensée.
 

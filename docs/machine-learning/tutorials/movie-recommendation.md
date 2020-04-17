@@ -5,12 +5,12 @@ author: briacht
 ms.date: 09/30/2019
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
-ms.openlocfilehash: a221289d0c232863f03a275c26dce835f2878bf7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a1d7ef6226580fd3172b5714f9d7358298ba6668
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78241102"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607995"
 ---
 # <a name="tutorial-build-a-movie-recommender-using-matrix-factorization-with-mlnet"></a>Tutorial: Construire un lecteur de film en utilisant la factorisation de matrice avec ML.NET
 
@@ -36,9 +36,9 @@ Vous effectuerez les étapes suivantes pour accomplir votre tâche, ainsi que to
 3. [Évaluer votre modèle](#evaluate-your-model)
 4. [Utiliser le modèle](#use-your-model)
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
-* [Visual Studio 2017 version 15.6 ou plus tard](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec le ".NET Core cross-platform development" charge de travail installé.
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou plus tard ou Visual Studio 2017 version 15.6 ou plus tard avec le ".NET Core cross-platform development" charge de travail installée.
 
 ## <a name="select-the-appropriate-machine-learning-task"></a>Sélectionner la tâche d’apprentissage automatique appropriée
 
@@ -96,7 +96,7 @@ En machine learning, les colonnes qui servent à élaborer une prédiction sont 
 
 Puisque vous souhaitez prédire des évaluations de films, c’est la colonne d’évaluation qui est la `Label`. Les trois autres colonnes, `userId`, `movieId` et `timestamp`, sont toutes des `Features` utilisées pour prédire la `Label`.
 
-| Fonctionnalités      | Étiquette         |
+| Fonctionnalités      | Etiquette         |
 | ------------- |:-------------:|
 | `userId`        |    `rating`     |
 | `movieId`      |               |
@@ -106,7 +106,7 @@ C’est à vous de décider quelles `Features` sont utilisées pour prévoir la 
 
 Dans ce cas, vous devez retirer la colonne `timestamp` comme `Feature`, car l’horodatage n’affecte pas vraiment comment un utilisateur évalue un film donné et ne contribue donc pas à la précision de la prédiction :
 
-| Fonctionnalités      | Étiquette         |
+| Fonctionnalités      | Etiquette         |
 | ------------- |:-------------:|
 | `userId`        |    `rating`     |
 | `movieId`      |               |
@@ -199,7 +199,7 @@ Définissez les transformations de données en ajoutant le code suivant à `Buil
 
 Étant donné que `userId` et `movieId` représentent des utilisateurs et des titres de films, et non des valeurs réelles, vous utilisez la méthode [MapValueToKey()](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey%2A) pour transformer chaque `userId` et chaque `movieId` en colonne `Feature` de type de clé numérique (un format accepté par les algorithmes de suggestion) et vous les ajoutez en tant que nouvelles colonnes de jeu de données :
 
-| userId | movieId | Étiquette | userIdEncoded | movieIdEncoded |
+| userId | movieId | Etiquette | userIdEncoded | movieIdEncoded |
 | ------------- |:-------------:| -----:|-----:|-----:|
 | 1 | 1 | 4 | userKey1 | movieKey1 |
 | 1 | 3 | 4 | userKey1 | movieKey2 |

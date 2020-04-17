@@ -3,12 +3,12 @@ title: Arrangements de config de collecteur d’ordures
 description: Découvrez les paramètres de course pour configurer comment le collecteur d’ordures gère la mémoire des applications .NET Core.
 ms.date: 01/09/2020
 ms.topic: reference
-ms.openlocfilehash: 044083d69601f5092724a46d358b2ee5673d428d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dfb641eeda03d1acaa4771bd6253fcb33c4082a6
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76733519"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607808"
 ---
 # <a name="run-time-configuration-options-for-garbage-collection"></a>Options de configuration en temps d’exécution pour la collecte des ordures
 
@@ -117,8 +117,8 @@ Pour plus d’informations sur certains de ces paramètres, voir le [terrain int
 
 - Limite le nombre de tas créés par le collecteur d’ordures.
 - S’applique uniquement à la collecte des ordures du serveur.
-- Si l’affinité du processeur GC est activée, ce qui `n` est la valeur par défaut, `n` le réglage du nombre de tas affinitise les tas/threads GC aux premiers processeurs. (Utilisez le masque affinitize ou affinitisez les paramètres des plages pour spécifier exactement les processeurs à affinitiser.)
-- Si l’affinité du processeur GC est désactivée, ce paramètre limite le nombre de tas de GC.
+- Si [l’affinité du processeur GC](#systemgcnoaffinitizecomplus_gcnoaffinitize) est activée, ce qui `n` est la valeur par défaut, `n` le réglage du nombre de tas affinitise les tas/threads GC aux premiers processeurs. (Utilisez le [masque affinitize](#systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask) ou [affinitisez](#systemgcgcheapaffinitizerangescomplus_gcheapaffinitizeranges) les paramètres des plages pour spécifier exactement les processeurs à affinitiser.)
+- Si [l’affinité du processeur GC](#systemgcnoaffinitizecomplus_gcnoaffinitize) est désactivée, ce paramètre limite le nombre de tas de GC.
 - Pour plus d’informations, voir les [remarques GCHeapCount](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md#remarks).
 
 | | Nom du paramètre | Valeurs | Version introduite |
@@ -145,7 +145,7 @@ Exemple :
 ### <a name="systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask"></a>System.GC.HeapAffinitizeMask/COMPlus_GCHeapAffinitizeMask
 
 - Spécifie les processeurs exacts que les fils de collecteur d’ordures devraient utiliser.
-- Si l’affinité du `System.GC.NoAffinitize` `true`processeur est désactivée par réglage à , ce paramètre est ignoré.
+- Si [l’affinité du processeur GC](#systemgcnoaffinitizecomplus_gcnoaffinitize) est désactivée, ce paramètre est ignoré.
 - S’applique uniquement à la collecte des ordures du serveur.
 - La valeur est un masque peu qui définit les processeurs qui sont disponibles pour le processus. Par exemple, une valeur décimale de 1023 (ou une valeur hexadecimale de 0x3FF ou 3FF si vous utilisez la variable de l’environnement) est 0011 1111 1111 en notation binaire. Cela spécifie que les 10 premiers processeurs doivent être utilisés. Pour spécifier les 10 processeurs suivants, c’est-à-dire les processeurs 10-19, spécifient une valeur décimale de 1047552 (ou une valeur hexadecimale de 0xFFC00 ou FFC00), ce qui équivaut à une valeur binaire de 1111 1111 1100 000 0000.
 
@@ -170,9 +170,9 @@ Exemple :
 ### <a name="systemgcgcheapaffinitizerangescomplus_gcheapaffinitizeranges"></a>System.GC.GCHeapAffinitizeRanges/COMPlus_GCHeapAffinitizeRanges
 
 - Spécifie la liste des processeurs à utiliser pour les fils de collecteur d’ordures.
-- Ce paramètre `System.GC.HeapAffinitizeMask`est similaire à , sauf qu’il vous permet de spécifier plus de 64 processeurs.
+- Ce paramètre est similaire à [System.GC.HeapAffinitizeMask](#systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask), sauf qu’il vous permet de spécifier plus de 64 processeurs.
 - Pour les systèmes d’exploitation Windows, préfixez le numéro de processeur ou la plage avec le [groupe CPU](/windows/win32/procthread/processor-groups)correspondant, par exemple, "0:1-10,0:12,1:50-52,1:70".
-- Si l’affinité du `System.GC.NoAffinitize` `true`processeur est désactivée par réglage à , ce paramètre est ignoré.
+- Si [l’affinité du processeur GC](#systemgcnoaffinitizecomplus_gcnoaffinitize) est désactivée, ce paramètre est ignoré.
 - S’applique uniquement à la collecte des ordures du serveur.
 - Pour plus d’informations, voir [Faire la configuration CPU mieux pour GC sur les machines avec > 64 processeurs](https://devblogs.microsoft.com/dotnet/making-cpu-configuration-better-for-gc-on-machines-with-64-cpus/) sur le blog de Maoni Stephens.
 
@@ -239,6 +239,11 @@ Exemple :
 ### <a name="systemgcheaphardlimitcomplus_gcheaphardlimit"></a>System.GC.HeapHardLimit/COMPlus_GCHeapHardLimit
 
 - Spécifie la taille maximale de commit, dans les octets, pour le tas GC et la comptabilité GC.
+- Ce paramètre ne s’applique qu’aux ordinateurs 64 bits.
+- La valeur par défaut, qui ne s’applique que dans certains cas, est la moindre de 20 Mo ou 75% de la limite de mémoire sur le conteneur. La valeur par défaut s’applique si :
+
+  - Le processus est en cours d’exécution à l’intérieur d’un conteneur qui a une limite de mémoire spécifiée.
+  - [System.GC.HeapHardLimitPercent](#systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent) n’est pas défini.
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
@@ -262,7 +267,14 @@ Exemple :
 
 ### <a name="systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent"></a>System.GC.HeapHardLimitPercent/COMPlus_GCHeapHardLimitPercent
 
-- Spécifie l’utilisation du tas GC en pourcentage de la mémoire totale.
+- Spécifie l’utilisation autorisée de tas de GC en pourcentage de la mémoire physique totale.
+- Si [System.GC.HeapHardLimit](#systemgcheaphardlimitcomplus_gcheaphardlimit) est également défini, ce paramètre est ignoré.
+- Ce paramètre ne s’applique qu’aux ordinateurs 64 bits.
+- Si le processus est en cours d’exécution à l’intérieur d’un conteneur qui a une limite de mémoire spécifiée, le pourcentage est calculé comme un pourcentage de cette limite de mémoire.
+- La valeur par défaut, qui ne s’applique que dans certains cas, est la moindre de 20 Mo ou 75% de la limite de mémoire sur le conteneur. La valeur par défaut s’applique si :
+
+  - Le processus est en cours d’exécution à l’intérieur d’un conteneur qui a une limite de mémoire spécifiée.
+  - [System.GC.HeapHardLimit](#systemgcheaphardlimitcomplus_gcheaphardlimit) n’est pas défini.
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |

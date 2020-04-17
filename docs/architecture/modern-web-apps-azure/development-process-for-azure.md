@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 7a641c1b6665af6e9e78ef182174b360041d74aa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 640cfebea3c70314be4a597bc07b0dc6854f5848
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77450039"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607891"
 ---
 # <a name="development-process-for-azure"></a>Processus de développement pour Azure
 
@@ -58,13 +58,13 @@ Créez un service d’application Azure où vous déploierez votre application. 
 
 Votre processus de génération CI effectue une génération automatique chaque fois que du nouveau code est validé dans le référentiel de contrôle de code source du projet. Ainsi, vous savez immédiatement que le code a été généré (et, dans l’idéal, réussit les tests automatisés) et peut être déployé. Cette build CI génère un artefact de package de déploiement web et le publie en vue de sa consommation par votre processus CD.
 
-[Définir votre processus de build CI](https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core#ci)
+[Définir votre processus de build CI](https://docs.microsoft.com/azure/devops/pipelines/ecosystems/dotnet-core)
 
 Veillez à activer l’intégration continue afin que le système mette en file d’attente une build chaque fois qu’un membre de votre équipe valide du nouveau code. Testez la build et vérifiez qu’elle produit un package de déploiement web comme l’un de ses artefacts.
 
 Quand une build réussit, votre processus CD déploie les résultats de votre build CI sur votre application web Azure. Pour configurer cela, créez et configurez une *Mise en production*, qui sera déployée sur votre service d’application Azure.
 
-[Définir votre processus de mise en production CD](https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core#cd)
+[Déployer une application web Azure](https://docs.microsoft.com/azure/devops/pipelines/targets/webapp)
 
 Une fois que votre pipeline CI/CD est configuré, vous pouvez simplement effectuer des mises à jour de votre application web et les valider dans le contrôle de code source afin de les déployer.
 

@@ -4,12 +4,12 @@ description: Apprenez à transférer les connaissances d’un modèle TensorFlow
 ms.date: 01/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: 1e5478f53c82f36ddafe19e3659e2234ff9687b4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: be21a94f571a1676d2a4bce2196dec34bf008121
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78241024"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607569"
 ---
 # <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>Tutorial: Générer un modèle de classification d’image ML.NET à partir d’un modèle TensorFlow pré-formé
 
@@ -35,9 +35,9 @@ L’apprentissage de transfert est le processus d’utilisation des connaissance
 
 Pour ce tutoriel, vous utilisez une partie d’un modèle TensorFlow - formé pour classer les images en mille catégories - dans un modèle ML.NET qui classe les images en 3 catégories.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
-* [Visual Studio 2017 version 15.6 ou plus tard](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec le ".NET Core cross-platform development" charge de travail installé.
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou plus tard ou Visual Studio 2017 version 15.6 ou plus tard avec le ".NET Core cross-platform development" charge de travail installée.
 * [Le fichier .zip du répertoire de ressources du tutoriel](https://github.com/dotnet/samples/blob/master/machine-learning/tutorials/TransferLearningTF/image-classifier-assets.zip)
 * [Le modèle Machine Learning InceptionV1](https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip)
 

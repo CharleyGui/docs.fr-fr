@@ -5,12 +5,12 @@ ms.date: 02/21/2020
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 33afd568bb12b855a3888bec31f2e9bbc3c720da
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2f340805200a14e0e145ffe1bf20f8059df63555
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77628668"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81608047"
 ---
 # <a name="deploy-a-model-to-azure-functions"></a>Déployer un modèle sur Azure Functions
 
@@ -19,9 +19,9 @@ Découvrez comment déployer un modèle Machine Learning ML.NET préentraîné p
 > [!NOTE]
 > Cet exemple exécute une `PredictionEnginePool` version de prévisualisation du service.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
-- [Visual Studio 2017 version 15.6 ou plus tard](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec la charge de travail ".NET Core cross-platform development" et "Azure development" installé.
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou plus tard ou Visual Studio 2017 version 15.6 ou plus tard avec le ".NET Core cross-platform development" et "Azure development" charges de travail installées.
 - [Outils Azure Functions](/azure/azure-functions/functions-develop-vs#check-your-tools-version)
 - PowerShell
 - un modèle préentraîné : Utilisez le [tutoriel Analyse des sentiments dans ML.NET](../tutorials/sentiment-analysis.md) pour générer votre propre modèle ou téléchargez ce [modèle Machine Learning d’analyse des sentiments préentraîné](https://github.com/dotnet/samples/blob/master/machine-learning/models/sentimentanalysis/sentiment_model.zip).
@@ -185,7 +185,7 @@ Quand la méthode `Run` s’exécute, les données entrantes issues de la requê
 
 Maintenant que tout est configuré, il est temps de tester l’application :
 
-1. Exécuter l’application
+1. Exécution de l'application
 1. Ouvrez PowerShell et entrez le code dans l’invite, où PORT est le port sur lequel s’exécute votre application, en règle générale 7071.
 
     ```powershell
@@ -202,4 +202,4 @@ Félicitations ! Vous avez réussi à alimenter votre modèle de façon à effec
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-- [Déploiement à Azure](/azure/azure-functions/functions-develop-vs#publish-to-azure)
+- [Déployer sur Azure](/azure/azure-functions/functions-develop-vs#publish-to-azure)
