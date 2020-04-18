@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 494e792d63a611cdaedf3e40aa607cfbb0420ae4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b4499637cd5fff015335e0cdb3c6cf1c3ea6cff0
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75901946"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81637182"
 ---
 ### <a name="authentication-newtonsoftjson-types-replaced"></a>Authentification: Newtonsoft.Json types remplacés
 
@@ -32,7 +32,7 @@ La liste suivante décrit les changements connus :
 - <xref:Microsoft.AspNetCore.Authentication.OAuth.OAuthTokenResponse.Success(Newtonsoft.Json.Linq.JObject)>accepte maintenant un paramètre de type `JsonDocument` au lieu de `JObject`. La `Response` propriété a été mise à jour pour correspondre. `OAuthTokenResponse`est maintenant jetable et `OAuthHandler`sera éliminé par . Les implémentations dérivées d’OAuth qui l’emportent `ExchangeCodeAsync` ne doivent pas disposer du `JsonDocument` ou `OAuthTokenResponse`.
 - <xref:Microsoft.AspNetCore.Authentication.OpenIdConnect.UserInformationReceivedContext.User?displayProperty=nameWithType>changé `JObject` de `JsonDocument`.
 - <xref:Microsoft.AspNetCore.Authentication.Twitter.TwitterCreatingTicketContext.User?displayProperty=nameWithType>changé `JObject` de `JsonElement`.
-- <xref:Microsoft.AspNetCore.Authentication.Twitter.TwitterHandler.CreateTicketAsync(System.Security.Claims.ClaimsIdentity,Microsoft.AspNetCore.Authentication.AuthenticationProperties,Microsoft.AspNetCore.Authentication.Twitter.AccessToken,Newtonsoft.Json.Linq.JObject)?displayProperty=nameWithType>changé `JObject` d’accepter `JsonElement`à .
+- Le dernier paramètre de [TwitterHandler.CreateTicketAsync (ClaimsIdentity,AuthenticationProperties,AccessToken,JObject)](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.twitter.twitterhandler.createticketasync?view=aspnetcore-2.2#Microsoft_AspNetCore_Authentication_Twitter_TwitterHandler_CreateTicketAsync_System_Security_Claims_ClaimsIdentity_Microsoft_AspNetCore_Authentication_AuthenticationProperties_Microsoft_AspNetCore_Authentication_Twitter_AccessToken_Newtonsoft_Json_Linq_JObject_) a changé de `JObject` . `JsonElement` La méthode <xref:Microsoft.AspNetCore.Authentication.Twitter.TwitterHandler.CreateTicketAsync(System.Security.Claims.ClaimsIdentity,Microsoft.AspNetCore.Authentication.AuthenticationProperties,Microsoft.AspNetCore.Authentication.Twitter.AccessToken,System.Text.Json.JsonElement)?displayProperty=nameWithType>de remplacement est .
 
 #### <a name="category"></a>Category
 
