@@ -7,12 +7,12 @@ helpviewer_keywords:
 - threading [.NET]
 - threading [.NET], multiple threads
 ms.assetid: 5baac3aa-e603-4fa6-9f89-0f2c1084e6b1
-ms.openlocfilehash: e29c131f8459179d0641ac9a0cb8234fbba0e7d0
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: bac2a3ca3278b48b35d0372d52bcb79025ba1148
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588441"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739730"
 ---
 # <a name="threads-and-threading"></a>Threads et threading
 
@@ -31,7 +31,7 @@ Par défaut, un programme .NET est démarré avec un thread unique, souvent appe
 
 Vous pouvez utiliser plusieurs threads pour accélérer la réactivité de votre application et tirer parti d’un système multiprocesseur ou multicœur pour accélérer son débit.
 
-Imaginez une application de bureau dans laquelle le thread principal est responsable des éléments d’interface utilisateur et répond aux actions des utilisateurs. Utilisez des threads de travail pour effectuer des opérations longues qui, sinon, occuperaient le thread principal et rendraient l’interface utilisateur non réactive. Vous pouvez aussi utiliser un thread dédié pour que la communication réseau ou des appareils soit plus réactive aux messages ou événements entrants.
+Imaginez une application de bureau dans laquelle le thread principal est responsable des éléments d’interface utilisateur et répond aux actions des utilisateurs. Utilisez des threads de travail pour effectuer des opérations longues qui, sinon, occuperaient le thread principal et rendraient l’interface utilisateur non réactive. Vous pouvez également utiliser un thread dédié à la communication réseau ou appareil pour être plus sensible aux messages ou événements entrants.
 
 Si votre programme procède à des opérations pouvant être effectuées en parallèle, la durée totale d’exécution peut être raccourcie en effectuant ces opérations dans des threads distincts et en exécutant le programme sur un système multiprocesseur ou multicœur. Sur un tel système, l’utilisation du multithreading peut accélérer le débit et la réactivité.
 
@@ -39,7 +39,7 @@ Si votre programme procède à des opérations pouvant être effectuées en para
 
 À compter de .NET Framework 4, la méthode recommandée pour utiliser le multithreading consiste à utiliser la [bibliothèque parallèle de tâches (TPL)](../parallel-programming/task-parallel-library-tpl.md) et [Parallel LINQ (PLINQ)](../parallel-programming/introduction-to-plinq.md). Pour plus d’informations, consultez [Programmation parallèle](../parallel-programming/index.md).
 
-La bibliothèque TPL et PLINQ reposent sur les threads <xref:System.Threading.ThreadPool>. La classe <xref:System.Threading.ThreadPool?displayProperty=nameWithType> fournit une application .NET avec un pool de threads de travail. Vous pouvez aussi utiliser des threads de pool de threads. Pour plus d’informations, consultez [Pool de threads managé](the-managed-thread-pool.md).
+La bibliothèque TPL et PLINQ reposent sur les threads <xref:System.Threading.ThreadPool>. La classe <xref:System.Threading.ThreadPool?displayProperty=nameWithType> fournit une application .NET avec un pool de threads de travail. Vous pouvez également utiliser des threads de pool. Pour plus d’informations, consultez [Pool de threads managé](the-managed-thread-pool.md).
 
 Enfin, vous pouvez utiliser la classe <xref:System.Threading.Thread?displayProperty=nameWithType> qui représente un thread managé. Pour plus d’informations, consultez [Utilisation de threads et de threading](using-threads-and-threading.md).
 

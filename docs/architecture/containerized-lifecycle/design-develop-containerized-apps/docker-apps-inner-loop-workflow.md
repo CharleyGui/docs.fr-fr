@@ -2,12 +2,12 @@
 title: Workflow de développement de la boucle interne pour les applications Docker
 description: Découvrez le workflow de type « boucle interne » pour le développement des applications Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: 615cfd08f46609c4e100ea3e72b541fe2c1ae62a
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: bce047bd5ba75f9ef652a294ff6a15656fc5ac34
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989010"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738408"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Workflow de développement de la boucle interne pour les applications Docker
 
@@ -156,7 +156,7 @@ Vous devrez créer une image pour chaque service personnalisé qui compose votre
 >
 > Par conséquent, chaque développeur doit d’abord effectuer l’intégralité du processus de boucle interne pour effectuer des tests localement et continuer à développer jusqu’à ce qu’il souhaite pousser (push) une fonctionnalité complète ou une modification vers le système de contrôle source.
 
-Pour créer une image dans votre environnement local à l’aide du fichier DockerFile, vous pouvez utiliser la commande docker build, comme illustré dans la figure 4-25 (vous pouvez également exécuter `docker-compose up --build` pour les applications composées de plusieurs conteneurs ou services).
+Pour créer une image dans votre environnement local et en utilisant le DockerFile, vous pouvez utiliser la commande `docker-compose up --build` de construction docker, comme démontré dans la figure 4-25 (vous pouvez également exécuter pour des applications composées par plusieurs conteneurs / services).
 
 ![Capture d’écran montrant la sortie de la console de la commande de construction docker.](./media/docker-apps-inner-loop-workflow/run-docker-build-command.png)
 
@@ -263,7 +263,7 @@ Vous pouvez tester cela à l’aide de CURL dans le terminal. Dans une installat
 
 Visual Studio Code prend en charge le débogage Docker si vous utilisez Node.js et d’autres plateformes telles que les conteneurs .NET Core.
 
-Vous pouvez également déboguer les conteneurs .NET Core ou .NET Framework dans Docker si vous utilisez Visual Studio pour Windows ou Mac, comme décrit dans la section suivante.
+Vous pouvez également déboiffer .NET Core ou .NET Framework conteneurs dans Docker lors de l’utilisation visual Studio pour Windows ou Mac, comme décrit dans la section suivante.
 
 > [!TIP]
 > Pour en savoir plus sur débogage Node.js Conteneurs Docker, voir <https://blog.docker.com/2016/07/live-debugging-docker/> et <https://docs.microsoft.com/archive/blogs/user_ed/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more>.

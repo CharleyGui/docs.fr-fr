@@ -1,7 +1,7 @@
 ---
 title: Opérateurs et expressions d’accès aux membres - Référence C
 description: Découvrez les opérateurs C# que vous pouvez utiliser pour accéder aux membres de type.
-ms.date: 03/31/2020
+ms.date: 04/17/2020
 author: pkulikov
 f1_keywords:
 - ._CSharpKeyword
@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 90066b1e9c219f66fc0c76423679e81aa3fa6770
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: 4e213c92ae08edd8d537017e474c33200cb4c22c
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81120980"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738723"
 ---
 # <a name="member-access-operators-and-expressions-c-reference"></a>Opérateurs et expressions d’accès aux membres (référence C)
 
@@ -156,6 +156,8 @@ if (handler != null)
 }
 ```
 
+C’est un moyen sûr de fil pour `handler` s’assurer que seul un non-null est invoqué. Étant donné que les instances des délégués sont immuables, aucun thread ne peut modifier la valeur référencée par la `handler` variable locale. En particulier, si le code exécuté par un autre `PropertyChanged` thread `PropertyChanged` `null` se `handler` désabonner de l’événement et devient avant est invoqué, la valeur référencée par `handler` reste inchangée. L’opérateur `?.` n’évalue son opératais gauche qu’une seule fois, garantissant qu’il ne peut pas être changé après `null` avoir été vérifié comme non nul.
+
 ## <a name="invocation-expression-"></a>Expression d’invocation ()
 
 Utilisez des parenthèses, `()`, pour appeler une [méthode](../../programming-guide/classes-and-structs/methods.md) ou un [délégué](../../programming-guide/delegates/index.md).
@@ -192,9 +194,9 @@ Comme le montre l’exemple <xref:System.Range?displayProperty=nameWithType> pr�
 
 Vous pouvez omettre l’un `..` des opérands de l’opérateur pour obtenir une gamme ouverte :
 
-- `a..`est équivalent à`a..^0`
-- `..b`est équivalent à`0..b`
-- `..`est équivalent à`0..^0`
+- `a..` équivaut à `a..^0`
+- `..b` équivaut à `0..b`
+- `..` équivaut à `0..^0`
 
 [!code-csharp[ranges with omitted operands](snippets/MemberAccessOperators.cs#RangesOptional)]
 

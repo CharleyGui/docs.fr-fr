@@ -2,12 +2,12 @@
 title: Moderniser vos applications avec la surveillance et la télémétrie
 description: Moderniser les applications .NET existantes avec les conteneurs Azure Cloud et Windows (fr) Modernisez vos applications grâce à la surveillance et à la télémétrie
 ms.date: 04/30/2018
-ms.openlocfilehash: 3d629e89a73c870d4b6396c6b1d0ecbe95b79ead
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a5101f150d6548406db8638904fb4ab6375edf9c
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72393856"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739180"
 ---
 # <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>Moderniser vos applications avec la surveillance et la télémétrie
 
@@ -67,7 +67,7 @@ Vous pouvez utiliser la solution de surveillance des conteneurs d’analyse de c
 
 <https://docs.microsoft.com/azure/azure-monitor/overview>
 
-- **Qu’est-ce que Les aperçus d’applications?**
+- **Présentation d’Application Insights**
 
 <https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview>
 

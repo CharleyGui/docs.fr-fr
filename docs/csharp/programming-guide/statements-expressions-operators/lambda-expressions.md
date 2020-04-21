@@ -8,12 +8,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: c549b9fcc91401aed846afd39e656b60e16afb74
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 44d6ed9ac6e1c3c4d08bbd69ca808d2e740f0c4e
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75937598"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738314"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Expressions lambda (Guide de programmation C#)
 
@@ -37,7 +37,7 @@ Toute expression lambda peut être convertie en type [délégué](../../language
 
 [!code-csharp-interactive[lambda is delegate](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#Delegate)]
 
-Les expressions lambda peuvent également être converties en types d’[arborescence d’expression](../concepts/expression-trees/index.md), comme le montre l’exemple suivant :
+Les lambdas d’expression peuvent également être convertis aux types [d’arbres d’expression,](../concepts/expression-trees/index.md) comme le montre l’exemple suivant :
 
 [!code-csharp-interactive[lambda is expression tree](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#ExpressionTree)]
 
@@ -227,9 +227,9 @@ Pour plus d’informations, consultez la section [Expressions de fonction anonym
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation CMD](../index.md)
 - [LINQ (Language Integrated Query)](../concepts/linq/index.md)
-- [Expression Trees](../concepts/expression-trees/index.md)
+- [Arbres d’expression](../concepts/expression-trees/index.md)
 - [Fonctions locales comparées aux expressions lambda](../../local-functions-vs-lambdas.md)
 - [Expressions lambda implicitement typées](../../implicitly-typed-lambda-expressions.md)
 - [Exemples Visual Studio 2008 C# (voir les fichiers d’exemples de requêtes LINQ et le programme XQuery)](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)

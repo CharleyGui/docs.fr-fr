@@ -2,12 +2,12 @@
 title: Commande dotnet
 description: En savoir plus sur la commande dotnet (le pilote générique pour le CLI .NET Core) et son utilisation.
 ms.date: 02/13/2020
-ms.openlocfilehash: d700f35f3c977524ff3857da99519882eb0136e9
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 6a08297499d955db44e342dc82fed25b7b9b8171
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463266"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739078"
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
@@ -264,7 +264,7 @@ dotnet myapp.dll
 
 - `DOTNET_NOLOGO`
 
-  Précise si les messages de bienvenue et de télémétrie .NET Core sont affichés en première diffusion. Configurez `true` pour couper ces `true` `1`messages `yes` (valeurs, , `false` ou acceptés) ou définis pour permettre (valeurs, `false` `0`, ou `no` accepté). Si elle n’est `false` pas définie, la valeur par défaut est et les messages seront affichés en première exécution. Notez que ce drapeau n’a `DOTNET_CLI_TELEMETRY_OPTOUT` aucun effet sur la télémétrie (voir pour refuser d’envoyer de la télémétrie).
+  Précise si les messages de bienvenue et de télémétrie .NET Core sont affichés en première diffusion. Configurez `true` pour couper ces `true` `1`messages `yes` (valeurs, , `false` ou acceptés) ou définis pour permettre (valeurs, `false` `0`, ou `no` accepté). Si elle n’est `false` pas définie, la valeur par défaut est et les messages seront affichés en première exécution. Ce drapeau n’a aucun effet `DOTNET_CLI_TELEMETRY_OPTOUT` sur la télémétrie (voir pour refuser l’envoi de télémétrie).
 
 - `DOTNET_CLI_TELEMETRY_OPTOUT`
 

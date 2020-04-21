@@ -2,18 +2,18 @@
 title: Interpolation de chaîne - Tutoriel C#
 description: Ce tutoriel montre comment utiliser la fonctionnalité d’interpolation de chaîne en C# pour insérer les résultats d’expressions mises en forme dans une chaîne plus grande.
 ms.date: 10/23/2018
-ms.openlocfilehash: 593f3a77370da73dfd5f090be98112327b86b1f7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 22637895f241585bac4909479f225bf3cb581614
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75346780"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738284"
 ---
 # <a name="use-string-interpolation-to-construct-formatted-strings"></a>Utiliser l’interpolation de chaîne pour construire des chaînes mises en forme
 
 Ce tutoriel explique comment utiliser [l’interpolation de chaîne](../../language-reference/tokens/interpolated.md) en C# pour insérer des valeurs dans une chaîne de résultat unique. Vous allez écrire un code en C# et afficher les résultats de la compilation et de l’exécution du code. Le tutoriel contient une série de leçons qui expliquent comment insérer des valeurs dans une chaîne et mettre en forme ces valeurs de différentes façons.
 
-Ce tutoriel suppose que vous disposez d’un ordinateur que vous pouvez utiliser pour le développement. Le tutoriel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a des instructions pour configurer votre environnement de développement local sur Windows, Linux ou macOS. Vous pouvez également suivre la [version interactive](interpolated-strings.yml) de ce tutoriel dans votre navigateur.
+Ce tutoriel suppose que vous disposez d’un ordinateur que vous pouvez utiliser pour le développement. Le tutoriel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a des instructions pour configurer votre environnement de développement local sur Windows, Linux ou macOS. Vous pouvez également compléter la [version interactive](interpolated-strings.yml) de ce tutoriel dans votre navigateur.
 
 ## <a name="create-an-interpolated-string"></a>Créer une chaîne interpolée
 

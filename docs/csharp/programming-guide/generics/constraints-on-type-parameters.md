@@ -6,12 +6,12 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 2962de53eab132ad02aaf679fdd6037bd24fa714
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 0035f7d8aa862b4bd1b09a6f122a89786a6e295b
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463885"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738254"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Contraintes sur les paramètres de type (Guide de programmation C#)
 
@@ -19,7 +19,7 @@ Les contraintes informent le compilateur sur les fonctionnalités que doit avoir
 
 |Contrainte|Description|
 |----------------|-----------------|
-|`where T : struct`|L’argument de type doit être un type de valeur non annulable. Pour plus d’informations sur les types de valeur nulable, voir [les types de valeur nulable](../../language-reference/builtin-types/nullable-value-types.md). Étant donné que tous les types de `struct` valeur ont `new()` un constructeur sans paramètres accessible, `new()` la contrainte implique la contrainte et ne peut pas être combinée avec la contrainte. Vous ne pouvez pas `struct` combiner la `unmanaged` contrainte avec la contrainte.|
+|`where T : struct`|L’argument de type doit être un type de valeur non annulable. Pour plus d’informations sur les types de valeur nulable, voir [les types de valeur nulable](../../language-reference/builtin-types/nullable-value-types.md). Étant donné que tous les types de `struct` valeur ont `new()` un constructeur sans paramètres accessible, `new()` la contrainte implique la contrainte et ne peut pas être combinée avec la contrainte. Vous ne pouvez `struct` pas combiner `unmanaged` la contrainte avec la contrainte.|
 |`where T : class`|L’argument de type doit être un type référence. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau. Dans un contexte in annulable dans le C `T` 8.0 ou plus tard, doit être un type de référence non annulable. |
 |`where T : class?`|L’argument type doit être un type de référence, soit in nullable, soit non annulable. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau.|
 |`where T : notnull`|L’argument de type doit être un type non-nullable. L’argument peut être un type de référence non annulable dans C 8.0 ou plus tard, ou un type de valeur non annulable. |

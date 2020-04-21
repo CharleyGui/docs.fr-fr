@@ -3,18 +3,18 @@ title: Bien démarrer avec le stockage Fichier Azure en F#
 description: Stockez des données de fichier dans le cloud à l’aide du stockage de fichiers Azure, puis montez le partage de fichiers cloud à partir d’une machine virtuelle Azure ou d’une application locale exécutant Windows.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 2088442e05ba36b388a3324942ebbf8c7eb263dd
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 1b38ee53f2f73f7b7f4ee12f712f487cb726d41e
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607465"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739595"
 ---
 # <a name="get-started-with-azure-file-storage-using-f"></a>Démarez avec le stockage Azure File à l’aide de F\#
 
 Azure File storage est un service qui offre des partages de fichiers dans le cloud à l’aide du protocole standard [Server Message Block (SMB).](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx) Les protocoles SMB 2.1 et SMB 3.0 sont pris en charge. Avec le stockage de fichiers Azure, vous pouvez migrer vers Azure des applications héritées qui s’appuient sur des partages de fichiers, rapidement et sans réécritures onéreuses. Les applications s’exécutant sur des machines virtuelles Azure, dans des services cloud ou à partir de clients locaux peuvent monter un partage de fichiers dans le cloud, tout comme une application de bureau monte un partage SMB standard. Un nombre illimité de composants d’application peuvent ensuite monter un partage de stockage de fichiers et y accéder simultanément.
 
-Pour un aperçu conceptuel du stockage de fichiers, veuillez consulter [le guide .NET pour le stockage de fichiers](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-files).
+Pour un aperçu conceptuel du stockage de fichiers, consultez [le guide .NET pour le stockage de fichiers](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-files).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -73,7 +73,7 @@ Cet exemple montre comment créer une part de fichier s’il n’existe pas déj
 
 ## <a name="create-a-root-directory-and-a-subdirectory"></a>Créer un répertoire racine et une sous-direction
 
-Ici, vous obtenez le répertoire racine et obtenir un sous-répertoire de la racine. Vous créez les deux s’ils n’existent pas déjà.
+Ici, vous obtenez le répertoire racine et obtenir une sous-direction de la racine. Vous créez les deux s’ils n’existent pas déjà.
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L41-L43)]
 
@@ -127,7 +127,7 @@ Vous pouvez copier un objet blob dans un fichier de la même façon. Si l’obje
 
 Azure Storage Analytics prend en charge les mesures de stockage de fichiers. Avec les données de métriques, vous pouvez suivre les demandes et diagnostiquer les problèmes.
 
-Vous pouvez activer des mesures pour le stockage de fichiers à partir du [portail Azure](https://portal.azure.com), ou vous pouvez le faire à partir de F 'comme ceci:
+Vous pouvez activer des mesures pour le stockage de fichiers à partir du [portail Azure,](https://portal.azure.com)ou vous pouvez le faire à partir de F 'comme ceci:
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L126-L140)]
 
@@ -146,7 +146,7 @@ Pour plus d’informations sur le stockage de fichiers Azure, consultez ces lien
 - [Utilisation de AzCopy avec Microsoft Azure Storage](https://docs.microsoft.com/azure/storage/storage-use-azcopy)
 - [Créer, télécharger et lister des objets blob avec Azure CLI](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-cli#create-and-manage-file-shares)
 
-### <a name="reference"></a>Informations de référence
+### <a name="reference"></a>Référence
 
 - [Référence de la bibliothèque cliente de stockage pour .NET](https://msdn.microsoft.com/library/azure/mt347887.aspx)
 - [Référence de l’API REST du service de fichiers](/rest/api/storageservices/fileservices/File-Service-REST-API)

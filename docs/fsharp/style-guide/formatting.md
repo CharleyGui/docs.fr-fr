@@ -2,19 +2,19 @@
 title: Indications de mise en forme du code F#
 description: Apprenez des lignes directrices pour le formatage du code F.
 ms.date: 11/04/2019
-ms.openlocfilehash: 2086b515b8ec9b69a44e2e65ca06fb320670dff2
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: b8be70dd29a04e71614308164e541b99a1724305
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278936"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739554"
 ---
 # <a name="f-code-formatting-guidelines"></a>Indications de mise en forme du code F#
 
 Cet article offre des lignes directrices sur la façon de formater votre code afin que votre code F est :
 
-* Généralement considéré comme plus lisible
-* Est conforme aux conventions appliquées par des outils de formatage dans Visual Studio et d’autres éditeurs
+* Plus lisible
+* Conformément aux conventions appliquées par les outils de formatage dans Visual Studio et d’autres éditeurs
 * Semblable à d’autres codes en ligne
 
 Ces lignes directrices sont basées sur [un guide complet des conventions de formatage de F par](https://github.com/dungpa/fantomas/blob/master/docs/FormattingConventions.md) [Anh-Dung Phan](https://github.com/dungpa).
@@ -27,7 +27,7 @@ F ' utilise l’espace blanc significatif par défaut. Les lignes directrices su
 
 Lorsque l’indentation est nécessaire, vous devez utiliser des espaces, pas des onglets. Au moins un espace est nécessaire. Votre organisation peut créer des normes de codage pour spécifier le nombre d’espaces à utiliser pour l’indentation; deux, trois ou quatre espaces d’indentation à chaque niveau où l’indentation se produit est typique.
 
-**Nous recommandons 4 espaces par indentation.**
+**Nous recommandons quatre espaces par indentation.**
 
 Cela dit, l’indentation des programmes est une question subjective. Les variations sont OK, mais la première règle que vous devez suivre est *la cohérence de l’indentation*. Choisissez un style d’indentation généralement accepté et utilisez-le systématiquement dans votre base de code.
 
@@ -43,7 +43,7 @@ Utilisez toujours l’espace blanc autour des expressions arithmétiques binaire
 let subtractThenAdd x = x - 1 + 3
 ```
 
-Les `-` opérateurs non anistes doivent toujours avoir la valeur qu’ils némentent immédiatement :
+Les `-` opérateurs non anistes doivent toujours être immédiatement suivis par la valeur qu’ils némentent :
 
 ```fsharp
 // OK
@@ -100,7 +100,7 @@ let myFun (a: decimal) b c = a + b + c
 let myFunBad (a:decimal)(b)c = a + b + c
 ```
 
-### <a name="place-parameters-on-a-new-line-for-very-long-member-definitions"></a>Placez les paramètres sur une nouvelle ligne pour les définitions très longues des membres
+### <a name="place-parameters-on-a-new-line-for-long-member-definitions"></a>Placez les paramètres sur une nouvelle ligne pour les définitions de membres longs
 
 Si vous avez une définition de membre très longue, placez les paramètres sur de nouvelles lignes et en indent une portée.
 
@@ -180,7 +180,7 @@ let f x = x + 1 // Increment by one.
 
 ## <a name="naming-conventions"></a>Conventions d'attribution d'un nom
 
-### <a name="use-camelcase-for-class-bound-expression-bound-and-pattern-bound-values-and-functions"></a>Utilisez camelCase pour des valeurs et des fonctions liées à la classe, liées à l’expression et liées aux motifs
+### <a name="use-camelcase-for-class-bound-expression-bound-and-pattern-bound-values-and-functions"></a>Utilisez camelCase pour les valeurs et les fonctions liées à la classe, liées à l’expression et liées aux motifs
 
 Il est commun et accepté de style F ' d’utiliser camelCase pour tous les noms liés comme des variables locales ou dans les correspondances de modèle et les définitions de fonction.
 
@@ -195,7 +195,7 @@ let addIAndJ I J = I+J
 let AddIAndJ i j = i + j
 ```
 
-Les fonctions locales dans les classes devraient également utiliser camelCase.
+Les fonctions liées localement dans les classes devraient également utiliser camelCase.
 
 ```fsharp
 type MyClass() =
@@ -287,7 +287,7 @@ Les espaces de noms, les`.dll` exceptions, les événements et les noms de proje
 
 Historiquement, certaines bibliothèques de F ont utilisé des soulignements dans les noms. Cependant, ce n’est plus largement accepté, en partie parce qu’il se heurte à des conventions de nommage .NET. Cela dit, certains programmeurs de F’emploient des souligne fortement, en partie pour des raisons historiques, et la tolérance et le respect sont importants. Cependant, sachez que le style est souvent détesté par d’autres qui ont le choix de l’utiliser ou non.
 
-Certaines exceptions comprennent l’interopération avec les composants autochtones, où les soulignements sont très fréquents.
+Une exception comprend l’interopération avec les composants autochtones, où les soulignements sont communs.
 
 ### <a name="use-standard-f-operators"></a>Utiliser des opérateurs FMD standard
 
@@ -325,7 +325,7 @@ Pour tous les autres types, utilisez le formulaire de préfixe.
 
 ## <a name="formatting-tuples"></a>Formatage tuples
 
-Une instantanéie de tuple doit être parenthèse, et les virgules délimitantes à `(1, 2)` `(x, y, z)`l’intérieur devraient être suivies d’un seul espace, par exemple: , .
+Une instantanéie de tuple devrait être parenthèse, et les virgules délimitantes à `(1, 2)`l’intérieur devraient être suivies d’un seul espace, par exemple: , `(x, y, z)`.
 
 Il est communément admis d’omettre les parenthèses dans l’appariement des modèles de tuples :
 
@@ -354,7 +354,7 @@ En résumé, préférez les instantanéiations de tuple entre parenthèses, mais
 
 ## <a name="formatting-discriminated-union-declarations"></a>Formater les déclarations syndicales discriminatoires
 
-Définition `|` de type indent par 4 espaces :
+Définition `|` de type indent par quatre espaces :
 
 ```fsharp
 // OK
@@ -393,7 +393,7 @@ let tree1 =
 
 ## <a name="formatting-record-declarations"></a>Formater les déclarations d’enregistrement
 
-Indent `{` dans la définition de type par 4 espaces et commencer la liste de terrain sur la même ligne:
+Indent `{` dans la définition de type par quatre espaces et commencer la liste de champ sur la même ligne:
 
 ```fsharp
 // OK
@@ -508,7 +508,7 @@ let rainbow2 =
         Lackeys = ["Zippy"; "George"; "Bungle"] }
 ```
 
-Et comme avec les conseils d’enregistrement, vous pouvez consacrer des lignes séparées pour les accolades et en retrait une portée à droite avec l’expression. Notez que dans certains cas particuliers, comme l’emballage d’une valeur avec une option sans parenthèses, vous devrez peut-être garder une accolade sur une ligne:
+Et comme avec les conseils d’enregistrement, vous pouvez consacrer des lignes séparées pour les accolades et en retrait une portée à droite avec l’expression. Dans certains cas particuliers, comme l’emballage d’une valeur avec une option sans parenthèses, vous devrez peut-être garder une accolade sur une seule ligne :
 
 ```fsharp
 type S = { F1: int; F2: string }
@@ -691,7 +691,7 @@ lambdaList
     | Var v -> 1)
 ```
 
-L’appariement des `let` `let rec` motifs dans les fonctions définies par ou doit être en retrait 4 espaces après le début de `let`, même si `function` le mot clé est utilisé:
+L’appariement des `let` `let rec` motifs dans les fonctions `let`définies `function` par ou doit être en retrait quatre espaces après le début de , même si le mot clé est utilisé:
 
 ```fsharp
 let rec sizeLambda acc = function
@@ -824,7 +824,7 @@ module A2 =
 
 ### <a name="formatting-object-expressions-and-interfaces"></a>Formater les expressions et les interfaces d’objets
 
-Les expressions et interfaces d’objet doivent `member` être alignées de la même manière avec l’en retrait après 4 espaces.
+Les expressions et interfaces d’objet doivent `member` être alignées de la même manière avec l’en retrait après quatre espaces.
 
 ```fsharp
 let comparer =

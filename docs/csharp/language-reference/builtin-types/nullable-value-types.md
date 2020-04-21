@@ -4,12 +4,12 @@ description: Renseignez-vous sur les types de valeur nulS de C et sur la façon 
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: c13ef6a091ec6aebd4608c5ed8d2c03b067c7312
-ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
+ms.openlocfilehash: fcd49d7d25b0ad23363db8cb61596004b2e87a8d
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888070"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739000"
 ---
 # <a name="nullable-value-types-c-reference"></a>Types de valeur nuls (référence C)
 
@@ -24,7 +24,7 @@ Vous utilisez généralement un type de valeur inquérable lorsque vous devez re
 
 ## <a name="declaration-and-assignment"></a>Déclaration et affectation
 
-Comme un type de valeur est implicitement convertible au type de valeur nullable correspondant, vous pouvez attribuer une valeur à une variable d’un type de valeur nul, comme vous le feriez pour son type de valeur sous-jacente. Vous pouvez également affecter la valeur `null`. Par exemple :
+Comme un type de valeur est implicitement convertible au type de valeur nullable correspondant, vous pouvez attribuer une valeur à une variable d’un type de valeur nul, comme vous le feriez pour son type de valeur sous-jacente. Vous pouvez également `null` attribuer la valeur. Par exemple :
 
 [!code-csharp[declare and assign](snippets/NullableValueTypes.cs#Declaration)]
 

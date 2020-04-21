@@ -20,12 +20,12 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: fd25cd419f8c3bfe905850e6a252f4a8cf65478c
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 7eb6666d10c44c342f69c7cfc763feb1b7b98c9d
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507098"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738600"
 ---
 # <a name="pointer-related-operators-c-reference"></a>Opérateurs associés au pointeur (référence C#)
 
@@ -103,7 +103,7 @@ Dans l’exemple [ `stackalloc` ](stackalloc.md) précédent, une expression all
 
 Vous ne pouvez pas utiliser `[]` pour l’accès aux éléments de pointeur avec une expression de type `void*`.
 
-Vous pouvez également utiliser l’opérateur `[]` pour l’[accès aux éléments de tableau ou à l’indexeur](member-access-operators.md#indexer-operator-).
+Vous pouvez également `[]` utiliser l’opérateur pour l’accès [à l’élément de tableau ou à l’indexeur.](member-access-operators.md#indexer-operator-)
 
 ## <a name="pointer-arithmetic-operators"></a>Opérateurs arithmétiques de pointeur
 
@@ -193,4 +193,4 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [mot clé unsafe](../keywords/unsafe.md)
 - [mot-clé fixe](../keywords/fixed-statement.md)
 - [stackalloc](stackalloc.md)
-- [sizeof, opérateur](sizeof.md)
+- [Opérateur sizeof](sizeof.md)

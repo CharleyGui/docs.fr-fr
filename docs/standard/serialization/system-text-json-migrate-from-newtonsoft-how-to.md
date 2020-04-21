@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 957bafcdf69d5792702962db6598458a0c8ec974
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.openlocfilehash: 0828a5654171df39230055215903d3a49690155d
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80291576"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739241"
 ---
 # <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>Comment migrer de Newtonsoft.Json à System.Text.Json
 
@@ -81,7 +81,7 @@ Le tableau `Newtonsoft.Json` suivant `System.Text.Json` répertorie les caracté
 | Autoriser des citations uniques autour des valeurs de chaîne              | ❌[Non pris en charge](#json-strings-property-names-and-string-values) |
 | Autoriser les valeurs JSON non-cordes pour les propriétés à cordes    | ❌[Non pris en charge](#non-string-values-for-string-properties) |
 
-Il ne s’agit `Newtonsoft.Json` pas d’une liste exhaustive de fonctionnalités. La liste comprend de nombreux scénarios qui ont été demandés dans [les questions GitHub](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) ou [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) postes. Si vous implémentez une solution de contournement pour l’un des scénarios énumérés ici qui n’a pas actuellement de code d’échantillon, et si vous souhaitez partager votre solution, sélectionnez **cette page** dans la [section Commentaires](/dotnet/standard/serialization/system-text-json-migrate-from-newtonsoft-how-to#feedback) de cette page. Cela crée un numéro GitHub et l’énumère au bas de cette page.
+Il ne s’agit `Newtonsoft.Json` pas d’une liste exhaustive de fonctionnalités. La liste comprend de nombreux scénarios qui ont été demandés dans [les questions GitHub](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) ou [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) postes. Si vous implémentez une solution de contournement pour l’un des scénarios énumérés ici qui n’a pas actuellement de code d’échantillon, et si vous souhaitez partager votre solution, sélectionnez **cette page** dans la section **Commentaires** au bas de cette page. Cela crée un problème dans la pension GitHub de cette documentation et l’énumère dans la section **Commentaires** sur cette page aussi.
 
 ## <a name="differences-in-default-jsonserializer-behavior-compared-to-newtonsoftjson"></a>Différences dans le comportement par défaut JsonSerializer par rapport à Newtonsoft.Json
 
@@ -510,7 +510,7 @@ Les sections suivantes expliquent les `Utf8JsonReader`modèles de programmation 
 
 ### <a name="utf8jsonreader-is-a-ref-struct"></a>Utf8JsonReader est un réf struct
 
-Parce `Utf8JsonReader` que le type est un *rétructuration*, il a [certaines limitations](../../csharp/language-reference/keywords/ref.md#ref-struct-types). Par exemple, il ne peut pas être stocké comme un champ sur une classe ou struct autres qu’une structure de ref. Pour atteindre des performances élevées, `ref struct` ce type doit être un car il a besoin de cacher l’entrée [ReadOnlySpan\<byte>](xref:System.ReadOnlySpan%601), qui lui-même est une struct ref. En outre, ce type est mutable car il détient l’état. Par conséquent, **passez-le par ref** plutôt que par valeur. Le passer par valeur entraînerait une copie struct et les changements d’état ne seraient pas visibles par l’appelant. Cela diffère `Newtonsoft.Json` de `Newtonsoft.Json` `JsonTextReader` puisqu’il s’agit d’une classe. Pour plus d’informations sur la façon d’utiliser les structs ref, voir [Écrire le code CMD sûr et efficace](../../csharp/write-safe-efficient-code.md).
+Parce `Utf8JsonReader` que le type est un *rétructuration*, il a [certaines limitations](../../csharp/language-reference/builtin-types/struct.md#ref-struct). Par exemple, il ne peut pas être stocké comme un champ sur une classe ou struct autres qu’une structure de ref. Pour atteindre des performances élevées, `ref struct` ce type doit être un car il a besoin de cacher l’entrée [ReadOnlySpan\<byte>](xref:System.ReadOnlySpan%601), qui lui-même est une struct ref. En outre, ce type est mutable car il détient l’état. Par conséquent, **passez-le par ref** plutôt que par valeur. Le passer par valeur entraînerait une copie struct et les changements d’état ne seraient pas visibles par l’appelant. Cela diffère `Newtonsoft.Json` de `Newtonsoft.Json` `JsonTextReader` puisqu’il s’agit d’une classe. Pour plus d’informations sur la façon d’utiliser les structs ref, voir [Écrire le code CMD sûr et efficace](../../csharp/write-safe-efficient-code.md).
 
 ### <a name="read-utf-8-text"></a>Lire le texte de l’UTF-8
 

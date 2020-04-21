@@ -12,12 +12,12 @@ helpviewer_keywords:
 - timers, about timers
 ms.assetid: 7091500d-be18-499b-a942-95366ce185e5
 author: pkulikov
-ms.openlocfilehash: d7d1fa13b02fe7425fa9b4cb81ba20297a23fe4b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d463eb2a8d598dc5ba9b2fb51a6fc08c563e6fe4
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73128951"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739492"
 ---
 # <a name="timers"></a>Minuteurs
 
@@ -35,7 +35,7 @@ ms.locfileid: "73128951"
 
 ## <a name="the-systemthreadingtimer-class"></a>Classe System.Threading.Timer
 
-La classe <xref:System.Threading.Timer?displayProperty=nameWithType> vous permet d’appeler en permanence un délégué à des intervalles de temps spécifiés. Vous pouvez aussi utiliser cette classe pour planifier un appel unique à un délégué dans un intervalle de temps spécifié. Le délégué est exécuté sur un thread <xref:System.Threading.ThreadPool>.
+La classe <xref:System.Threading.Timer?displayProperty=nameWithType> vous permet d’appeler en permanence un délégué à des intervalles de temps spécifiés. Vous pouvez également utiliser cette classe pour planifier un seul appel à un délégué dans un intervalle de temps spécifié. Le délégué est exécuté sur un thread <xref:System.Threading.ThreadPool>.
 
 Quand vous créez un objet <xref:System.Threading.Timer?displayProperty=nameWithType>, vous spécifiez un délégué <xref:System.Threading.TimerCallback> qui définit la méthode de rappel, un objet d’état facultatif qui est passé au rappel, la durée d’attente avant la première invocation du rappel et l’intervalle de temps entre les invocations de rappel. Pour annuler un minuteur en attente, appelez la méthode <xref:System.Threading.Timer.Dispose%2A?displayProperty=nameWithType>.
 

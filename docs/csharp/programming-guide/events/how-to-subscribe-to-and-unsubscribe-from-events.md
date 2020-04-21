@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: 3df357cb15f7f77cefbf360dd9615ce246afe2ea
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0a9e2cc64da56c376445efce32e8da36ba9b6cdc
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705325"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738232"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Comment s’abonner et se désabonner des événements (Guide de programmation C)
 Vous vous abonnez à un événement publié par une autre classe lorsque vous voulez écrire du code personnalisé qui doit être appelé quand cet événement est déclenché. Par exemple, vous pouvez vous abonner à l’événement `click` d’un bouton pour permettre à votre application de réagir lorsque l’utilisateur clique sur le bouton.  
@@ -57,7 +57,7 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
     publisher.RaiseCustomEvent += new CustomEventHandler(HandleCustomEvent);  
     ```  
   
-     Vous pouvez également utiliser une [expression lambda](../statements-expressions-operators/lambda-expressions.md) pour spécifier un gestionnaire d’événements :
+     Vous pouvez également utiliser une [expression lambda](../statements-expressions-operators/lambda-expressions.md) pour spécifier un gestionnaire d’événements :
   
     ```csharp
     public Form1()  
@@ -100,7 +100,7 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
 ## <a name="see-also"></a>Voir aussi
 
 - [Événements](./index.md)
-- [Événement](../../language-reference/keywords/event.md)
+- [event](../../language-reference/keywords/event.md)
 - [Comment publier des événements conformes aux indications du .NET Framework](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
 - [- et -- opérateurs](../../language-reference/operators/subtraction-operator.md)
 - [et les opérateurs](../../language-reference/operators/addition-operator.md)

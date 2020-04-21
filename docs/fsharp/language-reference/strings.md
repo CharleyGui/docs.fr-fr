@@ -1,24 +1,24 @@
 ---
 title: Chaînes
-description: Découvrez comment le F# type’String’représente du texte immuable comme une séquence de caractères Unicode.
+description: Découvrez comment le type de « corde » Fmd représente le texte immuable comme une séquence de caractères Unicode.
 ms.date: 07/05/2019
-ms.openlocfilehash: 002de464d09a49b6161608db6e46c619369f5ceb
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 242a2cefa1cce8995090dddd1d1fd7181e0f5e0c
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452816"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739570"
 ---
 # <a name="strings"></a>Chaînes
 
 > [!NOTE]
 > Les liens des informations de référence sur les API qui figurent dans cet article pointent vers MSDN.  Les informations de référence sur les API docs.microsoft.com ne sont pas terminées.
 
-Le type de `string` représente du texte immuable sous la forme d’une séquence de caractères Unicode. `string` est un alias pour `System.String` dans le .NET Framework.
+Le `string` type représente le texte immuable comme une séquence de caractères Unicode. `string` est un alias pour `System.String` dans le .NET Framework.
 
 ## <a name="remarks"></a>Notes
 
-Les littéraux de chaîne sont délimités par le caractère guillemet ("). La barre oblique inverse (\\) est utilisée pour encoder certains caractères spéciaux. La barre oblique inverse et le caractère suivant se présentent sous la forme d’une *séquence d’échappement*. Les séquences d’échappement F# prises en charge dans les littéraux de chaîne sont indiquées dans le tableau suivant.
+Les littérals de cordes sont délimités par le caractère de la marque de citation («) Le personnage de \\ barre oblique inverse ( ) est utilisé pour coder certains caractères spéciaux. La barre oblique inverse et le personnage suivant ensemble sont connus comme une *séquence d’évasion*. Les séquences d’évasion prises en charge dans les littérals de cordes F sont montrées dans le tableau suivant.
 
 |Caractère|Séquence d'échappement|
 |---------|---------------|
@@ -31,25 +31,25 @@ Les littéraux de chaîne sont délimités par le caractère guillemet ("). La b
 |Tabulation verticale|`\v`|
 |Barre oblique inverse|`\\`|
 |Guillemets|`\"`|
-|Caractère|`\'`|
-|Caractère Unicode|`\DDD` (où `D` indique un chiffre décimal ; la plage de 000-255 ; par exemple, `\231` = "ç")|
-|Caractère Unicode|`\xHH` (où `H` indique un chiffre hexadécimal ; la plage de 00 à FF ; par exemple, `\xE7` = "ç")|
-|Caractère Unicode|`\uHHHH` (UTF-16) (où `H` indique un chiffre hexadécimal ; plage de 0000-FFFF ;  par exemple, `\u00E7` = "ç")|
-|Caractère Unicode|`\U00HHHHHH` (UTF-32) (où `H` indique un chiffre hexadécimal ; plage de 000000-10FFFF ;  par exemple, `\U0001F47D` = «👽»)|
+|Apostrophe|`\'`|
+|Caractère Unicode|`\DDD`(où `D` indique un chiffre décimal; gamme de 000 `\231` - 255; par exemple, "ç")|
+|Caractère Unicode|`\xHH`(où `H` indique un chiffre hexadecimal; gamme de 00 - FF; par exemple, `\xE7` "ç")|
+|Caractère Unicode|`\uHHHH`(UTF-16) (où `H` indique un chiffre hexadecimal; gamme de 0000 - FFFF;  par exemple, `\u00E7` "ç")|
+|Caractère Unicode|`\U00HHHHHH`(UTF-32) (où `H` indique un chiffre hexadecimal; gamme de 0000000 - 10FFFF;  par exemple, `\U0001F47D` 👽" ")|
 
 > [!IMPORTANT]
-> La séquence d’échappement `\DDD` est une notation décimale, et non une notation octale comme dans la plupart des autres langages. Par conséquent, les chiffres `8` et `9` sont valides, et une séquence de `\032` représente un espace (U + 0020), tandis que le même point de code en notation octale est `\040`.
+> La `\DDD` séquence d’évasion est une notation décimale, et non une notation octotale comme dans la plupart des autres langues. Par conséquent, `8` `9` les chiffres et sont `\032` valides, et une séquence de représente un espace (U-0020), tandis que ce même point de code dans la notation octale serait `\040`.
 
 > [!NOTE]
-> Étant contraints à une plage de 0-255 (0xFF), les séquences d’échappement `\DDD` et `\x` sont en fait le jeu de caractères [ISO-8859-1](https://en.wikipedia.org/wiki/ISO/IEC_8859-1#Code_page_layout) , car cela correspond aux 256 premiers points de code Unicode.
+> Étant limité à une gamme de 0 - 255 `\DDD` `\x` (0xFF), les séquences et d’évasion sont effectivement l’ENSEMBLE de caractères [ISO-8859-1,](https://en.wikipedia.org/wiki/ISO/IEC_8859-1#Code_page_layout) puisque cela correspond aux 256 premiers points de code Unicode.
 
-## <a name="verbatim-strings"></a>Chaînes textuelles
+## <a name="verbatim-strings"></a>Cordes Verbatim
 
-S’il est précédé du symbole @, le littéral est une chaîne textuelle. Cela signifie que toutes les séquences d’échappement sont ignorées, sauf que deux caractères guillemets sont interprétés comme un caractère guillemet.
+Si précédé par le symbole, le littéral est une chaîne textuelle. Cela signifie que toutes les séquences d’évasion sont ignorées, sauf que deux personnages de guillemets sont interprétés comme un personnage de marque de citation.
 
-## <a name="triple-quoted-strings"></a>Chaînes entre guillemets triple
+## <a name="triple-quoted-strings"></a>Triples cordes citées
 
-En outre, une chaîne peut être placée entre des guillemets triples. Dans ce cas, toutes les séquences d’échappement sont ignorées, y compris les guillemets doubles. Pour spécifier une chaîne qui contient une chaîne entre guillemets incorporée, vous pouvez utiliser une chaîne textuelle ou une chaîne entre guillemets. Si vous utilisez une chaîne textuelle, vous devez spécifier deux guillemets pour indiquer un caractère guillemet simple. Si vous utilisez une chaîne entre guillemets, vous pouvez utiliser les guillemets simples sans qu’ils soient analysés comme la fin de la chaîne. Cette technique peut être utile lorsque vous travaillez avec du code XML ou d’autres structures qui incluent des guillemets incorporés.
+En outre, une chaîne peut être entourée de citations triples. Dans ce cas, toutes les séquences d’évasion sont ignorées, y compris les caractères de double guillemets. Pour spécifier une chaîne qui contient une chaîne citée intégrée, vous pouvez soit utiliser une chaîne textuelle ou une chaîne à trois points. Si vous utilisez une chaîne textuelle, vous devez spécifier deux caractères de guillemets pour indiquer un seul caractère de marque de citation. Si vous utilisez une chaîne à trois citations, vous pouvez utiliser les caractères de la marque de citation unique sans qu’ils soient analysés comme la fin de la chaîne. Cette technique peut être utile lorsque vous travaillez avec XML ou d’autres structures qui incluent des guillemets intégrés.
 
 ```fsharp
 // Using a verbatim string
@@ -59,19 +59,19 @@ let xmlFragment1 = @"<book author=""Milton, John"" title=""Paradise Lost"">"
 let xmlFragment2 = """<book author="Milton, John" title="Paradise Lost">"""
 ```
 
-Dans le code, les chaînes qui ont des sauts de ligne sont acceptées et les sauts de ligne sont interprétés littéralement comme des nouvelles lignes, sauf si une barre oblique inverse est le dernier caractère avant le saut de ligne. L’espace blanc de début sur la ligne suivante est ignoré lorsque la barre oblique inverse est utilisée. Le code suivant produit une `str1` de chaîne qui a la valeur `"abc\ndef"` et une chaîne `str2` qui a une valeur `"abcdef"`.
+Dans le code, les chaînes qui ont des sauts de ligne sont acceptées et les sauts de ligne sont interprétés littéralement comme des lignes neuves, à moins qu’un personnage de barre oblique inverse soit le dernier personnage avant la rupture de la ligne. L’espace blanc de tête sur la ligne suivante est ignoré lorsque le caractère de barre oblique inverse est utilisé. Le code suivant `str1` produit une `"abc\ndef"` chaîne `str2` qui a `"abcdef"`de la valeur et une chaîne qui a de la valeur .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1001.fs)]
 
-## <a name="string-indexing-and-slicing"></a>Indexation et découpage de chaîne
+## <a name="string-indexing-and-slicing"></a>Indexation et découpe des cordes
 
-Vous pouvez accéder à des caractères individuels dans une chaîne à l’aide d’une syntaxe de type tableau, comme suit.
+Vous pouvez accéder à des caractères individuels dans une chaîne en utilisant la syntaxe en forme de tableau, comme suit.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1002.fs)]
 
 Le résultat est `b`.
 
-Vous pouvez aussi extraire des sous-chaînes à l’aide de la syntaxe de découpage de tableau, comme indiqué dans le code suivant.
+Ou vous pouvez extraire des sous-cordes en utilisant la syntaxe de tranche de tableau, comme indiqué dans le code suivant.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1003.fs)]
 
@@ -82,30 +82,28 @@ abc
 def
 ```
 
-Vous pouvez représenter des chaînes ASCII par des tableaux d’octets non signés, `byte[]`de type. Vous ajoutez le suffixe `B` à un littéral de chaîne pour indiquer qu’il s’agit d’une chaîne ASCII. Les littéraux de chaîne ASCII utilisés avec les tableaux d’octets prennent en charge les mêmes séquences d’échappement que les chaînes Unicode, à l’exception des séquences d’échappement Unicode.
+Vous pouvez représenter les chaînes ASCII par des tableaux `byte[]`d’octets non signés, type . Vous ajoutez le `B` suffixe à une chaîne littérale pour indiquer qu’il s’agit d’une chaîne ASCII. Les littérals de cordes ASCII utilisés avec les tableaux byte prennent en charge les mêmes séquences d’échappement que les chaînes Unicode, à l’exception des séquences d’évasion Unicode.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1004.fs)]
 
-## <a name="string-operators"></a>Opérateurs de chaîne
+## <a name="string-operators"></a>Opérateurs de cordes
 
-Il existe deux façons de concaténer des chaînes : à l’aide de l’opérateur `+` ou à l’aide de l’opérateur `^`. L’opérateur `+` maintient la compatibilité avec les fonctionnalités de gestion des chaînes .NET Framework.
-
-L’exemple suivant illustre la concaténation de chaînes.
+L’opérateur `+` peut être utilisé pour concatenate des chaînes, en maintenant la compatibilité avec les caractéristiques de manipulation de chaîne .NET Framework. L’exemple suivant illustre la concatenation des cordes.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1006.fs)]
 
-## <a name="string-class"></a>String (classe)
+## <a name="string-class"></a>Classe de cordes
 
-Étant donné que le type F# de chaîne dans est en fait un type de `System.String` .NET Framework, tous les membres de `System.String` sont disponibles. Cela comprend l’opérateur `+`, qui est utilisé pour concaténer des chaînes, la propriété `Length` et la propriété `Chars`, qui retourne la chaîne sous la forme d’un tableau de caractères Unicode. Pour plus d’informations sur les chaînes, consultez `System.String`.
+Étant donné que le type de chaîne `System.String` en F `System.String` est en fait un type cadre .NET, tous les membres sont disponibles. Cela comprend `+` l’opérateur, qui est utilisé pour `Length` concatenate `Chars` cordes, la propriété, et la propriété, qui retourne la chaîne comme un tableau de caractères Unicode. Pour plus d’informations `System.String`sur les chaînes, voir .
 
-À l’aide de la propriété `Chars` de `System.String`, vous pouvez accéder aux différents caractères d’une chaîne en spécifiant un index, comme indiqué dans le code suivant.
+En utilisant `Chars` la `System.String`propriété de , vous pouvez accéder aux caractères individuels dans une chaîne en spécifiant un index, comme il est indiqué dans le code suivant.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1005.fs)]
 
 ## <a name="string-module"></a>Module de chaîne
 
-Des fonctionnalités supplémentaires pour la gestion des chaînes sont incluses dans le module `String` de l’espace de noms `FSharp.Core`. Pour plus d’informations, consultez [module Core. String](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.string-module-%5bfsharp%5d).
+D’autres fonctionnalités pour la `String` manipulation `FSharp.Core` des chaînes sont incluses dans le module dans l’espace nom. Pour plus d’informations, voir [Module Core.String](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.string-module-%5bfsharp%5d).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur le langage F#](index.md)
+- [Référence linguistique F](index.md)

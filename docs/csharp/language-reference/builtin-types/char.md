@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: 8727e47e13082e8550fb174c92139dfd5c17ec36
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: a07cae6e607bb6cda965240c669c655207632298
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80134341"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739065"
 ---
 # <a name="char-c-reference"></a>char (référence C)
 
 Le `char` mot clé de type <xref:System.Char?displayProperty=nameWithType> est un alias pour le type de structure .NET qui représente un caractère Unicode UTF-16.
 
-|Type|Plage|Size|Type .NET|
+|Type|Plage|Taille|Type .NET|
 |----------|-----------|----------|-------------------------|
 |`char`|U+0000 à U+FFFF|16 bits|<xref:System.Char?displayProperty=nameWithType>|
 
@@ -59,4 +59,4 @@ Pour plus d’informations, consultez la section [des types intégrales](~/_csha
 - [Types de valeur](value-types.md)
 - [Chaînes](../../programming-guide/strings/index.md)
 - <xref:System.Text.Rune?displayProperty=nameWithType>
-- [Encodage de caractère dans .NET](../../../standard/base-types/character-encoding-introduction.md)
+- [Encodage de caractères dans .NET](../../../standard/base-types/character-encoding-introduction.md)

@@ -2,12 +2,12 @@
 title: Déployer des applications .NET existantes en tant que conteneurs Windows
 description: Moderniser les applications .NET existantes avec les conteneurs Azure Cloud et Windows (fr) Déployer les applications .NET existantes sous forme de conteneurs Windows
 ms.date: 04/29/2018
-ms.openlocfilehash: c99c2e756320fc886203efcbf98a81e571d907e5
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 15e99e2ec0edd072a3d47d5c212ebbbf6705ecef
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80987970"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738421"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Déployer des applications .NET existantes en tant que conteneurs Windows
 
@@ -105,7 +105,7 @@ Pour .NET Core (plateforme croisée pour Linux et Windows), les balises ressembl
 
 ### <a name="multi-arch-images"></a>Images multi-arcs
 
-À partir de la mi-2017, vous pouvez également utiliser une nouvelle fonctionnalité dans Docker appelée images [multi-arc.](https://github.com/moby/moby/issues/15866) .NET Core Docker images peuvent utiliser des balises multi-arc. Vos fichiers Dockerfile n’ont plus besoin de définir le système d’exploitation que vous ciblez. La fonction multi-arc permet d’utiliser une seule balise sur plusieurs configurations de machines. Par exemple, avec multi-arch, vous pouvez utiliser une balise commune: **microsoft/dotnet:2.0.0-runtime**. Si vous tirez cette étiquette à partir d’un environnement de conteneur Linux, vous obtenez l’image basée sur Debian. Si vous tirez cette étiquette à partir d’un environnement de conteneur Windows, vous obtenez l’image basée sur Nano Server.
+À partir de la mi-2017, vous pouvez également utiliser une nouvelle fonctionnalité dans Docker appelée [images multi-arc.](https://github.com/moby/moby/issues/15866) .NET Core Docker images peuvent utiliser des balises multi-arc. Vos fichiers Dockerfile n’ont plus besoin de définir le système d’exploitation que vous ciblez. La fonction multi-arc permet d’utiliser une seule balise sur plusieurs configurations de machines. Par exemple, avec multi-arch, vous pouvez utiliser une balise commune: **microsoft/dotnet:2.0.0-runtime**. Si vous tirez cette étiquette à partir d’un environnement de conteneur Linux, vous obtenez l’image basée sur Debian. Si vous tirez cette étiquette à partir d’un environnement de conteneur Windows, vous obtenez l’image basée sur Nano Server.
 
 Pour les images cadre .NET, parce que le cadre traditionnel .NET ne prend en charge que Windows, vous ne pouvez pas utiliser la fonction multi-arc.
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - string interpolation [C#]
 - interpolated string [C#]
 author: pkulikov
-ms.openlocfilehash: 97bc606569b83bd14cd3b32495deb8e529747e9c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2b95fa5fe5cecd4825e8c17a33f7795c6c9480c6
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76980117"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738374"
 ---
 # <a name="---string-interpolation-c-reference"></a>$ - interpolation des cordes (référence C)
 
@@ -74,7 +74,7 @@ Trois conversions implicites sont possibles à partir d’une chaîne interpolé
       - Une méthode <xref:System.FormattableString.Invariant%2A> qui produit une chaîne de résultat pour <xref:System.Globalization.CultureInfo.InvariantCulture>.
       - Une méthode <xref:System.FormattableString.ToString(System.IFormatProvider)> qui produit une chaîne de résultat pour une culture spécifiée.
 
-    Vous pouvez également utiliser la méthode <xref:System.FormattableString.ToString(System.IFormatProvider)> pour fournir une implémentation définie par l’utilisateur de l’interface <xref:System.IFormatProvider> qui prend en charge une mise en forme personnalisée. Pour plus d’informations, voir le formatage personnalisé avec la section [ICustomFormatter](../../../standard/base-types/formatting-types.md#custom-formatting-with-icustomformatter) des [types de formatage dans l’article .NET.](../../../standard/base-types/formatting-types.md)
+    Vous pouvez également <xref:System.FormattableString.ToString(System.IFormatProvider)> utiliser la méthode pour fournir <xref:System.IFormatProvider> une implémentation définie par l’utilisateur de l’interface qui prend en charge le formatage personnalisé. Pour plus d’informations, voir le formatage personnalisé avec la section [ICustomFormatter](../../../standard/base-types/formatting-types.md#custom-formatting-with-icustomformatter) des [types de formatage dans l’article .NET.](../../../standard/base-types/formatting-types.md)
 
 1. Conversion d’une chaîne interpolée en instance <xref:System.IFormattable> qui vous permet aussi de créer plusieurs chaînes de résultat avec du contenu propre à la culture à partir d’une seule instance de <xref:System.IFormattable>.
 
@@ -84,7 +84,7 @@ L’exemple suivant utilise la conversion implicite en <xref:System.FormattableS
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-Si vous ne connaissez pas l’interpolation de chaînes, consultez le tutoriel interactif [Interpolation de chaînes en C#](../../tutorials/exploration/interpolated-strings.yml). Vous pouvez également consulter un autre tutoriel sur l’[interpolation de chaîne en C#](../../tutorials/string-interpolation.md) qui montre comment utiliser des chaînes interpolées pour produire des chaînes mises en forme.
+Si vous ne connaissez pas l’interpolation de chaînes, consultez le tutoriel interactif [Interpolation de chaînes en C#](../../tutorials/exploration/interpolated-strings.yml). Vous pouvez également vérifier une autre [interpolation de chaîne dans le](../../tutorials/string-interpolation.md) tutoriel Cmd qui démontre comment utiliser des chaînes interpolées pour produire des cordes formatées.
 
 ## <a name="compilation-of-interpolated-strings"></a>Compilation de chaînes interpolées
 
@@ -100,7 +100,7 @@ Pour plus d’informations, consultez la section [Chaînes interpolées](~/_csha
 
 - [Référence C#](../index.md)
 - [Caractères spéciaux C#](index.md)
-- [Cordes](../../programming-guide/strings/index.md)
-- [Chaînes de format numérique standard](../../../standard/base-types/standard-numeric-format-strings.md)
-- [Formatage composite](../../../standard/base-types/composite-formatting.md)
+- [Chaînes](../../programming-guide/strings/index.md)
+- [Chaînes de format numériques standard](../../../standard/base-types/standard-numeric-format-strings.md)
+- [Mise en forme composite](../../../standard/base-types/composite-formatting.md)
 - <xref:System.String.Format%2A?displayProperty=nameWithType>

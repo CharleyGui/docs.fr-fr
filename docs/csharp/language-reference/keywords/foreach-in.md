@@ -9,12 +9,12 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: dbe4f4e95c2b99f1be47885e39d51db81ba3a97d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 188d909fd33b14755d9b121953b1fa434ecf536d
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173703"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738813"
 ---
 # <a name="foreach-in-c-reference"></a>foreach, instruction (C#)
 
@@ -27,7 +27,7 @@ En commençant par le C 7.3, si `Current` la propriété de l’énumérateur re
 
 À partir de C 8.0, l’opérateur `await` peut être appliqué à l’instruction `foreach` lorsque le type de collection implémente l’interface. <xref:System.Collections.Generic.IAsyncEnumerable%601> Chaque itération de la boucle peut être suspendue pendant que l’élément suivant est récupéré asynchronement. Par défaut, les éléments de flux sont traités dans le contexte capturé. Si vous souhaitez désactiver la capture du <xref:System.Threading.Tasks.TaskAsyncEnumerableExtensions.ConfigureAwait%2A?displayProperty=nameWithType> contexte, utilisez la méthode d’extension. Pour plus d’informations sur les contextes de synchronisation et la capture du contexte actuel, voir [l’article sur la consommation du modèle asynchrone basé sur les tâches](../../../standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md).
 
-À tout moment dans le bloc d’instructions `foreach`, vous pouvez sortir de la boucle à l’aide de l’instruction [break](break.md), ou passer à l’itération suivante de la boucle à l’aide de l’instruction [continue](continue.md). Vous pouvez également quitter une boucle `foreach` en utilisant les instructions [goto](goto.md), [return](return.md) ou [throw](throw.md).
+À tout moment dans le bloc d’instructions `foreach`, vous pouvez sortir de la boucle à l’aide de l’instruction [break](break.md), ou passer à l’itération suivante de la boucle à l’aide de l’instruction [continue](continue.md). Vous pouvez également `foreach` sortir d’une boucle par le [goto](goto.md), [retour](return.md), ou [lancer des](throw.md) déclarations.
 
 Si l’instruction `foreach` est appliquée à `null`, une <xref:System.NullReferenceException> est levée. Si la collecte `foreach` source de la déclaration `foreach` est vide, le corps de la boucle n’est pas exécuté et ignoré.
 
@@ -58,7 +58,7 @@ Pour plus d’informations, voir la section [Instruction foreach](~/_csharplang/
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
-- [Mots clés C#](index.md)
+- [Guide de programmation CMD](../../programming-guide/index.md)
+- [Mots-clés C](index.md)
 - [Utilisation de l’avant-car avec des tableaux](../../programming-guide/arrays/using-foreach-with-arrays.md)
 - [pour déclaration](for.md)

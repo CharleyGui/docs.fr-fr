@@ -7,12 +7,12 @@ helpviewer_keywords:
 - I/O [.NET], buffers
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: f939164cd56b2fb2feeeb171236b0e1171327e19
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d113def0182dc6a5bcea6c18b2d0e4b475946e31
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160116"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739626"
 ---
 # <a name="work-with-buffers-in-net"></a>Travailler avec Buffers en .NET
 
@@ -105,7 +105,7 @@ Il existe quelques approches qui peuvent être utilisées pour traiter les donn�
 - Copiez `ReadOnlySequence<T>` le à un tableau contigus et le traiter comme un seul tampon:
   - Si la taille `ReadOnlySequence<T>` de la est petite, il peut être raisonnable de copier les données dans un tampon de pile alloué à l’aide de [l’opérateur stackalloc.](../../csharp/language-reference/operators/stackalloc.md)
   - Copiez-le `ReadOnlySequence<T>` dans un <xref:System.Buffers.ArrayPool%601.Shared%2A?displayProperty=nameWithType>tableau mis en commun à l’aide de .
-  - Utilisation [`ReadOnlySequence<T>.ToArray()`](xref:System.Buffers.BuffersExtensions.ToArray%2A). Ce n’est pas recommandé dans les `T[]` sentiers chauds car il alloue un nouveau sur le tas.
+  - Utilisez [`ReadOnlySequence<T>.ToArray()`](xref:System.Buffers.BuffersExtensions.ToArray%2A). Ce n’est pas recommandé dans les `T[]` sentiers chauds car il alloue un nouveau sur le tas.
 
 Les exemples suivants démontrent `ReadOnlySequence<byte>`quelques cas courants pour le traitement :
 
@@ -191,5 +191,5 @@ L’exemple suivant analyse une longueur d’intégriste big-endian 4-bytete dep
 ### <a name="sequencereadert-common-problems"></a>SéquenceLire\<\> T problèmes communs
 
 - Parce `SequenceReader<T>` que c’est une structable mutable, elle doit toujours être transmise par [référence](../../csharp/language-reference/keywords/ref.md).
-- `SequenceReader<T>`est une [structif de ref](../../csharp/language-reference/keywords/ref.md#ref-struct-types) de sorte qu’il ne peut être utilisé que dans des méthodes synchrones et ne peut pas être stocké dans les champs. Pour plus d’informations, voir [Écrire un code Cmd sûr et efficace](../../csharp/write-safe-efficient-code.md).
+- `SequenceReader<T>`est une [structif de ref](../../csharp/language-reference/builtin-types/struct.md#ref-struct) de sorte qu’il ne peut être utilisé que dans des méthodes synchrones et ne peut pas être stocké dans les champs. Pour plus d’informations, voir [Écrire un code Cmd sûr et efficace](../../csharp/write-safe-efficient-code.md).
 - `SequenceReader<T>`est optimisé pour une utilisation en tant que lecteur avant-seulement. `Rewind`est destiné à de petites sauvegardes qui `Read`ne `Peek`peuvent `IsNext` pas être traitées en utilisant d’autres , , et API.

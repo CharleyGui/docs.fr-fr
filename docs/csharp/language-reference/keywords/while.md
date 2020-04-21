@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - while keyword [C#]
 ms.assetid: 72a0765c-6852-4aca-b327-4a11cb7f5c59
-ms.openlocfilehash: eb9aa2ea8d6b1c96e0be7d377f7c047194b598de
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 481d3f7b87dbe874de010825c3c7f052e4bc33c0
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712791"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738752"
 ---
 # <a name="while-c-reference"></a>while (référence C#)
 
@@ -22,9 +22,9 @@ L’instruction `while` exécute une instruction ou un bloc d’instructions tan
 
 Vous pouvez passer directement à l’évaluation de l’expression `while` à l’aide de l’instruction [continue](continue.md). Si l’expression correspond à `true`, l’exécution passe à la première instruction de la boucle. Sinon, l’exécution passe à la première instruction après la boucle.
 
-Vous pouvez également quitter une boucle `while` en utilisant les instructions [goto](goto.md), [return](return.md) ou [throw](throw.md).
+Vous pouvez également `while` sortir d’une boucle par le [goto](goto.md), [retour](return.md), ou [lancer des](throw.md) déclarations.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant illustre l’utilisation de l’instruction `while`. Sélectionnez **Exécuter** pour exécuter l’exemple de code. Après cela, vous pouvez modifier le code et le réexécuter.
 
@@ -37,6 +37,6 @@ Pour plus d’informations, voir la section [Instruction while](~/_csharplang/sp
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
-- [Mots clés C#](index.md)
+- [Guide de programmation CMD](../../programming-guide/index.md)
+- [Mots-clés C](index.md)
 - [faire déclaration](do.md)

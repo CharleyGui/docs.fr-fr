@@ -10,12 +10,12 @@ helpviewer_keywords:
 - else keyword [C#]
 - if keyword [C#]
 ms.assetid: d9a1d562-8cf5-4bd4-9ba7-8ad970cd25b2
-ms.openlocfilehash: 98c1a8dceec3e5a47627841988e2d722c56fc36c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 61b60674d3b5de4649a52d2a165265ae0a27e0be
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715261"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738850"
 ---
 # <a name="if-else-c-reference"></a>if-else (référence C#)
 
@@ -63,19 +63,19 @@ Si vous préférez que `Result2` s’affiche quand `(m > 10)` a la valeur false,
 
 `Result2` s’affiche si la condition `(m > 10)` a la valeur false.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Dans l’exemple suivant, vous entrez un caractère au clavier et le programme utilise une instruction `if` imbriquée pour déterminer si le caractère d’entrée est un caractère alphabétique. Si le caractère d’entrée est un caractère alphabétique, le programme vérifie si c’est une minuscule ou une majuscule. Un message s’affiche dans chaque cas.
 
 [!code-csharp[csrefKeywordsSelection#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#4)]
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
-Vous pouvez aussi imbriquer une instruction `if` à l’intérieur d’un bloc « else », comme le montre l’extrait de code suivant. L’exemple imbrique des instructions `if` à l’intérieur de deux blocs « else » et d’un bloc « then ». Les commentaires précisent les conditions qui sont vraies (true) et celles qui sont fausses (false) dans chaque bloc.
+Vous pouvez également `if` nicher une déclaration à l’intérieur d’un autre bloc, comme le montre le code partiel suivant. L’exemple imbrique des instructions `if` à l’intérieur de deux blocs « else » et d’un bloc « then ». Les commentaires précisent les conditions qui sont vraies (true) et celles qui sont fausses (false) dans chaque bloc.
 
 [!code-csharp[csrefKeywordsSelection#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#5)]
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant détermine si un caractère d’entrée est une lettre minuscule, une lettre majuscule ou un nombre. Si ces trois conditions ont la valeur false, le caractère n’est pas un caractère alphanumérique. L’exemple affiche un message dans chaque cas.
 
@@ -137,8 +137,8 @@ if (!(m >= n || m >= p))
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
-- [Mots clés C#](index.md)
+- [Guide de programmation CMD](../../programming-guide/index.md)
+- [Mots-clés C](index.md)
 - [?: Opérateur](../operators/conditional-operator.md)
 - [if-else, instruction (C++)](/cpp/cpp/if-else-statement-cpp)
-- [Interrupteur](switch.md)
+- [switch](switch.md)

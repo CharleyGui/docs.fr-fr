@@ -2,12 +2,12 @@
 title: Quoi de neuf dans le guide C 8.0 - Guide C
 description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0.
 ms.date: 04/07/2020
-ms.openlocfilehash: 2998beb378c68bead7f34e2a0963c40cf610a442
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: fcba0526fbcbe46a02cef167822c219f9db2eb63
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389089"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738164"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 

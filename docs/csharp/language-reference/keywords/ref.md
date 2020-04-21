@@ -1,18 +1,18 @@
 ---
 title: ref, mot clé - Référence C#
-ms.date: 03/19/2020
+ms.date: 04/21/2020
 f1_keywords:
 - ref_CSharpKeyword
 - ref
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: d54d932ca96f1966ecc05a532a2468b7e16fac46
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: 494a46040d6cc33c5284449779fae89705fd29c2
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805851"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738822"
 ---
 # <a name="ref-c-reference"></a>ref (référence C#)
 
@@ -21,7 +21,7 @@ Le mot clé `ref` indique une valeur qui est passée par référence. Il est ut
 - Dans une signature de méthode et dans un appel de méthode, pour passer un argument à une méthode par référence. Pour plus d’informations, consultez [Passage d’un argument par référence](#passing-an-argument-by-reference).
 - Dans une signature de méthode, pour retourner une valeur à l’appelant par référence. Pour plus d’informations, consultez [Valeurs de retour de référence](#reference-return-values).
 - Dans le corps d’un membre, pour indiquer qu’une valeur de retour de référence est stockée localement sous la forme d’une référence que l’appelant a l’intention de modifier, ou une variable locale accède généralement à une valeur par référence. Pour plus d’informations, consultez [Variables locales ref](#ref-locals).
-- Dans une déclaration de `struct` pour déclarer un `ref struct` ou un `readonly ref struct`. Pour plus d’informations, consultez [Types de structures ref](#ref-struct-types).
+- Dans une déclaration de `struct` pour déclarer un `ref struct` ou un `readonly ref struct`. Pour plus d’informations, consultez la [ `ref` ](../builtin-types/struct.md#ref-struct) section struct de l’article des types [structure.](../builtin-types/struct.md)
 
 ## <a name="passing-an-argument-by-reference"></a>Passage d’un argument par référence
 
@@ -136,23 +136,6 @@ L’exemple suivant définit une classe `Book` qui a deux champs <xref:System.St
 Quand l’appelant stocke la valeur retournée par la méthode `GetBookByTitle` comme variable locale ref, les modifications apportées par l’appelant à la valeur de retour sont reflétées dans l’objet `BookCollection`, comme le montre l’exemple suivant.
 
 [!code-csharp[csrefKeywordsMethodParams#6](~/samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/RefParameterModifier.cs#5)]
-
-## <a name="ref-struct-types"></a>Types de structures ref
-
-L’ajout du modificateur `ref` à une déclaration `struct` définit que les instances de ce type doivent être allouées par la pile. En d’autres termes, les instances de ces types ne peuvent jamais être créées sur un segment de mémoire en tant que membre d’une autre classe. Cette fonctionnalité vise principalement <xref:System.Span%601> et ses structures associées.
-
-La conservation d’un type `ref struct` comme variable allouée par la pile introduit plusieurs règles que le compilateur applique pour tous les types `ref struct`.
-
-- Vous ne pouvez pas effectuer d’opération box sur un `ref struct`. Vous ne pouvez pas assigner un type `ref struct` à une variable de type `object`, `dynamic` ou tout type interface.
-- Les types `ref struct` ne peuvent pas implémenter les interfaces.
-- Vous ne pouvez pas déclarer `ref struct` comme membre de champ d’une classe ou d’un struct normal. Cela comprend la déclaration d’une propriété auto-mise en œuvre, qui crée un champ de soutien généré par compilateur.
-- Vous ne pouvez pas déclarer des variables locales qui sont des types `ref struct` dans des méthodes async. Vous pouvez les déclarer dans des <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601>méthodes `Task`synchrones qui reviennent , , ou -comme les types.
-- Vous ne pouvez pas déclarer de variables locales `ref struct` dans des itérateurs.
-- Vous ne pouvez pas capturer de variables `ref struct` dans des expressions lambda ou des fonctions locales.
-
-Ces restrictions garantissent que vous n’utilisiez pas accidentellement une `ref struct` d’une manière qui pourrait la promouvoir auprès du tas managé.
-
-Vous pouvez combiner des modificateurs pour déclarer une structure en tant que `readonly ref`. Une `readonly ref struct` combine les avantages et les restrictions des déclarations `ref struct` et `readonly struct`.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

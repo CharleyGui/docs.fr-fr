@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - attached properties [WPF Designer]
 ms.assetid: 75928354-dc01-47e8-a018-8409aec1f32d
-ms.openlocfilehash: 5086401f4616074d364c1d387b751116120d5969
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: b207db459776c9f8fa7ea247d01071eeb8c995cf
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389001"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739294"
 ---
 # <a name="attached-properties-overview"></a>Vue d'ensemble des propriétés jointes
 
@@ -20,11 +20,11 @@ Une propriété jointe est un concept défini par XAML. Elle est conçue pour ê
 
 ## <a name="prerequisites"></a>Conditions préalables<a name="prerequisites"></a>
 
-Cette rubrique part du principe que vous savez ce que sont les propriétés de dépendance du point de vue d’un consommateur de propriétés de dépendance existantes sur les classes [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] et que vous avez lu [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md). Pour suivre les exemples dans ce sujet, vous devez également comprendre XAML et savoir écrire des applications WPF.
+Cet article suppose que vous comprenez les propriétés de dépendance [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] du point de vue d’un consommateur de propriétés de dépendance existantes sur les classes, et ont lu le [Aperçu des propriétés de dépendance](dependency-properties-overview.md). Pour suivre les exemples de cet article, vous devez également comprendre XAML et savoir écrire des applications WPF.
 
 ## <a name="why-use-attached-properties"></a>Pourquoi utiliser les propriétés ci-jointes<a name="attached_properties_usage"></a>
 
-Une des finalités d’une propriété jointe est de permettre à différents éléments enfants de spécifier des valeurs uniques pour une propriété définie en fait dans un élément parent. Une application spécifique de ce scénario est de faire en sorte que les éléments enfants informent l’élément parent sur la manière dont ils doivent être présentés dans l’[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. Un exemple <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> est la propriété. La <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> propriété est créée comme une propriété attachée parce qu’elle <xref:System.Windows.Controls.DockPanel>est conçue <xref:System.Windows.Controls.DockPanel> pour être placée sur des éléments qui sont contenus dans un, plutôt que sur lui-même. La <xref:System.Windows.Controls.DockPanel> classe définit <xref:System.Windows.DependencyProperty> le <xref:System.Windows.Controls.DockPanel.DockProperty>champ statique nommé, <xref:System.Windows.Controls.DockPanel.SetDock%2A> puis fournit le et les <xref:System.Windows.Controls.DockPanel.GetDock%2A> méthodes en tant qu’accesseurs publics pour la propriété ci-jointe.
+L’un des buts d’une propriété attachée est de permettre à différents éléments pour enfants de spécifier des valeurs uniques pour une propriété qui est définie dans un élément parent. Une application spécifique de ce scénario est de faire en sorte que les éléments enfants informent l’élément parent sur la manière dont ils doivent être présentés dans l’[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. Un exemple <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> est la propriété. La <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> propriété est créée comme une propriété attachée parce qu’elle <xref:System.Windows.Controls.DockPanel> est conçue <xref:System.Windows.Controls.DockPanel> pour être placée sur des éléments qui sont contenus dans un plutôt que sur lui-même. La <xref:System.Windows.Controls.DockPanel> classe définit <xref:System.Windows.DependencyProperty> le <xref:System.Windows.Controls.DockPanel.DockProperty>champ statique nommé, <xref:System.Windows.Controls.DockPanel.SetDock%2A> puis fournit le et les <xref:System.Windows.Controls.DockPanel.GetDock%2A> méthodes en tant qu’accesseurs publics pour la propriété ci-jointe.
 
 ## <a name="attached-properties-in-xaml"></a>Propriétés attachées dans XAML<a name="attached_properties_xaml"></a>
 
@@ -34,13 +34,13 @@ Ce qui suit est un <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProper
 
 [!code-xaml[PropertiesOvwSupport#APBasicUsage](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml#apbasicusage)]
 
-Notez que l’utilisation est quelque peu similaire à une propriété statique; vous faites toujours <xref:System.Windows.Controls.DockPanel> référence au type qui possède et enregistre la propriété ci-jointe, plutôt que de se référer à n’importe quelle instance spécifiée par son nom.
+L’utilisation est un peu similaire à une propriété statique; vous faites toujours <xref:System.Windows.Controls.DockPanel> référence au type qui possède et enregistre la propriété ci-jointe, plutôt que de se référer à n’importe quelle instance spécifiée par son nom.
 
-En outre, comme une propriété jointe en XAML est un attribut que vous définissez dans le balisage, seule l’opération définie est pertinente. Vous ne pouvez pas obtenir directement une propriété en XAML, bien que des mécanismes indirects permettent de comparer des valeurs, telles que les déclencheurs dans les styles (pour plus d’informations, consultez [Application d’un style et création de modèles](../controls/styling-and-templating.md)).
+En outre, comme une propriété jointe en XAML est un attribut que vous définissez dans le balisage, seule l’opération définie est pertinente. Vous ne pouvez pas obtenir directement une propriété en XAML, bien que des mécanismes indirects permettent de comparer des valeurs, telles que les déclencheurs dans les styles (pour plus d’informations, consultez [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)).
 
 ### <a name="attached-property-implementation-in-wpf"></a>Implémentation des propriétés jointes dans WPF
 
-Dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], la plupart des propriétés ci-jointes qui existent sur les types WPF qui sont liés à la présentation d’assurance-chômage sont mises en œuvre comme propriétés de dépendance. Les propriétés ci-jointes sont un concept XAML, tandis que les propriétés de dépendance sont un concept WPF. Étant donné que les propriétés attachées au WPF sont des propriétés de dépendance, ils prennent en charge les concepts de propriété de dépendance tels que les métadonnées de propriété, et les valeurs par défaut de ces métadonnées de propriété.
+Dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], la plupart des propriétés liées à l’interface utilisateur sur les types WPF sont mises en œuvre comme propriétés de dépendance. Les propriétés ci-jointes sont un concept XAML, tandis que les propriétés de dépendance sont un concept WPF. Étant donné que les propriétés attachées au WPF sont des propriétés de dépendance, ils prennent en charge les concepts de propriété de dépendance tels que les métadonnées de propriété, et les valeurs par défaut de ces métadonnées de propriété.
 
 ## <a name="how-attached-properties-are-used-by-the-owning-type"></a>Comment les propriétés ci-jointes sont utilisées par le type de propriétaire<a name="howused"></a>
 
@@ -91,7 +91,7 @@ Comme mentionné précédemment, vous devez enregistrer une propriété jointe s
 
 Si votre classe définit la propriété attachée strictement pour une utilisation sur d’autres types, alors la classe n’a pas à dériver de <xref:System.Windows.DependencyObject>. Mais vous avez besoin <xref:System.Windows.DependencyObject> de dériver de si vous suivez le modèle global WPF d’avoir votre propriété attachée également être une propriété de dépendance.
 
-Définissez votre propriété ci-jointe comme `public static readonly` une <xref:System.Windows.DependencyProperty>propriété de dépendance en déclarant un champ de type. Vous définissez ce champ en <xref:System.Windows.DependencyProperty.RegisterAttached%2A> utilisant la valeur de retour de la méthode. Le nom de champ doit correspondre au nom `Property`de propriété ci-joint, joint avec la chaîne, pour suivre le modèle WPF établi de nommer les champs d’identification par rapport aux propriétés qu’ils représentent. Le fournisseur de biens attenant doit également fournir des méthodes **statiques Get_PropertyName_** et **Set_PropertyName_** comme accesseurs pour la propriété ci-jointe; à défaut de le faire, le système de propriété sera incapable d’utiliser votre propriété attenante.
+Définissez votre propriété ci-jointe comme `public static readonly` une <xref:System.Windows.DependencyProperty>propriété de dépendance en déclarant un champ de type. Vous définissez ce champ en <xref:System.Windows.DependencyProperty.RegisterAttached%2A> utilisant la valeur de retour de la méthode. Le nom de champ doit correspondre au nom `Property`de propriété ci-joint, joint avec la chaîne, pour suivre le modèle WPF établi de nommer les champs d’identification par rapport aux propriétés qu’ils représentent. Le fournisseur de biens attenant doit également fournir des méthodes **statiques Get_PropertyName_** et **Set_PropertyName_** comme accesseurs pour la propriété ci-jointe; ne pas le faire, le système de propriété n’est pas en mesure d’utiliser votre propriété ci-jointe.
 
 > [!NOTE]
 > Si vous ometez l’accesseur de la propriété ci-jointe, la liaison de données sur la propriété ne fonctionnera pas dans les outils de conception, tels que Visual Studio et Blend for Visual Studio.

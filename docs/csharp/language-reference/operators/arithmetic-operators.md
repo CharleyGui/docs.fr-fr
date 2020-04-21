@@ -27,12 +27,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: f03084fa611c35c5504190b28fab79563d560d03
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ea9bf9e065b2953fd20e0503a19d1dc143064c5d
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399258"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738733"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Opérateurs arithmétiques (référence C#)
 
@@ -153,7 +153,7 @@ L’opérateur d’addition `+` calcule la somme de ses opérandes :
 
 [!code-csharp-interactive[addition operator](snippets/ArithmeticOperators.cs#Addition)]
 
-Vous pouvez également utiliser l’opérateur `+` pour la concaténation de chaînes et la combinaison de délégués. Pour plus d’informations, voir l’article [ `+` et `+=` les opérateurs.](addition-operator.md)
+Vous pouvez également `+` utiliser l’opérateur pour la concatenation des cordes et la combinaison de délégués. Pour plus d’informations, voir l’article [ `+` et `+=` les opérateurs.](addition-operator.md)
 
 ## <a name="subtraction-operator--"></a>Opérateur de soustraction -
 
@@ -161,7 +161,7 @@ L’opérateur de soustraction `-` soustrait son opérande de partie droite de s
 
 [!code-csharp-interactive[subtraction operator](snippets/ArithmeticOperators.cs#Subtraction)]
 
-Vous pouvez également utiliser l’opérateur `-` pour la suppression de délégués. Pour plus d’informations, voir l’article [ `-` et `-=` les opérateurs.](subtraction-operator.md)
+Vous pouvez également `-` utiliser l’opérateur pour le retrait des délégués. Pour plus d’informations, voir l’article [ `-` et `-=` les opérateurs.](subtraction-operator.md)
 
 ## <a name="compound-assignment"></a>Assignation composée
 
