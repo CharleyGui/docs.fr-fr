@@ -489,7 +489,7 @@
                     - name: "Guide pratique pour calculer des valeurs de colonnes dans un fichier texte\_CSV (LINQ)"
                       href: programming-guide/concepts/linq/how-to-compute-column-values-in-a-csv-text-file-linq.md
                 - name: LINQ et Reflection
-                  href: programming-guide/concepts/linq/linq-and-reflection.md
+                  href: programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md
                 - name: Comment interroger les métadonnées d’un assembly avec la réflexion (LINQ)
                   href: programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md
                 - name: LINQ et répertoires de fichiers
@@ -1322,7 +1322,7 @@
                   displayName: 'enum, bit flags, bit field'
                 - name: Types de structure
                   href: language-reference/builtin-types/struct.md
-                  displayName: 'struct type, readonly'
+                  displayName: 'struct type, readonly struct, ref struct, readonly ref struct'
                 - name: Types valeur Nullable
                   href: language-reference/builtin-types/nullable-value-types.md
                   displayName: '? token, ? symbol'
