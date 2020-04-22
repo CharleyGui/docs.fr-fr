@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: dc733ee32184db5af59bb06e294cd73765977581
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9f8a790718fbb9d685bb8959808338dc1766bf2c
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77449551"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021656"
 ---
 ### <a name="fieldinfosetvalue-throws-exception-for-static-init-only-fields"></a>FieldInfo.SetValue jette l’exception pour les champs statiques et init-seulement
 
@@ -31,7 +31,7 @@ Alternativement, vous pouvez <xref:System.Reflection.FieldAttributes.InitOnly?di
 
 #### <a name="category"></a>Category
 
-CoreFx
+Core .NET bibliothèques
 
 #### <a name="affected-apis"></a>API affectées
 

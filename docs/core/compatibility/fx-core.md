@@ -3,12 +3,12 @@ title: Breaking changes - .NET Framework to .NET Core
 titleSuffix: ''
 description: Répertorie les changements de rupture de .NET Framework à .NET Core.
 ms.date: 12/18/2019
-ms.openlocfilehash: f712be14d7debc4b3008f8459e6ee925754b25f0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ef16132c8dcffbe9bcfbe02834c9a78d6d0c33e4
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77449394"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021797"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>Breaking changes for migration from .NET Framework to .NET Core
 
@@ -17,7 +17,7 @@ Si vous migrez une application de .NET Framework à .NET Core, les modifications
 > [!NOTE]
 > Cet article n’est pas une liste complète des changements de rupture entre .NET Framework et .NET Core. Les changements de rupture les plus importants sont ajoutés ici que nous prenons conscience d’eux.
 
-## <a name="corefx"></a>CoreFx
+## <a name="core-net-libraries"></a>Core .NET bibliothèques
 
 - [Variation de la valeur par défaut de UseShellExecute](#change-in-default-value-of-useshellexecute)
 - [UnauthorizedAccessException jeté par FileSystemInfo.Attributes](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes)

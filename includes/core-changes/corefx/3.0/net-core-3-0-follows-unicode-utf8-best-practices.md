@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: db1d09c8c9e606b5327a42977a74a74703282d84
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 843c78bb4e4f88d9ac58308a91ab8278364c9580
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74568117"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021568"
 ---
 ### <a name="net-core-30-follows-unicode-best-practices-when-replacing-ill-formed-utf-8-byte-sequences"></a>.NET Core 3.0 suit les meilleures pratiques d’Unicode lors du remplacement des séquences de byte UTF-8 mal formées
 
@@ -36,7 +36,7 @@ Aucune action n’est requise de la part du développeur.
 
 #### <a name="category"></a>Category
 
-CoreFx
+Core .NET bibliothèques
 
 #### <a name="affected-apis"></a>API affectées
 

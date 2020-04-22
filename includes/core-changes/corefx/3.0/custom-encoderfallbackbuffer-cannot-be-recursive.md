@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 58d1c8cd3aff52703522391c14348bd81c108587
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 820825f0545aa78729414c388385b339225b1235
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74568138"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021580"
 ---
 ### <a name="custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively"></a>Custom EncoderFallbackBuffer instances ne peuvent pas se replier de façon récursive
 
@@ -38,7 +38,7 @@ Si une application <xref:System.Text.EncoderFallback> utilise <xref:System.Text.
 
 #### <a name="category"></a>Category
 
-CoreFx
+Core .NET bibliothèques
 
 #### <a name="affected-apis"></a>API affectées
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ce4f09908b1025e8e5a0380c9bf035c6b0db479a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 22dbb1e982f83687a9e0eb288ed72c78c676db77
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74568168"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021615"
 ---
 ### <a name="floating-point-formatting-and-parsing-behavior-changed"></a>Le formatage et l’analyse des points flottants ont changé
 
@@ -26,7 +26,7 @@ La section « Impact potentiel sur le code existant » des améliorations de l�
 
 #### <a name="category"></a>Category
 
-CoreFx
+Core .NET bibliothèques
 
 #### <a name="affected-apis"></a>API affectées
 

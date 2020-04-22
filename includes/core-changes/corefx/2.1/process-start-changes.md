@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 58cb3580c8701773452ae8338f036a94bbee80c5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9544b65f31772d0f4cee918528a73171fec4de99
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77449393"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021807"
 ---
 ### <a name="change-in-default-value-of-useshellexecute"></a>Variation de la valeur par défaut de UseShellExecute
 
@@ -29,7 +29,7 @@ Si votre application s’appuie <xref:System.Diagnostics.Process.Start(System.Di
 
 #### <a name="category"></a>Category
 
-CoreFx
+Core .NET bibliothèques
 
 #### <a name="affected-apis"></a>API affectées
 

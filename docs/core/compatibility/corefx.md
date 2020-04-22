@@ -1,17 +1,17 @@
 ---
 title: Changement de rupture de bibliothèque de classe de base
-description: Répertorie les changements de rupture dans .NET CoreFx, la bibliothèque de la classe de base.
+description: Répertorie les changements de rupture dans les bibliothèques de base .NET.
 ms.date: 09/20/2019
-ms.openlocfilehash: 56a3cf4f4c00a79752d5a98bb086bb9f8c0614b1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8cf90ca2bc8736101c1cb8d327a93d100148937b
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79147573"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021829"
 ---
-# <a name="corefx-breaking-changes"></a>CoreFx briser les changements
+# <a name="core-net-libraries-breaking-changes"></a>Core .NET bibliothèques briser les changements
 
-CoreFx fournit les primitifs et autres types généraux utilisés par .NET Core.
+Les bibliothèques de base .NET fournissent les primitifs et autres types généraux utilisés par .NET Core.
 
 Les modifications de rupture suivantes sont documentées sur cette page :
 

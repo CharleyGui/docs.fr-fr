@@ -1,6 +1,6 @@
 ---
 title: Gestion des exceptions (bibliothèque parallèle de tâches)
-ms.date: 03/30/2017
+ms.date: 04/20/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, exceptions
 ms.assetid: beb51e50-9061-4d3d-908c-56a4f7c2e8c1
-ms.openlocfilehash: 12777a5f34b8aadcc80977b8796fc2cd53c626a8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: aa6d4b706eb11921ffd419402bcf4cf059a29b11
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73134249"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021510"
 ---
 # <a name="exception-handling-task-parallel-library"></a>Gestion des exceptions (bibliothèque parallèle de tâches)
 
@@ -89,7 +89,14 @@ Si une tâche se termine avec l’état <xref:System.Threading.Tasks.TaskStatus.
 [!code-csharp[TPL_Exceptions#27](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_exceptions/cs/exceptionprop21.cs#27)]
 [!code-vb[TPL_Exceptions#27](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_exceptions/vb/exceptionprop21.vb#27)]
 
-Dans une application réelle, le délégué de continuation peut consigner des informations détaillées sur l’exception et générer de nouvelles tâches pour se remettre de l’exception.
+Dans une demande significative, le délégué de continuation pourrait enregistrer des informations détaillées sur l’exception et éventuellement engendrer de nouvelles tâches pour se remettre de l’exception. Si une tâche s’en fait défaut, les expressions suivantes jettent l’exception :
+
+- `await task`
+- `task.Wait()`
+- `task.Result`
+- `task.GetAwaiter().GetResult()`
+
+Utilisez [`try-catch`](../../csharp/language-reference/keywords/try-catch.md) une déclaration pour gérer et observer les exceptions jetées. Vous pouvez également observer l’exception en accédant à la <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> propriété.
 
 ## <a name="unobservedtaskexception-event"></a>Événement UnobservedTaskException
 

@@ -2,13 +2,13 @@
 title: Debug un tutoriel fuite de mémoire
 description: Apprenez à déboiffer une fuite de mémoire dans .NET Core.
 ms.topic: tutorial
-ms.date: 12/17/2019
-ms.openlocfilehash: 014945394f87edd02c94f7c3b28043bd07470d8b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/20/2020
+ms.openlocfilehash: d47992bab9dab64cf7f88ff679eef407dd891b5a
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76737731"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021362"
 ---
 # <a name="tutorial-debug-a-memory-leak-in-net-core"></a>Tutorial: Debug une fuite de mémoire dans .NET Core
 
@@ -26,7 +26,7 @@ Ce didacticiel présente les procédures suivantes :
 > - Générer un fichier de décharge.
 > - Analyser l’utilisation de la mémoire à l’aide du fichier de décharge.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Le didacticiel utilise :
 
@@ -137,7 +137,7 @@ Dans ce tutoriel, vous avez maintenant terminé avec la [cible de débogé d’�
 
 ### <a name="analyze-the-core-dump"></a>Analyser le dépotoir de base
 
-Maintenant que vous avez un décharge de base généré, utilisez [l’outil dotnet-dump)](dotnet-dump.md) pour analyser le dépotoir :
+Maintenant que vous avez un décharge de base généré, utilisez [l’outil de décharge de dotnet](dotnet-dump.md) pour analyser le dépotoir :
 
 ```dotnetcli
 dotnet-dump analyze core_20190430_185145
@@ -146,7 +146,7 @@ dotnet-dump analyze core_20190430_185145
 Où `core_20190430_185145` est le nom de la décharge de base que vous voulez analyser.
 
 > [!NOTE]
-> Si vous voyez une erreur se plaindre que *libdl.so* ne peut pas être trouvé, vous devrez peut-être installer le paquet *libc6-dev.* Pour plus d’informations, consultez [Configuration requise pour .NET Core sur Linux](../linux-prerequisites.md).
+> Si vous voyez une erreur se plaindre que *libdl.so* ne peut pas être trouvé, vous devrez peut-être installer le paquet *libc6-dev.* Pour plus d’informations, consultez [Configuration requise pour .NET Core sur Linux](../install/dependencies.md?pivots=os-linux).
 
 Vous serez présenté avec une invite où vous pouvez entrer les commandes SOS. Généralement, la première chose que vous voulez regarder est l’état global du tas géré:
 

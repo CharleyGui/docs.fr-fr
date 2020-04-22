@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 6a5cd260a2820e2a81142f6d55e32e91173ca503
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8790637c31d503455eb8ba722cca827c2a24b7c9
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79147449"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021451"
 ---
 ### <a name="openssl-versions-on-macos"></a>Versions OpenSSL sur macOS
 
@@ -42,7 +42,7 @@ Avec ce changement, le comportement pour les runtimes .NET Core sur macOS est le
 
 #### <a name="category"></a>Category
 
-CoreFx
+Core .NET bibliothèques
 
 #### <a name="affected-apis"></a>API affectées
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 5612ebce67946e22aaeeba861115ce4f8967e1f5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1580c8c8b7bdad91656f494537230293dbaaf93b
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75344455"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021557"
 ---
 ### <a name="apis-that-report-version-now-report-product-and-not-file-version"></a>API qui signalent la version signalent maintenant le produit et ne fichier pas la version
 
@@ -28,7 +28,7 @@ Aucun. Ce changement devrait rendre la détection de version intuitive plutôt q
 
 #### <a name="category"></a>Category
 
-CoreFx
+Core .NET bibliothèques
 
 #### <a name="affected-apis"></a>API affectées
 

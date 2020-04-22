@@ -1,6 +1,6 @@
 ---
 title: Types de structure - Référence C
-ms.date: 04/14/2020
+ms.date: 04/21/2020
 f1_keywords:
 - struct_CSharpKeyword
 helpviewer_keywords:
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 8013aab5580ac007875debc78208532a2d0ad1dc
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: dbe9b47625589de834b7a8021640885ca0920b96
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81388992"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "82021270"
 ---
 # <a name="structure-types-c-reference"></a>Types de structure (référence C)
 
@@ -41,13 +41,13 @@ Tous les membres `readonly` de données d’une struct doivent être lus uniquem
 Cela garantit qu’aucun `readonly` membre d’une structure ne modifie l’état de la struction.
 
 > [!NOTE]
-> Dans `readonly` une struct, un membre des données d’un type de référence mutable peut encore muter son propre état. Par exemple, vous <xref:System.Collections.Generic.List%601> ne pouvez pas remplacer une instance, mais vous pouvez y ajouter de nouveaux éléments.
+> Dans `readonly` une struct, un membre des données d’un type de référence mutable peut encore muter son propre état. Par exemple, vous ne <xref:System.Collections.Generic.List%601> pouvez pas remplacer une instance, mais vous pouvez y ajouter de nouveaux éléments.
 
 ## <a name="readonly-instance-members"></a>`readonly`membres d’instance
 
-En commençant par le C 8.0, vous pouvez également utiliser le `readonly` modificateur pour déclarer qu’un membre de l’instance ne modifie pas l’état d’une struct. Si vous ne pouvez pas `readonly`déclarer `readonly` l’ensemble du type de structure comme , utilisez le modificateur pour marquer les membres d’instance qui ne modifient pas l’état de la structure. Dans `readonly` une struct, chaque membre `readonly`d’instance est implicitement .
+En commençant par le C 8.0, vous pouvez également utiliser le `readonly` modificateur pour déclarer qu’un membre de l’instance ne modifie pas l’état d’une struct. Si vous ne pouvez pas déclarer `readonly`l’ensemble du type de structure comme , utilisez le `readonly` modificateur pour marquer les membres d’instance qui ne modifient pas l’état de la structure. Dans `readonly` une struct, chaque membre `readonly`d’instance est implicitement .
 
-Dans `readonly` un cas membre, vous ne pouvez pas attribuer aux champs d’instance de la structure. Cependant, `readonly` un membre peut`readonly` appeler un non-membre. Dans ce cas, le compilateur crée une copie`readonly` de l’instance de la structure et appelle le non-membre sur cette copie. Par conséquent, l’instance de structure d’origine n’est pas modifiée.
+Dans `readonly` un membre d’instance, vous ne pouvez pas attribuer aux champs d’instance de la structure. Cependant, `readonly` un membre peut`readonly` appeler un non-membre. Dans ce cas, le compilateur crée une copie`readonly` de l’instance de la structure et appelle le non-membre sur cette copie. Par conséquent, l’instance de structure d’origine n’est pas modifiée.
 
 En règle générale, vous appliquez le `readonly` modificateur aux types suivants de membres d’instance :
 
@@ -68,7 +68,7 @@ En règle générale, vous appliquez le `readonly` modificateur aux types suivan
   > [!NOTE]
   > Le compilateur déclare `get` un accessoiriste d’une [propriété auto-mise en œuvre](../../programming-guide/classes-and-structs/auto-implemented-properties.md) comme, `readonly`indépendamment de la `readonly` présence du modificateur dans une déclaration de propriété.
 
-Vous ne `readonly` pouvez pas appliquer le modificateur aux membres statiques d’un type de structure.
+Vous ne pouvez `readonly` pas appliquer le modificateur aux membres statiques d’un type de structure.
 
 Le compilateur peut utiliser `readonly` le modificateur pour les optimisations de performance. Pour plus d’informations, voir [Écrire un code Cmd sûr et efficace](../../write-safe-efficient-code.md).
 
@@ -88,7 +88,7 @@ Lorsque vous concevez un type de structure, vous avez les mêmes capacités qu�
 
 ## <a name="instantiation-of-a-structure-type"></a>Instantanéisation d’un type de structure
 
-Dans le C, vous devez initialiser une variable déclarée avant qu’elle puisse être utilisée. Étant donné qu’une `null` variable de type structure ne peut pas être (sauf s’il s’agit d’une variable d’un type de [valeur nul),](nullable-value-types.md)vous devez instantanéiser une instance du type correspondant. Il y a plusieurs façons de le faire.
+Dans le C, vous devez initialiser une variable déclarée avant qu’elle puisse être utilisée. Étant donné qu’une variable `null` de type structure ne peut pas être (sauf si c’est une variable d’un type de [valeur nul),](nullable-value-types.md)vous devez instantanéiser une instance du type correspondant. Il y a plusieurs façons de le faire.
 
 En règle générale, vous instantanéez un type de [`new`](../operators/new-operator.md) structure en appelant un constructeur approprié avec l’opérateur. Chaque type de structure a au moins un constructeur. C’est un constructeur implicite sans paramètres, qui produit la [valeur par défaut](default-values.md) du type. Vous pouvez également utiliser une [expression de valeur par défaut](../operators/default.md) pour produire la valeur par défaut d’un type.
 
@@ -102,9 +102,32 @@ Dans le cas des types de [valeur intégrée,](value-types.md#built-in-value-type
 
 Lorsque vous passez une variable de type structure à une méthode comme argument ou retournez une valeur de type structure à partir d’une méthode, toute l’instance d’un type de structure est copiée. Cela peut affecter les performances de votre code dans des scénarios haute performance qui impliquent de grands types de structure. Vous pouvez éviter la copie de valeur en passant une variable de type structure par référence. Utilisez [`ref`](../keywords/ref.md#passing-an-argument-by-reference)les [`out`](../keywords/out-parameter-modifier.md)modificateurs de paramètres, ou [`in`](../keywords/in-parameter-modifier.md) de méthode pour indiquer qu’un argument doit être adopté par référence. Utilisez [les retours d’arbitre](../../programming-guide/classes-and-structs/ref-returns.md) pour retourner un résultat de méthode par référence. Pour plus d’informations, voir [Écrire un code Cmd sûr et efficace](../../write-safe-efficient-code.md).
 
+## <a name="ref-struct"></a>`ref`Struct
+
+En commençant par le C 7.2, vous pouvez utiliser le `ref` modificateur dans la déclaration d’un type de structure. Les cas `ref` d’un type de struct sont attribués sur la pile et ne peuvent pas s’échapper au tas géré. Pour s’assurer que, le compilateur limite l’utilisation des `ref` types de struct comme suit :
+
+- Une `ref` struct ne peut pas être le type d’élément d’un tableau.
+- Une `ref` struct ne peut pas être un type déclaré d’un champ d’une classe ou d’une non-struct.`ref`
+- Une `ref` struct ne peut pas implémenter des interfaces.
+- Une `ref` struct ne peut pas <xref:System.ValueType?displayProperty=nameWithType> <xref:System.Object?displayProperty=nameWithType>être en boîte ou .
+- Une `ref` struct ne peut pas être un argument de type.
+- Une `ref` variable structurant ne peut pas être capturée par une [expression lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) ou une [fonction locale.](../../programming-guide/classes-and-structs/local-functions.md)
+- Une `ref` variable de struct ne [`async`](../keywords/async.md) peut pas être utilisée dans une méthode. Cependant, vous `ref` pouvez utiliser des variables struct dans les méthodes <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601>synchrones, par exemple, dans ceux qui reviennent ou .
+- Une `ref` variable struct ne peut pas être utilisée dans [les itérateurs](../../iterators.md).
+
+En règle générale, vous définissez un `ref` type de struct lorsque vous avez besoin d’un type qui inclut également les données des membres des `ref` types de struct :
+
+[!code-csharp[ref struct](snippets/StructType.cs#RefStruct)]
+
+Pour déclarer `ref` une [`readonly`](#readonly-struct)struct `readonly` comme `ref` , combiner les et `readonly` les modificateurs dans la déclaration de type (le modificateur doit venir avant le `ref` modificateur):
+
+[!code-csharp[readonly ref struct](snippets/StructType.cs#ReadonlyRef)]
+
+Dans .NET, les `ref` exemples <xref:System.Span%601?displayProperty=nameWithType> <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>d’une struct sont et .
+
 ## <a name="conversions"></a>Conversions
 
-Pour n’importe quel type de structure, il existe <xref:System.ValueType?displayProperty=nameWithType> <xref:System.Object?displayProperty=nameWithType> des conversions de boxe et [de déballage](../../programming-guide/types/boxing-and-unboxing.md) à et à partir de la et les types. Il existe également des conversions de boxe et de déballage entre un type de structure et toute interface qu’il implémente.
+Pour n’importe quel type de structure <xref:System.ValueType?displayProperty=nameWithType> (sauf <xref:System.Object?displayProperty=nameWithType> [ `ref` ](#ref-struct) les types de struct), il existe des conversions [de boxe et de déballage](../../programming-guide/types/boxing-and-unboxing.md) à et à partir de la et les types. Il existe également des conversions de boxe et de déballage entre un type de structure et toute interface qu’il implémente.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -114,6 +137,7 @@ Pour plus d’informations sur les fonctionnalités introduites dans C 7.2 et pl
 
 - [Restructurations de Readonly](~/_csharplang/proposals/csharp-7.2/readonly-ref.md#readonly-structs)
 - [Membres d'instance en lecture seule](~/_csharplang/proposals/csharp-8.0/readonly-instance-members.md)
+- [Sécurité au moment de la compilation pour les types référence](~/_csharplang/proposals/csharp-7.2/span-safety.md)
 
 ## <a name="see-also"></a>Voir aussi
 

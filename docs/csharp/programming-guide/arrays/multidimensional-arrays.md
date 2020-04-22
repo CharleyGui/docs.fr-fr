@@ -5,12 +5,12 @@ helpviewer_keywords:
 - arrays [C#], multidimensional
 - multidimensional arrays [C#]
 ms.assetid: 020ce02e-7dff-4273-8e53-bf0b33747232
-ms.openlocfilehash: eb49f4386b6106328f1613b5ec70794ac26fc9b7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ee5fae36ff844fadad7e1b6a766020319b67a83c
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715040"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021759"
 ---
 # <a name="multidimensional-arrays-c-programming-guide"></a>Tableaux multidimensionnels (Guide de programmation C#)
 
@@ -28,7 +28,7 @@ Les tableaux peuvent avoir plusieurs dimensions. Par exemple, la déclaration su
   
  [!code-csharp[csProgGuideArrays#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#13)]  
   
- Vous pouvez aussi initialiser le tableau sans spécifier de rang.  
+ Vous pouvez également initialiser le tableau sans spécifier le rang.  
   
  [!code-csharp[csProgGuideArrays#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#14)]  
   
@@ -50,7 +50,7 @@ Les tableaux peuvent avoir plusieurs dimensions. Par exemple, la déclaration su
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation CMD](../index.md)
 - [Tableaux](./index.md)
 - [Tableaux unidimensionnels](./single-dimensional-arrays.md)
-- [Arrays déchiquetés](./jagged-arrays.md)
+- [Tableaux en escalier](./jagged-arrays.md)

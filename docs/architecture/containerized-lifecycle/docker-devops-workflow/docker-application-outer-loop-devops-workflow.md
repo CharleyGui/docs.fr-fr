@@ -2,12 +2,12 @@
 title: Étapes du workflow DevOps de la boucle externe pour une application Docker
 description: Découvrez les étapes de la « boucle externe » du workflow DevOps
 ms.date: 02/15/2019
-ms.openlocfilehash: fdda1b6a2deb08ed97867583fcc8048d4dba880c
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 44bd73bf88a743e5350e422d3ea000ca075f7383
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988971"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "82021297"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Étapes du workflow DevOps de la boucle externe pour une application Docker
 
@@ -31,7 +31,7 @@ Même si le contrôle de code source (SCC, Source-Code Control) et la gestion de
 
 Les images locales, générées par les développeurs, doivent uniquement être utilisées par ces derniers lors des tests sur leurs propres machines. C’est pourquoi il est essentiel que votre pipeline DevOps soit activé à partir du code SCC.
 
-Azure DevOps Services et Team Foundation Server prennent en charge Git et Team Foundation Version Control. Vous pouvez choisir l’un d’eux et l’utiliser pour une expérience Microsoft de bout en bout. Toutefois, vous pouvez également gérer votre code dans des dépôts externes (tels que GitHub, des dépôts Git locaux ou Subversion) et être toujours en mesure de vous y connecter et d’obtenir le code comme point de départ pour votre pipeline CI DevOps.
+Azure DevOps Services et Team Foundation Server prennent en charge Git et Team Foundation Version Control. Vous pouvez choisir l’un d’eux et l’utiliser pour une expérience Microsoft de bout en bout. Cependant, vous pouvez également gérer votre code dans des dépôts externes (comme GitHub, sur place Git référentiels, ou Subversion) et toujours être en mesure de se connecter à elle et obtenir le code comme point de départ pour votre pipeline DevOps CI.
 
 ## <a name="step-3-build-ci-integrate-and-test-with-azure-devops-services-and-docker"></a>Étape 3 : Construire, CI, intégrer et tester avec Azure DevOps Services et Docker
 
@@ -184,7 +184,7 @@ Du point de vue du déploiement continu, et notamment d’Azure DevOps Services,
 
 **Figure 5-9**. Déploiement d’applications distribuées sur Container Service
 
-Pour effectuer un déploiement sur certains clusters ou orchestrateurs, vous utilisez probablement des mécanismes et des scripts de déploiement spécifiques suivant chaque orchestrateur (en d’autres termes, Kubernetes et Service Fabric ont des mécanismes de déploiement différents) au lieu de l’outil convivial `docker-compose` basé sur le fichier de définition `docker-compose.yml`. Cependant, grâce à la tâche Azure DevOps Services Docker Deploy, indiquée dans la figure 5-10, vous pouvez maintenant également vous déployer aux orchestrateurs pris en charge en utilisant simplement votre fichier familier `docker-compose.yml` parce que l’outil effectue cette «traduction» pour vous (de votre `docker-compose.yml` fichier au format requis par l’orchestrateur).
+Pour effectuer un déploiement sur certains clusters ou orchestrateurs, vous utilisez probablement des mécanismes et des scripts de déploiement spécifiques suivant chaque orchestrateur (en d’autres termes, Kubernetes et Service Fabric ont des mécanismes de déploiement différents) au lieu de l’outil convivial `docker-compose` basé sur le fichier de définition `docker-compose.yml`. Cependant, grâce à la tâche Azure DevOps Services Docker Deploy, indiquée dans la figure 5-10, vous pouvez maintenant vous déployer aux orchestrateurs pris en charge en utilisant simplement votre fichier familier `docker-compose.yml` parce que l’outil effectue cette «traduction» pour vous (de votre `docker-compose.yml` fichier au format requis par l’orchestrateur).
 
 ![Capture d’écran montrant la tâche Deploy to Kubernetes.](./media/docker-application-outer-loop-devops-workflow/add-deploy-to-kubernetes-task.png)
 

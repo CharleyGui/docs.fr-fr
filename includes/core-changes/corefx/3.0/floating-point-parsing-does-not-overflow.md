@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 30580b3fde5b8a99862896bb7d31c6c4024f97e8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 87ada29e70a94c39e7ffb74767b99d49c52444af
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74568078"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021636"
 ---
 ### <a name="floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception"></a>Les opérations d’analyse des points flottants ne échouent plus ou ne jettent plus de OverflowException
 
@@ -32,7 +32,7 @@ Cette modification peut affecter votre code de deux façons :
 
 #### <a name="category"></a>Category
 
-CoreFx
+Core .NET bibliothèques
 
 #### <a name="affected-apis"></a>API affectées
 
