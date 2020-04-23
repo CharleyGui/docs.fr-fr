@@ -6,12 +6,12 @@ metadata:
   description: Apprenez la programmation de CMD - pour les développeurs débutants, les développeurs nouveaux à C ' et les développeurs expérimentés de C / .NET
   ms.topic: landing-page
   ms.date: 11/19/2019
-  ms.openlocfilehash: 2bec49d0832a7d00d0fea247166a9ec073f37e11
-  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  ms.openlocfilehash: a0de519e518cac70bac831cf689042e104cd1389
+  ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/15/2020
-  ms.locfileid: "75339171"
+  ms.lasthandoff: 04/23/2020
+  ms.locfileid: "82102721"
 landingContent:
 - title: 'Apprendre à programmer en C #'
   linkLists:
@@ -77,8 +77,8 @@ landingContent:
       url: nullable-references.md
   - linkListType: concept
     links:
-    - text: Annoter les API pour la nullité
-      url: nullable-attributes.md
+    - text: Choisissez une stratégie de migration annulée
+      url: nullable-migration-strategies.md
   - linkListType: tutorial
     links:
     - text: Consommer et générer des flux async
@@ -103,7 +103,7 @@ landingContent:
   linkLists:
   - linkListType: reference
     links:
-    - text: Référence sur le langage
+    - text: Informations de référence sur le langage
       url: language-reference/index.md
     - text: Mots clés C#
       url: language-reference/keywords/index.md
