@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : poursuivre un service Windows (Visual Basic)'
+title: 'Comment : poursuivre un service Windows (Visual Basic)'
 ms.date: 03/30/2017
 dev_langs:
 - vb
@@ -17,7 +17,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053636"
 ---
-# <a name="how-to-continue-a-windows-service-visual-basic"></a>Procédure : poursuivre un service Windows (Visual Basic)
+# <a name="how-to-continue-a-windows-service-visual-basic"></a>Comment : poursuivre un service Windows (Visual Basic)
 Cet exemple utilise le composant <xref:System.ServiceProcess.ServiceController> pour continuer le service d’administration IIS sur l’ordinateur local.  
   
 ## <a name="example"></a>Exemple  
@@ -44,7 +44,7 @@ Cet exemple utilise le composant <xref:System.ServiceProcess.ServiceController> 
   
 - Une erreur s'est produite lors de l'accès à une API système. (<xref:System.ComponentModel.Win32Exception>)  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
+## <a name="net-framework-security"></a>Sécurité du .NET Framework  
  Vous pouvez restreindre le contrôle des services sur l’ordinateur à l’aide de l’énumération <xref:System.ServiceProcess.ServiceControllerPermissionAccess>, qui permet de définir des autorisations dans la classe <xref:System.ServiceProcess.ServiceControllerPermission>.  
   
  Vous pouvez restreindre l’accès aux informations de service à l’aide de l’énumération <xref:System.Security.Permissions.PermissionState>, qui permet de définir des autorisations dans la classe <xref:System.Security.Permissions.SecurityPermission>.  
@@ -53,4 +53,4 @@ Cet exemple utilise le composant <xref:System.ServiceProcess.ServiceController> 
 
 - <xref:System.ServiceProcess.ServiceController>
 - <xref:System.ServiceProcess.ServiceControllerStatus>
-- [Guide pratique : interrompre un service Windows (Visual Basic)](how-to-pause-a-windows-service-visual-basic.md)
+- [Comment : interrompre un service Windows (Visual Basic)](how-to-pause-a-windows-service-visual-basic.md)

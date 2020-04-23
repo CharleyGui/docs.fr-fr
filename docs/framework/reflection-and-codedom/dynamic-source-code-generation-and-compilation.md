@@ -29,7 +29,7 @@ La modélisation de code source indépendante du langage peut s’avérer préci
   
 Le .NET Framework inclut des générateurs et des compilateurs de code pour <xref:Microsoft.CSharp.CSharpCodeProvider>, <xref:Microsoft.JScript.JScriptCodeProvider> et <xref:Microsoft.VisualBasic.VBCodeProvider>.  
   
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
 - [Utilisation du CodeDOM](using-the-codedom.md)
 
@@ -47,7 +47,7 @@ Le .NET Framework inclut des générateurs et des compilateurs de code pour <xre
 
   Décrit comment utiliser CodeDOM pour générer une classe contenant des champs, des propriétés, une méthode, un constructeur et un point d’entrée.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Informations de référence  
 
 - <xref:System.CodeDom>  
 
@@ -57,6 +57,6 @@ Le .NET Framework inclut des générateurs et des compilateurs de code pour <xre
 
   Définit les interfaces de génération et de compilation du code au moment de l’exécution.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 
 - La [référence rapide CodeDom](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100)) offre aux développeurs un moyen rapide de rechercher les éléments CodeDOM qui représentent des éléments de code source.

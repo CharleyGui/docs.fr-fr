@@ -37,11 +37,11 @@ Les développeurs COM peuvent tirer parti des informations suivantes sur les typ
 
   Les classes managées qui implémentent l’interface de classe (une interface COM générée par interop) sont soumises aux restrictions de gestion de version.
 
-  Pour connaître les instructions sur l’utilisation de l’interface de classe, consultez [Présentation de l’interface de classe](../../standard/native-interop/com-callable-wrapper.md#introducing-the-class-interface).
+  Pour obtenir des instructions sur l’utilisation de l’interface de classe, consultez [Présentation de l’interface de classe](../../standard/native-interop/com-callable-wrapper.md#introducing-the-class-interface).
 
 - Instructions de déploiement
 
-  Les assemblys avec nom fort signés par un serveur de publication peuvent être installés dans le global assembly cache. Les assemblys non signés doivent être installés sur l’ordinateur de l’utilisateur en tant qu’assemblys privés.
+  Les assemblys avec nom fort signés par un serveur de publication peuvent être installés dans le global assembly cache. Les assemblys non signés doivent être installés sur la machine de l’utilisateur en tant qu’assemblys privés.
 
   Pour plus d’informations, consultez [Aspects de la sécurité des assemblys](../../standard/assembly/security-considerations.md).
 
@@ -53,7 +53,7 @@ Les développeurs COM peuvent tirer parti des informations suivantes sur les typ
 
   - [Classe TypeLibConverter](#cpconpackagingassemblyforcomanchor2)
 
-  - [Outil Assembly Registration](#cpconpackagingassemblyforcomanchor3)
+  - [Outil Assembly Registration Tool](#cpconpackagingassemblyforcomanchor3)
 
   - [Outil .NET Services Installation](#cpconpackagingassemblyforcomanchor4)
 
@@ -79,7 +79,7 @@ La **classe TypeLibConverter** implémente le <xref:System.Runtime.InteropServic
 
 ## <a name="assembly-registration-tool"></a>Outil Assembly Registration Tool
 
-L’[outil Assembly Registration Tool (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) peut générer et inscrire une bibliothèque de types quand vous appliquez l’option **/tlb:** . Les clients COM exigent que les bibliothèques de types soient installées dans le Registre de Windows. Sans cette option, Regasm.exe inscrit uniquement les types dans un assembly, pas la bibliothèque de types. Inscrire les types dans un assembly et inscrire la bibliothèque de types sont deux activités distinctes.
+L’[outil Assembly Registration Tool (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) peut générer et inscrire une bibliothèque de types quand vous appliquez l’option **/tlb:**. Les clients COM exigent que les bibliothèques de types soient installées dans le Registre de Windows. Sans cette option, Regasm.exe inscrit uniquement les types dans un assembly, pas la bibliothèque de types. Inscrire les types dans un assembly et inscrire la bibliothèque de types sont deux activités distinctes.
 
 <a name="cpconpackagingassemblyforcomanchor4"></a>
 
@@ -91,10 +91,10 @@ L’[Outil .NET Services Installation (Regsvcs.exe)](../tools/regsvcs-exe-net-se
 
 - <xref:System.Runtime.InteropServices.TypeLibConverter>
 - <xref:System.Runtime.InteropServices.ITypeLibConverter>
-- [Exposition de composants .NET Framework à COM](exposing-dotnet-components-to-com.md)
-- [Qualifier des types .NET pour l'interopérabilité](../../standard/native-interop/qualify-net-types-for-interoperation.md)
-- [Présentation de l’interface de classe](../../standard/native-interop/com-callable-wrapper.md#introducing-the-class-interface)
-- [Aspects de la sécurité des assemblys](../../standard/assembly/security-considerations.md)
-- [Tlbexp.exe (exportateur de bibliothèques de types)](../tools/tlbexp-exe-type-library-exporter.md)
+- [Exposition de composants .NET Framework à COM](exposing-dotnet-components-to-com.md)
+- [Qualification des types .NET pour l’interopérabilité](../../standard/native-interop/qualify-net-types-for-interoperation.md)
+- [Présentation de l'interface de classe](../../standard/native-interop/com-callable-wrapper.md#introducing-the-class-interface)
+- [Considérations sur la sécurité des assemblys](../../standard/assembly/security-considerations.md)
+- [Tlbexp. exe (exportateur de bibliothèques de types)](../tools/tlbexp-exe-type-library-exporter.md)
 - [Inscription d’assemblys dans COM](registering-assemblies-with-com.md)
 - [Guide pratique pour incorporer des bibliothèques de types comme des ressources Win32 dans les applications](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))

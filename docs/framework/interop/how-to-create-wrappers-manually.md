@@ -32,7 +32,7 @@ Si vous décidez de déclarer des types COM manuellement dans du code source man
   
 4. Quant aux types importés avec Tlbimp.exe, certains nécessitent des informations supplémentaires, que vous pouvez ajouter directement dans le code. Pour plus d’informations, consultez [Guide pratique pour modifier des assemblys d’interopérabilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100)).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Le code suivant montre un exemple de l’interface `ISATest` et de la classe `SATest` dans IDL, et les types correspondants dans le code source C#.  
   
  **Fichier IDL ou fichier bibliothèque de types**  
@@ -103,5 +103,5 @@ namespace SAServer
 - [Types de données COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))
 - [Guide pratique pour modifier des assemblys d’interopérabilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100))
 - [Récapitulatif de la conversion d’une bibliothèque de types en assembly](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
-- [Tlbimp.exe (Type Library Importer)](../tools/tlbimp-exe-type-library-importer.md)
-- [Tlbexp.exe (exportateur de bibliothèques de types)](../tools/tlbexp-exe-type-library-exporter.md)
+- [Tlbimp. exe (importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md)
+- [Tlbexp. exe (exportateur de bibliothèques de types)](../tools/tlbexp-exe-type-library-exporter.md)

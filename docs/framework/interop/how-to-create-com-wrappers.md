@@ -30,7 +30,7 @@ Dans Visual Studio 2005, vous pouvez ajouter le wrapper COM à votre projet en t
 
 2. Dans le menu **Projet**, cliquez sur **Afficher tous les fichiers**.
 
-3. Sur le menu du **projet,** cliquez sur **Ajouter référence**.
+3. Dans le menu **projet** , cliquez sur **Ajouter une référence**.
 
 4. Dans la boîte de dialogue Ajouter une référence, cliquez sur l’onglet **COM**, sélectionnez le composant que vous souhaitez utiliser et cliquez sur **OK**.
 
@@ -39,7 +39,7 @@ Dans Visual Studio 2005, vous pouvez ajouter le wrapper COM à votre projet en t
 Vous pouvez maintenant écrire le code pour accéder à l’objet COM. Vous pouvez commencer par déclarer l’objet, par exemple avec une instruction `Imports` pour Visual Basic ou une instruction `Using` pour C#.
 
 > [!NOTE]
-> Si vous souhaitez programmer des composants Microsoft Office, installez d’abord les [assemblages Microsoft Office Primary Interop Redistributable](https://www.microsoft.com/Download/details.aspx?id=3508).
+> Si vous souhaitez programmer des composants Microsoft Office, commencez par installer le [package redistribuable d’assemblys pia Microsoft Office](https://www.microsoft.com/Download/details.aspx?id=3508).
   
 ### <a name="to-create-a-runtime-callable-wrapper-using-net-framework-tools"></a>Pour créer un wrapper RCW à l’aide des outils .NET Framework  
   

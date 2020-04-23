@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : spécifier le contexte de sécurité des services'
+title: 'Comment : spécifier le contexte de sécurité des services'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Service applications, security
@@ -18,7 +18,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053579"
 ---
-# <a name="how-to-specify-the-security-context-for-services"></a>Procédure : spécifier le contexte de sécurité des services
+# <a name="how-to-specify-the-security-context-for-services"></a>Comment : spécifier le contexte de sécurité des services
 Par défaut, les services s’exécutent dans un contexte de sécurité différent de celui de l’utilisateur connecté. Les services s’exécutent dans le contexte du compte système par défaut, appelé `LocalSystem`, ce qui leur confère des privilèges d’accès aux ressources système différents de ceux de l’utilisateur. Vous pouvez changer ce comportement si vous souhaitez que votre service s’exécute sous un autre compte d’utilisateur.  
   
  Pour définir le contexte de sécurité, manipulez la propriété <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> du processus dans lequel le service s’exécute. Cette propriété vous permet d’affecter au service l’un des quatre types de comptes suivants :  
@@ -46,6 +46,6 @@ Par défaut, les services s’exécutent dans un contexte de sécurité différe
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
-- [Guide pratique pour ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md)
+- [Présentation des applications de service Windows](introduction-to-windows-service-applications.md)
+- [Comment : ajouter des programmes d'installation à votre application de service](how-to-add-installers-to-your-service-application.md)
 - [Guide pratique pour créer des services Windows](how-to-create-windows-services.md)

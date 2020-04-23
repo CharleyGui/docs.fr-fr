@@ -31,18 +31,18 @@ Les classes et les structures sont similaires dans .NET Framework. Elles peuvent
 
 Le tableau suivant répertorie les options de marshaling pour les classes, les structures et les unions. Il décrit leur utilisation et fournit un lien vers l'exemple d'appel de code non managé correspondant.
 
-|Type|Description|Aperçu|
+|Type|Description|Exemple|
 |----------|-----------------|------------|
-|Classe par valeur.|Passe une classe avec des membres entiers en tant que paramètre In/Out, comme le cas managé.|[Exemple SysTime](#systime-sample)|
-|Structure par valeur.|Passe des structures en tant que paramètres In.|[Exemple structures](#structures-sample)|
-|Structure par référence.|Passe des structures en tant que paramètres In/Out.|[Exemple OSInfo,](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|
-|Structure avec structures imbriquées (aplaties).|Passe une classe représentant une structure avec structures imbriquées dans la fonction non managée. La structure est aplatie sous la forme d'une même grande structure dans le prototype managé.|[FindFile, exemple](#findfile-sample)|
+|Classe par valeur.|Passe une classe avec des membres entiers en tant que paramètre In/Out, comme le cas managé.|[SysTime (exemple)](#systime-sample)|
+|Structure par valeur.|Passe des structures en tant que paramètres In.|[Exemple de structures](#structures-sample)|
+|Structure par référence.|Passe des structures en tant que paramètres In/Out.|[OSInfo (exemple)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|
+|Structure avec structures imbriquées (aplaties).|Passe une classe représentant une structure avec structures imbriquées dans la fonction non managée. La structure est aplatie sous la forme d'une même grande structure dans le prototype managé.|[FindFile (exemple)](#findfile-sample)|
 |Structure avec un pointeur vers une autre structure.|Passe une structure contenant un pointeur vers une autre structure en tant que membre.|[Exemple structures](#structures-sample)|
-|Tableau de structures avec des entiers par valeur.|Passe un tableau de structures contenant uniquement des entiers en tant que paramètre In/Out. Les membres du tableau peuvent être modifiés.|[Exemple de tableaux](marshaling-different-types-of-arrays.md)|
-|Tableau de structures avec des entiers et des chaînes par référence.|Passe un tableau de structures contenant des entiers et des chaînes en tant que paramètre Out. La fonction appelée alloue de la mémoire pour le tableau.|[Exemple OutArrayOfStructs](#outarrayofstructs-sample)|
-|Unions avec types valeur.|Passe des unions avec des types valeur (entier et double).|[Unions, exemple](#unions-sample)|
-|Unions avec types mixtes.|Passe des unions avec des types mixtes (entier et chaîne).|[Unions, exemple](#unions-sample)|
-|Valeurs Null dans la structure.|Passe une référence null (**Nothing** en Visual Basic) au lieu d’une référence à un type valeur.|[HandleRef, exemple](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/hc662t8k(v=vs.85))|
+|Tableau de structures avec des entiers par valeur.|Passe un tableau de structures contenant uniquement des entiers en tant que paramètre In/Out. Les membres du tableau peuvent être modifiés.|[Arrays, exemple](marshaling-different-types-of-arrays.md)|
+|Tableau de structures avec des entiers et des chaînes par référence.|Passe un tableau de structures contenant des entiers et des chaînes en tant que paramètre Out. La fonction appelée alloue de la mémoire pour le tableau.|[OutArrayOfStructs, exemple](#outarrayofstructs-sample)|
+|Unions avec types valeur.|Passe des unions avec des types valeur (entier et double).|[Unions (exemple)](#unions-sample)|
+|Unions avec types mixtes.|Passe des unions avec des types mixtes (entier et chaîne).|[Unions (exemple)](#unions-sample)|
+|Valeurs Null dans la structure.|Passe une référence null (**Nothing** en Visual Basic) au lieu d’une référence à un type valeur.|[HandleRef (exemple)](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/hc662t8k(v=vs.85))|
 
 ## <a name="structures-sample"></a>Exemple de structures
 
@@ -100,7 +100,7 @@ Les structures managées `MyPerson`,`MyPerson2`, `MyPerson3` et `MyArrayStruct` 
 
 - `MyPerson` contient uniquement des membres de type chaîne. Le champ [CharSet](specifying-a-character-set.md) affecte le format ANSI aux chaînes quand elles sont passées à la fonction non managée.
 
-- `MyPerson2` contient un **IntPtr** vers la structure `MyPerson`. Le type **IntPtr** remplace le pointeur d’origine vers la structure non managée, car les applications .NET Framework n’utilisent pas de pointeurs, sauf si le code est marqué comme étant **unsafe**.
+- `MyPerson2`contient un **IntPtr** à la `MyPerson` structure. Le type **IntPtr** remplace le pointeur d’origine vers la structure non managée, car les applications .NET Framework n’utilisent pas de pointeurs, sauf si le code est marqué comme étant **unsafe**.
 
 - `MyPerson3` contient `MyPerson` comme structure incorporée. Une structure incorporée dans une autre structure peut être aplatie en plaçant les éléments de la structure incorporée directement dans la structure principale. Elle peut également être conservée comme une structure incorporée, comme dans cet exemple.
 

@@ -41,7 +41,7 @@ Les services Microsoft Windows, anciennement « services NT », vous permettent 
 ## <a name="service-applications-vs-other-visual-studio-applications"></a>Applications de service et autres applications Visual Studio  
  Le fonctionnement des applications de service diffère de celui d’autres types de projets à plusieurs égards :  
   
-- Le fichier exécutable compilé créé par un projet d’application de service doit d’abord être installé sur le serveur pour que le projet puisse fonctionner de manière utile. Vous ne pouvez pas appuyer sur F5 ou F11 pour déboguer ou exécuter une application de service. Par ailleurs, vous ne pouvez ni exécuter immédiatement un service ni effectuer un pas à pas détaillé dans son code. Vous devez installer et démarrer votre service, puis attacher un débogueur au processus du service. Pour plus d'informations, voir [Procédure : déboguer les applications de service Windows](how-to-debug-windows-service-applications.md).  
+- Le fichier exécutable compilé créé par un projet d’application de service doit d’abord être installé sur le serveur pour que le projet puisse fonctionner de manière utile. Vous ne pouvez pas appuyer sur F5 ou F11 pour déboguer ou exécuter une application de service. Par ailleurs, vous ne pouvez ni exécuter immédiatement un service ni effectuer un pas à pas détaillé dans son code. Vous devez installer et démarrer votre service, puis attacher un débogueur au processus du service. Pour plus d’informations, consultez [Guide pratique pour déboguer les applications de service Windows](how-to-debug-windows-service-applications.md).  
   
 - Contrairement à certains types de projets, vous devez créer des composants d’installation pour les applications de service. Les composants d’installation installent le service sur le serveur et l’inscrivent auprès de celui-ci. Ils créent également une entrée pour votre service dans le **Gestionnaire de contrôle des services** Windows. Pour plus d’informations, consultez [Guide pratique pour ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md).  
   
@@ -72,9 +72,9 @@ Les services Microsoft Windows, anciennement « services NT », vous permettent 
 ## <a name="services-and-the-servicecontroller-component"></a>Services et composant ServiceController  
  Le composant <xref:System.ServiceProcess.ServiceController> permet d’établir une connexion à un service installé et de manipuler son état. À l’aide d’un composant <xref:System.ServiceProcess.ServiceController>, vous pouvez démarrer et arrêter un service, suspendre et poursuivre son exécution, et envoyer des commandes personnalisées à un service. Toutefois, il est inutile de recourir à un composant <xref:System.ServiceProcess.ServiceController> quand vous créez une application de service. En fait, dans la plupart des cas, votre composant <xref:System.ServiceProcess.ServiceController> doit se trouver dans une application séparée de l’application de service Windows qui définit votre service.  
   
- Pour plus d'informations, consultez <xref:System.ServiceProcess.ServiceController>.  
+ Pour plus d’informations, consultez <xref:System.ServiceProcess.ServiceController>.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 - Les services doivent être créés dans un projet d’application **Service Windows** ou un autre projet compatible .NET Framework qui crée un fichier .exe au moment de la génération et qui hérite de la classe <xref:System.ServiceProcess.ServiceBase>.  
   
@@ -84,9 +84,9 @@ Les services Microsoft Windows, anciennement « services NT », vous permettent 
 
 - [Applications de service Windows](index.md)
 - [Architecture de programmation d’une application de service](service-application-programming-architecture.md)
-- [Guide pratique : créer des services Windows](how-to-create-windows-services.md)
-- [Guide pratique pour Installer et désinstaller des services](how-to-install-and-uninstall-services.md)
+- [Guide pratique pour créer des services Windows](how-to-create-windows-services.md)
+- [Guide pratique pour installer et désinstaller des services](how-to-install-and-uninstall-services.md)
 - [Guide pratique pour démarrer des services](how-to-start-services.md)
-- [Guide pratique : déboguer les applications de service Windows](how-to-debug-windows-service-applications.md)
-- [Procédure pas à pas : Création d’une application de service Windows dans le Concepteur de composants](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
-- [Guide pratique pour ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md)
+- [Comment : déboguer des applications de service Windows](how-to-debug-windows-service-applications.md)
+- [Procédure pas à pas : création d’une application de service Windows dans le Concepteur de composants](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
+- [Comment : ajouter des programmes d'installation à votre application de service](how-to-add-installers-to-your-service-application.md)

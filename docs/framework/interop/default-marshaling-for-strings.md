@@ -232,7 +232,7 @@ Dans certains cas, une mémoire tampon de caractères de longueur fixe doit êtr
 
 La solution consiste à passer une mémoire tampon <xref:System.Text.StringBuilder> comme argument plutôt que comme <xref:System.String>. Un `StringBuilder` peut être déréférencé et modifié par l'appelé à condition qu'il ne dépasse pas la capacité de `StringBuilder`. Il peut également être initialisé à une longueur fixe. Par exemple, si vous initialisez une mémoire tampon `StringBuilder` avec une capacité de `N`, le marshaleur fournira une mémoire tampon de (`N`+ 1) caractères. Le +1 tient compte du fait que la chaîne non managée possède un terminateur Null, contrairement à `StringBuilder`.
 
-Par exemple, la fonction API Windows [`GetWindowText`](/windows/desktop/api/winuser/nf-winuser-getwindowtextw) (définie dans *winuser.h*) requiert que l’appelant passe une mémoire tampon de caractères de longueur fixe dans laquelle la fonction écrit le texte de la fenêtre. `LpString` pointe vers une mémoire tampon allouée par l'appelant de taille `nMaxCount`. L'appelant est censé allouer la mémoire tampon et définir l'argument `nMaxCount` sur la taille de la mémoire tampon allouée. L’exemple suivant illustre la déclaration de fonction `GetWindowText` définie dans *winuser.h*.
+Par exemple, la fonction [`GetWindowText`](/windows/desktop/api/winuser/nf-winuser-getwindowtextw) API Windows (définie dans *winuser. h*) requiert que l’appelant passe une mémoire tampon de caractères de longueur fixe à laquelle la fonction écrit le texte de la fenêtre. `LpString` pointe vers une mémoire tampon allouée par l'appelant de taille `nMaxCount`. L'appelant est censé allouer la mémoire tampon et définir l'argument `nMaxCount` sur la taille de la mémoire tampon allouée. L’exemple suivant illustre la déclaration de fonction `GetWindowText` définie dans *winuser.h*.
 
 ```cpp
 int GetWindowText(
@@ -287,8 +287,8 @@ End Class
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Comportement de marshaling par défaut](default-marshaling-behavior.md)
+- [comportement de marshaling par défaut](default-marshaling-behavior.md)
 - [Marshaling des chaînes](marshaling-strings.md)
 - [Types blittable et non blittable](blittable-and-non-blittable-types.md)
 - [Attributs directionnels](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
-- [Copie et épinglage](copying-and-pinning.md)
+- [copie et épinglage](copying-and-pinning.md)

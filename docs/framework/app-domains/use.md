@@ -6,12 +6,12 @@ helpviewer_keywords:
 - common language runtime, application domains
 - runtime, application domains
 ms.assetid: c6d99815-e022-4d2c-9420-1d7ab5b9d504
-ms.openlocfilehash: d6bbc2648608e9542158e0f281984174447633a4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6ee02a3f27a645f19fd6a327052939586fac4aa9
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119721"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645436"
 ---
 # <a name="using-application-domains"></a>Utilisation des domaines d'application
 
@@ -24,7 +24,7 @@ Pour la plupart des applications, vous n’êtes pas obligé de créer votre pro
 [Guide pratique pour créer un domaine d’application](how-to-create-an-application-domain.md)  
 Décrit comment créer un domaine d’application par programmation.  
   
-[Guide pratique pour décharger un domaine d’application](how-to-unload-an-application-domain.md)  
+[Comment : décharger un domaine d'application](how-to-unload-an-application-domain.md)  
 Décrit comment décharger un domaine d’application par programmation.  
   
 [Guide pratique pour configurer un domaine d’application](how-to-configure-an-application-domain.md)  
@@ -48,22 +48,22 @@ Explique comment recevoir une notification indiquant qu’une exception a été 
 [Résoudre les chargements d'assemblys](../../standard/assembly/resolve-loads.md)  
 Offre des conseils sur l’utilisation de l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> pour résoudre les échecs de chargement de l’assembly.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Informations de référence  
 
 <xref:System.AppDomain>  
 Représente un domaine d’application. Fournit des méthodes pour la création et le contrôle des domaines d’application.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 [Assemblys dans .NET](../../standard/assembly/index.md)  
 Fournit une vue d’ensemble des fonctions exécutées par les assemblys.  
   
-[Programmation à l’aide d’assemblys](../../standard/assembly/program.md)  
+[Programmation à l’aide d’assemblys](../../standard/assembly/index.md)  
 Décrit comment créer, signer et définir des attributs sur des assemblys.  
   
 [Émission d’assemblys et de méthodes dynamiques](../reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)  
 Décrit comment créer des assemblys dynamiques.  
   
-[Domaines d’application](application-domains.md)  
+[Domaines d'application](application-domains.md)  
 Fournit une vue d'ensemble conceptuelle des domaines d'application.  
   
 [Vue d’ensemble de la réflexion](../reflection-and-codedom/reflection.md)  

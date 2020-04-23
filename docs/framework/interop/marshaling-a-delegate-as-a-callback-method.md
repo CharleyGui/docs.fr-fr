@@ -53,5 +53,5 @@ Dans cet exemple, la classe `NativeMethods` contient des prototypes managés pou
 ## <a name="see-also"></a>Voir aussi
 
 - [Exemples divers de marshaling](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ss9sb93t(v=vs.100))
-- [Types de données d’appel de plateforme](marshaling-data-with-platform-invoke.md#platform-invoke-data-types)
+- [Types de données d’appel de code non managé](marshaling-data-with-platform-invoke.md#platform-invoke-data-types)
 - [Création de prototypes dans du code managé](creating-prototypes-in-managed-code.md)

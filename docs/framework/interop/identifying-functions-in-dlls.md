@@ -46,7 +46,7 @@ L’identité d’une fonction DLL est composée des éléments suivants :
 ## <a name="see-also"></a>Voir aussi
 
 - [Consommation de fonctions DLL non managées](consuming-unmanaged-dll-functions.md)
-- [Spécification d'un point d'entrée](specifying-an-entry-point.md)
+- [Spécification d’un point d’entrée](specifying-an-entry-point.md)
 - [Création d’une classe pour contenir des fonctions DLL](creating-a-class-to-hold-dll-functions.md)
 - [Création de prototypes dans du code managé](creating-prototypes-in-managed-code.md)
 - [Appel à une fonction DLL](calling-a-dll-function.md)

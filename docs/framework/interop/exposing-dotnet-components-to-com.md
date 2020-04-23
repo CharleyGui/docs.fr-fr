@@ -17,7 +17,7 @@ ms.locfileid: "73123488"
 
 L’écriture d’un type .NET et l’utilisation de ce type à partir de code non managé sont deux activités distinctes pour les développeurs. Cette section contient plusieurs conseils pour l’écriture de code managé interagissant avec des clients COM :
 
-- [Qualification des types .NET pour l’interopérabilité](../../standard/native-interop/qualify-net-types-for-interoperation.md).
+- [Qualification des types .net pour l’interopérabilité](../../standard/native-interop/qualify-net-types-for-interoperation.md).
 
      Tous les types, méthodes, propriétés, champs et événements managés que vous voulez exposer à COM doivent être publics. Les types doivent avoir un constructeur public sans paramètre, qui est le seul constructeur pouvant être appelé dans COM.
 
@@ -25,7 +25,7 @@ L’écriture d’un type .NET et l’utilisation de ce type à partir de code n
 
      Les attributs personnalisés dans du code managé peuvent améliorer l’interopérabilité d’un composant.
 
-- [Empaquetage d’un assembly pour COM](packaging-an-assembly-for-com.md).
+- [Empaquetage d’un assembly pour com](packaging-an-assembly-for-com.md).
 
      Les développeurs COM peuvent vous demander de résumer les étapes impliquées dans le référencement et le déploiement de vos assemblys.
 
@@ -37,7 +37,7 @@ L’écriture d’un type .NET et l’utilisation de ce type à partir de code n
 
      Les types d’un assembly (et des bibliothèques de types) doivent être inscrits au moment du design. Si un programme d’installation n’inscrit pas l’assembly, indiquez aux développeurs COM qu’ils doivent utiliser Regasm.exe.
 
-2. [Référencer des types .NET à partir de COM](how-to-reference-net-types-from-com.md)
+2. [Référencez des types .net à partir de com](how-to-reference-net-types-from-com.md).
 
      Les développeurs COM peuvent référencer des types dans un assembly en utilisant les mêmes outils et techniques que ceux qu’ils utilisent aujourd’hui.
 
@@ -51,5 +51,5 @@ L’écriture d’un type .NET et l’utilisation de ce type à partir de code n
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interopération avec du code non managé](index.md)
+- [Interopérabilité avec du code non managé](index.md)
 - [COM Interop, exemple : client COM et serveur .NET](com-interop-sample-com-client-and-net-server.md)

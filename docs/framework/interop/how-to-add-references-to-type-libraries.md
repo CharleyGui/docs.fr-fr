@@ -40,7 +40,7 @@ Quand vous ajoutez une référence à une bibliothèque de types, Visual Studio 
   
 1. Générez un assembly d’interopérabilité comme décrit dans [Guide pratique pour générer des assemblys d’interopérabilité à partir de bibliothèques de types](how-to-generate-interop-assemblies-from-type-libraries.md).  
   
-2. Utilisez l’option [compilateur de lien (C)](../../csharp/language-reference/compiler-options/link-compiler-option.md) ou [-lien (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md) avec le nom d’assemblage interop pour intégrer des informations de type pour les types COM dans vos exécutoires.  
+2. Utilisez l’option [de compilateur-Link (options du compilateur C#)](../../csharp/language-reference/compiler-options/link-compiler-option.md) ou [-Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md) avec le nom de l’assembly d’interopérabilité pour incorporer les informations de type pour les types com dans vos fichiers exécutables.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -48,4 +48,4 @@ Quand vous ajoutez une référence à une bibliothèque de types, Visual Studio 
 - [Exposition de composants COM au .NET Framework](exposing-com-components.md)
 - [Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio](../../standard/assembly/embed-types-visual-studio.md)
 - [-link (Options du compilateur C#)](../../csharp/language-reference/compiler-options/link-compiler-option.md)
-- [-lien (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md)
+- [-Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md)

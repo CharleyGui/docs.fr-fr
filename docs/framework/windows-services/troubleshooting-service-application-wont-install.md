@@ -1,5 +1,5 @@
 ---
-title: 'Résolution des problèmes : impossibilité d’installer une application de service'
+title: "Dépannage : impossibilité d'installer une application de service"
 ms.date: 03/30/2017
 helpviewer_keywords:
 - troubleshooting service applications
@@ -17,7 +17,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053536"
 ---
-# <a name="troubleshooting-service-application-wont-install"></a>Résolution des problèmes : impossibilité d’installer une application de service
+# <a name="troubleshooting-service-application-wont-install"></a>Dépannage : impossibilité d'installer une application de service
 Si votre application de service ne s’installe pas correctement, vérifiez que la propriété <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> de la classe de service est définie avec la même valeur que celle indiquée dans le programme d’installation de ce service. Pour que votre service s’installe correctement, la valeur doit être la même dans les deux instances.  
   
 > [!NOTE]
@@ -27,4 +27,4 @@ Si votre application de service ne s’installe pas correctement, vérifiez que 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
+- [Présentation des applications de service Windows](introduction-to-windows-service-applications.md)

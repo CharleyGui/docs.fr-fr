@@ -10,12 +10,12 @@ helpviewer_keywords:
 - reflection,partial trust
 - link demands
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
-ms.openlocfilehash: 1d5289ce15c213024af576c99fe039f5d6c1a247
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1bdaf3abd39797274236ace4cb2967d2e7d199b2
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130066"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81644183"
 ---
 # <a name="security-considerations-for-reflection"></a>Considérations sur la sécurité de la réflexion
 
@@ -59,7 +59,7 @@ Ces règles sont les mêmes si l'accès à un membre critique du point de vue de
 
 Le code d'application qui est exécuté à partir de la ligne de commande s'exécute avec une confiance totale. Tant qu'il n'est pas marqué comme transparent, il peut utiliser la réflexion pour accéder aux membres critiques de sécurité. Quand le même code est exécuté avec un niveau de confiance partiel (par exemple dans un domaine d'application sandbox), le niveau de confiance de l'assembly détermine s'il peut accéder au code critique du point de vue de la sécurité. Si l'assembly a un nom fort et qu'il est installé dans le Global Assembly Cache, c'est un assembly de confiance et il peut appeler des membres critiques de sécurité. Si elle n'est pas de confiance, il devient transparent même s'il n'était pas marqué comme tel, et il ne peut pas accéder aux membres critiques de sécurité.
 
-Pour plus d’informations sur le modèle de sécurité dans .NET Framework 4, consultez [Changements relatifs à la sécurité](../security/security-changes.md).
+Pour plus d’informations sur le modèle de sécurité dans .NET Framework 4, consultez [Changements relatifs à la sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).
 
 ## <a name="reflection-and-transparency"></a>Réflexion et transparence
 
@@ -67,7 +67,7 @@ Depuis .NET Framework 4, le common language runtime détermine le niveau de tra
 
 |Niveau de sécurité|EstCritiqueDeSécurité|EstCritiqueSécurisé|EstTransparentDeSécurité|
 |--------------------|------------------------|----------------------------|---------------------------|
-|Critical|`true`|`false`|`false`|
+|Critique|`true`|`false`|`false`|
 |Critique sécurisé|`true`|`true`|`false`|
 |Transparent|`false`|`false`|`true`|
 
@@ -115,7 +115,7 @@ Pour la sérialisation, l'autorisation <xref:System.Security.Permissions.Securit
 - <xref:System.Security.Permissions.ReflectionPermissionFlag>
 - <xref:System.Security.Permissions.ReflectionPermission>
 - <xref:System.Security.Permissions.SecurityPermission>
-- [Modifications de sécurité](../security/security-changes.md)
+- [Modifications de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)
 - [Sécurité d’accès du code](../misc/code-access-security.md)
 - [Problèmes de sécurité dans l’émission de réflexion](security-issues-in-reflection-emit.md)
 - [Affichage des informations de type](viewing-type-information.md)

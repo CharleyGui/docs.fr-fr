@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : ajouter des programmes d’installation à votre application de service'
+title: "Comment : ajouter des programmes d'installation à votre application de service"
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Service applications, deploying
@@ -18,7 +18,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053650"
 ---
-# <a name="how-to-add-installers-to-your-service-application"></a>Procédure : ajouter des programmes d’installation à votre application de service
+# <a name="how-to-add-installers-to-your-service-application"></a>Comment : ajouter des programmes d'installation à votre application de service
 Visual Studio est fourni avec des composants d’installation qui peuvent installer des ressources associées à vos applications de service. Les composants d’installation inscrivent un service auprès du système sur lequel il est installé et informent le Gestionnaire de contrôle des services de l’existence du service. Quand vous travaillez avec une application de service, vous pouvez sélectionner un lien dans la fenêtre Propriétés pour ajouter automatiquement les programmes d’installation appropriés à votre projet.  
   
 > [!NOTE]
@@ -29,7 +29,7 @@ Visual Studio est fourni avec des composants d’installation qui peuvent instal
  Les programmes d’installation ne nécessitent aucun codage spécial pour que vos services s’installent correctement. Toutefois, vous devrez parfois modifier le contenu des programmes d’installation pour ajouter des fonctionnalités spéciales au processus d’installation.  
   
 > [!NOTE]
-> Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
+> Les boîtes de dialogue et les commandes de menu affichées peuvent différer de celles décrites dans l'Aide selon les paramètres actifs ou le mode d'édition. Pour modifier vos paramètres, choisissez **Paramètres d'importation et d'exportation** dans le menu **Outils** . Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
 ### <a name="to-add-installers-to-your-service-application"></a>Pour ajouter des programmes d’installation à votre application de service  
   
@@ -37,7 +37,7 @@ Visual Studio est fourni avec des composants d’installation qui peuvent instal
   
 2. Cliquez sur l’arrière-plan du concepteur pour sélectionner le service lui-même et non son contenu.  
   
-3. Quand le concepteur a le focus, cliquez dessus avec le bouton droit, puis cliquez sur **Ajouter le programme d’installation**.  
+3. Lorsque le concepteur a le focus, cliquez avec le bouton droit, puis cliquez sur **Ajouter le programme d'installation**.  
   
      Une nouvelle classe, `ProjectInstaller`, et deux composants d’installation, <xref:System.ServiceProcess.ServiceProcessInstaller> et <xref:System.ServiceProcess.ServiceInstaller>, sont ajoutés à votre projet, et les valeurs des propriétés du service sont copiées dans les composants.  
   
@@ -45,13 +45,13 @@ Visual Studio est fourni avec des composants d’installation qui peuvent instal
   
 5. Pour déterminer le mode de démarrage de votre service, cliquez sur le composant <xref:System.ServiceProcess.ServiceInstaller> et définissez la propriété <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> avec la valeur appropriée.  
   
-    |Valeur|Résultat|  
+    |Valeur|Résultats|  
     |-----------|------------|  
     |<xref:System.ServiceProcess.ServiceStartMode.Manual>|Vous devez démarrer manuellement le service après l’installation. Pour plus d’informations, consultez [Guide pratique pour démarrer des services](how-to-start-services.md).|  
     |<xref:System.ServiceProcess.ServiceStartMode.Automatic>|Le service démarre automatiquement à chaque redémarrage de l’ordinateur.|  
     |<xref:System.ServiceProcess.ServiceStartMode.Disabled>|Le service ne peut pas être démarré.|  
   
-6. Pour déterminer le contexte de sécurité dans lequel votre service va s’exécuter, cliquez sur le composant <xref:System.ServiceProcess.ServiceProcessInstaller> et définissez les valeurs de propriété appropriées. Pour plus d'informations, voir [Procédure : spécifier le contexte de sécurité des services](how-to-specify-the-security-context-for-services.md).  
+6. Pour déterminer le contexte de sécurité dans lequel votre service va s’exécuter, cliquez sur le composant <xref:System.ServiceProcess.ServiceProcessInstaller> et définissez les valeurs de propriété appropriées. Pour plus d’informations, consultez [Guide pratique pour spécifier le contexte de sécurité des services](how-to-specify-the-security-context-for-services.md).  
   
 7. Substituez les méthodes qui doivent faire l’objet d’un traitement personnalisé.  
   
@@ -62,7 +62,7 @@ Visual Studio est fourni avec des composants d’installation qui peuvent instal
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
-- [Guide pratique pour Installer et désinstaller des services](how-to-install-and-uninstall-services.md)
-- [Guide pratique : démarrer des services](how-to-start-services.md)
-- [Guide pratique pour spécifier le contexte de sécurité des services](how-to-specify-the-security-context-for-services.md)
+- [Présentation des applications de service Windows](introduction-to-windows-service-applications.md)
+- [Guide pratique pour installer et désinstaller des services](how-to-install-and-uninstall-services.md)
+- [Guide pratique pour démarrer des services](how-to-start-services.md)
+- [Comment : spécifier le contexte de sécurité des services](how-to-specify-the-security-context-for-services.md)

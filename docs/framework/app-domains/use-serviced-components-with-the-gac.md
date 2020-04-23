@@ -26,4 +26,4 @@ Les composants pris en charge (composants COM+ de code managé) doivent être pl
 ## <a name="see-also"></a>Voir aussi
 
 - [Utilisation d’assemblys et du Global Assembly Cache](working-with-assemblies-and-the-gac.md)
-- [Gacutil.exe (outil Global Assembly Cache)](../tools/gacutil-exe-gac-tool.md)
+- [Gacutil. exe (Outil Global Assembly Cache)](../tools/gacutil-exe-gac-tool.md)

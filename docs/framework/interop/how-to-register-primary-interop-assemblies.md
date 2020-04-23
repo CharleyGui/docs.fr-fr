@@ -34,7 +34,7 @@ Utilisez l’outil [Regasm.exe (outil d’inscription d’assemblys)](../tools/r
 
 ## <a name="to-register-a-primary-interop-assembly"></a>Pour inscrire un assembly PIA
 
-1. À l'invite de commandes, tapez :
+1. À l’invite de commandes, tapez :
 
      **regasm** *nomassembly*
 
@@ -49,6 +49,6 @@ regasm CompanyA.UtilLib.dll
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Programmation avec des assemblys PIA](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/baxfadst(v=vs.100))
-- [Recherche d’assemblys PIA](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/y06sxw56(v=vs.100))
-- [Redistribution d’assemblys PIA](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w0dt2w20(v=vs.100))
+- [Programmer avec des assemblys PIA](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/baxfadst(v=vs.100))
+- [Rechercher des assemblys PIA](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/y06sxw56(v=vs.100))
+- [Redistribuer des assemblys PIA](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w0dt2w20(v=vs.100))

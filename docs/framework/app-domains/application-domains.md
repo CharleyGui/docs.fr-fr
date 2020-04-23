@@ -130,7 +130,7 @@ Les systèmes d'exploitation et les environnements d'exécution assurent génér
 COMPLUS_LoaderOptimization = 1  
 ```  
   
-### <a name="remarks"></a>Notes 
+### <a name="remarks"></a>Notes
 
  Une application typique charge plusieurs assemblys dans un domaine d'application avant que le code qu'ils contiennent ne puisse être exécuté.  
   

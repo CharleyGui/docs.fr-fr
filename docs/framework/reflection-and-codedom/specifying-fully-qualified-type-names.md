@@ -118,7 +118,7 @@ Dans un nom de type, IDENTIFIER correspond à n’importe quel nom valide déter
 
 Utilisez la barre oblique inverse (\\) comme caractère d’échappement pour séparer les jetons suivants quand ils sont utilisés avec IDENTIFIER.
 
-|Token|Signification|
+|par jeton|Signification|
 |-----------|-------------|
 |\\,|Séparateur d’assembly.|
 |\\+|Séparateur de type imbriqué.|
@@ -126,7 +126,7 @@ Utilisez la barre oblique inverse (\\) comme caractère d’échappement pour s
 |\\*|Type pointeur.|
 |\\[|Délimiteur de dimension du tableau.|
 |\\]|Délimiteur de dimension du tableau.|
-|\\.,|Utilisez la barre oblique inverse avant un point uniquement si celui-ci est utilisé dans une spécification de tableau. Les points de NamespaceSpec ne sont pas précédés d’une barre oblique inverse.|
+|\\.|Utilisez la barre oblique inverse avant un point uniquement si celui-ci est utilisé dans une spécification de tableau. Les points de NamespaceSpec ne sont pas précédés d’une barre oblique inverse.|
 |\\\|Barre oblique inverse nécessaire comme littéral de chaîne.|
 
 Notez que des espaces peuvent être utilisés dans tous les composants TypeSpec, sauf AssemblyNameSpec. Dans AssemblyNameSpec, les espaces précédant le séparateur « , » peuvent être utilisés, mais ceux situés après le séparateur « , » sont ignorés.
@@ -141,13 +141,13 @@ Si l’espace de noms est `Ozzy.Out+Back`, le signe plus (+) doit être précé
 
 Au minimum, vous devez fournir le nom textuel (IDENTIFIER) de l’assembly comme spécification du nom d’assembly. Vous pouvez faire suivre IDENTIFIER d’une liste de paires de propriétés/valeurs avec la virgule comme séparateur, comme l’illustre le tableau suivant. L’affectation d’un nom à IDENTIFIER doit se conformer aux règles d’attribution de noms de fichiers. IDENTIFIER ne respecte pas la casse.
 
-|Nom de propriété|Description|Valeurs autorisées|
+|Nom de la propriété|Description|Valeurs autorisées|
 |-------------------|-----------------|----------------------|
 |**Version**|Numéro de version de l’assembly|*version_majeure.version_mineure_build.révision*, où *version_majeure*, *version_mineure*, *build* et *révision* sont des entiers compris entre 0 et 65535 inclus.|
 |**PublicKey**|Clé publique complète|Valeur de chaîne de la clé publique complète au format hexadécimal. Spécifiez une référence Null (**Nothing** en Visual Basic) pour indiquer explicitement un assembly privé.|
 |**PublicKeyToken**|Jeton de clé publique (hachage de 8 octets de la clé publique complète)|Valeur de chaîne du jeton de clé publique au format hexadécimal. Spécifiez une référence Null (**Nothing** en Visual Basic) pour indiquer explicitement un assembly privé.|
-|**Culture**|Culture de l’assembly|Culture de l’assembly au format RFC-1766 ou « neutre » pour les assemblys indépendants du langage (non-satellites).|
-|**Custom**|Objet binaire volumineux (BLOB) personnalisé. Utilisé uniquement dans les assemblys générés par le [générateur d’images natives (Ngen)](../tools/ngen-exe-native-image-generator.md).|Chaîne personnalisée utilisée par le générateur d’images natives (Ngen) pour informer le cache d’assembly que l’assembly installé est une image native, et qu’il doit donc être installé dans le cache des images natives. Également appelée chaîne zap.|
+|**Culturel**|Culture de l’assembly|Culture de l’assembly au format RFC-1766 ou « neutre » pour les assemblys indépendants du langage (non-satellites).|
+|**Personnalisée**|Objet binaire volumineux (BLOB) personnalisé. Utilisé uniquement dans les assemblys générés par le [générateur d’images natives (Ngen)](../tools/ngen-exe-native-image-generator.md).|Chaîne personnalisée utilisée par le générateur d’images natives (Ngen) pour informer le cache d’assembly que l’assembly installé est une image native, et qu’il doit donc être installé dans le cache des images natives. Également appelée chaîne zap.|
 
 L’exemple suivant illustre un **AssemblyName** pour un assembly nommé simplement avec une culture par défaut.
 
@@ -212,7 +212,7 @@ Les tableaux sont accessibles dans la réflexion en spécifiant le rang du table
 
 Notez que du point de vue du runtime, `MyArray[] != MyArray[*]`, mais pour les tableaux multidimensionnels, les deux notations sont équivalentes. En d’autres termes, `Type.GetType("MyArray [,]") == Type.GetType("MyArray[*,*]")` prend la valeur **true**.
 
-Pour **ModuleBuilder.GetType**, `MyArray[0..5]` indique un tableau unidimensionnel dont la taille est égale à 6 et la limite inférieure à 0. `MyArray[4…]` indique un tableau unidimensionnel dont la taille est inconnue et dont la limite inférieure est égale à 4.
+Pour **ModuleBuilder. GetType**, `MyArray[0..5]` indique un tableau à une seule dimension avec la taille 6, la limite inférieure 0. `MyArray[4…]` indique un tableau unidimensionnel dont la taille est inconnue et dont la limite inférieure est égale à 4.
 
 ## <a name="see-also"></a>Voir aussi
 

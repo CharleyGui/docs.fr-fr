@@ -30,7 +30,7 @@ Les guides de migration suivants vous seront utiles, selon le service que vous u
 
 En outre, les liens suivants vers du contenu conceptuel vous aideront à mieux comprendre les machines virtuelles :
 
-* [Haute disponibilité et récupération en cas de catastrophe pour SQL Server dans Azure Virtual Machines](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-high-availability-dr)
+* [Haute disponibilité et récupération d’urgence pour les SQL Server dans les machines virtuelles Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-high-availability-dr)
 * [Meilleures pratiques relatives aux performances de SQL Server dans les machines virtuelles Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-performance)
 * [Modèles d'application et stratégies de développement pour SQL Server dans Azure Virtual Machines](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-app-patterns-dev-strategies)
 
@@ -42,9 +42,9 @@ Les liens suivants vous aideront à mieux comprendre Azure SQL Database :
 
 ## <a name="choosing-iaas-or-paas"></a>Choisir l’option IaaS ou PaaS
 
-Lors de l’évaluation de l’endroit où migrer votre base de données, déterminez si IaaS ou PaaS vous convient mieux.
+Lors de l’évaluation de l’emplacement de migration de votre base de données, déterminez si IaaS ou PaaS est plus adapté à vos besoins.
 
-**Choisissez SQL Server dans azure VMs si :**
+**Choisissez SQL Server dans les machines virtuelles Azure si :**
 
 * Vous cherchez à migrer très facilement au moyen d’une opération « lift-and-shift » votre base de données et vos applications en apportant le minimum de changement, voire aucune modification.
 * Vous souhaitez avoir un contrôle total sur votre serveur de base de données et la machine virtuelle sur laquelle il s’exécute.
@@ -63,10 +63,10 @@ Le tableau suivant décrit les différences entre chaque service basé sur un je
 | Migration | Nécessite d’apporter des modifications mineures à votre base de données. | Peut nécessiter des modifications de votre base de données si vous utilisez des fonctionnalités non disponibles dans Azure SQL, comme déterminé par l’[Assistant Migration de données](https://www.microsoft.com/download/details.aspx?id=53595), ou si vous avez d’autres dépendances, telles que des fichiers exécutables installés en local.|
 | Gestion de la disponibilité, de la récupération et des mises à niveau | La disponibilité et la récupération sont configurées manuellement. Les mises à niveau peuvent être automatisées avec [Microsoft Azure Virtual Machine Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade). | Géré automatiquement. |
 | Configuration du système d’exploitation sous-jacent | Configuration manuelle. | Géré automatiquement. |
-| Gestion de la taille de la base de données | Prend en charge jusqu’à 64 TB de stockage par instance SQL Server. | Prend en charge 4 TB de stockage avant d’avoir besoin d’une cloison horizontale. |
+| Gestion de la taille de la base de données | Prend en charge jusqu’à 64 to de stockage par instance de SQL Server. | Prend en charge 4 to de stockage avant de nécessiter une partition horizontale. |
 | Gestion des coûts | Vous devez gérer les coûts de licence SQL Server, Windows Server et les coûts liés aux machines virtuelles (en fonction des cœurs, de la mémoire RAM et du stockage). | Vous devez gérer les coûts de service (en fonction des [eDTU ou DTU](https://docs.microsoft.com/azure/sql-database/sql-database-what-is-a-dtu), du stockage et du nombre de bases de données si vous utilisez un pool élastique). Vous devez également gérer le coût de n’importe quel contrat de niveau de service. |
 
-Pour en savoir plus sur les différences entre les deux, lisez Choisissez une option de serveur SQL cloud : [Azure SQL Database ou SQL Server sur les VM Azure](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas).
+Pour en savoir plus sur les différences entre les deux, consultez choisir une option de SQL Server Cloud : [Azure SQL Database ou SQL Server sur des machines virtuelles Azure](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas).
 
 ## <a name="faq"></a>Questions fréquentes (FAQ)
 
@@ -74,9 +74,9 @@ Pour en savoir plus sur les différences entre les deux, lisez Choisissez une op
 
     Oui. Tous les outils Microsoft SQL fonctionnent avec les deux services. SSRS ne fait pas partie d’Azure SQL Database, pourtant, il est recommandé de l’exécuter dans une machine virtuelle Azure puis de le faire pointer vers votre instance de base de données.
 
-* **Je veux aller PaaS, mais je ne suis pas sûr si ma base de données est compatible. Y a-t-il des outils pour vous aider?**
+* **Je souhaite aller à PaaS, mais je ne sais pas si ma base de données est compatible. Existe-t-il des outils pour vous aider ?**
 
-    Oui. L’[l’Assistant Migration de données](https://www.microsoft.com/download/details.aspx?id=53595) est un outil utilisé dans le cadre de la migration vers Azure SQL Database. Le [service de migration Azure Database](https://azure.microsoft.com/campaigns/database-migration/) est un service de prévisualisation que vous pouvez utiliser pour IaaS ou PaaS.
+    Oui. L’[l’Assistant Migration de données](https://www.microsoft.com/download/details.aspx?id=53595) est un outil utilisé dans le cadre de la migration vers Azure SQL Database. Le [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/) est un service en version préliminaire que vous pouvez utiliser pour IaaS ou PaaS.
 
 * **Puis-je estimer les coûts ?**
 

@@ -22,10 +22,10 @@ Cette section de la documentation fournit des informations sur la programmation 
  [Émission d’assemblys et de méthodes dynamiques](emitting-dynamic-methods-and-assemblies.md)  
  Décrit comment créer des méthodes et des assemblys au moment de l'exécution à l'aide de Reflection.Emit.  
   
- [Aperçu dynamique du temps d’exécution du langage](dynamic-language-runtime-overview.md)  
+ [Vue d’ensemble du Dynamic Language Runtime](dynamic-language-runtime-overview.md)  
  Décrit les fonctionnalités du Dynamic Language Runtime.  
   
- [Dynamique Source Code Génération et Compilation](dynamic-source-code-generation-and-compilation.md)  
+ [Génération et compilation de code source dynamique](dynamic-source-code-generation-and-compilation.md)  
  Décrit comment générer et compiler du code source dynamique.  
   
 ## <a name="related-sections"></a>Sections connexes  

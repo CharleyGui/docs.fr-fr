@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : écrire les services par programmation'
+title: 'Comment : écrire les services par programmation'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -16,7 +16,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053557"
 ---
-# <a name="how-to-write-services-programmatically"></a>Procédure : écrire les services par programmation
+# <a name="how-to-write-services-programmatically"></a>Comment : écrire les services par programmation
 Si vous choisissez de ne pas utiliser le modèle de projet Service Windows, vous pouvez écrire vos propres services en configurant vous-même l’héritage et d’autres éléments d’infrastructure. Quand vous créez un service par programmation, vous devez effectuer plusieurs étapes qui sont normalement gérées pour vous par le modèle :  
   
 - Vous devez configurer votre classe de service pour qu’elle hérite de la classe <xref:System.ServiceProcess.ServiceBase>.  
@@ -66,14 +66,14 @@ Si vous choisissez de ne pas utiliser le modèle de projet Service Windows, vous
     > [!NOTE]
     > N'appuyez pas sur la touche F5 pour exécuter votre projet : vous ne pouvez pas exécuter un projet de service de cette manière.  
   
-9. Créez un projet d’installation et les actions personnalisées pour installer votre service. Pour obtenir un exemple, consultez [Procédure pas à pas : Création d’une application de service Windows dans le Concepteur de composants](walkthrough-creating-a-windows-service-application-in-the-component-designer.md).  
+9. Créez un projet d’installation et les actions personnalisées pour installer votre service. Pour obtenir un exemple, consultez [Procédure pas à pas : création d’une application de service Windows dans le Concepteur de composants](walkthrough-creating-a-windows-service-application-in-the-component-designer.md).  
   
-10. Installez le service. Pour plus d'informations, voir [Procédure : Installer et désinstaller des services](how-to-install-and-uninstall-services.md).  
+10. Installez le service. Pour plus d'informations, consultez [How to: Install and Uninstall Services](how-to-install-and-uninstall-services.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
+- [Présentation des applications de service Windows](introduction-to-windows-service-applications.md)
 - [Guide pratique pour créer des services Windows](how-to-create-windows-services.md)
-- [Guide pratique : ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md)
-- [Guide pratique pour enregistrer des informations relatives aux services](how-to-log-information-about-services.md)
-- [Procédure pas à pas : Création d’une application de service Windows dans le Concepteur de composants](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
+- [Comment : ajouter des programmes d'installation à votre application de service](how-to-add-installers-to-your-service-application.md)
+- [Comment : enregistrer des informations relatives aux services](how-to-log-information-about-services.md)
+- [Procédure pas à pas : création d’une application de service Windows dans le Concepteur de composants](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)

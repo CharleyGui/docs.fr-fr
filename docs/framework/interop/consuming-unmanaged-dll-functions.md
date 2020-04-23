@@ -39,7 +39,7 @@ L’appel de code non managé est un service qui permet au code managé d’appe
   
      [Visual Basic] Utilisez l’instruction **Declare** avec les mots clés **Function** et **Lib**. Dans certains cas rares, vous pouvez utiliser **DllImportAttribute** avec les mots clés **Shared Function**. Ces cas sont expliqués plus loin dans cette section.  
   
-     [C] Utilisez le **DllImportAttribute** pour identifier le DLL et la fonction. Marquez la méthode avec les modificateurs **static** et **extern**.  
+     C# Utilisez **DllImportAttribute** pour identifier la dll et la fonction. Marquez la méthode avec les modificateurs **static** et **extern**.  
   
      [C++] Utilisez **DllImportAttribute** pour identifier la DLL et la fonction. Marquez la méthode ou la fonction wrapper avec **extern "C"**.  
   
@@ -71,6 +71,6 @@ L’appel de code non managé est un service qui permet au code managé d’appe
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interopération avec code non traité](index.md)
+- [Interopérabilité avec du code non managé](index.md)
 - [Exemples d’appel de code non managé](platform-invoke-examples.md)
 - [Marshaling d’interopérabilité](interop-marshaling.md)

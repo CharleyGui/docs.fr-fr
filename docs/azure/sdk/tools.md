@@ -12,32 +12,32 @@ ms.locfileid: "82071940"
 ---
 # <a name="tools-for-net-and-net-core-azure-developers"></a>Outils pour les développeurs Azure .NET et .NET Core
 
-## <a name="sdk-downloads"></a>Téléchargements SDK
+## <a name="sdk-downloads"></a>Téléchargements du SDK
 
-Les bibliothèques Azure pour .NET sont mises en œuvre sous forme [de forfaits NuGet](https://www.nuget.org/packages?q=windowsazureofficial). Voir la [référence API](/dotnet/api/overview/azure/?view=azure-dotnet) pour les instructions d’installation organisées par le service Azure.
+Les bibliothèques Azure pour .NET sont implémentées en tant que [packages NuGet](https://www.nuget.org/packages?q=windowsazureofficial). Consultez les informations de référence sur l' [API](/dotnet/api/overview/azure/?view=azure-dotnet) pour obtenir des instructions d’installation organisées par service Azure.
 
 ## <a name="development-tools"></a>Outils de développement
 
-Visual Studio dispose d’outillage pour de nombreux services Azure intégré. Certains services Azure disposent d’outils ou d’émulateurs supplémentaires, comme [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/). Consultez la documentation de votre service Azure pour tout outil supplémentaire, si nécessaire.
+Visual Studio propose des outils pour de nombreux services Azure intégrés. Certains services Azure disposent d’outils ou d’émulateurs supplémentaires, comme [Explorateur stockage Azure](https://azure.microsoft.com/features/storage-explorer/). Consultez la documentation de votre service Azure pour obtenir des outils supplémentaires, si nécessaire.
 
-Ces instructions installent l’environnement de développement de démarrage recommandé pour votre système d’exploitation.
+Ces instructions installent l’environnement de développement recommandé pour votre système d’exploitation.
 
 ## <a name="windows"></a>[Windows](#tab/windows)
 
-Visual Studio versions 2017 et plus tard ont intégré dans le soutien pour le développement Azure. Les étapes ci-dessous décrivent l’activation du support de développement Azure dans Visual Studio.
+Les versions 2017 et ultérieures de Visual Studio offrent une prise en charge intégrée pour le développement Azure. Les étapes ci-dessous décrivent l’activation de la prise en charge du développement Azure dans Visual Studio.
 
-Pour Visual Studio 2015 et plus tôt, <a href="vs2015-install.md">suivez ces instructions</a>.
+Pour Visual Studio 2015 et versions antérieures, <a href="vs2015-install.md">suivez ces instructions</a>.
 
-### <a name="step-1-download-visual-studio-2019"></a>Étape 1: Télécharger Visual Studio 2019
+### <a name="step-1-download-visual-studio-2019"></a>Étape 1 : Télécharger Visual Studio 2019
 
-Vous pouvez sauter cette étape si vous avez déjà Visual Studio 2019 installé.
+Vous pouvez ignorer cette étape si vous avez déjà installé Visual Studio 2019.
 
 > [!div class="nextstepaction"]
 > [Télécharger Visual Studio 2019](https://www.visualstudio.com/downloads/)
 
 ### <a name="step-2-install-the-two-azure-workloads"></a>Étape 2 : Installer les deux charges de travail Azure
 
-Dans l’installateur Visual Studio, installez Visual Studio (ou modifiez une installation existante). Assurez-vous que les charges de travail de développement et *de ASP.NET et de développement Web* d’Azure sont sélectionnées. *Azure development*
+Dans le programme d’installation de Visual Studio, installez Visual Studio (ou modifiez une installation existante). Assurez-vous que les charges de travail *développement Azure* et développement *Web et ASP.net* sont sélectionnées.
 
 ### <a name="step-3-develop-with-net-on-azure"></a>Étape 3 : Développer avec .NET sur Azure
 
@@ -52,7 +52,7 @@ Visual Studio pour Mac contient tout ce dont vous avez besoin pour le développe
 > [!div class="nextstepaction"]
 > [Télécharger Visual Studio pour Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
 
-Lors de l’installation, les outils Azure sont sélectionnés par défaut.
+Au cours de l’installation, les outils Azure sont sélectionnés par défaut.
 
 ## <a name="linux"></a>[Linux](#tab/linux)
 

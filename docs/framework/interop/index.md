@@ -57,5 +57,5 @@ Décrit comment créer un manifeste d’application, puis explique comment crée
 
 ## <a name="related-sections"></a>Sections connexes
 
-[Emballages COM](../../standard/native-interop/com-wrappers.md)  
+[Wrappers COM](../../standard/native-interop/com-wrappers.md)  
 Décrit les wrappers fournis par COM Interop.

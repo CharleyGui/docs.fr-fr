@@ -1,5 +1,5 @@
 ---
-title: 'Tutoriel : Créer une application de service Windows'
+title: 'Didacticiel : créer une application de service Windows'
 ms.date: 03/27/2019
 dev_langs:
 - csharp
@@ -16,7 +16,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053485"
 ---
-# <a name="tutorial-create-a-windows-service-app"></a>Tutoriel : Créer une application de service Windows
+# <a name="tutorial-create-a-windows-service-app"></a>Didacticiel : créer une application de service Windows
 
 Cet article explique comment créer, dans Visual Studio, une application de service Windows qui écrit des messages dans un journal des événements.
 
@@ -26,18 +26,18 @@ Pour commencer, créez le projet et définissez les valeurs nécessaires au fonc
 
 1. Dans le menu **Fichier** de Visual Studio, sélectionnez **Nouveau** > **Projet** (ou appuyez sur **Ctrl**+**Maj**+**N**) pour ouvrir la fenêtre **Nouveau projet**.
 
-2. Accédez au modèle de projet **Service Windows (.NET Framework)** et sélectionnez-le. Pour le trouver, développez **Installé** et **Visual C#**  ou **Visual Basic**, puis sélectionnez **Windows Desktop**. Ou entrez *Service Windows* dans la zone de recherche en haut à droite et appuyez sur **Entrée**.
+2. Accédez au modèle de projet **Service Windows (.NET Framework)** et sélectionnez-le. Pour le trouver, développez **Installé** et **Visual C# ** ou **Visual Basic**, puis sélectionnez **Windows Desktop**. Ou entrez *Service Windows* dans la zone de recherche en haut à droite et appuyez sur **Entrée**.
 
    ![Modèle Windows Service dans la boîte de dialogue Nouveau projet de Visual Studio](./media/new-project-dialog.png)
 
    > [!NOTE]
-   > Si vous ne voyez pas le modèle **Service Windows**, vous devrez peut-être installer la charge de travail **Développement .NET Desktop** :
+   > Si vous ne voyez pas le modèle de **service Windows** , vous devrez peut-être installer la charge de travail **développement .net Desktop** :
    >
    > Dans la boîte de dialogue **Nouveau projet**, sélectionnez **Ouvrir Visual Studio Installer** dans l’angle inférieur gauche. Sélectionnez la charge de travail **Développement .NET Desktop**, puis sélectionnez **Modifier**.
 
 3. Dans **Nom**, entrez *MyNewService*, puis sélectionnez **OK**.
 
-   L’onglet **Conception** apparaît (**Service1.cs [Conception]** ou **Service1.vb [Conception]** ).
+   L’onglet **Conception** apparaît (**Service1.cs [Conception]** ou **Service1.vb [Conception]**).
 
    Le modèle de projet inclut une classe Component appelée `Service1` qui hérite de <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>. Elle contient une grande partie du code de service de base, comme le code pour démarrer le service.
 
@@ -49,7 +49,7 @@ Renommez le service **Service1** en **MyNewService**.
 
     Une fenêtre contextuelle vous invite à indiquer si vous voulez renommer toutes les références à l’élément de code *Service1*.
 
-2. Dans cette fenêtre, sélectionnez **Oui**.
+2. Dans la fenêtre contextuelle, sélectionnez **Oui**.
 
     ![Invite de renommage](./media/windows-service-rename.png "Invite de renommage du service Windows")
 
@@ -67,7 +67,7 @@ Dans cette section, vous ajoutez un journal des événements personnalisé au se
 
 1. Dans l’**Explorateur de solutions**, dans le menu contextuel de **MyNewService.cs** ou **MyNewService.vb**, choisissez **Concepteur de vues**.
 
-2. Dans **Boîte à outils**, développez **Composants**, puis faites glisser le composant **EventLog** vers l’onglet **Service1.cs [Conception]** ou  **Service1.vb [Conception]** .
+2. Dans **Boîte à outils**, développez **Composants**, puis faites glisser le composant **EventLog** vers l’onglet **Service1.cs [Conception]** ou ** Service1.vb [Conception]**.
 
 3. Dans l’**Explorateur de solutions**, dans le menu contextuel de **MyNewService.cs** ou **MyNewService.vb**, choisissez **Afficher le code**.
 
@@ -162,7 +162,7 @@ Pour configurer un mécanisme d’interrogation simple, utilisez le composant <x
    Private eventId As Integer = 1
    ```
 
-Au lieu d’exécuter tout votre travail sur le thread principal, vous pouvez exécuter des tâches à l’aide de threads de travail en arrière-plan. Pour plus d'informations, consultez <xref:System.ComponentModel.BackgroundWorker?displayProperty=fullName>.
+Au lieu d’exécuter tout votre travail sur le thread principal, vous pouvez exécuter des tâches à l’aide de threads de travail en arrière-plan. Pour plus d’informations, consultez <xref:System.ComponentModel.BackgroundWorker?displayProperty=fullName>.
 
 ### <a name="define-what-occurs-when-the-service-is-stopped"></a>Définir les actions à effectuer lors de l'arrêt du service
 
@@ -249,7 +249,7 @@ Vous pouvez implémenter les paramètres d’état SERVICE_START_PENDING et SERV
     ```
 
     > [!NOTE]
-    > Le Gestionnaire de contrôle des services utilise les membres `dwWaitHint` et `dwCheckpoint` de la [structure SERVICE_STATUS](/windows/win32/api/winsvc/ns-winsvc-service_status) pour déterminer le délai d’attente avant le démarrage ou l’arrêt d’un service Windows. Si l’exécution de vos méthodes `OnStart` et `OnStop` est longue, votre service peut demander plus de temps en appelant à nouveau `SetServiceStatus` avec une valeur `dwCheckPoint` incrémentée.
+    > La boîte de dialogue Gestionnaire de contrôle des services utilise les membres `dwWaitHint` et `dwCheckpoint` de la [structure SERVICE_STATUS](/windows/win32/api/winsvc/ns-winsvc-service_status) pour déterminer le délai d’attente avant le démarrage ou l’arrêt d’un service Windows. Si l’exécution de vos méthodes `OnStart` et `OnStop` est longue, votre service peut demander plus de temps en appelant à nouveau `SetServiceStatus` avec une valeur `dwCheckPoint` incrémentée.
 
 3. Dans la classe `MyNewService`, déclarez la fonction [SetServiceStatus](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) à l’aide d’un [appel de code non managé](../interop/consuming-unmanaged-dll-functions.md) :
 
@@ -357,9 +357,9 @@ Avant d’exécuter un service Windows, vous devez l’installer, ce qui ’insc
      Ce paramètre installe le service et l’exécute en utilisant le compte système local.
 
     > [!IMPORTANT]
-    > Le compte <xref:System.ServiceProcess.ServiceAccount.LocalSystem> dispose d'autorisations générales, y compris la possibilité d'écrire dans le journal des événements. Utilisez ce compte avec précaution car il peut augmenter le risque d'attaques par des logiciels malveillants. Pour les autres tâches, utilisez le compte <xref:System.ServiceProcess.ServiceAccount.LocalService> , qui se comporte comme un utilisateur non privilégié de l'ordinateur local et présente des informations d'identification anonymes à tout serveur distant. Cet exemple échoue si vous essayez d'utiliser le compte <xref:System.ServiceProcess.ServiceAccount.LocalService>, car il doit disposer d'une autorisation pour écrire dans le journal des événements.
+    > Le compte <xref:System.ServiceProcess.ServiceAccount.LocalSystem> dispose d'autorisations générales, y compris la possibilité d'écrire dans le journal des événements. Utilisez ce compte avec précaution car il peut augmenter le risque d'attaques par des logiciels malveillants. Pour les autres tâches, utilisez le compte <xref:System.ServiceProcess.ServiceAccount.LocalService> , qui se comporte comme un utilisateur non privilégié de l'ordinateur local et présente des informations d'identification anonymes à tout serveur distant. Cet exemple échoue si vous essayez d'utiliser le compte <xref:System.ServiceProcess.ServiceAccount.LocalService> , car il doit disposer d'une autorisation pour écrire dans le journal des événements.
 
-Pour plus d’informations sur les programmes d’installation, consultez [Guide pratique pour ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md).
+Pour plus d’informations sur les programmes d’installation, consultez [Comment : ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md).
 
 ## <a name="optional-set-startup-parameters"></a>(Facultatif) Définition de paramètres de démarrage
 
@@ -474,7 +474,7 @@ Maintenant que vous avez généré le service Windows, vous pouvez l'installer. 
 
 2. Dans la fenêtre **Invite de commandes développeur pour Visual Studio**, accédez au dossier qui contient la sortie de votre projet (par défaut, le sous-répertoire *\bin\Debug* de votre projet).
 
-3. Entrez la commande suivante :
+3. Entrez la commande suivante :
 
     ```shell
     installutil MyNewService.exe
@@ -482,18 +482,18 @@ Maintenant que vous avez généré le service Windows, vous pouvez l'installer. 
 
     Si le service s’installe correctement, la commande signale une réussite.
 
-    Si le système ne trouve pas *installutil.exe*, vérifiez qu’il existe sur votre ordinateur. Cet outil est installé avec le .NET Framework dans le dossier *%windir%\Microsoft.NET\Framework[64]\\&lt;version du framework&gt;* . Par exemple, le chemin par défaut pour la version 64 bits est *%windir%\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.
+    Si le système ne trouve pas *installutil.exe*, vérifiez qu’il existe sur votre ordinateur. Cet outil est installé avec le .NET Framework dans le dossier *%windir%\Microsoft.NET\Framework [64]\\&lt;&gt;version du .NET Framework*. Par exemple, le chemin par défaut pour la version 64 bits est *%windir%\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.
 
     Si le processus **installutil.exe** échoue, examinez le journal d’installation pour en connaître la raison. Par défaut, le journal se trouve dans le même dossier que l’exécutable du service. L’installation peut échouer si :
     - La classe <xref:System.ComponentModel.RunInstallerAttribute> n’est pas présente sur la classe `ProjectInstaller`.
     - L’attribut n’a pas la valeur `true`.
     - La classe `ProjectInstaller` n’est pas définie en tant que `public`.
 
-Pour plus d’informations, consultez [Guide pratique pour Installer et désinstaller des services](how-to-install-and-uninstall-services.md).
+Pour plus d’informations, consultez [procédure : installer et désinstaller des services](how-to-install-and-uninstall-services.md).
 
 ## <a name="start-and-run-the-service"></a>Démarrer et exécuter le service
 
-1. Dans Windows, ouvrez l’application de bureau **Services**. Appuyez sur **Windows**+**R** pour ouvrir la zone **Exécuter**, entrez *services.msc*, puis appuyez sur **Entrée** ou sélectionnez **OK**.
+1. Dans Windows, ouvrez l’application de bureau **Services**. Appuyez sur **Windows**+**R** pour ouvrir la zone **exécuter** , entrez *services. msc*, puis appuyez sur **entrée** ou sélectionnez **OK**.
 
      Votre service doit être répertorié dans **Services**, affiché par ordre alphabétique du nom d’affichage que vous lui avez donné.
 
@@ -503,7 +503,7 @@ Pour plus d’informations, consultez [Guide pratique pour Installer et désinst
 
 3. Pour arrêter le service, choisissez **Arrêter** dans le menu contextuel du service.
 
-4. (Facultatif) À partir de la ligne de commande, utilisez les commandes **net start &lt;nom du service&gt;** et **net stop &lt;nom du service&gt;**  pour démarrer et arrêter votre service.
+4. (Facultatif) À partir de la ligne de commande, utilisez les commandes **net start &lt;nom du service&gt;** et **net stop &lt;nom du service&gt;** pour démarrer et arrêter votre service.
 
 ### <a name="verify-the-event-log-output-of-your-service"></a>Vérifier la sortie du journal des événements de votre service
 
@@ -518,7 +518,7 @@ Pour plus d’informations, consultez [Guide pratique pour Installer et désinst
 
      ![Utiliser l'Observateur d'événements pour visualiser les entrées du journal des événements](./media/windows-service-event-viewer.png)
 
-## <a name="clean-up-resources"></a>Supprimer des ressources
+## <a name="clean-up-resources"></a>Nettoyer les ressources
 
 Si vous n’avez plus besoin de l’application de service Windows, vous pouvez la supprimer.
 
@@ -526,13 +526,13 @@ Si vous n’avez plus besoin de l’application de service Windows, vous pouvez 
 
 2. Dans la fenêtre **Invite de commandes développeur pour Visual Studio**, accédez au dossier qui contient la sortie de votre projet.
 
-3. Entrez la commande suivante :
+3. Entrez la commande suivante :
 
     ```shell
     installutil.exe /u MyNewService.exe
     ```
 
-   Si le service se désinstalle correctement, la commande signale qu’il a été correctement supprimé. Pour plus d’informations, consultez [Guide pratique pour Installer et désinstaller des services](how-to-install-and-uninstall-services.md).
+   Si le service se désinstalle correctement, la commande signale qu’il a été correctement supprimé. Pour plus d’informations, consultez [procédure : installer et désinstaller des services](how-to-install-and-uninstall-services.md).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -542,7 +542,7 @@ Maintenant que vous avez créé le service, vous pouvez :
 
 - Explorer le composant <xref:System.ServiceProcess.ServiceController>, qui vous permet d’envoyer des commandes au service que vous avez installé.
 
-- Au lieu de créer le journal des événements quand l’application s’exécute, utilisez un programme d’installation pour créer un journal des événements quand vous installez l’application. Le journal des événements est supprimé par le programme d’installation quand vous désinstallez l’application. Pour plus d'informations, consultez <xref:System.Diagnostics.EventLogInstaller>.
+- Au lieu de créer le journal des événements quand l’application s’exécute, utilisez un programme d’installation pour créer un journal des événements quand vous installez l’application. Le journal des événements est supprimé par le programme d’installation quand vous désinstallez l’application. Pour plus d’informations, consultez <xref:System.Diagnostics.EventLogInstaller>.
 
 ## <a name="see-also"></a>Voir aussi
 

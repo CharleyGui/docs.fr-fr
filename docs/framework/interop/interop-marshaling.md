@@ -30,7 +30,7 @@ Le common language runtime fournit deux mécanismes d'interopérabilité avec le
 
 L’appel de code non managé et COM Interop utilisent tous deux le marshaling d’interopérabilité pour faire passer les arguments de méthode de l’appelant à l’appelé, puis dans l’autre sens, si nécessaire. Comme le montre l’illustration suivante, un appel de méthode d’appel de code non managé passe du code managé au code non managé et jamais dans l’autre sens, sauf quand des [fonctions de rappel](callback-functions.md) sont impliquées. Même si les appels de code non managé peuvent uniquement passer du code managé au code non managé, les données peuvent circuler dans les deux sens en tant que paramètres d'entrée ou de sortie. Les appels de méthode COM Interop peuvent circuler dans les deux sens.
 
-![Appel de plateforme](./media/interop-marshaling/interop-marshaling-invoke-and-com.png "Flux des appels de code non managé et des appels COM Interop")
+![Appel de code non managé](./media/interop-marshaling/interop-marshaling-invoke-and-com.png "Flux des appels de code non managé et des appels COM Interop")
 
 Au niveau le plus bas, ces deux mécanismes utilisent le même service de marshaling d’interopérabilité. Toutefois, certains types de données sont pris en charge exclusivement par COM Interop ou par l’appel de code non managé. Pour plus d’informations, consultez [Comportement de marshaling par défaut](default-marshaling-behavior.md).
 
@@ -82,7 +82,7 @@ Pour obtenir des instructions sur la sélection explicite d’un modèle de cloi
 
 ## <a name="marshaling-remote-calls"></a>Marshaling des appels distants
 
-Comme pour le marshaling intercloisonnements, le marshaling COM est impliqué dans chaque appel effectué entre du code managé et du code non managé chaque fois que les objets résident dans des processus distincts. Exemple :
+Comme pour le marshaling intercloisonnements, le marshaling COM est impliqué dans chaque appel effectué entre du code managé et du code non managé chaque fois que les objets résident dans des processus distincts. Par exemple :
 
 - Un client COM qui appelle un serveur managé sur un hôte distant utilise le modèle DCOM (Distributed COM).
 - Un client managé qui appelle un serveur COM sur un hôte distant utilise le modèle DCOM.
@@ -95,7 +95,7 @@ L’illustration suivante montre comment le marshaling d’interopérabilité et
 
 Le common language runtime préserve l'identité des références managées et non managées. L'illustration suivante montre le flux des références non managées directes (ligne du haut) et des références managées directes (ligne du bas) entre plusieurs hôtes et processus.
 
-![Wrapper CCW (COM Callable Wrapper) et Wrapper pouvant être appelé par le Runtime](./media/interop-marshaling/interop-direct-ref-across-process.gif "Références franchissant les limites d'hôtes et de processus")
+![Wrapper CCW (COM Callable Wrapper) et wrapper RCW (Runtime Callable Wrapper)](./media/interop-marshaling/interop-direct-ref-across-process.gif "Références franchissant les limites d'hôtes et de processus")
 
 Dans cette illustration :
 
@@ -117,18 +117,18 @@ Certains appels non managés peuvent être transmis par le biais de SOAP, tels q
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-----------|-----------------|
-|[Comportement de marshaling par défaut](default-marshaling-behavior.md)|Décrit les règles utilisées par le service de marshaling d’interopérabilité pour marshaler des données.|
+|[comportement de marshaling par défaut](default-marshaling-behavior.md)|Décrit les règles utilisées par le service de marshaling d’interopérabilité pour marshaler des données.|
 |[Marshaling de données à l’aide de l’appel de code managé](marshaling-data-with-platform-invoke.md)|Décrit comment déclarer des paramètres de méthode et passer des arguments à des fonctions exportées par des bibliothèques non managées.|
-|[Marshaler des données avec COM Interop](marshaling-data-with-com-interop.md)|Décrit comment personnaliser des wrappers COM pour modifier le comportement de marshaling.|
+|[Marshaling de données avec COM Interop](marshaling-data-with-com-interop.md)|Décrit comment personnaliser des wrappers COM pour modifier le comportement de marshaling.|
 |[Comment : migrer DCOM de code managé vers WCF](how-to-migrate-managed-code-dcom-to-wcf.md)|Décrit comment effectuer une migration de DCOM à WCF.|
 |[Guide pratique pour mapper des HRESULT et des exceptions](how-to-map-hresults-and-exceptions.md)|Décrit comment mapper des exceptions personnalisées aux HRESULT et fournit le mappage complet de chaque HRESULT à sa classe d'exception comparable dans .NET Framework.|
 |[Interopérabilité à l’aide de types génériques](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))|Décrit les actions prises en charge lors de l'utilisation de types génériques pour l'interopérabilité COM.|
-|[Interopération avec du code non managé](index.md)|Décrit les services d'interopérabilité fournis par le common language runtime.|
+|[Interopérabilité avec du code non managé](index.md)|Décrit les services d'interopérabilité fournis par le common language runtime.|
 |[Interopérabilité COM avancée](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|Fournit des liens vers des informations sur l'incorporation de composants COM dans une application .NET Framework.|
-|[Considérations de design pour l’interopérabilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))|Fournit des conseils pour l'écriture de composants COM intégrés.|
+|[Considérations relatives à la conception de l’interopérabilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))|Fournit des conseils pour l'écriture de composants COM intégrés.|
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Informations de référence
 
 <xref:System.Runtime.InteropServices?displayProperty=nameWithType>

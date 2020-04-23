@@ -341,7 +341,7 @@ Quand une valeur importée est requise par le constructeur d'un composant, cet o
 
 L'attribut `Import` spécifie une exigence pour que le composant fonctionne. Si une importation ne peut pas être satisfaite, la composition de ce composant échouera et le composant ne sera pas disponible.
 
-Vous pouvez définir une importation comme *facultative* en utilisant la propriété `AllowDefault` . Dans ce cas, la composition fonctionnera même si l’importation ne correspond à aucune exportation disponible, et la propriété d’importation sera définie sur la valeur par défaut pour son type de propriété (`null` pour les propriétés d’objet, `false` pour les valeurs booléennes ou zéro pour les propriétés numériques.) La classe suivante utilise une importation facultative.
+Vous pouvez définir une importation comme *facultative* en utilisant la propriété `AllowDefault` . Dans ce cas, la composition fonctionnera même si l’importation ne correspond à aucune exportation disponible, et la propriété d’importation sera définie sur la valeur par défaut pour son type`null` de propriété (pour `false` les propriétés d’objet, pour les valeurs booléennes ou zéro pour les propriétés numériques.) La classe suivante utilise une importation facultative.
 
 ```vb
 Public Class MyClass1

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - intranet applications, running in full trust
 - running intranet applications in full trust
 ms.assetid: ee13c0a8-ab02-49f7-b8fb-9eab16c6c4f0
-ms.openlocfilehash: c93f84dc53abbb86cbfc4ae36e9cdcbe0bd50273
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 33b025fa62343277fc96fc7771587e95f556e7a6
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119759"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645447"
 ---
 # <a name="running-intranet-applications-in-full-trust"></a>Exécution d'applications intranet de confiance totale
 
@@ -23,7 +23,7 @@ Les règles suivantes s’appliquent aux assemblys chargés par un exécutable s
   
 - Les assemblys de bibliothèque doivent résider dans le même dossier que l’assembly exécutable. Les assemblys qui résident dans un sous-dossier ou qui sont référencés sur un autre chemin ne se voient pas accorder une confiance totale.  
   
-- Si l’exécutable charge un assembly en différé, il doit utiliser le même chemin que pour le lancement de l’exécutable. Par exemple, si le partage \\\\*ordinateur-réseau*\\*partage* est associé à une lettre de lecteur et que l’exécutable est lancé à partir de ce chemin, les assemblys chargés par l’exécutable à l’aide du chemin réseau ne se voient pas accorder une confiance totale. Pour charger un assembly en différé dans la zone <xref:System.Security.SecurityZone.MyComputer>, l’exécutable doit utiliser le chemin de la lettre de lecteur.  
+- Si l’exécutable charge un assembly en différé, il doit utiliser le même chemin que pour le lancement de l’exécutable. \\ \\Par exemple, si le*partage* *réseau-ordinateur*\\de partage est mappé à une lettre de lecteur et que l’exécutable est exécuté à partir de ce chemin d’accès, les assemblys qui sont chargés par le fichier exécutable à l’aide du chemin d’accès réseau ne bénéficient pas de la confiance totale. Pour charger un assembly en différé dans la zone <xref:System.Security.SecurityZone.MyComputer>, l’exécutable doit utiliser le chemin de la lettre de lecteur.  
   
 ## <a name="restoring-the-former-intranet-policy"></a>Restauration de l’ancienne stratégie d’intranet  
 
@@ -37,4 +37,4 @@ Ce nouveau comportement est le appliqué par défaut aux assemblys intranet. Vou
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Programmation à l’aide d’assemblys](../../standard/assembly/program.md)
+- [Programmation à l’aide d’assemblys](../../standard/assembly/index.md)

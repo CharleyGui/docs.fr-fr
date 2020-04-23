@@ -77,7 +77,7 @@ L’activation sans inscription des composants .NET Framework n’est que légè
   
 5. Nommez et enregistrez le fichier manifeste. Le nom d’un manifeste d’application est le nom de l’exécutable d’assembly suivi de l’extension .manifest. Par exemple, le nom du fichier manifeste d’application de myComApp.exe est myComApp.exe.manifest.  
   
-Vous pouvez installer un manifeste d’application dans le même répertoire que l’application COM. Vous pouvez également l’ajouter en tant que ressource au fichier .exe de l’application. Pour plus d’informations, voir [à propos des assemblées côte à côte](/windows/desktop/SbsCs/about-side-by-side-assemblies-).  
+Vous pouvez installer un manifeste d’application dans le même répertoire que l’application COM. Vous pouvez également l’ajouter en tant que ressource au fichier .exe de l’application. Pour plus d’informations, consultez [à propos des assemblys côte à côte](/windows/desktop/SbsCs/about-side-by-side-assemblies-).  
   
 ## <a name="create-a-component-manifest"></a>Créer un manifeste de composant  
   
@@ -110,12 +110,12 @@ Vous pouvez installer un manifeste d’application dans le même répertoire que
     |Attribut|Description|Obligatoire|  
     |---------------|-----------------|--------------|  
     |`clsid`|Identificateur qui spécifie la classe à activer.|Oui|  
-    |`description`|Chaîne qui informe l’utilisateur sur le composant. L’attribut par défaut est une chaîne vide.|Non |  
+    |`description`|Chaîne qui informe l’utilisateur sur le composant. L’attribut par défaut est une chaîne vide.|Non|  
     |`name`|Chaîne représentant la classe managée.|Oui|  
-    |`progid`|Identificateur à utiliser pour une activation à liaison tardive.|Non |  
-    |`threadingModel`|Modèle de thread COM. "Both" est la valeur par défaut.|Non |  
-    |`runtimeVersion`|Spécifie la version du CLR (Common Language Runtime) à utiliser. Si vous ne spécifiez pas cet attribut et que le CLR n’est pas déjà chargé, le composant est chargé avec la version du CLR la plus récente, antérieure à la version CLR 4. Si vous spécifiez v1.0.3705, v1.1.4322 ou v2.0.50727, la version passe automatiquement à la version du CLR installée la plus récente antérieure à la version CLR 4 (habituellement v2.0.50727). Si une autre version du CLR est déjà chargée et que la version spécifiée peut être chargée in-process côte à côte, la version spécifiée est chargée ; sinon, le CLR chargé est utilisé. Cela peut provoquer un échec de chargement.|Non |  
-    |`tlbid`|Identificateur de la bibliothèque de types qui contient les informations de type sur la classe.|Non |  
+    |`progid`|Identificateur à utiliser pour une activation à liaison tardive.|Non|  
+    |`threadingModel`|Modèle de thread COM. "Both" est la valeur par défaut.|Non|  
+    |`runtimeVersion`|Spécifie la version du CLR (Common Language Runtime) à utiliser. Si vous ne spécifiez pas cet attribut et que le CLR n’est pas déjà chargé, le composant est chargé avec la version du CLR la plus récente, antérieure à la version CLR 4. Si vous spécifiez v1.0.3705, v1.1.4322 ou v2.0.50727, la version passe automatiquement à la version du CLR installée la plus récente antérieure à la version CLR 4 (habituellement v2.0.50727). Si une autre version du CLR est déjà chargée et que la version spécifiée peut être chargée in-process côte à côte, la version spécifiée est chargée ; sinon, le CLR chargé est utilisé. Cela peut provoquer un échec de chargement.|Non|  
+    |`tlbid`|Identificateur de la bibliothèque de types qui contient les informations de type sur la classe.|Non|  
   
      Toutes les balises d’attribut respectent la casse. Vous pouvez obtenir des CLSID, des ProgID, des modèles de thread et la version du runtime en affichant la bibliothèque de types exportée de l’assembly à l’aide de l’explorateur d’objets OLE/COM (Oleview.exe).  
   
@@ -170,11 +170,11 @@ Vous pouvez installer un manifeste d’application dans le même répertoire que
   
     `/win32res:myresource.res`  
   
-     Encore `myresource.res` une fois, est le nom du fichier de ressources contenant des ressources intégrées.  
+     Là encore `myresource.res` , est le nom du fichier de ressources contenant des ressources incorporées.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [COM Interop sans inscription](registration-free-com-interop.md)
 - [Configuration requise pour COM Interop sans inscription](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f8h7012w(v=vs.100))
-- [Configurer les composants COM pour l’activation sans inscription](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x65a421a(v=vs.100))
+- [Configuration des composants COM pour l’activation sans inscription](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x65a421a(v=vs.100))
 - [Activation sans inscription de composants .NET : une procédure pas à pas](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973915(v=msdn.10))

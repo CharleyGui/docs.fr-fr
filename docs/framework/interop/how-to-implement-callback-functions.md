@@ -38,7 +38,7 @@ La procédure et l'exemple suivants montrent comment une application managée pe
   
      Si, toutefois, la fonction de rappel peut être appelée après le retour d'appel, l'appelant managé doit prendre des mesures pour s’assurer que le délégué n'est pas collecté jusqu’à ce que la fonction de rappel termine sa tâche. Pour plus d’informations sur la façon d’empêcher l’opération de garbage collection, consultez [Marshaling d’interopérabilité](interop-marshaling.md) avec l’appel de code non managé.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
   
 ```vb  
 Imports System  

@@ -17,7 +17,7 @@ ms.lasthandoff: 10/30/2019
 ms.locfileid: "73130217"
 ---
 # <a name="how-to-get-type-and-member-information-by-using-reflection"></a>Comment : récupérer des informations sur les types et les membres à l’aide de la réflexion
-L’espace de noms <xref:System.Reflection> contient de nombreuses méthodes pour obtenir des informations sur les types et leurs membres. Cet article illustre l’une de ces méthodes, <xref:System.Type.GetMembers%2A?displayProperty=nameWithType>. Pour plus d’informations, consultez [vue d’ensemble](reflection.md)de la réflexion.
+L' <xref:System.Reflection> espace de noms contient de nombreuses méthodes pour obtenir des informations sur les types et leurs membres. Cet article illustre l’une de ces méthodes <xref:System.Type.GetMembers%2A?displayProperty=nameWithType>,. Pour plus d’informations, consultez [vue d’ensemble](reflection.md)de la réflexion.
   
 ## <a name="example"></a>Exemple
 

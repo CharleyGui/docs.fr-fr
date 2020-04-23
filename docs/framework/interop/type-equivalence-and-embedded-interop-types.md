@@ -31,7 +31,7 @@ Avec l’équivalence des types, un objet COM qui est passé d’un assembly man
 
 - Les deux types ont la même identité, comme décrit dans la section suivante.
 
-- Les deux types sont disponibles pour l’équivalence des types, comme décrit dans la section [Marquer des types COM pour l’équivalence des types](#marking-com-types-for-type-equivalence).
+- Les deux types sont éligibles pour l’équivalence de type, comme décrit dans la section [marquage de types com pour l’équivalence de type](#marking-com-types-for-type-equivalence) .
 
 ### <a name="type-identity"></a>Identité des types
 
@@ -54,5 +54,5 @@ Si un type n’est pas défini avec l’attribut <xref:System.Runtime.InteropSer
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Type.IsEquivalentTo%2A>
-- [Utilisation de types COM dans du code managé](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
+- [Utiliser des types COM dans du code managé](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Importation d'une bibliothèque de types sous la forme d'un assembly](importing-a-type-library-as-an-assembly.md)

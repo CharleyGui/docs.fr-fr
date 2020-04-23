@@ -1,5 +1,5 @@
 ---
-title: Migrez une application Web ASP.NET vers une VM Azure
+title: Migrer une application Web ASP.NET vers une machine virtuelle Azure
 description: Découvrez comment migrer une application web ASP.NET se trouvant sur site vers une machine virtuelle Azure.
 ms.topic: how-to
 ms.date: 11/15/2017
@@ -22,10 +22,10 @@ Découvrez comment créer une machine virtuelle et y publier votre application :
 
 Ces didacticiels illustrent les étapes de création (ou de migration) d’une machine virtuelle, de publication de votre application web sur celle-ci et les autres tâches pouvant être nécessaires à la prise en charge de votre application dans Azure.
 
-- Créez une machine virtuelle pour votre application ASP.NET dans Azure en utilisant l’une des options suivantes :
+- Créez une machine virtuelle pour votre application ASP.NET dans Azure à l’aide de l’une des options suivantes :
   - [Créer une nouvelle machine virtuelle pour les applications ASP.NET](https://go.microsoft.com/fwlink/?linkid=863237)
-  - [Migrer une machine virtuelle VMWare existante sur place](https://docs.microsoft.com/azure/migrate/tutorial-migrate-vmware)
-  - [Migrer une machine virtuelle Hyper-V existante sur place](https://docs.microsoft.com/azure/migrate/tutorial-migrate-hyper-v)
+  - [Migrer une machine virtuelle VMWare locale existante](https://docs.microsoft.com/azure/migrate/tutorial-migrate-vmware)
+  - [Migrer une machine virtuelle Hyper-V locale existante](https://docs.microsoft.com/azure/migrate/tutorial-migrate-hyper-v)
 - [Publier votre application à l’aide de Visual Studio](https://go.microsoft.com/fwlink/?linkid=863240)
 - [Créer un réseau virtuel pour vos machines virtuelles](https://docs.microsoft.com/azure/virtual-network/virtual-network-get-started-vnet-subnet)
 - [Créer un pipeline d’intégration continue/de déploiement continu pour votre application](https://docs.microsoft.com/vsts/build-release/apps/cd/deploy-webdeploy-iis-deploygroups)
@@ -39,7 +39,7 @@ Les machines virtuelles offrent la voie la plus simple pour migrer une applicati
 
 ### <a name="virtual-machine-size"></a>Taille de la machine virtuelle
 
-Choisissez la taille et le type de machine virtuelle le mieux optimisé pour votre charge de travail. Pour plus d’informations, voir [Tailles pour les machines virtuelles Windows dans Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes).
+Choisissez la taille et le type de machine virtuelle le mieux optimisé pour votre charge de travail. Pour plus d’informations, consultez [tailles des machines virtuelles Windows dans Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes).
 
 ### <a name="maintenance"></a>Maintenance
 
@@ -53,7 +53,7 @@ Grâce aux réseaux virtuels Azure vous pouvez :
 
 - Créer une infrastructure hybride que vous contrôlez
 - Utiliser vos propres adresses IP et serveurs DNS
-- Créez un environnement isolé et hautement sécurisé pour vos applications
+- Créer un environnement isolé et hautement sécurisé pour vos applications
 - Connecter votre machine virtuelle à votre réseau local à l’aide d’une des nombreuses [options de connectivité](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways#s2smulti)
 - Intégrer votre machine virtuelle à votre réseau local à l’aide d’[ExpressRoute](https://azure.microsoft.com/services/expressroute/)
 
@@ -70,12 +70,12 @@ De nombreuses applications utilisent Active Directory pour la gestion de l’aut
 Si votre application utilise une base de données locale, il se peut qu’elle ne soit pas en mesure de communiquer avec elle par défaut. Vous pouvez :
 
 - Configurer un réseau hybride qui permet à votre application d’accéder à la base de données exécutée en local.
-- Migrez votre base de données vers Azure. Pour plus d’informations, consultez [La base de données Migrer votre serveur SQL vers Azure](sql.md).
+- Migrez votre base de données vers Azure. Pour plus d’informations, consultez [migrer votre base de données SQL Server vers Azure](sql.md).
 
 ### <a name="high-availability-and-scalability"></a>Haute disponibilité et extensibilité
 
 #### <a name="virtual-machine-scale-sets"></a>Virtual Machine Scale Sets
-Vous souhaitez vous assurer que votre application est hautement disponible et peut évoluer, migrez l’image de votre machine virtuelle vers un groupe de machines virtuelles identiques pour améliorer la disponibilité et l’évolutivité de votre application. Les ensembles d’échelle VM offrent la possibilité d’utiliser une VM existante que vous avez déjà configurée ou configurée un pipeline de construction pour construire une image avec votre application.
+Vous souhaitez vous assurer que votre application est hautement disponible et peut évoluer, migrez l’image de votre machine virtuelle vers un groupe de machines virtuelles identiques pour améliorer la disponibilité et l’évolutivité de votre application. VM Scale Sets offrir la possibilité d’utiliser une machine virtuelle existante que vous avez déjà configurée ou de configurer un pipeline de build pour générer une image avec votre application.
 
 Pour commencer, consultez [Déployer votre application sur des groupes de machines virtuelles identiques](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app).
 

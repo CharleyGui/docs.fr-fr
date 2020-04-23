@@ -28,7 +28,7 @@ Il existe deux façons de supprimer un assembly du Global Assembly Cache (GAC) 
 
 ## <a name="removing-an-assembly-with-gacutilexe"></a>Suppression d'un assembly avec Gacutil.exe
 
-À l'invite de commandes, tapez la commande suivante :
+Saisissez ensuite la commande suivante dans l’invite de commandes :
 
 **gacutil –u** \<*nom_assembly*>
 
@@ -37,7 +37,7 @@ Dans cette commande, *nom_assembly* est le nom de l’assembly à supprimer du G
 > [!WARNING]
 > Vous ne devez pas utiliser Gacutil.exe pour supprimer des assemblys sur des systèmes de production, en raison de la possibilité que l'assembly soit encore requis par certaines applications. Au lieu de cela, vous devez utiliser Windows Installer, qui conserve un comptage des références pour chaque assembly qu'il installe dans le GAC.
 
-L’exemple suivant supprime un assembly nommé `hello.dll` de la Global Assembly Cache :
+L’exemple suivant supprime un assembly `hello.dll` nommé de l’global assembly cache :
 
 ```console
 gacutil -u hello
@@ -53,5 +53,5 @@ Dans l’application **Programmes et fonctionnalités** du **Panneau de configur
 ## <a name="see-also"></a>Voir aussi
 
 - [Utilisation d’assemblys et du Global Assembly Cache](working-with-assemblies-and-the-gac.md)
-- [Guide pratique pour installer un assembly dans le Global Assembly Cache](install-assembly-into-gac.md)
-- [Gacutil.exe (outil Global Assembly Cache)](../tools/gacutil-exe-gac-tool.md)
+- [Comment : installer un assembly dans le global assembly cache](install-assembly-into-gac.md)
+- [Gacutil. exe (Outil Global Assembly Cache)](../tools/gacutil-exe-gac-tool.md)

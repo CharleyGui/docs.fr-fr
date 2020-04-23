@@ -35,7 +35,7 @@ Pour signer un assembly avec un nom fort, vous devez avoir une paire de clés de
 
 ### <a name="to-generate-a-primary-interop-assembly-using-tlbimpexe"></a>Pour générer des assemblys PIA à l'aide de Tlbimp.exe
 
-1. À l'invite de commandes, tapez :
+1. À l’invite de commandes, tapez :
 
     **tlbimp** *fichiertlb*  **/primary /keyfile:** *nomfichier* **/out:** *nomassembly*
 

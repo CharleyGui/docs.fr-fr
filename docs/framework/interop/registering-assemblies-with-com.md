@@ -19,7 +19,7 @@ Vous pouvez exécuter l’outil en ligne de commande [Assembly Registration Tool
   
  Pour activer un composant managé à partir d’un client COM, vous devez d’abord l’inscrire dans le Registre Windows. Le tableau suivant montre les clés que Regasm.exe ajoute généralement au Registre Windows (000000 indique la valeur GUID).  
   
-|GUID|Description|Clé du Registre|  
+|GUID|Description|Clé de Registre|  
 |----------|-----------------|------------------|  
 |CLSID|Identificateur de classe|HKEY_CLASSES_ROOT\CLSID\\{000…000}|  
 |IID|Identificateur d’interface|HKEY_CLASSES_ROOT\Interface\\{000…000}|  
@@ -30,7 +30,7 @@ Vous pouvez exécuter l’outil en ligne de commande [Assembly Registration Tool
   
 - Le Global Assembly Cache (il doit s’agir d’un assembly avec un nom fort)  
   
-- Le répertoire de l’application. Les assemblys chargés à partir du chemin d’une application ne sont accessibles qu’à partir de cette application.  
+- dans le répertoire de l’application. Les assemblys chargés à partir du chemin d’une application ne sont accessibles qu’à partir de cette application.  
   
 - Sur un chemin de fichier spécifié avec l’option **/codebase** définie sur Regasm.exe.  
   
@@ -43,7 +43,7 @@ Vous pouvez exécuter l’outil en ligne de commande [Assembly Registration Tool
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exposition de composants .NET Framework à COM](exposing-dotnet-components-to-com.md)
+- [Exposition de composants .NET Framework à COM](exposing-dotnet-components-to-com.md)
 - [Comment : référencer des types .NET à partir de COM](how-to-reference-net-types-from-com.md)
-- [Appel d’un objet .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
-- [Déploiement d’une application pour accéder à COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))
+- [Appeler un objet .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
+- [Déployer une application pour accéder à COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))

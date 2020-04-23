@@ -32,9 +32,9 @@ COM Interop sans inscription active un composant sans utiliser le Registre Windo
   
 1. La prise en charge de COM Interop sans inscription varie légèrement selon le type d'assembly de bibliothèque, plus précisément, si l'assembly est non managé (côte à côte COM) ou managé ( basé sur .NET). Le tableau suivant présente les conditions requises concernant le système d'exploitation et la version de .NET Framework pour chaque type d'assembly.  
   
-    |Type d'assembly|Système d'exploitation|Version du .NET Framework|  
+    |Type d'assembly|Système d’exploitation|Version du .NET Framework|  
     |-------------------|----------------------|----------------------------|  
-    |Côte à côte COM|Microsoft Windows XP|Non requis|  
+    |Côte à côte COM|Microsoft Windows XP|Non requis.|  
     |Basé sur .NET|Windows XP SP2|.NET Framework version 1.1 ou ultérieure|  
   
      La famille Windows Server 2003 prend également en charge COM Interop sans inscription pour les assemblys .NET.  

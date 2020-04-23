@@ -60,15 +60,15 @@ L’illustration suivante montre le répertoire d’assemblys satellites :
 
 ## <a name="compiling-satellite-assemblies"></a>compiler des assemblys satellites
 
-Le générateur de fichiers de [ressources (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md) vous permet de compiler des fichiers texte ou des fichiers XML ( *. resx*) contenant des ressources dans des fichiers *. Resources* binaires. Vous utilisez ensuite [Assembly Linker (al. exe)](../tools/al-exe-assembly-linker.md) pour compiler les fichiers *. Resources* en assemblys satellites. *Al. exe* crée un assembly à partir des fichiers *. Resources* que vous spécifiez. Les assemblys satellites ne peuvent contenir que des ressources ; ils ne peuvent contenir aucun code exécutable.
+Le générateur de fichiers de [ressources (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md) vous permet de compiler des fichiers texte ou des fichiers XML (*. resx*) contenant des ressources dans des fichiers *. Resources* binaires. Vous utilisez ensuite [Assembly Linker (al. exe)](../tools/al-exe-assembly-linker.md) pour compiler les fichiers *. Resources* en assemblys satellites. *Al. exe* crée un assembly à partir des fichiers *. Resources* que vous spécifiez. Les assemblys satellites ne peuvent contenir que des ressources ; ils ne peuvent contenir aucun code exécutable.
 
-La commande *al. exe* suivante crée un assembly satellite pour l’application `Example` à partir du fichier de ressources allemand *Strings. de. Resources*.
+La commande *al. exe* suivante crée un assembly satellite pour l' `Example` application à partir du fichier de ressources allemand *Strings. de. Resources*.
 
 ```console
 al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dll
 ```
 
-La commande *al. exe* suivante crée également un assembly satellite pour l’application `Example` à partir du fichier *Strings. de. Resources*. L’option **/template** fait en sorte que l’assembly satellite hérite de toutes les métadonnées d’assembly, à l’exception des informations de culture de l’assembly parent (*example. dll*).
+La commande *al. exe* suivante crée également un assembly satellite pour l' `Example` application à partir du fichier *Strings. de. Resources*. L’option **/template** fait en sorte que l’assembly satellite hérite de toutes les métadonnées d’assembly, à l’exception des informations de culture de l’assembly parent (*example. dll*).
 
 ```console
 al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dll -template:Example.dll
@@ -81,7 +81,7 @@ Le tableau suivant décrit les options de *al. exe* utilisées dans ces commande
 |`-target:lib`|Spécifie que votre assembly satellite est compilé dans un fichier de bibliothèque (.dll). Comme un assembly satellite ne contient pas de code exécutable et n’est pas l’assembly principal d’une application, vous devez enregistrer les assemblys satellites en tant que DLL.|
 |`-embed:strings.de.resources`|Spécifie le nom du fichier de ressources à incorporer lorsque *al. exe* compile l’assembly. Vous pouvez incorporer plusieurs fichiers .resources dans un assembly satellite mais, si vous suivez le modèle Hub and Spoke, vous devez compiler un assembly satellite pour chaque culture. Toutefois, vous pouvez créer des fichiers .resources séparés pour les chaînes et les objets.|
 |`-culture:de`|Spécifie la culture de la ressource à compiler. Le Common Language Runtime utilise ces informations lors de la recherche des ressources pour une culture spécifiée. Si vous omettez cette option, *al. exe* compilera toujours la ressource, mais le runtime ne pourra pas le trouver quand un utilisateur le demandera.|
-|`-out:Example.resources.dll`|Spécifie le nom du fichier de sortie. Le nom doit respecter la norme d’appellation *baseName*.resources. *extension*, où *baseName* est le nom de l’assembly principal et *extension* est une extension valide (par exemple, .dll). Notez que le runtime n’est pas en mesure de déterminer la culture d’un assembly satellite en fonction du nom de son fichier de sortie ; vous devez utiliser l’option **/culture** pour la spécifier.|
+|`-out:Example.resources.dll`|Spécifie le nom du fichier de sortie. Le nom doit respecter la norme d’appellation *baseName*.resources.* extension*, où *baseName* est le nom de l’assembly principal et *extension* est une extension valide (par exemple, .dll). Notez que le runtime n’est pas en mesure de déterminer la culture d’un assembly satellite en fonction du nom de son fichier de sortie ; vous devez utiliser l’option **/culture** pour la spécifier.|
 |`-template:Example.dll`|Spécifie un assembly à partir duquel l’assembly satellite va hériter de toutes les métadonnées de l’assembly, à l’exception du champ de culture. Cette option affecte les assemblys satellites uniquement si vous spécifiez un assembly qui a un [nom fort](../../standard/assembly/strong-named.md).|
   
  Pour obtenir la liste complète des options disponibles avec *al. exe*, consultez [Assembly Linker (al. exe)](../tools/al-exe-assembly-linker.md).
@@ -99,11 +99,11 @@ Voici un exemple « Hello world » simple qui affiche une boîte de message co
   
 3. Ajoutez la prise en charge de cultures supplémentaires (en-US, fr-FR et ru-RU) à l’application comme suit :  
   
-    - Pour prendre en charge la culture en-US ou anglaise (États-Unis), créez un fichier de ressources nommé *Greetings. en-US. resx* ou *Greeting. en-US. txt*, et stockez-le dans une chaîne unique nommée `HelloString` dont la valeur est « Hi World ! ».
+    - Pour prendre en charge la culture en-US ou anglaise (États-Unis), créez un fichier de ressources nommé *Greetings. en-US. resx* ou *Greeting. en-US. txt*, et stockez- `HelloString` y une chaîne unique nommée dont la valeur est « Hi World ! ».
   
-    - Pour prendre en charge la culture fr-FR ou français (France), créez un fichier de ressources nommé *Greeting.fr-fr. resx* ou *Greeting.fr Strings.fr. txt*, et stockez-le dans une chaîne unique nommée `HelloString` dont la valeur est « salutation tout le Bonjour ! ».
+    - Pour prendre en charge la culture fr-FR ou français (France), créez un fichier de ressources nommé *Greeting.fr-fr. resx* ou *Greeting.fr Strings.fr. txt*, et stockez-le `HelloString` dans une chaîne unique nommée dont la valeur est « Salut tout le Bonjour ! ».
   
-    - Pour prendre en charge la culture ru-RU ou russe (Russie), créez un fichier de ressources nommé *Greeting.ru-RU. resx* ou *Greeting.ru Strings.ru. txt*, et stockez-le dans une chaîne unique nommée `HelloString` dont la valeur est « Всем привет ! ».
+    - Pour prendre en charge la culture ru-RU ou russe (Russie), créez un fichier de ressources nommé *Greeting.ru-RU. resx* ou *Greeting.ru Strings.ru. txt*, et stockez-y `HelloString` une chaîne unique nommée dont la valeur est « Всем привет ! ».
   
 4. Utilisez [Resgen. exe](../tools/resgen-exe-resource-file-generator.md) pour compiler chaque fichier de ressources texte ou XML dans un fichier *. Resources* binaire. La sortie est un ensemble de fichiers qui ont le même nom de fichier racine que les fichiers *. resx* ou *. txt* , mais une extension *. Resources* . Si vous créez l’exemple avec Visual Studio, le processus de compilation est géré automatiquement. Si vous n’utilisez pas Visual Studio, exécutez les commandes suivantes pour compiler les fichiers *. resx* en fichiers *. Resources* :  
   
@@ -124,7 +124,7 @@ Voici un exemple « Hello world » simple qui affiche une boîte de message co
     [!code-csharp[Conceptual.Resources.Locating#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/program.cs#1)]
     [!code-vb[Conceptual.Resources.Locating#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/module1.vb#1)]
 
-    Si l’application est nommée example et que vous compilez à partir de la ligne de commande, C# la commande pour le compilateur est la suivante :
+    Si l’application est nommée example et que vous compilez à partir de la ligne de commande, la commande pour le compilateur C# est la suivante :
 
     ```console
     csc Example.cs -res:Greeting.resources
@@ -235,11 +235,11 @@ L’exemple suivant utilise une méthode dans une bibliothèque de classes .NET 
 
 5. Ajoutez la prise en charge de cultures supplémentaires (en-US, fr-FR et ru-RU) à l’application comme suit :
 
-    - Pour prendre en charge la culture « en-US » ou anglais (États-Unis), créez un fichier de ressources nommé *Strings. en-US. resx* ou *Strings. en-US. txt*, et stockez-le dans une chaîne unique nommée `Greeting` dont la valeur est « Hello ! ».
+    - Pour prendre en charge la culture « en-US » ou anglais (États-Unis), créez un fichier de ressources nommé *Strings. en-US. resx* ou *Strings. en-US. txt*, et stockez `Greeting` -le dans une chaîne unique nommée dont la valeur est « Hello ! ».
 
-    - Pour prendre en charge la culture « fr-FR » ou français (France), créez un fichier de ressources nommé *Strings.fr-fr. resx* ou *Strings.fr Strings.fr. txt* et stockez-le dans une chaîne unique nommée `Greeting` dont la valeur est « bon jour ! ».
+    - Pour prendre en charge la culture « fr-FR » ou français (France), créez un fichier de ressources nommé *Strings.fr-fr. resx* ou *Strings.fr Strings.fr. txt* et stockez-le `Greeting` dans une chaîne unique nommée dont la valeur est « bon jour ! ».
 
-    - Pour prendre en charge la culture « ru-RU » ou russe (Russie), créez un fichier de ressources nommé *Strings.ru-RU. resx* ou *Strings.ru Strings.ru. txt* et stockez-le dans une chaîne unique nommée `Greeting` dont la valeur est « привет ! ».
+    - Pour prendre en charge la culture « ru-RU » ou russe (Russie), créez un fichier de ressources nommé *Strings.ru-RU. resx* ou *Strings.ru Strings.ru. txt* et stockez-y `Greeting` une chaîne unique nommée dont la valeur est « привет ! ».
 
 6. Utilisez [Resgen.exe](../tools/resgen-exe-resource-file-generator.md) pour compiler chaque fichier de ressources texte ou XML en un fichier .resources binaire. La sortie est un ensemble de fichiers qui ont le même nom de fichier racine que les fichiers *. resx* ou *. txt* , mais une extension *. Resources* . Si vous créez l’exemple avec Visual Studio, le processus de compilation est géré automatiquement. Si vous n’utilisez pas Visual Studio, exécutez la commande suivante pour compiler les fichiers *. resx* en fichiers *. Resources* :
 
@@ -252,7 +252,7 @@ L’exemple suivant utilise une méthode dans une bibliothèque de classes .NET 
 7. Compilez le code source suivant pour *StringLibrary. vb* ou *StringLibrary.cs* , ainsi que les ressources pour la culture par défaut dans un assembly de bibliothèque à signature différée nommé *StringLibrary. dll*:
 
     > [!IMPORTANT]
-    > Si vous utilisez la ligne de commande plutôt que Visual Studio pour créer l’exemple, vous devez remplacer l’appel au constructeur de la classe <xref:System.Resources.ResourceManager> par `ResourceManager rm = new ResourceManager("Strings",` `typeof(Example).Assembly);`.
+    > Si vous utilisez la ligne de commande plutôt que Visual Studio pour créer l’exemple, vous devez remplacer l’appel au constructeur <xref:System.Resources.ResourceManager> de classe par `ResourceManager rm = new ResourceManager("Strings",` `typeof(Example).Assembly);`.
 
     [!code-csharp[Conceptual.Resources.Satellites#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#1)]
     [!code-vb[Conceptual.Resources.Satellites#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#1)]
@@ -320,9 +320,9 @@ L’exemple suivant utilise une méthode dans une bibliothèque de classes .NET 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Empaquetage et déploiement de ressources](packaging-and-deploying-resources-in-desktop-apps.md)
+- [Packaging and Deploying Resources](packaging-and-deploying-resources-in-desktop-apps.md)
 - [Temporisation de signature d'un assembly](../../standard/assembly/delay-sign.md)
-- [Al.exe (Assembly Linker)](../tools/al-exe-assembly-linker.md)
-- [Sn.exe (outil Strong Name)](../tools/sn-exe-strong-name-tool.md)
-- [Gacutil.exe (outil Global Assembly Cache)](../tools/gacutil-exe-gac-tool.md)
-- [Ressources dans des applications de bureau](index.md)
+- [Al. exe (Assembly Linker)](../tools/al-exe-assembly-linker.md)
+- [SN. exe (outil Strong Name Tool)](../tools/sn-exe-strong-name-tool.md)
+- [Gacutil. exe (Outil Global Assembly Cache)](../tools/gacutil-exe-gac-tool.md)
+- [Ressources dans les applications de bureau](index.md)

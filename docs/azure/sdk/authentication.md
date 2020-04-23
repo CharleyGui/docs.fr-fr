@@ -45,7 +45,7 @@ var account = CloudStorageAccount.Parse(storageConnectionString);
 // Do things with the account here...
 ```
 
-Les chaînes de connexion de service sont utilisées dans d’autres services Azure comme [CosmosDB](https://docs.microsoft.com/azure/cosmos-db/), [Azure Cache pour Redis](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-dotnet-how-to-use-azure-redis-cache), et [Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues). Vous pouvez obtenir ces chaînes en utilisant le portail Azure, CLI, ou PowerShell. Vous pouvez aussi utiliser les bibliothèques de gestion Azure pour .NET pour interroger des ressources et générer des chaînes de connexion dans votre code.
+Les chaînes de connexion de service sont utilisées dans d’autres services Azure tels que [CosmosDB](https://docs.microsoft.com/azure/cosmos-db/), [Azure cache for redims](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-dotnet-how-to-use-azure-redis-cache)et [service bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues). Vous pouvez récupérer ces chaînes à l’aide de l’Portail Azure, de l’interface CLI ou de PowerShell. Vous pouvez aussi utiliser les bibliothèques de gestion Azure pour .NET pour interroger des ressources et générer des chaînes de connexion dans votre code.
 
 Par exemple, cet extrait de code utilise les bibliothèques de gestion pour créer une chaîne de connexion de compte de stockage :
 
@@ -76,7 +76,7 @@ D’autres bibliothèques ont besoin que votre application s’exécute avec un 
 
 Une fois le principal de service créé, vous disposez de deux options pour vous authentifier au principal de service et créer et gérer les ressources.
 
-Pour les deux options, vous devrez ajouter les paquets NuGet suivants à votre projet.
+Pour les deux options, vous devez ajouter les packages NuGet suivants à votre projet.
 
 ```powershell
 Install-Package Microsoft.Azure.Management.Fluent

@@ -91,7 +91,7 @@ extern "C" int MessageBox(
 |-----------|-----------------|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>|Active ou désactive le mappage ajusté.|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>|Spécifie la convention d'appel à utiliser lors du passage des arguments de méthode. La valeur par défaut est `WinAPI`, ce qui correspond à `__stdcall` pour les plateformes 32 bits Intel.|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>|Contrôle le troncage des noms et la façon dont les arguments de chaîne doivent être marshalés vers la fonction. La valeur par défaut est `CharSet.Ansi`,|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>|Contrôle le troncage des noms et la façon dont les arguments de chaîne doivent être marshalés vers la fonction. Par défaut, il s’agit de `CharSet.Ansi`.|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint>|Spécifie le point d'entrée de DLL à appeler.|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>|Détermine si un point d'entrée doit être modifié pour correspondre au jeu de caractères. La valeur par défaut varie en fonction du langage de programmation.|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>|Contrôle si la signature de méthode managée doit être transformée en signature non managée qui retourne un HRESULT et possède un argument supplémentaire [out, retval] pour la valeur de retour.<br /><br /> La valeur par défaut est `true` (la signature ne doit pas être transformée).|  
@@ -232,9 +232,9 @@ interface IDemandStubsItf
 ## <a name="see-also"></a>Voir aussi
 
 - [Consommation de fonctions DLL non managées](consuming-unmanaged-dll-functions.md)
-- [Spécification d'un point d'entrée](specifying-an-entry-point.md)
-- [Spécification d'un jeu de caractères](specifying-a-character-set.md)
-- [Exemples d'appel de code non managé](platform-invoke-examples.md)
+- [Spécification d’un point d’entrée](specifying-an-entry-point.md)
+- [Spécification d’un jeu de caractères](specifying-a-character-set.md)
+- [Exemples d’appel de code non managé](platform-invoke-examples.md)
 - [Considérations relatives à la sécurité des appels de code non managé](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb397754(v=vs.100))
 - [Identification des fonctions des DLL](identifying-functions-in-dlls.md)
 - [Création d’une classe pour contenir des fonctions DLL](creating-a-class-to-hold-dll-functions.md)

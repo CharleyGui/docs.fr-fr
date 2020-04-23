@@ -76,7 +76,7 @@ Voici quelques exemples de langages développés à l’aide du DLR :
 
  ![Vue d’ensemble de l’architecture Dynamic Language Runtime](./media/dlr-archoverview.png "DLR_ArchOverview") Architecture du DLR
 
- Le DLR ajoute un ensemble de services au CLR pour une meilleure prise en charge des langages dynamiques. Il s’agit des services suivants :
+ Le DLR ajoute un ensemble de services au CLR pour une meilleure prise en charge des langages dynamiques. Ces services sont les suivants :
 
 - Arborescences de l’expression. Le DLR utilise des arborescences de l’expression pour représenter la syntaxe de langage. À cette fin, le DLR a étendu les arborescences de l’expression LINQ pour inclure le flux de contrôle, l’assignation et d’autres nœuds de modélisation de langage. Pour plus d’informations, consultez [Arborescences d’expressions (C#)](../../csharp/programming-guide/concepts/expression-trees/index.md) ou [Arborescences d’expressions (Visual Basic)](../../visual-basic/programming-guide/concepts/expression-trees/index.md).
 

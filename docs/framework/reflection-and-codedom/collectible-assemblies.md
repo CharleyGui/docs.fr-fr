@@ -57,19 +57,19 @@ Si un seul élément de cette liste existe pour un seul type ou une seule métho
 
 Les restrictions suivantes s’appliquent aux assemblys pouvant être collectés :
 
-- **Références statiques** Les types d’un assemblage dynamique ordinaire ne peuvent pas avoir de références statiques à des types qui sont définis dans un assemblage de collection. Par exemple, si vous définissez un type simple qui hérite d’un type dans un assembly pouvant être collecté, une exception <xref:System.NotSupportedException> est levée. Un type dans un assembly pouvant être collecté peut avoir des références statiques à un type dans un autre assembly pouvant être collecté, mais cela permet d’étendre la durée de vie de l’assembly référencé à la durée de vie de l’assembly de référence.
+- **Références statiques** Les types d’un assembly dynamique ordinaire ne peuvent pas avoir de références statiques à des types définis dans un assembly pouvant être collecté. Par exemple, si vous définissez un type simple qui hérite d’un type dans un assembly pouvant être collecté, une exception <xref:System.NotSupportedException> est levée. Un type dans un assembly pouvant être collecté peut avoir des références statiques à un type dans un autre assembly pouvant être collecté, mais cela permet d’étendre la durée de vie de l’assembly référencé à la durée de vie de l’assembly de référence.
 
-- **Interop COM** Aucune interface COM ne peut être définie dans un assemblage de collection, et aucun cas de type dans un assemblage de collection ne peut être converti en objets COM. Un type dans un assembly pouvant être collecté ne peut pas servir de wrapper CCW (COM Callable Wrapper) ni de wrapper RCW (Runtime Callable Wrapper). Toutefois, les types dans les assemblys pouvant être collectés peuvent utiliser des objets qui implémentent les interfaces COM.
+- **COM Interop** Aucune interface COM ne peut être définie dans un assembly pouvant être collecté, et aucune instance de type dans un assembly pouvant être collecté ne peut être convertie en objets COM. Un type dans un assembly pouvant être collecté ne peut pas servir de wrapper CCW (COM Callable Wrapper) ni de wrapper RCW (Runtime Callable Wrapper). Toutefois, les types dans les assemblys pouvant être collectés peuvent utiliser des objets qui implémentent les interfaces COM.
 
-- **Plateforme invoquer** Les méthodes <xref:System.Runtime.InteropServices.DllImportAttribute> qui ont l’attribut ne compileront pas lorsqu’elles sont déclarées dans un assemblage de collection. L’instruction <xref:System.Reflection.Emit.OpCodes.Calli?displayProperty=nameWithType> ne peut pas être utilisée dans l’implémentation d’un type dans un assembly pouvant être collecté, et ces types ne peuvent pas être marshalés en code non managé. Toutefois, vous pouvez effectuer un appel en code natif à l’aide d’un point d’entrée qui est déclaré dans un assembly ne pouvant pas être collecté.
+- **Appel** de code non managé Les méthodes qui ont <xref:System.Runtime.InteropServices.DllImportAttribute> l’attribut ne sont pas compilées quand elles sont déclarées dans un assembly pouvant être collecté. L’instruction <xref:System.Reflection.Emit.OpCodes.Calli?displayProperty=nameWithType> ne peut pas être utilisée dans l’implémentation d’un type dans un assembly pouvant être collecté, et ces types ne peuvent pas être marshalés en code non managé. Toutefois, vous pouvez effectuer un appel en code natif à l’aide d’un point d’entrée qui est déclaré dans un assembly ne pouvant pas être collecté.
 
-- **Marshaling** Les objets (en particulier les délégués) qui sont définis dans des assemblées de collection ne peuvent pas être mobilisés. Il s’agit d’une restriction sur tous les types émis transitoires.
+- **Marshaling** Les objets (en particulier, les délégués) définis dans les assemblys pouvant être collectés ne peuvent pas être marshalés. Il s’agit d’une restriction sur tous les types émis transitoires.
 
-- **Chargement d’assemblage** L’émission de réflexion est le seul mécanisme qui est pris en charge pour le chargement des assemblages collectibles. Les assemblys chargés à l’aide de toute autre forme de chargement d’assembly ne peuvent pas être déchargés.
+- **Chargement d’assembly** L’émission de réflexion est le seul mécanisme pris en charge pour le chargement des assemblys pouvant être collectés. Les assemblys chargés à l’aide de toute autre forme de chargement d’assembly ne peuvent pas être déchargés.
 
-- **Objets contexté par le contexte** Les variables contextuelles statiques ne sont pas prises en charge. Les types dans un assembly pouvant être collecté ne peuvent pas étendre <xref:System.ContextBoundObject>. Toutefois, le code dans les assemblys pouvant être collectés peut utiliser des objets liés au contexte définis ailleurs.
+- **Objets liés au contexte** Les variables statiques de contexte ne sont pas prises en charge. Les types dans un assembly pouvant être collecté ne peuvent pas étendre <xref:System.ContextBoundObject>. Toutefois, le code dans les assemblys pouvant être collectés peut utiliser des objets liés au contexte définis ailleurs.
 
-- **Données thread-statiques** Les variables de thread-statiques ne sont pas prises en charge.
+- **Données statiques de thread** Les variables statiques de thread ne sont pas prises en charge.
 
 ## <a name="see-also"></a>Voir aussi
 

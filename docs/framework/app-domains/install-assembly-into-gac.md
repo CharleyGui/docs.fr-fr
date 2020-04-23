@@ -20,11 +20,11 @@ ms.locfileid: "79155561"
 
 Le Global Assembly Cache (GAC) stocke des assemblys partagés par plusieurs applications. Installez un assembly dans le [Global Assembly Cache](gac.md) avec l’un des composants suivants :
 
-- [Installateur Windows](#windows-installer)
-- [Outil Global Assembly Cache](#global-assembly-cache-tool)
+- [Windows Installer](#windows-installer)
+- [Outil global assembly cache](#global-assembly-cache-tool)
 
 > [!IMPORTANT]
-> Vous ne pouvez installer que des assemblages nommés fort dans le cache d’assemblage global. Pour plus d’informations sur la façon de créer un assemblage fort, voir [Comment: Signez une assemblée avec un nom fort](../../standard/assembly/sign-strong-name.md).
+> Vous pouvez installer uniquement des assemblys avec nom fort dans le Global Assembly Cache. Pour plus d’informations sur la création d’un assembly avec nom fort, consultez [Comment : signer un assembly avec un nom fort](../../standard/assembly/sign-strong-name.md).
 
 ## <a name="windows-installer"></a>Windows Installer
 
@@ -32,7 +32,7 @@ Le Global Assembly Cache (GAC) stocke des assemblys partagés par plusieurs appl
 
 ## <a name="global-assembly-cache-tool"></a>Global Assembly Cache (outil)
 
-Vous pouvez utiliser [l’utilitaire .NET Global Assembly Cache (gacutil.exe)](../tools/gacutil-exe-gac-tool.md) pour ajouter des assemblages au cache d’assemblage global et pour afficher le contenu du cache d’assemblage global.
+Vous pouvez utiliser l' [utilitaire .net global assembly cache (Gacutil. exe)](../tools/gacutil-exe-gac-tool.md) pour ajouter des assemblys au global assembly cache et pour afficher le contenu du global assembly cache.
 
    > [!NOTE]
    > L’outil *gacutil.exe* est réservé au développement. Ne vous en servez pas pour installer des assemblys de production dans le Global Assembly Cache.
@@ -43,9 +43,9 @@ Pour installer un assembly dans le GAC à l’aide de *gacutil.exe*, utilisez ce
 gacutil -i <assembly name>
 ```
 
-Dans cette commande, * \<le nom d’assemblage>* est le nom de l’assemblage à installer dans le cache d’assemblage global.
+Dans cette commande, * \<nom de l’assembly>* est le nom de l’assembly à installer dans le global assembly cache.
 
-Si *gacutil.exe* n’est pas dans votre trajectoire de système, utilisez [l’invite de commande de développeur pour * \<la version *VS>](../tools/developer-command-prompt-for-vs.md).
+Si *Gacutil. exe* ne se trouve pas dans votre chemin d’accès système, utilisez l' [invite de commandes développeur pour Visual Studio * \<version>* ](../tools/developer-command-prompt-for-vs.md).
 
 L’exemple suivant installe un assembly sous le nom de fichier *hello.dll* dans le Global Assembly Cache.
 
@@ -58,7 +58,7 @@ gacutil -i hello.dll
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Travailler avec les assemblées et le cache d’assemblage global](working-with-assemblies-and-the-gac.md)
-- [Comment : Supprimer une assemblée du cache d’assemblage global](how-to-remove-an-assembly-from-the-gac.md)
-- [Gacutil.exe (Outil Global Assembly Cache)](../tools/gacutil-exe-gac-tool.md)
-- [Comment: Signer une assemblée avec un nom fort](../../standard/assembly/sign-strong-name.md)
+- [Utiliser des assemblys et le Global Assembly Cache](working-with-assemblies-and-the-gac.md)
+- [Comment : supprimer un assembly du Global Assembly Cache](how-to-remove-an-assembly-from-the-gac.md)
+- [Gacutil. exe (outil global assembly cache)](../tools/gacutil-exe-gac-tool.md)
+- [Comment : signer un assembly avec un nom fort](../../standard/assembly/sign-strong-name.md)

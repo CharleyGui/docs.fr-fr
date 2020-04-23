@@ -1,5 +1,5 @@
 ---
-title: "Comment : créer un domaine d'application"
+title: Guide pratique pour créer un domaine d’application
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,7 +15,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2019
 ms.locfileid: "73119886"
 ---
-# <a name="how-to-create-an-application-domain"></a>Comment : créer un domaine d'application
+# <a name="how-to-create-an-application-domain"></a>Guide pratique pour créer un domaine d’application
 Un hôte Common Language Runtime crée automatiquement des domaines d’application quand ils sont nécessaires. Toutefois, vous pouvez créer vos propres domaines d’application et y charger les assemblys que vous souhaitez gérer personnellement. Vous pouvez également créer des domaines d’application à partir desquels vous exécutez du code.  
   
  Vous pouvez créer un domaine d’application à l’aide de l’une des méthodes **CreateDomain** surchargées dans la classe <xref:System.AppDomain?displayProperty=nameWithType>. Vous pouvez nommer le domaine d’application et le référencer par ce nom.  

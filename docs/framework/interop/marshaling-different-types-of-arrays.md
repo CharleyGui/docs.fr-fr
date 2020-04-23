@@ -29,7 +29,7 @@ Un tableau est un type référence compris dans du code managé qui contient un 
 |De structures avec des entiers.|Passe un tableau de structures contenant uniquement des entiers en tant que paramètre In.|  
 |De structures avec des chaînes.|Passe un tableau de structures contenant uniquement des chaînes en tant que paramètre In/Out. Les membres du tableau peuvent être modifiés.|  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Cet exemple montre comment passer les types de tableaux suivants :  
   
 - Tableau d'entiers par valeur.  

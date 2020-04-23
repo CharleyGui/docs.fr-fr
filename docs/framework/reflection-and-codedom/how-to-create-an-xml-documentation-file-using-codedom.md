@@ -42,7 +42,7 @@ Vous pouvez utiliser CodeDOM pour créer du code qui génère de la documentatio
      [!code-csharp[CodeDomHelloWorldSample#6](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#6)]
      [!code-vb[CodeDomHelloWorldSample#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#6)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple de code suivant crée un graphique CodeDOM avec des commentaires de documentation, génère un fichier de code à partir du graphique, compile le fichier et crée un fichier de documentation XML associé.  
   
  [!code-csharp[CodeDomHelloWorldSample#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#1)]
@@ -80,5 +80,5 @@ Vous pouvez utiliser CodeDOM pour créer du code qui génère de la documentatio
 ## <a name="see-also"></a>Voir aussi
 
 - [Documentation de votre code avec le langage XML](../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)
-- [Commentaires sur la documentation XML](../../csharp/programming-guide/xmldoc/index.md)
+- [Commentaires de documentation XML](../../csharp/programming-guide/xmldoc/index.md)
 - [Documentation XML](/cpp/ide/xml-documentation-visual-cpp)

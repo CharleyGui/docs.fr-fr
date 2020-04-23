@@ -23,16 +23,16 @@ L’appel de code non managé copie les paramètres de chaîne, en les convertis
   
  Le tableau suivant répertorie les options de marshaling pour les chaînes. Il décrit leur utilisation et fournit un lien vers l’exemple .NET Framework correspondant.  
   
-|Chaîne|Description|Exemple|  
+|String|Description|Exemple|  
 |------------|-----------------|------------|  
 |Par valeur.|Passe les structures en tant que paramètres entrants.|[MsgBox](msgbox-sample.md)|  
 |Comme résultat.|Retourne les chaînes à partir du code non managé.|[Chaînes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e765dyyy(v=vs.100))|  
 |Par référence.|Passe des chaînes en tant que paramètres entrants/sortants avec <xref:System.Text.StringBuilder>.|[Mémoires tampons](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100))|  
-|Dans une structure par valeur.|Passe des chaînes dans une structure qui est un paramètre entrant.|[Structures](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/eadtsekz(v=vs.100))|  
-|Dans une structure par référence **(char\*)** .|Passe des chaînes dans une structure qui est un paramètre entrant/sortant. La fonction non managée attend un pointeur vers une mémoire tampon de caractères ; la taille de la mémoire tampon est un membre de la structure.|[Chaînes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e765dyyy(v=vs.100))|  
-|Dans une structure par référence **(char[])** .|Passe des chaînes dans une structure qui est un paramètre entrant/sortant. La fonction non managée attend une mémoire tampon de caractères incorporée.|[OSInfo](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
-|Dans une classe par valeur **(char\*)** .|Passe des chaînes dans une classe (une classe est un paramètre entrant/sortant). La fonction non managée attend un pointeur vers une mémoire tampon de caractères.|[OpenFileDlg](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w5tyztk9(v=vs.100))|  
-|Dans une classe par valeur **(char[])** .|Passe des chaînes dans une classe (une classe est un paramètre entrant/sortant). La fonction non managée attend une mémoire tampon de caractères incorporée.|[OSInfo](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
+|Dans une structure par valeur.|Passe des chaînes dans une structure qui est un paramètre entrant.|[Structs](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/eadtsekz(v=vs.100))|  
+|Dans une structure par référence **(char\*)**.|Passe des chaînes dans une structure qui est un paramètre entrant/sortant. La fonction non managée attend un pointeur vers une mémoire tampon de caractères ; la taille de la mémoire tampon est un membre de la structure.|[Chaînes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e765dyyy(v=vs.100))|  
+|Dans une structure par référence **(char[])**.|Passe des chaînes dans une structure qui est un paramètre entrant/sortant. La fonction non managée attend une mémoire tampon de caractères incorporée.|[OSInfo](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
+|Dans une classe par valeur **(char\*)**.|Passe des chaînes dans une classe (une classe est un paramètre entrant/sortant). La fonction non managée attend un pointeur vers une mémoire tampon de caractères.|[OpenFileDlg](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w5tyztk9(v=vs.100))|  
+|Dans une classe par valeur **(Char [])**.|Passe des chaînes dans une classe (une classe est un paramètre entrant/sortant). La fonction non managée attend une mémoire tampon de caractères incorporée.|[OSInfo](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
 |Comme tableau de chaînes par valeur.|Crée un tableau de chaînes qui est passé par valeur.|[Tableaux](marshaling-different-types-of-arrays.md)|  
 |Comme un tableau de structures qui contiennent des chaînes par valeur.|Crée un tableau de structures qui contiennent des chaînes ; le tableau est passé par valeur.|[Tableaux](marshaling-different-types-of-arrays.md)|  
   

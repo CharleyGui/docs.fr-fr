@@ -116,7 +116,7 @@ struct ObjectHolder {
 
 ## <a name="marshaling-object-to-interface"></a>Marshaling d’un objet vers une interface
 
-Quand un objet est exposé à COM en tant qu’interface, cette interface est l’interface de classe pour le type managé <xref:System.Object> (l’interface **_Object**). Cette interface est de type **IDispatch** (<xref:System.Runtime.InteropServices.UnmanagedType>) ou **IUnknown** (**UnmanagedType.IUnknown**) dans la bibliothèque de types résultante. Les clients COM peuvent appeler dynamiquement les membres de la classe managée ou tout membre implémenté par ses classes dérivées via l’interface **_Object**. Le client peut également appeler **QueryInterface** pour obtenir toute autre interface explicitement implémentée par le type managé.
+Quand un objet est exposé à COM en tant qu’interface, cette interface est l’interface de classe pour le type managé <xref:System.Object> (l’interface **_Object**). Cette interface est typée en **IDispatch** tant que<xref:System.Runtime.InteropServices.UnmanagedType>IDispatch () ou **IUnknown** (**UnmanagedType. IUnknown**) dans la bibliothèque de types résultante. Les clients COM peuvent appeler dynamiquement les membres de la classe managée ou tout membre implémenté par ses classes dérivées via l’interface **_Object**. Le client peut également appeler **QueryInterface** pour obtenir toute autre interface explicitement implémentée par le type managé.
 
 ## <a name="marshaling-object-to-variant"></a>Marshaling d’un objet vers un variant
 
@@ -235,12 +235,12 @@ Le tableau suivant montre les valeurs possibles pour l’énumération **TypeCod
 |**TypeCode.Decimal**|**VT_DECIMAL**|
 |**TypeCode.DateTime**|**VT_DATE**|
 |**TypeCode.String**|**VT_BSTR**|
-|Non prise en charge.|**VT_INT**|
-|Non prise en charge.|**VT_UINT**|
-|Non prise en charge.|**VT_ARRAY**|
-|Non prise en charge.|**VT_RECORD**|
-|Non prise en charge.|**VT_CY**|
-|Non prise en charge.|**VT_VARIANT**|
+|Non pris en charge.|**VT_INT**|
+|Non pris en charge.|**VT_UINT**|
+|Non pris en charge.|**VT_ARRAY**|
+|Non pris en charge.|**VT_RECORD**|
+|Non pris en charge.|**VT_CY**|
+|Non pris en charge.|**VT_VARIANT**|
 
 La valeur du variant COM est déterminée en appelant l’interface **IConvertible.To** *Type*, où **To** *Type* est la routine de conversion qui correspond au type retourné par **IConvertible.GetTypeCode**. Par exemple, un objet qui retourne **TypeCode.Double** depuis **IConvertible.GetTypeCode** est marshalé en tant que variant COM de type **VT_R8**. Vous pouvez obtenir la valeur du variant (stockée dans le champ **dblVal** du variant COM) en effectuant un cast en une interface **IConvertible** et en appelant la méthode <xref:System.IConvertible.ToDouble%2A>.
 
@@ -271,10 +271,10 @@ Lors du marshaling d’un variant vers un objet, le type, et parfois la valeur, 
 |**VT_BSTR**|<xref:System.String?displayProperty=nameWithType>|
 |**VT_INT**|<xref:System.Int32?displayProperty=nameWithType>|
 |**VT_UINT**|<xref:System.UInt32?displayProperty=nameWithType>|
-|**VT_ARRAY** &#124; **VT_** \*|<xref:System.Array?displayProperty=nameWithType>|
+|**VT_ARRAY** &#124; **VT_**\*|<xref:System.Array?displayProperty=nameWithType>|
 |**VT_CY**|<xref:System.Decimal?displayProperty=nameWithType>|
 |**VT_RECORD**|Type valeur boxed correspondant.|
-|**VT_VARIANT**|Non prise en charge.|
+|**VT_VARIANT**|Non pris en charge.|
 
 Les types variant passés à partir de COM vers le code managé, puis repassés à COM peuvent ne pas conserver le même type variant durant la durée de l’appel. Envisagez ce qui se passe quand un variant de type **VT_DISPATCH** est passé à partir de COM vers le .NET Framework. Lors du marshaling, le variant est converti en <xref:System.Object?displayProperty=nameWithType>. Si **Object** est ensuite repassé à COM, il est remarshalé vers un variant de type **VT_UNKNOWN**. Rien ne garantit que le variant produit quand un objet est marshalé à partir de code managé vers COM sera du même type que le variant utilisé à l’origine pour produire l’objet.
 
@@ -285,21 +285,21 @@ Bien que les variants puissent eux-mêmes être passés par valeur ou par réfé
 ![Diagramme illustrant une variante transmise à la pile.](./media/default-marshaling-for-objects/interop-variant-passed-value-reference.gif)
 Variants passés par valeur et par référence
 
-**Comportement par défaut pour le marshaling d’objets et de variants par valeur**
+**Comportement par défaut de marshaling d’objets et de variants par valeur**
 
 - Lors du passage d’objets à partir de code managé vers COM, le contenu de l’objet est copié dans un nouveau variant créé par le marshaleur à l’aide des règles définies dans [Marshaling d’un objet vers un variant](#marshaling-object-to-variant). Les changements apportés au variant côté non managé ne sont pas retournés vers l’objet d’origine au retour de l’appel.
 
 - Lors du passage de variants à partir de COM vers du code managé, le contenu du variant est copié dans un objet nouvellement créé à l’aide des règles définies dans [Marshaling d’un variant vers un objet](#marshaling-variant-to-object). Les changements apportés à l’objet côté managé ne sont pas retournés vers le variant d’origine au retour de l’appel.
 
-**Comportement par défaut pour le marshaling d’objets et de variants par référence**
+**Comportement par défaut de marshaling d’objets et de variants par référence**
 
-Pour retourner des changements à l’appelant, les paramètres doivent être passés par référence. Par exemple, vous pouvez utiliser le mot clé **ref** en C# (ou **ByRef** en code managé Visual Basic) pour passer des paramètres par référence. Dans COM, les paramètres de référence sont passés à l’aide d’un pointeur tel que **variant \*** .
+Pour retourner des changements à l’appelant, les paramètres doivent être passés par référence. Par exemple, vous pouvez utiliser le mot clé **ref** en C# (ou **ByRef** en code managé Visual Basic) pour passer des paramètres par référence. Dans COM, les paramètres de référence sont passés à l’aide d’un pointeur tel que **variant \***.
 
 - Lors du passage d’un objet à COM par référence, le marshaleur crée un variant et copie le contenu de la référence d’objet dans le variant avant que l’appel ne soit effectué. Le variant est passé à la fonction non managée où l’utilisateur est libre de changer le contenu du variant. Au retour de l’appel, tout changement apporté au variant côté non managé est retourné vers l’objet d’origine. Si le type de variant est différent du type du variant passé à l’appel, les changements sont retournés à un objet d’un type différent. Cela signifie que le type de l’objet passé dans l’appel peut être différent du type de l’objet retourné à partir de l’appel.
 
 - Lors du passage d’un variant au code managé par référence, le marshaleur crée un objet et copie le contenu du variant dans l’objet avant que l’appel ne soit effectué. Une référence à l’objet est passée à la fonction managée, où l’utilisateur est libre de changer l’objet. Au retour de l’appel, tout changement apporté à l’objet référencé est retourné vers le variant d’origine. Si le type de l’objet est différent du type de l’objet passé dans l’appel, le type du variant d’origine est changé et la valeur est retournée dans le variant. Là encore, le type du variant passé dans l’appel peut être différent du type du variant retourné à partir de l’appel.
 
- **Comportement par défaut pour le marshaling d’un variant où l’indicateur VT_BYREF a été défini**
+ **Comportement par défaut de marshaling d’un variant dont l’indicateur VT_BYREF est défini**
 
 - Un variant passé à du code managé par valeur peut avoir l’indicateur **VT_BYREF** défini pour indiquer que le variant contient une référence plutôt qu’une valeur. Dans ce cas, le variant est toujours marshalé vers un objet, car le variant est passé par valeur. Le marshaleur déréférence automatiquement le contenu du variant et le copie dans un objet nouvellement créé avant d’effectuer l’appel. L’objet est ensuite passé à la fonction managée ; cependant, au retour de l’appel, l’objet n’est pas retourné dans le variant d’origine. Les changements apportés à l’objet managé sont perdus.
 
@@ -310,18 +310,18 @@ Pour retourner des changements à l’appelant, les paramètres doivent être pa
 
 Le tableau suivant résume les règles de propagation pour les variants et les objets.
 
-|De|Vers|Changements retournés|
+|À partir|À|Changements retournés|
 |----------|--------|-----------------------------|
-|**Variant**  *v*|**Object**  *o*|Never|
-|**Object**  *o*|**Variant**  *v*|Never|
-|**Variant**   ***\****  *pv*|**Ref Object**  *o*|Always|
-|**Ref object**  *o*|**Variant**   ***\****  *pv*|Always|
-|**Variant**  *v* **(VT_BYREF** *&#124;* **VT_\*)**|**Object**  *o*|Never|
+|**Variant**  *v*|**Object**  *o*|Jamais|
+|**Object**  *o*|**Variant**  *v*|Jamais|
+|**Variante**   ***\****  *PV*|**Ref Object**  *o*|Toujours|
+|**Objet Ref**  *o*|**Variante**   ***\****  *PV*|Toujours|
+|**Variante**  *v* **(VT_BYREF** *&#124;* **VT_\*)**|**Object**  *o*|Jamais|
 |**Variant**  *v* **(VT_BYREF** *&#124;* **VT_)**|**Ref Object**  *o*|Uniquement si le type n’a pas changé.|
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Comportement de marshaling par défaut](default-marshaling-behavior.md)
+- [comportement de marshaling par défaut](default-marshaling-behavior.md)
 - [Types blittable et non blittable](blittable-and-non-blittable-types.md)
 - [Attributs directionnels](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
-- [Copie et épinglage](copying-and-pinning.md)
+- [copie et épinglage](copying-and-pinning.md)

@@ -24,7 +24,7 @@ L’enveloppement d’une fonction DLL fréquemment utilisée dans une classe ma
   
  Une fois les méthodes incluses dans un wrapper, vous pouvez les appeler sur la classe de la même manière que vous appelez des méthodes statiques sur toute autre classe. L’appel de code non managé gère automatiquement la fonction exportée sous-jacente.  
   
- Lors de la conception d’une classe managée pour l’appel de code non managé, tenez compte des relations entre les classes et les fonctions DLL. Par exemple, vous pouvez :  
+ Lors de la conception d’une classe managée pour l’appel de code non managé, tenez compte des relations entre les classes et les fonctions DLL. Vous pouvez par exemple :  
   
 - déclarer des fonctions DLL dans une classe existante ;  
   

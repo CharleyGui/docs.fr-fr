@@ -64,7 +64,7 @@ End Module
   
  **BindToMethod** retourne le <xref:System.Reflection.MethodBase> à appeler ou une référence null (**Nothing** en Visual Basic) si aucun appel n’est possible. La valeur de retour de **MethodBase** n’est pas forcément contenue dans le paramètre *match*, même si cela est souvent le cas.  
   
- Quand les arguments ByRef sont présents, l’appelant souhaitera peut-être les récupérer. Ainsi, **Binder** autorise un client à mapper le tableau des arguments vers sa forme d’origine si **BindToMethod** a manipulé le tableau des arguments. Pour ce faire, l’appelant doit avoir la garantie que l’ordre des arguments n’a pas été changé. Quand des arguments sont passés par nom, **Binder** réorganise le tableau d’arguments, et c’est ce que voit l’appelant. Pour plus d'informations, consultez <xref:System.Reflection.Binder.ReorderArgumentArray%2A?displayProperty=nameWithType>.  
+ Quand les arguments ByRef sont présents, l’appelant souhaitera peut-être les récupérer. Ainsi, **Binder** autorise un client à mapper le tableau des arguments vers sa forme d’origine si **BindToMethod** a manipulé le tableau des arguments. Pour ce faire, l’appelant doit avoir la garantie que l’ordre des arguments n’a pas été changé. Quand des arguments sont passés par nom, **Binder** réorganise le tableau d’arguments, et c’est ce que voit l’appelant. Pour plus d’informations, consultez <xref:System.Reflection.Binder.ReorderArgumentArray%2A?displayProperty=nameWithType>.  
   
  L’ensemble des membres disponibles correspond aux membres définis dans le type ou n’importe quel type de base. Si <xref:System.Reflection.BindingFlags> est spécifié, les membres d’une accessibilité quelconque sont retournés dans l’ensemble. Si **BindingFlags.NonPublic** n’est pas spécifié, le binder doit appliquer les règles d’accessibilité. Quand vous spécifiez l’indicateur de liaison **Public** ou **NonPublic**, vous devez également spécifier l’indicateur de liaison **Instance** ou **Static**, sinon aucun membre n’est retourné.  
   
@@ -78,7 +78,7 @@ End Module
   
  **ChangeType** n’effectue que des [contraintes étendues](../../standard/base-types/type-conversion.md) ou sans perte, comme l’illustre le tableau suivant.  
   
-|Type source|Type cible|  
+|Type de source|Type de cible|  
 |-----------------|-----------------|  
 |Tout type|Son type de base|  
 |Tout type|L’interface implémentée|  
@@ -91,7 +91,7 @@ End Module
 |Int32|Int64, Single, Double|  
 |UInt64|Single, Double|  
 |Int64|Single, Double|  
-|Single|Double|  
+|Unique|Double|  
 |Type non référence|Type référence|  
   
  La classe <xref:System.Type> a des méthodes **Get** qui utilisent des paramètres de type **Binder** pour résoudre les références à un membre particulier. <xref:System.Type.GetConstructor%2A?displayProperty=nameWithType>, <xref:System.Type.GetMethod%2A?displayProperty=nameWithType> et <xref:System.Type.GetProperty%2A?displayProperty=nameWithType> recherchent un membre particulier du type actuel en fournissant les informations de signature pour ce membre. <xref:System.Reflection.Binder.SelectMethod%2A?displayProperty=nameWithType> et <xref:System.Reflection.Binder.SelectProperty%2A?displayProperty=nameWithType> sont rappelés pour sélectionner les informations de signature données des méthodes appropriées.  

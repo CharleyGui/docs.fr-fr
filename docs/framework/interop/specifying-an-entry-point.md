@@ -17,7 +17,7 @@ ms.locfileid: "79181311"
 
 Un point d’entrée identifie l’emplacement d’une fonction dans une DLL. Dans un projet managé, le nom d’origine ou le point d’entrée ordinal d’une fonction cible identifie cette fonction dans les limites d’interopérabilité. De plus, vous pouvez mapper le point d’entrée à un autre nom pour renommer la fonction de façon plus appropriée.  
   
- Voici une liste des raisons possibles de renommer une fonction DLL :  
+ La liste suivante répertorie les raisons possibles pour renommer une fonction DLL :  
   
 - Éviter d’utiliser des noms de fonction API respectant la casse.  
   

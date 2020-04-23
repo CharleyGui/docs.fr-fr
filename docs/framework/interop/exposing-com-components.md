@@ -38,8 +38,8 @@ Cette section résume le processus nécessaire pour exposer un composant COM exi
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interopération avec du code non managé](index.md)
-- [Considérations de design pour l’interopérabilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))
+- [Interopérabilité avec du code non managé](index.md)
+- [Considérations relatives à la conception de l’interopérabilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))
 - [Exemple COM Interop : client .NET et serveur COM](com-interop-sample-net-client-and-com-server.md)
 - [Indépendance du langage et composants indépendants du langage](../../standard/language-independence-and-language-independent-components.md)
-- [Gacutil.exe (outil Global Assembly Cache)](../tools/gacutil-exe-gac-tool.md)
+- [Gacutil. exe (Outil Global Assembly Cache)](../tools/gacutil-exe-gac-tool.md)

@@ -26,15 +26,15 @@ Du point de vue du code client et serveur, les différences entre COM et le .NET
   
 ### <a name="to-import-a-library"></a>Pour importer une bibliothèque  
   
-- Spécifiez l’option **raw_interfaces_only** dans la directive **#import**. Exemple :  
+- Spécifiez l’option **raw_interfaces_only** dans la directive **#import**. Par exemple :  
   
     ```cpp  
     #import "..\LoanLib\LoanLib.tlb" raw_interfaces_only  
     ```  
   
-     ou  
+     -ou-  
   
-- Ajoutez une directive #import pour Mscorlib.tlb. Exemple :  
+- Ajoutez une directive #import pour Mscorlib.tlb. Par exemple :  
   
     ```cpp  
     #import "mscorlib.tlb"  
@@ -43,7 +43,7 @@ Du point de vue du code client et serveur, les différences entre COM et le .NET
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exposition de composants .NET Framework à COM](exposing-dotnet-components-to-com.md)
+- [Exposition de composants .NET Framework à COM](exposing-dotnet-components-to-com.md)
 - [Inscription d’assemblys dans COM](registering-assemblies-with-com.md)
-- [Appel d’un objet .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
-- [Déploiement d’une application pour accéder à COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))
+- [Appeler un objet .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
+- [Déployer une application pour accéder à COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))

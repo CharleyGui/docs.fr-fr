@@ -13,12 +13,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a6063221-43a5-4d3e-814c-288a4ec69aec
-ms.openlocfilehash: af1bfb89b01a316a858cbb45bf19a26a16d90016
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b7cb06da74a21dab6f60f0d4c3ac1748fcbe4526
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119949"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81644299"
 ---
 # <a name="how-to-build-a-net-framework-single-file-assembly"></a>Comment : générer un assembly à fichier unique .NET Framework
 
@@ -31,13 +31,13 @@ Les procédures suivantes montrent comment créer des assemblys à fichier uniqu
 
 ## <a name="create-an-assembly-with-an-exe-extension"></a>Créer un assembly avec une extension. exe
 
-À l'invite de commandes, tapez la commande suivante :
+Saisissez ensuite la commande suivante dans l’invite de commandes :
 
-\<*commande_du_compilateur*> \<*nom_du_module*>
+\<*nom du*> \<*module* de commande du compilateur>
 
 Dans cette commande, *commande_du_compilateur* est la commande du compilateur pour le langage utilisé dans votre module de code, et *nom_du_module* est le nom du module de code à compiler dans l’assembly.
 
-L’exemple suivant crée un assembly nommé *myCode. exe* à partir d’un module de code appelé `myCode`.
+L’exemple suivant crée un assembly nommé *myCode. exe* à partir d’un `myCode`module de code appelé.
 
 ```csharp
 csc myCode.cs
@@ -49,13 +49,13 @@ vbc myCode.vb
 
 ## <a name="create-an-assembly-with-an-exe-extension-and-specify-the-output-file-name"></a>Créer un assembly avec une extension. exe et spécifier le nom du fichier de sortie
 
-À l'invite de commandes, tapez la commande suivante :
+Saisissez ensuite la commande suivante dans l’invite de commandes :
 
-\<*commande_du_compilateur*>  **/out:** \<*nom_du_fichier*> \<*nom_du_module*>
+\<*commande*> du compilateur **/out :**\<nom de*fichier*> \<nom du*module*>
 
 Dans cette commande, *commande_du_compilateur* est la commande du compilateur pour le langage utilisé dans votre module de code, *nom_du_fichier* est le nom du fichier de sortie, et *nom_du_module* est le nom du module de code à compiler dans l’assembly.
 
-L’exemple suivant crée un assembly nommé *myAssembly. exe* à partir d’un module de code appelé `myCode`.
+L’exemple suivant crée un assembly nommé *myAssembly. exe* à partir d’un `myCode`module de code appelé.
 
 ```csharp
 csc -out:myAssembly.exe myCode.cs
@@ -70,11 +70,11 @@ vbc -out:myAssembly.exe myCode.vb
 
 Pour créer un assembly de bibliothèque, à l’invite de commandes, tapez la commande suivante :
 
-\<*commande_du_compilateur*>  **-t:library** \<*nom_du_module*>
+\<*commande*> du compilateur **-** \< *nom du module* t :Library>
 
-Dans cette commande, *commande_du_compilateur* est la commande du compilateur pour le langage utilisé dans votre module de code, et *nom_du_module* est le nom du module de code à compiler dans l’assembly. Vous pouvez également utiliser d’autres options du compilateur, telles que l’option **-out:** .
+Dans cette commande, *commande_du_compilateur* est la commande du compilateur pour le langage utilisé dans votre module de code, et *nom_du_module* est le nom du module de code à compiler dans l’assembly. Vous pouvez également utiliser d’autres options du compilateur, telles que l’option **-out:**.
 
-L’exemple suivant crée un assembly de bibliothèque nommé *myCodeAssembly. dll* à partir d’un module de code appelé `myCode`.
+L’exemple suivant crée un assembly de bibliothèque nommé *myCodeAssembly. dll* à partir d' `myCode`un module de code appelé.
 
 ```csharp
 csc -out:myCodeLibrary.dll -t:library myCode.cs
@@ -89,4 +89,4 @@ vbc -out:myCodeLibrary.dll -t:library myCode.vb
 - [Créer des assemblys](../../standard/assembly/create.md)
 - [Assemblys multifichiers](multifile-assemblies.md)
 - [Comment : générer un assembly multifichier](build-multifile-assembly.md)
-- [Programmer avec des assemblys](../../standard/assembly/program.md)
+- [Programmer avec des assemblys](../../standard/assembly/index.md)

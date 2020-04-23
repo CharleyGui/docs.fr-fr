@@ -172,7 +172,7 @@ internal class DelegateTest {
   
  Un type mis en forme est un type complexe qui contient des informations qui contrôlent explicitement la disposition de ses membres dans la mémoire. Les informations de disposition des membres sont obtenues à l'aide de l'attribut <xref:System.Runtime.InteropServices.StructLayoutAttribute>. La disposition peut correspondre à l'une des valeurs d'énumération <xref:System.Runtime.InteropServices.LayoutKind> suivantes :  
   
-- **LayoutKind.Auto (en)**  
+- **LayoutKind. auto**  
   
      Indique que le common language runtime est libre de réorganiser les membres du type pour une plus grande efficacité. Toutefois, quand un type valeur est passé à du code non managé, la disposition des membres est prévisible. Si vous tentez de marshaler une telle structure, une exception sera automatiquement levée.  
   
@@ -331,7 +331,7 @@ public class Point {
 ### <a name="value-types-used-in-com-interop"></a>Types valeur utilisés dans COM Interop  
  Les types mis en forme peuvent également être passés aux appels de méthode d'interopérabilité COM. En effet, quand ils sont exportés vers une bibliothèque de types, les types valeur sont convertis automatiquement en structures. Comme dans l'exemple suivant, le type valeur `Point` devient une définition de type (typedef) portant le nom `Point`. Toutes les références au type valeur `Point` situées ailleurs que dans la bibliothèque de types sont remplacées par le typedef `Point`.  
   
- **Représentation de bibliothèque de type**  
+ **Représentation de la bibliothèque de types**  
   
 ```cpp  
 typedef struct tagPoint {  
@@ -376,8 +376,8 @@ interface _Graphics {
   
 |Type de valeur système|Type IDL|  
 |-----------------------|--------------|  
-|<xref:System.DateTime?displayProperty=nameWithType>|**Date**|  
-|<xref:System.Decimal?displayProperty=nameWithType>|**Decimales**|  
+|<xref:System.DateTime?displayProperty=nameWithType>|**DATE**|  
+|<xref:System.Decimal?displayProperty=nameWithType>|**SÉPAR**|  
 |<xref:System.Guid?displayProperty=nameWithType>|**GUID**|  
 |<xref:System.Drawing.Color?displayProperty=nameWithType>|**OLE_COLOR**|  
   

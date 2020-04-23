@@ -23,7 +23,7 @@ COM Interop prend en charge l'utilisation des objets COM à partir de code mana
  Les sections suivantes fournissent des liens vers des rubriques qui décrivent les processus de personnalisation des wrappers d’interopérabilité quand vous pouvez (ou devez) fournir au marshaleur des informations supplémentaires concernant les types.  
   
 ## <a name="in-this-section"></a>Dans cette section  
-[Comment : Créer des emballages manuellement](how-to-create-wrappers-manually.md) Décrit comment créer un emballage COM manuellement dans le code source géré.
+[Comment : créer manuellement des wrappers](how-to-create-wrappers-manually.md) Décrit comment créer un wrapper COM manuellement dans du code source managé.
 
  [Comment : migrer DCOM de code managé vers WCF](how-to-migrate-managed-code-dcom-to-wcf.md)  
  Décrit comment migrer du code DCOM managé vers WCF pour obtenir la solution la plus sécurisée.  

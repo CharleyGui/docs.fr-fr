@@ -61,9 +61,9 @@ La plupart des types de données ont une représentation commune à la fois dans
 |-------------------------|-----------------|  
 |[System.Array](default-marshaling-for-arrays.md)|Convertit en tableau de style C ou en `SAFEARRAY`.|  
 |[System.Boolean](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/t2t3725f(v=vs.100))|Convertit en valeur de 1, 2 ou 4 octets, la valeur `true` ayant pour valeur 1 ou -1.|  
-|[System.Char](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/6tyybbf2(v=vs.100))|Convertit en caractère ANSI ou Unicode.|  
+|[System. Char](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/6tyybbf2(v=vs.100))|Convertit en caractère ANSI ou Unicode.|  
 |[System.Class](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/s0968xy8(v=vs.100))|Convertit en interface de classe.|  
-|[System.Object](default-marshaling-for-objects.md)|Convertit en interface ou en variant.|  
+|[System. Object](default-marshaling-for-objects.md)|Convertit en interface ou en variant.|  
 |[System.Mdarray](default-marshaling-for-arrays.md)|Convertit en tableau de style C ou en `SAFEARRAY`.|  
 |[System.String](default-marshaling-for-strings.md)|Convertit en chaîne se terminant par une référence null ou en BSTR.|  
 |[System.Valuetype](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/0t2cwe11(v=vs.100))|Convertit en structure avec une disposition de mémoire fixe.|  
@@ -73,4 +73,4 @@ La plupart des types de données ont une représentation commune à la fois dans
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comportement de marshaling par défaut](default-marshaling-behavior.md)
+- [comportement de marshaling par défaut](default-marshaling-behavior.md)

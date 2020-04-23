@@ -79,7 +79,7 @@ CodeDOM fournit des types qui représentent de nombreux types courants d’élé
 #### <a name="linking-code-elements-into-the-object-graph"></a>Liaison d’éléments de code à l’intérieur du graphique d’objet  
  Tous les éléments de code qui forment un graphique CodeDOM doivent être liés au <xref:System.CodeDom.CodeCompileUnit> qui constitue l’élément racine de l’arborescence par une série de références entre des éléments directement référencés à partir des propriétés de l’objet racine du graphique. Affectez un objet à une propriété d’un objet conteneur pour établir une référence à partir de cet objet.  
   
- L’instruction suivante ajoute le **CodeNamespace** `samples` à la propriété de collection **Namespaces** du **CodeCompileUnit** racine.  
+ L’instruction suivante ajoute le  **CodeNamespace**`samples` à la propriété de collection **Namespaces** du **CodeCompileUnit** racine.  
   
  [!code-cpp[CodeDomExample#15](../../../samples/snippets/cpp/VS_Snippets_CLR/CodeDomExample/CPP/source2.cpp#15)]
  [!code-csharp[CodeDomExample#15](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomExample/CS/source2.cs#15)]

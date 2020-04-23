@@ -148,5 +148,5 @@ extern "C" int MessageBox(
 
 - <xref:System.Runtime.InteropServices.DllImportAttribute>
 - [Création de prototypes dans du code managé](creating-prototypes-in-managed-code.md)
-- [Exemples d'appel de code non managé](platform-invoke-examples.md)
+- [Exemples d’appel de code non managé](platform-invoke-examples.md)
 - [Marshaling de données à l’aide de l’appel de code managé](marshaling-data-with-platform-invoke.md)

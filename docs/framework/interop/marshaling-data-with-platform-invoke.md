@@ -59,7 +59,7 @@ Pour les types correspondants en Visual Basic, C# et C++, consultez [Introductio
 
 Le code suivant définit les fonctions de bibliothèque fournies par Pinvoke.dll. De nombreux exemples décrits dans cette section appellent cette bibliothèque.
 
-### <a name="example"></a> Exemple
+### <a name="example"></a>Exemple
 
 [!code-cpp[PInvokeLib#1](../../../samples/snippets/cpp/VS_Snippets_CLR/pinvokelib/cpp/pinvokelib.cpp#1)]
 

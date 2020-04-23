@@ -33,7 +33,7 @@ Les procédures suivantes montrent comment définir et exécuter une méthode dy
      [!code-csharp[DynamicMethodHowTo#3](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#3)]
      [!code-vb[DynamicMethodHowTo#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#3)]  
   
-3. Créer un <xref:System.Reflection.Emit.DynamicMethod>. Dans cet exemple, la méthode se nomme `SquareIt`.  
+3. Créez un <xref:System.Reflection.Emit.DynamicMethod>. Dans cet exemple, la méthode se nomme `SquareIt`.  
   
     > [!NOTE]
     > Il n’est pas nécessaire de nommer les méthodes dynamiques. Elles ne peuvent pas être appelées par nom. Plusieurs méthodes dynamiques peuvent avoir le même nom. Toutefois, le nom apparaît dans les piles des appels et peut être utile pour le débogage.  
@@ -72,7 +72,7 @@ Les procédures suivantes montrent comment définir et exécuter une méthode dy
      [!code-csharp[DynamicMethodHowTo#13](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#13)]
      [!code-vb[DynamicMethodHowTo#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#13)]  
   
-3. Créer un <xref:System.Reflection.Emit.DynamicMethod>. Dans cet exemple, la méthode n’a pas de nom. Le type de la valeur de retour est spécifié comme `int` (`Integer` en Visual Basic). La méthode a accès aux membres privés et protégés de la classe `Example`.  
+3. Créez un <xref:System.Reflection.Emit.DynamicMethod>. Dans cet exemple, la méthode n’a pas de nom. Le type de la valeur de retour est spécifié comme `int` (`Integer` en Visual Basic). La méthode a accès aux membres privés et protégés de la classe `Example`.  
   
      [!code-cpp[DynamicMethodHowTo#14](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#14)]
      [!code-csharp[DynamicMethodHowTo#14](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#14)]
@@ -115,5 +115,5 @@ Les procédures suivantes montrent comment définir et exécuter une méthode dy
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Reflection.Emit.DynamicMethod>
-- [Utilisation de l’émission de réflexion](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))
-- [Scénarios de méthodes dynamiques avec Émission de réflexion](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100))
+- [Utiliser l’émission de réflexion](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))
+- [Scénarios de méthodes dynamiques avec émission de réflexion](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100))

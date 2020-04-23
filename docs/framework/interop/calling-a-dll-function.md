@@ -31,7 +31,7 @@ Même si l’appel à des fonctions DLL non managées est quasiment identique à
  [Comment : implémenter des fonctions de rappel](how-to-implement-callback-functions.md)  
  Décrit comment implémenter des fonctions de rappel dans du code managé.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Consommation de fonctions DLL non managées](consuming-unmanaged-dll-functions.md)  
  Décrit comment appeler des fonctions DLL non managées à l’aide de l’appel de code non managé.  
   

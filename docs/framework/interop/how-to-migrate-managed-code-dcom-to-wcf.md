@@ -301,7 +301,7 @@ public interface ISessionBoundObject
     }  
 ```  
   
- Ce qui suit est la mise en œuvre de ce service. Cette implémentation gère une fabrique de canaux singleton pour créer des objets de session.  Quand `GetInstanceAddress` est appelé, il crée un canal et un objet <xref:System.ServiceModel.EndpointAddress10> qui pointe vers l'adresse distante associée à ce canal.   <xref:System.ServiceModel.EndpointAddress10> est un type de données qui peut être renvoyé au client par valeur.
+ Voici l’implémentation de ce service. Cette implémentation gère une fabrique de canaux singleton pour créer des objets de session.  Quand `GetInstanceAddress` est appelé, il crée un canal et un objet <xref:System.ServiceModel.EndpointAddress10> qui pointe vers l'adresse distante associée à ce canal.   <xref:System.ServiceModel.EndpointAddress10> est un type de données qui peut être renvoyé au client par valeur.
   
 ```csharp  
 public class SessionBoundFactory : ISessionBoundFactory  
@@ -328,7 +328,7 @@ public class SessionBoundFactory : ISessionBoundFactory
   
 2. Dans la section `<services>`, déclarez les points de terminaison de service pour la fabrique et l'objet de session.  Cela permet au client de communiquer avec les points de terminaison du service, d'acquérir <xref:System.ServiceModel.EndpointAddress10> et de créer le canal de session.  
   
- Ce qui suit est un fichier de configuration d’exemple avec ces paramètres :  
+ Voici un exemple de fichier de configuration avec ces paramètres :  
   
 ```xml  
 <configuration>  

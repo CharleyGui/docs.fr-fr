@@ -15,11 +15,11 @@ ms.locfileid: "73119991"
 # <a name="application-domains-and-assemblies-how-to-topics"></a>Rubriques Comment relatives aux domaines d'application et aux assemblys
 Les sections suivantes contiennent des liens vers toutes les rubriques Guide pratique de la documentation conceptuelle pour la programmation avec des domaines d’application et des assemblys.  
   
- **Domaines d’application**  
+ **Domaines d'application**  
   
 - [Guide pratique pour créer un domaine d’application](how-to-create-an-application-domain.md)  
   
-- [Guide pratique pour décharger un domaine d’application](how-to-unload-an-application-domain.md)  
+- [Comment : décharger un domaine d'application](how-to-unload-an-application-domain.md)  
   
 - [Guide pratique pour configurer un domaine d’application](how-to-configure-an-application-domain.md)  
   
@@ -29,21 +29,21 @@ Les sections suivantes contiennent des liens vers toutes les rubriques Guide pra
   
  **Assemblys**  
   
-- [Guide pratique pour déterminer le nom qualifié complet d'un assembly](../../standard/assembly/find-fully-qualified-name.md)  
+- [Comment : déterminer le nom qualifié complet d'un assembly](../../standard/assembly/find-fully-qualified-name.md)  
   
-- [Guide pratique pour générer un assembly à fichier unique](build-single-file-assembly.md)  
+- [Guide pratique pour générer un assembly monofichier](build-single-file-assembly.md)  
   
 - [Guide pratique pour générer un assembly multifichier](build-multifile-assembly.md)  
   
-- [Guide pratique pour créer une paire de clés publique/privée](../../standard/assembly/create-public-private-key-pair.md)  
+- [Comment : créer une paire de clés publique/privée](../../standard/assembly/create-public-private-key-pair.md)  
   
 - [Comment : signer un assembly avec un nom fort](../../standard/assembly/sign-strong-name.md)  
   
 - [Guide pratique pour référencer un assembly avec un nom fort](../../standard/assembly/reference-strong-named.md)  
   
-- [Guide pratique pour désactiver la fonctionnalité consistant à ignorer les noms forts](../../standard/assembly/disable-strong-name-bypass-feature.md)  
+- [Comment : désactiver la fonctionnalité consistant à ignorer les noms forts](../../standard/assembly/disable-strong-name-bypass-feature.md)  
   
-- [Guide pratique pour installer un assembly dans le Global Assembly Cache](install-assembly-into-gac.md)  
+- [Comment : installer un assembly dans le global assembly cache](install-assembly-into-gac.md)  
   
 - [Guide pratique pour visualiser le contenu du Global Assembly Cache](how-to-view-the-contents-of-the-gac.md)  
   
@@ -53,4 +53,4 @@ Les sections suivantes contiennent des liens vers toutes les rubriques Guide pra
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Domaines d'application et assemblys](index.md)
+- [Domaines d’application et assemblys](index.md)

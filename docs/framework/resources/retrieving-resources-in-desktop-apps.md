@@ -27,7 +27,7 @@ ms.locfileid: "79180449"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Récupération de ressources dans des applications de bureau
 
-Quand vous utilisez des ressources localisées dans des applications de bureau du .NET Framework, vous devez, dans l’idéal, empaqueter les ressources pour la culture neutre ou par défaut avec l’assembly principal et créer un assembly satellite séparé pour chaque langue ou culture prise en charge par votre application. Vous pouvez ensuite utiliser la classe <xref:System.Resources.ResourceManager> pour accéder aux ressources nommées, comme indiqué dans la section suivante. Si vous choisissez de ne pas incorporer les ressources dans l’assembly principal et les assemblys satellites, vous pouvez également accéder directement aux fichiers .resources binaires, comme cela est expliqué dans la section [Récupération de ressources de fichiers .resources](#from_file), plus loin dans cet article.  Pour récupérer des ressources dans les applications Windows 8.x Store, voir [Créer et récupérer des ressources dans les applications Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/hh694557(v=vs.140)).  
+Quand vous utilisez des ressources localisées dans des applications de bureau du .NET Framework, vous devez, dans l’idéal, empaqueter les ressources pour la culture neutre ou par défaut avec l’assembly principal et créer un assembly satellite séparé pour chaque langue ou culture prise en charge par votre application. Vous pouvez ensuite utiliser la classe <xref:System.Resources.ResourceManager> pour accéder aux ressources nommées, comme indiqué dans la section suivante. Si vous choisissez de ne pas incorporer les ressources dans l’assembly principal et les assemblys satellites, vous pouvez également accéder directement aux fichiers .resources binaires, comme cela est expliqué dans la section [Récupération de ressources de fichiers .resources](#from_file), plus loin dans cet article.  Pour récupérer des ressources dans les applications du Windows 8. x Store, consultez [création et récupération de ressources dans les applications du Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/hh694557(v=vs.140)).  
   
 <a name="from_assembly"></a>
 ## <a name="retrieving-resources-from-assemblies"></a>Récupération de ressources d’assemblys  
@@ -203,7 +203,7 @@ csc Example.cs
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Resources.ResourceManager>
-- [Ressources dans des applications de bureau](index.md)
+- [Ressources dans les applications de bureau](index.md)
 - [Packaging and Deploying Resources](packaging-and-deploying-resources-in-desktop-apps.md)
 - [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md)
 - [Création et récupération de ressources dans les applications du Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/hh694557(v=vs.140))

@@ -1,6 +1,6 @@
 ---
-title: Enregistrement avec l’Azure SDK pour .NET
-description: Découvrez comment activer la connexion avec l’Azure SDK pour les bibliothèques clients .NET
+title: Journalisation avec le kit de développement logiciel (SDK) Azure pour .NET
+description: Découvrez comment activer la journalisation avec le kit de développement logiciel (SDK) Azure pour les bibliothèques clientes .NET
 ms.date: 03/20/2020
 ms.custom: azure-sdk-dotnet
 ms.author: casoper
@@ -12,75 +12,75 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/24/2020
 ms.locfileid: "82071989"
 ---
-# <a name="logging-with-the-azure-sdk-for-net"></a>Enregistrement avec l’Azure SDK pour .NET
+# <a name="logging-with-the-azure-sdk-for-net"></a>Journalisation avec le kit de développement logiciel (SDK) Azure pour .NET
 
-Le [Azure SDK](https://azure.microsoft.com/downloads/) pour les bibliothèques clients .NET inclut la possibilité de connecter les opérations de bibliothèque client. Cela vous permet de surveiller les demandes et les réponses I/O que les bibliothèques clientes font aux services Azure. En règle générale, les journaux sont utilisés pour débocher ou diagnostiquer les problèmes de communication. Cet article décrit trois approches pour permettre l’enregistrement avec l’Azure SDK pour .NET:
+Le [Kit de développement logiciel (SDK) Azure](https://azure.microsoft.com/downloads/) pour les bibliothèques clientes .net offre la possibilité de journaliser les opérations de la bibliothèque cliente. Cela vous permet de surveiller les demandes d’e/s et les réponses que les bibliothèques clientes effectuent aux services Azure. En règle générale, les journaux sont utilisés pour déboguer ou diagnostiquer des problèmes de communication. Cet article décrit trois approches pour activer la journalisation avec le kit de développement logiciel (SDK) Azure pour .NET :
 
-- Connectez-vous à la fenêtre de la console
-- Log to .NET diagnostics traces
-- Configurer l’enregistrement personnalisé
+- Consigner dans la fenêtre de console
+- Journalisation des traces de Diagnostics .NET
+- Configurer la journalisation personnalisée
 
 > [!IMPORTANT]
-> Cet article s’applique aux bibliothèques de clients qui utilisent les versions les plus récentes de l’Azure SDK pour .NET. Pour voir si une bibliothèque est prise en charge, consultez la liste des [dernières versions azure SDK](https://azure.github.io/azure-sdk/releases/latest/index.html). Si votre application utilise une ancienne version des bibliothèques de clients Azure SDK, consultez des instructions spécifiques dans la documentation de service applicable.
+> Cet article s’applique aux bibliothèques clientes qui utilisent les versions les plus récentes du kit de développement logiciel (SDK) Azure pour .NET. Pour savoir si une bibliothèque est prise en charge, reportez-vous à la liste des [dernières versions du kit de développement logiciel (SDK) Azure](https://azure.github.io/azure-sdk/releases/latest/index.html). Si votre application utilise une version antérieure des bibliothèques clientes du kit de développement logiciel (SDK) Azure, reportez-vous à des instructions spécifiques dans la documentation du service applicable.
 
 ## <a name="log-information"></a>Enregistrement d’informations
 
-Le SDK enregistre les informations suivantes, désinfectant les requêtes paramètres et les valeurs d’en-tête pour supprimer les données personnelles.
+Le kit de développement logiciel (SDK) enregistre les informations suivantes, en assainiant les valeurs d’en-tête et de requête de paramètre pour supprimer les données personnelles.
 
-HTTP demande d’entrée de journal:
+Entrée du journal de la requête HTTP :
 
 - ID unique
 - HTTP method
 - URI
 - En-têtes de demande sortants
 
-Entrée de journal de réponse HTTP :
+Entrée du journal de réponse HTTP :
 
-- Durée de l’opération I/O (temps écoulé)
+- Durée de l’opération d’e/s (temps écoulé)
 - ID de la demande
 - Code d'état HTTP
-- PHRASE de raison HTTP
+- Phrase de raison HTTP
 - En-têtes de réponse
-- Informations sur les erreurs, le cas échéant
+- Informations sur l’erreur, le cas échéant
 
-Pour le contenu de demande et de réponse :
+Pour le contenu de la demande et de la réponse :
 
-- Flux de contenu sous forme de texte ou d’octets en fonction de l’en-tête content-type.
-     > [! NoteMD L’enregistrement de contenu est désactivé par défaut. Pour le permettre, `true` `ClientOptions`set `Diagnostics.IsLoggingContentEnabled` à .
+- Flux de contenu sous forme de texte ou d’octets en fonction de l’en-tête Content-type.
+     > [! Remarque} la journalisation du contenu est désactivée par défaut. Pour l’activer, affectez `true` à `ClientOptions`la valeur `Diagnostics.IsLoggingContentEnabled` dans.
 
-Les journaux d’événements sont généralement en sortie à l’un de ces trois niveaux :
+Les journaux des événements sont généralement générés à l’un de ces trois niveaux :
 
-- Informations sur les événements de demande et d’intervention
+- Informations pour les événements de demande et de réponse
 - Avertissement pour les erreurs
-- Verbose pour les messages détaillés et l’enregistrement de contenu
+- Commentaires pour les messages détaillés et la journalisation du contenu
 
-## <a name="enable-logging-with-built-in-methods"></a>Activer l’exploitation forestière avec des méthodes intégrées
+## <a name="enable-logging-with-built-in-methods"></a>Activer la journalisation avec les méthodes intégrées
 
-L’Azure SDK pour .NET bibliothèques client journaux événements à [ `EventSource` ](/dotnet/api/system.diagnostics.tracing.eventsource)Event Tracing for Windows (ETW) via la classe , ce qui est typique pour .NET. Les sources d’événements vous permettent d’utiliser la connexion structurée dans votre code d’application avec un minimum de performances aériennes. Pour avoir accès à ces journaux d’événements, vous devez vous inscrire aux auditeurs de l’événement.
+Le kit de développement logiciel (SDK) Azure pour les bibliothèques clientes .net enregistre les événements à suivi d’v nements pour Windows (ETW) via la [ `EventSource` classe](/dotnet/api/system.diagnostics.tracing.eventsource), qui est classique pour .net. Les sources d’événements vous permettent d’utiliser la journalisation structurée dans votre code d’application avec une surcharge de performances minimale. Pour accéder à ces journaux des événements, vous devez enregistrer les écouteurs d’événements.
 
-Le SDK `Azure.Core.Diagnostics.AzureEventSourceListener` comprend la classe (définie dans le paquet Azure.Core NuGet), qui contient deux `CreateConsoleLogger` `CreateTraceLogger`méthodes statiques qui simplifient la connexion complète pour votre application .NET: et . Ces méthodes prennent un paramètre facultatif qui spécifie un niveau de journal.
+Le kit de développement `Azure.Core.Diagnostics.AzureEventSourceListener` logiciel (SDK) inclut la classe (définie dans le package NuGet Azure. Core), qui contient deux méthodes statiques qui simplifient la journalisation complète de votre application .net : `CreateConsoleLogger` et `CreateTraceLogger`. Ces méthodes prennent un paramètre facultatif qui spécifie un niveau de journalisation.
 
-### <a name="log-to-the-console-window"></a>Connectez-vous à la fenêtre de la console
+### <a name="log-to-the-console-window"></a>Consigner dans la fenêtre de console
 
-Un principe central de l’Azure SDK pour les bibliothèques clients .NET est de simplifier la possibilité de visualiser les journaux complets en temps réel. La `CreateConsoleLogger` méthode vous permet d’envoyer des journaux à la fenêtre de la console avec une seule ligne de code :
+Un principe fondamental du kit de développement logiciel (SDK) Azure pour les bibliothèques clientes .NET est de simplifier la possibilité d’afficher des journaux complets en temps réel. La `CreateConsoleLogger` méthode vous permet d’envoyer des journaux à la fenêtre de console à l’aide d’une seule ligne de code :
 
 ```csharp
 using AzureEventSourceListener listener = AzureEventSourceListener.CreateConsoleLogger();
 ```
 
-### <a name="log-to-diagnostic-traces"></a>Connexion aux traces diagnostiques
+### <a name="log-to-diagnostic-traces"></a>Consigner dans les suivis de diagnostic
 
-Si vous implémentez des `CreateTraceLogger` auditeurs de trace, vous pouvez[`System.Diagnostics.Tracing`](https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing)utiliser la méthode pour vous connecter au mécanisme standard de traçage d’événements .NET (). Pour plus d’informations sur le traçage des événements en .NET, voir [Trace Listeners](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/trace-listeners). Cet exemple spécifie un niveau de journal de verbose :
+Si vous implémentez des écouteurs de suivi, vous pouvez `CreateTraceLogger` utiliser la méthode pour vous connecter au mécanisme de suivi d'[`System.Diagnostics.Tracing`](https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing)événements .NET standard (). Pour plus d’informations sur le suivi d’événements dans .NET, consultez [écouteurs de suivi](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/trace-listeners). Cet exemple spécifie un niveau de journal détaillé :
 
 ```csharp
 using AzureEventSourceListener listener = AzureEventSourceListener.CreateTraceLogger(EventLevel.Verbose);
 ```
 
-## <a name="configure-custom-logging"></a>Configurer l’enregistrement personnalisé
+## <a name="configure-custom-logging"></a>Configurer la journalisation personnalisée
 
-Comme mentionné ci-dessus, vous devez enregistrer les auditeurs de l’événement pour recevoir des messages journal de la SDK Azure pour .NET. Si vous ne souhaitez pas implémenter la connexion complète en utilisant `AzureEventSourceListener` l’une des méthodes simplifiées ci-dessus, vous pouvez construire une instance de la classe et lui passer une fonction de rappel que vous écrivez. Cette méthode recevra des messages journalaux que vous pouvez traiter comme vous en avez besoin. En outre, lorsque vous construisez l’instance, vous pouvez spécifier les niveaux de journal à inclure.
+Comme indiqué ci-dessus, vous devez enregistrer les écouteurs d’événements pour recevoir des messages du journal à partir du kit de développement logiciel (SDK) Azure pour .NET. Si vous ne souhaitez pas implémenter une journalisation complète à l’aide d’une des méthodes simplifiées ci- `AzureEventSourceListener` dessus, vous pouvez construire une instance de la classe et la passer à une fonction de rappel que vous écrivez. Cette méthode recevra les messages du journal que vous pouvez traiter, mais vous devez le faire. En outre, lorsque vous construisez l’instance, vous pouvez spécifier les niveaux de journalisation à inclure.
 
-L’exemple suivant crée un auditeur d’événements qui se connecte à la console avec un message personnalisé, et est filtré pour les événements de base Azure du verbose de niveau.
+L’exemple suivant crée un écouteur d’événements qui se connecte à la console à l’aide d’un message personnalisé, et est filtré en événements Azure Core de niveau détaillé.
 
 ```csharp
 using AzureEventSourceListener listener = new AzureEventSourceListener((e, message) =>
@@ -97,6 +97,6 @@ using AzureEventSourceListener listener = new AzureEventSourceListener((e, messa
 ## <a name="next-steps"></a>Étapes suivantes
 
 - [Activer la journalisation des diagnostics pour les applications dans Azure App Service](https://docs.microsoft.com/azure/app-service/troubleshoot-diagnostic-logs)
-- Examiner les options [d’enregistrement et d’audit de sécurité Azure](https://docs.microsoft.com/azure/security/fundamentals/log-audit)
-- Apprenez à travailler avec [les journaux de la plate-forme Azure](https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview)
-- Lire la suite de [.NET Core logging and tracing](https://docs.microsoft.com/dotnet/core/diagnostics/logging-tracing)
+- Passer en revue [les options d’audit et de journalisation de sécurité Azure](https://docs.microsoft.com/azure/security/fundamentals/log-audit)
+- Découvrez comment utiliser les journaux de la [plateforme Azure](https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview)
+- En savoir plus sur la [journalisation et le suivi de .net Core](https://docs.microsoft.com/dotnet/core/diagnostics/logging-tracing)

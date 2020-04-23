@@ -27,7 +27,7 @@ Quand un domaine d'application est configuré pour effectuer un cliché instanta
 > [!IMPORTANT]
 > Les seuls assemblys qui peuvent faire l'objet de clichés instantanés sont ceux qui sont stockés dans le répertoire de l'application ou dans ses sous-répertoires, spécifiés par les propriétés <xref:System.AppDomainSetup.ApplicationBase%2A> et <xref:System.AppDomainSetup.PrivateBinPath%2A> quand le domaine d'application est configuré. Les assemblys stockés dans le Global Assembly Cache ne sont pas l'objet de clichés instantanés.
 
-Cet article contient les sections suivantes :
+Cet article contient les sections suivantes :
 
 - [Activation et utilisation des clichés instantanés](#EnablingAndUsing) décrit l’utilisation de base et les options disponibles pour les clichés instantanés.
 
@@ -74,7 +74,7 @@ Quand un domaine d'application qui utilise des clichés instantanés démarre, u
 
 Depuis .NET Framework 4, le comportement par défaut au démarrage est de comparer directement la date et l’heure du fichier de chaque assembly du répertoire de l’application à la date et l’heure du fichier de la copie du répertoire des clichés instantanés. Si l’assembly a été mis à jour, il est copié selon la même procédure que dans les versions antérieures du .NET Framework ; dans le cas contraire, la copie du répertoire des clichés instantanés est chargée.
 
-L'amélioration des performances qui en résulte est plus importante pour les applications dans lesquelles les assemblys ne changent pas souvent et où les modifications se produisent généralement dans un petit sous-ensemble d'assemblys. Si une majorité des assemblys d'une application sont fréquemment modifiés, le nouveau comportement par défaut peut provoquer une régression des performances. Vous pouvez restaurer le comportement du démarrage des versions antérieures du .NET Framework en ajoutant l’élément [\<shadowCopyVerifyByTimestamp>](../configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md) au fichier de configuration, avec `enabled="false"`.
+L'amélioration des performances qui en résulte est plus importante pour les applications dans lesquelles les assemblys ne changent pas souvent et où les modifications se produisent généralement dans un petit sous-ensemble d'assemblys. Si une majorité des assemblys d'une application sont fréquemment modifiés, le nouveau comportement par défaut peut provoquer une régression des performances. Vous pouvez restaurer le comportement de démarrage des versions précédentes du .NET Framework en ajoutant l' [ \<élément shadowCopyVerifyByTimestamp>](../configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md) au fichier de configuration, avec `enabled="false"`.
 
 <a name="ObsoleteMethods"></a>
 
@@ -88,4 +88,4 @@ La classe <xref:System.AppDomain> a plusieurs méthodes, comme <xref:System.AppD
 - <xref:System.AppDomainSetup.CachePath%2A?displayProperty=nameWithType>
 - <xref:System.AppDomainSetup.ApplicationName%2A?displayProperty=nameWithType>
 - <xref:System.AppDomainSetup.ShadowCopyDirectories%2A?displayProperty=nameWithType>
-- [Élément \<shadowCopyVerifyByTimestamp>](../configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)
+- [\<shadowCopyVerifyByTimestamp>, élément](../configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : démarrer des services'
+title: 'Comment : démarrer des services'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Service applications, starting
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053568"
 ---
-# <a name="how-to-start-services"></a>Procédure : démarrer des services
+# <a name="how-to-start-services"></a>Comment : démarrer des services
 
 Une fois qu’un service est installé, il doit être démarré. Le démarrage appelle la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> sur la classe de service. En règle générale, la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> définit le travail utile effectué par le service. Une fois un service démarré, il reste actif jusqu’à ce qu’il soit suspendu ou arrêté.
 
@@ -37,7 +37,7 @@ Pour indiquer si un service doit être démarré manuellement ou automatiquement
     |Pour que votre service s’installe|Définissez cette valeur|
     |----------------------------------|--------------------|
     |Quand l’ordinateur redémarre|**Automatique**|
-    |Quand une action explicite de l’utilisateur démarre le service|**Manual**|
+    |Quand une action explicite de l’utilisateur démarre le service|**Manuel**|
 
     > [!TIP]
     > Pour que votre service ne démarre pas, définissez la propriété <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> avec la valeur **Disabled**. Procédez de la sorte si vous prévoyez de redémarrer un serveur plusieurs fois. Le fait de ne pas démarrer les services habituels vous fera gagner du temps.
@@ -49,7 +49,7 @@ Pour indiquer si un service doit être démarré manuellement ou automatiquement
 
 ### <a name="to-manually-start-a-service-from-server-explorer"></a>Pour démarrer manuellement un service à partir de l’Explorateur de serveurs
 
-1. Dans **l’Explorateur de serveurs**, ajoutez le serveur désiré s’il n’est pas déjà répertorié. Pour plus d'informations, consultez Guide pratique pour accéder à l’Explorateur de serveurs/bases de données et l’initialiser.
+1. Dans **l’Explorateur de serveurs**, ajoutez le serveur désiré s’il n’est pas déjà répertorié. Pour plus d’informations, consultez Guide pratique pour accéder à l’Explorateur de serveurs/bases de données et l’initialiser.
 
 2. Développez le nœud **Services**, puis recherchez le service à démarrer.
 
@@ -80,6 +80,6 @@ Pour indiquer si un service doit être démarré manuellement ou automatiquement
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
-- [Guide pratique : créer des services Windows](how-to-create-windows-services.md)
-- [Guide pratique pour ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md)
+- [Présentation des applications de service Windows](introduction-to-windows-service-applications.md)
+- [Guide pratique pour créer des services Windows](how-to-create-windows-services.md)
+- [Comment : ajouter des programmes d'installation à votre application de service](how-to-add-installers-to-your-service-application.md)

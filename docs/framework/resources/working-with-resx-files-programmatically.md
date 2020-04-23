@@ -17,12 +17,12 @@ ms.locfileid: "81243035"
 ---
 # <a name="work-with-resx-files-programmatically"></a>Utiliser des fichiers .resx par programmation
 
-Étant donné que les fichiers de ressources XML (.resx) doivent être constitués de code XML bien défini, notamment un en-tête qui doit respecter un schéma spécifique, suivi de données dans des paires nom/valeur, la création manuelle de ces fichiers est sujette aux erreurs. Alternativement, vous pouvez créer des fichiers .resx par programmation à l’aide de types et de membres de la bibliothèque de classes .NET. Vous pouvez également utiliser la bibliothèque de classes .NET pour récupérer des ressources stockées dans les fichiers .resx. Cet article explique comment vous pouvez utiliser <xref:System.Resources> les types et les membres dans l’espace nom pour travailler avec des fichiers .resx.
+Étant donné que les fichiers de ressources XML (.resx) doivent être constitués de code XML bien défini, notamment un en-tête qui doit respecter un schéma spécifique, suivi de données dans des paires nom/valeur, la création manuelle de ces fichiers est sujette aux erreurs. Alternativement, vous pouvez créer des fichiers .resx par programmation à l’aide de types et de membres de la bibliothèque de classes .NET. Vous pouvez également utiliser la bibliothèque de classes .NET pour récupérer des ressources stockées dans les fichiers .resx. Cet article explique comment vous pouvez utiliser les types et les membres de <xref:System.Resources> l’espace de noms pour travailler avec des fichiers. resx.
 
-Cet article traite de la collaboration avec les fichiers XML (.resx) qui contiennent des ressources. Pour plus d’informations sur le travail avec des <xref:System.Resources.ResourceManager>fichiers de ressources binaires qui ont été intégrés dans les assemblages, voir .
+Cet article traite de l’utilisation de fichiers XML (. resx) contenant des ressources. Pour plus d’informations sur l’utilisation des fichiers de ressources binaires incorporés dans <xref:System.Resources.ResourceManager>des assemblys, consultez.
 
 > [!WARNING]
-> Vous pouvez également utiliser les fichiers .resx autrement que par programmation. Lorsque vous ajoutez un fichier de ressources à un projet [Visual Studio,](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) Visual Studio fournit une interface pour créer et maintenir un fichier .resx, et convertit automatiquement le fichier .resx en un fichier .resources au moment de la compilation. Vous pouvez également utiliser un éditeur de texte pour manipuler directement un fichier .resx. Toutefois, pour éviter d’endommager le fichier, veillez à ne pas modifier les informations binaires stockées dans le fichier.
+> Vous pouvez également utiliser les fichiers .resx autrement que par programmation. Quand vous ajoutez un fichier de ressources à un projet [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) , Visual Studio fournit une interface pour la création et la gestion d’un fichier. resx, et convertit automatiquement le fichier. resx en fichier. Resources au moment de la compilation. Vous pouvez également utiliser un éditeur de texte pour manipuler directement un fichier .resx. Toutefois, pour éviter d’endommager le fichier, veillez à ne pas modifier les informations binaires stockées dans le fichier.
 
 ## <a name="create-a-resx-file"></a>Créer un fichier .resx
 
@@ -39,13 +39,13 @@ Le fichier .resx résultant possède l’en-tête approprié et une balise `data
 > [!WARNING]
 > N’utilisez pas de fichier de ressources pour stocker des mots de passe, des informations sensibles ou des données privées.
 
-L’exemple suivant crée un fichier .resx nommé CarResources.resx qui stocke six chaînes, une icône et deux objets définis par l’application (deux objets `Automobile` ). La `Automobile` classe, qui est définie et instantanée dans l’exemple, est étiquetée avec l’attribut. <xref:System.SerializableAttribute>
+L’exemple suivant crée un fichier .resx nommé CarResources.resx qui stocke six chaînes, une icône et deux objets définis par l’application (deux objets `Automobile` ). La `Automobile` classe, qui est définie et instanciée dans l’exemple, est marquée avec l' <xref:System.SerializableAttribute> attribut.
 
 [!code-csharp[Conceptual.Resources.ResX#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.resx/cs/create1.cs#1)]
 [!code-vb[Conceptual.Resources.ResX#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.resx/vb/create1.vb#1)]
 
 > [!TIP]
-> Vous pouvez également utiliser [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) pour créer des fichiers .resx. Au moment de la compilation, Visual Studio utilise l’outil [Resource File Generator (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) pour convertir le fichier .resx en fichier de ressources binaires (.resources), et l’incorpore dans un assembly d’application ou un assembly satellite.
+> Vous pouvez également utiliser [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) pour créer des fichiers. resx. Au moment de la compilation, Visual Studio utilise l’outil [Resource File Generator (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) pour convertir le fichier .resx en fichier de ressources binaires (.resources), et l’incorpore dans un assembly d’application ou un assembly satellite.
 
 Vous ne pouvez pas incorporer un fichier .resx dans un exécutable du Common Language Runtime ou le compiler dans un assembly satellite. Vous devez convertir votre fichier .resx en fichier de ressources binaires (.resources) à l’aide de l’outil [Resource File Generator (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md). Le fichier .resources résultant peut ensuite être incorporé dans un assembly d’application ou un assembly satellite. Pour plus d'informations, consultez [Creating Resource Files](creating-resource-files-for-desktop-apps.md).
 
@@ -87,5 +87,5 @@ Vous ne pouvez pas incorporer un fichier .resx dans un exécutable du Common Lan
 ## <a name="see-also"></a>Voir aussi
 
 - [Création de fichiers de ressources](creating-resource-files-for-desktop-apps.md)
-- [Resgen.exe (Générateur de fichiers de ressources)](../tools/resgen-exe-resource-file-generator.md)
-- [Al.exe (Assembly Linker)](../tools/al-exe-assembly-linker.md)
+- [Resgen. exe (générateur de fichier de ressources)](../tools/resgen-exe-resource-file-generator.md)
+- [Al. exe (Assembly Linker)](../tools/al-exe-assembly-linker.md)

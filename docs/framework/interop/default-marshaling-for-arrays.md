@@ -43,8 +43,8 @@ Dans une application composée dans son ensemble de code managé, le common lang
   
 |Type non managé|Type importé|  
 |--------------------|-------------------|  
-|**SafeArray (** *Type* **)**|**\<** **ELEMENT_TYPE_SZARRAY** *ConvertedType***>**<br /><br /> Rang = 1, limite inférieure = 0. La taille n’est connue que si elle est fournie dans la signature managée. Les tableaux sécurisés qui n’ont pas le rang = 1 ou la limite inférieure = 0 ne peuvent pas être marshalés en tant que **SZARRAY**.|  
-|*Type*  **[]**|**\<** **ELEMENT_TYPE_SZARRAY** *ConvertedType***>**<br /><br /> Rang = 1, limite inférieure = 0. La taille n’est connue que si elle est fournie dans la signature managée.|  
+|**SAFEARRAY (** *type* **)**|**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType***>**<br /><br /> Rang = 1, limite inférieure = 0. La taille n’est connue que si elle est fournie dans la signature managée. Les tableaux sécurisés qui n’ont pas le rang = 1 ou la limite inférieure = 0 ne peuvent pas être marshalés en tant que **SZARRAY**.|  
+|*Type*  **[]**|**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType***>**<br /><br /> Rang = 1, limite inférieure = 0. La taille n’est connue que si elle est fournie dans la signature managée.|  
   
 ### <a name="safe-arrays"></a>Tableaux sécurisés  
  Quand un tableau sécurisé est importé à partir d’une bibliothèque de types vers un assembly .NET, le tableau est converti en tableau unidimensionnel de type connu (comme **int**). Les mêmes règles de conversion de type qui s’appliquent aux paramètres sont également valables pour les éléments de tableau. Par exemple, un tableau sécurisé de types **BSTR** devient un tableau managé de chaînes et un tableau sécurisé de variants devient un tableau managé d’objets. Le type d’élément **SAFEARRAY** est capturé à partir de la bibliothèque de types et enregistré dans la valeur **SAFEARRAY** de l’énumération <xref:System.Runtime.InteropServices.UnmanagedType>.  
@@ -182,8 +182,8 @@ void New3(ref String ar);
   
 |Type tableau managé|Exporté comme|  
 |------------------------|-----------------|  
-|**\<** **ELEMENT_TYPE_SZARRAY** *type***>**|<xref:System.Runtime.InteropServices.UnmanagedType> **.SafeArray(** *type* **)**<br /><br /> **UnmanagedType.LPArray**<br /><br /> Type est fourni dans la signature. Le rang est toujours 1, la limite inférieure est toujours 0. La taille est toujours connue au moment de l’exécution.|  
-|**\<** **ELEMENT_TYPE_ARRAY** *rang* **>** de**\<** *type* **>** **\<** [ *limites* **>**]|**UnmanagedType.SafeArray(** *type* **)**<br /><br /> **UnmanagedType.LPArray**<br /><br /> Type, rang et limites sont fournis dans la signature. La taille est toujours connue au moment de l’exécution.|  
+|**ELEMENT_TYPE_SZARRAY** **\<** *Type* de ELEMENT_TYPE_SZARRAY**>**|<xref:System.Runtime.InteropServices.UnmanagedType> **.SafeArray(** *type* **)**<br /><br /> **UnmanagedType.LPArray**<br /><br /> Type est fourni dans la signature. Le rang est toujours 1, la limite inférieure est toujours 0. La taille est toujours connue au moment de l’exécution.|  
+|**ELEMENT_TYPE_ARRAY** **\<** *type* **>** *rank* Classement **>** du type **\<** de**\<** ELEMENT_TYPE_ARRAY [ *limites* ] **>**|**UnmanagedType.SafeArray(** *type* **)**<br /><br /> **UnmanagedType.LPArray**<br /><br /> Type, rang et limites sont fournis dans la signature. La taille est toujours connue au moment de l’exécution.|  
 |**ELEMENT_TYPE_CLASS****\<**<xref:System.Array?displayProperty=nameWithType>**>**|**UT_Interface**<br /><br /> **UnmanagedType.SafeArray(** *type* **)**<br /><br /> Type, rang, limites et taille sont toujours connus au moment de l’exécution.|  
   
  Il existe une restriction dans OLE Automation concernant les tableaux de structures qui contiennent LPSTR ou LPWSTR.  Par conséquent, les champs **String** doivent être marshalés comme **UnmanagedType.BSTR**. Sinon, une exception est levée.  

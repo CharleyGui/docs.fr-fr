@@ -11,7 +11,7 @@ ms.locfileid: "82072143"
 ---
 # <a name="introduction-to-azure-and-net"></a>Présentation d’Azure et de .NET
 
-Ce document fournit un aperçu des concepts clés et des services .NET développeurs devraient être familiers avec pour commencer à développer des applications en utilisant les services Azure.
+Ce document fournit une vue d’ensemble des principaux concepts et services que les développeurs .NET doivent connaître pour commencer à développer des applications à l’aide des services Azure.
 
 ## <a name="key-concepts"></a>Concepts clés
 
@@ -47,9 +47,9 @@ En règle générale, plus vos modèles FaaS et PaaS sont privilégiés par votr
 * [Machines virtuelles Azure](https://docs.microsoft.com/azure/virtual-machines/) : si App Service ne répond pas à vos besoins pour l’hébergement d’une application existante en raison de certaines dépendances spécifiques, les machines virtuelles seront un excellent point de départ. Pour découvrir les machines virtuelles et ASP.NET ou WCF, consultez [Déployer une application ASP.NET sur une machine virtuelle Azure](https://tutorials.visualstudio.com/aspnet-vm/intro).
 
 > [!TIP]
-> Pour plus d’informations sur le choix [d’un](https://docs.microsoft.com/azure/architecture/guide/technology-choices/compute-decision-tree)service, consultez choisissez un service de calcul Azure pour votre application .
+> Pour plus d’informations sur le choix d’un service, consultez [choisir un service de calcul Azure pour votre application](https://docs.microsoft.com/azure/architecture/guide/technology-choices/compute-decision-tree).
 
-## <a name="choose-a-data-storage-service"></a>Choisissez un service de stockage de données
+## <a name="choose-a-data-storage-service"></a>Choisir un service de stockage de données
 
 Azure propose plusieurs services pour stocker vos données selon vos besoins. Les services de données les plus courants pour les développeurs .NET sont :
 
@@ -76,6 +76,6 @@ Une fois que vous déployez votre application dans Azure, vous pouvez rencontrer
 ## <a name="next-steps"></a>Étapes suivantes
 
 * [Déployer votre première application web ASP.NET Core sur Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet)
-* [En savoir plus sur l’authentification dans Azure SDK pour .NET](./sdk/authentication.md)
+* [En savoir plus sur l’authentification dans le kit de développement logiciel Azure SDK pour .NET](./sdk/authentication.md)
 * [Diagnostiquer des erreurs dans vos applications cloud](https://blogs.msdn.microsoft.com/webdev/2018/02/07/diagnosing-errors-on-your-cloud-apps)
 * Téléchargez gratuitement l’e-book [Guide de démarrage rapide Azure pour les développeurs .NET](https://www.microsoft.com/net/download/thank-you/azure-quick-start-ebook)

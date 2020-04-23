@@ -66,7 +66,7 @@ CMyClass::MethodThatThrows
 |**COR_E_BADIMAGEFORMAT or ERROR_BAD_FORMAT**|**BadImageFormatException**|  
 |**COR_E_COMEMULATE_ERROR**|**COMEmulateException**|  
 |**COR_E_CONTEXTMARSHAL**|**ContextMarshalException**|  
-|**COR_E_CORE**|**CoreException (CoreException)**|  
+|**COR_E_CORE**|**CoreException**|  
 |**NTE_FAIL**|**CryptographicException**|  
 |**COR_E_DIRECTORYNOTFOUND or ERROR_PATH_NOT_FOUND**|**DirectoryNotFoundException**|  
 |**COR_E_DIVIDEBYZERO**|**DivideByZeroException**|  
@@ -90,7 +90,7 @@ CMyClass::MethodThatThrows
 |**COR_E_MISSINGFIELD**|**MissingFieldException**|  
 |**COR_E_MISSINGMANIFESTRESOURCE**|**MissingManifestResourceException**|  
 |**COR_E_MISSINGMEMBER**|**MissingMemberException**|  
-|**COR_E_MISSINGMETHOD**|**MissingMethodException (en anglais)**|  
+|**COR_E_MISSINGMETHOD**|**MissingMethodException**|  
 |**COR_E_MULTICASTNOTSUPPORTED**|**MulticastNotSupportedException**|  
 |**COR_E_NOTFINITENUMBER**|**NotFiniteNumberException**|  
 |**E_NOTIMPL**|**NotImplementedException**|  
@@ -107,7 +107,7 @@ CMyClass::MethodThatThrows
 |**COR_E_SERIALIZATION**|**SerializationException**|  
 |**COR_E_STACKOVERFLOW orERROR_STACK_OVERFLOW**|**StackOverflowException**|  
 |**COR_E_SYNCHRONIZATIONLOCK**|**SynchronizationLockException**|  
-|**COR_E_SYSTEM**|**Systemexception**|  
+|**COR_E_SYSTEM**|**SystemException**|  
 |**COR_E_TARGET**|**TargetException**|  
 |**COR_E_TARGETINVOCATION**|**TargetInvocationException**|  
 |**COR_E_TARGETPARAMCOUNT**|**TargetParameterCountException**|  
@@ -130,12 +130,12 @@ CMyClass::MethodThatThrows
   
 |Champ d’exception|Source d’informations à partir de COM|  
 |---------------------|------------------------------------|  
-|**Errorcode**|HRESULT retourné à l’issue de l’appel.|  
+|**ErrorCode**|HRESULT retourné à l’issue de l’appel.|  
 |**HelpLink**|Si **IErrorInfo->HelpContext** est différent de zéro, la chaîne est formée en concaténant **IErrorInfo->GetHelpFile**, « # » et **IErrorInfo->GetHelpContext**. Sinon, la chaîne est retournée depuis **IErrorInfo->GetHelpFile**.|  
-|**InnerException**|Toujours une référence nulle **(Rien** dans Visual Basic).|  
+|**InnerException**|Toujours une référence null (**Nothing** dans Visual Basic).|  
 |**Message**|Chaîne retournée depuis **IErrorInfo->GetDescription**.|  
-|**source**|Chaîne retournée depuis **IErrorInfo->GetSource**.|  
-|**StackTrace (en)**|Trace de la pile.|  
+|**Source**|Chaîne retournée depuis **IErrorInfo->GetSource**.|  
+|**Trace**|Trace de la pile.|  
 |**TargetSite**|Nom de la méthode ayant retourné la valeur HRESULT qui a échoué.|  
   
  Les champs d’exception, tels que **Message**, **Source** et **StackTrace** ne sont pas disponibles pour **StackOverflowException**.  
