@@ -2,12 +2,12 @@
 title: Commande dotnet new
 description: La commande dotnet new crée des projets .NET Core basés sur le modèle spécifié.
 ms.date: 04/10/2020
-ms.openlocfilehash: 4ad0d7e54f93582237ed9457b562957018916d36
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 1979f98a6005a414acc64c5eaa086a88aca9f033
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463612"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102825"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -36,6 +36,10 @@ La `dotnet new` commande crée un projet .NET Core ou d’autres artefacts basé
 
 La commande appelle le [moteur de modèles](https://github.com/dotnet/templating) pour créer les artefacts sur le disque en fonction du modèle et des options spécifiés.
 
+### <a name="implicit-restore"></a>Restauration implicite
+
+[!INCLUDE[dotnet restore note](~/includes/dotnet-restore-note.md)]
+
 ## <a name="arguments"></a>Arguments
 
 - **`TEMPLATE`**
@@ -53,7 +57,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
 | Modèles                                    | Nom court                      | Langage     | Balises                                  | Introduit |
 |----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
-| Application console                          | [Console](#console)             | [C#], F#, VB | Communes/Console                        | 1.0        |
+| Application console                          | [console](#console)             | [C#], F#, VB | Communes/Console                        | 1.0        |
 | Bibliothèque de classes                                | [classlib](#classlib)           | [C#], F#, VB | Communes/Bibliothèque                        | 1.0        |
 | Application WPF                              | [Wpf](#wpf)                     | [C#]         | Common/WPF                            | 3.0        |
 | Bibliothèque de classe WPF                            | [wpflib (wpflib)](#wpf)                  | [C#]         | Common/WPF                            | 3.0        |
@@ -67,22 +71,22 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 | Élément de test NUnit 3                            | `nunit-test`                    | [C#], F#, VB | Test/NUnit                            | 2.2        |
 | Projet de test xUnit                           | [xunit](#test)                  | [C#], F#, VB | Test/xUnit                            | 1.0        |
 | Composant de rasoir                              | `razorcomponent`                | [C#]         | Web/ASP.NET                           | 3.0        |
-| Page Razor                                   | [Page](#page)                   | [C#]         | Web/ASP.NET                           | 2        |
-| ViewImports MVC                              | [viewimports](#namespace)       | [C#]         | Web/ASP.NET                           | 2        |
-| ViewStart MVC                                | `viewstart`                     | [C#]         | Web/ASP.NET                           | 2        |
+| Page Razor                                   | [Page](#page)                   | [C#]         | Web/ASP.NET                           | 2.0        |
+| ViewImports MVC                              | [viewimports](#namespace)       | [C#]         | Web/ASP.NET                           | 2.0        |
+| ViewStart MVC                                | `viewstart`                     | [C#]         | Web/ASP.NET                           | 2.0        |
 | Application Serveur Blazor                            | [blazorserver](#blazorserver)   | [C#]         | Web/Blazor                            | 3.0        |
 | ASP.NET Core vide                           | [Web](#web)                     | [C#], F#     | Web/vides                             | 1.0        |
 | Application web ASP.NET Core (Model-View-Controller) | [Mvc](#web-options)             | [C#], F#     | Web/MVC                               | 1.0        |
 | Application web ASP.NET Core                         | [webapp, rasoir](#web-options)   | [C#]         | Web/MVC/Razor Pages                   | 2.2, 2.0   |
-| ASP.NET Core avec Angular                    | [Angulaire](#spa)                 | [C#]         | Web/MVC/SPA                           | 2        |
-| ASP.NET Core avec React.js                   | [Réagir](#spa)                   | [C#]         | Web/MVC/SPA                           | 2        |
-| ASP.NET Core avec React.js et Redux         | [reactredux](#reactredux)       | [C#]         | Web/MVC/SPA                           | 2        |
+| ASP.NET Core avec Angular                    | [Angulaire](#spa)                 | [C#]         | Web/MVC/SPA                           | 2.0        |
+| ASP.NET Core avec React.js                   | [Réagir](#spa)                   | [C#]         | Web/MVC/SPA                           | 2.0        |
+| ASP.NET Core avec React.js et Redux         | [reactredux](#reactredux)       | [C#]         | Web/MVC/SPA                           | 2.0        |
 | Bibliothèque de classes Razor                          | [razorclasslib](#razorclasslib) | [C#]         | Web/Razor/Library/Bibliothèque de classes Razor | 2.1        |
 | API web ASP.NET Core                         | [webapi webapi](#webapi)               | [C#], F#     | Web/WebAPI                            | 1.0        |
 | ASP.NET Core gRPC Service                    | [grpc grpc](#web-others)             | [C#]         | Web/gRPC                              | 3.0        |
 | Fichier tampon de protocole                         | [Proto](#namespace)             |              | Web/gRPC                              | 3.0        |
 | fichier gitignore dotnet                        | `gitignore`                     |              | Config                                | 3.0        |
-| fichier global.json                             | [globaljson (globaljson)](#globaljson)       |              | Config                                | 2        |
+| fichier global.json                             | [globaljson (globaljson)](#globaljson)       |              | Config                                | 2.0        |
 | Configuration NuGet                                 | `nugetconfig`                   |              | Config                                | 1.0        |
 | dotnet local outil manifeste fichier              | `tool-manifest`                 |              | Config                                | 3.0        |
 | Configuration Web                                   | `webconfig`                     |              | Config                                | 1.0        |

@@ -3,12 +3,12 @@ title: Nouveautés de C# 7.0 | Guide C#
 description: Découvrez les nouvelles fonctionnalités disponibles dans la version 7.0 du langage C#.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: a6ac5c00ceb2ce8e5e56e2a86a8cde937d5108e2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1291de95b88b3de16fb94fb376fb4153dd4a5862
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399692"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102669"
 ---
 # <a name="whats-new-in-c-70"></a>Nouveautés de C# 7.0
 
@@ -20,7 +20,7 @@ C# 7.0 ajoute un certain nombre de nouvelles fonctionnalités au langage C# :
   - Vous pouvez créer des types légers et sans nom qui contiennent plusieurs champs publics. Les compilateurs et les outils de l’IDE comprennent la sémantique de ces types.
 - [Éléments ignorés](#discards)
   - Les éléments ignorés sont les variables temporaires en écriture seule utilisées dans les attributions quand vous ne vous souciez pas de la valeur assignée. Ils s’avèrent utiles lors de la déconstruction de tuples et de types définis par l’utilisateur, ainsi que lors de l’appel de méthodes avec des paramètres `out`.
-- [Filtrage](#pattern-matching)
+- [Critères spéciaux](#pattern-matching)
   - Vous pouvez créer une logique de branchement basée sur des types arbitraires et les valeurs des membres de ces types.
 - [`ref`habitants et les retours](#ref-locals-and-returns)
   - Les valeurs de retour et les variables locales de méthode peuvent être des références à un autre stockage.
@@ -211,7 +211,7 @@ Il est possible d’utiliser la même technique avec les méthodes `async` pour 
 [!code-csharp[TaskExample](~/samples/snippets/csharp/new-in-7/AsyncWork.cs#TaskExample "Task returning method with local function")]
 
 > [!NOTE]
-> Certaines des conceptions prises en charge par les fonctions locales peuvent également être effectuées à l’aide d’*expressions lambda*. Pour plus d’informations, voir [fonctions locales vs expressions lambda](../local-functions-vs-lambdas.md).
+> Certaines des conceptions qui sont soutenues par des fonctions locales peuvent également être accomplies en utilisant *des expressions lambda*. Pour plus d’informations, voir [fonctions locales vs expressions lambda](../programming-guide/classes-and-structs/local-functions.md#local-functions-vs-lambda-expressions).
 
 ## <a name="more-expression-bodied-members"></a>Autres membres expression-bodied
 

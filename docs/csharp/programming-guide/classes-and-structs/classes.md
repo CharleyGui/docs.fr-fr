@@ -6,12 +6,12 @@ helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: aadf555fb47963eab323bbb6105227c5b119e6f4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d726ab3a882d2e6913fa69c7b82f1d6db78dd47d
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170310"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102045"
 ---
 # <a name="classes-c-programming-guide"></a>Classes (Guide de programmation C#)
 
@@ -26,7 +26,7 @@ MyClass mc = new MyClass();
 MyClass mc2 = mc;
 ```
 
-Quand l’objet est créé, une quantité de mémoire suffisante est allouée sur le tas managé de l’objet spécifié, et la variable contient uniquement une référence à l’emplacement de cet objet. Les types sur le tas managé entraînent une surcharge quand ils sont alloués et récupérés par la fonctionnalité de gestion automatique de la mémoire du CLR (appelée *garbage collection*). Toutefois, le garbage collection est également optimisé et, dans la plupart des cas, ne nuit pas aux performances. Pour plus d’informations sur le garbage collection, consultez [Gestion automatique de la mémoire et garbage collection](../../../standard/garbage-collection/gc.md).  
+Quand l’objet est créé, une quantité de mémoire suffisante est allouée sur le tas managé de l’objet spécifié, et la variable contient uniquement une référence à l’emplacement de cet objet. Les types sur le tas managé entraînent une surcharge quand ils sont alloués et récupérés par la fonctionnalité de gestion automatique de la mémoire du CLR (appelée *garbage collection*). Toutefois, le garbage collection est également optimisé et, dans la plupart des cas, ne nuit pas aux performances. Pour plus d’informations sur le garbage collection, consultez [Gestion automatique de la mémoire et garbage collection](../../../standard/garbage-collection/fundamentals.md).  
   
 ## <a name="declaring-classes"></a>Déclaration de classes
 
@@ -89,7 +89,7 @@ Une classe peut être déclarée [abstract](../../language-reference/keywords/ab
   
 Les définitions de classe peuvent être fractionnées entre différents fichiers sources. Pour plus d’informations, consultez la page [Classes et méthodes partielles](partial-classes-and-methods.md).  
   
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant définit une classe publique qui contient une [propriété implémentée automatiquement](auto-implemented-properties.md), une méthode et une méthode spéciale appelée un constructeur. Pour plus d’informations, consultez les rubriques [Propriétés](properties.md), [Méthodes](methods.md) et [Constructeurs](constructors.md). Les instances de la classe sont ensuite instanciées à l’aide du mot clé `new`.  
   
@@ -101,8 +101,8 @@ L’exemple suivant définit une classe publique qui contient une [propriété i
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
-- [Programmation orientée objet](../concepts/object-oriented-programming.md)
+- [Guide de programmation CMD](../index.md)
+- [Programmation orientée objet dans Visual Basic](../concepts/object-oriented-programming.md)
 - [Polymorphisme](polymorphism.md)
 - [Noms d’identificateurs](../inside-a-program/identifier-names.md)
 - [Membres](members.md)

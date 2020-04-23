@@ -5,20 +5,20 @@ helpviewer_keywords:
 - GCCpuGroup element
 - <GCCpuGroup> element
 ms.assetid: c1fc7d6c-7220-475c-a312-5b8b201f66e0
-ms.openlocfilehash: ae9c96c9d49cf3f6be94da3f77b91423cab12e0b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f1cbe5a7109d6e4aae2e92710920a1c6b3a40d00
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74430480"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102890"
 ---
-# <a name="gccpugroup-element"></a>\<élément GCCpuGroup >
+# <a name="gccpugroup-element"></a>\<GCCpuGroup> Élément
 
 Indique si le garbage collection prend en charge plusieurs groupes de processeurs.
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<GCCpuGroup** >
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<>de temps d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<GCCpuGroup>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -41,12 +41,12 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Valeur|Description|
 |-----------|-----------------|
-|`false`|Le garbage collection ne prend pas en charge plusieurs groupes d’UC. Il s'agit de la valeur par défaut.|
-|`true`|Le garbage collection prend en charge plusieurs groupes de PROCESSEURs, si le serveur garbage collection est activé.|
+|`false`|La collecte des ordures ne prend pas en charge plusieurs groupes de processeurs. Il s’agit de la valeur par défaut.|
+|`true`|La collecte des ordures prend en charge plusieurs groupes de processeurs, si la collecte des ordures du serveur est activée.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
-None.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -57,14 +57,14 @@ None.
 
 ## <a name="remarks"></a>Notes
 
-Quand un ordinateur a plusieurs groupes d’UC et que la garbage collection du serveur est activée (Voir l’élément [\<gcServer >](gcserver-element.md) ), l’activation de cet élément étend garbage collection sur tous les groupes de processeurs et prend en compte tous les cœurs lors de la création et de l’équilibrage des tas.
+Lorsqu’un ordinateur dispose de plusieurs groupes de processeurs et que la collecte des ordures des serveurs est activée (voir [ \<l’élément gcServer>),](gcserver-element.md) ce qui permet à cet élément d’étendre la collecte des ordures dans tous les groupes de processeur et de prendre en compte tous les noyaux lors de la création et de l’équilibrage des tas.
 
 > [!NOTE]
-> Cet élément s’applique uniquement aux threads garbage collections. Pour permettre au runtime de distribuer des threads utilisateur sur tous les groupes de PROCESSEURs, vous devez également activer l’élément [\<Thread_UseAllCpuGroups >](thread-useallcpugroups-element.md) .
+> Cet élément ne s’applique qu’aux fils de collecte des ordures. Pour activer le temps d’exécution pour distribuer des threads d’utilisateurs sur tous les groupes de processeurs, vous devez également activer [ \<l’élément Thread_UseAllCpuGroups>.](thread-useallcpugroups-element.md)
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment activer garbage collection pour plusieurs groupes d’UC.
+L’exemple suivant montre comment permettre la collecte des ordures pour plusieurs groupes de processeurs.
 
 ```xml
 <configuration>
@@ -77,7 +77,7 @@ L’exemple suivant montre comment activer garbage collection pour plusieurs gro
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](index.md)
-- [Schéma des fichiers de configuration](../index.md)
-- [Pour désactiver les garbage collection simultanées](gcconcurrent-element.md#to-disable-background-garbage-collection)
-- [Garbage collection de station de travail et de serveur](../../../../standard/garbage-collection/fundamentals.md#workstation-and-server-garbage-collection)
+- [Paramètres de durée d’exécution Schema](index.md)
+- [Configuration Fichier Schema](../index.md)
+- [Désactiver la collecte simultanée des ordures](gcconcurrent-element.md#to-disable-background-garbage-collection)
+- [Garbage collection de station de travail et de serveur](../../../../standard/garbage-collection/workstation-server-gc.md)

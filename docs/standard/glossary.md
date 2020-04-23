@@ -3,12 +3,12 @@ title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: d8f16579ea4dcbc9260aac83e16d3fbd30db519c
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: e7608ee7e68300d691df51aed923db0e8b518165
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635585"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102474"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -54,9 +54,12 @@ La signification exacte dépend du contexte, mais Common Language Runtime se ré
 
 Ce CLR repose sur la même base de code que le CLR. À l’origine, CoreCLR était le runtime de Silverlight et était conçu pour s’exécuter sur plusieurs plateformes, notamment Windows et OS X. CoreCLR fait désormais partie de .NET Core et représente une version simplifiée du CLR. C’est toujours un runtime [multiplateforme](#cross-platform), qui prend désormais en charge de nombreuses distributions Linux. CoreCLR est également une machine virtuelle avec des capacités JIT et d’exécution de code.
 
-## <a name="corefx"></a>CoreFX
+## <a name="corefx"></a>CoreFx
 
 Bibliothèque de classes de base .NET Core
+
+> [!TIP]
+> *Fx* signifie *cadre*.
 
 Un ensemble de bibliothèques qui composent le système. \* (et dans une mesure\*limitée Microsoft. ) namespaces. La bibliothèque de classes de base est un framework de niveau inférieur à usage général sur lequel reposent les frameworks d’applications de niveau supérieur, tels qu’ASP.NET Core. Le code source du .NET Core BCL est contenu dans le [référentiel .NET Core runtime](https://github.com/dotnet/runtime). Toutefois, la plupart des API .NET Core étant également disponibles dans .NET Framework, vous pouvez considérer CoreFX comme une duplication (fork) de la bibliothèque de classes de base .NET Framework.
 
@@ -228,7 +231,7 @@ Environnement d’exécution d’un programme managé.
 
 Le système d’exploitation fait partie de l’environnement d’exécution, mais pas du runtime .NET. Voici quelques exemples de runtimes .NET :
 
-- Common Language Runtime (CLR)
+- CLR (Common Language Runtime)
 - Core Common Language Runtime (CoreCLR)
 - .NET Native (pour la plateforme Windows universelle)
 - Runtime Mono
@@ -277,4 +280,4 @@ Implémentation de .NET qui sert à générer des logiciels et des applications 
 - [Guide-cadre .NET](../framework/index.yml)
 - [.NET Core](../core/index.yml)
 - [Vue d’ensemble ASP.NET](/aspnet/index#pivot=aspnet)
-- [ASP.NET Core Overview](/aspnet/index#pivot=core) (Vue d’ensemble d’ASP.NET Core)
+- [ASP.NET Aperçu de base](/aspnet/index#pivot=core)

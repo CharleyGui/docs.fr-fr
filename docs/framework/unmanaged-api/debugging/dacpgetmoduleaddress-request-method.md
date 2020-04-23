@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 6850dc256a70e0c0343104b3904e9eda62d11e7e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4dbe6a2c295e5afae1b6761f0c7b695fdb906428
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179202"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102905"
 ---
 # <a name="dacpgetmoduleaddressrequest-method"></a>DacpGetModuleAddress::Méthode de demande
 
@@ -41,7 +41,7 @@ HRESULT Request(
 `pDataModule`\
 [dans] Un pointeur vers le module de données sur les semences.
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
 Cette structure vit à l’intérieur du temps d’exécution et n’est pas exposée à travers des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, le moyen le plus simple est d’imiter la mise en œuvre:
 
@@ -49,11 +49,12 @@ Cette structure vit à l’intérieur du temps d’exécution et n’est pas exp
 
 ## <a name="requirements"></a>Spécifications
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête:** Aucune **bibliothèque:** Aucun  
-**.NET Versions-cadre:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Plates-formes:** Voir [les exigences du système](../../../../docs/framework/get-started/system-requirements.md)\
+**En-tête:** Aucun
+**Bibliothèque:** Aucun
+**.NET Versions-cadre:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Débogage](index.md)
-- [DacpGetModuleAddress Interface](dacpgetmoduleaddress-structure.md)
+- [Structure DacpGetModuleAddress](dacpgetmoduleaddress-structure.md)

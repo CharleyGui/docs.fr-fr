@@ -3,12 +3,12 @@ title: Arrangements de config de collecteur d’ordures
 description: Découvrez les paramètres de course pour configurer comment le collecteur d’ordures gère la mémoire des applications .NET Core.
 ms.date: 01/09/2020
 ms.topic: reference
-ms.openlocfilehash: dfb641eeda03d1acaa4771bd6253fcb33c4082a6
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: ec575bdd17c8a7c290673b7085074bbba94cedef
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607808"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102864"
 ---
 # <a name="run-time-configuration-options-for-garbage-collection"></a>Options de configuration en temps d’exécution pour la collecte des ordures
 
@@ -24,7 +24,7 @@ Les paramètres sont disposés en groupes sur cette page. Les paramètres de cha
 
 ## <a name="flavors-of-garbage-collection"></a>Saveurs de collecte des ordures
 
-Les deux principales saveurs de la collecte des ordures sont le poste de travail GC et le serveur GC. Pour plus d’informations sur les différences entre les deux, voir [Fondamentaux de la collecte des ordures](../../standard/garbage-collection/fundamentals.md#workstation-and-server-garbage-collection).
+Les deux principales saveurs de la collecte des ordures sont le poste de travail GC et le serveur GC. Pour plus d’informations sur les différences entre les deux, voir [Workstation et la collecte des ordures serveur](../../standard/garbage-collection/workstation-server-gc.md).
 
 Les sous-composants de la collecte des ordures sont de fond et non simultanés.
 
@@ -72,7 +72,7 @@ Fichier projet :
 
 - Configure si la collecte des ordures de fond (concurrente) est activée.
 - Défaut: Activé`true`( ).
-- Pour plus d’informations, voir [Collection d’ordures Background](../../standard/garbage-collection/fundamentals.md#background-workstation-garbage-collection) et [collecte des ordures serveur De fond](../../standard/garbage-collection/fundamentals.md#background-server-garbage-collection).
+- Pour plus d’informations, voir [Collection d’ordures De fond](../../standard/garbage-collection/background-gc.md).
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
@@ -240,7 +240,7 @@ Exemple :
 
 - Spécifie la taille maximale de commit, dans les octets, pour le tas GC et la comptabilité GC.
 - Ce paramètre ne s’applique qu’aux ordinateurs 64 bits.
-- La valeur par défaut, qui ne s’applique que dans certains cas, est la moindre de 20 Mo ou 75% de la limite de mémoire sur le conteneur. La valeur par défaut s’applique si :
+- La valeur par défaut, qui ne s’applique que dans certains cas, est la plus grande de 20 Mo ou 75% de la limite de mémoire sur le conteneur. La valeur par défaut s’applique si :
 
   - Le processus est en cours d’exécution à l’intérieur d’un conteneur qui a une limite de mémoire spécifiée.
   - [System.GC.HeapHardLimitPercent](#systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent) n’est pas défini.

@@ -1,5 +1,5 @@
 ---
-title: Compatibilité de versions dans le .NET Framework
+title: Compatibilité de version dans .NET Framework
 ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
@@ -7,20 +7,20 @@ helpviewer_keywords:
 - .NET Framework, compatibility with earlier versions
 - .NET Framework versions, compatibility
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
-ms.openlocfilehash: e0de18b5a40875d1fec2633c16688111d8f4b9ee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2e268753bf5941e9d28ee2bdd82ce77016ddf01a
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73974957"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102981"
 ---
-# <a name="version-compatibility-in-the-net-framework"></a>Compatibilité de versions dans le .NET Framework
+# <a name="version-compatibility"></a>Compatibilité des versions
 
-La compatibilité descendante signifie qu'une application développée pour une version particulière d'une plateforme s'exécutera sur les versions ultérieures de cette plateforme. Le .NET Framework essaie d'optimiser la compatibilité descendante : le code source écrit pour une version du .NET Framework doit se compiler sur les versions ultérieures du .NET Framework, et les fichiers binaires qui s'exécutent sur une version du .NET Framework doivent se comporter de la même manière sur les versions ultérieures du .NET Framework.
+La compatibilité descendante signifie qu'une application développée pour une version particulière d'une plateforme s'exécutera sur les versions ultérieures de cette plateforme. .NET Framework tente de maximiser la compatibilité vers l’arrière: Le code source écrit pour une version de .NET Framework devrait compiler sur les versions ultérieures de .NET Framework, et les binaires qui s’exécutent sur une version de .NET Framework devraient se comporter de façon identique sur les versions ultérieures de .NET Framework.
 
 ## <a name="version-compatibility-for-apps"></a><a name="Apps"></a> Compatibilité des versions pour les applications
 
-Par défaut, une application s'exécute sur la version .NET Framework pour laquelle elle a été générée. Si cette version n’est pas présente et que le fichier de configuration de l’application ne définit pas les versions prises en charge, une erreur d’initialisation du .NET Framework peut se produire. Dans ce cas, la tentative d'exécution de l'application échouera.
+Par défaut, une application s’exécute sur la version de .NET Framework pour laquelle elle a été conçue. Si cette version n’est pas présente et que le fichier de configuration de l’application ne définit pas les versions prises en charge, une erreur d’initialisation du .NET Framework peut se produire. Dans ce cas, la tentative d'exécution de l'application échouera.
 
 Pour définir les versions spécifiques sur lesquelles votre [ \<](../configure-apps/file-schema/startup/supportedruntime-element.md) application s’exécute, ajoutez un ou plusieurs éléments>supportruntime au fichier de configuration de votre application. Chaque élément `<supportedRuntime>` fournit une liste des versions prises en charge de l'exécution ; la première spécifie la version préférée et la dernière correspond à la version la moins préférée.
 
@@ -41,7 +41,7 @@ Une application peut contrôler la version du .NET Framework sur laquelle elle s
 
 À cause de cette restriction, les garanties de compatibilité sont particulièrement importantes pour les composants. Depuis .NET Framework 4, vous pouvez spécifier le degré auquel un composant est supposé rester compatible entre plusieurs versions en appliquant l'attribut <xref:System.Runtime.Versioning.ComponentGuaranteesAttribute?displayProperty=nameWithType> à ce composant. Les outils peuvent utiliser cet attribut pour détecter des violations potentielles de la garantie de compatibilité dans les versions ultérieures d'un composant.
 
-## <a name="backward-compatibility-and-the-net-framework"></a>Compatibilité descendante et .NET Framework
+## <a name="backward-compatibility"></a>Compatibilité descendante
 
 .NET Framework 4.5 et versions ultérieures présentent une compatibilité descendante avec les applications générées à l’aide des versions antérieures du .NET Framework. En d’autres termes, les applications et composants générés avec les versions antérieures du .NET Framework fonctionneront sur .NET Framework 4.5 et versions ultérieures sans être modifiés. Toutefois, par défaut, les applications sont exécutées sur la version du common language runtime pour laquelle elles ont été développées. Par conséquent, il est possible que vous deviez fournir un fichier de configuration pour permettre à votre application de s’exécuter sur .NET Framework 4.5 ou versions ultérieures. Pour plus d’informations, consultez la section [Compatibilité des versions pour les applications](#Apps) plus haut dans cet article.
 
@@ -63,9 +63,9 @@ Si votre application ou composant ne fonctionne pas comme prévu sur .NET Framew
 
 - Si vous rencontrez un problème qui n’est pas documenté, ouvrez un problème sur le [site de la communauté des développeurs pour .NET](https://developercommunity.visualstudio.com/spaces/61/index.html) ou ouvrez un problème dans le [dépôt GitHub de Microsoft/dotnet](https://github.com/microsoft/dotnet/issues).
 
-## <a name="compatibility-and-side-by-side-execution"></a>Compatibilité et exécution côte à côte
+## <a name="side-by-side-execution"></a>Exécution côte à côte
 
-Si vous ne trouvez pas de solution de contournement appropriée pour votre problème, souvenez-vous que .NET Framework 4.5, et ses versions intermédiaires, s’exécutent côte à côte avec les versions 1.1, 2.0 et 3.5, et qu’ils constituent une mise à jour intégrée qui remplace la version 4. Pour les applications ciblant les versions 1.1, 2.0 et 3.5, vous pouvez installer la version appropriée du .NET Framework sur l'ordinateur cible pour exécuter l'application dans l'environnement idéal. Pour plus d’informations sur l’exécution côte à côte, consultez [Exécution côte à côte](../deployment/side-by-side-execution.md).
+Si vous ne pouvez pas trouver une solution de contournement appropriée pour votre problème, rappelez-vous que .NET Framework 4.5 (ou l’une de ses versions ponctuelles) fonctionne côte à côte avec les versions 1.1, 2.0, et 3.5, et est une mise à jour en place qui remplace la version 4. Pour les applications qui ciblent les versions 1.1, 2.0 et 3.5, vous pouvez installer la version appropriée de .NET Framework sur la machine cible pour exécuter l’application dans son meilleur environnement. Pour plus d’informations sur l’exécution côte à côte, consultez [Exécution côte à côte](../deployment/side-by-side-execution.md).
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -73,4 +73,4 @@ Si vous ne trouvez pas de solution de contournement appropriée pour votre probl
 - [Éléments obsolètes dans la bibliothèque de classes](../whats-new/whats-obsolete.md)
 - [Compatibilité de l’application](../migration-guide/application-compatibility.md)
 - [.NET Politique de soutien officiel du Cadre](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework)
-- [Problèmes de migration du .NET Framework 4](../migration-guide/net-framework-4-migration-issues.md)
+- [.NET Cadre 4 Questions migratoires](../migration-guide/net-framework-4-migration-issues.md)

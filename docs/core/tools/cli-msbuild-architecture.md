@@ -2,12 +2,12 @@
 title: Architecture des outils en ligne de commande .NET Core
 description: Découvrez les différentes couches des outils .NET Core et les changements apportés aux versions récentes.
 ms.date: 03/06/2017
-ms.openlocfilehash: fde1a0acb6af9dd65aa3466b4ea37473b2eab6fb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e1a9fe59225c17d54f6e7213d2b3c3fa70ee58e0
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77092913"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102877"
 ---
 # <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Vue d’ensemble générale des modifications des outils .NET Core
 
@@ -30,7 +30,7 @@ Commençons par un rappel rapide de l’organisation en couches de Preview 2, c
 
 ![Architecture générale des outils Preview 2](media/cli-msbuild-architecture/p2-arch.png)
 
-La superposition des outils dans Preview 2 est simple. Au fond, la fondation est le CLI .NET Core. Tous les autres outils de niveau supérieur, tels que Visual Studio ou Visual Studio Code, dépendent et comptent sur l’OPC pour construire des projets, restaurer les dépendances, et ainsi de suite. Par exemple, si Visual Studio voulait effectuer une opération `dotnet restore` de restauration, il appellerait dans la commande[(voir note](#dotnet-restore-note)) dans le CLI.
+La superposition des outils dans Preview 2 est simple. Au fond, la fondation est le CLI .NET Core. Tous les autres outils de niveau supérieur, tels que Visual Studio ou Visual Studio Code, dépendent et comptent sur l’OPC pour construire des projets, restaurer les dépendances, et ainsi de suite. Par exemple, si Visual Studio voulait effectuer une opération `dotnet restore` de restauration, il ferait appel à la commande dans l’ICI.
 
 Avec le passage au nouveau système de projet, le schéma précédent change :
 
@@ -41,7 +41,7 @@ La principale différence est que l’interface de ligne de commande n’est plu
 > [!NOTE]
 > Une « cible » est un terme MSBuild qui indique une opération nommée que MSBuild peut invoquer. Elle est généralement associée à une ou plusieurs tâches qui exécutent une logique que la cible est supposée effectuer. MSBuild prend en charge plusieurs cibles prédéfinies telles que `Copy` ou `Execute`, et permet aussi aux utilisateurs d’écrire leurs propres tâches à l’aide de code managé et de définir des cibles pour exécuter ces tâches. Pour plus d’informations, consultez [Tâches MSBuild](/visualstudio/msbuild/msbuild-tasks).
 
-Tous les ensembles d’outils utilisent désormais le composant SDK partagé et ses cibles, interface de ligne de commande incluse. Par exemple, Visual Studio 2019 n’appelle pas dans la `dotnet restore` commande ( voir[note](#dotnet-restore-note)) pour restaurer les dépendances pour les projets .NET Core. Au lieu de cela, il utilise la cible "Restaurer" directement. Comme il s’agit de cibles de MSBuild, vous pouvez également utiliser MSBuild sous forme brute pour les exécuter à l’aide de la commande [dotnet msbuild](dotnet-msbuild.md).
+Tous les ensembles d’outils utilisent désormais le composant SDK partagé et ses cibles, interface de ligne de commande incluse. Par exemple, Visual Studio 2019 n’appelle pas dans la `dotnet restore` commande pour restaurer les dépendances pour les projets .NET Core. Au lieu de cela, il utilise la cible "Restaurer" directement. Comme il s’agit de cibles de MSBuild, vous pouvez également utiliser MSBuild sous forme brute pour les exécuter à l’aide de la commande [dotnet msbuild](dotnet-msbuild.md).
 
 ### <a name="cli-commands"></a>Commandes CLI
 
@@ -73,5 +73,6 @@ Cette commande publie une `pub` application dans un dossier à l’aide de la co
 
 Les exceptions notables `new` à `run` cette règle sont les et les commandes. Ils n’ont pas été mis en œuvre comme cibles MSBuild.
 
-<a name="dotnet-restore-note"></a>
+### <a name="implicit-restore"></a>Restauration implicite
+
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

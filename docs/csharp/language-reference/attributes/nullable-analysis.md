@@ -2,12 +2,12 @@
 title: 'Attributs réservés C : Analyse statique nulle'
 ms.date: 04/14/2020
 description: Ces attributs sont interprétés par le compilateur pour fournir une meilleure analyse statique pour les types de référence nuls et non annulables.
-ms.openlocfilehash: 0315d78db7517541efe578d8675c0f2fe45f5aea
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 33521133a6a01196e6e1ab9c3cdc191a24f1ecf3
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389862"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102708"
 ---
 # <a name="reserved-attributes-contribute-to-the-compilers-null-state-static-analysis"></a>Les attributs réservés contribuent à l’analyse statique de l’état nul du compilateur
 
@@ -129,7 +129,7 @@ public Customer FindCustomer(string lastName, string firstName)
 
 Vous avez probablement écrit une méthode `null` comme celle-ci pour revenir lorsque le nom recherché n’a pas été trouvé. Le `null` indique clairement que le dossier n’a pas été trouvé. Dans cet exemple, vous changeriez probablement `Customer` `Customer?`le type de retour de . Déclarer la valeur de déclaration comme un type de référence nul précise clairement l’intention de cette API.
 
-Pour des raisons couvertes par [des définitions génériques et l’annulation,](../../nullable-attributes.md#generic-definitions-and-nullability) cette technique ne fonctionne pas avec des méthodes génériques. Vous pouvez avoir une méthode générique qui suit un modèle similaire:
+Pour des raisons couvertes par [des définitions génériques et l’annulation,](../../nullable-migration-strategies.md#generic-definitions-and-nullability) cette technique ne fonctionne pas avec des méthodes génériques. Vous pouvez avoir une méthode générique qui suit un modèle similaire:
 
 ```csharp
 public T Find<T>(IEnumerable<T> sequence, Func<T, bool> match)

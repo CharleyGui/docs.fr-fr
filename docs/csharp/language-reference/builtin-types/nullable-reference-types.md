@@ -2,12 +2,12 @@
 title: Types de référence nuls - Référence C
 description: Renseignez-vous sur les types de référence nuls et sur la façon de les utiliser
 ms.date: 04/06/2020
-ms.openlocfilehash: cbc7397ac76b43b79a4168f4c61fe2c631b4a46b
-ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
+ms.openlocfilehash: cb61b162b06faa51faabbcdd91e55618cdeaca73
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888315"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102695"
 ---
 # <a name="nullable-reference-types-c-reference"></a>Types de référence nuls (référence C)
 
@@ -61,11 +61,11 @@ L’extrait suivant montre où le compilateur émet des avertissements lors de l
 
 :::code language="csharp" source="snippets/NullableReferenceTypes.cs" id="SnippetLocalWarnings":::
 
-Les exemples précédents démontrent l’analyse statique du compilateur pour déterminer l’état nul des variables de référence. Le compilateur applique des règles linguistiques pour les vérifications et les affectations nulles pour éclairer son analyse.  Le compilateur ne peut pas faire d’hypothèses sur la sémantique des méthodes ou des propriétés. Si vous appelez des méthodes qui effectuent des contrôles nuls, le compilateur ne peut pas savoir que ces méthodes affectent l’état nul d’une variable. Il existe un certain nombre d’attributs que vous pouvez ajouter à vos API pour informer le compilateur sur la sémantique des arguments et des valeurs de retour. Ces attributs ont été appliqués à de nombreuses API communes dans les bibliothèques de base .NET. Par exemple, <xref:System.String.IsNullOrEmpty%2A> a été mis à jour, et le compilateur interprète correctement cette méthode comme une vérification nulle. Pour plus d’informations sur les attributs qui s’appliquent à l’analyse statique de l’état nul, voir l’article sur [les attributs Nullable](../../nullable-attributes.md).
+Les exemples précédents démontrent l’analyse statique du compilateur pour déterminer l’état nul des variables de référence. Le compilateur applique des règles linguistiques pour les vérifications et les affectations nulles pour éclairer son analyse.  Le compilateur ne peut pas faire d’hypothèses sur la sémantique des méthodes ou des propriétés. Si vous appelez des méthodes qui effectuent des contrôles nuls, le compilateur ne peut pas savoir que ces méthodes affectent l’état nul d’une variable. Il existe un certain nombre d’attributs que vous pouvez ajouter à vos API pour informer le compilateur sur la sémantique des arguments et des valeurs de retour. Ces attributs ont été appliqués à de nombreuses API communes dans les bibliothèques de base .NET. Par exemple, <xref:System.String.IsNullOrEmpty%2A> a été mis à jour, et le compilateur interprète correctement cette méthode comme une vérification nulle. Pour plus d’informations sur les attributs qui s’appliquent à l’analyse statique de l’état nul, voir l’article sur [les attributs Nullable](../attributes/nullable-analysis.md).
 
 ## <a name="setting-the-nullable-context"></a>Définir le contexte in nullable
 
-Il y a deux façons de contrôler le contexte nul. Au niveau du projet, `<Nullable>enable</Nullable>` vous pouvez ajouter le paramètre du projet. Dans un seul fichier source C, `#nullable enable` vous pouvez ajouter le pragma pour activer le contexte nul. Voir l’article sur [la mise en place d’une stratégie annulée](../../nullable-attributes.md).
+Il y a deux façons de contrôler le contexte nul. Au niveau du projet, `<Nullable>enable</Nullable>` vous pouvez ajouter le paramètre du projet. Dans un seul fichier source C, `#nullable enable` vous pouvez ajouter le pragma pour activer le contexte nul. Voir l’article sur [la mise en place d’une stratégie annulée](../../nullable-migration-strategies.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

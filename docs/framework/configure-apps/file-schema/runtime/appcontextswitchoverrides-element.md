@@ -8,12 +8,12 @@ helpviewer_keywords:
 - configuration switches
 - configuration
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
-ms.openlocfilehash: 95ae438e9fb52cc584d18a981bffb66147eb4a77
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 8d5cd73bb9393533cb669581420e24297cb5ff71
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242814"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102929"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides> élément
 
@@ -55,11 +55,11 @@ Définit un ou plusieurs commutateurs utilisés par la classe <xref:System.AppCo
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|
 
 ## <a name="remarks"></a>Notes
- En commençant par le cadre .NET `<AppContextSwitchOverrides>` 4.6, l’élément d’un fichier de configuration permet aux appelants d’une API de déterminer si leur application peut tirer parti de nouvelles fonctionnalités ou préserver la compatibilité avec les versions précédentes d’une bibliothèque. Par exemple, si le comportement d’une API a changé `<AppContextSwitchOverrides>` entre deux versions d’une bibliothèque, l’élément permet aux appelants de cette API de se retirer du nouveau comportement sur les versions de la bibliothèque qui prennent en charge la nouvelle fonctionnalité. Pour les applications qui appellent les API dans le cadre .NET, l’élément `<AppContextSwitchOverrides>` peut également permettre aux appelants dont les applications ciblent une version antérieure du cadre .NET d’opter pour de nouvelles fonctionnalités si leur application est en cours d’exécution sur une version du cadre .NET qui inclut cette fonctionnalité.
+ En commençant par .NET Framework 4.6, l’élément d’un `<AppContextSwitchOverrides>` fichier de configuration permet aux appelants d’une API de déterminer si leur application peut tirer parti de nouvelles fonctionnalités ou préserver la compatibilité avec les versions précédentes d’une bibliothèque. Par exemple, si le comportement d’une API a changé `<AppContextSwitchOverrides>` entre deux versions d’une bibliothèque, l’élément permet aux appelants de cette API de se retirer du nouveau comportement sur les versions de la bibliothèque qui prennent en charge la nouvelle fonctionnalité. Pour les applications qui appellent les API dans le cadre .NET, l’élément `<AppContextSwitchOverrides>` peut également permettre aux appelants dont les applications ciblent une version antérieure du cadre .NET d’opter pour de nouvelles fonctionnalités si leur application est en cours d’exécution sur une version du cadre .NET qui inclut cette fonctionnalité.
 
  L’attribut `value` `<AppContextSwitchOverrides>` de l’élément se compose d’une seule chaîne qui se compose d’un ou plusieurs paires de nom/valeur délimitées par des pointémilons.  Chaque nom identifie un commutateur de compatibilité, et`true` sa `false`valeur correspondante est un Boolean ( ou ) qui indique si le commutateur est défini. Par défaut, le `false`commutateur est, et les bibliothèques fournissent la nouvelle fonctionnalité. Ils ne fournissent la fonctionnalité précédente que si le commutateur `true`est défini (c’est-à-dire que sa valeur est). Cela permet aux bibliothèques de fournir un nouveau comportement pour une API existante tout en permettant aux appelants qui dépendent du comportement précédent de se retirer de la nouvelle fonctionnalité.
 
- Le cadre .NET prend en charge les commutateurs suivants :
+.NET Framework prend en charge les commutateurs suivants :
 
 |Nom de commutateur|Description|Introduit|
 |-----------------|-----------------|----------------|
@@ -141,7 +141,7 @@ Définit un ou plusieurs commutateurs utilisés par la classe <xref:System.AppCo
 
  Les développeurs de bibliothèques peuvent également définir des commutateurs personnalisés pour permettre aux appelants de se retirer des fonctionnalités modifiées introduites dans les versions ultérieures de leurs bibliothèques. Pour plus d'informations, consultez la classe <xref:System.AppContext>.
 
-## <a name="switches-in-aspnet-applications"></a>Commutateurs dans les applications ASP.NET
+## <a name="switches-in-aspnet-apps"></a>Commutateurs dans les applications ASP.NET
 
 Vous pouvez configurer une application ASP.NET pour utiliser [ \<](../appsettings/add-element-for-appsettings.md) les paramètres de compatibilité en ajoutant un élément Add>aux [ \<appSettings>](../appsettings/index.md) section du fichier web.config.
 
@@ -179,6 +179,7 @@ L’exemple suivant `<add>` utilise l’élément `<appSettings>` pour ajouter d
 
 ## <a name="see-also"></a>Voir aussi
 
+- [Atténuer les nouveaux comportements dans le cadre .NET 4.6 et plus tard](../../../migration-guide/mitigations.md)
 - <xref:System.AppContext?displayProperty=nameWithType>
 - [\<élément> de temps d’exécution](runtime-element.md)
 - [\<configuration> Element](../configuration-element.md)

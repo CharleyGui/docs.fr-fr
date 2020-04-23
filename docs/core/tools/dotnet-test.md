@@ -2,12 +2,12 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 02/27/2020
-ms.openlocfilehash: 2eebcbe2e4a1660da4ffa4ea9a68190c8443463a
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 69b8101f9b1052f4726dce8a86234da99f5dc89c
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81739101"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102739"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -43,6 +43,10 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 [!code-xml[XUnit Basic Template](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
 
+### <a name="implicit-restore"></a>Restauration implicite
+
+[!INCLUDE[dotnet restore note](~/includes/dotnet-restore-note.md)]
+
 ## <a name="arguments"></a>Arguments
 
 - **`PROJECT | SOLUTION`**
@@ -69,7 +73,7 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 - **`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
 
-  Active le mode de diagnostic pour la plateforme de test et écrit des messages de diagnostic dans le fichier spécifié.
+  Permet le mode de diagnostic pour la plate-forme de test et écrit des messages diagnostiques au fichier spécifié.
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -105,11 +109,11 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Répertoire dans lequel rechercher les binaires à exécuter.
+  Répertoire dans lequel rechercher les binaires à exécuter. S’il n’est pas spécifié, le chemin d'accès par défaut est `./bin/<configuration>/<framework>/`.  Pour les projets avec plusieurs `TargetFrameworks` cadres cibles (via `--framework` la propriété), vous devez également définir lorsque vous spécifiez cette option.
 
 - **`-r|--results-directory <PATH>`**
 
-  Répertoire où les résultats de test doivent être placés. Si le répertoire spécifié n’existe pas, il est créé.
+  Répertoire où les résultats de test doivent être placés. Si le répertoire spécifié n’existe pas, il est créé. La valeur `TestResults` par défaut se trouve dans l’annuaire qui contient le fichier du projet.
 
 - **`--runtime <RUNTIME_IDENTIFIER>`**
 
@@ -127,13 +131,13 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
   Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. Par défaut, il s’agit de `minimal`. Pour plus d’informations, consultez <xref:Microsoft.Build.Framework.LoggerVerbosity>.
 
-- `RunSettings`Arguments
+- **`RunSettings`** Arguments
 
   Les arguments `RunSettings` sont adoptés comme configurations pour le test. Les arguments sont spécifiés en tant que paires `[name]=[value]` après "-- " (notez l’espace après --). Un espace est utilisé pour séparer plusieurs paires `[name]=[value]`.
 
   Exemple : `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
 
-  Pour plus d’informations, voir [vstest.console.exe: Passing RunSettings args](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
+  Pour plus d’informations, voir [Passing RunSettings arguments à travers la ligne de commande](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
 
 ## <a name="examples"></a>Exemples
 

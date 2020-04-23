@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - null-forgiving operator [C#]
 - '! operator [C#]'
-ms.openlocfilehash: a8b47e83ce9e999ea2afe94db0a21725abc2d327
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: f3d06dec42ba117cd30dbf4d05fa4a6f594e57e5
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738567"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82101971"
 ---
 # <a name="-null-forgiving-operator-c-reference"></a>! opérateur (null-forgiving) (référence C)
 
@@ -43,7 +43,7 @@ Si vous pouvez `IsValid` modifier la méthode, vous pouvez utiliser l’attribut
 
 [!code-csharp[Use an attribute](snippets/NullForgivingOperator.cs#UseAttribute)]
 
-Dans l’exemple précédent, vous n’avez pas besoin d’utiliser l’opérateur null-indulgent `p` parce `null` que `if` le compilateur a suffisamment d’informations pour savoir qui ne peut pas être à l’intérieur de la déclaration. Pour plus d’informations sur les attributs qui vous permettent de fournir des informations supplémentaires sur l’état nul d’une variable, voir [Upgrade API avec des attributs pour définir les attentes nulles](../../nullable-attributes.md).
+Dans l’exemple précédent, vous n’avez pas besoin d’utiliser l’opérateur null-indulgent `p` parce `null` que `if` le compilateur a suffisamment d’informations pour savoir qui ne peut pas être à l’intérieur de la déclaration. Pour plus d’informations sur les attributs qui vous permettent de fournir des informations supplémentaires sur l’état nul d’une variable, voir [Upgrade API avec des attributs pour définir les attentes nulles](../attributes/nullable-analysis.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

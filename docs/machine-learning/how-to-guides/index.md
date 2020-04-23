@@ -2,12 +2,12 @@
 title: Guides pratiques ML.NET
 description: Découvrez comment effectuer des tâches spécifiques pour faciliter la création de solutions IA personnalisées et l’intégration de Machine Learning dans vos applications .NET.
 ms.date: 03/01/2019
-ms.openlocfilehash: 25c5cb6247c202e3ef51d0ed25b3b213fdca7a56
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: e83db6f1f754357b7e204485ea545feef9ad4a95
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607530"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102448"
 ---
 # <a name="net-machine-learning-how-to-guides"></a>Guides pratiques pour l’utilisation de Machine Learning avec .NET
 
@@ -27,15 +27,9 @@ Dans la section Procédures du guide ML.NET, vous trouverez rapidement des répo
 
 * [Entraîner un modèle de régression pour prédire une valeur avec ML.NET.](train-machine-learning-model-ml-net.md)
 
-### <a name="evaluate-the-model-quality"></a>Évaluer la qualité du modèle
-
-* [Calculer les métriques pour évaluer la qualité du modèle.](verify-model-quality-ml-net.md)
-
 ### <a name="model-explainability"></a>Explicabilité du modèle
 
 * [Déterminer l’importance des caractéristiques des modèles avec l’option Permutation Feature Importance.](explain-machine-learning-model-permutation-feature-importance-ml-net.md)
-
-* [Utiliser des modèles additifs généralisés et des fonctions de forme pour l’explication des modèles.](use-gams-for-model-explainability.md)
 
 ## <a name="run"></a>Exécuter
 

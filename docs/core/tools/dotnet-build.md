@@ -2,12 +2,12 @@
 title: Commande dotnet build
 description: La commande dotnet build permet de générer un projet et l’ensemble de ses dépendances.
 ms.date: 02/14/2020
-ms.openlocfilehash: 27deca4ab1c12314db5214c73660862a8a57a398
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 1022df059493c7e045f81d4be93dff2fdab77eb1
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463711"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102838"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -43,9 +43,13 @@ Pour les projets exécutables ciblant les versions antérieures à .NET Core 3.0
 
 Pour les projets exécutables ciblant .NET Core 3.0 et plus tard, les dépendances de la bibliothèque sont copiées dans le dossier de sortie. Cela signifie que s’il n’y a pas d’autre logique spécifique à la publication (comme les projets Web), la sortie de construction devrait être déployable.
 
-La génération requiert le fichier *project.assets.json* qui répertorie les dépendances de votre application. Le fichier est [`dotnet restore`](dotnet-restore.md) créé lors de l’exécution. Si le fichier de ressources est absent, les outils ne peuvent pas résoudre les assemblys de référence, ce qui entraîne des erreurs. Avec .NET Core 1.x SDK, `dotnet restore` vous `dotnet build`avez besoin de courir explicitement avant de courir . À compter du SDK .NET Core 2.0, `dotnet restore` s’exécute implicitement quand vous exécutez `dotnet build`. Si vous souhaitez désactiver la restauration implicite au moment d’exécuter la commande de génération, vous pouvez passer l’option `--no-restore`.
+### <a name="implicit-restore"></a>Restauration implicite
+
+La génération requiert le fichier *project.assets.json* qui répertorie les dépendances de votre application. Le fichier est [`dotnet restore`](dotnet-restore.md) créé lors de l’exécution. Si le fichier de ressources est absent, les outils ne peuvent pas résoudre les assemblys de référence, ce qui entraîne des erreurs.
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
+
+### <a name="executable-or-library-output"></a>Sortie exécutable ou bibliothèque
 
 La possibilité d’exécuter le projet ou non est déterminée par la propriété `<OutputType>` dans le fichier projet. L’exemple suivant illustre un projet qui génère du code exécutable :
 

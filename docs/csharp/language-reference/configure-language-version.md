@@ -2,12 +2,12 @@
 title: Gestion des versions du langage C# - Guide C#
 description: Découvrez comment la version linguistique C est déterminée en fonction de votre projet et des raisons de ce choix. Apprenez à remplacer manuellement la valeur par défaut.
 ms.date: 02/21/2020
-ms.openlocfilehash: ef7275aad7638f52ecbfca1dfbdb962ae242fb48
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 850c4a860878593d80aaa3b7b38efaff9e003f43
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399538"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102656"
 ---
 # <a name="c-language-versioning"></a>Gestion des versions du langage C#
 
@@ -20,7 +20,7 @@ C 8.0 (et plus) n’est pris en charge que sur .NET Core 3.x et les versions plu
 - L’implémentation par défaut des membres de l’interface nécessite de nouvelles fonctionnalités dans le CLR .NET Core 3.0.
 - Les flux Async nécessitent <xref:System.IAsyncDisposable?displayProperty=nameWithType> <xref:System.Collections.Generic.IAsyncEnumerable%601?displayProperty=nameWithType>les <xref:System.Collections.Generic.IAsyncEnumerator%601?displayProperty=nameWithType>nouveaux types, , et .
 - Les index et les gammes nécessitent les nouveaux types <xref:System.Index?displayProperty=nameWithType> et <xref:System.Range?displayProperty=nameWithType>.
-- Les types de référence nuls utilisent plusieurs [attributs](../nullable-attributes.md) pour fournir de meilleurs avertissements. Ces attributs ont été ajoutés dans .NET Core 3.0. D’autres cadres cibles n’ont pas été annotés avec l’un de ces attributs. Cela signifie que les avertissements annulés peuvent ne pas refléter avec précision les problèmes potentiels.
+- Les types de référence nuls utilisent plusieurs [attributs](attributes/nullable-analysis.md) pour fournir de meilleurs avertissements. Ces attributs ont été ajoutés dans .NET Core 3.0. D’autres cadres cibles n’ont pas été annotés avec l’un de ces attributs. Cela signifie que les avertissements annulés peuvent ne pas refléter avec précision les problèmes potentiels.
 
 ## <a name="defaults"></a>Valeurs par défaut
 
@@ -31,7 +31,7 @@ Le compilateur détermine une valeur par défaut en fonction de ces règles :
 |.NET Core|3.x|C# 8.0|
 |.NET Core|2.x|C# 7.3|
 |.NET Standard|2.1|C# 8.0|
-|.NET Standard|2|C# 7.3|
+|.NET Standard|2.0|C# 7.3|
 |.NET Standard|1.x|C# 7.3|
 |.NET Framework|all|C# 7.3|
 

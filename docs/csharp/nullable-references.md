@@ -2,29 +2,31 @@
 title: Types références Nullables
 description: Cet article donne un aperçu des types de référence nuls, ajoutés dans C 8.0. Vous allez découvrir comment la fonctionnalité offre une protection contre les exceptions de référence null pour les projets nouveaux ou existants.
 ms.technology: csharp-null-safety
-ms.date: 02/19/2019
-ms.openlocfilehash: bb4c2b6951a38eeb705c7de50ef5d9645350e336
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/21/2020
+ms.openlocfilehash: 589118ffaa9ad39f000e3e5adf2896d114f68dd3
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399426"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82101972"
 ---
 # <a name="nullable-reference-types"></a>Types références Nullables
 
 C# 8.0 introduit des **types référence nullables** et des **types référence non nullables** qui vous permettent d’établir des instructions importantes sur les propriétés de variables de type référence :
 
-- **Une référence n’est pas censée être null**. Lorsque les variables ne sont pas censées être null, le compilateur applique des règles qui garantissent que vous pouvez sans problème déréférencer ces variables sans avoir d’abord à vérifier qu’elles ne sont pas null :
+- **Une référence n’est pas censée être nulle**. Lorsque les variables ne sont pas censées être nulles, le compilateur applique des règles qui garantissent qu’il est sécuritaire de déreférencer ces variables sans d’abord vérifier qu’il n’est pas nul:
   - La variable doit être initialisée avec une valeur non null.
   - La variable ne peut jamais se voir attribuer la valeur `null`.
 - **Une référence peut être null**. Lorsque les variables peuvent être null, le compilateur applique des règles différentes pour garantir que vous avez correctement vérifié une référence null :
   - La variable peut être déréférencée seulement si le compilateur peut garantir que la valeur n’est pas null.
   - Ces variables peuvent être initialisées avec la valeur `null` par défaut et peuvent se voir attribuer la valeur `null` dans un autre code.
 
-Cette nouvelle fonctionnalité fournit des avantages significatifs sur la gestion des variables de référence dans les versions antérieures de C# où l’intention de conception ne pouvait pas être déterminée à partir de la déclaration de variable. Le compilateur ne protégeait pas des exceptions de référence null pour les types référence :
+Cette nouvelle fonctionnalité offre des avantages significatifs sur le traitement des variables de référence dans les versions antérieures de C où l’intention de conception ne peut pas être déterminée à partir de la déclaration variable. Le compilateur ne protégeait pas des exceptions de référence null pour les types référence :
 
-- **Une référence peut être null**. Aucun avertissement n’est émis lorsqu’un type de référence est paradé à null, ou nul est plus tard attribué à elle.
-- **Une référence est censée ne pas être null**. Le compilateur ne génère aucun avertissement quand les types référence sont déréférencés. (Avec des références nullables, le compilateur génère des avertissements si vous déréférencez une variable susceptible d’être null).
+- **Une référence peut être null**. Le compilateur n’émet pas d’avertissements lorsqu’un type de référence est paradé à nul, ou plus tard affecté à nul. Le compilateur émet des avertissements lorsque ces variables sont déreférées sans vérifications nulles.
+- **Une référence est censée ne pas être null**. Le compilateur ne génère aucun avertissement quand les types référence sont déréférencés. Le compilateur émet des avertissements si une variable est réglée à une expression qui peut être nulle.
+
+Ces avertissements sont émis au moment de la compilation. Le compilateur n’ajoute pas de vérifications nulles ou d’autres constructions de temps d’exécution dans un contexte nul. Au moment de l’exécution, une référence annulée et une référence non annulable sont équivalentes.
 
 En ajoutant des types référence nullables, vous pouvez déclarer votre intention plus clairement. La valeur `null` est un bon moyen de représenter qu’une variable ne fait pas référence à une valeur. N’utilisez pas cette fonctionnalité pour supprimer toutes les valeurs `null` de votre code. Déclarez plutôt votre intention au compilateur et aux autres développeurs qui lisent votre code. Quand vous déclarez votre intention, le compilateur vous informe si vous écrivez du code qui n’est pas en phase avec cette intention.
 
@@ -34,7 +36,7 @@ Un **type de référence nullable** est inidqué avec la même syntaxe que celle
 string? name;
 ```
 
-Toute variable où `?` n’est pas ajouté au nom de type est un **type référence non nullable**. Cela comprend toutes les variables de type référence du code existant si vous avez activé cette fonctionnalité.
+Toute variable `?` où le n’est pas annexé au nom de type est un **type de référence non-nullable**. Cela inclut toutes les variables de type de référence dans le code existant lorsque vous avez activé cette fonctionnalité.
 
 Le compilateur utilise l’analyse statique pour déterminer si une référence nullable est connue pour être non null. Le compilateur vous avertit si vous déréférencez une référence nullable quand elle est susceptible d’être null. Vous pouvez remplacer ce comportement en utilisant `!` [l’opérateur null-indulgent](language-reference/operators/null-forgiving.md) suivant un nom variable. Par exemple, si vous savez que la variable `name` n’est pas null alors que le compilateur génère un avertissement, vous pouvez écrire le code suivant pour remplacer l’analyse du compilateur :
 
@@ -48,8 +50,8 @@ Tout type référence peut avoir l’une des quatre *nullabilités*, qui décrit
 
 - *Nonnullable*: Null ne peut pas être affecté à des variables de ce type. Les variables de ce type n’ont pas besoin d’être vérifiées pour savoir si elles ont la valeur null avant d’être déréférencées.
 - *Nullable*: Null peut être affecté à des variables de ce type. Le déréférencement des variables de ce type sans vérifier `null` au préalable génère un avertissement.
-- *Oblivious*: C’est l’état pré-C 8.0. Les variables de ce type peuvent être déréférencées ou attribuées sans avertissement.
-- *Inconnu*: C’est généralement pour les paramètres de type où les contraintes ne disent pas au compilateur que le type doit être *annulé* ou *non ondullable.*
+- *Oblivious*: Oblivious est l’état pré-C 8.0. Les variables de ce type peuvent être déréférencées ou attribuées sans avertissement.
+- *Inconnu*: Inconnu est généralement pour les paramètres de type où les contraintes ne disent pas au compilateur que le type doit être *annulé* ou *nonnullable*.
 
 La nullabilité d’un type dans une déclaration de variable est contrôlée par le *contexte nullable* dans lequel la variable est déclarée.
 
@@ -86,7 +88,9 @@ Vous pouvez aussi utiliser des directives pour définir ces mêmes contextes par
 - `#nullable enable annotations`: Définissez le contexte d’annotation in nullable à **activé**.
 - `#nullable restore annotations`: Restausse le contexte d’avertissement d’annotation aux paramètres du projet.
 
-Par défaut, les contextes d’annotation et d’avertissement in annulables sont **désactivés.** Cela signifie que votre code existant compile sans modifications et sans générer de nouveaux avertissements.
+Par défaut, les contextes d’annotation et d’avertissement in annulables sont **désactivés,** y compris de nouveaux projets. Cela signifie que votre code existant compile sans modifications et sans générer de nouveaux avertissements.
+
+Ces options fournissent deux stratégies distinctes pour mettre à [jour une base de code existante](nullable-migration-strategies.md) pour utiliser des types de référence nuls.
 
 ## <a name="nullable-annotation-context"></a>Contexte d’annotation nullable
 
@@ -103,7 +107,7 @@ Le compilateur utilise les règles suivantes dans un contexte d’annotation nul
 
 - Toute variable d’un type référence est une **référence non nullable**.
 - Toute référence non nullable peut être déréférencée sans problème.
-- Tout type référence nullable (indiqué par `?` après le type dans la déclaration de variable) peut être null. L’analyse statique détermine si la valeur est connue pour être non null quand elle est déréférencée. Si ce n’est pas le cas, le compilateur vous avertit.
+- Tout type référence nullable (indiqué par `?` après le type dans la déclaration de variable) peut être null. L’analyse statique détermine si la valeur est connue pour être non nulle lorsqu’elle est déreférée. Si ce n’est pas le cas, le compilateur vous avertit.
 - Vous pouvez utiliser l’opérateur null-forgiving pour déclarer qu’une référence nullable n’est pas null.
 
 Dans un contexte d’annotation nullable activé, le caractère `?` ajouté à un type référence déclare un **type référence nullable**. `!` **L’opérateur null-indulgent** peut être annexé à une expression pour déclarer que l’expression n’est pas nulle.
@@ -115,7 +119,11 @@ Le contexte d’avertissement nullable est différent du contexte d’annotation
 1. La variable s’est vu définitivement attribuer une valeur non null.
 1. La variable ou l’expression a été vérifiée pour savoir si sa valeur est null avant de la référencer.
 
-Le compilateur génère des avertissements chaque fois que vous déreférencez une variable ou une expression dans un état **peut-être nul** lorsque le contexte d’avertissement annulé est activé. En outre, les avertissements sont générés lorsqu’une variable ou une expression **peut-être nulle** est attribuée à un type de référence non remdable dans un contexte d’annotation nulle activé.
+Le compilateur génère des avertissements lorsque vous déreférencez une variable ou une expression qui est **peut-être nulle** dans un contexte d’avertissement nul. En outre, le compilateur génère des avertissements lorsqu’un type de référence non remdable est attribué à une variable ou à une expression **peut-être nulle** dans un contexte d’annotation annulée activé.
+
+## <a name="attributes-describe-apis"></a>Les attributs décrivent les API
+
+Vous ajoutez des attributs aux API qui fournissent au compilateur plus d’informations sur le moment où les arguments ou les valeurs de retour peuvent ou ne peuvent pas être nuls. Vous pouvez en apprendre davantage sur ces attributs dans notre article dans la référence linguistique couvrant les [attributs nuls](language-reference/attributes/nullable-analysis.md). Ces attributs sont ajoutés aux bibliothèques .NET sur les versions actuelles et à venir. Les API les plus couramment utilisées sont mises à jour en premier.
 
 ## <a name="see-also"></a>Voir aussi
 

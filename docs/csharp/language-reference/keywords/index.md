@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Visual C#, keywords
 - '@ keyword'
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: 928917d25b5f3f97c4b8cdff85efdaa1957be41e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 251046a8bd825a90d817965f9f747d08d4492197
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399314"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102032"
 ---
 # <a name="c-keywords"></a>Mots clés C#
 
@@ -24,26 +24,26 @@ Les mots clés sont des identificateurs réservés prédéfinis, qui ont des sig
   
 |||||  
 |---|---|---|---|  
-|[Abstrait](abstract.md)|[Comme](../operators/type-testing-and-cast.md#as-operator)|[base](base.md)|[Bool](../builtin-types/bool.md)|  
-|[Pause](break.md)|[Octet](../builtin-types/integral-numeric-types.md)|[cas](switch.md)|[catch](try-catch.md)|  
-|[char](../builtin-types/char.md)|[cochée](checked.md)|[Classe](class.md)|[const](const.md)|  
-|[Continuer](continue.md)|[Decimales](../builtin-types/floating-point-numeric-types.md)|[Par défaut](default.md)|[Délégué](../builtin-types/reference-types.md)|  
-|[faire](do.md)|[Double](../builtin-types/floating-point-numeric-types.md)|[Autre](if-else.md)|[Enum](../builtin-types/enum.md)|  
-|[Événement](event.md)|[Explicite](../operators/user-defined-conversion-operators.md)|[Extern](extern.md)|[false](../builtin-types/bool.md)|  
-|[Enfin](try-finally.md)|[Fixe](fixed-statement.md)|[Flotteur](../builtin-types/floating-point-numeric-types.md)|[Pour](for.md)|  
-|[Foreach](foreach-in.md)|[Goto](goto.md)|[Si](if-else.md)|[Implicite](../operators/user-defined-conversion-operators.md)|  
-|[Dans](in.md)|[int](../builtin-types/integral-numeric-types.md)|[Interface](interface.md)|[Interne](internal.md)|
-|[Est](is.md)|[Verrouillage](lock-statement.md)|[Long](../builtin-types/integral-numeric-types.md)|[Namespace](namespace.md)|
-|[Nouveau](../operators/new-operator.md)|[Null](null.md)|[Objet](../builtin-types/reference-types.md)|[Opérateur](../operators/operator-overloading.md)|
-|[out](out.md)|[Substituer](override.md)|[Params](params.md)|[Privé](private.md)|
-|[Protégé](protected.md)|[public](public.md)|[Readonly](readonly.md)|[ref](ref.md)|
-|[Retour](return.md)|[Sbyte](../builtin-types/integral-numeric-types.md)|[sealed](sealed.md)|[short](../builtin-types/integral-numeric-types.md)||
-[sizeof](../operators/sizeof.md)|[stackalloc](../operators/stackalloc.md)|[Statique](static.md)|[String](../builtin-types/reference-types.md)|
-|[struct](../builtin-types/struct.md)|[Interrupteur](switch.md)|[Ce](this.md)|[Jeter](throw.md)|
+|[Abstrait](abstract.md)|[Comme](../operators/type-testing-and-cast.md#as-operator)|[base](base.md)|[bool](../builtin-types/bool.md)|  
+|[Pause](break.md)|[byte](../builtin-types/integral-numeric-types.md)|[Cas](switch.md)|[catch](try-catch.md)|  
+|[char](../builtin-types/char.md)|[Vérifié](checked.md)|[class](class.md)|[const](const.md)|  
+|[Continuer](continue.md)|[decimal](../builtin-types/floating-point-numeric-types.md)|[Par défaut](default.md)|[Délégué](../builtin-types/reference-types.md)|  
+|[do](do.md)|[double](../builtin-types/floating-point-numeric-types.md)|[else](if-else.md)|[Enum](../builtin-types/enum.md)|  
+|[event](event.md)|[Explicite](../operators/user-defined-conversion-operators.md)|[extern](extern.md)|[false](../builtin-types/bool.md)|  
+|[Enfin](try-finally.md)|[Fixe](fixed-statement.md)|[float](../builtin-types/floating-point-numeric-types.md)|[for](for.md)|  
+|[Foreach](foreach-in.md)|[Goto](goto.md)|[if](if-else.md)|[Implicite](../operators/user-defined-conversion-operators.md)|  
+|[Dans](in.md)|[int](../builtin-types/integral-numeric-types.md)|[interface](interface.md)|[internal](internal.md)|
+|[Est](is.md)|[Verrouillage](lock-statement.md)|[Long](../builtin-types/integral-numeric-types.md)|[namespace](namespace.md)|
+|[new](../operators/new-operator.md)|[Null](null.md)|[Objet](../builtin-types/reference-types.md)|[Opérateur](../operators/operator-overloading.md)|
+|[out](out.md)|[override](override.md)|[params](params.md)|[private](private.md)|
+|[protected](protected.md)|[Public](public.md)|[Readonly](readonly.md)|[ref](ref.md)|
+|[Retour](return.md)|[sbyte](../builtin-types/integral-numeric-types.md)|[sealed](sealed.md)|[Court](../builtin-types/integral-numeric-types.md)||
+[sizeof](../operators/sizeof.md)|[stackalloc](../operators/stackalloc.md)|[static](static.md)|[string](../builtin-types/reference-types.md)|
+|[struct](../builtin-types/struct.md)|[Interrupteur](switch.md)|[this](this.md)|[Jeter](throw.md)|
 |[true](../builtin-types/bool.md)|[Essayer](try-catch.md)|[typeof](../operators/type-testing-and-cast.md#typeof-operator)|[uint](../builtin-types/integral-numeric-types.md)|
-|[Ulong](../builtin-types/integral-numeric-types.md)|[non cochée](unchecked.md)|[Dangereux](unsafe.md)|[ushort](../builtin-types/integral-numeric-types.md)|
-|[Utilisant](using.md)|[using static](using-static.md)|[Virtuel](virtual.md)|[void](../builtin-types/void.md)|
-|[Volatile](volatile.md)|[Tandis que](while.md)|
+|[Ulong](../builtin-types/integral-numeric-types.md)|[unchecked](unchecked.md)|[Dangereux](unsafe.md)|[ushort](../builtin-types/integral-numeric-types.md)|
+|[using](using.md)|[virtual](virtual.md)|[void](../builtin-types/void.md)|[volatile](volatile.md)|
+|[Tandis que](while.md)|
 
 ## <a name="contextual-keywords"></a>Mots clés contextuels
 
@@ -51,17 +51,17 @@ Les mots clés sont des identificateurs réservés prédéfinis, qui ont des sig
   
 ||||  
 |---|---|---|  
-|[ajouter](add.md)|[alias](extern-alias.md)|[Ascendant](ascending.md)|
-|[Async](async.md)|[Attendent](../operators/await.md)|[Par](by.md)|
-|[Descendant](descending.md)|[Dynamique](../builtin-types/reference-types.md)|[Égale](equals.md)|
-|[De](from-clause.md)|[get](get.md)|[globale](../operators/namespace-alias-qualifier.md)|
-|[groupe](group-clause.md)|[en](into.md)|[Rejoindre](join-clause.md)|
-|[Laisser](let-clause.md)|[nameof](../operators/nameof.md)|[on](on.md)|
-|[Orderby](orderby-clause.md)|[partial (type)](partial-type.md)|[partial (méthode)](partial-method.md)|
+|[add](add.md)|[Alias](extern-alias.md)|[ascending](ascending.md)|
+|[async](async.md)|[Attendent](../operators/await.md)|[Par](by.md)|
+|[descending](descending.md)|[dynamique](../builtin-types/reference-types.md)|[equals](equals.md)|
+|[from](from-clause.md)|[get](get.md)|[Mondiale](../operators/namespace-alias-qualifier.md)|
+|[groupe](group-clause.md)|[into](into.md)|[join](join-clause.md)|
+|[Laisser](let-clause.md)|[nameof](../operators/nameof.md)|[Sur](on.md)|
+|[Orderby](orderby-clause.md)|[partielle (type)](partial-type.md)|[partielle (méthode)](partial-method.md)|
 |[retirer](remove.md)|[Sélectionnez](select-clause.md)|[Ensemble](set.md)|
 |[non gestion (contrainte de type générique)](where-generic-type-constraint.md)|[value](value.md)|[Var](var.md)|
 |[when (condition de filtre)](when.md)|[where (contrainte de type générique)](where-generic-type-constraint.md)|[where (clause de requête)](where-clause.md)|
-|[Rendement](yield.md)| | |
+|[yield](yield.md)| | |
   
 ## <a name="see-also"></a>Voir aussi
 

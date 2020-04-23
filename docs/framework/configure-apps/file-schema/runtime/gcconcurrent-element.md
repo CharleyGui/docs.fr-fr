@@ -9,12 +9,12 @@ helpviewer_keywords:
 - gcConcurrent element
 - <gcConcurrent> element
 ms.assetid: 503f55ba-26ed-45ac-a2ea-caf994da04cd
-ms.openlocfilehash: 5957337aa960a0d5f445249b410dbfaddb7b08e9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 249518ae7477d284d50f9010757db83b7752c657
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400042"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102916"
 ---
 # <a name="gcconcurrent-element"></a>\<gcConcurrent> élément
 
@@ -59,7 +59,7 @@ Aucun.
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
 Avant .NET Framework 4, la collecte des ordures de poste de travail a soutenu la collecte simultanée des ordures, qui a effectué la collecte des ordures en arrière-plan sur un fil séparé. Dans .NET Framework 4, la collecte simultanée des ordures a été remplacée par GC de fond, qui effectue également la collecte des ordures en arrière-plan sur un fil séparé. À partir de .NET Framework 4.5, la collecte d’arrière-plan est devenue disponible dans la collecte des ordures serveur. **L’élément gcConcurrent** contrôle si le temps d’exécution effectue la collecte des ordures simultanées ou de fond, s’il est disponible, ou s’il effectue la collecte des ordures au premier plan.
 
@@ -82,9 +82,9 @@ Le fichier de configuration suivant désactive la collecte des ordures de fond :
 
 S’il y a un paramètre **gcConcurrentSetting** dans le fichier de configuration de la machine, il définit la valeur par défaut pour toutes les applications cadre .NET. Ce paramètre se substitue au paramètre du fichier de configuration de l'application.
 
-Pour plus d’informations sur la collecte simultanée et de fond des ordures, voir la [collecte des ordures de la collecte des ordures simultanées,](../../../../standard/garbage-collection/fundamentals.md#concurrent-garbage-collection)la collecte des ordures de poste de travail de [fond,](../../../../standard/garbage-collection/fundamentals.md#background-workstation-garbage-collection)et les sections [de collecte des ordures de serveur d’arrière-plan](../../../../standard/garbage-collection/fundamentals.md#background-server-garbage-collection) dans [l’article fundamentals of Garbage Collection.](../../../../standard/garbage-collection/fundamentals.md)
+Pour plus d’informations sur la collecte des ordures simultanées et de fond, voir [Collection d’ordures de fond](../../../../standard/garbage-collection/background-gc.md).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant permet la collecte des ordures de fond :
 
@@ -98,6 +98,6 @@ L’exemple suivant permet la collecte des ordures de fond :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d'exécution](index.md)
+- [Paramètres de durée d’exécution Schema](index.md)
 - [Configuration Fichier Schema](../index.md)
 - [Principes de base du Garbage Collection](../../../../standard/garbage-collection/fundamentals.md)

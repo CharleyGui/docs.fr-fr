@@ -1,32 +1,32 @@
 ---
-title: LOH sur Windows - .NET
+title: Grand tas d’objets (LOH) sur Windows
 ms.date: 05/02/2018
 helpviewer_keywords:
 - large object heap (LOH)"
 - LOH
 - garbage collection, large object heap
 - GC [.NET ], large object heap
-ms.openlocfilehash: 5125b76dd26ffa4fb363ecf8449f65b490f57b93
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ab9beca58b3d6118bc0f5121b6f5dec71a9f9f36
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74283618"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102266"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Tas de grands objets sur les systèmes Windows
 
-Le récupérateur de mémoire .NET divise les objets en petits et grands objets. Quand un objet est grand, certains de ses attributs prennent plus d’importance que s’il est petit. Son compactage, par exemple, (c'est-à-dire sa copie en mémoire ailleurs sur le tas) peut coûter cher. Pour cette raison, le récupérateur de mémoire .NET place les grands objets sur le tas de grands objets (LOH). Dans cette rubrique, nous étudions en détail le tas de grands objets : qu’est-ce qui permet de qualifier un objet de grand, comment ces grands objets sont nettoyés et quelle est leur implication sur les performances.
+Le collecteur d’ordures .NET (GC) divise les objets en petits et grands objets. Quand un objet est grand, certains de ses attributs prennent plus d’importance que s’il est petit. Par exemple, le&mdash;compactage qui est, le copier&mdash;en mémoire ailleurs sur le tas peut être coûteux. Pour cette raison, le collecteur d’ordures place de grands objets sur le tas de gros objets (LOH). Cet article traite de ce qui qualifie un objet comme un grand objet, comment de grands objets sont collectés, et quel genre d’implications de performance de grands objets imposent.
 
 > [!IMPORTANT]
-> Cette rubrique décrit le tas de grands objets dans le .NET Framework et .NET Core exécutés sur les systèmes Windows uniquement. Elle ne couvre pas le LOH exécuté sur des implémentations de .NET sur d’autres plateformes.
+> Cet article traite du tas de gros objets dans .NET Framework et .NET Core fonctionnant uniquement sur les systèmes Windows. Elle ne couvre pas le LOH exécuté sur des implémentations de .NET sur d’autres plateformes.
 
-## <a name="how-an-object-ends-up-on-the-large-object-heap-and-how-gc-handles-them"></a>Comment un objet arrive sur le tas de grands objets et comment il est géré par le récupérateur de mémoire
+## <a name="how-an-object-ends-up-on-the-loh"></a>Comment un objet se retrouve sur le LOH
 
 Si un objet est supérieur ou égal à 85 000 octets de taille, il est considéré comme un objet de grande taille. Ce chiffre a été déterminé par le réglage des performances. Quand une demande d’allocation d’objet est de 85 000 octets ou plus, le runtime l’alloue sur le tas de grands objets.
 
-Pour comprendre ce que cela signifie, examinons quelques notions de base du récupérateur de mémoire .NET.
+Pour comprendre ce que cela signifie, il est utile d’examiner certains principes fondamentaux sur le collecteur d’ordures.
 
-Le récupérateur de mémoire .NET est un nettoyeur générationnel. Il a trois générations : génération 0, génération 1 et génération 2. La raison de ces 3 générations est que la plupart des objets meurent dans la génération 0 (dans une application optimisée). Par exemple, dans une application serveur, les allocations associées à chaque demande doivent mourir une fois la demande terminée. Les demandes d’allocation en cours passent en génération 1 et y meurent. La génération 1 joue, pour ainsi dire, le rôle de tampon entre les zones d’objets jeunes et les zones d’objets qui vivent déjà depuis un certain temps.
+Le collecteur d’ordures est un collectionneur générationnel. Il a trois générations : génération 0, génération 1 et génération 2. La raison de ces 3 générations est que la plupart des objets meurent dans la génération 0 (dans une application optimisée). Par exemple, dans une application serveur, les allocations associées à chaque demande doivent mourir une fois la demande terminée. Les demandes d’allocation en cours passent en génération 1 et y meurent. La génération 1 joue, pour ainsi dire, le rôle de tampon entre les zones d’objets jeunes et les zones d’objets qui vivent déjà depuis un certain temps.
 
 Les petits objets sont toujours alloués dans la génération 0 et, selon leur durée de vie, peuvent être promus dans les générations 1 ou 2. Les grands objets sont toujours alloués dans la génération 2.
 
@@ -64,7 +64,7 @@ Figure 3 : LOH après un GC de la génération 2
 
 ## <a name="when-is-a-large-object-collected"></a>Quand un grand objet est-il collecté ?
 
-En règle générale, un GC est déclenché quand l’une des 3 conditions suivantes est remplie :
+En général, un GC se produit sous l’une des trois conditions suivantes :
 
 - L’allocation dépasse le seuil des grands objets ou de la génération 0.
 
@@ -80,7 +80,7 @@ En règle générale, un GC est déclenché quand l’une des 3 conditions suiva
 
   Cela se produit quand le récupérateur de mémoire reçoit une notification de mémoire haute du système d’exploitation. Si le récupérateur de mémoire pense qu’un GC de la génération 2 peut être productif, il le déclenche.
 
-## <a name="loh-performance-implications"></a>Implications sur les performances du LOH
+## <a name="loh-performance-implications"></a>Incidences sur le rendement de LOH
 
 Les allocations sur le tas de grands objets impacte les performances des façons suivantes.
 
@@ -122,7 +122,7 @@ Les allocations sur le tas de grands objets impacte les performances des façons
 
 Des trois facteurs, les deux premiers ont généralement plus d’impact que le troisième. Pour cette raison, nous vous recommandons d’allouer un pool de grands objets que vous réutilisez au lieu d’allouer des objets temporaires.
 
-## <a name="collecting-performance-data-for-the-loh"></a>Collection de données de performances pour le LOH
+## <a name="collect-performance-data-for-the-loh"></a>Recueillir des données sur le rendement pour le LOH
 
 Avant de collecter des données de performances pour une zone spécifique, vous devez déjà avoir effectué les étapes suivantes :
 
@@ -310,6 +310,6 @@ Cette commande entre dans le débbugger et montre la pile d’appel que si [Virt
 
 CLR 2.0 a ajouté une fonctionnalité appelée *VM Hoarding* (Réserve de mémoire virtuelle) qui peut être utile dans les scénarios où des segments (y compris ceux des tas de petits et grands objets) sont fréquemment acquis et libérés. Pour utiliser la fonctionnalité VM Hoarding, vous spécifiez un indicateur de démarrage appelé `STARTUP_HOARD_GC_VM` via l’API d’hébergement. Au lieu de renvoyer des segments vides au système d’exploitation, le CLR annule la réservation de mémoire sur ces segments et les met sur liste d’attente. (Notez que le CLR ne le fait pas pour les segments qui sont trop grands.) Le CLR utilise plus tard ces segments pour satisfaire les nouvelles demandes de segment. La prochaine fois que votre application a besoin d’un nouveau segment, le CLR en utilise un de cette liste d’attente, s’il est assez grand.
 
-La fonctionnalité VM Hoarding est également utile pour les applications qui veulent garder les segments déjà acquis, comme certaines applications serveur qui sont les applications principales exécutées sur le système, pour éviter les exceptions de mémoire insuffisante.
+La thésaurisation VM est également utile pour les applications qui veulent conserver les segments qu’ils ont déjà acquis, tels que certaines applications serveur qui sont les applications dominantes en cours d’exécution sur le système, pour éviter les exceptions hors mémoire.
 
 Nous vous recommandons vivement de tester soigneusement votre application quand vous utilisez cette fonctionnalité, pour vérifier qu’elle utilise la mémoire de façon suffisamment stable.

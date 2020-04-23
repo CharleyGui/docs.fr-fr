@@ -2,12 +2,12 @@
 title: Commande dotnet restore
 description: Découvrez comment restaurer les dépendances et les outils spécifiques du projet avec la commande dotnet restore.
 ms.date: 02/27/2020
-ms.openlocfilehash: c5cc9adf1d77b0ab03a61cc315d42c2f38362ad9
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 3deef68a9bcee389a52291c72e7e1a1019a739fd
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021773"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102786"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -34,9 +34,22 @@ dotnet restore -h|--help
 
 La commande `dotnet restore` utilise NuGet pour restaurer les dépendances, ainsi que les outils spécifiques aux projets qui sont spécifiés dans le fichier projet. Par défaut, la restauration des dépendances et celle des outils sont exécutées en parallèle.
 
-Pour restaurer les dépendances, NuGet a besoin des flux où sont situés les packages. Les flux sont généralement fournis via le fichier de configuration *nuget.config*. Un fichier de configuration par défaut est fourni lors de l’installation du SDK .NET Core. Vous pouvez spécifier d’autres flux en créant votre propre fichier *nuget.config* dans le répertoire du projet. Vous pouvez remplacer les flux *nuget.config* avec `-s` l’option.
+### <a name="specify-feeds"></a>Spécifier les flux
+
+Pour restaurer les dépendances, NuGet a besoin des flux où sont situés les packages. Les flux sont généralement fournis via le fichier de configuration *nuget.config*. Un fichier de configuration par défaut est fourni lors de l’installation du SDK .NET Core. Pour spécifier des flux supplémentaires, faites l’un des éléments suivants :
+
+- Créez votre propre fichier *nuget.config* dans l’annuaire du projet. Pour plus d’informations, voir [configurations NuGet communes](/nuget/consume-packages/configuring-nuget-behavior) et [nuget.config différences](#nugetconfig-differences) plus tard dans cet article.
+- Utilisez `dotnet nuget` des commandes [`dotnet nuget add source`](dotnet-nuget-add-source.md)telles que .
+
+Vous pouvez remplacer les flux *nuget.config* avec l’option. `-s`
+
+Pour plus d’informations sur la façon d’utiliser les aliments authentifiés, voir [Les paquets de consommation des flux authentifiés](/nuget/consume-packages/consuming-packages-authenticated-feeds).
+
+### <a name="package-cache"></a>Cache de paquet
 
 Pour les dépendances, vous pouvez spécifier l’emplacement des packages restaurés pendant l’opération de restauration à l’aide de l’argument `--packages`. Si aucune valeur n’est spécifiée, le cache du package NuGet par défaut est utilisé. Il se trouve dans le répertoire `.nuget/packages`, situé dans le répertoire de base de l’utilisateur, sur tous les systèmes d’exploitation. Par exemple, */home/user1* sur Linux ou *C:\Users\user1* sur Windows.
+
+### <a name="project-specific-tooling"></a>Outillage spécifique au projet
 
 Pour les outils spécifiques au projet, `dotnet restore` commence par restaurer le package dans lequel l’outil est empaqueté, puis il restaure les dépendances de l’outil, comme spécifié dans son fichier projet.
 

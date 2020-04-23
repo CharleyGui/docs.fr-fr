@@ -2,12 +2,12 @@
 title: Indications de mise en forme du code F#
 description: Apprenez des lignes directrices pour le formatage du code F.
 ms.date: 11/04/2019
-ms.openlocfilehash: b8be70dd29a04e71614308164e541b99a1724305
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: dd48380a90ee92b2c1edaaabc116fa1cd8010390
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81739554"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102487"
 ---
 # <a name="f-code-formatting-guidelines"></a>Indications de mise en forme du code F#
 
@@ -178,7 +178,7 @@ Les commentaires inline devraient capitaliser la première lettre.
 let f x = x + 1 // Increment by one.
 ```
 
-## <a name="naming-conventions"></a>Conventions d'attribution d'un nom
+## <a name="naming-conventions"></a>Conventions d’affectation de noms
 
 ### <a name="use-camelcase-for-class-bound-expression-bound-and-pattern-bound-values-and-functions"></a>Utilisez camelCase pour les valeurs et les fonctions liées à la classe, liées à l’expression et liées aux motifs
 
@@ -579,10 +579,10 @@ Lorsque vous généez des tableaux `->` `do ... yield` et des listes programmati
 
 ```fsharp
 // Preferred
-let squares = [ for x in 1..10 -> x*x ]
+let squares = [ for x in 1..10 -> x * x ]
 
 // Not preferred
-let squares' = [ for x in 1..10 do yield x*x ]
+let squares' = [ for x in 1..10 do yield x * x ]
 ```
 
 Les anciennes versions de la `yield` langue F requises spécifiant dans les situations où les données peuvent être générées sous condition, ou il peut y avoir des expressions consécutives à évaluer. Préférez omettre `yield` ces mots clés à moins que vous ne devez compiler avec une ancienne version linguistique de F :
@@ -816,10 +816,10 @@ let function1 a b = a - b * b
 ```fsharp
 // A1 and A2 are local modules.
 module A1 =
-    let function1 a b = a*a + b*b
+    let function1 a b = a * a + b * b
 
 module A2 =
-    let function2 a b = a*a - b*b
+    let function2 a b = a * a - b * b
 ```
 
 ### <a name="formatting-object-expressions-and-interfaces"></a>Formater les expressions et les interfaces d’objets
@@ -878,7 +878,7 @@ type MyRecord =
 
 ### <a name="formatting-attributes-on-parameters"></a>Formatage des attributs sur les paramètres
 
-Les attributs peuvent également être des endroits sur les paramètres. Dans ce cas, placez-le alors sur la même ligne que le paramètre et avant le nom :
+Les attributs peuvent également être placés sur les paramètres. Dans ce cas, placez-le alors sur la même ligne que le paramètre et avant le nom :
 
 ```fsharp
 // Defines a class that takes an optional value as input defaulting to false.
