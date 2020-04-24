@@ -2,12 +2,12 @@
 title: Collections (C#)
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-ms.openlocfilehash: a560155b936aef7a4a346d39eaed75e0a85c1a73
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d2996648690fc03b5f1d6a90e0be96155c5a24ed
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169881"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645465"
 ---
 # <a name="collections-c"></a>Collections (C#)
 
@@ -44,7 +44,7 @@ Si votre collection contient des éléments d’un seul type de données, vous p
 
 - [Définition d’une collection personnalisée](#BKMK_CustomCollection)
 
-- [Itérateurs](#BKMK_Iterators)
+- [Iterators](#BKMK_Iterators)
 
 <a name="BKMK_SimpleCollection"></a>
 
@@ -602,8 +602,8 @@ private static IEnumerable<int> EvenSequence(
 - [Concepts de programmation (C#)](./index.md)
 - [Option Strict (instruction)](../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [LINQ to Objects (C#)](./linq/linq-to-objects.md)
-- [Parallel LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)
+- [Parallel LINQ (PLINQ)](../../../standard/parallel-programming/introduction-to-plinq.md)
 - [Collections et structures de données](../../../standard/collections/index.md)
 - [Sélection d’une classe de collection](../../../standard/collections/selecting-a-collection-class.md)
-- [Comparaisons et tris dans les collections](../../../standard/collections/comparisons-and-sorts-within-collections.md)
+- [Comparaisons et tris au sein des collections](../../../standard/collections/comparisons-and-sorts-within-collections.md)
 - [Quand utiliser les collections génériques](../../../standard/collections/when-to-use-generic-collections.md)

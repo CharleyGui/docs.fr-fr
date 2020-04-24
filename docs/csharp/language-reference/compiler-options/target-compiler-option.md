@@ -9,35 +9,35 @@ helpviewer_keywords:
 - assemblies [C#], compiling
 - -target compiler options [C#]
 ms.assetid: a18bbd8e-bbf7-49e7-992c-717d0eb1f76f
-ms.openlocfilehash: af7bd917f57c8752a2026fbb98aa8b22adc98db7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ea5481810e629d911c4d5aba62e60c98d0783f34
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74204514"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81644357"
 ---
 # <a name="-target-c-compiler-options"></a>-target (Options du compilateur C#)
 **L’option compilateur cible** peut être spécifiée dans l’une des quatre formes :  
   
- [-cible:appcontainerexe](./target-appcontainerexe-compiler-option.md)  
+ [-target:appcontainerexe](./target-appcontainerexe-compiler-option.md)  
  Pour créer un fichier .exe pour windows 8.x Store applications.  
   
- [/target:exe](./target-exe-compiler-option.md)  
+ [-target:exe](./target-exe-compiler-option.md)  
  Pour créer un fichier .exe.  
   
- [/target:library](./target-library-compiler-option.md)  
+ [-target:library](./target-library-compiler-option.md)  
  Pour créer une bibliothèque de code.  
   
- [-cible:module](./target-module-compiler-option.md)  
+ [-target:module](./target-module-compiler-option.md)  
  Pour créer un module.  
   
- [/target:winexe](./target-winexe-compiler-option.md)  
+ [-target:winexe](./target-winexe-compiler-option.md)  
  Pour créer un programme Windows.  
   
- [/target:winmdobj](./target-winmdobj-compiler-option.md)  
+ [-target:winmdobj](./target-winmdobj-compiler-option.md)  
  Pour créer un fichier .winmdobj intermédiaire.  
   
- Sauf si vous spécifiez **-cible:module**, **-cible** provoque un manifeste d’assemblage cadre .NET à placer dans un fichier de sortie. Pour plus d’informations, voir [Assemblées en .NET](../../../standard/assembly/index.md) et [Attributs communs](../../programming-guide/concepts/attributes/common-attributes.md).  
+ Sauf si vous spécifiez **-cible:module**, **-cible** provoque un manifeste d’assemblage cadre .NET à placer dans un fichier de sortie. Pour plus d’informations, voir [Assemblées en .NET](../../../standard/assembly/index.md) et [Attributs communs](../attributes/global.md).  
   
  Le manifeste de l’assembly est placé dans le premier fichier de sortie .exe dans la compilation ou dans le premier fichier DLL, en l’absence de fichier de sortie .exe. Par exemple, dans la ligne de commande suivante, le manifeste est placé dans `1.exe` :  
   

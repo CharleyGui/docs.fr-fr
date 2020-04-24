@@ -7,12 +7,12 @@ helpviewer_keywords:
 - modules, Assembly Linker
 - assembly manifest, Assembly Linker
 ms.assetid: b5382965-0053-47cf-b92f-862860275a01
-ms.openlocfilehash: 8e60bdaedb403237383c4655e728443747af29e6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9877c1a4e86d035b614bf421364e3281878f0d8f
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400091"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645594"
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (Assembly Linker)
 
@@ -73,11 +73,11 @@ Vous pouvez spécifier les `options` ci-dessous. L’option **/out** est obligat
 |**/trade[mark]:**`text`|Spécifie une chaîne pour le champ **Marque** de l'assembly. Placez la chaîne entre guillemets doubles (" ") si `text` contient un espace. Cette chaîne est un attribut personnalisé dans l'assembly et elle est disponible pour l'affichage avec réflexion.<br /><br /> Si vous ne spécifiez pas **/win32res**, **/trademark** s’affiche dans l’Explorateur de fichiers comme la ressource Win32 **Marque**.<br /><br /> Si le texte est une chaîne vide, la ressource **Marque** Win32 apparaît comme un espace unique.<br /><br /> Si vous spécifiez **/win32res**, **/trademark** n’a pas d’effet sur les informations de la ressource Win32.<br /><br /> Vous pouvez également spécifier cette option comme attribut personnalisé (<xref:System.Reflection.AssemblyTrademarkAttribute>) dans le code source de n'importe quel module MSIL.|
 |**/v[ersion]:**`version`|Spécifie les informations de version concernant cet assembly. Le format de la `major`chaîne de version est . `minor`. `build`. `revision`. La valeur par défaut est de 0.<br /><br /> Si vous spécifiez **/version**, vous devez également spécifier `major`. Si vous spécifiez `major` et `minor`, vous pouvez indiquer un astérisque (\*) pour `build`. `build` est alors égal au nombre de jours écoulés depuis le 1er janvier 2000, heure locale, tandis que `revision` est égal au nombre de secondes écoulées depuis minuit, heure locale, divisé par 2.<br /><br /> Si vous spécifiez `major`, `minor` et `build`, vous pouvez spécifier un astérisque pour `revision`. `revision` est égal au nombre de secondes écoulées depuis minuit (heure locale), divisé par 2.<br /><br /> En résumé, les chaînes de version valides sont les suivantes :<br /><br /> X<br /><br /> X.X<br /><br /> X.X.\*<br /><br /> X.X.X<br /><br /> X.X.X.\*<br /><br /> X.X.X.X<br /><br /> où X est une constante abrégée non signée, à l'exception de 65 535 (0-65 534).<br /><br /> Si vous ne spécifiez pas **/win32res**, **/version** est utilisé comme la ressource Win32 **Version de l’assembly**.<br /><br /> Si vous ne spécifiez pas **/win32res**, **/productversion** et **/fileversion**, **/version** est utilisé pour les ressources Win32 **Version de l’assembly**, Version de fichier et **Version du produit**.<br /><br /> Si vous spécifiez **/win32res**, **/version** n’a pas d’effet sur les informations de la ressource Win32.<br /><br /> Vous pouvez également spécifier cette option comme attribut personnalisé (<xref:System.Reflection.AssemblyVersionAttribute>) dans le code source de n'importe quel module MSIL.|
 |**/win32icon:**`filename`|Insère un fichier .ico dans l'assembly. Le fichier .ico donne au fichier de sortie l'aspect souhaité dans l'Explorateur de fichiers.|
-|**/win32res:** `filename`|Insère une ressource Win32 (fichier .res) dans le fichier de sortie. Un fichier de ressources Win32 peut être créé à l'aide du compilateur de ressources. Le compilateur de ressources est appelé lorsque vous compilez un programme Visual C++ ; un fichier .res est alors créé à partir du fichier .rc.|
+|**/win32res:**`filename`|Insère une ressource Win32 (fichier .res) dans le fichier de sortie. Un fichier de ressources Win32 peut être créé à l'aide du compilateur de ressources. Le compilateur de ressources est appelé lorsque vous compilez un programme Visual C++ ; un fichier .res est alors créé à partir du fichier .rc.|
 |`@filename`|Spécifie un fichier réponse qui contient les commandes *Al.exe*.<br /><br /> Les commandes du fichier réponse peuvent apparaître chacune sur une ligne ou sur la même ligne, séparées par un ou plusieurs espaces.|
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
 Tous les compilateurs Visual Studio génèrent des assemblys. Si, toutefois, vous disposez d'un ou de plusieurs modules (métadonnées sans manifeste), vous pouvez utiliser *Al.exe* pour créer un assembly avec le manifeste dans un fichier séparé.
 
@@ -163,7 +163,7 @@ Le tableau suivant liste les erreurs générées par *Al.exe*.
 |al1076|Le type 'type' est transféré à plusieurs assemblys : 'assembly' et 'assembly'.<br /><br /> Un type peut être transféré à un seul assembly.|
 |al1077|Le type public 'type' est défini dans 'assembly' et transféré à 'assembly'.<br /><br /> Il existe un type public en double dans l'assembly généré. L'un d'eux est une définition de type valide et l'autre est un redirecteur de type.|
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 La commande suivante crée un fichier exécutable *t2a.exe* avec un assembly dans le module `t2.netmodule`. Le point d'entrée est la méthode `Main` dans `MyClass`.
 
@@ -173,8 +173,8 @@ al t2.netmodule /target:exe /out:t2a.exe /main:MyClass.Main
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](index.md)
-- [*Sn.exe* (Strong Name Tool)](sn-exe-strong-name-tool.md)
+- [outils](index.md)
+- [*Sn.exe* (Outil de nom fort)](sn-exe-strong-name-tool.md)
 - [*Gacutil.exe* (Global Assembly Cache Tool)](gacutil-exe-gac-tool.md)
-- [Programmation à l’aide d’assemblys](../../standard/assembly/program.md)
-- [Invites de commandes](developer-command-prompt-for-vs.md)
+- [Programmation à l’aide d’assemblys](../../standard/assembly/index.md)
+- [Invite de commande](developer-command-prompt-for-vs.md)

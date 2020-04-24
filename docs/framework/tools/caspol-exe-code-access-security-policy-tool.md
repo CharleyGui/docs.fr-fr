@@ -15,18 +15,18 @@ helpviewer_keywords:
 - security policy [.NET Framework], modifying
 - manually editing security configuration files
 ms.assetid: d2bf6123-7b0c-4e60-87ad-a39a1c3eb2e0
-ms.openlocfilehash: 792d89351b3759984b085fd8aee9c3ae8e012c09
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a5a4068d0bf6f6f158ea9b2880785e227f96243d
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180415"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645572"
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (outil Stratégie de sécurité d'accès du code)
 L'outil Stratégie de sécurité d'accès du code (CAS) (Caspol.exe) permet aux utilisateurs et aux administrateurs de modifier la stratégie de sécurité au niveau de l'ordinateur, de l'utilisateur et de l'entreprise.  
   
 > [!IMPORTANT]
-> À partir du cadre .NET 4, Caspol.exe n’affecte pas la politique de la `true`SAE à moins que [ \<l’héritageCasPolicy> élément](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) est fixé à . Tous les paramètres affichés ou modifiés par CasPol.exe affectent uniquement les applications qui choisissent d'utiliser la stratégie CAS. Pour plus d’informations, consultez [Changements en matière de sécurité](../security/security-changes.md).  
+> À partir du cadre .NET 4, Caspol.exe n’affecte pas la politique de la `true`SAE à moins que [ \<l’héritageCasPolicy> élément](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) est fixé à . Tous les paramètres affichés ou modifiés par CasPol.exe affectent uniquement les applications qui choisissent d'utiliser la stratégie CAS. Pour plus d’informations, consultez [Changements en matière de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).  
   
 > [!NOTE]
 > Les ordinateurs 64 bits comprennent des versions 64 bits et 32 bits de stratégie de sécurité. Pour garantir que vos modifications de stratégie s'appliquent aux applications 32 bits et 64 bits, exécutez les versions 32 bits et 64 bits de Caspol.exe.  
@@ -54,7 +54,7 @@ caspol [options]
 |**-customall**  *path*<br /><br /> or<br /><br /> **-ca**  *path*|Indique que toutes les options qui suivent celle-ci s'appliquent aux stratégies de l'ordinateur, de l'entreprise et de l'utilisateur personnalisé spécifié. Vous devez spécifier l’emplacement du fichier de configuration de sécurité associé à l’utilisateur personnalisé dans l’argument *path*.|  
 |**-cu**[**stomuser**] *path*|Permet d'administrer une stratégie d'utilisateur personnalisée qui n'appartient pas à l'utilisateur pour lequel Caspol.exe s'exécute. Vous devez spécifier l’emplacement du fichier de configuration de sécurité associé à l’utilisateur personnalisé dans l’argument *path*.|  
 |**-entreprise**<br /><br /> or<br /><br /> **-fr**|Indique que toutes les options qui suivent celle-ci s'appliquent à la stratégie de niveau entreprise. Les utilisateurs qui ne sont pas des administrateurs de l'entreprise ne bénéficient pas d'autorisations suffisantes pour modifier la stratégie de l'entreprise, même s'ils peuvent l'afficher. Dans les scénarios qui ne se situent pas au niveau de l'entreprise, cette stratégie n'a, par défaut, aucune incidence sur les stratégies de niveau ordinateur et utilisateur.|  
-|**-e**[**xecution**] {**on** &#124; **off**}|Active ou désactive le mécanisme qui vérifie l'autorisation à mettre en œuvre avant que le code ne commence à s'exécuter. **Note:**  Ce commutateur est supprimé dans le cadre .NET 4 et les versions ultérieures. Pour plus d’informations, consultez [Changements en matière de sécurité](../security/security-changes.md).|  
+|**-e**[**xecution**] {**on** &#124; **off**}|Active ou désactive le mécanisme qui vérifie l'autorisation à mettre en œuvre avant que le code ne commence à s'exécuter. **Note:**  Ce commutateur est supprimé dans le cadre .NET 4 et les versions ultérieures. Pour plus d’informations, consultez [Changements en matière de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).|  
 |**-f**[**orce**]|Supprime le test d'autodestruction de l'outil et modifie la stratégie selon les instructions de l'utilisateur. Normalement, Caspol.exe vérifie si les changements de stratégie sont susceptibles de nuire à son exécution correcte. Le cas échéant, Caspol.exe n'enregistre pas la modification et imprime un message d'erreur. Pour obliger Caspol.exe à modifier la stratégie même si cela l'empêche de s'exécuter, utilisez l'option **–force**.|  
 |**-h**[**elp**]|Affiche la syntaxe de commande et les options de Caspol.exe.|  
 |**-l**[**ist**]|Affiche la hiérarchie des groupes de codes et les jeux d'autorisations définis pour l'ordinateur, l'utilisateur ou l'entreprise spécifiés ou pour tous les niveaux de stratégie. Caspol.exe affiche d'abord l'étiquette du groupe de codes, puis son nom s'il n'est pas nul.|  
@@ -73,7 +73,7 @@ caspol [options]
 |**-resetlockdown**<br /><br /> or<br /><br /> **-rsld**|Retourne la version plus restrictive de l'état par défaut de la stratégie et l'enregistre sur le disque ; crée une sauvegarde de la stratégie antérieure de l'ordinateur et l'enregistre sur un fichier `security.config.bac`.  La stratégie verrouillée est similaire à la stratégie par défaut, mais elle n'accorde aucune autorisation pour coder à partir des zones `Local Intranet`, `Trusted Sites` et `Internet` et les groupes de codes correspondants n'ont pas de groupes de codes enfants.|  
 |**-resolvegroup** *assembly_file*<br /><br /> or<br /><br /> **-rsg**  *assembly_file*|Affiche les groupes de codes auxquels appartient un assembly particulier (*assembly_file*). Par défaut, cette option affiche la stratégie de niveau ordinateur, utilisateur et entreprise auxquels appartient l'assembly. Pour afficher un seul niveau de stratégie, utilisez cette option avec l'option **-machine**, **-user** ou **-enterprise**.|  
 |**-resolveperm** *assembly_file*<br /><br /> or<br /><br /> **-rsp** *assembly_file*|Affiche toutes les autorisations que le niveau de stratégie de sécurité spécifié (ou par défaut) accorderait à l'assembly si ce dernier avait la possibilité de s'exécuter. L’argument *assembly_file* spécifie l’assembly. Si vous spécifiez l'option **-all**, Caspol.exe calcule les autorisations de l'assembly sur la base de la stratégie de l'utilisateur, de l'ordinateur et de l'entreprise ; sinon, les règles de comportement par défaut s'appliquent.|  
-|**-s**[**ecurity**] {**on** &#124; **off**}|Active ou désactive la sécurité d'accès du code. L'option **-s off** ne désactive pas la sécurité basée sur les rôles. **Note:**  Ce commutateur est supprimé dans le cadre .NET 4 et les versions ultérieures. Pour plus d’informations, consultez [Changements en matière de sécurité](../security/security-changes.md). **Attention :** Quand la sécurité d'accès du code est désactivée, toutes les demandes d'accès au code aboutissent. La désactivation de la sécurité expose le système aux attaques de code nuisible tel que les virus et les vers. La désactivation de la sécurité permet d'améliorer les performances, mais ne doit être utilisée que lorsque d'autres mesures de sécurité ont été prises pour permettre de s'assurer que la sécurité globale du système ne sera pas compromise. Ces autres mesures de sécurité consistent notamment à déconnecter les réseaux publics, à sécuriser physiquement les ordinateurs, etc.|  
+|**-s**[**ecurity**] {**on** &#124; **off**}|Active ou désactive la sécurité d'accès du code. L'option **-s off** ne désactive pas la sécurité basée sur les rôles. **Note:**  Ce commutateur est supprimé dans le cadre .NET 4 et les versions ultérieures. Pour plus d’informations, consultez [Changements en matière de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes). **Attention :** Quand la sécurité d'accès du code est désactivée, toutes les demandes d'accès au code aboutissent. La désactivation de la sécurité expose le système aux attaques de code nuisible tel que les virus et les vers. La désactivation de la sécurité permet d'améliorer les performances, mais ne doit être utilisée que lorsque d'autres mesures de sécurité ont été prises pour permettre de s'assurer que la sécurité globale du système ne sera pas compromise. Ces autres mesures de sécurité consistent notamment à déconnecter les réseaux publics, à sécuriser physiquement les ordinateurs, etc.|  
 |**-u**[**ser**]|Indique que toutes les options qui suivent celle-ci s'appliquent à la stratégie de niveau utilisateur associée à l'utilisateur pour le compte duquel Caspol.exe est exécuté. Pour les utilisateurs qui ne sont pas des administrateurs, **-user** est l'option par défaut.|  
 |**-?**|Affiche la syntaxe de commande et les options de Caspol.exe.|  
   
@@ -100,7 +100,7 @@ caspol [options]
 |**-levelfinal** {**on**&#124;**off**}|Quand cette option est définie sur **on**, cela indique qu’aucun des niveaux de stratégie inférieurs au niveau du groupe de codes ajouté ou modifié n'est pris en compte. Cette option est généralement utilisée au niveau de la stratégie de l'ordinateur. Par exemple, si vous définissez cet indicateur pour un groupe de codes au niveau de l'ordinateur et qu'il existe un code satisfaisant à la condition d'appartenance de ce groupe de codes, Caspol.exe ne calcule pas (ni n'applique) la stratégie de niveau utilisateur pour ce code.|  
 |**-name** "*nom*"|S’il est utilisé avec l'option **–addgroup**, spécifie le nom de script d'un groupe de codes à ajouter. S’il est utilisé avec l'option **–chggroup**, spécifie le nom de script d'un groupe de codes à modifier. L’argument *name* doit être entouré de guillemets doubles. L’argument *name* ne doit pas commencer par un chiffre et ne peut contenir que les lettres de A à Z, les chiffres de 0 à 9 et le caractère de soulignement. Vous pouvez faire référence aux groupes de codes par cet argument *name* au lieu d'utiliser leur étiquette numérique. L'argument *name* est également très utile dans les scripts.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
  La stratégie de sécurité se définit sur trois niveaux : ordinateur, utilisateur et entreprise. Le jeu d'autorisations dont bénéficie un assembly est déterminé par l'intersection entre les jeux d'autorisations accordés par ces trois niveaux de stratégie. Chaque niveau de stratégie est représenté par une structure hiérarchique de groupes de codes. Chaque groupe de codes possède une condition d'appartenance qui détermine quel code est membre de ce groupe. Un jeu d'autorisations nommé est également associé à chaque groupe de codes. Ce jeu d'autorisations spécifie les autorisations que peut accorder le runtime au code qui satisfait à la condition d'appartenance. Une hiérarchie de groupes de codes et les jeux d'autorisations nommés associés définissent et gèrent chaque niveau de la stratégie de sécurité. Vous pouvez utiliser les options **–user**, **-customuser**, **–machine** et **-enterprise** pour définir le niveau de stratégie de sécurité.  
   
  Pour plus d'informations sur les stratégies de sécurité et sur la manière dont le runtime détermine les autorisations à accorder au code, consultez [Gestion de la stratégie de sécurité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100)).  
@@ -246,5 +246,5 @@ caspol -all -resolveperm testassembly
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](index.md)
-- [Invites de commandes](developer-command-prompt-for-vs.md)
+- [outils](index.md)
+- [Invite de commande](developer-command-prompt-for-vs.md)

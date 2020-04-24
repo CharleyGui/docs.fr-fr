@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tasks, ETW events
 ms.assetid: 87a9cff5-d86f-4e44-a06e-d12764d0dce2
-ms.openlocfilehash: 93fcd3215bdcbb30960f19e23ae15f32bb9ddd84
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 61429babf7378b9d271ffd60a6228ae4bfe7a5e5
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716096"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81644245"
 ---
 # <a name="etw-events-in-task-parallel-library-and-plinq"></a>Événements ETW dans la bibliothèque parallèle de tâches et PLINQ
 
-La bibliothèque parallèle de tâches et PLINQ génèrent les événements de suivi d’événements pour Windows (ETW) que vous pouvez utiliser pour profiler et dépanner des applications à l’aide d’outils tels que Windows Performance Analyzer. Toutefois, dans la plupart des scénarios, la meilleure façon de profiler du code d’application parallèle consiste à utiliser le [visualiseur concurrentiel](/visualstudio/profiling/concurrency-visualizer) dans Visual Studio.
+La bibliothèque parallèle de tâches et PLINQ génèrent les événements de suivi d’événements pour Windows (ETW) que vous pouvez utiliser pour profiler et dépanner des applications à l’aide d’outils tels que Windows Performance Analyzer. Cependant, dans la plupart des scénarios, la meilleure façon de profiler le code d’application parallèle est d’utiliser le [Visualizer Concurrency](/visualstudio/profiling/concurrency-visualizer) dans Visual Studio.
 
 ## <a name="task-parallel-library-etw-events"></a>Événements ETW de la bibliothèque parallèle de tâches
 
@@ -29,7 +29,7 @@ EVENT_DESCRIPTOR.Id = 1
 
 #### <a name="user-data"></a>Données utilisateur
 
-|**Name**|**Type**|**Description**|
+|**Nom**|**Type**|**Description**|
 |--------------|--------------|---------------------|
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|
@@ -45,7 +45,7 @@ EVENT_DESCRIPTOR.Id = 1
 
 #### <a name="user-data"></a>Données utilisateur
 
-|**Name**|**Type**|**Description**|
+|**Nom**|**Type**|**Description**|
 |--------------|--------------|---------------------|
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|
@@ -59,7 +59,7 @@ EVENT_DESCRIPTOR.Id = 1
 
 #### <a name="user-data"></a>Données utilisateur
 
-|**Name**|**Type**|**Description**|
+|**Nom**|**Type**|**Description**|
 |--------------|--------------|---------------------|
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|
@@ -75,7 +75,7 @@ EVENT_DESCRIPTOR.Id = 1
 
 #### <a name="user-data"></a>Données utilisateur
 
-|**Name**|**Type**|**Description**|
+|**Nom**|**Type**|**Description**|
 |--------------|--------------|---------------------|
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|
@@ -93,7 +93,7 @@ EVENT_DESCRIPTOR.Id = 1
 
 #### <a name="user-data"></a>Données utilisateur
 
-|**Name**|**Type**|**Description**|
+|**Nom**|**Type**|**Description**|
 |--------------|--------------|---------------------|
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|
@@ -106,7 +106,7 @@ EVENT_DESCRIPTOR.Id = 1
 
 #### <a name="user-data"></a>Données utilisateur
 
-|**Name**|**Type**|**Description**|
+|**Nom**|**Type**|**Description**|
 |--------------|--------------|---------------------|
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|
@@ -114,6 +114,6 @@ EVENT_DESCRIPTOR.Id = 1
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Événements ETW dans le .NET Framework](etw-events.md)
-- [La bibliothèque parallèle de tâches](../../standard/parallel-programming/task-parallel-library-tpl.md)
-- [Parallel LINQ (PLINQ)](../../standard/parallel-programming/parallel-linq-plinq.md)
+- [ETW Events in the .NET Framework](etw-events.md)
+- [Bibliothèque parallèle de tâches](../../standard/parallel-programming/task-parallel-library-tpl.md)
+- [Parallel LINQ (PLINQ)](../../standard/parallel-programming/introduction-to-plinq.md)

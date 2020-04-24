@@ -8,25 +8,25 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: d5657f4081577b2a27bc3c2f6880784015c56060
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: f56ba7d68be107e697d3f732767f0a5f11c1a622
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249693"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81644228"
 ---
 # <a name="whats-new-in-net-framework"></a>Quoi de neuf dans le cadre .NET
 
 Cet article résume les principales nouvelles fonctionnalités et améliorations des versions suivantes du .NET Framework :
 
 - [.NET Framework 4.8](#v48)
-- [.NET Framework 4.7.2](#v472)
+- [.NET Framework 4.7.2](#v472)
 - [.NET Framework 4.7.1](#v471)
 - [.NET Framework 4.7](#v47)
 - [.NET Framework 4.6.2](#v462)
 - [.NET Framework 4.6.1](#v461)
 - [.NET 2015 et .NET Framework 4.6](#v46)
-- [.NET Framework 4.5.2](#v452)
+- [.NET Framework 4.5.2](#v452)
 - [.NET Framework 4.5.1](#v451)
 - [.NET Framework 4.5](#v45)
 
@@ -202,7 +202,7 @@ Le runtime de .NET Framework 4.8 comprend les nouvelles modifications et amélio
 - [Classes de base](#core-472)
 - [ASP.NET](#asp-net472)
 - [Mise en réseau](#net472)
-- [Sql](#sql472)
+- [SQL](#sql472)
 - [WPF](#wpf472)
 - [ClickOnce](#clickonce)
 
@@ -434,7 +434,7 @@ Vous pouvez ajouter SameSite pour des cookies <xref:System.Web.Security.FormsAut
 
 <a name="net472" />
 
-#### <a name="networking"></a>Réseau
+#### <a name="networking"></a>Mise en réseau
 
 **Implémentation des propriétés HttpClientHandler**
 
@@ -630,7 +630,7 @@ Les modifications apportées à la collecte des ordures (GC) dans le cadre .NET 
 
 <a name="net471"/>
 
-#### <a name="networking"></a>Réseau
+#### <a name="networking"></a>Mise en réseau
 
 **Prise en charge de SHA-2 pour Message.HashAlgorithm**
 
@@ -695,11 +695,11 @@ Vous pouvez voir un [exemple des améliorations apportées au chiffrement de .NE
 
 **Meilleure prise en charge des caractères de contrôle par le DataContractJsonSerializer**
 
-Dans .NET Framework 4.7, le <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> sérialise les caractères de contrôle conformément à la norme ECMAScript 6. Ce comportement est activé par défaut pour les applications qui ciblent .NET Framework 4.7, et cette fonctionnalité doit être activée pour les applications qui s’exécutent sous .NET Framework 4.7 mais qui ciblent une version antérieure du .NET Framework. Pour plus d'informations, consultez [Modifications de reciblage dans le .NET Framework 4.7](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
+Dans .NET Framework 4.7, la <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> classe sérialis les personnages de contrôle conformément à la norme ECMAScript 6. Ce comportement est activé par défaut pour les applications qui ciblent .NET Framework 4.7, et est une fonctionnalité d’opt-in pour les applications qui sont en cours d’exécution sous .NET Framework 4.7 mais ciblent une version précédente de .NET Framework. Pour plus d’informations, consultez la section [compatibilité de l’application.](../migration-guide/application-compatibility.md)
 
 <a name="net47" />
 
-#### <a name="networking"></a>Réseau
+#### <a name="networking"></a>Mise en réseau
 
 .NET Framework 4.7 ajoute les fonctionnalités liées au réseau suivantes :
 
@@ -768,11 +768,11 @@ Dans .NET Framework 4.7, WPF propose les améliorations suivantes :
 
 **Prise en charge d’une pile tactile/de stylet basée sur les messages Windows WM_POINTER**
 
-Vous pouvez désormais utiliser une fonction tactile ou stylet basée sur les [messages WM_POINTER](https://docs.microsoft.com/previous-versions/windows/desktop/InputMsg/messages), au lieu de la plateforme WISP (Windows Ink Services Platform). Il s’agit d’une fonctionnalité à activer dans le .NET Framework. Pour plus d'informations, consultez [Modifications de reciblage dans le .NET Framework 4.7](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
+Vous pouvez désormais utiliser une fonction tactile ou stylet basée sur les [messages WM_POINTER](https://docs.microsoft.com/previous-versions/windows/desktop/InputMsg/messages), au lieu de la plateforme WISP (Windows Ink Services Platform). Il s’agit d’une fonction d’opt-in dans .NET Framework. Pour plus d’informations, consultez la section [compatibilité de l’application.](../migration-guide/application-compatibility.md)
 
 **Nouvelle implémentation pour l’impression d’API WPF**
 
-Les API d’impression de WPF de la classe <xref:System.Printing.PrintQueue?displayProperty=nameWithType> appellent l’[API Print Document Package](/windows/desktop/printdocs/tailored-app-printing-api) de Windows au lieu de l’[API d’impression XPS](/windows/desktop/printdocs/xps-printing) dépréciée. Pour connaître l’impact de cette modification sur la compatibilité des applications, consultez [Reciblage des modifications dans le .NET Framework 4.7](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
+Les API d’impression de WPF de la classe <xref:System.Printing.PrintQueue?displayProperty=nameWithType> appellent l’[API Print Document Package](/windows/desktop/printdocs/tailored-app-printing-api) de Windows au lieu de l’[API d’impression XPS](/windows/desktop/printdocs/xps-printing) dépréciée. Pour l’impact de cette modification sur la compatibilité d’application, consultez la section [compatibilité de l’application.](../migration-guide/application-compatibility.md)
 
 <a name="v462" />
 
@@ -1308,7 +1308,7 @@ Désormais, SqlClient fournit automatiquement une connexion plus rapide à un gr
 
 Windows Presentation Foundation inclut un certain nombre d’améliorations et de modifications.
 
-**Amélioration des performances**
+**performances améliorées**
 
 Le retard de déclenchement d’événements tactiles a été résolu dans le .NET Framework 4.6.1. En outre, la saisie dans un contrôle <xref:System.Windows.Controls.RichTextBox> ne mobilise plus le thread de rendu pendant la saisie rapide.
 
@@ -2128,7 +2128,7 @@ Le projet Bibliothèque de classes portable dans Visual Studio 2012 (et les vers
 
 - [Versions finales hors plage de .NET Framework](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Nouveautés du .NET Framework dans le domaine de l’accessibilité](whats-new-in-accessibility.md)
-- [Nouveautés dans Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
+- [Quoi de neuf dans Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
 - [Nouveautés dans Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
 - [ASP.NET](/aspnet)
 - [Nouveautés de C++ dans Visual Studio](/cpp/what-s-new-for-visual-cpp-in-visual-studio)

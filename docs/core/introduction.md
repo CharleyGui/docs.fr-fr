@@ -4,16 +4,16 @@ description: .NET Core est une implémentation modulaire et haute performance de
 author: richlander
 ms.date: 03/26/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: a20cdda5cbd366d04e7ee9e8df3d1b15d10c1f4a
-ms.sourcegitcommit: a9b8945630426a575ab0a332e568edc807666d1b
+ms.openlocfilehash: f99b446bbd38b2b814c13afa13ab34cd5c9aa086
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391159"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645524"
 ---
 # <a name="introduction-to-net-core"></a>Introduction à .NET Core
 
-[.NET Core](about.md) est une plate-forme de développement [open-source,](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT)polyvalente. Vous pouvez créer des applications .NET Core pour Windows, macOS et Linux pour les processeurs x64, x86, ARM32 et ARM64 à l’aide de plusieurs langages de programmation. Cadres et API sont fournis pour [le cloud](/aspnet/core/), [IoT](/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0), [l’interface utilisateur client](/dotnet/desktop-wpf/overview/index), et [l’apprentissage automatique](/dotnet/machine-learning/).
+[.NET Core](about.md) est une plate-forme de développement [open-source,](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT)polyvalente. Vous pouvez créer des applications .NET Core pour Windows, macOS et Linux pour les processeurs x64, x86, ARM32 et ARM64 à l’aide de plusieurs langages de programmation. Cadres et API sont fournis pour [le cloud](/aspnet/core/), [IoT](/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0), [l’interface utilisateur client](../desktop-wpf/overview/index.md), et [l’apprentissage automatique](/dotnet/machine-learning/).
 
 [Téléchargez le .NET Core SDK](https://dotnet.microsoft.com/download) pour essayer .NET Core sur votre machine. La dernière version est [.NET Core 3.1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-1/).
 
@@ -43,7 +43,7 @@ Vous devez normalement voir la sortie suivante.
 Hello World!
 ```
 
-## <a name="contribute"></a>Participez
+## <a name="contribute"></a>Collaboration
 
 .NET Core est une plate-forme ouverte. Tout le monde est le bienvenu pour participer.
 

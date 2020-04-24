@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XAML [WPF], TemplateBinding markup extension
 - TemplateBinding markup extensions [WPF]
 ms.assetid: 1d25bbfc-dbc2-499d-9f12-419d23d4ac6a
-ms.openlocfilehash: 8cebbf717f66b072bc84b2068193ff2fe76ea87b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8c631a5a78db90187f0375181d4d4d1832159b7d
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187281"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646167"
 ---
 # <a name="templatebinding-markup-extension"></a>TemplateBinding, extension de balisage
 Cette extension lie la valeur d'une propriété dans un modèle de contrôle afin de la définir comme valeur d'une autre propriété exposée dans le contrôle basé sur un modèle.  
@@ -37,7 +37,7 @@ Cette extension lie la valeur d'une propriété dans un modèle de contrôle afi
 |`propertyName`|<xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType> de la propriété définie dans la syntaxe de méthode setter.|  
 |`sourceProperty`|Autre propriété de dépendance qui existe sur le type basé sur un modèle, spécifiée par <xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>.<br /><br /> - ou -<br /><br /> Nom de propriété « dotted-down » défini par un autre type que le type de cible basé sur un modèle. Il s'agit en réalité d'un <xref:System.Windows.PropertyPath>. Voir [PropertyPath XAML Syntax](propertypath-xaml-syntax.md).|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
  A `TemplateBinding` est une forme optimisée d’une [liaison](binding-markup-extension.md) pour `Binding` les `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}`scénarios de modèle, analogue à un construit avec . `TemplateBinding` est toujours une liaison unidirectionnelle, même si les propriétés ont comme valeur par défaut des liaisons bidirectionnelles. Les deux propriétés doivent toutes être des propriétés de dépendance. Afin d’atteindre la liaison bidirectionnel à un `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=MyDependencyProperty}`parent modélné utiliser l’instruction contraignante suivante à la place .
   
  [RelativeSource](relativesource-markupextension.md) est une autre extension de balisage `TemplateBinding` qui est parfois utilisée en conjonction avec ou au lieu de afin d’effectuer la liaison relative de propriété dans un modèle.  
@@ -64,7 +64,7 @@ Cette extension lie la valeur d'une propriété dans un modèle de contrôle afi
 
 - <xref:System.Windows.Style>
 - <xref:System.Windows.Controls.ControlTemplate>
-- [Application d’un style et création de modèles](../controls/styling-and-templating.md)
+- [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
 - [Extensions de balisage et XAML WPF](markup-extensions-and-wpf-xaml.md)
 - [RelativeSource, extension de balisage](relativesource-markupextension.md)

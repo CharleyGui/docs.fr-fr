@@ -6,12 +6,12 @@ helpviewer_keywords:
 - element tree [WPF]
 - visual tree [WPF]
 ms.assetid: e83f25e5-d66b-4fc7-92d2-50130c9a6649
-ms.openlocfilehash: 696772da1ebee405493f2ff0e1481daf93d08ec7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: aed4350f1a7084b7894a70ac9d6d00cf25b39e34
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187019"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646200"
 ---
 # <a name="trees-in-wpf"></a>Arborescences dans WPF
 Dans de nombreuses technologies, les éléments et les composants sont organisés en une arborescence, où les développeurs manipulent directement les nœuds d’objet dans l’arborescence pour modifier le rendu ou le comportement d’une application. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] utilise également plusieurs métaphores d’arborescence pour définir des relations entre des éléments du programme. Pour la plupart, les développeurs WPF peuvent créer une application dans le code ou définir des parties de l’application en XAML, en se représentant mentalement la métaphore de l’arborescence des objets, mais en appelant pour cela une API spécifique ou en utilisant un balisage spécifique, au lieu d’utiliser une API générale de manipulation d’une arborescence d’objets, comme ce peut être le cas dans le modèle DOM XML. WPF expose deux classes d’aide qui <xref:System.Windows.LogicalTreeHelper> fournissent <xref:System.Windows.Media.VisualTreeHelper>une vue de métaphore d’arbre, et . Les termes « arborescence d’éléments visuels » et « arborescence logique » sont également utilisés dans la documentation WPF, car ils sont utiles pour comprendre le comportement de certaines fonctionnalités clés de WPF. Ce sujet définit ce que l’arbre visuel et l’arbre logique représentent, discute <xref:System.Windows.LogicalTreeHelper> <xref:System.Windows.Media.VisualTreeHelper>comment ces arbres se rapportent à un concept global d’arbre d’objet, et introduit et s.  
@@ -37,7 +37,7 @@ Dans de nombreuses technologies, les éléments et les composants sont organisé
   
  Cependant, l’arbre logique n’est pas le graphique d’objet entier qui existe pour votre interface utilisateur d’application au moment de l’exécution, même avec les éléments de syntaxe implicite XAML pris en compte. La raison principale de cela est les visuels et les modèles. Par exemple, <xref:System.Windows.Controls.Button>considérez le . L’arbre logique <xref:System.Windows.Controls.Button> rapporte l’objet et aussi sa chaîne `Content`. Mais il y a plus que ce bouton dans l’arborescence d’objets à l’exécution. En particulier, le bouton n’apparaît à l’écran que comme il le fait parce qu’un modèle de contrôle spécifique <xref:System.Windows.Controls.Button> a été appliqué. Les visuels qui proviennent d’un modèle appliqué <xref:System.Windows.Controls.Border> (comme le modèle défini de gris foncé autour du bouton visuel) ne sont pas signalés dans l’arbre logique, même si vous regardez l’arbre logique pendant le temps de fonctionnement (comme la manipulation d’un événement d’entrée de l’interface utilisateur visible, puis la lecture de l’arbre logique). Pour rechercher les éléments visuels du modèle, vous devez au lieu de cela examiner l’arborescence d’éléments visuels.  
   
- Pour plus d’informations sur la façon dont la syntaxe [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] est mappée au graphe d’objets créé et sur la syntaxe implicite en XAML, consultez [Syntaxe XAML en détail](xaml-syntax-in-detail.md) ou [Vue d’ensemble de XAML (WPF)](xaml-overview-wpf.md).  
+ Pour plus d’informations sur la façon dont la syntaxe [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] est mappée au graphe d’objets créé et sur la syntaxe implicite en XAML, consultez [Syntaxe XAML en détail](xaml-syntax-in-detail.md) ou [Vue d’ensemble de XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md).  
   
 <a name="tree_property_inheritance_event_routing"></a>
 ### <a name="the-purpose-of-the-logical-tree"></a>Objectif de l’arborescence logique  
@@ -86,8 +86,8 @@ Dans de nombreuses technologies, les éléments et les composants sont organisé
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des entrées](input-overview.md)
-- [Vue d’ensemble du rendu graphique de WPF](../graphics-multimedia/wpf-graphics-rendering-overview.md)
+- [Vue d'ensemble des entrées](input-overview.md)
+- [Vue d'ensemble du rendu graphique de WPF](../graphics-multimedia/wpf-graphics-rendering-overview.md)
 - [Vue d'ensemble des événements routés](routed-events-overview.md)
 - [Initialisation d'éléments objet ne figurant pas dans une arborescence d'objets](initialization-for-object-elements-not-in-an-object-tree.md)
 - [Architecture de WPF](wpf-architecture.md)

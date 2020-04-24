@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 ms.topic: tutorial
 ms.custom: mvc,vs-dotnet
-ms.openlocfilehash: facb9ebebd9ce1904886a946277185ac2c2e4bc4
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 9381873faa8cca1accf95d823f5183a218d28813
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463923"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646414"
 ---
 # <a name="tutorial-create-your-first-wpf-application-in-visual-studio-2019"></a>Tutorial: Créez votre première application WPF dans Visual Studio 2019
 
@@ -358,7 +358,7 @@ L’illustration suivante montre les éléments d’interface utilisateur ajout�
 
 ## <a name="style-controls"></a>Contrôles de style
 
-L’apparition de divers éléments est souvent la même pour tous les éléments du même type dans une interface utilisateur. L’interface utilisateur utilise des [styles](../controls/styling-and-templating.md) pour rendre les apparences réutilisables sur plusieurs éléments. La réutilisabilité des styles permet de simplifier la création et la gestion de XAML. Cette section remplace par des styles les attributs d’élément qui ont été définis lors des étapes précédentes.
+L’apparition de divers éléments est souvent la même pour tous les éléments du même type dans une interface utilisateur. L’interface utilisateur utilise des [styles](../../../desktop-wpf/fundamentals/styles-templates-overview.md) pour rendre les apparences réutilisables sur plusieurs éléments. La réutilisabilité des styles permet de simplifier la création et la gestion de XAML. Cette section remplace par des styles les attributs d’élément qui ont été définis lors des étapes précédentes.
 
 1. Ouvrez *Application.xaml* ou *App.xaml*.
 
@@ -481,7 +481,7 @@ L’illustration suivante montre `ExpenseIt` les deux pages de l’application a
 Dans ce pas-là, vous avez appris un certain nombre de techniques pour créer une interface utilisateur en utilisant Windows Presentation Foundation (WPF). Vous devez maintenant avoir une compréhension de base des éléments constitutifs d’une application .NET liée aux données. Pour plus d’informations sur les modèles d’architecture et de programmation WPF, consultez les rubriques suivantes :
 
 - [Architecture WPF](../advanced/wpf-architecture.md)
-- [Vue d’ensemble XAML (WPF)](../advanced/xaml-overview-wpf.md)
+- [Vue d’ensemble XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
 - [Aperçu des propriétés de dépendance](../advanced/dependency-properties-overview.md)
 - [Mise en page](../advanced/layout.md)
 

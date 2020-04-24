@@ -4,12 +4,12 @@ description: Comprendre le fonctionnement de la gestion de version C# et .NET
 ms.date: 01/08/2017
 ms.technology: csharp-advanced-concepts
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: 124cce51865f04a555bc121fb6ce18cc95591bdc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dc192337e4eaa5f9f1d6509ea8c15deeac34a48c
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156465"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645454"
 ---
 # <a name="versioning-in-c"></a>Gestion de versions en C\#
 
@@ -43,7 +43,7 @@ Voici quelques éléments à prendre en compte quand vous tentez de maintenir la
 - Méthodes virtuelles : quand vous rendez une méthode virtuelle non virtuelle dans la nouvelle version, cela signifie que les projets qui substituent cette méthode doivent être mis à jour. Il s’agit là d’une modification avec rupture importante qui est vivement déconseillée.
 - Signatures de méthode : Lors de la mise à jour d’un comportement de méthode vous oblige à changer sa signature ainsi, vous devriez plutôt créer une surcharge de sorte que le code appelant dans cette méthode fonctionnera toujours.
 Vous pouvez toujours manipuler l’ancienne signature de méthode pour appeler la nouvelle signature de méthode afin que l’implémentation reste cohérente.
-- [Attribut obsolète](programming-guide/concepts/attributes/common-attributes.md#Obsolete) : vous pouvez utiliser cet attribut dans votre code pour spécifier des classes ou membres de classe dépréciés et susceptibles d’être supprimés dans les prochaines versions. Cela garantit que les développeurs utilisant votre bibliothèque sont mieux préparés pour les modifications avec rupture.
+- [Attribut obsolète](language-reference/attributes/general.md#obsolete-attribute) : vous pouvez utiliser cet attribut dans votre code pour spécifier des classes ou membres de classe dépréciés et susceptibles d’être supprimés dans les prochaines versions. Cela garantit que les développeurs utilisant votre bibliothèque sont mieux préparés pour les modifications avec rupture.
 - Arguments de méthode facultatifs : quand vous rendez obligatoires des arguments de méthode auparavant facultatifs ou modifiez leur valeur par défaut, tout le code qui ne fournit pas ces arguments doit être mis à jour.
 
 > [!NOTE]

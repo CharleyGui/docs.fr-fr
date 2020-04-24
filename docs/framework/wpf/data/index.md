@@ -8,21 +8,21 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], data
 - data [WPF]
 ms.assetid: dea454e2-abd8-4c53-ba37-d3ed53187d64
-ms.openlocfilehash: aa8f872e807eccb81d0f1ca2c838485bb254c7c0
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: a1ea8e10225eb9a4dcd4f20a23820c3757445fbf
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460286"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646450"
 ---
 # <a name="data"></a>Données
-La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] offre un moyen simple et cohérent pour les applications de présenter les données et d’interagir avec elles. Les éléments peuvent être liés à des données provenant de diverses sources de données sous la forme d’objets common language runtime (CLR) et XML. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit également un mécanisme de transfert de données via des opérations de glisser-déplacer.  
+La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] offre un moyen simple et cohérent pour les applications de présenter les données et d’interagir avec elles. Les éléments peuvent être liés aux données provenant d’une variété de sources de données sous la forme d’objets de temps d’exécution de langage courant (CLR) et de XML. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit également un mécanisme de transfert de données via des opérations de glisser-déplacer.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Liaison de données](data-binding-wpf.md)  
+ [Liaison de données](../../../desktop-wpf/data/data-binding-overview.md)  
  [Glisser-déposer](../advanced/drag-and-drop.md)  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Informations de référence  
  <xref:System.Windows.Data>  
   
  <xref:System.Windows.Data.Binding>  
@@ -31,7 +31,7 @@ La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
   
  <xref:System.Windows.Controls.DataTemplateSelector>  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles](../controls/index.md)  
   
  [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
@@ -41,4 +41,4 @@ La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
 ## <a name="see-also"></a>Voir aussi
 
 - [Procédure pas à pas : ma première application de bureau WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)
-- [Procédure pas à pas : mise en cache de données d’application dans une application WPF](../advanced/walkthrough-caching-application-data-in-a-wpf-application.md)
+- [Procédure pas à pas : mise en cache des données d’application dans une application WPF](../advanced/walkthrough-caching-application-data-in-a-wpf-application.md)

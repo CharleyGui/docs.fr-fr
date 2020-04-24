@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - base elements [WPF]
 ms.assetid: 2c997092-72c6-4767-bc84-74267f4eee72
-ms.openlocfilehash: 7d52d951d4fa4df83bbcca6b4cb479e18e532d2a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f6519675ebf3624152e1077e7582f04e38b1dce9
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79141626"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81644037"
 ---
 # <a name="base-elements-overview"></a>Vue d'ensemble des éléments de base
 Un pourcentage élevé [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] de classes sont dérivées de quatre classes qui sont communément appelées dans la documentation SDK comme les classes d’éléments de base. Ces classes <xref:System.Windows.UIElement> <xref:System.Windows.FrameworkElement>sont <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkContentElement>, , et . La <xref:System.Windows.DependencyObject> classe est également liée, parce qu’il s’agit d’une classe de base commune des deux <xref:System.Windows.UIElement> et<xref:System.Windows.ContentElement>  
@@ -47,7 +47,7 @@ Un pourcentage élevé [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
   
 - Prise en charge des styles et des tables de montage séquentiel. Pour plus d’informations, voir <xref:System.Windows.Style> et [Storyboards Aperçu](../graphics-multimedia/storyboards-overview.md).  
   
-- Prise en charge de la liaison de données. Pour plus d’informations, voir [Aperçu de la liaison des données](../data/data-binding-overview.md).  
+- Prise en charge de la liaison de données. Pour plus d’informations, voir [Aperçu de la liaison des données](../../../desktop-wpf/data/data-binding-overview.md).  
   
 - Prise en charge des références de ressource dynamique. Pour plus d’informations, consultez [Ressources XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md).  
   
@@ -67,7 +67,7 @@ Un pourcentage élevé [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
   
 - Prise en charge des styles et des tables de montage séquentiel. Pour plus d’informations, voir <xref:System.Windows.Style> et Aperçu de [l’animation](../graphics-multimedia/animation-overview.md).  
   
-- Prise en charge de la liaison de données. Pour plus d’informations, voir [Aperçu de la liaison des données](../data/data-binding-overview.md).  
+- Prise en charge de la liaison de données. Pour plus d’informations, voir [Aperçu de la liaison des données](../../../desktop-wpf/data/data-binding-overview.md).  
   
 - Prise en charge des références de ressource dynamique. Pour plus d’informations, consultez [Ressources XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md).  
   
@@ -99,6 +99,6 @@ Un pourcentage élevé [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Controls.Control>
-- [Aperçu des propriétés de dépendance](dependency-properties-overview.md)
+- [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md)
 - [Vue d’ensemble de la création de contrôles](../controls/control-authoring-overview.md)
 - [Architecture de WPF](wpf-architecture.md)

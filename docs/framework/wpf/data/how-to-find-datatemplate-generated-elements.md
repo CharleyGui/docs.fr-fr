@@ -8,31 +8,31 @@ helpviewer_keywords:
 - finding DataTemplate elements [WPF]
 - DataTemplate [WPF]
 ms.assetid: bfcd564e-5e9e-451e-8641-a9b5c3cfac90
-ms.openlocfilehash: 2cb3d73574cd207c0e06abe15f6a953a67cd5c78
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 3b222880aa4eda32502e3dcece2fa5c0b57b7a51
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733427"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646434"
 ---
 # <a name="how-to-find-datatemplate-generated-elements"></a>Comment : rechercher des éléments générés par DataTemplate
-Cet exemple montre comment rechercher des éléments générés par un <xref:System.Windows.DataTemplate>.  
+Cet exemple montre comment trouver des <xref:System.Windows.DataTemplate>éléments qui sont générés par un .  
   
 ## <a name="example"></a>Exemple  
- Dans cet exemple, il existe un <xref:System.Windows.Controls.ListBox> lié à des données XML :  
+ Dans cet exemple, <xref:System.Windows.Controls.ListBox> il ya un qui est lié à certaines données XML:  
   
  [!code-xaml[FindGeneratedItems#LB](~/samples/snippets/csharp/VS_Snippets_Wpf/FindGeneratedItems/CSharp/Window1.xaml#lb)]  
   
- Le <xref:System.Windows.Controls.ListBox> utilise les <xref:System.Windows.DataTemplate>suivantes :  
+ Les <xref:System.Windows.Controls.ListBox> utilisations <xref:System.Windows.DataTemplate>suivantes :  
   
  [!code-xaml[FindGeneratedItems#DT](~/samples/snippets/csharp/VS_Snippets_Wpf/FindGeneratedItems/CSharp/Window1.xaml#dt)]  
   
- Si vous souhaitez récupérer l’élément <xref:System.Windows.Controls.TextBlock> généré par le <xref:System.Windows.DataTemplate> d’un certain <xref:System.Windows.Controls.ListBoxItem>, vous devez obtenir le <xref:System.Windows.Controls.ListBoxItem>, Rechercher le <xref:System.Windows.Controls.ContentPresenter> dans ce <xref:System.Windows.Controls.ListBoxItem>, puis appeler <xref:System.Windows.FrameworkTemplate.FindName%2A> sur le <xref:System.Windows.DataTemplate> qui est défini sur ce <xref:System.Windows.Controls.ContentPresenter>. L’exemple suivant montre comment effectuer ces étapes. À des fins de démonstration, cet exemple crée une boîte de message qui montre le contenu textuel du bloc de texte généré par <xref:System.Windows.DataTemplate>.  
+ Si vous voulez <xref:System.Windows.Controls.TextBlock> récupérer l’élément généré <xref:System.Windows.DataTemplate> par le <xref:System.Windows.Controls.ListBoxItem>d’un certain , vous devez obtenir le <xref:System.Windows.Controls.ListBoxItem>, trouver l’intérieur <xref:System.Windows.Controls.ContentPresenter> <xref:System.Windows.Controls.ListBoxItem>de cela , puis faire appel <xref:System.Windows.FrameworkTemplate.FindName%2A> à ce <xref:System.Windows.DataTemplate> qui est fixé sur ce <xref:System.Windows.Controls.ContentPresenter>. L’exemple suivant montre comment effectuer ces étapes. À des fins de démonstration, cet exemple crée <xref:System.Windows.DataTemplate>une boîte de message qui affiche le contenu texte du bloc de texte généré.  
   
  [!code-csharp[FindGeneratedItems#DTFindElement](~/samples/snippets/csharp/VS_Snippets_Wpf/FindGeneratedItems/CSharp/Window1.xaml.cs#dtfindelement)]
  [!code-vb[FindGeneratedItems#DTFindElement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FindGeneratedItems/VisualBasic/Window1.xaml.vb#dtfindelement)]  
   
- Voici l’implémentation de `FindVisualChild`, qui utilise les méthodes <xref:System.Windows.Media.VisualTreeHelper> :  
+ Ce qui suit `FindVisualChild`est la <xref:System.Windows.Media.VisualTreeHelper> mise en œuvre de , qui utilise les méthodes:  
   
  [!code-csharp[FindGeneratedItems#FVC](~/samples/snippets/csharp/VS_Snippets_Wpf/FindGeneratedItems/CSharp/Window1.xaml.cs#fvc)]
  [!code-vb[FindGeneratedItems#FVC](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FindGeneratedItems/VisualBasic/Window1.xaml.vb#fvc)]  
@@ -40,8 +40,8 @@ Cet exemple montre comment rechercher des éléments générés par un <xref:Sys
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide pratique pour rechercher des éléments générés par ControlTemplate](../controls/how-to-find-controltemplate-generated-elements.md)
-- [Vue d’ensemble de la liaison de données](data-binding-overview.md)
-- [Rubriques de guide pratique](data-binding-how-to-topics.md)
+- [Aperçu de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)
+- [Rubriques de procédures](data-binding-how-to-topics.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Portées de nom XAML WPF](../advanced/wpf-xaml-namescopes.md)
 - [Arborescences dans WPF](../advanced/trees-in-wpf.md)

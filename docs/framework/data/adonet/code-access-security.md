@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: 6fc54bb9e38768e390201ea77243d3df4cd67f10
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7b0f269bd4dce8ddaaaa72c3760a4d7a0e3eb8b9
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151739"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646014"
 ---
 # <a name="code-access-security-and-adonet"></a>Sécurité d'accès du code et ADO.NET
 Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécurité d'accès du code (CAS, Code Access Security) implémentées à l'aide d'une infrastructure commune fournie par le Common Language Runtime (CLR). Dans l'univers du code non managé, la plupart des applications s'exécutent avec les autorisations de l'utilisateur ou d'une principal de sécurité. C'est pourquoi les systèmes informatiques peuvent être endommagés et des données privées compromises lorsqu'un utilisateur bénéficiant de privilèges élevés exécute des logiciels malveillants ou remplis d'erreurs.  
@@ -50,7 +50,7 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
  En fonction du type d'application en cours de construction, vous devez également envisager d'implémenter des autorisations basées sur les rôles dans la base de données. Pour plus d’informations sur la sécurité basée sur les rôles dans SQL Server, voir [SQL Server Security](./sql/sql-server-security.md).  
   
 ## <a name="assemblies"></a>Assemblys  
- Les assemblys constituent l'unité fondamentale dans le déploiement, le contrôle de version, la portée d'activation et les autorisations de sécurité d'une application .NET Framework. Ils fournissent une collection de types et de ressources qui sont générés pour fonctionner ensemble et former une unité logique de fonctionnalités. Pour le CLR, un type n'existe pas en dehors du contexte d'un assembly. Pour plus d’informations sur la création et le déploiement d’assemblées, voir [Programmation avec assemblées](../../../standard/assembly/program.md).  
+ Les assemblys constituent l'unité fondamentale dans le déploiement, le contrôle de version, la portée d'activation et les autorisations de sécurité d'une application .NET Framework. Ils fournissent une collection de types et de ressources qui sont générés pour fonctionner ensemble et former une unité logique de fonctionnalités. Pour le CLR, un type n'existe pas en dehors du contexte d'un assembly. Pour plus d’informations sur la création et le déploiement d’assemblées, voir [Programmation avec assemblées](../../../standard/assembly/index.md).  
   
 ### <a name="strong-naming-assemblies"></a>Attribution d'un nom fort à des assemblys  
  Un nom fort, ou signature numérique, est constitué de l'identité de l'assembly (son simple nom textuel, son numéro de version et des informations de culture, le cas échéant) ainsi que d'une clé publique et d'une signature numérique. La signature numérique est générée à partir un fichier d'assembly à l'aide de la clé privée correspondante. Le fichier d'assembly contient le manifeste d'assembly, qui à son tour comporte les noms et les hachages de tous les fichiers qui composent l'assembly.  
@@ -162,7 +162,7 @@ AllowBlankPassword="False">
 ## <a name="verifying-adonet-code-access-using-security-permissions"></a>Vérification de l'accès du code ADO.NET à l'aide des autorisations de sécurité  
  Dans les scénarios avec confiance partielle, vous pouvez exiger des privilèges de sécurité d'accès du code (CAS) pour des méthodes particulières dans votre code en spécifiant un objet <xref:System.Data.SqlClient.SqlClientPermissionAttribute>. Si ce privilège n'est pas autorisé par la stratégie de sécurité limitée en vigueur, une exception est levée avant que votre code soit exécuté. Pour plus d’informations sur la politique de sécurité, voir [Gestion des politiques de sécurité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100)) et politiques de sécurité Meilleures [pratiques](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sa4se9bc(v=vs.100)).  
   
-### <a name="example"></a> Exemple  
+### <a name="example"></a>Exemple  
  L'exemple suivant montre comment écrire un code requérant une chaîne de connexion particulière. Il simule le refus d'autorisations illimitées à <xref:System.Data.SqlClient>, qu'un administrateur système implémenterait à l'aide d'une stratégie de sécurité d'accès du code dans la réalité.  
   
 > [!IMPORTANT]

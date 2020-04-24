@@ -1,12 +1,12 @@
 ---
 title: Attributs (C#)
 ms.date: 04/26/2018
-ms.openlocfilehash: 62424163303417746a67707d9ef34185954db316
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 0379bb76cf18ff836bd14aafb9cb97c30aee8ec7
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389541"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645488"
 ---
 # <a name="attributes-c"></a>Attributs (C#)
 
@@ -81,7 +81,7 @@ La liste des valeurs `target` possibles est présentée dans le tableau suivant.
 
 Vous devez spécifier la valeur cible de `field` pour appliquer un attribut au champ de stockage créé pour une [propriété implémentée automatiquement](../../../properties.md).
 
-L’exemple suivant montre comment appliquer des attributs à des modules et assemblys. Pour plus d’informations, consultez [Attributs courants (C#)](common-attributes.md).
+L’exemple suivant montre comment appliquer des attributs à des modules et assemblys. Pour plus d’informations, consultez [Attributs courants (C#)](../../../language-reference/attributes/global.md).
 
 ```csharp
 using System;
@@ -120,7 +120,7 @@ Pour plus d'informations, consultez les pages suivantes :
 - [Création d’attributs personnalisés (C#)](creating-custom-attributes.md)  
 - [Accès à des attributs à l’aide de la réflexion (C#)](accessing-attributes-by-using-reflection.md)  
 - [Comment créer un syndicat C/CMD en utilisant des attributs (C)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
-- [Attributs courants (C#)](common-attributes.md)  
+- [Attributs courants (C#)](../../../language-reference/attributes/global.md)  
 - [Informations relatives à l’appelant (C#)](../../../language-reference/attributes/caller-information.md)  
 
 ## <a name="see-also"></a>Voir aussi

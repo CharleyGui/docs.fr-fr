@@ -4,19 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework, development guide
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
-ms.openlocfilehash: 0500e11d2897cfa7392cc8280a0b69c5e2fc515f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 665c7843fc4a46348619bde46a8d527dfed321e4
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79181617"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645996"
 ---
-# <a name="net-framework-development-guide"></a>Guide de développement .NET Framework
+# <a name="net-framework-development-guide"></a>.NET Guide de développement du Cadre
+
 Cette section explique comment créer, configurer, déboguer, sécuriser et déployer des applications .NET Framework. La section fournit également des informations sur les aspects technologiques, tels que la programmation dynamique, l'interopérabilité, l'extensibilité, la gestion de la mémoire et les threads.  
   
-## <a name="in-this-section"></a>Dans cette section  
- [Application Essentials](../standard/application-essentials.md)  
- Fournit des informations sur les tâches de développement d’applications de base, telles que la programmation avec des domaines d’application et des assemblys, l’utilisation d’attributs, la mise en forme et l’analyse des types de base, l’utilisation de collections, la gestion des événements et des exceptions, l’utilisation de fichiers et de flux de données, ainsi que l’utilisation de génériques.  
+## <a name="in-this-section"></a>Dans cette section
   
  [Données et modélisation](./data/index.md)  
  Fournit des informations sur la façon d'accéder aux données à l'aide d'ADO.NET, de LINQ (Language-Integrated Query), des services de données WCF et de XML.  
@@ -72,7 +71,7 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
  [Nouveautés](./whats-new/index.md)  
  Décrit les nouvelles fonctionnalités et modifications clés dans la dernière version du .NET Framework. Inclut les listes des types et membres nouveaux et obsolètes et fournit un guide pour la migration de vos applications à partir de la version antérieure du .NET Framework.  
   
- [Outils](./tools/index.md)  
+ [outils](./tools/index.md)  
  Décrit les outils qui permettent de développer, configurer et déployer des applications à l'aide des technologies .NET Framework.  
   
  [Exemples et tutoriels .NET](../samples-and-tutorials/index.md)  

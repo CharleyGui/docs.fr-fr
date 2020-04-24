@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], authoring overview
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
-ms.openlocfilehash: 2326520039085beb5f5294e23db67b67f9d7d7da
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: a6ab5463cc28aa590454ae1304714d3d12ee7c6b
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243269"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646137"
 ---
 # <a name="control-authoring-overview"></a>Aperçu de l’auteur de contrôle
 
@@ -38,7 +38,7 @@ Par le passé, quand vous souhaitiez obtenir une expérience personnalisée à p
 
 - **Déclenche.** A <xref:System.Windows.Trigger> vous permet de changer dynamiquement l’apparence et le comportement d’un contrôle sans créer un nouveau contrôle. Supposons, par exemple, que vous ayez plusieurs <xref:System.Windows.Controls.ListBox> <xref:System.Windows.Controls.ListBox> contrôles dans votre application et que vous souhaitez que les éléments de chacun d’eux soient audacieux et rouges lorsqu’ils sont sélectionnés. Votre premier instinct pourrait être de créer <xref:System.Windows.Controls.ListBox> une classe <xref:System.Windows.Controls.Primitives.Selector.OnSelectionChanged%2A> qui hérite et remplacer la méthode pour changer l’apparence de <xref:System.Windows.Controls.ListBoxItem> l’élément sélectionné, mais une meilleure approche est d’ajouter un déclencheur à un style d’un qui change l’apparence de l’élément sélectionné. Un déclencheur vous permet de changer les valeurs des propriétés ou de prendre des mesures sur la base de la valeur d’une propriété. Un <xref:System.Windows.EventTrigger> vous permet de prendre des mesures lorsqu’un événement se produit.
 
-Pour plus d’informations sur les styles, modèles et déclencheurs, consultez [Application d’un style et création de modèles](styling-and-templating.md).
+Pour plus d’informations sur les styles, modèles et déclencheurs, consultez [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
 En général, si votre contrôle reflète les fonctionnalités d’un contrôle existant, mais que vous souhaitez qu’il ait un aspect différent, vous devez d’abord vous demander s’il est possible d’utiliser l’une des méthodes décrites dans cette section pour changer l’apparence du contrôle existant.
 

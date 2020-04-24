@@ -7,20 +7,20 @@ helpviewer_keywords:
 - XAML [WPF]
 - Extensible Application Markup Language [WPF]
 ms.assetid: 5d858575-a83b-42df-ad3f-047ed2d6e3c8
-ms.openlocfilehash: 7b4811290d58b946bd9f115cb15d5eb0fda03b1d
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 00525e8bd085126e15de9c80bdd5fc0106d565d6
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741882"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646160"
 ---
 # <a name="xaml-in-wpf"></a>Intégration du format XAML au format WPF
 
-[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] est un langage de balisage pour la programmation d’applications déclaratives. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] implémente une implémentation de processeur XAML et fournit la prise en charge du langage XAML. Les types de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sont implémentés de telle sorte qu’ils peuvent fournir le type de stockage requis pour une représentation XAML. En général, vous pouvez créer la majorité de l’interface utilisateur de votre application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans le balisage XAML.  
+[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]est un langage de balisage pour la programmation d’applications déclaratives. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]implémente une mise en œuvre du processeur XAML et fournit un support linguistique XAML. Les [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] types sont implémenté de telle sorte qu’ils peuvent fournir le support de type requis pour une représentation XAML. En général, vous pouvez créer [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] la majorité de votre interface utilisateur d’application dans le balisage XAML.  
   
 ## <a name="in-this-section"></a>Dans cette section  
 
-[Vue d’ensemble du langage XAML (WPF)](xaml-overview-wpf.md)  
+[Vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)  
 [Syntaxe XAML en détail](xaml-syntax-in-detail.md)  
 [Code-behind et XAML dans WPF](code-behind-and-xaml-in-wpf.md)  
 [XAML et classes personnalisées pour WPF](xaml-and-custom-classes-for-wpf.md)  
@@ -28,12 +28,12 @@ ms.locfileid: "76741882"
 [Espaces de noms XAML et mappage d'espace de noms pour XAML WPF](xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)  
 [Portées de nom XAML WPF](wpf-xaml-namescopes.md)  
 [Modèles et styles intralignes](inline-styles-and-templates.md)  
-[Traitement des espaces blancs en XAML](../../../desktop-wpf/xaml-services/white-space-processing.md)  
+[Traitement de l’espace blanc dans XAML](../../../desktop-wpf/xaml-services/white-space-processing.md)  
 [TypeConverters et XAML](typeconverters-and-xaml.md)  
 [Entités de caractères XML et XAML](../../../desktop-wpf/xaml-services/xml-character-entities.md)  
-[Fonctionnalités de langage pour les espaces de noms XAML (x:)](../../../desktop-wpf/xaml-services/namespace-language-features.md)  
+[Espace de noms XAML (x:) Fonctionnalités de langage](../../../desktop-wpf/xaml-services/namespace-language-features.md)  
 [Extensions XAML WPF](wpf-xaml-extensions.md)  
-[Fonctionnalités de langage pour la compatibilité du balisage (mc:)](markup-compatibility-mc-language-features.md)  
+[Compatibilité du balisage (mc:) Fonctionnalités de langage](markup-compatibility-mc-language-features.md)  
   
 ## <a name="related-sections"></a>Sections connexes  
 
@@ -42,7 +42,7 @@ ms.locfileid: "76741882"
 [Sérialisation et arborescence d'éléments](element-tree-and-serialization.md)  
 [Propriétés](properties-wpf.md)  
 [Événements](events-wpf.md)  
-[Entrée](input-wpf.md)  
+[Input](input-wpf.md)  
 [Ressources](resources-wpf.md)  
 [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
 [Modèle de thread](threading-model.md)

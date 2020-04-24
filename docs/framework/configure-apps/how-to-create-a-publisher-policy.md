@@ -1,5 +1,5 @@
 ---
-title: "Procédure : création d'une stratégie d'éditeur"
+title: "Comment : créer une stratégie d'éditeur"
 ms.date: 03/30/2017
 helpviewer_keywords:
 - publisher policy assembly
@@ -7,26 +7,26 @@ helpviewer_keywords:
 - GAC (global assembly cache), publisher policy assembly
 - global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
-ms.openlocfilehash: 313af6046fda8dd8905e8bda4e8c4aec187ef8bf
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 7c36f6126f0d779a43a22fc11e647ba2d3b03a30
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568404"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646053"
 ---
-# <a name="how-to-create-a-publisher-policy"></a>Procédure : création d'une stratégie d'éditeur
+# <a name="how-to-create-a-publisher-policy"></a>Comment : créer une stratégie d'éditeur
 
-Les fournisseurs d’assemblys peuvent indiquer que les applications doivent utiliser une version plus récente d’un assembly en incluant un fichier de stratégie d’éditeur avec l’assembly mis à niveau. Le fichier de stratégie d’éditeur spécifie la redirection d’assembly et les paramètres de base de code, et utilise le même format qu’un fichier de configuration d’application. Le fichier de stratégie d’éditeur est compilé dans un assembly et placé dans le Global Assembly Cache.
+Les fournisseurs d’assemblages peuvent indiquer que les applications doivent utiliser une version plus récente d’un assemblage en incluant un fichier de politique d’éditeur avec l’assemblage mis à niveau. Le fichier de politique de l’éditeur spécifie les paramètres de réorientation d’assemblage et de base de code, et utilise le même format qu’un fichier de configuration d’application. Le fichier de politique de l’éditeur est compilé dans une assemblée et placé dans le cache d’assemblage global.
 
-La création d’une stratégie d’éditeur implique trois étapes :
+La création d’une politique d’éditeur comporte trois étapes :
 
-1. Créez un fichier de stratégie d’éditeur.
+1. Créez un fichier de politique d’éditeur.
 
-2. Créer un assembly de stratégie d’éditeur.
+2. Créer une assemblée des politiques de l’éditeur.
 
-3. Ajoutez l’assembly de stratégie d’éditeur au Global Assembly Cache.
+3. Ajoutez l’assemblage de la politique de l’éditeur au cache d’assemblage global.
 
-Le schéma de la stratégie d’éditeur est décrit dans [redirection des versions d’assembly](redirect-assembly-versions.md). L’exemple suivant montre un fichier de stratégie d’éditeur qui redirige une version de `myAssembly` vers une autre.
+Le schéma de la politique de l’éditeur est décrit dans [Redirecting Assembly Versions](redirect-assembly-versions.md). L’exemple suivant montre un fichier de `myAssembly` politique d’éditeur qui redirige une version d’une autre.
 
 ```xml
 <configuration>
@@ -45,15 +45,15 @@ Le schéma de la stratégie d’éditeur est décrit dans [redirection des versi
 </configuration>
 ```
 
-Pour savoir comment spécifier une base de code, consultez [spécification de l’emplacement d’un assembly](specify-assembly-location.md).
+Pour savoir comment spécifier une base de code, voir [spécifier l’emplacement d’une Assemblée](specify-assembly-location.md).
 
-## <a name="creating-the-publisher-policy-assembly"></a>Création de l’assembly de stratégie d’éditeur
+## <a name="creating-the-publisher-policy-assembly"></a>Création de l’Assemblée des politiques des éditeurs
 
-Utilisez [Assembly Linker (al. exe)](../tools/al-exe-assembly-linker.md) pour créer l’assembly de stratégie d’éditeur.
+Utilisez le [Linker de l’Assemblée (Al.exe)](../tools/al-exe-assembly-linker.md) pour créer l’assemblée des politiques de l’éditeur.
 
-#### <a name="to-create-a-publisher-policy-assembly"></a>Pour créer un assembly de stratégie d’éditeur
+#### <a name="to-create-a-publisher-policy-assembly"></a>Créer une assemblée des politiques de l’éditeur
 
-À l'invite de commandes, tapez la commande suivante :
+Entrez la commande suivante à l'invite de commandes :
 
 ```console
 al /link:publisherPolicyFile /out:publisherPolicyAssemblyFile /keyfile:keyPairFile /platform:processorArchitecture
@@ -61,57 +61,57 @@ al /link:publisherPolicyFile /out:publisherPolicyAssemblyFile /keyfile:keyPairFi
 
 Dans cette commande :
 
-- L’argument `publisherPolicyFile` est le nom du fichier de stratégie d’éditeur.
+- L’argument `publisherPolicyFile` est le nom du dossier de politique de l’éditeur.
 
-- L’argument `publisherPolicyAssemblyFile` est le nom de l’assembly de stratégie d’éditeur qui résulte de cette commande. Le nom du fichier de l’assembly doit respecter le format suivant :
+- L’argument `publisherPolicyAssemblyFile` est le nom de l’assemblée des politiques de l’éditeur qui résulte de cette commande. Le nom du fichier d’assemblage doit suivre le format :
 
-  'Policy. majorNumber. minorNumber. mainAssemblyName. dll'
+  'policy.majorNumber.minorNumber.mainAssemblyName.dll'
 
-- L’argument `keyPairFile` est le nom du fichier contenant la paire de clés. Vous devez signer l’assembly et l’assembly de stratégie d’éditeur avec la même paire de clés.
+- L’argument `keyPairFile` est le nom du fichier contenant la paire de clés. Vous devez signer l’assemblage et l’assemblage des politiques de l’éditeur avec la même paire clé.
 
-- L’argument `processorArchitecture` identifie la plateforme ciblée par un assembly spécifique au processeur.
+- L’argument `processorArchitecture` identifie la plate-forme ciblée par un assemblage spécifique au processeur.
 
   > [!NOTE]
-  > La possibilité de cibler une architecture de processeur spécifique est disponible à partir de .NET Framework 2,0.
+  > La possibilité de cibler une architecture de processeur spécifique est disponible à partir de .NET Framework 2.0.
 
-La possibilité de cibler une architecture de processeur spécifique est disponible à partir de .NET Framework 2,0. La commande suivante crée un assembly de stratégie d’éditeur appelé `policy.1.0.myAssembly` à partir d’un fichier de stratégie d’éditeur nommé `pub.config`, attribue un nom fort à l’assembly à l’aide de la paire de clés dans le fichier `sgKey.snk` et spécifie que l’assembly cible l’architecture du processeur x86.
+La possibilité de cibler une architecture de processeur spécifique est disponible à partir de .NET Framework 2.0. La commande suivante crée un `policy.1.0.myAssembly` assemblage de politique `pub.config`d’éditeur appelé à partir d’un `sgKey.snk` fichier de politique d’éditeur appelé , attribue un nom fort à l’assemblage en utilisant la paire de clés dans le fichier, et précise que l’assemblage cible l’architecture du processeur x86.
 
 ```console
 al /link:pub.config /out:policy.1.0.myAssembly.dll /keyfile:sgKey.snk /platform:x86
 ```
 
-L’assembly de stratégie d’éditeur doit correspondre à l’architecture de processeur de l’assembly auquel il s’applique. Ainsi, si votre assembly a une valeur <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A> de <xref:System.Reflection.ProcessorArchitecture.MSIL>, l’assembly de stratégie d’éditeur de cet assembly doit être créé avec `/platform:anycpu`. Vous devez fournir un assembly de stratégie d’éditeur distinct pour chaque assembly spécifique au processeur.
+L’assemblage de la politique de l’éditeur doit correspondre à l’architecture de processeur de l’assemblage à laquelle il s’applique. Ainsi, si votre <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A> assemblée <xref:System.Reflection.ProcessorArchitecture.MSIL>a une valeur de , l’assemblage de la politique de l’éditeur pour cette assemblée doit être créé avec `/platform:anycpu`. Vous devez fournir un assemblage distinct de la politique de l’éditeur pour chaque assemblage spécifique au processeur.
 
-Une conséquence de cette règle est que pour modifier l’architecture de processeur d’un assembly, vous devez modifier le composant principal ou mineur du numéro de version, afin de pouvoir fournir un nouvel assembly de stratégie d’éditeur avec l’architecture de processeur correcte. L’ancien assembly de stratégie d’éditeur ne peut pas traiter votre assembly une fois que votre assembly a une architecture de processeur différente.
+Une conséquence de cette règle est que pour changer l’architecture du processeur pour un assemblage, vous devez modifier la composante majeure ou mineure du numéro de version, de sorte que vous pouvez fournir un nouvel assemblage de politique d’éditeur avec l’architecture de processeur correcte. L’ancien assemblage de la politique de l’éditeur ne peut pas servir votre assemblage une fois que votre assemblage a une architecture de processeur différente.
 
-Une autre conséquence est que l’éditeur de liens version 2,0 ne peut pas être utilisé pour créer un assembly de stratégie d’éditeur pour un assembly compilé à l’aide de versions antérieures du .NET Framework, car il spécifie toujours l’architecture du processeur.
+Une autre conséquence est que la version 2.0 linker ne peut pas être utilisé pour créer un assemblage de politique d’éditeur pour une assemblée compilée en utilisant des versions antérieures du cadre .NET, car il spécifie toujours l’architecture du processeur.
 
-## <a name="adding-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Ajout de l’assembly de stratégie d’éditeur au global assembly cache
+## <a name="adding-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Ajout de l’Assemblée des politiques des éditeurs au Cache de l’Assemblée mondiale
 
-Utilisez l' [outil global assembly cache (Gacutil. exe)](../tools/gacutil-exe-gac-tool.md) pour ajouter l’assembly de stratégie d’éditeur au global assembly cache.
+Utilisez [l’outil Global Assembly Cache (Gacutil.exe)](../tools/gacutil-exe-gac-tool.md) pour ajouter l’assemblage des politiques de l’éditeur au cache d’assemblage mondial.
 
-### <a name="to-add-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Pour ajouter l’assembly de stratégie d’éditeur au Global Assembly Cache
+### <a name="to-add-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Pour ajouter l’assemblage de la politique de l’éditeur au cache d’assemblage mondial
 
-À l'invite de commandes, tapez la commande suivante :
+Entrez la commande suivante à l'invite de commandes :
 
 ```console
 gacutil /i publisherPolicyAssemblyFile
 ```
 
-La commande suivante ajoute `policy.1.0.myAssembly.dll` à l’Global Assembly Cache.
+La commande `policy.1.0.myAssembly.dll` suivante s’ajoute à la cache d’assemblage global.
 
 ```console
 gacutil /i policy.1.0.myAssembly.dll
 ```
 
 > [!IMPORTANT]
-> L’assembly de stratégie d’éditeur ne peut pas être ajouté au Global Assembly Cache, sauf si le fichier de stratégie d’éditeur d’origine spécifié dans l’argument `/link` se trouve dans le même répertoire que l’assembly.
+> L’assemblée des politiques de l’éditeur ne peut être ajoutée `/link` au cache d’assemblage global à moins que le dossier de politique originale de l’éditeur spécifié dans l’argumentation ne soit situé dans le même répertoire que l’assemblée.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Programmation à l’aide d’assemblys](../../standard/assembly/program.md)
+- [Programmation à l’aide d’assemblys](../../standard/assembly/index.md)
 - [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md)
-- [Configuration d’applications à l’aide de fichiers de configuration](index.md)
-- [Schéma des paramètres d’exécution](./file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](./file-schema/index.md)
+- [Configuration des applications à l'aide de fichiers de configuration](index.md)
+- [Paramètres de durée d’exécution Schema](./file-schema/runtime/index.md)
+- [Configuration Fichier Schema](./file-schema/index.md)
 - [Redirection des versions d'assemblys](redirect-assembly-versions.md)

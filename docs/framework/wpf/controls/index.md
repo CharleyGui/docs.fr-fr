@@ -1,5 +1,5 @@
 ---
-title: Commandes
+title: Contrôles
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,14 @@ dev_langs:
 helpviewer_keywords:
 - controls [WPF], about WPF controls
 ms.assetid: 3f255a8a-35a8-4712-9065-472ff7d75599
-ms.openlocfilehash: 2ec8c0a99f4e2431aed0d8c24168b7329de669f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2aab0fc8adaf17a8e9820a6269a740ef09540cda
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187536"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646488"
 ---
-# <a name="controls"></a>Commandes
+# <a name="controls"></a>Contrôles
 <a name="introduction"></a>
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]navires avec beaucoup de composants d’interface utilisateur communs qui sont <xref:System.Windows.Controls.Button> <xref:System.Windows.Controls.Label>utilisés <xref:System.Windows.Controls.TextBox> <xref:System.Windows.Controls.Menu>dans presque toutes les applications Windows, telles que , , , , et <xref:System.Windows.Controls.ListBox>. Par le passé, ces objets étaient connus sous le nom de contrôles. Bien [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] que le SDK continue d’utiliser le terme « contrôle » pour signifier vaguement n’importe quelle classe qui <xref:System.Windows.Controls.Control> représente un objet visible dans une application, il est important de noter qu’une classe n’a pas besoin d’hériter de la classe pour avoir une présence visible. Les classes qui <xref:System.Windows.Controls.Control> héritent de la classe contiennent un <xref:System.Windows.Controls.ControlTemplate>, ce qui permet au consommateur d’un contrôle de changer radicalement l’apparence du contrôle sans avoir à créer une nouvelle sous-classe.  Ce sujet traite de la façon dont <xref:System.Windows.Controls.Control> les contrôles (à la fois [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ceux qui héritent de la classe et ceux qui ne le font pas) sont couramment utilisés dans .  
 
@@ -54,7 +54,7 @@ ms.locfileid: "79187536"
   
  [!code-xaml[ControlsOverview#5](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#5)]  
   
- Vous pouvez également appliquer un style à seulement certains contrôles d’un type spécifique en `Style` assignant une clé au style et en spécifiant cette clé dans la propriété de votre contrôle.  Pour plus d’informations sur les styles, voir [Styling et Templating](styling-and-templating.md).  
+ Vous pouvez également appliquer un style à seulement certains contrôles d’un type spécifique en `Style` assignant une clé au style et en spécifiant cette clé dans la propriété de votre contrôle.  Pour plus d’informations sur les styles, voir [Styling et Templating](../../../desktop-wpf/fundamentals/styles-templates-overview.md).  
   
 ### <a name="creating-a-controltemplate"></a>Création d’un ControlTemplate  
  A <xref:System.Windows.Style> vous permet de définir des propriétés sur plusieurs contrôles à la <xref:System.Windows.Controls.Control> fois, mais parfois vous <xref:System.Windows.Style>voudrez peut-être personnaliser l’apparence d’un au-delà de ce que vous pouvez faire en créant un . Les classes qui <xref:System.Windows.Controls.Control> héritent de la classe ont <xref:System.Windows.Controls.ControlTemplate> <xref:System.Windows.Controls.Control>un , qui définit la structure et l’apparence d’un . La <xref:System.Windows.Controls.Control.Template%2A> propriété <xref:System.Windows.Controls.Control> d’un est public, <xref:System.Windows.Controls.Control> <xref:System.Windows.Controls.ControlTemplate> de sorte que vous pouvez donner un qui est différent de son défaut. Vous pouvez souvent <xref:System.Windows.Controls.ControlTemplate> spécifier un nouveau pour un <xref:System.Windows.Controls.Control> au lieu <xref:System.Windows.Controls.Control>d’hériter d’un contrôle pour personnaliser l’apparence d’un .  
@@ -99,12 +99,12 @@ ms.locfileid: "79187536"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Application d’un style et création de modèles](styling-and-templating.md)
+- [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Contrôles par catégorie](controls-by-category.md)
 - [Bibliothèque de contrôles](control-library.md)
 - [Vue d'ensemble des modèles de données](../data/data-templating-overview.md)
 - [Aperçu de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)
-- [Entrée](../advanced/input-wpf.md)
+- [Input](../advanced/input-wpf.md)
 - [Activer une commande](../advanced/how-to-enable-a-command.md)
 - [Procédures pas à pas : création d’un bouton animé personnalisé](walkthroughs-create-a-custom-animated-button.md)
 - [Personnalisation des contrôles](control-customization.md)

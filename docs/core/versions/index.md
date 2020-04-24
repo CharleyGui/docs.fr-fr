@@ -2,12 +2,12 @@
 title: Gestion des versions NET Core du runtime et du SDK
 description: Cet article vous explique comment les .NET Core versions du SDK et du runtime sont gérées (similaire à la gestion sémantique des versions).
 ms.date: 07/26/2018
-ms.openlocfilehash: c85a2112b439768068663688947960ac814de824
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f166a6dfc1c9127eb629365efd628855489a60cb
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75777318"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81644393"
 ---
 # <a name="overview-of-how-net-core-is-versioned"></a>Vue d’ensemble de la gestion des versions .NET Core
 
@@ -99,15 +99,15 @@ Chaque version de .NET Core implémente une version de .NET Standard. L’implé
 | .NET Core | .NET Standard |
 |-----------|---------------|
 | 1.0       | Jusqu’à 1.6     |
-| 2       | Jusqu’à 2.0     |
+| 2.0       | Jusqu’à 2.0     |
 | 2.1       | Jusqu’à 2.0     |
 | 2.2       | Jusqu’à 2.0     |
 | 3.0       | jusqu’à 2,1     |
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Cadres cibles](../../standard/frameworks.md)
-- [Empaquetage de la distribution de .NET Core](../build/distribution-packaging.md)
+- [Versions cibles de .NET Framework](../../standard/frameworks.md)
+- [Empaquetage de la distribution de .NET Core](../distribution-packaging.md)
 - [Fiche d’information sur le cycle de vie de support .NET Core](https://dotnet.microsoft.com/platform/support/policy)
 - [Liaison de version .NET Core 2+](https://github.com/dotnet/designs/issues/3)
 - [Images Docker pour .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/)

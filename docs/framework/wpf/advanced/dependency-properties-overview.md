@@ -14,12 +14,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 542e0a84e4c5cfc3750c33fe29cb40d3643e91e3
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: c73a61b8c251b12d5b3dac67535632322779a6af
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80636030"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81644056"
 ---
 # <a name="dependency-properties-overview"></a>Vue d’ensemble des propriétés de dépendance
 
@@ -123,7 +123,7 @@ L’exemple suivant définit la propriété <xref:System.Windows.Controls.Conten
 > [!NOTE]
 > Les liaisons sont traitées comme une valeur locale, ce qui signifie que si vous définissez une autre valeur locale, vous supprimez la liaison. Pour plus d’informations, consultez [Priorité de la valeur de propriété de dépendance](dependency-property-value-precedence.md).
 
-Les propriétés de dépendance, ou la classe <xref:System.Windows.DependencyObject>, ne prennent pas en charge <xref:System.ComponentModel.INotifyPropertyChanged> de manière native afin de notifier les changements de valeurs de la propriété source <xref:System.Windows.DependencyObject> pour les opérations de liaison de données. Pour plus d’informations sur la façon de créer (pour une utilisation dans la liaison de données)' des propriétés capables de signaler des changements de cible de liaison de données, consultez [Vue d’ensemble de la liaison de données](../data/data-binding-overview.md).
+Les propriétés de dépendance, ou la classe <xref:System.Windows.DependencyObject>, ne prennent pas en charge <xref:System.ComponentModel.INotifyPropertyChanged> de manière native afin de notifier les changements de valeurs de la propriété source <xref:System.Windows.DependencyObject> pour les opérations de liaison de données. Pour plus d’informations sur la façon de créer (pour une utilisation dans la liaison de données)' des propriétés capables de signaler des changements de cible de liaison de données, consultez [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md).
 
 ### <a name="styles"></a>Styles
 Les styles et modèles sont deux des principaux scénarios justifiant l’utilisation de propriétés de dépendance. Les styles sont particulièrement utiles pour configurer des propriétés qui définissent l’[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] de l’application. Ils sont généralement définis en tant que ressources en XAML. Ils interagissent avec le système de propriétés car ils contiennent généralement des « méthodes setter » pour des propriétés particulières, ainsi que des « déclencheurs » qui changent une valeur de propriété d’après la valeur en temps réel d’une autre propriété.
@@ -134,7 +134,7 @@ L’exemple suivant crée un style simple <xref:System.Windows.FrameworkElement.
 
 [!code-xaml[PropertiesOvwSupport#SimpleStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#simplestyle)]
 
-Pour plus d’informations, consultez [Application d’un style et création de modèles](../controls/styling-and-templating.md).
+Pour plus d’informations, consultez [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
 ### <a name="animations"></a>Animations
 Les propriétés de dépendance peuvent être animées. Quand une animation est appliquée et s’exécute, la valeur animée opère à une priorité plus élevée que toute autre valeur (par exemple une valeur locale) qu’aurait normalement la propriété.
