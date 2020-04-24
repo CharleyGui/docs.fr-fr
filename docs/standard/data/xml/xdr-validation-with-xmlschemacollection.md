@@ -13,14 +13,14 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 01/07/2020
 ms.locfileid: "75709996"
 ---
-# <a name="xdr-validation-with-xmlschemacollection"></a><span data-ttu-id="209d6-102">Validation par rapport à un schéma XDR à l'aide de XmlSchemaCollection</span><span class="sxs-lookup"><span data-stu-id="209d6-102">XDR Validation with XmlSchemaCollection</span></span>
+# <a name="xdr-validation-with-xmlschemacollection"></a><span data-ttu-id="2d60f-102">Validation par rapport à un schéma XDR à l'aide de XmlSchemaCollection</span><span class="sxs-lookup"><span data-stu-id="2d60f-102">XDR Validation with XmlSchemaCollection</span></span>
 
-<span data-ttu-id="209d6-103">Si le schéma XDR (XML-Data Reduced) par rapport auquel doit s’effectuer la validation est stocké dans **XmlSchemaCollection**, il est associé à l’URI d’espace de noms qui a été spécifié lors de l’ajout du schéma à la collection.</span><span class="sxs-lookup"><span data-stu-id="209d6-103">If the XML-Data Reduced (XDR) schema you are validating against is stored in the **XmlSchemaCollection**, it is associated with the namespace URI specified when the schema was added to the collection.</span></span> <span data-ttu-id="209d6-104">**XmlValidatingReader** mappe l'URI d'espace de noms du document XML au schéma correspondant à cet URI dans la collection.</span><span class="sxs-lookup"><span data-stu-id="209d6-104">**XmlValidatingReader** maps the namespace URI in the XML document to the schema that corresponds to that URI in the collection.</span></span>
+<span data-ttu-id="2d60f-103">Si le schéma XDR (XML-Data Reduced) par rapport auquel doit s’effectuer la validation est stocké dans **XmlSchemaCollection**, il est associé à l’URI d’espace de noms qui a été spécifié lors de l’ajout du schéma à la collection.</span><span class="sxs-lookup"><span data-stu-id="2d60f-103">If the XML-Data Reduced (XDR) schema you are validating against is stored in the **XmlSchemaCollection**, it is associated with the namespace URI specified when the schema was added to the collection.</span></span> <span data-ttu-id="2d60f-104">**XmlValidatingReader** mappe l'URI d'espace de noms du document XML au schéma correspondant à cet URI dans la collection.</span><span class="sxs-lookup"><span data-stu-id="2d60f-104">**XmlValidatingReader** maps the namespace URI in the XML document to the schema that corresponds to that URI in the collection.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="209d6-105">La classe <xref:System.Xml.Schema.XmlSchemaCollection> est désormais obsolète et a été remplacée par la classe <xref:System.Xml.Schema.XmlSchemaSet>.</span><span class="sxs-lookup"><span data-stu-id="209d6-105">The <xref:System.Xml.Schema.XmlSchemaCollection> class is now obsolete and has been replaced with the <xref:System.Xml.Schema.XmlSchemaSet> class.</span></span> <span data-ttu-id="209d6-106">Pour plus d’informations sur la classe <xref:System.Xml.Schema.XmlSchemaSet>, consultez [XmlSchemaSet pour la compilation de schémas](xmlschemaset-for-schema-compilation.md).</span><span class="sxs-lookup"><span data-stu-id="209d6-106">For more information about the <xref:System.Xml.Schema.XmlSchemaSet> class see, [XmlSchemaSet for Schema Compilation](xmlschemaset-for-schema-compilation.md).</span></span>
+> <span data-ttu-id="2d60f-105">La classe <xref:System.Xml.Schema.XmlSchemaCollection> est désormais obsolète et a été remplacée par la classe <xref:System.Xml.Schema.XmlSchemaSet>.</span><span class="sxs-lookup"><span data-stu-id="2d60f-105">The <xref:System.Xml.Schema.XmlSchemaCollection> class is now obsolete and has been replaced with the <xref:System.Xml.Schema.XmlSchemaSet> class.</span></span> <span data-ttu-id="2d60f-106">Pour plus d’informations sur la classe <xref:System.Xml.Schema.XmlSchemaSet>, consultez [XmlSchemaSet pour la compilation de schémas](xmlschemaset-for-schema-compilation.md).</span><span class="sxs-lookup"><span data-stu-id="2d60f-106">For more information about the <xref:System.Xml.Schema.XmlSchemaSet> class see, [XmlSchemaSet for Schema Compilation](xmlschemaset-for-schema-compilation.md).</span></span>
 
-<span data-ttu-id="209d6-107">Par exemple, si l'élément racine du document XML est `<bookstore>`, lorsque le schéma est ajouté à **XmlSchemaCollection**, il référence le même espace de noms comme suit :</span><span class="sxs-lookup"><span data-stu-id="209d6-107">For example, if the root element of the XML document is `<bookstore>`, when the schema is added to the **XmlSchemaCollection** it references the same namespace, as follows:</span></span>
+<span data-ttu-id="2d60f-107">Par exemple, si l'élément racine du document XML est `<bookstore xmlns="urn:newbooks-schema">`, lorsque le schéma est ajouté à **XmlSchemaCollection**, il référence le même espace de noms comme suit :</span><span class="sxs-lookup"><span data-stu-id="2d60f-107">For example, if the root element of the XML document is `<bookstore xmlns="urn:newbooks-schema">`, when the schema is added to the **XmlSchemaCollection** it references the same namespace, as follows:</span></span>
 
 ```vb
 xsc.Add("urn:newbooks-schema", "newbooks.xdr")
@@ -30,7 +30,7 @@ xsc.Add("urn:newbooks-schema", "newbooks.xdr")
 xsc.Add("urn:newbooks-schema", "newbooks.xdr");
 ```
 
-<span data-ttu-id="209d6-108">L’exemple de code suivant crée un **XmlValidatingReader** qui prend **XmlTextReader** et ajoute un schéma XDR, HeadCount. XDR, à **XmlSchemaCollection**:</span><span class="sxs-lookup"><span data-stu-id="209d6-108">The following code example creates an **XmlValidatingReader** that takes an **XmlTextReader** and adds an XDR schema, HeadCount.xdr, to the **XmlSchemaCollection**:</span></span>
+<span data-ttu-id="2d60f-108">L’exemple de code suivant crée un **XmlValidatingReader** qui prend **XmlTextReader** et ajoute un schéma XDR, HeadCount. XDR, à **XmlSchemaCollection**:</span><span class="sxs-lookup"><span data-stu-id="2d60f-108">The following code example creates an **XmlValidatingReader** that takes an **XmlTextReader** and adds an XDR schema, HeadCount.xdr, to the **XmlSchemaCollection**:</span></span>
 
 ```vb
 Imports System.IO
@@ -131,7 +131,7 @@ namespace ValidationSample
 }
 ```
 
-<span data-ttu-id="209d6-109">Le code suivant présente le contenu du fichier d’entrée, *HeadCount.xml*, à valider :</span><span class="sxs-lookup"><span data-stu-id="209d6-109">The following outlines the contents of the input file, *HeadCount.xml*, to be validated:</span></span>
+<span data-ttu-id="2d60f-109">L’exemple suivant présente le contenu du fichier d’entrée, *HeadCount. xml*, à valider :</span><span class="sxs-lookup"><span data-stu-id="2d60f-109">The following outlines the contents of the input file, *HeadCount.xml*, to be validated:</span></span>
 
 ```xml
 <!--Load HeadCount.xdr in SchemaCollection for Validation-->
@@ -141,7 +141,7 @@ namespace ValidationSample
 </HeadCount>
 ```
 
-<span data-ttu-id="209d6-110">Le code suivant présente le contenu du fichier de schéma XDR, *HeadCount.xdr*, par rapport auquel la validation doit s’effectuer :</span><span class="sxs-lookup"><span data-stu-id="209d6-110">The following outlines the contents of the XDR schema file, *HeadCount.xdr*, to be validated against:</span></span>
+<span data-ttu-id="2d60f-110">Le code suivant présente le contenu du fichier de schéma XDR, *HeadCount.xdr*, par rapport auquel la validation doit s’effectuer :</span><span class="sxs-lookup"><span data-stu-id="2d60f-110">The following outlines the contents of the XDR schema file, *HeadCount.xdr*, to be validated against:</span></span>
 
 ```xml
 <Schema xmlns="urn:schemas-microsoft-com:xml-data" xmlns:dt="urn:schemas-microsoft-com:datatypes">
@@ -154,7 +154,7 @@ namespace ValidationSample
 </Schema>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="209d6-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="209d6-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2d60f-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2d60f-111">See also</span></span>
 
 - <xref:System.Xml.XmlValidatingReader.ValidationType%2A>
-- [<span data-ttu-id="209d6-112">Compilation de schéma XmlSchemaCollection</span><span class="sxs-lookup"><span data-stu-id="209d6-112">XmlSchemaCollection Schema Compilation</span></span>](xmlschemacollection-schema-compilation.md)
+- [<span data-ttu-id="2d60f-112">Compilation de schéma XmlSchemaCollection</span><span class="sxs-lookup"><span data-stu-id="2d60f-112">XmlSchemaCollection Schema Compilation</span></span>](xmlschemacollection-schema-compilation.md)

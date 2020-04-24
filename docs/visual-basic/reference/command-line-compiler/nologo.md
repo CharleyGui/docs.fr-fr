@@ -14,29 +14,29 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74335433"
 ---
-# <a name="-nologo-visual-basic"></a><span data-ttu-id="5983c-102">-nologo (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5983c-102">-nologo (Visual Basic)</span></span>
-<span data-ttu-id="5983c-103">Supprime l’affichage de la bannière de copyright et des messages d’information pendant la compilation.</span><span class="sxs-lookup"><span data-stu-id="5983c-103">Suppresses display of the copyright banner and informational messages during compilation.</span></span>  
+# <a name="-nologo-visual-basic"></a><span data-ttu-id="0154b-102">-nologo (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0154b-102">-nologo (Visual Basic)</span></span>
+<span data-ttu-id="0154b-103">Supprime l’affichage de la bannière de copyright et des messages d’information pendant la compilation.</span><span class="sxs-lookup"><span data-stu-id="0154b-103">Suppresses display of the copyright banner and informational messages during compilation.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5983c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5983c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0154b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0154b-104">Syntax</span></span>  
   
 ```console  
 -nologo  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="5983c-105">Notes</span><span class="sxs-lookup"><span data-stu-id="5983c-105">Remarks</span></span>  
- <span data-ttu-id="5983c-106">Si vous spécifiez `-nologo`, le compilateur n’affiche pas de bannière de copyright.</span><span class="sxs-lookup"><span data-stu-id="5983c-106">If you specify `-nologo`, the compiler does not display a copyright banner.</span></span> <span data-ttu-id="5983c-107">Par défaut, l'option `-nologo` n'est pas activée.</span><span class="sxs-lookup"><span data-stu-id="5983c-107">By default, `-nologo` is not in effect.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="0154b-105">Notes</span><span class="sxs-lookup"><span data-stu-id="0154b-105">Remarks</span></span>  
+ <span data-ttu-id="0154b-106">Si vous spécifiez `-nologo`, le compilateur n’affiche pas de bannière de copyright.</span><span class="sxs-lookup"><span data-stu-id="0154b-106">If you specify `-nologo`, the compiler does not display a copyright banner.</span></span> <span data-ttu-id="0154b-107">Par défaut, l'option `-nologo` n'est pas activée.</span><span class="sxs-lookup"><span data-stu-id="0154b-107">By default, `-nologo` is not in effect.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="5983c-108">L’option `-nologo` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="5983c-108">The `-nologo` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.</span></span>  
+> <span data-ttu-id="0154b-108">L' `-nologo` option n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="0154b-108">The `-nologo` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="5983c-109">Exemple</span><span class="sxs-lookup"><span data-stu-id="5983c-109">Example</span></span>  
- <span data-ttu-id="5983c-110">Le code suivant compile `T2.vb` et n’affiche pas de bannière de copyright.</span><span class="sxs-lookup"><span data-stu-id="5983c-110">The following code compiles `T2.vb` and does not display a copyright banner.</span></span>  
+## <a name="example"></a><span data-ttu-id="0154b-109">Exemple</span><span class="sxs-lookup"><span data-stu-id="0154b-109">Example</span></span>  
+ <span data-ttu-id="0154b-110">Le code suivant compile `T2.vb` et n’affiche pas de bannière de copyright.</span><span class="sxs-lookup"><span data-stu-id="0154b-110">The following code compiles `T2.vb` and does not display a copyright banner.</span></span>  
   
 ```console
 vbc -nologo t2.vb  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="5983c-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5983c-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0154b-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0154b-111">See also</span></span>
 
-- [<span data-ttu-id="5983c-112">Compilateur de ligne de commande de Visual Basic</span><span class="sxs-lookup"><span data-stu-id="5983c-112">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
-- [<span data-ttu-id="5983c-113">Exemples de lignes de commande de compilation</span><span class="sxs-lookup"><span data-stu-id="5983c-113">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [<span data-ttu-id="0154b-112">Compilateur de ligne de commande de Visual Basic</span><span class="sxs-lookup"><span data-stu-id="0154b-112">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
+- [<span data-ttu-id="0154b-113">Exemples de lignes de commande de compilation</span><span class="sxs-lookup"><span data-stu-id="0154b-113">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
