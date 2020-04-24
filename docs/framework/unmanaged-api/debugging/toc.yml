@@ -75,7 +75,7 @@
         - name: 'ICLRMetadataLocator, interface'
           href: iclrmetadatalocator-interface.md
           items:
-            - name: 'GetMetadata, méthode'
+            - name: 'GetMetaData, méthode'
               href: iclrmetadatalocator-getmetadata-method.md
         - name: 'ICorDebug, interface'
           href: icordebug-interface.md
@@ -109,7 +109,7 @@
               href: icordebugappdomain-enumeratebreakpoints-method.md
             - name: 'EnumerateSteppers, méthode'
               href: icordebugappdomain-enumeratesteppers-method.md
-            - name: 'GetId, méthode'
+            - name: 'GetID, méthode'
               href: icordebugappdomain-getid-method.md
             - name: 'GetModuleFromMetaDataInterface, méthode'
               href: icordebugappdomain-getmodulefrommetadatainterface-method.md
@@ -138,7 +138,7 @@
         - name: ICorDebugAppDomain4 (interface)
           href: icordebugappdomain4-interface.md
           items:
-            - name: GetObjectForCCW (méthode)
+            - name: 'GetObjectForCCW, méthode'
               href: icordebugappdomain4-getobjectforccw-method.md
         - name: 'ICorDebugAppDomainEnum, interface'
           href: icordebugappdomainenum-interface.md
@@ -364,7 +364,7 @@
         - name: ICorDebugDataTarget3 (interface)
           href: icordebugdatatarget3-interface.md
           items:
-            - name: GetLoadedModules (méthode)
+            - name: 'GetLoadedModules, méthode'
               href: icordebugdatatarget3-getloadedmodules-method.md
         - name: 'ICorDebugDebugEvent, interface'
           href: icordebugdebugevent-interface.md
@@ -1048,7 +1048,7 @@
         - name: ICorDebugProcess8 (interface)
           href: icordebugprocess8-interface.md
           items:
-            - name: EnableExceptionCallbacksOutsideOfMyCode (méthode)
+            - name: 'EnableExceptionCallbacksOutsideOfMyCode, méthode'
               href: icordebugprocess8-enableexceptioncallbacksoutsideofmycode-method.md
         - name: 'ICorDebugProcessEnum, interface'
           href: icordebugprocessenum-interface.md
@@ -1608,6 +1608,11 @@
           href: cordebugexceptionobjectstackframe-structure.md
         - name: 'CorDebugGuidToTypeMapping, structure'
           href: cordebugguidtotypemapping-structure.md
+        - name: 'DacpGetModuleAddress, structure'
+          href: dacpgetmoduleaddress-structure.md
+          items:
+            - name: 'DacpGetModuleAddress::Request, méthode'
+              href: dacpgetmoduleaddress-request-method.md
         - name: 'DacpMethodDescData, structure'
           href: dacpmethoddescdata-structure.md
         - name: 'DacpModuleData, structure'

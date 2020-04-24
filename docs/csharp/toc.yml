@@ -119,8 +119,8 @@
       href: programming-guide/types/index.md
     - name: Types références Nullables
       href: nullable-references.md
-    - name: Mettre à jour les signatures API vers des références Nullables
-      href: nullable-attributes.md
+    - name: Choisir une stratégie pour activer les types référence Nullable
+      href: nullable-migration-strategies.md
     - name: Espaces de noms
       href: programming-guide/namespaces/index.md
     - name: Types de base
@@ -1200,6 +1200,8 @@
               href: programming-guide/xmldoc/exception.md
             - name: <include>
               href: programming-guide/xmldoc/include.md
+            - name: <inheritdoc>
+              href: programming-guide/xmldoc/inheritdoc.md
             - name: <list>
               href: programming-guide/xmldoc/list.md
             - name: <para>
