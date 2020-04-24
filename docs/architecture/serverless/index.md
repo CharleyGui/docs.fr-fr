@@ -1,21 +1,23 @@
 ---
-title: 'Applications serverless : Architecture, modèles et implémentation Azure'
+title: 'Applications serverless : architecture, modèles et implémentation Azure'
 description: Guide sur l’architecture serverless. Découvrez quand, pourquoi et comment implémenter une architecture serverless (par opposition à une infrastructure IaaS ou une plateforme PaaS) pour les applications de votre entreprise.
 author: JEREMYLIKNESS
 ms.author: jeliknes
-ms.date: 06/26/2018
-ms.openlocfilehash: 9dea7dbccb5c9e125f792e6a7287a7dd2fad26f1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/22/2020
+ms.openlocfilehash: 16e658a99feda6537189a45b53da514e67766999
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73093548"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135687"
 ---
-# <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>Applications serverless : Architecture, modèles et implémentation Azure
+# <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>Applications serverless : architecture, modèles et implémentation Azure
 
-![Capture d’écran qui montre la couverture du livre électronique Serverless Apps.](./media/index/serverless-apps-cover.jpg)
+![Capture d’écran montrant la couverture de livre électronique applications sans serveur.](./media/index/serverless-apps-cover-v3.png)
 
-> TÉLÉCHARGEMENT disponible à l’adresse suivante : <https://aka.ms/serverless-ebook>
+**Edition v 3.0** -mise à jour vers Azure Functions v3
+
+> TÉLÉCHARGEMENT disponible à l’adresse suivante : <https://aka.ms/serverlessbookpdf>
 
 PUBLIÉ PAR
 
@@ -27,7 +29,7 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright © 2018 Microsoft Corporation
+Copyright &copy; 2018-2020 par Microsoft Corporation
 
 Tous droits réservés. Aucune partie du contenu de ce document ne peut être reproduite ou transmise sous quelque forme ou par quelque moyen que ce soit sans l’autorisation écrite de l’éditeur.
 
@@ -43,17 +45,17 @@ Toutes les autres marques et tous les autres logos sont la propriété de leurs 
 
 Auteur :
 
-> **[Jeremy Likness](https://twitter.com/jeremylikness)**, Senior Cloud Advocate, Microsoft Corp.
+> **[Jeremy Likness](https://twitter.com/jeremylikness)**, responsable de programme de données .NET senior, Microsoft Corp.
 
 Collaborateur :
 
-> **[Cecil Phillip](https://twitter.com/cecilphillip)**, Senior Cloud Advocate, Microsoft Corp.
+> **[Cecil Phillip](https://twitter.com/cecilphillip)**, avocat du Cloud senior, Microsoft Corp.
 
 Rédacteurs :
 
-> **[Bill Wagner](https://twitter.com/billwagner)**, Développeur de contenu senior, Microsoft Corp.
+> **[Bill Wagner](https://twitter.com/billwagner)**, développeur de contenu senior, Microsoft Corp.
 
-> **[Maira Wenzel](https://twitter.com/mairacw)**, Développeur de contenu senior, Microsoft Corp.
+> **[Maira Wenzel](https://twitter.com/mairacw)**, développeur de contenu senior, Microsoft Corp.
 
 Participants et réviseurs :
 
@@ -61,7 +63,7 @@ Participants et réviseurs :
 
 ## <a name="introduction"></a>Introduction
 
-[Serverless](https://azure.microsoft.com/solutions/serverless/) est l’évolution des plates-formes cloud dans la direction du code natif du cloud pur. Il rapproche les développeurs d’une logique métier en les éloignant des problèmes d’infrastructure. Il ne s’agit pas d’un modèle qui n’implique « aucun serveur », mais plutôt d’un modèle qui implique « moins de serveurs ». Le code serverless est basé sur les événements. Le code peut être déclenché par n’importe quoi, une requête web HTTP traditionnelle, un minuteur ou le résultat du chargement d’un fichier. L’infrastructure derrière le modèle serverless permet une mise à l’échelle instantanée pour répondre à des besoins élastiques et offre une micro-facturation pour un vrai « paiement à l’utilisation. » Le modèle serverless demande de penser et d’approcher autrement la création d’applications et n’est pas la solution à tous les problèmes. En tant que développeur, vous devez déterminer :
+Sans [serveur](https://azure.microsoft.com/solutions/serverless/) est l’évolution des plateformes Cloud dans le sens du code natif du Cloud pur. Il rapproche les développeurs d’une logique métier en les éloignant des problèmes d’infrastructure. Il ne s’agit pas d’un modèle qui n’implique « aucun serveur », mais plutôt d’un modèle qui implique « moins de serveurs ». Le code serverless est basé sur les événements. Le code peut être déclenché par n’importe quoi, une requête web HTTP traditionnelle, un minuteur ou le résultat du chargement d’un fichier. L’infrastructure derrière le modèle serverless permet une mise à l’échelle instantanée pour répondre à des besoins élastiques et offre une micro-facturation pour un vrai « paiement à l’utilisation. » Le modèle serverless demande de penser et d’approcher autrement la création d’applications et n’est pas la solution à tous les problèmes. En tant que développeur, vous devez déterminer :
 
 - Quels sont les avantages et les inconvénients du modèle serverless ?
 - Pourquoi devriez-vous envisager le modèle serverless pour vos propres applications ?
@@ -88,7 +90,7 @@ Avant le cloud, une délimitation perceptible existait entre le développement e
 - Où sont envoyées les sauvegardes de stockage ?
 - Un système d’alimentation redondant doit-il être envisagé ?
 
-La liste s’allongeait et la surcharge était énorme. Dans de nombreux cas, les services informatiques étaient obligés de gaspiller considérablement. Les déchets étaient dus à une sur-allocation des serveurs comme machines de sauvegarde pour la récupération en cas de catastrophe et des serveurs de secours pour permettre l’étalement. Heureusement, l’introduction de la technologie de virtualisation (comme [Hyper-V](/virtualization/hyper-v-on-windows/about/)) avec des machines virtuelles (VM) a donné lieu à l’infrastructure en tant que service (IaaS). Avec une infrastructure virtualisée, des opérations permettaient de définir un ensemble standard de serveurs comme épine dorsale, donnant ainsi un environnement flexible capable de provisionner des serveurs uniques « à la demande ». Plus important, la virtualisation préparait le terrain pour utiliser le cloud afin de fournir des machines virtuelles « en tant que service ». Les entreprises pouvaient alors aisément arrêter de se préoccuper du système d’alimentation redondant ou des ordinateurs physiques. Elles se concentraient plutôt sur l’environnement virtuel.
+La liste s’allongeait et la surcharge était énorme. Dans de nombreux cas, les services informatiques étaient obligés de gaspiller considérablement. Le gaspillage était dû à une allocation excessive de serveurs en tant qu’ordinateurs de sauvegarde pour la récupération d’urgence et les serveurs de secours pour permettre la montée en puissance parallèle. Heureusement, l’introduction de la technologie de virtualisation (comme [Hyper-V](/virtualization/hyper-v-on-windows/about/)) avec des machines virtuelles (VM) a donné lieu à l’infrastructure en tant que service (IaaS). Avec une infrastructure virtualisée, des opérations permettaient de définir un ensemble standard de serveurs comme épine dorsale, donnant ainsi un environnement flexible capable de provisionner des serveurs uniques « à la demande ». Plus important, la virtualisation préparait le terrain pour utiliser le cloud afin de fournir des machines virtuelles « en tant que service ». Les entreprises pouvaient alors aisément arrêter de se préoccuper du système d’alimentation redondant ou des ordinateurs physiques. Elles se concentraient plutôt sur l’environnement virtuel.
 
 IaaS implique quand même une surcharge conséquente parce que les opérations sont encore responsables de différentes tâches. Il s’agit notamment des tâches suivantes :
 
@@ -97,7 +99,7 @@ IaaS implique quand même une surcharge conséquente parce que les opérations s
 - Mise à jour du système d’exploitation.
 - Supervision de l’application.
 
-L’évolution d’après a réduit la surcharge avec l’introduction des plateformes PaaS. Avec PaaS, le fournisseur de cloud gère les systèmes d’exploitation, les correctifs de sécurité et même les packages nécessaires à la prise en charge d’une plateforme spécifique. Au lieu de créer une machine virtuelle, de configurer le .NET Framework et de mettre sur pied des serveurs IIS (Internet Information Services), les développeurs choisissent simplement une « cible de plateforme », comme une « application web » ou un « point de terminaison d’API », puis déploient le code directement. Les questions d’infrastructure se réduisent à :
+L’évolution d’après a réduit la surcharge avec l’introduction des plateformes PaaS. Avec PaaS, le fournisseur de cloud gère les systèmes d’exploitation, les correctifs de sécurité et même les packages nécessaires à la prise en charge d’une plateforme spécifique. Au lieu de créer une machine virtuelle, puis de configurer .NET et des serveurs Internet Information Services (IIS), les développeurs choisissent simplement une « plateforme cible » telle que « application Web » ou « point de terminaison d’API » et déploient du code directement. Les questions d’infrastructure se réduisent à :
 
 - Quels services de taille sont nécessaires ?
 - Comment les services montent en charge (ajout d’autres serveurs ou nœuds) ?

@@ -17,7 +17,7 @@ L’exemple suivant montre comment appeler `sqlite3_trace` pour écrire des inst
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/InteropSample/Program.cs?name=snippet_Trace)]
 
-Et l’exemple suivant illustre l’appel de `sqlite3_stmt_status` pour afficher le nombre d’étapes d’un ordinateur virtuel SQLite dans lequel une instruction SQL est compilée :
+Et l’exemple suivant illustre l' `sqlite3_stmt_status` appel de pour afficher le nombre d’étapes de machine virtuelle SQLite compilées par une instruction SQL :
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/InteropSample/Program.cs?name=snippet_StatementStatus)]
 

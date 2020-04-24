@@ -39,4 +39,4 @@ Les objets d’extension permettent d’étendre les fonctionnalités des feuill
 ## <a name="see-also"></a>Voir aussi
 
 - [Transformations XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)
-- [Considérations sur la sécurité de XSLT](../../../../docs/standard/data/xml/xslt-security-considerations.md)
+- [XSLT et la sécurité](../../../../docs/standard/data/xml/xslt-security-considerations.md)

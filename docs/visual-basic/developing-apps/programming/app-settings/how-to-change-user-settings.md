@@ -1,5 +1,5 @@
 ---
-title: 'Guide pratique : modifier les paramètres utilisateur'
+title: 'Procédure : modifier les paramètres utilisateur'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - user settings [Visual Basic], changing in Visual Basic
@@ -18,12 +18,12 @@ ms.locfileid: "74329627"
 
 Vous pouvez modifier un paramètre utilisateur en assignant une nouvelle valeur à la propriété du paramètre de l’objet `My.Settings`.  
   
- L’objet `My.Settings` expose chaque paramètre en tant que propriété. Le nom de la propriété est le même que le nom du paramètre, et le type de la propriété est le même que le type du paramètre. La **portée** du paramètre détermine si la propriété est lue uniquement : La propriété **d’un**paramètre d’application-portée est lue uniquement, tandis que la propriété d’un paramètre **d’utilisation utilisateur-scope**est lue. Pour plus d’informations, consultez [My.Settings, objet](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
+ L’objet `My.Settings` expose chaque paramètre en tant que propriété. Le nom de la propriété est le même que le nom du paramètre, et le type de la propriété est le même que le type du paramètre. La **portée** du paramètre détermine si la propriété est en lecture seule : la propriété d’un paramètre de portée **application**est en lecture seule, tandis que la propriété d’un paramètre de portée **utilisateur**est en lecture-écriture. Pour plus d’informations, consultez [My.Settings, objet](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
   
 > [!NOTE]
 > Bien que vous puissiez modifier et enregistrer les valeurs des paramètres de portée utilisateur au moment de l’exécution, les paramètres de portée application sont en lecture seule et ne peuvent pas être modifiés par programmation. Vous pouvez changer les paramètres de portée application lors de la création de l’application, à l’aide du **Concepteur de projet**, ou en modifiant le fichier de configuration de l’application. Pour plus d’informations, consultez [Gestion des paramètres d’une application (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
  Dans cet exemple, la valeur du paramètre utilisateur `Nickname` est modifiée.  
   

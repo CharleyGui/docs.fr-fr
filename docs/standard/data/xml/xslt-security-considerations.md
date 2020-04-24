@@ -26,7 +26,7 @@ Le langage XSLT possède une panoplie de fonctionnalités offrant puissance et f
 ### <a name="style-sheet-scripts"></a>Scripts de feuille de style  
  Des scripts peuvent être intégrés dans une feuille de style à l’aide de l’élément d’extension `msxsl:script`. La prise en charge des scripts est une fonction facultative de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Elle est désactivée par défaut. Les scripts peuvent être activés en définissant la propriété <xref:System.Xml.Xsl.XsltSettings.EnableScript%2A?displayProperty=nameWithType> sur `true` et en transmettant l'objet <xref:System.Xml.Xsl.XsltSettings> à la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>.  
   
-#### <a name="guidelines"></a>Guidelines  
+#### <a name="guidelines"></a>Consignes  
  N'activez les scripts que lorsque la source de la feuille de style est fiable. Si vous ne pouvez pas vérifier la source de la feuille de style ou si celle-ci ne provient pas d'une source fiable, transmettez l'argument `null` dans les réglages XSLT.  
   
 ## <a name="external-resources"></a>Ressources externes  
@@ -41,7 +41,7 @@ Le langage XSLT possède une panoplie de fonctionnalités offrant puissance et f
   
  Les méthodes <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> et <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> comprennent des surcharges qui prennent un objet <xref:System.Xml.XmlResolver> comme l’un de leurs arguments. Si aucun <xref:System.Xml.XmlResolver> n'est spécifié, un <xref:System.Xml.XmlUrlResolver> par défaut sans informations d'identification est utilisé.  
   
-#### <a name="guidelines"></a>Guidelines  
+#### <a name="guidelines"></a>Consignes  
  N'activez la fonction `document()` que lorsque la source de la feuille de style est fiable.  
   
  La liste suivante décrit les cas dans lesquels vous pouvez préférer spécifier un objet <xref:System.Xml.XmlResolver> :  

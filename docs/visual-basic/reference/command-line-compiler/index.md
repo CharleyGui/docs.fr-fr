@@ -21,12 +21,12 @@ Le Visual Basic compilateur de ligne de commande offre une alternative à la com
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
   
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
 [Génération à partir de la ligne de commande](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)  
 Décrit le compilateur de ligne de commande Visual Basic, fourni comme alternative à la compilation de programmes depuis l’IDE de Visual Studio.
 
-[Options du compilateur Visual Basic par ordre alphabétique](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
+[Visual Basic Compiler Options Listed Alphabetically](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
 Répertorie les options du compilateur dans une table alphabétique
 
 [Options du compilateur Visual Basic par catégorie](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)  

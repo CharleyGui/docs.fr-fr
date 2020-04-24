@@ -19,11 +19,11 @@ SQLitePCLRaw fournit des packages de bundle qui facilitent l’apport des dépen
 
 Le package principal Microsoft. Data. sqlite apporte par défaut SQLitePCLRaw. bundle_e_sqlite3.
 
-Pour utiliser un autre Bundle, installez le package `Microsoft.Data.Sqlite.Core` au lieu du package que vous souhaitez utiliser. Les offres groupées sont automatiquement initialisées par Microsoft. Data. sqlite.
+Pour utiliser un autre Bundle, installez le `Microsoft.Data.Sqlite.Core` package à la place du package que vous souhaitez utiliser. Les offres groupées sont automatiquement initialisées par Microsoft. Data. sqlite.
 
 | Bundle | Description |
 | --- | --- |
-| SQLitePCLRaw. bundle_e_sqlite3 | Fournit une version cohérente de SQLite sur toutes les plateformes. Comprend les extensions d’arborescence FTS4, FTS5, JSON1 et R *. Il s'agit de la valeur par défaut. |
+| SQLitePCLRaw. bundle_e_sqlite3 | Fournit une version cohérente de SQLite sur toutes les plateformes. Comprend les extensions d’arborescence FTS4, FTS5, JSON1 et R *. Il s’agit de la valeur par défaut. |
 | SQLitePCLRaw. bundle_green | Identique à bundle_e_sqlite3, sauf sur iOS où il utilise la bibliothèque SQLite du système. |
 | SQLitePCLRaw. bundle_zetetic | Utilise les builds officielles de SQLCipher à partir de zetetic (non inclus). |
 | SQLitePCLRaw. bundle_winsqlite3 | Utilise winsqlite3. dll, la bibliothèque SQLite système sur Windows 10. |
@@ -31,14 +31,14 @@ Pour utiliser un autre Bundle, installez le package `Microsoft.Data.Sqlite.Core`
 
 Par exemple, pour utiliser la build Open source non officielle de SQLCipher, utilisez les commandes suivantes.
 
-### <a name="net-core-clitabnetcore-cli"></a>[CLI .NET Core](#tab/netcore-cli)
+### <a name="net-core-cli"></a>[CLI .NET Core](#tab/netcore-cli)
 
 ```dotnetcli
 dotnet add package Microsoft.Data.Sqlite.Core
 dotnet add package SQLitePCLRaw.bundle_e_sqlcipher
 ```
 
-### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+### <a name="visual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 ``` PowerShell
 Install-Package Microsoft.Data.Sqlite.Core
@@ -49,7 +49,7 @@ Install-Package SQLitePCLRaw.bundle_e_sqlcipher
 
 ## <a name="sqlitepclraw-providers"></a>Fournisseurs SQLitePCLRaw
 
-Vous pouvez utiliser votre propre Build de SQLite en tirant parti du package `SQLitePCLRaw.provider.dynamic_cdecl`. Dans ce cas, vous êtes responsable du déploiement de la bibliothèque native avec votre application. Notez que les détails du déploiement de bibliothèques natives avec votre application varient considérablement selon la plateforme et le Runtime .NET que vous utilisez.
+Vous pouvez utiliser votre propre Build de SQLite en tirant parti du `SQLitePCLRaw.provider.dynamic_cdecl` package. Dans ce cas, vous êtes responsable du déploiement de la bibliothèque native avec votre application. Notez que les détails du déploiement de bibliothèques natives avec votre application varient considérablement selon la plateforme et le Runtime .NET que vous utilisez.
 
 Tout d’abord, vous devez implémenter IGetFunctionPointer. L’implémentation est relativement trivial sur .NET Core.
 

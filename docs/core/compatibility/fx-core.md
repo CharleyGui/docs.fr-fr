@@ -1,26 +1,27 @@
 ---
-title: Breaking changes - .NET Framework to .NET Core
+title: Dernières modifications-.NET Framework à .NET Core
 titleSuffix: ''
-description: Répertorie les changements de rupture de .NET Framework à .NET Core.
+description: Répertorie les modifications avec rupture d' .NET Framework à .NET Core.
 ms.date: 12/18/2019
-ms.openlocfilehash: ef16132c8dcffbe9bcfbe02834c9a78d6d0c33e4
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 6a6cbffed5a54e3683832da54d408d77bb553cf1
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021797"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135623"
 ---
-# <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>Breaking changes for migration from .NET Framework to .NET Core
+# <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>Dernières modifications pour la migration de .NET Framework vers .NET Core
 
-Si vous migrez une application de .NET Framework à .NET Core, les modifications de rupture énumérées dans cet article peuvent vous affecter. Les changements de rupture sont regroupés par catégorie, et dans ces catégories, par la version de .NET Core dans lequel ils ont été introduits.
+Si vous migrez une application à partir de .NET Framework vers .NET Core, les modifications avec rupture mentionnées dans cet article peuvent vous affecter. Les modifications avec rupture sont regroupées par catégorie et au sein de ces catégories, par la version de .NET Core dans laquelle elles ont été introduites.
 
 > [!NOTE]
-> Cet article n’est pas une liste complète des changements de rupture entre .NET Framework et .NET Core. Les changements de rupture les plus importants sont ajoutés ici que nous prenons conscience d’eux.
+> Cet article n’est pas une liste complète des modifications avec rupture entre .NET Framework et .NET Core. Les modifications critiques les plus importantes sont ajoutées ici, car nous en avons conscience.
 
-## <a name="core-net-libraries"></a>Core .NET bibliothèques
+## <a name="core-net-libraries"></a>Bibliothèques .NET Core
 
-- [Variation de la valeur par défaut de UseShellExecute](#change-in-default-value-of-useshellexecute)
-- [UnauthorizedAccessException jeté par FileSystemInfo.Attributes](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes)
+- [Modification de la valeur par défaut de UseShellExecute](#change-in-default-value-of-useshellexecute)
+- [UnauthorizedAccessException levée par FileSystemInfo. Attributes](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes)
+- [La gestion des exceptions d’état de processus endommagées n’est pas prise en charge](#handling-corrupted-state-exceptions-is-not-supported)
 
 ### <a name="net-core-21"></a>.NET Core 2.1
 
@@ -34,9 +35,13 @@ Si vous migrez une application de .NET Framework à .NET Core, les modifications
 
 ***
 
+[!INCLUDE [corrupted-state-exceptions](~/includes/core-changes/corefx/1.0/corrupted-state-exceptions.md)]
+
+***
+
 ## <a name="cryptography"></a>Chiffrement
 
-- [Boolean paramètre de SignedCms.ComputeSignature est respecté](#boolean-parameter-of-signedcmscomputesignature-is-respected)
+- [Le paramètre booléen de SignedCms. ComputeSignature est respecté](#boolean-parameter-of-signedcmscomputesignature-is-respected)
 
 ### <a name="net-core-21"></a>.NET Core 2.1
 
@@ -46,23 +51,23 @@ Si vous migrez une application de .NET Framework à .NET Core, les modifications
 
 ## <a name="windows-forms"></a>Windows Forms
 
-Windows Forms support a été ajouté à .NET Core dans la version 3.0. Si vous migrez une application Windows Forms de .NET Framework à .NET Core, les modifications de rupture énumérées ici peuvent affecter votre application.
+La prise en charge de Windows Forms a été ajoutée à .NET Core dans la version 3,0. Si vous effectuez la migration d’une application Windows Forms à partir de .NET Framework vers .NET Core, les modifications avec rupture répertoriées ici peuvent affecter votre application.
 
 - [Contrôles supprimés](#removed-controls)
-- [CellFormatting événement non soulevé si tooltip est montré](#cellformatting-event-not-raised-if-tooltip-is-shown)
-- [Control.DefaultFont changé en Segoe UI 9 pt](#default-control-font-changed-to-segoe-ui-9-pt)
+- [Événement CellFormatting non déclenché si l’info-bulle est affichée](#cellformatting-event-not-raised-if-tooltip-is-shown)
+- [Control. DefaultFont remplacé par Segoe UI 9 PT](#default-control-font-changed-to-segoe-ui-9-pt)
 - [Modernisation du FolderBrowserDialog](#modernization-of-the-folderbrowserdialog)
-- [SerializableAttribute supprimé de certains types de formulaires Windows](#serializableattribute-removed-from-some-windows-forms-types)
+- [SerializableAttribute supprimé de certains types de Windows Forms](#serializableattribute-removed-from-some-windows-forms-types)
 - [Commutateur de compatibilité AllowUpdateChildControlIndexForTabControls non pris en charge](#allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported)
-- [DomainUpDown.UseLegacyScrolling commutation compatibilité non pris en charge](#domainupdownuselegacyscrolling-compatibility-switch-not-supported)
-- [DoNotLoadLatestRichEditControl commutateur de compatibilité non pris en charge](#donotloadlatestricheditcontrol-compatibility-switch-not-supported)
+- [Commutateur de compatibilité DomainUpDown. UseLegacyScrolling non pris en charge](#domainupdownuselegacyscrolling-compatibility-switch-not-supported)
+- [Commutateur de compatibilité DoNotLoadLatestRichEditControl non pris en charge](#donotloadlatestricheditcontrol-compatibility-switch-not-supported)
 - [Commutateur de compatibilité DoNotSupportSelectAllShortcutInMultilineTextBox non pris en charge](#donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported)
 - [Commutateur de compatibilité DontSupportReentrantFilterMessage non pris en charge](#dontsupportreentrantfiltermessage-compatibility-switch-not-supported)
 - [Commutateur de compatibilité EnableVisualStyleValidation non pris en charge](#enablevisualstylevalidation-compatibility-switch-not-supported)
-- [UtiliserLegacyContextMenuStripSourceControlValue commutateur de compatibilité non pris en charge](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported)
+- [Commutateur de compatibilité UseLegacyContextMenuStripSourceControlValue non pris en charge](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported)
 - [Commutateur de compatibilité UseLegacyImages non pris en charge](#uselegacyimages-compatibility-switch-not-supported)
-- [Changement d’accès pour AccessibleObject.RuntimeIDFirstItem](#change-of-access-for-accessibleobjectruntimeidfirstitem)
-- [API dupliquée supprimée des formulaires Windows](#duplicated-apis-removed-from-windows-forms)
+- [Changement d’accès pour AccessibleObject. RuntimeIDFirstItem](#change-of-access-for-accessibleobjectruntimeidfirstitem)
+- [API dupliquées supprimées de Windows Forms](#duplicated-apis-removed-from-windows-forms)
 
 ### <a name="net-core-31"></a>.NET Core 3.1
 
@@ -130,5 +135,5 @@ Windows Forms support a été ajouté à .NET Core dans la version 3.0. Si vous 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [API qui jettent toujours des exceptions sur .NET Core](unsupported-apis.md)
+- [API qui lèvent toujours des exceptions sur .NET Core](unsupported-apis.md)
 - [Technologies .NET Framework non disponibles sur .NET Core](../porting/net-framework-tech-unavailable.md)

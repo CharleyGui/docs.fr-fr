@@ -1,7 +1,7 @@
 ---
-title: Vue d’ensemble
+title: Vue d'ensemble
 ms.date: 12/13/2019
-description: Un aperçu de Microsoft.Data.Sqlite
+description: Vue d’ensemble de Microsoft. Data. sqlite
 ms.openlocfilehash: e84c68f0615f187e8dea7ab87ac917c0ad796a1c
 ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
@@ -9,9 +9,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/15/2020
 ms.locfileid: "77543597"
 ---
-# <a name="microsoftdatasqlite-overview"></a>Aperçu de Microsoft.Data.Sqlite
+# <a name="microsoftdatasqlite-overview"></a>Vue d’ensemble de Microsoft. Data. sqlite
 
-Microsoft.Data.Sqlite est un fournisseur [de ADO.NET](../../../framework/data/adonet/index.md) léger pour SQLite. Le fournisseur [de base de cadre d’entité](/ef/core/) pour SQLite est construit au-dessus de cette bibliothèque. Cependant, il peut également être utilisé de façon indépendante ou avec d’autres bibliothèques d’accès aux données.
+Microsoft. Data. sqlite est un fournisseur [ADO.net](../../../framework/data/adonet/index.md) léger pour SQLite. Le fournisseur [Entity Framework Core](/ef/core/) pour SQLite s’appuie sur cette bibliothèque. Toutefois, il peut également être utilisé indépendamment ou avec d’autres bibliothèques d’accès aux données.
 
 ## <a name="installation"></a>Installation
 
@@ -23,7 +23,7 @@ La dernière version stable est disponible sur [NuGet](https://www.nuget.org/pac
 dotnet add package Microsoft.Data.Sqlite
 ```
 
-### <a name="visual-studio"></a>[Studio visuel](#tab/visual-studio)
+### <a name="visual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 ``` PowerShell
 Install-Package Microsoft.Data.Sqlite
@@ -33,7 +33,7 @@ Install-Package Microsoft.Data.Sqlite
 
 ## <a name="usage"></a>Usage
 
-Cette bibliothèque met en œuvre les abstractions ADO.NET communes pour les connexions, les commandes, les lecteurs de données, etc.
+Cette bibliothèque implémente les abstractions ADO.NET courantes pour les connexions, les commandes, les lecteurs de données, etc.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/HelloWorldSample/Program.cs?name=snippet_HelloWorld)]
 

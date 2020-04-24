@@ -27,7 +27,7 @@ ms.locfileid: "80248041"
 Les attributs peuvent être utilisés pour contrôler la sérialisation XML d'un objet ou pour créer un flux de données XML différent à partir du même ensemble de classes. Pour plus d’informations sur la création d’un flux de données XML différent, consultez [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
 
 > [!NOTE]
-> Si le XML généré doit se conformer à l’article 5 du document world Wide Web Consortium (W3C) intitulé [Simple Object Access Protocol (SOAP) 1.1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), utilisez les attributs énumérés dans [Attributes That Control Encoded SOAP Serialization](attributes-that-control-encoded-soap-serialization.md).
+> Si le code XML généré doit se conformer à la section 5 du document World Wide Web Consortium (W3C) intitulé [simple Object Access Protocol (SOAP) 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), utilisez les attributs listés dans [attributs qui contrôlent la sérialisation encodée](attributes-that-control-encoded-soap-serialization.md)selon le protocole SOAP.
 
 Par défaut, un nom d'élément XML est déterminé par le nom de la classe ou du membre. Dans une classe simple nommée `Book`, un champ nommé `ISBN` génère une balise d’élément XML \<ISBN>, comme illustré dans l’exemple suivant.
 
@@ -241,7 +241,7 @@ Une instance sérialisée peut se présenter comme suit.
 </Group>
 ```
 
-Pour différencier les deux flux de données XML, vous pouvez également utiliser l'outil XML Schema Definition pour générer des fichiers de document de schéma XML (XSD) à partir du code compilé. (Pour plus de détails sur l’utilisation de l’outil, voir [The XML Schema Definition Tool et XML Serialization](the-xml-schema-definition-tool-and-xml-serialization.md).) Lorsqu’aucun attribut n’est appliqué au champ, le schéma décrit l’élément de la manière suivante.
+Pour différencier les deux flux de données XML, vous pouvez également utiliser l'outil XML Schema Definition pour générer des fichiers de document de schéma XML (XSD) à partir du code compilé. (Pour plus d’informations sur l’utilisation de l’outil, consultez [l’outil XML Schema Definition et SÉRIALISATION XML](the-xml-schema-definition-tool-and-xml-serialization.md).) Quand aucun attribut n’est appliqué au champ, le schéma décrit l’élément de la manière suivante.
 
 ```xml
 <xs:element minOccurs="0" maxOccurs ="1" name="Employees" type="ArrayOfEmployee" />
@@ -317,8 +317,8 @@ Dans certains cas, une propriété ou un champ public ne doit pas être sériali
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Attributs qui contrôlent la sérialisation XML](attributes-that-control-xml-serialization.md)
-- [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](attributes-that-control-encoded-soap-serialization.md)
+- [Attributs qui contrôlent la sérialisation XML](attributes-that-control-xml-serialization.md)
+- [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](attributes-that-control-encoded-soap-serialization.md)
 - [Introduction à la sérialisation XML](introducing-xml-serialization.md)
 - [Exemples de sérialisation XML](examples-of-xml-serialization.md)
 - [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)

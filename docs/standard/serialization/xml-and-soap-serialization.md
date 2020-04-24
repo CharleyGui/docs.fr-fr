@@ -16,9 +16,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 04/02/2020
 ms.locfileid: "80588375"
 ---
-# <a name="xml-and-soap-serialization"></a>Sérialisation XML et SOAP
+# <a name="xml-and-soap-serialization"></a>Sérialisation XML et SOAP
 
-La sérialisation XML convertit (sérialiser) les champs publics et les propriétés d’un objet, ainsi que les paramètres et les valeurs de retour des méthodes, en un flux XML conforme à un document spécifique de définition XML Schema (XSD). La sérialisation XML permet d'obtenir des classes fortement typées avec des propriétés et des champs publics convertis au format série (dans ce cas, XML) pour le stockage ou le transport.
+La sérialisation XML convertit (sérialise) les champs et les propriétés publics d’un objet, ainsi que les paramètres et les valeurs de retour des méthodes, en un flux XML conforme à un document en langage XSD (XML Schema Definition) spécifique. La sérialisation XML permet d'obtenir des classes fortement typées avec des propriétés et des champs publics convertis au format série (dans ce cas, XML) pour le stockage ou le transport.
 
 XML étant une norme ouverte, le flux de données XML peut être traité si nécessaire par toute application, quelle que soit la plateforme. Par exemple, les services Web XML créés à l'aide d'ASP.NET utilisent la classe <xref:System.Xml.Serialization.XmlSerializer> pour créer des flux de données XML qui passent des données entre des applications de services Web XML sur Internet ou des intranets. Inversement, la désérialisation utilise le flux de données XML et reconstruit l'objet.
 
@@ -29,4 +29,4 @@ Pour sérialiser ou désérialiser des objets, utilisez la classe <xref:System.X
 ## <a name="see-also"></a>Voir aussi
 
 - [Sérialisation binaire](binary-serialization.md)
-- [XML Web Services créés à l’aide de clients ASP.NET et XML Web Service](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7bkzywba(v=vs.100))
+- [Services Web XML créés à l’aide des clients de service Web XML et ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7bkzywba(v=vs.100))

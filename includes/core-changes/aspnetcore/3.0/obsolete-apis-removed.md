@@ -1,26 +1,26 @@
 ---
-ms.openlocfilehash: c858a2a614cce587afb456a963dfcf11cabf770c
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 17c88db263c12b0e549702d4bd215f4f2713b9f3
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81637169"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135837"
 ---
-### <a name="obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed"></a>L’antiforgerie obsolète, le CORS, le diagnostic, le MVC et les API de routage supprimés
+### <a name="obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed"></a>Anti-contrefaçon, CORS, diagnostics, MVC et API de routage obsolètes supprimés
 
-Les membres obsolètes et les commutateurs de compatibilité dans ASP.NET Core 2.2 ont été supprimés.
+Les membres obsolètes et les commutateurs de compatibilité dans ASP.NET Core 2,2 ont été supprimés.
 
 #### <a name="version-introduced"></a>Version introduite
 
 3.0
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Amélioration de la surface de l’API au fil du temps.
+Amélioration de la surface de l’API dans le temps.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Tout en ciblant .NET Core 2.2, suivez les conseils dans les messages de construction obsolètes pour adopter de nouvelles API à la place.
+En ciblant .NET Core 2,2, suivez les instructions des messages de génération obsolètes pour adopter de nouvelles API à la place.
 
 #### <a name="category"></a>Category
 
@@ -28,91 +28,91 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-Les types et les membres suivants ont été marqués comme obsolètes pour ASP.NET Core 2.1 et 2.2 :
+Les types et membres suivants ont été marqués comme obsolètes pour ASP.NET Core 2,1 et 2,2 :
 
 **Types**
 
-- Microsoft.AspNetCore.Diagnostics.Views.WelcomePage
-- Microsoft.AspNetCore.DiagnosticsViewPage.Views.AttributeValue
-- Microsoft.AspNetCore.DiagnosticsViewPage.Views.BaseView
-- Microsoft.AspNetCore.DiagnosticsViewPage.Views.HelperResult
-- Microsoft.AspNetCore.Mvc.Formatters.Xml.ProblemDetails21Wrapper
-- Microsoft.AspNetCore.Mvc.Formatters.Xml.ValidationProblemDetails21Wrapper
-- Microsoft.AspNetCore.Mvc.Razor.Compilation.ViewsFeatureProvider
-- Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageArgumentBinder
-- Microsoft.AspNetCore.Routing.IRouteValuesAddressMetadata
-- Microsoft.AspNetCore.Routing.RouteValuesAddressMetadata
+- `Microsoft.AspNetCore.Diagnostics.Views.WelcomePage`
+- `Microsoft.AspNetCore.DiagnosticsViewPage.Views.AttributeValue`
+- `Microsoft.AspNetCore.DiagnosticsViewPage.Views.BaseView`
+- `Microsoft.AspNetCore.DiagnosticsViewPage.Views.HelperResult`
+- `Microsoft.AspNetCore.Mvc.Formatters.Xml.ProblemDetails21Wrapper`
+- `Microsoft.AspNetCore.Mvc.Formatters.Xml.ValidationProblemDetails21Wrapper`
+- `Microsoft.AspNetCore.Mvc.Razor.Compilation.ViewsFeatureProvider`
+- `Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageArgumentBinder`
+- `Microsoft.AspNetCore.Routing.IRouteValuesAddressMetadata`
+- `Microsoft.AspNetCore.Routing.RouteValuesAddressMetadata`
 
 **Constructeurs**
 
-- Microsoft.AspNetCore.Cors.Infrastructure.CorsService (Microsoft.Extensions.Options.IOptions-Microsoft.AspNetCore.Cors.Infrastructure.CorsOptions)
-- Microsoft.AspNetCore.Routing.Tree.TreeRouteBuilder (Microsoft.Extensions.Logging.ILoggerFactory,System.Text.Encodings.Web.UrlEncoder,Microsoft.Extensions.ObjectPool.ObjectPool-Microsoft.AspNetCore.Routing.Internal.UriBuildingContextMD,Microsoft.AspNetCore.Routing.IIn
-- Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext
-- Microsoft.AspNetCore.Mvc.ApiExplorer.DefaultApiDescriptionProvider (Microsoft.Extensions.Options.IOptions-Microsoft.AspNetCore.Mvc.MvcOptionsMD,Microsoft.AspNetCore.Routing.IInlineConstraintResolver,Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider)
-- Microsoft.AspNetCore.Mvc.ApiExplorer.DefaultApiDescriptionProvider (Microsoft.Extensions.Options.IOptions-Microsoft.AspNetCore.Mvc.MvcOptionsMD,Microsoft.AspNetCore.Routing.IInlineConstraintResolver,Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider,Microsoft.AspNetCore.Mvc.Infrastructure.IActionResultTypeMapper)
-- Microsoft.AspNetCore.Mvc.Formatters.FormatFilter (Microsoft.Extensions.Options.IOptions-Microsoft.AspNetCore.Mvc.MvcOptions)
-- Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinder'1 (Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinder)
-- Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinder
-- [Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinder'1 (IModelBinder)](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.collectionmodelbinder-1.-ctor?view=aspnetcore-2.2#Microsoft_AspNetCore_Mvc_ModelBinding_Binders_CollectionModelBinder_1__ctor_Microsoft_AspNetCore_Mvc_ModelBinding_IModelBinder_)
-- [Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinder (IDictionary'2)](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.complextypemodelbinder.-ctor?view=aspnetcore-2.2#Microsoft_AspNetCore_Mvc_ModelBinding_Binders_ComplexTypeModelBinder__ctor_System_Collections_Generic_IDictionary_Microsoft_AspNetCore_Mvc_ModelBinding_ModelMetadata_Microsoft_AspNetCore_Mvc_ModelBinding_IModelBinder__)
-- Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinder'2 (Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinder,Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinder)
-- Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DoubleModelBinder (System.Globalization.NumberStyles)
-- Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatModelBinder (System.Globalization.NumberStyles)
-- Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinder
-- Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinder
-- Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinder
-- Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinder'2 (Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinder,Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinder)
-- Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder (System.Type)
-- Microsoft.AspNetCore.Mvc.ModelBinding.ModelAttributes (System.Collections.Generic.IEnumerable-System.Object)
-- Microsoft.AspNetCore.Mvc.ModelBinding.ModelAttributes (System.Collections.Generic.IEnumerable-System.ObjectMD, System.Collections.Generic.IEnumerable-System.Object)
-- Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory (Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider,Microsoft.Extensions.Options.IOptions-Microsoft.AspNetCore.Mvc.MvcOptions)
-- Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder (Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider,Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinderFactory,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IObjectModelValidator)
-- [Microsoft.AspNetCore.Mvc.Routing.KnownRouteValueConstraint()](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.routing.knownroutevalueconstraint.-ctor?view=aspnetcore-2.2#Microsoft_AspNetCore_Mvc_Routing_KnownRouteValueConstraint__ctor)
-- Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerInputFormatter
-- Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerInputFormatter (System.Boolean)
-- Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerInputFormatter (Microsoft.AspNetCore.Mvc.MvcOptions)
-- Microsoft.AspNetCore.Mvc.Formatters.XmlSerializerInputFormatter
-- Microsoft.AspNetCore.Mvc.Formatters.XmlSerializerInputFormatter (System.Boolean)
-- Microsoft.AspNetCore.Mvc.Formatters.XmlSerializerInputFormatter (Microsoft.AspNetCore.Mvc.MvcOptions)
-- [Microsoft.AspNetCore.Mvc.TagHelpers.ImageTagHelper (IHostingEnvironment,IMemoryCache,HtmlEncoder,IUrlHelperFactory)](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.imagetaghelper.-ctor?view=aspnetcore-2.2#Microsoft_AspNetCore_Mvc_TagHelpers_ImageTagHelper__ctor_Microsoft_AspNetCore_Hosting_IHostingEnvironment_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Text_Encodings_Web_HtmlEncoder_Microsoft_AspNetCore_Mvc_Routing_IUrlHelperFactory_)
-- Microsoft.AspNetCore.Mvc.TagHelpers.LinkTagHelper (Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Caching.Memory.IMemoryCache,System.Text.Encodings.web.htmlEncoder,System.Text.Encodings.Web.JavaScriptEncoder,Microsoft.AspNetCore.Mvc.Routing.IUrHellOror)
-- Microsoft.AspNetCore.Mvc.TagHelpers.ScriptTagHelper (Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Caching.Memory.IMemoryCache,System.Text.Encodings.web.htmlEncoder,System.Text.Encodings.Web.JavaScriptEncoder,Microsoft.AspNetCore.Mvc.Routing.IUrHellOror)
-- Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.RazorPageAdapter (Microsoft.AspNetCore.Mvc.Razor.RazorPageBase)
+- `Microsoft.AspNetCore.Cors.Infrastructure.CorsService(IOptions{CorsOptions})`
+- `Microsoft.AspNetCore.Routing.Tree.TreeRouteBuilder(ILoggerFactory,UrlEncoder,ObjectPool{UriBuildingContext},IInlineConstraintResolver)`
+- `Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext`
+- `Microsoft.AspNetCore.Mvc.ApiExplorer.DefaultApiDescriptionProvider(IOptions{MvcOptions},IInlineConstraintResolver,IModelMetadataProvider)`
+- `Microsoft.AspNetCore.Mvc.ApiExplorer.DefaultApiDescriptionProvider(IOptions{MvcOptions},IInlineConstraintResolver,IModelMetadataProvider,IActionResultTypeMapper)`
+- `Microsoft.AspNetCore.Mvc.Formatters.FormatFilter(IOptions{MvcOptions})`
+- ``Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinder`1(IModelBinder)``
+- `Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinder`
+- [Microsoft. AspNetCore. Mvc. ModelBinding. Binders. CollectionModelBinder' 1 (IModelBinder)](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.collectionmodelbinder-1.-ctor?view=aspnetcore-2.2#Microsoft_AspNetCore_Mvc_ModelBinding_Binders_CollectionModelBinder_1__ctor_Microsoft_AspNetCore_Mvc_ModelBinding_IModelBinder_)
+- [Microsoft. AspNetCore. Mvc. ModelBinding. Binders. ComplexTypeModelBinder (IDictionary' 2)](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.complextypemodelbinder.-ctor?view=aspnetcore-2.2#Microsoft_AspNetCore_Mvc_ModelBinding_Binders_ComplexTypeModelBinder__ctor_System_Collections_Generic_IDictionary_Microsoft_AspNetCore_Mvc_ModelBinding_ModelMetadata_Microsoft_AspNetCore_Mvc_ModelBinding_IModelBinder__)
+- ``Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinder`2(IModelBinder,IModelBinder)``
+- `Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DoubleModelBinder(System.Globalization.NumberStyles)`
+- `Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatModelBinder(System.Globalization.NumberStyles)`
+- `Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinder`
+- `Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinder`
+- `Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinder`
+- ``Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinder`2(IModelBinder,IModelBinder)``
+- `Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder(System.Type)`
+- `Microsoft.AspNetCore.Mvc.ModelBinding.ModelAttributes(IEnumerable{System.Object})`
+- `Microsoft.AspNetCore.Mvc.ModelBinding.ModelAttributes(IEnumerable{System.Object},IEnumerable{System.Object})`
+- `Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory(IModelMetadataProvider,IOptions{MvcOptions})`
+- `Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder(IModelMetadataProvider,IModelBinderFactory,IObjectModelValidator)`
+- [Microsoft. AspNetCore. Mvc. Routing. KnownRouteValueConstraint ()](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.routing.knownroutevalueconstraint.-ctor?view=aspnetcore-2.2#Microsoft_AspNetCore_Mvc_Routing_KnownRouteValueConstraint__ctor)
+- `Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerInputFormatter`
+- `Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerInputFormatter(System.Boolean)`
+- `Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerInputFormatter(MvcOptions)`
+- `Microsoft.AspNetCore.Mvc.Formatters.XmlSerializerInputFormatter`
+- `Microsoft.AspNetCore.Mvc.Formatters.XmlSerializerInputFormatter(System.Boolean)`
+- `Microsoft.AspNetCore.Mvc.Formatters.XmlSerializerInputFormatter(MvcOptions)`
+- [Microsoft. AspNetCore. Mvc. TagHelpers. ImageTagHelper (IHostingEnvironment, IMemoryCache, HtmlEncoder, IUrlHelperFactory)](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.imagetaghelper.-ctor?view=aspnetcore-2.2#Microsoft_AspNetCore_Mvc_TagHelpers_ImageTagHelper__ctor_Microsoft_AspNetCore_Hosting_IHostingEnvironment_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Text_Encodings_Web_HtmlEncoder_Microsoft_AspNetCore_Mvc_Routing_IUrlHelperFactory_)
+- `Microsoft.AspNetCore.Mvc.TagHelpers.LinkTagHelper(IHostingEnvironment,IMemoryCache,HtmlEncoder,JavaScriptEncoder,IUrlHelperFactory)`
+- `Microsoft.AspNetCore.Mvc.TagHelpers.ScriptTagHelper(IHostingEnvironment,IMemoryCache,HtmlEncoder,JavaScriptEncoder,IUrlHelperFactory)`
+- `Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.RazorPageAdapter(RazorPageBase)`
 
 **Propriétés**
 
-- Microsoft.AspNetCore.Antiforgery.AntiforgeryOptions.CookieDomain
-- Microsoft.AspNetCore.Antiforgery.AntiforgeryOptions.CookieName
-- Microsoft.AspNetCore.Antiforgery.AntiforgeryOptions.CookiePath
-- Microsoft.AspNetCore.Antiforgery.AntiforgeryOptions.RequireSsl
-- Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.AllowInferringBindingSourceForCollectionTypesAsFromQuery
-- Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressUseValidationProblemDetailsForInvalidModelStateResponses
-- Microsoft.AspNetCore.Mvc.CookieTempDataProviderOptions.CookieName
-- Microsoft.AspNetCore.Mvc.CookieTempDataProviderOptions.Domain
-- Microsoft.AspNetCore.Mvc.CookieTempDataProviderOptions.Path
-- Microsoft.AspNetCore.Mvc.DataAnnotations.MvcDataAnnotationsLocalizationOptions.AllowDataAnnotationsLocalizationForEnumDisplayAttributes
-- Microsoft.AspNetCore.Mvc.Formatters.Xml.MvcXmlOptions.AllowRfc7807CompliantProblemDetailsFormat
-- Microsoft.AspNetCore.Mvc.MvcOptions.AllowBindingHeaderValuesToNonStringModelTypes
-- Microsoft.AspNetCore.Mvc.MvcOptions.AllowCombiningAuthorizeFilters
-- Microsoft.AspNetCore.Mvc.MvcOptions.AllowShortCircuitingValidationWhenNoValidatorsArePresent
-- Microsoft.AspNetCore.Mvc.MvcOptions.AllowValidatingTopLevelNodes
-- Microsoft.AspNetCore.Mvc.MvcOptions.InputFormatterExceptionPolicy
-- Microsoft.AspNetCore.Mvc.MvcOptions.SuppressBindingUndefinedValueToEnumType
-- Microsoft.AspNetCore.Mvc.MvcViewOptions.AllowRenderingMaxLengthAttribute
-- Microsoft.AspNetCore.Mvc.MvcViewOptions.SuppressTempDataAttributePrefix
-- Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions.AllowAreas
-- Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions.AllowDefaultHandlingForOptionsRequests
-- Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions.AllowMappingHeadRequestsToGetHandler
+- `Microsoft.AspNetCore.Antiforgery.AntiforgeryOptions.CookieDomain`
+- `Microsoft.AspNetCore.Antiforgery.AntiforgeryOptions.CookieName`
+- `Microsoft.AspNetCore.Antiforgery.AntiforgeryOptions.CookiePath`
+- `Microsoft.AspNetCore.Antiforgery.AntiforgeryOptions.RequireSsl`
+- `Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.AllowInferringBindingSourceForCollectionTypesAsFromQuery`
+- `Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressUseValidationProblemDetailsForInvalidModelStateResponses`
+- `Microsoft.AspNetCore.Mvc.CookieTempDataProviderOptions.CookieName`
+- `Microsoft.AspNetCore.Mvc.CookieTempDataProviderOptions.Domain`
+- `Microsoft.AspNetCore.Mvc.CookieTempDataProviderOptions.Path`
+- `Microsoft.AspNetCore.Mvc.DataAnnotations.MvcDataAnnotationsLocalizationOptions.AllowDataAnnotationsLocalizationForEnumDisplayAttributes`
+- `Microsoft.AspNetCore.Mvc.Formatters.Xml.MvcXmlOptions.AllowRfc7807CompliantProblemDetailsFormat`
+- `Microsoft.AspNetCore.Mvc.MvcOptions.AllowBindingHeaderValuesToNonStringModelTypes`
+- `Microsoft.AspNetCore.Mvc.MvcOptions.AllowCombiningAuthorizeFilters`
+- `Microsoft.AspNetCore.Mvc.MvcOptions.AllowShortCircuitingValidationWhenNoValidatorsArePresent`
+- `Microsoft.AspNetCore.Mvc.MvcOptions.AllowValidatingTopLevelNodes`
+- `Microsoft.AspNetCore.Mvc.MvcOptions.InputFormatterExceptionPolicy`
+- `Microsoft.AspNetCore.Mvc.MvcOptions.SuppressBindingUndefinedValueToEnumType`
+- `Microsoft.AspNetCore.Mvc.MvcViewOptions.AllowRenderingMaxLengthAttribute`
+- `Microsoft.AspNetCore.Mvc.MvcViewOptions.SuppressTempDataAttributePrefix`
+- `Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions.AllowAreas`
+- `Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions.AllowDefaultHandlingForOptionsRequests`
+- `Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions.AllowMappingHeadRequestsToGetHandler`
 
 **Méthodes**
 
-- Microsoft.AspNetCore.Mvc.LocalRedirectResult.ExecuteResult (Microsoft.AspNetCore.Mvc.ActionContext)
-- Microsoft.AspNetCore.Mvc.redirectResult.ExecuteResult (Microsoft.AspNetCore.Mvc.ActionContext)
-- Microsoft.AspNetCore.Mvc.RedirectToActionResult.ExecuteResult (Microsoft.AspNetCore.Mvc.ActionContext)
-- Microsoft.AspNetCore.Mvc.RedirectToPageResult.ExecuteResult (Microsoft.AspNetCore.Mvc.ActionContext)
-- Microsoft.AspNetCore.Mvc.RedirectToRouteResult.ExecuteResult (Microsoft.AspNetCore.Mvc.ActionContext)
-- Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync (Microsoft.AspNetCore.Mvc.ActionContext,Microsoft.AspNetCore.Mvc.ModelBinding.IValueProvider,Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor)
-- [Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync (ActionContext,IValueProvider,ParameterDescriptor,Object)](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.parameterbinder.bindmodelasync?view=aspnetcore-2.2#Microsoft_AspNetCore_Mvc_ModelBinding_ParameterBinder_BindModelAsync_Microsoft_AspNetCore_Mvc_ActionContext_Microsoft_AspNetCore_Mvc_ModelBinding_IValueProvider_Microsoft_AspNetCore_Mvc_Abstractions_ParameterDescriptor_System_Object_)
+- `Microsoft.AspNetCore.Mvc.LocalRedirectResult.ExecuteResult(ActionContext)`
+- `Microsoft.AspNetCore.Mvc.RedirectResult.ExecuteResult(ActionContext)`
+- `Microsoft.AspNetCore.Mvc.RedirectToActionResult.ExecuteResult(ActionContext)`
+- `Microsoft.AspNetCore.Mvc.RedirectToPageResult.ExecuteResult(ActionContext)`
+- `Microsoft.AspNetCore.Mvc.RedirectToRouteResult.ExecuteResult(ActionContext)`
+- `Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext,IValueProvider,ParameterDescriptor)`
+- [Microsoft. AspNetCore. Mvc. ModelBinding. ParameterBinder. BindModelAsync (contexte ActionContext, IValueProvider, ParameterDescriptor, objet)](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.parameterbinder.bindmodelasync?view=aspnetcore-2.2#Microsoft_AspNetCore_Mvc_ModelBinding_ParameterBinder_BindModelAsync_Microsoft_AspNetCore_Mvc_ActionContext_Microsoft_AspNetCore_Mvc_ModelBinding_IValueProvider_Microsoft_AspNetCore_Mvc_Abstractions_ParameterDescriptor_System_Object_)
 
 <!--
 

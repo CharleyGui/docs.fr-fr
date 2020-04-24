@@ -16,7 +16,7 @@ ms.locfileid: "74347014"
 
 L’objet `My.Computer.Mouse` permet de rechercher des informations sur la souris de l’ordinateur, par exemple s’il en existe une, le nombre de boutons qu’elle possède et les détails concernant la roulette.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
 
  Ce tableau liste les tâches associées à l’objet `My.Computer.Mouse` et indique les rubriques qui expliquent comment les accomplir.  
   

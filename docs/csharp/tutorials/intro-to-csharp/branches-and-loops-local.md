@@ -3,22 +3,22 @@ title: Branches et boucles – Tutoriel d’introduction à C#
 description: Dans ce tutoriel sur les branches et les boucles, vous allez écrire du code en C# pour explorer la syntaxe du langage qui gère les branches et les boucles conditionnelles permettant d’exécuter des instructions de manière répétée.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: 44b634e3c2120116ee7fd66770398a6b66c8ed8c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d8c10a7462b7c27c5353aee6d957732a8d161015
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73739124"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135943"
 ---
 # <a name="learn-conditional-logic-with-branch-and-loop-statements"></a>Découvrir la logique conditionnelle avec des instructions de branches et de boucles
 
 Ce tutoriel explique comment écrire du code qui examine des variables et modifie le chemin d’exécution en fonction de ces variables. Vous allez écrire un code en C# et afficher les résultats de la compilation et de l’exécution du code. Ce tutoriel comporte une série de leçons visant à explorer les constructions de type branches et boucles en C#. Ces leçons présentent les concepts de base du langage C#.
 
-Ce tutoriel suppose de disposer d’un ordinateur utilisable pour le développement. Le tutoriel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a des instructions pour configurer votre environnement de développement local sur Windows, Linux ou macOS. Vous trouverez une brève vue d’ensemble des commandes utilisées dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
+Ce tutoriel suppose de disposer d’un ordinateur utilisable pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur Windows, Linux ou MacOS. Vous trouverez une brève vue d’ensemble des commandes utilisées dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
 
 ## <a name="make-decisions-using-the-if-statement"></a>Prendre des décisions à l’aide de l’instruction `if`
 
-Créez un répertoire nommé *branches-tutorial*. Faites que le répertoire actuel et exécuter la commande suivante:
+Créez un répertoire nommé *branches-tutorial*. Créez le répertoire actif et exécutez la commande suivante :
 
 ```dotnetcli
 dotnet new console -n BranchesAndLoops -o .
@@ -235,11 +235,11 @@ for (int index = 0; index < 10; index++)
 
 Cette boucle fonctionne de manière identique à la boucle `while` et la boucle `do` que vous avez déjà utilisées. L’instruction `for` comprend trois parties qui contrôlent son fonctionnement.
 
-La première partie est l’initialisation : **for initializer** `int index = 0;` déclare qu’il s’agit `index` de la variable de boucle, et fixe sa valeur initiale à `0`.
+La première partie est l' **initialiseur**: `int index = 0;` déclare qui `index` est la variable de boucle et définit sa valeur initiale sur. `0`
 
-La partie centrale **for condition**est `index < 10` la condition `for` : déclare que cette boucle continue à s’exécuter tant que la valeur du compteur est inférieure à 10.
+La partie centrale est la **condition for**: `index < 10` déclare que cette `for` boucle continue à s’exécuter tant que la valeur du compteur est inférieure à 10.
 
-La dernière partie est l’itérateur : `index++` précise comment modifier la variable `for` de boucle après l’exécution du bloc suivant la déclaration. **for iterator** Il spécifie ici que `index` doit être incrémenté de 1 chaque fois que le bloc s’exécute.
+La dernière partie est l' **itérateur for**: `index++` spécifie comment modifier la variable de boucle après l’exécution du bloc `for` après l’instruction. Il spécifie ici que `index` doit être incrémenté de 1 chaque fois que le bloc s’exécute.
 
 Vérifiez-le par vous-même. Réalisez les essais suivants :
 
@@ -247,6 +247,42 @@ Vérifiez-le par vous-même. Réalisez les essais suivants :
 - Modifiez la condition pour définir l’arrêt à une valeur différente.
 
 Une fois terminé, vous allez vous-même écrire des codes pour mettre en pratique ce que vous avez appris.
+
+## <a name="created-nested-loops"></a>Boucles imbriquées créées
+
+Une `while`boucle `do` ou `for` peut être imbriquée dans une autre boucle pour créer une matrice à l’aide de la combinaison de chaque élément de la boucle externe avec chaque élément de la boucle interne. Nous allons donc créer un ensemble de paires alphanumériques pour représenter les lignes et les colonnes.
+
+Une `for` seule boucle peut générer les lignes :
+
+```csharp
+for (int row = 1; row < 11; row++)
+{
+    Console.WriteLine($"The row is {row}");
+}
+```
+
+Une autre boucle peut générer les colonnes :
+
+```csharp
+for (char column = 'a'; column < 'k'; column++)
+{
+    Console.WriteLine($"The column is {column}");
+}
+```
+
+Vous pouvez imbriquer une boucle à l’intérieur de l’autre pour former des paires :
+
+```csharp
+for (int row = 1; row < 11; row++)
+{
+    for (char column = 'a'; column < 'k'; column++)
+    {
+        Console.WriteLine($"The cell is ({row}, {column})");
+    }
+}
+```
+
+Vous pouvez voir que la boucle externe incrémente une fois pour chaque exécution complète de la boucle interne. Inversez l’imbrication de lignes et de colonnes et observez les modifications pour vous-même.
 
 ## <a name="combine-branches-and-loops"></a>Combiner des branches et des boucles
 

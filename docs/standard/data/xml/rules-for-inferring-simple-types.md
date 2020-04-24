@@ -33,14 +33,14 @@ Décrit comment la classe <xref:System.Xml.Schema.XmlSchemaInference> déduit le
 |unsignedInt|Nombres entiers dans la plage comprise entre 0 et 4294967295.|  
 |long|Nombres entiers dans la plage comprise entre -9223372036854775808 et 9223372036854775807.|  
 |unsignedLong|Nombres entiers dans la plage comprise entre 0 et 18446744073709551615.|  
-|integer|Nombre de chiffres fini éventuellement précédé du préfixe « - ».|  
-|decimal|Valeurs numériques avec une précision de 0 à 28 chiffres.|  
+|entier|Nombre de chiffres fini éventuellement précédé du préfixe « - ».|  
+|Décimal|Valeurs numériques avec une précision de 0 à 28 chiffres.|  
 |float|Décimales éventuellement suivies de « E » ou « e » et d'une valeur entière représentant l'exposant. Les valeurs décimales peuvent s'inscrire dans la plage comprise entre -16777216 et 16777216. Les valeurs d'exposant peuvent s'inscrire dans la plage comprise entre –149 et 104.<br /><br /> Float permet d'utiliser des valeurs spéciales pour représenter des valeurs d'infinité et non numériques. Les valeurs spéciales pour float sont : 0, -0, INF, -INF, NaN.|  
 |double|Comme pour float, sinon que les valeurs décimales peuvent s'inscrire dans la plage comprise entre -9007199254740992 et 9007199254740992. Les valeurs d'exposant peuvent s'inscrire dans la plage comprise entre –1075 et 970.<br /><br /> Double permet d'utiliser des valeurs spéciales pour représenter des valeurs d'infinité et non numériques. Les valeurs spéciales pour float sont : 0, -0, INF, -INF, NaN.|  
 |duration|Format de durée de W3C.|  
 |dateTime|Le format de date et d'heure de W3C.|  
 |time|Le format d'heure de W3C.|  
-|date|Les valeurs d'année doivent être comprises entre 0001 et 9999.|  
+|Date|Les valeurs d'année doivent être comprises entre 0001 et 9999.|  
 |gYearMonth|Format d'année et de mois du calendrier grégorien de W3C.|  
 |string|Un ou plusieurs caractères Unicode.|  
   
@@ -67,7 +67,7 @@ Décrit comment la classe <xref:System.Xml.Schema.XmlSchemaInference> déduit le
 
 Vous trouverez ci-après les attributs de définition du schéma qui sont ignorés durant l'inférence de schéma.  
   
-|Attribute|Description|  
+|Attribut|Description|  
 |---------------|-----------------|  
 |`xsi:type`|Si un élément est rencontré avec un `xsi:type` spécifié, le `xsi:type` est ignoré.|  
 |`xsi:nil`|Si un élément avec un attribut `xsi:nil` est rencontré, sa déclaration d'élément dans le schéma déduit a la valeur `nillable="true"`. Un élément dont un attribut `xsi:nil` a la valeur `true` ne peut pas avoir d'éléments enfants.|  
@@ -78,4 +78,4 @@ Vous trouverez ci-après les attributs de définition du schéma qui sont ignor�
 
 - [Modèle Objet du schéma (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
 - [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)
-- [Règles pour l’inférence de types et de structure de nœud de schéma](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)
+- [Règles pour l'inférence de types et de structure de nœud de schéma](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)

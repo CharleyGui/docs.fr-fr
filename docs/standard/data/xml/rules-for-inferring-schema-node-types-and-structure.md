@@ -42,7 +42,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
-|XML|Schéma|  
+|XML|schéma|  
 |---------|------------|  
 |`<?xml version="1.0"?>`<br /><br /> `<root>text</root>`|`<?xml version="1.0" encoding="utf-8"?>`<br /><br /> `<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xml`<br /><br /> `ns:xs="http://www.w3.org/2001/XMLSchema">`<br /><br /> `<xs:element name="root" type="xs:string" />`<br /><br /> `</xs:schema>`|  
   
@@ -51,7 +51,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
-|XML|Schéma|  
+|XML|schéma|  
 |---------|------------|  
 |`<?xml version="1.0"?>`<br /><br /> `<empty/>`|`<?xml version="1.0" encoding="utf-8"?>`<br /><br /> `<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xml`<br /><br /> `ns:xs="http://www.w3.org/2001/XMLSchema">`<br /><br /> `<xs:element name="empty" />`<br /><br /> `</xs:schema>`|  
   
@@ -60,7 +60,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
-|XML|Schéma|  
+|XML|schéma|  
 |---------|------------|  
 |`<?xml version="1.0"?>`<br /><br /> `<empty attribute1="text"/>`|`<?xml version="1.0" encoding="utf-8"?>`<br /><br /> `<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xml`<br /><br /> `ns:xs="http://www.w3.org/2001/XMLSchema">`<br /><br /> `<xs:element name="empty">`<br /><br /> `<xs:complexType>`<br /><br /> `<xs:attribute name="attribute1" type="xs:string" use="required" />`<br /><br /> `</xs:complexType>`<br /><br /> `</xs:element>`<br /><br /> `</xs:schema>`|  
   
@@ -69,7 +69,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
-|XML|Schéma|  
+|XML|schéma|  
 |---------|------------|  
 |`<?xml version="1.0"?>`<br /><br /> `<root attribute1="text">value</root>`|`<?xml version="1.0" encoding="utf-8"?>`<br /><br /> `<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xml`<br /><br /> `ns:xs="http://www.w3.org/2001/XMLSchema">`<br /><br /> `<xs:element name="root">`<br /><br /> `<xs:complexType>`<br /><br /> `<xs:simpleContent>`<br /><br /> `<xs:extension base="xs:string">`<br /><br /> `<xs:attribute name="attribute1" type="xs:string" use="required" />`<br /><br /> `</xs:extension>`<br /><br /> `</xs:simpleContent>`<br /><br /> `</xs:complexType>`<br /><br /> `</xs:element>`<br /><br /> `</xs:schema>`|  
   
@@ -81,7 +81,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
-|XML|Schéma|  
+|XML|schéma|  
 |---------|------------|  
 |`<?xml version="1.0"?>`<br /><br /> `<root>`<br /><br /> `<subElement/>`<br /><br /> `</root>`|`<?xml version="1.0" encoding="utf-8"?>`<br /><br /> `<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xml`<br /><br /> `ns:xs="http://www.w3.org/2001/XMLSchema">`<br /><br /> `<xs:element name="root">`<br /><br /> `<xs:complexType>`<br /><br /> `<xs:sequence>`<br /><br /> `<xs:element name="subElement" />`<br /><br /> `</xs:sequence>`<br /><br /> `</xs:complexType>`<br /><br /> `</xs:element>`<br /><br /> `</xs:schema>`|  
   
@@ -93,7 +93,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
-|XML|Schéma|  
+|XML|schéma|  
 |---------|------------|  
 |`<?xml version="1.0"?>`<br /><br /> `<root attribute1="text">`<br /><br /> `<subElement1/>`<br /><br /> `<subElement2/>`<br /><br /> `</root>`|`<?xml version="1.0" encoding="utf-8"?>`<br /><br /> `<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xml`<br /><br /> `ns:xs="http://www.w3.org/2001/XMLSchema">`<br /><br /> `<xs:element name="root">`<br /><br /> `<xs:complexType>`<br /><br /> `<xs:sequence>`<br /><br /> `<xs:element name="subElement1" />`<br /><br /> `<xs:element name="subElement2" />`<br /><br /> `</xs:sequence>`<br /><br /> `<xs:attribute name="attribute1" type="xs:string" use="required" />`<br /><br /> `</xs:complexType>`<br /><br /> `</xs:element>`<br /><br /> `</xs:schema>`|  
   
@@ -105,7 +105,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
-|XML|Schéma|  
+|XML|schéma|  
 |---------|------------|  
 |`<?xml version="1.0"?>`<br /><br /> `<root>`<br /><br /> `<subElement1/>`<br /><br /> `<subElement2/>`<br /><br /> `<subElement1/>`<br /><br /> `</root>`|`<?xml version="1.0" encoding="utf-8"?>`<br /><br /> `<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xml`<br /><br /> `ns:xs="http://www.w3.org/2001/XMLSchema">`<br /><br /> `<xs:element name="root">`<br /><br /> `<xs:complexType>`<br /><br /> `<xs:sequence>`<br /><br /> `<xs:choice maxOccurs="unbounded">`<br /><br /> `<xs:element name="subElement1" />`<br /><br /> `<xs:element name="subElement2" />`<br /><br /> `</xs:choice>`<br /><br /> `</xs:sequence>`<br /><br /> `</xs:complexType>`<br /><br /> `</xs:element>`<br /><br /> `</xs:schema>`|  
   
@@ -117,7 +117,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
-|XML|Schéma|  
+|XML|schéma|  
 |---------|------------|  
 |`<?xml version="1.0"?>`<br /><br /> `<root attribute1="text">`<br /><br /> `<subElement1/>`<br /><br /> `<subElement2/>`<br /><br /> `<subElement1/>`<br /><br /> `</root>`|`<?xml version="1.0" encoding="utf-8"?>`<br /><br /> `<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xml`<br /><br /> `ns:xs="http://www.w3.org/2001/XMLSchema">`<br /><br /> `<xs:element name="root">`<br /><br /> `<xs:complexType>`<br /><br /> `<xs:sequence>`<br /><br /> `<xs:choice maxOccurs="unbounded">`<br /><br /> `<xs:element name="subElement1" />`<br /><br /> `<xs:element name="subElement2" />`<br /><br /> `</xs:choice>`<br /><br /> `</xs:sequence>`<br /><br /> `<xs:attribute name="attribute1" type="xs:string" use="required" />`<br /><br /> `</xs:complexType>`<br /><br /> `</xs:element>`<br /><br /> `</xs:schema>`|  
   
@@ -136,11 +136,11 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
 |Type de nœud|Traduction|  
 |---------------|-----------------|  
 |Instruction de traitement|Ignoré.|  
-|Commentaire|Ignoré.|  
+|Comment|Ignoré.|  
 |Référence d'entité|La classe <xref:System.Xml.Schema.XmlSchemaInference> ne gère pas les références d'entité. Si un document XML contient des références d’entité, vous devez utiliser un lecteur qui développe les entités. Par exemple, vous pouvez passer un objet <xref:System.Xml.XmlTextReader> avec la propriété <xref:System.Xml.XmlTextReader.EntityHandling%2A> définie à <xref:System.Xml.EntityHandling.ExpandEntities> comme paramètre. Si des références d'entité sont rencontrées et que le lecteur n'étend pas les entités, une exception est levée.|  
 |CDATA|Toute section `<![CDATA[ … ]]` dans un document XML sera déduite en tant que `xs:string`.|  
-|Type de document|Ignoré.|  
-|Espaces de noms des|Ignoré.|  
+|Type du document|Ignoré.|  
+|Espaces de noms|Ignoré.|  
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
@@ -148,6 +148,6 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
 
 - <xref:System.Xml.Schema.XmlSchemaInference>
 - [Modèle Objet du schéma (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
-- [Inférence d’un schéma XML](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)
+- [Inférence d'un schéma XML](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)
 - [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)
-- [Règles pour l’inférence de types simples](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)
+- [Règles relatives à l'inférence de types simples](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)

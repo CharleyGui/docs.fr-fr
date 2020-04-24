@@ -13,11 +13,11 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 06/27/2019
 ms.locfileid: "67410543"
 ---
-# <a name="systemxmlserialization-element"></a>\<System.Xml.Serialization > élément
+# <a name="systemxmlserialization-element"></a>\<Élément System. Xml. Serialization>
 
 Élément de niveau supérieur permettant de contrôler la sérialisation XML. Pour plus d’informations sur les fichiers de configuration, consultez [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md).
 
-\<configuration>\
+\<> de configuration \
 \<system.xml.serialization>
 
 ## <a name="syntax"></a>Syntaxe
@@ -33,7 +33,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ### <a name="attributes"></a>Attributs
 
-Aucun.
+Aucune.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -46,7 +46,7 @@ Aucun.
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<configuration>, élément](../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Élément racine dans chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
+|[\<Élément de> de configuration](../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Élément racine dans chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
 
 ## <a name="example"></a>Exemple
 
@@ -70,7 +70,7 @@ L'exemple de code suivant illustre comment spécifier le mode de sérialisation 
 
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
-- [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma du fichier de configuration](../../../docs/framework/configure-apps/file-schema/index.md)
 - [\<dateTimeSerialization>, élément](../../../docs/standard/serialization/datetimeserialization-element.md)
 - [\<schemaImporterExtensions>, élément](../../../docs/standard/serialization/schemaimporterextensions-element.md)
-- [\<Ajouter > élément pour \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
+- [\<Ajouter> élément pour \<SchemaImporterExtensions>](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)

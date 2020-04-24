@@ -11,12 +11,12 @@ metadata:
   interactive: csharp
   nextTutorialHref: list-collection.yml
   nextTutorialTitle: Collection de listes
-  ms.openlocfilehash: ab709b6b30b5a173e2faf08b577e4d7a3d9a9034
-  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  ms.openlocfilehash: b0a967ea2e5212887d617e76b4ecb445cfbb8b55
+  ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/14/2020
-  ms.locfileid: "73969425"
+  ms.lasthandoff: 04/24/2020
+  ms.locfileid: "82135930"
 items:
 - durationInMinutes: 1
   content: >
@@ -24,7 +24,7 @@ items:
 - title: Prendre des décisions à l’aide de l’instruction if
   durationInMinutes: 4
   content: >
-    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **De mode Focus Enter.** Ensuite, tapez le bloc de code suivant dans la fenêtre interactive et sélectionnez **Run**:
+    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **entrer le mode Focus** . Ensuite, tapez le bloc de code suivant dans la fenêtre interactive et sélectionnez **exécuter**:
 
 
     ```csharp
@@ -38,7 +38,7 @@ items:
     ```
 
 
-    Si vous exécutez ceci sur votre environnement, vous devriez suivre les instructions pour la [version locale](branches-and-loops-local.md) à la place.
+    Si vous exécutez cette procédure sur votre environnement, vous devez suivre les instructions relatives à la [version locale](branches-and-loops-local.md) .
 
 
     Modifiez la déclaration de `b` pour que la somme soit inférieure à 10 :
@@ -51,7 +51,7 @@ items:
     ```
 
 
-    Sélectionnez à nouveau le bouton **Run.** La réponse étant inférieure à 10, rien ne s’affiche. La **condition** que vous testez a une valeur false. Vous n’avez pas de code à exécuter, car vous avez uniquement écrit l’une des branches possibles pour une instruction `if` : la branche true.
+    Cliquez à nouveau sur le bouton **exécuter** . La réponse étant inférieure à 10, rien ne s’affiche. La **condition** que vous testez a une valeur false. Vous n’avez pas de code à exécuter, car vous avez uniquement écrit l’une des branches possibles pour une instruction `if` : la branche true.
 
 
     > [!TIP]
@@ -61,7 +61,7 @@ items:
     > Cet exercice vous aidera à mieux comprendre la structure du code C#.
 
 
-    Le premier exemple montre la puissance de l’instruction `if` et des types booléens. Un *boolean* est une variable qui peut `true` `false`avoir l’une des deux valeurs: ou . C# définit un type spécial, `bool`, pour les variables booléennes. L’instruction `if` vérifie la valeur d’un `bool`. Quand la valeur est `true`, l’instruction qui suit `if` s’exécute. Dans le cas contraire, elle est ignorée.
+    Le premier exemple montre la puissance de l’instruction `if` et des types booléens. Une *valeur booléenne* est une variable qui peut avoir l’une des deux `true` valeurs `false`suivantes : ou. C# définit un type spécial, `bool`, pour les variables booléennes. L’instruction `if` vérifie la valeur d’un `bool`. Quand la valeur est `true`, l’instruction qui suit `if` s’exécute. Dans le cas contraire, elle est ignorée.
 
 
     Ce processus de vérification des conditions et d’exécution des instructions en fonction de ces conditions est très performant. Poursuivons notre exploration.
@@ -150,13 +150,13 @@ items:
     Cette boucle fonctionne de manière identique à la boucle `while` et la boucle `do` que vous avez déjà utilisées. L’instruction `for` comprend trois parties qui contrôlent son fonctionnement.
 
 
-    La première partie est l’initialisation : **for initializer** `int counter = 0;` déclare qu’il s’agit `counter` de la variable de boucle, et fixe sa valeur initiale à `0`.
+    La première partie est l' **initialiseur**: `int counter = 0;` déclare qui `counter` est la variable de boucle et définit sa valeur initiale sur. `0`
 
 
-    La partie centrale **for condition**est `counter < 10` la condition `for` : déclare que cette boucle continue à s’exécuter tant que la valeur du compteur est inférieure à 10.
+    La partie centrale est la **condition for**: `counter < 10` déclare que cette `for` boucle continue à s’exécuter tant que la valeur du compteur est inférieure à 10.
 
 
-    La dernière partie est l’itérateur : `counter++` précise comment modifier la variable `for` de boucle après l’exécution du bloc suivant la déclaration. **for iterator** Il spécifie ici que `counter` doit être incrémenté de 1 chaque fois que le bloc s’exécute.
+    La dernière partie est l' **itérateur for**: `counter++` spécifie comment modifier la variable de boucle après l’exécution du bloc `for` après l’instruction. Il spécifie ici que `counter` doit être incrémenté de 1 chaque fois que le bloc s’exécute.
 
 
     Vérifiez-le par vous-même. Réalisez les essais suivants :
@@ -173,6 +173,9 @@ items:
     > [!NOTE]
 
     > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
+- title: Boucles imbriquées créées
+  durationInMinutes: 10
+  content: "Une `while`boucle `do` ou `for` peut être imbriquée dans une autre boucle pour créer une matrice à l’aide de la combinaison de chaque élément de la boucle externe avec chaque élément de la boucle interne. Nous allons donc créer un ensemble de paires alphanumériques pour représenter les lignes et les colonnes.\n\nUne `for` seule boucle peut générer les lignes :\n\n```csharp\nfor (int row = 1; row < 11; row++)\n{\n  Console.WriteLine($\"The row is {row}\");\n}\n```\n\nUne autre boucle peut générer les colonnes :\n\n```csharp\nfor (char column = 'a'; column < 'k'; column++)\n{\n  Console.WriteLine($\"The column is {column}\");\n}\n```\n\nVous pouvez imbriquer une boucle à l’intérieur de l’autre pour former des paires :\n  \n```csharp\nfor (int row = 1; row < 11; row++)\n{\n  for (char column = 'a'; column < 'k'; column++)\n  {\n    Console.WriteLine($\"The cell is ({row}, {column})\");\n  }\n}\n```\n\nVous pouvez voir que la boucle externe incrémente une fois pour chaque exécution complète de la boucle interne. Inversez l’imbrication de lignes et de colonnes et observez les modifications pour vous-même.\n"
 - title: Combiner des branches et des boucles
   durationInMinutes: 12
   content: >
@@ -220,8 +223,8 @@ items:
 
     > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - title: Félicitations !
-  content: >-
-    Vous avez terminé le tutoriel interactif « Branches et boucles ». Vous pouvez sélectionner le lien **de collecte** de liste ci-dessous pour commencer le prochain tutoriel interactif, ou vous pouvez visiter le [site .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le .NET Core SDK, créer un projet sur votre machine, et continuer à coder. La section "Prochaines étapes" vous ramène à ces tutoriels.
+  content: >
+    Vous avez terminé le tutoriel interactif « Branches et boucles ». Vous pouvez sélectionner le lien de **regroupement de listes** ci-dessous pour démarrer le didacticiel interactif suivant, ou vous pouvez visiter le [site .net](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .net Core, créer un projet sur votre ordinateur et conserver le codage. La section « étapes suivantes » vous ramène à ces didacticiels.
 
 
     Pour en savoir plus sur ces concepts, consultez les rubriques suivantes :

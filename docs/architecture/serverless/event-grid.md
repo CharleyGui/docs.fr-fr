@@ -1,73 +1,73 @@
 ---
-title: Azure Event Grid - Applications sans serveur
-description: Azure Event Grid est une solution sans serveur pour la livraison d’événements fiable et le routage à grande échelle sur un modèle de pay-per-event.
+title: Applications sans serveur Azure Event Grid
+description: Azure Event Grid est une solution sans serveur pour la remise d’événements fiable et le routage à grande échelle sur un modèle de paiement à l’événement.
 author: JEREMYLIKNESS
 ms.author: jeliknes
-ms.date: 06/26/2018
-ms.openlocfilehash: 3c577139c12567e762aabd58c9dc29457fa37aa1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/06/2020
+ms.openlocfilehash: 408e1b9cd1b1e5316c7c6a17bb1b0c76a38f9e11
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72522717"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135709"
 ---
 # <a name="event-grid"></a>Event Grid
 
-[Azure Event Grid](/azure/event-grid/overview) fournit une infrastructure sans serveur pour les applications basées sur les événements. Vous pouvez publier sur Event Grid à partir de n’importe quelle source et consommer des messages à partir de n’importe quelle plate-forme. Event Grid bénéficie également d’un soutien intégré pour les événements des ressources Azure pour rationaliser l’intégration avec vos applications. Par exemple, vous pouvez vous abonner à des événements de stockage blob pour aviser votre application lorsqu’un fichier est téléchargé. Votre application peut ensuite publier un message personnalisé sur la grille d’événements qui est consommé par d’autres applications cloud ou sur site. Event Grid a été construit pour gérer de manière fiable l’échelle massive. Vous bénéficiez des avantages de la publication et de l’abonnement aux messages sans frais généraux de la mise en place de l’infrastructure nécessaire.
+[Azure Event Grid](/azure/event-grid/overview) fournit une infrastructure sans serveur pour les applications basées sur les événements. Vous pouvez publier sur Event Grid à partir de n’importe quelle source et utiliser des messages de n’importe quelle plateforme. Event Grid offre également une prise en charge intégrée des événements des ressources Azure pour simplifier l’intégration avec vos applications. Par exemple, vous pouvez vous abonner à des événements de stockage d’objets BLOB pour notifier votre application quand un fichier est chargé. Votre application peut ensuite publier un message de grille d’événements personnalisé qui est consommé par d’autres applications Cloud ou locales. Event Grid a été conçu pour gérer de manière fiable une grande échelle. Vous bénéficiez des avantages de la publication et de l’abonnement aux messages sans la surcharge liée à la configuration de l’infrastructure nécessaire.
 
 ![Logo Event Grid](./media/event-grid-logo.png)
 
-Les principales caractéristiques de la grille d’événements sont les suivantes :
+Les principales fonctionnalités d’Event Grid sont les suivantes :
 
-- Itinéraire d’événements entièrement géré.
-- Livraison d’événements en temps quasi réel à l’échelle.
-- Couverture large à l’intérieur et à l’extérieur d’Azure.
+- Routage d’événements entièrement géré.
+- Livraison d’événements presque en temps réel à l’échelle.
+- Couverture étendue à l’intérieur et à l’extérieur d’Azure.
 
 ## <a name="scenarios"></a>Scénarios
 
-Event Grid aborde plusieurs scénarios différents. Cette section couvre trois des plus courantes.
+Event Grid résout plusieurs scénarios différents. Cette section couvre les trois des plus courants.
 
 ### <a name="ops-automation"></a>Automatisation des opérations
 
 ![Automatisation des opérations](./media/ops-automation.png)
 
-Event Grid peut aider à accélérer l’automatisation et simplifier l’application des politiques en avisant [Azure Automation](https://docs.microsoft.com/azure/automation) lorsque l’infrastructure est mise à disposition.
+Event Grid pouvez accélérer l’automatisation et simplifier l’application des stratégies en avertissant [Azure Automation](https://docs.microsoft.com/azure/automation) quand l’infrastructure est approvisionnée.
 
 ### <a name="application-integration"></a>Intégration d’applications
 
 ![Intégration d’applications](./media/app-integration.png)
 
-Vous pouvez utiliser Event Grid pour connecter votre application à d’autres services. À l’aide de protocoles HTTP standard, même les applications héritées peuvent être facilement modifiées pour publier des messages Event Grid. Des crochets Web sont disponibles pour d’autres services et plates-formes pour consommer les messages Event Grid.
+Vous pouvez utiliser Event Grid pour connecter votre application à d’autres services. À l’aide des protocoles HTTP standard, même les applications héritées peuvent être facilement modifiées pour publier des messages Event Grid. Des webhooks sont disponibles pour d’autres services et plateformes pour utiliser des messages Event Grid.
 
 ### <a name="serverless-apps"></a>Applications serverless
 
 ![Applications serverless](./media/serverless-apps.png)
 
-Event Grid peut déclencher azure Functions, Logic Apps, ou votre propre code personnalisé. Un avantage majeur de l’utilisation de Event Grid est qu’il utilise un mécanisme *de poussée* pour envoyer des messages lorsque des événements se produisent. L’architecture push consomme moins de ressources et d’échelles mieux que les mécanismes *de vote.* Les sondages doivent vérifier les mises à jour d’un intervalle régulier.
+Event Grid pouvez déclencher Azure Functions, Logic Apps ou votre propre code personnalisé. L’un des principaux avantages de l’utilisation de Event Grid est qu’elle utilise un mécanisme *Push* pour envoyer des messages lorsque des événements se produisent. L’architecture Push consomme moins de ressources et évolue mieux que les mécanismes d' *interrogation* . L’interrogation doit vérifier les mises à jour à intervalles réguliers.
 
-## <a name="event-grid-vs-other-azure-messaging-services"></a>Event Grid vs autres services de messagerie Azure
+## <a name="event-grid-vs-other-azure-messaging-services"></a>Event Grid et d’autres services de messagerie Azure
 
-Azure fournit plusieurs services de messagerie, y compris [Event Hubs](https://docs.microsoft.com/azure/event-hubs) et [Service Bus](https://docs.microsoft.com/azure/service-bus-messaging). Chacun est conçu pour traiter un ensemble spécifique de cas d’utilisation. Le diagramme suivant fournit une vue d’ensemble de haut niveau des différences entre les services.
+Azure fournit plusieurs services de messagerie, y compris [Event hubs](https://docs.microsoft.com/azure/event-hubs) et [service bus](https://docs.microsoft.com/azure/service-bus-messaging). Chaque est conçu pour répondre à un ensemble spécifique de cas d’usage. Le diagramme suivant fournit une vue d’ensemble des différences entre les services.
 
-![Comparaison de messagerie Azure](./media/azure-messaging-services.png)
+![Comparaison de la messagerie Azure](./media/azure-messaging-services.png)
 
-Pour une comparaison plus approfondie, voir [comparer les services](https://docs.microsoft.com/azure/event-grid/compare-messaging-services)de messagerie .
+Pour une comparaison plus détaillée, consultez comparer les [services de messagerie](https://docs.microsoft.com/azure/event-grid/compare-messaging-services).
 
 ## <a name="performance-targets"></a>Cibles de performance
 
-En utilisant Event Grid, vous pouvez profiter des garanties de performances suivantes :
+À l’aide de Event Grid vous pouvez tirer parti des garanties de performances suivantes :
 
-- Sous-deuxième latence de bout en bout dans le 99e percentile.
+- Latence de bout en bout sous-seconde dans le 99e centile.
 - Disponibilité de 99,99 %.
-- 10 millions d’événements par seconde par région.
-- 100 millions d’abonnements par région.
-- Latence éditeur de 50 ms.
-- 24 heures de réessayer avec un back-off exponentiel pour une livraison garantie dans la fenêtre d’un jour.
-- Échec régional transparent.
+- 10 millions événements par seconde par région.
+- 100 millions abonnements par région.
+- 50-latence MS Publisher.
+- nouvelle tentative de 24 heures avec interruption exponentielle pour la livraison garantie dans la fenêtre de 1 jour.
+- Basculement régional transparent.
 
 ## <a name="event-grid-schema"></a>Schéma Event Grid
 
-Event Grid utilise un schéma standard pour envelopper les événements personnalisés. Le schéma est comme une enveloppe qui enveloppe votre élément de données personnalisé. Voici un exemple de message Event Grid :
+Event Grid utilise un schéma standard pour encapsuler les événements personnalisés. Le schéma est comme une enveloppe qui encapsule votre élément de données personnalisé. Voici un exemple Event Grid message :
 
 ```json
 [{
@@ -84,11 +84,11 @@ Event Grid utilise un schéma standard pour envelopper les événements personna
 }]
 ```
 
-Tout sur le message `data` est standard, sauf la propriété. Vous pouvez inspecter le `eventType` `dataVersion` message et utiliser la partie personnalisée de la charge utile et la dé-sérialiser.
+Tout ce qui concerne le message est standard `data` , à l’exception de la propriété. Vous pouvez inspecter le message et utiliser `eventType` et `dataVersion` pour désérialiser la partie personnalisée de la charge utile.
 
 ## <a name="azure-resources"></a>Ressources Azure
 
-Un avantage majeur de l’utilisation de Event Grid est les messages automatiques produits par Azure. Dans Azure, les ressources publient automatiquement sur un *sujet* qui vous permet de vous abonner à divers événements. Le tableau suivant répertorie les types de ressources, les types de messages et les événements qui sont disponibles automatiquement.
+L’un des principaux avantages de l’utilisation de Event Grid est l’automatisation des messages générés par Azure. Dans Azure, les ressources publient automatiquement sur une *rubrique* qui vous permet de vous abonner à différents événements. Le tableau suivant répertorie les types de ressources, les types de messages et les événements qui sont disponibles automatiquement.
 
 | Ressource Azure | Type d'événement | Description |
 | -------------- | ---------- | ----------- |
@@ -100,7 +100,7 @@ Un avantage majeur de l’utilisation de Event Grid est les messages automatique
 | | Microsoft.Resources.ResourceDeleteCancel | Déclenché quand une opération de suppression de ressource est annulée. Cet événement se produit lorsque le déploiement d’un modèle est annulé. |
 | Stockage d'objets blob | Microsoft.Storage.BlobCreated | Déclenché lorsqu’un objet blob est créé. |
 | | Microsoft.Storage.BlobDeleted | Déclenché lorsqu’un objet blob est supprimé. |
-| Hubs d'événements | Microsoft.EventHub.CaptureFileCreated Microsoft.EventHub.CaptureFileCreated Microsoft.EventHub.CaptureFileCreated Microsoft. | Surélevé lorsqu’un fichier de capture est créé.
+| Hubs d'événements | Microsoft. EventHub. CaptureFileCreated | Déclenché lors de la création d’un fichier de capture.
 | IoT Hub | Microsoft.Devices.DeviceCreated | Publié quand un appareil est inscrit auprès d’un hub IoT. |
 | | Microsoft.Devices.DeviceDeleted | Publié quand un appareil est supprimé d’un hub IoT. |
 | Groupes de ressources | Microsoft.Resources.ResourceWriteSuccess | Déclenché quand une opération de création ou de mise à jour de ressource réussit. |
@@ -110,37 +110,35 @@ Un avantage majeur de l’utilisation de Event Grid est les messages automatique
 | | Microsoft.Resources.ResourceDeleteFailure | Déclenché quand une opération de suppression de ressource échoue. |
 | | Microsoft.Resources.ResourceDeleteCancel | Déclenché quand une opération de suppression de ressource est annulée. Cet événement se produit lorsque le déploiement d’un modèle est annulé. |
 
-Pour plus d’informations, voir [le schéma d’événements Azure Event Grid](https://docs.microsoft.com/azure/event-grid/event-schema).
+Pour plus d’informations, consultez [Azure Event Grid le schéma d’événement](https://docs.microsoft.com/azure/event-grid/event-schema).
 
-Vous pouvez accéder à Event Grid à partir de n’importe quel type d’application, même celui qui fonctionne sur place.
+Vous pouvez accéder à Event Grid à partir de n’importe quel type d’application, même s’il s’exécute en local.
 
 ## <a name="conclusion"></a>Conclusion
 
-Dans ce chapitre, vous avez appris sur la plate-forme Azure sans serveur qui est composé de fonctions Azure, applications logiques, et Event Grid. Vous pouvez utiliser ces ressources pour créer une architecture d’application entièrement sans serveur, ou créer une solution hybride qui interagit avec d’autres ressources cloud et serveurs sur site. Combiné avec une plate-forme de données sans serveur comme [Azure SQL](https://docs.microsoft.com/azure/sql-database) ou [CosmosDB](https://docs.microsoft.com/azure/cosmos-db/introduction), vous pouvez construire des applications natives cloud entièrement gérées.
+Dans ce chapitre, vous avez découvert la plateforme sans serveur Azure composée de Azure Functions, Logic Apps et Event Grid. Vous pouvez utiliser ces ressources pour créer une architecture d’application entièrement sans serveur, ou créer une solution hybride qui interagit avec d’autres ressources Cloud et serveurs locaux. Combiné à une plateforme de données sans serveur telle qu' [Azure SQL](https://docs.microsoft.com/azure/sql-database) ou [CosmosDB](https://docs.microsoft.com/azure/cosmos-db/introduction), vous pouvez créer des applications Cloud natives entièrement gérées.
 
 ## <a name="recommended-resources"></a>Ressources recommandées
 
-- [Plans de service App](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)
+- [Plans App service](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)
 - [Application Insights](https://docs.microsoft.com/azure/application-insights)
 - [Application Insights Analytics](https://docs.microsoft.com/azure/application-insights/app-insights-analytics)
-- [Azure: Apportez votre application au cloud avec des fonctions Azure sans serveur](https://channel9.msdn.com/events/Connect/2017/E102)
-- [Grille d’événements Azure](https://docs.microsoft.com/azure/event-grid/overview)
+- [Azure : mettez votre application dans le Cloud avec des Azure Functions sans serveur](https://channel9.msdn.com/events/Connect/2017/E102)
+- [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
 - [Schéma d’événement Azure Event Grid](https://docs.microsoft.com/azure/event-grid/event-schema)
 - [Azure Event Hubs](https://docs.microsoft.com/azure/event-hubs)
-- [Documentation Azure Functions](https://docs.microsoft.com/azure/azure-functions)
+- [Documentation sur Azure Functions](https://docs.microsoft.com/azure/azure-functions)
 - [Concepts des déclencheurs et liaisons Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings)
-- [Applications Azure Logic](https://docs.microsoft.com/azure/logic-apps)
+- [Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps)
 - [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging)
-- [Stockage de table Azure](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
-- [Comparez les fonctions 1.x et 2.x](https://docs.microsoft.com/azure/azure-functions/functions-versions)
+- [Stockage de tables Azure](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
 - [Connexion aux sources de données locales avec la passerelle de données locale Azure](https://docs.microsoft.com/azure/analysis-services/analysis-services-gateway)
 - [Créer votre première fonction à l’aide du Portail Azure](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function)
 - [Créez votre première fonction à l’aide d’Azure CLI](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli)
 - [Créer votre première fonction à l’aide de Visual Studio](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio)
-- [Langues supportées fonctions](https://docs.microsoft.com/azure/azure-functions/supported-languages)
+- [Fonctions prises en charge par les fonctions](https://docs.microsoft.com/azure/azure-functions/supported-languages)
 - [Superviser Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-monitoring)
-- [Utilisation d’Azure Functions Proxies](https://docs.microsoft.com/azure/azure-functions/functions-proxies)
 
 >[!div class="step-by-step"]
->[Suivant précédent](logic-apps.md)
->[Next](durable-azure-functions.md)
+>[Précédent](logic-apps.md)
+>[suivant](durable-azure-functions.md)

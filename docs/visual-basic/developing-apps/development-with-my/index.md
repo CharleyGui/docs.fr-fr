@@ -48,6 +48,6 @@ Visual Basic propose de nouvelles fonctionnalités pour le développement rapid
 - <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>
 - <xref:Microsoft.VisualBasic.Devices.Computer>
 - <xref:Microsoft.VisualBasic.ApplicationServices.User>
-- [My.Forms (objet)](../../../visual-basic/language-reference/objects/my-forms-object.md)
+- [My.Forms, objet](../../../visual-basic/language-reference/objects/my-forms-object.md)
 - [My.WebServices (objet)](../../../visual-basic/language-reference/objects/my-webservices-object.md)
 - [Comment My dépend du type de projet](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)

@@ -1,6 +1,6 @@
 ---
 title: + et +=, opérateurs - Référence C#
-ms.date: 05/24/2019
+ms.date: 04/23/2020
 f1_keywords:
 - +_CSharpKeyword
 - +=_CSharpKeyword
@@ -13,26 +13,26 @@ helpviewer_keywords:
 - event subscription [C#]
 - += operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
-ms.openlocfilehash: cafd07f4b4aefdcc4b43750d61c155fe3d65aa46
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 18364d80b8117fd4074c2c4231eac07c76829bb3
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399300"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135735"
 ---
 # <a name="-and--operators-c-reference"></a>+ et +=, opérateurs (référence C#)
 
-Les `+` `+=` opérateurs et les opérateurs sont pris en charge par les types [numériques intégrés](../builtin-types/integral-numeric-types.md) et [flottants,](../builtin-types/floating-point-numeric-types.md) le type [de chaîne](../builtin-types/reference-types.md#the-string-type) et les types [de délégués.](../builtin-types/reference-types.md#the-delegate-type)
+Les `+` opérateurs `+=` et sont pris en charge par les types numériques [intégraux](../builtin-types/integral-numeric-types.md) et à [virgule flottante](../builtin-types/floating-point-numeric-types.md) intégrés, le type de [chaîne](../builtin-types/reference-types.md#the-string-type) et les types [délégués](../builtin-types/reference-types.md#the-delegate-type) .
 
 Pour plus d’informations sur l’opérateur arithmétique `+`, consultez les sections [Opérateurs plus et moins unaires](arithmetic-operators.md#unary-plus-and-minus-operators) et [Opérateur d’addition +](arithmetic-operators.md#addition-operator-) de l’article [Opérateurs arithmétiques](arithmetic-operators.md).
 
 ## <a name="string-concatenation"></a>Concaténation de chaînes
 
-Quand les deux opérandes ou l’un d’entre eux sont de [type chaîne](../builtin-types/reference-types.md#the-string-type), l’opérateur `+` concatène les représentations sous forme de chaîne de ses opérandes :
+Quand l’un des opérandes ou les deux [string](../builtin-types/reference-types.md#the-string-type)sont de type `+` chaîne, l’opérateur concatène les représentations sous forme de chaîne de ses opérandes `null` (la représentation sous forme de chaîne de est une chaîne vide) :
 
 [!code-csharp-interactive[string concatenation](snippets/AdditionOperator.cs#AddStrings)]
 
-En commençant par le C 6, [l’interpolation](../tokens/interpolated.md) des cordes offre un moyen plus pratique de formater les chaînes :
+À compter de C# 6, l' [interpolation de chaîne](../tokens/interpolated.md) offre un moyen plus pratique de mettre en forme les chaînes :
 
 [!code-csharp-interactive[string interpolation](snippets/AdditionOperator.cs#UseStringInterpolation)]
 
@@ -42,7 +42,7 @@ Pour les opérandes du même type [délégué](../builtin-types/reference-types.
 
 [!code-csharp-interactive[delegate combination](snippets/AdditionOperator.cs#AddDelegates)]
 
-Pour effectuer le retrait des délégués, utilisez [ `-` l’opérateur](subtraction-operator.md#delegate-removal).
+Pour effectuer la suppression d’un délégué, utilisez l' [ `-` opérateur](subtraction-operator.md#delegate-removal).
 
 Pour plus d'informations sur les types de délégués, consultez [Délégués](../../programming-guide/delegates/index.md).
 
@@ -79,8 +79,8 @@ Pour plus d’informations, consultez les sections [Opérateur unaire plus](~/_c
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence C#](../index.md)
-- [Opérateurs CMD](index.md)
-- [Comment concatenate plusieurs cordes](../../how-to/concatenate-multiple-strings.md)
+- [Opérateurs C#](index.md)
+- [Concaténation de plusieurs chaînes](../../how-to/concatenate-multiple-strings.md)
 - [Événements](../../programming-guide/events/index.md)
-- [Opérateurs d’arithmétique](arithmetic-operators.md)
-- [- et -- opérateurs](subtraction-operator.md)
+- [Opérateurs arithmétiques](arithmetic-operators.md)
+- [opérateurs-and-=](subtraction-operator.md)

@@ -1,5 +1,5 @@
 ---
-title: Instances d'objets par défaut fournies par My.Forms et My.WebServices
+title: Instances d’objets par défaut fournies par My.Forms et My.WebServices
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.WebServices object [Visual Basic], developing applications
@@ -20,16 +20,16 @@ Les objets [My. Forms](../../../visual-basic/language-reference/objects/my-forms
   
 ## <a name="default-instances"></a>Instances par défaut  
 
- Une instance par défaut est une instance de la classe fournie par le runtime et n’a pas besoin d’être déclarée et instanciée à l’aide des instructions `Dim` et `New`. L’exemple suivant montre comment vous avez pu déclarer et instancier une instance d’une classe <xref:System.Windows.Forms.Form> appelée `Form1`, et comment vous pouvez désormais obtenir une instance par défaut de cette classe <xref:System.Windows.Forms.Form> à l’aide de `My.Forms`.  
+ Une instance par défaut est une instance de la classe fournie par le runtime et n’a pas besoin d’être déclarée et instanciée à `Dim` l' `New` aide des instructions et. L’exemple suivant montre comment vous avez pu déclarer et instancier une instance d’une <xref:System.Windows.Forms.Form> classe appelée `Form1`, et comment vous pouvez désormais obtenir une instance par défaut de cette <xref:System.Windows.Forms.Form> classe via. `My.Forms`  
   
  [!code-vb[VbVbcnMy#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMy/VB/Class1.vb#5)]  
   
  [!code-vb[VbVbcnMy#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMy/VB/Class1.vb#6)]  
   
- L’objet `My.Forms` retourne une collection d’instances par défaut pour chaque `Form` classe qui existe dans votre projet. De même, `My.WebServices` fournit une instance par défaut de la classe proxy pour chaque service Web pour lequel vous avez créé une référence dans votre application.  
+ L' `My.Forms` objet retourne une collection d’instances par défaut pour `Form` chaque classe qui existe dans votre projet. De même, `My.WebServices` fournit une instance par défaut de la classe proxy pour chaque service Web auquel vous avez créé une référence dans votre application.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [My.Forms (objet)](../../../visual-basic/language-reference/objects/my-forms-object.md)
+- [My.Forms, objet](../../../visual-basic/language-reference/objects/my-forms-object.md)
 - [My.WebServices (objet)](../../../visual-basic/language-reference/objects/my-webservices-object.md)
 - [Comment My dépend du type de projet](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)

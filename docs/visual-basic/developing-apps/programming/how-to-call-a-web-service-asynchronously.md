@@ -23,7 +23,7 @@ La classe proxy vous permet d'appeler les méthodes du service web de manière s
 > [!NOTE]
 > Ce code ne fonctionne pas dans les applications web, car ASP.NET ne prend pas en charge l'objet `My.WebServices`.
 
-## <a name="call-a-web-service-asynchronously"></a>Appelez un service Web asynchroneously
+## <a name="call-a-web-service-asynchronously"></a>Appeler un service Web de façon asynchrone
 
 1. Faites référence au service web DemoTemperatureService disponible sur `http://www.xmethods.net`. L'adresse est
 

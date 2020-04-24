@@ -1,20 +1,24 @@
 ### YamlMime:Landing
 title: Documentation .NET
-summary: En savoir plus sur .NET, une plate-forme de développement open-source pour la construction de nombreux types d’applications différentes.
+summary: Découvrez .NET, une plateforme de développement Open source pour la création de nombreux types d’applications différents.
 metadata:
   title: Documentation .NET
-  description: En savoir plus sur .NET, une plate-forme de développement open-source pour la construction de nombreux types d’applications différentes.
+  description: Découvrez .NET, une plateforme de développement Open source pour la création de nombreux types d’applications différents.
   ms.topic: landing-page
-  ms.date: 03/27/2020
-  ms.openlocfilehash: 5984996b59cfb89e5f165bf966722093c0992eea
-  ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+  ms.date: 04/22/2020
+  ms.openlocfilehash: 67fa6bb8c14ef3fad05b4874553a9ce75f811833
+  ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/03/2020
-  ms.locfileid: "80636079"
+  ms.lasthandoff: 04/24/2020
+  ms.locfileid: "82135813"
 landingContent:
 - title: En savoir plus sur .NET
   linkLists:
+  - linkListType: download
+    links:
+    - text: Télécharger le kit de développement logiciel (SDK) .NET
+      url: https://dotnet.microsoft.com/download
   - linkListType: overview
     links:
     - text: Présentation de .NET
@@ -39,43 +43,43 @@ landingContent:
       url: whats-new/whats-new-in-dotnet-standard.md
     - text: Nouveautés de .NET Core
       url: ../core/whats-new/dotnet-core-3-1.md
-- title: Sérialiser les données
+- title: Sérialiser des données
   linkLists:
   - linkListType: concept
     links:
-    - text: Sérialiser et déséialiser JSON
+    - text: Sérialiser et désérialiser JSON
       url: serialization/system-text-json-overview.md
   - linkListType: how-to-guide
     links:
-    - text: 'Sérialiser et déséialiser JSON à l’aide de C #'
+    - text: 'Sérialiser et désérialiser JSON à l’aide de C #'
       url: serialization/system-text-json-how-to.md
-    - text: Migrer de Newtonsoft.Json à System.Text.Json
+    - text: Migrer de Newtonsoft. JSON vers System. Text. JSON
       url: serialization/system-text-json-migrate-from-newtonsoft-how-to.md
-    - text: Écrivez des convertisseurs personnalisés pour la sérialisation JSON
+    - text: Écrire des convertisseurs personnalisés pour la sérialisation JSON
       url: serialization/system-text-json-converters-how-to.md
   - linkListType: sample
     links:
     - text: Exemples de sérialisation XML
       url: serialization/examples-of-xml-serialization.md
-- title: Format et conversion des dates, des chiffres et des chaînes
+- title: Mettre en forme et convertir des dates, des nombres et des chaînes
   linkLists:
   - linkListType: concept
     links:
-    - text: Chaînes de format numérique
+    - text: Chaînes de format numériques
       url: base-types/standard-numeric-format-strings.md
-    - text: Chaînes de format date et heure
+    - text: Chaînes de format de date et d’heure
       url: base-types/standard-date-and-time-format-strings.md
     - text: Mise en forme composite
       url: base-types/composite-formatting.md
-    - text: Convertir les horaires entre les fuseaux horaires
+    - text: Convertir des heures entre fuseaux horaires
       url: datetime/converting-between-time-zones.md
-    - text: Couper et supprimer les caractères des cordes
+    - text: Découper et supprimer des caractères dans des chaînes
       url: base-types/trimming.md
     - text: Expressions régulières dans .NET
       url: base-types/regular-expressions.md
   - linkListType: how-to-guide
     links:
-    - text: Convertir les cordes en DateTime
+    - text: Convertir des chaînes en DateTime
       url: base-types/parsing-datetime.md
     - text: Remplir un nombre avec des zéros non significatifs
       url: base-types/how-to-pad-a-number-with-leading-zeros.md
@@ -85,7 +89,7 @@ landingContent:
     links:
     - text: Langage des expressions régulières
       url: base-types/regular-expression-language-quick-reference.md
-- title: Cours de design et bibliothèques
+- title: Concevoir des classes et des bibliothèques
   linkLists:
   - linkListType: overview
     links:
@@ -93,11 +97,11 @@ landingContent:
       url: design-guidelines/index.md
   - linkListType: concept
     links:
-    - text: Conventions d'attribution d'un nom
+    - text: Conventions d’affectation de noms
       url: design-guidelines/general-naming-conventions.md
-    - text: Conventions de capitalisation
+    - text: Conventions de mise en majuscules
       url: design-guidelines/capitalization-conventions.md
-- title: Utiliser les événements et les exceptions
+- title: Utiliser des événements et des exceptions
   linkLists:
   - linkListType: concept
     links:
@@ -107,9 +111,9 @@ landingContent:
       url: events/index.md
   - linkListType: how-to-guide
     links:
-    - text: Utilisez un bloc try-catch pour attraper les exceptions
+    - text: Utiliser un bloc try-catch pour intercepter des exceptions
       url: exceptions/how-to-use-the-try-catch-block-to-catch-exceptions.md
-    - text: Élever et consommer des événements
+    - text: Déclencher et consommer des événements
       url: events/how-to-raise-and-consume-events.md
 - title: E/S de fichier et de flux
   linkLists:
@@ -117,7 +121,7 @@ landingContent:
     links:
     - text: E/S de fichier et de flux
       url: io/index.md
-    - text: Formats de trajectoire de fichier sur Windows
+    - text: Formats de chemin de fichier sur Windows
       url: io/file-path-formats.md
   - linkListType: how-to-guide
     links:
@@ -133,9 +137,9 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Principes fondamentaux de la collecte des ordures
+    - text: Notions de base du garbage collection
       url: garbage-collection/fundamentals.md
-    - text: Mettre en œuvre une méthode De disposer
+    - text: Implémenter une méthode Dispose
       url: garbage-collection/implementing-dispose.md
 - title: En savoir plus sur la programmation parallèle
   linkLists:
@@ -149,11 +153,11 @@ landingContent:
       url: parallel-programming/task-parallel-library-tpl.md
     - text: Programmation asynchrone basée sur les tâches
       url: parallel-programming/task-based-asynchronous-programming.md
-    - text: Annulation de tâches
+    - text: Annulation de tâche
       url: parallel-programming/task-cancellation.md
   - linkListType: how-to-guide
     links:
     - text: Écrire un programme parallèle simple à l’aide de Parallel.ForEach
       url: parallel-programming/how-to-write-a-simple-parallel-foreach-loop.md
-    - text: Retourner une valeur d’une tâche
+    - text: Retourner une valeur à partir d’une tâche
       url: parallel-programming/how-to-return-a-value-from-a-task.md

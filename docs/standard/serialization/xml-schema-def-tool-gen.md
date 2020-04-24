@@ -17,8 +17,8 @@ ms.locfileid: "81389798"
 # <a name="how-to-use-the-xml-schema-definition-tool-to-generate-classes-and-xml-schema-documents"></a>Comment : utiliser l'outil XML Schema Definition pour générer des classes et des documents de schéma XML
 L'outil XML Schema Definition (Xsd.exe) vous permet de générer un schéma XML qui décrit une classe ou de générer la classe définie par un schéma XML. Les procédures suivantes indiquent comment exécuter ces opérations.
 
-L’outil XML Schema Definition (Xsd.exe) se trouve habituellement dans le chemin suivant :
-_C\\: Fichiers de programme\\(x86)\\Microsoft\\SDKs\\Windows 'version' bin\\NETFX 'version' Outils\\_
+L’outil XML Schema Definition (XSD. exe) se trouve généralement à l’emplacement suivant : \
+_C :\\Program Files (x86)\\Microsoft SDK\\Windows\\{version}\\bin\\netfx {version} Tools\\_
 
 ### <a name="to-generate-classes-that-conform-to-a-specific-schema"></a>Pour générer des classes qui se conforment à un schéma spécifique  
   
@@ -30,7 +30,7 @@ _C\\: Fichiers de programme\\(x86)\\Microsoft\\SDKs\\Windows 'version' bin\\NETF
     xsd mySchema.xsd  
     ```  
   
-     L'outil ne peut traiter que les schémas qui référencent la spécification XML du W3C (World Wide Web Consortium) du 16 mars 2001. En d’autres termes, l’espace dehttp://www.w3.org/2001/XMLSchemanom XML Schema doit être " comme le montre l’exemple suivant.  
+     L'outil ne peut traiter que les schémas qui référencent la spécification XML du W3C (World Wide Web Consortium) du 16 mars 2001. En d’autres termes, l’espace de noms du schémahttp://www.w3.org/2001/XMLSchemaXML doit être «», comme indiqué dans l’exemple suivant.  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8"?>  
@@ -60,7 +60,7 @@ _C\\: Fichiers de programme\\(x86)\\Microsoft\\SDKs\\Windows 'version' bin\\NETF
 - <xref:System.Data.DataSet>
 - [Outil XML Schema Definition et sérialisation XML](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md)
 - [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
-- [Outil de définition de schémas XML (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)
+- [Outil XML Schema Definition (XSD. exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
 - [Guide pratique pour sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md)
 - [Guide pratique pour désérialiser un objet](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

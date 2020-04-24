@@ -37,29 +37,29 @@ Un *composant* est une classe qui implémente l’interface <xref:System.Compone
   
  Les classes de composant principales sont les suivantes :  
   
-- <xref:System.ComponentModel.Component> Implémentation de base pour l’interface <xref:System.ComponentModel.IComponent>. Cette classe permet le partage d’objets entre applications.  
+- <xref:System.ComponentModel.Component>. Implémentation de base pour l’interface <xref:System.ComponentModel.IComponent>. Cette classe permet le partage d’objets entre applications.  
   
-- <xref:System.ComponentModel.MarshalByValueComponent> Implémentation de base pour l’interface <xref:System.ComponentModel.IComponent>.  
+- <xref:System.ComponentModel.MarshalByValueComponent>. Implémentation de base pour l’interface <xref:System.ComponentModel.IComponent>.  
   
-- <xref:System.ComponentModel.Container> Implémentation de base pour l’interface <xref:System.ComponentModel.IContainer>. Cette classe encapsule zéro, un ou plusieurs composants.  
+- <xref:System.ComponentModel.Container>. Implémentation de base pour l’interface <xref:System.ComponentModel.IContainer>. Cette classe encapsule zéro, un ou plusieurs composants.  
   
  Les classes utilisées pour la gestion des licences des composants sont, entre autres, les suivantes :  
   
-- <xref:System.ComponentModel.License> Classe de base abstraite pour toutes les licences. Une licence est accordée à une instance spécifique d’un composant.  
+- <xref:System.ComponentModel.License>. Classe de base abstraite pour toutes les licences. Une licence est accordée à une instance spécifique d’un composant.  
   
-- <xref:System.ComponentModel.LicenseManager> Fournit des propriétés et des méthodes permettant d’ajouter une licence à un composant et de gérer un <xref:System.ComponentModel.LicenseProvider>.  
+- <xref:System.ComponentModel.LicenseManager>. Fournit des propriétés et des méthodes permettant d’ajouter une licence à un composant et de gérer un <xref:System.ComponentModel.LicenseProvider>.  
   
-- <xref:System.ComponentModel.LicenseProvider> Classe de base abstraite pour l’implémentation d’un fournisseur de licences.  
+- <xref:System.ComponentModel.LicenseProvider>. Classe de base abstraite pour l’implémentation d’un fournisseur de licences.  
   
-- <xref:System.ComponentModel.LicenseProviderAttribute> Spécifie la classe <xref:System.ComponentModel.LicenseProvider> à utiliser avec une classe.  
+- <xref:System.ComponentModel.LicenseProviderAttribute>. Spécifie la classe <xref:System.ComponentModel.LicenseProvider> à utiliser avec une classe.  
   
  Classes couramment utilisées pour la description et la persistance des composants.  
   
-- <xref:System.ComponentModel.TypeDescriptor> Fournit des informations relatives aux caractéristiques d’un composant, telles que ses attributs, ses propriétés et ses événements.  
+- <xref:System.ComponentModel.TypeDescriptor>. Fournit des informations relatives aux caractéristiques d’un composant, telles que ses attributs, ses propriétés et ses événements.  
   
-- <xref:System.ComponentModel.EventDescriptor> Fournit des informations sur un événement.  
+- <xref:System.ComponentModel.EventDescriptor>. Fournit des informations sur un événement.  
   
-- <xref:System.ComponentModel.PropertyDescriptor> Fournit des informations sur une propriété.  
+- <xref:System.ComponentModel.PropertyDescriptor>. Fournit des informations sur une propriété.  
   
 ## <a name="related-sections"></a>Sections connexes  
 

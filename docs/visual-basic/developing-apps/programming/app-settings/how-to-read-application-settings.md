@@ -1,5 +1,5 @@
 ---
-title: 'Guide pratique : lire des paramètres d’application'
+title: 'Procédure : lire des paramètres d’application'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - reading application settings
@@ -19,7 +19,7 @@ Vous pouvez lire un paramètre utilisateur en accédant à la propriété du par
   
  L’objet `My.Settings` expose chaque paramètre en tant que propriété. Le nom de la propriété est le même que le nom du paramètre, et le type de la propriété est le même que le type du paramètre. La **portée** du paramètre indique si la propriété est en lecture seule. La propriété d’un paramètre de portée **Application** est en lecture seule, tandis que la propriété d’un paramètre de portée **Utilisateur** est en lecture/écriture. Pour plus d’informations, consultez [My.Settings, objet](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
  Cet exemple affiche la valeur du paramètre `Nickname`.  
   

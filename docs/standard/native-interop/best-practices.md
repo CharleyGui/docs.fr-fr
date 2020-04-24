@@ -13,7 +13,7 @@ ms.locfileid: "80391219"
 
 .NET propose différents moyens de personnaliser du code d’interopérabilité native. Cet article détaille les instructions suivies par les équipes .NET de Microsoft pour l’interopérabilité native.
 
-## <a name="general-guidance"></a>Recommandations générales
+## <a name="general-guidance"></a>Règle générale
 
 Les instructions de cette section s’appliquent à tous les scénarios d’interopérabilité.
 
@@ -27,7 +27,7 @@ Les instructions de cette section s’appliquent à tous les scénarios d’inte
 
 ## <a name="dllimport-attribute-settings"></a>Paramètres des attributs DllImport
 
-| Paramètre | Default | Recommandation | Détails |
+| Paramètre | Par défaut | Recommandation | Détails |
 |---------|---------|----------------|---------|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>   | `true` |  Conserver la valeur par défaut  | S’il est défini explicitement sur false, les valeurs de retour HRESULT en échec sont converties en exceptions (et la valeur de retour de la définition devient ainsi Null).|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError> | `false`  | Dépend de l'API  | Définissez-le sur true si l’API utilise GetLastError et Marshal.GetLastWin32Error pour obtenir la valeur. Si l’API définit une condition indiquant une erreur, récupérez l’erreur avant d’effectuer d’autres appels, de façon à éviter de la remplacer par inadvertance.|
@@ -40,18 +40,18 @@ Lorsque le charset est Unicode ou que l’argument est explicitement marqué com
 
 N’oubliez pas de marquer `[DllImport]` comme `Charset.Unicode` sauf si vous souhaitez explicitement un traitement ANSI de vos chaînes.
 
-❌NE PAS `[Out] string` utiliser les paramètres. Les paramètres de chaînes passés en valeur avec l’attribut `[Out]` risquent de déstabiliser le runtime s’il s’agit de chaînes centralisées. Pour plus d’informations sur la centralisation des chaînes, voir la documentation de <xref:System.String.Intern%2A?displayProperty=nameWithType>.
+❌N’utilisez `[Out] string` pas de paramètres. Les paramètres de chaînes passés en valeur avec l’attribut `[Out]` risquent de déstabiliser le runtime s’il s’agit de chaînes centralisées. Pour plus d’informations sur la centralisation des chaînes, voir la documentation de <xref:System.String.Intern%2A?displayProperty=nameWithType>.
 
-❌PARAMÈTRES `StringBuilder` AVOID. Le marshaling `StringBuilder` crée *toujours* une copie de la mémoire tampon native. Il peut donc se révéler extrêmement inefficace. Prenons le scénario classique d’appel d’une API Windows qui prend une chaîne :
+❌Évitez `StringBuilder` les paramètres. Le marshaling `StringBuilder` crée *toujours* une copie de la mémoire tampon native. Il peut donc se révéler extrêmement inefficace. Prenons le scénario classique d’appel d’une API Windows qui prend une chaîne :
 
-1. Créer un SB de la capacité souhaitée (alloue la capacité gérée)**{1}**
+1. Créer un SB de la capacité souhaitée (alloue la capacité managée)**{1}**
 2. Appeler
-   1. Alloue un tampon natif**{2}**
+   1. Alloue une mémoire tampon Native**{2}**
    2. Copie le contenu si `[In]` _(valeur par défaut d’un paramètre `StringBuilder`)_
    3. Copie la mémoire tampon native dans un tableau managé nouvellement alloué si `[Out]` **{3}** _(valeur par défaut de `StringBuilder` également)_
-3. `ToString()`alloue un autre tableau géré**{4}**
+3. `ToString()`alloue un autre groupe géré**{4}**
 
-C’est *{4}* des allocations pour obtenir une chaîne de code natif. Le mieux que l’on puisse faire pour réduire ce nombre est de réutiliser `StringBuilder` dans un autre appel, mais cela ne fait gagner que *1* allocation. Il est largement préférable d’utiliser et de mettre en cache une mémoire tampon de caractères à partir de `ArrayPool` : vous pourrez limiter l’allocation à `ToString()` lors des appels suivants.
+Il s' *{4}* agit des allocations pour obtenir une chaîne à partir du code natif. Le mieux que l’on puisse faire pour réduire ce nombre est de réutiliser `StringBuilder` dans un autre appel, mais cela ne fait gagner que *1* allocation. Il est largement préférable d’utiliser et de mettre en cache une mémoire tampon de caractères à partir de `ArrayPool` : vous pourrez limiter l’allocation à `ToString()` lors des appels suivants.
 
 L’autre problème de `StringBuilder` est qu’il copie toujours la sauvegarde de la mémoire tampon de retour sur la première valeur Null. Si la chaîne de retour transmise n’est pas terminée ou se termine par un double Null, P/Invoke est au mieux incorrect.
 
@@ -61,11 +61,11 @@ Si vous *utilisez*`StringBuilder`, le dernier piège est que la capacité n’in
 
 Pour plus d’informations sur le marshaling des chaînes, consultez [Marshaling par défaut pour les chaînes](../../framework/interop/default-marshaling-for-strings.md) et [Personnaliser le marshaling des chaînes](customize-parameter-marshaling.md#customizing-string-parameters).
 
-> __Spécifiques à Windows__ Pour `[Out]` les cordes, le `CoTaskMemFree` CLR utilisera `SysStringFree` par défaut pour libérer `UnmanagedType.BSTR`des cordes ou pour les cordes qui sont marquées comme .
-> **Pour la plupart des API avec un tampon de chaîne de sortie :** Le nombre de caractères adopté doit inclure le null. Si la valeur de retour est inférieure au nombre de caractères transmis, c’est le signe que l’appel a réussi et que la valeur correspond au nombre de caractères *sans* la valeur Null de fin. Sinon, le nombre représente la taille requise de la mémoire tampon caractère Null *inclus*.
+> __Spécifique à Windows__ Pour `[Out]` les chaînes que le CLR `CoTaskMemFree` utilisera par défaut pour libérer `SysStringFree` des chaînes ou pour les chaînes `UnmanagedType.BSTR`qui sont marquées comme.
+> **Pour la plupart des API avec une mémoire tampon de chaîne de sortie :** Le nombre de caractères transmis doit inclure la valeur null. Si la valeur de retour est inférieure au nombre de caractères transmis, c’est le signe que l’appel a réussi et que la valeur correspond au nombre de caractères *sans* la valeur Null de fin. Sinon, le nombre représente la taille requise de la mémoire tampon caractère Null *inclus*.
 >
-> - Passer en 5, obtenir 4: La chaîne est de 4 caractères de long avec un nul de fuite.
-> - Passer en 5, obtenir 6: La chaîne est de 5 caractères de long, besoin d’un tampon de 6 caractères pour tenir le null.
+> - Pass in 5, obtenir 4 : la chaîne comporte 4 caractères avec une valeur null de fin.
+> - Pass in 5, obtenir 6 : la chaîne comporte 5 caractères, nécessite une mémoire tampon de 6 caractères pour contenir la valeur null.
 > [Types de données Windows pour les chaînes](/windows/desktop/Intl/windows-data-types-for-strings)
 
 ## <a name="boolean-parameters-and-fields"></a>Paramètres et champs booléens
@@ -80,7 +80,7 @@ Les GUID sont directement utilisables dans les signatures. De nombreuses API Win
 |------|-------------|
 | `KNOWNFOLDERID` | `REFKNOWNFOLDERID` |
 
-❌NE PAS `[MarshalAs(UnmanagedType.LPStruct)]` utiliser pour `ref` autre chose que les paramètres GUID.
+❌N’utilisez `[MarshalAs(UnmanagedType.LPStruct)]` pas pour les paramètres de `ref` GUID.
 
 ## <a name="blittable-types"></a>Types blittables
 
@@ -120,18 +120,18 @@ Pour savoir si un type est blittable, essayez de créer un `GCHandle` épinglé.
 
 ✔️ À FAIRE : rendez vos structures blittables dans la mesure du possible.
 
-Pour plus d'informations, consultez les pages suivantes :
+Pour plus d’informations, voir :
 
-- [Types blittable et non blittable](../../framework/interop/blittable-and-non-blittable-types.md)
-- [Marshaling de types](type-marshaling.md)
+- [types blittable et non blittable](../../framework/interop/blittable-and-non-blittable-types.md)
+- [Marshaling de type](type-marshaling.md)
 
 ## <a name="keeping-managed-objects-alive"></a>Maintenir actifs les objets gérés
 
 `GC.KeepAlive()` garantit qu'un objet reste accessible jusqu'à ce que la méthode KeepAlive soit atteinte.
 
-[`HandleRef`](xref:System.Runtime.InteropServices.HandleRef)permet au maréchal de garder un objet en vie pendant toute la durée d’un P/Invoke. Il peut être utilisé à la place de `IntPtr` dans les signatures de méthode. `SafeHandle` remplace cette classe et doit être utilisé à la place.
+[`HandleRef`](xref:System.Runtime.InteropServices.HandleRef)permet au marshaleur de conserver un objet actif pendant la durée d’un appel P/Invoke. Il peut être utilisé à la place de `IntPtr` dans les signatures de méthode. `SafeHandle` remplace cette classe et doit être utilisé à la place.
 
-[`GCHandle`](xref:System.Runtime.InteropServices.GCHandle)permet d’épingler un objet géré et d’obtenir le pointeur natif à elle. En voici le modèle de base :
+[`GCHandle`](xref:System.Runtime.InteropServices.GCHandle)autorise l’épinglage d’un objet managé et l’obtention du pointeur natif vers celui-ci. En voici le modèle de base :
 
 ```csharp
 GCHandle handle = GCHandle.Alloc(obj, GCHandleType.Pinned);
@@ -217,11 +217,11 @@ Les pointeurs vers des structs dans les définitions doivent être passés en `r
 
 ✔️ À FAIRE : utilisez le `sizeof()` C# au lieu de `Marshal.SizeOf<MyStruct>()` pour les structures blittables afin d’améliorer les performances.
 
-❌AVOID `System.Delegate` utilisation `System.MulticastDelegate` ou champs pour représenter les champs de pointeur de fonction dans les structures.
+❌Évitez d' `System.Delegate` utiliser `System.MulticastDelegate` des champs ou pour représenter des champs de pointeur de fonction dans des structures.
 
-Puisqu’ils <xref:System.Delegate?displayProperty=fullName> <xref:System.MulticastDelegate?displayProperty=fullName> n’ont pas de signature requise, ils ne garantissent pas que le délégué adopté correspondra à la signature que le code natif attend. En outre, dans .NET Framework et .NET Core, le marshaling d’une struct contenant un `System.Delegate` ou `System.MulticastDelegate` de sa représentation indigène à un objet géré peut déstabiliser le temps d’exécution si la valeur du champ dans la représentation autochtone n’est pas un pointeur de fonction qui enveloppe un délégué géré. Dans .NET 5 et les versions `System.MulticastDelegate` ultérieures, le marshaling d’une `System.Delegate` représentation autochtone à un objet géré n’est pas pris en charge. Utilisez un type de `System.Delegate` `System.MulticastDelegate`délégué spécifique au lieu ou .
+Étant <xref:System.Delegate?displayProperty=fullName> donné <xref:System.MulticastDelegate?displayProperty=fullName> que et n’ont pas de signature obligatoire, elles ne garantissent pas que le délégué passé correspond à la signature attendue par le code natif. En outre, dans .NET Framework et .NET Core, le marshaling d’un struct `System.Delegate` contenant `System.MulticastDelegate` un ou à partir de sa représentation native vers un objet managé peut déstabiliser le runtime si la valeur du champ dans la représentation native n’est pas un pointeur de fonction qui encapsule un délégué managé. Dans .NET 5 et versions ultérieures, le marshaling d’un `System.Delegate` champ ou `System.MulticastDelegate` d’une représentation native vers un objet managé n’est pas pris en charge. Utilisez un type délégué spécifique au lieu `System.Delegate` de `System.MulticastDelegate`ou.
 
-### <a name="fixed-buffers"></a>Tampons fixes
+### <a name="fixed-buffers"></a>Mémoires tampons fixes
 
 Un tableau comme `INT_PTR Reserved1[2]` doit être marshalé en deux champs `IntPtr`, `Reserved1a` et `Reserved1b`. Lorsque le tableau natif est un type primitif, il est possible d’utiliser le mot clé `fixed` pour que le code soit un peu plus propre. Par exemple, `SYSTEM_PROCESS_INFORMATION` se présente ainsi dans l’en-tête natif :
 

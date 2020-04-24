@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 02/28/2020
 ms.locfileid: "78159817"
 ---
-# <a name="schemaimporterextensions-element"></a>\<élément schemaImporterExtensions >
+# <a name="schemaimporterextensions-element"></a>\<schemaImporterExtensions>, élément
 Contient des types utilisés par le <xref:System.Xml.Serialization.XmlSchemaImporter> pour mapper des types XSD en types .NET Framework. Pour plus d’informations sur les fichiers de configuration, consultez [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -28,13 +28,13 @@ Contient des types utilisés par le <xref:System.Xml.Serialization.XmlSchemaImpo
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<ajoutez > élément pour \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)|Ajoute des types utilisés par <xref:System.Xml.Serialization.XmlSchemaImporter> pour créer des mappages.|  
+|[\<Ajouter> élément pour \<SchemaImporterExtensions>](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)|Ajoute des types utilisés par <xref:System.Xml.Serialization.XmlSchemaImporter> pour créer des mappages.|  
   
 ## <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<system.xml.serialization>, élément](../../../docs/standard/serialization/system-xml-serialization-element.md)|Élément de niveau supérieur permettant de contrôler la sérialisation XML.|  
+|[\<Élément System. Xml. Serialization>](../../../docs/standard/serialization/system-xml-serialization-element.md)|Élément de niveau supérieur permettant de contrôler la sérialisation XML.|  
   
 ## <a name="example"></a>Exemple  
  L'exemple de code suivant illustre comment ajouter des types utilisés par <xref:System.Xml.Serialization.XmlSchemaImporter> lors du mappage de types XSD en types .NET Framework.  
@@ -54,7 +54,7 @@ Contient des types utilisés par le <xref:System.Xml.Serialization.XmlSchemaImpo
 
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
-- [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma du fichier de configuration](../../../docs/framework/configure-apps/file-schema/index.md)
 - [\<dateTimeSerialization>, élément](../../../docs/standard/serialization/datetimeserialization-element.md)
-- [\<ajoutez > élément pour \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
-- [\<system.xml.serialization>, élément](../../../docs/standard/serialization/system-xml-serialization-element.md)
+- [\<Ajouter> élément pour \<SchemaImporterExtensions>](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
+- [\<Élément System. Xml. Serialization>](../../../docs/standard/serialization/system-xml-serialization-element.md)

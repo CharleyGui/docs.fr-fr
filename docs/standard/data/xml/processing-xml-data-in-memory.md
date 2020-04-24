@@ -20,14 +20,14 @@ Microsoft .NET Framework comprend trois modèles pour le traitement des données
  [LINQ to XML](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) est un modèle introduit dans .NET Framework version 3.5 pour le traitement des données XML. Il s’agit d’un modèle en mémoire qui tire parti de [LINQ (Language-Integrated Query)](../../../csharp/programming-guide/concepts/linq/index.md). LINQ étend la syntaxe des langages C# et Visual Basic pour fournir de nouvelles capacités de requête.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Traitement de données XML à l’aide du modèle DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  
+ [Traitement de données XML à l'aide du modèle DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  
  Explique l'utilisation de l'objet <xref:System.Xml.XmlDocument> et des classes y afférentes pour le traitement de données XML.  
   
- [Traitement des données XML à l’aide du modèle de données XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
+ [Traitement des données XML à l'aide du modèle de données XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
  Explique l'utilisation des classes <xref:System.Xml.XPath.XPathDocument>, <xref:System.Xml.XmlDocument> et <xref:System.Xml.XPath.XPathNavigator> pour le traitement de données XML.  
   
- [Traitement des données XML à l’aide de LINQ to XML](../../../../docs/standard/data/xml/process-xml-data-using-linq-to-xml.md)  
+ [Traitement des données XML à l'aide de LINQ to XML](../../../../docs/standard/data/xml/process-xml-data-using-linq-to-xml.md)  
  Fournit une brève vue d'ensemble de LINQ to XML et indique des liens vers la documentation LINQ to XML.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Documents et données XML](../../../../docs/standard/data/xml/index.md)

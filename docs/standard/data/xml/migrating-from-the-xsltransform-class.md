@@ -67,7 +67,7 @@ writer.Close();
 
 ### <a name="debug-option"></a>Option de débogage
 
-La classe <xref:System.Xml.Xsl.XslCompiledTransform> peut générer des informations de débogage, ce qui vous permet de déboguer la feuille de style à l’aide du Débogueur Microsoft Visual Studio. Pour plus d'informations, voir <xref:System.Xml.Xsl.XslCompiledTransform.%23ctor%28System.Boolean%29>.
+La classe <xref:System.Xml.Xsl.XslCompiledTransform> peut générer des informations de débogage, ce qui vous permet de déboguer la feuille de style à l’aide du Débogueur Microsoft Visual Studio. Consultez la rubrique <xref:System.Xml.Xsl.XslCompiledTransform.%23ctor%28System.Boolean%29> (éventuellement en anglais) pour plus d'informations.
 
 ## <a name="behavioral-differences"></a>Différences comportementales
 

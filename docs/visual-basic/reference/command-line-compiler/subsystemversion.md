@@ -26,7 +26,7 @@ Spécifie la version minimale du sous-système sur lequel le fichier exécutable
 -subsystemversion:major.minor
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 `major.minor`
 
@@ -38,15 +38,15 @@ Les zéros à gauche du numéro de version `minor` ne modifient pas la version, 
 
 Le tableau suivant répertorie les versions courantes de sous-système de Windows.
 
-|Version Windows|Version de sous-système|
+|Version de Windows|Version de sous-système|
 |---------------------|-----------------------|
 |Windows 2000|5.00|
-|Windows XP|5.01|
-|Windows Server 2003|5.02|
-|Windows Vista|6.00|
+|Windows XP|5,01|
+|Windows Server 2003|5.02|
+|Windows Vista|6,00|
 |Windows 7|6.01|
 |Windows Server 2008|6.01|
-|Windows 8|6.02|
+|Windows 8|6.02|
 
 ## <a name="default-values"></a>Valeurs par défaut
 
@@ -54,9 +54,9 @@ La valeur par défaut de l’option du compilateur **-subsystemversion** dépend
 
 - La valeur par défaut est 6.02 si l’une quelconque des options du compilateur de la liste suivante est définie :
 
-  - [/target:appcontainerexe](../../../visual-basic/reference/command-line-compiler/target.md)
+  - [-target:appcontainerexe](../../../visual-basic/reference/command-line-compiler/target.md)
 
-  - [/target:winmdobj](../../../visual-basic/reference/command-line-compiler/target.md)
+  - [-target:winmdobj](../../../visual-basic/reference/command-line-compiler/target.md)
 
   - [-platform:arm](../../../visual-basic/reference/command-line-compiler/platform.md)
 
@@ -66,7 +66,7 @@ La valeur par défaut de l’option du compilateur **-subsystemversion** dépend
 
 ## <a name="setting-this-option"></a>Définition de cette option
 
-Pour définir l’option de compilateur **-SubSystemVersion** dans Visual Studio, vous devez ouvrir le fichier. vbproj et spécifier une valeur pour la propriété `SubsystemVersion` dans le XML MSBuild. Vous ne pouvez pas définir cette option dans l’environnement IDE de Visual Studio. Pour plus d’informations, consultez « Valeurs par défaut » plus haut dans cette rubrique ou [Propriétés communes des projets MSBuild](/visualstudio/msbuild/common-msbuild-project-properties).
+Pour définir l’option de compilateur **-SubSystemVersion** dans Visual Studio, vous devez ouvrir le fichier. vbproj et spécifier une valeur pour `SubsystemVersion` la propriété dans le code XML MSBuild. Vous ne pouvez pas définir cette option dans l’environnement IDE de Visual Studio. Pour plus d’informations, consultez « Valeurs par défaut » plus haut dans cette rubrique ou [Propriétés communes des projets MSBuild](/visualstudio/msbuild/common-msbuild-project-properties).
 
 ## <a name="see-also"></a>Voir aussi
 

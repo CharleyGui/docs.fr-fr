@@ -20,7 +20,7 @@ Lorsque vous chargez et enregistrez un objet <xref:System.Xml.XmlDocument>, le d
   
 - Tous les espaces blancs entre les attributs sont réduits à un espace simple.  
   
-- L'espace blanc entre les éléments est modifié. Seuls les espaces blancs significatifs sont conservés. Toutefois, lorsque le document est enregistré, il utilise le mode de **mise en retrait** <xref:System.Xml.XmlTextWriter> par défaut pour imprimer clairement la sortie et la rendre plus lisible.  
+- L'espace blanc entre les éléments est modifié. Seuls les espaces blancs significatifs sont conservés. Mais lors de l'enregistrement du document, celui-ci utilise le mode  <xref:System.Xml.XmlTextWriter> **Indenting** par défaut pour imprimer clairement la sortie et la rendre plus lisible.  
   
 - Le caractère guillemet qui entoure les valeurs d'attribut est remplacé par défaut par le guillemet double. Vous pouvez utiliser la propriété <xref:System.Xml.XmlTextReader.QuoteChar%2A> sur <xref:System.Xml.XmlTextWriter> pour définir le caractère guillemet sur un guillemet double ou un guillemet simple.  
   
@@ -33,7 +33,7 @@ Lorsque vous chargez et enregistrez un objet <xref:System.Xml.XmlDocument>, le d
 ## <a name="writing-an-xmldeclaration"></a>Écriture d'une XmlDeclaration  
  Les membres <xref:System.Xml.XmlDocument> et <xref:System.Xml.XmlDeclaration> de la propriété <xref:System.Xml.XmlNode.OuterXml%2A>, <xref:System.Xml.XmlNode.InnerXml%2A>, <xref:System.Xml.XmlNode.WriteTo%2A> et les méthodes <xref:System.Xml.XmlDocument> de <xref:System.Xml.XmlDocument.Save%2A> et <xref:System.Xml.XmlDocument.WriteContentTo%2A> créent une déclaration XML.  
   
- Pour les propriétés <xref:System.Xml.XmlDocument> de <xref:System.Xml.XmlNode.OuterXml%2A>, <xref:System.Xml.XmlDocument.InnerXml%2A>, <xref:System.Xml.XmlDocument.Save%2A>, <xref:System.Xml.XmlDocument.WriteTo%2A> et les méthodes <xref:System.Xml.XmlDocument.WriteContentTo%2A>, l'encodage écrit dans la déclaration XML est prélevé du nœud <xref:System.Xml.XmlDeclaration>. S’il n’y a aucun nœud <xref:System.Xml.XmlDeclaration>, <xref:System.Xml.XmlDeclaration> n’est pas écrit. S’il n’y a pas d’encodage dans le nœud <xref:System.Xml.XmlDeclaration>, l’encodage n’est pas écrit dans la déclaration XML.  
+ Pour les propriétés <xref:System.Xml.XmlDocument> de <xref:System.Xml.XmlNode.OuterXml%2A>, <xref:System.Xml.XmlDocument.InnerXml%2A>, <xref:System.Xml.XmlDocument.Save%2A>, <xref:System.Xml.XmlDocument.WriteTo%2A> et les méthodes <xref:System.Xml.XmlDocument.WriteContentTo%2A>, l'encodage écrit dans la déclaration XML est prélevé du nœud <xref:System.Xml.XmlDeclaration>. S’il n’y <xref:System.Xml.XmlDeclaration> a aucun <xref:System.Xml.XmlDeclaration> nœud, n’est pas écrit. S’il n’y a pas d' <xref:System.Xml.XmlDeclaration> encodage dans le nœud, l’encodage n’est pas écrit dans la déclaration XML.  
   
  Les méthodes <xref:System.Xml.XmlDocument.Save%2A?displayProperty=nameWithType> et <xref:System.Xml.XmlDocument.Save%2A?displayProperty=nameWithType> écrivent toujours un objet <xref:System.Xml.XmlDeclaration>. Ces méthodes prennent l'encodage du writer dans lequel elles écrivent. Ainsi, la valeur d'encodage du writer remplace l'encodage du document et de l'objet <xref:System.Xml.XmlDeclaration>. Par exemple, le code suivant n'écrit pas un encodage dans la déclaration XML trouvée dans le fichier de sortie `out.xml`.  
   
@@ -53,7 +53,7 @@ doc.Save(tw);
   
  Dans le cas de la méthode <xref:System.Xml.XmlDocument.Save%2A>, la déclaration XML est écrite à l'aide de la méthode <xref:System.Xml.XmlWriter.WriteStartDocument%2A> de la classe <xref:System.Xml.XmlWriter>. Par conséquent, le remplacement de la méthode <xref:System.Xml.XmlWriter.WriteStartDocument%2A> modifie la manière dont le début du document est écrit.  
   
- Pour les membres <xref:System.Xml.XmlDeclaration> de <xref:System.Xml.XmlNode.OuterXml%2A>, <xref:System.Xml.XmlDeclaration.WriteTo%2A>et <xref:System.Xml.XmlNode.InnerXml%2A>, si la propriété <xref:System.Xml.XmlDeclaration.Encoding%2A> n’est pas définie, aucun encodage n’est écrit. Dans le cas contraire, l’encodage écrit dans la déclaration XML est le même que celui trouvé dans la propriété <xref:System.Xml.XmlDeclaration.Encoding%2A>.  
+ Pour les <xref:System.Xml.XmlDeclaration> membres de <xref:System.Xml.XmlNode.OuterXml%2A>, <xref:System.Xml.XmlDeclaration.WriteTo%2A>et <xref:System.Xml.XmlNode.InnerXml%2A>, si la <xref:System.Xml.XmlDeclaration.Encoding%2A> propriété n’est pas définie, aucun encodage n’est écrit. Dans le cas contraire, l’encodage écrit dans la déclaration XML est le même que celui trouvé <xref:System.Xml.XmlDeclaration.Encoding%2A> dans la propriété.  
   
 ## <a name="writing-document-content-using-the-outerxml-property"></a>Écriture de contenu de document à l'aide de la propriété OuterXml  
  La propriété <xref:System.Xml.XmlNode.OuterXml%2A> est une extension Microsoft des normes DOM (Document Object Model) XML du W3C (World Wide Web Consortium). La propriété <xref:System.Xml.XmlNode.OuterXml%2A> permet d'obtenir le balisage de l'ensemble du document XML ou d'un seul nœud et de ses nœuds enfants. La propriété <xref:System.Xml.XmlNode.OuterXml%2A> retourne le balisage représentant le nœud donné et tous ses nœuds enfants.  

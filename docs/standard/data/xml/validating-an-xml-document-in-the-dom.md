@@ -92,5 +92,5 @@ Les erreurs de validation sont traitées par l'objet <xref:System.Xml.Schema.Val
 - <xref:System.Xml.XmlReader>
 - <xref:System.Xml.Schema.ValidationEventHandler>
 - <xref:System.Xml.XmlReaderSettings>
-- [Traitement de données XML à l’aide du modèle DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
+- [Traitement de données XML à l'aide du modèle DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
 - [Utilisation de schémas XML](../../../../docs/standard/data/xml/working-with-xml-schemas.md)

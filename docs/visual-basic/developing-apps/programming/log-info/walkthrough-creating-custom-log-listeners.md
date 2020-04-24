@@ -39,13 +39,13 @@ La procédure suivante fournit des étapes simples pour créer un assembly d’�
 
 #### <a name="to-strongly-name-the-log-listener-assembly"></a>Pour attribuer un nom fort à l’assembly de l’écouteur de journalisation
 
-1. Sélectionnez un projet dans l' **Explorateur de solutions**. Sur le menu du **projet,** choisissez **Propriétés**.
+1. Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **projet** , choisissez **Propriétés**.
 
 2. Cliquez sur l'onglet **Signature** .
 
 3. Sélectionnez la zone **Signer l'assembly** .
 
-4. Sélectionnez ** \<New>** de la liste d’abandon de **fichiers clés De nom fort.**
+4. Sélectionnez ** \<nouveau>** dans la liste déroulante **choisir un fichier de clé de nom fort** .
 
      La boîte de dialogue **Créer une clé de nom fort** s’ouvre.
 
@@ -111,6 +111,6 @@ Avec le nom fort, vous pouvez ajouter l’écouteur à la collection de l’éco
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Comment : enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
-- [Guide pratique : écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
-- [Procédure pas à pas : modification de l'emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [Procédure : journaliser des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [Procédure : écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
+- [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
