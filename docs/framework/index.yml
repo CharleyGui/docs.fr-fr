@@ -1,34 +1,34 @@
 ### YamlMime:Landing
 title: Documentation de .NET Framework
-summary: Découvrez .NET Framework, une plateforme de développement pour la création d’applications pour le web, Windows et Microsoft Azure.
+summary: En savoir plus sur .NET Framework, une plateforme de développement pour la création d’applications pour le Web, Windows et Microsoft Azure.
 metadata:
   title: Documentation de .NET Framework
-  description: Trouvez des informations sur .NET Framework, une plate-forme de développement pour la création d’applications pour le web, Windows et Microsoft Azure.
+  description: Trouvez des informations sur .NET Framework, une plateforme de développement pour créer des applications pour le Web, Windows et Microsoft Azure.
   ms.topic: landing-page
   ms.custom: updateeachrelease
   f1_keywords:
   - f61f02f2-2f20-483d-8f56-a9c8f3a54986
   helpviewer_keywords:
   - .NET Framework guide
-  ms.date: 03/23/2020
-  ms.openlocfilehash: 5f362cff359800b0bffd2283819824b8660cfa24
-  ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
+  ms.date: 04/22/2020
+  ms.openlocfilehash: 67e1549395ab5657a5d609b186fc1816211c5af3
+  ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/24/2020
-  ms.locfileid: "80229286"
+  ms.lasthandoff: 04/24/2020
+  ms.locfileid: "82135904"
 landingContent:
 - title: En savoir plus sur .NET Framework
   linkLists:
   - linkListType: overview
     links:
-    - text: .NET Vue d’ensemble du cadre
+    - text: Présentation de .NET Framework
       url: get-started/overview.md
-    - text: Configuration système requise
+    - text: Configuration requise
       url: get-started/system-requirements.md
   - linkListType: concept
     links:
-    - text: Anciennes versions de .NET Framework
+    - text: Versions antérieures de .NET Framework
       url: /previous-versions/dotnet/
   - linkListType: deploy
     links:
@@ -36,13 +36,17 @@ landingContent:
       url: deployment/deployment-guide-for-developers.md
 - title: Installer .NET Framework
   linkLists:
+  - linkListType: download
+    links:
+    - text: Télécharger le kit de développement logiciel (SDK) .NET
+      url: https://dotnet.microsoft.com/download
   - linkListType: overview
     links:
     - text: Guide d’installation
       url: install/index.md
   - linkListType: concept
     links:
-    - text: .NET Framework & versions Windows OS
+    - text: .NET Framework & versions du système d’exploitation Windows
       url: migration-guide/versions-and-dependencies.md
   - linkListType: how-to-guide
     links:
@@ -50,17 +54,17 @@ landingContent:
       url: migration-guide/how-to-determine-which-versions-are-installed.md
     - text: Installer .NET Framework sur Windows 10
       url: install/on-windows-10.md
-    - text: Installer .NET Framework 3.5
+    - text: Installer .NET Framework 3,5
       url: install/dotnet-35-windows-10.md
-    - text: Installer le pack de développeur ou redistribuable
+    - text: Installer le Developer Pack ou le package redistribuable
       url: install/guide-for-developers.md
-    - text: Installations bloquées de dépannage
+    - text: Résoudre les problèmes d’installation bloquée
       url: install/troubleshoot-blocked-installations-and-uninstallations.md
 - title: Créer des applications de service Windows
   linkLists:
   - linkListType: overview
     links:
-    - text: Introduction aux applications de service Windows
+    - text: Présentation des applications de service Windows
       url: windows-services/introduction-to-windows-service-applications.md
   - linkListType: tutorial
     links:
@@ -74,7 +78,7 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: Aperçu des formulaires Windows
+    - text: Vue d’ensemble de Windows Forms
       url: winforms/index.md
   - linkListType: tutorial
     links:
@@ -84,21 +88,21 @@ landingContent:
       url: winforms/how-to-create-a-windows-forms-application-from-the-command-line.md
   - linkListType: how-to-guide
     links:
-    - text: Ajouter et supprimer les éléments des contrôles ComboBox, ListBox et CheckedListBox
+    - text: Ajouter et supprimer des éléments dans des contrôles ComboBox, ListBox et CheckedListBox
       url: winforms/controls/add-and-remove-items-from-a-wf-combobox.md
-    - text: Faire des appels sans fil aux contrôles
+    - text: Effectuer des appels thread-safe aux contrôles
       url: winforms/controls/how-to-make-thread-safe-calls-to-windows-forms-controls.md
 - title: Créer des applications WPF
   linkLists:
   - linkListType: overview
     links:
-    - text: Aperçu de WPF
+    - text: Vue d’ensemble de WPF
       url: wpf/index.md
   - linkListType: tutorial
     links:
-    - text: Créez votre première application WPF dans Visual Studio
+    - text: Créer votre première application WPF dans Visual Studio
       url: wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md
-- title: Travailler avec des données à l’aide de ADO.NET
+- title: Utiliser des données à l’aide de ADO.NET
   linkLists:
   - linkListType: overview
     links:
@@ -106,19 +110,19 @@ landingContent:
       url: data/adonet/ado-net-overview.md
   - linkListType: tutorial
     links:
-    - text: Développement du modèle d’abord à l’aide du Cadre d’entité
+    - text: Développement modèle-premier à l’aide de Entity Framework
       url: /ef/ef6/modeling/designer/workflows/model-first
-    - text: Premier développement de base de données à l’aide du Cadre d’entité
+    - text: Développement de base de données en premier à l’aide de Entity Framework
       url: /ef/ef6/modeling/designer/workflows/database-first
   - linkListType: concept
     links:
     - text: Chaînes de connexion et fichiers de configuration
       url: data/adonet/connection-strings-and-configuration-files.md
-    - text: Mise en commun des connexions SQL Server
+    - text: SQL Server le regroupement de connexions
       url: data/adonet/sql-server-connection-pooling.md
   - linkListType: how-to-guide
     links:
-    - text: Récupérer les données à l’aide d’un lecteur de données
+    - text: Récupérer des données à l’aide d’un DataReader
       url: data/adonet/retrieving-data-using-a-datareader.md
     - text: Ajouter des données à un DataTable
       url: data/adonet/dataset-datatable-dataview/adding-data-to-a-datatable.md
@@ -126,5 +130,5 @@ landingContent:
     links:
     - text: Syntaxe de chaîne de connexion
       url: data/adonet/connection-string-syntax.md
-    - text: Exemple de bases de données SQL Server
+    - text: Exemples de bases de données SQL Server
       url: data/adonet/sql/linq/downloading-sample-databases.md
