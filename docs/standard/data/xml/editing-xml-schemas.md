@@ -139,10 +139,10 @@ Voici le schéma utilisateur modifié créé dans la rubrique [Création de sch�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble du modèle d’objet de schéma XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)
+- [Vue d'ensemble du Modèle Objet du schéma XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)
 - [Lecture et écriture de schémas XML](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)
 - [Création de schémas XML](../../../../docs/standard/data/xml/building-xml-schemas.md)
-- [Parcours des schémas XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
+- [Traversée de schémas XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
 - [Inclusion ou importation de schémas XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)
 - [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
-- [Infoset de post-compilation de schéma](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)
+- [Jeu d'informations de post-compilation de schéma](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)

@@ -29,11 +29,11 @@ Active ou désactive la vérification des erreurs de dépassement de capacité p
   
 |Terme|Définition|  
 |---|---|  
-|`+` &#124; `-`|facultatif. L’option `-removeintchecks-` force le compilateur à vérifier tous les calculs d’entiers pour les erreurs de dépassement de capacité. La valeur par défaut est `-removeintchecks-`.<br /><br /> La spécification de `-removeintchecks` ou `-removeintchecks+` empêche la vérification des erreurs et peut accélérer le calcul des entiers. Toutefois, sans vérification des erreurs, et si les capacités des types de données sont dépassées, des résultats incorrects peuvent être stockés sans déclencher d’erreur.|  
+|`+` &#124; `-`|Facultatif. Avec `-removeintchecks-` l’option, le compilateur vérifie tous les calculs d’entiers pour les erreurs de dépassement de capacité. Par défaut, il s’agit de `-removeintchecks-`.<br /><br /> Le `-removeintchecks` fait `-removeintchecks+` de spécifier ou d’empêcher la vérification des erreurs et peut accélérer le calcul des entiers. Toutefois, sans vérification des erreurs, et si les capacités des types de données sont dépassées, des résultats incorrects peuvent être stockés sans déclencher d’erreur.|  
   
 |Pour définir-removeintchecks (dans l’environnement de développement intégré Visual Studio|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Cliquez sur le bouton **Avancées** .<br />4.  Modifiez la valeur de la zone supprimer les contrôles de dépassement sur les **entiers** .|  
+|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet** , cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **compiler** .<br />3. cliquez sur le bouton **avancé** .<br />4. modifiez la valeur de la zone supprimer les contrôles de dépassement sur les **entiers** .|  
   
 ## <a name="example"></a>Exemple  
  Le code suivant compile `Test.vb` et désactive la vérification des erreurs de dépassement sur les entiers.  

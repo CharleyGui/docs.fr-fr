@@ -24,19 +24,19 @@ Entraîne la mise à disposition par le compilateur de toutes les informations d
   
 ## <a name="arguments"></a>Arguments  
  `fileList`  
- Requis. Liste de fichiers délimités par des virgules qui contiennent des métadonnées, mais qui ne contiennent pas de manifestes d’assembly. Les noms de fichiers contenant des espaces doivent être placés entre guillemets ("").  
+ Obligatoire. Liste de fichiers délimités par des virgules qui contiennent des métadonnées, mais qui ne contiennent pas de manifestes d’assembly. Les noms de fichiers contenant des espaces doivent être placés entre guillemets ("").  
   
 ## <a name="remarks"></a>Notes  
- Les fichiers figurant dans le paramètre `fileList` doivent être créés avec l’option `-target:module`, ou avec un autre compilateur équivalent à `-target:module`.  
+ Les fichiers listés par `fileList` le paramètre doivent être créés avec `-target:module` l’option, ou avec un autre compilateur équivalent `-target:module`à.  
   
- Tous les modules ajoutés avec `-addmodule` doivent se trouver dans le même répertoire que le fichier de sortie au moment de l’exécution. Autrement dit, vous pouvez spécifier un module dans n’importe quel répertoire au moment de la compilation, mais le module doit se trouver dans le répertoire de l’application au moment de l’exécution. Si ce n’est pas le cas, vous recevez une erreur de <xref:System.TypeLoadException>.  
+ Tous les modules ajoutés `-addmodule` avec doivent se trouver dans le même répertoire que le fichier de sortie au moment de l’exécution. Autrement dit, vous pouvez spécifier un module dans n’importe quel répertoire au moment de la compilation, mais le module doit se trouver dans le répertoire de l’application au moment de l’exécution. Si ce n’est pas le cas, <xref:System.TypeLoadException> vous recevez une erreur.  
   
- Si vous spécifiez (implicitement ou explicitement) une option[-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md) autre que `-target:module` avec `-addmodule`, les fichiers que vous transmettez à `-addmodule` feront partie de l’assembly du projet. Un assembly est requis pour exécuter un fichier de sortie qui a un ou plusieurs fichiers ajoutés avec `-addmodule`.  
+ Si vous spécifiez (implicitement ou explicitement) une option[-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md) autre `-target:module` que `-addmodule`avec, les fichiers que vous `-addmodule` transmettez pour faire partie de l’assembly du projet. Un assembly est requis pour exécuter un fichier de sortie qui a un ou plusieurs fichiers `-addmodule`ajoutés avec.  
   
  Utilisez [-Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md) pour importer les métadonnées d’un fichier qui contient un assembly.  
   
 > [!NOTE]
-> L’option `-addmodule` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+> L' `-addmodule` option n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
 ## <a name="example"></a>Exemple  
  Le code suivant crée un module.  

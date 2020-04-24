@@ -26,7 +26,7 @@ L’objet <xref:System.Xml.XPath.XPathNodeIterator> fournit des méthodes pour i
   
  Lorsque vous examinez une collection de nœuds pour la premières fois, un appel à la méthode <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> doit être effectué pour placer l'objet <xref:System.Xml.XPath.XPathNodeIterator> sur le premier nœud de la collection sélectionnée. Cela permet l'écriture d'une boucle while.  
   
- L'exemple de code suivant illustre le passage d'un objet <xref:System.Xml.XPath.XPathNodeIterator> à un autre objet <xref:System.Xml.Xsl.XslTransform> en tant que paramètre dans l'objet <xref:System.Xml.Xsl.XsltArgumentList>. L'entrée du code est  **books.xm** et la feuille de style est **text.xsl**. Le fichier **test.xml** est l'objet <xref:System.Xml.XPath.XPathDocument>.  
+ L'exemple de code suivant illustre le passage d'un objet <xref:System.Xml.XPath.XPathNodeIterator> à un autre objet <xref:System.Xml.Xsl.XslTransform> en tant que paramètre dans l'objet <xref:System.Xml.Xsl.XsltArgumentList>. L'entrée du code est ** books.xm** et la feuille de style est **text.xsl**. Le fichier **test.xml** est l'objet <xref:System.Xml.XPath.XPathDocument>.  
   
 ```vb  
 Imports System  
@@ -158,4 +158,4 @@ xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Implémentation du processeur XSLT par la classe XslTransform](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+- [Implémentation du processeur XSLT par la classe XslTransform](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

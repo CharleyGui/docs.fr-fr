@@ -238,7 +238,7 @@ La propriété <xref:System.Xml.Xsl.XslTransform.XmlResolver%2A?displayProperty=
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.Xsl.XslTransform>
-- [Transformations XSLT avec la classe XslTransform](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)
+- [Transformations XSLT avec la classe XslTransform](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)
 - [XPathNavigator dans les transformations](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)
 - [XPathNodeIterator dans les transformations](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)
 - [Entrée XPathDocument dans XslTransform](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)

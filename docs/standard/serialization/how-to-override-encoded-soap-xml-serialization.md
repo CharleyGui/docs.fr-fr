@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : substituer la sérialisation XML encodée selon le protocole SOAP'
+title: 'Comment : substituer la sérialisation XML encodée selon le protocole SOAP'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - overriding XML serialization
@@ -12,9 +12,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61922588"
 ---
-# <a name="how-to-override-encoded-soap-xml-serialization"></a>Procédure : substituer la sérialisation XML encodée selon le protocole SOAP
+# <a name="how-to-override-encoded-soap-xml-serialization"></a>Comment : substituer la sérialisation XML encodée selon le protocole SOAP
 
-Le processus permettant de substituer la sérialisation XML d'objets en tant que messages SOAP est identique au processus permettant de substituer la sérialisation XML standard. Pour plus d’informations sur la substitution de sérialisation XML standard, consultez [Comment : Spécifiez un nom d’élément différent pour un Stream XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
+Le processus permettant de substituer la sérialisation XML d'objets en tant que messages SOAP est identique au processus permettant de substituer la sérialisation XML standard. Pour plus d’informations sur la substitution de la sérialisation XML standard, consultez [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
 
 ## <a name="to-override-serialization-of-objects-as-soap-messages"></a>Pour substituer la sérialisation d'objets en tant que messages SOAP
 
@@ -26,7 +26,7 @@ Le processus permettant de substituer la sérialisation XML d'objets en tant qu
 
 4. Définissez la propriété appropriée de `SoapAttributes` avec l’attribut créé à l’étape 3.
 
-5. Ajoutez `SoapAttributes` à `SoapAttributeOverrides`.
+5. Ajout de `SoapAttributes` à `SoapAttributeOverrides`.
 
 6. Créez un `XmlTypeMapping` à l'aide de `SoapAttributeOverrides`. Utilisez la méthode `SoapReflectionImporter.ImportTypeMapping`.
 
@@ -280,9 +280,9 @@ public class Run
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
-- [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)
-- [Sérialisation XML avec les services web XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)
-- [Guide pratique pour Sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md)
-- [Guide pratique pour Désérialiser un objet](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
-- [Guide pratique pour Sérialiser un objet comme un Stream XML encodés en SOAP](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
+- [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)
+- [Sérialisation XML avec les services Web XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)
+- [Guide pratique pour sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md)
+- [Guide pratique pour désérialiser un objet](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+- [Comment : sérialiser un objet en tant que flux XML encodé selon le protocole SOAP](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Comment : passer des appels avec des modems attachés aux ports série'
+title: 'Procédure : passer des appels avec des modems attachés aux ports série'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - modems [Visual Basic], dialing
@@ -37,7 +37,7 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour passer un appe
   
      [!code-vb[VbVbalrMyComputer#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#30)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
  [!code-vb[VbVbalrMyComputer#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#27)]  
   
@@ -51,7 +51,7 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour passer un appe
 
  Cet exemple part du principe que le modem est connecté à COM1. Nous recommandons que le code autorise l’utilisateur à sélectionner le port série dans la liste des ports disponibles. Pour plus d’informations, consultez [Guide pratique pour afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
   
- Cet exemple utilise un bloc `Using` pour garantir que l’application ferme le port même si elle lève une exception. Pour plus d’informations, voir [Utilisation de l’instruction](../../../../visual-basic/language-reference/statements/using-statement.md).  
+ Cet exemple utilise un bloc `Using` pour garantir que l’application ferme le port même si elle lève une exception. Pour plus d’informations, consultez [using, instruction](../../../../visual-basic/language-reference/statements/using-statement.md).  
   
  Dans cet exemple, l’application déconnecte le port série après avoir utilisé le modem. Dans la pratique, vous souhaiterez transférer des données vers et à partir du modem. Pour plus d’informations, consultez [Guide pratique pour recevoir des chaînes des ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md).  
   
@@ -59,6 +59,6 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour passer un appe
 
 - <xref:Microsoft.VisualBasic.Devices.Ports>
 - <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>
-- [Comment : envoyer des chaînes aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)
-- [Comment : recevoir des chaînes des ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)
-- [Comment : afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)
+- [Procédure : envoyer des chaînes aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)
+- [Procédure : recevoir des chaînes provenant des ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)
+- [Procédure : afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)

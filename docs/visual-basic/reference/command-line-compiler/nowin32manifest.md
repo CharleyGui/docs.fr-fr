@@ -30,4 +30,4 @@ Indique au compilateur de ne pas incorporer de manifeste d'application dans le f
 ## <a name="see-also"></a>Voir aussi
 
 - [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
-- [Page Application, Concepteur de projets (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)
+- [Page Application, Concepteur de projet (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)

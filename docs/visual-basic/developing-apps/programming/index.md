@@ -21,7 +21,7 @@ Cette section décrit les tâches de programmation qu’il peut être intéressa
  [Accès aux ressources de l’ordinateur](../../../visual-basic/developing-apps/programming/computer-resources/index.md)  
  Contient une documentation sur l’utilisation de l’objet `My.Computer` pour accéder à des informations relatives à l’ordinateur sur lequel s’exécute une application et au contrôle de l’ordinateur.  
   
- [Enregistrement d'informations provenant de l'application](../../../visual-basic/developing-apps/programming/log-info/index.md)  
+ [Enregistrement d’informations provenant de l’application](../../../visual-basic/developing-apps/programming/log-info/index.md)  
  Contient une documentation sur l’enregistrement d’informations provenant de l’application avec les objets `My.Application.Log` et `My.Log` et sur l’extension des fonctionnalités de journalisation de l’application.  
   
  [Accès aux données d’utilisateur](../../../visual-basic/developing-apps/programming/accessing-user-data.md)  
@@ -33,7 +33,7 @@ Cette section décrit les tâches de programmation qu’il peut être intéressa
  [Accès aux services web d’application](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)  
  Contient une documentation sur l’accès aux services web référencés par l’application avec l’objet `My.WebServices`.  
   
- [Accès aux paramètres d’application](../../../visual-basic/developing-apps/programming/app-settings/index.md)  
+ [Accessing Application Settings](../../../visual-basic/developing-apps/programming/app-settings/index.md)  
  Contient une documentation sur l’accès aux paramètres d’une application avec l’objet `My.Settings`.  
   
  [Traitement de lecteurs, de répertoires et de fichiers](drives-directories-files/index.md)  

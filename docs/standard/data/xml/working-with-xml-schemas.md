@@ -25,15 +25,15 @@ Pour définir la structure d'un document XML, les relations entre ses éléments
  [Validation XmlSchemaValidator de type push](../../../../docs/standard/data/xml/xmlschemavalidator-push-based-validation.md)  
  Présente la classe <xref:System.Xml.Schema.XmlSchemaValidator>, qui fournit un mécanisme efficace et performant de validation des données XML par rapport aux schémas XSD selon le modèle push.  
   
- [Inférence d’un schéma XML](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)  
+ [Inférence d'un schéma XML](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)  
  Décrit comment utiliser la classe <xref:System.Xml.Schema.XmlSchemaInference> pour inférer un schéma XSD à partir de la structure d'un document XML.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Xml.Schema.XmlSchemaSet> &#124; <xref:System.Xml.Schema.XmlSchemaInference> &#124; <xref:System.Xml.XmlReader>  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Validation d’un document XML dans le DOM](../../../../docs/standard/data/xml/validating-an-xml-document-in-the-dom.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Validation d'un document XML dans le DOM](../../../../docs/standard/data/xml/validating-an-xml-document-in-the-dom.md)  
  Explique comment valider le XML dans le DOM (Document Object Model). Vous pouvez valider le XML lors de son chargement dans le DOM ou valider un document XML précédemment non validé dans le DOM.  
   
- [Validation de schéma à l’aide de XPathNavigator](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)  
+ [Validation de schéma à l'aide de XPathNavigator](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)  
  Explique comment valider le XML en cours de navigation et de modification à l'aide de la classe <xref:System.Xml.XPath.XPathNavigator>.

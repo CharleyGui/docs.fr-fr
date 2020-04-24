@@ -26,15 +26,15 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> est le processeur XSLT dans
  [Résolution de ressources externes lors du traitement XSLT](../../../../docs/standard/data/xml/resolving-external-resources-during-xslt-processing.md)  
  Présente l'utilisation de la classe <xref:System.Xml.XmlResolver> pour résoudre des ressources externes.  
   
- [Extension des feuilles de style XSLT](../../../../docs/standard/data/xml/extending-xslt-style-sheets.md)  
+ [Extension de feuilles de style XSLT](../../../../docs/standard/data/xml/extending-xslt-style-sheets.md)  
  Présente la prise en charge des extensions XSLT.  
   
 |||  
 |-|-|  
 |[Erreurs XSLT récupérables](../../../../docs/standard/data/xml/recoverable-xslt-errors.md)|Répertorie chaque comportement discrétionnaire autorisé par la recommandation du World Wide Web Consortium (W3C) sur XSLT 1.0 et décrit la façon dont ces comportements sont gérés par la classe <xref:System.Xml.Xsl.XslCompiledTransform>.|  
-|[Guide pratique pour transformer un fragment de nœud](../../../../docs/standard/data/xml/how-to-transform-a-node-fragment.md)|Décrit comment transformer un fragment de nœud.|  
+|[Procédure : transformer un fragment de nœud](../../../../docs/standard/data/xml/how-to-transform-a-node-fragment.md)|Décrit comment transformer un fragment de nœud.|  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)  
  Explique comment migrer du code à partir de la classe <xref:System.Xml.Xsl.XslTransform>  
   

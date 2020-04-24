@@ -20,7 +20,7 @@ La classe <xref:System.Xml.XPath.XPathNavigator> fournit des méthodes permettan
  [Modification de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md)  
  Décrit la façon de modifier des nœuds et des valeurs dans un objet <xref:System.Xml.XmlDocument> à l'aide de la classe <xref:System.Xml.XPath.XPathNavigator>.  
   
- [Suppression de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/remove-xml-data-using-xpathnavigator.md)  
+ [Suppression de données XML à l'aide de XPathNavigator](../../../../docs/standard/data/xml/remove-xml-data-using-xpathnavigator.md)  
  Décrit la façon de supprimer des nœuds et des valeurs d'un objet <xref:System.Xml.XmlDocument> à l'aide de la classe <xref:System.Xml.XPath.XPathNavigator>.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -28,8 +28,8 @@ La classe <xref:System.Xml.XPath.XPathNavigator> fournit des méthodes permettan
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [Traitement des données XML à l’aide du modèle de données XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
+- [Traitement des données XML à l'aide du modèle de données XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
 - [Lecture de données XML à l’aide de XPathDocument et XmlDocument](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)
 - [Sélection, évaluation et mise en correspondance de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)
 - [Accès à des données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)
-- [Validation de schéma à l’aide de XPathNavigator](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)
+- [Validation de schéma à l'aide de XPathNavigator](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)

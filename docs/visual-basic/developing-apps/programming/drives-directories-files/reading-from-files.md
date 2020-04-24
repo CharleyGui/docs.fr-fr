@@ -39,7 +39,7 @@ Cette section explique comment effectuer les tâches associées à la lecture à
  [Comment : lire le texte des fichiers avec un StreamReader](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-text-from-files-with-a-streamreader.md)  
  Montre comment utiliser un <xref:System.IO.StreamReader> pour lire un fichier.  
   
-## <a name="reference"></a>Informations de référence  
+## <a name="reference"></a>Référence  
 
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  Décrit l’objet `My.Computer.FileSystem` et ses membres.  

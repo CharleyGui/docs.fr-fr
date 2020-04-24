@@ -14,7 +14,7 @@ ms.locfileid: "75709957"
 
 La classe DOM (Document Object Model) XML fournit une représentation en mémoire d'un document XML. Le DOM vous permet de lire, de manipuler et de modifier un document XML par programme. La classe **XmlReader** lit également le code XML, mais elle garantit seulement un accès en lecture seule, en avant uniquement et non mis en cache. Cela signifie que **XmlReader** n'offre pas la possibilité de modifier les valeurs d'un attribut ou le contenu d'un élément, ni d'insérer ou de supprimer des nœuds. La modification est la fonction principale du DOM. Ce dernier régit la représentation en mémoire commune et structurée des données XML, bien que les données XML véritables soient stockées de façon linéaire lorsqu'elles se trouvent dans un fichier ou qu'elles proviennent d'un autre objet. Voici des données XML :
 
-## <a name="input"></a>Input
+## <a name="input"></a>Entrée
 
 ```xml
 <?xml version="1.0"?>
@@ -42,7 +42,7 @@ Au sein de la structure d'un document XML, chaque cercle de cette illustration r
 - d'extraire des nœuds entiers, en plus des informations qu'ils contiennent, telles que le texte des nœuds d'élément.
 
   > [!NOTE]
-  > Si une application n'a pas besoin des fonctionnalités de structure ou de modifications proposées par le DOM, les classes **XmlReader** et **XmlWriter** assurent un accès en flux continu non mis en cache et en avant uniquement au code XML. Pour plus d'informations, consultez les rubriques <xref:System.Xml.XmlReader> et <xref:System.Xml.XmlWriter>.
+  > Si une application n'a pas besoin des fonctionnalités de structure ou de modifications proposées par le DOM, les classes **XmlReader** et **XmlWriter** assurent un accès en flux continu non mis en cache et en avant uniquement au code XML. Pour plus d’informations, consultez <xref:System.Xml.XmlReader> et <xref:System.Xml.XmlWriter>.
 
 Les objets **Node** comportent un ensemble de méthodes et de propriétés, ainsi que des caractéristiques de base et bien définies. Voici certaines de ces caractéristiques :
 
@@ -77,4 +77,4 @@ Le DOM revêt un intérêt tout particulier pour la lecture de données XML et l
 ## <a name="see-also"></a>Voir aussi
 
 - [Types de nœuds XML](../../../../docs/standard/data/xml/types-of-xml-nodes.md)
-- [Mappage de la hiérarchie d’objets à des données XML](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md)
+- [Mappage de la hiérarchie d'objets à des données XML](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md)

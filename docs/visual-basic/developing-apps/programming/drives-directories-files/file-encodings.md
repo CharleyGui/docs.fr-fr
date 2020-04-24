@@ -41,4 +41,4 @@ La classe <xref:System.Text.Encoding> représente un encodage de caractères. Ce
 ## <a name="see-also"></a>Voir aussi
 
 - [Lecture à partir de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [Rédaction de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [Écrire dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)

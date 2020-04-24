@@ -25,7 +25,7 @@ Crée un lien à une ressource managée.
 -linkresource:filename[,identifier[,public|private]]  
 ```
 
-or  
+ou  
 
 ```console
 -linkres:filename[,identifier[,public|private]]  
@@ -33,27 +33,27 @@ or
   
 ## <a name="arguments"></a>Arguments  
  `filename`  
- Requis. Fichier de ressources à lier à l’assembly. Si le nom de fichier contient un espace, mettez-le entre guillemets ("").  
+ Obligatoire. Fichier de ressources à lier à l’assembly. Si le nom de fichier contient un espace, mettez-le entre guillemets ("").  
   
  `identifier`  
- Ce paramètre est facultatif. Nom logique de la ressource. Nom utilisé pour charger la ressource. La valeur par défaut est le nom du fichier. Si vous le souhaitez, vous pouvez spécifier si le fichier est public ou privé dans le manifeste de l’assembly, par exemple : `-linkres:filename.res,myname.res,public`. Par défaut, `filename` est public dans l’assembly.  
+ Facultatif. Nom logique de la ressource. Nom utilisé pour charger la ressource. La valeur par défaut est le nom du fichier. Si vous le souhaitez, vous pouvez spécifier si le fichier est public ou privé dans le manifeste de l’assembly, par exemple : `-linkres:filename.res,myname.res,public`. Par défaut, `filename` est public dans l’assembly.  
   
 ## <a name="remarks"></a>Notes  
- L’option `-linkresource` n’incorpore pas le fichier de ressources dans le fichier de sortie ; pour ce faire, utilisez l’option `-resource`.  
+ L' `-linkresource` option n’incorpore pas le fichier de ressources dans le fichier de sortie ; Utilisez l' `-resource` option pour effectuer cette opération.  
   
- L’option `-linkresource` nécessite l’une des options `-target` autres que `-target:module`.  
+ L' `-linkresource` option requiert l’une des `-target` options autres que `-target:module`.  
   
- Si `filename` est un fichier de ressources .NET Framework créé, par exemple, par [Resgen. exe (générateur de fichiers de ressources)](../../../framework/tools/resgen-exe-resource-file-generator.md) ou dans l’environnement de développement, il est accessible avec les membres de l’espace de noms <xref:System.Resources>. (Pour plus d’informations, consultez <xref:System.Resources.ResourceManager>.) Pour accéder à toutes les autres ressources au moment de l’exécution, utilisez les méthodes qui commencent par `GetManifestResource` dans la classe <xref:System.Reflection.Assembly>.  
+ Si `filename` est un fichier de ressources de .NET Framework créé, par exemple, par [Resgen. exe (générateur de fichiers de ressources)](../../../framework/tools/resgen-exe-resource-file-generator.md) ou dans l’environnement de développement, il est accessible avec <xref:System.Resources> les membres de l’espace de noms. (Pour plus d’informations, <xref:System.Resources.ResourceManager>consultez.) Pour accéder à toutes les autres ressources au moment de l’exécution, utilisez les `GetManifestResource` méthodes qui <xref:System.Reflection.Assembly> commencent par dans la classe.  
   
  Le nom de fichier peut être n’importe quel format de fichier. C’est le cas, par exemple, si vous voulez qu’une DLL native fasse partie de l'assembly pour qu’elle puisse être installée dans le Global Assembly Cache et accessible à partir du code managé dans l'assembly.  
   
  La forme abrégée de `-linkresource` est `-linkres`.  
   
 > [!NOTE]
-> L’option `-linkresource` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lorsque vous compilez à partir de la ligne de commande.  
+> L' `-linkresource` option n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lorsque vous compilez à partir de la ligne de commande.  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `in.vb` et des liens vers des `rf.resource`de fichier de ressources.  
+ Le code suivant compile `in.vb` et établit un lien vers le fichier `rf.resource`de ressources.  
   
 ```console  
 vbc -linkresource:rf.resource in.vb  

@@ -34,7 +34,7 @@ Cette procédure pas à pas présente les notions de base d’E/S de fichier dan
   
 1. Dans le menu **Fichier**, cliquez sur **Nouveau projet**.  
   
-     La boîte de dialogue **Nouveau projet** s'affiche.  
+     La boîte de dialogue **Nouveau projet** apparaît.  
   
 2. Dans le volet **Modèles installés**, développez **Visual Basic**, puis cliquez sur **Windows**. Dans le volet **Modèles** du milieu, cliquez sur **Application Windows Forms**.  
   
@@ -46,11 +46,11 @@ Cette procédure pas à pas présente les notions de base d’E/S de fichier dan
   
     |Control|Propriété|Valeur|  
     |-------------|--------------|-----------|  
-    |**Zone de liste**|**Nom   **|`filesListBox`|  
-    |**Bouton**|**Nom   **<br /><br /> **Texte**|`browseButton`<br /><br /> **Parcourir**|  
-    |**Bouton**|**Nom   **<br /><br /> **Texte**|`examineButton`<br /><br /> **Examiner**|  
-    |**Case**|**Nom   **<br /><br /> **Texte**|`saveCheckBox`<br /><br /> **Enregistrer les résultats**|  
-    |**FolderBrowserDialog**|**Nom   **|`FolderBrowserDialog1`|  
+    |**Zone de liste**|**Nom**|`filesListBox`|  
+    |**Bouton**|**Nom**<br /><br /> **Text**|`browseButton`<br /><br /> **Parcourir**|  
+    |**Bouton**|**Nom**<br /><br /> **Text**|`examineButton`<br /><br /> **Examiner**|  
+    |**Activé**|**Nom**<br /><br /> **Text**|`saveCheckBox`<br /><br /> **Enregistrer les résultats**|  
+    |**FolderBrowserDialog**|**Nom**|`FolderBrowserDialog1`|  
   
 ### <a name="to-select-a-folder-and-list-files-in-a-folder"></a>Pour sélectionner un dossier et répertorier les fichiers dans un dossier  
   

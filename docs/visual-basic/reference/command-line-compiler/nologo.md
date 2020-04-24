@@ -27,7 +27,7 @@ Supprime l’affichage de la bannière de copyright et des messages d’informat
  Si vous spécifiez `-nologo`, le compilateur n’affiche pas de bannière de copyright. Par défaut, l'option `-nologo` n'est pas activée.  
   
 > [!NOTE]
-> L’option `-nologo` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+> L' `-nologo` option n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
 ## <a name="example"></a>Exemple  
  Le code suivant compile `T2.vb` et n’affiche pas de bannière de copyright.  

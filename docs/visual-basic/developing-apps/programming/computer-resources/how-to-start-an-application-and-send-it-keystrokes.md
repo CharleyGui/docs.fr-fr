@@ -1,5 +1,5 @@
 ---
-title: 'Comment: démarrer une application et l’envoyer Keystrokes - Visual Basic'
+title: 'Comment : démarrer une application et lui envoyer des séquences de touches-Visual Basic'
 ms.date: 10/23/2019
 helpviewer_keywords:
 - keystrokes, sending
@@ -14,17 +14,17 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/15/2020
 ms.locfileid: "72919389"
 ---
-# <a name="how-to-start-an-application-and-send-it-keystrokes-visual-basic"></a>Comment : démarrer une application et l’envoyer des frappes (Visual Basic)
+# <a name="how-to-start-an-application-and-send-it-keystrokes-visual-basic"></a>Comment : démarrer une application et lui envoyer des séquences de touches (Visual Basic)
 
-Cet exemple <xref:Microsoft.VisualBasic.Interaction.Shell%2A> utilise la méthode pour démarrer l’application Notepad, puis imprime une phrase en envoyant des frappes en utilisant la méthode [My.Computer.Keyboard.SendKeys.](xref:Microsoft.VisualBasic.Devices.Keyboard.SendKeys%2A)
+Cet exemple utilise la <xref:Microsoft.VisualBasic.Interaction.Shell%2A> méthode pour démarrer l’application Notepad, puis imprime une phrase en envoyant des séquences de touches à l’aide de la méthode [My. Computer. Keyboard. SendKeys](xref:Microsoft.VisualBasic.Devices.Keyboard.SendKeys%2A) .
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 [!code-vb[VbVbalrMyComputer#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#25)]
 
 ## <a name="robust-programming"></a>Programmation fiable
 
-Une <xref:System.ArgumentException> exception est soulevée si une demande avec l’identifiant de processus demandé ne peut pas être trouvée.  
+Une <xref:System.ArgumentException> exception est levée si une application avec l’identificateur de processus demandé est introuvable.  
   
 ## <a name="net-framework-security"></a>Sécurité du .NET Framework
 

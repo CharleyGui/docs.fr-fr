@@ -47,7 +47,7 @@ Cette section liste les tâches associées à la création, la suppression, le d
  [Comment : créer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-file.md)  
  Montre comment créer un fichier.  
   
- [Comment : Supprimer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-delete-a-file.md)  
+ [Comment : supprimer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-delete-a-file.md)  
  Montre comment supprimer un fichier.  
   
  [Comment : rechercher des fichiers avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)  
@@ -77,7 +77,7 @@ Cette section liste les tâches associées à la création, la suppression, le d
  [Comment : analyser des chemins d'accès](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)  
  Montre comment utiliser les méthodes `My` pour combiner des chemins d’accès aux fichiers.  
   
-## <a name="reference"></a>Informations de référence  
+## <a name="reference"></a>Référence  
 
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  Décrit l’objet `My.Computer.FileSystem` et ses membres.  
@@ -123,5 +123,5 @@ Cette section liste les tâches associées à la création, la suppression, le d
  [Lecture à partir de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
  Liste les tâches associées à la lecture de fichiers.  
   
- [Rédaction de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
+ [Écrire dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
  Liste les tâches relatives à l’écriture dans les fichiers.

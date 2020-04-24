@@ -17,7 +17,7 @@ ms.locfileid: "74334495"
 
 Cet exemple ouvre un objet <xref:System.IO.StreamWriter> avec la méthode `My.Computer.FileSystem.OpenTextFileWriter` et l’utilise pour écrire une chaîne dans un fichier texte avec la méthode <xref:System.IO.TextWriter.WriteLine%2A> de la classe <xref:System.IO.StreamWriter>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
  [!code-vb[VbFileIOWrite#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOWrite/VB/Class1.vb#5)]  
   
@@ -40,4 +40,4 @@ Cet exemple ouvre un objet <xref:System.IO.StreamWriter> avec la méthode `My.Co
 - <xref:System.IO.StreamWriter>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter%2A>
 - [Guide pratique pour lire des fichiers texte](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)
-- [Rédaction de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [Écrire dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)

@@ -29,16 +29,16 @@ Applique la sémantique de type stricte pour restreindre les conversions de type
 ## <a name="arguments"></a>Arguments
 
 `+` &#124; `-`  
-Optionnel. L’option `-optionstrict+` restreint la conversion de type implicite. La valeur par défaut de cette option est `-optionstrict-`. L’option `-optionstrict+` est identique à `-optionstrict`. Vous pouvez utiliser à la fois pour la sémantique de type permissive.
+Facultatif. L' `-optionstrict+` option restreint la conversion de type implicite. La valeur par défaut de cette `-optionstrict-`option est. L' `-optionstrict+` option est la même que `-optionstrict`. Vous pouvez utiliser à la fois pour la sémantique de type permissive.
 
 `custom`  
-Requis. Avertir lorsque la sémantique de langue stricte n’est pas respectée.
+Obligatoire. Avertir lorsque la sémantique de langue stricte n’est pas respectée.
 
 ## <a name="remarks"></a>Notes
 
-Lorsque `-optionstrict+` est activé, seules les conversions de type étendu peuvent être effectuées implicitement. Les conversions de types restrictives implicites, telles que l’assignation d’un objet de type `Decimal` à un objet de type entier, sont signalées comme des erreurs.
+Lorsque `-optionstrict+` est activé, seules les conversions de type étendue peuvent être effectuées implicitement. Les conversions de types restrictives implicites, telles que `Decimal` l’assignation d’un objet de type à un objet de type entier, sont signalées comme des erreurs.
 
-Pour générer des avertissements pour les conversions de types restrictives implicites, utilisez `-optionstrict:custom`. Utilisez `-nowarn:numberlist` pour ignorer des avertissements particuliers et `-warnaserror:numberlist` traiter des avertissements particuliers comme des erreurs.
+Pour générer des avertissements pour les conversions de types restrictives `-optionstrict:custom`implicites, utilisez. Utilisez `-nowarn:numberlist` pour ignorer des avertissements particuliers `-warnaserror:numberlist` et traiter des avertissements particuliers comme des erreurs.
 
 ### <a name="to-set--optionstrict-in-the-visual-studio-ide"></a>Pour définir-optionstrict dans l’IDE de Visual Studio
 
@@ -65,7 +65,7 @@ vbc -optionstrict+ test.vb
 - [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
 - [-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
-- [-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
+- [-optioninfer (](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
 - [-nowarn](../../../visual-basic/reference/command-line-compiler/nowarn.md)
 - [-warnaserror (Visual Basic)](../../../visual-basic/reference/command-line-compiler/warnaserror.md)
 - [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

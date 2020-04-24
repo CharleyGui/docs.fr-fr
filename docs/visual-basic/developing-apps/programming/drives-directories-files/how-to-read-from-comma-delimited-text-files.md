@@ -1,5 +1,5 @@
 ---
-title: 'Comment: lire à partir de fichiers texte comma-délimités'
+title: 'Comment : lire des fichiers texte délimités par des virgules'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], parsing
@@ -36,7 +36,7 @@ L’objet `TextFieldParser` permet d’analyser facilement et efficacement les f
   
      [!code-vb[VbFileIORead#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#18)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
  Cet exemple lit le fichier `test.txt`.  
   

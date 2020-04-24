@@ -57,5 +57,5 @@ vr.Schemas.Add(xsc);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Validation XDR avec XmlSchemaCollection](../../../../docs/standard/data/xml/xdr-validation-with-xmlschemacollection.md)
+- [Validation par rapport à un schéma XDR à l'aide de XmlSchemaCollection](../../../../docs/standard/data/xml/xdr-validation-with-xmlschemacollection.md)
 - [Validation de schéma XML (XSD) avec XmlSchemaCollection](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemacollection.md)

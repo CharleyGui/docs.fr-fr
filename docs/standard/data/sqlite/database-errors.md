@@ -11,7 +11,7 @@ ms.locfileid: "75447271"
 ---
 # <a name="database-errors"></a>Erreurs de base de données
 
-<xref:Microsoft.Data.Sqlite.SqliteException> est levée lorsqu’une erreur SQLite est rencontrée. Le message est fourni par SQLite. Les propriétés `SqliteErrorCode` et `SqliteExtendedErrorCode` contiennent le [Code de résultat](https://www.sqlite.org/rescode.html) SQLite de l’erreur.
+<xref:Microsoft.Data.Sqlite.SqliteException>est levée lorsqu’une erreur SQLite est rencontrée. Le message est fourni par SQLite. Les `SqliteErrorCode` propriétés `SqliteExtendedErrorCode` et contiennent le [Code de résultat](https://www.sqlite.org/rescode.html) SQLite de l’erreur.
 
 Des erreurs peuvent se produire chaque fois que Microsoft. Data. sqlite interagit avec la bibliothèque SQLite native. La liste suivante présente les scénarios courants dans lesquels des erreurs peuvent se produire :
 
@@ -28,14 +28,14 @@ SQLite est agressif lorsqu’il s’agit de verrouiller des tables et des fichie
 
 Chaque fois que Microsoft. Data. sqlite rencontre une erreur occupée ou verrouillée, il réessaie automatiquement jusqu’à ce qu’il aboutisse ou que le délai d’attente de la commande soit atteint.
 
-Vous pouvez augmenter le délai d’expiration de la commande en définissant <xref:Microsoft.Data.Sqlite.SqliteCommand.CommandTimeout%2A>. Le délai d’attente par défaut est de 30 secondes. La valeur `0` signifie aucun délai d’attente.
+Vous pouvez augmenter le délai d’expiration de la <xref:Microsoft.Data.Sqlite.SqliteCommand.CommandTimeout%2A>commande en définissant. Le délai d’attente par défaut est de 30 secondes. La valeur signifie `0` qu’il n’y A pas de délai d’attente.
 
 ```csharp
 // Retry for 60 seconds while locked
 command.CommandTimeout = 60;
 ```
 
-Microsoft. Data. sqlite doit parfois créer un objet de commande implicite. Par exemple, pendant BeginTransaction. Pour définir le délai d’expiration de ces commandes, utilisez <xref:Microsoft.Data.Sqlite.SqliteConnection.DefaultTimeout%2A>.
+Microsoft. Data. sqlite doit parfois créer un objet de commande implicite. Par exemple, pendant BeginTransaction. Pour définir le délai d’expiration de ces commandes <xref:Microsoft.Data.Sqlite.SqliteConnection.DefaultTimeout%2A>, utilisez.
 
 ```csharp
 // Set the default timeout of all commands on this connection

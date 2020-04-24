@@ -38,13 +38,13 @@ Identifie un fichier manifeste d'application Win32 défini par l'utilisateur à 
   
  Votre application sera soumise à la virtualisation si l’une des conditions suivantes est remplie :  
   
-1. Vous utilisez l’option `-nowin32manifest` et vous ne fournissez pas de manifeste dans une étape de génération ultérieure ou dans le cadre d’un fichier de ressources Windows (. res) à l’aide de l’option `-win32resource`.  
+1. Vous utilisez l' `-nowin32manifest` option et vous ne fournissez pas de manifeste dans une étape de génération ultérieure ou dans le cadre d’un fichier de ressources Windows (. res `-win32resource` ) à l’aide de l’option.  
   
 2. Vous fournissez un manifeste personnalisé qui ne spécifie pas le niveau d’exécution requis.  
   
  Visual Studio crée un fichier .manifest par défaut et le stocke dans les répertoires de débogage et de mise en production avec le fichier exécutable. Vous pouvez afficher ou modifier le fichier app. manifest par défaut en cliquant sur **afficher les paramètres du contrôle de compte d’utilisateur** sous l’onglet **application** du concepteur de projet. Pour plus d'informations, consultez [Application Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
- Vous pouvez fournir le manifeste d’application en tant qu’étape de publication personnalisée ou dans le cadre d’un fichier de ressources Win32 à l’aide de l’option `-nowin32manifest`. Utilisez cette même option pour que votre application soit soumise à la virtualisation des fichiers ou des registres dans Windows Vista. Cela empêchera le compilateur de créer et d’incorporer un manifeste par défaut dans le fichier PE.  
+ Vous pouvez fournir le manifeste d’application en tant qu’étape de publication personnalisée ou dans le cadre d’un fichier de ressources Win32 `-nowin32manifest` à l’aide de l’option. Utilisez cette même option pour que votre application soit soumise à la virtualisation des fichiers ou des registres dans Windows Vista. Cela empêchera le compilateur de créer et d’incorporer un manifeste par défaut dans le fichier PE.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre le manifeste par défaut que le compilateur Visual Basic insère dans un fichier PE.  

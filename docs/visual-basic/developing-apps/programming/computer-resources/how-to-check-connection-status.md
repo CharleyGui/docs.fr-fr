@@ -1,5 +1,5 @@
 ---
-title: "Comment : vérifier l'état de la connexion"
+title: 'Procédure : vérifier l’état de la connexion'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Web connections [Visual Basic]

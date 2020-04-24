@@ -11,7 +11,7 @@ ms.locfileid: "71353139"
 ---
 # <a name="basic-serialization-technology-sample"></a>Sérialisation de base, exemple de technologie
 
-[Télécharger l’exemple](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Runtime%20Serialization/Basic.zip.exe)
+[Charger l’exemple](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Runtime%20Serialization/Basic.zip.exe)
 
 Cet exemple montre la capacité du Common Language Runtime à sérialiser un graphique d'objets en mémoire dans un flux. Cet exemple peut utiliser <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> ou <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> pour la sérialisation. Une liste liée, remplie de données, est sérialisée ou désérialisée dans un flux de fichiers ou à partir de celui-ci. Dans les deux cas, la liste est affichée afin que vous puissiez consulter les résultats. Il s'agit d'une liste liée de type `LinkedList`, un type défini par cet exemple.
 
@@ -33,7 +33,7 @@ Pour plus d'informations sur la sérialisation, consultez les commentaires inclu
 
  L'exemple d'application est généré dans le sous-répertoire \bin ou \bin\Debug par défaut.
 
-### <a name="to-run-the-sample"></a>Pour exécuter l'exemple
+### <a name="to-run-the-sample"></a>Exécution de l'exemple
 
 1. Accédez au répertoire qui contient le fichier exécutable créé.
 
@@ -46,7 +46,7 @@ Pour plus d'informations sur la sérialisation, consultez les commentaires inclu
 
 L'exemple d'application accepte des paramètres de ligne de commande indiquant le test à exécuter. Pour sérialiser une liste de 10 nœuds dans un fichier nommé **Test.xml** à l’aide du formateur SOAP, utilisez les paramètres **sx Test.xml 10**.
 
-Par exemple :
+Par exemple :
 
 ```console
 Serialize.exe -sx Test.xml 10
@@ -54,7 +54,7 @@ Serialize.exe -sx Test.xml 10
 
 Pour désérialiser le fichier **Test.xml** de l’exemple précédent, utilisez les paramètres **dx Test.xml**.
 
-Par exemple :
+Par exemple :
 
 ```console
 Serialize.exe -dx Test.xml
@@ -62,7 +62,7 @@ Serialize.exe -dx Test.xml
 
 Dans les deux exemples précités, la lettre "x" dans le commutateur de ligne de commande indique que vous souhaitez effectuer une sérialisation SOAP XML. Vous pouvez utiliser à la place la lettre "b" pour effectuer une sérialisation binaire. Si vous souhaitez effectuer une sérialisation avec un très grand nombre de nœuds, il peut être intéressant de rediriger la sortie de console vers un fichier.
 
-Par exemple :
+Par exemple :
 
 ```console
 Serialize.exe -sb Test.bin 10000 >somefile.txt
@@ -72,11 +72,11 @@ Les éléments de la liste suivante décrivent brièvement les classes et les te
 
 - Sérialisation du runtime
 
-  - <xref:System.Runtime.Serialization.IFormatter> utilisé pour faire référence à un objet <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> ou <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>.
+  - <xref:System.Runtime.Serialization.IFormatter>Utilisé pour faire référence à un <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> objet ou.
 
-  - <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> utilisé pour sérialiser une liste liée dans un flux au format binaire. Le formateur binaire utilise un format reconnu uniquement par le type <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. Toutefois, les données sont concises.
+  - <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>Utilisé pour sérialiser une liste liée dans un flux au format binaire. Le formateur binaire utilise un format reconnu uniquement par le type <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. Toutefois, les données sont concises.
 
-  - <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> utilisé pour sérialiser une liste liée dans un flux au format SOAP. SOAP est un format standard.
+  - <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>Utilisé pour sérialiser une liste liée dans un flux au format SOAP. SOAP est un format standard.
 
 - E/S de flux
 
@@ -104,4 +104,4 @@ Les éléments de la liste suivante décrivent brièvement les classes et les te
 - [Contrôle de la sérialisation XML à l’aide d’attributs](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)
 - [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
 - [Sérialisation](../../../docs/standard/serialization/index.md)
-- [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)

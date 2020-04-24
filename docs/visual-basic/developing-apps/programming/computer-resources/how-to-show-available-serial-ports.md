@@ -1,5 +1,5 @@
 ---
-title: 'Comment : afficher les ports série disponibles'
+title: 'Procédure : afficher les ports série disponibles'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - serial ports, availability
@@ -20,7 +20,7 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour afficher les p
   
  Pour permettre à un utilisateur de sélectionner le port à utiliser, les noms des ports série sont placés dans un contrôle <xref:System.Windows.Forms.ListBox>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
  Cet exemple exécute une boucle sur toutes les chaînes retournées par la propriété `My.Computer.Ports.SerialPortNames`. Ces chaînes correspondent aux noms des ports série disponibles sur l’ordinateur.  
   
@@ -50,6 +50,6 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour afficher les p
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.Devices.Ports>
-- [Comment : passer des appels avec des modems attachés aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)
-- [Comment : envoyer des chaînes aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)
-- [Comment : recevoir des chaînes des ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)
+- [Procédure : passer des appels avec des modems attachés aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)
+- [Procédure : envoyer des chaînes aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)
+- [Procédure : recevoir des chaînes provenant des ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)

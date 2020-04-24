@@ -21,7 +21,7 @@ La majorité des méthodes présentes dans la classe **XmlConvert** sont utilis�
   
  En supposant l'entrée XML suivante :  
   
- **Entrée**  
+ **Input**  
   
 ```xml  
 <Element>2001-02-27T11:13:23</Element>  
@@ -46,7 +46,7 @@ Console.WriteLine(vDateTime);
   
  En supposant l'entrée XML suivante :  
   
- **Entrée**  
+ **Input**  
   
 ```xml  
 <TestInt32>-2147483648</TestInt32>  
@@ -66,5 +66,5 @@ writer.WriteElementString("TestInt32",XmlConvert.ToString(vInt32));
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Conversion de chaînes en types de données .NET Framework](../../../../docs/standard/data/xml/converting-strings-to-dotnet-data-types.md)
-- [Conversion de types .NET Framework en chaînes](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)
+- [Conversion de chaînes en types de données .NET Framework](../../../../docs/standard/data/xml/converting-strings-to-dotnet-data-types.md)
+- [Conversion de types .NET Framework en chaînes](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)

@@ -19,17 +19,17 @@ ms.locfileid: "74350852"
 
 En guise d’alternative à la compilation de Visual Basic programmes dans Visual Studio, vous pouvez compiler à partir de la ligne de commande pour produire des fichiers exécutables (. exe) ou des fichiers de bibliothèque de liens dynamiques (. dll).
 
-Le Visual Basic compilateur de ligne de commande prend en charge un ensemble complet d’options qui contrôlent les fichiers d’entrée et de sortie, les assemblys, ainsi que les options de débogage et de préprocesseur. Chaque option est disponible dans deux formes interchangeables : `-option` et `/option`. Cette documentation présente uniquement le formulaire `-option`.
+Le Visual Basic compilateur de ligne de commande prend en charge un ensemble complet d’options qui contrôlent les fichiers d’entrée et de sortie, les assemblys, ainsi que les options de débogage et de préprocesseur. Chaque option est disponible dans deux formulaires interchangeables : `-option` et `/option`. Cette documentation affiche uniquement le `-option` formulaire.
 
 Le tableau suivant répertorie quelques exemples de lignes de commande que vous pouvez modifier pour votre propre usage.
 
-|Pour|Utilisez|
+|À|Utiliser|
 |--------|---------|
 |Compiler file. vb et créer file. exe|`vbc -reference:Microsoft.VisualBasic.dll File.vb`|
 |Compiler file. vb et créer file. dll|`vbc -target:library File.vb`|
 |Compiler file. vb et créer My. exe|`vbc -out:My.exe File.vb`|
 |Compiler file. vb et créer une bibliothèque et un assembly de référence nommé file. dll|`vbc -target:library -ref:.\debug\bin\ref\file.dll File.vb`|
-|Compilez tous les fichiers Visual Basic dans le répertoire actif, avec les optimisations sur et le symbole `DEBUG` définis, générant fichier2. exe|`vbc -define:DEBUG=1 -optimize -out:File2.exe *.vb`|
+|Compiler tous les fichiers Visual Basic dans le répertoire actif, avec les optimisations sur `DEBUG` et le symbole défini, générant fichier2. exe|`vbc -define:DEBUG=1 -optimize -out:File2.exe *.vb`|
 |Compilez tous les fichiers Visual Basic dans le répertoire actif, en générant une version de débogage du fichier fichier2. dll sans afficher le logo ou les avertissements|`vbc -target:library -out:File2.dll -nowarn -nologo -debug *.vb`|
 |Compiler tous les fichiers Visual Basic du répertoire actif dans un fichier. dll|`vbc -target:library -out:Something.dll *.vb`|
 

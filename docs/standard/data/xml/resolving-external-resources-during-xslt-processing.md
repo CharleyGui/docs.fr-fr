@@ -21,8 +21,8 @@ Lors d'une transformation XSLT, il peut s'avérer nécessaire de résoudre des r
   
 |Tâche XSLT|Utilité de XmlResolver|  
 |---------------|--------------------------------------|  
-|Compilation de la feuille de style|Résolution de l'URI de la feuille de style<br /><br /> et<br /><br /> Résolution des références URI dans tout élément `xsl:import` ou `xsl:include`|  
-|Exécution de la feuille de style|Résolution de l'URI dans le document de contexte<br /><br /> et<br /><br /> Résolution des références URI dans toute fonction XSLT `document()`|  
+|Compilation de la feuille de style|Résolution de l'URI de la feuille de style<br /><br /> -et-<br /><br /> Résolution des références URI dans tout élément `xsl:import` ou `xsl:include`|  
+|Exécution de la feuille de style|Résolution de l'URI dans le document de contexte<br /><br /> -et-<br /><br /> Résolution des références URI dans toute fonction XSLT `document()`|  
   
  Les méthodes <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> et <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> comprennent des surcharges qui prennent un objet <xref:System.Xml.XmlResolver> comme l'un de leurs arguments. Si aucun <xref:System.Xml.XmlResolver> n'est spécifié, un <xref:System.Xml.XmlUrlResolver> par défaut sans informations d'identification est utilisé.  
   

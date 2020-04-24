@@ -29,16 +29,16 @@ Insère un fichier. ico dans le fichier de sortie. Ce fichier. ico représente l
 |`filename`|Fichier. ico à ajouter à votre fichier de sortie. Placez le nom de fichier entre guillemets ("") s’il contient un espace.|  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez créer un fichier. ico avec le compilateur de ressources Microsoft Windows (RC). Le compilateur de ressources est appelé lorsque vous compilez C++ un programme visuel ; un fichier. ico est créé à partir du fichier. rc. Les options `-win32icon` et `-win32resource` s’excluent mutuellement.  
+ Vous pouvez créer un fichier. ico avec le compilateur de ressources Microsoft Windows (RC). Le compilateur de ressources est appelé lorsque vous compilez un Visual C++ programme ; un fichier. ico est créé à partir du fichier. rc. Les options `-win32icon` et `-win32resource` s’excluent mutuellement.  
   
  Consultez [-linkresource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/linkresource.md) pour référencer un fichier de ressources .NET Framework, ou [-resource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/resource.md) pour attacher un fichier de ressources de .NET Framework. Consultez [-Win32Resource](../../../visual-basic/reference/command-line-compiler/win32resource.md) pour importer un fichier. res.  
   
 |Pour définir-win32icon dans l’IDE de Visual Studio|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Application** .<br />3.  Modifiez la valeur dans la zone **icône** .|  
+|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet** , cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **application** .<br />3. modifiez la valeur dans la zone **icône** .|  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `In.vb` et joint un fichier. ico, `Rf.ico`.  
+ Le code suivant compile `In.vb` et joint un fichier. ico,. `Rf.ico`  
   
 ```console
 vbc -win32icon:rf.ico in.vb  

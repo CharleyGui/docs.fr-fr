@@ -62,7 +62,7 @@ Un exemple Mac OS utilise la même fonction et la seule différence réside dan
 
 Les deux exemples précédents dépendent de paramètres et dans les deux cas, les paramètres sont fournis comme des types managés. Le runtime prend « la bonne décision » et les traite dans leurs équivalents de l’autre côté. Découvrez comment les types sont marshalés en code natif sur notre page consacrée au [Marshaling de types](type-marshaling.md).
 
-## <a name="more-resources"></a>Autres ressources
+## <a name="more-resources"></a>Plus de ressources
 
 - [Wiki PInvoke.net](https://www.pinvoke.net/), un excellent Wiki avec des informations sur les API Windows courantes et comment les appeler.
 - [P/Invoke dans C++/CLI](/cpp/dotnet/native-and-dotnet-interoperability)

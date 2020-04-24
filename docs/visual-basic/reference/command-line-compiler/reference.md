@@ -35,7 +35,7 @@ ou
   
 |Terme|Définition|  
 |---|---|  
-|`fileList`|Requis. Liste délimitée par des virgules des noms de fichiers d’assembly. Si le nom de fichier contient un espace, placez-le entre des guillemets.|  
+|`fileList`|Obligatoire. Liste délimitée par des virgules des noms de fichiers d’assembly. Si le nom de fichier contient un espace, placez-le entre des guillemets.|  
   
 ## <a name="remarks"></a>Notes  
  Le ou les fichiers que vous importez doivent contenir des métadonnées d’assembly. Seuls les types publics sont visibles à l’extérieur de l’assembly. L’option [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) importe les métadonnées d’un module.  
@@ -55,7 +55,7 @@ ou
  La forme abrégée de `-reference` est `-r`.  
   
 ## <a name="example"></a>Exemple  
- La commande suivante compile le fichier source `Input.vb` et les assemblys de référence à partir de `Metad1.dll` et `Metad2.dll` pour produire des `Out.exe`.  
+ La commande suivante compile `Input.vb` le fichier source et les assemblys de référence `Metad1.dll` à `Metad2.dll` partir de `Out.exe`et pour produire.  
   
 ```console
 vbc -reference:metad1.dll,metad2.dll -out:out.exe input.vb  

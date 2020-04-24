@@ -25,5 +25,5 @@ LINQ to XML est le nouveau modèle du .NET Framework version 3.5 pour le traitem
 - <xref:System.Linq>
 - [LINQ to XML et DOM (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-dom.md)
 - [LINQ to XML et DOM (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-dom.md)
-- [LINQ to XML différences par rapport à d’autresC#technologies XML ()](../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)
+- [LINQ to XML différences par rapport à d’autres technologies XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)
 - [LINQ to XML différences par rapport à d’autres technologies XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)

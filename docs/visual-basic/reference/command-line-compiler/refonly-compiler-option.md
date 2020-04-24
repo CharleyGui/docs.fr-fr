@@ -28,14 +28,14 @@ L’option **-refonly** indique que la sortie principale de la compilation doit 
 
 ## <a name="remarks"></a>Notes
 
-Visual Basic prend en charge le commutateur `-refonly` à partir de la version 15,3.
+Visual Basic prend en `-refonly` charge le commutateur à partir de la version 15,3.
 
 Les assemblys de référence sont un type spécial d’assembly qui ne contient que la quantité minimale de métadonnées requises pour représenter la surface de l’API publique de la bibliothèque. Elles incluent des déclarations pour tous les membres qui sont significatifs lors du référencement d’un assembly dans les outils de génération, mais excluent toutes les implémentations de membres et les déclarations de membres privés qui n’ont aucun impact observable sur leur contrat d’API. Pour plus d’informations, consultez [références des assemblys](../../../standard/assembly/reference-assemblies.md) dans le guide .net.
 
-Les options `-refonly` et [`-refout`](refout-compiler-option.md) s’excluent mutuellement.
+Les `-refonly` options [`-refout`](refout-compiler-option.md) et s’excluent mutuellement.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [/refout](refout-compiler-option.md)
+- [-refout](refout-compiler-option.md)
 - [Compilateur de ligne de commande de Visual Basic](index.md)
 - [Exemples de lignes de commande de compilation](sample-compilation-command-lines.md)

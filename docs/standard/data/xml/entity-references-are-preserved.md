@@ -22,7 +22,7 @@ Si une référence d’entité n’est pas développée, mais préservée, le DO
   
  le DOM crée un nœud **XmlEntityReference** quand il rencontre la référence `&publisher;`. **XmlEntityReference** contient des nœuds enfants copiés à partir du contenu dans la déclaration d'entité. L'exemple de code précédent contient du texte dans la déclaration d'entité, c'est pourquoi un nœud **XmlText** est créé en tant que nœud enfant du nœud de référence d'entité.  
   
- ![Arborescence des références d’entité préservées](../../../../docs/standard/data/xml/media/xmlentityref-notexpanded-nodes.gif "xmlentityref_notexpanded_nodes")  
+ ![arborescence pour références d'entité préservées](../../../../docs/standard/data/xml/media/xmlentityref-notexpanded-nodes.gif "xmlentityref_notexpanded_nodes")  
 Structure d’arborescence avec références d’entité préservées  
   
  Les nœuds enfants de **XmlEntityReference** sont des copies de tous les nœuds enfants créés à partir du nœud **XmlEntity** quand la déclaration d'entité a été rencontrée.  

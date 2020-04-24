@@ -34,14 +34,14 @@ ou
 
 |Terme|Définition|
 |---|---|
-|`+` &#124; `-`|Option facultative. Si vous spécifiez `+` ou `-debug`, le compilateur génère des informations de débogage et les place dans un fichier. pdb. La spécification de `-` a le même effet que de ne pas spécifier `-debug`.|
-|`full` &#124; `pdbonly`|Option facultative. Indique le type d'informations de débogage générées par le compilateur. Si vous ne spécifiez pas `-debug:pdbonly`, la valeur par défaut est `full`, ce qui vous permet d’attacher un débogueur au programme en cours d’exécution. L’argument `pdbonly` autorise le débogage du code source lorsque le programme est démarré dans le débogueur, mais il affiche le code en langage assembleur uniquement lorsque le programme en cours d’exécution est attaché au débogueur.|
+|`+` &#124; `-`|Facultatif. Si `+` vous `-debug` spécifiez ou, le compilateur génère des informations de débogage et les place dans un fichier. pdb. La `-` spécification de a le même effet que `-debug`la non-spécification de.|
+|`full` &#124; `pdbonly`|Facultatif. Indique le type d'informations de débogage générées par le compilateur. Si vous ne spécifiez `-debug:pdbonly`pas, la valeur `full`par défaut est, ce qui vous permet d’attacher un débogueur au programme en cours d’exécution. L' `pdbonly` argument autorise le débogage du code source lorsque le programme est démarré dans le débogueur, mais il affiche le code en langage assembleur uniquement lorsque le programme en cours d’exécution est attaché au débogueur.|
 
 ## <a name="remarks"></a>Notes
 
-Utilisez cette option pour créer des versions Debug. Si vous ne spécifiez pas `-debug`, `-debug+`ou `-debug:full`, vous ne pourrez pas déboguer le fichier de sortie de votre programme.
+Utilisez cette option pour créer des versions Debug. Si vous ne spécifiez `-debug`pas `-debug+`, ou `-debug:full`, vous ne pourrez pas déboguer le fichier de sortie de votre programme.
 
-Par défaut, les informations de débogage ne sont pas émises (`-debug-`). Pour émettre des informations de débogage, spécifiez `-debug` ou `-debug+`.
+Par défaut, les informations de débogage ne sont pas émises (`-debug-`). Pour émettre des informations de débogage, `-debug` spécifiez ou `-debug+`.
 
 Pour plus d’informations sur la configuration des performances de débogage d’une application, consultez [Simplification du débogage d’une image](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md).
 
@@ -51,7 +51,7 @@ Pour plus d’informations sur la configuration des performances de débogage d�
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant place des informations de débogage dans le fichier de sortie `App.exe`.
+L’exemple suivant place des informations de débogage dans le `App.exe`fichier de sortie.
 
 ```console
 vbc -debug -out:app.exe test.vb

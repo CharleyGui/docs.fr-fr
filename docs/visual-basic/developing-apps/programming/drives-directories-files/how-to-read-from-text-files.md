@@ -1,5 +1,5 @@
 ---
-title: 'Comment: Lire à partir de fichiers texte'
+title: 'Comment : lire des fichiers texte'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - extended characters [Visual Basic], reading

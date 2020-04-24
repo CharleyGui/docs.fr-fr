@@ -69,7 +69,7 @@ L’espace de noms <xref:System.Runtime.InteropServices> propose trois catégori
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices>
-- [Exposition de composants .NET Framework à COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
+- [Exposition de composants .NET Framework à COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
 - [Attributs](../../../docs/standard/attributes/index.md)
-- [Qualifier des types .NET pour l'interopérabilité](../../../docs/standard/native-interop/qualify-net-types-for-interoperation.md)
+- [Qualification des types .NET pour l’interopérabilité](../../../docs/standard/native-interop/qualify-net-types-for-interoperation.md)
 - [Empaquetage d’un assembly .NET Framework pour COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md)

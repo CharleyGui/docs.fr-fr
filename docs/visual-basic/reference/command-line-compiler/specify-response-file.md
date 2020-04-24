@@ -24,7 +24,7 @@ Spécifie un fichier qui contient les options du compilateur et les fichiers de 
 ## <a name="arguments"></a>Arguments
 
 `response_file`  
-Requis. Fichier qui répertorie les options du compilateur ou les fichiers de code source à compiler. Placez le nom de fichier entre guillemets ("") s’il contient un espace.
+Obligatoire. Fichier qui répertorie les options du compilateur ou les fichiers de code source à compiler. Placez le nom de fichier entre guillemets ("") s’il contient un espace.
 
 ## <a name="remarks"></a>Notes
 
@@ -36,14 +36,14 @@ Pour spécifier plusieurs fichiers réponse dans une compilation, spécifiez plu
 @file1.rsp @file2.rsp
 ```
 
-Dans un fichier réponse, plusieurs options de compilateur et fichiers de code source peuvent apparaître sur une seule ligne. Une seule spécification d’option de compilateur doit apparaître sur une ligne (ne peut pas s’étendre sur plusieurs lignes). Les fichiers réponse peuvent comporter des commentaires qui commencent par le symbole `#`.
+Dans un fichier réponse, plusieurs options de compilateur et fichiers de code source peuvent apparaître sur une seule ligne. Une seule spécification d’option de compilateur doit apparaître sur une ligne (ne peut pas s’étendre sur plusieurs lignes). Les fichiers réponse peuvent comporter des commentaires qui commencent `#` par le symbole.
 
 Vous pouvez combiner les options spécifiées sur la ligne de commande avec les options spécifiées dans un ou plusieurs fichiers réponse. Le compilateur traite les options de commande au fur et à mesure qu’il les rencontre. Par conséquent, les arguments de ligne de commande peuvent remplacer les options précédemment listées dans les fichiers réponse. À l’inverse, les options d’un fichier réponse remplacent les options listées précédemment sur la ligne de commande ou dans d’autres fichiers réponse.
 
-Visual Basic fournit le fichier Vbc. rsp, qui se trouve dans le même répertoire que le fichier Vbc. exe. Le fichier Vbc. rsp est inclus par défaut, sauf si l’option `-noconfig` est utilisée. Pour plus d’informations, consultez [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md).
+Visual Basic fournit le fichier Vbc. rsp, qui se trouve dans le même répertoire que le fichier Vbc. exe. Le fichier Vbc. rsp est inclus par défaut, sauf `-noconfig` si l’option est utilisée. Pour plus d’informations, consultez [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md).
 
 > [!NOTE]
-> L’option `@` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.
+> L' `@` option n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.
 
 ## <a name="example"></a>Exemple
 
@@ -59,7 +59,7 @@ source2.vb
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment utiliser l’option `@` avec le fichier réponse nommé `File1.rsp`.
+L’exemple suivant montre comment utiliser l' `@` option avec le fichier réponse nommé. `File1.rsp`
 
 ```console
 vbc @file1.rsp

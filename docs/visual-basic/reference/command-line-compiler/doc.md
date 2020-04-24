@@ -32,7 +32,7 @@ ou
   
 |Terme|Définition|  
 |---|---|  
-|`+` &#124; `-`|Option facultative. Si vous spécifiez +, ou simplement `-doc`, le compilateur génère des informations de documentation et les place dans un fichier XML. Si vous spécifiez `-`, ce qui équivaut à ne pas spécifier `-doc`, aucune information de documentation n’est créée.|  
+|`+` &#124; `-`|Facultatif. Si vous spécifiez +, ou simplement `-doc`, le compilateur génère des informations de documentation et les place dans un fichier XML. Si vous spécifiez `-`, ce qui équivaut à ne pas spécifier `-doc`, aucune information de documentation n’est créée.|  
 |`file`|Obligatoire si l'option `-doc:` est utilisée. Spécifie le fichier XML de sortie, qui est renseigné avec les commentaires des fichiers de code source de la compilation. Si le nom de fichier contient un espace, placez-le entre des guillemets (" ").|  
   
 ## <a name="remarks"></a>Notes  
@@ -52,7 +52,7 @@ ou
   
 |Pour définir -doc dans l’environnement de développement intégré Visual Studio|  
 |---|  
-|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **compiler** .<br />3. Définissez la valeur dans la zone **générer le fichier de documentation XML** .|  
+|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet** , cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **compiler** .<br />3. Définissez la valeur dans la zone **générer le fichier de documentation XML** .|  
   
 ## <a name="example"></a>Exemple  
  Pour obtenir un exemple, consultez [Documentation de votre code avec le langage XML](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md).  

@@ -18,13 +18,13 @@ Cette rubrique présente les options de sortie XSLT disponibles. Vous pouvez sp�
   
  Le tableau suivant décrit le comportement de chacun des attributs disponibles dans l'élément `xsl:output` lorsque le type de sortie est un flux ou un objet <xref:System.IO.TextWriter>.  
   
-|Nom d'attribut|Comportement|  
+|Nom de l’attribut|Comportement|  
 |--------------------|--------------|  
 |method|Pris en charge.|  
-|Version de|Ignoré. La version est toujours 1.0 pour XML et 4.0 pour HTML.|  
-|encoding|Ignoré en cas de sortie vers un objet <xref:System.IO.TextWriter>. La propriété <xref:System.IO.TextWriter.Encoding%2A?displayProperty=nameWithType> est utilisée à la place.|  
+|version|Ignoré. La version est toujours 1.0 pour XML et 4.0 pour HTML.|  
+|encodage|Ignoré en cas de sortie vers un objet <xref:System.IO.TextWriter>. La propriété <xref:System.IO.TextWriter.Encoding%2A?displayProperty=nameWithType> est utilisée à la place.|  
 |omit-xml-declaration|Pris en charge.|  
-|standalone|Pris en charge.|  
+|autonomes|Pris en charge.|  
 |doctype-public|Pris en charge.|  
 |doctype-system|Pris en charge.|  
 |cdata-section-elements|Pris en charge.|  
@@ -40,10 +40,10 @@ Cette rubrique présente les options de sortie XSLT disponibles. Vous pouvez sp�
 #### <a name="xmlwriter"></a>XmlWriter  
  La classe <xref:System.Xml.XmlWriter> produit des fichiers ou des flux XML. Vous pouvez spécifier les fonctionnalités à prendre en charge dans l’objet <xref:System.Xml.XmlWriter>, y compris les options de sortie, en utilisant la classe <xref:System.Xml.XmlWriterSettings>. La classe <xref:System.Xml.XmlWriter> fait partie intégrante de l'infrastructure <xref:System.Xml>. Utilisez ce type de sortie pour envoyer les résultats vers un autre processus XML via un pipeline.  
   
-#### <a name="string"></a>Chaîne  
+#### <a name="string"></a>String  
  Utilisez ce type de sortie pour spécifier l'URI du fichier de sortie.  
   
-#### <a name="stream"></a>Stream  
+#### <a name="stream"></a>STREAM  
  Un flux est une abstraction d'une séquence d'octets, comme un fichier, un appareil d'entrée/sortie, un canal de communication inter-processus ou un socket TCP/IP. La classe <xref:System.IO.Stream> et ses classes dérivées donnent une vue générique de ces différents types d'entrée et de sortie, isolant ainsi le programmeur des détails propres au système d'exploitation et aux périphériques sous-jacents.  
   
  Utilisez ce type de sortie pour envoyer des données à un objet <xref:System.IO.FileStream>, à un objet <xref:System.IO.MemoryStream> ou à un flux de sortie (`Response.OutputStream`).  
@@ -51,7 +51,7 @@ Cette rubrique présente les options de sortie XSLT disponibles. Vous pouvez sp�
 #### <a name="textwriter"></a>TextWriter  
  L'objet <xref:System.IO.TextWriter> produit des caractères séquentiels. Il est implémenté dans les classes <xref:System.IO.StringWriter> et <xref:System.IO.StreamWriter>, qui écrivent des caractères dans des chaînes ou des flux, respectivement. Utilisez ce type de sortie lorsque vous souhaitez envoyer la sortie vers une chaîne.  
   
-## <a name="notes"></a>Remarques  
+## <a name="notes"></a>Notes  
   
 - Lorsque vous écrivez des chaînes vides, un espace est inséré entre le dernier caractère du nom de l'élément et la barre oblique inverse, par exemple `<myElement />`. Cela permet aux anciens navigateurs d'afficher correctement les pages HTML générées.  
   

@@ -35,8 +35,8 @@ ou
   
 |Terme|Définition|  
 |---|---|  
-|`symbol`|Requis. Symbole à définir.|  
-|`value`|Option facultative. Valeur à affecter au `symbol`. Si `value` est une chaîne, elle doit être entourée d’une barre oblique inverse/des séquences de guillemets (\\") au lieu de guillemets. Si aucune valeur n'est spécifiée, il prend la valeur True.|  
+|`symbol`|Obligatoire. Symbole à définir.|  
+|`value`|Facultatif. Valeur à affecter au `symbol`. Si `value` est une chaîne, elle doit être entourée par des barres obliques inverses\\ou des séquences de guillemets (") au lieu de guillemets. Si aucune valeur n'est spécifiée, il prend la valeur True.|  
   
 ## <a name="remarks"></a>Notes  
  L'option `-define` revient à utiliser la directive de préprocesseur `#Const` dans votre fichier source, excepté que les constantes définies avec `-define` sont publiques et s'appliquent à tous les fichiers du projet.  
@@ -49,7 +49,7 @@ ou
   
 |Pour définir-define dans l’environnement de développement intégré de Visual Studio|  
 |---|  
-|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **compiler** .<br />3. cliquez sur **avancé**.<br />4. modifiez la valeur dans la zone **constantes personnalisées** .|  
+|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet** , cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **compiler** .<br />3. cliquez sur **avancé**.<br />4. modifiez la valeur dans la zone **constantes personnalisées** .|  
   
 ## <a name="example"></a>Exemple  
  Le code suivant définit deux constantes de compilation conditionnelle, puis les utilise.  

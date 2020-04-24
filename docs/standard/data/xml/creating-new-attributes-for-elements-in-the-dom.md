@@ -114,7 +114,7 @@ Pour obtenir l’exemple de code complet, consultez <xref:System.Xml.XmlDocument
 
 Vous pouvez également créer un nœud **XmlAttribute** et utiliser la méthode **InsertBefore** ou **InsertAfter** pour le placer à la position voulue dans la collection. Si un attribut de même nom figure déjà dans la collection d’attributs, le nœud **XmlAttribute** existant est supprimé de la collection et le nouveau nœud **XmlAttribute** est inséré. Ce comportement est le même qu'avec la méthode **SetAttribute**. Ces méthodes prennent comme paramètre un nœud existant comme point de référence pour réaliser les opérations **InsertBefore** et **InsertAfter**. Si vous ne fournissez pas de nœud de référence indiquant la position d’insertion du nouveau nœud, la méthode **InsertAfter**, par défaut, place ce dernier au début de la collection. Pour la méthode **InsertBefore**, la position par défaut si aucun nœud de référence n’est fourni est la fin de la collection.
 
-Si vous avez créé un **XmlNamedNodeMap** d’attributs, vous pouvez ajouter un attribut par nom à l’aide de la méthode <xref:System.Xml.XmlNamedNodeMap.SetNamedItem%2A>. Pour plus d’informations, consultez [Collections de nœuds dans NamedNodeMap et NodeList](node-collections-in-namednodemaps-and-nodelists.md).
+Si vous avez créé un **XmlNamedNodeMap** d’attributs, vous pouvez ajouter un attribut par nom à <xref:System.Xml.XmlNamedNodeMap.SetNamedItem%2A> l’aide de la méthode. Pour plus d’informations, consultez [Collections de nœuds dans NamedNodeMap et NodeList](node-collections-in-namednodemaps-and-nodelists.md).
 
 ## <a name="default-attributes"></a>Attributs par défaut
 

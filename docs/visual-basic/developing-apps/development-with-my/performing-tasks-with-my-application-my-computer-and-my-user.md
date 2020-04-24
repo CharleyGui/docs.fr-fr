@@ -18,23 +18,23 @@ ms.locfileid: "74329576"
 ---
 # <a name="performing-tasks-with-myapplication-mycomputer-and-myuser-visual-basic"></a>Exécution de tâches avec My.Application, My.Computer et My.User (Visual Basic)
 
-Les trois objets `My` centraux qui fournissent l’accès aux informations et aux fonctionnalités couramment utilisées sont `My.Application` (<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>), `My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>) et `My.User` (<xref:Microsoft.VisualBasic.ApplicationServices.User>). Vous pouvez utiliser ces objets pour accéder aux informations relatives à l’application actuelle, à l’ordinateur sur lequel l’application est installée, ou à l’utilisateur actuel de l’application, respectivement.  
+Les trois objets `My` centraux qui fournissent l’accès aux informations et aux fonctionnalités `My.Application` couramment<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>utilisées sont `My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>), ( `My.User` )<xref:Microsoft.VisualBasic.ApplicationServices.User>et (). Vous pouvez utiliser ces objets pour accéder aux informations relatives à l’application actuelle, à l’ordinateur sur lequel l’application est installée, ou à l’utilisateur actuel de l’application, respectivement.  
   
 ## <a name="myapplication-mycomputer-and-myuser"></a>My. application, My. Computer et My. User  
 
- Les exemples suivants montrent comment les informations peuvent être récupérées à l’aide de `My`.  
+ Les exemples suivants montrent comment les informations peuvent être récupérées à l’aide `My`de.  
   
  [!code-vb[VbVbcnMy#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMy/VB/Class1.vb#1)]  
   
  [!code-vb[VbVbcnMy#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMy/VB/Class1.vb#2)]  
   
- En plus de récupérer des informations, les membres exposés par le biais de ces trois objets vous permettent également d’exécuter des méthodes associées à cet objet. Par exemple, vous pouvez accéder à diverses méthodes pour manipuler des fichiers ou mettre à jour le registre à l’aide de `My.Computer`.  
+ En plus de récupérer des informations, les membres exposés par le biais de ces trois objets vous permettent également d’exécuter des méthodes associées à cet objet. Par exemple, vous pouvez accéder à diverses méthodes pour manipuler des fichiers ou mettre à jour le `My.Computer`Registre à l’aide de.  
   
- L’e/s de fichier est beaucoup plus facile et plus rapide avec `My`, qui comprend une variété de méthodes et de propriétés permettant de manipuler des fichiers, des répertoires et des lecteurs. L’objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> vous permet de lire à partir de fichiers structurés volumineux qui ont des champs délimités ou à largeur fixe. Cet exemple ouvre le `reader` `TextFieldParser` et l’utilise pour lire à partir de `C:\TestFolder1\test1.txt`.  
+ L’e/s de fichier est beaucoup plus facile `My`et plus rapide avec, qui comprend une variété de méthodes et de propriétés permettant de manipuler des fichiers, des répertoires et des lecteurs. L' <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> objet vous permet de lire à partir de fichiers structurés volumineux qui ont des champs délimités ou à largeur fixe. Cet exemple ouvre et `TextFieldParser` `reader` l’utilise pour lire à partir `C:\TestFolder1\test1.txt`de.  
   
  [!code-vb[VbVbalrTextFieldParser#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTextFieldParser/VB/Class1.vb#23)]  
   
- `My.Application` vous permet de modifier la culture de votre application. L’exemple suivant montre comment cette méthode peut être appelée.  
+ `My.Application`vous permet de modifier la culture de votre application. L’exemple suivant montre comment cette méthode peut être appelée.  
   
  [!code-vb[VbVbcnMy#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMy/VB/Class1.vb#3)]  
   

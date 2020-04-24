@@ -1,5 +1,5 @@
 ---
-title: 'Comment : transférer un fichier'
+title: 'Procédure : charger un fichier'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - networks, uploading files
@@ -51,5 +51,5 @@ Vous pouvez utiliser la méthode <xref:Microsoft.VisualBasic.Devices.Network.Upl
 
 - <xref:Microsoft.VisualBasic.Devices.Network?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>
-- [Comment: Télécharger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)
+- [Procédure : télécharger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)
 - [Comment : analyser des chemins d'accès](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)

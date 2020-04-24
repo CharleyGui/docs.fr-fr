@@ -27,18 +27,18 @@ Active ou désactive les optimisations du compilateur.
   
 |Terme|Définition|  
 |---|---|  
-|`+` &#124; `-`|facultatif. L’option `-optimize-` désactive les optimisations du compilateur. L’option `-optimize+` active les optimisations. Par défaut, les optimisations sont désactivées.|  
+|`+` &#124; `-`|Facultatif. L' `-optimize-` option désactive les optimisations du compilateur. L' `-optimize+` option active les optimisations. Par défaut, les optimisations sont désactivées.|  
   
 ## <a name="remarks"></a>Notes  
- Les optimisations du compilateur diminuent la taille du fichier de sortie, le rendent plus rapide et plus efficace. Toutefois, étant donné que les optimisations entraînent une réorganisation du code dans le fichier de sortie, `-optimize+` peut compliquer le débogage.  
+ Les optimisations du compilateur diminuent la taille du fichier de sortie, le rendent plus rapide et plus efficace. Toutefois, étant donné que les optimisations entraînent une réorganisation du code `-optimize+` dans le fichier de sortie, peut compliquer le débogage.  
   
- Tous les modules générés avec `-target:module` pour un assembly doivent utiliser les mêmes paramètres `-optimize` que l’assembly. Pour plus d’informations, consultez [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md).  
+ Tous les modules générés avec `-target:module` pour un assembly doivent `-optimize` utiliser les mêmes paramètres que l’assembly. Pour plus d’informations, consultez [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md).  
   
- Vous pouvez combiner les options `-optimize` et `-debug`.  
+ Vous pouvez combiner les `-optimize` options `-debug` et.  
   
 |Pour définir-Optimize dans l’environnement de développement intégré Visual Studio|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**.<br />     <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Cliquez sur le bouton **Avancées** .<br />4.  Modifiez la case à cocher **activer les optimisations** .|  
+|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet** , cliquez sur **Propriétés**.<br />     <br />2. cliquez sur l’onglet **compiler** .<br />3. cliquez sur le bouton **avancé** .<br />4. modifiez la case à cocher **activer les optimisations** .|  
   
 ## <a name="example"></a>Exemple  
  Le code suivant compile `T2.vb` et active les optimisations du compilateur.  

@@ -13,7 +13,7 @@ ms.locfileid: "75447166"
 
 Les cibles Microsoft. Data. sqlite .NET Standard 2,0 et sont prises en charge sur Xamarin. Le tableau suivant indique les plateformes pour lesquelles le bundle SQLitePCLRaw par défaut fournit des binaires SQLite natifs. Pour plus d’informations sur l’utilisation d’un bundle différent ou la fourniture de vos propres binaires SQLite natifs, consultez [versions SQLite personnalisées](custom-versions.md) .
 
-| Platform | Fichiers binaires SQLite |
+| Plateforme | Fichiers binaires SQLite |
 | --- | --- |
 | **Xamarin.Android** | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;`arm64-v8a` | ✔ |
@@ -33,7 +33,7 @@ Les cibles Microsoft. Data. sqlite .NET Standard 2,0 et sont prises en charge su
 
 Microsoft. Data. sqlite tente d’initialiser automatiquement les bottes SQLitePCLRaw. Malheureusement, en raison des limitations de la compilation de l’AOA (Xamarin. iOS) pour. iOS, la tentative échoue et vous recevez l’erreur suivante.
 
-> Vous devez appeler `SQLitePCL.raw.SetProvider()`. Si vous utilisez un package de Bundle, cette opération s’effectue en appelant `SQLitePCL.Batteries.Init()`.
+> Vous devez appeler `SQLitePCL.raw.SetProvider()`. Si vous utilisez un package de Bundle, cette opération s’effectue en `SQLitePCL.Batteries.Init()`appelant.
 
 Pour initialiser le bundle, ajoutez la ligne de code suivante à votre application avant d’utiliser Microsoft. Data. sqlite.
 

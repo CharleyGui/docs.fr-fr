@@ -30,11 +30,11 @@ Dans .NET Framework version 2.0, les classes XML noyau ont été améliorées p
  [Mappage entre types de données XML et types CLR](../../../../docs/standard/data/xml/mapping-xml-data-types-to-clr-types.md)  
  Décrit les mappages par défaut des types de données XML en types CLR.  
   
- [Remarques sur l’implémentation de la prise en charge du type XML](../../../../docs/standard/data/xml/xml-type-support-implementation-notes.md)  
+ [Remarques pour l'implémentation de la prise en charge du type XML](../../../../docs/standard/data/xml/xml-type-support-implementation-notes.md)  
  Explique certains détails de l'implémentation de la prise en charge du type.  
   
  [Conversion des types de données XML](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)  
  Décrit l'utilisation de la classe <xref:System.Xml.XmlConvert> pour la conversion entre des types CLR et de schéma XML.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Accès à des données XML fortement typées à l’aide de XPathNavigator](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)
+## <a name="related-sections"></a>Sections connexes  
+ [Accès à des données XML fortement typées à l'aide de XPathNavigator](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)

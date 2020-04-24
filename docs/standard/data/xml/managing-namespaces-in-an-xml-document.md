@@ -65,16 +65,16 @@ Les espaces de noms XML associent les noms d'éléments et d'attributs dans un d
   
  Voici quelques tâches de recherche et de gestion que vous pouvez effectuer avec la classe <xref:System.Xml.XmlNamespaceManager>. Pour obtenir plus d'informations et des exemples, suivez les liens à la page de référence de chaque méthode ou propriété.  
   
-|Pour|Utilisez|  
+|À|Utiliser|  
 |--------|---------|  
-|Ajouter un espace de noms|Méthode<xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>|  
-|Supprimer un espace de noms|Méthode<xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A>|  
+|Ajouter un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>|  
+|Supprimer un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A>|  
 |Rechercher l'URI de l'espace de noms par défaut|Propriété <xref:System.Xml.XmlNamespaceManager.DefaultNamespace%2A>|  
-|Rechercher l'URI du préfixe d'un espace de noms|Méthode<xref:System.Xml.XmlNamespaceManager.LookupNamespace%2A>|  
-|Rechercher le préfixe de l'URI d'un espace de noms|Méthode<xref:System.Xml.XmlNamespaceManager.LookupPrefix%2A>|  
-|Obtenir une liste des espaces de noms dans le nœud actuel|Méthode<xref:System.Xml.XmlNamespaceManager.GetNamespacesInScope%2A>|  
+|Rechercher l'URI du préfixe d'un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.LookupNamespace%2A>|  
+|Rechercher le préfixe de l'URI d'un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.LookupPrefix%2A>|  
+|Obtenir une liste des espaces de noms dans le nœud actuel|Méthode <xref:System.Xml.XmlNamespaceManager.GetNamespacesInScope%2A>|  
 |Définir la portée d'un espace de noms|Méthodes <xref:System.Xml.XmlNamespaceManager.PushScope%2A> et <xref:System.Xml.XmlNamespaceManager.PopScope%2A>|  
-|Vérifier si un préfixe est défini dans la portée actuelle|Méthode<xref:System.Xml.XmlNamespaceManager.HasNamespace%2A>|  
+|Vérifier si un préfixe est défini dans la portée actuelle|Méthode <xref:System.Xml.XmlNamespaceManager.HasNamespace%2A>|  
 |Obtenir la table de noms utilisée pour rechercher les préfixes et les URI|Propriété <xref:System.Xml.XmlNamespaceManager.NameTable%2A>|  
   
 ## <a name="see-also"></a>Voir aussi

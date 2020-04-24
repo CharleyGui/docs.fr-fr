@@ -28,11 +28,11 @@ Lorsque vous implémentez un mécanisme de sérialisation dans un environnement 
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
 
-La sérialisation binaire permet de modifier des membres privés à l’intérieur d’un objet et donc de changer l’état de celui-ci. Pour cette raison, d’autres <xref:System.Text.Json?displayProperty=fullName>cadres de sérialisation, comme , qui fonctionnent sur la surface publique de l’API sont recommandés.
+La sérialisation binaire permet de modifier les membres privés à l’intérieur d’un objet et par conséquent de modifier l’état de celui-ci. Pour cette raison, d’autres infrastructures de sérialisation, comme <xref:System.Text.Json?displayProperty=fullName>, qui opèrent sur la surface de l’API publique sont recommandées.
 
 ## <a name="net-core"></a>.NET Core
 
-.NET Core prend en charge la sérialisation binaire pour un sous-ensemble de types. Vous pouvez voir la liste des types pris en charge dans la section [des types Serializable](#serializable-types) qui suit. Les types énumérés sont garantis pour être sérialisables entre .NET Framework 4.5.1 et les versions ultérieures et entre .NET Core 2.0 et les versions ultérieures. D’autres implémentations .NET, telles que Mono, ne sont pas officiellement pris en charge, mais devraient également fonctionner.
+.NET Core prend en charge la sérialisation binaire pour un sous-ensemble de types. Vous pouvez voir la liste des types pris en charge dans la section [types sérialisables](#serializable-types) qui suit. Les types répertoriés sont garantis comme étant sérialisables entre .NET Framework 4.5.1 et les versions ultérieures et entre .NET Core 2,0 et versions ultérieures. D’autres implémentations de .NET, telles que mono, ne sont pas officiellement prises en charge, mais doivent également fonctionner.
 
 ### <a name="serializable-types"></a>Types sérialisables
 
@@ -106,13 +106,13 @@ La sérialisation binaire permet de modifier des membres privés à l’intérie
 > | <xref:System.Configuration.SettingsPropertyNotFoundException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
 > | <xref:System.Configuration.SettingsPropertyWrongTypeException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
 > | <xref:System.ContextMarshalException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
-> | <xref:System.DBNull?displayProperty=nameWithType> | À partir de .NET Core 2.0.2 et versions ultérieures. |
+> | <xref:System.DBNull?displayProperty=nameWithType> | À compter de .NET Core 2.0.2 et versions ultérieures. |
 > | <xref:System.Data.Common.DbException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
 > | <xref:System.Data.ConstraintException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
 > | <xref:System.Data.DBConcurrencyException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
 > | <xref:System.Data.DataException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
 > | <xref:System.Data.DataSet?displayProperty=nameWithType> | |
-> | <xref:System.Data.DataTable?displayProperty=nameWithType> | Si vous `RemotingFormat` `SerializationFormat.Binary`définissez, il ne peut être échangé avec .NET Core 2.1 et les versions ultérieures. |
+> | <xref:System.Data.DataTable?displayProperty=nameWithType> | Si vous définissez `RemotingFormat` sur `SerializationFormat.Binary`, il ne peut être échangé qu’avec .net Core 2,1 et versions ultérieures. |
 > | <xref:System.Data.DeletedRowInaccessibleException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
 > | <xref:System.Data.DuplicateNameException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
 > | <xref:System.Data.EvaluateException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
@@ -325,7 +325,7 @@ La sérialisation binaire permet de modifier des membres privés à l’intérie
 > | <xref:System.UnauthorizedAccessException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
 > | <xref:System.Uri?displayProperty=nameWithType> | |
 > | <xref:System.UriFormatException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
-> | <xref:System.ValueTuple?displayProperty=nameWithType> | Pas sérialisable dans .NET Framework 4.7 et les versions antérieures. |
+> | <xref:System.ValueTuple?displayProperty=nameWithType> | Non sérialisable dans .NET Framework 4,7 et versions antérieures. |
 > | <xref:System.ValueType?displayProperty=nameWithType> | |
 > | <xref:System.Version?displayProperty=nameWithType> | |
 > | <xref:System.WeakReference%601?displayProperty=nameWithType> | |
@@ -352,5 +352,5 @@ Décrit les indications de codage sécurisé à suivre lors de l'écriture du co
 - [.NET Remoting](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))\
 Décrit les différentes méthodes à partir de .NET Framework pour les communications à distance.
 
-- [Services Web XML créés à l’aide de clients ASP.NET et XML Web Service](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7bkzywba(v=vs.100))\
-Articles qui décrivent et expliquent comment programmer les services Web XML créés à l’aide de ASP.NET.
+- [Services Web XML créés à l’aide des clients de service Web XML et ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7bkzywba(v=vs.100))\
+Articles qui décrivent et expliquent comment programmer des services Web XML créés à l’aide de ASP.NET.

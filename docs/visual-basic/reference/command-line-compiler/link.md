@@ -37,7 +37,7 @@ ou
   
 |Terme|Définition|  
 |---|---|  
-|`fileList`|Requis. Liste délimitée par des virgules des noms de fichiers d’assembly. Si le nom de fichier contient un espace, placez-le entre des guillemets.|  
+|`fileList`|Obligatoire. Liste délimitée par des virgules des noms de fichiers d’assembly. Si le nom de fichier contient un espace, placez-le entre des guillemets.|  
   
 ## <a name="remarks"></a>Notes  
  L’option `-link` vous permet de déployer une application qui a des informations de type incorporées. L’application peut ensuite utiliser des types dans un assembly de runtime qui implémentent les informations de type incorporées sans nécessiter une référence à l’assembly de runtime. Si différentes versions de l’assembly de runtime sont publiées, l’application qui contient les informations de type incorporées peut fonctionner avec les différentes versions sans devoir être recompilée. Pour un exemple, consultez [Procédure pas à pas : incorporation de types provenant d’assemblys managés](../../../standard/assembly/embed-types-visual-studio.md).  
@@ -59,7 +59,7 @@ ou
   
  Utilisez [-LIBPATH](libpath.md) pour spécifier le répertoire dans lequel se trouvent une ou plusieurs références d’assembly.  
   
- Comme l’option [de compilateur-Reference](reference.md) , l’option du compilateur `-link` utilise le fichier réponse Vbc. rsp, qui référence les assemblys .NET Framework fréquemment utilisés. Utilisez l’option [de compilateur-noconfig](noconfig.md) si vous ne souhaitez pas que le compilateur utilise le fichier Vbc. rsp.  
+ À l’instar de l’option de `-link` compilateur [-Reference](reference.md) , l’option de compilateur utilise le fichier réponse Vbc. rsp, qui référence les assemblys .NET Framework fréquemment utilisés. Utilisez l’option [de compilateur-noconfig](noconfig.md) si vous ne souhaitez pas que le compilateur utilise le fichier Vbc. rsp.  
   
  La forme abrégée de `-link` est `-l`.  
   
@@ -67,7 +67,7 @@ ou
  Les sections suivantes décrivent les limitations de l’utilisation de types génériques dans les applications qui incorporent des types interop.  
   
 ### <a name="generic-interfaces"></a>Interfaces génériques  
- Vous ne pouvez pas utiliser des interfaces génériques incorporées depuis un assembly d’interopérabilité. L'exemple suivant le démontre.  
+ Vous ne pouvez pas utiliser des interfaces génériques incorporées depuis un assembly d’interopérabilité. Cela est illustré par l'exemple suivant.  
   
  [!code-vb[VbLinkCompiler#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vblinkcompiler/vb/module1.vb#1)]  
   
@@ -83,7 +83,7 @@ ou
  [!code-vb[VbLinkCompiler#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vblinkcompiler/vb/module1.vb#5)]  
   
 ## <a name="example"></a>Exemple  
- La ligne de commande suivante compile le fichier source `OfficeApp.vb` et les assemblys de référence à partir de `COMData1.dll` et `COMData2.dll` pour produire des `OfficeApp.exe`.  
+ La ligne de commande suivante compile `OfficeApp.vb` le fichier source et les assemblys de `COMData1.dll` référence `COMData2.dll` à partir `OfficeApp.exe`de et à produire.  
   
 ```console  
 vbc -link:COMData1.dll,COMData2.dll -out:OfficeApp.exe OfficeApp.vb  
@@ -95,6 +95,6 @@ vbc -link:COMData1.dll,COMData2.dll -out:OfficeApp.exe OfficeApp.vb
 - [Procédure pas à pas : incorporation de types provenant d’assemblys managés](../../../standard/assembly/embed-types-visual-studio.md)
 - [-Reference (Visual Basic)](reference.md)
 - [-noconfig](noconfig.md)
-- [-libpath](libpath.md)
+- [-LIBPATH](libpath.md)
 - [Exemples de lignes de commande de compilation](sample-compilation-command-lines.md)
 - [Introduction à COM Interop](../../../visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)

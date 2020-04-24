@@ -24,16 +24,16 @@ Fait en sorte que le compilateur génère des messages d’État et d’erreur d
   
 ## <a name="arguments"></a>Arguments  
  `+` &#124; `-`  
- facultatif. La spécification de `-verbose` revient à spécifier `-verbose+`, ce qui amène le compilateur à émettre des messages détaillés. La valeur par défaut de cette option est `-verbose-`.  
+ Facultatif. La `-verbose` spécification de est identique à `-verbose+`la spécification de, ce qui amène le compilateur à émettre des messages détaillés. La valeur par défaut de cette `-verbose-`option est.  
   
 ## <a name="remarks"></a>Notes  
- L’option `-verbose` affiche des informations sur le nombre total d’erreurs émises par le compilateur, signale les assemblys qui sont chargés par un module et affiche les fichiers en cours de compilation.  
+ L' `-verbose` option affiche des informations sur le nombre total d’erreurs émises par le compilateur, signale les assemblys qui sont chargés par un module et affiche les fichiers en cours de compilation.  
   
 > [!NOTE]
-> L’option `-verbose` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+> L' `-verbose` option n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `In.vb` et indique au compilateur d’afficher les informations d’État détaillées.  
+ Le code suivant compile `In.vb` et dirige le compilateur pour afficher les informations d’État détaillées.  
   
 ```console  
 vbc -verbose in.vb  

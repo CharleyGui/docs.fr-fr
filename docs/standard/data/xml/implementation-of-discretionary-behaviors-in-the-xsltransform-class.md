@@ -19,32 +19,32 @@ Les comportements discrétionnaires sont décrits comme des comportement listés
 
 Par conséquent, pour chacun des comportements discrétionnaires autorisés par le W3C, le tableau suivant liste les comportements discrétionnaires implémentés pour l’implémentation du .NET Framework de la classe <xref:System.Xml.Xsl.XslTransform>, ainsi que la section de la recommandation du W3C sur XSLT 1.0 traitant de ce problème.
 
-|Problem (Problème)|Comportement|Section|
+|Problème|Comportement|Section|
 |-------------|--------------|-------------|
-|Un nœud de texte correspond à la fois à `xsl:strip-space` et à `xsl:preserve-space`.|Récupérer|3.4|
-|Un nœud source correspond à plusieurs règles de modèle.|Récupérer|5.5|
-|Un URI (Uniform Resource Identifier) d'espace de noms est déclaré comme étant un alias pour plusieurs URI d'espaces de noms dont la priorité d'importation est identique.|Récupérer|7.1.1|
+|Un nœud de texte correspond à la fois à `xsl:strip-space` et à `xsl:preserve-space`.|Recover|3.4|
+|Un nœud source correspond à plusieurs règles de modèle.|Recover|5.5|
+|Un URI (Uniform Resource Identifier) d'espace de noms est déclaré comme étant un alias pour plusieurs URI d'espaces de noms dont la priorité d'importation est identique.|Recover|7.1.1|
 |L'attribut de nom dans `xsl:attribute` et `xsl:element` généré à partir d'un modèle de valeur d'attribut n'est pas un nom qualifié (QName) valide.|Exception levée|7.1.2 et 7.1.3|
-|L'ajout d'un attribut à un élément après l'ajout de nœuds enfants au nœud élément.|Récupérer|7.1.3|
-|Ajout d'un attribut à autre chose qu'à un nœud d'élément.|Récupérer|7.1.3|
-|L'instanciation du contenu de l'élément `xsl:attribute` n'est pas un nœud de texte.|Récupérer|7.1.3|
-|Deux ensembles d'attributs ont la même priorité d'importation et le même nom développé. Les deux ont le même attribut et il n'y a pas d'autre ensemble d'attributs contenant l'attribut commun avec le même nom et une importance supérieure.|Récupérer|7.1.4|
-|L'attribut de nom `xsl:processing-instruction` ne produit pas un NCName et une cible d'instruction de traitement.|Récupérer|7.3|
-|L'instanciation du contenu de `xsl:processing-instruction` crée des nœuds autres que des nœuds de texte.|Récupérer|7.3|
-|Les résultats de l'instanciation du contenu de `xsl:processing-instruction` contiennent la chaîne « `?>` ».|Récupérer|7.3|
-|Les résultats de l'instanciation du contenu de `xsl:comment` contiennent la chaîne « -- » ou se terminent par « - ».|Récupérer|7.4|
-|Les résultats de l'instanciation du contenu de `xsl:comment` créent des nœuds autres que des nœuds de texte.|Récupérer|7.4|
-|Le modèle d'un élément de liaison de variables retourne un nœud d'attribut ou un nœud d'espace de noms.|Récupérer|11.2|
+|L'ajout d'un attribut à un élément après l'ajout de nœuds enfants au nœud élément.|Recover|7.1.3|
+|Ajout d'un attribut à autre chose qu'à un nœud d'élément.|Recover|7.1.3|
+|L'instanciation du contenu de l'élément `xsl:attribute` n'est pas un nœud de texte.|Recover|7.1.3|
+|Deux ensembles d'attributs ont la même priorité d'importation et le même nom développé. Les deux ont le même attribut et il n'y a pas d'autre ensemble d'attributs contenant l'attribut commun avec le même nom et une importance supérieure.|Recover|7.1.4|
+|L'attribut de nom `xsl:processing-instruction` ne produit pas un NCName et une cible d'instruction de traitement.|Recover|7.3|
+|L'instanciation du contenu de `xsl:processing-instruction` crée des nœuds autres que des nœuds de texte.|Recover|7.3|
+|Les résultats de l'instanciation du contenu de `xsl:processing-instruction` contiennent la chaîne « `?>` ».|Recover|7.3|
+|Les résultats de l'instanciation du contenu de `xsl:comment` contiennent la chaîne « -- » ou se terminent par « - ».|Recover|7.4|
+|Les résultats de l'instanciation du contenu de `xsl:comment` créent des nœuds autres que des nœuds de texte.|Recover|7.4|
+|Le modèle d'un élément de liaison de variables retourne un nœud d'attribut ou un nœud d'espace de noms.|Recover|11.2|
 |Une erreur se produit lors de l'extraction de la ressource à partir de l'URI passé dans la fonction de document.|Exception levée|12.1|
 |La référence URI de la fonction de document contient un identificateur de fragment, et une erreur se produit lors du traitement de ce dernier.|Exception levée|12.1|
-|Il existe plusieurs attributs portant le même nom qui ne sont pas intitulés `cdata-section-elements` dans `xls:output`, et ces attributs ont la même priorité d'importation.|Récupérer|16|
-|Le processeur ne prend pas en charge la valeur d'encodage de caractères octroyée dans l'attribut `encoding` de l'élément `xsl:output`.|Récupérer|16.1|
+|Il existe plusieurs attributs portant le même nom qui ne sont pas intitulés `cdata-section-elements` dans `xls:output`, et ces attributs ont la même priorité d'importation.|Recover|16|
+|Le processeur ne prend pas en charge la valeur d'encodage de caractères octroyée dans l'attribut `encoding` de l'élément `xsl:output`.|Recover|16,1|
 |`disable-output-escaping` s'utilise pour un nœud de texte et ce nœud est utilisé pour créer autre chose qu'un nœud de texte dans l'arborescence résultat.|L'attribut `disable-output-escaping` est ignoré.|16.4|
 |Conversion d'un fragment d'arborescence résultat en un nombre ou une chaîne si le fragment d'arborescence résultat contient un nœud de texte dont la production littérale des caractères en sortie est activée.|Ignoré|16.4|
 |La production littérale des caractères en sortie est désactivée pour les caractères qui ne peuvent pas être représentés dans l'encodage utilisé par le processeur XSLT pour la sortie.|Ignoré|16.4|
-|Ajout d'un nœud d'espace de noms à un élément après que les enfants ou les attributs ont été ajoutés à ce dernier.|Récupérer|Errata e25|
-|`xsl:number` est une valeur NaN, infinie ou inférieure à 0,5.|Récupérer|Errata e24|
-|La collection de nœuds du second argument de la fonction de document est vide et la référence URI est relative.|Récupérer|Errata e14|
+|Ajout d'un nœud d'espace de noms à un élément après que les enfants ou les attributs ont été ajoutés à ce dernier.|Recover|Errata e25|
+|`xsl:number` est une valeur NaN, infinie ou inférieure à 0,5.|Recover|Errata e24|
+|La collection de nœuds du second argument de la fonction de document est vide et la référence URI est relative.|Recover|Errata e14|
 
 Vous trouverez les sections sur les erreurs dans [XSL Transformations (XSLT) Version 1.0 Specification Errata](https://www.w3.org/1999/11/REC-xslt-19991116-errata/) du W3C.
 
@@ -54,7 +54,7 @@ Certains comportements sont spécifiques à l'implémentation de la classe <xref
 
 ## <a name="xslsort"></a>xsl:sort
 
-Lors de l'utilisation d'une transformation à trier, la recommandation du W3C sur XSLT 1.0 établit des observations. À savoir :
+Lors de l'utilisation d'une transformation à trier, la recommandation du W3C sur XSLT 1.0 établit des observations. Il s'agit de :
 
 - Deux processeurs XSLT peuvent être des processeurs conformes, mais ils peuvent effectuer un tri différent.
 
@@ -66,22 +66,22 @@ Le tableau suivant montre le comportement de tri implémenté pour chaque type d
 
 |Type de données|Comportement de tri|
 |---------------|----------------------|
-|Text|Les données sont triées en utilisant la méthode String.Compare du Common Language Runtime (CLR) ainsi que les paramètres régionaux culturels. Lorsque les données sont de type « texte », le tri dans la classe <xref:System.Xml.Xsl.XslTransform> se comporte de la même façon que les comportements de comparaison de chaînes du Common Language Runtime.|
+|Texte|Les données sont triées en utilisant la méthode String.Compare du Common Language Runtime (CLR) ainsi que les paramètres régionaux culturels. Lorsque les données sont de type « texte », le tri dans la classe <xref:System.Xml.Xsl.XslTransform> se comporte de la même façon que les comportements de comparaison de chaînes du Common Language Runtime.|
 |Number|Les valeurs numériques sont traitées comme des nombres XPath (XML Path Language) et sont triées en fonction des détails présentés dans [XML Path Language (XPath) Version 1.0 Recommendation, Section 3.5](https://www.w3.org/TR/1999/REC-xpath-19991116/#numbers) du W3C.|
 
 ## <a name="optional-features-supported"></a>Fonctionnalités facultatives prises en charge
 
 Le tableau suivant présente les fonctionnalités facultatives à implémenter pour un processeur XSLT et qui sont implémentées dans la classe <xref:System.Xml.Xsl.XslTransform>.
 
-|Composant|Emplacement de référence|Remarques|
+|Fonctionnalité|Emplacement de référence|Notes|
 |-------------|------------------------|-----------|
-|Attribut `disable-output-escaping` sur les balises `<xsl:text...>` et `<xsl:value-of...>`.|Recommandation du W3C sur XSLT 1.0,<br /><br /> Section 16.4|L'attribut `disable-output-escaping` est ignoré lorsque l'élément `xsl:text` ou `xsl:value-of` est utilisé dans un élément `xsl:comment`, `xsl:processing-instruction` ou `xsl:attribute`.<br /><br /> Les fragments d'arborescence résultat qui contiennent du texte et la sortie de texte ayant fait l'objet d'un échappement ne sont pas pris en charge.<br /><br /> L'attribut disable-output-escaping est ignoré lors de sa transformation en un objet <xref:System.Xml.XmlReader> ou <xref:System.Xml.XmlWriter>.|
+|Attribut `disable-output-escaping` sur les balises `<xsl:text...>` et `<xsl:value-of...>`.|Recommandation du W3C sur XSLT 1.0, <br /><br /> Section 16.4|L'attribut `disable-output-escaping` est ignoré lorsque l'élément `xsl:text` ou `xsl:value-of` est utilisé dans un élément `xsl:comment`, `xsl:processing-instruction` ou `xsl:attribute`.<br /><br /> Les fragments d'arborescence résultat qui contiennent du texte et la sortie de texte ayant fait l'objet d'un échappement ne sont pas pris en charge.<br /><br /> L'attribut disable-output-escaping est ignoré lors de sa transformation en un objet <xref:System.Xml.XmlReader> ou <xref:System.Xml.XmlWriter>.|
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.Xsl.XslTransform>
-- [Implémentation du processeur XSLT par la classe XslTransform](xsltransform-class-implements-the-xslt-processor.md)
-- [Transformations XSLT avec la classe XslTransform](xslt-transformations-with-the-xsltransform-class.md)
+- [Implémentation du processeur XSLT par la classe XslTransform](xsltransform-class-implements-the-xslt-processor.md)
+- [Transformations XSLT avec la classe XslTransform](xslt-transformations-with-the-xsltransform-class.md)
 - [XPathNavigator dans les transformations](xpathnavigator-in-transformations.md)
 - [XPathNodeIterator dans les transformations](xpathnodeiterator-in-transformations.md)
 - [Entrée XPathDocument dans XslTransform](xpathdocument-input-to-xsltransform.md)

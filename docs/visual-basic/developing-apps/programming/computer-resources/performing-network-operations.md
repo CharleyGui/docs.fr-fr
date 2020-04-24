@@ -18,16 +18,16 @@ Les tableaux suivants listent les tâches associées à l’objet `My.Computer.N
   
 ## <a name="in-this-section"></a>Dans cette section  
 
- [Comment : Télécharger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)  
+ [Procédure : charger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)  
  Montre comment charger un fichier et le stocker dans un emplacement distant à l’aide de `My.Computer.Network`.  
   
- [Comment: Télécharger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)  
+ [Procédure : télécharger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)  
  Montre comment télécharger un fichier à partir d’un emplacement distant à l’aide de `My.Computer.Network`.  
   
- [Comment : vérifier l'état de la connexion](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)  
+ [Procédure : vérifier l’état de la connexion](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)  
  Montre comment déterminer si l’ordinateur dispose d’une connexion réseau active.  
   
-## <a name="reference"></a>Informations de référence  
+## <a name="reference"></a>Référence  
 
  <xref:Microsoft.VisualBasic.Devices.Network>  
  Liste les méthodes, les propriétés et les événements permettant d’utiliser le réseau.  

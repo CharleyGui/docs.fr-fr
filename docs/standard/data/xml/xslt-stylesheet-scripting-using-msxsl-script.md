@@ -17,7 +17,7 @@ ms.locfileid: "78160207"
 La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorporés en utilisant l'élément `script`.  
   
 > [!NOTE]
-> La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans .NET Framework 2.0. Vous pouvez effectuer des transformations XSLT (Extensible Stylesheet Language Transformation) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez les pages [Utiliser la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) et [Migrer à partir de la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md).  
+> La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans .NET Framework 2.0. Vous pouvez effectuer des transformations XSLT (Extensible Stylesheet Language Transformation) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez [Utilisation de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) et [Migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md).  
   
  La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorporés en utilisant l'élément `script`. Lorsque la feuille de style est chargée, toute fonction définie est compilée en langage MSIL (Microsoft Intermediate Language) par son enveloppement dans une définition de classe et n'engendre aucune perte des performances.  
   
@@ -29,7 +29,7 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
   
  où `msxsl` est un préfixe lié à l'espace de noms `urn:schemas-microsoft-com:xslt`.  
   
- L’attribut `language` n’est pas obligatoire, mais s’il est spécifié, sa valeur doit être l’une des suivantes : `C#`, `VB`, `JScript`, `JavaScript`, `VisualBasic`ou `CSharp`. Lorsqu'il n'est pas spécifié, le langage par défaut est JScript. Le `language-name` ne respecte pas la casse : les termes « JavaScript » et « javascript » sont équivalents.  
+ L' `language` attribut n’est pas obligatoire, mais s’il est spécifié, sa valeur doit être l’une `C#`des `VB`suivantes `JScript`: `JavaScript`, `VisualBasic`,, `CSharp`, ou. Lorsqu'il n'est pas spécifié, le langage par défaut est JScript. Le `language-name` ne respecte pas la casse : les termes « JavaScript » et « javascript » sont équivalents.  
   
  L'attribut `implements-prefix` est obligatoire. Cet attribut est utilisé pour déclarer un espace de noms et l'associer au bloc de script. La valeur de cet attribut est le préfixe qui représente l'espace de noms. Cet espace de noms peut être défini à un endroit d'une feuille de style.  
   
@@ -49,7 +49,7 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
   
 |Espaces de noms par défaut|Description|  
 |------------------------|-----------------|  
-|System|Classe système.|  
+|Système|Classe système.|  
 |System.Collection|Classes de collection.|  
 |System.Text|Classes de texte.|  
 |System.Text.RegularExpressions|Classes d'expressions régulières.|  
@@ -214,7 +214,7 @@ public class Sample
 </xsl:stylesheet>  
 ```  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a>Output  
   
 ```xml  
 <circles xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:user="urn:my-scripts">  
@@ -231,4 +231,4 @@ public class Sample
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Implémentation du processeur XSLT par la classe XslTransform](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+- [Implémentation du processeur XSLT par la classe XslTransform](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

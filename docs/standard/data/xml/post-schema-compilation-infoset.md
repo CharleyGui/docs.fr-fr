@@ -21,7 +21,7 @@ La [recommandation du World Wide Web Consortium (W3C) sur le schéma XML](https:
   
  Le SOM est le modèle d’objet qui représente les jeux d’informations de pré-validation de schéma et de post-compilation de schéma. Il est composé de classes dans l’espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType>. Toutes les propriétés de lecture et d'écriture des classes de l'espace de noms <xref:System.Xml.Schema> appartiennent au jeu d'informations de pré-validation de schéma, alors que toutes les propriétés en lecture seule des classes de l'espace de noms <xref:System.Xml.Schema> appartiennent au jeu d'informations de post-compilation de schéma. Les propriétés suivantes, qui sont des propriétés des jeux d’informations de pré-validation de schéma et de post-compilation de schéma, constituent une exception à la règle.  
   
-|Classe|Les|  
+|Classe|Propriété|  
 |-----------|--------------|  
 |<xref:System.Xml.Schema.XmlSchemaObject>|<xref:System.Xml.Schema.XmlSchemaObject.Parent%2A>|  
 |<xref:System.Xml.Schema.XmlSchema>|<xref:System.Xml.Schema.XmlSchema.AttributeFormDefault%2A>, <xref:System.Xml.Schema.XmlSchema.BlockDefault%2A>, <xref:System.Xml.Schema.XmlSchema.ElementFormDefault%2A>, <xref:System.Xml.Schema.XmlSchema.FinalDefault%2A>, <xref:System.Xml.Schema.XmlSchema.TargetNamespace%2A>|  

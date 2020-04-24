@@ -16,7 +16,7 @@ Un schéma XML est un outil puissant et complexe permettant de créer et valider
  Le modèle Objet du schéma (SOM) fournit un ensemble de classes dans l'espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType> qui permettent de lire un schéma à partir d'un fichier ou de créer par programme un cache de schéma en mémoire. Le schéma peut alors être parcouru, édité, compilé, validé ou enregistré dans un fichier.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Vue d’ensemble du modèle d’objet de schéma XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
+ [Vue d'ensemble du Modèle Objet du schéma XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
  Décrit le modèle Objet du schéma (SOM) ainsi que les fonctions et classes qu'il fournit.  
   
  [Lecture et écriture de schémas XML](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)  
@@ -25,7 +25,7 @@ Un schéma XML est un outil puissant et complexe permettant de créer et valider
  [Création de schémas XML](../../../../docs/standard/data/xml/building-xml-schemas.md)  
  Décrit l'utilisation des classes de l'espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType> pour créer des schémas XML en mémoire.  
   
- [Parcours des schémas XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)  
+ [Traversée de schémas XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)  
  Explique comment parcourir un schéma XML afin d'accéder aux éléments, attributs et types stockés dans le SOM.  
   
  [Modification de schémas XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)  

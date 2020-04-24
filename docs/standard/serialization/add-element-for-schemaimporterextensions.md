@@ -1,5 +1,5 @@
 ---
-title: <add>, élément de <schemaImporterExtensions>
+title: Élément <add> pour <schemaImporterExtensions>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - XML serialization, configuration
@@ -12,7 +12,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 02/28/2020
 ms.locfileid: "78159934"
 ---
-# <a name="add-element-for-schemaimporterextensions"></a>\<ajoutez > élément pour \<schemaImporterExtensions >
+# <a name="add-element-for-schemaimporterextensions"></a>\<Ajouter> élément pour \<SchemaImporterExtensions>
 Ajoute des types utilisés par <xref:System.Xml.Serialization.XmlSchemaImporter> pour mapper des types XSD en types .NET Framework. Pour plus d’informations sur les fichiers de configuration, consultez [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md).  
   
  \<configuration>  
@@ -37,7 +37,7 @@ Ajoute des types utilisés par <xref:System.Xml.Serialization.XmlSchemaImporter>
 |**type**|Obligatoire. Spécifie la classe d'extension de schéma à ajouter. La valeur d’attribut **type** doit figurer sur une ligne et inclure le nom complet du type. Lorsque l'assembly est placé dans le Global Assembly Cache (GAC), il doit également inclure la version, la culture et le jeton de clé publique de l'assembly signé.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- None.  
+ Aucune.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -63,5 +63,5 @@ Ajoute des types utilisés par <xref:System.Xml.Serialization.XmlSchemaImporter>
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
-- [\<system.xml.serialization>, élément](../../../docs/standard/serialization/system-xml-serialization-element.md)
+- [\<Élément System. Xml. Serialization>](../../../docs/standard/serialization/system-xml-serialization-element.md)
 - [\<schemaImporterExtensions>, élément](../../../docs/standard/serialization/schemaimporterextensions-element.md)

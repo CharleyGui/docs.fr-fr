@@ -27,5 +27,5 @@ La liste précédente n’englobe pas toutes les situations et scénarios potent
 ## <a name="see-also"></a>Voir aussi
 
 - [Appel de code non managé (P/Invoke)](pinvoke.md)
-- [Type de marshaling](type-marshaling.md)
+- [Marshaling de types](type-marshaling.md)
 - [Meilleures pratiques pour l’interopérabilité native](best-practices.md)

@@ -53,7 +53,7 @@ L’image suivante montre le processus d’accès aux objets COM par le biais d
 |Interface|Description|  
 |---------------|-----------------|  
 |**IConnectionPoint** et **IConnectionPointContainer**|Le wrapper RCW convertit les objets qui exposent le style d'événement point de connexion en événements basés sur le délégué.|  
-|**IDispatchEx** (.NET Framework uniquement) |Si la classe implémente **IDispatchEx**, le wrapper RCW implémente **IExpando**. L’interface **IDispatchEx** est une extension de l’interface **IDispatch** qui, contrairement à l’interface **IDispatch**, permet l’énumération, l’ajout, la suppression et l’appel sensible à la casse des membres.|  
+|**IDispatchEx** (.NET Framework uniquement) |Si la classe implémente **IDispatchEx**, le wrapper RCW implémente **IExpando**. L’interface **IDispatchEx** est une extension de l’interface **IDispatch** qui, contrairement à l’interface **IDispatch**, permet l’énumération, l’ajout, la suppression et l’appel de la casse des membres.|  
 |**IEnumVARIANT**|Permet aux types COM qui prennent en charge les énumérations d'être traités comme des collections.|  
   
 ## <a name="see-also"></a>Voir aussi
@@ -61,4 +61,4 @@ L’image suivante montre le processus d’accès aux objets COM par le biais d
 - [Wrappers COM](com-wrappers.md)
 - [Wrapper CCW (COM Callable Wrapper)](com-callable-wrapper.md)
 - [Récapitulatif de la conversion d’une bibliothèque de types en assembly](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
-- [Importation d’une bibliothèque de types sous la forme d’un assembly](../../framework/interop/importing-a-type-library-as-an-assembly.md)
+- [Importation d'une bibliothèque de types sous la forme d'un assembly](../../framework/interop/importing-a-type-library-as-an-assembly.md)

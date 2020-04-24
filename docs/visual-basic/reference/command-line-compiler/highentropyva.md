@@ -23,7 +23,7 @@ Indique si un exécutable 64 bits ou un exécutable marqué par l’option [de c
   
 ## <a name="arguments"></a>Arguments  
  `+` &#124; `-`  
- Ce paramètre est facultatif. L’option est désactivée par défaut ou si vous spécifiez `-highentropyva-`. L’option est activée si vous spécifiez `-highentropyva` ou `-highentropyva+`.  
+ Facultatif. L’option est désactivée par défaut ou si `-highentropyva-`vous spécifiez. L’option est activée si vous `-highentropyva` spécifiez `-highentropyva+`ou.  
   
 ## <a name="remarks"></a>Notes  
  Si vous spécifiez cette option, les versions compatibles du noyau Windows peuvent utiliser un degré d’entropie plus élevé lorsque le noyau rend aléatoire la disposition de l’espace d’adressage d’un processus dans le cadre de l’ASLR. Si le noyau utilise un degré d’entropie plus élevé, un plus grand nombre d’adresses peuvent être allouées aux régions de mémoire, telles que les piles et les tas. Par conséquent, il est plus difficile de deviner l’emplacement d’une zone de mémoire.  

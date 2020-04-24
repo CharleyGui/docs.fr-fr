@@ -1,5 +1,5 @@
 ---
-title: Stockage des données à et lecture à partir du Clipboard
+title: Stockage des données dans le presse-papiers et lecture
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Clipboard, storing data to (My.Computer.Clipboard)
@@ -62,7 +62,7 @@ Le Presse-papiers peut être utilisé pour stocker des données, telles que du t
   
  [!code-vb[VbVbcnMyClipboard#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#2)]  
   
- Utilisez la méthode <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData%2A> pour écrire des données dans le Presse-papiers. Cet exemple `DataObject` `dataChunk` écrit le Clipboard dans `specialFormat`le format personnalisé .  
+ Utilisez la méthode <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData%2A> pour écrire des données dans le Presse-papiers. Cet exemple écrit `DataObject` `dataChunk` dans le presse-papiers au format `specialFormat`personnalisé.  
   
  [!code-vb[VbVbcnMyClipboard#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#7)]  
   
@@ -78,5 +78,5 @@ Le Presse-papiers peut être utilisé pour stocker des données, telles que du t
 - <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>
 - <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetAudioStream%2A>
 - <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetDataObject%2A>
-- [Comment : Lire les données d’objets à partir d’un fichier XML](../../../programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)
-- [Comment : Écrire des données d’objet à un fichier XML](../../../programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)
+- [Comment : lire des données d’objet à partir d’un fichier XML](../../../programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)
+- [Comment : écrire des données d’objet dans un fichier XML](../../../programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)

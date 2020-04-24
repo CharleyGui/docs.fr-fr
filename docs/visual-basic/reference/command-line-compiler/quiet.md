@@ -30,7 +30,7 @@ Empêche le compilateur d'afficher le code pour les erreurs et les avertissement
 
 Par défaut, l'option `-quiet` n'est pas activée. Lorsque le compilateur signale une erreur ou un avertissement lié à la syntaxe, il renvoie également la ligne à partir du code source. Pour les applications qui analysent la sortie du compilateur, il peut être plus commode pour le compilateur de générer uniquement le texte du diagnostic.
 
-Dans l’exemple suivant, `Module1` génère une erreur qui comprend le code source lorsqu’elle est compilée sans `-quiet`.
+Dans l’exemple suivant, `Module1` génère une erreur qui comprend le code source lorsqu’elle `-quiet`est compilée sans.
 
 ```vb
 Module Module1
@@ -56,7 +56,7 @@ E:\test\t2.vb(3) : error BC30451: Name 'x' is not declared.
 ```
 
 > [!NOTE]
-> L’option `-quiet` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.
+> L' `-quiet` option n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.
 
 ## <a name="example"></a>Exemple
 

@@ -13,7 +13,7 @@ ms.locfileid: "75711075"
 # <a name="converting-net-framework-types-to-strings"></a>Conversion de types .NET Framework en chaînes
 Si vous voulez convertir un type .NET Framework en chaîne, utilisez la méthode **ToString**. La méthode **ToString** retourne une représentation sous forme de chaîne du type passé. Le tableau suivant répertorie les types .NET Framework qui retournent une chaîne dans un format qui mappe aux spécifications de schéma XML (XSD).  
   
-|Type .NET Framework|Type de chaîne de retour|  
+|Type .NET Framework|Type de chaîne de retour|  
 |-------------------------|--------------------------|  
 |Boolean|"true", "false"|  
 |Single.PositiveInfinity|"INF"|  
@@ -21,9 +21,9 @@ Si vous voulez convertir un type .NET Framework en chaîne, utilisez la méthod
 |Double.PositiveInfinity|"INF"|  
 |Double.NegativeInfinity|"-INF"|  
 |DateTime|Le format est yyyy-MM-ddTHH:mm:sszzzzzz et ses sous-ensembles.|  
-|TimeSpan|Le format est PnYnMnTnHnMnS. Par exemple, `P2Y10M15DT10H30M20S` est la durée de 2 années, 10 mois, 15 jours, 10 heures, 30 minutes et 20 secondes.|  
+|Timespan|Le format est PnYnMnTnHnMnS. Par exemple, `P2Y10M15DT10H30M20S` est la durée de 2 années, 10 mois, 15 jours, 10 heures, 30 minutes et 20 secondes.|  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Conversion des types de données XML](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)
-- [Conversion de chaînes en types de données .NET Framework](../../../../docs/standard/data/xml/converting-strings-to-dotnet-data-types.md)
+- [Conversion de chaînes en types de données .NET Framework](../../../../docs/standard/data/xml/converting-strings-to-dotnet-data-types.md)

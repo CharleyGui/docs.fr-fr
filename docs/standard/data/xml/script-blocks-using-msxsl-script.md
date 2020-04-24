@@ -66,7 +66,7 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
 ### <a name="importing-namespaces-and-assemblies"></a>Importation d'espaces de noms et d'assemblys  
  La classe <xref:System.Xml.Xsl.XslCompiledTransform> prédéfinit un ensemble d'assemblys et d'espaces de noms qui sont pris en charge par défaut par l'élément `msxsl:script`. Cependant, vous pouvez utiliser des classes et des membres appartenant à un espace de noms qui ne figure pas sur la liste prédéfinie en important l'assembly et l'espace de noms dans un bloc `msxsl:script`.  
   
-#### <a name="assemblies"></a>Assemblies  
+#### <a name="assemblies"></a>Assemblys  
  Les deux assemblys suivants sont référencés par défaut :  
   
 - System.dll  
@@ -89,10 +89,10 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
   
  L'attribut `name` contient le nom de l'assembly et l'attribut `href` contient le chemin de l'assembly. Le nom de l'assembly peut être un nom complet, comme « System.Data, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 », ou un nom court, comme « System.Web ».  
   
-#### <a name="namespaces"></a>Espaces de noms des  
+#### <a name="namespaces"></a>Espaces de noms  
  Les espaces de noms suivants sont inclus par défaut :  
   
-- System  
+- Système  
   
 - System.Collection  
   

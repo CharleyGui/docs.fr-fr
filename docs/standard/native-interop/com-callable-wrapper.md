@@ -60,7 +60,7 @@ Outre l’exposition des interfaces qui sont implémentées explicitement par un
 
 |Interface|Description|
 |---------------|-----------------|
-|L’interface de classe\_*(nom de classe)*|Interface, exposée par le runtime et non définie explicitement, qui expose l'ensemble des interfaces, méthodes, propriétés et champs publics qui sont exposés explicitement sur un objet managé.|
+|L’interface\_de classe (*className*)|Interface, exposée par le runtime et non définie explicitement, qui expose l'ensemble des interfaces, méthodes, propriétés et champs publics qui sont exposés explicitement sur un objet managé.|
 |**IConnectionPoint** et **IConnectionPointContainer**|Interface pour les objets qui émettent des événements basés sur les délégués (interface pour l'inscription des abonnés d'événements).|
 |**IDispatchEx** (.NET Framework uniquement)|Interface fournie par le runtime si la classe implémente **IExpando**. L’interface **IDispatchEx** est une extension de l’interface **IDispatch** qui, contrairement à l’interface **IDispatch**, permet l’énumération, l’ajout, la suppression et l’appel de la casse des membres.|
 |**IEnumVARIANT**|Interface pour les classes de type collection, qui énumère les objets d’une collection si la classe implémente **IEnumerable**.|
@@ -195,7 +195,7 @@ Si votre application exige des appels à liaison anticipée à des méthodes d�
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>
-- [Emballages COM](com-wrappers.md)
+- [Wrappers COM](com-wrappers.md)
 - [Exposition de composants .NET Framework à COM](../../framework/interop/exposing-dotnet-components-to-com.md)
 - [Exposition de composants .NET Core à COM](../../core/native-interop/expose-components-to-com.md)
 - [Qualification des types .NET pour l’interopérabilité](qualify-net-types-for-interoperation.md)

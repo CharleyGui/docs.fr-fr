@@ -73,8 +73,8 @@ Pour plus d’informations sur les emplacements de sortie par défaut, consultez
 - <xref:System.Diagnostics.ConsoleTraceListener>
 - <xref:System.Diagnostics>
 - [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Comment : enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
-- [Guide pratique : écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
-- [Procédure pas à pas : modification de l'emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [Procédure : journaliser des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [Procédure : écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
+- [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
 - [ETW Events in the .NET Framework](../../../../framework/performance/etw-events.md)
-- [Dépannage : écouteurs de journalisation](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)
+- [Résolution des problèmes : Écouteurs de journalisation](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)

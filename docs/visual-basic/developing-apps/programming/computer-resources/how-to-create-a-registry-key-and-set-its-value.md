@@ -1,5 +1,5 @@
 ---
-title: 'Comment : créer une clé de Registre et définir sa valeur'
+title: 'Procédure : créer une clé de Registre et définir sa valeur'
 ms.date: 07/20/2015
 f1_keywords:
 - RegistryKey.CreateSubKey
@@ -40,7 +40,7 @@ Vous pouvez utiliser la méthode `CreateSubKey` de l’objet `My.Computer.Regist
 
     [!code-vb[VbResourceTasks#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#14)]
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Cet exemple crée la clé de Registre `MyTestKey` sous HKEY_CURRENT_USER, puis affecte `This is a test value` comme valeur de chaîne `MyTestKeyValue`.
 

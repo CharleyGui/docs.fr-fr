@@ -18,22 +18,22 @@ L’objet `My.Computer.Ports` fournit une propriété et une méthode pour accé
   
 ## <a name="in-this-section"></a>Dans cette section  
 
- [Comment : afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)  
+ [Procédure : afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)  
  Montre comment afficher les ports série disponibles.  
   
- [Comment : passer des appels avec des modems attachés aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)  
+ [Procédure : passer des appels avec des modems attachés aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)  
  Montre comment utiliser un modem attaché au port série d’un ordinateur.  
   
- [Comment : envoyer des chaînes aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)  
+ [Procédure : envoyer des chaînes aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)  
  Montre comment envoyer une chaîne au port série d’un ordinateur.  
   
- [Comment : recevoir des chaînes des ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)  
+ [Procédure : recevoir des chaînes provenant des ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)  
  Montre comment recevoir une chaîne du port série d’un ordinateur.  
   
  [Opérations relatives au port dans .NET Framework](../../../../visual-basic/developing-apps/programming/computer-resources/port-operations-in-the-net-framework.md)  
  Montre comment utiliser le .NET Framework pour effectuer des opérations relatives au port.  
   
-## <a name="reference"></a>Informations de référence  
+## <a name="reference"></a>Référence  
 
  <xref:Microsoft.VisualBasic.Devices.Ports>  
  Décrit l’objet `My.Computer.Ports` et ses membres.  

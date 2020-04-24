@@ -1,5 +1,5 @@
 ---
-title: 'Dépannage : écouteurs de journalisation'
+title: 'Résolution des problèmes : Écouteurs de journalisation'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - event logs, troubleshooting
@@ -43,4 +43,4 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Procédure pas à pas : détermination de l'emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
+- [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)

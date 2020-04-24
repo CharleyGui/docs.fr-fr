@@ -1,5 +1,5 @@
 ---
-title: 'Comment: lire à partir de fichiers texte à largeur fixe'
+title: 'Comment : lire des fichiers texte de largeur fixe'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - fixed-width text file
@@ -39,7 +39,7 @@ L’objet `TextFieldParser` permet d’analyser facilement et efficacement les f
   
      [!code-vb[VbFileIORead#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#12)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
  Cet exemple lit le fichier `test.log`.  
   

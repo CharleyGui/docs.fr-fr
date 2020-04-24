@@ -20,7 +20,7 @@ L’interopérabilité des exceptions de code non managé est uniquement prise e
 
 ## <a name="setjmplongjmp-behaviors"></a>Comportements setjmp/longjmp
 
-L’interopérabilité avec les fonctions `setjmp` et `longjmp` C n’est pas prise en charge. Vous ne pouvez pas utiliser `longjmp` pour ignorer des frames managés.
+L' `setjmp` interopérabilité `longjmp` avec les fonctions et C n’est pas prise en charge. Vous ne pouvez `longjmp` pas utiliser pour ignorer des frames managés.
 
 Pour plus d’informations, consultez [la documentation longjmp](https://docs.microsoft.com/cpp/c-runtime-library/reference/longjmp).
 

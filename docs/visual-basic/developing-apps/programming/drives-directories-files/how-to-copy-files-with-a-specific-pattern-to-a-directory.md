@@ -36,7 +36,7 @@ La méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> 
   
      [!code-vb[VbVbcnMyFileSystem#89](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#89)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
  L’exemple suivant, qui présente les extraits de code ci-dessus dans leur intégralité, copie tous les fichiers .rtf du répertoire spécifié dans le répertoire nommé `testdirectory`.  
   

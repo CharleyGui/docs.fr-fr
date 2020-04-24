@@ -121,7 +121,7 @@ End Class
 
 Les rappels de sérialisation correspondent à un mécanisme qui fournit des raccordements lors du processus de sérialisation/désérialisation au niveau de quatre points.
 
-|Attribute|Lorsque la méthode associée est appelée|Utilisation courante|
+|Attribut|Lorsque la méthode associée est appelée|Utilisation courante|
 |---------------|------------------------------------------|-----------------|
 |<xref:System.Runtime.Serialization.OnDeserializingAttribute>|Avant la désérialisation.\*|Initialisez des valeurs par défaut pour les champs facultatifs.|
 |<xref:System.Runtime.Serialization.OnDeserializedAttribute>|Après la désérialisation.|Corrigez des valeurs de champ facultatives selon le contenu d'autres champs.|

@@ -204,7 +204,7 @@ public class Sample
 } // End class
 ```  
   
- Pour plus d'informations, consultez les rubriques <xref:System.Xml.XmlNodeChangedEventArgs> et <xref:System.Xml.XmlNodeChangedEventHandler>.  
+ Pour plus d’informations, consultez <xref:System.Xml.XmlNodeChangedEventArgs> et <xref:System.Xml.XmlNodeChangedEventHandler>.  
   
 ## <a name="see-also"></a>Voir aussi
 

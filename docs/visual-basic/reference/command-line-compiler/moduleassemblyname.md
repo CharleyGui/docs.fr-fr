@@ -26,25 +26,25 @@ Spécifie le nom de l’assembly dont ce module doit faire partie.
   
 |Terme|Définition|  
 |---|---|  
-|`assembly_name`|Nom de l’assembly dont ce module fera partie.|  
+|`assembly_name`|Nom de l'assembly dont ce module fera partie.|  
   
 ## <a name="remarks"></a>Notes  
- Le compilateur traite l’option `-moduleassemblyname` uniquement si l’option `-target:module` a été spécifiée. Le compilateur crée alors un module. Le module créé par le compilateur est valide uniquement pour l’assembly spécifié avec l’option `-moduleassemblyname`. Si vous placez le module dans un assembly différent, des erreurs d’exécution se produisent.  
+ Le compilateur traite l' `-moduleassemblyname` option uniquement si l' `-target:module` option a été spécifiée. Le compilateur crée alors un module. Le module créé par le compilateur est valide uniquement pour l’assembly spécifié avec `-moduleassemblyname` l’option. Si vous placez le module dans un assembly différent, des erreurs d’exécution se produisent.  
   
- L’option `-moduleassemblyname` est nécessaire uniquement lorsque les conditions suivantes sont remplies :  
+ L' `-moduleassemblyname` option est requise uniquement lorsque les conditions suivantes sont remplies :  
   
-- Un type de données dans le module a besoin d’accéder à un type de `Friend` dans un assembly référencé.  
+- Un type de données dans le module a besoin d' `Friend` accéder à un type dans un assembly référencé.  
   
 - L’assembly référencé a accordé un accès d’assembly friend à l’assembly dans lequel le module sera généré.  
   
  Pour plus d’informations sur la création d’un module, consultez [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md). Pour plus d’informations sur les assemblys friend, consultez [assemblys friend](../../../standard/assembly/friend.md).  
   
 > [!NOTE]
-> L’option `-moduleassemblyname` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lorsque vous compilez à partir d’une invite de commandes.  
+> L' `-moduleassemblyname` option n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lorsque vous compilez à partir d’une invite de commandes.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour générer un assembly multifichier](../../../framework/app-domains/build-multifile-assembly.md)
+- [Comment : générer un assembly multifichier](../../../framework/app-domains/build-multifile-assembly.md)
 - [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-cible (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
 - [-main](../../../visual-basic/reference/command-line-compiler/main.md)

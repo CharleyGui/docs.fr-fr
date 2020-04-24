@@ -48,7 +48,7 @@ Si vous envisagez d’exposer les types d’un assembly à des applications COM
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.ComVisibleAttribute>
-- [Exposition de composants .NET Framework à COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
-- [Présentation de l’interface de classe](com-callable-wrapper.md#introducing-the-class-interface)
+- [Exposition de composants .NET Framework à COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
+- [Présentation de l'interface de classe](com-callable-wrapper.md#introducing-the-class-interface)
 - [Application d’attributs d’interopérabilité](../../../docs/standard/native-interop/apply-interop-attributes.md)
 - [Empaquetage d’un assembly .NET Framework pour COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md)

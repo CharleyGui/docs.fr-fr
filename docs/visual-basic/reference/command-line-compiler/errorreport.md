@@ -29,13 +29,13 @@ Cette option offre un moyen pratique de signaler un Visual Basic erreur interne 
 
 La capacité d’un utilisateur à envoyer des rapports dépend des autorisations de la stratégie de l’ordinateur et de l’utilisateur.
 
-Le tableau suivant résume l’effet de l’option `-errorreport`.
+Le tableau suivant résume l’effet de l' `-errorreport` option.
 
 |Option|Comportement|
 |---|---|
 |`prompt`|Si une erreur interne du compilateur se produit, une boîte de dialogue s’affiche pour vous permettre d’afficher les données exactes collectées par le compilateur. Vous pouvez déterminer s’il existe des informations sensibles dans le rapport d’erreurs et si vous souhaitez les envoyer à Microsoft. Si vous décidez de l’envoyer et que les paramètres de stratégie de l’ordinateur et de l’utilisateur l’autorisent, le compilateur envoie les données à Microsoft.|
-|`queue`|Met le rapport d’erreurs en file d’attente. Lorsque vous vous connectez avec des privilèges d’administrateur, vous pouvez signaler les échecs depuis la dernière connexion (vous n’êtes pas invité à envoyer des rapports pour les défaillances plus d’une fois tous les trois jours). Il s’agit du comportement par défaut lorsque l’option `-errorreport` n’est pas spécifiée.|
-|`send`|Si une erreur interne du compilateur se produit et que les paramètres de stratégie de l’ordinateur et de l’utilisateur l’autorisent, le compilateur envoie les données à Microsoft.<br /><br /> L’option `-errorreport:send` tente d’envoyer automatiquement des informations sur les erreurs à Microsoft si la création de rapports est activée par les paramètres du système [rapport d’erreurs Windows](/windows/desktop/wer/windows-error-reporting) . |
+|`queue`|Met le rapport d’erreurs en file d’attente. Lorsque vous vous connectez avec des privilèges d’administrateur, vous pouvez signaler les échecs depuis la dernière connexion (vous n’êtes pas invité à envoyer des rapports pour les défaillances plus d’une fois tous les trois jours). Il s’agit du comportement par défaut `-errorreport` lorsque l’option n’est pas spécifiée.|
+|`send`|Si une erreur interne du compilateur se produit et que les paramètres de stratégie de l’ordinateur et de l’utilisateur l’autorisent, le compilateur envoie les données à Microsoft.<br /><br /> L’option `-errorreport:send` tente d’envoyer automatiquement des informations sur les erreurs à Microsoft si la création de rapports est activée par les paramètres système [rapport d’erreurs Windows](/windows/desktop/wer/windows-error-reporting) . |
 |`none`|Si une erreur interne du compilateur se produit, elle n’est pas collectée ou envoyée à Microsoft.|
 
 Le compilateur envoie des données qui incluent la pile au moment de l’erreur, qui comprend généralement du code source. Si `-errorreport` est utilisé avec l’option [-bugreport (](../../../visual-basic/reference/command-line-compiler/bugreport.md) , alors l’intégralité du fichier source est envoyée.
@@ -43,11 +43,11 @@ Le compilateur envoie des données qui incluent la pile au moment de l’erreur,
 Cette option est utilisée de manière optimale avec l’option [-bugreport (](../../../visual-basic/reference/command-line-compiler/bugreport.md) , car elle permet aux ingénieurs Microsoft de reproduire plus facilement l’erreur.
 
 > [!NOTE]
-> L’option `-errorreport` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.
+> L' `-errorreport` option n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.
 
 ## <a name="example"></a>Exemple
 
-Le code suivant tente de compiler `T2.vb`, et si le compilateur rencontre une erreur interne du compilateur, il vous invite à envoyer le rapport d’erreurs à Microsoft.
+Le code suivant tente de compiler `T2.vb`et, si le compilateur rencontre une erreur interne du compilateur, il vous invite à envoyer le rapport d’erreurs à Microsoft.
 
 ```console
 vbc -errorreport:prompt t2.vb

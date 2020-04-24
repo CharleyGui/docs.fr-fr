@@ -42,13 +42,13 @@ Une entité est une déclaration établissant qu'un certain nom doit être utili
   
  Il existe diverses sortes d'entités. Le diagramme suivant montre la répartition des types d'entité et leur terminologie.  
   
- ![Organigramme de la hiérarchie des types d’entités](../../../../docs/standard/data/xml/media/entity-hierarchy.gif "Entity_hierarchy")  
+ ![organigramme de la hiérarchie des types d'entités](../../../../docs/standard/data/xml/media/entity-hierarchy.gif "Entity_hierarchy")  
   
  Par défaut, l’implémentation par Microsoft .NET Framework de DOM (Document Object Model) XML préserve les références d’entités et ne développe pas les entités lors du chargement du XML. Cela a pour effet de créer, lorsqu'un document est chargé dans le DOM, un nœud **XmlEntityReference** contenant la variable de référence `&publisher;`, avec des nœuds enfants représentant le contenu de l'entité déclarée dans la DTD.  
   
  En se basant sur la déclaration d'entité `<!ENTITY publisher "Microsoft Press">`, le diagramme suivant montre les nœuds **XmlEntity** et **XmlText** créés à partir de cette déclaration.  
   
- ![nœuds créés à partir de la déclaration d’entité](../../../../docs/standard/data/xml/media/xml-entitydeclaration-node2.png "xml_entitydeclaration_node2")  
+ ![nœuds créés à partir de la déclaration d'entité](../../../../docs/standard/data/xml/media/xml-entitydeclaration-node2.png "xml_entitydeclaration_node2")  
   
  Les différences qu'il existe entre les références d'entité développées et non développées concernent les nœuds qui sont générés dans l'arborescence DOM en mémoire. La différence dans les nœuds générés est expliquée dans les rubriques [Conservation des références d’entité](../../../../docs/standard/data/xml/entity-references-are-preserved.md) et [Développement sans conservation des références d’entité](../../../../docs/standard/data/xml/entity-references-are-expanded-and-not-preserved.md).  
   

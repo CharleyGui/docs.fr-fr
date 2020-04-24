@@ -1,5 +1,5 @@
 ---
-title: 'Dépannage : lecture et écriture de fichiers texte'
+title: 'Résolution des problèmes : lecture et écriture dans des fichiers texte'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - troubleshooting file I/O
@@ -40,5 +40,5 @@ Cette rubrique aborde les problèmes courants rencontrés lors de l’utilisatio
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - [Lecture à partir de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [Rédaction de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [Écrire dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
 - [Analyse des fichiers texte avec l'objet TextFieldParser](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)

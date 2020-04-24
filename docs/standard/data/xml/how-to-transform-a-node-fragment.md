@@ -1,5 +1,5 @@
 ---
-title: "Procédure : transformation d'un fragment de nœud"
+title: 'Procédure : transformer un fragment de nœud'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 01/07/2020
 ms.locfileid: "75710815"
 ---
-# <a name="how-to-transform-a-node-fragment"></a>Procédure : transformation d'un fragment de nœud
+# <a name="how-to-transform-a-node-fragment"></a>Procédure : transformer un fragment de nœud
 Lorsque vous transformez des données contenues dans un objet <xref:System.Xml.XmlDocument> ou <xref:System.Xml.XPath.XPathDocument>, les transformations XSLT s'appliquent à l'ensemble du document. En d'autres termes, si vous passez dans un autre nœud que le nœud racine du document, cela n'empêche pas le processus de transformation d'accéder à tous les nœuds dans le document chargé. Pour transformer un fragment de nœud, vous devez créer un objet séparé contenant uniquement le fragment de nœud et transmettre cet objet à la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>.  
   
 ## <a name="procedures"></a>Procédures  
@@ -34,7 +34,7 @@ Lorsque vous transformez des données contenues dans un objet <xref:System.Xml.X
  [!code-csharp[XSLT_NodeFrag#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XSLT_NodeFrag/CS/xslt_frag.cs#1)]
  [!code-vb[XSLT_NodeFrag#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XSLT_NodeFrag/VB/xslt_frag.vb#1)]  
   
-### <a name="input"></a>Input  
+### <a name="input"></a>Entrée  
   
 ##### <a name="booksxml"></a>books.xml  
  [!code-xml[XML_Core_Files#1](../../../../samples/snippets/xml/VS_Snippets_Data/XML_Core_Files/XML/books.xml#1)]  

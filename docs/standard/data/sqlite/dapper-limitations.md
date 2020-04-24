@@ -13,17 +13,17 @@ ms.locfileid: "75901209"
 
 Il existe quelques limitations que vous devez connaître lors de l’utilisation de Microsoft. Data. sqlite avec [dapper](https://stackexchange.github.io/Dapper/).
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 Les noms de paramètres SQLite sont sensibles à la casse. Assurez-vous que les noms de paramètres utilisés dans SQL correspondent à la casse des propriétés de l’objet anonyme. Le problème [#18861](https://github.com/dotnet/efcore/issues/18861) améliorer cette expérience.
 
-Dapper s’attend également à ce que les paramètres utilisent le préfixe `@`. Les autres préfixes ne fonctionneront pas.
+Dapper s’attend également à ce que les `@` paramètres utilisent le préfixe. Les autres préfixes ne fonctionneront pas.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/DapperSample/Program.cs?name=snippet_Parameter)]
 
 ## <a name="data-types"></a>Types de données
 
-Dapper lit les valeurs à l’aide de l’indexeur SqliteDataReader. Le type de retour de cet indexeur est Object, ce qui signifie qu’il ne renverra jamais de valeurs de type long, double, String ou Byte []. Pour plus d’informations, consultez [types de données](types.md). Dapper gère la plupart des conversions entre ces types primitifs et les autres. Malheureusement, il ne gère pas `DateTimeOffset`, `Guid`ou `TimeSpan`. Créez des gestionnaires de types si vous souhaitez utiliser ces types dans vos résultats.
+Dapper lit les valeurs à l’aide de l’indexeur SqliteDataReader. Le type de retour de cet indexeur est Object, ce qui signifie qu’il ne renverra jamais de valeurs de type long, double, String ou Byte []. Pour plus d’informations, consultez [types de données](types.md). Dapper gère la plupart des conversions entre ces types primitifs et les autres. Malheureusement, il ne gère `DateTimeOffset`pas `Guid`, ou `TimeSpan`. Créez des gestionnaires de types si vous souhaitez utiliser ces types dans vos résultats.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/DapperSample/Program.cs?name=snippet_TypeHandlers)]
 

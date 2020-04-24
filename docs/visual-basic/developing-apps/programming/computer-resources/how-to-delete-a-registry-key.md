@@ -1,5 +1,5 @@
 ---
-title: 'Comment : supprimer une clé de Registre'
+title: 'Procédure : supprimer une clé de Registre'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.DeleteSetting

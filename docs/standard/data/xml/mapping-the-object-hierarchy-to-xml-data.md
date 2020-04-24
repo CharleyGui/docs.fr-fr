@@ -30,7 +30,7 @@ Quand un document XML est en mémoire, sa représentation conceptuelle est une a
   
  L’entrée est représentée dans la mémoire sous la forme de l’arborescence de nœuds suivante, avec la propriété de type de nœud assignée :  
   
- ![exemple d’arborescence de nœuds](../../../../docs/standard/data/xml/media/simple-xml.gif "Simple_XML")  
+ ![Exemple d'arborescence de nœuds](../../../../docs/standard/data/xml/media/simple-xml.gif "Simple_XML")  
 Représentation sous forme d’arborescence de nœuds book et title  
   
  L'élément `book` devient un objet **XmlElement**, tout comme l'élément suivant `title` devient aussi un objet **XmlElement**, tandis que le contenu de l'élément devient un objet **XmlText**. Si vous examinez les méthodes et propriétés de **XmlElement**, vous constaterez qu'elles sont différentes des méthodes et propriétés disponibles pour un objet **XmlText**. Il est donc vital de connaître le type de nœud dans lequel le balisage XML se transforme, puisque ce type de nœud détermine les actions possibles.  
@@ -184,7 +184,7 @@ public class Sample
   
  En prenant l'entrée une ligne à la fois et en utilisant la sortie générée par le code, vous pouvez vous servir du tableau suivant pour analyser quel nœud test a généré quelles lignes de sortie, ce qui vous aidera à déterminer plus clairement quelles données XML se sont transformées en quelle catégorie de types de nœud.  
   
-|Entrée|Sortie|Type de nœud test|  
+|Entrée|Output|Type de nœud test|  
 |-----------|------------|--------------------|  
 |\<?xml version="1.0"?>|\<?xml version='1.0'?>|XmlNodeType.XmlDeclaration|  
 |\<!-- Exemple de document XML -->|\<!--Exemple de document XML -->|XmlNodeType.Comment|  

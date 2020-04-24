@@ -84,6 +84,6 @@ Cette rubrique décrit comment utiliser la classe <xref:System.Xml.Schema.XmlSch
 
 - <xref:System.Xml.Schema.XmlSchemaInference>
 - [Modèle Objet du schéma (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
-- [Inférence d’un schéma XML](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)
-- [Règles pour l’inférence de types et de structure de nœud de schéma](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)
-- [Règles pour l’inférence de types simples](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)
+- [Inférence d'un schéma XML](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)
+- [Règles pour l'inférence de types et de structure de nœud de schéma](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)
+- [Règles relatives à l'inférence de types simples](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)

@@ -14,7 +14,7 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75711127"
 ---
 # <a name="changing-namespace-declarations-in-an-xml-document"></a>Modification des déclarations d'espace de noms dans un document XML
-**XmlDocument** expose des déclarations d'espace de noms et des attributs **xmlns** dans le cadre du modèle objet de document. Ceux-ci sont stockés dans **XmlDocument**. C'est pourquoi le document peut préserver l'emplacement de ces attributs quand il est enregistré. Modifier ces attributs n’a aucun effet sur les propriétés **Name**, **NamespaceURI** et **Prefix** d’autres nœuds figurant déjà dans l’arborescence. Par exemple, si vous chargez le document suivant, l’élément `test` contient **NamespaceURI** `123.`  
+**XmlDocument** expose des déclarations d'espace de noms et des attributs **xmlns** dans le cadre du modèle objet de document. Ceux-ci sont stockés dans **XmlDocument**. C'est pourquoi le document peut préserver l'emplacement de ces attributs quand il est enregistré. Modifier ces attributs n’a aucun effet sur les propriétés **Name**, **NamespaceURI** et **Prefix** d’autres nœuds figurant déjà dans l’arborescence. Par exemple, si vous chargez le document suivant, l'élément `test` a un **NamespaceURI** `123.`.  
   
 ```xml  
 <test xmlns="123"/>  
@@ -30,7 +30,7 @@ doc.documentElement.RemoveAttribute("xmlns")
 doc.documentElement.RemoveAttribute("xmlns");  
 ```  
   
- De même, si vous ajoutez un attribut de `xmlns` différent à l’élément `doc` comme suit, l’élément `test` possède encore le **NamespaceURI** `123`.  
+ De même, si vous ajoutez un autre attribut `xmlns` à l'élément `doc` comme suit, l'élément `test` a encore le **NamespaceURI** `123`.  
   
 ```vb  
 doc.documentElement.SetAttribute("xmlns","456")

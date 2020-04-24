@@ -11,7 +11,7 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75710672"
 ---
 # <a name="modifying-nodes-content-and-values-in-an-xml-document"></a>Modification de nœuds, de contenu et de valeurs dans un document XML
-Il existe plusieurs façons de modifier les nœuds et le contenu d'un document. Vous pouvez effectuer les tâches suivantes :  
+Il existe plusieurs façons de modifier les nœuds et le contenu d'un document. Vous pouvez :  
   
 - Modifier la valeur des nœuds à l'aide de la propriété <xref:System.Xml.XmlNode.Value%2A>.  
   
@@ -27,13 +27,13 @@ Il existe plusieurs façons de modifier les nœuds et le contenu d'un document. 
   
 |Type de nœud|Données modifiées|  
 |---------------|------------------|  
-|Attribute|Valeur de l'attribut.|  
+|Attribut|Valeur de l'attribut.|  
 |CDATASection.|Contenu de CDATASection.|  
-|Commentaire|Contenu du commentaire.|  
-|ProcessingInstruction|Contenu, cible exclue.|  
-|Text|Contenu du texte.|  
+|Comment|Contenu du commentaire.|  
+|ProcessingInstruction ;|Contenu, cible exclue.|  
+|Texte|Contenu du texte.|  
 |XmlDeclaration|Contenu de la déclaration, balisage `<?xml` et `?>` exclu.|  
-|Whitespace|Valeur de l'espace blanc. Vous pouvez définir la valeur de l'un des quatre caractères d'espace blanc XML reconnus : espace, tabulation, CR ou LF.|  
+|Espaces|Valeur de l'espace blanc. Vous pouvez définir la valeur de l'un des quatre caractères d'espace blanc XML reconnus : espace, tabulation, CR ou LF.|  
 |SignificantWhitespace|Valeur de l'espace blanc significatif. Vous pouvez définir la valeur de l'un des quatre caractères d'espace blanc XML reconnus : espace, tabulation, CR ou LF.|  
   
  Tout type de nœud absent de ce tableau n'est pas un type de nœud valide pour recevoir une valeur. La définition d'une valeur à ces types de nœud lève un objet <xref:System.InvalidOperationException>.  

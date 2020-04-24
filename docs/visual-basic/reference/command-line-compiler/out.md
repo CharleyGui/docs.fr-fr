@@ -26,19 +26,19 @@ Spécifie le nom du fichier de sortie.
   
 |Terme|Définition|  
 |---|---|  
-|`filename`|Requis. Nom du fichier de sortie que le compilateur crée. Si le nom de fichier contient un espace, mettez-le entre guillemets ("").|  
+|`filename`|Obligatoire. Nom du fichier de sortie que le compilateur crée. Si le nom de fichier contient un espace, mettez-le entre guillemets ("").|  
   
 ## <a name="remarks"></a>Notes  
- Spécifiez le nom complet et l’extension du fichier à créer. Si vous ne le faites pas, le fichier. exe utilise son nom dans le fichier de code source contenant la procédure `Sub Main`, et le fichier. dll prend son nom dans le premier fichier de code source.  
+ Spécifiez le nom complet et l’extension du fichier à créer. Si vous ne le faites pas, le fichier. exe utilise son nom dans le fichier de code source `Sub Main` contenant la procédure, et le fichier. dll prend son nom dans le premier fichier de code source.  
   
- Si vous spécifiez un nom de fichier sans extension. exe ou. dll, le compilateur ajoute automatiquement l’extension pour vous, en fonction de la valeur spécifiée pour l’option de compilateur `-target`.  
+ Si vous spécifiez un nom de fichier sans extension. exe ou. dll, le compilateur ajoute automatiquement l’extension pour vous, en fonction de la valeur spécifiée pour `-target` l’option du compilateur.  
   
 |Pour définir l’environnement de développement intégré de Visual Studio|  
 |---|  
-|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **application** .<br />3. modifiez la valeur dans la zone nom de l' **assembly** .|  
+|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet** , cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **application** .<br />3. modifiez la valeur dans la zone nom de l' **assembly** .|  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `T2.vb` et crée `T2.exe`de fichier de sortie.  
+ Le code suivant compile `T2.vb` et crée le fichier `T2.exe`de sortie.  
   
 ```console
 vbc t2.vb -out:t3.exe  

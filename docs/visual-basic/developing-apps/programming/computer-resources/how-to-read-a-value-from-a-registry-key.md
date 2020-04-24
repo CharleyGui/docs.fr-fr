@@ -1,5 +1,5 @@
 ---
-title: "Comment : lire une valeur à partir d'une clé de Registre"
+title: 'Procédure : lire une valeur à partir d’une clé de Registre'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - registry keys [Visual Basic], determining if a value exists in

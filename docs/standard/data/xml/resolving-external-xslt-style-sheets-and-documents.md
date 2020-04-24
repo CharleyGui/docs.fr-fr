@@ -43,11 +43,11 @@ Lors d'une transformation, il peut s'avérer nécessaire de résoudre des ressou
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Transformations XSLT avec la classe XslTransform](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)
-- [Implémentation du processeur XSLT par la classe XslTransform](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
-- [Sorties de XslTransform](../../../../docs/standard/data/xml/outputs-from-an-xsltransform.md)
-- [Transformations XSLT sur différents magasins](../../../../docs/standard/data/xml/xslt-transformations-over-different-stores.md)
-- [XsltArgumentList pour les paramètres de feuille de style et les objets d’extension](../../../../docs/standard/data/xml/xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)
+- [Transformations XSLT avec la classe XslTransform](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)
+- [Implémentation du processeur XSLT par la classe XslTransform](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+- [Sorties à partir de XslTransform](../../../../docs/standard/data/xml/outputs-from-an-xsltransform.md)
+- [Transformations XSLT sur différents magasins](../../../../docs/standard/data/xml/xslt-transformations-over-different-stores.md)
+- [XsltArgumentList pour les paramètres de feuille de style et les objets d'extension](../../../../docs/standard/data/xml/xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)
 - [Écriture de scripts de feuille de style XSLT avec \<msxsl:script](../../../../docs/standard/data/xml/xslt-stylesheet-scripting-using-msxsl-script.md)
 - [Prise en charge de la fonction msxsl:node-set()](../../../../docs/standard/data/xml/support-for-the-msxsl-node-set-function.md)
 - [XPathNavigator dans les transformations](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)

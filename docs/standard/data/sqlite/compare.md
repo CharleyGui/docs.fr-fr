@@ -48,18 +48,18 @@ Microsoft. Data. sqlite a beaucoup moins de mots clés de [chaîne de connexion]
 
 | Mot clé          | Alternative                                         |
 | ---------------- | --------------------------------------------------- |
-| Taille du cache       | `PRAGMA cache_size = <pages>` d’envoi                  |
+| Taille de cache       | Envoyer`PRAGMA cache_size = <pages>`                  |
 | Délai d’expiration par défaut  | Utiliser la propriété DefaultTimeout sur SqliteConnection |
-| FailIfMissing    | Utiliser `Mode=ReadWrite`.                                |
+| FailIfMissing    | Utilisez `Mode=ReadWrite`.                                |
 | FullUri          | Utiliser le mot clé de source de données                         |
-| Mode Journal     | `PRAGMA journal_mode = <mode>` d’envoi                 |
-| Format hérité    | `PRAGMA legacy_file_format = 1` d’envoi                |
-| Nombre maximal de pages   | `PRAGMA max_page_count = <pages>` d’envoi              |
-| Taille de la page        | `PRAGMA page_size = <bytes>` d’envoi                   |
-| Lecture seule        | Utiliser `Mode=ReadOnly`.                                 |
-| Synchronous      | `PRAGMA synchronous = <mode>` d’envoi                  |
-| URI              | Utiliser le mot clé de source de données                         |
-| UseUTF16Encoding | `PRAGMA encoding = 'UTF-16'` d’envoi                   |
+| Mode Journal     | Envoyer`PRAGMA journal_mode = <mode>`                 |
+| Format hérité    | Envoyer`PRAGMA legacy_file_format = 1`                |
+| Nombre maximal de pages   | Envoyer`PRAGMA max_page_count = <pages>`              |
+| Taille de la page        | Envoyer`PRAGMA page_size = <bytes>`                   |
+| Lecture seule        | Utilisez `Mode=ReadOnly`.                                 |
+| Synchrone      | Envoyer`PRAGMA synchronous = <mode>`                  |
+| Uri              | Utiliser le mot clé de source de données                         |
+| UseUTF16Encoding | Envoyer`PRAGMA encoding = 'UTF-16'`                   |
 
 ## <a name="authorization"></a>Autorisation
 

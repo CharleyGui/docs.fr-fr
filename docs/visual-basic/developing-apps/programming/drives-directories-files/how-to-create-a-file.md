@@ -16,7 +16,7 @@ ms.locfileid: "74348793"
 
 Cet exemple crée un fichier texte vide à l’emplacement spécifié à l’aide de la méthode <xref:System.IO.File.Create%2A> de la classe <xref:System.IO.File>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
  [!code-vb[VbFileIOMisc#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/class2.vb#1)]  
   

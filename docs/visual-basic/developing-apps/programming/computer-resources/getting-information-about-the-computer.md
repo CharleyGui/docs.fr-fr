@@ -15,7 +15,7 @@ ms.locfileid: "74348121"
 
 L’objet `My.Computer.Info` fournit des propriétés pour obtenir des informations sur la mémoire, les assemblys chargés, le nom et le système d’exploitation de l’ordinateur.
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
 Ce tableau liste les tâches couramment exécutées par le biais de l’objet `My.Computer.Info` et pointe vers des rubriques qui expliquent comment effectuer chacune d’elles.
 

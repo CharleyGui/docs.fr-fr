@@ -13,7 +13,7 @@ ms.locfileid: "75706264"
 
 Le **marshaling** est le processus qui consiste à transformer les types quand ils doivent naviguer entre du code managé et du code natif.
 
-La raison pour laquelle le marshaling est nécessaire est que les types diffèrent entre le code managé et le code non managé. Dans le code managé, par exemple, vous avez un `String`, alors que dans les chaînes universelles non managées peuvent être Unicode (« larges »), non-Unicode, terminées par null, ASCII, etc. Par défaut, le sous-système P/Invoke tente d’effectuer la bonne chose en fonction du comportement par défaut, décrit dans cet article. Toutefois, dans les cas où vous avez besoin de plus de contrôle, vous pouvez employer l’attribut [MarshalAs](xref:System.Runtime.InteropServices.MarshalAsAttribute) pour spécifier le type attendu du côté du code non managé. Par exemple, pour que la chaîne soit envoyée sous forme de chaîne ANSI terminée par Null, vous pouvez procéder ainsi :
+La raison pour laquelle le marshaling est nécessaire est que les types diffèrent entre le code managé et le code non managé. Dans le code managé, par exemple, vous avez `String`un, tandis que dans les chaînes universelles non managées peuvent être Unicode (« larges »), non-Unicode, terminé par null, ASCII, etc. Par défaut, le sous-système P/Invoke tente d’effectuer la bonne chose en fonction du comportement par défaut, décrit dans cet article. Toutefois, dans les cas où vous avez besoin de plus de contrôle, vous pouvez employer l’attribut [MarshalAs](xref:System.Runtime.InteropServices.MarshalAsAttribute) pour spécifier le type attendu du côté du code non managé. Par exemple, pour que la chaîne soit envoyée sous forme de chaîne ANSI terminée par Null, vous pouvez procéder ainsi :
 
 ```csharp
 [DllImport("somenativelibrary.dll")]
@@ -65,7 +65,7 @@ Le tableau suivant présente les règles de marshaling par défaut propres à Wi
 | `System.ArgIterator` | `va_list` | Non autorisé |
 | `System.Collections.IEnumerator` | `IEnumVARIANT*` | Non autorisé |
 | `System.Collections.IEnumerable` | `IDispatch*` | Non autorisé |
-| `System.DateTimeOffset` | `int64_t` représentant le nombre de cycles depuis le 1 er janvier 1601 à minuit || `int64_t` représentant le nombre de cycles depuis le 1 er janvier 1601 à minuit |
+| `System.DateTimeOffset` |  représentant le nombre de cycles depuis le 1er janvier 1601 à minuit ||  représentant le nombre de cycles depuis le 1er janvier 1601 à minuit |
 
 Certains types ne peuvent être marshalés que comme paramètres, et non comme champs. :
 

@@ -36,7 +36,7 @@ Cette section explique comment effectuer des tâches qui impliquent l’écritur
  [Comment : écrire du texte dans des fichiers à l'aide de Streamwriter](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)  
  Montre comment écrire dans un fichier avec un objet <xref:System.IO.StreamWriter?displayProperty=nameWithType>.  
   
-## <a name="reference"></a>Informations de référence  
+## <a name="reference"></a>Référence  
 
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  Décrit l’objet `My.Computer.FileSystem`, ses méthodes et ses propriétés.  

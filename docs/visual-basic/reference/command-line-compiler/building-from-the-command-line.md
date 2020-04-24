@@ -29,7 +29,7 @@ Visual Basic fournit un compilateur de ligne de commande comme alternative à la
 Pour compiler les fichiers sources à partir de l’IDE de Visual Studio, choisissez la commande **générer** dans le menu **générer** .
 
 > [!TIP]
-> Quand vous générez des fichiers projet à l’aide de l’IDE de Visual Studio, vous pouvez afficher des informations sur la commande **vbc** associée et ses commutateurs dans la fenêtre sortie. Pour afficher ces informations, ouvrez la [boîte de dialogue Options, projets et solutions, générer et exécuter](/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run), puis définissez le niveau de détail de la **sortie de génération du projet MSBuild** sur **normal** ou sur un niveau de détail plus élevé. Pour plus d’informations, consultez l’article [Comment : afficher, enregistrer et configurer des fichiers journaux de génération](/visualstudio/ide/how-to-view-save-and-configure-build-log-files).
+> Quand vous générez des fichiers projet à l’aide de l’IDE de Visual Studio, vous pouvez afficher des informations sur la commande **vbc** associée et ses commutateurs dans la fenêtre sortie. Pour afficher ces informations, ouvrez la [boîte de dialogue Options, projets et solutions, générer et exécuter](/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run), puis définissez le niveau de détail de la **sortie de génération du projet MSBuild** sur **normal** ou sur un niveau de détail plus élevé. Pour plus d’informations, consultez [Comment : afficher, enregistrer et configurer des fichiers journaux de génération](/visualstudio/ide/how-to-view-save-and-configure-build-log-files).
 
 Vous pouvez compiler des fichiers projet (. vbproj) à partir d’une invite de commandes à l’aide de MSBuild. Pour plus d’informations, consultez informations de [référence sur la ligne de commande](/visualstudio/msbuild/msbuild-command-line-reference) et [procédure pas à pas : utilisation de MSBuild](/visualstudio/msbuild/walkthrough-using-msbuild).
 
@@ -38,16 +38,16 @@ Vous pouvez compiler des fichiers projet (. vbproj) à partir d’une invite de 
 [Comment : appeler le compilateur de ligne de commande](../../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md) \
 Décrit comment appeler le compilateur de ligne de commande à l’invite MS-DOS ou à partir d’un sous-répertoire spécifique.
 
-[Exemples de lignes de commande de Compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md) \
+[Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md) \
 Fournit une liste d’exemples de lignes de commande que vous pouvez modifier pour votre propre usage.
 
 ## <a name="related-sections"></a>Sections connexes
 
-[Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md) \
+[Visual Basic du compilateur de ligne de commande](../../../visual-basic/reference/command-line-compiler/index.md) \
 Fournit des listes d’options du compilateur classées par ordre alphabétique ou par objectif.
 
- \ de [compilation conditionnelle](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)
+[Compilation conditionnelle](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md) \
 Décrit comment compiler des sections de code particulières.
 
-[Génération et nettoyage de solutions et de projets dans Visual Studio](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) \
+[Génération et nettoyage de projets et de solutions dans Visual Studio](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) \
 Décrit comment organiser ce qui sera inclus dans les différentes builds, choisir des propriétés de projet et vérifier que les projets sont générés dans le bon ordre.

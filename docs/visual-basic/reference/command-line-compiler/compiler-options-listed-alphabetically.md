@@ -16,7 +16,7 @@ Le compilateur de ligne de commande Visual Basic est fourni comme alternative à
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
   
-|Option|Fonction|  
+|Option|Objectif|  
 |------------|-------------|  
 |[@ (spécifier un fichier réponse)](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)|Spécifie un fichier réponse.|  
 |[-?](../../../visual-basic/reference/command-line-compiler/help.md)|Affiche les options du compilateur. Cette commande est identique à l'option `-help`. Aucune compilation n'a lieu.|  
@@ -34,15 +34,15 @@ Le compilateur de ligne de commande Visual Basic est fourni comme alternative à
 |[-doc](../../../visual-basic/reference/command-line-compiler/doc.md)|Traite les commentaires de documentation pour les diriger vers un fichier XML.|  
 |[-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|Spécifie comment le compilateur Visual Basic doit signaler les erreurs internes du compilateur.|  
 |[-filealign](../../../visual-basic/reference/command-line-compiler/filealign.md)|Spécifie où les sections du fichier de sortie doivent être alignées.|  
-|[-help](../../../visual-basic/reference/command-line-compiler/help.md)|Affiche les options du compilateur. Cette commande est identique à l'option `-?`. Aucune compilation n'a lieu.|  
+|[-aide](../../../visual-basic/reference/command-line-compiler/help.md)|Affiche les options du compilateur. Cette commande est identique à l'option `-?`. Aucune compilation n'a lieu.|  
 |[-highentropyva](../../../visual-basic/reference/command-line-compiler/highentropyva.md)|Indique si un fichier exécutable particulier prend en charge la fonctionnalité de randomisation du format d'espace d'adresse (ASLR) de forte entropie.|  
-|[-imports](../../../visual-basic/reference/command-line-compiler/imports.md)|Importe un espace de noms à partir d'un assembly spécifié.|  
+|[-importations](../../../visual-basic/reference/command-line-compiler/imports.md)|Importe un espace de noms à partir d'un assembly spécifié.|  
 |[-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)|Spécifie un nom de conteneur de clé pour une paire de clés afin d'attribuer un nom fort à un assembly.|  
 |[-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)|Spécifie un fichier qui contient une clé ou une paire de clés afin d'attribuer un nom fort à un assembly.|  
-|[-langversion](../../../visual-basic/reference/command-line-compiler/langversion.md)|Spécifiez la version de&#124;langue&#124;:&#124;9&#124;9,0&#124;10 10,0 11 11,0.|  
-|[-libpath](../../../visual-basic/reference/command-line-compiler/libpath.md)|Spécifie l’emplacement des assemblys référencés par l’option [-Reference](../../../visual-basic/reference/command-line-compiler/reference.md) .|  
+|[-langversion](../../../visual-basic/reference/command-line-compiler/langversion.md)|Spécifiez la version de langue : 9&#124;9,0&#124;10&#124;10,0&#124;11&#124;11,0.|  
+|[-LIBPATH](../../../visual-basic/reference/command-line-compiler/libpath.md)|Spécifie l’emplacement des assemblys référencés par l’option [-Reference](../../../visual-basic/reference/command-line-compiler/reference.md) .|  
 |[-linkresource](../../../visual-basic/reference/command-line-compiler/linkresource.md)|Crée un lien à une ressource managée.|  
-|[-main](../../../visual-basic/reference/command-line-compiler/main.md)|Spécifie la classe qui contient le `Sub Main` procédure à utiliser au démarrage.|  
+|[-main](../../../visual-basic/reference/command-line-compiler/main.md)|Spécifie la classe qui contient `Sub Main` la procédure à utiliser au démarrage.|  
 |[-moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)|Spécifie le nom de l'assembly dont un module fera partie.|  
 |`-modulename:<string>`|Spécifiez le nom du module source.|  
 |[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|Définit le compilateur pour cibler le .NET Compact Framework.|  
@@ -54,7 +54,7 @@ Le compilateur de ligne de commande Visual Basic est fourni comme alternative à
 |[-optimize](../../../visual-basic/reference/command-line-compiler/optimize.md)|Active/désactive l'optimisation du code.|  
 |[-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)|Spécifie si les comparaisons de chaînes doivent être binaires ou utiliser une sémantique spécifique aux paramètres régionaux.|  
 |[-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)|Applique la déclaration explicite des variables.|  
-|[-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)|Permet l'utilisation de l'inférence de type de variable locale dans les déclarations de variable.|  
+|[-optioninfer (](../../../visual-basic/reference/command-line-compiler/optioninfer.md)|Permet l'utilisation de l'inférence de type de variable locale dans les déclarations de variable.|  
 |[-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)|Applique une sémantique de langage stricte.|  
 |[-out](../../../visual-basic/reference/command-line-compiler/out.md)|Spécifie un fichier de sortie.|  
 |<code>-parallel[+&#124;-]</code>|Indique s'il faut utiliser la build simultanée (+).|  
@@ -64,10 +64,10 @@ Le compilateur de ligne de commande Visual Basic est fourni comme alternative à
 |[-recurse](../../../visual-basic/reference/command-line-compiler/recurse.md)|Recherche des fichiers sources à compiler dans les sous-répertoires.|  
 |[-reference](../../../visual-basic/reference/command-line-compiler/reference.md)|Importe des métadonnées à partir d'un assembly.|  
 |[-refonly](refonly-compiler-option.md)|Génère uniquement un assembly de référence.|
-|[/refout](refout-compiler-option.md)|Spécifie le chemin de sortie d’un assembly de référence.|
-|[-removeintchecks](../../../visual-basic/reference/command-line-compiler/removeintchecks.md)|Désactive les contrôles de dépassement sur les entiers.|  
+|[-refout](refout-compiler-option.md)|Spécifie le chemin de sortie d’un assembly de référence.|
+|[-removeintchecks (](../../../visual-basic/reference/command-line-compiler/removeintchecks.md)|Désactive les contrôles de dépassement sur les entiers.|  
 |[-resource](../../../visual-basic/reference/command-line-compiler/resource.md)|Incorpore une ressource managée dans un assembly.|  
-|[-rootnamespace](../../../visual-basic/reference/command-line-compiler/rootnamespace.md)|Spécifie un espace de noms pour toutes les déclarations de type.|  
+|[-RootNamespace](../../../visual-basic/reference/command-line-compiler/rootnamespace.md)|Spécifie un espace de noms pour toutes les déclarations de type.|  
 |`-ruleset:<file>`|Spécifiez un fichier ruleset qui désactive des diagnostics spécifiques.|  
 |[-sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md)|Spécifie l'emplacement de Mscorlib.dll et de Microsoft.VisualBasic.dll.|  
 |[-subsystemversion](../../../visual-basic/reference/command-line-compiler/subsystemversion.md)|Spécifie la version minimale du sous-système utilisable par le fichier exécutable généré.|  

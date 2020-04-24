@@ -40,8 +40,8 @@ Le Modèle Objet du schéma (SOM) de Microsoft .NET Framework est une API riche 
 
 - [Lecture et écriture de schémas XML](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)
 - [Création de schémas XML](../../../../docs/standard/data/xml/building-xml-schemas.md)
-- [Parcours des schémas XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
+- [Traversée de schémas XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
 - [Modification de schémas XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)
 - [Inclusion ou importation de schémas XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)
 - [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
-- [Infoset de post-compilation de schéma](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)
+- [Jeu d'informations de post-compilation de schéma](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)

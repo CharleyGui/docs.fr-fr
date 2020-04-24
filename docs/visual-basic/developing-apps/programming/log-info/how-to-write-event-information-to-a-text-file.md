@@ -1,5 +1,5 @@
 ---
-title: 'Comment : écrire des informations sur des événements dans un fichier texte'
+title: 'Procédure : écrire des informations sur les événements dans un fichier texte'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - event logs [Visual Studio], writing event information
@@ -72,4 +72,4 @@ Une fois l’écouteur de journalisation du fichier configuré pour un assembly,
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
 - [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Comment : enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [Procédure : journaliser des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)

@@ -11,7 +11,7 @@ ms.locfileid: "75901281"
 ---
 # <a name="online-backup"></a>Sauvegarde en ligne
 
-SQLite peut sauvegarder des fichiers de base de données pendant que l’application est en cours d’exécution. Cette fonctionnalité est disponible dans Microsoft. Data. sqlite comme méthode <xref:Microsoft.Data.Sqlite.SqliteConnection.BackupDatabase%2A> sur `SqliteConnection`.
+SQLite peut sauvegarder des fichiers de base de données pendant que l’application est en cours d’exécution. Cette fonctionnalité est disponible dans Microsoft. Data. sqlite comme <xref:Microsoft.Data.Sqlite.SqliteConnection.BackupDatabase%2A> méthode sur. `SqliteConnection`
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/BackupSample/Program.cs?name=snippet_Backup)]
 

@@ -1,5 +1,5 @@
 ---
-title: "Comment : enregistrer des messages lorsque l'application démarre ou s'arrête"
+title: 'Procédure : enregistrer des messages quand l’application démarre ou s’arrête'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - event logs, shutdown
@@ -22,7 +22,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
   
 ### <a name="to-access-the-applications-event-handler-code"></a>Pour accéder au code du gestionnaire d’événements de l’application  
   
-1. Sélectionnez un projet dans l' **Explorateur de solutions**. Sur le menu du **projet,** choisissez **Propriétés**.  
+1. Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **projet** , choisissez **Propriétés**.  
   
 2. Cliquez sur l’onglet **Application** .  
   
@@ -54,7 +54,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
   
      [!code-vb[VbVbalrMyApplicationLog#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/MyEventsFake.vb#2)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
  Vous pouvez utiliser le **Concepteur de projets** pour accéder aux événements de l’application dans l’éditeur de code. Pour plus d'informations, consultez [Application Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
@@ -65,5 +65,5 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
-- [Page Application, Concepteur de projets (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)
+- [Page Application, Concepteur de projet (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)
 - [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)

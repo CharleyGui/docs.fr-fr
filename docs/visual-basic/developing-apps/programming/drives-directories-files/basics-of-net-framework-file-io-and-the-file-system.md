@@ -61,11 +61,11 @@ Le tableau suivant répertorie les tâches couramment accomplies avec un flux :
 
 |À|Consultez|
 |---|---|
-|Lire et écrire dans un fichier de données|[Comment : lire et écrire dans un fichier de données créé récemment](../../../../standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|
-|Lire le texte d’un fichier|[Comment : lire du texte dans un fichier](../../../../standard/io/how-to-read-text-from-a-file.md)|
-|Écrire du texte dans un fichier|[Comment : écrire du texte dans un fichier](../../../../standard/io/how-to-write-text-to-a-file.md)|
-|Lire les caractères d’une chaîne|[Comment : lire les caractères d'une chaîne](../../../../standard/io/how-to-read-characters-from-a-string.md)|
-|Écrire des caractères dans une chaîne|[Comment : écrire des caractères dans une chaîne](../../../../standard/io/how-to-write-characters-to-a-string.md)|
+|Lire et écrire dans un fichier de données|[Procédure : lire et écrire dans un fichier de données créé récemment](../../../../standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|
+|Lire le texte d’un fichier|[Procédure : lire le texte d’un fichier](../../../../standard/io/how-to-read-text-from-a-file.md)|
+|Écrire du texte dans un fichier|[Procédure : écrire du texte dans un fichier](../../../../standard/io/how-to-write-text-to-a-file.md)|
+|Lire les caractères d’une chaîne|[Procédure : lire les caractères d’une chaîne](../../../../standard/io/how-to-read-characters-from-a-string.md)|
+|Écrire des caractères dans une chaîne|[Procédure : écrire des caractères dans une chaîne](../../../../standard/io/how-to-write-characters-to-a-string.md)|
 |Chiffrer les données|[Chiffrement de données](../../../../standard/security/encrypting-data.md)|
 |Déchiffrer des données|[Déchiffrement de données](../../../../standard/security/decrypting-data.md)|
 
@@ -79,7 +79,7 @@ Le tableau suivant répertorie les tâches qui impliquent l’accès aux fichier
 
 |À|Consultez|
 |---|---|
-|Ouvrir un fichier journal et y ajouter du texte|[Comment : ouvrir un fichier journal et y ajouter des éléments](../../../../standard/io/how-to-open-and-append-to-a-log-file.md)|
+|Ouvrir un fichier journal et y ajouter du texte|[Procédure : ouvrir un fichier journal et y ajouter des éléments](../../../../standard/io/how-to-open-and-append-to-a-log-file.md)|
 |Déterminer les attributs d’un fichier|<xref:System.IO.FileAttributes>|
 
 ## <a name="file-permissions"></a>Autorisations de fichiers
@@ -94,13 +94,13 @@ Le tableau suivant répertorie les tâches couramment associées au stockage de 
 
 |À|Consultez|
 |---|---|
-|Créer un magasin isolé|[Obtention de magasins](../../../../standard/io/how-to-obtain-stores-for-isolated-storage.md)|
-|Énumérer les magasins isolés|[Énumération de magasins](../../../../standard/io/how-to-enumerate-stores-for-isolated-storage.md)|
-|Supprimer un magasin isolé|[Suppression de magasins](../../../../standard/io/how-to-delete-stores-in-isolated-storage.md)|
-|Créer un fichier ou un répertoire dans un stockage isolé|[Comment : créer des fichiers et des répertoires dans un stockage isolé](../../../../standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|
-|Rechercher un fichier dans un stockage isolé|[Comment : rechercher des fichiers et des répertoires existants dans un stockage isolé](../../../../standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|
-|Lire ou écrire dans un fichier dans un stockage isolé|[Lecture et écriture dans des fichiers](../../../../standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|
-|Supprimer un fichier ou un répertoire dans un stockage isolé|[Comment : supprimer des fichiers et des répertoires dans un stockage isolé](../../../../standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|
+|Créer un magasin isolé|[Procédure : obtenir des magasins pour le stockage isolé](../../../../standard/io/how-to-obtain-stores-for-isolated-storage.md)|
+|Énumérer les magasins isolés|[Procédure : énumérer des magasins pour le stockage isolé](../../../../standard/io/how-to-enumerate-stores-for-isolated-storage.md)|
+|Supprimer un magasin isolé|[Procédure : supprimer des magasins dans le stockage isolé](../../../../standard/io/how-to-delete-stores-in-isolated-storage.md)|
+|Créer un fichier ou un répertoire dans un stockage isolé|[Procédure : créer des fichiers et des répertoires dans un stockage isolé](../../../../standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|
+|Rechercher un fichier dans un stockage isolé|[Procédure : rechercher des fichiers et des répertoires existants dans un stockage isolé](../../../../standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|
+|Lire ou écrire dans un fichier dans un stockage isolé|[Procédure : lire et écrire des fichiers dans un stockage isolé](../../../../standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|
+|Supprimer un fichier ou un répertoire dans un stockage isolé|[Procédure : supprimer des fichiers et des répertoires dans un stockage isolé](../../../../standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|
 
 ## <a name="file-events"></a>Événements de fichiers
 
@@ -108,7 +108,7 @@ Le composant <xref:System.IO.FileSystemWatcher> vous permet de surveiller les mo
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Composing Streams](../../../../standard/io/composing-streams.md)
-- [Fichier et stream I/O](../../../../standard/io/index.md)
-- [E/S sur fichier asynchrones](../../../../standard/io/asynchronous-file-i-o.md)
+- [Composition de flux](../../../../standard/io/composing-streams.md)
+- [E/s de fichier et de flux](../../../../standard/io/index.md)
+- [E/s de fichier asynchrones](../../../../standard/io/asynchronous-file-i-o.md)
 - [Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/classes-used-in-net-framework-file-io-and-the-file-system.md)

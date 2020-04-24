@@ -27,10 +27,10 @@ L'espace de noms <xref:System.Xml?displayProperty=nameWithType> offre une repré
  [Accès à des données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
  Décrit les méthodes de la classe <xref:System.Xml.XPath.XPathNavigator> utilisées pour parcourir des nœuds, extraire des données XML et accéder à des données XML fortement typées dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument>.  
   
- [Modification de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)  
+ [Modification de données XML à l'aide de XPathNavigator](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)  
  Décrit les méthodes de la classe <xref:System.Xml.XPath.XPathNavigator> utilisées pour insérer, modifier et supprimer des nœuds et des valeurs d'un document XML contenu dans un objet <xref:System.Xml.XmlDocument>.  
   
- [Validation de schéma à l’aide de XPathNavigator](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)  
+ [Validation de schéma à l'aide de XPathNavigator](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)  
  Décrit les méthodes de validation du contenu XML d'un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument>.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -38,4 +38,4 @@ L'espace de noms <xref:System.Xml?displayProperty=nameWithType> offre une repré
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [Traitement de données XML à l’aide du modèle DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
+- [Traitement de données XML à l'aide du modèle DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)

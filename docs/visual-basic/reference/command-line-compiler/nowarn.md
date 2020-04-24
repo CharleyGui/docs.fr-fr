@@ -26,21 +26,21 @@ Supprime la capacité du compilateur à générer des avertissements.
   
 |Terme|Définition|  
 |---|---|  
-|`numberList`|facultatif. Liste délimitée par des virgules des numéros d’ID d’avertissement que le compilateur doit supprimer. Si les ID d’avertissement ne sont pas spécifiés, tous les avertissements sont supprimés.|  
+|`numberList`|Facultatif. Liste délimitée par des virgules des numéros d’ID d’avertissement que le compilateur doit supprimer. Si les ID d’avertissement ne sont pas spécifiés, tous les avertissements sont supprimés.|  
   
 ## <a name="remarks"></a>Notes  
- L’option `-nowarn` indique que le compilateur ne génère pas d’avertissements. Pour supprimer un avertissement individuel, fournissez l’ID d’avertissement à l’option `-nowarn` après le signe deux-points. Séparez les numéros d’avertissement par des virgules.  
+ Avec `-nowarn` l’option, le compilateur ne génère pas d’avertissements. Pour supprimer un avertissement individuel, fournissez l’ID d’avertissement `-nowarn` à l’option qui suit le signe deux-points. Séparez les numéros d’avertissement par des virgules.  
   
- Vous devez spécifier uniquement la partie numérique de l’identificateur d’avertissement. Par exemple, si vous souhaitez supprimer BC42024, l’avertissement pour les variables locales inutilisées, spécifiez `-nowarn:42024`.  
+ Vous devez spécifier uniquement la partie numérique de l’identificateur d’avertissement. Par exemple, si vous souhaitez supprimer BC42024, l’avertissement pour les variables locales inutilisées, `-nowarn:42024`spécifiez.  
   
  Pour plus d’informations sur les numéros d’ID d’avertissement, consultez [Configuration des avertissements dans Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
 |Pour définir-nowarn dans l’environnement de développement intégré de Visual Studio|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Activez la case à cocher **Désactiver tous les avertissements** pour désactiver tous les avertissements.<br />     ou<br />     Pour désactiver un avertissement spécifique, cliquez sur **aucun** dans la liste déroulante adjacente à l’avertissement.|  
+|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet** , cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **compiler** .<br />3. activez la case à cocher **Désactiver tous les avertissements** pour désactiver tous les avertissements.<br />     - ou -<br />     Pour désactiver un avertissement spécifique, cliquez sur **aucun** dans la liste déroulante adjacente à l’avertissement.|  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `T2.vb` et n’affiche pas d’avertissements.  
+ Le code suivant compile `T2.vb` et n’affiche aucun avertissement.  
   
 ```console
 vbc -nowarn t2.vb  

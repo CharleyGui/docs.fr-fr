@@ -22,7 +22,7 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
   
  .NET offre trois technologies de sérialisation principales qui sont optimisées pour différents scénarios de sérialisation. Le tableau suivant répertorie ces technologies et les principaux types .NET qui leur sont associés.  
   
-|Technology|Classes concernées|Remarques|  
+|Technology|Classes concernées|Notes|  
 |----------------|----------------------|-----------|  
 |Sérialisation du contrat de données|<xref:System.Runtime.Serialization.DataContractAttribute><br /><br /> <xref:System.Runtime.Serialization.DataMemberAttribute><br /><br /> <xref:System.Runtime.Serialization.DataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.NetDataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer><br /><br /> <xref:System.Runtime.Serialization.ISerializable>|Persistance générale<br /><br /> Services web<br /><br /> JSON|  
 |Sérialisation XML|<xref:System.Xml.Serialization.XmlSerializer>|Format XML <br />avec contrôle total|  
@@ -139,10 +139,10 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation de contrats de données](../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+- [Using Data Contracts](../../../docs/framework/wcf/feature-details/using-data-contracts.md)
 - [Sérialiseur de contrat de données](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)
 - [Types pris en charge par le sérialiseur de contrat de données](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
 - [Sérialisation binaire](binary-serialization.md)
 - [.NET Remoting](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
-- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
+- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
 - [Sécurité et sérialisation](../../../docs/framework/misc/security-and-serialization.md)

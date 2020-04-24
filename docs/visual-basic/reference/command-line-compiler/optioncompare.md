@@ -28,7 +28,7 @@ Spécifie la façon dont sont effectuées les comparaisons de chaînes.
 
 ## <a name="remarks"></a>Notes
 
-Vous pouvez spécifier `-optioncompare` dans l’une des deux formes suivantes : `-optioncompare:binary` pour utiliser des comparaisons de chaînes binaires, et `-optioncompare:text` pour utiliser des comparaisons de chaînes de texte. Par défaut, le compilateur utilise `-optioncompare:binary`.
+Vous pouvez spécifier `-optioncompare` dans l’une des deux formes `-optioncompare:binary` suivantes : pour utiliser des comparaisons de `-optioncompare:text` chaînes binaires et pour utiliser des comparaisons de chaînes de texte. Par défaut, le compilateur utilise `-optioncompare:binary`.
 
 Dans Microsoft Windows, la page de codes actuelle détermine l’ordre de tri binaire. Un ordre de tri binaire standard est le suivant :
 
@@ -40,7 +40,7 @@ Les comparaisons de chaînes basées sur du texte sont basées sur un ordre de t
 
 ### <a name="to-set--optioncompare-in-the-visual-studio-ide"></a>Pour définir-optioncompare dans l’IDE de Visual Studio
 
-1. Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**.
+1. Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet** , cliquez sur **Propriétés**.
 
 2. Cliquez sur l’onglet **Compiler**.
 
@@ -63,7 +63,7 @@ vbc -optioncompare:binary projFile.vb
 - [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
 - [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
-- [-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
+- [-optioninfer (](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
 - [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
 - [Option Compare (instruction)](../../../visual-basic/language-reference/statements/option-compare-statement.md)
 - [Valeurs par défaut VB, Projets, boîte de dialogue Options](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

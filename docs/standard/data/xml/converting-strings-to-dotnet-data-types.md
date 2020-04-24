@@ -76,9 +76,9 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
   
 |Paramètre d'entrée de chaîne valide|Type de sortie .NET Framework|  
 |----------------------------------|--------------------------------|  
-|« true »|Boolean.True|  
+|"true"|Boolean.True|  
 |"1"|Boolean.True|  
-|« false »|Boolean.False|  
+|"false"|Boolean.False|  
 |"0"|Boolean.False|  
   
  Examinons, par exemple, le code XML suivant :  
@@ -134,4 +134,4 @@ writer.WriteElementString("Infinity", XmlConvert.ToString(value));
 ## <a name="see-also"></a>Voir aussi
 
 - [Conversion des types de données XML](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)
-- [Conversion de types .NET Framework en chaînes](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)
+- [Conversion de types .NET Framework en chaînes](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)

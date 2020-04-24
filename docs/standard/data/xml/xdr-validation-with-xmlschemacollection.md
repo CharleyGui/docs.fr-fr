@@ -20,7 +20,7 @@ Si le schéma XDR (XML-Data Reduced) par rapport auquel doit s’effectuer la va
 > [!IMPORTANT]
 > La classe <xref:System.Xml.Schema.XmlSchemaCollection> est désormais obsolète et a été remplacée par la classe <xref:System.Xml.Schema.XmlSchemaSet>. Pour plus d’informations sur la classe <xref:System.Xml.Schema.XmlSchemaSet>, consultez [XmlSchemaSet pour la compilation de schémas](xmlschemaset-for-schema-compilation.md).
 
-Par exemple, si l'élément racine du document XML est `<bookstore>`, lorsque le schéma est ajouté à **XmlSchemaCollection**, il référence le même espace de noms comme suit :
+Par exemple, si l'élément racine du document XML est `<bookstore xmlns="urn:newbooks-schema">`, lorsque le schéma est ajouté à **XmlSchemaCollection**, il référence le même espace de noms comme suit :
 
 ```vb
 xsc.Add("urn:newbooks-schema", "newbooks.xdr")
@@ -131,7 +131,7 @@ namespace ValidationSample
 }
 ```
 
-Le code suivant présente le contenu du fichier d’entrée, *HeadCount.xml*, à valider :
+L’exemple suivant présente le contenu du fichier d’entrée, *HeadCount. xml*, à valider :
 
 ```xml
 <!--Load HeadCount.xdr in SchemaCollection for Validation-->

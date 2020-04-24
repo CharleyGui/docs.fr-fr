@@ -38,7 +38,7 @@ Les collections de nœuds correspondent à l'un des quatre types de données de 
 </xsl:stylesheet>  
 ```  
   
-## <a name="input"></a>Input  
+## <a name="input"></a>Entrée  
   
 ```xml  
 <bookstore>  
@@ -75,5 +75,5 @@ History of Trenton Vol 3
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.XPath.XPathNodeIterator>
-- [Transformations XSLT avec la classe XslTransform](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)
-- [Implémentation du processeur XSLT par la classe XslTransform](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+- [Transformations XSLT avec la classe XslTransform](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)
+- [Implémentation du processeur XSLT par la classe XslTransform](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

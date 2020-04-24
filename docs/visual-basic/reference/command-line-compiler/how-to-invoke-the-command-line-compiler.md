@@ -28,9 +28,9 @@ Vous pouvez appeler le compilateur de ligne de commande en tapant le nom de son 
 
 3. Appelez le Invite de commandes développeur pour Visual Studio.
 
-4. Sur la ligne de commande, tapez `vbc.exe` *sourceFileName* , puis appuyez sur entrée.
+4. Sur la ligne de commande, `vbc.exe` tapez *sourceFileName* , puis appuyez sur entrée.
 
-    Par exemple, si vous avez stocké votre code source dans un répertoire appelé `SourceFiles`, vous ouvrez l’invite de commandes et tapez `cd SourceFiles` pour accéder à ce répertoire. Si le répertoire contenait un fichier source nommé `Source.vb`, vous pouvez le compiler en tapant `vbc.exe Source.vb`.
+    Par exemple, si vous avez stocké votre code source dans un `SourceFiles`répertoire appelé, vous ouvrez l’invite de commandes `cd SourceFiles` et tapez pour changer ce répertoire. Si le répertoire contient un fichier source nommé `Source.vb`, vous pouvez le compiler en tapant `vbc.exe Source.vb`.
 
 ## <a name="to-set-the-path-environment-variable-to-the-compiler-for-the-windows-command-prompt"></a>Pour définir la variable d’environnement PATH sur le compilateur de l’invite de commandes Windows
 
@@ -54,9 +54,9 @@ Vous pouvez appeler le compilateur de ligne de commande en tapant le nom de son 
 
 1. Dans le menu **Démarrer** , cliquez sur le dossier **accessoires** , puis ouvrez l' **invite de commandes Windows**.
 
-2. Sur la ligne de commande, tapez `vbc.exe`*sourceFileName* , puis appuyez sur entrée.
+2. Sur la ligne de commande, `vbc.exe`tapez *sourceFileName* , puis appuyez sur entrée.
 
-     Par exemple, si vous avez stocké votre code source dans un répertoire appelé `SourceFiles`, vous ouvrez l’invite de commandes et tapez `cd SourceFiles` pour accéder à ce répertoire. Si le répertoire contenait un fichier source nommé `Source.vb`, vous pouvez le compiler en tapant `vbc.exe Source.vb`.
+     Par exemple, si vous avez stocké votre code source dans un `SourceFiles`répertoire appelé, vous ouvrez l’invite de commandes `cd SourceFiles` et tapez pour changer ce répertoire. Si le répertoire contient un fichier source nommé `Source.vb`, vous pouvez le compiler en tapant `vbc.exe Source.vb`.
 
 ## <a name="see-also"></a>Voir aussi
 

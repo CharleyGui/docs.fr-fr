@@ -1,5 +1,5 @@
 ---
-title: 'Comment : télécharger un fichier'
+title: 'Procédure : télécharger un fichier'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - downloading Internet resources [Visual Basic], files
@@ -59,5 +59,5 @@ Les conditions ci-dessous peuvent générer une exception.
 
 - <xref:Microsoft.VisualBasic.Devices.Network>
 - <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A>
-- [Comment : Télécharger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)
+- [Procédure : charger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)
 - [Comment : analyser des chemins d'accès](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)

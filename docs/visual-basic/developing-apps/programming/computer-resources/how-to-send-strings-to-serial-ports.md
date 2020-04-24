@@ -1,5 +1,5 @@
 ---
-title: 'Comment : envoyer des chaînes aux ports série'
+title: 'Procédure : envoyer des chaînes aux ports série'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - ports, sending strings to
@@ -18,7 +18,7 @@ ms.locfileid: "74345584"
 
 Cette rubrique explique comment utiliser `My.Computer.Ports` pour envoyer des chaînes aux ports série de l’ordinateur en Visual Basic.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
  Cet exemple envoie une chaîne au port série COM1. Vous devrez peut-être utiliser un autre port série de votre ordinateur.  
   
@@ -38,11 +38,11 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour envoyer des ch
 
  Cet exemple suppose que l’ordinateur utilise `COM1`. Pour plus de souplesse, le code doit autoriser l’utilisateur à sélectionner le port série dans la liste des ports disponibles. Pour plus d’informations, consultez [Guide pratique pour afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
   
- Cet exemple utilise un bloc `Using` pour garantir que l’application ferme le port même si elle lève une exception. Pour plus d’informations, voir [Utilisation de l’instruction](../../../../visual-basic/language-reference/statements/using-statement.md).  
+ Cet exemple utilise un bloc `Using` pour garantir que l’application ferme le port même si elle lève une exception. Pour plus d’informations, consultez [using, instruction](../../../../visual-basic/language-reference/statements/using-statement.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.Devices.Ports>
 - <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>
-- [Comment : passer des appels avec des modems attachés aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)
-- [Comment : afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)
+- [Procédure : passer des appels avec des modems attachés aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)
+- [Procédure : afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)

@@ -36,7 +36,7 @@ Vous pouvez utiliser Visual Basic pour manipuler des lecteurs, des dossiers et d
   
 ## <a name="related-sections"></a>Sections connexes  
 
- [Structure de programme et conventions de codage](../../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
+ [Structure de programme et conventions de code](../../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
  Fournit des indications relatives à la structure physique et l’apparence des programmes.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  

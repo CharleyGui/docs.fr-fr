@@ -38,9 +38,9 @@ Les classes dans ces espaces de noms prennent en charge les recommandations Worl
 
 Les classes XML du .NET Framework offrent les avantages suivants :
 
-- **Productivité.** [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) et [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) facilitent la programmation avec XML et offrent une expérience de requête similaire à SQL.
+- **Améliorer.** [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) et [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) facilitent la programmation avec XML et offrent une expérience de requête similaire à SQL.
 
-- **Extensibilité.** Les classes XML du .NET Framework sont extensibles grâce à l'utilisation de classes de base abstraites et de méthodes virtuelles. Par exemple, vous pouvez créer une classe dérivée de la classe <xref:System.Xml.XmlUrlResolver> qui stocke le flux mis en cache sur le disque local.
+- **Amélioré.** Les classes XML du .NET Framework sont extensibles grâce à l'utilisation de classes de base abstraites et de méthodes virtuelles. Par exemple, vous pouvez créer une classe dérivée de la classe <xref:System.Xml.XmlUrlResolver> qui stocke le flux mis en cache sur le disque local.
 
 - **Architecture enfichable.** Le .NET Framework propose une architecture dans laquelle les composants peuvent s'utiliser réciproquement et où les données peuvent être transmises en continu entre les composants. Par exemple, un magasin de données, tel qu'un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument>, peut être transformé à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>, et la sortie peut ensuite être soit transmise sous la forme de flux à un autre magasin, soit retournée sous la forme d'un flux à partir d'un service web.
 
@@ -60,21 +60,21 @@ Les classes XML du .NET Framework offrent les avantages suivants :
 
 [Options de traitement XML](../../../../docs/standard/data/xml/xml-processing-options.md) Présente les options de traitement des données XML.
 
-[Traitement des données XML en mémoire](../../../../docs/standard/data/xml/processing-xml-data-in-memory.md) Discute des trois modèles de traitement des données XML en mémoire : [LINQ à XML (C)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) et [LINQ à XML (Visual Basic),](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)la <xref:System.Xml.XmlDocument> classe (basée sur le modèle d’objet de document W3C) et la <xref:System.Xml.XPath.XPathDocument> classe (basée sur le modèle de données XPath).
+[Traitement des données XML en mémoire](../../../../docs/standard/data/xml/processing-xml-data-in-memory.md) Présente les trois modèles pour le traitement des données XML en mémoire : [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) et [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md), la <xref:System.Xml.XmlDocument> classe (basée sur le document Object Model W3C) et la <xref:System.Xml.XPath.XPathDocument> classe (basée sur le modèle de données XPath).
 
-[XSLT Transformations](../../../../docs/standard/data/xml/xslt-transformations.md)\
+[Transformations XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)\
 Décrit comment utiliser le processeur XSLT.
 
-[Modèle d’objet XML Schema (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)\
+[Modèle d’objet de schéma XML (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)\
 Décrit les classes utilisées pour créer et manipuler des schémas XML (XSD) en fournissant une classe <xref:System.Xml.Schema.XmlSchema> pour le chargement et la modification d'un schéma.
 
-[Intégration XML avec les données relationnelles et les ADO.NET](../../../../docs/standard/data/xml/xml-integration-with-relational-data-and-adonet.md)\
+[Intégration de XML aux données relationnelles et ADO.NET](../../../../docs/standard/data/xml/xml-integration-with-relational-data-and-adonet.md)\
 Décrit comment le .NET Framework permet un accès synchrone en temps réel aux représentations relationnelles et hiérarchiques des données via l’objet <xref:System.Data.DataSet> et l’objet <xref:System.Xml.XmlDataDocument>.
 
-[Gérer les espaces nominaux dans un document XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md)\
+[Gestion des espaces de noms dans un document XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md)\
 Décrit comment la classe <xref:System.Xml.XmlNamespaceManager> est utilisée pour stocker et gérer des informations d'espace de noms.
 
-[Type de support dans les classes System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)\
+[Prise en charge des types dans les classes System. Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)\
 Décrit comment les types de données XML sont mappés aux types CLR, comment convertir des types de données XML, ainsi que d’autres fonctionnalités de prise en charge des types dans les classes <xref:System.Xml>.
 
 ## <a name="related-sections"></a>Sections connexes
@@ -82,5 +82,5 @@ Décrit comment les types de données XML sont mappés aux types CLR, comment co
 [ADO.NET](../../../../docs/framework/data/adonet/index.md)\
 Présente des informations sur la manière d'accéder à des données à l'aide d'ADO.NET.
 
-[Sécurité](../../../../docs/standard/security/index.md)\
+[Caution](../../../../docs/standard/security/index.md)\
 Offre une vue d'ensemble du système de sécurité .NET Framework.

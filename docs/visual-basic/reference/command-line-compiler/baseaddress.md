@@ -36,13 +36,13 @@ Spécifie une adresse de base par défaut lors de la création d’une DLL.
   
  N’oubliez pas que le mot de poids faible dans cette adresse est arrondi. Par exemple, si vous spécifiez 0x11110001, il est arrondi à 0x11110000.  
   
- Pour terminer le processus de signature pour une DLL, utilisez l’option `–R` de l’outil Strong Naming Tool (SN. exe).  
+ Pour terminer le processus de signature pour une DLL, utilisez `–R` l’option de l’outil Strong Naming Tool (SN. exe).  
   
  Cette option est ignorée si la cible n’est pas une DLL.  
   
 |Pour définir-baseaddress dans l’IDE de Visual Studio|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Cliquez sur **Avancé**.<br />4.  Modifiez la valeur dans la zone adresse de base de la **dll :** . **Remarque :**      La zone **adresse de base** de la dll est en lecture seule, sauf si la cible est une dll.|  
+|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet** , cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **compiler** .<br />3. cliquez sur **avancé**.<br />4. modifiez la valeur dans la zone adresse de base de la **dll :** . **Remarque :**      La zone **adresse de base** de la dll est en lecture seule, sauf si la cible est une dll.|  
   
 ## <a name="see-also"></a>Voir aussi
 

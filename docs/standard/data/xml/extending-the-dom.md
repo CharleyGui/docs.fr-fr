@@ -232,7 +232,7 @@ book.xml
 </book>
 ```
 
-#### <a name="output"></a>Sortie
+#### <a name="output"></a>Output
 
 ```console
 Number of elements in book.xml: 3

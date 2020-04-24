@@ -25,7 +25,7 @@ Affiche les options du compilateur.
 -help  
 ```
 
-or  
+ou  
 
 ```console
 -?  
@@ -35,7 +35,7 @@ or
  Si vous incluez cette option dans une compilation, aucun fichier de sortie n’est créé et aucune compilation n’a lieu.  
   
 > [!NOTE]
-> L’option `-help` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+> L' `-help` option n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
 ## <a name="example"></a>Exemple  
  Le code suivant affiche l’aide à partir de la ligne de commande.  

@@ -41,5 +41,5 @@ Cette section décrit la documentation conceptuelle du langage Visual Basic.
  [Guide de programmation Visual Basic](../../visual-basic/programming-guide/index.md)  
  Décrit les éléments essentiels de la programmation avec Visual Basic.  
   
- [Référence visuelle de style de base](../../visual-basic/language-reference/index.md)  
+ [Informations de référence sur le langage Visual Basic](../../visual-basic/language-reference/index.md)  
  Contient la documentation de référence du langage Visual Basic.

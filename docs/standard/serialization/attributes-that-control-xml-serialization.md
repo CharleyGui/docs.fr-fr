@@ -23,7 +23,7 @@ Vous pouvez appliquer les attributs du tableau suivant à des classes et des mem
   
  Pour plus d’informations sur les attributs, consultez [Attributs](../../../docs/standard/attributes/index.md).  
   
-|Attribut|S'applique à|Informations fournies|  
+|Attribut|S’applique à|Spécifie|  
 |---------------|----------------|---------------|  
 |<xref:System.Xml.Serialization.XmlAnyAttributeAttribute>|Champ public, propriété, paramètre ou valeur de retour qui retourne un tableau d'objets <xref:System.Xml.XmlAttribute>.|Lors de la désérialisation, le tableau est rempli avec les objets <xref:System.Xml.XmlAttribute> qui représentent tous les attributs XML inconnus du schéma.|  
 |<xref:System.Xml.Serialization.XmlAnyElementAttribute>|Champ public, propriété, paramètre ou valeur de retour qui retourne un tableau d'objets <xref:System.Xml.XmlElement>.|Lors de la désérialisation, le tableau est rempli avec les objets <xref:System.Xml.XmlElement> qui représentent tous les éléments XML inconnus du schéma.|  
@@ -45,9 +45,9 @@ Vous pouvez appliquer les attributs du tableau suivant à des classes et des mem
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
 - [Contrôle de la sérialisation XML à l’aide d’attributs](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)
-- [Guide pratique pour Spécifiez un nom d’élément différent pour un Stream XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
-- [Guide pratique pour Sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md)
-- [Guide pratique pour Désérialiser un objet](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+- [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Guide pratique pour sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md)
+- [Guide pratique pour désérialiser un objet](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

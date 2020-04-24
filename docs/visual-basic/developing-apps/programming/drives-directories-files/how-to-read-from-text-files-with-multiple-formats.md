@@ -1,5 +1,5 @@
 ---
-title: 'Comment: Lire à partir de fichiers texte avec plusieurs formats'
+title: 'Comment : lire des fichiers texte avec plusieurs formats'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - TextFieldParser object, reading from a file
@@ -18,13 +18,13 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/15/2020
 ms.locfileid: "74334571"
 ---
-# <a name="how-to-read-from-fext-files-with-multiple-formats-in-visual-basic"></a>Comment: Lire à partir de fichiers fext avec plusieurs formats dans Visual Basic
+# <a name="how-to-read-from-fext-files-with-multiple-formats-in-visual-basic"></a>Comment : lire des fichiers FEXT avec plusieurs formats dans Visual Basic
 
 L’objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> permet d’analyser facilement et efficacement les fichiers texte structurés, tels que les journaux. Vous pouvez traiter un fichier contenant plusieurs formats en utilisant la méthode `PeekChars` pour déterminer le format de chaque ligne à mesure que vous analysez le fichier.
   
 ### <a name="to-parse-a-text-file-with-multiple-formats"></a>Pour analyser un fichier texte avec plusieurs formats
 
-1. Ajoutez un fichier texte nommé *testfile.txt* à votre projet. Ajoutez le contenu suivant au fichier texte :
+1. Ajoutez un fichier texte nommé *TestFile. txt* à votre projet. Ajoutez le contenu suivant au fichier texte :
 
     ```text
     Err  1001 Cannot access resource.
@@ -51,9 +51,9 @@ L’objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> permet d’analyse
 
      [!code-vb[VbFileIORead#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#7)]
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
-Voici l’exemple complet qui se `testfile.txt`lit à partir du fichier :
+Voici l’exemple complet qui lit à partir du fichier `testfile.txt`:
 
  [!code-vb[VbFileIORead#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#8)]
 

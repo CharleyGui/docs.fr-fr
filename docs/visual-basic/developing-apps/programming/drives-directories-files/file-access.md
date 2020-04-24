@@ -30,7 +30,7 @@ L’objet `My.Computer.FileSystem` fournit des outils pour l’utilisation des f
  [Lecture à partir de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
  Répertorie les rubriques qui traitent de l’utilisation de l’objet `My.Computer.FileSystem` pour lire des fichiers.  
   
- [Rédaction de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
+ [Écrire dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
  Répertorie les rubriques qui traitent de l’utilisation de l’objet `My.Computer.FileSystem` pour écrire dans des fichiers  
   
  [Création, suppression et déplacement de fichiers et de répertoires](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)  

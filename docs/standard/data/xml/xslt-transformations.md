@@ -25,16 +25,16 @@ Les transformations XSLT (Extensible Stylesheet Language Transformation) ont po
  [Migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)  
  Explique comment migrer du code à partir de la classe <xref:System.Xml.Xsl.XslTransform>.  
   
- [Compilateur XSLT (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
+ [XSLT Compiler (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
  Fournit des informations sur l'utilisation de XSLT Compiler.  
   
- [Transformations XSLT avec la classe XslTransform](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
+ [Transformations XSLT avec la classe XslTransform](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
  Fournit des informations sur l'utilisation de la classe <xref:System.Xml.Xsl.XslTransform>.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Xml.Xsl.XslCompiledTransform>  
  <xref:System.Xml.Xsl.XsltArgumentList>  
  <xref:System.Xml.Xsl.XsltSettings>  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Documents et données XML](../../../../docs/standard/data/xml/index.md)

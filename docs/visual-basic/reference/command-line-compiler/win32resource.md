@@ -32,15 +32,15 @@ Insère un fichier de ressources Win32 dans le fichier de sortie.
 ## <a name="remarks"></a>Notes  
  Vous pouvez créer un fichier de ressources Win32 avec le compilateur de ressources Microsoft Windows (RC).  
   
- Une ressource Win32 peut contenir des informations de version ou de bitmap (icône) qui permettent d’identifier votre application dans l' **Explorateur de fichiers**. Si vous ne spécifiez pas `-win32resource`, le compilateur génère des informations de version en fonction de la version de l’assembly. Les options `-win32resource` et `-win32icon` s’excluent mutuellement.  
+ Une ressource Win32 peut contenir des informations de version ou de bitmap (icône) qui permettent d’identifier votre application dans l' **Explorateur de fichiers**. Si vous ne spécifiez `-win32resource`pas, le compilateur génère des informations de version en fonction de la version de l’assembly. Les options `-win32resource` et `-win32icon` s’excluent mutuellement.  
   
  Consultez [-linkresource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/linkresource.md) pour référencer un fichier de ressources .NET Framework, ou [-resource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/resource.md) pour attacher un fichier de ressources de .NET Framework.  
   
 > [!NOTE]
-> L’option `-win32resource` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+> L' `-win32resource` option n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `In.vb` et joint un fichier de ressources Win32, `Rf.res` :  
+ Le code suivant compile `In.vb` et joint un fichier de ressources Win32 : `Rf.res`  
   
 ```console  
 vbc -win32resource:rf.res in.vb  

@@ -15,11 +15,11 @@ La plupart des bases de données ont un dialecte de procédure SQL que vous pouv
 
 ## <a name="scalar-functions"></a>Fonctions scalaires
 
-Les fonctions scalaires retournent une valeur scalaire unique pour chaque ligne d’une requête. Définissez de nouvelles fonctions scalaires et remplacez les fonctions intégrées à l’aide de <xref:Microsoft.Data.Sqlite.SqliteConnection.CreateFunction%2A>.
+Les fonctions scalaires retournent une valeur scalaire unique pour chaque ligne d’une requête. Définissez de nouvelles fonctions scalaires et substituez les fonctions intégrées à <xref:Microsoft.Data.Sqlite.SqliteConnection.CreateFunction%2A>l’aide de.
 
-Consultez [types de données](types.md) pour obtenir la liste des types de paramètres et de retour pris en charge pour l’argument `func`.
+Consultez [types de données](types.md) pour obtenir la liste des types de paramètres et de `func` retour pris en charge pour l’argument.
 
-La spécification de l’argument `state` passera cette valeur dans chaque appel de la fonction. À utiliser pour éviter les fermetures.
+La spécification `state` de l’argument passera cette valeur dans chaque appel de la fonction. À utiliser pour éviter les fermetures.
 
 Spécifiez `isDeterministic` si votre fonction est déterministe pour permettre à SQLite d’utiliser des optimisations supplémentaires lors de la compilation des requêtes.
 
@@ -31,7 +31,7 @@ L’exemple suivant montre comment ajouter une fonction scalaire pour calculer l
 
 Les opérateurs SQLite suivants sont implémentés par les fonctions scalaires correspondantes. La définition de ces fonctions scalaires dans votre application remplacera le comportement de ces opérateurs.
 
-| opérateur          | Fonction      |
+| Opérateur          | Fonction      |
 | ----------------- | ------------- |
 | X GLOB Y          | glob (Y, X)    |
 | X LIKE Y          | like (Y, X)    |
@@ -43,19 +43,19 @@ L’exemple suivant montre comment définir la fonction RegExp pour activer son 
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/RegularExpressionSample/Program.cs?name=snippet_Regex)]
 
-## <a name="aggregate-functions"></a>Fonctions d’agrégation
+## <a name="aggregate-functions"></a>Fonctions d'agrégation
 
-Les fonctions d’agrégation retournent une valeur agrégée unique pour toutes les lignes d’une requête. Définissez et remplacez les fonctions d’agrégation à l’aide de <xref:Microsoft.Data.Sqlite.SqliteConnection.CreateAggregate%2A>.
+Les fonctions d’agrégation retournent une valeur agrégée unique pour toutes les lignes d’une requête. Définissez et remplacez les fonctions d’agrégation <xref:Microsoft.Data.Sqlite.SqliteConnection.CreateAggregate%2A>à l’aide de.
 
-L’argument `seed` spécifie l’état initial du contexte. Utilisez-le pour éviter également les fermetures.
+L' `seed` argument spécifie l’état initial du contexte. Utilisez-le pour éviter également les fermetures.
 
-L’argument `func` est appelé une fois par ligne. Utilisez le contexte pour accumuler un résultat final. Retourne le contexte. Ce modèle permet au contexte d’être un type valeur ou immuable.
+L' `func` argument est appelé une fois par ligne. Utilisez le contexte pour accumuler un résultat final. Retourne le contexte. Ce modèle permet au contexte d’être un type valeur ou immuable.
 
 Si aucun `resultSelector` n’est spécifié, l’état final du contexte est utilisé comme résultat. Cela peut simplifier la définition des fonctions telles que SUM et Count qui n’ont besoin d’incrémenter qu’un nombre pour chaque ligne et de la retourner.
 
 Spécifiez `resultSelector` pour calculer le résultat final à partir du contexte après l’itération dans toutes les lignes.
 
-Consultez [types de données](types.md) pour obtenir la liste des types de paramètres pris en charge pour l’argument `func` et les types de retour pour `resultSelector`.
+Consultez [types de données](types.md) pour obtenir la liste des types de paramètres `func` pris en charge pour l' `resultSelector`argument et les types de retour pour.
 
 Si votre fonction est déterministe, spécifiez `isDeterministic` pour autoriser SQLite à utiliser des optimisations supplémentaires lors de la compilation des requêtes.
 
@@ -63,13 +63,13 @@ L’exemple suivant définit une fonction d’agrégation pour calculer l’éca
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/AggregateFunctionSample/Program.cs?name=snippet_CreateAggregate)]
 
-## <a name="errors"></a>Erreurs du
+## <a name="errors"></a>Erreurs
 
 Si une fonction définie par l’utilisateur lève une exception, le message est renvoyé à SQLite. SQLite déclenchera alors une erreur et Microsoft. Data. sqlite lèvera un SqliteException. Pour plus d’informations, consultez [Erreurs de base de données](database-errors.md).
 
-Par défaut, l’erreur SQLite code d’erreur est SQLITE_ERROR (ou 1). Toutefois, vous pouvez le modifier en levant une <xref:Microsoft.Data.Sqlite.SqliteException> dans votre fonction avec le <xref:Microsoft.Data.Sqlite.SqliteException.SqliteErrorCode> souhaité spécifié.
+Par défaut, l’erreur SQLite code d’erreur est SQLITE_ERROR (ou 1). Toutefois, vous pouvez le modifier en levant un <xref:Microsoft.Data.Sqlite.SqliteException> dans votre fonction avec le souhaité <xref:Microsoft.Data.Sqlite.SqliteException.SqliteErrorCode> spécifié.
 
-## <a name="debugging"></a>débogage
+## <a name="debugging"></a>Débogage
 
 SQLite appelle votre implémentation directement. Cela vous permet d’ajouter des points d’arrêt qui se déclenchent quand SQLite évalue des requêtes. L’expérience de débogage .NET complète est disponible pour vous aider à créer vos fonctions définies par l’utilisateur.
 

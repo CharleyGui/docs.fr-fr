@@ -16,7 +16,7 @@ ms.locfileid: "72523951"
 
 Visual Basic inclut plusieurs nouvelles fonctionnalités conçues pour vous aider à développer des applications qui accèdent à des données. Vous pouvez créer des formulaires liés aux données pour des applications Windows en faisant glisser des éléments de la [fenêtre Sources de données](/visualstudio/data-tools/add-new-data-sources) sur les formulaires. Vous pouvez également lier des contrôles aux données en faisant glisser des éléments de la **fenêtre Sources de données** sur des contrôles existants.
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
 [Accès aux données dans Visual Studio](/visualstudio/data-tools/)  
 Fournit des liens vers des pages qui décrivent comment incorporer des fonctionnalités d’accès aux données dans vos applications.
@@ -30,16 +30,16 @@ Fournit des liens vers des rubriques qui expliquent comment utiliser LINQ avec V
 [LINQ to SQL](../../framework/data/adonet/sql/linq/index.md)  
 Fournit des informations sur [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]. Inclut des exemples de programmation.  
 
-[Outils LINQ to SQL dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)  
+[Outils de LINQ to SQL dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)  
 Fournit des liens vers des rubriques qui expliquent comment créer un modèle d’objet [LINQ to SQL](../../framework/data/adonet/sql/linq/index.md) dans les applications.
 
-[Utilisation de datasets dans des applications multiniveaux](/visualstudio/data-tools/work-with-datasets-in-n-tier-applications)  
+[Utiliser des jeux de données dans des applications multicouches](/visualstudio/data-tools/work-with-datasets-in-n-tier-applications)  
 Fournit des liens vers des rubriques qui expliquent comment créer des applications de données multicouches.
 
 [Ajouter de nouvelles connexions](/visualstudio/data-tools/add-new-connections)  
 Fournit des liens vers des pages qui décrivent comment connecter votre application aux données avec des outils de conception et des objets de connexion ADO.NET, à l’aide de Visual Studio.
 
-[Outils de dataset dans Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio)  
+[Outils de jeu de données dans Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio)  
 Fournit des liens vers des pages qui décrivent comment charger des données dans des datasets et comment exécuter des procédures stockées et instructions SQL.  
 
 [Lier des contrôles à des données dans Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio)  

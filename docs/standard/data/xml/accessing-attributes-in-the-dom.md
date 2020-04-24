@@ -131,7 +131,7 @@ Les informations d’une collection d’attributs peuvent être extraites par le
 
 Comme **XmlAttributeCollection** est une collection et peut faire l’objet d’itération par nom ou index, cet exemple illustre l’extraction du premier attribut dans la collection à l’aide d’un index de base zéro et l’utilisation du fichier suivant, **baseuri.xml** comme entrée.
 
-### <a name="input"></a>Input
+### <a name="input"></a>Entrée
 
 ```xml
 <!-- XML fragment -->

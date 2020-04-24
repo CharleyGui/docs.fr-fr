@@ -28,7 +28,7 @@ Permet l'utilisation de l'inférence de type de variable locale dans les déclar
   
 |Terme|Définition|  
 |---|---|  
-|`+` &#124; `-`|Optionnel. Spécifiez `-optioninfer+` pour activer l'inférence de type de variable locale ou `-optioninfer-` pour la bloquer. L'option `-optioninfer`, sans aucune valeur spécifiée, est identique à `-optioninfer+`. La valeur par défaut en l'absence du commutateur `-optioninfer` est aussi `-optioninfer+`. La valeur par défaut est définie dans le fichier réponse Vbc.rsp.|  
+|`+` &#124; `-`|Facultatif. Spécifiez `-optioninfer+` pour activer l'inférence de type de variable locale ou `-optioninfer-` pour la bloquer. L'option `-optioninfer`, sans aucune valeur spécifiée, est identique à `-optioninfer+`. La valeur par défaut en l'absence du commutateur `-optioninfer` est aussi `-optioninfer+`. La valeur par défaut est définie dans le fichier réponse Vbc.rsp.|  
   
 > [!NOTE]
 > Vous pouvez utiliser l'option `-noconfig` pour conserver les valeurs par défaut internes du compilateur au lieu de celles spécifiées dans le fichier vbc.rsp. Pour cette option, la valeur par défaut du compilateur est `-optioninfer-`.  
@@ -38,7 +38,7 @@ Permet l'utilisation de l'inférence de type de variable locale dans les déclar
   
 ### <a name="to-set--optioninfer-in-the-visual-studio-ide"></a>Pour définir-optioninfer (dans l’IDE de Visual Studio  
   
-1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**.  
+1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet** , cliquez sur **Propriétés**.  
   
 2. Sous l’onglet **compiler** , modifiez la valeur dans la zone **Option Infer** .  
   
@@ -59,6 +59,6 @@ vbc -optioninfer+ test.vb
 - [Option Infer (instruction)](../../../visual-basic/language-reference/statements/option-infer-statement.md)
 - [Inférence de type local](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
 - [Valeurs par défaut VB, Projets, boîte de dialogue Options](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
-- [Page Compiler, Concepteur de projet (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)
+- [Page Compiler, Concepteur de projets (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)
 - [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)
 - [Génération à partir de la ligne de commande](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)

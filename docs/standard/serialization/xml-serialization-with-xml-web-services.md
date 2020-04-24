@@ -260,9 +260,9 @@ public class Order {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
-- [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](attributes-that-control-encoded-soap-serialization.md)
-- [Guide pratique pour sérialiser un objet en tant que flux XML encodé selon le protocole SOAP](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
+- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
+- [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](attributes-that-control-encoded-soap-serialization.md)
+- [Comment : sérialiser un objet en tant que flux XML encodé selon le protocole SOAP](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
 - [Guide pratique pour remplacer la sérialisation XML encodée selon le protocole SOAP](how-to-override-encoded-soap-xml-serialization.md)
 - [Introduction à la sérialisation XML](introducing-xml-serialization.md)
 - [Guide pratique pour sérialiser un objet](how-to-serialize-an-object.md)

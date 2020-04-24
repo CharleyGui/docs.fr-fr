@@ -1,5 +1,5 @@
 ---
-title: 'Guide pratique : créer des grilles de propriétés pour les paramètres utilisateur'
+title: 'Procédure : créer des grilles de propriétés pour les paramètres utilisateur'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Settings object [Visual Basic], creating property grids for user settings
