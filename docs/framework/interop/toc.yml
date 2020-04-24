@@ -6,9 +6,9 @@
       items:
         - name: Importation d'une bibliothèque de types sous la forme d'un assembly
           href: importing-a-type-library-as-an-assembly.md
-        - name: "Comment\_: ajouter des références aux bibliothèques de types"
+        - name: "Procédure\_: ajouter des références aux bibliothèques de types"
           href: how-to-add-references-to-type-libraries.md
-        - name: "Comment\_: générer des assemblys d'interopérabilité à partir de bibliothèques de types"
+        - name: "Procédure\_: générer des assemblys d’interopérabilité à partir de bibliothèques de types"
           href: how-to-generate-interop-assemblies-from-type-libraries.md
         - name: Compilation d'un projet d'interopérabilité
           href: compiling-an-interop-project.md
@@ -23,9 +23,9 @@
           href: packaging-an-assembly-for-com.md
         - name: Inscription d'assemblys dans COM
           href: registering-assemblies-with-com.md
-        - name: "Comment\_: référencer des types\_.NET à partir de COM"
+        - name: "Procédure\_: référencer des types\_.NET à partir de COM"
           href: how-to-reference-net-types-from-com.md
-        - name: "COM Interop, exemple\_: client\_COM et serveur\_.NET"
+        - name: "COM Interop, exemple\_: client COM et serveur .NET"
           href: com-interop-sample-com-client-and-net-server.md
     - name: Consommation de fonctions DLL non managées
       href: consuming-unmanaged-dll-functions.md
@@ -50,7 +50,7 @@
               href: passing-structures.md
             - name: Fonctions de rappel
               href: callback-functions.md
-            - name: "Comment\_: implémenter des fonctions de rappel"
+            - name: "Procédure\_: implémenter des fonctions de rappel"
               href: how-to-implement-callback-functions.md
     - name: Marshaling d’interopérabilité
       href: interop-marshaling.md
@@ -84,21 +84,21 @@
         - name: marshaler des données avec COM Interop
           href: marshaling-data-with-com-interop.md
           items:
-            - name: "Comment\_: créer manuellement des wrappers"
+            - name: "Procédure\_: créer manuellement des wrappers"
               href: how-to-create-wrappers-manually.md
-            - name: 'Comment : migrer DCOM de code managé vers WCF'
+            - name: "Procédure\_: Migrer du code DCOM managé vers WCF"
               href: how-to-migrate-managed-code-dcom-to-wcf.md
-    - name: "Comment\_: mapper des HRESULT et des exceptions"
+    - name: "Procédure\_: mapper des HRESULT et des exceptions"
       href: how-to-map-hresults-and-exceptions.md
-    - name: "Comment\_: créer des wrappers COM"
+    - name: "Procédure\_: créer des wrappers COM"
       href: how-to-create-com-wrappers.md
-    - name: Équivalence de type et types interop incorporés
+    - name: Équivalence des types et types interop incorporés
       href: type-equivalence-and-embedded-interop-types.md
-    - name: "Comment\_: générer des assemblys PIA à l'aide de Tlbimp.exe"
+    - name: "Procédure\_: générer des assemblys PIA à l’aide de Tlbimp.exe"
       href: how-to-generate-primary-interop-assemblies-using-tlbimp-exe.md
-    - name: "Comment\_: enregistrer des assemblys\_PIA"
+    - name: "Procédure\_: enregistrer des assemblys\_PIA"
       href: how-to-register-primary-interop-assemblies.md
     - name: COM Interop sans inscription
       href: registration-free-com-interop.md
-    - name: "Comment\_: configurer les composants COM\_.NET Framework pour l'activation sans inscription"
+    - name: "Procédure\_: configurer les composants COM\_.NET Framework pour l’activation sans inscription"
       href: configure-net-framework-based-com-components-for-reg.md
