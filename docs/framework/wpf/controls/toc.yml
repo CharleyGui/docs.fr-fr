@@ -15,7 +15,7 @@
               href: how-to-animate-a-borderthickness-value.md
         - name: BulletDecorator
           href: bulletdecorator.md
-        - name: Button
+        - name: Bouton
           href: button.md
           items:
             - name: Créer un bouton comportant une image
@@ -28,7 +28,7 @@
             - name: Rubriques Comment
               href: canvas-how-to-topics.md
               items:
-                - name: Encapsuler une bordure autour du contenu d'une zone de dessin
+                - name: Encapsuler une bordure autour du contenu d’un canevas
                   href: how-to-wrap-a-border-around-the-content-of-a-canvas.md
                 - name: Obtenir ou définir des propriétés de positionnement du canevas
                   href: how-to-get-or-set-canvas-positioning-properties.md
@@ -52,13 +52,13 @@
           items:
             - name: Comportement par défaut du clavier et de la souris dans le contrôle DataGrid
               href: default-keyboard-and-mouse-behavior-in-the-datagrid-control.md
-            - name: "Comment\_: ajouter des détails de ligne à un contrôle DataGrid"
+            - name: "Procédure\_: ajouter des détails de ligne à un contrôle DataGrid"
               href: how-to-add-row-details-to-a-datagrid-control.md
-            - name: "Comment\_: grouper, trier et filtrer des données dans le contrôle DataGrid"
+            - name: "Procédure\_: regrouper, trier et filtrer des données dans le contrôle DataGrid"
               href: how-to-group-sort-and-filter-data-in-the-datagrid-control.md
-            - name: "Comment\_: implémenter la validation avec le contrôle DataGrid"
+            - name: "Procédure\_: implémenter la validation avec le contrôle DataGrid"
               href: how-to-implement-validation-with-the-datagrid-control.md
-            - name: "Procédure pas à pas\_: affichage de données d'une base de données SQL Server dans un contrôle DataGrid"
+            - name: "Procédure pas à pas\_: afficher des données à partir d’une base de données SQL Server dans un contrôle DataGrid"
               href: walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md
             - name: Options de dimensionnement dans le contrôle DataGrid
               href: sizing-options-in-the-datagrid-control.md
@@ -110,9 +110,9 @@
                   href: how-to-create-a-grid-element.md
                 - name: Créer et utiliser un objet GridLengthConverter
                   href: how-to-create-and-use-a-gridlengthconverter-object.md
-                - name: Manipuler des colonnes et des lignes à l'aide de ColumnDefinitionsCollections et RowDefinitionsCollections
+                - name: Manipuler des colonnes et des lignes à l’aide de ColumnDefinitionsCollections et RowDefinitionsCollections
                   href: manipulate-columns-and-rows-by-using-columndefinitionscollections.md
-                - name: Positionner les éléments enfants d'une grille
+                - name: Positionner les éléments enfants d’une grille
                   href: how-to-position-the-child-elements-of-a-grid.md
                 - name: Partager des propriétés de dimensionnement entre grilles
                   href: how-to-share-sizing-properties-between-grids.md
@@ -147,10 +147,10 @@
                   href: how-to-crop-an-image.md
                 - name: Faire pivoter une image
                   href: how-to-rotate-an-image.md
-        - name: Nom
+        - name: Etiquette
           href: label.md
           items:
-            - name: Créer un contrôle avec touche d'accès rapide et habillage du texte
+            - name: Créer un contrôle avec touche d’accès rapide et habillage du texte
               href: how-to-create-a-control-that-has-an-access-key-and-text-wrapping.md
         - name: ListBox
           href: listbox.md
@@ -181,7 +181,7 @@
               items:
                 - name: Trier une colonne GridView lors d’un clic sur un en-tête
                   href: how-to-sort-a-gridview-column-when-a-header-is-clicked.md
-                - name: Créer un mode d'affichage personnalisé pour un ListView
+                - name: Créer un mode d’affichage personnalisé pour un ListView
                   href: how-to-create-a-custom-view-mode-for-a-listview.md
                 - name: Utiliser des modèles pour appliquer un style à un ListView utilisant GridView
                   href: how-to-use-templates-to-style-a-listview-that-uses-gridview.md
@@ -189,11 +189,11 @@
                   href: how-to-create-a-style-for-a-dragged-gridview-column-header.md
                 - name: Afficher un contenu ListView à l’aide d’un GridView
                   href: how-to-display-listview-contents-by-using-a-gridview.md
-                - name: Utiliser des déclencheurs pour appliquer un style aux éléments sélectionnés d'un ListView
+                - name: Utiliser des déclencheurs pour appliquer un style aux éléments sélectionnés d’un ListView
                   href: how-to-use-triggers-to-style-selected-items-in-a-listview.md
                 - name: Créer des ListViewItems avec une case à cocher
                   href: how-to-create-listviewitems-with-a-checkbox.md
-                - name: Afficher des données à l'aide de GridViewRowPresenter
+                - name: Afficher des données à l’aide de GridViewRowPresenter
                   href: how-to-display-data-by-using-gridviewrowpresenter.md
                 - name: Grouper des éléments dans un ListView implémentant un GridView
                   href: how-to-group-items-in-a-listview-that-implements-a-gridview.md
@@ -256,7 +256,7 @@
             - name: Rubriques Comment
               href: richtextbox-how-to-topics.md
               items:
-                - name: Extraire le texte d'un RichTextBox
+                - name: Extraire le texte d’un RichTextBox
                   href: how-to-extract-the-text-content-from-a-richtextbox.md
                 - name: Modification par programmation de la sélection dans un RichTextBox
                   href: change-selection-in-a-richtextbox-programmatically.md
@@ -341,7 +341,7 @@
                   href: how-to-enable-spell-checking-in-a-text-editing-control.md
                 - name: Utiliser un menu contextuel personnalisé avec un TextBox
                   href: how-to-use-a-custom-context-menu-with-a-textbox.md
-                - name: Utiliser la vérification de l'orthographe avec un menu contextuel
+                - name: Utiliser la vérification de l’orthographe avec un menu contextuel
                   href: how-to-use-spell-checking-with-a-context-menu.md
                 - name: Ajouter un filigrane à un TextBox
                   href: how-to-add-a-watermark-to-a-textbox.md
@@ -350,7 +350,7 @@
           items:
             - name: Vue d'ensemble de ToolBar
               href: toolbar-overview.md
-            - name: Donner un style aux contrôles d'une barre d'outils
+            - name: Donner un style aux contrôles d’une barre d’outils
               href: how-to-style-controls-on-a-toolbar.md
         - name: Info-bulle
           href: tooltip.md
@@ -378,7 +378,7 @@
                   href: how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md
                 - name: Lier un TreeView à des données dont la profondeur ne peut pas être déterminée
                   href: how-to-bind-a-treeview-to-data-that-has-an-indeterminable-depth.md
-                - name: Améliorer les performances d'un contrôle TreeView
+                - name: Améliorer les performances d’un contrôle TreeView
                   href: how-to-improve-the-performance-of-a-treeview.md
                 - name: Trouver un TreeViewItem dans un TreeView
                   href: how-to-find-a-treeviewitem-in-a-treeview.md
@@ -393,10 +393,10 @@
       href: styles-and-templates.md
       items:
         - name: Application d'un style et création de modèles
-          href: styling-and-templating.md
+          href: ../../../desktop-wpf/fundamentals/styles-templates-overview.md
         - name: Personnalisation d’un contrôle existant avec un ControlTemplate
           href: ../../../desktop-wpf/themes/how-to-create-apply-template.md
-        - name: Rechercher des éléments générés par ControlTemplate
+        - name: "Procédure\_: rechercher des éléments générés par ControlTemplate"
           href: how-to-find-controltemplate-generated-elements.md
     - name: Personnalisation des contrôles
       href: control-customization.md
@@ -419,7 +419,7 @@
                   href: how-to-implement-an-adorner.md
                 - name: Lier un ornement à un élément
                   href: how-to-bind-an-adorner-to-an-element.md
-                - name: Orner les enfants d'un Panel
+                - name: Orner les enfants d’un panneau
                   href: how-to-adorn-the-children-of-a-panel.md
                 - name: Supprimer un ornement d’un élément
                   href: how-to-remove-an-adorner-from-an-element.md
@@ -494,7 +494,7 @@
               href: window-styles-and-templates.md
         - name: UI Automation d'un contrôle personnalisé WPF
           href: ui-automation-of-a-wpf-custom-control.md
-        - name: "Procédures pas à pas\_: création d'un bouton animé personnalisé"
+        - name: "Procédures pas à pas\_: Créer un bouton animé personnalisé"
           href: walkthroughs-create-a-custom-animated-button.md
           items:
             - name: Créer un bouton avec Blend

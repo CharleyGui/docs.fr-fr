@@ -29,7 +29,7 @@
         - name: Accessing Application Settings
           href: developing-apps/programming/app-settings/index.md
         - name: 'Traitement de lecteurs, de répertoires et de fichiers'
-          href: developing-apps/programming/drives-directories-files/processing.md
+          href: developing-apps/programming/drives-directories-files/index.md
     - name: Développement avec My
       href: developing-apps/development-with-my/index.md
       items:
@@ -1414,6 +1414,6 @@
     - name: Spécification du langage
       href: reference/language-specification/
 - name: Exemples d’applications
-  href: sample-applications.md
+  href: 'https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic'
 - name: "Procédures pas\_à\_pas"
   href: walkthroughs.md

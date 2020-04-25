@@ -1,5 +1,5 @@
 - name: 'Traitement de lecteurs, de répertoires et de fichiers'
-  href: processing.md
+  href: index.md
   items:
     - name: Accès au fichier avec Visual Basic
       href: file-access.md
