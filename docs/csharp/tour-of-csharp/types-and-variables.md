@@ -1,20 +1,20 @@
 ---
 title: Variables et types C# - Visite guidée du langage C#
 description: En savoir plus sur la définition des types et la déclaration de variables en C#
-ms.date: 02/25/2020
+ms.date: 04/24/2020
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: dc80a7ea80790ef5af5218f5a608e5829d2970cc
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 6a3bd3dc802f0d080fd96036067f709e62faf426
+ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135956"
+ms.locfileid: "82141005"
 ---
 # <a name="types-and-variables"></a>Types et variables
 
 Il existe deux genres de types en C# : les *types référence* et les *types valeur*. Les variables des types valeur contiennent directement leurs données alors que les variables des types référence contiennent des références à leurs données, connues sous le nom d’objets. Avec les types référence, deux variables peuvent faire référence au même objet et, par conséquent, les opérations sur une variable peuvent affecter l’objet référencé par l’autre variable. Avec les types valeur, les variables ont chacune leur propre copie des données, et il n’est pas possible pour les opérations sur l’une d’affecter l' `ref` autre `out` (à l’exception des variables de paramètre et).
 
-Les types de valeur de C# sont divisés entre *types simples*, *types enum*, *types struct* et *types valeur nullable*. Les types de référence de C# sont encore divisés en *types de classes*, *types d’interfaces*, *types de tableaux* et *types délégués*.
+Les types de valeur C# sont divisés en *types simples*, *types ENUM*, *types struct*et *types valeur Nullable*. Les types référence de C# sont encore divisés en *types classe*, *types interface*, *types tableau*et *types délégués*.
 
 Le schéma suivant fournit une vue d’ensemble du système de type de C#.
 
@@ -32,6 +32,8 @@ Le schéma suivant fournit une vue d’ensemble du système de type de C#.
     - Types définis par l'utilisateur de la forme `struct S {...}`
   - [Types valeur Nullable][NullableTypes]
     - Extensions de tous les autres types de valeurs avec une valeur `null`
+  - [Types de valeur de Tuple][TupleTypes]
+    - Types définis par l'utilisateur de la forme `(T1, T2, ...)`
 - [Types référence][ReferenceTypes]
   - [Types de classe][ClassTypes]
     - Classe de base fondamentale de tous les autres types : `object`
@@ -49,6 +51,7 @@ Le schéma suivant fournit une vue d’ensemble du système de type de C#.
 [EnumTypes]: ../language-reference/builtin-types/enum.md
 [StructTypes]: ../language-reference/builtin-types/struct.md
 [NullableTypes]: ../language-reference/builtin-types/nullable-value-types.md
+[TupleTypes]: ../tuples.md
 [ReferenceTypes]: ../language-reference/keywords/reference-types.md
 [ClassTypes]: ../language-reference/keywords/class.md
 [InterfaceTypes]: ../language-reference/keywords/interface.md
@@ -57,17 +60,17 @@ Le schéma suivant fournit une vue d’ensemble du système de type de C#.
 
 Pour plus d’informations sur les types numériques, consultez [Types intégraux](../language-reference/builtin-types/integral-numeric-types.md) et [Tableau des types à virgule flottante](../language-reference/builtin-types/floating-point-numeric-types.md).
 
-Le type `bool` de C# est utilisé pour représenter des valeurs booléennes, qui peuvent être `true` ou `false`.
+Le type `bool` de C# est utilisé pour représenter des valeurs booléennes, qui `true` sont `false`des valeurs ou.
 
 Le traitement des caractères et chaînes dans le langage C# utilise l’encodage Unicode. Le type `char` représente une unité de code UTF-16, et le type `string` représente une séquence d’unités de code UTF-16.
 
-Les programmes C# utilisent les *déclarations de type* pour créer de nouveaux types. Une déclaration de type spécifie le nom et les membres du nouveau type. Cinq catégories de types C# sont définies par l’utilisateur : les types de classes, les types struct, les types d’interfaces, les types enum et les types délégués.
+Les programmes C# utilisent les *déclarations de type* pour créer de nouveaux types. Une déclaration de type spécifie le nom et les membres du nouveau type. Cinq des catégories de types C# sont définissables par l’utilisateur : types classe, types struct, types interface, types ENUM et types délégués.
 
 Un type `class` définit une structure de données qui contient des données membres (champs) et des fonctions membres (méthodes, propriétés, etc.). Les types de classes prennent en charge l’héritage unique et le polymorphisme, des mécanismes par lesquels les classes dérivées peuvent étendre et spécialiser les classes de base.
 
 Un type `struct` est similaire à un type de classe dans la mesure où il représente une structure avec des membres de données et des membres de fonctions. Toutefois, contrairement aux classes, les structs sont des types valeur et ne nécessitent généralement pas d’allocation de tas. Les types struct ne prennent pas en charge l’héritage spécifié par l’utilisateur, et tous les `object`types struct héritent implicitement du type.
 
-Un type `interface` définit un contrat en tant que jeu nommé de membres de la fonction publique. Une `class` ou `struct` qui implémente une `interface` doit fournir des implémentations de fonctions membres de l’interface. Une `interface` peut hériter de plusieurs interfaces de base, et une `class` ou `struct` peut implémenter plusieurs interfaces.
+Un type `interface` définit un contrat en tant que jeu nommé de membres de la fonction publique. Un `class` ou `struct` qui implémente un `interface` doit fournir des implémentations des membres de la fonction de l’interface. Une `interface` peut hériter de plusieurs interfaces de base, et une `class` ou `struct` peut implémenter plusieurs interfaces.
 
 Un type `delegate` représente des références aux méthodes avec une liste de paramètres et un type de retour particuliers. Les délégués permettent de traiter les méthodes en tant qu’entités qui peuvent être affectées à des variables et passées comme paramètres. Les délégués sont semblables aux types de fonction fournis par les langages fonctionnels. Elles sont également similaires au concept de pointeurs de fonction qui se trouvent dans d’autres langages. Contrairement aux pointeurs de fonction, les délégués sont orientés objet et de type sécurisé.
 
@@ -79,7 +82,7 @@ C# prend en charge les tableaux uni et multidimensionnels de tout type. Contrair
 
 Les types valeur Nullable n’ont pas non plus besoin d’être déclarés avant de pouvoir être utilisés. Pour chaque type `T`valeur qui n’autorise pas les valeurs NULL, il existe un `T?`type valeur Nullable correspondant qui peut contenir une `null`valeur supplémentaire,. Par exemple, `int?` est un type qui peut contenir un entier 32 bits ou la valeur `null`.
 
-Le système de types de C# est unifié afin qu’une valeur de n’importe quel type puisse être traitée en tant que type `object`. Chaque type dans C# dérive directement ou indirectement du type `object`, et `object` est la classe de base fondamentale de tous les types. Les valeurs des types référence sont considérées comme des objets simplement en affichant les valeurs en tant que type `object`. Les valeurs des types valeur sont considérées comme des objets en effectuant des opérations de *boxing* et *d’unboxing*. Dans l’exemple suivant, une valeur `int` est convertie en `object` et à nouveau en `int`.
+Le système de type C# est unifié de telle façon qu’une valeur de n’importe quel type `object`peut être traitée comme un. Chaque type dans C# dérive directement ou indirectement du type `object`, et `object` est la classe de base fondamentale de tous les types. Les valeurs des types référence sont considérées comme des objets simplement en affichant les valeurs en tant que type `object`. Les valeurs des types valeur sont considérées comme des objets en effectuant des opérations de *boxing* et *d’unboxing*. Dans l’exemple suivant, une valeur `int` est convertie en `object` et à nouveau en `int`.
 
 [!code-csharp[Boxing](../../../samples/snippets/csharp/tour/types-and-variables/Program.cs#L1-L10)]
 

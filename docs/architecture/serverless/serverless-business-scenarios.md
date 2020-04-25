@@ -4,12 +4,12 @@ description: Découvrez sans serveur une approche pratique en accédant à des e
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 04/17/2020
-ms.openlocfilehash: 5c2ee70b86fbc9a54d2a532eaa3d7509f23825df
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 3cb3b73325fccc327ccf17f7298048f2eeb3577a
+ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135657"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158448"
 ---
 # <a name="serverless-business-scenarios-and-use-cases"></a>Scénarios métier et cas d’usage serverless
 
@@ -93,13 +93,13 @@ Cet exemple est une fonction générique (`.csx` fichier) qui peut être utilis�
 
 ## <a name="serverless-for-mobile"></a>Sans serveur pour les appareils mobiles
 
-Les Azure Functions sont faciles à implémenter et à gérer, et accessibles via HTTP. Ils constituent un excellent moyen d’implémenter une API pour une application mobile. Microsoft propose de superbes outils multiplateformes pour iOS, Android et Windows avec Xamarin. En tant que tel, Xamarin et Azure Functions fonctionnent bien ensemble. Cet article montre comment implémenter une fonction Azure dans le portail Web Azure ou dans Visual Studio au début, et comment créer un client multiplateforme avec Xamarin. Forms, qui s’exécute sur Android, iOS et Windows.
+Les Azure Functions sont faciles à implémenter et à gérer, et accessibles via HTTP. Ils constituent un excellent moyen d’implémenter une API pour une application mobile. Microsoft propose de superbes outils multiplateformes pour iOS, Android et Windows avec Xamarin. En tant que tel, Xamarin et Azure Functions fonctionnent bien ensemble. Cet article explique comment implémenter une fonction Azure dans le Portail Azure ou dans Visual Studio au début, et comment créer un client multiplateforme avec Xamarin. Forms s’exécutant sur Android, iOS et Windows.
 
 [Implémentation d’une fonction Azure simple avec un client Xamarin. Forms](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/)
 
 ## <a name="serverless-messaging"></a>Messagerie sans serveur
 
-Cet exemple montre comment utiliser Durable Functions modèle de ventilateur pour charger un nombre arbitraire de messages sur un nombre quelconque de sessions/partitions. Il cible les files d’attente Service Bus, Event Hubs ou de stockage. L’exemple ajoute également la possibilité d’utiliser ces messages avec une autre fonction Azure et de charger les données de minutage qui en résultent dans un autre concentrateur d’événements. Les données sont ensuite ingérées dans Analytics services comme Azure Explorateur de données.
+Cet exemple montre comment utiliser le modèle de Fanout Durable Functions pour charger un nombre arbitraire de messages sur un nombre quelconque de sessions/partitions. Il cible les files d’attente Service Bus, Event Hubs ou de stockage. L’exemple ajoute également la possibilité d’utiliser ces messages avec une autre fonction Azure et de charger les données de minutage qui en résultent dans un autre concentrateur d’événements. Les données sont ensuite ingérées dans Analytics services comme Azure Explorateur de données.
 
 [Générez et consommez des messages via les files d’attente Service Bus, Event Hubs et de stockage avec Azure Functions](https://docs.microsoft.com/samples/azure-samples/durable-functions-producer-consumer/product-consume-messages-az-functions/)
 

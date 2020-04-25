@@ -3,12 +3,12 @@ title: Déplacer du .NET Framework à .NET Core
 description: Présentation du processus de portage et d’outils qui peuvent s’avérer utiles lors du portage d’un projet .NET Framework vers .NET Core.
 author: cartermp
 ms.date: 10/22/2019
-ms.openlocfilehash: 499632791e85f4ede87668775ad48407c6988095
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: c6797a5b3a97ddd01f86498d896e859baf8997be
+ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135579"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158282"
 ---
 # <a name="overview-of-porting-from-net-framework-to-net-core"></a>Vue d’ensemble du Portage à partir de .NET Framework vers .NET Core
 
@@ -66,7 +66,7 @@ Nous vous recommandons d’utiliser le processus suivant lors du Portage de votr
 
    Lors de la lecture des rapports générés par l’analyseur, les informations importantes sont les API réelles qui sont utilisées et pas nécessairement le pourcentage de prise en charge de la plateforme cible. De nombreuses API ont des options équivalentes dans .NET Standard/Core, et par conséquent, il est important de comprendre les scénarios dont votre bibliothèque ou votre application a besoin pour déterminer l’implication de la portabilité.
 
-   Dans certains cas, les API ne sont pas équivalentes et vous devez effectuer certaines directives de préprocesseur du compilateur (c’est-à-dire `#if NET45`) pour créer des cas spéciaux pour les plateformes. À ce stade, vous êtes un projet qui ciblera toujours .NET Framework. Pour chacun de ces cas ciblés, il est recommandé d’utiliser des conditions bien connues qui peuvent être comprises comme un scénario.  Par exemple, la prise en charge d’AppDomain dans .NET Core est limitée, mais pour le scénario de chargement et de déchargement des assemblys, il existe une nouvelle API qui n’est pas disponible dans .NET Core. Voici un moyen courant de gérer cela dans le code :
+   Dans certains cas, les API ne sont pas équivalentes et vous devez effectuer certaines directives de préprocesseur du compilateur (autrement dit `#if NET45`,) pour ajouter des plateformes au cas particulier. À ce stade, votre projet sera toujours ciblé .NET Framework. Pour chacun de ces cas ciblés, il est recommandé d’utiliser des conditions bien connues qui peuvent être comprises comme un scénario.  Par exemple, la prise en charge d’AppDomain dans .NET Core est limitée, mais pour le scénario de chargement et de déchargement des assemblys, il existe une nouvelle API qui n’est pas disponible dans .NET Core. Voici un moyen courant de gérer cela dans le code :
 
    ```csharp
    #if FEATURE_APPDOMAIN_LOADING
@@ -84,7 +84,7 @@ Nous vous recommandons d’utiliser le processus suivant lors du Portage de votr
 
 1. À ce stade, vous pouvez basculer vers le ciblage de .NET Core (généralement pour les applications) ou .NET Standard (pour les bibliothèques).
 
-   Le choix entre .NET Core et .NET Standard dépend en grande partie de l’emplacement où le projet sera exécuté. S’il s’agit d’une bibliothèque qui sera consommée par d’autres applications ou distribuée via NuGet, la préférence consiste généralement à cibler .NET Standard. Toutefois, il peut y avoir des API qui sont uniquement disponibles sur .NET Core pour des raisons de performances ou pour d’autres raisons. Si c’est le cas, .NET Core doit être ciblé avec une .NET Standard Build potentiellement disponible, avec des performances réduites ou des fonctionnalité. En ciblant .NET Standard, le projet est prêt à s’exécuter sur de nouvelles plateformes (par exemple, webassembly). Si le projet a des dépendances sur des infrastructures d’application spécifiques (telles que ASP.NET Core), la cible sera limitée par les dépendances prises en charge par les dépendances.
+   Le choix entre .NET Core et .NET Standard dépend en grande partie de l’emplacement où le projet sera exécuté. S’il s’agit d’une bibliothèque qui sera consommée par d’autres applications ou distribuée via NuGet, la préférence consiste généralement à cibler .NET Standard. Toutefois, il peut y avoir des API qui sont uniquement disponibles sur .NET Core pour des raisons de performances ou pour d’autres raisons. Si c’est le cas, .NET Core doit être ciblé avec une .NET Standard Build potentiellement disponible, avec des performances ou des fonctionnalités réduites. En ciblant .NET Standard, le projet est prêt à s’exécuter sur de nouvelles plateformes (par exemple, webassembly). Si le projet a des dépendances sur des infrastructures d’application spécifiques (telles que ASP.NET Core), la cible sera limitée par les dépendances prises en charge par les dépendances.
 
    S’il n’existe aucune directive de préprocesseur pour le code de compilation conditionnelle pour .NET Framework ou .NET Standard, il s’agit simplement de rechercher les éléments suivants dans le fichier projet :
 
@@ -98,17 +98,17 @@ Nous vous recommandons d’utiliser le processus suivant lors du Portage de votr
    <TargetFramework>netcoreapp3.1</TargetFramework>
    ```
 
-   Toutefois, s’il s’agit d’une bibliothèque que vous souhaitez continuer à prendre en charge .NET Framework des builds spécifiques pour une raison quelconque, vous pouvez effectuer [plusieurs cibles](../../standard/library-guidance/cross-platform-targeting.md) en la remplaçant par les éléments suivants :
+   Toutefois, s’il s’agit d’une bibliothèque pour laquelle vous souhaitez continuer à prendre en charge des builds spécifiques à .NET Framework, vous pouvez utiliser [plusieurs cibles](../../standard/library-guidance/cross-platform-targeting.md) en les remplaçant par les éléments suivants :
 
    ```xml
    <TargetFrameworks>net472;netstandard2.0</TargetFrameworks>
    ```
 
-   Si vous utilisez des API spécifiques à Windows (telles que l’accès au registre), vous devez installer le [Pack de compatibilité Windows](./windows-compat-pack.md).
+   Si vous utilisez des API spécifiques à Windows (telles que l’accès au registre), installez le [Pack de compatibilité Windows](./windows-compat-pack.md).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
->[!div class="nextstepaction"]
->[Analyser les dépendances](third-party-deps.md)
->package[NuGet package](../deploying/creating-nuget-packages.md)
->[ASP.net to ASP.net Core migration](/aspnet/core/migration/proper-to-2x)
+> [!div class="nextstepaction"]
+> [Analyser les dépendances](third-party-deps.md)
+> package[NuGet package](../deploying/creating-nuget-packages.md)
+> [ASP.net to ASP.net Core migration](/aspnet/core/migration/proper-to-2x)

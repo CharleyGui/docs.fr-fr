@@ -1,44 +1,44 @@
 ---
-title: 'Comment : Inspecter le contenu de l’assemblage à l’aide de MetadataLoadContext'
-description: Apprenez à utiliser MetadataLoadContext, qui est une API qui vous permet de charger des assemblages .NET à des fins d’inspection.
+title: 'Comment : inspecter le contenu d’un assembly à l’aide de MetadataLoadContext'
+description: Découvrez comment utiliser MetadataLoadContext, une API qui vous permet de charger des assemblys .NET à des fins d’inspection.
 author: MSDN-WhiteKnight
 ms.date: 03/10/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: d2589d51a6e0611504c0133d293d3fdfae32553c
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 90c84147c52199afc42a2efc297bc7fe40658ec7
+ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242658"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82141197"
 ---
-# <a name="how-to-inspect-assembly-contents-using-metadataloadcontext"></a>Comment : Inspecter le contenu de l’assemblage à l’aide de MetadataLoadContext
+# <a name="how-to-inspect-assembly-contents-using-metadataloadcontext"></a>Comment : inspecter le contenu d’un assembly à l’aide de MetadataLoadContext
 
-L’API de réflexion en .NET par défaut permet aux développeurs d’inspecter le contenu des assemblages chargés dans le contexte d’exécution principal. Cependant, parfois, il n’est pas possible de charger un assemblage dans le contexte d’exécution, par exemple, parce qu’il a été compilé pour une autre plate-forme ou architecture de processeur, ou c’est un assemblage de [référence](reference-assemblies.md). L’API <xref:System.Reflection.MetadataLoadContext?displayProperty=fullName> vous permet de charger et d’inspecter ces assemblages. Les assemblages <xref:System.Reflection.MetadataLoadContext> chargés dans le sont traités uniquement comme des métadonnées, c’est-à-dire, vous pouvez examiner les types dans l’assemblage, mais vous ne pouvez pas exécuter n’importe quel code contenu en elle. Contrairement au contexte d’exécution principal, le <xref:System.Reflection.MetadataLoadContext> n’est pas automatiquement charger les dépendances de l’annuaire actuel; au lieu de cela, il <xref:System.Reflection.MetadataAssemblyResolver> utilise la logique de liaison personnalisée fournie par le passé à elle.
+L’API de réflexion dans .NET par défaut permet aux développeurs d’inspecter le contenu des assemblys chargés dans le contexte d’exécution principal. Toutefois, il est parfois impossible de charger un assembly dans le contexte d’exécution, par exemple parce qu’il a été compilé pour une autre architecture de plateforme ou de processeur, ou s’il s’agit d’un [assembly de référence](reference-assemblies.md). L' <xref:System.Reflection.MetadataLoadContext?displayProperty=fullName> API vous permet de charger et d’inspecter de tels assemblys. Les assemblys chargés dans <xref:System.Reflection.MetadataLoadContext> le sont traités uniquement comme des métadonnées, autrement dit, vous pouvez examiner les types dans l’assembly, mais vous ne pouvez pas exécuter le code qu’il contient. Contrairement au contexte d’exécution principal, <xref:System.Reflection.MetadataLoadContext> le ne charge pas automatiquement les dépendances à partir du répertoire actif ; au lieu de cela, elle utilise la logique de <xref:System.Reflection.MetadataAssemblyResolver> liaison personnalisée fournie par le passé.
 
 ## <a name="prerequisites"></a>Prérequis
 
-Pour <xref:System.Reflection.MetadataLoadContext>utiliser, installez le paquet [System.Reflection.MetadataLoadContext](https://www.nuget.org/packages/System.Reflection.MetadataLoadContext) NuGet. Il est pris en charge sur n’importe quel cadre cible .NET Standard 2.0-conforme, par exemple, .NET Core 2.0 ou .NET Framework 4.6.1.
+Pour utiliser <xref:System.Reflection.MetadataLoadContext>, installez le package NuGet [System. Reflection. MetadataLoadContext](https://www.nuget.org/packages/System.Reflection.MetadataLoadContext) . Il est pris en charge sur n’importe quel Framework cible conforme à la norme de .NET Standard 2,0, par exemple, .NET Core 2,0 ou .NET Framework 4.6.1.
 
 ## <a name="create-metadataassemblyresolver-for-metadataloadcontext"></a>Créer MetadataAssemblyResolver pour MetadataLoadContext
 
-Créer <xref:System.Reflection.MetadataLoadContext> les exigences de <xref:System.Reflection.MetadataAssemblyResolver>fournir l’exemple de la . La façon la plus simple d’en fournir une est d’utiliser le <xref:System.Reflection.PathAssemblyResolver>, qui résout les assemblages de la collection donnée de cordes de chemin d’assemblage. Cette collection, en plus des assemblages que vous souhaitez inspecter directement, devrait également inclure toutes les dépendances nécessaires. Par exemple, pour lire l’attribut personnalisé situé dans un assemblage externe, vous devez inclure que l’assemblage ou une exception sera jeté. Dans la plupart des cas, vous devez inclure au moins *l’assemblage de base,* c’est-à-dire l’assemblage contenant des types de système intégrés, tels que <xref:System.Object?displayProperty=nameWithType>. Le code suivant montre <xref:System.Reflection.PathAssemblyResolver> comment créer l’utilisation de la collection composée de l’assemblage inspecté et de l’assemblage de base du temps d’exécution actuel :
+La création <xref:System.Reflection.MetadataLoadContext> du requiert la fourniture de l' <xref:System.Reflection.MetadataAssemblyResolver>instance du. La façon la plus simple d’en fournir une consiste à <xref:System.Reflection.PathAssemblyResolver>utiliser, qui résout les assemblys à partir de la collection donnée de chaînes de chemin d’accès d’assembly. Cette collection, outre les assemblys que vous souhaitez inspecter directement, doit également inclure toutes les dépendances nécessaires. Par exemple, pour lire l’attribut personnalisé situé dans un assembly externe, vous devez inclure cet assembly, sans quoi une exception sera levée. Dans la plupart des cas, vous devez inclure au moins l' *assembly principal*, autrement dit, l’assembly contenant les types de système <xref:System.Object?displayProperty=nameWithType>intégrés, tels que. Le code suivant montre comment créer <xref:System.Reflection.PathAssemblyResolver> à l’aide de la collection constituée de l’assembly inspecté et de l’assembly principal du runtime actuel :
 
 [!code-csharp[](snippets/inspect-contents-using-metadataloadcontext/MetadataLoadContextSnippets.cs#CoreAssembly)]
 
-Si vous avez besoin d’accéder à tous les types BCL, vous pouvez inclure tous les assemblages de temps d’exécution dans la collection. Le code suivant montre <xref:System.Reflection.PathAssemblyResolver> comment créer l’utilisation de la collection composée de l’assemblage inspecté et de tous les assemblages du temps d’exécution actuel :
+Si vous avez besoin d’accéder à tous les types BCL, vous pouvez inclure tous les assemblys de Runtime dans la collection. Le code suivant montre comment créer <xref:System.Reflection.PathAssemblyResolver> à l’aide de la collection constituée de l’assembly inspecté et de tous les assemblys du runtime actuel :
 
 [!code-csharp[](snippets/inspect-contents-using-metadataloadcontext/MetadataLoadContextSnippets.cs#RuntimeAssemblies)]
 
-## <a name="create-metadataloadcontext"></a>Créer Des métadonnéesLoadContexte
+## <a name="create-metadataloadcontext"></a>Créer MetadataLoadContext
 
-Pour créer <xref:System.Reflection.MetadataLoadContext>le , <xref:System.Reflection.MetadataLoadContext.%23ctor%28System.Reflection.MetadataAssemblyResolver%2CSystem.String%29>invoquer son <xref:System.Reflection.MetadataAssemblyResolver> constructeur , en passant le paramètre précédemment créé comme le premier paramètre et le nom d’assemblage de base comme le deuxième paramètre. Vous pouvez omettre le nom d’assemblage de base, auquel cas le constructeur tentera d’utiliser des noms par défaut : "mscorlib", "System.Runtime", ou "netstandard".
+Pour créer le <xref:System.Reflection.MetadataLoadContext>, appelez son constructeur <xref:System.Reflection.MetadataLoadContext.%23ctor%28System.Reflection.MetadataAssemblyResolver%2CSystem.String%29>, en passant le précédemment <xref:System.Reflection.MetadataAssemblyResolver> créé comme premier paramètre et le nom de l’assembly principal comme deuxième paramètre. Vous pouvez omettre le nom de l’assembly principal, auquel cas le constructeur tente d’utiliser les noms par défaut : « mscorlib », « System. Runtime » ou « netstandard ».
 
-Une fois que vous avez créé le contexte, vous <xref:System.Reflection.MetadataLoadContext.LoadFromAssemblyPath%2A>pouvez charger des assemblages en elle en utilisant des méthodes telles que . Vous pouvez utiliser toutes les API de réflexion sur les assemblages chargés, sauf ceux qui impliquent l’exécution du code. La <xref:System.Reflection.MemberInfo.GetCustomAttributes%2A> méthode implique l’exécution des constructeurs, alors utilisez la méthode à la <xref:System.Reflection.MemberInfo.GetCustomAttributesData%2A> place lorsque vous avez besoin d’examiner les attributs personnalisés dans le <xref:System.Reflection.MetadataLoadContext>.
+Une fois que vous avez créé le contexte, vous pouvez charger des assemblys dans celui- <xref:System.Reflection.MetadataLoadContext.LoadFromAssemblyPath%2A>ci à l’aide de méthodes telles que. Vous pouvez utiliser toutes les API de réflexion sur les assemblys chargés, à l’exception de ceux qui impliquent l’exécution du code. La <xref:System.Reflection.MemberInfo.GetCustomAttributes%2A> méthode implique l’exécution de constructeurs. par conséquent, utilisez plutôt <xref:System.Reflection.MemberInfo.GetCustomAttributesData%2A> la méthode lorsque vous devez examiner des attributs personnalisés dans le <xref:System.Reflection.MetadataLoadContext>.
 
-L’échantillon de <xref:System.Reflection.MetadataLoadContext>code suivant crée, charge l’assemblage en elle, et les attributs d’assemblage de sorties dans la console:
+L’exemple de code suivant <xref:System.Reflection.MetadataLoadContext>crée, charge l’assembly dans celui-ci et génère des attributs d’assembly dans la console :
 
 [!code-csharp[](snippets/inspect-contents-using-metadataloadcontext/MetadataLoadContextSnippets.cs#CreateContext)]
 
 ## <a name="example"></a>Exemple
 
-Pour un exemple complet de code, voir le [contenu d’assemblage Inspect à l’aide de l’échantillon MetadataLoadContext](https://github.com/dotnet/samples/tree/master/core/assembly/MetadataLoadContext).
+Pour obtenir un exemple de code complet, consultez l' [exemple inspecter le contenu de l’assembly à l’aide de MetadataLoadContext](https://docs.microsoft.com/samples/dotnet/samples/inspect-assembly-contents-using-metadataloadcontext/).

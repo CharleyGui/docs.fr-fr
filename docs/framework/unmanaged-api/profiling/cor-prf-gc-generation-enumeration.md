@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d6ece160-26ad-4d39-abd7-05acd6f78c48
 topic_type:
 - apiref
-ms.openlocfilehash: 4eff8472e353c4e5fd2505b281cc9efc89f013fc
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 0eb1f57e3505f9ce5bb8b831d30c3891e51097c3
+ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76867208"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158565"
 ---
 # <a name="cor_prf_gc_generation-enumeration"></a>COR_PRF_GC_GENERATION, énumération
 Identifie une génération de garbage collection.  
@@ -31,34 +31,38 @@ typedef enum {
     COR_PRF_GC_GEN_0 = 0,  
     COR_PRF_GC_GEN_1 = 1,  
     COR_PRF_GC_GEN_2 = 2,  
-    COR_PRF_GC_LARGE_OBJECT_HEAP = 3  
+    COR_PRF_GC_LARGE_OBJECT_HEAP = 3,
+    COR_PRF_GC_PINNED_OBJECT_HEAP= 4
 } COR_PRF_GC_GENERATION;  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Membres  
   
-|Member|Description|  
+|Membre|Description|  
 |------------|-----------------|  
 |`COR_PRF_GC_GEN_0`|L’objet est stocké en tant que génération 0.|  
 |`COR_PRF_GC_GEN_1`|L’objet est stocké en tant que génération 1.|  
 |`COR_PRF_GC_GEN_2`|L’objet est stocké en tant que génération 2.|  
 |`COR_PRF_GC_LARGE_OBJECT_HEAP`|L’objet est stocké dans le tas d’objets volumineux.|  
+|`COR_PRF_GC_PINNED_OBJECT_HEAP`|L’objet est stocké dans le tas d’objets épinglés.|  
   
 ## <a name="remarks"></a>Notes  
- Le garbage collector améliore les performances de gestion de la mémoire en divisant les objets en générations en fonction de leur âge. Le « garbage collector » utilise actuellement trois générations, numérotées 0, 1 et 2, ainsi qu’un segment de tas spécial utilisé pour les objets volumineux. Les objets dont la taille est supérieure à une valeur particulière sont stockés dans le tas d’objets volumineux. Les autres objets alloués commencent à appartenir à la génération 0. Tous les objets qui existent après garbage collection se produisent dans la génération 0 sont promus à la génération 1. Les objets qui existent après garbage collection se produisent dans la génération 1 sont déplacés dans la génération 2.  
+ Le garbage collector améliore les performances de gestion de la mémoire en divisant les objets en générations en fonction de leur âge. Le « garbage collector » utilise actuellement trois générations, numérotées 0, 1 et 2, et deux segments de tas spéciaux, un pour les objets volumineux et un pour les objets épinglés.
+  
+ Les objets dont la taille est supérieure à une valeur de seuil sont stockés dans le tas d’objets volumineux. Les objets épinglés peuvent être alloués au tas d’objets épinglés afin d’éviter les coûts de performance liés à leur allocation sur les tas normaux. Les autres objets alloués commencent à appartenir à la génération 0. Tous les objets qui existent après garbage collection se produisent dans la génération 0 sont promus à la génération 1. Les objets qui existent après garbage collection se produisent dans la génération 1 sont déplacés dans la génération 2.  
   
  L’utilisation de générations signifie que le garbage collector ne doit utiliser qu’un sous-ensemble des objets alloués à un moment donné.  
   
- L’énumération `COR_PRF_GC_GENERATION` est utilisée par la structure [COR_PRF_GC_GENERATION_RANGE](cor-prf-gc-generation-range-structure.md) .  
+ L' `COR_PRF_GC_GENERATION` énumération est utilisée par la structure [COR_PRF_GC_GENERATION_RANGE](cor-prf-gc-generation-range-structure.md) .  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Conditions requises  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

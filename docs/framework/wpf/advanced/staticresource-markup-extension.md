@@ -8,20 +8,20 @@ helpviewer_keywords:
 - XAML [WPF], StaticResource markup extension
 - StaticResource markup extensions [WPF]
 ms.assetid: 97af044c-71f1-4617-9a94-9064b68185d2
-ms.openlocfilehash: 5c0bb247bae525658d89d53f1672e57b87aba7bc
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: c160322fb3834fcd705c0482f5e55c8da32d143b
+ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81646215"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82141249"
 ---
 # <a name="staticresource-markup-extension"></a>StaticResource, extension de balisage
-Fournit une valeur [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pour n’importe quel attribut de propriété en recherchant vers le haut une référence à une ressource déjà définie. Le comportement de recherche pour cette ressource est analogue à la recherche de temps de charge, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] qui cherchera des ressources qui ont été précédemment chargées à partir de la majoration de la page actuelle ainsi que d’autres sources d’application, et générera cette valeur de ressource comme valeur de propriété dans les objets de run-time.  
+Fournit une valeur pour n' [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] importe quel attribut de propriété en recherchant une référence à une ressource déjà définie. Le comportement de recherche pour cette ressource est analogue à la recherche au moment du chargement, qui recherche les ressources qui ont été chargées précédemment à [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] partir du balisage de la page actuelle, ainsi que d’autres sources d’application, et qui génère cette valeur de ressource en tant que valeur de propriété dans les objets d’exécution.  
   
 ## <a name="xaml-attribute-usage"></a>Utilisation d'attributs XAML  
   
 ```xml  
-<object property="{StaticResource key}" .../>  
+<object property="{StaticResource key}" ... />  
 ```  
   
 ## <a name="xaml-object-element-usage"></a>Utilisation d'éléments objet XAML  
@@ -29,7 +29,7 @@ Fournit une valeur [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xa
 ```xml  
 <object>  
   <object.property>  
-<StaticResource ResourceKey="key" .../>  
+<StaticResource ResourceKey="key" ... />  
   </object.property>  
 </object>  
 ```  
@@ -38,38 +38,38 @@ Fournit une valeur [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xa
   
 |||  
 |-|-|  
-|`key`|Clé pour la ressource demandée. Cette clé a d’abord été attribuée par la [directive x:Key](../../../desktop-wpf/xaml-services/xkey-directive.md) si `key` une <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> ressource a été créée en majoration, ou a été fournie comme paramètre lors de l’appel si la ressource a été créée dans le code.|  
+|`key`|Clé pour la ressource demandée. Cette clé a été initialement assignée par la [directive x :Key](../../../desktop-wpf/xaml-services/xkey-directive.md) si une ressource a été créée dans le `key` balisage ou si elle <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> a été fournie en tant que paramètre lors de l’appel de si la ressource a été créée dans le code.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!IMPORTANT]
-> Il `StaticResource` ne faut pas tenter de faire une référence prospective à [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] une ressource qui est définie plus loin dans le fichier. La tentative de le faire n’est pas prise en charge, et même si une telle référence n’échoue <xref:System.Windows.ResourceDictionary> pas, tenter la référence avant entraînera une pénalité de performance de temps de charge lorsque les tables internes de hachage représentant un sont recherchées. Pour de meilleurs résultats, ajustez la composition de vos dictionnaires de ressources de façon à éviter les références avant. Si vous ne pouvez pas éviter une référence avant, utilisez [l’extension De Markup DynamicResource](dynamicresource-markup-extension.md) à la place.  
+> Un `StaticResource` ne doit pas tenter de créer une référence avant à une ressource qui est définie de manière lexicale [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] dans le fichier. Toute tentative de ce type n’est pas prise en charge, et même si une telle référence n’échoue pas, toute tentative de référence anticipée entraîne une altération des performances du temps de <xref:System.Windows.ResourceDictionary> chargement lors de la recherche des tables de hachage internes représentant un. Pour de meilleurs résultats, ajustez la composition de vos dictionnaires de ressources de sorte que les références anticipées puissent être évitées. Si vous ne pouvez pas éviter une référence avant, utilisez l' [extension de balisage DynamicResource](dynamicresource-markup-extension.md) à la place.  
   
- Le <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> spécifié doit correspondre à une ressource existante, identifiée avec une [directive x:Key](../../../desktop-wpf/xaml-services/xkey-directive.md) à un certain niveau dans votre page, application, les thèmes de contrôle disponibles et les ressources externes, ou les ressources du système. La recherche des ressources se produit dans cet ordre. Pour plus d’informations sur le comportement de recherche de ressources pour les ressources statiques et dynamiques, voir [XAML Resources](../../../desktop-wpf/fundamentals/xaml-resources-define.md).  
+ Le spécifié <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> doit correspondre à une ressource existante, identifiée par une [directive x :Key](../../../desktop-wpf/xaml-services/xkey-directive.md) à un certain niveau de la page, de l’application, des thèmes de contrôle disponibles et des ressources externes, ou des ressources système. La recherche de ressources se produit dans cet ordre. Pour plus d’informations sur le comportement de recherche de ressources pour les ressources statiques et dynamiques, consultez [ressources XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md).  
   
- Une clé de ressource peut être n’importe quelle chaîne définie dans la [grammaire XamlName](../../../desktop-wpf/xaml-services/xamlname-grammar.md). Une clé de ressource peut également être <xref:System.Type>d’autres types d’objets, tels que un . Une <xref:System.Type> clé est fondamentale pour la façon dont les contrôles peuvent être stylés par des thèmes, à travers une clé de style implicite. Pour plus d’informations, consultez [Vue d’ensemble de la création de contrôles](../controls/control-authoring-overview.md).  
+ Une clé de ressource peut être n’importe quelle chaîne définie dans la [grammaire XamlName](../../../desktop-wpf/xaml-services/xamlname-grammar.md). Une clé de ressource peut également être d’autres types d’objets, <xref:System.Type>tels qu’un. Une <xref:System.Type> clé est fondamentale pour la façon dont les contrôles peuvent être mis en forme par thèmes, à l’aide d’une clé de style implicite. Pour plus d’informations, consultez [Vue d’ensemble de la création de contrôles](../controls/control-authoring-overview.md).  
   
- Le moyen déclaratif alternatif de référencement d’une ressource est comme une [extension De Markup DynamicResource](dynamicresource-markup-extension.md).  
+ Les autres méthodes déclaratives de référencement d’une ressource sont en tant qu' [extension de balisage DynamicResource](dynamicresource-markup-extension.md).  
   
  La syntaxe d’attribut est la syntaxe la plus couramment utilisée avec cette extension de balisage. Le jeton de chaîne fourni après la chaîne d’identificateur `StaticResource` est assigné en tant que valeur <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> de la classe d’extension <xref:System.Windows.StaticResourceExtension> sous-jacente.  
   
- `StaticResource`peut être utilisé dans la syntaxe d’élément d’objet. Dans ce cas, il faut <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> préciser la valeur de la propriété.  
+ `StaticResource`peut être utilisé dans la syntaxe d’élément objet. Dans ce cas, la spécification de la valeur <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> de la propriété est obligatoire.  
   
  `StaticResource` peut également être utilisé dans une utilisation d'attributs en clair qui spécifie la propriété <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> en tant que paire propriété=valeur :  
   
 ```xml  
-<object property="{StaticResource ResourceKey=key}" .../>  
+<object property="{StaticResource ResourceKey=key}" ... />  
 ```  
   
  L'utilisation en clair est souvent utile pour les extensions qui comportent plusieurs propriétés définissables ou si certaines propriétés sont facultatives. `StaticResource` ne comportant qu'une seule propriété définissable (obligatoire), cette utilisation en clair n'est pas classique.  
   
- Dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] la mise en œuvre du processeur, <xref:System.Windows.StaticResourceExtension> la manipulation de cette extension de balisage est définie par la classe.  
+ Dans l' [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] implémentation du processeur, la gestion de cette extension de balisage est <xref:System.Windows.StaticResourceExtension> définie par la classe.  
   
  `StaticResource` est une extension de balisage. Les extensions de balisage sont généralement implémentées pour éviter que les valeurs d’attribut ne soient autre chose que des valeurs littérales ou des noms de gestionnaire et lorsque l’exigence dépasse le cadre de la définition de convertisseurs de type sur certains types ou propriétés. Toutes les extensions de balisage [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] utilisent les caractères { et } dans leur syntaxe d’attribut, convention selon laquelle un processeur [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] reconnaît qu’une extension de balisage doit traiter l’attribut. Pour plus d’informations, consultez [Extensions de balisage et XAML WPF](markup-extensions-and-wpf-xaml.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
+- [Application d'un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
 - [Extensions de balisage et XAML WPF](markup-extensions-and-wpf-xaml.md)
 - [Ressources XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md)

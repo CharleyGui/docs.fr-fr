@@ -2,16 +2,16 @@
 title: Commande dotnet restore
 description: Découvrez comment restaurer les dépendances et les outils spécifiques du projet avec la commande dotnet restore.
 ms.date: 02/27/2020
-ms.openlocfilehash: 3deef68a9bcee389a52291c72e7e1a1019a739fd
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: cc8f374468ba95baccf058ac0b0a0175672cdf01
+ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102786"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158305"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
-**Cet article s’applique à:** ✔️ .NET Core 2.1 SDK et les versions ultérieures
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
 ## <a name="name"></a>Nom
 
@@ -32,24 +32,34 @@ dotnet restore -h|--help
 
 ## <a name="description"></a>Description
 
-La commande `dotnet restore` utilise NuGet pour restaurer les dépendances, ainsi que les outils spécifiques aux projets qui sont spécifiés dans le fichier projet. Par défaut, la restauration des dépendances et celle des outils sont exécutées en parallèle.
+La commande `dotnet restore` utilise NuGet pour restaurer les dépendances, ainsi que les outils spécifiques aux projets qui sont spécifiés dans le fichier projet.  Dans la plupart des cas, vous n’avez pas besoin `dotnet restore` d’utiliser explicitement la commande, car une restauration NuGet est exécutée implicitement si nécessaire lorsque vous exécutez les commandes suivantes :
+
+- [`dotnet new`](dotnet-new.md)
+- [`dotnet build`](dotnet-build.md)
+- [`dotnet build-server`](dotnet-build-server.md)
+- [`dotnet run`](dotnet-run.md)
+- [`dotnet test`](dotnet-test.md)
+- [`dotnet publish`](dotnet-publish.md)
+- [`dotnet pack`](dotnet-pack.md)
+
+Parfois, il peut être gênant d’exécuter la restauration NuGet implicite avec ces commandes. Par exemple, certains systèmes automatisés, comme les systèmes de génération, doivent appeler explicitement `dotnet restore` pour contrôler quand la restauration a lieu afin de pouvoir contrôler l’utilisation du réseau. Pour empêcher la restauration NuGet implicite, vous pouvez utiliser `--no-restore` l’indicateur avec l’une de ces commandes pour désactiver la restauration implicite.
 
 ### <a name="specify-feeds"></a>Spécifier les flux
 
-Pour restaurer les dépendances, NuGet a besoin des flux où sont situés les packages. Les flux sont généralement fournis via le fichier de configuration *nuget.config*. Un fichier de configuration par défaut est fourni lors de l’installation du SDK .NET Core. Pour spécifier des flux supplémentaires, faites l’un des éléments suivants :
+Pour restaurer les dépendances, NuGet a besoin des flux où sont situés les packages. Les flux sont généralement fournis via le fichier de configuration *nuget.config*. Un fichier de configuration par défaut est fourni lors de l’installation du kit SDK .NET Core. Pour spécifier des flux supplémentaires, effectuez l’une des opérations suivantes :
 
-- Créez votre propre fichier *nuget.config* dans l’annuaire du projet. Pour plus d’informations, voir [configurations NuGet communes](/nuget/consume-packages/configuring-nuget-behavior) et [nuget.config différences](#nugetconfig-differences) plus tard dans cet article.
-- Utilisez `dotnet nuget` des commandes [`dotnet nuget add source`](dotnet-nuget-add-source.md)telles que .
+- Créez votre propre fichier *NuGet. config* dans le répertoire du projet. Pour plus d’informations, consultez [configurations NuGet courantes](/nuget/consume-packages/configuring-nuget-behavior) et [différences de NuGet. config](#nugetconfig-differences) plus loin dans cet article.
+- Utilisez `dotnet nuget` des commandes telles [`dotnet nuget add source`](dotnet-nuget-add-source.md)que.
 
-Vous pouvez remplacer les flux *nuget.config* avec l’option. `-s`
+Vous pouvez substituer les flux *NuGet. config* avec l' `-s` option.
 
-Pour plus d’informations sur la façon d’utiliser les aliments authentifiés, voir [Les paquets de consommation des flux authentifiés](/nuget/consume-packages/consuming-packages-authenticated-feeds).
+Pour plus d’informations sur l’utilisation des flux authentifiés, consultez [utilisation de packages à partir de flux authentifiés](/nuget/consume-packages/consuming-packages-authenticated-feeds).
 
-### <a name="package-cache"></a>Cache de paquet
+### <a name="global-packages-folder"></a>Dossier de packages globaux
 
 Pour les dépendances, vous pouvez spécifier l’emplacement des packages restaurés pendant l’opération de restauration à l’aide de l’argument `--packages`. Si aucune valeur n’est spécifiée, le cache du package NuGet par défaut est utilisé. Il se trouve dans le répertoire `.nuget/packages`, situé dans le répertoire de base de l’utilisateur, sur tous les systèmes d’exploitation. Par exemple, */home/user1* sur Linux ou *C:\Users\user1* sur Windows.
 
-### <a name="project-specific-tooling"></a>Outillage spécifique au projet
+### <a name="project-specific-tooling"></a>Outils spécifiques au projet
 
 Pour les outils spécifiques au projet, `dotnet restore` commence par restaurer le package dans lequel l’outil est empaqueté, puis il restaure les dépendances de l’outil, comme spécifié dans son fichier projet.
 
@@ -63,29 +73,13 @@ Trois paramètres spécifiques sont ignorés par `dotnet restore` :
 
   Les redirections de liaison ne fonctionnent pas avec les éléments `<PackageReference>` et .NET Core prend en charge seulement les éléments `<PackageReference>` pour les packages NuGet.
 
-- [Solution](/nuget/schema/nuget-config-file#solution-section)
+- [elle](/nuget/schema/nuget-config-file#solution-section)
 
   Ce paramètre est spécifique à Visual Studio et ne s’applique pas à .NET Core. .NET Core n’utilise pas de fichier `packages.config` et utilise à la place des éléments `<PackageReference>` pour les packages NuGet.
 
 - [trustedSigners](/nuget/schema/nuget-config-file#trustedsigners-section)
 
   Ce paramètre n’est pas applicable, car [NuGet ne prend pas encore en charge la vérification multiplateforme](https://github.com/NuGet/Home/issues/7939) des packages approuvés.
-
-## <a name="implicit-restore"></a>Restauration implicite
-
-La `dotnet restore` commande est exécutée implicitement si nécessaire lorsque vous exécutez les commandes suivantes :
-
-- [`dotnet new`](dotnet-new.md)
-- [`dotnet build`](dotnet-build.md)
-- [`dotnet build-server`](dotnet-build-server.md)
-- [`dotnet run`](dotnet-run.md)
-- [`dotnet test`](dotnet-test.md)
-- [`dotnet publish`](dotnet-publish.md)
-- [`dotnet pack`](dotnet-pack.md)
-
-Dans la plupart des cas, vous `dotnet restore` n’avez pas besoin d’utiliser explicitement la commande.
-
-Parfois, il peut s’avérer fastidieux d’exécuter `dotnet restore` implicitement. Par exemple, certains systèmes automatisés, comme les systèmes de génération, doivent appeler explicitement `dotnet restore` pour contrôler quand la restauration a lieu afin de pouvoir contrôler l’utilisation du réseau. Pour empêcher l’exécution implicite de `dotnet restore`, vous pouvez utiliser l’indicateur `--no-restore` avec l’une de ces commandes afin de désactiver la restauration implicite.
 
 ## <a name="arguments"></a>Arguments
 
@@ -109,7 +103,7 @@ Parfois, il peut s’avérer fastidieux d’exécuter `dotnet restore` implicite
 
 - **`--force-evaluate`**
 
-  Les forces restaurent pour réévaluer toutes les dépendances même si un fichier de verrouillage existe déjà.
+  Force la restauration à réévaluer toutes les dépendances même si un fichier de verrouillage existe déjà.
 
 - **`-h|--help`**
 
@@ -125,15 +119,15 @@ Parfois, il peut s’avérer fastidieux d’exécuter `dotnet restore` implicite
 
 - **`--lock-file-path <LOCK_FILE_PATH>`**
 
-  Emplacement de sortie où le fichier de verrouillage du projet est écrit. Par défaut, il *s’agit de PROJECT_ROOT-packages.lock.json*.
+  Emplacement de sortie où le fichier de verrouillage de projet est écrit. Par défaut, il s’agit de *PROJECT_ROOT \Packages.Lock.JSON*.
 
 - **`--locked-mode`**
 
-  N’autorisez pas la mise à jour du fichier de verrouillage du projet.
+  N’autorise pas la mise à jour du fichier de verrouillage de projet.
 
 - **`--no-cache`**
 
-  Spécifie de ne pas mettre en cache les demandes HTTP.
+  Spécifie de ne pas mettre en cache les requêtes HTTP.
 
 - **`--no-dependencies`**
 
@@ -153,7 +147,7 @@ Parfois, il peut s’avérer fastidieux d’exécuter `dotnet restore` implicite
 
 - **`--use-lockfile`**
 
-  Permet de générer et d’utiliser le fichier de verrouillage du projet lors de la restauration.
+  Active la génération et l’utilisation du fichier de verrouillage de projet avec Restore.
 
 - **`-v|--verbosity <LEVEL>`**
 
@@ -167,25 +161,25 @@ Parfois, il peut s’avérer fastidieux d’exécuter `dotnet restore` implicite
   dotnet restore
   ```
 
-- Restaurer les dépendances et `app1` les outils du projet trouvé dans le chemin donné :
+- Restaurez les dépendances et `app1` les outils pour le projet trouvé dans le chemin d’accès donné :
 
   ```dotnetcli
   dotnet restore ~/projects/app1/app1.csproj
   ```
 
-- Restaurer les dépendances et les outils du projet dans l’annuaire actuel en utilisant le chemin de fichier fourni comme source :
+- Restaurez les dépendances et les outils pour le projet dans le répertoire actif à l’aide du chemin d’accès de fichier fourni comme source :
 
   ```dotnetcli
   dotnet restore -s c:\packages\mypackages
   ```
 
-- Restaurer les dépendances et les outils du projet dans l’annuaire actuel en utilisant les deux voies de fichiers fournies comme sources :
+- Restaurez les dépendances et les outils pour le projet dans le répertoire actif à l’aide des deux chemins d’accès de fichier fournis comme sources :
 
   ```dotnetcli
   dotnet restore -s c:\packages\mypackages -s c:\packages\myotherpackages
   ```
 
-- Restaurer les dépendances et les outils du projet dans l’annuaire actuel montrant une sortie détaillée :
+- Restaurez les dépendances et les outils pour le projet dans le répertoire actif et affichez la sortie détaillée :
 
   ```dotnetcli
   dotnet restore --verbosity detailed

@@ -1,40 +1,50 @@
 ---
-title: Formulaires Windows brisant les changements
-description: Répertorie les modifications de rupture dans les formulaires Windows pour .NET Core.
+title: Modifications avec rupture Windows Forms
+description: Répertorie les dernières modifications apportées à Windows Forms pour .NET Core.
 ms.date: 01/08/2020
-ms.openlocfilehash: 25c568a8a0092a9c4874419c64c7dcebea4dce9e
-ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
+ms.openlocfilehash: 75d369c7fb999da81a50fe46716e125c3840eb7a
+ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888116"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158435"
 ---
-# <a name="breaking-changes-in-windows-forms"></a>Briser les changements dans les formulaires Windows
+# <a name="breaking-changes-in-windows-forms"></a>Modifications avec rupture dans Windows Forms
 
-Windows Forms support a été ajouté à .NET Core dans la version 3.0. Cet article répertorie les modifications de rupture pour les formulaires Windows par la version .NET Core dans laquelle ils ont été introduits. Si vous mise à niveau d’une application Windows Forms à partir de .NET Framework ou d’une version précédente de .NET Core (3.0 ou plus tard), cet article s’applique à vous.
+La prise en charge de Windows Forms a été ajoutée à .NET Core dans la version 3,0. Cet article répertorie les modifications avec rupture pour Windows Forms par la version de .NET Core dans laquelle elles ont été introduites. Si vous effectuez la mise à niveau d’une application Windows Forms à partir d' .NET Framework ou d’une version antérieure de .NET Core (3,0 ou version ultérieure), cet article s’applique à vous.
 
-Les modifications de rupture suivantes sont documentées sur cette page :
+Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
-| [WinForms API maintenant jeter ArgumentNullException](#winforms-apis-now-throw-argumentnullexception) | 5.0 |
+| [Contrôles de barre d’État supprimés](#removed-status-bar-controls) | 5.0 |
+| [Les méthodes WinForms lèvent désormais ArgumentException](#winforms-methods-now-throw-argumentexception) | 5.0 |
+| [Les méthodes WinForms lèvent désormais ArgumentNullException](#winforms-methods-now-throw-argumentnullexception) | 5.0 |
 | [Contrôles supprimés](#removed-controls) | 3.1 |
-| [CellFormatting événement non soulevé si tooltip est montré](#cellformatting-event-not-raised-if-tooltip-is-shown) | 3.1 |
-| [Control.DefaultFont changé en Segoe UI 9 pt](#default-control-font-changed-to-segoe-ui-9-pt) | 3.0 |
+| [Événement CellFormatting non déclenché si l’info-bulle est affichée](#cellformatting-event-not-raised-if-tooltip-is-shown) | 3.1 |
+| [Control. DefaultFont remplacé par Segoe UI 9 PT](#default-control-font-changed-to-segoe-ui-9-pt) | 3.0 |
 | [Modernisation du FolderBrowserDialog](#modernization-of-the-folderbrowserdialog) | 3.0 |
-| [SerializableAttribute supprimé de certains types de formulaires Windows](#serializableattribute-removed-from-some-windows-forms-types) | 3.0 |
+| [SerializableAttribute supprimé de certains types de Windows Forms](#serializableattribute-removed-from-some-windows-forms-types) | 3.0 |
 | [Commutateur de compatibilité AllowUpdateChildControlIndexForTabControls non pris en charge](#allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported) | 3.0 |
-| [DomainUpDown.UseLegacyScrolling commutation compatibilité non pris en charge](#domainupdownuselegacyscrolling-compatibility-switch-not-supported) | 3.0 |
-| [DoNotLoadLatestRichEditControl commutateur de compatibilité non pris en charge](#donotloadlatestricheditcontrol-compatibility-switch-not-supported) | 3.0 |
+| [Commutateur de compatibilité DomainUpDown. UseLegacyScrolling non pris en charge](#domainupdownuselegacyscrolling-compatibility-switch-not-supported) | 3.0 |
+| [Commutateur de compatibilité DoNotLoadLatestRichEditControl non pris en charge](#donotloadlatestricheditcontrol-compatibility-switch-not-supported) | 3.0 |
 | [Commutateur de compatibilité DoNotSupportSelectAllShortcutInMultilineTextBox non pris en charge](#donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported) | 3.0 |
 | [Commutateur de compatibilité DontSupportReentrantFilterMessage non pris en charge](#dontsupportreentrantfiltermessage-compatibility-switch-not-supported) | 3.0 |
 | [Commutateur de compatibilité EnableVisualStyleValidation non pris en charge](#enablevisualstylevalidation-compatibility-switch-not-supported) | 3.0 |
-| [UtiliserLegacyContextMenuStripSourceControlValue commutateur de compatibilité non pris en charge](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported) | 3.0 |
+| [Commutateur de compatibilité UseLegacyContextMenuStripSourceControlValue non pris en charge](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported) | 3.0 |
 | [Commutateur de compatibilité UseLegacyImages non pris en charge](#uselegacyimages-compatibility-switch-not-supported) | 3.0 |
-| [Changement d’accès pour AccessibleObject.RuntimeIDFirstItem](#change-of-access-for-accessibleobjectruntimeidfirstitem) | 3.0 |
-| [API dupliquée supprimée des formulaires Windows](#duplicated-apis-removed-from-windows-forms) | 3.0 |
+| [Changement d’accès pour AccessibleObject. RuntimeIDFirstItem](#change-of-access-for-accessibleobjectruntimeidfirstitem) | 3.0 |
+| [API dupliquées supprimées de Windows Forms](#duplicated-apis-removed-from-windows-forms) | 3.0 |
 
-## <a name="net-50"></a>.NET 5.0
+## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [winforms-deprecated-controls](../../../includes/core-changes/windowsforms/5.0/winforms-deprecated-controls.md)]
+
+***
+
+[!INCLUDE [invalid-args-cause-argumentexception](../../../includes/core-changes/windowsforms/5.0/invalid-args-cause-argumentexception.md)]
+
+***
 
 [!INCLUDE [null-args-cause-argumentnullexception](../../../includes/core-changes/windowsforms/5.0/null-args-cause-argumentnullexception.md)]
 
@@ -106,4 +116,4 @@ Les modifications de rupture suivantes sont documentées sur cette page :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Port a Windows Forms app to .NET Core](../porting/winforms.md)
+- [Portage d’une application Windows Forms vers .NET Core](../porting/winforms.md)

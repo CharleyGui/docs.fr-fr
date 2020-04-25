@@ -1,16 +1,16 @@
 ---
 title: Mémoires tampons de taille fixe - Guide de programmation C#
-ms.date: 04/20/2018
+ms.date: 04/23/2020
 helpviewer_keywords:
 - fixed size buffers [C#]
 - unsafe buffers [C#]
 - unsafe code [C#], fixed size buffers
-ms.openlocfilehash: 6770497b23212f1786b4f4a620ed2b650079c44b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5920dd125ded34969d60feb299568b56402056ab
+ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79157024"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82140552"
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>Mémoires tampons de taille fixe (Guide de programmation C#)
 
@@ -20,11 +20,11 @@ En C#, vous pouvez utiliser l’instruction [fixed](../../language-reference/key
 private fixed char name[30];
 ```
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
 Dans du code safe, un struct C# qui contient un tableau ne contient pas les éléments du tableau. Le struct contient une référence aux éléments du tableau. Vous pouvez incorporer un tableau de taille fixe dans un [struct](../../language-reference/builtin-types/struct.md) quand il est utilisé dans un bloc de code [unsafe](../../language-reference/keywords/unsafe.md).
 
-La taille `struct` de ce qui suit ne dépend pas `pathName` du nombre d’éléments dans le tableau, puisqu’il s’agit d’une référence :
+La taille de l' `struct` élément suivant ne dépend pas du nombre d’éléments du tableau, `pathName` car est une référence :
 
 [!code-csharp[Struct with embedded array](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#6)]
 
@@ -38,19 +38,43 @@ L’exemple précédent montre comment accéder aux champs `fixed` sans épingla
 
 Un autre tableau courant de taille fixe est le tableau [bool](../../language-reference/builtin-types/bool.md). La taille des éléments d’un tableau `bool` est toujours d’un octet. Les tableaux `bool` ne conviennent pas à la création de tableaux d’octets ou de mémoires tampons.
 
-> [!NOTE]
-> Le compilateur C# et le common language runtime (CLR) ne contrôlent pas le dépassement de la mémoire tampon de sécurité, sauf pour la mémoire créée à l’aide de [stackalloc](../../language-reference/operators/stackalloc.md). Comme toujours pour le code unsafe, la prudence est recommandée.
+Les mémoires tampons de taille fixe sont <xref:System.Runtime.CompilerServices.UnsafeValueTypeAttribute?displayProperty=nameWithType>compilées avec le, qui indique au Common Language Runtime (CLR) qu’un type contient un tableau non managé susceptible de provoquer un dépassement de capacité. Cela est similaire à la mémoire créée à l’aide de [stackalloc](../../language-reference/operators/stackalloc.md), qui active automatiquement les fonctionnalités de détection de dépassement de mémoire tampon dans le CLR. L’exemple précédent montre comment une mémoire tampon de taille fixe peut exister `unsafe struct`dans un.
 
-Les mémoires tampons unsafe diffèrent des tableaux normaux à différents niveaux :
+```csharp
+internal unsafe struct Buffer
+{
+    public fixed char fixedBuffer[128];
+}
+```
 
-- Les mémoires tampons unsafe peuvent uniquement être utilisées dans un contexte unsafe.
-- Les mémoires tampons unsafe sont toujours des vecteurs ou des tableaux unidimensionnels.
-- La déclaration du tableau doit inclure un nombre, tel que `char id[8]`. Vous ne pouvez pas utiliser `char id[]`.
-- Les mémoires tampons unsafe peuvent uniquement être des champs d’instance de structs dans un contexte unsafe.
+Le compilateur qui a généré `Buffer`C# pour, est attribué comme suit :
+
+```csharp
+internal struct Buffer
+{
+    [StructLayout(LayoutKind.Sequential, Size = 256)]
+    [CompilerGenerated]
+    [UnsafeValueType]
+    public struct <fixedBuffer>e__FixedBuffer
+    {
+        public char FixedElementField;
+    }
+
+    [FixedBuffer(typeof(char), 128)]
+    public <fixedBuffer>e__FixedBuffer fixedBuffer;
+}
+```
+
+Les mémoires tampons de taille fixe diffèrent des tableaux normaux des manières suivantes :
+
+- Peut uniquement être utilisé dans un contexte non [sécurisé](../../language-reference/keywords/unsafe.md) .
+- Peut uniquement être des champs d’instance de structs.
+- Il s’agit toujours de vecteurs, ou de tableaux unidimensionnels.
+- La déclaration doit inclure la longueur, telle que `fixed char id[8]`. Vous ne pouvez pas utiliser `fixed char id[]`.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Pointeurs et code unsafe](index.md)
 - [fixed, instruction](../../language-reference/keywords/fixed-statement.md)
 - [Interopérabilité](../interop/index.md)

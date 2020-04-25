@@ -4,12 +4,12 @@ ms.date: 10/01/2018
 helpviewer_keywords:
 - Memory&lt;T&gt; and Span&lt;T&gt; best practices
 - using Memory&lt;T&gt; and Span&lt;T&gt;
-ms.openlocfilehash: 1f0d513e8bfd1668ee548315597385c555d374ef
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: b89969f212da6ac90d0fb0d1bf388626e136b92e
+ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135774"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158591"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>Instructions d’utilisation de Memory\<T> et de Span\<T>
 
@@ -23,7 +23,7 @@ Les mémoires tampons pouvant passer d’une API à l’autre et étant parfois 
 
 - **Propriété**. Le propriétaire d’une instance de la mémoire tampon est responsable de la gestion de la durée de vie, notamment de la destruction de la mémoire tampon lorsqu’elle n’est plus utilisée. Toutes les mémoires tampons ont un propriétaire unique. En règle générale, le propriétaire est le composant qui a créé la mémoire tampon ou l’a reçue à partir d’une fabrique. La propriété peut également être transférée ; **Component-A** peut abandonner le contrôle de la mémoire tampon à **Component-B**, à la suite de quoi **Component-A** ne peut plus utiliser la mémoire tampon, et **Component-B ** devient responsable de sa destruction lorsqu’elle n’est plus utilisée.
 
-- **Consommation**. Le consommateur d’une instance de la mémoire tampon est autorisé à utiliser l’instance de la mémoire tampon en la lisant et, éventuellement, en écrivant dedans. Les mémoires tampons peuvent avoir un consommateur à la fois, sauf si un mécanisme de synchronisation externe est disponible. Notez que le consommateur actif d’une mémoire tampon n’est pas nécessairement son propriétaire.
+- **Consommation**. Le consommateur d’une instance de la mémoire tampon est autorisé à utiliser l’instance de la mémoire tampon en la lisant et, éventuellement, en écrivant dedans. Les mémoires tampons peuvent avoir un consommateur à la fois, sauf si un mécanisme de synchronisation externe est disponible. Le consommateur actif d’une mémoire tampon n’est pas nécessairement le propriétaire de la mémoire tampon.
 
 - **Bail**. Le bail est la durée pendant laquelle un composant particulier est autorisé à être le consommateur de la mémoire tampon.
 
@@ -110,7 +110,7 @@ Un bloc de mémoire étant une propriété, mais destiné à être transmis vers
 
 - Alors que l’allocation par pile de <xref:System.Span%601> optimise les performances et fait de <xref:System.Span%601> le type préféré de fonctionnement sur un bloc de mémoire, elle soumet également <xref:System.Span%601> à certaines restrictions majeures. Il est important de savoir quand utiliser un <xref:System.Span%601> et quand utiliser <xref:System.Memory%601>.
 
-Voici nos recommandations quant à l’utilisation réussie de <xref:System.Memory%601> et de ses types associés. Notez que les conseils concernant <xref:System.Memory%601> et <xref:System.Span%601> s’appliquent également à <xref:System.ReadOnlyMemory%601> et à <xref:System.ReadOnlySpan%601>, sauf si c’est explicitement exclu.
+Voici nos recommandations quant à l’utilisation réussie de <xref:System.Memory%601> et de ses types associés. Instructions qui <xref:System.Memory%601> s’appliquent <xref:System.Span%601> à et s' <xref:System.ReadOnlyMemory%601> appliquent également à et <xref:System.ReadOnlySpan%601> sauf indication contraire.
 
 **#1 de règle : pour une API synchrone, utilisez\<Span t> au lieu\<de Memory t> en tant que paramètre, si possible.**
 
