@@ -7,7 +7,7 @@
       href: xaml-in-wpf.md
       items:
         - name: Vue d’ensemble du langage XAML (WPF)
-          href: xaml-overview-wpf.md
+          href: ../../../desktop-wpf/fundamentals/xaml.md
         - name: Syntaxe XAML en détail
           href: xaml-syntax-in-detail.md
         - name: Code-behind et XAML dans WPF
@@ -290,7 +290,7 @@
       href: resources-wpf.md
       items:
         - name: Ressources XAML
-          href: xaml-resources.md
+          href: ../../../desktop-wpf/fundamentals/xaml-resources-define.md
           items:
             - name: Ressources et code
               href: resources-and-code.md
