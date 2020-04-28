@@ -1,16 +1,16 @@
 ---
-title: Architecting Cloud Native .NET Applications pour Azure
-description: Un guide pour la construction d’applications cloud-natives tirant parti des conteneurs, des microservices et des fonctionnalités sans serveur d’Azure.
+title: Architecture des applications .NET natives Cloud pour Azure
+description: Guide pour la création d’applications Cloud natives tirant parti de conteneurs, de microservices et de fonctionnalités sans serveur d’Azure.
 author: ardalis
-ms.date: 03/07/2019
-ms.openlocfilehash: cf3be07f0d37aacf4f0252ef2f4d922b7be93eee
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.date: 04/23/2020
+ms.openlocfilehash: ebef97fb355cbf682b37ee441a19fbbfdd2d0dc3
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989062"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199818"
 ---
-# <a name="architecting-cloud-native-net-applications-for-azure"></a>Architecting Cloud Native .NET Applications pour Azure
+# <a name="architecting-cloud-native-net-applications-for-azure"></a>Architecture des applications .NET natives Cloud pour Azure
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -38,45 +38,51 @@ Microsoft et les marques commerciales mentionnées dans la page web « Marques�
 
 Mac et macOS sont des marques commerciales d’Apple Inc.
 
-Le logo de la baleine Docker est une marque déposée de Docker, Inc. Utilisée par permission.
+Le logo de la baleine de l’arrimeur est une marque déposée de Dockr, Inc. utilisée par l’autorisation.
 
 Toutes les autres marques et tous les autres logos sont la propriété de leurs propriétaires respectifs.
 
 Auteurs :
 
-> **Steve « ardalis » Smith** - Architecte et formateur logiciel - [Ardalis.com](https://ardalis.com)
+> **Rob**distribuateur, architecte du système Cloud principal/architecte IP- [thinkingincloudnative.com](http://thinkingincloudnative.com/about/), Microsoft
 >
-> **Rob Vettor** - Microsoft - Architecte principal du système Cloud/IP Architecte - [thinkingincloudnative.com](http://thinkingincloudnative.com/about/)
+> **Steve « ardalis » Smith**, architecte logiciel et formateur- [Ardalis.com](https://ardalis.com)
 
-Participants et évaluateurs :
+Participants et réviseurs :
 
-> **Cesar De la Torre**, Gestionnaire principal de programme, équipe .NET, Microsoft
+> **Cesar de la Torre**, responsable de programme principal, équipe .net, Microsoft
 >
-> **Nish Anil**, responsable de programme senior, équipe .NET, Microsoft
+> **Nish Anile**, responsable de programme senior, équipe .net, Microsoft
+>
+> **Jeremy ignorent**, responsable de programme senior, équipe .net, Microsoft
+>
+> **Cecil Phillip**, avocat du Cloud senior, Microsoft
+
+En savoir plus sur eShopOnContainers
 
 Rédacteurs :
 
-> **Maira Wenzel**, Sr. Content Developer, .NET team, Microsoft
+> **Maira Wenzel**, responsable de programme, équipe .net, Microsoft
 
 ## <a name="who-should-use-this-guide"></a>Public visé par ce guide
 
-Le public de ce guide est principalement des développeurs, des responsables du développement et des architectes qui sont intéressés à apprendre à construire des applications conçues pour le cloud.
+Le public concerné par ce guide est principalement les développeurs, les responsables du développement et les architectes qui souhaitent apprendre à créer des applications conçues pour le Cloud.
 
-Un public secondaire est celui des décideurs techniques qui prévoient choisir de construire ou non leurs applications en utilisant une approche cloud-native.
+Un public secondaire est un décideur technique qui prévoit de choisir s’il faut créer ses applications à l’aide d’une approche Cloud native.
 
 ## <a name="how-you-can-use-this-guide"></a>Utilisation de ce guide
 
-Ce guide commence par définir le cloud natif et l’introduction d’une application de référence construite en utilisant des principes et des technologies cloud-native. Au-delà de ces deux premiers chapitres, le reste du livre est divisé en chapitres spécifiques axés sur des sujets communs à la plupart des applications cloud-natives. Vous pouvez sauter à l’un de ces chapitres pour en apprendre davantage sur les approches cloud-native à:
+Ce guide commence par définir le Cloud native et introduit une application de référence créée à l’aide de principes et de technologies Cloud natifs. Au-delà de ces deux premiers chapitres, le reste du livre est divisé en chapitres spécifiques axés sur les sujets communs à la plupart des applications Cloud natives. Vous pouvez accéder à l’un de ces chapitres pour en savoir plus sur les approches Cloud-natives pour :
 
-- Accès aux données et aux données
+- Données et accès aux données
 - Modèles de communication
 - Mise à l’échelle et évolutivité
-- Résilience de la demande
+- Résilience des applications
 - Supervision et intégrité
 - Identité et sécurité
 - DevOps
 
-Ce guide est disponible en format PDF et en ligne. N’hésitez pas à transmettre ce document ou des liens vers sa version en ligne à votre équipe pour vous aider à assurer une compréhension commune de ces sujets. La plupart de ces sujets bénéficient d’une compréhension cohérente des principes et des modèles sous-jacents, ainsi que des compromis impliqués dans les décisions liées à ces sujets. Notre objectif avec ce document est d’équiper les équipes et leurs dirigeants avec les informations dont ils ont besoin pour prendre des décisions bien informées pour l’architecture, le développement et l’hébergement de leurs applications.
+Ce guide est disponible au format PDF et en ligne. N’hésitez pas à transmettre ce document ou des liens vers sa version en ligne à votre équipe afin de garantir une compréhension commune de ces sujets. La plupart de ces rubriques tirent parti d’une compréhension cohérente des principes et des modèles sous-jacents, ainsi que des compromis impliqués dans les décisions relatives à ces sujets. L’objectif de ce document est de fournir aux équipes et à leurs dirigeants les informations dont elles ont besoin pour prendre des décisions bien informées sur l’architecture, le développement et l’hébergement de leurs applications.
 
 >[!div class="step-by-step"]
 >[Suivant](introduction.md)

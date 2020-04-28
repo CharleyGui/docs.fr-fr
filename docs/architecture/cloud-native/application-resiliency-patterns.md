@@ -2,12 +2,12 @@
 title: Modèles de résilience d’application
 description: Architecture des applications .NET natives Cloud pour Azure | Modèles de résilience d’application
 ms.date: 06/30/2019
-ms.openlocfilehash: 13811efaa88e0bd2824add1c8712b78b18d46375
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6805603f349578655b2535c7346af368c5ce1841
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087758"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199688"
 ---
 # <a name="application-resiliency-patterns"></a>Modèles de résilience d’application
 
@@ -19,13 +19,13 @@ Bien que vous puissiez consacrer beaucoup de temps à écrire votre propre infra
 
 ![Framework Polly](./media/polly-resiliency-framework.png)
 
-**Figure 6-2** : Fonctionnalités de l’infrastructure de résilience Polly
+**Figure 6-2**. Fonctionnalités de l’infrastructure de résilience Polly
 
 Notez comment, dans la figure précédente, les stratégies de résilience s’appliquent aux messages de demande, qu’ils proviennent d’un client externe ou d’un autre service principal. L’objectif est de compenser la demande d’un service qui peut être momentanément indisponible. Ces interruptions courtes se manifestent généralement avec les codes d’état HTTP illustrés dans la figure 6-3.
 
 ![Codes d’état HTTP à réessayer](./media/http-status-codes.png)
 
-**Figure 6-3.** Codes d’état HTTP à réessayer
+**Figure 6-3**. Codes d’état HTTP à réessayer
 
 Question : voulez-vous réessayer un code d’état HTTP 403-interdit ? Non. Ici, le système fonctionne correctement, mais informe l’appelant qu’il n’est pas autorisé à effectuer l’opération demandée. Vous devez veiller à ne réessayer que les opérations provoquées par des défaillances.
 
@@ -33,7 +33,7 @@ Comme nous l’avons recommandé dans le chapitre 1, les développeurs Microsoft
 
 Nous allons ensuite développer les modèles de réessai et de disjoncteur.
 
-### <a name="retry-pattern"></a>Modèle de nouvelle tentative
+### <a name="retry-pattern"></a>Modèle Nouvelle tentative
 
 Dans un environnement Cloud natif distribué, les appels aux services et aux ressources de Cloud peuvent échouer en raison d’échecs temporaires (éphémères), qui se corrigent généralement après une courte période de temps. L’implémentation d’une stratégie de nouvelle tentative aide un service Cloud-native à gérer ces scénarios.
 
@@ -41,7 +41,7 @@ Le [modèle de nouvelle tentative](https://docs.microsoft.com/azure/architecture
 
 ![Modèle de nouvelle tentative en action](./media/retry-pattern.png)
 
-**Figure 6-4.** Modèle de nouvelle tentative en action
+**Figure 6-4**. Modèle de nouvelle tentative en action
 
 Dans la figure précédente, un modèle de nouvelle tentative a été implémenté pour une opération de demande. Elle est configurée pour autoriser jusqu’à quatre tentatives avant d’échouer avec un intervalle d’attente (temps d’attente) à partir de deux secondes, ce qui double de façon exponentielle pour chaque tentative suivante.
 
@@ -54,9 +54,9 @@ Il est important d’augmenter la période d’interruption avant de retenter l�
 
 ## <a name="circuit-breaker-pattern"></a>Modèle disjoncteur
 
-Alors que le modèle de nouvelle tentative peut aider à récupérer une requête qui a été intégrée dans une défaillance partielle, il existe des situations où les échecs peuvent être provoqués par des événements imprévus qui nécessitent des périodes plus longues à résoudre. La gravité de ces erreurs peut aller d’une perte partielle de connectivité à la défaillance complète d’un service. Dans ces situations, il est inutile pour une application de réessayer continuellement une opération qui risque de ne pas aboutir.
+Alors que le modèle de nouvelle tentative peut aider à récupérer une requête qui a été intégrée dans une défaillance partielle, il existe des situations où les échecs peuvent être provoqués par des événements imprévus qui nécessitent des périodes plus longues à résoudre. Ces erreurs peuvent aller d’une perte partielle de connectivité à la défaillance complète d’un service. Dans ces situations, il est inutile pour une application de réessayer continuellement une opération qui risque de ne pas aboutir.
 
-Pour compliquer les choses, l’exécution d’opérations de nouvelle tentative continues sur un service non réactif peut vous faire passer dans un scénario de déni de service auto-imposé dans lequel vous inondez votre service avec des appels continus qui épuisent les ressources telles que la mémoire, les threads et la base de données. connexions, provoquant une défaillance dans des parties non liées du système qui utilisent les mêmes ressources.
+Pour compliquer les choses, l’exécution d’opérations de nouvelle tentative continues sur un service non réactif peut vous faire passer dans un scénario de déni de service auto-imposé où vous inondez votre service d’appels continus qui épuisent les ressources telles que la mémoire, les threads et les connexions de base de données.
 
 Dans ces situations, il serait préférable que l’opération échoue immédiatement et tente uniquement d’appeler le service si elle est susceptible de réussir.
 
@@ -74,4 +74,4 @@ La résilience des applications est nécessaire pour gérer les opérations dema
 
 >[!div class="step-by-step"]
 >[Précédent](resiliency.md)
->[Suivant](infrastructure-resiliency-azure.md)
+>[suivant](infrastructure-resiliency-azure.md)

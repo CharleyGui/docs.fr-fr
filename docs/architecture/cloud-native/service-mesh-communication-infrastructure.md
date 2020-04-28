@@ -1,77 +1,77 @@
 ---
 title: Infrastructure de communication Service Mesh
-description: Découvrez comment les technologies de maillage de service rationalisent la communication microservice native en nuage
+description: En savoir plus sur la façon dont les technologies de maillage de service rationalisent la communication des microservices natives Cloud
 author: robvet
 ms.date: 03/03/2020
-ms.openlocfilehash: 8bb57e990dbf1baf8c246fe4aacfbb2904a251e6
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: 89bc4d307d725e7e31e020ef156c4c5967dd2a1c
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805753"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199943"
 ---
 # <a name="service-mesh-communication-infrastructure"></a>Infrastructure de communication Service Mesh
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Tout au long de ce chapitre, nous avons exploré les défis de la communication microservice. Nous avons dit que les équipes de développement doivent être sensibles à la façon dont les services de back-end communiquent entre eux. Idéalement, moins il y a de communication interspède, mieux c’est. Cependant, l’évitement n’est pas toujours possible car les services back-end comptent souvent les uns sur les autres pour terminer leurs opérations.
+Tout au long de ce chapitre, nous avons exploré les défis liés à la communication des microservices. Nous avons dit que les équipes de développement doivent être sensibles à la façon dont les services principaux communiquent entre eux. Dans l’idéal, la communication entre les services est moins efficace. Toutefois, l’évitement n’est pas toujours possible, car les services principaux s’appuient souvent les uns sur les autres pour effectuer des opérations.
 
-Nous avons exploré différentes approches pour la mise en œuvre de la communication synchrone HTTP et de la messagerie asynchrone. Dans chacun des cas, le développeur est chargé d’implémenter le code de communication. Le code de communication est complexe et le temps intensif. Des décisions incorrectes peuvent entraîner d’importants problèmes de rendement.
+Nous avons exploré différentes approches pour implémenter une communication HTTP synchrone et une messagerie asynchrone. Dans chacun des cas, le développeur est chargé d’implémenter le code de communication. Le code de communication est complexe et fastidieux. Des décisions incorrectes peuvent entraîner des problèmes de performances significatifs.
 
-Une approche plus moderne de la communication microservice autour d’une technologie nouvelle et en évolution rapide intitulée *Service Mesh*. Un [maillage de service](https://www.nginx.com/blog/what-is-a-service-mesh/) est une couche d’infrastructure configurable avec des capacités intégrées pour gérer la communication de service à service, la résilience, et de nombreuses préoccupations transversales. Il déplace la responsabilité de ces préoccupations hors des microservices et dans la couche de maillage de service. La communication est abstraite loin de vos microservices.
+Une approche plus moderne des centres de communication des microservices autour d’une technologie nouvelle et en constante évolution, intitulée *maille du service*. Une [maille de service](https://www.nginx.com/blog/what-is-a-service-mesh/) est une couche d’infrastructure configurable avec des fonctionnalités intégrées pour gérer la communication entre les services, la résilience et de nombreux problèmes transversaux. Il déplace la responsabilité de ces problèmes sur les microservices et dans la couche de maillage de service. La communication est extraite de vos microservices.
 
-Un élément clé d’un maillage de service est un proxy. Dans une application cloud-native, un cas d’un proxy est généralement colocated avec chaque microservice. Bien qu’ils s’exécutent dans des processus distincts, les deux sont étroitement liés et partagent le même cycle de vie. Ce modèle, connu sous le nom [de modèle Sidecar](https://docs.microsoft.com/azure/architecture/patterns/sidecar), et est indiqué dans la figure 4-24.
+Un composant clé d’une maille de service est un proxy. Dans une application Cloud native, une instance d’un proxy est généralement colocalisée avec chaque microservice. Bien qu’ils s’exécutent dans des processus distincts, les deux sont étroitement liés et partagent le même cycle de vie. Ce modèle, connu sous le nom de [modèle de side-car](https://docs.microsoft.com/azure/architecture/patterns/sidecar), est illustré à la figure 4-24.
 
-![Maillage de service avec une voiture latérale](./media/service-mesh-with-side-car.png)
+![Maille de service avec une voiture latérale](./media/service-mesh-with-side-car.png)
 
-**Figure 4-24**. Maillage de service avec une voiture latérale
+**Figure 4-24**. Maille de service avec une voiture latérale
 
-Notez dans le chiffre précédent comment les messages sont interceptés par un proxy qui fonctionne à côté de chaque microservice. Chaque proxy peut être configuré avec des règles de trafic spécifiques au microservice. Il comprend les messages et peut les acheminer à travers vos services et le monde extérieur.
+Notez dans la figure précédente Comment les messages sont interceptés par un proxy qui s’exécute parallèlement à chaque microservice. Chaque proxy peut être configuré avec des règles de trafic spécifiques au microservice. Il comprend les messages et peut les acheminer entre vos services et le monde extérieur.
 
-En plus de gérer la communication service-service, le Service Mesh fournit un soutien pour la découverte de service et l’équilibrage de charge.
+En plus de la gestion de la communication de service à service, la maille de service prend en charge la découverte de service et l’équilibrage de charge.
 
-Une fois configuré, un maillage de service est très fonctionnel. Le maillage récupère un pool correspondant d’instances à partir d’un point de terminaison de découverte de service. Il envoie une demande à une instance de service spécifique, enregistrant le type de latence et de réponse du résultat. Il choisit l’instance la plus susceptible de renvoyer une réponse rapide en fonction de différents facteurs, y compris la latence observée pour les demandes récentes.
+Une fois configuré, un maillage de service est très fonctionnel. La maille récupère un pool d’instances correspondant à partir d’un point de terminaison de découverte de service. Il envoie une demande à une instance de service spécifique, en enregistrant la latence et le type de réponse du résultat. Il choisit l’instance la plus susceptible de retourner une réponse rapide en fonction de différents facteurs, y compris la latence observée pour les demandes récentes.
 
-Un maillage de service gère les problèmes de trafic, de communication et de réseautage au niveau de l’application. Il comprend les messages et les demandes. Un maillage de service s’intègre généralement à un orchestrateur de conteneurs. Kubernetes prend en charge une architecture extensible dans laquelle un maillage de service peut être ajouté.
+Un maillage de service gère le trafic, la communication et les problèmes de mise en réseau au niveau de l’application. Il comprend les messages et les demandes. Une maille de service s’intègre généralement avec un orchestrateur de conteneur. Kubernetes prend en charge une architecture extensible dans laquelle un maillage de service peut être ajouté.
 
-Dans le chapitre 6, nous plongeons profondément dans les technologies Service Mesh, y compris une discussion sur son architecture et les implémentations open-source disponibles.
+Dans le chapitre 6, nous explorons en profondeur les technologies de maille de service, y compris une discussion sur son architecture et les implémentations Open source disponibles.
 
 ## <a name="summary"></a>Résumé
 
-Dans ce chapitre, nous avons discuté des modèles de communication cloud-native. Nous avons commencé par examiner comment les clients frontaux communiquent avec les microservices back-end. En cours de route, nous avons parlé des plates-formes API Gateway et de la communication en temps réel. Nous avons ensuite examiné comment les microservices communiquent avec d’autres services de back-end. Nous avons examiné à la fois la communication http://http synchrone et la messagerie asynchrone entre les services. Nous avons couvert gRPC, une technologie à venir dans le monde cloud-native. Enfin, nous avons introduit une nouvelle technologie en évolution rapide intitulée Service Mesh qui peut rationaliser la communication par microservices.
+Dans ce chapitre, nous avons abordé les modèles de communication natifs dans le Cloud. Nous avons commencé par examiner comment les clients frontaux communiquent avec les microservices back-end. En cours de route, nous avons parlé des plateformes de passerelle d’API et de la communication en temps réel. Nous avons ensuite vu comment les microservices communiquent avec d’autres services principaux. Nous avons examiné la communication HTTP synchrone et la messagerie asynchrone entre les services. Nous avons abordé gRPC, une technologie à venir dans le monde Cloud-native. Enfin, nous avons introduit une nouvelle technologie en constante évolution, intitulée Service Mesh, qui permet de rationaliser la communication des microservices.
 
-L’accent a été mis sur les services Azure gérés qui peuvent aider à mettre en œuvre la communication dans les systèmes cloud-natifs :
+Une mise en évidence spéciale s’est produite sur les services Azure gérés qui peuvent aider à implémenter la communication dans les systèmes natifs du Cloud :
 
-- [Passerelle d’application Azure](https://docs.microsoft.com/azure/application-gateway/overview)
+- [Passerelle Azure Application](https://docs.microsoft.com/azure/application-gateway/overview)
 - [Gestion des API Azure](https://azure.microsoft.com/services/api-management/)
 - [Service Azure SignalR](https://azure.microsoft.com/services/signalr-service/)
 - [Files d’attente Stockage Azure](https://docs.microsoft.com/azure/storage/queues/storage-queues-introduction)
 - [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview)
-- [Grille d’événements Azure](https://docs.microsoft.com/azure/event-grid/overview)
+- [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
 - [Azure Event Hub](https://azure.microsoft.com/services/event-hubs/)
 
-Nous passons ensuite à distribuer des données dans des systèmes cloud-autochtones et les avantages et les défis qu’ils présentent.
+Nous allons ensuite passer aux données distribuées dans les systèmes natifs du Cloud et aux avantages et défis qu’il présente.
 
 ### <a name="references"></a>References
 
-- [.NET Microservices: Architecture for Containerized .NET applications](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
+- [Microservices .NET : architecture pour les applications .NET en conteneur](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
 
-- [Concevoir interservices communication pour les microservices](https://docs.microsoft.com/azure/architecture/microservices/design/interservice-communication)
+- [Conception de la communication interservice pour les microservices](https://docs.microsoft.com/azure/architecture/microservices/design/interservice-communication)
 
-- [Azure SignalR Service, un service entièrement géré pour ajouter des fonctionnalités en temps réel](https://azure.microsoft.com/blog/azure-signalr-service-a-fully-managed-service-to-add-real-time-functionality/)
+- [Service Azure Signalr, service entièrement géré pour l’ajout de fonctionnalités en temps réel](https://azure.microsoft.com/blog/azure-signalr-service-a-fully-managed-service-to-add-real-time-functionality/)
 
-- [Contrôleur d’entrée Azure API Gateway](https://azure.github.io/application-gateway-kubernetes-ingress/)
+- [Contrôleur d’entrée de la passerelle API Azure](https://azure.github.io/application-gateway-kubernetes-ingress/)
 
-- [À propos de Ingress in Azure Kubernetes Service (AKS)](https://vincentlauzon.com/2018/10/10/about-ingress-in-azure-kubernetes-service-aks/)
+- [À propos de l’entrée dans Azure Kubernetes service (AKS)](https://vincentlauzon.com/2018/10/10/about-ingress-in-azure-kubernetes-service-aks/)
 
 - [Documentation gRPC](https://grpc.io/docs/guides/)
 
 - [gRPC pour les développeurs WCF](https://docs.microsoft.com/dotnet/architecture/grpc-for-wcf-developers/)
 
-- [Comparaison des services gRPC avec http://APIs](https://docs.microsoft.com/aspnet/core/grpc/comparison?view=aspnetcore-3.0)
+- [Comparaison des services gRPC avec les API HTTP](https://docs.microsoft.com/aspnet/core/grpc/comparison?view=aspnetcore-3.0)
 
-- [Construire gRPC Services avec vidéo .NET](https://channel9.msdn.com/Shows/The-Cloud-Native-Show/Building-Microservices-with-gRPC-and-NET)
+- [Génération de services gRPC avec la vidéo .NET](https://channel9.msdn.com/Shows/The-Cloud-Native-Show/Building-Microservices-with-gRPC-and-NET)
 
 >[!div class="step-by-step"]
->[Suivant précédent](grpc.md)
->[Next](database-per-microservice.md)
+>[Précédent](grpc.md)
+>[suivant](distributed-data.md)

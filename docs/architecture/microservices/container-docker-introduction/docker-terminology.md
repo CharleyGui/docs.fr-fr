@@ -2,12 +2,12 @@
 title: Terminologie Docker
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Terminologie Docker
 ms.date: 01/30/2020
-ms.openlocfilehash: fdcc5ec3603579c36d7339bd3ff651713b8eba88
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 16aaaa2df0f68434b766d4d1cc96974e83449953
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523332"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199896"
 ---
 # <a name="docker-terminology"></a>Terminologie Docker
 
@@ -15,11 +15,13 @@ Cette section liste les termes et les définitions que vous devez connaître ava
 
 **Image conteneur (container image)** : package de toutes les dépendances et informations nécessaires pour créer un conteneur. Une image inclut toutes les dépendances (notamment les frameworks) ainsi que la configuration de déploiement et d’exécution à utiliser par le runtime du conteneur. En règle générale, une image est dérivée de plusieurs images de base qui sont empilées en couches pour former le système de fichiers du conteneur. Une image est immuable une fois qu’elle a été créée.
 
-**Dockerfile** : fichier texte contenant des instructions pour la création d’une image Docker. C’est comme un script de commandes, la première ligne indique l’image de base avec laquelle commencer, puis suivez les instructions pour installer les programmes requis, copier les fichiers et ainsi de suite, jusqu’à ce que vous obteniez l’environnement de travail dont vous avez besoin.
+**Fichier dockerfile**: fichier texte qui contient des instructions pour la génération d’une image de l’ancrage. C’est comme un script de commandes, la première ligne indique l’image de base avec laquelle commencer, puis suivent les instructions pour installer les programmes requis, copier les fichiers, etc. jusqu’à obtenir l’environnement de travail dont vous avez besoin.
 
-**Création (build)** : action de créer une image conteneur sur la base des informations et du contexte fournis par le fichier Dockerfile associé, plus des fichiers supplémentaires dans le dossier où l’image est créée. Vous pouvez construire des images avec la commande Docker :
+**Création (build)** : action de créer une image conteneur sur la base des informations et du contexte fournis par le fichier Dockerfile associé, plus des fichiers supplémentaires dans le dossier où l’image est créée. Vous pouvez créer des images à l’aide de la commande Dockr suivante :
 
-> `docker build`
+```bash
+docker build
+```
 
 **Conteneur (container)** : instance d’une image Docker. Un conteneur représente l’exécution d’une application, d’un processus ou d’un service. Il renferme une image Docker, un environnement d’exécution et un ensemble standard d’instructions. Pour mettre un service à l’échelle, vous créez plusieurs instances d’un conteneur à partir de la même image. Cela peut également être fait par un traitement par lots, qui passe des paramètres différents à chaque instance.
 
@@ -27,13 +29,13 @@ Cette section liste les termes et les définitions que vous devez connaître ava
 
 **Balise (tag)** : marque ou étiquette que vous pouvez appliquer aux images pour identifier les différentes images ou versions de l’image initiale (selon le numéro de version de l’environnement cible).
 
-**Build en plusieurs étapes** : fonctionnalité, depuis Docker 17.05 ou une version ultérieure, qui permet de réduire la taille des images finales. En quelques phrases, avec la construction en plusieurs étapes, vous pouvez utiliser, par exemple, une grande image de base, contenant le SDK, pour la compilation et la publication de l’application, puis en utilisant le dossier d’édition avec une petite image de base runtime-seulement, pour produire une image finale beaucoup plus petite.
+**Build en plusieurs étapes** : fonctionnalité, depuis Docker 17.05 ou une version ultérieure, qui permet de réduire la taille des images finales. En quelques phrases, avec la génération en plusieurs étapes, vous pouvez utiliser, par exemple, une grande image de base, contenant le kit de développement logiciel (SDK), pour compiler et publier l’application, puis utiliser le dossier de publication avec une petite image de base du runtime uniquement, pour produire une image finale beaucoup plus petite.
 
-**Dépôt (repository)** : collection d’images Docker associées, identifiées par une balise qui indique la version de chaque image. Certains repos contiennent plusieurs variantes d’une image spécifique, comme une image contenant des SDK (plus lourd), une image contenant uniquement des runtimes (plus léger), etc. Ces variantes peuvent être marquées avec des étiquettes. Un dépôt peut contenir des variantes de plateforme, comme une image Linux et une image Windows.
+**Dépôt (repository)** : collection d’images Docker associées, identifiées par une balise qui indique la version de chaque image. Certains dépôts contiennent plusieurs variantes d’une image spécifique, telles qu’une image contenant des kits de développement logiciel (lourd), une image contenant uniquement des runtimes (plus légère), etc. Ces variantes peuvent être marquées avec des balises. Un dépôt peut contenir des variantes de plateforme, comme une image Linux et une image Windows.
 
 **Registre (registry)** : service qui fournit l’accès aux dépôts. Le registre par défaut utilisé pour la plupart des images publiques est [Docker Hub](https://hub.docker.com/) (propriété de l’organisation Docker). Un registre contient généralement des dépôts de plusieurs équipes. Les entreprises utilisent souvent des registres privés pour stocker et gérer les images qu’elles ont créées. Azure Container Registry est un autre exemple de registre.
 
-**Image multi-arc**: Pour la multi-architecture, c’est une fonctionnalité qui simplifie la sélection de l’image appropriée, selon la plate-forme où Docker est en cours d’exécution. Par exemple, lorsqu’un Dockerfile demande une image de base **de mcr.microsoft.com/dotnet/core/sdk:3.1** du registre, il obtient en fait **3,1-sdk-nanoserver-1909**, **3.1-sdk-nanoserver-1809** ou **3.1-sdk-buster-slim**, selon le système d’exploitation et la version où Docker est en cours d’exécution.
+**Image multi-** architecture : pour l’architecture mutualisée, il s’agit d’une fonctionnalité qui simplifie la sélection de l’image appropriée, en fonction de la plateforme sur laquelle l’outil de connexion est en cours d’exécution. Par exemple, lorsqu’un fichier dockerfile demande une image **de base de MCR.Microsoft.com/dotnet/Core/SDK :3.1** à partir du Registre, il obtient en fait **3,1-SDK-**-1909, **3,1-SDK-Server-1809** ou **3,1-SDK-Buster-Slim**, en fonction du système d’exploitation et de la version du service d’installation.
 
 **Docker Hub** : registre public dans lequel vous pouvez charger et manipuler des images. Docker Hub fournit un hébergement d’images Docker, des registres publics ou privés, des déclencheurs de build et des webhooks, et l’intégration avec GitHub et Bitbucket.
 
@@ -45,12 +47,12 @@ Cette section liste les termes et les définitions que vous devez connaître ava
 
 **Docker Enterprise Edition (EE)** : version pour l’entreprise qui fournit des outils Docker pour le développement Linux et Windows.
 
-**Compose** : outil en ligne de commande et format de fichier YAML fournissant des métadonnées pour la définition et l’exécution d’applications multiconteneurs. Vous définissez une application basée sur plusieurs images avec un ou plusieurs fichiers .yml qui peuvent remplacer les valeurs en fonction de l’environnement. Après avoir créé les définitions, vous déployez l’application multiconteneurs entière à l’aide d’une seule commande (docker-compose up) qui crée un conteneur par image sur l’hôte Docker.
+**Compose** : outil en ligne de commande et format de fichier YAML fournissant des métadonnées pour la définition et l’exécution d’applications multiconteneurs. Vous définissez une application basée sur plusieurs images avec un ou plusieurs fichiers .yml qui peuvent remplacer les valeurs en fonction de l’environnement. Après avoir créé les définitions, vous déployez l’application multiconteneur entière à l’aide d’une seule commande (docker-compose up) qui crée un conteneur par image sur l’hôte Docker.
 
 **Cluster** : collection d’hôtes Docker exposés en tant qu’hôte Docker virtuel unique, ce qui permet la mise à l’échelle de l’application en fonction du nombre d’instances des services répartis entre les différents hôtes au sein du cluster. Vous pouvez créer des clusters Docker avec Kubernetes, Azure Service Fabric, Docker Swarm et Mesosphere DC/OS.
 
-**Orchestrator** : outil qui simplifie la gestion des clusters et des hôtes Docker. Les orchestrateurs vous permettent de gérer leurs images, conteneurs et hôtes à travers un CLI ou une interface utilisateur graphique. Vous pouvez gérer la mise en réseau des conteneurs, les configurations, l’équilibrage de charge, la découverte des services, la haute disponibilité, la configuration des hôtes Docker, et bien plus encore. Un orchestrateur gère l’exécution, la distribution, la mise à l’échelle et la réparation des charges de travail dans une collection de nœuds. En règle générale, les produits Orchestrator sont les mêmes produits qui fournissent l’infrastructure de cluster, comme Kubernetes et Azure Service Fabric, entre autres offres sur le marché.
+**Orchestrator** : outil qui simplifie la gestion des clusters et des hôtes Docker. Les orchestrateurs vous permettent de gérer les images, les conteneurs et les hôtes à l’aide d’une interface de ligne de commande (CLI) ou d’une interface graphique utilisateur. Vous pouvez gérer la mise en réseau des conteneurs, les configurations, l’équilibrage de charge, la découverte des services, la haute disponibilité, la configuration des hôtes Docker, et bien plus encore. Un orchestrateur gère l’exécution, la distribution, la mise à l’échelle et la réparation des charges de travail dans une collection de nœuds. En règle générale, les produits Orchestrator sont les mêmes produits qui fournissent l’infrastructure de cluster, comme Kubernetes et Azure Service Fabric, entre autres offres sur le marché.
 
 >[!div class="step-by-step"]
->[Suivant précédent](docker-defined.md)
->[Next](docker-containers-images-registries.md)
+>[Précédent](docker-defined.md)
+>[suivant](docker-containers-images-registries.md)

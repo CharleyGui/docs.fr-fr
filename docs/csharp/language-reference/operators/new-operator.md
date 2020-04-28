@@ -4,12 +4,12 @@ ms.date: 06/25/2019
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: 84131bc503a106961419a27fc4e3e0f2d82306a8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ed18c42cd28412a967c94a65c2a92b0b75097b52
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846231"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199727"
 ---
 # <a name="new-operator-c-reference"></a>new, opérateur (Référence C#)
 
@@ -47,9 +47,9 @@ Pour créer une instance d’un [type anonyme](../../programming-guide/classes-a
 
 ## <a name="destruction-of-type-instances"></a>Destruction des instances de type
 
-Vous n’êtes pas obligé de détruire les instances de type précédemment créées. Les instances de types référence et valeur sont détruites automatiquement. Les instances de types valeur sont détruites dès que le contexte dans lequel elles se trouvent est détruit. Les instances de types référence sont détruites par le [récupérateur de mémoire](../../../standard/garbage-collection/index.md) à un moment non spécifié, après la suppression de la dernière référence à celles-ci.
+Vous n’êtes pas obligé de détruire les instances de type précédemment créées. Les instances de types référence et valeur sont détruites automatiquement. Les instances de types valeur sont détruites dès que le contexte dans lequel elles se trouvent est détruit. Les instances de types référence sont détruites par le [garbage collector](../../../standard/garbage-collection/index.md) à une heure non spécifiée après la suppression de la dernière référence.
 
-Pour les cas de type qui contiennent des ressources non gérées, par exemple, une poignée de fichier, il est recommandé d’utiliser un nettoyage déterministe pour s’assurer que les ressources qu’ils contiennent sont libérées dès que possible. Pour plus d’informations, consultez la référence d’API <xref:System.IDisposable?displayProperty=nameWithType> et l’article [using, instruction](../keywords/using-statement.md).
+Pour les instances de type qui contiennent des ressources non managées, par exemple, un descripteur de fichier, il est recommandé d’utiliser le nettoyage déterministe pour s’assurer que les ressources qu’ils contiennent sont libérées dès que possible. Pour plus d’informations, consultez la référence d’API <xref:System.IDisposable?displayProperty=nameWithType> et l’article [using, instruction](../keywords/using-statement.md).
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 
@@ -62,5 +62,5 @@ Pour plus d’informations, consultez la section [Opérateur new](~/_csharplang/
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence C#](../index.md)
-- [Opérateurs CMD](index.md)
-- [Initialisateurs d’objets et de collecte](../../programming-guide/classes-and-structs/object-and-collection-initializers.md)
+- [Opérateurs C#](index.md)
+- [Initialiseurs d’objets et de collections](../../programming-guide/classes-and-structs/object-and-collection-initializers.md)

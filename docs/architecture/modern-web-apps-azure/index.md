@@ -4,18 +4,18 @@ description: Un guide qui fournit une aide de bout en bout sur la création d’
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/4/2019
-ms.openlocfilehash: 18449ea02b7f9e89744a0f3088f80b7a51a807da
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 6ae5de0381c8796faee74abd40f688214ab13211
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80987892"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199961"
 ---
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Architecturer des applications web modernes avec ASP.NET Core et Azure
 
-![Image de couverture de livre du guide Architect Modern Web Applications.](./media/index/web-application-guide-cover-image.png)
+![Image de couverture du livre du Guide des applications Web modernes de l’architecte.](./media/index/web-application-guide-cover-image.png)
 
-**EDITION v3.1** - Mis à jour pour ASP.NET Core 3.1
+**Edition v 3.1** -mise à jour vers ASP.net Core 3,1
 
 PUBLIÉ PAR
 
@@ -31,7 +31,7 @@ Copyright © 2020 par Microsoft Corporation
 
 Tous droits réservés. Aucune partie du contenu de ce document ne peut être reproduite ou transmise sous quelque forme ou par quelque moyen que ce soit sans l’autorisation écrite de l’éditeur.
 
-Ce document est fourni « en l’état » et exprime les points de vue et les opinions de son auteur. Les points de vue, les opinions et les informations exprimés dans ce document, notamment l’URL et autres références à des sites web Internet, peuvent faire l’objet de modifications sans préavis.
+Ce document est fourni « en l’état » et exprime les points de vue et les opinions de son auteur. Les points de vue, les opinions et les informations exprimés dans cet ouvrage, notamment l’URL et autres références à des sites web Internet, peuvent faire l’objet de modifications sans préavis.
 
  Certains exemples sont fournis à titre indicatif uniquement et sont fictifs. Toute association ou lien est purement involontaire ou fortuit.
 
@@ -39,7 +39,7 @@ Microsoft et les marques commerciales mentionnées dans la page web « Marques�
 
 Mac et macOS sont des marques commerciales d’Apple Inc.
 
-Le logo de la baleine Docker est une marque déposée de Docker, Inc. Utilisée par permission.
+Le logo de la baleine de l’arrimeur est une marque déposée de Dockr, Inc. utilisée par l’autorisation.
 
 Toutes les autres marques et tous les autres logos sont la propriété de leurs propriétaires respectifs.
 
@@ -83,13 +83,13 @@ La création d’applications web avec ASP.NET Core, hébergées dans Azure, off
 
 ## <a name="purpose"></a>Objectif
 
-Ce guide fournit des conseils de bout en bout sur la construction d’applications web *monolithiques* à l’aide de ASP.NET Core et Azure. Dans ce contexte, « monolithiques » fait référence au fait que ces applications sont déployées comme une seule unité, pas comme une collection d’applications et de services qui interagissent.
+Ce guide fournit des conseils de bout en bout sur la création d’applications Web *monolithiques* à l’aide d’ASP.net Core et d’Azure. Dans ce contexte, « monolithiques » fait référence au fait que ces applications sont déployées comme une seule unité, pas comme une collection d’applications et de services qui interagissent.
 
-Ce guide est complémentaire aux [_microservices .NET. Architecture for Containerized .NET Applications_"](../microservices/index.md) qui se concentre davantage sur Docker, Microservices, et le déploiement de conteneurs pour héberger des applications d’entreprise.
+Ce guide est complémentaire aux [_microservices .net. Architecture pour les applications .NET en conteneur_»](../microservices/index.md), qui se concentre sur l’ancrage, les microservices et le déploiement de conteneurs pour héberger des applications d’entreprise.
 
 ### <a name="net-microservices-architecture-for-containerized-net-applications"></a>Microservices .NET. Architecture pour les applications .NET en conteneur
 
-- **e-book**  
+- **livre électronique**  
   <https://aka.ms/MicroservicesEbook>
 - **Exemple d’application**  
   <https://aka.ms/microservicesarchitecture>
@@ -102,7 +102,7 @@ Il s’adresse aussi aux décideurs techniques qui connaissent déjà ASP.NET ou
 
 ## <a name="how-you-can-use-this-guide"></a>Utilisation de ce guide
 
-Ce guide a été condensé en un document relativement court, qui est consacré à la création d’applications web avec des technologies .NET modernes et Microsoft Azure. Il peut ainsi être lu dans sa totalité, et permet de comprendre ces applications et les considérations techniques qui s’y rattachent. Le guide, ainsi que son exemple d’application, peut aussi servir de point de départ ou de référence. Utilisez l’exemple d’application associé comme modèle pour vos propres applications, ou pour voir comment organiser les composants de votre application. Reportez-vous aux principes exposés dans le guide, à la couverture des options d’architecture et de technologie, et aux considérations sur les décisions à prendre quand vous évaluez ces choix pour votre propre application.
+Ce guide a été condensé dans un document relativement petit qui se concentre sur la création d’applications Web avec des technologies .NET modernes et Azure. Il peut ainsi être lu dans sa totalité, et permet de comprendre ces applications et les considérations techniques qui s’y rattachent. Le guide, ainsi que son exemple d’application, peut aussi servir de point de départ ou de référence. Utilisez l’exemple d’application associé comme modèle pour vos propres applications, ou pour voir comment organiser les composants de votre application. Reportez-vous aux principes exposés dans le guide, à la couverture des options d’architecture et de technologie, et aux considérations sur les décisions à prendre quand vous évaluez ces choix pour votre propre application.
 
 N’hésitez pas à faire connaître ce guide pour favoriser une compréhension partagée de ces considérations et de ces opportunités. Le fait que chacun utilise un même ensemble de terminologie et de principes sous-jacents permet d’obtenir plus facilement une application cohérente des modèles et des pratiques en matière d’architecture.
 
