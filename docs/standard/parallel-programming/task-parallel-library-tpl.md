@@ -7,12 +7,12 @@ helpviewer_keywords:
 - .NET, parallel programming in
 - Parallel Programming
 ms.assetid: b8f99f43-9104-45fd-9bff-385a20488a23
-ms.openlocfilehash: 6785041730a048fb08677dbd054f727e351185d4
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 74a6fc20e95e11bfdbec617742f304a940f3e769
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588581"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507557"
 ---
 # <a name="task-parallel-library-tpl"></a>Bibliothèque parallèle de tâches
 La bibliothèque parallèle de tâches est un ensemble de types publics et d’API dans les espaces de noms <xref:System.Threading?displayProperty=nameWithType> et <xref:System.Threading.Tasks?displayProperty=nameWithType>. L'objectif de la bibliothèque parallèle de tâches est d'accroître la productivité des développeurs en simplifiant le processus d'ajout du parallélisme et de l'accès concurrentiel aux applications. La bibliothèque parallèle de tâches met à l'échelle dynamiquement le degré d'accès concurrentiel pour utiliser plus efficacement tous les processeurs disponibles. De plus, la bibliothèque parallèle de tâches gère le partitionnement du travail, la planification de threads sur le <xref:System.Threading.ThreadPool>, la prise en charge de l'annulation, la gestion d'état et d'autres détails de bas niveau. L'utilisation de la bibliothèque parallèle de tâches vous permet de maximiser les performances de votre code tout en vous concentrant sur le travail que votre programme doit accomplir.  
@@ -23,9 +23,9 @@ La bibliothèque parallèle de tâches est un ensemble de types publics et d’A
   
 |Intitulé|Description|  
 |-|-|  
-|[Parallélisme de données](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)|Décrit comment créer des boucles parallèles `for` et `foreach` (`For` et `For Each` en Visual Basic).|  
+|[Parallélisme des données](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)|Décrit comment créer des boucles parallèles `for` et `foreach` (`For` et `For Each` en Visual Basic).|  
 |[Programmation asynchrone basée sur les tâches](../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md)|Décrit comment créer et exécuter implicitement des tâches à l’aide de <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType> ou explicitement en utilisant des objets <xref:System.Threading.Tasks.Task> directement.|  
-|[Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)|Explique comment utiliser les composants de flux de données dans la bibliothèque de flux de données de TPL pour effectuer plusieurs opérations qui doivent communiquer entre elles ou pour traiter les données lorsqu'elles sont disponibles.|  
+|[Dataflow](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)|Explique comment utiliser les composants de flux de données dans la bibliothèque de flux de données de TPL pour effectuer plusieurs opérations qui doivent communiquer entre elles ou pour traiter les données lorsqu'elles sont disponibles.|  
 |[Utilisation de la bibliothèque parallèle de tâches (TPL) avec d’autres modèles asynchrones](../../../docs/standard/parallel-programming/using-tpl-with-other-asynchronous-patterns.md)|Décrit comment utiliser la bibliothèque parallèle de tâches avec d’autres modèles asynchrones dans .NET.|  
 |[Pièges potentiels dans le parallélisme des données et des tâches](../../../docs/standard/parallel-programming/potential-pitfalls-in-data-and-task-parallelism.md)|Décrit des pièges courants et la manière de les éviter.|  
 |[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)|Décrit comment atteindre le parallélisme des données avec les requêtes LINQ.|  
@@ -33,4 +33,4 @@ La bibliothèque parallèle de tâches est un ensemble de types publics et d’A
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de programmation parallèle avec .NET Framework](https://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)
+- [Exemples de programmation parallèle avec .NET Core & .NET Standard](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)

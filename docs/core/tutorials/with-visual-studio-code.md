@@ -2,13 +2,13 @@
 title: Prise en main de C# et Visual Studio Code
 description: Découvrez comment créer et déboguer votre première application .NET Core en C# à l’aide de Visual Studio Code.
 author: kendrahavens
-ms.date: 12/05/2018
-ms.openlocfilehash: 6722b97cee5ca3672c9dddece6e61f4d13de05a9
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.date: 04/23/2020
+ms.openlocfilehash: 3dd7c4602fbb27e29bad977f8d3df34b6061bc23
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805811"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82506884"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Prise en main de C# et Visual Studio Code
 
@@ -16,45 +16,34 @@ ms.locfileid: "80805811"
 
 ## <a name="prerequisites"></a>Prérequis
 
-1. Installer [Visual Studio Code](https://code.visualstudio.com/).
-2. Installer le [.NET Core SDK](https://dotnet.microsoft.com/download).
+1. Installez [Visual Studio Code](https://code.visualstudio.com/).
+2. Installez le [kit de développement logiciel (SDK) .NET Core](https://dotnet.microsoft.com/download).
 3. Installez l’[extension C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) pour Visual Studio Code. Pour plus d’informations sur l’installation d’extensions pour Visual Studio Code, consultez [Place de marché des extensions VS Code](https://code.visualstudio.com/docs/editor/extension-gallery).
 
 ## <a name="hello-world"></a>Hello World
 
-Commençons par un programme « Hello World » simple sur .NET Core :
+Prise en main d’un simple programme « Hello World » sur .NET Core :
 
 1. Ouvrez un projet :
 
     - Ouvrez Visual Studio Code.
-    - Cliquez sur l’icône Explorer dans le menu de gauche, puis sur **Ouvrir le dossier**.
-    - Sélectionnez **Fichier** > **Open Folder** dans le menu principal pour ouvrir le dossier que vous souhaitez que votre projet C ' soit dedans et cliquez sur **Select Folder**. Dans notre exemple, nous créons un dossier pour notre projet nommé *HelloWorld*.
+    - Sélectionnez **fichier** > **ouvrir le dossier** dans le menu principal.
+    - Créez un dossier nommé *HelloWorld*, puis cliquez sur **Sélectionner un dossier**. Le nom du dossier devient le nom du projet et le nom de l’espace de noms par défaut. Vous ajouterez du code ultérieurement dans le didacticiel qui suppose que l’espace de `HelloWorld`noms du projet est.
 
-      ![Ouvrir un dossier Visual Studio Code](media/with-visual-studio-code/vs-code-open-folder.png)
+1. Initialiser un projet C# :
 
-2. Initialiser un projet C# :
+    - Ouvrez le terminal à partir de Visual Studio code en sélectionnant **Afficher** > le**Terminal** dans le menu principal.
+    - Dans la fenêtre de terminal, `dotnet new console`entrez.
 
-    - Ouvrez le Terminal à partir du code Visual Studio en sélectionnant **View** > **Terminal** à partir du menu principal.
-    - Dans la fenêtre de Terminal, tapez `dotnet new console`.
-    - Cette commande crée un fichier *Program.cs* dans votre dossier avec un simple "Hello World" programme déjà écrit, avec un fichier de projet C nommé *HelloWorld.csproj*.
+      Cette commande crée un fichier *Program.cs* dans votre dossier avec un simple programme « Hello World » déjà écrit, ainsi qu’un fichier projet C# nommé *HelloWorld. csproj*.
 
       ![La nouvelle commande dotnet](media/with-visual-studio-code/dotnet-new-command.png)
 
-3. Résolution des ressources de génération :
+1. Exécutez le programme Hello World :
 
-    - Pour **.NET Core 1.x**, tapez `dotnet restore`. Exécuter `dotnet restore` vous donne accès aux packages .NET Core qui sont nécessaires pour générer votre projet.
-
-      ![La commande dotnet restore](media/with-visual-studio-code/dotnet-restore-command.png)
-
-      [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
-
-4. Exécutez le programme Hello World :
-
-    - Tapez `dotnet run`.
+    - Dans la fenêtre de terminal, `dotnet run`entrez.
 
       ![La commande dotnet run](media/with-visual-studio-code/dotnet-run-command.png)
-
-Vous pouvez également regarder un court didacticiel vidéo pour plus d’informations sur la configuration sur [Windows](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core), [macOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS) ou [Linux](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu).
 
 ## <a name="debug"></a>Débogage
 
@@ -62,26 +51,26 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
 
     ![Ouvrez le fichier Program.cs](media/with-visual-studio-code/open-program-cs.png)
 
-2. Visual Studio Code doit vous inviter à ajouter les ressources manquantes pour générer et déboguer votre application. Sélectionnez **Oui**.
+1. Visual Studio Code vous invite à ajouter les ressources manquantes pour générer et déboguer votre application. Sélectionnez **Oui**.
 
     ![Invite pour les fichiers manquants](media/with-visual-studio-code/missing-assets.png)
 
-3. Pour ouvrir la vue de débogage, cliquez sur l’icône de débogage dans le menu de gauche.
+1. Pour ouvrir la vue de débogage, cliquez sur l’icône de débogage dans le menu de gauche.
 
     ![Ouvrir l’onglet Débogage dans Visual Studio Code](media/with-visual-studio-code/open-debug-tab.png)
 
-4. Cherchez la flèche verte en haut du volet. Assurez-vous que le drop-down à côté de lui a **.NET Core Launch (console)** sélectionné.
+1. Cherchez la flèche verte en haut du volet. Assurez-vous que la liste déroulante en regard du menu de **lancement de .net Core (console)** est sélectionnée.
 
     ![Sélection de .NET Core dans Visual Studio Code](media/with-visual-studio-code/select-net-core.png)
 
-5. Ajoutez un point d’arrêt à votre projet en cliquant sur la **marge de l’éditeur**, qui est l’espace à gauche des numéros de ligne dans l’éditeur, à côté de la ligne 9, ou déplacez le curseur texte vers la ligne 9 dans l’éditeur et appuyez sur <kbd>F9</kbd>.
+1. Ajoutez un point d’arrêt à votre projet en cliquant sur la **marge de l’éditeur**, qui est l’espace à gauche des numéros de ligne dans l’éditeur, à côté de la ligne 9, ou déplacez le curseur texte vers la ligne 9 dans l’éditeur et appuyez sur <kbd>F9</kbd>.
 
     ![Définition d'un point d'arrêt](media/with-visual-studio-code/set-breakpoint-vs-code.png)
 
-6. Pour commencer à débogage, appuyez sur <kbd>F5</kbd> ou sélectionnez la flèche verte. Le débogueur arrête l’exécution de votre programme lorsqu’il atteint le point d’arrêt que vous avez défini à l’étape précédente.
-    - Tout en débogage, vous pouvez afficher vos variables locales dans la vitre en haut à gauche ou utiliser la console de débogé.
+1. Pour démarrer le débogage, appuyez sur <kbd>F5</kbd> ou sélectionnez la flèche verte. Le débogueur arrête l’exécution de votre programme lorsqu’il atteint le point d’arrêt que vous avez défini à l’étape précédente.
+    - Lors du débogage, vous pouvez afficher vos variables locales dans le volet supérieur gauche ou utiliser la console de débogage.
 
-7. Sélectionnez la flèche bleue en haut pour continuer le débogage, ou le carré rouge en haut pour l’arrêter.
+1. Sélectionnez la flèche bleue en haut pour continuer le débogage, ou le carré rouge en haut pour l’arrêter.
 
     ![Exécution et débogage dans Visual Studio Code](media/with-visual-studio-code/run-debug-vs-code.png)
 
@@ -90,9 +79,9 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
 
 ## <a name="add-a-class"></a>Ajouter une classe
 
-1. Pour ajouter une nouvelle classe, cliquez à droite dans le VSCode Explorer et sélectionnez **New File**. Un nouveau fichier est ajouté au dossier ouvert dans VS Code.
-2. Nommez votre fichier *MyClass.cs*. Vous devez l’enregistrer avec l’extension `.cs` à la fin pour qu’il soit reconnu comme fichier C#.
-3. Ajoutez le code ci-dessous pour créer votre première classe. Assurez-vous d’inclure l’espace de nom correct afin que vous puissiez le référencer à partir de votre fichier *Program.cs* :
+1. Pour ajouter une nouvelle classe, cliquez avec le bouton droit dans l’Explorateur VSCode sous *Program.cs* et sélectionnez **nouveau fichier**. Un nouveau fichier est ajouté au dossier ouvert dans VS Code.
+1. Nommez votre fichier *MyClass.cs*. Vous devez l’enregistrer avec l’extension `.cs` à la fin pour qu’il soit reconnu comme fichier C#.
+1. Ajoutez le code suivant pour créer votre première classe.
 
     ``` csharp
     using System;
@@ -109,7 +98,7 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
     }
     ```
 
-4. Appelez votre nouvelle classe à partir de votre méthode principale en *Program.cs* en ajoutant le code ci-dessous :
+1. Appelez votre nouvelle classe à partir `Main` de votre méthode en remplaçant le code dans *Program.cs* par le code suivant :
 
     ```csharp
     using System;
@@ -127,13 +116,15 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
     }
     ```
 
-5. Enregistrez vos modifications et exécutez à nouveau votre programme. Le nouveau message devrait apparaître avec la chaîne ajoutée.
+1. Enregistrez vos modifications.
+
+1. Réexécutez le programme.
 
     ```dotnetcli
     dotnet run
     ```
 
-    Vous obtenez la sortie suivante :
+    Le nouveau message s’affiche avec la chaîne ajoutée.
 
     ```console
     Hello World! Happy coding!
@@ -143,7 +134,7 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
 
 ### <a name="im-missing-required-assets-to-build-and-debug-c-in-visual-studio-code-my-debugger-says-no-configuration"></a>Je n’ai pas les ressources nécessaires pour générer et déboguer du code C# dans Visual Studio Code. Mon débogueur indique « Aucune configuration ».
 
-L’extension Visual Studio Code C# peut générer automatiquement les ressources dont vous avez besoin pour les builds et le débogage. Visual Studio Code vous invite à générer ces ressources à la première ouverture d’un projet C#. Si vous n’avez pas généré ces ressources au départ, vous pouvez le faire à tout moment en exécutant cette commande : ouvrez la palette de commandes (**Affichage > Palette de commandes**) et tapez « >.NET: Generate Assets for Build and Debug ». La sélection de ce produit génère le *.vscode*, *launch.json*, et les fichiers de configuration *tasks.json* dont vous avez besoin.
+L’extension Visual Studio Code C# peut générer automatiquement les ressources dont vous avez besoin pour les builds et le débogage. Visual Studio Code vous invite à générer ces ressources à la première ouverture d’un projet C#. Si vous n’avez pas généré ces ressources au départ, vous pouvez le faire à tout moment en exécutant cette commande : ouvrez la palette de commandes (**Affichage > Palette de commandes**) et tapez « >.NET: Generate Assets for Build and Debug ». La sélection de cette option génère les fichiers de configuration *. vscode*, *Launch. JSON*et *Tasks. JSON* dont vous avez besoin.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -3,12 +3,12 @@ title: Modèles d'exploration de données relationnels et données NoSQL
 description: En savoir plus sur les données relationnelles et NoSQL dans les applications natives du Cloud
 author: robvet
 ms.date: 01/22/2020
-ms.openlocfilehash: c074be0c973156c1757b97ffc727711d5dd072af
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: a2561b0abfc1975badfafeeb4fa2f2c6429814be
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199979"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507362"
 ---
 # <a name="relational-vs-nosql-data"></a>Modèles d'exploration de données relationnels et données NoSQL
 
@@ -226,7 +226,7 @@ Azure Cosmos DB propose cinq [modèles de cohérence](https://docs.microsoft.com
 
 **Figure 5-16**: Cosmos DB Description du niveau de cohérence
 
-Dans l’article sur l’utilisation des [niveaux de cohérence à 9 ballons : Cosmos DB expliqués](https://blog.jeremylikness.com/blog/2018-03-23_getting-behind-the-9ball-cosmosdb-consistency-levels/), Microsoft Cloud développeur, l’avocat ignorent, constitue une excellente explication des cinq modèles.
+Dans l’article en [arrière-plan des niveaux de cohérence 9 Ball : Cosmos DB expliqués](https://blog.jeremylikness.com/blog/2018-03-23_getting-behind-the-9ball-cosmosdb-consistency-levels/), le gestionnaire de programmes Microsoft Jeremy Likness fournit une excellente explication des cinq modèles.
 
 ### <a name="partitioning"></a>Partitionnement
 

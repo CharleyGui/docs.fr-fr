@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - tasks, further reading
 ms.assetid: 98aee307-dde6-4cad-bb58-078497b8064f
-ms.openlocfilehash: d424c04f52e08b0fdb72e187bd8999ef16427080
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1c6823808bf457cf23fbef8f7000d38604474a8a
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73134217"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507479"
 ---
 # <a name="for-further-reading-parallel-programming"></a>Pour obtenir des informations supplémentaires (programmation parallèle)
 
@@ -22,7 +22,7 @@ Les ressources suivantes contiennent des informations supplémentaires sur la pr
 
 - Le blog [sur la programmation parallèle avec .NET](https://devblogs.microsoft.com/pfxteam/) contient de nombreux articles détaillés sur la programmation parallèle dans .NET.
 
-- La page [Samples for Parallel Programming with the .NET Framework](https://code.msdn.microsoft.com/ParExtSamples) contient de nombreux exemples qui illustrent les techniques de programmation parallèle intermédiaires et avancées.
+- Les [exemples de programmation parallèle avec la page .NET standard de & .net Core](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel) contiennent de nombreux exemples qui illustrent des techniques de programmation parallèles intermédiaires et avancées.
 
 ## <a name="see-also"></a>Voir aussi
 

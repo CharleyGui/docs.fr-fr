@@ -1,6 +1,6 @@
 ---
 title: Opérateur C# - Référence C#
-ms.date: 04/22/2020
+ms.date: 04/28/2020
 f1_keywords:
 - cs.operators
 helpviewer_keywords:
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: fe4adf7df707eff0990e8c731a36d6177df228cf
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 76a9b1efb46af976e59e5f16d3180891ec54ecee
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102019"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507401"
 ---
 # <a name="c-operators-c-reference"></a>Opérateur C# (Référence C#)
 
@@ -42,15 +42,15 @@ La table suivante répertorie les opérateurs C# de la priorité la plus élevé
 
 | Opérateurs | Catégorie ou nom |
 | --------- | ---------------- |
-| [x.y](member-access-operators.md#member-access-expression-), [f.x)](member-access-operators.md#invocation-expression-), [un&#91;i&#93;](member-access-operators.md#indexer-operator-), x [,](arithmetic-operators.md#increment-operator-) [x--](arithmetic-operators.md#decrement-operator---), [x!](null-forgiving.md), [nouveau](new-operator.md), [type ,](type-testing-and-cast.md#typeof-operator) [vérifié](../keywords/checked.md), [non contrôlé](../keywords/unchecked.md), par [défaut](default.md), [nom,](nameof.md) [délégué](delegate-operator.md), [taille,](sizeof.md) [stackalloc](stackalloc.md), [x->y](pointer-related-operators.md#pointer-member-access-operator--) | Principal |
-| [X](arithmetic-operators.md#unary-plus-and-minus-operators), [-x](arithmetic-operators.md#unary-plus-and-minus-operators), [ \!x](boolean-logical-operators.md#logical-negation-operator-), [x](bitwise-and-shift-operators.md#bitwise-complement-operator-), [x](arithmetic-operators.md#increment-operator-), [--x](arithmetic-operators.md#decrement-operator---), [x](member-access-operators.md#index-from-end-operator-), x , [x ?. y](member-access-operators.md#null-conditional-operators--and-), [x?[ y]](member-access-operators.md#null-conditional-operators--and-), [(T)x](type-testing-and-cast.md#cast-expression), [attendez](await.md), [&x](pointer-related-operators.md#address-of-operator-), [x](pointer-related-operators.md#pointer-indirection-operator-), vrai [et faux](true-false-operators.md) | Unaire |
-| [X.. y](member-access-operators.md#range-operator-) | Plage |
-| [Interrupteur](../../whats-new/csharp-8.md#switch-expressions) | Expression `switch` |
+| [x. y](member-access-operators.md#member-access-expression-), [f (x)](member-access-operators.md#invocation-expression-), [a&#91;i&#93;](member-access-operators.md#indexer-operator-), [`x?.y`](member-access-operators.md#null-conditional-operators--and-), [`x?[y]`](member-access-operators.md#null-conditional-operators--and-), [x + +](arithmetic-operators.md#increment-operator-), [x--](arithmetic-operators.md#decrement-operator---), [x !](null-forgiving.md), [New](new-operator.md), [typeof](type-testing-and-cast.md#typeof-operator), [coché](../keywords/checked.md), [désactivé](../keywords/unchecked.md), [default](default.md), [nameof](nameof.md), [Delegate](delegate-operator.md), [sizeof](sizeof.md), [stackalloc](stackalloc.md), [x->y](pointer-related-operators.md#pointer-member-access-operator--) | Principal |
+| [+ x](arithmetic-operators.md#unary-plus-and-minus-operators), [-x](arithmetic-operators.md#unary-plus-and-minus-operators), [ \!x](boolean-logical-operators.md#logical-negation-operator-), [~ x](bitwise-and-shift-operators.md#bitwise-complement-operator-), [+ + x](arithmetic-operators.md#increment-operator-), [--x](arithmetic-operators.md#decrement-operator---), [^ x](member-access-operators.md#index-from-end-operator-), [(T) x](type-testing-and-cast.md#cast-expression), [await](await.md), [&x](pointer-related-operators.md#address-of-operator-), [* x](pointer-related-operators.md#pointer-indirection-operator-), [true et false](true-false-operators.md) | Unaire |
+| [x.. y](member-access-operators.md#range-operator-) | Plage |
+| [Utilisez](../../whats-new/csharp-8.md#switch-expressions) | Expression `switch` |
 | [x * y](arithmetic-operators.md#multiplication-operator-), [x / y](arithmetic-operators.md#division-operator-), [x % y](arithmetic-operators.md#remainder-operator-) | Multiplicatif|
 | [x + y](arithmetic-operators.md#addition-operator-), [x – y](arithmetic-operators.md#subtraction-operator--) | Additive |
 | [ \< x \< y](bitwise-and-shift-operators.md#left-shift-operator-), [x >> y](bitwise-and-shift-operators.md#right-shift-operator-) | Shift |
 | [x \< y](comparison-operators.md#less-than-operator-), [x > y](comparison-operators.md#greater-than-operator-), [x \<= y](comparison-operators.md#less-than-or-equal-operator-), [x >= y](comparison-operators.md#greater-than-or-equal-operator-), [is](type-testing-and-cast.md#is-operator), [as](type-testing-and-cast.md#as-operator) | Relations et test de type |
-| [x y](equality-operators.md#equality-operator-), [x !](equality-operators.md#inequality-operator-) | Égalité |
+| [x = = y](equality-operators.md#equality-operator-), [x ! = y](equality-operators.md#inequality-operator-) | Égalité |
 | `x & y` | [Logique booléen AND](boolean-logical-operators.md#logical-and-operator-) ou [logique bitwise AND](bitwise-and-shift-operators.md#logical-and-operator-) |
 | `x ^ y` | [Logique booléen XOR](boolean-logical-operators.md#logical-exclusive-or-operator-) ou [logique bitwise XOR](bitwise-and-shift-operators.md#logical-exclusive-or-operator-) |
 | <code>x &#124; y</code> | [Logique booléen OR](boolean-logical-operators.md#logical-or-operator-) ou [logique bitwise OR](bitwise-and-shift-operators.md#logical-or-operator-) |
@@ -58,14 +58,14 @@ La table suivante répertorie les opérateurs C# de la priorité la plus élevé
 | [x &#124;&#124; y](boolean-logical-operators.md#conditional-logical-or-operator-) | OR conditionnel |
 | [x ?? y](null-coalescing-operator.md) | Opérateur de fusion de Null |
 | [c ? t : f](conditional-operator.md) | Opérateur conditionnel |
-| [x y](assignment-operator.md), [x 'y](arithmetic-operators.md#compound-assignment), [x -'y](arithmetic-operators.md#compound-assignment), [x 'y](arithmetic-operators.md#compound-assignment), [x 'y](arithmetic-operators.md#compound-assignment), x 'y , [x % 'y](arithmetic-operators.md#compound-assignment), [x &' y](boolean-logical-operators.md#compound-assignment), x &#124;[' y](boolean-logical-operators.md#compound-assignment), [x 'y](boolean-logical-operators.md#compound-assignment), [x <<' y](bitwise-and-shift-operators.md#compound-assignment), x >>[' y](bitwise-and-shift-operators.md#compound-assignment), [x ?? y](null-coalescing-operator.md),[=>](lambda-operator.md) | Affectation et déclaration lambda |
+| [x = y](assignment-operator.md), [x + = y](arithmetic-operators.md#compound-assignment), [x-= y](arithmetic-operators.md#compound-assignment), [x * = y](arithmetic-operators.md#compound-assignment), [x/= y](arithmetic-operators.md#compound-assignment), [x% = y](arithmetic-operators.md#compound-assignment), [x &= y](boolean-logical-operators.md#compound-assignment), [x &#124;= y](boolean-logical-operators.md#compound-assignment), [x ^ = y](boolean-logical-operators.md#compound-assignment), [x <<= y](bitwise-and-shift-operators.md#compound-assignment), [x >>= y](bitwise-and-shift-operators.md#compound-assignment), x [?? = y](null-coalescing-operator.md),[=>](lambda-operator.md) | Affectation et déclaration lambda |
 
 ## <a name="operator-associativity"></a>Associativité des opérateurs
 
 Quand les opérateurs sont de même priorité, l’associativité des opérateurs détermine l’ordre dans lequel les opérations sont effectuées :
 
-- Les opérateurs *associatifs sur leur gauche* sont évalués dans l’ordre, de gauche à droite. A l’exception des [opérateurs d’affectation](assignment-operator.md) et des [opérateurs de fusion nul,](null-coalescing-operator.md)tous les opérateurs binaires sont de gauche-associative. Par exemple, `a + b - c` est évalué comme étant `(a + b) - c`.
-- Les opérateurs *associatifs sur leur droite* sont évalués dans l’ordre, de droite à gauche. Les opérateurs d’affectation, les opérateurs de fusion nul et [ `?:` l’opérateur conditionnel](conditional-operator.md) sont de droite-associative. Par exemple, `x = y = z` est évalué comme étant `x = (y = z)`.
+- Les opérateurs *associatifs sur leur gauche* sont évalués dans l’ordre, de gauche à droite. À l’exception des opérateurs d' [assignation](assignment-operator.md) et des [opérateurs de fusion Null](null-coalescing-operator.md), tous les opérateurs binaires sont associatifs à gauche. Par exemple, `a + b - c` est évalué comme étant `(a + b) - c`.
+- Les opérateurs *associatifs sur leur droite* sont évalués dans l’ordre, de droite à gauche. Les opérateurs d’assignation, les opérateurs de fusion Null et l' [opérateur `?:` conditionnel](conditional-operator.md) sont associatifs à droite. Par exemple, `x = y = z` est évalué comme étant `x = (y = z)`.
 
 Utilisez des parenthèses pour changer l’ordre d’évaluation imposé par l’associativité des opérateurs :
 
@@ -86,7 +86,7 @@ Sans rapport avec la priorité et l’associativité des opérateurs, les opéra
 |`a / b + c * d`|a, b, /, c, d, *, +|
 |`a / (b + c) * d`|a, b, c, +, /, d, *|
 
-En règle générale, tous les opérandes d’opérateur sont évalués. Cependant, certains opérateurs évaluent les opérandes sous condition. C’est-à-dire que la valeur de l’opéra le plus à gauche d’un tel opérateur définit si (ou quels) autres opérandes doivent être évalués. Ces opérateurs sont les opérateurs logiques conditionnels [ET (`&&`)](boolean-logical-operators.md#conditional-logical-and-operator-) et OR ( [`||`)](boolean-logical-operators.md#conditional-logical-or-operator-) , les opérateurs [ `??` de fusion nul et `??=` ](null-coalescing-operator.md), les opérateurs [ `?.` null-conditionnels et `?[]` ](member-access-operators.md#null-conditional-operators--and-), et l’opérateur [ `?:`conditionnel ](conditional-operator.md). Pour plus d’informations, consultez la description de chaque opérateur.
+En règle générale, tous les opérandes d’opérateur sont évalués. Toutefois, certains opérateurs évaluent les opérandes de manière conditionnelle. Autrement dit, la valeur de l’opérande le plus à gauche d’un opérateur de ce type définit si les autres opérandes doivent être évalués. Ces opérateurs sont les opérateurs logiques [and`&&`()](boolean-logical-operators.md#conditional-logical-and-operator-) et [or`||`()](boolean-logical-operators.md#conditional-logical-or-operator-) conditionnels, les opérateurs de [ `??` fusion `??=`null et ](null-coalescing-operator.md), les [opérateurs `?.` conditionnels `?[]`null et ](member-access-operators.md#null-conditional-operators--and-), ainsi que l' [opérateur `?:`conditionnel ](conditional-operator.md). Pour plus d’informations, consultez la description de chaque opérateur.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

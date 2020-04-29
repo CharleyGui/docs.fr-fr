@@ -1,6 +1,6 @@
 ---
 title: LINQ (Language Integrated Query)
-description: Découvrez comment LINQ fournit des capacités de requête au niveau de la langue et une API à C et Visual Basic comme un moyen d’écrire expressif, code déclaratif.
+description: Découvrez comment LINQ fournit des fonctionnalités d’interrogation au niveau du langage et une API pour C# et Visual Basic pour écrire du code déclaratif expressif.
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016
@@ -9,18 +9,18 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
-ms.openlocfilehash: eafd8f78c3d8de1ba064021111f869571d5a570f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 76872f3ba3ed5106a4cb5bfdd918ae607acc092d
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160324"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507518"
 ---
 # <a name="linq-language-integrated-query"></a>LINQ (Language Integrated Query)
 
 ## <a name="what-is-it"></a>Qu’est-ce que c’est ?
 
-LINQ fournit des capacités de requête au niveau de la langue et une [fonction de plus haut ordre](https://en.wikipedia.org/wiki/Higher-order_function) API à C et Visual Basic comme un moyen d’écrire expressif, code déclaratif.
+LINQ fournit des fonctionnalités d’interrogation au niveau du langage et une API de [fonction d’ordre supérieur](https://en.wikipedia.org/wiki/Higher-order_function) pour C# et Visual Basic pour écrire du code déclaratif expressif.
 
 Syntaxe de requête au niveau du langage :
 
@@ -161,7 +161,7 @@ La réponse à cette question est **non**, si...
 
 ## <a name="essential-samples"></a>Exemples essentiels
 
-Pour obtenir la liste complète des exemples LINQ, consultez [101 LINQ Samples](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b) (101 exemples LINQ).
+Pour obtenir la liste complète des exemples LINQ, consultez [101 LINQ Samples](https://docs.microsoft.com/samples/dotnet/try-samples/101-linq-samples/) (101 exemples LINQ).
 
 Voici une démonstration rapide de quelques-uns des éléments essentiels de LINQ. Ces exemples ne sont pas exhaustifs, car LINQ fournit beaucoup plus de fonctionnalités que ce qui est présenté ici.
 
@@ -394,6 +394,6 @@ Les tâches parallèles utilisant le processeur qui peuvent être facilement exp
 
 ## <a name="further-resources"></a>Ressources supplémentaires :
 
-* [101 exemples LINQ](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
-* [Linqpad](https://www.linqpad.net/), un environnement de terrain de jeu et moteur de requête database pour C '/F'/Visual Basic
+* [101 exemples LINQ](https://docs.microsoft.com/samples/dotnet/try-samples/101-linq-samples/)
+* [LINQPad](https://www.linqpad.net/), environnement de laboratoire et moteur d’interrogation de base de données pour C#/F #/Visual Basic
 * [EduLinq](https://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/), livre électronique pour apprendre comment LINQ-to-objects est implémenté

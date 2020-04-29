@@ -4,18 +4,18 @@ description: Apprenez à utiliser les itérateurs C# intégrés et à créer vos
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
-ms.openlocfilehash: 1933ecf83e9fa234f9b88c815d8ab527997c97f2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: efa755c2243c18fb51b653abccb2bfc702bbc055
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399615"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507375"
 ---
 # <a name="iterators"></a>Iterators
 
 Presque chaque programme que vous écrivez doit itérer au sein d’une collection. Vous allez écrire du code qui examine chaque élément d’une collection.
 
-Vous allez également créer des méthodes d’itérateur, qui sont des méthodes produisant un itérateur pour les éléments de cette classe. Vous pouvez les utiliser pour :
+Vous allez également créer des méthodes d’itérateur qui sont des méthodes qui produisent un itérateur (qui est un objet qui traverse un conteneur, en particulier des listes) pour les éléments de cette classe. Vous pouvez les utiliser pour :
 
 + Effectuer une action sur chaque élément d’une collection.
 + Énumérer une collection personnalisée.

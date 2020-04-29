@@ -11,12 +11,12 @@ helpviewer_keywords:
 - numerics
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
-ms.openlocfilehash: ec5d4c088d3a954a4670891e3bb115c73e6cfdcf
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 3b95a322377e82249a0375af589df74c658fcbf4
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242762"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507414"
 ---
 # <a name="numerics-in-net"></a>Valeurs numériques dans .NET
 
@@ -60,11 +60,11 @@ La structure <xref:System.Numerics.BigInteger?displayProperty=nameWithType> est 
   
 Les deux types <xref:System.Single> et <xref:System.Double> prennent en charge des valeurs spéciales qui représentent une valeur NaN (N’est pas un nombre) et l’infini. Par exemple, le type <xref:System.Double> fournit les valeurs suivantes : <xref:System.Double.NaN?displayProperty=nameWithType>, <xref:System.Double.NegativeInfinity?displayProperty=nameWithType> et <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>. Vous utilisez les méthodes <xref:System.Double.IsNaN%2A?displayProperty=nameWithType>, <xref:System.Double.IsInfinity%2A?displayProperty=nameWithType>, <xref:System.Double.IsPositiveInfinity%2A?displayProperty=nameWithType> et <xref:System.Double.IsNegativeInfinity%2A?displayProperty=nameWithType> pour tester ces valeurs spéciales.
 
-Chaque type à virgule flottante prend en charge un ensemble d’opérateurs arithmétiques standard. La classe <xref:System.Math?displayProperty=nameWithType> fournit des méthodes pour un ensemble plus large de fonctions mathématiques. .NET Core 2.0 et <xref:System.MathF?displayProperty=nameWithType> plus tard comprend la classe, qui fournit des méthodes qui acceptent les arguments du <xref:System.Single> type.
+Chaque type à virgule flottante prend en charge un ensemble d’opérateurs arithmétiques standard. La classe <xref:System.Math?displayProperty=nameWithType> fournit des méthodes pour un ensemble plus large de fonctions mathématiques. .NET Core 2,0 et versions ultérieures <xref:System.MathF?displayProperty=nameWithType> incluent la classe, qui fournit des méthodes qui acceptent <xref:System.Single> des arguments du type.
 
 Vous pouvez également travailler avec les bits individuels de valeurs <xref:System.Double> et <xref:System.Single> en utilisant la classe <xref:System.BitConverter?displayProperty=nameWithType>. La structure <xref:System.Decimal?displayProperty=nameWithType> a ses propres méthodes, <xref:System.Decimal.GetBits%2A?displayProperty=nameWithType> et <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29> pour travailler avec les bits individuel d'une valeur décimale, ainsi que son propre ensemble de méthodes pour effectuer d'autres opérations mathématiques.
   
-Les <xref:System.Double> <xref:System.Single> types et les types sont destinés à être utilisés pour des valeurs qui, de par leur nature, sont imprécises (par exemple, la distance entre deux étoiles) et pour les applications dans lesquelles un haut degré de précision et une petite erreur d’arrondissement n’est pas nécessaire. Utilisez <xref:System.Decimal?displayProperty=nameWithType> le type pour les cas où une plus grande précision est nécessaire et les erreurs d’arrondissement doivent être réduites au minimum.
+Les <xref:System.Double> types <xref:System.Single> et sont destinés à être utilisés pour les valeurs qui, par nature, sont imprécises (par exemple, la distance entre deux étoiles) et pour les applications dans lesquelles un degré élevé de précision et une erreur d’arrondi réduite ne sont pas requis. Utilisez le <xref:System.Decimal?displayProperty=nameWithType> type pour les cas où une plus grande précision est nécessaire et où les erreurs d’arrondi doivent être réduites.
 
 > [!NOTE]
 > Le type <xref:System.Decimal> n’élimine pas la nécessité d’arrondi. Au lieu de cela, il réduit les erreurs dues à l’arrondi.
@@ -93,6 +93,8 @@ Les types .NET compatibles SIMD sont les suivants :
   
 Les types compatibles SIMD sont implémentés de telle sorte qu’ils peuvent être utilisés avec du matériel non compatible SIMD ou des compilateurs JIT. Pour tirer parti des instructions SIMD, vos applications 64 bits doivent être exécutées par le runtime qui utilise le compilateur RyuJIT, inclus dans .NET Core et dans .NET Framework 4.6 et versions ultérieures. Il ajoute la prise en charge SIMD lors du ciblage de processeurs 64 bits.
 
+Pour plus d’informations, consultez [utiliser des types numériques SIMD accélérés](simd.md).
+
 ## <a name="see-also"></a>Voir aussi
 
-- [Chaînes de format numérique standard](base-types/standard-numeric-format-strings.md)
+- [Chaînes de format numériques standard](base-types/standard-numeric-format-strings.md)

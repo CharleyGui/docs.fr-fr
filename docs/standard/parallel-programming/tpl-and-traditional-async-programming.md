@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, with other asynchronous models
 ms.assetid: e7b31170-a156-433f-9f26-b1fc7cd1776f
-ms.openlocfilehash: 27766c10d0624b5eda8256a3211662036a1b16b3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e71c609b500bc6771c405cfb6f4ac14923cc3939
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139949"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507544"
 ---
 # <a name="tpl-and-traditional-net-framework-asynchronous-programming"></a>Bibliothèque parallèle de tâches (TPL) et programmation asynchrone .NET Framework
 Le .NET Framework fournit les deux modèles standard suivants pour l’exécution d’opérations asynchrones liées aux E/S et orientées calculs :  
@@ -115,7 +115,7 @@ Le .NET Framework fournit les deux modèles standard suivants pour l’exécutio
  [!code-vb[FromAsync#09](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#09)]  
   
 ## <a name="using-the-streamextensions-sample-code"></a>Utilisation de l'exemple de code StreamExtensions  
- Le fichier Streamextensions.cs, dans [Exemples de programmation parallèle avec .NET Framework 4](https://code.msdn.microsoft.com/ParExtSamples), contient plusieurs implémentations de référence qui utilisent des objets Task pour des opérations d’E/S réseau ou de fichier asynchrones.  
+ Le fichier *StreamExtensions.cs* , dans le référentiel [.NET standard Parallel Extensions extras](/samples/dotnet/samples/parallel-programming-extensions-extras-cs/) , contient plusieurs implémentations de référence qui utilisent `Task` des objets pour les e/s de fichier et de réseau asynchrones.
   
 ## <a name="see-also"></a>Voir aussi
 

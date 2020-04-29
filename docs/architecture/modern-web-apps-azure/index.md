@@ -4,12 +4,12 @@ description: Un guide qui fournit une aide de bout en bout sur la création d’
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/4/2019
-ms.openlocfilehash: 6ae5de0381c8796faee74abd40f688214ab13211
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 936a068507116033ad178f26e77945f30f70387e
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199961"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507191"
 ---
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Architecturer des applications web modernes avec ASP.NET Core et Azure
 
@@ -50,6 +50,12 @@ Auteur :
 Rédacteurs :
 
 > **Maira Wenzel**
+
+## <a name="action-links"></a>Liens d'action
+
+- Ce livre électronique est également disponible au [Téléchargement](https://aka.ms/webappebook) au format PDF (version anglaise uniquement).
+
+- Cloner/Dupliquer l’application [de référence eShopOnWeb sur GitHub](https://github.com/dotnet-architecture/eShopOnWeb)
 
 ## <a name="introduction"></a>Introduction
 
