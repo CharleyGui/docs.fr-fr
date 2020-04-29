@@ -44,7 +44,7 @@
         - name: Infrastructure de communication Service Mesh
           href: service-mesh-communication-infrastructure.md
     - name: Données distribuées
-      href: database-per-microservice.md
+      href: distributed-data.md
       items:
         - name: Modèles d'exploration de données relationnels et données NoSQL
           href: relational-vs-nosql-data.md
