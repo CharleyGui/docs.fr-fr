@@ -3,12 +3,12 @@ title: Dernières modifications-.NET Framework à .NET Core
 titleSuffix: ''
 description: Répertorie les modifications avec rupture d' .NET Framework à .NET Core.
 ms.date: 12/18/2019
-ms.openlocfilehash: 6a6cbffed5a54e3683832da54d408d77bb553cf1
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: df5907e05c6a2aed478d64cc40c5d6f051f92f96
+ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135623"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82595700"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>Dernières modifications pour la migration de .NET Framework vers .NET Core
 
@@ -22,6 +22,7 @@ Si vous migrez une application à partir de .NET Framework vers .NET Core, les m
 - [Modification de la valeur par défaut de UseShellExecute](#change-in-default-value-of-useshellexecute)
 - [UnauthorizedAccessException levée par FileSystemInfo. Attributes](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes)
 - [La gestion des exceptions d’état de processus endommagées n’est pas prise en charge](#handling-corrupted-state-exceptions-is-not-supported)
+- [Les propriétés UriBuilder n’ajoutent plus de caractères de début](#uribuilder-properties-no-longer-prepend-leading-characters)
 
 ### <a name="net-core-21"></a>.NET Core 2.1
 
@@ -36,6 +37,10 @@ Si vous migrez une application à partir de .NET Framework vers .NET Core, les m
 ***
 
 [!INCLUDE [corrupted-state-exceptions](~/includes/core-changes/corefx/1.0/corrupted-state-exceptions.md)]
+
+***
+
+[!INCLUDE [uribuilder-behavior-changes](../../../includes/core-changes/corefx/1.0/uribuilder-behavior-changes.md)]
 
 ***
 
