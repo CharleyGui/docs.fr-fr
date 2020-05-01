@@ -2,21 +2,28 @@
 title: Exécution de tests unitaires sélectifs
 description: Guide pratique pour utiliser une expression de filtre permettant d’exécuter des tests unitaires sélectifs avec la commande dotnet test dans .NET Core.
 author: smadala
-ms.date: 03/22/2017
-ms.openlocfilehash: b9156300587215e68c01c609e298dbc1a2c53d11
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/29/2020
+ms.openlocfilehash: e66455b5ac012114c45d998fae11da7ee769fbe2
+ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77543506"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82624915"
 ---
 # <a name="running-selective-unit-tests"></a>Exécution de tests unitaires sélectifs
 
 La commande `dotnet test` dans .NET Core vous permet d’utiliser une expression de filtre pour exécuter des tests unitaires sélectifs. Cet article montre comment filtrer les tests exécutés. Les exemples suivants utilisent `dotnet test`. Si vous utilisez `vstest.console.exe`, remplacez `--filter` par `--testcasefilter:`.
 
-> [!NOTE]
-> L’utilisation de filtres qui incluent `*nix` le `!` point d’exclamation (!) sur nécessite de s’échapper depuis est réservé. Par exemple, ce filtre saute tous les tests si `dotnet test --filter FullyQualifiedName\!~IntegrationTests`l’espace de nom contient IntegrationTests: .
-> Notez le backslash qui précède le point d’exclamation.
+## <a name="character-escaping"></a>Échappement de caractères
+
+L’utilisation de filtres qui incluent un point d’exclamation ( ! `*nix` ) sur requiert l' `!` échappement, car est réservé. Par exemple, ce filtre ignore tous les tests si l’espace de noms `dotnet test --filter FullyQualifiedName\!~IntegrationTests`contient IntegrationTests :.
+Notez la barre oblique inverse qui précède le point d’exclamation.
+
+Pour `FullyQualifiedName` les valeurs qui incluent une virgule pour les paramètres de type générique, échappez la virgule avec `%2C`. Par exemple :
+
+```dotnetcli
+dotnet test --filter "FullyQualifiedName=MyNamespace.MyTestsClass<ParameterType1%2CParameterType2>.MyTestMethod"
+```
 
 ## <a name="mstest"></a>MSTest
 
@@ -148,3 +155,5 @@ namespace NUnitNamespace
 | <code>dotnet test --filter "FullyQualifiedName~UnitTest1&#124;TestCategory=CategoryA"</code> | Exécute les tests qui ont `UnitTest1` dans `FullyQualifiedName` **ou** `TestCategory` est `CategoryA`. |
 | `dotnet test --filter "FullyQualifiedName~UnitTest1&TestCategory=CategoryA"` | Exécute les tests qui ont `UnitTest1` dans `FullyQualifiedName` **et** `TestCategory` est `CategoryA`. |
 | <code>dotnet test --filter "(FullyQualifiedName~UnitTest1&TestCategory=CategoryA)&#124;Priority=1"</code> | Exécute les tests qui ont un `FullyQualifiedName` contenant `UnitTest1` **et** `TestCategory` est `CategoryA` **ou** `Priority` est 1. |
+
+Pour plus d’informations, consultez [TestCase Filter](https://github.com/Microsoft/vstest-docs/blob/master/docs/filter.md).

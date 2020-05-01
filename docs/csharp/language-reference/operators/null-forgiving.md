@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - null-forgiving operator [C#]
 - '! operator [C#]'
-ms.openlocfilehash: 772f37f1fc7446eae66f0cd0f12adb5e2e41997d
-ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
+ms.openlocfilehash: 2a8db2882968dbcbe6a8868ab6fe1c128c94a41f
+ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82595947"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82624876"
 ---
 # <a name="-null-forgiving-operator-c-reference"></a>! (null-indulgent avec), opérateur (référence C#)
 
@@ -20,7 +20,7 @@ Disponible en C# 8,0 et versions ultérieures, l' `!` opérateur postfix unaire 
 L’opérateur null-indulgent avec n’a aucun effet au moment de l’exécution. Elle affecte uniquement l’analyse du déroulement statique du compilateur en modifiant l’État null de l’expression. Au moment de l’exécution `x!` , l’expression prend la valeur du résultat de `x`l’expression sous-jacente.
 
 > [!NOTE]
-> En C# 8, l’opérateur null-indulgent avec interagit avec les [opérateurs conditionnels null](member-access-operators.md#null-conditional-operators--and-) d’une manière inattendue. L’expression `x?.y!.z` est analysée en `(x?.y)!.z`tant que. En raison de cette `z` interprétation, elle est `x` évaluée même si a `null`la valeur <xref:System.NullReferenceException>, ce qui peut entraîner un.
+> En C# 8, l’opérateur null-indulgent avec met fin à la liste des opérations [conditionnelles null](member-access-operators.md#null-conditional-operators--and-) précédentes. Par exemple, l’expression `x?.y!.z` est analysée comme `(x?.y)!.z`. En raison de cette interprétation `z` , est évalué même `x` si `null`est, ce qui peut entraîner <xref:System.NullReferenceException>un.
 
 Pour plus d’informations sur la fonctionnalité des types de référence Nullable, consultez [types de référence Nullable](../builtin-types/nullable-reference-types.md).
 
