@@ -4,12 +4,12 @@ description: Découvrez comment utiliser l’outil Analyseur de portabilité .NE
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: ef6173fe5da798c1fff5d2eb723a91875905e400
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 8d019bef5fddac9f7c3d93e416cea061905c82ff
+ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507531"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82728442"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyseur de portabilité .NET
 
@@ -27,7 +27,7 @@ Une fois que vous avez converti votre projet pour cibler la nouvelle plateforme,
 
 ## <a name="how-to-use-the-net-portability-analyzer"></a>Comment utiliser l’Analyseur de portabilité .NET
 
-Pour commencer à utiliser l’Analyseur de portabilité .NET dans Visual Studio, vous devez d’abord télécharger l’extension à partir du [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer) et l’installer. Elle fonctionne sur Visual Studio 2017 et les versions ultérieures. Vous pouvez le configurer dans Visual Studio via **analyser** > les paramètres de l'**Analyseur de portabilité** et sélectionner vos plateformes cibles, à savoir les plateformes/versions .net dont vous souhaitez évaluer les écarts de portabilité comparés à la plateforme/version avec laquelle votre assembly actuel est généré.
+Pour commencer à utiliser l’Analyseur de portabilité .NET dans Visual Studio, vous devez d’abord télécharger l’extension à partir du [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer) et l’installer. Elle fonctionne sur Visual Studio 2017 et les versions ultérieures. Configurez-le dans Visual Studio via **analyser** > les paramètres de l'**Analyseur de portabilité** et sélectionnez vos plateformes cibles, qui correspondent aux plateformes/versions .net dont vous souhaitez évaluer les écarts de portabilité comparés à la plateforme/version avec laquelle votre assembly actuel est généré.
 
 ![Capture d’écran de l’analyseur de portabilité.](./media/portability-analyzer/portability-screenshot.png)
 
@@ -67,7 +67,7 @@ La section **Détails** du rapport répertorie les API manquantes dans les **pla
 - Membre cible : la méthode est manquante dans une plateforme cible
 - Nom de l’assembly : assembly .NET Framework dans lequel réside l’API manquante.
 - Chacune des plateformes cibles sélectionnées est une colonne, par exemple « .NET Core » : la valeur « non pris en charge » signifie que l’API n’est pas prise en charge sur cette plateforme cible.
-- Changements recommandés : API ou technologie de remplacement recommandée. Actuellement, ce champ est vide ou obsolète pour un grand nombre d’API. En raison du grand nombre d’API, il est très difficile de le maintenir à jour. Nous étudions d’autres solutions pour fournir des informations utiles aux clients.
+- Modifications recommandées : l’API ou la technologie recommandée pour passer à. Actuellement, ce champ est vide ou obsolète pour de nombreuses API. En raison du grand nombre d’API, nous avons un défi important à rester à jour. Nous examinons d’autres solutions pour fournir des informations utiles aux clients.
 
 #### <a name="missing-assemblies"></a>Assemblys manquants
 

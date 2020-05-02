@@ -2,14 +2,14 @@
 title: Security Validation
 ms.date: 03/30/2017
 ms.assetid: 48dcd496-0c4f-48ce-8b9b-0e25b77ffa58
-ms.openlocfilehash: d635ae72b71df18934acd1016ac3e799d2c4aea1
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: 90d335f32c43ecf575c69cf800ab69bee05f39ee
+ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82140507"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82728381"
 ---
-# <a name="security-validation"></a>Security Validation
+# <a name="security-validation"></a>Validation de la sécurité
 Cet exemple montre comment utiliser un comportement personnalisé pour valider des services sur un ordinateur afin de garantir qu'ils répondent à des critères spécifiques. Dans cet exemple, les services sont validés par le comportement personnalisé en analysant chaque point de terminaison sur le service et en vérifiant s'ils contiennent des éléments de liaison sécurisés. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
   
 > [!NOTE]
@@ -78,9 +78,9 @@ public void Validate(ServiceDescription serviceDescription,
 > [!NOTE]
 > Lors de l'ajout du comportement à tous les services, il est recommandé de sauvegarder le fichier Machine.config avant d'apporter toute modification.  
   
- Exécutez maintenant le client fourni dans le répertoire client\bin de cet exemple. Une exception s’est produite avec le message suivant : « le service demandé «http://localhost/servicemodelsamples/service.svc» n’a pas pu être activé». Cette exception est attendue parce qu'un point de terminaison est considéré comme non sécurisé par le comportement de validation de point de terminaison et empêche le démarrage du service. Le comportement lève également une exception interne qui décrit quel point de terminaison n'est pas sécurisé et écrit un message à l'observateur d'événements du système sous la source « System.ServiceModel 4.0.0.0 » et la catégorie « WebHost ». Il est également possible d'activer le suivi sur le service dans cet exemple. Cela permet à l'utilisateur de consulter les exceptions levées par le comportement de validation de point de terminaison en ouvrant les suivis du service à l'aide de l'outil Service Trace Viewer.  
+ Exécutez maintenant le client fourni dans le répertoire client\bin de cet exemple. Une exception est levée avec le message suivant : « impossible d’activer le servicehttp://localhost/servicemodelsamples/service.svcdemandé « ». Cette exception est attendue parce qu'un point de terminaison est considéré comme non sécurisé par le comportement de validation de point de terminaison et empêche le démarrage du service. Le comportement lève également une exception interne qui décrit quel point de terminaison n'est pas sécurisé et écrit un message à l'observateur d'événements du système sous la source « System.ServiceModel 4.0.0.0 » et la catégorie « WebHost ». Il est également possible d'activer le suivi sur le service dans cet exemple. Cela permet à l'utilisateur de consulter les exceptions levées par le comportement de validation de point de terminaison en ouvrant les suivis du service à l'aide de l'outil Service Trace Viewer.  
   
-#### <a name="to-view-failed-endpoint-validation-exception-messages-in-the-event-viewer"></a>Pour consulter les messages d'exception de validation non réussie d'un point de terminaison dans l'observateur d'événements  
+### <a name="view-failed-endpoint-validation-exception-messages-in-the-event-viewer"></a>Affichez les messages d’exception de validation de point de terminaison ayant échoué dans le observateur d’événements  
   
 1. Cliquez sur le menu **Démarrer** et sélectionnez **exécuter...**.  
   
@@ -90,7 +90,7 @@ public void Validate(ServiceDescription serviceDescription,
   
 4. Double-cliquez sur l’événement « System. ServiceModel 4.0.0.0 » ajouté récemment sous la catégorie « WebHost » dans la fenêtre d' **application** pour afficher les messages de point de terminaison non sécurisés.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
+## <a name="set-up-build-and-run-the-sample"></a>Configurer, générer et exécuter l’exemple  
   
 1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   

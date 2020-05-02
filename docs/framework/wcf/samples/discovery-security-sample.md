@@ -2,12 +2,12 @@
 title: Exemple Discovery Security
 ms.date: 03/30/2017
 ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
-ms.openlocfilehash: 94de324469d0d649a184dec5847e1a5c4cbba2cc
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: 44022ee756f189347aaec606427ecb3c4c5ffa95
+ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141155"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82728417"
 ---
 # <a name="discovery-security-sample"></a>Exemple Discovery Security
 
@@ -16,7 +16,7 @@ La spécification Discovery n'exige pas que les points de terminaison participan
  Le canal personnalisé est appliqué en plus de la pile de canaux existante pour les points de terminaison de découverte et d'annonce. De cette façon, un en-tête de signature est appliqué pour chaque message envoyé. La signature est vérifiée sur les messages reçus, qui sont supprimés s’ils ne comportent pas de signature ou si celle-ci ne correspond pas. Pour signer et vérifier des messages, l'exemple utilise des certificats.  
   
 ## <a name="discussion"></a>Discussions  
- WCF est très extensible et offre aux utilisateurs la possibilité de personnaliser des canaux à leur gré. L’exemple implémente un élément de liaison sécurisée de découverte qui génère des canaux sécurisés. Les canaux sécurisés appliquent et vérifient les signatures des messages et sont appliqués en plus de la pile actuelle.  
+ WCF est extensible et permet aux utilisateurs de personnaliser les canaux comme vous le souhaitez. L’exemple implémente un élément de liaison sécurisée de découverte qui génère des canaux sécurisés. Les canaux sécurisés appliquent et vérifient les signatures des messages et sont appliqués en plus de la pile actuelle.  
   
  L’élément de liaison sécurisée génère des écouteurs et fabriques de canaux sécurisés.  
   
@@ -40,7 +40,7 @@ La spécification Discovery n'exige pas que les points de terminaison participan
   
  Pour calculer la signature, l’exemple identifie les éléments de signature développés. Une signature XML (`SignedInfo`) est créée, à l'aide du préfixe d'espace de noms `ds`, comme requis par la spécification WS-Discovery. Le corps et tous les en-têtes des espaces de noms de découverte et d'adressage sont référencés dans la signature et ne peuvent donc pas être falsifiés. Chaque élément référencé est transformé à l’aide de la canonisation exclusivehttp://www.w3.org/2001/10/xml-exc-c14n# (), puis une valeur Digest SHA-1 est calculée (http://www.w3.org/2000/09/xmldsig#sha1 ). En fonction de tous les éléments référencés et de leurs valeurs de synthèse, la valeur de la signature est calculéehttp://www.w3.org/2000/09/xmldsig#rsa-sha1 à l’aide de l’algorithme RSA ().  
   
- Les messages sont signés avec un certificat spécifié par le client. L’emplacement et le nom du magasin, ainsi que le nom de sujet du certificat doivent être spécifiés au moment de la création de l’élément de liaison. Le `KeyId` de la signature compacte représente l'identificateur de clé du jeton de signature et constitue l'identificateur de la clé du sujet (SKI, Subject Key Identifier) du jeton de signature ou, si le SKI n'existe pas, un hachage SHA-1 de la clé publique du jeton de signature.  
+ Les messages sont signés avec un certificat spécifié par le client. L’emplacement du magasin, le nom et le nom d’objet du certificat doivent être spécifiés lors de la création de l’élément de liaison. Le `KeyId` de la signature compacte représente l'identificateur de clé du jeton de signature et constitue l'identificateur de la clé du sujet (SKI, Subject Key Identifier) du jeton de signature ou, si le SKI n'existe pas, un hachage SHA-1 de la clé publique du jeton de signature.  
   
 ## <a name="secure-channel-listener"></a>Écouteur de canal sécurisé  
  L'écouteur de canal sécurisé crée des canaux d'entrée ou duplex qui vérifient la signature compacte dans les messages reçus. Pour vérifier la signature, le `KeyId` spécifié dans la signature compacte jointe au message est utilisé afin de sélectionner un certificat dans le magasin spécifié. Si le message n'a pas de signature ou si la vérification de la signature échoue, les messages sont supprimés. Pour utiliser la liaison sécurisée, l’exemple définit une fabrique qui crée les <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> et <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> personnalisés avec l’élément de liaison sécurisée de découverte ajouté. Ces points de terminaison sécurisés peuvent être utilisés dans des écouteurs d'annonces de découverte et des services détectables.  
