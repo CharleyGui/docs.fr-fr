@@ -11,12 +11,12 @@ metadata:
   author: BillWagner
   ms.author: wiwagn
   ms.date: 04/21/2020
-  ms.openlocfilehash: fca50f9b1feb1104d8ae399b1a9aae46aad907a6
-  ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
+  ms.openlocfilehash: e1f4da6baefc39281a6dd4a5558d9f961a8f98a5
+  ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/30/2020
-  ms.locfileid: "82595921"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82624928"
 highlightedContent:
   items:
   - title: Télécharger .NET
@@ -225,8 +225,8 @@ additionalContent:
         text: Bibliothèques IoT .NET Core
       - url: https://www.nuget.org/packages/System.Device.Gpio
         text: Package NuGet System.Device.Gpio
-  - title: Sections de référence sur les API
-    summary: Recherchez dans la documentation de référence de l’API .NET, en fonction de vos centres d’intérêt.
+  - title: Informations de référence sur les API et les langages
+    summary: Recherchez dans la documentation de référence des langages et des API .NET.
     items:
     - title: Informations de référence sur l’API .NET Core
       summary: Documentation de référence sur les API de .NET Core
