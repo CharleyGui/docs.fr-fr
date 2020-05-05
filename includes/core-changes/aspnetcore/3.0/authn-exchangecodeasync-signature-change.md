@@ -6,9 +6,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394281"
 ---
-### <a name="authentication-oauthhandler-exchangecodeasync-signature-changed"></a>Authentification : La signature OAuthHandler ExchangeCodeAsync modifiée
+### <a name="authentication-oauthhandler-exchangecodeasync-signature-changed"></a>Authentification : OAuthHandler ExchangeCodeAsync signature a changé
 
-Dans ASP.NET Core 3.0, la `OAuthHandler.ExchangeCodeAsync` signature de a été changée de:
+Dans ASP.NET Core 3,0, la signature de `OAuthHandler.ExchangeCodeAsync` a été remplacée par :
 
 ```csharp
 protected virtual System.Threading.Tasks.Task<Microsoft.AspNetCore.Authentication.OAuth.OAuthTokenResponse> ExchangeCodeAsync(string code, string redirectUri) { throw null; }
@@ -26,19 +26,19 @@ protected virtual System.Threading.Tasks.Task<Microsoft.AspNetCore.Authenticatio
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Les `code` `redirectUri` et les ficelles ont été adoptées comme des arguments distincts.
+Les `code` chaînes `redirectUri` et ont été passées en tant qu’arguments distincts.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-`Code`et `RedirectUri` sont `OAuthCodeExchangeContext` des propriétés sur `OAuthCodeExchangeContext` qui peuvent être définis via le constructeur. Le `OAuthCodeExchangeContext` nouveau type est le `OAuthHandler.ExchangeCodeAsync`seul argument passé à .
+`Code`et `RedirectUri` sont des `OAuthCodeExchangeContext` propriétés qui peuvent être définies via le `OAuthCodeExchangeContext` constructeur. Le nouveau `OAuthCodeExchangeContext` type est le seul argument passé à `OAuthHandler.ExchangeCodeAsync`.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Cette modification permet de fournir des paramètres supplémentaires d’une manière non-rupture. Il n’est pas `ExchangeCodeAsync` nécessaire de créer de nouvelles surcharges.
+Cette modification permet de fournir des paramètres supplémentaires de manière sans rupture. Il n’est pas nécessaire de créer `ExchangeCodeAsync` de nouvelles surcharges.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Construire `OAuthCodeExchangeContext` un avec `code` `redirectUri` le approprié et les valeurs. Une <xref:Microsoft.AspNetCore.Authentication.AuthenticationProperties> instance doit être fournie. Cette `OAuthCodeExchangeContext` seule instance peut `OAuthHandler.ExchangeCodeAsync` être adoptée au lieu de multiples arguments.
+Construisez `OAuthCodeExchangeContext` un avec les `code` valeurs `redirectUri` et appropriées. Une <xref:Microsoft.AspNetCore.Authentication.AuthenticationProperties> instance doit être fournie. Cette instance `OAuthCodeExchangeContext` unique peut être passée au `OAuthHandler.ExchangeCodeAsync` au lieu de plusieurs arguments.
 
 #### <a name="category"></a>Category
 

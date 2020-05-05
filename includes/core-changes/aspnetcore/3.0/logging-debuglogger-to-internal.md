@@ -6,24 +6,24 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394101"
 ---
-### <a name="logging-debuglogger-class-made-internal"></a>Enregistrement: DebugLogger classe rendue interne
+### <a name="logging-debuglogger-class-made-internal"></a>Journalisation : classe DebugLogger rendue interne
 
-Avant ASP.NET Core 3.0, `DebugLogger`« le modificateur d’accès était `public`. Dans ASP.NET Core 3.0, le modificateur `internal`d’accès a changé pour .
+Avant ASP.NET Core 3,0, `DebugLogger`le modificateur d’accès était `public`. Dans ASP.NET Core 3,0, le modificateur d’accès a `internal`la valeur.
 
 #### <a name="version-introduced"></a>Version introduite
 
 3.0
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Le changement est apporté à :
+La modification est apportée à :
 
-* Appliquer la cohérence avec d’autres implémentations d’enregistreur tels que `ConsoleLogger`.
-* Réduire la surface de l’API.
+* Garantissez la cohérence avec d’autres implémentations `ConsoleLogger`d’enregistreur d’événements telles que.
+* Réduisez la surface de l’API.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Utilisez <xref:Microsoft.Extensions.Logging.DebugLoggerFactoryExtensions.AddDebug%2A> `ILoggingBuilder` la méthode d’extension pour permettre l’exploitation forestière de débogé. <xref:Microsoft.Extensions.Logging.Debug.DebugLoggerProvider>est également `public` toujours dans le cas où le service doit être enregistré manuellement.
+Utilisez la <xref:Microsoft.Extensions.Logging.DebugLoggerFactoryExtensions.AddDebug%2A> `ILoggingBuilder` méthode d’extension pour activer la journalisation du débogage. <xref:Microsoft.Extensions.Logging.Debug.DebugLoggerProvider>est également toujours `public` dans le cas où le service doit être inscrit manuellement.
 
 #### <a name="category"></a>Category
 

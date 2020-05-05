@@ -6,9 +6,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901803"
 ---
-### <a name="mvc-async-suffix-trimmed-from-controller-action-names"></a>MVC: Suffixe Async coupé à partir de noms d’action contrôleur
+### <a name="mvc-async-suffix-trimmed-from-controller-action-names"></a>MVC : suffixe Async tronqué à partir des noms d’action du contrôleur
 
-Dans le cadre de l’adresse [dotnet/aspnetcore 4849](https://github.com/dotnet/aspnetcore/issues/4849), ASP.NET Core `Async` MVC coupe le suffixe des noms d’action par défaut. En commençant par ASP.NET Core 3.0, ce changement affecte à la fois le routage et la génération de liaisons.
+Dans le cadre de l’adressage [dotnet/aspnetcore # 4849](https://github.com/dotnet/aspnetcore/issues/4849), ASP.net Core MVC supprime le `Async` suffixe des noms d’action par défaut. À compter de ASP.NET Core 3,0, cette modification affecte à la fois le routage et la génération de liens.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -16,7 +16,7 @@ Dans le cadre de l’adresse [dotnet/aspnetcore 4849](https://github.com/dotnet/
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Considérez le contrôleur ASP.NET Core MVC suivant :
+Considérez les ASP.NET Core contrôleur MVC suivants :
 
 ```csharp
 public class ProductController : Controller
@@ -29,7 +29,7 @@ public class ProductController : Controller
 }
 ```
 
-L’action est `Product/ListAsync`routable via . La génération de `Async` liens nécessite de spécifier le suffixe. Par exemple :
+L’action peut être routable `Product/ListAsync`via. La génération de liens requiert `Async` la spécification du suffixe. Par exemple :
 
 ```cshtml
 <a asp-controller="Product" asp-action="ListAsync">List</a>
@@ -37,13 +37,13 @@ L’action est `Product/ListAsync`routable via . La génération de `Async` lien
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Dans ASP.NET Core 3.0, l’action est `Product/List`routable via . Le code de génération `Async` de lien doit omettre le suffixe. Par exemple :
+Dans ASP.NET Core 3,0, l’action est routable via `Product/List`. Le code de génération de lien `Async` doit omettre le suffixe. Par exemple :
 
 ```cshtml
 <a asp-controller="Product" asp-action="List">List</a>
 ```
 
-Cette modification n’affecte pas `[ActionName]` les noms spécifiés à l’aide de l’attribut. Le nouveau comportement peut `MvcOptions.SuppressAsyncSuffixInActionNames` être `false` `Startup.ConfigureServices`désactivé en définissant dans :
+Cette modification n’affecte pas les noms spécifiés à l’aide de l' `[ActionName]` attribut. Le nouveau comportement peut être désactivé en affectant `false` à `Startup.ConfigureServices`la valeur `MvcOptions.SuppressAsyncSuffixInActionNames` dans :
 
 ```csharp
 services.AddMvc(options =>
@@ -52,16 +52,16 @@ services.AddMvc(options =>
 });
 ```
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Par convention, asynchrone .NET méthodes sont `Async`suffixes avec . Cependant, lorsqu’une méthode définit une action MVC, il n’est pas souhaitable d’utiliser le `Async` suffixe.
+Par Convention, les méthodes .NET asynchrones sont suivies d' `Async`un suffixe. Toutefois, lorsqu’une méthode définit une action MVC, il n’est pas souhaitable d’utiliser `Async` le suffixe.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si votre application dépend des actions MVC `Async` préservant le suffixe du nom, choisissez l’une des mesures d’atténuation suivantes :
+Si votre application dépend d’actions MVC qui conservent le `Async` suffixe du nom, choisissez l’une des solutions de contournement suivantes :
 
-- Utilisez `[ActionName]` l’attribut pour préserver le nom d’origine.
-- Désactiver entièrement le changement de `MvcOptions.SuppressAsyncSuffixInActionNames` `false` nom `Startup.ConfigureServices`en mettant en place :
+- Utilisez l' `[ActionName]` attribut pour conserver le nom d’origine.
+- Désactivez entièrement le changement de `MvcOptions.SuppressAsyncSuffixInActionNames` nom `false` en `Startup.ConfigureServices`définissant sur dans :
 
 ```csharp
 services.AddMvc(options =>
@@ -76,7 +76,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-None
+Aucun
 
 <!-- 
 

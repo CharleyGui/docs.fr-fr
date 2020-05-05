@@ -6,11 +6,11 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901761"
 ---
-### <a name="hosting-objectpoolprovider-removed-from-webhostbuilder-dependencies"></a>Hébergement: ObjectPoolProvider supprimé des dépendances WebHostBuilder
+### <a name="hosting-objectpoolprovider-removed-from-webhostbuilder-dependencies"></a>Hébergement : ObjectPoolProvider supprimé des dépendances WebHostBuilder
 
-Dans le cadre de rendre ASP.NET Core plus `ObjectPoolProvider` de payer pour le jeu, le a été retiré de l’ensemble principal des dépendances. Des composants spécifiques `ObjectPoolProvider` sur qui s’appuient l’ajoutent maintenant eux-mêmes.
+Dans le cadre de la création de ASP.NET Core plus de paiement `ObjectPoolProvider` pour la lecture, a été supprimé de l’ensemble principal de dépendances. Les composants spécifiques qui dépendent `ObjectPoolProvider` de maintenant l’ajoutent eux-mêmes.
 
-Pour discussion, voir [dotnet/aspnetcore 5944](https://github.com/dotnet/aspnetcore/issues/5944).
+Pour plus d’informations, consultez [dotnet/aspnetcore # 5944](https://github.com/dotnet/aspnetcore/issues/5944).
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -18,19 +18,19 @@ Pour discussion, voir [dotnet/aspnetcore 5944](https://github.com/dotnet/aspnetc
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-`WebHostBuilder`fournit `ObjectPoolProvider` par défaut dans le conteneur DI.
+`WebHostBuilder`fournit `ObjectPoolProvider` par défaut dans le conteneur d’injection de paramètres.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-`WebHostBuilder`ne fournit `ObjectPoolProvider` plus par défaut dans le conteneur DI.
+`WebHostBuilder`n’est plus `ObjectPoolProvider` fourni par défaut dans le conteneur d’injection de paramètres.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Ce changement a été apporté pour rendre ASP.NET Core plus de salaire pour le jeu.
+Cette modification a été apportée pour rendre ASP.NET Core plus payant.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si votre `ObjectPoolProvider`composant nécessite, il doit être ajouté `IServiceCollection`à vos dépendances via le .
+Si votre composant requiert `ObjectPoolProvider`, il doit être ajouté à vos dépendances via le `IServiceCollection`.
 
 #### <a name="category"></a>Category
 
@@ -38,7 +38,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-None
+Aucun
 
 <!-- 
 

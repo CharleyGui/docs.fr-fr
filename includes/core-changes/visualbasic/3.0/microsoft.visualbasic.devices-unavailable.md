@@ -6,23 +6,23 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "76116338"
 ---
-### <a name="types-in-microsoftvisualbasicdevices-namespace-not-available"></a>Types dans Microsoft.VisualBasic.Devices namespace non disponible
+### <a name="types-in-microsoftvisualbasicdevices-namespace-not-available"></a>Types dans l’espace de noms Microsoft. VisualBasic. Devices non disponible
 
-Les types <xref:Microsoft.VisualBasic.Devices?displayProperty=fullName> dans l’espace nom ne sont pas disponibles.
+Les types de l' <xref:Microsoft.VisualBasic.Devices?displayProperty=fullName> espace de noms ne sont pas disponibles.
 
 #### <a name="version-introduced"></a>Version introduite
 
-.NET Core 3.0 Aperçu 8
+.NET Core 3,0 Preview 8
 
 #### <a name="change-description"></a>Description de la modification
 
-Les types <xref:Microsoft.VisualBasic.Devices?displayProperty=fullName> dans l’espace de nom étaient disponibles dans certains .NET Core 3.0 Versions aperçu,. Ils ne sont plus disponibles à partir de .NET Core 3.0 Aperçu 9.
+Les types de l' <xref:Microsoft.VisualBasic.Devices?displayProperty=fullName> espace de noms étaient disponibles dans certaines versions préliminaires de .net Core 3,0,. Ils ne sont plus disponibles à partir de .NET Core 3,0 Preview 9.
 
-Les types ont été supprimés pour éviter des dépendances inutiles à l’assemblage ou des changements de rupture dans les rejets ultérieurs.
+Les types ont été supprimés pour éviter les dépendances d’assembly inutiles ou les modifications importantes dans les versions ultérieures.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si votre code dépend <xref:Microsoft.VisualBasic.Devices> de l’utilisation des types et de leurs membres, vous pouvez être en mesure d’utiliser un type ou un membre correspondant dans la bibliothèque de classe .NET. Par exemple, des fonctionnalités équivalentes <xref:Microsoft.VisualBasic.Devices.Clock?displayProperty=nameWithType> <xref:System.DateTime?displayProperty=nameWithType> à <xref:System.Environment?displayProperty=nameWithType> la classe sont fournies <xref:Microsoft.VisualBasic.Devices.Ports?displayProperty=nameWithType> par les types <xref:System.IO.Ports?displayProperty=nameWithType> et les types, et des fonctionnalités équivalentes à la classe sont fournies par des types dans l’espace nom.
+Si votre code dépend de l’utilisation de <xref:Microsoft.VisualBasic.Devices> types et de leurs membres, vous pourrez peut-être utiliser un type ou un membre correspondant dans la bibliothèque de classes .net. Par exemple, les fonctionnalités équivalentes <xref:Microsoft.VisualBasic.Devices.Clock?displayProperty=nameWithType> à la classe sont fournies <xref:System.DateTime?displayProperty=nameWithType> par <xref:System.Environment?displayProperty=nameWithType> les types et, et les fonctionnalités <xref:Microsoft.VisualBasic.Devices.Ports?displayProperty=nameWithType> équivalentes à la classe sont fournies <xref:System.IO.Ports?displayProperty=nameWithType> par les types dans l’espace de noms.
 
 #### <a name="category"></a>Category
 

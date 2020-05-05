@@ -6,11 +6,11 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901884"
 ---
-### <a name="authorization-iauthorizationpolicyprovider-implementations-require-new-method"></a>Autorisation: IAuthorizationPolicyProvider implémentations nécessitent une nouvelle méthode
+### <a name="authorization-iauthorizationpolicyprovider-implementations-require-new-method"></a>Autorisation : les implémentations de IAuthorizationPolicyProvider nécessitent une nouvelle méthode
 
-Dans ASP.NET Core 3.0, une `GetFallbackPolicyAsync` nouvelle méthode `IAuthorizationPolicyProvider`a été ajoutée à . Cette politique de repli est utilisée par l’autorisation middleware lorsqu’aucune politique n’est spécifiée.
+Dans ASP.NET Core 3,0, une nouvelle `GetFallbackPolicyAsync` méthode a été ajoutée `IAuthorizationPolicyProvider`à. Cette stratégie de secours est utilisée par l’intergiciel (middleware) d’autorisation quand aucune stratégie n’est spécifiée.
 
-Pour plus d’informations, voir [dotnet/aspnetcore 9759](https://github.com/dotnet/aspnetcore/pull/9759).
+Pour plus d’informations, consultez [dotnet/aspnetcore # 9759](https://github.com/dotnet/aspnetcore/pull/9759).
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -18,19 +18,19 @@ Pour plus d’informations, voir [dotnet/aspnetcore 9759](https://github.com/dot
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Les implémentations `IAuthorizationPolicyProvider` `GetFallbackPolicyAsync` de n’a pas nécessité de méthode.
+Les implémentations `IAuthorizationPolicyProvider` de n’ont `GetFallbackPolicyAsync` pas besoin d’une méthode.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Les implémentations nécessitent `IAuthorizationPolicyProvider` une `GetFallbackPolicyAsync` méthode.
+Les implémentations `IAuthorizationPolicyProvider` de requièrent une `GetFallbackPolicyAsync` méthode.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Une nouvelle méthode était `AuthorizationMiddleware` nécessaire pour que le nouveau soit utilisé lorsqu’aucune stratégie n’est spécifiée.
+Une nouvelle méthode était nécessaire pour que le `AuthorizationMiddleware` nouveau utilise quand aucune stratégie n’est spécifiée.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Ajoutez `GetFallbackPolicyAsync` la méthode à `IAuthorizationPolicyProvider`vos implémentations de .
+Ajoutez la `GetFallbackPolicyAsync` méthode à vos implémentations de `IAuthorizationPolicyProvider`.
 
 #### <a name="category"></a>Category
 

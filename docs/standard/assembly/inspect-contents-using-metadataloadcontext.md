@@ -39,6 +39,6 @@ L’exemple de code suivant <xref:System.Reflection.MetadataLoadContext>crée, c
 
 [!code-csharp[](snippets/inspect-contents-using-metadataloadcontext/MetadataLoadContextSnippets.cs#CreateContext)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Pour obtenir un exemple de code complet, consultez l' [exemple inspecter le contenu de l’assembly à l’aide de MetadataLoadContext](https://docs.microsoft.com/samples/dotnet/samples/inspect-assembly-contents-using-metadataloadcontext/).

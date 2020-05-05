@@ -6,21 +6,21 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "74644046"
 ---
-### <a name="change-of-access-for-accessibleobjectruntimeidfirstitem"></a>Changement d’accès pour AccessibleObject.RuntimeIDFirstItem
+### <a name="change-of-access-for-accessibleobjectruntimeidfirstitem"></a>Changement d’accès pour AccessibleObject. RuntimeIDFirstItem
 
-À partir de .NET Core 3.0 `AccessibleObject.RuntimeIDFirstItem` RC1, l’accessibilité de a changé de `protected` . `internal`
+À compter de .NET Core 3,0 RC1, l’accessibilité `AccessibleObject.RuntimeIDFirstItem` de est passée `protected` de `internal`à.
 
 #### <a name="change-description"></a>Description de la modification
 
-En commençant par .NET Core 3.0 Aperçu 4, le `AccessibleObject.RuntimeIDFirstItem` champ a été `protected`. À partir de .NET Core 3.0 `protected` RC1, il est passé de l’autre `internal` pour s’aligner sur l’accessibilité du champ dans le cadre .NET.
+À compter de .NET Core 3,0 Preview 4, `AccessibleObject.RuntimeIDFirstItem` le champ `protected`était. À compter de .NET Core 3,0 RC1, il est passé `protected` de `internal` à pour s’aligner sur l’accessibilité du champ dans la .NET Framework.
 
 #### <a name="version-introduced"></a>Version introduite
 
-3.0 RC1
+3,0 RC1
 
 #### <a name="recommended-action"></a>Action recommandée
 
-La modification peut vous affecter si vous avez développé une application <xref:System.Windows.Forms.AccessibleObject> .NET Core `RuntimeIDFirstItem` avec un type qui dérive et accède au champ. Si c’est le cas, vous pouvez définir une constante locale comme suit :
+La modification peut vous affecter si vous avez développé une application .NET Core avec un type qui dérive de <xref:System.Windows.Forms.AccessibleObject> et accède au `RuntimeIDFirstItem` champ. Si c’est le cas, vous pouvez définir une constante locale comme suit :
 
 ```csharp
 const int RuntimeIDFirstItem = 0x2a;
@@ -32,7 +32,7 @@ Windows Forms
 
 #### <a name="affected-apis"></a>API affectées
 
-- Non détectable par l’analyse de l’API.
+- Non détectable via l’analyse des API.
 
 <!-- 
 

@@ -3,12 +3,12 @@ title: Comparaison entre project.json et csproj
 description: Consultez le mappage entre éléments project.json et csproj.
 author: natemcmaster
 ms.date: 03/13/2017
-ms.openlocfilehash: abe515007b47b415ac33e3350a29edced1784d68
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: feaa7e9cde7e1aa4dfe94d699b14a018fc728f27
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77451103"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82794622"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mappage entre propriétés project.json et csproj
 
@@ -38,7 +38,7 @@ Le nouveau format, \*.csproj, est un format basé sur XML. L’exemple suivant m
 }
 ```
 
-N'est plus pris en charge. Dans csproj, cette propriété est déterminée par le nom du fichier projet, qui correspond généralement au nom du répertoire. Par exemple : `MyProjectName.csproj`.
+N'est plus pris en charge. Dans csproj, cette propriété est déterminée par le nom du fichier projet, qui correspond généralement au nom du répertoire. Par exemple, `MyProjectName.csproj`.
 
 Par défaut, le nom de fichier du projet spécifie également la valeur des propriétés `<AssemblyName>` et `<PackageId>`.
 
@@ -486,7 +486,7 @@ Voir aussi [Fichiers](#files).
 ```
 
 Il n’existe aucun équivalent de l’élément `owners` dans MSBuild.
-Pour `summary`, vous pouvez utiliser `<Description>` la propriété MSBuild, même si la valeur de n’est `summary` [`description`](#other-common-root-level-options) pas migré automatiquement à cette propriété, puisque cette propriété est cartographiée à l’élément.
+Pour `summary`, vous pouvez utiliser la propriété `<Description>` MSBuild, même si la valeur de `summary` n’est pas migrée automatiquement vers cette propriété, car cette propriété est mappée à [`description`](#other-common-root-level-options) l’élément.
 
 ## <a name="scripts"></a>Scripts
 
@@ -675,4 +675,4 @@ Pour plus d’informations, consultez [Inclusion de contenu dans un package](/nu
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble générale des modifications de l’interface CLI](../tools/cli-msbuild-architecture.md)
+- [Vue d’ensemble générale des modifications de l’interface CLI](cli-msbuild-architecture.md)

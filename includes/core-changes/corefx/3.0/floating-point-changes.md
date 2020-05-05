@@ -6,15 +6,15 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 04/22/2020
 ms.locfileid: "82021615"
 ---
-### <a name="floating-point-formatting-and-parsing-behavior-changed"></a>Le formatage et l’analyse des points flottants ont changé
+### <a name="floating-point-formatting-and-parsing-behavior-changed"></a>Modification du comportement de l’analyse et de la mise en forme à virgule flottante
 
-Le comportement flottant d’analyse et <xref:System.Double> de <xref:System.Single> formatage des points (par les types et les types) est maintenant conforme à l’IEEE.
+Le comportement d’analyse et de mise en forme de virgule <xref:System.Double> flottante (par les types et <xref:System.Single> ) est désormais conforme à la norme IEEE.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans .NET Core 2.2 et les <xref:System.Double.ToString%2A?displayProperty=nameWithType> versions antérieures, le formatage avec <xref:System.Single.ToString%2A?displayProperty=nameWithType>et , et l’analyse <xref:System.Double.Parse%2A?displayProperty=nameWithType>avec , <xref:System.Double.TryParse%2A?displayProperty=nameWithType>, <xref:System.Single.Parse%2A?displayProperty=nameWithType>, et <xref:System.Single.TryParse%2A?displayProperty=nameWithType> ne sont pas conformes à l’IEEE. Par conséquent, il est impossible de garantir qu’une valeur sera aller-retour avec n’importe quelle chaîne de format standard ou personnalisé prise en charge. Pour certaines entrées, la tentative d’analyser une valeur formatée peut échouer, et pour d’autres, la valeur analysée n’égale pas la valeur originale.
+Dans .net Core 2,2 et versions antérieures, la mise en <xref:System.Double.ToString%2A?displayProperty=nameWithType> forme <xref:System.Single.ToString%2A?displayProperty=nameWithType>avec et, ainsi que <xref:System.Double.Parse%2A?displayProperty=nameWithType>l' <xref:System.Double.TryParse%2A?displayProperty=nameWithType>analyse <xref:System.Single.Parse%2A?displayProperty=nameWithType>avec, <xref:System.Single.TryParse%2A?displayProperty=nameWithType> , et ne sont pas conformes à IEEE. Par conséquent, il est impossible de garantir qu’une valeur fera l’aller-retour avec toute chaîne de format standard ou personnalisée prise en charge. Pour certaines entrées, la tentative d’analyse d’une valeur mise en forme peut échouer et, pour d’autres, la valeur analysée n’est pas égale à la valeur d’origine.
 
-À partir de .NET Core 3.0, les opérations d’analyse et de mise en forme sont conformes à l’IEEE 754. Cela garantit que le comportement des types de points flottants en .NET correspond à celui des langues conformes à l’IEEE telles que le C. Pour plus d’informations, voir les améliorations de l’analyse et du formatage des points flottants dans le billet de blog [.NET Core 3.0.](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/)
+À compter de .NET Core 3,0, les opérations d’analyse et de mise en forme sont conformes à la norme IEEE 754. Cela garantit que le comportement des types à virgule flottante dans .NET correspond à celui des langages compatibles IEEE tels que C#. Pour plus d’informations, consultez le billet de blog [améliorations de la mise en forme et de l’analyse de la virgule flottante dans .net Core 3,0](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) .
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -22,11 +22,11 @@ Dans .NET Core 2.2 et les <xref:System.Double.ToString%2A?displayProperty=nameWi
 
 #### <a name="recommended-action"></a>Action recommandée
 
-La section « Impact potentiel sur le code existant » des améliorations de l’analyse et du formatage des points flottants dans le billet de blog [.NET Core 3.0](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) suggère des modifications à votre code si vous observez un changement de comportement par rapport aux applications .NET Core 2.2 En général, cela implique l’utilisation d’une chaîne de format standard ou personnalisée différente pour appliquer le comportement souhaité. Certains résultats peuvent ne pas avoir une solution de contournement s’ils étaient auparavant incorrects.
+La section « impact potentiel sur le code existant » des améliorations de l’analyse de la [virgule flottante et de la mise en forme dans le billet de blog .net core 3,0](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) suggère des modifications apportées à votre code si vous observez un changement de comportement par rapport aux applications .net Core 2,2 généralement, cela implique l’utilisation d’une chaîne de format standard ou personnalisée différente pour appliquer le comportement souhaité. Certains résultats peuvent ne pas avoir de solution de contournement s’ils étaient précédemment incorrects.
 
 #### <a name="category"></a>Category
 
-Core .NET bibliothèques
+Bibliothèques .NET Core
 
 #### <a name="affected-apis"></a>API affectées
 

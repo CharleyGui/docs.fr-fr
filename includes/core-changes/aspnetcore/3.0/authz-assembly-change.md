@@ -6,28 +6,28 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "74100937"
 ---
-### <a name="authorization-addauthorization-overload-moved-to-different-assembly"></a>Autorisation : AddAuthorization surcharge déplacée à différents assemblages
+### <a name="authorization-addauthorization-overload-moved-to-different-assembly"></a>Autorisation : surcharge AddAuthorization déplacée vers un assembly différent
 
-Les `AddAuthorization` méthodes de base `Microsoft.AspNetCore.Authorization` qui résidaient `AddAuthorizationCore`dans ont été rebaptisées à . Les `AddAuthorization` anciennes méthodes existent encore, `Microsoft.AspNetCore.Authorization.Policy` mais sont dans l’assemblage à la place. Les applications utilisant les deux méthodes ne devraient pas voir d’impact. Notez `Microsoft.AspNetCore.Authorization.Policy` que maintenant les navires dans le cadre partagé plutôt que d’un paquet autonome comme discuté dans [le cadre partagé: Assemblées supprimées de Microsoft.AspNetCore.App](#shared-framework-assemblies-removed-from-microsoftaspnetcoreapp).
+Les méthodes `AddAuthorization` principales qui utilisaient pour résider `Microsoft.AspNetCore.Authorization` dans ont été renommées en `AddAuthorizationCore`. Les anciennes `AddAuthorization` méthodes existent toujours, mais elles se trouvent `Microsoft.AspNetCore.Authorization.Policy` dans l’assembly à la place. Les applications qui utilisent les deux méthodes ne doivent pas avoir d’impact. Notez que `Microsoft.AspNetCore.Authorization.Policy` est désormais fourni dans le Framework partagé au lieu d’un package autonome, comme indiqué dans [Framework partagé : assemblys supprimés de Microsoft. AspNetCore. app](#shared-framework-assemblies-removed-from-microsoftaspnetcoreapp).
 
 #### <a name="version-introduced"></a>Version introduite
 
 3.0
 
 #### <a name="old-behavior"></a>Ancien comportement
-`AddAuthorization`méthodes existaient dans `Microsoft.AspNetCore.Authorization`.
+`AddAuthorization`les méthodes existaient `Microsoft.AspNetCore.Authorization`dans.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-`AddAuthorization`méthodes existent `Microsoft.AspNetCore.Authorization.Policy`dans . `AddAuthorizationCore`est le nouveau nom pour les anciennes méthodes.
+`AddAuthorization`les méthodes existent `Microsoft.AspNetCore.Authorization.Policy`dans. `AddAuthorizationCore`nouveau nom pour les anciennes méthodes.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-`AddAuthorization`est un meilleur nom de méthode pour ajouter tous les services communs nécessaires à l’autorisation.
+`AddAuthorization`est un meilleur nom de méthode pour l’ajout de tous les services communs nécessaires à l’autorisation.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Ajoutez une référence `Microsoft.AspNetCore.Authorization.Policy` ou `AddAuthorizationCore` utilisez plutôt.
+Ajoutez une référence à ou `Microsoft.AspNetCore.Authorization.Policy` utilisez `AddAuthorizationCore` à la place.
 
 #### <a name="category"></a>Category
 

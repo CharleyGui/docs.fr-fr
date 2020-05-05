@@ -8,21 +8,21 @@ ms.locfileid: "75937089"
 ---
 ### <a name="allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported"></a>Commutateur de compatibilité AllowUpdateChildControlIndexForTabControls non pris en charge
 
-Le `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` commutateur de compatibilité est pris en charge dans les formulaires Windows sur .NET Framework 4.6 et les versions ultérieures, mais n’est pas pris en charge dans les formulaires Windows à partir de .NET Core 3.0.
+Le `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` commutateur de compatibilité est pris en charge dans Windows Forms sur .NET Framework 4,6 et versions ultérieures, mais n’est pas pris en charge dans Windows Forms à compter de .net Core 3,0.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans .NET Framework 4.6 et les versions ultérieures, la sélection d’un onglet réorganise sa collection de contrôle. Le `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` commutateur de compatibilité permet à une application de sauter cette réorganisation lorsque ce comportement n’est pas souhaitable.
+Dans .NET Framework 4,6 et versions ultérieures, la sélection d’un onglet réorganise sa collection de contrôles. Le `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` commutateur de compatibilité permet à une application d’ignorer cette réorganisation lorsque ce comportement n’est pas souhaitable.
 
-Dans .NET Core, le commutateur n’est `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` pas pris en charge.
+Dans .NET Core, le `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` commutateur n’est pas pris en charge.
 
 #### <a name="version-introduced"></a>Version introduite
 
-3.0 Aperçu 9
+3,0 Preview 9
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Retirez l’interrupteur. Le commutateur n’est pas pris en charge, et aucune fonctionnalité alternative n’est disponible.
+Supprimez le commutateur. Le commutateur n’est pas pris en charge et aucune autre fonctionnalité n’est disponible.
 
 #### <a name="category"></a>Category
 
@@ -30,7 +30,7 @@ Windows Forms
 
 #### <a name="affected-apis"></a>API affectées
 
-- None
+- Aucun
 
 <!-- 
 

@@ -46,7 +46,7 @@ typedef enum {
 |`COR_PRF_GC_LARGE_OBJECT_HEAP`|L’objet est stocké dans le tas d’objets volumineux.|  
 |`COR_PRF_GC_PINNED_OBJECT_HEAP`|L’objet est stocké dans le tas d’objets épinglés.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Le garbage collector améliore les performances de gestion de la mémoire en divisant les objets en générations en fonction de leur âge. Le « garbage collector » utilise actuellement trois générations, numérotées 0, 1 et 2, et deux segments de tas spéciaux, un pour les objets volumineux et un pour les objets épinglés.
   
  Les objets dont la taille est supérieure à une valeur de seuil sont stockés dans le tas d’objets volumineux. Les objets épinglés peuvent être alloués au tas d’objets épinglés afin d’éviter les coûts de performance liés à leur allocation sur les tas normaux. Les autres objets alloués commencent à appartenir à la génération 0. Tous les objets qui existent après garbage collection se produisent dans la génération 0 sont promus à la génération 1. Les objets qui existent après garbage collection se produisent dans la génération 1 sont déplacés dans la génération 2.  
@@ -55,7 +55,7 @@ typedef enum {
   
  L' `COR_PRF_GC_GENERATION` énumération est utilisée par la structure [COR_PRF_GC_GENERATION_RANGE](cor-prf-gc-generation-range-structure.md) .  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

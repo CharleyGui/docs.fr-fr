@@ -6,15 +6,15 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "79147534"
 ---
-### <a name="typedescriptionproviderattribute-moved-to-another-assembly"></a>TypeDescriptionProviderAttribute a déménagé à un autre assemblage
+### <a name="typedescriptionproviderattribute-moved-to-another-assembly"></a>TypeDescriptionProviderAttribute déplacé vers un autre assembly
 
 La <xref:System.ComponentModel.TypeDescriptionProviderAttribute> classe a été déplacée.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans .NET Core 2.2 et <xref:System.ComponentModel.TypeDescriptionProviderAttribute> les versions antérieures, La classe se trouve dans *l’assemblage System.ComponentModel.TypeConverter.*
+Dans .NET Core 2,2 et les versions antérieures, <xref:System.ComponentModel.TypeDescriptionProviderAttribute> la classe se trouve dans l’assembly *System. ComponentModel. TypeConverter* .
 
-En commençant par .NET Core 3.0, il se trouve dans l’assemblage *System.ObjectModel.*
+À compter de .NET Core 3,0, il se trouve dans l’assembly *System. ObjectModel* .
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -22,7 +22,7 @@ En commençant par .NET Core 3.0, il se trouve dans l’assemblage *System.Objec
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Ce changement n’affecte que les <xref:System.ComponentModel.TypeDescriptionProviderAttribute> applications qui utilisent <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> la réflexion pour <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> charger le type en appelant une méthode telle que ou une surcharge de ce qui suppose que le type est dans un assemblage particulier. Si tel est le cas, l’assemblage référencé dans l’appel de méthode doit être mis à jour pour refléter le nouveau lieu d’assemblage du type.
+Cette modification affecte uniquement les applications qui utilisent la réflexion pour <xref:System.ComponentModel.TypeDescriptionProviderAttribute> charger le type en appelant une méthode <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> telle que ou une <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> surcharge de qui suppose que le type se trouve dans un assembly particulier. Si tel est le cas, l’assembly référencé dans l’appel de méthode doit être mis à jour pour refléter le nouvel emplacement de l’assembly du type.
 
 #### <a name="category"></a>Category
 

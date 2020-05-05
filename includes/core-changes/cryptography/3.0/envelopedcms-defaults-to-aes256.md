@@ -6,17 +6,17 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 04/13/2020
 ms.locfileid: "81275109"
 ---
-### <a name="envelopedcms-defaults-to-aes-256-encryption"></a>EnveloppedCms par défaut au cryptage AES-256
+### <a name="envelopedcms-defaults-to-aes-256-encryption"></a>La valeur par défaut de EnvelopedCms est le chiffrement AES-256
 
-L’algorithme de cryptage `EnvelopedCms` symétrique par défaut utilisé par a changé de TripleDES à AES-256.
+L’algorithme de chiffrement symétrique `EnvelopedCms` par défaut utilisé par est passé de TripleDES à AES-256.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans .NET Core Preview 7 et <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> les versions antérieures, lorsqu’il est utilisé pour chiffrer les données sans spécifier un algorithme de cryptage symétrique via une surcharge constructrice, les données ont été cryptées avec l’algorithme TripleDES/3DES/3DEA/DES3-EDE.
+Dans .NET Core Preview 7 et les versions antérieures, <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> quand est utilisé pour chiffrer des données sans spécifier un algorithme de chiffrement symétrique via une surcharge de constructeur, les données ont été chiffrées avec l’algorithme TripleDES/3DES/3DEA/des3-EDE.
 
-En commençant par .NET Core 3.0 Preview 8 (via la version 4.6.0 du package [System.Security.Cryptography.Pkcs](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/) NuGet), l’algorithme par défaut a été modifié en AES-256 pour la modernisation de l’algorithme et pour améliorer la sécurité des options par défaut. Si un certificat de destinataire de message a une clé publique (non-EC) <xref:System.Security.Cryptography.CryptographicException> Diffie-Hellman, l’opération de cryptage peut échouer avec un en raison de limitations dans la plate-forme sous-jacente.
+À compter de .NET Core 3,0 Preview 8 (via la version 4.6.0 du package NuGet [System. Security. Cryptography. Pkcs](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/) ), l’algorithme par défaut a été remplacé par AES-256 pour la modernisation des algorithmes et pour améliorer la sécurité des options par défaut. Si un certificat de destinataire de message a une clé publique Diffie-Hellman non-EC, l’opération de chiffrement peut échouer avec un <xref:System.Security.Cryptography.CryptographicException> en raison des limitations de la plateforme sous-jacente.
 
-Dans le code de l’échantillon suivant, les données sont cryptées avec TripleDES si elles sont en cours d’exécution sur .NET Core 3.0 Aperçu 7 ou plus tôt. Si vous exécutez sur .NET Core 3.0 Aperçu 8 ou plus tard, il est crypté avec AES-256.
+Dans l’exemple de code suivant, les données sont chiffrées à l’aide de TripleDES si vous exécutez .NET Core 3,0 Preview 7 ou une version antérieure. En cas d’exécution sur .NET Core 3,0 Preview 8 ou version ultérieure, il est chiffré avec AES-256.
 
 ```csharp
 EnvelopedCms cms = new EnvelopedCms(content);
@@ -26,11 +26,11 @@ return cms.Encode();
 
 #### <a name="version-introduced"></a>Version introduite
 
-3.0 Aperçu 8
+3,0 Preview 8
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si vous êtes affecté négativement par la modification, vous pouvez restaurer le cryptage <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> TripleDES en spécifiant explicitement l’identifiant de l’algorithme de cryptage dans un constructeur qui inclut un paramètre de type, <xref:System.Security.Cryptography.Pkcs.AlgorithmIdentifier>tel que :
+Si vous avez un impact négatif sur la modification, vous pouvez restaurer le chiffrement TripleDES en spécifiant explicitement l’identificateur d’algorithme <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> de chiffrement dans un constructeur qui <xref:System.Security.Cryptography.Pkcs.AlgorithmIdentifier>comprend un paramètre de type, par exemple :
 
 ```csharp
 Oid tripleDesOid = new Oid("1.2.840.113549.3.7", null);

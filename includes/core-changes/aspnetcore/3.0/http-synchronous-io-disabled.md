@@ -6,30 +6,30 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901871"
 ---
-### <a name="http-synchronous-io-disabled-in-all-servers"></a>HTTP: Synchronous IO désactivé dans tous les serveurs
+### <a name="http-synchronous-io-disabled-in-all-servers"></a>HTTP : e/s synchrone désactivée sur tous les serveurs
 
-En commençant par ASP.NET Core 3.0, les opérations de serveur synchrone sont désactivées par défaut.
+À compter de ASP.NET Core 3,0, les opérations de serveur synchrones sont désactivées par défaut.
 
 #### <a name="change-description"></a>Description de la modification
 
-`AllowSynchronousIO`est une option dans chaque serveur qui permet ou désactive synchrone IO API comme `HttpRequest.Body.Read`, `HttpResponse.Body.Write`et `Stream.Flush`. Ces API ont longtemps été une source de famine de fil et d’application se bloque. À partir de ASP.NET Core 3.0 Preview 3, ces opérations synchrones sont désactivées par défaut.
+`AllowSynchronousIO`est une option dans chaque serveur qui active ou désactive les API d’e/s `HttpRequest.Body.Read`synchrones telles que, `HttpResponse.Body.Write`et `Stream.Flush`. Ces API ont longtemps été une source d’insuffisance de thread et de blocages d’application. À partir de ASP.NET Core 3,0 Preview 3, ces opérations synchrones sont désactivées par défaut.
 
-Serveurs concernés :
+Serveurs affectés :
 
 - Kestrel
-- HttpSys (en)
-- IIS en cours de traitement
+- HttpSys
+- IIS in-process
 - TestServer
 
-Attendez-vous à des erreurs similaires à :
+Des erreurs similaires à celles-ci sont attendues :
 
 - `Synchronous operations are disallowed. Call ReadAsync or set AllowSynchronousIO to true instead.`
 - `Synchronous operations are disallowed. Call WriteAsync or set AllowSynchronousIO to true instead.`
 - `Synchronous operations are disallowed. Call FlushAsync or set AllowSynchronousIO to true instead.`
 
-Chaque serveur `AllowSynchronousIO` a une option qui contrôle ce comportement `false`et la valeur par défaut pour chacun d’eux est maintenant .
+Chaque serveur dispose d' `AllowSynchronousIO` une option qui contrôle ce comportement et la valeur par défaut pour tous les `false`éléments est maintenant.
 
-Le comportement peut également être remplacé sur une base par demande comme une atténuation temporaire. Par exemple :
+Le comportement peut également être remplacé en fonction de la demande comme une atténuation temporaire. Par exemple :
 
 ```csharp
 var syncIOFeature = HttpContext.Features.Get<IHttpBodyControlFeature>();
@@ -39,9 +39,9 @@ if (syncIOFeature != null)
 }
 ```
 
-Si vous avez `TextWriter` des problèmes avec un ou un `Dispose`autre flux `DisposeAsync` appelant une API synchrone, appelez la nouvelle API à la place.
+Si vous rencontrez des problèmes avec `TextWriter` un ou un autre flux appelant une API `Dispose`synchrone dans, appelez `DisposeAsync` plutôt la nouvelle API.
 
-Pour discussion, voir [dotnet/aspnetcore 7644](https://github.com/dotnet/aspnetcore/issues/7644).
+Pour plus d’informations, consultez [dotnet/aspnetcore # 7644](https://github.com/dotnet/aspnetcore/issues/7644).
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -49,25 +49,25 @@ Pour discussion, voir [dotnet/aspnetcore 7644](https://github.com/dotnet/aspnetc
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-`HttpRequest.Body.Read`, `HttpResponse.Body.Write`et `Stream.Flush` ont été autorisés par défaut.
+`HttpRequest.Body.Read`, `HttpResponse.Body.Write`et `Stream.Flush` étaient autorisés par défaut.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Ces API synchrones sont refusées par défaut :
+Ces API synchrones ne sont pas autorisées par défaut :
 
-Attendez-vous à des erreurs similaires à :
+Des erreurs similaires à celles-ci sont attendues :
 
 - `Synchronous operations are disallowed. Call ReadAsync or set AllowSynchronousIO to true instead.`
 - `Synchronous operations are disallowed. Call WriteAsync or set AllowSynchronousIO to true instead.`
 - `Synchronous operations are disallowed. Call FlushAsync or set AllowSynchronousIO to true instead.`
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Ces API synchrones ont longtemps été une source de famine de fil et d’app hangs. À partir de ASP.NET Core 3.0 Preview 3, les opérations synchrones sont désactivées par défaut.
+Ces API synchrones ont longtemps été une source de privation de thread et des blocages d’application. À partir de ASP.NET Core 3,0 Preview 3, les opérations synchrones sont désactivées par défaut.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Utilisez les versions asynchrones des méthodes. Le comportement peut également être remplacé sur une base par demande comme une atténuation temporaire.
+Utilisez les versions asynchrones des méthodes. Le comportement peut également être remplacé en fonction de la demande comme une atténuation temporaire.
 
 ```csharp
 var syncIOFeature = HttpContext.Features.Get<IHttpBodyControlFeature>();

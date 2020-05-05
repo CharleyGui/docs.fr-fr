@@ -6,9 +6,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901920"
 ---
-### <a name="signalr-hubconnection-resetsendping-and-resettimeout-methods-removed"></a>SignalR : Les méthodes HubConnection ResetSendPing et ResetTimeout supprimées
+### <a name="signalr-hubconnection-resetsendping-and-resettimeout-methods-removed"></a>Signalr : les méthodes HubConnection ResetSendPing et ResetTimeout ont été supprimées
 
-Les `ResetSendPing` `ResetTimeout` méthodes et les méthodes `HubConnection` ont été retirées de l’API SignalR. À l’origine, ces méthodes n’étaient destinées qu’à des fins internes, mais elles ont été rendues publiques dans ASP.NET cœur 2.2. Ces méthodes ne seront pas disponibles à partir de la version ASP.NET Core 3.0 Preview 4. Pour discussion, voir [dotnet/aspnetcore 8543](https://github.com/dotnet/aspnetcore/issues/8543).
+Les `ResetSendPing` méthodes `ResetTimeout` et ont été supprimées de l' `HubConnection` API signalr. Ces méthodes étaient initialement destinées à un usage interne uniquement mais rendues publiques dans ASP.NET Core 2,2. Ces méthodes ne seront pas disponibles à partir de la version ASP.NET Core 3,0 Preview 4. Pour plus d’informations, consultez [dotnet/aspnetcore # 8543](https://github.com/dotnet/aspnetcore/issues/8543).
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -16,15 +16,15 @@ Les `ResetSendPing` `ResetTimeout` méthodes et les méthodes `HubConnection` on
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Des API étaient disponibles.
+Les API étaient disponibles.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
 Les API sont supprimées.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-À l’origine, ces méthodes n’étaient destinées qu’à des fins internes, mais elles ont été rendues publiques dans ASP.NET cœur 2.2.
+Ces méthodes étaient initialement destinées à un usage interne uniquement mais rendues publiques dans ASP.NET Core 2,2.
 
 #### <a name="recommended-action"></a>Action recommandée
 

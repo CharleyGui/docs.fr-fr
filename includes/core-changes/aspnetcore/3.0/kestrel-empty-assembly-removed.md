@@ -6,22 +6,22 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394381"
 ---
-### <a name="kestrel-empty-https-assembly-removed"></a>Kestrel: L’assemblage HTTPS vide supprimé
+### <a name="kestrel-empty-https-assembly-removed"></a>Kestrel : un assembly HTTPs vide a été supprimé
 
-L’assemblage <xref:Microsoft.AspNetCore.Server.Kestrel.Https?displayProperty=fullName> a été supprimé.
+L’assembly <xref:Microsoft.AspNetCore.Server.Kestrel.Https?displayProperty=fullName> a été supprimé.
 
 #### <a name="version-introduced"></a>Version introduite
 
 3.0
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Dans ASP.NET Core 2.1, le `Microsoft.AspNetCore.Server.Kestrel.Https` contenu de <xref:Microsoft.AspNetCore.Server.Kestrel.Core?displayProperty=fullName>ont été déplacés à . Ce changement a été fait d’une manière non-rupture en utilisant des `[TypeForwardedTo]` attributs.
+Dans ASP.NET Core 2,1, le contenu de `Microsoft.AspNetCore.Server.Kestrel.Https` a été déplacé <xref:Microsoft.AspNetCore.Server.Kestrel.Core?displayProperty=fullName>vers. Cette modification a été effectuée de manière non-critique à `[TypeForwardedTo]` l’aide d’attributs.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-- Les bibliothèques `Microsoft.AspNetCore.Server.Kestrel.Https` faisant référence à 2.0 devraient mettre à jour toutes les dépendances ASP.NET Core à 2,1 ou plus tard. Sinon, ils peuvent se briser lorsqu’ils sont chargés dans une application ASP.NET Core 3.0.
-- Les applications et les bibliothèques ciblant ASP.NET Core 2.1 et `Microsoft.AspNetCore.Server.Kestrel.Https` ultérieurement devraient supprimer toute référence directe au paquet NuGet.
+- Les bibliothèques `Microsoft.AspNetCore.Server.Kestrel.Https` référençant 2,0 doivent mettre à jour toutes les dépendances de ASP.NET Core à 2,1 ou version ultérieure. Dans le cas contraire, ils peuvent s’arrêter lorsqu’ils sont chargés dans une application ASP.NET Core 3,0.
+- Les applications et les bibliothèques qui ciblent ASP.NET Core 2,1 et versions ultérieures doivent `Microsoft.AspNetCore.Server.Kestrel.Https` supprimer toutes les références directes au package NuGet.
 
 #### <a name="category"></a>Category
 
@@ -29,7 +29,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-None
+Aucun
 
 <!-- 
 

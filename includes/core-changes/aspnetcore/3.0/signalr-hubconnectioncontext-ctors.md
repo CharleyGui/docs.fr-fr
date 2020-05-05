@@ -6,9 +6,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 04/13/2020
 ms.locfileid: "81275077"
 ---
-### <a name="signalr-hubconnectioncontext-constructors-changed"></a>SignalR : Les constructeurs HubConnectionContext ont changé
+### <a name="signalr-hubconnectioncontext-constructors-changed"></a>Signalr : les constructeurs HubConnectionContext ont été modifiés
 
-Les constructeurs `HubConnectionContext` de SignalR ont changé pour accepter un type d’options, plutôt que plusieurs paramètres, pour ajouter des options à l’épreuve de l’avenir. Ce changement remplace deux constructeurs par un seul constructeur qui accepte un type d’options.
+Les constructeurs de `HubConnectionContext` signalr ont été modifiés pour accepter un type d’options, plutôt que plusieurs paramètres, pour les options d’ajout à la prochaine épreuve. Cette modification remplace deux constructeurs par un constructeur unique qui accepte un type d’options.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -16,7 +16,7 @@ Les constructeurs `HubConnectionContext` de SignalR ont changé pour accepter un
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-`HubConnectionContext`a deux constructeurs :
+`HubConnectionContext`a deux constructeurs :
 
 ```csharp
 public HubConnectionContext(ConnectionContext connectionContext, TimeSpan keepAliveInterval, ILoggerFactory loggerFactory);
@@ -25,19 +25,19 @@ public HubConnectionContext(ConnectionContext connectionContext, TimeSpan keepAl
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Les deux constructeurs ont été enlevés et remplacés par un constructeur :
+Les deux constructeurs ont été supprimés et remplacés par un constructeur :
 
 ```csharp
 public HubConnectionContext(ConnectionContext connectionContext, HubConnectionContextOptions contextOptions, ILoggerFactory loggerFactory)
 ```
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Le nouveau constructeur utilise un nouvel objet d’options. Par conséquent, les `HubConnectionContext` caractéristiques de peut être élargi à l’avenir sans faire plus de constructeurs et de briser les changements.
+Le nouveau constructeur utilise un nouvel objet d’options. Par conséquent, les fonctionnalités `HubConnectionContext` de peuvent être développées à l’avenir sans créer plus de constructeurs et de modifications avec rupture.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Au lieu d’utiliser le constructeur suivant :
+Au lieu d’utiliser le constructeur suivant :
 
 ```csharp
 HubConnectionContext connectionContext = new HubConnectionContext(
@@ -47,7 +47,7 @@ HubConnectionContext connectionContext = new HubConnectionContext(
     clientTimeoutInterval: TimeSpan.FromSeconds(15));
 ```
 
-Utilisez le constructeur suivant :
+Utilisez le constructeur suivant :
 
 ```csharp
 HubConnectionContextOptions contextOptions = new HubConnectionContextOptions()

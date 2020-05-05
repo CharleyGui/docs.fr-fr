@@ -30,7 +30,7 @@ Bibliothèques .NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-Aucune.
+Aucun.
 
 <!--
 

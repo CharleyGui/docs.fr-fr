@@ -7,12 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 03a7c5a1-b296-4af4-b209-043c958dc0a5
-ms.openlocfilehash: 906de1ded4961b7c67d48a010555d139df97cded
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 1770eb08055fd244bd0f220fed6d1641c35174fd
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710633"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82794349"
 ---
 # <a name="modify-xml-data-using-xpathnavigator"></a>Modification de données XML à l’aide de XPathNavigator
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthodes permettant de modifier les nœuds et les valeurs d'un document XML. Pour pouvoir utiliser ces méthodes, vous devez pouvoir modifier l'objet <xref:System.Xml.XPath.XPathNavigator>, ce qui signifie que sa propriété <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> doit être `true`.  
@@ -225,7 +225,7 @@ Console.WriteLine(navigator.OuterXml);
 ```xml  
 <root xmlns:a="http://www.contoso.com">  
     <parent a:parent-id="1234" xmlns:a="http://www.contoso.com/parent-id">  
-        <a:child xmlns:a="http://www.contoso.com/">  
+        <a:child xmlns:a="http://www.contoso.com/" />  
     </parent>  
 </root>  
 ```  

@@ -1,30 +1,30 @@
 ---
 title: Nombres en C# – Tutoriel d’introduction à C#
-description: Découvrez C# en explorant les types numériques, leurs propriétés et méthodes.
+description: Découvrez C# en explorant les types numériques, leurs utilisations, leurs propriétés et leurs méthodes.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: 7e9af4b3b859f74d7e92ff10b3964ddd59d2473b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3dc2a5afc6321da45351525a632f586cb84bf7fe
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156543"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82794609"
 ---
 # <a name="manipulate-integral-and-floating-point-numbers-in-c"></a>Manipuler les nombres intégraux et à virgule flottante en C\#
 
 Ce tutoriel permet de découvrir de manière interactive les types numériques en C#. Vous allez écrire de petites quantités de code, puis vous compilerez et exécuterez ce code. Ce tutoriel comporte une série de leçons visant à explorer les nombres et les opérations mathématiques en C#. Ces leçons présentent les concepts de base du langage C#.
 
-Ce tutoriel suppose de disposer d’un ordinateur utilisable pour le développement. Le tutoriel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a des instructions pour configurer votre environnement de développement local sur Windows, Linux ou macOS. Vous trouverez une brève vue d’ensemble des commandes utilisées dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
+Ce tutoriel suppose de disposer d’un ordinateur utilisable pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur Windows, Linux ou MacOS. Vous trouverez une brève vue d’ensemble des commandes utilisées dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
 
 ## <a name="explore-integer-math"></a>Explorer les mathématiques avec des entiers
 
-Créez un répertoire nommé *numbers-quickstart*. Faites que le répertoire actuel et exécuter la commande suivante:
+Créez un répertoire nommé *numbers-quickstart*. Créez le répertoire actif et exécutez la commande suivante :
 
 ```dotnetcli
 dotnet new console -n NumbersInCSharp -o .
 ```
 
-Ouvrez *Program.cs* dans votre éditeur favori, puis remplacez la ligne `Console.WriteLine("Hello World!");` par ce qui suit :
+Ouvrez *Program.cs* dans votre éditeur favori, puis remplacez la ligne `Console.WriteLine("Hello World!");` par le code qui suit :
 
 ```csharp
 int a = 18;
@@ -35,7 +35,7 @@ Console.WriteLine(c);
 
 Exécutez ce code en tapant `dotnet run` dans votre fenêtre de commande.
 
-Vous venez d’observer l’une des opérations mathématiques de base avec des entiers. Le `int` type représente un **intégrant,** un nombre entier nul, positif ou négatif. Vous utilisez le symbole `+` pour effectuer une addition. Les autres opérations mathématiques courantes avec des entiers sont les suivantes :
+Vous avez vu une des opérations mathématiques fondamentales avec des entiers. Le `int` type représente un **entier**, un zéro, un nombre entier positif ou négatif. Vous utilisez le symbole `+` pour effectuer une addition. Les autres opérations mathématiques courantes avec des entiers sont les suivantes :
 
 - `-` pour la soustraction
 - `*` pour la multiplication
@@ -60,13 +60,13 @@ Console.WriteLine(c);
 
 Exécutez ce code en tapant `dotnet run` dans votre fenêtre de commande.
 
-Vous pouvez également, si vous le souhaitez, effectuer des essais en réalisant plusieurs opérations mathématiques dans la même ligne. Essayez `c = a + b - 12 * 17;` par exemple. La combinaison de variables et de nombres constants est autorisée.
+Vous pouvez également expérimenter en écrivant plusieurs opérations mathématiques dans la même ligne, si vous le souhaitez. Essayez `c = a + b - 12 * 17;` par exemple. La combinaison de variables et de nombres constants est autorisée.
 
 > [!TIP]
 > Durant votre exploration de C# (ou de tout autre langage de programmation), vous commettrez des erreurs d’écriture du code. Le **compilateur** détectera ces erreurs et vous les signalera. Si la sortie contient des messages d’erreur, vérifiez attentivement l’exemple de code ainsi que le code dans votre fenêtre pour identifier les corrections à apporter.
 > Cet exercice vous aidera à mieux comprendre la structure du code C#.
 
-Vous avez terminé la première étape. Avant de passer à la section suivante, déplaçons le code actuel dans une méthode distincte. Cela nous permettra de travailler plus facilement avec un nouvel exemple. Renommez votre méthode `Main``WorkingWithIntegers` et écrivez une nouvelle méthode `Main` qui appelle `WorkingWithIntegers`. Lorsque vous avez terminé, votre code doit ressembler à ceci:
+Vous avez terminé la première étape. Avant de passer à la section suivante, déplaçons le code actuel dans une méthode distincte. Cela nous permettra de travailler plus facilement avec un nouvel exemple. Renommez votre méthode `Main``WorkingWithIntegers` et écrivez une nouvelle méthode `Main` qui appelle `WorkingWithIntegers`. Lorsque vous avez terminé, votre code doit ressembler à ceci :
 
 ```csharp
 using System;
@@ -113,7 +113,7 @@ Commentez l’appel à `WorkingWithIntegers()`. La sortie est ainsi moins encomb
 //WorkingWithIntegers();
 ```
 
-`//` démarre un **commentaire** dans C#. Les commentaires correspondent à du texte que vous voulez conserver dans votre code source sans l’exécuter en tant que code. Le compilateur ne génère aucun fichier exécutable à partir des commentaires.
+`//` démarre un **commentaire** dans C#. Les commentaires correspondent à du texte que vous voulez conserver dans votre code source sans l’exécuter en tant que code. Le compilateur ne génère pas de code exécutable à partir de commentaires.
 
 Le langage C# définit la priorité des différentes opérations mathématiques avec à l’aide de règles cohérentes avec les règles mathématiques que vous avez apprises.
 La multiplication et la division ont priorité sur l’addition et la soustraction.
@@ -158,7 +158,7 @@ Console.WriteLine(h);
 Tapez `dotnet run` à nouveau pour afficher les résultats.
 
 Avant de continuer, prenez tout le code que vous avez écrit dans cette section et placez-le dans une nouvelle méthode. Nommez cette nouvelle méthode `OrderPrecedence`.
-Vous devriez obtenir un résultat similaire à celui-ci :
+Vous devez écrire un texte similaire à ce qui suit :
 
 ```csharp
 using System;
@@ -255,13 +255,13 @@ Notez que la réponse est très proche de l’entier minimal (négatif). Il en e
 L’addition a produit un **dépassement négatif** des valeurs autorisées pour les entiers.
 La réponse est un très grand nombre négatif, car un dépassement négatif « inclut » de la plus grande valeur d’entier possible à la plus petite.
 
-Il existe d’autres types numériques avec une précision et des limites différentes que vous pouvez utiliser quand le type `int` ne répond pas à vos besoins. Nous les explorerons à l’étape suivante.
+Il existe d’autres types numériques avec une précision et des limites différentes que vous pouvez utiliser quand le type `int` ne répond pas à vos besoins. Étudions les autres types suivants.
 
 Encore une fois, déplaçons le code que vous avez écrit dans cette section vers une autre méthode. Nommez-le `TestLimits`.
 
 ## <a name="work-with-the-double-type"></a>Utiliser le type double
 
-Le type numérique `double` représente un nombre à virgule flottante double précision. Ces termes vous sont peut-être inconnus. Un nombre **de points flottants** est utile pour représenter des nombres non intégrals qui peuvent être de très grande ou de faible ampleur. La **double précision** signifie que ces nombres sont stockés avec une précision supérieure à la **simple précision**. Sur les ordinateurs modernes, les nombres double précision sont généralement plus utilisés que les nombres simple précision.
+Le type numérique `double` représente un nombre à virgule flottante double précision. Ces termes vous sont peut-être inconnus. Un nombre à **virgule flottante** est utile pour représenter des nombres non intégraux qui peuvent être très grands ou très petits en amplitude. La **double précision** est un terme relatif qui décrit le nombre de chiffres binaires utilisés pour stocker la valeur. Les nombres à **double précision** ont deux fois le nombre de chiffres binaires comme **simple précision**. Sur les ordinateurs modernes, il est plus courant d’utiliser une double précision que des nombres à simple précision. Les nombres à **précision unique** sont déclarés à l’aide du `float` mot clé.
 Explorons ce type double. Ajoutez le code suivant et affichez le résultat :
 
 ```csharp
@@ -299,17 +299,17 @@ double third = 1.0 / 3.0;
 Console.WriteLine(third);
 ```
 
-Vous savez que la valeur extensible `0.3` ne correspond pas exactement à `1/3`.
+Vous savez que `0.3` la répétition n’est pas exactement identique `1/3`à celle de.
 
 ***Test***
 
-Effectuez d’autres calculs avec des grands nombres, des petits nombres, des multiplications et des divisions à l’aide du type `double`. Effectuez des calculs plus complexes.
+Essayez d’autres calculs avec de grands nombres, des petits nombres, des multiplications `double` et des divisions à l’aide du type. Effectuez des calculs plus complexes.
 
 Après avoir consacré plus de temps au test, placez le code que vous avez écrit dans une nouvelle méthode. Nommez cette nouvelle méthode `WorkWithDoubles`.
 
-## <a name="work-with-fixed-point-types"></a>Utiliser des types de virgule fixe
+## <a name="work-with-decimal-types"></a>Utiliser des types décimaux
 
-Vous avez vu les types numériques de base en C#, à savoir les entiers et les doubles.  Il existe un autre type à découvrir : le type `decimal`. Le type `decimal` a une plage plus petite, mais une précision supérieure à celle du type `double`. Le terme **virgule fixe** signifie que la virgule décimale (ou virgule binaire) ne se déplace pas. Étudions cela d’un peu plus près :
+Vous avez vu les types numériques de base en C#, à savoir les entiers et les doubles.  Il y a un autre type à apprendre : `decimal` le type. Le type `decimal` a une plage plus petite, mais une précision supérieure à celle du type `double`. Étudions cela d’un peu plus près :
 
 ```csharp
 decimal min = decimal.MinValue;
@@ -329,22 +329,25 @@ decimal d = 3.0M;
 Console.WriteLine(c / d);
 ```
 
-Le suffixe `M` des nombres permet d’indiquer comment une constante doit utiliser le type `decimal`.
+Le suffixe `M` des nombres permet d’indiquer comment une constante doit utiliser le type `decimal`. Sinon, le compilateur suppose le `double` type.
+
+> [!NOTE]
+> La lettre `M` a été choisie comme lettre la plus distincte entre les `double` Mots clés `decimal` et.
 
 Notez que le calcul utilisant le type décimal a plus de chiffres à droite de la virgule décimale.
 
 ***Test***
 
-Maintenant que vous avez vu les différents types numériques, écrivez du code qui calcule la surface d’un cercle avec un rayon de 2,5 centimètres. Rappelez-vous que la surface d’un cercle est le rayon au carré multiplié par PI. Conseil : .NET contient une constante pour PI, à savoir <xref:System.Math.PI?displayProperty=nameWithType>, que vous pouvez utiliser pour cette valeur.
+Maintenant que vous avez vu les différents types numériques, écrivez du code qui calcule la surface d’un cercle avec un rayon de 2,5 centimètres. Rappelez-vous que la surface d’un cercle est le rayon au carré multiplié par PI. Conseil : .NET contient une constante pour PI, à savoir <xref:System.Math.PI?displayProperty=nameWithType>, que vous pouvez utiliser pour cette valeur. <xref:System.Math.PI?displayProperty=nameWithType>, comme toutes les constantes déclarées `System.Math` dans l’espace de `double` noms, est une valeur. Pour cette raison, vous devez utiliser `double` au lieu `decimal` de valeurs pour ce défi.
 
 Vous devriez obtenir une réponse comprise entre 19 et 20.
-Vous pouvez vérifier votre réponse [en regardant le code d’échantillon fini sur GitHub](https://github.com/dotnet/samples/tree/master/csharp/numbers-quickstart/Program.cs#L104-L106).
+Vous pouvez vérifier votre réponse en [examinant l’exemple de code terminé sur GitHub](https://github.com/dotnet/samples/tree/master/csharp/numbers-quickstart/Program.cs#L104-L106).
 
 Si vous le voulez, essayez d’autres formules.
 
 Vous avez terminé le guide de démarrage rapide « Nombres en C# ». Vous pouvez passer au guide de démarrage rapide [Branches et boucles](branches-and-loops-local.md) dans votre propre environnement de développement.
 
-Pour en savoir plus sur les nombres en C#, consultez les rubriques suivantes :
+Vous pouvez en savoir plus sur les nombres en C# dans les articles suivants :
 
 - [Types numériques intégraux](../../language-reference/builtin-types/integral-numeric-types.md)
 - [Types numériques à virgule flottante](../../language-reference/builtin-types/floating-point-numeric-types.md)
