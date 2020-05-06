@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 704a8893-ac56-43b4-90ea-715f38ccb40e
 topic_type:
 - apiref
-ms.openlocfilehash: 66b3934d000b4f000c368acb1f57c8fc82a5c453
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: ad309290319396ff4e74e30d572effeffe802d1d
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793625"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82859877"
 ---
 # <a name="iclrmetadatalocatorgetmetadata-method"></a>ICLRMetadataLocator::GetMetadata, méthode
 Appelée par les services d’accès aux données common language runtime (CLR) pour récupérer les métadonnées d’une image.  
@@ -42,7 +42,7 @@ HRESULT GetMetadata(
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `imagePath`  
  dans Chaîne qui spécifie le chemin d’accès du fichier image.  
   
@@ -59,7 +59,7 @@ HRESULT GetMetadata(
  dans Adresse virtuelle relative (RVA) des métadonnées. L’adresse est relative à l’adresse de base de l’image.  
   
  `flags`  
- dans Réservé pour une utilisation ultérieure.  
+ [in] Réservé pour une future utilisation.  
   
  `bufferSize`  
  dans Taille de la mémoire tampon dans laquelle placer les métadonnées.  
@@ -70,17 +70,17 @@ HRESULT GetMetadata(
  `dataSize`  
  à Taille des métadonnées retournées.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

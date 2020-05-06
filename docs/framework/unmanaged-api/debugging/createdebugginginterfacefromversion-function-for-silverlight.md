@@ -1,5 +1,5 @@
 ---
-title: CreateDebuggingInterfaceFromVersion, fonction pour Silverlight
+title: Fonction CreateDebuggingInterfaceFromVersion Function pour Silverlight
 ms.date: 03/30/2017
 f1_keywords:
 - CreateDebuggingInterfaceFromVersion
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - debugging API [Silverlight]
 - Silverlight, debugging
 ms.assetid: 35c7a18f-133a-4584-bd25-bb338568b0c6
-ms.openlocfilehash: 85b5a5a630f399d0e036de434365e2e4f8f02dea
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: c83bdcca4fab75b4ae94500ceb785b6000cd802a
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793825"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860869"
 ---
-# <a name="createdebugginginterfacefromversion-function-for-silverlight"></a>CreateDebuggingInterfaceFromVersion, fonction pour Silverlight
+# <a name="createdebugginginterfacefromversion-function-for-silverlight"></a>Fonction CreateDebuggingInterfaceFromVersion Function pour Silverlight
 Accepte une chaîne de version common language runtime (CLR) retournée par la [fonction CreateVersionStringFromModule](createversionstringfrommodule-function.md)et retourne une interface de débogueur correspondante (en général, [ICorDebug](icordebug-interface.md)).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -27,7 +27,7 @@ HRESULT CreateDebuggingInterfaceFromVersion (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `szDebuggeeVersion`  
  dans Chaîne de version du CLR dans le programme débogué cible, qui est retournée par la [fonction CreateVersionStringFromModule](createversionstringfrommodule-function.md).  
   
@@ -36,7 +36,7 @@ HRESULT CreateDebuggingInterfaceFromVersion (
   
 ## <a name="return-value"></a>Valeur de retour  
  S_OK  
- `ppCordb` fait référence à un objet valide qui implémente l’interface d' [interface ICorDebug](icordebug-interface.md) .  
+ `ppCordb`fait référence à un objet valide qui implémente l’interface d' [interface ICorDebug](icordebug-interface.md) .  
   
  E_INVALIDARG  
  `szDebuggeeVersion` ou `ppCordb` a la valeur null.  
@@ -50,11 +50,11 @@ HRESULT CreateDebuggingInterfaceFromVersion (
  E_FAIL (ou autres codes de retour E_)  
  Impossible de retourner une [interface ICorDebug](icordebug-interface.md).  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  L'interface retournée fournit les fonctionnalités permettant l'attachement à un CLR dans un processus cible et le débogage du code managé exécuté par le CLR.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** dbgshim. h  
   

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d9f16439-5a36-4474-8ffd-4f0b2c2bb686
 topic_type:
 - apiref
-ms.openlocfilehash: 17d47b6242bb12ff5ca3cfbde3e4ec183b9c19fc
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: d156f103c3812c91da380e722a1c6c95d621df4c
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793875"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860920"
 ---
 # <a name="corgcreferencetype-enumeration"></a>CorGCReferenceType, énumération
 Identifie la source d'un objet pour lequel l'espace occupé en mémoire peut être récupéré.  
@@ -46,9 +46,9 @@ typedef enum {
 } CorGCReferenceType  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Membres  
   
-|Nom du membre|Description|  
+|Nom de membre|Description|  
 |-----------------|-----------------|  
 |`CorHandleStrong`|Handle à une référence forte tiré de la table de handles d'objets.|  
 |`CorHandleStrongPinning`|Handle d’une référence forte épinglée de la table de handles d’objets.|  
@@ -64,21 +64,21 @@ typedef enum {
 |`CorHandleWeakOnly`|Retourne uniquement les références faibles de la table de handles. Cette valeur est utilisée uniquement par la méthode [ICorDebugProcess5 :: enumeratehandles,](icordebugprocess5-enumeratehandles-method.md) .|  
 |`CorHandleAll`|Retourne toutes les références de la table de handles. Cette valeur est utilisée uniquement par la méthode [ICorDebugProcess5 :: enumeratehandles,](icordebugprocess5-enumeratehandles-method.md) .|  
   
-## <a name="remarks"></a>Notes  
- L’énumération `CorGCReferenceType` est utilisée comme suit :  
+## <a name="remarks"></a>Notes   
+ L' `CorGCReferenceType` énumération est utilisée comme suit :  
   
-- En tant que valeur du champ `type` de la structure [COR_GC_REFERENCE](cor-gc-reference-structure.md) , elle indique la source d’une référence ou d’un handle.  
+- En tant que valeur du `type` champ de la structure [COR_GC_REFERENCE](cor-gc-reference-structure.md) , elle indique la source d’une référence ou d’un handle.  
   
-- En tant qu’argument `types` de la méthode [ICorDebugProcess5 :: enumeratehandles,](icordebugprocess5-enumeratehandles-method.md) , il spécifie les types de handles à inclure dans l’énumération.  
+- En tant `types` qu’argument de la méthode [ICorDebugProcess5 :: enumeratehandles,](icordebugprocess5-enumeratehandles-method.md) , il spécifie les types de handles à inclure dans l’énumération.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

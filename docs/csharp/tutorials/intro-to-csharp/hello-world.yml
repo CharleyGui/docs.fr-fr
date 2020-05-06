@@ -11,12 +11,12 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: 77180064f810cf70b1ec0ef3d72bbd9005b78a47
-  ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
+  ms.openlocfilehash: 025b3e0fcaf693be00f1ca396b92617d6faf31aa
+  ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/30/2020
-  ms.locfileid: "82595908"
+  ms.lasthandoff: 05/06/2020
+  ms.locfileid: "82860969"
 items:
 - durationInMinutes: 1
   content: >
@@ -38,11 +38,6 @@ items:
 
 
     Poursuivons notre exploration. Le reste de cette leçon explore l’utilisation du type `string`, qui représente du texte en C#. À l’instar du type `Console`, le type `string` propose différentes méthodes. La méthode `string` fonctionne avec du texte.
-
-
-    > [!NOTE]
-
-    > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - title: Déclarer et utiliser des variables
   durationInMinutes: 3
   content: >
@@ -119,11 +114,6 @@ items:
 
 
     Sélectionnez **exécuter** à nouveau pour afficher les résultats. Au lieu de « Hello {aFriend} », le message doit être « Hello Maira ».
-
-
-    > [!NOTE]
-
-    > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - title: Utiliser des chaînes
   durationInMinutes: 5
   content: >
@@ -159,11 +149,6 @@ items:
     > [!TIP]
 
     > L’heure est venue d’explorer par vous-même. Vous avez appris que `Console.WriteLine()` écrit du texte dans l’écran. Vous avez également appris à déclarer des variables et à concaténer des chaînes. Pratiquez à votre gré dans la fenêtre interactive. La fenêtre possède une fonctionnalité appelée **IntelliSense** qui fournit des suggestions sur les opérations réalisables. Tapez un `.` après le `d` dans `firstFriend`. Vous verrez une liste de suggestions pour les propriétés et méthodes que vous pouvez utiliser.
-
-
-    > [!NOTE]
-
-    > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - title: Autres méthodes de chaînes
   durationInMinutes: 5
   content: >
@@ -231,11 +216,6 @@ items:
     Console.WriteLine(sayHello.ToLower());
 
     ```
-
-
-    > [!NOTE]
-
-    > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - title: Rechercher des chaînes
   durationInMinutes: 10
   content: >
@@ -268,11 +248,6 @@ items:
 
 
     Vous devez obtenir `true` pour une chaîne commençant par « You » et se terminant par « hello », et false pour une chaîne commençant ou se terminant par « goodbye ».
-
-
-    > [!NOTE]
-
-    > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - title: Terminer le test
   durationInMinutes: 3
   content: >
@@ -293,11 +268,6 @@ items:
     Console.WriteLine(songLyrics.EndsWith("goodbye"));
 
     ```
-
-
-    > [!NOTE]
-
-    > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - content: >
     Vous avez terminé la présentation du tutoriel C# « Hello C# ». Vous pouvez sélectionner le lien **nombres en C#** ci-dessous pour démarrer le prochain didacticiel interactif, ou vous pouvez visiter le [site .net](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .net Core, créer un projet sur votre ordinateur et conserver le codage. La section « étapes suivantes » vous ramène à ces didacticiels.
 

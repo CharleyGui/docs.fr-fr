@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c94b1b61-045a-4695-bacd-0f18c5acc246
 topic_type:
 - apiref
-ms.openlocfilehash: fb158b35165fb229fc78169e2508679b6749752e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3377dcd5d45ca8e31a57a75bd81366d41837c12c
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122949"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860715"
 ---
 # <a name="getstartupnotificationevent-function"></a>Fonction GetStartupNotificationEvent
 Crée ou ouvre un gestionnaire d'événements qui sera signalé par un Common Language Runtime (CLR) qui est chargé dans le processus cible spécifié.  
@@ -53,13 +53,13 @@ HRESULT GetStartupNotificationEvent
  E_FAIL (ou autres codes de retour E_)  
  Impossible d'obtenir le handle de l'événement de notification de démarrage.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Sur le système d'exploitation Windows, `debuggeePID` est mappé à un identificateur de processus du système d'exploitation.  
   
  L'événement est signalé avant l'exécution de code managé par le CLR ayant signalé l'événement.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** dbgshim. h  
   

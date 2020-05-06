@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4723bd1c-eddb-4ed2-897a-010024a47e01
 topic_type:
 - apiref
-ms.openlocfilehash: 336ba38bc80fcb2649a12c78691e52c5e4d70bfe
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b913affb4728dc80ba67438384cbeac87265f76d
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179113"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860540"
 ---
 # <a name="iclrdatatargetrequest-method"></a>ICLRDataTarget::Request, méthode
-Appelés par les services d’accès aux données de l’heure courante (CLR) pour demander une opération, tel que défini par la mise en œuvre.  
+Appelée par les services d’accès aux données common language runtime (CLR) pour demander une opération, comme défini par l’implémentation.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,33 +41,33 @@ HRESULT Request (
   
 ## <a name="parameters"></a>Paramètres  
  `reqCode`  
- [dans] Défini par l’utilisateur.  
+ dans Défini par l’utilisateur.  
   
  `inBufferSize`  
- [dans] La taille du tampon d’entrée, qui est utilisé pour la demande entrante.  
+ dans Taille de la mémoire tampon d’entrée utilisée pour la demande entrante.  
   
  `inBuffer`  
- [dans] Un tampon contenant la demande.  
+ dans Mémoire tampon contenant la demande.  
   
  `outBufferSize`  
- [dans] La taille du tampon de sortie, qui est utilisé pour la réponse.  
+ dans Taille de la mémoire tampon de sortie, qui est utilisée pour la réponse.  
   
  `outBuffer`  
- [out] Un tampon contenant la réponse.  
+ à Mémoire tampon contenant la réponse.  
   
 ## <a name="remarks"></a>Notes   
- La `Request` méthode facilite l’ajout d’opérations personnalisées non spécifiées. C’est-à-dire que cette méthode fournit l’extéponsabilité sans nécessiter la révision de la définition de l’interface.  
+ La `Request` méthode facilite l’ajout d’opérations personnalisées non spécifiées. Autrement dit, cette méthode fournit l’extensibilité sans nécessiter de révision de la définition de l’interface.  
   
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,5 +1,5 @@
 ---
-title: EnumerateCLRs, fonction
+title: Fonction EnumerateCLRs
 ms.date: 03/30/2017
 api_name:
 - EnumerateCLRs
@@ -16,14 +16,14 @@ helpviewer_keywords:
 ms.assetid: f8d50cb3-ec4f-4529-8fe3-bd61fd28e13c
 topic_type:
 - apiref
-ms.openlocfilehash: cdf88ef193df71a638fff43add1a9648d8631731
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 1f33fb98712939d1e687798547b784819f164d63
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789126"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860723"
 ---
-# <a name="enumerateclrs-function"></a>EnumerateCLRs, fonction
+# <a name="enumerateclrs-function"></a>Fonction EnumerateCLRs
 Fournit un mécanisme pour énumérer les CLR dans un processus.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,7 +37,7 @@ HRESULT EnumerateCLRs (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `debuggeePID`  
  [in] Identificateur du processus à partir duquel les CLR chargés sont énumérés.  
   
@@ -63,7 +63,7 @@ HRESULT EnumerateCLRs (
  E_FAIL (ou autres codes de retour E_)  
  Impossible d'énumérer les CLR chargés.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Pour un processus cible qui est identifié par `debuggeePID`, la fonction retourne un tableau de chemins d’accès, `ppStringArrayOut`, vers les CLR chargés dans le processus ; un tableau de handles d’événement, `ppHandleArrayOut`, qui peut contenir un événement continue-startup pour le CLR au même index ; et la taille des tableaux, `pdwArrayLengthOut`, qui spécifie le nombre de CLR chargés.  
   
  Sur le système d'exploitation Windows, `debuggeePID` est mappé à un identificateur de processus du système d'exploitation.  
@@ -72,8 +72,8 @@ HRESULT EnumerateCLRs (
   
  Cette fonction peut être appelée en affectant la valeur null aux deux paramètres de tableau afin de retourner le nombre de CLR dans le processus cible. Avec ce nombre, un appelant peut déduire la taille de la mémoire tampon qui sera créée : `(sizeof(HANDLE) * count) + (sizeof(LPWSTR) * count) + (sizeof(WCHAR*) * count * MAX_PATH)`.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** dbgshim. h  
   
