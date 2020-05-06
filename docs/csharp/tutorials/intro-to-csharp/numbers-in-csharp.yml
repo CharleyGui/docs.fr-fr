@@ -11,20 +11,20 @@ metadata:
   nextTutorialTitle: Branches et boucles en C#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 48268c6e839ae4f72aae0e872c837b153325b68b
-  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  ms.openlocfilehash: e59462be6e5ed350912849d59aa03604aa10e0e3
+  ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/14/2020
-  ms.locfileid: "77504013"
+  ms.lasthandoff: 05/05/2020
+  ms.locfileid: "82794739"
 items:
 - durationInMinutes: 1
   content: >
-    Ce tutoriel vous fait découvrir les types numériques en C# de manière interactive en utilisant votre navigateur pour écrire du code C# et afficher les résultats de la compilation et de l’exécution. Il contient une série de leçons pour explorer les nombres et les opérations mathématiques en C#. Ces leçons présentent les concepts de base du langage C#.
+    Ce didacticiel vous apprend les types numériques en C# de manière interactive, à l’aide de votre navigateur. Vous allez écrire du code C# et afficher les résultats de la compilation et de l’exécution de votre code. Il contient une série de leçons pour explorer les nombres et les opérations mathématiques en C#. Ces leçons présentent les concepts de base du langage C#.
 - title: Explorer les mathématiques avec des entiers
   durationInMinutes: 4
   content: >
-    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **De mode Focus Enter.** Ensuite, tapez le bloc de code suivant dans la fenêtre interactive et sélectionnez **Run**:
+    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **entrer le mode Focus** . Ensuite, tapez le bloc de code suivant dans la fenêtre interactive et sélectionnez **exécuter**:
 
 
     ```csharp
@@ -40,10 +40,10 @@ items:
     ```
 
 
-    Si vous exécutez ceci sur votre environnement, vous devriez suivre les instructions pour la [version locale](numbers-in-csharp-local.md) à la place.
+    Si vous travaillez sur votre environnement, vous devez suivre les instructions de la [version locale](numbers-in-csharp-local.md) à la place.
 
 
-    Vous venez d’observer l’une des opérations mathématiques de base avec des entiers. Le type `int` représente un **entier**, qui peut être positif ou négatif. Vous utilisez le symbole `+` pour effectuer une addition. Les autres opérations mathématiques courantes avec des entiers sont les suivantes :
+    Vous avez vu une des opérations mathématiques fondamentales avec des entiers. Le type `int` représente un **entier**, qui peut être positif ou négatif. Vous utilisez le symbole `+` pour effectuer une addition. Les autres opérations mathématiques courantes avec des entiers sont les suivantes :
 
 
     - `-` pour la soustraction
@@ -58,7 +58,7 @@ items:
     > Vous pouvez explorer le contenu de ce tutoriel interactif à votre rythme en modifiant le code que vous avez écrit dans la fenêtre interactive. Il fournit des exemples que vous pouvez mettre en pratique à chaque étape.
 
 
-    Commencez par explorer ces différentes opérations. Modifiez la troisième ligne pour tester chacune de ces opérations. Après chaque modification, sélectionnez le bouton **Run.**
+    Commencez par explorer ces différentes opérations. Modifiez la troisième ligne pour tester chacune de ces opérations. Après chaque modification, cliquez sur le bouton **exécuter** .
 
 
     Soustraction :
@@ -91,7 +91,7 @@ items:
     ```
 
 
-    Vous pouvez également, si vous le souhaitez, effectuer des essais en réalisant plusieurs opérations mathématiques dans la même ligne.
+    Vous pouvez également expérimenter en écrivant plusieurs opérations mathématiques dans la même ligne, si vous le souhaitez.
 
 
     > [!TIP]
@@ -163,7 +163,7 @@ items:
     Vous avez peut-être observé un comportement intéressant des entiers. La division d’entiers produit toujours un résultat entier, même quand vous pensez que le résultat devrait inclure une partie décimale ou fractionnaire.
 
 
-    Si vous n’avez pas observé ce comportement, essayez ce qui suit :
+    Si vous n’avez pas vu ce comportement, essayez le code suivant :
 
 
     ```csharp
@@ -181,7 +181,7 @@ items:
     ```
 
 
-    Sélectionnez **Exécuter** à nouveau pour voir les résultats.
+    Sélectionnez **exécuter** à nouveau pour afficher les résultats.
 
 
     > [!NOTE]
@@ -192,7 +192,7 @@ items:
   content: >
     Ce dernier exemple a montré que la division d’entiers tronque le résultat.
 
-    Vous pouvez obtenir le **reste** en `%` utilisant le **reste** de l’opérateur, le personnage:
+    Vous pouvez récupérer le **reste** à l’aide **remainder** de l’opérateur de `%` reste, le caractère :
 
 
     ```csharp
@@ -247,7 +247,7 @@ items:
     La réponse est un très grand nombre négatif, car un dépassement négatif « inclut » de la plus grande valeur d’entier possible à la plus petite.
 
 
-    Il existe d’autres types numériques avec une précision et des limites différentes que vous pouvez utiliser quand le type `int` ne répond pas à vos besoins. Nous les explorerons à l’étape suivante.
+    Il existe d’autres types numériques avec une précision et des limites différentes que vous pouvez utiliser quand le type `int` ne répond pas à vos besoins. Nous allons ensuite explorer ces types de nombres.
 
 
     > [!NOTE]
@@ -255,90 +255,11 @@ items:
     > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - title: Utiliser le type double
   durationInMinutes: 5
-  content: >
-    Le type numérique `double` représente un nombre à virgule flottante double précision. Ces termes vous sont peut-être inconnus. Un nombre **de points flottants** est utile pour représenter des nombres non intégrals qui peuvent être de très grande ou de faible ampleur. La **double précision** signifie que ces nombres sont stockés avec une précision supérieure à la **simple précision**. Sur les ordinateurs modernes, les nombres double précision sont généralement plus utilisés que les nombres simple précision.
-
-    Explorons ce type double. Exécutez le code suivant dans la fenêtre interactive et observez le résultat :
-
-
-    ```csharp
-
-    double a = 5;
-
-    double b = 4;
-
-    double c = 2;
-
-    double d = (a + b) / c;
-
-    Console.WriteLine(d);
-
-    ```
-
-
-    Notez que la réponse inclut la partie décimale du quotient. Essayez avec une expression légèrement plus complexe utilisant des doubles :
-
-
-    ```csharp
-
-    double a = 19;
-
-    double b = 23;
-
-    double c = 8;
-
-    double d = (a + b) / c;
-
-    Console.WriteLine(d);
-
-    ```
-
-
-    La plage d’une valeur double est nettement supérieure à celle de valeurs entières. Exécutez le code suivant dans la fenêtre interactive :
-
-
-    ```csharp
-
-    double max = double.MaxValue;
-
-    double min = double.MinValue;
-
-    Console.WriteLine($"The range of double is {min} to {max}");
-
-    ```
-
-
-    Ces valeurs s’affichent sous forme de notation scientifique. Le nombre à gauche du `E` est le nombre significatif. Le nombre à droite est l’exposant, en puissance de 10.
-
-
-    Tout comme les nombres décimaux en mathématiques, les doubles en C# peuvent présenter des erreurs d’arrondi. Exécutez le code suivant :
-
-
-    ```csharp
-
-    double third = 1.0 / 3.0;
-
-    Console.WriteLine(third);
-
-    ```
-
-
-    Vous savez que la valeur extensible `0.3` ne correspond pas exactement à `1/3`.
-
-
-    ***Test***
-
-
-    Effectuez d’autres calculs avec des grands nombres, des petits nombres, des multiplications et des divisions à l’aide du type `double`.  Effectuez des calculs plus complexes.
-
-
-    > [!NOTE]
-
-    > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-- title: Utiliser des types de virgule fixe
+  content: "Le type numérique `double` représente un nombre à virgule flottante double précision. Ces termes vous sont peut-être inconnus. Un nombre à **virgule flottante** est utile pour représenter des nombres non intégraux qui peuvent être très grands ou très petits en amplitude. La **double précision** est un terme relatif qui décrit le nombre de chiffres binaires utilisés pour stocker la valeur. Le nombre à **double précision** a deux fois le nombre de chiffres binaires comme **simple précision**. Sur les ordinateurs modernes, les nombres double précision sont généralement plus utilisés que les nombres simple précision. Les nombres à **précision unique** sont déclarés à l’aide du `float` mot clé.\nExplorons ce type double. Exécutez le code suivant dans la fenêtre interactive et observez le résultat :\n\n```csharp\ndouble a = 5;\ndouble b = 4;\ndouble c = 2;\ndouble d = (a + b) / c;\nConsole.WriteLine(d);\n```\n\nNotez que la réponse inclut la partie décimale du quotient. Essayez avec une expression légèrement plus complexe utilisant des doubles :\n\n```csharp\ndouble a = 19;\ndouble b = 23;\ndouble c = 8;\ndouble d = (a + b) / c;\nConsole.WriteLine(d);\n```\n\nLa plage d’une valeur double est nettement supérieure à celle de valeurs entières. Exécutez le code suivant dans la fenêtre interactive :\n\n```csharp\ndouble max = double.MaxValue;\ndouble min = double.MinValue;\nConsole.WriteLine($\"The range of double is {min} to {max}\");\n```\n\nCes valeurs s’affichent sous forme de notation scientifique. Le nombre à gauche du `E` est le nombre significatif. Le nombre à droite est l’exposant, en puissance de 10.\n\nTout comme les nombres décimaux en mathématiques, les doubles en C# peuvent présenter des erreurs d’arrondi. Exécutez le code suivant :\n\n```csharp\ndouble third = 1.0 / 3.0;\nConsole.WriteLine(third);\n```\n\nVous savez que `0.3` est `3/10` et pas exactement le même que `1/3`. De même, `0.33` est `33/100`. Cela est plus proche `1/3`de, mais toujours pas exact. \n\n***Test***\n\nEssayez d’autres calculs avec de grands nombres, des petits nombres, des multiplications `double` et des divisions à l’aide du type.  Effectuez des calculs plus complexes.\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: Utiliser des types décimaux
   durationInMinutes: 8
   content: >
-    Vous avez vu les types numériques de base en C#, à savoir les entiers et les doubles.  Il existe un autre type à découvrir : le type `decimal`. Le type `decimal` a une plage plus petite, mais une précision supérieure à celle du type `double`. Le terme **virgule fixe** signifie que la virgule décimale (ou virgule binaire) ne se déplace pas. Étudions cela d’un peu plus près :
+    Vous avez vu les types numériques de base en C#, à savoir les entiers et les doubles.  Il y a un autre type à apprendre : `decimal` le type. Le type `decimal` a une plage plus petite, mais une précision supérieure à celle du type `double`. Étudions cela d’un peu plus près :
 
 
     ```csharp
@@ -379,10 +300,21 @@ items:
     Notez que le calcul utilisant le type décimal a plus de chiffres à droite de la virgule décimale.
 
 
+    Le suffixe `M` des nombres permet d’indiquer comment une constante doit utiliser le type `decimal`. Sinon, le compilateur suppose le `double` type.
+
+
+    > [!NOTE]
+
+    > La lettre `M` a été choisie comme lettre la plus distincte entre les `double` Mots clés `decimal` et.
+
+
+    Notez que le calcul utilisant le type décimal a plus de chiffres à droite de la virgule décimale.
+
+
     ***Test***
 
 
-    Maintenant que vous avez vu les différents types numériques, écrivez du code qui calcule la surface d’un cercle avec un rayon de 2,5 centimètres. Rappelez-vous que la surface d’un cercle est le rayon au carré multiplié par PI. Conseil : .NET contient une constante pour PI, à savoir <xref:System.Math.PI?displayProperty=nameWithType>, que vous pouvez utiliser pour cette valeur.
+    Maintenant que vous avez vu les différents types numériques, écrivez du code qui calcule la surface d’un cercle avec un rayon de 2,5 centimètres. Rappelez-vous que la surface d’un cercle est le rayon au carré multiplié par PI. Conseil : .NET contient une constante pour PI, à savoir <xref:System.Math.PI?displayProperty=nameWithType>, que vous pouvez utiliser pour cette valeur. <xref:System.Math.PI?displayProperty=nameWithType>, comme toutes les constantes déclarées `System.Math` dans l’espace de `double` noms, est une valeur. Pour cette raison, vous devez utiliser `double` au lieu `decimal` de valeurs pour ce défi.
 
 
     > [!NOTE]
@@ -414,11 +346,11 @@ items:
     > [!NOTE]
 
     > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-- content: >-
-    Vous avez terminé le tutoriel interactif « Nombres en C# ». Vous pouvez sélectionner le lien **Branches et Boucles** ci-dessous pour démarrer le prochain tutoriel interactif, ou vous pouvez visiter le site [.NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le .NET Core SDK, créer un projet sur votre machine, et continuer à coder. La section "Prochaines étapes" vous ramène à ces tutoriels.
+- content: >
+    Vous avez terminé le tutoriel interactif « Nombres en C# ». Vous pouvez sélectionner le lien **branches et boucles** ci-dessous pour démarrer le didacticiel interactif suivant, ou vous pouvez visiter le [site .net](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .net Core, créer un projet sur votre ordinateur et conserver le codage. La section « étapes suivantes » vous ramène à ces didacticiels.
 
 
-    Pour en savoir plus sur les nombres en C#, consultez les rubriques suivantes :
+    Vous pouvez en savoir plus sur les nombres en C# dans les articles suivants :
 
 
     - [Types numériques intégraux](../../language-reference/builtin-types/integral-numeric-types.md)
