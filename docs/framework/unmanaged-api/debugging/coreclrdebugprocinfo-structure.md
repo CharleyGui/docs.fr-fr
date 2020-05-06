@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 4ddc37da-5c94-4beb-b61c-b54071c0e749
 topic_type:
 - apiref
-ms.openlocfilehash: e12882e53d1aa2120ab5c4b6793d7f2e34be76eb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 40dbfc60f8bde1198fd56a4a8aeed1dd6879d1ae
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132165"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795623"
 ---
 # <a name="coreclrdebugprocinfo-structure"></a>Structure CoreClrDebugProcInfo
 Représente un processus qui s'exécute sur un ordinateur distant.  
@@ -44,8 +44,8 @@ struct  CoreClrDebugProcInfo {
 |`m_dwInternalID`|Identificateur de processus affecté par le proxy de débogage distant en cours d'exécution sur l'ordinateur cible. Cet identificateur est moins souvent recyclé que l'identificateur de système d'exploitation.|  
 |`m_wszName`|Ligne de commande du processus. Ce membre peut être tronqué.|  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CoreClrRemoteDebuggingInterfaces. h  
   

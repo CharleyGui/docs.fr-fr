@@ -35,7 +35,7 @@ Découvrez comment utiliser les fonctions pour exécuter une logique côté serv
 - Surveillance
 - Développement, test et déploiement
 
-[Créer des applications sans serveur](https://docs.microsoft.com/learn/paths/create-serverless-applications/)
+[Créer des applications serverless](https://docs.microsoft.com/learn/paths/create-serverless-applications/)
 
 ## <a name="customer-reviews"></a>Révisions client
 
@@ -107,7 +107,7 @@ Cet exemple montre comment utiliser le modèle de Fanout Durable Functions pour 
 
 - [Azure Functions sur Linux](https://docs.microsoft.com/samples/azure-samples/functions-linux-custom-image/azure-functions-on-linux-custom-image-tutorial-sample-project/)
 - [Traitement des données Big Data : MapReduce sans serveur sur Azure](https://docs.microsoft.com/samples/azure-samples/durablefunctions-mapreduce-dotnet/big-data-processing-serverless-mapreduce-on-azure/)
-- [Créer des applications sans serveur](https://docs.microsoft.com/learn/paths/create-serverless-applications/)
+- [Créer des applications serverless](https://docs.microsoft.com/learn/paths/create-serverless-applications/)
 - [Application de révisions du client avec Cognitive Services](https://docs.microsoft.com/samples/azure-samples/functions-customer-reviews/customer-reviews-cognitive-services/)
 - [Traitement des fichiers et validation à l’aide de Azure Functions, Logic Apps et Durable Functions](https://docs.microsoft.com/samples/azure-samples/serverless-file-validation/file-processing-and-validation-using-azure-functions-logic-apps-and-durable-functions/)
 - [Implémentation d’une fonction Azure simple avec un client Xamarin. Forms](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/)

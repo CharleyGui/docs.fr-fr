@@ -6,9 +6,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394090"
 ---
-### <a name="signalr-usesignalr-and-useconnections-methods-marked-obsolete"></a>SignalR: Méthodes UseSignalR et UseConnections marquées obsolètes
+### <a name="signalr-usesignalr-and-useconnections-methods-marked-obsolete"></a>Signalr : méthodes UseSignalR et UseConnections marquées comme obsolètes
 
-Les `UseConnections` méthodes `UseSignalR` et `ConnectionsRouteBuilder` les `HubRouteBuilder` classes et sont marqués comme obsolètes dans ASP.NET Core 3.0.
+Les méthodes `UseConnections` et `UseSignalR` `ConnectionsRouteBuilder` et et `HubRouteBuilder` sont marquées comme obsolètes dans ASP.net Core 3,0.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -16,21 +16,21 @@ Les `UseConnections` méthodes `UseSignalR` et `ConnectionsRouteBuilder` les `Hu
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Le routage du hub `UseSignalR` SignalR a été configuré à l’aide ou `UseConnections`.
+Le routage du concentrateur signalr `UseSignalR` a `UseConnections`été configuré à l’aide de ou.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-L’ancienne façon de configurer le routage a été obsolète et remplacé par un itinéraire de point de terminaison.
+L’ancienne méthode de configuration du routage a été obsolète et remplacée par le routage des points de terminaison.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Middleware est déplacé vers le nouveau système de routage de point final. L’ancienne façon d’ajouter middleware est obsolète.
+Le middleware est déplacé vers le nouveau système de routage des points de terminaison. L’ancienne méthode d’ajout d’un intergiciel (middleware) est obsolète.
 
 #### <a name="recommended-action"></a>Action recommandée
 
 Remplacez `UseSignalR` par `UseEndpoints` :
 
-**Ancien code:**
+**Ancien code :**
 
 ```csharp
 app.UseSignalR(routes =>

@@ -6,11 +6,11 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901909"
 ---
-### <a name="http-headernames-constants-changed-to-static-readonly"></a>HTTP: HeaderNames constantes changé à statique readonly
+### <a name="http-headernames-constants-changed-to-static-readonly"></a>HTTP : les constantes HeaderNames ont été modifiées en ReadOnly statique
 
-À partir de ASP.NET Core 3.0 Aperçu 5, `const` `static readonly`les champs dans <xref:Microsoft.Net.Http.Headers.HeaderNames?displayProperty=fullName> changé de .
+À partir de ASP.NET Core 3,0 Preview 5, les champs <xref:Microsoft.Net.Http.Headers.HeaderNames?displayProperty=fullName> de ont `const` été `static readonly`remplacés par.
 
-Pour discussion, voir [dotnet/aspnetcore 9514](https://github.com/dotnet/aspnetcore/issues/9514).
+Pour plus d’informations, consultez [dotnet/aspnetcore # 9514](https://github.com/dotnet/aspnetcore/issues/9514).
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -18,28 +18,28 @@ Pour discussion, voir [dotnet/aspnetcore 9514](https://github.com/dotnet/aspnetc
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Ces champs étaient `const`autrefois .
+Ces champs sont `const`utilisés comme.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Ces champs `static readonly`sont maintenant .
+Ces champs sont maintenant `static readonly`.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Le changement:
+La modification :
 
-* Empêche les valeurs d’être intégrées au-delà des limites de l’assemblage, ce qui permet des corrections de valeur au besoin.
-* Permet des contrôles plus rapides de l’égalité des références.
+* Empêche l’incorporation des valeurs dans les limites de l’assembly, ce qui permet d’obtenir des corrections de valeurs en fonction des besoins.
+* Active les vérifications d’égalité de référence plus rapides.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Recomplez contre 3.0. Le code source utilisant ces champs de la manière suivante ne peut plus le faire :
+Recompilation sur 3,0. Le code source qui utilise ces champs de la manière suivante ne peut plus le faire :
 
-* Comme argument d’attribut
-* Comme `case` un `switch` dans une déclaration
+* En tant qu’argument d’attribut
+* En tant `case` que dans `switch` une instruction
 * Lors de la définition d’un autre`const`
 
-Pour contourner le changement de rupture, passez à l’utilisation de constantes de noms d’en-tête auto-définies ou de littérals de cordes.
+Pour contourner la modification avec rupture, basculez vers à l’aide de constantes de nom d’en-tête ou de littéraux de chaîne définis automatiquement.
 
 #### <a name="category"></a>Category
 

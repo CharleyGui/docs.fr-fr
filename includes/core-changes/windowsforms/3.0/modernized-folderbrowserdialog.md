@@ -8,17 +8,17 @@ ms.locfileid: "80888113"
 ---
 ### <a name="modernization-of-the-folderbrowserdialog"></a>Modernisation du FolderBrowserDialog
 
-Le <xref:System.Windows.Forms.FolderBrowserDialog> contrôle a changé dans les applications Windows Forms pour .NET Core.
+Le <xref:System.Windows.Forms.FolderBrowserDialog> contrôle a été modifié dans Windows Forms applications pour .net core.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans le cadre .NET, les formulaires <xref:System.Windows.Forms.FolderBrowserDialog> Windows utilisent le dialogue suivant pour le contrôle :
+Dans le .NET Framework, Windows Forms utilise la boîte de dialogue <xref:System.Windows.Forms.FolderBrowserDialog> suivante pour le contrôle :
 
-![The FolderBrowserDialogControl dans le cadre .NET](~/docs/images/core-changes/windowsforms/modernized-folderbrowserdialog/folderdlg-framework.png)
+![FolderBrowserDialogControl dans le .NET Framework](~/docs/images/core-changes/windowsforms/modernized-folderbrowserdialog/folderdlg-framework.png)
 
-Dans .NET Core 3.0, Windows Forme aux utilisateurs un nouveau contrôle basé sur com qui a été introduit dans Windows Vista:
+Dans .NET Core 3,0, Windows Forms utilisateurs un contrôle COM plus récent qui a été introduit dans Windows Vista :
 
-![The FolderBrowserDialogControl in the .NET Core](~/docs/images/core-changes/windowsforms/modernized-folderbrowserdialog/folderdlg-core.png)
+![FolderBrowserDialogControl dans .NET Core](~/docs/images/core-changes/windowsforms/modernized-folderbrowserdialog/folderdlg-core.png)
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -26,9 +26,9 @@ Dans .NET Core 3.0, Windows Forme aux utilisateurs un nouveau contrôle basé su
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Le dialogue sera mis à niveau automatiquement.
+La boîte de dialogue sera automatiquement mise à niveau.
 
-Si vous désirez conserver le dialogue <xref:System.Windows.Forms.FolderBrowserDialog.AutoUpgradeEnabled?displayProperty=nameWithType> original, définissez la propriété avant `false` de montrer le dialogue, comme l’illustre le fragment de code suivant :
+Si vous souhaitez conserver la boîte de dialogue d’origine, <xref:System.Windows.Forms.FolderBrowserDialog.AutoUpgradeEnabled?displayProperty=nameWithType> affectez `false` à la propriété la valeur avant d’illustrer la boîte de dialogue, comme illustré par le fragment de code suivant :
 
 ```csharp
 var dialog = new FolderBrowserDialog();

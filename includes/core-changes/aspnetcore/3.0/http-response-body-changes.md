@@ -6,9 +6,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "73198421"
 ---
-### <a name="http-response-body-infrastructure-changes"></a>HTTP : Changements dans l’infrastructure du corps d’intervention
+### <a name="http-response-body-infrastructure-changes"></a>HTTP : modifications de l’infrastructure du corps de la réponse
 
-L’infrastructure soutenant un organisme de réponse HTTP a changé. Si vous utilisez `HttpResponse` directement, vous ne devriez pas avoir besoin d’apporter des modifications de code. Lire la suite si vous `HttpResponse.Body` enveloppez, `HttpContext.Features`remplacez ou accédez .
+L’infrastructure de stockage d’un corps de réponse HTTP a changé. Si vous utilisez `HttpResponse` directement, vous ne devez pas apporter de modifications au code. En savoir plus si vous encapsulez `HttpResponse.Body` ou remplacez ou `HttpContext.Features`accédez à.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -16,7 +16,7 @@ L’infrastructure soutenant un organisme de réponse HTTP a changé. Si vous ut
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Il y avait trois API associées à l’organisme de réponse HTTP :
+Trois API sont associées au corps de la réponse HTTP :
 
 - `IHttpResponseFeature.Body`
 - `IHttpSendFileFeature.SendFileAsync`
@@ -24,15 +24,15 @@ Il y avait trois API associées à l’organisme de réponse HTTP :
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Si vous `HttpResponse.Body`remplacez, il `IHttpResponseBodyFeature` remplace l’ensemble par `StreamResponseBodyFeature` un emballage autour de votre flux donné en utilisant pour fournir des implémentations par défaut pour toutes les API attendues. Le réglage du flux d’origine renvoie ce changement.
+Si vous remplacez `HttpResponse.Body`, il remplace l’intégralité `IHttpResponseBodyFeature` par un wrapper autour de votre flux donné `StreamResponseBodyFeature` à l’aide de pour fournir des implémentations par défaut pour toutes les API attendues. La réinitialisation du flux d’origine rétablit cette modification.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-La motivation est de combiner les API du corps de réponse en une seule nouvelle interface de fonctionnalité.
+La motivation consiste à combiner les API de corps de réponse en une seule nouvelle interface de fonctionnalité.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Utilisez `IHttpResponseBodyFeature` où vous `IHttpResponseFeature.Body` `IHttpSendFileFeature`utilisiez auparavant, , ou `IHttpBufferingFeature`.
+Utilisez `IHttpResponseBodyFeature` l' `IHttpResponseFeature.Body`emplacement où vous utilisiez `IHttpSendFileFeature`précédemment, `IHttpBufferingFeature`ou.
 
 #### <a name="category"></a>Category
 

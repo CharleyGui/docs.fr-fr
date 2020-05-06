@@ -49,7 +49,7 @@ Définit et référence des clés pour les ressources qui sont chargées à part
 |`targetTypeName`|Nom du type de common language runtime public (CLR) défini dans l’assembly de ressource.|  
 |`targetID`|Clé pour la ressource. Lorsque les ressources sont recherchées, `targetID` est analogue à la [directive x :Key](../../../desktop-wpf/xaml-services/xkey-directive.md) de la ressource.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Comme indiqué dans les utilisations ci-dessus, une`ComponentResourceKey`utilisation d’extension de balisage {} se trouve à deux emplacements :  
   
 - Définition d’une clé dans un dictionnaire de ressources de thème, telle qu’elle est fournie par un auteur de contrôle.  

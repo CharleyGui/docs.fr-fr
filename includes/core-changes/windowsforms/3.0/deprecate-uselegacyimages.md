@@ -8,21 +8,21 @@ ms.locfileid: "75937123"
 ---
 ### <a name="uselegacyimages-compatibility-switch-not-supported"></a>Commutateur de compatibilité UseLegacyImages non pris en charge
 
-Le `Switch.System.Windows.Forms.UseLegacyImages` commutateur de compatibilité, qui a été introduit dans .NET Framework 4.8, n’est pas pris en charge dans windows Forms sur .NET Core 3.0.
+Le `Switch.System.Windows.Forms.UseLegacyImages` commutateur de compatibilité, qui a été introduit dans .NET Framework 4,8, n’est pas pris en charge dans Windows Forms sur .net Core 3,0.
 
 #### <a name="change-description"></a>Description de la modification
 
-En commençant par le cadre .NET `Switch.System.Windows.Forms.UseLegacyImages` 4.8, le commutateur de compatibilité a abordé les problèmes possibles de mise à l’échelle des images dans les scénarios ClickOnce dans des environnements DPI élevés. Lorsqu’il `true`est configuré, le commutateur permet à l’utilisateur de restaurer l’échelle d’image héritée sur les écrans DPI élevés dont l’échelle est définie à plus de 100%. Pour plus d’informations, voir [.NET Framework 4.8 Notes de sortie](https://github.com/microsoft/dotnet/blob/master/releases/net48/dotnet48-changes.md#clickonce) sur GitHub.
+À partir de la .NET Framework 4,8, `Switch.System.Windows.Forms.UseLegacyImages` le commutateur de compatibilité a résolu les problèmes de mise à l’échelle des images dans les scénarios ClickOnce dans les environnements haute résolution. Lorsque la valeur `true`est définie sur, le commutateur permet à l’utilisateur de restaurer la mise à l’échelle des images héritées sur des affichages haute résolution dont l’échelle est supérieure à 100%. Pour plus d’informations, consultez les [notes de publication de .NET Framework 4,8](https://github.com/microsoft/dotnet/blob/master/releases/net48/dotnet48-changes.md#clickonce) sur GitHub.
 
-Dans .NET Core, le commutateur n’est `Switch.System.Windows.Forms.UseLegacyImages` pas pris en charge.
+Dans .NET Core, le `Switch.System.Windows.Forms.UseLegacyImages` commutateur n’est pas pris en charge.
 
 #### <a name="version-introduced"></a>Version introduite
 
-3.0 Aperçu 9
+3,0 Preview 9
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Retirez l’interrupteur. Le commutateur n’est pas pris en charge, et aucune fonctionnalité alternative n’est disponible.
+Supprimez le commutateur. Le commutateur n’est pas pris en charge et aucune autre fonctionnalité n’est disponible.
 
 #### <a name="category"></a>Category
 
@@ -30,7 +30,7 @@ Windows Forms
 
 #### <a name="affected-apis"></a>API affectées
 
-- None
+- Aucun
 
 <!-- 
 

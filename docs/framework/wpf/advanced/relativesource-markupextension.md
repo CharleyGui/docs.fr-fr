@@ -63,7 +63,7 @@ Spécifie les propriétés <xref:System.Windows.Data.RelativeSource> d’une sou
 |`typeName`|Nécessaire pour le mode `FindAncestor`. Le nom d'un type, qui remplit la propriété <xref:System.Windows.Data.RelativeSource.AncestorType%2A>.|
 |`intLevel`|Facultatif pour le mode `FindAncestor`. Un niveau d'ancêtre (évalué vers la direction du parent dans l'arborescence logique).|
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 `{RelativeSource TemplatedParent}`les utilisations de liaison sont une technique clé qui résout un plus grand concept de séparation de l’interface utilisateur d’un contrôle et d’une logique de contrôle. Cela permet la liaison à partir de la définition de modèle au parent basé sur des modèles (instance de l'objet à l'exécution où le modèle est appliqué). Dans ce cas, l' [extension de balisage TemplateBinding](templatebinding-markup-extension.md) est en fait un raccourci pour l’expression de `{Binding RelativeSource={RelativeSource TemplatedParent}}`liaison suivante :. `TemplateBinding`les `{RelativeSource TemplatedParent}` utilisations ou sont toutes deux uniquement pertinentes dans le code XAML qui définit un modèle. Pour plus d’informations, consultez l' [extension de balisage TemplateBinding](templatebinding-markup-extension.md).
 

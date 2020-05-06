@@ -7,12 +7,12 @@ helpviewer_keywords:
 - native API reference [.NET Framework]
 - unmanaged API reference [.NET Framework]
 ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
-ms.openlocfilehash: f7dd78b889129998dee31a22f5dd23325613b8ea
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9b8671f2bd278e9e6153476d742f43150a4f6e3e
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73092027"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795610"
 ---
 # <a name="unmanaged-api-reference"></a>Informations de référence sur les API non managées
 Cette section contient des informations sur les API non managées qui peuvent être utilisées par les applications associées à du code managé, comme les hôtes de runtime, les compilateurs, les désassembleurs, les obscurcisseurs, les débogueurs et les profileurs.  
@@ -39,7 +39,7 @@ Cette section contient des informations sur les API non managées qui peuvent ê
  [Magasin de symboles des diagnostics](./diagnostics/index.md)  
  Décrit l'API du magasin de symboles des diagnostics, qui permet à un compilateur de générer des informations de symbole utilisables par un débogueur.  
   
- [Fusion](./fusion/index.md)  
+ [Sanguin](./fusion/index.md)  
  Décrit l'API de fusion, qui permet à un hôte de runtime d'accéder aux propriétés des ressources d'une application pour pouvoir localiser les versions correctes de ces ressources pour l'application.  
   
  [Hébergement](./hosting/index.md)  
@@ -51,14 +51,14 @@ Cette section contient des informations sur les API non managées qui peuvent ê
  [Profilage](./profiling/index.md)  
  Décrit l'API de profilage, qui permet à un profileur de surveiller l'exécution d'un programme par le CLR.  
   
- [Nommage fort](./strong-naming/index.md)  
+ [Nom fort](./strong-naming/index.md)  
  Décrit l'API de nommage fort, qui permet à un client d'administrer la signature par noms forts pour les assemblys.  
 
- [Compteurs WMI et Performance](wmi/index.md)  
+ [WMI et compteurs de performance](wmi/index.md)  
  Décrit les API qui encapsulent des appels aux bibliothèques de Windows Management Instrumentation (WMI).
   
  [Fonctions d'assistance Tlbexp](./tlbexp/index.md)  
  Décrit les deux fonctions et l'interface d'assistance utilisées par l'exportateur de bibliothèques de types (Tlbexp.exe) lors du processus de conversion « assembly vers bibliothèque de types ».  
   
 ## <a name="related-sections"></a>Sections connexes  
- [Guide de développement](../../../docs/framework/development-guide.md)  
+ [Guide de développement](../development-guide.md)  

@@ -6,22 +6,22 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394479"
 ---
-### <a name="spas-spaservices-and-nodeservices-marked-obsolete"></a>SPAs: SpaServices et NodeServices marqués obsolètes
+### <a name="spas-spaservices-and-nodeservices-marked-obsolete"></a>SPAs : SpaServices et NodeServices marqués comme obsolètes
 
-Le contenu des paquets NuGet suivants n’ont pas été nécessaires depuis ASP.NET Core 2.1. Par conséquent, les paquets suivants sont marqués comme obsolètes :
+Le contenu des packages NuGet suivants a été inutile depuis ASP.NET Core 2,1. Par conséquent, les packages suivants sont marqués comme obsolètes :
 
-- [Microsoft.AspNetCore.SpaServices (en anglais seulement)](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/)
-- [Microsoft.AspNetCore.NodeServices (en anglais seulement)](https://www.nuget.org/packages/Microsoft.AspNetCore.NodeServices/)
+- [Microsoft. AspNetCore. SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/)
+- [Microsoft. AspNetCore. NodeServices](https://www.nuget.org/packages/Microsoft.AspNetCore.NodeServices/)
 
-Pour la même raison, les modules npm suivants sont marqués comme dépréciés :
+Pour la même raison, les modules NPM suivants sont marqués comme dépréciés :
 
-- [aspnet-angulaire](https://www.npmjs.com/package/aspnet-angular)
-- [aspnet-prerendering](https://www.npmjs.com/package/aspnet-prerendering)
-- [aspnet-webpack](https://www.npmjs.com/package/aspnet-webpack)
-- [aspnet-webpack-réagir](https://www.npmjs.com/package/aspnet-webpack-react)
+- [ASPNET-angulaire](https://www.npmjs.com/package/aspnet-angular)
+- [ASPNET-prérendu](https://www.npmjs.com/package/aspnet-prerendering)
+- [ASPNET-WebPack](https://www.npmjs.com/package/aspnet-webpack)
+- [ASPNET-WebPack-réagir](https://www.npmjs.com/package/aspnet-webpack-react)
 - [domaine-tâche](https://www.npmjs.com/package/domain-task)
 
-Les paquets précédents et les modules npm seront plus tard supprimés en .NET 5.
+Les packages précédents et les modules NPM seront supprimés ultérieurement dans .NET 5.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -29,31 +29,31 @@ Les paquets précédents et les modules npm seront plus tard supprimés en .NET 
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Les paquets dépréciés et les modules npm étaient destinés à intégrer ASP.NET Core avec divers cadres d’application à une page unique (SPA). Ces cadres incluent Angular, React, et React with Redux.
+Les packages déconseillés et les modules NPM étaient destinés à intégrer des ASP.NET Core avec différentes infrastructures d’application à page unique (SPA). Ces infrastructures incluent l’angle, la réaction et la réaction avec Redux.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Un nouveau mécanisme d’intégration existe dans le paquet [Microsoft.AspNetCore.SpaServices.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices.Extensions/) NuGet. Le paquet demeure la base des modèles de projet Angular and React depuis ASP.NET Core 2.1.
+Un nouveau mécanisme d’intégration existe dans le package NuGet [Microsoft. AspNetCore. SpaServices. extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices.Extensions/) . Le package reste la base des modèles de projet angulaire et REACT depuis ASP.NET Core 2,1.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-ASP.NET Core soutient l’intégration avec divers cadres d’applications à une seule page (SPA), y compris Angulaire, Réagir et réagir avec Redux. Initialement, l’intégration avec ces cadres a été réalisée avec ASP.NET composants core-spécifiques qui traitaient des scénarios comme le prerendering côté serveur et l’intégration avec Webpack. Au fil du temps, les normes de l’industrie ont changé. Chacun des cadres SPA a publié ses propres interfaces standard de ligne de commande. Par exemple, Angular CLI et create-react-app.
+ASP.NET Core prend en charge l’intégration avec différentes infrastructures d’application à page unique (SPA), y compris angulaires, réagir et réagir avec Redux. Initialement, l’intégration à ces frameworks a été effectuée avec des composants spécifiques à ASP.NET Core qui géraient des scénarios tels que le prérendu côté serveur et l’intégration à WebPack. À l’époque, les normes du secteur ont changé. Chacun des frameworks SPA a publié ses propres interfaces de ligne de commande standard. Par exemple, l’interface CLI angulaire et Create-REACT-App.
 
-Lorsque ASP.NET Core 2.1 a été publié en mai 2018, l’équipe a réagi à la modification des normes. Une façon plus nouvelle et plus simple de s’intégrer aux propres chaînes d’outils des cadres SPA a été fournie. Le nouveau mécanisme d’intégration `Microsoft.AspNetCore.SpaServices.Extensions` existe dans le paquet et demeure la base des modèles de projets Angular et React depuis ASP.NET Core 2.1.
+Lorsque ASP.NET Core 2,1 a été publié en mai 2018, l’équipe a répondu au changement de normes. Un moyen plus récent et plus simple d’intégrer les chaînes propres aux frameworks SPA a été fourni. Le nouveau mécanisme d’intégration existe dans le `Microsoft.AspNetCore.SpaServices.Extensions` package et reste la base des modèles de projet angulaires et réagi depuis ASP.net Core 2,1.
 
-Pour préciser que les composants les plus anciens ASP.NET propres au noyau ne sont pas pertinents et ne sont pas recommandés :
+Pour préciser que les anciens composants spécifiques à ASP.NET Core sont sans importance et déconseillés :
 
-- Le mécanisme d’intégration avant 2,1 est considéré comme obsolète.
-- Les forfaits npm de soutien sont marqués comme dépréciés.
+- Le mécanisme d’intégration antérieur à 2,1 est marqué comme obsolète.
+- Les packages de NPM de prise en charge sont marqués comme dépréciés.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si vous utilisez ces paquets, mettez à jour vos applications pour utiliser les fonctionnalités :
+Si vous utilisez ces packages, mettez à jour vos applications pour qu’elles utilisent les fonctionnalités suivantes :
 
-- Dans `Microsoft.AspNetCore.SpaServices.Extensions` le paquet.
-- Fourni par les cadres SPA que vous utilisez
+- Dans le `Microsoft.AspNetCore.SpaServices.Extensions` package.
+- Fourni par les infrastructures SPA que vous utilisez
 
-Pour activer des fonctionnalités telles que le prerendering côté serveur et le rechargement du module chaud, consultez la documentation du cadre SPA correspondant. La fonctionnalité `Microsoft.AspNetCore.SpaServices.Extensions` n’est *pas* obsolète et continuera d’être prise en charge.
+Pour activer des fonctionnalités telles que le prérendu côté serveur et le rechargement des modules à chaud, consultez la documentation de l’infrastructure SPA correspondante. Les fonctionnalités dans `Microsoft.AspNetCore.SpaServices.Extensions` ne sont *pas* obsolètes et continuent d’être prises en charge.
 
 #### <a name="category"></a>Category
 

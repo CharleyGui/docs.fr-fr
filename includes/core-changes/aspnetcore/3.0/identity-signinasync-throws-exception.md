@@ -6,9 +6,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394219"
 ---
-### <a name="identity-signinasync-throws-exception-for-unauthenticated-identity"></a>Identité: SignInAsync jette l’exception pour l’identité non authentique
+### <a name="identity-signinasync-throws-exception-for-unauthenticated-identity"></a>Identité : SignInAsync lève une exception pour l’identité non authentifiée
 
-Par défaut, `SignInAsync` jette une exception pour les `IsAuthenticated` `false`directeurs / identités dans lequel est .
+Par défaut, `SignInAsync` lève une exception pour les principaux/identités dans lesquelles `IsAuthenticated` est `false`.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -16,19 +16,19 @@ Par défaut, `SignInAsync` jette une exception pour les `IsAuthenticated` `false
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-`SignInAsync`accepte tous les principes / identités, y compris les identités dans lesquelles `IsAuthenticated` est `false`.
+`SignInAsync`accepte tous les principaux/identités, y compris les `IsAuthenticated` identités dans lesquelles est `false`.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Par défaut, `SignInAsync` jette une exception pour les `IsAuthenticated` `false`directeurs / identités dans lequel est . Il ya un nouveau drapeau pour supprimer ce comportement, mais le comportement par défaut a changé.
+Par défaut, `SignInAsync` lève une exception pour les principaux/identités dans lesquelles `IsAuthenticated` est `false`. Il existe un nouvel indicateur pour supprimer ce comportement, mais le comportement par défaut a changé.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Le vieux comportement était problématique parce que, par `[Authorize]`  /  `RequireAuthenticatedUser()`défaut, ces directeurs ont été rejetés par .
+L’ancien comportement était problématique parce que, par défaut, ces principaux ont été rejetés par `[Authorize]`  /  `RequireAuthenticatedUser()`.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Dans ASP.NET Core 3.0 Preview 6, il `RequireAuthenticatedSignIn` y `AuthenticationOptions` a `true` un drapeau qui est par défaut. Réglez `false` ce drapeau pour restaurer l’ancien comportement.
+Dans ASP.NET Core 3,0 Preview 6, la valeur par `RequireAuthenticatedSignIn` défaut est `AuthenticationOptions` `true` un indicateur. Affectez à cet `false` indicateur la valeur pour restaurer l’ancien comportement.
 
 #### <a name="category"></a>Category
 
@@ -36,7 +36,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-None
+Aucun
 
 <!-- 
 

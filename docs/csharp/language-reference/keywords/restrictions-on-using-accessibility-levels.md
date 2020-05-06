@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#], accessibility level restrictions
 ms.assetid: 987e2f22-46bf-4fea-80ee-270b9cd01045
-ms.openlocfilehash: 48ab765db7c839ed0dd14df5e6b30f5bd6c0d29b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8082dbd7398b6634b68f1dd2887cd55d6798a5d9
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173534"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795155"
 ---
 # <a name="restrictions-on-using-accessibility-levels-c-reference"></a>Limitations sur l’utilisation des niveaux d’accessibilité (informations de référence sur C#)
 
@@ -22,13 +22,13 @@ public class MyClass: BaseClass {...} // Error
 
 Le tableau suivant résume les limitations sur les niveaux d’accessibilité déclarés.
 
-|Context|Notes |
+|Contexte|Notes |
 |-------------|-------------|
 |[Classes](../../programming-guide/classes-and-structs/classes.md)|La classe de base directe d’un type de classe doit être au moins aussi accessible que le type de classe lui-même.|
 |[Interfaces](../../programming-guide/interfaces/index.md)|Les interfaces de base explicites d’un type d’interface doivent être au moins aussi accessibles que le type d’interface lui-même.|
 |[Délégués](../../programming-guide/delegates/index.md)|Le type de retour et les types de paramètres d’un type délégué doivent être au moins aussi accessibles que le type délégué lui-même.|
 |[Constantes](../../programming-guide/classes-and-structs/constants.md)|Le type d’une constante doit être au moins aussi accessible que la constante elle-même.|
-|[Champs](../../programming-guide/classes-and-structs/fields.md)|Le type d’un champ doit être au moins aussi accessible que le champ lui-même.|
+|[Fields](../../programming-guide/classes-and-structs/fields.md)|Le type d’un champ doit être au moins aussi accessible que le champ lui-même.|
 |[Méthodes](../../programming-guide/classes-and-structs/methods.md)|Le type de retour et les types de paramètres d’une méthode doivent être au moins aussi accessibles que la méthode elle-même.|
 |[Propriétés](../../programming-guide/classes-and-structs/properties.md)|Le type d’une propriété doit être au moins aussi accessible que la propriété elle-même.|
 |[Événements](../../programming-guide/events/index.md)|Le type d’un événement doit être au moins aussi accessible que l’événement lui-même.|
@@ -109,14 +109,14 @@ public class A
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../../language-reference/index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
-- [Mots clés C#](../../language-reference/keywords/index.md)
-- [Modificateurs d’accès](../../language-reference/keywords/access-modifiers.md)
-- [Domaine d’accessibilité](../../language-reference/keywords/accessibility-domain.md)
-- [Niveaux d’accessibilité](../../language-reference/keywords/accessibility-levels.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Mots clés C#](index.md)
+- [Modificateurs d’accès](access-modifiers.md)
+- [Domaine d’accessibilité](accessibility-domain.md)
+- [Niveaux d'accessibilité](accessibility-levels.md)
 - [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md)
-- [public](../../language-reference/keywords/public.md)
-- [Privé](../../language-reference/keywords/private.md)
-- [Protégé](../../language-reference/keywords/protected.md)
-- [Interne](../../language-reference/keywords/internal.md)
+- [publique](public.md)
+- [priv](private.md)
+- [protected](protected.md)
+- [intérieurs](internal.md)

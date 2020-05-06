@@ -6,13 +6,13 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901633"
 ---
-### <a name="caching-compactonmemorypressure-property-removed"></a>Caching: CompactOnMemoryPressure propriété supprimée
+### <a name="caching-compactonmemorypressure-property-removed"></a>Caching : propriété CompactOnMemoryPressure supprimée
 
-La version ASP.NET Core 3.0 a supprimé les [API obsolètes MemoryCacheOptions](https://github.com/dotnet/extensions/blob/dc5c593da7b72c82e6fe85abb91d03818f9b700c/src/Caching/Memory/src/MemoryCacheOptions.cs#L17-L18).
+La version 3,0 de ASP.NET Core a supprimé les [API obsolètes de MemoryCacheOptions](https://github.com/dotnet/extensions/blob/dc5c593da7b72c82e6fe85abb91d03818f9b700c/src/Caching/Memory/src/MemoryCacheOptions.cs#L17-L18).
 
 #### <a name="change-description"></a>Description de la modification
 
-Ce changement fait suite à [aspnet/Caching 221](https://github.com/aspnet/Caching/issues/221). Pour discussion, voir [dotnet/extensions 1062](https://github.com/dotnet/extensions/issues/1062).
+Cette modification est un suivi de [ASPNET/Caching # 221](https://github.com/aspnet/Caching/issues/221). Pour plus d’informations, consultez [dotnet/extensions # 1062](https://github.com/dotnet/extensions/issues/1062).
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -20,19 +20,19 @@ Ce changement fait suite à [aspnet/Caching 221](https://github.com/aspnet/Cachi
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-`MemoryCacheOptions.CompactOnMemoryPressure`propriété était disponible.
+`MemoryCacheOptions.CompactOnMemoryPressure`la propriété était disponible.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-La `MemoryCacheOptions.CompactOnMemoryPressure` propriété a été enlevée.
+La `MemoryCacheOptions.CompactOnMemoryPressure` propriété a été supprimée.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Le compactage automatique du cache a causé des problèmes. Pour éviter un comportement inattendu, le cache ne doit être compacté que si nécessaire.
+Le compactage automatique du cache a provoqué des problèmes. Pour éviter un comportement inattendu, le cache ne doit être compacté que si nécessaire.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Pour compacter le cache, downcast et `MemoryCache` appeler `Compact` en cas de besoin.
+Pour compacter le cache, les `MemoryCache` casts `Compact` aval et appellent quand cela est nécessaire.
 
 #### <a name="category"></a>Category
 

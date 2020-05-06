@@ -27,7 +27,7 @@ Comme le montre le tableau 3-1, l’intention de Microsoft DevOps pour les appli
 
 **Tableau 3-1.** Workflows DevOps, ouverts à toute technologie
 
-| Hôte | Technologies Microsoft | Technologies tierces, enfichables dans Azure |
+| Host | Technologies Microsoft | Technologies tierces, enfichables dans Azure |
 | ---------------------------| ----------------------------------------------------| --------------------------------------------------------------------------------|
 | Plateforme pour applications Docker   | • Microsoft Visual Studio et Visual Studio Code<br /> • .NET<br /> • Microsoft Azure Kubernetes Service (AKS)<br /> • Azure Service Fabric<br /> • Azure Container Registry<br /> | • N’importe quel éditeur de code (par exemple, Sublime)<br /> • N’importe quel langage (Node.js, Java, Go, etc.)<br /> • N’importe quel orchestrateur/planificateur<br /> • N’importe quel registre Docker<br /> |
 | DevOps pour applications Docker     | • Azure DevOps Services<br /> • Microsoft Team Foundation Server<br /> • Azure Kubernetes Service (AKS)<br /> • Azure Service Fabric<br /> | • GitHub, Git, Subversion, etc.<br /> • Jenkins, Chef, Puppet, Velocity, CircleCI, TravisCI, etc.<br /> • Centre de données Docker local, Docker Swarm, Mesos DC/OS, Kubernetes, etc.<br /> |

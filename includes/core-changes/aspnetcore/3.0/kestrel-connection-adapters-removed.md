@@ -6,11 +6,11 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901664"
 ---
-### <a name="kestrel-connection-adapters-removed"></a>Kestrel: adaptateurs de connexion supprimés
+### <a name="kestrel-connection-adapters-removed"></a>Kestrel : adaptateurs de connexion supprimés
 
-Dans le cadre du mouvement des API `public`"pubtérinaires" à , le concept d’un `IConnectionAdapter` a été retiré de Kestrel. Les adaptateurs de connexion sont remplacés par des middleware de connexion (semblable à HTTP middleware dans le pipeline ASP.NET Core, mais pour les connexions de niveau inférieur). HTTPS et l’enregistrement de connexion sont passés des adaptateurs de connexion à la connexion middleware. Ces méthodes d’extension devraient continuer à fonctionner de manière transparente, mais les détails de la mise en œuvre ont changé.
+Dans le cadre du déplacement vers lequel déplacer les API « pubternal `public`» vers, le concept `IConnectionAdapter` d’un a été supprimé de Kestrel. Les adaptateurs de connexion sont remplacés par un intergiciel de connexion (similaire à l’intergiciel HTTP dans le pipeline ASP.NET Core, mais pour les connexions de niveau inférieur). HTTPs et la journalisation des connexions ont été déplacées des adaptateurs de connexion vers l’intergiciel de connexion. Ces méthodes d’extension doivent continuer à fonctionner de manière transparente, mais les détails de l’implémentation ont changé.
 
-Pour plus d’informations, voir [dotnet/aspnetcore 11412](https://github.com/dotnet/aspnetcore/pull/11412). Pour discussion, voir [dotnet/aspnetcore 11475](https://github.com/dotnet/aspnetcore/issues/11475).
+Pour plus d’informations, consultez [dotnet/aspnetcore # 11412](https://github.com/dotnet/aspnetcore/pull/11412). Pour plus d’informations, consultez [dotnet/aspnetcore # 11475](https://github.com/dotnet/aspnetcore/issues/11475).
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -18,19 +18,19 @@ Pour plus d’informations, voir [dotnet/aspnetcore 11412](https://github.com/do
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Kestrel extensibility composants ont `IConnectionAdapter`été créés en utilisant .
+Les composants d’extensibilité de Kestrel `IConnectionAdapter`ont été créés à l’aide de.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Kestrel extensibility composants sont créés comme [middleware](https://github.com/dotnet/aspnetcore/pull/11412/files#diff-89acc06acf1b2e96bbdb811ce523619f).
+Les composants d’extensibilité Kestrel sont créés en tant que [middleware](https://github.com/dotnet/aspnetcore/pull/11412/files#diff-89acc06acf1b2e96bbdb811ce523619f).
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Ce changement vise à fournir une architecture d’extéponsabilité plus flexible.
+Cette modification vise à fournir une architecture d’extensibilité plus flexible.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Convertir toutes les `IConnectionAdapter` implémentations de pour utiliser le nouveau modèle middleware comme indiqué [ici](https://github.com/dotnet/aspnetcore/pull/11412/files#diff-89acc06acf1b2e96bbdb811ce523619f).
+Convertissez toutes les implémentations de `IConnectionAdapter` pour utiliser le nouveau modèle d’intergiciel (middleware) comme indiqué [ici](https://github.com/dotnet/aspnetcore/pull/11412/files#diff-89acc06acf1b2e96bbdb811ce523619f).
 
 #### <a name="category"></a>Category
 

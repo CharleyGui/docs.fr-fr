@@ -7,12 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: f3d97d53-614d-4a04-a174-87965b7405f6
-ms.openlocfilehash: 5c2d997d9006a3f1eb971eac20982b9dd5677ebf
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 2d991a7835d22af2c780b020d6884f626908665e
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710750"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82796169"
 ---
 # <a name="inferring-schemas-from-xml-documents"></a>Inférence de schémas à partir de documents XML
 Cette rubrique décrit comment utiliser la classe <xref:System.Xml.Schema.XmlSchemaInference> pour déduire un schéma en langage XSD (XML Schema Definition) à partir de la structure d'un document XML.  
@@ -29,7 +29,7 @@ Cette rubrique décrit comment utiliser la classe <xref:System.Xml.Schema.XmlSch
     <child>One</child>  
     <child>Two</child>  
 </parent>  
-<parent attribute1="A">  
+<parent attribute1="A" />
 ```  
   
  Dans l'exemple ci-avant, quand l'attribut `attribute1` est rencontré avec une valeur `6` par le processus <xref:System.Xml.Schema.XmlSchemaInference>, il est supposé être du type `xs:unsignedByte`. Lorsque le second élément `parent` est rencontré par le processus <xref:System.Xml.Schema.XmlSchemaInference>, la contrainte est assouplie en modifiant le type en `xs:string` parce que la valeur de l'attribut `attribute1` est à présent `A`. De même, l'attribut `minOccurs` pour tous les éléments `child` déduits dans le schéma sont assouplis en `minOccurs="0"` parce que le second élément parent n'a pas d'élément enfant.  

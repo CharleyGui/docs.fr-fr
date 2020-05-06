@@ -1,22 +1,22 @@
 ---
 title: Vue d’ensemble de global.json
 description: Découvrez comment utiliser le fichier global.json pour définir la version du kit SDK .NET Core pendant l’exécution de commandes CLI .NET Core.
-ms.date: 04/21/2020
+ms.date: 05/01/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 5384b59cccb629a5409d26a8df7c81b3999fc95f
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 15d8e6191394b9ba67b1e5eb5e8ae54ebaf61bef
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021353"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795506"
 ---
 # <a name="globaljson-overview"></a>Vue d’ensemble de global.json
 
-**Cet article s’applique à:** ✔️ .NET Core 2.0 SDK et les versions ultérieures
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,0 et versions ultérieures
 
-Le fichier *global.json* vous permet de définir la version du kit SDK .NET Core utilisée pendant l’exécution des commandes de l’interface CLI .NET Core. La sélection du kit SDK .NET Core est indépendante de la spécification du runtime ciblé par votre projet. La version SDK core .NET indique quelles versions de l’IFC core .NET est utilisée.
+Le fichier *global.json* vous permet de définir la version du kit SDK .NET Core utilisée pendant l’exécution des commandes de l’interface CLI .NET Core. La sélection du kit SDK .NET Core est indépendante de la spécification du runtime ciblé par votre projet. La version de kit SDK .NET Core indique les versions du CLI .NET Core à utiliser.
 
-En général, vous souhaitez utiliser la dernière version des outils SDK, donc aucun fichier *global.json* n’est nécessaire. Dans certains scénarios avancés, vous voudrez peut-être contrôler la version des outils SDK, et cet article explique comment le faire.
+En général, vous souhaitez utiliser la version la plus récente des outils du kit de développement logiciel (SDK). aucun fichier *global. JSON* n’est donc nécessaire. Dans certains scénarios avancés, vous souhaiterez peut-être contrôler la version des outils du kit de développement logiciel (SDK), et cet article explique comment procéder.
 
 Pour plus d’informations sur la spécification du runtime, consultez [Versions cibles de .NET Framework](../../standard/frameworks.md).
 
@@ -34,60 +34,66 @@ Spécifie des informations sur le kit SDK .NET Core à sélectionner.
 
 - Entrez : `string`
 
-- Disponible depuis: .NET Core 1.0 SDK.
+- Disponible depuis : .NET Core 1,0 SDK.
 
 Version du kit SDK .NET Core à utiliser.
 
-Ce domaine:
+Ce champ :
 
-- N’a pas de support wildcard, c’est-à-dire que le numéro de version complet doit être spécifié.
+- Ne prend pas en charge les caractères génériques, autrement dit, le numéro de version complet doit être spécifié.
 - Ne prend pas en charge les plages de versions.
 
-#### <a name="allowprerelease"></a>autoriserPrerelease
+#### <a name="allowprerelease"></a>allowPrerelease
 
 - Entrez : `boolean`
 
-- Disponible depuis: .NET Core 3.0 SDK.
+- Disponible depuis : .NET Core 3,0 SDK.
 
-Indique si le résolveur SDK doit tenir compte des versions préreléase lors de la sélection de la version SDK à utiliser.
+Indique si le programme de résolution du SDK doit prendre en compte les versions préliminaires lors de la sélection de la version du kit de développement logiciel à utiliser.
 
-Si vous ne définissez pas cette valeur explicitement, la valeur par défaut dépend si vous êtes en cours d’exécution à partir de Visual Studio:
+Si vous ne définissez pas cette valeur explicitement, la valeur par défaut varie selon que vous exécutez à partir de Visual Studio :
 
-- Si vous n’êtes **pas** dans Visual `true`Studio, la valeur par défaut est .
-- Si vous êtes dans Visual Studio, il utilise le statut de prérédition demandé. Autrement dit, si vous utilisez une version Aperçu de Visual Studio ou si vous définissez les **aperçus d’utilisation de l’option .NET Core SDK** (sous **tools** > **Options** > **Environment** > **Preview Features**), la valeur par défaut est `true`; autrement, `false`.
+- Si vous **n’êtes pas** dans Visual Studio, la valeur par `true`défaut est.
+- Si vous êtes dans Visual Studio, il utilise l’état de préversion demandé. Autrement dit, si vous utilisez une préversion de Visual Studio ou que vous définissez l’option **utiliser des aperçus de l’kit SDK .net Core** ( **sous outils** > **options** > **environnement** > version**préliminaire**), la valeur par `true`défaut est ; Sinon, `false`.
 
-#### <a name="rollforward"></a>rollForward
+#### <a name="rollforward"></a>Restauration par progression
 
 - Entrez : `string`
 
-- Disponible depuis: .NET Core 3.0 SDK.
+- Disponible depuis : .NET Core 3,0 SDK.
 
-La stratégie de déploiement à utiliser lors de la sélection d’une version SDK, soit comme un repli lorsqu’une version spécifique SDK est manquante ou comme une directive pour utiliser une version supérieure. Une [version](#version) doit être `rollForward` spécifiée avec une valeur, sauf si vous la définissez à `latestMajor`.
+Stratégie de restauration par progression à utiliser lors de la sélection d’une version du kit de développement logiciel (SDK) en tant que solution de secours quand une version spécifique du kit de développement logiciel est manquante ou en tant que directive pour utiliser une version plus récente. Une [version](#version) doit être spécifiée avec une `rollForward` valeur, à moins que vous ne l' `latestMajor`affectiez à.
 
-Pour comprendre les politiques disponibles et leur comportement, considérez les `x.y.znn`définitions suivantes pour une version SDK dans le format :
+Pour comprendre les stratégies disponibles et leur comportement, considérez les définitions suivantes pour une version du kit de `x.y.znn`développement logiciel (SDK) au format :
 
 - `x`est la version principale.
 - `y`est la version mineure.
-- `z`est le groupe de longs métrages.
-- `nn`est la version patch.
+- `z`est la plage de fonctionnalités.
+- `nn`est la version du correctif.
 
-Le tableau suivant montre les `rollForward` valeurs possibles pour la clé :
+Le tableau suivant indique les valeurs possibles pour la `rollForward` clé :
 
 | Valeur         | Comportement |
 | ------------- | ---------- |
-| `patch`       | Utilise la version spécifiée. <br> S’il n’est pas trouvé, roule vers l’avant vers le dernier niveau de patch. <br> S’il n’est pas trouvé, échoue. <br><br> Cette valeur est le comportement hérité des versions antérieures de la SDK. |
-| `feature`     | Utilise le dernier niveau de patch pour la bande majeure spécifiée, mineure, et de dispositif. <br> S’il n’est pas trouvé, roule vers l’avant à la bande de fonctionnalité supérieure suivante dans le même majeur / mineur et utilise le dernier niveau de patch pour cette bande de fonctionnalité. <br> S’il n’est pas trouvé, échoue. |
-| `minor`       | Utilise le dernier niveau de patch pour la bande majeure spécifiée, mineure, et de dispositif. <br> S’il n’est pas trouvé, roule vers l’avant à la bande de fonctionnalité supérieure suivante dans la même version majeure / mineur et utilise le dernier niveau de patch pour cette bande de fonctionnalité. <br> S’il n’est pas trouvé, roule vers l’avant à la prochaine plus haute bande mineure et fonctionnalité dans le même majeur et utilise le dernier niveau de patch pour cette bande de fonctionnalité. <br> S’il n’est pas trouvé, échoue. |
-| `major`       | Utilise le dernier niveau de patch pour la bande majeure spécifiée, mineure, et de dispositif. <br> S’il n’est pas trouvé, roule vers l’avant à la bande de fonctionnalité supérieure suivante dans la même version majeure / mineur et utilise le dernier niveau de patch pour cette bande de fonctionnalité. <br> S’il n’est pas trouvé, roule vers l’avant à la prochaine plus haute bande mineure et fonctionnalité dans le même majeur et utilise le dernier niveau de patch pour cette bande de fonctionnalité. <br> S’il n’est pas trouvé, roule vers l’avant à la prochaine bande supérieure majeure, mineure, et fonctionnalité et utilise le dernier niveau de patch pour cette bande de fonctionnalité. <br> S’il n’est pas trouvé, échoue. |
-| `latestPatch` | Utilise le dernier niveau de patch installé qui correspond à la bande de majeur, mineure et de fonctionnalité demandée avec un niveau de patch et qui est plus ou égale que la valeur spécifiée. <br> S’il n’est pas trouvé, échoue. |
-| `latestFeature` | Utilise la bande de fonctionnalité et le niveau de patch les plus élevés qui correspondent au majeur et au mineur demandés avec une bande de fonctionnalités supérieure ou égale à la valeur spécifiée. <br> S’il n’est pas trouvé, échoue. |
-| `latestMinor` | Utilise le mineur installé le plus haut, bande de fonctionnalité, et le niveau de patch qui correspond à la majeure demandée avec un mineur qui est plus ou égal que la valeur spécifiée. <br> S’il n’est pas trouvé, échoue. |
-| `latestMajor` | Utilise le SDK de base le plus élevé installé .NET avec une majeure qui est supérieure ou égale à la valeur spécifiée. <br> S’il n’est pas trouvé, échouez. |
-| `disable`     | Il ne roule pas en avant. Correspondance exacte requise. |
+| `patch`       | Utilise la version spécifiée. <br> S’il est introuvable, restaure le niveau de correctif le plus récent. <br> S’il est introuvable, échoue. <br><br> Cette valeur est le comportement hérité des versions antérieures du kit de développement logiciel (SDK). |
+| `feature`     | Utilise le niveau de correctif le plus récent pour la plage de fonctionnalités, mineure et principale spécifiée. <br> S’il est introuvable, restaure la bande de fonctionnalités supérieure suivante au sein du même niveau principal/secondaire et utilise le niveau de correctif le plus récent pour cette bande de fonctionnalités. <br> S’il est introuvable, échoue. |
+| `minor`       | Utilise le niveau de correctif le plus récent pour la plage de fonctionnalités, mineure et principale spécifiée. <br> S’il est introuvable, restaure la bande de fonctionnalités supérieure suivante au sein de la même version majeure/mineure et utilise le niveau de correctif le plus récent pour cette bande de fonctionnalités. <br> S’il est introuvable, restaure par progression jusqu’à la bande de fonctionnalités et mineure supérieure suivante au sein du même principal et utilise le niveau de correctif le plus récent pour cette bande de fonctionnalités. <br> S’il est introuvable, échoue. |
+| `major`       | Utilise le niveau de correctif le plus récent pour la plage de fonctionnalités, mineure et principale spécifiée. <br> S’il est introuvable, restaure la bande de fonctionnalités supérieure suivante au sein de la même version majeure/mineure et utilise le niveau de correctif le plus récent pour cette bande de fonctionnalités. <br> S’il est introuvable, restaure par progression jusqu’à la bande de fonctionnalités et mineure supérieure suivante au sein du même principal et utilise le niveau de correctif le plus récent pour cette bande de fonctionnalités. <br> S’il est introuvable, restaure les versions ultérieures principales, secondaires et de fonctionnalités suivantes et utilise le niveau de correctif le plus récent pour cette bande de fonctionnalités. <br> S’il est introuvable, échoue. |
+| `latestPatch` | Utilise le dernier niveau de correctif installé qui correspond à la bande principale, mineure et de fonctionnalité demandée avec un niveau de correctif et qui est supérieur ou égal à la valeur spécifiée. <br> S’il est introuvable, échoue. |
+| `latestFeature` | Utilise la bande de fonctionnalités et le niveau de correctifs les plus élevés qui correspondent aux principaux et mineurs demandés avec une plage de fonctionnalités supérieure ou égale à la valeur spécifiée. <br> S’il est introuvable, échoue. |
+| `latestMinor` | Utilise le niveau le plus élevé, la bande de fonctionnalités et le niveau de correctif logiciel qui correspond à la valeur principale demandée, avec une valeur mineure supérieure ou égale à la valeur spécifiée. <br> S’il est introuvable, échoue. |
+| `latestMajor` | Utilise le kit SDK .NET Core installé le plus élevé avec une valeur Major supérieure ou égale à la valeur spécifiée. <br> S’il est introuvable, échec. |
+| `disable`     | Ne restaure pas par progression. Correspondance exacte requise. |
+
+### <a name="msbuild-sdks"></a>MSBuild-SDK
+
+Entrez : `object`
+
+Permet de contrôler la version du kit de développement logiciel (SDK) de projet dans un emplacement plutôt que dans chaque projet individuel. Pour plus d’informations, consultez [Comment les kits de développement logiciel (SDK) de projet sont résolus](/visualstudio/msbuild/how-to-use-project-sdk#how-project-sdks-are-resolved).
 
 ## <a name="examples"></a>Exemples
 
-L’exemple suivant montre comment ne pas utiliser les versions prérelease :
+L’exemple suivant montre comment ne pas utiliser les versions préliminaires :
 
 ```json
 {
@@ -97,18 +103,18 @@ L’exemple suivant montre comment ne pas utiliser les versions prérelease :
 }
 ```
 
-L’exemple suivant montre comment utiliser la version la plus élevée installée qui est supérieure ou égale à la version spécifiée :
+L’exemple suivant montre comment utiliser la version la plus récente installée qui est supérieure ou égale à la version spécifiée. Le code JSON indiqué interdit toute version du kit de développement logiciel (SDK) antérieure à 2.2.200 et autorise 2.2.200 ou toute version ultérieure, y compris 3.0.xxx et 3.1.xxx.
 
 ```json
 {
   "sdk": {
-    "version": "3.1.100",
+    "version": "2.2.200",
     "rollForward": "latestMajor"
   }
 }
 ```
 
-L’exemple suivant montre comment utiliser la version spécifiée exacte :
+L’exemple suivant montre comment utiliser la version spécifiée exacte :
 
 ```json
 {
@@ -119,23 +125,23 @@ L’exemple suivant montre comment utiliser la version spécifiée exacte :
 }
 ```
 
-L’exemple suivant montre comment utiliser la dernière bande de fonctionnalités et la version patch installée d’une version majeure et mineure spécifique :
+L’exemple suivant montre comment utiliser la dernière plage de fonctionnalités et la dernière version de correctif installées d’une version majeure et mineure spécifique. Le code JSON indiqué n’autorise aucune version du kit de développement logiciel (SDK) antérieure à 3.1.102 et autorise 3.1.102 ou toute version ultérieure de 3.1.xxx, telle que 3.1.103 ou 3.1.200.
 
 ```json
 {
   "sdk": {
-    "version": "3.1.000",
+    "version": "3.1.102",
     "rollForward": "latestFeature"
   }
 }
 ```
 
-L’exemple suivant montre comment utiliser la version patch la plus élevée installée d’une version spécifique (sous la forme, 3.1.1xx):
+L’exemple suivant montre comment utiliser la version de correctif la plus élevée installée pour une version spécifique. Le code JSON indiqué interdit toute version du SDK antérieure à 3.1.102 et autorise 3.1.102 ou toute version ultérieure 3.1.1 XX, telle que 3.1.103 ou 3.1.199.
 
 ```json
 {
   "sdk": {
-    "version": "3.1.100",
+    "version": "3.1.102",
     "rollForward": "latestPatch"
   }
 }
@@ -143,9 +149,9 @@ L’exemple suivant montre comment utiliser la version patch la plus élevée in
 
 ## <a name="globaljson-and-the-net-core-cli"></a>global.JSON et l’interface CLI .NET Core
 
-Il est utile de savoir quelles versions SDK sont installées sur votre machine pour en définir une dans le fichier *global.json.* Pour plus d’informations sur la façon de le faire, voir [Comment vérifier que .NET Core est déjà installé](../install/how-to-detect-installed-versions.md#check-sdk-versions).
+Il est utile de savoir quelles versions du kit de développement logiciel (SDK) sont installées sur votre ordinateur pour en définir un dans le fichier *global. JSON* . Pour plus d’informations sur la façon de procéder, consultez [Comment vérifier que .net Core est déjà installé](../install/how-to-detect-installed-versions.md#check-sdk-versions).
 
-Pour installer d’autres versions SDK core .NET supplémentaires sur votre machine, visitez la page [Télécharger .NET Core.](https://dotnet.microsoft.com/download/dotnet-core)
+Pour installer des versions de kit SDK .NET Core supplémentaires sur votre ordinateur, visitez la page [Télécharger .net Core](https://dotnet.microsoft.com/download/dotnet-core) .
 
 Vous pouvez créer un fichier *global.json* dans le répertoire actif en exécutant la commande [dotnet new](dotnet-new.md), comme dans l’exemple suivant :
 
@@ -156,32 +162,32 @@ dotnet new globaljson --sdk-version 3.0.100
 ## <a name="matching-rules"></a>Règles de correspondance
 
 > [!NOTE]
-> Les règles de correspondance `dotnet.exe` sont régies par le point d’entrée, qui est commun à tous les runtimes installés .NET Core installé. Les règles de correspondance pour la dernière version installée du .NET Core Runtime sont utilisées lorsque vous avez plusieurs temps d’exécution installés côte à côte.
+> Les règles de correspondance sont régies `dotnet.exe` par le point d’entrée, qui est courant pour tous les runtimes installés .net Core installés. Les règles de correspondance pour la dernière version installée du Runtime .NET Core sont utilisées lorsque plusieurs runtimes sont installés côte à côte.
 
 ## <a name="net-core-3x"></a>[.NET Core 3.x](#tab/netcore3x)
 
-En commençant par .NET Core 3.0, les règles suivantes s’appliquent lorsqu’elles déterminent la version du SDK à utiliser :
+À compter de .NET Core 3,0, les règles suivantes s’appliquent lors de la détermination de la version du kit de développement logiciel (SDK) à utiliser :
 
-- Si aucun fichier *global.json* n’est trouvé, ou *global.json* ne `allowPrerelease` spécifie pas une version SDK `latestMajor`ni une valeur, la version SDK installée la plus élevée est utilisée (équivalent à la mise à). `rollForward` La question de savoir si les versions `dotnet` SDK préreléase sont considérées dépend de la façon dont elles sont invoquées.
-  - Si vous n’êtes **pas** dans Visual Studio, les versions prérelease sont prises en considération.
-  - Si vous êtes dans Visual Studio, il utilise le statut de prérédition demandé. Autrement dit, si vous utilisez une version Aperçu de Visual Studio ou si vous définissez les **aperçus d’utilisation de l’option .NET Core SDK** (sous **tools** > **Options** > **Environment** > Preview**Features**), les versions préreléase sont envisagées; autrement, seules les versions de version sont prises en considération.
-- Si un fichier *global.json* est trouvé qui ne spécifie `allowPrerelease` pas une version SDK mais il spécifie une valeur, la version SDK installée la plus élevée est utilisée (équivalent au réglage `rollForward` à `latestMajor`). Si la dernière version SDK peut être libéré ou `allowPrerelease`prérelease dépend de la valeur de . `true`indique que les versions préreléase sont envisagées; `false` indique que seules les versions de version sont prises en considération.
-- Si un fichier *global.json* est trouvé et il spécifie une version SDK:
+- Si aucun fichier *global. JSON* n’est trouvé, ou si *global. JSON* ne spécifie pas une `allowPrerelease` version du kit `rollForward` de `latestMajor`développement logiciel (SDK) ni une valeur, la version la plus récente du kit de développement logiciel (SDK) est utilisée (équivalent à la valeur). La prise en compte des versions du kit de développement `dotnet` logiciel (SDK) préliminaire dépend de la méthode d’appel.
+  - Si vous **n’êtes pas** dans Visual Studio, les versions préliminaires sont prises en compte.
+  - Si vous êtes dans Visual Studio, il utilise l’état de préversion demandé. Autrement dit, si vous utilisez une préversion de Visual Studio ou que vous définissez l’option **utiliser des aperçus de l’kit SDK .net Core** ( **sous outils** > **options** > **environnement** > version**préliminaire**), les versions préliminaires sont prises en compte. dans le cas contraire, seules les versions release sont prises en compte.
+- Si un fichier *global. JSON* qui ne spécifie pas une version du kit de développement logiciel `allowPrerelease` (SDK `latestMajor`) est trouvé et qu’il spécifie une valeur, `rollForward` la version la plus récente du kit de développement logiciel (SDK) est utilisée (équivalent à). La version la plus récente du kit de développement logiciel (SDK) peut être Release `allowPrerelease`ou la version préliminaire dépend de la valeur de. `true`indique que les versions préliminaires sont prises en compte. `false` indique que seules les versions release sont prises en compte.
+- Si un fichier *global. JSON* est trouvé et qu’il spécifie une version du kit de développement logiciel (SDK) :
 
-  - Si `rollFoward` aucune valeur n’est définie, elle s’utilise `latestPatch` comme stratégie par défaut. `rollForward` Sinon, vérifiez chaque valeur et leur comportement dans la section [rollForward.](#rollforward)
-  - Si les versions prérelease sont considérées `allowPrerelease` et quel est le comportement par défaut quand n’est pas défini est décrit dans la section [allowPrerelease.](#allowprerelease)
+  - Si aucune `rollFoward` valeur n’est définie, elle `latestPatch` utilise comme stratégie `rollForward` par défaut. Sinon, vérifiez chaque valeur et son comportement dans la section [restauration par progression](#rollforward) .
+  - Si les versions préliminaires sont prises en compte et quel est le `allowPrerelease` comportement par défaut lorsque n’est pas défini est décrit dans la section [allowPrerelease](#allowprerelease) .
 
 ## <a name="net-core-2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-Dans .NET Core 2.x SDK, les règles suivantes s’appliquent lorsqu’elles déterminent quelle version du SDK utiliser :
+Dans le SDK .NET Core 2. x, les règles suivantes s’appliquent lors de la détermination de la version du kit de développement logiciel (SDK) à utiliser :
 
-- Si aucun fichier *global.json* n’est trouvé ou que *global.json* ne spécifie pas de version du kit SDK, la dernière version installée du kit SDK est utilisée. La dernière version SDK peut être soit la libération ou la prérénée - le nombre de versions la plus élevée gagne.
+- Si aucun fichier *global.json* n’est trouvé ou que *global.json* ne spécifie pas de version du kit SDK, la dernière version installée du kit SDK est utilisée. La dernière version du kit de développement logiciel (SDK) peut être Release ou version préliminaire : le numéro de version le plus élevé gagne.
 - Si la version du kit SDK n’est pas spécifiée dans *global.json* :
   - Si la version spécifiée du kit SDK se trouve sur la machine, c’est cette même version qui est utilisée.
-  - Si la version spécifiée du kit SDK est introuvable sur la machine, c’est la dernière **version corrective** installée du kit SDK qui est utilisée. La dernière version installée de **patch** SDK peut être soit la libération ou la prérénée - le nombre de version le plus élevé gagne. Dans .NET Core 2.1 et ultérieur, les **versions correctives** antérieures à la **version corrective** spécifiée sont ignorées dans la sélection du kit SDK.
+  - Si la version spécifiée du kit SDK est introuvable sur la machine, c’est la dernière **version corrective** installée du kit SDK qui est utilisée. La dernière **version du correctif** SDK installée peut être Release ou version préliminaire (le numéro de version le plus élevé gagne). Dans .NET Core 2.1 et ultérieur, les **versions correctives** antérieures à la **version corrective** spécifiée sont ignorées dans la sélection du kit SDK.
   - Dans le cas où ni la version spécifiée du kit SDK, ni une **version corrective** appropriée du kit SDK n’est trouvée, une erreur est générée.
 
-La version SDK est composée des parties suivantes :
+La version du kit de développement logiciel (SDK) est composée des éléments suivants :
 
 `[.NET Core major version].[.NET Core minor version].[xyz][-optional preview name]`
 
@@ -193,19 +199,19 @@ Les versions du kit SDK .NET Core comprises entre `2.1.100` et `2.1.201` ont ét
 
 ---
 
-## <a name="troubleshoot-build-warnings"></a>Avertissements de construction de dépanneurs
+## <a name="troubleshoot-build-warnings"></a>Résoudre les avertissements de build
 
-* L’avertissement suivant indique que votre projet a été compilé à l’aide d’une version préréactive du SDK core .NET :
+* L’avertissement suivant indique que votre projet a été compilé à l’aide d’une version préliminaire du kit SDK .NET Core :
 
-  > Vous utilisez une préversion du kit SDK .NET Core. Vous pouvez définir la version du kit SDK via un fichier global.json dans le projet actif. Plus <https://go.microsoft.com/fwlink/?linkid=869452>à .
+  > Vous utilisez une préversion du kit SDK .NET Core. Vous pouvez définir la version du kit SDK via un fichier global.json dans le projet actif. Pour plus <https://go.microsoft.com/fwlink/?linkid=869452>d’informations, consultez.
 
-  Les versions du kit SDK .NET Core jouissent d’une image et d’un engagement de qualité. Toutefois, si vous ne voulez pas utiliser une version préréactivease, vérifiez les différentes stratégies que vous pouvez utiliser avec le .NET Core 3.0 SDK ou une version ultérieure dans la section [allowPrerelease.](#allowprerelease) Pour les machines qui n’ont jamais eu un .NET Core 3.0 ou plus Runtime ou SDK installé, vous devez créer un fichier *global.json* et spécifier la version exacte que vous voulez utiliser.
+  Les versions du kit SDK .NET Core jouissent d’une image et d’un engagement de qualité. Toutefois, si vous ne souhaitez pas utiliser une version préliminaire, vérifiez les différentes stratégies que vous pouvez utiliser avec le kit de développement logiciel (SDK) .NET Core 3,0 ou une version ultérieure dans la section [allowPrerelease](#allowprerelease) . Pour les ordinateurs sur lesquels le runtime ou le kit de développement logiciel (SDK) .NET Core 3,0 ou version ultérieure n’a jamais été installé, vous devez créer un fichier *global. JSON* et spécifier la version exacte que vous souhaitez utiliser.
 
-* L’avertissement suivant indique que votre projet cible EF Core 1.0 ou 1.1, ce qui n’est pas compatible avec .NET Core 2.1 SDK et les versions ultérieures :
+* L’avertissement suivant indique que votre projet cible EF Core 1,0 ou 1,1, ce qui n’est pas compatible avec le kit de développement logiciel (SDK) .NET Core 2,1 et les versions ultérieures :
 
-  > Le projet de démarrage '{startupProject}' cible le framework '.NETCoreApp' version '{targetFrameworkVersion}'. Cette version des outils en ligne de commande Entity Framework Core .NET prend uniquement en charge la version 2.0 ou supérieure. Pour plus d’informations sur l’utilisation des anciennes versions des outils, voir <https://go.microsoft.com/fwlink/?linkid=871254>.
+  > Le projet de démarrage '{startupProject}' cible le framework '.NETCoreApp' version '{targetFrameworkVersion}'. Cette version des outils en ligne de commande Entity Framework Core .NET prend uniquement en charge la version 2.0 ou supérieure. Pour plus d’informations sur l’utilisation de versions antérieures des <https://go.microsoft.com/fwlink/?linkid=871254>outils, consultez.
 
-  À partir du kit SDK .NET Core 2.1 (version 2.1.300), la commande `dotnet ef` est incluse dans le kit SDK. Pour compiler votre projet, installez .NET Core 2.0 SDK (version 2.1.201) ou plus tôt sur votre machine et définissez la version SDK souhaitée à l’aide du fichier *global.json.* Pour plus d’informations sur la commande `dotnet ef`, consultez [Outils en ligne de commande EF Core .NET](/ef/core/miscellaneous/cli/dotnet).
+  À partir du kit SDK .NET Core 2.1 (version 2.1.300), la commande `dotnet ef` est incluse dans le kit SDK. Pour compiler votre projet, installez le kit de développement logiciel (SDK) .NET Core 2,0 (version 2.1.201) ou version antérieure sur votre ordinateur et définissez la version du kit de développement logiciel (SDK) de votre choix à l’aide du fichier *global. JSON* . Pour plus d’informations sur la commande `dotnet ef`, consultez [Outils en ligne de commande EF Core .NET](/ef/core/miscellaneous/cli/dotnet).
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -6,16 +6,16 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "73041657"
 ---
-### <a name="identity-ui-uses-static-web-assets-feature"></a>Identité : L’interface utilisateur utilise la fonction d’actifs Web statiques
+### <a name="identity-ui-uses-static-web-assets-feature"></a>Identité : l’interface utilisateur utilise la fonctionnalité de ressources Web statiques
 
-ASP.NET Core 3.0 a introduit une fonction d’actifs Web statiques, et Identity UI l’a adoptée.
+ASP.NET Core 3,0 a introduit une fonctionnalité de ressources Web statiques et l’interface utilisateur de l’identité l’a adoptée.
 
 #### <a name="change-description"></a>Description de la modification
 
-À la suite de l’interface utilisateur Identity adoptant la fonction d’actifs Web statiques :
+En raison de l’interface utilisateur d’identité adoptant la fonctionnalité de ressources Web statiques :
 
-- La sélection des cadres `IdentityUIFrameworkVersion` est effectuée en utilisant la propriété dans votre dossier de projet.
-- Bootstrap 4 est le cadre d’interface utilisateur par défaut pour l’interface utilisateur d’identité. Bootstrap 3 a atteint la fin de la vie, et vous devriez envisager de migrer vers une version prise en charge.
+- La sélection de l’infrastructure s’effectue `IdentityUIFrameworkVersion` à l’aide de la propriété de votre fichier projet.
+- Bootstrap 4 est l’infrastructure d’interface utilisateur par défaut pour l’interface utilisateur d’identité. Le bootstrap 3 a atteint la fin de vie et vous devez envisager une migration vers une version prise en charge.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -23,19 +23,19 @@ ASP.NET Core 3.0 a introduit une fonction d’actifs Web statiques, et Identity 
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Le cadre d’interface utilisateur par défaut pour l’interface utilisateur d’identité était **Bootstrap 3**. Le cadre d’interface utilisateur pourrait être `AddDefaultUI` configuré à l’aide d’un paramètre à la méthode appelez `Startup.ConfigureServices`.
+L’infrastructure d’interface utilisateur par défaut pour l’interface utilisateur d’identité était **bootstrap 3**. L’infrastructure de l’interface utilisateur peut être configurée à `AddDefaultUI` l’aide d' `Startup.ConfigureServices`un paramètre de l’appel de méthode dans.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Le cadre d’interface utilisateur par défaut pour l’interface utilisateur d’identité est **Bootstrap 4**. Le cadre d’interface utilisateur doit être configuré `AddDefaultUI` dans votre fichier de projet, au lieu de l’appel de méthode.
+L’infrastructure d’interface utilisateur par défaut pour l’interface utilisateur d’identité est **bootstrap 4**. L’infrastructure de l’interface utilisateur doit être configurée dans votre fichier projet, `AddDefaultUI` plutôt que dans l’appel de la méthode.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-L’adoption de la fonction d’actifs Web statiques exigeait que la configuration du cadre d’interface utilisateur passe à MSBuild. La décision sur le cadre à intégrer est une décision de prise de fonction, et non une décision en temps d’exécution.
+L’adoption de la fonctionnalité de ressources Web statiques nécessitait le déplacement de la configuration de l’infrastructure d’interface utilisateur vers MSBuild. La décision sur l’infrastructure à incorporer est une décision au moment de la génération, et non une décision d’exécution.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Examinez votre interface utilisateur de site pour vous assurer que les nouveaux composants Bootstrap 4 sont compatibles. Si nécessaire, `IdentityUIFrameworkVersion` utilisez la propriété MSBuild pour revenir à Bootstrap 3. Ajoutez la propriété `<PropertyGroup>` à un élément de votre dossier de projet :
+Passez en revue l’interface utilisateur de votre site pour vous assurer que les nouveaux composants bootstrap 4 sont compatibles. Si nécessaire, utilisez la `IdentityUIFrameworkVersion` propriété MSBuild pour revenir à bootstrap 3. Ajoutez la propriété à un `<PropertyGroup>` élément de votre fichier projet :
 
 ```xml
 <IdentityUIFrameworkVersion>Bootstrap3</IdentityUIFrameworkVersion>

@@ -6,16 +6,16 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 04/08/2020
 ms.locfileid: "80888114"
 ---
-### <a name="duplicated-apis-removed-from-windows-forms"></a>API dupliquée supprimée des formulaires Windows
+### <a name="duplicated-apis-removed-from-windows-forms"></a>API dupliquées supprimées de Windows Forms
 
-Un certain nombre d’API <xref:System.Windows.Forms?displayProperty=fullName> accidentellement dupliqué dans l’espace de nom à partir de .NET Core 3.0 Aperçu 4 ont été supprimés dans .NET Core 3.0 RC1.
+Un certain nombre d’API dupliquées accidentellement dans <xref:System.Windows.Forms?displayProperty=fullName> l’espace de noms à compter de .net Core 3,0 Preview 4 ont été supprimées dans .net Core 3,0 RC1.
 
 #### <a name="change-description"></a>Description de la modification
 
-.NET Core 3.0 Aperçu 4 par inadvertance <xref:System.Windows.Forms?displayProperty=fullName> dupliqué un certain <xref:System.ComponentModel.Design?displayProperty=fullName> nombre de types dans l’espace nom qui existait déjà dans l’espace nom. À partir de .NET Core 3.0 RC1, ces types dupliqués ne sont plus disponibles. Le tableau suivant affiche les listes du type d’origine et de son type dupliqué :
+.NET Core 3,0 Preview 4 a, par inadvertance, dupliqué un certain nombre <xref:System.Windows.Forms?displayProperty=fullName> de types dans l’espace de <xref:System.ComponentModel.Design?displayProperty=fullName> noms qui existaient déjà dans l’espace de noms. À compter de .NET Core 3,0 RC1, ces types dupliqués ne sont plus disponibles. Le tableau suivant répertorie le type d’origine et son type dupliqué :
 
 > [!div class="mx-tdCol2BreakAll"]
-> |Type original|Type dupliqué|
+> |Type d’origine|Type dupliqué|
 > |---|---|
 > |<xref:System.ComponentModel.Design.DesignerActionListsChangedEventArgs?displayProperty=fullName>|`System.Windows.Forms.DesignerActionListsChangedEventArgs`|
 > |<xref:System.ComponentModel.Design.DesignerActionListsChangedEventHandler?displayProperty=fullName>|`System.Windows.Forms.DesignerActionListsChangedEventHandler`|
@@ -25,11 +25,11 @@ Un certain nombre d’API <xref:System.Windows.Forms?displayProperty=fullName> a
 
 #### <a name="version-introduced"></a>Version introduite
 
-3.0 RC1
+3,0 RC1
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Mettre à jour le code pour référencer le type d’origine, tel qu’indiqué dans la colonne de **type Original** de la table.
+Mettez à jour le code pour référencer le type d’origine, comme indiqué dans la colonne **type d’origine** de la table.
 
 #### <a name="category"></a>Category
 

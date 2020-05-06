@@ -6,13 +6,13 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901591"
 ---
-### <a name="mvc-pubternal-types-changed-to-internal"></a>MVC: "Pubternal" types changés à interne
+### <a name="mvc-pubternal-types-changed-to-internal"></a>MVC : les types « Pubternal » sont devenus internes
 
-Dans ASP.NET Core 3.0, tous les types de « pubternal `public` » dans MVC `internal` ont été mis à jour pour être soit dans un espace de nom pris en charge ou, le cas échéant.
+Dans ASP.NET Core 3,0, tous les types « pubternal » dans MVC ont été mis à `public` jour pour se trouver dans `internal` un espace de noms pris en charge ou selon le cas.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans ASP.NET Core, les types "pubternal" `public` sont déclarés comme étant sauf dans un `.Internal`espace noméxé. Bien que `public`ces types sont , ils n’ont pas de politique de soutien et sont sujets à des changements de rupture. Malheureusement, l’utilisation accidentelle de ces types a été courante, ce qui a entraîné la rupture des changements à ces projets et la limitation de la capacité de maintenir le cadre.
+Dans ASP.NET Core, les types « pubternal » sont déclarés comme `public` , mais résident `.Internal`dans un espace de noms avec suffixe. Bien que ces types `public`soient, ils n’ont aucune stratégie de prise en charge et sont soumis à des modifications avec rupture. Malheureusement, l’utilisation accidentelle de ces types est courante, entraînant des modifications avec rupture de ces projets et limitant la capacité à gérer l’infrastructure.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -20,21 +20,21 @@ Dans ASP.NET Core, les types "pubternal" `public` sont déclarés comme étant s
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Certains types dans `public` MVC `.Internal` étaient, mais dans un namespace. Ces types n’avaient pas de politique de soutien et étaient susceptibles de modifier en cassant.
+Certains types dans MVC étaient `public` , mais dans `.Internal` un espace de noms. Ces types n’ont pas de stratégie de prise en charge et ont fait l’objet de modifications avec rupture.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Tous ces types sont `public` mis à jour soit `internal`pour être dans un namespace pris en charge ou marqué comme .
+Tous ces types sont mis à jour pour `public` se trouver dans un espace de noms `internal`pris en charge ou être marqués comme.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-L’utilisation accidentelle des types « pubtérinaux » a été courante, ce qui a entraîné la rupture des changements à ces projets et la limitation de la capacité de maintenir le cadre.
+L’utilisation accidentelle des types « pubternal » a été courante, entraînant des modifications avec rupture de ces projets et limitant la capacité à gérer l’infrastructure.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si vous utilisez des types `public` qui sont devenus vraiment et ont été déplacés dans un nouvel espace de nom pris en charge, mettez à jour vos références pour correspondre aux nouveaux espaces de nom.
+Si vous utilisez des types qui ont été réellement `public` et qui ont été déplacés dans un nouvel espace de noms pris en charge, mettez à jour vos références pour qu’elles correspondent aux nouveaux espaces de noms.
 
-Si vous utilisez des types qui `internal`sont devenus marqués comme , vous aurez besoin de trouver une alternative. Les types auparavant «pubternal» n’ont jamais été pris en charge pour un usage public. S’il existe des types spécifiques dans ces espaces nominaux qui sont essentiels à vos applications, déposez un problème à [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/issues). Des considérations peuvent être prises `public`pour faire les types demandés .
+Si vous utilisez des types qui ont été marqués comme `internal`, vous devez trouver une alternative. Les types « pubternal » précédemment n’étaient jamais pris en charge pour une utilisation publique. S’il existe des types spécifiques dans ces espaces de noms qui sont essentiels à vos applications, émettez un problème dans [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/issues). Des considérations peuvent être prises pour effectuer les types `public`demandés.
 
 #### <a name="category"></a>Category
 
@@ -42,7 +42,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-Ce changement inclut les types dans les espaces nominaux suivants :
+Cette modification comprend des types dans les espaces de noms suivants :
 
 - `Microsoft.AspNetCore.Mvc.Cors.Internal`
 - `Microsoft.AspNetCore.Mvc.DataAnnotations.Internal`

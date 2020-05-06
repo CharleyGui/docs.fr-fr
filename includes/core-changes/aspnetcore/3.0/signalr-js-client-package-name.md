@@ -6,13 +6,13 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901588"
 ---
-### <a name="signalr-javascript-client-package-name-changed"></a>SignalR: Le nom du forfait client JavaScript modifié
+### <a name="signalr-javascript-client-package-name-changed"></a>Signalr : nom du package client JavaScript modifié
 
-Dans ASP.NET Core 3.0 Preview 7, le nom du `@aspnet/signalr` client `@microsoft/signalr`SignalR JavaScript est passé de . Le changement de nom reflète le fait que SignalR est utile dans plus de ASP.NET applications Core, grâce au service SignalR Azure.
+Dans ASP.NET Core 3,0 Preview 7, le nom du package client JavaScript Signalr est `@aspnet/signalr` passé `@microsoft/signalr`de à. Le changement de nom reflète le fait que Signalr est utile dans les applications plus que simplement ASP.NET Core, grâce au service Azure Signalr.
 
-Pour réagir à ce changement, modifiez les `require` références dans *vos* fichiers, relevés et instructions ECMAScript. `import` Aucune API ne changera dans le cadre de ce changement.
+Pour réagir à cette modification, modifiez les références dans vos fichiers *Package. JSON* , `require` les instructions et `import` les instructions ECMAScript. Aucune API ne changera dans le cadre de ce changement de nom.
 
-Pour discussion, voir [dotnet/aspnetcore 11637](https://github.com/dotnet/aspnetcore/issues/11637).
+Pour plus d’informations, consultez [dotnet/aspnetcore # 11637](https://github.com/dotnet/aspnetcore/issues/11637).
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -20,19 +20,19 @@ Pour discussion, voir [dotnet/aspnetcore 11637](https://github.com/dotnet/aspnet
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Le paquet client `@aspnet/signalr`a été nommé .
+Le package client a été `@aspnet/signalr`nommé.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Le forfait client `@microsoft/signalr`est nommé .
+Le package client est nommé `@microsoft/signalr`.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Le changement de nom précise que SignalR est utile au-delà de ASP.NET applications Core, grâce au service SignalR Azure.
+Le changement de nom clarifie que Signalr est utile au-delà de ASP.NET Core applications, grâce au service Azure Signalr.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Passez au nouveau `@microsoft/signalr`paquet .
+Basculez vers le nouveau `@microsoft/signalr`package.
 
 #### <a name="category"></a>Category
 
@@ -40,7 +40,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-None
+Aucun
 
 <!-- 
 

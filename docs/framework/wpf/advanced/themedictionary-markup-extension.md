@@ -40,7 +40,7 @@ Cette extension offre un moyen aux auteurs de contrôles personnalisés ou aux a
 |-|-|  
 |`assemblyUri`|URI (Uniform Resource Identifier) de l’assembly qui contient les informations de thème. Il s’agit généralement d’un URI à en-tête pack qui référence un assembly dans le package plus large. Les ressources d’assembly et les URI à en-tête pack simplifient le déploiement. Pour plus d’informations [, consultez URI à en-tête pack dans WPF](../app-development/pack-uris-in-wpf.md).|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Cette extension est conçue pour remplir une seule valeur de propriété spécifique : une valeur <xref:System.Windows.ResourceDictionary.Source%2A?displayProperty=nameWithType>pour.  
   
  À l’aide de cette extension, vous pouvez spécifier un seul assembly de ressources uniquement qui contient certains styles à utiliser uniquement lorsque le thème Windows Aero est appliqué au système de l’utilisateur, d’autres styles uniquement lorsque le thème Luna est actif, et ainsi de suite. Quand vous utilisez cette extension, le contenu d’un dictionnaire de ressources d’un contrôle peut être automatiquement invalidé et rechargé pour un autre thème spécifique, si nécessaire.  

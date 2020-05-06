@@ -6,23 +6,23 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75937030"
 ---
-### <a name="donotloadlatestricheditcontrol-compatibility-switch-not-supported"></a>DoNotLoadLatestRichEditControl commutateur de compatibilité non pris en charge
+### <a name="donotloadlatestricheditcontrol-compatibility-switch-not-supported"></a>Commutateur de compatibilité DoNotLoadLatestRichEditControl non pris en charge
 
-Le `Switch.System.Windows.Forms.UseLegacyImages` commutateur de compatibilité, qui a été introduit dans .NET Framework 4.7.1, n’est pas pris en charge dans windows Forms sur .NET Core 3.0.
+Le `Switch.System.Windows.Forms.UseLegacyImages` commutateur de compatibilité, qui a été introduit dans .NET Framework 4.7.1, n’est pas pris en charge dans Windows Forms sur .net Core 3,0.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans le cadre .NET 4.6.2 et <xref:System.Windows.Forms.RichTextBox> les versions précédentes, le contrôle instantanémentait le contrôle Win32 RichEdit v3.0, et <xref:System.Windows.Forms.RichTextBox> pour les applications qui ciblent .NET Framework 4.7.1, le contrôle serait instantanée RichEdit v4.1 (en *msftedit.dll*). Le `Switch.System.Windows.Forms.DoNotLoadLatestRichEditControl` commutateur de compatibilité a été introduit pour permettre aux applications qui ciblent .NET Framework 4.7.1 et les versions ultérieures de se retirer du nouveau contrôle RichEdit v4.1 et d’utiliser l’ancien contrôle RichEdit v3 à la place.
+Dans le .NET Framework 4.6.2 et les versions antérieures, <xref:System.Windows.Forms.RichTextBox> le contrôle instancierait le contrôle Win32 RichEdit v 3.0 et, pour les applications qui ciblent .NET Framework <xref:System.Windows.Forms.RichTextBox> 4.7.1, le contrôle instancierait RichEdit v 4.1 (dans *que dans msftedit. dll*). Le `Switch.System.Windows.Forms.DoNotLoadLatestRichEditControl` commutateur de compatibilité a été introduit pour permettre aux applications qui ciblent .NET Framework 4.7.1 et versions ultérieures de refuser le nouveau contrôle RichEdit v 4.1 et d’utiliser à la place l’ancien contrôle RichEdit v3.
 
-Dans .NET Core, le commutateur n’est `Switch.System.Windows.Forms.DoNotLoadLatestRichEditControl` pas pris en charge. Seules les nouvelles <xref:System.Windows.Forms.RichTextBox> versions du contrôle sont prises en charge.
+Dans .NET Core, le `Switch.System.Windows.Forms.DoNotLoadLatestRichEditControl` commutateur n’est pas pris en charge. Seules les <xref:System.Windows.Forms.RichTextBox> nouvelles versions du contrôle sont prises en charge.
 
 #### <a name="version-introduced"></a>Version introduite
 
-3.0 Aperçu 9
+3,0 Preview 9
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Retirez l’interrupteur. Le commutateur n’est pas pris en charge, et aucune fonctionnalité alternative n’est disponible.
+Supprimez le commutateur. Le commutateur n’est pas pris en charge et aucune autre fonctionnalité n’est disponible.
 
 #### <a name="category"></a>Category
 

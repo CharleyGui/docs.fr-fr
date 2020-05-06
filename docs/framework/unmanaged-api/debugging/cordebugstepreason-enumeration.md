@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: fe248069-b33c-48e1-a777-06ac9b239c54
 topic_type:
 - apiref
-ms.openlocfilehash: 92aee981aca3bac32c0ef264799e486315ca5103
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 288d7bfdf18be5cef032227c537032966fa68df4
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789253"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795701"
 ---
 # <a name="cordebugstepreason-enumeration"></a>CorDebugStepReason, énumération
 Indique le résultat d'une étape individuelle.  
@@ -38,9 +38,9 @@ typedef enum CorDebugStepReason {
 } CorDebugStepReason;  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Membres  
   
-|Member|Description|  
+|Membre|Description|  
 |------------|-----------------|  
 |`STEP_NORMAL`|Exécution pas à pas terminée normalement, au sein de la même fonction.|  
 |`STEP_RETURN`|L’exécution pas à pas a continué normalement, après le retour de la fonction.|  
@@ -50,14 +50,14 @@ typedef enum CorDebugStepReason {
 |`STEP_INTERCEPT`|Le contrôle a été passé à un intercepteur.|  
 |`STEP_EXIT`|Le thread s’est arrêté avant la fin de l’étape.|  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

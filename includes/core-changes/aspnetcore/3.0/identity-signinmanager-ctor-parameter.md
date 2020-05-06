@@ -6,21 +6,21 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 04/13/2020
 ms.locfileid: "81275311"
 ---
-### <a name="identity-signinmanager-constructor-accepts-new-parameter"></a>Identité: SignInManager constructeur accepte un nouveau paramètre
+### <a name="identity-signinmanager-constructor-accepts-new-parameter"></a>Identité : le constructeur SignInManager accepte le nouveau paramètre
 
-En commençant par ASP.NET Core 3.0, un `IUserConfirmation<TUser>` nouveau `SignInManager` paramètre a été ajouté au constructeur. Pour plus d’informations, voir [dotnet/aspnetcore 8356](https://github.com/dotnet/aspnetcore/issues/8356).
+À compter de ASP.NET Core 3,0, un `IUserConfirmation<TUser>` nouveau paramètre a été ajouté `SignInManager` au constructeur. Pour plus d’informations, consultez [dotnet/aspnetcore # 8356](https://github.com/dotnet/aspnetcore/issues/8356).
 
 #### <a name="version-introduced"></a>Version introduite
 
 3.0
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-La motivation pour le changement était d’ajouter un soutien pour les nouveaux flux de messagerie / confirmation dans l’identité.
+La motivation de la modification consistait à ajouter la prise en charge de nouveaux flux de courrier électronique/confirmation dans l’identité.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si la construction `SignInManager`manuelle d’un, fournir une mise en œuvre ou `IUserConfirmation` saisir un de l’injection de dépendance à fournir.
+Si vous construisez manuellement `SignInManager`un, fournissez une `IUserConfirmation` implémentation de ou récupérez-en un à partir de l’injection de dépendances pour fournir.
 
 #### <a name="category"></a>Category
 

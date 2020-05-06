@@ -6,17 +6,17 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 04/22/2020
 ms.locfileid: "82021636"
 ---
-### <a name="floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception"></a>Les opérations d’analyse des points flottants ne échouent plus ou ne jettent plus de OverflowException
+### <a name="floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception"></a>Les opérations d’analyse de virgule flottante n’échouent plus ou lèvent une exception OverflowException
 
-Les méthodes d’analyse des points <xref:System.OverflowException> flottants `false` ne jettent plus une ou une déclaration <xref:System.Single> lorsqu’elles analysent une chaîne dont la valeur numérique est hors de la portée du type de point flottant. <xref:System.Double>
+Les méthodes d’analyse à virgule flottante ne lèvent <xref:System.OverflowException> plus d' `false` exception ou retournent lorsqu’elles analysent une chaîne dont la valeur <xref:System.Single> numérique <xref:System.Double> est en dehors de la plage du type à virgule flottante ou.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans .NET Core 2.2 et <xref:System.Double.Parse%2A?displayProperty=nameWithType> les <xref:System.Single.Parse%2A?displayProperty=nameWithType> versions <xref:System.OverflowException> antérieures, le et les méthodes jettent un pour les valeurs qui en dehors de la gamme de leur type respectif. Les <xref:System.Double.TryParse%2A?displayProperty=nameWithType> <xref:System.Single.TryParse%2A?displayProperty=nameWithType> et `false` les méthodes reviennent pour les représentations de cordes de valeurs numériques hors de portée.
+Dans .NET Core 2,2 et les versions antérieures, <xref:System.Double.Parse%2A?displayProperty=nameWithType> les <xref:System.Single.Parse%2A?displayProperty=nameWithType> méthodes et lèvent un <xref:System.OverflowException> pour les valeurs qui se trouvent en dehors de la plage de leur type respectif. Les <xref:System.Double.TryParse%2A?displayProperty=nameWithType> méthodes <xref:System.Single.TryParse%2A?displayProperty=nameWithType> et retournent `false` pour les représentations sous forme de chaîne de valeurs numériques hors limites.
 
-En commençant par .NET Core 3.0, <xref:System.Double.Parse%2A?displayProperty=nameWithType>le , <xref:System.Double.TryParse%2A?displayProperty=nameWithType>, <xref:System.Single.Parse%2A?displayProperty=nameWithType>et <xref:System.Single.TryParse%2A?displayProperty=nameWithType> les méthodes ne manquent plus lors de l’analyse des chaînes numériques hors de portée. Au lieu <xref:System.Double> de cela, <xref:System.Double.PositiveInfinity?displayProperty=nameWithType> les méthodes <xref:System.Double.MaxValue?displayProperty=nameWithType>d’analyse <xref:System.Double.NegativeInfinity?displayProperty=nameWithType> reviennent pour les <xref:System.Double.MinValue?displayProperty=nameWithType>valeurs qui dépassent , et ils reviennent pour des valeurs qui sont inférieures à . De même, les <xref:System.Single> méthodes <xref:System.Single.PositiveInfinity?displayProperty=nameWithType> d’analyse <xref:System.Single.MaxValue?displayProperty=nameWithType>reviennent pour <xref:System.Single.NegativeInfinity?displayProperty=nameWithType> les valeurs qui <xref:System.Single.MinValue?displayProperty=nameWithType>dépassent , et elles reviennent pour des valeurs qui sont inférieures à .
+À compter de .net Core 3,0, <xref:System.Double.Parse%2A?displayProperty=nameWithType>les <xref:System.Double.TryParse%2A?displayProperty=nameWithType>méthodes <xref:System.Single.Parse%2A?displayProperty=nameWithType>,, <xref:System.Single.TryParse%2A?displayProperty=nameWithType> et n’échouent plus lors de l’analyse de chaînes numériques hors limites. Au lieu de <xref:System.Double> cela, les méthodes <xref:System.Double.PositiveInfinity?displayProperty=nameWithType> d’analyse retournent des valeurs <xref:System.Double.MaxValue?displayProperty=nameWithType>qui <xref:System.Double.NegativeInfinity?displayProperty=nameWithType> dépassent, et elles <xref:System.Double.MinValue?displayProperty=nameWithType>retournent des valeurs inférieures à. De même, les <xref:System.Single> méthodes d’analyse <xref:System.Single.PositiveInfinity?displayProperty=nameWithType> retournent pour les <xref:System.Single.MaxValue?displayProperty=nameWithType>valeurs qui dépassent, et elles retournent <xref:System.Single.NegativeInfinity?displayProperty=nameWithType> des valeurs inférieures à. <xref:System.Single.MinValue?displayProperty=nameWithType>
 
-Ce changement a été apporté pour améliorer la conformité IEEE 754:2008.
+Cette modification a été apportée pour améliorer la conformité IEEE 754:2008.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -24,15 +24,15 @@ Ce changement a été apporté pour améliorer la conformité IEEE 754:2008.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Cette modification peut affecter votre code de deux façons :
+Cette modification peut avoir un impact sur votre code de deux manières :
 
-- Votre code dépend du <xref:System.OverflowException> gestionnaire pour que le gestionnaire s’exécute lorsqu’un débordement se produit. Dans ce cas, vous `catch` devez supprimer la déclaration `If` et placer <xref:System.Double.IsInfinity%2A?displayProperty=nameWithType> <xref:System.Single.IsInfinity%2A?displayProperty=nameWithType> tout `true`code nécessaire dans une déclaration qui teste si ou est .
+- Votre code dépend du gestionnaire du <xref:System.OverflowException> à exécuter lorsqu’un dépassement de capacité se produit. Dans ce cas, vous devez supprimer l' `catch` instruction et placer le code nécessaire dans une `If` instruction qui teste <xref:System.Double.IsInfinity%2A?displayProperty=nameWithType> si <xref:System.Single.IsInfinity%2A?displayProperty=nameWithType> ou `true`a la valeur.
 
-- Votre code suppose que les valeurs `Infinity`de point flottant ne sont pas . Dans ce cas, vous devez ajouter le code nécessaire `PositiveInfinity` `NegativeInfinity`pour vérifier les valeurs de point flottant de et .
+- Votre code suppose que les valeurs à virgule flottante ne `Infinity`le sont pas. Dans ce cas, vous devez ajouter le code nécessaire pour vérifier les valeurs à virgule flottante `PositiveInfinity` de `NegativeInfinity`et.
 
 #### <a name="category"></a>Category
 
-Core .NET bibliothèques
+Bibliothèques .NET Core
 
 #### <a name="affected-apis"></a>API affectées
 

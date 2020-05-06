@@ -6,13 +6,13 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "78290754"
 ---
-### <a name="http-defaulthttpcontext-extensibility-removed"></a>HTTP: DefaultHttpContext extétabilité supprimée
+### <a name="http-defaulthttpcontext-extensibility-removed"></a>HTTP : extensibilité de DefaultHttpContext supprimée
 
-Dans le cadre de ASP.NET’amélioration des performances de Core 3.0, l’extéabilité de `DefaultHttpContext` a été supprimée. La classe `sealed`est maintenant . Pour plus d’informations, voir [dotnet/aspnetcore 6504](https://github.com/dotnet/aspnetcore/pull/6504).
+Dans le cadre de l’amélioration des performances de ASP.NET Core 3,0 `DefaultHttpContext` , l’extensibilité de a été supprimée. La classe est maintenant `sealed`. Pour plus d’informations, consultez [dotnet/aspnetcore # 6504](https://github.com/dotnet/aspnetcore/pull/6504).
 
-Si vos tests `Mock<DefaultHttpContext>`unitaires utilisent, utilisez `Mock<HttpContext>` ou `new DefaultHttpContext()` à la place.
+Si vos tests unitaires `Mock<DefaultHttpContext>`utilisent, `Mock<HttpContext>` utilisez `new DefaultHttpContext()` ou à la place.
 
-Pour discussion, voir [dotnet/aspnetcore 6534](https://github.com/dotnet/aspnetcore/issues/6534).
+Pour plus d’informations, consultez [dotnet/aspnetcore # 6534](https://github.com/dotnet/aspnetcore/issues/6534).
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -20,19 +20,19 @@ Pour discussion, voir [dotnet/aspnetcore 6534](https://github.com/dotnet/aspnetc
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Les classes `DefaultHttpContext`peuvent dériver de .
+Les classes peuvent dériver de `DefaultHttpContext`.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Les cours ne `DefaultHttpContext`peuvent pas dériver de .
+Les classes ne peuvent `DefaultHttpContext`pas dériver de.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-L’extéabilité a été initialement fournie `HttpContext`pour permettre la mise en commun de la , mais il a introduit une complexité inutile et entravé d’autres optimisations.
+L’extensibilité a été fournie initialement pour permettre le `HttpContext`regroupement du, mais elle a introduit une complexité inutile et empêchait d’autres optimisations.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si vous utilisez `Mock<DefaultHttpContext>` dans vos tests `Mock<HttpContext>` unitaires, commencez à utiliser à la place.
+Si vous utilisez `Mock<DefaultHttpContext>` dans vos tests unitaires, commencez à `Mock<HttpContext>` utiliser à la place.
 
 #### <a name="category"></a>Category
 

@@ -8,21 +8,21 @@ ms.locfileid: "75937121"
 ---
 ### <a name="enablevisualstylevalidation-compatibility-switch-not-supported"></a>Commutateur de compatibilité EnableVisualStyleValidation non pris en charge
 
-Le `Switch.System.Windows.Forms.EnableVisualStyleValidation` commutateur de compatibilité n’est pas pris en charge dans Windows Forms sur .NET Core 3.0.
+Le `Switch.System.Windows.Forms.EnableVisualStyleValidation` commutateur de compatibilité n’est pas pris en charge dans Windows Forms sur .net Core 3,0.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans .NET Framework, le `Switch.System.Windows.Forms.EnableVisualStyleValidation` commutateur de compatibilité a permis à une application de se retirer de la validation des styles visuels fournis sous forme numérique.
+Dans .NET Framework, le `Switch.System.Windows.Forms.EnableVisualStyleValidation` commutateur de compatibilité permettait à une application de refuser la validation des styles visuels fournis sous forme numérique.
 
-Dans .NET Core, le commutateur n’est `Switch.System.Windows.Forms.EnableVisualStyleValidation` pas pris en charge.
+Dans .NET Core, le `Switch.System.Windows.Forms.EnableVisualStyleValidation` commutateur n’est pas pris en charge.
 
 #### <a name="version-introduced"></a>Version introduite
 
-3.0 Aperçu 9
+3,0 Preview 9
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Retirez l’interrupteur. Le commutateur n’est pas pris en charge, et aucune fonctionnalité alternative n’est disponible.
+Supprimez le commutateur. Le commutateur n’est pas pris en charge et aucune autre fonctionnalité n’est disponible.
 
 #### <a name="category"></a>Category
 
@@ -30,7 +30,7 @@ Windows Forms
 
 #### <a name="affected-apis"></a>API affectées
 
-- None
+- Aucun
 
 <!-- 
 

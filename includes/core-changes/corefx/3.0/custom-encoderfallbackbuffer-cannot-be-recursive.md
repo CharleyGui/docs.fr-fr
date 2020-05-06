@@ -6,25 +6,25 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 04/22/2020
 ms.locfileid: "82021580"
 ---
-### <a name="custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively"></a>Custom EncoderFallbackBuffer instances ne peuvent pas se replier de façon récursive
+### <a name="custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively"></a>Les instances EncoderFallbackBuffer personnalisées ne peuvent pas être rétablies de manière récursive
 
-Les <xref:System.Text.EncoderFallbackBuffer> instances personnalisées ne peuvent pas se replier de façon récursive. La mise <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> en œuvre de doit entraîner une séquence de caractères qui est convertible à l’encodage de destination. Sinon, une exception se produit.
+Les <xref:System.Text.EncoderFallbackBuffer> instances personnalisées ne peuvent pas être rétablies de manière récursive. L’implémentation de <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> doit entraîner une séquence de caractères convertible en l’encodage de destination. Dans le cas contraire, une exception se produit.
 
 #### <a name="change-description"></a>Description de la modification
 
-Au cours d’une opération de transcodage de caractère à l’autre, le temps d’exécution détecte les <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> séquences UTF-16 mal formées ou non révertisables et fournit ces caractères à la méthode. La `Fallback` méthode détermine quels caractères doivent être substitués aux données originales non <xref:System.Text.EncoderFallbackBuffer.GetNextChar%2A?displayProperty=nameWithType> convertiables, et ces caractères sont drainés en appelant en boucle.
+Pendant une opération de transcodage de caractère à octet, le runtime détecte les séquences UTF-16 mal formées ou non convertibles et fournit ces caractères à <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> la méthode. La `Fallback` méthode détermine les caractères qui doivent être substitués aux données d’origine qui ne sont pas convertibles, et ces caractères <xref:System.Text.EncoderFallbackBuffer.GetNextChar%2A?displayProperty=nameWithType> sont vidés en appelant dans une boucle.
 
-Le temps d’exécution tente alors de transcoder ces caractères de substitution au codage cible. Si cette opération réussit, le temps d’exécution continue le transcodage d’où il s’est détaché dans la chaîne d’entrée d’origine.
+Le runtime tente ensuite de transcoder ces caractères de substitution dans l’encodage cible. Si cette opération a échoué, le runtime continue à effectuer le transcodage à partir de l’endroit où il s’est arrêté dans la chaîne d’entrée d’origine.
 
-Dans .NET Core Preview 7 et les <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> versions antérieures, les implémentations personnalisées de peuvent retourner des séquences de caractères qui ne sont pas convertibles à l’encodage de destination. Si les caractères substitués ne peuvent pas être transcodés vers l’encodage cible, le temps d’exécution invoque à nouveau la <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> méthode avec les caractères de substitution, s’attendant à ce que la <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> méthode renvoie une nouvelle séquence de substitution. Ce processus se poursuit jusqu’à ce que le temps d’exécution voit finalement une substitution décapotable bien formée, ou jusqu’à ce qu’un nombre maximum de récurrence soit atteint.
+Dans .NET Core Preview 7 et les versions antérieures, les implémentations <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> personnalisées de peuvent retourner des séquences de caractères qui ne sont pas convertibles en l’encodage de destination. Si les caractères substitués ne peuvent pas être transcodés en l’encodage cible, le runtime <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> appelle de nouveau la méthode avec les caractères de substitution, <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> en attendant que la méthode retourne une nouvelle séquence de substitution. Ce processus se poursuit jusqu’à ce que le Runtime découvre une substitution correctement formée et convertible, ou jusqu’à ce qu’un nombre maximal de récurrences soit atteint.
 
-En commençant par .NET Core 3.0, implémentations personnalisées de séquences de <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> caractères de retour de must qui sont convertibles à l’encodage de destination. Si les caractères substitués ne peuvent pas <xref:System.ArgumentException> être transcodés vers l’encodage cible, un est lancé. Le temps d’exécution ne fera plus <xref:System.Text.EncoderFallbackBuffer> d’appels récursifs dans l’instance.
+À compter de .NET Core 3,0, les implémentations <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> personnalisées de doivent retourner des séquences de caractères convertibles en l’encodage de destination. Si les caractères substitués ne peuvent pas être transcodés en l’encodage <xref:System.ArgumentException> cible, une exception est levée. Le runtime n’effectue plus d’appels récursifs dans l' <xref:System.Text.EncoderFallbackBuffer> instance.
 
-Ce comportement ne s’applique que lorsque les trois conditions suivantes sont remplies :
+Ce comportement s’applique uniquement lorsque les trois conditions suivantes sont remplies :
 
-- Le temps d’exécution détecte une séquence UTF-16 mal formée ou une séquence UTF-16 qui ne peut pas être convertie en codage cible.
-- Une <xref:System.Text.EncoderFallback> coutume a été spécifiée.
-- La <xref:System.Text.EncoderFallback> coutume tente de remplacer une nouvelle séquence UTF-16 mal formée ou non convertie.
+- Le runtime détecte une séquence UTF-16 ou UTF-16 incorrecte qui ne peut pas être convertie en l’encodage cible.
+- Un personnalisé <xref:System.Text.EncoderFallback> a été spécifié.
+- Le personnalisé <xref:System.Text.EncoderFallback> tente de substituer une nouvelle séquence UTF-16 incorrecte ou non convertible.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -32,13 +32,13 @@ Ce comportement ne s’applique que lorsque les trois conditions suivantes sont 
 
 #### <a name="recommended-action"></a>Action recommandée
 
-La plupart des développeurs n’ont pas besoin de prendre aucune mesure.
+La plupart des développeurs n’ont aucune action à effectuer.
 
-Si une application <xref:System.Text.EncoderFallback> utilise <xref:System.Text.EncoderFallbackBuffer> une coutume et <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> une classe, assurez-vous que la mise en œuvre de peuple le <xref:System.Text.EncoderFallbackBuffer.Fallback%2A> tampon de repli avec des données UTF-16 bien formées qui sont directement convertibles au codage cible lorsque la méthode est invoquée pour la première fois par le temps d’exécution.
+Si une application utilise une classe <xref:System.Text.EncoderFallback> et <xref:System.Text.EncoderFallbackBuffer> personnalisée, assurez-vous <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> que l’implémentation de remplit la mémoire tampon de secours avec des données UTF-16 bien formées qui sont directement convertibles en l’encodage cible lorsque la <xref:System.Text.EncoderFallbackBuffer.Fallback%2A> méthode est appelée pour la première fois par le Runtime.
 
 #### <a name="category"></a>Category
 
-Core .NET bibliothèques
+Bibliothèques .NET Core
 
 #### <a name="affected-apis"></a>API affectées
 

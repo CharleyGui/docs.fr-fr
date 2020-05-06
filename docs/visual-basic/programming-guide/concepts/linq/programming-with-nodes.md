@@ -2,14 +2,14 @@
 title: Programmation à l'aide de nœuds
 ms.date: 07/20/2015
 ms.assetid: d8422a9b-dd37-44a3-8aac-2237ed9561e0
-ms.openlocfilehash: b2c9022cb57cf122af47bbe6d1a7fe2b4d41327c
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 9c64c348f5d26172f26593b927e6bc24baf365bf
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78266961"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82794401"
 ---
-# <a name="programming-with-nodes-visual-basic"></a>Programmation avec nœuds (Visual Basic)
+# <a name="programming-with-nodes-visual-basic"></a>Programmation avec des nœuds (Visual Basic)
 Les développeurs [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] qui doivent écrire des programmes tels qu'un éditeur XML, un système de transformation ou un générateur de rapports doivent souvent écrire des programmes qui fonctionnent à un niveau de granularité plus élevé que les éléments et attributs. Ils doivent souvent travailler au niveau des nœuds, manipuler des nœuds de texte et traiter des instructions et des commentaires. Cette rubrique fournit quelques détails sur la programmation au niveau nœud.  
   
 ## <a name="node-details"></a>Détails concernant les nœuds  
@@ -167,10 +167,10 @@ Console.WriteLine(doc.Nodes().Count())
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
-<Root />  
-1  
+<Root />
+1
 ```  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Advanced LINQ à XML Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Visual Basic (Advanced LINQ to XML Programming)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

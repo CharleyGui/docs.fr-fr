@@ -8,15 +8,15 @@ ms.locfileid: "74568091"
 ---
 ### <a name="ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes"></a>ZipArchiveEntry ne gère plus les archives avec des tailles d’entrée incohérentes
 
-Les archives zip énumèrent à la fois la taille comprimée et la taille non compressée dans le répertoire central et l’en-tête local.  Les données d’entrée elles-mêmes indiquent également sa taille.  Dans .NET Core 2.2 et les versions antérieures, ces valeurs n’ont jamais été vérifiées pour la cohérence. En commençant par .NET Core 3.0, ils le sont maintenant.
+Les archives zip répertorient à la fois la taille compressée et la taille non compressée dans le répertoire central et l’en-tête local.  Les données d’entrée lui-même indiquent également sa taille.  Dans .NET Core 2,2 et les versions antérieures, ces valeurs n’ont jamais été vérifiées pour des fins de cohérence. À compter de .NET Core 3,0, ils sont désormais.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans .NET Core 2.2 et <xref:System.IO.Compression.ZipArchiveEntry.Open?displayProperty=nameWithType> les versions antérieures, réussit même si l’en-tête local n’est pas d’accord avec l’en-tête central du fichier zip. Les données sont décompressées jusqu’à ce que la fin du flux compressé soit atteinte, même si sa longueur dépasse la taille du fichier non compressé énuméré dans l’annuaire central /en-tête local.
+Dans .NET Core 2,2 et les versions antérieures <xref:System.IO.Compression.ZipArchiveEntry.Open?displayProperty=nameWithType> , fonctionne même si l’en-tête local est en désaccord avec l’en-tête central du fichier zip. Les données sont décompressées jusqu’à la fin du flux compressé, même si leur longueur dépasse la taille du fichier non compressé figurant dans le répertoire central/l’en-tête local.
 
-À partir de .NET Core 3.0, la méthode vérifie que l’en-tête <xref:System.IO.Compression.ZipArchiveEntry.Open?displayProperty=nameWithType> local et l’en-tête central s’entendent sur les tailles comprimées et non compressées d’une entrée.  S’ils ne le font <xref:System.IO.InvalidDataException> pas, la méthode jette un si l’en-tête local de l’archive et / ou les tailles de liste descripteur de données qui ne sont pas d’accord avec l’annuaire central du fichier zip. Lors de la lecture d’une entrée, les données décompressées sont tronquées sur la taille du fichier non compressé figurant dans l’en-tête.
+À compter de .NET Core 3,0, <xref:System.IO.Compression.ZipArchiveEntry.Open?displayProperty=nameWithType> la méthode vérifie que l’en-tête local et l’en-tête central s’accordent sur des tailles compressées et non compressées d’une entrée.  Si ce n’est pas le cas, la méthode <xref:System.IO.InvalidDataException> lève une si les tailles d’en-tête local et/ou de liste de descripteurs de données de l’archive ne sont pas en accord avec le répertoire central du fichier. zip. Lors de la lecture d’une entrée, les données décompressées sont tronquées à la taille de fichier non compressée indiquée dans l’en-tête.
 
-Cette modification a été <xref:System.IO.Compression.ZipArchiveEntry> apportée pour s’assurer qu’un traitement à juste titre représente la taille de ses données et que seule cette quantité de données est lue.
+Cette modification a été apportée pour <xref:System.IO.Compression.ZipArchiveEntry> s’assurer qu’un correspond correctement à la taille de ses données et que seule cette quantité de données est lue.
 
 #### <a name="version-introduced"></a>Version introduite
 

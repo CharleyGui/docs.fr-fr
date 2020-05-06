@@ -6,15 +6,15 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 04/22/2020
 ms.locfileid: "82021557"
 ---
-### <a name="apis-that-report-version-now-report-product-and-not-file-version"></a>API qui signalent la version signalent maintenant le produit et ne fichier pas la version
+### <a name="apis-that-report-version-now-report-product-and-not-file-version"></a>API qui signalent la version du produit et non de la version du fichier
 
-Bon nombre des API qui retournent les versions dans .NET Core retournent maintenant la version du produit plutôt que la version de fichier.
+La plupart des API qui retournent des versions dans .NET Core retournent désormais la version du produit plutôt que la version du fichier.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans .NET Core 2.2 et les <xref:System.Environment.Version?displayProperty=nameWithType>versions précédentes, les méthodes telles que , <xref:System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription?displayProperty=nameWithType>et les propriétés de fichier dialogue pour les assemblages .NET Core reflètent la version de fichier. En commençant par .NET Core 3.0, ils reflètent la version du produit.
+Dans .net Core 2,2 et versions antérieures, les méthodes telles <xref:System.Environment.Version?displayProperty=nameWithType>que <xref:System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription?displayProperty=nameWithType>, et la boîte de dialogue des propriétés de fichier pour les assemblys .net Core reflètent la version de fichier. À compter de .NET Core 3,0, ils reflètent la version du produit.
 
-Le chiffre suivant illustre la différence d’informations de version pour *l’assemblage System.Runtime.dll* pour .NET Core 2.2 (à gauche) et .NET Core 3.0 (à droite) tel qu’affiché par le dialogue des propriétés de fichiers **Windows Explorer.**
+La figure suivante illustre la différence dans les informations de version de l’assembly *System. Runtime. dll* pour .net Core 2,2 (à gauche) et .net Core 3,0 (à droite), tel qu’affiché dans la boîte de dialogue des propriétés du fichier de l' **Explorateur Windows** .
 
 ![Différence dans les informations sur la version du produit](~/docs/images/core-changes/corefx/version-information-changes/file-details.png)
 
@@ -24,11 +24,11 @@ Le chiffre suivant illustre la différence d’informations de version pour *l�
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Aucun. Ce changement devrait rendre la détection de version intuitive plutôt que obtus.
+Aucun. Cette modification doit rendre la détection de version intuitive plutôt que abstruse.
 
 #### <a name="category"></a>Category
 
-Core .NET bibliothèques
+Bibliothèques .NET Core
 
 #### <a name="affected-apis"></a>API affectées
 

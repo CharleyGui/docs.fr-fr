@@ -6,9 +6,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "73198425"
 ---
-### <a name="caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package"></a>Caching: Microsoft.Extensions.Caching.SqlServer utilise le nouveau paquet SqlClient
+### <a name="caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package"></a>Mise en cache : Microsoft. extensions. Caching. SqlServer utilise le nouveau package SqlClient
 
-Le `Microsoft.Extensions.Caching.SqlServer` paquet utilisera `Microsoft.Data.SqlClient` le `System.Data.SqlClient` nouveau paquet au lieu du paquet. Ce changement pourrait provoquer de légers changements de rupture comportementale. Pour plus d’informations, voir [Présentation du nouveau Microsoft.Data.SqlClient](https://devblogs.microsoft.com/dotnet/introducing-the-new-microsoftdatasqlclient/).
+Le `Microsoft.Extensions.Caching.SqlServer` package utilise le nouveau `Microsoft.Data.SqlClient` package à la place `System.Data.SqlClient` du package. Cette modification peut entraîner de légères modifications avec rupture de comportement. Pour plus d’informations, consultez [Présentation du nouveau Microsoft. Data. SqlClient](https://devblogs.microsoft.com/dotnet/introducing-the-new-microsoftdatasqlclient/).
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -16,19 +16,19 @@ Le `Microsoft.Extensions.Caching.SqlServer` paquet utilisera `Microsoft.Data.Sql
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Le `Microsoft.Extensions.Caching.SqlServer` paquet `System.Data.SqlClient` a utilisé le paquet.
+Le `Microsoft.Extensions.Caching.SqlServer` package a utilisé `System.Data.SqlClient` le package.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-`Microsoft.Extensions.Caching.SqlServer`utilise maintenant `Microsoft.Data.SqlClient` le paquet.
+`Microsoft.Extensions.Caching.SqlServer`utilise maintenant le `Microsoft.Data.SqlClient` package.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-`Microsoft.Data.SqlClient`est un nouveau paquet qui `System.Data.SqlClient`est construit hors de . C’est là que tout nouveau travail de fonctionnalité sera fait à partir de maintenant.
+`Microsoft.Data.SqlClient`est un nouveau package qui est créé à partir `System.Data.SqlClient`de. C’est là que tous les nouveaux travaux de fonctionnalités seront effectués à partir de maintenant.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Les clients ne devraient pas avoir à s’inquiéter de `Microsoft.Extensions.Caching.SqlServer` ce changement `System.Data.SqlClient` de rupture à moins qu’ils ont été en utilisant des types retournés par le paquet et de les jeter à des types. Par exemple, si quelqu’un jetait un `DbConnection` à [l’ancien type SqlConnection](xref:System.Data.SqlClient.SqlConnection), ils auraient besoin de changer le casting pour le nouveau `Microsoft.Data.SqlClient.SqlConnection` type.
+Les clients ne doivent pas avoir à se soucier de cette modification avec rupture, sauf `Microsoft.Extensions.Caching.SqlServer` s’ils utilisaient des `System.Data.SqlClient` types retournés par le package et les castant en types. Par exemple, si quelqu’un effectuait un `DbConnection` cast de en l' [ancien type SqlConnection](xref:System.Data.SqlClient.SqlConnection), il aurait besoin de remplacer le cast par `Microsoft.Data.SqlClient.SqlConnection` le nouveau type.
 
 #### <a name="category"></a>Category
 
@@ -36,7 +36,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-None
+Aucun
 
 <!-- 
 

@@ -6,25 +6,25 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "72393972"
 ---
-### <a name="mvc-web-api-compatibility-shim-removed"></a>MVC: Web API cal de compatibilité supprimé
+### <a name="mvc-web-api-compatibility-shim-removed"></a>MVC : Shim de compatibilité de l’API Web supprimé
 
-En commençant par ASP.NET Core 3.0, le `Microsoft.AspNetCore.Mvc.WebApiCompatShim` forfait n’est plus disponible.
+À compter de ASP.NET Core 3,0, `Microsoft.AspNetCore.Mvc.WebApiCompatShim` le package n’est plus disponible.
 
 #### <a name="change-description"></a>Description de la modification
 
-Le `Microsoft.AspNetCore.Mvc.WebApiCompatShim` forfait (WebApiCompatShim) offre une compatibilité partielle dans ASP.NET Core avec ASP.NET 4.x Web API 2 pour simplifier la migration des implémentations existantes d’API Web à ASP.NET Core. Toutefois, les applications utilisant le WebApiCompatShim ne bénéficient pas des fonctionnalités liées à l’API lors des dernières versions ASP.NET Core. Ces fonctionnalités comprennent l’amélioration de la génération de spécifications Open API, la gestion normalisée des erreurs et la génération de code client. Pour mieux concentrer les efforts de l’API en 3.0, WebApiCompatShim a été supprimé. Les applications existantes utilisant le WebApiCompatShim devraient migrer vers le `[ApiController]` nouveau modèle.
+Le `Microsoft.AspNetCore.Mvc.WebApiCompatShim` package (WebApiCompatShim) fournit une compatibilité partielle dans ASP.net core avec l’API web 2 ASP.net 4. x afin de simplifier la migration des implémentations d’API Web existantes vers ASP.net core. Toutefois, les applications qui utilisent WebApiCompatShim ne bénéficient pas des fonctionnalités d’API fournies dans les versions récentes de ASP.NET Core. Ces fonctionnalités incluent la génération améliorée des spécifications d’API Open, la gestion standardisée des erreurs et la génération de code client. Pour mieux cibler les efforts des API dans 3,0, WebApiCompatShim a été supprimé. Les applications existantes utilisant WebApiCompatShim doivent migrer vers le `[ApiController]` modèle plus récent.
 
 #### <a name="version-introduced"></a>Version introduite
 
 3.0
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Le shim de compatibilité Web API était un outil de migration. Il restreint l’accès des utilisateurs aux nouvelles fonctionnalités ajoutées dans ASP.NET Core.
+Le shim de compatibilité des API Web était un outil de migration. Elle restreint l’accès utilisateur aux nouvelles fonctionnalités ajoutées dans ASP.NET Core.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Supprimer l’utilisation de cette cale et migrer directement vers la fonctionnalité similaire dans ASP.NET Core lui-même.
+Supprimez l’utilisation de ce shim et migrez directement vers la fonctionnalité similaire dans ASP.NET Core lui-même.
 
 #### <a name="category"></a>Category
 

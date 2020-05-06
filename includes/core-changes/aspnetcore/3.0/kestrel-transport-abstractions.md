@@ -6,9 +6,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394166"
 ---
-### <a name="kestrel-transport-abstractions-removed-and-made-public"></a>Kestrel: Les abstractions de transport supprimées et rendues publiques
+### <a name="kestrel-transport-abstractions-removed-and-made-public"></a>Kestrel : les abstractions de transport ont été supprimées et rendues publiques
 
-Dans le cadre de l’éloignement des API « pubtérinaires », les API de la couche de transport de Kestrel sont exposées comme une interface publique dans la `Microsoft.AspNetCore.Connections.Abstractions` bibliothèque.
+Dans le cadre du déplacement des API « pubternal », les API de la couche de transport Kestrel sont exposées en tant qu' `Microsoft.AspNetCore.Connections.Abstractions` interface publique dans la bibliothèque.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -16,18 +16,18 @@ Dans le cadre de l’éloignement des API « pubtérinaires », les API de la co
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-- Des abstractions liées aux `Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions` transports étaient disponibles dans la bibliothèque.
+- Des abstractions relatives au transport étaient disponibles dans `Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions` la bibliothèque.
 - La `ListenOptions.NoDelay` propriété était disponible.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-- L’interface `IConnectionListener` a `Microsoft.AspNetCore.Connections.Abstractions` été introduite dans la bibliothèque `...Transport.Abstractions` pour exposer les fonctionnalités les plus utilisées de la bibliothèque.
-- Le `NoDelay` est maintenant disponible`LibuvTransportOptions` dans `SocketTransportOptions`les options de transport ( et ).
+- L' `IConnectionListener` interface a été introduite `Microsoft.AspNetCore.Connections.Abstractions` dans la bibliothèque pour exposer la fonctionnalité la plus `...Transport.Abstractions` utilisée à partir de la bibliothèque.
+- Le `NoDelay` est désormais disponible dans les options de`LibuvTransportOptions` transport `SocketTransportOptions`(et).
 - `SchedulingMode`n’est plus disponible.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-ASP.NET Core 3.0 s’est éloigné des API " pubtérinaux »."
+ASP.NET Core 3,0 a été déplacée hors des API « pubternal ».
 
 #### <a name="recommended-action"></a>Action recommandée
 
@@ -37,7 +37,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-None
+Aucun
 
 <!-- 
 

@@ -2,26 +2,26 @@
 title: Articles de guide pratique (Guide C#)
 description: Série de petits conseils et d’exemples de code spécifiques courts
 ms.date: 12/20/2017
-ms.openlocfilehash: e6cb657726b82a1710bbcd596fe48037b5c26352
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 81ef8106add757cf3c83aa7dc130f5474b936461
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399321"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82794700"
 ---
 # <a name="how-to-c"></a>Guides pratiques (C#)
 
-Dans la section Comment faire partie du Guide C, vous pouvez trouver des réponses rapides à des questions courantes. Dans certains cas, les articles peuvent figurer dans plusieurs sections. Nous avons souhaité les rendre plus faciles à trouver via plusieurs voies de recherche.
+Dans la section How to du guide C#, vous trouverez des réponses rapides aux questions les plus fréquentes. Dans certains cas, les articles peuvent figurer dans plusieurs sections. Nous avons souhaité les rendre plus faciles à trouver via plusieurs voies de recherche.
 
 ## <a name="general-c-concepts"></a>Concepts C# généraux
 
-Il y a plusieurs trucs et astuces qui sont des pratiques courantes de développeur C ' :
+Il existe plusieurs trucs et astuces qui sont des pratiques courantes pour les développeurs C# :
 
 - [Initialiser des objets à l’aide d’un initialiseur d’objet](../programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md).
 - [Découvrir les différences entre le passage d’un struct et d’une classe à une méthode](../programming-guide/classes-and-structs/how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md).
 - [Utiliser la surcharge d’opérateur](../language-reference/operators/operator-overloading.md).
 - [Implémenter et appeler une méthode d’extension personnalisée](../programming-guide/classes-and-structs/how-to-implement-and-call-a-custom-extension-method.md).
-- Même les programmeurs Cmd peuvent vouloir [utiliser l’espace `My` de nom de Visual Basic](../programming-guide/namespaces/how-to-use-the-my-namespace.md).
+- Même les programmeurs C# peuvent souhaiter [utiliser l' `My` espace de noms de Visual Basic](../programming-guide/namespaces/how-to-use-the-my-namespace.md).
 - [Créer une méthode pour un type `enum` à l’aide des méthodes d’extension](../programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md).
 
 ### <a name="class-and-struct-members"></a>Membres de classe et de struct
@@ -32,7 +32,7 @@ Vous créez des classes et des structs pour implémenter votre programme. Ces te
 - [Déclarer et utiliser des propriétés en lecture-écriture](../programming-guide/classes-and-structs/how-to-declare-and-use-read-write-properties.md).
 - [Définir des constantes](../programming-guide/classes-and-structs/how-to-define-constants.md).
 - [Remplacer la méthode `ToString` pour fournir la sortie de chaîne](../programming-guide/classes-and-structs/how-to-override-the-tostring-method.md).
-- [Décrivez les propriétés abstraites](../programming-guide/classes-and-structs/how-to-define-abstract-properties.md).
+- [Définir des propriétés abstraites](../programming-guide/classes-and-structs/how-to-define-abstract-properties.md).
 - [Utiliser les fonctionnalités de la documentation XML pour documenter votre code](../programming-guide/xmldoc/how-to-use-the-xml-documentation-features.md).
 - [Implémenter de manière explicite des membres d’interface](../programming-guide/interfaces/how-to-explicitly-implement-interface-members.md) pour conserver votre interface publique concise.
 - [Implémenter de manière explicite des membres de deux interfaces](../programming-guide/interfaces/how-to-explicitly-implement-members-of-two-interfaces.md).
@@ -47,7 +47,7 @@ Ces articles vous permettent d’utiliser des collections de données.
 
 Les chaînes constituent le type de données fondamental utilisé pour afficher ou manipuler du texte. Ces articles présentent les pratiques courantes avec des chaînes.
 
-- [Comparez les chaînes](compare-strings.md).
+- [Comparer des chaînes](compare-strings.md).
 - [Modifier le contenu d’une chaîne](modify-string-contents.md).
 - [Déterminer si une chaîne représente un nombre](../programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md).
 - [Utiliser `String.Split` pour séparer les chaînes](parse-strings-using-split.md).
@@ -63,7 +63,7 @@ Vous aurez peut-être besoin de convertir un objet en un autre type.
 - [Convertir une chaîne en `DateTime`](../../standard/base-types/parsing-datetime.md).
 - [Convertir un tableau d’octets en int](../programming-guide/types/how-to-convert-a-byte-array-to-an-int.md).
 - [Convertir une chaîne en nombre ](../programming-guide/types/how-to-convert-a-string-to-a-number.md).
-- [Utiliser les critères spéciaux et les opérateurs `as` et `is` pour caster sans risque en un autre type](../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md).
+- [Utiliser les critères spéciaux et les opérateurs `as` et `is` pour caster sans risque en un autre type](safely-cast-using-pattern-matching-is-and-as-operators.md).
 - [Définir des conversions de type personnalisé](../language-reference/operators/user-defined-conversion-operators.md).
 - [Déterminer si un type est un type valeur nullable](../language-reference/builtin-types/nullable-value-types.md#how-to-identify-a-nullable-value-type).
 - [Convertir entre des types valeur nullable et non nullable](../language-reference/builtin-types/nullable-value-types.md#conversion-from-a-nullable-value-type-to-an-underlying-type).

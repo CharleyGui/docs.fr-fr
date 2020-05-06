@@ -1,12 +1,12 @@
 ---
 title: 'Procédure pas à pas : persistance d’un objet avec C#'
 ms.date: 04/26/2018
-ms.openlocfilehash: 85c5d1b711180eda5734d5860d996242c6bc89d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bbe239008629d687084af7e28a75fa68560ca0ab
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167568"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82796065"
 ---
 # <a name="walkthrough-persisting-an-object-using-c"></a>Procédure pas à pas : Rendre un objet persistant avec C\#
 
@@ -20,7 +20,7 @@ Dans cette procédure pas à pas, vous créez un objet `Loan` de base et vous st
 > [!IMPORTANT]
 > Cet exemple stocke les données dans un fichier au format binaire. Ces formats ne doivent pas être utilisés pour des données sensibles, telles que les mots de passe ou les informations relatives à la carte de crédit.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 - Pour générer et exécuter, installez le [SDK .NET Core](https://dotnet.microsoft.com/download).
 
@@ -102,4 +102,4 @@ Vous devez ensuite ajouter du code pour sérialiser la classe dans un fichier. A
 ## <a name="see-also"></a>Voir aussi
 
 - [Sérialisation (C#)](index.md)
-- [Guide de programmation C#](../..//index.md)
+- [Guide de programmation C#](../../index.md)

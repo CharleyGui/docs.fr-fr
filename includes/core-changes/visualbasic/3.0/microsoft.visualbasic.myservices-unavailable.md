@@ -6,29 +6,29 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "76116376"
 ---
-### <a name="types-in-microsoftvisualbasicmyservices-namespace-not-available"></a>Types dans Microsoft.VisualBasic.MyServices namespace non disponible
+### <a name="types-in-microsoftvisualbasicmyservices-namespace-not-available"></a>Types dans l’espace de noms Microsoft. VisualBasic. MyServices non disponibles
 
-Les types <xref:Microsoft.VisualBasic.MyServices?displayProperty=fullName> dans l’espace nom ne sont pas disponibles.
+Les types de l' <xref:Microsoft.VisualBasic.MyServices?displayProperty=fullName> espace de noms ne sont pas disponibles.
 
 #### <a name="version-introduced"></a>Version introduite
 
-.NET Core 3.0 Aperçu 8
+.NET Core 3,0 Preview 8
 
 #### <a name="change-description"></a>Description de la modification
 
-Les types <xref:Microsoft.VisualBasic.MyServices?displayProperty=fullName> dans l’espace de nom étaient disponibles dans certains .NET Core 3.0 Versions aperçu. Ils ne sont plus disponibles à partir de .NET Core 3.0 Aperçu 9.
+Les types de l' <xref:Microsoft.VisualBasic.MyServices?displayProperty=fullName> espace de noms étaient disponibles dans certaines versions préliminaires de .net Core 3,0. Ils ne sont plus disponibles à partir de .NET Core 3,0 Preview 9.
 
-Les types ont été supprimés pour éviter des dépendances inutiles à l’assemblage ou des changements de rupture dans les rejets ultérieurs.
+Les types ont été supprimés pour éviter les dépendances d’assembly inutiles ou les modifications importantes dans les versions ultérieures.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si votre code dépend de l’utilisation des types **Microsoft.VisualBasic.MyServices** et de leurs membres, il existe des types et membres correspondants dans la bibliothèque de classe .NET. Ce qui suit est une cartographie des types **Microsoft.VisualBasic.MyServices** à leurs types de bibliothèque de classe .NET équivalents:
+Si votre code dépend de l’utilisation des types **Microsoft. VisualBasic. MyServices** et de leurs membres, il existe des types et des membres correspondants dans la bibliothèque de classes .net. Voici un mappage des types **Microsoft. VisualBasic. MyServices** aux types de bibliothèques de classes .net équivalents :
 
-|Type Microsoft.VisualBasic.MyServices|Type de bibliothèque de classe .NET|
+|Type Microsoft. VisualBasic. MyServices|Type de bibliothèque de classes .NET|
 |--|--|
-|<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>|<xref:System.Windows.Clipboard?displayProperty=nameWithType>pour les applications <xref:System.Windows.Forms.Clipboard?displayProperty=nameWithType> WPF, pour les applications Windows Forms|
-|<xref:Microsoft.VisualBasic.MyServices.FileSystemProxy>|Types dans <xref:System.IO> l’espace nom|
-|<xref:Microsoft.VisualBasic.MyServices.RegistryProxy>|Types liés au <xref:Microsoft.Win32> registre dans l’espace nom|
+|<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>|<xref:System.Windows.Clipboard?displayProperty=nameWithType>pour les applications WPF <xref:System.Windows.Forms.Clipboard?displayProperty=nameWithType> , pour les applications Windows Forms|
+|<xref:Microsoft.VisualBasic.MyServices.FileSystemProxy>|Types dans l' <xref:System.IO> espace de noms|
+|<xref:Microsoft.VisualBasic.MyServices.RegistryProxy>|Types liés au registre dans l' <xref:Microsoft.Win32> espace de noms|
 |<xref:Microsoft.VisualBasic.MyServices.SpecialDirectoriesProxy>|<xref:System.Environment.GetFolderPath%2A?displayProperty=nameWithType>|
 
 #### <a name="category"></a>Category

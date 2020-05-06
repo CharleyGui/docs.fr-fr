@@ -40,7 +40,7 @@ Fournit une valeur pour n' [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sha
 |-|-|  
 |`key`|Clé pour la ressource demandée. Cette clé a été initialement assignée par la [directive x :Key](../../../desktop-wpf/xaml-services/xkey-directive.md) si une ressource a été créée dans le `key` balisage ou si elle <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> a été fournie en tant que paramètre lors de l’appel de si la ressource a été créée dans le code.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Un `DynamicResource` crée une expression temporaire pendant la compilation initiale et par conséquent, la recherche des ressources est différée jusqu’à ce que la valeur de ressource demandée soit réellement requise pour construire un objet. Cela peut se faire éventuellement après [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] le chargement de la page. La valeur de ressource est recherchée en fonction de la recherche de clé par rapport à tous les dictionnaires de ressources actifs en commençant par l’étendue de la page actuelle, et remplace l’expression d’espace réservé de la compilation.  
   
 > [!IMPORTANT]

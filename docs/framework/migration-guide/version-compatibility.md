@@ -1,5 +1,5 @@
 ---
-title: Compatibilité de version dans .NET Framework
+title: Compatibilité des versions dans .NET Framework
 ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
@@ -7,22 +7,22 @@ helpviewer_keywords:
 - .NET Framework, compatibility with earlier versions
 - .NET Framework versions, compatibility
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
-ms.openlocfilehash: 2e268753bf5941e9d28ee2bdd82ce77016ddf01a
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: c3bc92b89a46fc947b4d7e67644930374eeab2e4
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102981"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82796000"
 ---
 # <a name="version-compatibility"></a>Compatibilité des versions
 
-La compatibilité descendante signifie qu'une application développée pour une version particulière d'une plateforme s'exécutera sur les versions ultérieures de cette plateforme. .NET Framework tente de maximiser la compatibilité vers l’arrière: Le code source écrit pour une version de .NET Framework devrait compiler sur les versions ultérieures de .NET Framework, et les binaires qui s’exécutent sur une version de .NET Framework devraient se comporter de façon identique sur les versions ultérieures de .NET Framework.
+La compatibilité descendante signifie qu'une application développée pour une version particulière d'une plateforme s'exécutera sur les versions ultérieures de cette plateforme. .NET Framework tente d’optimiser la compatibilité descendante : le code source écrit pour une version de .NET Framework doit compiler sur les versions ultérieures de .NET Framework, et les fichiers binaires qui s’exécutent sur une version de .NET Framework doivent se comporter de la même manière sur les versions ultérieures de .NET Framework.
 
 ## <a name="version-compatibility-for-apps"></a><a name="Apps"></a> Compatibilité des versions pour les applications
 
-Par défaut, une application s’exécute sur la version de .NET Framework pour laquelle elle a été conçue. Si cette version n’est pas présente et que le fichier de configuration de l’application ne définit pas les versions prises en charge, une erreur d’initialisation du .NET Framework peut se produire. Dans ce cas, la tentative d'exécution de l'application échouera.
+Par défaut, une application s’exécute sur la version de .NET Framework pour laquelle elle a été générée. Si cette version n’est pas présente et que le fichier de configuration de l’application ne définit pas les versions prises en charge, une erreur d’initialisation du .NET Framework peut se produire. Dans ce cas, la tentative d'exécution de l'application échouera.
 
-Pour définir les versions spécifiques sur lesquelles votre [ \<](../configure-apps/file-schema/startup/supportedruntime-element.md) application s’exécute, ajoutez un ou plusieurs éléments>supportruntime au fichier de configuration de votre application. Chaque élément `<supportedRuntime>` fournit une liste des versions prises en charge de l'exécution ; la première spécifie la version préférée et la dernière correspond à la version la moins préférée.
+Pour définir les versions spécifiques sur lesquelles votre application s’exécute, ajoutez un ou [ \<](../configure-apps/file-schema/startup/supportedruntime-element.md) plusieurs éléments de>supportedRuntime au fichier de configuration de votre application. Chaque élément `<supportedRuntime>` fournit une liste des versions prises en charge de l'exécution ; la première spécifie la version préférée et la dernière correspond à la version la moins préférée.
 
 ```xml
 <configuration>
@@ -33,7 +33,7 @@ Pour définir les versions spécifiques sur lesquelles votre [ \<](../configure-
 </configuration>
 ```
 
-Pour plus d’informations, consultez [Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou 4.x](../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md).
+Pour plus d’informations, consultez [Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou 4.x](how-to-configure-an-app-to-support-net-framework-4-or-4-5.md).
 
 ## <a name="version-compatibility-for-components"></a>Compatibilité des versions pour les composants
 
@@ -49,9 +49,9 @@ Dans la pratique, cette compatibilité peut être arrêtée par des modification
 
 Si votre application ou composant ne fonctionne pas comme prévu sur .NET Framework 4.5 (avec ses versions intermédiaires, NET Framework 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2 ou 4.8), utilisez les check-lists suivantes :
 
-- Si votre application a été développée pour s’exécuter sur n’importe quelle version du cadre .NET en commençant par le cadre .NET 4.0, voir [la compatibilité d’application](application-compatibility.md) pour générer des listes de modifications entre votre version cadre .NET ciblée et la version sur laquelle votre application est en cours d’exécution.
+- Si votre application a été développée pour s’exécuter sur n’importe quelle version de la .NET Framework à partir de la .NET Framework 4,0, consultez [compatibilité des applications](application-compatibility.md) pour générer des listes de modifications entre votre version de .NET Framework ciblée et la version sur laquelle votre application s’exécute.
 
-- S’il s’agit d’une application .NET Framework 3.5, consultez également [Problèmes de migration de .NET Framework 4](../migration-guide/net-framework-4-migration-issues.md).
+- S’il s’agit d’une application .NET Framework 3.5, consultez également [Problèmes de migration de .NET Framework 4](net-framework-4-migration-issues.md).
 
 - S’il s’agit d’une application .NET Framework 2.0, consultez également [Modifications dans .NET Framework 3.5 SP1](https://docs.microsoft.com/previous-versions/dotnet/articles/dd310284(v=msdn.10)).
 
@@ -65,12 +65,12 @@ Si votre application ou composant ne fonctionne pas comme prévu sur .NET Framew
 
 ## <a name="side-by-side-execution"></a>Exécution côte à côte
 
-Si vous ne pouvez pas trouver une solution de contournement appropriée pour votre problème, rappelez-vous que .NET Framework 4.5 (ou l’une de ses versions ponctuelles) fonctionne côte à côte avec les versions 1.1, 2.0, et 3.5, et est une mise à jour en place qui remplace la version 4. Pour les applications qui ciblent les versions 1.1, 2.0 et 3.5, vous pouvez installer la version appropriée de .NET Framework sur la machine cible pour exécuter l’application dans son meilleur environnement. Pour plus d’informations sur l’exécution côte à côte, consultez [Exécution côte à côte](../deployment/side-by-side-execution.md).
+Si vous ne trouvez pas de solution de contournement appropriée pour votre problème, n’oubliez pas que .NET Framework 4,5 (ou l’une de ses versions intermédiaires) s’exécute côte à côte avec les versions 1,1, 2,0 et 3,5, et qu’il s’agit d’une mise à jour sur place qui remplace la version 4. Pour les applications qui ciblent les versions 1,1, 2,0 et 3,5, vous pouvez installer la version appropriée de .NET Framework sur l’ordinateur cible pour exécuter l’application dans son environnement optimal. Pour plus d’informations sur l’exécution côte à côte, consultez [Exécution côte à côte](../deployment/side-by-side-execution.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Nouveautés](../whats-new/index.md)
 - [Éléments obsolètes dans la bibliothèque de classes](../whats-new/whats-obsolete.md)
-- [Compatibilité de l’application](../migration-guide/application-compatibility.md)
-- [.NET Politique de soutien officiel du Cadre](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework)
-- [.NET Cadre 4 Questions migratoires](../migration-guide/net-framework-4-migration-issues.md)
+- [Compatibilité des applications](application-compatibility.md)
+- [.NET Framework la stratégie de support officielle](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework)
+- [.NET Framework 4 problèmes de migration](net-framework-4-migration-issues.md)

@@ -6,15 +6,15 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394039"
 ---
-### <a name="caching-responsecaching-pubternal-types-changed-to-internal"></a>Caching: ResponseCaching "pubternal" types changés à l’interne
+### <a name="caching-responsecaching-pubternal-types-changed-to-internal"></a>Mise en cache : les types « pubternal » ResponseCaching sont devenus internes
 
-Dans ASP.NET Core 3.0, les types de `ResponseCaching` "pubternal" ont été changés en `internal`.
+Dans ASP.NET Core 3,0, les types « pubternal » `ResponseCaching` dans ont été remplacés `internal`par.
 
-En outre, les `IResponseCachingPolicyProvider` implémentations par défaut `IResponseCachingKeyProvider` et `AddResponseCaching` ne sont plus ajoutées aux services dans le cadre de la méthode.
+En outre, les implémentations par `IResponseCachingPolicyProvider` défaut `IResponseCachingKeyProvider` de et de ne sont plus ajoutées aux services dans `AddResponseCaching` le cadre de la méthode.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans ASP.NET Core, les types "pubternal" `public` sont déclarés comme mais `.Internal`résident dans un namespace suffixed avec . Bien que ces types soient publics, ils n’ont pas de politique de soutien et sont sujets à des changements de rupture. Malheureusement, l’utilisation accidentelle de ces types a été courante, ce qui a entraîné la rupture des changements à ces projets et la limitation de la capacité de maintenir le cadre.
+Dans ASP.NET Core, les types « pubternal » sont déclarés comme `public` , mais résident dans un espace de `.Internal`noms avec le suffixe. Bien que ces types soient publics, ils n’ont aucune stratégie de prise en charge et sont soumis à des modifications avec rupture. Malheureusement, l’utilisation accidentelle de ces types est courante, entraînant des modifications avec rupture de ces projets et limitant la capacité à gérer l’infrastructure.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -22,19 +22,19 @@ Dans ASP.NET Core, les types "pubternal" `public` sont déclarés comme mais `.I
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Ces types étaient visibles publiquement, mais non pris en compte.
+Ces types étaient visibles publiquement, mais ne sont pas pris en charge.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Ces types `internal`sont maintenant .
+Ces types sont maintenant `internal`.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-La `internal` portée reflète mieux la politique non étayée.
+L' `internal` étendue reflète mieux la stratégie non prise en charge.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Copiez les types qui sont utilisés par votre application ou votre bibliothèque.
+Copiez les types utilisés par votre application ou bibliothèque.
 
 #### <a name="category"></a>Category
 

@@ -6,9 +6,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75902062"
 ---
-### <a name="signalr-handshakeprotocolsuccesshandshakedata-replaced"></a>SignalR: HandshakeProtocol.SuccessHandshakeData remplacé
+### <a name="signalr-handshakeprotocolsuccesshandshakedata-replaced"></a>Signalr : HandshakeProtocol. SuccessHandshakeData remplacé
 
-Le champ [HandshakeProtocol.SuccessHandshakeData](https://github.com/dotnet/aspnetcore/blob/c5b2bc0df2a0027832bf7d01dfb19ca39cd08ae6/src/SignalR/common/SignalR.Common/src/Protocol/HandshakeProtocol.cs#L27) a été enlevé et remplacé par une méthode d’aide `IHubProtocol`qui génère une réponse de poignée de main réussie étant donné un spécifique .
+Le champ [HandshakeProtocol. SuccessHandshakeData](https://github.com/dotnet/aspnetcore/blob/c5b2bc0df2a0027832bf7d01dfb19ca39cd08ae6/src/SignalR/common/SignalR.Common/src/Protocol/HandshakeProtocol.cs#L27) a été supprimé et remplacé par une méthode d’assistance qui génère une réponse de négociation réussie en fonction `IHubProtocol`d’un spécifique.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -16,19 +16,19 @@ Le champ [HandshakeProtocol.SuccessHandshakeData](https://github.com/dotnet/aspn
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-`HandshakeProtocol.SuccessHandshakeData`était `public static ReadOnlyMemory<byte>` un champ.
+`HandshakeProtocol.SuccessHandshakeData`était un `public static ReadOnlyMemory<byte>` champ.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-`HandshakeProtocol.SuccessHandshakeData`a été remplacé `static` `GetSuccessfulHandshake(IHubProtocol protocol)` par une `ReadOnlyMemory<byte>` méthode qui renvoie un basé sur le protocole spécifié.
+`HandshakeProtocol.SuccessHandshakeData`a été remplacé par une `static` `GetSuccessfulHandshake(IHubProtocol protocol)` méthode qui retourne un `ReadOnlyMemory<byte>` basé sur le protocole spécifié.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-D’autres champs ont été ajoutés à la _réponse_ de poignée de main qui ne sont pas constantes et changent selon le protocole choisi.
+Des champs supplémentaires ont été ajoutés à la _réponse_ de négociation qui sont non constantes et changent selon le protocole sélectionné.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Aucun. Ce type n’est pas conçu pour une utilisation à partir du code utilisateur. C’est, `public`de sorte qu’il peut être partagé entre le serveur SignalR et le client. Il peut également être utilisé par les clients SignalR client écrit en .NET. **Les utilisateurs** de SignalR ne devraient pas être affectés par ce changement.
+Aucun. Ce type n’est pas conçu pour être utilisé à partir du code utilisateur. `public`Il peut donc être partagé entre le serveur signalr et le client. Il peut également être utilisé par les clients Signalr de clients écrits en .NET. **Les utilisateurs** de signalr ne doivent pas être affectés par cette modification.
 
 #### <a name="category"></a>Category
 

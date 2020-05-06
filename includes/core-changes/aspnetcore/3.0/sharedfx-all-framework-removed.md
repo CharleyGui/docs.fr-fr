@@ -6,9 +6,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394433"
 ---
-### <a name="shared-framework-removed-microsoftaspnetcoreall"></a>Cadre partagé: Supprimé Microsoft.AspNetCore.All
+### <a name="shared-framework-removed-microsoftaspnetcoreall"></a>Framework partagé : suppression de Microsoft. AspNetCore. All
 
-À partir de ASP.NET Core 3.0, le `Microsoft.AspNetCore.All` métapackage et le cadre partagé correspondant `Microsoft.AspNetCore.All` ne sont plus produits. Ce forfait est disponible en ASP.NET Core 2.2 et continuera de recevoir des mises à jour d’entretien dans ASP.NET Core 2.1.
+À partir de ASP.NET Core 3,0, `Microsoft.AspNetCore.All` le reconditionnement et l' `Microsoft.AspNetCore.All` infrastructure partagée correspondante ne sont plus produits. Ce package est disponible dans ASP.NET Core 2,2 et continuera à recevoir des mises à jour de maintenance dans ASP.NET Core 2,1.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -16,19 +16,19 @@ ms.locfileid: "72394433"
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Les applications `Microsoft.AspNetCore.All` pourraient utiliser le `Microsoft.AspNetCore.All` métapackage pour cibler le cadre partagé sur .NET Core.
+Les applications peuvent utiliser `Microsoft.AspNetCore.All` le package pour cibler le `Microsoft.AspNetCore.All` Framework partagé sur .net core.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-.NET Core 3.0 n’inclut pas de `Microsoft.AspNetCore.All` cadre commun.
+.NET Core 3,0 n’inclut pas `Microsoft.AspNetCore.All` de Framework partagé.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Le `Microsoft.AspNetCore.All` métapackage comprenait un grand nombre de dépendances externes.
+Le `Microsoft.AspNetCore.All` reconditionnement incluait un grand nombre de dépendances externes.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Migrez votre `Microsoft.AspNetCore.App` projet pour utiliser le cadre. Les composants qui étaient `Microsoft.AspNetCore.All` auparavant disponibles sont toujours disponibles sur NuGet. Ces composants sont maintenant déployés avec votre application au lieu d’être inclus dans le cadre partagé.
+Migrez votre projet pour utiliser `Microsoft.AspNetCore.App` le Framework. Les composants qui étaient précédemment disponibles `Microsoft.AspNetCore.All` dans sont toujours disponibles sur NuGet. Ces composants sont maintenant déployés avec votre application au lieu d’être inclus dans le Framework partagé.
 
 #### <a name="category"></a>Category
 
@@ -36,7 +36,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-None
+Aucun
 
 <!-- 
 

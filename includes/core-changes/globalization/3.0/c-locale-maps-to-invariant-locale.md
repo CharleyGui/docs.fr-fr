@@ -6,15 +6,15 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "74567781"
 ---
-### <a name="c-locale-maps-to-the-invariant-locale"></a>Cartes locales "C" à l’invariant local
+### <a name="c-locale-maps-to-the-invariant-locale"></a>Les paramètres régionaux « C » sont mappés aux paramètres régionaux invariants
 
-.NET Core 2.2 et les versions antérieures dépendent du comportement par défaut de l’USI, qui cartographie le lieu "C" au en_US_POSIX local. Le en_US_POSIX local a un comportement de collation indésirable, car il ne prend pas en charge les comparaisons de chaînes insensibles au cas. Parce que certaines distributions Linux définir le "C" local comme le lieu par défaut, les utilisateurs ont connu un comportement inattendu.
+.NET Core 2,2 et les versions antérieures dépendent du comportement ICU par défaut, qui mappe les paramètres régionaux « C » aux paramètres régionaux de en_US_POSIX. La en_US_POSIX paramètres régionaux a un comportement de classement indésirable, car elle ne prend pas en charge les comparaisons de chaînes ne respectant pas la casse. Étant donné que certaines distributions Linux définissent les paramètres régionaux « C » comme paramètres régionaux par défaut, les utilisateurs rencontraient un comportement inattendu.
 
 #### <a name="change-description"></a>Description de la modification
 
-En commençant par .NET Core 3.0, la cartographie locale "C" a changé pour utiliser le local invariant au lieu de en_US_POSIX. Le local "C" à la cartographie invariante est également appliqué à Windows pour la cohérence.
+À compter de .NET Core 3,0, le mappage de paramètres régionaux « C » a changé pour utiliser les paramètres régionaux invariants au lieu de en_US_POSIX. Les paramètres régionaux « C » du mappage invariant sont également appliqués à Windows pour des fins de cohérence.
 
-La cartographie du « C » pour en_US_POSIX culture a causé la confusion des clients, parce que en_US_POSIX ne prend pas en charge les opérations insensibles de tri/de chaîne de recherche de cas. Parce que le "C" local est utilisé comme un lieu par défaut dans certains des distros Linux, les clients ont connu ce comportement indésirable sur ces systèmes d’exploitation.
+Le mappage de « C » à la culture en_US_POSIX a entraîné la confusion chez les clients, car en_US_POSIX ne prend pas en charge les opérations de chaîne de tri/recherche sans respect de la casse. Étant donné que les paramètres régionaux « C » sont utilisés comme paramètres régionaux par défaut dans certains distributions Linux, les clients ont rencontré ce comportement indésirable sur ces systèmes d’exploitation.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -22,7 +22,7 @@ La cartographie du « C » pour en_US_POSIX culture a causé la confusion des cl
 
 ### <a name="recommended-action"></a>Action recommandée
 
-Rien de plus spécifique que la prise de conscience de ce changement. Ce changement n’affecte que les applications qui utilisent la cartographie locale « C ».
+Rien de plus spécifique que la connaissance de cette modification. Cette modification affecte uniquement les applications qui utilisent le mappage de paramètres régionaux « C ».
 
 ### <a name="category"></a>Category
 
@@ -30,7 +30,7 @@ Globalisation
 
 ### <a name="affected-apis"></a>API affectées
 
-Toutes les API de collation et de culture sont affectées par ce changement.
+Toutes les API de classement et de culture sont affectées par cette modification.
 
 <!--
 

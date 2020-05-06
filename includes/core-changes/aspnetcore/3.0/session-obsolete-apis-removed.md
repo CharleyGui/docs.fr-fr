@@ -6,21 +6,21 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "73198422"
 ---
-### <a name="session-state-obsolete-apis-removed"></a>État de la session : Les API obsolètes supprimées
+### <a name="session-state-obsolete-apis-removed"></a>État de session : API obsolètes supprimées
 
-Les API obsolètes pour configurer les cookies de session ont été supprimés. Pour plus d’informations, voir [aspnet/Annonces 257](https://github.com/aspnet/Announcements/issues/257).
+Les API obsolètes pour la configuration des cookies de session ont été supprimées. Pour plus d’informations, consultez [ASPNET/announcements # 257](https://github.com/aspnet/Announcements/issues/257).
 
 #### <a name="version-introduced"></a>Version introduite
 
 3.0
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Ce changement applique la cohérence entre les API pour configurer les fonctionnalités qui utilisent des cookies.
+Cette modification applique la cohérence entre les API pour la configuration des fonctionnalités qui utilisent des cookies.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Migrer l’utilisation des API supprimées à leurs nouveaux remplacements. Prenons l’exemple suivant dans `Startup.ConfigureServices` :
+Migrez l’utilisation des API supprimées vers leurs remplacements plus récents. Prenons l’exemple suivant dans `Startup.ConfigureServices` :
 
 ```csharp
 public void ConfigureServices(ServiceCollection services)
