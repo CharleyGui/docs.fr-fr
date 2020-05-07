@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: cc54664ea8ad61005de3f3fae7407946d1c861b2
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: d623fe862eaf5902fd89d0e512dd07f73a03246f
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793843"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860817"
 ---
 # <a name="dacpmethoddescdata-structure"></a>DacpMethodDescData, structure
 
@@ -52,9 +52,9 @@ struct DacpMethodDescData
 };
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Membres
 
-| Member                       | Description                                                                                     |
+| Membre                       | Description                                                                                     |
 | ---------------------------- | ----------------------------------------------------------------------------------------------- |
 | `bHasNativeCode`             | Indique si le runtime a du code natif disponible pour l’instanciation donnée de la méthode. |
 | `bIsDynamic`                 | Indique si la méthode est générée dynamiquement via la génération de code léger.           |
@@ -73,18 +73,18 @@ struct DacpMethodDescData
 | `rejitDataRequested`         | Informations de ReJIT pour l’adresse Native demandée.                                             |
 | `cJittedRejitVersions`       | Nombre de fois que la méthode a été rejitted par l’instrumentation.                           |
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 Cette structure se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, définissez la structure comme indiqué ci-dessus.
 
-## <a name="requirements"></a>Configuration requise pour
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
 **En-tête :** None  
 **Bibliothèque :** None  
-**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Débogage](index.md)
 - [Structures de débogage](debugging-structures.md)
-- [Types de données communs](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md)
+- [Types de données courants](../common-data-types-unmanaged-api-reference.md)

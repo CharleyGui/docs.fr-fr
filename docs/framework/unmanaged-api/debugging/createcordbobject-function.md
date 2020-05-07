@@ -16,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: b259821d-4fa7-464d-85cf-304dfffc8089
 topic_type:
 - apiref
-ms.openlocfilehash: 2716adcc8c79c8003202561ea2011c2469a6bc5c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 340d2de09562ea9b767203a7fa839cdc6b729b3b
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179235"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860890"
 ---
 # <a name="createcordbobject-function"></a>Fonction CreateCordbObject
-Crée une interface de débogage ([ICorDebug](icordebug-interface.md)) qui fournit des fonctionnalités pour instantanér une session de débogage gérée sur un processus à distance.  
+Crée une interface de débogueur[ICorDebug](icordebug-interface.md)qui fournit des fonctionnalités pour instancier une session de débogage managée sur un processus distant.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,7 +40,7 @@ HRESULT CordbCreateObject (
  [in] Version de débogage du processus cible. Ce paramètre doit être CorDebugVersion_2_0 pour le débogage distant.  
   
  `ppCordb`  
- [out] Pointeur à un pointeur à un objet qui sera jeté à une interface [ICorDebug](icordebug-interface.md) et retourné.  
+ à Pointeur vers un pointeur vers un objet qui sera casté en interface [ICorDebug](icordebug-interface.md) et retourné.  
   
 ## <a name="return-value"></a>Valeur de retour  
  S_OK  
@@ -56,13 +56,13 @@ HRESULT CordbCreateObject (
  Autres échecs.  
   
 ## <a name="remarks"></a>Notes   
- [L’interface ICorDebug](icordebug-interface.md) qui `ppCordb` est retournée est l’interface de débogage de haut niveau pour tous les services de débogage gérés.  
+ L’interface [ICorDebug](icordebug-interface.md) qui est retournée `ppCordb` dans est l’interface de débogage de niveau supérieur pour tous les services de débogage managés.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** CoreClrRemoteDebuggingInterfaces.h  
+ **En-tête :** CoreClrRemoteDebuggingInterfaces. h  
   
- **Bibliothèque:** mscordbi_macx86.dll  
+ **Bibliothèque :** mscordbi_macx86. dll  
   
- **Versions cadre .NET:** 3.5 SP1
+ **Versions de .NET Framework :** 3,5 SP1

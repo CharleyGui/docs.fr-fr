@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 21ceed9e-62b2-4024-b027-6d095109955a
 topic_type:
 - apiref
-ms.openlocfilehash: 824be4a401d265575b48f66045dd944d521e64a4
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: c50fe09648793ba7340960654811ff31187269d8
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789151"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860789"
 ---
 # <a name="_efn_getmanagedexcepstack-function"></a>\_EFN\_fonction GetManagedExcepStack
 Retourne une version de chaîne de la trace de pile contenue dans une adresse d'objet exception managée donnée.  
@@ -35,7 +35,7 @@ HRESULT _EFN_GetManagedExcepStack(
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `Client`  
  dans Client en cours de débogage.  
   
@@ -48,16 +48,16 @@ HRESULT _EFN_GetManagedExcepStack(
  `cbString`  
  à Nombre de caractères disponibles dans la mémoire tampon de chaîne.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  S’il n’existe aucun code managé sur le thread actuellement en contexte, la fonction retourne HRESULT SOS_E_NOMANAGEDCODE avec une valeur d’installation de 0xa0 et un code d’erreur 0x1000.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** SOS_Stacktrace. h  
   
- **Version de .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Version de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions statiques globales de débogage](debugging-global-static-functions.md)
+- [Fonctions statiques globales du débogage](debugging-global-static-functions.md)

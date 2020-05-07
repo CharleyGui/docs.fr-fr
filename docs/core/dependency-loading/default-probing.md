@@ -1,75 +1,77 @@
 ---
-title: Sondage par défaut - .NET Core
-description: Aperçu de la logique de sondage .NET Core’s System.Runtime.Loader.AssemblyLoadContext.Default pour localiser les dépendances.
+title: Détection par défaut-.NET Core
+description: Vue d’ensemble de la logique de sonde System. Runtime. Loader. AssemblyLoadContext. default de .NET Core pour localiser les dépendances.
 ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
-ms.openlocfilehash: 500ee6ee863b1f311970a9e718936f57f7d4efd6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1e347c716c2d739a1bd03be056b57fdbda6c678f
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399090"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82859514"
 ---
-# <a name="default-probing"></a>Sondage par défaut
+# <a name="default-probing"></a>Détection par défaut
 
-L’exemple <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> est responsable de la localisation des dépendances d’une assemblée. Cet article décrit <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> la logique de sonder de l’instance.
+L' <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> instance est chargée de localiser les dépendances d’un assembly. Cet article décrit la <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> logique de sondage de l’instance.
 
-## <a name="host-configured-probing-properties"></a>Propriétés de sondage configurées par l’hôte
+## <a name="host-configured-probing-properties"></a>Propriétés de détection de l’hôte configurées
 
-Lorsque le temps d’exécution est commencé, l’hôte de <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> temps d’exécution fournit un ensemble de propriétés de sondage nommées qui configurent les trajectoires de sonde.
+Lorsque le runtime est démarré, l’hôte de Runtime fournit un ensemble de propriétés de détection nommées <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> qui configurent les chemins d’accès des sondes.
 
-Chaque propriété de sondage est facultative. Si elle est présente, chaque propriété est une valeur de chaîne qui contient une liste délimitée de chemins absolus. Le délimitant est ';' sur Windows et ':' sur toutes les autres plates-formes.
+Chaque propriété de détection est facultative. Si elle est présente, chaque propriété est une valeur de chaîne qui contient une liste délimitée de chemins absolus. Le délimiteur est « ; » sur Windows et «  : » sur toutes les autres plateformes.
 
 |Nom de la propriété                 |Description  |
 |------------------------------|---------|
-|`TRUSTED_PLATFORM_ASSEMBLIES`   | Liste des trajectoires de fichiers de plate-forme et d’assemblage d’applications. |
-|`PLATFORM_RESOURCE_ROOTS`       | Liste des parcours d’annuaires pour rechercher des assemblages de ressources par satellite. |
-|`NATIVE_DLL_SEARCH_DIRECTORIES` | Liste des parcours d’annuaires à la recherche de bibliothèques (autochtones) non gérantes.        |
-|`APP_PATHS`                     | Liste des parcours d’annuaires pour rechercher des assemblages gérés. |
-|`APP_NI_PATHS`                  | Liste des parcours de répertoire pour rechercher des images natives d’assemblages gérés. |
+|`TRUSTED_PLATFORM_ASSEMBLIES`   | Liste des chemins d’accès aux fichiers d’assembly de plateforme et d’application. |
+|`PLATFORM_RESOURCE_ROOTS`       | Liste des chemins d’accès aux répertoires dans lesquels rechercher les assemblys de ressources satellites. |
+|`NATIVE_DLL_SEARCH_DIRECTORIES` | Liste des chemins d’accès aux répertoires dans lesquels rechercher les bibliothèques non managées (natives).        |
+|`APP_PATHS`                     | Liste des chemins d’accès aux répertoires dans lesquels rechercher des assemblys managés. |
+|`APP_NI_PATHS`                  | Liste des chemins d’accès aux répertoires dans lesquels rechercher les images natives des assemblys managés. |
 
-### <a name="how-are-the-properties-populated"></a>Comment les propriétés sont-elles peuplées?
+### <a name="how-are-the-properties-populated"></a>Comment les propriétés sont-elles renseignées ?
 
-Il existe deux scénarios principaux pour peupler les propriétés selon que le * \<fichier myapp>.deps.json* existe.
+Il existe deux principaux scénarios pour remplir les propriétés selon que le * \<fichier MyApp>. DEPS. JSON* existe ou non.
 
-- Lorsque le * \*fichier .deps.json* est présent, il est analysé pour remplir les propriétés de sondage.
-- Lorsque le * \*fichier .deps.json* n’est pas présent, l’annuaire de l’application est supposé contenir toutes les dépendances. Le contenu du répertoire est utilisé pour peupler les propriétés de sondage.
+- Quand le * \*fichier. DEPS. JSON* est présent, il est analysé pour remplir les propriétés de détection.
+- Quand le * \*fichier. DEPS. JSON* n’est pas présent, le répertoire de l’application est supposé contenir toutes les dépendances. Le contenu du répertoire est utilisé pour remplir les propriétés de détection.
 
-En outre, les * \*fichiers .deps.json* pour tous les cadres référencés sont analysés de la même façon.
+En outre, les * \*fichiers. DEPS. JSON* pour tous les frameworks référencés sont analysés de la même façon.
 
-Enfin, la `ADDITIONAL_DEPS` variable de l’environnement peut être utilisée pour ajouter des dépendances supplémentaires.
+Enfin, la variable `ADDITIONAL_DEPS` d’environnement peut être utilisée pour ajouter des dépendances supplémentaires.
 
-### <a name="how-do-i-see-the-probing-properties-from-managed-code"></a>Comment puis-je voir les propriétés de sondage à partir de code géré?
+Les `APP_PATHS` propriétés `APP_NI_PATHS` et ne sont pas remplies par défaut et sont omises pour la plupart des applications.
 
-Chaque propriété est disponible <xref:System.AppContext.GetData(System.String)?displayProperty=nameWithType> en appelant la fonction avec le nom de propriété de la table ci-dessus.
+### <a name="how-do-i-see-the-probing-properties-from-managed-code"></a>Comment faire consultez les propriétés de détection à partir du code managé ?
 
-### <a name="how-do-i-debug-the-probing-properties-construction"></a>Comment puis-je déboiser la construction des propriétés de sondage?
+Chaque propriété est disponible en appelant la <xref:System.AppContext.GetData(System.String)?displayProperty=nameWithType> fonction avec le nom de la propriété à partir du tableau ci-dessus.
 
-L’hôte de temps d’exécution .NET Core produira des messages de trace utiles lorsque certaines variables de l’environnement sont activées :
+### <a name="how-do-i-debug-the-probing-properties-construction"></a>Comment faire déboguer la construction des propriétés de détection ?
+
+L’hôte du Runtime .NET Core génère des messages de trace utiles lorsque certaines variables d’environnement sont activées :
 
 |Variable d’environnement        |Description  |
 |----------------------------|---------|
-|`COREHOST_TRACE=1`          |Permet le traçage.|
-|`COREHOST_TRACEFILE=<path>` |Traces à un chemin de `stderr`fichier au lieu de la valeur par défaut .|
-|`COREHOST_TRACE_VERBOSITY`  |Définit la verbosité de 1 (plus bas) à 4 (le plus élevé).|
+|`COREHOST_TRACE=1`          |Active le suivi.|
+|`COREHOST_TRACEFILE=<path>` |Effectue le suivi vers un chemin d’accès de `stderr`fichier au lieu de la valeur par défaut.|
+|`COREHOST_TRACE_VERBOSITY`  |Définit les commentaires de 1 (le plus bas) à 4 (le plus élevé).|
 
-## <a name="managed-assembly-default-probing"></a>Sondage par défaut d’assemblage géré
+## <a name="managed-assembly-default-probing"></a>Détection par défaut de l’assembly managé
 
-Lorsque vous sonder pour <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> localiser un assemblage géré, les regards dans l’ordre à:
+Lors de la détection pour localiser un assembly managé <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> , le se présente dans l’ordre suivant :
 
-- Fichiers correspondant <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> `TRUSTED_PLATFORM_ASSEMBLIES` à l’in (après la suppression des extensions de fichiers).
-- Fichiers d’assemblage `APP_NI_PATHS` d’images autochtones avec des extensions de fichiers communes.
-- Fichiers d’assemblage `APP_PATHS` avec extensions de fichiers communes.
+- Fichiers correspondant à <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> la `TRUSTED_PLATFORM_ASSEMBLIES` dans (après la suppression des extensions de fichier).
+- Fichiers d’assembly d' `APP_NI_PATHS` images natives dans avec des extensions de fichier courantes.
+- Fichiers d’assembly dans `APP_PATHS` avec des extensions de fichier courantes.
 
-## <a name="satellite-resource-assembly-probing"></a>Sondage d’assemblage par satellite (ressources)
+## <a name="satellite-resource-assembly-probing"></a>Détection d’assembly satellite (ressource)
 
-Pour trouver un assemblage satellite pour une culture spécifique, construisez un ensemble de pistes de fichiers.
+Pour rechercher un assembly satellite pour une culture spécifique, construisez un jeu de chemins d’accès aux fichiers.
 
-Pour chaque `PLATFORM_RESOURCE_ROOTS` chemin `APP_PATHS`dans et <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> puis , ajouter la chaîne, un séparateur de répertoire, la <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> chaîne, et l’extension '.dll'.
+Pour chaque chemin d' `PLATFORM_RESOURCE_ROOTS` accès dans `APP_PATHS`, puis, <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> ajoutez la chaîne, un séparateur de <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> répertoires, la chaîne et l’extension'. dll'.
 
-S’il existe un fichier correspondant, essayez de le charger et de le retourner.
+Si un fichier correspondant existe, essayez de le charger et de le retourner.
 
-## <a name="unmanaged-native-library-probing"></a>Une bibliothèque non gestion (indigène) sondage
+## <a name="unmanaged-native-library-probing"></a>Détection de bibliothèque non managée (Native)
 
-Lorsque vous sondez pour localiser une `NATIVE_DLL_SEARCH_DIRECTORIES` bibliothèque non gémanie, les personnes sont recherchées à la recherche d’une bibliothèque assortie.
+Lors de la détection de la localisation d’une bibliothèque non managée, la `NATIVE_DLL_SEARCH_DIRECTORIES` recherche d’une bibliothèque correspondante est effectuée.

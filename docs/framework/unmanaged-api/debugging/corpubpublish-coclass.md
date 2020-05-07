@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 191015da-f54a-4bac-a28a-1de7ab3c3428
 topic_type:
 - apiref
-ms.openlocfilehash: 24d245bbb0f9ac86e321491e0af3b66b1e011baa
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: e33029e8244fdfa180a79aa4a5b05b07f594d928
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789217"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860911"
 ---
 # <a name="corpubpublish-coclass"></a>CorpubPublish (coclasse)
 Fournit les interfaces pour la publication d'informations sur les domaines d'application et les processus.  
@@ -46,17 +46,17 @@ coclass CorpubPublish {
 |[ICorPublishProcess, interface](icorpublishprocess-interface.md)|Représente un processus qui s’exécute sur un ordinateur.|  
 |[ICorPublishProcessEnum, interface](icorpublishprocessenum-interface.md)|Fournit des méthodes qui parcourent une collection de processus en cours d’exécution sur un ordinateur.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Un scénario de publication classique implique un développeur qui souhaite déboguer du code managé qui s’exécute sur un ordinateur au sein d’un domaine d’application. L’environnement d’hébergement peut exécuter plusieurs domaines d’application au sein d’un processus. Le développeur souhaite utiliser une interface graphique utilisateur ou d’autres moyens pour répertorier tous les processus en cours d’exécution sur l’ordinateur et choisir un processus spécifique. La liste doit inclure tous les domaines d’application dans les processus qui exécutent du code managé. Le développeur peut ensuite identifier le domaine d’application spécifique et attacher un débogueur à ce domaine.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorPub. idl  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions de .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**  [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

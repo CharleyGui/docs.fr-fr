@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e08b68dfbb28425765fd4b34ae1e82168bbaf78b
-ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
+ms.openlocfilehash: f9eac406b96e682793b784ca76593885d95365dd
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82624850"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82844549"
 ---
 
 > [!div class="op_single_selector"]
@@ -13,6 +13,7 @@ ms.locfileid: "82624850"
 > - [Ubuntu 19,04-x64](../linux-package-manager-ubuntu-1904.md)
 > - [Ubuntu 18,04-x64](../linux-package-manager-ubuntu-1804.md)
 > - [Ubuntu 16,04-x64](../linux-package-manager-ubuntu-1604.md)
+> - [CentOS 8-x64](../linux-package-manager-centos8.md)
 > - [CentOS 7-x64](../linux-package-manager-centos7.md)
 > - [Debian 10-x64](../linux-package-manager-debian10.md)
 > - [Debian 9-x64](../linux-package-manager-debian9.md)

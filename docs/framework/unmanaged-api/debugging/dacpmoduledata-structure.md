@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: c24bdce64eb7e208bf3830940d7beab1ebf92e78
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e10d1792a8dc0b57ddd121ec09854e8e1824cade
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179190"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860801"
 ---
 # <a name="dacpmoduledata-structure"></a>DacpModuleData, structure
 
-Définit un tampon de transport pour les informations d’exécution d’un module.
+Définit une mémoire tampon de transport pour les informations d’exécution d’un module.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -44,20 +44,20 @@ struct DacpModuleData
 
 | Membre    | Description                                                             |
 | --------- | ----------------------------------------------------------------------- |
-| `Address` | Adresse de l’objet du module.                                           |
-| `File`    | Un pointeur sur le fichier portable exécutable (PE).                       |
-| `ilBase`  | L’adresse de la base de l’image chargée.                                 |
-| `payLoad` | Un tampon de charge utile pour les informations supplémentaires du module utilisées par l’heure d’exécution. |
+| `Address` | Adresse de l’objet de module.                                           |
+| `File`    | Pointeur vers le fichier exécutable portable (PE).                       |
+| `ilBase`  | Adresse de la base de l’image chargée.                                 |
+| `payLoad` | Mémoire tampon de charge utile pour les informations de module supplémentaires utilisées par le Runtime. |
 
 ## <a name="remarks"></a>Notes 
 
-Cette structure vit à l’intérieur du temps d’exécution et n’est pas exposée à travers des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, définissez la structure comme spécifié ci-dessus.
+Cette structure se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, définissez la structure comme indiqué ci-dessus.
 
 ## <a name="requirements"></a>Spécifications
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête:** Aucun  
-**Bibliothèque:** Aucun  
-**.NET Versions-cadre:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+**En-tête :** None  
+**Bibliothèque :** None  
+**Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 

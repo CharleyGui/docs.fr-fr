@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9f25b64f-eedd-4ae5-8b0e-cfdfb9b6c5d8
 topic_type:
 - apiref
-ms.openlocfilehash: 6133b34a60fd06c1b75d69783760741b8de62071
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 0443f58b79e60111756308cc4843daf86d1fc823
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789342"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795863"
 ---
 # <a name="cordebuggenerationtypes-enumeration"></a>CorDebugGenerationTypes, énumération
 Spécifie la génération d’une région de la mémoire sur le tas managé.  
@@ -35,25 +35,25 @@ typedef enum CorDebugGenerationTypes {
 } CorDebugRegionTypes;  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Membres  
   
-|Nom du membre|Description|  
+|Nom de membre|Description|  
 |-----------------|-----------------|  
-|`CorDebug_Gen0`|Génération 0.|  
-|`CorDebug_Gen1`|Génération 1.|  
+|`CorDebug_Gen0`|Génération 0.|  
+|`CorDebug_Gen1`|Génération 1|  
 |`CorDebug_Gen2`|Génération 2.|  
 |`CorDebug_LOH`|Tas d’objets volumineux.|  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

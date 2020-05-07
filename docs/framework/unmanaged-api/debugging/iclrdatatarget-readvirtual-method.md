@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: da3769eb-1828-4aa1-b9ed-db4842136a43
 topic_type:
 - apiref
-ms.openlocfilehash: 0332fae46d6a65cfb7cc0b929cc2fd0d97e1790e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e285df37d83ff73fe29fe293380a4053cb5a9eea
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179155"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860557"
 ---
 # <a name="iclrdatatargetreadvirtual-method"></a>ICLRDataTarget::ReadVirtual, méthode
-Lit les données de l’adresse mémoire virtuelle spécifiée dans le tampon spécifié.  
+Lit les données à partir de l’adresse mémoire virtuelle spécifiée dans la mémoire tampon spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,25 +39,25 @@ HRESULT ReadVirtual (
   
 ## <a name="parameters"></a>Paramètres  
  `address`  
- [dans] Une CLRDATA_ADDRESS qui stocke l’adresse mémoire virtuelle.  
+ dans CLRDATA_ADDRESS qui stocke l’adresse mémoire virtuelle.  
   
  `buffer`  
- [out] Un pointeur vers un tampon qui reçoit les données.  
+ à Pointeur vers une mémoire tampon qui reçoit les données.  
   
  `bytesRequested`  
- [dans] La longueur du tampon.  
+ dans Longueur de la mémoire tampon.  
   
  `bytesRead`  
- [out] Un pointeur sur le nombre d’octets retournés.  
+ à Pointeur vers le nombre d’octets retournés.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
