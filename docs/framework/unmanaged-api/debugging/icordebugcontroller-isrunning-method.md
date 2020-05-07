@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b33ff059-40c4-4dfe-9cb2-21bfed2de0b0
 topic_type:
 - apiref
-ms.openlocfilehash: f24c07a654dc2345cb65226463573576a6fb3658
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 89ea9f221ad55063e4186cc27cc8038334d800d4
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125342"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82892875"
 ---
 # <a name="icordebugcontrollerisrunning-method"></a>ICorDebugController::IsRunning, méthode
 Obtient une valeur qui indique si les threads du processus sont en cours d’exécution librement.  
@@ -35,15 +35,15 @@ HRESULT IsRunning (
   
 ## <a name="parameters"></a>Paramètres  
  `pbRunning`  
- à Pointeur vers une valeur `true` si les threads du processus s’exécutent librement ; Sinon, `false`.  
+ à Pointeur vers une valeur qui est `true` si les threads du processus s’exécutent librement ; Sinon, `false`.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
