@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: f7fd68120defbfcda6ac11e14bc749bf4d69c109
-  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  ms.openlocfilehash: 03f12cbdd8f9c088a5f279efcadef64c2848fa13
+  ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/14/2020
-  ms.locfileid: "73969391"
+  ms.lasthandoff: 05/06/2020
+  ms.locfileid: "82860956"
 items:
 - durationInMinutes: 1
   content: >
@@ -22,7 +22,7 @@ items:
 - title: Créer des listes
   durationInMinutes: 2
   content: >
-    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **De mode Focus Enter.** Ensuite, tapez le bloc de code `<name>` suivant dans la fenêtre interactive (remplacer par votre nom) et sélectionnez **Run**:
+    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **entrer le mode Focus** . Ensuite, tapez le bloc de code suivant dans la fenêtre interactive ( `<name>` remplacez par votre nom) et sélectionnez **exécuter**:
 
 
     ```csharp
@@ -38,7 +38,7 @@ items:
     ```
 
 
-    Si vous exécutez ceci sur votre environnement, vous devriez suivre les instructions pour la [version locale](arrays-and-collections.md) à la place.
+    Si vous exécutez cette procédure sur votre environnement, vous devez suivre les instructions relatives à la [version locale](arrays-and-collections.md) .
 
 
     Vous avez créé une liste de chaînes, ajouté trois noms à cette liste et affiché les noms en majuscules. Vous utilisez des concepts que vous avez appris dans les tutoriels précédents pour lire la liste en boucle.
@@ -48,11 +48,6 @@ items:
 
 
     Continuons notre exploration.
-
-
-    > [!NOTE]
-
-    > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - title: Modifier le contenu de la liste
   durationInMinutes: 3
   content: >
@@ -106,12 +101,7 @@ items:
     ```
 
 
-    Sélectionnez **Exécuter** à nouveau pour voir les résultats. En C#, les index commencent à partir de 0, de sorte que le plus grand index valide correspond au nombre d’éléments de la liste moins un.
-
-
-    > [!NOTE]
-
-    > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
+    Sélectionnez **exécuter** à nouveau pour afficher les résultats. En C#, les index commencent à partir de 0, de sorte que le plus grand index valide correspond au nombre d’éléments de la liste moins un.
 - title: Trier les listes et y effectuer des recherches
   durationInMinutes: 5
   content: >
@@ -147,11 +137,6 @@ items:
     }
 
     ```
-
-
-    > [!NOTE]
-
-    > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - title: Listes d’autres types
   durationInMinutes: 5
   content: >
@@ -184,20 +169,10 @@ items:
 
 
     Cliquez sur **Exécuter** pour afficher les résultats.
-
-
-    > [!NOTE]
-
-    > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - title: Test
   durationInMinutes: 10
   content: >
     Vérifiez si vous pouvez mettre en pratique certains des concepts appris ici et dans d’autres leçons antérieures. Approfondissez à partir de ce que vous avez créé jusqu'à présent avec les nombres de Fibonacci. Essayez d’écrire le code pour générer les 20 premiers nombres de la séquence. (Astuce, le 20ème nombre Fibonacci est 6765.)
-
-
-    > [!NOTE]
-
-    > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - title: Terminer le test
   durationInMinutes: 3
   content: >
@@ -224,19 +199,14 @@ items:
 
 
     À chaque itération de la boucle, vous sélectionnez les deux derniers entiers de la liste, les additionner et ajoutez la valeur obtenue à la liste. La boucle se répète jusqu'à ce que vous ayez ajouté 20 éléments à la liste.
-
-
-    > [!NOTE]
-
-    > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - content: >
-    Vous avez terminé le tutoriel interactif sur les listes, qui terminait l’introduction du tutoriel interactif sur C#. Vous pouvez consulter le [site .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .NET Core, créer un projet sur votre ordinateur et continuer à coder. La section "Prochaines étapes" vous ramène à ces tutoriels.
+    Vous avez terminé le tutoriel interactif sur les listes, qui terminait l’introduction du tutoriel interactif sur C#. Vous pouvez consulter le [site .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .NET Core, créer un projet sur votre ordinateur et continuer à coder. La section « étapes suivantes » vous ramène à ces didacticiels.
 
 
     Pour plus d’informations sur les [collections .NET](../../../standard/collections/index.md), consultez les articles suivants :
 
     - [Sélectionner un type de collection](../../../standard/collections/selecting-a-collection-class.md)
 
-    - [Types de collecte couramment utilisés](../../../standard/collections/commonly-used-collection-types.md)
+    - [Types de collections couramment utilisés](../../../standard/collections/commonly-used-collection-types.md)
 
     - [Quand utiliser les collections génériques](../../../standard/collections/when-to-use-generic-collections.md)
