@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f671f519-1cb3-4ae5-b9f1-abc5e783459f
 topic_type:
 - apiref
-ms.openlocfilehash: f4bacfe94178ea78b1c3afd15a2e100076c38a84
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 6ae0fec0f8de2bbe3862f9f70ed9cf3d32af34c4
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76777997"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894215"
 ---
 # <a name="icordebugchain-interface"></a>ICorDebugChain, interface
 
@@ -42,20 +42,20 @@ Représente un segment d'une pile des appels physique ou logique.
 |[GetThread, méthode](icordebugchain-getthread-method.md)|Obtient le thread physique dont fait partie cette chaîne d’appel.|  
 |[IsManaged, méthode](icordebugchain-ismanaged-method.md)|Obtient une valeur qui indique si cette chaîne exécute du code managé.|  
   
-## <a name="remarks"></a>Notes  
- Les frames de pile dans une chaîne occupent un espace de pile contigu et partagent le même thread et le même contexte. Une chaîne peut représenter des chaînes de code managées ou non managées. Une instance de `ICorDebugChain` vide représente une chaîne de code non managé.  
+## <a name="remarks"></a>Notes   
+ Les frames de pile dans une chaîne occupent un espace de pile contigu et partagent le même thread et le même contexte. Une chaîne peut représenter des chaînes de code managées ou non managées. Une instance `ICorDebugChain` vide représente une chaîne de code non managé.  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

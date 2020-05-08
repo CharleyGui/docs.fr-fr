@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6b791351-bcc5-4ddd-9cab-eff2f7dd5142
 topic_type:
 - apiref
-ms.openlocfilehash: 3c11a0547ad5acc5613324d7e9d7439d44549dbc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2d075820df534e08bdf4c2b75d36f6a60f979662
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125810"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894094"
 ---
 # <a name="icordebugchainenumnext-method"></a>ICorDebugChainEnum::Next, méthode
 Obtient le nombre spécifié d’instances ICorDebugChain de l’énumération, en commençant à la position actuelle.  
@@ -38,19 +38,19 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- dans Nombre d’instances de `ICorDebugChain` à récupérer.  
+ dans Nombre d' `ICorDebugChain` instances à récupérer.  
   
  `chains`  
- à Tableau de pointeurs, chacun pointant vers un objet `ICorDebugChain` représentant une chaîne.  
+ à Tableau de pointeurs, chacun pointant vers un `ICorDebugChain` objet qui représente une chaîne.  
   
  `pceltFetched`  
- à Pointeur vers le nombre d’instances `ICorDebugChain` réellement retournées. Cette valeur peut être null si `celt` est un.  
+ à Pointeur vers le nombre d' `ICorDebugChain` instances réellement retournées. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

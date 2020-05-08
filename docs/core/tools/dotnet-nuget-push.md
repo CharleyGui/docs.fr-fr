@@ -3,12 +3,12 @@ title: Commande dotnet nuget push
 description: La commande dotnet nuget push exécute un envoi (push) d’un package sur le serveur et le publie.
 author: karann-msft
 ms.date: 02/14/2020
-ms.openlocfilehash: 8b0437d7f4ada2b56af50e30717d131668c21f7e
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 1e7831de4c041591b3602e405418f89f1d1d27d1
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728353"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895457"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
@@ -152,5 +152,4 @@ La commande exécute un push d’un package existant. Il ne crée pas de package
   dotnet nuget push *.nupkg -s c:\mydir
   ```
 
-  Cette commande ne stocke pas les packages dans une structure de dossiers hiérarchique, ce qui est recommandé pour optimiser les performances. Pour plus d’informations, consultez [flux locaux](//nuget/hosting-packages/local-feeds).
-  
+  Cette commande ne stocke pas les packages dans une structure de dossiers hiérarchique, ce qui est recommandé pour optimiser les performances. Pour plus d’informations, consultez [flux locaux](/nuget/hosting-packages/local-feeds).  

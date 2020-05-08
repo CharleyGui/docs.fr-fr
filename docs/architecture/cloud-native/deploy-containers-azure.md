@@ -2,12 +2,12 @@
 title: Déploiement de conteneurs dans Azure
 description: Déploiement de conteneurs dans Azure avec Azure Container Registry, Azure Kubernetes service et Azure Dev Spaces.
 ms.date: 04/13/2020
-ms.openlocfilehash: 6238460c6129583c34e6b328c38ed9042f32f3d6
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 57a4739d39b8ad022d699d54255f56f16d305440
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199558"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895603"
 ---
 # <a name="deploying-containers-in-azure"></a>Déploiement de conteneurs dans Azure
 
@@ -108,8 +108,8 @@ Les développeurs partagent une instance en cours d’exécution (développement
 
 Pour comprendre la valeur de Azure Dev Spaces, permettez-moi de partager ce devis à partir de Gabe Monroy, responsable des conteneurs à l’Microsoft Azure :
 
-> Imaginez que vous êtes un nouvel employé tentant de résoudre un bogue dans une application de microservices complexe composée de dizaines de composants, chacun avec ses propres services de configuration et de stockage. Pour commencer, vous devez configurer votre environnement de développement local afin qu’il puisse imiter la production, y compris la configuration de votre IDE, la création d’une chaîne d’outils, les dépendances de service en conteneur, un environnement Kubernetes local, des simulacres pour les services de stockage, et bien plus encore. Avec tout le temps nécessaire à la configuration de votre environnement de développement, la résolution de ce premier bogue peut prendre plusieurs jours.
-> Vous pouvez utiliser les espaces de développement et les AKS.
+> «Imaginez que vous êtes un nouvel employé tentant de résoudre un bogue dans une application de microservices complexe composée de dizaines de composants, chacun avec ses propres services de configuration et de stockage. Pour commencer, vous devez configurer votre environnement de développement local afin qu’il puisse imiter la production, y compris la configuration de votre IDE, la création d’une chaîne d’outils, les dépendances de service en conteneur, un environnement Kubernetes local, des simulacres pour les services de stockage, et bien plus encore. Avec tout le temps nécessaire à la configuration de votre environnement de développement, la résolution de ce premier bogue peut prendre plusieurs jours.
+> Ou vous pouvez utiliser des espaces de développement et des AKS.»
 
 Le processus d’utilisation de Azure Dev Spaces implique les étapes suivantes :
 

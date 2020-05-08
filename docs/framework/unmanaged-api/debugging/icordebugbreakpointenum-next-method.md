@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 2e6bbaea-79ba-448c-a0e3-7c90fc7c2939
 topic_type:
 - apiref
-ms.openlocfilehash: d29576c6f073f1d0e8e0aea417fc38c09a8327c1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: af90886390b59932d3ae146a70fc2901ec1c378d
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122746"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894667"
 ---
 # <a name="icordebugbreakpointenumnext-method"></a>ICorDebugBreakpointEnum::Next, méthode
 Obtient le nombre spécifié d’instances de ICorDebugBreakpoint à partir de l’énumération, en commençant à la position actuelle.  
@@ -38,19 +38,19 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- dans Nombre d’instances de `ICorDebugBreakpoint` à récupérer.  
+ dans Nombre d' `ICorDebugBreakpoint` instances à récupérer.  
   
  `breakpoints`  
- à Tableau de pointeurs, chacun pointant vers un objet `ICorDebugBreakpoint` qui représente un point d’arrêt.  
+ à Tableau de pointeurs, chacun pointant vers un `ICorDebugBreakpoint` objet qui représente un point d’arrêt.  
   
  `pceltFetched`  
- à Pointeur vers le nombre d’instances `ICorDebugBreakpoint` réellement retournées. Cette valeur peut être null si `celt` est un.  
+ à Pointeur vers le nombre d' `ICorDebugBreakpoint` instances réellement retournées. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

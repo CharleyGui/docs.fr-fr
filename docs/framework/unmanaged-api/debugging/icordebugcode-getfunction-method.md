@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c568b737-fdb2-4816-accd-051f5ab760f1
 topic_type:
 - apiref
-ms.openlocfilehash: 217ca0a850926e5f697340cece264c6ed442a9bb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9f785eafa8925324e3bd269ca08a3b1367b74c44
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125642"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82893585"
 ---
 # <a name="icordebugcodegetfunction-method"></a>ICorDebugCode::GetFunction, méthode
 Obtient le « ICorDebugFunction » associé à ce « ICorDebugCode ».  
@@ -37,14 +37,14 @@ HRESULT GetFunction (
  `ppFunction`  
  à Pointeur vers l’adresse de la fonction.  
   
-## <a name="remarks"></a>Notes  
- `ICorDebugCode` et `ICorDebugFunction` gérer une relation un-à-un.  
+## <a name="remarks"></a>Notes   
+ `ICorDebugCode`et `ICorDebugFunction` gèrent une relation un-à-un.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

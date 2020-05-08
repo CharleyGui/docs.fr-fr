@@ -3,14 +3,14 @@ title: Dépendances de kit SDK .NET Core et d’exécution-.NET Core
 description: Décrit en détail la configuration requise pour le système d’exploitation et l’architecture de l’UC pour installer le kit SDK .NET Core et le runtime sur Windows, Linux et macOS.
 author: leecow
 ms.author: leecow
-ms.date: 12/04/2019
+ms.date: 04/30/2020
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 42765d4402dfa17d4e962b2ecaf7a83e91853c76
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: 280aa1431686ff99257580bb024a84b1e57f85c0
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82140994"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895491"
 ---
 # <a name="net-core-dependencies-and-requirements"></a>Dépendances et exigences de .NET Core
 
@@ -23,7 +23,7 @@ Cet article détaille les systèmes d’exploitation et l’architecture du proc
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD024 -->
 
-# <a name="net-core-31"></a>[.NET Core 3,1](#tab/netcore31)
+# <a name="net-core-31"></a>[.NET Core 3.1](#tab/netcore31)
 
 Les versions de Windows suivantes sont prises en charge avec .NET Core 3,1 :
 
@@ -34,7 +34,7 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 3,1 :
 | ----------------------------- | ------------------------------ | --------------- |
 | Client Windows                | 7 SP1 +, 8,1                    | x64, x86        |
 | Client Windows 10             | Version 1607 +                  | x64, x86        |
-| Windows Server                | 2012 R2 +                       | x64, x86        |
+| Windows Server                | 2012 R2 +                       | x64, x86        |
 | Nano Server                   | Version 1803 +                  | x64, ARM32      |
 
 Pour plus d’informations sur les systèmes d’exploitation, les distributions et la stratégie de cycle de vie de .NET Core 3,1 pris en charge, consultez [versions de système d’exploitation prises en charge pour .net core 3,1](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md).
@@ -52,7 +52,7 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 3,0 :
 | ----------------------------- | ------------------------------ | --------------- |
 | Client Windows                | 7 SP1 +, 8,1                    | x64, x86        |
 | Client Windows 10             | Version 1607 +                  | x64, x86        |
-| Windows Server                | 2012 R2 +                       | x64, x86        |
+| Windows Server                | 2012 R2 +                       | x64, x86        |
 | Nano Server                   | Version 1803 +                  | x64, ARM32      |
 
 Pour plus d’informations sur les systèmes d’exploitation, les distributions et la stratégie de cycle de vie de .NET Core 3,0 pris en charge, consultez [versions de système d’exploitation prises en charge pour .net core 3,0](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md).
@@ -70,7 +70,7 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 2,2 :
 | ----------------------------- | ------------------------------ | --------------- |
 | Client Windows                | 7 SP1 +, 8,1                    | x64, x86        |
 | Client Windows 10             | Version 1607 +                  | x64, x86        |
-| Windows Server                | 2008 R2 SP1 +                   | x64, x86        |
+| Windows Server                | 2008 R2 SP1 +                   | x64, x86        |
 | Nano Server                   | Version 1803 +                   | x64, ARM32      |
 
 Pour plus d’informations sur les systèmes d’exploitation, les distributions et la stratégie de cycle de vie de .NET Core 2,2 pris en charge, consultez [versions de système d’exploitation prises en charge pour .net core 2,2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md).
@@ -86,7 +86,7 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 2,1 :
 | ----------------------------- | ------------------------------ | --------------- |
 | Client Windows                | 7 SP1 +, 8,1                    | x64, x86        |
 | Client Windows 10             | Version 1607 +                  | x64, x86        |
-| Windows Server                | 2008 R2 SP1 +                   | x64, x86        |
+| Windows Server                | 2008 R2 SP1 +                   | x64, x86        |
 | Nano Server                   | Version 1803 +                  | 64x            |
 
 Pour plus d’informations sur les systèmes d’exploitation, les distributions et la stratégie de cycle de vie de .NET Core 2,1 pris en charge, consultez [versions de système d’exploitation prises en charge pour .net core 2,1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md).
@@ -103,7 +103,7 @@ Des dépendances supplémentaires sont requises si vous installez le kit de dév
 - Windows Vista SP 2
 - Windows 8.1
 - Windows Server 2008 R2
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 
 Installez les éléments suivants :
 
@@ -126,7 +126,7 @@ La configuration requise ci-dessus est également requise si vous rencontrez l�
 
 ::: zone pivot="os-linux"
 
-# <a name="net-core-31"></a>[.NET Core 3,1](#tab/netcore31)
+# <a name="net-core-31"></a>[.NET Core 3.1](#tab/netcore31)
 
 .NET Core 3,1 traite Linux comme un système d’exploitation unique. Il existe une seule version Linux (par architecture de puce) pour les distributions Linux prises en charge.
 
@@ -262,7 +262,7 @@ Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Com
 - libgdiplus (version 6.0.1 ou ultérieure)
 
 > [!WARNING]
-> La plupart des versions d’Ubuntu incluent une version antérieure de libgdiplus. Vous pouvez installer une version récente de libgdiplus en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
+> La plupart des versions d’Ubuntu incluent une version antérieure de libgdiplus. Vous pouvez installer une version récente de libgdiplus en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ### <a name="centos-and-fedora"></a>CentOS et Fedora
 
@@ -289,7 +289,25 @@ Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Com
 - libgdiplus (version 6.0.1 ou ultérieure)
 
 > [!WARNING]
-> La plupart des versions de CentOS et Fedora incluent une version antérieure de libgdiplus. Vous pouvez installer une version récente de libgdiplus en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
+> La plupart des versions de CentOS et Fedora incluent une version antérieure de libgdiplus. Vous pouvez installer une version récente de libgdiplus en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
+
+### <a name="alpine"></a>Alpine
+
+Les distributions Alpine requièrent l’installation des bibliothèques suivantes :
+
+- ICU-libs (cela n’est pas nécessaire si la globalisation est désactivée)
+- krb5-libs
+- libcurl
+- libintl
+- libssl 1.1 (pour Alpine 3,9 ou version ultérieure) ou libssl 1.0 (pour les versions ultérieures)
+- libstdc++
+- lttng-ust
+- numactl (facultatif, utile uniquement pour les appareils avec NUMA activé)
+- zlib
+
+Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Common* , vous avez également besoin de la dépendance suivante :
+
+- libgdiplus (disponible uniquement dans le référentiel Edge/test)
 
 ::: zone-end
 
