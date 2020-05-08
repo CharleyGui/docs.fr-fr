@@ -3,12 +3,12 @@ title: Concepts et modèle objet du SDK .NET Compiler Platform
 description: Cette présentation fournit les informations dont vous avez besoin pour utiliser efficacement le SDK .NET Compiler Platform. Vous allez découvrir les différentes couches d’API, les principaux types utilisés et le modèle objet global.
 ms.date: 10/10/2017
 ms.custom: mvc
-ms.openlocfilehash: e563260e21fb8807017db90ff63e30fec0415a48
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 529ce6fbdef22964251c8b22abbd5d8aadab633d
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156959"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82975938"
 ---
 # <a name="understand-the-net-compiler-platform-sdk-model"></a>Comprendre le modèle du SDK .NET Compiler Platform
 
@@ -53,7 +53,7 @@ Le REPL (Read-Evaluate-Print Loop) interactif C# utilise ces API. Le REPL vous p
 
 ### <a name="workspaces-apis"></a>API des espaces de travail
 
-La couche des espaces de travail contient les API des espaces de travail, à partir desquelles sont effectuées les analyses de code et la refactorisation dans les solutions entières. Elle vous aide à organiser toutes les informations sur les projets d’une solution dans un modèle objet unique. Ce modèle vous permet d’accéder directement aux modèles objet de la couche du compilateur sans avoir à analyser des fichiers, configurer des options ou gérer des dépendances entre projets.
+La couche des espaces de travail contient les API des espaces de travail, à partir desquelles sont effectuées les analyses de code et la refactorisation dans les solutions entières. Il vous aide à organiser toutes les informations sur les projets d’une solution en un modèle d’objet unique, vous offrant un accès direct aux modèles d’objet de la couche du compilateur sans avoir à analyser des fichiers, configurer des options ou gérer des dépendances entre projets.
 
 De plus, la couche des espaces de travail expose un ensemble d’API utilisées pour l’implémentation d’outils d’analyse du code et de refactorisation qui fonctionnent dans un environnement hôte, tel que l’IDE Visual Studio. Les API Rechercher toutes les références, Mise en forme et Génération de code en sont des exemples.
 

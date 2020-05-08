@@ -2,12 +2,12 @@
 title: ICorDebugExceptionDebugEvent, interface
 ms.date: 03/30/2017
 ms.assetid: f9ba60d8-b54d-417e-bb3e-fde4b41ca44c
-ms.openlocfilehash: 168ba2945608a5b26432c5a0f583e5d406f6ce9b
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: dfa65aa1b63c996068e75ff1165111d5fcfe77eb
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76782831"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976003"
 ---
 # <a name="icordebugexceptiondebugevent-interface"></a>ICorDebugExceptionDebugEvent, interface
 Étend l’interface [ICorDebugDebugEvent](icordebugdebugevent-interface.md) pour prendre en charge les événements d’exception.  
@@ -20,7 +20,7 @@ ms.locfileid: "76782831"
 |[GetNativeIP, méthode](icordebugexceptiondebugevent-getnativeip-method.md)|Obtient le pointeur d'interface natif de cet événement de débogage d'exception.|  
 |[GetStackPointer, méthode](icordebugexceptiondebugevent-getstackpointer-method.md)|Obtient le pointeur de pile de cet événement de débogage d'exception.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  L'interface `ICorDebugExceptionDebugEvent` est implémentée par les types d'événements suivants :  
   
 - [MANAGED_EXCEPTION_FIRST_CHANCE](cordebugrecordformat-enumeration.md)  
@@ -34,14 +34,14 @@ ms.locfileid: "76782831"
 > [!NOTE]
 > L'interface est uniquement disponible avec .NET Native. Une tentative d'appel à `QueryInterface` pour récupérer un pointeur d'interface retourne `E_NOINTERFACE` pour les scénarios ICorDebug en dehors de .NET Native.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

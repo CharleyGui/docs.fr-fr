@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: cc79a67d-5368-434d-a943-209db90491b9
 topic_type:
 - apiref
-ms.openlocfilehash: 13ac5379992f4e768b09a03d31591143ba9bf627
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 496a6a7e01dec8aa90ba4e849c431ccd499ef53d
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76788722"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976198"
 ---
 # <a name="icordebugevalnewarray-method"></a>ICorDebugEval::NewArray, méthode
 Alloue un nouveau tableau du type d’élément et des dimensions spécifiés.  
@@ -39,7 +39,7 @@ HRESULT NewArray (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `elementType`  
  dans Valeur de l’énumération CorElementType qui spécifie le type d’élément du tableau.  
   
@@ -55,11 +55,11 @@ HRESULT NewArray (
  `lowBounds`  
  [in] Facultatif. Limite inférieure de chaque dimension du tableau. Si cette valeur est omise, une limite inférieure de zéro est utilisée pour chaque dimension.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Le tableau est toujours créé dans le domaine d’application dans lequel le thread est en cours d’exécution.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   

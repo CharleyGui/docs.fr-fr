@@ -2,20 +2,23 @@
 title: Commande dotnet vstest
 description: La commande dotnet vstest permet de générer un projet et l’ensemble de ses dépendances.
 ms.date: 02/27/2020
-ms.openlocfilehash: e8fa94cf12ca2fe5fb99c6e3c1dcdb52185798c0
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: f7db58f4aab59354b8c69ce0371324c23482dafe
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463287"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82975392"
 ---
 # <a name="dotnet-vstest"></a>dotnet vstest
 
-**Cet article s’applique à:** ✔️ .NET Core 2.1 SDK et les versions ultérieures
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
+
+> [!IMPORTANT]
+> La `dotnet vstest` commande est remplacée par `dotnet test`, qui peut maintenant être utilisée pour exécuter des assemblys. Voir [`dotnet test`](dotnet-test.md).
 
 ## <a name="name"></a>Nom
 
-`dotnet-vstest` - Exécute les tests à partir des fichiers spécifiés.
+`dotnet-vstest`-Exécute les tests à partir des assemblys spécifiés.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -87,7 +90,7 @@ La commande `dotnet-vstest` exécute l’application en ligne de commande `VSTes
 
 - **`--Parallel`**
 
-  Exécuter des tests en parallèle. Par défaut, tous les cœurs disponibles sur l’ordinateur sont utilisables. Spécifier un nombre explicite `MaxCpuCount` de `RunConfiguration` cœurs en plaçant la propriété sous le nœud dans le fichier *runsettings.*
+  Exécuter les tests en parallèle. Par défaut, tous les cœurs disponibles sur l’ordinateur sont utilisables. Spécifiez un nombre de cœurs explicite en définissant `MaxCpuCount` la propriété sous `RunConfiguration` le nœud dans le fichier *RunSettings* .
 
 - **`--ParentProcessId <PROCESS_ID>`**
 
@@ -115,7 +118,7 @@ La commande `dotnet-vstest` exécute l’application en ligne de commande `VSTes
 
 - **`--TestCaseFilter <EXPRESSION>`**
 
-  Exécutez les tests qui correspondent à l'expression donnée. `<EXPRESSION>` est au format `<property>Operator<value>[|&<EXPRESSION>]`, où l’opérateur est `=`, `!=` ou `~`. L’opérateur `~` a une sémantique « contient » et est applicable aux propriétés de chaîne comme `DisplayName`. Les parenthèses sont utilisées pour regrouper les `()` sous-exemples. Pour plus d’informations, voir [filtre TestCase](https://github.com/Microsoft/vstest-docs/blob/master/docs/filter.md).
+  Exécutez les tests qui correspondent à l'expression donnée. `<EXPRESSION>` est au format `<property>Operator<value>[|&<EXPRESSION>]`, où l’opérateur est `=`, `!=` ou `~`. L’opérateur `~` a une sémantique « contient » et est applicable aux propriétés de chaîne comme `DisplayName`. `()` Les parenthèses sont utilisées pour regrouper des sous-expressions. Pour plus d’informations, consultez [TestCase Filter](https://github.com/Microsoft/vstest-docs/blob/master/docs/filter.md).
 
 - **`--Tests <TEST_NAMES>`**
 
@@ -135,19 +138,19 @@ La commande `dotnet-vstest` exécute l’application en ligne de commande `VSTes
 
 ## <a name="examples"></a>Exemples
 
-Exécuter des tests dans *mytestproject.dll*:
+Exécuter les tests dans *MyTestProject. dll*:
 
 ```dotnetcli
 dotnet vstest mytestproject.dll
 ```
 
-Exécuter des tests dans *mytestproject.dll*, l’exportation vers le dossier personnalisé avec le nom personnalisé:
+Exécutez les tests dans *MyTestProject. dll*, en les exportant vers un dossier personnalisé avec un nom personnalisé :
 
 ```dotnetcli
 dotnet vstest mytestproject.dll --logger:"trx;LogFileName=custom_file_name.trx" --ResultsDirectory:custom/file/path
 ```
 
-Exécuter des tests dans *mytestproject.dll* et *myothertestproject.exe:*
+Exécuter les tests dans *MyTestProject. dll* et *myothertestproject. exe*:
 
 ```dotnetcli
 dotnet vstest mytestproject.dll myothertestproject.exe

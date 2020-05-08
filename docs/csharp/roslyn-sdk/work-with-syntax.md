@@ -3,19 +3,19 @@ title: Utiliser le modèle syntaxique du SDK .NET Compiler Platform
 description: Cette présentation fournit des informations sur les types que vous utilisez pour comprendre et manipuler les nœuds de syntaxe.
 ms.date: 10/15/2017
 ms.custom: mvc
-ms.openlocfilehash: fc1b1f5ae5ec985425c8d6aec49ef7f830ea9162
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 87b79c3af4958299fcd966dcc4b04868f88675c7
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75740472"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82975912"
 ---
 # <a name="work-with-syntax"></a>Utiliser la syntaxe
 
 Une **arborescence de syntaxe** est une structure de données de base qui est exposée par les API du compilateur. Ces arborescences représentent la structure lexicale et syntaxique du code source. Elles ont deux utilités principales :
 
 1. Permettre aux outils (comme un IDE, des compléments, des outils d’analyse de code et des refactorisations) d’afficher et de traiter la structure syntaxique du code source dans le projet d’un utilisateur.
-2. Activer les outils (tels que les refactorisations et un IDE) pour créer, modifier et réorganiser le code source de manière naturelle sans avoir à modifier directement le texte. Par la création et la manipulation des arborescences, les outils peuvent facilement créer et réorganiser le code source.
+2. Pour activer les outils, tels que les refactorisations et un IDE, pour créer, modifier et réorganiser le code source de manière naturelle sans avoir à utiliser des modifications de texte direct. Par la création et la manipulation des arborescences, les outils peuvent facilement créer et réorganiser le code source.
 
 ## <a name="syntax-trees"></a>Arborescences de syntaxe
 
@@ -35,7 +35,7 @@ Les nœuds de syntaxe figurent parmi les principaux éléments des arborescences
 
 Tous les nœuds de syntaxe sont des nœuds non terminaux dans l’arborescence de syntaxe ; ils ont donc toujours d’autres nœuds et jetons comme enfants. Chaque nœud enfant d’un autre nœud a un nœud parent qui est accessible via la propriété <xref:Microsoft.CodeAnalysis.SyntaxNode.Parent?displayProperty=nameWithType>. Comme les nœuds et les arborescences sont immuables, le parent d’un nœud ne change jamais. La racine de l’arborescence a un parent Null.
 
-Chaque nœud a une méthode <xref:Microsoft.CodeAnalysis.SyntaxNode.ChildNodes?displayProperty=nameWithType>, qui retourne une liste des nœuds enfants dans l’ordre séquentiel déterminé par leur position dans le texte source. Cette liste ne contient pas de jetons. Chaque nœud a également des méthodes <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A> <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantTokens%2A>pour <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantTrivia%2A> examiner les descendants, tels que, , ou - qui représentent une liste de tous les nœuds, jetons, ou des anecdotes qui existent dans le sous-arbre enraciné par ce nœud.
+Chaque nœud a une méthode <xref:Microsoft.CodeAnalysis.SyntaxNode.ChildNodes?displayProperty=nameWithType>, qui retourne une liste des nœuds enfants dans l’ordre séquentiel déterminé par leur position dans le texte source. Cette liste ne contient pas de jetons. Chaque nœud a également des méthodes pour examiner les descendants, <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A>tels <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantTokens%2A>que, <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantTrivia%2A> ou, qui représentent une liste de tous les nœuds, jetons ou anecdotes qui existent dans la sous-arborescence enracinée par ce nœud.
 
 En outre, chaque sous-classe de nœud de syntaxe expose les mêmes enfants par le biais de propriétés fortement typées. Par exemple, une classe de nœud <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax> a trois propriétés supplémentaires propres aux opérateurs binaires : <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left>, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken> et <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right>. Le type de <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left> et <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right> est <xref:Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>, et le type de <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken> est <xref:Microsoft.CodeAnalysis.SyntaxToken>.
 
@@ -85,7 +85,7 @@ L’étendue du nœud de l’instruction dans le bloc est délimitée par deux b
 
 ## <a name="kinds"></a>Genres
 
-Chaque nœud, jeton ou trivia a une propriété <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> de type <xref:System.Int32?displayProperty=nameWithType>, qui identifie précisément l’élément de syntaxe représenté. Cette valeur peut être projetée à un recensement spécifique à la langue. Chaque langue, C ou Visual Basic, a<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> un <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>recensement unique `SyntaxKind` (et, respectivement) qui répertorie tous les nœuds possibles, jetons et éléments trivia dans la grammaire. Cette conversion peut être effectuée automatiquement en accédant aux méthodes d’extension <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind%2A?displayProperty=nameWithType> ou <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind%2A?displayProperty=nameWithType>.
+Chaque nœud, jeton ou trivia a une propriété <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> de type <xref:System.Int32?displayProperty=nameWithType>, qui identifie précisément l’élément de syntaxe représenté. Cette valeur peut être convertie en une énumération spécifique au langage. Chaque langage, C# ou Visual Basic, possède une énumération `SyntaxKind` unique<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> ( <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>et, respectivement) qui répertorie tous les nœuds, jetons et éléments de anecdotes possibles dans la grammaire. Cette conversion peut être effectuée automatiquement en accédant aux méthodes d’extension <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind%2A?displayProperty=nameWithType> ou <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind%2A?displayProperty=nameWithType>.
 
 La propriété <xref:Microsoft.CodeAnalysis.SyntaxToken.RawKind> permet de lever facilement toute ambiguïté sur les types de nœud de syntaxe qui utilisent la même classe de nœud. Pour les jetons et les trivia, cette propriété est le seul moyen de différencier les types d’élément entre eux.
 

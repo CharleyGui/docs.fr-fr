@@ -2,12 +2,12 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 04/29/2020
-ms.openlocfilehash: a8218b6596601069b89a60ad018adf89a1f47cf6
-ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
+ms.openlocfilehash: ef71e48daa7c4a6f33961d05a2f3def122087b0e
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82624889"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82975431"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -20,7 +20,7 @@ ms.locfileid: "82624889"
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet test [<PROJECT> | <SOLUTION>]
+dotnet test [<PROJECT> | <SOLUTION> | <DIRECTORY> | <DLL>]
     [-a|--test-adapter-path <PATH_TO_ADAPTER>] [--blame]
     [-c|--configuration <CONFIGURATION>]
     [--collect <DATA_COLLECTOR_FRIENDLY_NAME>]
@@ -37,11 +37,15 @@ dotnet test -h|--help
 
 ## <a name="description"></a>Description
 
-La commande `dotnet test` est utilisée pour exécuter des tests unitaires dans un projet donné. La commande `dotnet test` lance l’application console Test Runner spécifiée pour un projet. Test Runner exécute les tests définis pour un framework de tests unitaires (par exemple, MSTest, NUnit ou xUnit) et signale la réussite ou l’échec de chaque test. Si tous les tests réussissent, l’exécuteur de tests retourne 0 en tant que code de sortie. Sinon, si un test échoue, il retourne 1. Pour les projets multi-ciblés, les tests sont exécutés pour chaque Framework ciblé. Test Runner et la bibliothèque de tests unitaires sont empaquetés sous forme de packages NuGet et sont restaurés comme des dépendances ordinaires du projet.
+La `dotnet test` commande est utilisée pour exécuter des tests unitaires dans une solution donnée. La `dotnet test` commande génère la solution et exécute une application hôte de test pour chaque projet de test de la solution. L’hôte de test exécute des tests dans le projet donné à l’aide d’une infrastructure de test, par exemple, MSTest, NUnit ou xUnit, et signale la réussite ou l’échec de chaque test. Si tous les tests réussissent, l’exécuteur de tests retourne 0 en tant que code de sortie. Sinon, si un test échoue, il retourne 1.
+
+Pour les projets multi-ciblés, les tests sont exécutés pour chaque Framework ciblé. L’hôte de test et l’infrastructure de tests unitaires sont empaquetés en tant que packages NuGet et sont restaurés en tant que dépendances ordinaires pour le projet.
 
 Les projets de test spécifient l’application Test Runner à l’aide d’un élément `<PackageReference>` ordinaire, comme indiqué dans l’exemple de fichier projet suivant :
 
 [!code-xml[XUnit Basic Template](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
+
+Où `Microsoft.NET.Test.Sdk` est l’hôte de test `xunit` , est l’infrastructure de test. Et `xunit.runner.visualstudio` est un adaptateur de test, qui permet à l’infrastructure xUnit de fonctionner avec l’hôte de test.
 
 ### <a name="implicit-restore"></a>Restauration implicite
 
@@ -49,19 +53,24 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 ## <a name="arguments"></a>Arguments
 
-- **`PROJECT | SOLUTION`**
+- **`PROJECT | SOLUTION | DIRECTORY | DLL`**
 
-  Chemin d’accès au projet de test ou à la solution. Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par défaut.
+  - Chemin du projet de test.
+  - Chemin d’accès à la solution.
+  - Chemin d’accès à un répertoire qui contient un projet ou une solution.
+  - Chemin d’accès à un fichier *. dll* de projet de test.
+
+  S’il n’est pas spécifié, il recherche un projet ou une solution dans le répertoire actif.
 
 ## <a name="options"></a>Options
 
 - **`-a|--test-adapter-path <PATH_TO_ADAPTER>`**
 
-  Utilise les adaptateurs de tests personnalisés à partir du chemin spécifié dans la série de tests.
+  Chemin d’accès à un répertoire dans lequel rechercher d’autres adaptateurs de test. Seuls les fichiers *. dll* avec `.TestAdapter.dll` suffixe sont inspectés. S’il n’est pas spécifié, la recherche s’effectue dans le répertoire du *fichier test. dll* .
 
 - **`--blame`**
 
-  Exécute les tests en mode responsable. Cette option est utile pour isoler les tests problématiques qui provoquent le blocage de l’hôte de test. Elle crée un fichier de sortie dans le répertoire actif nommé *Sequence.xml* qui capture l’ordre d’exécution des tests avant le plantage.
+  Exécute les tests en mode responsable. Cette option est utile pour isoler les tests problématiques qui provoquent le blocage de l’hôte de test. Lorsqu’un incident est détecté, il crée un fichier de séquence `TestResults/<Guid>/<Guid>_Sequence.xml` dans qui capture l’ordre des tests qui ont été exécutés avant l’incident.
 
 - **`-c|--configuration <CONFIGURATION>`**
 
@@ -73,11 +82,11 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 - **`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
 
-  Active le mode de diagnostic pour la plateforme de test et écrit des messages de diagnostic dans le fichier spécifié.
+  Active le mode de diagnostic pour la plateforme de test et écrit des messages de diagnostic dans le fichier spécifié et dans des fichiers à côté de celui-ci. Le processus d’enregistrement des messages détermine quels fichiers sont créés, par exemple `*.host_<date>.txt` pour le journal de l’hôte de `*.datacollector_<date>.txt` test et pour le journal du collecteur de données.
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Recherche des binaires de test pour un [framework](../../standard/frameworks.md) spécifique.
+  Force l’utilisation de `dotnet` ou .NET Framework hôte de test pour les binaires de test. Cette option détermine uniquement le type d’hôte à utiliser. La version d’infrastructure réelle à utiliser est déterminée par le *runtimeconfig. JSON* du projet de test. Lorsqu’il n’est pas spécifié, l' [attribut d’assembly TargetFramework](/dotnet/api/system.runtime.versioning.targetframeworkattribute) est utilisé pour déterminer le type d’hôte. Lorsque cet attribut est supprimé du *fichier. dll*, l’hôte .NET Framework est utilisé.
 
 - **`--filter <EXPRESSION>`**
 
@@ -132,13 +141,13 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. Par défaut, il s’agit de `minimal`. Pour plus d’informations, consultez <xref:Microsoft.Build.Framework.LoggerVerbosity>.
+  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. Par défaut, il s’agit de `minimal`. Pour plus d'informations, consultez <xref:Microsoft.Build.Framework.LoggerVerbosity>.
 
 - **`RunSettings`** arguments
 
-  Les arguments sont passés `RunSettings` comme configurations pour le test. Les arguments sont spécifiés en tant que paires `[name]=[value]` après "-- " (notez l’espace après --). Un espace est utilisé pour séparer plusieurs paires `[name]=[value]`.
+ Inline `RunSettings` sont passés comme derniers arguments sur la ligne de commande après « -- » (Notez l’espace après--). Inline `RunSettings` sont spécifiés `[name]=[value]` en tant que paires. Un espace est utilisé pour séparer plusieurs paires `[name]=[value]`.
 
-  Exemple : `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
+  Exemple : `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
 
   Pour plus d’informations, consultez [transmission d’arguments RunSettings via la ligne de commande](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
 
@@ -166,6 +175,12 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
   ```dotnetcli
   dotnet test --logger "console;verbosity=detailed"
+  ```
+  
+  - Exécutez les tests dans le projet dans le répertoire actif et testez les tests qui étaient en cours lorsque l’hôte de test s’est arrêté :
+
+  ```dotnetcli
+  dotnet test --blame
   ```
 
 ## <a name="filter-option-details"></a>Détails de l’option de filtre

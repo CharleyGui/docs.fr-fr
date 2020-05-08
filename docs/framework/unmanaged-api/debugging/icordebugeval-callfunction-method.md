@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7f470c5c-e1c0-4d8d-aad8-830f113ae751
 topic_type:
 - apiref
-ms.openlocfilehash: 4ac26ef4449dc02230f26b1247616b4587d217b7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1cf0080945ad78565fae3fedb454ceba7825cb4a
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73085160"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976237"
 ---
 # <a name="icordebugevalcallfunction-method"></a>ICorDebugEval::CallFunction, méthode
 
@@ -49,13 +49,13 @@ dans Nombre d’arguments pour la fonction.
 `ppArgs`\
 dans Tableau de pointeurs, chacun pointant vers un objet ICorDebugValue qui spécifie un argument à passer à la fonction.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 Si la fonction est virtuelle, `CallFunction` effectue une répartition virtuelle. Si la fonction se trouve dans un domaine d’application différent, une transition est effectuée tant que tous les arguments sont également dans ce domaine d’application.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
 **En-tête :** CorDebug.idl, CorDebug.h
 
