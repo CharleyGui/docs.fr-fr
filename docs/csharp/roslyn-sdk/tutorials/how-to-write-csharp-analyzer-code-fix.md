@@ -3,12 +3,12 @@ title: 'Tutoriel : Écrire votre premier analyseur et correctif de code'
 description: Ce tutoriel fournit des instructions détaillées pour générer un analyseur et un correctif de code à l’aide du SDK .NET Compiler (API Roslyn).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: f6fc21c010f9b5fcd5e709ef822639c020a7c93b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d6c3ddff288bf114e1c257ae77ebf3a419913990
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240548"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895450"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Tutoriel : Écrire votre premier analyseur et correctif de code
 
@@ -16,12 +16,12 @@ Le SDK .NET Compiler Platform fournit les outils nécessaires pour créer des av
 
 Dans ce tutoriel, vous allez explorer la création d’un **analyseur** et d’un **correctif de code** associé à l’aide des API Roslyn. Un analyseur consiste à effectuer une analyse du code source et signaler un problème à l’utilisateur. Un analyseur peut également fournir un correctif de code qui représente une modification du code source de l’utilisateur. Ce tutoriel crée un analyseur qui recherche des déclarations de variables locales qui pourraient être déclarées à l’aide du modificateur `const` mais qui ne le sont pas. Le correctif de code associé modifie ces déclarations pour ajouter le modificateur `const`.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 - [Visual Studio 2017](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2017-and-other-products)
-- [Studio visuel 2019](https://www.visualstudio.com/downloads)
+- [Visual Studio 2019](https://www.visualstudio.com/downloads)
 
-Vous devrez installer la **plate-forme de compilateur .NET SDK** via l’installateur Visual Studio :
+Vous devez installer le kit de **développement logiciel (SDK) .NET Compiler Platform** via le Visual Studio installer :
 
 [!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 
@@ -60,7 +60,7 @@ Le modèle Analyseur avec correctif de code crée trois projets : un contient l
 > [!TIP]
 > Lorsque vous exécutez votre analyseur, vous démarrez une deuxième copie de Visual Studio. Cette deuxième copie utilise un hive de Registre différent pour stocker les paramètres. Cela vous permet de différencier les paramètres Visual dans les deux copies de Visual Studio. Vous pouvez choisir un autre thème pour l’exécution expérimentale de Visual Studio. En outre, ne rendez pas vos paramètres itinérants et ne vous connectez pas à votre compte Visual Studio à l’aide de l’exécution expérimentale de Visual Studio. Cela permet de conserver les paramètres différents.
 
-Dans la deuxième instance Visual Studio que vous venez de démarrer, créez un nouveau projet d’application de console C (soit .NET Core ou .NET Framework project fonctionnera -- les analyseurs fonctionnent au niveau source.) Planer au-dessus du jeton avec un soulignement ondulé, et le texte d’avertissement fourni par un analyseur apparaît.
+Dans la deuxième instance de Visual Studio que vous venez de démarrer, créez un projet d’application console C# (.NET Core ou .NET Framework projet fonctionne, les analyseurs fonctionnent au niveau de la source.) Placez le curseur sur le jeton avec un soulignement ondulé et le texte d’avertissement fourni par un analyseur s’affiche.
 
 Le modèle crée un analyseur qui émet un avertissement sur chaque déclaration de type dont le nom de type contient des lettres minuscules, comme indiqué dans la figure suivante :
 
@@ -148,7 +148,7 @@ if (localDeclaration.Modifiers.Any(SyntaxKind.ConstKeyword))
 
 Enfin, vous devez vérifier que la variable peut être `const`. Cela signifie de s’assurer qu’elle n’est jamais assignée après son initialisation.
 
-Vous allez effectuer une analyse sémantique à l’aide de <xref:Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext>. Vous utilisez l’argument `context` pour déterminer si la déclaration de variable locale peut être rendue `const`. <xref:Microsoft.CodeAnalysis.SemanticModel?displayProperty=nameWithType> représente toutes les informations sémantiques dans un fichier source unique. Vous pouvez en apprendre plus dans l’article qui traite des [modèles sémantiques](../work-with-semantics.md). Vous allez utiliser <xref:Microsoft.CodeAnalysis.SemanticModel?displayProperty=nameWithType> pour effectuer une analyse de flux de données sur l’instruction de déclaration locale. Ensuite, vous utilisez les résultats de cette analyse de flux de données pour vous assurer que la variable locale n’est pas écrite avec une nouvelle valeur ailleurs. Appelez la méthode d’extension <xref:Microsoft.CodeAnalysis.ModelExtensions.GetDeclaredSymbol%2A> pour récupérer <xref:Microsoft.CodeAnalysis.ILocalSymbol> pour la variable et vérifiez qu’il n’est pas contenu avec la collection <xref:Microsoft.CodeAnalysis.DataFlowAnalysis.WrittenOutside%2A?displayProperty=nameWithType> de l’analyse de flux de données. Ajoutez le code suivant à la fin de la méthode `AnalyzeNode` :
+Vous allez effectuer une analyse sémantique à l’aide de <xref:Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext>. Vous utilisez l’argument `context` pour déterminer si la déclaration de variable locale peut être rendue `const`. Un <xref:Microsoft.CodeAnalysis.SemanticModel?displayProperty=nameWithType> représente toutes les informations sémantiques dans un fichier source unique. Vous pouvez en apprendre plus dans l’article qui traite des [modèles sémantiques](../work-with-semantics.md). Vous allez utiliser <xref:Microsoft.CodeAnalysis.SemanticModel?displayProperty=nameWithType> pour effectuer une analyse de flux de données sur l’instruction de déclaration locale. Ensuite, vous utilisez les résultats de cette analyse de flux de données pour vous assurer que la variable locale n’est pas écrite avec une nouvelle valeur ailleurs. Appelez la méthode d’extension <xref:Microsoft.CodeAnalysis.ModelExtensions.GetDeclaredSymbol%2A> pour récupérer <xref:Microsoft.CodeAnalysis.ILocalSymbol> pour la variable et vérifiez qu’il n’est pas contenu avec la collection <xref:Microsoft.CodeAnalysis.DataFlowAnalysis.WrittenOutside%2A?displayProperty=nameWithType> de l’analyse de flux de données. Ajoutez le code suivant à la fin de la méthode `AnalyzeNode` :
 
 ```csharp
 // Perform data flow analysis on the local declaration.
@@ -265,7 +265,7 @@ Ouvrez le fichier **MakeConstUnitTests.cs** dans le projet de test unitaire. Le 
 
 Le code de presque chaque test pour votre analyseur suit un de ces deux modèles. Pour la première étape, vous pouvez revoir ces tests en tant que tests pilotés par les données. Ensuite, il sera facile de créer de nouveaux tests en ajoutant de nouvelles constantes de chaîne pour représenter les différentes entrées de test.
 
-Pour plus d’efficacité, la première étape consiste à refactoriser les deux tests en tests pilotés par des données. Ensuite, il vous suffit de définir quelques constantes de chaîne pour chaque nouveau test. Lors de la refactorisation, renommez les deux méthodes. Remplacez `TestMethod1` par ce test qui garantit qu’aucun diagnostic n’est déclenché :
+Pour plus d’efficacité, la première étape consiste à refactoriser les deux tests en tests pilotés par des données. Ensuite, il vous suffit de définir quelques constantes de chaîne pour chaque nouveau test. Pendant la refactorisation, renommez les deux méthodes avec des noms plus performants. Remplacez `TestMethod1` par ce test qui garantit qu’aucun diagnostic n’est déclenché :
 
 ```csharp
 [DataTestMethod]

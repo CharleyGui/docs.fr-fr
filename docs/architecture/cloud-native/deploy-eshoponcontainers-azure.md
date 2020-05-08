@@ -1,61 +1,91 @@
 ---
 title: Déploiement d’eShopOnContainers sur Azure
 description: Déploiement de l’application eShopOnContainers à l’aide du service Azure Kubernetes, Helm et DevSpaces.
-ms.date: 06/30/2019
-ms.openlocfilehash: 21033cc904dc595193c69f3452ce2522740f8ff6
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.date: 04/20/2020
+ms.openlocfilehash: a3eacedac946cb25cf3cced305d7921e29f0d204
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183272"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895593"
 ---
 # <a name="deploying-eshoponcontainers-to-azure"></a>Déploiement d’eShopOnContainers sur Azure
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-La logique de prise en charge de l’application eShopOnContainers peut être prise en charge par Azure à l’aide d’un large éventail de services. L’approche recommandée consiste à exploiter Kubernetes à l’aide d’Azure Kubernetes service (AKS). Cela peut être combiné avec le déploiement Helm pour garantir une configuration d’infrastructure facilement répétée. Les développeurs peuvent éventuellement tirer parti de Azure Dev Spaces pour Kubernetes dans le cadre de leur processus de développement. Une autre option consiste à héberger les fonctionnalités de l’application à l’aide de fonctionnalités sans serveur Azure comme Azure Functions et Azure Logic Apps.
+L’application eShopOnContainers peut être déployée sur une variété de plateformes Azure. L’approche recommandée consiste à déployer l’application sur Azure Kubernetes services (AKS). Helm, un outil de déploiement Kubernetes, est disponible pour réduire la complexité du déploiement. Si vous le souhaitez, les développeurs peuvent implémenter Azure Dev Spaces pour Kubernetes afin de simplifier leur processus de développement.
 
 ## <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
 
-Si vous souhaitez héberger l’application eShopOnContainers dans votre propre cluster AKS, la première étape consiste à créer votre cluster. Vous pouvez le faire à l’aide de la Portail Azure, qui vous guidera tout au long des étapes nécessaires, ou vous pouvez utiliser le Azure CLI, en veillant à activer l’Access Control basé sur les rôles (RBAC) et le routage des applications. La documentation de eShopOnContainers décrit les étapes nécessaires à la création de votre propre cluster AKS. Une fois le cluster créé, vous devez activer l’accès au tableau de bord Kubernetes, à partir duquel vous devez être en mesure d’accéder au tableau de bord Kubernetes pour gérer le cluster.
+Pour héberger eShop dans AKS, la première étape consiste à créer un cluster AKS. Pour ce faire, vous pouvez utiliser le Portail Azure, qui vous guidera tout au long des étapes requises. Vous pouvez également créer un cluster à partir de la Azure CLI, en veillant à activer la Access Control basée sur les rôles (RBAC) et le routage des applications. La documentation de eShopOnContainers décrit les étapes de création de votre propre cluster AKS. Une fois créé, vous pouvez accéder au cluster et le gérer à partir du tableau de bord Kubernetes.
 
-Une fois que le cluster a été créé et configuré, vous pouvez y déployer l’application à l’aide de Helm et de l’écran de veille.
+Vous pouvez maintenant déployer l’application eShop sur le cluster en tirant parti de Helm et de la caisse.
 
 ## <a name="deploying-to-azure-kubernetes-service-using-helm"></a>Déploiement sur le service Azure Kubernetes à l’aide de Helm
 
-Les déploiements de base sur AKS peuvent utiliser des scripts CLI personnalisés ou des fichiers de déploiement simples, mais des applications plus complexes doivent utiliser un outil de gestion des dépendances comme Helm. Helm est géré par la Fondation informatique Native Cloud et vous aide à définir, installer et mettre à niveau des applications Kubernetes. Helm se compose d’un client de ligne de commande, Helm, qui utilise des graphiques Helm et un composant in-cluster, jusqu’à présent. Les graphiques Helm utilisent des fichiers au format YAML standard pour décrire un ensemble connexe de ressources Kubernetes et sont généralement associés à une version parallèle à l’application qu’ils décrivent. Les graphiques Helm vont du plus simple au plus complexe selon les exigences de l’installation qu’ils décrivent.
+Helm est un outil du gestionnaire de package d’application qui fonctionne directement avec Kubernetes. Il vous aide à définir, installer et mettre à niveau des applications Kubernetes. Bien que les applications simples puissent être déployées sur AKS avec des scripts CLI personnalisés ou des fichiers de déploiement simples, les applications complexes peuvent contenir de nombreux objets Kubernetes et tirer parti de Helm.
+
+À l’aide de Helm, les applications incluent des fichiers de configuration textuels, appelés graphiques Helm, qui décrivent de façon déclarative l’application et la configuration dans les packages Helm. Les graphiques utilisent des fichiers au format YAML standard pour décrire un ensemble connexe de ressources Kubernetes. Elles sont gérées avec le code d’application qu’elles décrivent. Les graphiques Helm vont du plus simple au plus complexe selon les exigences de l’installation qu’ils décrivent.
+
+Helm se compose d’un outil client de ligne de commande, qui consomme des graphiques Helm et lance des commandes sur un composant serveur nommé, jusqu’à ce que le soit. Jusqu’à la communication avec l’API Kubernetes pour garantir la bonne configuration de vos charges de travail en conteneur. Helm est géré par la Fondation Cloud-Native Computing.
+
+Le fichier YAML suivant présente un modèle Helm :
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.app.svc.marketing }}
+  labels:
+    app: {{ template "marketing-api.name" . }}
+    chart: {{ template "marketing-api.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "marketing-api.name" . }}
+    release: {{ .Release.Name }}
+```
+
+Notez comment le modèle décrit un ensemble dynamique de paires clé/valeur. Lorsque le modèle est appelé, les valeurs qui sont placées entre accolades sont extraites à partir d’autres fichiers de configuration basés sur YAML.
 
 Vous trouverez les graphiques eShopOnContainers Helm dans le dossier/K8S/Helm. La figure 2-6 montre comment les différents composants de l’application sont organisés dans une structure de dossiers utilisée par Helm pour définir et gérer des déploiements.
 
-![architecture eShopOnContainers](./media/eshoponcontainers-helm-folder.png)
-**Figure 2-6**. Dossier eShopOnContainers Helm.
+![eShopOnContainers architecture](./media/eshoponcontainers-helm-folder.png)
+de la**figure 2-6**. Dossier eShopOnContainers Helm.
 
-Chaque composant individuel est installé à l’aide d’une commande `helm install`. Ces commandes sont facilement scriptées, et eShopOnContainers fournit un script « déployer tout » qui parcourt les différents composants et les installe à l’aide de leurs graphiques Helm respectifs. Le résultat est un processus reproductible, avec version avec l’application dans le contrôle de code source, que tous les membres de l’équipe peuvent déployer sur un cluster AKS à l’aide d’une commande de script d’une ligne. En particulier lorsqu’il est associé à Azure Dev Spaces, cela permet aux développeurs de diagnostiquer et de tester facilement leurs modifications individuelles sur leurs applications Cloud natives basées sur des microservices.
+Chaque composant individuel est installé à l' `helm install` aide d’une commande. eShop inclut un script « déployer tout » qui parcourt et installe les composants à l’aide de leurs graphiques Helm respectifs. Le résultat est un processus reproductible, avec version avec l’application dans le contrôle de code source, que tous les membres de l’équipe peuvent déployer sur un cluster AKS à l’aide d’une commande de script d’une ligne.
+
+> Notez que la version 3 de Helm supprime officiellement le besoin du composant serveur de l’écran de veille. Vous trouverez plus d’informations sur cette amélioration [ici](https://medium.com/better-programming/why-is-tiller-missing-in-helm-3-2347c446714).
 
 ## <a name="azure-dev-spaces"></a>Azure Dev Spaces
 
-Azure Dev Spaces aide les développeurs individuels à héberger leur propre version unique de clusters AKS dans Azure pendant le développement. Cela réduit la configuration requise de l’ordinateur local et permet aux membres de l’équipe de voir rapidement comment leurs modifications se comporteront dans un environnement AKS réel. Azure Dev Spaces offre une interface CLI permettant aux développeurs de gérer leurs espaces de développement et de les déployer dans un espace de développement enfant spécifique en fonction des besoins. Chaque espace de développement enfant est référencé à l’aide d’un sous-domaine d’URL unique, ce qui permet des déploiements côte à côte de clusters modifiés, de sorte que les développeurs individuels puissent éviter les conflits entre les travaux en cours. Dans la figure 2-7, vous pouvez voir comment Developer Julie a déployé sa propre version du microservice Bikes dans son espace de développement. Elle est ensuite en mesure de tester ses modifications à l’aide d’une URL personnalisée commençant par le nom de son espace (susie.s.dev.myapp.eus.azds.io).
+Les applications Cloud natives peuvent rapidement devenir volumineuses et complexes, ce qui nécessite des ressources de calcul importantes pour s’exécuter. Dans ces scénarios, l’ensemble de l’application ne peut pas être hébergé sur un ordinateur de développement (en particulier un ordinateur portable). Azure Dev Spaces est conçu pour résoudre ce problème à l’aide de AKS. Il permet aux développeurs de travailler avec une version locale de leurs services tout en hébergeant le reste de l’application dans un cluster de développement AKS.
 
-![architecture eShopOnContainers](./media/azure-devspaces-one.png)
-**Figure 2-7**. Developer Julie déploie sa propre version du microservice Bikes et le teste.
+Les développeurs partagent une instance en cours d’exécution (développement) dans un cluster AKS qui contient l’application en conteneur entière. Mais ils utilisent des espaces personnels configurés sur leur ordinateur pour développer localement leurs services. Lorsqu’ils sont prêts, ils testent de bout en bout dans le cluster AKS, sans répliquer les dépendances. Azure Dev Spaces fusionne le code à partir de l’ordinateur local avec les services dans AKS. Les membres de l’équipe peuvent voir comment leurs modifications se comporteront dans un environnement AKS réel. Les développeurs peuvent rapidement itérer et déboguer du code directement dans Kubernetes à l’aide de Visual Studio 2017 ou Visual Studio Code.
 
-En même temps, le développeur John souhaite personnaliser le microservice de réservations et doit tester ses modifications. Il peut déployer ses modifications dans son propre espace de développement sans conflit avec les modifications apportées à Julie, comme illustré dans la figure 2-8. Il peut tester ses modifications à l’aide de sa propre URL, qui est précédée du nom de son espace (john.s.dev.myapp.eus.azds.io).
+Dans la figure 2-7, vous pouvez voir que Developer Julie a déployé une version mise à jour du microservice Bikes dans son espace de développement. Elle est ensuite en mesure de tester ses modifications à l’aide d’une URL personnalisée commençant par le nom de son espace (susie.s.dev.myapp.eus.azds.io).
 
-![architecture eShopOnContainers](./media/azure-devspaces-two.png)
-**Figure 2-8**. Le développeur John déploie sa propre version du microservice de réservations et le teste sans conflit avec d’autres développeurs.
+![eShopOnContainers architecture](./media/azure-devspaces-one.png)
+de la**figure 2-7**. Developer Julie déploie sa propre version du microservice Bikes et le teste.
+
+En même temps, le développeur John souhaite personnaliser le microservice de réservations et doit tester ses modifications. Il déploie ses modifications dans son propre espace de développement sans entrer en conflit avec les modifications apportées à Julie, comme illustré dans la figure 2-8. John teste ensuite ses modifications à l’aide de sa propre URL, précédée du nom de son espace (john.s.dev.myapp.eus.azds.io).
+
+![eShopOnContainers architecture](./media/azure-devspaces-two.png)
+de la**figure 2-8**. Le développeur John déploie sa propre version du microservice de réservations et le teste sans conflit avec d’autres développeurs.
 
 À l’aide de Azure Dev Spaces, les équipes peuvent travailler directement avec AKS tout en modifiant, déployant et testant leurs modifications de manière indépendante. Cette approche réduit le besoin d’environnements hébergés dédiés distincts, car chaque développeur a son propre environnement AKS. Les développeurs peuvent travailler avec Azure Dev Spaces à l’aide de l’interface CLI ou lancer leur application pour Azure Dev Spaces directement à partir de Visual Studio. [En savoir plus sur le fonctionnement de Azure Dev Spaces et sur la configuration.](https://docs.microsoft.com/azure/dev-spaces/how-dev-spaces-works)
 
 ## <a name="azure-functions-and-logic-apps-serverless"></a>Azure Functions et Logic Apps (sans serveur)
 
-L’exemple eShopOnContainers comprend la prise en charge du suivi des campagnes marketing en ligne. Une fonction Azure est utilisée pour extraire les détails d’une campagne marketing pour un ID de campagne donné. Au lieu de créer une application ASP.NET Core complète à cet effet, un seul point de terminaison Azure Function est plus simple et suffisant. Les Azure Functions ont un modèle de génération et de déploiement bien plus simple que les applications ASP.NET Core complètes, en particulier lorsqu’elles sont configurées pour s’exécuter dans Kubernetes. Le déploiement de la fonction est un script à l’aide de modèles ARM (Azure Resource Manager) et du Azure CLI. Le microservice détails de la campagne n’est pas orienté client et n’a pas les mêmes exigences que le magasin en ligne, ce qui en fait un bon candidat pour la Azure Functions. La fonction nécessite une configuration pour fonctionner correctement, comme les données de chaîne de connexion à la base de données et les paramètres d’URI de base d’image. Vous configurez Azure Functions dans le portail Azure.
-
-## <a name="references"></a>Références
-
-- [eShopOnContainers : créer un cluster Kubernetes dans AKS](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Deploy-to-Azure-Kubernetes-Service-(AKS)#create-kubernetes-cluster-in-aks)
-- [eShopOnContainers : Azure Dev Spaces](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Azure-Dev-Spaces)
-- [Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/about)
+L’exemple eShopOnContainers comprend la prise en charge du suivi des campagnes marketing en ligne. Une fonction Azure est utilisée pour suivre les détails d’une campagne marketing pour un ID de campagne donné. Au lieu de créer un microservice complet, une seule fonction Azure est plus simple et suffisante. Azure Functions avoir un modèle de génération et de déploiement simple, surtout lorsqu’il est configuré pour s’exécuter dans Kubernetes. Le déploiement de la fonction est un script à l’aide de modèles ARM (Azure Resource Manager) et du Azure CLI. Ce service de campagne n’est pas orienté client et appelle une seule opération, ce qui en fait un bon candidat pour Azure Functions. La fonction nécessite une configuration minimale, y compris des données de chaîne de connexion à la base de données et des paramètres d’URI de base d’image. Vous configurez Azure Functions dans le Portail Azure.
 
 >[!div class="step-by-step"]
 >[Précédent](map-eshoponcontainers-azure-services.md)
->[Suivant](centralized-configuration.md)
+>[suivant](centralized-configuration.md)

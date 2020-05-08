@@ -1,13 +1,13 @@
 ---
 title: Mappage d’eShopOnContainers aux services Azure
 description: Mappage de eShopOnContainers à des services Azure comme Azure Kubernetes service, API Gateway et Azure Service Bus.
-ms.date: 06/30/2019
-ms.openlocfilehash: eb37be94461a5373afe328572a94892dec50432d
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.date: 04/20/2020
+ms.openlocfilehash: 26fce71ba71f7da643b669396ab59affe592649a
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76781213"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895515"
 ---
 # <a name="mapping-eshoponcontainers-to-azure-services"></a>Mappage d’eShopOnContainers aux services Azure
 
@@ -17,8 +17,8 @@ Bien que cela ne soit pas obligatoire, Azure est bien adapté à la prise en cha
 
 L’architecture de l’application est illustrée dans la figure 2-5. À gauche, les applications clientes sont décomposées en versions mobiles, traditionnelles Web et d’application à page unique (SPA) Web. À droite se trouvent les composants côté serveur qui composent le système, qui peuvent chacun être hébergés dans des conteneurs et des clusters Kubernetes. L’application Web traditionnelle est alimentée par l’application ASP.NET Core MVC affichée en jaune. Cette application et les applications mobiles et Web SPA communiquent avec les microservices individuels par le biais d’une ou de plusieurs passerelles d’API. Les passerelles d’API suivent le modèle « principaux pour les serveurs frontaux » (BFF), ce qui signifie que chaque passerelle est conçue pour prendre en charge un client frontal donné. Les microservices individuels sont répertoriés à droite des passerelles d’API et incluent à la fois la logique métier et un magasin de persistance. Les différents services utilisent des bases de données SQL Server, des instances de cache Redims et des magasins MongoDB/CosmosDB. À l’extrême droite se trouve le bus d’événements du système, qui est utilisé pour la communication entre les microservices.
 
-![architecture eShopOnContainers](./media/eshoponcontainers-architecture.png)
-**Figure 2-5**. L’architecture eShopOnContainers.
+![eShopOnContainers architecture](./media/eshoponcontainers-architecture.png)
+de la**figure 2-5**. L’architecture eShopOnContainers.
 
 Les composants côté serveur de cette architecture sont tous mappés facilement aux services Azure.
 
@@ -28,7 +28,7 @@ Les services hébergés dans les conteneurs de l’application, du ASP.NET Core 
 
 AKS fournit des services de gestion pour les clusters individuels de conteneurs. L’application déploie des clusters AKS distincts pour chaque microservice présenté dans le diagramme d’architecture ci-dessus. Cette approche permet à chaque service individuel d’évoluer indépendamment en fonction de ses besoins en ressources. Chaque microservice peut également être déployé indépendamment, et dans l’idéal, ces déploiements doivent entraîner un temps d’arrêt du système nul.
 
-## <a name="api-gateway"></a>Passerelle d’API
+## <a name="api-gateway"></a>API Gateway
 
 L’application eShopOnContainers a plusieurs clients frontaux et plusieurs services principaux différents. Il n’existe pas de correspondance un-à-un entre les applications clientes et les microservices qui les prennent en charge. Dans ce type de scénario, il peut y avoir une grande quantité de complexité lors de l’écriture du logiciel client pour l’interface avec les différents services principaux de manière sécurisée. Chaque client doit répondre à cette complexité de manière autonome, ce qui se traduit par une duplication et de nombreux emplacements dans lesquels des mises à jour sont mises à jour à mesure que les services changent ou que de nouvelles stratégies sont implémentées.
 
@@ -54,7 +54,7 @@ L’application eShopOnContainers stocke le panier d’achat actuel de l’utili
 
 Le microservice d’emplacements utilise une base de données NoSQL MongoDB pour sa persistance. Pendant le développement, la base de données peut être déployée dans son propre conteneur, alors qu’en production, le service peut tirer parti de l' [API de Azure Cosmos DB pour MongoDB](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction). L’un des avantages de Azure Cosmos DB est sa capacité à exploiter plusieurs protocoles de communication, notamment une API SQL et des API NoSQL courantes, notamment MongoDB, Cassandra, Gremlin et le stockage de tables Azure. Azure Cosmos DB offre une base de données entièrement gérée et distribuée à l’échelle mondiale en tant que service qui peut évoluer pour répondre aux besoins des services qui l’utilisent.
 
-Les données distribuées dans les applications Cloud natives sont abordées plus en détail dans le [Chapitre 5](database-per-microservice.md).
+Les données distribuées dans les applications Cloud natives sont abordées plus en détail dans le [Chapitre 5](distributed-data.md).
 
 ## <a name="event-bus"></a>Bus d’événements
 
@@ -64,17 +64,6 @@ L’application utilise des événements pour communiquer les modifications entr
 
 Une fois déployé en production, l’application eShopOnContainers peut tirer parti de plusieurs services Azure disponibles pour améliorer sa résilience. L’application publie des contrôles d’intégrité, qui peuvent être intégrés à Application Insights pour fournir des rapports et des alertes en fonction de la disponibilité de l’application. Les ressources Azure fournissent également des journaux de diagnostic qui peuvent être utilisés pour identifier et corriger les bogues et les problèmes de performances. Les journaux de ressources fournissent des informations détaillées sur le moment et la façon dont les différentes ressources Azure sont utilisées par l’application. Vous en apprendrez davantage sur les fonctionnalités de résilience native du Cloud dans le [chapitre 6](resiliency.md).
 
-## <a name="references"></a>Références
-
-- [Architecture eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Architecture)
-- [Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité](https://docs.microsoft.com/dotnet/architecture/microservices/architect-microservice-container-applications/scalable-available-multi-container-microservice-applications)
-- [Gestion des API Azure](https://docs.microsoft.com/azure/api-management/api-management-key-concepts)
-- [Présentation de Azure SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)
-- [Cache Azure pour les ReDim](https://azure.microsoft.com/services/cache/)
-- [API de Azure Cosmos DB pour MongoDB](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction)
-- [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview)
-- [Présentation de Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)
-
 >[!div class="step-by-step"]
 >[Précédent](introduce-eshoponcontainers-reference-app.md)
->[Suivant](deploy-eshoponcontainers-azure.md)
+>[suivant](deploy-eshoponcontainers-azure.md)

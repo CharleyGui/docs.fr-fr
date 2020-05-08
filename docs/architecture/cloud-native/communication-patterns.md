@@ -3,12 +3,12 @@ title: Modèles de communication cloud natifs
 description: En savoir plus sur les problèmes de communication de service clés dans les applications Cloud natives
 author: robvet
 ms.date: 08/31/2019
-ms.openlocfilehash: 3bda9baa516b7bd8f893e0f58bbe5e2bfde2b61d
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: b3edc0817fb76ad99a1344b17d600eb747187f86
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214017"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895628"
 ---
 # <a name="cloud-native-communication-patterns"></a>Modèles de communication cloud natifs
 
@@ -44,10 +44,10 @@ Bien qu’elles offrent de nombreux avantages, les microservices ne sont pas gra
 
 - Le chiffrement/déchiffrement des messages devient important.
 
-L’ouvrage [.net microservices : architecture pour les applications .net en conteneur](https://docs.microsoft.com/dotnet/standard/microservices-architecture/), disponible gratuitement auprès de Microsoft, fournit une couverture approfondie des modèles de communication pour les applications de microservices. Dans ce chapitre, nous fournissons une vue d’ensemble détaillée de ces modèles, ainsi que des options d’implémentation disponibles dans le Cloud Azure.
+L’ouvrage [.net microservices : architecture pour les applications .net en conteneur](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook), disponible gratuitement auprès de Microsoft, fournit une couverture approfondie des modèles de communication pour les applications de microservices. Dans ce chapitre, nous fournissons une vue d’ensemble détaillée de ces modèles, ainsi que des options d’implémentation disponibles dans le Cloud Azure.
 
 Dans ce chapitre, nous allons commencer par traiter la communication entre les applications frontales et les microservices back-end. Nous examinerons ensuite les microservices principaux qui communiquent entre eux. Nous allons explorer les technologies de communication gRPC et up. Enfin, nous allons découvrir de nouveaux modèles de communication novateurs à l’aide de la technologie service Mesh. Nous verrons également comment le Cloud Azure fournit différents types de *services de stockage* pour prendre en charge la communication Native Cloud.
 
 >[!div class="step-by-step"]
 >[Précédent](other-deployment-options.md)
->[Suivant](front-end-communication.md)
+>[suivant](front-end-communication.md)

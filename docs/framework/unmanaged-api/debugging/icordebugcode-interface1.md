@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7bd14fb6-8b54-4484-a891-e3c21859c019
 topic_type:
 - apiref
-ms.openlocfilehash: 4b24b3dfe6a931866acd7eba966811071ff39ea5
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 3736627e7f42ad9db6699c31a0a618e993eef770
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76788927"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82893471"
 ---
 # <a name="icordebugcode-interface"></a>ICorDebugCode, interface
 
@@ -39,20 +39,20 @@ Représente un segment de code MSIL ou de code natif.
 |[GetVersionNumber, méthode](icordebugcode-getversionnumber-method.md)|Obtient le nombre de base 1 qui identifie la version du code que ce `ICorDebugCode` représente.|  
 |[IsIL, méthode](icordebugcode-isil-method.md)|Obtient une valeur qui indique si ce `ICorDebugCode` est compilé en MSIL.|  
   
-## <a name="remarks"></a>Notes  
- `ICorDebugCode` peut représenter le code MSIL ou le code natif. Un objet « ICorDebugFunction » qui représente le code MSIL peut avoir zéro ou un `ICorDebugCode` objets associés. Un objet « ICorDebugFunction » qui représente du code natif peut avoir un nombre quelconque d’objets `ICorDebugCode` associés.  
+## <a name="remarks"></a>Notes   
+ `ICorDebugCode`peut représenter le code MSIL ou le code natif. Un objet « ICorDebugFunction » qui représente le code MSIL peut avoir zéro ou un `ICorDebugCode` objet associé. Un objet « ICorDebugFunction » qui représente du code natif peut avoir un nombre `ICorDebugCode` quelconque d’objets associés.  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
