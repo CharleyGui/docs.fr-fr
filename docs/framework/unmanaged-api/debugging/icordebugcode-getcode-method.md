@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7137e3d1-1dad-48d8-8c37-16ac816534d3
 topic_type:
 - apiref
-ms.openlocfilehash: fde76c3b34fcc9f2321f3426d2801b310f681067
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 59a497d203d241bbc6e0f884007d4a401c112073
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179000"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82893653"
 ---
 # <a name="icordebugcodegetcode-method"></a>ICorDebugCode::GetCode, méthode
-Obtient tout le code pour la fonction spécifiée, formaté pour démontage. Cette méthode a été dépréciée dans la version cadre .NET 2.0. Utilisez [ICorDebugCode2::GetCodeChunks](icordebugcode2-getcodechunks-method.md) à la place.  
+Obtient tout le code pour la fonction spécifiée, mis en forme pour le code machine. Cette méthode est déconseillée dans la version 2,0 de .NET Framework. Utilisez [ICorDebugCode2 :: GetCodeChunks,](icordebugcode2-getcodechunks-method.md) à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +40,31 @@ HRESULT GetCode (
   
 ## <a name="parameters"></a>Paramètres  
  `startOffset`  
- [dans] Le décalage du début de la fonction.  
+ dans Offset du début de la fonction.  
   
  `endOffset`  
- [dans] Le décalage de la fin de la fonction.  
+ dans Offset de la fin de la fonction.  
   
  `cBufferAlloc`  
- [dans] La taille `buffer` du tableau dans lequel le code sera retourné.  
+ dans Taille du `buffer` tableau dans lequel le code sera retourné.  
   
  `buffer`  
- [out] Le tableau dans lequel le code sera retourné.  
+ à Tableau dans lequel le code sera retourné.  
   
  `pcBufferSize`  
- [out] Le nombre d’octets est revenu.  
+ à Nombre d’octets retournés.  
   
 ## <a name="remarks"></a>Notes   
- Si le code de la fonction a été divisé en plusieurs morceaux, ils sont concatenated dans l’ordre d’augmenter la compensation indigène. Les limites de l’instruction ne sont pas vérifiées.  
+ Si le code de la fonction a été divisé en plusieurs segments, ils sont concaténés par ordre de décalage natif. Les limites d’instruction ne sont pas vérifiées.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions cadre .NET:** 1.1, 1.0  
+ **Versions de .NET Framework :** 1,1, 1,0  
   
 ## <a name="see-also"></a>Voir aussi
 

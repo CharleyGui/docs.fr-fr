@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9f9f62b9-113a-4a98-8f9b-b593cef27b03
 topic_type:
 - apiref
-ms.openlocfilehash: e51ee2e4d44af547c82a21a782121976d07118c5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 94672c88864efc431acde8f29e406f4fbbc644ee
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124717"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894544"
 ---
 # <a name="icordebugchaingetreason-method"></a>ICorDebugChain::GetReason, méthode
-Gets the reason for the genesis of this calling chain.  
+Obtient la raison pour le Genesis de cette chaîne d’appel.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,13 +35,13 @@ HRESULT GetReason (
   
 ## <a name="parameters"></a>Paramètres  
  `pReason`  
- [out] A pointer to a value (a bitwise combination) of the CorDebugChainReason enumeration that indicates the reason for the genesis of this calling chain.  
+ à Pointeur vers une valeur (combinaison d’opérations de bits) de l’énumération CorDebugChainReason, qui indique la raison du Genesis de cette chaîne d’appel.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

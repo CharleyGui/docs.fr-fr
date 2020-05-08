@@ -2,12 +2,12 @@
 title: Combinaison de conteneurs et d’approches sans serveur pour les services Cloud natifs
 description: Combinaison de conteneurs et de Kubernetes avec des approches sans serveur
 ms.date: 04/23/2020
-ms.openlocfilehash: fe9e9fd5d07132971d64bc6433a762fb7bd22048
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: a6ae17543c9075ca84126a4c19f9f51887f7fe9a
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199662"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895635"
 ---
 # <a name="combining-containers-and-serverless-approaches"></a>Combinaison de conteneurs et d’approches serverless
 
@@ -35,7 +35,11 @@ Lorsque le projet est créé, il inclut un fichier dockerfile et le runtime du W
 
 ## <a name="how-to-combine-serverless-and-kubernetes-with-keda"></a>Comment combiner sans serveur et Kubernetes avec KEDA
 
-Azure Functions est mis à l’échelle automatiquement pour répondre à la demande en fonction du taux d’événements qui le ciblent. Vous pouvez toujours tirer parti de AKS pour héberger vos fonctions et utiliser la mise à l’échelle automatique pilotée par les événements basée sur Kubernetes, ou KEDA. Quand aucun événement ne se produit, KEDA peut réduire à zéro instance. [En savoir plus sur la mise à l’échelle d’Azure Functions avec Keda](https://docs.microsoft.com/azure/azure-functions/functions-kubernetes-keda).
+Dans ce chapitre, vous avez vu que la plateforme Azure Functions est automatiquement mise à l’échelle pour répondre à la demande. Toutefois, lorsque vous déployez des fonctions en conteneur vers AKS, vous perdez la fonctionnalité de mise à l’échelle intégrée. L’Kubernetes de la récupération est [basée sur des événements (Keda)](https://docs.microsoft.com/azure/azure-functions/functions-kubernetes-keda). Il permet une mise à l’échelle automatique fine pour `event-driven Kubernetes workloads,` inclure des fonctions en conteneur.
+
+KEDA fournit une fonctionnalité de mise à l’échelle pilotée par les événements au runtime des fonctions dans un conteneur d’ancrage. KEDA peut être mis à l’échelle à partir de zéro instance (quand aucun `n instances`événement ne se produit) vers, en fonction de la charge. Il permet la mise à l’échelle automatique en exposant des métriques personnalisées à l’échelle automatique Kubernetes (la barre verticale du Pod). L’utilisation de conteneurs Functions avec KEDA permet de répliquer des fonctionnalités de fonction serverless dans n’importe quel cluster Kubernetes.
+
+Il est à noter que le projet KEDA est désormais géré par le Cloud Native Computing Foundation (CNCF).
 
 >[!div class="step-by-step"]
 >[Précédent](leverage-serverless-functions.md)

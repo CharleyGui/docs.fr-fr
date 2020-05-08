@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 03a6facb-f12f-49be-9839-e73b9c791cd5
 topic_type:
 - apiref
-ms.openlocfilehash: 7ac588591222a1abbc7b99ec7e973284c055f95e
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: d7417e8dc193172c77d23fe3fa72c8298d802b5c
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76784171"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894040"
 ---
 # <a name="icordebugclass-interface"></a>ICorDebugClass, interface
 
@@ -33,22 +33,22 @@ Représente un type, qui peut être de base ou complexe (c'est-à-dire défini p
 |[GetStaticFieldValue, méthode](icordebugclass-getstaticfieldvalue-method.md)|Obtient la valeur du champ statique spécifié.|  
 |[GetToken, méthode](icordebugclass-gettoken-method.md)|Obtient le `TypeDef` jeton de métadonnées pour cette classe.|  
   
-## <a name="remarks"></a>Notes  
- L’interface `ICorDebugClass` représente un type générique non instancié. L’interface ICorDebugType représente un type générique instancié. Par exemple, `Hashtable<K, V>` serait représenté par `ICorDebugClass`, tandis que `Hashtable<Int32, String>` serait représenté par `ICorDebugType`.  
+## <a name="remarks"></a>Notes   
+ L' `ICorDebugClass` interface représente un type générique non instancié. L’interface ICorDebugType représente un type générique instancié. Par exemple, `Hashtable<K, V>` serait représenté par `ICorDebugClass`, tandis `Hashtable<Int32, String>` que serait représenté par `ICorDebugType`.  
   
- Les types non génériques sont représentés par les `ICorDebugClass` et `ICorDebugType`. La dernière interface a été introduite dans la version 2,0 de .NET Framework pour gérer l’instanciation de type.  
+ Les `ICorDebugClass` types non génériques sont représentés par et `ICorDebugType`. La dernière interface a été introduite dans la version 2,0 de .NET Framework pour gérer l’instanciation de type.  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

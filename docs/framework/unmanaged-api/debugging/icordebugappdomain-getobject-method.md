@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 78232e6f-ae18-4cfa-a6cd-e79471cf9d76
 topic_type:
 - apiref
-ms.openlocfilehash: f2c881603cfa0e4b3d2dc8d1e996631b51d1e850
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a21f3b36e418bbde5dcb90f25a39dae03fde77c9
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134711"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895214"
 ---
 # <a name="icordebugappdomaingetobject-method"></a>ICorDebugAppDomain::GetObject, méthode
 Obtient un pointeur d’interface vers le domaine d’application common language runtime (CLR).  
@@ -38,16 +38,16 @@ HRESULT GetObject (
  à Pointeur vers l’adresse d’un objet d’interface ICorDebugValue qui représente le domaine d’application CLR.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Si un objet <xref:System.AppDomain?displayProperty=nameWithType> managé n’a pas été construit pour ce domaine d’application, la méthode retourne `S_FALSE` et place `NULL` dans `*ppObject`.  
+ Si un objet <xref:System.AppDomain?displayProperty=nameWithType> managé n’a pas été construit pour ce domaine d’application, `S_FALSE` la méthode `NULL` retourne `*ppObject`et place dans.  
   
-## <a name="remarks"></a>Notes  
- Chaque domaine d’application dans un processus peut avoir un objet <xref:System.AppDomain?displayProperty=nameWithType> managé dans le runtime qui le représente. Cette fonction obtient un objet d’interface ICorDebugValue qui correspond à cet objet de <xref:System.AppDomain?displayProperty=nameWithType> managé.  
+## <a name="remarks"></a>Notes   
+ Chaque domaine d’application dans un processus peut avoir un <xref:System.AppDomain?displayProperty=nameWithType> objet managé dans le runtime qui le représente. Cette fonction obtient un objet d’interface ICorDebugValue qui correspond à cet <xref:System.AppDomain?displayProperty=nameWithType> objet managé.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]

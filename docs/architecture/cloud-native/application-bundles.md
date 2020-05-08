@@ -1,15 +1,15 @@
 ---
-title: Lots d’applications Cloud natives
+title: Bundles d’applications cloud natives
 description: Architecture des applications .NET natives Cloud pour Azure | Lots d’applications Cloud natives
 ms.date: 06/30/2019
-ms.openlocfilehash: 0c67035af08d3c337ff027f3742e1ce8a83f8d0f
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 6f85ca14ff4d17f9c7a90a9ace51a1448b89fcb3
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183713"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895680"
 ---
-# <a name="cloud-native-application-bundles"></a>Lots d’applications Cloud natives
+# <a name="cloud-native-application-bundles"></a>Bundles d’applications cloud natives
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -78,7 +78,8 @@ Le format CNAB est également flexible, ce qui lui permet d’être utilisé sur
 
 ## <a name="devops-decisions"></a>Décisions DevOps
 
-Il y a tellement de nombreux outils exceptionnels dans l’espace DevOps ces journées et encore plus fantastiques de livres et de documents sur la manière de mener à bien. Un livre favori pour la prise en main du parcours DevOps est [le projet Phoenix](https://www.oreilly.com/library/view/the-phoenix-project/9781457191350/), qui suit la transformation d’une société fictive de NoOps en DevOps. Une chose est pour certains : DevOps n’est plus une « belle à avoir » lors du déploiement d’applications natives du Cloud. Elle est obligatoire et doit être planifiée et Resource au début de tout projet.
+Il y a tellement de nombreux outils exceptionnels dans l’espace DevOps ces journées et encore plus fantastiques de livres et de documents sur la manière de mener à bien. Un livre favori pour la prise en main du parcours DevOps est [le projet Phoenix](https://www.oreilly.com/library/view/the-phoenix-project/9781457191350/), qui suit la transformation d’une société fictive de NoOps en DevOps. Une chose est pour certains : DevOps n’est plus un « joli à avoir » lors du déploiement d’applications natives du Cloud. Elle est obligatoire et doit être planifiée et Resource au début de tout projet.
 
 >[!div class="step-by-step"]
 >[Précédent](infrastructure-as-code.md)
+>[suivant](summary.md)

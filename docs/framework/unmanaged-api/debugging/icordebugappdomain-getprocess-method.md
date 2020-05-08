@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9d0b9628-a91c-40d0-b9bc-00b34a396b8f
 topic_type:
 - apiref
-ms.openlocfilehash: 46d045712e5d3f688ec35d039ccfecba0088037c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 90ac981f9b5ee71ca59f76823e7b796471571e4e
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134691"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895202"
 ---
 # <a name="icordebugappdomaingetprocess-method"></a>ICorDebugAppDomain::GetProcess, méthode
-Gets the process containing the application domain.  
+Obtient le processus qui contient le domaine d’application.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,13 +35,13 @@ HRESULT GetProcess (
   
 ## <a name="parameters"></a>Paramètres  
  `ppProcess`  
- [out] A pointer to the address of an ICorDebugProcess object that represents the process.  
+ à Pointeur vers l’adresse d’un objet ICorDebugProcess qui représente le processus.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

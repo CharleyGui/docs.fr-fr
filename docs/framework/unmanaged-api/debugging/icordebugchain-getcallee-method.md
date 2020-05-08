@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 19560c79-abdc-4bdf-a5fe-eb362a59edc0
 topic_type:
 - apiref
-ms.openlocfilehash: 5d28af09faae84b0482d438ae33f593f250490c1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ba9a4e32216fd6fad285397bfc48fbc54f602b88
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73196338"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894648"
 ---
 # <a name="icordebugchaingetcallee-method"></a>ICorDebugChain::GetCallee, méthode
 Obtient la chaîne qui a été appelée par cette chaîne.  
@@ -35,16 +35,16 @@ HRESULT GetCallee (
   
 ## <a name="parameters"></a>Paramètres  
  `ppChain`  
- à Pointeur vers l’adresse d’un objet ICorDebugChain qui représente la chaîne appelée. Si cette chaîne est en cours d’exécution (autrement dit, si cette chaîne n’attend pas le retour d’une chaîne appelée), `ppChain` a la valeur null.  
+ à Pointeur vers l’adresse d’un objet ICorDebugChain qui représente la chaîne appelée. Si cette chaîne est en cours d’exécution (autrement dit, si cette chaîne n’attend pas une chaîne appelée à retourner), `ppChain` aura la valeur null.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Cette chaîne attend que la chaîne appelée retourne avant de reprendre l’exécution. La chaîne appelée peut se trouver sur un autre thread dans le cas d’appels marshalés inter-threads.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

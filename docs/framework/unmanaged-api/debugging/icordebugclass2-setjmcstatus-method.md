@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 077e6c7f-f857-480c-bebb-76ee1de4e8fc
 topic_type:
 - apiref
-ms.openlocfilehash: a862dd3f6a9c10c6b3a5a0bb41208d351c4ca9f1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9fb2f960098e970b4d3d9f0be499f4d9fda6558e
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125688"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82893897"
 ---
 # <a name="icordebugclass2setjmcstatus-method"></a>ICorDebugClass2::SetJMCStatus, méthode
 Pour chaque méthode de la classe, définit une valeur qui indique si la méthode est du code défini par l’utilisateur.  
@@ -35,18 +35,18 @@ HRESULT SetJMCStatus (
   
 ## <a name="parameters"></a>Paramètres  
  `bIsJustMyCode`  
- dans Affectez la valeur `true` pour indiquer que la méthode est du code défini par l’utilisateur ; Sinon, affectez la valeur `false`.  
+ dans Affectez `true` la valeur pour indiquer que la méthode est du code défini par l’utilisateur ; Sinon, affectez `false`à la valeur.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Notes   
  Une exécution pas à pas juste-à-pas-code (uniquement mon code) ignore le code non défini par l’utilisateur. Le code défini par l’utilisateur doit être un sous-ensemble du code pouvant être débogué.  
   
- `SetJMCStatus` retourne une valeur HRESULT de S_FALSE si elle ne parvient pas à définir la valeur d’une méthode, même si elle définit correctement la valeur pour toutes les autres méthodes.  
+ `SetJMCStatus`retourne une valeur HRESULT de S_FALSE si elle ne parvient pas à définir la valeur d’une méthode, même si elle définit correctement la valeur pour toutes les autres méthodes.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

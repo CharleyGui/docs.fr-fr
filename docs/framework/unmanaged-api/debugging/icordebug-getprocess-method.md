@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 10a40ba0-1b65-4721-bd11-cf12d57b280d
 topic_type:
 - apiref
-ms.openlocfilehash: 2762d0680c5299732196cafe09f6e346e873f19a
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 59afc8ae7d66e81e4dca3923f9c6f7ff3a3a6605
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76785140"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895381"
 ---
 # <a name="icordebuggetprocess-method"></a>ICorDebug::GetProcess, méthode
 Obtient un pointeur vers l’instance « ICorDebugProcess » pour le processus spécifié.  
@@ -34,21 +34,21 @@ HRESULT GetProcess (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `dwProcessId`  
  dans ID du processus.  
   
  `ppProcess`  
- à Pointeur vers l’adresse d’une instance de `ICorDebugProcess` pour le processus spécifié.  
+ à Pointeur vers l’adresse d’une `ICorDebugProcess` instance pour le processus spécifié.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

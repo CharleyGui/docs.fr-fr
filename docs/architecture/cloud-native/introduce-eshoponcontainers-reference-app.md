@@ -2,12 +2,12 @@
 title: Présentation de l’application de référence eShopOnContainers
 description: Présentation de l’application de référence eShopOnContainers Cloud Native microservices pour ASP.NET Core et Azure.
 ms.date: 06/30/2019
-ms.openlocfilehash: 0d55f248acbc34bcc76d38987d7e1d537cf6065a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8d4ad982716a07613ebbef6668afab69d5a8b4f6
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087254"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895539"
 ---
 # <a name="introducing-eshoponcontainers-reference-app"></a>Présentation de l’application de référence eShopOnContainers
 
@@ -17,7 +17,7 @@ Microsoft, en partenariat avec les principaux experts de la Communauté, a produ
 
 ![Capture d’écran de l’exemple d’application eShopOnContainers.](./media/eshoponcontainers-sample-app-screenshot.png)
 
-**Figure 2-1** : Capture d’écran de l’exemple d’application eShopOnContainers.
+**Figure 2-1**. Capture d’écran de l’exemple d’application eShopOnContainers.
 
 Avant de commencer ce chapitre, nous vous recommandons de télécharger l' [application de référence eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers). Dans ce cas, il est plus facile de suivre les informations présentées.
 
@@ -25,15 +25,15 @@ Avant de commencer ce chapitre, nous vous recommandons de télécharger l' [appl
 
 Commençons par une revue des fonctionnalités et des exigences de l’application. L’application eShopOnContainers représente un magasin en ligne qui vend divers produits physiques tels que des tee-shirts et des tasses à café. Si vous avez acheté des éléments en ligne auparavant, l’expérience de l’utilisation du magasin doit être relativement familière. Voici quelques-unes des fonctionnalités de base implémentées par le Store :
 
-- Répertorier les éléments de catalogue
+- Répertorier les éléments du catalogue
 - Filtrer les éléments par type
 - Filtrer les éléments par la personnalisation
 - Ajouter des éléments au panier d’achat
 - Modifier ou supprimer des éléments du panier
-- Validation
+- Checkout
 - Inscrire un compte
 - Se connecter
-- Déconnexion
+- Se déconnecter
 - Passer en revue les commandes
 
 L’application présente également les exigences non fonctionnelles suivantes :
@@ -68,10 +68,10 @@ Chacun des différents microservices est conçu différemment, en fonction de le
 
 Le code est organisé pour prendre en charge les différents microservices, et au sein de chaque microservice, le code est divisé en logique de domaine, en problèmes d’infrastructure et en interface utilisateur ou point de terminaison de service. Dans de nombreux cas, les dépendances de chaque service peuvent être exécutées par les services Azure en production, ainsi que des options alternatives pour le développement local. Examinons comment les exigences de l’application sont mappées aux services Azure.
 
-## <a name="understanding-microservices"></a>Fonctionnement des microservices
+## <a name="understanding-microservices"></a>Compréhension des microservices
 
-Ce document se concentre sur les applications Cloud natives créées à l’aide de la technologie Azure. Pour en savoir plus sur les meilleures pratiques relatives aux microservices et sur l’architecture des applications basées sur des microservices, consultez la documentation complémentaire sur les microservices [.net : architecture pour les applications .net en conteneur](https://dotnet.microsoft.com/learn/aspnet/microservices-architecture). Le livre est disponible en ligne, au format PDF ou eReader.
+Ce document se concentre sur les applications Cloud natives créées à l’aide de la technologie Azure. Pour en savoir plus sur les meilleures pratiques relatives aux microservices et sur l’architecture des applications basées sur des microservices, consultez la documentation complémentaire sur les microservices [.net : architecture pour les applications .net en conteneur](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook).
 
 >[!div class="step-by-step"]
 >[Précédent](candidate-apps.md)
->[Suivant](map-eshoponcontainers-azure-services.md)
+>[suivant](map-eshoponcontainers-azure-services.md)

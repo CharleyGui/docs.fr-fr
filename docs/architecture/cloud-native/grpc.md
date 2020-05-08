@@ -1,118 +1,118 @@
 ---
-title: gRPC (en)
-description: Renseignez-vous sur le gRPC, son rôle dans les applications cloud-natives, et comment il diffère de la communication RESTful HTTP.
+title: gRPC
+description: En savoir plus sur gRPC, son rôle dans les applications natives du Cloud et sa différence par rapport à la communication HTTP RESTful.
 author: robvet
 ms.date: 03/31/2020
-ms.openlocfilehash: 28a07ad5ec105d3fc5b65e4cf0ac0cd85eb16627
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 01dd4c934f0b39041ea377691067edf4dbe20378
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80524172"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895563"
 ---
-# <a name="grpc"></a>gRPC (en)
+# <a name="grpc"></a>gRPC
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Jusqu’à présent, dans ce livre, nous nous sommes concentrés sur la communication basée sur [REST.](https://docs.microsoft.com/azure/architecture/best-practices/api-design) Nous avons vu que REST est un style architectural flexible qui définit les opérations basées sur CRUD par rapport aux ressources de l’entité. Les clients interagissent avec les ressources de HTTP avec un modèle de communication de demande/réponse. Bien que REST soit largement mise en œuvre, une nouvelle technologie de communication, gRPC, a pris un élan énorme dans la communauté des personnes du cloud.
+Jusqu’ici, dans cet ouvrage, nous nous sommes concentrés sur la communication [basée sur REST](https://docs.microsoft.com/azure/architecture/best-practices/api-design) . Nous avons vu que REST est un style architectural flexible qui définit les opérations CRUD sur les ressources d’entité. Les clients interagissent avec les ressources sur HTTP avec un modèle de communication de demande/réponse. Bien que REST soit largement implémenté, une technologie de communication plus récente, gRPC, a gagné un énorme dynamisme au sein de la communauté Cloud-native.
 
-## <a name="what-is-grpc"></a>Qu’est-ce que le gRPC?
+## <a name="what-is-grpc"></a>Qu’est-ce que gRPC ?
 
-gRPC est un cadre moderne et performant qui évolue le protocole [d’appel d’intervention à distance (RPC)](https://en.wikipedia.org/wiki/Remote_procedure_call) séculaire. Au niveau de l’application, gRPC rationalise la messagerie entre les clients et les services back-end. Originaire de Google, gRPC est open source et fait partie de l’écosystème Cloud [Native Computing Foundation (CNCF)](https://www.cncf.io/) d’offres cloud-native. La CNCF considère gRPC comme un [projet d’incubation.](https://github.com/cncf/toc/blob/master/process/graduation_criteria.adoc) Incubation signifie que les utilisateurs finaux utilisent la technologie dans les applications de production, et le projet a un nombre sain de contributeurs.
+gRPC est une infrastructure moderne et hautement performante qui fait évoluer le protocole d' [appel de procédure distante (RPC)](https://en.wikipedia.org/wiki/Remote_procedure_call) Age Old. Au niveau de l’application, gRPC simplifie la messagerie entre les clients et les services principaux. En provenance de Google, gRPC est open source et fait partie de l’écosystème [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) des offres Cloud natives. CNCF considère gRPC un [projet en incubation](https://github.com/cncf/toc/blob/master/process/graduation_criteria.adoc). L’incubation signifie que les utilisateurs finaux utilisent la technologie dans les applications de production et que le projet a un nombre sain de contributeurs.
 
-Une application client GRPC typique exposera une fonction locale en cours de traitement qui met en œuvre une entreprise. Sous les couvertures, cette fonction locale invoque une autre fonction sur une machine à distance. Ce qui semble être un appel local devient essentiellement un appel transparent hors-processus à un service distant. La plomberie RPC résume la communication de réseautage point-à-point, la sérialisation et l’exécution entre les ordinateurs.
+Une application cliente gRPC standard expose une fonction in-process locale qui implémente une opération commerciale. En coulisses, cette fonction locale appelle une autre fonction sur un ordinateur distant. Ce qui semble être un appel local devient essentiellement un appel out-of-process transparent à un service distant. L’infrastructure RPC fait abstraction de la communication réseau point à point, de la sérialisation et de l’exécution entre les ordinateurs.
 
-Dans les applications cloud-natives, les développeurs travaillent souvent à travers les langages de programmation, les cadres et les technologies. Cette *interopérabilité* complique les contrats de messages et la plomberie requise pour la communication interplateforme.  gRPC fournit une « couche horizontale uniforme » qui résume ces préoccupations. Les développeurs codent dans leur plate-forme native axée sur la fonctionnalité d’entreprise, tandis que gRPC gère la plomberie de communication.
+Dans les applications Cloud natives, les développeurs travaillent souvent dans des langages de programmation, des infrastructures et des technologies. Cette *interopérabilité* complique les contrats de message et les mécanismes requis pour la communication multiplateforme.  gRPC fournit une « couche horizontale uniforme » qui résume ces préoccupations. Les développeurs codent dans leur plate-forme native axée sur les fonctionnalités métier, tandis que gRPC gère la gestion des communications.
 
-gRPC offre un soutien complet sur la plupart des piles de développement populaires, y compris Java, JavaScript, C, Go, Swift et NodeJS.
+gRPC offre une prise en charge complète des piles de développement les plus populaires, notamment Java, JavaScript, C#, Go, Swift et NodeJS.
 
-## <a name="grpc-benefits"></a>avantages gRPC
+## <a name="grpc-benefits"></a>Avantages gRPC
 
-gRPC utilise HTTP/2 pour son protocole de transport. Bien que compatible avec HTTP 1.1, HTTP/2 dispose de nombreuses fonctionnalités avancées :
+gRPC utilise HTTP/2 pour son protocole de transport. Bien qu’compatible avec HTTP 1,1, HTTP/2 offre de nombreuses fonctionnalités avancées :
 
-- Un protocole binaire pour le transport de données - contrairement à HTTP 1.1, qui envoie des données sous forme de texte clair.
-- Soutien multiplexant pour l’envoi de plusieurs demandes parallèles sur la même connexion - HTTP 1.1 limite le traitement à un message de demande/réponse à la fois.
-- Communication bidirectionnelle en duplex pour l’envoi simultané de demandes de clients et de réponses au serveur.
-- Streaming intégré permettant des demandes et des réponses à diffuser asynchronement de grands ensembles de données.
+- Protocole binaire pour le transport de données, contrairement à HTTP 1,1, qui envoie des données en texte clair.
+- Prise en charge du multiplexage pour l’envoi de plusieurs requêtes parallèles sur la même connexion-HTTP 1,1 limite le traitement à un message de demande/réponse à la fois.
+- Communication bidirectionnelle en duplex intégral pour l’envoi simultané des demandes du client et des réponses du serveur.
+- Streaming intégré permettant des demandes et des réponses pour diffuser de manière asynchrone des jeux de données volumineux.
 
-gRPC est léger et très performant. Il peut être jusqu’à 8x plus rapide que la sérialisation JSON avec des messages 60-80% plus petit. Dans le langage de [microsoft Windows Communication Foundation (WCF),](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) les performances de gRPC dépassent la vitesse et l’efficacité des [liaisons NetTCP](https://docs.microsoft.com/dotnet/api/system.servicemodel.nettcpbinding?view=netframework-4.8)hautement optimisées. Contrairement à NetTCP, qui favorise la pile Microsoft, gRPC est multiplateforme.
+gRPC est léger et très performant. Elle peut être jusqu’à 8 fois plus rapide que la sérialisation JSON avec des messages de 60-80% de plus. Dans le jargon de Microsoft [Windows Communication Foundation (WCF)](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) , les performances de gRPC dépassent la vitesse et l’efficacité des [liaisons NetTcp](https://docs.microsoft.com/dotnet/api/system.servicemodel.nettcpbinding?view=netframework-4.8)hautement optimisées. Contrairement à NetTCP, qui privilégie la pile Microsoft, gRPC est multiplateforme.
 
 ## <a name="protocol-buffers"></a>Mémoires tampon de protocole
 
-gRPC adopte une technologie open-source appelée [Protocol Buffers](https://developers.google.com/protocol-buffers/docs/overview). Ils fournissent un format de sérialisation très efficace et neutre sur la plate-forme pour la sérialisation des messages structurés que les services s’envoient les uns aux autres. À l’aide d’un langage de définition d’interface interplateforme (IDL), les développeurs définissent un contrat de service pour chaque microservice. Le contrat, mis en `.proto` œuvre sous forme de fichier textuel, décrit les méthodes, les entrées et les sorties de chaque service. Le même fichier de contrat peut être utilisé pour les clients et services gRPC construits sur différentes plates-formes de développement.
+gRPC adopte une technologie open source appelée [mémoires tampons de protocole](https://developers.google.com/protocol-buffers/docs/overview). Ils fournissent un format de sérialisation très efficace et indépendant de la plateforme pour la sérialisation des messages structurés que les services envoient entre eux. À l’aide d’un langage IDL (Interface Definition Language) multiplateforme, les développeurs définissent un contrat de service pour chaque microservice. Le contrat, implémenté sous forme de `.proto` fichier texte, décrit les méthodes, les entrées et les sorties pour chaque service. Le même fichier de contrat peut être utilisé pour les clients et services gRPC basés sur différentes plateformes de développement.
 
-À l’aide du fichier proto, `protoc`le compilateur Protobuf, génère à la fois le client et le code de service pour votre plate-forme cible. Le code comprend les composants suivants :
+À l’aide du fichier proto, le compilateur `protoc`Protobuf,, génère le code du client et du service pour votre plateforme cible. Le code comprend les composants suivants :
 
-- Objets fortement typés, partagés par le client et le service, qui représentent les opérations de service et les éléments de données pour un message.
-- Une classe de base fortement typée avec la plomberie réseau requise que le service à distance gRPC peut hériter et étendre.
-- Un talon client qui contient la plomberie requise pour invoquer le service à distance gRPC.
+- Objets fortement typés, partagés par le client et le service, qui représentent les opérations de service et les éléments de données d’un message.
+- Classe de base fortement typée avec l’infrastructure réseau requise que le service gRPC distant peut hériter et étendre.
+- Stub client qui contient les plombages requis pour appeler le service gRPC distant.
 
-Au moment de l’exécution, chaque message est sérialisé en tant que représentation Protobuf standard et échangé entre le client et le service à distance. Contrairement à JSON ou XML, les messages Protobuf sont sérialisés sous forme d’octets binaires compilés.
+Lors de l’exécution, chaque message est sérialisé en tant que représentation Protobuf standard et échangé entre le client et le service distant. Contrairement à JSON ou XML, les messages Protobuf sont sérialisés en tant qu’octets binaires compilés.
 
-Le livre, [gRPC pour WCF Developers](https://docs.microsoft.com/dotnet/architecture/grpc-for-wcf-developers/), disponible sur le site Microsoft Architecture, offre une couverture approfondie de gRPC et Protocol Buffers.
+Le livre, [gRPC pour les développeurs WCF](https://docs.microsoft.com/dotnet/architecture/grpc-for-wcf-developers/), disponible sur le site de l’architecture Microsoft, fournit une couverture approfondie des gRPC et des mémoires tampons de protocole.
 
-## <a name="grpc-support-in-net"></a>support gRPC en .NET
+## <a name="grpc-support-in-net"></a>prise en charge de gRPC dans .NET
 
-gRPC est intégré dans .NET Core 3.0 SDK ou plus tard. Les outils suivants le soutiennent :
+gRPC est intégré au kit de développement logiciel (SDK) .NET Core 3,0 et versions ultérieures. Les outils suivants le prennent en charge :
 
-- Visual Studio 2019, version 16.3 ou plus tard, avec la charge de travail de développement web installée.
+- Visual Studio 2019, version 16,3 ou ultérieure, avec la charge de travail développement Web installée.
 - Visual Studio Code
-- l’ICIC dotnet
+- interface CLI dotnet
 
-Le SDK comprend l’outillage pour le routage des points de terminaison, l’IoC intégré et l’enregistrement. Le serveur web open-source Kestrel prend en charge les connexions HTTP/2. La figure 4-20 montre un modèle Visual Studio 2019 qui échafaude un projet de squelette pour un service gRPC. Notez comment .NET Core prend pleinement en charge Windows, Linux et macOS.
+Le kit de développement logiciel (SDK) comprend des outils pour le routage des points de terminaison, l’IoC intégré et la journalisation. Le serveur Web Kestrel Open Source prend en charge les connexions HTTP/2. La figure 4-20 illustre un modèle de Visual Studio 2019 qui génère une structure de projet squelette pour un service gRPC. Notez comment .NET Core prend entièrement en charge Windows, Linux et macOS.
 
-![support gRPC en Studio Visuel 2019](./media/visual-studio-2019-grpc-template.png)
+![Prise en charge de gRPC dans Visual Studio 2019](./media/visual-studio-2019-grpc-template.png)
 
-**Figure 4-20**. gRPC support dans Visual Studio 2019
+**Figure 4-20**. prise en charge de gRPC dans Visual Studio 2019
   
-La figure 4-21 montre le service squelette gRPC généré par l’échafaudage intégré inclus dans Visual Studio 2019.  
+La figure 4-21 montre le squelette du service gRPC généré à partir de la génération de modèles automatique intégrée incluse dans Visual Studio 2019.  
 
-![gRPC projet dans Visual Studio 2019](./media/grpc-project.png  )
+![projet gRPC dans Visual Studio 2019](./media/grpc-project.png  )
 
-**Figure 4-21**. gRPC projet dans Visual Studio 2019
+**Figure 4-21**. projet gRPC dans Visual Studio 2019
 
-Dans le chiffre précédent, notez le fichier de description proto et le code de service. Comme vous le verrez bientôt, Visual Studio génère une configuration supplémentaire dans la classe Startup et dans le fichier de projet sous-jacent.
+Dans l’illustration précédente, notez le fichier de description proto et le code de service. Comme vous le verrez bientôt, Visual Studio génère une configuration supplémentaire à la fois dans la classe Startup et dans le fichier projet sous-jacent.
 
 ## <a name="grpc-usage"></a>utilisation de gRPC
 
-Favoriser gRPC pour les scénarios suivants:
+Privilégiez gRPC pour les scénarios suivants :
 
-- Communication synchrone de microservice de backend-à-microservice où une réponse immédiate est nécessaire pour continuer le traitement.
-- Environnements polyglottes qui ont besoin de prendre en charge les plates-formes de programmation mixtes.
-- Faible latence et communication à haut débit où la performance est critique.
-- Communication en temps réel point à point - gRPC peut pousser des messages en temps réel sans sondage et a un excellent soutien pour le streaming bidirectionnel.
-- Environnements de réseau restreints - les messages de gRPC binaires sont toujours plus petits qu’un message JSON basé sur le texte équivalent.
+- Communication du microservice vers le serveur principal synchrone, où une réponse immédiate est nécessaire pour poursuivre le traitement.
+- Environnements polyglotte qui doivent prendre en charge des plateformes de programmation mixte.
+- Communication à faible latence et débit élevé, où les performances sont critiques.
+- Communication en temps réel point à point : gRPC peut envoyer des messages en temps réel sans interrogation et offre une excellente prise en charge de la diffusion bidirectionnelle.
+- Environnements réseau restreints : les messages gRPC binaires sont toujours plus petits qu’un message JSON équivalent basé sur le texte.
 
-À l’époque, de cette écriture, gRPC est principalement utilisé avec les services backend. La plupart des navigateurs modernes ne peuvent pas fournir le niveau de contrôle HTTP/2 requis pour prendre en charge un client gRPC frontale. Cela dit, il ya une [initiative précoce](https://devblogs.microsoft.com/aspnet/grpc-web-experiment/) qui permet la communication gRPC à partir d’applications basées sur le navigateur construit avec JavaScript ou Blazor WebAssembly technologies. Le [gRPC-Web pour .NET](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md) permet à une application ASP.NET Core gRPC de prendre en charge les fonctionnalités gRPC dans les applications de navigateur:
+Au moment de la rédaction de cet article, gRPC est principalement utilisé avec les services principaux. La plupart des navigateurs modernes ne peuvent pas fournir le niveau de contrôle HTTP/2 requis pour prendre en charge un client gRPC frontal. Cela dit, il existe une [initiative précoce](https://devblogs.microsoft.com/aspnet/grpc-web-experiment/) qui permet la communication gRPC à partir d’applications basées sur le navigateur créées avec des technologies de webassembly avec JavaScript ou éblouissant. [GRPC-Web pour .net](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md) permet à une application ASP.net Core gRPC de prendre en charge des fonctionnalités gRPC dans les applications de navigateur :
 
-- Clients fortement typés générés par le code
-- Messages Protobuf compacts
-- Streaming serveur
+- Clients générés par du code fortement typés
+- Compacter les messages Protobuf
+- Streaming de serveur
 
-## <a name="grpc-implementation"></a>mise en œuvre gRPC
+## <a name="grpc-implementation"></a>implémentation de gRPC
 
-L’architecture de référence de microservice, [eShop sur Les conteneurs](https://github.com/dotnet-architecture/eShopOnContainers), de Microsoft, montre comment implémenter les services gRPC dans les applications .NET Core. La figure 4-22 présente l’architecture back-end.
+L’architecture de référence des microservices, [eShop on containers](https://github.com/dotnet-architecture/eShopOnContainers), de Microsoft, montre comment implémenter des services gRPC dans des applications .net core. La figure 4-22 présente l’architecture back-end.
 
-![Architecture backend pour eShop sur Conteneurs](./media/eshop-with-aggregators.png)
+![Architecture backend pour eShop sur les conteneurs](./media/eshop-with-aggregators.png)
 
-**Figure 4-22**. Architecture backend pour eShop sur Conteneurs
+**Figure 4-22**. Architecture backend pour eShop sur les conteneurs
 
-Dans le chiffre précédent, notez comment eShop embrasse le [modèle Backend for Frontends](https://docs.microsoft.com/azure/architecture/patterns/backends-for-frontends) (BFF) en exposant plusieurs passerelles API. Nous avons discuté du modèle BFF plus tôt dans ce chapitre. Portez une attention particulière au microservice Aggregator (en gris) qui se trouve entre la passerelle de l’API Web-Shopping et les microservices d’achats backend. L’agrégateur reçoit une seule demande d’un client, l’envoie à divers microservices, agrége les résultats et les renvoie au client demandeur. Ces opérations nécessitent généralement une communication synchrone pour produire une réponse immédiate. Dans eShop, les appels backend de l’agrégateur sont effectués à l’aide de gRPC comme indiqué dans la figure 4-23.
+Dans l’illustration précédente, vous remarquerez comment eShop adopte le [modèle backend pour les serveurs frontaux](https://docs.microsoft.com/azure/architecture/patterns/backends-for-frontends) (BFF) en exposant plusieurs passerelles d’API. Nous avons abordé le modèle BFF plus haut dans ce chapitre. Portez une attention particulière au microservice de l’agrégateur (en gris) qui se situe entre la passerelle d’API d’achat Web et les microservices d’achat principaux. L’agrégation reçoit une requête unique d’un client, la distribue à différents microservices, agrège les résultats et les renvoie au client demandeur. Ces opérations nécessitent généralement une communication synchrone en ce qui concerne la génération d’une réponse immédiate. Dans eShop, les appels backend de l’agrégateur sont effectués à l’aide de gRPC, comme le montre la figure 4-23.
 
-![gRPC dans eShop sur conteneurs](./media/grpc-implementation.png)
+![gRPC dans eShop sur les conteneurs](./media/grpc-implementation.png)
 
-**Figure 4-23**. gRPC dans eShop sur conteneurs
+**Figure 4-23**. gRPC dans eShop sur les conteneurs
 
-la communication gRPC nécessite à la fois des composants clients et serveur. Dans le chiffre précédent, notez comment l’agrégateur de shopping implémente un client gRPC. Le client fait des appels synchrones gRPC (en rouge) pour backend microservices, dont chacun implémente un serveur gRPC. Le client et le serveur profitent de la plomberie gRPC intégrée de la .NET Core 3.0 SDK. Les *talons* côté client fournissent la plomberie pour invoquer les appels à distance de gRPC. Les composants côté serveur fournissent la plomberie gRPC que les classes de service personnalisé peuvent hériter et consommer.
+la communication gRPC nécessite à la fois les composants client et serveur. Dans la figure précédente, Notez comment l’agrégateur d’achat implémente un client gRPC. Le client effectue des appels gRPC synchrones (en rouge) aux microservices backend, chacun d’entre eux implémentant un serveur gRPC. Le client et le serveur tirent parti des fonctionnalités gRPC intégrées du kit SDK .NET Core. Les *stubs* côté client permettent d’appeler les appels gRPC distants. Les composants côté serveur fournissent des éléments gRPC qui peuvent être hérités et consommés par les classes de service personnalisées.
 
-Les microservices qui exposent à la fois une communication RESTful API et gRPC nécessitent plusieurs paramètres de gestion du trafic. Vous ouvririez un point de terminaison qui écoute le trafic HTTP pour les appels RESTful et un autre pour les appels gRPC. Le critère d’évaluation gRPC doit être configuré pour le protocole HTTP/2 requis pour la communication gRPC.
+Les microservices qui exposent une API RESTful et une communication gRPC requièrent plusieurs points de terminaison pour gérer le trafic. Vous ouvrez un point de terminaison qui écoute le trafic HTTP pour les appels RESTful et un autre pour les appels gRPC. Le point de terminaison gRPC doit être configuré pour le protocole HTTP/2 requis pour la communication gRPC.
 
-Bien que nous nous effervions à découpler les microservices avec des modèles de communication asynchrones, certaines opérations nécessitent des appels directs. gRPC devrait être le choix principal pour la communication synchrone directe entre les microservices. Son protocole de communication haute performance, basé sur HTTP/2 et les tampons de protocole, en font un choix parfait.
+Bien que nous cherchions à découpler les microservices avec des modèles de communication asynchrones, certaines opérations nécessitent des appels directs. gRPC doit être le principal choix pour la communication synchrone directe entre les microservices. Son protocole de communication hautes performances, basé sur les mémoires tampons HTTP/2 et de protocole, en fait un choix parfait.
 
-## <a name="looking-ahead"></a>Vers l’avenir
+## <a name="looking-ahead"></a>Avant
 
-Pour l’avenir, gRPC continuera de gagner en traction pour les systèmes cloud-autochtones. Les avantages de la performance et la facilité de développement sont convaincants. Cependant, REST sera probablement là pendant une longue période. Il excelle pour les API publiquement exposées et pour des raisons de compatibilité rétrograde.
+Avant, gRPC continuera à gagner en traction pour les systèmes Cloud natifs. Les avantages en matière de performances et de facilité de développement sont intéressants. Toutefois, REST sera probablement inactif pendant une longue période. Il expose les API exposées publiquement et pour des raisons de compatibilité descendante.
 
 >[!div class="step-by-step"]
->[Suivant précédent](service-to-service-communication.md)
->[Next](service-mesh-communication-infrastructure.md)
+>[Précédent](service-to-service-communication.md)
+>[suivant](service-mesh-communication-infrastructure.md)

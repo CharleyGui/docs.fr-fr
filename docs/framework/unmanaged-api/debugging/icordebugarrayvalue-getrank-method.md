@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5e83c82c-593d-4691-90b0-383d218b415e
 topic_type:
 - apiref
-ms.openlocfilehash: 9a4cf1f9ea1ccb174b5fb9336040d5e168653fb1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e6401731844f2ce7a1d9fec1c94019f763870fe7
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088289"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894990"
 ---
 # <a name="icordebugarrayvaluegetrank-method"></a>ICorDebugArrayValue::GetRank, méthode
 Obtient le nombre de dimensions dans le tableau.  
@@ -35,13 +35,13 @@ HRESULT GetRank (
   
 ## <a name="parameters"></a>Paramètres  
  `pnRank`  
- à Pointeur vers le nombre de dimensions dans cet objet `ICorDebugArrayValue`.  
+ à Pointeur vers le nombre de dimensions dans cet `ICorDebugArrayValue` objet.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

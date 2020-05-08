@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 56e718b4-fabd-418b-a5b3-3cc33c745683
 topic_type:
 - apiref
-ms.openlocfilehash: 873dd5a1eb2c9356049d2d0c0cb495b963c2ae46
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: d4a254853256e1a1440f5588418b94e39eabcc9a
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76784193"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894112"
 ---
 # <a name="icordebugclassgetstaticfieldvalue-method"></a>ICorDebugClass::GetStaticFieldValue, méthode
 Obtient la valeur du champ statique spécifié.  
@@ -35,9 +35,9 @@ HRESULT GetStaticFieldValue (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `fieldDef`  
- dans Champ `Def` jeton qui fait référence au champ à récupérer.  
+ dans Jeton de `Def` champ qui référence le champ à récupérer.  
   
  `pFrame`  
  dans Pointeur vers un objet ICorDebugFrame qui représente le frame à utiliser pour lever l’ambiguïté entre les threads, le contexte ou les statiques de domaine d’application.  
@@ -47,14 +47,14 @@ HRESULT GetStaticFieldValue (
  `ppValue`  
  à Pointeur vers l’adresse d’un objet ICorDebugValue qui représente la valeur du champ statique.  
   
-## <a name="remarks"></a>Notes  
- Pour les types paramétrables, la valeur d’un champ statique est relative à l’instanciation particulière. Par conséquent, si le constructeur de classe accepte des paramètres de type <xref:System.Type>, appelez [ICorDebugType :: GetStaticFieldValue](icordebugtype-getstaticfieldvalue-method.md) au lieu de `ICorDebugClass::GetStaticFieldValue`.  
+## <a name="remarks"></a>Notes   
+ Pour les types paramétrables, la valeur d’un champ statique est relative à l’instanciation particulière. Par conséquent, si le constructeur de classe accepte des <xref:System.Type>paramètres de type, appelez [ICorDebugType :: GetStaticFieldValue](icordebugtype-getstaticfieldvalue-method.md) au lieu de `ICorDebugClass::GetStaticFieldValue`.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

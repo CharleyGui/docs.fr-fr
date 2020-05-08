@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6c116592-134b-4ef2-a319-680e92d013aa
 topic_type:
 - apiref
-ms.openlocfilehash: 35e043c56977bf644efe1dd9cee1409f50cc877f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fa2be894af6e44d09c25a736f45acba56052f9fa
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179027"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895039"
 ---
 # <a name="icordebugarrayvaluegetdimensions-method"></a>ICorDebugArrayValue::GetDimensions, méthode
 Obtient le nombre d’éléments dans chaque dimension de ce tableau.  
@@ -37,18 +37,18 @@ HRESULT GetDimensions (
   
 ## <a name="parameters"></a>Paramètres  
  `cdim`  
- [dans] Le nombre de dimensions de cet objet ICorDebugArrayValue.  
+ dans Nombre de dimensions de cet objet ICorDebugArrayValue.  
   
- Cette valeur est également `dims` la taille de la gamme parce que `ICorDebugArrayValue` sa taille est égale au nombre de dimensions de l’objet.  
+ Cette valeur est également la taille du `dims` tableau, car sa taille est égale au nombre de dimensions de l' `ICorDebugArrayValue` objet.  
   
  `dims`  
- [out] Un tableau d’intégrations, chacun spécifique le nombre `ICorDebugArrayValue` d’éléments dans une dimension dans cet objet.  
+ à Tableau d’entiers, chacun spécifiant le nombre d’éléments d’une dimension dans cet `ICorDebugArrayValue` objet.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
