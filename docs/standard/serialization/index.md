@@ -1,5 +1,6 @@
 ---
 title: Sérialisation-.NET
+description: Cet article fournit des informations sur les technologies de sérialisation .NET, y compris la sérialisation binaire, la sérialisation XML et SOAP et la sérialisation JSON.
 ms.date: 09/02/2019
 helpviewer_keywords:
 - JSON serialization
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 ms.assetid: 4d1111c0-9447-4231-a997-96a2b74b3453
-ms.openlocfilehash: e6db24326c79ab6509b253c45c27f87a2aacd73c
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: b3d76c14dc9180a5f19781122d1a42bcae603e76
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053345"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83377244"
 ---
 # <a name="serialization-in-net"></a>Sérialisation dans .NET
 
@@ -28,7 +29,7 @@ La sérialisation correspond au processus de conversion de l'état d'un objet en
   
 - [La sérialisation JSON](system-text-json-overview.md) sérialise uniquement les propriétés publiques et ne conserve pas la fidélité du type. JSON est une norme ouverte qui est un choix attrayant pour le partage de données sur le Web.
 
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Informations de référence
 
 <xref:System.Runtime.Serialization>  
 Contient des classes qui peuvent être utilisées pour sérialiser et désérialiser des objets.

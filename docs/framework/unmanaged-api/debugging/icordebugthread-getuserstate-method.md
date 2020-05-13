@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ae0cfd73-8ead-4d36-9310-dccaac9db0bd
 topic_type:
 - apiref
-ms.openlocfilehash: f3511ff5ee9b9221037c64a5e17d61f6bf52e5f3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d1ff3427feb5dc8395bbb2fda78e3e93e1a1a8f0
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133407"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378855"
 ---
 # <a name="icordebugthreadgetuserstate-method"></a>ICorDebugThread::GetUserState, méthode
 Obtient l’état utilisateur actuel de ce ICorDebugThread.  
@@ -37,14 +37,14 @@ HRESULT GetUserState (
  `pState`  
  à Pointeur vers une combinaison d’opérations de bits de valeurs d’énumération CorDebugUserState, qui décrivent l’état utilisateur actuel de ce thread.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarks  
  L’état utilisateur du thread est l’état du thread lorsqu’il est examiné par le programme en cours de débogage. Un thread peut avoir plusieurs bits d’État définis.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

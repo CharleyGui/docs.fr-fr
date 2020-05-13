@@ -1,39 +1,40 @@
 ---
-title: 'Comment: Créer des assemblées d’amis signés'
+title: 'Comment : créer des assemblys friend signés'
+description: Cet article montre comment utiliser des assemblys friend avec des assemblys avec des noms forts. Elle contient des informations sur la sécurité .NET.
 ms.date: 08/19/2019
 ms.assetid: bab62063-61e6-453f-905f-77673df9534e
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 9912fa70014a8828e994cf528644aaa7cb351fea
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b6176afed44e32911a37a0d753cea2bae7d8554e
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159492"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378541"
 ---
-# <a name="how-to-create-signed-friend-assemblies"></a>Comment: Créer des assemblées d’amis signés
+# <a name="how-to-create-signed-friend-assemblies"></a>Comment : créer des assemblys friend signés
 Cet exemple montre comment utiliser des assemblys friend avec des assemblys ayant des noms forts. Les deux assemblys doivent avoir des noms forts. Bien que les deux assemblys dans cet exemple utilisent les mêmes clés, vous pouvez utiliser des clés différentes pour deux assemblys.  
   
-## <a name="create-a-signed-assembly-and-a-friend-assembly"></a>Créer une assemblée signée et une assemblée d’amis  
+## <a name="create-a-signed-assembly-and-a-friend-assembly"></a>Créer un assembly signé et un assembly friend  
   
 1. Ouvrez une invite de commandes.  
   
-2. Utilisez la séquence de commandes suivante avec l’outil Strong Name Tool pour générer un fichier de clé et afficher sa clé publique. Pour plus d’informations, voir [Sn.exe (outil Strong Name)](../../framework/tools/sn-exe-strong-name-tool.md).  
+2. Utilisez la séquence de commandes suivante avec l’outil Strong Name Tool pour générer un fichier de clé et afficher sa clé publique. Pour plus d’informations, consultez [sn. exe (Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md).  
   
-    1. Générer une clé de nom fort pour cet exemple et le stocker dans le fichier *FriendAssemblies.snk*:  
+    1. Générez une clé de nom fort pour cet exemple et stockez-la dans le fichier *FriendAssemblies. snk*:  
   
          `sn -k FriendAssemblies.snk`  
   
-    2. Extraire la clé publique de *FriendAssemblies.snk* et la mettre dans *FriendAssemblies.publickey*:  
+    2. Extrayez la clé publique de *FriendAssemblies. snk* et placez-la dans *FriendAssemblies. PublicKey*:  
   
          `sn -p FriendAssemblies.snk FriendAssemblies.publickey`  
   
-    3. Afficher la clé publique stockée dans le fichier *FriendAssemblies.publickey*:  
+    3. Affichez la clé publique stockée dans le fichier *FriendAssemblies. PublicKey*:  
   
          `sn -tp FriendAssemblies.publickey`  
   
-3. Créez un fichier de base visuelle ou C ou nommé *friend_signed_A* qui contient le code suivant. Le code <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> utilise l’attribut pour déclarer *friend_signed_B* comme un assemblage d’amis.  
+3. Créez un fichier C# ou Visual Basic nommé *friend_signed_A* qui contient le code suivant. Le code utilise l' <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribut pour déclarer *friend_signed_B* comme un assembly friend.  
 
    L’outil Strong Name Tool génère une nouvelle clé publique chaque fois qu’il s’exécute. Vous devez donc remplacer la clé publique dans le code suivant par la clé publique que vous venez de générer, comme illustré dans l’exemple suivant.  
 
@@ -69,7 +70,7 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys ayan
    End Class  
    ```  
 
-4. Compilez et *signez friend_signed_A* en utilisant la commande suivante.  
+4. Compilez et signez *friend_signed_A* à l’aide de la commande suivante.  
 
    ```csharp
    csc /target:library /keyfile:FriendAssemblies.snk friend_signed_A.cs  
@@ -79,7 +80,7 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys ayan
    Vbc -target:library -keyfile:FriendAssemblies.snk friend_signed_A.vb  
    ```  
 
-5. Créez un fichier de base visuelle ou C ou nommé *friend_signed_B* qui contient le code suivant. Parce *que friend_signed_A* spécifie *friend_signed_B* comme un assemblage d’amis, le code en `Friend` *friend_signed_B* peut accéder à `internal` des types (C) ou (Visual Basic) et les membres de *friend_signed_A*. Le fichier contient le code suivant.  
+5. Créez un fichier C# ou Visual Basic nommé *friend_signed_B* qui contient le code suivant. Étant donné que *friend_signed_A* spécifie *friend_signed_B* comme assembly friend, le code dans *friend_signed_B* peut accéder aux `internal` types et aux membres (C#) ou `Friend` (Visual Basic) à partir de *friend_signed_A*. Le fichier contient le code suivant.  
 
    ```csharp  
    // friend_signed_B.cs  
@@ -107,7 +108,7 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys ayan
    End Module  
    ```  
 
-6. Compilez et *signez friend_signed_B* en utilisant la commande suivante.  
+6. Compilez et signez *friend_signed_B* à l’aide de la commande suivante.  
 
    ```csharp
    csc /keyfile:FriendAssemblies.snk /r:friend_signed_A.dll /out:friend_signed_B.exe friend_signed_B.cs  
@@ -117,24 +118,24 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys ayan
    vbc -keyfile:FriendAssemblies.snk -r:friend_signed_A.dll friend_signed_B.vb  
    ```  
 
-   Le nom de l’assembly généré par le compilateur doit correspondre au nom de l’assembly friend passé à l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>. Vous devez spécifier explicitement le nom de l’assemblage de `-out` sortie (*.exe* ou *.dll*) en utilisant l’option compilateur. Pour plus d’informations, voir [-out (options de compilateur C)](../../csharp/language-reference/compiler-options/out-compiler-option.md) ou [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md).  
+   Le nom de l’assembly généré par le compilateur doit correspondre au nom de l’assembly friend passé à l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>. Vous devez spécifier explicitement le nom de l’assembly de sortie (*. exe* ou *. dll*) à l’aide de l' `-out` option du compilateur. Pour plus d’informations, consultez [-out (options du compilateur C#)](../../csharp/language-reference/compiler-options/out-compiler-option.md) ou [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md).  
 
-7. Exécutez le fichier *friend_signed_B.exe.*  
+7. Exécutez le fichier *friend_signed_B. exe* .  
 
-   Le programme produit la chaîne **Class1.Test**.  
+   Le programme génère la chaîne **Class1. test**.  
   
 ## <a name="net-security"></a>Sécurité .NET  
- Il existe des similitudes entre l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> et la classe <xref:System.Security.Permissions.StrongNameIdentityPermission>. La principale différence <xref:System.Security.Permissions.StrongNameIdentityPermission> est que peut exiger des autorisations de <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> sécurité pour `internal` exécuter une section `Friend` particulière de code, tandis que l’attribut contrôle la visibilité des types et membres (C) ou (Visual Basic).  
+ Il existe des similitudes entre l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> et la classe <xref:System.Security.Permissions.StrongNameIdentityPermission>. La principale différence est que <xref:System.Security.Permissions.StrongNameIdentityPermission> peut demander des autorisations de sécurité pour exécuter une section de code particulière, alors que l' <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribut contrôle la visibilité des `internal` types et des membres (C#) ou `Friend` (Visual Basic).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
 - [Assemblys dans .NET](index.md)
 - [Assemblys friend](friend.md)
-- [Comment : Créer des assemblées d’amis non signées](create-unsigned-friend.md)
-- [-keyfile (C)](../../csharp/language-reference/compiler-options/keyfile-compiler-option.md)
+- [Comment : créer des assemblys friend non signés](create-unsigned-friend.md)
+- [-keyfile (C#)](../../csharp/language-reference/compiler-options/keyfile-compiler-option.md)
 - [-keyfile (Visual Basic)](../../visual-basic/reference/command-line-compiler/keyfile.md)
-- [Sn.exe (outil Strong Name)](../../framework/tools/sn-exe-strong-name-tool.md)
+- [SN. exe (outil Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md)
 - [Créer et utiliser des assemblys avec nom fort](create-use-strong-named.md)
-- [Guide de programmation CMD](../../csharp/programming-guide/index.md)
+- [Guide de programmation C#](../../csharp/programming-guide/index.md)
 - [Concepts de programmation (Visual Basic)](../../visual-basic/programming-guide/concepts/index.md)

@@ -1,30 +1,31 @@
 ---
-title: 'Comment : Charger et décharger les assemblages'
+title: 'Comment : charger et décharger des assemblys'
+description: Le CLR charge automatiquement les assemblys .NET référencés par un programme. Vous pouvez également charger dynamiquement des assemblys spécifiques dans le domaine d’application actuel.
 ms.date: 08/19/2019
 ms.assetid: 6a4f490f-3576-471f-9533-003737cad4a3
-ms.openlocfilehash: a520ffd41c3465737be7494d374cbcf64e3f1b85
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e6f1ede055dd3f68bced4eba527b2fc65f7d5715
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78155774"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378681"
 ---
-# <a name="how-to-load-and-unload-assemblies"></a>Comment : Charger et décharger les assemblages
-Les assemblages référencés par votre programme seront automatiquement chargés par l’heure d’exécution de la langue commune, mais il est également possible de charger dynamiquement des assemblages spécifiques dans le domaine d’application actuel. Pour plus d’informations, voir [Comment : Charger les assemblages dans un domaine d’application](../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md).
+# <a name="how-to-load-and-unload-assemblies"></a>Comment : charger et décharger des assemblys
+Les assemblys référencés par votre programme sont automatiquement chargés par le common language runtime, mais il est également possible de charger dynamiquement des assemblys spécifiques dans le domaine d’application actuel. Pour plus d’informations, consultez [Comment : charger des assemblys dans un domaine d’application](../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md).
 
-Dans .NET Framework, il n’y a aucun moyen de décharger un assemblage individuel sans décharger tous les domaines d’application qui le contiennent. Même si l’assembly passe hors de portée, le fichier d’assembly proprement dit restera chargé jusqu’à ce que tous les domaines d’application qui le contiennent soient déchargés. Dans .NET Core, la <xref:System.Runtime.Loader.AssemblyLoadContext?displayProperty=nameWithType> classe gère le déchargement des assemblages. Pour plus d’informations, voir [Comment utiliser et débouger la déchargement de l’assemblage en .NET Core](unloadability.md).
+Dans .NET Framework, il n’existe aucun moyen de décharger un assembly individuel sans décharger tous les domaines d’application qui le contiennent. Même si l’assembly passe hors de portée, le fichier d’assembly proprement dit restera chargé jusqu’à ce que tous les domaines d’application qui le contiennent soient déchargés. Dans .NET Core, la <xref:System.Runtime.Loader.AssemblyLoadContext?displayProperty=nameWithType> classe gère le déchargement des assemblys. Pour plus d’informations, consultez [comment utiliser et déboguer l’inchargement d’assembly dans .net Core](unloadability.md).
 
 ## <a name="load-and-unload-assemblies"></a>Charger et décharger des assemblys
 
-Pour charger un assemblage dans un domaine d’application, utilisez <xref:System.AppDomain> <xref:System.Reflection.Assembly>l’une des nombreuses méthodes de charge contenues dans les classes et . Pour plus d’informations, voir [Comment : Charger les assemblages dans un domaine d’application](../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md). Notez que .NET Core ne prend en charge qu’un seul domaine d’application.
+Pour charger un assembly dans un domaine d’application, utilisez l’une des nombreuses méthodes de chargement contenues dans les classes <xref:System.AppDomain> et <xref:System.Reflection.Assembly> . Pour plus d’informations, consultez [Comment : charger des assemblys dans un domaine d’application](../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md). Notez que .NET Core ne prend en charge qu’un seul domaine d’application.
 
-Pour décharger un assemblage dans le cadre .NET, vous devez décharger tous les domaines d’application qui le contiennent. Pour décharger un domaine <xref:System.AppDomain.Unload%2A?displayProperty=nameWithType> d’application, utilisez la méthode. Pour plus d’informations, voir [Comment : Décharger un domaine d’application](../../framework/app-domains/how-to-unload-an-application-domain.md).
+Pour décharger un assembly dans le .NET Framework, vous devez décharger tous les domaines d’application qui le contiennent. Pour décharger un domaine d’application, utilisez la <xref:System.AppDomain.Unload%2A?displayProperty=nameWithType> méthode. Pour plus d’informations, consultez [Comment : décharger un domaine d’application](../../framework/app-domains/how-to-unload-an-application-domain.md).
 
-Si vous souhaitez décharger certains assemblages mais pas d’autres dans une application cadre .NET, envisagez de créer un nouveau domaine d’application, d’exécuter le code à l’intérieur de ce domaine, puis de décharger ce domaine d’application. Pour plus d’informations, voir [Comment : Décharger un domaine d’application](../../framework/app-domains/how-to-unload-an-application-domain.md).  
+Si vous souhaitez décharger certains assemblys, mais pas d’autres dans une application .NET Framework, vous pouvez créer un nouveau domaine d’application, exécuter le code à l’intérieur de ce domaine, puis décharger ce domaine d’application. Pour plus d’informations, consultez [Comment : décharger un domaine d’application](../../framework/app-domains/how-to-unload-an-application-domain.md).  
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation CMD](../../csharp/programming-guide/index.md)
+- [Guide de programmation C#](../../csharp/programming-guide/index.md)
 - [Concepts de programmation (Visual Basic)](../../visual-basic/programming-guide/concepts/index.md)
 - [Assemblys dans .NET](index.md)
-- [Comment : Charger les assemblages dans un domaine d’application](../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)
+- [Comment : charger des assemblys dans un domaine d’application](../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)

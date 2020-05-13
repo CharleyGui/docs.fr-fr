@@ -1,5 +1,6 @@
 ---
 title: Indications concernant la sérialisation
+description: Ce document fournit des instructions à prendre en compte lors de la conception d’une API à sérialiser, ainsi qu’un résumé des trois principales technologies de sérialisation offertes par .NET.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-ms.openlocfilehash: 067f32a026e3354e6c4256602ed17fd7d7bde0b8
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: af0b857e98ffbe0ff9f12108174b79f873c2b38f
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159791"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378389"
 ---
 # <a name="serialization-guidelines"></a>Indications concernant la sérialisation
 Ce document répertorie les indications à prendre en compte lors de la conception d'une API à sérialiser.  
@@ -22,9 +23,9 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
   
  .NET offre trois technologies de sérialisation principales qui sont optimisées pour différents scénarios de sérialisation. Le tableau suivant répertorie ces technologies et les principaux types .NET qui leur sont associés.  
   
-|Technology|Classes concernées|Notes|  
+|Technology|Classes concernées|Remarques|  
 |----------------|----------------------|-----------|  
-|Sérialisation du contrat de données|<xref:System.Runtime.Serialization.DataContractAttribute><br /><br /> <xref:System.Runtime.Serialization.DataMemberAttribute><br /><br /> <xref:System.Runtime.Serialization.DataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.NetDataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer><br /><br /> <xref:System.Runtime.Serialization.ISerializable>|Persistance générale<br /><br /> Services web<br /><br /> JSON|  
+|Sérialisation du contrat de données|<xref:System.Runtime.Serialization.DataContractAttribute><br /><br /> <xref:System.Runtime.Serialization.DataMemberAttribute><br /><br /> <xref:System.Runtime.Serialization.DataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.NetDataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer><br /><br /> <xref:System.Runtime.Serialization.ISerializable>|Persistance générale<br /><br /> Services Web<br /><br /> JSON|  
 |Sérialisation XML|<xref:System.Xml.Serialization.XmlSerializer>|Format XML <br />avec contrôle total|  
 |Sérialisation du runtime (binaire et SOAP)|<xref:System.SerializableAttribute><br /><br /> <xref:System.Runtime.Serialization.ISerializable><br /><br /> <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter><br /><br /> <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>|.NET Remoting|  
   
@@ -69,7 +70,7 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
      [!code-csharp[SerializationGuidelines#3](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#3)]
      [!code-vb[SerializationGuidelines#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#3)]  
   
-     L'attribut <xref:System.Runtime.Serialization.OnDeserializedAttribute> est l'attribut de rappel le plus communément utilisé. Les autres attributs de la famille sont <xref:System.Runtime.Serialization.OnDeserializingAttribute>, <xref:System.Runtime.Serialization.OnSerializingAttribute>et <xref:System.Runtime.Serialization.OnSerializedAttribute>. Ils peuvent être utilisés pour marquer les rappels exécutés avant la désérialisation, avant la sérialisation et enfin, après la sérialisation, respectivement.  
+     L'attribut <xref:System.Runtime.Serialization.OnDeserializedAttribute> est l'attribut de rappel le plus communément utilisé. Les autres attributs de la famille sont <xref:System.Runtime.Serialization.OnDeserializingAttribute> , <xref:System.Runtime.Serialization.OnSerializingAttribute> et <xref:System.Runtime.Serialization.OnSerializedAttribute> . Ils peuvent être utilisés pour marquer les rappels exécutés avant la désérialisation, avant la sérialisation et enfin, après la sérialisation, respectivement.  
   
 4. ENVISAGEZ d'utiliser <xref:System.Runtime.Serialization.KnownTypeAttribute> pour indiquer les types concrets qui doivent être utilisés lors de la désérialisation d'un graphique d'objet complexe.  
   
@@ -103,7 +104,7 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
      [!code-csharp[SerializationGuidelines#6](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#6)]
      [!code-vb[SerializationGuidelines#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#6)]  
   
-2. ENVISAGEZ d'utiliser l'interface <xref:System.Xml.Serialization.IXmlSerializable> si vous souhaitez davantage de contrôle sur la forme du XML sérialisé que celui proposé en appliquant les attributs de sérialisation XML. Deux méthodes de l’interface, <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> et <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A>, vous permettent de contrôler entièrement le flux XML sérialisé. Vous pouvez aussi contrôler le schéma XML qui est généré pour le type en appliquant l'attribut <xref:System.Xml.Serialization.XmlSchemaProviderAttribute>.  
+2. ENVISAGEZ d'utiliser l'interface <xref:System.Xml.Serialization.IXmlSerializable> si vous souhaitez davantage de contrôle sur la forme du XML sérialisé que celui proposé en appliquant les attributs de sérialisation XML. Deux méthodes de l’interface, <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> et <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A> , vous permettent de contrôler entièrement le flux XML sérialisé. Vous pouvez aussi contrôler le schéma XML qui est généré pour le type en appliquant l'attribut <xref:System.Xml.Serialization.XmlSchemaProviderAttribute>.  
   
 #### <a name="supporting-runtime-serialization"></a>Prise en charge de la sérialisation du runtime  
  La technologie de *sérialisation du runtime* est utilisée par .NET Remoting. Si vous pensez que vos types vont être transportés à l'aide de .NET Remoting, assurez-vous qu'ils prennent en charge la sérialisation du runtime.  

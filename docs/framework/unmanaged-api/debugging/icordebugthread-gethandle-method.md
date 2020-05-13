@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 172ef8c4-2ead-4cfc-bd2e-dee4fb7191cd
 topic_type:
 - apiref
-ms.openlocfilehash: 33219d9a67379244e23da49c13617a4c4a2fa66d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 16aafa439fc81c3606f98ca2ba860316ec46e0db
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133462"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379736"
 ---
 # <a name="icordebugthreadgethandle-method"></a>ICorDebugThread::GetHandle, méthode
 Obtient le handle actuel pour la partie active de ce ICorDebugThread.  
@@ -37,16 +37,16 @@ HRESULT GetHandle (
  `phThreadHandle`  
  à Pointeur vers un HTHREAD qui est le handle de la partie active de ce thread.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarks  
  Le handle peut changer à mesure que le processus s’exécute et peut être différent pour différentes parties du thread.  
   
  Ce descripteur appartient à l’API de débogage. Le débogueur doit le dupliquer avant de l’utiliser.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

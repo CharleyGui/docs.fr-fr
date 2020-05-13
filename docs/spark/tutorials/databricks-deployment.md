@@ -1,15 +1,15 @@
 ---
 title: Déployer une application .NET pour Apache Spark sur Databricks
 description: Découvrez comment déployer une application .NET pour Apache Spark sur Databricks.
-ms.date: 01/23/2020
+ms.date: 05/11/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 3b00823034cbcb271cb7e169df40122f1144462a
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 228ddd59023dbd9d63ff392764fb36441a6af23a
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895713"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379843"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Didacticiel : déployer une application .NET pour Apache Spark sur Databricks
 
@@ -53,7 +53,7 @@ Dans cette section, vous créez un espace de travail Azure Databricks en utilisa
     |**Groupe de ressources**     | Indiquez si vous souhaitez créer un groupe de ressources Azure ou utiliser un groupe existant. Un groupe de ressources est un conteneur réunissant les ressources associées d’une solution Azure. Pour plus d’informations, consultez [Présentation des groupes de ressources Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). |
     |**Lieu**     | Sélectionnez votre région préférée. Pour plus d’informations sur les régions disponibles, consultez [services Azure disponibles par région](https://azure.microsoft.com/regions/services/).        |
     |**Niveau tarifaire**     |  Choisissez **Standard**, **Premium** ou **Essai**. Pour plus d’informations sur ces niveaux, consultez la [page de tarification Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
-    |**Réseau virtuel**     |   Non        |
+    |**Réseau virtuel**     |   Non       |
 
 3. Sélectionnez **Create** (Créer). La création de l’espace de travail dure quelques minutes. Pendant la création de l'espace de travail, vous pouvez consulter l'état du déploiement dans **Notifications**.
 
@@ -79,15 +79,15 @@ Vous pouvez utiliser l' **interface CLI Databricks** pour vous connecter à des 
    pip3 install databricks-cli
    ```
 
-3. Une fois que vous avez installé l’interface de ligne de commande Databricks, ouvrez une nouvelle `databricks`invite de commandes et exécutez la commande. Si vous recevez un **« databricks » n’est pas reconnu comme une erreur de commande interne ou externe**, veillez à ouvrir une nouvelle invite de commandes.
+3. Une fois que vous avez installé l’interface de ligne de commande Databricks, ouvrez une nouvelle invite de commandes et exécutez la commande `databricks` . Si vous recevez un **« databricks » n’est pas reconnu comme une erreur de commande interne ou externe**, veillez à ouvrir une nouvelle invite de commandes.
 
 ## <a name="set-up-azure-databricks"></a>Configurer Azure Databricks
 
 Maintenant que l’interface CLI Databricks est installée, vous devez configurer les détails de l’authentification.
 
-1. Exécutez la commande `databricks configure --token`CLI Databricks.
+1. Exécutez la commande CLI Databricks `databricks configure --token` .
 
-2. Après avoir exécuté la commande configurer, vous êtes invité à entrer un ordinateur hôte. Votre URL d’hôte utilise le format : **https://< \location>. azuredatabricks.net**. Par exemple, si vous avez sélectionné **eastus2** lors de la création du service Azure Databricks, **https://eastus2.azuredatabricks.net**l’hôte est.
+2. Après avoir exécuté la commande configurer, vous êtes invité à entrer un ordinateur hôte. Votre URL d’hôte utilise le format : **https://< \location>. azuredatabricks.net**. Par exemple, si vous avez sélectionné **eastus2** lors de la création du service Azure Databricks, l’hôte est **https://eastus2.azuredatabricks.net** .
 
 3. Après avoir entré votre hôte, vous êtes invité à entrer un jeton. Dans le Portail Azure, sélectionnez **lancer l’espace de travail** pour lancer votre Azure Databricks espace de travail.
 
@@ -115,7 +115,7 @@ Vous devez maintenant être en mesure d’accéder à tous les clusters de Azure
 
    Créez un nouveau fichier nommé **DB-init.sh** sur votre ordinateur local, puis collez le [contenu DB-init.sh](https://github.com/dotnet/spark/blob/master/deployment/db-init.sh) situé sur GitHub.
 
-   Dans le fichier que vous venez de créer, `DOTNET_SPARK_RELEASE` affectez `https://github.com/dotnet/spark/releases/download/v0.6.0/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz`la valeur à la variable. Laissez le reste du fichier *DB-init.sh* tel quel.
+   Dans le fichier que vous venez de créer, affectez la valeur `DOTNET_SPARK_RELEASE` à la variable `https://github.com/dotnet/spark/releases/download/v0.6.0/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz` . Laissez le reste du fichier *DB-init.sh* tel quel.
 
 > [!Note]
 > Si vous utilisez Windows, vérifiez que les fins de ligne dans vos scripts *install-Worker.sh* et *DB-init.sh* sont de type UNIX (LF). Vous pouvez modifier les fins de ligne à l’aide d’éditeurs de texte tels que Notepad + + et Atom.
@@ -188,7 +188,7 @@ Votre application s’exécute sur Azure Databricks par le biais d’un travail 
 
 1. Accédez à votre travail et sélectionnez **modifier** pour configurer le cluster de votre travail.
 
-2. Définissez votre cluster sur **Spark 2.4.1**. Ensuite, sélectionnez **options** > avancées**init scripts**. Définit le chemin d’accès `dbfs:/spark-dotnet/db-init.sh`du script init comme.
+2. Définissez votre cluster sur **Spark 2.4.1**. Ensuite, sélectionnez **Options avancées**  >  **init scripts**. Définit le chemin d’accès du script init comme `dbfs:/spark-dotnet/db-init.sh` .
 
    ![Configurer le cluster Spark dans Azure Databricks](./media/databricks-deployment/cluster-config.png)
 

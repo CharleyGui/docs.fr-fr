@@ -1,5 +1,6 @@
 ---
 title: Résoudre les chargements d’assembly
+description: Cet article décrit l’événement .NET AppDomain. AssemblyResolve. Utilisez cet événement pour les applications qui requièrent le contrôle du chargement d’assembly.
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], resolving loads
@@ -12,15 +13,15 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: d6314fae266505fbb4410aaaa351973070ab3811
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 36f36b60a3a113c6b020cc1042c786c4091e567b
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78156437"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378669"
 ---
 # <a name="resolve-assembly-loads"></a>Résoudre les chargements d’assembly
-.NET fournit <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> l’événement pour les applications qui nécessitent un plus grand contrôle sur le chargement de l’assemblage. En gérant cet événement, votre application peut charger un assembly dans le contexte de chargement à l’extérieur des chemins de détection normaux, sélectionner la version d’assembly à charger parmi plusieurs, émettre un assembly dynamique et le retourner, etc. Cette rubrique fournit des instructions sur la gestion de l’événement <xref:System.AppDomain.AssemblyResolve>.  
+.NET fournit l' <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> événement pour les applications qui requièrent un plus grand contrôle sur le chargement de l’assembly. En gérant cet événement, votre application peut charger un assembly dans le contexte de chargement à l’extérieur des chemins de détection normaux, sélectionner la version d’assembly à charger parmi plusieurs, émettre un assembly dynamique et le retourner, etc. Cette rubrique fournit des instructions sur la gestion de l’événement <xref:System.AppDomain.AssemblyResolve>.  
   
 > [!NOTE]
 > Pour résoudre les chargements d’assemblys dans le contexte ReflectionOnly, utilisez l’événement <xref:System.AppDomain.ReflectionOnlyAssemblyResolve?displayProperty=nameWithType> à la place.  
@@ -37,7 +38,7 @@ ms.locfileid: "78156437"
 - surcharge de méthode <xref:System.AppDomain.CreateInstance%2A?displayProperty=nameWithType> ou <xref:System.AppDomain.CreateInstanceAndUnwrap%2A?displayProperty=nameWithType> qui instancie un objet dans un autre domaine d’application.  
   
 ### <a name="what-the-event-handler-does"></a>Ce que fait le gestionnaire d’événements  
- Le gestionnaire de l’événement <xref:System.AppDomain.AssemblyResolve> reçoit le nom complet de l’assembly à charger dans la propriété <xref:System.ResolveEventArgs.Name%2A?displayProperty=nameWithType>. Si le gestionnaire ne reconnaît pas `null` le nom `Nothing` de l’assemblage, il revient (C), (Visual Basic) ou `nullptr` (Visual CMD).  
+ Le gestionnaire de l’événement <xref:System.AppDomain.AssemblyResolve> reçoit le nom complet de l’assembly à charger dans la propriété <xref:System.ResolveEventArgs.Name%2A?displayProperty=nameWithType>. Si le gestionnaire ne reconnaît pas le nom de l’assembly, il retourne `null` (C#), `Nothing` (Visual Basic) ou `nullptr` (Visual C++).  
   
  Si le gestionnaire reconnaît le nom de l’assembly, il peut charger et retourner un assembly qui satisfait la requête. La liste suivante décrit des exemples de scénarios.  
   
@@ -64,15 +65,15 @@ ms.locfileid: "78156437"
   
  Pour plus d’informations sur les contextes, consultez la surcharge de méthode <xref:System.Reflection.Assembly.LoadFrom%28System.String%29?displayProperty=nameWithType>.  
   
- Vous pouvez charger plusieurs versions du même assembly dans le même domaine d’application. Cette pratique n’est pas recommandée, car elle peut entraîner des problèmes d’assignation de type. Voir [Les meilleures pratiques pour le chargement de l’assemblage](../../framework/deployment/best-practices-for-assembly-loading.md).  
+ Vous pouvez charger plusieurs versions du même assembly dans le même domaine d’application. Cette pratique n’est pas recommandée, car elle peut entraîner des problèmes d’assignation de type. Consultez [meilleures pratiques pour le chargement d’assembly](../../framework/deployment/best-practices-for-assembly-loading.md).  
   
-### <a name="what-the-event-handler-should-not-do"></a>Ce que le gestionnaire d’événements ne devrait pas faire  
+### <a name="what-the-event-handler-should-not-do"></a>Ce que le gestionnaire d’événements ne doit pas faire  
 La règle principale pour gérer l’événement <xref:System.AppDomain.AssemblyResolve> est que vous ne devez pas essayer de retourner un assembly que vous ne reconnaissez pas. Quand vous écrivez le gestionnaire, vous devez avoir connaissance des assemblys qui peuvent provoquer le déclenchement de l’événement. Votre gestionnaire doit retourner Null pour d’autres assemblys.  
 
 > [!IMPORTANT]
 > À compter de .NET Framework 4, l’événement <xref:System.AppDomain.AssemblyResolve> est déclenché pour les assemblys satellites. Ce changement affecte un gestionnaire d’événements qui a été écrit pour une version antérieure du .NET Framework, si le gestionnaire tente de résoudre toutes les requêtes de chargement d’assembly. Les gestionnaires d’événements qui ignorent les assemblys non reconnus ne sont pas affectés par ce changement : ils retournent la valeur Null et les mécanismes de secours normaux sont suivis.  
 
-Durant le chargement d’un assembly, le gestionnaire d’événements ne doit pas utiliser les surcharges de méthode <xref:System.AppDomain.Load%2A?displayProperty=nameWithType> et <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> qui peuvent provoquer le déclenchement de l’événement <xref:System.AppDomain.AssemblyResolve> de manière récursive, car cela peut provoquer un dépassement de capacité de la pile. (Voir la liste fournie plus tôt dans ce sujet.) Cela se produit même si vous fournissez une manipulation d’exception pour la demande de charge, car aucune exception n’est lancée jusqu’à ce que tous les gestionnaires d’événements soient revenus. Le code suivant provoque donc un dépassement de capacité de la pile si `MyAssembly` est introuvable :  
+Durant le chargement d’un assembly, le gestionnaire d’événements ne doit pas utiliser les surcharges de méthode <xref:System.AppDomain.Load%2A?displayProperty=nameWithType> et <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> qui peuvent provoquer le déclenchement de l’événement <xref:System.AppDomain.AssemblyResolve> de manière récursive, car cela peut provoquer un dépassement de capacité de la pile. (Consultez la liste fournie plus haut dans cette rubrique.) Cela se produit même si vous fournissez une gestion des exceptions pour la demande de chargement, car aucune exception n’est levée tant que tous les gestionnaires d’événements n’ont pas été retournés. Le code suivant provoque donc un dépassement de capacité de la pile si `MyAssembly` est introuvable :  
 
 ```cpp
 using namespace System;
@@ -198,5 +199,5 @@ End Class
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Meilleures pratiques pour le chargement de l’assemblage](../../framework/deployment/best-practices-for-assembly-loading.md)
-- [Utiliser les domaines d’application](../../framework/app-domains/use.md)
+- [Meilleures pratiques pour le chargement d’assembly](../../framework/deployment/best-practices-for-assembly-loading.md)
+- [Utiliser des domaines d’application](../../framework/app-domains/use.md)

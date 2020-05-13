@@ -1,5 +1,6 @@
 ---
 title: Sérialiser et désérialiser JSON à l’aide de C#-.NET
+description: Cette vue d’ensemble décrit les System.Text.Json fonctionnalités d’espace de noms pour sérialiser vers et désérialiser à partir de JSON dans .net.
 ms.date: 01/10/2020
 no-loc:
 - System.Text.Json
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 660a2831aa6a807486fc47eae880bcd11347c547
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 909d979d46b30939e304af071de65d230febd92d
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159544"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380135"
 ---
 # <a name="json-serialization-and-deserialization-marshalling-and-unmarshalling-in-net---overview"></a>Sérialisation et désérialisation JSON (marshaling et démarshaling) dans .NET-vue d’ensemble
 
@@ -27,7 +28,7 @@ La bibliothèque fournit également des classes pour l’utilisation d’un mod�
 ## <a name="how-to-get-the-library"></a>Obtention de la bibliothèque
 
 * La bibliothèque est intégrée dans le cadre de l’infrastructure partagée [.net Core 3,0](https://aka.ms/netcore3download) .
-* Pour les autres frameworks cibles, installez [System.Text.Json](https://www.nuget.org/packages/System.Text.Json) le package NuGet. Le package prend en charge :
+* Pour les autres frameworks cibles, installez le [System.Text.Json](https://www.nuget.org/packages/System.Text.Json) package NuGet. Le package prend en charge :
   * .NET Standard 2,0 et versions ultérieures
   * .NET Framework 4.7.2 et versions ultérieures
   * .NET Core 2,0, 2,1 et 2,2

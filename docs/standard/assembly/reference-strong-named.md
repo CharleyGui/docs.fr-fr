@@ -1,5 +1,6 @@
 ---
-title: 'Comment : Référencez une assemblée forte'
+title: 'Comment : référencer un assembly avec nom fort'
+description: Cet article explique comment référencer des types ou des ressources dans un assembly .NET avec nom fort, au moment de la compilation ou de l’exécution.
 ms.date: 08/20/2019
 helpviewer_keywords:
 - strong-named assemblies, compile-time references
@@ -11,40 +12,40 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: adda4ed2ab5c59e3518b8e724044529a79840ad0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e42c1b461da16d7000605b9b9321138bbfebd307
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78156476"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379875"
 ---
-# <a name="how-to-reference-a-strong-named-assembly"></a>Comment : Référencez une assemblée forte
+# <a name="how-to-reference-a-strong-named-assembly"></a>Comment : référencer un assembly avec nom fort
 Le référencement de types ou de ressources dans un assembly avec nom fort est généralement un processus transparent. Vous pouvez effectuer la référence au moment de la compilation (liaison anticipée) ou au moment de l’exécution.  
   
-Une référence de compilation-temps se produit lorsque vous indiquez au compilateur que l’assemblage à rassembler fait explicitement référence à une autre assemblée. Quand vous utilisez le référencement au moment de la compilation, le compilateur obtient automatiquement la clé publique de l’assembly avec nom fort ciblé et la place dans la référence d’assembly de l’assembly compilé.
+Une référence au moment de la compilation se produit lorsque vous indiquez au compilateur que l’assembly à compiler fait explicitement référence à un autre assembly. Quand vous utilisez le référencement au moment de la compilation, le compilateur obtient automatiquement la clé publique de l’assembly avec nom fort ciblé et la place dans la référence d’assembly de l’assembly compilé.
   
 > [!NOTE]
 > Un assembly avec nom fort peut uniquement utiliser les types d'autres assemblys avec nom fort. Si ce n'était pas le cas, la sécurité de l'assembly avec nom fort serait compromise.  
   
-## <a name="make-a-compile-time-reference-to-a-strong-named-assembly"></a>Faites une référence en temps de compilation à un assemblage fort  
+## <a name="make-a-compile-time-reference-to-a-strong-named-assembly"></a>Créer une référence au moment de la compilation à un assembly avec nom fort  
 
 Saisissez ensuite la commande suivante dans une invite de commandes :  
 
-\<*commande*> de compilateur **/référence :**\<*nom d’assemblage*>  
+\<*commande* >  du compilateur **/Reference :** \< *nom de l’assembly*>  
 
 Dans cette commande, *commande_compilateur* est la commande du compilateur pour le langage que vous utilisez, et *nom_assembly* est le nom de l’assembly avec nom fort référencé. Vous pouvez également utiliser d’autres options du compilateur, telles que **/t:library**, qui permet de créer un assembly de bibliothèque.  
 
-L’exemple suivant crée une assemblée appelée *myAssembly.dll* qui fait référence à une assemblée forte appelée *myLibAssembly.dll* à partir d’un module de code appelé *myAssembly.cs*.  
+L’exemple suivant crée un assembly appelé *myAssembly. dll* qui référence un assembly avec nom fort appelé *myLibAssembly. dll* à partir d’un module de code appelé *myAssembly.cs*.  
 
 ```cmd
 csc /t:library myAssembly.cs /reference:myLibAssembly.dll  
 ```  
 
-## <a name="make-a-run-time-reference-to-a-strong-named-assembly"></a>Faites une référence en temps de course à un assemblage fort  
+## <a name="make-a-run-time-reference-to-a-strong-named-assembly"></a>Effectuer une référence au moment de l’exécution à un assembly avec nom fort  
   
-Lorsque vous faites une référence en temps de course à <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> un <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> assemblage fort, par exemple en utilisant le ou la méthode, vous devez utiliser le nom d’affichage de l’assemblage référencé fort nommé. La syntaxe d’un nom complet est la suivante :  
+Quand vous faites référence à un assembly avec nom fort, par exemple à l’aide de la <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> méthode ou <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> , vous devez utiliser le nom complet de l’assembly avec nom fort référencé. La syntaxe d’un nom complet est la suivante :  
 
-\<*nom*>de l’assemblée **,** \< *numéro*>de version **,** \< *culture*>**,** \<jet de clé *publique*>  
+\<nom de l' *assembly* > **,** \< *numéro* > de version **,** \< *culture* > **,** \< *jeton de clé publique*>  
 
 Par exemple :  
 
@@ -73,7 +74,7 @@ Dim myDll As Assembly = _
 
 Vous pouvez imprimer le format hexadécimal de la clé publique et du jeton de clé publique pour un assembly spécifique en utilisant la commande [Strong Name (Sn.exe)](../../framework/tools/sn-exe-strong-name-tool.md) suivante :  
 
-**sn \< -Tp** *assemblage***>**  
+**sn-TP \< ** *assembly***>**  
 
 Si vous avez un fichier de clé publique, vous pouvez utiliser la commande suivante (notez la différence de casse de l’option de ligne de commande) à la place :  
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3d3f6eec-d772-401f-a028-1a2ecdc31e95
 topic_type:
 - apiref
-ms.openlocfilehash: 61563488bff682cc7a417296c3db8eb7e7cf965a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 892471e7b35b4f4093df3f86d4777947b6e484e0
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139320"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378301"
 ---
 # <a name="icordebugreferencevaluesetvalue-method"></a>ICorDebugReferenceValue::SetValue, méthode
 Définit l’adresse mémoire spécifiée. Autrement dit, cette méthode définit ce ICorDebugReferenceValue pour pointer vers un objet.  
@@ -35,13 +35,13 @@ HRESULT SetValue (
   
 ## <a name="parameters"></a>Paramètres  
  `value`  
- dans Valeur `CORDB_ADDRESS` qui spécifie l’adresse de l’objet vers lequel cet `ICorDebugReferenceValue` pointe.  
+ dans `CORDB_ADDRESS`Valeur qui spécifie l’adresse de l’objet vers lequel ce `ICorDebugReferenceValue` pointe.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

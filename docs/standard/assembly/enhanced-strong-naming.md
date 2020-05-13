@@ -1,16 +1,17 @@
 ---
 title: Amélioration de l’utilisation de noms forts
+description: Les signatures de nom fort conventionnelles pour les assemblys dans .NET Framework présentent des limitations. En savoir plus sur les noms forts améliorés.
 ms.date: 08/20/2019
 helpviewer_keywords:
 - strong-named assemblies
 - strong naming [.NET Framework], enhanced
 ms.assetid: 6cf17a82-62a1-4f6d-8d5a-d7d06dec2bb5
-ms.openlocfilehash: 1d582513b10de88e4e5b9b9ef8c338599d6980f2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 720eda86ef0555127da422b2f44a414e8bbfb1b7
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73141175"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378956"
 ---
 # <a name="enhanced-strong-naming"></a>Amélioration de l’utilisation de noms forts
 Une signature de nom fort est un mécanisme d’identité dans le .NET Framework permettant d’identifier des assemblys. Il s’agit d’une signature numérique de clé publique qui sert généralement à vérifier l’intégrité des données transmises d’un expéditeur (signataire) vers un destinataire (vérificateur). Cette signature est utilisée comme identité unique pour un assembly, et garantit que les références à l’assembly ne sont pas ambiguës. L’assembly est signé dans le cadre du processus de génération, puis vérifié quand il est chargé.  
@@ -24,7 +25,7 @@ Une signature de nom fort est un mécanisme d’identité dans le .NET Framework
   
 - La signature de nom fort prend en charge uniquement l’algorithme SHA-1. Il a été récemment observé que SHA-1 n’était pas adéquat pour les applications de hachage sécurisées. Par conséquent, un algorithme plus fort (SHA-256 ou supérieur) est nécessaire. Il est possible que SHA-1 perde sa position conforme FIPS, ce qui poserait des problèmes pour ceux qui choisissent d’utiliser uniquement des logiciels et des algorithmes conformes FIPS.  
   
-## <a name="advantages-of-enhanced-strong-names"></a>Avantages de noms forts améliorés  
+## <a name="advantages-of-enhanced-strong-names"></a>Avantages des noms forts améliorés  
  Les principaux avantages des noms forts améliorés sont la compatibilité avec les noms forts préexistants et la capacité à revendiquer qu’une identité est équivalente à une autre :  
   
 - Les développeurs qui ont des assemblys signés pré-existants peuvent migrer leurs identités vers les algorithmes SHA-2 tout en conservant la compatibilité avec les assemblys qui référencent les anciennes identités.  
@@ -36,8 +37,8 @@ Une signature de nom fort est un mécanisme d’identité dans le .NET Framework
   
  L’attribut <xref:System.Reflection.AssemblySignatureKeyAttribute> permet aux métadonnées de l’assembly d’utiliser la clé publique préexistante pour l’identité d’assembly, ce qui permet aux anciennes références d’assembly de continuer à fonctionner.  L’attribut <xref:System.Reflection.AssemblySignatureKeyAttribute> utilise la contre-signature pour garantir que le propriétaire de la nouvelle clé de signature est également le propriétaire de l’ancienne clé d’identité.  
   
-### <a name="sign-with-sha-2-without-key-migration"></a>Signez avec SHA-2, sans migration clé  
- Exécutez les commandes suivantes à partir d’une invite de commande pour signer une assemblée sans migrer une signature de nom forte :  
+### <a name="sign-with-sha-2-without-key-migration"></a>Signer avec SHA-2, sans migration de clé  
+ Exécutez les commandes suivantes à partir d’une invite de commandes pour signer un assembly sans migrer une signature de nom fort :  
   
 1. Générez la nouvelle clé d’identité (si nécessaire).  
   
@@ -63,8 +64,8 @@ Une signature de nom fort est un mécanisme d’identité dans le .NET Framework
     sn -Ra MyAssembly.exe IdentityKey.snk  
     ```  
   
-### <a name="sign-with-sha-2-with-key-migration"></a>Signez avec SHA-2, avec migration clé  
- Exécutez les commandes suivantes à partir d’une invite de commande pour signer un assemblage avec une signature de nom fort migrée.  
+### <a name="sign-with-sha-2-with-key-migration"></a>Signature avec SHA-2, avec migration de clé  
+ Exécutez les commandes suivantes à partir d’une invite de commandes pour signer un assembly avec une signature de nom fort migrée.  
   
 1. Générez une paire de clés d’identité et de signature (si nécessaire).  
   

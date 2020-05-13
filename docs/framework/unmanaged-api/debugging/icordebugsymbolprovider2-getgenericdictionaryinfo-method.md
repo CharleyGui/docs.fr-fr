@@ -2,12 +2,12 @@
 title: Méthode ICorDebugSymbolProvider2::GetGenericDictionaryInfo
 ms.date: 03/30/2017
 ms.assetid: ba28fe4e-5491-4670-bff7-7fde572d7593
-ms.openlocfilehash: 02ecaf56e845680472f42c04f3978e54e7a69272
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: a6c32b72c5924399aeb13d56ddf9242fe7990f35
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791506"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379319"
 ---
 # <a name="icordebugsymbolprovider2getgenericdictionaryinfo-method"></a>Méthode ICorDebugSymbolProvider2::GetGenericDictionaryInfo
 
@@ -21,12 +21,12 @@ HRESULT GetGenericDictionaryInfo(
 );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 `ppMemoryBuffer`\
-à Pointeur vers l’adresse d’un objet [ICorDebugMemoryBuffer](icordebugmemorybuffer-interface.md) contenant le mappage de dictionnaire générique. Pour plus d'informations, consultez la section Notes.
+à Pointeur vers l’adresse d’un objet [ICorDebugMemoryBuffer](icordebugmemorybuffer-interface.md) contenant le mappage de dictionnaire générique. Pour plus d'informations, consultez la section Remarques.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarks
 
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.
@@ -57,7 +57,7 @@ La structure de la partie répertoire du mappage de dictionnaire générique est
 
 ## <a name="the-heap"></a>Tas
 
-La taille du tas peut être calculée par un lecteur de flux en soustrayant la longueur du flux de la taille du répertoire + 4. En d'autres termes :
+La taille du tas peut être calculée par un lecteur de flux en soustrayant la longueur du flux de la taille du répertoire + 4. En d’autres termes :
 
 ```csharp
 Heap Size = Stream.Length – (Directory Size + 4)
@@ -75,15 +75,15 @@ Le format de chaque élément d'informations d'instanciation sur le tas est le s
 
 L'inclusion de la longueur de chaque élément de tas permet d'effectuer un tri simple de la section répertoire sans affecter le tas.
 
-## <a name="requirements"></a>Configuration requise pour
+## <a name="requirements"></a>Spécifications
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
 **En-tête :** CorDebug.idl, CorDebug.h
 
 **Bibliothèque :** CorGuids.lib
 
-**Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]
+**Versions de .NET Framework :**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
 

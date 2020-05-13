@@ -1,5 +1,6 @@
 ---
 title: "Comment : utiliser l'outil XML Schema Definition pour générer des classes et des documents de schéma XML"
+description: Découvrez comment utiliser l’outil XML Schema Definition pour générer un schéma XML décrivant une classe ou pour générer la classe définie par un schéma XML.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - generating XML classes using XML Schema Definition tool
@@ -7,18 +8,18 @@ helpviewer_keywords:
 - XML Schema Definition tool, using to generate classes that conform to specific schema
 - XML Schema Definition tool, using to generate XML Schema Document
 ms.assetid: 51f0edc3-993d-4051-b7f2-77753694d3d1
-ms.openlocfilehash: 2bbdced0f984b653a58afba9685683e8c0891271
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 21ce4ad846e21a328ba199f6253bd259be9d932b
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389798"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379535"
 ---
 # <a name="how-to-use-the-xml-schema-definition-tool-to-generate-classes-and-xml-schema-documents"></a>Comment : utiliser l'outil XML Schema Definition pour générer des classes et des documents de schéma XML
 L'outil XML Schema Definition (Xsd.exe) vous permet de générer un schéma XML qui décrit une classe ou de générer la classe définie par un schéma XML. Les procédures suivantes indiquent comment exécuter ces opérations.
 
 L’outil XML Schema Definition (XSD. exe) se trouve généralement à l’emplacement suivant : \
-_C :\\Program Files (x86)\\Microsoft SDK\\Windows\\{version}\\bin\\netfx {version} Tools\\_
+_C : \\ Program Files (x86) \\ Microsoft SDK \\ Windows \\ {version} \\ bin \\ netfx {version} Tools\\_
 
 ### <a name="to-generate-classes-that-conform-to-a-specific-schema"></a>Pour générer des classes qui se conforment à un schéma spécifique  
   
@@ -30,7 +31,7 @@ _C :\\Program Files (x86)\\Microsoft SDK\\Windows\\{version}\\bin\\netfx {versi
     xsd mySchema.xsd  
     ```  
   
-     L'outil ne peut traiter que les schémas qui référencent la spécification XML du W3C (World Wide Web Consortium) du 16 mars 2001. En d’autres termes, l’espace de noms du schémahttp://www.w3.org/2001/XMLSchemaXML doit être «», comme indiqué dans l’exemple suivant.  
+     L'outil ne peut traiter que les schémas qui référencent la spécification XML du W3C (World Wide Web Consortium) du 16 mars 2001. En d’autres termes, l’espace de noms du schéma XML doit être « http://www.w3.org/2001/XMLSchema », comme indiqué dans l’exemple suivant.  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8"?>  

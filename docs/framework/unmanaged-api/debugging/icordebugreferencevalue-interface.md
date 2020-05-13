@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 2040e2be-119a-4cfb-ae52-b0b6f052665c
 topic_type:
 - apiref
-ms.openlocfilehash: 2efba22b4ec372c5ddedd4982a29d66945d3511c
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 6c6ff428e378e973d8846674ffacdcd04b2dbdbc
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792129"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378344"
 ---
 # <a name="icordebugreferencevalue-interface"></a>ICorDebugReferenceValue, interface
 Fournit des méthodes qui gèrent une valeur qui est une référence à un objet. (Autrement dit, cette interface fournit des méthodes qui gèrent un pointeur.) Cette interface implémente « ICorDebugValue ».  
@@ -31,25 +31,25 @@ Fournit des méthodes qui gèrent une valeur qui est une référence à un objet
 |[Dereference, méthode](icordebugreferencevalue-dereference-method.md)|Obtient l’objet référencé.|  
 |[DereferenceStrong, méthode](icordebugreferencevalue-dereferencestrong-method.md)|Non implémenté. N'appelez pas cette méthode.|  
 |[GetValue, méthode](icordebugreferencevalue-getvalue-method.md)|Obtient l’adresse mémoire actuelle de l’objet référencé.|  
-|[IsNull, méthode](icordebugreferencevalue-isnull-method.md)|Obtient une valeur qui indique si ce `ICorDebugReferenceValue` est une valeur null, auquel cas le `ICorDebugReferenceValue` ne pointe pas vers un objet.|  
-|[SetValue, méthode](icordebugreferencevalue-setvalue-method.md)|Définit l’adresse mémoire actuelle. Autrement dit, cette méthode définit ce `ICorDebugReferenceValue` pour pointer vers un objet.|  
+|[IsNull, méthode](icordebugreferencevalue-isnull-method.md)|Obtient une valeur qui indique s’il `ICorDebugReferenceValue` s’agit d’une valeur null, auquel cas le `ICorDebugReferenceValue` ne pointe pas vers un objet.|  
+|[Méthode SetValue](icordebugreferencevalue-setvalue-method.md)|Définit l’adresse mémoire actuelle. Autrement dit, cette méthode définit cela `ICorDebugReferenceValue` pour pointer vers un objet.|  
   
-## <a name="remarks"></a>Notes  
- Le common language runtime (CLR) peut effectuer une garbage collection sur les objets lorsque le processus débogué est poursuivi. La garbage collection peut déplacer des objets dans la mémoire. Une `ICorDebugReferenceValue` coopérera avec le garbage collection afin que ses informations soient mises à jour après le garbage collection ou qu’elles soient invalidées implicitement avant la garbage collection.  
+## <a name="remarks"></a>Remarks  
+ Le common language runtime (CLR) peut effectuer une garbage collection sur les objets lorsque le processus débogué est poursuivi. La garbage collection peut déplacer des objets dans la mémoire. Un `ICorDebugReferenceValue` est en collaboration avec le garbage collection afin que ses informations soient mises à jour après l’garbage collection, ou qu’elles soient invalidées implicitement avant le garbage collection.  
   
- L’objet `ICorDebugReferenceValue` peut être invalidé implicitement une fois que le processus débogué a été poursuivi. Le « ICorDebugHandleValue » dérivé n’est pas invalidé tant qu’il n’a pas été explicitement libéré ou exposé.  
+ L' `ICorDebugReferenceValue` objet peut être invalidé implicitement une fois que le processus débogué a été poursuivi. Le « ICorDebugHandleValue » dérivé n’est pas invalidé tant qu’il n’a pas été explicitement libéré ou exposé.  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

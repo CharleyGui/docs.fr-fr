@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6ba3c6ee-4ba1-4c98-bf1e-8531acd3da09
 topic_type:
 - apiref
-ms.openlocfilehash: d5f2838007504e56ad44614a6778083be046629f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 841af546cc3586529fe290c69e686438f634b90d
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140071"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83377785"
 ---
 # <a name="icordebugthread2gettaskid-method"></a>ICorDebugThread2::GetTaskID, méthode
 Obtient l’identificateur de la tâche en cours d’exécution sur ce thread.  
@@ -37,14 +37,14 @@ HRESULT GetTaskID (
  `pTaskId`  
  à Pointeur vers l’identificateur de la tâche en cours d’exécution sur le thread représenté par cet objet ICorDebugThread2.  
   
-## <a name="remarks"></a>Notes  
- Une tâche ne peut être exécutée que sur le thread si le thread est associé à une connexion. `GetTaskID` retourne la valeur zéro dans `pTaskId` si le thread n’est pas associé à une connexion.  
+## <a name="remarks"></a>Remarks  
+ Une tâche ne peut être exécutée que sur le thread si le thread est associé à une connexion. `GetTaskID`retourne la valeur zéro dans `pTaskId` si le thread n’est pas associé à une connexion.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

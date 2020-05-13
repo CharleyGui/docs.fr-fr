@@ -1,5 +1,6 @@
 ---
 title: Guide pratique pour segmenter des données sérialisées
+description: Vous pouvez segmenter les données afin d’éviter les problèmes liés aux jeux de données volumineux. Implémentez l’interface IXmlSerializable pour contrôler la sérialisation et la désérialisation.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - serialization, examples
 - binary serialization, examples
 ms.assetid: 22f1b818-7e0d-428a-8680-f17d6ebdd185
-ms.openlocfilehash: 6a39997d8854d525146c044ed4bbf939de615d3f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 860fdcae0d1937f53ee964d9d4631ec812b3d379
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64602423"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379138"
 ---
 # <a name="how-to-chunk-serialized-data"></a>Guide pratique pour segmenter des données sérialisées
 

@@ -1,5 +1,6 @@
 ---
 title: Créer des assemblys
+description: Découvrez comment créer des assemblys à fichier unique ou multifichiers à l’aide d’un IDE, tel que Visual Studio, ou les compilateurs et les outils fournis par le SDK Windows.
 ms.date: 08/19/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], multifile
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework], creating
 - multifile assemblies
 ms.assetid: 54832ee9-dca8-4c8b-913c-c0b9d265e9a4
-ms.openlocfilehash: 81fffb2b2e1d56d6068bf6f663a13fad6968a383
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3e17d6a066d937a161135b8b03c3f9258f3586b0
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73740509"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378510"
 ---
 # <a name="create-assemblies"></a>Créer des assemblys
 
@@ -22,7 +23,7 @@ Vous pouvez créer un assembly multifichier à partir de plusieurs modules de co
 
 Vous disposez de plusieurs options quand vous regroupez des modules de code et des ressources dans des assemblys, en fonction des facteurs suivants :
 
-- Contrôle de version
+- Gestion de version
 
      Regroupez les modules qui doivent avoir les mêmes informations de version.
 
@@ -42,12 +43,12 @@ Vous disposez de plusieurs options quand vous regroupez des modules de code et d
 
      Regroupez les modules contenant des types dont la visibilité doit être limitée au même assembly.
 
-Il y a des considérations particulières lorsque l’on peut mettre des assemblages de temps d’exécution de langage commun à la disposition des applications COM non gérées. Pour plus d’informations sur le travail avec le code non-gestion, voir [Expose .NET Composants cadre à COM](../../framework/interop/exposing-dotnet-components-to-com.md).
+Des considérations particulières sont à prendre en compte lors de la mise à disposition des assemblys de common language runtime pour les applications COM non managées. Pour plus d’informations sur l’utilisation de code non managé, consultez [exposer des .NET Framework Components à com](../../framework/interop/exposing-dotnet-components-to-com.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Contrôle de version des assemblys](versioning.md)
-- [Comment : Construire un assemblage à un seul fichier](../../framework/app-domains/build-single-file-assembly.md)
-- [Comment : Construire un assemblage multifils](../../framework/app-domains/build-multifile-assembly.md)
-- [Comment le temps d’exécution localise les assemblages](../../framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Procédure : Générer un assembly monofichier](../../framework/app-domains/build-single-file-assembly.md)
+- [Procédure : Générer un assembly multifichier](../../framework/app-domains/build-multifile-assembly.md)
+- [Comment le runtime localise les assemblys](../../framework/deployment/how-the-runtime-locates-assemblies.md)
 - [Assemblys multifichiers](../../framework/app-domains/multifile-assemblies.md)

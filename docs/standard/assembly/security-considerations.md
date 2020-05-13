@@ -1,5 +1,6 @@
 ---
 title: Aspects de la sécurité des assemblys
+description: Quand vous générez un assembly .NET, vous pouvez spécifier les autorisations nécessaires à l’exécution de l’assembly. Cet article aborde les assemblys avec nom fort et les outils de signature.
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], security
@@ -15,12 +16,12 @@ helpviewer_keywords:
 - security [.NET Framework], assemblies
 - integrity with assemblies
 ms.assetid: 1b5439c1-f3d5-4529-bd69-01814703d067
-ms.openlocfilehash: 77c9f9131b556e0b8fa639cd723bf1ca8cd6602e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7f897241b121cf1bd52d02ee5f487aeafafc3cb0
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73972307"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378659"
 ---
 # <a name="assembly-security-considerations"></a>Aspects de la sécurité des assemblys
 Lorsque vous générez un assembly, vous pouvez spécifier un jeu d'autorisations que l'assembly doit exécuter. L'octroi ou non de certaines autorisations à un assembly repose sur la preuve.  
@@ -42,7 +43,7 @@ Lorsque vous générez un assembly, vous pouvez spécifier un jeu d'autorisation
   
  Au moment du chargement, la preuve de l'assembly est utilisée comme entrée vers la stratégie de sécurité. La stratégie de sécurité est établie par l'entreprise et l'administrateur de l'ordinateur, ainsi que par les paramètres de stratégie de l'utilisateur, et détermine le jeu d'autorisations qui est accordé à l'ensemble du code managé lors de son exécution. La stratégie de sécurité peut être établie pour l'éditeur de l'assembly (s'il possède une signature générée par un outil de signature), pour le site Web et la zone (selon les termes d'Internet Explorer) à partir desquels l'assembly a été téléchargé ou pour le nom fort de l'assembly. Par exemple, l'administrateur d'un ordinateur peut établir une stratégie de sécurité qui autorise l'ensemble d'un code téléchargé à partir d'un site Web et signé par un éditeur de logiciel donné d'accéder à une base de données sur un ordinateur, mais qui n'accorde pas d'accès en écriture sur le disque de l'ordinateur.  
   
-## <a name="strong-named-assemblies-and-signing-tools"></a>Assemblages et outils de signature nommés fort  
+## <a name="strong-named-assemblies-and-signing-tools"></a>Assemblys avec nom fort et outils de signature  
 
  > [!WARNING]
  > Ne comptez pas sur les noms forts pour la sécurité. Ils fournissent seulement une identité unique.
@@ -62,6 +63,6 @@ Lorsque vous générez un assembly, vous pouvez spécifier un jeu d'autorisation
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Assemblées de bien-être](strong-named.md)
+- [Assemblys avec nom fort](strong-named.md)
 - [Assemblys dans .NET](index.md)
-- [SignTool.exe (outil Sign Tool)](../../framework/tools/signtool-exe.md)
+- [SignTool. exe (outil de signature)](../../framework/tools/signtool-exe.md)

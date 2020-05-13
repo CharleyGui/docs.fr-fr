@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b0df5c5d-9a2e-47bf-894c-6f8a9fe24a1f
 topic_type:
 - apiref
-ms.openlocfilehash: b78bff2994cefc6c35a4bd59133338392c3a1b24
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: b95e9f3a0d584511a2bcf156ed2c50a98f96d071
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791974"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379060"
 ---
 # <a name="icordebugremotedebugactiveprocessex-method"></a>ICorDebugRemote::DebugActiveProcessEx, méthode
 Lance un processus sur un ordinateur distant sous le débogueur.  
@@ -36,7 +36,7 @@ HRESULT DebugActiveProcessEx (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `pRemoteTarget`  
  dans Pointeur vers une [interface ICorDebugRemoteTarget](icordebugremotetarget-interface.md). Ce paramètre est utilisé pour déterminer l’ordinateur sur lequel le processus est en cours d’exécution.  
   
@@ -44,7 +44,7 @@ HRESULT DebugActiveProcessEx (
  dans ID du processus auquel le débogueur doit être attaché.  
   
  `win32Attach`  
- [in] `true` si le débogueur doit se comporter comme le débogueur Win32 pour le processus et pour distribuer les rappels non managés ; Sinon, `false`.  
+ [in] `true` Si le débogueur doit se comporter comme le débogueur Win32 pour le processus et distribuer les rappels non managés ; Sinon, `false` .  
   
  `ppProcess`  
  à Pointeur vers l’adresse d’un objet « ICorDebugProcess » qui représente le processus auquel le débogueur a été attaché.  
@@ -56,11 +56,11 @@ HRESULT DebugActiveProcessEx (
  E_FAIL (ou autres codes de retour E_)  
  Impossible d’attacher au processus sur l’ordinateur distant.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarks  
  Le débogage en mode mixte n’est pas pris en charge dans Silverlight.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   

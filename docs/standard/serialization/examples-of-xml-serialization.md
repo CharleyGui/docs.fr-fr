@@ -1,5 +1,6 @@
 ---
 title: Exemples de sérialisation XML
+description: Ces exemples de code illustrent des scénarios avancés, y compris l’utilisation de la sérialisation XML pour générer un flux XML conforme à un document de schéma XML.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: eec46337-9696-435b-a375-dc5effae6992
-ms.openlocfilehash: 17ad1b4b5eae38a4f1dc90e154841b1315dea1b2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 73f21c7f7d0670022d757e6c4c00280bb79709b8
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349777"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379178"
 ---
 # <a name="examples-of-xml-serialization"></a>Exemples de sérialisation XML
 
@@ -369,7 +370,7 @@ Dans cet exemple, une classe nommée `PurchaseOrder` est sérialisée puis dés�
 
 La méthode `CreatePO` crée les objets de classe `PurchaseOrder`, `Address`et `OrderedItem` et définit les valeurs de champs publics. La méthode construit également une instance de la classe <xref:System.Xml.Serialization.XmlSerializer> utilisée pour sérialiser et désérialiser `PurchaseOrder`. Notez que le code passe au constructeur le type de la classe qui sera sérialisée. Le code crée également un `FileStream` utilisé pour écrire le flux XML dans un document XML.
 
-La méthode `ReadPo` est un peu plus simple. Elle crée juste des objets à désérialiser et lit leurs valeurs. Comme avec la `CreatePo` méthode, vous devez d’abord construire <xref:System.Xml.Serialization.XmlSerializer>un, en passant le type de la classe à désérialiser dans le constructeur. De même, un <xref:System.IO.FileStream> est requis pour lire le document XML. Pour désérialiser les objets, appelez la méthode <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> avec le <xref:System.IO.FileStream> en tant qu'argument. L'objet désérialisé doit être converti en une variable d'objet de type `PurchaseOrder`. Le code lit ensuite les valeurs du `PurchaseOrder` désérialisé. Notez que vous pouvez également lire le fichier PO.xml créé pour consulter le résultat XML réel.
+La méthode `ReadPo` est un peu plus simple. Elle crée juste des objets à désérialiser et lit leurs valeurs. Comme avec la `CreatePo` méthode, vous devez d’abord construire un <xref:System.Xml.Serialization.XmlSerializer> , en passant le type de la classe à désérialiser dans le constructeur. De même, un <xref:System.IO.FileStream> est requis pour lire le document XML. Pour désérialiser les objets, appelez la méthode <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> avec le <xref:System.IO.FileStream> en tant qu'argument. L'objet désérialisé doit être converti en une variable d'objet de type `PurchaseOrder`. Le code lit ensuite les valeurs du `PurchaseOrder` désérialisé. Notez que vous pouvez également lire le fichier PO.xml créé pour consulter le résultat XML réel.
 
 ```vb
 Imports System.IO

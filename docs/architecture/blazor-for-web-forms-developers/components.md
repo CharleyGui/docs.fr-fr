@@ -4,12 +4,12 @@ description: Découvrez comment créer des composants d’interface utilisateur 
 author: danroth27
 ms.author: daroth
 ms.date: 09/18/2019
-ms.openlocfilehash: 79fb2338a981389c3750e884ce6606351c84738a
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 1a5f6b63143c4fd7a276219b9c4877e9e355c996
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506764"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378319"
 ---
 # <a name="build-reusable-ui-components-with-blazor"></a>Créer des composants d’interface utilisateur réutilisables avec éblouissant
 
@@ -26,9 +26,9 @@ L’une des merveilles de ASP.NET Web Forms est la façon dont il permet l’enc
 
 ## <a name="an-introduction-to-razor"></a>Présentation de Razor
 
-Razor est un langage de création de balises léger basé sur HTML et C#. Avec Razor, vous pouvez effectuer une transition transparente entre le balisage et le code C# pour définir la logique de rendu de votre composant. Quand le fichier *. Razor* est compilé, la logique de rendu est capturée de manière structurée dans une classe .net. Le nom de la classe compilée est extrait du nom de fichier *. Razor* . L’espace de noms est extrait de l’espace de noms par défaut du projet et du chemin d’accès au dossier, ou vous `@namespace` pouvez spécifier explicitement l’espace de noms à l’aide de la directive (plus d’informations sur les directives Razor ci-dessous).
+Razor est un langage de création de balises léger basé sur HTML et C#. Avec Razor, vous pouvez effectuer une transition transparente entre le balisage et le code C# pour définir la logique de rendu de votre composant. Quand le fichier *. Razor* est compilé, la logique de rendu est capturée de manière structurée dans une classe .net. Le nom de la classe compilée est extrait du nom de fichier *. Razor* . L’espace de noms est extrait de l’espace de noms par défaut du projet et du chemin d’accès au dossier, ou vous pouvez spécifier explicitement l’espace de noms à l’aide de la `@namespace` directive (plus d’informations sur les directives Razor ci-dessous).
 
-La logique de rendu d’un composant est créée à l’aide d’un balisage HTML normal avec la logique dynamique ajoutée à l’aide de C#. Le `@` caractère est utilisé pour effectuer la transition vers C#. Razor est en général intelligent de déterminer quand vous avez rétabli en HTML. Par exemple, le composant suivant effectue le rendu `<p>` d’une balise avec l’heure actuelle :
+La logique de rendu d’un composant est créée à l’aide d’un balisage HTML normal avec la logique dynamique ajoutée à l’aide de C#. Le `@` caractère est utilisé pour effectuer la transition vers C#. Razor est en général intelligent de déterminer quand vous avez rétabli en HTML. Par exemple, le composant suivant effectue le rendu d’une `<p>` balise avec l’heure actuelle :
 
 ```razor
 <p>@DateTime.Now</p>
@@ -49,7 +49,7 @@ Razor facilite également l’utilisation du workflow de contrôle C# dans votre
 }
 ```
 
-Ou vous pouvez générer une liste d’éléments à l’aide d' `foreach` une boucle C# normale comme suit :
+Ou vous pouvez générer une liste d’éléments à l’aide d’une boucle C# normale `foreach` comme suit :
 
 ```razor
 <ul>
@@ -69,7 +69,7 @@ Les directives Razor, comme les directives dans ASP.NET Web Forms, contrôlent d
 - Espaces de noms importés
 - Itinéraires
 
-Les directives Razor commencent par `@` le caractère et sont généralement utilisées au début d’une nouvelle ligne au début du fichier. Par exemple, la `@namespace` directive définit l’espace de noms du composant :
+Les directives Razor commencent par le `@` caractère et sont généralement utilisées au début d’une nouvelle ligne au début du fichier. Par exemple, la `@namespace` directive définit l’espace de noms du composant :
 
 ```razor
 @namespace MyComponentNamespace
@@ -79,13 +79,13 @@ Le tableau suivant récapitule les différentes directives Razor utilisées dans
 
 |Directive    |Description|Exemple|Équivalent Web Forms|
 |-------------|-----------|-------|--------------------|
-|`@attribute` |Ajoute un attribut de niveau classe au composant.|`@attribute [Authorize]`|None|
+|`@attribute` |Ajoute un attribut de niveau classe au composant.|`@attribute [Authorize]`|Aucune|
 |`@code`      |Ajoute des membres de classe au composant|`@code { ... }`|`<script runat="server">...</script>`|
 |`@implements`|Implémente l’interface spécifiée|`@implements IDisposable`|Utiliser code-behind|
 |`@inherits`  |Hérite de la classe de base spécifiée|`@inherits MyComponentBase`|`<%@ Control Inherits="MyUserControlBase" %>`|
-|`@inject`    |Injecte un service dans le composant.|`@inject IJSRuntime JS`|None|
+|`@inject`    |Injecte un service dans le composant.|`@inject IJSRuntime JS`|Aucune|
 |`@layout`    |Spécifie un composant de disposition pour le composant|`@layout MainLayout`|`<%@ Page MasterPageFile="~/Site.Master" %>`|
-|`@namespace` |Définit l’espace de noms pour le composant|`@namespace MyNamespace`|None|
+|`@namespace` |Définit l’espace de noms pour le composant|`@namespace MyNamespace`|Aucune|
 |`@page`      |Spécifie l’itinéraire pour le composant|`@page "/product/{id}"`|`<%@ Page %>`|
 |`@typeparam` |Spécifie un paramètre de type générique pour le composant|`@typeparam TItem`|Utiliser code-behind|
 |`@using`     |Spécifie un espace de noms à placer dans la portée|`@using MyComponentNamespace`|Ajouter un espace de noms dans *Web. config*|
@@ -106,7 +106,7 @@ Le tableau suivant résume les différents attributs des directives Razor utilis
 |`@key`       |Spécifie une clé à utiliser par l’algorithme de comparaison pour conserver les éléments d’une collection|`<DetailsEditor @key="person" Details="person.Details" />`|
 |`@ref`       |Capture une référence au composant ou à l’élément HTML|`<MyDialog @ref="myDialog" />`|
 
-Les différents attributs de directive utilisés par éblouissant (`@onclick`, `@bind`, `@ref`, etc.) sont traités dans les sections ci-dessous et les chapitres ultérieurs.
+Les différents attributs de directive utilisés par éblouissant ( `@onclick` , `@bind` , `@ref` , etc.) sont traités dans les sections ci-dessous et les chapitres ultérieurs.
 
 La plupart des syntaxes utilisées dans les fichiers *. aspx* et *. ascx* ont des syntaxes parallèles dans Razor. Vous trouverez ci-dessous une comparaison simple des syntaxes pour ASP.NET Web Forms et Razor.
 
@@ -118,7 +118,7 @@ La plupart des syntaxes utilisées dans les fichiers *. aspx* et *. ascx* ont de
 |Commentaires                     |`<%-- --%>`         |`<%-- Commented --%>`|`@* *@`       |`@* Commented *@`|
 |Liaison de données                 |`<%# %>`            |`<%# Bind("Name") %>`|`@bind`       |`<input @bind="username" />`|
 
-Pour ajouter des membres à la classe de composant Razor, `@code` utilisez la directive. Cette technique est similaire à l’utilisation `<script runat="server">...</script>` d’un bloc dans un contrôle utilisateur ou une page ASP.NET Web Forms.
+Pour ajouter des membres à la classe de composant Razor, utilisez la `@code` directive. Cette technique est similaire à l’utilisation d’un `<script runat="server">...</script>` bloc dans un contrôle utilisateur ou une page ASP.NET Web Forms.
 
 ```razor
 @code {
@@ -145,10 +145,10 @@ Hormis le code HTML normal, les composants peuvent également utiliser d’autre
 
 Contrairement à ASP.NET Web Forms, les composants de éblouissant :
 
-- N’utilisez pas de préfixe d’élément ( `asp:`par exemple,).
+- N’utilisez pas de préfixe d’élément (par exemple, `asp:` ).
 - Ne nécessite pas d’inscription sur la page ou dans le *fichier Web. config*.
 
-Considérez les composants Razor comme des types .NET, car c’est exactement ce qu’ils sont. Si l’assembly contenant le composant est référencé, le composant peut être utilisé. Pour placer l’espace de noms du composant dans la portée `@using` , appliquez la directive :
+Considérez les composants Razor comme des types .NET, car c’est exactement ce qu’ils sont. Si l’assembly contenant le composant est référencé, le composant peut être utilisé. Pour placer l’espace de noms du composant dans la portée, appliquez la `@using` directive :
 
 ```razor
 @using MyComponentLib
@@ -156,7 +156,7 @@ Considérez les composants Razor comme des types .NET, car c’est exactement ce
 <Counter />
 ```
 
-Comme indiqué dans les projets éblouissants par défaut, il est courant de `@using` placer les directives dans un fichier *_Imports. Razor* afin qu’elles soient importées dans tous les fichiers *. Razor* dans le même répertoire et dans les répertoires enfants.
+Comme indiqué dans les projets éblouissants par défaut, il est courant de placer les `@using` directives dans un fichier *_Imports. Razor* afin qu’elles soient importées dans tous les fichiers *. Razor* dans le même répertoire et dans les répertoires enfants.
 
 Si l’espace de noms d’un composant n’est pas dans la portée, vous pouvez spécifier un composant à l’aide de son nom de type complet, comme vous pouvez le faire en C# :
 
@@ -166,9 +166,9 @@ Si l’espace de noms d’un composant n’est pas dans la portée, vous pouvez 
 
 ## <a name="component-parameters"></a>Paramètres de composant
 
-Dans ASP.NET Web Forms, vous pouvez transmettre des paramètres et des données à des contrôles à l’aide de propriétés publiques. Ces propriétés peuvent être définies dans le balisage à l’aide d’attributs ou d’une valeur directement dans le code. Les composants éblouissant fonctionnent de manière similaire, bien que les propriétés des composants doivent également être marquées `[Parameter]` avec l’attribut pour être considéré comme des paramètres de composant.
+Dans ASP.NET Web Forms, vous pouvez transmettre des paramètres et des données à des contrôles à l’aide de propriétés publiques. Ces propriétés peuvent être définies dans le balisage à l’aide d’attributs ou d’une valeur directement dans le code. Les composants éblouissant fonctionnent de manière similaire, bien que les propriétés des composants doivent également être marquées avec l' `[Parameter]` attribut pour être considéré comme des paramètres de composant.
 
-Le composant `Counter` suivant définit un paramètre de composant `IncrementAmount` appelé qui peut être utilisé pour spécifier la quantité que `Counter` doit être incrémentée chaque fois que l’utilisateur clique sur le bouton.
+Le `Counter` composant suivant définit un paramètre de composant appelé `IncrementAmount` qui peut être utilisé pour spécifier la quantité que `Counter` doit être incrémentée chaque fois que l’utilisateur clique sur le bouton.
 
 ```razor
 <h1>Counter</h1>
@@ -218,7 +218,7 @@ public partial class Counter : System.Web.UI.UserControl
 }
 ```
 
-Dans éblouissant, vous pouvez inscrire des gestionnaires pour les événements de l’interface utilisateur DOM directement à l’aide `@on{event}`des attributs de directive du formulaire. L' `{event}` espace réservé représente le nom de l’événement. Par exemple, vous pouvez écouter les clics de bouton comme suit :
+Dans éblouissant, vous pouvez inscrire des gestionnaires pour les événements de l’interface utilisateur DOM directement à l’aide des attributs de directive du formulaire `@on{event}` . L' `{event}` espace réservé représente le nom de l’événement. Par exemple, vous pouvez écouter les clics de bouton comme suit :
 
 ```razor
 <button @onclick="OnClick">Click me!</button>
@@ -231,7 +231,7 @@ Dans éblouissant, vous pouvez inscrire des gestionnaires pour les événements 
 }
 ```
 
-Les gestionnaires d’événements peuvent accepter un argument facultatif spécifique à l’événement pour fournir plus d’informations sur l’événement. Par exemple, les événements de souris peuvent `MouseEventArgs` prendre un argument, mais ce n’est pas obligatoire.
+Les gestionnaires d’événements peuvent accepter un argument facultatif spécifique à l’événement pour fournir plus d’informations sur l’événement. Par exemple, les événements de souris peuvent prendre un `MouseEventArgs` argument, mais ce n’est pas obligatoire.
 
 ```razor
 <button @onclick="OnClick">Click me!</button>
@@ -253,7 +253,7 @@ Au lieu de faire référence à un groupe de méthodes pour un gestionnaire d’
 }
 ```
 
-Les gestionnaires d’événements peuvent s’exécuter de façon synchrone ou asynchrone. Par exemple, le gestionnaire `OnClick` d’événements suivant s’exécute de façon asynchrone :
+Les gestionnaires d’événements peuvent s’exécuter de façon synchrone ou asynchrone. Par exemple, le `OnClick` Gestionnaire d’événements suivant s’exécute de façon asynchrone :
 
 ```razor
 <button @onclick="OnClick">Click me!</button>
@@ -266,7 +266,7 @@ Les gestionnaires d’événements peuvent s’exécuter de façon synchrone ou 
 }
 ```
 
-Une fois qu’un événement est géré, le composant est rendu pour tenir compte des modifications d’état des composants. Avec les gestionnaires d’événements asynchrones, le composant est rendu immédiatement après la fin de l’exécution du gestionnaire. Le composant est *à nouveau* restitué une fois `Task` le asynchrone terminé. Ce mode d’exécution asynchrone offre la possibilité d’afficher une interface utilisateur appropriée alors `Task` que le asynchrone est toujours en cours.
+Une fois qu’un événement est géré, le composant est rendu pour tenir compte des modifications d’état des composants. Avec les gestionnaires d’événements asynchrones, le composant est rendu immédiatement après la fin de l’exécution du gestionnaire. Le composant est *à nouveau* restitué une fois le asynchrone `Task` terminé. Ce mode d’exécution asynchrone offre la possibilité d’afficher une interface utilisateur appropriée alors que le asynchrone `Task` est toujours en cours.
 
 ```razor
 <button @onclick="ShowMessage">Get message</button>
@@ -296,7 +296,7 @@ Une fois qu’un événement est géré, le composant est rendu pour tenir compt
 }
 ```
 
-Les composants peuvent également définir leurs propres événements en définissant un paramètre de `EventCallback<TValue>`composant de type. Les rappels d’événements prennent en charge toutes les variations des gestionnaires d’événements de l’interface utilisateur DOM : des arguments facultatifs, synchrones ou asynchrones, des groupes de méthodes ou des expressions lambda.
+Les composants peuvent également définir leurs propres événements en définissant un paramètre de composant de type `EventCallback<TValue>` . Les rappels d’événements prennent en charge toutes les variations des gestionnaires d’événements de l’interface utilisateur DOM : des arguments facultatifs, synchrones ou asynchrones, des groupes de méthodes ou des expressions lambda.
 
 ```razor
 <button class="btn btn-primary" @onclick="OnClick">Click me!</button>
@@ -311,7 +311,7 @@ Les composants peuvent également définir leurs propres événements en défini
 
 Éblouissant fournit un mécanisme simple pour lier les données d’un composant de l’interface utilisateur à l’état du composant. Cette approche diffère des fonctionnalités de ASP.NET Web Forms pour la liaison de données de sources de données à des contrôles d’interface utilisateur. Nous traiterons de la gestion des données de différentes sources de données dans la section relative [aux données](data.md) .
 
-Pour créer une liaison de données bidirectionnelle entre un composant de l’interface utilisateur et l’état du `@bind` composant, utilisez l’attribut directive. Dans l’exemple suivant, la valeur de la case à cocher est liée `isChecked` au champ.
+Pour créer une liaison de données bidirectionnelle entre un composant de l’interface utilisateur et l’état du composant, utilisez l' `@bind` attribut directive. Dans l’exemple suivant, la valeur de la case à cocher est liée au `isChecked` champ.
 
 ```razor
 <input type="checkbox" @bind="isChecked" />
@@ -321,7 +321,7 @@ Pour créer une liaison de données bidirectionnelle entre un composant de l’i
 }
 ```
 
-Lorsque le composant est rendu, la valeur de la case à cocher est définie sur la `isChecked` valeur du champ. Lorsque l’utilisateur active ou désactive la case à `onchange` cocher, l’événement `isChecked` est déclenché et le champ est défini sur la nouvelle valeur. Dans `@bind` ce cas, la syntaxe est équivalente à la balise suivante :
+Lorsque le composant est rendu, la valeur de la case à cocher est définie sur la valeur du `isChecked` champ. Lorsque l’utilisateur active ou désactive la case à cocher, l' `onchange` événement est déclenché et le `isChecked` champ est défini sur la nouvelle valeur. `@bind`Dans ce cas, la syntaxe est équivalente à la balise suivante :
 
 ```razor
 <input value="@isChecked" @onchange="(UIChangeEventArgs e) => isChecked = e.Value" />
@@ -367,9 +367,9 @@ Password: <input
 }
 ```
 
-Pour chaîner une liaison de données à un élément d’interface utilisateur sous-jacent, définissez la valeur et gérez l’événement directement sur l' `@bind` élément d’interface utilisateur au lieu d’utiliser l’attribut.
+Pour chaîner une liaison de données à un élément d’interface utilisateur sous-jacent, définissez la valeur et gérez l’événement directement sur l’élément d’interface utilisateur au lieu d’utiliser l' `@bind` attribut.
 
-Pour établir une liaison avec un paramètre de composant `@bind-{Parameter}` , utilisez un attribut pour spécifier le paramètre auquel vous souhaitez effectuer la liaison.
+Pour établir une liaison avec un paramètre de composant, utilisez un `@bind-{Parameter}` attribut pour spécifier le paramètre auquel vous souhaitez effectuer la liaison.
 
 ```razor
 <PasswordBox @bind-Password="password" />
@@ -381,9 +381,9 @@ Pour établir une liaison avec un paramètre de composant `@bind-{Parameter}` , 
 
 ## <a name="state-changes"></a>Changements d'état
 
-Si l’état du composant a été modifié en dehors d’un événement d’interface utilisateur normal ou d’un rappel d’événement, le composant doit indiquer manuellement qu’il doit être de nouveau restitué. Pour signaler que l’état d’un composant a changé, appelez `StateHasChanged` la méthode sur le composant.
+Si l’état du composant a été modifié en dehors d’un événement d’interface utilisateur normal ou d’un rappel d’événement, le composant doit indiquer manuellement qu’il doit être de nouveau restitué. Pour signaler que l’état d’un composant a changé, appelez la `StateHasChanged` méthode sur le composant.
 
-Dans l’exemple ci-dessous, un composant affiche un message `AppState` d’un service qui peut être mis à jour par d’autres parties de l’application. Le composant inscrit sa `StateHasChanged` méthode avec l' `AppState.OnChange` événement afin que le composant soit rendu chaque fois que le message est mis à jour.
+Dans l’exemple ci-dessous, un composant affiche un message d’un `AppState` service qui peut être mis à jour par d’autres parties de l’application. Le composant inscrit sa `StateHasChanged` méthode avec l' `AppState.OnChange` événement afin que le composant soit rendu chaque fois que le message est mis à jour.
 
 ```csharp
 public class AppState
@@ -395,7 +395,7 @@ public class AppState
 
     public void UpdateMessage(string message)
     {
-        shortlist.Add(itinerary);
+        Message = message;
         NotifyStateChanged();
     }
 
@@ -418,7 +418,7 @@ public class AppState
 
 ## <a name="component-lifecycle"></a>Cycle de vie des composants
 
-ASP.NET Web Forms Framework a des méthodes de cycle de vie bien définies pour les modules, les pages et les contrôles. Par exemple, le contrôle suivant implémente des gestionnaires d’événements pour `Init`les `Load`événements de `UnLoad` cycle de vie, et :
+ASP.NET Web Forms Framework a des méthodes de cycle de vie bien définies pour les modules, les pages et les contrôles. Par exemple, le contrôle suivant implémente des gestionnaires d’événements pour `Init` les `Load` événements de `UnLoad` cycle de vie, et :
 
 *Counter.ascx.cs*
 
@@ -433,11 +433,11 @@ public partial class Counter : System.Web.UI.UserControl
 
 Les composants éblouissants disposent également d’un cycle de vie bien défini. Le cycle de vie d’un composant peut être utilisé pour initialiser l’état d’un composant et implémenter des comportements de composant avancés.
 
-Toutes les méthodes de cycle de vie des composants de éblouissant ont des versions synchrones et asynchrones. Le rendu des composants est synchrone. Vous ne pouvez pas exécuter une logique asynchrone dans le cadre du rendu des composants. Toute la logique asynchrone doit s’exécuter dans le `async` cadre d’une méthode Lifecycle.
+Toutes les méthodes de cycle de vie des composants de éblouissant ont des versions synchrones et asynchrones. Le rendu des composants est synchrone. Vous ne pouvez pas exécuter une logique asynchrone dans le cadre du rendu des composants. Toute la logique asynchrone doit s’exécuter dans le cadre d’une `async` méthode Lifecycle.
 
 ### <a name="oninitialized"></a>OnInitialized
 
-Les `OnInitialized` méthodes `OnInitializedAsync` et sont utilisées pour initialiser le composant. Un composant est généralement initialisé après son premier rendu. Une fois qu’un composant a été initialisé, il peut être restitué plusieurs fois avant d’être supprimé. La `OnInitialized` méthode est similaire à l' `Page_Load` événement dans ASP.NET Web Forms les pages et les contrôles.
+Les `OnInitialized` `OnInitializedAsync` méthodes et sont utilisées pour initialiser le composant. Un composant est généralement initialisé après son premier rendu. Une fois qu’un composant a été initialisé, il peut être restitué plusieurs fois avant d’être supprimé. La `OnInitialized` méthode est similaire à l' `Page_Load` événement dans ASP.NET Web Forms les pages et les contrôles.
 
 ```csharp
 protected override void OnInitialized() { ... }
@@ -446,7 +446,7 @@ protected override async Task OnInitializedAsync() { await ... }
 
 ### <a name="onparametersset"></a>OnParametersSet
 
-Les `OnParametersSet` méthodes `OnParametersSetAsync` et sont appelées lorsqu’un composant a reçu des paramètres de son parent et que la valeur est assignée aux propriétés. Ces méthodes sont exécutées après l’initialisation du composant et *chaque fois que le composant est rendu*.
+Les `OnParametersSet` `OnParametersSetAsync` méthodes et sont appelées lorsqu’un composant a reçu des paramètres de son parent et que la valeur est assignée aux propriétés. Ces méthodes sont exécutées après l’initialisation du composant et *chaque fois que le composant est rendu*.
 
 ```csharp
 protected override void OnParametersSet() { ... }
@@ -455,7 +455,7 @@ protected override async Task OnParametersSetAsync() { await ... }
 
 ### <a name="onafterrender"></a>OnAfterRender
 
-Les `OnAfterRender` méthodes `OnAfterRenderAsync` et sont appelées après la fin du rendu d’un composant. Les références à un élément et à un composant sont remplies à ce stade (en savoir plus sur ces concepts ci-dessous). L’interactivité avec le navigateur est activée à ce stade. Les interactions avec l’exécution DOM et JavaScript peuvent être effectuées en toute sécurité.
+Les `OnAfterRender` `OnAfterRenderAsync` méthodes et sont appelées après la fin du rendu d’un composant. Les références à un élément et à un composant sont remplies à ce stade (en savoir plus sur ces concepts ci-dessous). L’interactivité avec le navigateur est activée à ce stade. Les interactions avec l’exécution DOM et JavaScript peuvent être effectuées en toute sécurité.
 
 ```csharp
 protected override void OnAfterRender(bool firstRender)
@@ -476,11 +476,11 @@ protected override async Task OnAfterRenderAsync(bool firstRender)
 
 `OnAfterRender`et `OnAfterRenderAsync` *ne sont pas appelés lors du prérendu sur le serveur*.
 
-Le `firstRender` paramètre est `true` la première fois que le composant est restitué. Sinon, sa valeur est `false`.
+Le `firstRender` paramètre est `true` la première fois que le composant est rendu ; sinon, sa valeur est `false` .
 
 ### <a name="idisposable"></a>IDisposable
 
-Les composants éblouissant peuvent implémenter `IDisposable` pour supprimer des ressources lorsque le composant est supprimé de l’interface utilisateur. Un composant Razor peut implémenter `IDispose` à l' `@implements` aide de la directive :
+Les composants éblouissant peuvent implémenter `IDisposable` pour supprimer des ressources lorsque le composant est supprimé de l’interface utilisateur. Un composant Razor peut implémenter `IDispose` à l’aide de la `@implements` directive :
 
 ```razor
 @using System
@@ -525,13 +525,13 @@ Les composants éblouissant peuvent capturer des références à un élément. C
 
 ## <a name="templated-components"></a>Composants basés sur un modèle
 
-Dans ASP.NET Web Forms, vous pouvez créer des *contrôles basés*sur un modèle. Les contrôles basés sur un modèle permettent au développeur de spécifier une partie du code HTML utilisé pour restituer un contrôle conteneur. La mécanique de la création de contrôles serveur basés sur des modèles est complexe, mais elle permet de puissants scénarios de rendu des données de manière personnalisable par l’utilisateur. Les exemples de contrôles basés sur `Repeater` un `DataList`modèle incluent et.
+Dans ASP.NET Web Forms, vous pouvez créer des *contrôles basés*sur un modèle. Les contrôles basés sur un modèle permettent au développeur de spécifier une partie du code HTML utilisé pour restituer un contrôle conteneur. La mécanique de la création de contrôles serveur basés sur des modèles est complexe, mais elle permet de puissants scénarios de rendu des données de manière personnalisable par l’utilisateur. Les exemples de contrôles basés sur un modèle incluent `Repeater` et `DataList` .
 
-Les composants éblouissants peuvent également être basés sur un modèle en définissant `RenderFragment` des `RenderFragment<T>`paramètres de composant de type ou. Un `RenderFragment` représente un segment de balisage Razor qui peut ensuite être rendu par le composant. Un `RenderFragment<T>` est un segment de balisage Razor qui prend un paramètre qui peut être spécifié lors du rendu du fragment de rendu.
+Les composants éblouissants peuvent également être basés sur un modèle en définissant des paramètres de composant de type `RenderFragment` ou `RenderFragment<T>` . Un `RenderFragment` représente un segment de balisage Razor qui peut ensuite être rendu par le composant. Un `RenderFragment<T>` est un segment de balisage Razor qui prend un paramètre qui peut être spécifié lors du rendu du fragment de rendu.
 
 ### <a name="child-content"></a>Contenu enfant
 
-Les composants éblouissants peuvent capturer leur contenu enfant sous `RenderFragment` la forme d’un et afficher ce contenu dans le cadre du rendu des composants. Pour capturer le contenu enfant, définissez un paramètre de composant `RenderFragment` de type et `ChildContent`nommez-le.
+Les composants éblouissants peuvent capturer leur contenu enfant sous `RenderFragment` la forme d’un et afficher ce contenu dans le cadre du rendu des composants. Pour capturer le contenu enfant, définissez un paramètre de composant de type `RenderFragment` et nommez-le `ChildContent` .
 
 *ChildContentComponent. Razor*
 
@@ -556,7 +556,7 @@ Un composant parent peut ensuite fournir le contenu enfant à l’aide d’un sy
 
 ### <a name="template-parameters"></a>Paramètres de modèle
 
-Un composant éblouissant basé sur des modèles peut également définir plusieurs paramètres de composant `RenderFragment` de `RenderFragment<T>`type ou. Le paramètre d’un `RenderFragment<T>` peut être spécifié lorsqu’il est appelé. Pour spécifier un paramètre de type générique pour un composant, utilisez `@typeparam` la directive Razor.
+Un composant éblouissant basé sur des modèles peut également définir plusieurs paramètres de composant de type `RenderFragment` ou `RenderFragment<T>` . Le paramètre d’un `RenderFragment<T>` peut être spécifié lorsqu’il est appelé. Pour spécifier un paramètre de type générique pour un composant, utilisez la `@typeparam` directive Razor.
 
 *SimpleListView. Razor*
 
@@ -584,7 +584,7 @@ Un composant éblouissant basé sur des modèles peut également définir plusie
 }
 ```
 
-Lorsque vous utilisez un composant basé sur un modèle, les paramètres de modèle peuvent être spécifiés à l’aide d’éléments enfants qui correspondent aux noms des paramètres. Les arguments de composant `RenderFragment<T>` de type passés comme éléments ont un paramètre `context`implicite nommé. Vous pouvez modifier le nom de ce paramètre d’implémentation à `Context` l’aide de l’attribut sur l’élément enfant. Tous les paramètres de type générique peuvent être spécifiés à l’aide d’un attribut qui correspond au nom du paramètre de type. Le paramètre de type sera déduit si possible :
+Lorsque vous utilisez un composant basé sur un modèle, les paramètres de modèle peuvent être spécifiés à l’aide d’éléments enfants qui correspondent aux noms des paramètres. Les arguments de composant de type `RenderFragment<T>` passés comme éléments ont un paramètre implicite nommé `context` . Vous pouvez modifier le nom de ce paramètre d’implémentation à l’aide `Context` de l’attribut sur l’élément enfant. Tous les paramètres de type générique peuvent être spécifiés à l’aide d’un attribut qui correspond au nom du paramètre de type. Le paramètre de type sera déduit si possible :
 
 ```razor
 <SimpleListView Items="messages" TItem="string">
@@ -609,7 +609,7 @@ La sortie de ce composant ressemble à ceci :
 
 ## <a name="code-behind"></a>Code-behind
 
-Un composant éblouissant est généralement créé dans un seul fichier *. Razor* . Toutefois, il est également possible de séparer le code et le balisage à l’aide d’un fichier code-behind. Pour utiliser un fichier de composant, ajoutez un fichier C# qui correspond au nom du fichier du composant, mais avec une extension *. cs* ajoutée (*Counter.Razor.cs*). Utilisez le fichier C# pour définir une classe de base pour le composant. Vous pouvez nommer la classe de base comme vous le souhaitez, mais il est courant de nommer la classe comme la classe du composant, mais avec une `Base` extension ajoutée (`CounterBase`). La classe basée sur les composants doit également dériver de `ComponentBase`. Ensuite, dans le fichier du composant Razor, ajoutez `@inherits` la directive pour spécifier la classe de base pour le`@inherits CounterBase`composant ().
+Un composant éblouissant est généralement créé dans un seul fichier *. Razor* . Toutefois, il est également possible de séparer le code et le balisage à l’aide d’un fichier code-behind. Pour utiliser un fichier de composant, ajoutez un fichier C# qui correspond au nom du fichier du composant, mais avec une extension *. cs* ajoutée (*Counter.Razor.cs*). Utilisez le fichier C# pour définir une classe de base pour le composant. Vous pouvez nommer la classe de base comme vous le souhaitez, mais il est courant de nommer la classe comme la classe du composant, mais avec une `Base` extension ajoutée ( `CounterBase` ). La classe basée sur les composants doit également dériver de `ComponentBase` . Ensuite, dans le fichier du composant Razor, ajoutez la `@inherits` directive pour spécifier la classe de base pour le composant ( `@inherits CounterBase` ).
 
 *Counter. Razor*
 
@@ -644,5 +644,5 @@ La visibilité des membres du composant dans la classe de base doit être `prote
 Ce qui précède n’est pas un traitement exhaustif de tous les aspects des composants de éblouissant. Pour plus d’informations sur la [création et l’utilisation de ASP.net Core les composants Razor](/aspnet/core/blazor/components), consultez la documentation de l’éblouissant.
 
 >[!div class="step-by-step"]
->[Précédent](app-startup.md)
->[suivant](pages-routing-layouts.md)
+>[Précédent](app-startup.md) 
+> [Suivant](pages-routing-layouts.md)

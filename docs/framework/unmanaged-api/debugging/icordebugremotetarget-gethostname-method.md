@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1c7276f7-7e54-470c-808c-e13745ac07a1
 topic_type:
 - apiref
-ms.openlocfilehash: f177d441da3bd967750781e487d9fed42bc132f5
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 020724c422af7cba0165e6f37d0eacb7742153ec
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791947"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379275"
 ---
 # <a name="icordebugremotetargetgethostname-method"></a>ICorDebugRemoteTarget::GetHostName, méthode
 Retourne le nom de domaine complet ou l’adresse IPv4 de l’ordinateur cible de débogage distant. IPV6 n’est pas pris en charge pour l’instant.  
@@ -35,9 +35,9 @@ HRESULT GetHostName (
             WCHAR szHostName[]  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `cchHostName`  
- dans Taille, en caractères, de la mémoire tampon de `szHostName`. Si ce paramètre a la valeur 0 (zéro), `szHostName` doit avoir la valeur null.  
+ dans Taille, en caractères, de la `szHostName` mémoire tampon. Si ce paramètre a la valeur 0 (zéro), `szHostName` doit avoir la valeur null.  
   
  `pcchHostName`  
  à Nombre de caractères, y compris la marque de fin null, dans le nom d’hôte ou l’adresse IP. Ce paramètre peut avoir la valeur Null.  
@@ -52,11 +52,11 @@ HRESULT GetHostName (
  E_FAIL (ou autres codes de retour E_)  
  Impossible de retourner le nom d’hôte ou l’adresse IP.  
   
-## <a name="remarks"></a>Notes  
- Cette méthode est implémentée par l’enregistreur du débogueur. Il doit suivre le paradigme d’appel multiple : lors du premier appel, l’appelant passe la valeur null à `cchHostName` et `szHostName`, et `pcchHostName` retourne la taille de la mémoire tampon requise. Lors du deuxième appel, la taille précédemment retournée est passée dans `cchHostName`, et une mémoire tampon de taille appropriée est transmise `szHostName`.  
+## <a name="remarks"></a>Remarks  
+ Cette méthode est implémentée par l’enregistreur du débogueur. Il doit suivre le paradigme d’appel multiple : lors du premier appel, l’appelant passe NULL à et à et `cchHostName` `szHostName` , et `pcchHostName` retourne la taille de la mémoire tampon requise. Lors du deuxième appel, la taille précédemment retournée est passée `cchHostName` , et une mémoire tampon de taille appropriée est passée `szHostName` .  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug. idl  
   

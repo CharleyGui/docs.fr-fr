@@ -1,5 +1,6 @@
 ---
 title: Guide pratique pour créer une paire de clés publique/privée
+description: Découvrez comment créer une paire de clés de chiffrement publique/privée à utiliser pendant la compilation pour créer un assembly avec nom fort.
 ms.date: 08/20/2019
 helpviewer_keywords:
 - key pairs for strong-named assemblies
@@ -15,29 +16,29 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 8a9845e3cd18ff86ec04216ad0e9c5606186b113
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 675871170e7fd4171f0fe09b04d1dbb8906beda4
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73122517"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378549"
 ---
 # <a name="how-to-create-a-public-private-key-pair"></a>Guide pratique pour créer une paire de clés publique/privée
 
-Pour signer un assembly avec un nom fort, vous devez disposer d’une paire de clés publique/privée. Cette paire de clés de chiffrement public et privé est utilisée lors de la compilation pour créer un assembly avec nom fort. Vous pouvez créer une paire de clés à l’aide de l’[outil Strong Name (Sn.exe)](../../framework/tools/sn-exe-strong-name-tool.md). Les fichiers de paires clés ont généralement une extension *.snk.*
+Pour signer un assembly avec un nom fort, vous devez disposer d’une paire de clés publique/privée. Cette paire de clés de chiffrement public et privé est utilisée lors de la compilation pour créer un assembly avec nom fort. Vous pouvez créer une paire de clés à l’aide de l’[outil Strong Name (Sn.exe)](../../framework/tools/sn-exe-strong-name-tool.md). Les fichiers de paire de clés ont généralement une extension *. snk* .
 
 > [!NOTE]
-> Dans Visual Studio, les pages de propriété du projet C et Visual Basic comprennent un onglet **Signature** qui vous permet de sélectionner les fichiers clés existants ou de générer de nouveaux fichiers clés sans utiliser *Sn.exe*. Dans Visual C++, vous pouvez spécifier l’emplacement d’un fichier de clés existant dans la page de propriétés **Avancé** de la section **Éditeur de liens**, dans la section **Propriétés de Configuration** de la fenêtre **Pages de propriétés**. L’utilisation <xref:System.Reflection.AssemblyKeyFileAttribute> de l’attribut pour identifier les paires de fichiers clés a été rendue obsolète à partir de Visual Studio 2005.
+> Dans Visual Studio, les pages de propriétés de projet C# et Visual Basic incluent un onglet **signature** qui vous permet de sélectionner des fichiers de clé existants ou de générer de nouveaux fichiers de clé sans utiliser *sn. exe*. Dans Visual C++, vous pouvez spécifier l’emplacement d’un fichier de clés existant dans la page de propriétés **Avancé** de la section **Éditeur de liens**, dans la section **Propriétés de Configuration** de la fenêtre **Pages de propriétés**. L’utilisation de l' <xref:System.Reflection.AssemblyKeyFileAttribute> attribut pour identifier les paires de fichiers de clés est devenue obsolète à partir de Visual Studio 2005.
 
 ## <a name="create-a-key-pair"></a>Créer une paire de clés
 
-Pour créer une paire de clés, à une invite de commande, tapez la commande suivante :
+Pour créer une paire de clés, à l’invite de commandes, tapez la commande suivante :
 
 **sn –k** \<*nom de fichier*>
 
 Dans cette commande, *nom de fichier* est le nom du fichier de sortie contenant la paire de clés.
 
-L’exemple suivant crée une paire de clés appelée *sgKey.snk*.
+L’exemple suivant crée une paire de clés appelée *sgKey. snk*.
 
 ```cmd
 sn -k sgKey.snk

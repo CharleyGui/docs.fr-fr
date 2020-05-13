@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c55e35d9-f9aa-4268-94b5-dce44c61acf2
 topic_type:
 - apiref
-ms.openlocfilehash: 64f6bc9abb8105cdfa942c2aaca71994e8a91765
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: f2850e6c9cbb2250a08ab4a0e34c69e377d3a23d
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791415"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83375847"
 ---
 # <a name="icordebugthread3createstackwalk-method"></a>ICorDebugThread3::CreateStackWalk, méthode
 Crée un objet [ICorDebugStackWalk](icordebugstackwalk-interface.md) pour le thread dont vous souhaitez dérouler la pile.  
@@ -31,7 +31,7 @@ Crée un objet [ICorDebugStackWalk](icordebugstackwalk-interface.md) pour le thr
 HRESULT CreateStackWalk([out] ICorDebugStackWalk **ppStackWalk);  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `ppStackWalk`  
  à Pointeur vers l’adresse de l’objet [ICorDebugStackWalk](icordebugstackwalk-interface.md) pour le thread dont vous souhaitez dérouler la pile.  
   
@@ -40,22 +40,22 @@ HRESULT CreateStackWalk([out] ICorDebugStackWalk **ppStackWalk);
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|L’objet `ICorDebugStackWalk` a été créé avec succès.|  
-|E_FAIL|L’objet `ICorDebugStackWalk` n’a pas été créé.|  
+|S_OK|L' `ICorDebugStackWalk` objet a été créé avec succès.|  
+|E_FAIL|L' `ICorDebugStackWalk` objet n’a pas été créé.|  
   
 ## <a name="exceptions"></a>Exceptions  
   
-## <a name="remarks"></a>Notes  
- Si la méthode `CreateStackWalk` est réussie, le contexte de l’objet `ICorDebugStackWalk` retourné est défini sur le contexte actuel du thread.  
+## <a name="remarks"></a>Remarks  
+ Si la `CreateStackWalk` méthode est réussie, le `ICorDebugStackWalk` contexte de l’objet retourné est défini sur le contexte actuel du thread.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

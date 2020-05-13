@@ -2,12 +2,12 @@
 title: ICorDebugSymbolProvider::GetTypeProps, méthode
 ms.date: 03/30/2017
 ms.assetid: 35ac4140-91ea-4c77-b1c4-1daf41986ca5
-ms.openlocfilehash: 5fa091eaf2cf93b0c645effeec3c959d42665fc9
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: e116716284bb2081edb669e7fc9083cde10f6457
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791544"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379363"
 ---
 # <a name="icordebugsymbolprovidergettypeprops-method"></a>ICorDebugSymbolProvider::GetTypeProps, méthode
 Retourne des informations sur les propriétés d'un type, comme le nombre de signature de ses paramètres génériques, en fonction d'une adresse virtuelle relative (RVA) dans une vtable.  
@@ -23,7 +23,7 @@ HRESULT GetTypeProps(
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `tableRva`  
  [in] Adresse virtuelle relative (RVA) dans une vtable.  
   
@@ -36,20 +36,20 @@ HRESULT GetTypeProps(
  `signature`  
  [out] Mémoire tampon qui conserve les signatures typespec de tous les paramètres génériques.  
   
-## <a name="remarks"></a>Notes  
- Pour récupérer la taille requise du tableau `signature` du type, affectez la valeur 0 à l’argument `cbSignature` et `signature` la **valeur null**. Suite au retour de la méthode, `pcbSignature` contient le nombre d'octets requis pour le tableau `signature`.  
+## <a name="remarks"></a>Remarks  
+ Pour récupérer la taille requise du tableau du type `signature` , affectez à l’argument la valeur `cbSignature` 0 et `signature` à la **valeur null**. Suite au retour de la méthode, `pcbSignature` contient le nombre d'octets requis pour le tableau `signature`.  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

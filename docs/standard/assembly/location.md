@@ -1,16 +1,17 @@
 ---
 title: Emplacement d’assembly
+description: L’emplacement d’un assembly .NET détermine la façon dont le CLR le trouve et s’il peut être partagé avec d’autres assemblys.
 ms.date: 08/20/2019
 helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 9f1f41a7-2954-49d3-a2c0-62b6ef4d40ab
-ms.openlocfilehash: 0b84aba749625f0f86027cd9d09a5e9a2229a3f2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7ab3804b14b586e1430d654f4da32a310bcb6cc9
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73733128"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379891"
 ---
 # <a name="assembly-location"></a>Emplacement d’assembly
 L’emplacement d’un assembly détermine si le common language runtime peut le localiser quand il est référencé, et il peut aussi déterminer si l’assembly peut être partagé avec d’autres assemblys. Vous pouvez déployer un assembly dans les emplacements suivants :
@@ -30,5 +31,5 @@ L’emplacement d’un assembly détermine si le common language runtime peut le
 ## <a name="see-also"></a>Voir aussi
 
 - [Créer des assemblys](create.md)
-- [Cache d’assemblage global](../../framework/app-domains/gac.md)
-- [Comment le temps d’exécution localise les assemblages](../../framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Global assembly cache](../../framework/app-domains/gac.md)
+- [Comment le runtime localise les assemblys](../../framework/deployment/how-the-runtime-locates-assemblies.md)
