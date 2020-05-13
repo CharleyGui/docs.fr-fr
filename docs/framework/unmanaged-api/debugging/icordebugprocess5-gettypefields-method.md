@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6a0ad3ee-dacb-47e9-abae-4536bcc4804b
 topic_type:
 - apiref
-ms.openlocfilehash: 29006eba3d3a523fd24a461207ab12222a639782
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a2c7f7b722abac6acf71d3b64276862441695a5f
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178587"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212787"
 ---
 # <a name="icordebugprocess5gettypefields-method"></a>ICorDebugProcess5::GetTypeFields, méthode
 Fournit des informations sur les champs qui appartiennent à un type.  
@@ -38,28 +38,28 @@ HRESULT GetTypeFields(
   
 ## <a name="parameters"></a>Paramètres  
  `id`  
- [dans] L’identifiant du type dont les informations sur le terrain sont récupérées.  
+ dans Identificateur du type dont les informations de champ sont récupérées.  
   
  `celt`  
- [dans] Nombre d’objets [COR_FIELD](cor-field-structure.md) dont les informations sur le terrain doivent être récupérées.  
+ dans Nombre d’objets [COR_FIELD](cor-field-structure.md) dont les informations de champ doivent être récupérées.  
   
  `fields`  
- [out] Un éventail d’objets [COR_FIELD](cor-field-structure.md) qui fournissent des informations sur les champs qui appartiennent au type.  
+ à Tableau d’objets [COR_FIELD](cor-field-structure.md) qui fournissent des informations sur les champs qui appartiennent au type.  
   
  `pceltNeeded`  
- [out] Un pointeur sur le nombre d’objets [COR_FIELD](cor-field-structure.md) inclus dans `fields`.  
+ à Pointeur vers le nombre d’objets [COR_FIELD](cor-field-structure.md) inclus dans `fields` .  
   
-## <a name="remarks"></a>Notes   
- Le `celt` paramètre, qui précise le nombre de champs dont `fields`l’information sur le `COR_TYPE_LAYOUT::numFields` terrain utilisée par la méthode pour peupler, doit correspondre à la valeur du champ.  
+## <a name="remarks"></a>Remarks  
+ Le `celt` paramètre, qui spécifie le nombre de champs dont la méthode utilise les informations de champ pour remplir `fields` , doit correspondre à la valeur du `COR_TYPE_LAYOUT::numFields` champ.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

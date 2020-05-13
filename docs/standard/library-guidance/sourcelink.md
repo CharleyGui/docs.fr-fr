@@ -2,12 +2,12 @@
 title: Bibliothèques Source Link et .NET
 description: Bonnes pratiques relatives à l’utilisation de Source Link pour améliorer le débogage des bibliothèques .NET
 ms.date: 01/15/2019
-ms.openlocfilehash: 3d768ae6e79efa23a8402ea37bc34cd58cd52c8c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0261019087bce8e9d088a90c5e36bdd0b22f556b
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76744541"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212423"
 ---
 # <a name="source-link"></a>Source Link
 
@@ -21,9 +21,9 @@ Source Link est une technologie qui permet aux développeurs de déboguer le cod
 
 Vous trouverez des instructions sur l’utilisation de Source Link dans le dépôt GitHub [dotnet/sourcelink](https://github.com/dotnet/sourcelink/blob/master/README.md).
 
-Vous pouvez utiliser [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) pour vérifier que les métadonnées Source Link ont été correctement incorporées dans le package. Vérifiez `Repository` que les métadonnées sont présentes avec un identifiant de validation et que les fichiers .pdb sont situés avec le .dll de chaque cible.
+Vous pouvez utiliser [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) pour vérifier que les métadonnées Source Link ont été correctement incorporées dans le package. Vérifiez `Repository` que les métadonnées sont présentes avec un identificateur de validation et que les fichiers. pdb sont situés avec le fichier. dll de chaque cible.
 
-![Source Link dans NuGet Package Explorer](./media/sourcelink/nuget-package-explorer-sourcelink.png "Source Link dans NuGet Package Explorer")
+![Lien source dans l’Explorateur de package NuGet](./media/sourcelink/nuget-package-explorer-sourcelink.png "Lien source dans l’Explorateur de package NuGet")
 
 ✔️ À ENVISAGER : Utiliser Source Link pour ajouter des métadonnées de contrôle de code source à vos assemblys et packages NuGet.
 
@@ -38,6 +38,10 @@ Vous pouvez utiliser [NuGet Package Explorer](https://github.com/NuGetPackageExp
 
 > Pour une meilleure expérience de débogage, votre bibliothèque doit publier les fichiers de symboles et utiliser Source Link. Pour plus d’informations sur les fichiers de symboles et les packages de symboles, consultez [Packages de symboles](./nuget.md#symbol-packages).
 
+✔️ envisagez d’activer les builds déterministes.
+
+> Les builds déterministes permettent de vérifier que le fichier binaire résultant a été généré à partir de la source spécifiée et fournit la traçabilité. Pour plus d’informations sur les builds déterministes et les instructions permettant de les activer, consultez [Builds déterministe](https://github.com/clairernovotny/DeterministicBuilds).
+
 >[!div class="step-by-step"]
->[Suivant précédent](dependencies.md)
->[Next](publish-nuget-package.md)
+>[Précédent](dependencies.md) 
+> [Suivant](publish-nuget-package.md)

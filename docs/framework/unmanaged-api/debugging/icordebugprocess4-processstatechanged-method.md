@@ -1,5 +1,5 @@
 ---
-title: ICorDebugProcess4::ProcessStateChanged Method
+title: ICorDebugProcess4 ::P méthode rocessStateChanged
 ms.date: 02/07/2019
 api_name:
 - ICorDebugProcess4::ProcessStateChanged
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: a6f36f5b86b4fa58ce2a4ef4aa23d527f797a5a5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 910c411d2c63ce2c6cf262e28e08546657dc2a4c
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178630"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213567"
 ---
-# <a name="icordebugprocess4processstatechanged-method"></a>ICorDebugProcess4::ProcessStateChanged Method
+# <a name="icordebugprocess4processstatechanged-method"></a>ICorDebugProcess4 ::P méthode rocessStateChanged
 
-Informe le pipeline ICorDebug que le débbuggeur hors processus poursuit l’exécution du débbugee.
+Notifie le pipeline ICorDebug que le débogueur hors processus poursuit l’exécution du débogueur.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -37,21 +37,21 @@ HRESULT ProcessStateChanged(
 ## <a name="parameters"></a>Paramètres
 
  `eChange`\
-[dans] Un membre du [recensement corDebugStateChange](cordebugstatechange-enumeration.md) décrivant un changement dans l’état d’exécution du processus.
+dans Membre de l' [énumération cordebugstatechange,](cordebugstatechange-enumeration.md) décrivant une modification de l’état d’exécution du processus.
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarks
 
-La méthode fournie fait `ICorDebugProcess4` partie de l’interface et correspond à la quatrième fente de la table de méthode virtuelle.
+La méthode fournie fait partie de l' `ICorDebugProcess4` interface et correspond au quatrième emplacement de la table de méthodes virtuelles.
 
 ## <a name="requirements"></a>Spécifications
 
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
- **En-tête:** Aucun
+ **En-tête :** None
 
- **Bibliothèque:** Aucun
+ **Bibliothèque :** None
 
- **.NET Versions-cadre:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
 

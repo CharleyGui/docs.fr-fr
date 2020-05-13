@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Equals method
 - collections [.NET Framework], comparisons
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
-ms.openlocfilehash: 932a5abfaf2a6cc972e84cbc3d6b930cdd716f71
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 8e4530063f14211688e5ef2d2ec4ed7e4834cdf1
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728168"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212965"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Comparaisons et tris dans les collections
 
@@ -28,7 +28,7 @@ Les collections utilisent généralement un comparateur d’égalité et/ou un c
 <a name="BKMK_Checkingforequality"></a>
 ## <a name="check-for-equality"></a>Vérifier l’égalité
 
-Les méthodes telles que `Contains`, <xref:System.Collections.IList.IndexOf%2A>, <xref:System.Collections.Generic.List%601.LastIndexOf%2A>et `Remove` utilisent un comparateur d'égalité pour les éléments de collection. Si la collection est générique, les éléments font l'objet d'une comparaison d'égalité, selon les consignes suivantes :
+Les méthodes telles que `Contains`, <xref:System.Collections.IList.IndexOf%2A>, <xref:System.Collections.Generic.List%601.LastIndexOf%2A>et `Remove` utilisent un comparateur d'égalité pour les éléments de collection. Si la collection est générique, les éléments sont comparés pour déterminer leur égalité conformément aux indications suivantes :
 
 - Si le type T implémente l'interface générique <xref:System.IEquatable%601> , le comparateur d'égalité est la méthode <xref:System.IEquatable%601.Equals%2A> de cette interface.
 
@@ -47,7 +47,7 @@ Le comparateur par défaut repose sur au moins l'un des objets comparés pour im
 
 - Si le type T implémente l'interface non générique <xref:System.IComparable?displayProperty=nameWithType> , le comparateur par défaut est la méthode <xref:System.IComparable.CompareTo%28System.Object%29?displayProperty=nameWithType> de cette interface.
 
-- Si le type T n'implémente aucune interface, il n'existe aucun comparateur par défaut. Un comparateur ou un délégué de comparaison doit donc être fourni explicitement.
+- Si le type T n’implémente aucune interface, il n’existe aucun comparateur par défaut, et un comparateur ou un délégué de comparaison doit être fourni explicitement.
 
 Pour fournir des comparaisons explicites, certaines méthodes acceptent une implémentation **IComparer** en tant que paramètre. Par exemple, la méthode <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> accepte une implémentation <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> .
 

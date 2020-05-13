@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 91b1345c-a94f-4ef8-9696-3823d06c6d05
 topic_type:
 - apiref
-ms.openlocfilehash: d87f414e9dfd05a519b60efc7ecdd5328a6dd86f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1cf6f9c5fe8777f3333e449a804a3c3a0a64ff19
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178866"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213086"
 ---
 # <a name="icordebuggcreferenceenumnext-method"></a>ICorDebugGCReferenceEnum::Next, méthode
-Obtient le nombre spécifié de [cas COR_GC_REFERENCE](cor-gc-reference-structure.md) qui contiennent des informations sur les objets qui seront collectés à ordures.  
+Obtient le nombre spécifié d’instances de [COR_GC_REFERENCE](cor-gc-reference-structure.md) qui contiennent des informations sur les objets qui feront l’objet d’un garbage collection.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,24 +36,24 @@ HRESULT Next(
   
 ## <a name="parameters"></a>Paramètres  
  celt  
- [dans] Le nombre de racines à récupérer.  
+ dans Nombre de racines à récupérer.  
   
- Racines  
- [out] Un tableau de pointeurs, chacun pointant vers un [objet COR_GC_REFERENCE](cor-gc-reference-structure.md) qui représente la racine d’un objet à collecter des ordures.  
+ digne  
+ à Tableau de pointeurs, chacun pointant vers un objet [COR_GC_REFERENCE](cor-gc-reference-structure.md) qui représente la racine d’un objet qui doit faire l’objet d’un garbage collection.  
   
  pceltFetched  
- [out] Un pointeur sur le nombre d’objets [COR_GC_REFERENCE](cor-gc-reference-structure.md) effectivement retourné dans `roots`. Cette valeur peut être `null` si `celt` est égal à 1.  
+ à Pointeur vers le nombre d’objets [COR_GC_REFERENCE](cor-gc-reference-structure.md) réellement retournés dans `roots` . Cette valeur peut être `null` si `celt` est égal à 1.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

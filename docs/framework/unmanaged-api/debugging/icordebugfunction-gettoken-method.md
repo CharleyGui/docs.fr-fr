@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c6bbf479-062e-48e9-9c70-0f92e293e36a
 topic_type:
 - apiref
-ms.openlocfilehash: 4229d567fc4ced5e3b78b390ced29fb9ea60f93b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e542145e888049231a6c5e4cccbb4ee96c62f98b
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137840"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213255"
 ---
 # <a name="icordebugfunctiongettoken-method"></a>ICorDebugFunction::GetToken, méthode
 Obtient le jeton de métadonnées pour cette fonction.  
@@ -37,11 +37,11 @@ HRESULT GetToken (
  `pMethodDef`  
  à Pointeur vers un `mdMethodDef` jeton qui référence les métadonnées de cette fonction.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

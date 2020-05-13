@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 24a8fcce-317e-48ff-aefc-d86123ada935
 topic_type:
 - apiref
-ms.openlocfilehash: 9cb956c0262fdcdb5971d049ea7b057aa4d952c0
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 78b87b5c566b0d760a205757430123665fb2fcd3
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76781903"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213710"
 ---
 # <a name="icordebugmanagedcallbackeditandcontinueremap-method"></a>ICorDebugManagedCallback::EditAndContinueRemap, méthode
 Cette méthode est dépréciée. Il informe le débogueur qu’un événement de remappage a été envoyé à l’environnement de développement intégré (IDE).  
@@ -36,17 +36,17 @@ HRESULT EditAndContinueRemap (
 );  
 ```  
   
-## <a name="remarks"></a>Notes  
- La méthode `EditAndContinueRemap` est appelée lorsque l’exécution du code dans une ancienne version d’une fonction mise à jour a été tentée. Le common language runtime appelle la méthode `EditAndContinueRemap` pour envoyer un événement de remappage à l’IDE.  
+## <a name="remarks"></a>Notes   
+ La `EditAndContinueRemap` méthode est appelée lorsque l’exécution du code dans une ancienne version d’une fonction mise à jour a été tentée. Le common language runtime appelle la `EditAndContinueRemap` méthode pour envoyer un événement de remappage à l’IDE.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

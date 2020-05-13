@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e0eed5a8-fa6d-4818-bd00-7babcea30325
 topic_type:
 - apiref
-ms.openlocfilehash: bb25c9235e4fcded5c230d2d417b9d41bbdd9b19
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: ea7f7a9d4589e4f08b1b1e20b4d073bb5f822714
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792336"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212761"
 ---
 # <a name="icordebugprocess5gettypefortypeid-method"></a>ICorDebugProcess5::GetTypeForTypeID, méthode
 Convertit un identificateur de type en valeur ICorDebugType.  
@@ -34,24 +34,24 @@ HRESULT GetTypeForTypeID(
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `id`  
  dans Identificateur de type.  
   
  `ppType`  
  à Pointeur vers l’adresse d’un objet ICorDebugType.  
   
-## <a name="remarks"></a>Notes  
- Dans certains cas, les méthodes qui retournent un identificateur de type peuvent retourner une valeur de `COR_TYPEID` null. Si cette valeur est passée comme argument `id`, la méthode `GetTypeForTypeID` échoue et retourne `E_FAIL`.  
+## <a name="remarks"></a>Remarks  
+ Dans certains cas, les méthodes qui retournent un identificateur de type peuvent retourner une `COR_TYPEID` valeur null. Si cette valeur est passée comme `id` argument, la `GetTypeForTypeID` méthode échoue et retourne `E_FAIL` .  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

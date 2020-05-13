@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 22c27b01-2869-4214-b840-5921f7c874fc
 topic_type:
 - apiref
-ms.openlocfilehash: 758364b2d63343e464b727d5a1c1817533a6acea
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7da12554ba1db9a467aa03c01bfb3b584125b129
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137794"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213190"
 ---
 # <a name="icordebugfunction2setjmcstatus-method"></a>ICorDebugFunction2::SetJMCStatus, méthode
 Marque la fonction représentée par ce ICorDebugFunction2 pour Uniquement mon code pas à pas.  
@@ -35,7 +35,7 @@ HRESULT SetJMCStatus (
   
 ## <a name="parameters"></a>Paramètres  
  `bIsJustMyCode`  
- dans Affectez la valeur `true` pour marquer la fonction en tant que code utilisateur ; Sinon, affectez la valeur `false`.  
+ dans Affectez la valeur à pour `true` marquer la fonction en tant que code utilisateur ; sinon, affectez à la valeur `false` .  
   
 ## <a name="return-values"></a>Valeurs de retour  
   
@@ -44,14 +44,14 @@ HRESULT SetJMCStatus (
 |`S_OK`|La fonction a été marquée avec succès.|  
 |`CORDBG_E_FUNCTION_NOT_DEBUGGABLE`|La fonction n’a pas pu être marquée comme code utilisateur, car elle ne peut pas être déboguée.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarks  
  Une Uniquement mon code pas à pas permet d’ignorer le code non-utilisateur. Le code utilisateur doit être un sous-ensemble du code pouvant être débogué.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
