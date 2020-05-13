@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 879d2311-0ff1-4616-a8b3-959ea5868b2e
 topic_type:
 - apiref
-ms.openlocfilehash: 39175e338e4fd98dd4af1325138da732ed81c764
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7bf73266f0269cfcd5371c5155856800036cc066
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137922"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209836"
 ---
-# <a name="icordebugframegetfunction-method"></a><span data-ttu-id="39df7-102">ICorDebugFrame::GetFunction, méthode</span><span class="sxs-lookup"><span data-stu-id="39df7-102">ICorDebugFrame::GetFunction Method</span></span>
-<span data-ttu-id="39df7-103">Obtient la fonction qui contient le code associé à ce frame de pile.</span><span class="sxs-lookup"><span data-stu-id="39df7-103">Gets the function that contains the code associated with this stack frame.</span></span>  
+# <a name="icordebugframegetfunction-method"></a><span data-ttu-id="11531-102">ICorDebugFrame::GetFunction, méthode</span><span class="sxs-lookup"><span data-stu-id="11531-102">ICorDebugFrame::GetFunction Method</span></span>
+<span data-ttu-id="11531-103">Obtient la fonction qui contient le code associé à ce frame de pile.</span><span class="sxs-lookup"><span data-stu-id="11531-103">Gets the function that contains the code associated with this stack frame.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="39df7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="39df7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="11531-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="11531-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetFunction (  
@@ -33,18 +33,18 @@ HRESULT GetFunction (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="39df7-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="39df7-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="11531-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="11531-105">Parameters</span></span>  
  `ppFunction`  
- <span data-ttu-id="39df7-106">à Pointeur vers l’adresse d’un objet ICorDebugFunction qui représente la fonction contenant le code associé à ce frame de pile.</span><span class="sxs-lookup"><span data-stu-id="39df7-106">[out] A pointer to the address of an ICorDebugFunction object that represents the function containing the code associated with this stack frame.</span></span>  
+ <span data-ttu-id="11531-106">à Pointeur vers l’adresse d’un objet ICorDebugFunction qui représente la fonction contenant le code associé à ce frame de pile.</span><span class="sxs-lookup"><span data-stu-id="11531-106">[out] A pointer to the address of an ICorDebugFunction object that represents the function containing the code associated with this stack frame.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="39df7-107">Notes</span><span class="sxs-lookup"><span data-stu-id="39df7-107">Remarks</span></span>  
- <span data-ttu-id="39df7-108">La méthode `GetFunction` peut échouer si le frame n’est pas associé à une fonction particulière.</span><span class="sxs-lookup"><span data-stu-id="39df7-108">The `GetFunction` method may fail if the frame is not associated with any particular function.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="11531-107">Remarks</span><span class="sxs-lookup"><span data-stu-id="11531-107">Remarks</span></span>  
+ <span data-ttu-id="11531-108">La `GetFunction` méthode peut échouer si le frame n’est pas associé à une fonction particulière.</span><span class="sxs-lookup"><span data-stu-id="11531-108">The `GetFunction` method may fail if the frame is not associated with any particular function.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="39df7-109">spécifications</span><span class="sxs-lookup"><span data-stu-id="39df7-109">Requirements</span></span>  
- <span data-ttu-id="39df7-110">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="39df7-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="11531-109">Spécifications</span><span class="sxs-lookup"><span data-stu-id="11531-109">Requirements</span></span>  
+ <span data-ttu-id="11531-110">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="11531-110">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="39df7-111">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="39df7-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="11531-111">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="11531-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="39df7-112">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="39df7-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="11531-112">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="11531-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="39df7-113">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="39df7-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="11531-113">**Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="11531-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

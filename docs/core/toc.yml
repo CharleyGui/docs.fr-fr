@@ -401,6 +401,8 @@
       href: versions/selection.md
 - name: Catalogue d’identificateurs de runtime (RID)
   href: rid-catalog.md
+- name: Noms des manifestes de ressources
+  href: resources/manifest-file-names.md
 - name: Gestion et chargement des dépendances
   items:
     - name: Gestion des dépendances

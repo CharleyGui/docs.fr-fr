@@ -1,62 +1,64 @@
 ---
-title: type d’omble - Référence C
-ms.date: 11/22/2019
+title: type char-référence C#
+ms.date: 05/11/2020
 f1_keywords:
 - char
 - char_CSharpKeyword
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: a07cae6e607bb6cda965240c669c655207632298
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: f771626e9777deab30e798559d847615d6124e6d
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81739065"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83205777"
 ---
-# <a name="char-c-reference"></a><span data-ttu-id="3e7fe-102">char (référence C)</span><span class="sxs-lookup"><span data-stu-id="3e7fe-102">char (C# reference)</span></span>
+# <a name="char-c-reference"></a><span data-ttu-id="8944f-102">Char (référence C#)</span><span class="sxs-lookup"><span data-stu-id="8944f-102">char (C# reference)</span></span>
 
-<span data-ttu-id="3e7fe-103">Le `char` mot clé de type <xref:System.Char?displayProperty=nameWithType> est un alias pour le type de structure .NET qui représente un caractère Unicode UTF-16.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-103">The `char` type keyword is an alias for the .NET <xref:System.Char?displayProperty=nameWithType> structure type that represents a Unicode UTF-16 character.</span></span>
+<span data-ttu-id="8944f-103">Le `char` mot clé type est un alias pour le <xref:System.Char?displayProperty=nameWithType> type de structure .net qui représente un caractère Unicode UTF-16.</span><span class="sxs-lookup"><span data-stu-id="8944f-103">The `char` type keyword is an alias for the .NET <xref:System.Char?displayProperty=nameWithType> structure type that represents a Unicode UTF-16 character.</span></span>
 
-|<span data-ttu-id="3e7fe-104">Type</span><span class="sxs-lookup"><span data-stu-id="3e7fe-104">Type</span></span>|<span data-ttu-id="3e7fe-105">Plage</span><span class="sxs-lookup"><span data-stu-id="3e7fe-105">Range</span></span>|<span data-ttu-id="3e7fe-106">Taille</span><span class="sxs-lookup"><span data-stu-id="3e7fe-106">Size</span></span>|<span data-ttu-id="3e7fe-107">Type .NET</span><span class="sxs-lookup"><span data-stu-id="3e7fe-107">.NET type</span></span>|
+|<span data-ttu-id="8944f-104">Type</span><span class="sxs-lookup"><span data-stu-id="8944f-104">Type</span></span>|<span data-ttu-id="8944f-105">Plage</span><span class="sxs-lookup"><span data-stu-id="8944f-105">Range</span></span>|<span data-ttu-id="8944f-106">Taille</span><span class="sxs-lookup"><span data-stu-id="8944f-106">Size</span></span>|<span data-ttu-id="8944f-107">Type .NET</span><span class="sxs-lookup"><span data-stu-id="8944f-107">.NET type</span></span>|
 |----------|-----------|----------|-------------------------|
-|`char`|<span data-ttu-id="3e7fe-108">U+0000 à U+FFFF</span><span class="sxs-lookup"><span data-stu-id="3e7fe-108">U+0000 to U+FFFF</span></span>|<span data-ttu-id="3e7fe-109">16 bits</span><span class="sxs-lookup"><span data-stu-id="3e7fe-109">16 bit</span></span>|<xref:System.Char?displayProperty=nameWithType>|
+|`char`|<span data-ttu-id="8944f-108">U+0000 à U+FFFF</span><span class="sxs-lookup"><span data-stu-id="8944f-108">U+0000 to U+FFFF</span></span>|<span data-ttu-id="8944f-109">16 bits</span><span class="sxs-lookup"><span data-stu-id="8944f-109">16 bit</span></span>|<xref:System.Char?displayProperty=nameWithType>|
 
-<span data-ttu-id="3e7fe-110">La valeur par `char` défaut `\0`du type est, c’est-à-dire, U-0000.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-110">The default value of the `char` type is `\0`, that is, U+0000.</span></span>
+<span data-ttu-id="8944f-110">La valeur par défaut du `char` type est `\0` , c’est-à-dire U + 0000.</span><span class="sxs-lookup"><span data-stu-id="8944f-110">The default value of the `char` type is `\0`, that is, U+0000.</span></span>
 
-<span data-ttu-id="3e7fe-111">Le type [de chaîne](reference-types.md#the-string-type) représente `char` le texte comme une séquence de valeurs.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-111">The [string](reference-types.md#the-string-type) type represents text as a sequence of `char` values.</span></span>
+<span data-ttu-id="8944f-111">Le `char` type prend en charge les opérateurs de [comparaison](../operators/comparison-operators.md), d' [égalité](../operators/equality-operators.md), d' [incrémentation](../operators/arithmetic-operators.md#increment-operator-)et de [décrémentation](../operators/arithmetic-operators.md#decrement-operator---) .</span><span class="sxs-lookup"><span data-stu-id="8944f-111">The `char` type supports [comparison](../operators/comparison-operators.md), [equality](../operators/equality-operators.md), [increment](../operators/arithmetic-operators.md#increment-operator-), and [decrement](../operators/arithmetic-operators.md#decrement-operator---) operators.</span></span> <span data-ttu-id="8944f-112">En outre, pour les `char` opérandes, les opérateurs [logiques](../operators/bitwise-and-shift-operators.md) [arithmétiques](../operators/arithmetic-operators.md) et au niveau du bit effectuent une opération sur les codes de caractères correspondants et produisent le résultat du `int` type.</span><span class="sxs-lookup"><span data-stu-id="8944f-112">Moreover, for `char` operands, [arithmetic](../operators/arithmetic-operators.md) and [bitwise logical](../operators/bitwise-and-shift-operators.md) operators perform an operation on the corresponding character codes and produce the result of the `int` type.</span></span>
 
-## <a name="literals"></a><span data-ttu-id="3e7fe-112">Littéraux</span><span class="sxs-lookup"><span data-stu-id="3e7fe-112">Literals</span></span>
+<span data-ttu-id="8944f-113">Le type [String](reference-types.md#the-string-type) représente du texte sous la forme d’une séquence de `char` valeurs.</span><span class="sxs-lookup"><span data-stu-id="8944f-113">The [string](reference-types.md#the-string-type) type represents text as a sequence of `char` values.</span></span>
 
-<span data-ttu-id="3e7fe-113">Vous pouvez `char` spécifier une valeur avec :</span><span class="sxs-lookup"><span data-stu-id="3e7fe-113">You can specify a `char` value with:</span></span>
+## <a name="literals"></a><span data-ttu-id="8944f-114">Littéraux</span><span class="sxs-lookup"><span data-stu-id="8944f-114">Literals</span></span>
 
-- <span data-ttu-id="3e7fe-114">un personnage littéral.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-114">a character literal.</span></span>
-- <span data-ttu-id="3e7fe-115">une séquence d’évasion `\u` Unicode, qui est suivie par la représentation héxadecimale à quatre symboles d’un code de caractère.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-115">a Unicode escape sequence, which is `\u` followed by the four-symbol hexadecimal representation of a character code.</span></span>
-- <span data-ttu-id="3e7fe-116">une séquence d’évasion hexadecimal, qui est `\x` suivie par la représentation héxadecimale d’un code de caractère.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-116">a hexadecimal escape sequence, which is `\x` followed by the hexadecimal representation of a character code.</span></span>
+<span data-ttu-id="8944f-115">Vous pouvez spécifier une `char` valeur avec :</span><span class="sxs-lookup"><span data-stu-id="8944f-115">You can specify a `char` value with:</span></span>
+
+- <span data-ttu-id="8944f-116">littéral de caractère.</span><span class="sxs-lookup"><span data-stu-id="8944f-116">a character literal.</span></span>
+- <span data-ttu-id="8944f-117">séquence d’échappement Unicode, suivie de `\u` la représentation hexadécimale à quatre symboles d’un code de caractère.</span><span class="sxs-lookup"><span data-stu-id="8944f-117">a Unicode escape sequence, which is `\u` followed by the four-symbol hexadecimal representation of a character code.</span></span>
+- <span data-ttu-id="8944f-118">séquence d’échappement hexadécimale, `\x` suivie de la représentation hexadécimale d’un code de caractère.</span><span class="sxs-lookup"><span data-stu-id="8944f-118">a hexadecimal escape sequence, which is `\x` followed by the hexadecimal representation of a character code.</span></span>
 
 [!code-csharp-interactive[char literals](snippets/CharType.cs#Literals)]
 
-<span data-ttu-id="3e7fe-117">Comme l’exemple précédent l’indique, vous pouvez également `char` jeter la valeur d’un code de caractère dans la valeur correspondante.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-117">As the preceding example shows, you can also cast the value of a character code into the corresponding `char` value.</span></span>
+<span data-ttu-id="8944f-119">Comme le montre l’exemple précédent, vous pouvez également effectuer un cast de la valeur d’un code de caractère dans la `char` valeur correspondante.</span><span class="sxs-lookup"><span data-stu-id="8944f-119">As the preceding example shows, you can also cast the value of a character code into the corresponding `char` value.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3e7fe-118">Dans le cas d’une séquence d’évasion Unicode, vous devez spécifier les quatre chiffres hexadecimal.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-118">In the case of a Unicode escape sequence, you must specify all four hexadecimal digits.</span></span> <span data-ttu-id="3e7fe-119">C’est-à-dire, `\u006A` est `\u06A` `\u6A` une séquence d’évasion valide, tandis que et ne sont pas valides.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-119">That is, `\u006A` is a valid escape sequence, while `\u06A` and `\u6A` are not valid.</span></span>
+> <span data-ttu-id="8944f-120">Dans le cas d’une séquence d’échappement Unicode, vous devez spécifier les quatre chiffres hexadécimaux.</span><span class="sxs-lookup"><span data-stu-id="8944f-120">In the case of a Unicode escape sequence, you must specify all four hexadecimal digits.</span></span> <span data-ttu-id="8944f-121">Autrement dit, `\u006A` est une séquence d’échappement valide, tandis que `\u06A` et `\u6A` ne sont pas valides.</span><span class="sxs-lookup"><span data-stu-id="8944f-121">That is, `\u006A` is a valid escape sequence, while `\u06A` and `\u6A` are not valid.</span></span>
 >
-> <span data-ttu-id="3e7fe-120">Dans le cas d’une séquence d’évasion hexadecimal, vous pouvez omettre les zéros de premier plan.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-120">In the case of a hexadecimal escape sequence, you can omit the leading zeros.</span></span> <span data-ttu-id="3e7fe-121">C’est-à-dire, le `\x006A`, `\x06A`, et `\x6A` les séquences d’évasion sont valides et correspondent au même caractère.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-121">That is, the `\x006A`, `\x06A`, and `\x6A` escape sequences are valid and correspond to the same character.</span></span>
+> <span data-ttu-id="8944f-122">Dans le cas d’une séquence d’échappement hexadécimale, vous pouvez omettre les zéros non significatifs.</span><span class="sxs-lookup"><span data-stu-id="8944f-122">In the case of a hexadecimal escape sequence, you can omit the leading zeros.</span></span> <span data-ttu-id="8944f-123">Autrement dit, les `\x006A` `\x06A` `\x6A` séquences d’échappement, et sont valides et correspondent au même caractère.</span><span class="sxs-lookup"><span data-stu-id="8944f-123">That is, the `\x006A`, `\x06A`, and `\x6A` escape sequences are valid and correspond to the same character.</span></span>
 
-## <a name="conversions"></a><span data-ttu-id="3e7fe-122">Conversions</span><span class="sxs-lookup"><span data-stu-id="3e7fe-122">Conversions</span></span>
+## <a name="conversions"></a><span data-ttu-id="8944f-124">Conversions</span><span class="sxs-lookup"><span data-stu-id="8944f-124">Conversions</span></span>
 
-<span data-ttu-id="3e7fe-123">Le `char` type est implicitement convertible aux `int`types `uint` `long` [intégrals](integral-numeric-types.md) suivants: `ushort`, , , et `ulong`.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-123">The `char` type is implicitly convertible to the following [integral](integral-numeric-types.md) types: `ushort`, `int`, `uint`, `long`, and `ulong`.</span></span> <span data-ttu-id="3e7fe-124">Il est également implicitement convertible pour les types numériques `double` [flottants](floating-point-numeric-types.md) intégrés: `float`, , et `decimal`.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-124">It's also implicitly convertible to the built-in [floating-point](floating-point-numeric-types.md) numeric types: `float`, `double`, and `decimal`.</span></span> <span data-ttu-id="3e7fe-125">Il est explicitement `sbyte`convertible `byte`à `short` , , et les types intégrales.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-125">It's explicitly convertible to `sbyte`, `byte`, and `short` integral types.</span></span>
+<span data-ttu-id="8944f-125">Le `char` type est implicitement convertible en types [intégraux](integral-numeric-types.md) suivants : `ushort` , `int` , `uint` , `long` et `ulong` .</span><span class="sxs-lookup"><span data-stu-id="8944f-125">The `char` type is implicitly convertible to the following [integral](integral-numeric-types.md) types: `ushort`, `int`, `uint`, `long`, and `ulong`.</span></span> <span data-ttu-id="8944f-126">Il est également implicitement convertible en types numériques à [virgule flottante](floating-point-numeric-types.md) intégrés : `float` , `double` et `decimal` .</span><span class="sxs-lookup"><span data-stu-id="8944f-126">It's also implicitly convertible to the built-in [floating-point](floating-point-numeric-types.md) numeric types: `float`, `double`, and `decimal`.</span></span> <span data-ttu-id="8944f-127">Il est explicitement convertible en `sbyte` `byte` types, et en `short` types intégraux.</span><span class="sxs-lookup"><span data-stu-id="8944f-127">It's explicitly convertible to `sbyte`, `byte`, and `short` integral types.</span></span>
 
-<span data-ttu-id="3e7fe-126">Il n’y a pas de `char` conversions implicites d’autres types à ce type.</span><span class="sxs-lookup"><span data-stu-id="3e7fe-126">There are no implicit conversions from other types to the `char` type.</span></span> <span data-ttu-id="3e7fe-127">Cependant, tout type numérique [intégral](integral-numeric-types.md) ou à `char`point [flottant](floating-point-numeric-types.md) est explicitement convertible à .</span><span class="sxs-lookup"><span data-stu-id="3e7fe-127">However, any [integral](integral-numeric-types.md) or [floating-point](floating-point-numeric-types.md) numeric type is explicitly convertible to `char`.</span></span>
+<span data-ttu-id="8944f-128">Il n’existe pas de conversion implicite d’autres types vers le `char` type.</span><span class="sxs-lookup"><span data-stu-id="8944f-128">There are no implicit conversions from other types to the `char` type.</span></span> <span data-ttu-id="8944f-129">Toutefois, tous les types numériques [intégraux](integral-numeric-types.md) ou à [virgule flottante](floating-point-numeric-types.md) sont explicitement convertibles en `char` .</span><span class="sxs-lookup"><span data-stu-id="8944f-129">However, any [integral](integral-numeric-types.md) or [floating-point](floating-point-numeric-types.md) numeric type is explicitly convertible to `char`.</span></span>
 
-## <a name="c-language-specification"></a><span data-ttu-id="3e7fe-128">spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="3e7fe-128">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="8944f-130">spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="8944f-130">C# language specification</span></span>
 
-<span data-ttu-id="3e7fe-129">Pour plus d’informations, consultez la section [des types intégrales](~/_csharplang/spec/types.md#integral-types) de la [spécification linguistique C.](~/_csharplang/spec/introduction.md)</span><span class="sxs-lookup"><span data-stu-id="3e7fe-129">For more information, see the [Integral types](~/_csharplang/spec/types.md#integral-types) section of the [C# language specification](~/_csharplang/spec/introduction.md).</span></span>
+<span data-ttu-id="8944f-131">Pour plus d’informations, consultez la section [types intégraux](~/_csharplang/spec/types.md#integral-types) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).</span><span class="sxs-lookup"><span data-stu-id="8944f-131">For more information, see the [Integral types](~/_csharplang/spec/types.md#integral-types) section of the [C# language specification](~/_csharplang/spec/introduction.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="3e7fe-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3e7fe-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8944f-132">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8944f-132">See also</span></span>
 
-- [<span data-ttu-id="3e7fe-131">Référence C#</span><span class="sxs-lookup"><span data-stu-id="3e7fe-131">C# reference</span></span>](../index.md)
-- [<span data-ttu-id="3e7fe-132">Types de valeur</span><span class="sxs-lookup"><span data-stu-id="3e7fe-132">Value types</span></span>](value-types.md)
-- [<span data-ttu-id="3e7fe-133">Chaînes</span><span class="sxs-lookup"><span data-stu-id="3e7fe-133">Strings</span></span>](../../programming-guide/strings/index.md)
+- [<span data-ttu-id="8944f-133">Référence C#</span><span class="sxs-lookup"><span data-stu-id="8944f-133">C# reference</span></span>](../index.md)
+- [<span data-ttu-id="8944f-134">Types de valeur</span><span class="sxs-lookup"><span data-stu-id="8944f-134">Value types</span></span>](value-types.md)
+- [<span data-ttu-id="8944f-135">Chaînes</span><span class="sxs-lookup"><span data-stu-id="8944f-135">Strings</span></span>](../../programming-guide/strings/index.md)
 - <xref:System.Text.Rune?displayProperty=nameWithType>
-- [<span data-ttu-id="3e7fe-134">Encodage de caractères dans .NET</span><span class="sxs-lookup"><span data-stu-id="3e7fe-134">Character encoding in .NET</span></span>](../../../standard/base-types/character-encoding-introduction.md)
+- [<span data-ttu-id="8944f-136">Encodage de caractères dans .NET</span><span class="sxs-lookup"><span data-stu-id="8944f-136">Character encoding in .NET</span></span>](../../../standard/base-types/character-encoding-introduction.md)
