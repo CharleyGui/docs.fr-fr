@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 86c397c3-81d8-463e-a248-3cbe06c44d9d
 topic_type:
 - apiref
-ms.openlocfilehash: a97c14d83f99c847bb8569a33e175ab6eb5bccd8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0d98df05291ed8405addcfd183d7e02332e4e025
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178618"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209693"
 ---
 # <a name="icordebugprocess5enumerategcreferences-method"></a>ICorDebugProcess5::EnumerateGCReferences, méthode
-Obtient un enumérateur pour tous les objets qui doivent être collectés dans les ordures dans un processus.  
+Obtient un énumérateur pour tous les objets qui doivent être récupérés par le garbage collector dans un processus.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,22 +36,22 @@ HRESULT EnumerateGCReferences(
   
 ## <a name="parameters"></a>Paramètres  
  `enumerateWeakReferences`  
- [dans] Une valeur Boolean qui indique si des références faibles doivent également être énumérées. Si `enumerateWeakReferences` `true`c’est le cas, l’énumérateur `ppEnum` comprend à la fois des références fortes et des références faibles. Si `enumerateWeakReferences` `false`c’est le cas, l’énumérateur ne comprend que des références fortes.  
+ dans Valeur booléenne qui indique si les références faibles doivent également être énumérées. Si `enumerateWeakReferences` est `true` , l' `ppEnum` énumérateur contient à la fois des références fortes et des références faibles. Si `enumerateWeakReferences` est `false` , l’énumérateur comprend uniquement des références fortes.  
   
  `ppEnum`  
- [out] Un pointeur à l’adresse d’un [ICorDebugGCReferenceEnum](icordebuggcreferenceenum-interface.md) qui est un enumérateur pour les objets à collecter.  
+ à Pointeur vers l’adresse d’un [icordebuggcreferenceenum,](icordebuggcreferenceenum-interface.md) qui est un énumérateur pour les objets qui doivent être récupérés par le garbage collector.  
   
-## <a name="remarks"></a>Notes   
- Cette méthode fournit un moyen de déterminer la chaîne d’enracinement complète pour tout objet géré dans un processus et peut être utilisé pour déterminer pourquoi un objet est encore en vie.  
+## <a name="remarks"></a>Remarks  
+ Cette méthode fournit un moyen de déterminer la chaîne de racine complète pour tout objet managé dans un processus et peut être utilisée pour déterminer la raison pour laquelle un objet est toujours actif.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

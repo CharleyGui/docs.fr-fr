@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0bc96acb-6179-4328-a447-cda562ce9e98
 topic_type:
 - apiref
-ms.openlocfilehash: ff74a9849b74b8a8e6b8c03f1fc4e7c7eee1ec14
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4652e4b34d614ad3b7b852925fcc63309bdd1498
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124060"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209459"
 ---
 # <a name="icordebugframeenumnext-method"></a>ICorDebugFrameEnum::Next, méthode
 Obtient le nombre spécifié d’instances de ICorDebugFrame, en commençant à la position actuelle.  
@@ -38,19 +38,19 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- dans Nombre d’instances de `ICorDebugFrame` à récupérer.  
+ dans Nombre d' `ICorDebugFrame` instances à récupérer.  
   
  `frames`  
- à Tableau de pointeurs, chacun pointant vers un objet `ICorDebugFrame`.  
+ à Tableau de pointeurs, chacun pointant vers un `ICorDebugFrame` objet.  
   
  `pceltFetched`  
- à Pointeur vers le nombre d’instances `ICorDebugFrame` réellement retournées. Cette valeur peut être null si `celt` est un.  
+ à Pointeur vers le nombre d' `ICorDebugFrame` instances réellement retournées. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

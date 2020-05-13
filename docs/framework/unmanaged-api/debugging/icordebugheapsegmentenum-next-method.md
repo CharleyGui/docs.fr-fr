@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 51625fd0-7399-49c7-b22b-5dfb05451fe6
 topic_type:
 - apiref
-ms.openlocfilehash: 8a267ec7123edb73ad51f0781a78344119ec6f21
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c9999961ec20a31cf82d5ad60104bcdd04c340d1
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178893"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210174"
 ---
 # <a name="icordebugheapsegmentenumnext-method"></a>ICorDebugHeapSegmentEnum::Next, méthode
-Obtient le nombre spécifié de [cas COR_HEAPOBJECT](cor-heapobject-structure.md) qui contiennent des informations sur les régions de mémoire du tas géré.  
+Obtient le nombre spécifié d’instances de [COR_HEAPOBJECT](cor-heapobject-structure.md) qui contiennent des informations sur les régions de mémoire du tas managé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,24 +36,24 @@ HRESULT Next(
   
 ## <a name="parameters"></a>Paramètres  
  celt  
- [dans] Nombre de segments à récupérer.  
+ dans Nombre de segments à récupérer.  
   
  segments  
- [out] Un tableau de pointeurs, chacun pointant vers un objet [COR_HEAPOBJECT](cor-heapobject-structure.md) qui fournit des informations sur une région de mémoire dans le tas géré.  
+ à Tableau de pointeurs, chacun pointant vers un objet [COR_HEAPOBJECT](cor-heapobject-structure.md) qui fournit des informations sur une zone de mémoire dans le tas managé.  
   
  pceltFetched  
- [out] Un pointeur sur [COR_HEAPOBJECT](cor-heapobject-structure.md) le nombre d’objets `segments`COR_HEAPOBJECT effectivement retourné dans . Cette valeur peut être `null` si `celt` est égal à 1.  
+ à Pointeur vers le nombre d’objets [COR_HEAPOBJECT](cor-heapobject-structure.md) réellement retournés dans `segments` . Cette valeur peut être `null` si `celt` est égal à 1.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

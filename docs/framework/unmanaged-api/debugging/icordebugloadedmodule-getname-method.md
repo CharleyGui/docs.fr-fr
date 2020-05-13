@@ -1,15 +1,15 @@
 ---
-title: ICorDebugLoadedModule::GetName, méthode
+title: ICorDebugLoadedModule::GetName (méthode)
 ms.date: 03/30/2017
 ms.assetid: 88c304d5-edaa-4c0e-a8e1-144e8a76877e
-ms.openlocfilehash: 628f85f3045533ead7ace47b11573a0b1a46df46
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 4a0c4e99f23dc949b0bbaa8bbda35cff1537cf3c
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76782050"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209862"
 ---
-# <a name="icordebugloadedmodulegetname-method"></a>ICorDebugLoadedModule::GetName, méthode
+# <a name="icordebugloadedmodulegetname-method"></a>ICorDebugLoadedModule::GetName (méthode)
 Obtient le nom du module chargé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -23,7 +23,7 @@ HRESULT GetName(
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `cchName`  
  [in] Nombre de caractères dans la mémoire tampon `szName`.  
   
@@ -33,21 +33,21 @@ HRESULT GetName(
  `szName`  
  [out] Tableau de caractères contenant le nom du module chargé.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarks  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugLoadedModule, interface](icordebugloadedmodule-interface.md)
+- [ICorDebugLoadedModule (interface)](icordebugloadedmodule-interface.md)
 - [Interfaces de débogage](debugging-interfaces.md)

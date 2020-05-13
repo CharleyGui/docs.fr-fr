@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: fab037cb-fda6-40fb-9367-921e435dd5a0
 topic_type:
 - apiref
-ms.openlocfilehash: 7a35ce025360e0ec8b7085d68e54548026b7c7fc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cacdccf5c27cd1d115134d49e754b4ace2870b72
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178911"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83205160"
 ---
 # <a name="icordebugframegetstackrange-method"></a>ICorDebugFrame::GetStackRange, méthode
-Obtient la plage d’adresse absolue de ce cadre de pile.  
+Obtient la plage d’adresses absolues de ce frame de pile.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT GetStackRange (
   
 ## <a name="parameters"></a>Paramètres  
  `pStart`  
- [out] Un pointeur `CORDB_ADDRESS` à un qui spécifie l’adresse de départ du cadre de pile représenté par cet `ICorDebugFrame` objet.  
+ à Pointeur vers un `CORDB_ADDRESS` qui spécifie l’adresse de départ du frame de pile représenté par cet `ICorDebugFrame` objet.  
   
  `pEnd`  
- [out] Un pointeur `CORDB_ADDRESS` à un qui spécifie l’adresse de fin du cadre de pile représenté par cet `ICorDebugFrame` objet.  
+ à Pointeur vers un `CORDB_ADDRESS` qui spécifie l’adresse de fin du frame de pile représenté par cet `ICorDebugFrame` objet.  
   
-## <a name="remarks"></a>Notes   
- La portée d’adresse de la pile est utile pour reconstituer les traces de piles entrelacées recueillies à partir de moteurs de débogage multiples. La plage numérique ne fournit aucune information sur le contenu du cadre de pile. Il est significatif seulement pour la comparaison des emplacements de cadre de pile.  
+## <a name="remarks"></a>Remarks  
+ La plage d’adresses de la pile est utile pour accolant ensemble de traces de pile entrelacées rassemblées à partir de plusieurs moteurs de débogage. La plage numérique ne fournit aucune information sur le contenu du frame de pile. Elle est explicite uniquement pour la comparaison des emplacements de frame de pile.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

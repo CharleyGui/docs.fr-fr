@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9e2aae09-49cb-4fbd-81e5-e29cd864a88b
 topic_type:
 - apiref
-ms.openlocfilehash: 22722e4d602bdb9df9877b2199b4d4271a4d3105
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 759ba7bd46f8231143e743aa5ffcabffeb99c3b6
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792729"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83205109"
 ---
 # <a name="icordebugnativeframe2ischild-method"></a>ICorDebugNativeFrame2::IsChild, méthode
 Détermine si le frame actuel est un Frame enfant.  
@@ -31,7 +31,7 @@ Détermine si le frame actuel est un Frame enfant.
 HRESULT IsChild([out] BOOL * pIsChild);  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `pIsChild`  
  à Valeur booléenne qui spécifie si le frame actuel est un Frame enfant.  
   
@@ -46,17 +46,17 @@ HRESULT IsChild([out] BOOL * pIsChild);
   
 ## <a name="exceptions"></a>Exceptions  
   
-## <a name="remarks"></a>Notes  
- La méthode `IsChild` retourne `true` si l’objet Frame sur lequel vous appelez la méthode est un enfant d’un autre Frame. Si c’est le cas, utilisez la méthode [IsMatchingParentFrame,](icordebugnativeframe2-ismatchingparentframe-method.md) pour vérifier si un frame est son parent.  
+## <a name="remarks"></a>Remarks  
+ La `IsChild` méthode retourne `true` si l’objet Frame sur lequel vous appelez la méthode est un enfant d’un autre Frame. Si c’est le cas, utilisez la méthode [IsMatchingParentFrame,](icordebugnativeframe2-ismatchingparentframe-method.md) pour vérifier si un frame est son parent.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

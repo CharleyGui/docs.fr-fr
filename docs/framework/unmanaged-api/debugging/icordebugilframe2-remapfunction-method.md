@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: dd639ba0-f77b-426d-9ff6-f92706840348
 topic_type:
 - apiref
-ms.openlocfilehash: f4f73b99b4cb48690a2a8611dbf5a5420adab5d4
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 43f585417ed52b92c23087c0f02fd188ee09ea7e
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794351"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210213"
 ---
 # <a name="icordebugilframe2remapfunction-method"></a>ICorDebugILFrame2::RemapFunction, méthode
 Remappe une fonction modifiée en spécifiant le nouvel offset MSIL (Microsoft Intermediate Language)  
@@ -33,29 +33,29 @@ HRESULT RemapFunction (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `newILOffset`  
  dans Nouvel offset MSIL du frame de pile auquel le pointeur d’instruction doit être placé. Cette valeur doit être un point de séquence.  
   
  Il incombe à l’appelant de garantir la validité de cette valeur. Par exemple, l’offset MSIL n’est pas valide s’il est en dehors des limites de la fonction.  
   
-## <a name="remarks"></a>Notes  
- Quand la fonction d’un frame a été modifiée, le débogueur peut appeler la méthode `RemapFunction` pour échanger la version la plus récente de la fonction du frame afin de pouvoir l’exécuter. L’exécution du code commence à l’offset MSIL donné.  
+## <a name="remarks"></a>Remarks  
+ Quand la fonction d’un frame a été modifiée, le débogueur peut appeler la `RemapFunction` méthode pour échanger la version la plus récente de la fonction du frame afin de pouvoir l’exécuter. L’exécution du code commence à l’offset MSIL donné.  
   
 > [!NOTE]
-> L’appel de `RemapFunction`, comme appeler [ICorDebugILFrame :: SetIP](icordebugilframe-setip-method.md), invalidera immédiatement toutes les interfaces de débogage liées à la génération d’une trace de la pile pour le thread. Ces interfaces incluent [ICorDebugChain](icordebugchain-interface.md), ICorDebugILFrame, ICorDebugInternalFrame et ICorDebugNativeFrame.  
+> Appeler `RemapFunction` , comme appeler [ICorDebugILFrame :: SetIP](icordebugilframe-setip-method.md), invalidera immédiatement toutes les interfaces de débogage liées à la génération d’une trace de la pile pour le thread. Ces interfaces incluent [ICorDebugChain](icordebugchain-interface.md), ICorDebugILFrame, ICorDebugInternalFrame et ICorDebugNativeFrame.  
   
- La méthode `RemapFunction` peut être appelée uniquement dans le contexte du frame actuel, et uniquement dans l’un des cas suivants :  
+ La `RemapFunction` méthode peut être appelée uniquement dans le contexte du frame actuel, et uniquement dans l’un des cas suivants :  
   
 - Après réception d’un rappel [ICorDebugManagedCallback2 :: FunctionRemapOpportunity,](icordebugmanagedcallback2-functionremapopportunity-method.md) qui n’a pas encore été poursuivi.  
   
 - Pendant l’arrêt de l’exécution du code en raison d’un événement [ICorDebugManagedCallback :: EditAndContinueRemap,](icordebugmanagedcallback-editandcontinueremap-method.md) pour ce frame.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c1542811-0a7f-4235-bcfd-b24370d6f24b
 topic_type:
 - apiref
-ms.openlocfilehash: 957035591090fb5a6a615662c4840ff16509ee20
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ff24ec418f4cd106fb35a61a134a69e5d60519b9
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138507"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212176"
 ---
 # <a name="icordebughandlevaluedispose-method"></a>ICorDebugHandleValue::Dispose, méthode
 Libère le handle référencé par cet objet ICorDebugHandleValue sans libérer explicitement le pointeur d’interface.  
@@ -31,11 +31,11 @@ Libère le handle référencé par cet objet ICorDebugHandleValue sans libérer 
 HRESULT Dispose ();  
 ```  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

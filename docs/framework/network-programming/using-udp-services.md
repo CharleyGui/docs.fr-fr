@@ -17,19 +17,20 @@ helpviewer_keywords:
 - sending data, UDP
 - application protocols, UDP
 ms.assetid: d5c3477a-e798-454c-a890-738ba14c5707
-ms.openlocfilehash: 477095ada6e44f66cbc60cd80375da9a87f38e39
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5ff40e8759b1732d4ad228b1414f96f9c37e5ac5
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180597"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209771"
 ---
-# <a name="using-udp-services"></a>Utilisation des services UDP
+# <a name="use-udp-services"></a>Utiliser les services UDP
+
 La classe <xref:System.Net.Sockets.UdpClient> communique avec les services réseau à l’aide d’UDP. Les méthodes et propriétés de la classe <xref:System.Net.Sockets.UdpClient> assurent l’abstraction des informations nécessaires pour créer un <xref:System.Net.Sockets.Socket> permettant l’envoi et la réception de données avec le protocole UDP.
 
 UDP (User Datagram Protocol) est un protocole simple qui essaie de fournir les données à un hôte distant le plus efficacement possible. Toutefois, comme le protocole UDP est un protocole non connecté, les datagrammes UDP envoyés au point de terminaison distant ne sont pas assurés d’arriver, ou d’arriver dans la même séquence que celle dans laquelle ils ont été envoyés. Les applications qui utilisent le protocole UDP doivent être en mesure de gérer les datagrammes manquants, en double et hors séquence.
 
-Pour envoyer un datagramme avec une connexion UDP, vous devez connaître l’adresse de l’appareil réseau qui héberge le service dont vous avez besoin, ainsi que le numéro de port UDP utilisé par ce service pour communiquer. L’IANA (Internet Assigned Numbers Authority) définit les numéros de port des services courants (consultez [Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)). Les services qui ne figurent pas dans la liste de l’IANA peuvent avoir des numéros de port compris dans la plage 1 024 à 65 535.
+Pour envoyer un datagramme avec une connexion UDP, vous devez connaître l’adresse de l’appareil réseau qui héberge le service dont vous avez besoin, ainsi que le numéro de port UDP utilisé par ce service pour communiquer. L’IANA (Internet Assigned Numbers Authority) définit les numéros de port des services courants (voir le [nom du service et le Registre du numéro de port du protocole de transport](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)). Les services qui ne sont pas dans la liste IANA peuvent avoir des numéros de port compris dans la plage 1 024 à 65 535.
 
 Des adresses réseau spéciales sont utilisées pour prendre en charge les messages de diffusion UDP sur les réseaux IP. L’exemple suivant utilise la famille d’adresses IP version 4 pour Internet.
 

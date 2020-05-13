@@ -1,18 +1,18 @@
 ---
 title: Propriétés MSBuild pour Microsoft. NET. Sdk
-description: Référence pour les propriétés MSBuild comprises par l’kit SDK .NET Core.
+description: Référence pour les propriétés et les éléments MSBuild compris par l’kit SDK .NET Core.
 ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: 800ff59310d8437d7f770bf20a5bdf37714f8515
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: cda56b3e23592a341d9fe672fc1f1530adcdab49
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795571"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83206110"
 ---
-# <a name="msbuild-properties-for-net-core-sdk-projects"></a>Propriétés MSBuild pour les projets kit SDK .NET Core
+# <a name="msbuild-reference-for-net-core-sdk-projects"></a>Référence MSBuild pour les projets kit SDK .NET Core
 
-Cette page décrit les propriétés MSBuild pour la configuration des projets .NET Core. Vous pouvez spécifier des *métadonnées* pour chaque propriété en tant qu’éléments enfants de la propriété.
+Cette page est une référence pour les propriétés et les éléments MSBuild que vous pouvez utiliser pour configurer des projets .NET Core.
 
 > [!NOTE]
 > Cette page est un travail en cours et ne répertorie pas toutes les propriétés MSBuild utiles pour le kit SDK .NET Core. Pour obtenir la liste des propriétés MSBuild courantes, consultez [propriétés MSBuild communes](/visualstudio/msbuild/common-msbuild-project-properties).
@@ -40,7 +40,7 @@ Pour plus d’informations, consultez [frameworks cibles dans les projets de typ
 Utilisez la `TargetFrameworks` propriété lorsque vous souhaitez que votre application cible plusieurs plateformes. Pour obtenir la liste des monikers du Framework cible valides, consultez [frameworks cibles dans les projets de type SDK](../../standard/frameworks.md#supported-target-framework-versions).
 
 > [!NOTE]
-> Cette propriété est ignorée `TargetFramework` si (singulier) est spécifié.
+> Cette propriété est ignorée si `TargetFramework` (singulier) est spécifié.
 
 ```xml
 <PropertyGroup>
@@ -53,9 +53,9 @@ Pour plus d’informations, consultez [frameworks cibles dans les projets de typ
 ### <a name="netstandardimplicitpackageversion"></a>NetStandardImplicitPackageVersion
 
 > [!NOTE]
-> Cette propriété s’applique uniquement aux projets `netstandard1.x`qui utilisent. Elle ne s’applique pas aux projets `netstandard2.x`qui utilisent.
+> Cette propriété s’applique uniquement aux projets qui utilisent `netstandard1.x` . Elle ne s’applique pas aux projets qui utilisent `netstandard2.x` .
 
-Utilisez la `NetStandardImplicitPackageVersion` propriété lorsque vous souhaitez spécifier une version de Framework inférieure à la version de l' [ensemble de packages](../packages.md#metapackages) . Le fichier projet dans l’exemple suivant cible `netstandard1.3` , mais utilise la version 1.6.0 `NETStandard.Library`de.
+Utilisez la `NetStandardImplicitPackageVersion` propriété lorsque vous souhaitez spécifier une version de Framework inférieure à la version de l' [ensemble de packages](../packages.md#metapackages) . Le fichier projet dans l’exemple suivant cible, `netstandard1.3` mais utilise la version 1.6.0 de `NETStandard.Library` .
 
 ```xml
 <PropertyGroup>
@@ -66,7 +66,7 @@ Utilisez la `NetStandardImplicitPackageVersion` propriété lorsque vous souhait
 
 ## <a name="package-properties"></a>Propriétés du package
 
-Vous pouvez spécifier des propriétés telles `PackageId`que `PackageVersion`, `PackageIcon`, `Title`, et `Description` pour décrire le package qui est créé à partir de votre projet. Pour plus d’informations sur ces propriétés et d’autres, consultez [package Target](/nuget/reference/msbuild-targets#pack-target).
+Vous pouvez spécifier des propriétés telles que `PackageId` , `PackageVersion` ,, `PackageIcon` `Title` et `Description` pour décrire le package qui est créé à partir de votre projet. Pour plus d’informations sur ces propriétés et d’autres, consultez [package Target](/nuget/reference/msbuild-targets#pack-target).
 
 ```xml
 <PropertyGroup>
@@ -78,7 +78,7 @@ Vous pouvez spécifier des propriétés telles `PackageId`que `PackageVersion`, 
 </PropertyGroup>
 ```
 
-## <a name="publish-properties"></a>Propriétés de publication
+## <a name="publish-properties-and-items"></a>Publier les propriétés et les éléments
 
 - [RuntimeIdentifier](#runtimeidentifier)
 - [RuntimeIdentifiers](#runtimeidentifiers)
@@ -124,7 +124,7 @@ Le code XML suivant exclut `System.Security` de la suppression de l’assembly.
 
 La `UseAppHost` propriété a été introduite dans la version 2.1.400 de l’kit SDK .net core. Il contrôle si un exécutable natif est créé ou non pour un déploiement. Un exécutable natif est requis pour les déploiements autonomes.
 
-Dans .NET Core 3,0 et versions ultérieures, un fichier exécutable dépendant du Framework est créé par défaut. Affectez `UseAppHost` à la `false` propriété la valeur pour désactiver la génération de l’exécutable.
+Dans .NET Core 3,0 et versions ultérieures, un fichier exécutable dépendant du Framework est créé par défaut. Affectez à la propriété la valeur `UseAppHost` `false` pour désactiver la génération de l’exécutable.
 
 ```xml
 <PropertyGroup>
@@ -136,11 +136,27 @@ Pour plus d’informations sur le déploiement, consultez [déploiement d’appl
 
 ## <a name="compile-properties"></a>Propriétés de compilation
 
+- [EmbeddedResourceUseDependentUponConvention](#embeddedresourceusedependentuponconvention)
 - [LangVersion](#langversion)
+
+### <a name="embeddedresourceusedependentuponconvention"></a>EmbeddedResourceUseDependentUponConvention
+
+La `EmbeddedResourceUseDependentUponConvention` propriété définit si les noms des fichiers manifestes de ressources sont générés à partir des informations de type dans les fichiers sources qui sont colocalisés avec les fichiers de ressources. Par exemple, si *Form1. resx* se trouve dans le même dossier que *Form1.cs*et que `EmbeddedResourceUseDependentUponConvention` a la valeur `true` , le fichier *. Resources* généré prend son nom dans le premier type défini dans *Form1.cs*. Par exemple, si `MyNamespace.Form1` est le premier type défini dans *Form1.cs*, le nom de fichier généré est *MyNamespace. Form1. Resources*.
+
+> [!NOTE]
+> Si `LogicalName` `ManifestResourceName` `DependentUpon` les métadonnées, ou sont spécifiées pour un `EmbeddedResource` élément, le nom de fichier manifeste généré pour ce fichier de ressources est basé sur ces métadonnées à la place.
+
+Par défaut, dans un nouveau projet .NET Core, cette propriété a la valeur `true` . Si la valeur `false` est définie sur, et si aucune `LogicalName` `ManifestResourceName` `DependentUpon` métadonnée n’est spécifiée pour l' `EmbeddedResource` élément dans le fichier projet, le nom du fichier manifeste de la ressource est basé sur l’espace de noms racine du projet et le chemin d’accès relatif au fichier *. resx* . Pour plus d’informations, consultez [Comment les fichiers manifestes de ressources sont nommés](../resources/manifest-file-names.md).
+
+```xml
+<PropertyGroup>
+  <EmbeddedResourceUseDependentUponConvention>true</EmbeddedResourceUseDependentUponConvention>
+</PropertyGroup>
+```
 
 ### <a name="langversion"></a>LangVersion
 
-La `LangVersion` propriété vous permet de spécifier une version du langage de programmation spécifique. Par exemple, si vous souhaitez accéder aux fonctionnalités de la version préliminaire `LangVersion` de `preview`C#, affectez à la valeur.
+La `LangVersion` propriété vous permet de spécifier une version du langage de programmation spécifique. Par exemple, si vous souhaitez accéder aux fonctionnalités de la version préliminaire de C#, affectez à la valeur `LangVersion` `preview` .
 
 ```xml
 <PropertyGroup>
@@ -176,7 +192,7 @@ La `ConcurrentGarbageCollection` propriété configure si l' [garbage collection
 
 ### <a name="invariantglobalization"></a>InvariantGlobalization
 
-La `InvariantGlobalization` propriété configure si l’application s’exécute en mode de *globalisation invariant* , ce qui signifie qu’elle n’a pas accès aux données spécifiques à la culture. Affectez à la `true` valeur la valeur pour qu’elle s’exécute en mode de globalisation-indifférent. Pour plus d’informations, consultez [mode indifférent](../run-time-config/globalization.md#invariant-mode).
+La `InvariantGlobalization` propriété configure si l’application s’exécute en mode de *globalisation invariant* , ce qui signifie qu’elle n’a pas accès aux données spécifiques à la culture. Affectez à la valeur la valeur `true` pour qu’elle s’exécute en mode de globalisation-indifférent. Pour plus d’informations, consultez [mode indifférent](../run-time-config/globalization.md#invariant-mode).
 
 ```xml
 <PropertyGroup>
@@ -186,7 +202,7 @@ La `InvariantGlobalization` propriété configure si l’application s’exécut
 
 ### <a name="retainvmgarbagecollection"></a>RetainVMGarbageCollection
 
-La `RetainVMGarbageCollection` propriété configure le garbage collector pour placer les segments de mémoire supprimés sur une liste d’attente pour une utilisation ultérieure ou les libérer. La définition de `true` la valeur indique au garbage collector de placer les segments sur une liste d’attente. Pour plus d’informations, consultez [System. gc. RetainVM/COMPlus_GCRetainVM](../run-time-config/garbage-collector.md#systemgcretainvmcomplus_gcretainvm).
+La `RetainVMGarbageCollection` propriété configure le garbage collector pour placer les segments de mémoire supprimés sur une liste d’attente pour une utilisation ultérieure ou les libérer. La définition de la valeur `true` indique au garbage collector de placer les segments sur une liste d’attente. Pour plus d’informations, consultez [System. gc. RetainVM/COMPlus_GCRetainVM](../run-time-config/garbage-collector.md#systemgcretainvmcomplus_gcretainvm).
 
 ```xml
 <PropertyGroup>
@@ -254,7 +270,7 @@ La `TieredCompilationQuickJitForLoops` propriété configure si le compilateur J
 </PropertyGroup>
 ```
 
-## <a name="reference-properties"></a>Propriétés de référence
+## <a name="reference-properties-and-items"></a>Propriétés et éléments de référence
 
 - [AssetTargetFallback](#assettargetfallback)
 - [PackageReference](#packagereference)
@@ -264,7 +280,7 @@ La `TieredCompilationQuickJitForLoops` propriété configure si le compilateur J
 
 ### <a name="assettargetfallback"></a>AssetTargetFallback
 
-La `AssetTargetFallback` propriété vous permet de spécifier des versions de Framework compatibles supplémentaires pour les références de projet et les packages NuGet. Par exemple, si vous spécifiez une dépendance de `PackageReference` package à l’aide de mais que ce package ne contient pas de `TargetFramework`ressources compatibles `AssetTargetFallback` avec les projets, la propriété entre en lecture. La compatibilité du package référencé est revérifiée à l’aide de chaque version cible de .NET Framework `AssetTargetFallback`spécifiée dans.
+La `AssetTargetFallback` propriété vous permet de spécifier des versions de Framework compatibles supplémentaires pour les références de projet et les packages NuGet. Par exemple, si vous spécifiez une dépendance de package à l’aide de `PackageReference` mais que ce package ne contient pas de ressources compatibles avec les projets `TargetFramework` , la `AssetTargetFallback` propriété entre en lecture. La compatibilité du package référencé est revérifiée à l’aide de chaque version cible de .NET Framework spécifiée dans `AssetTargetFallback` .
 
 Vous pouvez définir la `AssetTargetFallback` propriété sur une ou plusieurs [versions du Framework cible](../../standard/frameworks.md#supported-target-framework-versions).
 
@@ -276,9 +292,9 @@ Vous pouvez définir la `AssetTargetFallback` propriété sur une ou plusieurs [
 
 ### <a name="packagereference"></a>PackageReference
 
-`PackageReference` Définit une référence à un package NuGet. Par exemple, vous souhaiterez peut-être référencer un package unique au lieu d’un sous- [package](../packages.md#metapackages).
+L' `PackageReference` élément définit une référence à un package NuGet. Par exemple, vous souhaiterez peut-être référencer un package unique au lieu d’un sous- [package](../packages.md#metapackages).
 
-L’attribut `Include` spécifie l’ID du package. L' `Version` attribut spécifie la version ou la plage de versions. Pour plus d’informations sur la spécification d’une version minimale, d’une version maximale, d’une plage ou d’une correspondance exacte, consultez [plages de versions](/nuget/concepts/package-versioning#version-ranges). Vous pouvez également ajouter les métadonnées suivantes à une référence de `IncludeAssets`projet `ExcludeAssets`:, `PrivateAssets`et.
+L’attribut `Include` spécifie l’ID du package. L' `Version` attribut spécifie la version ou la plage de versions. Pour plus d’informations sur la spécification d’une version minimale, d’une version maximale, d’une plage ou d’une correspondance exacte, consultez [plages de versions](/nuget/concepts/package-versioning#version-ranges). Vous pouvez également ajouter les métadonnées suivantes à une référence de projet : `IncludeAssets` , `ExcludeAssets` et `PrivateAssets` .
 
 L’extrait de code du fichier projet dans l’exemple suivant référence le package [System. Runtime](https://www.nuget.org/packages/System.Runtime/) .
 
@@ -292,11 +308,11 @@ Pour plus d’informations, consultez [références de package dans les fichiers
 
 ### <a name="projectreference"></a>ProjectReference
 
-L' `ProjectReference` élément définit une référence à un autre projet. Le projet référencé est ajouté en tant que dépendance de package NuGet, autrement dit, il est traité de la même `PackageReference`façon qu’un.
+L' `ProjectReference` élément définit une référence à un autre projet. Le projet référencé est ajouté en tant que dépendance de package NuGet, autrement dit, il est traité de la même façon qu’un `PackageReference` .
 
-L' `Include` attribut spécifie le chemin d’accès au projet. Vous pouvez également ajouter les métadonnées suivantes à une référence de `IncludeAssets`projet `ExcludeAssets`:, `PrivateAssets`et.
+L' `Include` attribut spécifie le chemin d’accès au projet. Vous pouvez également ajouter les métadonnées suivantes à une référence de projet : `IncludeAssets` , `ExcludeAssets` et `PrivateAssets` .
 
-L’extrait de code du fichier projet dans l’exemple suivant fait `Project2`référence à un projet nommé.
+L’extrait de code du fichier projet dans l’exemple suivant fait référence à un projet nommé `Project2` .
 
 ```xml
 <ItemGroup>
@@ -308,7 +324,7 @@ L’extrait de code du fichier projet dans l’exemple suivant fait `Project2`r�
 
 L' `Reference` élément définit une référence à un fichier d’assembly.
 
-L' `Include` attribut spécifie le nom du fichier et l' `HintPath` élément enfant spécifie le chemin d’accès à l’assembly.
+L' `Include` attribut spécifie le nom du fichier, et les `HintPath` métadonnées spécifient le chemin d’accès à l’assembly.
 
 ```xml
 <ItemGroup>
@@ -320,7 +336,7 @@ L' `Include` attribut spécifie le nom du fichier et l' `HintPath` élément enf
 
 ### <a name="restore-properties"></a>Propriétés de restauration
 
-La restauration d’un package référencé installe toutes ses dépendances directes et toutes les dépendances de ces dépendances. Vous pouvez personnaliser la restauration des packages en spécifiant `RestorePackagesPath` des `RestoreIgnoreFailedSources`propriétés telles que et. Pour plus d’informations sur ces propriétés et d’autres, consultez [restaurer la cible](/nuget/reference/msbuild-targets#restore-target).
+La restauration d’un package référencé installe toutes ses dépendances directes et toutes les dépendances de ces dépendances. Vous pouvez personnaliser la restauration des packages en spécifiant des propriétés telles que `RestorePackagesPath` et `RestoreIgnoreFailedSources` . Pour plus d’informations sur ces propriétés et d’autres, consultez [restaurer la cible](/nuget/reference/msbuild-targets#restore-target).
 
 ```xml
 <PropertyGroup>

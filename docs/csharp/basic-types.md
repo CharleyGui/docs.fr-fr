@@ -4,12 +4,12 @@ description: Découvrez les types de base (numérique, chaîne et objet) disponi
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: bb2177026afb2eef2e14ece0c306bfd3ffe7af39
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 89b5cebdc887db808db8abb1fa9eda34e2bec9e5
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77673262"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83205809"
 ---
 # <a name="types-variables-and-values"></a>Types, variables et valeurs
 
@@ -48,21 +48,21 @@ Les types de paramètres de méthode et de valeurs de retour sont spécifiés da
   
 [!code-csharp[Method Signature](../../samples/snippets/csharp/concepts/basic-types/method-signature.cs)]  
   
-Après qu’une variable est déclarée, elle ne peut pas être déclarée de nouveau avec un nouveau type et elle ne peut pas être définie sur une valeur qui n’est pas compatible avec son type déclaré. Par exemple, vous ne pouvez pas déclarer un [int](language-reference/builtin-types/integral-numeric-types.md) et ensuite lui attribuer une valeur Boolean de `true`. Toutefois, les valeurs peuvent être converties en d’autres types, par exemple, quand elles sont assignées à de nouvelles variables ou passées comme arguments de méthode. Une *conversion de type* qui ne cause pas de perte de données est effectuée automatiquement par le compilateur. Une conversion susceptible de causer la perte de données exige une variable *cast* dans le code source.
+Après qu’une variable est déclarée, elle ne peut pas être déclarée de nouveau avec un nouveau type et elle ne peut pas être définie sur une valeur qui n’est pas compatible avec son type déclaré. Par exemple, vous ne pouvez pas déclarer un [int](language-reference/builtin-types/integral-numeric-types.md) et lui assigner une valeur booléenne `true` . Toutefois, les valeurs peuvent être converties en d’autres types, par exemple, quand elles sont assignées à de nouvelles variables ou passées comme arguments de méthode. Une *conversion de type* qui ne cause pas de perte de données est effectuée automatiquement par le compilateur. Une conversion susceptible de causer la perte de données exige une variable *cast* dans le code source.
 
-Pour plus d’informations, voir [Casting et les conversions de type](programming-guide/types/casting-and-type-conversions.md).
+Pour plus d’informations, consultez [Cast et conversions de types](programming-guide/types/casting-and-type-conversions.md).
 
 ## <a name="built-in-types"></a>Types intégrés
 
-C# fournit un jeu standard de types numériques intégrés pour représenter les nombres entiers, les valeurs à virgule flottante, les expressions booléennes, les caractères de texte, les valeurs décimales et d’autres types de données. Il existe également des types **string** et **object** intégrés, que vous pouvez utiliser dans n’importe quel programme C#. Pour la liste complète des types intégrés, voir [les types intégrés](language-reference/builtin-types/built-in-types.md).
+C# fournit un jeu standard de types numériques intégrés pour représenter les nombres entiers, les valeurs à virgule flottante, les expressions booléennes, les caractères de texte, les valeurs décimales et d’autres types de données. Il existe également des types **string** et **object** intégrés, que vous pouvez utiliser dans n’importe quel programme C#. Pour obtenir la liste complète des types intégrés, consultez [types intégrés](language-reference/builtin-types/built-in-types.md).
   
 ## <a name="custom-types"></a>Types personnalisés
 
-Vous utilisez les constructions [struct](language-reference/keywords/class.md), [classe](language-reference/keywords/class.md), [interface](language-reference/keywords/interface.md) et [enum](language-reference/builtin-types/enum.md) pour créer vos propres types personnalisés. La bibliothèque de classes .NET Framework est une collection de types personnalisés fournie par Microsoft que vous pouvez utiliser dans vos propres applications. Par défaut, les types les plus fréquemment utilisés dans la bibliothèque de classes sont disponibles dans tous les programmes C#. Les autres types sont disponibles uniquement si vous ajoutez explicitement une référence de projet à l’assembly dans lequel ils sont définis. Une fois que le compilateur a une référence à l’assembly, vous pouvez déclarer des variables (et des constantes) des types déclarés dans cet assembly dans le code source.
+Vous utilisez les constructions [struct](language-reference/builtin-types/struct.md), [classe](language-reference/keywords/class.md), [interface](language-reference/keywords/interface.md) et [enum](language-reference/builtin-types/enum.md) pour créer vos propres types personnalisés. La bibliothèque de classes .NET Framework est une collection de types personnalisés fournie par Microsoft que vous pouvez utiliser dans vos propres applications. Par défaut, les types les plus fréquemment utilisés dans la bibliothèque de classes sont disponibles dans tous les programmes C#. Les autres types sont disponibles uniquement si vous ajoutez explicitement une référence de projet à l’assembly dans lequel ils sont définis. Une fois que le compilateur a une référence à l’assembly, vous pouvez déclarer des variables (et des constantes) des types déclarés dans cet assembly dans le code source.
   
 ## <a name="generic-types"></a>Types génériques
 
-Un type peut être déclaré avec un ou plusieurs *paramètres de type* qui servent d’espace réservé pour le type réel (le *type concret*) que le code client fournit lorsqu’il crée une instance du type. Ces types sont appelés *types génériques*. Par exemple, le type <xref:System.Collections.Generic.List%601> cadre .NET a un paramètre de type qui, selon la convention, reçoit le nom *T*. Lorsque vous créez une instance du type, vous spécifiez le type d’objets que la liste contiendra, par exemple, la chaîne :  
+Un type peut être déclaré avec un ou plusieurs *paramètres de type* qui servent d’espace réservé pour le type réel (le *type concret*) que le code client fournit lorsqu’il crée une instance du type. Ces types sont appelés *types génériques*. Par exemple, le type de .NET Framework <xref:System.Collections.Generic.List%601> a un paramètre de type qui, par Convention, porte le nom *T*. Lorsque vous créez une instance du type, vous spécifiez le type des objets que la liste doit contenir, par exemple String :  
   
 [!code-csharp[Generic types](../../samples/snippets/csharp/concepts/basic-types/generic-type.cs)]
   
@@ -70,22 +70,22 @@ L’utilisation du paramètre de type rend possible la réutilisation de la mêm
 
 ## <a name="implicit-types-anonymous-types-and-tuple-types"></a>Types implicites, types anonymes et types tuple
 
-Comme indiqué précédemment, vous pouvez attribuer implicitement un type à une variable locale (mais pas les membres de la classe) à l’aide du mot clé [var](language-reference/keywords/var.md). La variable reçoit toujours un type au moment de la compilation, mais le type est fourni par le compilateur. Pour plus d’informations, voir [implicitement tapé variables locales](programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
+Comme indiqué précédemment, vous pouvez attribuer implicitement un type à une variable locale (mais pas les membres de la classe) à l’aide du mot clé [var](language-reference/keywords/var.md). La variable reçoit toujours un type au moment de la compilation, mais le type est fourni par le compilateur. Pour plus d’informations, consultez [variables locales implicitement typées](programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   
-Dans certains cas, il est difficile de créer un type nommé pour des ensembles simples de valeurs associées que vous ne souhaitez pas stocker ou transférer en dehors des limites de la méthode. Vous pouvez alors créer des *types anonymes*. Pour plus d’informations, voir [les types Anonymous](programming-guide/classes-and-structs/anonymous-types.md).
+Dans certains cas, il est difficile de créer un type nommé pour des ensembles simples de valeurs associées que vous ne souhaitez pas stocker ou transférer en dehors des limites de la méthode. Vous pouvez alors créer des *types anonymes*. Pour plus d’informations, consultez [types anonymes](programming-guide/classes-and-structs/anonymous-types.md).
 
-Il est courant de vouloir retourner plusieurs valeurs d’une méthode. Vous pouvez créer des *types tuple* qui retournent plusieurs valeurs dans un seul appel de méthode. Pour plus d’informations, voir [Tuples](tuples.md).
+Il est courant de vouloir retourner plusieurs valeurs d’une méthode. Vous pouvez créer des *types tuple* qui retournent plusieurs valeurs dans un seul appel de méthode. Pour plus d’informations, consultez [tuples](tuples.md).
 
 ## <a name="the-common-type-system"></a>Système de type commun (CTS)
 
 Il est important de comprendre ces deux points fondamentaux à propos du système de type dans le .NET Framework :  
   
-- Il prend en charge le principe d’héritage. Les types peuvent dériver d’autres types, appelés *types de base*. Le type dérivé hérite (avec certaines restrictions) des méthodes, des propriétés et des autres membres du type de base. Le type de base peut à son tour dériver d’un autre type, auquel cas le type dérivé hérite des membres des deux types de base dans sa hiérarchie d’héritage. Tous les types, y compris les types numériques intégrés tels que <xref:System.Int32> (mot clé C# : `int`), dérivent au final d’un seul type de base, qui est <xref:System.Object> (mot clé C# : `object`). Cette hiérarchie de type unifiée est appelée [système de type commun](../standard/common-type-system.md) (CTS). Pour plus d’informations sur l’héritage dans C#, consultez [Héritage](programming-guide/classes-and-structs/inheritance.md).  
+- Il prend en charge le principe d’héritage. Les types peuvent dériver d’autres types, appelés *types de base*. Le type dérivé hérite (avec certaines restrictions) des méthodes, des propriétés et des autres membres du type de base. Le type de base peut à son tour dériver d’un autre type, auquel cas le type dérivé hérite des membres des deux types de base dans sa hiérarchie d’héritage. Tous les types, y compris les types numériques intégrés tels que <xref:System.Int32> (mot clé C# : `int`), dérivent au final d’un seul type de base, qui est <xref:System.Object> (mot clé C# : `object`). Cette hiérarchie de types unifiée est appelée système de type commun (CTS, [Common type System](../standard/common-type-system.md) ). Pour plus d’informations sur l’héritage dans C#, consultez [Héritage](programming-guide/classes-and-structs/inheritance.md).  
   
-- Chaque type du CTS est défini comme *type valeur* ou *type référence*. Cela inclut tous les types personnalisés dans la bibliothèque de classes .NET, ainsi que les types définis par l’utilisateur. Les types que vous `struct` `enum` définissez en utilisant le ou le mot clé sont des types de valeur. Pour plus d’informations sur les types de valeur, voir [types de valeur](language-reference/builtin-types/value-types.md). Les types que vous définissez à l’aide du mot clé [class](language-reference/keywords/class.md) sont des types référence. Pour plus d’informations sur les types référence, consultez [Classes](programming-guide/classes-and-structs/classes.md). Les types référence et les types valeur ne suivent pas les mêmes règles de compilation et ont un comportement différent au moment de l’exécution.
+- Chaque type du CTS est défini comme *type valeur* ou *type référence*. Cela inclut tous les types personnalisés dans la bibliothèque de classes .NET, ainsi que les types définis par l’utilisateur. Les types que vous définissez à l’aide du `struct` `enum` mot clé ou sont des types valeur. Pour plus d’informations sur les types valeur, consultez [types valeur](language-reference/builtin-types/value-types.md). Les types que vous définissez à l’aide du mot clé [class](language-reference/keywords/class.md) sont des types référence. Pour plus d’informations sur les types référence, consultez [Classes](programming-guide/classes-and-structs/classes.md). Les types référence et les types valeur ne suivent pas les mêmes règles de compilation et ont un comportement différent au moment de l’exécution.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Types de structure](language-reference/builtin-types/struct.md)
-- [Types d’énumération](language-reference/builtin-types/enum.md)
+- [Types d'énumération](language-reference/builtin-types/enum.md)
 - [Classes](programming-guide/classes-and-structs/classes.md)

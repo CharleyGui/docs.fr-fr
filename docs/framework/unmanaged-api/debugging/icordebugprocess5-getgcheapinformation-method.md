@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b9538ceb-230a-4079-9cb2-903dbf5c1848
 topic_type:
 - apiref
-ms.openlocfilehash: 703f159c5bc6b73dcd0e770bdeb61f676aae034c
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 62d45da44a95eae399fbbd287aa997a5f913d0b0
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792379"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209654"
 ---
 # <a name="icordebugprocess5getgcheapinformation-method"></a>ICorDebugProcess5::GetGCHeapInformation, méthode
 Fournit des informations générales sur le tas garbage collection, y compris s’il est actuellement énumérable.  
@@ -33,21 +33,21 @@ HRESULT GetGCHeapInformation(
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `pHeapInfo`  
  à Pointeur vers une valeur [COR_HEAPINFO](cor-heapinfo-structure.md) qui fournit des informations générales sur le tas garbage collection.  
   
-## <a name="remarks"></a>Notes  
- La méthode `ICorDebugProcess5::GetGCHeapInformation` doit être appelée avant l’énumération du tas ou des régions de tas individuelles pour garantir que les structures garbage collectiones dans le processus sont actuellement valides. Le tas garbage collection ne peut pas être parcouru tant qu’une collection est en cours. Dans le cas contraire, l’énumération peut capturer des structures de garbage collection qui ne sont pas valides.  
+## <a name="remarks"></a>Remarks  
+ La `ICorDebugProcess5::GetGCHeapInformation` méthode doit être appelée avant d’énumérer le tas ou les régions de tas individuelles pour garantir que les structures de garbage collection dans le processus sont actuellement valides. Le tas garbage collection ne peut pas être parcouru tant qu’une collection est en cours. Dans le cas contraire, l’énumération peut capturer des structures de garbage collection qui ne sont pas valides.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

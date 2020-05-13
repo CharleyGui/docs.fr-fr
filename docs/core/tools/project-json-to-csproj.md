@@ -3,12 +3,12 @@ title: Comparaison entre project.json et csproj
 description: Consultez le mappage entre éléments project.json et csproj.
 author: natemcmaster
 ms.date: 03/13/2017
-ms.openlocfilehash: feaa7e9cde7e1aa4dfe94d699b14a018fc728f27
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: a997b48f645ed58d15610a68aee7c67411f9763f
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794622"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83205832"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mappage entre propriétés project.json et csproj
 
@@ -179,7 +179,7 @@ Utilisez la propriété `TargetFrameworks` pour définir votre liste de framewor
 </PropertyGroup>
 ```
 
-Notez que la valeur de `<RuntimeFrameworkVersion>` dans le projet migré est déterminée par la version du SDK que vous avez installée.
+La `<RuntimeFrameworkVersion>` valeur dans le projet migré est déterminée par la version du kit de développement logiciel (SDK) qui est installée.
 
 ### <a name="top-level-dependencies"></a>Dépendances de niveau supérieur
 
@@ -485,8 +485,7 @@ Voir aussi [Fichiers](#files).
 </PropertyGroup>
 ```
 
-Il n’existe aucun équivalent de l’élément `owners` dans MSBuild.
-Pour `summary`, vous pouvez utiliser la propriété `<Description>` MSBuild, même si la valeur de `summary` n’est pas migrée automatiquement vers cette propriété, car cette propriété est mappée à [`description`](#other-common-root-level-options) l’élément.
+Il n’existe aucun équivalent de l’élément `owners` dans MSBuild. Pour `summary` , vous pouvez utiliser la `<Description>` propriété MSBuild. La valeur de `summary` n’est pas migrée automatiquement vers cette propriété, car cette propriété est mappée à l' [`description`](#other-common-root-level-options) élément.
 
 ## <a name="scripts"></a>Scripts
 
@@ -499,7 +498,7 @@ Pour `summary`, vous pouvez utiliser la propriété `<Description>` MSBuild, mê
 }
 ```
 
-Leur équivalent dans MSBuild sont les [cibles](/visualstudio/msbuild/msbuild-targets) :
+Leurs équivalents dans MSBuild sont les [cibles](/visualstudio/msbuild/msbuild-targets):
 
 ```xml
 <Target Name="MyPreCompileTarget" BeforeTargets="Build">
@@ -528,7 +527,7 @@ Leur équivalent dans MSBuild sont les [cibles](/visualstudio/msbuild/msbuild-ta
 }
 ```
 
-Tous les paramètres de ce groupe, sauf la propriété « System.GC.Server », sont placés dans un fichier appelé *runtimeconfig.template.json* dans le dossier du projet, avec les options élevées à l’objet racine pendant le processus de migration :
+Tous les paramètres de ce groupe, à l’exception de la `System.GC.Server` propriété, sont placés dans un fichier appelé *runtimeconfig. template. JSON* dans le dossier du projet, avec les options levées dans l’objet racine pendant le processus de migration :
 
 ```json
 {
@@ -541,7 +540,7 @@ Tous les paramètres de ce groupe, sauf la propriété « System.GC.Server »,
 }
 ```
 
-La propriété « System.GC.Server » est migrée dans le fichier csproj :
+La `System.GC.Server` propriété est migrée dans le fichier csproj :
 
 ```xml
 <PropertyGroup>
@@ -569,7 +568,7 @@ Toutefois, vous pouvez définir toutes ces valeurs dans le csproj ainsi que les 
 }
 ```
 
-Non pris en charge dans csproj. Vous devez inclure à la place des fichiers de contenu dans votre fichier *.nuspec*.
+Non pris en charge dans csproj. Au lieu de cela, créez des fichiers de contenu include dans votre fichier *. NuSpec* .
 Pour plus d’informations, consultez [Inclusion de fichiers de contenu](/nuget/schema/nuspec#including-content-files).
 
 ## <a name="files"></a>files
@@ -621,8 +620,7 @@ Dans MSBuild, cela s’effectue à l’aide d’[éléments](/visualstudio/msbui
 ```
 
 > [!NOTE]
-> Plusieurs [modèles d’utilisation des caractères génériques (globbing)](https://en.wikipedia.org/wiki/Glob_(programming)) par défaut sont ajoutés automatiquement par le SDK .NET Core.
-> Pour plus d’informations, consultez [Valeurs des éléments de compilation par défaut](https://aka.ms/sdkimplicititems).
+> Plusieurs [modèles d’utilisation des caractères génériques (globbing)](https://en.wikipedia.org/wiki/Glob_(programming)) par défaut sont ajoutés automatiquement par le SDK .NET Core. Pour plus d’informations, consultez [compilation par défaut avec](../project-sdk/overview.md#default-compilation-includes).
 
 Tous les éléments MSBuild `ItemGroup` prennent en charge `Include`, `Exclude` et `Remove`.
 

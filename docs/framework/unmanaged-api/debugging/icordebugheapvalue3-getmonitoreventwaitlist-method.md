@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 035a9035-ac66-4953-b48a-99652b42b7fe
 topic_type:
 - apiref
-ms.openlocfilehash: 15900fab59d172ada67d8aefeab698e1b44f808e
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 923e9b0821788143fff59eafe10d1802583df7a6
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794388"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210421"
 ---
 # <a name="icordebugheapvalue3getmonitoreventwaitlist-method"></a>ICorDebugHeapValue3::GetMonitorEventWaitList, méthode
 Fournit une liste triée des threads mis en file d’attente sur l’événement associé à un verrou d’analyse.  
@@ -33,7 +33,7 @@ HRESULT GetMonitorEventWaitList (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `ppThreadEnum`  
  à Énumérateur ICorDebugThreadEnum qui fournit la liste ordonnée de threads.  
   
@@ -47,8 +47,8 @@ HRESULT GetMonitorEventWaitList (
   
 ## <a name="exceptions"></a>Exceptions  
   
-## <a name="remarks"></a>Notes  
- Le premier thread de la liste est le premier thread libéré par l’appel suivant à <xref:System.Threading.Monitor.Pulse%28System.Object%29?displayProperty=nameWithType>. Le thread suivant de la liste est libéré sur l’appel suivant, et ainsi de suite.  
+## <a name="remarks"></a>Remarks  
+ Le premier thread de la liste est le premier thread libéré par l’appel suivant à <xref:System.Threading.Monitor.Pulse%28System.Object%29?displayProperty=nameWithType> . Le thread suivant de la liste est libéré sur l’appel suivant, et ainsi de suite.  
   
  Si la liste n’est pas vide, cette méthode retourne S_OK. Si la liste est vide, la méthode retourne S_FALSE ; dans ce cas, l’énumération est toujours valide, bien qu’elle soit vide.  
   
@@ -58,14 +58,14 @@ HRESULT GetMonitorEventWaitList (
   
  Si une erreur se produit et qu’il n’est pas possible de déterminer laquelle, le cas échéant, les threads attendent le moniteur, la méthode retourne un HRESULT qui indique un échec.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

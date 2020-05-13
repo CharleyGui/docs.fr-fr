@@ -4,30 +4,30 @@ description: Découvrez comment utiliser l’outil Analyseur de portabilité .NE
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: 8d019bef5fddac9f7c3d93e416cea061905c82ff
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 94dd6de8839b03bbdc33ae1ed03599853241d40b
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728442"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209364"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyseur de portabilité .NET
 
 Vous voulez que vos bibliothèques prennent en charge plusieurs plateformes ? Vous voulez savoir quelle quantité de travail est nécessaire pour que votre application .NET Framework s’exécute sur .NET Core ? L' [Analyseur de portabilité .net](https://github.com/microsoft/dotnet-apiport) est un outil qui analyse les assemblys et fournit un rapport détaillé sur les API .net qui manquent pour que les applications ou les bibliothèques soient portables sur les plateformes .net ciblées spécifiées. L’analyseur de portabilité est proposé sous la forme d’une [extension Visual Studio](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer), qui analyse un assembly par projet, et en tant qu' [application console ApiPort](https://aka.ms/apiportdownload), qui analyse les assemblys par fichiers ou répertoires spécifiés.
 
-Une fois que vous avez converti votre projet pour cibler la nouvelle plateforme, comme .NET Core, vous pouvez utiliser l' [outil Analyseur d’API](api-analyzer.md) basé sur Roslyn pour <xref:System.PlatformNotSupportedException> identifier les API levant des exceptions et d’autres problèmes de compatibilité.
+Une fois que vous avez converti votre projet pour cibler la nouvelle plateforme, comme .NET Core, vous pouvez utiliser l' [outil Analyseur d’API](api-analyzer.md) basé sur Roslyn pour identifier les API levant <xref:System.PlatformNotSupportedException> des exceptions et d’autres problèmes de compatibilité.
 
 ## <a name="common-targets"></a>Cibles courantes
 
-- [.NET Core](../../core/index.yml) : possède une conception modulaire, emploie le mode côte-à-côte et cible des scénarios multiplateformes. Le mode côte-à-côte vous permet d’adopter de nouvelles versions de .NET Core sans interrompre les autres applications. Si votre objectif est de porter votre application vers plusieurs plateformes prises en charge par .NET Core, c’est la cible recommandée.
-- . [NET standard](../../standard/net-standard.md): comprend les API .NET standard disponibles sur toutes les implémentations .net. Si votre objectif consiste à faire en sorte que votre bibliothèque s’exécute sur toutes les plateformes prises en charge par .NET, c’est la cible recommandée.
+- [.Net Core](../../core/index.yml): possède une conception modulaire, prend en charge l’installation côte à côte et cible des scénarios multiplateformes. L’installation côte à côte vous permet d’adopter de nouvelles versions de .NET Core sans interrompre les autres applications. Si votre objectif est de porter votre application sur .NET Core et de prendre en charge plusieurs plateformes, il s’agit de la cible recommandée.
+- . [NET standard](../../standard/net-standard.md): comprend les API .NET standard disponibles sur toutes les implémentations .net. Si votre objectif est de faire en sorte que votre bibliothèque s’exécute sur toutes les plates-formes prises en charge par .NET, il s’agit de la cible recommandée.
 - [ASP.net Core](/aspnet/core): une infrastructure Web moderne reposant sur .net core. Si votre objectif est de porter votre application web vers .NET Core pour prendre en charge plusieurs plateformes, c’est la cible recommandée.
 - .NET Core + [extensions de plateforme](../../core/porting/windows-compat-pack.md): inclut les API .net core en plus du Pack de compatibilité Windows, qui fournit un grand nombre des .NET Framework technologies disponibles. Il s’agit d’une cible recommandée pour le portage de votre application depuis le .NET Framework vers .NET Core sur Windows.
 - .NET Standard + [extensions de plateforme](../../core/porting/windows-compat-pack.md): inclut les API .NET standard en plus du Pack de compatibilité Windows, qui fournit une grande partie des .NET Framework technologies disponibles. Il s’agit d’une cible recommandée pour le portage de votre bibliothèque depuis le .NET Framework vers .NET Core sur Windows.
 
 ## <a name="how-to-use-the-net-portability-analyzer"></a>Comment utiliser l’Analyseur de portabilité .NET
 
-Pour commencer à utiliser l’Analyseur de portabilité .NET dans Visual Studio, vous devez d’abord télécharger l’extension à partir du [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer) et l’installer. Elle fonctionne sur Visual Studio 2017 et les versions ultérieures. Configurez-le dans Visual Studio via **analyser** > les paramètres de l'**Analyseur de portabilité** et sélectionnez vos plateformes cibles, qui correspondent aux plateformes/versions .net dont vous souhaitez évaluer les écarts de portabilité comparés à la plateforme/version avec laquelle votre assembly actuel est généré.
+Pour commencer à utiliser l’Analyseur de portabilité .NET dans Visual Studio, vous devez d’abord télécharger l’extension à partir du [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer) et l’installer. Elle fonctionne sur Visual Studio 2017 et les versions ultérieures. Configurez-le dans Visual Studio via **analyser**les  >  paramètres de l'**Analyseur de portabilité** et sélectionnez vos plateformes cibles, qui correspondent aux plateformes/versions .net dont vous souhaitez évaluer les écarts de portabilité comparés à la plateforme/version avec laquelle votre assembly actuel est généré.
 
 ![Capture d’écran de l’analyseur de portabilité.](./media/portability-analyzer/portability-screenshot.png)
 

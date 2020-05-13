@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4ac7077c-8d88-49c4-b360-b3af0c541c63
 topic_type:
 - apiref
-ms.openlocfilehash: 0666becb5a34688d3f4cf5bddd1e2fa71785b38a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d00a5f71ac7e47d78deebca0e46350e465964c72
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139792"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210096"
 ---
 # <a name="icordebugprocessenumnext-method"></a>ICorDebugProcessEnum::Next, méthode
 Obtient le nombre spécifié d’instances ICorDebugProcess de l’énumération, en commençant à la position actuelle.  
@@ -38,19 +38,19 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- dans Nombre d’instances de `ICorDebugProcess` à récupérer.  
+ dans Nombre d' `ICorDebugProcess` instances à récupérer.  
   
  `processes`  
- à Tableau de pointeurs, chacun pointant vers un objet `ICorDebugProcess` qui représente un processus.  
+ à Tableau de pointeurs, chacun pointant vers un `ICorDebugProcess` objet qui représente un processus.  
   
  `pceltFetched`  
- à Pointeur vers le nombre d’instances `ICorDebugProcess` réellement retournées. Cette valeur peut être null si `celt` est un.  
+ à Pointeur vers le nombre d' `ICorDebugProcess` instances réellement retournées. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

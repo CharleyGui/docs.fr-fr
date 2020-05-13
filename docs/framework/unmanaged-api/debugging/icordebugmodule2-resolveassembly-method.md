@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ddf9085c-7161-44bd-9609-cd2732b9009f
 topic_type:
 - apiref
-ms.openlocfilehash: 0809a149a5a5a5e9adea059140d7b4b456337ef3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e64e39d10d20f63430ffe9d2c4df8643e286a677
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125301"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210027"
 ---
 # <a name="icordebugmodule2resolveassembly-method"></a>ICorDebugModule2::ResolveAssembly, méthode
 
@@ -38,21 +38,21 @@ HRESULT ResolveAssembly (
 ## <a name="parameters"></a>Paramètres
 
 `tkAssemblyRef`\
-dans Valeur `mdToken` qui référence l’assembly.
+dans `mdToken`Valeur qui référence l’assembly.
 
 `ppAssembly`\
 à Pointeur vers l’adresse d’un objet ICorDebugAssembly qui représente l’assembly.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarks
 
-Si l’assembly n’est pas déjà chargé lors de l’appel de `ResolveAssembly`, une valeur HRESULT de CORDBG_E_CANNOT_RESOLVE_ASSEMBLY est retournée.
+Si l’assembly n’est pas déjà chargé lorsque `ResolveAssembly` est appelé, une valeur HRESULT de CORDBG_E_CANNOT_RESOLVE_ASSEMBLY est retournée.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
 **En-tête :** CorDebug.idl, CorDebug.h
 
 **Bibliothèque :** CorGuids.lib
 
-**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+**Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

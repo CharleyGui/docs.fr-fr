@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5fd30875-555e-4e96-877b-5dd266cde7c4
 topic_type:
 - apiref
-ms.openlocfilehash: 27e13e298c1be61018a92e53a0ee82c786729c7d
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: c9375854b45432eafb6cc706a1a62f5424e0fee8
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792584"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210486"
 ---
 # <a name="icordebugprocessmodifylogswitch-method"></a>ICorDebugProcess::ModifyLogSwitch, méthode
 Définit le niveau de gravité du commutateur de journalisation spécifié.  
@@ -33,21 +33,21 @@ HRESULT ModifyLogSwitch(
     [in] LONG  lLevel);  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `pLogSwitchName`  
  dans Pointeur vers une chaîne qui spécifie le nom du commutateur de journal.  
   
  `lLevel`  
  dans Niveau de gravité à définir pour le commutateur de journalisation spécifié.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarks  
  Cette méthode est valide uniquement après que le rappel [ICorDebugManagedCallback :: CreateProcess](icordebugmanagedcallback-createprocess-method.md) s’est produit.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

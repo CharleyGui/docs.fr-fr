@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 32e4d6fa-e5a3-413e-9166-d5e2871d3114
 topic_type:
 - apiref
-ms.openlocfilehash: c573e6b768aee1e8b681dcf2e828dc24d409025b
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 105e56f2508eabbb6876a09d35e6abfbfc08950b
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793014"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212241"
 ---
 # <a name="icordebugmodule-interface"></a>ICorDebugModule, interface
 
@@ -35,7 +35,7 @@ Représente un module common language runtime (CLR), qui est un fichier exécuta
 |[GetAssembly, méthode](icordebugmodule-getassembly-method.md)|Obtient l’assembly conteneur pour ce module.|  
 |[GetBaseAddress, méthode](icordebugmodule-getbaseaddress-method.md)|Obtient l’adresse de base du module.|  
 |[GetClassFromToken, méthode](icordebugmodule-getclassfromtoken-method.md)|Obtient la ICorDebugClass à partir des métadonnées.|  
-|[GetEditAndContinueSnapshot, méthode](icordebugmodule-geteditandcontinuesnapshot-method.md)|Option déconseillée.|  
+|[GetEditAndContinueSnapshot, méthode](icordebugmodule-geteditandcontinuesnapshot-method.md)|Action déconseillée.|  
 |[GetFunctionFromRVA, méthode](icordebugmodule-getfunctionfromrva-method.md)|Non implémenté.|  
 |[GetFunctionFromToken, méthode](icordebugmodule-getfunctionfromtoken-method.md)|Obtient la fonction spécifiée par le jeton de métadonnées.|  
 |[GetGlobalVariableValue, méthode](icordebugmodule-getglobalvariablevalue-method.md)|Obtient un objet de valeur pour la variable globale spécifiée.|  
@@ -47,19 +47,19 @@ Représente un module common language runtime (CLR), qui est un fichier exécuta
 |[IsDynamic, méthode](icordebugmodule-isdynamic-method.md)|Indique si le module est dynamique.|  
 |[IsInMemory, méthode](icordebugmodule-isinmemory-method.md)|Indique si ce module existe uniquement en mémoire.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarks  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
