@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7d5385d3-f4a5-47c4-8478-a3513b5e9406
 topic_type:
 - apiref
-ms.openlocfilehash: 5fa042223e47961dad0a6799ab8ca999ef76e285
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 9f521eb942f37b8cf1d00bcc672071a69692b876
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791090"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396650"
 ---
 # <a name="icordebugvalue3-interface"></a>ICorDebugValue3, interface
 Étend les interfaces « ICorDebugValue » et « ICorDebugValue2 » pour assurer la prise en charge des tableaux d’une taille supérieure à 2 Go.  
@@ -28,19 +28,19 @@ ms.locfileid: "76791090"
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetSize64, méthode](icordebugvalue3-getsize64-method.md)|Obtient la taille, en octets, de cet objet `ICorDebugValue3`.|  
+|[GetSize64, méthode](icordebugvalue3-getsize64-method.md)|Obtient la taille, en octets, de cet `ICorDebugValue3` objet.|  
   
 ## <a name="remarks"></a>Notes  
- La méthode [ICorDebugValue ::](icordebugvalue3-getsize64-method.md) Desize retourne une taille d’objet comprise entre 0 et 2 147 483 647 octets. Dans le .NET Framework 4,5, la taille des tableaux peut dépasser 2 Go. L’interface `ICorDebugValue3` vous permet de déterminer la taille de ces tableaux.  
+ La méthode [ICorDebugValue ::](icordebugvalue3-getsize64-method.md) Desize retourne une taille d’objet comprise entre 0 et 2 147 483 647 octets. Dans le .NET Framework 4,5, la taille des tableaux peut dépasser 2 Go. L' `ICorDebugValue3` interface vous permet de déterminer la taille de ces tableaux.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

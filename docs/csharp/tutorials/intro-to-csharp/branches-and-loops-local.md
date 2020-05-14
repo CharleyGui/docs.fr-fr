@@ -3,12 +3,12 @@ title: Branches et boucles – Tutoriel d’introduction à C#
 description: Dans ce tutoriel sur les branches et les boucles, vous allez écrire du code en C# pour explorer la syntaxe du langage qui gère les branches et les boucles conditionnelles permettant d’exécuter des instructions de manière répétée.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: d8c10a7462b7c27c5353aee6d957732a8d161015
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: d67cfe359634783bb542e9ac34df52a095b45c20
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135943"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396878"
 ---
 # <a name="learn-conditional-logic-with-branch-and-loop-statements"></a>Découvrir la logique conditionnelle avec des instructions de branches et de boucles
 
@@ -50,7 +50,7 @@ Tapez `dotnet run` à nouveau. La réponse étant inférieure à 10, rien ne s�
 
 Le premier exemple montre la puissance de l’instruction `if` et des types booléens. Un *booléen* est une variable qui peut avoir l’une des deux valeurs suivantes : `true` ou `false`. C# définit un type spécial, `bool`, pour les variables booléennes. L’instruction `if` vérifie la valeur d’un `bool`. Quand la valeur est `true`, l’instruction qui suit `if` s’exécute. Dans le cas contraire, elle est ignorée.
 
-Ce processus de vérification des conditions et d’exécution des instructions en fonction de ces conditions est très performant.
+Ce processus de vérification des conditions et d’exécution d’instructions en fonction de ces conditions est puissant.
 
 ## <a name="make-if-and-else-work-together"></a>Utiliser if et else ensemble
 
@@ -72,7 +72,7 @@ L’instruction qui suit le mot clé `else` s’exécute uniquement quand la con
 > Le langage C# ne considère pas la mise en retrait ou les espaces blancs comme des éléments significatifs.
 > L’instruction qui suit le mot clé `if` ou `else` sera exécutée en fonction de la condition. Tous les exemples de ce tutoriel suivent une pratique courante qui consiste à mettre en retrait les lignes en fonction du flux de contrôle des instructions.
 
-Étant donné que la mise en retrait n’est pas significative, vous devez utiliser `{` et `}` pour indiquer quand vous souhaitez inclure plus d’une instruction dans le bloc qui s’exécute de manière conditionnelle. Les programmeurs C# utilisent généralement les accolades pour toutes les clauses `if` et `else`. L’exemple suivant est identique à celui que vous venez de créer. Modifiez votre code ci-dessus pour qu’il corresponde au code suivant :
+Étant donné que la mise en retrait n’est pas significative, vous devez utiliser `{` et `}` pour indiquer quand vous souhaitez que plusieurs instructions fassent partie du bloc qui s’exécute de manière conditionnelle. Les programmeurs C# utilisent généralement les accolades pour toutes les clauses `if` et `else`. L’exemple suivant est identique à celui que vous avez créé. Modifiez votre code ci-dessus pour qu’il corresponde au code suivant :
 
 ```csharp
 int a = 5;
@@ -127,7 +127,7 @@ else
 
 Modifiez les valeurs de `a`, `b` et `c` et passez de `&&` à `||` et inversement. Vous comprendrez mieux comment fonctionnent les opérateurs `&&` et `||`.
 
-Vous avez terminé la première étape. Avant de passer à la section suivante, déplaçons le code actuel dans une méthode distincte. Cela nous permettra de travailler plus facilement avec un nouvel exemple. Renommez votre méthode `Main``ExploreIf` et écrivez une nouvelle méthode `Main` qui appelle `ExploreIf`. Une fois terminé, votre code doit ressembler au code suivant :
+Vous avez terminé la première étape. Avant de passer à la section suivante, déplaçons le code actuel dans une méthode distincte. Cela nous permettra de travailler plus facilement avec un nouvel exemple. Renommez votre méthode `Main``ExploreIf` et écrivez une nouvelle méthode `Main` qui appelle `ExploreIf`. Lorsque vous avez terminé, votre code doit ressembler à ceci :
 
 ```csharp
 using System;
@@ -187,11 +187,11 @@ Commentez l’appel à `ExploreIf()`. La sortie est ainsi moins encombrée lorsq
 //ExploreIf();
 ```
 
-`//` démarre un **commentaire** dans C#. Les commentaires correspondent à du texte que vous voulez conserver dans votre code source sans l’exécuter en tant que code. Le compilateur ne génère aucun fichier exécutable à partir des commentaires.
+`//` démarre un **commentaire** dans C#. Les commentaires correspondent à du texte que vous voulez conserver dans votre code source sans l’exécuter en tant que code. Le compilateur ne génère pas de code exécutable à partir de commentaires.
 
 ## <a name="use-loops-to-repeat-operations"></a>Utiliser des boucles pour répéter des opérations
 
-Dans cette section vous utilisez des **boucles** pour répéter des instructions. Essayez ce code dans votre méthode `Main` :
+Dans cette section, vous utilisez des **boucles** pour répéter des instructions. Essayez ce code dans votre méthode `Main` :
 
 ```csharp
 int counter = 0;
@@ -209,7 +209,7 @@ Cet exemple contient un nouvel opérateur. `++` après la variable `counter` est
 > [!IMPORTANT]
 > Assurez-vous que la condition de boucle `while` devient false quand vous exécutez le code. Dans le cas contraire, vous allez créer une **boucle infinie** dans laquelle votre programme ne se terminera jamais. Ceci n’est pas démontré dans cet exemple, car vous devez forcer la fermeture de votre programme avec **CTRL-C** ou à l’aide d’autres moyens.
 
-La boucle `while` teste la condition avant d’exécuter le code qui suit `while`. La boucle `do` ... `while` exécute d’abord le code, puis vérifie la condition. La boucle do while est illustrée dans l’exemple de code suivant :
+La boucle `while` teste la condition avant d’exécuter le code qui suit `while`. La boucle `do` ... `while` exécute d’abord le code, puis vérifie la condition. La boucle *do while* est illustrée dans le code suivant :
 
 ```csharp
 int counter = 0;
@@ -233,26 +233,28 @@ for (int index = 0; index < 10; index++)
 }
 ```
 
-Cette boucle fonctionne de manière identique à la boucle `while` et la boucle `do` que vous avez déjà utilisées. L’instruction `for` comprend trois parties qui contrôlent son fonctionnement.
+Le code précédent effectue le même travail que la `while` boucle et la `do` boucle que vous avez déjà utilisée. L’instruction `for` comprend trois parties qui contrôlent son fonctionnement.
 
-La première partie est l' **initialiseur**: `int index = 0;` déclare qui `index` est la variable de boucle et définit sa valeur initiale sur. `0`
+La première partie est l' **initialiseur**: `int index = 0;` déclare qui `index` est la variable de boucle et définit sa valeur initiale sur `0` .
 
 La partie centrale est la **condition for**: `index < 10` déclare que cette `for` boucle continue à s’exécuter tant que la valeur du compteur est inférieure à 10.
 
-La dernière partie est l' **itérateur for**: `index++` spécifie comment modifier la variable de boucle après l’exécution du bloc `for` après l’instruction. Il spécifie ici que `index` doit être incrémenté de 1 chaque fois que le bloc s’exécute.
+La dernière partie est l' **itérateur for**: `index++` spécifie comment modifier la variable de boucle après l’exécution du bloc après l' `for` instruction. Il spécifie ici que `index` doit être incrémenté de 1 chaque fois que le bloc s’exécute.
 
-Vérifiez-le par vous-même. Réalisez les essais suivants :
+Expérimentez vous-même. Essayez chacune des variantes suivantes :
 
 - Modifiez l’initialiseur pour définir le démarrage à une valeur différente.
 - Modifiez la condition pour définir l’arrêt à une valeur différente.
 
 Une fois terminé, vous allez vous-même écrire des codes pour mettre en pratique ce que vous avez appris.
 
+Il existe une autre instruction de boucle qui n’est pas traitée dans ce didacticiel : l' `foreach` instruction. L' `foreach` instruction répète son instruction pour chaque élément d’une séquence d’éléments. La plupart du temps, elle est utilisée avec les *regroupements*. elle est donc traitée dans le didacticiel suivant.
+
 ## <a name="created-nested-loops"></a>Boucles imbriquées créées
 
-Une `while`boucle `do` ou `for` peut être imbriquée dans une autre boucle pour créer une matrice à l’aide de la combinaison de chaque élément de la boucle externe avec chaque élément de la boucle interne. Nous allons donc créer un ensemble de paires alphanumériques pour représenter les lignes et les colonnes.
+Une `while` `do` boucle, ou `for` peut être imbriquée dans une autre boucle pour créer une matrice à l’aide de la combinaison de chaque élément de la boucle externe avec chaque élément de la boucle interne. Nous allons donc créer un ensemble de paires alphanumériques pour représenter les lignes et les colonnes.
 
-Une `for` seule boucle peut générer les lignes :
+Une seule `for` boucle peut générer les lignes :
 
 ```csharp
 for (int row = 1; row < 11; row++)
@@ -298,9 +300,9 @@ Vous avez terminé le didacticiel « Branches et boucles ».
 
 Vous pouvez passer au tutoriel [Tableaux et collections](arrays-and-collections.md) dans votre propre environnement de développement.
 
-Pour en savoir plus sur ces concepts, consultez les rubriques suivantes :
+Pour plus d’informations sur ces concepts, consultez les articles suivants :
 
 - [Instruction if et else](../../language-reference/keywords/if-else.md)
-- [Instruction while](../../language-reference/keywords/while.md)
+- [While (instruction)](../../language-reference/keywords/while.md)
 - [Instruction do](../../language-reference/keywords/do.md)
 - [Instruction for](../../language-reference/keywords/for.md)

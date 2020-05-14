@@ -2,12 +2,12 @@
 title: Utilisation d’async pour l’accès aux fichiers (C#)
 ms.date: 07/20/2015
 ms.assetid: bb018fea-5313-4c80-ab3f-7c24b2145bd9
-ms.openlocfilehash: e6b0370049d9b9315de6a72d0e84c080aac12481
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8e0a62c2263ed3fd11eb4accb54978ef439ac010
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69595537"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396962"
 ---
 # <a name="using-async-for-file-access-c"></a>Utilisation d’async pour l’accès aux fichiers (C#)
 Vous pouvez utiliser la fonctionnalité Async pour accéder à des fichiers. La fonctionnalité async vous permet d’appeler des méthodes asynchrones sans utiliser de rappels ni fractionner votre code entre plusieurs méthodes ou expressions lambda. Pour rendre le code synchrone asynchrone, il vous suffit d’appeler une méthode asynchrone au lieu d’une méthode synchrone, puis d’ajouter quelques mots clés au code.  
@@ -27,7 +27,7 @@ Vous pouvez utiliser la fonctionnalité Async pour accéder à des fichiers. La 
 ## <a name="running-the-examples"></a>Exécution des exemples  
  Pour exécuter les exemples de cette rubrique, vous pouvez créer une **application WPF** ou une **application Windows Forms**, puis ajouter un **bouton**. Dans l’événement `Click` du bouton, ajoutez un appel à la première méthode de chaque exemple.  
   
- Dans les exemples qui suivent, incluez les instructions `using` suivantes.  
+ Dans les exemples suivants, incluez les `using` directives suivantes.  
   
 ```csharp  
 using System;  
@@ -178,4 +178,4 @@ public async Task ProcessWriteMultAsync()
 
 - [Programmation asynchrone avec Async et Await (C#)](./index.md)
 - [Types de retour async (C#)](./async-return-types.md)
-- [Flux de contrôle dans les programmes Async (C)](./control-flow-in-async-programs.md)
+- [Workflow de contrôle dans les programmes Async (C#)](./control-flow-in-async-programs.md)

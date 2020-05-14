@@ -3,18 +3,18 @@ title: Utilisation des collections - Présentation du tutoriel C#
 description: Découvrez C# en explorant la collection de listes de ce guide de démarrage rapide.
 ms.date: 10/13/2017
 ms.custom: mvc
-ms.openlocfilehash: 554a4601157a7d4b873c22a46ee72b6601fc36d7
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: c99f5582702120db238de1206de42d964837cdbd
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635663"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396894"
 ---
 # <a name="learn-to-manage-data-collections-using-the-generic-list-type"></a>Apprenez à gérer les collections de données en utilisant le type de liste générique
 
 Ce didacticiel propose une introduction au langage C# et présente les concepts de base de la classe <xref:System.Collections.Generic.List%601>.
 
-Ce tutoriel suppose de disposer d’un ordinateur utilisable pour le développement. Le tutoriel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a des instructions pour configurer votre environnement de développement local sur Windows, Linux ou macOS. Vous trouverez une brève vue d’ensemble des commandes utilisées disponible dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
+Ce tutoriel suppose de disposer d’un ordinateur utilisable pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur Windows, Linux ou MacOS. Vous trouverez une brève vue d’ensemble des commandes utilisées disponible dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
 
 ## <a name="a-basic-list-example"></a>Exemple de liste de base
 
@@ -44,7 +44,7 @@ namespace list_tutorial
 
 Remplacez `<name>` par votre nom. Enregistrez *Program.cs*. Tapez `dotnet run` dans votre fenêtre de console pour effectuer un essai.
 
-Vous venez de créer une liste de chaînes, d’ajouter trois noms à cette liste et d’afficher les noms tout en majuscules. Vous utilisez des concepts que vous avez appris dans les tutoriels précédents pour lire la liste en boucle.
+Vous avez créé une liste de chaînes, ajouté trois noms à cette liste et affiché les noms en majuscules. Vous utilisez des concepts que vous avez appris dans les tutoriels précédents pour lire la liste en boucle.
 
 Le code permettant d’afficher les noms utilise la fonctionnalité [d’interpolation de chaîne](../../language-reference/tokens/interpolated.md).  Quand vous faites précéder une `string` du caractère `$`, vous pouvez incorporer le code C# dans la déclaration de chaîne. La chaîne réelle remplace ce code C# par la valeur qu’elle génère. Dans cet exemple, elle remplace `{name.ToUpper()}` par chaque nom, converti en majuscules, car vous avez appelé la méthode <xref:System.String.ToUpper%2A>.
 
@@ -86,7 +86,7 @@ Enregistrez le fichier et tapez de nouveau `dotnet run` pour afficher les résul
 
 ## <a name="search-and-sort-lists"></a>Trier les listes et y effectuer des recherches
 
-Nos exemples utilisent des listes relativement petites, mais vos applications peuvent souvent générer des listes contenant beaucoup plus d’éléments, qui se comptent parfois même en milliers. Pour rechercher des éléments dans ces collections plus volumineuses, vous devez rechercher différents éléments dans la liste. La méthode <xref:System.Collections.Generic.List%601.IndexOf%2A> recherche un élément et retourne l’index de ce dernier. Ajoutez ce code en bas de votre méthode `Main` :
+Nos exemples utilisent des listes relativement petites, mais vos applications peuvent souvent générer des listes contenant beaucoup plus d’éléments, qui se comptent parfois même en milliers. Pour rechercher des éléments dans ces collections plus volumineuses, vous devez rechercher différents éléments dans la liste. La méthode <xref:System.Collections.Generic.List%601.IndexOf%2A> recherche un élément et retourne l’index de ce dernier. Si l’élément n’est pas dans la liste, `IndexOf` retourne `-1` . Ajoutez ce code en bas de votre méthode `Main` :
 
 ```csharp
 var index = names.IndexOf("Felipe");
@@ -111,7 +111,7 @@ else
 }
 ```
 
-Il est également possible de trier les éléments de la liste. La méthode <xref:System.Collections.Generic.List%601.Sort%2A> trie tous les éléments de la liste dans l’ordre normal (par ordre alphabétique dans le cas de chaînes). Ajoutez ce code en bas de notre méthode `Main` :
+Il est également possible de trier les éléments de la liste. La <xref:System.Collections.Generic.List%601.Sort%2A> méthode trie tous les éléments de la liste dans l’ordre normal (par ordre alphabétique pour les chaînes). Ajoutez ce code en bas de notre méthode `Main` :
 
 ```csharp
 names.Sort();
@@ -123,7 +123,7 @@ foreach (var name in names)
 
 Enregistrez le fichier et tapez `dotnet run` pour tester cette dernière version.
 
-Avant de passer à la section suivante, déplaçons le code actuel dans une méthode distincte. Cela nous permettra de travailler plus facilement avec un nouvel exemple. Renommez votre méthode `Main``WorkingWithStrings` et écrivez une nouvelle méthode `Main` qui appelle `WorkingWithStrings`. Une fois terminé, votre code doit ressembler au code suivant :
+Avant de passer à la section suivante, déplaçons le code actuel dans une méthode distincte. Cela nous permettra de travailler plus facilement avec un nouvel exemple. Renommez votre méthode `Main``WorkingWithStrings` et écrivez une nouvelle méthode `Main` qui appelle `WorkingWithStrings`. Lorsque vous avez terminé, votre code doit ressembler à ceci :
 
 ```csharp
 using System;
@@ -230,4 +230,4 @@ Vous pouvez voir un exemple de solution en [consultant l’exemple de code termi
 
 Félicitations, vous avez terminé ce didacticiel sur les listes. Vous pouvez passer au tutoriel [Introduction aux classes](introduction-to-classes.md) dans votre propre environnement de développement.
 
-Vous pouvez en apprendre `List` davantage sur le travail avec le type dans l’article [guide .NET](../../../standard/index.yml) sur [les collections](../../../standard/collections/index.md). Vous allez également en découvrir plus sur de nombreux autres types de collection.
+Vous pouvez en savoir plus sur l’utilisation du `List` type dans l’article du [Guide .net](../../../standard/index.yml) sur les [Collections](../../../standard/collections/index.md). Vous allez également en découvrir plus sur de nombreux autres types de collection.

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f5ef94dd-dfee-49d3-a398-b110f8906dd8
 topic_type:
 - apiref
-ms.openlocfilehash: 09394acb07b8595f99d9ecc873eb0985cdd79316
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: db1721fed6414310556ceac493275e069a781ac8
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134594"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83397146"
 ---
 # <a name="icordebugvalueenumnext-method"></a>ICorDebugValueEnum::Next, méthode
 Obtient le nombre spécifié d’instances « ICorDebugValue » de l’énumération, en commençant à la position actuelle.  
@@ -38,21 +38,21 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- dans Nombre d’instances de `ICorDebugValue` à récupérer.  
+ dans Nombre d' `ICorDebugValue` instances à récupérer.  
   
  `values`  
- à Tableau de pointeurs, chacun pointant vers un objet `ICorDebugValue`.  
+ à Tableau de pointeurs, chacun pointant vers un `ICorDebugValue` objet.  
   
  `pceltFetched`  
- à Pointeur vers le nombre d’instances `ICorDebugValue` réellement retournées. Cette valeur peut être null si `celt` est un.  
+ à Pointeur vers le nombre d' `ICorDebugValue` instances réellement retournées. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi

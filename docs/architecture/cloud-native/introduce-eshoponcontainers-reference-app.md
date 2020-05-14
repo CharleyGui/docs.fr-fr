@@ -2,12 +2,12 @@
 title: Présentation de l’application de référence eShopOnContainers
 description: Présentation de l’application de référence eShopOnContainers Cloud Native microservices pour ASP.NET Core et Azure.
 ms.date: 06/30/2019
-ms.openlocfilehash: 8d4ad982716a07613ebbef6668afab69d5a8b4f6
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: b97b62268db1d9990f762d9769233ad72551c226
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895539"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395398"
 ---
 # <a name="introducing-eshoponcontainers-reference-app"></a>Présentation de l’application de référence eShopOnContainers
 
@@ -50,7 +50,7 @@ L’application présente également les exigences non fonctionnelles suivantes�
 
 L’application eShopOnContainers est accessible à partir de clients Web ou mobiles qui accèdent à l’application via le protocole HTTPs ciblant soit l’application de serveur ASP.NET Core MVC, soit une passerelle d’API appropriée. Les passerelles d’API offrent plusieurs avantages, tels que le découplage des services principaux de clients frontaux individuels et une meilleure sécurité. L’application utilise également un modèle associé connu sous le nom de « serveurs principaux-pour-frontends » (BFF), qui recommande de créer des passerelles d’API distinctes pour chaque client frontal. L’architecture de référence montre comment fractionner les passerelles d’API selon que la demande provient d’un client Web ou mobile.
 
-La fonctionnalité de l’application est divisée en plusieurs microservices distincts. Des services sont responsables de l’authentification et de l’identité, de la liste des éléments du catalogue de produits, de la gestion des paniers d’achat des utilisateurs et du placement des commandes. Chacun de ces services distincts a son propre stockage persistant. Notez qu’il n’existe pas de magasin de données maître unique avec lequel tous les services interagissent. Au lieu de cela, la coordination et la communication entre les services s’effectuent en fonction des besoins et à l’aide d’un bus de messages.
+La fonctionnalité de l’application est divisée en plusieurs microservices distincts. Des services sont responsables de l’authentification et de l’identité, de la liste des éléments du catalogue de produits, de la gestion des paniers d’achat des utilisateurs et du placement des commandes. Chacun de ces services distincts a son propre stockage persistant. Il n’existe pas de magasin de données maître unique avec lequel tous les services interagissent. Au lieu de cela, la coordination et la communication entre les services s’effectuent en fonction des besoins et à l’aide d’un bus de messages.
 
 Chacun des différents microservices est conçu différemment, en fonction de leurs besoins individuels. Cela signifie que leur pile technologique peut varier, bien qu’elles soient toutes créées à l’aide de .NET Core et conçues pour le Cloud. Les services plus simples offrent un accès de base en création-lecture-mise à jour-suppression (CRUD) aux magasins de données sous-jacents, tandis que les services plus avancés utilisent des approches de conception pilotées par domaine et des modèles pour gérer la complexité des activités.
 
@@ -73,5 +73,5 @@ Le code est organisé pour prendre en charge les différents microservices, et a
 Ce document se concentre sur les applications Cloud natives créées à l’aide de la technologie Azure. Pour en savoir plus sur les meilleures pratiques relatives aux microservices et sur l’architecture des applications basées sur des microservices, consultez la documentation complémentaire sur les microservices [.net : architecture pour les applications .net en conteneur](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook).
 
 >[!div class="step-by-step"]
->[Précédent](candidate-apps.md)
->[suivant](map-eshoponcontainers-azure-services.md)
+>[Précédent](candidate-apps.md) 
+> [Suivant](map-eshoponcontainers-azure-services.md)

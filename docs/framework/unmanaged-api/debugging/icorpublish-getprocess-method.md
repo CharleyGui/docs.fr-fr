@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c5143805-2eb7-45b8-85ed-c8fb34df1084
 topic_type:
 - apiref
-ms.openlocfilehash: 46f047dbec7ff008873540806b76ffe7085086b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2cd2238ac67713564922be440ce64a2ebc4bbf44
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178421"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396335"
 ---
 # <a name="icorpublishgetprocess-method"></a>ICorPublish::GetProcess, méthode
-Obtient une instance [ICorPublishProcess](icorpublishprocess-interface.md) qui représente le processus avec l’identifiant spécifié.  
+Obtient une instance de [ICorPublishProcess](icorpublishprocess-interface.md) qui représente le processus avec l’identificateur spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,22 +36,22 @@ HRESULT GetProcess(
   
 ## <a name="parameters"></a>Paramètres  
  `pid`  
- [dans] L’identifiant du processus.  
+ dans Identificateur du processus.  
   
  `ppProcess`  
- [out] Un pointeur à `ICorPublishProcess` l’adresse d’une instance qui représente le processus.  
+ à Pointeur vers l’adresse d’une `ICorPublishProcess` instance de qui représente le processus.  
   
-## <a name="remarks"></a>Notes   
- `GetProcess`échoue si le processus n’existe pas, ou n’est pas un processus géré qui peut être débogé par l’utilisateur actuel.  
+## <a name="remarks"></a>Notes  
+ `GetProcess`échoue si le processus n’existe pas ou s’il ne s’agit pas d’un processus managé pouvant être débogué par l’utilisateur actuel.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

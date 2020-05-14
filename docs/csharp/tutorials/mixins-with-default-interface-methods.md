@@ -1,18 +1,18 @@
 ---
-title: Créez des types de mixine à l’aide de méthodes d’interface par défaut
-description: En utilisant des membres d’interface par défaut, vous pouvez étendre les interfaces avec des implémentations par défaut facultatives pour les implémenteurs.
+title: Créer des types mixin à l’aide de méthodes d’interface par défaut
+description: À l’aide des membres d’interface par défaut, vous pouvez étendre les interfaces avec des implémentations par défaut facultatives pour les implémenteurs.
 ms.technology: csharp-advanced-concepts
 ms.date: 10/04/2019
-ms.openlocfilehash: ee0536ef51f9bea3e6851be23cc19fa28cc6916b
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: 0095d76eadfe0c6a1b30bf8a0c5000509f5e1bf9
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80134373"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396710"
 ---
-# <a name="tutorial-mix-functionality-in-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Tutorial: Mix fonctionnalité dans la création de classes en utilisant des interfaces avec des méthodes d’interface par défaut
+# <a name="tutorial-mix-functionality-in-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Didacticiel : combiner les fonctionnalités dans lors de la création de classes à l’aide d’interfaces avec les méthodes d’interface par défaut
 
-Depuis C# 8.0 sur .NET Core 3.0, vous pouvez définir une implémentation lorsque vous déclarez un membre d’une interface. Cette fonctionnalité fournit de nouvelles fonctionnalités où vous pouvez définir les implémentations par défaut pour les fonctionnalités déclarées dans les interfaces. Les classes peuvent choisir quand remplacer les fonctionnalités, quand utiliser la fonctionnalité par défaut et quand ne pas déclarer la prise en charge pour les fonctionnalités discrètes.
+Depuis C# 8.0 sur .NET Core 3.0, vous pouvez définir une implémentation lorsque vous déclarez un membre d’une interface. Cette fonctionnalité offre de nouvelles fonctionnalités qui vous permettent de définir des implémentations par défaut pour les fonctionnalités déclarées dans les interfaces. Les classes peuvent choisir quand remplacer les fonctionnalités, quand utiliser les fonctionnalités par défaut et quand ne pas déclarer la prise en charge des fonctionnalités discrètes.
 
 Ce didacticiel vous montre comment effectuer les opérations suivantes :
 
@@ -24,105 +24,105 @@ Ce didacticiel vous montre comment effectuer les opérations suivantes :
 
 ## <a name="prerequisites"></a>Prérequis
 
-Vous aurez besoin de configurer votre machine pour exécuter .NET Core, y compris le compilateur C 8.0. Le compilateur C 8.0 est disponible à partir de [Visual Studio 2019 version 16.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), ou le [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core) ou plus tard.
+Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le compilateur C# 8,0. Le compilateur C# 8,0 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download/dotnet-core) ou version ultérieure.
 
 ## <a name="limitations-of-extension-methods"></a>Limitations des méthodes d’extension
 
-Une façon d’implémenter un comportement qui apparaît dans le cadre d’une interface est de définir les [méthodes d’extension](../programming-guide/classes-and-structs/extension-methods.md) qui fournissent le comportement par défaut. Interfaces déclarer un ensemble minimum de membres tout en fournissant une plus grande surface pour toute classe qui implémente cette interface. Par exemple, les <xref:System.Linq.Enumerable> méthodes d’extension pour fournir la mise en œuvre de toute séquence à être la source d’une requête LINQ.
+L’une des façons dont vous pouvez implémenter le comportement qui s’affiche dans le cadre d’une interface est de définir des [méthodes d’extension](../programming-guide/classes-and-structs/extension-methods.md) qui fournissent le comportement par défaut. Les interfaces déclarent un ensemble minimal de membres tout en fournissant une plus grande surface d’exposition pour toute classe qui implémente cette interface. Par exemple, les méthodes d’extension dans <xref:System.Linq.Enumerable> fournissent l’implémentation pour toute séquence comme source d’une requête LINQ.
 
-Les méthodes d’extension sont résolues au moment de la compilation, en utilisant le type déclaré de la variable. Les classes qui implémentent l’interface peuvent fournir une meilleure implémentation pour n’importe quelle méthode d’extension. Les déclarations variables doivent correspondre au type d’implémentation pour permettre au compilateur de choisir cette implémentation. Lorsque le type de compilation-temps correspond à l’interface, la méthode appelle résoudre à la méthode d’extension. Une autre préoccupation des méthodes d’extension est que ces méthodes sont accessibles partout où la classe contenant les méthodes d’extension est accessible. Les classes ne peuvent pas déclarer si elles doivent ou ne devraient pas fournir des fonctionnalités déclarées dans les méthodes d’extension.
+Les méthodes d’extension sont résolues au moment de la compilation, à l’aide du type déclaré de la variable. Les classes qui implémentent l’interface peuvent fournir une meilleure implémentation pour toute méthode d’extension. Les déclarations de variables doivent correspondre au type d’implémentation pour permettre au compilateur de choisir cette implémentation. Lorsque le type au moment de la compilation correspond à l’interface, les appels de méthode sont résolus à la méthode d’extension. Une autre préoccupation avec les méthodes d’extension est que ces méthodes sont accessibles partout où la classe qui contient les méthodes d’extension est accessible. Les classes ne peuvent pas déclarer si elles doivent ou ne doivent pas fournir des fonctionnalités déclarées dans les méthodes d’extension.
 
-En commençant par le C 8.0, vous pouvez déclarer les implémentations par défaut comme méthodes d’interface. Ensuite, chaque classe utilise automatiquement l’implémentation par défaut. Toute classe qui peut fournir une meilleure implémentation peut remplacer la définition de la méthode d’interface avec un meilleur algorithme. Dans un sens, cette technique ressemble à la façon dont vous pourriez utiliser des [méthodes d’extension](../programming-guide/classes-and-structs/extension-methods.md).
+À compter de C# 8,0, vous pouvez déclarer les implémentations par défaut en tant que méthodes d’interface. Ensuite, chaque classe utilise automatiquement l’implémentation par défaut. Toute classe pouvant fournir une meilleure implémentation peut remplacer la définition de méthode d’interface par un meilleur algorithme. Dans un sens, cette technique ressemble à la façon dont vous pouvez utiliser les [méthodes d’extension](../programming-guide/classes-and-structs/extension-methods.md).
 
-Dans cet article, vous apprendrez comment les implémentations d’interface par défaut permettent de nouveaux scénarios.
+Dans cet article, vous allez découvrir comment les implémentations d’interface par défaut permettent de nouveaux scénarios.
 
 ## <a name="design-the-application"></a>Concevoir l’application
 
-Envisagez une application de domotique. Vous avez probablement beaucoup de différents types de lumières et d’indicateurs qui pourraient être utilisés dans toute la maison. Chaque lumière doit prendre en charge les API pour les activer et les éteindre, et pour signaler l’état actuel. Certaines lumières et indicateurs peuvent prendre en charge d’autres caractéristiques, telles que :
+Prenons l’exemple d’une application domotique. Vous disposez probablement de nombreux types d’éclairages et d’indicateurs qui peuvent être utilisés dans l’ensemble de la maison. Chaque lumière doit prendre en charge les API pour les activer et les désactiver, et pour signaler l’état actuel. Certains éclairages et indicateurs peuvent prendre en charge d’autres fonctionnalités, telles que :
 
-- Allumez la lumière, puis éteignez-la après une minuterie.
-- Clignotez la lumière pendant un certain temps.
+- Activez le voyant, puis désactivez-le après une minuterie.
+- Faire clignoter la lumière pendant une période donnée.
 
-Certaines de ces capacités étendues pourraient être imitées dans des dispositifs qui prennent en charge l’ensemble minimal. Cela indique la fourniture d’une implémentation par défaut. Pour les appareils qui ont plus de capacités intégrées, le logiciel de l’appareil utiliserait les capacités natives. Pour d’autres lumières, ils peuvent choisir d’implémenter l’interface et d’utiliser la implémentation par défaut.
+Certaines de ces fonctionnalités étendues peuvent être émulées sur les appareils qui prennent en charge l’ensemble minimal. Qui indique la fourniture d’une implémentation par défaut. Pour les appareils qui ont plus de fonctionnalités intégrées, le logiciel de l’appareil utilise les fonctionnalités natives. Pour les autres lumières, elles peuvent choisir d’implémenter l’interface et d’utiliser l’implémentation par défaut.
 
-Les membres de l’interface par défaut sont une meilleure solution pour ce scénario que les méthodes d’extension. Les auteurs de classe peuvent contrôler les interfaces qu’ils choisissent d’implémenter. Ces interfaces qu’ils choisissent sont disponibles comme méthodes. En outre, parce que les méthodes d’interface par défaut sont virtuelles par défaut, l’expédition de méthode choisit toujours l’implémentation dans la classe.
+Les membres d’interface par défaut sont une meilleure solution pour ce scénario que les méthodes d’extension. Les auteurs de classe peuvent contrôler les interfaces qu’ils choisissent d’implémenter. Les interfaces qu’ils choisissent sont disponibles en tant que méthodes. En outre, étant donné que les méthodes d’interface par défaut sont virtuelles par défaut, la distribution de méthode choisit toujours l’implémentation dans la classe.
 
-Créons le code pour démontrer ces différences.
+Créons le code pour illustrer ces différences.
 
 ## <a name="create-interfaces"></a>Créer des interfaces
 
-Commencez par créer l’interface qui définit le comportement pour toutes les lumières :
+Commencez par créer l’interface qui définit le comportement de toutes les lumières :
 
-[!code-csharp[Declare base interface](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetILightInterfaceV1)]
+[!code-csharp[Declare base interface](./snippets/mixins-with-default-interface-methods/UnusedExampleCode.cs?name=SnippetILightInterfaceV1)]
 
-Un luminaire de base peut implémenter cette interface comme indiqué dans le code suivant :
+Un dispositif d’éclairage de surcharge de base peut implémenter cette interface comme indiqué dans le code suivant :
 
-[!code-csharp[First overhead light](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetOverheadLightV1)]
+[!code-csharp[First overhead light](./snippets/mixins-with-default-interface-methods/UnusedExampleCode.cs?name=SnippetOverheadLightV1)]
 
-Dans ce tutoriel, le code ne conduit pas les appareils IoT, mais imite ces activités en écrivant des messages à la console. Vous pouvez explorer le code sans automatiser votre maison.
+Dans ce didacticiel, le code ne pilote pas les appareils IoT, mais émule ces activités en écrivant des messages sur la console. Vous pouvez explorer le code sans automatiser votre maison.
 
-Ensuite, définissons l’interface pour une lumière qui peut automatiquement s’éteindre après un délai d’attente:
+Ensuite, nous allons définir l’interface pour une lumière qui peut s’éteindre automatiquement après un délai d’attente :
 
-[!code-csharp[pure Timer interface](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetPureTimerInterface)]
+[!code-csharp[pure Timer interface](./snippets/mixins-with-default-interface-methods/UnusedExampleCode.cs?name=SnippetPureTimerInterface)]
 
-Vous pouvez ajouter une implémentation de base à la lumière aérienne, mais une meilleure solution est de modifier cette définition d’interface pour fournir une `virtual` implémentation par défaut:
+Vous pouvez ajouter une implémentation de base à la lumière de la surcharge, mais une meilleure solution consiste à modifier cette définition d’interface pour fournir une `virtual` implémentation par défaut :
 
-[!code-csharp[Timer interface](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ITimerLight.cs?name=SnippetTimerLightFinal)]
+[!code-csharp[Timer interface](./snippets/mixins-with-default-interface-methods/ITimerLight.cs?name=SnippetTimerLightFinal)]
 
-En ajoutant ce `OverheadLight` changement, la classe peut implémenter la fonction de minuterie en déclarant le support de l’interface :
+En ajoutant cette modification, la `OverheadLight` classe peut implémenter la fonction timer en déclarant la prise en charge de l’interface :
 
 ```csharp
 public class OverheadLight : ITimerLight { }
 ```
 
-Un type de lumière différent peut prendre en charge un protocole plus sophistiqué. Il peut fournir sa `TurnOnFor`propre implémentation pour , comme indiqué dans le code suivant:
+Un type de lumière différent peut prendre en charge un protocole plus sophistiqué. Il peut fournir sa propre implémentation pour `TurnOnFor` , comme illustré dans le code suivant :
 
-[!code-csharp[Override the timer function](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/HalogenLight.cs?name=SnippetHalogenLight)]
+[!code-csharp[Override the timer function](./snippets/mixins-with-default-interface-methods/HalogenLight.cs?name=SnippetHalogenLight)]
 
-Contrairement aux méthodes de classe virtuelle `TurnOnFor` dominantes, la déclaration de dans la `HalogenLight` classe n’utilise pas le `override` mot clé.
+Contrairement aux méthodes de classe virtuelle de substitution, la déclaration de `TurnOnFor` dans la `HalogenLight` classe n’utilise pas le `override` mot clé.
 
-## <a name="mix-and-match-capabilities"></a>Capacités de mélange et de correspondance
+## <a name="mix-and-match-capabilities"></a>Fonctionnalités Mix et match
 
-Les avantages des méthodes d’interface par défaut deviennent plus clairs lorsque vous introduisez des capacités plus avancées. L’utilisation d’interfaces vous permet de mélanger et de assortir les capacités. Il permet également à chaque auteur de classe de choisir entre la mise en œuvre par défaut et une implémentation personnalisée. Ajoutons une interface avec une implémentation par défaut pour une lumière clignotante :
+Les avantages des méthodes d’interface par défaut deviennent plus clairs lorsque vous introduisez des fonctionnalités plus avancées. L’utilisation d’interfaces vous permet de mélanger et de faire correspondre des fonctionnalités. Il permet également à chaque auteur de classe de choisir entre l’implémentation par défaut et une implémentation personnalisée. Nous allons ajouter une interface avec une implémentation par défaut pour une lumière clignotante :
 
-[!code-csharp[Define the blinking light interface](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/IBlinkingLight.cs?name=SnippetBlinkingLight)]
+[!code-csharp[Define the blinking light interface](./snippets/mixins-with-default-interface-methods/IBlinkingLight.cs?name=SnippetBlinkingLight)]
 
-L’implémentation par défaut permet à n’importe quelle lumière de clignoter. La lumière aérienne peut ajouter à la fois des capacités de minuterie et de clignotement à l’aide de la implémentation par défaut :
+L’implémentation par défaut permet à tout éclairage de clignoter. La lumière de la surcharge peut ajouter des fonctionnalités de minuterie et de clignotement à l’aide de l’implémentation par défaut :
 
-[!code-csharp[Use the default blink function](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/OverheadLight.cs?name=SnippetOverheadLight)]
+[!code-csharp[Use the default blink function](./snippets/mixins-with-default-interface-methods/OverheadLight.cs?name=SnippetOverheadLight)]
 
-Un nouveau type `LEDLight` de lumière, le prend en charge à la fois la fonction de minuterie et la fonction de clignotement directement. Ce style léger implémente à la fois le et `ITimerLight` `IBlinkingLight` les interfaces, et l’emporte sur la `Blink` méthode:
+Un nouveau type de lumière, le `LEDLight` prend directement en charge la fonction de minuteur et la fonction Blink. Ce style clair implémente à la fois les `ITimerLight` interfaces et et `IBlinkingLight` substitue la `Blink` méthode :
 
-[!code-csharp[Override the blink function](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/LEDLight.cs?name=SnippetLEDLight)]
+[!code-csharp[Override the blink function](./snippets/mixins-with-default-interface-methods/LEDLight.cs?name=SnippetLEDLight)]
 
-Un `ExtraFancyLight` peut prendre en charge directement les fonctions de clignotement et de minuterie :
+Un `ExtraFancyLight` peut prendre en charge les fonctions de clignotement et de minuteur directement :
 
-[!code-csharp[Override the blink and timer function](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ExtraFancyLight.cs?name=SnippetExtraFancyLight)]
+[!code-csharp[Override the blink and timer function](./snippets/mixins-with-default-interface-methods/ExtraFancyLight.cs?name=SnippetExtraFancyLight)]
 
-Le `HalogenLight` que vous avez créé plus tôt ne prend pas en charge les clignotements. Donc, n’ajoutez `IBlinkingLight` pas la liste de ses interfaces prises en charge.
+Le `HalogenLight` que vous avez créé précédemment ne prend pas en charge le clignotement. Par conséquent, n’ajoutez pas `IBlinkingLight` à la liste des interfaces prises en charge.
 
-## <a name="detect-the-light-types-using-pattern-matching"></a>Détecter les types de lumière à l’aide de l’appariement du modèle
+## <a name="detect-the-light-types-using-pattern-matching"></a>Détecter les types de lumière à l’aide de critères spéciaux
 
-Ensuite, écrivons du code de test. Vous pouvez utiliser la fonction de correspondance des [modèles](../pattern-matching.md) de C pour déterminer les capacités d’une lumière en examinant les interfaces qu’elle prend en charge.  La méthode suivante exerce les capacités supportées de chaque lumière :
+Nous allons ensuite écrire du code de test. Vous pouvez utiliser la fonctionnalité de mise en [correspondance des modèles](../pattern-matching.md) de C# pour déterminer les capacités d’un éclairage en examinant les interfaces qu’il prend en charge.  La méthode suivante exerce les fonctionnalités prises en charge de chaque lumière :
 
-[!code-csharp[Test a light's capabilities](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/Program.cs?name=SnippetTestLightFunctions)]
+[!code-csharp[Test a light's capabilities](./snippets/mixins-with-default-interface-methods/Program.cs?name=SnippetTestLightFunctions)]
 
-Le code suivant `Main` dans votre méthode crée chaque type de lumière dans l’ordre et les tests qui s’allument:
+Le code suivant dans votre `Main` méthode crée chaque type de lumière dans la séquence et teste ce qui est clair :
 
-[!code-csharp[Test a light's capabilities](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/Program.cs?name=SnippetMainMethod)]
+[!code-csharp[Test a light's capabilities](./snippets/mixins-with-default-interface-methods/Program.cs?name=SnippetMainMethod)]
 
 ## <a name="how-the-compiler-determines-best-implementation"></a>Comment le compilateur détermine la meilleure implémentation
 
-Ce scénario affiche une interface de base sans aucune implémentation. L’ajout d’une méthode dans l’interface `ILight` introduit de nouvelles complexités. Les règles linguistiques régissant les méthodes d’interface par défaut minimisent l’effet sur les classes concrètes qui implémentent plusieurs interfaces dérivées. Améliorons l’interface d’origine avec une nouvelle méthode pour montrer comment cela change son utilisation. Chaque voyant indicateur peut déclarer son statut de puissance comme une valeur énumérée :
+Ce scénario montre une interface de base sans implémentation. L’ajout d’une méthode dans l' `ILight` interface introduit de nouvelles complexités. Les règles de langage régissant les méthodes d’interface par défaut réduisent l’effet sur les classes concrètes qui implémentent plusieurs interfaces dérivées. Nous allons améliorer l’interface d’origine avec une nouvelle méthode pour montrer comment cela modifie son utilisation. Chaque témoin lumineux peut signaler son état d’alimentation comme une valeur énumérée :
 
-[!code-csharp[Enumeration for power status](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetPowerStatus)]
+[!code-csharp[Enumeration for power status](./snippets/mixins-with-default-interface-methods/ILight.cs?name=SnippetPowerStatus)]
 
-La mise en œuvre par défaut n’assume aucune puissance :
+L’implémentation par défaut suppose qu’il n’y ait pas de puissance :
 
-[!code-csharp[Report a default power status](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetILightInterface)]
+[!code-csharp[Report a default power status](./snippets/mixins-with-default-interface-methods/ILight.cs?name=SnippetILightInterface)]
 
-Ces changements compilent proprement, `ExtraFancyLight` même si `ILight` le déclare le support `ITimerLight` `IBlinkingLight`pour l’interface et les deux interfaces dérivées, et . Il n’y a qu’une `ILight` seule implémentation « la plus proche » déclarée dans l’interface. Toute classe qui a déclaré un remplacement deviendrait la mise en œuvre la plus « proche ». Vous avez vu des exemples dans les classes précédentes qui ont dépassé les membres d’autres interfaces dérivées.
+Ces modifications sont compilées correctement, même si le `ExtraFancyLight` déclare la prise en charge de l' `ILight` interface et des deux interfaces dérivées, `ITimerLight` et `IBlinkingLight` . Il n’y a qu’une seule implémentation « la plus proche » déclarée dans l' `ILight` interface. Toute classe qui a déclaré une substitution devient l’implémentation « la plus proche ». Vous avez vu des exemples dans les classes précédentes qui a remplacé les membres d’autres interfaces dérivées.
 
-Évitez de passer outre la même méthode dans plusieurs interfaces dérivées. Cela crée un appel de méthode ambigu chaque fois qu’une classe implémente les deux interfaces dérivées. Le compilateur ne peut pas choisir une seule meilleure méthode de sorte qu’il émet une erreur. Par exemple, si `IBlinkingLight` `ITimerLight` le et mis `PowerStatus`en `OverheadLight` œuvre un remplacement de , le devrait fournir un remplacement plus spécifique. Sinon, le compilateur ne peut pas choisir entre les implémentations dans les deux interfaces dérivées. Vous pouvez généralement éviter cette situation en gardant les définitions d’interface petites et axées sur une seule fonctionnalité. Dans ce scénario, chaque capacité d’une lumière est sa propre interface; plusieurs interfaces ne sont héritées que par les classes.
+Évitez de substituer la même méthode dans plusieurs interfaces dérivées. Si vous procédez ainsi, un appel de méthode ambigu est créé chaque fois qu’une classe implémente les deux interfaces dérivées. Le compilateur ne peut pas choisir une méthode unique pour qu’il génère une erreur. Par exemple, si `IBlinkingLight` et implémentent tous deux la `ITimerLight` substitution de `PowerStatus` , le doit `OverheadLight` fournir une substitution plus spécifique. Sinon, le compilateur ne peut pas choisir entre les implémentations dans les deux interfaces dérivées. Vous pouvez généralement éviter cette situation en conservant les définitions d’interface de petite taille et en vous concentrant sur une seule fonctionnalité. Dans ce scénario, chaque fonctionnalité d’une lumière est sa propre interface ; plusieurs interfaces sont héritées uniquement par les classes.
 
-Cet exemple montre un scénario où vous pouvez définir des fonctionnalités discrètes qui peuvent être mélangées en classes. Vous déclarez tout ensemble de fonctionnalités prises en déclarant quelles interfaces une classe prend en charge. L’utilisation de méthodes d’interface par défaut virtuelles permet aux classes d’utiliser ou de définir une implémentation différente pour l’une ou l’autre des méthodes d’interface. Cette capacité linguistique offre de nouvelles façons de modéliser les systèmes du monde réel que vous construisez. Les méthodes d’interface par défaut offrent un moyen plus clair d’exprimer des classes connexes qui peuvent mélanger et assortir différentes fonctionnalités à l’aide d’implémentations virtuelles de ces capacités.
+Cet exemple illustre un scénario dans lequel vous pouvez définir des fonctionnalités discrètes qui peuvent être mélangées dans des classes. Vous déclarez tout ensemble de fonctionnalités prises en charge en déclarant les interfaces prises en charge par une classe. L’utilisation de méthodes d’interface par défaut virtuelles permet aux classes d’utiliser ou de définir une implémentation différente pour toute ou partie des méthodes d’interface. Cette fonctionnalité de langage offre de nouvelles façons de modéliser les systèmes réels que vous créez. Les méthodes d’interface par défaut offrent un moyen plus clair d’exprimer des classes connexes qui peuvent combiner et faire correspondre des fonctionnalités différentes à l’aide d’implémentations virtuelles de ces fonctionnalités.

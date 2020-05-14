@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataMethodInstance::GetRepresentativeEntryAddress (méthode)
+title: 'IXCLRDataMethodInstance :: GetRepresentativeEntryAddress, méthode'
 ms.date: 02/01/2019
 api.name:
 - IXCLRDataMethodInstance::GetRepresentativeEntryAddress
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 5c79e916a06e796fc87b57eb949cccda77b8a9bd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d9f9e16d243c0f3b45ac24776caea5bb9c32dcc1
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744663"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395752"
 ---
-# <a name="ixclrdatamethodinstancegetrepresentativeentryaddress-method"></a>IXCLRDataMethodInstance::GetRepresentativeEntryAddress (méthode)
+# <a name="ixclrdatamethodinstancegetrepresentativeentryaddress-method"></a>IXCLRDataMethodInstance :: GetRepresentativeEntryAddress, méthode
 
-Obtient l’adresse de point d’entrée plus représentatif de la compilation native de tous les points d’entrée possibles pour une méthode.
+Obtient l’adresse de point d’entrée la plus représentative pour la compilation native de tous les points d’entrée possibles pour une méthode.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -39,20 +39,20 @@ HRESULT GetRepresentativeEntryAddress(
 ## <a name="parameters"></a>Paramètres
 
 `addr`\
-[out] L’adresse du point d’entrée natif plus représentatif pour la méthode.
+à Adresse du point d’entrée natif le plus représentatif de la méthode.
 
 ## <a name="remarks"></a>Notes
 
-La méthode fournie fait partie de la [ `IXCLRDataMethodInstance` interface](ixclrdatamethodinstance-interface.md) et correspond à l’emplacement de la table de la méthode virtuelle de 19.
+La méthode fournie fait partie de l' [ `IXCLRDataMethodInstance` interface](ixclrdatamethodinstance-interface.md) et correspond au vingtième emplacement de la table de méthodes virtuelles.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun  
-**Bibliothèque :** Aucun  
-**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**En-tête :** None  
+**Bibliothèque :** None  
+**Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Débogage](index.md)
-- [Interface de IXCLRDataMethodInstance](ixclrdatamethodinstance-interface.md)
+- [IXCLRDataMethodInstance, interface](ixclrdatamethodinstance-interface.md)

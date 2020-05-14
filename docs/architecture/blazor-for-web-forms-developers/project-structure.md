@@ -1,27 +1,27 @@
 ---
-title: Structure de projet pour les applications Blazor
-description: Découvrez comment se comparent les structures de projets des ASP.NET des formulaires Web et des projets Blazor.
+title: Structure de projet pour les applications éblouissantes
+description: Découvrez comment les structures de projet des ASP.NET Web Forms et des projets éblouissants sont comparées.
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: 2c383e86ff22f5a3460476998992b66e9417cc11
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7e622663bedce13c93b8d72f5a699d076e8139b7
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401577"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83394777"
 ---
-# <a name="project-structure-for-blazor-apps"></a>Structure de projet pour les applications Blazor
+# <a name="project-structure-for-blazor-apps"></a>Structure de projet pour les applications éblouissantes
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Malgré leurs différences importantes de structure de projet, ASP.NET Web Forms et Blazor partagent de nombreux concepts similaires. Ici, nous allons examiner la structure d’un projet Blazor et le comparer à un projet ASP.NET Web Forms.
+Malgré leurs différences de structure de projet, ASP.NET Web Forms et éblouissant partagent un grand nombre de concepts similaires. Ici, nous allons examiner la structure d’un projet éblouissant et le comparer à un projet de Web Forms ASP.NET.
 
-Pour créer votre première application Blazor, suivez les instructions dans le [Blazor se lancer étapes](/aspnet/core/blazor/get-started). Vous pouvez suivre les instructions pour créer une application Blazor Server ou une application Blazor WebAssembly hébergée dans ASP.NET Core. À l’exception de la logique spécifique au modèle d’hébergement, la plupart du code des deux projets est le même.
+Pour créer votre première application éblouissante, suivez les instructions fournies dans les [étapes de prise](/aspnet/core/blazor/get-started)en main de éblouissant. Vous pouvez suivre les instructions pour créer une application de serveur éblouissant ou une application de webassembly éblouissante hébergée dans ASP.NET Core. À l’exception de la logique spécifique au modèle d’hébergement, la majeure partie du code dans les deux projets est identique.
 
 ## <a name="project-file"></a>Fichier projet
 
-Les applications Blazor Server sont des projets .NET Core. Le fichier de projet pour l’application Blazor Server est à peu près aussi simple qu’il peut l’obtenir :
+Les applications serveur éblouissantes sont des projets .NET Core. Le fichier projet pour l’application de serveur éblouissante est à la fois aussi simple que possible :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -33,7 +33,7 @@ Les applications Blazor Server sont des projets .NET Core. Le fichier de projet 
 </Project>
 ```
 
-Le fichier de projet d’une application Blazor WebAssembly semble légèrement plus impliqué (les numéros de version exact peuvent varier) :
+Le fichier projet pour une application de webassembly éblouissant est légèrement plus impliqué (les numéros de version exacts peuvent varier) :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -57,11 +57,11 @@ Le fichier de projet d’une application Blazor WebAssembly semble légèrement 
 </Project>
 ```
 
-Blazor WebAssembly projette cible .NET Standard au lieu de .NET Core parce qu’ils s’exécutent dans le navigateur sur un WebAssembly-based .NET runtime. Vous ne pouvez pas installer .NET dans un navigateur web comme vous pouvez sur un serveur ou une machine de développeur. Par conséquent, le projet fait référence au cadre Blazor à l’aide de références individuelles.
+Les projets de webassembly éblouissant ciblent .NET Standard au lieu de .NET Core, car ils s’exécutent dans le navigateur sur un Runtime .NET basé sur webassembly. Vous ne pouvez pas installer .NET dans un navigateur Web comme vous le pouvez sur un serveur ou un ordinateur de développement. Par conséquent, le projet fait référence au Framework éblouissant à l’aide de références de package individuelles.
 
-En comparaison, un projet par défaut ASP.NET Web Forms comprend près de 300 lignes de XML dans son fichier *.csproj,* dont la plupart sont explicitement la liste des différents fichiers de code et de contenu dans le projet. Bon nombre des simplifications dans les projets .NET Core- et .NET Standard-based `Microsoft.NET.Sdk.Web` proviennent des cibles par défaut et les propriétés importées par référence à la SDK, souvent appelé simplement le Web SDK. Le Web SDK comprend des wildcards et d’autres commodités qui simplifient l’inclusion des fichiers de code et de contenu dans le projet. Vous n’avez pas besoin d’énumérer explicitement les fichiers. Lors du ciblage .NET Core, le Web SDK ajoute également des références-cadres à la fois le base .NET et ASP.NET cadres communs core. Les cadres sont visibles à partir du nœud**Des cadres** **de dépendance** > dans la fenêtre **Solution Explorer.** Les cadres partagés sont des collections d’assemblages qui ont été installés sur la machine lors de l’installation .NET Core.
+Par comparaison, un projet ASP.NET Web Forms par défaut comprend près de 300 lignes de code XML dans son fichier *. csproj* , dont la plupart répertorient explicitement les différents fichiers de code et de contenu du projet. Un grand nombre des simplifications dans les projets .NET Core et .NET Standard proviennent des cibles et des propriétés par défaut importées en référençant le `Microsoft.NET.Sdk.Web` Kit de développement logiciel (SDK), souvent appelé simplement Kit de développement logiciel (SDK) Web. Le kit de développement logiciel (SDK) Web comprend des caractères génériques et d’autres pratiques qui simplifient l’inclusion de code et de fichiers de contenu dans le projet. Vous n’avez pas besoin de répertorier les fichiers explicitement. Quand vous ciblez .NET Core, le kit de développement logiciel (SDK) Web ajoute également des références d’infrastructure aux frameworks partagés .NET Core et ASP.NET Core. Les frameworks sont visibles à partir du nœud infrastructures de **dépendances**  >  **Frameworks** dans la fenêtre **Explorateur de solutions** . Les frameworks partagés sont des collections d’assemblys qui ont été installés sur l’ordinateur lors de l’installation de .NET Core.
 
-Bien qu’elles soient prises en charge, les références d’assemblage individuels sont moins courantes dans les projets .NET Core. La plupart des dépendances de projet sont traitées comme des références de paquet NuGet. Vous n’avez qu’à faire référence aux dépendances de paquets de haut niveau dans les projets .NET Core. Les dépendances transitoires sont incluses automatiquement. Au lieu d’utiliser le fichier *packages.config* que l’on trouve couramment dans ASP.NET les `<PackageReference>` projets Web Forms pour les paquets de référence, des références de paquets sont ajoutées au fichier de projet à l’aide de l’élément.
+Bien qu’elles soient prises en charge, les références d’assembly individuelles sont moins fréquentes dans les projets .NET Core. La plupart des dépendances de projet sont gérées en tant que références de package NuGet. Il vous suffit de référencer les dépendances de package de niveau supérieur dans les projets .NET Core. Les dépendances transitives sont incluses automatiquement. Au lieu d’utiliser le fichier *packages. config* qui se trouve généralement dans ASP.NET Web Forms projets pour référencer des packages, des références de package sont ajoutées au fichier projet à l’aide de l' `<PackageReference>` élément.
 
 ```xml
 <ItemGroup>
@@ -71,7 +71,7 @@ Bien qu’elles soient prises en charge, les références d’assemblage individ
 
 ## <a name="entry-point"></a>Point d’entrée
 
-Le point d’entrée de l’application Blazor Server est défini dans le fichier *Program.cs,* comme vous le verriez dans une application Console. Lorsque l’application s’exécute, elle crée et exécute une instance d’hôte Web en utilisant des défauts spécifiques aux applications Web. L’hébergeur gère le cycle de vie de l’application Blazor Server et met en place des services au niveau de l’hôte. Des exemples de ces services sont la configuration, l’enregistrement, l’injection de dépendance et le serveur HTTP. Ce code est principalement boilerplate et est souvent laissé inchangé.
+Le point d’entrée de l’application serveur éblouissant est défini dans le fichier *Program.cs* , comme vous pouvez le voir dans une application console. Lorsque l’application s’exécute, elle crée et exécute une instance d’hôte Web à l’aide des valeurs par défaut spécifiques aux applications Web. L’hôte Web gère le cycle de vie de l’application serveur éblouissante et configure les services de niveau hôte. La configuration, la journalisation, l’injection de dépendances et le serveur HTTP sont des exemples de ces services. Ce code est principalement réutilisable et reste souvent inchangé.
 
 ```csharp
 public class Program
@@ -90,17 +90,17 @@ public class Program
 }
 ```
 
-Les applications Blazor WebAssembly définissent également un point d’entrée dans *Program.cs*. Le code semble légèrement différent. Le code est similaire en ce qu’il configure l’hôte de l’application pour fournir les mêmes services au niveau de l’hôte à l’application. L’hébergeur d’applications WebAssembly n’a cependant pas configuré un serveur HTTP parce qu’il s’exécute directement dans le navigateur.
+Les applications de webassembly éblouissantes définissent également un point d’entrée dans *Program.cs*. Le code semble légèrement différent. Le code est similaire en ce qu’il configure l’hôte d’application pour fournir les mêmes services de niveau hôte à l’application. Toutefois, l’hôte d’application webassembly ne configure pas un serveur HTTP, car il s’exécute directement dans le navigateur.
 
-Les applications Blazor ont une `Startup` classe au lieu d’un fichier *Global.asax* pour définir la logique de démarrage de l’application. La `Startup` classe est utilisée pour configurer l’application et tous les services spécifiques à l’application. Dans l’application Blazor `Startup` Server, la classe est utilisée pour configurer le point de terminaison de la connexion en temps réel utilisée par Blazor entre les navigateurs clients et le serveur. Dans l’application WebAssembly De `Startup` Blazor, la classe définit les composants racinaires de l’application et où ils doivent être rendus. Nous allons jeter un regard `Startup` plus approfondi sur la classe dans la section [de démarrage App.](./app-startup.md)
+Les applications éblouissantes ont une `Startup` classe au lieu d’un fichier *global. asax* pour définir la logique de démarrage de l’application. La `Startup` classe est utilisée pour configurer l’application et tous les services spécifiques à l’application. Dans l’application de serveur éblouissant, la `Startup` classe est utilisée pour configurer le point de terminaison de la connexion en temps réel utilisée par éblouissant entre les navigateurs clients et le serveur. Dans l’application de webassembly éblouissant, la `Startup` classe définit les composants racine de l’application et l’emplacement où elles doivent être rendues. Nous examinerons plus en détail la `Startup` classe dans la section démarrage de l' [application](./app-startup.md) .
 
 ## <a name="static-files"></a>Fichiers statiques
 
-Contrairement aux projets ASP.NET Web Forms, tous les fichiers d’un projet Blazor ne peuvent pas être demandés sous forme de fichiers statiques. Seuls les fichiers du dossier *wwwroot* sont adressables au Web. Ce dossier est référé à la « racine web » de l’application. Tout ce qui est en dehors de la racine web de l’application *n’est pas* accessible au Web. Cette configuration fournit un niveau de sécurité supplémentaire qui empêche l’exposition accidentelle de fichiers de projet sur le web.
+Contrairement aux projets ASP.NET Web Forms, tous les fichiers d’un projet éblouissant ne peuvent pas être demandés en tant que fichiers statiques. Seuls les fichiers du dossier *wwwroot* sont adressables par le Web. Ce dossier est appelé « racine Web » de l’application. Tout ce qui se trouve en dehors de la racine Web de l’application *n’est pas* adressable par le Web. Ce programme d’installation fournit un niveau supplémentaire de sécurité qui empêche l’exposition accidentelle de fichiers projet sur le Web.
 
 ## <a name="configuration"></a>Configuration
 
-La configuration dans ASP.NET applications Web Forms est généralement gérée à l’aide d’un ou de plusieurs fichiers *web.config.* Les applications Blazor n’ont généralement pas de fichiers *web.config.* S’ils le font, le fichier n’est utilisé que pour configurer des paramètres spécifiques à l’IIS lorsqu’il est hébergé sur IIS. Au lieu de cela, les applications Blazor Server utilisent les abstractions de configuration ASP.NET Core (les applications Blazor WebAssembly ne prennent pas actuellement en charge les mêmes abstractions de configuration, mais cela peut être une fonctionnalité ajoutée à l’avenir). Par exemple, l’application par défaut Blazor Server stocke certains paramètres dans *appsettings.json*.
+La configuration dans ASP.NET Web Forms Apps est généralement gérée à l’aide d’un ou de plusieurs fichiers *Web. config* . Les applications éblouissantes n’ont généralement pas de fichiers *Web. config* . Dans ce cas, le fichier est utilisé uniquement pour configurer les paramètres spécifiques à IIS lorsqu’ils sont hébergés sur IIS. Au lieu de cela, les applications de serveur éblouissant utilisent le ASP.NET Core abstractions de la configuration (les applications webassembly éblouissantes ne prennent pas en charge les mêmes abstractions de configuration, mais il peut s’agir d’une fonctionnalité ajoutée à l’avenir). Par exemple, l’application de serveur éblouissante par défaut stocke certains paramètres dans *appSettings. JSON*.
 
 ```json
 {
@@ -115,15 +115,15 @@ La configuration dans ASP.NET applications Web Forms est généralement gérée 
 }
 ```
 
-Nous en apprendrons davantage sur la configuration dans ASP.NET projets de base dans la section [Configuration.](./config.md)
+Pour plus d’informations sur la configuration dans ASP.NET Core projets, consultez la section [configuration](./config.md) .
 
-## <a name="razor-components"></a>Composants de rasoir
+## <a name="razor-components"></a>Composants Razor
 
-La plupart des fichiers dans les projets Blazor sont des fichiers *.razor.* Razor est un langage de templating basé sur HTML et C qui est utilisé pour générer dynamiquement l’interface utilisateur web. Les fichiers *.razor* définissent les composants qui composent l’interface utilisateur de l’application. Pour la plupart, les composants sont identiques pour les applications Blazor Server et Blazor WebAssembly. Les composants de Blazor sont analogues aux contrôles des utilisateurs dans ASP.NET formulaires Web.
+La plupart des fichiers dans les projets éblouissants sont des fichiers *. Razor* . Razor est un langage de création de modèles basé sur HTML et C# qui est utilisé pour générer dynamiquement l’interface utilisateur Web. Les fichiers *. Razor* définissent les composants qui composent l’interface utilisateur de l’application. Pour l’essentiel, les composants sont identiques pour le serveur éblouissant et les applications webassembly éblouissantes. Les composants de éblouissant sont analogues aux contrôles utilisateur dans ASP.NET Web Forms.
 
-Chaque fichier de composants Razor est compilé dans une classe .NET lorsque le projet est construit. La classe générée capture l’état du composant, rendant la logique, les méthodes de cycle de vie, les gestionnaires d’événements, et d’autres logiques. Nous examinerons la création de composants dans les [composants réutilisables de l’interface utilisateur du bâtiment avec](./components.md) la section Blazor.
+Chaque fichier de composant Razor est compilé dans une classe .NET lorsque le projet est généré. La classe générée capture l’état du composant, la logique de rendu, les méthodes de cycle de vie, les gestionnaires d’événements et d’autres logiques. Nous examinerons la création de composants dans la section [création de composants d’interface utilisateur réutilisables avec éblouissant](./components.md) .
 
-Les *fichiers _Imports.razor* ne sont pas des fichiers de composants Razor. Au lieu de cela, ils définissent un ensemble de directives Razor à importer dans d’autres fichiers *.razor* dans le même dossier et dans ses sous-plis. Par exemple, un fichier *_Imports.razor* est un `using` moyen conventionnel d’ajouter des instructions pour les espaces de nom couramment utilisés :
+Les fichiers *_Imports. Razor* ne sont pas des fichiers de composants Razor. Au lieu de cela, ils définissent un ensemble de directives Razor à importer dans d’autres fichiers *. Razor* dans le même dossier et dans ses sous-dossiers. Par exemple, un fichier *_Imports. Razor* est un moyen conventionnel d’ajouter `using` des directives pour les espaces de noms couramment utilisés :
 
 ```razor
 @using System.Net.Http
@@ -139,38 +139,38 @@ Les *fichiers _Imports.razor* ne sont pas des fichiers de composants Razor. Au l
 
 ## <a name="pages"></a>Pages
 
-Où sont les pages des applications Blazor ? Blazor ne définit pas une extension de fichier séparée pour les pages adressables, comme les fichiers *.aspx* dans ASP.NET applications Web Forms. Au lieu de cela, les pages sont définies en assignant des itinéraires aux composants. Un itinéraire est généralement `@page` attribué à l’aide de la directive Razor. Par exemple, `Counter` le composant rédigé dans le fichier *Pages/Counter.razor* définit l’itinéraire suivant :
+Où se trouvent les pages des applications éblouissantes ? Éblouissant ne définit pas d’extension de fichier distincte pour les pages adressables, comme les fichiers *. aspx* dans ASP.NET Web Forms apps. Au lieu de cela, les pages sont définies en affectant des itinéraires aux composants. Un itinéraire est généralement affecté à l’aide de la `@page` directive Razor. Par exemple, le `Counter` composant créé dans le fichier *pages/Counter. Razor* définit l’itinéraire suivant :
 
 ```razor
 @page "/counter"
 ```
 
-Routing à Blazor est géré côté client, pas sur le serveur. Pendant que l’utilisateur navigue dans le navigateur, Blazor intercepte la navigation, puis rend le composant avec l’itinéraire correspondant.
+Le routage dans éblouissant est géré côté client et non sur le serveur. Lorsque l’utilisateur navigue dans le navigateur, éblouissant intercepte la navigation, puis restitue le composant avec l’itinéraire correspondant.
 
-Les itinéraires des composants ne sont pas actuellement déduits par l’emplacement du fichier du composant comme ils le sont avec des pages *.aspx.* Cette fonctionnalité peut être ajoutée à l’avenir. Chaque itinéraire doit être spécifié explicitement sur le composant. Le stockage des composants routables dans un dossier *Pages* n’a pas de signification particulière et est purement une convention.
+Les itinéraires des composants ne sont pas actuellement déduits par l’emplacement des fichiers du composant, comme par exemple avec les pages *. aspx* . Cette fonctionnalité peut être ajoutée à l’avenir. Chaque itinéraire doit être spécifié explicitement sur le composant. Le stockage de composants routables dans un dossier *pages* n’a aucune signification particulière et constitue purement une convention.
 
-Nous examinerons plus en détail l’itinéraire dans Blazor dans les Pages, le routage et la section [mises en page.](./pages-routing-layouts.md)
+Nous examinerons plus en détail le routage dans éblouissant dans la section [pages, routage et dispositions](./pages-routing-layouts.md) .
 
-## <a name="layout"></a>Disposition
+## <a name="layout"></a>Mise en page
 
-Dans ASP.NET applications Web Forms, la mise en page commune est gérée à l’aide de pages maîtresses (*Site.Master*). Dans les applications Blazor, la mise en page est gérée à l’aide de composants de mise en page *(Shared/MainLayout.razor*). Les composants de mise en page seront discutés plus en détail dans [la section Page, routage et mise en page.](./pages-routing-layouts.md)
+Dans ASP.NET Web Forms Apps, la disposition de page courante est gérée à l’aide de pages maîtres (*site. Master*). Dans les applications éblouissantes, la mise en page est gérée à l’aide de composants de disposition (*Shared/MainLayout. Razor*). Les composants de disposition seront abordés plus en détail dans la section [page, routage et dispositions](./pages-routing-layouts.md) .
 
-## <a name="bootstrap-blazor"></a>Bootstrap Blazor
+## <a name="bootstrap-blazor"></a>Démarrage éblouissant
 
-Pour bootstrap Blazor, l’application doit:
+Pour démarrer éblouissant, l’application doit :
 
-- Spécifier où sur la page le composant racine (*App.Razor*) doit être rendu.
-- Ajoutez le script-cadre Blazor correspondant.
+- Spécifiez l’emplacement de la page où le composant racine (*app. Razor*) doit être rendu.
+- Ajoutez le script de Framework éblouissant correspondant.
 
-Dans l’application Blazor Server, la page d’accueil du composant racine est définie dans le fichier *_Host.cshtml.* Ce fichier définit une page Razor, pas un composant. Razor Pages utilise la syntaxe Razor pour définir une page adressable au serveur, tout comme une page *.aspx.* La `Html.RenderComponentAsync<TComponent>(RenderMode)` méthode est utilisée pour définir où un composant au niveau des racines doit être rendu. L’option `RenderMode` indique la façon dont le composant doit être rendu. Le tableau suivant décrit `RenderMode` les options prises en charge.
+Dans l’application de serveur éblouissant, la page hôte du composant racine est définie dans le fichier *_Host. cshtml* . Ce fichier définit une page Razor, et non un composant. Razor Pages utiliser syntaxe Razor pour définir une page adressable par le serveur, à l’instar d’une page *. aspx* . La `Html.RenderComponentAsync<TComponent>(RenderMode)` méthode est utilisée pour définir l’emplacement où un composant de niveau racine doit être restitué. L' `RenderMode` option indique la manière dont le composant doit être rendu. Le tableau suivant présente les options prises en charge `RenderMode` .
 
 |Option                        |Description       |
 |------------------------------|------------------|
 |`RenderMode.Server`           |Rendu interactif une fois qu’une connexion avec le navigateur est établie|
-|`RenderMode.ServerPrerendered`|D’abord préditulé puis rendu de manière interactive|
-|`RenderMode.Static`           |Rendu comme contenu statique|
+|`RenderMode.ServerPrerendered`|Premier prérendu puis rendu interactif|
+|`RenderMode.Static`           |Rendu en tant que contenu statique|
 
-La référence de script à *_framework/blazor.server.js* établit la connexion en temps réel avec le serveur, puis traite de toutes les interactions utilisateur et mises à jour de l’interface utilisateur.
+La référence de script à *_framework/blazor.Server.js* établit la connexion en temps réel avec le serveur, puis traite toutes les interactions utilisateur et les mises à jour de l’interface utilisateur.
 
 ```razor
 @page "/"
@@ -197,7 +197,7 @@ La référence de script à *_framework/blazor.server.js* établit la connexion 
 </html>
 ```
 
-Dans l’application Blazor WebAssembly, la page d’accueil est un fichier HTML statique simple sous *wwwroot/index.html*. L’élément `<app>` est utilisé pour indiquer où le composant racine doit être rendu.
+Dans l’application de webassembly éblouissant, la page hôte est un simple fichier HTML statique sous *wwwroot/index.html*. L' `<app>` élément est utilisé pour indiquer l’emplacement où le composant racine doit être restitué.
 
 ```html
 <!DOCTYPE html>
@@ -218,7 +218,7 @@ Dans l’application Blazor WebAssembly, la page d’accueil est un fichier HTML
 </html>
 ```
 
-Le composant spécifique à rendre est configuré dans la méthode de `Startup.Configure` l’application avec un sélecteur CSS correspondant indiquant où le composant doit être rendu.
+Le composant spécifique à restituer est configuré dans la méthode de l’application `Startup.Configure` avec un sélecteur CSS correspondant indiquant où le composant doit être rendu.
 
 ```csharp
 public class Startup
@@ -236,19 +236,19 @@ public class Startup
 
 ## <a name="build-output"></a>Sortie de la génération
 
-Lorsqu’un projet Blazor est construit, tous les fichiers de composants et de codes Razor sont compilés en un seul assemblage. Contrairement aux projets ASP.NET Web Forms, Blazor ne prend pas en charge la compilation en temps d’exécution de la logique de l’interface utilisateur.
+Lorsqu’un projet éblouissant est généré, tous les fichiers de code et de composant Razor sont compilés dans un assembly unique. Contrairement aux projets ASP.NET Web Forms, éblouissant ne prend pas en charge la compilation du runtime de la logique d’interface utilisateur.
 
 ## <a name="run-the-app"></a>Exécuter l’application
 
-Pour exécuter l’application Blazor Server, appuyez `F5` sur Visual Studio. Les applications Blazor ne prennent pas en charge la compilation en temps d’exécution. Pour voir les résultats des modifications de balisage de code et de composant, reconstruisez et redémarrez l’application avec le débbugger ci-joint. Si vous exécutez sans le`Ctrl+F5`débbugger ci-joint (), Visual Studio veille pour les modifications de fichiers et redémarre l’application au fur et à mesure que des modifications sont apportées. Vous actualisez manuellement le navigateur au fur et à mesure que des modifications sont apportées.
+Pour exécuter l’application de serveur éblouissante, appuyez sur `F5` dans Visual Studio. Les applications éblouissantes ne prennent pas en charge la compilation au moment de l’exécution. Pour afficher les résultats des modifications du balisage du code et des composants, régénérez et redémarrez l’application avec le débogueur attaché. Si vous exécutez sans le débogueur attaché ( `Ctrl+F5` ), Visual Studio surveille les modifications apportées aux fichiers et redémarre l’application à mesure que des modifications sont apportées. Vous actualisez manuellement le navigateur à mesure que des modifications sont apportées.
 
-Pour exécuter l’application Blazor WebAssembly, choisissez l’une des approches suivantes :
+Pour exécuter l’application éblouissant webassembly, choisissez l’une des approches suivantes :
 
 - Exécutez le projet client directement à l’aide du serveur de développement.
 - Exécutez le projet serveur lors de l’hébergement de l’application avec ASP.NET Core.
 
-Les applications Blazor WebAssembly ne prennent pas en charge le débogage à l’aide de Visual Studio. Pour exécuter l’application, utilisez `Ctrl+F5` au lieu de `F5`. Vous pouvez plutôt débomber Blazor WebAssembly applications directement dans le navigateur. Voir [Debug ASP.NET Core Blazor](/aspnet/core/blazor/debug) pour plus de détails.
+Les applications webassembly éblouissantes ne prennent pas en charge le débogage à l’aide de Visual Studio. Pour exécuter l’application, utilisez `Ctrl+F5` au lieu de `F5` . Au lieu de cela, vous pouvez déboguer des applications webassembly éblouissantes directement dans le navigateur. Pour plus d’informations, consultez [Déboguer ASP.net Core éblouissant](/aspnet/core/blazor/debug) .
 
 >[!div class="step-by-step"]
->[Suivant précédent](hosting-models.md)
->[Next](app-startup.md)
+>[Précédent](hosting-models.md) 
+> [Suivant](app-startup.md)

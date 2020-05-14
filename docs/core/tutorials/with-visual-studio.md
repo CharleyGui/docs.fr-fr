@@ -1,78 +1,78 @@
 ---
-title: Créez une application Hello World avec .NET Core dans Visual Studio
-description: Apprenez à créer votre première application de console .NET Core avec C ou Visual Basic à l’aide de Visual Studio.
+title: Créer une application Hello World avec .NET Core dans Visual Studio
+description: Découvrez comment créer votre première application de console .NET Core avec C# ou Visual Basic à l’aide de Visual Studio.
 author: BillWagner
 ms.author: wiwagn
 ms.date: 12/09/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: ba996e4add1cfe44681154b00a6530b1f3e70b37
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 738fc49a820c3c5d94fb35c1bf7a8b718ed75cb3
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713997"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83394828"
 ---
-# <a name="tutorial-create-your-first-net-core-console-application-in-visual-studio-2019"></a>Tutorial: Créer votre première application de console .NET Core dans Visual Studio 2019
+# <a name="tutorial-create-your-first-net-core-console-application-in-visual-studio-2019"></a>Didacticiel : créer votre première application de console .NET Core dans Visual Studio 2019
 
-Cet article fournit une introduction étape par étape pour créer et exécuter une application de console Hello World .NET Core dans Visual Studio 2019. Une application Hello World est traditionnellement utilisée pour initier les débutants à un nouveau langage de programmation. Ce programme affiche simplement l’expression "Bonjour monde!" à l’écran.
+Cet article fournit une présentation pas à pas de la création et de l’exécution d’une application console Hello World .NET Core dans Visual Studio 2019. Une application Hello World est traditionnellement utilisée pour introduire des débutants dans un nouveau langage de programmation. Ce programme affiche simplement l’expression « Hello World ! » à l’écran.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
-- [Visual Studio 2019 version 16.4 ou une version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail de développement **multiplateforme .NET Core** installé. .NET Core 3.1 SDK est automatiquement installé lorsque vous sélectionnez cette charge de travail.
+- [Visual Studio 2019 version 16,4 ou une version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail **développement multiplateforme .net Core** installée. Le kit de développement logiciel (SDK) .NET Core 3,1 est automatiquement installé lorsque vous sélectionnez cette charge de travail.
 
-Pour plus d’informations, voir la section [Installer avec Visual Studio](../install/sdk.md?pivots=os-windows#install-with-visual-studio) sur [l’installation de l’article .NET Core SDK.](../install/sdk.md?pivots=os-windows)
+Pour plus d’informations, consultez la section [install with Visual Studio](../install/sdk.md?pivots=os-windows#install-with-visual-studio) de l’article [install the kit SDK .net Core](../install/sdk.md?pivots=os-windows) .
 
 ## <a name="create-the-app"></a>Créer l’application
 
-Les instructions suivantes créent une simple application de console Hello World :
+Les instructions suivantes créent une application console Hello World simple :
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 1. Ouvrez Visual Studio 2019.
 
-1. Créez un nouveau projet d’application de console c.NET Core nommé "HelloWorld".
+1. Créez un nouveau projet d’application console C# .NET Core nommé « HelloWorld ».
 
-   1. Sur la fenêtre de départ, choisissez **Créer un nouveau projet**.
+   1. Dans la fenêtre Démarrer, choisissez **créer un nouveau projet**.
 
-      ![Créez un nouveau bouton de projet sélectionné sur la fenêtre de démarrage visual Studio](./media/with-visual-studio/start-window.png)
+      ![Bouton créer un projet sélectionné dans la fenêtre de démarrage de Visual Studio](./media/with-visual-studio/start-window.png)
 
-   1. Sur la **page Créer un nouveau projet,** entrez la **console** dans la boîte de recherche. Ensuite, choisissez **C dans** la liste linguistique, puis choisissez toutes **les plates-formes** de la liste de la plate-forme. Choisissez le modèle **Console App (.NET Core),** puis choisissez **Next**.
+   1. Sur la page **créer un nouveau projet** , dans la zone de recherche, entrez **console** . Ensuite, choisissez **C#** dans la liste langue, puis choisissez **toutes les plateformes** dans la liste plateforme. Choisissez le modèle **application console (.net Core)** , puis choisissez **suivant**.
 
-      ![Créer une nouvelle fenêtre de projet avec des filtres sélectionnés](./media/with-visual-studio/create-new-project.png)
+      ![Créer une fenêtre de projet avec les filtres sélectionnés](./media/with-visual-studio/create-new-project.png)
 
       > [!TIP]
-      > Si vous ne voyez pas les modèles .NET Core, vous manquez probablement la charge de travail requise installée. Sous le **message Ne pas trouver ce que vous recherchez?** message, choisissez l’installation plus **d’outils et de fonctionnalités** lien. L’installateur Visual Studio ouvre ses portes. Assurez-vous d’avoir installé la charge de travail **de développement multiplateforme .NET Core.**
+      > Si vous ne voyez pas les modèles .NET Core, vous ne disposez probablement pas de la charge de travail requise installée. Sous le message **vous ne trouvez pas ce que vous recherchez ?** , choisissez le lien **installer d’autres outils et fonctionnalités** . Le Visual Studio Installer s’ouvre. Assurez-vous que la charge de travail de **développement multiplateforme .net Core** est installée.
 
-   1. Sur la configuration de votre nouvelle page **de projet,** entrez **HelloWorld** dans la boîte **de nom du projet.** Ensuite, choisissez **Créer**.
+   1. Dans la page **configurer votre nouveau projet** , entrez **HelloWorld** dans la zone **nom du projet** . Ensuite, choisissez **créer**.
 
-      ![Configurez votre nouvelle fenêtre de projet avec le nom, l’emplacement et les champs de noms de solution du projet](./media/with-visual-studio/configure-new-project.png)
+      ![Configurer votre nouvelle fenêtre de projet avec les champs nom du projet, emplacement et nom de la solution](./media/with-visual-studio/configure-new-project.png)
 
    Le modèle d’application console C# pour .NET Core définit automatiquement une classe, `Program`, avec une méthode unique, `Main`, qui accepte un tableau de <xref:System.String> comme argument. `Main` est le point d’entrée de l’application. Cette méthode est appelée automatiquement par le runtime lors du lancement de l’application. Tous les arguments de ligne de commande fournis au lancement de l’application sont disponibles dans le tableau *args*.
 
    ![Visual Studio et le nouveau projet HelloWorld](./media/with-visual-studio/visual-studio-main-window.png)
 
-# <a name="visual-basic"></a>[Base visuelle](#tab/vb)
+# <a name="visual-basic"></a>[Visual Basic](#tab/vb)
 
 1. Ouvrez Visual Studio 2019.
 
-1. Créez un nouveau projet d’application de console Visual Basic .NET Core nommé "HelloWorld".
+1. Créez un projet d’application console .NET Core Visual Basic nommé « HelloWorld ».
 
-   1. Sur la fenêtre de départ, choisissez **Créer un nouveau projet**.
+   1. Dans la fenêtre Démarrer, choisissez **créer un nouveau projet**.
 
-      ![Créez un nouveau bouton de projet sélectionné sur la fenêtre de démarrage visual Studio](./media/with-visual-studio/start-window.png)
+      ![Bouton créer un projet sélectionné dans la fenêtre de démarrage de Visual Studio](./media/with-visual-studio/start-window.png)
 
-   1. Sur la **page Créer un nouveau projet,** entrez la **console** dans la boîte de recherche. Ensuite, choisissez **Visual Basic** dans la liste de langue, puis choisissez toutes **les plates-formes** de la liste de la plate-forme. Choisissez le modèle **Console App (.NET Core),** puis choisissez **Next**.
+   1. Sur la page **créer un nouveau projet** , dans la zone de recherche, entrez **console** . Ensuite, choisissez **Visual Basic** dans la liste langue, puis choisissez **toutes les plateformes** dans la liste plateforme. Choisissez le modèle **application console (.net Core)** , puis choisissez **suivant**.
 
       ![Choisir le modèle Visual Basic pour l’application console (.NET Framework)](./media/with-visual-studio/vb/create-new-project.png)
 
       > [!TIP]
-      > Si vous ne voyez pas les modèles .NET Core, vous manquez probablement la charge de travail requise installée. Sous le **message Ne pas trouver ce que vous recherchez?** message, choisissez l’installation plus **d’outils et de fonctionnalités** lien. L’installateur Visual Studio ouvre ses portes. Assurez-vous d’avoir installé la charge de travail **de développement multiplateforme .NET Core.**
+      > Si vous ne voyez pas les modèles .NET Core, vous ne disposez probablement pas de la charge de travail requise installée. Sous le message **vous ne trouvez pas ce que vous recherchez ?** , choisissez le lien **installer d’autres outils et fonctionnalités** . Le Visual Studio Installer s’ouvre. Assurez-vous que la charge de travail de **développement multiplateforme .net Core** est installée.
 
-   1. Sur la configuration de votre nouvelle page **de projet,** entrez **HelloWorld** dans la boîte **de nom du projet.** Ensuite, choisissez **Créer**.
+   1. Dans la page **configurer votre nouveau projet** , entrez **HelloWorld** dans la zone **nom du projet** . Ensuite, choisissez **créer**.
 
-   Le modèle d’application console pour .NET `Program`Core définit automatiquement `Main`une classe, , avec une seule méthode, , qui prend un <xref:System.String> tableau comme un argument. `Main` est le point d’entrée de l’application. Cette méthode est appelée automatiquement par le runtime lors du lancement de l’application. Tous les arguments de ligne de commande fournis `args` lors du lancement de l’application sont disponibles dans le paramètre.
+   Le modèle d’application console pour .NET Core définit automatiquement une classe, `Program` , avec une méthode unique, `Main` , qui prend un <xref:System.String> tableau en tant qu’argument. `Main` est le point d’entrée de l’application. Cette méthode est appelée automatiquement par le runtime lors du lancement de l’application. Les arguments de ligne de commande fournis lorsque l’application est lancée sont disponibles dans le `args` paramètre.
 
    ![Visual Studio et le nouveau projet HelloWorld](./media/with-visual-studio/vb/visual-studio-main-window.png)
 
@@ -82,11 +82,11 @@ Les instructions suivantes créent une simple application de console Hello World
 
 ## <a name="run-the-app"></a>Exécuter l’application
 
-1. Pour exécuter le programme, choisissez **HelloWorld** sur la barre d’outils, ou appuyez sur **F5**.
+1. Pour exécuter le programme, choisissez **HelloWorld** dans la barre d’outils, ou appuyez sur **F5**.
 
-   ![Barre d’outils Visual Studio avec le bouton HelloWorld run sélectionné](./media/with-visual-studio/run-program.png)
+   ![Barre d’outils Visual Studio avec le bouton Exécuter HelloWorld sélectionné](./media/with-visual-studio/run-program.png)
 
-   Une fenêtre console s’ouvre sur le texte "Bonjour monde!" imprimés à l’écran et quelques informations de débbug Visual Studio.
+   Une fenêtre de console s’ouvre avec le texte « Hello World ! » imprimé à l’écran et certaines informations de débogage de Visual Studio.
 
    ![Fenêtre de console affichant « Hello World Press any key to continue »](./media/with-visual-studio/hello-world-console.png)
 
@@ -94,39 +94,39 @@ Les instructions suivantes créent une simple application de console Hello World
 
 ## <a name="enhance-the-app"></a>Améliorer l’application
 
-Améliorez votre application pour inviter l’utilisateur à entrer son nom, et pour l’afficher avec la date et l’heure. Les instructions suivantes modifient et exécutent à nouveau l’application :
+Améliorez votre application pour inviter l’utilisateur à entrer son nom, et pour l’afficher avec la date et l’heure. Les instructions suivantes modifient et réexécutent l’application :
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
-1. Remplacer le contenu `Main` de la méthode, qui `Console.WriteLine`est actuellement juste la ligne qui appelle , avec le code suivant:
+1. Remplacez le contenu de la `Main` méthode, qui est actuellement simplement la ligne qui appelle `Console.WriteLine` , par le code suivant :
 
-   [!code-csharp[GettingStarted#1](~/samples/snippets/csharp/getting_started/with_visual_studio/helloworld.cs#1)]
+   [!code-csharp[GettingStarted#1](~/samples/snippets/csharp/getting_started/with_visual_studio/HelloWorld.cs#1)]
 
    Ce code affiche « What is your name? ». dans la fenêtre de console et attend que l’utilisateur entre une chaîne suivie de la touche Entrée. Il stocke cette chaîne dans une variable nommée `name`. Elle récupère également la valeur de la propriété <xref:System.DateTime.Now?displayProperty=nameWithType>, qui contient l’heure locale actuelle et l’assigne à une variable nommée `date`. Enfin, elle utilise une [chaîne interpolée](../../csharp/language-reference/tokens/interpolated.md) pour afficher ces valeurs dans la fenêtre de console.
 
-1. Compilez le programme en choisissant **Build** > **Build Solution**.
+1. Compilez le programme en choisissant **générer**  >  **générer la solution**.
 
-1. Pour exécuter le programme, choisissez **HelloWorld** sur la barre d’outils, ou appuyez sur **F5**.
+1. Pour exécuter le programme, choisissez **HelloWorld** dans la barre d’outils, ou appuyez sur **F5**.
 
-1. Répondez à l’invite en entrant un nom et en appuyant sur la clé **Enter.**
+1. Répondez à l’invite en entrant un nom et en appuyant sur la touche **entrée** .
 
    ![Fenêtre de console avec la sortie du programme modifié](./media/with-visual-studio/hello-world-update.png)
 
 1. Appuyez sur une touche pour fermer la fenêtre de console.
 
-# <a name="visual-basic"></a>[Base visuelle](#tab/vb)
+# <a name="visual-basic"></a>[Visual Basic](#tab/vb)
 
-1. Remplacer le contenu `Main` de la méthode, qui `Console.WriteLine`est actuellement juste la ligne qui appelle , avec le code suivant:
+1. Remplacez le contenu de la `Main` méthode, qui est actuellement simplement la ligne qui appelle `Console.WriteLine` , par le code suivant :
 
-   [!code-vb[GettingStarted#1](~/samples/snippets/core/tutorials/vb-with-visual-studio/helloworld.vb#1)]
+   [!code-vb[GettingStarted#1](~/samples/snippets/core/tutorials/vb-with-visual-studio/Program.vb#1)]
 
    Ce code affiche « What is your name? ». dans la fenêtre de console et attend que l’utilisateur entre une chaîne suivie de la touche Entrée. Il stocke cette chaîne dans une variable nommée `name`. Elle récupère également la valeur de la propriété <xref:System.DateTime.Now?displayProperty=nameWithType>, qui contient l’heure locale actuelle et l’assigne à une variable nommée `date`. Enfin, elle utilise une [chaîne interpolée](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) pour afficher ces valeurs dans la fenêtre de console.
 
-1. Compilez le programme en choisissant **Build** > **Build Solution**.
+1. Compilez le programme en choisissant **générer**  >  **générer la solution**.
 
-1. Pour exécuter le programme, choisissez **HelloWorld** sur la barre d’outils, ou appuyez sur **F5**.
+1. Pour exécuter le programme, choisissez **HelloWorld** dans la barre d’outils, ou appuyez sur **F5**.
 
-1. Répondez à l’invite en entrant un nom et en appuyant sur la clé **Enter.**
+1. Répondez à l’invite en entrant un nom et en appuyant sur la touche **entrée** .
 
    ![Fenêtre de console avec la sortie du programme modifié](./media/with-visual-studio/hello-world-update.png)
 
@@ -136,7 +136,7 @@ Améliorez votre application pour inviter l’utilisateur à entrer son nom, et 
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans cet article, vous avez créé et exécuté votre première application .NET Core. Dans l’étape suivante, vous déboiffez votre application.
+Dans cet article, vous avez créé et exécuté votre première application .NET Core. À l’étape suivante, vous allez déboguer votre application.
 
 > [!div class="nextstepaction"]
-> [Debug a .NET Core Hello World application dans Visual Studio](debugging-with-visual-studio.md)
+> [Déboguer une application Hello World .NET Core dans Visual Studio](debugging-with-visual-studio.md)

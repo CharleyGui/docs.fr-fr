@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataProcess::EnumMethodInstanceByAddress Méthode
+title: 'IXCLRDataProcess :: EnumMethodInstanceByAddress, méthode'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataProcess::EnumMethodInstanceByAddress Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: afc5fc377dd45d5e8d4d2d7b3385ca0524df69e1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f3800a5980304394dd648111fe23a3bb0890c575
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176654"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395109"
 ---
-# <a name="ixclrdataprocessenummethodinstancebyaddress-method"></a>IXCLRDataProcess::EnumMethodInstanceByAddress Méthode
+# <a name="ixclrdataprocessenummethodinstancebyaddress-method"></a>IXCLRDataProcess :: EnumMethodInstanceByAddress, méthode
 
-Énumère les instances de méthode de ce processus à partir d’une compensation d’adresse.
+Énumère les instances de méthode de ce processus à partir d’un décalage d’adresse.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -40,19 +40,19 @@ HRESULT EnumMethodInstanceByAddress(
 ## <a name="parameters"></a>Paramètres
 
 `handle`\
-[dans] Une poignée pour énumérer les instances de méthode.
+dans Handle pour énumérer les instances de méthode.
 
 `mod`\
-[out] L’instance de méthode énumérée.
+à Instance de la méthode énumérée.
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
-La méthode fournie fait `IXCLRDataProcess` partie de l’interface et correspond à la 28ème fente de la table de méthode virtuelle.
+La méthode fournie fait partie de l' `IXCLRDataProcess` interface et correspond au 29ème emplacement de la table de méthodes virtuelles.
 
 ## <a name="requirements"></a>Spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
-**En-tête:** Aucune **bibliothèque:** Aucune **version cadre .NET:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
+**En-tête :** **Bibliothèque None :** aucune **.NET Framework versions :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6ef8ac9b-9803-4b65-8b13-25f3e0b1bc6b
 topic_type:
 - apiref
-ms.openlocfilehash: 762c637696fdf79ccab6702918b5bf962ea55903
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e95f96847c6e069758362fb6febc28dc31911bc9
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178415"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396299"
 ---
 # <a name="icorpublishappdomaingetname-method"></a>ICorPublishAppDomain::GetName, méthode
-Obtient le nom du domaine d’application qui est représenté par cet [ICorPublishAppDomain](icorpublishappdomain-interface.md).  
+Obtient le nom du domaine d’application représenté par ce [ICorPublishAppDomain](icorpublishappdomain-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,24 +41,24 @@ HRESULT GetName (
  [in] Taille du tableau `szName`.  
   
  `pcchName`  
- [out] Un pointeur sur le nombre de personnages larges, y compris le caractère nul, retourné dans le `szName` tableau.  
+ à Pointeur vers le nombre de caractères larges, y compris le caractère null, retourné dans le `szName` tableau.  
   
  `szName`  
- [out] Un tableau dans lequel stocker le nom.  
+ à Tableau dans lequel stocker le nom.  
   
-## <a name="remarks"></a>Notes   
- Si `szName` elle n’est `GetName` pas nulle, la méthode s’insère jusqu’à `cchName` des caractères (y compris le terminateur nul) en `szName`. Si un non-null `pcchName`est retourné dans , le nombre réel de caractères `szName` dans le nom (y compris le terminateur nul) est stocké dans le tableau.  
+## <a name="remarks"></a>Notes  
+ Si `szName` n’a pas la valeur null, la `GetName` méthode copie jusqu’à `cchName` caractères (y compris la marque de fin null) dans `szName` . Si une valeur non null est retournée dans `pcchName` , le nombre réel de caractères dans le nom (y compris la marque de fin null) est stocké dans le `szName` tableau.  
   
- La `GetName` méthode renvoie un S_OK HRESULT quel que soit le nombre de caractères copiés.  
+ La `GetName` méthode retourne un S_OK HRESULT quel que soit le nombre de caractères copiés.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

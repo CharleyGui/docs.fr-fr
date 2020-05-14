@@ -1,13 +1,13 @@
 ---
 title: Environnement de développement pour les applications Docker
 description: Découvrez les options les plus importantes des outils de développement qui prennent en charge le cycle de développement Docker.
-ms.date: 02/15/2019
-ms.openlocfilehash: 35236e75f47e830d0970ca9cfd074d9a69e6f85c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/16/2020
+ms.openlocfilehash: b1df16db88fa85f794407c989f5428030c4cddf7
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "71214292"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83394885"
 ---
 # <a name="development-environment-for-docker-apps"></a>Environnement de développement pour les applications Docker
 
@@ -26,7 +26,7 @@ Si vous préférez un éditeur léger et multiplateforme prenant en charge n’i
 
 ### <a name="visual-studio-with-docker-tools-windows-development-machine"></a>Visual Studio avec les outils Docker (machine de développement Windows)
 
-Nous vous recommandons d’utiliser Visual Studio 2017 (ou version ultérieure) en ayant activé les outils Docker intégrés. Avec Visual Studio, vous pouvez développer, exécuter et valider vos applications directement dans l’environnement Docker de votre choix. Appuyez sur F5 pour déboguer votre application (à un ou plusieurs conteneurs) directement dans un hôte Docker ou appuyez sur Ctrl+F5 pour modifier et actualiser votre application sans avoir à regénérer le conteneur. Il s’agit du choix le plus simple et le plus robuste pour les développeurs Windows qui souhaitent créer des conteneurs Docker pour Linux ou Windows.
+Nous vous recommandons d’utiliser Visual Studio 2019 avec les outils intégrés de l’ancrage activés. Avec Visual Studio, vous pouvez développer, exécuter et valider vos applications directement dans l’environnement Docker de votre choix. Appuyez sur F5 pour déboguer votre application (à un ou plusieurs conteneurs) directement dans un hôte Docker ou appuyez sur Ctrl+F5 pour modifier et actualiser votre application sans avoir à regénérer le conteneur. Il s’agit du choix le plus simple et le plus robuste pour les développeurs Windows qui souhaitent créer des conteneurs Docker pour Linux ou Windows.
 
 ### <a name="visual-studio-for-mac-mac-development-machine"></a>Visual Studio pour Mac (machine de développement Mac)
 
@@ -46,5 +46,5 @@ Vous pouvez développer des applications Docker en utilisant les outils Microsof
 En fait, vous pouvez utiliser n’importe quel langage moderne pris en charge par Docker dans Linux ou Windows.
 
 >[!div class="step-by-step"]
->[Suivant précédent](deploy-azure-kubernetes-service.md)
->[Next](docker-apps-inner-loop-workflow.md)
+>[Précédent](deploy-azure-kubernetes-service.md) 
+> [Suivant](docker-apps-inner-loop-workflow.md)

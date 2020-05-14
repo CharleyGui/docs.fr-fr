@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a247c792-45e1-4538-9e1f-b46acca4a463
 topic_type:
 - apiref
-ms.openlocfilehash: 906ca2540e421953b3ce39300aa7b2376f789929
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 467ba53f90081f0c3499fb22acab96b5e380a3f4
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137102"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395842"
 ---
 # <a name="icordebugvaluegetaddress-method"></a>ICorDebugValue::GetAddress, méthode
 Obtient l’adresse de cet objet « ICorDebugValue », qui est en cours de débogage.  
@@ -35,18 +35,18 @@ HRESULT GetAddress (
   
 ## <a name="parameters"></a>Paramètres  
  `pAddress`  
- à Pointeur vers un objet `CORDB_ADDRESS` qui spécifie l’adresse de cet objet de valeur.  
+ à Pointeur vers un `CORDB_ADDRESS` objet qui spécifie l’adresse de cet objet de valeur.  
   
 ## <a name="remarks"></a>Notes  
- Si la valeur n’est pas disponible, 0 (zéro) est retourné. Cela peut se produire si la valeur est au moins partiellement dans les registres ou stockée dans un handle de garbage collector (`GCHandle`).  
+ Si la valeur n’est pas disponible, 0 (zéro) est retourné. Cela peut se produire si la valeur est au moins partiellement dans les registres ou stockée dans un handle de garbage collector ( `GCHandle` ).  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi

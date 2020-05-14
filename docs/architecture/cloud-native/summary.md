@@ -2,12 +2,12 @@
 title: Résumé
 description: Résumé des principales conclusions tirées de la présentation de l’architecture des applications .NET natives du Cloud pour Azure Guide/e-book.
 ms.date: 04/29/2020
-ms.openlocfilehash: 97f20771aae73ed88d2dadefa7ba89d64eb62fcd
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 8cad8df1f69e159caf88d3ee119278dff8726385
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82899695"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395319"
 ---
 # <a name="summary"></a>Résumé
 
@@ -17,11 +17,11 @@ En résumé, Voici les conclusions importantes de ce guide :
 
 - **CNCF ( [Cloud Native Computing Foundation](https://www.cncf.io/) )** est un consortium open source influent de plus de 300 entreprises majeures. Il est responsable de la conduite de l’adoption de l’informatique Native Cloud sur la technologie et les piles du Cloud.
 
-- **Les instructions CNCF** recommandent que les applications Cloud natives adoptent six piliers importants, comme illustré dans la figure 12-1 :
+- **Les instructions CNCF** recommandent que les applications Cloud natives adoptent six piliers importants, comme illustré dans la figure 11-1 :
 
   ![Piliers natifs du Cloud](./media/cloud-native-foundational-pillars.png)
 
-  **Figure 12-1**. Piliers natifs du Cloud
+  **Figure 11-1** : Piliers natifs du Cloud
 
 - Ces piliers natifs du Cloud sont les suivants :
   - Le Cloud et son modèle de service sous-jacent
@@ -45,7 +45,7 @@ En résumé, Voici les conclusions importantes de ce guide :
 
 - La **résilience** est la capacité de votre système à réagir à une défaillance tout en restant fonctionnelle. Les systèmes Cloud natifs intègrent l’architecture distribuée dans laquelle l’échec est inévitable. Les applications doivent être construites pour répondre de manière élégante aux défaillances et revenir rapidement à un état de fonctionnement complet.
 
-- Les **maillages de service** sont une couche d’infrastructure configurable avec des fonctionnalités intégrées permettant de gérer la communication entre les services et d’autres défis transversaux. Ils découplent les responsabilités croisées de votre code d’entreprise. Ces responsabilités se déplacent dans un proxy de service. Appelé `Sidecar pattern`, le proxy est déployé dans un processus distinct pour assurer l’isolation à partir de votre code d’entreprise.
+- Les **maillages de service** sont une couche d’infrastructure configurable avec des fonctionnalités intégrées permettant de gérer la communication entre les services et d’autres défis transversaux. Ils découplent les responsabilités croisées de votre code d’entreprise. Ces responsabilités se déplacent dans un proxy de service. Appelé `Sidecar pattern` , le proxy est déployé dans un processus distinct pour assurer l’isolation à partir de votre code d’entreprise.
 
 - L' **observation** est un facteur clé pour la conception des applications Cloud natives. À mesure que les services sont distribués sur un cluster de nœuds, la journalisation centralisée, la surveillance et les alertes, deviennent obligatoires. Azure Monitor est une collection d’outils basés sur le Cloud conçue pour offrir une visibilité de l’état de votre système.
 

@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataMethodDefinition::StartEnumInstances (méthode)
+title: 'IXCLRDataMethodDefinition :: StartEnumInstances, méthode'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataMethodDefinition::StartEnumInstances Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 89473f2a6a3da73ee5d172a3700bdb4d624278ff
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 84e0ad392c5fee8377115427482d80543454fff3
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67756296"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83397205"
 ---
-# <a name="ixclrdatamethoddefinitionstartenuminstances-method"></a>IXCLRDataMethodDefinition::StartEnumInstances (méthode)
+# <a name="ixclrdatamethoddefinitionstartenuminstances-method"></a>IXCLRDataMethodDefinition :: StartEnumInstances, méthode
 
-Fournit un handle pour l’énumération des instances de méthode pour une donnée `IXCLRDataAppDomain`.
+Fournit un handle pour l’énumération des instances de méthode pour un donné `IXCLRDataAppDomain` .
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -40,24 +40,24 @@ HRESULT StartEnumInstances(
 ## <a name="parameters"></a>Paramètres
 
 `appDomain`\
-[in] Un AppDomain pour l’énumération.
+dans AppDomain pour l’énumération.
 
 `handle`\
-[out] Un handle pour énumérer les instances.
+à Handle pour énumérer les instances.
 
 ## <a name="remarks"></a>Notes
 
-La méthode fournie fait partie de la `IXCLRDataMethodDefinition` interface et correspond à la troisième emplacement de la table de la méthode virtuelle.
+La méthode fournie fait partie de l' `IXCLRDataMethodDefinition` interface et correspond au cinquième emplacement de la table de méthodes virtuelles.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun  
-**Bibliothèque :** Aucun  
-**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**En-tête :** None  
+**Bibliothèque :** None  
+**Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumération de CLRDataSourceType](clrdatasourcetype-enumeration.md)
+- [Énumération CLRDataSourceType](clrdatasourcetype-enumeration.md)
 - [Débogage](index.md)
-- [Interface de IXCLRDataMethodDefinition](ixclrdatamethoddefinition-interface.md)
+- [IXCLRDataMethodDefinition, interface](ixclrdatamethoddefinition-interface.md)

@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataMethodInstance::GetILAddressMap Method
+title: 'IXCLRDataMethodInstance :: GetILAddressMap, méthode'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataMethodInstance::GetILAddressMap Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 66e4768acff7ab735c6ac9e8f8f51a9511f7e371
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7c4dcf59ce159434d5012120043f5bb548d49731
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744681"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396816"
 ---
-# <a name="ixclrdatamethodinstancegetiladdressmap-method"></a>IXCLRDataMethodInstance::GetILAddressMap Method
+# <a name="ixclrdatamethodinstancegetiladdressmap-method"></a>IXCLRDataMethodInstance :: GetILAddressMap, méthode
 
-Obtient le langage intermédiaire aux informations de mappage d’adresse.
+Obtient le IL pour traiter les informations de mappage.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -41,26 +41,26 @@ HRESULT GetILAddressMap(
 ## <a name="parameters"></a>Paramètres
 
 `mapLen`\
-[in] La longueur du tableau des mappages fournis.
+dans Longueur du tableau Maps fourni.
 
 `mapNeeded`\
-[out] Le nombre d’entrées de mappage dont a besoin de la méthode.
+à Nombre d’entrées de mappage dont la méthode a besoin.
 
 `maps`\
-[out, size_is(mapLen)] Le tableau pour stocker les entrées de mappage.
+[out, size_is (érable)] Tableau pour le stockage des entrées de mappage.
 
 ## <a name="remarks"></a>Notes
 
-La méthode fournie fait partie de la `IXCLRDataMethodInstance` interface et correspond à l’emplacement de la table de la méthode virtuelle de 14.
+La méthode fournie fait partie de l' `IXCLRDataMethodInstance` interface et correspond au quinzième emplacement de la table de méthodes virtuelles.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun  
-**Bibliothèque :** Aucun  
-**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**En-tête :** None  
+**Bibliothèque :** None  
+**Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Débogage](index.md)
-- [Interface de IXCLRDataMethodInstance](ixclrdatamethodinstance-interface.md)
+- [IXCLRDataMethodInstance, interface](ixclrdatamethodinstance-interface.md)

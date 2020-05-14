@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataProcess::EndEnumMethodInstancesByAddress (méthode)
+title: 'IXCLRDataProcess :: EndEnumMethodInstancesByAddress, méthode'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataProcess::EndEnumMethodInstancesByAddress Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 378095aa2b363f4003a5372b4158df27412655e1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 04ce8f44b0c9f532951666de7bfb9de475c14746
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757851"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395256"
 ---
-# <a name="ixclrdataprocessendenummethodinstancesbyaddress-method"></a>IXCLRDataProcess::EndEnumMethodInstancesByAddress (méthode)
+# <a name="ixclrdataprocessendenummethodinstancesbyaddress-method"></a>IXCLRDataProcess :: EndEnumMethodInstancesByAddress, méthode
 
-Libère les ressources utilisées par les itérateurs internes utilisés pendant l’énumération de l’instance.
+Libère les ressources utilisées par les itérateurs internes utilisés pendant l’énumération d’instance.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -39,21 +39,21 @@ HRESULT EndEnumMethodInstancesByAddress(
 ## <a name="parameters"></a>Paramètres
 
 `handle`\
-[out] Un handle pour énumérer les instances de la méthode.
+à Handle pour énumérer les instances de méthode.
 
 ## <a name="remarks"></a>Notes
 
-La méthode fournie fait partie de la `IXCLRDataProcess` interface et correspond à l’emplacement de la table de la méthode virtuelle de 29.
+La méthode fournie fait partie de l' `IXCLRDataProcess` interface et correspond au 30 emplacements de la table de méthodes virtuelles.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun  
-**Bibliothèque :** Aucun  
-**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**En-tête :** None  
+**Bibliothèque :** None  
+**Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumération de CLRDataSourceType](clrdatasourcetype-enumeration.md)
+- [Énumération CLRDataSourceType](clrdatasourcetype-enumeration.md)
 - [Débogage](index.md)
-- [Interface de IXCLRDataProcess](ixclrdataprocess-interface.md)
+- [IXCLRDataProcess, interface](ixclrdataprocess-interface.md)

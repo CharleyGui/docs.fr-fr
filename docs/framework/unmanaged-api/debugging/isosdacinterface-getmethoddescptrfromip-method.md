@@ -1,5 +1,5 @@
 ---
-title: ISOSDacInterface::GetMethodDescPtrFromIP (méthode)
+title: 'ISOSDacInterface :: GetMethodDescPtrFromIP, méthode'
 ms.date: 02/01/2019
 api.name:
 - ISOSDacInterface::GetMethodDescPtrFromIP Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: cd256250021436e611142de11c3625a21aeec814
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0c8d91c11205e06857b4a6e7edfedcd087270d00
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764745"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396928"
 ---
-# <a name="isosdacinterfacegetmethoddescptrfromip-method"></a>ISOSDacInterface::GetMethodDescPtrFromIP (méthode)
+# <a name="isosdacinterfacegetmethoddescptrfromip-method"></a>ISOSDacInterface :: GetMethodDescPtrFromIP, méthode
 
-Récupère le pointeur de la MethodDesc correspondant de la méthode contenant l’adresse d’instruction natif donné.
+Récupère le pointeur de l’MethodDesc correspondant à la méthode contenant l’adresse d’instruction Native donnée.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -40,23 +40,23 @@ HRESULT GetMethodDescPtrFromIP(
 ## <a name="parameters"></a>Paramètres
 
 `ip`\
-[in] Une adresse dans la méthode lors de l’exécution.
+dans Adresse dans la méthode au moment de l’exécution.
 
 `ppMD`\
-[out] L’adresse de le `MethodDesc` pour la méthode particulière.
+à Adresse du `MethodDesc` pour la méthode particulière.
 
 ## <a name="remarks"></a>Notes
 
-La méthode fournie fait partie de la [ `ISOSDacInterface` interface](isosdacinterface-interface.md) et correspond à l’emplacement de la table de la méthode virtuelle de 21.
+La méthode fournie fait partie de l' [ `ISOSDacInterface` interface](isosdacinterface-interface.md) et correspond à l’emplacement 22 de la table de méthodes virtuelles.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun  
-**Bibliothèque :** Aucun  
-**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**En-tête :** None  
+**Bibliothèque :** None  
+**Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Débogage](index.md)
-- [Interface de ISOSDacInterface](isosdacinterface-interface.md)
+- [ISOSDacInterface, interface](isosdacinterface-interface.md)

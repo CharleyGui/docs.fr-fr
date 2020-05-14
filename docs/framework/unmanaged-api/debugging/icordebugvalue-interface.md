@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: b2f7007f-c446-4b18-aed1-a25cff8aee31
 topic_type:
 - apiref
-ms.openlocfilehash: e1044386bd6251132703c4e98a0cf2ed267d34e0
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: b8d2e49031e59db0527de3c848d7d390095797bf
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791136"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396792"
 ---
 # <a name="icordebugvalue-interface"></a>ICorDebugValue, interface
 Représente une valeur dans le processus en cours de débogage. La valeur peut être une valeur de lecture ou d’écriture.  
@@ -29,9 +29,9 @@ Représente une valeur dans le processus en cours de débogage. La valeur peut �
 |Méthode|Description|  
 |------------|-----------------|  
 |[CreateBreakpoint, méthode](icordebugvalue-createbreakpoint-method.md)|Cette méthode n'est pas implémentée à l'heure actuelle.|  
-|[GetAddress, méthode](icordebugvalue-getaddress-method.md)|Obtient l’adresse de cet objet `ICorDebugValue`, qui est en cours de débogage.|  
-|[GetSize, méthode](icordebugvalue-getsize-method.md)|Obtient la taille, en octets, de cet objet `ICorDebugValue`.|  
-|[GetType, méthode](icordebugvalue-gettype-method.md)|Obtient le type primitif de cet objet `ICorDebugValue`.|  
+|[GetAddress, méthode](icordebugvalue-getaddress-method.md)|Obtient l’adresse de cet `ICorDebugValue` objet, qui est en cours de débogage.|  
+|[GetSize, méthode](icordebugvalue-getsize-method.md)|Obtient la taille, en octets, de cet `ICorDebugValue` objet.|  
+|[GetType, méthode](icordebugvalue-gettype-method.md)|Obtient le type primitif de cet `ICorDebugValue` objet.|  
   
 ## <a name="remarks"></a>Notes  
  En général, la propriété d’un objet de valeur est passée lorsqu’elle est retournée. Le destinataire est responsable de la suppression d’une référence de l’objet lorsqu’il est terminé avec l’objet.  
@@ -41,14 +41,14 @@ Représente une valeur dans le processus en cours de débogage. La valeur peut �
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

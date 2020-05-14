@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: e291888bee25a9c87259560ca4b12635ee73c3c7
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: a3444071abae89780304a9687e486f3842283a33
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82975405"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396244"
 ---
 # <a name="architectural-principles"></a>Principes de l’architecture
 
@@ -22,9 +22,9 @@ Quand vous architecturez et que vous concevez des solutions logicielles, vous de
 
 ### <a name="separation-of-concerns"></a>Séparation des responsabilités
 
-Un principe à suivre lors du développement est la **séparation des responsabilités**. Selon ce principe, le logiciel doit être divisé en fonction des types des tâches qu’il effectue. Par exemple, considérez une application qui inclut une logique pour identifier les éléments dignes d’intérêt à afficher à l’utilisateur, et qui met en forme ces éléments d’une façon particulière afin de les rendre plus visibles. Le comportement responsable du choix des éléments à mettre en forme doit être distinct du comportement responsable de la mise en forme les éléments, car il s’agit de responsabilités distinctes qui n’ont qu’un lien de coïncidence entre elles.
+Un principe à suivre lors du développement est la **séparation des responsabilités**. Selon ce principe, le logiciel doit être divisé en fonction des types des tâches qu’il effectue. Par exemple, considérez une application qui inclut une logique pour identifier les éléments dignes d’intérêt à afficher à l’utilisateur, et qui met en forme ces éléments d’une façon particulière afin de les rendre plus visibles. Le comportement responsable du choix des éléments à mettre en forme doit être séparé du comportement responsable de la mise en forme des éléments, car ces comportements sont des préoccupations distinctes qui ne sont que par rapport à l’un de l’autre.
 
-Du point de vue de l’architecture, les applications peuvent être créées de façon logique pour suivre ce principe, en séparant le comportement du cœur de métier de l’infrastructure et de la logique de l’interface utilisateur. Dans l’idéal, les règles et la logique métier doivent se trouver dans un projet distinct, qui ne doit pas dépendre d’autres projets dans l’application. Cela permet de garantir que le modèle métier est facile à tester et peut évoluer sans être étroitement couplé aux détails d’implémentation de bas niveau. La séparation des responsabilités est un aspect fondamental de l’utilisation des couches dans les architectures d’applications.
+De manière architecturale, les applications peuvent être créées logiquement pour respecter ce principe en séparant le comportement métier principal de la logique d’infrastructure et de l’interface utilisateur. Dans l’idéal, les règles et la logique métier doivent se trouver dans un projet distinct, qui ne doit pas dépendre d’autres projets dans l’application. Cette séparation permet de garantir que le modèle d’entreprise est facile à tester et peut évoluer sans être étroitement couplé à des détails d’implémentation de bas niveau. La séparation des responsabilités est un aspect fondamental de l’utilisation des couches dans les architectures d’applications.
 
 ### <a name="encapsulation"></a>Encapsulation
 
@@ -34,7 +34,7 @@ Dans les classes, l’encapsulation est obtenue en limitant l’accès externe �
 
 ### <a name="dependency-inversion"></a>Inversion des dépendances
 
-Le sens de la dépendance au sein de l’application doit être celui de l’abstraction, et non pas des détails d’implémentation. La plupart des applications sont écrites de telle sorte que les dépendances de compilation aillent dans le sens de l’exécution du runtime. Ceci produit un graphe des dépendances directes. Autrement dit, si le module A appelle une fonction dans le module B, qui appelle une fonction dans le module C, alors, au moment de la compilation, un dépend de B, ce qui dépend de C, comme le montre la figure 4-1.
+Le sens de la dépendance au sein de l’application doit être celui de l’abstraction, et non pas des détails d’implémentation. La plupart des applications sont écrites de telle sorte que la dépendance au moment de la compilation se déroule dans le sens de l’exécution du runtime, ce qui génère un graphique de dépendance direct. Autrement dit, si le module A appelle une fonction dans le module B, qui appelle une fonction dans le module C, alors, au moment de la compilation, un dépend de B, ce qui dépend de C, comme le montre la figure 4-1.
 
 ![Graphique de dépendance directe](./media/image4-1.png)
 
@@ -52,7 +52,7 @@ L' **inversion des dépendances** est une partie essentielle de la création d�
 
 **Les méthodes et les classes doivent demander explicitement tous les objets de collaboration dont ils ont besoin pour fonctionner correctement.** Les constructeurs de classe offrent une occasion pour les classes d’identifier les éléments dont ils ont besoin pour être dans un état valide et pour fonctionner correctement. Si vous définissez des classes qui peuvent être construites et appelées, mais que ne fonctionnera correctement que si certains composants globaux ou d’infrastructure sont en place, ces classes sont *malhonnêtes* avec leurs clients. Le contrat du constructeur indique au client qu’il a seulement besoin des choses spécifiées (éventuellement de rien si la classe utilise seulement un constructeur sans paramètre), mais lors de l’exécution, il apparaît que l’objet avait en fait besoin d’autre chose.
 
-En suivant le principe des dépendances explicites, vos classes et vos méthodes sont honnêtes avec leurs clients quant à ce dont elles ont besoin pour fonctionner. Ceci rend votre code mieux autodocumenté et vos contrats de codage plus conviviaux, car les utilisateurs leur font alors confiance dès lors qu’ils fournissent ce qui est nécessaire sous la forme de paramètres de méthode ou de constructeur, les objets avec lesquels ils travaillent se comportant alors correctement à l’exécution.
+En suivant le principe des dépendances explicites, vos classes et vos méthodes sont honnêtes avec leurs clients quant à ce dont elles ont besoin pour fonctionner. En suivant le principe, votre code est davantage documenté et vos contrats de codage sont plus conviviaux, car les utilisateurs ont confiance dans le sens où ils fournissent ce qui est requis sous la forme de paramètres de méthode ou de constructeur, les objets avec lesquels ils travaillent se comportent correctement au moment de l’exécution.
 
 ### <a name="single-responsibility"></a>Responsabilité unique
 
@@ -60,13 +60,13 @@ Le principe de responsabilité unique s’applique à la conception orientée ob
 
 Dans une application monolithique, nous pouvons appliquer le principe de responsabilité unique à un haut niveau aux couches de l’application. La responsabilité de la présentation doit rester dans le projet d’interface utilisateur, alors que la responsabilité de l’accès aux données doit être conservée au sein d’un projet d’infrastructure. La logique métier doit être conservée dans le projet central de l’application, où elle peut être facilement testée et évoluer indépendamment des autres responsabilités.
 
-Quand ce principe est appliqué à l’architecture d’une application et mené à son aboutissement logique, vous obtenez des microservices. Un microservice donné ne doit avoir qu’une seule responsabilité. Si vous devez étendre le comportement d’un système, il est généralement préférable de le faire en ajoutant des microservices supplémentaires, au lieu d’ajouter une responsabilité à un microservice existant.
+Lorsque ce principe est appliqué à l’architecture de l’application et qu’il est dirigé vers son point de terminaison logique, vous bénéficiez de microservices. Un microservice donné ne doit avoir qu’une seule responsabilité. Si vous devez étendre le comportement d’un système, il est généralement préférable de le faire en ajoutant des microservices supplémentaires, au lieu d’ajouter une responsabilité à un microservice existant.
 
 [En savoir plus sur l’architecture des microservices](https://aka.ms/MicroservicesEbook)
 
 ### <a name="dont-repeat-yourself-dry"></a>Ne vous répétez pas (DRY)
 
-L’application doit éviter de spécifier à plusieurs endroits un comportement lié à un concept particulier, car il s’agit d’une source d’erreurs fréquente. À un moment donné, une modification des exigences nécessitera la modification de ce comportement. Il est probable qu’au moins une instance du comportement ne sera pas mise à jour, ce qui entraînera un comportement incohérent du système.
+L’application doit éviter de spécifier un comportement lié à un concept particulier à plusieurs emplacements, car cette pratique est une source fréquente d’erreurs. À un moment donné, une modification des exigences nécessitera la modification de ce comportement. Il est probable qu’au moins une instance du comportement ne sera pas mise à jour et que le système se comportera de façon incohérente.
 
 Au lieu de dupliquer la logique, encapsulez-la dans une construction de programmation. Faites de cette construction la seule autorité sur ce comportement, et faites en sorte que toutes les autres parties de l’application qui ont besoin de ce comportement utilisent la nouvelle construction.
 
@@ -105,5 +105,5 @@ Au minimum, les applications web individuelles doivent s’efforcer d’être le
 - [Contexte délimité](https://martinfowler.com/bliki/BoundedContext.html)
 
 >[!div class="step-by-step"]
->[Précédent](choose-between-traditional-web-and-single-page-apps.md)
->[suivant](common-web-application-architectures.md)
+>[Précédent](choose-between-traditional-web-and-single-page-apps.md) 
+> [Suivant](common-web-application-architectures.md)

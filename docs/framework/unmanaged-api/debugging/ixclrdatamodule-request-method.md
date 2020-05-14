@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataModule::Request (méthode)
+title: 'IXCLRDataModule :: Request, méthode'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataModule::Request Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 7d04e5630bd196ef534f72a0c3924019315f3774
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 44ee4fc7fc2368b65f6f2fffe6ac239beddc6293
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632228"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395265"
 ---
-# <a name="ixclrdatamodulerequest-method"></a>IXCLRDataModule::Request (méthode)
+# <a name="ixclrdatamodulerequest-method"></a>IXCLRDataModule :: Request, méthode
 
-Demandes pour remplir la mémoire tampon spécifiée avec les données du module.
+Demandes de remplissage de la mémoire tampon donnée avec les données du module.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -41,30 +41,30 @@ HRESULT Request([in] ULONG32 reqCode,
 ## <a name="parameters"></a>Paramètres
 
 `reqCode`\
-[in] Type à envoyer de demande.
+dans Type de demande à envoyer.
 
 `inBufferSize`\
-[in] taille de la mémoire tampon d’entrée à transmettre.
+[in] taille de la mémoire tampon d’entrée à passer.
 
 `inBuffer`\
-[in, size_is(inBufferSize)] Pointeur de mémoire tampon pour les données brutes à envoyer dans la demande.
+[in, size_is (inBufferSize)] Pointeur de mémoire tampon pour les données brutes à envoyer dans la demande.
 
 `outBufferSize`\
-[in] Taille de la mémoire tampon de sortie.
+dans Taille de la mémoire tampon de sortie.
 
 `outBuffer`\
-[out, size_is(outBufferSize)] Pointeur de mémoire tampon utilisée pour stocker la réponse de la demande.
+[out, size_is (outBufferSize)] Pointeur de la mémoire tampon à utiliser pour stocker la réponse à la demande.
 
 ## <a name="remarks"></a>Notes
 
-La méthode fournie fait partie de la `IXCLRDataModule` interface et correspond à l’emplacement 36e de la table de la méthode virtuelle.
+La méthode fournie fait partie de l' `IXCLRDataModule` interface et correspond à l’emplacement 37th de la table de méthodes virtuelles.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
-**En-tête :** Aucun **bibliothèque :** Aucun **Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
+**En-tête :** **Bibliothèque None :** aucune **.NET Framework versions :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Débogage](index.md)
-- [Interface de IXCLRDataModule](ixclrdatamodule-interface.md)
+- [IXCLRDataModule, interface](ixclrdatamodule-interface.md)

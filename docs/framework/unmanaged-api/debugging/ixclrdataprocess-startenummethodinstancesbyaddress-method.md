@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataProcess::StartEnumMethodInstancesByAddress (méthode)
+title: 'IXCLRDataProcess :: StartEnumMethodInstancesByAddress, méthode'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataProcess::StartEnumMethodInstancesByAddress Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: d7c395e68ad5d8042f9850f25757a5aa445e5c40
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e28fa73300e147ac07a2d325fbf517480bb73797
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752682"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83394945"
 ---
-# <a name="ixclrdataprocessstartenummethodinstancesbyaddress-method"></a>IXCLRDataProcess::StartEnumMethodInstancesByAddress (méthode)
+# <a name="ixclrdataprocessstartenummethodinstancesbyaddress-method"></a>IXCLRDataProcess :: StartEnumMethodInstancesByAddress, méthode
 
-Fournit un handle pour énumérer les instances de la méthode de `AppDomain` en commençant à une adresse donnée.
+Fournit un handle pour énumérer les instances de méthode de `AppDomain` à partir d’une adresse donnée.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -41,27 +41,27 @@ HRESULT StartEnumMethodInstancesByAddress(
 ## <a name="parameters"></a>Paramètres
 
 `address`\
-[in] L’adresse de la première instance de méthode.
+dans Adresse de la première instance de la méthode.
 
 `appDomain`\
-[in] Le domaine d’application de la méthode d’instance.
+dans AppDomain des instances de méthode.
 
 `handle`\
-[out] Un handle pour énumérer les instances de la méthode.
+à Handle pour énumérer les instances de méthode.
 
 ## <a name="remarks"></a>Notes
 
-La méthode fournie fait partie de la `IXCLRDataProcess` interface et correspond à l’emplacement de 27 de la table de la méthode virtuelle.
+La méthode fournie fait partie de l' `IXCLRDataProcess` interface et correspond au 28ème emplacement de la table de méthodes virtuelles.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun  
-**Bibliothèque :** Aucun  
-**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**En-tête :** None  
+**Bibliothèque :** None  
+**Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumération de CLRDataSourceType](clrdatasourcetype-enumeration.md)
+- [Énumération CLRDataSourceType](clrdatasourcetype-enumeration.md)
 - [Débogage](index.md)
-- [Interface de IXCLRDataProcess](ixclrdataprocess-interface.md)
+- [IXCLRDataProcess, interface](ixclrdataprocess-interface.md)

@@ -3,20 +3,20 @@ title: Présentation de l’outil WCF svcutil
 description: Vue d’ensemble de l’outil dotnet-svcutil Microsoft WCF, qui ajoute des fonctionnalités pour les projets .NET Core et ASP.NET Core, de manière similaire à l’outil svcutil WCF pour les projets .NET Framework.
 author: mlacouture
 ms.date: 02/22/2019
-ms.openlocfilehash: 1f500c9355112183a135c2b639807c7cd62fbbfc
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: fde42f7d040fba91f51ce6faa58282ed0206a853
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021251"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396218"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>Outil WCF dotnet-svcutil pour .NET Core
 
-L’outil **dotnet-svcutil de** la Windows Communication Foundation (WCF) est un outil .NET qui récupère les métadonnées d’un service Web sur un emplacement réseau ou à partir d’un fichier WSDL, et génère une classe WCF contenant des méthodes de proxy client qui accèdent aux opérations de service Web.
+L’outil **dotnet-svcutil** Windows Communication Foundation (WCF) est un outil .net qui récupère les métadonnées d’un service Web sur un emplacement réseau ou à partir d’un fichier WSDL, et génère une classe WCF contenant les méthodes de proxy client qui accèdent aux opérations de service Web.
 
 Comme l’outil [**Métadonnées de modèle de service - svcutil**](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour les projets .NET Framework, **dotnet-svcutil** est un outil en ligne de commande pour générer une référence de service web compatible avec les projets .NET Core et .NET Standard.
 
-**L’outil dotnet-svcutil** est une option alternative au fournisseur de services connectés [**WCF Web Service Reference**](wcf-web-service-reference-guide.md) Visual Studio qui a d’abord expédié avec Visual Studio 2017 version 15.5. **L’outil dotnet-svcutil** comme un outil .NET, est disponible multi-plateforme sur Linux, macOS, et Windows.
+L’outil **dotnet-Svcutil** est une option alternative à la [**Référence du service Web WCF**](wcf-web-service-reference-guide.md) du fournisseur de services connectés Visual Studio qui a été livré avec visual studio 2017 version 15,5. L’outil **dotnet-Svcutil** comme outil .net est disponible sur plusieurs plateformes sur Linux, MacOS et Windows.
 
 > [!IMPORTANT]
 > Vous devez référencer des services uniquement à partir d’une source approuvée. L’ajout de références à partir d’une source non fiable peut compromettre la sécurité.
@@ -27,7 +27,7 @@ Comme l’outil [**Métadonnées de modèle de service - svcutil**](../../framew
 
 # <a name="dotnet-svcutil-2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
 
-- [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download) ou versions ultérieures
+- [.Net Core 2,1 SDK](https://dotnet.microsoft.com/download) ou versions ultérieures
 - Votre éditeur de code favori
 
 # <a name="dotnet-svcutil-1x"></a>[dotnet-svcutil 1.x](#tab/dotnetsvcutil1x)
@@ -37,7 +37,7 @@ Comme l’outil [**Métadonnées de modèle de service - svcutil**](../../framew
 
 ---
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Mise en route
 
 L’exemple suivant explique les étapes à suivre pour ajouter une référence de services web à un projet web .NET Core et appeler le service. Vous allez créer une application web .NET Core nommée *HelloSvcutil* et ajouter une référence à un service web qui implémente le contrat suivant :
 
@@ -61,13 +61,13 @@ Supposons dans cet exemple que le service web sera hébergé à l’adresse suiv
     cd HelloSvcutil
     ```
 
-2. Créez un nouveau projet web CMD [`dotnet new`](../tools/dotnet-new.md) dans ce répertoire en utilisant la commande comme suit :
+2. Créez un projet Web C# dans ce répertoire à l’aide de la [`dotnet new`](../tools/dotnet-new.md) commande comme suit :
 
     ```dotnetcli
     dotnet new web
     ```
 
-3. Installez le [ `dotnet-svcutil` paquet NuGet](https://nuget.org/packages/dotnet-svcutil) comme outil CLI : <!-- markdownlint-disable MD023 -->
+3. Installez le [ `dotnet-svcutil` package NuGet](https://nuget.org/packages/dotnet-svcutil) en tant qu’outil CLI : <!-- markdownlint-disable MD023 -->
     # <a name="dotnet-svcutil-2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
 
     ```dotnetcli
@@ -75,7 +75,7 @@ Supposons dans cet exemple que le service web sera hébergé à l’adresse suiv
     ```
 
     # <a name="dotnet-svcutil-1x"></a>[dotnet-svcutil 1.x](#tab/dotnetsvcutil1x)
-    Ouvrez `HelloSvcutil.csproj` le fichier de projet `Project` dans votre éditeur, modifiez l’élément et ajoutez le [ `dotnet-svcutil` paquet NuGet](https://nuget.org/packages/dotnet-svcutil) comme référence d’outil CLI, en utilisant le code suivant :
+    Ouvrez le `HelloSvcutil.csproj` fichier projet dans votre éditeur, modifiez l' `Project` élément et ajoutez le [ `dotnet-svcutil` package NuGet](https://nuget.org/packages/dotnet-svcutil) en tant que référence d’outil CLI, en utilisant le code suivant :
 
     ```xml
     <ItemGroup>
@@ -111,7 +111,7 @@ Le fichier généré est enregistré sous _HelloSvcutil/ServiceReference/Referen
 
 ## <a name="using-the-service-reference"></a>Utiliser la référence de services
 
-1. Restaurer les paquets [`dotnet restore`](../tools/dotnet-restore.md) WCF en utilisant la commande comme suit :
+1. Restaurez les packages WCF à l’aide de la [`dotnet restore`](../tools/dotnet-restore.md) commande comme suit :
 
     ```dotnetcli
     dotnet restore
@@ -119,7 +119,7 @@ Le fichier généré est enregistré sous _HelloSvcutil/ServiceReference/Referen
 
 2. Recherchez le nom de la classe cliente et l’opération que vous souhaitez utiliser. `Reference.cs` contient une classe qui hérite de `System.ServiceModel.ClientBase`, avec des méthodes permettant d’appeler des opérations sur le service. L’objectif de cet exemple est d’appeler l’opération _Hello_ du service _SayHello_. `ServiceReference.SayHelloClient` est le nom de la classe cliente et comporte une méthode `HelloAsync` servant à appeler l’opération.
 
-3. Ouvrez le fichier `Startup.cs` dans votre éditeur et ajoutez en haut une instruction using pour l’espace de noms de la référence de services :
+3. Ouvrez le `Startup.cs` fichier dans votre éditeur et ajoutez une `using` directive pour l’espace de noms de référence de service en haut :
 
     ```csharp
     using ServiceReference;
@@ -145,7 +145,7 @@ Le fichier généré est enregistré sous _HelloSvcutil/ServiceReference/Referen
 
     ```
 
-5. Exécutez l’application à l’aide de la [`dotnet run`](../tools/dotnet-run.md) commande comme suit :
+5. Exécutez l’application à l’aide de la [`dotnet run`](../tools/dotnet-run.md) commande comme suit :
 
     ```dotnetcli
     dotnet run

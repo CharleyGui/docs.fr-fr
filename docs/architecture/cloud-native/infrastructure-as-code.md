@@ -1,25 +1,29 @@
 ---
-title: Infrastructure en tant que code
-description: Architecture des applications .NET natives Cloud pour Azure | Infrastructure en tant que code
-ms.date: 06/30/2019
-ms.openlocfilehash: 3957da68ac28774f899f49fb181a29c2435902f8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+title: Infrastructure as code
+description: Adopter l’infrastructure en tant que code (IaC) avec des applications Cloud natives
+ms.date: 05/12/2020
+ms.openlocfilehash: 309dd8610ab3b72a6c6da5297f109f822520c5ff
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087246"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395346"
 ---
-# <a name="infrastructure-as-code"></a>Infrastructure en tant que code
+# <a name="infrastructure-as-code"></a>Infrastructure as code
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Les applications Cloud natives ont tendance à utiliser toutes sortes de composants PaaS (Platform as a service) fantastiques. Sur une plateforme Cloud comme Azure, ces composants peuvent inclure des éléments tels que le stockage, les Service Bus et le service Signalr. À mesure que les applications deviennent plus compliquées, le nombre de ces services en cours d’utilisation est susceptible de croître. À l’instar de la façon dont la livraison continue a enfreint le modèle traditionnel de déploiement dans un environnement manuellement, le rythme de modification rapide a également enfreint le modèle de gestion des environnements par un groupe informatique centralisé.
+Les systèmes Cloud natifs intègrent des microservices, des conteneurs et une conception de système moderne pour obtenir une vitesse et une agilité. Ils fournissent des étapes de génération et de publication automatisées pour garantir un code cohérent et de qualité. Mais ce n’est qu’une partie de l’histoire. Comment approvisionner les environnements Cloud sur lesquels ces systèmes s’exécutent ?
 
-Les environnements de construction peuvent et doivent également être automatisés. Il existe un large éventail d’outils bien pensés qui peuvent faciliter le processus.
+Les applications Cloud natives modernes adoptent la pratique d' [infrastructure en tant que code](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code), ou `IaC` .  Avec IaC, vous automatisez l’approvisionnement de la plateforme. Vous appliquez essentiellement des pratiques de conception de logiciels, telles que le test et la gestion des versions, à vos pratiques DevOps. Votre infrastructure et vos déploiements sont automatisés, cohérents et reproductibles. Tout comme la livraison continue automatisée, le modèle traditionnel de déploiements manuels, l’infrastructure en tant que code (IaC) évolue dans le mode de gestion des environnements d’application.
 
-## <a name="azure-resource-manager-templates"></a>Modèles de Azure Resource Manager
+Des outils comme Azure Resource Manager (ARM), Terraform et l’interface de ligne de commande (CLI) Azure vous permettent de générer un script de façon déclarative de l’infrastructure cloud dont vous avez besoin.
 
-Les modèles Azure Resource Manager sont un langage JSON qui vous aide à définir diverses ressources dans Azure. Le schéma de base ressemble à ce qui suit : figure 11-10.
+## <a name="azure-resource-manager-templates"></a>Modèles Microsoft Azure Resource Manager
+
+ARM est l’acronyme de [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/). Il s’agit d’un moteur d’approvisionnement d’API qui est intégré à Azure et exposé en tant que service API. ARM vous permet de déployer, mettre à jour, supprimer et gérer les ressources contenues dans le groupe de ressources Azure en une seule opération coordonnée. Vous fournissez au moteur un modèle JSON qui spécifie les ressources dont vous avez besoin et leur configuration. ARM orchestre automatiquement le déploiement dans le bon ordre respectant les dépendances. Le moteur garantit idempotence. Si une ressource souhaitée existe déjà avec la même configuration, l’approvisionnement sera ignoré.
+
+Les modèles Azure Resource Manager sont un langage JSON qui vous aide à définir diverses ressources dans Azure. Le schéma de base ressemble à ce qui suit : figure 10-14.
 
 ```json
 {
@@ -34,7 +38,7 @@ Les modèles Azure Resource Manager sont un langage JSON qui vous aide à défin
 }
 ```
 
-**Figure 11-10** -schéma d’un modèle de gestionnaire des ressources
+**Figure 10-14** -schéma d’un modèle de gestionnaire des ressources
 
 Dans ce modèle, il est possible de définir un conteneur de stockage à l’intérieur de la section des ressources, comme suit :
 
@@ -54,21 +58,21 @@ Dans ce modèle, il est possible de définir un conteneur de stockage à l’int
   ],
 ```
 
-**Figure 11-11** : exemple de compte de stockage défini dans un modèle de gestionnaire des ressources
+**Figure 10-15** : exemple de compte de stockage défini dans un modèle de gestionnaire des ressources
 
-Les modèles peuvent être paramétrables afin qu’un modèle puisse être réutilisé avec différents paramètres pour définir les environnements de développement, d’assurance qualité et de production. Cela permet d’éviter les surprises lors de la migration vers un environnement plus élevé configuré différemment des environnements inférieurs. Les ressources définies dans un modèle sont généralement toutes créées au sein d’un même groupe de ressources sur Azure (il est possible de définir plusieurs groupes de ressources dans un seul modèle de Gestionnaire des ressources, mais inhabituel). Il est ainsi très facile de supprimer un environnement en supprimant simplement le groupe de ressources dans son ensemble. L’analyse des coûts peut également être exécutée au niveau du groupe de ressources, ce qui permet de connaître rapidement le coût de chaque environnement.
+Un modèle ARM peut être paramétré avec des informations de configuration et d’environnement dynamiques. Cela lui permet d’être réutilisé pour définir différents environnements, tels que le développement, l’assurance qualité ou la production. Normalement, le modèle crée toutes les ressources dans un seul groupe de ressources Azure. Il est possible de définir plusieurs groupes de ressources dans un seul modèle de Gestionnaire des ressources, si nécessaire. Vous pouvez supprimer toutes les ressources d’un environnement en supprimant le groupe de ressources lui-même. L’analyse des coûts peut également être exécutée au niveau du groupe de ressources, ce qui permet de connaître rapidement le coût de chaque environnement.
 
-Il existe de nombreux exemples de modèles définis dans le projet de [modèles de démarrage rapide Azure](https://github.com/Azure/azure-quickstart-templates) sur GitHub qui vont créer un pied lorsque vous démarrez sur un nouveau modèle ou que vous l’ajoutez à un modèle existant.
+Un grand nombre d’exemples ou de modèles ARM sont disponibles dans le projet de [modèles de démarrage rapide Azure](https://github.com/Azure/azure-quickstart-templates) sur GitHub. Ils peuvent accélérer la création d’un nouveau modèle ou la modification d’un modèle existant.
 
-Gestionnaire des ressources modèles peuvent être exécutés de différentes façons. La méthode la plus simple consiste peut-être à les coller simplement dans le Portail Azure. Pour les déploiements expérimentaux, cette méthode peut être très rapide. Ils peuvent également être exécutés dans le cadre d’un processus de génération ou de publication dans Azure DevOps. Il existe des tâches qui vont tirer parti des connexions dans Azure pour exécuter les modèles. Les modifications apportées aux modèles de Gestionnaire des ressources sont appliquées de façon incrémentielle, ce qui signifie que pour ajouter une nouvelle ressource, vous devez simplement l’ajouter au modèle. Les outils gèrent la comparaison entre le groupe de ressources actuel et le groupe de ressources souhaité défini dans le modèle. Les ressources seront ensuite créées ou modifiées afin qu’elles correspondent à ce qui est défini dans le modèle.  
+Gestionnaire des ressources modèles peuvent être exécutés de nombreuses façons. La méthode la plus simple consiste peut-être à les coller simplement dans le Portail Azure. Pour les déploiements expérimentaux, cette méthode peut être rapide. Ils peuvent également être exécutés dans le cadre d’un processus de génération ou de publication dans Azure DevOps. Il existe des tâches qui vont tirer parti des connexions dans Azure pour exécuter les modèles. Les modifications apportées aux modèles de Gestionnaire des ressources sont appliquées de façon incrémentielle, ce qui signifie que pour ajouter une nouvelle ressource, vous devez simplement l’ajouter au modèle. Les outils rapprochent les différences entre les ressources actuelles et celles définies dans le modèle. Les ressources seront ensuite créées ou modifiées afin qu’elles correspondent à ce qui est défini dans le modèle.  
 
 ## <a name="terraform"></a>Terraform
 
-L’un des inconvénients des modèles Gestionnaire des ressources est qu’ils sont spécifiques au Cloud Azure. Il est rare de créer des applications qui incluent des ressources provenant de plusieurs Clouds, mais dans les cas où l’entreprise s’appuie sur une disponibilité spectaculaire, le coût de la prise en charge de plusieurs Clouds peut être utile. Si un langage de création de modèles pouvait être utilisé dans tous les Clouds, cela permettrait également aux développeurs d’être plus portables.
+Les applications Cloud natives sont souvent construites pour être `cloud agnostic` . Par conséquent, l’application n’est pas étroitement couplée à un fournisseur de Cloud particulier et peut être déployée sur n’importe quel cloud public.
 
-Il existe plusieurs technologies qui font cela ! L’offre la plus mature dans cet espace est appelée [Terraform](https://www.terraform.io/). Terraform prend en charge tous les principaux lecteurs Cloud tels qu’Azure, Google Cloud Platform, AWS et AliCloud, et prend également en charge des dizaines de joueurs mineurs tels que Heroku et DigitalOcean. Au lieu d’utiliser JSON comme langage de définition de modèle, il utilise le YAML légèrement plus succinct.
+[Terraform](https://www.terraform.io/) est un outil de création de modèles commercial qui peut approvisionner des applications Cloud natives sur tous les principaux acteurs du Cloud : Azure, Google Cloud Platform, AWS et AliCloud. Au lieu d’utiliser JSON comme langage de définition de modèle, il utilise le YAML légèrement plus succinct.
 
-Un exemple de fichier Terraform qui fait la même chose que le précédent Gestionnaire des ressources modèle (figure 11-11) est illustré dans la figure 11-12 :
+Un exemple de fichier Terraform qui fait la même chose que le précédent Gestionnaire des ressources modèle (figure 10-15) est illustré dans la figure 10-16 :
 
 ```terraform
 provider "azurerm" {
@@ -90,14 +94,40 @@ resource "azurerm_storage_account" "testsa" {
 }
 ```
 
-**Figure 11-12** -exemple de modèle de gestionnaire des ressources
+**Figure 10-16** -exemple de modèle de gestionnaire des ressources
 
-Terraform est un meilleur travail qui consiste à fournir des messages d’erreur sensibles lorsqu’une ressource ne peut pas être déployée en raison d’une erreur dans le modèle. Il s’agit d’une zone dans laquelle Gestionnaire des ressources modèles présentent des défis permanents. Il y a également une tâche de validation très pratique qui peut être utilisée dans la phase de génération pour intercepter les erreurs de modèle rapidement.
+Terraform fournit également des messages d’erreur intuitifs pour les modèles de problème. Il y a également une tâche de validation pratique qui peut être utilisée dans la phase de génération pour intercepter les erreurs de modèle plus tôt.
 
-Comme pour les modèles Gestionnaire des ressources, il existe des outils en ligne de commande qui peuvent être utilisés pour déployer des modèles Terraform. Il existe également des tâches créées par la Communauté dans Azure Pipelines qui peuvent valider et appliquer des modèles Terraform.
+Comme pour les modèles Gestionnaire des ressources, les outils en ligne de commande sont disponibles pour déployer des modèles Terraform. Il existe également des tâches créées par la Communauté dans Azure Pipelines qui peuvent valider et appliquer des modèles Terraform.
 
-Dans le cas où le modèle Terraform ou Gestionnaire des ressources génère des valeurs intéressantes telles que la chaîne de connexion à une base de données nouvellement créée, elles peuvent être capturées dans le pipeline de génération et utilisées dans les tâches suivantes.
+Parfois, les modèles Terraform et ARM génèrent des valeurs significatives, telles qu’une chaîne de connexion à une base de données nouvellement créée. Ces informations peuvent être capturées dans le pipeline de build et utilisées dans les tâches suivantes.
+
+## <a name="azure-cli-scripts-and-tasks"></a>Azure CLI des scripts et des tâches
+
+Enfin, vous pouvez tirer parti de [Azure CLI](https://docs.microsoft.com/cli/azure/) pour générer un script de façon déclarative de votre infrastructure en nuage. Azure CLI scripts peuvent être créés, trouvés et partagés pour approvisionner et configurer presque n’importe quelle ressource Azure. L’interface CLI est simple à utiliser avec une courbe d’apprentissage doucement. Les scripts sont exécutés dans PowerShell ou bash. Ils sont également faciles à déboguer, en particulier en cas de comparaison avec les modèles ARM.
+
+Azure CLI scripts fonctionnent bien lorsque vous devez détruire et redéployer votre infrastructure. La mise à jour d’un environnement existant peut être délicate. De nombreuses commandes CLI ne sont pas idempotent. Cela signifie qu’ils recréent la ressource chaque fois qu’ils sont exécutés, même si la ressource existe déjà. Il est toujours possible d’ajouter du code qui vérifie l’existence de chaque ressource avant de la créer. Toutefois, votre script peut devenir encombré et difficile à gérer.
+
+Ces scripts peuvent également être incorporés dans les pipelines Azure DevOps en tant que `Azure CLI tasks` . L’exécution du pipeline appelle le script.
+
+La figure 10-17 montre un extrait de code YAML qui répertorie la version de Azure CLI et les détails de l’abonnement. Notez comment Azure CLI commandes sont incluses dans un script inline.
+
+```yaml
+- task: AzureCLI@2
+  displayName: Azure CLI
+  inputs:
+    azureSubscription: <Name of the Azure Resource Manager service connection>
+    scriptType: ps
+    scriptLocation: inlineScript
+    inlineScript: |
+      az --version
+      az account show
+```
+
+**Figure 10-17** -script Azure CLI
+
+Dans l’article [qu’est-ce que l’infrastructure en tant que code](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code), l’auteur Sam Guckenheimer décrit comment, les équipes qui implémentent IaC peuvent fournir rapidement et à grande échelle des environnements stables. Les équipes évitent la configuration manuelle des environnements et appliquent la cohérence en représentant l’état souhaité de leurs environnements via du code. Les déploiements d’infrastructure avec IaC sont reproductibles et évitent les problèmes d’exécution dus à une dérive de la configuration ou à des dépendances manquantes. Les équipes DevOps peuvent collaborer avec un ensemble unifié de pratiques et d’outils pour fournir des applications et leur infrastructure de prise en charge rapidement, de manière fiable et à grande échelle.»
 
 >[!div class="step-by-step"]
->[Précédent](devops.md)
->[Suivant](application-bundles.md)
+>[Précédent](feature-flags.md) 
+> [Suivant](application-bundles.md)

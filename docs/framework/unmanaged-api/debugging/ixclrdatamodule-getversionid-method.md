@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataModule::GetVersionId (méthode)
+title: 'IXCLRDataModule :: GetVersionId, méthode'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataModule::GetVersionId Method
@@ -15,14 +15,14 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 5bd84f784ea92e7b2ce2465e64972dc84e16a16c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ff8ccf42d1131fb15d7473ae12ecefde9d55177f
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744704"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395279"
 ---
-# <a name="ixclrdatamodulegetversionid-method"></a>IXCLRDataModule::GetVersionId (méthode)
+# <a name="ixclrdatamodulegetversionid-method"></a>IXCLRDataModule :: GetVersionId, méthode
 
 Obtient l’identificateur de version du module.
 
@@ -39,20 +39,20 @@ HRESULT GetVersionId(
 ## <a name="parameters"></a>Paramètres
 
 `vid`\
-[out] Identificateur de version du module.
+à Identificateur de version du module.
 
 ## <a name="remarks"></a>Notes
 
-La méthode fournie fait partie de la `IXCLRDataModule` interface et correspond à l’emplacement 40E de la table de la méthode virtuelle.
+La méthode fournie fait partie de l' `IXCLRDataModule` interface et correspond à l’emplacement 41e de la table de méthodes virtuelles.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun  
-**Bibliothèque :** Aucun  
-**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**En-tête :** None  
+**Bibliothèque :** None  
+**Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Débogage](index.md)
-- [Interface de IXCLRDataModule](ixclrdatamodule-interface.md)
+- [IXCLRDataModule, interface](ixclrdatamodule-interface.md)

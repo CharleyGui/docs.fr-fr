@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 316df866-442d-40cc-b049-45e8adcb65d1
 topic_type:
 - apiref
-ms.openlocfilehash: 4b55ac1d895bfecbe74be447bd06f4aa22b9d04f
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: fc8269d4cc22ab53569edaa48c27b4a01970dcc7
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790794"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83397176"
 ---
 # <a name="icoreclrdebugtargetenumruntimes-method"></a>Méthode ICoreClrDebugTarget::EnumRuntimes
 Énumère les CLR (Common Language Runtime) dans le processus spécifié en cours d'exécution sur un ordinateur distant.  
@@ -37,9 +37,9 @@ HRESULT EnumRuntimes (
     );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `dwInternalProcessID`  
- [in] ID de processus interne du processus pour lequel vous souhaitez énumérer les runtimes. Ce sera `m_dwInternalID` à partir du [CoreClrDebugProcInfo](coreclrdebugprocinfo-structure.md)correspondant.  
+ [in] ID de processus interne du processus pour lequel vous souhaitez énumérer les runtimes. Ce sera `m_dwInternalID` le [CoreClrDebugProcInfo](coreclrdebugprocinfo-structure.md)correspondant.  
   
  `pcRuntimes`  
  [out] Nombre de runtimes retournés dans `ppRuntimes`. Cette valeur peut être égale à 0 (zéro).  
@@ -63,8 +63,8 @@ HRESULT EnumRuntimes (
 ## <a name="remarks"></a>Notes  
  Pour libérer la mémoire allouée par cette méthode, appelez la méthode [ICoreClrDebugTarget :: FreeMemory](icoreclrdebugtarget-freememory-method.md) .  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CoreClrRemoteDebuggingInterfaces. h  
   
@@ -74,4 +74,4 @@ HRESULT EnumRuntimes (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICoreClrDebugTarget, interface](icoreclrdebugtarget-interface.md)
+- [Interface ICorDebugDataTarget](icoreclrdebugtarget-interface.md)

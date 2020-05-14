@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: b6393d7fa4853c230203521e665bbe89d7b228e2
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 72560de9777b2d826418e63b4a4fcccf1e4fa8b9
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790442"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396481"
 ---
 # <a name="ixclrdatamethoddefinitionenuminstance-method"></a>IXCLRDataMethodDefinition :: EnumInstance, méthode
 
@@ -37,7 +37,7 @@ HRESULT EnumInstance(
 );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 `handle`\
 [in, out] Handle pour énumérer les instances.
@@ -47,18 +47,18 @@ HRESULT EnumInstance(
 
 ## <a name="remarks"></a>Notes
 
-La méthode fournie fait partie de l’interface `IXCLRDataMethodDefinition` et correspond au quatrième emplacement de la table de méthodes virtuelles.
+La méthode fournie fait partie de l' `IXCLRDataMethodDefinition` interface et correspond au sixième emplacement de la table de méthodes virtuelles.
 
-## <a name="requirements"></a>Configuration requise pour
+## <a name="requirements"></a>Spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
 **En-tête :** None  
 **Bibliothèque :** None  
-**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Énumération CLRDataSourceType](clrdatasourcetype-enumeration.md)
 - [Débogage](index.md)
-- [Interface IXCLRDataMethodDefinition](ixclrdatamethoddefinition-interface.md)
-- [Interface IXCLRDataMethodInstance](ixclrdatamethodinstance-interface.md)
+- [IXCLRDataMethodDefinition, interface](ixclrdatamethoddefinition-interface.md)
+- [IXCLRDataMethodInstance, interface](ixclrdatamethodinstance-interface.md)

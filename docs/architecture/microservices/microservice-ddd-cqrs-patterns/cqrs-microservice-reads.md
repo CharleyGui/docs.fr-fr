@@ -2,12 +2,12 @@
 title: Implémentation de lectures/requêtes dans un microservice CQRS
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre l’implémentation du côté requêtes de CQRS sur le microservice Ordering dans eShopOnContainers avec Dapper.
 ms.date: 10/08/2018
-ms.openlocfilehash: 49f42a5035bab38f800f3ec5ea24b01fde0d2964
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 4b789bb3fb465c17c5c4445a1d3dc9dffa47a152
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988750"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396271"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implémenter les lectures/requêtes dans un microservice CQRS
 
@@ -15,7 +15,7 @@ Pour les lectures/requêtes, le microservice Ordering (Commandes) de l’applica
 
 L’approche est simple, comme le montre la figure 7-3. L’interface API est implémentée par les contrôleurs d’API web à l’aide de n’importe quelle infrastructure, comme un micro-mappeur objet/relationnel (ORM) tel que Dapper, et en retournant des ViewModels dynamiques en fonction des besoins des applications d’interface utilisateur.
 
-![Diagramme montrant des requêtes de haut niveau-côté dans CQRS simplifiés.](./media/cqrs-microservice-reads/simple-approach-cqrs-queries.png)
+![Diagramme montrant les requêtes de haut niveau, côté de la CQRS simplifiée.](./media/cqrs-microservice-reads/simple-approach-cqrs-queries.png)
 
 **Figure 7-3**. Approche la plus simple pour les requêtes dans un microservice CQRS
 
@@ -23,7 +23,7 @@ L’approche la plus simple pour le côté requêtes dans une approche CQRS simp
 
 Dans la mesure où il s’agit d’une approche simple, le code nécessaire côté requêtes (comme le code utilisant un micro-ORM tel que [Dapper](https://github.com/StackExchange/Dapper)) peut être implémenté [dans le même projet d’API web](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Queries/OrderQueries.cs). La figure 7-4 illustre ceci. Les requêtes sont définies dans le projet de microservice **Ordering.API** dans la solution eShopOnContainers.
 
-![Capture d’écran du dossier Requête du projet Ordering.API.](./media/cqrs-microservice-reads/ordering-api-queries-folder.png)
+![Capture d’écran du dossier requêtes du projet Ordering. API.](./media/cqrs-microservice-reads/ordering-api-queries-folder.png)
 
 **Figure 7-4**. Requêtes dans le microservice de commandes dans eShopOnContainers
 
@@ -41,9 +41,9 @@ Vous pouvez utiliser n’importe quel micro-ORM, Entity Framework Core ou même 
 
 Dapper est un projet Open Source (initialement créé par Sam Saffron). Il fait partie des éléments essentiels utilisés dans [Stack Overflow](https://stackoverflow.com/). Pour utiliser Dapper, il vous suffit de l’installer par le biais du [package NuGet Dapper](https://www.nuget.org/packages/Dapper), comme illustré dans la figure suivante :
 
-![Capture d’écran du paquet Dapper dans la vue des paquets NuGet.](./media/cqrs-microservice-reads/drapper-package-nuget.png)
+![Capture d’écran du package dapper dans la vue packages NuGet.](./media/cqrs-microservice-reads/drapper-package-nuget.png)
 
-Vous devez également ajouter une instruction using afin que votre code ait accès aux méthodes d’extension Dapper.
+Vous devez également ajouter une `using` directive afin que votre code ait accès aux méthodes d’extension dapper.
 
 Quand vous utilisez Dapper dans votre code, vous utilisez directement la classe <xref:System.Data.SqlClient.SqlConnection> disponible dans l’espace de noms <xref:System.Data.SqlClient>. Avec la méthode QueryAsync et d’autres méthodes d’extension qui étendent la classe <xref:System.Data.SqlClient.SqlConnection>, vous pouvez simplement exécuter des requêtes de façon directe et performante.
 
@@ -93,13 +93,13 @@ Le point important à retenir est qu’en utilisant un type dynamique, la collec
 
 ### <a name="viewmodel-as-predefined-dto-classes"></a>ViewModel sous la forme de classes DTO prédéfinies
 
-**Avantages**: Avoir des classes ViewModel statiques prédéfinis, comme des « contrats » basés sur des classes DTO explicites, est certainement meilleur pour les API publiques mais aussi pour les microservices à long terme, même s’ils ne sont utilisés que par la même application.
+**Avantages**: avoir des classes ViewModel statiques prédéfinies, telles que « Contracts » reposant sur des classes DTO explicites, est sans aucun doute mieux pour les API publiques, mais également pour les microservices à long terme, même s’ils sont utilisés uniquement par la même application.
 
 Si vous voulez spécifier des types de réponse pour Swagger, vous devez utiliser des classes DTO explicites comme type de retour. Par conséquent, les classes DTO prédéfinies vous permettent de fournir des informations plus détaillées à partir de Swagger. Cela améliore la documentation et la compatibilité d’une API lors de son utilisation.
 
 **Inconvénient :** comme indiqué précédemment, lors de la mise à jour du code, certaines étapes supplémentaires sont nécessaires pour mettre à jour les classes DTO.
 
-*Conseil basés sur notre expérience :* Dans les requêtes implémentées au niveau du microservice Ordering dans eShopOnContainers, nous avons commencé le développement en utilisant des ViewModels, car c’était très simple et agile pour les premières étapes du développement. Mais, une fois le développement stabilisé, nous avons choisi de refactoriser les API et d’utiliser des DTO statiques ou prédéfinis pour les ViewModels, car il est plus clair pour les consommateurs du microservice de connaître les types de DTO explicites, utilisés comme «contrats».
+*Conseil basés sur notre expérience :* Dans les requêtes implémentées au niveau du microservice Ordering dans eShopOnContainers, nous avons commencé le développement en utilisant des ViewModels, car c’était très simple et agile pour les premières étapes du développement. Toutefois, une fois que le développement a été stabilisé, nous avons choisi de refactoriser les API et d’utiliser des DTO statiques ou prédéfinis pour le ViewModels, car il est plus clair pour les consommateurs du microservice de connaître les types DTO explicites, utilisés comme « contrats ».
 
 Dans l’exemple suivant, vous pouvez voir comment la requête retourne des données en utilisant une classe DTO de ViewModel explicite : la classe OrderSummary.
 
@@ -177,7 +177,7 @@ C’est une autre raison pour laquelle les types retournés explicites sont, à 
 
 Dans l’image suivante, vous pouvez voir comment l’interface utilisateur de Swagger affiche les informations ResponseType.
 
-![Capture d’écran de la page de l’interface utilisateur Swagger pour l’API de commande.](./media/cqrs-microservice-reads/swagger-ordering-http-api.png)
+![Capture d’écran de la page d’interface utilisateur Swagger pour l’API de tri.](./media/cqrs-microservice-reads/swagger-ordering-http-api.png)
 
 **Figure 7-5**. Interface utilisateur de Swagger affichant les types de réponse et les codes d’état HTTP possibles à partir d’une API web
 
@@ -188,12 +188,12 @@ L’image ci-dessus présente des exemples de valeurs basés sur les types ViewM
 - **Dapper**  
  <https://github.com/StackExchange/dapper-dot-net>
 
-- **Julie Lerman. Points de données - Dapper, Entity Framework et Hybrid Apps (article du magazine MSDN)**  
+- **Julie Lerman. Points de données-dapper, Entity Framework et applications hybrides (article MSDN Magazine)**  
   <https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps>
 
-- **ASP.NET Pages d’aide à l’API Web de base à l’aide de Swagger**  
+- **ASP.NET Core les pages d’aide de l’API Web à l’aide de Swagger**  
   <https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger?tabs=visual-studio>
 
 >[!div class="step-by-step"]
->[Suivant précédent](eshoponcontainers-cqrs-ddd-microservice.md)
->[Next](ddd-oriented-microservice.md)
+>[Précédent](eshoponcontainers-cqrs-ddd-microservice.md) 
+> [Suivant](ddd-oriented-microservice.md)
