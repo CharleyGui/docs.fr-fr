@@ -1,0 +1,15 @@
+- name: "Modernisation des applications de bureau sur Windows\_10 avec .NET Core\_3.1"
+  href: index.md
+  items:
+    - name: Pourquoi des applications de bureau modernes
+      href: why-modern-applications.md
+    - name: Nouveautés de .NET Core pour Desktop
+      href: whats-new-dotnet-core.md
+    - name: Migration d’applications de bureau modernes
+      href: migrate-modern-applications.md
+    - name: "Migration Windows\_10"
+      href: windows-migration.md
+    - name: "Exemple de migration vers .NET Core\_3.1"
+      href: example-migration-core.md
+    - name: Déploiement d’applications de bureau modernes
+      href: deploy-modern-applications.md

@@ -15,6 +15,8 @@
       href: microservices/
     - name: "Applications serverless\_: architecture, modèles et implémentation Azure"
       href: serverless/
+    - name: "Modernisation des applications de bureau sur Windows\_10 avec .NET Core\_3.1"
+      href: modernize-desktop/
 - name: Aperçu des livres électroniques
   expanded: true
   items:
