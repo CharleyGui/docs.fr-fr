@@ -18,19 +18,19 @@ helpviewer_keywords:
 ms.assetid: a5cab4c6-990e-47f3-8798-cf422b791015
 topic_type:
 - apiref
-ms.openlocfilehash: 44578595b3cb790570c5359e714bd39c109cf1f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a60805e1fd78cb14835957a7afc14fe279cb20fb
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176459"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616565"
 ---
-# <a name="corexitprocess-function"></a><span data-ttu-id="ac230-102">CorExitProcess, fonction</span><span class="sxs-lookup"><span data-stu-id="ac230-102">CorExitProcess Function</span></span>
-<span data-ttu-id="ac230-103">Ferme le processus actuel non menté.</span><span class="sxs-lookup"><span data-stu-id="ac230-103">Shuts down the current unmanaged process.</span></span>  
+# <a name="corexitprocess-function"></a><span data-ttu-id="c7742-102">CorExitProcess, fonction</span><span class="sxs-lookup"><span data-stu-id="c7742-102">CorExitProcess Function</span></span>
+<span data-ttu-id="c7742-103">Arrête le processus non managé actuel.</span><span class="sxs-lookup"><span data-stu-id="c7742-103">Shuts down the current unmanaged process.</span></span>  
   
- <span data-ttu-id="ac230-104">Cette fonction a été dépréciée dans le cadre .NET 4.</span><span class="sxs-lookup"><span data-stu-id="ac230-104">This function has been deprecated in the .NET Framework 4.</span></span> <span data-ttu-id="ac230-105">Utilisez la méthode [ICLRMetaHost::ExitProcess](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-exitprocess-method.md) à la place.</span><span class="sxs-lookup"><span data-stu-id="ac230-105">Use the [ICLRMetaHost::ExitProcess](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-exitprocess-method.md) method instead.</span></span>  
+ <span data-ttu-id="c7742-104">Cette fonction a été dépréciée dans le .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="c7742-104">This function has been deprecated in the .NET Framework 4.</span></span> <span data-ttu-id="c7742-105">Utilisez la méthode [ICLRMetaHost :: ExitProcess](iclrmetahost-exitprocess-method.md) à la place.</span><span class="sxs-lookup"><span data-stu-id="c7742-105">Use the [ICLRMetaHost::ExitProcess](iclrmetahost-exitprocess-method.md) method instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ac230-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ac230-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c7742-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c7742-106">Syntax</span></span>  
   
 ```cpp  
 void STDMETHODCALLTYPE CorExitProcess (
@@ -38,24 +38,24 @@ void STDMETHODCALLTYPE CorExitProcess (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="ac230-107">Paramètres</span><span class="sxs-lookup"><span data-stu-id="ac230-107">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c7742-107">Paramètres</span><span class="sxs-lookup"><span data-stu-id="c7742-107">Parameters</span></span>  
  `exitCode`  
- <span data-ttu-id="ac230-108">Un integer qui spécifie le code de sortie du processus.</span><span class="sxs-lookup"><span data-stu-id="ac230-108">An integer that specifies the process exit code.</span></span>  
+ <span data-ttu-id="c7742-108">Entier qui spécifie le code de sortie du processus.</span><span class="sxs-lookup"><span data-stu-id="c7742-108">An integer that specifies the process exit code.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="ac230-109">Notes </span><span class="sxs-lookup"><span data-stu-id="ac230-109">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c7742-109">Notes</span><span class="sxs-lookup"><span data-stu-id="c7742-109">Remarks</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="ac230-110">En commençant par le cadre `CorExitProcess` .NET 4, quitte chaque runtime commencé dans le processus, pas seulement le temps d’exécution auquel les API hérités ont été liés.</span><span class="sxs-lookup"><span data-stu-id="ac230-110">Beginning with the .NET Framework 4, `CorExitProcess` exits every started runtime in the process, not just the runtime to which the legacy APIs have been bound.</span></span>  
+> <span data-ttu-id="c7742-110">À partir du .NET Framework 4, `CorExitProcess` quitte chaque Runtime démarré dans le processus, pas seulement le runtime auquel les API héritées ont été liées.</span><span class="sxs-lookup"><span data-stu-id="c7742-110">Beginning with the .NET Framework 4, `CorExitProcess` exits every started runtime in the process, not just the runtime to which the legacy APIs have been bound.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ac230-111">Spécifications</span><span class="sxs-lookup"><span data-stu-id="ac230-111">Requirements</span></span>  
- <span data-ttu-id="ac230-112">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ac230-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c7742-111">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="c7742-111">Requirements</span></span>  
+ <span data-ttu-id="c7742-112">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c7742-112">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ac230-113">**En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor</span><span class="sxs-lookup"><span data-stu-id="ac230-113">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="c7742-113">**En-tête :** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="c7742-113">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="ac230-114">**Bibliothèque:** MSCorEE.dll MSCorEE.dll MSCorEE.dll MSCor</span><span class="sxs-lookup"><span data-stu-id="ac230-114">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="c7742-114">**Bibliothèque :** MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="c7742-114">**Library:** MSCorEE.dll</span></span>  
   
- <span data-ttu-id="ac230-115">**.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ac230-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="c7742-115">**Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c7742-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ac230-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ac230-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c7742-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c7742-116">See also</span></span>
 
-- [<span data-ttu-id="ac230-117">Fonction d'hébergement du CLR déconseillées</span><span class="sxs-lookup"><span data-stu-id="ac230-117">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [<span data-ttu-id="c7742-117">Fonction d'hébergement du CLR déconseillées</span><span class="sxs-lookup"><span data-stu-id="c7742-117">Deprecated CLR Hosting Functions</span></span>](deprecated-clr-hosting-functions.md)

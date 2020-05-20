@@ -14,31 +14,31 @@ helpviewer_keywords:
 ms.assetid: 57c33c58-bf0b-4533-b569-e6a682d02cba
 topic_type:
 - apiref
-ms.openlocfilehash: 4424509c16dd1d9f83db117ae7343fa03995297e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fbf501d906ecc0bf55719fa33d1af2d4db1cc2ef
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126913"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617089"
 ---
-# <a name="iapartmentcallback-interface"></a><span data-ttu-id="ea00c-102">IApartmentCallback, interface</span><span class="sxs-lookup"><span data-stu-id="ea00c-102">IApartmentCallback Interface</span></span>
-<span data-ttu-id="ea00c-103">Fournit des méthodes pour effectuer des rappels dans un cloisonnement.</span><span class="sxs-lookup"><span data-stu-id="ea00c-103">Provides methods for making callbacks within an apartment.</span></span> <span data-ttu-id="ea00c-104">Un *cloisonnement* est un conteneur logique au sein d’un processus pour les objets qui partagent les mêmes exigences d’accès aux threads.</span><span class="sxs-lookup"><span data-stu-id="ea00c-104">An *apartment* is a logical container within a process for objects that share the same thread access requirements.</span></span>  
+# <a name="iapartmentcallback-interface"></a><span data-ttu-id="4e3bd-102">IApartmentCallback, interface</span><span class="sxs-lookup"><span data-stu-id="4e3bd-102">IApartmentCallback Interface</span></span>
+<span data-ttu-id="4e3bd-103">Fournit des méthodes pour effectuer des rappels dans un cloisonnement.</span><span class="sxs-lookup"><span data-stu-id="4e3bd-103">Provides methods for making callbacks within an apartment.</span></span> <span data-ttu-id="4e3bd-104">Un *cloisonnement* est un conteneur logique au sein d’un processus pour les objets qui partagent les mêmes exigences d’accès aux threads.</span><span class="sxs-lookup"><span data-stu-id="4e3bd-104">An *apartment* is a logical container within a process for objects that share the same thread access requirements.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="ea00c-105">Méthodes</span><span class="sxs-lookup"><span data-stu-id="ea00c-105">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="4e3bd-105">Méthodes</span><span class="sxs-lookup"><span data-stu-id="4e3bd-105">Methods</span></span>  
   
-|<span data-ttu-id="ea00c-106">Méthode</span><span class="sxs-lookup"><span data-stu-id="ea00c-106">Method</span></span>|<span data-ttu-id="ea00c-107">Description</span><span class="sxs-lookup"><span data-stu-id="ea00c-107">Description</span></span>|  
+|<span data-ttu-id="4e3bd-106">Méthode</span><span class="sxs-lookup"><span data-stu-id="4e3bd-106">Method</span></span>|<span data-ttu-id="4e3bd-107">Description</span><span class="sxs-lookup"><span data-stu-id="4e3bd-107">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="ea00c-108">DoCallback, méthode</span><span class="sxs-lookup"><span data-stu-id="ea00c-108">DoCallback Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iapartmentcallback-docallback-method.md)|<span data-ttu-id="ea00c-109">Exécute la fonction spécifiée dans un cloisonnement.</span><span class="sxs-lookup"><span data-stu-id="ea00c-109">Executes the specified function within an apartment.</span></span>|  
+|[<span data-ttu-id="4e3bd-108">DoCallback, méthode</span><span class="sxs-lookup"><span data-stu-id="4e3bd-108">DoCallback Method</span></span>](iapartmentcallback-docallback-method.md)|<span data-ttu-id="4e3bd-109">Exécute la fonction spécifiée dans un cloisonnement.</span><span class="sxs-lookup"><span data-stu-id="4e3bd-109">Executes the specified function within an apartment.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="ea00c-110">spécifications</span><span class="sxs-lookup"><span data-stu-id="ea00c-110">Requirements</span></span>  
- <span data-ttu-id="ea00c-111">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ea00c-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4e3bd-110">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="4e3bd-110">Requirements</span></span>  
+ <span data-ttu-id="4e3bd-111">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4e3bd-111">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ea00c-112">**En-tête :** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="ea00c-112">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="4e3bd-112">**En-tête :** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="4e3bd-112">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="ea00c-113">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="ea00c-113">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="4e3bd-113">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="4e3bd-113">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="ea00c-114">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ea00c-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="4e3bd-114">**Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4e3bd-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ea00c-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ea00c-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4e3bd-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4e3bd-115">See also</span></span>
 
-- [<span data-ttu-id="ea00c-116">Interfaces d’hébergement</span><span class="sxs-lookup"><span data-stu-id="ea00c-116">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [<span data-ttu-id="4e3bd-116">Interfaces d'hébergement</span><span class="sxs-lookup"><span data-stu-id="4e3bd-116">Hosting Interfaces</span></span>](hosting-interfaces.md)

@@ -14,26 +14,26 @@ helpviewer_keywords:
 ms.assetid: 72fa83a1-8997-41d7-b355-ab177a24a303
 topic_type:
 - apiref
-ms.openlocfilehash: 208d567aa5c19ddcf8bf9b13b452cb4fc48c976f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 08dc0f0891d960cb7b402b30455e606aaff7bcea
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126767"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616006"
 ---
-# <a name="iclrappdomainresourcemonitor-interface"></a><span data-ttu-id="3b1c8-102">ICLRAppDomainResourceMonitor, interface</span><span class="sxs-lookup"><span data-stu-id="3b1c8-102">ICLRAppDomainResourceMonitor Interface</span></span>
-<span data-ttu-id="3b1c8-103">Fournit des méthodes qui inspectent la mémoire et l’utilisation de l’UC d’un domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="3b1c8-103">Provides methods that inspect an application domain's memory and CPU usage.</span></span>  
+# <a name="iclrappdomainresourcemonitor-interface"></a><span data-ttu-id="813aa-102">ICLRAppDomainResourceMonitor, interface</span><span class="sxs-lookup"><span data-stu-id="813aa-102">ICLRAppDomainResourceMonitor Interface</span></span>
+<span data-ttu-id="813aa-103">Fournit des méthodes qui inspectent la mémoire et l’utilisation de l’UC d’un domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="813aa-103">Provides methods that inspect an application domain's memory and CPU usage.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="3b1c8-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="3b1c8-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="813aa-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="813aa-104">Methods</span></span>  
   
-|<span data-ttu-id="3b1c8-105">Méthode</span><span class="sxs-lookup"><span data-stu-id="3b1c8-105">Method</span></span>|<span data-ttu-id="3b1c8-106">Description</span><span class="sxs-lookup"><span data-stu-id="3b1c8-106">Description</span></span>|  
+|<span data-ttu-id="813aa-105">Méthode</span><span class="sxs-lookup"><span data-stu-id="813aa-105">Method</span></span>|<span data-ttu-id="813aa-106">Description</span><span class="sxs-lookup"><span data-stu-id="813aa-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="3b1c8-107">GetCurrentAllocated, méthode</span><span class="sxs-lookup"><span data-stu-id="3b1c8-107">GetCurrentAllocated Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md)|<span data-ttu-id="3b1c8-108">Obtient la taille totale, en octets, de toutes les allocations de mémoire effectuées par le domaine d’application depuis sa création, sans soustraire la mémoire qui a été récupérée par le garbage collector.</span><span class="sxs-lookup"><span data-stu-id="3b1c8-108">Gets the total size, in bytes, of all memory allocations that have been made by the application domain since it was created, without subtracting memory that has been garbage-collected.</span></span>|  
-|[<span data-ttu-id="3b1c8-109">GetCurrentSurvived, méthode</span><span class="sxs-lookup"><span data-stu-id="3b1c8-109">GetCurrentSurvived Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md)|<span data-ttu-id="3b1c8-110">Obtient le nombre d’octets qui ont survécu au dernier garbage collection de blocage complet et qui sont référencés par le domaine d’application actuel.</span><span class="sxs-lookup"><span data-stu-id="3b1c8-110">Gets the number of bytes that survived the last full, blocking garbage collection and that are referenced by the current application domain.</span></span>|  
-|[<span data-ttu-id="3b1c8-111">GetCurrentCpuTime, méthode</span><span class="sxs-lookup"><span data-stu-id="3b1c8-111">GetCurrentCpuTime Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md)|<span data-ttu-id="3b1c8-112">Obtient le temps processeur total utilisé par tous les threads lors de l’exécution dans le domaine d’application actuel, depuis la création du domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="3b1c8-112">Gets the total processor time that has been used by all threads while executing in the current application domain, since the application domain was created.</span></span>|  
+|[<span data-ttu-id="813aa-107">GetCurrentAllocated, méthode</span><span class="sxs-lookup"><span data-stu-id="813aa-107">GetCurrentAllocated Method</span></span>](iclrappdomainresourcemonitor-getcurrentallocated-method.md)|<span data-ttu-id="813aa-108">Obtient la taille totale, en octets, de toutes les allocations de mémoire effectuées par le domaine d’application depuis sa création, sans soustraire la mémoire qui a été récupérée par le garbage collector.</span><span class="sxs-lookup"><span data-stu-id="813aa-108">Gets the total size, in bytes, of all memory allocations that have been made by the application domain since it was created, without subtracting memory that has been garbage-collected.</span></span>|  
+|[<span data-ttu-id="813aa-109">GetCurrentSurvived, méthode</span><span class="sxs-lookup"><span data-stu-id="813aa-109">GetCurrentSurvived Method</span></span>](iclrappdomainresourcemonitor-getcurrentsurvived-method.md)|<span data-ttu-id="813aa-110">Obtient le nombre d’octets qui ont survécu au dernier garbage collection de blocage complet et qui sont référencés par le domaine d’application actuel.</span><span class="sxs-lookup"><span data-stu-id="813aa-110">Gets the number of bytes that survived the last full, blocking garbage collection and that are referenced by the current application domain.</span></span>|  
+|[<span data-ttu-id="813aa-111">GetCurrentCpuTime, méthode</span><span class="sxs-lookup"><span data-stu-id="813aa-111">GetCurrentCpuTime Method</span></span>](iclrappdomainresourcemonitor-getcurrentcputime-method.md)|<span data-ttu-id="813aa-112">Obtient le temps processeur total utilisé par tous les threads lors de l’exécution dans le domaine d’application actuel, depuis la création du domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="813aa-112">Gets the total processor time that has been used by all threads while executing in the current application domain, since the application domain was created.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="3b1c8-113">Notes</span><span class="sxs-lookup"><span data-stu-id="3b1c8-113">Remarks</span></span>  
- <span data-ttu-id="3b1c8-114">L’interface `ICLRAppDomainResourceMonitor` fournit des fonctionnalités similaires aux propriétés gérées suivantes :</span><span class="sxs-lookup"><span data-stu-id="3b1c8-114">The `ICLRAppDomainResourceMonitor` interface provides functionality that is similar to the following managed properties:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="813aa-113">Notes</span><span class="sxs-lookup"><span data-stu-id="813aa-113">Remarks</span></span>  
+ <span data-ttu-id="813aa-114">L' `ICLRAppDomainResourceMonitor` interface fournit des fonctionnalités qui sont similaires aux propriétés managées suivantes :</span><span class="sxs-lookup"><span data-stu-id="813aa-114">The `ICLRAppDomainResourceMonitor` interface provides functionality that is similar to the following managed properties:</span></span>  
   
 - <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>  
   
@@ -45,18 +45,18 @@ ms.locfileid: "73126767"
   
 - <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType>  
   
-## <a name="requirements"></a><span data-ttu-id="3b1c8-115">spécifications</span><span class="sxs-lookup"><span data-stu-id="3b1c8-115">Requirements</span></span>  
- <span data-ttu-id="3b1c8-116">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3b1c8-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="813aa-115">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="813aa-115">Requirements</span></span>  
+ <span data-ttu-id="813aa-116">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="813aa-116">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="3b1c8-117">**En-tête :** Metahost. h</span><span class="sxs-lookup"><span data-stu-id="3b1c8-117">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="813aa-117">**En-tête :** Metahost. h</span><span class="sxs-lookup"><span data-stu-id="813aa-117">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="3b1c8-118">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="3b1c8-118">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="813aa-118">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="813aa-118">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="3b1c8-119">**Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3b1c8-119">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="813aa-119">**Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="813aa-119">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3b1c8-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3b1c8-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="813aa-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="813aa-120">See also</span></span>
 
-- [<span data-ttu-id="3b1c8-121">\<élément appDomainResourceMonitoring ></span><span class="sxs-lookup"><span data-stu-id="3b1c8-121">\<appDomainResourceMonitoring> Element</span></span>](../../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)
-- [<span data-ttu-id="3b1c8-122">Analyse de ressource de domaine d'application</span><span class="sxs-lookup"><span data-stu-id="3b1c8-122">Application Domain Resource Monitoring</span></span>](../../../standard/garbage-collection/app-domain-resource-monitoring.md)
-- [<span data-ttu-id="3b1c8-123">Interfaces d’hébergement</span><span class="sxs-lookup"><span data-stu-id="3b1c8-123">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [<span data-ttu-id="3b1c8-124">Hébergement</span><span class="sxs-lookup"><span data-stu-id="3b1c8-124">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [<span data-ttu-id="813aa-121">\<appDomainResourceMonitoring>, élément</span><span class="sxs-lookup"><span data-stu-id="813aa-121">\<appDomainResourceMonitoring> Element</span></span>](../../configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)
+- [<span data-ttu-id="813aa-122">Analyse des ressources du domaine d’application</span><span class="sxs-lookup"><span data-stu-id="813aa-122">Application Domain Resource Monitoring</span></span>](../../../standard/garbage-collection/app-domain-resource-monitoring.md)
+- [<span data-ttu-id="813aa-123">Interfaces d'hébergement</span><span class="sxs-lookup"><span data-stu-id="813aa-123">Hosting Interfaces</span></span>](hosting-interfaces.md)
+- [<span data-ttu-id="813aa-124">Hébergement</span><span class="sxs-lookup"><span data-stu-id="813aa-124">Hosting</span></span>](index.md)
