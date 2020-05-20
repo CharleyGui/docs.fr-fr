@@ -15,33 +15,33 @@ helpviewer_keywords:
 ms.assetid: 7d58caac-2e75-4dfa-9249-32d8a624b247
 topic_type:
 - apiref
-ms.openlocfilehash: c956f5d68c992f1b08988e59038e8667b391f734
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 650a64e72b410cddfbee7dce676ddbb5a3b8b3d3
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448915"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614446"
 ---
-# <a name="isymunmanagedmethodgetrootscope-method"></a><span data-ttu-id="42eac-102">ISymUnmanagedMethod::GetRootScope, méthode</span><span class="sxs-lookup"><span data-stu-id="42eac-102">ISymUnmanagedMethod::GetRootScope Method</span></span>
-<span data-ttu-id="42eac-103">Obtient la portée lexicale racine dans cette méthode.</span><span class="sxs-lookup"><span data-stu-id="42eac-103">Gets the root lexical scope within this method.</span></span> <span data-ttu-id="42eac-104">Cette portée englobe la totalité de la méthode.</span><span class="sxs-lookup"><span data-stu-id="42eac-104">This scope encloses the entire method.</span></span>  
+# <a name="isymunmanagedmethodgetrootscope-method"></a><span data-ttu-id="7eaf0-102">ISymUnmanagedMethod::GetRootScope, méthode</span><span class="sxs-lookup"><span data-stu-id="7eaf0-102">ISymUnmanagedMethod::GetRootScope Method</span></span>
+<span data-ttu-id="7eaf0-103">Obtient la portée lexicale racine dans cette méthode.</span><span class="sxs-lookup"><span data-stu-id="7eaf0-103">Gets the root lexical scope within this method.</span></span> <span data-ttu-id="7eaf0-104">Cette portée englobe la totalité de la méthode.</span><span class="sxs-lookup"><span data-stu-id="7eaf0-104">This scope encloses the entire method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="42eac-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="42eac-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7eaf0-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7eaf0-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetRootScope(  
     [out, retval] ISymUnmanagedScope** pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="42eac-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="42eac-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="7eaf0-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="7eaf0-106">Parameters</span></span>  
  `pRetVal`  
- <span data-ttu-id="42eac-107">à Pointeur qui a pour valeur l’interface [ISymUnmanagedScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md) retournée.</span><span class="sxs-lookup"><span data-stu-id="42eac-107">[out] A pointer that is set to the returned [ISymUnmanagedScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md) interface.</span></span>  
+ <span data-ttu-id="7eaf0-107">à Pointeur qui a pour valeur l’interface [ISymUnmanagedScope](isymunmanagedscope-interface.md) retournée.</span><span class="sxs-lookup"><span data-stu-id="7eaf0-107">[out] A pointer that is set to the returned [ISymUnmanagedScope](isymunmanagedscope-interface.md) interface.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="42eac-108">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="42eac-108">Return Value</span></span>  
- <span data-ttu-id="42eac-109">S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="42eac-109">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="7eaf0-108">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="7eaf0-108">Return Value</span></span>  
+ <span data-ttu-id="7eaf0-109">S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="7eaf0-109">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="42eac-110">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="42eac-110">Requirements</span></span>  
- <span data-ttu-id="42eac-111">**En-tête :** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="42eac-111">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7eaf0-110">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="7eaf0-110">Requirements</span></span>  
+ <span data-ttu-id="7eaf0-111">**En-tête :** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="7eaf0-111">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="42eac-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="42eac-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7eaf0-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7eaf0-112">See also</span></span>
 
-- [<span data-ttu-id="42eac-113">ISymUnmanagedMethod, interface</span><span class="sxs-lookup"><span data-stu-id="42eac-113">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [<span data-ttu-id="7eaf0-113">ISymUnmanagedMethod, interface</span><span class="sxs-lookup"><span data-stu-id="7eaf0-113">ISymUnmanagedMethod Interface</span></span>](isymunmanagedmethod-interface.md)

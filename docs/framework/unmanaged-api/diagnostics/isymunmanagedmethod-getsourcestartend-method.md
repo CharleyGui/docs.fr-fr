@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 2a420900-01f1-4461-8777-3a34a6dc1426
 topic_type:
 - apiref
-ms.openlocfilehash: 01ab69b73a7bc4929e2ebd49b3847f8d7c4646a2
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 25e797fdf563a01ab727f16e7173eec2552eeb27
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448866"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614420"
 ---
-# <a name="isymunmanagedmethodgetsourcestartend-method"></a><span data-ttu-id="0ca55-102">ISymUnmanagedMethod::GetSourceStartEnd, méthode</span><span class="sxs-lookup"><span data-stu-id="0ca55-102">ISymUnmanagedMethod::GetSourceStartEnd Method</span></span>
-<span data-ttu-id="0ca55-103">Obtient les positions de début et de fin du document pour la source de cette méthode.</span><span class="sxs-lookup"><span data-stu-id="0ca55-103">Gets the start and end document positions for the source of this method.</span></span> <span data-ttu-id="0ca55-104">La première position de tableau est le début, tandis que la deuxième position de tableau est la fin.</span><span class="sxs-lookup"><span data-stu-id="0ca55-104">The first array position is the start, and the second array position is the end.</span></span>  
+# <a name="isymunmanagedmethodgetsourcestartend-method"></a><span data-ttu-id="bf560-102">ISymUnmanagedMethod::GetSourceStartEnd, méthode</span><span class="sxs-lookup"><span data-stu-id="bf560-102">ISymUnmanagedMethod::GetSourceStartEnd Method</span></span>
+<span data-ttu-id="bf560-103">Obtient les positions de début et de fin du document pour la source de cette méthode.</span><span class="sxs-lookup"><span data-stu-id="bf560-103">Gets the start and end document positions for the source of this method.</span></span> <span data-ttu-id="bf560-104">La première position de tableau est le début, tandis que la deuxième position de tableau est la fin.</span><span class="sxs-lookup"><span data-stu-id="bf560-104">The first array position is the start, and the second array position is the end.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0ca55-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0ca55-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bf560-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bf560-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetSourceStartEnd(  
@@ -35,25 +35,25 @@ HRESULT GetSourceStartEnd(
     [out] BOOL                   *pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="0ca55-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="0ca55-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="bf560-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="bf560-106">Parameters</span></span>  
  `docs`  
- <span data-ttu-id="0ca55-107">dans Documents source de début et de fin.</span><span class="sxs-lookup"><span data-stu-id="0ca55-107">[in] The starting and ending source documents.</span></span>  
+ <span data-ttu-id="bf560-107">dans Documents source de début et de fin.</span><span class="sxs-lookup"><span data-stu-id="bf560-107">[in] The starting and ending source documents.</span></span>  
   
  `lines`  
- <span data-ttu-id="0ca55-108">dans Lignes de début et de fin dans les documents sources correspondants.</span><span class="sxs-lookup"><span data-stu-id="0ca55-108">[in] The starting and ending lines in the corresponding source documents.</span></span>  
+ <span data-ttu-id="bf560-108">dans Lignes de début et de fin dans les documents sources correspondants.</span><span class="sxs-lookup"><span data-stu-id="bf560-108">[in] The starting and ending lines in the corresponding source documents.</span></span>  
   
  `columns`  
- <span data-ttu-id="0ca55-109">dans Colonnes de début et de fin dans les documents sources correspondants.</span><span class="sxs-lookup"><span data-stu-id="0ca55-109">[in] The starting and ending columns in the corresponding source documents.</span></span>  
+ <span data-ttu-id="bf560-109">dans Colonnes de début et de fin dans les documents sources correspondants.</span><span class="sxs-lookup"><span data-stu-id="bf560-109">[in] The starting and ending columns in the corresponding source documents.</span></span>  
   
  `pRetVal`  
- <span data-ttu-id="0ca55-110">[out] `true` si les positions ont été définies ; Sinon, `false`.</span><span class="sxs-lookup"><span data-stu-id="0ca55-110">[out] `true` if positions were defined; otherwise, `false`.</span></span>  
+ <span data-ttu-id="bf560-110">[out] `true` Si les positions ont été définies ; Sinon, `false` .</span><span class="sxs-lookup"><span data-stu-id="bf560-110">[out] `true` if positions were defined; otherwise, `false`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="0ca55-111">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="0ca55-111">Return Value</span></span>  
- <span data-ttu-id="0ca55-112">S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="0ca55-112">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="bf560-111">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="bf560-111">Return Value</span></span>  
+ <span data-ttu-id="bf560-112">S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="bf560-112">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="0ca55-113">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="0ca55-113">Requirements</span></span>  
- <span data-ttu-id="0ca55-114">**En-tête :** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="0ca55-114">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bf560-113">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="bf560-113">Requirements</span></span>  
+ <span data-ttu-id="bf560-114">**En-tête :** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="bf560-114">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0ca55-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0ca55-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bf560-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bf560-115">See also</span></span>
 
-- [<span data-ttu-id="0ca55-116">ISymUnmanagedMethod, interface</span><span class="sxs-lookup"><span data-stu-id="0ca55-116">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [<span data-ttu-id="bf560-116">ISymUnmanagedMethod, interface</span><span class="sxs-lookup"><span data-stu-id="bf560-116">ISymUnmanagedMethod Interface</span></span>](isymunmanagedmethod-interface.md)
