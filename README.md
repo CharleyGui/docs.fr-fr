@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c6dcca8384cbd97a968b77e4bc834afa1f683298
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: b90821d0d3495f6006d1d97b3d3377e984c74c5e
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895673"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613588"
 ---
 # <a name="net-docs"></a>Documentation de .NET
 
@@ -12,9 +12,8 @@ ms.locfileid: "82895673"
 
 Ce référentiel contient la documentation conceptuelle de .NET. Le [site de la documentation .net](https://docs.microsoft.com/dotnet) est construit à partir de plusieurs dépôts en plus de celui-ci :
 
-- [Exemples et extraits de code](https://github.com/dotnet/samples)
-- [Informations de référence sur l'API](https://github.com/dotnet/dotnet-api-docs)
-- [Informations de référence sur le kit SDK .NET Compiler Platform](https://github.com/dotnet/roslyn-api-docs)
+- [Informations de référence sur les API](https://github.com/dotnet/dotnet-api-docs)
+- [Informations de référence sur le SDK .NET Compiler Platform](https://github.com/dotnet/roslyn-api-docs)
 
 Les problèmes et les tâches pour tout, sauf le dépôt de référence des API, sont suivis ici. Nous avons une grande communauté qui utilise ces ressources. Nous nous efforçons de répondre aux problèmes dans les meilleurs délais. Vous pouvez en savoir plus sur nos procédures de classification et de résolution des problèmes dans notre rubrique [Politique des problèmes](issues-policy.md).
 

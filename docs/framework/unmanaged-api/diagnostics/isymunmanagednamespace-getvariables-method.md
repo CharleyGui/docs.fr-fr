@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea7c1617-f3ce-4220-8288-f2b50eaf0f0f
 topic_type:
 - apiref
-ms.openlocfilehash: 98ed5556020b93fb1f31d1dde84690fc33092627
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 091f497024b48589953456e1ea6daf6635738240
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448376"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615083"
 ---
 # <a name="isymunmanagednamespacegetvariables-method"></a>ISymUnmanagedNamespace::GetVariables, méthode
 Retourne toutes les variables définies au niveau de la portée globale au sein de cet espace de noms.  
@@ -37,7 +37,7 @@ HRESULT GetVariables(
   
 ## <a name="parameters"></a>Paramètres  
  `cVars`  
- dans `ULONG32` qui indique la taille du tableau de `pVars`.  
+ dans `ULONG32`Qui indique la taille du `pVars` tableau.  
   
  `pcVars`  
  à Pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les espaces de noms.  
@@ -48,9 +48,9 @@ HRESULT GetVariables(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedNamespace, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-interface.md)
+- [ISymUnmanagedNamespace, interface](isymunmanagednamespace-interface.md)

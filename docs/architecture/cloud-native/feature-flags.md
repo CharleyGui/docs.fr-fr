@@ -1,17 +1,16 @@
 ---
 title: Indicateurs de fonctionnalités
 description: Implémenter des indicateurs de fonctionnalités dans les applications natives du Cloud en tirant parti de la configuration de Azure App
-ms.date: 05/03/2020
-ms.openlocfilehash: 72e1bfe777854a74fcac926811caf97e59986146
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+author: robvet
+ms.date: 05/13/2020
+ms.openlocfilehash: 607bd14a415a25b382f550e697542cf749a21772
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83398308"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614069"
 ---
 # <a name="feature-flags"></a>Indicateurs de fonctionnalités
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Dans le chapitre 1, nous avons affirmé que le Cloud native est bien plus rapide que la vitesse et l’agilité. Les utilisateurs attendent une réactivité rapide, des fonctionnalités novatrices et des temps d’arrêt nuls. `Feature flags`est une technique de déploiement moderne qui permet d’accroître l’agilité des applications Cloud natives. Elles vous permettent de déployer de nouvelles fonctionnalités dans un environnement de production, mais de limiter leur disponibilité. Avec le raccourci d’un commutateur, vous pouvez activer une nouvelle fonctionnalité pour des utilisateurs spécifiques sans redémarrer l’application ou déployer un nouveau code. Ils séparent la publication de nouvelles fonctionnalités du déploiement de code.
 

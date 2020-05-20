@@ -2,19 +2,19 @@
 title: Architecture des applications .NET natives Cloud pour Azure
 description: Guide pour la création d’applications Cloud natives tirant parti de conteneurs, de microservices et de fonctionnalités sans serveur d’Azure.
 author: ardalis
-ms.date: 04/23/2020
-ms.openlocfilehash: 24d5c75fc5d2e5623892e8f83daea52553d13765
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.date: 05/13/2020
+ms.openlocfilehash: 1607c1bbcc9bbb3c9fe19840a2827aa5ea083728
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507388"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613995"
 ---
 # <a name="architecting-cloud-native-net-applications-for-azure"></a>Architecture des applications .NET natives Cloud pour Azure
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
 ![image de couverture](./media/cover.png)
+
+**ÉDITION v. 1.0**
 
 PUBLIÉ PAR
 
@@ -26,7 +26,7 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright &copy; 2019 par Microsoft Corporation
+Copyright &copy; 2020 par Microsoft Corporation
 
 Tous droits réservés. Aucune partie du contenu de ce document ne peut être reproduite ou transmise sous quelque forme ou par quelque moyen que ce soit sans l’autorisation écrite de l’éditeur.
 
@@ -58,11 +58,13 @@ Participants et réviseurs :
 >
 > **Cecil Phillip**, avocat du Cloud senior, Microsoft
 
-En savoir plus sur eShopOnContainers
-
 Rédacteurs :
 
 > **Maira Wenzel**, responsable de programme, équipe .net, Microsoft
+
+## <a name="version"></a>Version
+
+Ce guide a été écrit de façon à couvrir la version **3,1 de .net Core** , ainsi que de nombreuses mises à jour supplémentaires liées aux mêmes « vagues » de technologies (c’est-à-dire, Azure et des technologies tierces) qui coïncident avec la version 3,1 de .net core.
 
 ## <a name="who-should-use-this-guide"></a>Public visé par ce guide
 
@@ -83,6 +85,10 @@ Ce guide commence par définir le Cloud native et introduit une application de r
 - DevOps
 
 Ce guide est disponible au format PDF et en ligne. N’hésitez pas à transmettre ce document ou des liens vers sa version en ligne à votre équipe afin de garantir une compréhension commune de ces sujets. La plupart de ces rubriques tirent parti d’une compréhension cohérente des principes et des modèles sous-jacents, ainsi que des compromis impliqués dans les décisions relatives à ces sujets. L’objectif de ce document est de fournir aux équipes et à leurs dirigeants les informations dont elles ont besoin pour prendre des décisions bien informées sur l’architecture, le développement et l’hébergement de leurs applications.
+
+## <a name="send-your-feedback"></a>Envoyez votre feedback
+
+Ce livre et les exemples associés sont en constante évolution. vos commentaires sont donc accueillis ! Si vous avez des commentaires sur la façon dont ce livre peut être amélioré, utilisez la section commentaires au bas de toute page reposant sur les [problèmes GitHub](https://github.com/dotnet/docs/issues).
 
 >[!div class="step-by-step"]
 >[Suivant](introduction.md)

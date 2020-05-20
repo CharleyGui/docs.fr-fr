@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: a51f1f64-e084-44c5-830c-2222da5a6bbf
 topic_type:
 - apiref
-ms.openlocfilehash: 3bc578be680951a1d41c92fb2169c860882b2e31
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c2cc541b2a78f16d5ca6b19405794faa825a9d72
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448312"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615031"
 ---
 # <a name="isymunmanagedreadergetdocumentversion-method"></a>ISymUnmanagedReader::GetDocumentVersion, méthode
-Obtient la version spécifiée du document spécifié. La version du document commence à 1 et est incrémentée chaque fois que le document est mis à jour à l’aide de la méthode [UpdateSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) . Si le paramètre `pbCurrent` est `true`, il s’agit de la dernière version du document.  
+Obtient la version spécifiée du document spécifié. La version du document commence à 1 et est incrémentée chaque fois que le document est mis à jour à l’aide de la méthode [UpdateSymbolStore](isymunmanagedreader-updatesymbolstore-method.md) . Si le `pbCurrent` paramètre est `true` , il s’agit de la dernière version du document.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,9 +47,9 @@ HRESULT GetDocumentVersion (
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedReader, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader, interface](isymunmanagedreader-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7580d546-a709-40c5-ad02-aa70d774fd0b
 topic_type:
 - apiref
-ms.openlocfilehash: 4009f8988c90ed090c0cc3d86164af347055722f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e6248aba1c41b2815f2806942d419da869ed94b4
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446423"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614914"
 ---
 # <a name="isymunmanagedreader2getsymattributepreremap-method"></a>ISymUnmanagedReader2::GetSymAttributePreRemap, méthode
 Obtient un attribut personnalisé en fonction de son nom. Contrairement aux attributs personnalisés des métadonnées, ces attributs sont conservés dans le magasin de symboles.  
@@ -45,7 +45,7 @@ HRESULT GetSymAttributePreRemap(
  dans Pointeur vers un `WCHAR` qui contient le nom.  
   
  `cBuffer`  
- dans `ULONG32` qui indique la taille du tableau de `buffer`.  
+ dans `ULONG32`Qui indique la taille du `buffer` tableau.  
   
  `pcBuffer`  
  à Pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les octets d’attributs.  
@@ -56,9 +56,9 @@ HRESULT GetSymAttributePreRemap(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedReader2, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader2-interface.md)
+- [ISymUnmanagedReader2, interface](isymunmanagedreader2-interface.md)

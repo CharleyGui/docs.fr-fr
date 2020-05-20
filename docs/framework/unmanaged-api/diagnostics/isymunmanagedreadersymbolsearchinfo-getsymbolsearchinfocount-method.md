@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4068b6ec-525f-4446-8818-0296178cbd19
 topic_type:
 - apiref
-ms.openlocfilehash: a193c4e9e87616217efc90286032944d05d766c0
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a81a5afeec8f97864e1772347c6575b9d09cb176
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446399"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614888"
 ---
 # <a name="isymunmanagedreadersymbolsearchinfogetsymbolsearchinfocount-method"></a>ISymUnmanagedReaderSymbolSearchInfo::GetSymbolSearchInfoCount, méthode
 Obtient le nombre d’informations de recherche de symboles.  
@@ -39,9 +39,9 @@ HRESULT GetSymbolSearchInfoCount(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedReaderSymbolSearchInfo, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreadersymbolsearchinfo-interface.md)
+- [ISymUnmanagedReaderSymbolSearchInfo, interface](isymunmanagedreadersymbolsearchinfo-interface.md)

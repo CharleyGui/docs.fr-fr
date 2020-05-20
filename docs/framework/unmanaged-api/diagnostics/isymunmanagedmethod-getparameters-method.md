@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3a8074f1-facc-4a3f-bb9b-d6574fc2fc74
 topic_type:
 - apiref
-ms.openlocfilehash: 9e8139a822c877e70731e18ae5a75b83e6b7578e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 031e9d9434bc655ba8947a2bb6aba56a150e9002
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448955"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614459"
 ---
 # <a name="isymunmanagedmethodgetparameters-method"></a>ISymUnmanagedMethod::GetParameters, méthode
 Obtient les paramètres de cette méthode. Les paramètres sont retournés dans l’ordre dans lequel ils sont définis dans la signature de la méthode.  
@@ -48,9 +48,9 @@ HRESULT GetParameters(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedMethod, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [ISymUnmanagedMethod, interface](isymunmanagedmethod-interface.md)

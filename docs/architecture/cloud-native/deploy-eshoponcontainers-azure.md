@@ -1,17 +1,15 @@
 ---
 title: Déploiement d’eShopOnContainers sur Azure
 description: Déploiement de l’application eShopOnContainers à l’aide du service Azure Kubernetes, Helm et DevSpaces.
-ms.date: 04/20/2020
-ms.openlocfilehash: a3eacedac946cb25cf3cced305d7921e29f0d204
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.date: 05/13/2020
+ms.openlocfilehash: 93a2848f095d7593e1e169f4a6c6c1818a76217d
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895593"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614095"
 ---
 # <a name="deploying-eshoponcontainers-to-azure"></a>Déploiement d’eShopOnContainers sur Azure
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 L’application eShopOnContainers peut être déployée sur une variété de plateformes Azure. L’approche recommandée consiste à déployer l’application sur Azure Kubernetes services (AKS). Helm, un outil de déploiement Kubernetes, est disponible pour réduire la complexité du déploiement. Si vous le souhaitez, les développeurs peuvent implémenter Azure Dev Spaces pour Kubernetes afin de simplifier leur processus de développement.
 
@@ -57,10 +55,10 @@ Notez comment le modèle décrit un ensemble dynamique de paires clé/valeur. Lo
 
 Vous trouverez les graphiques eShopOnContainers Helm dans le dossier/K8S/Helm. La figure 2-6 montre comment les différents composants de l’application sont organisés dans une structure de dossiers utilisée par Helm pour définir et gérer des déploiements.
 
-![eShopOnContainers architecture](./media/eshoponcontainers-helm-folder.png)
-de la**figure 2-6**. Dossier eShopOnContainers Helm.
+![eShopOnContainers architecture de la ](./media/eshoponcontainers-helm-folder.png)
+ **figure 2-6**. Dossier eShopOnContainers Helm.
 
-Chaque composant individuel est installé à l' `helm install` aide d’une commande. eShop inclut un script « déployer tout » qui parcourt et installe les composants à l’aide de leurs graphiques Helm respectifs. Le résultat est un processus reproductible, avec version avec l’application dans le contrôle de code source, que tous les membres de l’équipe peuvent déployer sur un cluster AKS à l’aide d’une commande de script d’une ligne.
+Chaque composant individuel est installé à l’aide d’une `helm install` commande. eShop inclut un script « déployer tout » qui parcourt et installe les composants à l’aide de leurs graphiques Helm respectifs. Le résultat est un processus reproductible, avec version avec l’application dans le contrôle de code source, que tous les membres de l’équipe peuvent déployer sur un cluster AKS à l’aide d’une commande de script d’une ligne.
 
 > Notez que la version 3 de Helm supprime officiellement le besoin du composant serveur de l’écran de veille. Vous trouverez plus d’informations sur cette amélioration [ici](https://medium.com/better-programming/why-is-tiller-missing-in-helm-3-2347c446714).
 
@@ -72,13 +70,13 @@ Les développeurs partagent une instance en cours d’exécution (développement
 
 Dans la figure 2-7, vous pouvez voir que Developer Julie a déployé une version mise à jour du microservice Bikes dans son espace de développement. Elle est ensuite en mesure de tester ses modifications à l’aide d’une URL personnalisée commençant par le nom de son espace (susie.s.dev.myapp.eus.azds.io).
 
-![eShopOnContainers architecture](./media/azure-devspaces-one.png)
-de la**figure 2-7**. Developer Julie déploie sa propre version du microservice Bikes et le teste.
+![eShopOnContainers architecture de la ](./media/azure-devspaces-one.png)
+ **figure 2-7**. Developer Julie déploie sa propre version du microservice Bikes et le teste.
 
 En même temps, le développeur John souhaite personnaliser le microservice de réservations et doit tester ses modifications. Il déploie ses modifications dans son propre espace de développement sans entrer en conflit avec les modifications apportées à Julie, comme illustré dans la figure 2-8. John teste ensuite ses modifications à l’aide de sa propre URL, précédée du nom de son espace (john.s.dev.myapp.eus.azds.io).
 
-![eShopOnContainers architecture](./media/azure-devspaces-two.png)
-de la**figure 2-8**. Le développeur John déploie sa propre version du microservice de réservations et le teste sans conflit avec d’autres développeurs.
+![eShopOnContainers architecture de la ](./media/azure-devspaces-two.png)
+ **figure 2-8**. Le développeur John déploie sa propre version du microservice de réservations et le teste sans conflit avec d’autres développeurs.
 
 À l’aide de Azure Dev Spaces, les équipes peuvent travailler directement avec AKS tout en modifiant, déployant et testant leurs modifications de manière indépendante. Cette approche réduit le besoin d’environnements hébergés dédiés distincts, car chaque développeur a son propre environnement AKS. Les développeurs peuvent travailler avec Azure Dev Spaces à l’aide de l’interface CLI ou lancer leur application pour Azure Dev Spaces directement à partir de Visual Studio. [En savoir plus sur le fonctionnement de Azure Dev Spaces et sur la configuration.](https://docs.microsoft.com/azure/dev-spaces/how-dev-spaces-works)
 
@@ -87,5 +85,5 @@ de la**figure 2-8**. Le développeur John déploie sa propre version du microser
 L’exemple eShopOnContainers comprend la prise en charge du suivi des campagnes marketing en ligne. Une fonction Azure est utilisée pour suivre les détails d’une campagne marketing pour un ID de campagne donné. Au lieu de créer un microservice complet, une seule fonction Azure est plus simple et suffisante. Azure Functions avoir un modèle de génération et de déploiement simple, surtout lorsqu’il est configuré pour s’exécuter dans Kubernetes. Le déploiement de la fonction est un script à l’aide de modèles ARM (Azure Resource Manager) et du Azure CLI. Ce service de campagne n’est pas orienté client et appelle une seule opération, ce qui en fait un bon candidat pour Azure Functions. La fonction nécessite une configuration minimale, y compris des données de chaîne de connexion à la base de données et des paramètres d’URI de base d’image. Vous configurez Azure Functions dans le Portail Azure.
 
 >[!div class="step-by-step"]
->[Précédent](map-eshoponcontainers-azure-services.md)
->[suivant](centralized-configuration.md)
+>[Précédent](map-eshoponcontainers-azure-services.md) 
+> [Suivant](centralized-configuration.md)

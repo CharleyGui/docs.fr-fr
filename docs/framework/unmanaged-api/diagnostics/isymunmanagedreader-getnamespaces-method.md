@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3feb4796-2fab-45ce-beca-6f5bc530b971
 topic_type:
 - apiref
-ms.openlocfilehash: 458faedea418e626a6494ca2afcdbf0e034472e8
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 44f9284f0a89f0941940cf379c48b2b138149122
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447736"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614940"
 ---
 # <a name="isymunmanagedreadergetnamespaces-method"></a>ISymUnmanagedReader::GetNamespaces, méthode
 Obtient les espaces de noms définis au niveau de la portée globale dans ce magasin de symboles.  
@@ -49,9 +49,9 @@ HRESULT GetNamespaces (
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedReader, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader, interface](isymunmanagedreader-interface.md)

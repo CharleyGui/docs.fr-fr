@@ -2,21 +2,19 @@
 title: Définition du Cloud Native
 description: En savoir plus sur les piliers fondamentaux qui fournissent le socle pour les systèmes natifs du Cloud
 author: robvet
-ms.date: 08/20/2019
-ms.openlocfilehash: 33977ff736fc5cbfcf86ed6479e8d0b927b87a63
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.date: 05/13/2020
+ms.openlocfilehash: e8b07fe7758d90f6ba97b81d0efa9d2fb5058d49
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895614"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614168"
 ---
 # <a name="defining-cloud-native"></a>Définition du Cloud Native
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+Arrêtez ce que vous êtes en train de faire et du texte dix de vos collègues. Demandez-lui de définir le terme « cloud native ». Bonne chance vous obtiendrez dix réponses différentes.
 
-Arrêtez ce que vous êtes en train de faire et du texte dix de vos collègues. Demandez-lui de définir le terme « cloud native ». Bonne chance, vous obtiendrez huit réponses différentes.
-
-Cloud Native concerne la modification de la façon dont nous pensons à la construction de systèmes d’entreprise essentiels.
+Cloud Native concerne la modification de la façon dont vous pensez créer des systèmes d’entreprise essentiels.
 
 Les systèmes Cloud natifs sont conçus pour adopter un changement rapide, une grande échelle et une résilience.
 
@@ -72,7 +70,7 @@ Comment conceviez-vous une application Cloud Native ? À quoi ressemble votre a
 
 L' [application à 12 facteurs](https://12factor.net/)est une méthodologie largement acceptée pour la construction d’applications basées sur le Cloud. Il décrit un ensemble de principes et de pratiques que les développeurs suivent pour créer des applications optimisées pour les environnements Cloud modernes. Une attention particulière est accordée à la portabilité entre les environnements et l’automatisation déclarative.
 
-Bien qu’applicables à n’importe quelle application Web, de nombreux praticiens la considèrent comme une base solide pour la création d’applications Cloud natives. Les systèmes basés sur ces principes peuvent être déployés et mis à l’échelle rapidement et ajouter des fonctionnalités pour réagir rapidement aux changements de marché.
+Bien qu’applicables à n’importe quelle application basée sur le Web, de nombreux praticiens considèrent le plus de douze facteurs comme une base solide pour la création d’applications Cloud natives. Les systèmes basés sur ces principes peuvent être déployés et mis à l’échelle rapidement et ajouter des fonctionnalités pour réagir rapidement aux changements de marché.
 
 Le tableau suivant met en évidence la méthodologie à douze facteurs :
 
@@ -91,7 +89,7 @@ Le tableau suivant met en évidence la méthodologie à douze facteurs :
 | 11 | Journalisation | Traitez les journaux générés par les microservices en tant que flux d’événements. Traitez-les avec une agrégation d’événements et Propagez les données aux outils de gestion des journaux et de l’exploration de données, comme Azure Monitor ou Splunk, et enfin un archivage à long terme. |
 | 12 | Processus d’administration | Exécuter des tâches d’administration/de gestion en tant que processus unique. Les tâches peuvent inclure le nettoyage des données et l’extraction des analytiques pour un rapport. Les outils qui exécutent ces tâches doivent être appelés à partir de l’environnement de production, mais séparément de l’application. |
 
-Dans le livre, [au-delà de l’application à douze facteurs](https://content.pivotal.io/blog/beyond-the-twelve-factor-app), l’auteur Kevin Hoffman détaille chacun des 12 facteurs originaux (écrit en 2011). En outre, le livre fournit trois facteurs supplémentaires qui reflètent la conception d’applications Cloud modernes du jour.
+Dans le livre, [au-delà de l’application à douze facteurs](https://content.pivotal.io/blog/beyond-the-twelve-factor-app), l’auteur Kevin Hoffman détaille chacun des 12 facteurs originaux (écrit en 2011). En outre, il aborde trois facteurs supplémentaires qui reflètent la conception d’applications Cloud modernes actuelles.
 
 |    |  Nouveau facteur | Explication  |
 | :-------- | :-------- | :-------- |
@@ -155,7 +153,7 @@ La figure 1-4 compare une approche d’application monolithique avec une approch
 
 Notez comment les microservices favorisent le principe « une base de code, une application » de l' [application à 12 facteurs](https://12factor.net/), abordé plus haut dans le chapitre.
 
-> *Le \#facteur 1 spécifie «un code base unique pour chaque microservice, stocké dans son propre référentiel. Suivi avec le contrôle de version, il peut être déployé dans plusieurs environnements.*
+> *\#Le facteur 1 spécifie «un code base unique pour chaque microservice, stocké dans son propre référentiel. Suivi avec le contrôle de version, il peut être déployé dans plusieurs environnements.*
 
 ### <a name="why-microservices"></a>Intérêt des microservices
 
@@ -197,7 +195,7 @@ Notez que chaque conteneur gère son propre ensemble de dépendances et d’exé
 
 Notez la manière dont le modèle de conteneur adopte le principe de « dépendances » de l' [application à douze facteurs](https://12factor.net/).
 
-> *Le \#facteur 2 spécifie que chaque microservice isole et conditionne ses propres dépendances, en adoptant des modifications sans affecter l’ensemble du système.»*
+> *Le facteur \# 2 spécifie que chaque microservice isole et conditionne ses propres dépendances, en adoptant des modifications sans affecter l’ensemble du système.»*
 
 Les conteneurs prennent en charge les charges de travail Linux et Windows. Azure Cloud adopte les deux. Ce qui est intéressant, c’est qu’il s’agit de Linux, et non de Windows Server, qui est devenu le système d’exploitation le plus populaire dans Azure.
 
@@ -236,9 +234,9 @@ Le tableau suivant décrit les tâches d’orchestration courantes.
 
 Notez comment les orchestrateurs adoptent les principes de disposability et d’accès concurrentiel de l' [application à 12 facteurs](https://12factor.net/), abordés plus haut dans ce chapitre.
 
-> *Le \#facteur 9 spécifie que les instances de service doivent être jetables, favorisant ainsi les Démarrages rapides afin d’augmenter les possibilités d’évolutivité et les arrêts progressifs pour que le système reste dans un état correct. Les conteneurs de l’arrimeur avec un orchestrateur répondent fondamentalement à cette exigence.»*
+> *Le facteur \# 9 spécifie que les instances de service doivent être jetables, favorisant ainsi les Démarrages rapides afin d’augmenter les possibilités d’évolutivité et les arrêts progressifs pour que le système reste dans un état correct. Les conteneurs de l’arrimeur avec un orchestrateur répondent fondamentalement à cette exigence.»*
 
-> *Factor \#8 spécifie que les services sont mis à l’échelle sur un grand nombre de petits processus identiques (copies) au lieu de mettre à l’échelle une seule grande instance sur la machine la plus puissante disponible.»*
+> *Factor \# 8 spécifie que les services sont mis à l’échelle sur un grand nombre de petits processus identiques (copies) au lieu de mettre à l’échelle une seule grande instance sur la machine la plus puissante disponible.»*
 
 Bien que plusieurs orchestrateurs de conteneurs existent, [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) est devenu la norme de facto pour le monde Cloud-native. Il s’agit d’une plate-forme portable, extensible et open source pour la gestion des charges de travail en conteneur.
 
@@ -258,7 +256,7 @@ Les systèmes Cloud natifs dépendent de nombreuses ressources accessoires diff�
 
 Les services de sauvegarde promeuvent le principe « abandon » de l' [application à 12 facteurs](https://12factor.net/), décrite plus haut dans le chapitre.
 
->*Le \#facteur 6* spécifie que chaque microservice doit s’exécuter dans son propre processus, isolé des autres services en cours d’exécution. Externaliser l’État requis sur un service de sauvegarde, tel qu’un cache distribué ou un magasin de données.»
+>Le *facteur \# 6* spécifie que chaque microservice doit s’exécuter dans son propre processus, isolé des autres services en cours d’exécution. Externaliser l’État requis sur un service de sauvegarde, tel qu’un cache distribué ou un magasin de données.»
 
 Vous pouvez héberger vos propres services de stockage, mais vous serez alors responsable de la gestion des licences, de l’approvisionnement et de la gestion de ces ressources.
 
@@ -268,9 +266,9 @@ Les systèmes Cloud natifs favorisent les services de stockage gérés des fourn
 
 Une meilleure pratique consiste à traiter un service de sauvegarde en tant que *ressource attachée*, liée de manière dynamique à un microservice avec des informations (URL et informations d’identification) stockées dans une configuration externe. Ce guide est écrit dans l’application à [12 facteurs](https://12factor.net/), décrite plus haut dans le chapitre.
 
->*Factor \#4* spécifie que les services de stockage doivent être exposés via une URL adressable. Cela découple la ressource de l’application, ce qui lui permet d’être interchangeable.»
+>*Factor \# 4* spécifie que les services de stockage doivent être exposés via une URL adressable. Cela découple la ressource de l’application, ce qui lui permet d’être interchangeable.»
 
->*Factor \#3* spécifie que les informations de configuration sont déplacées hors du microservice et externalisées via un outil de gestion de la configuration en dehors du code.»
+>*Factor \# 3* spécifie que les informations de configuration sont déplacées hors du microservice et externalisées via un outil de gestion de la configuration en dehors du code.»
 
 Avec ce modèle, un service de sauvegarde peut être attaché et détaché sans modification du code. Vous pouvez promouvoir un microservice de l’AQ en un environnement intermédiaire. Vous mettez à jour la configuration du microservice pour pointer vers les services de stockage dans un environnement intermédiaire et injectez les paramètres dans votre conteneur par le biais d’une variable d’environnement.
 
@@ -298,7 +296,7 @@ Dans l’article [qu’est-ce que l’infrastructure en tant que code](https://d
 
 L' [application à 12 facteurs](https://12factor.net/), abordée précédemment, appelle des étapes distinctes lors de la transformation du code complet en une application en cours d’exécution.
 
-> *Facteur \#5* spécifie que chaque version doit appliquer une séparation stricte entre les étapes de la build, de la mise en œuvre et de l’exécution. Chaque doit être marqué d’un ID unique et prendre en charge la possibilité d’effectuer une restauration.»
+> *Facteur \# 5* spécifie que chaque version doit appliquer une séparation stricte entre les étapes de la build, de la mise en œuvre et de l’exécution. Chaque doit être marqué d’un ID unique et prendre en charge la possibilité d’effectuer une restauration.»
 
 Les systèmes d’intégration continue et de CD modernes aident à respecter ce principe. Ils fournissent des étapes de déploiement distinctes et permettent de garantir un code cohérent et de qualité accessible aux utilisateurs.
 
@@ -340,5 +338,5 @@ Vous définissez votre pipeline dans le code d’un fichier YAML avec le reste d
 Le service Azure Pipelines prend en charge la plupart des fournisseurs GIT et peut générer des pipelines de déploiement pour les applications écrites sur les plateformes Linux, macOS ou Windows. Il prend en charge Java, .NET, JavaScript, Python, PHP, Go, XCode et C++.
 
 >[!div class="step-by-step"]
->[Précédent](introduction.md)
->[suivant](candidate-apps.md)
+>[Précédent](introduction.md) 
+> [Suivant](candidate-apps.md)

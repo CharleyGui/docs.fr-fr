@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 274e73cf-8333-47ba-ac12-70214e2b0112
 topic_type:
 - apiref
-ms.openlocfilehash: 319ba58b5d012cbc0f9ddac0b83e5f3ae2ae062a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0be7297fbb71302035e71fbbf2c8b5e2a7faa2da
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446169"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615291"
 ---
 # <a name="isymunmanagedsymbolsearchinfogetsearchpathlength-method"></a>ISymUnmanagedSymbolSearchInfo::GetSearchPathLength, méthode
 Obtient la longueur du chemin d’accès de recherche.  
@@ -39,9 +39,9 @@ HRESULT GetSearchPathLength(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedSymbolSearchInfo, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsymbolsearchinfo-interface.md)
+- [ISymUnmanagedSymbolSearchInfo, interface](isymunmanagedsymbolsearchinfo-interface.md)

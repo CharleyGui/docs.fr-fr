@@ -1,17 +1,15 @@
 ---
 title: IdentityServer pour les applications Cloud natives
 description: Architecture des applications .NET natives Cloud pour Azure | IdentityServer
-ms.date: 06/30/2019
-ms.openlocfilehash: 536a4cbdbdaee47f3a5a0d9f93b2736270d9ea7a
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.date: 05/13/2020
+ms.openlocfilehash: 81cce30568becacda29f65f9506398790af321e0
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394882"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614030"
 ---
 # <a name="identityserver-for-cloud-native-applications"></a>IdentityServer pour les applications Cloud natives
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 IdentityServer est un serveur d’authentification open source qui implémente les normes OpenID Connect (OIDC) et OAuth 2,0 pour ASP.NET Core. Il est conçu pour fournir un moyen courant d’authentifier les demandes à toutes vos applications, qu’il s’agisse de points de terminaison Web, natifs, mobiles ou d’API. IdentityServer peut être utilisé pour implémenter l’authentification unique (SSO) pour plusieurs applications et types d’applications. Il peut être utilisé pour authentifier les utilisateurs réels via des formulaires de connexion et des interfaces utilisateur similaires, ainsi que l’authentification basée sur les services qui implique généralement l’émission, la vérification et le renouvellement de jetons sans aucune interface utilisateur. IdentityServer est conçu pour être une solution personnalisable. Chaque instance est généralement personnalisée pour s’adapter aux besoins d’une organisation et/ou d’un ensemble d’applications.
 
@@ -42,7 +40,7 @@ IdentityServer fournit un intergiciel (middleware) qui s’exécute dans une app
 - Révocation (révocation de jeton)
 - Terminer la session (déclencher la déconnexion unique pour toutes les applications)
 
-## <a name="getting-started"></a>Mise en route
+## <a name="getting-started"></a>Prise en main
 
 IdentityServer4 est open source et gratuit à utiliser. Vous pouvez l’ajouter à vos applications à l’aide de ses packages NuGet. Le package principal est [IdentityServer4](https://www.nuget.org/packages/IdentityServer4/) qui a été téléchargé plus de 4 millions fois. Le package de base n’inclut pas de code d’interface utilisateur et ne prend en charge que dans la configuration de la mémoire. Pour l’utiliser avec une base de données, vous devez également disposer d’un fournisseur de données comme [IdentityServer4. EntityFramework](https://www.nuget.org/packages/IdentityServer4.EntityFramework) qui utilise Entity Framework Core pour stocker les données de configuration et opérationnelles pour IdentityServer. Pour l’interface utilisateur, vous pouvez copier des fichiers à partir du référentiel de l' [interface utilisateur de démarrage rapide](https://github.com/IdentityServer/IdentityServer4.Quickstart.UI) dans votre application ASP.net Core MVC pour ajouter la prise en charge de la connexion et de la déconnexion à l’aide de l’intergiciel IdentityServer.
 
@@ -99,7 +97,7 @@ IdentityServer héberge également un site de démonstration public qui peut êt
 
 De nombreuses applications Cloud natives exploitent les API côté serveur et les applications à page unique clientes riches sur le serveur frontal. IdentityServer fournit un [client JavaScript](http://docs.identityserver.io/en/latest/quickstarts/4_javascript_client.html) ( `oidc-client.js` ) via NPM qui peut être ajouté à spas pour lui permettre d’utiliser IdentityServer pour la connexion, la déconnexion et l’authentification basée sur les jetons des API Web.
 
-## <a name="references"></a>Références
+## <a name="references"></a>References
 
 - [Documentation IdentityServer](http://docs.identityserver.io/en/latest/)
 - [Types d’applications](https://docs.microsoft.com/azure/active-directory/develop/app-types)

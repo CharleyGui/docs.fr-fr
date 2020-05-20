@@ -1,17 +1,15 @@
 ---
 title: Bundles d’applications cloud natives
 description: Architecture des applications .NET natives Cloud pour Azure | Lots d’applications Cloud natives
-ms.date: 05/12/2020
-ms.openlocfilehash: c16a9cba1fe31e025532ba98d644114a319bb9de
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.date: 05/13/2020
+ms.openlocfilehash: fc6ee96078650dccd2ebeb3e65a0a00c4e05ecdb
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395491"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614342"
 ---
 # <a name="cloud-native-application-bundles"></a>Bundles d’applications cloud natives
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Une propriété clé des applications Cloud natives est qu’elles tirent parti des fonctionnalités du Cloud pour accélérer le développement. Cette conception signifie souvent qu’une application complète utilise différents types de technologies. Les applications peuvent être livrées dans des conteneurs dockers, certains services peuvent utiliser Azure Functions, tandis que d’autres parties peuvent s’exécuter directement sur des machines virtuelles allouées sur des serveurs métalliques de grande taille avec l’accélération GPU matérielle. Deux applications Cloud natives ne sont pas identiques. il est donc difficile de fournir un mécanisme unique pour les expédier.
 
@@ -80,7 +78,7 @@ Le format CNAB est également flexible, ce qui lui permet d’être utilisé sur
 
 Il y a tellement de nombreux outils exceptionnels dans l’espace DevOps ces journées et encore plus fantastiques de livres et de documents sur la manière de mener à bien. Un livre favori pour la prise en main du parcours DevOps est [le projet Phoenix](https://www.oreilly.com/library/view/the-phoenix-project/9781457191350/), qui suit la transformation d’une société fictive de NoOps en DevOps. Une chose est pour certains : DevOps n’est plus un « joli à avoir » lors du déploiement d’applications natives du Cloud. Elle est obligatoire et doit être planifiée et Resource au début de tout projet.
 
-## <a name="references"></a>Références
+## <a name="references"></a>References
 
 - [Azure DevOps](https://azure.microsoft.com/services/devops/)
 - [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/)

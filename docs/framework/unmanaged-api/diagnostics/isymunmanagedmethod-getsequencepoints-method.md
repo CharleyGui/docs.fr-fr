@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f909ac48-3d8f-49fb-a369-e3d9959151cd
 topic_type:
 - apiref
-ms.openlocfilehash: 75d477af7395a9b7d3328b2a5787f810733f3749
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 451cfecde7e14fad9d3fed3367112e1fb59796e5
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448879"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615142"
 ---
 # <a name="isymunmanagedmethodgetsequencepoints-method"></a>ISymUnmanagedMethod::GetSequencePoints, méthode
 Obtient tous les points de séquence de cette méthode.  
@@ -41,10 +41,10 @@ HRESULT GetSequencePoints(
   
 ## <a name="parameters"></a>Paramètres  
  `cPoints`  
- dans `ULONG32` qui reçoit la taille des tableaux `offsets`, `documents`, `lines`, `columns`, `endLines`et `endColumns`.  
+ dans `ULONG32`Qui reçoit la taille des tableaux,,,, `offsets` `documents` `lines` `columns` `endLines` et `endColumns` .  
   
  `pcPoints`  
- à Pointeur vers un `ULONG32` qui reçoit la longueur de la mémoire tampon requise pour contenir les points de séquence.  
+ à Pointeur vers `ULONG32` qui reçoit la longueur de la mémoire tampon requise pour contenir les points de séquence.  
   
  `offsets`  
  dans Tableau dans lequel stocker les offsets MSIL (Microsoft Intermediate Language) à partir du début de la méthode pour les points de séquence.  
@@ -67,9 +67,9 @@ HRESULT GetSequencePoints(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedMethod, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [ISymUnmanagedMethod, interface](isymunmanagedmethod-interface.md)

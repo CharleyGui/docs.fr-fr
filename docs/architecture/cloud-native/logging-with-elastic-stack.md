@@ -1,17 +1,15 @@
 ---
 title: Journalisation avec Elastic Stack
 description: Journalisation à l’aide de la pile élastique, Logstash et Kibana
-ms.date: 02/05/2020
-ms.openlocfilehash: 6863c66b63854fe3ecaabe2919beded2926ea64c
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.date: 05/13/2020
+ms.openlocfilehash: e886141fa691b75b882b5d67eae4ceb242e8089f
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77448910"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613848"
 ---
 # <a name="logging-with-elastic-stack"></a>Journalisation avec Elastic Stack
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Il existe de nombreux outils de journalisation centralisés et leur coût est inférieur à celui des outils open source gratuits, à des options plus coûteuses. Dans de nombreux cas, les outils gratuits sont aussi bons ou mieux que les offres payantes. L’un de ces outils est une combinaison de trois composants Open Source : la recherche élastique, Logstash et Kibana.
 
@@ -30,8 +28,8 @@ KUBE_ENABLE_NODE_LOGGING=true
 
 Cette opération installe Elasticsearch sur le cluster et cible l’envoi de tous les journaux de cluster vers ce dernier.
 
-![un exemple de tableau de bord Kibana présentant les résultats d’une requête sur les journaux ingérés à partir de Kubernetes](./media/kibana-dashboard.png)
-**Figure 7-6**. Exemple de tableau de bord Kibana indiquant les résultats d’une requête sur les journaux qui sont ingérés à partir de Kubernetes
+![Exemple de tableau de bord Kibana présentant les résultats d’une requête sur les journaux ingérés à partir de la ](./media/kibana-dashboard.png)
+ **figure 7-6**de Kubernetes. Exemple de tableau de bord Kibana indiquant les résultats d’une requête sur les journaux qui sont ingérés à partir de Kubernetes
 
 ## <a name="what-are-the-advantages-of-elastic-stack"></a>Quels sont les avantages de la pile élastique ?
 
@@ -81,7 +79,7 @@ La recherche élastique est un moteur de recherche puissant qui peut indexer les
 
 Les messages de journal qui ont été conçus pour contenir des paramètres ou dont les paramètres ont été fractionnés à l’aide du traitement Logstash peuvent être interrogés directement, car Elasticsearch conserve ces informations.
 
-Une requête qui recherche les 10 premières pages visitées par `jill@example.com`s’affiche dans la figure 7-9.
+Une requête qui recherche les 10 premières pages visitées par `jill@example.com` , apparaît dans la Figure 7-9.
 
 ```
 "query": {
@@ -118,5 +116,5 @@ Une autre option est une [offre de kit en tant que service récemment annoncée]
 - [Installer la pile élastique sur Azure](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)
 
 >[!div class="step-by-step"]
->[Précédent](observability-patterns.md)
->[Suivant](monitoring-azure-kubernetes.md)
+>[Précédent](observability-patterns.md) 
+> [Suivant](monitoring-azure-kubernetes.md)

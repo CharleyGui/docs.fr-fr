@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: eedf1ef0-9d4a-4847-a201-4e99572dfe5e
 topic_type:
 - apiref
-ms.openlocfilehash: 77dec4332aa65f6125685db607169b3398bcab98
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b48d131fa99b65d38856d2b635bf59145db9157e
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446058"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615239"
 ---
 # <a name="isymunmanagedvariablegetname-method"></a>ISymUnmanagedVariable::GetName, méthode
 Obtient le nom de cette variable.  
@@ -37,10 +37,10 @@ HRESULT GetName(
   
 ## <a name="parameters"></a>Paramètres  
  `cchName`  
- dans Longueur de la mémoire tampon vers laquelle pointe le paramètre `pcchName`.  
+ dans Longueur de la mémoire tampon vers laquelle `pcchName` pointe le paramètre.  
   
  `pcchName`  
- à Pointeur vers un `ULONG32` qui reçoit la taille, en caractères, de la mémoire tampon requise pour contenir le nom, y compris la terminaison NULL.  
+ à Pointeur vers un `ULONG32` qui reçoit la taille, en caractères, de la mémoire tampon requise pour contenir le nom, y compris l’arrêt null.  
   
  `szName`  
  à Mémoire tampon qui stocke le nom.  
@@ -48,9 +48,9 @@ HRESULT GetName(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedVariable, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)
+- [ISymUnmanagedVariable, interface](isymunmanagedvariable-interface.md)

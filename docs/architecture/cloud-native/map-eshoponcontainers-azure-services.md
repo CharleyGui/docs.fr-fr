@@ -1,24 +1,22 @@
 ---
 title: Mappage d’eShopOnContainers aux services Azure
 description: Mappage de eShopOnContainers à des services Azure comme Azure Kubernetes service, API Gateway et Azure Service Bus.
-ms.date: 04/20/2020
-ms.openlocfilehash: 26fce71ba71f7da643b669396ab59affe592649a
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.date: 05/13/2020
+ms.openlocfilehash: 271707404f7fb51aec59c6f682ddaefd0bac82cc
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895515"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613835"
 ---
 # <a name="mapping-eshoponcontainers-to-azure-services"></a>Mappage d’eShopOnContainers aux services Azure
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Bien que cela ne soit pas obligatoire, Azure est bien adapté à la prise en charge de eShopOnContainers, car le projet a été conçu pour être une application Cloud native. L’application est générée avec .NET Core, de sorte qu’elle peut s’exécuter sur des conteneurs Linux ou Windows en fonction de l’hôte de la station d’accueil. L’application est composée de plusieurs microservices autonomes, chacun avec ses propres données. Les différents microservices illustrent différentes approches, allant des simples opérations CRUD aux modèles DDD et CQRS plus complexes. Les microservices communiquent avec les clients via HTTP et les uns avec les autres via la communication basée sur les messages. L’application prend également en charge plusieurs plateformes pour les clients, dans la mesure où elle adopte HTTP comme protocole de communication standard et comprend des applications mobiles ASP.NET Core et Xamarin qui s’exécutent sur des plateformes Android, iOS et Windows.
 
 L’architecture de l’application est illustrée dans la figure 2-5. À gauche, les applications clientes sont décomposées en versions mobiles, traditionnelles Web et d’application à page unique (SPA) Web. À droite se trouvent les composants côté serveur qui composent le système, qui peuvent chacun être hébergés dans des conteneurs et des clusters Kubernetes. L’application Web traditionnelle est alimentée par l’application ASP.NET Core MVC affichée en jaune. Cette application et les applications mobiles et Web SPA communiquent avec les microservices individuels par le biais d’une ou de plusieurs passerelles d’API. Les passerelles d’API suivent le modèle « principaux pour les serveurs frontaux » (BFF), ce qui signifie que chaque passerelle est conçue pour prendre en charge un client frontal donné. Les microservices individuels sont répertoriés à droite des passerelles d’API et incluent à la fois la logique métier et un magasin de persistance. Les différents services utilisent des bases de données SQL Server, des instances de cache Redims et des magasins MongoDB/CosmosDB. À l’extrême droite se trouve le bus d’événements du système, qui est utilisé pour la communication entre les microservices.
 
-![eShopOnContainers architecture](./media/eshoponcontainers-architecture.png)
-de la**figure 2-5**. L’architecture eShopOnContainers.
+![eShopOnContainers architecture de la ](./media/eshoponcontainers-architecture.png)
+ **figure 2-5**. L’architecture eShopOnContainers.
 
 Les composants côté serveur de cette architecture sont tous mappés facilement aux services Azure.
 
@@ -65,5 +63,5 @@ L’application utilise des événements pour communiquer les modifications entr
 Une fois déployé en production, l’application eShopOnContainers peut tirer parti de plusieurs services Azure disponibles pour améliorer sa résilience. L’application publie des contrôles d’intégrité, qui peuvent être intégrés à Application Insights pour fournir des rapports et des alertes en fonction de la disponibilité de l’application. Les ressources Azure fournissent également des journaux de diagnostic qui peuvent être utilisés pour identifier et corriger les bogues et les problèmes de performances. Les journaux de ressources fournissent des informations détaillées sur le moment et la façon dont les différentes ressources Azure sont utilisées par l’application. Vous en apprendrez davantage sur les fonctionnalités de résilience native du Cloud dans le [chapitre 6](resiliency.md).
 
 >[!div class="step-by-step"]
->[Précédent](introduce-eshoponcontainers-reference-app.md)
->[suivant](deploy-eshoponcontainers-azure.md)
+>[Précédent](introduce-eshoponcontainers-reference-app.md) 
+> [Suivant](deploy-eshoponcontainers-azure.md)

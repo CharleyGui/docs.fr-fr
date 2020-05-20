@@ -1,17 +1,15 @@
 ---
 title: Autres options de déploiement de conteneur
 description: Autres options de déploiement de conteneur à l’aide d’Azure
-ms.date: 04/13/2020
-ms.openlocfilehash: 3cae771b3877215a7fc91afd4f406fdfc9ff2771
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.date: 05/13/2020
+ms.openlocfilehash: acb022e3d4fd4862c592fa571894e1b8ce17f465
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82200000"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613757"
 ---
 # <a name="other-container-deployment-options"></a>Autres options de déploiement de conteneur
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 À part le service Azure Kubernetes (AKS), vous pouvez également déployer des conteneurs sur Azure App Service pour les conteneurs et les Azure Container Instances.
 
@@ -64,5 +62,5 @@ Azure Container Instances offre le moyen le plus rapide d’exécuter des charge
 - [Déployer une instance de conteneur à partir de ACR](https://docs.microsoft.com/azure/container-instances/container-instances-using-azure-container-registry#deploy-with-azure-portal)
 
 >[!div class="step-by-step"]
->[Précédent](scale-containers-serverless.md)
->[suivant](communication-patterns.md)
+>[Précédent](scale-containers-serverless.md) 
+> [Suivant](communication-patterns.md)

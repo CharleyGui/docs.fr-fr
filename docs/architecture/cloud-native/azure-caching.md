@@ -1,18 +1,16 @@
 ---
-title: Mise en cache dans une application Cloud Native
+title: Mise en cache dans une application cloud native
 description: En savoir plus sur les stratégies de mise en cache dans une application Cloud native.
 author: robvet
-ms.date: 01/22/2020
-ms.openlocfilehash: 2da61a01fc53233d1934df813fcba3b91a495c43
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.date: 05/17/2020
+ms.openlocfilehash: a109db59d7b2005ea97922eef07ae4869e4894a7
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794967"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614290"
 ---
 # <a name="caching-in-a-cloud-native-app"></a>Mise en cache dans une application Cloud Native
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Les avantages de la mise en cache sont bien compris. La technique consiste à copier temporairement les données fréquemment sollicitées à partir d’un magasin de données principal vers un *stockage rapide* situé plus près de l’application. La mise en cache est souvent implémentée où...
 
@@ -20,7 +18,7 @@ Les avantages de la mise en cache sont bien compris. La technique consiste à co
 - L’accès aux données est lent, en particulier par rapport à la vitesse du cache.
 - Les données sont soumises à des niveaux élevés de contention.
 
-## <a name="why"></a>Pourquoi ?
+## <a name="why"></a>Pourquoi ?
 
 Comme indiqué dans le [Guide de mise en cache de Microsoft](https://docs.microsoft.com/azure/architecture/best-practices/caching), la mise en cache peut améliorer les performances, l’extensibilité et la disponibilité des microservices individuels et du système dans son ensemble. Elle réduit la latence et la contention de la gestion de grands volumes de demandes simultanées à un magasin de données. À mesure que le volume de données et le nombre d’utilisateurs augmentent, plus les avantages de la mise en cache sont importants.
 
@@ -32,15 +30,15 @@ Envisagez également la mise en cache pour éviter les calculs répétitifs. Si 
 
 ## <a name="caching-architecture"></a>Architecture de mise en cache
 
-Les applications Cloud natives implémentent généralement une architecture de mise en cache distribuée. Le cache est hébergé en tant que service de [sauvegarde](./definition.md#backing-services)Cloud, distinct des microservices. La figure 5-20 illustre l’architecture.
+Les applications Cloud natives implémentent généralement une architecture de mise en cache distribuée. Le cache est hébergé en tant que service de [sauvegarde](./definition.md#backing-services)Cloud, distinct des microservices. La figure 5-15 illustre l’architecture.
 
 ![Mise en cache dans une application Cloud Native](media/caching-in-a-cloud-native-app.png)
 
-**Figure 5-19**: mise en cache dans une application Cloud Native
+**Figure 5-15**: mise en cache dans une application Cloud Native
 
 Dans l’illustration précédente, Notez que le cache est indépendant et partagé par les microservices. Dans ce scénario, le cache est appelé par la [passerelle d’API](./front-end-communication.md). Comme indiqué dans le chapitre 4, la passerelle sert de serveur frontal pour toutes les demandes entrantes. Le cache distribué augmente la réactivité du système en retournant les données mises en cache dans la mesure du possible. En outre, la séparation du cache des services permet au cache d’être mis à l’échelle indépendamment pour répondre aux demandes de trafic accrues.
 
-La figure présente un modèle de mise en cache courant connu sous le nom de [modèle de cache](https://docs.microsoft.com/azure/architecture/patterns/cache-aside). Pour une demande entrante, vous devez d’abord interroger le cache (étape \#1) pour obtenir une réponse. Si elle est trouvée, les données sont retournées immédiatement. Si les données n’existent pas dans le cache (ce qui s’appelle une absence dans le [cache](https://www.techopedia.com/definition/6308/cache-miss)), elles sont récupérées à partir d’une base de données locale dans un service en aval (étape \#2). Elle est ensuite écrite dans le cache pour les demandes ultérieures (étape \#3) et retournée à l’appelant. Vous devez veiller à supprimer régulièrement les données mises en cache afin que le système reste en temps et en cohérence.
+La figure précédente présente un modèle de mise en cache courant connu sous le nom de [modèle de cache](https://docs.microsoft.com/azure/architecture/patterns/cache-aside). Pour une demande entrante, vous devez d’abord interroger le cache (étape \# 1) pour obtenir une réponse. Si elle est trouvée, les données sont retournées immédiatement. Si les données n’existent pas dans le cache (ce qui s’appelle une absence dans le [cache](https://www.techopedia.com/definition/6308/cache-miss)), elles sont récupérées à partir d’une base de données locale dans un service en aval (étape \# 2). Elle est ensuite écrite dans le cache pour les demandes ultérieures (étape \# 3) et retournée à l’appelant. Vous devez veiller à supprimer régulièrement les données mises en cache afin que le système reste en temps et en cohérence.
 
 À mesure qu’un cache partagé augmente, il peut s’avérer bénéfique de partitionner ses données sur plusieurs nœuds. Cela permet de réduire la contention et d’améliorer l’évolutivité. De nombreux services de mise en cache prennent en charge la possibilité d’ajouter et de supprimer dynamiquement des nœuds et de rééquilibrer les données entre les partitions. Cette approche implique généralement le clustering. Le clustering expose une collection de nœuds fédérés sous la forme d’un cache unique et transparent. En interne, toutefois, les données sont dispersées sur les nœuds à la suite d’une stratégie de distribution prédéfinie qui équilibre la charge uniformément.
 
@@ -62,5 +60,5 @@ Pour les scénarios avancés, une copie des données mises en cache peut être [
 Le cache Redims Azure est disponible dans un certain nombre de configurations prédéfinies et de niveaux tarifaires.  Le [niveau Premium](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-premium-tier-intro) offre de nombreuses fonctionnalités de niveau entreprise, telles que le clustering, la persistance des données, la géo-réplication et l’isolation du réseau virtuel.
 
 >[!div class="step-by-step"]
->[Précédent](relational-vs-nosql-data.md)
->[Suivant](elastic-search-in-azure.md)
+>[Précédent](relational-vs-nosql-data.md) 
+> [Suivant](elastic-search-in-azure.md)

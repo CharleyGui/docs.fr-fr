@@ -2,17 +2,15 @@
 title: Infrastructure de communication Service Mesh
 description: En savoir plus sur la façon dont les technologies de maillage de service rationalisent la communication des microservices natives Cloud
 author: robvet
-ms.date: 03/03/2020
-ms.openlocfilehash: 89bc4d307d725e7e31e020ef156c4c5967dd2a1c
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.date: 05/13/2020
+ms.openlocfilehash: 1b11024cd029433c756812850e2665b7836a13d3
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199943"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613683"
 ---
 # <a name="service-mesh-communication-infrastructure"></a>Infrastructure de communication Service Mesh
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Tout au long de ce chapitre, nous avons exploré les défis liés à la communication des microservices. Nous avons dit que les équipes de développement doivent être sensibles à la façon dont les services principaux communiquent entre eux. Dans l’idéal, la communication entre les services est moins efficace. Toutefois, l’évitement n’est pas toujours possible, car les services principaux s’appuient souvent les uns sur les autres pour effectuer des opérations.
 
@@ -42,7 +40,7 @@ Dans ce chapitre, nous avons abordé les modèles de communication natifs dans l
 
 Une mise en évidence spéciale s’est produite sur les services Azure gérés qui peuvent aider à implémenter la communication dans les systèmes natifs du Cloud :
 
-- [Passerelle Azure Application](https://docs.microsoft.com/azure/application-gateway/overview)
+- [Azure Application Gateway](https://docs.microsoft.com/azure/application-gateway/overview)
 - [Gestion des API Azure](https://azure.microsoft.com/services/api-management/)
 - [Service Azure SignalR](https://azure.microsoft.com/services/signalr-service/)
 - [Files d’attente Stockage Azure](https://docs.microsoft.com/azure/storage/queues/storage-queues-introduction)
@@ -73,5 +71,5 @@ Nous allons ensuite passer aux données distribuées dans les systèmes natifs d
 - [Génération de services gRPC avec la vidéo .NET](https://channel9.msdn.com/Shows/The-Cloud-Native-Show/Building-Microservices-with-gRPC-and-NET)
 
 >[!div class="step-by-step"]
->[Précédent](grpc.md)
->[suivant](distributed-data.md)
+>[Précédent](grpc.md) 
+> [Suivant](distributed-data.md)

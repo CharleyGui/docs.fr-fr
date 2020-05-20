@@ -2,17 +2,15 @@
 title: gRPC
 description: En savoir plus sur gRPC, son rôle dans les applications natives du Cloud et sa différence par rapport à la communication HTTP RESTful.
 author: robvet
-ms.date: 03/31/2020
-ms.openlocfilehash: 01dd4c934f0b39041ea377691067edf4dbe20378
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.date: 05/13/2020
+ms.openlocfilehash: f34b267d7f5c6b4e593841c80df44d1ccbde95ae
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895563"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614043"
 ---
 # <a name="grpc"></a>gRPC
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Jusqu’ici, dans cet ouvrage, nous nous sommes concentrés sur la communication [basée sur REST](https://docs.microsoft.com/azure/architecture/best-practices/api-design) . Nous avons vu que REST est un style architectural flexible qui définit les opérations CRUD sur les ressources d’entité. Les clients interagissent avec les ressources sur HTTP avec un modèle de communication de demande/réponse. Bien que REST soit largement implémenté, une technologie de communication plus récente, gRPC, a gagné un énorme dynamisme au sein de la communauté Cloud-native.
 
@@ -39,9 +37,9 @@ gRPC est léger et très performant. Elle peut être jusqu’à 8 fois plus rapi
 
 ## <a name="protocol-buffers"></a>Mémoires tampon de protocole
 
-gRPC adopte une technologie open source appelée [mémoires tampons de protocole](https://developers.google.com/protocol-buffers/docs/overview). Ils fournissent un format de sérialisation très efficace et indépendant de la plateforme pour la sérialisation des messages structurés que les services envoient entre eux. À l’aide d’un langage IDL (Interface Definition Language) multiplateforme, les développeurs définissent un contrat de service pour chaque microservice. Le contrat, implémenté sous forme de `.proto` fichier texte, décrit les méthodes, les entrées et les sorties pour chaque service. Le même fichier de contrat peut être utilisé pour les clients et services gRPC basés sur différentes plateformes de développement.
+gRPC adopte une technologie open source appelée [mémoires tampons de protocole](https://developers.google.com/protocol-buffers/docs/overview). Ils fournissent un format de sérialisation très efficace et indépendant de la plateforme pour la sérialisation des messages structurés que les services envoient entre eux. À l’aide d’un langage IDL (Interface Definition Language) multiplateforme, les développeurs définissent un contrat de service pour chaque microservice. Le contrat, implémenté sous forme de fichier texte `.proto` , décrit les méthodes, les entrées et les sorties pour chaque service. Le même fichier de contrat peut être utilisé pour les clients et services gRPC basés sur différentes plateformes de développement.
 
-À l’aide du fichier proto, le compilateur `protoc`Protobuf,, génère le code du client et du service pour votre plateforme cible. Le code comprend les composants suivants :
+À l’aide du fichier proto, le compilateur Protobuf, `protoc` , génère le code du client et du service pour votre plateforme cible. Le code comprend les composants suivants :
 
 - Objets fortement typés, partagés par le client et le service, qui représentent les opérations de service et les éléments de données d’un message.
 - Classe de base fortement typée avec l’infrastructure réseau requise que le service gRPC distant peut hériter et étendre.
@@ -114,5 +112,5 @@ Bien que nous cherchions à découpler les microservices avec des modèles de co
 Avant, gRPC continuera à gagner en traction pour les systèmes Cloud natifs. Les avantages en matière de performances et de facilité de développement sont intéressants. Toutefois, REST sera probablement inactif pendant une longue période. Il expose les API exposées publiquement et pour des raisons de compatibilité descendante.
 
 >[!div class="step-by-step"]
->[Précédent](service-to-service-communication.md)
->[suivant](service-mesh-communication-infrastructure.md)
+>[Précédent](service-to-service-communication.md) 
+> [Suivant](service-mesh-communication-infrastructure.md)

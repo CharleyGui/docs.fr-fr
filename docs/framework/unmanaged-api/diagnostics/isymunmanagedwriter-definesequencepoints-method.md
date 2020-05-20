@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 64202baf-be6b-40ba-8162-8cc6c0c9b8e1
 topic_type:
 - apiref
-ms.openlocfilehash: 63ba108bc234e566450bb019afc63acb4e75ad1f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8889c412f414f38d1d18d33ec297e82fd052280d
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427984"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614797"
 ---
 # <a name="isymunmanagedwriterdefinesequencepoints-method"></a>ISymUnmanagedWriter::DefineSequencePoints, méthode
 Définit un groupe de points de séquence dans la méthode actuelle. Chaque ligne de départ et colonne de début définissent le début d’une instruction dans une méthode. Chaque ligne de fin et colonne de fin définissent la fin d’une instruction dans une méthode. Les tableaux doivent être triés par ordre de décalage. L’offset est toujours mesuré à partir du début de la méthode, en octets.  
@@ -43,7 +43,7 @@ HRESULT DefineSequencePoints(
  dans Objet document pour lequel les points de séquence sont définis.  
   
  `spCount`  
- dans `ULONG32` qui indique la taille de chaque `offsets`, `lines`, `columns`, `endLines`et `endColumns` mémoires tampons.  
+ dans `ULONG32`Qui indique la taille de chacun des tampons,,, `offsets` `lines` `columns` `endLines` et `endColumns` .  
   
  `offsets`  
  dans Décalage des points de séquence mesuré à partir du début de la méthode.  
@@ -63,9 +63,9 @@ HRESULT DefineSequencePoints(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedWriter, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [ISymUnmanagedWriter, interface](isymunmanagedwriter-interface.md)

@@ -2,17 +2,15 @@
 title: Données distribuées
 description: Le contraste du stockage des données dans les applications monolithiques et Cloud natives.
 author: robvet
-ms.date: 04/24/2020
-ms.openlocfilehash: 8a9f1478f1a46b2367df9372d4adaa3b4c711782
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.date: 05/13/2020
+ms.openlocfilehash: 2eff37dcc57ae39daac0ba10d10322be5eb4e321
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82204695"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614134"
 ---
 # <a name="distributed-data"></a>Données distribuées
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Comme nous l’avons vu dans ce livre, une approche Cloud-Native change la façon dont vous concevez, déployez et gérez les applications. Il modifie également la façon dont vous gérez et stockez les données.
 
@@ -128,7 +126,7 @@ Cette séparation permet de mettre à l’échelle indépendamment les lectures 
 
 L’implémentation de CQRS peut améliorer les performances des applications pour les services Cloud natifs. Toutefois, cela se traduit par une conception plus complexe. Appliquez ce principe avec soin et stratégiquement à ces sections de votre application Cloud native qui en tireront parti. Pour plus d’informations sur CQRS, consultez les [microservices .NET Microsoft Book : architecture pour les applications .net en conteneur](https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/apply-simplified-microservice-cqrs-ddd-patterns).
 
-### <a name="event-sourcing"></a>Source d’événements
+### <a name="event-sourcing"></a>Provisionnement en événements
 
 Une autre approche de l’optimisation des scénarios de données volumineuses implique l' [approvisionnement des événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing).
 
@@ -151,5 +149,5 @@ Pour ce modèle, envisagez un magasin de données qui prend directement en charg
 Comme avec tous les modèles et technologies, implémentez stratégiquement et si nécessaire. Bien que l’approvisionnement en événements puisse offrir des performances et une évolutivité accrues, il est au détriment de la complexité et d’une courbe d’apprentissage.
 
 >[!div class="step-by-step"]
->[Précédent](service-mesh-communication-infrastructure.md)
->[suivant](relational-vs-nosql-data.md)
+>[Précédent](service-mesh-communication-infrastructure.md) 
+> [Suivant](relational-vs-nosql-data.md)

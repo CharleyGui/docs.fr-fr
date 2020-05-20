@@ -1,17 +1,15 @@
 ---
 title: DevOps
 description: Considérations relatives à DevOps pour les applications Cloud natives
-ms.date: 05/12/2020
-ms.openlocfilehash: 498ce64c3a387433862142826059b4f7e513ec7b
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.date: 05/13/2020
+ms.openlocfilehash: ce814595245d49e409e780cb0f63c436299c2e4e
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395816"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614113"
 ---
 # <a name="devops"></a>DevOps
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Le mantra préféré des conseillers en logiciels est de répondre à la question « cela dépend » de toute question posée. Ce n’est pas parce que les consultants logiciels ne prennent pas de position. C’est parce qu’il n’y a pas une vraie réponse aux questions dans les logiciels. Il n’y a pas de droit absolu, mais plutôt un équilibre entre les opposés.
 

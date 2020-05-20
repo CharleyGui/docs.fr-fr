@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0ea9d9af-8709-4a46-872b-f54d9e840088
 topic_type:
 - apiref
-ms.openlocfilehash: da2906187c02bbc7a35c937663e3fc7db1ebda13
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 48c50ac6be6d525676d85578e5a55a27104c180a
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433888"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615096"
 ---
 # <a name="isymunmanagednamespacegetnamespaces-method"></a>ISymUnmanagedNamespace::GetNamespaces, méthode
 Obtient les enfants de cet espace de noms.  
@@ -37,7 +37,7 @@ HRESULT GetNamespaces(
   
 ## <a name="parameters"></a>Paramètres  
  `cNameSpaces`  
- dans `ULONG32` qui indique la taille du tableau de `namespaces`.  
+ dans `ULONG32`Qui indique la taille du `namespaces` tableau.  
   
  `pcNameSpaces`  
  à Pointeur vers un `ULONG32` qui reçoit la taille, en caractères, de la mémoire tampon requise pour contenir les espaces de noms.  
@@ -48,9 +48,9 @@ HRESULT GetNamespaces(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedNamespace, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-interface.md)
+- [ISymUnmanagedNamespace, interface](isymunmanagednamespace-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d4dcc575-3ac8-4453-9be1-2b24f47363d7
 topic_type:
 - apiref
-ms.openlocfilehash: 951fc10a4560e0b4e256312017cdcd9a389f17f5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8b51a9dc3a968c6bd2f5f9b149f13f88dc6a1e05
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427819"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614745"
 ---
 # <a name="isymunmanagedwritersetuserentrypoint-method"></a>ISymUnmanagedWriter::SetUserEntryPoint, méthode
 Spécifie la méthode définie par l’utilisateur qui est le point d’entrée de ce module. Par exemple, ce point d’entrée peut être la méthode main de l’utilisateur au lieu des stubs générés par le compilateur avant main.  
@@ -39,9 +39,9 @@ HRESULT SetUserEntryPoint(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedWriter, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [ISymUnmanagedWriter, interface](isymunmanagedwriter-interface.md)

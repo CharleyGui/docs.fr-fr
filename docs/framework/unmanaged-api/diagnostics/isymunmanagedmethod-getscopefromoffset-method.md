@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d14cf210-81f8-46e1-8b19-6ddec0ba8b11
 topic_type:
 - apiref
-ms.openlocfilehash: 36b1b2394907f242c0e8c5e277c0d1c5b3b02e1b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 4eefd019280f501a6ce194e5ce84388e32cc66e1
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448905"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615135"
 ---
 # <a name="isymunmanagedmethodgetscopefromoffset-method"></a>ISymUnmanagedMethod::GetScopeFromOffset, méthode
 Obtient la portée lexicale la plus englobante dans cette méthode qui englobe l’offset donné. Cela peut être utilisé pour démarrer des recherches de variables locales.  
@@ -35,17 +35,17 @@ HRESULT GetScopeFromOffset(
   
 ## <a name="parameters"></a>Paramètres  
  `offset`  
- dans `ULONG` qui contient le décalage.  
+ dans `ULONG`Qui contient l’offset.  
   
  `pRetVal`  
- à Pointeur qui a pour valeur l’interface [ISymUnmanagedScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md) retournée.  
+ à Pointeur qui a pour valeur l’interface [ISymUnmanagedScope](isymunmanagedscope-interface.md) retournée.  
   
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedMethod, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [ISymUnmanagedMethod, interface](isymunmanagedmethod-interface.md)

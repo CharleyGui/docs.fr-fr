@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9777d8bb-4abc-4be8-aa7c-34f853eceb9c
 topic_type:
 - apiref
-ms.openlocfilehash: cba4af737cc6a6441d38ba0f940fffe54f5c4f09
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d04c9865d8272bf8d04080f6049ddfb1d4c643bb
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449058"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614576"
 ---
 # <a name="isymunmanagedencupdategetlocalvariablecount-method"></a>ISymUnmanagedENCUpdate::GetLocalVariableCount, méthode
 Obtient le nombre de variables locales.  
@@ -43,9 +43,9 @@ HRESULT GetLocalVariableCount(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedENCUpdate, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-interface.md)
+- [ISymUnmanagedENCUpdate, interface](isymunmanagedencupdate-interface.md)

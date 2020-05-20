@@ -1,17 +1,15 @@
 ---
 title: Modèles d’observabilité
 description: Modèles d’observation pour les applications Cloud natives
-ms.date: 02/05/2020
-ms.openlocfilehash: a821235835b4553760b19887d500a29ca75e133e
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.date: 05/13/2020
+ms.openlocfilehash: db6a56358923025cbcca9478908474227e5da96d
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77448513"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613809"
 ---
 # <a name="observability-patterns"></a>Modèles d’observabilité
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Tout comme les modèles ont été développés pour faciliter la mise en page du code dans les applications, il existe des modèles pour les applications de fonctionnement de manière fiable. Trois modèles utiles dans la gestion des applications sont apparu : **journalisation**, **surveillance**et **alertes**.
 
@@ -21,20 +19,20 @@ Quelle que soit la prudence, les applications se comportent presque toujours de 
 
 ### <a name="challenges-when-logging-with-cloud-native-applications"></a>Défis liés à la journalisation avec des applications Cloud natives
 
-Dans les applications traditionnelles, les fichiers journaux sont généralement stockés sur l’ordinateur local. En fait, sur les systèmes d’exploitation de type UNIX, il existe une structure de dossiers définie pour contenir tous les journaux, généralement sous `/var/log`.
+Dans les applications traditionnelles, les fichiers journaux sont généralement stockés sur l’ordinateur local. En fait, sur les systèmes d’exploitation de type UNIX, il existe une structure de dossiers définie pour contenir tous les journaux, généralement sous `/var/log` .
 
-![la journalisation dans un fichier dans une application monolithique.](./media/single-monolith-logging.png)
-**Figure 7-1**. Journalisation dans un fichier dans une application monolithique.
+![Journalisation dans un fichier dans une application monolithique. ](./media/single-monolith-logging.png)
+ **Figure 7-1**. Journalisation dans un fichier dans une application monolithique.
 
 L’utilité de la journalisation dans un fichier plat sur un seul ordinateur est considérablement réduite dans un environnement Cloud. Les applications qui produisent des journaux peuvent ne pas avoir accès au disque local ou le disque local peut être très transitoire, car les conteneurs sont mélangés à des machines physiques. Même une mise à l’échelle simple des applications monolithiques sur plusieurs nœuds peut compliquer la recherche du fichier journal approprié basé sur des fichiers.
 
-![la journalisation dans des fichiers dans une application monolithique mise à l’échelle.](./media/multiple-node-monolith-logging.png)
-**Figure 7-2**. Journalisation dans des fichiers dans une application monolithique mise à l’échelle.
+![Journalisation dans des fichiers dans une application monolithique mise à l’échelle. ](./media/multiple-node-monolith-logging.png)
+ **Figure 7-2**. Journalisation dans des fichiers dans une application monolithique mise à l’échelle.
 
 Les applications Cloud natives développées à l’aide d’une architecture de microservices présentent également des défis pour les enregistreurs basés sur des fichiers. Les demandes de l’utilisateur peuvent maintenant s’étendre sur plusieurs services qui sont exécutés sur des ordinateurs différents et peuvent inclure des fonctions sans serveur sans accès à un système de fichiers local. Il serait très difficile de mettre en corrélation les journaux d’un utilisateur ou d’une session sur ces nombreux services et ordinateurs.
 
-![la journalisation dans des fichiers locaux dans une application de microservices.](./media/local-log-file-per-service.png)
-**Figure 7-3**. Journalisation dans des fichiers locaux dans une application de microservices.
+![Journalisation dans des fichiers locaux dans une application de microservices. ](./media/local-log-file-per-service.png)
+ **Figure 7-3**. Journalisation dans des fichiers locaux dans une application de microservices.
 
 Enfin, le nombre d’utilisateurs dans certaines applications Cloud natives est élevé. Imaginez que chaque utilisateur génère une centaine de messages de journalisation lorsqu’il se connecte à une application. D’un point de vue gérable, ce qui peut être géré, mais multipliez-la par plus de 100 000 utilisateurs et le volume des journaux est suffisamment important pour que des outils spécialisés soient nécessaires pour prendre en charge l’utilisation efficace des journaux.
 
@@ -46,7 +44,7 @@ Chaque langage de programmation dispose d’outils qui autorisent l’écriture 
 * Débogage
 * Information
 * Avertissement
-* Error
+* Erreur
 * Erreur irrécupérable
 
 Ces différents niveaux de journalisation fournissent la granularité de la journalisation. Lorsque l’application fonctionne correctement en production, elle peut être configurée pour enregistrer uniquement les messages importants. Lorsque l’application ne fonctionne pas correctement, le niveau de journalisation peut être augmenté pour que les journaux plus détaillés soient collectés. Cela équilibre les performances par rapport à la facilité de débogage.
@@ -57,8 +55,8 @@ En raison des défis associés à l’utilisation des journaux basés sur des fi
 
 Il est également utile de suivre certaines pratiques standard lors de la création d’une journalisation qui s’étend sur de nombreux services. Par exemple, la génération d’un [ID de corrélation](https://blog.rapid7.com/2016/12/23/the-value-of-correlation-ids/) au début d’une interaction longue, puis son enregistrement dans chaque message associé à cette interaction facilite la recherche de tous les messages associés. Il suffit de rechercher un seul message et d’extraire l’ID de corrélation pour trouver tous les messages associés. Un autre exemple consiste à s’assurer que le format de journal est le même pour tous les services, quel que soit le langage ou la bibliothèque de journalisation qu’il utilise. Cette normalisation facilite grandement la lecture des journaux. La figure 7-4 montre comment une architecture de microservices peut tirer parti de la journalisation centralisée dans le cadre de son flux de travail.
 
-![journaux de différentes sources sont ingérés dans un magasin de journaux centralisé.](./media/centralized-logging.png)
-**Figure 7-4**. Les journaux provenant de différentes sources sont ingérés dans un magasin de journaux centralisé.
+![Les journaux provenant de différentes sources sont ingérés dans un magasin de journaux centralisé. ](./media/centralized-logging.png)
+ **Figure 7-4**. Les journaux provenant de différentes sources sont ingérés dans un magasin de journaux centralisé.
 
 ## <a name="challenges-with-detecting-and-responding-to-potential-app-health-issues"></a>Difficultés liées à la détection et à la réponse aux problèmes potentiels d’intégrité des applications
 
@@ -101,5 +99,5 @@ En règle générale, toutefois, une seule erreur 500 est insuffisante pour dét
 L’un des modèles les plus dangereux des alertes consiste à déclencher un trop grand nombre d’alertes pour les êtres humains à examiner. Les propriétaires de services seront rapidement désensibilisés des erreurs qu’ils ont déjà examinées et jugées sans gravité. Ensuite, lorsque des erreurs vraies se produisent, elles sont perdues dans le bruit de centaines de faux positifs. Le parable du [garçon qui effectué Wolf](https://en.wikipedia.org/wiki/The_Boy_Who_Cried_Wolf) est souvent informé des enfants pour les avertir de ce danger. Il est important de s’assurer que les alertes qui se déclenchent indiquent un problème réel.
 
 >[!div class="step-by-step"]
->[Précédent](monitoring-health.md)
->[Suivant](logging-with-elastic-stack.md)
+>[Précédent](monitoring-health.md) 
+> [Suivant](logging-with-elastic-stack.md)

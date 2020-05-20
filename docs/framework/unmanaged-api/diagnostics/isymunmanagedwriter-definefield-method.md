@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c6a1f797-dbf4-40f5-ab99-d9b4bfb26148
 topic_type:
 - apiref
-ms.openlocfilehash: 7eea63cae27c08260177dfc7746046b975434611
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: aba551a1973a41a909869316cda07e8d655e9882
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428039"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614836"
 ---
 # <a name="isymunmanagedwriterdefinefield-method"></a>ISymUnmanagedWriter::DefineField, méthode
 Définit une variable unique qui ne se trouve pas dans une méthode. Cette méthode est utilisée pour certains champs dans les classes, les champs de bits, etc.  
@@ -51,7 +51,7 @@ HRESULT DefineField(
  dans Attributs du champ.  
   
  `cSig`  
- dans `ULONG32` qui correspond à la taille, en caractères, de la mémoire tampon requise pour contenir la signature de champ.  
+ dans `ULONG32`Qui est la taille, en caractères, de la mémoire tampon requise pour contenir la signature de champ.  
   
  `signature`  
  dans Tableau de signatures de champs.  
@@ -71,9 +71,9 @@ HRESULT DefineField(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedWriter, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [ISymUnmanagedWriter, interface](isymunmanagedwriter-interface.md)

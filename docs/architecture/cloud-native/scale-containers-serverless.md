@@ -1,13 +1,13 @@
 ---
 title: Mise à l'échelle de conteneurs et d’applications serverless
 description: Mise à l’échelle d’applications Cloud natives avec le service Azure Kubernetes pour répondre à la demande de l’utilisateur.
-ms.date: 04/13/2020
-ms.openlocfilehash: b4580e6994611ad394bbaa2d5bb07f64c2798569
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.date: 05/13/2020
+ms.openlocfilehash: a5e1e8df785fd08901d9be41c0a06db35e09296b
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199922"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613718"
 ---
 # <a name="scaling-containers-and-serverless-applications"></a>Mise à l'échelle de conteneurs et d’applications serverless
 
@@ -44,5 +44,5 @@ Azure Functions montée en charge automatiquement à la demande. Les ressources 
 Bien que le plan de consommation par défaut offre une solution économique et évolutive pour la plupart des applications, l’option Premium permet aux développeurs de disposer d’une flexibilité pour les exigences de Azure Functions personnalisées. La mise à niveau vers le plan Premium permet de contrôler les tailles d’instance, les instances préchauffées (pour éviter les retards de démarrage à froid) et les machines virtuelles dédiées.
 
 >[!div class="step-by-step"]
->[Précédent](deploy-containers-azure.md)
->[suivant](other-deployment-options.md)
+>[Précédent](deploy-containers-azure.md) 
+> [Suivant](other-deployment-options.md)

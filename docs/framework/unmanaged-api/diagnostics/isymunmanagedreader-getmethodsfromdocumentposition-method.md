@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 83605f1e-e4f3-49e6-859b-f13cad68bb54
 topic_type:
 - apiref
-ms.openlocfilehash: 923a92ea256f79a1b0130b61c4fd99460fda96a0
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: bba0fc039c403d45e8a5b60f2b0231eb24226280
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441809"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614953"
 ---
 # <a name="isymunmanagedreadergetmethodsfromdocumentposition-method"></a>ISymUnmanagedReader::GetMethodsFromDocumentPosition, méthode
 Retourne un tableau de méthodes, chacune contenant le point d’arrêt à la position donnée dans un document.  
@@ -52,17 +52,17 @@ HRESULT GetMethodsFromDocumentPosition (
  [in] Taille du tableau `pRetVal`.  
   
  `pcMethod`  
- à Pointeur vers une variable qui reçoit le nombre d’éléments retournés dans le tableau de `pRetVal`.  
+ à Pointeur vers une variable qui reçoit le nombre d’éléments retournés dans le `pRetVal` tableau.  
   
  `pRetVal`  
- à Tableau de pointeurs, chacun pointant vers un objet [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) qui représente une méthode contenant le point d’arrêt.  
+ à Tableau de pointeurs, chacun pointant vers un objet [ISymUnmanagedMethod](isymunmanagedmethod-interface.md) qui représente une méthode contenant le point d’arrêt.  
   
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedReader, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader, interface](isymunmanagedreader-interface.md)

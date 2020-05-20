@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 55773dbc-9053-46e3-8a3c-86caa9d91fb4
 topic_type:
 - apiref
-ms.openlocfilehash: 5afd48b36355835647ab8d06691f2bd2058b00cb
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8015056b110fe8a5b5122b1bc81143980b780047
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74426733"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614979"
 ---
 # <a name="isymunmanagedreadergetmethodfromdocumentposition-method"></a>ISymUnmanagedReader::GetMethodFromDocumentPosition, méthode
 Retourne la méthode qui contient le point d’arrêt à la position donnée dans un document.  
@@ -46,14 +46,14 @@ HRESULT GetMethodFromDocumentPosition (
  dans Colonne du document spécifié.  
   
  `pRetVal`  
- à Pointeur vers l’adresse d’un objet d' [interface ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) qui représente la méthode contenant le point d’arrêt.  
+ à Pointeur vers l’adresse d’un objet d' [interface ISymUnmanagedMethod](isymunmanagedmethod-interface.md) qui représente la méthode contenant le point d’arrêt.  
   
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedReader, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader, interface](isymunmanagedreader-interface.md)

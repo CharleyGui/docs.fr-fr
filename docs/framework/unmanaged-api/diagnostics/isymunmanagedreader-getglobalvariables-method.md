@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a2dd5098-3e58-4be5-b7a2-e4160b3b505a
 topic_type:
 - apiref
-ms.openlocfilehash: b6cf7293f1d65db1f60301f49ce655c74df3daca
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 20bfb3e48f411524bd4d9798f17dd935595a12bb
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448317"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615018"
 ---
 # <a name="isymunmanagedreadergetglobalvariables-method"></a>ISymUnmanagedReader::GetGlobalVariables, méthode
 Retourne toutes les variables globales.  
@@ -37,7 +37,7 @@ HRESULT GetGlobalVariables(
   
 ## <a name="parameters"></a>Paramètres  
  `cVars`  
- dans Longueur de la mémoire tampon vers laquelle pointe `pcVars`.  
+ dans Longueur de la mémoire tampon vers laquelle pointe `pcVars` .  
   
  `pcVars`  
  à Pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les variables.  
@@ -48,9 +48,9 @@ HRESULT GetGlobalVariables(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedReader, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader, interface](isymunmanagedreader-interface.md)

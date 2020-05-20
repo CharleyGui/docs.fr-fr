@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6fab8a58-3883-490f-8b27-64042c90f104
 topic_type:
 - apiref
-ms.openlocfilehash: f6a741df3ea57b5e9b4fa8bc5d304bfedd1d6c15
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5730cdd910257d762230f5e54576d5e0a7ac1adb
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428007"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614823"
 ---
 # <a name="isymunmanagedwriterdefinelocalvariable-method"></a>ISymUnmanagedWriter::DefineLocalVariable, méthode
-Définit une variable unique dans la portée lexicale actuelle. Cette méthode peut être appelée plusieurs fois pour une variable du même nom qui a plusieurs maisons dans une étendue. Dans ce cas, toutefois, les valeurs des paramètres `startOffset` et `endOffset` ne doivent pas se chevaucher.  
+Définit une variable unique dans la portée lexicale actuelle. Cette méthode peut être appelée plusieurs fois pour une variable du même nom qui a plusieurs maisons dans une étendue. Dans ce cas, toutefois, les valeurs des `startOffset` paramètres et `endOffset` ne doivent pas se chevaucher.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,7 +49,7 @@ HRESULT DefineLocalVariable(
  dans Attributs de la variable locale.  
   
  `cSig`  
- dans `ULONG32` qui indique la taille, en octets, de la mémoire tampon de `signature`.  
+ dans `ULONG32`Qui indique la taille, en octets, de la `signature` mémoire tampon.  
   
  `signature`  
  dans Signature de la variable locale.  
@@ -75,11 +75,11 @@ HRESULT DefineLocalVariable(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedWriter, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [DefineGlobalVariable, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-defineglobalvariable-method.md)
-- [DefineLocalVariable2, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-definelocalvariable2-method.md)
+- [ISymUnmanagedWriter, interface](isymunmanagedwriter-interface.md)
+- [DefineGlobalVariable, méthode](isymunmanagedwriter-defineglobalvariable-method.md)
+- [DefineLocalVariable2, méthode](isymunmanagedwriter2-definelocalvariable2-method.md)

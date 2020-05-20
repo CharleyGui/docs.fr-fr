@@ -1,17 +1,15 @@
 ---
-title: Identity
+title: Identité
 description: Architecture des applications .NET natives Cloud pour Azure | Personnelles
-ms.date: 09/23/2019
-ms.openlocfilehash: 4cc7c04bf323d2589777df466321f6801f511b6f
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.date: 05/13/2020
+ms.openlocfilehash: 9fa48977e58e2ca5a5f3e231372a4791640a85fd
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183048"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614017"
 ---
-# <a name="identity"></a>Identity
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="identity"></a>Identité
 
 La plupart des applications logicielles doivent avoir une connaissance de l’utilisateur ou du processus qui les appelle. L’utilisateur ou le processus qui interagit avec une application est appelé principal de sécurité, et le processus d’authentification et d’autorisation de ces principaux est appelé « gestion des identités », ou simplement *identité*. Les applications simples peuvent inclure l’ensemble de leur gestion des identités au sein de l’application, mais cette approche n’est pas adaptée à de nombreuses applications et à de nombreux types de principaux de sécurité. Windows prend en charge l’utilisation de Active Directory pour fournir une authentification et une autorisation centralisées.
 
@@ -27,10 +25,10 @@ Les solutions d’identité Cloud Native modernes tirent généralement parti de
 
 En règle générale, le STS est uniquement responsable de l’authentification du principal. La détermination de leur niveau d’accès aux ressources est laissée à d’autres parties de l’application.
 
-## <a name="references"></a>Références
+## <a name="references"></a>References
 
 - [Plateforme d’identité Microsoft](https://docs.microsoft.com/azure/active-directory/develop/)
 
 >[!div class="step-by-step"]
->[Précédent](azure-monitor.md)
->[Suivant](authentication-authorization.md)
+>[Précédent](azure-monitor.md) 
+> [Suivant](authentication-authorization.md)

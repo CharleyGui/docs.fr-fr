@@ -1,17 +1,15 @@
 ---
 title: Exploitation des fonctions serverless
 description: Tirer parti des Azure Functions sans serveur dans les applications natives du Cloud
-ms.date: 04/13/2020
-ms.openlocfilehash: 176499e3cd0349cd689b9d13d1c237a6343d13f3
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.date: 05/13/2020
+ms.openlocfilehash: 53a0fdd29630b2a4368f3aa37ddfc5f93df10a24
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199740"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613861"
 ---
 # <a name="leveraging-serverless-functions"></a>Exploitation des fonctions serverless
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Dans le spectre de la gestion des machines physiques à l’exploitation des fonctionnalités du Cloud, les vies sans serveur se trouvent à l’extrême extrémité. Votre propre responsabilité est votre code et vous payez uniquement lorsque votre code s’exécute. Azure Functions offre un moyen de créer des fonctionnalités sans serveur dans vos applications Cloud natives.
 
@@ -54,8 +52,8 @@ Des solutions sans serveur approvisionnent et évoluent à la demande. Quand une
 
 La figure 3-10 montre un modèle de démarrage à froid. Notez les étapes supplémentaires requises lorsque l’application est froide.
 
-![Le démarrage](./media/cold-start-warm-start.png)
-à froid et à chaud**figure 3-10**. Démarrage à froid et démarrage à chaud.
+![Le démarrage à froid et à chaud ](./media/cold-start-warm-start.png)
+ **figure 3-10**. Démarrage à froid et démarrage à chaud.
 
 Pour éviter tout démarrage à froid, vous pouvez passer d’un [plan de consommation à un plan dédié](https://azure.microsoft.com/blog/understanding-serverless-cold-start/). Vous pouvez également configurer une ou plusieurs [instances préchauffées](https://docs.microsoft.com/azure/azure-functions/functions-premium-plan#pre-warmed-instances) avec la mise à niveau du plan Premium. Dans ce cas, lorsque vous devez ajouter une autre instance, celle-ci est déjà opérationnelle et prête à l’emploi. Ces options peuvent aider à atténuer le problème de démarrage à froid associé à l’informatique sans serveur.
 
@@ -64,5 +62,5 @@ Les fournisseurs de Cloud facturent des factures sans serveur en fonction du tem
 Enfin, tirer parti de Azure Functions pour les tâches d’application complique la tâche. Il est judicieux de commencer par concevoir votre application avec une conception modulaire et faiblement couplée. Ensuite, déterminez s’il existe des avantages sans serveur qui justifient la complexité supplémentaire.
 
 >[!div class="step-by-step"]
->[Précédent](leverage-containers-orchestrators.md)
->[suivant](combine-containers-serverless-approaches.md)
+>[Précédent](leverage-containers-orchestrators.md) 
+> [Suivant](combine-containers-serverless-approaches.md)

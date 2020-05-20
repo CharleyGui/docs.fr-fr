@@ -1,17 +1,15 @@
 ---
 title: Présentation de l’application de référence eShopOnContainers
 description: Présentation de l’application de référence eShopOnContainers Cloud Native microservices pour ASP.NET Core et Azure.
-ms.date: 06/30/2019
-ms.openlocfilehash: b97b62268db1d9990f762d9769233ad72551c226
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.date: 05/13/2020
+ms.openlocfilehash: a6f3defabec809eaf1cb143e2b521904248b74f2
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395398"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613965"
 ---
 # <a name="introducing-eshoponcontainers-reference-app"></a>Présentation de l’application de référence eShopOnContainers
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Microsoft, en partenariat avec les principaux experts de la Communauté, a produit une application de référence de microservices Cloud native complète, eShopOnContainers. Cette application est conçue pour s’intégrer à l’aide de .NET Core et de docker, et éventuellement Azure, Kubernetes et Visual Studio, pour créer une boutique en ligne.
 

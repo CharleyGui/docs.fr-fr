@@ -2,17 +2,15 @@
 title: Communication de service à service
 description: Découvrez comment les microservices dorsaux Cloud-natives communiquent avec d’autres microservices back-end.
 author: robvet
-ms.date: 09/09/2019
-ms.openlocfilehash: 556617a9e2df5a4d9ff9adb9d19e714ca94930ea
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.date: 05/13/2020
+ms.openlocfilehash: dec06cc28ac177381b882f9e441e19e5c51bd5ad
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895493"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613705"
 ---
 # <a name="service-to-service-communication"></a>Communication de service à service
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 En passant par le client frontal, nous adressons maintenant les microservices back-end à communiquer entre eux.
 
@@ -50,7 +48,7 @@ L’exécution d’une requête peu fréquente qui effectue un appel HTTP unique
 
 **Figure 4-9**. Chaînage des requêtes HTTP
 
-Vous pouvez certainement imaginer le risque dans la conception présentée dans l’image précédente. Que se passe- \#t-il si l’étape 3 échoue ? Ou l' \#étape 8 échoue-t-elle ? Comment voulez-vous récupérer ? Que se passe \#-t-il si l’étape 6 est lente parce que le service sous-jacent est occupé ? Comment continuer ? Même si tout fonctionne correctement, pensez à la latence de cet appel, qui correspond à la somme de la latence de chaque étape.
+Vous pouvez certainement imaginer le risque dans la conception présentée dans l’image précédente. Que se passe-t-il si l’étape \# 3 échoue ? Ou l’étape \# 8 échoue-t-elle ? Comment voulez-vous récupérer ? Que se passe \# -t-il si l’étape 6 est lente parce que le service sous-jacent est occupé ? Comment continuer ? Même si tout fonctionne correctement, pensez à la latence de cet appel, qui correspond à la somme de la latence de chaque étape.
 
 Le grand degré de couplage dans l’image précédente suggère que les services n’ont pas été modélisés de manière optimale. Il appartient l’équipe à revisiter sa conception.
 
@@ -166,7 +164,7 @@ Avec l’événement, nous passons de la technologie de mise en file d’attente
 
 **Figure 4-16**. Architecture des rubriques
 
-Dans la figure précédente, les éditeurs envoient des messages à la rubrique. À la fin, les abonnés reçoivent des messages des abonnements. Au milieu, la rubrique transfère les messages aux abonnements en fonction d’un ensemble de *règles*, affichées dans des zones bleu foncé. Les règles agissent comme un filtre qui transfère des messages spécifiques à un abonnement. Ici, un événement « CreateOrder » est envoyé à l’abonnement \#1 et à \#l’abonnement 3, mais pas \#à l’abonnement 2. Un événement « OrderCompleted » est envoyé à l’abonnement \#2 et à \#l’abonnement 3.
+Dans la figure précédente, les éditeurs envoient des messages à la rubrique. À la fin, les abonnés reçoivent des messages des abonnements. Au milieu, la rubrique transfère les messages aux abonnements en fonction d’un ensemble de *règles*, affichées dans des zones bleu foncé. Les règles agissent comme un filtre qui transfère des messages spécifiques à un abonnement. Ici, un événement « CreateOrder » est envoyé à l’abonnement \# 1 et à l’abonnement \# 3, mais pas à l’abonnement \# 2. Un événement « OrderCompleted » est envoyé à l’abonnement \# 2 et à l’abonnement \# 3.
 
 Le Cloud Azure prend en charge deux services de rubrique différents : Azure Service Bus rubriques et Azure EventGrid.
 
@@ -231,5 +229,5 @@ Au lieu de lire à partir de la même ressource, chaque groupe de consommateurs 
 Pour les applications Cloud natives qui doivent diffuser en continu un grand nombre d’événements, Azure Event Hub peut être une solution robuste et abordable.
 
 >[!div class="step-by-step"]
->[Précédent](front-end-communication.md)
->[suivant](grpc.md)
+>[Précédent](front-end-communication.md) 
+> [Suivant](grpc.md)

@@ -2,17 +2,15 @@
 title: Modèles de communication cloud natifs
 description: En savoir plus sur les problèmes de communication de service clés dans les applications Cloud natives
 author: robvet
-ms.date: 08/31/2019
-ms.openlocfilehash: b3edc0817fb76ad99a1344b17d600eb747187f86
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.date: 05/13/2020
+ms.openlocfilehash: 3d678df44b5fef68427846e59f446b7408795625
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895628"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614212"
 ---
 # <a name="cloud-native-communication-patterns"></a>Modèles de communication cloud natifs
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Lors de la construction d’un système Cloud natif, la communication devient une décision de conception significative. Comment une application cliente frontale communique-t-elle avec un microservice principal ? Comment les microservices back-end communiquent-ils entre eux ? Quels sont les principes, les modèles et les meilleures pratiques à prendre en compte lors de l’implémentation de la communication dans des applications natives Cloud ?
 
@@ -49,5 +47,5 @@ L’ouvrage [.net microservices : architecture pour les applications .net en co
 Dans ce chapitre, nous allons commencer par traiter la communication entre les applications frontales et les microservices back-end. Nous examinerons ensuite les microservices principaux qui communiquent entre eux. Nous allons explorer les technologies de communication gRPC et up. Enfin, nous allons découvrir de nouveaux modèles de communication novateurs à l’aide de la technologie service Mesh. Nous verrons également comment le Cloud Azure fournit différents types de *services de stockage* pour prendre en charge la communication Native Cloud.
 
 >[!div class="step-by-step"]
->[Précédent](other-deployment-options.md)
->[suivant](front-end-communication.md)
+>[Précédent](other-deployment-options.md) 
+> [Suivant](front-end-communication.md)

@@ -1,17 +1,15 @@
 ---
 title: Infrastructure as code
 description: Adopter l’infrastructure en tant que code (IaC) avec des applications Cloud natives
-ms.date: 05/12/2020
-ms.openlocfilehash: 309dd8610ab3b72a6c6da5297f109f822520c5ff
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.date: 05/13/2020
+ms.openlocfilehash: cfc9e1f0b2733048d5921de5a0400998c282b1fa
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395346"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613952"
 ---
 # <a name="infrastructure-as-code"></a>Infrastructure as code
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Les systèmes Cloud natifs intègrent des microservices, des conteneurs et une conception de système moderne pour obtenir une vitesse et une agilité. Ils fournissent des étapes de génération et de publication automatisées pour garantir un code cohérent et de qualité. Mais ce n’est qu’une partie de l’histoire. Comment approvisionner les environnements Cloud sur lesquels ces systèmes s’exécutent ?
 
