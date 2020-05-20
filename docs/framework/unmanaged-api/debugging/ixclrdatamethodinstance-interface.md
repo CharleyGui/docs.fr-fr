@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: c51825433bbc86c897c097475d5c15c855f6ec8b
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 0b1c982b25af9edea76a038b4314b4bd608f07df
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790410"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420888"
 ---
 # <a name="ixclrdatamethodinstance-interface"></a>IXCLRDataMethodInstance, interface
 
@@ -37,14 +37,14 @@ Fournit des méthodes pour interroger les informations relatives à une instance
 
 ## <a name="remarks"></a>Notes
 
-Cette interface se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Toutefois, il s’agit d’une interface COM qui dérive de `IUnknown` avec GUID `ECD73800-22CA-4b0d-AB55-E9BA7E6318A5` qui peuvent être obtenus par le biais des mécanismes COM habituels.
+Cette interface se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Toutefois, il s’agit d’une interface COM qui dérive de `IUnknown` avec `ECD73800-22CA-4b0d-AB55-E9BA7E6318A5` un GUID qui peut être obtenu par le biais des mécanismes com habituels.
 
-## <a name="requirements"></a>Configuration requise pour
+## <a name="requirements"></a>Conditions requises
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
 **En-tête :** None  
 **Bibliothèque :** None  
-**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 

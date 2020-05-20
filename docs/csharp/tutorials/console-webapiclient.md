@@ -3,12 +3,12 @@ title: Crée un client REST à l’aide de .NET Core
 description: Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#.
 ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: c7b7e9803b0c05f4956f5c007bca8aa4b200cfca
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 4a3a76d1ec9893c2c3e0353e305a19e59c586fe5
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83208021"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420381"
 ---
 # <a name="rest-client"></a>Client REST
 
@@ -168,9 +168,10 @@ var streamTask = client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos
 var repositories = await JsonSerializer.DeserializeAsync<List<Repository>>(await streamTask);
 ```
 
-Si vous utilisez un nouvel espace de noms, vous devez également l’ajouter en haut du fichier :
+Vous utilisez de nouveaux espaces de noms. vous devez donc les ajouter en haut du fichier :
 
 ```csharp
+using System.Collections.Generic;
 using System.Text.Json;
 ```
 

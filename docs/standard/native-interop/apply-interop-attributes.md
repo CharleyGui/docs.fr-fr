@@ -1,5 +1,6 @@
 ---
 title: Application d'attributs d'interopérabilité
+description: Cet article résume les attributs COM Interop de l’espace de noms System. Runtime. InteropServices, y compris les attributs de l’outil de conversion et de la conception.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - design-time attributes
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - COM interop, applying attributes
 ms.assetid: b6014613-641c-4912-9e2f-83a99210a037
-ms.openlocfilehash: ca104c512641774217de5e270dc50b7393fc5725
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 831f8d79030264ef013a75cd91cb771c9d168576
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159245"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420537"
 ---
 # <a name="applying-interop-attributes"></a>Application d'attributs d'interopérabilité
 L’espace de noms <xref:System.Runtime.InteropServices> propose trois catégories d’attributs spécifiques à l’interopérabilité : ceux que vous appliquez au moment du design, ceux que les interfaces API et les outils de COM Interop appliquent au cours du processus de conversion et ceux que vous appliquez ou que COM Interop applique.  

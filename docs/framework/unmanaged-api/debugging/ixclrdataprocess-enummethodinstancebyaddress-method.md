@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: f3800a5980304394dd648111fe23a3bb0890c575
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 142099ae5cf9637cc28e8c82aabcd831cc8f0f52
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395109"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420797"
 ---
 # <a name="ixclrdataprocessenummethodinstancebyaddress-method"></a>IXCLRDataProcess :: EnumMethodInstanceByAddress, méthode
 
@@ -49,9 +49,9 @@ dans Handle pour énumérer les instances de méthode.
 
 La méthode fournie fait partie de l' `IXCLRDataProcess` interface et correspond au 29ème emplacement de la table de méthodes virtuelles.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Conditions requises
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 **En-tête :** **Bibliothèque None :** aucune **.NET Framework versions :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
 ## <a name="see-also"></a>Voir aussi

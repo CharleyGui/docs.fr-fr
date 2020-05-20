@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 44ee4fc7fc2368b65f6f2fffe6ac239beddc6293
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 3c18fc5c947cbb89fc4e9aed60d3cedcbe22d749
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395265"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420810"
 ---
 # <a name="ixclrdatamodulerequest-method"></a>IXCLRDataModule :: Request, méthode
 
@@ -59,9 +59,9 @@ dans Taille de la mémoire tampon de sortie.
 
 La méthode fournie fait partie de l' `IXCLRDataModule` interface et correspond à l’emplacement 37th de la table de méthodes virtuelles.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Conditions requises
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 **En-tête :** **Bibliothèque None :** aucune **.NET Framework versions :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
 ## <a name="see-also"></a>Voir aussi

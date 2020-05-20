@@ -1,16 +1,17 @@
 ---
 title: Comment créer et exécuter un flux de travail de longue durée
+description: Cet article explique comment créer une application hôte Windows Forms qui prend en charge le démarrage et la reprise de plusieurs instances de workflow et la persistance de flux de travail.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: c0043c89-2192-43c9-986d-3ecec4dd8c9c
-ms.openlocfilehash: 10eb4e2947bed9cea89f1cda05272aa3fa0fadaa
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 557b3512e534198d47c0c6f6b0a7c5f92bb71739
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204882"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419549"
 ---
 # <a name="how-to-create-and-run-a-long-running-workflow"></a>Comment créer et exécuter un flux de travail de longue durée
 
@@ -33,9 +34,9 @@ L’une des fonctionnalités centrales de Windows Workflow Foundation (WF) est l
 
     Sélectionnez les deux fichiers suivants, puis cliquez sur **ouvrir**.
 
-    - *SqlWorkflowInstanceStoreLogic. SQL*
+    - *SqlWorkflowInstanceStoreLogic.sql*
 
-    - *SqlWorkflowInstanceStoreSchema. SQL*
+    - *SqlWorkflowInstanceStoreSchema.sql*
 
 3. Choisissez **SqlWorkflowInstanceStoreSchema. SQL** dans le menu **fenêtre** . Vérifiez que **WF45GettingStartedTutorial** est sélectionné dans la liste déroulante **bases de données disponibles** et choisissez **exécuter** dans le menu **requête** .
 
@@ -48,14 +49,14 @@ L’une des fonctionnalités centrales de Windows Workflow Foundation (WF) est l
 
 1. Cliquez avec le bouton droit sur **NumberGuessWorkflowHost** dans **Explorateur de solutions** , puis sélectionnez **Ajouter une référence**.
 
-2. Sélectionnez **assemblys** dans la liste **Ajouter une référence** , puis tapez `DurableInstancing` dans la zone Rechercher dans les **assemblys** . Cette opération filtre les assemblys et facilite la sélection des références souhaitées.
+2. Sélectionnez **assemblys** dans la liste **Ajouter une référence** , puis tapez `DurableInstancing` dans la zone **Rechercher** dans les assemblys. Cette opération filtre les assemblys et facilite la sélection des références souhaitées.
 
 3. Activez la case à cocher en regard de **System. Activities. DurableInstancing** et **System. Runtime. DurableInstancing** dans la liste des **résultats** de la recherche, puis cliquez sur **OK**.
 
 ## <a name="to-create-the-workflow-host-form"></a>Pour créer le formulaire hôte de workflow
 
 > [!NOTE]
-> Les étapes de cette procédure expliquent comment ajouter et configurer le formulaire manuellement. Si vous le souhaitez, téléchargez les fichiers solution pour le didacticiel et ajoutez le formulaire rempli au projet. Pour télécharger les fichiers du didacticiel, consultez [Windows Workflow Foundation (WF45)-prise en main didacticiel](https://go.microsoft.com/fwlink/?LinkID=248976). Une fois les fichiers téléchargés, cliquez avec le bouton droit sur **NumberGuessWorkflowHost** et choisissez **Ajouter une référence**. Ajoutez une référence à **System. Windows. Forms** et **System. Drawing**. Ces références sont ajoutées automatiquement si vous ajoutez un nouveau formulaire à partir du menu **Ajouter**, **nouvel élément** , mais vous devez les ajouter manuellement lors de l’importation d’un formulaire. Une fois les références ajoutées, cliquez avec le bouton droit sur **NumberGuessWorkflowHost** dans **Explorateur de solutions** , puis choisissez **Ajouter**, **élément existant**. Accédez au dossier `Form` dans les fichiers projet, sélectionnez **WorkflowHostForm.cs** (ou **WorkflowHostForm. vb**), puis cliquez sur **Ajouter**. Si vous choisissez d’importer le formulaire, vous pouvez passer à la section suivante [pour ajouter les propriétés et les méthodes d’assistance du formulaire](#to-add-the-properties-and-helper-methods-of-the-form).
+> Les étapes de cette procédure expliquent comment ajouter et configurer le formulaire manuellement. Si vous le souhaitez, téléchargez les fichiers solution pour le didacticiel et ajoutez le formulaire rempli au projet. Pour télécharger les fichiers du didacticiel, consultez [Windows Workflow Foundation (WF45)-prise en main didacticiel](https://go.microsoft.com/fwlink/?LinkID=248976). Une fois les fichiers téléchargés, cliquez avec le bouton droit sur **NumberGuessWorkflowHost** et choisissez **Ajouter une référence**. Ajoutez une référence à **System. Windows. Forms** et **System. Drawing**. Ces références sont ajoutées automatiquement si vous ajoutez un nouveau formulaire à partir du menu **Ajouter**, **nouvel élément** , mais vous devez les ajouter manuellement lors de l’importation d’un formulaire. Une fois les références ajoutées, cliquez avec le bouton droit sur **NumberGuessWorkflowHost** dans **Explorateur de solutions** , puis choisissez **Ajouter**, **élément existant**. Accédez au `Form` dossier dans les fichiers projet, sélectionnez **WorkflowHostForm.cs** (ou **WorkflowHostForm. vb**), puis cliquez sur **Ajouter**. Si vous choisissez d’importer le formulaire, vous pouvez passer à la section suivante [pour ajouter les propriétés et les méthodes d’assistance du formulaire](#to-add-the-properties-and-helper-methods-of-the-form).
 
 1. Cliquez avec le bouton droit sur **NumberGuessWorkflowHost** dans **Explorateur de solutions** , puis choisissez **Ajouter**, **nouvel élément**.
 
@@ -63,7 +64,7 @@ L’une des fonctionnalités centrales de Windows Workflow Foundation (WF) est l
 
 3. Configurez les propriétés suivantes sur le formulaire.
 
-    |Propriété|Valeur|
+    |Propriété|Value|
     |--------------|-----------|
     |FormBorderStyle|FixedSingle|
     |MaximizeBox|False|
@@ -71,7 +72,7 @@ L’une des fonctionnalités centrales de Windows Workflow Foundation (WF) est l
 
 4. Ajoutez les contrôles suivants au formulaire dans l'ordre spécifié et configurez les propriétés selon les instructions.
 
-    |Contrôle|Propriété : valeur|
+    |Contrôler|Propriété : valeur|
     |-------------|---------------------|
     |**Button**|Nom : NewGame<br /><br /> Emplacement : 13, 13<br /><br /> Taille : 75, 23<br /><br /> Texte : nouveau jeu|
     |**Étiquette**|Emplacement : 94, 18<br /><br /> Texte : estimation d’un nombre compris entre 1 et|
@@ -84,7 +85,7 @@ L’une des fonctionnalités centrales de Windows Workflow Foundation (WF) est l
     > [!NOTE]
     > Lorsque vous ajoutez les contrôles suivants, placez-les dans le GroupBox.
 
-    |Contrôle|Propriété : valeur|
+    |Contrôler|Propriété : valeur|
     |-------------|---------------------|
     |**Étiquette**|Emplacement : 7, 20<br /><br /> Texte : ID d’instance de workflow|
     |**ComboBox**|Nom : InstanceId<br /><br /> DropDownStyle : DropDownList<br /><br /> Emplacement : 121, 17<br /><br /> Taille : 227, 21|
@@ -165,7 +166,7 @@ La procédure de cette section permet d'ajouter des propriétés et des méthode
     }
     ```
 
-    La zone de liste déroulante `InstanceId` affiche une liste des ID d’instance de flux de travail persistants, tandis que la propriété `WorkflowInstanceId` retourne le workflow actuellement sélectionné.
+    La `InstanceId` zone de liste déroulante affiche la liste des ID d’instance de flux de travail persistants et la `WorkflowInstanceId` propriété retourne le workflow actuellement sélectionné.
 
 5. Ajoutez un gestionnaire pour l'événement `Load` du formulaire. Pour ajouter le gestionnaire, basculez en **mode Design** pour le formulaire, cliquez sur l’icône **événements** en haut de la fenêtre **Propriétés** , puis double-cliquez sur **charger**.
 
@@ -212,7 +213,7 @@ La procédure de cette section permet d'ajouter des propriétés et des méthode
 
     Lors du chargement du formulaire, `SqlWorkflowInstanceStore` est configuré, les zones de liste déroulante de plage et de type de workflow ont les valeurs par défaut, et les instances persistantes de workflow sont ajoutées à la zone de liste modifiable `InstanceId`.
 
-7. Ajoutez un gestionnaire `SelectedIndexChanged` pour `InstanceId`. Pour ajouter le gestionnaire, basculez en **mode Design** pour le formulaire, sélectionnez la zone de liste déroulante `InstanceId`, cliquez sur l’icône **événements** en haut de la fenêtre **Propriétés** , puis double-cliquez sur **SelectedIndexChanged**.
+7. Ajoutez un gestionnaire `SelectedIndexChanged` pour `InstanceId`. Pour ajouter le gestionnaire, basculez **en mode Design** pour le formulaire, sélectionnez la `InstanceId` zone de liste déroulante, cliquez sur l’icône **événements** en haut de la fenêtre **Propriétés** , puis double-cliquez sur **SelectedIndexChanged**.
 
     ```vb
     Private Sub InstanceId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles InstanceId.SelectedIndexChanged
@@ -321,7 +322,7 @@ La procédure de cette section permet d'ajouter des propriétés et des méthode
     }
     ```
 
-    `ListPersistedWorkflows` interroge le magasin d’instances pour les instances de workflow persistantes et ajoute les ID d’instance à la zone de liste déroulante `cboInstanceId`.
+    `ListPersistedWorkflows` interroge le magasin d'instances pour les instances persistantes de workflow, et ajoute les ID d'instance à la zone de liste modifiable `cboInstanceId`.
 
 10. Ajoutez la méthode `UpdateStatus` suivante et le délégué correspondant à la classe de formulaire. Cette méthode met à jour la fenêtre d'état du formulaire avec l'état du workflow en cours d'exécution.
 
@@ -402,7 +403,7 @@ La procédure de cette section permet d'ajouter des propriétés et des méthode
     }
     ```
 
-## <a name="to-configure-the-instance-store-workflow-lifecycle-handlers-and-extensions"></a>Pour configurer le magasin d’instances, les gestionnaires de cycle de vie de workflow et les extensions
+## <a name="to-configure-the-instance-store-workflow-lifecycle-handlers-and-extensions"></a>Pour configurer le magasin d'instances, les gestionnaires de cycle de vie de workflow et les extensions
 
 1. Ajoutez une méthode `ConfigureWorkflowApplication` à la classe de formulaire.
 
@@ -432,7 +433,7 @@ La procédure de cette section permet d'ajouter des propriétés et des méthode
     wfApp.InstanceStore = store;
     ```
 
-3. Ensuite, créez une instance de `StringWriter` et ajoutez-la à la collection `Extensions` de `WorkflowApplication`. Lorsqu’un `StringWriter` est ajouté aux extensions, il capture toutes les sorties d’activité `WriteLine`. Lorsque le workflow devient inactif, la sortie de `WriteLine` peut être récupérée à partir de `StringWriter` et s'afficher sur le formulaire.
+3. Ensuite, créez une instance de `StringWriter` et ajoutez-la à la collection `Extensions` de `WorkflowApplication`. Lorsqu’un `StringWriter` est ajouté aux extensions, il capture toute la `WriteLine` sortie de l’activité. Lorsque le workflow devient inactif, la sortie de `WriteLine` peut être récupérée à partir de `StringWriter` et s'afficher sur le formulaire.
 
     ```vb
     ' Add a StringWriter to the extensions. This captures the output
@@ -542,7 +543,7 @@ La procédure de cette section permet d'ajouter des propriétés et des méthode
     };
     ```
 
-    L'énumération <xref:System.Activities.PersistableIdleAction> a trois valeurs : <xref:System.Activities.PersistableIdleAction.None>, <xref:System.Activities.PersistableIdleAction.Persist> et <xref:System.Activities.PersistableIdleAction.Unload>. <xref:System.Activities.PersistableIdleAction.Persist> entraîne la persistance du flux de travail, mais n’entraîne pas le déchargement du flux de travail. <xref:System.Activities.PersistableIdleAction.Unload> entraîne la persistance et le déchargement du flux de travail.
+    L'énumération <xref:System.Activities.PersistableIdleAction> a trois valeurs : <xref:System.Activities.PersistableIdleAction.None>, <xref:System.Activities.PersistableIdleAction.Persist> et <xref:System.Activities.PersistableIdleAction.Unload>. <xref:System.Activities.PersistableIdleAction.Persist> entraîne la persistance du workflow, mais pas son déchargement. <xref:System.Activities.PersistableIdleAction.Unload> entraîne la persistance du workflow et son déchargement.
 
     L'exemple suivant illustre la méthode `ConfigureWorkflowApplication` complète.
 
@@ -649,7 +650,7 @@ La procédure de cette section permet d'ajouter des propriétés et des méthode
 
 ## <a name="to-enable-starting-and-resuming-multiple-workflow-types"></a>Pour activer le démarrage et la reprise de plusieurs types de workflow
 
-Afin de reprendre une instance de workflow, l'hôte doit fournir la définition du workflow. Dans ce didacticiel il existe trois types de workflow, et les étapes suivantes présentent plusieurs versions de ces types. `WorkflowIdentity` permet à une application hôte d’associer des informations d’identification à une instance de flux de travail persistante. Les étapes de cette section expliquent comment créer une classe utilitaire pour assister le mappage de l'identité de workflow d'une instance persistante de workflow à la définition correspondante de workflow. Pour plus d’informations sur la `WorkflowIdentity` et le contrôle de version, consultez [utilisation de WorkflowIdentity et de versioning](using-workflowidentity-and-versioning.md).
+Afin de reprendre une instance de workflow, l'hôte doit fournir la définition du workflow. Dans ce didacticiel il existe trois types de workflow, et les étapes suivantes présentent plusieurs versions de ces types. `WorkflowIdentity` offre un moyen pour une application hôte d'associer les informations d'identification à une instance persistante de workflow. Les étapes de cette section expliquent comment créer une classe utilitaire pour assister le mappage de l'identité de workflow d'une instance persistante de workflow à la définition correspondante de workflow. Pour plus d’informations sur et le contrôle de `WorkflowIdentity` version, consultez [utilisation de WorkflowIdentity et de versioning](using-workflowidentity-and-versioning.md).
 
 1. Cliquez avec le bouton droit sur **NumberGuessWorkflowHost** dans **Explorateur de solutions** , puis choisissez **Ajouter**, **classe**. Tapez `WorkflowVersionMap` dans la zone **nom** , puis cliquez sur **Ajouter**.
 
@@ -763,11 +764,11 @@ Afin de reprendre une instance de workflow, l'hôte doit fournir la définition 
     }
     ```
 
-    `WorkflowVersionMap` contient trois identités de flux de travail qui correspondent aux trois définitions de flux de travail de ce didacticiel et est utilisée dans les sections suivantes lorsque les workflows sont démarrés et repris.
+    `WorkflowVersionMap` contient trois identités de workflow mappées aux trois définitions de workflow de ce didacticiel et est utilisé dans les sections suivantes lorsque des workflow sont démarrés et repris.
 
 ## <a name="to-start-a-new-workflow"></a>Pour démarrer un nouveau workflow
 
-1. Ajoutez un gestionnaire `Click` pour `NewGame`. Pour ajouter le gestionnaire, basculez en **mode Design** pour le formulaire, puis double-cliquez sur `NewGame`. Un gestionnaire `NewGame_Click` est ajouté et l'affichage bascule en mode Code pour le formulaire. Chaque fois que l'utilisateur clique sur ce bouton un nouveau workflow est démarré.
+1. Ajoutez un gestionnaire `Click` pour `NewGame`. Pour ajouter le gestionnaire, basculez en **mode Design** pour le formulaire, puis double-cliquez sur `NewGame` . Un gestionnaire `NewGame_Click` est ajouté et l'affichage bascule en mode Code pour le formulaire. Chaque fois que l'utilisateur clique sur ce bouton un nouveau workflow est démarré.
 
     ```vb
     Private Sub NewGame_Click(sender As Object, e As EventArgs) Handles NewGame.Click
@@ -962,7 +963,7 @@ Afin de reprendre une instance de workflow, l'hôte doit fournir la définition 
 
 ## <a name="to-resume-a-workflow"></a>Pour reprendre un workflow
 
-1. Ajoutez un gestionnaire `Click` pour `EnterGuess`. Pour ajouter le gestionnaire, basculez en **mode Design** pour le formulaire, puis double-cliquez sur `EnterGuess`. Chaque fois que l'utilisateur clique sur ce bouton un nouveau workflow reprend.
+1. Ajoutez un gestionnaire `Click` pour `EnterGuess`. Pour ajouter le gestionnaire, basculez en **mode Design** pour le formulaire, puis double-cliquez sur `EnterGuess` . Chaque fois que l'utilisateur clique sur ce bouton un nouveau workflow reprend.
 
     ```vb
     Private Sub EnterGuess_Click(sender As Object, e As EventArgs) Handles EnterGuess.Click
@@ -1174,7 +1175,7 @@ Afin de reprendre une instance de workflow, l'hôte doit fournir la définition 
 
 ## <a name="to-terminate-a-workflow"></a>Pour terminer un workflow
 
-1. Ajoutez un gestionnaire `Click` pour `QuitGame`. Pour ajouter le gestionnaire, basculez en **mode Design** pour le formulaire, puis double-cliquez sur `QuitGame`. Chaque fois que l'utilisateur clique sur ce bouton le workflow actuellement sélectionné est terminé.
+1. Ajoutez un gestionnaire `Click` pour `QuitGame`. Pour ajouter le gestionnaire, basculez en **mode Design** pour le formulaire, puis double-cliquez sur `QuitGame` . Chaque fois que l'utilisateur clique sur ce bouton le workflow actuellement sélectionné est terminé.
 
     ```vb
     Private Sub QuitGame_Click(sender As Object, e As EventArgs) Handles QuitGame.Click

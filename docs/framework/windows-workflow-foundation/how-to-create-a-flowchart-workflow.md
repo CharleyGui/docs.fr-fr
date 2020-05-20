@@ -1,22 +1,23 @@
 ---
-title: 'Procédure : créer un workflow d’organigramme'
+title: "Procédure : créer un workflow d'organigramme"
+description: Cet article décrit la création d’un workflow qui utilise à la fois des activités intégrées et les activités personnalisées de l’article précédent.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 185d7aea-68a6-4bd8-adde-45050f33170a
-ms.openlocfilehash: 0faf4d77b1ea2881ba8e029d544f2e42cf552349
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 6b3fa423200f5c5cfece60f07372ce9678fc0072
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989691"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419705"
 ---
-# <a name="how-to-create-a-flowchart-workflow"></a>Procédure : créer un workflow d’organigramme
-Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique décrit comment créer un workflow qui utilise à la fois des activités intégrées, telles que l’activité <xref:System.Activities.Statements.Flowchart>, et les activités personnalisées de la [précédente Comment : Créer une activité](how-to-create-an-activity.md) rubrique. Le workflow modélise un jeu d'estimation de nombre.  
+# <a name="how-to-create-a-flowchart-workflow"></a>Procédure : créer un workflow d'organigramme
+Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique décrit comment créer un workflow qui utilise à la fois des activités intégrées, telles que l' <xref:System.Activities.Statements.Flowchart> activité, et les activités personnalisées de la rubrique précédente [Comment : créer une activité](how-to-create-an-activity.md) . Le workflow modélise un jeu d'estimation de nombre.  
   
 > [!NOTE]
-> Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d’abord terminer [procédure : Créer une](how-to-create-an-activity.md)d’activité.  
+> Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d’abord terminer [la procédure : créer une activité](how-to-create-an-activity.md).  
   
 > [!NOTE]
 > Pour télécharger une version complète du didacticiel, consultez [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976)(Windows Workflow Foundation (WF45) - Didacticiel de mise en route).  
@@ -25,7 +26,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 1. Cliquez avec le bouton droit sur **NumberGuessWorkflowActivities** dans **Explorateur de solutions** , puis sélectionnez **Ajouter**, **nouvel élément**.  
   
-2. Dans le nœud **éléments communs** **installés**, sélectionnez **flux de travail**. Sélectionnez **activité** dans la liste **flux de travail** .  
+2. Dans le nœud **éléments communs** **installés**, sélectionnez **flux de travail**. Sélectionnez **Activité** dans la liste **Flux de travail**.  
   
 3. Tapez `FlowchartNumberGuessWorkflow` dans la zone **nom** , puis cliquez sur **Ajouter**.  
   
@@ -37,30 +38,30 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 2. Cliquez sur **arguments** dans la partie inférieure gauche du concepteur de flux de travail pour afficher le volet **arguments** .  
   
-3. Cliquez sur **créer un argument**.  
+3. Cliquez sur **Créer un argument**.  
   
-4. Tapez `MaxNumber` dans la zone **nom** , sélectionnez **in** dans la liste déroulante **direction** , sélectionnez **Int32** dans la liste déroulante **type d’argument** , puis appuyez sur entrée pour enregistrer l’argument.  
+4. Tapez dans `MaxNumber` la **zone Nom** , sélectionnez **in** dans la liste déroulante **direction** , sélectionnez **Int32** dans la liste déroulante type d' **argument** , puis appuyez sur entrée pour enregistrer l’argument.  
   
-5. Cliquez sur **créer un argument**.  
+5. Cliquez sur **Créer un argument**.  
   
-6. Tapez `Turns` dans la zone **nom** située sous l’argument `MaxNumber` récemment ajouté, sélectionnez **out** dans la liste déroulante **direction** , sélectionnez **Int32** dans la liste déroulante **type d’argument** , puis appuyez sur entrée.  
+6. Tapez `Turns` dans la zone **nom** située sous l’argument nouvellement ajouté `MaxNumber` , sélectionnez **out** dans la liste déroulante **direction** , sélectionnez **Int32** dans la liste déroulante **type d’argument** , puis appuyez sur entrée.  
   
-7. Cliquez sur **arguments** dans la partie inférieure gauche du concepteur d’activités pour fermer le volet **arguments** .  
+7. Cliquez sur **Arguments** dans la partie inférieure gauche du concepteur d'activités pour fermer le volet **Arguments**.  
   
 8. Cliquez sur **variables** dans la partie inférieure gauche du concepteur de flux de travail pour afficher le volet **variables** .  
   
-9. Cliquez sur **créer une variable**.  
+9. Cliquez sur **Créer une variable**.  
   
     > [!TIP]
-    > Si aucune zone **créer une variable** n’est affichée, cliquez sur l’activité <xref:System.Activities.Statements.Flowchart> sur l’aire du concepteur de flux de travail pour la sélectionner.  
+    > Si aucune zone **créer une variable** n’est affichée, cliquez sur l' <xref:System.Activities.Statements.Flowchart> activité sur l’aire du concepteur de flux de travail pour la sélectionner.  
   
 10. Tapez `Guess` dans la zone **nom** , sélectionnez **Int32** dans la liste déroulante **type de variable** , puis appuyez sur entrée pour enregistrer la variable.  
   
-11. Cliquez sur **créer une variable**.  
+11. Cliquez sur **Créer une variable**.  
   
 12. Tapez `Target` dans la zone **nom** , sélectionnez **Int32** dans la liste déroulante **type de variable** , puis appuyez sur entrée pour enregistrer la variable.  
   
-13. Cliquez sur **variables** dans la partie inférieure gauche du concepteur d’activités pour fermer le volet **variables** .  
+13. Cliquez sur **Variables** dans la partie inférieure gauche du concepteur d'activités pour fermer le volet **Variables**.  
   
 ### <a name="to-add-the-workflow-activities"></a>Pour ajouter les activités de flux de travail  
   
@@ -69,7 +70,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
     > [!NOTE]
     > Les activités peuvent également être définies comme activité de départ dans le workflow en les liant manuellement au nœud de démarrage. Pour ce faire, placez le curseur de la souris sur le nœud de **démarrage** , cliquez sur l’un des rectangles qui s’affichent lorsque la souris se trouve sur le nœud de **départ** , puis faites glisser la ligne de connexion vers le bas jusqu’à l’activité souhaitée et déposez-la sur l’un des rectangles qui s’affichent. Vous pouvez également désigner une activité comme activité de départ en cliquant dessus avec le bouton droit, puis en choisissant **définir comme nœud de démarrage**.  
   
-2. Tapez `Target` dans la zone **à** et l’expression suivante dans la zone **entrer C# une expression** ou **entrer une expression VB** .  
+2. Tapez `Target` dans la zone **à** et l’expression suivante dans la zone **entrer une expression C#** ou **entrer une expression VB** .  
   
     ```vb  
     New System.Random().Next(1, MaxNumber + 1)  
@@ -80,11 +81,11 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
     ```  
   
     > [!TIP]
-    > Si la fenêtre **boîte à outils** n’est pas affichée, sélectionnez **boîte à outils** dans le menu **affichage** .  
+    > Si la fenêtre **Boîte à outils** ne s'affiche pas, sélectionnez **Boîte à outils** dans le menu **Afficher**.  
   
 3. Faites glisser une activité **prompt** de la section **NumberGuessWorkflowActivities** de la **boîte à outils**, déposez-la en dessous de l’activité **Assign** de l’étape précédente, puis connectez l’activité **prompt** à l’activité **Assign** . Il existe trois façons de connecter les deux activités. La première consiste à les connecter lorsque vous déposez l’activité **prompt** sur le Workflow. Lorsque vous faites glisser l’activité **prompt** vers le workflow, placez-la sur l’activité **Assign** et déposez-la sur l’un des quatre triangles qui s’affiche lorsque l’activité **prompt** est positionnée sur l’activité **Assign** . La seconde consiste à déposer l’activité **prompt** sur le workflow à l’emplacement souhaité. Ensuite, placez le pointeur de la souris sur l’activité **Assign** et faites glisser l’un des rectangles qui s’affichent vers le bas de l’activité **prompt** . Faites glisser la souris de sorte que la ligne de connexion de l’activité **Assign** se connecte à l’un des rectangles de l’activité **prompt** , puis relâchez le bouton de la souris. La troisième méthode est très similaire à la première, mais au lieu de faire glisser l’activité **prompt** à partir de la **boîte à outils**, vous la faites glisser à partir de son emplacement sur l’aire de conception de workflow, vous la Positionnez sur l’activité **Assign** et vous la déposez sur l’un des triangles qui s’affiche.  
   
-4. Dans la **fenêtre Propriétés** de l’activité **Prompt** , tapez `"EnterGuess"` y compris les guillemets dans la zone valeur de la propriété **NomSignet** . Tapez `Guess` dans la zone valeur de la propriété de **résultat** , puis tapez l’expression suivante dans la zone de propriété **texte** .  
+4. Dans la **fenêtre Propriétés** de l’activité **prompt** , tapez `"EnterGuess"` en incluant les guillemets dans la zone de valeurs de la propriété **NomSignet** . Tapez `Guess` dans la zone valeur de la propriété de **résultat** , puis tapez l’expression suivante dans la zone de propriété **texte** .  
   
     ```vb  
     "Please enter a number between 1 and " & MaxNumber  
@@ -99,7 +100,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 5. Faites glisser une activité **Assign** de la section **primitives** de la **boîte à outils** et connectez-la à l’aide de l’une des méthodes décrites à l’étape précédente afin qu’elle soit en dessous de l’activité **prompt** .  
   
-6. Tapez `Turns` dans la zone **à** et `Turns + 1` dans la zone **entrer C# une expression** ou **entrer une expression VB** .  
+6. Tapez `Turns` dans la zone **à** , puis `Turns + 1` dans la zone **entrer une expression C#** ou **entrer une expression VB** .  
   
 7. Faites glisser un **FlowDecision** à partir de la section **Flowchart** de la **boîte à outils** et connectez-le sous l’activité **Assign** . Dans la **fenêtre Propriétés**, tapez l’expression suivante dans la zone valeur de la propriété **condition** .  
   
@@ -148,7 +149,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 1. Appuyez sur Ctrl+Maj+B pour générer la solution.  
   
-     Pour obtenir des instructions sur l’exécution du flux de travail, consultez la rubrique suivante, [procédure: Exécutez un](how-to-run-a-workflow.md)de Workflow. Si vous avez déjà effectué les [procédure: Exécuter un flux de travail](how-to-run-a-workflow.md) étape avec un style différent de workflow et souhaitez l’exécuter à l’aide du flux de travail de l’organigramme à partir de cette étape, passez à la section [pour générer et exécuter l’application](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) de [procédure: Exécutez un de Workflow.](how-to-run-a-workflow.md)  
+     Pour obtenir des instructions sur l’exécution du flux de travail, consultez la rubrique suivante, [Comment : exécuter un workflow](how-to-run-a-workflow.md). Si vous avez déjà effectué l’étape [Comment : exécuter un flux de travail](how-to-run-a-workflow.md) avec un style différent de workflow et que vous souhaitez l’exécuter à l’aide du flux de travail de l’organigramme de cette étape, passez à la section [pour générer et exécuter l’application](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) dans [procédure : exécuter un workflow](how-to-run-a-workflow.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -156,6 +157,6 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 - <xref:System.Activities.Statements.FlowDecision>
 - [Programmation Windows Workflow Foundation](programming.md)
 - [Conception des workflows](designing-workflows.md)
-- [Didacticiel Bien démarrer](getting-started-tutorial.md)
-- [Guide pratique: Créer une activité](how-to-create-an-activity.md)
-- [Guide pratique: Exécuter un flux de travail](how-to-run-a-workflow.md)
+- [Didacticiel Prise en main](getting-started-tutorial.md)
+- [Guide pratique pour créer une activité](how-to-create-an-activity.md)
+- [Guide pratique pour exécuter un workflow](how-to-run-a-workflow.md)

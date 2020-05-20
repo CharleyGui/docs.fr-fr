@@ -1,22 +1,23 @@
 ---
-title: 'Procédure : créer un flux de travail de machine à états'
+title: "Procédure : créer un workflow d'ordinateur d'état"
+description: Cet article crée un flux de travail qui utilise à la fois des activités intégrées, telles que l’activité StateMachine et des activités personnalisées.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 3ec60e8f-fad4-493e-a426-e7962d7aee8c
-ms.openlocfilehash: e93f84f0bacf7ac205294c12c55afcab8d7319b7
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 8a9342c07c15d65df0310c0cb35b4b2c6f2ba686
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989809"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419653"
 ---
-# <a name="how-to-create-a-state-machine-workflow"></a>Procédure : créer un flux de travail de machine à états
-Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique décrit comment créer un workflow qui utilise à la fois des activités intégrées, telles que l’activité <xref:System.Activities.Statements.StateMachine>, et les activités personnalisées de la [précédente Comment : Créer une activité](how-to-create-an-activity.md) rubrique. Le workflow modélise un jeu d'estimation de nombre.  
+# <a name="how-to-create-a-state-machine-workflow"></a>Procédure : créer un workflow d'ordinateur d'état
+Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique décrit comment créer un workflow qui utilise à la fois des activités intégrées, telles que l' <xref:System.Activities.Statements.StateMachine> activité, et les activités personnalisées de la rubrique précédente [Comment : créer une activité](how-to-create-an-activity.md) . Le workflow modélise un jeu d'estimation de nombre.  
   
 > [!NOTE]
-> Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d’abord terminer [procédure : Créer une](how-to-create-an-activity.md)d’activité.  
+> Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d’abord terminer [la procédure : créer une activité](how-to-create-an-activity.md).  
   
 > [!NOTE]
 > Pour télécharger une version complète du didacticiel, consultez [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976)(Windows Workflow Foundation (WF45) - Didacticiel de mise en route).  
@@ -25,7 +26,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 1. Cliquez avec le bouton droit sur **NumberGuessWorkflowActivities** dans **Explorateur de solutions** , puis sélectionnez **Ajouter**, **nouvel élément**.  
   
-2. Dans le nœud **éléments communs** **installés**, sélectionnez **flux de travail**. Sélectionnez **activité** dans la liste **flux de travail** .  
+2. Dans le nœud **éléments communs** **installés**, sélectionnez **flux de travail**. Sélectionnez **Activité** dans la liste **Flux de travail**.  
   
 3. Tapez `StateMachineNumberGuessWorkflow` dans la zone **nom** , puis cliquez sur **Ajouter**.  
   
@@ -37,41 +38,41 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 2. Cliquez sur **arguments** dans la partie inférieure gauche du concepteur de flux de travail pour afficher le volet **arguments** .  
   
-3. Cliquez sur **créer un argument**.  
+3. Cliquez sur **Créer un argument**.  
   
-4. Tapez `MaxNumber` dans la zone **nom** , sélectionnez **in** dans la liste déroulante **direction** , sélectionnez **Int32** dans la liste déroulante **type d’argument** , puis appuyez sur entrée pour enregistrer l’argument.  
+4. Tapez dans `MaxNumber` la **zone Nom** , sélectionnez **in** dans la liste déroulante **direction** , sélectionnez **Int32** dans la liste déroulante type d' **argument** , puis appuyez sur entrée pour enregistrer l’argument.  
   
-5. Cliquez sur **créer un argument**.  
+5. Cliquez sur **Créer un argument**.  
   
-6. Tapez `Turns` dans la zone **nom** située sous l’argument `MaxNumber` récemment ajouté, sélectionnez **out** dans la liste déroulante **direction** , sélectionnez **Int32** dans la liste déroulante **type d’argument** , puis appuyez sur entrée.  
+6. Tapez `Turns` dans la zone **nom** située sous l’argument nouvellement ajouté `MaxNumber` , sélectionnez **out** dans la liste déroulante **direction** , sélectionnez **Int32** dans la liste déroulante **type d’argument** , puis appuyez sur entrée.  
   
-7. Cliquez sur **arguments** dans la partie inférieure gauche du concepteur d’activités pour fermer le volet **arguments** .  
+7. Cliquez sur **Arguments** dans la partie inférieure gauche du concepteur d'activités pour fermer le volet **Arguments**.  
   
 8. Cliquez sur **variables** dans la partie inférieure gauche du concepteur de flux de travail pour afficher le volet **variables** .  
   
-9. Cliquez sur **créer une variable**.  
+9. Cliquez sur **Créer une variable**.  
   
     > [!TIP]
-    > Si aucune zone **créer une variable** n’est affichée, cliquez sur l’activité <xref:System.Activities.Statements.StateMachine> sur l’aire du concepteur de flux de travail pour la sélectionner.  
+    > Si aucune zone **créer une variable** n’est affichée, cliquez sur l' <xref:System.Activities.Statements.StateMachine> activité sur l’aire du concepteur de flux de travail pour la sélectionner.  
   
 10. Tapez `Guess` dans la zone **nom** , sélectionnez **Int32** dans la liste déroulante **type de variable** , puis appuyez sur entrée pour enregistrer la variable.  
   
-11. Cliquez sur **créer une variable**.  
+11. Cliquez sur **Créer une variable**.  
   
 12. Tapez `Target` dans la zone **nom** , sélectionnez **Int32** dans la liste déroulante **type de variable** , puis appuyez sur entrée pour enregistrer la variable.  
   
-13. Cliquez sur **variables** dans la partie inférieure gauche du concepteur d’activités pour fermer le volet **variables** .  
+13. Cliquez sur **Variables** dans la partie inférieure gauche du concepteur d'activités pour fermer le volet **Variables**.  
   
 ### <a name="to-add-the-workflow-activities"></a>Pour ajouter les activités de flux de travail  
   
-1. Cliquez sur **State1** pour le sélectionner. Dans la **fenêtre Propriétés**, remplacez **DisplayName** par `Initialize Target`.  
+1. Cliquez sur **State1** pour le sélectionner. Dans la **fenêtre Propriétés**, remplacez **DisplayName** par `Initialize Target` .  
   
     > [!TIP]
     > Si la **fenêtre Propriétés** n’est pas affichée, sélectionnez **fenêtre Propriétés** dans le menu **affichage** .  
   
 2. Double-cliquez sur l’état **initialiser l’initialisation** de la cible dans le concepteur de workflow pour la développer.  
   
-3. Faites glisser une activité **Assign** de la section **primitives** de la **boîte à outils** et déposez-la dans la section d' **entrée** de l’État. Tapez `Target` dans la zone **à** et l’expression suivante dans la zone **entrer C# une expression** ou **entrer une expression VB** .  
+3. Faites glisser une activité **Assign** de la section **primitives** de la **boîte à outils** et déposez-la dans la section d' **entrée** de l’État. Tapez `Target` dans la zone **à** et l’expression suivante dans la zone **entrer une expression C#** ou **entrer une expression VB** .  
   
     ```vb  
     New System.Random().Next(1, MaxNumber + 1)  
@@ -82,13 +83,13 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
     ```  
   
     > [!TIP]
-    > Si la fenêtre **boîte à outils** n’est pas affichée, sélectionnez **boîte à outils** dans le menu **affichage** .  
+    > Si la fenêtre **Boîte à outils** ne s'affiche pas, sélectionnez **Boîte à outils** dans le menu **Afficher**.  
   
 4. Revenez à la vue globale de l’ordinateur d’État dans le concepteur de flux de travail en cliquant sur **StateMachine** dans l’affichage de navigation en haut du concepteur de Workflow.  
   
 5. Faites glisser une activité **State** de la section **machine à États** de la **boîte à outils** vers le concepteur de flux de travail et placez-la sur l’état **initialiser la cible** . Notez que quatre triangles apparaissent autour de l’état **initialiser la cible** lorsque le nouvel État est sur celui-ci. Déposez le nouvel État sur le triangle qui est immédiatement en dessous de l’état **initialiser la cible** . Cela place le nouvel État sur le workflow et crée une transition de l’état d’initialisation de la **cible** vers le nouvel État.  
   
-6. Cliquez sur **State1** pour le sélectionner, remplacez **DisplayName** par `Enter Guess`, puis double-cliquez sur l’État dans le concepteur de workflow pour le développer.  
+6. Cliquez sur **State1** pour le sélectionner, remplacez **DisplayName** par `Enter Guess` , puis double-cliquez sur l’État dans le concepteur de workflow pour le développer.  
   
 7. Faites glisser une activité **WriteLine** de la section **primitives** de la **boîte à outils** et déposez-la dans la section d' **entrée** de l’État.  
   
@@ -104,7 +105,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 9. Faites glisser une activité **Assign** de la section **primitives** de la **boîte à outils** et déposez-la sur la section **Exit** de l’État.  
   
-10. Tapez `Turns` dans la zone **à** et `Turns + 1` dans la zone **entrer C# une expression** ou **entrer une expression VB** .  
+10. Tapez `Turns` dans la zone **à** , puis `Turns + 1` dans la zone **entrer une expression C#** ou **entrer une expression VB** .  
   
 11. Revenez à la vue globale de l’ordinateur d’État dans le concepteur de flux de travail en cliquant sur **StateMachine** dans l’affichage de navigation en haut du concepteur de Workflow.  
   
@@ -116,7 +117,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 15. Faites glisser une activité **ReadInt** de la section **NumberGuessWorkflowActivities** de la **boîte à outils** et déposez-la dans la section **Trigger** de la transition.  
   
-16. Dans la **fenêtre Propriétés** de l’activité **ReadInt** , tapez `"EnterGuess"` y compris les guillemets dans la zone valeur de la propriété **NomSignet** , puis tapez `Guess` dans la zone valeur de la propriété **result** .  
+16. Dans la **fenêtre Propriétés** de l’activité **ReadInt** , tapez en `"EnterGuess"` incluant les guillemets dans la zone de valeur de propriété **NomSignet** , puis tapez `Guess` dans la zone de valeur de propriété **result** .  
   
 17. Tapez l’expression suivante dans la zone de valeur de propriété **condition** de la transition de l' **estimation correcte** .  
   
@@ -131,7 +132,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 18. Revenez à la vue globale de l’ordinateur d’État dans le concepteur de flux de travail en cliquant sur **StateMachine** dans l’affichage de navigation en haut du concepteur de Workflow.  
   
     > [!NOTE]
-    > Une transition se produit lorsque l'événement déclencheur est reçu et <xref:System.Activities.Statements.Transition.Condition%2A>, s'il est présent, prend la valeur `True`. Pour cette transition, si la `Guess` de l’utilisateur correspond à la `Target`générée de façon aléatoire, le contrôle passe à **FinalState** et le flux de travail se termine.  
+    > Une transition se produit lorsque l'événement déclencheur est reçu et <xref:System.Activities.Statements.Transition.Condition%2A>, s'il est présent, prend la valeur `True`. Pour cette transition, si l’utilisateur `Guess` correspond au généré de manière aléatoire `Target` , le contrôle passe à **FinalState** et le workflow se termine.  
   
 19. Selon que l’estimation est correcte ou non, le flux de travail doit passer au **FinalState** ou revenir à l’état **Enter Guess** pour une autre tentative. Les deux transitions partagent le même déclencheur que l’attente de la réception de l’utilisateur par le biais de l’activité **ReadInt** . Il s'agit d'une transition partagée. Pour créer une transition partagée, cliquez sur le cercle qui indique le début de la transition de **estimation correcte** et faites-la glisser vers l’état souhaité. Dans ce cas, la transition est une transition automatique. par conséquent, faites glisser le point de départ de la transition **estimation correcte** , puis déposez-la sur le bas de l’état **Enter Guess** . Une fois la transition créée, sélectionnez-la dans le concepteur de flux de travail et définissez sa propriété **DisplayName** sur **deviner incorrect**.  
   
@@ -185,7 +186,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 1. Appuyez sur Ctrl+Maj+B pour générer la solution.  
   
-     Pour obtenir des instructions sur l’exécution du flux de travail, consultez la rubrique suivante, [procédure : Exécutez un](how-to-run-a-workflow.md)de Workflow. Si vous avez déjà effectué les [procédure : Exécuter un flux de travail](how-to-run-a-workflow.md) étape avec un style de flux de travail différent et souhaitez l’exécuter à l’aide du flux de travail de l’ordinateur d’État à partir de cette étape, passez à la section [pour générer et exécuter l’application](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) de [procédure : Exécutez un de Workflow.](how-to-run-a-workflow.md)  
+     Pour obtenir des instructions sur l’exécution du flux de travail, consultez la rubrique suivante, [Comment : exécuter un workflow](how-to-run-a-workflow.md). Si vous avez déjà effectué l’étape [Comment : exécuter un flux de travail](how-to-run-a-workflow.md) avec un style différent de workflow et que vous souhaitez l’exécuter à l’aide du flux de travail de l’ordinateur d’État à partir de cette étape, passez à la section [pour générer et exécuter l’application](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) dans [procédure : exécuter un workflow](how-to-run-a-workflow.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -193,6 +194,6 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 - <xref:System.Activities.Statements.FlowDecision>
 - [Programmation Windows Workflow Foundation](programming.md)
 - [Conception des workflows](designing-workflows.md)
-- [Didacticiel Bien démarrer](getting-started-tutorial.md)
-- [Guide pratique: Créer une activité](how-to-create-an-activity.md)
-- [Guide pratique: Exécuter un flux de travail](how-to-run-a-workflow.md)
+- [Didacticiel Prise en main](getting-started-tutorial.md)
+- [Guide pratique pour créer une activité](how-to-create-an-activity.md)
+- [Guide pratique pour exécuter un workflow](how-to-run-a-workflow.md)

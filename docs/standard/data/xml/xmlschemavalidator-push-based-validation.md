@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 911d4460-dd91-4958-85b2-2ca3299f9ec6
-ms.openlocfilehash: 6a0cc110c2b8bcd97b9f5c16a344db5a63046353
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d5b2fe4325000023acc98580a2a6d014f56fecbd
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709801"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419107"
 ---
 # <a name="xmlschemavalidator-push-based-validation"></a>Validation XmlSchemaValidator de type push
 
@@ -440,10 +440,10 @@ Le tableau suivant décrit la transition d'état de la classe <xref:System.Xml.S
 
 |State|Transition|
 |-----------|----------------|
-|Valider|<xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> &#124; TopLevel*) <xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|
+|Validate|<xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> &#124; TopLevel*) <xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|
 |TopLevel|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A> &#124; Element|
-|Élément|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A><xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>* (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> Contenu\*) ? <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A> &#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A><xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> &#124; \* <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A><br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A><xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> \* &#124; de <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A> contenu \* <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A>|
-|Contenu|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A> &#124; Element|
+|Élément|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A><xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>* ( <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> Contenu \* ) ? <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A> &#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A><xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>\* <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A> &#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A><xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>\* <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> &#124; de contenu \* <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>|
+|Content|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A> &#124; Element|
 
 > [!NOTE]
 > Un objet <xref:System.InvalidOperationException> est levé par chacune des méthodes dans le tableau ci-dessus lorsque l'appel à la méthode est effectué dans l'ordre incorrect d'après l'état actuel d'un objet <xref:System.Xml.Schema.XmlSchemaValidator>.
@@ -456,7 +456,7 @@ Le tableau suivant décrit la façon dont les signes de ponctuation trouvés dan
 |------------|-----------------|
 |&#124;|La méthode ou l'état au choix (celui qui se trouve devant la barre ou après la barre) peut être appelé.|
 |?|La méthode ou l'état qui précède le point d'interrogation est facultatif mais, s'il est appelé, il ne peut l'être qu'une fois.|
-|*|La méthode ou l'état qui précède le signe * est facultatif et peut être appelé plusieurs fois.|
+|\*|La méthode ou l’État qui précède le \* symbole est facultatif et peut être appelé plusieurs fois.|
 
 ## <a name="validation-context"></a>Contexte de validation
 

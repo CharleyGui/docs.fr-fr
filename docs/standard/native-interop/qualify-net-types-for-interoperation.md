@@ -1,5 +1,6 @@
 ---
 title: Qualification des types .NET en vue de l’interopérabilité COM
+description: Cet article fournit des instructions pour vous aider à exposer les types d’un assembly .NET aux applications COM pour COM Interop.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - exposing .NET Framework components to COM
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, exposing .NET Framework components
 - COM interop, exposing COM components
 ms.assetid: 4b8afb52-fb8d-4e65-b47c-fd82956a3cdd
-ms.openlocfilehash: f0b9bc03225ae3d2365a21fd3b78d09c08d4fc1a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5b122befffbcad39258393462c75ac20431d9136
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73091578"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420498"
 ---
 # <a name="qualifying-net-types-for-com-interoperation"></a>Qualification des types .NET en vue de l’interopérabilité COM
 Si vous envisagez d’exposer les types d’un assembly à des applications COM, prenez en compte les exigences COM Interop au moment de la conception. Les types managés (classe, interface, structure et énumération) s’intègrent parfaitement aux types COM lorsque vous respectez les consignes suivantes :  

@@ -2,12 +2,12 @@
 title: Modifications importantes de la bibliothèque de classes de base
 description: Répertorie les modifications avec rupture dans les bibliothèques .NET de base.
 ms.date: 09/20/2019
-ms.openlocfilehash: a2eb4be89d78f50d201272f3449374bc27d8c785
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: ca50123b842c256607d47010dbef9b216ece4661
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82859931"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420425"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Modifications importantes des bibliothèques .NET principales
 
@@ -38,6 +38,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | [UnauthorizedAccessException levée par FileSystemInfo. Attributes](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes) | 1.0 |
 | [La gestion des exceptions d’état de processus endommagées n’est pas prise en charge](#handling-corrupted-state-exceptions-is-not-supported) | 1.0 |
 | [Les propriétés UriBuilder n’ajoutent plus de caractères de début](#uribuilder-properties-no-longer-prepend-leading-characters) | 1.0 |
+| [Process. StartInfo lève une exception InvalidOperationException pour les processus que vous n’avez pas démarrés](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5,0
 
@@ -128,5 +129,9 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 ***
 
 [!INCLUDE [uribuilder-behavior-changes](../../../includes/core-changes/corefx/1.0/uribuilder-behavior-changes.md)]
+
+***
+
+[!INCLUDE [startinfo-throws-exception](../../../includes/core-changes/corefx/1.0/startinfo-throws-exception.md)]
 
 ***

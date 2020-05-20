@@ -1,13 +1,14 @@
 ---
 title: Architecture Windows Workflow
+description: Windows Workflow Foundation encapsule les unités de travail en tant qu’activités, qui s’exécutent dans un environnement avec contrôle de Flow, gestion des exceptions et autres fonctionnalités.
 ms.date: 03/30/2017
 ms.assetid: 1d4c6495-d64a-46d0-896a-3a01fac90aa9
-ms.openlocfilehash: e2effc0f53153057b8a9034e4dc80cb19bbe7685
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 22ebeb7d95342ad6843e0721da8b213ed4a4d9b6
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834862"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420134"
 ---
 # <a name="windows-workflow-architecture"></a>Architecture Windows Workflow
 Windows Workflow Foundation (WF) augmente le niveau d’abstraction pour le développement d’applications de longue durée interactives. Les unités de travail sont encapsulées comme activités. Les activités s’exécutent dans un environnement qui fournit les fonctions suivantes : contrôle de flux, gestion des exceptions, propagation d’erreur, persistance des données d’état, chargement et déchargement de flux de travail en cours depuis la mémoire, suivi et flux de transaction.  
@@ -43,10 +44,10 @@ xmlns="http://schemas.microsoft.com/2009/workflow">
 ## <a name="activity-life-cycle"></a>Cycle de vie des activités  
  À l'origine, l'instance d'une activité est à l'état <xref:System.Activities.ActivityInstanceState.Executing>. À moins que des exceptions ne soient rencontrées, elle conserve cet état jusqu'à ce que l'exécution de toutes les activités enfants, ainsi que tout autre travail en attente (objets <xref:System.Activities.Bookmark>, par exemple) soient terminés, auquel cas elle passe à l'état <xref:System.Activities.ActivityInstanceState.Closed>. Le parent d'une instance d'activité peut demander qu'un enfant soit annulé. Si l'enfant est en mesure d'être annulé, il se termine et passe à l'état <xref:System.Activities.ActivityInstanceState.Canceled>. Si une exception est levée lors de l'exécution, le runtime passe l'activité à l'état objet <xref:System.Activities.ActivityInstanceState.Faulted> et propage l'exception en haut de la chaîne parente d'activités. Les trois États d’achèvement d’une activité sont les suivants :
   
-- **Légendes** L’activité a terminé son travail et s’est arrêtée.  
+- **Fermé :** L’activité a terminé son travail et s’est arrêtée.  
   
-- **Annulée** L’activité a abandonné en douceur son travail et s’est arrêtée. Le travail n'est pas restauré explicitement lorsque cet état est entré.  
+- **Annulée :** L’activité a abandonné en douceur son travail et s’est arrêtée. Le travail n'est pas restauré explicitement lorsque cet état est entré.  
   
-- **Faulted** L’activité a rencontré une erreur et s’est arrêtée sans terminer son travail.  
+- **Erreur :** L’activité a rencontré une erreur et s’est arrêtée sans terminer son travail.  
   
  Les activités restent à l'état <xref:System.Activities.ActivityInstanceState.Executing> lorsqu'elles sont rendues persistantes ou sont déchargées.

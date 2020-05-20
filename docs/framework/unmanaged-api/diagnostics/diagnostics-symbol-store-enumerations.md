@@ -7,32 +7,32 @@ helpviewer_keywords:
 - diagnostics symbol store enumerations [.NET Framework]
 - enumerations [.NET Framework debugging]
 ms.assetid: 57d68c70-aba1-4bad-a13f-6d0c55f43746
-ms.openlocfilehash: 44ff50994f707dbd7eb9a55c05fe2b4540759aac
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c1715341726c0ee33bfcaecc7e02b452db6a1fd7
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448541"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420563"
 ---
 # <a name="diagnostics-symbol-store-enumerations"></a>Énumérations du magasin de symboles de diagnostics
 Cette rubrique décrit les énumérations non managées utilisées par l’API du magasin de symboles de Diagnostics.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [CorSymAddrKind, énumération](../../../../docs/framework/unmanaged-api/diagnostics/corsymaddrkind-enumeration.md)  
+ [CorSymAddrKind, énumération](corsymaddrkind-enumeration.md)  
  Indique le type d’adresse mémoire.  
   
- [CorSymSearchPolicyAttributes, énumération](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md)  
+ [CorSymSearchPolicyAttributes, énumération](corsymsearchpolicyattributes-enumeration.md)  
  Spécifie la stratégie à utiliser lors de la recherche d’un lecteur de symboles.  
   
- [CorSymVarFlag, énumération](../../../../docs/framework/unmanaged-api/diagnostics/corsymvarflag-enumeration.md)  
+ [CorSymVarFlag, énumération](corsymvarflag-enumeration.md)  
  Indique si une variable est générée par le compilateur.  
   
- [NOTIFY_FILTER, énumération](../../../../docs/framework/unmanaged-api/diagnostics/notify-filter-enumeration.md)  
+ [NOTIFY_FILTER, énumération](notify-filter-enumeration.md)  
  Identifie les rappels pour les fonctions du débogueur.  
   
 ## <a name="related-sections"></a>Sections connexes  
- [Interfaces du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)  
+ [Interfaces du magasin de symboles de diagnostics](diagnostics-symbol-store-interfaces.md)  
   
- [Structures du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)  
+ [Structures du magasin de symboles de diagnostics](diagnostics-symbol-store-structures.md)  
   
- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+ [Débogage](../debugging/index.md)

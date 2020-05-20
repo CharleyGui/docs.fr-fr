@@ -1,15 +1,16 @@
 ---
 title: Conception des flux de travaux
+description: Découvrez les paradigmes de contrôle de flux, tels que l’organigramme, les procédures et les machines d’État, dans les flux de travail de développement et de création de workflows avec le code impératif.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], designing workflows
 ms.assetid: 41f727b5-b142-4c1b-b046-492b96135ae6
-ms.openlocfilehash: c774161fb5adbc5fc8e44b22d994d15fa0d2e489
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 07ccd1de6648438ad65f88bada3e055e1e2a4134
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141915"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419926"
 ---
 # <a name="designing-workflows"></a>Conception des flux de travaux
 Les rubriques de cette section décrivent les paradigmes de contrôle de flux utilisés dans le développement de flux de travail.  
@@ -21,7 +22,7 @@ Les rubriques de cette section décrivent les paradigmes de contrôle de flux ut
  [Workflows procéduraux](procedural-workflows.md)  
  Indique comment créer des flux de travail à l'aide d'un paradigme d'exécution séquentielle de base.  
   
- [Workflows de machine à états](state-machine-workflows.md)  
+ [Workflows d’ordinateur d’État](state-machine-workflows.md)  
  Explique comment utiliser des flux de travail d’organigramme pour implémenter des flux de travail pilotés par les événements dans .NET Framework 4, en remplacement du modèle de machine à États utilisé dans les versions précédentes.  
   
  [Création de workflows, d’activités et d’expressions à l’aide du code impératif](authoring-workflows-activities-and-expressions-using-imperative-code.md)  

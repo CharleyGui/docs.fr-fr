@@ -4,12 +4,12 @@ description: Ce didacticiel avancé montre comment générer et utiliser des flu
 ms.date: 02/10/2019
 ms.technology: csharp-async
 ms.custom: mvc
-ms.openlocfilehash: 03254e5208a048469f4753d632de7b0d451cde40
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: fd9fed3469d18c919102640df7bb501b116f5e0e
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82200104"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420368"
 ---
 # <a name="tutorial-generate-and-consume-async-streams-using-c-80-and-net-core-30"></a>Didacticiel : générer et utiliser des flux asynchrones à l’aide de C# 8,0 et .NET Core 3,0
 
@@ -42,7 +42,7 @@ Ce tutoriel suppose de connaître C# et .NET, y compris Visual Studio ou l’int
 
 ## <a name="run-the-starter-application"></a>Exécutez l’application de démarrage
 
-Vous pouvez obtenir le code pour l’application de démarrage utilisée dans ce didacticiel à partir du dépôt [dotnet/docs](https://github.com/dotnet/docs) dans le dossier [CSharp/tutoriels/AsyncStreams](https://github.com/dotnet/docs/tree/master/csharp/tutorials/snippets/generate-consume-asynchronous-streams/start) .
+Vous pouvez obtenir le code pour l’application de démarrage utilisée dans ce didacticiel à partir du dépôt [dotnet/docs](https://github.com/dotnet/docs) dans le dossier [CSharp/tutoriels/AsyncStreams](https://github.com/dotnet/docs/tree/master/docs/csharp/tutorials/snippets/generate-consume-asynchronous-streams/start) .
 
 L’application de démarrage est une application console qui utilise l’interface [GitHub GraphQL](https://developer.github.com/v4/) pour récupérer des problèmes récents écrits dans le référentiel [dotnet/docs](https://github.com/dotnet/docs). Commencez par examiner le code suivant pour la méthode `Main` de l’application de démarrage :
 
@@ -112,7 +112,7 @@ Remplacez-le par la boucle `await foreach` suivante :
 
 :::code language="csharp" source="snippets/generate-consume-asynchronous-streams/finished/Program.cs" id="SnippetEnumerateAsyncStream" :::
 
-La nouvelle interface <xref:System.Collections.Generic.IAsyncEnumerator%601> dérive de <xref:System.IAsyncDisposable>. Cela signifie que la boucle précédente disposera de façon asynchrone le flux lorsque la boucle se terminera. Vous pouvez imaginer que la boucle ressemble au code suivant :
+La nouvelle interface <xref:System.Collections.Generic.IAsyncEnumerator%601> dérive de <xref:System.IAsyncDisposable> . Cela signifie que la boucle précédente disposera de façon asynchrone le flux lorsque la boucle se terminera. Vous pouvez imaginer que la boucle ressemble au code suivant :
 
 ```csharp
 int num = 0;
@@ -134,21 +134,21 @@ try
 
 Par défaut, les éléments de flux sont traités dans le contexte capturé. Si vous souhaitez désactiver la capture du contexte, utilisez la <xref:System.Threading.Tasks.TaskAsyncEnumerableExtensions.ConfigureAwait%2A?displayProperty=nameWithType> méthode d’extension. Pour plus d’informations sur les contextes de synchronisation et la capture du contexte actuel, consultez l’article sur l' [utilisation du modèle asynchrone basé](../../standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md)sur des tâches.
 
-Les flux asynchrones prennent en charge l’annulation en `async` utilisant le même protocole que les autres méthodes. Vous pouvez modifier la signature de la méthode d’itérateur Async comme suit pour prendre en charge l’annulation :
+Les flux asynchrones prennent en charge l’annulation en utilisant le même protocole que les autres `async` méthodes. Vous pouvez modifier la signature de la méthode d’itérateur Async comme suit pour prendre en charge l’annulation :
 
 :::code language="csharp" source="snippets/generate-consume-asynchronous-streams/finished/Program.cs" id="SnippetGenerateWithCancellation" :::
 
-L' <xref:System.Runtime.CompilerServices.EnumeratorCancellationAttribute?dipslayProperty=nameWithType> attribut force le compilateur à générer du code pour <xref:System.Collections.Generic.IAsyncEnumerator%601> le qui rend le jeton passé `GetAsyncEnumerator` visible au corps de l’itérateur Async comme cet argument. Dans `runQueryAsync`, vous pouvez examiner l’état du jeton et annuler un travail supplémentaire si nécessaire.
+L' <xref:System.Runtime.CompilerServices.EnumeratorCancellationAttribute?dipslayProperty=nameWithType> attribut force le compilateur à générer du code pour le <xref:System.Collections.Generic.IAsyncEnumerator%601> qui rend le jeton passé `GetAsyncEnumerator` visible au corps de l’itérateur Async comme cet argument. Dans `runQueryAsync` , vous pouvez examiner l’état du jeton et annuler un travail supplémentaire si nécessaire.
 
-Vous utilisez une autre méthode d' <xref:System.Threading.Tasks.TaskAsyncEnumerableExtensions.WithCancellation%2A>extension,, pour transmettre le jeton d’annulation au flux asynchrone. Vous pouvez modifier la boucle en énumérant les problèmes comme suit :
+Vous utilisez une autre méthode d’extension, <xref:System.Threading.Tasks.TaskAsyncEnumerableExtensions.WithCancellation%2A> , pour transmettre le jeton d’annulation au flux asynchrone. Vous pouvez modifier la boucle en énumérant les problèmes comme suit :
 
 :::code language="csharp" source="snippets/generate-consume-asynchronous-streams/finished/Program.cs" id="SnippetEnumerateWithCancellation" :::
 
-Vous pouvez obtenir le code du didacticiel terminé à partir du dépôt [dotnet/docs](https://github.com/dotnet/docs) dans le dossier [CSharp/tutoriels/AsyncStreams](https://github.com/dotnet/docs/tree/master/csharp/tutorials/snippets/generate-consume-asynchronous-streams/finished) .
+Vous pouvez obtenir le code du didacticiel terminé à partir du dépôt [dotnet/docs](https://github.com/dotnet/docs) dans le dossier [CSharp/tutoriels/AsyncStreams](https://github.com/dotnet/docs/tree/master/docs/csharp/tutorials/snippets/generate-consume-asynchronous-streams/finished) .
 
 ## <a name="run-the-finished-application"></a>Exécutez l'application terminée
 
-Exécutez de nouveau l'application. Comparez son comportement avec le comportement de l’application de démarrage. La première page de résultats est énumérée dès qu’elle est disponible. Une pause peut être observée lorsque chaque nouvelle page est demandée et récupérée, puis les résultats de la page suivante sont rapidement énumérés. Le bloc `try` / `catch` n’est pas nécessaire pour gérer l’annulation : l’appelant peut arrêter l’énumération de la collection. Le rapport de progression est clair, car le flux asynchrone génère des résultats à mesure que chaque page est téléchargée. L’état de chaque problème renvoyé est inclus en toute transparence dans `await foreach` la boucle. Vous n’avez pas besoin d’un objet de rappel pour suivre la progression.
+Exécutez de nouveau l'application. Comparez son comportement avec le comportement de l’application de démarrage. La première page de résultats est énumérée dès qu’elle est disponible. Une pause peut être observée lorsque chaque nouvelle page est demandée et récupérée, puis les résultats de la page suivante sont rapidement énumérés. Le bloc `try` / `catch` n’est pas nécessaire pour gérer l’annulation : l’appelant peut arrêter l’énumération de la collection. Le rapport de progression est clair, car le flux asynchrone génère des résultats à mesure que chaque page est téléchargée. L’état de chaque problème renvoyé est inclus en toute transparence dans la `await foreach` boucle. Vous n’avez pas besoin d’un objet de rappel pour suivre la progression.
 
 Vous pouvez voir des améliorations lors de l’utilisation de mémoire en examinant le code. Vous n’avez plus besoin d’allouer une collection pour stocker tous les résultats avant qu’ils ne soient énumérés. L’appelant peut déterminer comment utiliser les résultats et si une collection de stockage est nécessaire.
 

@@ -1,5 +1,6 @@
 ---
 title: Wrapper pouvant être appelé par COM
+description: Lorsqu’un client COM appelle un objet .NET, le CLR crée l’objet managé et un wrapper CCW (COM Callable Wrapper) pour celui-ci. Les clients COM appellent le wrapper pour l’objet.
 ms.date: 10/23/2018
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
-ms.openlocfilehash: 6f2f4055a95dbcea8d7872b5c5fa3ccede8c2c8c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c42ea0b5ba4cb01304ceae4ba2d2fc91b629a9b3
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400378"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420524"
 ---
 # <a name="com-callable-wrapper"></a>Wrapper pouvant être appelé par COM
 
@@ -60,7 +61,7 @@ Outre l’exposition des interfaces qui sont implémentées explicitement par un
 
 |Interface|Description|
 |---------------|-----------------|
-|L’interface\_de classe (*className*)|Interface, exposée par le runtime et non définie explicitement, qui expose l'ensemble des interfaces, méthodes, propriétés et champs publics qui sont exposés explicitement sur un objet managé.|
+|L’interface de classe ( \_ *className*)|Interface, exposée par le runtime et non définie explicitement, qui expose l'ensemble des interfaces, méthodes, propriétés et champs publics qui sont exposés explicitement sur un objet managé.|
 |**IConnectionPoint** et **IConnectionPointContainer**|Interface pour les objets qui émettent des événements basés sur les délégués (interface pour l'inscription des abonnés d'événements).|
 |**IDispatchEx** (.NET Framework uniquement)|Interface fournie par le runtime si la classe implémente **IExpando**. L’interface **IDispatchEx** est une extension de l’interface **IDispatch** qui, contrairement à l’interface **IDispatch**, permet l’énumération, l’ajout, la suppression et l’appel de la casse des membres.|
 |**IEnumVARIANT**|Interface pour les classes de type collection, qui énumère les objets d’une collection si la classe implémente **IEnumerable**.|

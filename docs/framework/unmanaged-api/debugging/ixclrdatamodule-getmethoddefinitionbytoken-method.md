@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: c70920205b27376d453bdd0a13223c6a5569075b
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 074949145be588fc34266a9f2ee501caeeffb9d3
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395295"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420875"
 ---
 # <a name="ixclrdatamodulegetmethoddefinitionbytoken-method"></a>IXCLRDataModule :: GetMethodDefinitionByToken, méthode
 
@@ -49,9 +49,9 @@ dans Jeton de méthode.
 
 La méthode fournie fait partie de l' `IXCLRDataModule` interface et correspond au 26 emplacement de la table de méthodes virtuelles.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Conditions requises
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
 **En-tête :** None  
 **Bibliothèque :** None  
 **Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  

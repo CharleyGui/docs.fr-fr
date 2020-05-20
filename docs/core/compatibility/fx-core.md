@@ -3,12 +3,12 @@ title: Dernières modifications-.NET Framework à .NET Core
 titleSuffix: ''
 description: Répertorie les modifications avec rupture d' .NET Framework à .NET Core.
 ms.date: 05/05/2020
-ms.openlocfilehash: 613c4e41e12be57d5631b347055140a4418e7207
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: f830d4571f21752900b35a7462bf0881673d6d2e
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83206460"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420446"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>Dernières modifications pour la migration de .NET Framework vers .NET Core
 
@@ -23,6 +23,7 @@ Si vous migrez une application à partir de .NET Framework vers .NET Core, les m
 - [UnauthorizedAccessException levée par FileSystemInfo. Attributes](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes)
 - [La gestion des exceptions d’état de processus endommagées n’est pas prise en charge](#handling-corrupted-state-exceptions-is-not-supported)
 - [Les propriétés UriBuilder n’ajoutent plus de caractères de début](#uribuilder-properties-no-longer-prepend-leading-characters)
+- [Process. StartInfo lève une exception InvalidOperationException pour les processus que vous n’avez pas démarrés](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start)
 
 ### <a name="net-core-21"></a>.NET Core 2.1
 
@@ -41,6 +42,10 @@ Si vous migrez une application à partir de .NET Framework vers .NET Core, les m
 ***
 
 [!INCLUDE [uribuilder-behavior-changes](../../../includes/core-changes/corefx/1.0/uribuilder-behavior-changes.md)]
+
+***
+
+[!INCLUDE [startinfo-throws-exception](../../../includes/core-changes/corefx/1.0/startinfo-throws-exception.md)]
 
 ***
 

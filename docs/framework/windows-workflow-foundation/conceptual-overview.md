@@ -1,16 +1,17 @@
 ---
 title: Vue d'ensemble conceptuelle de Windows Workflow
+description: Ces ressources discutent des concepts plus importants sous-jacents à Windows Workflow Foundation, y compris une vue d’ensemble, des concepts fondamentaux et l’architecture.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Workflow Foundation [WF], concepts
 - WF [WF], concepts
 ms.assetid: 2a5c0ac2-813f-4a7b-83ac-9e5cb85e0640
-ms.openlocfilehash: ef1b93c804d6eabeee7e59957cad349d1ec85faa
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 2559d0e39c581e2fcaccd0d913147842e078637e
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921237"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420030"
 ---
 # <a name="windows-workflow-conceptual-overview"></a>Vue d'ensemble conceptuelle de Windows Workflow
 Cette section contient un ensemble de rubriques traitant des concepts plus importants sous-jacents à Windows Workflow Foundation (WF).  

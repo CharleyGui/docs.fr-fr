@@ -14,18 +14,18 @@ helpviewer_keywords:
 ms.assetid: 03abde84-930a-49d3-bac3-23abb34a0184
 topic_type:
 - apiref
-ms.openlocfilehash: 786e53d43ecde0bc3a97fadb77184d25d41430bc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0cd451854d4dbb3b243339efdc33d7dcd7860eb7
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178347"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420602"
 ---
 # <a name="corsymsearchpolicyattributes-enumeration"></a>CorSymSearchPolicyAttributes, énumération
-Spécifie la stratégie à utiliser lors de la recherche d’un lecteur de symbole. Ces constantes sont utilisées par les méthodes [ISymUnmanagedBinder2::GetReaderForFile2](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) et [ISymUnmanmanagedBinder3:GetReaderFromCallback](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md) méthodes.  
+Spécifie la stratégie à utiliser lors de la recherche d’un lecteur de symboles. Ces constantes sont utilisées par les méthodes [ISymUnmanagedBinder2 :: GetReaderForFile2,](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) et [ISymUnmanagedBinder3 :: GetReaderFromCallback,](isymunmanagedbinder3-getreaderfromcallback-method.md) .  
   
 > [!IMPORTANT]
-> C’est un risque pour la sécurité d’ouvrir un fichier de base de données de programme (PDB) à partir d’une source non fiable.  
+> L’ouverture d’un fichier de base de données du programme (PDB) à partir d’une source non fiable constitue un risque pour la sécurité.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,14 +43,14 @@ typedef enum CorSymSearchPolicyAttributes
   
 |Membre|Description|  
 |------------|-----------------|  
-|`AllowRegistryAccess`|Interroge le registre pour les chemins de recherche de symboles.|  
-|`AllowSymbolServerAccess`|Accéde à un serveur symbole.|  
-|`AllowOriginalPathAccess`|Recherche le chemin spécifié dans l’annuaire Debug.|  
-|`AllowReferencePathAccess`|Recherche du PDB à l’endroit où se trouve le fichier .exe.|  
+|`AllowRegistryAccess`|Interroge le registre pour rechercher des chemins de recherche de symboles.|  
+|`AllowSymbolServerAccess`|Accède à un serveur de symboles.|  
+|`AllowOriginalPathAccess`|Recherche le chemin d’accès spécifié dans le répertoire de débogage.|  
+|`AllowReferencePathAccess`|Recherche le fichier PDB à l’emplacement où se trouve le fichier. exe.|  
   
-## <a name="requirements"></a>Spécifications  
- **En-tête:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Conditions requises  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)
+- [Énumérations du magasin de symboles de diagnostics](diagnostics-symbol-store-enumerations.md)

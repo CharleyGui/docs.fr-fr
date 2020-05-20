@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5c66ac57-d751-4de5-af9f-26ceb949af8b
 topic_type:
 - apiref
-ms.openlocfilehash: 433f34447d3bd1a57ca1e289cb0eab3facac2c69
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 34aae3cd913465bc3167d6c5eee9873d212fa4ac
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790354"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420685"
 ---
 # <a name="pfn_clrdatacreateinstance-function-pointer"></a>PFN_CLRDataCreateInstance (pointeur fonction)
 Pointe vers une fonction qui crée un objet d’interface pour l’élément cible spécifié.  
@@ -34,7 +34,7 @@ typedef HRESULT (STDAPICALLTYPE* PFN_CLRDataCreateInstance) (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `iid`  
  dans Identificateur de l’interface à instancier.  
   
@@ -45,17 +45,17 @@ typedef HRESULT (STDAPICALLTYPE* PFN_CLRDataCreateInstance) (
  à Pointeur vers l’adresse de l’objet d’interface retourné.  
   
 ## <a name="remarks"></a>Notes  
- L’objet `ICLRDataTarget` est implémenté par le writer de l’application de débogage. L’implémentation dépend du type d’élément cible représenté. L’élément cible peut être un processus, un vidage de la mémoire, un ordinateur distant, et ainsi de suite.  
+ L' `ICLRDataTarget` objet est implémenté par le writer de l’application de débogage. L’implémentation dépend du type d’élément cible représenté. L’élément cible peut être un processus, un vidage de la mémoire, un ordinateur distant, et ainsi de suite.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions statiques globales de débogage](debugging-global-static-functions.md)
+- [Fonctions statiques globales du débogage](debugging-global-static-functions.md)

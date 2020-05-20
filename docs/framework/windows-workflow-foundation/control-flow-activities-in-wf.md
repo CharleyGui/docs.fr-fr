@@ -1,16 +1,17 @@
 ---
 title: Activités de flux de contrôle dans WF
+description: Cet article résume les activités .NET Framework 4.6.1 pour contrôler le flux d’exécution au sein d’un Workflow.
 ms.date: 03/30/2017
 ms.assetid: 6892885b-f7c5-4aea-8f5e-28863fb4ae75
-ms.openlocfilehash: bcbb12210af2d0172977dca6f81355031baa043a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 18ff982d3f215e3fd46108eb2411f3d1a5ab9745
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945910"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420069"
 ---
 # <a name="control-flow-activities-in-wf"></a>Activités de flux de contrôle dans WF
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] fournit plusieurs activités pour le contrôle de flux d'exécution dans un workflow. Certaines de ces activités (telles que `Switch` et `If`) implémentent des structures de contrôle de flux semblables à celles des environnements de programmation comme Visual C#, alors que d’autres (tels que `Pick`) modélisent de nouvelles structures de programmation.  
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] fournit plusieurs activités pour le contrôle de flux d'exécution dans un workflow. Certaines de ces activités (telles que `Switch` et `If` ) implémentent des structures de contrôle de Flow similaires à celles des environnements de programmation tels que Visual C#, tandis que d’autres (comme `Pick` ) modélisent de nouvelles structures de programmation.  
   
  Notez que lorsque les activités telles que les activités `Parallel` et `ParallelForEach` planifient plusieurs activités enfants pour qu'elles s'exécutent simultanément, seul un thread unique est utilisé pour un workflow. Chaque activité enfant de ces activités s'exécute séquentiellement et les activités consécutives ne s'exécutent pas tant que d'anciennes activités ne soient terminées ou ne deviennent inactives. Par conséquent, ces activités sont très utiles pour les applications dans lesquelles plusieurs activités potentielles de blocage doivent s'exécuter de façon entrelacée. Si aucune des activités enfants de ces activités n'est inactive, une activité `Parallel` s'exécute juste comme une activité `Sequence`, et une activité `ParallelForEach` s'exécute juste comme une activité `ForEach`. Si, toutefois, des activités asynchrones (telles que des activités qui dérivent de <xref:System.Activities.AsyncCodeActivity>) ou des activités de messagerie sont utilisées, le contrôle passe à la branche suivante alors que l’activité enfant attend son message à accepter ou son travail asynchrone à exécuter.  
   

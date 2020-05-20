@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 8757642db6c4375cf55d1f7288669c4c8a752a38
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 3c2bc771c0a131329b9403c99a33ca7b79023771
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790403"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420849"
 ---
 # <a name="ixclrdatamodule-interface"></a>IXCLRDataModule, interface
 
@@ -38,14 +38,14 @@ Fournit des méthodes pour interroger des informations sur un module chargé.
 
 ## <a name="remarks"></a>Notes
 
-Cette interface se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Toutefois, il s’agit d’une interface COM qui dérive de `IUnknown` avec GUID `88E32849-0A0A-4cb0-9022-7CD2E9E139E2` qui peuvent être obtenus par le biais des mécanismes COM habituels.
+Cette interface se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Toutefois, il s’agit d’une interface COM qui dérive de `IUnknown` avec `88E32849-0A0A-4cb0-9022-7CD2E9E139E2` un GUID qui peut être obtenu par le biais des mécanismes com habituels.
 
-## <a name="requirements"></a>Configuration requise pour
+## <a name="requirements"></a>Conditions requises
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
 **En-tête :** None  
 **Bibliothèque :** None  
-**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 
