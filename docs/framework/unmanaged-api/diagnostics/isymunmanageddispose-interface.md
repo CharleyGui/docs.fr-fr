@@ -14,25 +14,25 @@ helpviewer_keywords:
 ms.assetid: b1d74e83-a200-4d00-8fbd-27918808616d
 topic_type:
 - apiref
-ms.openlocfilehash: 08d9ba8f8c9a251bd0db0ffe256af7db0164ba2f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 85b0116edadbffdea8f141c3d20142e19b053321
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449229"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83440965"
 ---
-# <a name="isymunmanageddispose-interface"></a><span data-ttu-id="6df44-102">ISymUnmanagedDispose, interface</span><span class="sxs-lookup"><span data-stu-id="6df44-102">ISymUnmanagedDispose Interface</span></span>
-<span data-ttu-id="6df44-103">Supprime les ressources non managées.</span><span class="sxs-lookup"><span data-stu-id="6df44-103">Disposes of unmanaged resources.</span></span>  
+# <a name="isymunmanageddispose-interface"></a><span data-ttu-id="d2cbc-102">ISymUnmanagedDispose, interface</span><span class="sxs-lookup"><span data-stu-id="d2cbc-102">ISymUnmanagedDispose Interface</span></span>
+<span data-ttu-id="d2cbc-103">Supprime les ressources non managées.</span><span class="sxs-lookup"><span data-stu-id="d2cbc-103">Disposes of unmanaged resources.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="6df44-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="6df44-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="d2cbc-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="d2cbc-104">Methods</span></span>  
   
-|<span data-ttu-id="6df44-105">Méthode</span><span class="sxs-lookup"><span data-stu-id="6df44-105">Method</span></span>|<span data-ttu-id="6df44-106">Description</span><span class="sxs-lookup"><span data-stu-id="6df44-106">Description</span></span>|  
+|<span data-ttu-id="d2cbc-105">Méthode</span><span class="sxs-lookup"><span data-stu-id="d2cbc-105">Method</span></span>|<span data-ttu-id="d2cbc-106">Description</span><span class="sxs-lookup"><span data-stu-id="d2cbc-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="6df44-107">Destroy, méthode</span><span class="sxs-lookup"><span data-stu-id="6df44-107">Destroy Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddispose-destroy-method.md)|<span data-ttu-id="6df44-108">Force l’objet sous-jacent à libérer toutes les références internes et à retourner un échec sur les appels de méthode suivants.</span><span class="sxs-lookup"><span data-stu-id="6df44-108">Causes the underlying object to release all internal references and return failure on any subsequent method calls.</span></span>|  
+|[<span data-ttu-id="d2cbc-107">Destroy, méthode</span><span class="sxs-lookup"><span data-stu-id="d2cbc-107">Destroy Method</span></span>](isymunmanageddispose-destroy-method.md)|<span data-ttu-id="d2cbc-108">Force l’objet sous-jacent à libérer toutes les références internes et à retourner un échec sur les appels de méthode suivants.</span><span class="sxs-lookup"><span data-stu-id="d2cbc-108">Causes the underlying object to release all internal references and return failure on any subsequent method calls.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="6df44-109">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="6df44-109">Requirements</span></span>  
- <span data-ttu-id="6df44-110">**En-tête :** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="6df44-110">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d2cbc-109">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d2cbc-109">Requirements</span></span>  
+ <span data-ttu-id="d2cbc-110">**En-tête :** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="d2cbc-110">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6df44-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6df44-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d2cbc-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d2cbc-111">See also</span></span>
 
-- [<span data-ttu-id="6df44-112">Interfaces du magasin de symboles de diagnostics</span><span class="sxs-lookup"><span data-stu-id="6df44-112">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [<span data-ttu-id="d2cbc-112">Interfaces du magasin de symboles de diagnostics</span><span class="sxs-lookup"><span data-stu-id="d2cbc-112">Diagnostics Symbol Store Interfaces</span></span>](diagnostics-symbol-store-interfaces.md)
