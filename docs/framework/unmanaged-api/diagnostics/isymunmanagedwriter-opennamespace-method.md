@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 426f4e4f-e60d-4ad1-b546-a10e3c55c283
 topic_type:
 - apiref
-ms.openlocfilehash: acbd49de7362d9c05a609a2d870af100637e10ab
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ab248c6a624fbed1a6783383566be093c449ff97
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427905"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83609883"
 ---
 # <a name="isymunmanagedwriteropennamespace-method"></a>ISymUnmanagedWriter::OpenNamespace, méthode
 Ouvre un nouvel espace de noms. Appelez cette méthode avant de définir des méthodes ou des variables qui occupent un espace de noms. Les espaces de noms peuvent être imbriqués.  
@@ -39,10 +39,10 @@ HRESULT OpenNamespace(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedWriter, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [CloseNamespace, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closenamespace-method.md)
+- [ISymUnmanagedWriter, interface](isymunmanagedwriter-interface.md)
+- [CloseNamespace, méthode](isymunmanagedwriter-closenamespace-method.md)

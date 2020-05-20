@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c1018789-4206-455d-aacc-2d876fc0d0bb
 topic_type:
 - apiref
-ms.openlocfilehash: af50c82974b779b901135795f37e3bd4c8b8c156
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c7afe074afb9b38d6fefa1192799120dbb50b403
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440973"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83442057"
 ---
 # <a name="inotifysink2-interface"></a>INotifySink2, interface
 Déclare des méthodes pour la notification du récepteur.  
@@ -28,16 +28,16 @@ Déclare des méthodes pour la notification du récepteur.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[OnSyncCallEnter, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallenter-method.md)|Est appelé lors de l’entrée d’un appel.|  
-|[OnSyncCallExit, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallexit-method.md)|Est appelé lors de la sortie d’un appel.|  
-|[OnSyncCallOut, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallout-method.md)|Est appelé quand un appel est en sortie.|  
-|[OnSyncCallReturn, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallreturn-method.md)|Est appelé quand un appel est retourné.|  
+|[OnSyncCallEnter, méthode](inotifysink2-onsynccallenter-method.md)|Est appelé lors de l’entrée d’un appel.|  
+|[OnSyncCallExit, méthode](inotifysink2-onsynccallexit-method.md)|Est appelé lors de la sortie d’un appel.|  
+|[OnSyncCallOut, méthode](inotifysink2-onsynccallout-method.md)|Est appelé quand un appel est en sortie.|  
+|[OnSyncCallReturn, méthode](inotifysink2-onsynccallreturn-method.md)|Est appelé quand un appel est retourné.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [INotifyConnection2, interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)
-- [INotifySource2, interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)
-- [Interfaces du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [INotifyConnection2, interface](inotifyconnection2-interface.md)
+- [INotifySource2, interface](inotifysource2-interface.md)
+- [Interfaces du magasin de symboles de diagnostics](diagnostics-symbol-store-interfaces.md)

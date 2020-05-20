@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: a57c7d71-c4b0-41f9-a964-0c5ee84a3124
 topic_type:
 - apiref
-ms.openlocfilehash: 51db7a2b6464b562e09ce061991898a8d604ead1
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5144feab742bc5dac36563d701d81a699d0bb2f3
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437970"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83609441"
 ---
 # <a name="user_thread-structure"></a>USER_THREAD, structure
-Fournit des informations à un débogueur à propos d’un thread. Pour plus d’informations, consultez la méthode [INotifySource2 :: SetNotifyFilter,](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) .  
+Fournit des informations à un débogueur à propos d’un thread. Pour plus d’informations, consultez la méthode [INotifySource2 :: SetNotifyFilter,](inotifysource2-setnotifyfilter-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,10 +43,10 @@ typedef struct tagUSER_THREAD
 |`dwSidLen`|Longueur de la mémoire tampon de thread, en octets.|  
 |`dwTid`|ID de thread.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [SetNotifyFilter, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md)
-- [Structures du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)
+- [SetNotifyFilter, méthode](inotifysource2-setnotifyfilter-method.md)
+- [Structures du magasin de symboles de diagnostics](diagnostics-symbol-store-structures.md)

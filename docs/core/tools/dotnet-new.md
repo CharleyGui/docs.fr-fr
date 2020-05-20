@@ -2,12 +2,12 @@
 title: Commande dotnet new
 description: La commande dotnet new crée des projets .NET Core basés sur le modèle spécifié.
 ms.date: 04/10/2020
-ms.openlocfilehash: 9a68baafa7ac3e6ad2fdc8f1c6e8621d6e15f1ff
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 1544f519f2a5f6a1a6e042c1db720eff45f5d98c
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506855"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83442239"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -21,7 +21,7 @@ ms.locfileid: "82506855"
 
 ```dotnetcli
 dotnet new <TEMPLATE> [--dry-run] [--force] [-i|--install {PATH|NUGET_ID}]
-    [-lang|--language {C#|F#|VB}] [-n|--name <OUTPUT_NAME>]
+    [-lang|--language {"C#"|"F#"|VB}] [-n|--name <OUTPUT_NAME>]
     [--nuget-source <SOURCE>] [-o|--output <OUTPUT_DIRECTORY>]
     [-u|--uninstall] [--update-apply] [--update-check] [Template options]
 
@@ -48,14 +48,14 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
   Vous pouvez exécuter `dotnet new --list` ou `dotnet new -l` pour afficher la liste de tous les modèles installés. Si la `TEMPLATE` valeur ne correspond pas exactement au texte de la colonne **Templates** ou **Short Name** de la table retournée, une correspondance de sous-chaînes est effectuée sur ces deux colonnes.
 
-  À compter du kit de développement logiciel (SDK) .NET Core 3,0, l’interface CLI recherche `dotnet new` des modèles dans NuGet.org quand vous appelez la commande dans les conditions suivantes :
+  À compter du kit de développement logiciel (SDK) .NET Core 3,0, l’interface CLI recherche des modèles dans NuGet.org quand vous appelez la `dotnet new` commande dans les conditions suivantes :
 
-  - Si l’interface CLI ne peut pas trouver de correspondance de `dotnet new`modèle lors de l’appel de, pas encore partiel.
+  - Si l’interface CLI ne peut pas trouver de correspondance de modèle lors de l’appel `dotnet new` de, pas encore partiel.
   - Si une version plus récente du modèle est disponible. Dans ce cas, le projet ou l’artefact est créé, mais l’interface CLI vous avertit d’une version mise à jour du modèle.
 
   Le tableau suivant répertorie les modèles qui sont préinstallés avec le kit SDK .NET Core. Le langage par défaut pour le modèle est indiqué entre crochets. Cliquez sur le lien nom abrégé pour afficher les options de modèle spécifiques.
 
-| Modèles                                    | Nom court                      | Langage     | Balises                                  | Présent |
+| Modèles                                    | Nom court                      | Langage     | Étiquettes                                  | Présent |
 |----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
 | Application console                          | [Console](#console)             | [C#], F#, VB | Communes/Console                        | 1.0        |
 | Bibliothèque de classes                                | [classlib](#classlib)           | [C#], F#, VB | Communes/Bibliothèque                        | 1.0        |
@@ -108,7 +108,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
 - **`-i|--install <PATH|NUGET_ID>`**
 
-  Installe un pack de modèles à `PATH` partir `NUGET_ID` du ou fourni. Si vous souhaitez installer une préversion d’un package de modèle, vous devez spécifier la version au format `<package-name>::<package-version>`. Par défaut, `dotnet new` passe \* pour la version, qui représente la dernière version stable du package. Consultez un exemple dans la section [exemples](#examples) .
+  Installe un pack de modèles à partir du `PATH` ou `NUGET_ID` fourni. Si vous souhaitez installer une préversion d’un package de modèle, vous devez spécifier la version au format `<package-name>::<package-version>`. Par défaut, `dotnet new` passe \* pour la version, qui représente la dernière version stable du package. Consultez un exemple dans la section [exemples](#examples) .
   
   Si une version du modèle a déjà été installée lorsque vous exécutez cette commande, le modèle sera mis à jour vers la version spécifiée, ou vers la version stable la plus récente si aucune version n’a été spécifiée.
 
@@ -139,16 +139,16 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
 - **`--type <TYPE>`**
 
-  Filtre les modèles en fonction des types disponibles. Les valeurs prédéfinies `project`sont `item`, et `other`.
+  Filtre les modèles en fonction des types disponibles. Les valeurs prédéfinies sont `project` , `item` et `other` .
 
 - **`-u|--uninstall [PATH|NUGET_ID]`**
 
-  Désinstalle un pack de modèles au niveau de `PATH` ou `NUGET_ID` fourni. Lorsque la `<PATH|NUGET_ID>` valeur n’est pas spécifiée, tous les packs de modèles actuellement installés et leurs modèles associés sont affichés. Lorsque vous `NUGET_ID`spécifiez, n’incluez pas le numéro de version.
+  Désinstalle un pack de modèles au niveau de `PATH` ou `NUGET_ID` fourni. Lorsque la `<PATH|NUGET_ID>` valeur n’est pas spécifiée, tous les packs de modèles actuellement installés et leurs modèles associés sont affichés. Lorsque vous spécifiez `NUGET_ID` , n’incluez pas le numéro de version.
 
   Si vous ne spécifiez pas de paramètre pour cette option, la commande répertorie les modèles installés et fournit des détails à leur sujet.
 
   > [!NOTE]
-  > Pour désinstaller un modèle à l’aide de `PATH`, vous devez qualifier le chemin d’accès avec un nom complet. Par exemple, *C:/Users\</User>/documents/templates/garciasoftware.consoletemplate.CSharp* fonctionnera, mais *./GarciaSoftware.ConsoleTemplate.CSharp* à partir du dossier conteneur ne le sera pas.
+  > Pour désinstaller un modèle à l’aide de `PATH`, vous devez qualifier le chemin d’accès avec un nom complet. Par exemple, *C:/Users/ \< User>/documents/templates/garciasoftware.consoletemplate.CSharp* fonctionnera, mais *./GarciaSoftware.ConsoleTemplate.CSharp* à partir du dossier conteneur ne le sera pas.
   > N’incluez pas de barre oblique finale de répertoire finale dans le chemin d’accès de votre modèle.
 
 - **`--update-apply`**
@@ -381,7 +381,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`--no-https`**
 
-  Désactive le protocole HTTPs. Cette option s’applique uniquement `Individual`si `IndividualB2C`, `SingleOrg`, ou `MultiOrg` ne sont pas utilisés `--auth`pour.
+  Désactive le protocole HTTPs. Cette option s’applique uniquement si `Individual` , `IndividualB2C` , `SingleOrg` ou `MultiOrg` ne sont pas utilisés pour `--auth` .
 
 - **`-uld|--use-local-db`**
 
@@ -532,7 +532,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`--no-https`**
 
-  Désactive le protocole HTTPs. Cette option s’applique uniquement si l' `None`authentification est.
+  Désactive le protocole HTTPs. Cette option s’applique uniquement si l’authentification est `None` .
 
 - **`-uld|--use-local-db`**
 
@@ -629,7 +629,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`-r|--org-read-access`**
 
-  Permet à cette application d’accéder en lecture à l’annuaire. S’applique uniquement `SingleOrg` à l’authentification.
+  Permet à cette application d’accéder en lecture à l’annuaire. S’applique uniquement à `SingleOrg` l’authentification.
 
 - **`--exclude-launch-settings`**
 
@@ -637,11 +637,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`--no-https`**
 
-  Désactive le protocole HTTPs. `app.UseHsts` et `app.UseHttpsRedirection` ne sont pas ajoutés à `Startup.Configure`. Cette option s’applique uniquement `IndividualB2C` si `SingleOrg` ou ne sont pas utilisés pour l’authentification.
+  Désactive le protocole HTTPs. `app.UseHsts` et `app.UseHttpsRedirection` ne sont pas ajoutés à `Startup.Configure`. Cette option s’applique uniquement si `IndividualB2C` ou `SingleOrg` ne sont pas utilisés pour l’authentification.
 
 - **`-uld|--use-local-db`**
 
-  Spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement `IndividualB2C` à l’authentification.
+  Spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à `IndividualB2C` l’authentification.
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -680,7 +680,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 - Créez un projet d’application console F# dans le répertoire actif :
 
   ```dotnetcli
-  dotnet new console -lang F#
+  dotnet new console -lang "F#"
   ```
 
 - Créez un projet de bibliothèque de classes .NET Standard dans le répertoire spécifié :

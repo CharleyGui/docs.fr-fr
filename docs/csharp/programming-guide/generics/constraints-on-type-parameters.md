@@ -6,34 +6,34 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 0035f7d8aa862b4bd1b09a6f122a89786a6e295b
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 376befe4c969ac653e234479c8946d7fd4242999
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738254"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83442213"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Contraintes sur les paramètres de type (Guide de programmation C#)
 
-Les contraintes informent le compilateur sur les fonctionnalités que doit avoir un argument de type. Sans contrainte, l’argument de type peut être n’importe quel type. Le compilateur peut seulement deviner les membres de <xref:System.Object?displayProperty=nameWithType>, qui est la classe de base par excellence de tous les types .NET. Pour plus d’informations, consultez [Pourquoi utiliser des contraintes](#why-use-constraints). Si le code client utilise un type qui ne satisfait pas à une contrainte, le compilateur émet une erreur. Les contraintes sont spécifiées à l’aide du mot clé contextuel `where`. Le tableau suivant liste les sept types de contrainte :
+Les contraintes informent le compilateur sur les fonctionnalités que doit avoir un argument de type. Sans contrainte, l’argument de type peut être n’importe quel type. Le compilateur peut seulement deviner les membres de <xref:System.Object?displayProperty=nameWithType>, qui est la classe de base par excellence de tous les types .NET. Pour plus d’informations, consultez [Pourquoi utiliser des contraintes](#why-use-constraints). Si le code client utilise un type qui ne satisfait pas une contrainte, le compilateur émet une erreur. Les contraintes sont spécifiées à l’aide du mot clé contextuel `where`. Le tableau suivant liste les sept types de contrainte :
 
 |Contrainte|Description|
 |----------------|-----------------|
-|`where T : struct`|L’argument de type doit être un type de valeur non annulable. Pour plus d’informations sur les types de valeur nulable, voir [les types de valeur nulable](../../language-reference/builtin-types/nullable-value-types.md). Étant donné que tous les types de `struct` valeur ont `new()` un constructeur sans paramètres accessible, `new()` la contrainte implique la contrainte et ne peut pas être combinée avec la contrainte. Vous ne pouvez `struct` pas combiner `unmanaged` la contrainte avec la contrainte.|
-|`where T : class`|L’argument de type doit être un type référence. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau. Dans un contexte in annulable dans le C `T` 8.0 ou plus tard, doit être un type de référence non annulable. |
-|`where T : class?`|L’argument type doit être un type de référence, soit in nullable, soit non annulable. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau.|
-|`where T : notnull`|L’argument de type doit être un type non-nullable. L’argument peut être un type de référence non annulable dans C 8.0 ou plus tard, ou un type de valeur non annulable. |
-|`where T : unmanaged`|L’argument de type doit être un type non-nullable [nonmané](../../language-reference/builtin-types/unmanaged-types.md). La `unmanaged` contrainte implique `struct` la contrainte et ne peut pas `struct` `new()` être combinée avec les ou les contraintes.|
-|`where T : new()`|L’argument de type doit avoir un constructeur sans paramètre public. Quand vous utilisez la contrainte `new()` avec d’autres contraintes, elle doit être spécifiée en dernier. La `new()` contrainte ne peut pas `struct` être `unmanaged` combinée avec les contraintes et les contraintes.|
-|`where T :` *\<nom_classe_de_base>*|L’argument de type doit être la classe de base spécifiée ou en dériver. Dans un contexte in annulable dans le C `T` 8.0 et plus tard, doit être un type de référence non annulable dérivé de la classe de base spécifiée. |
-|`where T :`*nom de classe de base>? \<*|L’argument de type doit être la classe de base spécifiée ou en dériver. Dans un contexte infiratable dans le `T` C 8.0 et plus tard, peut être soit un type nul ou non annulable dérivé de la classe de base spécifiée. |
-|`where T :`nom d’interface>* \<*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique. Dans un contexte in annulable dans C 8.0 et plus tard, `T` doit être un type non-nullable qui implémente l’interface spécifiée.|
-|`where T :`nom d’interface>? * \<*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique. Dans un contexte in annulable dans le `T` C 8.0, peut être un type de référence nul, un type de référence non annulable ou un type de valeur. `T`peut ne pas être un type de valeur nulle.|
-|`where T : U`|L’argument de `T` type fourni pour doit `U`être ou dériver de l’argument fourni pour . Dans un contexte in `U` annulable, s’il `T` s’agit d’un type de référence non annulable, doit être de type de référence non annulable. S’il `U` s’agit `T` d’un type de référence in annulable, peut être soit infiruble ou non annulable. |
+|`where T : struct`|L’argument de type doit être un type valeur n’acceptant pas les valeurs NULL. Pour plus d’informations sur les types valeur Nullable, consultez [types valeur Nullable](../../language-reference/builtin-types/nullable-value-types.md). Étant donné que tous les types valeur ont un constructeur sans paramètre accessible, la `struct` contrainte implique la `new()` contrainte et ne peut pas être combinée avec la `new()` contrainte. Vous ne pouvez pas associer la `struct` contrainte à la `unmanaged` contrainte.|
+|`where T : class`|L’argument de type doit être un type référence. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau. Dans un contexte Nullable en C# 8,0 ou une version ultérieure, `T` doit être un type de référence non Nullable. |
+|`where T : class?`|L’argument de type doit être un type référence, Nullable ou non Nullable. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau.|
+|`where T : notnull`|L’argument de type doit être un type non Nullable. L’argument peut être un type référence non Nullable en C# 8,0 ou version ultérieure, ou un type valeur qui n’autorise pas les valeurs NULL. |
+|`where T : unmanaged`|L’argument de type doit être un type non [managé](../../language-reference/builtin-types/unmanaged-types.md)qui n’accepte pas les valeurs NULL. La `unmanaged` contrainte implique la `struct` contrainte et ne peut pas être combinée avec `struct` les `new()` contraintes ou.|
+|`where T : new()`|L’argument de type doit avoir un constructeur sans paramètre public. Quand vous utilisez la contrainte `new()` avec d’autres contraintes, elle doit être spécifiée en dernier. La `new()` contrainte ne peut pas être combinée avec les `struct` `unmanaged` contraintes et.|
+|`where T :` *\<nom_classe_de_base>*|L’argument de type doit être la classe de base spécifiée ou en dériver. Dans un contexte Nullable en C# 8,0 et versions ultérieures, `T` doit être un type de référence non Nullable dérivé de la classe de base spécifiée. |
+|`where T :`nom de la * \< classe de base> ?*|L’argument de type doit être la classe de base spécifiée ou en dériver. Dans un contexte Nullable en C# 8,0 et versions ultérieures, `T` peut être un type Nullable ou non Nullable dérivé de la classe de base spécifiée. |
+|`where T :`nom de l' * \< interface>*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique. Dans un contexte Nullable en C# 8,0 et versions ultérieures, `T` doit être un type non Nullable qui implémente l’interface spécifiée.|
+|`where T :`nom de l' * \< interface> ?*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique. Dans un contexte Nullable en C# 8,0, `T` peut être un type de référence Nullable, un type de référence non Nullable ou un type valeur. `T`n’est pas un type valeur Nullable.|
+|`where T : U`|L’argument de type fourni pour `T` doit être ou dériver de l’argument fourni pour `U` . Dans un contexte Nullable, si `U` est un type référence qui n’accepte pas les valeurs NULL, `T` doit être un type référence non Nullable. Si `U` est un type de référence Nullable, `T` peut avoir la valeur null ou n’accepte pas les valeurs NULL. |
 
 ## <a name="why-use-constraints"></a>Pourquoi utiliser des contraintes
 
-Les contraintes spécifient les capacités et les attentes d’un paramètre de type. Déclarer ces contraintes signifie que vous pouvez utiliser les opérations et les appels de méthode du type de contrainte. Si votre classe ou méthode générique utilise une opération sur les membres <xref:System.Object?displayProperty=nameWithType>génériques au-delà de la simple affectation ou d’appeler des méthodes non prises en charge par, vous devrez appliquer des contraintes au paramètre de type. Par exemple, la contrainte de classe de base indique au compilateur que seuls les objets de ce type ou dérivés de ce type seront utilisés comme arguments de type. Une fois que le compilateur a cette garantie, il peut autoriser les méthodes de ce type à être appelées dans la classe générique. L’exemple de code suivant illustre la fonctionnalité que vous pouvez ajouter à la classe `GenericList<T>` (dans [Introduction aux génériques](../../../standard/generics/index.md)) en appliquant une contrainte de classe de base.
+Les contraintes spécifient les capacités et les attentes d’un paramètre de type. La déclaration de ces contraintes signifie que vous pouvez utiliser les opérations et les appels de méthode du type de contrainte. Si votre classe ou méthode générique utilise une opération sur les membres génériques au-delà de l’assignation simple ou l’appel de toute méthode non prise en charge par <xref:System.Object?displayProperty=nameWithType> , vous devez appliquer des contraintes au paramètre de type. Par exemple, la contrainte de classe de base indique au compilateur que seuls les objets de ce type ou dérivés de ce type seront utilisés comme arguments de type. Une fois que le compilateur a cette garantie, il peut autoriser les méthodes de ce type à être appelées dans la classe générique. L’exemple de code suivant illustre la fonctionnalité que vous pouvez ajouter à la classe `GenericList<T>` (dans [Introduction aux génériques](../../../standard/generics/index.md)) en appliquant une contrainte de classe de base.
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#9)]
 
@@ -47,7 +47,7 @@ En appliquant la contrainte `where T : class`, évitez d’utiliser les opérate
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#11)]
 
-Le compilateur sait `T` seulement qu’il s’agit d’un type de référence au moment de la compilation et doit utiliser les opérateurs par défaut qui sont valables pour tous les types de référence. Si vous devez tester l’égalité des valeurs, il est recommandé d’appliquer également la contrainte `where T : IEquatable<T>` ou `where T : IComparable<T>` et d’implémenter l’interface dans toute classe qui sera utilisée pour construire la classe générique.
+Le compilateur sait uniquement que `T` est un type référence au moment de la compilation et doit utiliser les opérateurs par défaut qui sont valides pour tous les types référence. Si vous devez tester l’égalité des valeurs, il est recommandé d’appliquer également la contrainte `where T : IEquatable<T>` ou `where T : IComparable<T>` et d’implémenter l’interface dans toute classe qui sera utilisée pour construire la classe générique.
 
 ## <a name="constraining-multiple-parameters"></a>Utilisation de contraintes dans plusieurs paramètres
 
@@ -59,7 +59,7 @@ Vous pouvez appliquer des contraintes à plusieurs paramètres et plusieurs cont
 
  Les paramètres de type qui n’ont aucune contrainte, tels que T dans la classe publique `SampleClass<T>{}`, sont appelés paramètres de type unbounded. Les paramètres de type unbounded obéissent aux règles suivantes :
 
-- Les `!=` `==` opérateurs et les opérateurs ne peuvent pas être utilisés parce qu’il n’y a aucune garantie que l’argument de type concret soutiendra ces opérateurs.
+- Les `!=` `==` opérateurs et ne peuvent pas être utilisés, car il n’y a aucune garantie que l’argument de type concret prendra en charge ces opérateurs.
 - Ils peuvent être convertis vers et depuis `System.Object` ou être explicitement convertis vers tout type d’interface.
 - Vous pouvez les comparer à [null](../../language-reference/keywords/null.md). Si un paramètre unbounded est comparé à `null`, la comparaison retourne toujours la valeur false si l’argument de type est un type valeur.
 
@@ -79,25 +79,25 @@ L’utilité des paramètres de type en tant que contraintes avec les classes g�
 
 ## <a name="notnull-constraint"></a>Contrainte NotNull
 
-En commençant par C 8.0 dans un contexte `notnull` in annulable, vous pouvez utiliser la contrainte pour spécifier que l’argument type doit être un type de valeur non annulable ou un type de référence non annulable. La `notnull` contrainte ne peut être `nullable enable` utilisée que dans un contexte. Le compilateur génère un avertissement `notnull` si vous ajoutez la contrainte dans un contexte oubliable.
+À compter de C# 8,0 dans un contexte Nullable, vous pouvez utiliser la `notnull` contrainte pour spécifier que l’argument de type doit être un type valeur n’acceptant pas les valeurs null ou un type référence non Nullable. La `notnull` contrainte ne peut être utilisée que dans un `nullable enable` contexte. Le compilateur génère un avertissement si vous ajoutez la `notnull` contrainte dans un contexte oublie Nullable.
 
-Contrairement à d’autres contraintes, `notnull` lorsqu’un argument type viole la contrainte, le `nullable enable` compilateur génère un avertissement lorsque ce code est compilé dans un contexte. Si le code est compilé dans un contexte inconsible, le compilateur ne génère pas d’avertissements ou d’erreurs.
+Contrairement à d’autres contraintes, lorsqu’un argument de type viole la `notnull` contrainte, le compilateur génère un avertissement lorsque ce code est compilé dans un `nullable enable` contexte. Si le code est compilé dans un contexte oublie Nullable, le compilateur ne génère pas d’avertissements ni d’erreurs.
 
-Commençant par le C 8.0 dans `class` un contexte où il est in annulable, la contrainte précise que l’argument type doit être un type de référence non annulable. Dans un contexte in annulable, lorsqu’un paramètre type est un type de référence nul, le compilateur génère un avertissement.
+À compter de C# 8,0 dans un contexte Nullable, la `class` contrainte spécifie que l’argument de type doit être un type de référence n’acceptant pas les valeurs NULL. Dans un contexte Nullable, lorsqu’un paramètre de type est un type référence Nullable, le compilateur génère un avertissement.
 
 ## <a name="unmanaged-constraint"></a>Contrainte non managée
 
-En commençant par le C 7.3, vous pouvez utiliser la `unmanaged` contrainte pour spécifier que le paramètre de type doit être un type non-nullable non [managéré](../../language-reference/builtin-types/unmanaged-types.md). La contrainte `unmanaged` vous permet d’écrire des routines réutilisables à appliquer aux types qui peuvent être manipulés comme blocs de mémoire, comme illustré dans l’exemple suivant :
+À compter de C# 7,3, vous pouvez utiliser la `unmanaged` contrainte pour spécifier que le paramètre de type doit être un [type non managé](../../language-reference/builtin-types/unmanaged-types.md)qui n’accepte pas les valeurs NULL. La contrainte `unmanaged` vous permet d’écrire des routines réutilisables à appliquer aux types qui peuvent être manipulés comme blocs de mémoire, comme illustré dans l’exemple suivant :
 
 [!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#15)]
 
 La méthode précédente doit être compilée dans un contexte `unsafe`, car elle utilise l’opérateur `sizeof` sur un type qui n’est pas connu pour être un type intégré. Sans la contrainte `unmanaged`, l’opérateur `sizeof` n’est pas disponible.
 
-La `unmanaged` contrainte implique `struct` la contrainte et ne peut pas être combiné avec elle. Parce `struct` que la contrainte `new()` implique la `unmanaged` contrainte, la contrainte ne `new()` peut pas être combinée avec la contrainte ainsi.
+La `unmanaged` contrainte implique la `struct` contrainte et ne peut pas être associée à celle-ci. Étant donné que la `struct` contrainte implique la `new()` contrainte, la contrainte `unmanaged` ne peut pas être combinée à la contrainte `new()` .
 
 ## <a name="delegate-constraints"></a>Contraintes de délégué
 
-À partir de C# 7.3, vous pouvez aussi utiliser <xref:System.Delegate?displayProperty=nameWithType> ou <xref:System.MulticastDelegate?displayProperty=nameWithType> comme contrainte de classe de base. Le CLR a toujours autorisé cette contrainte, contrairement au langage C#. La contrainte `System.Delegate` vous permet d’écrire du code qui fonctionne avec les délégués en mode type sécurisé. Le code suivant définit une méthode d’extension qui combine deux délégués à condition qu’ils soient du même type :
+À partir de C# 7.3, vous pouvez aussi utiliser <xref:System.Delegate?displayProperty=nameWithType> ou <xref:System.MulticastDelegate?displayProperty=nameWithType> comme contrainte de classe de base. Le CLR a toujours autorisé cette contrainte, contrairement au langage C#. La contrainte `System.Delegate` vous permet d’écrire du code qui fonctionne avec les délégués en mode type sécurisé. Le code suivant définit une méthode d’extension qui combine deux délégués à condition qu’ils soient du même type :
 
 [!code-csharp[using the delegate constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#16)]
 
@@ -105,7 +105,7 @@ Vous pouvez utiliser la méthode ci-dessus pour combiner des délégués qui son
 
 [!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#17)]
 
-Si vous supprimez les commentaires de la dernière ligne, il ne sera pas compilé. Les `first` `test` deux et sont des types de délégués, mais ils sont différents types de délégués.
+Si vous supprimez les commentaires de la dernière ligne, il ne sera pas compilé. `first`Et `test` sont des types délégués, mais il s’agit de types délégués différents.
 
 ## <a name="enum-constraints"></a>Contraintes d’enum
 
@@ -113,7 +113,7 @@ Si vous supprimez les commentaires de la dernière ligne, il ne sera pas compil�
 
 [!code-csharp[using the enum constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#18)]
 
-Les méthodes utilisées pour faire usage de la réflexion, qui a des implications de performance. Vous pouvez appeler cette méthode pour générer une collection qui est mise en cache et réutilisée, plutôt que de répéter les appels qui nécessitent la réflexion.
+`Enum.GetValues`et `Enum.GetName` utilisent la réflexion, ce qui a des répercussions sur les performances. Vous pouvez appeler `EnumNamedValues` pour générer une collection qui est mise en cache et réutilisée au lieu de répéter les appels qui requièrent la réflexion.
 
 Vous pouvez l’utiliser comme montré dans l’exemple suivant pour créer un enum et générer un dictionnaire de ses valeurs et de ses noms :
 
@@ -124,7 +124,7 @@ Vous pouvez l’utiliser comme montré dans l’exemple suivant pour créer un e
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Collections.Generic>
-- [Guide de programmation CMD](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Introduction aux génériques](./index.md)
 - [Classes génériques](./generic-classes.md)
 - [nouvelle contrainte](../../language-reference/keywords/new-constraint.md)

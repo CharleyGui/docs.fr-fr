@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 704c69ba-77bc-40d7-8c0c-400061686321
 topic_type:
 - apiref
-ms.openlocfilehash: ee57ba14f048032e2cd9d0129089743c0f0304bc
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d05d4451e8fb75829b22e0a1b9c9afcb0607eb8b
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445976"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83610169"
 ---
 # <a name="isymunmanagedvariable-interface"></a>ISymUnmanagedVariable, interface
 Représente une variable, telle qu’un paramètre, une variable locale ou un champ.  
@@ -28,19 +28,19 @@ Représente une variable, telle qu’un paramètre, une variable locale ou un ch
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetAddressField1, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getaddressfield1-method.md)|Obtient le premier champ d’adresse pour cette variable. Sa signification dépend du type d’adresse.|  
-|[GetAddressField2, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getaddressfield2-method.md)|Obtient le deuxième champ d’adresse pour cette variable. Sa signification dépend du type d’adresse.|  
-|[GetAddressField3, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getaddressfield3-method.md)|Obtient le troisième champ d’adresse pour cette variable. Sa signification dépend du type d’adresse.|  
-|[GetAddressKind, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getaddresskind-method.md)|Obtient le type d’adresse de cette variable.|  
-|[GetAttributes, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getattributes-method.md)|Obtient les indicateurs d’attribut pour cette variable.|  
-|[GetEndOffset, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getendoffset-method.md)|Obtient le décalage de fin de cette variable dans son parent.|  
-|[GetName, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getname-method.md)|Obtient le nom de cette variable.|  
-|[GetSignature, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getsignature-method.md)|Obtient la signature de cette variable.|  
-|[GetStartOffset, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getstartoffset-method.md)|Obtient le décalage de début de cette variable dans son parent.|  
+|[GetAddressField1, méthode](isymunmanagedvariable-getaddressfield1-method.md)|Obtient le premier champ d’adresse pour cette variable. Sa signification dépend du type d’adresse.|  
+|[GetAddressField2, méthode](isymunmanagedvariable-getaddressfield2-method.md)|Obtient le deuxième champ d’adresse pour cette variable. Sa signification dépend du type d’adresse.|  
+|[GetAddressField3, méthode](isymunmanagedvariable-getaddressfield3-method.md)|Obtient le troisième champ d’adresse pour cette variable. Sa signification dépend du type d’adresse.|  
+|[GetAddressKind, méthode](isymunmanagedvariable-getaddresskind-method.md)|Obtient le type d’adresse de cette variable.|  
+|[GetAttributes, méthode](isymunmanagedvariable-getattributes-method.md)|Obtient les indicateurs d’attribut pour cette variable.|  
+|[GetEndOffset, méthode](isymunmanagedvariable-getendoffset-method.md)|Obtient le décalage de fin de cette variable dans son parent.|  
+|[GetName, méthode](isymunmanagedvariable-getname-method.md)|Obtient le nom de cette variable.|  
+|[GetSignature, méthode](isymunmanagedvariable-getsignature-method.md)|Obtient la signature de cette variable.|  
+|[GetStartOffset, méthode](isymunmanagedvariable-getstartoffset-method.md)|Obtient le décalage de début de cette variable dans son parent.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [Interfaces du magasin de symboles de diagnostics](diagnostics-symbol-store-interfaces.md)

@@ -2,12 +2,12 @@
 title: ISymUnmanagedWriter4, interface
 ms.date: 03/30/2017
 ms.assetid: 4af5e8c0-987d-405e-b934-8b9e70fcae6e
-ms.openlocfilehash: a656777461c50b5a1593917278eb54abda982dc2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: eaf2e8e60d9812ab6a31fb3b9050cbaae0f1a9d7
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134568"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83609467"
 ---
 # <a name="isymunmanagedwriter4-interface"></a>ISymUnmanagedWriter4, interface
 Interface Isymunmanagedwriter4,.  
@@ -23,12 +23,12 @@ Interface Isymunmanagedwriter4,.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetDebugInfoWithPadding, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter4-getdebuginfowithpadding-method.md)|Fonctionne de la même façon que la [méthode GetDebugInfo](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-getdebuginfo-method.md) , sauf que la chaîne de chemin d’accès est remplie de zéros après le caractère null de fin pour que les données de chaîne aient une taille fixe de `MAX_PATH`. Le remplissage n’est fourni que si la longueur de la chaîne du chemin d’accès est inférieure à `MAX_PATH`.<br /><br /> Cela facilite l’écriture d’outils qui différencient les fichiers PE.|  
+|[GetDebugInfoWithPadding, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter4-getdebuginfowithpadding-method.md)|Fonctionne de la même façon que la [méthode GetDebugInfo](isymunmanagedwriter-getdebuginfo-method.md) , sauf que la chaîne du chemin d’accès est complétée par des zéros après le caractère null de fin pour que les données de la chaîne soient de taille fixe `MAX_PATH` . Le remplissage n’est fourni que si la longueur de la chaîne du chemin d’accès est inférieure à `MAX_PATH` .<br /><br /> Cela facilite l’écriture d’outils qui différencient les fichiers PE.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
-- [ISymUnmanagedWriter3, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)
+- [Interfaces du magasin de symboles de diagnostics](diagnostics-symbol-store-interfaces.md)
+- [ISymUnmanagedWriter3, interface](isymunmanagedwriter3-interface.md)

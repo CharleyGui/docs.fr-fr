@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 2632da80-6e4b-4429-8dee-b382745a5f81
 topic_type:
 - apiref
-ms.openlocfilehash: 76514cfbd2e533f04c5139dbaef4429c12463106
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b7fa777466e2c7edd7b3110dd91e776785c63c58
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445475"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83442070"
 ---
 # <a name="inotifyconnection2registernotifysource-method"></a>INotifyConnection2::RegisterNotifySource, méthode
 Installe une source de notification spécifiée.  
@@ -45,12 +45,12 @@ HRESULT RegisterNotifySource
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [INotifyConnection2, interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)
-- [INotifySource2, interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)
-- [INotifySink2, interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
-- [UnregisterNotifySource, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-unregisternotifysource-method.md)
+- [INotifyConnection2, interface](inotifyconnection2-interface.md)
+- [INotifySource2, interface](inotifysource2-interface.md)
+- [INotifySink2, interface](inotifysink2-interface.md)
+- [UnregisterNotifySource, méthode](inotifyconnection2-unregisternotifysource-method.md)
