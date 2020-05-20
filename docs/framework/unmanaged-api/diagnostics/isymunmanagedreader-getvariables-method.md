@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 16dc49cb-2c60-4ac8-9c35-020e9afba3f8
 topic_type:
 - apiref
-ms.openlocfilehash: 4590d2734ea89bc1bc8a30db1c7ecac5effafd7b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 637e1aed003e211654141ab397c9c0b4724753c2
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74429761"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615486"
 ---
 # <a name="isymunmanagedreadergetvariables-method"></a>ISymUnmanagedReader::GetVariables, méthode
 Retourne une variable non locale, en fonction de son parent et de son nom.  
@@ -44,7 +44,7 @@ HRESULT GetVariables (
  [in] Taille du tableau `pVars`.  
   
  `pcVars`  
- à Pointeur vers la variable qui reçoit le nombre de variables retournées dans `pVars`.  
+ à Pointeur vers la variable qui reçoit le nombre de variables retournées dans `pVars` .  
   
  `pVars`  
  à Pointeur vers la variable qui reçoit les variables.  
@@ -52,9 +52,9 @@ HRESULT GetVariables (
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedReader, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader, interface](isymunmanagedreader-interface.md)

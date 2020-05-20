@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a9e00b4f-b6d0-4257-bd88-4fe9af97b8fa
 topic_type:
 - apiref
-ms.openlocfilehash: 81aef6beb9ee6d622519738d24fdd0a4d42a75b1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 94d2ec12309249afbecdc4130f8fe20c927b0a9b
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136549"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616370"
 ---
 # <a name="ebindpolicylevels-enumeration"></a>EBindPolicyLevels, énumération
 Fournit des indicateurs pour spécifier le niveau auquel appliquer ou modifier la stratégie d’assembly.  
@@ -49,22 +49,22 @@ typedef enum {
 |`ePolicyLevelNone`|Ne spécifie aucun indicateur de niveau stratégie.|  
 |`ePolicyLevelPublisher`|Spécifie que la stratégie doit être appliquée au niveau du serveur de publication.|  
 |`ePolicyLevelRetargetable`|Spécifie que la stratégie doit être applicable à des niveaux variables.|  
-|`ePolicyPortability`|Spécifie que la stratégie doit prendre en charge la portabilité entre les implémentations d’un assembly .NET Framework. Consultez l’élément [\<supportPortability >](../../../../docs/framework/configure-apps/file-schema/runtime/supportportability-element.md) fichier de configuration.|  
+|`ePolicyPortability`|Spécifie que la stratégie doit prendre en charge la portabilité entre les implémentations d’un assembly .NET Framework. Consultez l’élément [ \< supportPortability>](../../configure-apps/file-schema/runtime/supportportability-element.md) configuration file.|  
 |`ePolicyUnifiedToCLR`|Spécifie que la stratégie doit être unifiée à celle de la common language runtime (CLR).|  
   
 ## <a name="remarks"></a>Notes  
- Cette énumération est passée aux méthodes de l’interface [ICLRHostBindingPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md) pour spécifier les modifications apportées à la stratégie d’application.  
+ Cette énumération est passée aux méthodes de l’interface [ICLRHostBindingPolicyManager](iclrhostbindingpolicymanager-interface.md) pour spécifier les modifications apportées à la stratégie d’application.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRAssemblyIdentityManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
-- [Énumérations d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [ICLRAssemblyIdentityManager, interface](iclrassemblyidentitymanager-interface.md)
+- [Énumérations d'hébergement](hosting-enumerations.md)

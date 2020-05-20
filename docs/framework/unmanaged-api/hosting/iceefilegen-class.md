@@ -14,20 +14,20 @@ helpviewer_keywords:
 ms.assetid: 90368606-506e-40df-be1f-8d595159203f
 topic_type:
 - apiref
-ms.openlocfilehash: 8f9761cc8bc881cd694f5d9620e5c4ab5987a2ed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fc0de164b9489c9661bc6cb0ffb681f75e88ea26
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176394"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617007"
 ---
 # <a name="iceefilegen-class"></a>ICeeFileGen, classe
-Fournit des fonctionnalités pour créer un fichier portable native exécutable (PE). L’interface sera généralement utilisée par les compilateurs pour générer leur sortie compilée exécutable.  
+Fournit des fonctionnalités pour la création d’un fichier exécutable portable (PE) natif. L’interface est généralement utilisée par les compilateurs pour générer leur exécutable de sortie compilé.  
   
 > [!NOTE]
-> `ICeeFileGen`prend en charge l’infrastructure cadre .NET et n’est pas destiné à être utilisé directement à partir de votre code.  
+> `ICeeFileGen`prend en charge l’infrastructure .NET Framework et n’est pas destiné à être utilisé directement à partir de votre code.  
   
- Cette interface a été dépréciée et sera supprimée dans une version future.  
+ Cette interface a été dépréciée et sera supprimée dans une version ultérieure.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -234,13 +234,13 @@ public:
 };  
 ```  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** ICeeFileGen.h  
+ **En-tête :** ICeeFileGen. h  
   
- **Version cadre .NET:** 1.0  
+ **Version de .NET Framework :** 1,0  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces d'hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Interfaces d'hébergement](hosting-interfaces.md)

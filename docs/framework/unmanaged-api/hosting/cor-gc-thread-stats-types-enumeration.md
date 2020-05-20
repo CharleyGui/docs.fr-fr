@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: aa227704-0ab1-4b08-aee2-1f439762162e
 topic_type:
 - apiref
-ms.openlocfilehash: 63275aaa7ed1f63c4f100845d2cbe9e93fcd0bcd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2206499cad9be2a29f485ee66d468accbe00b5f5
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131255"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616674"
 ---
 # <a name="cor_gc_thread_stats_types-enumeration"></a>COR_GC_THREAD_STATS_TYPES (énumération)
 Indique les statistiques de garbage collection d’un thread.  
@@ -38,13 +38,13 @@ typedef enum {
 |------------|-----------------|  
 |`COR_GC_THREAD_HAS_PROMOTED_BYTES`|Le thread a des octets qui ont été promus dans le garbage collection le plus récent.|  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** GCHost. idl, GCHost. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Énumérations d'hébergement](hosting-enumerations.md)

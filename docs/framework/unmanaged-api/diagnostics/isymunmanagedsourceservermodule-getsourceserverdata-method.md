@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 20bdf8ff-2d15-4c64-8950-6888f642d6c0
 topic_type:
 - apiref
-ms.openlocfilehash: 6904271ed90cf733b9221178927bc680d76b58a6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9a3a6c07a9cace0ac9834cdb05925a301285204c
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176576"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615317"
 ---
 # <a name="isymunmanagedsourceservermodulegetsourceserverdata-method"></a>ISymUnmanagedSourceServerModule::GetSourceServerData, méthode
-Retourne les données du serveur source pour le module. L’appelant doit libérer `CoTaskMemFree`des ressources en utilisant .  
+Retourne les données du serveur source pour le module. L’appelant doit libérer des ressources à l’aide de `CoTaskMemFree` .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,17 +35,17 @@ HRESULT GetSourceServerData(
   
 ## <a name="parameters"></a>Paramètres  
  `pDataByteCount`  
- [out] Un pointeur `ULONG32` à un qui reçoit la taille, dans les octets, des données du serveur source.  
+ à Pointeur vers un `ULONG32` qui reçoit la taille, en octets, des données du serveur source.  
   
  `ppData`  
- [out] Un pointeur `pDataByteCount` à la valeur retournée.  
+ à Pointeur vers la valeur retournée `pDataByteCount` .  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit; autrement, E_FAIL ou un autre code d’erreur.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Spécifications  
- **En-tête:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Conditions requises  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedSourceServerModule, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsourceservermodule-interface.md)
+- [ISymUnmanagedSourceServerModule, interface](isymunmanagedsourceservermodule-interface.md)

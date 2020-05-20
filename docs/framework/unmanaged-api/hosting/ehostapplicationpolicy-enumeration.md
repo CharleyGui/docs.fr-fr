@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 0be52d90-1976-4bf7-9717-908833a8a78d
 topic_type:
 - apiref
-ms.openlocfilehash: 6903092984bd8bb387a65e1d100fb09f3eb0b0a5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4ac1bcfa4c9dabfa4f6ff3ef1184c03815de3cf1
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136540"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616253"
 ---
 # <a name="ehostapplicationpolicy-enumeration"></a>EHostApplicationPolicy, énumération
-Indique comment modifier un objet d’interface [IHostAssemblyManager](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md) . Cette énumération a été dépréciée.  
+Indique comment modifier un objet d’interface [IHostAssemblyManager](ihostassemblymanager-interface.md) . Cette énumération a été dépréciée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,15 +32,15 @@ typedef enum _HostApplicationPolicy {
 } EHostApplicationPolicy;  
 ```  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Énumérations d'hébergement](hosting-enumerations.md)

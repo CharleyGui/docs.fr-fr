@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 9432487e-f276-45d6-9a13-9a68024dbd46
 topic_type:
 - apiref
-ms.openlocfilehash: 4d9de489bdeb0ab506f56ff08f4afb4cf6d0ab4f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7037065be138c369b847e7f86de7b46fc5ae601a
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178287"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616877"
 ---
 # <a name="bucketparameters-structure"></a>BucketParameters, structure
-Stocke le nom type d’un événement et les paramètres de l’exception actuelle qui est associée à l’événement.  
+Stocke le nom de type d’un événement et les paramètres de l’exception actuelle qui est associée à l’événement.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,17 +38,17 @@ typedef struct _BucketParameters {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`fInited`|`true`, si le reste de cette structure est valide; autrement, `false`.|  
+|`fInited`|`true`Si le reste de cette structure est valide ; Sinon, `false` .|  
 |`pszEventTypeName`|Nom du type d’événement.|  
-|`pszParams`|Un éventail de chaînes, chacune spécifise un paramètre pour l’exception actuelle associée à l’événement.|  
+|`pszParams`|Tableau de chaînes, chacune spécifiant un paramètre pour l’exception actuelle associée à l’événement.|  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** MSCorEE.idl MSCorEE.idl  
+ **En-tête :** MSCorEE. idl  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures d'hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
+- [Structures d'hébergement](hosting-structures.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4dc6c80d-b694-480b-a378-d5b18420ce17
 topic_type:
 - apiref
-ms.openlocfilehash: 786ff6895383fc18dcfedb26fab344f80f04c1df
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5c3d1d0ebc56ee93c950afb4f015c8e10ec6a0f7
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138204"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616175"
 ---
 # <a name="esymbolreadingpolicy-enumeration"></a>ESymbolReadingPolicy, énumération
 Contient des valeurs qui définissent la stratégie de lecture des fichiers de base de données du programme (PDB).  
@@ -43,17 +43,17 @@ typedef enum {
 |`eSymbolReadingNever`|Spécifie que le débogueur ne doit jamais lire les fichiers PDB.|  
   
 ## <a name="remarks"></a>Notes  
- L’énumération `ESymbolReadingPolicy` est utilisée avec la méthode [ICLRDebugManager :: SetSymbolReadingPolicy (](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setsymbolreadingpolicy-method.md) .  
+ L' `ESymbolReadingPolicy` énumération est utilisée avec la méthode [ICLRDebugManager :: SetSymbolReadingPolicy (](iclrdebugmanager-setsymbolreadingpolicy-method.md) .  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Énumérations d'hébergement](hosting-enumerations.md)

@@ -6,58 +6,58 @@ helpviewer_keywords:
 - .NET Framework 4, hosting interfaces
 - interfaces [.NET Framework hosting], version 4
 ms.assetid: f6af6116-f5b0-4bda-a276-fffdba70893d
-ms.openlocfilehash: 8484b47549f83795778420048d610e2d1626d87b
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: a524c0b0e01fbde95ce2341874511960b3e5738e
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75899717"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616851"
 ---
 # <a name="clr-hosting-interfaces-added-in-the-net-framework-4-and-45"></a>Interfaces d'hébergement du CLR ajoutées dans .NET Framework 4 et 4.5
 Cette section décrit les interfaces que les hôtes non gérés peuvent utiliser pour intégrer le common language runtime (CLR) des .NET Framework 4, .NET Framework 4,5 et versions ultérieures dans leurs applications. Ces interfaces fournissent des méthodes permettant à un hôte de configurer et de charger le runtime dans un processus.  
   
  À partir du .NET Framework 4, toutes les interfaces d’hébergement présentent les caractéristiques suivantes :  
   
-- Ils utilisent la gestion de la durée de vie (`AddRef` et `Release`), l’encapsulation (contexte implicite) et les `QueryInterface` à partir de COM.  
+- Ils utilisent la gestion de la durée de vie ( `AddRef` et `Release` ), l’encapsulation (contexte implicite) et `QueryInterface` à partir de com.  
   
-- Ils n’utilisent pas les types COM tels que `BSTR`, `SAFEARRAY`ou `VARIANT`.  
+- Ils n’utilisent pas les types COM tels que `BSTR` , `SAFEARRAY` ou `VARIANT` .  
   
 - Il n’existe pas de modèles cloisonnés, d’agrégation ou d’activation du Registre qui utilisent la [fonction CoCreateInstance](/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstance).  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [ICLRAppDomainResourceMonitor, interface](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)  
+ [ICLRAppDomainResourceMonitor, interface](iclrappdomainresourcemonitor-interface.md)  
  Fournit des méthodes qui inspectent la mémoire et l’utilisation de l’UC d’un domaine d’application.  
   
- [ICLRDomainManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrdomainmanager-interface.md)  
+ [ICLRDomainManager, interface](iclrdomainmanager-interface.md)  
  Permet à l’hôte de spécifier le gestionnaire de domaine d’application qui sera utilisé pour initialiser le domaine d’application par défaut et pour spécifier les propriétés d’initialisation.  
   
- [ICLRGCManager2, interface](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-interface.md)  
- Fournit la méthode [setgcstartuplimitsex,](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md) , qui permet à un hôte de définir la taille du segment garbage collection et la taille maximale de la génération 0 du système garbage collection à des valeurs supérieures à `DWORD`.  
+ [ICLRGCManager2, interface](iclrgcmanager2-interface.md)  
+ Fournit la méthode [setgcstartuplimitsex,](iclrgcmanager2-setgcstartuplimitsex-method.md) , qui permet à un hôte de définir la taille du segment garbage collection et la taille maximale de la génération 0 du système garbage collection à des valeurs supérieures à `DWORD` .  
   
- [ICLRMetaHost, interface](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)  
+ [ICLRMetaHost, interface](iclrmetahost-interface.md)  
  Fournit des méthodes qui retournent une version spécifique du CLR, répertorient tous les CLR installés, répertorient tous les runtimes in-process, retournent l’interface d’activation et découvrent la version CLR utilisée pour compiler un assembly.  
   
- [ICLRMetaHostPolicy, interface](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)  
- Fournit la méthode [GetRequestedRuntime](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) qui fournit une interface CLR basée sur des critères de stratégie, un assembly managé, une version et un fichier de configuration.  
+ [ICLRMetaHostPolicy, interface](iclrmetahostpolicy-interface.md)  
+ Fournit la méthode [GetRequestedRuntime](iclrmetahostpolicy-getrequestedruntime-method.md) qui fournit une interface CLR basée sur des critères de stratégie, un assembly managé, une version et un fichier de configuration.  
   
- [ICLRRuntimeInfo, interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)  
+ [ICLRRuntimeInfo, interface](iclrruntimeinfo-interface.md)  
  Fournit des méthodes qui retournent des informations sur un Runtime spécifique, y compris la version, le répertoire et l’état de chargement.  
   
- [ICLRStrongName, interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)  
- Fournit des fonctions statiques globales de base pour la signature d’assemblys avec des noms forts. Toutes les méthodes [ICLRStrongName](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md) retournent des valeurs HRESULT com standard.  
+ [ICLRStrongName, interface](iclrstrongname-interface.md)  
+ Fournit des fonctions statiques globales de base pour la signature d’assemblys avec des noms forts. Toutes les méthodes [ICLRStrongName](iclrstrongname-interface.md) retournent des valeurs HRESULT com standard.  
   
- [ICLRStrongName2, interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname2-interface.md)  
+ [ICLRStrongName2, interface](iclrstrongname2-interface.md)  
  Offre la possibilité de créer des noms forts à l’aide du groupe SHA-2 d’algorithmes de hachage sécurisé (SHA-256, SHA-384 et SHA-512).  
   
- [ICLRTask2, interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask2-interface.md)  
- Fournit toutes les fonctionnalités de l' [interface ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md); en outre, fournit des méthodes qui permettent de retarder les abandons de thread sur le thread actuel.  
+ [ICLRTask2, interface](iclrtask2-interface.md)  
+ Fournit toutes les fonctionnalités de l' [interface ICLRTask](iclrtask-interface.md); en outre, fournit des méthodes qui permettent de retarder les abandons de thread sur le thread actuel.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Coclasses et interfaces d’hébergement CLR dépréciées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-interfaces-and-coclasses.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Interfaces d'hébergement du CLR et coclasses déconseillées](deprecated-clr-hosting-interfaces-and-coclasses.md)  
  Décrit les interfaces d’hébergement fournies avec les versions de .NET Framework 1,0 et 1,1.  
   
- [Interfaces d’hébergement CLR](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces.md)  
+ [Interfaces d'hébergement du CLR](clr-hosting-interfaces.md)  
  Décrit les interfaces d’hébergement fournies avec les versions .NET Framework 2,0, 3,0 et 3,5.  
   
- [Hébergement](../../../../docs/framework/unmanaged-api/hosting/index.md)  
+ [Hébergement](index.md)  
  Présente l’hébergement dans le .NET Framework.

@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: 5bb12f9a-0612-434b-b4ed-2db636a20bec
 topic_type:
 - apiref
-ms.openlocfilehash: 6132e94544b30486b70ecfec49c1ddd5e3c0f50b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 899d6e74902e47f1f41b849bd5c25048baa175f7
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178114"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617137"
 ---
 # <a name="getrequestedruntimeversionforclsid-function"></a>GetRequestedRuntimeVersionForCLSID, fonction
-Obtient les informations appropriées de version de l’heure courante `CLSID`(CLR) pour la classe avec le spécifié .  
+Obtient les informations de version de common language runtime (CLR) appropriées pour la classe avec le spécifié `CLSID` .  
   
- Cette fonction a été dépréciée dans le cadre .NET 4.  
+ Cette fonction a été dépréciée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,41 +40,41 @@ HRESULT GetRequestedRuntimeVersionForCLSID (
   
 ## <a name="parameters"></a>Paramètres  
  `rclsid`  
- [dans]  Le `CLSID` composant.  
+ dans  `CLSID`Du composant.  
   
  `pVersion`  
- [out]  Un tampon qui contient la chaîne de numéro de version une fois terminé.  
+ à  Mémoire tampon qui contient la chaîne de numéro de version en cas de réussite.  
   
  `cchBuffer`  
- [dans]  La taille, en caractères `pVersion` larges, du tampon.  
+ dans  Taille, en caractères larges, de la `pVersion` mémoire tampon.  
   
  `dwLength`  
- [out] La longueur, dans les octets, du tampon retourné.  
+ à Longueur, en octets, de la mémoire tampon retournée.  
   
  `dwResolutionFlags`  
- [dans]  Une des valeurs CLSID_RESOLUTION_FLAGS. Les valeurs suivantes sont admises :  
+ dans  L’une des valeurs CLSID_RESOLUTION_FLAGS. Les valeurs suivantes sont admises :  
   
-- CLSID_RESOLUTION_DEFAULT: (0x0) précise que le comportement interop par défaut doit être utilisé.  
+- CLSID_RESOLUTION_DEFAULT : (0x0) spécifie que le comportement d’interopérabilité par défaut doit être utilisé.  
   
-- CLSID_RESOLUTION_REGISTERED: (0x1) précise que le registre doit être recherché et la politique cale doit être appliquée.  
+- CLSID_RESOLUTION_REGISTERED : (0x1) spécifie que la recherche doit être effectuée dans le registre et que la stratégie de shim doit être appliquée.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|La fonction est revenue avec succès.|  
-|E_INVALIDARG|L’un des paramètres a un type ou un format invalide.|  
-|ERROR_INSUFFICIENT_BUFFER|Le `pVersion` tampon n’est pas assez grand pour tenir la chaîne de version entière.|  
-|REGDB_E_CLASSNOTREG|Il n’y a `CLSID`pas de classe enregistrée auprès des spécifiés .|  
-|E_POINTER|`dwLength`est nul, `cchBuffer` ou est assez grand pour `pVersion` tenir la chaîne de version, mais est nul.|  
+|S_OK|La fonction a été retournée avec succès.|  
+|E_INVALIDARG|Le type ou le format de l’un des paramètres n’est pas valide.|  
+|ERROR_INSUFFICIENT_BUFFER|La `pVersion` mémoire tampon n’est pas assez grande pour contenir la chaîne de version entière.|  
+|REGDB_E_CLASSNOTREG|Aucune classe n’est inscrite avec le spécifié `CLSID` .|  
+|E_POINTER|`dwLength`a la valeur null ou `cchBuffer` est suffisamment grand pour contenir la chaîne de version, mais `pVersion` a la valeur null.|  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
+ **En-tête :** MSCorEE. h  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonction d'hébergement du CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Fonction d'hébergement du CLR déconseillées](deprecated-clr-hosting-functions.md)

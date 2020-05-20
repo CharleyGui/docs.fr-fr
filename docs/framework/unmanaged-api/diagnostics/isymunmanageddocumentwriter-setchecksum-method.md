@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c7e99879-421f-43ce-b193-34733cf30085
 topic_type:
 - apiref
-ms.openlocfilehash: dbf876a514ce106c566a168f688eb3a22d3a1ea2
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 06a331e24622e0a155d974ca869818a6532baa1f
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449046"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615538"
 ---
 # <a name="isymunmanageddocumentwritersetchecksum-method"></a>ISymUnmanagedDocumentWriter::SetCheckSum, méthode
 Définit les informations de la somme de contrôle.  
@@ -39,7 +39,7 @@ HRESULT SetCheckSum(
  dans GUID qui représente l’identificateur d’algorithme.  
   
  `checkSumSize`  
- dans `ULONG32` qui indique la taille, en octets, de la mémoire tampon de `checkSum`.  
+ dans `ULONG32`Qui indique la taille, en octets, de la `checkSum` mémoire tampon.  
   
  `checkSum`  
  dans Mémoire tampon qui stocke les informations de somme de contrôle.  
@@ -47,9 +47,9 @@ HRESULT SetCheckSum(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedDocumentWriter, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-interface.md)
+- [ISymUnmanagedDocumentWriter, interface](isymunmanageddocumentwriter-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5aef6808-5aac-4b2f-a2c7-fee1575c55ed
 topic_type:
 - apiref
-ms.openlocfilehash: 6becc44b061ff2baac63437b6a72375d1c3735b2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e7cb1c2070e760258e548d2f45e3b6ed11e046c4
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131163"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616318"
 ---
 # <a name="eclroperation-enumeration"></a>EClrOperation, énumération
 Décrit l’ensemble des opérations pour lesquelles un hôte peut appliquer des actions de stratégie.  
@@ -42,8 +42,8 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`OPR_AppDomainRudeUnload`|L’hôte peut spécifier des actions de stratégie à entreprendre lorsqu’un <xref:System.AppDomain> est déchargé en mode non normal (impropre).|  
-|`OPR_AppDomainUnload`|L’hôte peut spécifier des actions de stratégie à entreprendre lors du déchargement d’un <xref:System.AppDomain>.|  
+|`OPR_AppDomainRudeUnload`|L’hôte peut spécifier des actions de stratégie à entreprendre quand un <xref:System.AppDomain> est déchargé en mode non normal (impropre).|  
+|`OPR_AppDomainUnload`|L’hôte peut spécifier des actions de stratégie à entreprendre quand un <xref:System.AppDomain> est déchargé.|  
 |`OPR_FinalizerRun`|L’hôte peut spécifier des actions de stratégie à effectuer lors de l’exécution des finaliseurs.|  
 |`OPR_ProcessExit`|L’hôte peut spécifier des actions de stratégie à entreprendre lorsque le processus se termine.|  
 |`OPR_ThreadAbort`|L’hôte peut spécifier des actions de stratégie à entreprendre lorsqu’un thread est abandonné.|  
@@ -53,25 +53,25 @@ typedef enum {
 ## <a name="remarks"></a>Notes  
  L’infrastructure de fiabilité du common language runtime (CLR) distingue les abandons et les échecs d’allocation de ressources qui se produisent dans les régions de code critiques et ceux qui se produisent dans les régions de code non critiques. Cette distinction est conçue pour permettre aux hôtes de définir différentes stratégies en fonction de l’endroit où une défaillance se produit dans le code.  
   
- Une *région critique de code* est un espace où le CLR ne peut pas garantir que l’abandon d’une tâche ou l’échec de la réalisation d’une demande de ressources affectera uniquement la tâche en cours. Par exemple, si une tâche détient un verrou et reçoit un HRESULT qui indique un échec lors de l’exécution d’une demande d’allocation de mémoire, il est insuffisant simplement d’abandonner cette tâche pour garantir la stabilité du <xref:System.AppDomain>, car le <xref:System.AppDomain> peut contenir d’autres tâches en attente du même verrou. L’abandon de la tâche en cours peut entraîner le blocage de ces autres tâches. Dans ce cas, l’hôte a besoin de pouvoir décharger l’ensemble du <xref:System.AppDomain> plutôt que de risquer une instabilité potentielle.  
+ Une *région critique de code* est un espace où le CLR ne peut pas garantir que l’abandon d’une tâche ou l’échec de la réalisation d’une demande de ressources affectera uniquement la tâche en cours. Par exemple, si une tâche détient un verrou et reçoit un HRESULT qui indique un échec lors de la création d’une demande d’allocation de mémoire, il est insuffisant simplement d’abandonner cette tâche pour garantir la stabilité du <xref:System.AppDomain> , car <xref:System.AppDomain> peut contenir d’autres tâches en attente du même verrou. L’abandon de la tâche en cours peut entraîner le blocage de ces autres tâches. Dans ce cas, l’hôte a besoin de pouvoir décharger l’intégralité du <xref:System.AppDomain> au lieu de l’instabilité potentielle des risques.  
   
  Une *région de code non critique*, en revanche, est une région dans laquelle le CLR peut garantir qu’un abandon ou un échec affectera uniquement la tâche sur laquelle l’erreur se produit.  
   
  Le CLR distingue également les abandons normaux et non normaux (brutal). En général, un abandon normal ou normal fait tout son possible pour exécuter des routines de gestion des exceptions et des finaliseurs avant d’abandonner une tâche, tandis qu’un abandon impropre n’apporte aucune garantie de ce type.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [EClrFailure, énumération](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)
-- [EPolicyAction, énumération](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)
-- [ICLRPolicyManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)
-- [IHostPolicyManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)
-- [Énumérations d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [EClrFailure, énumération](eclrfailure-enumeration.md)
+- [EPolicyAction, énumération](epolicyaction-enumeration.md)
+- [ICLRPolicyManager, interface](iclrpolicymanager-interface.md)
+- [IHostPolicyManager, interface](ihostpolicymanager-interface.md)
+- [Énumérations d'hébergement](hosting-enumerations.md)

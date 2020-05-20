@@ -3,12 +3,12 @@ title: Qu’est-ce que Model Builder et comment fonctionne-t-il ?
 description: Comment utiliser Model Builder ML.NET pour entraîner automatiquement un modèle Machine Learning
 ms.date: 03/25/2020
 ms.custom: overview, mlnet-tooling
-ms.openlocfilehash: 9cf66455109908ebd9fc10e62cf4f067609b57d9
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 4afdbfd1682a30647b09d05d51a5c73c214fe2bd
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80344770"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616927"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Qu’est-ce que Model Builder et comment fonctionne-t-il ?
 
@@ -36,17 +36,17 @@ Un scénario est une description du type de prédiction que vous voulez faire av
 
 ### <a name="which-machine-learning-scenario-is-right-for-me"></a>Quel est le bon scénario Machine Learning pour moi ?
 
-Dans Model Builder, vous devez sélectionner un scénario. Le type de scénario dépend du type de prédiction que vous essayez de faire.
+Dans le générateur de modèles, vous devez sélectionner un scénario. Le type de scénario dépend du type de prédiction que vous essayez d’effectuer.
 
 #### <a name="text-classification"></a>Classification de texte
 
-La classification est utilisée pour classer les données en catégories.
+La classification permet de classer les données dans des catégories.
 
 ![Diagramme montrant des exemples de classification binaire incluant la détection des fraudes, l’atténuation des risques et le filtrage d’applications](media/binary-classification-examples.png)
 
 ![Exemples de classification multiclasse incluant la classification de documents et de produits, le routage de tickets de support et la hiérarchisation des problèmes des clients](media/multiclass-classification-examples.png)
 
-#### <a name="value-prediction"></a>Prévision de la valeur
+#### <a name="value-prediction"></a>Prédiction de valeur
 
 La régression est utilisée pour prédire des nombres.
 
@@ -54,37 +54,37 @@ La régression est utilisée pour prédire des nombres.
 
 #### <a name="image-classification"></a>Classification d’image
 
-La classification des images peut être utilisée pour identifier les images de différentes catégories. Par exemple, différents types de terrain ou d’animaux ou de défauts de fabrication.
+La classification d’images peut être utilisée pour identifier les images de différentes catégories. Par exemple, différents types de terrain ou d’animaux ou de défauts de fabrication.
 
-Vous pouvez utiliser le scénario de classification d’image si vous avez un ensemble d’images, et que vous souhaitez classer les images en différentes catégories.
+Vous pouvez utiliser le scénario de classification d’images si vous disposez d’un ensemble d’images et que vous souhaitez classer les images en différentes catégories.
 
 #### <a name="recommendation"></a>Recommandation
 
-Le scénario de recommandation prévoit une liste d’éléments suggérés pour un utilisateur particulier, en fonction de la similitude de leurs goûts et de leurs aversions pour les autres utilisateurs.
+Le scénario de recommandation prédit une liste d’éléments suggérés pour un utilisateur spécifique, en fonction de la façon dont les utilisateurs aiment et ressemblent à d’autres utilisateurs.
 
-Vous pouvez utiliser le scénario de recommandation lorsque vous avez un ensemble d’utilisateurs et un ensemble de «produits», tels que des articles à acheter, des films, des livres ou des émissions de télévision, ainsi qu’un ensemble de utilisateurs "évaluations" de ces produits.
+Vous pouvez utiliser le scénario de recommandation lorsque vous disposez d’un ensemble d’utilisateurs et d’un ensemble de « produits », tels que des éléments à acheter, des films, des livres ou des émissions TV, ainsi qu’un ensemble de « évaluations » d’utilisateurs de ces produits.
 
 ## <a name="environment"></a>Environnement
 
-Vous pouvez former votre modèle d’apprentissage automatique localement sur votre machine ou dans le cloud sur Azure.
+Vous pouvez effectuer l’apprentissage de votre modèle de Machine Learning localement sur votre ordinateur ou dans le Cloud sur Azure.
 
-Lorsque vous vous entraînez localement, vous travaillez dans les contraintes de vos ressources informatiques (processeur, mémoire et disque). Lorsque vous vous entraînez dans le cloud, vous pouvez intensifier vos ressources pour répondre aux exigences de votre scénario, en particulier pour les grands jeux de données.
+Lorsque vous formez localement, vous travaillez dans les contraintes des ressources de votre ordinateur (processeur, mémoire et disque). Lorsque vous formez dans le Cloud, vous pouvez mettre à l’échelle vos ressources pour répondre aux besoins de votre scénario, en particulier pour les jeux de données volumineux.
 
-La formation locale est soutenue pour tous les scénarios.
+La formation locale est prise en charge pour tous les scénarios.
 
-La formation Azure est soutenue pour la classification d’images.
+La formation Azure est prise en charge pour la classification des images.
 
 ## <a name="data"></a>Données
 
-Une fois que vous avez choisi votre scénario, Model Builder vous demande de fournir un jeu de données. Les données sont utilisées pour entraîner, évaluer et choisir le meilleur modèle pour votre scénario.
+Une fois que vous avez choisi votre scénario, le générateur de modèles vous demande de fournir un jeu de données. Les données sont utilisées pour entraîner, évaluer et choisir le meilleur modèle pour votre scénario.
 
 ![Diagramme montrant les étapes de Model Builder](media/model-builder-steps.png)
 
-Modèle Builder prend en charge les ensembles de données dans les formats .tsv, .csv, .txt, ainsi que le format de base de données SQL. Si vous avez un fichier .txt, `,` `;` les `/t` colonnes doivent être séparées avec, ou et le fichier doit avoir une rangée d’en-tête.
+Le générateur de modèles prend en charge les jeux de données aux formats. tsv,. csv,. txt, ainsi que le format de base de données SQL. Si vous avez un fichier. txt, les colonnes doivent être séparées par `,` , `;` ou `/t` et le fichier doit avoir une ligne d’en-tête.
 
-Si le jeu de données est composé d’images, les types de fichiers pris en charge sont `.jpg` et `.png`.
+Si le jeu de données est constitué d’images, les types de fichiers pris en charge sont `.jpg` et `.png` .
 
-Pour plus d’informations, voir [les données de formation de charge dans Model Builder](how-to-guides/load-data-model-builder.md).
+Pour plus d’informations, consultez [charger des données d’apprentissage dans le générateur de modèles](how-to-guides/load-data-model-builder.md).
 
 ### <a name="choose-the-output-to-predict-label"></a>Choisir le résultat à prédire (étiquette)
 
@@ -107,15 +107,15 @@ L’étiquette est l’historique des prix des maisons pour cette ligne de valeu
 
 Si vous n’avez pas encore vos propres données, essayez un de ces jeux de données :
 
-|Scénario|Exemple|Données|Étiquette|Fonctionnalités|
+|Scénario|Exemple|Données|Etiquette|Fonctionnalités|
 |-|-|-|-|-|
 |classification ;|Prédire les anomalies de vente|[Données de ventes de produits](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Ventes de produits|Month|
-||Prédire le sentiment des commentaires sur les sites Web|[Données de commentaires de site web](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Étiquette (0 quand le sentiment est négatif, 1 quand il est positif)|Commentaire, Année|
-||Prédire les transactions frauduleuses par carte de crédit|[Données de carte de crédit](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Classe (1 en cas de fraude, sinon 0)|Quantité, V1-V28 (caractéristiques anonymisées)|
-||Prédire le type de problème dans un référentiel GitHub|[Données de problèmes GitHub](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Domaine|Titre, Description|
-|Prévision de la valeur|Prédire le prix du billet de taxi|[Données de courses de taxi](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Fare|Heure, distance du trajet|
-|Classification d’image|Prédire la catégorie d’un problème|[images de fleurs](http://download.tensorflow.org/example_images/flower_photos.tgz)|Le type de fleur: marguerite, pissenlit, roses, tournesols, tulipes|Les données d’image elles-mêmes|
-|Recommandation|Prédire les films que quelqu’un aimera|[notes de film](http://files.grouplens.org/datasets/movielens/ml-latest-small.zip)|Utilisateurs, Films|Évaluations|
+||Prédiction des sentiments de commentaires sur le site Web|[Données de commentaires de site web](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Étiquette (0 quand le sentiment est négatif, 1 quand il est positif)|Commentaire, Année|
+||Prédire les transactions de carte de crédit frauduleuse|[Données de carte de crédit](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Classe (1 en cas de fraude, sinon 0)|Quantité, V1-V28 (caractéristiques anonymisées)|
+||Prédire le type de problème dans un dépôt GitHub|[Données de problèmes GitHub](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Zone|Titre, Description|
+|Prédiction de valeur|Prédire le tarif des taxis|[Données de courses de taxi](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Fare|Heure, distance du trajet|
+|Classification d’image|Prédire la catégorie d’une fleur |[images de fleurs](http://download.tensorflow.org/example_images/flower_photos.tgz)|Type de fleur : marguerites, dandelion, roses, tournesols, tulipes|Données d’image elles-mêmes|
+|Recommandation|Prédire les films que quelqu’un souhaitera|[évaluations des films](http://files.grouplens.org/datasets/movielens/ml-latest-small.zip)|Utilisateurs, films|Évaluations|
 
 ## <a name="train"></a>Former
 
@@ -129,61 +129,61 @@ Comme Model Builder utilise le Machine Learning automatisé (AutoML), il ne néc
 
 ### <a name="how-long-should-i-train-for"></a>Combien de temps doit durer l’entraînement ?
 
-Model Builder utilise AutoML pour explorer plusieurs modèles pour vous trouver le modèle le plus performant.
+Le générateur de modèles utilise AutoML pour explorer plusieurs modèles afin de trouver le meilleur modèle d’exécution.
 
-Des périodes de formation plus longues permettent à AutoML d’explorer plus de modèles avec un plus large éventail de réglages.
+Des périodes de formation plus longues permettent à AutoML d’explorer plus de modèles avec un plus grand nombre de paramètres.
 
-Le tableau ci-dessous résume le temps moyen pris pour obtenir de bonnes performances pour une suite d’exemples de jeux de données, sur une machine locale.
+Le tableau ci-dessous résume la durée moyenne nécessaire pour obtenir de bonnes performances pour une suite d’exemples de jeux de données, sur un ordinateur local.
 
-|Taille de dataset|Temps moyen de formation|
+|Taille du jeu de données|Temps moyen de formation|
 |------------|---------------------|
-|0 - 10 Mo|10 s|
-|10 - 100 Mo|10 min|
-|100 - 500 Mo|30 min|
-|500 - 1 Go|60 min|
-|1 Go|Plus de 3 heures|
+|0-10 MO|10 s|
+|10-100 MO|10 min|
+|100-500 MO|30 min|
+|500-1 GO|60 min|
+|1 GO +|plus de 3 heures|
 
-Ces chiffres sont un guide seulement. La durée exacte de la formation dépend des faits :
+Ces chiffres sont un guide uniquement. La longueur exacte de l’apprentissage dépend des éléments suivants :
 
-- le nombre de fonctionnalités (colonnes) utilisées comme entrée au modèle
-- le type de colonnes
-- la tâche ML
-- le processeur, le disque et les performances de mémoire de la machine utilisée pour la formation
+- nombre de fonctionnalités (colonnes) utilisées comme entrée pour le modèle
+- type de colonne
+- tâche ML
+- performances du processeur, du disque et de la mémoire de la machine utilisée pour l’apprentissage
 
 ## <a name="evaluate"></a>Évaluer
 
-L’évaluation est le processus de mesure de la qualité de votre modèle. Modèle Builder utilise le modèle formé pour faire des prédictions avec de nouvelles données de test, puis mesure la qualité des prédictions sont.
+L’évaluation est le processus qui consiste à mesurer la qualité de votre modèle. Le générateur de modèles utilise le modèle formé pour faire des prédictions avec de nouvelles données de test, puis mesure la qualité des prédictions.
 
 Model Builder divise les données d’entraînement en un jeu d’entraînement et un jeu de test. Les données d’entraînement (80 %) sont utilisées pour entraîner votre modèle et les données de test (20 %) sont conservées à part pour évaluer votre modèle.
 
-### <a name="how-do-i-understand-my-model-performance"></a>Comment puis-je comprendre la performance de mon modèle ?
+### <a name="how-do-i-understand-my-model-performance"></a>Comment faire comprenez les performances de mon modèle ?
 
-Un scénario est adapté à une tâche d’apprentissage automatique. Chaque tâche ML a son propre ensemble de mesures d’évaluation.
+Un scénario est mappé à une tâche de Machine Learning. Chaque tâche ML possède son propre ensemble de mesures d’évaluation.
 
-#### <a name="value-prediction"></a>Prévision de la valeur
+#### <a name="value-prediction"></a>Prédiction de valeur
 
-La mesure par défaut pour les problèmes de prédiction de valeur est RSquared, la valeur des gammes RSquared entre 0 et 1. 1 est la meilleure valeur possible ou en d’autres termes plus la valeur de RSquared à 1 mieux votre modèle est performant.
+La mesure par défaut pour les problèmes de prédiction de valeur est RSquared, la valeur de RSquared est comprise entre 0 et 1. 1 est la meilleure valeur possible, ou en d’autres termes, plus la valeur de RSquared est proche de 1, plus votre modèle est performant.
 
-D’autres mesures signalées telles que la perte absolue, la perte au carré et la perte de RMS sont des mesures supplémentaires, qui peuvent être utilisées pour comprendre comment votre modèle fonctionne et le compare à d’autres modèles de prédiction de valeur.
+D’autres métriques signalées telles que la perte absolue, la perte au carré et la perte RMS sont des métriques supplémentaires, qui peuvent être utilisées pour comprendre comment votre modèle est exécuté et le comparer à d’autres modèles de prédiction de valeur.
 
 #### <a name="classification-2-categories"></a>Classification (2 catégories)
 
-La mesure par défaut pour les problèmes de classification est l’exactitude. L’exactitude définit la proportion de prédictions correctes que votre modèle fait sur le jeu de données de test. Plus il est proche de 100% ou 1,0, mieux c’est.
+La mesure par défaut pour les problèmes de classification est la précision. La précision définit la proportion de prédictions correctes que votre modèle effectue sur le jeu de données de test. Plus la valeur est proche de 100% ou 1,0, mieux c’est.
 
-D’autres mesures signalées comme l’AUC (zone sous la courbe), qui mesure le taux positif réel par rapport au taux de faux positifs devraient être supérieurs à 0,50 pour que les modèles soient acceptables.
+D’autres mesures signalées telles que AUC (zone sous la courbe), qui mesurent le taux réel positif par rapport au taux de faux positifs, doivent être supérieures à 0,50 pour que les modèles soient acceptables.
 
-Des mesures supplémentaires comme le score F1 peuvent être utilisées pour contrôler l’équilibre entre précision et rappel.
+Des métriques supplémentaires comme le score F1 peuvent être utilisées pour contrôler l’équilibre entre précision et rappel.
 
-#### <a name="classification-3-categories"></a>Classification (3 catégories et plus)
+#### <a name="classification-3-categories"></a>Classification (plus de 3 catégories)
 
-La mesure par défaut pour la classification multi-classes est Micro Accuracy. Plus la Micro Accuracy est proche à 100% ou 1,0, mieux c’est.
+La mesure par défaut de la classification multiclasse est micro-précision. Plus la micro-précision est proche de 100% ou 1,0, mieux c’est.
 
-Une autre mesure importante pour la classification multi-classe est macro-précision, semblable à Micro-précision le plus proche de 1.0 le mieux il est. Une bonne façon de penser à ces deux types de précision est:
+Une autre mesure importante pour la classification multiclasse est la précision des macros, similaire à la microprécision, plus proche de 1,0. Un bon moyen de réfléchir à ces deux types de précision est :
 
-- Micro-précision : À quelle fréquence un billet entrant est-il classé à la bonne équipe ?
-- Macro-précision : Pour une équipe moyenne, à quelle fréquence un billet entrant est-il correct pour son équipe ?
+- Microprécision : à quelle fréquence un ticket entrant est-il classé à l’équipe appropriée ?
+- Précision des macros : pour une équipe moyenne, à quelle fréquence un ticket entrant est-il correct pour son équipe ?
 
-### <a name="more-information-on-evaluation-metrics"></a>Plus d’informations sur les mesures d’évaluation
+### <a name="more-information-on-evaluation-metrics"></a>Plus d’informations sur les métriques d’évaluation
 
 Pour plus d’informations, consultez [Métriques d’évaluation des modèles](resources/metrics.md).
 
@@ -191,7 +191,7 @@ Pour plus d’informations, consultez [Métriques d’évaluation des modèles](
 
 Si le score de performances de votre modèle n’est pas aussi bon que souhaité, vous pouvez :
 
-- Entraîner sur une période de temps plus longue. Avec plus de temps, le moteur d’apprentissage automatique automatisé expérimente avec plus d’algorithmes et de paramètres.
+- Entraîner sur une période de temps plus longue. Avec plus de temps, le moteur de Machine Learning automatisé expérimente des algorithmes et des paramètres supplémentaires.
 
 - Ajouter des données. Parfois, la quantité de données n’est pas suffisante pour entraîner un modèle Machine Learning de haute qualité.
 

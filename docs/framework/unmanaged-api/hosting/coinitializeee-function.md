@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7e42a928-5068-4ba6-b8c3-806551a01fa8
 topic_type:
 - apiref
-ms.openlocfilehash: 9e90772ae8c3e6be5744fcccc9901123df871831
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 57508a2df3a49c39d25347f2a3038442c37278da
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131939"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616760"
 ---
 # <a name="coinitializeee-function"></a>CoInitializeEE, fonction
-Garantit que le moteur d’exécution de common language runtime est chargé dans un processus. Cette fonction est déconseillée dans le .NET Framework 4. Utilisez à la place la méthode [ICLRRuntimeHost :: Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) .  
+Garantit que le moteur d’exécution de common language runtime est chargé dans un processus. Cette fonction est déconseillée dans le .NET Framework 4. Utilisez à la place la méthode [ICLRRuntimeHost :: Start](iclrruntimehost-start-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +35,7 @@ HRESULT CoInitializeEE (
   
 ## <a name="parameters"></a>Paramètres  
  `fFlags`  
- dans Une des constantes d’énumération [COINITIEE,](../../../../docs/framework/unmanaged-api/metadata/coinitiee-enumeration.md) .  
+ dans Une des constantes d’énumération [COINITIEE,](../metadata/coinitiee-enumeration.md) .  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les codes d’erreur COM standard tels qu’ils sont définis dans Winerror. h, ainsi que les valeurs du tableau suivant.  
@@ -49,15 +49,15 @@ HRESULT CoInitializeEE (
 ## <a name="remarks"></a>Notes  
  Cette méthode charge le moteur d’exécution s’il n’a pas été chargé précédemment.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions statiques globales des métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+- [Fonctions statiques globales des métadonnées](../metadata/metadata-global-static-functions.md)

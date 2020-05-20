@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: f241b620-9ec5-42fd-92ef-3b22329db72a
 topic_type:
 - apiref
-ms.openlocfilehash: 45268929b6e9ad6ac6423aa0fa2b7b5022bc9179
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f558d209d13fae93bd3a6f5e0e653afb91371a6a
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176615"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615330"
 ---
 # <a name="isymunmanagedscope2getconstants-method"></a>ISymUnmanagedScope2::GetConstants, méthode
-Obtient les constantes locales définies dans ce champ d’application.  
+Obtient les constantes locales définies dans cette portée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,20 +38,20 @@ HRESULT GetConstants(
   
 ## <a name="parameters"></a>Paramètres  
  `cConstants`  
- [dans] La longueur du tampon `pcConstants` que le paramètre indique.  
+ dans Longueur de la mémoire tampon vers laquelle `pcConstants` pointe le paramètre.  
   
  `pcConstants`  
- [out] Un pointeur `ULONG32` à un qui reçoit la taille, en caractères, de la mémoire tampon nécessaire pour contenir les constantes.  
+ à Pointeur vers un `ULONG32` qui reçoit la taille, en caractères, de la mémoire tampon requise pour contenir les constantes.  
   
  `constants`  
- [out] Le tampon qui stocke les constantes.  
+ à Mémoire tampon qui stocke les constantes.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit; autrement, E_FAIL ou un autre code d’erreur.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Spécifications  
- **En-tête:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Conditions requises  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedScope2, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope2-interface.md)
+- [ISymUnmanagedScope2, interface](isymunmanagedscope2-interface.md)

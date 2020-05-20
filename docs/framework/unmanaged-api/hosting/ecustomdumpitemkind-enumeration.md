@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 7105a6c8-6e4e-48de-ac3d-74ac75e5de2e
 topic_type:
 - apiref
-ms.openlocfilehash: ebbbdf02837cb1257ec4756c9d67f5a1ac0136fe
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 12a1142759532890f541a7c81006f8b3aed4d299
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131192"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616266"
 ---
 # <a name="ecustomdumpitemkind-enumeration"></a>ECustomDumpItemKind, énumération
-Réservé pour une extension future de la structure [CustomDumpItem](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md) .  
+Réservé pour une extension future de la structure [CustomDumpItem](customdumpitem-structure.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,18 +36,18 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`DUMP_ITEM_None`|Réservé à un usage ultérieur.|  
+|`DUMP_ITEM_None`|Réservé pour un usage futur.|  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRErrorReportingManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)
-- [Énumérations d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [ICLRErrorReportingManager, interface](iclrerrorreportingmanager-interface.md)
+- [Énumérations d'hébergement](hosting-enumerations.md)

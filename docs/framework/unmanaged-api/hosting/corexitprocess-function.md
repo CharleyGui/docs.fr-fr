@@ -18,17 +18,17 @@ helpviewer_keywords:
 ms.assetid: a5cab4c6-990e-47f3-8798-cf422b791015
 topic_type:
 - apiref
-ms.openlocfilehash: 44578595b3cb790570c5359e714bd39c109cf1f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a60805e1fd78cb14835957a7afc14fe279cb20fb
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176459"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616565"
 ---
 # <a name="corexitprocess-function"></a>CorExitProcess, fonction
-Ferme le processus actuel non menté.  
+Arrête le processus non managé actuel.  
   
- Cette fonction a été dépréciée dans le cadre .NET 4. Utilisez la méthode [ICLRMetaHost::ExitProcess](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-exitprocess-method.md) à la place.  
+ Cette fonction a été dépréciée dans le .NET Framework 4. Utilisez la méthode [ICLRMetaHost :: ExitProcess](iclrmetahost-exitprocess-method.md) à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +40,22 @@ void STDMETHODCALLTYPE CorExitProcess (
   
 ## <a name="parameters"></a>Paramètres  
  `exitCode`  
- Un integer qui spécifie le code de sortie du processus.  
+ Entier qui spécifie le code de sortie du processus.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
   
 > [!NOTE]
-> En commençant par le cadre `CorExitProcess` .NET 4, quitte chaque runtime commencé dans le processus, pas seulement le temps d’exécution auquel les API hérités ont été liés.  
+> À partir du .NET Framework 4, `CorExitProcess` quitte chaque Runtime démarré dans le processus, pas seulement le runtime auquel les API héritées ont été liées.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque:** MSCorEE.dll MSCorEE.dll MSCorEE.dll MSCor  
+ **Bibliothèque :** MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonction d'hébergement du CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Fonction d'hébergement du CLR déconseillées](deprecated-clr-hosting-functions.md)

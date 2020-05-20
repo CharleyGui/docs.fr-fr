@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: eed63d31-d977-4c7d-9443-f9d37a2a7d81
 topic_type:
 - apiref
-ms.openlocfilehash: 65dc330e88cb2457cc34f9994313373ab1ab84aa
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3c4f673d88594e86004c6d51a4d58a0ac4642875
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126700"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615941"
 ---
 # <a name="iclrassemblyidentitymanagergetreferencedassembliesfromfile-method"></a>ICLRAssemblyIdentityManager::GetReferencedAssembliesFromFile, méthode
-Obtient une instance [ICLRReferenceAssemblyEnum](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md) qui contient une liste d’assemblys référencés par l’assembly dans le chemin d’accès au fichier spécifié.  
+Obtient une instance [ICLRReferenceAssemblyEnum](iclrreferenceassemblyenum-interface.md) qui contient une liste d’assemblys référencés par l’assembly dans le chemin d’accès au fichier spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,16 +44,16 @@ HRESULT GetReferencedAssembliesFromFile (
  dans Fourni pour une extensibilité future. CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT est la seule valeur prise en charge par la version actuelle du common language runtime (CLR).  
   
  `pExcludeAssembliesList`  
- dans Pointeur vers un objet [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) qui représente les assemblys qui doivent être exclus de `ppReferenceEnum`.  
+ dans Pointeur vers un objet [ICLRAssemblyReferenceList](iclrassemblyreferencelist-interface.md) qui représente les assemblys qui doivent être exclus de `ppReferenceEnum` .  
   
  `ppReferenceEnum`  
- à Pointeur vers l’adresse d’un objet `ICLRReferenceAssemblyEnum` qui contient les données d’identité de l’assembly pour les assemblys référencés par l’assembly au niveau de `pwzFilePath`, à l’exclusion des assemblys représentés par `pExcludeAssembliesList`.  
+ à Pointeur vers l’adresse d’un `ICLRReferenceAssemblyEnum` objet qui contient les données d’identité de l’assembly pour les assemblys référencés par l’assembly à `pwzFilePath` , à l’exclusion des assemblys représentés par `pExcludeAssembliesList` .  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|La méthode a été retournée avec succès.|  
+|S_OK|Retour réussi de la méthode.|  
 |HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -61,19 +61,19 @@ HRESULT GetReferencedAssembliesFromFile (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Notes  
- L’appelant peut choisir d’exclure un ensemble de références d’assembly connues de la liste retournée. Cet ensemble est défini par le paramètre `pExcludeAssembliesList`.  
+ L’appelant peut choisir d’exclure un ensemble de références d’assembly connues de la liste retournée. Cet ensemble est défini par le `pExcludeAssembliesList` paramètre.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRAssemblyIdentityManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
-- [ICLRAssemblyReferenceList, interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
-- [ICLRReferenceAssemblyEnum, interface](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md)
+- [ICLRAssemblyIdentityManager, interface](iclrassemblyidentitymanager-interface.md)
+- [ICLRAssemblyReferenceList, interface](iclrassemblyreferencelist-interface.md)
+- [ICLRReferenceAssemblyEnum, interface](iclrreferenceassemblyenum-interface.md)

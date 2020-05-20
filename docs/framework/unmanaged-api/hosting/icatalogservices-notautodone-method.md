@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 86a09871-33e4-412c-aeb8-4d18f924595b
 topic_type:
 - apiref
-ms.openlocfilehash: 2644a36e9a2901ef1007ebf3180b9fc55b5ca67a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a7f92878678bc546be802652718236eab159fe21
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127198"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617020"
 ---
 # <a name="icatalogservicesnotautodone-method"></a>ICatalogServices::NotAutodone, méthode
 Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.  
@@ -33,4 +33,4 @@ HRESULT NotAutodone ( );
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Interfaces d'hébergement](hosting-interfaces.md)

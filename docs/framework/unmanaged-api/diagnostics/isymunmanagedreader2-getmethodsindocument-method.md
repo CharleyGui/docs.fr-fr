@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c7ae84d6-81e8-4cb7-a1f9-d48b6cde5d79
 topic_type:
 - apiref
-ms.openlocfilehash: 70c1d87ae32fb70f8d9f6e32b527394022459526
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 68a0f9ec8793d465a6fa3b1cb6936eddd7be4c8f
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446429"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615408"
 ---
 # <a name="isymunmanagedreader2getmethodsindocument-method"></a>ISymUnmanagedReader2::GetMethodsInDocument, méthode
 Obtient toutes les méthodes qui ont des informations de ligne dans le document fourni.  
@@ -41,7 +41,7 @@ HRESULT GetMethodsInDocument(
  dans Pointeur vers le document.  
   
  `cMethod`  
- dans `ULONG32` qui indique la taille du tableau de `pRetVal`.  
+ dans `ULONG32`Qui indique la taille du `pRetVal` tableau.  
   
  `pcMethod`  
  à Pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les méthodes.  
@@ -52,9 +52,9 @@ HRESULT GetMethodsInDocument(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedReader2, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader2-interface.md)
+- [ISymUnmanagedReader2, interface](isymunmanagedreader2-interface.md)

@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 01f9a59b-7679-4d42-9ced-4a8981625c3d
 topic_type:
 - apiref
-ms.openlocfilehash: 64e0c466edcd8863244e6ed184c18422b5f66875
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 88e81779fc9c20c506f3b0aa11ac2da3958dfe86
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178264"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616695"
 ---
 # <a name="cor_gc_thread_stats-structure"></a>COR_GC_THREAD_STATS, structure
-Contient des statistiques par fil concernant la collecte des ordures.  
+Contient des statistiques par thread relatives à garbage collection.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ typedef struct _COR_GC_THREAD_STATS {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`PerThreadAllocation`|Le nombre d’octets de mémoire alloués sur `COR_GC_THREAD_STATS` le fil qui est associé à l’instance actuelle. Ce nombre est effacé à zéro chaque fois qu’une collecte d’ordures de génération zéro se produit.|  
-|`Flags`|Le nombre d’octets promus à une génération supérieure à la plus récente collecte des ordures.|  
+|`PerThreadAllocation`|Nombre d’octets de mémoire alloués sur le thread associé à l’instance actuelle `COR_GC_THREAD_STATS` . Ce nombre est effacé à zéro chaque fois qu’un garbage collection de génération zéro se produit.|  
+|`Flags`|Nombre d’octets promus à une génération supérieure au garbage collection le plus récent.|  
   
-## <a name="remarks"></a>Notes   
- [ICLRTask::GetMemStats](../../../../docs/framework/unmanaged-api/hosting/iclrtask-getmemstats-method.md) prend un paramètre de sortie de type `COR_GC_THREAD_STATS`.  
+## <a name="remarks"></a>Notes  
+ [ICLRTask :: GetMemStats,](iclrtask-getmemstats-method.md) accepte un paramètre de sortie de type `COR_GC_THREAD_STATS` .  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** GCHost.idl  
+ **En-tête :** GCHost. idl  
   
- **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures d'hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
-- [IHostTask, interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
+- [Structures d'hébergement](hosting-structures.md)
+- [IHostTask, interface](ihosttask-interface.md)

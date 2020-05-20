@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ea8af0d5-4133-4472-8a1f-50570d7e85fa
 topic_type:
 - apiref
-ms.openlocfilehash: 49a60b6b9b076138d8ff1f8a15041e9a6bacfede
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: dbe4129cf4160a1a9b31bc6f418095ea4b392d57
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129255"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616994"
 ---
 # <a name="iclrerrorreportingmanager-interface"></a>ICLRErrorReportingManager, interface
 Fournit des méthodes qui permettent à l’hôte de configurer des vidages de pile personnalisés pour le rapport d’erreurs.  
@@ -28,26 +28,26 @@ Fournit des méthodes qui permettent à l’hôte de configurer des vidages de p
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[BeginCustomDump, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-begincustomdump-method.md)|Spécifie la configuration des vidages de pile personnalisés pour le rapport d’erreurs.|  
-|[EndCustomDump, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-endcustomdump-method.md)|Efface la configuration de vidage de pile personnalisée qui a été définie par un appel antérieur à `BeginCustomDump`.|  
-|[GetBucketParametersForCurrentException, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-getbucketparametersforcurrentexception-method.md)|Obtient le compartiment Watson pour l’exception actuelle sur le thread appelant.|  
+|[BeginCustomDump, méthode](iclrerrorreportingmanager-begincustomdump-method.md)|Spécifie la configuration des vidages de pile personnalisés pour le rapport d’erreurs.|  
+|[EndCustomDump, méthode](iclrerrorreportingmanager-endcustomdump-method.md)|Efface la configuration de vidage de pile personnalisée qui a été définie par un appel antérieur à `BeginCustomDump` .|  
+|[GetBucketParametersForCurrentException, méthode](iclrerrorreportingmanager-getbucketparametersforcurrentexception-method.md)|Obtient le compartiment Watson pour l’exception actuelle sur le thread appelant.|  
   
 ## <a name="remarks"></a>Notes  
- La méthode `BeginCustomDump` définit une configuration de vidage de pile personnalisée. La méthode `EndCustomDump` efface la configuration de vidage de pile personnalisée et libère tous les États associés. Elle doit être appelée une fois que le vidage personnalisé est terminé.  
+ La `BeginCustomDump` méthode définit une configuration de vidage de pile personnalisée. La `EndCustomDump` méthode efface la configuration de vidage de pile personnalisée et libère tous les États associés. Elle doit être appelée une fois que le vidage personnalisé est terminé.  
   
 > [!IMPORTANT]
-> L’échec de l’appel de `EndCustomDump` entraîne une fuite de mémoire.  
+> L’échec de l’appel `EndCustomDump` entraîne une fuite de mémoire.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ECustomDumpItemKind, énumération](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md)
-- [Interfaces d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ECustomDumpItemKind, énumération](ecustomdumpitemkind-enumeration.md)
+- [Interfaces d'hébergement](hosting-interfaces.md)
