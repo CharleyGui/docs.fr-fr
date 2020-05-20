@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e11c9baa-4cf1-4bb4-a95f-b1908893b46c
 topic_type:
 - apiref
-ms.openlocfilehash: ca5afa8c0cf0198dbc8ab65824605f18c22dcdbb
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 58d81fd150684f254333c17374d06f7dd5b95823
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449256"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441412"
 ---
 # <a name="isymunmanagedconstant-interface"></a>ISymUnmanagedConstant, interface
 Fournit l’accès aux constantes non managées.  
@@ -28,13 +28,13 @@ Fournit l’accès aux constantes non managées.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetName, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getname-method.md)|Obtient le nom de la constante.|  
-|[GetSignature, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)|Obtient la signature de la constante.|  
-|[GetValue, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)|Obtient la valeur de la constante.|  
+|[GetName, méthode](isymunmanagedconstant-getname-method.md)|Obtient le nom de la constante.|  
+|[GetSignature, méthode](isymunmanagedconstant-getsignature-method.md)|Obtient la signature de la constante.|  
+|[GetValue, méthode](isymunmanagedconstant-getvalue-method.md)| Obtient la valeur de la constante.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [Interfaces du magasin de symboles de diagnostics](diagnostics-symbol-store-interfaces.md)

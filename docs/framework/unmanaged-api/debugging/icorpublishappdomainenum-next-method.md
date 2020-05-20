@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: ad37cd10-0339-4d08-9b0e-4b3428bb4dc3
 topic_type:
 - apiref
-ms.openlocfilehash: 6f7f400c51ded0b98c0c2286cb6f90bbd77e47d7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5ac38005410ae6ed9c2f4160e926987791ad604
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178398"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421213"
 ---
 # <a name="icorpublishappdomainenumnext-method"></a>ICorPublishAppDomainEnum::Next, méthode
-Obtient le nombre spécifié de domaines d’application qui existent actuellement dans le processus, à partir de la position actuelle.  
+Obtient le nombre spécifié de domaines d’application qui existent actuellement dans le processus, en commençant à la position actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +38,22 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [dans] Nombre d’éléments à récupérer.  
+ dans Nombre d’éléments à récupérer.  
   
  `objects`  
- [out] Un pointeur à la gamme d’objets [ICorPublishAppDomain](icorpublishappdomain-interface.md) récupérés, dont chacun représente un domaine d’application.  
+ à Pointeur vers le tableau d’objets [ICorPublishAppDomain](icorpublishappdomain-interface.md) récupérés, chacun représentant un domaine d’application.  
   
  `pceltFetched`  
- [out] Pointeur sur le nombre de domaines d’application effectivement retourné. Cette valeur peut `celt` être nulle si elle en est une.  
+ à Pointeur vers le nombre de domaines d’application réellement retournés. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

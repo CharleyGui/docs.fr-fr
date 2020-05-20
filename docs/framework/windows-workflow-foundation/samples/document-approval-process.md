@@ -1,13 +1,14 @@
 ---
 title: Processus d'approbation des documents
+description: Cet exemple illustre de nombreuses fonctionnalités de Windows Workflow Foundation et Windows Communication Foundation dans un scénario de processus d’approbation de document.
 ms.date: 03/30/2017
 ms.assetid: 9b240937-76a7-45cd-8823-7f82c34d03bd
-ms.openlocfilehash: cee43aff991f9482de7b3172174eb0e786ec1fe6
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 18b4f978e9234daf22395f0d2f6f0889d0edf966
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710846"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421408"
 ---
 # <a name="document-approval-process"></a>Processus d'approbation des documents
 
@@ -18,7 +19,7 @@ Cet exemple illustre l’utilisation conjointe de nombreuses fonctionnalités de
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Application\DocumentApprovalProcess`
 
@@ -26,7 +27,7 @@ Cet exemple illustre l’utilisation conjointe de nombreuses fonctionnalités de
 
 L’illustration suivante montre le flux de travail du processus d’approbation des documents :
 
-![Workflow de processus d'approbation des documents](./media/document-approval-process/document-approval-process.jpg)
+![Flux de travail du processus d'approbation d'un document](./media/document-approval-process/document-approval-process.jpg)
 
 Du point de vue du client, le processus d'approbation fonctionne comme suit :
 
@@ -90,7 +91,7 @@ Du point de vue de l'application du responsable des approbations, le processus d
 
 2. Pour générer la solution, appuyez sur Ctrl+Maj+B.
 
-3. Pour exécuter la solution, lancez l’application du responsable des approbations en cliquant avec le bouton droit sur le projet ApprovalManager dans la **Explorateur de solutions** et en cliquant sur **déboguer**->**Démarrer** une nouvelle instance dans le menu contextuel.
+3. Pour exécuter la solution, lancez l’application du responsable des approbations en cliquant avec le bouton droit sur le projet ApprovalManager dans le **Explorateur de solutions** puis en cliquant sur **Déboguer** -> **Démarrer** une nouvelle instance dans le menu contextuel.
 
     Attendez que la sortie du responsable vous indique qu'il est prêt.
 
@@ -140,7 +141,7 @@ Du point de vue de l'application du responsable des approbations, le processus d
 
 6. Dans le client `UserType1`, sélectionnez le type d’approbation unique dans le menu déroulant et tapez un nom de document ainsi qu’un contenu. Cliquez sur **demander une approbation**.
 
-7. Dans les clients `UserType2`, un document en attente d'approbation apparaît. Sélectionnez-le et appuyez sur **approuver**, le document est transmis au client `UserType3`.
+7. Dans les clients `UserType2`, un document en attente d'approbation apparaît. Sélectionnez-le et appuyez sur **approuver**, le document est transmis au `UserType3` client.
 
     Si le document est approuvé par le premier quorum `UserType2`, le document est passé au client `UserType3`.
 

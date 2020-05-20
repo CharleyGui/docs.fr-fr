@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 00e2e194-12f5-436e-a997-2b9d3e844d4f
 topic_type:
 - apiref
-ms.openlocfilehash: 74002ce9c76eebaa3ea5860b09cd3e7c9a884f8d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 857410187edf1c712865626a3327dd4c92cc211f
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448654"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441927"
 ---
 # <a name="isymencunmanagedmethodgetfilenamefromoffset-method"></a>ISymENCUnmanagedMethod::GetFileNameFromOffset, méthode
 Obtient le nom de fichier pour la ligne associée à un offset.  
@@ -38,10 +38,10 @@ HRESULT GetFileNameFromOffset(
   
 ## <a name="parameters"></a>Paramètres  
  `dwOffset`  
- dans `ULONG32` qui contient le décalage.  
+ dans `ULONG32`Qui contient l’offset.  
   
  `cchName`  
- dans `ULONG32` qui indique la taille de la mémoire tampon de `szName`.  
+ dans `ULONG32`Qui indique la taille de la `szName` mémoire tampon.  
   
  `pcchName`  
  à Pointeur vers un `ULONG32` qui reçoit la taille, en caractères, de la mémoire tampon qui doit contenir les noms de fichiers.  
@@ -52,9 +52,9 @@ HRESULT GetFileNameFromOffset(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymENCUnmanagedMethod, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)
+- [ISymENCUnmanagedMethod, interface](isymencunmanagedmethod-interface.md)

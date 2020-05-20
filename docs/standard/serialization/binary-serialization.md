@@ -1,5 +1,6 @@
 ---
 title: Sérialisation binaire
+description: Cet article décrit la sérialisation binaire et les types pour lesquels .NET Core le prend en charge. Tenez compte des dangers de la sérialisation binaire et des alternatives à celle-ci.
 ms.date: 01/02/2018
 helpviewer_keywords:
 - binary serialization
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - serialization, cross-framework
 ms.assetid: 2b1ea3be-1152-4032-b2b3-07794054c405
 author: ViktorHofer
-ms.openlocfilehash: 9df9b73a1a1347b952d76b76c9058578f5e9f401
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4ed76437b743da842d6ba07d29fe7985f824abf0
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400637"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421278"
 ---
 # <a name="binary-serialization"></a>Sérialisation binaire
 
@@ -28,7 +29,7 @@ Lorsque vous implémentez un mécanisme de sérialisation dans un environnement 
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
 
-La sérialisation binaire permet de modifier les membres privés à l’intérieur d’un objet et par conséquent de modifier l’état de celui-ci. Pour cette raison, d’autres infrastructures de sérialisation, comme <xref:System.Text.Json?displayProperty=fullName>, qui opèrent sur la surface de l’API publique sont recommandées.
+La sérialisation binaire permet de modifier les membres privés à l’intérieur d’un objet et par conséquent de modifier l’état de celui-ci. Pour cette raison, d’autres infrastructures de sérialisation, comme <xref:System.Text.Json?displayProperty=fullName> , qui opèrent sur la surface de l’API publique sont recommandées.
 
 ## <a name="net-core"></a>.NET Core
 
@@ -112,7 +113,7 @@ La sérialisation binaire permet de modifier les membres privés à l’intérie
 > | <xref:System.Data.DBConcurrencyException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
 > | <xref:System.Data.DataException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
 > | <xref:System.Data.DataSet?displayProperty=nameWithType> | |
-> | <xref:System.Data.DataTable?displayProperty=nameWithType> | Si vous définissez `RemotingFormat` sur `SerializationFormat.Binary`, il ne peut être échangé qu’avec .net Core 2,1 et versions ultérieures. |
+> | <xref:System.Data.DataTable?displayProperty=nameWithType> | Si vous définissez `RemotingFormat` sur `SerializationFormat.Binary` , il ne peut être échangé qu’avec .net Core 2,1 et versions ultérieures. |
 > | <xref:System.Data.DeletedRowInaccessibleException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
 > | <xref:System.Data.DuplicateNameException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |
 > | <xref:System.Data.EvaluateException?displayProperty=nameWithType> | À partir de .NET Core 2.0.4. |

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: cc1a823a-3ff3-4a33-b641-96edc93d2b17
 topic_type:
 - apiref
-ms.openlocfilehash: 057b901337ded7b5336ef673624d8d6c827c8932
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d096101189d52401c407a4108c9c81e201d3f30d
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448667"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441940"
 ---
 # <a name="isymencunmanagedmethodgetdocumentsformethodcount-method"></a>ISymENCUnmanagedMethod::GetDocumentsForMethodCount, méthode
 Obtient le nombre de documents dans lesquels cette méthode contient des lignes.  
@@ -39,9 +39,9 @@ HRESULT GetDocumentsForMethodCount(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymENCUnmanagedMethod, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)
+- [ISymENCUnmanagedMethod, interface](isymencunmanagedmethod-interface.md)

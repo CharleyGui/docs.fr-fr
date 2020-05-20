@@ -1,13 +1,14 @@
 ---
 title: 'Procédure : activer la persistance pour les workflows et les services de workflow'
+description: Découvrez comment configurer le magasin d’instances de workflow SQL pour activer la persistance pour les workflows et les services de workflow par programme et à l’aide d’un fichier de configuration.
 ms.date: 03/30/2017
 ms.assetid: 2b1c8bf3-9866-45a4-b06d-ee562393e503
-ms.openlocfilehash: 5d0eeb8ad40f2f4f3349ab48487316014a561a1b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 31fe6e3f06989e9a42254747565342cf97e4b9f1
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460890"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421512"
 ---
 # <a name="how-to-enable-persistence-for-workflows-and-workflow-services"></a>Procédure : activer la persistance pour les workflows et les services de workflow
 
@@ -15,7 +16,7 @@ Cette rubrique décrit la procédure d'activation de la persistance pour les flu
 
 ## <a name="enable-persistence-for-workflows"></a>Activation de la persistance pour les flux de travail
 
-Vous pouvez associer un magasin d’instances à un **WorkflowApplication** à l’aide de la propriété <xref:System.Activities.WorkflowApplication.InstanceStore%2A> de la classe <xref:System.Activities.WorkflowApplication>. La méthode <xref:System.Activities.WorkflowApplication.Persist%2A> enregistre ou rend persistant un flux de travail dans le magasin d'instances associé à l'application. La méthode <xref:System.Activities.WorkflowApplication.Unload%2A> rend persistant un flux de travail dans le magasin d'instances, puis décharge l'instance de la mémoire. La méthode **Load** charge un flux de travail en mémoire à l’aide des données de workflow stockées dans le magasin de persistance d’instance.
+Vous pouvez associer un magasin d’instances à un **WorkflowApplication** à l’aide <xref:System.Activities.WorkflowApplication.InstanceStore%2A> de la propriété de la <xref:System.Activities.WorkflowApplication> classe. La méthode <xref:System.Activities.WorkflowApplication.Persist%2A> enregistre ou rend persistant un flux de travail dans le magasin d'instances associé à l'application. La méthode <xref:System.Activities.WorkflowApplication.Unload%2A> rend persistant un flux de travail dans le magasin d'instances, puis décharge l'instance de la mémoire. La méthode **Load** charge un flux de travail en mémoire à l’aide des données de workflow stockées dans le magasin de persistance d’instance.
 
 La méthode **persiste** effectue les étapes suivantes :
 
@@ -37,7 +38,7 @@ Les méthodes de **persistance** et de **déchargement** sont bloquées lorsqu�
 
 ## <a name="enable-persistence-for-workflow-services-in-code"></a>Activation de la persistance pour les services de workflow dans le code
 
-Le membre **DurableInstancingOptions** de la classe <xref:System.ServiceModel.WorkflowServiceHost> a une propriété nommée **InstanceStore** que vous pouvez utiliser pour associer un magasin d’instances à **WorkflowServiceHost**.
+Le membre **DurableInstancingOptions** de la <xref:System.ServiceModel.WorkflowServiceHost> classe a une propriété nommée **InstanceStore** que vous pouvez utiliser pour associer un magasin d’instances à **WorkflowServiceHost**.
 
 ```csharp
 // wsh is an instance of WorkflowServiceHost class

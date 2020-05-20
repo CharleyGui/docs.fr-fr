@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: faebf594-67d5-4abf-b9c1-547fd3a1ff87
 topic_type:
 - apiref
-ms.openlocfilehash: 47477bb473df8b568844d07bea704df681c9b95d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 54c8c7f5c3ba6b4afd4ff352a8afb947a92e2d61
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448607"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441875"
 ---
 # <a name="isymencunmanagedmethod-interface"></a>ISymENCUnmanagedMethod, interface
 Fournit des informations pour la fonctionnalité modifier et continuer.  
@@ -28,15 +28,15 @@ Fournit des informations pour la fonctionnalité modifier et continuer.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetDocumentsForMethod, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-getdocumentsformethod-method.md)|Obtient les documents dans lesquels cette méthode contient des lignes.|  
-|[GetDocumentsForMethodCount, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-getdocumentsformethodcount-method.md)|Obtient le nombre de documents dans lesquels cette méthode contient des lignes.|  
-|[GetFileNameFromOffset, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-getfilenamefromoffset-method.md)|Obtient le nom de fichier pour la ligne associée à un offset.|  
-|[GetLineFromOffset, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-getlinefromoffset-method.md)|Obtient les informations de ligne associées à un offset.|  
-|[GetSourceExtentInDocument, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-getsourceextentindocument-method.md)|Obtient la ligne de début la plus petite et la ligne de fin la plus grande pour la méthode dans un document spécifique.|  
+|[GetDocumentsForMethod, méthode](isymencunmanagedmethod-getdocumentsformethod-method.md)|Obtient les documents dans lesquels cette méthode contient des lignes.|  
+|[GetDocumentsForMethodCount, méthode](isymencunmanagedmethod-getdocumentsformethodcount-method.md)|Obtient le nombre de documents dans lesquels cette méthode contient des lignes.|  
+|[GetFileNameFromOffset, méthode](isymencunmanagedmethod-getfilenamefromoffset-method.md)|Obtient le nom de fichier pour la ligne associée à un offset.|  
+|[GetLineFromOffset, méthode](isymencunmanagedmethod-getlinefromoffset-method.md)|Obtient les informations de ligne associées à un offset.|  
+|[GetSourceExtentInDocument, méthode](isymencunmanagedmethod-getsourceextentindocument-method.md)|Obtient la ligne de début la plus petite et la ligne de fin la plus grande pour la méthode dans un document spécifique.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [Interfaces du magasin de symboles de diagnostics](diagnostics-symbol-store-interfaces.md)

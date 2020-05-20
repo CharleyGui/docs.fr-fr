@@ -1,5 +1,6 @@
 ---
 title: Implémentation du modèle asynchrone basé sur des tâches
+description: Cet article explique comment implémenter le modèle asynchrone basé sur des tâches. Vous pouvez l’utiliser pour implémenter des opérations asynchrones liées aux calculs et aux e/s.
 ms.date: 06/14/2017
 dev_langs:
 - csharp
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: fab6bd41-91bd-44ad-86f9-d8319988aa78
-ms.openlocfilehash: e09ed853598dcbb13cc8dc3fe963276e4b5e974d
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 7d031bab6ba0a4420062eff107aeb1262d9b3b40
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81739649"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421226"
 ---
 # <a name="implementing-the-task-based-asynchronous-pattern"></a>Implémentation du modèle asynchrone basé sur des tâches
 Vous pouvez implémenter le modèle asynchrone basé sur des tâches (TAP) de trois façons : à l’aide des compilateurs C# et Visual Basic dans Visual Studio, manuellement, ou par une combinaison des méthodes du compilateur et des méthodes manuelles. Les sections suivantes abordent chacune de ces méthodes en détail. Vous pouvez utiliser le modèle TAP pour implémenter à la fois des opérations asynchrones liées aux calculs et liées aux E/S. La section [Charges de travail](#workloads) aborde chacun des types d'opérations.
@@ -24,7 +25,7 @@ Vous pouvez implémenter le modèle asynchrone basé sur des tâches (TAP) de tr
 ## <a name="generating-tap-methods"></a>Génération de méthodes TAP
 
 ### <a name="using-the-compilers"></a>Utilisation des compilateurs
-À partir de .NET Framework 4.5, toute méthode attribuée avec le mot clé `async` (`Async` en Visual Basic) est considérée comme une méthode asynchrone. Les compilateurs C# et Visual Basic effectuent alors les transformations nécessaires pour implémenter la méthode de façon asynchrone à l’aide du modèle TAP. Une méthode asynchrone doit retourner un objet <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> ou <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>. Dans le dernier cas, le corps de la fonction doit retourner un `TResult`. Le compilateur garantit ensuite que ce résultat est rendu disponible via l’objet de tâche qui en résulte. De même, toutes les exceptions non gérées dans le corps de la méthode sont marshalées vers la tâche de sortie et provoquent la fin de la tâche résultante avec l’état <xref:System.Threading.Tasks.TaskStatus.Faulted?displayProperty=nameWithType>. L’exception à cette <xref:System.OperationCanceledException> règle est lorsqu’un (ou type dérivé) n’est <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> pas géré, auquel cas la tâche qui en résulte se termine dans l’état.
+À partir de .NET Framework 4.5, toute méthode attribuée avec le mot clé `async` (`Async` en Visual Basic) est considérée comme une méthode asynchrone. Les compilateurs C# et Visual Basic effectuent alors les transformations nécessaires pour implémenter la méthode de façon asynchrone à l’aide du modèle TAP. Une méthode asynchrone doit retourner un objet <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> ou <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>. Dans le dernier cas, le corps de la fonction doit retourner un `TResult`. Le compilateur garantit ensuite que ce résultat est rendu disponible via l’objet de tâche qui en résulte. De même, toutes les exceptions non gérées dans le corps de la méthode sont marshalées vers la tâche de sortie et provoquent la fin de la tâche résultante avec l’état <xref:System.Threading.Tasks.TaskStatus.Faulted?displayProperty=nameWithType>. L’exception à cette règle se produit lorsqu’un <xref:System.OperationCanceledException> (ou un type dérivé) n’est pas géré, auquel cas la tâche obtenue se termine dans l' <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> État.
 
 ### <a name="generating-tap-methods-manually"></a>Génération manuelle des méthodes TAP
 Vous pouvez implémenter le modèle TAP manuellement pour mieux contrôler l'implémentation. Le compilateur s'appuie sur la surface publique exposée depuis l'espace de noms <xref:System.Threading.Tasks?displayProperty=nameWithType> et sur les types de prise en charge de l'espace de noms <xref:System.Runtime.CompilerServices?displayProperty=nameWithType>. Pour implémenter le modèle TAP vous-même, créez un objet <xref:System.Threading.Tasks.TaskCompletionSource%601>, effectuez l'opération asynchrone, et lorsqu'elle est terminée, appelez la méthode <xref:System.Threading.Tasks.TaskCompletionSource%601.SetResult%2A>, <xref:System.Threading.Tasks.TaskCompletionSource%601.SetException%2A> ou <xref:System.Threading.Tasks.TaskCompletionSource%601.SetCanceled%2A>, ou bien la version `Try` de l'une de ces méthodes. Quand vous implémentez une méthode TAP manuellement, vous devez achever la tâche qui en résulte quand l’opération asynchrone représentée se termine. Par exemple :

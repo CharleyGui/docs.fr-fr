@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: cc09bad2-fb34-4d13-a521-6ec7b1a1d915
 topic_type:
 - apiref
-ms.openlocfilehash: 94a571a4bc01b805387aebe5a6e23bad0b735313
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d9a7b18e90a3038c1ffb634ccc7315143875c809
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448638"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441914"
 ---
 # <a name="isymencunmanagedmethodgetlinefromoffset-method"></a>ISymENCUnmanagedMethod::GetLineFromOffset, méthode
-Obtient les informations de ligne associées à un offset. Si le paramètre de décalage (`dwOffset`) n’est pas un point de séquence, cette méthode obtient les informations de ligne associées au décalage précédent.  
+Obtient les informations de ligne associées à un offset. Si le paramètre de décalage ( `dwOffset` ) n’est pas un point de séquence, cette méthode obtient les informations de ligne associées au décalage précédent.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +39,7 @@ HRESULT GetLineFromOffset(
   
 ## <a name="parameters"></a>Paramètres  
  `dwOffset`  
- dans `ULONG32` qui contient le décalage.  
+ dans `ULONG32`Qui contient l’offset.  
   
  `pline`  
  à Pointeur vers un `ULONG32` qui reçoit la ligne.  
@@ -59,9 +59,9 @@ HRESULT GetLineFromOffset(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymENCUnmanagedMethod, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)
+- [ISymENCUnmanagedMethod, interface](isymencunmanagedmethod-interface.md)

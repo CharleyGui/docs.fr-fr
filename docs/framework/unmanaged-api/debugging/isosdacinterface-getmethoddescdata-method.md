@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: e4c44379d9db0f5e98f3ca66ec0486961ec2df3a
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 105149d0abf312c33a8498e7428e3a8b23d6ae7d
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396944"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421018"
 ---
 # <a name="isosdacinterfacegetmethoddescdata-method"></a>ISOSDacInterface :: GetMethodDescData, méthode
 
@@ -65,9 +65,9 @@ dans Adresse IP de la méthode.
 
 La méthode fournie fait partie de l' `ISOSDacInterface` interface et correspond à l’emplacement du 21e de la table de méthodes virtuelles. Pour pouvoir les utiliser, [`CLRDATA_ADDRESS`](../common-data-types-unmanaged-api-reference.md) doit être défini en tant qu’entier non signé 64 bits.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Conditions requises
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
 **En-tête :** None  
 **Bibliothèque :** None  
 **Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  

@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: dd92dcaf-403c-464d-a254-21594985dddd
 topic_type:
 - apiref
-ms.openlocfilehash: 756ba2e71ca2e3e817a0a8b89165bb807368c1f9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 97b9fa537fdd9147d6d9eda036013add5393e33c
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449332"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441706"
 ---
 # <a name="isymunmanagedbinder2getreaderforfile2-method"></a>ISymUnmanagedBinder2::GetReaderForFile2, méthode
 À partir d’une interface de métadonnées et d’un nom de fichier, retourne l’interface [ISymUnmanagedReader](isymunmanagedreader-interface.md) appropriée qui lira les symboles de débogage associés au module.  
   
- Cette méthode fournit une recherche plus complète pour le fichier de base de données du programme (PDB) que la méthode [ISymUnmanagedBinder :: GetReaderForFile,](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md) .  
+ Cette méthode fournit une recherche plus complète pour le fichier de base de données du programme (PDB) que la méthode [ISymUnmanagedBinder :: GetReaderForFile,](isymunmanagedbinder-getreaderforfile-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,7 +49,7 @@ HRESULT GetReaderForFile2(
  dans Pointeur vers le chemin de recherche.  
   
  `searchPolicy`  
- dans Valeur de l’énumération [CorSymSearchPolicyAttributes,](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md) qui spécifie la stratégie à utiliser lors de la recherche d’un lecteur de symboles.  
+ dans Valeur de l’énumération [CorSymSearchPolicyAttributes,](corsymsearchpolicyattributes-enumeration.md) qui spécifie la stratégie à utiliser lors de la recherche d’un lecteur de symboles.  
   
  `pRetVal`  
  à Pointeur qui a pour valeur l’interface [ISymUnmanagedReader](isymunmanagedreader-interface.md) retournée.  
@@ -57,13 +57,13 @@ HRESULT GetReaderForFile2(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="remarks"></a>Notes  
- Cette version de la méthode peut rechercher le fichier PDB dans des zones autres que juste à côté du module. La stratégie de recherche peut être contrôlée en combinant [CorSymSearchPolicyAttributes,](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md). Par exemple, `AllowReferencePathAccess | AllowSymbolServerAccess` recherche le fichier PDB en regard du fichier exécutable et sur un serveur de symboles, mais n’interroge pas le registre ou n’utilise pas le chemin d’accès dans le fichier exécutable. Si le paramètre `searchPath` est fourni, les recherches sont toujours effectuées dans ces répertoires.  
+ Cette version de la méthode peut rechercher le fichier PDB dans des zones autres que juste à côté du module. La stratégie de recherche peut être contrôlée en combinant [CorSymSearchPolicyAttributes,](corsymsearchpolicyattributes-enumeration.md). Par exemple, `AllowReferencePathAccess | AllowSymbolServerAccess` recherche le fichier PDB en regard du fichier exécutable et sur un serveur de symboles, mais n’interroge le registre ou n’utilise pas le chemin d’accès dans le fichier exécutable. Si le `searchPath` paramètre est fourni, la recherche sera toujours effectuée dans ces répertoires.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedBinder2, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-interface.md)
-- [GetReaderForFile, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md)
+- [ISymUnmanagedBinder2, interface](isymunmanagedbinder2-interface.md)
+- [GetReaderForFile, méthode](isymunmanagedbinder-getreaderforfile-method.md)

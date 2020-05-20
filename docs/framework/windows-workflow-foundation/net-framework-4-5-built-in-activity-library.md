@@ -1,19 +1,20 @@
 ---
 title: Bibliothèque d'activités intégrée .NET Framework 4.5
+description: Cet article décrit la nouvelle bibliothèque d’activités avec des fonctionnalités étendues qui font partie de .NET Framework 4,5.
 ms.date: 03/30/2017
 ms.assetid: e559e87b-6aed-491d-9546-e92bcec16fdf
-ms.openlocfilehash: 6d47c36a55829684a0eefb2a560e65f7b91462a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4ce4420759512ec3adfff70bf0c365014d96ec7b
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786007"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421486"
 ---
 # <a name="net-framework-45-built-in-activity-library"></a>Bibliothèque d'activités intégrée .NET Framework 4.5
 
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] inclut une nouvelle bibliothèque d'activités avec des fonctionnalités étendues. Les types d'activités sont les suivants :
 
-- [Flux de contrôle](control-flow-activities-in-wf.md)
+- [Workflow de contrôle](control-flow-activities-in-wf.md)
 
 - [Organigramme](flowchart-activities-in-wf.md)
 
@@ -21,7 +22,7 @@ ms.locfileid: "61786007"
 
 - [Activités de messagerie](../wcf/feature-details/messaging-activities.md)
 
-- [Runtime](runtime-activities-in-wf.md)
+- [Language](runtime-activities-in-wf.md)
 
 - [Primitives](primitives-activities-in-wf.md)
 
@@ -33,4 +34,4 @@ ms.locfileid: "61786007"
 
 - [Migration](migration-activity-in-wf.md)
 
-Les activités dans la bibliothèque d’activités intégrée peuvent être composées de workflows, ou utilisées en même temps que les activités personnalisées. Les activités de la bibliothèque d'activités intégrée sont scellées ; elles ne sont pas destinées à être utilisées pour créer de nouvelles fonctionnalités via l'héritage.
+Les activités de la bibliothèque d’activités intégrée peuvent être composées dans des flux de travail ou utilisées avec des activités personnalisées. Les activités de la bibliothèque d'activités intégrée sont scellées ; elles ne sont pas destinées à être utilisées pour créer de nouvelles fonctionnalités via l'héritage.

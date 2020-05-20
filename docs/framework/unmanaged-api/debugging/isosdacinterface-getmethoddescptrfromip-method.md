@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 0c8d91c11205e06857b4a6e7edfedcd087270d00
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: c3de9e5ffe23a13c126343c6f74f042bf1239609
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396928"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421005"
 ---
 # <a name="isosdacinterfacegetmethoddescptrfromip-method"></a>ISOSDacInterface :: GetMethodDescPtrFromIP, méthode
 
@@ -49,9 +49,9 @@ dans Adresse dans la méthode au moment de l’exécution.
 
 La méthode fournie fait partie de l' [ `ISOSDacInterface` interface](isosdacinterface-interface.md) et correspond à l’emplacement 22 de la table de méthodes virtuelles.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Conditions requises
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
 **En-tête :** None  
 **Bibliothèque :** None  
 **Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  

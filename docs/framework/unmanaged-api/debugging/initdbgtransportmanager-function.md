@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: a30102ff-c52e-48c9-b3a9-aa14286a42b2
 topic_type:
 - apiref
-ms.openlocfilehash: 2d67bee3ea0e57080179b3fbb7e0b4193860c44d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e18ceb25b9c58a9710ef967cb071e3ef55beea8c
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73103287"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421044"
 ---
 # <a name="initdbgtransportmanager-function"></a>Fonction InitDbgTransportManager
 Initialise le gestionnaire de transport pour se connecter à une cible distante pour l'énumération des processus et du runtime.  
@@ -42,8 +42,8 @@ HRESULT InitDbgTransportManager ();
  E_FAIL (ou autres codes de retour E_)  
  Autres échecs.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CoreClrRemoteDebuggingInterfaces. h  
   

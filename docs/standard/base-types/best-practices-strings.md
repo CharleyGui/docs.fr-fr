@@ -18,12 +18,12 @@ helpviewer_keywords:
 - comparing strings
 - strings [.NET Framework],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-ms.openlocfilehash: e633b6c1d03a3d1cd70e277395da10f70f315f16
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 0fb7ec8d9de8fae7a0443984511e538d38d93c7a
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523972"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441004"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Bonnes pratiques pour l’utilisation de chaînes dans .NET
 
@@ -131,12 +131,12 @@ Cette comparaison peut provoquer de sérieux problèmes si la culture est utilis
 [!code-csharp[Conceptual.Strings.BestPractices#12](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/turkish1.cs#12)]
 [!code-vb[Conceptual.Strings.BestPractices#12](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/turkish1.vb#12)]
 
-Dans ce cas, parce que le « fichier : » est censé être interprété comme un identificateur non linguistique et insensible à la culture, le code doit plutôt être écrit comme indiqué dans l’exemple suivant :
+Dans ce cas, étant donné que « file : » est destiné à être interprété comme un identificateur non linguistique et indépendant de la culture, le code doit plutôt être écrit comme indiqué dans l’exemple suivant :
 
 [!code-csharp[Conceptual.Strings.BestPractices#13](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/turkish1.cs#13)]
 [!code-vb[Conceptual.Strings.BestPractices#13](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/turkish1.vb#13)]
 
-### <a name="ordinal-string-operations"></a>Opérations de cordes ordinaires
+### <a name="ordinal-string-operations"></a>Opérations de chaînes ordinales
 
 La spécification de la valeur <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> ou <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> dans un appel de méthode correspond à une comparaison non linguistique dans laquelle les fonctionnalités de langages naturels sont ignorées. Les méthodes qui sont appelées avec ces valeurs <xref:System.StringComparison> font reposer les décisions d'opération de chaîne sur de simples comparaisons d'octets plutôt que sur la casse ou des tables d'équivalences paramétrables par la culture. Dans la plupart des cas, cette approche correspond le mieux à l'interprétation de chaînes prévue tout en rendant le code plus rapide et plus fiable.
 
@@ -147,12 +147,12 @@ Les chaînes dans .NET peuvent contenir des caractères Null incorporés. L'une 
 > [!IMPORTANT]
 > Les méthodes de comparaison de chaînes ignorent les caractères Null incorporés, contrairement aux méthodes de recherche de chaînes telles que <xref:System.String.Contains%2A?displayProperty=nameWithType>, <xref:System.String.EndsWith%2A?displayProperty=nameWithType>, <xref:System.String.IndexOf%2A?displayProperty=nameWithType>, <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>et <xref:System.String.StartsWith%2A?displayProperty=nameWithType> .
 
-L’exemple suivant effectue une comparaison culturelle sensible de la chaîne "Aa" avec une chaîne similaire qui contient plusieurs caractères incrustés nulles entre "A" et "a", et montre comment les deux cordes sont considérées comme égales:
+L’exemple suivant effectue une comparaison dépendante de la culture de la chaîne "AA" avec une chaîne semblable qui contient plusieurs caractères null incorporés entre "A" et "a", et montre comment les deux chaînes sont considérées comme égales :
 
 [!code-csharp[Conceptual.Strings.BestPractices#19](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/embeddednulls1.cs#19)]
  [!code-vb[Conceptual.Strings.BestPractices#19](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/embeddednulls1.vb#19)]
 
-Cependant, les cordes ne sont pas considérées comme égales lorsque vous utilisez une comparaison ordinaire, comme le montre l’exemple suivant :
+Toutefois, les chaînes ne sont pas considérées comme égales quand vous utilisez la comparaison ordinale, comme le montre l’exemple suivant :
   
 [!code-csharp[Conceptual.Strings.BestPractices#20](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/embeddednulls2.cs#20)]
 [!code-vb[Conceptual.Strings.BestPractices#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/embeddednulls2.vb#20)]
@@ -176,7 +176,7 @@ Ces comparaisons restent très rapides.
 
 La sémantique ordinale est la valeur par défaut pour les surcharges de <xref:System.String.Equals%2A?displayProperty=nameWithType> qui n'incluent pas d'argument <xref:System.StringComparison> (notamment l'opérateur d'égalité). Dans tous les cas, nous vous recommandons d'appeler une surcharge ayant un paramètre <xref:System.StringComparison> .
 
-### <a name="string-operations-that-use-the-invariant-culture"></a>opérations de chaîne qui utilisent la culture invariante
+### <a name="string-operations-that-use-the-invariant-culture"></a>opérations de chaîne qui utilisent la culture dite indifférente
 
 Les comparaisons avec la culture dite indifférente utilisent la propriété <xref:System.Globalization.CultureInfo.CompareInfo%2A> retournée par la propriété <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> statique. Ce comportement est le même sur tous les systèmes ; il traduit tous les caractères en dehors de sa plage en ce qu'il suppose être des caractères invariants équivalents. Cette stratégie peut être utile pour la gestion d'un jeu de comportements de chaîne dans toutes les cultures, mais elle donne souvent des résultats inattendus.
 
@@ -197,7 +197,7 @@ En définitive, la culture dite indifférente a très peu de propriétés qui la
 
 ## <a name="choosing-a-stringcomparison-member-for-your-method-call"></a>Choix d’un membre StringComparison pour votre appel de méthode
 
-Le tableau suivant décrit la cartographie du contexte <xref:System.StringComparison> sémantique des cordes à un membre de recensement :
+Le tableau suivant présente le mappage du contexte de chaîne sémantique à un membre de l' <xref:System.StringComparison> énumération :
 
 |Données|Comportement|Valeur System.StringComparison<br /><br /> value|
 |----------|--------------|-----------------------------------------------------|
@@ -206,7 +206,7 @@ Le tableau suivant décrit la cartographie du contexte <xref:System.StringCompar
 |Certaines données rendues persistantes et linguistiquement pertinentes.<br /><br /> Affichage de données linguistiques qui nécessitent un ordre de tri fixe.|Données dont la culture n'est pas spécifiée qui sont toutefois linguistiquement pertinentes.|<xref:System.StringComparison.InvariantCulture><br /><br /> -ou-<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|
 |Données affichées à l'utilisateur.<br /><br /> La plupart des entrées d'utilisateur.|Données qui nécessitent des usages linguistiques locaux.|<xref:System.StringComparison.CurrentCulture><br /><br /> -ou-<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|
 
-## <a name="common-string-comparison-methods-in-net"></a>Méthodes communes de comparaison des chaînes en .NET
+## <a name="common-string-comparison-methods-in-net"></a>Méthodes courantes de comparaison de chaînes dans .NET
 
 Les sections suivantes décrivent les méthodes le plus souvent utilisées pour la comparaison de chaînes.
 
@@ -295,7 +295,7 @@ Si ces données sont rendues persistantes et déplacées dans toutes les culture
 [!code-csharp[Conceptual.Strings.BestPractices#9](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/indirect1.cs#9)]
 [!code-vb[Conceptual.Strings.BestPractices#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/indirect1.vb#9)]
 
-### <a name="collections-example-hashtable-constructor"></a>Exemple de collections : constructeur hashtable
+### <a name="collections-example-hashtable-constructor"></a>Exemple de collections : constructeur Hashtable
 
 Le hachage de chaînes constitue un deuxième exemple d'opération qui est affectée par la façon dont des chaînes sont comparées.
 
@@ -317,18 +317,20 @@ Pour spécifier explicitement qu’une chaîne doit être mise en forme en utili
 
 - Quand vous utilisez les méthodes <xref:System.String.Format%2A?displayProperty=nameWithType> et `ToString`, appelez une surcharge qui a un paramètre `provider`, tel que <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> ou <xref:System.DateTime.ToString%28System.IFormatProvider%29?displayProperty=nameWithType> et passez-lui la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>, une instance <xref:System.Globalization.CultureInfo> qui représente la culture souhaitée, ou la propriété <xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType>.
 
-- Pour la concaténation de chaîne, n’autorisez pas le compilateur à effectuer de conversions implicites. Au lieu de cela, effectuez une conversion explicite en appelant une surcharge `ToString` ayant un paramètre `provider`. Par exemple, le compilateur utilise implicitement la culture actuelle lors de la conversion d’une valeur <xref:System.Double> en une chaîne dans le code C# suivant :
+- Pour la concaténation de chaîne, n’autorisez pas le compilateur à effectuer de conversions implicites. Au lieu de cela, effectuez une conversion explicite en appelant une surcharge `ToString` ayant un paramètre `provider`. Par exemple, le compilateur utilise implicitement la culture actuelle lors de la conversion <xref:System.Double> d’une valeur en une chaîne dans le code suivant :
 
-  [!code-csharp[Implicit String Conversion](~/samples/snippets/standard/base-types/string-practices/cs/tostring.cs#1)]
+  [!code-csharp[Implicit String Conversion](./snippets/best-practices-strings/csharp/tostring/Program.cs#1)]
+  [!code-vb[Implicit String Conversion](./snippets/best-practices-strings/vb/tostring/Program.vb#1)]
 
-  Au lieu de cela, vous pouvez spécifier explicitement la culture dont les conventions de mise en forme sont utilisées dans la conversion en appelant la méthode <xref:System.Double.ToString(System.IFormatProvider)?displayProperty=nameWithType>, comme illustré par le code C# suivant :
+  Au lieu de cela, vous pouvez spécifier explicitement la culture dont les conventions de mise en forme sont utilisées lors de la conversion en appelant la <xref:System.Double.ToString(System.IFormatProvider)?displayProperty=nameWithType> méthode, comme le montre le code suivant :
 
-  [!code-csharp[Explicit String Conversion](~/samples/snippets/standard/base-types/string-practices/cs/tostring.cs#2)]
+  [!code-csharp[Explicit String Conversion](./snippets/best-practices-strings/csharp/tostring/Program.cs#2)]
+  [!code-vb[Implicit String Conversion](./snippets/best-practices-strings/vb/tostring/Program.vb#2)]
 
 - Pour l’interpolation de chaîne, plutôt que d’affecter une chaîne interpolée à une instance <xref:System.String>, affectez-la à un élément <xref:System.FormattableString>. Vous pouvez ensuite appeler sa méthode <xref:System.FormattableString.ToString?displayProperty=nameWithType> pour produire une chaîne de résultat qui reflète les conventions de la culture actuelle, ou vous pouvez appeler la méthode <xref:System.FormattableString.ToString(System.IFormatProvider)?displayProperty=nameWithType> pour produire une chaîne de résultat qui reflète les conventions d’une culture spécifiée. Vous pouvez également transmettre la chaîne pouvant être mise en forme à la méthode <xref:System.FormattableString.Invariant%2A?displayProperty=nameWithType> statique pour produire une chaîne de résultat qui reflète les conventions de la culture invariante. L'exemple suivant illustre cette approche. (La sortie de l’exemple correspond à la culture actuelle en-US.)
 
-  [!code-csharp[String interpolation](~/samples/snippets/standard/base-types/string-practices/cs/formattable.cs)]
-  [!code-vb[String interpolation](~/samples/snippets/standard/base-types/string-practices/vb/formattable.vb)]
+  [!code-csharp[String interpolation](./snippets/best-practices-strings/csharp/formattable/Program.cs)]
+  [!code-vb[String interpolation](./snippets/best-practices-strings/vb/formattable/Program.vb)]
 
 Vous pouvez rendre persistantes des données non-chaînées soit comme données binaires, soit comme données mises en forme. Si vous choisissez de l'enregistrer en tant que données mises en forme, vous devez appeler une surcharge de méthode de mise en forme qui inclut un paramètre `provider` et le passer à la propriété <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> . La culture dite indifférente fournit un format cohérent pour les données mises en forme qui est indépendant de la culture et de l'ordinateur. En revanche, assurer la persistance de données mises en forme à l'aide de cultures autres que la culture dite indifférente a plusieurs limites :
 
@@ -341,7 +343,7 @@ L'exemple suivant illustre la portabilité limitée qui résulte de l'utilisatio
 [!code-csharp[Conceptual.Strings.BestPractices#21](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/persistence.cs#21)]
 [!code-vb[Conceptual.Strings.BestPractices#21](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/persistence.vb#21)]
 
-Toutefois, si vous <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> remplacez la propriété par <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> dans les appels <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> <xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>et, les données de date et d’heure persistées sont restaurées avec succès, comme le montre la sortie suivante :
+Toutefois, si vous remplacez la <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> propriété par <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> dans les appels à <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> et <xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> , les données de date et d’heure persistantes sont correctement restaurées, comme le montre la sortie suivante :
 
 ```console
 06.05.1758 21:26

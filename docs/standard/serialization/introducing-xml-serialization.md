@@ -13,12 +13,12 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: 8c63200d-db63-4a03-a93d-21641623df62
-ms.openlocfilehash: 373a98bea6661d4a1dcfa0300dcc7c0df1ad751a
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 7534ad702039b37a85a24223576320aea8052e9e
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380157"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421265"
 ---
 # <a name="xml-serialization"></a>sérialisation XML
 
@@ -93,7 +93,7 @@ Pour obtenir plus d’exemples de sérialisation, consultez [Exemples de sérial
 
 ## <a name="items-that-can-be-serialized"></a>Éléments qui peuvent être sérialisés
 
-Les éléments suivants peuvent être sérialisés à l’aide de la classe **XmLSerializer** :
+Les éléments suivants peuvent être sérialisés à l’aide de la classe **XmlSerializer** :
 
 - Propriétés publiques de lecture/écriture et champs de classes publiques.
 

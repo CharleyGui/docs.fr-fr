@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c9a26ea3-b8eb-4b8e-854f-9a2ca26b3b39
 topic_type:
 - apiref
-ms.openlocfilehash: afd16f1f31be9148422dd6d0be748036a8e5d99a
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 38f49e8fe632e9b38ede8815de6d8865278351f9
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790660"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421200"
 ---
 # <a name="icorpublishenumclone-method"></a>ICorPublishEnum::Clone, méthode
 Crée une copie de cet objet [ICorPublishEnum](icorpublishenum-interface.md) .  
@@ -33,18 +33,18 @@ HRESULT Clone (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `ppEnum`  
- à Pointeur vers l’adresse d’un objet `ICorPublishEnum` qui est une copie de cet objet `ICorPublishEnum`.  
+ à Pointeur vers l’adresse d’un `ICorPublishEnum` objet qui est une copie de cet `ICorPublishEnum` objet.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7c0af9e9-a73f-41aa-a685-b21c439e059d
 topic_type:
 - apiref
-ms.openlocfilehash: 77e801b048709949c384f642fc0d0ecb5d7eb512
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dc76274d3b0acbbe0b03eb141d2b3e6ff9063afb
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178379"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421122"
 ---
 # <a name="icorpublishprocessgetdisplayname-method"></a>ICorPublishProcess::GetDisplayName, méthode
-Obtient le chemin complet de l’exécutable pour le processus référencé par ce [ICorPublishProcess](icorpublishprocess-interface.md).  
+Obtient le chemin d’accès complet de l’exécutable pour le processus référencé par [ICorPublishProcess](icorpublishprocess-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,19 +41,19 @@ HRESULT GetDisplayName (
  [in] Taille du tableau `szName`.  
   
  `pcchName`  
- [out] Le nombre de personnages `szName` larges retournés dans le tableau.  
+ à Nombre de caractères larges retournés dans le `szName` tableau.  
   
  `szName`  
- [out] Un tableau pour stocker le nom, y compris le chemin complet, de l’exécutable. Le nom est annulé.  
+ à Tableau pour stocker le nom, y compris le chemin d’accès complet de l’exécutable. Le nom se termine par un caractère null.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -14,23 +14,23 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-ms.openlocfilehash: 5db29046bfe67c530fe3a613c126c3841e6402e1
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: d6bde74441334a4454865c1fdb890a4e859bc072
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242749"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83440900"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Chaînes de format de date et d’heure standard
 
-Une chaîne de format de date et d'heure standard utilise un spécificateur de format unique pour définir la représentation textuelle d'une valeur de date et d'heure. Toute chaîne de format de date et d’heure qui contient plus d’un personnage, y compris l’espace blanc, est interprétée comme une chaîne de format de date et d’heure personnalisée; pour plus d’informations, voir [chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md). Une chaîne de format standard ou personnalisée peut être utilisée de deux façons :
+Une chaîne de format de date et d'heure standard utilise un spécificateur de format unique pour définir la représentation textuelle d'une valeur de date et d'heure. Toute chaîne de format de date et d’heure contenant plusieurs caractères, y compris un espace blanc, est interprétée comme une chaîne de format de date et d’heure personnalisée. Pour plus d’informations, consultez [chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md). Une chaîne de format standard ou personnalisée peut être utilisée de deux façons :
 
 - Pour définir la chaîne qui résulte d'une opération de mise en forme.
 
 - Pour définir la représentation textuelle d'une valeur de date et d'heure pouvant être convertie en valeur <xref:System.DateTime> ou en valeur <xref:System.DateTimeOffset> lors d'une opération d'analyse.
 
 > [!TIP]
-> Vous pouvez télécharger l’**utilitaire de mise en forme**, application .NET Core Windows Forms qui vous permet d’appliquer des chaînes de mise en forme à des valeurs numériques ou à des valeurs de date et d’heure, et d’afficher la chaîne de résultat. Le code source est disponible pour [C#](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs) et [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb).
+> Vous pouvez télécharger l’**utilitaire de mise en forme**, application .NET Core Windows Forms qui vous permet d’appliquer des chaînes de mise en forme à des valeurs numériques ou à des valeurs de date et d’heure, et d’afficher la chaîne de résultat. Le code source est disponible pour [C#](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs) et [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb).
 
 Les chaînes de format de date et d'heure standard peuvent être utilisées avec les valeurs <xref:System.DateTime> et <xref:System.DateTimeOffset>.
 
@@ -54,7 +54,7 @@ Les chaînes de format de date et d'heure standard peuvent être utilisées avec
 |"T"|Modèle d’heure longue.<br /><br /> Informations supplémentaires : [Spécificateur de format d’heure longue ("T")](#LongTime).|2009-06-15T13:45:30 -> 1:45:30 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> 13:45:30 (hr-HR)<br /><br /> 2009-06-15T13:45:30 -> 01:45:30 م (ar-EG)|
 |"u"|Modèle de date/heure universel pouvant être trié.<br /><br /> Informations supplémentaires : [Spécificateur de format universel pouvant être trié ("u")](#UniversalSortable).|Avec une valeur <xref:System.DateTime> : 2009-06-15T13:45:30 -> 2009-06-15 13:45:30Z<br /><br /> Avec une valeur <xref:System.DateTimeOffset> : 2009-06-15T13:45:30 -> 2009-06-15 20:45:30Z|
 |"U"|Modèle de date/heure complet universel.<br /><br /> Informations supplémentaires : [Spécificateur de format complet universel ("U")](#UniversalFull).|2009-06-15T13:45:30 -> Monday, June 15, 2009 8:45:30 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> den 15 juni 2009 20:45:30 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 8:45:30 μμ (el-GR)|
-|"Y", "y"|Modèle d’année/mois.<br /><br /> Informations supplémentaires : [Spécificateur de format Année Mois ("Y")](#YearMonth).|2009-06-15T13:45:30 -> juin 2009 (en-US)<br /><br /> 2009-06-15T13:45:30 -> juni 2009 (da-DK)<br /><br /> 2009-06-15T13:45:30 -> Juni 2009 (id-ID)|
+|"Y", "y"|Modèle d’année/mois.<br /><br /> Informations supplémentaires : [Spécificateur de format Année Mois ("Y")](#YearMonth).|2009-06-15T13:45:30-> juin 2009 (en-US)<br /><br /> 2009-06-15T13:45:30 -> juni 2009 (da-DK)<br /><br /> 2009-06-15T13:45:30 -> Juni 2009 (id-ID)|
 |N'importe quel caractère|Spécificateur inconnu.|Lève un <xref:System.FormatException> runtime.|
 
 ## <a name="how-standard-format-strings-work"></a>Fonctionnement des chaînes de format standard
@@ -275,7 +275,7 @@ Comme le spécificateur de format standard « O » ou « o » est conforme �
 
 Les chaînes transmises aux méthodes `Parse`, `TryParse`, `ParseExact`, et `TryParseExact` de <xref:System.DateTime> et <xref:System.DateTimeOffset> peuvent être analysées à l'aide du spécificateur de format "O" ou "o" si elles sont définies dans l'un de ces formats. Dans le cas des objets <xref:System.DateTime>, la surcharge d'analyse que vous appelez doit également inclure un paramètre `styles` avec une valeur de <xref:System.Globalization.DateTimeStyles.RoundtripKind?displayProperty=nameWithType>. Notez que si vous appelez une méthode d'analyse avec la chaîne de format personnalisée qui correspond au spécificateur de format "O" ou "o", vous n'obtenez pas les mêmes résultats que "O" ou "o". En effet, les méthodes d'analyse qui utilisent une chaîne de format personnalisée ne peuvent pas analyser la représentation sous forme de chaîne des valeurs de date et d'heure auxquelles fait défaut un composant de fuseau horaire ou qui recourent à "Z" pour indiquer l'heure UTC.
 
-L’exemple suivant utilise le spécificateur de <xref:System.DateTime> format <xref:System.DateTimeOffset> « o » pour afficher une série de valeurs et une valeur sur un système dans le fuseau horaire du Pacifique des États-Unis.
+L’exemple suivant utilise le spécificateur de format "o" pour afficher une série de <xref:System.DateTime> valeurs et une <xref:System.DateTimeOffset> valeur sur un système situé dans le fuseau horaire Pacifique (États-Unis).
 
 [!code-csharp[Formatting.DateAndTime.Standard#8](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/o1.cs#8)]
 [!code-vb[Formatting.DateAndTime.Standard#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/o1.vb#8)]
@@ -451,6 +451,6 @@ La mise en forme dépend des propriétés de l'objet <xref:System.Globalization.
 - <xref:System.DateTime?displayProperty=nameWithType>
 - <xref:System.DateTimeOffset?displayProperty=nameWithType>
 - [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
-- [Chaînes personnalisées de format de date et d’heure](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
-- [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
-- [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)
+- [Chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
+- [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)

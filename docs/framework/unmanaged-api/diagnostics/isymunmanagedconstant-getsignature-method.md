@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3eb41151-a228-43e3-ba8f-e6dd3ceb8542
 topic_type:
 - apiref
-ms.openlocfilehash: 401dfbea0da309db24f3052f462daa66e8bbef4a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 332d60418c744a9391c7c0afc20248c2239b090c
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449270"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441618"
 ---
 # <a name="isymunmanagedconstantgetsignature-method"></a>ISymUnmanagedConstant::GetSignature, méthode
 Obtient la signature de la constante.  
@@ -37,7 +37,7 @@ HRESULT GetSignature(
   
 ## <a name="parameters"></a>Paramètres  
  `cSig`  
- dans Longueur de la mémoire tampon vers laquelle pointe le paramètre `pcSig`.  
+ dans Longueur de la mémoire tampon vers laquelle `pcSig` pointe le paramètre.  
   
  `pcSig`  
  à Pointeur vers un `ULONG32` qui reçoit la taille, en caractères, de la mémoire tampon requise pour contenir la signature.  
@@ -48,11 +48,11 @@ HRESULT GetSignature(
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Conditions requises  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ISymUnmanagedConstant, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-interface.md)
-- [GetName, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getname-method.md)
-- [GetValue, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)
+- [ISymUnmanagedConstant, interface](isymunmanagedconstant-interface.md)
+- [GetName, méthode](isymunmanagedconstant-getname-method.md)
+- [GetValue, méthode](isymunmanagedconstant-getvalue-method.md)
