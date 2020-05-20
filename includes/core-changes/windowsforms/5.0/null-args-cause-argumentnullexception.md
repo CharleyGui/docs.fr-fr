@@ -1,20 +1,20 @@
 ---
-ms.openlocfilehash: 7a6b0b15de4295506ff03b8566c06010b918566c
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: ab8d801f3cdcfbeb6de20146754b26e3713d7dd6
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158391"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702455"
 ---
 ### <a name="winforms-methods-now-throw-argumentnullexception"></a>Les méthodes WinForms lèvent désormais ArgumentNullException
 
-Certaines méthodes Windows Forms lèvent désormais <xref:System.ArgumentNullException> un pour les arguments null, où ils ont <xref:System.NullReferenceException>précédemment levé un.
+Certaines méthodes Windows Forms lèvent désormais un <xref:System.ArgumentNullException> pour les arguments null, où ils ont précédemment levé un <xref:System.NullReferenceException> .
 
 #### <a name="change-description"></a>Description de la modification
 
-Jusqu’à présent, certaines méthodes Windows Forms <xref:System.NullReferenceException> ont levé une si passé un argument qui avait la valeur null. À compter de .NET 5,0, ces méthodes lèvent <xref:System.ArgumentNullException> désormais une exception pour les arguments null.
+Jusqu’à présent, certaines méthodes Windows Forms <xref:System.NullReferenceException> ont levé une si passé un argument qui avait la valeur null. À compter de .NET 5,0, ces méthodes lèvent désormais une exception <xref:System.ArgumentNullException> pour les arguments null.
 
-La levée <xref:System.ArgumentNullException> d’une conforme au comportement du Runtime .net. Il améliore également l’expérience de débogage en communiquant clairement qu’un argument est null et son argument.
+La levée d’une <xref:System.ArgumentNullException> conforme au comportement du Runtime .net. Il améliore également l’expérience de débogage en communiquant clairement qu’un argument est null et son argument.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -23,7 +23,7 @@ La levée <xref:System.ArgumentNullException> d’une conforme au comportement d
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si vous appelez l’une de ces méthodes et que votre code intercepte actuellement un <xref:System.NullReferenceException> pour les arguments <xref:System.ArgumentNullException> null, interceptez à la place. En outre, envisagez de mettre à jour le code afin d’éviter de passer des arguments null aux méthodes listées.
+Si vous appelez l’une de ces méthodes et que votre code intercepte actuellement un <xref:System.NullReferenceException> pour les arguments null, interceptez à la <xref:System.ArgumentNullException> place. En outre, envisagez de mettre à jour le code afin d’éviter de passer des arguments null aux méthodes listées.
 
 #### <a name="category"></a>Category
 
@@ -49,7 +49,7 @@ Windows Forms
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 - `M:System.Windows.Forms.Control.ControlCollection.#ctor(System.Windows.Forms.Control)`
 - `M:System.Windows.Forms.TabControl.GetToolTipText(System.Object)`

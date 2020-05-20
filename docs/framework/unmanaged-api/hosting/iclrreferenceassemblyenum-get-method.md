@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f21c1612-9c5d-4abc-a337-577086d29c17
 topic_type:
 - apiref
-ms.openlocfilehash: 8f479443e168c3fc7c627c3227e59f1e8b54f0e0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5afa7b37b804b6a11a894e0e6c7708c7787a20ae
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120504"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703366"
 ---
 # <a name="iclrreferenceassemblyenumget-method"></a>ICLRReferenceAssemblyEnum::Get, méthode
 Obtient l’identité de l’assembly à l’index fourni.  
@@ -43,14 +43,14 @@ HRESULT Get (
  à Mémoire tampon contenant les données d’identité de l’assembly.  
   
  `pcchBufferSize`  
- [in, out] Taille de la mémoire tampon de `pwzBuffer`.  
+ [in, out] Taille de la `pwzBuffer` mémoire tampon.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`Get` retourné avec succès.|  
-|ERROR_INSUFFICIENT_BUFFER|`pwzBuffer` est trop petit.|  
+|S_OK|`Get`retourné avec succès.|  
+|ERROR_INSUFFICIENT_BUFFER|`pwzBuffer` est trop petite.|  
 |ERROR_NO_MORE_ITEMS|L’énumération ne contient plus d’éléments.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
@@ -59,18 +59,18 @@ HRESULT Get (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Notes  
- `Get` est généralement appelée deux fois. Le premier appel fournit une valeur null pour `pwzBuffer`et définit `pcchBufferSize` à la taille appropriée pour `pwzBuffer`. Le deuxième appel fournit un `pwzBuffer`de taille appropriée et contient les données d’identité de l’assembly canoniques à l’achèvement.  
+ `Get`est généralement appelée deux fois. Le premier appel fournit une valeur null pour `pwzBuffer` et définit `pcchBufferSize` la taille appropriée pour `pwzBuffer` . Le deuxième appel fournit une taille appropriée `pwzBuffer` et contient les données d’identité de l’assembly canonique à l’achèvement.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRAssemblyReferenceList, interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
-- [ICLRReferenceAssemblyEnum, interface](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md)
+- [ICLRAssemblyReferenceList, interface](iclrassemblyreferencelist-interface.md)
+- [ICLRReferenceAssemblyEnum, interface](iclrreferenceassemblyenum-interface.md)

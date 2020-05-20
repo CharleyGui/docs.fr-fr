@@ -3,19 +3,20 @@ title: Tests unitaires dans .NET Core et .NET Standard
 description: Cet article offre une courte vue d’ensemble des tests unitaires pour les projets .NET Core et .NET Standard.
 author: ardalis
 ms.author: wiwagn
-ms.date: 08/30/2017
-ms.openlocfilehash: 1263bfe337b9d6609c0ca7df70aa299a61a7f1a0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 05/18/2020
+zone_pivot_groups: unit-testing-framework-set-one
+ms.openlocfilehash: e15f80b173389cdff86c6e62013e9c0f21171dd6
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78157399"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703103"
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>Tests unitaires dans .NET Core et .NET Standard
 
 .NET Core permet de créer facilement des tests unitaires. Cet article présente les tests unitaires et explique ce qui les distingue des autres types de test. Les ressources connexes au bas de la page vous montrent comment ajouter un projet de test à votre solution. Après avoir configuré votre projet de test, vous pouvez exécuter vos tests unitaires à l’aide de la ligne de commande ou de Visual Studio.
 
-Si vous testez un projet **ASP.NET Core,** consultez [les tests d’intégration dans ASP.NET Core](/aspnet/core/test/integration-tests#test-app-prerequisites).
+Si vous testez un projet de **ASP.net Core** , consultez [tests d’intégration dans ASP.net Core](/aspnet/core/test/integration-tests#test-app-prerequisites).
 
 .NET Core 2.0 et ultérieur prend en charge [.NET Standard 2.0](../../standard/net-standard.md) et nous allons utiliser ses bibliothèques pour illustrer les tests unitaires.
 
@@ -38,27 +39,39 @@ Pour en savoir plus sur les tests unitaires dans les projets .NET Core :
 
 Les projets de test unitaire .NET Core sont pris en charge pour :
 
-- [C #](../../csharp/index.yml)
-- [F #](../../fsharp/index.yml)
-- [Base visuelle](../../visual-basic/index.yml)
+- [C#](../../csharp/index.yml)
+- [F#](../../fsharp/index.yml)
+- [Visual Basic](../../visual-basic/index.yml)
 
-Vous pouvez également choisir entre :
+Vous pouvez également choisir entre plusieurs frameworks de tests unitaires :
 
-- [xUnit (en)](https://xunit.github.io)
+- [xUnit](https://xunit.net/)
 - [NUnit](https://nunit.org)
 - [MSTest](https://github.com/Microsoft/testfx-docs)
 
 Vous pouvez en savoir plus dans les procédures suivantes :
 
-- Créer des tests unitaires à l’aide de [*xUnit* et *C#* avec l’interface CLI .NET Core](unit-testing-with-dotnet-test.md).
-- Créer des tests unitaires à l’aide de [*NUnit* et *C#* avec l’interface CLI .NET Core](unit-testing-with-nunit.md).
+:::zone pivot="mstest"
+
 - Créer des tests unitaires à l’aide de [*MSTest* et *C#* avec l’interface CLI .NET Core](unit-testing-with-mstest.md).
-- Créer des tests unitaires à l’aide de [*xUnit* et *F#* avec l’interface CLI .NET Core](unit-testing-fsharp-with-dotnet-test.md).
-- Créer des tests unitaires à l’aide de [*NUnit* et *F#* avec l’interface CLI .NET Core](unit-testing-fsharp-with-nunit.md).
 - Créer des tests unitaires à l’aide de [*MSTest* et *F#* avec l’interface CLI .NET Core](unit-testing-fsharp-with-mstest.md).
-- Créer des tests unitaires à l’aide de [*xUnit* et *Visual Basic* avec l’interface CLI .NET Core](unit-testing-visual-basic-with-dotnet-test.md).
-- Créer des tests unitaires à l’aide de [*NUnit* et *Visual Basic* avec l’interface CLI .NET Core](unit-testing-visual-basic-with-nunit.md).
 - Créer des tests unitaires à l’aide de [*MSTest* et *Visual Basic* avec l’interface CLI .NET Core](unit-testing-visual-basic-with-mstest.md).
+
+:::zone-end
+:::zone pivot="xunit"
+
+- Créer des tests unitaires à l’aide de [*xUnit* et *C#* avec l’interface CLI .NET Core](unit-testing-with-dotnet-test.md).
+- Créer des tests unitaires à l’aide de [*xUnit* et *F#* avec l’interface CLI .NET Core](unit-testing-fsharp-with-dotnet-test.md).
+- Créer des tests unitaires à l’aide de [*xUnit* et *Visual Basic* avec l’interface CLI .NET Core](unit-testing-visual-basic-with-dotnet-test.md).
+
+:::zone-end
+:::zone pivot="nunit"
+
+- Créer des tests unitaires à l’aide de [*NUnit* et *C#* avec l’interface CLI .NET Core](unit-testing-with-nunit.md).
+- Créer des tests unitaires à l’aide de [*NUnit* et *F#* avec l’interface CLI .NET Core](unit-testing-fsharp-with-nunit.md).
+- Créer des tests unitaires à l’aide de [*NUnit* et *Visual Basic* avec l’interface CLI .NET Core](unit-testing-visual-basic-with-nunit.md).
+
+:::zone-end
 
 Vous pouvez en savoir plus dans les articles suivants :
 

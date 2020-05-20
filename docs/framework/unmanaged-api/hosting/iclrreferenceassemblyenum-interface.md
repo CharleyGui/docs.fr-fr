@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8adbf092-c3ba-4bee-b25b-0de6e43a4ce5
 topic_type:
 - apiref
-ms.openlocfilehash: 466b0ceec8ce9c9800393f96055730ecafc153b3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9797c419251127ef07a8c2bee22132c3c2b82e36
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120547"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703318"
 ---
 # <a name="iclrreferenceassemblyenum-interface"></a>ICLRReferenceAssemblyEnum, interface
 Fournit des méthodes qui permettent à l’hôte de manipuler l’ensemble d’assemblys référencés par un fichier ou un flux à l’aide de données d’identité d’assembly qui sont internes au common language runtime (CLR), sans avoir à créer ou à comprendre ces identités.  
@@ -28,19 +28,19 @@ Fournit des méthodes qui permettent à l’hôte de manipuler l’ensemble d’
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Get, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-get-method.md)|Obtient l’identité de l’assembly à l’index fourni.|  
+|[Méthode Get](iclrreferenceassemblyenum-get-method.md)|Obtient l’identité de l’assembly à l’index fourni.|  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRAssemblyIdentityManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
-- [ICLRAssemblyReferenceList, interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
-- [Interfaces d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ICLRAssemblyIdentityManager, interface](iclrassemblyidentitymanager-interface.md)
+- [ICLRAssemblyReferenceList, interface](iclrassemblyreferencelist-interface.md)
+- [Interfaces d'hébergement](hosting-interfaces.md)

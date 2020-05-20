@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 30b5cf9a-a762-4bd4-be12-d6c1442b78b1
 topic_type:
 - apiref
-ms.openlocfilehash: 1a1bc7609042422de876fe167a9e61655aaf62b4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 070c52258b66dcc352f2beef81b9a0694b8301ce
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176407"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703288"
 ---
 # <a name="iclrruntimehostexecuteindefaultappdomain-method"></a>ICLRRuntimeHost::ExecuteInDefaultAppDomain, méthode
-Appelle la méthode spécifiée du type spécifié dans l’assemblage géré spécifié.  
+Appelle la méthode spécifiée du type spécifié dans l’assembly managé spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,49 +39,49 @@ HRESULT ExecuteInDefaultAppDomain (
   
 ## <a name="parameters"></a>Paramètres  
  `pwzAssemblyPath`  
- [dans] Le chemin <xref:System.Reflection.Assembly> vers celui <xref:System.Type> qui définit la méthode à invoquer.  
+ dans Chemin d’accès au <xref:System.Reflection.Assembly> qui définit l' <xref:System.Type> objet dont la méthode doit être appelée.  
   
  `pwzTypeName`  
- [dans] Le nom <xref:System.Type> de celui qui définit la méthode à invoquer.  
+ dans Nom de l’objet <xref:System.Type> qui définit la méthode à appeler.  
   
  `pwzMethodName`  
- [dans] Le nom de la méthode à invoquer.  
+ dans Nom de la méthode à appeler.  
   
  `pwzArgument`  
- [dans] Le paramètre de chaîne pour passer à la méthode.  
+ dans Paramètre de chaîne à passer à la méthode.  
   
  `pReturnValue`  
- [out] La valeur de l’intégriste retournée par la méthode invoquée.  
+ à Valeur entière retournée par la méthode appelée.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`ExecuteInDefaultAppDomain`retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|L’heure courante de l’exécution de la langue (CLR) n’a pas été chargée dans un processus, ou le CLR est dans un état où il ne peut pas exécuter le code géré ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel s’est fait chronométrer.|  
-|HOST_E_NOT_OWNER|L’appelant n’est pas propriétaire de la serrure.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un fil bloqué ou une fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode revient E_FAIL, la LCR n’est plus utilisable dans le processus. Les appels ultérieurs aux méthodes d’hébergement reviennent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
+|HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, la liste de révocation de certificats n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes   
- La méthode invoquée doit avoir la signature suivante :  
+## <a name="remarks"></a>Notes  
+ La méthode appelée doit avoir la signature suivante :  
   
 ```cpp  
 static int pwzMethodName (String pwzArgument)  
 ```  
   
- où `pwzMethodName` représente le nom de `pwzArgument` la méthode invoquée, et représente la valeur de la chaîne transmise comme paramètre à cette méthode. Si la valeur HRESULT est réglée `pReturnValue` pour S_OK, est réglée à la valeur integer retournée par la méthode invoquée. Sinon, `pReturnValue` n’est pas fixé.  
+ où `pwzMethodName` représente le nom de la méthode appelée et `pwzArgument` représente la valeur de chaîne transmise en tant que paramètre à cette méthode. Si la valeur HRESULT est définie sur S_OK, `pReturnValue` est défini sur la valeur entière retournée par la méthode appelée. Dans le cas contraire, `pReturnValue` n’est pas défini.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRRuntimeHost, interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)
+- [ICLRRuntimeHost, interface](iclrruntimehost-interface.md)

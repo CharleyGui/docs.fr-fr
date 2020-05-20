@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: d82d633e-cce6-427c-8b02-8227e34e12ba
 topic_type:
 - apiref
-ms.openlocfilehash: d8df78e3d5cebe5378dfba11dc0ea93cc8e346eb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e32714bba2403752f1ac2551ab182f2655f1fa75
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178098"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703858"
 ---
 # <a name="iclrhostbindingpolicymanagermodifyapplicationpolicy-method"></a>ICLRHostBindingPolicyManager::ModifyApplicationPolicy, méthode
-Modifie la politique contraignante pour l’assemblage spécifié et crée une nouvelle version de la politique.  
+Modifie la stratégie de liaison pour l’assembly spécifié et crée une nouvelle version de la stratégie.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,51 +41,51 @@ HRESULT  ModifyApplicationPolicy (
   
 ## <a name="parameters"></a>Paramètres  
  `pwzSourceAssemblyIdentity`  
- [dans] L’identité de l’assemblage à modifier.  
+ dans Identité de l’assembly à modifier.  
   
  `pwzTargetAssemblyIdentity`  
- [dans] La nouvelle identité de l’assemblage modifié.  
+ dans Nouvelle identité de l’assembly modifié.  
   
  `pbApplicationPolicy`  
- [dans] Pointeur d’un tampon qui contient les données de stratégie contraignantes que l’assemblage doit modifier.  
+ dans Pointeur vers une mémoire tampon qui contient les données de stratégie de liaison de l’assembly à modifier.  
   
  `cbAppPolicySize`  
- [dans] L’ampleur de la politique contraignante à remplacer.  
+ dans Taille de la stratégie de liaison à remplacer.  
   
  `dwPolicyModifyFlags`  
- [dans] Une combinaison de produits [EHostBindingPolicyModifyFlags](../../../../docs/framework/unmanaged-api/hosting/ehostbindingpolicymodifyflags-enumeration.md) logique, indiquant le contrôle de la redirection.  
+ dans Combinaison logique ou de valeurs [EHostBindingPolicyModifyFlags,](ehostbindingpolicymodifyflags-enumeration.md) indiquant le contrôle de la redirection.  
   
  `pbNewApplicationPolicy`  
- [out] Un pointeur vers un tampon qui contient les nouvelles données de stratégie contraignantes.  
+ à Pointeur vers une mémoire tampon qui contient les nouvelles données de stratégie de liaison.  
   
  `pcbNewAppPolicySize`  
- [dans, dehors] Un pointeur sur la taille du nouveau tampon de politique contraignante.  
+ [in, out] Pointeur vers la taille de la nouvelle mémoire tampon de stratégie de liaison.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|La politique a été modifiée avec succès.|  
-|E_INVALIDARG|`pwzSourceAssemblyIdentity`ou `pwzTargetAssemblyIdentity` était une référence nulle.|  
+|S_OK|La stratégie a été modifiée avec succès.|  
+|E_INVALIDARG|`pwzSourceAssemblyIdentity`ou `pwzTargetAssemblyIdentity` était une référence null.|  
 |ERROR_INSUFFICIENT_BUFFER|`pbNewApplicationPolicy` est trop petite.|  
-|HOST_E_CLRNOTAVAILABLE|L’heure courante de l’exécution de la langue (CLR) n’a pas été chargée dans un processus, ou le CLR est dans un état où il ne peut pas exécuter le code géré ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel s’est fait chronométrer.|  
-|HOST_E_NOT_OWNER|L’appelant n’est pas propriétaire de la serrure.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un fil bloqué ou une fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois qu’une méthode revient E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels ultérieurs aux méthodes d’hébergement reviennent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
+|HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois que la méthode a retourné E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes   
- La `ModifyApplicationPolicy` méthode peut être appelée deux fois. Le premier appel doit fournir `pbNewApplicationPolicy` une valeur nulle pour le paramètre. Cet appel sera de retour `pcbNewAppPolicySize`avec la valeur nécessaire pour . Le deuxième appel devrait `pcbNewAppPolicySize`fournir cette valeur pour , `pbNewApplicationPolicy`et pointer vers un tampon de cette taille pour .  
+## <a name="remarks"></a>Notes  
+ La `ModifyApplicationPolicy` méthode peut être appelée deux fois. Le premier appel doit fournir une valeur null pour le `pbNewApplicationPolicy` paramètre. Cet appel retourne la valeur nécessaire pour `pcbNewAppPolicySize` . Le deuxième appel doit fournir cette valeur pour `pcbNewAppPolicySize` et pointer vers une mémoire tampon de cette taille pour `pbNewApplicationPolicy` .  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRHostBindingPolicyManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md)
+- [ICLRHostBindingPolicyManager, interface](iclrhostbindingpolicymanager-interface.md)

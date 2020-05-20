@@ -1,34 +1,34 @@
 ---
-ms.openlocfilehash: f131933f3cf7890939854c46f115e8deb8da1cc2
-ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
+ms.openlocfilehash: c0c1c9c9d8e3aeb6f689f754d09b50b208b54112
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888166"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702317"
 ---
-### <a name="stringinfo-and-textelementenumerator-are-now-uax29-compliant"></a>StringInfo et TextElementEnumerator sont maintenant conformes à la
+### <a name="stringinfo-and-textelementenumerator-are-now-uax29-compliant"></a>StringInfo et TextElementEnumerator sont désormais conformes à UAX29
 
-Avant ce <xref:System.Globalization.StringInfo?displayProperty=fullName> changement, <xref:System.Globalization.TextElementEnumerator?displayProperty=fullName> et n’a pas correctement gérer tous les clusters de grapheme. Certains graphemes ont été divisés en leurs composants constitutifs au lieu d’être maintenus ensemble. Maintenant, <xref:System.Globalization.StringInfo> <xref:System.Globalization.TextElementEnumerator> et les clusters de grapheme de processus selon la dernière version de la norme Unicode.
+Avant cette modification, <xref:System.Globalization.StringInfo?displayProperty=fullName> et <xref:System.Globalization.TextElementEnumerator?displayProperty=fullName> n’a pas correctement géré tous les clusters graphèmes. Certains graphemes étaient répartis dans leurs composants constitutifs au lieu d’être maintenus ensemble. Maintenant, <xref:System.Globalization.StringInfo> et <xref:System.Globalization.TextElementEnumerator> traitez les clusters graphèmes en fonction de la dernière version de la norme Unicode.
 
-En outre, <xref:Microsoft.VisualBasic.Strings.StrReverse%2A?displayProperty=fullName> la méthode, qui inverse les caractères dans une chaîne dans Visual Basic, suit maintenant également la norme Unicode pour les clusters de grapheme.
+En outre, la <xref:Microsoft.VisualBasic.Strings.StrReverse%2A?displayProperty=fullName> méthode, qui inverse les caractères d’une chaîne dans Visual Basic, est désormais également conforme à la norme Unicode pour les clusters graphèmes.
 
 #### <a name="change-description"></a>Description de la modification
 
-Un [graphème](https://www.unicode.org/glossary/#grapheme) ou [un cluster de grapheme étendu](https://www.unicode.org/glossary/#extended_grapheme_cluster) est un seul personnage perçu par l’utilisateur qui peut être composé de plusieurs points de code Unicode. Par exemple, la chaîne contenant le:::no-loc text="กำ":::caractère thaïlandais "kam" ( ) se compose des deux personnages suivants:
+Un [cluster graphèmes](https://www.unicode.org/glossary/#extended_grapheme_cluster) [graphèmes](https://www.unicode.org/glossary/#grapheme) ou étendu est un caractère identifié par un utilisateur unique qui peut être composé de plusieurs points de code Unicode. Par exemple, la chaîne contenant le caractère thaï « Kam » ( :::no-loc text="กำ"::: ) se compose des deux caractères suivants :
 
-- :::no-loc text="ก":::(U0e01)) CARACTÈRE THAÏLANDAIS KO KAI
-- :::no-loc text=" ำ":::(u0e33') CARACTÈRE THAÏLANDAIS SARA AM
+- :::no-loc text="ก":::(= ' \u0e01 ') CARACTÈRE THAÏ KO KAI
+- :::no-loc text=" ำ":::(= ' \u0e33 ') CARACTÈRE THAÏ SARA AM
 
-Lorsqu’il est affiché à l’utilisateur, le système d’exploitation combine les deux :::no-loc text="กำ":::caractères pour former le caractère d’affichage unique (ou grapheme) "kam" ou . Emoji peut également se composer de plusieurs caractères qui sont combinés pour l’affichage d’une manière similaire.
+Lorsqu’il est affiché à l’utilisateur, le système d’exploitation combine les deux caractères pour former le seul caractère d’affichage (ou graphèmes) « Kam » ou :::no-loc text="กำ"::: . L’Emoji peut également être constitué de plusieurs caractères combinés pour l’affichage de la même façon.
 
 > [!TIP]
-> La documentation .NET utilise parfois le terme « élément texte » lorsqu’il s’agit d’un grapheme.
+> La documentation .NET utilise parfois le terme « élément de texte » pour faire référence à un graphèmes.
 
-Les <xref:System.Globalization.StringInfo> <xref:System.Globalization.TextElementEnumerator> chaînes et les classes inspectent les chaînes et renvoient des informations sur les graphemes qu’elles contiennent. Dans .NET Framework (toutes versions) et .NET Core 3.x et plus tôt, ces deux classes utilisent une logique personnalisée qui gère certaines classes combinées, mais ne se conforme pas entièrement à la [norme Unicode](https://www.unicode.org/reports/tr29/tr29-35.html#Grapheme_Cluster_Boundaries). Par exemple, <xref:System.Globalization.StringInfo> <xref:System.Globalization.TextElementEnumerator> le caractère thaïlandais unique "kam" a divisé à tort le caractère thaïlandais unique "kam" dans ses composants constitutifs au lieu de les garder ensemble. Ces classes divisent également à tort le caractère emoji "🤷🏽 ♀️" en quatre grappes (personne haussant les épaules, modificateur de teint, modificateur de genre, et un combine invisible) au lieu de les garder ensemble comme un seul cluster de grapheme.
+Les <xref:System.Globalization.StringInfo> <xref:System.Globalization.TextElementEnumerator> classes et inspectent les chaînes et retournent des informations sur les graphemes qu’elles contiennent. Dans .NET Framework (toutes les versions) et .NET Core 3. x et les versions antérieures, ces deux classes utilisent une logique personnalisée qui gère certaines classes d’association, mais n’est pas entièrement conforme à la [norme Unicode](https://www.unicode.org/reports/tr29/tr29-35.html#Grapheme_Cluster_Boundaries). Par exemple, les <xref:System.Globalization.StringInfo> <xref:System.Globalization.TextElementEnumerator> classes et fractionnent de manière incorrecte le caractère thaï unique « Kam » en ses composants constitutifs au lieu de les conserver ensemble. Ces classes divisent de manière incorrecte le caractère Emoji « 🤷🏽 ♀️ » en quatre clusters (personne shrugging, modificateur de tonalité de la peau, modificateur de sexe et combinateur invisible) au lieu de les conserver ensemble en tant que cluster graphèmes unique.
 
-En commençant par .NET <xref:System.Globalization.StringInfo> <xref:System.Globalization.TextElementEnumerator> 5, les classes et les classes implémentent la norme Unicode telle que définie par [Unicode Standard Annexe \#29, rev. 35, sec. 3](https://www.unicode.org/reports/tr29/tr29-35.html). En particulier, ils retournent maintenant [des clusters de grapheme étendus](https://www.unicode.org/glossary/#extended_grapheme_cluster) pour toutes les classes combinant.
+À compter de .NET 5, <xref:System.Globalization.StringInfo> les <xref:System.Globalization.TextElementEnumerator> classes et implémentent la norme Unicode telle que définie par la [norme Unicode annexe \# 29, Rev. 35, sec. 3](https://www.unicode.org/reports/tr29/tr29-35.html). En particulier, elles retournent désormais des [clusters graphèmes étendus](https://www.unicode.org/glossary/#extended_grapheme_cluster) pour toutes les classes de combinaison.
 
-Considérez le code C suivant :
+Prenons le code C# suivant :
 
 ```cs
 using System.Globalization;
@@ -55,7 +55,7 @@ static void PrintGraphemes(string str)
 }
 ```
 
-Dans .NET Framework et .NET Core 3.x et les versions antérieures, les graphemes sont divisés, et la sortie de la console est la suivante:
+Dans .NET Framework et .NET Core 3. x et les versions antérieures, les graphemes sont fractionnés et la sortie de la console est la suivante :
 
 ```txt
 Printing graphemes of "กำ"...
@@ -71,7 +71,7 @@ Grapheme 4: "♀️"
 (4 grapheme(s) total.)
 ```
 
-Dans .NET 5 et les versions ultérieures, les graphemes sont maintenus ensemble, et la sortie de la console est la suivante:
+Dans .NET 5 et versions ultérieures, les graphemes sont conservés ensemble, et la sortie de la console est la suivante :
 
 ```txt
 Printing graphemes of "กำ"...
@@ -83,29 +83,31 @@ Grapheme 1: "🤷🏽‍♀️"
 (1 grapheme(s) total.)
 ```
 
-En outre, à partir de <xref:Microsoft.VisualBasic.Strings.StrReverse%2A?displayProperty=fullName> .NET 5, la méthode, qui inverse les caractères dans une chaîne dans Visual Basic, suit maintenant également la norme Unicode pour les clusters de grapheme.
+En outre, à compter de .NET 5, la <xref:Microsoft.VisualBasic.Strings.StrReverse%2A?displayProperty=fullName> méthode, qui inverse les caractères d’une chaîne dans Visual Basic, est désormais également conforme à la norme Unicode pour les clusters graphèmes.
 
-Ces changements font partie d’un ensemble plus large d’améliorations d’Unicode et UTF-8 dans .NET, y compris une API de recensement <xref:System.Text.Rune?displayProperty=fullName> de cluster de grapheme prolongée pour compléter les API d’énumération de valeur scalaire d’Unicode qui ont été introduites avec le type dans .NET Core 3.0.
+Ces modifications font partie d’un ensemble plus étendu d’améliorations Unicode et UTF-8 dans .NET, y compris une API d’énumération de cluster graphèmes étendue pour compléter les API d’énumération de valeurs scalaires Unicode qui ont été introduites avec le <xref:System.Text.Rune?displayProperty=fullName> type dans .net Core 3,0.
 
 #### <a name="version-introduced"></a>Version introduite
 
-.NET 5.0 Aperçu 1
+.NET 5,0 Preview 1
 
-### <a name="recommended-action"></a>Action recommandée
+#### <a name="recommended-action"></a>Action recommandée
 
-Aucune action de votre part n’est nécessaire. Vos applications se comporteront automatiquement d’une manière plus conforme aux normes dans une variété de scénarios liés à la mondialisation.
+Aucune action de votre part n’est nécessaire. Vos applications se comporteront automatiquement d’une manière plus conforme aux normes dans un large éventail de scénarios liés à la globalisation.
 
-### <a name="category"></a>Category
+#### <a name="category"></a>Category
 
 Globalisation
 
-### <a name="affected-apis"></a>API affectées
+#### <a name="affected-apis"></a>API affectées
 
 - <xref:System.Globalization.StringInfo?displayProperty=fullName>
 - <xref:System.Globalization.TextElementEnumerator?displayProperty=fullName>
 - <xref:Microsoft.VisualBasic.Strings.StrReverse%2A?displayProperty=fullName>
 
 <!--
+
+#### Affected APIs
 
 - `T:System.Globalization.StringInfo`
 - `T:System.Globalization.TextElementEnumerator`

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e7d3ccab-b0f0-4872-8935-0ed72920171b
 topic_type:
 - apiref
-ms.openlocfilehash: e1459c1604f3f8f043fd9b61533235ab7861c910
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e1e114070f39e75254fc1bc0f8c1bf3e4733d5a2
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120563"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703371"
 ---
 # <a name="iclrprobingassemblyenum-interface"></a>ICLRProbingAssemblyEnum, interface
 Fournit des méthodes qui permettent à l’hôte d’accéder aux identités de détection d’un assembly à l’aide des informations d’identité de l’assembly qui sont internes au common language runtime (CLR), sans avoir à créer ou à comprendre cette identité.  
@@ -28,22 +28,22 @@ Fournit des méthodes qui permettent à l’hôte d’accéder aux identités de
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Get, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrprobingassemblyenum-get-method.md)|Obtient l’identité de l’assembly au niveau de l’index spécifié.|  
+|[Méthode Get](iclrprobingassemblyenum-get-method.md)|Obtient l’identité de l’assembly au niveau de l’index spécifié.|  
   
 ## <a name="remarks"></a>Notes  
- Les méthodes telles que [ICLRAssemblyIdentityManager :: GetProbingAssembliesFromReference,](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-getprobingassembliesfromreference-method.md) retournent une instance `ICLRProbingAssemblyEnum`.  
+ Les méthodes telles que [ICLRAssemblyIdentityManager :: GetProbingAssembliesFromReference,](iclrassemblyidentitymanager-getprobingassembliesfromreference-method.md) retournent une `ICLRProbingAssemblyEnum` instance.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRAssemblyIdentityManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
-- [ICLRAssemblyReferenceList, interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
-- [Interfaces d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ICLRAssemblyIdentityManager, interface](iclrassemblyidentitymanager-interface.md)
+- [ICLRAssemblyReferenceList, interface](iclrassemblyreferencelist-interface.md)
+- [Interfaces d'hébergement](hosting-interfaces.md)

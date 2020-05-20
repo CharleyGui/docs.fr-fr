@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: e47e3655-efd5-4572-a1dc-50c69bf2a468
 topic_type:
 - apiref
-ms.openlocfilehash: 478e07f18d40043de4e800c36647ac4a32499635
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 68bcdc33e34075cc5876ee721ef57282cdaa6e86
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120429"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703685"
 ---
 # <a name="iclrruntimehostgetclrcontrol-method"></a>ICLRRuntimeHost::GetCLRControl, méthode
-Obtient un pointeur d’interface de type [interface ICLRControl](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md) que les hôtes peuvent utiliser pour personnaliser les aspects du Common Language Runtime (CLR).  
+Obtient un pointeur d’interface de type [interface ICLRControl](iclrcontrol-interface.md) que les hôtes peuvent utiliser pour personnaliser les aspects du Common Language Runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,13 +35,13 @@ HRESULT GetCLRControl(
   
 ## <a name="parameters"></a>Paramètres  
  `pCLRControl`  
- à Pointeur d’interface de type [ICLRControl interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md) qui permet aux hôtes de configurer des aspects supplémentaires du CLR.  
+ à Pointeur d’interface de type [ICLRControl interface](iclrcontrol-interface.md) qui permet aux hôtes de configurer des aspects supplémentaires du CLR.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`GetCLRControl` retourné avec succès.|  
+|S_OK|`GetCLRControl`retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -50,18 +50,18 @@ HRESULT GetCLRControl(
 |HOST_E_INVALIDOPERATION|Le CLR a déjà démarré.|  
   
 ## <a name="remarks"></a>Notes  
- `ICLRControl` fournit la méthode [GetCLRManager](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-getclrmanager-method.md) , qui permet à l’hôte d’afficher un pointeur d’interface vers l’un des types de gestionnaires.  
+ `ICLRControl`fournit la méthode [GetCLRManager](iclrcontrol-getclrmanager-method.md) , qui permet à l’hôte d’afficher un pointeur d’interface vers l’un des types de gestionnaires.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRControl, interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
-- [ICLRRuntimeHost, interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)
+- [ICLRControl, interface](iclrcontrol-interface.md)
+- [ICLRRuntimeHost, interface](iclrruntimehost-interface.md)

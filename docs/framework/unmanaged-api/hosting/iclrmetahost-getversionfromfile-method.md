@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 55bb3eb4-f665-42fc-973c-465567570e82
 topic_type:
 - apiref
-ms.openlocfilehash: a237dff63015cda2cf2ca86a64bb4028ec9b6e2c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 40efc256dde13d645d43f50bb574d73b5668919c
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140920"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703736"
 ---
 # <a name="iclrmetahostgetversionfromfile-method"></a>ICLRMetaHost::GetVersionFromFile, méthode
-Obtient la version de compilation .NET Framework d’origine d’un assembly (stockée dans les métadonnées), en fonction de son chemin d’accès au fichier. Cette méthode remplace la fonction [GetFileVersion,](../../../../docs/framework/unmanaged-api/hosting/getfileversion-function.md) .  
+Obtient la version de compilation .NET Framework d’origine d’un assembly (stockée dans les métadonnées), en fonction de son chemin d’accès au fichier. Cette méthode remplace la fonction [GetFileVersion,](getfileversion-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,7 +40,7 @@ HRESULT GetVersionFromFile (
  dans Chemin d’accès complet au fichier d’assembly.  
   
  `pwzbuffer`  
- à Version de compilation .NET Framework stockée dans les métadonnées, au format «v*A*. *B*[. *X*]». *A*, *B*et *X* sont des nombres décimaux qui correspondent à la version principale, à la version mineure et au numéro de Build. La longueur de cette chaîne est limitée à MAX_PATH.  
+ à Version de compilation .NET Framework stockée dans les métadonnées, au format «v*A*. *B*[.* X*]». *A*, *B*et *X* sont des nombres décimaux qui correspondent à la version principale, à la version mineure et au numéro de Build. La longueur de cette chaîne est limitée à MAX_PATH.  
   
 > [!NOTE]
 > Cette sortie correspond au nom du répertoire de la version .NET Framework, tel qu’il apparaît sous C:\Windows\Microsoft.NET\Framework.  
@@ -59,16 +59,16 @@ HRESULT GetVersionFromFile (
 |E_POINTER|`pwzbuffer` ou `pcchBuffer` est null.|  
 |HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)|La mémoire tampon est insuffisante.|  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRMetaHost, interface](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)
-- [Hébergement](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [ICLRMetaHost, interface](iclrmetahost-interface.md)
+- [Hébergement](index.md)

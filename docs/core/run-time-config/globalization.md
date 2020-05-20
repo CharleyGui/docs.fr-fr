@@ -1,21 +1,21 @@
 ---
 title: Paramètres de configuration de la globalisation
 description: En savoir plus sur les paramètres d’exécution qui configurent les aspects de la globalisation d’une application .NET Core, par exemple la façon dont elle analyse les dates japonaises.
-ms.date: 11/27/2019
+ms.date: 05/18/2020
 ms.topic: reference
-ms.openlocfilehash: 7668c345181d7c08cfca9c5cb76b8addd76223ec
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 2561e66e6d18cb4036b0719f7e34ea66540fe095
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506803"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703127"
 ---
 # <a name="run-time-configuration-options-for-globalization"></a>Options de configuration au moment de l’exécution pour la globalisation
 
 ## <a name="invariant-mode"></a>Mode indifférent
 
 - Détermine si une application .NET Core s’exécute en mode globalisation-invariant sans accéder aux données et au comportement spécifiques à la culture.
-- Par défaut : exécutez l’application avec un accès aux données`false`culturelles ().
+- Par défaut : exécutez l’application avec un accès aux données culturelles ( `false` ).
 - Pour plus d’informations, consultez [mode d’invariant de la globalisation .net Core](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).
 
 | | Nom du paramètre | Valeurs |
@@ -52,8 +52,8 @@ Fichier projet :
 
 ## <a name="era-year-ranges"></a>Plages d’années d’ère
 
-- Détermine si les vérifications de plage pour les calendriers qui prennent en charge plusieurs ères sont assouplies ou si les dates qui <xref:System.ArgumentOutOfRangeException>dépassent la plage de dates d’une ère lèvent un.
-- Valeur par défaut : les contrôles de`false`plage sont assouplis ().
+- Détermine si les vérifications de plage pour les calendriers qui prennent en charge plusieurs ères sont assouplies ou si les dates qui dépassent la plage de dates d’une ère lèvent un <xref:System.ArgumentOutOfRangeException> .
+- Valeur par défaut : les contrôles de plage sont assouplis ( `false` ).
 - Pour plus d’informations, consultez [calendriers, ères et plages de dates : contrôles de plage souple](../../standard/datetime/working-with-calendars.md#calendars-eras-and-date-ranges-relaxed-range-checks).
 
 | | Nom du paramètre | Valeurs |
@@ -64,7 +64,7 @@ Fichier projet :
 ## <a name="japanese-date-parsing"></a>Analyse de date japonaise
 
 - Détermine si une chaîne qui contient « 1 » ou « gannen » comme année est analysée avec succès ou si seul « 1 » est pris en charge.
-- Valeur par défaut : analyser les chaînes qui contiennent soit « 1 » soit « gannen » comme`false`année ().
+- Valeur par défaut : analyser les chaînes qui contiennent soit « 1 » soit « gannen » comme année ( `false` ).
 - Pour plus d’informations, consultez [représenter des dates dans des calendriers avec plusieurs ères](../../standard/datetime/working-with-calendars.md#represent-dates-in-calendars-with-multiple-eras).
 
 | | Nom du paramètre | Valeurs |
@@ -75,10 +75,21 @@ Fichier projet :
 ## <a name="japanese-year-format"></a>Format d’année japonaise
 
 - Détermine si la première année d’une ère du calendrier japonais est au format « gannen » ou en tant que nombre.
-- Valeur par défaut : mettez en forme la première année sous`false`la forme « gannen » ().
+- Valeur par défaut : mettez en forme la première année sous la forme « gannen » ( `false` ).
 - Pour plus d’informations, consultez [représenter des dates dans des calendriers avec plusieurs ères](../../standard/datetime/working-with-calendars.md#represent-dates-in-calendars-with-multiple-eras).
 
 | | Nom du paramètre | Valeurs |
 | - | - | - |
 | **runtimeconfig. JSON** | `Switch.System.Globalization.FormatJapaneseFirstYearAsANumber` | `false`-format comme « gannen »<br/>`true`-format comme nombre |
 | **Variable d’environnement** | N/A | N/A |
+
+## <a name="nls"></a>NLS
+
+- Détermine si .NET utilise les API de globalisation NLS (National Language Support) ou International Components for Unicode (ICU) pour les applications Windows. .NET 5,0 et les versions ultérieures utilisent les API de globalisation ICU par défaut sur Windows 10 mai 2019 Update et les versions ultérieures.
+- Si vous omettez ce paramètre, .NET utilise les API de globalisation ICU par défaut. Cela équivaut à définir la valeur sur `false` .
+- Pour plus d’informations, consultez [API de globalisation utiliser des bibliothèques ICU sur Windows](../compatibility/3.1-5.0.md#globalization-apis-use-icu-libraries-on-windows).
+
+| | Nom du paramètre | Valeurs | Présent |
+| - | - | - | - |
+| **runtimeconfig. JSON** | `System.Globalization.UseNls` | `false`-Utiliser les API de globalisation ICU<br/>`true`-Utiliser les API de globalisation NLS | .NET 5,0 |
+| **Variable d’environnement** | `DOTNET_SYSTEM_GLOBALIZATION_USENLS` | `false`-Utiliser les API de globalisation ICU<br/>`true`-Utiliser les API de globalisation NLS | .NET 5,0 |

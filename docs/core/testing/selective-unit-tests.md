@@ -1,31 +1,38 @@
 ---
-title: Exécution de tests unitaires sélectifs
+title: Exécuter des tests unitaires sélectifs
 description: Guide pratique pour utiliser une expression de filtre permettant d’exécuter des tests unitaires sélectifs avec la commande dotnet test dans .NET Core.
 author: smadala
-ms.date: 04/29/2020
-ms.openlocfilehash: 50642126f3b470180ddd303ed4a2d2d90bfa5b8f
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.date: 05/18/2020
+zone_pivot_groups: unit-testing-framework-set-one
+ms.openlocfilehash: 6a6bbb0687742d1e3288d64fb88f6825dc678e28
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728178"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702982"
 ---
 # <a name="run-selective-unit-tests"></a>Exécuter des tests unitaires sélectifs
 
-La commande `dotnet test` dans .NET Core vous permet d’utiliser une expression de filtre pour exécuter des tests unitaires sélectifs. Cet article montre comment filtrer les tests qui sont exécutés. Les exemples suivants utilisent `dotnet test`. Si vous utilisez `vstest.console.exe`, remplacez `--filter` par `--testcasefilter:`.
+Avec la [`dotnet test`](../tools/dotnet-test.md) commande dans .net Core, vous pouvez utiliser une expression de filtre pour exécuter des tests sélectifs. Cet article montre comment filtrer les tests qui sont exécutés. Les exemples suivants utilisent `dotnet test`. Si vous utilisez `vstest.console.exe`, remplacez `--filter` par `--testcasefilter:`.
 
 ## <a name="character-escaping"></a>Échappement de caractères
 
-L’utilisation de filtres qui incluent un point d’exclamation ( ! `*nix` ) sur requiert l' `!` échappement, car est réservé. Par exemple, ce filtre ignore tous les tests si l’espace de noms `dotnet test --filter FullyQualifiedName\!~IntegrationTests`contient IntegrationTests :.
-Notez la barre oblique inverse qui précède le point d’exclamation.
+L’utilisation de filtres qui incluent un point `!` d’exclamation sur `*nix` requiert l’échappement `!` , car est réservé. Par exemple, ce filtre ignore tous les tests si l’espace de noms contient IntegrationTests :
 
-Pour `FullyQualifiedName` les valeurs qui incluent une virgule pour les paramètres de type générique, échappez la virgule avec `%2C`. Par exemple :
+```dotnetcli
+dotnet test --filter FullyQualifiedName\!~IntegrationTests
+```
+
+> [!IMPORTANT]
+> La barre oblique inverse précède le point d’exclamation pour indiquer qu’il s’agit d’un caractère d’échappement `\!` .
+
+Pour `FullyQualifiedName` les valeurs qui incluent une virgule pour les paramètres de type générique, échappez la virgule avec `%2C` . Par exemple :
 
 ```dotnetcli
 dotnet test --filter "FullyQualifiedName=MyNamespace.MyTestsClass<ParameterType1%2CParameterType2>.MyTestMethod"
 ```
 
-## <a name="mstest"></a>MSTest
+:::zone pivot="mstest"
 
 ```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -35,15 +42,12 @@ namespace MSTestNamespace
     [TestClass]
     public class UnitTest1
     {
-        [TestCategory("CategoryA")]
-        [Priority(1)]
-        [TestMethod]
+        [TestMethod, Priority(1), TestCategory("CategoryA")]
         public void TestMethod1()
         {
         }
 
-        [Priority(2)]
-        [TestMethod]
+        [TestMethod, Priority(2)]
         public void TestMethod2()
         {
         }
@@ -52,23 +56,36 @@ namespace MSTestNamespace
 ```
 
 | Expression | Résultats |
-| ---------- | ------ |
-| `dotnet test --filter Method` | Exécute les tests dont `FullyQualifiedName` contient `Method`. Disponible dans `vstest 15.1+`. |
+|--|--|
+| `dotnet test --filter Method` | Exécute les tests dont <xref:System.Reflection.Module.FullyQualifiedName> contient `Method`. Disponible dans `vstest 15.1+`. |
 | `dotnet test --filter Name~TestMethod1` | Exécute les tests dont le nom contient `TestMethod1`. |
-| `dotnet test --filter ClassName=MSTestNamespace.UnitTest1` | Exécute les tests qui sont dans `MSTestNamespace.UnitTest1`la classe.<br>**Remarque :** La valeur `ClassName` doit avoir un espace de noms, donc `ClassName=UnitTest1` ne fonctionnera pas. |
+| `dotnet test --filter ClassName=MSTestNamespace.UnitTest1` | Exécute les tests qui sont dans la classe `MSTestNamespace.UnitTest1` .<br>**Remarque :** La valeur `ClassName` doit avoir un espace de noms, donc `ClassName=UnitTest1` ne fonctionnera pas. |
 | `dotnet test --filter FullyQualifiedName!=MSTestNamespace.UnitTest1.TestMethod1` | Exécute tous les tests sauf `MSTestNamespace.UnitTest1.TestMethod1`. |
-| `dotnet test --filter TestCategory=CategoryA` | Exécute les tests qui sont annotés avec `[TestCategory("CategoryA")]`. |
-| `dotnet test --filter Priority=2` | Exécute les tests qui sont annotés avec `[Priority(2)]`.<br>
+| `dotnet test --filter TestCategory=CategoryA` | Exécute les tests qui sont annotés avec `[TestCategory("CategoryA")]` . |
+| `dotnet test --filter Priority=2` | Exécute les tests qui sont annotés avec `[Priority(2)]` . |
 
-**Utilisation des opérateurs conditionnels | et &amp;**
+Exemples utilisant les opérateurs conditionnels `|` et `&` :
 
-| Expression | Résultats |
-| ---------- | ------ |
-| <code>dotnet test --filter "FullyQualifiedName~UnitTest1&#124;TestCategory=CategoryA"</code> | Exécute les tests qui `UnitTest1` ont `FullyQualifiedName` dans **ou** `TestCategory` est `CategoryA`. |
-| `dotnet test --filter "FullyQualifiedName~UnitTest1&TestCategory=CategoryA"` | Exécute les tests qui `UnitTest1` ont `FullyQualifiedName` dans **et** `TestCategory` est `CategoryA`. |
-| <code>dotnet test --filter "(FullyQualifiedName~UnitTest1&TestCategory=CategoryA)&#124;Priority=1"</code> | Exécute les tests qui contiennent `FullyQualifiedName` soit `UnitTest1` **et** `TestCategory` a `CategoryA` la valeur **ou** `Priority` a la valeur 1. |
+Pour exécuter les tests qui ont `UnitTest1` dans leur <xref:System.Reflection.Module.FullyQualifiedName> **ou** <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute> est `"CategoryA"` .
 
-## <a name="xunit"></a>xUnit
+```dotnetcli
+dotnet test --filter "FullyQualifiedName~UnitTest1|TestCategory=CategoryA"
+```
+
+Pour exécuter les tests qui ont `UnitTest1` dans <xref:System.Reflection.Module.FullyQualifiedName> **et** ont un <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute> de `"CategoryA"` .
+
+```dotnetcli
+dotnet test --filter "FullyQualifiedName~UnitTest1&TestCategory=CategoryA"
+```
+
+Pour exécuter des tests qui contiennent <xref:System.Reflection.Module.FullyQualifiedName> l' `UnitTest1` **and** un <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute> de `"CategoryA"` **ou** dont la priorité est <xref:Microsoft.VisualStudio.TestTools.UnitTesting.PriorityAttribute> `1` .
+
+```dotnetcli
+dotnet test --filter "(FullyQualifiedName~UnitTest1&TestCategory=CategoryA)|Priority=1"
+```
+
+:::zone-end
+:::zone pivot="xunit"
 
 ```csharp
 using Xunit;
@@ -77,15 +94,12 @@ namespace XUnitNamespace
 {
     public class TestClass1
     {
-        [Trait("Category", "CategoryA")]
-        [Trait("Priority", "1")]
-        [Fact]
+        [Fact, Trait("Priority", "1"), Trait("Category", "CategoryA")]
         public void Test1()
         {
         }
 
-        [Trait("Priority", "2")]
-        [Fact]
+        [Fact, Trait("Priority", "2")]
         public void Test2()
         {
         }
@@ -94,27 +108,40 @@ namespace XUnitNamespace
 ```
 
 | Expression | Résultats |
-| ---------- | ------ |
+|--|--|
 | `dotnet test --filter DisplayName=XUnitNamespace.TestClass1.Test1` | Exécute uniquement un test, `XUnitNamespace.TestClass1.Test1`. |
 | `dotnet test --filter FullyQualifiedName!=XUnitNamespace.TestClass1.Test1` | Exécute tous les tests sauf `XUnitNamespace.TestClass1.Test1`. |
 | `dotnet test --filter DisplayName~TestClass1` | Exécute les tests dont le nom d’affichage contient `TestClass1`. |
 
-Dans l’exemple de code, les caractéristiques définies avec les clés `Category` et `Priority` peuvent être utilisées pour filtrer.
+Dans l’exemple de code, les caractéristiques définies avec les clés `"Category"` et `"Priority"` peuvent être utilisées pour filtrer.
 
 | Expression | Résultats |
-| ---------- | ------ |
-| `dotnet test --filter XUnit` | Exécute les tests dont `FullyQualifiedName` contient `XUnit`.  Disponible dans `vstest 15.1+`. |
-| `dotnet test --filter Category=CategoryA` | Exécute les tests qui `[Trait("Category", "CategoryA")]`ont. |
+|--|--|
+| `dotnet test --filter XUnit` | Exécute les tests dont <xref:System.Reflection.Module.FullyQualifiedName> contient `XUnit`.  Disponible dans `vstest 15.1+`. |
+| `dotnet test --filter Category=CategoryA` | Exécute les tests qui ont `[Trait("Category", "CategoryA")]` . |
 
-**Utilisation des opérateurs conditionnels | et &amp;**
+Exemples utilisant les opérateurs conditionnels `|` et `&` :
 
-| Expression | Résultats |
-| ---------- | ------ |
-| <code>dotnet test --filter "FullyQualifiedName~TestClass1&#124;Category=CategoryA"</code> | Exécute les tests qui `TestClass1` ont `FullyQualifiedName` dans **ou** `Category` est `CategoryA`. |
-| `dotnet test --filter "FullyQualifiedName~TestClass1&Category=CategoryA"` | Exécute les tests qui `TestClass1` ont `FullyQualifiedName` dans **et** `Category` est `CategoryA`. |
-| <code>dotnet test --filter "(FullyQualifiedName~TestClass1&Category=CategoryA)&#124;Priority=1"</code> | Exécute les tests qui contiennent `FullyQualifiedName` soit `TestClass1` **et** `Category` a `CategoryA` la valeur **ou** `Priority` a la valeur 1. |
+Pour exécuter des tests qui ont `TestClass1` dans leur <xref:System.Reflection.Module.FullyQualifiedName> **ou** ont un `Trait` avec une clé `"Category"` et une valeur de `"CategoryA"` .
 
-## <a name="nunit"></a>NUnit
+```dotnetcli
+dotnet test --filter "FullyQualifiedName~TestClass1|Category=CategoryA"
+```
+
+Pour exécuter les tests qui ont `TestClass1` dans leurs <xref:System.Reflection.Module.FullyQualifiedName> **et** ont un `Trait` avec une clé `"Category"` et la valeur de `"CategoryA"` .
+
+```dotnetcli
+dotnet test --filter "FullyQualifiedName~TestClass1&Category=CategoryA"
+```
+
+Pour exécuter des tests qui contiennent <xref:System.Reflection.Module.FullyQualifiedName> soit `TestClass1` **et** ont un `Trait` avec la clé `"Category"` et la valeur de, `"CategoryA"` **soit** un `Trait` avec une clé `"Priority"` et une valeur de `1` .
+
+```dotnetcli
+dotnet test --filter "(FullyQualifiedName~TestClass1&Category=CategoryA)|Priority=1"
+```
+
+:::zone-end
+:::zone pivot="nunit"
 
 ```csharp
 using NUnit.Framework;
@@ -123,15 +150,12 @@ namespace NUnitNamespace
 {
     public class UnitTest1
     {
-        [Category("CategoryA")]
-        [Property("Priority", 1)]
-        [Test]
+        [Test, Property("Priority", 1), Category("CategoryA")]
         public void TestMethod1()
         {
         }
 
-        [Property("Priority", 2)]
-        [Test]
+        [Test, Property("Priority", 2)]
         public void TestMethod2()
         {
         }
@@ -140,20 +164,44 @@ namespace NUnitNamespace
 ```
 
 | Expression | Résultats |
-| ---------- | ------ |
-| `dotnet test --filter Method` | Exécute les tests dont `FullyQualifiedName` contient `Method`. Disponible dans `vstest 15.1+`. |
+|--|--|
+| `dotnet test --filter Method` | Exécute les tests dont <xref:System.Reflection.Module.FullyQualifiedName> contient `Method`. Disponible dans `vstest 15.1+`. |
 | `dotnet test --filter Name~TestMethod1` | Exécute les tests dont le nom contient `TestMethod1`. |
-| `dotnet test --filter FullyQualifiedName~NUnitNamespace.UnitTest1` | Exécute les tests qui sont dans `NUnitNamespace.UnitTest1`la classe.<br>
+| `dotnet test --filter FullyQualifiedName~NUnitNamespace.UnitTest1` | Exécute les tests qui sont dans la classe `NUnitNamespace.UnitTest1` . |
 | `dotnet test --filter FullyQualifiedName!=NUnitNamespace.UnitTest1.TestMethod1` | Exécute tous les tests sauf `NUnitNamespace.UnitTest1.TestMethod1`. |
-| `dotnet test --filter TestCategory=CategoryA` | Exécute les tests qui sont annotés avec `[Category("CategoryA")]`. |
-| `dotnet test --filter Priority=2` | Exécute les tests qui sont annotés avec `[Priority(2)]`.<br>
+| `dotnet test --filter TestCategory=CategoryA` | Exécute les tests qui sont annotés avec `[Category("CategoryA")]` . |
+| `dotnet test --filter Priority=2` | Exécute les tests qui sont annotés avec `[Priority(2)]` . |
 
-**Utilisation des opérateurs conditionnels | et &amp;**
+Exemples utilisant les opérateurs conditionnels `|` et `&` :
 
-| Expression | Résultats |
-| ---------- | ------ |
-| <code>dotnet test --filter "FullyQualifiedName~UnitTest1&#124;TestCategory=CategoryA"</code> | Exécute les tests qui `UnitTest1` ont `FullyQualifiedName` dans **ou** `TestCategory` est `CategoryA`. |
-| `dotnet test --filter "FullyQualifiedName~UnitTest1&TestCategory=CategoryA"` | Exécute les tests qui `UnitTest1` ont `FullyQualifiedName` dans **et** `TestCategory` est `CategoryA`. |
-| <code>dotnet test --filter "(FullyQualifiedName~UnitTest1&TestCategory=CategoryA)&#124;Priority=1"</code> | Exécute les tests qui contiennent `FullyQualifiedName` soit `UnitTest1` **et** `TestCategory` a `CategoryA` la valeur **ou** `Priority` a la valeur 1. |
+Pour exécuter des tests qui ont `UnitTest1` dans leur <xref:System.Reflection.Module.FullyQualifiedName> **ou** ont un `Category` de `"CategoryA"` .
+
+```dotnetcli
+dotnet test --filter "FullyQualifiedName~UnitTest1|TestCategory=CategoryA"
+```
+
+Pour exécuter les tests qui ont `UnitTest1` dans <xref:System.Reflection.Module.FullyQualifiedName> **et** ont un `Category` de `"CategoryA"` .
+
+```dotnetcli
+dotnet test --filter "FullyQualifiedName~UnitTest1&TestCategory=CategoryA"
+```
+
+Pour exécuter des tests qui ont un <xref:System.Reflection.Module.FullyQualifiedName> conteneur `UnitTest1` **et** ont un `Category` de `"CategoryA"` **ou** un `Property` avec un `"Priority"` de `1` .
+
+```dotnetcli
+dotnet test --filter "(FullyQualifiedName~UnitTest1&TestCategory=CategoryA)|Priority=1"
+```
 
 Pour plus d’informations, consultez [TestCase Filter](https://github.com/Microsoft/vstest-docs/blob/master/docs/filter.md).
+
+:::zone-end
+
+## <a name="see-also"></a>Voir aussi
+
+- [dotnet test](../tools/dotnet-test.md)
+- [test dotnet--filtre](../tools/dotnet-test.md#filter-option-details)
+
+## <a name="next-steps"></a>Étapes suivantes
+
+> [!div class="nextstepaction"]
+> [Trier les tests unitaires](order-unit-tests.md)

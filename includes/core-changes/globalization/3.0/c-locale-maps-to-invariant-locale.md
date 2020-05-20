@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d35de48dd22003c851cf5dba9e8517ec48b9217b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c0551fa086644497c631cd9b6d7058398ff9ccfa
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74567781"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702311"
 ---
 ### <a name="c-locale-maps-to-the-invariant-locale"></a>Les paramètres régionaux « C » sont mappés aux paramètres régionaux invariants
 
@@ -20,18 +20,20 @@ Le mappage de « C » à la culture en_US_POSIX a entraîné la confusion chez
 
 3.0
 
-### <a name="recommended-action"></a>Action recommandée
+#### <a name="recommended-action"></a>Action recommandée
 
 Rien de plus spécifique que la connaissance de cette modification. Cette modification affecte uniquement les applications qui utilisent le mappage de paramètres régionaux « C ».
 
-### <a name="category"></a>Category
+#### <a name="category"></a>Category
 
 Globalisation
 
-### <a name="affected-apis"></a>API affectées
+#### <a name="affected-apis"></a>API affectées
 
 Toutes les API de classement et de culture sont affectées par cette modification.
 
 <!--
+
+#### Affected APIs
 
 -->

@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: a7732bfc-689a-4926-88fd-4f81e6f9ed78
 topic_type:
 - apiref
-ms.openlocfilehash: cedda39aeebc62c6bf43f42ae2daf6f6f515fd27
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2690a5c2e7c499d68ef9e903c62bff8f85e72e8e
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120274"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703868"
 ---
 # <a name="iclrruntimeinfogetprocaddress-method"></a>ICLRRuntimeInfo::GetProcAddress, méthode
 Obtient l’adresse d’une fonction spécifiée qui a été exportée à partir du common language runtime (CLR) associé à cette interface.  
   
- Cette méthode remplace la fonction [GetRealProcAddress,](../../../../docs/framework/unmanaged-api/hosting/getrealprocaddress-function.md) .  
+ Cette méthode remplace la fonction [GetRealProcAddress,](getrealprocaddress-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,17 +54,17 @@ HRESULT GetProcAddress(
 ## <a name="remarks"></a>Notes  
  Cette méthode provoque le chargement du CLR mais pas son initialisation.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRRuntimeInfo, interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
-- [Interfaces d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [Hébergement](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [ICLRRuntimeInfo, interface](iclrruntimeinfo-interface.md)
+- [Interfaces d'hébergement](hosting-interfaces.md)
+- [Hébergement](index.md)
