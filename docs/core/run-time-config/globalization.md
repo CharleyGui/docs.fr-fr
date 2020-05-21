@@ -3,19 +3,19 @@ title: Paramètres de configuration de la globalisation
 description: En savoir plus sur les paramètres d’exécution qui configurent les aspects de la globalisation d’une application .NET Core, par exemple la façon dont elle analyse les dates japonaises.
 ms.date: 05/18/2020
 ms.topic: reference
-ms.openlocfilehash: 2561e66e6d18cb4036b0719f7e34ea66540fe095
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 56228e9a6cb6dbab6a22bdc00d11212e1019776b
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703127"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761965"
 ---
 # <a name="run-time-configuration-options-for-globalization"></a>Options de configuration au moment de l’exécution pour la globalisation
 
 ## <a name="invariant-mode"></a>Mode indifférent
 
 - Détermine si une application .NET Core s’exécute en mode globalisation-invariant sans accéder aux données et au comportement spécifiques à la culture.
-- Par défaut : exécutez l’application avec un accès aux données culturelles ( `false` ).
+- Si vous omettez ce paramètre, l’application s’exécute avec un accès aux données culturelles. Cela équivaut à définir la valeur sur `false` .
 - Pour plus d’informations, consultez [mode d’invariant de la globalisation .net Core](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).
 
 | | Nom du paramètre | Valeurs |
@@ -53,7 +53,7 @@ Fichier projet :
 ## <a name="era-year-ranges"></a>Plages d’années d’ère
 
 - Détermine si les vérifications de plage pour les calendriers qui prennent en charge plusieurs ères sont assouplies ou si les dates qui dépassent la plage de dates d’une ère lèvent un <xref:System.ArgumentOutOfRangeException> .
-- Valeur par défaut : les contrôles de plage sont assouplis ( `false` ).
+- Si vous omettez ce paramètre, les contrôles de plage sont assouplis. Cela équivaut à définir la valeur sur `false` .
 - Pour plus d’informations, consultez [calendriers, ères et plages de dates : contrôles de plage souple](../../standard/datetime/working-with-calendars.md#calendars-eras-and-date-ranges-relaxed-range-checks).
 
 | | Nom du paramètre | Valeurs |
@@ -64,7 +64,7 @@ Fichier projet :
 ## <a name="japanese-date-parsing"></a>Analyse de date japonaise
 
 - Détermine si une chaîne qui contient « 1 » ou « gannen » comme année est analysée avec succès ou si seul « 1 » est pris en charge.
-- Valeur par défaut : analyser les chaînes qui contiennent soit « 1 » soit « gannen » comme année ( `false` ).
+- Si vous omettez ce paramètre, les chaînes qui contiennent « 1 » ou « gannen » sont analysées avec succès. Cela équivaut à définir la valeur sur `false` .
 - Pour plus d’informations, consultez [représenter des dates dans des calendriers avec plusieurs ères](../../standard/datetime/working-with-calendars.md#represent-dates-in-calendars-with-multiple-eras).
 
 | | Nom du paramètre | Valeurs |
@@ -75,7 +75,7 @@ Fichier projet :
 ## <a name="japanese-year-format"></a>Format d’année japonaise
 
 - Détermine si la première année d’une ère du calendrier japonais est au format « gannen » ou en tant que nombre.
-- Valeur par défaut : mettez en forme la première année sous la forme « gannen » ( `false` ).
+- Si vous omettez ce paramètre, la première année est mise en forme en tant que « gannen ». Cela équivaut à définir la valeur sur `false` .
 - Pour plus d’informations, consultez [représenter des dates dans des calendriers avec plusieurs ères](../../standard/datetime/working-with-calendars.md#represent-dates-in-calendars-with-multiple-eras).
 
 | | Nom du paramètre | Valeurs |

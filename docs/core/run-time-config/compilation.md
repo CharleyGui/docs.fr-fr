@@ -3,12 +3,12 @@ title: Paramètres de configuration de compilation
 description: En savoir plus sur les paramètres d’exécution qui configurent le fonctionnement du compilateur JIT pour les applications .NET Core.
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: 4db20ee6d36fe3d3d66f473644b70c02d4e02cb3
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: cfcf9b5fc8d11a4ae35ab9b152f32133cd6930bf
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506842"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762004"
 ---
 # <a name="run-time-configuration-options-for-compilation"></a>Options de configuration au moment de l’exécution pour la compilation
 
@@ -98,7 +98,7 @@ Fichier projet :
 - Configure si le compilateur JIT utilise le JIT rapide sur les méthodes qui contiennent des boucles.
 - L’activation du JIT rapide pour les boucles peut améliorer les performances de démarrage. Toutefois, les boucles longues peuvent être bloquées dans du code moins optimisé pendant de longues périodes.
 - Si le [JIT rapide](#quick-jit) est désactivé, ce paramètre n’a aucun effet.
-- Valeur par défaut :`false`désactivé ().
+- Si vous omettez ce paramètre, le JIT rapide n’est pas utilisé pour les méthodes qui contiennent des boucles. Cela équivaut à définir la valeur sur `false` .
 
 | | Nom du paramètre | Valeurs |
 | - | - | - |
@@ -136,7 +136,7 @@ Fichier projet :
 
 - Configure si le Runtime .NET Core utilise du code précompilé pour les images avec les données ReadyToRun disponibles. La désactivation de cette option force le runtime à compiler le code d’infrastructure juste-à-temps.
 - Pour plus d’informations, consultez [ReadyToRun](../whats-new/dotnet-core-3-0.md#readytorun-images).
-- Valeur par défaut :`1`activé ().
+- Si vous omettez ce paramètre, .NET utilise les données ReadyToRun lorsqu’elles sont disponibles. Cela équivaut à définir la valeur sur `1` .
 
 | | Nom du paramètre | Valeurs |
 | - | - | - |

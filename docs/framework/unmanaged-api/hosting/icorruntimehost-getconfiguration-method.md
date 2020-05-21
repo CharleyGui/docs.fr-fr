@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c431617a-b055-44a0-8730-48b7a86d9610
 topic_type:
 - apiref
-ms.openlocfilehash: 87549118742da797ef0dd1b08ae9e72c466f7841
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 88abdbc62c8b27f48c5629afb99ab6e30ee67e00
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139568"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762264"
 ---
 # <a name="icorruntimehostgetconfiguration-method"></a>ICorRuntimeHost::GetConfiguration, méthode
 Obtient un objet qui permet à l’hôte de spécifier la configuration de rappel du common language runtime (CLR).  
@@ -35,13 +35,13 @@ HRESULT GetConfiguration(
   
 ## <a name="parameters"></a>Paramètres  
  `pConfiguration`  
- à Pointeur vers l’adresse d’un objet [ICorConfiguration](../../../../docs/framework/unmanaged-api/hosting/icorconfiguration-interface.md) qui peut être utilisé pour configurer le CLR.  
+ à Pointeur vers l’adresse d’un objet [ICorConfiguration](icorconfiguration-interface.md) qui peut être utilisé pour configurer le CLR.  
   
 ## <a name="remarks"></a>Notes  
- Le CLR doit être configuré avant son initialisation ; Sinon, la méthode `GetConfiguration` retourne un HRESULT indiquant une erreur.  
+ Le CLR doit être configuré avant son initialisation ; Sinon, la `GetConfiguration` méthode retourne un HRESULT indiquant une erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
@@ -51,4 +51,4 @@ HRESULT GetConfiguration(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorRuntimeHost, interface](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
+- [ICorRuntimeHost, interface](icorruntimehost-interface.md)

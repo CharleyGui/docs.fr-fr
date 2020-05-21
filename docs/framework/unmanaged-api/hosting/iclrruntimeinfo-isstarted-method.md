@@ -13,15 +13,15 @@ helpviewer_keywords:
 - IsStarted method [.NET Framework hosting]
 - ICLRRuntimeInfo::IsStarted method [.NET Framework hosting]
 ms.assetid: ef6f2662-323b-4534-aa82-6d1afb7b9309
-ms.openlocfilehash: 34590744407b25d7d53c06c452fff5bac2a95246
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 85a7adddf395e07297c8fb6ceab4aa81e0aaf012
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136383"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762199"
 ---
 # <a name="iclrruntimeinfoisstarted-method"></a>ICLRRuntimeInfo::IsStarted, méthode
-Indique si le runtime a été démarré (c’est-à-dire, si la [méthode ICLRRuntimeHost :: Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) a été appelée et a réussi).  
+Indique si le runtime a été démarré (c’est-à-dire, si la [méthode ICLRRuntimeHost :: Start](iclrruntimehost-start-method.md) a été appelée et a réussi).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,7 +33,7 @@ HRESULT IsStarted(
   
 ## <a name="parameters"></a>Paramètres  
  `pbStarted`  
- [out] `true` si ce Runtime est démarré ; Sinon, `false`.  
+ [out] `true` Si ce Runtime est démarré ; Sinon, `false` .  
   
  `pdwStartupFlags`  
  à Retourne les indicateurs utilisés pour démarrer le Runtime.  
@@ -49,17 +49,17 @@ HRESULT IsStarted(
 ## <a name="remarks"></a>Notes  
  Cette méthode ne fonctionne pas avec les versions CLR antérieures à la version CLR du .NET Framework 4.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRRuntimeInfo, interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
-- [Interfaces d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [Hébergement](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [ICLRRuntimeInfo, interface](iclrruntimeinfo-interface.md)
+- [Interfaces d'hébergement](hosting-interfaces.md)
+- [Hébergement](index.md)

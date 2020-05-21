@@ -1,45 +1,45 @@
 ---
-title: Paramètres de config de réseautage
-description: Renseignez-vous sur les paramètres de course qui configurent le réseautage pour les applications .NET Core.
+title: Paramètres de configuration de mise en réseau
+description: En savoir plus sur les paramètres d’exécution qui configurent la mise en réseau pour les applications .NET Core.
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: 8d02087ad7260cc78c096090bf3b06a716d34678
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 6b5e03b127f95911b712b66c0be8a4f5a2929fc2
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989101"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761939"
 ---
-# <a name="run-time-configuration-options-for-networking"></a>Options de configuration en temps d’exécution pour le réseautage
+# <a name="run-time-configuration-options-for-networking"></a>Options de configuration au moment de l’exécution pour la mise en réseau
 
 ## <a name="http2-protocol"></a>Protocole HTTP/2
 
-- Configure si le support pour le protocole HTTP/2 est activé.
+- Configure si la prise en charge du protocole HTTP/2 est activée.
 
-- Défaut: Désactivé`false`( ).
+- Si vous omettez ce paramètre, la prise en charge du protocole HTTP/2 est désactivée. Cela équivaut à définir la valeur sur `false` .
 
-- Introduit dans .NET Core 3.0.
+- Introduit dans .NET Core 3,0.
 
 | | Nom du paramètre | Valeurs |
 | - | - | - |
-| **runtimeconfig.json** | `System.Net.Http.SocketsHttpHandler.Http2Support` | `false`- désactivé<br/>`true`- activé |
-| **Variable d’environnement** | `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2SUPPORT` | `0`- désactivé<br/>`1`- activé |
+| **runtimeconfig. JSON** | `System.Net.Http.SocketsHttpHandler.Http2Support` | `false`-désactivé<br/>`true`-activé |
+| **Variable d’environnement** | `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2SUPPORT` | `0`-désactivé<br/>`1`-activé |
 
-## <a name="usesocketshttphandler"></a>UtilisationSocketsHttpHandler
+## <a name="usesocketshttphandler"></a>UseSocketsHttpHandler
 
-- Configurer <xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType> si <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType> les utilisations ou<xref:System.Net.Http.WinHttpHandler> les `CurlHandler`anciennes piles de protocole HTTP (sur Windows et , une classe interne implémentée sur le dessus de [libcurl](https://curl.haxx.se/libcurl/), sur Linux).
+- Configure si <xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType> utilise <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType> ou des piles de protocole http plus anciennes ( <xref:System.Net.Http.WinHttpHandler> sur Windows et `CurlHandler` , une classe interne implémentée sur [libbouclé](https://curl.haxx.se/libcurl/), sur Linux).
 
   > [!NOTE]
-  > Vous pouvez utiliser des API de réseautage de <xref:System.Net.Http.HttpClientHandler> haut niveau au lieu d’instantanéiser directement la classe. Ce paramètre affecte également la pile de protocole HTTP <xref:System.Net.Http.HttpClient> est utilisé par les API de réseautage de haut niveau, y compris et [HttpClientFactory](https://docs.microsoft.com/previous-versions/aspnet/hh995280(v%3dvs.118)).
+  > Vous pouvez utiliser des API de mise en réseau de haut niveau au lieu d’instancier directement la <xref:System.Net.Http.HttpClientHandler> classe. Ce paramètre affecte également la pile de protocole HTTP utilisée par les API de mise en réseau de haut niveau, y compris <xref:System.Net.Http.HttpClient> et [HttpClientFactory](https://docs.microsoft.com/previous-versions/aspnet/hh995280(v%3dvs.118)).
 
-- Défaut : <xref:System.Net.Http.SocketsHttpHandler> `true`Utilisation ( ).
+- Si vous omettez ce paramètre, <xref:System.Net.Http.HttpClientHandler> utilise <xref:System.Net.Http.SocketsHttpHandler> . Cela équivaut à définir la valeur sur `true` .
 
-- Vous pouvez configurer ce paramètre <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> programmatiquement en appelant la méthode.
+- Vous pouvez configurer ce paramètre par programmation en appelant la <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> méthode.
 
 | | Nom du paramètre | Valeurs |
 | - | - | - |
-| **runtimeconfig.json** | `System.Net.Http.UseSocketsHttpHandler` | `true`- permet l’utilisation de<xref:System.Net.Http.SocketsHttpHandler><br/>`false`- permet l’utilisation de <xref:System.Net.Http.WinHttpHandler> Windows ou [libcurl](https://curl.haxx.se/libcurl/) sur Linux |
-| **Variable d’environnement** | `DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER` | `1`- permet l’utilisation de<xref:System.Net.Http.SocketsHttpHandler><br/>`0`- permet l’utilisation de <xref:System.Net.Http.WinHttpHandler> Windows ou [libcurl](https://curl.haxx.se/libcurl/) sur Linux |
+| **runtimeconfig. JSON** | `System.Net.Http.UseSocketsHttpHandler` | `true`-active l’utilisation de<xref:System.Net.Http.SocketsHttpHandler><br/>`false`-active l’utilisation de <xref:System.Net.Http.WinHttpHandler> sur Windows ou [libbouclé](https://curl.haxx.se/libcurl/) sur Linux |
+| **Variable d’environnement** | `DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER` | `1`-active l’utilisation de<xref:System.Net.Http.SocketsHttpHandler><br/>`0`-active l’utilisation de <xref:System.Net.Http.WinHttpHandler> sur Windows ou [libbouclé](https://curl.haxx.se/libcurl/) sur Linux |
 
 > [!NOTE]
-> À partir de .NET `System.Net.Http.UseSocketsHttpHandler` 5, le réglage n’est plus disponible.
+> À compter de .NET 5, le `System.Net.Http.UseSocketsHttpHandler` paramètre n’est plus disponible.

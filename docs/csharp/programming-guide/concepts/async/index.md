@@ -2,12 +2,12 @@
 title: Programmation asynchrone en C#
 description: Vue d’ensemble de la prise en charge du langage C# pour la programmation asynchrone avec Async, Await, Task et Task<T>
 ms.date: 03/18/2019
-ms.openlocfilehash: 4cbbff0f2c48f0ec2f8befa234ea5023465a1c5d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4bf00d5c77138dfa2d527a262a6cd54a72a688f5
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79169907"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761848"
 ---
 # <a name="asynchronous-programming-with-async-and-await"></a>Programmation asynchrone avec Async et Await
 
@@ -30,7 +30,7 @@ Pour un algorithme parallèle, vous auriez besoin de plusieurs cuisiniers (ou th
 
 Écrivons maintenant ces instructions sous la forme d’instructions C# :
 
-[!code-csharp[SynchronousBreakfast](~/samples/snippets/csharp/tour-of-async/AsyncBreakfast-starter/Program.cs#Main)]
+[!code-csharp[SynchronousBreakfast](./snippets/index/AsyncBreakfast-starter/Program.cs#Main)]
 
 Les ordinateurs n’interprètent pas ces instructions de la même façon que les humains. L’ordinateur se bloque à chaque instruction jusqu’à ce que le travail soit terminé, avant de passer à l’instruction suivante. Avec une telle manière de procéder, notre petit-déjeuner risque de ne pas être très satisfaisant. En effet, chacune des tâches ne pourrait être démarrée qu’une fois la précédente terminée. De cette façon, la préparation du petit-déjeuner prendrait beaucoup plus de temps, et certains aliments refroidiraient avant d’être servis.
 
@@ -46,7 +46,7 @@ Le code précédent montre une pratique déconseillée : écrire du code synchr
 
 Commençons par mettre à jour ce code pour que le thread ne se bloque pas pendant l’exécution des tâches. Le mot clé `await` permet de démarrer une tâche sans bloquer le thread, puis de poursuivre l’exécution une fois cette tâche terminée. La version asynchrone du code de préparation du petit-déjeuner ressemblerait à l’extrait de code suivant :
 
-[!code-csharp[SimpleAsyncBreakfast](~/samples/snippets/csharp/tour-of-async/AsyncBreakfast-V2/Program.cs#Main)]
+[!code-csharp[SimpleAsyncBreakfast](./snippets/index/AsyncBreakfast-V2/Program.cs#Main)]
 
 Ce code ne se bloque pas pendant la cuisson des œufs ou du bacon. Cependant, il ne démarre pas d’autres tâches. Cela reviendrait, une nouvelle fois, à rester les yeux fixés sur le grille-pain en attendant que le pain ressorte. Mais au moins, vous seriez en mesure de répondre à quelqu’un qui aurait besoin de votre attention. Dans un restaurant qui doit gérer plusieurs commandes en même temps, le chef peut commencer un petit-déjeuner pendant qu’un autre est en cours de préparation.
 
@@ -116,11 +116,11 @@ Le code précédent est plus efficace. Vous y démarrez toutes les tâches async
 
 Le code précédent montre que vous pouvez utiliser les objets <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601> pour attendre les tâches en cours d’exécution. Vous attendez (`await`) la fin de chaque tâche avant d’utiliser ses résultats. L’étape suivante consiste à créer des méthodes qui représentent la combinaison d’autres tâches. Avant de servir le petit-déjeuner, vous devez attendre la fin de la tâche qui correspond à l’action de faire griller le pain, avant d’ajouter le beurre et la confiture. Vous pouvez représenter cette tâche à l’aide du code suivant :
 
-[!code-csharp[ComposeToastTask](~/samples/snippets/csharp/tour-of-async/AsyncBreakfast-V3/Program.cs#ComposeToastTask)]
+[!code-csharp[ComposeToastTask](./snippets/index/AsyncBreakfast-V3/Program.cs#ComposeToastTask)]
 
 La signature de la méthode précédente comprend le modificateur `async`. Cela signale au compilateur que cette méthode contient une instruction `await`. Elle contient des opérations asynchrones. Cette méthode représente la tâche qui consiste à faire griller le pain, puis à ajouter le beurre et la confiture. Cette méthode retourne un <xref:System.Threading.Tasks.Task%601> qui représente la composition de ces trois opérations. Le bloc de code principal devient alors :
 
-[!code-csharp[StartConcurrentTasks](~/samples/snippets/csharp/tour-of-async/AsyncBreakfast-V3/Program.cs#Main)]
+[!code-csharp[StartConcurrentTasks](./snippets/index/AsyncBreakfast-V3/Program.cs#Main)]
 
 La modification précédente montre une technique importante pour l’utilisation du code asynchrone. Pour composer des tâches, vous devez séparer les opérations dans une nouvelle méthode qui retourne une tâche. Vous pouvez choisir dans quels cas attendre les tâches. Vous pouvez démarrer d’autres tâches simultanément.
 
@@ -138,10 +138,10 @@ Console.WriteLine("Breakfast is ready!");
 
 Une autre option consiste à utiliser <xref:System.Threading.Tasks.Task.WhenAny%2A>, qui retourne un `Task<Task>` se terminant lorsque l’un de ses arguments se termine. Vous pouvez attendre la tâche retournée, tout en sachant qu’elle est déjà terminée. Le code suivant montre comment utiliser <xref:System.Threading.Tasks.Task.WhenAny%2A> pour attendre la fin de la première tâche, puis traiter ses résultats. Après avoir traité les résultats de la tâche terminée, vous pouvez la supprimer de la liste des tâches passée à `WhenAny`.
 
-[!code-csharp[AwaitAnyTask](~/samples/snippets/csharp/tour-of-async/AsyncBreakfast-final/Program.cs#AwaitAnyTask)]
+[!code-csharp[AwaitAnyTask](./snippets/index/AsyncBreakfast-final/Program.cs#AwaitAnyTask)]
 
 Après toutes ces modifications, la version finale de `Main` ressemble au code suivant :
 
-[!code-csharp[Final](~/samples/snippets/csharp/tour-of-async/AsyncBreakfast-final/Program.cs#Main)]
+[!code-csharp[Final](./snippets/index/AsyncBreakfast-final/Program.cs#Main)]
 
 Le code final est asynchrone. Il reflète plus précisément la façon dont nous préparons habituellement le petit-déjeuner. Comparez le code précédent au premier exemple de code de cet article. Les actions de base sont toujours claires lorsque nous lisons le code. Ce code est tout aussi lisible que les instructions de préparation du petit-déjeuner au début de cet article. Les fonctionnalités de langage pour `async` et `await` traduisent ce que chaque personne fait lorsqu’elle suit des instructions : démarrer les tâches dès que possible et ne pas attendre qu’une tâche soit terminée avant de passer à la suivante.
