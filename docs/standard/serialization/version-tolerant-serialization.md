@@ -14,12 +14,12 @@ helpviewer_keywords:
 - BinaryFormatter class, samples
 - serialization, attributes
 ms.assetid: bea0ffe3-2708-4a16-ac7d-e586ed6b8e8d
-ms.openlocfilehash: 87bdc0f0328e7a75477672432c0944818dbef244
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: afc822e1f8873bac069f6634fdf1d4665d392e69
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380097"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762589"
 ---
 # <a name="version-tolerant-serialization"></a>Sérialisation avec tolérance de version
 
@@ -28,7 +28,7 @@ Dans les versions 1.0 et 1.1 du .NET Framework, la création de types sérial
 - Les versions antérieures d'une application pouvaient lever des exceptions lorsque l'utilisateur tentait de désérialiser les nouvelles versions du type précédent.
 - Les versions plus récentes d'une application pouvaient lever des exceptions lors de la désérialisation de versions antérieures d'un type ayant des données manquantes.
 
-La Sérialisation avec tolérance de version (VTS) comprend un ensemble de fonctionnalités introduites dans .NET Framework 2.0 et qui simplifient, au fil du temps, la modification des types sérialisables. Plus précisément, les fonctions VTS sont activées pour les classes auxquelles l'attribut <xref:System.SerializableAttribute> a été appliqué, y compris des types génériques. VTS permet d'ajouter de nouveaux champs à ces classes en assurant la compatibilité avec d'autres versions du type. Pour obtenir un exemple d’application opérationnelle, consultez [Sérialisation avec tolérance de version, exemple de technologie](version-tolerant-serialization-technology-sample.md).
+La Sérialisation avec tolérance de version (VTS) comprend un ensemble de fonctionnalités introduites dans .NET Framework 2.0 et qui simplifient, au fil du temps, la modification des types sérialisables. Plus précisément, les fonctions VTS sont activées pour les classes auxquelles l'attribut <xref:System.SerializableAttribute> a été appliqué, y compris des types génériques. VTS permet d'ajouter de nouveaux champs à ces classes en assurant la compatibilité avec d'autres versions du type. Pour obtenir un exemple d’application opérationnelle, consultez [Sérialisation avec tolérance de version, exemple de technologie](basic-serialization-technology-sample.md).
 
 Les fonctions VTS sont activées lors de l'utilisation de <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. En outre, toutes les fonctionnalités, hormis la tolérance de données étrangères, sont également activées lors de l'utilisation de <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>. Pour plus d’informations sur l’utilisation de ces classes pour la sérialisation, consultez [Sérialisation binaire](binary-serialization.md).
 

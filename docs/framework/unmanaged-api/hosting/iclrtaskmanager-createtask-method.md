@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: eea570d9-2e53-4320-9ea0-eb777bf9dcf3
 topic_type:
 - apiref
-ms.openlocfilehash: fcb78dd5374ff97f23d7dfea63fe33fa96836958
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9829f57da911b43626516284e4858adc4139a3ca
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124536"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762871"
 ---
 # <a name="iclrtaskmanagercreatetask-method"></a>ICLRTaskManager::CreateTask, méthode
 Demande explicitement que le common language runtime (CLR) crée une nouvelle tâche.  
@@ -35,13 +35,13 @@ HRESULT CreateTask (
   
 ## <a name="parameters"></a>Paramètres  
  `pTask`  
- à Pointeur vers l’adresse d’un [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)nouvellement créé, ou null, si la tâche n’a pas pu être créée.  
+ à Pointeur vers l’adresse d’un [ICLRTask](iclrtask-interface.md)nouvellement créé, ou null, si la tâche n’a pas pu être créée.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|La méthode a été retournée avec succès.|  
+|S_OK|Retour réussi de la méthode.|  
 |HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -50,25 +50,25 @@ HRESULT CreateTask (
 |E_OUTOFMEMORY|La mémoire disponible est insuffisante pour allouer la ressource demandée.|  
   
 ## <a name="remarks"></a>Notes  
- Le CLR crée automatiquement une nouvelle tâche lors de l’initialisation, lorsque le code utilisateur crée un thread à l’aide de types dans l’espace de noms <xref:System.Threading> ou lorsque la taille du pool de threads augmente. Elle crée également des tâches lorsque du code non managé effectue un appel à une fonction managée.  
+ Le CLR crée automatiquement une nouvelle tâche lors de l’initialisation, lorsque le code utilisateur crée un thread à l’aide de types dans l' <xref:System.Threading> espace de noms ou lorsque la taille du pool de threads augmente. Elle crée également des tâches lorsque du code non managé effectue un appel à une fonction managée.  
   
- `CreateTask` permet à l’hôte de faire une demande explicite que le CLR crée une nouvelle tâche. Par exemple, l’hôte peut appeler cette méthode pour préinitialiser les structures de données.  
+ `CreateTask`permet à l’hôte de faire une demande explicite que le CLR crée une nouvelle tâche. Par exemple, l’hôte peut appeler cette méthode pour préinitialiser les structures de données.  
   
 > [!IMPORTANT]
-> La nouvelle tâche est retournée dans un état suspendu et reste suspendue jusqu’à ce que l’hôte appelle explicitement [IHostTask :: Start](../../../../docs/framework/unmanaged-api/hosting/ihosttask-start-method.md).  
+> La nouvelle tâche est retournée dans un état suspendu et reste suspendue jusqu’à ce que l’hôte appelle explicitement [IHostTask :: Start](ihosttask-start-method.md).  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRTask, interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask, interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask, interface](iclrtask-interface.md)
+- [ICLRTaskManager, interface](iclrtaskmanager-interface.md)
+- [IHostTask, interface](ihosttask-interface.md)
+- [IHostTaskManager, interface](ihosttaskmanager-interface.md)

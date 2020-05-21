@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: b5785468-fcd7-4cc3-8a5d-8796337b53fc
 topic_type:
 - apiref
-ms.openlocfilehash: aacf9de36dc39b63ed36b672e31f40704413d608
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5d6e19fe307373c2920fd60b04bff482b238c5c4
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176329"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762953"
 ---
 # <a name="iclrtaskrudeabort-method"></a>ICLRTask::RudeAbort, méthode
-Demande au temps d’exécution de langue commune (CLR) d’interrompre la tâche représentée par l’instance actuelle [d’interface ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) immédiatement et sans condition.  
+Indique au common language runtime (CLR) d’abandonner immédiatement et sans condition la tâche représentée par l’instance d' [interface ICLRTask](iclrtask-interface.md) actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,27 +36,27 @@ HRESULT RudeAbort ();
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`RudeAbort`retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un état dans lequel il ne peut pas exécuter le code géré ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel s’est fait chronométrer.|  
-|HOST_E_NOT_OWNER|L’appelant n’est pas propriétaire de la serrure.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un fil bloqué ou une fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode revient E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels ultérieurs aux méthodes d’hébergement reviennent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
+|HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes   
- Un hôte `RudeAbort` appelle à interrompre immédiatement une tâche. Les finalisateurs et les routines de manutention d’exception ne sont pas garantis pour être exécutés.  
+## <a name="remarks"></a>Notes  
+ Un hôte appelle `RudeAbort` pour abandonner immédiatement une tâche. Il n’est pas garanti que les finaliseurs et les routines de gestion des exceptions soient exécutées.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRTask, interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask, interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask, interface](iclrtask-interface.md)
+- [ICLRTaskManager, interface](iclrtaskmanager-interface.md)
+- [IHostTask, interface](ihosttask-interface.md)
+- [IHostTaskManager, interface](ihosttaskmanager-interface.md)

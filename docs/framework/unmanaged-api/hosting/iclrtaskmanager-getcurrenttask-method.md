@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c0b82a9f-edc6-4878-9c81-48de53c02142
 topic_type:
 - apiref
-ms.openlocfilehash: a57610d1b41d80d54a245b9744aafd78a1e88177
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9cb97d9f383b7b54b431457042c4c4a7fc9cd876
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73195907"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762828"
 ---
 # <a name="iclrtaskmanagergetcurrenttask-method"></a>ICLRTaskManager::GetCurrentTask, méthode
-Obtient l’instance d' [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) en cours d’exécution sur le thread de système d’exploitation d’où provient l’appel de méthode.  
+Obtient l’instance d' [ICLRTask](iclrtask-interface.md) en cours d’exécution sur le thread de système d’exploitation d’où provient l’appel de méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,13 +35,13 @@ HRESULT GetCurrentTask (
   
 ## <a name="parameters"></a>Paramètres  
  `ppTask`  
- à Pointeur vers l’adresse d’une `ICLRTask` instance en cours d’exécution sur le thread de système d’exploitation dont provient l’appel, ou null si aucune tâche n’est en cours d’exécution sur ce thread.  
+ à Pointeur vers l’adresse d’une `ICLRTask` instance en cours d’exécution sur le thread de système d’exploitation d’où provient l’appel ou valeur null si aucune tâche n’est en cours d’exécution sur ce thread.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|La méthode a été retournée avec succès.|  
+|S_OK|Retour réussi de la méthode.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -49,20 +49,20 @@ HRESULT GetCurrentTask (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Notes  
- L’instance `ICLRTask` vers laquelle pointe le paramètre `ppTask` représente la tâche en cours d’exécution pour le CLR. L’instance `ICLRTask` est associée à une instance [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) correspondante qui représente la tâche pour l’hôte.  
+ L' `ICLRTask` instance vers laquelle `ppTask` pointe le paramètre représente la tâche en cours d’exécution pour le CLR. L' `ICLRTask` instance est associée à une instance [IHostTask](ihosttask-interface.md) correspondante qui représente la tâche pour l’hôte.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Conditions requises  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRTask, interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask, interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask, interface](iclrtask-interface.md)
+- [ICLRTaskManager, interface](iclrtaskmanager-interface.md)
+- [IHostTask, interface](ihosttask-interface.md)
+- [IHostTaskManager, interface](ihosttaskmanager-interface.md)
