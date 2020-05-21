@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: 3bce796191e0ebe6dbe4650457abe5a20c383f02
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 43da6233b70927e7320874772976b9e93a0bd69f
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79147560"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721376"
 ---
 ### <a name="jsonfactoryconvertercreateconverter-signature-changed"></a>Signature de JsonFactoryConverter. CreateConverter modifiée
 
-Pour faciliter la composition des <xref:System.Text.Json.Serialization.JsonConverterFactory> classes, la <xref:System.Text.Json.Serialization.JsonConverterFactory.CreateConverter%2A> méthode a été rendue publique et reçoit un deuxième argument de type <xref:System.Text.Json.JsonSerializerOptions>.
+Pour faciliter la composition des <xref:System.Text.Json.Serialization.JsonConverterFactory> classes, la <xref:System.Text.Json.Serialization.JsonConverterFactory.CreateConverter%2A> méthode a été rendue publique et reçoit un deuxième argument de type <xref:System.Text.Json.JsonSerializerOptions> .
 
 #### <a name="change-description"></a>Description de la modification
 
@@ -36,7 +36,7 @@ namespace System.Text.Json.Serialization
 }
 ```
 
-Avant cette modification, il était difficile de composer des convertisseurs de fabrique scellés, car il n’existait pas de moyen <xref:System.Text.Json.Serialization.JsonConverter%601> simple de l’en faire. Rendre la méthode de fabrique publique et transmettre également l' <xref:System.Text.Json.JsonSerializerOptions> autorisation actuelle pour une composition bien plus flexible.
+Avant cette modification, il était difficile de composer des convertisseurs de fabrique scellés, car il n’existait pas de moyen simple de l’en faire <xref:System.Text.Json.Serialization.JsonConverter%601> . Rendre la méthode de fabrique publique et transmettre également l' <xref:System.Text.Json.JsonSerializerOptions> autorisation actuelle pour une composition bien plus flexible.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -52,7 +52,7 @@ Les classes dérivées doivent être mises à jour et recompilées.
 
 <!-- For tool use only
 
-### Affected APIs
+#### Affected APIs
 
 - `M:System.Text.Json.Serialization.JsonConverterFactory.CreateConverter(System.Type,System.Text.Json.JsonSerializerOptions)`
 

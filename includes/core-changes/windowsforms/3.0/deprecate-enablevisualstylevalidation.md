@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 75baa4f23eae838defafd3ce9b3907a187982a18
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 97e38685777c7c418c0ccd91f4c433501ecf3aaa
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75937121"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721301"
 ---
 ### <a name="enablevisualstylevalidation-compatibility-switch-not-supported"></a>Commutateur de compatibilité EnableVisualStyleValidation non pris en charge
 
@@ -30,11 +30,11 @@ Windows Forms
 
 #### <a name="affected-apis"></a>API affectées
 
-- Aucun
+- Aucune
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 - Not detectable via API analysis
 

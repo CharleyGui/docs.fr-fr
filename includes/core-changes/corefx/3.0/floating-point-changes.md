@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: 22dbb1e982f83687a9e0eb288ed72c78c676db77
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 719f336e1b38597674d6ee8f0c5429dd965054b1
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021615"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721681"
 ---
 ### <a name="floating-point-formatting-and-parsing-behavior-changed"></a>Modification du comportement de l’analyse et de la mise en forme à virgule flottante
 
-Le comportement d’analyse et de mise en forme de virgule <xref:System.Double> flottante (par les types et <xref:System.Single> ) est désormais conforme à la norme IEEE.
+Le comportement d’analyse et de mise en forme de virgule flottante (par les <xref:System.Double> <xref:System.Single> types et) est désormais conforme à la norme IEEE.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans .net Core 2,2 et versions antérieures, la mise en <xref:System.Double.ToString%2A?displayProperty=nameWithType> forme <xref:System.Single.ToString%2A?displayProperty=nameWithType>avec et, ainsi que <xref:System.Double.Parse%2A?displayProperty=nameWithType>l' <xref:System.Double.TryParse%2A?displayProperty=nameWithType>analyse <xref:System.Single.Parse%2A?displayProperty=nameWithType>avec, <xref:System.Single.TryParse%2A?displayProperty=nameWithType> , et ne sont pas conformes à IEEE. Par conséquent, il est impossible de garantir qu’une valeur fera l’aller-retour avec toute chaîne de format standard ou personnalisée prise en charge. Pour certaines entrées, la tentative d’analyse d’une valeur mise en forme peut échouer et, pour d’autres, la valeur analysée n’est pas égale à la valeur d’origine.
+Dans .net Core 2,2 et versions antérieures, la mise en forme avec <xref:System.Double.ToString%2A?displayProperty=nameWithType> et <xref:System.Single.ToString%2A?displayProperty=nameWithType> , ainsi que l’analyse avec <xref:System.Double.Parse%2A?displayProperty=nameWithType> ,, et ne <xref:System.Double.TryParse%2A?displayProperty=nameWithType> <xref:System.Single.Parse%2A?displayProperty=nameWithType> <xref:System.Single.TryParse%2A?displayProperty=nameWithType> sont pas conformes à IEEE. Par conséquent, il est impossible de garantir qu’une valeur fera l’aller-retour avec toute chaîne de format standard ou personnalisée prise en charge. Pour certaines entrées, la tentative d’analyse d’une valeur mise en forme peut échouer et, pour d’autres, la valeur analysée n’est pas égale à la valeur d’origine.
 
 À compter de .NET Core 3,0, les opérations d’analyse et de mise en forme sont conformes à la norme IEEE 754. Cela garantit que le comportement des types à virgule flottante dans .NET correspond à celui des langages compatibles IEEE tels que C#. Pour plus d’informations, consultez le billet de blog [améliorations de la mise en forme et de l’analyse de la virgule flottante dans .net Core 3,0](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) .
 
@@ -39,7 +39,7 @@ Bibliothèques .NET Core
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 - `Overload:System.Double.ToString`
 - `Overload:System.Single.ToString`

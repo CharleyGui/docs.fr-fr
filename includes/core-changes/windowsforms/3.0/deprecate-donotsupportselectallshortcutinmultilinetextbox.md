@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9631e64bb403a3fe7b1b91e8ac592b57ce8068d9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bba74f26eafd52b966928835d5003d03af1eabdc
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75937044"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721054"
 ---
 ### <a name="donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported"></a>Commutateur de compatibilité DoNotSupportSelectAllShortcutInMultilineTextBox non pris en charge
 
@@ -12,7 +12,7 @@ Le `Switch.System.Windows.Forms.DoNotSupportSelectAllShortcutInMultilineTextBox`
 
 #### <a name="change-description"></a>Description de la modification
 
-À partir de .NET Framework 4.6.1, la sélection de la touche de raccourci <xref:System.Windows.Forms.TextBox> <kbd>CTRL</kbd> + <kbd>a</kbd> dans un contrôle sélectionne tout le texte. Dans .NET Framework 4,6 et versions antérieures, la sélection de la touche de raccourci <kbd>CTRL</kbd> + <kbd>a échoué</kbd> pour sélectionner tout le texte si les <xref:System.Windows.Forms.TextBox.Multiline?displayProperty=nameWithType> propriétés [TextBox. ShortcutsEnabled](xref:System.Windows.Forms.TextBoxBase.ShortcutsEnabled) et `true`sont toutes deux définies sur. Le `Switch.System.Windows.Forms.DoNotSupportSelectAllShortcutInMultilineTextBox` commutateur de compatibilité a été introduit dans .NET Framework 4.6.1 pour conserver le comportement d’origine. Pour plus d'informations, consultez <xref:System.Windows.Forms.TextBox.ProcessCmdKey%2A?displayProperty=nameWithType>.
+À partir de .NET Framework 4.6.1, la sélection de la touche de raccourci <kbd>CTRL</kbd>  +  <kbd>a</kbd> dans un <xref:System.Windows.Forms.TextBox> contrôle sélectionne tout le texte. Dans .NET Framework 4,6 et versions antérieures, la sélection de la touche de raccourci <kbd>CTRL</kbd>  +  <kbd>A</kbd> a échoué pour sélectionner tout le texte si les propriétés [TextBox. ShortcutsEnabled](xref:System.Windows.Forms.TextBoxBase.ShortcutsEnabled) et <xref:System.Windows.Forms.TextBox.Multiline?displayProperty=nameWithType> sont toutes deux définies sur `true` . Le `Switch.System.Windows.Forms.DoNotSupportSelectAllShortcutInMultilineTextBox` commutateur de compatibilité a été introduit dans .NET Framework 4.6.1 pour conserver le comportement d’origine. Pour plus d'informations, consultez <xref:System.Windows.Forms.TextBox.ProcessCmdKey%2A?displayProperty=nameWithType>.
 
 Dans .NET Core, le `Switch.System.Windows.Forms.DoNotSupportSelectAllShortcutInMultilineTextBox` commutateur n’est pas pris en charge.
 
@@ -30,11 +30,11 @@ Windows Forms
 
 #### <a name="affected-apis"></a>API affectées
 
-- Aucun
+- Aucune
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 - Not detectable via API analysis
 

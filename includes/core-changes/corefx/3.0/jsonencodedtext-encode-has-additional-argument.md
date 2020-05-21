@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: 2afe5ae80c2d7feca89737b767a6335950d04416
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: d90996ae1b87cdea815daf979bece094d8602f70
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021676"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721682"
 ---
 ### <a name="jsonencodedtextencode-methods-have-an-additional-javascriptencoder-argument"></a>Les méthodes JsonEncodedText. Encode ont un argument JavaScriptEncoder supplémentaire
 
-À compter de .NET Core 3,0 Preview 8, <xref:System.Text.Json.JsonEncodedText.Encode%2A?displayProperty=nameWithType> les méthodes contiennent un <xref:System.Text.Encodings.Web.JavaScriptEncoder> argument facultatif.
+À compter de .NET Core 3,0 Preview 8, les <xref:System.Text.Json.JsonEncodedText.Encode%2A?displayProperty=nameWithType> méthodes contiennent un <xref:System.Text.Encodings.Web.JavaScriptEncoder> argument facultatif.
 
 #### <a name="change-description"></a>Description de la modification
 
-.NET Core 3,0 comprend un nouveau type, XREF : System. Text. JSON. JsonEncodedText. Encode% 2A ? displayProperty = nameWithType>. À compter de .NET Core 3,0 Preview 8, la signature de <xref:System.Text.Json.JsonEncodedText.Encode%2A?displayProperty=nameWithType> toutes les surcharges de méthode a changé pour <xref:System.Text.Encodings.Web.JavaScriptEncoder> inclure un paramètre facultatif. Cette modification a été apportée pour autoriser un encodeur différent ou personnalisé.
+.NET Core 3,0 comprend un nouveau type, XREF : System. Text. JSON. JsonEncodedText. Encode% 2A ? displayProperty = nameWithType>. À compter de .NET Core 3,0 Preview 8, la signature de toutes les <xref:System.Text.Json.JsonEncodedText.Encode%2A?displayProperty=nameWithType> surcharges de méthode a changé pour inclure un <xref:System.Text.Encodings.Web.JavaScriptEncoder> paramètre facultatif. Cette modification a été apportée pour autoriser un encodeur différent ou personnalisé.
 
 La signature des `Encode` méthodes dans .net Core 3,0 Preview 7 est la suivante :
 
@@ -62,7 +62,7 @@ Bibliothèques .NET Core
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `M:System.Text.Json.JsonEncodedText.Encode(System.ReadOnlySpan{System.Byte},System.Text.Encodings.Web.JavaScriptEncoder)`
 - `M:System.Text.Json.JsonEncodedText.Encode(System.ReadOnlySpan{System.Char},System.Text.Encodings.Web.JavaScriptEncoder)`

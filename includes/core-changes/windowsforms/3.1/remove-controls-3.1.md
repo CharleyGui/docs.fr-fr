@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 10811a90887624a731c58d557e1dd196ae2c9207
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 06a700a6fcd9c434e5ea8a10031371d13a4d1a4b
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76508657"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721728"
 ---
 ### <a name="removed-controls"></a>Contrôles supprimés
 
@@ -100,7 +100,7 @@ Windows Forms
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 - `T:System.Windows.Forms.Menu`
 - `T:System.Windows.Forms.Menu.MenuItemCollection`

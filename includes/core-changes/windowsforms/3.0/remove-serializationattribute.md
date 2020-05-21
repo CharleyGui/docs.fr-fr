@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: d48ced9d0201a33f9149aba155ddd3d8bc04c93f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b35e99b1516c3236d07153cf0b69dae55a4bff7d
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74643955"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721468"
 ---
 ### <a name="serializableattribute-removed-from-some-windows-forms-types"></a>SerializableAttribute supprimé de certains types de Windows Forms
 
-<xref:System.SerializableAttribute> A été supprimé de certains Windows Forms des classes qui n’ont aucun scénario de sérialisation binaire connu.
+<xref:System.SerializableAttribute>A été supprimé de certains Windows Forms des classes qui n’ont aucun scénario de sérialisation binaire connu.
 
 #### <a name="change-description"></a>Description de la modification
 
-Les types suivants sont décorés avec <xref:System.SerializableAttribute> le dans .NET Framework, mais l’attribut a été supprimé dans .net Core :
+Les types suivants sont décorés avec le <xref:System.SerializableAttribute> dans .NET Framework, mais l’attribut a été supprimé dans .net Core :
 
 - `System.InvariantComparer`
 - <xref:System.ComponentModel.Design.ExceptionCollection?displayProperty=nameWithType>
@@ -26,7 +26,7 @@ Les types suivants sont décorés avec <xref:System.SerializableAttribute> le da
 - `System.Windows.Forms.NativeMethods.MSOCRINFOSTRUCT`
 - `System.Windows.Forms.NativeMethods.MSG`
 
-Historiquement, ce mécanisme de sérialisation avait des préoccupations graves en matière de maintenance et de sécurité. La `SerializableAttribute` gestion de sur les types signifie que ces types doivent être testés pour les modifications de sérialisation de version à version et les modifications potentielles de sérialisation de Framework à Framework. Cela complique l’évolution de ces types et peut s’avérer coûteux à gérer. Ces types n’ont aucun scénario de sérialisation binaire connu, ce qui réduit l’impact de la suppression de l’attribut.
+Historiquement, ce mécanisme de sérialisation avait des préoccupations graves en matière de maintenance et de sécurité. La gestion `SerializableAttribute` de sur les types signifie que ces types doivent être testés pour les modifications de sérialisation de version à version et les modifications potentielles de sérialisation de Framework à Framework. Cela complique l’évolution de ces types et peut s’avérer coûteux à gérer. Ces types n’ont aucun scénario de sérialisation binaire connu, ce qui réduit l’impact de la suppression de l’attribut.
 
 Pour plus d’informations, consultez [sérialisation binaire](~/docs/standard/serialization/binary-serialization.md).
 
@@ -44,11 +44,11 @@ Windows Forms
 
 #### <a name="affected-apis"></a>API affectées
 
-- Aucun
+- Aucune
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - Not detectable via API analysis
 

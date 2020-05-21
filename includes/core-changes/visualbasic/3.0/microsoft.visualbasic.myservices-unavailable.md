@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d207a937917da78f6b902ad8ca4f02fa9a46c2e1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: acb8ed44b7d18b257731e32339f087c8fe5fdd4a
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76116376"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721590"
 ---
 ### <a name="types-in-microsoftvisualbasicmyservices-namespace-not-available"></a>Types dans l’espace de noms Microsoft. VisualBasic. MyServices non disponibles
 
@@ -26,7 +26,7 @@ Si votre code dépend de l’utilisation des types **Microsoft. VisualBasic. MyS
 
 |Type Microsoft. VisualBasic. MyServices|Type de bibliothèque de classes .NET|
 |--|--|
-|<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>|<xref:System.Windows.Clipboard?displayProperty=nameWithType>pour les applications WPF <xref:System.Windows.Forms.Clipboard?displayProperty=nameWithType> , pour les applications Windows Forms|
+|<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>|<xref:System.Windows.Clipboard?displayProperty=nameWithType>pour les applications WPF, <xref:System.Windows.Forms.Clipboard?displayProperty=nameWithType> pour les applications Windows Forms|
 |<xref:Microsoft.VisualBasic.MyServices.FileSystemProxy>|Types dans l' <xref:System.IO> espace de noms|
 |<xref:Microsoft.VisualBasic.MyServices.RegistryProxy>|Types liés au registre dans l' <xref:Microsoft.Win32> espace de noms|
 |<xref:Microsoft.VisualBasic.MyServices.SpecialDirectoriesProxy>|<xref:System.Environment.GetFolderPath%2A?displayProperty=nameWithType>|
@@ -41,7 +41,7 @@ Visual Basic
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `N:Microsoft.VisualBasic.MyServices`
 

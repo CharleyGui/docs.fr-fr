@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 65d8ca480d41a3807473583355fe8be41e0e9701
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 877f9d99b660c4af843e4d8d525219c1df6c99a9
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81274732"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721456"
 ---
 ### <a name="net-core-30-prefers-openssl-11x-to-openssl-10x"></a>.NET Core 3,0 préfère OpenSSL 1.1. x à OpenSSL 1.0. x
 
@@ -14,9 +14,9 @@ Cette modification peut avoir un impact sur les bibliothèques ou les applicatio
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans .NET Core 2,2 et versions antérieures, le runtime préfère charger OpenSSL 1.0. x sur 1.1. x. Cela signifie que les <xref:System.IntPtr> types <xref:System.Runtime.InteropServices.SafeHandle> et pour l’interopérabilité avec OpenSSL sont utilisés avec libénigmatique. so. 1.0.0/libénigmatique. so. 1,0/libénigmatique. so. 10 par préférence.
+Dans .NET Core 2,2 et versions antérieures, le runtime préfère charger OpenSSL 1.0. x sur 1.1. x. Cela signifie que les <xref:System.IntPtr> <xref:System.Runtime.InteropServices.SafeHandle> types et pour l’interopérabilité avec OpenSSL sont utilisés avec libénigmatique. so. 1.0.0/libénigmatique. so. 1,0/libénigmatique. so. 10 par préférence.
 
-À compter de .NET Core 3,0, le runtime préfère le chargement d’OpenSSL 1.1. x sur OpenSSL 1.0. x. <xref:System.IntPtr> par <xref:System.Runtime.InteropServices.SafeHandle> conséquent, les types et pour l’interopérabilité avec OpenSSL sont utilisés avec libénigmatique. so. 1.1/libénigmatique. so. 11/libénigmatique. so. 1.1.0/libénigmatique. so. 1.1.1 par préférence. Par conséquent, les bibliothèques et les applications qui interagissent directement avec OpenSSL peuvent avoir des pointeurs incompatibles avec les valeurs .NET Core exposées lors de la mise à niveau à partir de .NET Core 2,1 ou .NET Core 2,2.
+À compter de .NET Core 3,0, le runtime préfère le chargement d’OpenSSL 1.1. x sur OpenSSL 1.0. x. par conséquent, les <xref:System.IntPtr> <xref:System.Runtime.InteropServices.SafeHandle> types et pour l’interopérabilité avec OpenSSL sont utilisés avec libénigmatique. so. 1.1/libénigmatique. so. 11/libénigmatique. so. 1.1.0/libénigmatique. so. 1.1.1 par préférence. Par conséquent, les bibliothèques et les applications qui interagissent directement avec OpenSSL peuvent avoir des pointeurs incompatibles avec les valeurs .NET Core exposées lors de la mise à niveau à partir de .NET Core 2,1 ou .NET Core 2,2.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -26,7 +26,7 @@ Dans .NET Core 2,2 et versions antérieures, le runtime préfère charger OpenSS
 
 Les bibliothèques et les applications qui effectuent des opérations directes avec OpenSSL doivent veiller à ce qu’elles utilisent la même version d’OpenSSL que le Runtime .NET Core.
 
-Toutes les bibliothèques ou applications qui <xref:System.IntPtr> utilisent <xref:System.Runtime.InteropServices.SafeHandle> ou les valeurs des types de chiffrement .net Core directement avec OpenSSL doivent comparer la version de la bibliothèque qu’ils <xref:System.Security.Cryptography.SafeEvpPKeyHandle.OpenSslVersion?displayProperty=nameWithType> utilisent avec la nouvelle propriété pour garantir la compatibilité des pointeurs.
+Toutes les bibliothèques ou applications qui utilisent <xref:System.IntPtr> ou <xref:System.Runtime.InteropServices.SafeHandle> les valeurs des types de chiffrement .net Core directement avec OpenSSL doivent comparer la version de la bibliothèque qu’ils utilisent avec la nouvelle <xref:System.Security.Cryptography.SafeEvpPKeyHandle.OpenSslVersion?displayProperty=nameWithType> propriété pour garantir la compatibilité des pointeurs.
 
 #### <a name="category"></a>Category
 
@@ -51,7 +51,7 @@ Chiffrement
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `Overload:System.Security.Cryptography.SafeEvpPKeyHandle.#ctor`
 - `M:System.Security.Cryptography.RSAOpenSsl.#ctor(System.IntPtr)`

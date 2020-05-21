@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1580c8c8b7bdad91656f494537230293dbaaf93b
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: bb264e406c6604c3606e564d99018eda0f9e8d89
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021557"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721661"
 ---
 ### <a name="apis-that-report-version-now-report-product-and-not-file-version"></a>API qui signalent la version du produit et non de la version du fichier
 
@@ -12,7 +12,7 @@ La plupart des API qui retournent des versions dans .NET Core retournent désorm
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans .net Core 2,2 et versions antérieures, les méthodes telles <xref:System.Environment.Version?displayProperty=nameWithType>que <xref:System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription?displayProperty=nameWithType>, et la boîte de dialogue des propriétés de fichier pour les assemblys .net Core reflètent la version de fichier. À compter de .NET Core 3,0, ils reflètent la version du produit.
+Dans .NET Core 2,2 et versions antérieures, les méthodes telles que <xref:System.Environment.Version?displayProperty=nameWithType> , <xref:System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription?displayProperty=nameWithType> et la boîte de dialogue des propriétés de fichier pour les assemblys .net Core reflètent la version de fichier. À compter de .NET Core 3,0, ils reflètent la version du produit.
 
 La figure suivante illustre la différence dans les informations de version de l’assembly *System. Runtime. dll* pour .net Core 2,2 (à gauche) et .net Core 3,0 (à droite), tel qu’affiché dans la boîte de dialogue des propriétés du fichier de l' **Explorateur Windows** .
 
@@ -37,7 +37,7 @@ Bibliothèques .NET Core
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `P:System.Environment.Version`
 - `P:System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription`

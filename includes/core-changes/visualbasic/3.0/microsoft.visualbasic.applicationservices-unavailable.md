@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d8cc506d60f3c24087ebde8ead345656fea0f484
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 09027863ff2f0009a14578db35db870c27369726
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76116349"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721253"
 ---
 ### <a name="types-in-microsoftvisualbasicapplicationservices-namespace-not-available"></a>Types dans l’espace de noms Microsoft. VisualBasic. ApplicationServices non disponibles
 
@@ -22,7 +22,7 @@ Les types ont été supprimés pour éviter les dépendances d’assembly inutil
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si votre code dépend de l’utilisation de <xref:Microsoft.VisualBasic.ApplicationServices> types et de leurs membres, vous pourrez peut-être utiliser un type ou un membre correspondant dans la bibliothèque de classes .net. Par exemple, certains <xref:System.Environment?displayProperty=nameWithType> membres <xref:System.Security.Principal.WindowsIdentity?displayProperty=nameWithType> et fournissent des fonctionnalités équivalentes aux propriétés de <xref:Microsoft.VisualBasic.ApplicationServices.User?displayProperty=nameWithType> la classe.
+Si votre code dépend de l’utilisation de <xref:Microsoft.VisualBasic.ApplicationServices> types et de leurs membres, vous pourrez peut-être utiliser un type ou un membre correspondant dans la bibliothèque de classes .net. Par exemple, certains <xref:System.Environment?displayProperty=nameWithType> <xref:System.Security.Principal.WindowsIdentity?displayProperty=nameWithType> membres et fournissent des fonctionnalités équivalentes aux propriétés de la <xref:Microsoft.VisualBasic.ApplicationServices.User?displayProperty=nameWithType> classe.
 
 #### <a name="category"></a>Category
 
@@ -34,7 +34,7 @@ Visual Basic
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `N:Microsoft.VisualBasic.ApplicationServices`
 

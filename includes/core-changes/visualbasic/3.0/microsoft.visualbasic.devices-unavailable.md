@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7f528510e4158dad71280a7b1f269a231b8c60f2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a35de09b9a7bb9686433205359c3cc55954c29c3
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76116338"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721621"
 ---
 ### <a name="types-in-microsoftvisualbasicdevices-namespace-not-available"></a>Types dans l’espace de noms Microsoft. VisualBasic. Devices non disponible
 
@@ -22,7 +22,7 @@ Les types ont été supprimés pour éviter les dépendances d’assembly inutil
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si votre code dépend de l’utilisation de <xref:Microsoft.VisualBasic.Devices> types et de leurs membres, vous pourrez peut-être utiliser un type ou un membre correspondant dans la bibliothèque de classes .net. Par exemple, les fonctionnalités équivalentes <xref:Microsoft.VisualBasic.Devices.Clock?displayProperty=nameWithType> à la classe sont fournies <xref:System.DateTime?displayProperty=nameWithType> par <xref:System.Environment?displayProperty=nameWithType> les types et, et les fonctionnalités <xref:Microsoft.VisualBasic.Devices.Ports?displayProperty=nameWithType> équivalentes à la classe sont fournies <xref:System.IO.Ports?displayProperty=nameWithType> par les types dans l’espace de noms.
+Si votre code dépend de l’utilisation de <xref:Microsoft.VisualBasic.Devices> types et de leurs membres, vous pourrez peut-être utiliser un type ou un membre correspondant dans la bibliothèque de classes .net. Par exemple, les fonctionnalités équivalentes à la <xref:Microsoft.VisualBasic.Devices.Clock?displayProperty=nameWithType> classe sont fournies par les <xref:System.DateTime?displayProperty=nameWithType> <xref:System.Environment?displayProperty=nameWithType> types et, et les fonctionnalités équivalentes à la <xref:Microsoft.VisualBasic.Devices.Ports?displayProperty=nameWithType> classe sont fournies par les types dans l' <xref:System.IO.Ports?displayProperty=nameWithType> espace de noms.
 
 #### <a name="category"></a>Category
 
@@ -34,7 +34,7 @@ Visual Basic
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `N:Microsoft.VisualBasic.Devices`
 

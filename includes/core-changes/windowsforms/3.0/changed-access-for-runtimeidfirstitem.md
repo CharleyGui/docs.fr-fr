@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: 5bbbf9075683b0f124e126b661b4ab85011e6c2e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1ea2d70a7cfe04cc4c4b9b58ea6bb6fa0226b245
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74644046"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83720951"
 ---
 ### <a name="change-of-access-for-accessibleobjectruntimeidfirstitem"></a>Changement d’accès pour AccessibleObject. RuntimeIDFirstItem
 
-À compter de .NET Core 3,0 RC1, l’accessibilité `AccessibleObject.RuntimeIDFirstItem` de est passée `protected` de `internal`à.
+À compter de .NET Core 3,0 RC1, l’accessibilité de `AccessibleObject.RuntimeIDFirstItem` est passée de `protected` à `internal` .
 
 #### <a name="change-description"></a>Description de la modification
 
-À compter de .NET Core 3,0 Preview 4, `AccessibleObject.RuntimeIDFirstItem` le champ `protected`était. À compter de .NET Core 3,0 RC1, il est passé `protected` de `internal` à pour s’aligner sur l’accessibilité du champ dans la .NET Framework.
+À compter de .NET Core 3,0 Preview 4, le `AccessibleObject.RuntimeIDFirstItem` champ était `protected` . À compter de .NET Core 3,0 RC1, il est passé de `protected` à `internal` pour s’aligner sur l’accessibilité du champ dans la .NET Framework.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -36,7 +36,7 @@ Windows Forms
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 - Not detectable via API analysis.
 
