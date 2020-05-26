@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c381f524-94cf-4fa2-9298-50f847a03431
 topic_type:
 - apiref
-ms.openlocfilehash: bf1b830f55110c00356527bc9caa41dfd94ae377
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f2b4028c78daf266e4ffecd86e6b0b30b9607d5b
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130455"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804819"
 ---
 # <a name="ihostgcmanagersuspensionstarting-method"></a>IHostGCManager::SuspensionStarting, méthode
 Avertit l’hôte que le common language runtime (CLR) interrompt l’exécution des tâches, pour effectuer une garbage collection.  
@@ -35,7 +35,7 @@ HRESULT SuspensionStarting ();
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`SuspensionStarting` retourné avec succès.|  
+|S_OK|`SuspensionStarting`retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -46,21 +46,21 @@ HRESULT SuspensionStarting ();
  Le CLR appelle `SuspensionStarting` pour informer l’hôte que garbage collection se produit.  
   
 > [!IMPORTANT]
-> Ne replanifiez pas cette tâche. L’hôte doit replanifier une tâche quand [ThreadIsBlockingForSuspension](../../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-threadisblockingforsuspension-method.md) est appelé.  
+> Ne replanifiez pas cette tâche. L’hôte doit replanifier une tâche quand [ThreadIsBlockingForSuspension](ihostgcmanager-threadisblockingforsuspension-method.md) est appelé.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRTask, interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask, interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
-- [IHostGCManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md)
+- [ICLRTask, interface](iclrtask-interface.md)
+- [ICLRTaskManager, interface](iclrtaskmanager-interface.md)
+- [IHostTask, interface](ihosttask-interface.md)
+- [IHostTaskManager, interface](ihosttaskmanager-interface.md)
+- [IHostGCManager, interface](ihostgcmanager-interface.md)

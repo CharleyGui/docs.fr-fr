@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 68c4ea19-c47c-45c6-b420-d3a2ba1c2d50
 topic_type:
 - apiref
-ms.openlocfilehash: 64cf6c80ab1cf4b3ca52c60d6e72b54c438f9f4a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f3e7456c3f992527981a15b3b1835e1ca72603ad
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73195839"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83803295"
 ---
 # <a name="ihostsyncmanagercreaterwlockreaderevent-method"></a>IHostSyncManager::CreateRWLockReaderEvent, méthode
 Crée un objet d’événement de réinitialisation manuelle pour l’implémentation d’un verrou de lecteur.  
@@ -37,19 +37,19 @@ HRESULT CreateRWLockReaderEvent (
   
 ## <a name="parameters"></a>Paramètres  
  `bInitialState`  
- [in] `true`, si `ppEvent` doit être signalé ; Sinon, `false`.  
+ [in] `true` , si `ppEvent` doit être signalé ; sinon, `false` .  
   
  `cookie`  
  dans Cookie à associer au verrou de lecteur.  
   
  `ppEvent`  
- à Pointeur vers l’adresse d’une instance [IHostManualEvent](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md) , ou null si l’objet d’événement n’a pas pu être créé.  
+ à Pointeur vers l’adresse d’une instance [IHostManualEvent](ihostmanualevent-interface.md) , ou null si l’objet d’événement n’a pas pu être créé.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`CreateRWLockReaderEvent` retourné avec succès.|  
+|S_OK|`CreateRWLockReaderEvent`retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -58,20 +58,20 @@ HRESULT CreateRWLockReaderEvent (
 |E_OUTOFMEMORY|Mémoire disponible insuffisante pour créer l’objet d’événement demandé.|  
   
 ## <a name="remarks"></a>Notes  
- Le CLR appelle `CreateRWLockReaderEvent` pour obtenir une référence à une instance `IHostManualEvent` à utiliser dans son implémentation d’un verrou de lecteur. L’hôte peut utiliser le cookie pour déterminer quelles tâches attendent le verrou du lecteur en interrogeant l’interface [ICLRSyncManager](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md) .  
+ Le CLR appelle `CreateRWLockReaderEvent` pour obtenir une référence à une `IHostManualEvent` instance à utiliser dans son implémentation d’un verrou de lecteur. L’hôte peut utiliser le cookie pour déterminer quelles tâches attendent le verrou du lecteur en interrogeant l’interface [ICLRSyncManager](iclrsyncmanager-interface.md) .  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRSyncManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostAutoEvent, interface](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)
-- [IHostManualEvent, interface](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md)
-- [IHostSyncManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
+- [ICLRSyncManager, interface](iclrsyncmanager-interface.md)
+- [IHostAutoEvent, interface](ihostautoevent-interface.md)
+- [IHostManualEvent, interface](ihostmanualevent-interface.md)
+- [IHostSyncManager, interface](ihostsyncmanager-interface.md)

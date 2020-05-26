@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c0765321-656c-441e-bab5-58176292be1e
 topic_type:
 - apiref
-ms.openlocfilehash: 2cf490bcd167b7a498ae21f479f616694ccb5521
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8345d85502087568cb05dd262cccf181e3ca07ac
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139480"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83803694"
 ---
 # <a name="ihostsemaphore-interface"></a>IHostSemaphore, interface
 Représente l’implémentation de l’hôte d’un sémaphore pour le Threading.  
@@ -28,22 +28,22 @@ Représente l’implémentation de l’hôte d’un sémaphore pour le Threading
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[ReleaseSemaphore, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-releasesemaphore-method.md)|Augmente le nombre de l’instance de `IHostSemaphore` actuelle de la valeur spécifiée.|  
-|[Wait, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-wait-method.md)|Entraîne l’attente de l’instance de `IHostSemaphore` actuelle jusqu’à ce qu’elle appartienne ou que la durée spécifiée soit écoulée.|  
+|[ReleaseSemaphore, méthode](ihostsemaphore-releasesemaphore-method.md)|Augmente le nombre de l’instance actuelle de `IHostSemaphore` la valeur spécifiée.|  
+|[Wait, méthode](ihostsemaphore-wait-method.md)|Fait en sorte que l' `IHostSemaphore` instance actuelle attende jusqu’à ce qu’elle appartienne ou que la durée spécifiée soit écoulée.|  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRSyncManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostAutoEvent, interface](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)
-- [IHostManualEvent, interface](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md)
-- [IHostSyncManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
-- [Interfaces d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ICLRSyncManager, interface](iclrsyncmanager-interface.md)
+- [IHostAutoEvent, interface](ihostautoevent-interface.md)
+- [IHostManualEvent, interface](ihostmanualevent-interface.md)
+- [IHostSyncManager, interface](ihostsyncmanager-interface.md)
+- [Interfaces d'hébergement](hosting-interfaces.md)

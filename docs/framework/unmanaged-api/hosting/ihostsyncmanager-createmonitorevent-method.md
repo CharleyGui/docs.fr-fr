@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 524c7fd3-9b5c-46e7-99ba-555fd2fe33f0
 topic_type:
 - apiref
-ms.openlocfilehash: f7426585045c7ae81377ec9bfca9d397d6f734cb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c0f7e1fd6bf4c9386300b11477df85e87899fc67
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73192020"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83803318"
 ---
 # <a name="ihostsyncmanagercreatemonitorevent-method"></a>IHostSyncManager::CreateMonitorEvent, méthode
 Crée un objet d’événement de réinitialisation automatique surveillé.  
@@ -39,13 +39,13 @@ HRESULT CreateMonitorEvent (
  dans Cookie à associer à l’objet d’événement.  
   
  `ppEvent`  
- à Pointeur vers l’adresse d’une instance [IHostAutoEvent](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md) , ou null si l’objet d’événement n’a pas pu être créé.  
+ à Pointeur vers l’adresse d’une instance [IHostAutoEvent](ihostautoevent-interface.md) , ou null si l’objet d’événement n’a pas pu être créé.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`CreateMonitorEvent` retourné avec succès.|  
+|S_OK|`CreateMonitorEvent`retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -54,22 +54,22 @@ HRESULT CreateMonitorEvent (
 |E_OUTOFMEMORY|Mémoire disponible insuffisante pour créer l’objet d’événement demandé.|  
   
 ## <a name="remarks"></a>Notes  
- `CreateMonitorEvent` retourne un `IHostAutoEvent` que le CLR utilise dans son implémentation du type de <xref:System.Threading.Monitor?displayProperty=nameWithType> managé. Cette méthode reflète la fonction Win32 `CreateEvent`, avec une valeur de `false` spécifiée pour le paramètre `bManualReset`.  
+ `CreateMonitorEvent`retourne un `IHostAutoEvent` que le CLR utilise dans son implémentation du type managé <xref:System.Threading.Monitor?displayProperty=nameWithType> . Cette méthode reflète la `CreateEvent` fonction Win32, avec `false` la valeur spécifiée pour le `bManualReset` paramètre.  
   
- L’hôte peut utiliser le cookie pour déterminer quelle tâche est en attente sur l’analyse en appelant la méthode [ICLRSyncManager :: GetMonitorOwner,](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-getmonitorowner-method.md) .  
+ L’hôte peut utiliser le cookie pour déterminer quelle tâche est en attente sur l’analyse en appelant la méthode [ICLRSyncManager :: GetMonitorOwner,](iclrsyncmanager-getmonitorowner-method.md) .  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRSyncManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostAutoEvent, interface](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)
-- [IHostSyncManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
+- [ICLRSyncManager, interface](iclrsyncmanager-interface.md)
+- [IHostAutoEvent, interface](ihostautoevent-interface.md)
+- [IHostSyncManager, interface](ihostsyncmanager-interface.md)
 - <xref:System.Threading.Monitor>

@@ -2,12 +2,12 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 04/29/2020
-ms.openlocfilehash: ef71e48daa7c4a6f33961d05a2f3def122087b0e
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 22b27007d26c98cff40733ef8d449ce334f87848
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82975431"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83802679"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -45,7 +45,7 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 [!code-xml[XUnit Basic Template](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
 
-Où `Microsoft.NET.Test.Sdk` est l’hôte de test `xunit` , est l’infrastructure de test. Et `xunit.runner.visualstudio` est un adaptateur de test, qui permet à l’infrastructure xUnit de fonctionner avec l’hôte de test.
+Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructure de test. Et `xunit.runner.visualstudio` est un adaptateur de test, qui permet à l’infrastructure xUnit de fonctionner avec l’hôte de test.
 
 ### <a name="implicit-restore"></a>Restauration implicite
 
@@ -66,11 +66,11 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test `xunit` , est l’infrastruct
 
 - **`-a|--test-adapter-path <PATH_TO_ADAPTER>`**
 
-  Chemin d’accès à un répertoire dans lequel rechercher d’autres adaptateurs de test. Seuls les fichiers *. dll* avec `.TestAdapter.dll` suffixe sont inspectés. S’il n’est pas spécifié, la recherche s’effectue dans le répertoire du *fichier test. dll* .
+  Chemin d’accès à un répertoire dans lequel rechercher d’autres adaptateurs de test. Seuls les fichiers *. dll* avec suffixe `.TestAdapter.dll` sont inspectés. S’il n’est pas spécifié, la recherche s’effectue dans le répertoire du *fichier test. dll* .
 
 - **`--blame`**
 
-  Exécute les tests en mode responsable. Cette option est utile pour isoler les tests problématiques qui provoquent le blocage de l’hôte de test. Lorsqu’un incident est détecté, il crée un fichier de séquence `TestResults/<Guid>/<Guid>_Sequence.xml` dans qui capture l’ordre des tests qui ont été exécutés avant l’incident.
+  Exécute les tests en mode responsable. Cette option est utile pour isoler les tests problématiques qui provoquent le blocage de l’hôte de test. Lorsqu’un incident est détecté, il crée un fichier de séquence dans `TestResults/<Guid>/<Guid>_Sequence.xml` qui capture l’ordre des tests qui ont été exécutés avant l’incident.
 
 - **`-c|--configuration <CONFIGURATION>`**
 
@@ -82,7 +82,7 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test `xunit` , est l’infrastruct
 
 - **`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
 
-  Active le mode de diagnostic pour la plateforme de test et écrit des messages de diagnostic dans le fichier spécifié et dans des fichiers à côté de celui-ci. Le processus d’enregistrement des messages détermine quels fichiers sont créés, par exemple `*.host_<date>.txt` pour le journal de l’hôte de `*.datacollector_<date>.txt` test et pour le journal du collecteur de données.
+  Active le mode de diagnostic pour la plateforme de test et écrit des messages de diagnostic dans le fichier spécifié et dans des fichiers à côté de celui-ci. Le processus d’enregistrement des messages détermine quels fichiers sont créés, par exemple `*.host_<date>.txt` pour le journal de l’hôte de test et `*.datacollector_<date>.txt` pour le journal du collecteur de données.
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -102,11 +102,11 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test `xunit` , est l’infrastruct
 
 - **`-l|--logger <LOGGER_URI/FRIENDLY_NAME>`**
 
-  Spécifie un enregistreur d’événements pour les résultats de tests. Contrairement à MSBuild, dotnet test n’accepte pas les abréviations `-l "console;v=d"` : `-l "console;verbosity=detailed"`au lieu d’utiliser.
+  Spécifie un enregistreur d’événements pour les résultats de tests. Contrairement à MSBuild, dotnet test n’accepte pas les abréviations : au lieu d' `-l "console;v=d"` utiliser `-l "console;verbosity=detailed"` .
 
 - **`--no-build`**
 
-  Ne génère pas le projet de test avant son exécution. Il définit également implicitement l’indicateur `--no-restore` -.
+  Ne génère pas le projet de test avant son exécution. Il définit également implicitement l' `--no-restore` indicateur-.
 
 - **`--nologo`**
 
@@ -118,11 +118,11 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test `xunit` , est l’infrastruct
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Répertoire dans lequel rechercher les binaires à exécuter. S’il n’est pas spécifié, le chemin d'accès par défaut est `./bin/<configuration>/<framework>/`.  Pour les projets avec plusieurs frameworks cibles (via `TargetFrameworks` la propriété), vous devez également définir `--framework` lorsque vous spécifiez cette option. `dotnet test`Exécutez toujours les tests à partir du répertoire de sortie. Vous pouvez utiliser <xref:System.AppDomain.BaseDirectory%2A?displayProperty=nameWithType> pour consommer des ressources de test dans le répertoire de sortie.
+  Répertoire dans lequel rechercher les binaires à exécuter. S’il n’est pas spécifié, le chemin d'accès par défaut est `./bin/<configuration>/<framework>/`.  Pour les projets avec plusieurs frameworks cibles (via la `TargetFrameworks` propriété), vous devez également définir `--framework` lorsque vous spécifiez cette option. `dotnet test`exécute toujours les tests à partir du répertoire de sortie. Vous pouvez utiliser <xref:System.AppDomain.BaseDirectory%2A?displayProperty=nameWithType> pour consommer des ressources de test dans le répertoire de sortie.
 
 - **`-r|--results-directory <PATH>`**
 
-  Répertoire où les résultats de test doivent être placés. Si le répertoire spécifié n’existe pas, il est créé. La valeur par `TestResults` défaut se trouve dans le répertoire qui contient le fichier projet.
+  Répertoire où les résultats de test doivent être placés. Si le répertoire spécifié n’existe pas, il est créé. La valeur par défaut se trouve `TestResults` dans le répertoire qui contient le fichier projet.
 
 - **`--runtime <RUNTIME_IDENTIFIER>`**
 
@@ -130,7 +130,7 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test `xunit` , est l’infrastruct
 
 - **`-s|--settings <SETTINGS_FILE>`**
 
-  Fichier `.runsettings` à utiliser pour exécuter les tests. Notez que l' `TargetPlatform` élément (x86 | x64) n’a aucun effet `dotnet test`pour. Pour exécuter des tests ciblant x86, installez la version x86 de .NET Core. Le nombre de bits de *dotnet. exe* qui se trouve sur le chemin d’accès correspond à ce qui sera utilisé pour l’exécution des tests. Pour plus d’informations, consultez les ressources suivantes :
+  Fichier `.runsettings` à utiliser pour exécuter les tests. Notez que l' `TargetPlatform` élément (x86 | x64) n’a aucun effet pour `dotnet test` . Pour exécuter des tests ciblant x86, installez la version x86 de .NET Core. Le nombre de bits de *dotnet. exe* qui se trouve sur le chemin d’accès correspond à ce qui sera utilisé pour l’exécution des tests. Pour plus d’informations, consultez les ressources suivantes :
 
   - [Configurez des tests unitaires à l’aide d’un fichier `.runsettings`.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
   - [Configurer une série de tests](https://github.com/Microsoft/vstest-docs/blob/master/docs/configure.md)
@@ -145,7 +145,7 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test `xunit` , est l’infrastruct
 
 - **`RunSettings`** arguments
 
- Inline `RunSettings` sont passés comme derniers arguments sur la ligne de commande après « -- » (Notez l’espace après--). Inline `RunSettings` sont spécifiés `[name]=[value]` en tant que paires. Un espace est utilisé pour séparer plusieurs paires `[name]=[value]`.
+ Inline `RunSettings` sont passés comme derniers arguments sur la ligne de commande après « -- » (Notez l’espace après--). Inline `RunSettings` sont spécifiés en tant que `[name]=[value]` paires. Un espace est utilisé pour séparer plusieurs paires `[name]=[value]`.
 
   Exemple : `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
 

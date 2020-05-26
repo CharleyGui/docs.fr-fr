@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4dff3646-a050-4bd9-ac31-fe307e8637ec
 topic_type:
 - apiref
-ms.openlocfilehash: dd588fa85ff8aaa396a8d0e52a738ada46c2a9b1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: de41b5e0aaf835ee2d4e4f32696fe104d5830b57
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128614"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804449"
 ---
 # <a name="ihostmemorymanagervirtualalloc-method"></a>IHostMemoryManager::VirtualAlloc, méthode
 Sert de wrapper logique pour la fonction Win32 correspondante. L’implémentation Win32 de `VirtualAlloc` réserve ou valide une région de pages dans l’espace d’adressage virtuel du processus appelant.  
@@ -52,7 +52,7 @@ HRESULT VirtualAlloc (
  dans Protection de la mémoire pour la région de pages à allouer.  
   
  `dwCriticalLevel`  
- dans Valeur [EMemoryCriticalLevel,](../../../../docs/framework/unmanaged-api/hosting/ememorycriticallevel-enumeration.md) qui indique l’impact d’un échec d’allocation.  
+ dans Valeur [EMemoryCriticalLevel,](ememorycriticallevel-enumeration.md) qui indique l’impact d’un échec d’allocation.  
   
  `ppMem`  
  à Pointeur vers l’adresse de départ de la mémoire allouée, ou null si la demande n’a pas pu être satisfaite.  
@@ -61,7 +61,7 @@ HRESULT VirtualAlloc (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`VirtualAlloc` retourné avec succès.|  
+|S_OK|`VirtualAlloc`retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -70,19 +70,19 @@ HRESULT VirtualAlloc (
 |E_OUTOFMEMORY|Mémoire disponible insuffisante pour terminer la demande d’allocation|  
   
 ## <a name="remarks"></a>Notes  
- Vous réservez une région dans l’espace d’adressage de votre processus en appelant `VirtualAlloc`. Le paramètre `pAddress` contient l’adresse de début du bloc de mémoire souhaité. Ce paramètre a généralement la valeur null. Le système d’exploitation conserve un enregistrement des plages d’adresses disponibles pour votre processus. Une `pAddress` valeur null indique au système de réserver la région où elle est visible. Vous pouvez également fournir une adresse de départ spécifique pour le bloc de mémoire. Dans les deux cas, le paramètre de sortie `ppMem` est retourné en tant que pointeur vers la mémoire allouée. La fonction elle-même retourne une valeur HRESULT.  
+ Vous réservez une région dans l’espace d’adressage de votre processus en appelant `VirtualAlloc` . Le `pAddress` paramètre contient l’adresse de début du bloc de mémoire souhaité. Ce paramètre a généralement la valeur null. Le système d’exploitation conserve un enregistrement des plages d’adresses disponibles pour votre processus. `pAddress`La valeur null indique au système de réserver la région où elle est visible. Vous pouvez également fournir une adresse de départ spécifique pour le bloc de mémoire. Dans les deux cas, le paramètre de sortie `ppMem` est retourné en tant que pointeur vers la mémoire allouée. La fonction elle-même retourne une valeur HRESULT.  
   
- La fonction de `VirtualAlloc` Win32 n’a pas de paramètre `ppMem` et retourne le pointeur vers la mémoire allouée à la place. Pour plus d’informations, consultez la documentation de la plateforme Windows.  
+ La `VirtualAlloc` fonction Win32 n’a pas de `ppMem` paramètre et retourne le pointeur vers la mémoire allouée à la place. Pour plus d’informations, consultez la documentation de la plateforme Windows.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IHostMemoryManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
+- [IHostMemoryManager, interface](ihostmemorymanager-interface.md)

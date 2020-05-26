@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: acc49ba0-f1d9-45ad-871f-9d053a89dcbe
 topic_type:
 - apiref
-ms.openlocfilehash: 93051ca9a0b6f57f41d0d17335a838fe92832d8d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ada12a35691e0897a44f4f00e2e439fc08ef18af
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121494"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83803907"
 ---
 # <a name="ihostsecuritymanagerimpersonateloggedonuser-method"></a>IHostSecurityManager::ImpersonateLoggedOnUser, méthode
 Demande que le code soit exécuté à l’aide des informations d’identification de l’identité de l’utilisateur actuel.  
@@ -41,7 +41,7 @@ HRESULT ImpersonateLoggedOnUser (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`ImpersonateLoggedOnUser` retourné avec succès.|  
+|S_OK|`ImpersonateLoggedOnUser`retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -51,19 +51,19 @@ HRESULT ImpersonateLoggedOnUser (
 ## <a name="remarks"></a>Notes  
  Appelez `LogonUser` ou une fonction Win32 associée pour obtenir un handle des informations d’identification de l’identité de l’utilisateur actuel.  
   
- Le type de `HANDLE` n’est pas conforme à COM, c’est-à-dire que sa taille est spécifique à un système d’exploitation et qu’il nécessite un marshaling personnalisé. Ainsi, ce jeton est destiné à être utilisé uniquement dans le processus, entre le CLR et l’hôte.  
+ Le `HANDLE` type n’est pas conforme à com, autrement dit, sa taille est spécifique à un système d’exploitation et il nécessite un marshaling personnalisé. Ainsi, ce jeton est destiné à être utilisé uniquement dans le processus, entre le CLR et l’hôte.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IHostSecurityContext, interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)
-- [IHostSecurityManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)
-- [RevertToSelf, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-reverttoself-method.md)
+- [IHostSecurityContext, interface](ihostsecuritycontext-interface.md)
+- [IHostSecurityManager, interface](ihostsecuritymanager-interface.md)
+- [RevertToSelf, méthode](ihostsecuritymanager-reverttoself-method.md)

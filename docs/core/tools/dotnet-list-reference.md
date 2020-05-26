@@ -2,16 +2,16 @@
 title: Commande dotnet list reference
 description: La commande dotnet list reference est une option pratique pour lister des références entre projets.
 ms.date: 02/14/2020
-ms.openlocfilehash: c0ea46298123e69ae527870e50d204d8fcf5cc85
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: b9b34c17102c6218f3d99f6e2620e99f70140284
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463646"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83802765"
 ---
 # <a name="dotnet-list-reference"></a>dotnet list reference
 
-**Cet article s’applique à:** ✔️ .NET Core 2.x SDK et les versions ultérieures
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
 ## <a name="name"></a>Nom
 
@@ -20,20 +20,20 @@ ms.locfileid: "81463646"
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet list [<PROJECT>|<SOLUTION>] reference
+dotnet list [<PROJECT>] reference
 
 dotnet list -h|--help
 ```
 
 ## <a name="description"></a>Description
 
-La commande `dotnet list reference` est pratique pour lister les références à un projet ou à une solution donné.
+La commande `dotnet list reference` est une option pratique pour répertorier des références de projet pour un projet donné.
 
 ## <a name="arguments"></a>Arguments
 
-* **`PROJECT | SOLUTION`**
+* **`PROJECT`**
 
-  Spécifie le fichier projet ou le fichier solution à utiliser pour lister les références. Si aucun fichier n’est spécifié, la commande recherche un fichier projet dans le répertoire actif.
+  Fichier projet à traiter. Si aucun fichier n’est spécifié, la commande effectue une recherche dans le répertoire actif.
 
 ## <a name="options"></a>Options
 

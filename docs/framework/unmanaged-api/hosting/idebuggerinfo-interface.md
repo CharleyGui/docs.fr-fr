@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9395a8a0-ffb9-475f-8da6-890999ae4bb6
 topic_type:
 - apiref
-ms.openlocfilehash: 7bb52d499faa83bd05ac0e6c817582f229ae183c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cced0ec7e7dd03f5531392039bb1e9247fd60f40
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133193"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83805321"
 ---
 # <a name="idebuggerinfo-interface"></a>IDebuggerInfo, interface
 Fournit des méthodes pour obtenir des informations sur l’état des services de débogage.  
@@ -28,18 +28,18 @@ Fournit des méthodes pour obtenir des informations sur l’état des services d
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[IsDebuggerAttached, méthode](../../../../docs/framework/unmanaged-api/hosting/idebuggerinfo-isdebuggerattached-method.md)|Obtient une valeur qui indique si un débogueur managé est attaché à ce processus.|  
+|[IsDebuggerAttached, méthode](idebuggerinfo-isdebuggerattached-method.md)|Obtient une valeur qui indique si un débogueur managé est attaché à ce processus.|  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [CorRuntimeHost, coclasse](../../../../docs/framework/unmanaged-api/hosting/corruntimehost-coclass.md)
+- [Interfaces d'hébergement](hosting-interfaces.md)
+- [CorRuntimeHost, coclasse](corruntimehost-coclass.md)

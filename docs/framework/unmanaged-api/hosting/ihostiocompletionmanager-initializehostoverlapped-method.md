@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c35199bf-bc47-4901-b467-4e8a37644bbb
 topic_type:
 - apiref
-ms.openlocfilehash: 9fd299ad25166bcbcf0202da13a5b4cbdd20d7d7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cf257ab86d27946c861c89dff5e6f09a42013e58
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133804"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804712"
 ---
 # <a name="ihostiocompletionmanagerinitializehostoverlapped-method"></a>IHostIoCompletionManager::InitializeHostOverlapped, méthode
-Fournit à l’hôte la possibilité d’initialiser toutes les données personnalisées à ajouter à une structure de `OVERLAPPED` Win32 utilisée pour les demandes d’e/s asynchrones.  
+Fournit à l’hôte la possibilité d’initialiser toutes les données personnalisées à ajouter à une `OVERLAPPED` structure Win32 utilisée pour les demandes d’e/s asynchrones.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,13 +35,13 @@ HRESULT InitializeHostOverlapped (
   
 ## <a name="parameters"></a>Paramètres  
  `pvOverlapped`  
- dans Pointeur vers la structure de `OVERLAPPED` Win32 à inclure dans la requête d’e/s.  
+ dans Pointeur vers la structure Win32 `OVERLAPPED` à inclure dans la requête d’e/s.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`InitializeHostOverlapped` retourné avec succès.|  
+|S_OK|`InitializeHostOverlapped`retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -50,24 +50,24 @@ HRESULT InitializeHostOverlapped (
 |E_OUTOFMEMORY|Mémoire disponible insuffisante pour allouer la ressource demandée.|  
   
 ## <a name="remarks"></a>Notes  
- Les fonctions de la plate-forme Windows utilisent la structure `OVERLAPPED` pour stocker l’état des demandes d’e/s asynchrones. Le CLR appelle la méthode `InitializeHostOverlapped` pour permettre à l’hôte d’ajouter des données personnalisées à une instance de `OVERLAPPED`.  
+ Les fonctions de la plate-forme Windows utilisent la `OVERLAPPED` structure pour stocker l’état des demandes d’e/s asynchrones. Le CLR appelle la `InitializeHostOverlapped` méthode pour permettre à l’hôte d’ajouter des données personnalisées à une `OVERLAPPED` instance.  
   
 > [!IMPORTANT]
-> Pour atteindre le début de leur bloc de données personnalisé, les hôtes doivent définir le décalage sur la taille de la structure de `OVERLAPPED` (`sizeof(OVERLAPPED)`).  
+> Pour atteindre le début de leur bloc de données personnalisé, les hôtes doivent définir le décalage sur la taille de la `OVERLAPPED` structure ( `sizeof(OVERLAPPED)` ).  
   
- Une valeur de retour E_OUTOFMEMORY indique que l’hôte n’a pas réussi à initialiser ses données personnalisées. Dans ce cas, le CLR signale une erreur et fait échouer l’appel.  
+ Une valeur de retour de E_OUTOFMEMORY indique que l’hôte n’a pas réussi à initialiser ses données personnalisées. Dans ce cas, le CLR signale une erreur et fait échouer l’appel.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRIoCompletionManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)
-- [GetHostOverlappedSize, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-gethostoverlappedsize-method.md)
-- [IHostIoCompletionManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)
+- [ICLRIoCompletionManager, interface](iclriocompletionmanager-interface.md)
+- [GetHostOverlappedSize, méthode](ihostiocompletionmanager-gethostoverlappedsize-method.md)
+- [IHostIoCompletionManager, interface](ihostiocompletionmanager-interface.md)

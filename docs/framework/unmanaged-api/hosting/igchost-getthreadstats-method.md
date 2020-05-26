@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 826baa9b-9218-4736-a509-7ab193b125a0
 topic_type:
 - apiref
-ms.openlocfilehash: 36eeb7ed4f80979ef2edb930e65963a1db0c894f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4a7a2da58e197749d492f24c7a12134508efef57
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134902"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83805231"
 ---
 # <a name="igchostgetthreadstats-method"></a>IGCHost::GetThreadStats, méthode
 Obtient les statistiques par thread pour garbage collection.  
@@ -39,17 +39,17 @@ HRESULT GetThreadStats (
  dans Pointeur vers un cookie Fiber qui spécifie le thread pour lequel les statistiques doivent être récupérées.  
   
  `pStats`  
- [in, out] Pointeur vers une structure [COR_GC_THREAD_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-thread-stats-structure.md) qui contient les statistiques de garbage collection pour le thread spécifié.  
+ [in, out] Pointeur vers une structure [COR_GC_THREAD_STATS](cor-gc-thread-stats-structure.md) qui contient les statistiques garbage collection pour le thread spécifié.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** GCHost. idl, GCHost. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IGCHost, interface](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)
+- [IGCHost, interface](igchost-interface.md)

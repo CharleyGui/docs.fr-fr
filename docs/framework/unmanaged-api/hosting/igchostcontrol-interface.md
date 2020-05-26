@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 2eb56ea9-8b7e-452b-a209-3d2be719fca6
 topic_type:
 - apiref
-ms.openlocfilehash: d8e4f65c9a7b183ef5031726b8398926f16b8526
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3476e46391b633c3dab2ff79a88b4c863930e855
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134821"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83805168"
 ---
 # <a name="igchostcontrol-interface"></a>IGCHostControl, interface
 Fournit une méthode qui permet au garbage collector de demander à l’hôte de modifier les limites de la mémoire virtuelle.  
@@ -28,17 +28,17 @@ Fournit une méthode qui permet au garbage collector de demander à l’hôte de
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[RequestVirtualMemLimit, méthode](../../../../docs/framework/unmanaged-api/hosting/igchostcontrol-requestvirtualmemlimit-method.md)|Demande à l’hôte de modifier les limites de la mémoire virtuelle.|  
+|[RequestVirtualMemLimit, méthode](igchostcontrol-requestvirtualmemlimit-method.md)|Demande à l’hôte de modifier les limites de la mémoire virtuelle.|  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Interfaces d'hébergement](hosting-interfaces.md)
