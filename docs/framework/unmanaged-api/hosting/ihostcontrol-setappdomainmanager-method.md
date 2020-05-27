@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6562bbe7-0d67-4c50-a958-3a18cf680375
 topic_type:
 - apiref
-ms.openlocfilehash: de264135450190fd028eb8cf12017d94cc65ffac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 74ffc5c92402808ae566d7cb014d9d920c384ae8
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134721"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804947"
 ---
 # <a name="ihostcontrolsetappdomainmanager-method"></a>IHostControl::SetAppDomainManager, méthode
 Avertit l’hôte qu’un domaine d’application a été créé.  
@@ -36,16 +36,16 @@ HRESULT SetAppDomainManager (
   
 ## <a name="parameters"></a>Paramètres  
  `dwAppDomainID`  
- dans Identificateur numérique du <xref:System.AppDomain>sélectionné.  
+ dans Identificateur numérique du sélectionné <xref:System.AppDomain> .  
   
  `pUnkAppDomainManager`  
- dans Pointeur vers l’objet <xref:System.AppDomainManager> que l’hôte implémente comme `IUnknown`.  
+ dans Pointeur vers l' <xref:System.AppDomainManager> objet que l’hôte implémente en tant que `IUnknown` .  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`SetAppDomainManager` retourné avec succès.|  
+|S_OK|`SetAppDomainManager`retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -53,21 +53,21 @@ HRESULT SetAppDomainManager (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Notes  
- L' <xref:System.AppDomainManager> fournit à l’hôte un mécanisme de démarrage dans du code managé et de contrôle de la création et des paramètres de chaque <xref:System.AppDomain>. La <xref:System.AppDomainManager> est chargée dans chaque <xref:System.AppDomain> lors de la création de ce <xref:System.AppDomain>. Si c’est le cas, le CLR avertit l’hôte que le domaine d’application a été créé en définissant la valeur du paramètre `pUnkAppDomainManager`.  
+ Le <xref:System.AppDomainManager> fournit à l’hôte un mécanisme de démarrage dans le code managé et de contrôle de la création et des paramètres de chaque <xref:System.AppDomain> . Le <xref:System.AppDomainManager> est chargé dans chaque <xref:System.AppDomain> lors de la <xref:System.AppDomain> création de. Si c’est le cas, le CLR avertit l’hôte que le domaine d’application a été créé en définissant la valeur du `pUnkAppDomainManager` paramètre.  
   
- Dans son implémentation de la méthode `SetAppDomainManager`, l’hôte peut définir le nom et le type de l’assembly pour le gestionnaire de domaine d’application.  
+ Dans son implémentation de la `SetAppDomainManager` méthode, l’hôte peut définir le nom et le type de l’assembly pour le gestionnaire de domaine d’application.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.AppDomain>
 - <xref:System.AppDomainManager>
-- [IHostControl, interface](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)
+- [IHostControl, interface](ihostcontrol-interface.md)

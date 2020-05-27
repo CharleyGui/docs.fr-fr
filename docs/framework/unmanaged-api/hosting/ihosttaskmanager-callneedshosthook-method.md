@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: b60f1f59-9825-4b57-961f-d2979518e6a7
 topic_type:
 - apiref
-ms.openlocfilehash: 8b8b8521a09fa54a105e8263a471ab0467fb6ccc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5bc5752d4d2b772b1d18f438c4daaa1b8938da9e
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176290"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83842346"
 ---
 # <a name="ihosttaskmanagercallneedshosthook-method"></a>IHostTaskManager::CallNeedsHostHook, méthode
-Permet à l’hôte de spécifier si l’heure de fonctionnement de la langue commune (CLR) peut inlimiter l’appel spécifié à une fonction non gérée.  
+Permet à l’hôte de spécifier si le common language runtime (CLR) peut incorporer l’appel spécifié à une fonction non managée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,39 +36,39 @@ HRESULT CallNeedsHostHook (
   
 ## <a name="parameters"></a>Paramètres  
  `target`  
- [dans] L’adresse dans le fichier portable cartographié exécutable (PE) de la fonction non gestion qui doit être appelée.  
+ dans Adresse dans le fichier exécutable portable (PE) mappé de la fonction non managée qui doit être appelée.  
   
  `pbCallNeedsHostHook`  
- [out] Un pointeur à une valeur Boolean qui indique si l’hôte nécessite l’appel pour être accroché.  
+ à Pointeur vers une valeur booléenne qui indique si l’hôte requiert que l’appel soit raccordé.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`CallNeedsHostHook`retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un état dans lequel il ne peut pas exécuter le code géré ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel s’est fait chronométrer.|  
-|HOST_E_NOT_OWNER|L’appelant n’est pas propriétaire de la serrure.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un fil bloqué ou une fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode revient E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels ultérieurs aux méthodes d’hébergement reviennent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
+|HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes   
- Pour aider à optimiser l’exécution du code, le CLR effectue une analyse de chaque plate-forme invoquer l’appel pendant la compilation pour déterminer si l’appel peut être inlined. `CallNeedsHostHook`permet à l’hôte de passer outre à cette décision en exigeant qu’un appel à une fonction non gestion soit accroché. Si l’hôte a besoin d’un crochet, l’heure d’exécution n’inline pas l’appel.  
+## <a name="remarks"></a>Remarques  
+ Pour optimiser l’exécution du code, le CLR effectue une analyse de chaque appel de code non managé pendant la compilation pour déterminer si l’appel peut être Inline. `CallNeedsHostHook`permet à l’hôte de substituer cette décision en exigeant qu’un appel à une fonction non managée soit raccordé. Si l’hôte requiert un Hook, le runtime n’incorpore pas l’appel.  
   
- L’hôte aurait généralement besoin d’un crochet où il doit ajuster un état de point flottant, ou après réception de la notification qu’un appel entre dans un état où l’hôte ne peut pas suivre les demandes de mémoire du temps d’exécution ou les verrous pris. Lorsque l’hôte exige que l’appel soit accroché, le temps d’exécution informe l’hôte des transitions vers et depuis le code géré en utilisant des appels à [EnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md), [LeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-leaveruntime-method.md), [ReverseEnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md), et [ReverseLeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseleaveruntime-method.md).  
+ L’hôte nécessite généralement un raccordement à l’endroit où il doit ajuster un État à virgule flottante, ou à la réception d’une notification indiquant qu’un appel passe à un État où l’hôte ne peut pas suivre les demandes de mémoire du runtime ou les verrous pris. Lorsque l’hôte requiert que l’appel soit raccordé, le runtime avertit l’hôte des transitions vers et à partir du code managé en utilisant des appels à [EnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md), [LeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-leaveruntime-method.md), [ReverseEnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md)et [ReverseLeaveRuntime](ihosttaskmanager-reverseleaveruntime-method.md).  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRTask, interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask, interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask, interface](iclrtask-interface.md)
+- [ICLRTaskManager, interface](iclrtaskmanager-interface.md)
+- [IHostTask, interface](ihosttask-interface.md)
+- [IHostTaskManager, interface](ihosttaskmanager-interface.md)

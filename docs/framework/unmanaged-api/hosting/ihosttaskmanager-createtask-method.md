@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a6f8ad36-61e1-42b0-9db2-add575646d18
 topic_type:
 - apiref
-ms.openlocfilehash: fef2f56fd000a8610a40661a30aa306ae5a7884e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7079a915c0402df62afa5648317619af82c943b0
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178000"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83841980"
 ---
 # <a name="ihosttaskmanagercreatetask-method"></a>IHostTaskManager::CreateTask, méthode
 Demande que l’hôte crée une nouvelle tâche.  
@@ -38,44 +38,44 @@ HRESULT CreateTask (
   
 ## <a name="parameters"></a>Paramètres  
  `stacksize`  
- [dans] La taille demandée, dans les octets, de la pile demandée, ou 0 (zéro) pour la taille par défaut.  
+ dans Taille demandée, en octets, de la pile demandée, ou 0 (zéro) pour la taille par défaut.  
   
  `pStartAddress`  
- [dans] Un pointeur à la fonction de la tâche est d’exécuter.  
+ dans Pointeur vers la fonction que la tâche doit exécuter.  
   
  `pParameter`  
- [dans] Un pointeur sur les données de l’utilisateur à transmettre à la fonction, ou nul si la fonction ne prend aucun paramètre.  
+ dans Pointeur vers les données utilisateur à passer à la fonction, ou null si la fonction n’accepte aucun paramètre.  
   
  `ppTask`  
- [out] Un pointeur à l’adresse d’une instance [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) créé par l’hôte, ou nul si la tâche ne peut pas être créée. La tâche reste dans un état suspendu jusqu’à ce qu’il soit explicitement commencé par un appel à [IHostTask::Démarrer](../../../../docs/framework/unmanaged-api/hosting/ihosttask-start-method.md).  
+ à Pointeur vers l’adresse d’une instance [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) créée par l’hôte, ou null si la tâche ne peut pas être créée. La tâche reste dans un état suspendu jusqu’à ce qu’elle soit explicitement démarrée par un appel à [IHostTask :: Start](ihosttask-start-method.md).  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`CreateTask`retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|L’heure courante de l’exécution de la langue (CLR) n’a pas été chargée dans un processus, ou le CLR est dans un état où il ne peut pas exécuter le code géré ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel s’est fait chronométrer.|  
-|HOST_E_NOT_OWNER|L’appelant n’est pas propriétaire de la serrure.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un fil bloqué ou une fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode revient E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels ultérieurs aux méthodes d’hébergement reviennent HOST_E_CLRNOTAVAILABLE.|  
-|E_OUTOFMEMORY|Pas assez de mémoire était disponible pour créer la tâche demandée.|  
+|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
+|HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|E_OUTOFMEMORY|Mémoire disponible insuffisante pour créer la tâche demandée.|  
   
-## <a name="remarks"></a>Notes   
- Le CLR `CreateTask` appelle à demander à l’hôte de créer une nouvelle tâche. L’hôte renvoie un `IHostTask` pointeur d’interface à une instance. La tâche retournée doit rester suspendue jusqu’à `IHostTask::Start`ce qu’elle soit explicitement commencée par un appel à .  
+## <a name="remarks"></a>Remarques  
+ Le CLR appelle `CreateTask` pour demander que l’hôte crée une nouvelle tâche. L’hôte retourne un pointeur d’interface vers une `IHostTask` instance. La tâche retournée doit rester suspendue jusqu’à ce qu’elle soit explicitement démarrée par un appel à `IHostTask::Start` .  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRTask, interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask, interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask, interface](iclrtask-interface.md)
+- [ICLRTaskManager, interface](iclrtaskmanager-interface.md)
+- [IHostTask, interface](ihosttask-interface.md)
+- [IHostTaskManager, interface](ihosttaskmanager-interface.md)

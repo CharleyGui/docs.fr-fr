@@ -740,18 +740,6 @@
                                   href: programming-guide/concepts/linq/intermediate-materialization.md
                                 - name: Chaînage d’opérateurs de requête standard
                                   href: programming-guide/concepts/linq/chaining-standard-query-operators-together.md
-                            - name: "Tutoriel\_: Chaînage de requêtes"
-                              items:
-                                - name: Exécution et évaluation différées dans LINQ to XML
-                                  href: programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md
-                                - name: Exemple d'exécution différée
-                                  href: programming-guide/concepts/linq/deferred-execution-example.md
-                                - name: Exemple de chaînage de requêtes
-                                  href: programming-guide/concepts/linq/chaining-queries-example.md
-                                - name: Matérialisation intermédiaire
-                                  href: programming-guide/concepts/linq/intermediate-materialization.md
-                                - name: Chaînage d’opérateurs de requête standard
-                                  href: programming-guide/concepts/linq/chaining-standard-query-operators-together.md
                             - name: "Tutoriel\_: Manipulation de contenu dans un document WordprocessingML"
                               items:
                                 - name: Forme des documents WordprocessingML

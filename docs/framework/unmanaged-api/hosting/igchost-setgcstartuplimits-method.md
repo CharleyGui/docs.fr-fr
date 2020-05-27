@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: cae53926-82ac-4d1d-b297-0bde0bd1bebb
 topic_type:
 - apiref
-ms.openlocfilehash: 1ae50fb3ff15097f9a6ca5839f3832bcfc58d3f3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3b0c11ac9d827bd252018172e2337df653054a7b
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134853"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83805200"
 ---
 # <a name="igchostsetgcstartuplimits-method"></a>IGCHost::SetGCStartupLimits, méthode
 Définit la taille du segment et la taille maximale de la génération 0.  
   
 > [!IMPORTANT]
-> À partir de la .NET Framework 4,5, vous pouvez définir la taille du segment et la taille maximale de la génération 0 sur des valeurs supérieures à `DWORD` à l’aide de la méthode [IGCHost2 :: setgcstartuplimitsex,](../../../../docs/framework/unmanaged-api/hosting/igchost2-setgcstartuplimitsex-method.md) .  
+> À partir de la .NET Framework 4,5, vous pouvez définir la taille du segment et la taille maximale de la génération 0 sur des valeurs supérieures à à `DWORD` l’aide de la méthode [IGCHost2 :: setgcstartuplimitsex,](igchost2-setgcstartuplimitsex-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,17 +45,17 @@ HRESULT SetGCStartupLimits (
  dans Taille maximale de la génération 0.  
   
 ## <a name="remarks"></a>Notes  
- La méthode `SetGCStartupLimits` ne peut être appelée qu’une seule fois. Ces valeurs ne peuvent pas être modifiées ultérieurement.  
+ La `SetGCStartupLimits` méthode ne peut être appelée qu’une seule fois. Ces valeurs ne peuvent pas être modifiées ultérieurement.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** GCHost. idl, GCHost. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IGCHost, interface](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)
+- [IGCHost, interface](igchost-interface.md)

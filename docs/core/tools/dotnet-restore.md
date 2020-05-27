@@ -2,12 +2,12 @@
 title: Commande dotnet restore
 description: Découvrez comment restaurer les dépendances et les outils spécifiques du projet avec la commande dotnet restore.
 ms.date: 02/27/2020
-ms.openlocfilehash: cc8f374468ba95baccf058ac0b0a0175672cdf01
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: 29f81b09a01e689d3f6d86c16b1f134c9fe6b6a0
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158305"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83840934"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -32,7 +32,7 @@ dotnet restore -h|--help
 
 ## <a name="description"></a>Description
 
-La commande `dotnet restore` utilise NuGet pour restaurer les dépendances, ainsi que les outils spécifiques aux projets qui sont spécifiés dans le fichier projet.  Dans la plupart des cas, vous n’avez pas besoin `dotnet restore` d’utiliser explicitement la commande, car une restauration NuGet est exécutée implicitement si nécessaire lorsque vous exécutez les commandes suivantes :
+La commande `dotnet restore` utilise NuGet pour restaurer les dépendances, ainsi que les outils spécifiques aux projets qui sont spécifiés dans le fichier projet.  Dans la plupart des cas, vous n’avez pas besoin d’utiliser explicitement la `dotnet restore` commande, car une restauration NuGet est exécutée implicitement si nécessaire lorsque vous exécutez les commandes suivantes :
 
 - [`dotnet new`](dotnet-new.md)
 - [`dotnet build`](dotnet-build.md)
@@ -42,14 +42,14 @@ La commande `dotnet restore` utilise NuGet pour restaurer les dépendances, ains
 - [`dotnet publish`](dotnet-publish.md)
 - [`dotnet pack`](dotnet-pack.md)
 
-Parfois, il peut être gênant d’exécuter la restauration NuGet implicite avec ces commandes. Par exemple, certains systèmes automatisés, comme les systèmes de génération, doivent appeler explicitement `dotnet restore` pour contrôler quand la restauration a lieu afin de pouvoir contrôler l’utilisation du réseau. Pour empêcher la restauration NuGet implicite, vous pouvez utiliser `--no-restore` l’indicateur avec l’une de ces commandes pour désactiver la restauration implicite.
+Parfois, il peut être gênant d’exécuter la restauration NuGet implicite avec ces commandes. Par exemple, certains systèmes automatisés, comme les systèmes de génération, doivent appeler explicitement `dotnet restore` pour contrôler quand la restauration a lieu afin de pouvoir contrôler l’utilisation du réseau. Pour empêcher la restauration NuGet implicite, vous pouvez utiliser l' `--no-restore` indicateur avec l’une de ces commandes pour désactiver la restauration implicite.
 
 ### <a name="specify-feeds"></a>Spécifier les flux
 
 Pour restaurer les dépendances, NuGet a besoin des flux où sont situés les packages. Les flux sont généralement fournis via le fichier de configuration *nuget.config*. Un fichier de configuration par défaut est fourni lors de l’installation du kit SDK .NET Core. Pour spécifier des flux supplémentaires, effectuez l’une des opérations suivantes :
 
 - Créez votre propre fichier *NuGet. config* dans le répertoire du projet. Pour plus d’informations, consultez [configurations NuGet courantes](/nuget/consume-packages/configuring-nuget-behavior) et [différences de NuGet. config](#nugetconfig-differences) plus loin dans cet article.
-- Utilisez `dotnet nuget` des commandes telles [`dotnet nuget add source`](dotnet-nuget-add-source.md)que.
+- Utilisez des `dotnet nuget` commandes telles que [`dotnet nuget add source`](dotnet-nuget-add-source.md) .
 
 Vous pouvez substituer les flux *NuGet. config* avec l' `-s` option.
 
@@ -143,7 +143,7 @@ Trois paramètres spécifiques sont ignorés par `dotnet restore` :
 
 - **`-s|--source <SOURCE>`**
 
-  Spécifie la source de package NuGet à utiliser pendant l’opération de restauration. Ce paramètre remplace toutes les sources spécifiées dans les fichiers *nuget.config*. Vous pouvez spécifier plusieurs sources en spécifiant cette option plusieurs fois.
+  Spécifie l’URI de la source de package NuGet à utiliser pendant l’opération de restauration. Ce paramètre remplace toutes les sources spécifiées dans les fichiers *nuget.config*. Vous pouvez spécifier plusieurs sources en spécifiant cette option plusieurs fois.
 
 - **`--use-lockfile`**
 
@@ -161,7 +161,7 @@ Trois paramètres spécifiques sont ignorés par `dotnet restore` :
   dotnet restore
   ```
 
-- Restaurez les dépendances et `app1` les outils pour le projet trouvé dans le chemin d’accès donné :
+- Restaurez les dépendances et les outils pour le `app1` projet trouvé dans le chemin d’accès donné :
 
   ```dotnetcli
   dotnet restore ~/projects/app1/app1.csproj
