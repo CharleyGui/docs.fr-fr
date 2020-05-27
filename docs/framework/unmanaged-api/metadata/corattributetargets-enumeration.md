@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 694c0fa0-7011-41a9-9dfd-f0e16ea574b5
 topic_type:
 - apiref
-ms.openlocfilehash: 51741aa3a6d965c1e9743081628d8ad62e8fb04e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f1836f26af99f91ab1765107573f6b067edd5e95
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176199"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007921"
 ---
 # <a name="corattributetargets-enumeration"></a>CorAttributeTargets, énumération
 Spécifie les éléments de l'application auxquels un attribut peut être appliqué.  
@@ -63,7 +63,7 @@ typedef enum CorAttributeTargets
 |Membre|Description|  
 |------------|-----------------|  
 |`catAssembly`|L'attribut peut être appliqué à un assembly.|  
-|`catModule`|L’attribut peut être appliqué à un module portable exécutable (.dll ou .exe).|  
+|`catModule`|L’attribut peut être appliqué à un module exécutable portable (. dll ou. exe).|  
 |`catClass`|L'attribut peut être appliqué à une classe.|  
 |`catStruct`|L'attribut peut être appliqué à une structure, c'est-à-dire à un type valeur.|  
 |`catEnum`|L'attribut peut être appliqué à une énumération.|  
@@ -79,18 +79,18 @@ typedef enum CorAttributeTargets
 |`catAll`|L'attribut peut être appliqué à n'importe quel élément de l'application.|  
 |`catClassMembers`|L’attribut peut être appliqué à un membre d’une classe.|  
   
-## <a name="remarks"></a>Notes   
- Les `CorAttributeTargets` valeurs de recensement peuvent être combinées avec une opération PEU sage OU pour obtenir la combinaison préférée.  
+## <a name="remarks"></a>Remarques  
+ Les `CorAttributeTargets` valeurs d’énumération peuvent être combinées avec une opération or au niveau du bit pour obtenir la combinaison préférée.  
   
- Les `CorAttributeTargets` parallèles <xref:System.AttributeTargets?displayProperty=nameWithType> de l’énumération gérée.  
+ Le `CorAttributeTargets` parallèle est l' <xref:System.AttributeTargets?displayProperty=nameWithType> énumération managée.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Énumérations de métadonnées](metadata-enumerations.md)

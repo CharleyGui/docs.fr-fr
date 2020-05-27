@@ -4,12 +4,12 @@ description: Découvrez comment écrire du code pour analyser la structure d’u
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: 5734e1be6b59bfe3eae97f29d1bd91e7e3a3623f
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: ea205d42b02ea7b38c04cb70d322329cf7c1d495
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761861"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84004645"
 ---
 # <a name="interpreting-expressions"></a>Interprétation des expressions
 
@@ -22,7 +22,7 @@ Grâce à cette conception, visiter tous les nœuds d’une arborescence d’exp
 Si le type de nœud a des enfants, visitez-les de manière récursive. Sur chaque nœud enfant, répétez le processus utilisé au niveau du nœud racine : déterminez le type et, s’il a des enfants, visitez chacun d’eux.
 
 ## <a name="examining-an-expression-with-no-children"></a>Examen d’une expression sans enfants
-Commençons par visiter chaque nœud dans une arborescence d’expressions très simple.
+Commençons par visiter chaque nœud dans une arborescence d’expressions simple.
 Voici le code qui crée une expression constante, puis examine ses propriétés :
 
 ```csharp
@@ -53,7 +53,7 @@ Expression<Func<int>> sum = () => 1 + 2;
 
 > Je n’utilise pas `var` pour déclarer cette arborescence d’expressions. C’est impossible, car la partie droite de l’assignation est implicitement typée.
 
-Le nœud racine est `LambdaExpression`. Pour obtenir le code intéressant du côté droit de l’opérateur `=>`, nous devons trouver l’un des enfants de `LambdaExpression`. Nous allons le faire avec toutes les expressions dans cette section. Le nœud parent nous aide à trouver le type de retour de `LambdaExpression`.
+Le nœud racine est `LambdaExpression`. Pour obtenir le code intéressant sur le côté droit de l' `=>` opérateur, vous devez Rechercher l’un des enfants de `LambdaExpression` . Nous allons le faire avec toutes les expressions dans cette section. Le nœud parent nous aide à trouver le type de retour de `LambdaExpression`.
 
 Pour examiner chaque nœud de cette expression, nous devons visiter plusieurs nœuds de manière récursive. Voici une première implémentation simple :
 
@@ -215,7 +215,7 @@ public class ConstantVisitor : Visitor
 }
 ```
 
-Cet algorithme est la base d’un algorithme qui peut visiter toute `LambdaExpression` arbitraire. Ce code ne fait que rechercher un très petit échantillon des ensembles possibles de nœuds d’arborescences d’expressions qu’il peut rencontrer, mais ce qu’il génère peut quand même nous en apprendre beaucoup. (Le cas par défaut dans la méthode `Visitor.CreateFromExpression` affiche un message dans la console d’erreurs quand un nouveau type de nœud est détecté. De cette façon, vous savez que vous devez ajouter un nouveau type d’expression.)
+Cet algorithme est la base d’un algorithme qui peut visiter toute `LambdaExpression` arbitraire. Il existe de nombreux trous, à savoir que le code que j’ai créé recherche uniquement un très petit échantillon des jeux possibles de nœuds d’arborescence d’expressions qu’il peut rencontrer. mais ce qu’il génère peut quand même nous en apprendre beaucoup. (Le cas par défaut dans la méthode `Visitor.CreateFromExpression` affiche un message dans la console d’erreurs quand un nouveau type de nœud est détecté. De cette façon, vous savez que vous devez ajouter un nouveau type d’expression.)
 
 Quand nous exécutons ce visiteur sur l’expression d’addition ci-dessus, nous obtenons la sortie suivante :
 
@@ -262,7 +262,7 @@ Expression<Func<int>> sum5 = () => (1 + (2 + 3)) + 4;
 Vous pouvez voir la séparation en deux réponses possibles, pour mettre en évidence la plus prometteuse. La première représente les expressions *associatives à droite*. La deuxième représente les expressions *associatives à gauche*.
 L’avantage de ces deux formats est qu’ils peuvent s’adapter à un nombre arbitraire d’expressions d’addition.
 
-Si nous exécutons cette expression dans le visiteur, nous obtenons ce résultat, qui vérifie que l’expression d’addition simple est *associative à gauche*.
+Si vous exécutez cette expression par l’intermédiaire du visiteur, vous verrez cette sortie, en vérifiant que l’expression d’addition simple est *associative à gauche*.
 
 Pour exécuter cet exemple et voir l’arborescence d’expressions complète, j’ai dû apporter une modification à l’arborescence d’expressions source. Quand l’arborescence d’expressions contient uniquement des constantes, l’arborescence résultante contient simplement la valeur constante `10`. Le compilateur effectue toute l’addition et réduit l’expression à sa forme la plus simple. Le simple ajout d’une variable dans l’expression suffit pour voir l’arborescence d’origine :
 
@@ -355,7 +355,7 @@ Expression<Func<int, int>> factorial = (n) =>
 ```
 
 Il représente une implémentation possible de la fonction mathématique *factorial*. La façon dont ce code est écrit met en évidence deux limitations concernant la méthode de création d’arborescences d’expressions qui consiste à assigner des expressions lambda à Expression. Tout d’abord, les lambda-instructions ne sont pas autorisées. Cela signifie que je ne peux pas utiliser de boucles, de blocs, d’instructions if / else et d’autres structures de contrôle courantes en C#. Je suis limité à l’utilisation d’expressions. Ensuite, je ne peux pas appeler la même expression de manière récursive.
-Je le pourrais s’il s’agissait déjà d’un délégué, mais je ne peux pas l’appeler sous sa forme d’arborescence d’expressions. Dans la section sur la [génération d’arborescences d’expressions](expression-trees-building.md), vous découvrirez des techniques pour surmonter ces restrictions.
+Je le pourrais s’il s’agissait déjà d’un délégué, mais je ne peux pas l’appeler sous sa forme d’arborescence d’expressions. Dans la section relative à la [création d’arborescences d’expressions](expression-trees-building.md), vous apprendrez les techniques permettant de surmonter ces limitations.
 
 Dans cette expression, vous rencontrerez des nœuds de tous ces types :
 
@@ -517,7 +517,7 @@ Même le dernier exemple reconnaît un sous-ensemble des types de nœuds possibl
 Vous pouvez toujours lui fournir de nombreuses expressions qui entraîneront son échec.
 Une implémentation complète est fournie dans .NET Standard sous le nom <xref:System.Linq.Expressions.ExpressionVisitor>. Elle peut prendre en charge tous les types de nœud possibles.
 
-Pour finir, la bibliothèque que j’ai utilisée dans cet article a été créée à des fins de démonstration et de formation. Elle n’est pas optimisée. Je l’ai écrite pour rendre très claires les structures utilisées, et pour mettre en évidence les techniques employées pour visiter les nœuds et analyser ce qu’ils contiennent. Une implémentation de production accorderait davantage d’attention aux performances.
+Pour finir, la bibliothèque que j’ai utilisée dans cet article a été créée à des fins de démonstration et de formation. Elle n’est pas optimisée. Je l’ai écrit pour rendre les structures utilisées de façon claire, et pour mettre en évidence les techniques utilisées pour visiter les nœuds et analyser ce qu’il y a. Une implémentation de production accorderait davantage d’attention aux performances.
 
 Même avec ces limitations, vous devriez être sur la bonne voie pour écrire des algorithmes qui lisent et comprennent les arborescences d’expressions.
 

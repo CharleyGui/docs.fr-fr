@@ -6,53 +6,53 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/26/2020
 ms.locfileid: "80291641"
 ---
-### <a name="azure-microsoft-prefixed-azure-integration-packages-removed"></a>Azure : Les paquets d’intégration Azure préfixés de Microsoft supprimés
+### <a name="azure-microsoft-prefixed-azure-integration-packages-removed"></a>Azure : packages d’intégration Azure préfixés par Microsoft supprimés
 
-Les `Microsoft.*` paquets suivants qui assurent l’intégration entre ASP.NET Core et Azure SDKs ne sont pas inclus dans ASP.NET Core 5.0 :
+Les `Microsoft.*` packages suivants qui assurent l’intégration entre les ASP.net Core et les kits de développement logiciel (SDK) Azure ne sont pas inclus dans ASP.NET Core 5,0 :
 
-* [Microsoft.Extensions.Configuration.AzureKeyVault](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureKeyVault/), qui intègre [Azure Key Vault](/azure/key-vault/) dans le [système Configuration](/aspnet/core/fundamentals/configuration/).
-* [Microsoft.AspNetCore.DataProtection.AzureKeyVault](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.AzureKeyVault/), qui intègre Azure Key Vault dans le [système ASP.NET Core Data Protection](/aspnet/core/security/data-protection/introduction).
-* [Microsoft.AspNetCore.DataProtection.AzureStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.AzureStorage/), qui intègre [Azure Blob Storage](/azure/storage/blobs/) dans le système ASP.NET Core Data Protection.
+* [Microsoft. extensions. Configuration. AzureKeyVault](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureKeyVault/), qui intègre [Azure Key Vault](/azure/key-vault/) dans le [système de configuration](/aspnet/core/fundamentals/configuration/).
+* [Microsoft. AspNetCore. dataprotection. AzureKeyVault](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.AzureKeyVault/), qui intègre Azure Key Vault dans le [système de Protection des données ASP.net Core](/aspnet/core/security/data-protection/introduction).
+* [Microsoft. AspNetCore. dataprotection. AzureStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.AzureStorage/), qui intègre le [stockage d’objets BLOB Azure](/azure/storage/blobs/) dans le système de protection des données ASP.net core.
 
-Pour discussion sur cette question, voir [dotnet/aspnetcore-19570](https://github.com/dotnet/aspnetcore/issues/19570).
+Pour plus d’informations sur ce problème, consultez [dotnet/aspnetcore # 19570](https://github.com/dotnet/aspnetcore/issues/19570).
 
 #### <a name="version-introduced"></a>Version introduite
 
-5.0 Aperçu 1
+5,0 Preview 1
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Les `Microsoft.*` forfaits intègrent les services Azure avec les API Configuration et Protection des Données.
+Les `Microsoft.*` packages intègrent les services Azure avec les API de configuration et de protection des données.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-De `Azure.*` nouveaux forfaits intègrent les services Azure aux API Configuration et Protection des Données.
+`Azure.*`Les nouveaux packages intègrent les services Azure avec les API de configuration et de protection des données.
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Le changement a `Microsoft.*` été apporté parce que les paquets étaient :
+La modification a été apportée parce que les `Microsoft.*` packages étaient :
 
-* Utilisation de versions désuètes de l’Azure SDK. Des mises à jour simples n’étaient pas possibles car les nouvelles versions de l’Azure SDK incluaient des modifications de rupture.
-* Lié à l’horaire de sortie .NET Core. Le transfert de la propriété des paquets à l’équipe Azure SDK permet de mettre à jour les paquets au fur et à mesure que le SDK Azure est mis à jour.
+* À l’aide de versions obsolètes du kit de développement logiciel (SDK) Azure. Les mises à jour simples n’étaient pas possibles car les nouvelles versions du kit de développement logiciel (SDK) Azure comprenaient des modifications avec rupture.
+* Lié au calendrier des versions de .NET Core. Le transfert de la propriété des packages à l’équipe du kit de développement logiciel (SDK) Azure active les mises à jour du package lors de la mise à jour du kit SDK Azure.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Dans ASP.NET Projets Core 2.1 ou plus `Microsoft.*` tard, `Azure.*` remplacez l’ancien par les nouveaux paquets.
+Dans ASP.NET Core projets 2,1 ou versions ultérieures, remplacez l’ancien `Microsoft.*` par les nouveaux `Azure.*` packages.
 
-| Vieux | Nouveau |
+| Ancien | Nouveau |
 |--|--|
-| `Microsoft.AspNetCore.DataProtection.AzureKeyVault` | [Azure.AspNetCore.DataProtection.Keys Azure.AspNetCore.DataProtection.Keys Azure.AspNetCore.DataProtection.Keys Azure](https://www.nuget.org/packages/Azure.AspNetCore.DataProtection.Keys) |
-| `Microsoft.AspNetCore.DataProtection.AzureStorage` | [Azure.AspNetCore.DataProtection.Blobs Azure.AspNetCore.DataProtection.Blobs Azure.AspNetCore.DataProtection.Blobs Azure](https://www.nuget.org/packages/Azure.AspNetCore.DataProtection.Blobs) |
-| `Microsoft.Extensions.Configuration.AzureKeyVault` | [Azure.Extensions.Configuration.Secrets Azure.Extensions.Configuration.Secrets Azure.Extensions.Configuration.Secrets Azure](https://www.nuget.org/packages/Azure.Extensions.Configuration.Secrets) |
+| `Microsoft.AspNetCore.DataProtection.AzureKeyVault` | [Azure. AspNetCore. DataProtection. Keys](https://www.nuget.org/packages/Azure.AspNetCore.DataProtection.Keys) |
+| `Microsoft.AspNetCore.DataProtection.AzureStorage` | [Azure. AspNetCore. DataProtection. blob](https://www.nuget.org/packages/Azure.AspNetCore.DataProtection.Blobs) |
+| `Microsoft.Extensions.Configuration.AzureKeyVault` | [Azure. extensions. Configuration. secrets](https://www.nuget.org/packages/Azure.Extensions.Configuration.Secrets) |
 
-Les nouveaux paquets utilisent une nouvelle version de l’Azure SDK qui comprend des changements de rupture. Les habitudes générales d’utilisation sont inchangées. Certaines surcharges et options peuvent différer pour s’adapter aux changements des API azure SDK sous-jacentes.
+Les nouveaux packages utilisent une nouvelle version du kit de développement logiciel (SDK) Azure qui comprend des modifications avec rupture. Les modèles d’utilisation générale sont inchangés. Certaines surcharges et options peuvent varier pour s’adapter aux modifications apportées aux API du kit de développement logiciel (SDK) Azure sous-jacentes.
 
-Les anciens paquets seront:
+Les anciens packages vont :
 
-* Soyez soutenu par l’équipe ASP.NET Core pour la durée de vie de .NET Core 2.1 et 3.1.
-* Ne pas être inclus dans .NET 5.
+* Être pris en charge par l’équipe ASP.NET Core pendant la durée de vie de .NET Core 2,1 et 3,1.
+* Ne sont pas inclus dans .NET 5.
 
-Lors de la mise à niveau de `Azure.*` votre projet à .NET 5, passez aux paquets pour maintenir le soutien.
+Lors de la mise à niveau de votre projet vers .NET 5, effectuez la transition vers les `Azure.*` packages pour maintenir la prise en charge.
 
 #### <a name="category"></a>Category
 

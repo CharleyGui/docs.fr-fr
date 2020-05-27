@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4c0c7477-05ba-461b-b21b-cbfba95f1db1
 topic_type:
 - apiref
-ms.openlocfilehash: 9b3a6bab8672f3ef3fca5f89c60b03a43477cce5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0c60631b5e034bc46d74412440d35d526359d043
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123298"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008571"
 ---
 # <a name="ivalidatorformateventinfo-method"></a>IValidator::FormatEventInfo, méthode
 Obtient le message d’erreur correspondant à l’erreur de validation spécifiée.  
@@ -42,7 +42,7 @@ HRESULT FormatEventInfo(
  dans Valeur HRESULT qui a été passée au gestionnaire d’erreurs de validation.  
   
  `Context`  
- dans Instance `VEContext` qui contient des informations de contexte sur l’erreur de validation.  
+ dans `VEContext`Instance qui contient des informations de contexte sur l’erreur de validation.  
   
  `msg`  
  [in, out] Chaîne qui contient le message d’erreur retourné.  
@@ -53,11 +53,11 @@ HRESULT FormatEventInfo(
  `psa`  
  dans Tableau sécurisé qui contient des paramètres supplémentaires qui décrivent l’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** IValidator. idl, IValidator. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  

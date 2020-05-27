@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1e994de6-4628-459c-b967-b34be1e9fe4f
 topic_type:
 - apiref
-ms.openlocfilehash: 3b8fd9876563bace52a6088747d1ca4ed26ea872
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2b24c2ca6907dfdb63ad934ec30557c246db174c
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175809"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84004353"
 ---
 # <a name="imetadataemitdefinenestedtype-method"></a>IMetaDataEmit::DefineNestedType, méthode
-Crée la signature des métadonnées `mdTypeDef` d’une définition de type, renvoie un jeton pour ce type, et spécifie que le type défini est un membre du type référencé par le `tdEncloser` paramètre.  
+Crée la signature de métadonnées d’une définition de type, retourne un `mdTypeDef` jeton pour ce type et spécifie que le type défini est un membre du type référencé par le `tdEncloser` paramètre.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,33 +40,33 @@ HRESULT DefineNestedType (
   
 ## <a name="parameters"></a>Paramètres  
  `szTypeDef`  
- [dans] Le nom du type dans Unicode.  
+ dans Nom du type en Unicode.  
   
  `dwTypeDefFlags`  
- [dans] `TypeDef` attributs. C’est un peu `CorTypeAttr` de valeur.  
+ [in] `TypeDef` attributs. Il s’agit d’un masque de `CorTypeAttr` valeur de valeurs.  
   
  `tkExtends`  
- [dans] Le jeton de la classe de base. C’est `mdTypeDef` soit `mdTypeRef` un ou un jeton.  
+ dans Jeton de la classe de base. Il s’agit soit d’un jeton, soit d’un `mdTypeDef` `mdTypeRef` jeton.  
   
  `rtkImplements`[]  
- [dans] Une gamme de jetons qui spécifient les interfaces que cette classe ou interface implémente.  
+ dans Tableau de jetons qui spécifient les interfaces implémentées par cette classe ou cette interface.  
   
  `tdEncloser`  
- [dans] Le jeton du type d’enclos. Le dernier élément du `mdTokenNil`tableau doit être .  
+ dans Jeton du type englobant. Le dernier élément du tableau doit être `mdTokenNil` .  
   
  `ptd`  
- [out] Le `mdTypeDef` jeton assigné.  
+ à `mdTypeDef`Jeton assigné.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)

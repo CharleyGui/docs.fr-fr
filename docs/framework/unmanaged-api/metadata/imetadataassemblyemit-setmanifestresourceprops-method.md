@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ef77efd1-849c-4e51-ba92-7ee3d2bf0339
 topic_type:
 - apiref
-ms.openlocfilehash: 9370b27fd385b0223b354365d64aa57048f4ec69
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 74111a175b0decbc1beef7c8df5ade59d31d845b
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177843"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009143"
 ---
 # <a name="imetadataassemblyemitsetmanifestresourceprops-method"></a>IMetaDataAssemblyEmit::SetManifestResourceProps, méthode
 Modifie la structure de métadonnées `ManifestResource` spécifiée.  
@@ -38,29 +38,29 @@ HRESULT SetManifestResourceProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mr`  
- [dans] Le jeton qui spécifie la `ManifestResource` structure des métadonnées à modifier.  
+ dans Jeton qui spécifie la `ManifestResource` structure de métadonnées à modifier.  
   
  `tkImplementation`  
- [dans] Le jeton, `File` de `AssemblyRef`type ou , qui cartes au fournisseur de ressources.  
+ dans Jeton, de type `File` ou `AssemblyRef` , qui est mappé au fournisseur de ressources.  
   
  `dwOffset`  
- [dans] La compensation au début de la ressource dans le fichier.  
+ dans Offset au début de la ressource dans le fichier.  
   
  `dwResourceFlags`  
- [dans] Une combinaison peu sage de valeurs de drapeau qui spécifient les attributs de la ressource.  
+ dans Combinaison d’opérations de bits de valeurs d’indicateur qui spécifient les attributs de la ressource.  
   
-## <a name="remarks"></a>Notes   
- Pour créer `ManifestResource` une structure de métadonnées, utilisez la méthode [IMetaDataAssemblyEmit::DefineManifestResource.](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definemanifestresource-method.md)  
+## <a name="remarks"></a>Remarques  
+ Pour créer une `ManifestResource` structure de métadonnées, utilisez la méthode [IMetaDataAssemblyEmit ::D efinemanifestresource](imetadataassemblyemit-definemanifestresource-method.md) .  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataAssemblyEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit, interface](imetadataassemblyemit-interface.md)

@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: f14f986e-f6ce-42bc-aa23-18150c46d28c
 topic_type:
 - apiref
-ms.openlocfilehash: 8216dc3030b18428ab52fbf8385d392f81057aa0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 199a649b0481c2a740926636345eefbda6831ef2
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176147"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007544"
 ---
 # <a name="corpinvokemap-enumeration"></a>CorPinvokeMap, énumération
-Spécifie les options pour un appel PInvoke.  
+Spécifie les options d’un appel PInvoke.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -65,36 +65,36 @@ typedef enum  CorPinvokeMap {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`pmNoMangle`|Utilisez chaque nom de membre tel que spécifié.|  
+|`pmNoMangle`|Utilisez chaque nom de membre comme spécifié.|  
 |`pmCharSetMask`|Réservé.|  
 |`pmCharSetNotSpec`|Réservé.|  
 |`pmCharSetAnsi`|Les chaînes sont marshalées sous forme de chaînes de caractères à plusieurs octets.|  
 |`pmCharSetUnicode`|Les chaînes sont marshalées sous forme de caractères Unicode de 2 octets.|  
-|`pmCharSetAuto`|Les chaînes sont automatiquement marshalées, comme requis par le système d'exploitation cible. La valeur par défaut est Unicode sur Windows NT, Windows 2000, Windows XP, et la famille Windows Server 2003; la valeur par défaut est ANSI sur Windows 98 et Windows Me.|  
+|`pmCharSetAuto`|Les chaînes sont automatiquement marshalées, comme requis par le système d'exploitation cible. La valeur par défaut est Unicode sur Windows NT, Windows 2000, Windows XP et la famille Windows Server 2003. la valeur par défaut est ANSI sur Windows 98 et Windows Me.|  
 |`pmBestFitUseAssem`|Réservé.|  
-|`pmBestFitEnabled`|Effectuez la cartographie la mieux adaptée des caractères Unicode qui n’ont pas de correspondance exacte dans l’ensemble de caractères ANSI.|  
-|`pmBestFitDisabled`|N’effectuez pas la cartographie la mieux adaptée des caractères Unicode. Dans ce cas, tous les caractères inapprables seront remplacés par un «?».|  
+|`pmBestFitEnabled`|Effectuez le mappage le mieux adapté des caractères Unicode qui n’ont pas de correspondance exacte dans le jeu de caractères ANSI.|  
+|`pmBestFitDisabled`|N’effectuez pas le mappage le mieux adapté des caractères Unicode. Dans ce cas, tous les caractères non mappables seront remplacés par un «  ? ».|  
 |`pmBestFitMask`|Réservé.|  
 |`pmThrowOnUnmappableCharUseAssem`|Réservé.|  
-|`pmThrowOnUnmappableCharEnabled`|Jetez une exception lorsque le maréchal interop rencontre un caractère inapprable.|  
-|`pmThrowOnUnmappableCharDisabled`|Ne jetez pas une exception lorsque le maréchal interop rencontre un caractère inapprable.|  
+|`pmThrowOnUnmappableCharEnabled`|Levez une exception lorsque le marshaleur d’interopérabilité rencontre un caractère non mappable.|  
+|`pmThrowOnUnmappableCharDisabled`|Ne levez pas d’exception lorsque le marshaleur d’interopérabilité rencontre un caractère non mappable.|  
 |`pmThrowOnUnmappableCharMask`|Réservé|  
-|`pmSupportsLastError`|Permettez à l’appelant d’appeler la fonction Win32 `SetLastError` avant de revenir de la méthode attribuée.|  
+|`pmSupportsLastError`|Autorisez l’appelé à appeler la `SetLastError` fonction Win32 avant de retourner la méthode avec attributs.|  
 |`pmCallConvMask`|Réservé|  
-|`pmCallConvWinapi`|Utilisez la convention d’appel de la plate-forme par défaut. Par exemple, sur Windows `StdCall` la valeur par défaut `Cdecl`est et sur Windows CE .NET il est .|  
-|`pmCallConvCdecl`|Utilisez `Cdecl` la convention d’appel. Dans ce cas, l’appelant nettoie la pile. Cela permet d’appeler des fonctions avec `varargs` (c’est-à-dire des fonctions qui acceptent un nombre variable de paramètres).|  
-|`pmCallConvStdcall`|Utilisez `StdCall` la convention d’appel. Dans ce cas, le callee nettoie la pile. Il s'agit de la convention par défaut pour appeler les fonctions non managées avec appel de code non managé.|  
-|`pmCallConvThiscall`|Utilisez `ThisCall` la convention d’appel. Dans ce cas, le `this` premier paramètre est le pointeur et est stocké dans le registre ECX. D'autres paramètres font l'objet d'un push sur la pile. La `ThisCall` convention d’appel est utilisée pour appeler des méthodes sur les classes exportées d’un DLL non gestion.|  
+|`pmCallConvWinapi`|Utilisez la Convention d’appel de la plateforme par défaut. Par exemple, sur Windows, la valeur par défaut est `StdCall` et sur Windows CE .net il s’agit de `Cdecl` .|  
+|`pmCallConvCdecl`|Utilisez la `Cdecl` Convention d’appel. Dans ce cas, l’appelant nettoie la pile. Cela permet d’appeler des fonctions avec les `varargs` fonctions (autrement dit, les fonctions qui acceptent un nombre variable de paramètres).|  
+|`pmCallConvStdcall`|Utilisez la `StdCall` Convention d’appel. Dans ce cas, l’appelé nettoie la pile. Il s'agit de la convention par défaut pour appeler les fonctions non managées avec appel de code non managé.|  
+|`pmCallConvThiscall`|Utilisez la `ThisCall` Convention d’appel. Dans ce cas, le premier paramètre est le `this` pointeur et est stocké dans le registre ECX. D'autres paramètres font l'objet d'un push sur la pile. La `ThisCall` Convention d’appel est utilisée pour appeler des méthodes sur des classes exportées à partir d’une DLL non managée.|  
 |`pmCallConvFastcall`|Réservé.|  
 |`pmMaxValue`|Réservé.|  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Énumérations de métadonnées](metadata-enumerations.md)

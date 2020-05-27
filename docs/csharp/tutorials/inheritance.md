@@ -4,12 +4,12 @@ description: Apprenez à utiliser l’héritage dans les bibliothèques et appli
 ms.date: 07/05/2018
 ms.technology: csharp-fundamentals
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: 78833110db0e4f0382e5c0c6de7c6c8be9a16c8d
-ms.sourcegitcommit: a9b8945630426a575ab0a332e568edc807666d1b
+ms.openlocfilehash: 8e24ad3e93dcd11f39ae979a3acda4c4ada13dc5
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391147"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007726"
 ---
 # <a name="inheritance-in-c-and-net"></a>Héritage dans C# et .NET
 
@@ -17,7 +17,7 @@ Ce didacticiel vous présente l’héritage dans C#. L’héritage est une fonct
 
 ## <a name="prerequisites"></a>Prérequis
 
-Ce tutoriel suppose que vous avez installé le .NET Core SDK. Visitez la page [.NET Core Downloads](https://dotnet.microsoft.com/download) pour la télécharger. Il vous faut également un éditeur de code. Ce didacticiel utilise [Visual Studio Code](https://code.visualstudio.com), mais vous pouvez utiliser l’éditeur de code de votre choix.
+Ce didacticiel part du principe que vous avez installé le kit SDK .NET Core. Visitez la page des [téléchargements .net Core](https://dotnet.microsoft.com/download) pour le télécharger. Il vous faut également un éditeur de code. Ce didacticiel utilise [Visual Studio Code](https://code.visualstudio.com), mais vous pouvez utiliser l’éditeur de code de votre choix.
 
 ## <a name="running-the-examples"></a>Exécution des exemples
 
@@ -58,7 +58,7 @@ Bien que tous les autres membres de classe de base sont hérités par les classe
 
 - Les membres [publics](../language-reference/keywords/public.md) sont visibles dans les classes dérivées et font partie de l’interface publique de la classe dérivée. Les membres publics hérités peuvent être appelés comme s’ils étaient définis dans la classe dérivée. Dans l’exemple suivant, la classe `A` définit une méthode nommée `Method1`, et la classe `B` hérite de la classe `A`. L’exemple appelle ensuite `Method1` comme s’il s’agissait d’une méthode d’instance sur `B`.
 
-[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
+  [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
 
 Les classes dérivées peuvent également *substituer* les membres hérités en fournissant une implémentation alternative. Pour être en mesure de substituer un membre, le membre de la classe de base doit être marqué avec le mot-clé [virtual](../language-reference/keywords/virtual.md). Par défaut, les membres de classe de base ne sont pas marqués comme `virtual` et ne peut pas être substitués. Une tentative de substituer un membre non virtuel, comme dans l’exemple suivant, génère l’erreur de compilateur CS0506 : « \<member> : impossible de substituer le membre hérité \<member>, car il n’est pas marqué comme virtual, abstract ou override.
 
@@ -165,7 +165,7 @@ Une relation « est un » basée sur l’héritage est préférablement appliqu�
 
 ## <a name="designing-the-base-class-and-derived-classes"></a>Conception de la classe de base et des classes dérivées
 
-Examinons le processus de conception d’une classe de base et de ses classes dérivées. Dans cette section, vous définirez `Publication`une classe de base, qui représente une publication de toute nature, comme un livre, un magazine, un journal, un journal, un article, etc. Vous définirez également `Book` une classe `Publication`qui dérive de . Vous pourriez facilement étendre l’exemple pour définir d’autres classes dérivées, comme `Magazine`, `Journal`, `Newspaper` et `Article`.
+Examinons le processus de conception d’une classe de base et de ses classes dérivées. Dans cette section, vous allez définir une classe de base, `Publication` , qui représente une publication de tout type, comme un livre, un magazine, un journal, un journal, un article, etc. Vous définirez également une `Book` classe qui dérive de `Publication` . Vous pourriez facilement étendre l’exemple pour définir d’autres classes dérivées, comme `Magazine`, `Journal`, `Newspaper` et `Article`.
 
 ### <a name="the-base-publication-class"></a>Classe Publication de base
 
@@ -181,7 +181,7 @@ Lors de la conception de votre classe `Publication`, vous devez prendre plusieur
 
 - La mesure dans laquelle étendre votre hiérarchie de classes. Souhaitez-vous développer une hiérarchie de trois classes ou plus, plutôt que simplement une classe de base et une ou plusieurs classes dérivées ? Par exemple, `Publication` peut être une classe de base de `Periodical`, qui est elle-même une classe de base de `Magazine`, `Journal` et `Newspaper`.
 
-  Dans votre exemple, vous allez utiliser la hiérarchie simple d’une classe `Publication` et d’une classe dérivée unique, `Book`. Vous pourriez facilement étendre l’exemple pour créer un certain nombre d’autres classes qui dérivent de `Publication`, comme `Magazine` et `Article`.
+  Dans votre exemple, vous allez utiliser la hiérarchie simple d’une classe `Publication` et d’une classe dérivée unique, `Book`. Vous pouvez facilement étendre l’exemple pour créer un certain nombre de classes supplémentaires qui dérivent de `Publication` , telles que `Magazine` et `Article` .
 
 - S’il est judicieux d’instancier la classe de base. Si ce n’est pas le cas, vous devez appliquer le mot-clé [abstract](../language-reference/keywords/abstract.md) à la classe. Dans le cas contraire, votre classe `Publication` peut être instanciée en appelant son constructeur de classe. Si une tentative est faite pour instancier une classe marquée avec le mot-clé `abstract` par un appel direct à son constructeur de classe, le compilateur C# génère l’erreur CS0144, « Impossible de créer une instance de la classe ou interface abstraite ». Si une tentative est faite pour instancier la classe à l’aide de la réflexion, la méthode de la réflexion lève une exception <xref:System.MemberAccessException>.
 
@@ -191,9 +191,9 @@ Lors de la conception de votre classe `Publication`, vous devez prendre plusieur
 
 - Si les classes dérivées doivent hériter de l’implémentation de classe de base de membres particuliers, si elles ont l’option de substituer l’implémentation de la classe de base ou si elles doivent fournir une implémentation. Vous utilisez le mot clé [abstract](../language-reference/keywords/abstract.md) pour forcer les classes dérivées à fournir une implémentation. Vous devez utiliser le mot clé [virtual](../language-reference/keywords/virtual.md) pour permettre aux classes dérivées de substituer une méthode de classe de base. Par défaut, les méthodes définies dans la classe de base ne sont *pas* substituables.
 
- La classe `Publication` n’a aucune méthode `abstract`, mais la classe elle-même est `abstract`.
+  La classe `Publication` n’a aucune méthode `abstract`, mais la classe elle-même est `abstract`.
 
-- Si une classe dérivée représente la classe finale dans la hiérarchie d’héritage et ne peut pas elle-même être utilisée comme classe de base pour les classes dérivées supplémentaires. Par défaut, toute classe peut servir de classe de base. Vous pouvez appliquer le mot clé [sealed](../language-reference/keywords/sealed.md) pour indiquer qu’une classe ne peut pas servir de classe de base pour des classes supplémentaires. La tentative de dériver à partir d’une classe sealed a généré l’erreur de compilateur CS0509, « impossible de dériver à partir du type sealed \<typeName> ».
+- Si une classe dérivée représente la classe finale dans la hiérarchie d’héritage et ne peut pas elle-même être utilisée comme classe de base pour les classes dérivées supplémentaires. Par défaut, toute classe peut servir de classe de base. Vous pouvez appliquer le mot clé [sealed](../language-reference/keywords/sealed.md) pour indiquer qu’une classe ne peut pas servir de classe de base pour des classes supplémentaires. La tentative de dériver à partir d’une classe sealed a généré l’erreur de compilateur CS0509, « impossible de dériver à partir du type sealed \<typeName> ».
 
   Dans votre exemple, vous allez marquer votre classe dérivée en tant que `sealed`.
 

@@ -38,13 +38,13 @@ Le comportement d’origine de cette journalisation est incohérent avec d’aut
 
 L’utilisation de valeurs entières est plus souple que le texte, car elle autorise des requêtes sur des plages de valeurs.
 
-L’ajout d’une autre valeur de journal pour capturer le code d’État entier a été pris en compte. Malheureusement, cela introduirait une autre incohérence avec le reste de ASP.NET Core. La journalisation HttpClient et la journalisation du serveur/ `StatusCode` de l’hébergement http utilisent déjà le même nom de clé.
+L’ajout d’une autre valeur de journal pour capturer le code d’État entier a été pris en compte. Malheureusement, cela introduirait une autre incohérence avec le reste de ASP.NET Core. La journalisation HttpClient et la journalisation du serveur/de l’hébergement HTTP utilisent déjà le même `StatusCode` nom de clé.
 
 #### <a name="recommended-action"></a>Action recommandée
 
 La meilleure option consiste à mettre à jour les requêtes de journalisation pour utiliser les valeurs entières des codes d’État. Cette option peut entraîner des difficultés à écrire des requêtes sur plusieurs versions de ASP.NET Core. Toutefois, l’utilisation d’entiers à cet effet est bien plus flexible pour l’interrogation des journaux.
 
-Si vous devez forcer la compatibilité avec l’ancien comportement et utiliser des codes d’État textuels `IHttpClientFactory` , remplacez la journalisation par les vôtres :
+Si vous devez forcer la compatibilité avec l’ancien comportement et utiliser des codes d’État textuels, remplacez la `IHttpClientFactory` journalisation par les vôtres :
 
 1. Copiez les versions .NET Core 3,1 des classes suivantes dans votre projet :
 
@@ -55,7 +55,7 @@ Si vous devez forcer la compatibilité avec l’ancien comportement et utiliser 
 
 1. Renommez les classes pour éviter les conflits avec les types publics dans le package NuGet [Microsoft. extensions. http](https://www.nuget.org/packages/Microsoft.Extensions.Http) .
 
-1. Remplacez l’implémentation intégrée de `LoggingHttpMessageHandlerBuilderFilter` par le vôtre dans la méthode du `Startup.ConfigureServices` projet. Par exemple :
+1. Remplacez l’implémentation intégrée de par le `LoggingHttpMessageHandlerBuilderFilter` vôtre dans la méthode du projet `Startup.ConfigureServices` . Par exemple :
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)

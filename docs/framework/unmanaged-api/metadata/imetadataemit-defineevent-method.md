@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: cf064bac-9a9f-41c5-9e1d-108ff7af3afe
 topic_type:
 - apiref
-ms.openlocfilehash: a9598be850604f16ee8cc62187e1fed7ecf3a7e4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7babd0a90b9882acb03b6360753f55c57a399b9e
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175848"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84005625"
 ---
 # <a name="imetadataemitdefineevent-method"></a>IMetaDataEmit::DefineEvent, méthode
-Crée une définition pour un événement avec la signature spécifiée de métadonnées, et obtient un jeton à cette définition d’événement.  
+Crée une définition pour un événement avec la signature de métadonnées spécifiée et obtient un jeton pour cette définition d’événement.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,42 +43,42 @@ HRESULT DefineEvent (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [dans] Le jeton pour la classe ou l’interface cible. C’est `mdTypeDef` un `mdTypeDefNil` ou un jeton.  
+ dans Jeton de la classe ou de l’interface cible. Il s’agit d' `mdTypeDef` un `mdTypeDefNil` jeton ou.  
   
  `szEvent`  
  [in] Nom de l'événement.  
   
  `dwEventFlags`  
- [dans] Drapeaux de l’événement.  
+ dans Indicateurs d’événement.  
   
  `tkEventType`  
- [dans] Le jeton pour la classe d’événement. Il s’agit d’un `mdTypeDef`, un `mdTypeRef`, ou un `mdTokenNil` jeton.  
+ dans Jeton de la classe d’événements. Il s’agit d’un `mdTypeDef` , d’un `mdTypeRef` ou d’un `mdTokenNil` jeton.  
   
  `mdAddOn`  
- [dans] La méthode utilisée pour s’abonner à l’événement, ou nulle.  
+ dans Méthode utilisée pour s’abonner à l’événement, ou null.  
   
  `mdRemoveOn`  
- [dans] La méthode utilisée pour se désabonner à l’événement, ou nulle.  
+ dans Méthode utilisée pour annuler l’abonnement à l’événement, ou null.  
   
  `mdFire`  
- [dans] La méthode utilisée (par une classe dérivée) pour élever l’événement.  
+ dans Méthode utilisée (par une classe dérivée) pour déclencher l’événement.  
   
  `rmdOtherMethods[]`  
- [dans] Un éventail de jetons pour d’autres méthodes associées à l’événement. Le tableau est `mdMethodDefNil` terminé avec un jeton.  
+ dans Tableau de jetons pour d’autres méthodes associées à l’événement. Le tableau se termine par un `mdMethodDefNil` jeton.  
   
  `pmdEvent`  
- [out] Le jeton des métadonnées attribué à l’événement.  
+ à Jeton de métadonnées affecté à l’événement.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)

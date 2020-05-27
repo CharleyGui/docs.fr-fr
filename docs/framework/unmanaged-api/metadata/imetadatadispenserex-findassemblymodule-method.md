@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d1fb65e1-7e19-4513-85b1-44f87c294d3e
 topic_type:
 - apiref
-ms.openlocfilehash: e73c95d8c720ed3263d6a66c48bdb5b5582eb686
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 64f1e2a8f05616c7ca84bc130428629b1176e985
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442182"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006179"
 ---
 # <a name="imetadatadispenserexfindassemblymodule-method"></a>IMetaDataDispenserEx::FindAssemblyModule, méthode
 Cette méthode n’est pas implémentée. Si elle est appelée, elle retourne E_NOTIMPL.  
@@ -42,13 +42,13 @@ HRESULT FindAssemblyModule(
   
 ## <a name="parameters"></a>Paramètres  
  `szAppBase`  
- dans Non utilisé.  
+ [in] Non utilisé.  
   
  `szPrivateBin`  
- dans Non utilisé.  
+ [in] Non utilisé.  
   
  `szGlobalBin`  
- dans Non utilisé.  
+ [in] Non utilisé.  
   
  `szAssemblyName`  
  dans Nom du module.  
@@ -60,21 +60,21 @@ HRESULT FindAssemblyModule(
  à Nom simple de l’assembly.  
   
  `cchName`  
- dans Taille, en octets, de `szName`.  
+ dans Taille, en octets, de `szName` .  
   
  `pcName`  
- à Nombre de caractères réellement retournés dans `szName`.  
+ à Nombre de caractères réellement retournés dans `szName` .  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateforme :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataDispenserEx, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)
-- [IMetaDataDispenser, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
+- [IMetaDataDispenserEx, interface](imetadatadispenserex-interface.md)
+- [IMetaDataDispenser, interface](imetadatadispenser-interface.md)

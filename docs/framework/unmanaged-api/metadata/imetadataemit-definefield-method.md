@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6b5be4fc-2e86-499c-8b09-833160bca767
 topic_type:
 - apiref
-ms.openlocfilehash: 8ca5ab70f60de4d783800fb18612a8f04cb9cee1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ccc4843864f375c167acdb12575c282dbe3a49e1
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177711"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84004814"
 ---
 # <a name="imetadataemitdefinefield-method"></a>IMetaDataEmit::DefineField, méthode
-Crée une définition pour un champ avec la signature spécifiée de métadonnées, et obtient un jeton à cette définition de champ.  
+Crée une définition pour un champ avec la signature de métadonnées spécifiée et obtient un jeton pour cette définition de champ.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,42 +43,42 @@ HRESULT DefineField (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [dans] Le `mdTypeDef` jeton pour la classe ou l’interface d’enceinte.  
+ dans `mdTypeDef`Jeton de l’interface ou de la classe englobante.  
   
  `szName`  
- [dans] Le nom de champ dans Unicode.  
+ dans Nom du champ en Unicode.  
   
  `dwFieldFlags`  
- [dans] Le champ attribue. C’est un peu `CorFieldAttr` de valeur.  
+ dans Attributs du champ. Il s’agit d’un masque de `CorFieldAttr` valeur de valeurs.  
   
  `pvSigBlob`  
- [dans] La signature de champ comme un BLOB.  
+ dans Signature de champ en tant qu’objet BLOB.  
   
  `cbSigBlob`  
- [dans] Le compte d’octets dans `pvSigBlob`.  
+ dans Nombre d’octets dans `pvSigBlob` .  
   
  `dwCPlusTypeFlag`  
- [dans] Le `ELEMENT_TYPE_` *\** pour la valeur constante. C’est `CorElementType` une valeur. Si ce n’est pas définir `ELEMENT_TYPE_END`une valeur constante pour le champ, utilisez .  
+ dans `ELEMENT_TYPE_` *\** Pour la valeur de constante. Il s’agit d’une `CorElementType` valeur. Si vous ne définissez pas de valeur de constante pour le champ, utilisez `ELEMENT_TYPE_END` .  
   
  `pValue`  
- [dans] La valeur constante pour le domaine.  
+ dans Valeur de constante pour le champ.  
   
  `cchValue`  
- [dans] La taille dans (Unicode) caractères de `pValue`.  
+ dans Taille en (Unicode) caractères de `pValue` .  
   
  `pmd`  
- [out] Le `mdFieldDef` jeton assigné.  
+ à `mdFieldDef`Jeton assigné.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)

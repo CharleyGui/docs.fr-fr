@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0b284b18-0084-4b3a-912a-5ebe9f29c88b
 topic_type:
 - apiref
-ms.openlocfilehash: c88b7a401a19b1bd0e02edab7ef7bbee1372199e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 612463bca18c23fac0b086adde2d208a0fbc5ae5
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432081"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008168"
 ---
 # <a name="imetadataassemblyemitdefineassemblyref-method"></a>IMetaDataAssemblyEmit::DefineAssemblyRef, méthode
 Crée une structure `AssemblyRef` contenant les métadonnées pour l'assembly que cet assembly référence et retourne le jeton de métadonnées associé.  
@@ -42,10 +42,10 @@ HRESULT DefineAssemblyRef (
   
 ## <a name="parameters"></a>Paramètres  
  `pbPublicKeyOrToken`  
- dans Clé publique de l’éditeur de l’assembly référencé. La fonction d’assistance [StrongNameTokenFromAssembly (](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfromassembly-function.md) peut être utilisée pour obtenir le hachage de la clé publique à passer comme ce paramètre.  
+ dans Clé publique de l’éditeur de l’assembly référencé. La fonction d’assistance [StrongNameTokenFromAssembly (](../strong-naming/strongnametokenfromassembly-function.md) peut être utilisée pour obtenir le hachage de la clé publique à passer comme ce paramètre.  
   
  `cbPublicKeyOrToken`  
- dans Taille en octets de `pbPublicKeyOrToken`.  
+ dans Taille en octets de `pbPublicKeyOrToken` .  
   
  `szName`  
  dans Nom de texte explicite de l’assembly. Cette valeur ne doit pas dépasser 1024 caractères.  
@@ -54,31 +54,31 @@ HRESULT DefineAssemblyRef (
  dans Instance ASSEMBLYMETADATA qui contient les informations de version, de plateforme et de paramètres régionaux de l’assembly référencé.  
   
  `pbHashValue`  
- dans Données de hachage associées à l’assembly référencé. Ce paramètre est facultatif.  
+ dans Données de hachage associées à l’assembly référencé. facultatif.  
   
  `cbHashValue`  
- dans Taille en octets de `pbHashValue`.  
+ dans Taille en octets de `pbHashValue` .  
   
  `dwAssemblyRefFlags`  
- dans Combinaison d’opérations de bits de valeurs [CorAssemblyFlags,](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) qui influencent le comportement du moteur d’exécution.  
+ dans Combinaison d’opérations de bits de valeurs [CorAssemblyFlags,](corassemblyflags-enumeration.md) qui influencent le comportement du moteur d’exécution.  
   
  `pmdar`  
- à Pointeur vers le jeton de métadonnées `AssemblyRef` retourné.  
+ à Pointeur vers le jeton de `AssemblyRef` métadonnées retourné.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Une `AssemblyRef` structure de métadonnées doit être définie pour chaque assembly référencé par cet assembly.  
   
  Au moment de l’exécution, les détails d’un assembly référencé sont passés au programme de résolution d’assembly et indiquent qu’ils représentent les informations « comme étant générées ». Le programme de résolution d’assembly applique ensuite la stratégie.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataAssemblyEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit, interface](imetadataassemblyemit-interface.md)

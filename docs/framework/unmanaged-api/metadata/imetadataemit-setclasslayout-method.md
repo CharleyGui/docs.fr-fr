@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2576c449-388d-4434-a0e1-9f53991e11b6
 topic_type:
 - apiref
-ms.openlocfilehash: e855868d18fc6cffdd5d92cfa401606caf45b76c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a18583ce807ffa672811f3a0cd1e744233f6eb30
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177572"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008827"
 ---
 # <a name="imetadataemitsetclasslayout-method"></a>IMetaDataEmit::SetClassLayout, méthode
-Termine la disposition des champs pour une classe qui a été définie par un appel préalable à [DefineTypeDef Méthode](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).  
+Termine la disposition des champs pour une classe qui a été définie par un appel antérieur à la [méthode DefineTypeDef](imetadataemit-definetypedef-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,36 +38,36 @@ HRESULT SetClassLayout (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [dans] Un `mdTypeDef` jeton qui spécifie la classe à mettre en place.  
+ dans `mdTypeDef`Jeton qui spécifie la classe à mettre en sortie.  
   
  `dwPackSize`  
- [dans] La taille d’emballage: 1, 2, 4, 8 ou 16 octets. La taille d’emballage est le nombre d’octets entre les champs adjacents.  
+ dans Taille de compression : 1, 2, 4, 8 ou 16 octets. La taille de compression est le nombre d’octets entre les champs adjacents.  
   
  `rFieldOffsets`  
- [dans] Un éventail de structures [COR_FIELD_OFFSET,](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) chacune spécifie un champ de la classe et le décalage du champ au sein de la classe. Terminez le `mdTokenNil`tableau avec .  
+ dans Tableau de structures [COR_FIELD_OFFSET](cor-field-offset-structure.md) , chacune spécifiant un champ de la classe et l’offset du champ dans la classe. Terminez le tableau avec `mdTokenNil` .  
   
  `ulClassSize`  
- [dans] La taille, dans les octets, de la classe.  
+ dans Taille, en octets, de la classe.  
   
-## <a name="remarks"></a>Notes   
- La classe est initialement définie en appelant la méthode [IMetaDataEmit::DefineTypeDef,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md) et en spécifiant l’une des trois mises en page pour les champs de la classe: automatique, séquentielle, ou explicite. Normalement, vous utiliseriez la disposition automatique et laisser le temps d’exécution choisir la meilleure façon d’exposer les champs.  
+## <a name="remarks"></a>Remarques  
+ La classe est initialement définie en appelant la méthode [IMetaDataEmit ::D efinetypedef](imetadataemit-definetypedef-method.md) et en spécifiant l’une des trois dispositions pour les champs de la classe : automatique, séquentielle ou explicite. Normalement, vous utilisez la disposition automatique et laissez le runtime choisir la meilleure façon de disposer les champs.  
   
- Cependant, vous voudrez peut-être que les champs sont énoncés selon l’arrangement que le code non menté utilise. Dans ce cas, choisissez une mise en `SetClassLayout` page séquentielle ou explicite et appelez pour compléter la disposition des champs :  
+ Toutefois, vous souhaiterez peut-être disposer des champs présentés en fonction de la structure utilisée par le code non managé. Dans ce cas, choisissez une disposition séquentielle ou explicite et appelez `SetClassLayout` pour terminer la disposition des champs :  
   
-- Mise en page séquentielle : Spécifier la taille de l’emballage. Un champ est aligné en fonction de sa taille naturelle ou de la taille de l’emballage, selon le plus petit décalage du champ. Définir `rFieldOffsets` `ulClassSize` et à zéro.  
+- Disposition séquentielle : spécifiez la taille de compression. Un champ est aligné en fonction de sa taille naturelle ou de sa taille de compression, selon la valeur la plus petite du décalage du champ. Définissez `rFieldOffsets` et `ulClassSize` sur zéro.  
   
-- Mise en page explicite : soit spécifiez le décalage de chaque champ, soit spécifiez la taille de la classe et la taille de l’emballage.  
+- Disposition explicite : spécifiez le décalage de chaque champ ou spécifiez la taille de la classe et la taille de la compression.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)

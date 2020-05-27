@@ -62,10 +62,10 @@ typedef enum LoggingLevelEnum {
 |`LErrorLevel`|Le message est un niveau d’erreur.|  
 |`LPanicLevel`|Le message est un niveau de panique.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Le common language runtime (CLR) appelle la méthode [ICorDebugManagedCallback :: LogMessage](icordebugmanagedcallback-logmessage-method.md) pour notifier au débogueur qu’un thread managé a consigné un événement. Le CLR passe une valeur de l' `LoggingLevelEnum` énumération pour indiquer le niveau de gravité du message que le thread managé a écrit dans le journal des événements.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

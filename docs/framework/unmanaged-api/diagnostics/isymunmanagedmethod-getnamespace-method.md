@@ -36,10 +36,10 @@ HRESULT GetNamespace(
  `pRetVal`  
  à Pointeur défini sur l’interface [ISymUnmanagedNamespace](isymunmanagednamespace-interface.md) retournée.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Spécifications  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

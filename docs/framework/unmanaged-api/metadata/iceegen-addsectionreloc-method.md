@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: b500a260-1d57-4953-95e1-c27063f7c8da
 topic_type:
 - apiref
-ms.openlocfilehash: 129750644962cee3206b9e38cbeaa77d38dddd71
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2f66d34fcfdd8c61dcc92817ec1a928ac5b603fc
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176108"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008896"
 ---
 # <a name="iceegenaddsectionreloc-method"></a>ICeeGen::AddSectionReloc, méthode
-Ajoute une instruction .reloc à la base de code.  
+Ajoute une instruction. reloc à la base de code.  
   
  Cette méthode est obsolète et ne doit pas être utilisée.  
   
@@ -40,26 +40,26 @@ HRESULT AddSectionReloc (
   
 ## <a name="parameters"></a>Paramètres  
  `section`  
- [dans] La section du code de mémoire à laquelle ajouter une instruction .reloc.  
+ dans Section du code en mémoire à laquelle ajouter une instruction. reloc.  
   
  `offset`  
- [dans] Le décalage de la section.  
+ dans Décalage de la section.  
   
  `relativeTo`  
- [dans] La section `offset` à laquelle se réfère.  
+ dans Section à laquelle `offset` fait référence.  
   
  `relocType`  
- [dans] L’une des valeurs [CeeSectionRelocType,](../../../../docs/framework/unmanaged-api/metadata/ceesectionreloctype-enumeration.md) indiquant le genre d’instruction .reloc à ajouter.  
+ dans L’une des valeurs [CeeSectionRelocType,](ceesectionreloctype-enumeration.md) , indiquant le type d’instruction. reloc à ajouter.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICeeGen, interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen, interface](iceegen-interface.md)

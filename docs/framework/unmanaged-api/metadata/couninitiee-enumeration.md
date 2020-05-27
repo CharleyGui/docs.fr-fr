@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: c42baa79-f469-4330-95a2-baf7f021c2fc
 topic_type:
 - apiref
-ms.openlocfilehash: e5cbd8c5b1bb048088fe137b1359d0bb9e29af20
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14942680a79c4d1fcc69092a4f752738db1fb0b0
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176121"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008912"
 ---
 # <a name="couninitiee-enumeration"></a>COUNINITIEE, énumération
-Spécifie les constantes utilisées par [CoUninitializeEE](../../../../docs/framework/unmanaged-api/hosting/couninitializeee-function.md) lors de l’initialisation du temps de course de langue commune.  
+Spécifie les constantes utilisées par [CoUninitializeEE,](../hosting/couninitializeee-function.md) lors de l’initialisation du Common Language Runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +38,18 @@ typedef enum tagCOUNINITEE
   
 |Membre|Description|  
 |------------|-----------------|  
-|`COUNINITEE_DEFAULT`|Indique le mode d’uninitalisation par défaut.|  
-|`COUNINITEE_DLL`|Indique le mode d’uninitalisation pour décharger un assemblage.|  
+|`COUNINITEE_DEFAULT`|Indique le mode d’initialisation par défaut.|  
+|`COUNINITEE_DLL`|Indique le mode d’initialisation pour le déchargement d’un assembly.|  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Énumérations de métadonnées](metadata-enumerations.md)

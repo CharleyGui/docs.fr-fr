@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1318ee37-c43b-40eb-bbe8-88fc46453d74
 topic_type:
 - apiref
-ms.openlocfilehash: 216852f8f051440b2814619b843a1f25013e4042
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 09bcebfdcfea3d5728d404cdb6b5fb170a5432c3
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133777"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008493"
 ---
 # <a name="lockclrversion-function"></a>LockClrVersion, fonction
 Permet à l’hôte de déterminer la version du common language runtime (CLR) qui sera utilisée dans le processus avant d’initialiser explicitement le CLR.  
@@ -47,7 +47,7 @@ HRESULT LockClrVersion (
  `pEndHostSetup`  
  dans Fonction à appeler par l’hôte pour informer le CLR que l’initialisation est terminée.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
  Cette méthode retourne des codes d’erreur COM standard, tels que définis dans WinError. h, en plus des valeurs suivantes.  
   
 |Code de retour|Description|  
@@ -55,8 +55,8 @@ HRESULT LockClrVersion (
 |S_OK|La commande s'est correctement terminée.|  
 |E_INVALIDARG|Un ou plusieurs arguments ont la valeur null.|  
   
-## <a name="remarks"></a>Notes  
- L’hôte appelle `LockClrVersion` avant d’initialiser le CLR. `LockClrVersion` prend trois paramètres, qui sont tous des rappels de type [FLockClrVersionCallback (](../../../../docs/framework/unmanaged-api/hosting/flockclrversioncallback-function-pointer.md). Ce type est défini comme suit.  
+## <a name="remarks"></a>Remarques  
+ L’hôte appelle `LockClrVersion` avant d’initialiser le CLR. `LockClrVersion`prend trois paramètres, qui sont tous des rappels de type [FLockClrVersionCallback (](flockclrversioncallback-function-pointer.md). Ce type est défini comme suit.  
   
 ```cpp  
 typedef HRESULT ( __stdcall *FLockClrVersionCallback ) ();  
@@ -64,33 +64,33 @@ typedef HRESULT ( __stdcall *FLockClrVersionCallback ) ();
   
  Les étapes suivantes se produisent lors de l’initialisation du Runtime :  
   
-1. L’hôte appelle [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) ou l’une des autres fonctions d’initialisation du Runtime. L’hôte peut également initialiser le runtime à l’aide de l’activation d’objet COM.  
+1. L’hôte appelle [CorBindToRuntimeEx](corbindtoruntimeex-function.md) ou l’une des autres fonctions d’initialisation du Runtime. L’hôte peut également initialiser le runtime à l’aide de l’activation d’objet COM.  
   
-2. Le runtime appelle la fonction spécifiée par le paramètre `hostCallback`.  
+2. Le runtime appelle la fonction spécifiée par le `hostCallback` paramètre.  
   
 3. La fonction spécifiée par `hostCallback` effectue ensuite la séquence d’appels suivante :  
   
-    - Fonction spécifiée par le paramètre `pBeginHostSetup`.  
+    - Fonction spécifiée par le `pBeginHostSetup` paramètre.  
   
-    - `CorBindToRuntimeEx` (ou une autre fonction d’initialisation du Runtime).  
+    - `CorBindToRuntimeEx`(ou une autre fonction d’initialisation du Runtime).  
   
-    - [ICLRRuntimeHost :: SetHostControl](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-sethostcontrol-method.md).  
+    - [ICLRRuntimeHost :: SetHostControl](iclrruntimehost-sethostcontrol-method.md).  
   
-    - [ICLRRuntimeHost :: Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md).  
+    - [ICLRRuntimeHost :: Start](iclrruntimehost-start-method.md).  
   
-    - Fonction spécifiée par le paramètre `pEndHostSetup`.  
+    - Fonction spécifiée par le `pEndHostSetup` paramètre.  
   
- Tous les appels de `pBeginHostSetup` à `pEndHostSetup` doivent se produire sur un thread ou une fibre unique, avec la même pile logique. Ce thread peut être différent du thread sur lequel `hostCallback` est appelée.  
+ Tous les appels de `pBeginHostSetup` à `pEndHostSetup` doivent se produire sur un thread ou une fibre unique, avec la même pile logique. Ce thread peut être différent du thread sur lequel `hostCallback` est appelé.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions d’hébergement CLR dépréciées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Fonction d'hébergement du CLR déconseillées](deprecated-clr-hosting-functions.md)

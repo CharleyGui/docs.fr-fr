@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: e2501fc8-b2bc-4dcc-9205-e3acd5a53ffe
 topic_type:
 - apiref
-ms.openlocfilehash: dc6375f3e2cff1a744a8ff2e6a6adab27bbf8af3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b5af877c26c20bf64a27618bf24a7bce5b410419
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177480"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007778"
 ---
 # <a name="imetadataemitsetpropertyprops-method"></a>IMetaDataEmit::SetPropertyProps, méthode
-Définit les fonctionnalités stockées dans les métadonnées pour une propriété définie par un appel préalable à [DefineProperty Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
+Définit les fonctionnalités stockées dans les métadonnées d’une propriété définie par un appel antérieur à la [méthode DefineProperty](imetadataemit-defineproperty-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,39 +42,39 @@ HRESULT SetPropertyProps (
   
 ## <a name="parameters"></a>Paramètres  
  `pr`  
- [dans] Le jeton pour que la propriété soit changée  
+ dans Jeton de la propriété à modifier.  
   
  `dwPropFlags`  
- [dans] Drapeaux de propriété.  
+ dans Indicateurs de propriété.  
   
  `dwCPlusTypeFlag`  
- [dans] Le type de valeur par défaut de la propriété.  
+ dans Type de la valeur par défaut de la propriété.  
   
  `pValue`  
- [dans] La valeur par défaut pour la propriété.  
+ dans Valeur par défaut de la propriété.  
   
  `cchValue`  
- [dans] Le nombre de caractères `pValue`(Unicode) dans .  
+ dans Nombre de caractères (Unicode) dans `pValue` .  
   
  `mdSetter`  
- [dans] La méthode qui définit la valeur de la propriété.  
+ dans Méthode qui définit la valeur de la propriété.  
   
  `mdGetter`  
- [dans] La méthode qui obtient la valeur de la propriété.  
+ dans Méthode qui obtient la valeur de la propriété.  
   
  `rmdOtherMethods[]`  
- [dans] Un éventail d’autres méthodes associées à la propriété. Terminez ce `mdTokenNil` tableau avec un jeton.  
+ dans Tableau d’autres méthodes associées à la propriété. Mettez fin à ce tableau avec un `mdTokenNil` jeton.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)

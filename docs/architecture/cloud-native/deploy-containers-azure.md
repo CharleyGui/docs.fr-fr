@@ -94,7 +94,7 @@ Ces informations sont suffisantes pour commencer. Dans le cadre du processus de 
 - Authentification
 - Mise en réseau
 - Surveillance
-- Étiquettes
+- Balises
 
 Ce [Guide de démarrage rapide vous guide dans le déploiement d’un cluster AKS à l’aide de l’portail Azure](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal).
 

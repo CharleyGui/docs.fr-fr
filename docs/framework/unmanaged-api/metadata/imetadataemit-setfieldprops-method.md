@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 47132dda-fa92-4bd1-ae4b-24cd9a60665a
 topic_type:
 - apiref
-ms.openlocfilehash: b921118f7c43edef3c07cbb34cbbd9119d36ce51
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 220556ec130c7bff7c413405820c4fee0582b051
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177555"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008012"
 ---
 # <a name="imetadataemitsetfieldprops-method"></a>IMetaDataEmit::SetFieldProps, méthode
 Définit ou met à jour la valeur par défaut pour le champ référencé par le jeton de champ spécifié.  
@@ -39,30 +39,30 @@ HRESULT SetFieldProps (
   
 ## <a name="parameters"></a>Paramètres  
  `fd`  
- [dans] Le jeton pour le champ cible.  
+ dans Jeton pour le champ cible.  
   
  `dwFieldFlags`  
- [dans] Attributs de champ. C’est un peu `CorFieldAttr` de valeur.  
+ dans Attributs du champ. Il s’agit d’un masque de `CorFieldAttr` valeur de valeurs.  
   
  `dwCPlusTypeFlag`  
- [dans] Le `ELEMENT_TYPE_` *\** pour la valeur constante. C’est `CorElementType` une valeur. Si une constante n’est pas `ELEMENT_TYPE_END`définie, définissez cette valeur à .  
+ dans `ELEMENT_TYPE_` *\** Pour la valeur de constante. Il s’agit d’une `CorElementType` valeur. Si une constante n’est pas définie, définissez cette valeur sur `ELEMENT_TYPE_END` .  
   
  `pValue`  
- [dans] La valeur constante pour le domaine.  
+ dans Valeur de constante pour le champ.  
   
  `cchValue`  
- [dans] La taille, dans les `pValue`caractères Unicode, de .  
+ dans Taille, en caractères Unicode, de `pValue` .  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c065aadf-c1ca-4981-bde6-597042cb29c4
 topic_type:
 - apiref
-ms.openlocfilehash: cabd6a47e5d6fc2a4cea87b16d349d9c778b3507
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 61d81c94e3a9c092b5d45791962635c761e8da8a
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176056"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008142"
 ---
 # <a name="imetadataassemblyemitdefinefile-method"></a>IMetaDataAssemblyEmit::DefineFile, méthode
 Crée une structure `File` contenant les métadonnées pour l'assembly référencé par cet assembly et retourne le jeton de métadonnées associé.  
@@ -39,32 +39,32 @@ HRESULT DefineFile (
   
 ## <a name="parameters"></a>Paramètres  
  `szName`  
- [dans] Le nom du fichier à consommer.  
+ dans Nom du fichier à consommer.  
   
  `pbHashValue`  
- [dans] Un pointeur vers les données de hachage associées à l’assemblage.  
+ dans Pointeur vers les données de hachage associées à l’assembly.  
   
  `cbHashValue`  
- [dans] La taille dans `pbHashValue`les octets de .  
+ dans Taille en octets de `pbHashValue` .  
   
  `dwFileFlags`  
- [dans] Une combinaison de `FileFlags` valeurs qui spécifient les paramètres de propriété.  
+ dans Combinaison d’opérations de bits de `FileFlags` valeurs qui spécifient des paramètres de propriété.  
   
  `pmdf`  
- [out] Un pointeur `File` au jeton retourné.  
+ à Pointeur vers le jeton retourné `File` .  
   
-## <a name="remarks"></a>Notes   
- Une `File` structure de métadonnées doit être définie pour chaque fichier qui faisait partie de cet assemblage au moment de la construction de cet assemblage, à l’exclusion du fichier qui contient les métadonnées.  
+## <a name="remarks"></a>Remarques  
+ Une `File` structure de métadonnées doit être définie pour chaque fichier qui faisait partie de cet assembly au moment de la génération de cet assembly, à l’exception du fichier qui contient les métadonnées.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateforme:** Voir [Les exigences du système](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataAssemblyEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit, interface](imetadataassemblyemit-interface.md)

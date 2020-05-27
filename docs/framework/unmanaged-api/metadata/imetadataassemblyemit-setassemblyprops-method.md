@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 91b633d7-9e75-43c3-a8d2-2144984e5f9e
 topic_type:
 - apiref
-ms.openlocfilehash: f79320d5b7d2ad4ad44a79fae063ce6718490a70
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 7c6adcbcfe64f63048078b4ccba6727a58531033
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431950"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008103"
 ---
 # <a name="imetadataassemblyemitsetassemblyprops-method"></a>IMetaDataAssemblyEmit::SetAssemblyProps, méthode
 Modifie la structure de métadonnées `Assembly` spécifiée.  
@@ -41,13 +41,13 @@ HRESULT SetAssemblyProps (
   
 ## <a name="parameters"></a>Paramètres  
  `pma`  
- dans Jeton de métadonnées qui spécifie la structure de métadonnées `Assembly` à modifier.  
+ dans Jeton de métadonnées qui spécifie la `Assembly` structure de métadonnées à modifier.  
   
  `pbPublicKey`  
  dans Pointeur vers la clé publique de l’éditeur de l’assembly.  
   
  `cbPublicKey`  
- dans Taille en octets de `pbPublicKey`.  
+ dans Taille en octets de `pbPublicKey` .  
   
  `ulHashAlgId`  
  dans Identificateur de l’algorithme de hachage utilisé pour hacher les fichiers d’assembly.  
@@ -59,20 +59,20 @@ HRESULT SetAssemblyProps (
  dans Pointeur vers ASSEMBLYMETADATA qui contient les informations de version, de plateforme et de paramètres régionaux de l’assembly.  
   
  `dwAssemblyFlags`  
- dans Combinaison d’opérations de bits de valeurs [AssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md) qui spécifient différents attributs de l’assembly.  
+ dans Combinaison d’opérations de bits de valeurs [AssemblyFlags](assemblyflags-enumeration.md) qui spécifient différents attributs de l’assembly.  
   
-## <a name="remarks"></a>Notes  
- Pour créer une structure de métadonnées `Assembly`, utilisez la méthode [IMetaDataAssemblyEmit ::D efineassembly](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md) .  
+## <a name="remarks"></a>Remarques  
+ Pour créer une `Assembly` structure de métadonnées, utilisez la méthode [IMetaDataAssemblyEmit ::D efineassembly](imetadataassemblyemit-defineassembly-method.md) .  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateforme :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataAssemblyEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit, interface](imetadataassemblyemit-interface.md)

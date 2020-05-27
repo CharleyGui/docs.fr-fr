@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d7061343-d0a3-4fd5-b312-61974f98bd62
 topic_type:
 - apiref
-ms.openlocfilehash: 6f8df824ed36b7793d5f07e5b5cf51f65f9c8e24
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 11529ce896f265f2b200fa6e511d4b913e9147c8
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432238"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008220"
 ---
 # <a name="ihostfiltermarktoken-method"></a>IHostFilter::MarkToken, méthode
 Indique que le jeton de métadonnées spécifié sera traité.  
@@ -37,19 +37,19 @@ HRESULT MarkToken (
  `tk`  
  dans Jeton de métadonnées à traiter.  
   
-## <a name="remarks"></a>Notes  
- En général, vous souhaitez qu’un jeton soit traité s’il se trouve dans la portée des métadonnées. La méthode `MarkToken` est passée au moteur de métadonnées via la méthode [IMetaDataEmit :: SetHandler](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md) .  
+## <a name="remarks"></a>Remarques  
+ En général, vous souhaitez qu’un jeton soit traité s’il se trouve dans la portée des métadonnées. La `MarkToken` méthode est passée au moteur de métadonnées via la méthode [IMetaDataEmit :: SetHandler](imetadataemit-sethandler-method.md) .  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)
-- [IHostFilter, interface](../../../../docs/framework/unmanaged-api/metadata/ihostfilter-interface.md)
+- [Interfaces de métadonnées](metadata-interfaces.md)
+- [IHostFilter, interface](ihostfilter-interface.md)

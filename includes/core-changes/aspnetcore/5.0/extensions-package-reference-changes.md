@@ -20,7 +20,7 @@ Certains `Microsoft.Extensions.*` packages incluent des références de package 
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Votre application doit peut-être `Microsoft.Extensions.*` ajouter des dépendances de package.
+Votre application doit peut-être ajouter des `Microsoft.Extensions.*` dépendances de package.
 
 #### <a name="reason-for-change"></a>Motif de modification
 
@@ -37,11 +37,11 @@ Les consommateurs des packages concernés doivent ajouter une dépendance direct
 |[Microsoft. extensions. Hosting. Abstracts](https://nuget.org/packages/Microsoft.Extensions.Hosting.Abstractions)|Suppression de la référence à`Microsoft.Extensions.Logging.Abstractions`|
 |[Microsoft.Extensions.Logging](https://nuget.org/packages/Microsoft.Extensions.Logging)                          |Suppression de la référence à`Microsoft.Extensions.Configuration.Binder`|
 |[Microsoft. extensions. Logging. console](https://nuget.org/packages/Microsoft.Extensions.Logging.Console)          |Suppression de la référence à`Microsoft.Extensions.Configuration.Abstractions`|
-|[Microsoft. extensions. Logging. EventLog](https://nuget.org/packages/Microsoft.Extensions.Logging.EventLog)        |Référence supprimée `System.Diagnostics.EventLog` à pour le moniker du Framework cible .NET Framework 4.6.1|
+|[Microsoft. extensions. Logging. EventLog](https://nuget.org/packages/Microsoft.Extensions.Logging.EventLog)        |Référence supprimée à `System.Diagnostics.EventLog` pour le moniker du Framework cible .NET Framework 4.6.1|
 |[Microsoft. extensions. Logging. EventSource](https://nuget.org/packages/Microsoft.Extensions.Logging.EventSource)  |Suppression de la référence à`System.Threading.Tasks.Extensions`|
 |[Microsoft. extensions. options](https://nuget.org/packages/Microsoft.Extensions.Options)                          |Suppression de la référence à`System.ComponentModel.Annotations`|
 
-Par exemple, la référence de package `Microsoft.Extensions.Configuration` à a été `Microsoft.Extensions.Configuration.Binder`supprimée de. Aucune API de la dépendance n’a été utilisée dans le package. Les utilisateurs `Microsoft.Extensions.Configuration.Binder` de qui dépendent des API `Microsoft.Extensions.Configuration` de doivent ajouter une référence directe à celui-ci dans leur projet.
+Par exemple, la référence de package à `Microsoft.Extensions.Configuration` a été supprimée de `Microsoft.Extensions.Configuration.Binder` . Aucune API de la dépendance n’a été utilisée dans le package. Les utilisateurs de `Microsoft.Extensions.Configuration.Binder` qui dépendent des API de `Microsoft.Extensions.Configuration` doivent ajouter une référence directe à celui-ci dans leur projet.
 
 #### <a name="category"></a>Category
 
@@ -49,7 +49,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-None
+Aucune
 
 <!--
 

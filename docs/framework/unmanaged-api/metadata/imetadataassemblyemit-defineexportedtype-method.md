@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: fad01d7a-3178-4c8c-9f0a-4641e3701c9b
 topic_type:
 - apiref
-ms.openlocfilehash: 388f227377ddf73fe1297e1c777bb1c0607c13d2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 81d6c972b53221ee53cbcf31639d65c30858b48b
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177883"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008155"
 ---
 # <a name="imetadataassemblyemitdefineexportedtype-method"></a>IMetaDataAssemblyEmit::DefineExportedType, méthode
 Crée une structure `ExportedType` contenant les métadonnées pour le type exporté spécifié et retourne le jeton de métadonnées associé.  
@@ -39,40 +39,40 @@ HRESULT DefineExportedType (
   
 ## <a name="parameters"></a>Paramètres  
  `szName`  
- [dans] Le nom du type à exporter. Pour la version 1.1 de l’heure courante, le nom du type `TypeDef` exporté doit exactement correspondre au nom donné dans le type.  
+ dans Nom du type à exporter. Pour la version 1,1 de la common language runtime, le nom du type exporté doit correspondre exactement au nom donné dans le `TypeDef` pour le type.  
   
  `tkImplementation`  
- [dans] Un jeton précisant où le type exporté est implémenté. Les valeurs valides et leurs significations associées sont les suivante :  
+ dans Jeton spécifiant où le type exporté est implémenté. Les valeurs valides et les significations qui leur sont associées sont les suivantes :  
   
-- `mdFile`Le type est implémenté dans un fichier différent au sein de cette assemblée.  
+- `mdFile`Le type est implémenté dans un fichier différent au sein de cet assembly.  
   
-- `mdAssemblyRef`Le type est mis en œuvre dans un assemblage différent.  
+- `mdAssemblyRef`Le type est implémenté dans un assembly différent.  
   
 - `mdExportedTYpe`Le type est imbriqué dans un autre type.  
   
-- `mdFileNil`Le type est dans le même fichier que le manifeste et n’est pas un type imbriqué.  
+- `mdFileNil`Le type se trouve dans le même fichier que le manifeste et n’est pas un type imbriqué.  
   
  `tkTypeDef`  
- [dans] Un jeton aux métadonnées qui spécifie le type à exporter. Cette valeur est `TypeDef` saisie dans le tableau du fichier qui implémente le type et n’est pertinente que si ce fichier est dans cette assemblée.  
+ dans Jeton pour les métadonnées qui spécifie le type à exporter. Cette valeur est entrée dans la `TypeDef` table du fichier qui implémente le type et s’applique uniquement si ce fichier se trouve dans cet assembly.  
   
  `dwExportedTypeFlags`  
- [dans] Une combinaison bitwise de valeurs d’énumération [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) qui définissent les paramètres de propriété pour le type exporté.  
+ dans Combinaison d’opérations de bits de valeurs d’énumération [CorTypeAttr](cortypeattr-enumeration.md) qui définissent les paramètres de propriété pour le type exporté.  
   
  `pmdct`  
- [out] Un pointeur sur les métadonnées retournées qui indique le type exporté.  
+ à Pointeur vers le jeton de métadonnées retourné qui indique le type exporté.  
   
-## <a name="remarks"></a>Notes   
- Une `ExportedType` structure de métadonnées doit être définie pour chaque type exposé par cet assemblage et qui est implémentée dans un module autre que celui contenant le manifeste.  
+## <a name="remarks"></a>Remarques  
+ Une `ExportedType` structure de métadonnées doit être définie pour chaque type exposé par cet assembly et implémenté dans un module autre que celui contenant le manifeste.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateforme:** Voir [Les exigences du système](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataAssemblyEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit, interface](imetadataassemblyemit-interface.md)

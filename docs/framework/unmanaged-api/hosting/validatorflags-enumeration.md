@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: a3f5c266-3fcc-4ad1-aaf5-4cdbe26304ad
 topic_type:
 - apiref
-ms.openlocfilehash: 61aafb8dc99bb908fc603945ff6ea74054f812c4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d5eb225241f597baf7a0a5584f4aaf8bf8411ea2
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141418"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009468"
 ---
 # <a name="validatorflags-enumeration"></a>ValidatorFlags, énumération
-Contient des valeurs qui indiquent le type de validation qui doit être effectuée dans un appel à la méthode [ICLRValidator :: Validate](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md) .  
+Contient des valeurs qui indiquent le type de validation qui doit être effectuée dans un appel à la méthode [ICLRValidator :: Validate](iclrvalidator-validate-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,16 +46,16 @@ enum ValidatorFlags {
 |`VALIDATOR_NOCHECK_PEFORMAT`|Spécifie que le format du fichier exécutable ne doit pas être validé.|  
 |`VALIDATOR_SHOW_SOURCE_LINES`|Spécifie que les messages d’erreur de validation doivent inclure les lignes de code source qui génèrent des erreurs de validation. La valeur de ce champ n’est pas valide dans la version 2,0 de .NET Framework.|  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** IValidator. idl, IValidator. h  
   
  **Bibliothèque :** MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRErrorReportingManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)
-- [Énumérations d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [ICLRErrorReportingManager, interface](iclrerrorreportingmanager-interface.md)
+- [Énumérations d'hébergement](hosting-enumerations.md)

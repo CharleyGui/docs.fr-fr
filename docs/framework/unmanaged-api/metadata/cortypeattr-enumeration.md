@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9bede0ec-5fdf-42a2-b5b7-bee64056acb6
 topic_type:
 - apiref
-ms.openlocfilehash: b1586184c91619994ba0dfc9d5dcc277c10f99cf
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b6936081ca3dbadb4f802a6856fafb53f6cef3fa
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436449"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008961"
 ---
 # <a name="cortypeattr-enumeration"></a>CorTypeAttr, énumération
 Contient des valeurs qui indiquent les métadonnées de type.  
@@ -103,7 +103,7 @@ typedef enum CorTypeAttr {
 |`tdAnsiClass`|Spécifie que ce type interprète un LPTSTR comme ANSI.|  
 |`tdUnicodeClass`|Spécifie que ce type interprète un LPTSTR comme Unicode.|  
 |`tdAutoClass`|Spécifie que ce type interprète un LPTSTR automatiquement.|  
-|`tdCustomFormatClass`|Spécifie que le type a un encodage non standard, comme spécifié par `CustomFormatMask`.|  
+|`tdCustomFormatClass`|Spécifie que le type a un encodage non standard, comme spécifié par `CustomFormatMask` .|  
 |`tdCustomFormatMask`|Utilisez ce masque pour obtenir des informations d’encodage non standard pour une interopérabilité native. La signification des valeurs de ces deux bits n’est pas spécifiée.|  
 |`tdBeforeFieldInit`|Spécifie que le type doit être initialisé avant la première tentative d’accès à un champ statique.|  
 |`tdForwarder`|Spécifie que le type est exporté et un redirecteur de type.|  
@@ -111,13 +111,13 @@ typedef enum CorTypeAttr {
 |`tdRTSpecialName`|Spécifie que le common language runtime doit vérifier l’encodage du nom.|  
 |`tdHasSecurity`|Spécifie que la sécurité est associée au type.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Énumérations de métadonnées](metadata-enumerations.md)

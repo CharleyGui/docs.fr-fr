@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 47915d33-b7bf-409e-b484-4ee1df15de22
 topic_type:
 - apiref
-ms.openlocfilehash: 2662af41fbd2cdc3ce8a6df1e036dfc5b22ff6a3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7ef6dbc46806febc6fba89b39a8b894377225c23
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175549"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84003956"
 ---
 # <a name="imetadataemittranslatesigwithscope-method"></a>IMetaDataEmit::TranslateSigWithScope, méthode
-Importe une assemblée dans la portée actuelle et obtient une nouvelle signature de métadonnées pour la portée fusionnée.  
+Importe un assembly dans la portée actuelle et obtient une nouvelle signature de métadonnées pour la portée fusionnée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,51 +45,51 @@ HRESULT TranslateSigWithScope (
   
 ## <a name="parameters"></a>Paramètres  
  `pAssemImport`  
- [dans] L’interface pour l’assemblage d’importation (où la signature est définie).  
+ dans Interface pour l’assembly d’importation (où la signature est définie).  
   
  `pbHashValue`  
- [dans] Le blob de hachage pour l’assemblage.  
+ dans Objet blob de hachage pour l’assembly.  
   
  `cbHashValue`  
- [dans] Le compte d’octets dans `pbHashValue`.  
+ dans Nombre d’octets dans `pbHashValue` .  
   
  `import`  
- [dans] L’interface pour la portée des métadonnées d’importation.  
+ dans Interface pour l’importation de la portée des métadonnées.  
   
  `pbSigBlob`  
- [dans] La signature à importer.  
+ dans Signature à importer.  
   
  `cbSigBlob`  
- [dans] La taille, dans les `pbSigBlob`octets, de .  
+ dans Taille, en octets, de `pbSigBlob` .  
   
  `pAssemEmit`  
- [dans] L’interface pour l’assemblage d’exportation.  
+ dans Interface pour l’assembly d’exportation.  
   
  `emit`  
- [dans] L’interface pour la portée des métadonnées d’exportation.  
+ dans Interface pour l’exportation de la portée des métadonnées.  
   
  `pvTranslatedSig`  
- [out] Le tampon pour tenir le blob signature traduite.  
+ à Mémoire tampon devant contenir l’objet blob de signature traduit.  
   
  `cbTranslatedSigMax`  
- [dans] La capacité, dans les `pvTranslatedSig`octets, de .  
+ dans Capacité, en octets, de `pvTranslatedSig` .  
   
  `pcbTranslatedSig`  
- [out] Le nombre d’octets réels dans la signature traduite.  
+ à Nombre d’octets réels dans la signature traduite.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataAssemblyEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
-- [IMetaDataAssemblyImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataAssemblyEmit, interface](imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyImport, interface](imetadataassemblyimport-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
