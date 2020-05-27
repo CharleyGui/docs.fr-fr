@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: 752e49b4-987c-4c28-a118-1a0c1ed510c5
 topic_type:
 - apiref
-ms.openlocfilehash: 56ae7b7cf3b577bfe41ebd0bdd98e0da68047b44
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8bd0292ddf22453f8892ed8bddd10c2144877097
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176238"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008511"
 ---
 # <a name="loadstringrc-function"></a>LoadStringRC, fonction
-Traduit une valeur HRESULT en message d’erreur en utilisant la culture par défaut du thread actuel.  
+Convertit une valeur HRESULT en message d’erreur à l’aide de la culture par défaut du thread actuel.  
   
- Cette fonction a été dépréciée dans le cadre .NET 4.  
+ Cette fonction a été dépréciée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,35 +42,35 @@ HRESULT LoadStringRC (
  [in] HRESULT.  
   
  `szBuffer`  
- [out] Un tampon qui contient le message d’erreur une fois terminé.  
+ à Mémoire tampon qui contient le message d’erreur une fois l’opération terminée.  
   
  `iMax`  
- [dans] La taille du tampon de message d’erreur.  
+ dans Taille de la mémoire tampon du message d’erreur.  
   
  `bQuiet`  
- [dans] Ignoré.  
+ dans Pas.  
   
-## <a name="return-value"></a>Valeur de retour  
- Cette méthode renvoie les codes d’erreur standard du modèle d’objet composant (COM), tels que définis dans WinError.h, en plus des valeurs suivantes.  
+## <a name="return-value"></a>Valeur renvoyée  
+ Cette méthode retourne des codes d’erreur COM (Component Object Model) standard, tels que définis dans WinError. h, en plus des valeurs suivantes.  
   
 |Code de retour|Description|  
 |-----------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
-|E_INVALIDARG|`szBuffer`est nul `iMax` ou est nul (0).|  
+|E_INVALIDARG|`szBuffer`a la valeur null ou `iMax` est égal à zéro (0).|  
   
-## <a name="remarks"></a>Notes   
- Si la méthode ne `szBuffer` se termine pas avec succès, contient une ficelle vide.  
+## <a name="remarks"></a>Remarques  
+ Si la méthode ne se termine pas correctement, `szBuffer` contient une chaîne vide.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** MSCorEE.h MSCorEE.h MSCorEE.h MSCor  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque:** MSCorEE.dll et Mscorwks.dll. Utilisez MSCorEE.dll au lieu de Mscorwks.dll pour vous assurer que vous ciblez la version correcte du cadre .NET.  
+ **Bibliothèque :** MSCorEE. dll et mscorwks. dll. Utilisez MSCorEE. dll au lieu de Mscorwks. dll pour vous assurer que vous ciblez la version correcte du .NET Framework.  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LoadStringRCEx, fonction](../../../../docs/framework/unmanaged-api/hosting/loadstringrcex-function.md)
-- [Fonction d'hébergement du CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [LoadStringRCEx, fonction](loadstringrcex-function.md)
+- [Fonction d'hébergement du CLR déconseillées](deprecated-clr-hosting-functions.md)

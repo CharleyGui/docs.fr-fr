@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: cced5298-277f-4a5a-8ecf-a0050c1096ea
 topic_type:
 - apiref
-ms.openlocfilehash: 646952d5cd55b74081a0ba6171a6eee6b0138512
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 70fb637cd1edf81be140b0e3306e3b0a483653a6
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443963"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007986"
 ---
 # <a name="cor_field_offset-structure"></a>COR_FIELD_OFFSET, structure
 Stocke l'offset, dans une classe, du champ spécifié.  
@@ -37,21 +37,21 @@ typedef struct COR_FIELD_OFFSET {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`ridOfField`|`mdFieldDef` jeton de métadonnées qui représente le champ.|  
+|`ridOfField`|`mdFieldDef`Jeton de métadonnées qui représente le champ.|  
 |`ulOffset`|Offset du champ dans sa classe.|  
   
-## <a name="remarks"></a>Notes  
- Les méthodes [IMetaDataImport :: GetClassLayout](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getclasslayout-method.md) et [IMetaDataEmit :: SetClassLayout,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setclasslayout-method.md) prennent un paramètre de type `COR_FIELD_OFFSET`.  
+## <a name="remarks"></a>Remarques  
+ Les méthodes [IMetaDataImport :: GetClassLayout](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getclasslayout-method.md) et [IMetaDataEmit :: SetClassLayout,](imetadataemit-setclasslayout-method.md) prennent un paramètre de type `COR_FIELD_OFFSET` .  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h, CorProf. idl  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [Structures de métadonnées](metadata-structures.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)

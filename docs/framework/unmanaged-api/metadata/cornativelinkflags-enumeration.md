@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8027df7c-cfad-4724-bda0-7538d9519070
 topic_type:
 - apiref
-ms.openlocfilehash: 1362efbf518310240ce665badc93810d1c0b9b89
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 9211af4726617598f3dd8772383cade6368e6c08
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450191"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007622"
 ---
 # <a name="cornativelinkflags-enumeration"></a>CorNativeLinkFlags, énumération
 Fournit des valeurs d'indicateur utilisées par l'éditeur de liens lors de la liaison du code natif.  
@@ -41,19 +41,19 @@ typedef enum
 |Membre|Description|  
 |------------|-----------------|  
 |`nlfNone`|N’indique aucun indicateur.|  
-|`nlfLastError`|Indique un mot clé `setLastError`.|  
-|`nlfNoMangle`|Indique un mot clé `nomangle`.|  
+|`nlfLastError`|Indique un `setLastError` mot clé.|  
+|`nlfNoMangle`|Indique un `nomangle` mot clé.|  
 |`nlfMaxValue`|Non utilisé.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Énumérations de métadonnées](metadata-enumerations.md)

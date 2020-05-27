@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1edd1670-976a-4fc8-bef7-7c41e60ad989
 topic_type:
 - apiref
-ms.openlocfilehash: 411fad0accb59431f776c5bd66e8bd3027ddd907
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e8065a5492884a4b7f5d662737e4beddc6fca5b3
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450147"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007596"
 ---
 # <a name="cornotificationfortokenmovement-enumeration"></a>CorNotificationForTokenMovement, énumération
 Spécifie les notifications qui seront envoyées au client de l’API de métadonnées lorsqu’un remappage de jeton se produit.  
@@ -63,40 +63,40 @@ typedef enum CorNotificationForTokenMovement {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`MDNotifyDefault`|Notifier quand des jetons `mdTypeRef`, `mdMethodDef`, `mdMemberRef`ou `mdFieldDef` se déplacent.|  
+|`MDNotifyDefault`|Notifier quand les jetons,, `mdTypeRef` `mdMethodDef` `mdMemberRef` ou `mdFieldDef` se déplacent.|  
 |`MDNotifyAll`|Notifier quand un jeton est déplacé.|  
 |`MDNotifyNone`|Ne pas avertir quand les jetons sont déplacés.|  
-|`MDNotifyMethodDef`|Notifier lorsqu’un jeton `mdMethodDef` se déplace.|  
-|`MDNotifyMemberRef`|Notifier lorsqu’un jeton `mdMemberRef` se déplace.|  
-|`MDNotifyFieldDef`|Notifier lorsqu’un jeton `mdFieldDef` se déplace.|  
-|`MDNotifyTypeRef`|Notifier lorsqu’un jeton `mdTypeRef` se déplace.|  
-|`MDNotifyTypeDef`|Notifier lorsqu’un jeton `mdTypeDef` se déplace.|  
-|`MDNotifyParamDef`|Notifier lorsqu’un jeton `mdParamDef` se déplace.|  
-|`MDNotifyInterfaceImpl`|Notifier lorsqu’un jeton `mdInterfaceImpl` se déplace.|  
-|`MDNotifyProperty`|Notifier lorsqu’un jeton `mdProperty` se déplace.|  
-|`MDNotifyEvent`|Notifier lorsqu’un jeton `mdEvent` se déplace.|  
-|`MDNotifySignature`|Notifier lorsqu’un jeton `mdSignature` se déplace.|  
-|`MDNotifyTypeSpec`|Notifier lorsqu’un jeton `mdTypeSpec` se déplace.|  
-|`MDNotifyCustomAttribute`|Notifier lorsqu’un jeton `mdCustomAttribute` se déplace.|  
-|`MDNotifySecurityValue`|Notifier lorsqu’un jeton `mdSecurityValue` se déplace.|  
-|`MDNotifyPermission`|Notifier lorsqu’un jeton `mdPermission` se déplace.|  
-|`MDNotifyModuleRef`|Notifier lorsqu’un jeton `mdModuleRef` se déplace.|  
-|`MDNotifyNameSpace`|Notifier lorsqu’un jeton `mdNameSpace` se déplace.|  
-|`MDNotifyAssemblyRef`|Notifier lorsqu’un jeton `mdAssemblyRef` se déplace.|  
-|`MDNotifyFile`|Notifier lorsqu’un jeton `mdFile` se déplace.|  
-|`MDNotifyExportedType`|Notifier lorsqu’un jeton `mdExportedType` se déplace.|  
-|`MDNotifyResource`|Notifier lorsqu’un jeton `mdManifestResource` se déplace.|  
+|`MDNotifyMethodDef`|Notifier en cas de déplacement d’un `mdMethodDef` jeton.|  
+|`MDNotifyMemberRef`|Notifier en cas de déplacement d’un `mdMemberRef` jeton.|  
+|`MDNotifyFieldDef`|Notifier en cas de déplacement d’un `mdFieldDef` jeton.|  
+|`MDNotifyTypeRef`|Notifier en cas de déplacement d’un `mdTypeRef` jeton.|  
+|`MDNotifyTypeDef`|Notifier en cas de déplacement d’un `mdTypeDef` jeton.|  
+|`MDNotifyParamDef`|Notifier en cas de déplacement d’un `mdParamDef` jeton.|  
+|`MDNotifyInterfaceImpl`|Notifier en cas de déplacement d’un `mdInterfaceImpl` jeton.|  
+|`MDNotifyProperty`|Notifier en cas de déplacement d’un `mdProperty` jeton.|  
+|`MDNotifyEvent`|Notifier en cas de déplacement d’un `mdEvent` jeton.|  
+|`MDNotifySignature`|Notifier en cas de déplacement d’un `mdSignature` jeton.|  
+|`MDNotifyTypeSpec`|Notifier en cas de déplacement d’un `mdTypeSpec` jeton.|  
+|`MDNotifyCustomAttribute`|Notifier en cas de déplacement d’un `mdCustomAttribute` jeton.|  
+|`MDNotifySecurityValue`|Notifier en cas de déplacement d’un `mdSecurityValue` jeton.|  
+|`MDNotifyPermission`|Notifier en cas de déplacement d’un `mdPermission` jeton.|  
+|`MDNotifyModuleRef`|Notifier en cas de déplacement d’un `mdModuleRef` jeton.|  
+|`MDNotifyNameSpace`|Notifier en cas de déplacement d’un `mdNameSpace` jeton.|  
+|`MDNotifyAssemblyRef`|Notifier en cas de déplacement d’un `mdAssemblyRef` jeton.|  
+|`MDNotifyFile`|Notifier en cas de déplacement d’un `mdFile` jeton.|  
+|`MDNotifyExportedType`|Notifier en cas de déplacement d’un `mdExportedType` jeton.|  
+|`MDNotifyResource`|Notifier en cas de déplacement d’un `mdManifestResource` jeton.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Un jeton peut être remappé (c’est-à-dire déplacé) au cours d’une fusion de métadonnées.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Énumérations de métadonnées](metadata-enumerations.md)

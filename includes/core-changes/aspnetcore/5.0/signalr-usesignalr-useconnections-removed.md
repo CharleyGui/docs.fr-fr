@@ -6,33 +6,33 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/26/2020
 ms.locfileid: "80291638"
 ---
-### <a name="signalr-usesignalr-and-useconnections-methods-removed"></a>SignalR: UtilisationSignalR et UseConnections méthodes supprimées
+### <a name="signalr-usesignalr-and-useconnections-methods-removed"></a>Signalr : les méthodes UseSignalR et UseConnections ont été supprimées
 
-Dans ASP.NET Core 3.0, SignalR a adopté le routage de point final. Dans le cadre de <xref:Microsoft.AspNetCore.Builder.SignalRAppBuilderExtensions.UseSignalR%2A> <xref:Microsoft.AspNetCore.Builder.ConnectionsAppBuilderExtensions.UseConnections%2A>ce changement, le , et certaines méthodes connexes ont été marqués comme obsolètes. Dans ASP.NET Core 5.0, ces méthodes obsolètes ont été supprimées. Pour la liste complète des méthodes, voir [API affectées](#affected-apis).
+Dans ASP.NET Core 3,0, Signalr a adopté le routage du point de terminaison. Dans le cadre de cette modification, <xref:Microsoft.AspNetCore.Builder.SignalRAppBuilderExtensions.UseSignalR%2A> , <xref:Microsoft.AspNetCore.Builder.ConnectionsAppBuilderExtensions.UseConnections%2A> et certaines méthodes associées ont été marquées comme obsolètes. Dans ASP.NET Core 5,0, ces méthodes obsolètes ont été supprimées. Pour obtenir la liste complète des méthodes, consultez [API affectées](#affected-apis).
 
-Pour discussion sur cette question, voir [dotnet/aspnetcore-20082](https://github.com/dotnet/aspnetcore/issues/20082).
+Pour plus d’informations sur ce problème, consultez [dotnet/aspnetcore # 20082](https://github.com/dotnet/aspnetcore/issues/20082).
 
 #### <a name="version-introduced"></a>Version introduite
 
-5.0 Aperçu 3
+5,0 Preview 3
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Les hubs SignalR et les gestionnaires de connexion `UseSignalR` peuvent `UseConnections` être enregistrés dans le pipeline middleware en utilisant le ou les méthodes.
+Les hubs signalr et les gestionnaires de connexions peuvent être enregistrés dans le pipeline de l’intergiciel (middleware) à l’aide des `UseSignalR` `UseConnections` méthodes ou.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Les hubs SignalR et les <xref:Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints%2A> gestionnaires <xref:Microsoft.AspNetCore.SignalR.HubRouteBuilder.MapHub%2A> de <xref:Microsoft.AspNetCore.Http.Connections.ConnectionsRouteBuilder.MapConnectionHandler%2A> connexion <xref:Microsoft.AspNetCore.Routing.IEndpointRouteBuilder>doivent être enregistrés à l’intérieur à l’aide des méthodes et des méthodes d’extension sur .
+Les hubs et les gestionnaires de connexion signalr doivent être inscrits dans <xref:Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints%2A> à l’aide des <xref:Microsoft.AspNetCore.SignalR.HubRouteBuilder.MapHub%2A> <xref:Microsoft.AspNetCore.Http.Connections.ConnectionsRouteBuilder.MapConnectionHandler%2A> méthodes d’extension et sur <xref:Microsoft.AspNetCore.Routing.IEndpointRouteBuilder> .
 
-#### <a name="reason-for-change"></a>Raison du changement
+#### <a name="reason-for-change"></a>Motif de modification
 
-Les anciennes méthodes avaient une logique de routage personnalisée qui n’interagissait pas avec d’autres composants de routage dans ASP.NET Core. Dans ASP.NET Core 3.0, un nouveau système de routage à usage général, appelé itinéraire par point final, a été introduit. Le routage de point de terminaison a permis à SignalR d’interagir avec d’autres composants de routage. Le passage à ce modèle permet aux utilisateurs de réaliser tous les avantages du routage par point final. Par conséquent, les anciennes méthodes ont été supprimées.
+Les anciennes méthodes ont une logique de routage personnalisée qui n’interagit pas avec d’autres composants de routage dans ASP.NET Core. Dans ASP.NET Core 3,0, un nouveau système de routage à usage général, appelé routage des points de terminaison, a été introduit. Routage des points de terminaison activé Signalr pour interagir avec d’autres composants de routage. Le passage à ce modèle permet aux utilisateurs de bénéficier de tous les avantages du routage des points de terminaison. Par conséquent, les anciennes méthodes ont été supprimées.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Supprimez le `UseSignalR` `UseConnections` code qui appelle `Startup.Configure` ou de la méthode de votre projet. Remplacez-le `MapHub` par `MapConnectionHandler`des appels vers ou, `UseEndpoints`respectivement, dans le corps d’un appel à . Par exemple :
+Supprimez le code qui appelle `UseSignalR` ou `UseConnections` de la méthode de votre projet `Startup.Configure` . Remplacez-le par des appels à `MapHub` ou `MapConnectionHandler` , respectivement, dans le corps d’un appel à `UseEndpoints` . Par exemple :
 
-**Ancien code:**
+**Ancien code :**
 
 ```csharp
 app.UseSignalR(routes =>
@@ -50,7 +50,7 @@ app.UseEndpoints(endpoints =>
 });
 ```
 
-En général, `MapHub` vos `MapConnectionHandler` appels précédents et peuvent `UseSignalR` être `UseConnections` `UseEndpoints` transférés directement du corps de et vers avec peu ou pas de changement nécessaire.
+En général, vos `MapHub` appels précédents et `MapConnectionHandler` peuvent être transférés directement à partir du corps de `UseSignalR` et `UseConnections` vers avec un minimum de `UseEndpoints` modifications nécessaires.
 
 #### <a name="category"></a>Category
 

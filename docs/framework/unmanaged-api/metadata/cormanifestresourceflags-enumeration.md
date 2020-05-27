@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1b0306b7-622b-4b57-8edc-3c713bb147ae
 topic_type:
 - apiref
-ms.openlocfilehash: 35966e25d02bd6f1a9bdd21ad4e9cc44b7bb480e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ebdff88e9fdf499b809d56c4c29a906dbef9ec40
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450258"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008974"
 ---
 # <a name="cormanifestresourceflags-enumeration"></a>CorManifestResourceFlags, énumération
 Indique la visibilité des ressources encodées dans un manifeste d’assembly.  
@@ -44,13 +44,13 @@ typedef enum CorManifestResourceFlags {
 |`mrPublic`|Les ressources sont publiques.|  
 |`mrPrivate`|Les ressources sont privées.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Énumérations de métadonnées](metadata-enumerations.md)

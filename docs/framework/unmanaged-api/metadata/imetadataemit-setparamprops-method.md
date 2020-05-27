@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: a95a3908-9f87-4084-937e-8e01ef03ad63
 topic_type:
 - apiref
-ms.openlocfilehash: 13220dcfdd260688494d5aebc50f94abf8a82215
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b710f966f519e2702607b7e186fff5986110d391
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177503"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007817"
 ---
 # <a name="imetadataemitsetparamprops-method"></a>IMetaDataEmit::SetParamProps, méthode
-Définit ou modifie les caractéristiques d’un paramètre de méthode qui a été défini par un appel antérieur à [IMetaDataEmit::DefineParam](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineparam-method.md).  
+Définit ou modifie les fonctionnalités d’un paramètre de méthode qui a été défini par un appel antérieur à [IMetaDataEmit ::D efineparam](imetadataemit-defineparam-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,33 +40,33 @@ HRESULT SetParamProps (
   
 ## <a name="parameters"></a>Paramètres  
  `pd`  
- [dans] Le jeton pour le paramètre cible.  
+ dans Jeton pour le paramètre cible.  
   
  `szName`  
- [dans] Le nom du paramètre dans Unicode.  
+ dans Nom du paramètre en Unicode.  
   
  `dwParamFlags`  
- [dans] Les drapeaux pour le paramètre.  
+ dans Indicateurs du paramètre.  
   
  `dwCPlusTypeFlag`  
- [dans] Le ELEMENT_TYPE_ pour la valeur constante.  
+ dans ELEMENT_TYPE_ * pour la valeur constante.  
   
  `pValue`  
- [dans] La valeur constante du paramètre.  
+ dans Valeur de constante pour le paramètre.  
   
  `cchValue`  
- [dans] La taille dans (Unicode) caractères de `pValue`.  
+ dans Taille en (Unicode) caractères de `pValue` .  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)

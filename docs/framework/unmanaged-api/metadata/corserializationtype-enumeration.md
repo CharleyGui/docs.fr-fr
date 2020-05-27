@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 6b1fcd11-c7fb-4be2-8910-abc862d4caf4
 topic_type:
 - apiref
-ms.openlocfilehash: 064374285216e9fb054b299937087f1ca7c351a4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 649a9159f99afa64615c40c23a98a80318ae0d7f
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432871"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009169"
 ---
 # <a name="corserializationtype-enumeration"></a>CorSerializationType, énumération
 Spécifie comment un objet est sérialisé par le common language runtime.  
@@ -78,13 +78,13 @@ typedef enum CorSerializationType {
 |`SERIALIZATION_TYPE_PROPERTY`|L’objet est sérialisé en tant que propriété.|  
 |`SERIALIZATION_TYPE_ENUM`|L’objet est sérialisé en tant qu’énumération.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Énumérations de métadonnées](metadata-enumerations.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: dc2b3281-3820-487e-930d-350b66dc6417
 topic_type:
 - apiref
-ms.openlocfilehash: ec2972605c40f4ba292f5a5f58d6d3efed53f966
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e22b390271a7813dd1d34aecf5f8a62d7eb81005
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443556"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007434"
 ---
 # <a name="coreventattr-enumeration"></a>CorEventAttr, énumération
 Contient des valeurs qui décrivent les métadonnées d'un événement.  
@@ -45,13 +45,13 @@ typedef enum CorEventAttr {
 |`evReservedMask`|Réservé à un usage interne par la common language runtime.|  
 |`evRTSpecialName`|Spécifie que le common language runtime doit vérifier l’encodage du nom de l’événement.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Énumérations de métadonnées](metadata-enumerations.md)

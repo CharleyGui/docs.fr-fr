@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9543b111-5705-40c9-935c-a3ffc7a581aa
 topic_type:
 - apiref
-ms.openlocfilehash: 22141cf46a965c0624c076bd1d86d2624e5a09f3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 560a6adf85fab7f421b86cba52224d5b1bfe1089
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176017"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006257"
 ---
 # <a name="imetadataassemblyimportenummanifestresources-method"></a>IMetaDataAssemblyImport::EnumManifestResources, méthode
-Obtient un pointeur à un enumérateur pour les ressources référencées dans le manifeste d’assemblage actuel.  
+Obtient un pointeur vers un énumérateur pour les ressources référencées dans le manifeste de l’assembly actuel.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,33 +38,33 @@ HRESULT EnumManifestResources (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [dans, dehors] Un pointeur à l’enumérateur. Cela doit être une `EnumManifestResources` valeur nulle lorsque la méthode est appelée pour la première fois.  
+ [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL lorsque la `EnumManifestResources` méthode est appelée pour la première fois.  
   
  `rManifestResources`  
- [out] Le tableau utilisé `mdManifestResource` pour stocker les jetons de métadonnées.  
+ à Tableau utilisé pour stocker les `mdManifestResource` jetons de métadonnées.  
   
  `cMax`  
- [dans] Le nombre `mdManifestResource` maximum de jetons qui `rManifestResources`peuvent être placés en .  
+ dans Nombre maximal de `mdManifestResource` jetons qui peuvent être placés dans `rManifestResources` .  
   
  `pcTokens`  
- [out] Le nombre `mdManifestResource` de jetons `rManifestResources`effectivement placés en .  
+ à Nombre de `mdManifestResource` jetons réellement placés dans `rManifestResources` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumManifestResources`retourné avec succès.|  
-|`S_FALSE`|Il n’y a pas de jetons à énumérer. Dans ce `pcTokens` cas, est réglé à zéro.|  
+|`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTokens` a la valeur zéro.|  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataAssemblyImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataAssemblyImport, interface](imetadataassemblyimport-interface.md)

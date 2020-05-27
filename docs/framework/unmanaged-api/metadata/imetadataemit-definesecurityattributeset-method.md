@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 27064ca2-4186-4433-90a7-3b297785e891
 topic_type:
 - apiref
-ms.openlocfilehash: fadd1974cd4fa8a51a06700835f46df24e37d7fd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c33ede841324820da16e33d35bbf5e8f8e75924f
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175770"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009364"
 ---
 # <a name="imetadataemitdefinesecurityattributeset-method"></a>IMetaDataEmit::DefineSecurityAttributeSet, méthode
-Crée un ensemble d’autorisations de sécurité à attacher à l’objet référencé par le jeton spécifié.  
+Crée un jeu d’autorisations de sécurité à attacher à l’objet référencé par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,27 +38,27 @@ HRESULT DefineSecurityAttributeSet (
   
 ## <a name="parameters"></a>Paramètres  
  `tkObj`  
- [dans] Le jeton auquel les informations de sécurité sont jointes.  
+ dans Jeton auquel les informations de sécurité sont jointes.  
   
  `rSecAttrs`  
- [dans] Un éventail `COR_SECATTR` de structures.  
+ dans Tableau de `COR_SECATTR` structures.  
   
  `cSecAttrs`  
- [dans] Le nombre d’éléments dans `rSecAttrs`.  
+ dans Nombre d’éléments dans `rSecAttrs` .  
   
  `pulErrorAttr`  
- [out] Si la méthode échoue, spécifie l’index de `rSecAttrs` l’élément qui a causé le problème.  
+ à Si la méthode échoue, spécifie l’index dans `rSecAttrs` de l’élément qui a provoqué le problème.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)

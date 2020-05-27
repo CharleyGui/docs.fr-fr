@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 63d8260c-fb32-4f8f-a357-768afd570f68
 topic_type:
 - apiref
-ms.openlocfilehash: 93afe1afd9ea9637d039a8b4a4e81267d49c08b6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1904a98f254a988ce035847a4cdeede182aa07bf
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176225"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006371"
 ---
 # <a name="strongnamegetpublickeyex-method"></a>StrongNameGetPublicKeyEx, méthode
-Obtient la clé publique d’une paire de clés publique/privée, et spécifie un algorithme de hachage et un algorithme de signature.  
+Obtient la clé publique à partir d’une paire de clés publique/privée et spécifie un algorithme de hachage et un algorithme de signature.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,38 +41,38 @@ HRESULT StrongNameGetPublicKey (
   
 ## <a name="parameters"></a>Paramètres  
  `pwzKeyContainer`  
- [dans] Le nom du conteneur clé qui contient la paire de clés public/privé. S’il `pbKeyBlob` `szKeyContainer` est nul, doit spécifier un conteneur valide au sein du fournisseur de services cryptographiques (CSP). Dans ce cas, la `StrongNameGetPublicKeyEx` méthode extrait la clé publique de la paire de clés stockée dans le conteneur.  
+ dans Nom du conteneur de clé qui contient la paire de clés publique/privée. Si `pbKeyBlob` a la valeur null, `szKeyContainer` doit spécifier un conteneur valide dans le fournisseur de services de chiffrement (CSP). Dans ce cas, la `StrongNameGetPublicKeyEx` méthode extrait la clé publique de la paire de clés stockée dans le conteneur.  
   
- Si `pbKeyBlob` elle n’est pas nulle, la paire de clés est supposée être contenue dans le grand objet binaire clé (BLOB).  
+ Si `pbKeyBlob` n’a pas la valeur null, la paire de clés est supposée être contenue dans l’objet BLOB (Binary Large Object) clé.  
   
- Les clés doivent être 1024 bits Rivest-Shamir-Adleman (RSA) clés de signature. Aucun autre type de clés n’est pris en charge pour le moment.  
+ Les clés doivent être des clés de signature RSA (Rivest-Shamir-Adleman) 1024 bits. Aucun autre type de clé n’est pris en charge pour l’instant.  
   
  `pbKeyBlob`  
- [dans] Un pointeur à la paire de clés public/privé. Cette paire est dans le format `CryptExportKey` créé par la fonction Win32. S’il `pbKeyBlob` est nul, `szKeyContainer` le conteneur clé spécifié par est supposé contenir la paire de clés.  
+ dans Pointeur vers la paire de clés publique/privée. Cette paire est au format créé par la fonction Win32 `CryptExportKey` . Si `pbKeyBlob` a la valeur null, le conteneur de clé spécifié par `szKeyContainer` est supposé contenir la paire de clés.  
   
  `cbKeyBlob`  
- [dans] La taille, dans les `pbKeyBlob`octets, de .  
+ dans Taille, en octets, de `pbKeyBlob` .  
   
  `ppbPublicKeyBlob`  
- [out] Le BLOB clé publique retourné. Le `ppbPublicKeyBlob` paramètre est attribué par l’heure de l’exécution de la langue commune et retourné à l’appelant. L’appelant doit libérer la mémoire en utilisant la méthode [ICLRStrongName::StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) méthode.  
+ à Objet BLOB de clé publique retourné. Le `ppbPublicKeyBlob` paramètre est alloué par le Common Language Runtime et retourné à l’appelant. L’appelant doit libérer la mémoire à l’aide de la méthode [ICLRStrongName :: StrongNameFreeBuffer](iclrstrongname-strongnamefreebuffer-method.md) .  
   
  `pcbPublicKeyBlob`  
- [out] La taille de la clé publique retournée BLOB.  
+ à Taille de l’objet BLOB de clé publique retourné.  
   
  `uHashAlgId`  
- [dans] L’algorithme de hachage d’assemblage. Consultez la section Remarques pour une liste de valeurs acceptées.  
+ dans Algorithme de hachage de l’assembly. Consultez la section Notes pour obtenir la liste des valeurs acceptées.  
   
  `uReserved`  
- [dans] Réservé à une utilisation future; par défaut à null.  
+ dans Réservé à une utilisation ultérieure ; la valeur par défaut est null.  
   
-## <a name="return-value"></a>Valeur de retour  
- `S_OK`si la méthode est terminée avec succès; autrement, une valeur HRESULT qui indique l’échec (voir [valeurs RHESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
+## <a name="return-value"></a>Valeur renvoyée  
+ `S_OK`Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
-## <a name="remarks"></a>Notes   
- La clé publique est contenue dans une structure [PublicKeyBlob.](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)  
+## <a name="remarks"></a>Remarques  
+ La clé publique est contenue dans une structure [publicKeyBlob](../strong-naming/publickeyblob-structure.md) .  
   
-## <a name="remarks"></a>Notes   
- Le tableau suivant montre l’ensemble `uHashAlgId` des valeurs acceptées pour le paramètre.  
+## <a name="remarks"></a>Remarques  
+ Le tableau suivant présente l’ensemble des valeurs acceptées pour le `uHashAlgId` paramètre.  
   
 |Nom|Valeur|  
 |----------|-----------|  
@@ -83,17 +83,17 @@ HRESULT StrongNameGetPublicKey (
 |SHA-512|0x800e|  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** MetaHost.h MetaHost.h  
+ **En-tête :** Metahost. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [StrongNameTokenFromPublicKey, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)
-- [PublicKeyBlob, structure](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)
-- [ICLRStrongName, interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
-- [StrongNameGetPublicKey, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md)
+- [StrongNameTokenFromPublicKey, méthode](iclrstrongname-strongnametokenfrompublickey-method.md)
+- [PublicKeyBlob, structure](../strong-naming/publickeyblob-structure.md)
+- [ICLRStrongName, interface](iclrstrongname-interface.md)
+- [StrongNameGetPublicKey, méthode](iclrstrongname-strongnamegetpublickey-method.md)

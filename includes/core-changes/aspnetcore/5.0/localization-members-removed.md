@@ -26,11 +26,11 @@ La `ResourceManagerWithCultureStringLocalizer` classe et la `ResourceManagerStri
 
 #### <a name="reason-for-change"></a>Motif de modification
 
-La classe [ResourceManagerWithCultureStringLocalizer](/dotnet/api/microsoft.extensions.localization.resourcemanagerwithculturestringlocalizer?view=dotnet-plat-ext-3.1) et la méthode [ResourceManagerStringLocalizer. WithCulture](/dotnet/api/microsoft.extensions.localization.resourcemanagerstringlocalizer.withculture?view=dotnet-plat-ext-3.1) étaient souvent des sources de confusion pour les utilisateurs de la localisation. La confusion était particulièrement élevée lors de la création <xref:Microsoft.Extensions.Localization.IStringLocalizer> d’une implémentation personnalisée. Cette classe et cette méthode donnent aux consommateurs l’impression `IStringLocalizer` qu’une instance est supposée être « par langue, par ressource ». En réalité, l’instance doit uniquement être « par ressource ». Au moment de l’exécution <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> , la propriété détermine la langue à utiliser.
+La classe [ResourceManagerWithCultureStringLocalizer](/dotnet/api/microsoft.extensions.localization.resourcemanagerwithculturestringlocalizer?view=dotnet-plat-ext-3.1) et la méthode [ResourceManagerStringLocalizer. WithCulture](/dotnet/api/microsoft.extensions.localization.resourcemanagerstringlocalizer.withculture?view=dotnet-plat-ext-3.1) étaient souvent des sources de confusion pour les utilisateurs de la localisation. La confusion était particulièrement élevée lors de la création d’une <xref:Microsoft.Extensions.Localization.IStringLocalizer> implémentation personnalisée. Cette classe et cette méthode donnent aux consommateurs l’impression qu’une `IStringLocalizer` instance est supposée être « par langue, par ressource ». En réalité, l’instance doit uniquement être « par ressource ». Au moment de l’exécution, la <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> propriété détermine la langue à utiliser.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Arrêtez l’utilisation `ResourceManagerWithCultureStringLocalizer` de la classe `ResourceManagerStringLocalizer.WithCulture` et de la méthode.
+Arrêtez l’utilisation de la `ResourceManagerWithCultureStringLocalizer` classe et de la `ResourceManagerStringLocalizer.WithCulture` méthode.
 
 #### <a name="category"></a>Category
 

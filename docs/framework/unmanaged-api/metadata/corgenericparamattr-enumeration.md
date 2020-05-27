@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 36c76266-71d8-48dc-bd89-54943fa659c1
 topic_type:
 - apiref
-ms.openlocfilehash: bf0008ce9429671f0c156df4256bed0b2aaee184
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ea84b742c901ba58a3bb730f1f5033a0d90610ce
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176173"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007375"
 ---
 # <a name="corgenericparamattr-enumeration"></a>CorGenericParamAttr, énumération
-Contient des valeurs <xref:System.Type> qui décrivent les paramètres pour les types génériques, comme utilisé dans les appels à [IMetaDataEmit2::DefineGenericParam](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definegenericparam-method.md).  
+Contient des valeurs qui décrivent les <xref:System.Type> paramètres des types génériques, tels qu’ils sont utilisés dans les appels à [IMetaDataEmit2 ::D efinegenericparam](imetadataemit2-definegenericparam-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,23 +47,23 @@ typedef enum CorGenericParamAttr {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`gpVarianceMask`|La variance des paramètres ne s’applique qu’aux paramètres génériques pour les interfaces et les délégués.|  
+|`gpVarianceMask`|La variance de paramètre s’applique uniquement aux paramètres génériques pour les interfaces et les délégués.|  
 |`gpNonVariant`|Indique l’absence de variance.|  
 |`gpCovariant`|Indique la covariance.|  
 |`gpContravariant`|Indique la contravariance.|  
-|`gpSpecialConstraintMask`|Des contraintes spéciales <xref:System.Type> peuvent s’appliquer à n’importe quel paramètre.|  
-|`gpNoSpecialConstraint`|Indique qu’aucune contrainte <xref:System.Type> ne s’applique au paramètre.|  
-|`gpReferenceTypeConstraint`|Indique que <xref:System.Type> le paramètre doit être un type de référence.|  
-|`gpNotNullableValueTypeConstraint`|Indique que <xref:System.Type> le paramètre doit être un type de valeur qui ne peut pas être une valeur nulle.|  
-|`gpDefaultConstructorConstraint`|Indique que <xref:System.Type> le paramètre doit avoir un constructeur public par défaut qui ne prend aucun paramètre.|  
+|`gpSpecialConstraintMask`|Des contraintes spéciales peuvent s’appliquer à n’importe quel <xref:System.Type> paramètre.|  
+|`gpNoSpecialConstraint`|Indique qu’aucune contrainte ne s’applique au <xref:System.Type> paramètre.|  
+|`gpReferenceTypeConstraint`|Indique que le <xref:System.Type> paramètre doit être un type référence.|  
+|`gpNotNullableValueTypeConstraint`|Indique que le <xref:System.Type> paramètre doit être un type valeur qui ne peut pas être une valeur null.|  
+|`gpDefaultConstructorConstraint`|Indique que le <xref:System.Type> paramètre doit avoir un constructeur public par défaut qui ne prend pas de paramètres.|  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Énumérations de métadonnées](metadata-enumerations.md)

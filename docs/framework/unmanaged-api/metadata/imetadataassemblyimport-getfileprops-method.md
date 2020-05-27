@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c5e6216f-ae3d-4697-9688-66b69c1251ec
 topic_type:
 - apiref
-ms.openlocfilehash: dae4a36537eeac58ffb17ebc1b78d935ec807cd8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 78c192f10f629a0c1316ae7af7fc774819f4de8f
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175978"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007479"
 ---
 # <a name="imetadataassemblyimportgetfileprops-method"></a>IMetaDataAssemblyImport::GetFileProps, méthode
-Obtient les propriétés du fichier avec la signature spécifiée de métadonnées.  
+Obtient les propriétés du fichier avec la signature de métadonnées spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,35 +41,35 @@ HRESULT GetFileProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mdf`  
- [dans] Le `mdFile` jeton de métadonnées qui représente le fichier pour lequel obtenir les propriétés.  
+ dans `mdFile`Jeton de métadonnées qui représente le fichier pour lequel obtenir les propriétés.  
   
  `szName`  
- [out] Le nom simple du fichier.  
+ à Nom simple du fichier.  
   
  `cchName`  
- [dans] La taille, en chars `szName`larges, de .  
+ dans Taille, en caractères larges, de `szName` .  
   
  `pchName`  
- [out] Le nombre de chars `szName`larges effectivement retourné dans .  
+ à Nombre de caractères larges réellement retournés dans `szName` .  
   
  `ppbHashValue`  
- [out] Un pointeur à la valeur de hachage. C’est le hachage, en utilisant l’algorithme SHA-1, du fichier.  
+ à Pointeur vers la valeur de hachage. Il s’agit du hachage, à l’aide de l’algorithme SHA-1, du fichier.  
   
  `pcbHashValue`  
- [out] Le nombre de chars larges dans la valeur de hachage retourné.  
+ à Nombre de caractères larges dans la valeur de hachage retournée.  
   
  `pdwFileFlags`  
- [out] Un pointeur pour les drapeaux qui décrivent les métadonnées appliquées à un fichier. La valeur des drapeaux est une combinaison d’une ou plusieurs valeurs [CorFileFlags.](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md)  
+ à Pointeur vers les indicateurs qui décrivent les métadonnées appliquées à un fichier. La valeur flags est une combinaison d’une ou plusieurs valeurs [CorFileFlags,](corfileflags-enumeration.md) .  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateforme:** Voir [Les exigences du système](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataAssemblyImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataAssemblyImport, interface](imetadataassemblyimport-interface.md)

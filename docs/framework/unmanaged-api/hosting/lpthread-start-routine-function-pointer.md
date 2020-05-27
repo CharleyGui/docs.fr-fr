@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7b9b93b0-fe92-42ba-8693-701168a29dde
 topic_type:
 - apiref
-ms.openlocfilehash: c6e0c02af93b9df726202f397bbb2afc306f3b3a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 84cdb42b11ad70f54f21ae36ca2734dc794d06d7
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73090878"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008467"
 ---
 # <a name="lpthread_start_routine-function-pointer"></a>LPTHREAD_START_ROUTINE (pointeur fonction)
 Pointe vers une fonction qui avertit l’hôte qu’un thread a commencé à s’exécuter.  
@@ -38,18 +38,18 @@ typedef DWORD (__stdcall *LPTHREAD_START_ROUTINE) (
  `lpThreadParameter`  
  dans Pointeur vers le code dont l’exécution a commencé.  
   
-## <a name="remarks"></a>Notes  
- La fonction vers laquelle `LPTHREAD_START_ROUTINE` points est une fonction de rappel et doit être implémentée par le writer de l’application d’hébergement.  
+## <a name="remarks"></a>Remarques  
+ La fonction vers laquelle `LPTHREAD_START_ROUTINE` pointe est une fonction de rappel et doit être implémentée par le writer de l’application d’hébergement.  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** MSCorWks. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions d’hébergement CLR dépréciées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Fonction d'hébergement du CLR déconseillées](deprecated-clr-hosting-functions.md)

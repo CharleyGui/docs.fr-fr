@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: af28db02-29af-45ac-aec6-8d6c6123c2ff
 topic_type:
 - apiref
-ms.openlocfilehash: 2f9325f3795262a0c33af02f87fc5d3a020658cf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 021ef8de602d6dd928f49e69e36f8d4a61425745
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177640"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008363"
 ---
 # <a name="imetadatadispenserdefinescope-method"></a>IMetaDataDispenser::DefineScope, méthode
-Crée une nouvelle zone dans la mémoire dans laquelle vous pouvez créer de nouvelles métadonnées.  
+Crée une zone en mémoire dans laquelle vous pouvez créer des métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,37 +38,37 @@ HRESULT DefineScope (
   
 ## <a name="parameters"></a>Paramètres  
  `rclsid`  
- [dans] Le CLSID de la version des structures de métadonnées à créer. Cette valeur doit être CLSID_CorMetaDataRuntime pour la version cadre .NET 2.0.  
+ dans CLSID de la version des structures de métadonnées à créer. Cette valeur doit être CLSID_CorMetaDataRuntime pour la version .NET Framework 2,0.  
   
  `dwCreateFlags`  
- [dans] Drapeaux qui spécifient les options. Cette valeur doit être nulle pour le cadre .NET 2.0.  
+ dans Indicateurs qui spécifient des options. Cette valeur doit être égale à zéro pour le .NET Framework 2,0.  
   
  `riid`  
- [dans] L’IID de l’interface de métadonnée souhaitée à retourner; l’appelant utilisera l’interface pour créer les nouvelles métadonnées.  
+ dans IID de l’interface de métadonnées souhaitée à retourner ; l’appelant utilisera l’interface pour créer les nouvelles métadonnées.  
   
- La valeur `riid` de doit spécifier l’une des interfaces "emit". Les valeurs valides sont IID_IMetaDataEmit, IID_IMetaDataAssemblyEmit ou IID_IMetaDataEmit2.  
+ La valeur de `riid` doit spécifier l’une des interfaces « Emit ». Les valeurs valides sont IID_IMetaDataEmit, IID_IMetaDataAssemblyEmit ou IID_IMetaDataEmit2.  
   
  `ppIUnk`  
- [out] Le pointeur de l’interface retournée.  
+ à Pointeur vers l’interface retournée.  
   
-## <a name="remarks"></a>Notes   
- `DefineScope`crée un ensemble de tables de métadonnées en mémoire, génère un GUID unique (identificateur de version module, ou MVID) pour les métadonnées, et crée une entrée dans la table du module pour l’unité de compilation émise.  
+## <a name="remarks"></a>Remarques  
+ `DefineScope`crée un ensemble de tables de métadonnées en mémoire, génère un GUID unique (identificateur de version de module, ou MVID) pour les métadonnées, et crée une entrée dans la table de module pour l’unité de compilation en cours d’émission.  
   
- Vous pouvez attacher des attributs à la portée des métadonnées dans son ensemble en utilisant [l’IMetaDataEmit::SetModuleProps](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setmoduleprops-method.md) ou [IMetaDataEmit::DefineCustomAttribute](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definecustomattribute-method.md) méthode, le cas échéant.  
+ Vous pouvez attacher des attributs à la portée de métadonnées dans son ensemble à l’aide de la méthode [IMetaDataEmit :: SetModuleProps,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setmoduleprops-method.md) ou [IMetaDataEmit ::D efinecustomattribute](imetadataemit-definecustomattribute-method.md) , selon le cas.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateforme:** Voir [Les exigences du système](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataDispenser, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
-- [IMetaDataDispenserEx, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)
-- [IMetaDataAssemblyEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataDispenser, interface](imetadatadispenser-interface.md)
+- [IMetaDataDispenserEx, interface](imetadatadispenserex-interface.md)
+- [IMetaDataAssemblyEmit, interface](imetadataassemblyemit-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)

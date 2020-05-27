@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: a0637d66-74bf-4f2d-8137-9ff838bccece
 topic_type:
 - apiref
-ms.openlocfilehash: 14bd352099890e4ca36321d550b8e982d4373231
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 17c91200730431c4c6e230b8c1561ce7c4863868
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177890"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008181"
 ---
 # <a name="imetadataassemblyemitdefineassembly-method"></a>IMetaDataAssemblyEmit::DefineAssembly, méthode
-Crée `Assembly` une structure contenant des métadonnées pour l’assemblage spécifié et renvoie le jeton des métadonnées associées.  
+Crée une `Assembly` structure contenant les métadonnées pour l’assembly spécifié et retourne le jeton de métadonnées associé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,38 +41,38 @@ HRESULT DefineAssembly (
   
 ## <a name="parameters"></a>Paramètres  
  `pbPublicKey`  
- [dans] La clé publique qui identifie l’éditeur de l’assemblée, ou NULL si l’assemblée n’est pas fortement nommée.  
+ dans Clé publique qui identifie le serveur de publication de l’assembly, ou NULL si l’assembly n’a pas un nom fort.  
   
  `cbPublicKey`  
- [dans] La taille dans `pbPublicKey`les octets de .  
+ dans Taille en octets de `pbPublicKey` .  
   
  `uHashAlgId`  
- [dans] L’identifiant de l’algorithme de hachage à utiliser pour chiffrer les fichiers dans l’assemblage, ou NULL pour spécifier l’algorithme SHA-1.  
+ dans Identificateur de l’algorithme de hachage à utiliser pour chiffrer les fichiers de l’assembly, ou NULL pour spécifier l’algorithme SHA-1.  
   
  `szName`  
- [dans] Le nom de texte lisible par l’homme de l’assemblée. Cette valeur ne doit pas dépasser 1024 caractères.  
+ dans Nom de texte explicite de l’assembly. Cette valeur ne doit pas dépasser 1024 caractères.  
   
  `pMetaData`  
- [dans] Un pointeur à une instance ASSEMBLYMETADATA qui contient la version, la plate-forme et les informations locales pour l’assemblage.  
+ dans Pointeur vers une instance ASSEMBLYMETADATA qui contient les informations relatives à la version, à la plateforme et aux paramètres régionaux de l’assembly.  
   
  `dwAssemblyFlags`  
- [dans] Une combinaison de valeurs [CorAssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) qui décrivent les caractéristiques de l’assemblage.  
+ dans Combinaison de valeurs [CorAssemblyFlags,](corassemblyflags-enumeration.md) qui décrivent les fonctionnalités de l’assembly.  
   
  `pmda`  
- [out] Un pointeur vers le jeton des métadonnées.  
+ à Pointeur vers le jeton de métadonnées.  
   
-## <a name="remarks"></a>Notes   
- Une `Assembly` seule structure de métadonnées peut être définie dans un manifeste.  
+## <a name="remarks"></a>Remarques  
+ Une seule `Assembly` structure de métadonnées peut être définie dans un manifeste.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataAssemblyEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit, interface](imetadataassemblyemit-interface.md)

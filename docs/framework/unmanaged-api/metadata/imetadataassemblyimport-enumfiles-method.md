@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: f0d721e2-b946-426d-8e20-9124bd04e4cb
 topic_type:
 - apiref
-ms.openlocfilehash: 70f76318f51047cb81262f744a6fbed5fe401692
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ed8bafd67b5d55a5116111b7721fbdc31c52aca6
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177814"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009093"
 ---
 # <a name="imetadataassemblyimportenumfiles-method"></a>IMetaDataAssemblyImport::EnumFiles, méthode
-Énumère les fichiers mentionnés dans le manifeste actuel de l’assemblage.  
+Énumère les fichiers référencés dans le manifeste de l’assembly actuel.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,33 +38,33 @@ HRESULT EnumFiles (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [dans, dehors] Un pointeur à l’enumérateur. Cela doit être une valeur nulle pour le premier appel de cette méthode.  
+ [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur null pour le premier appel de cette méthode.  
   
  `rFiles`  
- [out] Le tableau utilisé `mdFile` pour stocker les jetons de métadonnées.  
+ à Tableau utilisé pour stocker les `mdFile` jetons de métadonnées.  
   
  `cMax`  
- [dans] Le nombre `mdFile` maximum de jetons qui `rFiles`peuvent être placés en .  
+ dans Nombre maximal de `mdFile` jetons qui peuvent être placés dans `rFiles` .  
   
  `pcTokens`  
- [out] Le nombre `mdFile` de jetons `rFiles`effectivement placés en .  
+ à Nombre de `mdFile` jetons réellement placés dans `rFiles` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumFiles`retourné avec succès.|  
-|`S_FALSE`|Il n’y a pas de jetons à énumérer. Dans ce `pcTokens` cas, est réglé à zéro.|  
+|`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTokens` a la valeur zéro.|  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataAssemblyImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataAssemblyImport, interface](imetadataassemblyimport-interface.md)

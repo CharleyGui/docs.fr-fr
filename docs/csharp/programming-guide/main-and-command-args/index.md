@@ -12,18 +12,18 @@ helpviewer_keywords:
 - command line [C#], arguments
 - command-line arguments [C#], Main method
 ms.assetid: 73a17231-cf96-44ea-aa8a-54807c6fb1f4
-ms.openlocfilehash: 190216b01ea416aedbca270a6d7a5acbf0c2e797
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 723884dd448232777ae2cfeac5bfcf5ea24363b0
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82200117"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007739"
 ---
 # <a name="main-and-command-line-arguments-c-programming-guide"></a>Main() et arguments de ligne de commande (Guide de programmation C#)
 
-La méthode `Main` est le point d’entrée d’une application C#. (Les bibliothèques et les services ne requièrent pas de `Main` méthode comme point d’entrée.) Lorsque l’application est démarrée, `Main` la méthode est la première méthode appelée.
+La méthode `Main` est le point d’entrée d’une application C#. (Les bibliothèques et les services ne requièrent pas de `Main` méthode comme point d’entrée.) Lorsque l’application est démarrée, la `Main` méthode est la première méthode appelée.
 
- Il ne peut y avoir qu’un seul point d’entrée dans un programme C#. Si plusieurs classes ont une méthode `Main`, vous devez compiler votre programme avec l’option de compilateur **/main** pour spécifier quelle méthode `Main` utiliser comme point d’entrée. Pour plus d’informations, consultez [-main (options du compilateur C#)](../../language-reference/compiler-options/main-compiler-option.md).
+Il ne peut y avoir qu’un seul point d’entrée dans un programme C#. Si vous avez plusieurs classes qui ont une `Main` méthode, vous devez compiler votre programme avec l' `-main` option de compilateur pour spécifier la `Main` méthode à utiliser comme point d’entrée. Pour plus d’informations, consultez [-main (options du compilateur C#)](../../language-reference/compiler-options/main-compiler-option.md).
 
 [!code-csharp[csProgGuideMain#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class1.cs#17)]
 
@@ -32,10 +32,10 @@ La méthode `Main` est le point d’entrée d’une application C#. (Les bibliot
 - La méthode `Main` est le point d’entrée d’un programme exécutable ; c’est l’endroit où le contrôle du programme commence et se termine.
 - `Main` est déclaré à l’intérieur d’une classe ou d’un struct. `Main` doit être [statique](../../language-reference/keywords/static.md) et ne doit pas être [public](../../language-reference/keywords/public.md). (Dans l’exemple précédent, il reçoit l’accès par défaut de [Private](../../language-reference/keywords/private.md).) La classe ou le struct englobant ne doit pas obligatoirement être statique.
 - `Main` peut avoir un type de retour `void`, `int` ou, à partir de C# 7.1, `Task` ou `Task<int>`.
-- Si et seulement si `Main` retourne `Task` ou `Task<int>`, la déclaration de `Main` peut inclure le [`async`](../../language-reference/keywords/async.md) modificateur. Notez que cela exclut spécifiquement une méthode `async void Main`.
-- La méthode `Main` peut être déclarée avec ou sans paramètre `string[]`, qui contient des arguments de ligne de commande. Lorsque vous utilisez Visual Studio pour créer des applications Windows, vous pouvez ajouter le paramètre manuellement ou utiliser <xref:System.Environment.GetCommandLineArgs> la méthode pour obtenir les [arguments de ligne de commande](command-line-arguments.md). Les paramètres sont lus comme des arguments de ligne de commande avec index de base zéro. Contrairement à C et C++, le nom du programme n’est pas traité comme le premier argument de ligne de commande `args` dans le tableau, mais il s’agit du premier <xref:System.Environment.GetCommandLineArgs> élément de la méthode.
+- Si et seulement si `Main` retourne `Task` ou `Task<int>` , la déclaration de `Main` peut inclure le [`async`](../../language-reference/keywords/async.md) modificateur. Notez que cela exclut spécifiquement une méthode `async void Main`.
+- La méthode `Main` peut être déclarée avec ou sans paramètre `string[]`, qui contient des arguments de ligne de commande. Lorsque vous utilisez Visual Studio pour créer des applications Windows, vous pouvez ajouter le paramètre manuellement ou utiliser la <xref:System.Environment.GetCommandLineArgs> méthode pour obtenir les [arguments de ligne de commande](command-line-arguments.md). Les paramètres sont lus comme des arguments de ligne de commande avec index de base zéro. Contrairement à C et C++, le nom du programme n’est pas traité comme le premier argument de ligne de commande dans le `args` tableau, mais il s’agit du premier élément de la <xref:System.Environment.GetCommandLineArgs> méthode.
 
-La liste suivante répertorie les signatures `Main` valides :
+La liste suivante répertorie les signatures valides `Main` :
 
 ```csharp
 public static void Main() { }

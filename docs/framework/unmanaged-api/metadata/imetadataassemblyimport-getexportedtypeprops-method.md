@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 25ca7623-5a55-4f09-b44a-36b03d142278
 topic_type:
 - apiref
-ms.openlocfilehash: 15b58e01d4ce99f19f510c760819471b84380b45
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 944941c2356cae93ecc85f1714b4b29aefcb50ad
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177755"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008402"
 ---
 # <a name="imetadataassemblyimportgetexportedtypeprops-method"></a>IMetaDataAssemblyImport::GetExportedTypeProps, méthode
-Obtient l’ensemble des propriétés du type exporté avec la signature spécifiée de métadonnées.  
+Obtient le jeu de propriétés du type exporté avec la signature de métadonnées spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,35 +41,35 @@ HRESULT GetExportedTypeProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mdct`  
- [dans] Un `mdExportedType` jeton de métadonnées qui représente le type exporté.  
+ dans `mdExportedType`Jeton de métadonnées qui représente le type exporté.  
   
  `szName`  
- [out] Le nom du type exporté.  
+ à Nom du type exporté.  
   
  `cchName`  
- [dans] La taille, en caractères larges, de `szName`.  
+ dans Taille, en caractères larges, de `szName` .  
   
  `pchName`  
- [out] Le nombre de caractères larges effectivement retourné dans`szName`  
+ à Nombre de caractères larges réellement retournés dans`szName`  
   
  `ptkImplementation`  
- [out] Un `mdFile` `mdAssemblyRef`jeton, ou `mdExportedType` des métadonnées qui contient ou permet l’accès aux propriétés du type exporté.  
+ à Un `mdFile` `mdAssemblyRef` jeton de métadonnées,, ou `mdExportedType` qui contient ou autorise l’accès aux propriétés du type exporté.  
   
  `ptkTypeDef`  
- [out] Un pointeur `mdTypeDef` à un jeton qui représente un type dans le fichier.  
+ à Pointeur vers un `mdTypeDef` jeton qui représente un type dans le fichier.  
   
  `pdwExportedTypeFlags`  
- [out] Un pointeur vers les drapeaux qui décrivent les métadonnées appliquées au type exporté. La valeur des drapeaux peut être une ou plusieurs valeurs [CorTypeAttr.](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md)  
+ à Pointeur vers les indicateurs qui décrivent les métadonnées appliquées au type exporté. La valeur flags peut être une ou plusieurs valeurs [CorTypeAttr](cortypeattr-enumeration.md) .  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataAssemblyImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataAssemblyImport, interface](imetadataassemblyimport-interface.md)

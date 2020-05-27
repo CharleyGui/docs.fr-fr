@@ -2,12 +2,12 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 04/29/2020
-ms.openlocfilehash: 22b27007d26c98cff40733ef8d449ce334f87848
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: b427954fe0026e6ac96d3bbce2b70b5c44e884e0
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802679"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84005373"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -79,6 +79,10 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 - **`--collect <DATA_COLLECTOR_FRIENDLY_NAME>`**
 
   Active le collecteur de données pour la série de tests. Pour plus d’informations, consultez [Monitor and analyze test run](https://aka.ms/vstest-collect) (Surveiller et analyser la série de tests).
+  
+  Pour collecter la couverture du code sur toutes les plateformes prises en charge par .NET Core, installez [coverlet](https://github.com/coverlet-coverage/coverlet/blob/master/README.md) et utilisez l' `--collect:"XPlat Code Coverage"` option.
+
+  Sur Windows, vous pouvez collecter la couverture du code à l’aide de l' `--collect "Code Coverage"` option. Cette option génère un fichier *. coverage* , qui peut être ouvert dans Visual Studio 2019 Enterprise. Pour plus d’informations, consultez Utilisation de la [couverture du code](/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested) et personnalisation de l’analyse de la [couverture du code](/visualstudio/test/customizing-code-coverage-analysis).
 
 - **`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
 
@@ -147,7 +151,7 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
  Inline `RunSettings` sont passés comme derniers arguments sur la ligne de commande après « -- » (Notez l’espace après--). Inline `RunSettings` sont spécifiés en tant que `[name]=[value]` paires. Un espace est utilisé pour séparer plusieurs paires `[name]=[value]`.
 
-  Exemple : `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
+  Exemple : `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
 
   Pour plus d’informations, consultez [transmission d’arguments RunSettings via la ligne de commande](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
 
@@ -169,6 +173,18 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
   ```dotnetcli
   dotnet test --logger trx
+  ```
+
+- Exécutez les tests dans le projet dans le répertoire actif et générez un fichier de couverture du code (après l’installation de [coverlet](https://github.com/tonerdo/coverlet/blob/master/README.md)) :
+
+  ```dotnetcli
+  dotnet test --collect:"XPlat Code Coverage"
+  ```
+
+- Exécutez les tests dans le projet dans le répertoire actif et générez un fichier de couverture du code (Windows uniquement) :
+
+  ```dotnetcli
+  dotnet test --collect "Code Coverage"
   ```
 
 - Exécutez les tests dans le projet dans le répertoire actif, puis consignez des commentaires détaillés sur la console :
@@ -195,6 +211,7 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 | -------------- | --------------------------------------------------------------------------------------------------------- |
 | MSTest         | <ul><li>FullyQualifiedName</li><li>Nom</li><li>ClassName</li><li>Priority</li><li>TestCategory</li></ul> |
 | xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Caractéristiques</li></ul>                                   |
+| NUnit          | <ul><li>FullyQualifiedName</li><li>Nom</li><li>TestCategory</li><li>Priority</li></ul>                                   |
 
 La section `<operator>` décrit la relation entre la propriété et la valeur :
 

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e9e4e497-d5fb-464b-991c-3bdd824664fd
 topic_type:
 - apiref
-ms.openlocfilehash: 19ee3097dfe80ba9dcbdaf316db0fd165b50abc6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 84791eba7c95d3278bd4650bd7d660e98fcb79d8
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436428"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008914"
 ---
 # <a name="cvstruct-structure"></a>CVStruct, structure
 Contient des informations utilisées lors de l'installation d'un module ou d'une image composite.  
@@ -40,19 +40,19 @@ typedef struct {
 |Membre|Description|  
 |------------|-----------------|  
 |Majeure|Numéro de build de la version principale.|  
-|Mineure|Numéro de build de la version mineure.|  
+|Secondaire|Numéro de build de la version mineure.|  
 |Sub|Numéro de sous-Build.|  
 |Build|Numéro de Build.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
+- [Structures de métadonnées](metadata-structures.md)

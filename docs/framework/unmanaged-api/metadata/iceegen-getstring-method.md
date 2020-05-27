@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7cc22562-128c-440a-9147-55ff20f173d7
 topic_type:
 - apiref
-ms.openlocfilehash: ada126b41f1c634f7d8daa58480406ac26f92377
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b7b15261d825c1bd5f217c4cecd82ed36a716d0e
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177904"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008259"
 ---
 # <a name="iceegengetstring-method"></a>ICeeGen::GetString, méthode
 Obtient la chaîne stockée à l’adresse virtuelle relative spécifiée.  
@@ -38,20 +38,20 @@ HRESULT GetString (
   
 ## <a name="parameters"></a>Paramètres  
  `RVA`  
- [dans] L’adresse virtuelle relative de la chaîne à revenir.  
+ dans Adresse virtuelle relative de la chaîne à retourner.  
   
  `lpString`  
- [out] La ficelle retournée.  
+ à Chaîne retournée.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICeeGen, interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen, interface](iceegen-interface.md)

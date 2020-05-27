@@ -6,21 +6,21 @@ helpviewer_keywords:
 - global static functions [.NET Framework hosting], version 4
 - .NET Framework 4, hosting global static functions
 ms.assetid: 07a1a6e1-db73-4555-81df-bc4054c51492
-ms.openlocfilehash: 58b2b6faaf96a8c4f0c0422f2092c3752fbe822f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d1cb267127072d47ad9918808bf994c95af30d11
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133710"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006712"
 ---
 # <a name="net-framework-4-hosting-global-static-functions"></a>Fonctions statiques globales de l'hébergement .NET Framework 4
-Le .NET Framework 4 introduit une nouvelle méthode exportée dans MSCorEE. dll : [CLRCreateIntstance](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md).  
+Le .NET Framework 4 introduit une nouvelle méthode exportée dans MSCorEE. dll : [CLRCreateIntstance](clrcreateinstance-function.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [CLRCreateInstance, fonction](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md)  
- Fournit l’une des trois interfaces suivantes : [ICLRMetaHost](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md), [ICLRMetaHostPolicy](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)ou [ICLRDebugging](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-interface.md).  
+ [CLRCreateInstance, fonction](clrcreateinstance-function.md)  
+ Fournit l’une des trois interfaces suivantes : [ICLRMetaHost](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md), [ICLRMetaHostPolicy](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)ou [ICLRDebugging](../debugging/iclrdebugging-interface.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions statiques globales d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-global-static-functions.md)
-- [Hébergement](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [Fonctions statiques globales de l'hébergement](hosting-global-static-functions.md)
+- [Hébergement](index.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 6ef78d3c-1c69-4141-b687-dcb065b7a74d
 topic_type:
 - apiref
-ms.openlocfilehash: 812b70a594b5aa933f52d36f32d96d712267ecf4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a11b7d5939c4c20504b1ff3dfb4613f85bca0db4
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177957"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007973"
 ---
 # <a name="cor_native_link-structure"></a>COR_NATIVE_LINK, structure
 Contient des informations utilisées pour lier du code natif.  
@@ -39,21 +39,21 @@ typedef struct
   
 |Membre|Description|  
 |------------|-----------------|  
-|`m_linkType`|Le type à être lié dans le code natif. Cette valeur est l’une des valeurs [de CorNativeLinkType.](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md)|  
-|`m_flags`|Drapeaux utilisés par le lien lors de la liaison du code indigène. Cette valeur est l’une des valeurs [corNativeLinkFlags.](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md)|  
-|`m_entryPoint`|Le jeton de métadonnées MemberRef qui représente le point d’entrée. Le format est `lib:entrypoint`.|  
+|`m_linkType`|Type à lier en code natif. Cette valeur est l’une des valeurs [CorNativeLinkType,](cornativelinktype-enumeration.md) .|  
+|`m_flags`|Indicateurs utilisés par l’éditeur de liens lors de la liaison de code natif. Cette valeur est l’une des valeurs [CorNativeLinkFlags,](cornativelinkflags-enumeration.md) .|  
+|`m_entryPoint`|Jeton de métadonnées MemberRef qui représente le point d’entrée. Le format est `lib:entrypoint`.|  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
-- [CorNativeLinkType, énumération](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md)
-- [CorNativeLinkFlags, énumération](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md)
+- [Structures de métadonnées](metadata-structures.md)
+- [CorNativeLinkType, énumération](cornativelinktype-enumeration.md)
+- [CorNativeLinkFlags, énumération](cornativelinkflags-enumeration.md)

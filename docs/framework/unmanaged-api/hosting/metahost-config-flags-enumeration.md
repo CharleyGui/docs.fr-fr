@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6f1e389f-ed99-4d6a-a0ba-72d7d869a01d
 topic_type:
 - apiref
-ms.openlocfilehash: 07cab119810c4da25d16a4ad7c13f2d2bda16455
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a15c912cdf0eef1b8f131e8425ad9b5b01289982
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140309"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006725"
 ---
 # <a name="metahost_config_flags-enumeration"></a>METAHOST_CONFIG_FLAGS, énumération
-Décrit les indicateurs possibles retournés dans le paramètre `pdwConfigFlags` de la méthode [ICLRMetaHostPolicy :: GetRequestedRuntime](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) , indiquant la présence et le paramétrage de l’attribut `useLegacyV2RuntimeActivationPolicy` dans la [\<élément > de démarrage](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) de l’élément fichier de configuration.  
+Décrit les indicateurs possibles retournés dans le `pdwConfigFlags` paramètre de la méthode [ICLRMetaHostPolicy :: GetRequestedRuntime](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) , indiquant la présence et le paramétrage de l' `useLegacyV2RuntimeActivationPolicy` attribut dans l' [ \<startup> élément](../../configure-apps/file-schema/startup/startup-element.md) du fichier de configuration.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,24 +39,24 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_UNSET`|L’attribut `useLegacyV2RuntimeActivationPolicy` n’était pas présent dans l' [élément > startup\<](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md).|  
-|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_TRUE`|L’attribut `useLegacyV2RuntimeActivationPolicy` était présent et défini sur `true`.|  
-|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_FALSE`|L’attribut `useLegacyV2RuntimeActivationPolicy` était présent et défini sur `false`.|  
-|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_MASK`|Appliquez ce masque à la valeur retournée dans `pdwConfigFlags` pour récupérer les valeurs correspondant à `useLegacyV2RuntimeActivationPolicy`.|  
+|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_UNSET`|L' `useLegacyV2RuntimeActivationPolicy` attribut n’était pas présent dans l' [ \<startup> élément](../../configure-apps/file-schema/startup/startup-element.md).|  
+|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_TRUE`|L' `useLegacyV2RuntimeActivationPolicy` attribut était présent et a la valeur `true` .|  
+|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_FALSE`|L' `useLegacyV2RuntimeActivationPolicy` attribut était présent et a la valeur `false` .|  
+|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_MASK`|Appliquez ce masque à la valeur retournée dans `pdwConfigFlags` pour récupérer les valeurs correspondant à `useLegacyV2RuntimeActivationPolicy` .|  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
-- [GetRequestedRuntime, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md)
-- [\<startup>, élément](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)
+- [Énumérations d'hébergement](hosting-enumerations.md)
+- [GetRequestedRuntime, méthode](iclrmetahostpolicy-getrequestedruntime-method.md)
+- [\<startup>Appartient](../../configure-apps/file-schema/startup/startup-element.md)

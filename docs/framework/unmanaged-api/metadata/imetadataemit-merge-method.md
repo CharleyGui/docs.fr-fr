@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7596220c-f699-4b6c-8ae7-c83220610650
 topic_type:
 - apiref
-ms.openlocfilehash: 759358822ed865c89f6f55084d1e7f6143506e93
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e7fe5cbe27c0771a71e4c03d14ab68ada7d0741a
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175705"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84004164"
 ---
 # <a name="imetadataemitmerge-method"></a>IMetaDataEmit::Merge, méthode
-Ajoute la portée importée spécifiée à la liste des portées à fusionner.  
+Ajoute l’étendue importée spécifiée à la liste des étendues à fusionner.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,27 +37,27 @@ HRESULT Merge (
   
 ## <a name="parameters"></a>Paramètres  
  `pImport`  
- [dans] Un pointeur vers un objet [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) qui identifie la portée importée à fusionner.  
+ dans Pointeur vers un objet [IMetaDataImport](imetadataimport-interface.md) qui identifie l’étendue importée à fusionner.  
   
  `pIMap`  
- [dans] Un pointeur sur un objet [IMapToken](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) qui spécifie la refonte symbolique.  
+ dans Pointeur vers un objet [IMapToken](imaptoken-interface.md) qui spécifie le nouveau mappage du jeton.  
   
  `pHandler`  
- [dans] Un pointeur vers un objet [IUnknown](/cpp/atl/iunknown) qui spécifie les erreurs.  
+ dans Pointeur vers un objet [IUnknown](/cpp/atl/iunknown) qui spécifie les erreurs.  
   
-## <a name="remarks"></a>Notes   
- Appelez [IMetaDataEmit::MergeEnd](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-mergeend-method.md) pour déclencher la fusion des métadonnées dans une seule portée.  
+## <a name="remarks"></a>Remarques  
+ Appelez [IMetaDataEmit :: MergeEnd,](imetadataemit-mergeend-method.md) pour déclencher la fusion des métadonnées dans une seule portée.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 93c9a369-225f-4eff-9b78-3fbee4902cf1
 topic_type:
 - apiref
-ms.openlocfilehash: 74807a678b5c0c2738f33fe552f6462af93ca1f9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 629e18b6cd2fd7910804ecc608a45d2406dddea1
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436468"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007492"
 ---
 # <a name="cortokentype-enumeration"></a>CorTokenType, énumération
 Indique le type d’un jeton de métadonnées.  
@@ -63,43 +63,43 @@ typedef enum CorTokenType {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`mdtModule`|Jeton `mdModule`.|  
-|`mdtTypeRef`|Jeton `mdTypeRef`.|  
-|`mdtTypeDef`|Jeton `mdTypeDef`.|  
-|`mdtFieldDef`|Jeton `mdFieldDef`.|  
-|`mdtMethodDef`|Jeton `mdMethodDef`.|  
-|`mdtParamDef`|Jeton `mdParamDef`.|  
-|`mdtInterfaceImpl`|Jeton `mdInterfaceImpl`.|  
-|`mdtMemberRef`|Jeton `mdMemberRef`.|  
-|`mdtCustomAttribute`|Jeton `mdCustomAttribute`.|  
-|`mdtPermission`|Jeton `mdPermission`.|  
-|`mdtSignature`|Jeton `mdSignature`.|  
-|`mdtEvent`|Jeton `mdEvent`.|  
-|`mdtProperty`|Jeton `mdProperty`.|  
-|`mdtModuleRef`|Jeton `mdModuleRef`.|  
-|`mdtTypeSpec`|Jeton `mdTypeSpec`.|  
-|`mdtAssembly`|Jeton `mdAssembly`.|  
-|`mdtAssemblyRef`|Jeton `mdAssemblyRef`.|  
-|`mdtFile`|Jeton `mdFile`.|  
-|`mdtExportedType`|Jeton `mdExportedType`.|  
-|`mdtManifestResource`|Jeton `mdManifestResource`.|  
-|`mdtGenericParam`|Jeton `mdGenericParam`.|  
-|`mdtMethodSpec`|Jeton `mdMethodSpec`.|  
-|`mdtGenericParamConstraint`|Jeton `mdGenericParamConstraint`.|  
-|`mdtString`|Jeton `mdString`.|  
-|`mdtName`|Jeton `mdName`.|  
+|`mdtModule`|`mdModule`Jeton.|  
+|`mdtTypeRef`|`mdTypeRef`Jeton.|  
+|`mdtTypeDef`|`mdTypeDef`Jeton.|  
+|`mdtFieldDef`|`mdFieldDef`Jeton.|  
+|`mdtMethodDef`|`mdMethodDef`Jeton.|  
+|`mdtParamDef`|`mdParamDef`Jeton.|  
+|`mdtInterfaceImpl`|`mdInterfaceImpl`Jeton.|  
+|`mdtMemberRef`|`mdMemberRef`Jeton.|  
+|`mdtCustomAttribute`|`mdCustomAttribute`Jeton.|  
+|`mdtPermission`|`mdPermission`Jeton.|  
+|`mdtSignature`|`mdSignature`Jeton.|  
+|`mdtEvent`|`mdEvent`Jeton.|  
+|`mdtProperty`|`mdProperty`Jeton.|  
+|`mdtModuleRef`|`mdModuleRef`Jeton.|  
+|`mdtTypeSpec`|`mdTypeSpec`Jeton.|  
+|`mdtAssembly`|`mdAssembly`Jeton.|  
+|`mdtAssemblyRef`|`mdAssemblyRef`Jeton.|  
+|`mdtFile`|`mdFile`Jeton.|  
+|`mdtExportedType`|`mdExportedType`Jeton.|  
+|`mdtManifestResource`|`mdManifestResource`Jeton.|  
+|`mdtGenericParam`|`mdGenericParam`Jeton.|  
+|`mdtMethodSpec`|`mdMethodSpec`Jeton.|  
+|`mdtGenericParamConstraint`|`mdGenericParamConstraint`Jeton.|  
+|`mdtString`|`mdString`Jeton.|  
+|`mdtName`|`mdName`Jeton.|  
 |`mdtBaseType`|Non utilisé.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Chaque valeur est égale à la valeur de l’octet de poids le plus élevé dans le jeton de métadonnées correspondant.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Énumérations de métadonnées](metadata-enumerations.md)

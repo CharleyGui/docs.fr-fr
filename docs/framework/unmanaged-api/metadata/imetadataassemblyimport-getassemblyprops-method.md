@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0eaa4aa9-9441-444a-920c-e4b2a2db899e
 topic_type:
 - apiref
-ms.openlocfilehash: dfa900e2184a8c415d75f5702c572b14c4018749
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a90deaf3e9ddf326c6fca558cbb4681fc40e022d
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177789"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009052"
 ---
 # <a name="imetadataassemblyimportgetassemblyprops-method"></a>IMetaDataAssemblyImport::GetAssemblyProps, méthode
-Obtient l’ensemble des propriétés pour l’assemblage avec la signature spécifiée de métadonnées.  
+Obtient le jeu de propriétés de l’assembly avec la signature de métadonnées spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,41 +43,41 @@ HRESULT GetAssemblyProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mda`  
- [in]. Le `mdAssembly` jeton de métadonnées qui représente l’assemblage pour lequel obtenir les propriétés.  
+ [in]. `mdAssembly`Jeton de métadonnées qui représente l’assembly pour lequel obtenir les propriétés.  
   
  `ppbPublicKey`  
- [out] Un pointeur à la clé publique ou le jeton des métadonnées.  
+ à Pointeur vers la clé publique ou le jeton de métadonnées.  
   
  `pcbPublicKey`  
- [out] Le nombre d’octets dans la clé publique retournée.  
+ à Nombre d’octets dans la clé publique retournée.  
   
  `pulHashAlgId`  
- [out] Un pointeur à l’algorithme utilisé pour hachage les fichiers dans l’assemblage.  
+ à Pointeur vers l’algorithme utilisé pour hacher les fichiers dans l’assembly.  
   
  `szName`  
- [out] Le nom simple de l’assemblée.  
+ à Nom simple de l’assembly.  
   
  `cchName`  
- [dans] La taille, en chars `szName`larges, de .  
+ dans Taille, en caractères larges, de `szName` .  
   
  `pchName`  
- [out] Le nombre de chars `szName`larges effectivement retourné dans .  
+ à Nombre de caractères larges réellement retournés dans `szName` .  
   
  `pMetaData`  
- [out] Un pointeur vers une structure ASSEMBLYMETADATA qui contient les métadonnées d’assemblage.  
+ à Pointeur vers une structure ASSEMBLYMETADATA qui contient les métadonnées de l’assembly.  
   
  `pdwAssemblyFlags`  
- [out] Drapeaux qui décrivent les métadonnées appliquées à un assemblage. Cette valeur est une combinaison d’une ou plusieurs valeurs [CorAssemblyFlags.](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md)  
+ à Indicateurs qui décrivent les métadonnées appliquées à un assembly. Cette valeur est une combinaison d’une ou plusieurs valeurs [CorAssemblyFlags,](corassemblyflags-enumeration.md) .  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataAssemblyImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataAssemblyImport, interface](imetadataassemblyimport-interface.md)

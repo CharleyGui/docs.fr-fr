@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 46264b2c-574d-4dde-aafc-77187a104fdd
 topic_type:
 - apiref
-ms.openlocfilehash: edfe5de9c9d7ef9607a2eea5146194bbd4393a92
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ac6de9a16fad6ba9d14f3960ddd28c42c111f254
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175991"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009390"
 ---
 # <a name="imetadataassemblyimportfindexportedtypebyname-method"></a>IMetaDataAssemblyImport::FindExportedTypeByName, méthode
-Obtient un pointeur vers un type exporté, donné son nom et le type d’enclos.  
+Obtient un pointeur vers un type exporté, en fonction de son nom et du type englobant.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,27 +37,27 @@ HRESULT FindExportedTypeByName (
   
 ## <a name="parameters"></a>Paramètres  
  `szName`  
- [dans] Le nom du type exporté.  
+ dans Nom du type exporté.  
   
  `mdtExportedType`  
- [dans] Les métadonnées symboliques pour la classe d’enceinte du type exporté. Cette valeur `mdExportedTypeNil` est si le type exporté demandé n’est pas un type imbriqué.  
+ dans Jeton de métadonnées pour la classe englobante du type exporté. Cette valeur est `mdExportedTypeNil` si le type exporté demandé n’est pas un type imbriqué.  
   
  `ptkExportedType`  
- [out] Un pointeur `mdExportedType` vers le jeton qui représente le type exporté.  
+ à Pointeur vers le `mdExportedType` jeton qui représente le type exporté.  
   
-## <a name="remarks"></a>Notes   
- La `FindExportedTypeByName` méthode utilise les règles standard employées par l’heure d’exécution de langue commune pour résoudre des références.  
+## <a name="remarks"></a>Remarques  
+ La `FindExportedTypeByName` méthode utilise les règles standard utilisées par le Common Language Runtime pour résoudre les références.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataAssemblyImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
-- [Méthode de localisation des assemblys par le runtime](../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [IMetaDataAssemblyImport, interface](imetadataassemblyimport-interface.md)
+- [Méthode de localisation des assemblys par le runtime](../../deployment/how-the-runtime-locates-assemblies.md)
