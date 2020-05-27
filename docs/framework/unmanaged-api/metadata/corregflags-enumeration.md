@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: 8d3080ee-39fe-4c57-8950-51323632d045
 topic_type:
 - apiref
-ms.openlocfilehash: 8fe6216e11a64ea182d796247d888b862b1e8377
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d8d7a43848929e49a8cb48fb957f37213ac78f2e
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177925"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007349"
 ---
-# <a name="corregflags-enumeration"></a><span data-ttu-id="fdda0-102">CorRegFlags, énumération</span><span class="sxs-lookup"><span data-stu-id="fdda0-102">CorRegFlags Enumeration</span></span>
-<span data-ttu-id="fdda0-103">Fournit les valeurs de drapeau utilisées pour l’enregistrement lors de l’installation d’un module ou d’une image composite.</span><span class="sxs-lookup"><span data-stu-id="fdda0-103">Provides flag values used for registration when installing a module or composite image.</span></span>  
+# <a name="corregflags-enumeration"></a><span data-ttu-id="a56d5-102">CorRegFlags, énumération</span><span class="sxs-lookup"><span data-stu-id="a56d5-102">CorRegFlags Enumeration</span></span>
+<span data-ttu-id="a56d5-103">Fournit des valeurs d’indicateur utilisées pour l’inscription lors de l’installation d’un module ou d’une image composite.</span><span class="sxs-lookup"><span data-stu-id="a56d5-103">Provides flag values used for registration when installing a module or composite image.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="fdda0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fdda0-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a56d5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a56d5-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum
@@ -35,23 +35,23 @@ typedef enum
 } CorRegFlags;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="fdda0-105">Membres</span><span class="sxs-lookup"><span data-stu-id="fdda0-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="a56d5-105">Membres</span><span class="sxs-lookup"><span data-stu-id="a56d5-105">Members</span></span>  
   
-|<span data-ttu-id="fdda0-106">Membre</span><span class="sxs-lookup"><span data-stu-id="fdda0-106">Member</span></span>|<span data-ttu-id="fdda0-107">Description</span><span class="sxs-lookup"><span data-stu-id="fdda0-107">Description</span></span>|  
+|<span data-ttu-id="a56d5-106">Membre</span><span class="sxs-lookup"><span data-stu-id="a56d5-106">Member</span></span>|<span data-ttu-id="a56d5-107">Description</span><span class="sxs-lookup"><span data-stu-id="a56d5-107">Description</span></span>|  
 |------------|-----------------|  
-|`regNoCopy`|<span data-ttu-id="fdda0-108">Précise que les fichiers ne doivent pas être copiés dans la destination.</span><span class="sxs-lookup"><span data-stu-id="fdda0-108">Specifies that files should not be copied into the destination.</span></span>|  
-|`regConfig`|<span data-ttu-id="fdda0-109">Spécifie que le module ou le composite est une configuration.</span><span class="sxs-lookup"><span data-stu-id="fdda0-109">Specifies that the module or composite is a configuration.</span></span>|  
-|`regHasRefs`|<span data-ttu-id="fdda0-110">Spécifie que le module ou le composite a des références de classe.</span><span class="sxs-lookup"><span data-stu-id="fdda0-110">Specifies that the module or composite has class references.</span></span>|  
+|`regNoCopy`|<span data-ttu-id="a56d5-108">Spécifie que les fichiers ne doivent pas être copiés dans la destination.</span><span class="sxs-lookup"><span data-stu-id="a56d5-108">Specifies that files should not be copied into the destination.</span></span>|  
+|`regConfig`|<span data-ttu-id="a56d5-109">Spécifie que le module ou composite est une configuration.</span><span class="sxs-lookup"><span data-stu-id="a56d5-109">Specifies that the module or composite is a configuration.</span></span>|  
+|`regHasRefs`|<span data-ttu-id="a56d5-110">Spécifie que le module ou le composite a des références de classe.</span><span class="sxs-lookup"><span data-stu-id="a56d5-110">Specifies that the module or composite has class references.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="fdda0-111">Spécifications</span><span class="sxs-lookup"><span data-stu-id="fdda0-111">Requirements</span></span>  
- <span data-ttu-id="fdda0-112">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="fdda0-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a56d5-111">Spécifications</span><span class="sxs-lookup"><span data-stu-id="a56d5-111">Requirements</span></span>  
+ <span data-ttu-id="a56d5-112">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a56d5-112">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="fdda0-113">**En-tête:** Cor.h (en)</span><span class="sxs-lookup"><span data-stu-id="fdda0-113">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="a56d5-113">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="a56d5-113">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="fdda0-114">**Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="fdda0-114">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="a56d5-114">**Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="a56d5-114">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="fdda0-115">**.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="fdda0-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="a56d5-115">**Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a56d5-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fdda0-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fdda0-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a56d5-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a56d5-116">See also</span></span>
 
-- [<span data-ttu-id="fdda0-117">Énumérations de métadonnées</span><span class="sxs-lookup"><span data-stu-id="fdda0-117">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="a56d5-117">Énumérations de métadonnées</span><span class="sxs-lookup"><span data-stu-id="a56d5-117">Metadata Enumerations</span></span>](metadata-enumerations.md)
