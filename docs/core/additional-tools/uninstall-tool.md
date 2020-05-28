@@ -2,135 +2,135 @@
 title: Outil de désinstallation
 description: Vue d’ensemble de l’outil de désinstallation de .NET Core, outil guidé qui permet le nettoyage contrôlé des kits de développement logiciel (SDK) .NET Core et des runtimes.
 author: sfoslund
-ms.date: 01/06/2020
-ms.openlocfilehash: 45cf0841391d02636770e98666e2897d2598fab4
-ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
+ms.date: 05/27/2020
+ms.openlocfilehash: 1ad31cd42d8f8f87e3501b422fc4298c643e2067
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82595713"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144511"
 ---
-# <a name="net-core-uninstall-tool"></a><span data-ttu-id="2634b-103">Outil de désinstallation de .NET Core</span><span class="sxs-lookup"><span data-stu-id="2634b-103">.NET Core Uninstall Tool</span></span>
+# <a name="net-core-uninstall-tool"></a><span data-ttu-id="049dc-103">Outil de désinstallation de .NET Core</span><span class="sxs-lookup"><span data-stu-id="049dc-103">.NET Core Uninstall Tool</span></span>
 
-<span data-ttu-id="2634b-104">L' [outil de désinstallation de .net Core](https://aka.ms/dotnet-core-uninstall-tool) () vous permet de supprimer des kits de développement logiciel (`dotnet-core-uninstall`SDK) .net Core et des runtimes d’un système.</span><span class="sxs-lookup"><span data-stu-id="2634b-104">The [.NET Core Uninstall Tool](https://aka.ms/dotnet-core-uninstall-tool) (`dotnet-core-uninstall`) lets you remove .NET Core SDKs and Runtimes from a system.</span></span> <span data-ttu-id="2634b-105">Une collection d’options est disponible pour spécifier les versions que vous souhaitez désinstaller.</span><span class="sxs-lookup"><span data-stu-id="2634b-105">A collection of options is available to specify which versions you want to uninstall.</span></span>
+<span data-ttu-id="049dc-104">L' [outil de désinstallation de .net Core](https://aka.ms/dotnet-core-uninstall-tool) ( `dotnet-core-uninstall` ) vous permet de supprimer des kits de développement logiciel (SDK) .net Core et des runtimes d’un système.</span><span class="sxs-lookup"><span data-stu-id="049dc-104">The [.NET Core Uninstall Tool](https://aka.ms/dotnet-core-uninstall-tool) (`dotnet-core-uninstall`) lets you remove .NET Core SDKs and Runtimes from a system.</span></span> <span data-ttu-id="049dc-105">Une collection d’options est disponible pour spécifier les versions que vous souhaitez désinstaller.</span><span class="sxs-lookup"><span data-stu-id="049dc-105">A collection of options is available to specify which versions you want to uninstall.</span></span>
 
-<span data-ttu-id="2634b-106">L’outil prend en charge Windows et macOS.</span><span class="sxs-lookup"><span data-stu-id="2634b-106">The tool supports Windows and macOS.</span></span> <span data-ttu-id="2634b-107">Pour le moment, Linux n’est pas pris en charge.</span><span class="sxs-lookup"><span data-stu-id="2634b-107">Linux is currently not supported.</span></span>
+<span data-ttu-id="049dc-106">L’outil prend en charge Windows et macOS.</span><span class="sxs-lookup"><span data-stu-id="049dc-106">The tool supports Windows and macOS.</span></span> <span data-ttu-id="049dc-107">Pour le moment, Linux n’est pas pris en charge.</span><span class="sxs-lookup"><span data-stu-id="049dc-107">Linux is currently not supported.</span></span>
 
-<span data-ttu-id="2634b-108">Sur Windows, l’outil ne peut désinstaller que les kits de développement logiciel (SDK) et les runtimes qui ont été installés à l’aide de l’un des programmes d’installation suivants :</span><span class="sxs-lookup"><span data-stu-id="2634b-108">On Windows, the tool can only uninstall SDKs and Runtimes that were installed using one of the following installers:</span></span>
+<span data-ttu-id="049dc-108">Sur Windows, l’outil ne peut désinstaller que les kits de développement logiciel (SDK) et les runtimes qui ont été installés à l’aide de l’un des programmes d’installation suivants :</span><span class="sxs-lookup"><span data-stu-id="049dc-108">On Windows, the tool can only uninstall SDKs and Runtimes that were installed using one of the following installers:</span></span>
 
-- <span data-ttu-id="2634b-109">Kit SDK .NET Core et le programme d’installation du Runtime.</span><span class="sxs-lookup"><span data-stu-id="2634b-109">The .NET Core SDK and runtime installer.</span></span>
-- <span data-ttu-id="2634b-110">Le programme d’installation de Visual Studio dans les versions antérieures à Visual Studio 2019 version 16,3.</span><span class="sxs-lookup"><span data-stu-id="2634b-110">The Visual Studio installer in versions earlier than Visual Studio 2019 version 16.3.</span></span>
+- <span data-ttu-id="049dc-109">Kit SDK .NET Core et le programme d’installation du Runtime.</span><span class="sxs-lookup"><span data-stu-id="049dc-109">The .NET Core SDK and runtime installer.</span></span>
+- <span data-ttu-id="049dc-110">Le programme d’installation de Visual Studio dans les versions antérieures à Visual Studio 2019 version 16,3.</span><span class="sxs-lookup"><span data-stu-id="049dc-110">The Visual Studio installer in versions earlier than Visual Studio 2019 version 16.3.</span></span>
 
-<span data-ttu-id="2634b-111">Sur macOS, l’outil ne peut désinstaller que les kits de développement logiciel (SDK) et les runtimes situés dans le dossier */usr/local/share/dotnet* .</span><span class="sxs-lookup"><span data-stu-id="2634b-111">On macOS, the tool can only uninstall SDKs and runtimes located in the */usr/local/share/dotnet* folder.</span></span>
+<span data-ttu-id="049dc-111">Sur macOS, l’outil ne peut désinstaller que les kits de développement logiciel (SDK) et les runtimes situés dans le dossier */usr/local/share/dotnet* .</span><span class="sxs-lookup"><span data-stu-id="049dc-111">On macOS, the tool can only uninstall SDKs and runtimes located in the */usr/local/share/dotnet* folder.</span></span>
 
-<span data-ttu-id="2634b-112">En raison de ces limitations, l’outil peut ne pas être en mesure de désinstaller tous les kits de développement logiciel (SDK) .NET Core et les runtimes sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="2634b-112">Because of these limitations, the tool may not be able to uninstall all of the .NET Core SDKs and runtimes on your machine.</span></span> <span data-ttu-id="2634b-113">Vous pouvez utiliser la `dotnet --info` commande pour rechercher tous les kits de développement logiciel (SDK) .net Core et les runtimes installés, y compris les kits de développement logiciel (SDK) et runtimes que cet outil ne peut pas supprimer.</span><span class="sxs-lookup"><span data-stu-id="2634b-113">You can use the `dotnet --info` command to find all of the .NET Core SDKs and runtimes installed, including those SDKs and runtimes that this tool can't remove.</span></span> <span data-ttu-id="2634b-114">La `dotnet-core-uninstall list` commande affiche les kits de développement logiciel (SDK) qui peuvent être désinstallés avec l’outil.</span><span class="sxs-lookup"><span data-stu-id="2634b-114">The `dotnet-core-uninstall list` command displays which SDKs can be uninstalled with the tool.</span></span>
+<span data-ttu-id="049dc-112">En raison de ces limitations, l’outil peut ne pas être en mesure de désinstaller tous les kits de développement logiciel (SDK) .NET Core et les runtimes sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="049dc-112">Because of these limitations, the tool may not be able to uninstall all of the .NET Core SDKs and runtimes on your machine.</span></span> <span data-ttu-id="049dc-113">Vous pouvez utiliser la `dotnet --info` commande pour rechercher tous les kits de développement logiciel (SDK) .net Core et les runtimes installés, y compris les kits de développement logiciel (SDK) et runtimes que cet outil ne peut pas supprimer.</span><span class="sxs-lookup"><span data-stu-id="049dc-113">You can use the `dotnet --info` command to find all of the .NET Core SDKs and runtimes installed, including those SDKs and runtimes that this tool can't remove.</span></span> <span data-ttu-id="049dc-114">La `dotnet-core-uninstall list` commande affiche les kits de développement logiciel (SDK) qui peuvent être désinstallés avec l’outil.</span><span class="sxs-lookup"><span data-stu-id="049dc-114">The `dotnet-core-uninstall list` command displays which SDKs can be uninstalled with the tool.</span></span>
 
-## <a name="install-the-tool"></a><span data-ttu-id="2634b-115">Installer l’outil</span><span class="sxs-lookup"><span data-stu-id="2634b-115">Install the tool</span></span>
+## <a name="install-the-tool"></a><span data-ttu-id="049dc-115">Installer l’outil</span><span class="sxs-lookup"><span data-stu-id="049dc-115">Install the tool</span></span>
 
-<span data-ttu-id="2634b-116">Vous pouvez télécharger l’outil de désinstallation de .NET Core à partir d' [ici](https://aka.ms/dotnet-core-uninstall-tool) et rechercher le code source dans le référentiel GitHub [dotnet/CLI-Lab](https://github.com/dotnet/cli-lab) .</span><span class="sxs-lookup"><span data-stu-id="2634b-116">You can download the .NET Core Uninstall Tool from [here](https://aka.ms/dotnet-core-uninstall-tool) and find the source code at the [dotnet/cli-lab](https://github.com/dotnet/cli-lab) GitHub repository.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="2634b-117">L’outil nécessite une élévation pour désinstaller les kits de développement logiciel (SDK) .NET Core et les runtimes.</span><span class="sxs-lookup"><span data-stu-id="2634b-117">The tool requires elevation to uninstall .NET Core SDKs and runtimes.</span></span> <span data-ttu-id="2634b-118">Par conséquent, il doit être installé dans un répertoire protégé en écriture, tel que *C:\Program Files* sur Windows ou */usr/local/bin* sur MacOS.</span><span class="sxs-lookup"><span data-stu-id="2634b-118">Therefore, it should be installed in a write-protected directory such as *C:\Program Files* on Windows or */usr/local/bin* on macOS.</span></span> <span data-ttu-id="2634b-119">Consultez également [l’accès avec élévation de privilèges pour les commandes dotnet](../tools/elevated-access.md).</span><span class="sxs-lookup"><span data-stu-id="2634b-119">See also [Elevated access for dotnet commands](../tools/elevated-access.md).</span></span> <span data-ttu-id="2634b-120">Pour plus d’informations, consultez les [instructions d’installation détaillées](https://aka.ms/dotnet-core-uninstall-tool).</span><span class="sxs-lookup"><span data-stu-id="2634b-120">For more information, see the [detailed installation instructions](https://aka.ms/dotnet-core-uninstall-tool).</span></span>
-
-## <a name="run-the-tool"></a><span data-ttu-id="2634b-121">Exécuter l’outil</span><span class="sxs-lookup"><span data-stu-id="2634b-121">Run the tool</span></span>
-
-<span data-ttu-id="2634b-122">Les étapes suivantes illustrent l’approche recommandée pour l’exécution de l’outil de désinstallation :</span><span class="sxs-lookup"><span data-stu-id="2634b-122">The following steps show the recommended approach for running the uninstall tool:</span></span>
-
-- [<span data-ttu-id="2634b-123">Étape 1 : afficher les kits de développement logiciel (SDK) .NET Core installés et les runtimes</span><span class="sxs-lookup"><span data-stu-id="2634b-123">Step 1 - Display installed .NET Core SDKs and runtimes</span></span>](#step-1---display-installed-net-core-sdks-and-runtimes)
-- [<span data-ttu-id="2634b-124">Étape 2 : effectuer une exécution à sec</span><span class="sxs-lookup"><span data-stu-id="2634b-124">Step 2 - Do a dry run</span></span>](#step-2---do-a-dry-run)
-- [<span data-ttu-id="2634b-125">Étape 3 : désinstaller les kits de développement logiciel (SDK) et runtimes .NET Core</span><span class="sxs-lookup"><span data-stu-id="2634b-125">Step 3 - Uninstall .NET Core SDKs and Runtimes</span></span>](#step-3---uninstall-net-core-sdks-and-runtimes)
-- [<span data-ttu-id="2634b-126">Étape 4 : supprimer le dossier NuGet Fallback (facultatif)</span><span class="sxs-lookup"><span data-stu-id="2634b-126">Step 4 - Delete the NuGet fallback folder (optional)</span></span>](#step-4---delete-the-nuget-fallback-folder-optional)
-
-### <a name="step-1---display-installed-net-core-sdks-and-runtimes"></a><span data-ttu-id="2634b-127">Étape 1 : afficher les kits de développement logiciel (SDK) .NET Core installés et les runtimes</span><span class="sxs-lookup"><span data-stu-id="2634b-127">Step 1 - Display installed .NET Core SDKs and runtimes</span></span>
-
-<span data-ttu-id="2634b-128">La `dotnet-core-uninstall list` commande répertorie les kits de développement logiciel (SDK) .net Core installés et les runtimes qui peuvent être supprimés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="2634b-128">The `dotnet-core-uninstall list` command lists the installed .NET Core SDKs and runtimes that can be removed with this tool.</span></span> <span data-ttu-id="2634b-129">Certains kits de développement logiciel (SDK) et runtimes peuvent être requis par Visual Studio et ils s’affichent avec la raison pour laquelle il n’est pas recommandé de les désinstaller.</span><span class="sxs-lookup"><span data-stu-id="2634b-129">Some SDKs and runtimes may be required by Visual Studio and they're displayed with a note of why it isn't recommended to uninstall them.</span></span>
+<span data-ttu-id="049dc-116">Vous pouvez télécharger l’outil de désinstallation de .NET Core à partir d' [ici](https://aka.ms/dotnet-core-uninstall-tool) et rechercher le code source dans le référentiel GitHub [dotnet/CLI-Lab](https://github.com/dotnet/cli-lab) .</span><span class="sxs-lookup"><span data-stu-id="049dc-116">You can download the .NET Core Uninstall Tool from [here](https://aka.ms/dotnet-core-uninstall-tool) and find the source code at the [dotnet/cli-lab](https://github.com/dotnet/cli-lab) GitHub repository.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="2634b-130">La sortie de la `dotnet-core-uninstall list` commande ne correspond pas à la liste des versions installées dans la `dotnet --info` sortie de dans la plupart des cas.</span><span class="sxs-lookup"><span data-stu-id="2634b-130">The output of the `dotnet-core-uninstall list` command will not match the list of installed versions in the output of `dotnet --info` in most cases.</span></span> <span data-ttu-id="2634b-131">Plus précisément, cet outil n’affiche pas les versions installées par les fichiers zip ou gérées par Visual Studio (n’importe quelle version installée avec Visual Studio 2019 16,3 ou version ultérieure).</span><span class="sxs-lookup"><span data-stu-id="2634b-131">Specifically, this tool will not display versions installed by zip files or managed by Visual Studio (any version installed with Visual Studio 2019 16.3 or later).</span></span> <span data-ttu-id="2634b-132">Une façon de vérifier si une version est gérée par Visual Studio est de l’afficher `Add or Remove Programs`dans, où les versions gérées de Visual Studio sont marquées comme telles dans leurs noms complets.</span><span class="sxs-lookup"><span data-stu-id="2634b-132">One way to check if a version is managed by Visual Studio is to view it in `Add or Remove Programs`, where Visual Studio managed versions are marked as such in their display names.</span></span>
+> <span data-ttu-id="049dc-117">L’outil nécessite une élévation pour désinstaller les kits de développement logiciel (SDK) .NET Core et les runtimes.</span><span class="sxs-lookup"><span data-stu-id="049dc-117">The tool requires elevation to uninstall .NET Core SDKs and runtimes.</span></span> <span data-ttu-id="049dc-118">Par conséquent, il doit être installé dans un répertoire protégé en écriture, tel que *C:\Program Files* sur Windows ou */usr/local/bin* sur MacOS.</span><span class="sxs-lookup"><span data-stu-id="049dc-118">Therefore, it should be installed in a write-protected directory such as *C:\Program Files* on Windows or */usr/local/bin* on macOS.</span></span> <span data-ttu-id="049dc-119">Consultez également [l’accès avec élévation de privilèges pour les commandes dotnet](../tools/elevated-access.md).</span><span class="sxs-lookup"><span data-stu-id="049dc-119">See also [Elevated access for dotnet commands](../tools/elevated-access.md).</span></span> <span data-ttu-id="049dc-120">Pour plus d’informations, consultez les [instructions d’installation détaillées](https://aka.ms/dotnet-core-uninstall-tool).</span><span class="sxs-lookup"><span data-stu-id="049dc-120">For more information, see the [detailed installation instructions](https://aka.ms/dotnet-core-uninstall-tool).</span></span>
 
-<span data-ttu-id="2634b-133">**dotnet-Core-liste de désinstallation**</span><span class="sxs-lookup"><span data-stu-id="2634b-133">**dotnet-core-uninstall list**</span></span>
+## <a name="run-the-tool"></a><span data-ttu-id="049dc-121">Exécution de l'outil</span><span class="sxs-lookup"><span data-stu-id="049dc-121">Run the tool</span></span>
 
-#### <a name="synopsis"></a><span data-ttu-id="2634b-134">Synopsis</span><span class="sxs-lookup"><span data-stu-id="2634b-134">Synopsis</span></span>
+<span data-ttu-id="049dc-122">Les étapes suivantes illustrent l’approche recommandée pour l’exécution de l’outil de désinstallation :</span><span class="sxs-lookup"><span data-stu-id="049dc-122">The following steps show the recommended approach for running the uninstall tool:</span></span>
+
+- [<span data-ttu-id="049dc-123">Étape 1 : afficher les kits de développement logiciel (SDK) .NET Core installés et les runtimes</span><span class="sxs-lookup"><span data-stu-id="049dc-123">Step 1 - Display installed .NET Core SDKs and runtimes</span></span>](#step-1---display-installed-net-core-sdks-and-runtimes)
+- [<span data-ttu-id="049dc-124">Étape 2 : effectuer une exécution à sec</span><span class="sxs-lookup"><span data-stu-id="049dc-124">Step 2 - Do a dry run</span></span>](#step-2---do-a-dry-run)
+- [<span data-ttu-id="049dc-125">Étape 3 : désinstaller les kits de développement logiciel (SDK) et runtimes .NET Core</span><span class="sxs-lookup"><span data-stu-id="049dc-125">Step 3 - Uninstall .NET Core SDKs and Runtimes</span></span>](#step-3---uninstall-net-core-sdks-and-runtimes)
+- [<span data-ttu-id="049dc-126">Étape 4 : supprimer le dossier NuGet Fallback (facultatif)</span><span class="sxs-lookup"><span data-stu-id="049dc-126">Step 4 - Delete the NuGet fallback folder (optional)</span></span>](#step-4---delete-the-nuget-fallback-folder-optional)
+
+### <a name="step-1---display-installed-net-core-sdks-and-runtimes"></a><span data-ttu-id="049dc-127">Étape 1 : afficher les kits de développement logiciel (SDK) .NET Core installés et les runtimes</span><span class="sxs-lookup"><span data-stu-id="049dc-127">Step 1 - Display installed .NET Core SDKs and runtimes</span></span>
+
+<span data-ttu-id="049dc-128">La `dotnet-core-uninstall list` commande répertorie les kits de développement logiciel (SDK) .net Core installés et les runtimes qui peuvent être supprimés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="049dc-128">The `dotnet-core-uninstall list` command lists the installed .NET Core SDKs and runtimes that can be removed with this tool.</span></span> <span data-ttu-id="049dc-129">Certains kits de développement logiciel (SDK) et runtimes peuvent être requis par Visual Studio et ils s’affichent avec la raison pour laquelle il n’est pas recommandé de les désinstaller.</span><span class="sxs-lookup"><span data-stu-id="049dc-129">Some SDKs and runtimes may be required by Visual Studio and they're displayed with a note of why it isn't recommended to uninstall them.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="049dc-130">La sortie de la `dotnet-core-uninstall list` commande ne correspond pas à la liste des versions installées dans la sortie de `dotnet --info` dans la plupart des cas.</span><span class="sxs-lookup"><span data-stu-id="049dc-130">The output of the `dotnet-core-uninstall list` command will not match the list of installed versions in the output of `dotnet --info` in most cases.</span></span> <span data-ttu-id="049dc-131">Plus précisément, cet outil n’affiche pas les versions installées par les fichiers zip ou gérées par Visual Studio (n’importe quelle version installée avec Visual Studio 2019 16,3 ou version ultérieure).</span><span class="sxs-lookup"><span data-stu-id="049dc-131">Specifically, this tool will not display versions installed by zip files or managed by Visual Studio (any version installed with Visual Studio 2019 16.3 or later).</span></span> <span data-ttu-id="049dc-132">Une façon de vérifier si une version est gérée par Visual Studio est de l’afficher dans `Add or Remove Programs` , où les versions gérées de Visual Studio sont marquées comme telles dans leurs noms complets.</span><span class="sxs-lookup"><span data-stu-id="049dc-132">One way to check if a version is managed by Visual Studio is to view it in `Add or Remove Programs`, where Visual Studio managed versions are marked as such in their display names.</span></span>
+
+<span data-ttu-id="049dc-133">**dotnet-Core-liste de désinstallation**</span><span class="sxs-lookup"><span data-stu-id="049dc-133">**dotnet-core-uninstall list**</span></span>
+
+#### <a name="synopsis"></a><span data-ttu-id="049dc-134">Synopsis</span><span class="sxs-lookup"><span data-stu-id="049dc-134">Synopsis</span></span>
 
 ```console
 dotnet-core-uninstall list [options]
 ```
 
-#### <a name="options"></a><span data-ttu-id="2634b-135">Options</span><span class="sxs-lookup"><span data-stu-id="2634b-135">Options</span></span>
+#### <a name="options"></a><span data-ttu-id="049dc-135">Options</span><span class="sxs-lookup"><span data-stu-id="049dc-135">Options</span></span>
 
-## <a name="windows"></a>[<span data-ttu-id="2634b-136">Windows</span><span class="sxs-lookup"><span data-stu-id="2634b-136">Windows</span></span>](#tab/windows)
+## <a name="windows"></a>[<span data-ttu-id="049dc-136">Windows</span><span class="sxs-lookup"><span data-stu-id="049dc-136">Windows</span></span>](#tab/windows)
 
 * **`--aspnet-runtime`**
 
-  <span data-ttu-id="2634b-137">Répertorie tous les runtimes ASP.NET Core qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="2634b-137">Lists all the ASP.NET Core runtimes that can be uninstalled with this tool.</span></span>
+  <span data-ttu-id="049dc-137">Répertorie tous les runtimes ASP.NET Core qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="049dc-137">Lists all the ASP.NET Core runtimes that can be uninstalled with this tool.</span></span>
 
 * **`--hosting-bundle`**
 
-  <span data-ttu-id="2634b-138">Répertorie tous les groupes d’hébergement et Runtime .NET Core qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="2634b-138">Lists all the .NET Core runtime and hosting bundles that can be uninstalled with this tool.</span></span>
+  <span data-ttu-id="049dc-138">Répertorie toutes les offres d’hébergement .NET Core qui peuvent être désinstallées avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="049dc-138">Lists all the .NET Core hosting bundles that can be uninstalled with this tool.</span></span>
 
 * **`--runtime`**
 
-  <span data-ttu-id="2634b-139">Répertorie tous les runtimes .NET Core qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="2634b-139">Lists all .NET Core runtimes that can be uninstalled with this tool.</span></span>
+  <span data-ttu-id="049dc-139">Répertorie tous les runtimes .NET Core qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="049dc-139">Lists all .NET Core runtimes that can be uninstalled with this tool.</span></span>
 
 * **`--sdk`**
 
-  <span data-ttu-id="2634b-140">Répertorie tous les kits de développement logiciel (SDK) .NET Core qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="2634b-140">Lists all .NET Core SDKs that can be uninstalled with this tool.</span></span>
+  <span data-ttu-id="049dc-140">Répertorie tous les kits de développement logiciel (SDK) .NET Core qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="049dc-140">Lists all .NET Core SDKs that can be uninstalled with this tool.</span></span>
 
 * **`-v, --verbosity <LEVEL>`**
 
-  <span data-ttu-id="2634b-141">Définit le niveau de détail.</span><span class="sxs-lookup"><span data-stu-id="2634b-141">Sets the verbosity level.</span></span> <span data-ttu-id="2634b-142">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="2634b-142">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="2634b-143">La valeur par défaut est `normal`.</span><span class="sxs-lookup"><span data-stu-id="2634b-143">The default value is `normal`.</span></span>
+  <span data-ttu-id="049dc-141">Définit le niveau de détail.</span><span class="sxs-lookup"><span data-stu-id="049dc-141">Sets the verbosity level.</span></span> <span data-ttu-id="049dc-142">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="049dc-142">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="049dc-143">La valeur par défaut est `normal`.</span><span class="sxs-lookup"><span data-stu-id="049dc-143">The default value is `normal`.</span></span>
 
 * **`--x64`**
 
-  <span data-ttu-id="2634b-144">Répertorie tous les kits de développement logiciel (SDK) .NET Core x64 et les runtimes qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="2634b-144">Lists all x64 .NET Core SDKs and runtimes that can be uninstalled with this tool.</span></span>
+  <span data-ttu-id="049dc-144">Répertorie tous les kits de développement logiciel (SDK) .NET Core x64 et les runtimes qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="049dc-144">Lists all x64 .NET Core SDKs and runtimes that can be uninstalled with this tool.</span></span>
 
 * **`--x86`**
 
-  <span data-ttu-id="2634b-145">Répertorie tous les kits de développement logiciel (SDK) .NET Core x86 et les runtimes qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="2634b-145">Lists all x86 .NET Core SDKs and runtimes that can be uninstalled with this tool.</span></span>
+  <span data-ttu-id="049dc-145">Répertorie tous les kits de développement logiciel (SDK) .NET Core x86 et les runtimes qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="049dc-145">Lists all x86 .NET Core SDKs and runtimes that can be uninstalled with this tool.</span></span>
 
-## <a name="macos"></a>[<span data-ttu-id="2634b-146">MacOS</span><span class="sxs-lookup"><span data-stu-id="2634b-146">macOS</span></span>](#tab/macos)
+## <a name="macos"></a>[<span data-ttu-id="049dc-146">MacOS</span><span class="sxs-lookup"><span data-stu-id="049dc-146">macOS</span></span>](#tab/macos)
 
 * **`--runtime`**
 
-  <span data-ttu-id="2634b-147">Répertorie tous les runtimes .NET Core qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="2634b-147">Lists all .NET Core runtimes that can be uninstalled with this tool.</span></span>
+  <span data-ttu-id="049dc-147">Répertorie tous les runtimes .NET Core qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="049dc-147">Lists all .NET Core runtimes that can be uninstalled with this tool.</span></span>
 
 * **`--sdk`**
 
-  <span data-ttu-id="2634b-148">Répertorie tous les kits de développement logiciel (SDK) .NET Core qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="2634b-148">Lists all .NET Core SDKs that can be uninstalled with this tool.</span></span>
+  <span data-ttu-id="049dc-148">Répertorie tous les kits de développement logiciel (SDK) .NET Core qui peuvent être désinstallés avec cet outil.</span><span class="sxs-lookup"><span data-stu-id="049dc-148">Lists all .NET Core SDKs that can be uninstalled with this tool.</span></span>
 
 * **`-v, --verbosity <LEVEL>`**
 
-  <span data-ttu-id="2634b-149">Définit le niveau de détail.</span><span class="sxs-lookup"><span data-stu-id="2634b-149">Sets the verbosity level.</span></span> <span data-ttu-id="2634b-150">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="2634b-150">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="2634b-151">La valeur par défaut est `normal`.</span><span class="sxs-lookup"><span data-stu-id="2634b-151">The default value is `normal`.</span></span>
+  <span data-ttu-id="049dc-149">Définit le niveau de détail.</span><span class="sxs-lookup"><span data-stu-id="049dc-149">Sets the verbosity level.</span></span> <span data-ttu-id="049dc-150">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="049dc-150">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="049dc-151">La valeur par défaut est `normal`.</span><span class="sxs-lookup"><span data-stu-id="049dc-151">The default value is `normal`.</span></span>
   
 ---
 
-#### <a name="examples"></a><span data-ttu-id="2634b-152">Exemples</span><span class="sxs-lookup"><span data-stu-id="2634b-152">Examples</span></span>
+#### <a name="examples"></a><span data-ttu-id="049dc-152">Exemples</span><span class="sxs-lookup"><span data-stu-id="049dc-152">Examples</span></span>
 
-* <span data-ttu-id="2634b-153">Répertorie tous les kits de développement logiciel (SDK) .NET Core et les runtimes qui peuvent être supprimés à l’aide de cet outil :</span><span class="sxs-lookup"><span data-stu-id="2634b-153">List all .NET Core SDKs and runtimes that can be removed with this tool:</span></span>
+* <span data-ttu-id="049dc-153">Répertorie tous les kits de développement logiciel (SDK) .NET Core et les runtimes qui peuvent être supprimés à l’aide de cet outil :</span><span class="sxs-lookup"><span data-stu-id="049dc-153">List all .NET Core SDKs and runtimes that can be removed with this tool:</span></span>
 
   ```console
   dotnet-core-uninstall list
   ```
 
-* <span data-ttu-id="2634b-154">Répertoriez tous les kits de développement logiciel (SDK) et runtimes x64 .NET Core :</span><span class="sxs-lookup"><span data-stu-id="2634b-154">List all x64 .NET Core SDKs and runtimes:</span></span>
+* <span data-ttu-id="049dc-154">Répertoriez tous les kits de développement logiciel (SDK) et runtimes x64 .NET Core :</span><span class="sxs-lookup"><span data-stu-id="049dc-154">List all x64 .NET Core SDKs and runtimes:</span></span>
 
   ```console
   dotnet-core-uninstall list --x64
   ```
 
-* <span data-ttu-id="2634b-155">Répertorier tous les kits de développement logiciel (SDK) .NET Core x86 :</span><span class="sxs-lookup"><span data-stu-id="2634b-155">List all x86 .NET Core SDKs:</span></span>
+* <span data-ttu-id="049dc-155">Répertorier tous les kits de développement logiciel (SDK) .NET Core x86 :</span><span class="sxs-lookup"><span data-stu-id="049dc-155">List all x86 .NET Core SDKs:</span></span>
 
   ```console
   dotnet-core-uninstall list --sdk --x86
   ```
 
-### <a name="step-2---do-a-dry-run"></a><span data-ttu-id="2634b-156">Étape 2 : effectuer une exécution à sec</span><span class="sxs-lookup"><span data-stu-id="2634b-156">Step 2 - Do a dry run</span></span>
+### <a name="step-2---do-a-dry-run"></a><span data-ttu-id="049dc-156">Étape 2 : effectuer une exécution à sec</span><span class="sxs-lookup"><span data-stu-id="049dc-156">Step 2 - Do a dry run</span></span>
 
-<span data-ttu-id="2634b-157">Les `dotnet-core-uninstall dry-run` commandes `dotnet-core-uninstall whatif` et affichent les kits de développement logiciel (SDK) .net Core et les runtimes qui seront supprimés en fonction des options fournies sans effectuer la désinstallation.</span><span class="sxs-lookup"><span data-stu-id="2634b-157">The `dotnet-core-uninstall dry-run` and `dotnet-core-uninstall whatif` commands display the .NET Core SDKs and runtimes that will be removed based on the options provided without performing the uninstall.</span></span> <span data-ttu-id="2634b-158">Ces commandes sont des synonymes.</span><span class="sxs-lookup"><span data-stu-id="2634b-158">These commands are synonyms.</span></span>
+<span data-ttu-id="049dc-157">Les `dotnet-core-uninstall dry-run` `dotnet-core-uninstall whatif` commandes et affichent les kits de développement logiciel (SDK) .net Core et les runtimes qui seront supprimés en fonction des options fournies sans effectuer la désinstallation.</span><span class="sxs-lookup"><span data-stu-id="049dc-157">The `dotnet-core-uninstall dry-run` and `dotnet-core-uninstall whatif` commands display the .NET Core SDKs and runtimes that will be removed based on the options provided without performing the uninstall.</span></span> <span data-ttu-id="049dc-158">Ces commandes sont des synonymes.</span><span class="sxs-lookup"><span data-stu-id="049dc-158">These commands are synonyms.</span></span>
 
-<span data-ttu-id="2634b-159">**dotnet-Core-désinstaller Dry-Run et DOTNET-Core-Uninstall WhatIf**</span><span class="sxs-lookup"><span data-stu-id="2634b-159">**dotnet-core-uninstall dry-run and dotnet-core-uninstall whatif**</span></span>
+<span data-ttu-id="049dc-159">**dotnet-Core-désinstaller Dry-Run et DOTNET-Core-Uninstall WhatIf**</span><span class="sxs-lookup"><span data-stu-id="049dc-159">**dotnet-core-uninstall dry-run and dotnet-core-uninstall whatif**</span></span>
 
-#### <a name="synopsis"></a><span data-ttu-id="2634b-160">Synopsis</span><span class="sxs-lookup"><span data-stu-id="2634b-160">Synopsis</span></span>
+#### <a name="synopsis"></a><span data-ttu-id="049dc-160">Synopsis</span><span class="sxs-lookup"><span data-stu-id="049dc-160">Synopsis</span></span>
 
 ```console
 dotnet-core-uninstall dry-run [options] [<VERSION>...]
@@ -138,390 +138,390 @@ dotnet-core-uninstall dry-run [options] [<VERSION>...]
 dotnet-core-uninstall whatif [options] [<VERSION>...]
 ```
 
-#### <a name="arguments"></a><span data-ttu-id="2634b-161">Arguments</span><span class="sxs-lookup"><span data-stu-id="2634b-161">Arguments</span></span>
+#### <a name="arguments"></a><span data-ttu-id="049dc-161">Arguments</span><span class="sxs-lookup"><span data-stu-id="049dc-161">Arguments</span></span>
 
 * **`VERSION`**
 
-  <span data-ttu-id="2634b-162">Version spécifiée à désinstaller.</span><span class="sxs-lookup"><span data-stu-id="2634b-162">The specified version to uninstall.</span></span> <span data-ttu-id="2634b-163">Vous pouvez répertorier plusieurs versions l’une après l’autre, séparées par des espaces.</span><span class="sxs-lookup"><span data-stu-id="2634b-163">You may list several versions one after the other, separated by spaces.</span></span> <span data-ttu-id="2634b-164">Les fichiers réponse sont également pris en charge.</span><span class="sxs-lookup"><span data-stu-id="2634b-164">Response files are also supported.</span></span>
+  <span data-ttu-id="049dc-162">Version spécifiée à désinstaller.</span><span class="sxs-lookup"><span data-stu-id="049dc-162">The specified version to uninstall.</span></span> <span data-ttu-id="049dc-163">Vous pouvez répertorier plusieurs versions l’une après l’autre, séparées par des espaces.</span><span class="sxs-lookup"><span data-stu-id="049dc-163">You may list several versions one after the other, separated by spaces.</span></span> <span data-ttu-id="049dc-164">Les fichiers réponse sont également pris en charge.</span><span class="sxs-lookup"><span data-stu-id="049dc-164">Response files are also supported.</span></span>
 
   > [!TIP]
-  > <span data-ttu-id="2634b-165">Les fichiers réponse sont une alternative au placement de toutes les versions sur la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="2634b-165">Response files are an alternative to placing all the versions on the command line.</span></span>
-  > <span data-ttu-id="2634b-166">Il s’agit de fichiers texte, généralement \*avec une extension. rsp, et chaque version est indiquée sur une ligne distincte.</span><span class="sxs-lookup"><span data-stu-id="2634b-166">They're text files, typically with a \*.rsp extension, and each version is listed on a separate line.</span></span>
-  > <span data-ttu-id="2634b-167">Pour spécifier un fichier réponse pour l' `VERSION` argument, utilisez le \@ caractère immédiatement suivi du nom du fichier réponse.</span><span class="sxs-lookup"><span data-stu-id="2634b-167">To specify a response file for the `VERSION` argument, use the \@ character immediately followed by the response file name.</span></span>
+  > <span data-ttu-id="049dc-165">Les fichiers réponse sont une alternative au placement de toutes les versions sur la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="049dc-165">Response files are an alternative to placing all the versions on the command line.</span></span>
+  > <span data-ttu-id="049dc-166">Il s’agit de fichiers texte, généralement avec une \* extension. rsp, et chaque version est indiquée sur une ligne distincte.</span><span class="sxs-lookup"><span data-stu-id="049dc-166">They're text files, typically with a \*.rsp extension, and each version is listed on a separate line.</span></span>
+  > <span data-ttu-id="049dc-167">Pour spécifier un fichier réponse pour l' `VERSION` argument, utilisez le \@ caractère immédiatement suivi du nom du fichier réponse.</span><span class="sxs-lookup"><span data-stu-id="049dc-167">To specify a response file for the `VERSION` argument, use the \@ character immediately followed by the response file name.</span></span>
 
-#### <a name="options"></a><span data-ttu-id="2634b-168">Options</span><span class="sxs-lookup"><span data-stu-id="2634b-168">Options</span></span>
+#### <a name="options"></a><span data-ttu-id="049dc-168">Options</span><span class="sxs-lookup"><span data-stu-id="049dc-168">Options</span></span>
 
-## <a name="windows"></a>[<span data-ttu-id="2634b-169">Windows</span><span class="sxs-lookup"><span data-stu-id="2634b-169">Windows</span></span>](#tab/windows)
+## <a name="windows"></a>[<span data-ttu-id="049dc-169">Windows</span><span class="sxs-lookup"><span data-stu-id="049dc-169">Windows</span></span>](#tab/windows)
 
 * **`--all`**
 
-  <span data-ttu-id="2634b-170">Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.</span><span class="sxs-lookup"><span data-stu-id="2634b-170">Removes all .NET Core SDKs and runtimes.</span></span>
+  <span data-ttu-id="049dc-170">Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.</span><span class="sxs-lookup"><span data-stu-id="049dc-170">Removes all .NET Core SDKs and runtimes.</span></span>
 
 * **`--all-below <VERSION>`**
 
-  <span data-ttu-id="2634b-171">Supprime uniquement les kits de développement logiciel (SDK) .NET Core et les runtimes dont la version est inférieure à la version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="2634b-171">Removes only the .NET Core SDKs and runtimes with a version smaller than the specified version.</span></span> <span data-ttu-id="2634b-172">La version spécifiée reste installée.</span><span class="sxs-lookup"><span data-stu-id="2634b-172">The specified version remains installed.</span></span>
+  <span data-ttu-id="049dc-171">Supprime uniquement les kits de développement logiciel (SDK) .NET Core et les runtimes dont la version est inférieure à la version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="049dc-171">Removes only the .NET Core SDKs and runtimes with a version smaller than the specified version.</span></span> <span data-ttu-id="049dc-172">La version spécifiée reste installée.</span><span class="sxs-lookup"><span data-stu-id="049dc-172">The specified version remains installed.</span></span>
 
 * **`--all-but <VERSIONS>`**
 
-  <span data-ttu-id="2634b-173">Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.</span><span class="sxs-lookup"><span data-stu-id="2634b-173">Removes all .NET Core SDKs and runtimes, except those versions specified.</span></span>
+  <span data-ttu-id="049dc-173">Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.</span><span class="sxs-lookup"><span data-stu-id="049dc-173">Removes all .NET Core SDKs and runtimes, except those versions specified.</span></span>
 
 * **`--all-but-latest`**
 
-  <span data-ttu-id="2634b-174">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception de la version la plus récente.</span><span class="sxs-lookup"><span data-stu-id="2634b-174">Removes .NET Core SDKs and runtimes, except the one highest version.</span></span>
+  <span data-ttu-id="049dc-174">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception de la version la plus récente.</span><span class="sxs-lookup"><span data-stu-id="049dc-174">Removes .NET Core SDKs and runtimes, except the one highest version.</span></span>
 
 * **`--all-lower-patches`**
 
-  <span data-ttu-id="2634b-175">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes remplacés par des correctifs plus élevés.</span><span class="sxs-lookup"><span data-stu-id="2634b-175">Removes .NET Core SDKs and runtimes superseded by higher patches.</span></span> <span data-ttu-id="2634b-176">Cette option protège global. JSON.</span><span class="sxs-lookup"><span data-stu-id="2634b-176">This option protects global.json.</span></span>
+  <span data-ttu-id="049dc-175">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes remplacés par des correctifs plus élevés.</span><span class="sxs-lookup"><span data-stu-id="049dc-175">Removes .NET Core SDKs and runtimes superseded by higher patches.</span></span> <span data-ttu-id="049dc-176">Cette option protège global. JSON.</span><span class="sxs-lookup"><span data-stu-id="049dc-176">This option protects global.json.</span></span>
 
 * **`--all-previews`**
 
-  <span data-ttu-id="2634b-177">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes marqués en tant qu’aperçus.</span><span class="sxs-lookup"><span data-stu-id="2634b-177">Removes .NET Core SDKs and runtimes marked as previews.</span></span>
+  <span data-ttu-id="049dc-177">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes marqués en tant qu’aperçus.</span><span class="sxs-lookup"><span data-stu-id="049dc-177">Removes .NET Core SDKs and runtimes marked as previews.</span></span>
 
 * **`--all-previews-but-latest`**
 
-  <span data-ttu-id="2634b-178">Supprime les kits de développement logiciel (SDK) et runtimes .NET Core marqués comme préversions, à l’exception de la version préliminaire la plus élevée.</span><span class="sxs-lookup"><span data-stu-id="2634b-178">Removes .NET Core SDKs and runtimes marked as previews except the one highest preview.</span></span>
+  <span data-ttu-id="049dc-178">Supprime les kits de développement logiciel (SDK) et runtimes .NET Core marqués comme préversions, à l’exception de la version préliminaire la plus élevée.</span><span class="sxs-lookup"><span data-stu-id="049dc-178">Removes .NET Core SDKs and runtimes marked as previews except the one highest preview.</span></span>
 
 * **`--aspnet-runtime`**
 
-  <span data-ttu-id="2634b-179">Supprime ASP.NET Core runtimes uniquement.</span><span class="sxs-lookup"><span data-stu-id="2634b-179">Removes ASP.NET Core runtimes only.</span></span>
+  <span data-ttu-id="049dc-179">Supprime ASP.NET Core runtimes uniquement.</span><span class="sxs-lookup"><span data-stu-id="049dc-179">Removes ASP.NET Core runtimes only.</span></span>
 
 * **`--hosting-bundle`**
 
-  <span data-ttu-id="2634b-180">Supprime uniquement le Runtime .NET Core et les regroupements d’hébergement.</span><span class="sxs-lookup"><span data-stu-id="2634b-180">Removes .NET Core runtime and hosting bundles only.</span></span>
+  <span data-ttu-id="049dc-180">Supprime uniquement le Runtime .NET Core et les regroupements d’hébergement.</span><span class="sxs-lookup"><span data-stu-id="049dc-180">Removes .NET Core runtime and hosting bundles only.</span></span>
 
 * **`--major-minor <MAJOR_MINOR>`**
 
-  <span data-ttu-id="2634b-181">Supprime les kits de développement logiciel (SDK) .NET Core `major.minor` et les runtimes qui correspondent à la version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="2634b-181">Removes .NET Core SDKs and runtimes that match the specified `major.minor` version.</span></span>
+  <span data-ttu-id="049dc-181">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes qui correspondent à la `major.minor` version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="049dc-181">Removes .NET Core SDKs and runtimes that match the specified `major.minor` version.</span></span>
 
 * **`--runtime`**
 
-  <span data-ttu-id="2634b-182">Supprime uniquement les runtimes .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2634b-182">Removes .NET Core runtimes only.</span></span>
+  <span data-ttu-id="049dc-182">Supprime uniquement les runtimes .NET Core.</span><span class="sxs-lookup"><span data-stu-id="049dc-182">Removes .NET Core runtimes only.</span></span>
 
 * **`--sdk`**
 
-  <span data-ttu-id="2634b-183">Supprime uniquement les kits de développement logiciel (SDK) .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2634b-183">Removes .NET Core SDKs only.</span></span>
+  <span data-ttu-id="049dc-183">Supprime uniquement les kits de développement logiciel (SDK) .NET Core.</span><span class="sxs-lookup"><span data-stu-id="049dc-183">Removes .NET Core SDKs only.</span></span>
 
 * **`-v, --verbosity <LEVEL>`**
 
-  <span data-ttu-id="2634b-184">Définit le niveau de détail.</span><span class="sxs-lookup"><span data-stu-id="2634b-184">Sets the verbosity level.</span></span> <span data-ttu-id="2634b-185">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="2634b-185">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="2634b-186">La valeur par défaut est `normal`.</span><span class="sxs-lookup"><span data-stu-id="2634b-186">The default value is `normal`.</span></span>
+  <span data-ttu-id="049dc-184">Définit le niveau de détail.</span><span class="sxs-lookup"><span data-stu-id="049dc-184">Sets the verbosity level.</span></span> <span data-ttu-id="049dc-185">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="049dc-185">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="049dc-186">La valeur par défaut est `normal`.</span><span class="sxs-lookup"><span data-stu-id="049dc-186">The default value is `normal`.</span></span>
 
 * **`--x64`**
 
-  <span data-ttu-id="2634b-187">Doit être utilisé avec `--sdk`, `--runtime`et `--aspnet-runtime` pour supprimer les runtimes ou les kits de développement logiciel (SDK) x64.</span><span class="sxs-lookup"><span data-stu-id="2634b-187">Must be used with `--sdk`, `--runtime`, and `--aspnet-runtime` to remove x64 SDKs or runtimes.</span></span>
+  <span data-ttu-id="049dc-187">Doit être utilisé avec `--sdk` , `--runtime` et `--aspnet-runtime` pour supprimer les runtimes ou les kits de développement logiciel (SDK) x64.</span><span class="sxs-lookup"><span data-stu-id="049dc-187">Must be used with `--sdk`, `--runtime`, and `--aspnet-runtime` to remove x64 SDKs or runtimes.</span></span>
 
 * **`--x86`**
 
-  <span data-ttu-id="2634b-188">Doit être utilisé avec `--sdk`, `--runtime`et pour `--aspnet-runtime` supprimer les kits de développement logiciel (SDK) ou runtimes x86.</span><span class="sxs-lookup"><span data-stu-id="2634b-188">Must be used with `--sdk`, `--runtime`, and `--aspnet-runtime` to remove x86 SDKs or runtimes.</span></span>
+  <span data-ttu-id="049dc-188">Doit être utilisé avec `--sdk` , `--runtime` et `--aspnet-runtime` pour supprimer les kits de développement logiciel (SDK) ou runtimes x86.</span><span class="sxs-lookup"><span data-stu-id="049dc-188">Must be used with `--sdk`, `--runtime`, and `--aspnet-runtime` to remove x86 SDKs or runtimes.</span></span>
 
-* <span data-ttu-id="2634b-189">**`--force`** Force la suppression des versions qui peuvent être utilisées par Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="2634b-189">**`--force`** Forces removal of versions that might be used by Visual Studio.</span></span>
+* <span data-ttu-id="049dc-189">**`--force`** Force la suppression des versions qui peuvent être utilisées par Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="049dc-189">**`--force`** Forces removal of versions that might be used by Visual Studio.</span></span>
 
-<span data-ttu-id="2634b-190">Remarques :</span><span class="sxs-lookup"><span data-stu-id="2634b-190">Notes:</span></span>
+<span data-ttu-id="049dc-190">Remarques :</span><span class="sxs-lookup"><span data-stu-id="049dc-190">Notes:</span></span>
 
-1. <span data-ttu-id="2634b-191">Exactement l’un `--sdk`des `--runtime`, `--aspnet-runtime`, et `--hosting-bundle` est obligatoire.</span><span class="sxs-lookup"><span data-stu-id="2634b-191">Exactly one of `--sdk`, `--runtime`, `--aspnet-runtime`, and `--hosting-bundle` is required.</span></span>
-2. <span data-ttu-id="2634b-192">`--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`et `[<VERSION>...]` sont exclusifs.</span><span class="sxs-lookup"><span data-stu-id="2634b-192">`--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`, and `[<VERSION>...]` are exclusive.</span></span>
-3. <span data-ttu-id="2634b-193">Si `--x64` ou `--x86` n’est pas spécifié, les paramètres x64 et x86 seront supprimés.</span><span class="sxs-lookup"><span data-stu-id="2634b-193">If `--x64` or `--x86` aren't specified, then both x64 and x86 will be removed.</span></span>
+1. <span data-ttu-id="049dc-191">Exactement l’un des `--sdk` ,, `--runtime` `--aspnet-runtime` et `--hosting-bundle` est obligatoire.</span><span class="sxs-lookup"><span data-stu-id="049dc-191">Exactly one of `--sdk`, `--runtime`, `--aspnet-runtime`, and `--hosting-bundle` is required.</span></span>
+2. <span data-ttu-id="049dc-192">`--all`, `--all-below` , `--all-but` , `--all-but-latest` , `--all-lower-patches` , `--all-previews` , `--all-previews-but-latest` , `--major-minor` et `[<VERSION>...]` sont exclusifs.</span><span class="sxs-lookup"><span data-stu-id="049dc-192">`--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`, and `[<VERSION>...]` are exclusive.</span></span>
+3. <span data-ttu-id="049dc-193">Si `--x64` ou `--x86` n’est pas spécifié, les paramètres x64 et x86 seront supprimés.</span><span class="sxs-lookup"><span data-stu-id="049dc-193">If `--x64` or `--x86` aren't specified, then both x64 and x86 will be removed.</span></span>
 
-## <a name="macos"></a>[<span data-ttu-id="2634b-194">MacOS</span><span class="sxs-lookup"><span data-stu-id="2634b-194">macOS</span></span>](#tab/macos)
+## <a name="macos"></a>[<span data-ttu-id="049dc-194">MacOS</span><span class="sxs-lookup"><span data-stu-id="049dc-194">macOS</span></span>](#tab/macos)
 
 * **`--all`**
 
-  <span data-ttu-id="2634b-195">Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.</span><span class="sxs-lookup"><span data-stu-id="2634b-195">Removes all .NET Core SDKs and runtimes.</span></span>
+  <span data-ttu-id="049dc-195">Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.</span><span class="sxs-lookup"><span data-stu-id="049dc-195">Removes all .NET Core SDKs and runtimes.</span></span>
 
 * **`--all-below <VERSION>`**
 
-  <span data-ttu-id="2634b-196">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes inférieurs à la version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="2634b-196">Removes .NET Core SDKs and runtimes below the specified version.</span></span> <span data-ttu-id="2634b-197">La version spécifiée est conservée.</span><span class="sxs-lookup"><span data-stu-id="2634b-197">The specified version will remain.</span></span>
+  <span data-ttu-id="049dc-196">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes inférieurs à la version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="049dc-196">Removes .NET Core SDKs and runtimes below the specified version.</span></span> <span data-ttu-id="049dc-197">La version spécifiée est conservée.</span><span class="sxs-lookup"><span data-stu-id="049dc-197">The specified version will remain.</span></span>
 
 * **`--all-but <VERSIONS>`**
 
-  <span data-ttu-id="2634b-198">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.</span><span class="sxs-lookup"><span data-stu-id="2634b-198">Removes .NET Core SDKs and runtimes, except those versions specified.</span></span>
+  <span data-ttu-id="049dc-198">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.</span><span class="sxs-lookup"><span data-stu-id="049dc-198">Removes .NET Core SDKs and runtimes, except those versions specified.</span></span>
 
 * **`--all-but-latest`**
 
-  <span data-ttu-id="2634b-199">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception de la version la plus récente.</span><span class="sxs-lookup"><span data-stu-id="2634b-199">Removes .NET Core SDKs and runtimes, except the one highest version.</span></span>
+  <span data-ttu-id="049dc-199">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception de la version la plus récente.</span><span class="sxs-lookup"><span data-stu-id="049dc-199">Removes .NET Core SDKs and runtimes, except the one highest version.</span></span>
 
 * **`--all-lower-patches`**
 
-  <span data-ttu-id="2634b-200">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes remplacés par des correctifs plus élevés.</span><span class="sxs-lookup"><span data-stu-id="2634b-200">Removes .NET Core SDKs and runtimes superseded by higher patches.</span></span> <span data-ttu-id="2634b-201">Cette option protège global. JSON.</span><span class="sxs-lookup"><span data-stu-id="2634b-201">This option protects global.json.</span></span>
+  <span data-ttu-id="049dc-200">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes remplacés par des correctifs plus élevés.</span><span class="sxs-lookup"><span data-stu-id="049dc-200">Removes .NET Core SDKs and runtimes superseded by higher patches.</span></span> <span data-ttu-id="049dc-201">Cette option protège global. JSON.</span><span class="sxs-lookup"><span data-stu-id="049dc-201">This option protects global.json.</span></span>
 
 * **`--all-previews`**
 
-  <span data-ttu-id="2634b-202">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes marqués en tant qu’aperçus.</span><span class="sxs-lookup"><span data-stu-id="2634b-202">Removes .NET Core SDKs and runtimes marked as previews.</span></span>
+  <span data-ttu-id="049dc-202">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes marqués en tant qu’aperçus.</span><span class="sxs-lookup"><span data-stu-id="049dc-202">Removes .NET Core SDKs and runtimes marked as previews.</span></span>
 
 * **`--all-previews-but-latest`**
 
-  <span data-ttu-id="2634b-203">Supprime les kits de développement logiciel (SDK) et runtimes .NET Core marqués comme préversions, à l’exception de la version préliminaire la plus élevée.</span><span class="sxs-lookup"><span data-stu-id="2634b-203">Removes .NET Core SDKs and runtimes marked as previews except the one highest preview.</span></span>
+  <span data-ttu-id="049dc-203">Supprime les kits de développement logiciel (SDK) et runtimes .NET Core marqués comme préversions, à l’exception de la version préliminaire la plus élevée.</span><span class="sxs-lookup"><span data-stu-id="049dc-203">Removes .NET Core SDKs and runtimes marked as previews except the one highest preview.</span></span>
 
 * **`--major-minor <MAJOR_MINOR>`**
 
-  <span data-ttu-id="2634b-204">Supprime les kits de développement logiciel (SDK) .NET Core `major.minor` et les runtimes qui correspondent à la version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="2634b-204">Removes .NET Core SDKs and runtimes that match the specified `major.minor` version.</span></span>
+  <span data-ttu-id="049dc-204">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes qui correspondent à la `major.minor` version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="049dc-204">Removes .NET Core SDKs and runtimes that match the specified `major.minor` version.</span></span>
 
 * **`--runtime`**
 
-  <span data-ttu-id="2634b-205">Supprime uniquement les runtimes .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2634b-205">Removes .NET Core runtimes only.</span></span>
+  <span data-ttu-id="049dc-205">Supprime uniquement les runtimes .NET Core.</span><span class="sxs-lookup"><span data-stu-id="049dc-205">Removes .NET Core runtimes only.</span></span>
 
 * **`--sdk`**
 
-  <span data-ttu-id="2634b-206">Supprime uniquement les kits de développement logiciel (SDK) .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2634b-206">Removes .NET Core SDKs only.</span></span>
+  <span data-ttu-id="049dc-206">Supprime uniquement les kits de développement logiciel (SDK) .NET Core.</span><span class="sxs-lookup"><span data-stu-id="049dc-206">Removes .NET Core SDKs only.</span></span>
 
 * **`-v, --verbosity <LEVEL>`**
 
-  <span data-ttu-id="2634b-207">Définit le niveau de détail.</span><span class="sxs-lookup"><span data-stu-id="2634b-207">Sets the verbosity level.</span></span> <span data-ttu-id="2634b-208">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="2634b-208">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="2634b-209">La valeur par défaut est `normal`.</span><span class="sxs-lookup"><span data-stu-id="2634b-209">The default value is `normal`.</span></span>
+  <span data-ttu-id="049dc-207">Définit le niveau de détail.</span><span class="sxs-lookup"><span data-stu-id="049dc-207">Sets the verbosity level.</span></span> <span data-ttu-id="049dc-208">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="049dc-208">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="049dc-209">La valeur par défaut est `normal`.</span><span class="sxs-lookup"><span data-stu-id="049dc-209">The default value is `normal`.</span></span>
   
-* <span data-ttu-id="2634b-210">**`--force`** Force la suppression des versions qui peuvent être utilisées par Visual Studio ou les kits de développement logiciel (SDK).</span><span class="sxs-lookup"><span data-stu-id="2634b-210">**`--force`** Forces removal of versions that might be used by Visual Studio or SDKs.</span></span>
+* <span data-ttu-id="049dc-210">**`--force`** Force la suppression des versions qui peuvent être utilisées par Visual Studio ou les kits de développement logiciel (SDK).</span><span class="sxs-lookup"><span data-stu-id="049dc-210">**`--force`** Forces removal of versions that might be used by Visual Studio or SDKs.</span></span>
 
-<span data-ttu-id="2634b-211">Remarques :</span><span class="sxs-lookup"><span data-stu-id="2634b-211">Notes:</span></span>
+<span data-ttu-id="049dc-211">Remarques :</span><span class="sxs-lookup"><span data-stu-id="049dc-211">Notes:</span></span>
 
-1. <span data-ttu-id="2634b-212">Une seule `--sdk` et `--runtime` unique est requise.</span><span class="sxs-lookup"><span data-stu-id="2634b-212">Exactly one of `--sdk` and `--runtime` is required.</span></span>
-2. <span data-ttu-id="2634b-213">`--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`et `[<VERSION>...]` sont exclusifs.</span><span class="sxs-lookup"><span data-stu-id="2634b-213">`--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`, and `[<VERSION>...]` are exclusive.</span></span>
+1. <span data-ttu-id="049dc-212">Une seule `--sdk` et unique `--runtime` est requise.</span><span class="sxs-lookup"><span data-stu-id="049dc-212">Exactly one of `--sdk` and `--runtime` is required.</span></span>
+2. <span data-ttu-id="049dc-213">`--all`, `--all-below` , `--all-but` , `--all-but-latest` , `--all-lower-patches` , `--all-previews` , `--all-previews-but-latest` , `--major-minor` et `[<VERSION>...]` sont exclusifs.</span><span class="sxs-lookup"><span data-stu-id="049dc-213">`--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`, and `[<VERSION>...]` are exclusive.</span></span>
 
 ---
 
-#### <a name="examples"></a><span data-ttu-id="2634b-214">Exemples</span><span class="sxs-lookup"><span data-stu-id="2634b-214">Examples</span></span>
+#### <a name="examples"></a><span data-ttu-id="049dc-214">Exemples</span><span class="sxs-lookup"><span data-stu-id="049dc-214">Examples</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="2634b-215">Par défaut, les kits de développement logiciel (SDK) .NET Core et les runtimes qui peuvent être requis par Visual `dotnet-core-uninstall dry-run` Studio ou d’autres SDK ne sont pas inclus dans la sortie.</span><span class="sxs-lookup"><span data-stu-id="2634b-215">By default, .NET Core SDKs and runtimes that may be required by Visual Studio or other SDKs are not included in `dotnet-core-uninstall dry-run` output.</span></span> <span data-ttu-id="2634b-216">Dans les exemples suivants, certains des kits de développement logiciel (SDK) et runtimes spécifiés peuvent ne pas être inclus dans la sortie, en fonction de l’état de l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="2634b-216">In the following examples, some of the specified SDKs and runtimes may not be included in the output, depending on the state of the machine.</span></span> <span data-ttu-id="2634b-217">Pour inclure tous les kits de développement logiciel (SDK) et runtimes, répertoriez-les explicitement comme arguments ou utilisez l' `--force` option.</span><span class="sxs-lookup"><span data-stu-id="2634b-217">To include all SDKs and runtimes, list them explicitly as arguments or use the `--force` option.</span></span>
+> <span data-ttu-id="049dc-215">Par défaut, les kits de développement logiciel (SDK) .NET Core et les runtimes qui peuvent être requis par Visual Studio ou d’autres SDK ne sont pas inclus dans la `dotnet-core-uninstall dry-run` sortie.</span><span class="sxs-lookup"><span data-stu-id="049dc-215">By default, .NET Core SDKs and runtimes that may be required by Visual Studio or other SDKs are not included in `dotnet-core-uninstall dry-run` output.</span></span> <span data-ttu-id="049dc-216">Dans les exemples suivants, certains des kits de développement logiciel (SDK) et runtimes spécifiés peuvent ne pas être inclus dans la sortie, en fonction de l’état de l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="049dc-216">In the following examples, some of the specified SDKs and runtimes may not be included in the output, depending on the state of the machine.</span></span> <span data-ttu-id="049dc-217">Pour inclure tous les kits de développement logiciel (SDK) et runtimes, répertoriez-les explicitement comme arguments ou utilisez l' `--force` option.</span><span class="sxs-lookup"><span data-stu-id="049dc-217">To include all SDKs and runtimes, list them explicitly as arguments or use the `--force` option.</span></span>
 
-* <span data-ttu-id="2634b-218">Exécution à sec de la suppression de tous les runtimes .NET Core qui ont été remplacés par des correctifs plus élevés :</span><span class="sxs-lookup"><span data-stu-id="2634b-218">Dry run of removing all .NET Core runtimes that have been superseded by higher patches:</span></span>
+* <span data-ttu-id="049dc-218">Exécution à sec de la suppression de tous les runtimes .NET Core qui ont été remplacés par des correctifs plus élevés :</span><span class="sxs-lookup"><span data-stu-id="049dc-218">Dry run of removing all .NET Core runtimes that have been superseded by higher patches:</span></span>
 
   ```console
   dotnet-core-uninstall dry-run --all-lower-patches --runtime
   ```
 
-* <span data-ttu-id="2634b-219">Exécution à sec de la suppression de tous les kits de `2.2.301`développement logiciel (SDK) .net Core sous la version :</span><span class="sxs-lookup"><span data-stu-id="2634b-219">Dry run of removing all .NET Core SDKs below the version `2.2.301`:</span></span>
+* <span data-ttu-id="049dc-219">Exécution à sec de la suppression de tous les kits de développement logiciel (SDK) .NET Core sous la version `2.2.301` :</span><span class="sxs-lookup"><span data-stu-id="049dc-219">Dry run of removing all .NET Core SDKs below the version `2.2.301`:</span></span>
 
   ```console
   dotnet-core-uninstall whatif --all-below 2.2.301 --sdk
   ```
 
-### <a name="step-3---uninstall-net-core-sdks-and-runtimes"></a><span data-ttu-id="2634b-220">Étape 3 : désinstaller les kits de développement logiciel (SDK) et runtimes .NET Core</span><span class="sxs-lookup"><span data-stu-id="2634b-220">Step 3 - Uninstall .NET Core SDKs and Runtimes</span></span>
+### <a name="step-3---uninstall-net-core-sdks-and-runtimes"></a><span data-ttu-id="049dc-220">Étape 3 : désinstaller les kits de développement logiciel (SDK) et runtimes .NET Core</span><span class="sxs-lookup"><span data-stu-id="049dc-220">Step 3 - Uninstall .NET Core SDKs and Runtimes</span></span>
 
-<span data-ttu-id="2634b-221">`dotnet-core-uninstall remove`désinstalle les kits de développement logiciel (SDK) .NET Core et les runtimes spécifiés par une collection d’options.</span><span class="sxs-lookup"><span data-stu-id="2634b-221">`dotnet-core-uninstall remove` uninstalls .NET Core SDKs and Runtimes that are specified by a collection of options.</span></span> <span data-ttu-id="2634b-222">L’outil ne peut pas être utilisé pour désinstaller des kits de développement logiciel (SDK) et des runtimes avec la version 5,0 ou ultérieure.</span><span class="sxs-lookup"><span data-stu-id="2634b-222">The tool can't be used to uninstall SDKs and Runtimes with version 5.0 or above.</span></span>
+<span data-ttu-id="049dc-221">`dotnet-core-uninstall remove`désinstalle les kits de développement logiciel (SDK) .NET Core et les runtimes spécifiés par une collection d’options.</span><span class="sxs-lookup"><span data-stu-id="049dc-221">`dotnet-core-uninstall remove` uninstalls .NET Core SDKs and Runtimes that are specified by a collection of options.</span></span> <span data-ttu-id="049dc-222">L’outil ne peut pas être utilisé pour désinstaller des kits de développement logiciel (SDK) et des runtimes avec la version 5,0 ou ultérieure.</span><span class="sxs-lookup"><span data-stu-id="049dc-222">The tool can't be used to uninstall SDKs and Runtimes with version 5.0 or above.</span></span>
 
-<span data-ttu-id="2634b-223">Étant donné que cet outil a un comportement destructif, il est **fortement** recommandé d’effectuer une exécution à sec avant d’exécuter la commande Remove.</span><span class="sxs-lookup"><span data-stu-id="2634b-223">Since this tool has a destructive behavior, it's **highly** recommended that you do a dry run before running the remove command.</span></span> <span data-ttu-id="2634b-224">La série à sec vous montrera les kits de développement logiciel (SDK) .NET Core et les runtimes `remove` qui seront supprimés lorsque vous utiliserez la commande.</span><span class="sxs-lookup"><span data-stu-id="2634b-224">The dry run will show you what .NET Core SDKs and runtimes will be removed when you use the `remove` command.</span></span> <span data-ttu-id="2634b-225">Reportez-vous à [la rubrique dois-je supprimer une version ?](../install/remove-runtime-sdk-versions.md#should-i-remove-a-version) pour savoir quels SDK et runtimes peuvent être supprimés en toute sécurité.</span><span class="sxs-lookup"><span data-stu-id="2634b-225">Refer to [Should I remove a version?](../install/remove-runtime-sdk-versions.md#should-i-remove-a-version) to learn which SDKs and runtimes are safe to remove.</span></span>
+<span data-ttu-id="049dc-223">Étant donné que cet outil a un comportement destructif, il est **fortement** recommandé d’effectuer une exécution à sec avant d’exécuter la commande Remove.</span><span class="sxs-lookup"><span data-stu-id="049dc-223">Since this tool has a destructive behavior, it's **highly** recommended that you do a dry run before running the remove command.</span></span> <span data-ttu-id="049dc-224">La série à sec vous montrera les kits de développement logiciel (SDK) .NET Core et les runtimes qui seront supprimés lorsque vous utiliserez la `remove` commande.</span><span class="sxs-lookup"><span data-stu-id="049dc-224">The dry run will show you what .NET Core SDKs and runtimes will be removed when you use the `remove` command.</span></span> <span data-ttu-id="049dc-225">Reportez-vous à [la rubrique dois-je supprimer une version ?](../install/remove-runtime-sdk-versions.md#should-i-remove-a-version) pour savoir quels SDK et runtimes peuvent être supprimés en toute sécurité.</span><span class="sxs-lookup"><span data-stu-id="049dc-225">Refer to [Should I remove a version?](../install/remove-runtime-sdk-versions.md#should-i-remove-a-version) to learn which SDKs and runtimes are safe to remove.</span></span>
 
 > [!CAUTION]
-> <span data-ttu-id="2634b-226">Rappelez-vous des avertissements suivants :</span><span class="sxs-lookup"><span data-stu-id="2634b-226">Keep in mind the following caveats:</span></span>
+> <span data-ttu-id="049dc-226">Rappelez-vous des avertissements suivants :</span><span class="sxs-lookup"><span data-stu-id="049dc-226">Keep in mind the following caveats:</span></span>
 >
->- <span data-ttu-id="2634b-227">Cet outil peut désinstaller les versions des kit SDK .NET Core requises par `global.json` les fichiers sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="2634b-227">This tool can uninstall versions of the .NET Core SDK that are required by `global.json` files on your machine.</span></span> <span data-ttu-id="2634b-228">Vous pouvez réinstaller les kits de développement logiciel (SDK) .NET Core à partir de la page [Télécharger .net Core](https://dotnet.microsoft.com/download/dotnet-core) .</span><span class="sxs-lookup"><span data-stu-id="2634b-228">You can reinstall .NET Core SDKs from the [Download .NET Core](https://dotnet.microsoft.com/download/dotnet-core) page.</span></span>
->- <span data-ttu-id="2634b-229">Cet outil peut désinstaller des versions du Runtime .NET Core qui sont requises par les applications dépendantes du Framework sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="2634b-229">This tool can uninstall versions of the .NET Core runtime that are required by framework dependent applications on your machine.</span></span> <span data-ttu-id="2634b-230">Vous pouvez réinstaller les runtimes .NET Core à partir de la page [Télécharger .net Core](https://dotnet.microsoft.com/download/dotnet-core) .</span><span class="sxs-lookup"><span data-stu-id="2634b-230">You can reinstall .NET Core runtimes from the [Download .NET Core](https://dotnet.microsoft.com/download/dotnet-core) page.</span></span>
->- <span data-ttu-id="2634b-231">Cet outil peut désinstaller des versions du kit SDK .NET Core et du Runtime sur lesquelles s’appuie Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="2634b-231">This tool can uninstall versions of the .NET Core SDK and runtime that Visual Studio relies on.</span></span> <span data-ttu-id="2634b-232">Si vous interrompez votre installation de Visual Studio, exécutez « réparer » dans le programme d’installation de Visual Studio pour revenir à un état de travail.</span><span class="sxs-lookup"><span data-stu-id="2634b-232">If you break your Visual Studio installation, run "Repair" in the Visual Studio installer to get back to a working state.</span></span>
+>- <span data-ttu-id="049dc-227">Cet outil peut désinstaller les versions des kit SDK .NET Core requises par les `global.json` fichiers sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="049dc-227">This tool can uninstall versions of the .NET Core SDK that are required by `global.json` files on your machine.</span></span> <span data-ttu-id="049dc-228">Vous pouvez réinstaller les kits de développement logiciel (SDK) .NET Core à partir de la page [Télécharger .net Core](https://dotnet.microsoft.com/download/dotnet-core) .</span><span class="sxs-lookup"><span data-stu-id="049dc-228">You can reinstall .NET Core SDKs from the [Download .NET Core](https://dotnet.microsoft.com/download/dotnet-core) page.</span></span>
+>- <span data-ttu-id="049dc-229">Cet outil peut désinstaller des versions du Runtime .NET Core qui sont requises par les applications dépendantes du Framework sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="049dc-229">This tool can uninstall versions of the .NET Core runtime that are required by framework dependent applications on your machine.</span></span> <span data-ttu-id="049dc-230">Vous pouvez réinstaller les runtimes .NET Core à partir de la page [Télécharger .net Core](https://dotnet.microsoft.com/download/dotnet-core) .</span><span class="sxs-lookup"><span data-stu-id="049dc-230">You can reinstall .NET Core runtimes from the [Download .NET Core](https://dotnet.microsoft.com/download/dotnet-core) page.</span></span>
+>- <span data-ttu-id="049dc-231">Cet outil peut désinstaller des versions du kit SDK .NET Core et du Runtime sur lesquelles s’appuie Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="049dc-231">This tool can uninstall versions of the .NET Core SDK and runtime that Visual Studio relies on.</span></span> <span data-ttu-id="049dc-232">Si vous interrompez votre installation de Visual Studio, exécutez « réparer » dans le programme d’installation de Visual Studio pour revenir à un état de travail.</span><span class="sxs-lookup"><span data-stu-id="049dc-232">If you break your Visual Studio installation, run "Repair" in the Visual Studio installer to get back to a working state.</span></span>
 
-<span data-ttu-id="2634b-233">Par défaut, toutes les commandes conservent les kits de développement logiciel (SDK) .NET Core et les runtimes qui peuvent être requis par Visual Studio ou d’autres kits de développement logiciel (SDK).</span><span class="sxs-lookup"><span data-stu-id="2634b-233">By default, all commands keep the .NET Core SDKs and runtimes that may be required by Visual Studio or other SDKs.</span></span> <span data-ttu-id="2634b-234">Ces kits de développement logiciel (SDK) et runtimes peuvent être désinstallés en les répertoriant `--force` explicitement comme arguments ou à l’aide de l’option.</span><span class="sxs-lookup"><span data-stu-id="2634b-234">These SDKs and runtimes can be uninstalled by listing them explicitly as arguments or by using the `--force` option.</span></span>
+<span data-ttu-id="049dc-233">Par défaut, toutes les commandes conservent les kits de développement logiciel (SDK) .NET Core et les runtimes qui peuvent être requis par Visual Studio ou d’autres kits de développement logiciel (SDK).</span><span class="sxs-lookup"><span data-stu-id="049dc-233">By default, all commands keep the .NET Core SDKs and runtimes that may be required by Visual Studio or other SDKs.</span></span> <span data-ttu-id="049dc-234">Ces kits de développement logiciel (SDK) et runtimes peuvent être désinstallés en les répertoriant explicitement comme arguments ou à l’aide de l' `--force` option.</span><span class="sxs-lookup"><span data-stu-id="049dc-234">These SDKs and runtimes can be uninstalled by listing them explicitly as arguments or by using the `--force` option.</span></span>
 
-<span data-ttu-id="2634b-235">L’outil nécessite une élévation pour désinstaller les kits de développement logiciel (SDK) .NET Core et les runtimes.</span><span class="sxs-lookup"><span data-stu-id="2634b-235">The tool requires elevation to uninstall .NET Core SDKs and runtimes.</span></span> <span data-ttu-id="2634b-236">Exécutez l’outil dans une invite de commandes d’administrateur sur Windows `sudo` et avec sur MacOS.</span><span class="sxs-lookup"><span data-stu-id="2634b-236">Run the tool in an Administrator command prompt on Windows and with `sudo` on macOS.</span></span> <span data-ttu-id="2634b-237">Les `dry-run` commandes `whatif` et ne nécessitent pas d’élévation.</span><span class="sxs-lookup"><span data-stu-id="2634b-237">The `dry-run` and `whatif` commands don't require elevation.</span></span>
+<span data-ttu-id="049dc-235">L’outil nécessite une élévation pour désinstaller les kits de développement logiciel (SDK) .NET Core et les runtimes.</span><span class="sxs-lookup"><span data-stu-id="049dc-235">The tool requires elevation to uninstall .NET Core SDKs and runtimes.</span></span> <span data-ttu-id="049dc-236">Exécutez l’outil dans une invite de commandes d’administrateur sur Windows et avec `sudo` sur MacOS.</span><span class="sxs-lookup"><span data-stu-id="049dc-236">Run the tool in an Administrator command prompt on Windows and with `sudo` on macOS.</span></span> <span data-ttu-id="049dc-237">Les `dry-run` `whatif` commandes et ne nécessitent pas d’élévation.</span><span class="sxs-lookup"><span data-stu-id="049dc-237">The `dry-run` and `whatif` commands don't require elevation.</span></span>
 
-<span data-ttu-id="2634b-238">**dotnet-Core-désinstaller supprimer**</span><span class="sxs-lookup"><span data-stu-id="2634b-238">**dotnet-core-uninstall remove**</span></span>
+<span data-ttu-id="049dc-238">**dotnet-Core-désinstaller supprimer**</span><span class="sxs-lookup"><span data-stu-id="049dc-238">**dotnet-core-uninstall remove**</span></span>
 
-#### <a name="synopsis"></a><span data-ttu-id="2634b-239">Synopsis</span><span class="sxs-lookup"><span data-stu-id="2634b-239">Synopsis</span></span>
+#### <a name="synopsis"></a><span data-ttu-id="049dc-239">Synopsis</span><span class="sxs-lookup"><span data-stu-id="049dc-239">Synopsis</span></span>
 
 ```console
 dotnet-core-uninstall remove [options] [<VERSION>...]
 ```
 
-#### <a name="arguments"></a><span data-ttu-id="2634b-240">Arguments</span><span class="sxs-lookup"><span data-stu-id="2634b-240">Arguments</span></span>
+#### <a name="arguments"></a><span data-ttu-id="049dc-240">Arguments</span><span class="sxs-lookup"><span data-stu-id="049dc-240">Arguments</span></span>
 
 * **`VERSION`**
 
-  <span data-ttu-id="2634b-241">Version spécifiée à désinstaller.</span><span class="sxs-lookup"><span data-stu-id="2634b-241">The specified version to uninstall.</span></span> <span data-ttu-id="2634b-242">Vous pouvez répertorier plusieurs versions l’une après l’autre, séparées par des espaces.</span><span class="sxs-lookup"><span data-stu-id="2634b-242">You may list several versions one after the other, separated by spaces.</span></span> <span data-ttu-id="2634b-243">Les fichiers réponse sont également pris en charge.</span><span class="sxs-lookup"><span data-stu-id="2634b-243">Response files are also supported.</span></span>
+  <span data-ttu-id="049dc-241">Version spécifiée à désinstaller.</span><span class="sxs-lookup"><span data-stu-id="049dc-241">The specified version to uninstall.</span></span> <span data-ttu-id="049dc-242">Vous pouvez répertorier plusieurs versions l’une après l’autre, séparées par des espaces.</span><span class="sxs-lookup"><span data-stu-id="049dc-242">You may list several versions one after the other, separated by spaces.</span></span> <span data-ttu-id="049dc-243">Les fichiers réponse sont également pris en charge.</span><span class="sxs-lookup"><span data-stu-id="049dc-243">Response files are also supported.</span></span>
 
   > [!TIP]
-  > <span data-ttu-id="2634b-244">Les fichiers réponse sont une alternative au placement de toutes les versions sur la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="2634b-244">Response files are an alternative to placing all the versions on the command line.</span></span>
-  > <span data-ttu-id="2634b-245">Il s’agit de fichiers texte, généralement \*avec une extension. rsp, et chaque version est indiquée sur une ligne distincte.</span><span class="sxs-lookup"><span data-stu-id="2634b-245">They're text files, typically with a \*.rsp extension, and each version is listed on a separate line.</span></span>
-  > <span data-ttu-id="2634b-246">Pour spécifier un fichier réponse pour l' `VERSION` argument, utilisez le \@ caractère immédiatement suivi du nom du fichier réponse.</span><span class="sxs-lookup"><span data-stu-id="2634b-246">To specify a response file for the `VERSION` argument, use the \@ character immediately followed by the response file name.</span></span>
+  > <span data-ttu-id="049dc-244">Les fichiers réponse sont une alternative au placement de toutes les versions sur la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="049dc-244">Response files are an alternative to placing all the versions on the command line.</span></span>
+  > <span data-ttu-id="049dc-245">Il s’agit de fichiers texte, généralement avec une \* extension. rsp, et chaque version est indiquée sur une ligne distincte.</span><span class="sxs-lookup"><span data-stu-id="049dc-245">They're text files, typically with a \*.rsp extension, and each version is listed on a separate line.</span></span>
+  > <span data-ttu-id="049dc-246">Pour spécifier un fichier réponse pour l' `VERSION` argument, utilisez le \@ caractère immédiatement suivi du nom du fichier réponse.</span><span class="sxs-lookup"><span data-stu-id="049dc-246">To specify a response file for the `VERSION` argument, use the \@ character immediately followed by the response file name.</span></span>
 
-#### <a name="options"></a><span data-ttu-id="2634b-247">Options</span><span class="sxs-lookup"><span data-stu-id="2634b-247">Options</span></span>
+#### <a name="options"></a><span data-ttu-id="049dc-247">Options</span><span class="sxs-lookup"><span data-stu-id="049dc-247">Options</span></span>
 
-## <a name="windows"></a>[<span data-ttu-id="2634b-248">Windows</span><span class="sxs-lookup"><span data-stu-id="2634b-248">Windows</span></span>](#tab/windows)
+## <a name="windows"></a>[<span data-ttu-id="049dc-248">Windows</span><span class="sxs-lookup"><span data-stu-id="049dc-248">Windows</span></span>](#tab/windows)
 
 * **`--all`**
 
-  <span data-ttu-id="2634b-249">Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.</span><span class="sxs-lookup"><span data-stu-id="2634b-249">Removes all .NET Core SDKs and runtimes.</span></span>
+  <span data-ttu-id="049dc-249">Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.</span><span class="sxs-lookup"><span data-stu-id="049dc-249">Removes all .NET Core SDKs and runtimes.</span></span>
 
 * **`--all-below <VERSION>`**
 
-  <span data-ttu-id="2634b-250">Supprime uniquement les kits de développement logiciel (SDK) .NET Core et les runtimes dont la version est inférieure à la version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="2634b-250">Removes only the .NET Core SDKs and runtimes with a version smaller than the specified version.</span></span> <span data-ttu-id="2634b-251">La version spécifiée reste installée.</span><span class="sxs-lookup"><span data-stu-id="2634b-251">The specified version remains installed.</span></span>
+  <span data-ttu-id="049dc-250">Supprime uniquement les kits de développement logiciel (SDK) .NET Core et les runtimes dont la version est inférieure à la version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="049dc-250">Removes only the .NET Core SDKs and runtimes with a version smaller than the specified version.</span></span> <span data-ttu-id="049dc-251">La version spécifiée reste installée.</span><span class="sxs-lookup"><span data-stu-id="049dc-251">The specified version remains installed.</span></span>
 
 * **`--all-but <VERSIONS>`**
 
-  <span data-ttu-id="2634b-252">Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.</span><span class="sxs-lookup"><span data-stu-id="2634b-252">Removes all .NET Core SDKs and runtimes, except those versions specified.</span></span>
+  <span data-ttu-id="049dc-252">Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.</span><span class="sxs-lookup"><span data-stu-id="049dc-252">Removes all .NET Core SDKs and runtimes, except those versions specified.</span></span>
 
 * **`--all-but-latest`**
 
-  <span data-ttu-id="2634b-253">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception de la version la plus récente.</span><span class="sxs-lookup"><span data-stu-id="2634b-253">Removes .NET Core SDKs and runtimes, except the one highest version.</span></span>
+  <span data-ttu-id="049dc-253">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception de la version la plus récente.</span><span class="sxs-lookup"><span data-stu-id="049dc-253">Removes .NET Core SDKs and runtimes, except the one highest version.</span></span>
 
 * **`--all-lower-patches`**
 
-  <span data-ttu-id="2634b-254">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes remplacés par des correctifs plus élevés.</span><span class="sxs-lookup"><span data-stu-id="2634b-254">Removes .NET Core SDKs and runtimes superseded by higher patches.</span></span> <span data-ttu-id="2634b-255">Cette option protège global. JSON.</span><span class="sxs-lookup"><span data-stu-id="2634b-255">This option protects global.json.</span></span>
+  <span data-ttu-id="049dc-254">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes remplacés par des correctifs plus élevés.</span><span class="sxs-lookup"><span data-stu-id="049dc-254">Removes .NET Core SDKs and runtimes superseded by higher patches.</span></span> <span data-ttu-id="049dc-255">Cette option protège global. JSON.</span><span class="sxs-lookup"><span data-stu-id="049dc-255">This option protects global.json.</span></span>
 
 * **`--all-previews`**
 
-  <span data-ttu-id="2634b-256">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes marqués en tant qu’aperçus.</span><span class="sxs-lookup"><span data-stu-id="2634b-256">Removes .NET Core SDKs and runtimes marked as previews.</span></span>
+  <span data-ttu-id="049dc-256">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes marqués en tant qu’aperçus.</span><span class="sxs-lookup"><span data-stu-id="049dc-256">Removes .NET Core SDKs and runtimes marked as previews.</span></span>
 
 * **`--all-previews-but-latest`**
 
-  <span data-ttu-id="2634b-257">Supprime les kits de développement logiciel (SDK) et runtimes .NET Core marqués comme préversions, à l’exception de la version préliminaire la plus élevée.</span><span class="sxs-lookup"><span data-stu-id="2634b-257">Removes .NET Core SDKs and runtimes marked as previews except the one highest preview.</span></span>
+  <span data-ttu-id="049dc-257">Supprime les kits de développement logiciel (SDK) et runtimes .NET Core marqués comme préversions, à l’exception de la version préliminaire la plus élevée.</span><span class="sxs-lookup"><span data-stu-id="049dc-257">Removes .NET Core SDKs and runtimes marked as previews except the one highest preview.</span></span>
 
 * **`--aspnet-runtime`**
 
-  <span data-ttu-id="2634b-258">Supprime ASP.NET Core runtimes uniquement.</span><span class="sxs-lookup"><span data-stu-id="2634b-258">Removes ASP.NET Core runtimes only.</span></span>
+  <span data-ttu-id="049dc-258">Supprime ASP.NET Core runtimes uniquement.</span><span class="sxs-lookup"><span data-stu-id="049dc-258">Removes ASP.NET Core runtimes only.</span></span>
 
 * **`--hosting-bundle`**
 
-  <span data-ttu-id="2634b-259">Supprime uniquement le Runtime .NET Core et les regroupements d’hébergement.</span><span class="sxs-lookup"><span data-stu-id="2634b-259">Removes .NET Core runtime and hosting bundles only.</span></span>
+  <span data-ttu-id="049dc-259">Supprime uniquement le Runtime .NET Core et les regroupements d’hébergement.</span><span class="sxs-lookup"><span data-stu-id="049dc-259">Removes .NET Core runtime and hosting bundles only.</span></span>
 
 * **`--major-minor <MAJOR_MINOR>`**
 
-  <span data-ttu-id="2634b-260">Supprime les kits de développement logiciel (SDK) .NET Core `major.minor` et les runtimes qui correspondent à la version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="2634b-260">Removes .NET Core SDKs and runtimes that match the specified `major.minor` version.</span></span>
+  <span data-ttu-id="049dc-260">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes qui correspondent à la `major.minor` version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="049dc-260">Removes .NET Core SDKs and runtimes that match the specified `major.minor` version.</span></span>
 
 * **`--runtime`**
 
-  <span data-ttu-id="2634b-261">Supprime uniquement les runtimes .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2634b-261">Removes .NET Core runtimes only.</span></span>
+  <span data-ttu-id="049dc-261">Supprime uniquement les runtimes .NET Core.</span><span class="sxs-lookup"><span data-stu-id="049dc-261">Removes .NET Core runtimes only.</span></span>
 
 * **`--sdk`**
 
-  <span data-ttu-id="2634b-262">Supprime uniquement les kits de développement logiciel (SDK) .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2634b-262">Removes .NET Core SDKs only.</span></span>
+  <span data-ttu-id="049dc-262">Supprime uniquement les kits de développement logiciel (SDK) .NET Core.</span><span class="sxs-lookup"><span data-stu-id="049dc-262">Removes .NET Core SDKs only.</span></span>
 
 * **`-v, --verbosity <LEVEL>`**
 
-  <span data-ttu-id="2634b-263">Définit le niveau de détail.</span><span class="sxs-lookup"><span data-stu-id="2634b-263">Sets the verbosity level.</span></span> <span data-ttu-id="2634b-264">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="2634b-264">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="2634b-265">La valeur par défaut est `normal`.</span><span class="sxs-lookup"><span data-stu-id="2634b-265">The default value is `normal`.</span></span>
+  <span data-ttu-id="049dc-263">Définit le niveau de détail.</span><span class="sxs-lookup"><span data-stu-id="049dc-263">Sets the verbosity level.</span></span> <span data-ttu-id="049dc-264">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="049dc-264">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="049dc-265">La valeur par défaut est `normal`.</span><span class="sxs-lookup"><span data-stu-id="049dc-265">The default value is `normal`.</span></span>
 
 * **`--x64`**
 
-  <span data-ttu-id="2634b-266">Doit être utilisé avec `--sdk`, `--runtime`et `--aspnet-runtime` pour supprimer les runtimes ou les kits de développement logiciel (SDK) x64.</span><span class="sxs-lookup"><span data-stu-id="2634b-266">Must be used with `--sdk`, `--runtime`, and `--aspnet-runtime` to remove x64 SDKs or runtimes.</span></span>
+  <span data-ttu-id="049dc-266">Doit être utilisé avec `--sdk` , `--runtime` et `--aspnet-runtime` pour supprimer les runtimes ou les kits de développement logiciel (SDK) x64.</span><span class="sxs-lookup"><span data-stu-id="049dc-266">Must be used with `--sdk`, `--runtime`, and `--aspnet-runtime` to remove x64 SDKs or runtimes.</span></span>
 
 * **`--x86`**
 
-  <span data-ttu-id="2634b-267">Doit être utilisé avec `--sdk`, `--runtime`et pour `--aspnet-runtime` supprimer les kits de développement logiciel (SDK) ou runtimes x86.</span><span class="sxs-lookup"><span data-stu-id="2634b-267">Must be used with `--sdk`, `--runtime`, and `--aspnet-runtime` to remove x86 SDKs or runtimes.</span></span>
+  <span data-ttu-id="049dc-267">Doit être utilisé avec `--sdk` , `--runtime` et `--aspnet-runtime` pour supprimer les kits de développement logiciel (SDK) ou runtimes x86.</span><span class="sxs-lookup"><span data-stu-id="049dc-267">Must be used with `--sdk`, `--runtime`, and `--aspnet-runtime` to remove x86 SDKs or runtimes.</span></span>
 
-* <span data-ttu-id="2634b-268">**`-y, --yes`** Exécute la commande sans demander de confirmation oui ou non.</span><span class="sxs-lookup"><span data-stu-id="2634b-268">**`-y, --yes`** Executes the command without requiring a yes or no confirmation.</span></span>
+* <span data-ttu-id="049dc-268">**`-y, --yes`** Exécute la commande sans demander de confirmation oui ou non.</span><span class="sxs-lookup"><span data-stu-id="049dc-268">**`-y, --yes`** Executes the command without requiring a yes or no confirmation.</span></span>
 
-* <span data-ttu-id="2634b-269">**`--force`** Force la suppression des versions qui peuvent être utilisées par Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="2634b-269">**`--force`** Forces removal of versions that might be used by Visual Studio.</span></span>
+* <span data-ttu-id="049dc-269">**`--force`** Force la suppression des versions qui peuvent être utilisées par Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="049dc-269">**`--force`** Forces removal of versions that might be used by Visual Studio.</span></span>
 
-<span data-ttu-id="2634b-270">Remarques :</span><span class="sxs-lookup"><span data-stu-id="2634b-270">Notes:</span></span>
+<span data-ttu-id="049dc-270">Remarques :</span><span class="sxs-lookup"><span data-stu-id="049dc-270">Notes:</span></span>
 
-1. <span data-ttu-id="2634b-271">Exactement l’un `--sdk`des `--runtime`, `--aspnet-runtime`, et `--hosting-bundle` est obligatoire.</span><span class="sxs-lookup"><span data-stu-id="2634b-271">Exactly one of `--sdk`, `--runtime`, `--aspnet-runtime`, and `--hosting-bundle` is required.</span></span>
-2. <span data-ttu-id="2634b-272">`--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`et `[<VERSION>...]` sont exclusifs.</span><span class="sxs-lookup"><span data-stu-id="2634b-272">`--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`, and `[<VERSION>...]` are exclusive.</span></span>
-3. <span data-ttu-id="2634b-273">Si `--x64` ou `--x86` n’est pas spécifié, les paramètres x64 et x86 seront supprimés.</span><span class="sxs-lookup"><span data-stu-id="2634b-273">If `--x64` or `--x86` aren't specified, then both x64 and x86 will be removed.</span></span>
+1. <span data-ttu-id="049dc-271">Exactement l’un des `--sdk` ,, `--runtime` `--aspnet-runtime` et `--hosting-bundle` est obligatoire.</span><span class="sxs-lookup"><span data-stu-id="049dc-271">Exactly one of `--sdk`, `--runtime`, `--aspnet-runtime`, and `--hosting-bundle` is required.</span></span>
+2. <span data-ttu-id="049dc-272">`--all`, `--all-below` , `--all-but` , `--all-but-latest` , `--all-lower-patches` , `--all-previews` , `--all-previews-but-latest` , `--major-minor` et `[<VERSION>...]` sont exclusifs.</span><span class="sxs-lookup"><span data-stu-id="049dc-272">`--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`, and `[<VERSION>...]` are exclusive.</span></span>
+3. <span data-ttu-id="049dc-273">Si `--x64` ou `--x86` n’est pas spécifié, les paramètres x64 et x86 seront supprimés.</span><span class="sxs-lookup"><span data-stu-id="049dc-273">If `--x64` or `--x86` aren't specified, then both x64 and x86 will be removed.</span></span>
 
-## <a name="macos"></a>[<span data-ttu-id="2634b-274">MacOS</span><span class="sxs-lookup"><span data-stu-id="2634b-274">macOS</span></span>](#tab/macos)
+## <a name="macos"></a>[<span data-ttu-id="049dc-274">MacOS</span><span class="sxs-lookup"><span data-stu-id="049dc-274">macOS</span></span>](#tab/macos)
 
 * **`--all`**
 
-  <span data-ttu-id="2634b-275">Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.</span><span class="sxs-lookup"><span data-stu-id="2634b-275">Removes all .NET Core SDKs and runtimes.</span></span>
+  <span data-ttu-id="049dc-275">Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.</span><span class="sxs-lookup"><span data-stu-id="049dc-275">Removes all .NET Core SDKs and runtimes.</span></span>
 
 * **`--all-below <VERSION>`**
 
-  <span data-ttu-id="2634b-276">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes inférieurs à la version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="2634b-276">Removes .NET Core SDKs and runtimes below the specified version.</span></span> <span data-ttu-id="2634b-277">La version spécifiée est conservée.</span><span class="sxs-lookup"><span data-stu-id="2634b-277">The specified version will remain.</span></span>
+  <span data-ttu-id="049dc-276">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes inférieurs à la version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="049dc-276">Removes .NET Core SDKs and runtimes below the specified version.</span></span> <span data-ttu-id="049dc-277">La version spécifiée est conservée.</span><span class="sxs-lookup"><span data-stu-id="049dc-277">The specified version will remain.</span></span>
 
 * **`--all-but <VERSIONS>`**
 
-  <span data-ttu-id="2634b-278">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.</span><span class="sxs-lookup"><span data-stu-id="2634b-278">Removes .NET Core SDKs and runtimes, except those versions specified.</span></span>
+  <span data-ttu-id="049dc-278">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.</span><span class="sxs-lookup"><span data-stu-id="049dc-278">Removes .NET Core SDKs and runtimes, except those versions specified.</span></span>
 
 * **`--all-but-latest`**
 
-  <span data-ttu-id="2634b-279">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception de la version la plus récente.</span><span class="sxs-lookup"><span data-stu-id="2634b-279">Removes .NET Core SDKs and runtimes, except the one highest version.</span></span>
+  <span data-ttu-id="049dc-279">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception de la version la plus récente.</span><span class="sxs-lookup"><span data-stu-id="049dc-279">Removes .NET Core SDKs and runtimes, except the one highest version.</span></span>
 
 * **`--all-lower-patches`**
 
-  <span data-ttu-id="2634b-280">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes remplacés par des correctifs plus élevés.</span><span class="sxs-lookup"><span data-stu-id="2634b-280">Removes .NET Core SDKs and runtimes superseded by higher patches.</span></span> <span data-ttu-id="2634b-281">Cette option protège global. JSON.</span><span class="sxs-lookup"><span data-stu-id="2634b-281">This option protects global.json.</span></span>
+  <span data-ttu-id="049dc-280">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes remplacés par des correctifs plus élevés.</span><span class="sxs-lookup"><span data-stu-id="049dc-280">Removes .NET Core SDKs and runtimes superseded by higher patches.</span></span> <span data-ttu-id="049dc-281">Cette option protège global. JSON.</span><span class="sxs-lookup"><span data-stu-id="049dc-281">This option protects global.json.</span></span>
 
 * **`--all-previews`**
 
-  <span data-ttu-id="2634b-282">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes marqués en tant qu’aperçus.</span><span class="sxs-lookup"><span data-stu-id="2634b-282">Removes .NET Core SDKs and runtimes marked as previews.</span></span>
+  <span data-ttu-id="049dc-282">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes marqués en tant qu’aperçus.</span><span class="sxs-lookup"><span data-stu-id="049dc-282">Removes .NET Core SDKs and runtimes marked as previews.</span></span>
 
 * **`--all-previews-but-latest`**
 
-  <span data-ttu-id="2634b-283">Supprime les kits de développement logiciel (SDK) et runtimes .NET Core marqués comme préversions, à l’exception de la version préliminaire la plus élevée.</span><span class="sxs-lookup"><span data-stu-id="2634b-283">Removes .NET Core SDKs and runtimes marked as previews except the one highest preview.</span></span>
+  <span data-ttu-id="049dc-283">Supprime les kits de développement logiciel (SDK) et runtimes .NET Core marqués comme préversions, à l’exception de la version préliminaire la plus élevée.</span><span class="sxs-lookup"><span data-stu-id="049dc-283">Removes .NET Core SDKs and runtimes marked as previews except the one highest preview.</span></span>
 
 * **`--major-minor <MAJOR_MINOR>`**
 
-  <span data-ttu-id="2634b-284">Supprime les kits de développement logiciel (SDK) .NET Core `major.minor` et les runtimes qui correspondent à la version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="2634b-284">Removes .NET Core SDKs and runtimes that match the specified `major.minor` version.</span></span>
+  <span data-ttu-id="049dc-284">Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes qui correspondent à la `major.minor` version spécifiée.</span><span class="sxs-lookup"><span data-stu-id="049dc-284">Removes .NET Core SDKs and runtimes that match the specified `major.minor` version.</span></span>
 
 * **`--runtime`**
 
-  <span data-ttu-id="2634b-285">Supprime uniquement les runtimes .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2634b-285">Removes .NET Core runtimes only.</span></span>
+  <span data-ttu-id="049dc-285">Supprime uniquement les runtimes .NET Core.</span><span class="sxs-lookup"><span data-stu-id="049dc-285">Removes .NET Core runtimes only.</span></span>
 
 * **`--sdk`**
 
-  <span data-ttu-id="2634b-286">Supprime uniquement les kits de développement logiciel (SDK) .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2634b-286">Removes .NET Core SDKs only.</span></span>
+  <span data-ttu-id="049dc-286">Supprime uniquement les kits de développement logiciel (SDK) .NET Core.</span><span class="sxs-lookup"><span data-stu-id="049dc-286">Removes .NET Core SDKs only.</span></span>
 
 * **`-v, --verbosity <LEVEL>`**
 
-  <span data-ttu-id="2634b-287">Définit le niveau de détail.</span><span class="sxs-lookup"><span data-stu-id="2634b-287">Sets the verbosity level.</span></span> <span data-ttu-id="2634b-288">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="2634b-288">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="2634b-289">La valeur par défaut est `normal`.</span><span class="sxs-lookup"><span data-stu-id="2634b-289">The default value is `normal`.</span></span>
+  <span data-ttu-id="049dc-287">Définit le niveau de détail.</span><span class="sxs-lookup"><span data-stu-id="049dc-287">Sets the verbosity level.</span></span> <span data-ttu-id="049dc-288">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="049dc-288">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="049dc-289">La valeur par défaut est `normal`.</span><span class="sxs-lookup"><span data-stu-id="049dc-289">The default value is `normal`.</span></span>
 
-* <span data-ttu-id="2634b-290">**`-y, --yes`** Exécute la commande sans demander de confirmation Y/N.</span><span class="sxs-lookup"><span data-stu-id="2634b-290">**`-y, --yes`** Executes the command without requiring Y/N confirmation.</span></span>
+* <span data-ttu-id="049dc-290">**`-y, --yes`** Exécute la commande sans demander de confirmation Y/N.</span><span class="sxs-lookup"><span data-stu-id="049dc-290">**`-y, --yes`** Executes the command without requiring Y/N confirmation.</span></span>
   
-* <span data-ttu-id="2634b-291">**`--force`** Force la suppression des versions qui peuvent être utilisées par Visual Studio ou les kits de développement logiciel (SDK).</span><span class="sxs-lookup"><span data-stu-id="2634b-291">**`--force`** Forces removal of versions that might be used by Visual Studio or SDKs.</span></span>
+* <span data-ttu-id="049dc-291">**`--force`** Force la suppression des versions qui peuvent être utilisées par Visual Studio ou les kits de développement logiciel (SDK).</span><span class="sxs-lookup"><span data-stu-id="049dc-291">**`--force`** Forces removal of versions that might be used by Visual Studio or SDKs.</span></span>
 
-<span data-ttu-id="2634b-292">Remarques :</span><span class="sxs-lookup"><span data-stu-id="2634b-292">Notes:</span></span>
+<span data-ttu-id="049dc-292">Remarques :</span><span class="sxs-lookup"><span data-stu-id="049dc-292">Notes:</span></span>
 
-1. <span data-ttu-id="2634b-293">Une seule `--sdk` et `--runtime` unique est requise.</span><span class="sxs-lookup"><span data-stu-id="2634b-293">Exactly one of `--sdk` and `--runtime` is required.</span></span>
-2. <span data-ttu-id="2634b-294">`--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`et `[<VERSION>...]` sont exclusifs.</span><span class="sxs-lookup"><span data-stu-id="2634b-294">`--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`, and `[<VERSION>...]` are exclusive.</span></span>
+1. <span data-ttu-id="049dc-293">Une seule `--sdk` et unique `--runtime` est requise.</span><span class="sxs-lookup"><span data-stu-id="049dc-293">Exactly one of `--sdk` and `--runtime` is required.</span></span>
+2. <span data-ttu-id="049dc-294">`--all`, `--all-below` , `--all-but` , `--all-but-latest` , `--all-lower-patches` , `--all-previews` , `--all-previews-but-latest` , `--major-minor` et `[<VERSION>...]` sont exclusifs.</span><span class="sxs-lookup"><span data-stu-id="049dc-294">`--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`, and `[<VERSION>...]` are exclusive.</span></span>
 
 ---
 
-#### <a name="examples"></a><span data-ttu-id="2634b-295">Exemples</span><span class="sxs-lookup"><span data-stu-id="2634b-295">Examples</span></span>
+#### <a name="examples"></a><span data-ttu-id="049dc-295">Exemples</span><span class="sxs-lookup"><span data-stu-id="049dc-295">Examples</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="2634b-296">Par défaut, les kits de développement logiciel (SDK) .NET Core et les runtimes qui peuvent être requis par Visual Studio ou d’autres kits de développement logiciel (SDK) sont conservés.</span><span class="sxs-lookup"><span data-stu-id="2634b-296">By default, .NET Core SDKs and runtimes that may be required by Visual Studio or other SDKs are kept.</span></span> <span data-ttu-id="2634b-297">Dans les exemples suivants, certains des kits de développement logiciel (SDK) et runtimes spécifiés peuvent être conservés, en fonction de l’état de l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="2634b-297">In the following examples, some of the specified SDKs and runtimes may remain, depending on the state of the machine.</span></span> <span data-ttu-id="2634b-298">Pour supprimer tous les kits de développement logiciel (SDK) et runtimes, répertoriez-les explicitement comme arguments ou utilisez l' `--force` option.</span><span class="sxs-lookup"><span data-stu-id="2634b-298">To remove all SDKs and runtimes, list them explicitly as arguments or use the `--force` option.</span></span>
+> <span data-ttu-id="049dc-296">Par défaut, les kits de développement logiciel (SDK) .NET Core et les runtimes qui peuvent être requis par Visual Studio ou d’autres kits de développement logiciel (SDK) sont conservés.</span><span class="sxs-lookup"><span data-stu-id="049dc-296">By default, .NET Core SDKs and runtimes that may be required by Visual Studio or other SDKs are kept.</span></span> <span data-ttu-id="049dc-297">Dans les exemples suivants, certains des kits de développement logiciel (SDK) et runtimes spécifiés peuvent être conservés, en fonction de l’état de l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="049dc-297">In the following examples, some of the specified SDKs and runtimes may remain, depending on the state of the machine.</span></span> <span data-ttu-id="049dc-298">Pour supprimer tous les kits de développement logiciel (SDK) et runtimes, répertoriez-les explicitement comme arguments ou utilisez l' `--force` option.</span><span class="sxs-lookup"><span data-stu-id="049dc-298">To remove all SDKs and runtimes, list them explicitly as arguments or use the `--force` option.</span></span>
 
-* <span data-ttu-id="2634b-299">Supprimez tous les runtimes .NET Core à `3.0.0-preview6-27804-01` l’exception de la version sans demander de confirmation Y/N :</span><span class="sxs-lookup"><span data-stu-id="2634b-299">Remove all .NET Core runtimes except the version `3.0.0-preview6-27804-01` without requiring Y/N confirmation:</span></span>
+* <span data-ttu-id="049dc-299">Supprimez tous les runtimes .NET Core à l’exception de la version `3.0.0-preview6-27804-01` sans demander de confirmation Y/N :</span><span class="sxs-lookup"><span data-stu-id="049dc-299">Remove all .NET Core runtimes except the version `3.0.0-preview6-27804-01` without requiring Y/N confirmation:</span></span>
 
   ```console
   dotnet-core-uninstall remove --all-but 3.0.0-preview6-27804-01 --runtime --yes
   ```
 
-* <span data-ttu-id="2634b-300">Supprimer tous les kits de développement logiciel (SDK) .NET Core 1,1 sans demander de confirmation Y/n :</span><span class="sxs-lookup"><span data-stu-id="2634b-300">Remove all .NET Core 1.1 SDKs without requiring Y/n confirmation:</span></span>
+* <span data-ttu-id="049dc-300">Supprimer tous les kits de développement logiciel (SDK) .NET Core 1,1 sans demander de confirmation Y/n :</span><span class="sxs-lookup"><span data-stu-id="049dc-300">Remove all .NET Core 1.1 SDKs without requiring Y/n confirmation:</span></span>
 
   ```console
   dotnet-core-uninstall remove --sdk --major-minor 1.1 -y
   ```
 
-* <span data-ttu-id="2634b-301">Supprimez le kit de développement logiciel (SDK) .NET Core 1.1.11 au minimum sans sortie de la console :</span><span class="sxs-lookup"><span data-stu-id="2634b-301">Remove the .NET Core 1.1.11 SDK with no console output:</span></span>
+* <span data-ttu-id="049dc-301">Supprimez le kit de développement logiciel (SDK) .NET Core 1.1.11 au minimum sans sortie de la console :</span><span class="sxs-lookup"><span data-stu-id="049dc-301">Remove the .NET Core 1.1.11 SDK with no console output:</span></span>
 
   ```console
   dotnet-core-uninstall remove 1.1.11 --sdk --yes --verbosity q
   ```
 
-* <span data-ttu-id="2634b-302">Supprimez tous les kits de développement logiciel (SDK) .NET Core pouvant être supprimés en toute sécurité par cet outil :</span><span class="sxs-lookup"><span data-stu-id="2634b-302">Remove all .NET Core SDKs that can safely be removed by this tool:</span></span>
+* <span data-ttu-id="049dc-302">Supprimez tous les kits de développement logiciel (SDK) .NET Core pouvant être supprimés en toute sécurité par cet outil :</span><span class="sxs-lookup"><span data-stu-id="049dc-302">Remove all .NET Core SDKs that can safely be removed by this tool:</span></span>
 
   ```console
   dotnet-core-uninstall remove --all --sdk
   ```
 
-* <span data-ttu-id="2634b-303">Supprimer tous les kits de développement logiciel (SDK) .NET Core qui peuvent être supprimés par cet outil, y compris les kits de développement logiciel (SDK) qui peuvent être requis par Visual Studio (non recommandé) :</span><span class="sxs-lookup"><span data-stu-id="2634b-303">Remove all .NET Core SDKs that can be removed by this tool, including those SDKs that may be required by Visual Studio (not recommended):</span></span>
+* <span data-ttu-id="049dc-303">Supprimer tous les kits de développement logiciel (SDK) .NET Core qui peuvent être supprimés par cet outil, y compris les kits de développement logiciel (SDK) qui peuvent être requis par Visual Studio (non recommandé) :</span><span class="sxs-lookup"><span data-stu-id="049dc-303">Remove all .NET Core SDKs that can be removed by this tool, including those SDKs that may be required by Visual Studio (not recommended):</span></span>
 
   ```console
   dotnet-core-uninstall remove --all --sdk --force
   ```
 
-* <span data-ttu-id="2634b-304">Supprimer tous les kits de développement logiciel (SDK) .NET Core spécifiés dans le fichier réponse`versions.rsp`</span><span class="sxs-lookup"><span data-stu-id="2634b-304">Remove all .NET Core SDKs that are specified in the response file `versions.rsp`</span></span>
+* <span data-ttu-id="049dc-304">Supprimer tous les kits de développement logiciel (SDK) .NET Core spécifiés dans le fichier réponse`versions.rsp`</span><span class="sxs-lookup"><span data-stu-id="049dc-304">Remove all .NET Core SDKs that are specified in the response file `versions.rsp`</span></span>
 
   ```console
   dotnet-core-uninstall remove --sdk @versions.rsp
   ```
 
-  <span data-ttu-id="2634b-305">Le contenu de *versions. rsp* est le suivant :</span><span class="sxs-lookup"><span data-stu-id="2634b-305">The content of *versions.rsp* is as follows:</span></span>
+  <span data-ttu-id="049dc-305">Le contenu de *versions. rsp* est le suivant :</span><span class="sxs-lookup"><span data-stu-id="049dc-305">The content of *versions.rsp* is as follows:</span></span>
   
   ```text
   2.2.300
   2.1.700
   ```
 
-### <a name="step-4---delete-the-nuget-fallback-folder-optional"></a><span data-ttu-id="2634b-306">Étape 4 : supprimer le dossier NuGet Fallback (facultatif)</span><span class="sxs-lookup"><span data-stu-id="2634b-306">Step 4 - Delete the NuGet fallback folder (optional)</span></span>
+### <a name="step-4---delete-the-nuget-fallback-folder-optional"></a><span data-ttu-id="049dc-306">Étape 4 : supprimer le dossier NuGet Fallback (facultatif)</span><span class="sxs-lookup"><span data-stu-id="049dc-306">Step 4 - Delete the NuGet fallback folder (optional)</span></span>
 
-<span data-ttu-id="2634b-307">Dans certains cas, vous n’avez plus besoin `NuGetFallbackFolder` de la et vous souhaiterez peut-être la supprimer.</span><span class="sxs-lookup"><span data-stu-id="2634b-307">In some cases, you no longer need the `NuGetFallbackFolder` and may wish to delete it.</span></span> <span data-ttu-id="2634b-308">Pour plus d’informations sur la suppression de ce dossier, consultez [Remove the NuGetFallbackFolder](../install/remove-runtime-sdk-versions.md#remove-the-nuget-fallback-folder).</span><span class="sxs-lookup"><span data-stu-id="2634b-308">For more information about deleting this folder, see [Remove the NuGetFallbackFolder](../install/remove-runtime-sdk-versions.md#remove-the-nuget-fallback-folder).</span></span>
+<span data-ttu-id="049dc-307">Dans certains cas, vous n’avez plus besoin de la et vous souhaiterez `NuGetFallbackFolder` peut-être la supprimer.</span><span class="sxs-lookup"><span data-stu-id="049dc-307">In some cases, you no longer need the `NuGetFallbackFolder` and may wish to delete it.</span></span> <span data-ttu-id="049dc-308">Pour plus d’informations sur la suppression de ce dossier, consultez [Remove the NuGetFallbackFolder](../install/remove-runtime-sdk-versions.md#remove-the-nuget-fallback-folder).</span><span class="sxs-lookup"><span data-stu-id="049dc-308">For more information about deleting this folder, see [Remove the NuGetFallbackFolder](../install/remove-runtime-sdk-versions.md#remove-the-nuget-fallback-folder).</span></span>
 
-## <a name="uninstall-the-tool"></a><span data-ttu-id="2634b-309">Désinstaller l’outil</span><span class="sxs-lookup"><span data-stu-id="2634b-309">Uninstall the tool</span></span>
+## <a name="uninstall-the-tool"></a><span data-ttu-id="049dc-309">Désinstaller l’outil</span><span class="sxs-lookup"><span data-stu-id="049dc-309">Uninstall the tool</span></span>
 
-## <a name="windows"></a>[<span data-ttu-id="2634b-310">Windows</span><span class="sxs-lookup"><span data-stu-id="2634b-310">Windows</span></span>](#tab/windows)
+## <a name="windows"></a>[<span data-ttu-id="049dc-310">Windows</span><span class="sxs-lookup"><span data-stu-id="049dc-310">Windows</span></span>](#tab/windows)
 
-1. <span data-ttu-id="2634b-311">Ouvrez la boîte de dialogue **Ajout/Suppression de programmes**.</span><span class="sxs-lookup"><span data-stu-id="2634b-311">Open **Add or Remove Programs**.</span></span>
-2. <span data-ttu-id="2634b-312">Recherchez `Microsoft .NET Core SDK Uninstall Tool`.</span><span class="sxs-lookup"><span data-stu-id="2634b-312">Search for `Microsoft .NET Core SDK Uninstall Tool`.</span></span>
-3. <span data-ttu-id="2634b-313">Sélectionner **Désinstaller**.</span><span class="sxs-lookup"><span data-stu-id="2634b-313">Select **Uninstall**.</span></span>
+1. <span data-ttu-id="049dc-311">Ouvrez la boîte de dialogue **Ajout/Suppression de programmes**.</span><span class="sxs-lookup"><span data-stu-id="049dc-311">Open **Add or Remove Programs**.</span></span>
+2. <span data-ttu-id="049dc-312">Recherchez `Microsoft .NET Core SDK Uninstall Tool`.</span><span class="sxs-lookup"><span data-stu-id="049dc-312">Search for `Microsoft .NET Core SDK Uninstall Tool`.</span></span>
+3. <span data-ttu-id="049dc-313">Sélectionner **Désinstaller**.</span><span class="sxs-lookup"><span data-stu-id="049dc-313">Select **Uninstall**.</span></span>
 
-## <a name="macos"></a>[<span data-ttu-id="2634b-314">MacOS</span><span class="sxs-lookup"><span data-stu-id="2634b-314">macOS</span></span>](#tab/macos)
+## <a name="macos"></a>[<span data-ttu-id="049dc-314">MacOS</span><span class="sxs-lookup"><span data-stu-id="049dc-314">macOS</span></span>](#tab/macos)
 
-<span data-ttu-id="2634b-315">Supprimez le fichier *dotnet-Core-Uninstall. tar. gz* téléchargé à partir du répertoire où il a été installé.</span><span class="sxs-lookup"><span data-stu-id="2634b-315">Delete the downloaded *dotnet-core-uninstall.tar.gz* file from the directory where it was installed.</span></span> <span data-ttu-id="2634b-316">Si vous dézippéz le contenu de ce fichier dans un autre répertoire, veillez à supprimer également ce contenu.</span><span class="sxs-lookup"><span data-stu-id="2634b-316">If you unzipped the contents of this file into another directory, be sure to delete that content as well.</span></span>
+<span data-ttu-id="049dc-315">Supprimez le fichier *dotnet-Core-Uninstall. tar. gz* téléchargé à partir du répertoire où il a été installé.</span><span class="sxs-lookup"><span data-stu-id="049dc-315">Delete the downloaded *dotnet-core-uninstall.tar.gz* file from the directory where it was installed.</span></span> <span data-ttu-id="049dc-316">Si vous dézippéz le contenu de ce fichier dans un autre répertoire, veillez à supprimer également ce contenu.</span><span class="sxs-lookup"><span data-stu-id="049dc-316">If you unzipped the contents of this file into another directory, be sure to delete that content as well.</span></span>
 
 ---
