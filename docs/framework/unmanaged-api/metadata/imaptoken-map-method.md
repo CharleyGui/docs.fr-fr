@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: b9b4bf2f-1098-43d6-9619-a99b4bda1940
 topic_type:
 - apiref
-ms.openlocfilehash: 428b022ed560648f59798154d5987d382938c280
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 027694cee1b3e4d990796ba31300918f6d859679
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176069"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008194"
 ---
 # <a name="imaptokenmap-method"></a>IMapToken::Map, méthode
-Cartographiez une relation entre les assemblées à l’aide de signatures de métadonnées.  
+Mappe une relation entre les assemblys à l’aide de signatures de métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,23 +36,23 @@ HRESULT Map (
   
 ## <a name="parameters"></a>Paramètres  
  `tkImp`  
- [dans] Le jeton des métadonnées qui représente l’objet de code importé.  
+ dans Jeton de métadonnées qui représente l’objet de code importé.  
   
  `tkEmit`  
- [dans] Le jeton des métadonnées qui représente l’objet de code émis.  
+ dans Jeton de métadonnées qui représente l’objet de code émis.  
   
-## <a name="remarks"></a>Notes   
- Lorsque la refonte du jeton se produit lors d’une fusion, le jeton d’origine est visé dans la portée des métadonnées importées (source) et le nouveau jeton est visé dans la portée des métadonnées émises (cible).  
+## <a name="remarks"></a>Remarques  
+ Lorsque le mappage de jeton se produit pendant une fusion, le jeton d’origine est étendu dans l’étendue de métadonnées importée (source) et le nouveau jeton est défini dans la portée des métadonnées (cible) émise.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMapToken, interface](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md)
+- [IMapToken, interface](imaptoken-interface.md)

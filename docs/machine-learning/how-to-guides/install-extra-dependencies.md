@@ -1,38 +1,38 @@
 ---
 title: Installer des dépendances ML.NET supplémentaires
-description: Apprenez à installer toutes les bibliothèques autochtones dont ML.NET les paquets dépendent, mais ne sont pas installés avec les paquets NuGet
+description: Découvrez comment installer les bibliothèques natives dont les packages ML.NET sont dépendants, mais qui ne sont pas installés avec les packages NuGet
 ms.date: 04/02/2020
 author: natke
 ms.author: nakersha
 ms.custom: how-to
-ms.openlocfilehash: c427439d0950bfea38f1d6d11af84216e0f1965f
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: c744b42b4b95681de7b0cbeaef338cc890708fd8
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021844"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008428"
 ---
 # <a name="install-extra-mlnet-dependencies"></a>Installer des dépendances ML.NET supplémentaires
 
-Dans la plupart des cas, sur tous les systèmes d’exploitation, l’installation de ML.NET est aussi simple que le référencement du paquet NuGet approprié.
+Dans la plupart des cas, sur tous les systèmes d’exploitation, l’installation de ML.NET est aussi simple que le fait de référencer le package NuGet approprié.
 
-```bash
+```dotnetcli
 dotnet add package Microsoft.ML
 ```
 
-Dans certains cas cependant, il existe des exigences d’installation supplémentaires, en particulier lorsque des composants indigènes sont nécessaires. Ce document décrit les exigences d’installation de ces cas. Les sections sont décomposées par le paquet NuGet spécifique `Microsoft.ML.*` qui a la dépendance supplémentaire.
+Dans certains cas, cependant, il existe des exigences d’installation supplémentaires, en particulier lorsque des composants natifs sont requis. Ce document décrit la configuration requise pour l’installation de ces cas. Les sections sont décomposées par le `Microsoft.ML.*` package NuGet spécifique qui a la dépendance supplémentaire.
 
-## <a name="microsoftmltimeseries-microsoftmlautoml"></a>Microsoft.ML.TimeSeries, Microsoft.ML.AutoML
+## <a name="microsoftmltimeseries-microsoftmlautoml"></a>Microsoft. ML. TimeSeries, Microsoft. ML. AutoML
 
-Ces deux paquets ont `Microsoft.ML.MKL.Redist`une dépendance à `libiomp`, qui a une dépendance sur .
+Ces deux packages ont une dépendance sur `Microsoft.ML.MKL.Redist` , qui a une dépendance sur `libiomp` .
 
 ### <a name="windows"></a>Windows
 
-Aucune étape d’installation supplémentaire n’est requise. La bibliothèque est installée lorsque le paquet NuGet est ajouté au projet.
+Aucune étape d’installation supplémentaire n’est requise. La bibliothèque est installée lorsque le package NuGet est ajouté au projet.
 
 ### <a name="linux"></a>Linux
 
-1. Installer la clé GPG pour le dépôt
+1. Installer la clé GPG pour le référentiel
 
     ```bash
     sudo bash
@@ -48,7 +48,7 @@ Aucune étape d’installation supplémentaire n’est requise. La bibliothèque
     exit
     ```
 
-2. Ajouter le dépôt APT pour MKL
+2. Ajouter le référentiel APT pour MKL
 
     ```bash
     sudo sh -c 'echo deb https://apt.repos.intel.com/mkl all main > /etc/apt/sources.list.d/intel-mkl.list'
@@ -84,7 +84,7 @@ Aucune étape d’installation supplémentaire n’est requise. La bibliothèque
     /opt/intel/compilers_and_libraries_2020.0.166/linux/compiler/lib/intel64_lin/libiomp5.so
     ```
 
-5. Ajoutez cet emplacement au chemin de la bibliothèque de charge :
+5. Ajoutez cet emplacement au chemin de la bibliothèque de chargement :
 
     ```bash
     sudo ldconfig /opt/intel/compilers_and_libraries_2020.0.166/linux/compiler/lib/intel64_lin

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: d5237628-2675-45ed-a39e-65c0731b6a56
 topic_type:
 - apiref
-ms.openlocfilehash: d8843b2b5f69696dc206e9b530e3062ff225e89e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ccf82531eb1f78bcfc6762d10d53ffee59f30ad8
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177581"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84003941"
 ---
 # <a name="imetadataemitsavetomemory-method"></a>IMetaDataEmit::SaveToMemory, méthode
-Enregistre toutes les métadonnées dans la portée actuelle à la zone de mémoire spécifiée.  
+Enregistre toutes les métadonnées dans la portée actuelle dans la zone de mémoire spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,21 +36,21 @@ HRESULT SaveToMemory (
   
 ## <a name="parameters"></a>Paramètres  
  `pbData`  
- [out] L’adresse à laquelle commencer à écrire des métadonnées.  
+ à Adresse à laquelle commencer l’écriture des métadonnées.  
   
  `cbData`  
- [dans] La taille, dans les octets, de la mémoire allouée.  
+ dans Taille, en octets, de la mémoire allouée.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)

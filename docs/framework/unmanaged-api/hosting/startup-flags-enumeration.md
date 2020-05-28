@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4f043594-0c45-4bc6-988e-a6793f0d8d06
 topic_type:
 - apiref
-ms.openlocfilehash: 1799e0af91fa6074f174120b29e2302a27230c62
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b4694efffa0a3dd6fed1f97fc2359c5eb335d440
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141457"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006413"
 ---
 # <a name="startup_flags-enumeration"></a>STARTUP_FLAGS, énumération
 Contient des valeurs qui indiquent le comportement de démarrage du common language runtime (CLR). Par défaut, garbage collection n’est pas simultanée et seule la bibliothèque de classes de base est chargée dans la zone indépendante du domaine.  
@@ -68,19 +68,19 @@ typedef enum {
 |`STARTUP_LEGACY_IMPERSONATION`|Spécifie que l’emprunt d’identité ne doit pas être transmis entre des points asynchrones par défaut.|  
 |`STARTUP_DISABLE_COMMITTHREADSTACK`|Spécifie que la pile de threads complète ne doit pas être validée lorsque le thread commence à s’exécuter.|  
 |`STARTUP_ALWAYSFLOW_IMPERSONATION`|Spécifie que les emprunts d’identité et les emprunts d’identité managés obtenus via l’appel de code non managé sont transmis entre des points asynchrones. Par défaut, seuls les emprunts d’identité managés sont transmis entre des points asynchrones.|  
-|`STARTUP_TRIM_GC_COMMIT`|Spécifie que garbage collection utilise un espace moins validé lorsque la mémoire système est insuffisante. Consultez `gcTrimCommitOnLowMemory` dans [optimisation de l’hébergement Web partagé](../../../standard/garbage-collection/optimization-for-shared-web-hosting.md).|  
-|`STARTUP_ETW`|Spécifie que le suivi d’événements pour Windows (ETW) est activé pour les événements de common language runtime. À partir de Windows Vista, le suivi d’événements est toujours activé, donc cet indicateur n’a aucun effet. Consultez [contrôle de la journalisation des .NET Framework](../../../../docs/framework/performance/controlling-logging.md).|  
-|`STARTUP_ARM`|Spécifie que l’analyse des ressources du domaine d’application est activée. Consultez la propriété <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> et [\<élément > appDomainResourceMonitoring](../../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md).|  
+|`STARTUP_TRIM_GC_COMMIT`|Spécifie que garbage collection utilise un espace moins validé lorsque la mémoire système est insuffisante. Voir `gcTrimCommitOnLowMemory` dans [optimisation de l’hébergement Web partagé](../../../standard/garbage-collection/optimization-for-shared-web-hosting.md).|  
+|`STARTUP_ETW`|Spécifie que le suivi d’événements pour Windows (ETW) est activé pour les événements de common language runtime. À partir de Windows Vista, le suivi d’événements est toujours activé, donc cet indicateur n’a aucun effet. Consultez [contrôle de la journalisation des .NET Framework](../../performance/controlling-logging.md).|  
+|`STARTUP_ARM`|Spécifie que l’analyse des ressources du domaine d’application est activée. Consultez la <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> propriété et l' [ \<appDomainResourceMonitoring> élément](../../configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md).|  
   
-## <a name="requirements"></a>spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
  **Bibliothèque :** MSCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Énumérations d'hébergement](hosting-enumerations.md)

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: d86a3d14-4796-4909-9591-dfafe3de5ce4
 topic_type:
 - apiref
-ms.openlocfilehash: 2807458549db02598ba05f2aa80fa6ea6fbc5a13
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a58e03875ec021b41479085fa9e27a4321ae965e
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177694"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84004346"
 ---
 # <a name="imetadataemitdefineparam-method"></a>IMetaDataEmit::DefineParam, méthode
-Crée une définition de paramètre avec la signature spécifiée pour la méthode référencée par le jeton spécifié, et obtient un jeton pour cette définition de paramètre.  
+Crée une définition de paramètre avec la signature spécifiée pour la méthode référencée par le jeton spécifié et obtient un jeton pour cette définition de paramètre.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,42 +42,42 @@ HRESULT DefineParam (
   
 ## <a name="parameters"></a>Paramètres  
  `md`  
- [dans] Le jeton de la méthode dont le paramètre est défini.  
+ dans Jeton pour la méthode dont le paramètre est défini.  
   
  `ulParamSeq`  
- [dans] Le numéro de séquence de paramètres.  
+ dans Numéro de séquence du paramètre.  
   
  `szName`  
- [dans] Le nom du paramètre dans Unicode.  
+ dans Nom du paramètre en Unicode.  
   
  `dwParamFlags`  
- [dans] Drapeaux pour le paramètre. C’est un peu `CorParamAttr` de valeur.  
+ dans Indicateurs pour le paramètre. Il s’agit d’un masque de `CorParamAttr` valeur de valeurs.  
   
  `dwCPlusTypeFlag`  
- [dans] `ELEMENT_TYPE_` pour la valeur *\** constante.  
+ [in] `ELEMENT_TYPE_` *\** pour la valeur de constante.  
   
  `pValue`  
- [dans] La valeur constante du paramètre.  
+ dans Valeur de constante pour le paramètre.  
   
  `cchValue`  
- [dans] La taille, dans les `pValue`caractères Unicode, de .  
+ dans Taille, en caractères Unicode, de `pValue` .  
   
  `ppd`  
- [out] Le `mdParamDef` jeton assigné.  
+ à `mdParamDef`Jeton assigné.  
   
-## <a name="remarks"></a>Notes   
- Les valeurs `ulParamSeq` de séquence commencent par 1 pour les paramètres. Une valeur de retour a un nombre de séquences de 0.  
+## <a name="remarks"></a>Remarques  
+ Les valeurs de séquence dans `ulParamSeq` commencent par 1 pour les paramètres. Une valeur de retour a un numéro de séquence égal à 0.  
   
 ## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)
