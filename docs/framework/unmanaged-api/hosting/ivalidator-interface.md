@@ -14,33 +14,33 @@ helpviewer_keywords:
 ms.assetid: b297e3b0-20f9-478f-b707-5e2eecb2b5b2
 topic_type:
 - apiref
-ms.openlocfilehash: 1a732e59d539c330f91e8665e81dc4771b40e2d0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d8e5ab607f9310341ded482b35f02f3845926328
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123287"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008558"
 ---
-# <a name="ivalidator-interface"></a><span data-ttu-id="d5167-102">IValidator, interface</span><span class="sxs-lookup"><span data-stu-id="d5167-102">IValidator Interface</span></span>
-<span data-ttu-id="d5167-103">Fournit des méthodes pour valider des images exécutables portables (PE) et des erreurs de validation de rapport.</span><span class="sxs-lookup"><span data-stu-id="d5167-103">Provides methods for validating portable executable (PE) images and reporting validation errors.</span></span>  
+# <a name="ivalidator-interface"></a><span data-ttu-id="dd48a-102">IValidator, interface</span><span class="sxs-lookup"><span data-stu-id="dd48a-102">IValidator Interface</span></span>
+<span data-ttu-id="dd48a-103">Fournit des méthodes pour valider des images exécutables portables (PE) et des erreurs de validation de rapport.</span><span class="sxs-lookup"><span data-stu-id="dd48a-103">Provides methods for validating portable executable (PE) images and reporting validation errors.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="d5167-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="d5167-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="dd48a-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="dd48a-104">Methods</span></span>  
   
-|<span data-ttu-id="d5167-105">Méthode</span><span class="sxs-lookup"><span data-stu-id="d5167-105">Method</span></span>|<span data-ttu-id="d5167-106">Description</span><span class="sxs-lookup"><span data-stu-id="d5167-106">Description</span></span>|  
+|<span data-ttu-id="dd48a-105">Méthode</span><span class="sxs-lookup"><span data-stu-id="dd48a-105">Method</span></span>|<span data-ttu-id="dd48a-106">Description</span><span class="sxs-lookup"><span data-stu-id="dd48a-106">Description</span></span>|  
 |------------|-----------------|  
-|<span data-ttu-id="d5167-107">Valider</span><span class="sxs-lookup"><span data-stu-id="d5167-107">Validate</span></span>|<span data-ttu-id="d5167-108">Valide le fichier PE ou MSIL (Microsoft Intermediate Language) spécifié.</span><span class="sxs-lookup"><span data-stu-id="d5167-108">Validates the specified PE or Microsoft intermediate language (MSIL) file.</span></span>|  
-|<span data-ttu-id="d5167-109">FormatEventInfo (</span><span class="sxs-lookup"><span data-stu-id="d5167-109">FormatEventInfo</span></span>|<span data-ttu-id="d5167-110">Obtient le message d’erreur correspondant à l’erreur de validation spécifiée.</span><span class="sxs-lookup"><span data-stu-id="d5167-110">Gets the error message corresponding to the specified validation error.</span></span>|  
+|<span data-ttu-id="dd48a-107">Validate</span><span class="sxs-lookup"><span data-stu-id="dd48a-107">Validate</span></span>|<span data-ttu-id="dd48a-108">Valide le fichier PE ou MSIL (Microsoft Intermediate Language) spécifié.</span><span class="sxs-lookup"><span data-stu-id="dd48a-108">Validates the specified PE or Microsoft intermediate language (MSIL) file.</span></span>|  
+|<span data-ttu-id="dd48a-109">FormatEventInfo (</span><span class="sxs-lookup"><span data-stu-id="dd48a-109">FormatEventInfo</span></span>|<span data-ttu-id="dd48a-110">Obtient le message d’erreur correspondant à l’erreur de validation spécifiée.</span><span class="sxs-lookup"><span data-stu-id="dd48a-110">Gets the error message corresponding to the specified validation error.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="d5167-111">spécifications</span><span class="sxs-lookup"><span data-stu-id="d5167-111">Requirements</span></span>  
- <span data-ttu-id="d5167-112">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d5167-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="dd48a-111">Spécifications</span><span class="sxs-lookup"><span data-stu-id="dd48a-111">Requirements</span></span>  
+ <span data-ttu-id="dd48a-112">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="dd48a-112">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d5167-113">**En-tête :** IValidator. idl, IValidator. h</span><span class="sxs-lookup"><span data-stu-id="d5167-113">**Header:** IValidator.idl, IValidator.h</span></span>  
+ <span data-ttu-id="dd48a-113">**En-tête :** IValidator. idl, IValidator. h</span><span class="sxs-lookup"><span data-stu-id="dd48a-113">**Header:** IValidator.idl, IValidator.h</span></span>  
   
- <span data-ttu-id="d5167-114">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="d5167-114">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="dd48a-114">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="dd48a-114">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="d5167-115">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d5167-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="dd48a-115">**Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="dd48a-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d5167-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d5167-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="dd48a-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="dd48a-116">See also</span></span>
 
-- [<span data-ttu-id="d5167-117">Interfaces d’hébergement</span><span class="sxs-lookup"><span data-stu-id="d5167-117">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [<span data-ttu-id="d5167-118">CorRuntimeHost, coclasse</span><span class="sxs-lookup"><span data-stu-id="d5167-118">CorRuntimeHost Coclass</span></span>](../../../../docs/framework/unmanaged-api/hosting/corruntimehost-coclass.md)
+- [<span data-ttu-id="dd48a-117">Interfaces d'hébergement</span><span class="sxs-lookup"><span data-stu-id="dd48a-117">Hosting Interfaces</span></span>](hosting-interfaces.md)
+- [<span data-ttu-id="dd48a-118">CorRuntimeHost, coclasse</span><span class="sxs-lookup"><span data-stu-id="dd48a-118">CorRuntimeHost Coclass</span></span>](corruntimehost-coclass.md)
