@@ -2,12 +2,12 @@
 title: Implémentation d’un modèle de domaine de microservice avec .NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Accéder aux détails d’implémentation d’un modèle de domaine orienté DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: 24f700b371d998cf99cbcf260a5278d797cb39d4
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 8aff06a2e37dc87e5ba4f556e9b808598ff3653a
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988425"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144576"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implémenter un modèle de domaine de microservice avec .NET Core
 
@@ -17,15 +17,15 @@ Dans la section précédente, les modèles et principes fondamentaux de concepti
 
 L’organisation des dossiers utilisée pour l’application de référence eShopOnContainers montre le modèle DDD pour l’application. Vous pouvez trouver qu’une organisation des dossiers différente communique plus clairement les choix de conception effectués pour votre application. Comme vous pouvez le voir dans la figure 7-10, il existe deux agrégats dans le modèle de domaine de commandes : l’agrégat des commandes et l’agrégat des acheteurs. Chaque agrégat est un groupe d’entités de domaine et d’objets de valeur, bien que vous puissiez également avoir un agrégat composé d’une entité de domaine unique (la racine d’agrégat ou l’entité racine).
 
-:::image type="complex" source="./media/net-core-microservice-domain-model/ordering-microservice-container.png" alt-text="Capture d’écran du projet Ordering.Domain dans Solution Explorer.":::
+:::image type="complex" source="./media/net-core-microservice-domain-model/ordering-microservice-container.png" alt-text="Capture d’écran du projet Ordering. Domain dans Explorateur de solutions.":::
 La vue Explorateur de solutions pour le projet Ordering.Domain, montrant le dossier AggregatesModel contenant les dossiers BuyerAggregate et OrderAggregate, chacun d’eux contenant ses classes d’entité, ses fichiers objets de valeur, etc.
 :::image-end:::
 
 **Figure 7-10.** Structure de modèle de domaine pour le microservice de commandes dans eShopOnContainers
 
-En outre, la couche de modèle de domaine inclut les contrats de dépôt (interfaces) qui représentent les exigences en matière d’infrastructure de votre modèle de domaine. En d’autres termes, ces interfaces indiquent les dépôts et les méthodes que la couche d’infrastructure doit implémenter. Il est essentiel que la mise en œuvre des dépôts soit placée en dehors de la couche du modèle de domaine, dans la bibliothèque de couches d’infrastructure, de sorte que la couche de modèle de domaine n’est pas « contaminée » par l’API ou les classes des technologies d’infrastructure, comme Entity Framework.
+En outre, la couche de modèle de domaine inclut les contrats de dépôt (interfaces) qui représentent les exigences en matière d’infrastructure de votre modèle de domaine. En d’autres termes, ces interfaces indiquent les dépôts et les méthodes que la couche d’infrastructure doit implémenter. Il est essentiel que l’implémentation des dépôts soit placée en dehors de la couche de modèle de domaine dans la bibliothèque de couches d’infrastructure, de sorte que la couche de modèle de domaine n’est pas « contaminée » par l’API ou les classes des technologies d’infrastructure, comme Entity Framework.
 
-Vous pouvez également voir un dossier [SeedWork](https://martinfowler.com/bliki/Seedwork.html) qui contient des classes de base personnalisées que vous pouvez utiliser comme base pour vos entités de domaine et des objets de valeur, de sorte que vous n’avez pas de code redondant dans la classe d’objets de chaque domaine.
+Vous pouvez également voir un dossier [SeedWork](https://martinfowler.com/bliki/Seedwork.html) qui contient des classes de base personnalisées que vous pouvez utiliser comme base pour vos entités de domaine et objets de valeur, de sorte que vous n’avez pas de code redondant dans la classe d’objets de chaque domaine.
 
 ## <a name="structure-aggregates-in-a-custom-net-standard-library"></a>Structurer des agrégats dans une bibliothèque .NET Standard personnalisée
 
@@ -101,7 +101,7 @@ En outre, la classe est décorée avec une interface nommée IAggregateRoot. Cet
 
 Une interface de marqueur est parfois considérée comme un anti-modèle ; toutefois, il s’agit également d’un moyen adéquat pour marquer une classe, en particulier quand cette interface peut évoluer. Un attribut peut représenter l’autre choix pour le marqueur, mais il est plus rapide d’afficher la classe de base (Entity) en regard de l’interface IAggregate au lieu de placer un marqueur d’attribut Aggregate au-dessus de la classe. Il s’agit d’une question de préférences dans tous les cas.
 
-Le fait d’avoir une racine globale signifie que la plupart du code lié à la cohérence et aux règles commerciales des entités de l’agrégat devraient être mis en œuvre comme méthodes dans la catégorie des racines agrégées de l’Ordre (par exemple, AddOrderItem lors de l’ajout d’un objet OrderItem à l’agrégat). Vous ne devez pas créer ni mettre à jour des objets OrderItems indépendamment ou directement ; la classe AggregateRoot doit garder le contrôle et assurer la cohérence de toutes les opérations de mise à jour par rapport à ses entités enfants.
+Le fait d’avoir une racine d’agrégat signifie que la majeure partie du code lié à la cohérence et aux règles d’entreprise des entités de l’agrégat doit être implémentée en tant que méthodes dans la classe racine d’agrégat d’ordre (par exemple, AddOrderItem lors de l’ajout d’un objet OrderItem à l’agrégat). Vous ne devez pas créer ni mettre à jour des objets OrderItems indépendamment ou directement ; la classe AggregateRoot doit garder le contrôle et assurer la cohérence de toutes les opérations de mise à jour par rapport à ses entités enfants.
 
 ## <a name="encapsulate-data-in-the-domain-entities"></a>Encapsuler des données dans les entités de domaine
 
@@ -132,7 +132,7 @@ Pour suivre les modèles DDD, les entités ne doivent pas avoir de méthodes set
 
 En outre, les collections dans l’entité (par exemple, les articles de la commande) doivent être des propriétés en lecture seule (méthode AsReadOnly abordée plus loin). Vous devez pouvoir effectuer la mise à jour uniquement à partir des méthodes de classe de la racine d’agrégat ou des méthodes de l’entité enfant.
 
-Comme vous pouvez le voir dans le code de la racine agrégée de l’Ordre, tous les setters doivent être privés ou du moins lus uniquement à l’extérieur, de sorte que toute opération contre les données de l’entité ou ses entités enfant doit être effectuée par des méthodes dans la catégorie d’entités. La cohérence est ainsi assurée de manière contrôlée et orientée objet au lieu d’implémenter un code de script transactionnel.
+Comme vous pouvez le voir dans le code de la racine d’agrégat Order, tous les accesseurs set doivent être privés ou au moins en lecture seule en externe, de sorte que toute opération sur les données de l’entité ou ses entités enfants doit être effectuée par le biais de méthodes dans la classe d’entité. La cohérence est ainsi assurée de manière contrôlée et orientée objet au lieu d’implémenter un code de script transactionnel.
 
 L’extrait de code suivant montre la façon correcte de coder la tâche d’ajout d’un objet OrderItem à l’agrégat Order.
 
@@ -166,19 +166,19 @@ Quand vous utilisez EF Core 1.0 ou une version ultérieure, dans le DbContext,
 
 Avec la fonctionnalité dans EF Core 1.1 ou version ultérieure permettant de mapper des colonnes aux champs, il est également possible de ne pas utiliser de propriétés. Au lieu de cela, vous pouvez juste mapper des colonnes d’une table aux champs. Cette fonctionnalité est couramment utilisée dans le cadre des champs privés pour un état interne qui ne doit pas être accessible depuis l’extérieur de l’entité.
 
-Par exemple, dans l’exemple de code OrderAggregate précédent, il existe plusieurs champs privés, tels que le champ `_paymentMethodId`, sans propriété associée pour une méthode setter ou un accesseur Get. Ce domaine pourrait également être calculé dans la logique commerciale de l’ordre et utilisé à partir des méthodes de l’ordre, mais il doit également être persisté dans la base de données. Ainsi, dans EF Core (depuis la version 1.1), il existe un moyen de mapper un champ sans une propriété associée à une colonne dans la base de données. Cela est également expliqué dans la section [Couche d’infrastructure](ddd-oriented-microservice.md#the-infrastructure-layer) de ce guide.
+Par exemple, dans l’exemple de code OrderAggregate précédent, il existe plusieurs champs privés, tels que le champ `_paymentMethodId`, sans propriété associée pour une méthode setter ou un accesseur Get. Ce champ peut également être calculé dans la logique métier de la commande et utilisé à partir des méthodes de la commande, mais il doit également être conservé dans la base de données. Ainsi, dans EF Core (depuis la version 1.1), il existe un moyen de mapper un champ sans une propriété associée à une colonne dans la base de données. Cela est également expliqué dans la section [Couche d’infrastructure](ddd-oriented-microservice.md#the-infrastructure-layer) de ce guide.
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Vaughn Vernon. Agrégats de modélisation avec DDD et cadre d’entité.** Notez qu’il ne s’agit *pas* d’Entity Framework Core. \
+- **Vaughn Vernon. Modélisation des agrégats avec DDD et Entity Framework.** Notez qu’il ne s’agit *pas* d’Entity Framework Core. \
   <https://kalele.io/blog-posts/modeling-aggregates-with-ddd-and-entity-framework/>
 
-- **Julie Lerman. Points de données - Codage pour la conception axée sur le domaine : Conseils pour les développeurs axés sur les données** \
+- **Julie Lerman. Points de données-codage pour la conception pilotée par domaine : conseils pour les développeurs centrés sur les données** \
   <https://docs.microsoft.com/archive/msdn-magazine/2013/august/data-points-coding-for-domain-driven-design-tips-for-data-focused-devs>
 
-- **Udi Dahan. Comment créer des modèles de domaine entièrement encapsulés** \
-  <http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
+- **UDI Dahan. Comment créer des modèles de domaine entièrement encapsulés** \
+  <https://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
 
 > [!div class="step-by-step"]
-> [Suivant précédent](microservice-domain-model.md)
-> [Next](seedwork-domain-model-base-classes-interfaces.md)
+> [Précédent](microservice-domain-model.md) 
+>  [Suivant](seedwork-domain-model-base-classes-interfaces.md)

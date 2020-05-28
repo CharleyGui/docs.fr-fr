@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-ms.openlocfilehash: aa782c46d6530bb30055c536dd10d78f9ab9f79f
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 1882feee4e8071f1d32fb59ab02519c6e6fe2684
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75963774"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84143561"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Hébergement dans le service d'activation de processus de Windows (WAS, Windows Process Activation Service)
 Le service d’activation des processus Windows (WAS) gère l’activation et la durée de vie des processus de travail qui contiennent des applications qui hébergent des services Windows Communication Foundation (WCF). Le modèle de processus WAS généralise le modèle de processus IIS 6,0 pour le serveur HTTP en supprimant la dépendance sur HTTP. Cela permet aux services WCF d’utiliser à la fois des protocoles HTTP et non-HTTP, tels que net. TCP, dans un environnement d’hébergement qui prend en charge l’activation basée sur les messages et offre la possibilité d’héberger un grand nombre d’applications sur un ordinateur donné.  
@@ -36,9 +36,9 @@ Le service d’activation des processus Windows (WAS) gère l’activation et la
   
 |Scénario|Liaisons de site|Chemin d’application|URI d'application de base|  
 |--------------|-------------------|----------------------|---------------------------|  
-|HTTP uniquement|http : * : 80 :\*|/appTwo|http://localhost/appTwo/|  
-|À la fois HTTP et non-HTTP|http : * : 80 :\*<br /><br /> NET. TCP : 808 :\*|/appTwo|http://localhost/appTwo/<br />net.tcp://localhost/appTwo/|  
-|Non-HTTP uniquement|net.pipe: *|/appThree|net.pipe://appThree/|  
+|HTTP uniquement|http : * : 80 :\*|/appTwo|`http://localhost/appTwo/`|  
+|À la fois HTTP et non-HTTP|http : * : 80 :\*<br /><br /> NET. TCP : 808 :\*|/appTwo|`http://localhost/appTwo/`<br />`net.tcp://localhost/appTwo/`|  
+|Non-HTTP uniquement|net.pipe: *|/appThree|`net.pipe://appThree/`|  
   
  Les services et les ressources dans une application peuvent également être adressés. Dans une application, les ressources d'application sont adressées relativement au chemin d'accès d'application de base. Par exemple, supposez qu'un site sur un nom d'ordinateur contoso.com aie des liaisons de site pour les protocoles HTTP et Net.TCP à la fois. Supposez également que le site contienne une application située dans /Billing, qui expose un service à GetOrders.svc. Dans ce cas, si le service GetOrders.svc a exposé un point de terminaison avec une adresse relative de SecureEndpoint, le point de terminaison du service est exposé aux deux URI suivants :  
   
@@ -50,8 +50,8 @@ Le service d’activation des processus Windows (WAS) gère l’activation et la
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Architecture d’activation WAS](../../../../docs/framework/wcf/feature-details/was-activation-architecture.md)
+- [Architecture d'activation WAS](../../../../docs/framework/wcf/feature-details/was-activation-architecture.md)
 - [Configuration du service WAS pour une utilisation avec WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)
 - [Guide pratique pour installer et configurer des composants d’activation WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)
-- [How to: Host a WCF Service in WAS (Comment : héberger un service WCF dans WAS)](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)
+- [Comment : héberger un service WCF dans WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)
 - [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

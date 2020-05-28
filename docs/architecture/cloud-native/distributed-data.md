@@ -3,12 +3,12 @@ title: Données distribuées
 description: Le contraste du stockage des données dans les applications monolithiques et Cloud natives.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 2eff37dcc57ae39daac0ba10d10322be5eb4e321
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 28513f8691c06cf58ed14d57bf7830bb35d94852
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614134"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144394"
 ---
 # <a name="distributed-data"></a>Données distribuées
 
@@ -120,7 +120,7 @@ La figure 5-7 illustre une implémentation du modèle CQRS.
 
 **Figure 5-7**. Implémentation CQRS
 
-Dans la figure précédente, des modèles de commande et de requête distincts sont implémentés. Chaque opération d’écriture de données est enregistrée dans le magasin d’écriture, puis propagée vers le magasin de lecture. Portez une attention particulière à la façon dont le processus de propagation des données opère sur le principe de la [cohérence éventuelle](http://www.cloudcomputingpatterns.org/eventual_consistency/). Le modèle de lecture finit par se synchroniser avec le modèle d’écriture, mais il peut y avoir un décalage dans le processus. Nous aborderons la cohérence éventuelle dans la section suivante.
+Dans la figure précédente, des modèles de commande et de requête distincts sont implémentés. Chaque opération d’écriture de données est enregistrée dans le magasin d’écriture, puis propagée vers le magasin de lecture. Portez une attention particulière à la façon dont le processus de propagation des données opère sur le principe de la [cohérence éventuelle](https://www.cloudcomputingpatterns.org/eventual_consistency/). Le modèle de lecture finit par se synchroniser avec le modèle d’écriture, mais il peut y avoir un décalage dans le processus. Nous aborderons la cohérence éventuelle dans la section suivante.
 
 Cette séparation permet de mettre à l’échelle indépendamment les lectures et les écritures. Les opérations de lecture utilisent un schéma optimisé pour les requêtes, tandis que les écritures utilisent un schéma optimisé pour les mises à jour. Les requêtes de lecture dépassent les données dénormalisées, tandis que la logique métier complexe peut être appliquée au modèle d’écriture. En outre, vous pouvez imposer une sécurité plus étroite sur les opérations d’écriture que celles qui exposent des lectures.
 

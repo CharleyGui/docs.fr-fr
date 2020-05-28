@@ -4,12 +4,12 @@ description: Un guide qui fournit une aide de bout en bout sur la création d’
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/4/2019
-ms.openlocfilehash: 936a068507116033ad178f26e77945f30f70387e
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 8eebe9a8e530b244f4596adef1b5e6dd23e305bd
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507191"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144537"
 ---
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Architecturer des applications web modernes avec ASP.NET Core et Azure
 
@@ -35,7 +35,7 @@ Ce document est fourni « en l’état » et exprime les points de vue et les op
 
  Certains exemples sont fournis à titre indicatif uniquement et sont fictifs. Toute association ou lien est purement involontaire ou fortuit.
 
-Microsoft et les marques commerciales mentionnées dans la page web « Marques » sur https://www.microsoft.com sont des marques du groupe Microsoft.
+Microsoft et les marques commerciales mentionnées dans la page web « Marques » sur <https://www.microsoft.com> sont des marques du groupe Microsoft.
 
 Mac et macOS sont des marques commerciales d’Apple Inc.
 
@@ -112,7 +112,7 @@ Ce guide a été condensé dans un document relativement petit qui se concentre 
 
 N’hésitez pas à faire connaître ce guide pour favoriser une compréhension partagée de ces considérations et de ces opportunités. Le fait que chacun utilise un même ensemble de terminologie et de principes sous-jacents permet d’obtenir plus facilement une application cohérente des modèles et des pratiques en matière d’architecture.
 
-## <a name="references"></a>References
+## <a name="references"></a>Références
 
 - **Choix entre .NET Core et .NET Framework pour les applications serveur**  
   [https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server](../../standard/choosing-core-framework-server.md)

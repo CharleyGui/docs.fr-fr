@@ -2,12 +2,12 @@
 title: Conception d’un modèle de domaine de microservice
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les concepts clés de la conception d’un modèle de domaine orienté DDD.
 ms.date: 01/30/2020
-ms.openlocfilehash: 64860d75dca645904e973a4b8927a716a1603394
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 234d6e518eac8de5b2f130b91adb32b6a24a7265
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988412"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144589"
 ---
 # <a name="design-a-microservice-domain-model"></a>Concevoir un modèle de domaine de microservice
 
@@ -17,17 +17,17 @@ Votre objectif consiste à créer un seul modèle de domaine cohésif pour chaqu
 
 ## <a name="the-domain-entity-pattern"></a>Le modèle Entité de domaine
 
-Les entités représentent des objets de domaine. Elles sont principalement définies par leur identité, leur continuité et leur persistance dans le temps et non uniquement par les attributs qui les composent. Comme le dit Eric Evans, « un objet principalement défini par son identité s’appelle une entité ». Les entités sont très importantes dans le modèle de domaine, puisqu’elles constituent la base d’un modèle. Par conséquent, vous devez les identifier et les concevoir soigneusement.
+Les entités représentent des objets de domaine. Elles sont principalement définies par leur identité, leur continuité et leur persistance dans le temps et non uniquement par les attributs qui les composent. Comme Eric Evans dit, « un objet principalement défini par son identité est appelé «entité ». Les entités sont très importantes dans le modèle de domaine, puisqu’elles constituent la base d’un modèle. Par conséquent, vous devez les identifier et les concevoir soigneusement.
 
-*L’identité d’une entité peut traverser plusieurs microservices ou contextes délimités.*
+*L’identité d’une entité peut traverser plusieurs microservices ou contextes limités.*
 
-La même identité (c’est-à-dire la même valeur `Id`, mais peut-être pas la même entité de domaine) peut être modélisée dans plusieurs contextes délimités ou microservices. Toutefois, cela n’implique pas que la même entité, avec les mêmes attributs et la même logique, peut être implémentée dans plusieurs contextes limités. Au lieu de cela, les entités de chaque contexte limité limitent leurs attributs et leurs comportements à ceux requis dans le domaine de ce contexte lié.
+La même identité (c’est-à-dire la même valeur `Id`, mais peut-être pas la même entité de domaine) peut être modélisée dans plusieurs contextes délimités ou microservices. Toutefois, cela n’implique pas que la même entité, avec les mêmes attributs et la même logique, peut être implémentée dans plusieurs contextes limités. Au lieu de cela, les entités dans chaque contexte délimité limitent leurs attributs et leurs comportements à ceux qui sont requis dans le domaine de ce contexte limité.
 
-Par exemple, l’entité acheteur peut avoir la plupart des attributs d’une personne qui sont définis dans l’entité utilisateur dans le profil ou le microservice d’identité, y compris l’identité. Mais l’entité Buyer dans le microservice de passation de commandes peut avoir moins d’attributs, car seules certaines données sur l’acheteur sont liées au processus de commande. Le contexte de chaque microservice ou contexte limité exerce un impact sur son modèle de domaine.
+Par exemple, l’entité Buyer peut avoir la plupart des attributs d’une personne qui sont définis dans l’entité user dans le profil ou le microservice d’identité, y compris l’identité. Mais l’entité Buyer dans le microservice de passation de commandes peut avoir moins d’attributs, car seules certaines données sur l’acheteur sont liées au processus de commande. Le contexte de chaque microservice ou contexte limité exerce un impact sur son modèle de domaine.
 
 *Les entités de domaine doivent implémenter un comportement en plus des attributs de données.*
 
-Une entité de domaine en conception pilotée par le domaine (Domain Driver Design, DDD) doit implémenter la logique de domaine ou le comportement lié aux données de l’entité (objet auquel vous accédez dans la mémoire). Par exemple, dans le cadre d’une classe d’entité de commande, vous devez implémenter la logique et les opérations métier en tant que méthodes pour des tâches comme l’ajout d’un article, la validation des données et le calcul du total. Les méthodes de l’entité s’occupent des invariants et des règles de l’entité au lieu d’avoir ces règles réparties sur la couche d’application.
+Une entité de domaine en conception pilotée par le domaine (Domain Driver Design, DDD) doit implémenter la logique de domaine ou le comportement lié aux données de l’entité (objet auquel vous accédez dans la mémoire). Par exemple, dans le cadre d’une classe d’entité de commande, vous devez implémenter la logique et les opérations métier en tant que méthodes pour des tâches comme l’ajout d’un article, la validation des données et le calcul du total. Les méthodes de l’entité prennent en charge les invariants et les règles de l’entité au lieu que ces règles soient réparties dans la couche d’application.
 
 La figure 7-8 illustre une entité de domaine qui implémente non seulement des attributs de données, mais aussi des opérations ou des méthodes avec une logique de domaine associée.
 
@@ -51,32 +51,32 @@ Quand même, si votre microservice ou contexte limité est très simple (un serv
 
 C’est pourquoi les architectures des microservices conviennent parfaitement à une approche à plusieurs architectures dépendant de chaque contexte limité. Par exemple, dans eShopOnContainers, le microservice de passation de commandes implémente des modèles DDD, contrairement au microservice de catalogue, qui est un simple service CRUD.
 
-Certaines personnes disent que le modèle de domaine anémique est un anti-modèle. Il dépend vraiment de ce que vous implémentez. Si le microservice que vous créez est suffisamment simple (par exemple, un service CRUD), le modèle de domaine anémique n’est pas un anti-modèle. Cependant, si vous avez besoin de s’attaquer à la complexité du domaine d’un microservice qui a beaucoup de règles d’affaires en constante évolution, le modèle de domaine anémique pourrait être un modèle anti-modèle pour ce microservice ou contexte limité. Dans ce cas, une conception en tant que modèle riche avec des entités contenant des données en plus d’un comportement, ainsi que l’implémentation de modèles DDD supplémentaires (agrégats, objets de valeur, etc.) peut offrir des avantages énormes pour le succès à long terme d’un tel microservice.
+Certaines personnes disent que le modèle de domaine anémique est un anti-modèle. Il dépend vraiment de ce que vous implémentez. Si le microservice que vous créez est suffisamment simple (par exemple, un service CRUD), le modèle de domaine anémique n’est pas un anti-modèle. Toutefois, si vous devez aborder la complexité du domaine d’un microservice qui a de nombreuses règles métier en constante évolution, le modèle de domaine anémique peut être un anti-modèle pour ce microservice ou contexte limité. Dans ce cas, une conception en tant que modèle riche avec des entités contenant des données en plus d’un comportement, ainsi que l’implémentation de modèles DDD supplémentaires (agrégats, objets de valeur, etc.) peut offrir des avantages énormes pour le succès à long terme d’un tel microservice.
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **DevIQ. Entité de domaine** \
   <https://deviq.com/entity/>
 
-- **Martin Fowler. Le modèle de domaine** \
+- **Martin Fowler. Modèle de domaine** \
   <https://martinfowler.com/eaaCatalog/domainModel.html>
 
-- **Martin Fowler. Le modèle anémique de domaine** \
+- **Martin Fowler. Modèle de domaine anémique** \
   <https://martinfowler.com/bliki/AnemicDomainModel.html>
 
 ### <a name="the-value-object-pattern"></a>Le modèle Objet de valeur
 
-Comme Eric Evans l’a noté, « beaucoup d’objets n’ont pas d’identité conceptuelle. Ces objets décrivent certaines caractéristiques d’une chose.
+Comme Eric Evans l’a dit, «de nombreux objets n’ont pas d’identité conceptuelle. Ces objets décrivent certaines caractéristiques d’un élément.»
 
 Une entité nécessite une identité, mais il existe de nombreux objets dans un système qui n’en ont pas besoin, comme le modèle Objet de valeur. Un objet de valeur est un objet sans identité conceptuelle qui décrit un aspect de domaine. Ce sont des objets que vous instanciez pour représenter des éléments de conception qui ne vous concernent que temporairement. Il vous importe de savoir *ce* qu’ils sont, pas *qui* ils sont. Les nombres et les chaînes en sont des exemples, mais il peut aussi s’agir de concepts plus généraux comme des groupes d’attributs.
 
-Une entité dans un microservice peut ne pas être une entité dans un autre microservice, puisque dans le deuxième cas, le contexte limité peut avoir une signification différente. Par exemple, une adresse d’une application de commerce électronique peut ne pas avoir d’identité du tout, car elle ne peut représenter qu’un groupe d’attributs du profil du client pour une personne ou une entreprise. Dans ce cas, l’adresse doit être classée en tant qu’objet de valeur. Toutefois, dans une application destinée à un fournisseur d’énergie électrique, l’adresse du client peut s’avérer importante pour le domaine d’entreprise. Par conséquent, l’adresse doit avoir une identité pour que le système de facturation puisse être directement lié à l’adresse. Dans cet exemple, une adresse doit être classée en tant qu’entité de domaine.
+Une entité dans un microservice peut ne pas être une entité dans un autre microservice, puisque dans le deuxième cas, le contexte limité peut avoir une signification différente. Par exemple, une adresse dans une application de commerce électronique peut ne pas avoir d’identité, car elle peut uniquement représenter un groupe d’attributs du profil du client pour une personne ou une société. Dans ce cas, l’adresse doit être classée en tant qu’objet de valeur. Toutefois, dans une application destinée à un fournisseur d’énergie électrique, l’adresse du client peut s’avérer importante pour le domaine d’entreprise. Par conséquent, l’adresse doit avoir une identité pour que le système de facturation puisse être directement lié à l’adresse. Dans cet exemple, une adresse doit être classée en tant qu’entité de domaine.
 
 Une personne désignée par un prénom et un nom est généralement une entité, car elle a une identité, même si ce prénom et ce nom coïncident avec un autre ensemble de valeurs, par exemple s’ils font également référence à une autre personne.
 
-Les objets de valeur sont difficiles à gérer dans les bases de données relationnelles et les OUM comme Entity Framework (EF), tandis que dans les bases de données orientées vers les documents, ils sont plus faciles à implémenter et à utiliser.
+Les objets de valeur sont difficiles à gérer dans les bases de données relationnelles et ORM comme Entity Framework (EF), tandis que dans les bases de données orientées document, ils sont plus faciles à implémenter et à utiliser.
 
-EF Core 2.0 et les versions ultérieures comprennent la fonction [Entités possédées](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting) qui facilite la manipulation d’objets à valeur ajoutée, comme nous le verrons en détail plus tard.
+EF Core 2,0 et versions ultérieures incluent la fonctionnalité [entités détenues](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting) qui facilite la gestion des objets de valeur, comme nous le verrons plus tard.
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
@@ -89,7 +89,7 @@ EF Core 2.0 et les versions ultérieures comprennent la fonction [Entités poss�
 - **Objets de valeur dans le développement piloté par les tests** \
   [https://leanpub.com/tdd-ebook/read\#leanpub-auto-value-objects](https://leanpub.com/tdd-ebook/read#leanpub-auto-value-objects)
 
-- **Eric Evans. Conception axée sur le domaine : s’attaquer à la complexité au cœur du logiciel.** (Livre incluant une discussion sur les objets de valeur) \
+- **Eric Evans. Conception pilotée par domaine : la complexité du logiciel est plus complexe.** (Livre incluant une discussion sur les objets de valeur) \
   <https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/>
 
 ### <a name="the-aggregate-pattern"></a>Le modèle Agrégat
@@ -104,11 +104,11 @@ Il peut s’avérer difficile d’identifier les agrégats. Un agrégat est un g
 
 Un agrégat se compose d’au moins une entité : la racine d’agrégat, également appelée entité racine ou entité principale. De plus, il peut avoir plusieurs entités enfants et objets de valeur, qui fonctionnent tous ensemble pour implémenter le comportement et les transactions nécessaires.
 
-Une racine d’agrégat a pour but de garantir la cohérence de l’agrégat ; elle doit être le seul point d’entrée pour les mises à jour de l’agrégat par le biais de méthodes ou d’opérations dans la classe de racine d’agrégat. Vous devez apporter des modifications aux entités au sein de l’agrégat uniquement par le biais de la racine d’agrégat. Il est le gardien de cohérence de l’agrégat, compte tenu de toutes les invariants et les règles de cohérence que vous pourriez avoir besoin de se conformer à votre agrégat. Si vous modifiez séparément une entité enfant ou un objet de valeur, la racine d’agrégat ne peut pas vérifier que l’agrégat est dans un état valide. Il serait alors comme une table avec un pied qui bouge. Le maintien de la cohérence est le principal but de la racine d’agrégat.
+Une racine d’agrégat a pour but de garantir la cohérence de l’agrégat ; elle doit être le seul point d’entrée pour les mises à jour de l’agrégat par le biais de méthodes ou d’opérations dans la classe de racine d’agrégat. Vous devez apporter des modifications aux entités au sein de l’agrégat uniquement par le biais de la racine d’agrégat. Il s’agit du gardien Consistency de l’agrégat, en tenant compte de toutes les invariants et des règles de cohérence que vous devrez peut-être vous conformer dans votre agrégat. Si vous modifiez séparément une entité enfant ou un objet de valeur, la racine d’agrégat ne peut pas vérifier que l’agrégat est dans un état valide. Il serait alors comme une table avec un pied qui bouge. Le maintien de la cohérence est le principal but de la racine d’agrégat.
 
 Dans la figure 7-9, vous pouvez voir des exemples d’agrégats, comme l’agrégat Buyer (Acheteur), qui contient une seule entité (la racine d’agrégat Buyer). L’agrégat de commande (Order) contient plusieurs entités et un objet de valeur.
 
-![Diagramme comparant un agrégat d’acheteur et un agrégat de commande.](./media/microservice-domain-model/buyer-order-aggregate-pattern.png)
+![Diagramme comparant un agrégat d’acheteur et un agrégat de commandes.](./media/microservice-domain-model/buyer-order-aggregate-pattern.png)
 
 **Figure 7-9**. Exemples d’agrégats avec une seule entité ou plusieurs entités
 
@@ -133,24 +133,24 @@ L’identification et l’utilisation des agrégats nécessitent des recherches 
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Vaughn Vernon. Conception d’agrégat efficace - Partie I : Modélisation d’un agrégat unique** (à partir de <http://dddcommunity.org/>)
-  <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_1.pdf>
+- **Vaughn Vernon. Conception d’agrégats efficace-partie I : modélisation d’un seul agrégat** (from <https://dddcommunity.org/> ) \
+  <https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_1.pdf>
 
-- **Vaughn Vernon. Conception d’agrégats efficaces - Partie II : Faire en sorte que les agrégats fonctionnent ensemble** (à partir de <http://dddcommunity.org/>)
-  <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf>
+- **Vaughn Vernon. Conception d’agrégats efficace-partie II : faire fonctionner ensemble des agrégats** (à partir de <https://dddcommunity.org/> ) \
+  <https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf>
 
-- **Vaughn Vernon. Conception d’agrégats efficaces - Partie III : Obtenir l’aperçu par la découverte** (de <http://dddcommunity.org/>)
-  <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_3.pdf>
+- **Vaughn Vernon. Conception d’agrégats efficace-partie III : obtenir** des informations sur la découverte (à partir de <https://dddcommunity.org/> ) \
+  <https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_3.pdf>
 
-- **Sergey Grybniak. Modèles de conception tactique DDD** \
+- **Sergey Grybniak. Modèles de conception tactiques de DDD** \
   <https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part>
 
-- **Chris Richardson. Développer des microservices transactionnels à l’aide d’agrégats** \
+- **Chris Richardson. Développement de microservices transactionnels à l’aide d’agrégats** \
   <https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-1-richardson>
 
-- **DevIQ. Le modèle d’agrégat** \
+- **DevIQ. Modèle d’agrégation** \
   <https://deviq.com/aggregate-pattern/>
 
 >[!div class="step-by-step"]
->[Suivant précédent](ddd-oriented-microservice.md)
->[Next](net-core-microservice-domain-model.md)
+>[Précédent](ddd-oriented-microservice.md) 
+> [Suivant](net-core-microservice-domain-model.md)

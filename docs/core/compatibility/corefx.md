@@ -2,12 +2,12 @@
 title: Modifications importantes de la bibliothèque de classes de base
 description: Répertorie les modifications avec rupture dans les bibliothèques .NET de base.
 ms.date: 09/20/2019
-ms.openlocfilehash: ca50123b842c256607d47010dbef9b216ece4661
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 45de0f0d418437cf1677c9a8c7cfc9b6c33a24ef
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420425"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144476"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Modifications importantes des bibliothèques .NET principales
 
@@ -18,6 +18,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | Modification avec rupture | Version introduite |
 | - | :-: |
 | [Les méthodes SSE et SSE2 CompareGreaterThan gèrent correctement les entrées NaN](#sse-and-sse2-comparegreaterthan-methods-properly-handle-nan-inputs) | 5.0 |
+| [CounterSet. CreateCounterSetInstance lève désormais une exception InvalidOperationException si l’instance existe déjà](#countersetcreatecountersetinstance-now-throws-invalidoperationexception-if-instance-already-exists) | 5.0 |
 | [API qui signalent la version du produit et non de la version du fichier](#apis-that-report-version-now-report-product-and-not-file-version) | 3.0 |
 | [Les instances EncoderFallbackBuffer personnalisées ne peuvent pas être rétablies de manière récursive](#custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively) | 3.0 |
 | [Modifications du comportement de l’analyse et de la mise en forme à virgule flottante](#floating-point-formatting-and-parsing-behavior-changed) | 3.0 |
@@ -43,6 +44,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 ## <a name="net-50"></a>.NET 5,0
 
 [!INCLUDE [sse-comparegreaterthan-intrinsics](../../../includes/core-changes/corefx/5.0/sse-comparegreaterthan-intrinsics.md)]
+
+***
+
+[!INCLUDE [createcountersetinstance-throws-invalidoperation](../../../includes/core-changes/corefx/5.0/createcountersetinstance-throws-invalidoperation.md)]
 
 ***
 

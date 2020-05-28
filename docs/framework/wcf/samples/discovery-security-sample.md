@@ -2,12 +2,12 @@
 title: Exemple Discovery Security
 ms.date: 03/30/2017
 ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
-ms.openlocfilehash: 44022ee756f189347aaec606427ecb3c4c5ffa95
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: c6ec9b7e13234b7dae03541eb09ccba98f4cc93a
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728417"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144901"
 ---
 # <a name="discovery-security-sample"></a>Exemple Discovery Security
 
@@ -38,7 +38,7 @@ La spécification Discovery n'exige pas que les points de terminaison participan
 > [!NOTE]
 > Le `PrefixList` a été ajouté dans le protocole Discovery version 2008.  
   
- Pour calculer la signature, l’exemple identifie les éléments de signature développés. Une signature XML (`SignedInfo`) est créée, à l'aide du préfixe d'espace de noms `ds`, comme requis par la spécification WS-Discovery. Le corps et tous les en-têtes des espaces de noms de découverte et d'adressage sont référencés dans la signature et ne peuvent donc pas être falsifiés. Chaque élément référencé est transformé à l’aide de la canonisation exclusivehttp://www.w3.org/2001/10/xml-exc-c14n# (), puis une valeur Digest SHA-1 est calculée (http://www.w3.org/2000/09/xmldsig#sha1 ). En fonction de tous les éléments référencés et de leurs valeurs de synthèse, la valeur de la signature est calculéehttp://www.w3.org/2000/09/xmldsig#rsa-sha1 à l’aide de l’algorithme RSA ().  
+ Pour calculer la signature, l’exemple identifie les éléments de signature développés. Une signature XML (`SignedInfo`) est créée, à l'aide du préfixe d'espace de noms `ds`, comme requis par la spécification WS-Discovery. Le corps et tous les en-têtes des espaces de noms de découverte et d'adressage sont référencés dans la signature et ne peuvent donc pas être falsifiés. Chaque élément référencé est transformé à l’aide de la canonisation exclusive ( <http://www.w3.org/2001/10/xml-exc-c14n#> ), puis une valeur Digest SHA-1 est calculée ( <http://www.w3.org/2000/09/xmldsig#sha1> ). En fonction de tous les éléments référencés et de leurs valeurs de synthèse, la valeur de la signature est calculée à l’aide de l’algorithme RSA ( <http://www.w3.org/2000/09/xmldsig#rsa-sha1> ).  
   
  Les messages sont signés avec un certificat spécifié par le client. L’emplacement du magasin, le nom et le nom d’objet du certificat doivent être spécifiés lors de la création de l’élément de liaison. Le `KeyId` de la signature compacte représente l'identificateur de clé du jeton de signature et constitue l'identificateur de la clé du sujet (SKI, Subject Key Identifier) du jeton de signature ou, si le SKI n'existe pas, un hachage SHA-1 de la clé publique du jeton de signature.  
   
@@ -72,6 +72,6 @@ La spécification Discovery n'exige pas que les points de terminaison participan
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DiscoveryScenario`  

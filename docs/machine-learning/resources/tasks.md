@@ -2,20 +2,20 @@
 title: Tâches d’apprentissage automatique
 description: Explorez les différentes tâches Machine Learning ainsi que les tâches associées prises en charge dans ML.NET.
 ms.date: 12/23/2019
-ms.openlocfilehash: 6cd41065e668375537b9816ef7a208a65e0a523b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e6e36bd65dbadb8cb7b8edbf9e2e82071c208378
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399202"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144446"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>Tâches Machine Learning dans ML.NET
 
-Une tâche d’apprentissage automatique est le type de prédiction ou d’inférence qui est faite, en fonction du problème ou de la question qui est posée, et des données disponibles. Par exemple, la tâche de classification attribue des données aux catégories, et les données des groupes de tâches en grappe en fonction de la similitude.
+Une tâche de Machine Learning est le type de prédiction ou d’inférence qui est effectué, en fonction du problème ou de la question demandée, et des données disponibles. Par exemple, la tâche de classification assigne des données à des catégories, et la tâche de clustering regroupe les données en fonction de la similarité.
 
-Les tâches d’apprentissage automatique reposent sur des modèles dans les données plutôt que d’être explicitement programmées.
+Les tâches machine learning s’appuient sur des modèles dans les données plutôt que sur des séquences explicitement programmées.
 
-Cet article décrit les différentes tâches d’apprentissage automatique que vous pouvez choisir dans ML.NET et certains cas d’utilisation courante.
+Cet article décrit les différentes tâches de Machine Learning que vous pouvez choisir dans ML.NET et certains cas d’usage courants.
 
 Une fois que vous avez décidé de tâche qui fonctionne pour votre scénario, vous devez choisir le meilleur algorithme pour entraîner le modèle. Les algorithmes disponibles sont listés dans la section pour chaque tâche.
 
@@ -26,7 +26,7 @@ Une tâche [Apprentissage automatique supervisé](glossary.md#supervised-machine
 * [Déterminer si des commentaires Twitter](../tutorials/sentiment-analysis.md) sont « positifs » ou « négatifs ».
 * Diagnostiquer si un patient est atteint ou non d’une certaine maladie.
 * Décider si un e-mail doit être considéré comme « spam » ou non.
-* Déterminer si une photo contient un article particulier ou non, comme un chien ou un fruit.
+* Déterminer si une photo contient un élément particulier, tel qu’un chien ou un fruit.
 
 Pour plus d’informations, consultez l’article Wikipédia [Classification binaire](https://en.wikipedia.org/wiki/Binary_classification).
 
@@ -54,7 +54,7 @@ Pour tirer le meilleur parti de la classification binaire, vous devez équilibre
 Les données de la colonne d’étiquettes d’entrée doivent être <xref:System.Boolean>.
 Les données de la colonne des caractéristiques d’entrée doivent être un vecteur de taille fixe de <xref:System.Single>.
 
-Ces formateurs en extradent les colonnes suivantes :
+Ces formateurs génèrent les colonnes suivantes :
 
 | Nom de colonne de sortie | Type de colonne | Description|
 | -- | -- | -- |
@@ -72,7 +72,7 @@ Une tâche [Apprentissage automatique supervisé](glossary.md#supervised-machine
 Pour plus d’informations, consultez l’article Wikipédia [Classification multiclasse](https://en.wikipedia.org/wiki/Multiclass_classification).
 
 >[!NOTE]
->OvA (One vs all, Un comparé à tous) met à niveau les [learners de classification binaire](#binary-classification) pour agir sur les jeux de données multiclasses. Pour plus d’informations, consultez l’article [Wikipédia] (https://en.wikipedia.org/wiki/Multiclass_classification#One-vs.-rest).
+>OvA (One vs all, Un comparé à tous) met à niveau les [learners de classification binaire](#binary-classification) pour agir sur les jeux de données multiclasses. Plus d’informations sur [Wikipédia](https://en.wikipedia.org/wiki/Multiclass_classification#One-vs.-rest).
 
 ### <a name="multiclass-classification-trainers"></a>Entraîneurs de classification multiclasse
 
@@ -97,7 +97,7 @@ Cet entraîneur génère la sortie suivante :
 | Nom de sortie | Type | Description|
 | -- | -- | -- |
 | `Score` | Vecteur de <xref:System.Single> | Les scores de toutes les classes. Une valeur supérieure signifie une plus forte probabilité d’appartenir à la classe associée. Si l’i-ème élément a la plus grande valeur, l’index de l’étiquette prédite est i. Notez que i est l’index de base zéro. |
-| `PredictedLabel` | type [clé](xref:Microsoft.ML.Data.KeyDataViewType) | Index de l’étiquette prédite. Si sa valeur est i, l’étiquette réelle est la i-ème catégorie dans le type d’étiquette d’entrée avec une valeur de clé. |
+| `PredictedLabel` | type de [clé](xref:Microsoft.ML.Data.KeyDataViewType) | Index de l’étiquette prédite. Si sa valeur est i, l’étiquette réelle est la i-ème catégorie dans le type d’étiquette d’entrée avec une valeur de clé. |
 
 ## <a name="regression"></a>régression ;
 
@@ -154,7 +154,7 @@ Cet entraîneur génère la sortie suivante :
 | Nom de sortie | Type | Description|
 | -- | -- | -- |
 | `Score` | Vecteur de <xref:System.Single> | Distances entre le point de données spécifique et les centroïdes de tous les clusters |
-| `PredictedLabel` | type [clé](xref:Microsoft.ML.Data.KeyDataViewType) | Index du cluster le plus proche prédit par le modèle. |
+| `PredictedLabel` | type de [clé](xref:Microsoft.ML.Data.KeyDataViewType) | Index du cluster le plus proche prédit par le modèle. |
 
 ## <a name="anomaly-detection"></a>Détection des anomalies
 
@@ -186,7 +186,7 @@ Cet entraîneur génère la sortie suivante :
 | Nom de sortie | Type | Description|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Score non négatif sans borne calculé par le modèle de détection d’anomalie |
-| `PredictedLabel` | <xref:System.Boolean> | Une valeur vraie/fausse représentant si l’entrée est une anomalie (PredictedLabel-true) ou non (PredictedLabel-faux) |
+| `PredictedLabel` | <xref:System.Boolean> | Valeur true/false indiquant si l’entrée est une anomalie (PredictedLabel = true) ou non (PredictedLabel = false) |
 
 ## <a name="ranking"></a>Classement
 
@@ -223,10 +223,10 @@ Vous pouvez entraîner un modèle de recommandation en utilisant les algorithmes
 
 ## <a name="forecasting"></a>Prévisions
 
-La tâche de prévision utilise les données passées des séries chronologiques pour faire des prédictions sur le comportement futur. Les scénarios applicables aux prévisions comprennent les prévisions météorologiques, les prévisions de ventes saisonnières et l’entretien prédictif,
+La tâche de prévision utilise les données de série chronologique antérieures pour faire des prédictions concernant le comportement futur. Les scénarios applicables aux prévisions sont les prévisions météorologiques, les prédictions de ventes saisonnières et la maintenance prédictive.
 
-### <a name="forecasting-trainers"></a>Formateurs de prévision
+### <a name="forecasting-trainers"></a>Prédictions de formateurs
 
-Vous pouvez former un modèle de prévision avec l’algorithme suivant :
+Vous pouvez effectuer l’apprentissage d’un modèle de prévision avec l’algorithme suivant :
 
 <xref:Microsoft.ML.TimeSeriesCatalog.ForecastBySsa*>

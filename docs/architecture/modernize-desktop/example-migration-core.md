@@ -2,12 +2,12 @@
 title: Exemple de migration vers .NET Core 3.1
 description: Illustrant comment migrer un exemple d’application ciblant .NET Framework vers .NET Core 3,1.
 ms.date: 05/12/2020
-ms.openlocfilehash: ef8a0c24ec81a21eb89411ed4c9a543d4d70d89f
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 5e8b1219cf4bd89ada5b71a60ef27eaabb94997c
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83423382"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144269"
 ---
 # <a name="example-of-migrating-to-net-core-31"></a>Exemple de migration vers .NET Core 3.1
 
@@ -43,7 +43,7 @@ Une fois que vous avez migré les références du package, vous devez vérifier 
 
 ![Capture d’écran des dépendances NuGet pour le package Castle. Windsor](./media/example-migration-core/nuget-dependencies.png)
 
-Pour vérifier la compatibilité du package, vous pouvez utiliser l’outil <http://fuget.org> qui fournit des informations plus détaillées sur les versions et les dépendances.
+Pour vérifier la compatibilité du package, vous pouvez utiliser l’outil <https://fuget.org> qui fournit des informations plus détaillées sur les versions et les dépendances.
 
 Le projet peut peut-être référencer des versions de package plus anciennes qui ne prennent pas en charge .NET Core, mais vous pouvez trouver des versions plus récentes qui le prennent en charge. Par conséquent, la mise à jour des packages vers des versions plus récentes est généralement une bonne recommandation. Toutefois, vous devez tenir compte du fait que la mise à jour de la version du package peut entraîner des modifications avec rupture qui vous obligent à mettre à jour votre code.
 
@@ -133,7 +133,7 @@ Par exemple, si vous utilisez des fichiers de configuration (*app. config*), vou
 
 Une autre raison pour les erreurs est l’utilisation `BeginInvoke` des `EndInvoke` méthodes et, car elles ne sont pas prises en charge sur .net core. Ils ne sont pas pris en charge sur .NET Core, car ils ont une dépendance vis-à-vis de la communication à distance, qui n’existe pas sur .NET Core. Pour résoudre ce problème, essayez d’utiliser le `await` mot clé (si disponible) ou la <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> méthode.
 
-Vous pouvez utiliser des analyseurs de compatibilité pour vous permettre d’identifier les API et les modèles de code dans votre code qui peuvent potentiellement provoquer des problèmes au moment de l’exécution avec .NET Core. Accédez à <http://github.com/dotnet/platform-compat> et utilisez l’analyseur d’API .net sur votre projet.
+Vous pouvez utiliser des analyseurs de compatibilité pour vous permettre d’identifier les API et les modèles de code dans votre code qui peuvent potentiellement provoquer des problèmes au moment de l’exécution avec .NET Core. Accédez à <https://github.com/dotnet/platform-compat> et utilisez l’analyseur d’API .net sur votre projet.
 
 ## <a name="migrating-a-windows-forms-application"></a>Migration d’une application Windows Forms
 

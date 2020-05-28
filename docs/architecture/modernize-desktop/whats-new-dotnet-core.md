@@ -2,12 +2,12 @@
 title: Nouveautés de .NET Core pour Desktop
 description: Découvrez .NET Core, les différences entre .NET Core et .NET Framework, ainsi que les nouvelles fonctionnalités qui ont été ajoutées.
 ms.date: 05/12/2020
-ms.openlocfilehash: 9ec4f3002dc9d9ea80fd2b6db8095930867a5c65
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: b4fc0cb2841fe13b000223aefc5eaf63bd911994
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83423263"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144262"
 ---
 # <a name="whats-new-with-net-core-for-desktop"></a>Nouveautés de .NET Core pour Desktop
 
@@ -19,7 +19,7 @@ Depuis son lancement dans 2002, .NET Framework a évolué au cours des années p
 
 Si vous ne ciblez qu’une seule de ces plateformes, vous pouvez utiliser ce modèle. Toutefois, dans de nombreux cas, vous pouvez avoir besoin de plusieurs plateformes cibles dans la même solution. Par exemple, votre application peut avoir une partie administrateur du bureau, un site Web destiné aux clients qui partage la logique principale exécutée sur un serveur, et même un client mobile. Dans ce cas, vous avez besoin d’une expérience de codage unifiée qui peut couvrir tous ces verticaux .NET.
 
-Au moment de la publication de Windows 8, le concept de bibliothèques de classes portables (classes portables) est né. À l’origine, la .NET Framework a été conçue en partant du principe qu’elle serait toujours déployée en tant qu’unité unique, donc la [factorisation](http://en.wikipedia.org/wiki/Decomposition_(computer_science)) n’était pas un problème. Pour faire face au problème de partage de code entre les verticaux, la force motrice était de savoir comment refactoriser l’infrastructure. L’idée des contrats est de fournir une surface d’exposition d’API bien factorisée. Les contrats sont simplement des assemblys avec lesquels vous compilez et qui sont conçus avec un facteur approprié pour prendre en charge les dépendances entre eux.
+Au moment de la publication de Windows 8, le concept de bibliothèques de classes portables (classes portables) est né. À l’origine, la .NET Framework a été conçue en partant du principe qu’elle serait toujours déployée en tant qu’unité unique, donc la [factorisation](https://wikipedia.org/wiki/Decomposition_(computer_science)) n’était pas un problème. Pour faire face au problème de partage de code entre les verticaux, la force motrice était de savoir comment refactoriser l’infrastructure. L’idée des contrats est de fournir une surface d’exposition d’API bien factorisée. Les contrats sont simplement des assemblys avec lesquels vous compilez et qui sont conçus avec un facteur approprié pour prendre en charge les dépendances entre eux.
 
 Cela a pour conséquence de raisonner sur les différences d’API entre les verticaux au niveau de l’assembly, par opposition au niveau d’API individuel que nous avions auparavant. Cet aspect active une expérience de bibliothèque de classes qui peut cibler plusieurs verticaux, également appelés bibliothèques de classes portables.
 

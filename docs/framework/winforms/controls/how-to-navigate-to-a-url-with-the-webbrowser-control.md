@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : accéder à une URL avec le contrôle WebBrowser'
+title: 'Comment : naviguer vers une URL avec un contrôle WebBrowser'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,26 +12,26 @@ helpviewer_keywords:
 - WebBrowser control [Windows Forms], navigating to URLs
 - examples [Windows Forms], WebBrowser control
 ms.assetid: b3ec38cb-f509-4d0b-bd79-9f3611259c62
-ms.openlocfilehash: b6c1255fa17d91daaa73001fea04f26e73dba0ae
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: f6cb26ff247bba75cc351d453314bade2d38d9f5
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015827"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144836"
 ---
-# <a name="how-to-navigate-to-a-url-with-the-webbrowser-control"></a>Procédure : accéder à une URL avec le contrôle WebBrowser
-L’exemple de code suivant montre comment naviguer dans <xref:System.Windows.Forms.WebBrowser> le contrôle jusqu’à une URL spécifique.
+# <a name="how-to-navigate-to-a-url-with-the-webbrowser-control"></a>Comment : naviguer vers une URL avec un contrôle WebBrowser
+L’exemple de code suivant montre comment naviguer <xref:System.Windows.Forms.WebBrowser> dans le contrôle jusqu’à une URL spécifique.
 
- Pour déterminer à quel moment le nouveau document est entièrement chargé, <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> Gérez l’événement. Pour une démonstration de cet événement, consultez [procédure: Imprimer avec un contrôle](how-to-print-with-a-webbrowser-control.md)WebBrowser.
+ Pour déterminer à quel moment le nouveau document est entièrement chargé, gérez l' <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> événement. Pour une démonstration de cet événement, consultez [Comment : imprimer avec un contrôle WebBrowser](how-to-print-with-a-webbrowser-control.md).
 
 ## <a name="example"></a>Exemple
 
 ```vb
-Me.webBrowser1.Navigate("http://www.microsoft.com")
+Me.webBrowser1.Navigate("https://www.microsoft.com")
 ```
 
 ```csharp
-this.webBrowser1.Navigate("http://www.microsoft.com");
+this.webBrowser1.Navigate("https://www.microsoft.com");
 ```
 
 ## <a name="compiling-the-code"></a>Compilation du code
@@ -48,4 +48,4 @@ this.webBrowser1.Navigate("http://www.microsoft.com");
 - <xref:System.Windows.Forms.WebBrowser.Navigating?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.WebBrowser.Navigated?displayProperty=nameWithType>
 - [WebBrowser, contrôle](webbrowser-control-windows-forms.md)
-- [Guide pratique pour Imprimer avec un contrôle WebBrowser](how-to-print-with-a-webbrowser-control.md)
+- [Guide pratique pour imprimer avec un contrôle WebBrowser](how-to-print-with-a-webbrowser-control.md)

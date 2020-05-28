@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 3de70af23206b0ae0525541b3d2cb480dc5bb882
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 955d4ec4a0bd0ddf2d022d4154fc6528b2abf3d0
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80987905"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144550"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Développer des applications ASP.NET Core MVC
 
@@ -20,21 +20,21 @@ ASP.NET Core est un framework open source multiplateforme qui permet de génére
 
 ## <a name="mvc-and-razor-pages"></a>MVC et pages Razor
 
-ASP.NET Core MVC offre de nombreuses fonctionnalités qui sont utiles pour la création d’applications et d’API basées sur le web. Le terme MVC signifie « Model-View-Controller », un modèle d’interface utilisateur qui sépare en plusieurs parties les responsabilités relatives au fait de répondre aux demandes des utilisateurs. En plus de suivre ce modèle, vous pouvez également implémenter des fonctionnalités dans vos applications ASP.NET Core sous la forme de pages Razor. Les pages Razor sont intégrées à ASP.NET Core MVC, et utilisent les mêmes fonctionnalités pour le routage, la liaison de modèle, etc. Cependant, au lieu d’avoir des dossiers et des fichiers distincts pour les contrôleurs, les vues, etc. et d’utiliser le routage basé sur l’attribut, les pages Razor sont placées dans un seul dossier («/Pages»»), l’itinéraire en fonction de leur emplacement relatif dans ce dossier, et de traiter les demandes avec des gestionnaires au lieu d’actions de contrôleur.
+ASP.NET Core MVC offre de nombreuses fonctionnalités qui sont utiles pour la création d’applications et d’API basées sur le web. Le terme MVC signifie « Model-View-Controller », un modèle d’interface utilisateur qui sépare en plusieurs parties les responsabilités relatives au fait de répondre aux demandes des utilisateurs. En plus de suivre ce modèle, vous pouvez également implémenter des fonctionnalités dans vos applications ASP.NET Core sous la forme de pages Razor. Les Razor Pages sont intégrées à ASP.NET Core MVC et utilisent les mêmes fonctionnalités pour le routage, la liaison de modèle, etc. Toutefois, au lieu d’avoir des dossiers et des fichiers distincts pour les contrôleurs, les vues, etc. et l’utilisation du routage basé sur les attributs, les Razor Pages sont placés dans un dossier unique (« /pages »), sont acheminés en fonction de leur emplacement relatif dans ce dossier et gèrent les demandes avec les gestionnaires au lieu des actions du contrôleur.
 
 Lorsque vous créez une nouvelle application ASP.NET Core, vous devez avoir un plan à l’esprit pour le type d’application que vous souhaitez générer. Dans Visual Studio, vous effectuez votre choix parmi plusieurs modèles. Les trois modèles de projet les plus courants sont API web, Application web et Application web (Model-View-Controller). Bien que vous ne puissiez prendre cette décision que lorsque vous créez un projet, ce n’est pas une décision irrévocable. Le projet API web utilise des contrôleurs Model-View-Controller standard : il ne dispose pas de vues par défaut. De même, le modèle Application web par défaut utilise les pages Razor et ne dispose donc également pas d’un dossier de vues. Vous pouvez ajouter un dossier de vues à ces projets plus tard, pour prendre en charge le comportement basé sur les vues. Les projets API web et Model-View-Controller n’incluent pas de dossier de pages par défaut, mais vous pouvez en ajouter un plus tard pour prendre en charge le comportement basé sur les pages Razor. Vous pouvez considérer ces trois modèles comme prenant en charge trois différents types d’interactions utilisateur par défaut : données (API web), basées sur les pages et basées sur les vues. Toutefois, vous pouvez mélanger et traiter plusieurs ou tous les types d’interactions dans un seul projet si vous le souhaitez.
 
 ### <a name="why-razor-pages"></a>Pourquoi utiliser les pages Razor ?
 
-Les pages Razor représentent l’approche par défaut pour les nouvelles applications web dans Visual Studio. Les pages Razor favorisent la création de fonctionnalités d’application basées sur les pages, comme les formulaires non monopages. En utilisant des contrôleurs et des vues, il était courant que des applications possèdent des contrôleurs de très grande taille qui fonctionnaient avec de nombreuses dépendances et modèles de vue différents et retournaient de nombreuses vues différentes. Il en est résulté une plus grande complexité et a souvent donné lieu à des contrôleurs qui n’ont pas suivi efficacement le principe de responsabilité unique ou les principes ouverts/fermés. Les pages Razor résolvent ce problème en encapsulant la logique côté serveur pour une « page » logique donnée dans une application web avec son balisage Razor. Une page Razor qui n’a pas de logique côté serveur peut être simplement constituée d’un fichier Razor (par exemple, « Index.cshtml »). Toutefois, la plupart des pages Razor non triviales ont une classe de modèle de page associée, qui, par convention, porte le même nom que le fichier Razor avec une extension « .cs » (par exemple, « Index.cshtml.cs »).
+Les pages Razor représentent l’approche par défaut pour les nouvelles applications web dans Visual Studio. Les pages Razor favorisent la création de fonctionnalités d’application basées sur les pages, comme les formulaires non monopages. En utilisant des contrôleurs et des vues, il était courant que des applications possèdent des contrôleurs de très grande taille qui fonctionnaient avec de nombreuses dépendances et modèles de vue différents et retournaient de nombreuses vues différentes. Cela entraînait une plus grande complexité et entraînait souvent des contrôleurs qui ne suivaient pas efficacement le principe de responsabilité unique ou les principes ouverts/fermés. Les pages Razor résolvent ce problème en encapsulant la logique côté serveur pour une « page » logique donnée dans une application web avec son balisage Razor. Une page Razor qui n’a pas de logique côté serveur peut être simplement constituée d’un fichier Razor (par exemple, « Index.cshtml »). Toutefois, la plupart des pages Razor non triviales ont une classe de modèle de page associée, qui, par convention, porte le même nom que le fichier Razor avec une extension « .cs » (par exemple, « Index.cshtml.cs »).
 
-Le modèle de page d’une page Razor Page combine les responsabilités d’un contrôleur MVC et d’un modèle de view. Au lieu de traiter les demandes avec les méthodes d’action de contrôleur, les gestionnaires de modèle de page comme « OnGet() » sont exécutés, effectuant le rendu par défaut de leur page associée. Les pages Razor simplifient le processus de création des pages individuelles dans une application ASP.NET Core, tout en fournissant toutes les fonctionnalités architecturales d’ASP.NET Core MVC. Elles constituent un choix par défaut judicieux pour de nouvelles fonctionnalités basées sur les pages.
+Le modèle de page d’une page Razor combine les responsabilités d’un contrôleur MVC et d’un ViewModel. Au lieu de traiter les demandes avec les méthodes d’action de contrôleur, les gestionnaires de modèle de page comme « OnGet() » sont exécutés, effectuant le rendu par défaut de leur page associée. Les pages Razor simplifient le processus de création des pages individuelles dans une application ASP.NET Core, tout en fournissant toutes les fonctionnalités architecturales d’ASP.NET Core MVC. Elles constituent un choix par défaut judicieux pour de nouvelles fonctionnalités basées sur les pages.
 
 ### <a name="when-to-use-mvc"></a>Quand utiliser MVC ?
 
-Si vous construisez des API Web, le modèle MVC est plus logique que d’essayer d’utiliser Razor Pages. Si votre projet n’expose que les paramètres de l’API Web, vous devriez idéalement commencer à partir du modèle de projet Web API. Dans le cas contraire, il est facile d’ajouter des contrôleurs et des paramètres D’API associés à n’importe quelle application ASP.NET Core. Utilisez l’approche MVC basée sur l’vue si vous migrez une application existante à partir de ASP.NET MVC 5 ou plus tôt à ASP.NET Core MVC et vous souhaitez le faire avec le moins d’effort. Une fois que vous avez fait la migration initiale, vous pouvez évaluer s’il est logique d’adopter des pages Razor pour de nouvelles fonctionnalités ou même comme une migration de gros.
+Si vous créez des API Web, le modèle MVC prend plus de sens que la tentative d’utilisation de Razor Pages. Si votre projet expose uniquement des points de terminaison d’API Web, vous devez idéalement démarrer à partir du modèle de projet d’API Web. Dans le cas contraire, il est facile d’ajouter des contrôleurs et des points de terminaison d’API associés à n’importe quel ASP.NET Core application. Utilisez l’approche MVC basée sur les vues Si vous migrez une application existante à partir de ASP.NET MVC 5 ou version antérieure vers ASP.NET Core MVC et que vous souhaitez le faire avec le moins de travail possible. Une fois que vous avez effectué la migration initiale, vous pouvez déterminer s’il est judicieux d’adopter Razor Pages pour les nouvelles fonctionnalités ou même en tant que migration de gros.
 
-Que vous choisissiez de créer votre application Web à l’aide de Pages Razor ou de vues MVC, votre application aura des performances similaires et comprendra un support pour l’injection de dépendance, des filtres, la liaison de modèle, la validation, et ainsi de suite.
+Que vous choisissiez de créer votre application Web à l’aide d’Razor Pages ou de vues MVC, votre application aura des performances similaires et inclura la prise en charge de l’injection de dépendances, des filtres, de la liaison de modèle, de la validation, etc.
 
 ## <a name="mapping-requests-to-responses"></a>Mappage des requêtes aux réponses
 
@@ -49,7 +49,7 @@ app.UseEndpoints(endpoints =>
 });
 ```
 
-Dans cet exemple, une route nommée « default » a été ajoutée à la table de routage. Il définit un modèle d’itinéraire avec les placeholders pour _le contrôleur,_ _l’action,_ et _id_. Le contrôleur et les détenteurs de places d’action ont spécifié par défaut («Home» et «Index», respectivement), et le placeholder id est facultatif (en vertu d’un «?" appliqué à elle). Selon la convention définie ici, la première partie d’une requête doit correspondre au nom du contrôleur, la deuxième partie à l’action et la troisième partie, s’il y a lieu, à un paramètre id. Les routes conventionnelles sont généralement définies dans un seul emplacement pour l’application, par exemple dans la méthode Configure de la classe Startup.
+Dans cet exemple, une route nommée « default » a été ajoutée à la table de routage. Il définit un modèle de routage avec des espaces réservés pour le _contrôleur_, l' _action_et l' _ID_. Les espaces réservés de contrôleur et d’action sont spécifiés par défaut (« orig » et « index », respectivement), et l’espace réservé d’ID est facultatif (en vertu d’un «  ? » appliqué). Selon la convention définie ici, la première partie d’une requête doit correspondre au nom du contrôleur, la deuxième partie à l’action et la troisième partie, s’il y a lieu, à un paramètre id. Les routes conventionnelles sont généralement définies dans un seul emplacement pour l’application, par exemple dans la méthode Configure de la classe Startup.
 
 Les routes par attributs ne sont pas spécifiées globalement. Au lieu de cela, elles sont appliquées directement aux contrôleurs et aux actions. L’avantage, c’est que ces routes sont plus facilement détectables quand vous examinez une méthode particulière. Mais cela signifie aussi que les informations de routage ne sont pas conservées au même endroit dans l’application. Avec les routes par attributs, vous pouvez facilement spécifier plusieurs routes pour une action donnée, mais aussi combiner des routes entre les contrôleurs et les actions. Par exemple :
 
@@ -76,7 +76,7 @@ public class ProductsController : Controller
 }
 ```
 
-Razor Pages n’utilise pas de routage d’attribut. Vous pouvez spécifier des informations de modèle de route supplémentaires pour une page Razor dans le cadre de sa directive `@page` :
+Razor Pages n’utilise pas le routage d’attributs. Vous pouvez spécifier des informations de modèle de route supplémentaires pour une page Razor dans le cadre de sa directive `@page` :
 
 ```csharp
 @page "{id:int}"
@@ -90,7 +90,7 @@ Dans l’exemple précédent, la page en question correspondrait à une route av
 
 Après la mise en correspondance d’une requête donnée avec une route, mais avant l’appel de la méthode d’action, ASP.NET Core MV procède à la [liaison de données](/aspnet/core/mvc/models/model-binding) et à la [validation du modèle](/aspnet/core/mvc/models/validation) sur la requête. La liaison de données convertit les données HTTP entrantes en types .NET (spécifiés comme paramètres de la méthode d’action à appeler). Par exemple, si la méthode d’action attend un paramètre id de type int, la liaison de données tente de fournir ce paramètre à partir d’une valeur fournie dans le cadre de la requête. Pour ce faire, la liaison de données recherche des valeurs dans un formulaire publié, dans la route elle-même et dans la chaîne de requête. Si une valeur id est trouvée, elle est convertie en entier avant d’être passée à la méthode d’action.
 
-La validation du modèle se produit après la liaison de données, mais avant l’appel de la méthode d’action. À l’aide d’attributs facultatifs sur le type de modèle, la validation du modèle peut contribuer à assurer la conformité de l’objet modèle fourni à certaines exigences en matière de données. Certaines valeurs peuvent être spécifiées au besoin, ou limitées à une certaine longueur ou à une certaine plage numérique, etc. Si les attributs de validation sont spécifiés mais que le modèle n’est pas conforme à leurs exigences, la propriété ModelState.IsValid sera fausse, et l’ensemble des règles de validation défaillantes sera disponible pour envoyer au client qui fait la demande.
+La validation du modèle se produit après la liaison de données, mais avant l’appel de la méthode d’action. À l’aide d’attributs facultatifs sur le type de modèle, la validation du modèle peut contribuer à assurer la conformité de l’objet modèle fourni à certaines exigences en matière de données. Certaines valeurs peuvent être spécifiées comme obligatoires, ou limitées à une certaine longueur ou plage numérique, etc. Si les attributs de validation sont spécifiés mais que le modèle n’est pas conforme à leurs exigences, la propriété ModelState. IsValid prend la valeur false et le jeu de règles de validation qui échoue est disponible pour envoi au client qui effectue la demande.
 
 Si vous utilisez la validation du modèle, veillez à toujours vérifier que le modèle est valide avant d’exécuter des commandes de modification de l’état, et ce pour garantir que votre application n’est pas endommagée par des données non valides. Vous pouvez utiliser un [filtre](/aspnet/core/mvc/controllers/filters) pour ne pas avoir à ajouter du code dans chaque action. Les filtres ASP.NET Core MVC offrent un moyen d’intercepter des groupes de requêtes, ce qui permet d’appliquer des stratégies courantes et des problèmes transversaux de manière ciblée. Des filtres peuvent être appliqués à des actions individuelles, à des contrôleurs entiers ou à une application de manière globale.
 
@@ -100,11 +100,11 @@ Les projets API web doivent envisager d’utiliser l’attribut `[ApiController]
 
 > ### <a name="references--mapping-requests-to-responses"></a>Références – Mappage des requêtes aux réponses
 >
-> - **Routage vers les actions de contrôleur**
+> - **Routage vers les actions du contrôleur**
  > <https://docs.microsoft.com/aspnet/core/mvc/controllers/routing>
 > - **Liaison de modèle**
  > <https://docs.microsoft.com/aspnet/core/mvc/models/model-binding>
-> - **Validation du modèle**
+> - **Validation de modèle**
  > <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
 > - **Filtres**
  > <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
@@ -152,7 +152,7 @@ public void Configure(IApplicationBuilder app,
 La méthode ConfigureServices constitue l’exception à la règle puisqu’elle accepte un seul paramètre de type IServiceCollection. Elle n’a pas vraiment besoin de prendre en charge l’injection de dépendances, étant donné que, d’une part, elle est chargée d’ajouter des objets au conteneur de services et que, d’autre part, elle a accès à tous les services actuellement configurés par le biais du paramètre IServiceCollection. Vous pouvez donc utiliser les dépendances définies dans la collection de services ASP.NET Core dans chaque partie de la classe Startup : soit en demandant le service nécessaire comme paramètre, soit en utilisant le paramètre IServiceCollection dans ConfigureServices.
 
 > [!NOTE]
-> Si vous devez vous assurer que certains services sont disponibles pour votre classe Startup, vous pouvez les configurer à l’aide d’un IWebHostBuilder et de sa méthode ConfigureServices à l’intérieur de l’appel CreateDefaultBuilder.
+> Si vous devez vous assurer que certains services sont disponibles pour votre classe de démarrage, vous pouvez les configurer à l’aide d’un IWebHostBuilder et de sa méthode ConfigureServices à l’intérieur de l’appel CreateDefaultBuilder.
 
 La classe Startup est un modèle à suivre pour structurer d’autres parties de votre application ASP.NET Core, des contrôleurs aux middlewares en passant par les filtres et vos propres services. Dans chaque cas, vous devez respecter le [principe des dépendances explicites](https://deviq.com/explicit-dependencies-principle/), c’est-à-dire que vous devez demander vos dépendances au lieu de les créer directement et tirer parti de l’injection de dépendances dans toute votre application. L’endroit où vous instanciez directement des implémentations et la façon dont vous procédez doivent faire l’objet d’un examen attentif, surtout en ce qui concerne les services et objets qui utilisent l’infrastructure ou qui ont des effets secondaires. Utilisez des abstractions définies dans le noyau de votre l’application et passées en tant qu’arguments plutôt que de coder en dur des références à des types d’implémentation spécifiques.
 
@@ -172,13 +172,13 @@ Une autre approche pour découpler l’application des détails d’implémentat
 
 ### <a name="feature-organization"></a>Organisation par fonctionnalité
 
-Par défaut, les applications ASP.NET Core organisent leur structure de dossiers de manière à inclure Controllers et Views, et couramment ViewModels. Le code côté client utilisé pour prendre en charge ces structures côté serveur est généralement stocké séparément dans le dossier wwwroot. Toutefois, cette organisation peut poser des problèmes pour les applications volumineuses dans la mesure où le développement d’une fonctionnalité donnée nécessite souvent de passer d’un dossier à un autre. Le niveau de complexité croît à mesure que le nombre de fichiers et de sous-dossiers dans chaque dossier augmente, occasionnant de nombreuses opérations de défilement dans l’Explorateur de solutions. Une solution à ce problème consiste à organiser le code de l’application par _fonctionnalité_ plutôt que par type de fichier. Ce style organisationnel est généralement appelé dossiers de fonctionnalités ou [tranches de fonctionnalité (voir](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc) aussi: Tranches [verticales](https://deviq.com/vertical-slices/)).
+Par défaut, les applications ASP.NET Core organisent leur structure de dossiers de manière à inclure Controllers et Views, et couramment ViewModels. Le code côté client utilisé pour prendre en charge ces structures côté serveur est généralement stocké séparément dans le dossier wwwroot. Toutefois, cette organisation peut poser des problèmes pour les applications volumineuses dans la mesure où le développement d’une fonctionnalité donnée nécessite souvent de passer d’un dossier à un autre. Le niveau de complexité croît à mesure que le nombre de fichiers et de sous-dossiers dans chaque dossier augmente, occasionnant de nombreuses opérations de défilement dans l’Explorateur de solutions. Une solution à ce problème consiste à organiser le code de l’application par _fonctionnalité_ plutôt que par type de fichier. Ce style organisationnel est généralement désigné sous le terme de dossiers de fonctionnalités ou de [tranches de fonctionnalités](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc) (voir aussi : [tranches verticales](https://deviq.com/vertical-slices/)).
 
 À cet effet, ASP.NET Core MVC prend en charge Areas. Les zones vous permettent de créer des jeux distincts de dossiers Controllers et Views (ainsi que tout modèle associé) dans chaque dossier Area. La Figure 7-1 montre un exemple de structure de dossiers avec Areas.
 
-![Organisation de la zone d’échantillonnage](./media/image7-1.png)
+![Exemple d’organisation de zone](./media/image7-1.png)
 
-**Figure 7-1**. Organisation de la zone d’échantillonnage
+**Figure 7-1**. Exemple d’organisation de zone
 
 Quand vous utilisez Areas, vous devez utiliser des attributs pour décorer vos contrôleurs avec le nom de la zone à laquelle ils appartiennent :
 
@@ -232,7 +232,7 @@ Vous pouvez ensuite spécifier cette convention comme option quand vous ajoutez 
 services.AddMvc(o => o.Conventions.Add(new FeatureConvention()));
 ```
 
-ASP.NET Core MVC utilise également une convention pour localiser les vues. Vous pouvez la remplacer par une convention personnalisée de manière à ce que les vues soient établies dans les dossiers de fonctionnalité (en utilisant le nom de fonctionnalité fourni par FeatureConvention ci-dessus). Vous pouvez en savoir plus sur cette approche et télécharger un échantillon de travail de l’article MSDN Magazine, [Feature Slices for ASP.NET Core MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc).
+ASP.NET Core MVC utilise également une convention pour localiser les vues. Vous pouvez la remplacer par une convention personnalisée de manière à ce que les vues soient établies dans les dossiers de fonctionnalité (en utilisant le nom de fonctionnalité fourni par FeatureConvention ci-dessus). Vous pouvez en savoir plus sur cette approche et télécharger un exemple fonctionnel à partir de l’article de MSDN Magazine, [Feature Slice for ASP.net Core MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc).
 
 ### <a name="cross-cutting-concerns"></a>Problèmes transversaux
 
@@ -240,7 +240,7 @@ ASP.NET Core MVC utilise également une convention pour localiser les vues. Vous
 
 ![La requête est traitée à travers les filtres d’autorisations, les filtres de ressources, la liaison de modèle, les filtres d’actions, l’exécution d’actions et la conversion des résultats d’actions, les filtres d’exceptions, les filtres de résultats et l’exécution de résultats. En sortie, la requête est traitée seulement par les filtres de résultats et les filtres de ressources avant de devenir une réponse envoyée au client.](./media/image7-2.png)
 
-**Figure 7-2**. Demander l’exécution par filtres et demander le pipeline.
+**Figure 7-2**. Demander l’exécution via des filtres et un pipeline de requête.
 
 Les filtres sont généralement implémentés en tant qu’attributs, ce qui vous permet de les appliquer à des contrôleurs ou à des actions (voire globalement). Si vous les ajoutez de cette manière, les filtres spécifiés au niveau de l’action remplacent ou développent les filtres spécifiés au niveau du contrôleur, qui à leur tour remplacent les filtres globaux. Par exemple, l’attribut \[Route\] peut être utilisé pour générer des routes entre des contrôleurs et des actions. De même, l’autorisation peut être configurée au niveau du contrôleur, puis remplacée par des actions individuelles, comme dans l’exemple suivant :
 
@@ -277,7 +277,7 @@ public async Task<IActionResult> Put(int id, [FromBody]Author author)
 }
 ```
 
-Veillez à ce que vos méthodes d’action ne soient pas encombrées de code conditionnel comme celui-ci. Au lieu de cela, tirez (pull) les stratégies dans des filtres applicables au cas par cas. Dans cet exemple, la vérification de validation du modèle, qui doit se produire chaque fois qu’une commande est envoyée à l’API, peut être remplacée par l’attribut suivant :
+Veillez à ce que vos méthodes d’action ne soient pas encombrées de code conditionnel comme celui-ci. Au lieu de cela, tirez (pull) les stratégies dans des filtres applicables au cas par cas. Dans cet exemple, le contrôle de validation du modèle, qui doit se produire chaque fois qu’une commande est envoyée à l’API, peut être remplacé par l’attribut suivant :
 
 ```csharp
 public class ValidateModelAttribute : ActionFilterAttribute
@@ -306,17 +306,17 @@ public async Task<IActionResult> Put(int id, [FromBody]Author author)
 }
 ```
 
-Vous pouvez en savoir plus sur la mise en œuvre de filtres et télécharger un échantillon de travail de l’article msDN Magazine, [Real-World ASP.NET Core MVC Filters](https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters).
+Pour plus d’informations sur l’implémentation de filtres et sur le téléchargement d’un exemple fonctionnel, consultez l’article de MSDN Magazine, [Real-World ASP.net Core MVC Filters](https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters).
 
 > ### <a name="references--structuring-applications"></a>Références – Structuration des applications
 >
-> - **Les zones (areas)**  
+> - **Zones (Areas)**  
 >   <https://docs.microsoft.com/aspnet/core/mvc/controllers/areas>
 > - **MSDN Magazine – Feature Slices for ASP.NET Core MVC**  
 >   <https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc>
 > - **Filtres**  
 >   <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
-> - **MSDN Magazine - Real World ASP.NET Core MVC Filters**  
+> - **MSDN Magazine – ASP.NET Core des filtres MVC du monde réel**  
 >   <https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters>
 
 ## <a name="security"></a>Sécurité
@@ -329,9 +329,9 @@ ASP.NET Core Identity est un système d’abonnement que vous pouvez utiliser po
 
 ASP.NET Core Identity est inclus dans les nouveaux modèles de projet si l’option Comptes d’utilisateur individuels est sélectionnée. Ce modèle inclut la prise en charge de l’inscription, de la connexion, des connexions externes et des mots de passe oubliés, ainsi que d’autres fonctionnalités.
 
-![Sélectionnez des comptes utilisateur individuels pour avoir l’identité préconfigurée](./media/image7-3.png)
+![Sélectionner des comptes d’utilisateur individuels pour lesquels l’identité est préconfigurée](./media/image7-3.png)
 
-**Figure 7-3**. Sélectionnez des comptes utilisateur individuels pour avoir l’identité préconfigurée.
+**Figure 7-3**. Sélectionnez des comptes d’utilisateur individuels pour lesquels l’identité est préconfigurée.
 
 La prise en charge d’Identity est configurée dans Startup, à la fois dans ConfigureServices et dans Configure :
 
@@ -413,7 +413,7 @@ La plupart des API web doivent implémenter un système d’authentification par
 
 **Figure 7-4.** Authentification par jeton pour les API web.
 
-Vous pouvez créer votre propre service d’authentification, vous intégrer avec Azure AD et OAuth, ou implémenter un service à l’aide d’un outil open-source comme [IdentityServer](https://github.com/IdentityServer).
+Vous pouvez créer votre propre service d’authentification, l’intégrer à Azure AD et OAuth, ou implémenter un service à l’aide d’un outil open source comme [IdentityServer](https://github.com/IdentityServer).
 
 #### <a name="custom-security"></a>Sécurité personnalisée
 
@@ -422,7 +422,7 @@ Soyez particulièrement vigilant quant au « développement de votre propre »
 > ### <a name="references--security"></a>Références – Sécurité
 >
 > - **Vue d’ensemble des documents de sécurité**  
->   https://docs.microsoft.com/aspnet/core/security/
+>   <https://docs.microsoft.com/aspnet/core/security/>
 > - **Application de SSL dans une application ASP.NET Core**  
 >   <https://docs.microsoft.com/aspnet/core/security/enforcing-ssl>
 > - **Présentation d’Identity**  
@@ -493,7 +493,7 @@ Réfléchissez à la manière dont vos applications communiquent directement ave
 > - **ASP.NET Core SignalR**  
 >   <https://github.com/dotnet/aspnetcore/tree/master/src/SignalR>
 > - **WebSocket Manager**  
->   https://github.com/radu-matei/websocket-manager
+>   <https://github.com/radu-matei/websocket-manager>
 
 ## <a name="domain-driven-design--should-you-apply-it"></a>Utiliser la conception pilotée par le domaine ou non ?
 
@@ -531,7 +531,7 @@ DDD recommande également l’utilisation de l’architecture propre traitée pr
 
 ### <a name="when-should-you-apply-ddd"></a>Quand recourir à DDD ?
 
-DDD est bien adapté aux grandes applications avec une complexité commerciale importante (pas seulement technique). La complexité de l’application est telle qu’elle nécessite les connaissances d’experts du domaine. Le modèle de domaine doit exhiber des comportements significatifs. Il doit notamment représenter les règles et les interactions de l’entreprise, et ne doit pas se limiter au stockage et à la récupération de l’état actuel de plusieurs enregistrements en provenance de magasins de données.
+DDD est bien adapté aux grandes applications avec une complexité métier significative (pas seulement technique). La complexité de l’application est telle qu’elle nécessite les connaissances d’experts du domaine. Le modèle de domaine doit exhiber des comportements significatifs. Il doit notamment représenter les règles et les interactions de l’entreprise, et ne doit pas se limiter au stockage et à la récupération de l’état actuel de plusieurs enregistrements en provenance de magasins de données.
 
 ### <a name="when-shouldnt-you-apply-ddd"></a>Quand ne pas recourir à DDD ?
 
@@ -546,21 +546,21 @@ Une approche hybride consiste à utiliser DDD pour les zones transactionnelles o
 
 ## <a name="deployment"></a>Déploiement
 
-Le processus de déploiement de votre application ASP.NET Core, quel que soit l’endroit où elle sera hébergée, comprend plusieurs étapes. La première étape consiste à publier l’application, qui peut être faite à l’aide de la `dotnet publish` commande CLI. Cette commande compile l’application et place tous les fichiers nécessaires à l’exécution de l’application dans un dossier désigné. Si vous déployez votre application à partir de Visual Studio, cette étape est automatique. Le dossier publish contient les fichiers .exe et .dll pour l’application et ses dépendances. Une application autonome inclut également une version du runtime .NET. Les applications ASP.NET Core comprennent aussi les fichiers de configuration, les ressources du client statiques et les vues MVC.
+Le processus de déploiement de votre application ASP.NET Core, quel que soit l’endroit où elle sera hébergée, comprend plusieurs étapes. La première étape consiste à publier l’application, qui peut être effectuée à l’aide de la `dotnet publish` commande CLI. Cette commande compile l’application et place tous les fichiers nécessaires à l’exécution de l’application dans un dossier désigné. Si vous déployez votre application à partir de Visual Studio, cette étape est automatique. Le dossier publish contient les fichiers .exe et .dll pour l’application et ses dépendances. Une application autonome inclut également une version du runtime .NET. Les applications ASP.NET Core comprennent aussi les fichiers de configuration, les ressources du client statiques et les vues MVC.
 
 Les applications ASP.NET Core sont des applications console qui doivent être démarrées au moment du démarrage du serveur et redémarrés en cas de blocage de l’application (ou du serveur). Un gestionnaire de processus peut être utilisé pour automatiser ce processus. Les gestionnaires de processus les plus courants pour ASP.NET Core sont Nginx et Apache sur Linux et IIS ou Windows Service sur Windows.
 
-En plus d’un gestionnaire de processus, ASP.NET applications Core peuvent utiliser un serveur proxy inversé. Un serveur proxy inverse reçoit des requêtes HTTP à partir d’Internet et les transfère à Kestrel après une gestion préliminaire. Les serveurs proxy inversés fournissent une couche de sécurité pour l’application. Kestrel ne prend pas non plus en charge l’hébergement de plusieurs applications sur le même port. Il est donc impossible d’utiliser certaines techniques comme les en-têtes d’hôte avec Kestrel pour héberger plusieurs applications sur le même port et la même adresse IP.
+En plus d’un gestionnaire de processus, ASP.NET Core applications peuvent utiliser un serveur proxy inverse. Un serveur proxy inverse reçoit des requêtes HTTP à partir d’Internet et les transfère à Kestrel après une gestion préliminaire. Les serveurs proxy inverse fournissent une couche de sécurité pour l’application. Kestrel ne prend pas non plus en charge l’hébergement de plusieurs applications sur le même port. Il est donc impossible d’utiliser certaines techniques comme les en-têtes d’hôte avec Kestrel pour héberger plusieurs applications sur le même port et la même adresse IP.
 
 ![Kestrel à Internet](./media/image7-5.png)
 
-**Figure 7-5**. ASP.NET hébergée à Kestrel derrière un serveur proxy inversé
+**Figure 7-5**. ASP.NET hébergé dans Kestrel derrière un serveur proxy inverse
 
 Un proxy inverse peut également être utile pour sécuriser plusieurs applications avec SSL/HTTPS. Dans ce cas, SSL ne doit être configuré que sur le proxy inverse. Les communications entre le serveur proxy inverse et Kestrel peuvent avoir lieu sur TTP, comme indiqué dans la Figure 7-6.
 
-![ASP.NET hébergés derrière un serveur proxy inversé sécurisé par HTTPS](./media/image7-6.png)
+![ASP.NET hébergé derrière un serveur proxy inversé sécurisé HTTPs](./media/image7-6.png)
 
-**Figure 7-6**. ASP.NET hébergés derrière un serveur proxy inversé sécurisé par HTTPS
+**Figure 7-6**. ASP.NET hébergé derrière un serveur proxy inversé sécurisé HTTPs
 
 Une approche de plus en plus répandue consiste à héberger votre application ASP.NET Core dans un conteneur Docker que vous pouvez ensuite héberger localement ou déployer sur Azure pour l’héberger dans le cloud. Le conteneur Docker contient le code de votre application, exécuté sur Kestrel, et est déployé derrière un serveur proxy inverse, comme indiqué ci-dessus.
 
@@ -580,7 +580,7 @@ Si vous hébergez votre application sur Azure, vous pouvez utiliser Microsoft Az
 
 - Diagnostics avancés
 
-_En savoir plus sur les options de déploiement Azure dans [le chapitre 10](development-process-for-azure.md)._
+_En savoir plus sur les options de déploiement Azure dans le [chapitre 10](development-process-for-azure.md)._
 
 > ### <a name="references--deployment"></a>Références – Déploiement
 >
@@ -594,5 +594,5 @@ _En savoir plus sur les options de déploiement Azure dans [le chapitre 10](deve
 >   <https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction>
 
 >[!div class="step-by-step"]
->[Suivant précédent](common-client-side-web-technologies.md)
->[Next](work-with-data-in-asp-net-core-apps.md)
+>[Précédent](common-client-side-web-technologies.md) 
+> [Suivant](work-with-data-in-asp-net-core-apps.md)

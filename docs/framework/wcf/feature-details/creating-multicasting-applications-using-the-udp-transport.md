@@ -2,12 +2,12 @@
 title: Création d'applications multidiffusion en utilisant le transport UDP
 ms.date: 03/30/2017
 ms.assetid: 7485154a-6e85-4a67-a9d4-9008e741d4df
-ms.openlocfilehash: 6825aaafe87ae362fd9266f7c7a82a36d054a69f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 40944129ce3b01d8422d5aba4cfbf913c56265ed
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185252"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144628"
 ---
 # <a name="creating-multicasting-applications-using-the-udp-transport"></a>Création d'applications multidiffusion en utilisant le transport UDP
 Les applications de multidiffusion envoient de petits messages à un grand nombre de destinataires à la fois sans établir de connexion point à point. Ces applications mettent l'accent sur la vitesse par rapport à la fiabilité. En d'autres termes, il est plus important d'envoyer des données en temps voulu pour garantir que tout message spécifique est reçu. WCF prend désormais en charge des applications de multidiffusion à l'aide de <xref:System.ServiceModel.UdpBinding>. Ce transport est utile dans les scénarios où un service doit envoyer de petits messages à plusieurs clients simultanément. Une application de cotations boursières est un exemple de ce service.  
@@ -91,7 +91,7 @@ while (true)
  Ce code génère les informations boursières, puis utilise le contrat de service IStockTicker de façon à envoyer des messages de multidiffusion et appeler les services à l'écoute sur l'adresse UDP appropriée.  
   
 ### <a name="udp-and-reliable-messaging"></a>UDP et messagerie fiable  
- La liaison UDP ne prend pas en charge la messagerie fiable en raison de la nature légère du protocole UDP. Si vous devez vérifier que les messages sont reçus par un point de terminaison distant, utilisez un transport qui prend en charge la messagerie fiable telle que HTTP ou TCP. Pour plus d’informations sur la messagerie fiable voirhttps://go.microsoft.com/fwlink/?LinkId=231830  
+  La liaison UDP ne prend pas en charge la messagerie fiable en raison de la nature légère du protocole UDP. Si vous devez vérifier que les messages sont reçus par un point de terminaison distant, utilisez un transport qui prend en charge la messagerie fiable telle que HTTP ou TCP. Pour plus d’informations sur la messagerie fiable, consultez <https://go.microsoft.com/fwlink/?LinkId=231830> .  
   
 ### <a name="two-way-multicast-messaging"></a>Messagerie de multidiffusion bidirectionnelle  
  Alors que les messages de multidiffusion sont généralement unidirectionnels, UdpBinding prend en charge l'échange de messages de demande/réponse. Les messages envoyés à l'aide du transport UDP contiennent une adresse d'expéditeur et de destinataire. Il faut être prudent lors de l'utilisation de l'adresse de l'expéditeur, car elle peut être modifiée de manière malveillante en route.  L'adresse peut être vérifiée à l'aide du code suivant :  
