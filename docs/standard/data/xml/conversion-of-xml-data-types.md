@@ -6,15 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a2aa99ba-8239-4818-9281-f1d72ee40bde
-ms.openlocfilehash: b0cdab8861ca50b40ce2b422fcc1acf16e2f2273
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: b6e6f2c4b28e9220727bf0fe1a958a7b69111571
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711088"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202161"
 ---
 # <a name="conversion-of-xml-data-types"></a>Conversion des types de données XML
-La majorité des méthodes présentes dans la classe **XmlConvert** sont utilisées pour la conversion de données entre le format de chaînes et le format fortement typé. Ces méthodes sont indépendantes des paramètres régionaux. Cela signifie qu'elles ne prennent pas en compte les paramètres régionaux éventuels lors de la conversion.  
+La majorité des méthodes présentes dans une classe **XmlConvert** sont utilisées pour convertir des données entre des chaînes et des formats fortement typés. Ces méthodes sont indépendantes des paramètres régionaux. Cela signifie qu'elles ne prennent pas en compte les paramètres régionaux éventuels lors de la conversion.  
   
 ## <a name="reading-string-as-types"></a>Lecture de chaînes comme des types  
  L'exemple suivant lit une chaîne et la convertit en type **DateTime**.  

@@ -7,16 +7,16 @@ helpviewer_keywords:
 - Span<T>
 - buffers"
 - pipeline processing
-ms.openlocfilehash: b61b1dbbedf4658fe113986fbb4a792a2f574534
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c60c08d27c0e41228a15e8acdf01a9af28a23762
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73121983"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201971"
 ---
 # <a name="memory--and-span-related-types"></a>Types liés à la mémoire et l’étendue
 
-À partir de .NET Core 2.1, .NET inclut plusieurs types reliés entre eux qui représentent une région contiguë et fortement typée de mémoire arbitraire. notamment :
+À compter de .NET Core 2,1, .NET comprend un certain nombre de types interdépendants qui représentent une région contiguë fortement typée de mémoire arbitraire. notamment :
 
 - <xref:System.Span%601?displayProperty=nameWithType>, un type utilisé pour accéder à une zone contiguë de mémoire. Une instance <xref:System.Span%601> peut être sauvegardée par un tableau de type `T`, un objet <xref:System.String>, une mémoire tampon allouée avec [stackalloc](../../csharp/language-reference/operators/stackalloc.md), ou un pointeur vers une mémoire non managée. Comme elle doit être allouée sur la pile, elle comporte plusieurs restrictions. Par exemple, un champ dans une classe ne peut pas être de type <xref:System.Span%601>, et l’étendue ne peut pas être utilisée dans des opérations asynchrones.
 
@@ -26,7 +26,7 @@ ms.locfileid: "73121983"
 
 - <xref:System.ReadOnlyMemory%601?displayProperty=nameWithType>, une version immuable de la structure <xref:System.Memory%601>.
 
-- <xref:System.Buffers.MemoryPool%601?displayProperty=nameWithType>, qui alloue des blocs de mémoire très typés d’un pool de mémoire à un propriétaire. Les instances <xref:System.Buffers.IMemoryOwner%601> peuvent être louées à partir du pool en appelant <xref:System.Buffers.MemoryPool%601.Rent%2A?displayProperty=nameWithType> puis replacées dans le pool en appelant <xref:System.Buffers.MemoryPool%601.Dispose?displayProperty=nameWithType>.
+- <xref:System.Buffers.MemoryPool%601?displayProperty=nameWithType>, qui alloue des blocs de mémoire fortement typés d’un pool de mémoire à un propriétaire. Les instances <xref:System.Buffers.IMemoryOwner%601> peuvent être louées à partir du pool en appelant <xref:System.Buffers.MemoryPool%601.Rent%2A?displayProperty=nameWithType> puis replacées dans le pool en appelant <xref:System.Buffers.MemoryPool%601.Dispose?displayProperty=nameWithType>.
 
 - <xref:System.Buffers.IMemoryOwner%601?displayProperty=nameWithType>, qui représente le propriétaire d’un bloc de mémoire et gère la durée de vie.
 
@@ -43,7 +43,7 @@ Pour plus d'informations, consultez l'espace de noms <xref:System.Buffers?displa
 
 ## <a name="working-with-memory-and-span"></a>Utilisation de la mémoire et de l’étendue
 
-Étant donné que les types liés à la mémoire et à l’étendue servent généralement à stocker les données dans un pipeline de traitement, il est important que les développeurs suivent un ensemble de meilleures pratiques lorsqu’ils utilisent <xref:System.Span%601>, <xref:System.Memory%601> et des types connexes. Ces meilleures pratiques sont documentées dans les [instructions d’utilisation de la mémoire\< et de l’étendue\<](memory-t-usage-guidelines.md).
+Étant donné que les types liés à la mémoire et à l’étendue servent généralement à stocker les données dans un pipeline de traitement, il est important que les développeurs suivent un ensemble de meilleures pratiques lorsqu’ils utilisent <xref:System.Span%601>, <xref:System.Memory%601> et des types connexes. Ces meilleures pratiques sont documentées [dans \<T> \<T> les instructions relatives à l’utilisation de la mémoire et de l’étendue](memory-t-usage-guidelines.md).
 
 ## <a name="see-also"></a>Voir aussi
 

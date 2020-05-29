@@ -6,15 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 898e0f52-8a7c-4d1f-afcd-6ffb28b050b4
-ms.openlocfilehash: e6ec30e3c7c2318b199122cd63c7f56584707a98
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: afbfd516ef25eff94a9eed841f313892007c58a1
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78158049"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202341"
 ---
 # <a name="accessing-strongly-typed-xml-data-using-xpathnavigator"></a>Accès à des données XML fortement typées à l'aide de XPathNavigator
-En tant qu’instance du modèle de données XPath 2.0, la classe <xref:System.Xml.XPath.XPathNavigator> peut contenir des données fortement typées correspondant aux types CLR (Common Language Runtime) courants. Conformément au modèle de données XPath 2.0, seuls les éléments et les attributs peuvent contenir des données fortement typées. La classe <xref:System.Xml.XPath.XPathNavigator> offre des mécanismes d'accès aux données dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> sous la forme de données fortement typées et des mécanismes de conversion d'un type de données en un autre.  
+En tant qu’instance du modèle de données XPath 2,0, la <xref:System.Xml.XPath.XPathNavigator> classe peut contenir des données fortement typées qui sont mappées à des types Common Language Runtime (CLR). Selon le modèle de données XPath 2,0, seuls les éléments et les attributs peuvent contenir des données fortement typées. La <xref:System.Xml.XPath.XPathNavigator> classe fournit des mécanismes pour accéder aux données dans <xref:System.Xml.XPath.XPathDocument> un <xref:System.Xml.XmlDocument> objet ou en tant que données fortement typées, ainsi que des mécanismes de conversion d’un type de données en un autre.  
   
 ## <a name="type-information-exposed-by-xpathnavigator"></a>Informations sur le type exposées par XPathNavigator  
  D'un point de vue technique, les données XML 1.0 ne présentent pas de type, sauf si elles sont traitées avec une DTD, un schéma de langage XSD (XML schema definition) ou un autre mécanisme. Un certain nombre de catégories d'informations sur le type peuvent être associées à un attribut ou un élément XML.  

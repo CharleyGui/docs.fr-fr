@@ -1,37 +1,37 @@
 ---
-title: Débbuggers gérés - .NET Core
-description: Un aperçu du Visual Studio et Visual Studio Code géré débrilleurs.
+title: Débogueurs managés-.NET Core
+description: Vue d’ensemble de Visual Studio et Visual Studio Code les débogueurs managés.
 ms.date: 08/05/2019
-ms.openlocfilehash: 065b1b0fc32eb76b398cb3821c8592a1955c9359
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 28cc21980bc78234f7af3b4668e2fa77fbf8ce5b
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715566"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84200860"
 ---
-# <a name="net-core-managed-debuggers"></a>.NET Core a géré les débbuggeurs
+# <a name="net-core-managed-debuggers"></a>Débogueurs managés .NET Core
 
-Les débbuggeurs permettent aux programmes d’être mis en pause ou exécutés étape par étape. Une fois mis en pause, l’état actuel du processus peut être consulté. En franchiant les sections clés, vous obtenez une compréhension de votre code et pourquoi il produit le résultat qu’il fait.
+Les débogueurs permettent de suspendre ou d’exécuter les programmes pas à pas. Lorsqu’elle est suspendue, l’état actuel du processus peut être affiché. En exécutant pas à pas les sections clés, vous vous familiarisez avec votre code et pourquoi il produit le résultat qu’il fait.
 
-Microsoft fournit des débbuggers pour le code géré dans **Visual Studio** et Visual **Studio Code**.
+Microsoft fournit des débogueurs pour le code managé dans **Visual Studio** et **Visual Studio code**.
 
-## <a name="visual-studio-managed-debugger"></a>Visual Studio géré débbugger
+## <a name="visual-studio-managed-debugger"></a>Débogueur managé Visual Studio
 
-**Visual Studio** est un environnement de développement intégré avec le débbuggeur le plus complet disponible. Visual Studio est un excellent choix pour les développeurs travaillant sur Windows.
+**Visual Studio** est un environnement de développement intégré avec le débogueur le plus complet disponible. Visual Studio est un excellent choix pour les développeurs qui travaillent sur Windows.
 
-- [Tutorial - Débogage d’une application .NET Core sur Windows avec Visual Studio](../tutorials/debugging-with-visual-studio.md)
+- [Didacticiel-débogage d’une application .NET Core sur Windows avec Visual Studio](../tutorials/debugging-with-visual-studio.md)
 
-Bien que Visual Studio soit une application Windows, il peut toujours être utilisé pour déboiffer les applications Linux et macOS à distance.
+Alors que Visual Studio est une application Windows, il peut toujours être utilisé pour déboguer des applications Linux et macOS à distance.
 
-- [Déboguer une application .NET Core sur Linux/OSX avec Visual Studio](https://github.com/Microsoft/MIEngine/wiki/Offroad-Debugging-of-.NET-Core-on-Linux---OSX-from-Visual-Studio)
+- [Débogage d’une application .NET Core sur Linux/OSX avec Visual Studio](https://github.com/Microsoft/MIEngine/wiki/Offroad-Debugging-of-.NET-Core-on-Linux---OSX-from-Visual-Studio)
 
- Le débogage ASP.NET les applications Core nécessitent des instructions légèrement différentes.
+ Le débogage des applications ASP.NET Core nécessite des instructions légèrement différentes.
 
-- [Debug ASP.NET applications De Core dans Visual Studio](/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications#debug-aspnet-core-apps)
+- [Déboguer des applications ASP.NET Core dans Visual Studio](/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications#debug-aspnet-core-apps)
 
-## <a name="visual-studio-code-managed-debugger"></a>Code de studio visuel géré débrisonneur
+## <a name="visual-studio-code-managed-debugger"></a>Débogueur géré par Visual Studio Code
 
-**Visual Studio Code** est un éditeur de code multiplateforme léger. Il utilise la même implémentation .NET Core debugger que Visual Studio, mais avec une interface utilisateur simplifiée.
+**Visual Studio code** est un éditeur de code multiplateforme léger. Il utilise la même implémentation du débogueur .NET Core que Visual Studio, mais avec une interface utilisateur simplifiée.
 
-- [Tutorial - Débogage d’une application .NET Core avec Visual Studio Code](../tutorials/with-visual-studio-code.md#debug)
+- [Didacticiel-débogage d’une application .NET Core avec Visual Studio Code](../tutorials/debugging-with-visual-studio-code.md)
 - [Débogage dans Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)

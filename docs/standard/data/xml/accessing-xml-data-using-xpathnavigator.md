@@ -3,12 +3,12 @@ title: Accès à des données XML à l’aide de XPathNavigator
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: c57b46e6-5c77-408f-bc4e-67a5dcc9cc05
-ms.openlocfilehash: c8466e78458d344a872aac7cdebc155342b13e0f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8cba6e106623169f5575684162bf3be383563275
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711166"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202317"
 ---
 # <a name="accessing-xml-data-using-xpathnavigator"></a>Accès à des données XML à l’aide de XPathNavigator
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit des méthodes permettant de parcourir des nœuds, d'extraire des données XML et d'accéder à des données XML fortement typées dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument>.  
@@ -24,7 +24,7 @@ La classe <xref:System.Xml.XPath.XPathNavigator> fournit des méthodes permettan
  Décrit les différentes méthodes d'extraction de données XML à partir d'un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument>.  
   
  [Accès à des données XML fortement typées à l'aide de XPathNavigator](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)  
- Décrit l'accès à des données XML fortement typées dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> à l'aide de la classe <xref:System.Xml.XPath.XPathNavigator>.  
+ Décrit l’accès aux données XML fortement typées dans un <xref:System.Xml.XPath.XPathDocument> <xref:System.Xml.XmlDocument> objet ou à l’aide de la <xref:System.Xml.XPath.XPathNavigator> classe.  
   
  [Fonctions et variables définies par l'utilisateur](../../../../docs/standard/data/xml/user-defined-functions-and-variables.md)  
  Décrit l’implémentation d’une classe <xref:System.Xml.Xsl.XsltContext> personnalisée avec les interfaces <xref:System.Xml.Xsl.IXsltContextFunction> et <xref:System.Xml.Xsl.IXsltContextVariable> qui prennent en charge les fonctions et variables d’extension.  

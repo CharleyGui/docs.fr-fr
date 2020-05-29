@@ -7,12 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 03a7c5a1-b296-4af4-b209-043c958dc0a5
-ms.openlocfilehash: 1770eb08055fd244bd0f220fed6d1641c35174fd
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: ea42cbfe7427e026f5e3339af5f5a2ceec17dad3
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794349"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202199"
 ---
 # <a name="modify-xml-data-using-xpathnavigator"></a>Modification de données XML à l’aide de XPathNavigator
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthodes permettant de modifier les nœuds et les valeurs d'un document XML. Pour pouvoir utiliser ces méthodes, vous devez pouvoir modifier l'objet <xref:System.Xml.XPath.XPathNavigator>, ce qui signifie que sa propriété <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> doit être `true`.  
@@ -104,7 +104,7 @@ navigator.SetTypedValue(DateTime.Now);
  [!code-xml[XPathXMLExamples#3](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xsd#3)]  
   
 #### <a name="the-effects-of-editing-strongly-typed-xml-data"></a>Effets de la modification de données XML fortement typées  
- La classe <xref:System.Xml.XPath.XPathNavigator> se base sur le schéma XML du W3C pour décrire des données XML fortement typées. Les éléments et les attributs ne peuvent pas être annotés avec les informations sur le type en fonction de la validation par rapport au document du W3C sur les schémas XML. Les éléments pouvant contenir d'autres éléments ou attributs sont appelés types complexes, tandis que ceux qui ne peuvent avoir que du contenu textuel sont appelés types simples.  
+ La <xref:System.Xml.XPath.XPathNavigator> classe utilise le schéma XML W3C comme base pour décrire le XML fortement typé. Les éléments et les attributs ne peuvent pas être annotés avec les informations sur le type en fonction de la validation par rapport au document du W3C sur les schémas XML. Les éléments pouvant contenir d'autres éléments ou attributs sont appelés types complexes, tandis que ceux qui ne peuvent avoir que du contenu textuel sont appelés types simples.  
   
 > [!NOTE]
 > Les attributs ne peuvent avoir que des types simples.  

@@ -4,12 +4,12 @@ description: Découvrez comment déployer une application .NET pour Apache Spark
 ms.date: 05/12/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 245df14b9174a3b2ff152f90e6c50cc8766a2de9
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 4010f363e8ba606a7294ea32dc34587da6d6c8aa
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83397049"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202242"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Didacticiel : déployer une application .NET pour Apache Spark sur Databricks
 
@@ -55,7 +55,7 @@ Dans cette section, vous créez un espace de travail Azure Databricks en utilisa
     |**Niveau tarifaire**     |  Choisissez **Standard**, **Premium** ou **Essai**. Pour plus d’informations sur ces niveaux, consultez la [page de tarification Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
     |**Réseau virtuel**     |   Non       |
 
-3. Sélectionnez **Créer**. La création de l’espace de travail dure quelques minutes. Pendant la création de l'espace de travail, vous pouvez consulter l'état du déploiement dans **Notifications**.
+3. Sélectionnez **Create** (Créer). La création de l’espace de travail dure quelques minutes. Pendant la création de l'espace de travail, vous pouvez consulter l'état du déploiement dans **Notifications**.
 
 ## <a name="install-azure-databricks-tools"></a>Installer Azure Databricks Tools
 
@@ -87,7 +87,7 @@ Maintenant que l’interface CLI Databricks est installée, vous devez configure
 
 1. Exécutez la commande CLI Databricks `databricks configure --token` .
 
-2. Après avoir exécuté la commande configurer, vous êtes invité à entrer un ordinateur hôte. Votre URL d’hôte utilise le format : **https://< \location>. azuredatabricks.net**. Par exemple, si vous avez sélectionné **eastus2** lors de la création du service Azure Databricks, l’hôte est **https://eastus2.azuredatabricks.net** .
+2. Après avoir exécuté la commande configurer, vous êtes invité à entrer un ordinateur hôte. Votre URL d’hôte utilise le format : `https://<Location>.azuredatabricks.net` . Par exemple, si vous avez sélectionné **eastus2** lors de la création du service Azure Databricks, l’hôte est `https://eastus2.azuredatabricks.net` .
 
 3. Après avoir entré votre hôte, vous êtes invité à entrer un jeton. Dans le Portail Azure, sélectionnez **lancer l’espace de travail** pour lancer votre Azure Databricks espace de travail.
 

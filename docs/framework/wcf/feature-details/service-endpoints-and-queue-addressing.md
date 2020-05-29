@@ -2,17 +2,17 @@
 title: Points de terminaison de service et adressage de files d'attente
 ms.date: 03/30/2017
 ms.assetid: 7d2d59d7-f08b-44ed-bd31-913908b83d97
-ms.openlocfilehash: ec932e83a2b37330f54be545a45358a5ab055423
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 8b323993a698dac219e0f2be43e9b508a19065dd
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744619"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202423"
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Points de terminaison de service et adressage de files d'attente
 Cette rubrique discute comment les clients adressent des services qui lisent à partir des files d'attente et comment les points de terminaison de service mappent aux files d'attente. En guise de rappel, l’illustration suivante montre le déploiement d’applications en file d’attente Classic Windows Communication Foundation (WCF).  
   
- ![Diagramme d’application en file d’attente](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "File d’attente distribuée-figure")  
+ ![Diagramme d'application mise en file d'attente](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "File d’attente distribuée-figure")  
   
  Pour pouvoir adresser le message au service, le client adresse le message à la file d'attente cible. Pour pouvoir lire des messages depuis la file d'attente, il définit son adresse d'écoute à la file d'attente cible. L’adressage dans WCF est Uniform Resource Identifier (URI), tandis que les noms de files d’attente Message Queuing (MSMQ) ne sont pas basés sur un URI. C’est pourquoi il est essentiel de comprendre comment traiter les files d’attente créées dans MSMQ à l’aide de WCF.  
   
@@ -30,15 +30,15 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
   
  L’adressage d’une file d’attente dans WCF est basé sur le modèle suivant :  
   
- NET. msmq://\<*nom-hôte*>/[Private/] \<*nom de file d’attente*>  
+ NET. msmq:// \<*host-name*> /[Private/]\<*queue-name*>  
   
  où :  
   
-- \<*host-name*> est le nom de l’ordinateur qui héberge la file d’attente cible.  
+- \<*host-name*>nom de l’ordinateur qui héberge la file d’attente cible.  
   
 - [private] est facultatif. Il est utilisé lors de l'adressage d'une file d'attente cible qui est une file d'attente privée. Pour adresser une file d'attente publique, vous ne devez pas spécifier private. Notez que, contrairement aux chemins d’accès MSMQ, il n’y a pas de « $ » dans le format d’URI WCF.  
   
-- nom de la *file d’attente*\<> est le nom de la file d’attente. Le nom de la file d'attente peut également faire référence à une sous-file d'attente. Par conséquent, \<*nom-file d’attente*> = \<*nom de la file d’attente*> [; *nom de la sous-file d’attente*].  
+- \<*queue-name*>nom de la file d’attente. Le nom de la file d'attente peut également faire référence à une sous-file d'attente. Ainsi, \<*queue-name*>  =  \<*name-of-queue*> [;* nom de la sous-file d’attente*].  
   
  Exemple 1 : pour adresser une file d'attente privée PurchaseOrders hébergée sur l'ordinateur abc atadatum.com, l'URI serait net.msmq://abc.adatum.com/private/PurchaseOrders.  
   
@@ -51,7 +51,7 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
 ### <a name="multiple-contracts-in-a-queue"></a>Contrats multiples dans une file d'attente  
  Les messages dans une file d'attente peuvent implémenter des contrats différents. Dans ce cas, il est essentiel que l'une des conditions suivantes soit remplie pour lire et traiter avec succès tous les messages :  
   
-- Spécifiez un point de terminaison pour un service qui implémente tous les contrats. Il s'agit de l'approche recommandée.  
+- Spécifiez un point de terminaison pour un service qui implémente tous les contrats. Il s’agit de l’approche recommandée.  
   
 - Spécifiez plusieurs points de terminaison avec différents contrats, mais assurez-vous que tous les points de terminaison utilisent le même objet `NetMsmqBinding`. La logique de distribution dans ServiceModel utilise une pompe de messages qui lit les messages du canal de transport pour distribution, et qui démultiplexe finalement les messages en fonction du contrat vers différents points de terminaison. Une pompe de messages est créée pour une paire d’écoute URI/liaison. L'adresse de la file d'attente est utilisée comme URI d'écoute par l'écouteur en file d'attente. Faire en sorte que tous les points de terminaison utilisent le même objet de liaison permet de s’assurer qu’une pompe de messages unique est utilisée pour lire le message et pour démultiplexer vers des points de terminaison pertinents en fonction du contrat.  
   
@@ -63,18 +63,18 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
  La spécification de la propriété `QueueTransferProtocol` est une fonctionnalité « transmission uniquement ». Il s'agit d'une indication par le client concernant le type de protocole de transfert de file d'attente à utiliser.  
   
 ### <a name="using-active-directory"></a>Utilisation d'Active Directory  
- MSMQ prend en charge l'intégration avec Active Directory. Lorsque MSMQ est installé avec l'intégration Active Directory, l'ordinateur doit appartenir à un domaine Windows. Active Directory est utilisé pour publier des files d’attente à des fins de découverte ; ces files d’attente sont appelées *files d’attente publiques*. Lors de l'adressage d'une file d'attente, la file d'attente peut être résolue à l'aide d'Active Directory. Ce principe s'apparente à la manière dont DNS (Domain Name System) est utilisé pour résoudre l'adresse IP d'un nom réseau. La propriété `UseActiveDirectory` dans `NetMsmqBinding` est une valeur booléenne qui indique si le canal en file d'attente doit utiliser Active Directory pour résoudre l'URI de file d'attente. Elle a la valeur `false` par défaut. Si la propriété `UseActiveDirectory` a la valeur `true`, le canal en file d'attente utilise Active Directory pour convertir l'URI net.msmq:// au nom de format.  
+ MSMQ prend en charge l'intégration avec Active Directory. Lorsque MSMQ est installé avec l'intégration Active Directory, l'ordinateur doit appartenir à un domaine Windows. Active Directory est utilisé pour publier des files d’attente à des fins de découverte ; ces files d’attente sont appelées *files d’attente publiques*. Lors de l'adressage d'une file d'attente, la file d'attente peut être résolue à l'aide d'Active Directory. Ce principe s'apparente à la manière dont DNS (Domain Name System) est utilisé pour résoudre l'adresse IP d'un nom réseau. La propriété `UseActiveDirectory` dans `NetMsmqBinding` est une valeur booléenne qui indique si le canal en file d'attente doit utiliser Active Directory pour résoudre l'URI de file d'attente. Par défaut, elle est définie sur `false`. Si la propriété `UseActiveDirectory` a la valeur `true`, le canal en file d'attente utilise Active Directory pour convertir l'URI net.msmq:// au nom de format.  
   
  La propriété `UseActiveDirectory` est explicite uniquement pour le client qui envoie le message car elle est utilisée pour résoudre l'adresse de la file d'attente lors de l'envoi de messages.  
   
 ### <a name="mapping-netmsmq-uri-to-message-queuing-format-names"></a>Mappage de l'URI net.msmq aux noms de format Message Queuing  
  Le canal en file d'attente gère le mappage du nom d'URI net.msmq fourni au canal en noms de format MSMQ. Le tableau suivant résume les règles de mappage utilisées.  
   
-|Adresse de file d'attente basée sur URI WCF|Utiliser la propriété Active Directory|Propriété de protocole de transfert de mise en file d'attente|Noms de format MSMQ résultants|  
+|Adresse de file d'attente basée sur URI WCF |Utiliser la propriété Active Directory|Propriété de protocole de transfert de mise en file d'attente|Noms de format MSMQ résultants|  
 |----------------------------------|-----------------------------------|--------------------------------------|---------------------------------|  
-|NET. msmq://\<nom-machine >/Private/ABC|False (valeur par défaut)|Native (valeur par défaut)|DIRECT=OS:machine-name\private$\abc|  
-|NET. msmq://\<nom-machine >/Private/ABC|False|SRMP|DIRECT =http://machine/msmq/private$/ABC|  
-|NET. msmq://\<nom-machine >/Private/ABC|True|Natif|PUBLIC=un-guid (le GUID de la file d'attente)|  
+|`Net.msmq://<machine-name>/private/abc`|False (valeur par défaut)|Native (valeur par défaut)|`DIRECT=OS:machine-name\private$\abc`|  
+|`Net.msmq://<machine-name>/private/abc`|False|SRMP|`DIRECT=http://machine/msmq/private$/abc`|  
+|`Net.msmq://<machine-name>/private/abc`|True|Natif|`PUBLIC=some-guid`(GUID de la file d’attente)|  
   
 ### <a name="reading-messages-from-the-dead-letter-queue-or-the-poison-message-queue"></a>Lecture de messages à partir de la file d'attente de lettres mortes ou de la file d'attente de messages incohérents  
  Pour lire des messages à partir d'une file d'attente de message incohérents qui est une sous-file d'attente de la file d'attente cible, ouvrez le `ServiceHost` avec l'adresse de la sous-file d'attente.  
@@ -87,7 +87,7 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
   
  Lors de l'utilisation d'une file d'attente de lettres mortes personnalisée, notez que la file d'attente de lettres mortes doit résider sur l'ordinateur local. Comme tel, l'URI de la file d'attente de lettres mortes est restreint à la forme suivante :  
   
- NET. msmq://localhost/[Private/] \<*Custom-morte-letter-queue-name*>.  
+ NET. msmq://localhost/[Private/] \<*custom-dead-letter-queue-name*> .  
   
  Un service WCF vérifie que tous les messages qu’il reçoit ont été adressés à la file d’attente particulière sur laquelle il écoute. Si la file d'attente de destination du message ne correspond pas à la file d'attente dans laquelle il se trouve, le service ne traite pas le message. Il s'agit d'un problème que les services qui écoutent une file d'attente de lettres mortes doivent être capables de gérer car tout message présent dans la file d'attente de lettres mortes était destiné à être remis autre part. Pour lire des messages à partir d'une file d'attente de lettres mortes ou d'une file d'attente de messages incohérents, un `ServiceBehavior` avec le paramètre <xref:System.ServiceModel.AddressFilterMode.Any> doit être utilisé. Pour obtenir un exemple, consultez [files d’attente de lettres mortes](../../../../docs/framework/wcf/samples/dead-letter-queues.md).  
   
@@ -100,10 +100,10 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
   
  Notez que vous pouvez utiliser des noms de format directs, et des noms de format publics et privés (requiert l'intégration Active Directory) uniquement lors de la réception de messages à partir d'une file d'attente à l'aide de `MsmqIntegrationBinding`. Il est toutefois recommandé d'utiliser des noms de format directs. Par exemple, sur Windows Vista, l’utilisation d’un autre nom de format provoque une erreur, car le système tente d’ouvrir une sous-file d’attente, qui peut uniquement être ouverte avec des noms de format directs.  
   
- Lors de l’adressage SRMP à l’aide de `MsmqIntegrationBinding`, il n’est pas obligatoire d’ajouter /msmq/ dans le nom de format direct pour aider les services Internet (IIS) à effectuer la distribution. Par exemple : lors de l’adressage d’une file d’attente ABC à l’aide du protocole SRMP, au lieu de DIRECT =http://adatum.com/msmq/private$/ABC, vous devez utiliser DIRECT =http://adatum.com/private$/ABC.  
+ Lors de l’adressage SRMP à l’aide de `MsmqIntegrationBinding`, il n’est pas obligatoire d’ajouter /msmq/ dans le nom de format direct pour aider les services Internet (IIS) à effectuer la distribution. Par exemple : lors de l’adressage d’une file d’attente ABC à l’aide du protocole SRMP, au lieu de `DIRECT=http://adatum.com/msmq/private$/abc` , vous devez utiliser `DIRECT=http://adatum.com/private$/abc` .  
   
  Notez que vous ne pouvez pas utiliser l'adressage net.msmq:// avec `MsmqIntegrationBinding`. Étant donné que `MsmqIntegrationBinding` prend en charge l’adressage de nom de format MSMQ de forme libre, vous pouvez utiliser un service WCF qui utilise cette liaison pour utiliser les fonctionnalités de multidiffusion et de liste de distribution dans MSMQ. Une exception concerne la spécification de `CustomDeadLetterQueue` lors de l'utilisation du `MsmqIntegrationBinding`. Il doit être de la forme net.msmq://, semblable à la façon dont il est spécifié à l'aide du `NetMsmqBinding`.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Hébergement sur le web d’une application en file d’attente](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)
+- [Hébergement sur le Web d'une application en file d'attente](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)

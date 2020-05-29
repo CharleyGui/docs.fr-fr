@@ -2,18 +2,18 @@
 title: Collections (C#)
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-ms.openlocfilehash: d2996648690fc03b5f1d6a90e0be96155c5a24ed
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 30aa3e34f362f34fc601f90ee61613acd6e4bc68
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645465"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201132"
 ---
 # <a name="collections-c"></a>Collections (C#)
 
 Pour de nombreuses applications, vous voulez créer et gérer des groupes d’objets connexes. Il existe deux manières de grouper des objets : en créant des tableaux d’objets ou des collections d’objets.
 
-Les tableaux sont particulièrement utiles pour la création et l’utilisation d’un nombre fixe d’objets fortement typés. Pour plus d’informations sur les tableaux, consultez [Tableaux](../arrays/index.md).
+Les tableaux s’avèrent particulièrement utiles pour créer et utiliser un nombre fixe d’objets fortement typés. Pour plus d’informations sur les tableaux, consultez [Tableaux](../arrays/index.md).
 
 Les collections offrent plus de souplesse quand il s’agit d’utiliser des groupes d’objets. Contrairement aux tableaux, le groupe d’objets que vous utilisez peut être développé et réduit de manière dynamique selon les modifications de l’application. Pour certaines collections, vous pouvez assigner une clé à un objet que vous placez dans la collection pour vous permettre de récupérer rapidement l’objet à l’aide de la clé.
 
@@ -24,7 +24,7 @@ Si votre collection contient des éléments d’un seul type de données, vous p
 > [!NOTE]
 > Pour les exemples de cette rubrique, ajoutez des instructions [using](../../language-reference/keywords/using-directive.md) pour les espaces de noms `System.Collections.Generic` et `System.Linq`.
 
- **Dans ce sujet**
+ **Dans cette rubrique**
 
 - [Utilisation d’une collection simple](#BKMK_SimpleCollection)
 
@@ -351,7 +351,7 @@ private static void FindInDictionary2(string symbol)
 
 ## <a name="using-linq-to-access-a-collection"></a>Utilisation de LINQ pour accéder à une collection
 
-LINQ (Language-Integrated Query) peut être utilisé pour accéder aux collections. Les requêtes LINQ fournissent des fonctionnalités de filtrage, de classement et de regroupement. Pour plus d’informations, voir [Getting Started avec LINQ en C .](linq/index.md)
+LINQ (Language-Integrated Query) peut être utilisé pour accéder aux collections. Les requêtes LINQ fournissent des fonctionnalités de filtrage, de classement et de regroupement. Pour plus d’informations, consultez [prise en main avec LINQ en C#](linq/index.md).
 
 L’exemple suivant exécute une requête LINQ sur un `List` générique. La requête LINQ retourne une autre collection qui contient les résultats.
 
@@ -600,10 +600,10 @@ private static IEnumerable<int> EvenSequence(
 
 - [Initialiseurs d’objets et de collections](../classes-and-structs/object-and-collection-initializers.md)
 - [Concepts de programmation (C#)](./index.md)
-- [Option Strict (instruction)](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [LINQ to Objects (C#)](./linq/linq-to-objects.md)
 - [Parallel LINQ (PLINQ)](../../../standard/parallel-programming/introduction-to-plinq.md)
 - [Collections et structures de données](../../../standard/collections/index.md)
 - [Sélection d’une classe de collection](../../../standard/collections/selecting-a-collection-class.md)
-- [Comparaisons et tris au sein des collections](../../../standard/collections/comparisons-and-sorts-within-collections.md)
-- [Quand utiliser les collections génériques](../../../standard/collections/when-to-use-generic-collections.md)
+- [Comparaisons et tris dans les collections](../../../standard/collections/comparisons-and-sorts-within-collections.md)
+- [Quand utiliser des collections génériques](../../../standard/collections/when-to-use-generic-collections.md)

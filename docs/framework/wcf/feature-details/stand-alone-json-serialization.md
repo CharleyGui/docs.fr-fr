@@ -2,12 +2,12 @@
 title: Sérialisation JSON autonome à l’aide de DataContractJsonSerializer
 ms.date: 03/30/2017
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
-ms.openlocfilehash: 259d5da544262b5cae08e1be9e8ea6e077d5b947
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 6bd075405a3bca0cc64dda90225526096b6fa8e3
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144927"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202388"
 ---
 # <a name="stand-alone-json-serialization-using-datacontractjsonserializer"></a>Sérialisation JSON autonome à l’aide de DataContractJsonSerializer
 
@@ -28,9 +28,9 @@ Le tableau suivant indique la correspondance entre les types .NET et les types J
 
 |Types .NET|JSON/JavaScript|Notes|
 |----------------|----------------------|-----------|
-|Tous les types numériques, par exemple <xref:System.Int32>, <xref:System.Decimal> ou <xref:System.Double>|Nombre|Les valeurs spéciales telles que `Double.NaN`, `Double.PositiveInfinity` et `Double.NegativeInfinity` ne sont pas prises en charge et entraînent des données JSON non valides.|
-|<xref:System.Enum>|Nombre|Voir « Énumérations et JSON » ci-après dans cette rubrique.|
-|<xref:System.Boolean>|Booléen|--|
+|Tous les types numériques, par exemple <xref:System.Int32>, <xref:System.Decimal> ou <xref:System.Double>|Number|Les valeurs spéciales telles que `Double.NaN`, `Double.PositiveInfinity` et `Double.NegativeInfinity` ne sont pas prises en charge et entraînent des données JSON non valides.|
+|<xref:System.Enum>|Number|Voir « Énumérations et JSON » ci-après dans cette rubrique.|
+|<xref:System.Boolean>|Boolean|--|
 |<xref:System.String>, <xref:System.Char>|Chaîne|--|
 |<xref:System.TimeSpan>, <xref:System.Guid>, <xref:System.Uri>|Chaîne|Le format de ces types dans JSON est le même que dans XML (essentiellement, TimeSpan dans le format de durée ISO 8601, GUID au format « 12345678-ABCD-ABCD-ABCD-1234567890AB » et URI dans sa forme de chaîne naturelle comme « http://www.example.com »). Pour obtenir des informations précises, consultez [Référence du schéma de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).|
 |<xref:System.Xml.XmlQualifiedName>|Chaîne|Le format est « nom:espacedenoms » (ce qui apparaît avant le premier signe deux-points constitue le nom). Le nom ou l'espace de noms peut être manquant. En l'absence d'espace de noms, le signe deux-points peut également être omis.|
@@ -189,7 +189,7 @@ Le types "Élément" tels que <xref:System.Xml.Linq.XElement> sont sérialisés 
 
 #### <a name="preserving-type-information"></a>Préservation des informations de type
 
-Comme nous l'avons indiqué précédemment, le polymorphisme est pris en charge dans JSON avec certaines limitations. JavaScript est un langage faiblement typé et l'identité des types ne constitue généralement pas un problème. Toutefois, lorsque vous utilisez JSON pour communiquer entre un système fortement typé (.NET) et un système faiblement typé (JavaScript), il est utile de préserver l'identité des types. Par exemple, les types avec les noms de contrat de données "Circle" et "Square" dérivent d'un type avec un nom de contrat de données "Shape". Si « Circle » est envoyé de .NET à Javascript et est ultérieurement retourné en une méthode .NET qui attend « Shape », il est utile pour le côté .NET de savoir que l'objet était initialement un « Circle » : dans le cas contraire, toutes les informations spécifiques au type dérivé (par exemple, le membre de données « radius » sur « Circle ») pourront être perdues.
+Comme nous l'avons indiqué précédemment, le polymorphisme est pris en charge dans JSON avec certaines limitations. JavaScript est un langage faiblement typé et l'identité des types ne constitue généralement pas un problème. Toutefois, lorsque vous utilisez JSON pour communiquer entre un système fortement typé (.NET) et un système faiblement typé (JavaScript), il est utile de conserver l’identité de type. Par exemple, les types avec les noms de contrat de données "Circle" et "Square" dérivent d'un type avec un nom de contrat de données "Shape". Si « Circle » est envoyé de .NET à Javascript et est ultérieurement retourné en une méthode .NET qui attend « Shape », il est utile pour le côté .NET de savoir que l'objet était initialement un « Circle » : dans le cas contraire, toutes les informations spécifiques au type dérivé (par exemple, le membre de données « radius » sur « Circle ») pourront être perdues.
 
 Pour préserver l'identité des types lors de la sérialisation de types complexes au format JSON, un « affinage du type » peut être ajouté, et le désérialiseur reconnaît l'affinage et agit en conséquence. L' « indicateur de type » est une paire clé/valeur JSON avec le nom de clé « \_ \_ type » (deux traits de soulignement suivis du mot « type »). La valeur est une chaîne JSON au format "NomContratDonnées:EspaceDeNomsContratDonnées" (les éléments qui précèdent le signe deux-points constituent le nom). Avec l'exemple précédent, "Circle" peut être sérialisé comme suit.
 
@@ -229,7 +229,7 @@ Il n'est pas possible d'émettre un affinage du type pour les types non complexe
 
 Les affinages de type peuvent générer une augmentation importante de la taille des messages (pour limiter ce problème, vous pouvez utiliser des espaces de noms de contrats de données plus courts si possible). Par conséquent, les règles suivantes déterminent si des affinages de type sont émis :
 
-- Lorsque vous utilisez ASP.NET AJAX, les affinages de type sont toujours émis chaque fois que cela est possible, même s'il n'existe aucune attribution de type dérivé/de base ; par exemple, même si Circle est attribué à Circle. (Ceci est nécessaire pour activer totalement le processus d'appel depuis l'environnement JSON faiblement typé vers l'environnement .NET fortement typé sans perte d'informations inattendue.)
+- Lorsque vous utilisez ASP.NET AJAX, les affinages de type sont toujours émis chaque fois que cela est possible, même s'il n'existe aucune attribution de type dérivé/de base ; par exemple, même si Circle est attribué à Circle. (Cela est nécessaire pour activer entièrement le processus d’appel de l’environnement JSON faiblement typé dans l’environnement .NET fortement typé sans perte de données.)
 
 - Lorsque vous utilisez les services AJAX sans intégration ASP.NET, les affinages de type sont émis uniquement s'il existe une attribution de type dérivé/de base ; c'est-à-dire qu'ils sont émis lorsque Circle est attribué à Shape ou à <xref:System.Object> mais n'est pas attribué à Circle. Vous disposez ainsi des informations minimales requises pour implémenter correctement un client JavaScript et améliorer ainsi les performances, sans pour autant vous protéger contre les pertes d'informations de type dans les clients conçus de manière incorrecte. Évitez systématiquement les attributions de type de base/dérivé sur le serveur si vous ne voulez pas être contraint de gérer ce problème sur le client.
 

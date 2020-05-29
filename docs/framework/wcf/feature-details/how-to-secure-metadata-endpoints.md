@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9f71b6ae-737c-4382-8d89-0a7b1c7e182b
-ms.openlocfilehash: ee64e53f49e15059c91982f2e64879b9f4c76d78
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 2746c608fb47b94446c5d7e10748ba185d555e7f
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834678"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202326"
 ---
 # <a name="how-to-secure-metadata-endpoints"></a>Comment : sécuriser des points de terminaison de métadonnées
 
 Les métadonnées d'un service peuvent contenir des informations sensibles sur votre application dont un utilisateur malveillant peut tirer parti. Les consommateurs de votre service peuvent également avoir besoin d'un mécanisme sécurisé pour obtenir des métadonnées sur votre service. Par conséquent, il est parfois nécessaire de publier vos métadonnées à l'aide d'un point de terminaison sécurisé.
 
-Les points de terminaison de métadonnées sont généralement sécurisés à l’aide des mécanismes de sécurité standard définis dans Windows Communication Foundation (WCF) pour la sécurisation des points de terminaison d’application. Pour plus d’informations, consultez [vue d’ensemble](security-overview.md)de la sécurité.
+Les points de terminaison de métadonnées sont généralement sécurisés à l’aide des mécanismes de sécurité standard définis dans Windows Communication Foundation (WCF) pour la sécurisation des points de terminaison d’application. Pour plus d’informations, consultez [Vue d’ensemble de la sécurité](security-overview.md).
 
 Cette rubrique présente en détail les étapes permettant de créer un point de terminaison sécurisé par un certificat SSL (Secure Sockets Layer) ou, en d'autres termes, un point de terminaison HTTPS.
 
@@ -31,7 +31,7 @@ Cette rubrique présente en détail les étapes permettant de créer un point de
 
 3. Affectez la valeur <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> à la propriété <xref:System.ServiceModel.Description.ServiceMetadataBehavior> de la classe `true`.
 
-4. Affectez une URL appropriée à la propriété <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>. Notez que si vous spécifiez une adresse absolue, l'URL doit commencer par le préfixe https://. Si vous spécifiez une adresse relative, vous devez fournir une adresse de base HTTPS pour votre hôte de service. Si cette propriété n'est pas définie, l'adresse par défaut est "" ou directement l'adresse de base HTTPS pour le service.
+4. Affectez une URL appropriée à la propriété <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>. Notez que si vous spécifiez une adresse absolue, l’URL doit commencer par le schéma `https://` . Si vous spécifiez une adresse relative, vous devez fournir une adresse de base HTTPS pour votre hôte de service. Si cette propriété n'est pas définie, l'adresse par défaut est "" ou directement l'adresse de base HTTPS pour le service.
 
 5. Ajoutez l’instance à la collection de comportements que la propriété <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> de la classe <xref:System.ServiceModel.Description.ServiceDescription> retourne, comme l’illustre le code ci-dessous.
 
@@ -40,21 +40,21 @@ Cette rubrique présente en détail les étapes permettant de créer un point de
 
 ### <a name="to-create-a-secure-https-get-metadata-endpoint-in-configuration"></a>Pour créer un point de terminaison sécurisé de métadonnées HTTPS GET dans la configuration
 
-1. Ajoutez un élément [\<comportements >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) à l’élément [\<system. ServiceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) du fichier de configuration de votre service.
+1. Ajoutez un [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) élément à l' [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) élément du fichier de configuration pour votre service.
 
-2. Ajoutez un élément [\<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) à l’élément comportements de l' [\<>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) .
+2. Ajoutez un [\<serviceBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) élément à l' [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) élément.
 
-3. Ajoutez un élément de [> de comportement\<](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) à l’élément `<serviceBehaviors>`.
+3. Ajoutez un [\<behavior>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) élément à l' `<serviceBehaviors>` élément.
 
 4. Affectez une valeur appropriée à l'attribut `name` de l'élément `<behavior>`. L'attribut `name` est obligatoire. L'exemple ci-dessous utilise la valeur `mySvcBehavior`.
 
-5. Ajoutez un [>\<serviceMetadata](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) à l’élément `<behavior>`.
+5. Ajoutez un [\<serviceMetadata>](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) à l' `<behavior>` élément.
 
 6. Affectez à l'attribut `httpsGetEnabled` de l'élément `<serviceMetadata>` la valeur `true`.
 
-7. Affectez une valeur appropriée à l'attribut `httpsGetUrl` de l'élément `<serviceMetadata>`. Notez que si vous spécifiez une adresse absolue, l'URL doit commencer par le préfixe https://. Si vous spécifiez une adresse relative, vous devez fournir une adresse de base HTTPS pour votre hôte de service. Si cette propriété n'est pas définie, l'adresse par défaut est "" ou directement l'adresse de base HTTPS pour le service.
+7. Affectez une valeur appropriée à l'attribut `httpsGetUrl` de l'élément `<serviceMetadata>`. Notez que si vous spécifiez une adresse absolue, l’URL doit commencer par le schéma `https://` . Si vous spécifiez une adresse relative, vous devez fournir une adresse de base HTTPS pour votre hôte de service. Si cette propriété n'est pas définie, l'adresse par défaut est "" ou directement l'adresse de base HTTPS pour le service.
 
-8. Pour utiliser le comportement avec un service, affectez à l’attribut `behaviorConfiguration` de l’élément [>\<service](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) la valeur de l’attribut Name de l’élément Behavior. Le code de configuration ci-dessous illustre un exemple complet.
+8. Pour utiliser le comportement avec un service, affectez `behaviorConfiguration` à l’attribut de l' [\<service>](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) élément la valeur de l’attribut Name de l’élément Behavior. Le code de configuration ci-dessous illustre un exemple complet.
 
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -100,7 +100,7 @@ L'exemple de code utilise les espaces de noms suivants :
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>
-- [Guide pratique pour configurer un port avec un certificat SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
-- [Utilisation des certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [Comment : configurer un port avec un certificat SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
+- [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
 - [Considérations sur la sécurité des métadonnées](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)
 - [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

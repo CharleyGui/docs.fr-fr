@@ -4,12 +4,12 @@ description: Découvrez les types de base (numérique, chaîne et objet) disponi
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: 89b5cebdc887db808db8abb1fa9eda34e2bec9e5
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 468482bd1b4f1a5835df9d66ee483edc33c28f61
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205809"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202206"
 ---
 # <a name="types-variables-and-values"></a>Types, variables et valeurs
 
@@ -66,7 +66,7 @@ Un type peut être déclaré avec un ou plusieurs *paramètres de type* qui serv
   
 [!code-csharp[Generic types](../../samples/snippets/csharp/concepts/basic-types/generic-type.cs)]
   
-L’utilisation du paramètre de type rend possible la réutilisation de la même classe pour contenir tout type d’élément, sans avoir à convertir chaque élément en [object](language-reference/builtin-types/reference-types.md#the-object-type). Les classes de collections génériques sont appelées *collections fortement typées*, car le compilateur connaît le type spécifique des éléments de chaque collection et il peut déclencher une erreur au moment de la compilation. C’est le cas, par exemple, si vous essayez d’ajouter un entier à l’objet `strings` dans l’exemple précédent. Pour plus d’informations, consultez [Génériques](programming-guide/generics/index.md).
+L’utilisation du paramètre de type rend possible la réutilisation de la même classe pour contenir tout type d’élément, sans avoir à convertir chaque élément en [object](language-reference/builtin-types/reference-types.md#the-object-type). Les classes de collection génériques sont appelées *collections fortement typées* , car le compilateur connaît le type spécifique des éléments de la collection et peut déclencher une erreur au moment de la compilation si, par exemple, vous tentez d’ajouter un entier à l' `strings` objet dans l’exemple précédent. Pour plus d’informations, consultez [Génériques](programming-guide/generics/index.md).
 
 ## <a name="implicit-types-anonymous-types-and-tuple-types"></a>Types implicites, types anonymes et types tuple
 

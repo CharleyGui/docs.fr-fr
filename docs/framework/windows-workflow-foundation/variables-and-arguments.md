@@ -3,12 +3,12 @@ title: Variables et arguments
 description: Cet article décrit les variables, qui représentent le stockage des données, et les arguments qui représentent le flux de données vers/à partir d’une activité dans Workflow Foundation.
 ms.date: 03/30/2017
 ms.assetid: d03dbe34-5b2e-4f21-8b57-693ee49611b8
-ms.openlocfilehash: 47b8a7bddc8c3a9a8427bcb3e93760a63e5fa976
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 5cce9931e9b0a37d5fafbfb84527ffd543a0a50f
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421304"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201958"
 ---
 # <a name="variables-and-arguments"></a>Variables et arguments
 Dans Windows Workflow Foundation (WF), les variables représentent le stockage de données et les arguments représentent le flux de données à l’intérieur et à l’extérieur d’une activité. Une activité a un ensemble d'arguments et ils composent la signature de l'activité. En outre, une activité peut gérer une liste de variables dans laquelle un développeur peut ajouter ou supprimer des variables pendant la conception d'un workflow. Un argument est lié à l'aide d'une expression qui retourne une valeur.  
@@ -70,7 +70,7 @@ Variable<string> var = new Variable<string>
   
 3. Les arguments peuvent éventuellement avoir leur <xref:System.Activities.Argument.EvaluationOrder%2A> spécifié. <xref:System.Activities.Argument.EvaluationOrder%2A> est une valeur de base zéro qui spécifie l'ordre dans lequel l'argument est évalué. Par défaut, l'ordre d'évaluation de l'argument n'est pas spécifié et est égal à la valeur <xref:System.Activities.Argument.UnspecifiedEvaluationOrder>. Affectez à <xref:System.Activities.Argument.EvaluationOrder%2A> une valeur supérieure ou égale à zéro pour spécifier un ordre d’évaluation pour cet argument. Windows Workflow Foundation évalue les arguments avec un ordre d’évaluation spécifié dans l’ordre croissant. Notez que les arguments avec un ordre d'évaluation non spécifié sont évalués avant ceux avec un ordre d'évaluation spécifié.  
   
- Un auteur d'activité peut utiliser un mécanisme fortement typé pour l'exposition de ses arguments. Pour ce faire, déclarez des propriétés de type <xref:System.Activities.InArgument%601>, <xref:System.Activities.OutArgument%601> et <xref:System.Activities.InOutArgument%601>. Cela permet à un auteur d'activité d'établir un contrat spécifique sur les données qui entrent dans une activité et en sortent.  
+ Un auteur d’activité peut utiliser un mécanisme fortement typé pour exposer ses arguments. Pour ce faire, déclarez des propriétés de type <xref:System.Activities.InArgument%601>, <xref:System.Activities.OutArgument%601> et <xref:System.Activities.InOutArgument%601>. Cela permet à un auteur d'activité d'établir un contrat spécifique sur les données qui entrent dans une activité et en sortent.  
   
 ### <a name="defining-the-arguments-on-an-activity"></a>Définition des arguments sur une activité  
  Des arguments peuvent être définis sur une activité en spécifiant des propriétés de type <xref:System.Activities.InArgument%601>, <xref:System.Activities.OutArgument%601> et <xref:System.Activities.InOutArgument%601>. Le code suivant indique comment définir les arguments pour une activité `Prompt` qui accepte une chaîne à afficher à l’intention de l’utilisateur et retourne une chaîne qui contient la réponse de l’utilisateur.  

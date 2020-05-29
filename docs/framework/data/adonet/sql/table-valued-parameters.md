@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: 2917a8d9b42d831566855271a2f2110637db586f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b968c599cf061fbd03b7ba8fb19470f6ace11a55
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174470"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202173"
 ---
 # <a name="table-valued-parameters"></a>Paramètres table
 Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes de données d’une application cliente vers SQL Server sans avoir recours à plusieurs allers-retours ou à une logique spéciale côté serveur pour traiter les données. Vous pouvez utiliser des paramètres table pour encapsuler des lignes de données dans une application cliente et envoyer les données au serveur dans une commande paramétrable unique. Les lignes de données entrantes sont stockées dans une variable de table que vous pouvez ensuite utiliser à l’aide de Transact-SQL.  
@@ -39,7 +39,7 @@ Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes 
 - Utilisez le programme utilitaire `bcp` ou l’objet <xref:System.Data.SqlClient.SqlBulkCopy> pour charger de nombreuses lignes de données dans une table. Bien que cette technique soit très efficace, elle ne gère pas le traitement côté serveur à moins que les données ne soient chargées dans une table temporaire ou une variable table.  
   
 ## <a name="creating-table-valued-parameter-types"></a>Création de types de paramètre table  
- Les paramètres table sont basés sur des structures de table fortement typées qui sont définies à l’aide d’instructions Transact-SQL CREATE TYPE. Vous devez créer un type de table et définir la structure dans SQL Server avant de pouvoir utiliser les paramètres table dans vos applications clientes. Pour plus d’informations sur la création de types de tables, voir [les types de table définis par l’utilisateur](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/bb522526(v=sql.100)).  
+ Les paramètres table sont basés sur des structures de table fortement typées qui sont définies à l’aide des instructions Transact-SQL CREATe TYPE. Vous devez créer un type de table et définir la structure dans SQL Server avant de pouvoir utiliser les paramètres table dans vos applications clientes. Pour plus d’informations sur la création de types de table, consultez [types de tables définis par l’utilisateur](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/bb522526(v=sql.100)).  
   
  L’instruction suivante crée un type table nommé CategoryTableType qui se compose de colonnes CategoryID et CategoryName :  
   
@@ -128,7 +128,7 @@ Dim tvpParam As SqlParameter = _
 tvpParam.SqlDbType = SqlDbType.Structured  
 ```  
   
-## <a name="passing-a-table-valued-parameter-to-a-stored-procedure"></a><a name="passing"></a>Transmettre un paramètre de valeur de la table à une procédure stockée  
+## <a name="passing-a-table-valued-parameter-to-a-stored-procedure"></a><a name="passing"></a>Passage d’un paramètre table à une procédure stockée  
  Cet exemple montre comment passer des données de paramètre table à une procédure stockée. Le code extrait des lignes ajoutées dans une nouvelle <xref:System.Data.DataTable> à l’aide de la méthode <xref:System.Data.DataTable.GetChanges%2A>. Le code définit ensuite une <xref:System.Data.SqlClient.SqlCommand>, en définissant la propriété <xref:System.Data.SqlClient.SqlCommand.CommandType%2A> sur la valeur <xref:System.Data.CommandType.StoredProcedure>. <xref:System.Data.SqlClient.SqlParameter> est rempli à l’aide de la méthode <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A> et le <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> est défini sur `Structured`. La <xref:System.Data.SqlClient.SqlCommand> est ensuite exécutée à l’aide de la méthode <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery%2A>.  
   
 ```csharp  
@@ -277,5 +277,5 @@ insertCommand.ExecuteNonQuery()
 - [Configuration des paramètres et des types de données des paramètres](../configuring-parameters-and-parameter-data-types.md)
 - [Commandes et paramètres](../commands-and-parameters.md)
 - [Paramètres DataAdapter](../dataadapter-parameters.md)
-- [Opérations de données de serveur SQL en ADO.NET](sql-server-data-operations.md)
+- [SQL Server des opérations de données dans ADO.NET](sql-server-data-operations.md)
 - [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

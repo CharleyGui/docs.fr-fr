@@ -3,17 +3,18 @@ title: Présentation de C# - Tutoriels interactifs
 description: Découvrez C# dans votre navigateur et prenez en main votre propre environnement de développement
 ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: c9fc8dadac373445a5bb132b25ab25676c5230c7
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 965fa9dba559b967d3d1ce8d661cd08235c59f70
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007700"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202431"
 ---
 # <a name="introduction-to-c"></a>Présentation de C\#
 
 Bienvenue dans les tutoriels de présentation de C#. Ces leçons commencent par du code interactif que vous pouvez exécuter dans votre navigateur. Vous pouvez apprendre les principes fondamentaux de C# de la [série de vidéos c# 101](https://aka.ms/dotnet3-csharp) avant de commencer ces leçons interactives.
 
+<!--markdownlint-disable MD034 -->
 > [!VIDEO https://channel9.msdn.com/Series/CSharp-101/What-is-C/player]
 
 Les premières leçons expliquent les concepts de C# à l’aide de petits extraits de code. Vous apprendrez les bases de la syntaxe C# et comment utiliser des types de données tels que des chaînes, des nombres et des valeurs booléennes. Tout est interactif, vous allez écrire et exécuter du code en quelques minutes. Ces premières leçons prennent pour acquis que vous n’avez aucune connaissance préalable de la programmation ou du langage C#.

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: ca499f9762f52126720159fb7c22660b1001895c
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: fa0aa09b591f9b91a82113343a3655b2240ef490
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802926"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201210"
 ---
 # <a name="types-c-programming-guide"></a>Types (Guide de programmation C#)
 
@@ -165,7 +165,7 @@ stringList.Add("String example");
 stringList.Add(4);
 ```
 
-L’utilisation du paramètre de type rend possible la réutilisation de la même classe pour contenir tout type d’élément, sans avoir à convertir chaque élément en [object](../../language-reference/builtin-types/reference-types.md). Les classes de collections génériques sont appelées *collections fortement typées*, car le compilateur connaît le type spécifique des éléments de chaque collection et il peut déclencher une erreur au moment de la compilation. C’est le cas, par exemple, si vous essayez d’ajouter un entier à l’objet `stringList` dans l’exemple précédent. Pour plus d’informations, consultez [Génériques](../generics/index.md).
+L’utilisation du paramètre de type rend possible la réutilisation de la même classe pour contenir tout type d’élément, sans avoir à convertir chaque élément en [object](../../language-reference/builtin-types/reference-types.md). Les classes de collection génériques sont appelées *collections fortement typées* , car le compilateur connaît le type spécifique des éléments de la collection et peut déclencher une erreur au moment de la compilation si, par exemple, vous tentez d’ajouter un entier à l' `stringList` objet dans l’exemple précédent. Pour plus d’informations, consultez [Génériques](../generics/index.md).
 
 ## <a name="implicit-types-anonymous-types-and-nullable-value-types"></a>Types implicites, types anonymes et types valeur Nullable
 
@@ -177,7 +177,7 @@ Les types valeur ordinaires ne peuvent pas avoir la valeur [Null](../../language
 
 ## <a name="related-sections"></a>Sections connexes
 
-Pour plus d'informations, voir les rubriques suivantes :
+Pour plus d'informations, voir les rubriques suivantes :
 
 - [Cast et conversions de types](./casting-and-type-conversions.md)
 

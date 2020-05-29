@@ -1,16 +1,16 @@
 ---
-title: <Directives>Élément (.NET Native)
+title: <Directives>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 444846f3-48d5-4341-a43e-69f7221389eb
-ms.openlocfilehash: 49c1aaf005b80a6c1c1fa382eebc2cb0dbfa4be7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0c6ebb8954e80f3f6dc6733f0e9d76094477689b
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181056"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202384"
 ---
-# <a name="directives-element-net-native"></a>\<Directives> Element (.NET Native)
-L’élément racine dans chaque fichier de directives runtime pour .NET Native.  
+# <a name="directives-element-net-native"></a>\<Directives>, Élément (.NET Native)
+Élément racine dans chaque fichier de directives Runtime pour .NET Native.  
   
  `<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">`
   
@@ -26,19 +26,19 @@ L’élément racine dans chaque fichier de directives runtime pour .NET Native.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`xmlns`|Espace de noms XML. Sa valeur est toujours **"http://schemas.microsoft.com/netfx/2013/01/metadata.**|  
+|`xmlns`|Espace de noms XML. Sa valeur est toujours `http://schemas.microsoft.com/netfx/2013/01/metadata` .|  
   
 ## <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<>d’application](application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion.|  
-|[\<>de bibliothèque](library-element-net-native.md)|Définit l'assembly dont les types enfants et les membres de type nécessitent des métadonnées au moment de l'exécution.|  
+|[\<Application>](application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion.|  
+|[\<Library>](library-element-net-native.md)|Définit l'assembly dont les types enfants et les membres de type nécessitent des métadonnées au moment de l'exécution.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  Chaque fichier de directives runtime ne peut contenir qu'un seul élément `<Directives>`.  
   
- L’élément `<Directives>` peut contenir [ \<](application-element-net-native.md) zéro ou une application>élément, et zéro, un ou plus [ \<de>](library-element-net-native.md) éléments de bibliothèque.  
+ L' `<Directives>` élément peut contenir zéro ou un [\<Application>](application-element-net-native.md) élément, et zéro, un ou plusieurs [\<Library>](library-element-net-native.md) éléments.  
   
 ## <a name="see-also"></a>Voir aussi
 

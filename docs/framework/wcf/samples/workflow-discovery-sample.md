@@ -2,12 +2,12 @@
 title: Exemple Workflow Discovery
 ms.date: 03/30/2017
 ms.assetid: 82cc43f1-3c8f-4771-ac19-a75ac936e2c3
-ms.openlocfilehash: b3a2d88028f3854746d4e1d2fad80aae4f6be7be
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1c6210472b594aec02bdf47f472a1a8b1823230c
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79143484"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202070"
 ---
 # <a name="workflow-discovery-sample"></a>Exemple Workflow Discovery
 Cet exemple montre comment rendre un service de workflow détectable et comment créer une activité de code personnalisée qui recherche un service particulier.  
@@ -20,15 +20,15 @@ Cet exemple montre comment rendre un service de workflow détectable et comment 
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Cet exemple utilise des paramètres HTTP, qui doivent avoir des URL appropriées pour s’exécuter (voir [Configuring HTTP et HTTPS](../feature-details/configuring-http-and-https.md) pour plus de détails). L'exécution de la commande suivante à partir d'une invite de commandes avec élévation de privilèges doit ajouter les ACL appropriées. Si votre shell ne comprend pas le format variable, remplacez votre Domaine et votre nom d’utilisateur pour les arguments suivants.  
+1. Cet exemple utilise des points de terminaison HTTP, qui doivent avoir des listes de contrôle d’accès d’URL appropriées pour s’exécuter (consultez [configuration de http et HTTPS](../feature-details/configuring-http-and-https.md) pour plus d’informations). L'exécution de la commande suivante à partir d'une invite de commandes avec élévation de privilèges doit ajouter les ACL appropriées. Si votre interpréteur de commandes ne comprend pas le format de la variable, remplacez les arguments suivants par votre domaine et votre nom d’utilisateur.  
   
-     **netsh http ajouter urlacl url 'user '%DOMAIN%http://+:8000/ \\%UserName%**  
+    `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`
   
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\WorkflowDiscovery`

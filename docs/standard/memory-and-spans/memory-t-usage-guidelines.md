@@ -5,14 +5,14 @@ ms.date: 10/01/2018
 helpviewer_keywords:
 - Memory&lt;T&gt; and Span&lt;T&gt; best practices
 - using Memory&lt;T&gt; and Span&lt;T&gt;
-ms.openlocfilehash: b9405d746c141308c7d984dac9da0d65d1048d1e
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: cb9075a12bb8d842cd8e937e74f8869c910fc0ab
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380013"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201939"
 ---
-# <a name="memoryt-and-spant-usage-guidelines"></a>Instructions d’utilisation de Memory\<T> et de Span\<T>
+# <a name="memoryt-and-spant-usage-guidelines"></a>Instructions d’utilisation de la mémoire\<T> et de l’étendue\<T>
 
 .NET Core inclut un nombre de types qui représentent une région contiguë arbitraire de mémoire. .NET Core 2.0 a introduit <xref:System.Span%601> et <xref:System.ReadOnlySpan%601>, qui sont des mémoires tampons légères pouvant être sauvegardées par de la mémoire managée ou non managée. Ces types pouvant uniquement être stockés sur la pile, ils sont ne sont pas adaptés à plusieurs scénarios, notamment les appels de méthode asynchrone. .NET Core 2.1 ajoute un certain nombre de types supplémentaires, notamment <xref:System.Memory%601>, <xref:System.ReadOnlyMemory%601>, <xref:System.Buffers.IMemoryOwner%601> et <xref:System.Buffers.MemoryPool%601>. Comme <xref:System.Span%601>, <xref:System.Memory%601> et ses types associés peuvent être sauvegardés par la mémoire managée et non managée. Contrairement à <xref:System.Span%601>, <xref:System.Memory%601> peut être stockée sur le tas managé.
 
@@ -65,7 +65,7 @@ La mémoire tampon a deux consommateurs, à savoir `WriteInt32ToBuffer` et `Disp
 
 La méthode `WriteInt32ToBuffer` a un bail pour la mémoire tampon (peut consommer) entre le début de l’appel de méthode et le moment du retour de la méthode. De même, `DisplayBufferToConsole` a un bail pour la mémoire tampon pendant son exécution et en est libéré lorsque la méthode se déroule. (Il n’existe aucune API pour la gestion de bail ; un « bail » est un concept.)
 
-## <a name="memoryt-and-the-ownerconsumer-model"></a>Memory\<T> et le modèle propriétaire/consommateur
+## <a name="memoryt-and-the-ownerconsumer-model"></a>Mémoire \<T> et modèle propriétaire/consommateur
 
 Comme mentionné dans la section [Propriétaires, consommateurs et gestion de la durée de vie](#owners-consumers-and-lifetime-management), une mémoire tampon a toujours un propriétaire. .NET Core prend en charge deux modèles de propriété :
 
@@ -73,7 +73,7 @@ Comme mentionné dans la section [Propriétaires, consommateurs et gestion de la
 
 - Un modèle qui prend en charge le transfert de propriété. La propriété d’une mémoire tampon peut être transférée de son propriétaire d’origine (son créateur) à un autre composant, qui devient alors responsable de la gestion de la durée de vie de la mémoire tampon. Ce propriétaire peut à son tour transférer la propriété à un autre composant, et ainsi de suite.
 
-Vous utilisez l’interface <xref:System.Buffers.IMemoryOwner%601?displayProperty=nameWithType> pour gérer explicitement la propriété d’une mémoire tampon. <xref:System.Buffers.IMemoryOwner%601> prend en charge les deux modèles de propriété. Le composant qui a une référence <xref:System.Buffers.IMemoryOwner%601> possède la mémoire tampon. L’exemple suivant utilise une instance <xref:System.Buffers.IMemoryOwner%601?> pour refléter la propriété d’une mémoire tampon <xref:System.Memory%601>.
+Vous utilisez l’interface <xref:System.Buffers.IMemoryOwner%601?displayProperty=nameWithType> pour gérer explicitement la propriété d’une mémoire tampon. <xref:System.Buffers.IMemoryOwner%601> prend en charge les deux modèles de propriété. Le composant qui a une référence <xref:System.Buffers.IMemoryOwner%601> possède la mémoire tampon. L’exemple suivant utilise une <xref:System.Buffers.IMemoryOwner%601?> instance pour refléter la propriété d’une <xref:System.Memory%601> mémoire tampon.
 
 [!code-csharp[ownership](~/samples/snippets/standard/buffers/memory-t/owner/owner.cs)]
 
@@ -87,9 +87,9 @@ Dans ce code :
 
 - Les méthodes `WriteInt32ToBuffer` et `DisplayBufferToConsole` acceptent <xref:System.Memory%601> comme API publique. Par conséquent, il y a des consommateurs de la mémoire tampon. Et ils ne la consomment qu’un par un.
 
-Bien que la méthode `WriteInt32ToBuffer` soit destinée à écrire une valeur dans la mémoire tampon, ce n’est pas le cas pour la méthode `DisplayBufferToConsole`. Pour refléter cette modification, un argument de type <xref:System.ReadOnlyMemory%601> peut avoir été accepté. Pour plus d’informations sur <xref:System.ReadOnlyMemory%601> , consultez [#2 de règles : utilisez ReadOnlySpan \< t> ou ReadOnlyMemory \< t> si la mémoire tampon doit être en lecture seule](#rule-2).
+Bien que la méthode `WriteInt32ToBuffer` soit destinée à écrire une valeur dans la mémoire tampon, ce n’est pas le cas pour la méthode `DisplayBufferToConsole`. Pour refléter cette modification, un argument de type <xref:System.ReadOnlyMemory%601> peut avoir été accepté. Pour plus d’informations sur <xref:System.ReadOnlyMemory%601> , consultez [#2 de règles : utilisez ReadOnlySpan \<T> ou ReadOnlyMemory \<T> si la mémoire tampon doit être en lecture seule](#rule-2).
 
-### <a name="ownerless-memoryt-instances"></a>Instances Memory\<T> « sans propriétaire »
+### <a name="ownerless-memoryt-instances"></a>Instances de mémoire « propriétaires » \<T>
 
 Vous pouvez créer une instance <xref:System.Memory%601> sans utiliser <xref:System.Buffers.IMemoryOwner%601>. Dans ce cas, la propriété de la mémoire tampon est implicite plutôt qu’explicite et seul le modèle de propriétaire unique est pris en charge. Pour ce faire, vous pouvez :
 
@@ -113,9 +113,9 @@ Un bloc de mémoire étant une propriété, mais destiné à être transmis vers
 
 Voici nos recommandations quant à l’utilisation réussie de <xref:System.Memory%601> et de ses types associés. Instructions qui s’appliquent à <xref:System.Memory%601> et <xref:System.Span%601> s’appliquent également à <xref:System.ReadOnlyMemory%601> et <xref:System.ReadOnlySpan%601> sauf indication contraire.
 
-**#1 de règle : pour une API synchrone, utilisez span \< t> au lieu de Memory \< t> en tant que paramètre, si possible.**
+**#1 de règle : pour une API synchrone, utilisez span \<T> au lieu de \<T> la mémoire comme paramètre, si possible.**
 
-<xref:System.Span%601> est plus polyvalente que <xref:System.Memory%601> et peut représenter une plus grande variété de mémoires tampons contiguës. <xref:System.Span%601> offre également de meilleures performances que <xref:System.Memory%601>. Enfin, vous pouvez utiliser la propriété <xref:System.Memory%601.Span?displayProperty=nameWithType> pour convertir une instance <xref:System.Memory%601> en <xref:System.Span%601>, bien que la conversion Span\<T >- to-Memory\<T > ne soit pas possible. Par conséquent, si vos appelants ont une instance <xref:System.Memory%601>, ils pourront de toute façon appeler vos méthodes avec des paramètres <xref:System.Span%601>.
+<xref:System.Span%601> est plus polyvalente que <xref:System.Memory%601> et peut représenter une plus grande variété de mémoires tampons contiguës. <xref:System.Span%601> offre également de meilleures performances que <xref:System.Memory%601>. Enfin, vous pouvez utiliser la <xref:System.Memory%601.Span?displayProperty=nameWithType> propriété pour convertir une <xref:System.Memory%601> instance en <xref:System.Span%601> , bien que la \<T> conversion d’étendue à mémoire \<T> ne soit pas possible. Par conséquent, si vos appelants ont une instance <xref:System.Memory%601>, ils pourront de toute façon appeler vos méthodes avec des paramètres <xref:System.Span%601>.
 
 L’utilisation d’un paramètre de type <xref:System.Span%601> au lieu d’un paramètre de type <xref:System.Memory%601> vous aide également à écrire une implémentation correcte de la méthode de consommation. Des vérifications automatiques au moment de la compilation vous permettent de garantir que vous ne tentez pas d’accéder à la mémoire tampon au-delà de votre bail de méthode (nous y reviendrons plus tard).
 
@@ -123,7 +123,7 @@ Vous devrez parfois utiliser un paramètre <xref:System.Memory%601> au lieu d’
 
 <a name="rule-2" />
 
-**#2 de règle : utilisez ReadOnlySpan \< t> ou ReadOnlyMemory \< t> si la mémoire tampon doit être en lecture seule.**
+**#2 de règle : utilisez ReadOnlySpan \<T> ou ReadOnlyMemory \<T> si la mémoire tampon doit être en lecture seule.**
 
 Dans les exemples précédents, la méthode `DisplayBufferToConsole` lit uniquement à partir de la mémoire tampon ; elle ne modifie pas le contenu de la mémoire tampon. La signature de méthode doit être modifiée comme suit.
 
@@ -139,7 +139,7 @@ void DisplayBufferToConsole(ReadOnlySpan<char> buffer);
 
 La méthode `DisplayBufferToConsole` fonctionne désormais avec pratiquement chaque type de mémoire tampon imaginable : `T[]`, stockage alloué avec [stackalloc](../../csharp/language-reference/operators/stackalloc.md), et ainsi de suite. Vous pouvez même y passer directement une chaîne <xref:System.String> !
 
-**#3 de règle : Si votre méthode accepte \< la mémoire t> et retourne `void` , vous ne devez pas utiliser l' \< instance Memory t> après le retour de la méthode.**
+**#3 de règle : Si votre méthode accepte \<T> la mémoire et retourne `void` , vous ne devez pas utiliser l’instance de mémoire \<T> après le retour de la méthode.**
 
 Ceci est lié au concept de « bail » mentionné précédemment. Un bail de méthode avec renvoi d’annulation sur l’instance <xref:System.Memory%601> commence lorsqu’on entre dans la méthode et se termine lorsqu’on la quitte. Prenons l’exemple suivant, qui appelle `Log` dans une boucle basée sur l’entrée à partir de la console.
 
@@ -173,7 +173,7 @@ Il y a de nombreuses manières de résoudre ce problème :
 
    [!code-csharp[defensive-copy](~/samples/snippets/standard/buffers/memory-t/task-returning/task-returning.cs#1)]
 
-**#4 de règle : Si votre méthode accepte une \<> de mémoire t et retourne une tâche, vous ne devez pas utiliser l’instance de mémoire \< t> une fois que la tâche est passée à un état terminal.**
+**#4 de règle : Si votre méthode accepte une mémoire \<T> et retourne une tâche, vous ne devez pas utiliser l’instance de mémoire \<T> après la transition de la tâche vers un état terminal.**
 
 Il s’agit simplement la variante asynchrone de la règle 3. La méthode `Log` de l’exemple précédent peut être écrite comme suit pour se conformer à cette règle :
 
@@ -183,7 +183,7 @@ Ici, « état terminal » signifie que la tâche passe à un état terminé, a
 
 Ces conseils s’appliquent aux méthodes qui retournent <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.ValueTask%601>, ou n’importe quel type similaire.
 
-**#5 de règle : Si votre constructeur accepte la mémoire \< T> en tant que paramètre, les méthodes d’instance sur l’objet construit sont supposées être des consommateurs de l’instance de la mémoire \< t>.**
+**#5 de règle : Si votre constructeur accepte la mémoire \<T> en tant que paramètre, les méthodes d’instance sur l’objet construit sont supposées être des consommateurs de l’instance de mémoire \<T> .**
 
 Prenons l’exemple suivant :
 
@@ -206,7 +206,7 @@ void PrintAllOddValues(ReadOnlyMemory<int> input)
 
 Ici, le constructeur`OddValueExtractor` accepte `ReadOnlyMemory<int>` comme paramètre de constructeur, si bien que le constructeur lui-même est un consommateur de l’instance `ReadOnlyMemory<int>` et que toutes les méthodes d’instance sur la valeur retournée sont également des consommateurs de l’instance `ReadOnlyMemory<int>` d’origine. Cela signifie que `TryReadNextOddValue` consomme l’instance `ReadOnlyMemory<int>`, même si l’instance n’est pas passée directement à la méthode `TryReadNextOddValue`.
 
-**#6 de règle : Si vous disposez d’une \< propriété de type mémoire t> définissable (ou d’une méthode d’instance équivalente) sur votre type, les méthodes d’instance sur cet objet sont supposées être des consommateurs de l’instance de la mémoire \< T>.**
+**#6 de règle : Si vous disposez d’une \<T> propriété de type mémoire définissable (ou d’une méthode d’instance équivalente) sur votre type, les méthodes d’instance sur cet objet sont supposées être des consommateurs de l’instance de mémoire \<T> .**
 
 Il s’agit simplement d’une variante de la règle 5. Cette règle existe, car les setters de propriété ou les méthodes équivalentes sont supposés capturer et conserver leurs entrées, de manière que les méthodes d’instances sur le même objet puissent utiliser l’état de capture.
 
@@ -226,7 +226,7 @@ class Person
 }
 ```
 
-**#7 de règle : Si vous avez une \< référence IMemoryOwner T>, vous devez à un moment l’éliminer ou transférer sa propriété (mais pas les deux).**
+**#7 de règle : Si vous disposez d’une \<T> référence IMemoryOwner, vous devez à un certain stade la supprimer ou transférer sa propriété (mais pas les deux).**
 
 Dans la mesure où une instance <xref:System.Memory%601> peut être sauvegardée par de la mémoire, managée ou non, le propriétaire doit appeler <xref:System.Buffers.MemoryPool%601.Dispose%2A?displayProperty=nameWithType> lorsque le travail effectué sur l’instance <xref:System.Memory%601> est terminé. Le propriétaire peut également transférer la propriété de l’instance <xref:System.Buffers.IMemoryOwner%601> à un autre composant. Le composant d’acquisition devient alors responsable de l’appel de <xref:System.Buffers.MemoryPool%601.Dispose%2A?displayProperty=nameWithType> au moment opportun (nous y reviendrons plus tard).
 
@@ -234,7 +234,7 @@ Ne pas appeler la méthode <xref:System.Buffers.MemoryPool%601.Dispose%2A> peut 
 
 Cette règle s’applique également au code qui appelle les méthodes de fabrique, telles que <xref:System.Buffers.MemoryPool%601.Rent%2A?displayProperty=nameWithType>. L’appelant devient le propriétaire du <xref:System.Buffers.IMemoryOwner%601> retourné et est responsable de la suppression de l’instance terminée.
 
-**#8 de règle : Si vous avez un \< paramètre IMemoryOwner T> dans la surface de l’API, vous acceptez la propriété de cette instance.**
+**#8 de règle : Si vous avez un \<T> paramètre IMemoryOwner dans la surface de l’API, vous acceptez la propriété de cette instance.**
 
 Accepter une instance de ce type signale que votre composant a l’intention de prendre possession de cette instance. Votre composant devient responsable de la suppression correcte conformément à la règle 7.
 
@@ -243,7 +243,7 @@ Tout composant qui transfère la propriété de l’instance <xref:System.Buffer
 > [!IMPORTANT]
 > Si votre constructeur accepte <xref:System.Buffers.IMemoryOwner%601> comme paramètre, son type doit implémenter <xref:System.IDisposable> et votre méthode <xref:System.IDisposable.Dispose%2A> doit appeler <xref:System.Buffers.MemoryPool%601.Dispose%2A?displayProperty=nameWithType>.
 
-**#9 de règle : Si vous encapsulez une méthode p/Invoke synchrone, votre API doit accepter l’étendue \< T> en tant que paramètre.**
+**#9 de règle : Si vous encapsulez une méthode p/Invoke synchrone, votre API doit accepter span \<T> comme paramètre.**
 
 Conformément à la règle 1, <xref:System.Span%601> est généralement le type correct à utiliser pour les API synchrones. Vous pouvez épingler des instances <xref:System.Span%601> via le mot clé [`fixed`](../../csharp/language-reference/keywords/fixed-statement.md) mot clé, comme dans l’exemple suivant.
 
@@ -283,7 +283,7 @@ public unsafe int ManagedWrapper(Span<byte> data)
 }
 ```
 
-**#10 de règle : Si vous encapsulez une méthode p/Invoke asynchrone, votre API doit accepter la mémoire \< T> en tant que paramètre.**
+**#10 de règle : Si vous encapsulez une méthode p/Invoke asynchrone, votre API doit accepter la mémoire \<T> en tant que paramètre.**
 
 Étant donné que vous ne pouvez pas utiliser le [`fixed`](../../csharp/language-reference/keywords/fixed-statement.md) mot clé dans les opérations asynchrones, vous utilisez la <xref:System.Memory%601.Pin%2A?displayProperty=nameWithType> méthode pour épingler des <xref:System.Memory%601> instances, quel que soit le type de mémoire contiguë représenté par l’instance. L’exemple suivant montre comment utiliser cette API pour effectuer un appel p/invoke asynchrone.
 

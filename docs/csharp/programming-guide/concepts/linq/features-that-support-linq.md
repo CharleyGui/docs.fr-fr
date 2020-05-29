@@ -4,20 +4,20 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], features supporting LINQ
 ms.assetid: 524b0078-ebfd-45a7-b390-f2ceb9d84797
-ms.openlocfilehash: 9fc8adaa49d02f8b69c2db6e94a28b9fab36b3b0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 32ba8f5e60b3ed2efd813a8ae32e5f4009eb790d
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635793"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202408"
 ---
 # <a name="c-features-that-support-linq"></a>Fonctionnalités C# qui prennent en charge LINQ
 
-La section suivante présente de nouvelles constructions de langage qui sont apparues avec C# 3.0. Bien que ces nouvelles fonctionnalités soient toutes utilisées dans une certaine mesure avec les requêtes LINQ, elles ne se limitent pas à LINQ et peuvent être utilisées dans n’importe quel contexte où vous les trouvez utiles.
+La section suivante présente de nouvelles constructions de langage qui sont apparues avec C# 3.0. Bien que ces nouvelles fonctionnalités soient toutes utilisées dans un certain degré avec des requêtes LINQ, elles ne sont pas limitées à LINQ et peuvent être utilisées dans n’importe quel contexte où elles sont utiles.
 
 ## <a name="query-expressions"></a>Expressions de requête
 
-Les expressions de requête utilisent une syntaxe déclarative similaire à SQL ou XQuery pour interroger les collections IEnumerable. À l’heure de compilation, la syntaxe de requête est convertie en appels de méthode à la mise en œuvre par un fournisseur de LINQ des méthodes standard d’extension de l’opérateur de requête. Les applications contrôlent les opérateurs de requête standard qui se trouvent dans la portée en spécifiant l’espace de noms approprié avec une directive `using`. L’expression de requête suivante accepte un tableau de chaînes, regroupe les chaînes qui commencent par le même caractère, puis trie ces groupes de chaînes.
+Les expressions de requête utilisent une syntaxe déclarative similaire à SQL ou XQuery pour interroger les collections IEnumerable. Au moment de la compilation, la syntaxe de requête est convertie en appels de méthode à l’implémentation d’un fournisseur LINQ des méthodes d’extension d’opérateur de requête standard. Les applications contrôlent les opérateurs de requête standard qui se trouvent dans la portée en spécifiant l’espace de noms approprié avec une directive `using`. L’expression de requête suivante accepte un tableau de chaînes, regroupe les chaînes qui commencent par le même caractère, puis trie ces groupes de chaînes.
 
 ```csharp
 var query = from str in stringArray
@@ -40,7 +40,7 @@ var query = from str in stringArray
             select str;
 ```
 
-Les variables déclarées comme `var` sont aussi fortement typées que les variables dont vous spécifiez explicitement le type. `var` permet de créer des types anonymes, mais peut être utilisé uniquement pour les variables locales. Les tableaux peuvent également être déclarés avec un typage implicite.
+Les variables déclarées comme `var` sont tout aussi fortement typées en tant que variables dont le type est spécifié explicitement. `var` permet de créer des types anonymes, mais peut être utilisé uniquement pour les variables locales. Les tableaux peuvent également être déclarés avec un typage implicite.
 
 Pour plus d’informations, consultez [Variables locales implicitement typées](../../classes-and-structs/implicitly-typed-local-variables.md).
 
@@ -66,7 +66,7 @@ La source de données peut avoir plus de propriétés sous-jacentes que la class
 var newLargeOrderCustomers = IncomingOrders.Where(x => x.OrderSize > 5).Select(y => new Customer { Name = y.Name, Phone = y.Phone });
 ```
 
-Pour plus d'informations, consultez les pages suivantes :
+Pour plus d'informations, voir :
 
 - [Initialiseurs d’objets et de collections](../../classes-and-structs/object-and-collection-initializers.md)
 
@@ -80,19 +80,19 @@ Un type anonyme est construit par le compilateur et le nom du type est uniquemen
 select new {name = cust.Name, phone = cust.Phone};
 ```
 
-Pour plus d’informations, voir [Anonymous Types](../../classes-and-structs/anonymous-types.md).
+Pour plus d’informations, consultez [types anonymes](../../classes-and-structs/anonymous-types.md).
 
 ## <a name="extension-methods"></a>Méthodes d’extension
 
-Une méthode d’extension est une méthode statique qui peut être associée à un type, de manière à être appelée comme une méthode d’instance de ce type. Cette fonctionnalité permet d’ajouter de nouvelles méthodes aux types existants sans les modifier. Les opérateurs de requête standard sont un ensemble de méthodes d’extension qui <xref:System.Collections.Generic.IEnumerable%601>fournissent la fonctionnalité de requête LINQ pour n’importe quel type qui implémente.
+Une méthode d’extension est une méthode statique qui peut être associée à un type, de manière à être appelée comme une méthode d’instance de ce type. Cette fonctionnalité permet d’ajouter de nouvelles méthodes aux types existants sans les modifier. Les opérateurs de requête standard sont un ensemble de méthodes d’extension qui fournissent des fonctionnalités de requête LINQ pour tout type qui implémente <xref:System.Collections.Generic.IEnumerable%601> .
 
 Pour plus d’informations, consultez [Méthodes d’extension](../../classes-and-structs/extension-methods.md).
 
 ## <a name="lambda-expressions"></a>Expressions lambda
 
-Une expression lambda est une fonction inline qui utilise l’opérateur => pour séparer les paramètres d’entrée du corps de la fonction, et qui peut être convertie au moment de la compilation en un délégué ou une arborescence d’expressions. Dans la programmation LINQ, vous rencontrerez des expressions lambda lorsque vous faites des appels de méthode directe aux opérateurs de requête standard.
+Une expression lambda est une fonction inline qui utilise l’opérateur => pour séparer les paramètres d’entrée du corps de la fonction, et qui peut être convertie au moment de la compilation en un délégué ou une arborescence d’expressions. Dans la programmation LINQ, vous rencontrerez des expressions lambda lorsque vous effectuerez des appels de méthode directs aux opérateurs de requête standard.
 
-Pour plus d'informations, consultez les pages suivantes :
+Pour plus d'informations, voir :
 
 - [Fonctions anonymes](../../statements-expressions-operators/anonymous-functions.md)
 

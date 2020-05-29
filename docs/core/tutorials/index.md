@@ -4,12 +4,12 @@ description: Suivez les didacticiels pour apprendre .NET Core et générer des a
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
-ms.openlocfilehash: 9fb87180bb001a7f54d93c6e95631562103c49e8
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 5a33158bdf02c5ac81379cfcdabb2f79230033e2
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83840921"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202188"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Découvrez .NET Core et les outils de kit SDK .NET Core en explorant ces didacticiels
 
@@ -29,25 +29,26 @@ Les didacticiels disponibles pour découvrir .NET Core sont les suivants.
 
 ## <a name="use-visual-studio-code"></a>Utiliser Visual Studio Code
 
-Choisissez ces didacticiels si vous souhaitez utiliser Visual Studio Code ou un autre éditeur de code. Tous utilisent l’interface CLI pour les tâches de développement .NET Core, donc tous peuvent être utilisés avec n’importe quel éditeur de code.
+Choisissez ces didacticiels si vous souhaitez utiliser Visual Studio Code ou un autre éditeur de code. Tous utilisent l’interface CLI pour les tâches de développement .NET Core, donc tout sauf le didacticiel de débogage peut être utilisé avec n’importe quel éditeur de code.
 
 - [Créer une application console](with-visual-studio-code.md)
+- [Déboguer une application](debugging-with-visual-studio-code.md)
 - [Créer une application console et la publier](cli-create-console-app.md)
 - [Créer une application console F #](../../fsharp/get-started/get-started-vscode.md)
-- [Créer une bibliothèque et un test unitaire IT-macOS](using-on-macos.md)
+- [Créer une bibliothèque et effectuer un test unitaire dessus - macOS](using-on-macos.md)
 - [Installer et utiliser un package](/nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli)
 - [Créer et publier un package](/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli)
 
 ## <a name="use-visual-studio-for-mac"></a>Utiliser Visual Studio pour Mac
 
 - [Créer une application console](using-on-mac-vs.md)
-- [Créer une bibliothèque et un test unitaire](using-on-mac-vs-full-solution.md)
+- [Créer une bibliothèque et effectuer un test unitaire dessus](using-on-mac-vs-full-solution.md)
 - [Installer et utiliser un package](/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac)
 
 ## <a name="advanced-topics"></a>Rubriques avancées
 
-- [Comment créer des bibliothèques](libraries.md)
-- [Test unitaire d’une application avec xUnit](testing-with-cli.md)
+- [Guide pratique pour créer des bibliothèques](libraries.md)
+- [Effectuer un test unitaire sur une application avec xUnit](testing-with-cli.md)
 - [Test unitaire à l’aide de C#/VB/F # avec NUnit/xUnit/MSTest](../testing/index.md)
 - [Live Unit Test avec Visual Studio](/visualstudio/test/live-unit-testing-start)
 - [Créer des modèles pour l’interface CLI](cli-templates-create-item-template.md)

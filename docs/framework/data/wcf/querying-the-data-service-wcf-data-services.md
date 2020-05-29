@@ -9,22 +9,22 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 823e9444-27aa-4f1f-be8e-0486d67f54c0
-ms.openlocfilehash: 99fe377e8fff193c4f8bb566946b95c61c1b3693
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 8ae4b4b9938f72f4f4fc011e180cd69440ec3dd9
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568880"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201757"
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>interrogation du service de données (services de données WCF)
 
-La bibliothèque cliente WCF Data Services vous permet d’exécuter des requêtes sur un service de données en utilisant des modèles de programmation de .NET Framework familiers, notamment l’utilisation de LINQ (Language-Integrated Query). La bibliothèque cliente traduit une requête, définie sur le client comme une instance de la classe <xref:System.Data.Services.Client.DataServiceQuery%601>, en un message de demande HTTP GET. La bibliothèque reçoit le message de réponse et le convertit en instances de classes de service de données client. Ces classes sont suivies par le <xref:System.Data.Services.Client.DataServiceContext> auquel la <xref:System.Data.Services.Client.DataServiceQuery%601> appartient.
+La bibliothèque cliente WCF Data Services vous permet d’exécuter des requêtes sur un service de données en utilisant des modèles de programmation de .NET Framework familiers, notamment l’utilisation de LINQ (Language-Integrated Query). La bibliothèque cliente traduit une requête, définie sur le client comme une instance de la classe <xref:System.Data.Services.Client.DataServiceQuery%601>, en un message de demande HTTP GET. La bibliothèque reçoit le message de réponse et le traduit en instances des classes de service de données client. Ces classes sont suivies par le <xref:System.Data.Services.Client.DataServiceContext> auquel la <xref:System.Data.Services.Client.DataServiceQuery%601> appartient.
 
 ## <a name="data-service-queries"></a>Requêtes du service de données
 
 La classe générique <xref:System.Data.Services.Client.DataServiceQuery%601> représente une requête qui retourne une collection de zéro, une ou plusieurs instances de type d'entité. Une requête du service de données appartient toujours à un contexte du service de données existant. Ce contexte conserve les informations relatives à l'URI de service et aux métadonnées qui sont requises pour composer et exécuter la requête.
 
-Lorsque vous utilisez la boîte de dialogue **Ajouter une référence de service** pour ajouter un service de données à une application cliente basée sur .NET Framework, une classe de conteneur d’entités qui hérite de la classe <xref:System.Data.Services.Client.DataServiceContext> est créée. Cette classe inclut des propriétés qui retournent des instances <xref:System.Data.Services.Client.DataServiceQuery%601> typées. Il y a une propriété pour chaque jeu d'entités exposé par le service de données. Ces propriétés simplifient la création d'une instance d'un <xref:System.Data.Services.Client.DataServiceQuery%601> typé.
+Lorsque vous utilisez la boîte de dialogue **Ajouter une référence de service** pour ajouter un service de données à une application cliente basée sur .NET Framework, une classe de conteneur d’entités qui hérite de la classe est créée <xref:System.Data.Services.Client.DataServiceContext> . Cette classe inclut des propriétés qui retournent des instances <xref:System.Data.Services.Client.DataServiceQuery%601> typées. Il y a une propriété pour chaque jeu d'entités exposé par le service de données. Ces propriétés simplifient la création d'une instance d'un <xref:System.Data.Services.Client.DataServiceQuery%601> typé.
 
 Une requête est exécutée dans les scénarios suivants :
 
@@ -45,11 +45,11 @@ La requête suivante, lorsqu'elle est exécutée, retourne toutes les entités `
 
 Pour plus d’informations, consultez [Comment : exécuter des requêtes de service de données](how-to-execute-data-service-queries-wcf-data-services.md).
 
-Le client WCF Data Services prend en charge les requêtes pour les objets à liaison tardive, par exemple lorsque vous utilisez C#le type dynamique dans. Toutefois, pour de bonnes performances, vous devriez toujours composer des requêtes fortement typées sur le service de données. La type <xref:System.Tuple> et les objets dynamiques ne sont pas pris en charge par le client.
+Le client WCF Data Services prend en charge les requêtes pour les objets à liaison tardive, par exemple lorsque vous utilisez le type *dynamique* en C#. Toutefois, pour des raisons de performances, vous devez toujours composer des requêtes fortement typées sur le service de données. La type <xref:System.Tuple> et les objets dynamiques ne sont pas pris en charge par le client.
 
 ## <a name="linq-queries"></a>Requêtes LINQ
 
-Étant donné que la classe <xref:System.Data.Services.Client.DataServiceQuery%601> implémente l’interface <xref:System.Linq.IQueryable%601> définie par LINQ, la bibliothèque cliente WCF Data Services est en mesure de transformer des requêtes LINQ sur des données de jeu d’entités en un URI qui représente une expression de requête évaluée par rapport à une ressource de service de données. L'exemple suivant est une requête LINQ équivalente à l'instance <xref:System.Data.Services.Client.DataServiceQuery%601> précédente qui retourne des `Orders` ayant un coût de fret supérieur à $30 et classe les résultats par coût de fret :
+Étant donné que la <xref:System.Data.Services.Client.DataServiceQuery%601> classe implémente l' <xref:System.Linq.IQueryable%601> interface définie par LINQ, la bibliothèque cliente WCF Data Services est en mesure de transformer des requêtes LINQ sur des données de jeu d’entités en un URI qui représente une expression de requête évaluée par rapport à une ressource de service de données. L'exemple suivant est une requête LINQ équivalente à l'instance <xref:System.Data.Services.Client.DataServiceQuery%601> précédente qui retourne des `Orders` ayant un coût de fret supérieur à $30 et classe les résultats par coût de fret :
 
 [!code-csharp[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionslinqspecific)]
 [!code-vb[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionslinqspecific)]
@@ -135,22 +135,22 @@ Vous pouvez également obtenir uniquement le nombre total d'entités du jeu comm
 
 - [Projections de requête](query-projections-wcf-data-services.md)
 
-- [Matérialisation d’objet](object-materialization-wcf-data-services.md)
+- [Matérialisation d'objet](object-materialization-wcf-data-services.md)
 
 - [Considérations sur LINQ](linq-considerations-wcf-data-services.md)
 
 - [Comment : exécuter les requêtes de services de données](how-to-execute-data-service-queries-wcf-data-services.md)
 
-- [Guide pratique pour ajouter des options de requête à une requête de service de données](how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)
+- [Comment : ajouter des options de requête à une requête de service de données](how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)
 
-- [Guide pratique pour déterminer le nombre d’entités retournées par la requête](number-of-entities-returned-by-a-query-wcf.md)
+- [Comment : déterminer le nombre d'entités retournées par la requête](number-of-entities-returned-by-a-query-wcf.md)
 
-- [Guide pratique pour spécifier les informations d’identification du client pour une requête de service de données](specify-client-creds-for-a-data-service-request-wcf.md)
+- [Procédure : spécifier les informations d'identification du client pour une requête de service de données](specify-client-creds-for-a-data-service-request-wcf.md)
 
-- [Guide pratique pour définir des en-têtes dans la demande cliente](how-to-set-headers-in-the-client-request-wcf-data-services.md)
+- [Procédure : définir des en-têtes dans la demande cliente](how-to-set-headers-in-the-client-request-wcf-data-services.md)
 
-- [Guide pratique pour projeter des résultats de requête](how-to-project-query-results-wcf-data-services.md)
+- [Comment : résultats de requête par projet](how-to-project-query-results-wcf-data-services.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Bibliothèque cliente WCF Data Services](wcf-data-services-client-library.md)
+- [Bibliothèque client services de données WCF](wcf-data-services-client-library.md)
