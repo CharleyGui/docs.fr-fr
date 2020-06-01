@@ -10,15 +10,16 @@ helpviewer_keywords:
 - objects [C#]
 - C# language, classes
 ms.assetid: cc39dbda-8754-423e-b5b1-16a1db0734c0
-ms.openlocfilehash: afd9e688bd716375bafb370fad4af082a9498411
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb679fbffaf742739275c171ef6d88511b2a2a77
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399853"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84240757"
 ---
-# <a name="classes-and-structs-c-programming-guide"></a>Classes et structs (Guide de programmation C#)
-Les classes et structs sont deux des constructions de base du système de type commun dans le .NET Framework. Chacun est en substance une structure de données qui encapsule un ensemble de données et de comportements constituant une unité logique. Les données et comportements sont les *membres* de la classe ou du struct, et ils incluent ses méthodes, propriétés, événements, etc., comme indiqué plus loin dans cette rubrique.  
+# <a name="classes-and-structs-c-programming-guide"></a>Classes et structs (Guide de programmation C#)
+
+Les classes et les structs sont deux des constructions de base du système de type commun dans .NET. Chacun est en substance une structure de données qui encapsule un ensemble de données et de comportements constituant une unité logique. Les données et comportements sont les *membres* de la classe ou du struct, et ils incluent ses méthodes, propriétés, événements, etc., comme indiqué plus loin dans cette rubrique.  
   
  Une déclaration de classe ou de struct est comme un plan utilisé pour créer des instances ou des objets au moment de l'exécution. Si vous définissez une classe ou un struct nommé `Person`, `Person` est le nom du type. Si vous déclarez et initialisez une variable `p` de type `Person`, `p` est dit objet ou instance de `Person`. Plusieurs instances du même type `Person` peuvent être créées, et chaque instance peut avoir des valeurs différentes dans ses propriétés et champs.  
   
@@ -28,10 +29,10 @@ Les classes et structs sont deux des constructions de base du système de type c
   
  En général, les classes sont utilisées pour modéliser des comportements plus complexes, ou des données destinées à être modifiées après la création d’un objet de classe. Les structs conviennent mieux aux petites structures de données contenant principalement des données qui ne sont pas censées être modifiées après que la structure a été créé.  
   
- Pour plus d’informations, voir [Classes](./classes.md), [Objets](./objects.md), et [Types de structure](../../language-reference/builtin-types/struct.md).  
+ Pour plus d’informations, consultez [classes](./classes.md), [objets](./objects.md)et [types de structures](../../language-reference/builtin-types/struct.md).  
   
-## <a name="example"></a> Exemple  
- Dans l’exemple suivant, `CustomClass` dans l’espace de noms `ProgrammingGuide` a trois membres : un constructeur d’instance, une propriété nommée `Number` et une méthode nommée `Multiply`. La méthode `Main` de la classe `Program` crée une instance (objet) de `CustomClass`, et la méthode et la propriété de l’objet sont accessibles avec la notation par points.
+## <a name="example"></a>Exemple  
+ Dans l’exemple suivant, `CustomClass` dans l’espace de noms `ProgrammingGuide` a trois membres : un constructeur d’instance, une propriété nommée `Number` et une méthode nommée `Multiply`. La `Main` méthode de la `Program` classe crée une instance (objet) de `CustomClass` , et la méthode et la propriété de l’objet sont accessibles à l’aide de la notation par points.
   
  [!code-csharp[csProgGuideObjects#1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/class1.cs#1)]  
   
@@ -43,7 +44,7 @@ Les classes et structs sont deux des constructions de base du système de type c
 ### <a name="members"></a>Membres  
  Tous les champs, méthodes, constantes, propriétés et événements doivent être déclarés dans un type ; ils sont appelés *membres* du type. En C#, il n’existe aucune variable ou méthode globale, à la différence d’autres langages. Même le point d’entrée d’un programme, la méthode `Main`, doit être déclaré dans une classe ou un struct. La liste suivante inclut tous les types de membres qui peuvent être déclarés dans une classe ou un struct.  
   
-- [Champs](./fields.md)  
+- [Fields](./fields.md)  
   
 - [Constantes](./constants.md)  
   
@@ -81,7 +82,7 @@ Les classes et structs sont deux des constructions de base du système de type c
  Les classes (mais pas les structs) peuvent être déclarées comme [statiques](../../language-reference/keywords/static.md). Une classe statique ne peut contenir que des membres statiques et ne peut pas être instanciée avec le mot clé new. Une copie de la classe est chargée en mémoire au chargement du programme, et ses membres sont accessibles par le biais du nom de la classe. Les classes et les structs peuvent contenir des membres statiques. Pour plus d’informations, consultez la page [Classes statiques et membres de classes statiques](./static-classes-and-static-class-members.md).  
   
 ### <a name="nested-types"></a>Types imbriqués  
- Une classe ou un struct peut être imbriqué dans une autre classe ou un autre struct. Pour plus d’informations, voir [Nested Types](./nested-types.md).  
+ Une classe ou un struct peut être imbriqué dans une autre classe ou un autre struct. Pour plus d’informations, consultez [types imbriqués](./nested-types.md).  
   
 ### <a name="partial-types"></a>Types partiels  
  Vous pouvez définir une partie d'une classe, d'un struct ou d'une méthode dans un fichier de code et une autre partie dans un fichier de code séparé. Pour plus d’informations, consultez la page [Classes et méthodes partielles](./partial-classes-and-methods.md).  
@@ -90,7 +91,7 @@ Les classes et structs sont deux des constructions de base du système de type c
  Vous pouvez instancier et initialiser des objets de classe et de struct, ainsi que des collections d'objets, sans appeler explicitement leur constructeur. Pour plus d’informations, consultez la page [Initialiseurs d’objets et de collections](./object-and-collection-initializers.md).  
   
 ### <a name="anonymous-types"></a>Types anonymes  
- Dans les situations où il n’est pas pratique ou nécessaire de créer une classe nommée, par exemple pour remplir une liste avec des structures de données qu’il n’est pas nécessaire de conserver ou de transmettre à une autre méthode, on utilise des types anonymes. Pour plus d’informations, voir [Anonymous Types](./anonymous-types.md).  
+ Dans les situations où il n’est pas pratique ou nécessaire de créer une classe nommée, par exemple pour remplir une liste avec des structures de données qu’il n’est pas nécessaire de conserver ou de transmettre à une autre méthode, on utilise des types anonymes. Pour plus d’informations, consultez [types anonymes](./anonymous-types.md).  
   
 ### <a name="extension-methods"></a>Méthodes d’extension  
  Vous pouvez « étendre » une classe sans créer de classe dérivée en créant un type séparé dont les méthodes peuvent être appelées comme si elles appartenaient au type d’origine. Pour plus d’informations, consultez [Méthodes d’extension](./extension-methods.md).  
@@ -103,4 +104,4 @@ Les classes et structs sont deux des constructions de base du système de type c
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)

@@ -5,16 +5,16 @@ helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: d39e4c4dd180ba35b7555d61211a34d696b04f50
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 842f73b7af9671157495df961f5db22702ae897e
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399825"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84240705"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Variables locales implicitement typées (Guide de programmation C#)
 
-Les variables locales peuvent être déclarées sans donner de type explicite. Le mot clé `var` indique au compilateur de déduire le type de la variable à partir de l’expression située à droite de l’instruction d’initialisation. Le type déduit peut être un type intégré, un type anonyme, un type défini par l’utilisateur ou un type défini dans la bibliothèque de classes .NET Framework. Pour plus d’informations sur l’initialisation des tableaux avec `var`, consultez [Tableaux implicitement typés](../arrays/implicitly-typed-arrays.md).
+Les variables locales peuvent être déclarées sans donner de type explicite. Le mot clé `var` indique au compilateur de déduire le type de la variable à partir de l’expression située à droite de l’instruction d’initialisation. Le type inféré peut être un type intégré, un type anonyme, un type défini par l’utilisateur ou un type défini dans la bibliothèque de classes .NET. Pour plus d’informations sur l’initialisation des tableaux avec `var`, consultez [Tableaux implicitement typés](../arrays/implicitly-typed-arrays.md).
 
 Les exemples suivants montrent différentes manières de déclarer des variables locales avec `var` :
 
@@ -44,17 +44,17 @@ Le mot clé `var` peut être utilisé dans les contextes suivants :
     using (var file = new StreamReader("C:\\myfile.txt")) {...}
     ```
 
-Pour plus d’informations, voir [Comment utiliser des variables et des tableaux locaux dactylographiés implicitement dans une expression de requête](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).
+Pour plus d’informations, consultez [comment utiliser des variables locales et des tableaux implicitement typés dans une expression de requête](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).
 
 ## <a name="var-and-anonymous-types"></a>Types var et anonymes
 
-Dans de nombreux cas, l’utilisation de `var` est facultative et sert uniquement à simplifier la syntaxe. Toutefois, lorsqu’une variable est initialisée avec un type anonyme, vous devez déclarer la variable en tant que `var` si vous savez déjà que vous aurez besoin d’accéder aux propriétés de l’objet. Il s’agit d’un scénario courant dans les expressions de requête LINQ. Pour plus d’informations, voir [Anonymous Types](anonymous-types.md).
+Dans de nombreux cas, l’utilisation de `var` est facultative et sert uniquement à simplifier la syntaxe. Toutefois, lorsqu’une variable est initialisée avec un type anonyme, vous devez déclarer la variable en tant que `var` si vous savez déjà que vous aurez besoin d’accéder aux propriétés de l’objet. Il s’agit d’un scénario courant dans les expressions de requête LINQ. Pour plus d’informations, consultez [types anonymes](anonymous-types.md).
 
 Du point de vue de votre code source, un type anonyme n’a pas de nom. Par conséquent, si une variable de requête a été initialisée avec `var`, la seule façon d’accéder aux propriétés de la séquence d’objets retournée consiste à utiliser `var` comme type pour la variable d’itération de l’instruction `foreach`.
 
 [!code-csharp[csProgGuideLINQ#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csRef30LangFeatures_2.cs#44)]
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
 Les restrictions suivantes s’appliquent aux déclarations de variables implicitement typées :
 
@@ -62,7 +62,7 @@ Les restrictions suivantes s’appliquent aux déclarations de variables implici
 
 - `var` ne peut pas être utilisé dans les champs situés dans la portée de la classe.
 
-- Les variables déclarées à l’aide de `var` ne peuvent pas être utilisées dans l’expression d’initialisation. En d’autres termes, `int i = (i = 20);` cette expression est légale : mais cette expression produit une erreur de compilation :`var i = (i = 20);`
+- Les variables déclarées à l’aide de `var` ne peuvent pas être utilisées dans l’expression d’initialisation. En d’autres termes, cette expression est légale : `int i = (i = 20);` mais cette expression génère une erreur au moment de la compilation :`var i = (i = 20);`
 
 - Il n’est pas possible d’initialiser plusieurs variables implicitement typées dans la même instruction.
 
@@ -88,18 +88,18 @@ Le mot clé `var` peut également être utile lorsque le type de la variable est
 
 [!code-csharp[cscsrefQueryKeywords#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#13)]
 
-L’utilisation `var` d’aide à simplifier votre code, mais son utilisation doit être limitée aux cas où il est nécessaire, ou quand il rend votre code plus facile à lire. Pour plus d’informations `var` sur le moment d’utiliser correctement, consultez la section [des variables locales dactylographie implicitement](../inside-a-program/coding-conventions.md#implicitly-typed-local-variables) sur l’article des Lignes directrices sur le codage C.
+L’utilisation de `var` permet de simplifier votre code, mais son utilisation doit être limitée aux cas où il est requis ou lorsqu’il rend votre code plus facile à lire. Pour plus d’informations sur l’utilisation `var` correcte de, consultez la section [variables locales implicitement typées](../inside-a-program/coding-conventions.md#implicitly-typed-local-variables) dans l’article instructions de codage C#.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../../language-reference/index.md)
+- [Référence C#](../../language-reference/index.md)
 - [Tableaux implicitement typés](../arrays/implicitly-typed-arrays.md)
-- [Comment utiliser des variables et des tableaux locaux dactylographiés implicitement dans une expression de requête](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)
+- [Comment : utiliser des tableaux et des variables locales implicitement typés dans une expression de requête](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)
 - [Types anonymes](anonymous-types.md)
 - [Initialiseurs d’objets et de collections](object-and-collection-initializers.md)
-- [Var](../../language-reference/keywords/var.md)
+- [var](../../language-reference/keywords/var.md)
 - [LINQ en C#](../../linq/index.md)
 - [LINQ (Language Integrated Query)](../../linq/index.md)
-- [Pour](../../language-reference/keywords/for.md)
+- [for](../../language-reference/keywords/for.md)
 - [foreach, in](../../language-reference/keywords/foreach-in.md)
-- [à l’aide de l’Énoncé](../../language-reference/keywords/using-statement.md)
+- [using, instruction](../../language-reference/keywords/using-statement.md)

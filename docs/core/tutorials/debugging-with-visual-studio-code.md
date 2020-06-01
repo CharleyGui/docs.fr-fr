@@ -2,12 +2,12 @@
 title: Déboguer une application console .NET Core avec Visual Studio Code
 description: Découvrez comment déboguer une application console .NET Core avec Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: eaeb97f54442006d2f0e29483a68dc3de89b5778
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 82b2798397d702aa2a50c04bf6e4d569b97e3666
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202588"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241511"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Didacticiel : déboguer une application console .NET Core à l’aide de Visual Studio Code
 
@@ -29,7 +29,13 @@ Dans la configuration Debug, un programme est compilé avec des informations de 
 
 Un point d’arrêt interrompt temporairement l’exécution de l’application *avant* l’exécution de la ligne avec le point d’arrêt.
 
-1. Dans *Program.cs*, définissez un *point d’arrêt* sur la ligne qui affiche le nom, la date et l’heure en cliquant dans la marge de gauche de la fenêtre de code. La marge de gauche se trouve à gauche des numéros de ligne. Vous pouvez également définir un point d’arrêt en plaçant le curseur dans la ligne de code, puis en appuyant sur <kbd>F9</kbd>.
+1. Ouvrez Visual Studio Code.
+
+1. Ouvrez le dossier du projet *HelloWorld* que vous avez créé dans [créer une application console .net core dans Visual Studio code](with-visual-studio-code.md).
+
+1. Ouvrez le fichier *Program.cs* .
+
+1. Définissez un *point d’arrêt* sur la ligne qui affiche le nom, la date et l’heure en cliquant dans la marge de gauche de la fenêtre de code. La marge de gauche se trouve à gauche des numéros de ligne. Vous pouvez également définir un point d’arrêt en plaçant le curseur dans la ligne de code, puis en appuyant sur <kbd>F9</kbd>.
 
    Comme le montre l’illustration suivante, Visual Studio Code indique la ligne sur laquelle le point d’arrêt est défini en affichant un point rouge dans la marge de gauche.
 
@@ -215,10 +221,7 @@ dotnet run --configuration Release
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce didacticiel, vous avez utilisé Visual Studio Code outils de débogage. Pour savoir comment publier une version déployable de l’application, consultez [publication de votre application](cli-create-console-app.md#publish-your-app).
-
-<!--In the next tutorial, you publish a deployable version of the app.
+Dans ce didacticiel, vous avez utilisé Visual Studio Code outils de débogage. Dans le didacticiel suivant, vous allez publier une version déployable de l’application.
 
 > [!div class="nextstepaction"]
-> [Publish a .NET Core console application with Visual Studio Code](publishing-with-visual-studio-code.md)
--->
+> [Publier une application console .NET Core avec Visual Studio Code](publishing-with-visual-studio-code.md)

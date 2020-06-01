@@ -2,12 +2,12 @@
 title: Vue d’ensemble de LINQ to XML (C#)
 ms.date: 10/30/2018
 ms.assetid: 716b94d3-0091-4de1-8e05-41bc069fa9dd
-ms.openlocfilehash: 334788a50832b8fe42ecc9a3272dd71f2f2af4ee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dd41d8607ef3f2e6e6be9a1f3964ef0ae937e2ac
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168413"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241836"
 ---
 # <a name="linq-to-xml-overview-c"></a>Vue d’ensemble de LINQ to XML (C#)
 
@@ -15,7 +15,7 @@ LINQ to XML fournit une interface de programmation XML en mémoire qui exploite 
 
 Le langage XML a été largement adopté comme méthode pour mettre en forme des données dans de nombreux contextes. Par exemple, on trouve du code XML sur le Web, dans les fichiers de configuration, dans les fichiers Microsoft Office Word et dans les bases de données.
 
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est une approche à jour et repensée de la programmation avec XML. Il fournit les capacités de modification de documents en mémoire du modèle d’objet de document (DOM), et prend en charge les expressions de requête linQ. Bien que ces expressions de requête soient syntaxiquement différentes de XPath, elles procurent la même fonctionnalité.
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est une approche à jour et repensée de la programmation avec XML. Il fournit les fonctionnalités de modification de document en mémoire du Document Object Model (DOM) et prend en charge les expressions de requête LINQ. Bien que ces expressions de requête soient syntaxiquement différentes de XPath, elles procurent la même fonctionnalité.
 
 ## <a name="linq-to-xml-developers"></a>Développeurs LINQ to XML
 
@@ -25,11 +25,11 @@ Les développeurs professionnels peuvent utiliser [!INCLUDE[sqltecxlinq](~/inclu
 
 ## <a name="what-is-linq-to-xml"></a>Qu'est-ce que LINQ to XML ?
 
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est une interface de programmation XML prenant en charge LINQ qui vous permet de travailler avec du code XML dans les langages de programmation .NET Framework.
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]est une interface de programmation XML en mémoire compatible avec LINQ qui vous permet d’utiliser du code XML à partir des langages de programmation .NET.
 
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] s’apparente au modèle DOM en ce sens qu’il place le document XML en mémoire. Vous pouvez interroger et modifier le document, et après l'avoir modifié, vous pouvez l'enregistrer dans un fichier ou le sérialiser et l'envoyer via Internet. Cependant, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] diffère du modèle DOM : il procure un nouveau modèle objet qui est plus léger et plus facile à manipuler, et qui tire parti des fonctionnalités du langage dans C#.
 
-L’avantage le [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] plus important est son intégration avec la requête intégrée à la langue (LINQ). Cette intégration vous permet d'écrire des requêtes sur le document XML en mémoire afin de récupérer des collections d'éléments et d'attributs. La capacité de requête de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est comparable en terme de fonctionnalités (mais pas en termes de syntaxe) à XQuery et XPath. L’intégration de LINQ dans le CMD fournit une dactylographie plus forte, une vérification du temps de compilation et un meilleur soutien de débbuggeur.
+L’avantage le plus important de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est son intégration avec LINQ (Language-Integrated Query). Cette intégration vous permet d'écrire des requêtes sur le document XML en mémoire afin de récupérer des collections d'éléments et d'attributs. La capacité de requête de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est comparable en terme de fonctionnalités (mais pas en termes de syntaxe) à XQuery et XPath. L’intégration de LINQ en C# fournit un typage plus fort, une vérification au moment de la compilation et une prise en charge améliorée du débogueur.
 
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] présente également l'avantage de pouvoir utiliser des résultats de requête en tant que paramètres de constructeurs d'objets <xref:System.Xml.Linq.XElement> et <xref:System.Xml.Linq.XAttribute>, ce qui constitue une approche puissante pour la création d'arborescences XML. Cette approche, appelée *construction fonctionnelle*, permet aux développeurs de transformer facilement des arborescences XML d’une forme en une autre.
 
@@ -77,9 +77,9 @@ IEnumerable<XElement> pricesByPartNos = purchaseOrder.Descendants("Item")
                                         .OrderBy(order => order.Element("PartNumber"));
 ```
 
-En plus de ces [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] capacités LINQ, fournit une interface de programmation XML améliorée. Grâce à [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], vous pouvez :
+Outre ces fonctionnalités LINQ, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] fournit une interface de programmation XML améliorée. Grâce à [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], vous pouvez :
 
-- Chargez XML à partir de [fichiers](how-to-load-xml-from-a-file.md) ou [de flux](how-to-stream-xml-fragments-from-an-xmlreader.md).
+- Charger du code XML à partir de [fichiers](how-to-load-xml-from-a-file.md) ou de [flux](how-to-stream-xml-fragments-from-an-xmlreader.md).
 
 - sérialiser du code XML vers des fichiers ou des flux ;
 
@@ -121,6 +121,6 @@ Pour plus d’informations, consultez [Création d’arborescences XML (C#)](./c
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence (LINQ to XML)](./reference-linq-to-xml.md)
-- [LINQ à XML vs DOM (C)](./linq-to-xml-vs-dom.md)
-- [Comparaison de LINQ to XML et des autres technologies XML](./linq-to-xml-vs-other-xml-technologies.md)
+- [LINQ to XML et DOM (C#)](./linq-to-xml-vs-dom.md)
+- [LINQ to XML, différences par rapport à d'autres technologies XML](./linq-to-xml-vs-other-xml-technologies.md)
 - <xref:System.Xml.Linq>

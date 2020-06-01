@@ -1,12 +1,12 @@
 ---
 title: Attributs (C#)
 ms.date: 04/26/2018
-ms.openlocfilehash: 0379bb76cf18ff836bd14aafb9cb97c30aee8ec7
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 358285a39f72ad3ddf1b265e20b443308375d074
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645488"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241576"
 ---
 # <a name="attributes-c"></a>Attributs (C#)
 
@@ -41,7 +41,7 @@ Certains attributs peuvent être spécifiés plusieurs fois pour une entité don
 [!code-csharp[Using the conditional attribute](~/samples/snippets/csharp/attributes/AttributesOverview.cs#5)]
 
 > [!NOTE]
-> Par convention, tous les noms d’attributs se terminent par le mot « Attribute » pour les différencier d’autres éléments dans les bibliothèques .NET. Toutefois, il est inutile de spécifier le suffixe d’attribut lorsque les attributs sont utilisés dans le code. Par exemple, `[DllImport]` équivaut à `[DllImportAttribute]`, mais `DllImportAttribute` est le nom réel de l’attribut dans la bibliothèque de classes .NET Framework.
+> Par convention, tous les noms d’attributs se terminent par le mot « Attribute » pour les différencier d’autres éléments dans les bibliothèques .NET. Toutefois, il est inutile de spécifier le suffixe d’attribut lorsque les attributs sont utilisés dans le code. Par exemple, `[DllImport]` est équivalent à `[DllImportAttribute]` , mais `DllImportAttribute` est le nom réel de l’attribut dans la bibliothèque de classes .net.
 
 ### <a name="attribute-parameters"></a>Paramètres d’attributs
 
@@ -75,7 +75,7 @@ La liste des valeurs `target` possibles est présentée dans le tableau suivant.
 |`event`|Événement|
 |`method`|Méthode ou accesseurs de propriété `get` et `set`|
 |`param`|Paramètres de méthode ou paramètres d’accesseur de propriété `set`|
-|`property`|Propriété|
+|`property`|Property|
 |`return`|Valeur de retour d’une méthode, indexeur de propriété ou accesseur de propriété `get`|
 |`type`|Struct, classe, interface, énumération ou délégué|
 
@@ -101,8 +101,8 @@ L’exemple suivant montre comment appliquer des attributs à des méthodes, des
 
 La liste suivante comprend certaines des utilisations courantes des attributs dans le code :
 
-- Marquer des méthodes avec l’attribut `WebMethod` dans les services web pour indiquer que la méthode doit pouvoir être appelée via le protocole SOAP. Pour plus d’informations, consultez <xref:System.Web.Services.WebMethodAttribute>.
-- Décrire comment marshaler les paramètres de méthode en cas d’interaction avec du code natif. Pour plus d’informations, consultez <xref:System.Runtime.InteropServices.MarshalAsAttribute>.
+- Marquer des méthodes avec l’attribut `WebMethod` dans les services web pour indiquer que la méthode doit pouvoir être appelée via le protocole SOAP. Pour plus d'informations, consultez <xref:System.Web.Services.WebMethodAttribute>.
+- Décrire comment marshaler les paramètres de méthode en cas d’interaction avec du code natif. Pour plus d'informations, consultez <xref:System.Runtime.InteropServices.MarshalAsAttribute>.
 - Décrire les propriétés COM des classes, méthodes et interfaces.
 - Appeler du code non managé à l’aide de la classe <xref:System.Runtime.InteropServices.DllImportAttribute>.
 - Décrire un assembly : titre, version, description ou marque.
@@ -119,13 +119,13 @@ Pour plus d'informations, consultez les pages suivantes :
 
 - [Création d’attributs personnalisés (C#)](creating-custom-attributes.md)  
 - [Accès à des attributs à l’aide de la réflexion (C#)](accessing-attributes-by-using-reflection.md)  
-- [Comment créer un syndicat C/CMD en utilisant des attributs (C)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
+- [Guide pratique pour créer une Union C/C++ à l’aide d’attributs (C#)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
 - [Attributs courants (C#)](../../../language-reference/attributes/global.md)  
 - [Informations relatives à l’appelant (C#)](../../../language-reference/attributes/caller-information.md)  
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation CMD](../../index.md)
+- [Guide de programmation C#](../../index.md)
 - [Réflexion (C#)](../reflection.md)
 - [Attributs](../../../../standard/attributes/index.md)
 - [Utilisation d’attributs en C #](../../../tutorials/attributes.md)

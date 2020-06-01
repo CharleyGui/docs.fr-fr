@@ -1,32 +1,32 @@
 ---
-title: Comment publier des événements conformes aux instructions .NET Framework-Guide de programmation C#
+title: Publier des événements conformes aux instructions .NET-Guide de programmation C#
 ms.date: 05/26/2020
 helpviewer_keywords:
 - events [C#], implementation guidelines
 ms.assetid: 9310ae16-8627-44a2-b08c-05e5976202b1
-ms.openlocfilehash: 137e52b80703491a4528a3eddc7fa12f9dce6f52
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: df2f643f867b93b74d04d8fbd673df545c28938e
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144797"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84240744"
 ---
-# <a name="how-to-publish-events-that-conform-to-net-framework-guidelines-c-programming-guide"></a>Comment publier des événements conformes aux instructions de .NET Framework (Guide de programmation C#)
+# <a name="how-to-publish-events-that-conform-to-net-guidelines-c-programming-guide"></a>Comment publier des événements conformes aux instructions .NET (Guide de programmation C#)
 
-La procédure suivante montre comment ajouter à vos classes et structs des événements qui respectent le modèle .NET Framework standard. Tous les événements de la bibliothèque de classes .NET Framework sont basés sur le délégué <xref:System.EventHandler>, qui est défini comme suit :
+La procédure suivante montre comment ajouter des événements qui suivent le modèle .NET standard à vos classes et structures. Tous les événements de la bibliothèque de classes .NET Framework sont basés sur le délégué <xref:System.EventHandler>, qui est défini comme suit :
 
 ```csharp
 public delegate void EventHandler(object sender, EventArgs e);
 ```
 
 > [!NOTE]
-> .NET Framework 2.0 comprend une version générique de ce délégué : <xref:System.EventHandler%601>. Les exemples suivants montrent comment utiliser les deux versions.
+> .NET Framework 2,0 introduit une version générique de ce délégué, <xref:System.EventHandler%601> . Les exemples suivants montrent comment utiliser les deux versions.
 
-Bien que les événements des classes que vous définissez puissent être basés sur n’importe quel type délégué valide, même les délégués qui retournent une valeur, il est généralement recommandé de baser les événements sur le modèle .NET Framework à l’aide de <xref:System.EventHandler>, comme illustré dans l’exemple suivant.
+Bien que les événements dans les classes que vous définissez puissent être basés sur n’importe quel type délégué valide, même les délégués qui retournent une valeur, il est généralement recommandé de baser vos événements sur le modèle .NET à l’aide de <xref:System.EventHandler> , comme indiqué dans l’exemple suivant.
 
 Le nom `EventHandler` peut entraîner un peu de confusion, car il ne gère pas réellement l’événement. Le <xref:System.EventHandler> générique et <xref:System.EventHandler%601> sont des types délégués. Une méthode ou une expression lambda dont la signature correspond à la définition de délégué est le *Gestionnaire d’événements* et sera appelée lorsque l’événement est déclenché.
 
-### <a name="to-publish-events-based-on-the-eventhandler-pattern"></a>Pour publier des événements basés sur le modèle EventHandler
+## <a name="publish-events-based-on-the-eventhandler-pattern"></a>Publier des événements basés sur le modèle EventHandler
 
 1. (Ignorez cette étape et passez à l’étape 3A si vous n’avez pas besoin d’envoyer des données personnalisées avec votre événement.) Déclarez la classe pour vos données personnalisées au niveau d’une étendue qui est visible à la fois pour vos classes de serveur de publication et d’abonné. Ajoutez ensuite les membres nécessaires pour contenir vos données d’événement personnalisées. Dans cet exemple, une simple chaîne est retournée.
 

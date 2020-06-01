@@ -6,17 +6,17 @@ helpviewer_keywords:
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: c8ad738baa3ff76cf9ae8367f2fd2a1fb44a79d6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a266cfd5996aca7b7a6b297b0775526cf38b8f64
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170297"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241420"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finaliseurs (Guide de programmation C#)
 Les finaliseurs (également appelés **destructeurs**) servent à effectuer les derniers nettoyages nécessaires lorsqu’une instance de classe est collectée par le récupérateur de mémoire.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
   
 - Les finaliseurs ne peuvent pas être définis dans des structs. Ils sont utilisés uniquement avec les classes.  
   
@@ -64,20 +64,20 @@ protected override void Finalize()
  Il est possible de forcer le nettoyage de la mémoire en appelant <xref:System.GC.Collect%2A>, mais la plupart du temps c’est à éviter car cela peut créer des problèmes de performances.  
   
 ## <a name="using-finalizers-to-release-resources"></a>Utiliser des finaliseurs pour libérer des ressources  
- En général, C# ne nécessite pas autant de gestion de mémoire que quand vous développez avec un langage qui ne cible pas un runtime avec nettoyage de la mémoire. En effet, le récupérateur de mémoire .NET Framework gère implicitement l’allocation et la libération de la mémoire pour vos objets. Toutefois, quand votre application encapsule des ressources non managées, telles que des fenêtres, des fichiers et des connexions réseau, vous devez utiliser des finaliseurs pour libérer ces ressources. Quand l’objet peut être finalisé, le récupérateur de mémoire exécute la méthode `Finalize` de l’objet.  
+ En général, C# ne nécessite pas autant de gestion de mémoire que quand vous développez avec un langage qui ne cible pas un runtime avec nettoyage de la mémoire. Cela est dû au fait que le garbage collector .NET gère implicitement l’allocation et la libération de mémoire pour vos objets. Toutefois, quand votre application encapsule des ressources non managées, telles que des fenêtres, des fichiers et des connexions réseau, vous devez utiliser des finaliseurs pour libérer ces ressources. Quand l’objet peut être finalisé, le récupérateur de mémoire exécute la méthode `Finalize` de l’objet.
   
 ## <a name="explicit-release-of-resources"></a>Libération explicite de ressources  
  Si votre application utilise une ressource externe coûteuse, nous vous recommandons également de proposer un moyen de libérer explicitement la ressource avant que le récupérateur de mémoire ne libère l’objet. Pour cela, vous devez implémenter une méthode `Dispose` à partir de l’interface <xref:System.IDisposable> qui effectue le nettoyage nécessaire pour l’objet. Cela peut améliorer considérablement les performances de l’application. Même avec ce contrôle explicite des ressources, le finaliseur devient un dispositif de protection pour nettoyer les ressources si l’appel à la méthode `Dispose` a échoué.  
   
  Pour plus d’informations sur le nettoyage des ressources, consultez les rubriques suivantes :  
   
-- [Nettoyage des ressources non gestions](../../../standard/garbage-collection/unmanaged.md)  
+- [Nettoyage des ressources non managées](../../../standard/garbage-collection/unmanaged.md)  
   
-- [Mise en œuvre d’une méthode de cession](../../../standard/garbage-collection/implementing-dispose.md)  
+- [Implémentation d’une méthode dispose](../../../standard/garbage-collection/implementing-dispose.md)  
   
-- [à l’aide de l’Énoncé](../../language-reference/keywords/using-statement.md)  
+- [using, instruction](../../language-reference/keywords/using-statement.md)  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant crée trois classes qui forment une chaîne d’héritage. La classe `First` est la classe de base, `Second` est dérivée de `First`, et `Third` est dérivée de `Second`. Toutes trois ont des finaliseurs. Dans `Main`, une instance de la classe la plus dérivée est créée. Quand le programme s’exécute, notez que les finaliseurs des trois classes sont appelés automatiquement, et dans l’ordre, de la plus dérivée à la moins dérivée.  
   
  [!code-csharp[csProgGuideObjects#85](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#85)]  
@@ -89,6 +89,6 @@ Pour plus d’informations, voir la section [Destructeurs](~/_csharplang/spec/cl
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.IDisposable>
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Constructeurs](./constructors.md)
 - [Garbage collection](../../../standard/garbage-collection/index.md)

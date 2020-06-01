@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], how to use
 ms.assetid: 99a2fc27-a32e-4a34-921c-e65497520eec
-ms.openlocfilehash: dcc73aba738d6296a44c48aad8b66cd6fc7f4a7b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9a81ee5ccdc2697ca435d40be27568b651977f96
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77448437"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241589"
 ---
 # <a name="using-delegates-c-programming-guide"></a>Utilisation de délégués (guide de programmation C#)
 
@@ -23,7 +23,7 @@ Un objet de délégué est normalement construit en fournissant le nom de la mé
 
 [!code-csharp[csProgGuideDelegates#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#23)]
 
-Les types délégués sont dérivés de la classe <xref:System.Delegate> du .NET Framework. Les types délégués sont scellés ([sealed](../../language-reference/keywords/sealed.md)), c’est-à-dire qu’ils ne peuvent pas être faire l’objet d’une dérivation, et il n’est pas possible de dériver des classes personnalisées à partir de <xref:System.Delegate>. Étant donné que le délégué instancié est un objet, il peut être passé comme paramètre ou assigné à une propriété. Cela permet à une méthode d'accepter un délégué comme paramètre et d'appeler le délégué ultérieurement. Cette opération est connue sous le nom de rappel asynchrone et constitue une méthode courante pour notifier un appelant quand un long processus s'est achevé. Lorsqu'un délégué est ainsi utilisé, le code qui utilise le délégué n'a pas besoin de connaître l'implémentation de la méthode utilisée. La fonctionnalité est semblable à l'encapsulation que fournissent les interfaces.
+Les types délégués sont dérivés de la <xref:System.Delegate> classe dans .net. Les types délégués sont scellés ([sealed](../../language-reference/keywords/sealed.md)), c’est-à-dire qu’ils ne peuvent pas être faire l’objet d’une dérivation, et il n’est pas possible de dériver des classes personnalisées à partir de <xref:System.Delegate>. Étant donné que le délégué instancié est un objet, il peut être passé comme paramètre ou assigné à une propriété. Cela permet à une méthode d'accepter un délégué comme paramètre et d'appeler le délégué ultérieurement. Cette opération est connue sous le nom de rappel asynchrone et constitue une méthode courante pour notifier un appelant quand un long processus s'est achevé. Lorsqu'un délégué est ainsi utilisé, le code qui utilise le délégué n'a pas besoin de connaître l'implémentation de la méthode utilisée. La fonctionnalité est semblable à l'encapsulation que fournissent les interfaces.
 
 Une autre utilisation courante des rappels consiste à définir une méthode de comparaison personnalisée et à passer ce délégué à une méthode de tri. Le code de l'appelant peut ainsi faire partie de l'algorithme de tri. L'exemple de méthode suivant utilise le type `Del` comme paramètre :
 
@@ -51,7 +51,7 @@ Un délégué peut appeler plusieurs méthodes quand il est appelé. Cette opér
 
 [!code-csharp[csProgGuideDelegates#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#27)]
 
-À ce stade, `allMethodsDelegate` contient trois méthodes dans sa liste d'invocation : `Method1`, `Method2` et `DelegateMethod`. Les trois délégués initiaux, `d1`, `d2` et `d3`, restent inchangés. Lors de l'appel de `allMethodsDelegate`, les trois méthodes sont appelées dans l'ordre. Si le délégué utilise des paramètres de référence, la référence est passée séquentiellement à chacune des trois méthodes et toute modification apportée par une méthode est visible dans la méthode suivante. Quand l'une des méthodes lève une exception qui n'est pas interceptée dans la méthode, cette exception est passée à l'appelant du délégué et aucune des méthodes suivantes dans la liste d'invocation n'est appelée. Si le délégué a une valeur de retour et/ou des paramètres out, il retourne la valeur de retour et les paramètres de la dernière méthode appelée. Pour supprimer une méthode de la liste d’invocation, utilisez`-` les `-=` [opérateurs d’affectation de soustraction ou de soustraction](../../language-reference/operators/subtraction-operator.md) (ou ). Par exemple :
+À ce stade, `allMethodsDelegate` contient trois méthodes dans sa liste d'invocation : `Method1`, `Method2` et `DelegateMethod`. Les trois délégués initiaux, `d1`, `d2` et `d3`, restent inchangés. Lors de l'appel de `allMethodsDelegate`, les trois méthodes sont appelées dans l'ordre. Si le délégué utilise des paramètres de référence, la référence est passée séquentiellement à chacune des trois méthodes et toute modification apportée par une méthode est visible dans la méthode suivante. Quand l'une des méthodes lève une exception qui n'est pas interceptée dans la méthode, cette exception est passée à l'appelant du délégué et aucune des méthodes suivantes dans la liste d'invocation n'est appelée. Si le délégué a une valeur de retour et/ou des paramètres out, il retourne la valeur de retour et les paramètres de la dernière méthode appelée. Pour supprimer une méthode de la liste d’appel, utilisez les opérateurs d’assignation de soustraction [ou de soustraction](../../language-reference/operators/subtraction-operator.md) ( `-` ou `-=` ). Par exemple :
 
 [!code-csharp[csProgGuideDelegates#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#28)]
 
@@ -69,7 +69,7 @@ La comparaison de délégués de deux types différents assignés au moment de l
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Délégués](./index.md)
 - [Utilisation de la variance dans les délégués](../concepts/covariance-contravariance/using-variance-in-delegates.md)
 - [Variance dans les délégués](../concepts/covariance-contravariance/variance-in-delegates.md)

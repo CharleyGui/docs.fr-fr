@@ -2,12 +2,12 @@
 title: Programmation orientée objet (C#)
 ms.date: 05/13/2020
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 541d1a2581a3241f35fc8478040c007b6581e3b2
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 98dd5147ab54375ec851ccd9b981a68098a53270
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396685"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241888"
 ---
 # <a name="object-oriented-programming-c"></a>Programmation orientée objet (C#)
 
@@ -89,7 +89,7 @@ class SampleClass
 
 La plupart des propriétés disposent de méthodes ou de procédures destinées à la fois à définir et à obtenir la valeur de propriété. Toutefois, vous pouvez créer des propriétés en lecture seule ou en écriture seule pour empêcher qu'elles soient modifiées ou lues. En C#, vous pouvez omettre la méthode de propriété `get` ou `set`. Toutefois, les propriétés implémentées automatiquement ne peuvent pas être en écriture seule. Les propriétés implémentées automatiquement en lecture seule peuvent être définies dans les constructeurs de la classe conteneur.
 
-   Pour plus d'informations, consultez les pages suivantes :
+Pour plus d'informations, consultez les pages suivantes :
 
 - [get](../../language-reference/keywords/get.md)
 - [set](../../language-reference/keywords/set.md)
@@ -121,7 +121,7 @@ public int SampleMethod(int sampleParam) { }
 
 Dans la plupart des cas, vous déclarez une méthode dans une définition de classe. Toutefois, C# prend également en charge des *méthodes d’extension*, qui vous permettent d’ajouter des méthodes à une classe existante hors de la définition réelle de la classe.
 
-   Pour plus d'informations, consultez les pages suivantes :
+Pour plus d'informations, consultez les pages suivantes :
 
 - [Méthodes](../classes-and-structs/methods.md)
 - [Méthodes d’extension](../classes-and-structs/extension-methods.md)
@@ -146,9 +146,9 @@ Pour plus d’informations, consultez [Constructeurs](../classes-and-structs/con
 
 #### <a name="finalizers"></a>Finaliseurs
 
-Un finaliseur est utilisé pour détruire des instances de classes. Dans le .NET Framework, le garbage collector gère automatiquement l'allocation et la libération de mémoire pour les objets managés figurant dans votre application. Toutefois, vous pouvez avoir besoin de finaliseurs pour nettoyer toutes les ressources non managées créées par votre application. Il ne peut y avoir qu’un seul finaliseur pour une classe.
+Un finaliseur est utilisé pour détruire des instances de classes. Dans .NET, le garbage collector gère automatiquement l’allocation et la libération de mémoire pour les objets managés dans votre application. Toutefois, vous pouvez avoir besoin de finaliseurs pour nettoyer toutes les ressources non managées créées par votre application. Il ne peut y avoir qu’un seul finaliseur pour une classe.
 
-Pour plus d’informations sur les finaliseurs et l’opération de garbage collection dans le .NET Framework, consultez [Garbage collection](../../../standard/garbage-collection/index.md).
+Pour plus d’informations sur les finaliseurs et les garbage collection dans .NET, consultez [garbage collection](../../../standard/garbage-collection/index.md).
 
 #### <a name="events"></a>Événements
 
@@ -189,7 +189,7 @@ Les modificateurs d’accès suivants sont disponibles :
 | [public](../../language-reference/keywords/public.md) | Tout autre code du même assembly ou d'un autre assembly qui y fait référence peut accéder au type ou au membre. |
 | [private](../../language-reference/keywords/private.md) | Seul le code de la même classe peut accéder au type ou au membre. |
 | [protected](../../language-reference/keywords/protected.md) | Seul le code de la même classe ou d'une classe dérivée peut accéder au type ou au membre. |
-| [intérieurs](../../language-reference/keywords/internal.md) | Tout code du même assembly, mais pas d'un autre assembly, peut accéder au type ou au membre. |
+| [internal](../../language-reference/keywords/internal.md) | Tout code du même assembly, mais pas d'un autre assembly, peut accéder au type ou au membre. |
 | [protected internal](../../language-reference/keywords/protected-internal.md) | Tout code du même assembly ou toute classe dérivée dans un autre assembly peut accéder au type ou au membre. |
 | [protégé privé](../../language-reference/keywords/private-protected.md) | Le code de la même classe ou d'une classe dérivée peut accéder au type ou au membre dans l’assembly de la classe de base. |
 
@@ -223,7 +223,7 @@ var sampleObject = new SampleClass
 };
 ```
 
-   Pour plus d'informations, consultez les pages suivantes :
+Pour plus d'informations, consultez les pages suivantes :
 
 - [nouvel opérateur](../../language-reference/operators/new-operator.md)
 - [Initialiseurs d’objets et de collections](../classes-and-structs/object-and-collection-initializers.md)
@@ -295,10 +295,10 @@ Pour spécifier qu'une classe peut être utilisée uniquement comme classe de ba
 public abstract class B { }
 ```
 
-   Pour plus d'informations, consultez les pages suivantes :
+Pour plus d'informations, consultez les pages suivantes :
 
 - [sealed](../../language-reference/keywords/sealed.md)
-- [abstract](../../language-reference/keywords/abstract.md)
+- [abstraction](../../language-reference/keywords/abstract.md)
 
 ### <a name="overriding-members"></a>Remplacement de membres
 
@@ -309,8 +309,8 @@ Les modificateurs suivants sont utilisés pour contrôler la façon dont les pro
 | Modificateur C# | Définition |
 |--|--|
 | [virtual](../../language-reference/keywords/virtual.md) | Autorise la substitution d'un membre de classe dans une classe dérivée. |
-| [override](../../language-reference/keywords/override.md) | Substitue un membre virtuel (substituable) défini dans la classe de base. |
-| [abstract](../../language-reference/keywords/abstract.md) | Requiert qu'un membre de classe soit substitué dans la classe dérivée. |
+| [remplacer](../../language-reference/keywords/override.md) | Substitue un membre virtuel (substituable) défini dans la classe de base. |
+| [abstraction](../../language-reference/keywords/abstract.md) | Requiert qu'un membre de classe soit substitué dans la classe dérivée. |
 | [Modificateur new](../../language-reference/keywords/new-modifier.md) | Masque un membre hérité d'une classe de base. |
 
 ## <a name="interfaces"></a>Interfaces
@@ -342,7 +342,7 @@ Pour plus d’informations, consultez l’article Guide de programmation sur les
 
 ## <a name="generics"></a>Génériques
 
-Les classes, les structs, les interfaces et les méthodes dans le .NET Framework peuvent inclure des *paramètres de type*, qui définissent les types d’objets qu’ils peuvent stocker ou utiliser. L’exemple le plus commun de génériques est une collection dans laquelle vous pouvez spécifier le type d’objets à stocker dans une collection.
+Les classes, structures, interfaces et méthodes dans .NET peuvent inclure des *paramètres de type* qui définissent des types d’objets qu’ils peuvent stocker ou utiliser. L’exemple le plus commun de génériques est une collection dans laquelle vous pouvez spécifier le type d’objets à stocker dans une collection.
 
 Pour définir une classe générique :
 
@@ -360,7 +360,7 @@ var sampleObject = new SampleGeneric<string>();
 sampleObject.Field = "Sample string";
 ```
 
-   Pour plus d'informations, consultez les pages suivantes :
+Pour plus d'informations, consultez les pages suivantes :
 
 - [Génériques en .NET](../../../standard/generics/index.md)
 - [Génériques - Guide de programmation C#](../generics/index.md)

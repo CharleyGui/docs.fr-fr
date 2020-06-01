@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: e4ef8c12f3e52faa7cf09058a98abae65b0dcfce
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 745fb2af332afa278c78ec9baeea7230fe725c02
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84005091"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241490"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-with-visual-studio"></a>Didacticiel : publier une application console .NET Core avec Visual Studio
 
@@ -59,25 +59,25 @@ Dans les étapes suivantes, vous allez examiner les fichiers créés par le proc
 
    Comme l’indique l’image, la sortie publiée comprend les fichiers suivants :
 
-      * *HelloWorld.deps.json*
+   * *HelloWorld.deps.json*
 
-         Il s’agit du fichier de dépendances d’exécution de l’application. Il définit les composants .NET Core et les bibliothèques (y compris la bibliothèque de liens dynamiques qui contient votre application) nécessaires pour exécuter l’application. Pour plus d’informations, consultez [fichiers de configuration](https://github.com/dotnet/cli/blob/85ca206d84633d658d7363894c4ea9d59e515c1a/Documentation/specs/runtime-configuration-file.md)de l’exécution.
+      Il s’agit du fichier de dépendances d’exécution de l’application. Il définit les composants .NET Core et les bibliothèques (y compris la bibliothèque de liens dynamiques qui contient votre application) nécessaires pour exécuter l’application. Pour plus d’informations, consultez [fichiers de configuration](https://github.com/dotnet/cli/blob/85ca206d84633d658d7363894c4ea9d59e515c1a/Documentation/specs/runtime-configuration-file.md)de l’exécution.
 
-      * *HelloWorld.dll*
+   * *HelloWorld.dll*
 
-         Il s’agit de la version de [déploiement dépendante du Framework](../deploying/deploy-with-cli.md#framework-dependent-deployment) de l’application. Pour exécuter cette bibliothèque de liens dynamiques, entrez `dotnet HelloWorld.dll` à l’invite de commandes.
+      Il s’agit de la version de [déploiement dépendante du Framework](../deploying/deploy-with-cli.md#framework-dependent-deployment) de l’application. Pour exécuter cette bibliothèque de liens dynamiques, entrez `dotnet HelloWorld.dll` à l’invite de commandes. Cette méthode d’exécution de l’application fonctionne sur toutes les plateformes sur lesquelles le Runtime .NET Core est installé.
 
-      * *HelloWorld. exe*
+   * *HelloWorld. exe*
 
-         Il s’agit de la version [exécutable dépendante du Framework](../deploying/deploy-with-cli.md#framework-dependent-executable) de l’application. Pour l’exécuter, entrez `HelloWorld.exe` à l’invite de commandes.
+      Il s’agit de la version [exécutable dépendante du Framework](../deploying/deploy-with-cli.md#framework-dependent-executable) de l’application. Pour l’exécuter, entrez `HelloWorld.exe` à l’invite de commandes. Le fichier est spécifique au système d’exploitation.
 
-      * *HelloWorld.pdb* (facultatif pour le déploiement)
+   * *HelloWorld.pdb* (facultatif pour le déploiement)
 
-         Il s’agit du fichier de symboles de débogage. Vous n’êtes pas obligé de déployer ce fichier avec votre application, même si vous devez l’enregistrer au cas où vous auriez à déboguer la version publiée de votre application.
+      Il s’agit du fichier de symboles de débogage. Vous n’êtes pas obligé de déployer ce fichier avec votre application, même si vous devez l’enregistrer au cas où vous auriez à déboguer la version publiée de votre application.
 
-      * *HelloWorld.runtimeconfig.json*
+   * *HelloWorld.runtimeconfig.json*
 
-         Il s’agit du fichier de configuration au moment de l’exécution de l’application. Il identifie la version de .NET Core sur laquelle votre application doit être exécutée. Vous pouvez également y ajouter des options de configuration. Pour plus d’informations, consultez [paramètres de configuration du Runtime .net Core](../run-time-config/index.md#runtimeconfigjson).
+      Il s’agit du fichier de configuration au moment de l’exécution de l’application. Il identifie la version de .NET Core sur laquelle votre application doit être exécutée. Vous pouvez également y ajouter des options de configuration. Pour plus d’informations, consultez [paramètres de configuration du Runtime .net Core](../run-time-config/index.md#runtimeconfigjson).
 
 ## <a name="run-the-published-app"></a>Exécuter l’application publiée
 
@@ -91,13 +91,13 @@ Dans les étapes suivantes, vous allez examiner les fichiers créés par le proc
 
 1. Exécutez l’application à l’aide de l’exécutable :
 
-   1. Entrez `HelloWorld.exe` et appuyez sur entrée.
+   1. Entrez `HelloWorld.exe`, puis appuyez sur <kbd>Entrée</kbd>.
 
    1. Entrez un nom en réponse à l’invite, puis appuyez sur n’importe quelle touche pour quitter.
 
 1. Exécutez l’application à l’aide de la `dotnet` commande :
 
-   1. Entrez `dotnet HelloWorld.dll` et appuyez sur entrée.
+   1. Entrez `dotnet HelloWorld.dll`, puis appuyez sur <kbd>Entrée</kbd>.
 
    1. Entrez un nom en réponse à l’invite, puis appuyez sur n’importe quelle touche pour quitter.
 

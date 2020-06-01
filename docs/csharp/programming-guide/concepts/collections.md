@@ -2,12 +2,12 @@
 title: Collections (C#)
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-ms.openlocfilehash: 30aa3e34f362f34fc601f90ee61613acd6e4bc68
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: ecab30d50be58f810246e58e637b331d492e4a47
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201132"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241394"
 ---
 # <a name="collections-c"></a>Collections (C#)
 
@@ -182,7 +182,7 @@ public class Galaxy
 
 ## <a name="kinds-of-collections"></a>Types de collections
 
-Plusieurs collections courantes sont fournies par le .NET Framework. Chaque type de collection est conçu dans un but spécifique.
+De nombreuses collections courantes sont fournies par .NET. Chaque type de collection est conçu dans un but spécifique.
 
 Certaines des classes de collection courantes sont décrites dans cette section :
 
@@ -214,7 +214,7 @@ Pour plus d’informations, consultez [Types de collections couramment utilisés
 
 ### <a name="systemcollectionsconcurrent-classes"></a>Classes System.Collections.Concurrent
 
-Dans .NET Framework 4 ou ultérieur, les collections de l’espace de noms <xref:System.Collections.Concurrent> fournissent des opérations thread-safe efficaces pour accéder aux éléments de collection à partir de plusieurs threads.
+Dans .NET Framework 4 et versions ultérieures, les collections de l' <xref:System.Collections.Concurrent> espace de noms fournissent des opérations thread-safe efficaces pour accéder aux éléments de collection à partir de plusieurs threads.
 
 Les classes de l’espace de noms <xref:System.Collections.Concurrent> doivent être utilisées à la place des types correspondants dans les espaces de noms <xref:System.Collections.Generic?displayProperty=nameWithType> et <xref:System.Collections?displayProperty=nameWithType> chaque fois que plusieurs threads accèdent simultanément à la collection. Pour plus d’informations, consultez [Collections thread-safe](../../../standard/collections/thread-safe/index.md) et <xref:System.Collections.Concurrent>.
 
@@ -482,7 +482,7 @@ public class Car : IComparable<Car>
 
 Vous pouvez définir une collection en implémentant l’interface <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Collections.IEnumerable>.
 
-Même si vous pouvez définir une collection personnalisée, il est généralement préférable d’utiliser les collections comprises dans le .NET Framework, lesquelles sont décrites dans [Types de collections](#BKMK_KindsOfCollections), plus haut dans cette rubrique.
+Bien que vous puissiez définir une collection personnalisée, il est généralement préférable d’utiliser les collections incluses dans .NET, qui sont décrites dans [genres de collections](#BKMK_KindsOfCollections) , plus haut dans cet article.
 
 L’exemple suivant définit une classe de collection personnalisée nommée `AllColors`. Cette classe implémente l’interface <xref:System.Collections.IEnumerable>, ce qui implique l’implémentation de la méthode <xref:System.Collections.IEnumerable.GetEnumerator%2A>.
 

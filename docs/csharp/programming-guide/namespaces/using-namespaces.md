@@ -7,16 +7,16 @@ helpviewer_keywords:
 - fully qualified names [C#]
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
-ms.openlocfilehash: b4326be8c9e299a96477096ec21864ec69037abe
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 71d97f7c1c0c3ece0cdce3de4318d8a9d65baed3
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738246"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241927"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Utilisation d'espaces de noms (Guide de programmation C#)
 
-Les espaces de noms sont largement utilisés dans les programmes C#, et ce de deux façons différentes. En premier lieu, les classes .NET Framework utilisent les espaces de noms à des fins d’organisation. En deuxième lieu, la déclaration de vos propres espaces de noms peut faciliter le contrôle de la portée des noms de classes et de méthodes dans les projets de programmation de plus grande envergure.  
+Les espaces de noms sont largement utilisés dans les programmes C#, et ce de deux façons différentes. Tout d’abord, les classes .NET utilisent des espaces de noms pour organiser ses nombreuses classes. En deuxième lieu, la déclaration de vos propres espaces de noms peut faciliter le contrôle de la portée des noms de classes et de méthodes dans les projets de programmation de plus grande envergure.  
   
 ## <a name="accessing-namespaces"></a>Accès aux espaces de noms
 
@@ -36,13 +36,13 @@ Les espaces de noms sont largement utilisés dans les programmes C#, et ce de de
   
 ## <a name="namespace-aliases"></a>Alias d'espaces de noms
 
- Vous pouvez également [ `using` ](../../language-reference/keywords/using-directive.md) utiliser la directive pour créer un alias pour un espace nom. Utilisez le [qualificateur d'alias d’espace de noms`::`](../../language-reference/operators/namespace-alias-qualifier.md) pour accéder aux membres de l'espace de noms avec alias. L'exemple suivant montre comment créer et utiliser un alias d’espace de noms :
+ Vous pouvez également utiliser la [ `using` directive](../../language-reference/keywords/using-directive.md) pour créer un alias pour un espace de noms. Utilisez le [qualificateur d'alias d’espace de noms`::`](../../language-reference/operators/namespace-alias-qualifier.md) pour accéder aux membres de l'espace de noms avec alias. L'exemple suivant montre comment créer et utiliser un alias d’espace de noms :
   
 [!code-csharp[csProgGuideNamespaces#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#5)]
   
 ## <a name="using-namespaces-to-control-scope"></a>Utilisation d’espaces de noms pour contrôler la portée
 
- Le mot clé `namespace` est utilisé pour déclarer une portée. La possibilité de créer des portées au sein de votre projet facilite l’organisation du code et vous permet de créer des types globalement uniques. Dans l’exemple suivant, une classe intitulée `SampleClass` est définie dans deux espaces de noms, l’un étant imbriqué à l’intérieur de l’autre. Le [ `.` jeton](../../language-reference/operators/member-access-operators.md#member-access-expression-) est utilisé pour différencier quelle méthode est appelée.  
+ Le mot clé `namespace` est utilisé pour déclarer une portée. La possibilité de créer des portées au sein de votre projet facilite l’organisation du code et vous permet de créer des types globalement uniques. Dans l’exemple suivant, une classe intitulée `SampleClass` est définie dans deux espaces de noms, l’un étant imbriqué à l’intérieur de l’autre. Le [ `.` jeton](../../language-reference/operators/member-access-operators.md#member-access-expression-) est utilisé pour distinguer la méthode qui est appelée.  
   
  [!code-csharp[csProgGuideNamespaces#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#8)]  
   
@@ -92,8 +92,8 @@ Les espaces de noms sont largement utilisés dans les programmes C#, et ce de de
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation CMD](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Espaces de noms](./index.md)
-- [Expression d’accès des membres](../../language-reference/operators/member-access-operators.md#member-access-expression-)
+- [Expression d’accès au membre](../../language-reference/operators/member-access-operators.md#member-access-expression-)
 - [:: (opérateur)](../../language-reference/operators/namespace-alias-qualifier.md)
 - [extern alias](../../language-reference/keywords/extern-alias.md)

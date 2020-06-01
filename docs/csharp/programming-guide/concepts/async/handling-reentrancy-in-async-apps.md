@@ -2,20 +2,20 @@
 title: Gestion de la réentrance dans Async Apps (C#)
 ms.date: 07/20/2015
 ms.assetid: 47c5075e-c448-45ce-9155-ed4e7e98c677
-ms.openlocfilehash: d46a87ed2200dc92b8e3d23be80306a31a01e501
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: e03e0f6ecd8e74dd8518f84ec03c76c1ef5b9ee6
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738306"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241810"
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>Gestion de la réentrance dans Async Apps (C#)
 
 Quand vous incluez du code asynchrone dans votre application, vous devez prendre en compte et éventuellement empêcher la réentrance, qui fait référence à une nouvelle entrée d'une opération asynchrone avant qu'elle soit terminée. Si vous n'identifiez pas et ne gérez pas les possibilités de réentrance, les résultats peuvent être inattendus.
 
-**Dans ce sujet**
+**Dans cette rubrique**
 
-- [Reconnaître la réenterrité](#BKMK_RecognizingReentrancy)
+- [Reconnaissance de la réentrance](#BKMK_RecognizingReentrancy)
 
 - [Gestion de la réentrance](#BKMK_HandlingReentrancy)
 
@@ -28,10 +28,10 @@ Quand vous incluez du code asynchrone dans votre application, vous devez prendre
 - [Examen et exécution de l’exemple d’application](#BKMD_SettingUpTheExample)
 
 > [!NOTE]
-> Pour donner l’exemple, vous devez avoir Visual Studio 2012 ou plus récent et .NET Framework 4.5 ou plus récent installé sur votre ordinateur.
+> Pour exécuter l’exemple, vous devez disposer de Visual Studio 2012 ou version ultérieure et .NET Framework 4,5 ou version ultérieure installée sur votre ordinateur.
 
 > [!NOTE]
-> Transport Layer Security (TLS) version 1.2 est maintenant la version minimale à utiliser dans le développement de votre application. Si votre application cible une version cadre .NET plus tôt que 4.7, consultez l’article suivant pour [les meilleures pratiques de sécurité des couches de transport (TLS) avec le cadre .NET](../../../../framework/network-programming/tls.md).
+> La version 1,2 de TLS (Transport Layer Security) est désormais la version minimale à utiliser dans le développement de votre application. Si votre application cible une version de .NET Framework antérieure à 4,7, reportez-vous à l’article suivant pour les [meilleures pratiques de Transport Layer Security (TLS) avec .NET Framework](../../../../framework/network-programming/tls.md).
 
 ## <a name="recognizing-reentrancy"></a><a name="BKMK_RecognizingReentrancy"></a> Identification de la réentrance
 
@@ -91,7 +91,7 @@ TOTAL bytes returned:  890591
 
 Vous pouvez passer en revue le code qui produit cette sortie en accédant à la fin de cette rubrique. Vous pouvez faire des essais avec le code en téléchargeant la solution sur votre ordinateur local, puis en exécutant le projet WebsiteDownload ou en utilisant le code donné à la fin de cette rubrique pour créer votre propre projet. Pour plus d’informations et d’instructions, consultez [Examen et exécution de l’exemple d’application](#BKMD_SettingUpTheExample).
 
-## <a name="handling-reentrancy"></a><a name="BKMK_HandlingReentrancy"></a>Manipulation de la réenterabilité
+## <a name="handling-reentrancy"></a><a name="BKMK_HandlingReentrancy"></a>Gestion de la réentrance
 
 Vous pouvez gérer la réentrance de différentes façons, selon ce que vous voulez que votre application fasse. Cette rubrique présente les exemples suivants :
 
@@ -111,7 +111,7 @@ Vous pouvez gérer la réentrance de différentes façons, selon ce que vous vou
 
 Vous pouvez bloquer le bouton **Démarrer** pendant l’exécution d’une opération en désactivant le bouton en haut du gestionnaire d’événements `StartButton_Click`. Ensuite, vous pouvez réactiver le bouton depuis un bloc `finally` quand l'opération se termine pour que les utilisateurs puissent exécuter à nouveau l'application.
 
-Pour configurer ce scénario, apportez les modifications suivantes au code de base fourni dans [Examen et exécution de l’exemple d’application](#BKMD_SettingUpTheExample). Vous pouvez également télécharger l’application finie à partir [d’Async Samples: Reentrancy dans .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Le nom du projet est DisableStartButton.
+Pour configurer ce scénario, apportez les modifications suivantes au code de base fourni dans [Examen et exécution de l’exemple d’application](#BKMD_SettingUpTheExample). Vous pouvez également télécharger l’application finie à partir des [exemples Async : réentrance dans les applications de bureau .net](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Le nom du projet est DisableStartButton.
 
 ```csharp
 private async void StartButton_Click(object sender, RoutedEventArgs e)
@@ -138,7 +138,7 @@ private async void StartButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Suite aux modifications, le bouton ne répond pas pendant que `AccessTheWebAsync` télécharge les sites Web, donc le processus ne peut pas être entré de nouveau.
+Suite à ces modifications, le bouton ne répond pas pendant que `AccessTheWebAsync` télécharge les sites Web, ce qui signifie que le processus ne peut pas être réentré.
 
 ### <a name="cancel-and-restart-the-operation"></a><a name="BKMK_CancelAndRestart"></a> Annuler et redémarrer l’opération
 
@@ -146,9 +146,9 @@ Au lieu de désactiver le bouton **Démarrer**, vous pouvez garder le bouton act
 
 Pour plus d’informations sur l’annulation, consultez [Réglage de votre application Async (C#)](./fine-tuning-your-async-application.md).
 
-Pour configurer ce scénario, apportez les modifications suivantes au code de base fourni dans [Examen et exécution de l’exemple d’application](#BKMD_SettingUpTheExample). Vous pouvez également télécharger l’application finie à partir [d’Async Samples: Reentrancy dans .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Le nom du projet est CancelAndRestart.
+Pour configurer ce scénario, apportez les modifications suivantes au code de base fourni dans [Examen et exécution de l’exemple d’application](#BKMD_SettingUpTheExample). Vous pouvez également télécharger l’application finie à partir des [exemples Async : réentrance dans les applications de bureau .net](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Le nom du projet est CancelAndRestart.
 
-1. Déclarez une variable <xref:System.Threading.CancellationTokenSource>, `cts`, qui est dans la portée de toutes les méthodes.
+1. Déclarez une <xref:System.Threading.CancellationTokenSource> variable, `cts` , qui est dans la portée de toutes les méthodes.
 
     ```csharp
     public partial class MainWindow : Window   // Or class MainPage
@@ -229,7 +229,7 @@ Dans `AccessTheWebAsync`, apportez les modifications suivantes.
 
 - Utilisez la méthode <xref:System.Net.Http.HttpClient.GetAsync%2A> pour télécharger les sites Web car `GetAsync` accepte un argument <xref:System.Threading.CancellationToken>.
 
-- Avant d'appeler `DisplayResults` pour afficher les résultats de chaque site Web téléchargé, vérifiez `ct` pour vous assurer que l'opération en cours n'a pas été annulée.
+- Avant `DisplayResults` d’appeler pour afficher les résultats de chaque site Web téléchargé, vérifiez `ct` que l’opération en cours n’a pas été annulée.
 
 Le code suivant illustre ces modifications, marquées par des astérisques.
 
@@ -301,13 +301,13 @@ TOTAL bytes returned:  890591
 
 Pour éliminer les listes partielles, supprimez les commentaires de la première ligne de code dans `StartButton_Click` pour effacer la zone de texte chaque fois que l'utilisateur redémarre l'opération.
 
-### <a name="run-multiple-operations-and-queue-the-output"></a><a name="BKMK_RunMultipleOperations"></a>Exécuter plusieurs opérations et faire la queue de la sortie
+### <a name="run-multiple-operations-and-queue-the-output"></a><a name="BKMK_RunMultipleOperations"></a>Exécuter plusieurs opérations et faire une sortie en file d’attente
 
 Ce troisième exemple est le plus compliqué, car l’application démarre une autre opération asynchrone chaque fois que l’utilisateur choisit le bouton **Démarrer**, et toutes les opérations s’exécutent jusqu’à leur achèvement. Toutes les opérations demandées téléchargent des sites web de la liste de façon asynchrone, mais la sortie des opérations est présentée séquentiellement. Autrement dit, l’activité de téléchargement réelle est entrelacée, comme le montre la sortie dans [Identification de la réentrance](#BKMK_RecognizingReentrancy), mais la liste des résultats de chaque groupe est présentée séparément.
 
 Les opérations partagent un <xref:System.Threading.Tasks.Task> global, `pendingWork`, qui sert d'opérateur de contrôle d'appels pour le processus d'affichage.
 
-Pour configurer ce scénario, apportez les modifications suivantes au code de base fourni dans [Examen et exécution de l’exemple d’application](#BKMD_SettingUpTheExample). Vous pouvez également télécharger l’application finie à partir [d’Async Samples: Reentrancy dans .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Le nom du projet est QueueResults.
+Pour configurer ce scénario, apportez les modifications suivantes au code de base fourni dans [Examen et exécution de l’exemple d’application](#BKMD_SettingUpTheExample). Vous pouvez également télécharger l’application finie à partir des [exemples Async : réentrance dans les applications de bureau .net](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Le nom du projet est QueueResults.
 
 La sortie suivante montre le résultat obtenu si l’utilisateur choisit le bouton **Démarrer** une seule fois. L’étiquette A indique que le résultat part de la première fois que le bouton **Démarrer** est choisi. Les numéros indiquent l'ordre des URL dans la liste des cibles de téléchargement.
 
@@ -536,7 +536,7 @@ La sortie affiche les modèles suivants.
     TOTAL bytes returned:  915908
     ```
 
-- La tâche `pendingWork` est Null au début de `FinishOneGroupAsync` uniquement pour le groupe A, qui a démarré en premier. Le groupe A n'a pas encore terminé une expression await quand il atteint `FinishOneGroupAsync`. Par conséquent, le contrôle n'a pas retourné à `AccessTheWebAsync`, et la première assignation à `pendingWork` ne s'est pas produite.
+- La tâche `pendingWork` est Null au début de `FinishOneGroupAsync` uniquement pour le groupe A, qui a démarré en premier. Le groupe A n’a pas encore terminé une expression await quand il atteint `FinishOneGroupAsync` . Par conséquent, le contrôle n'a pas retourné à `AccessTheWebAsync`, et la première assignation à `pendingWork` ne s'est pas produite.
 
 - Les deux lignes suivantes apparaissent toujours ensemble dans la sortie. Le code n'est jamais interrompu entre le démarrage d'une opération de groupe dans `StartButton_Click` et l'affectation d'une tâche pour le groupe à `pendingWork`.
 
@@ -547,7 +547,7 @@ La sortie affiche les modèles suivants.
 
     Une fois qu'un groupe entre `StartButton_Click`, l'opération ne termine pas une expression await tant que l'opération n'entre pas `FinishOneGroupAsync`. Par conséquent, aucune autre opération ne peut obtenir le contrôle au cours de ce segment de code.
 
-## <a name="reviewing-and-running-the-example-app"></a><a name="BKMD_SettingUpTheExample"></a>Examen et exécution de l’application Exemple
+## <a name="reviewing-and-running-the-example-app"></a><a name="BKMD_SettingUpTheExample"></a>Examen et exécution de l’exemple d’application
 
 Pour mieux comprendre l’exemple d’application, vous pouvez le télécharger, le créer vous-même ou passer en revue le code à la fin de cette rubrique sans implémenter l’application.
 
@@ -584,13 +584,13 @@ La section suivante fournit le code pour générer l’exemple comme une applica
 
 4. Dans la liste des types de projets, choisissez **Application WPF**.
 
-5. Nommez `WebsiteDownloadWPF`le projet , choisissez la version cadre .NET de 4,6 ou plus, puis cliquez sur le bouton **OK.**
+5. Nommez le projet `WebsiteDownloadWPF` , choisissez .NET Framework version 4,6 ou ultérieure, puis cliquez sur le bouton **OK** .
 
      Le nouveau projet s’affiche dans l’**Explorateur de solutions**.
 
 6. Dans l'éditeur de code Visual Studio, choisissez l'onglet **MainWindow.xaml** .
 
-     Si l’onglet n’est pas visible, ouvrez le menu contextuel de MainWindow.xaml dans l’**Explorateur de solutions**, puis choisissez **Afficher le code**.
+     Si l’onglet n’est pas visible, ouvrez le menu contextuel de MainWindow. xaml dans **Explorateur de solutions**, puis choisissez **afficher le code**.
 
 7. Dans la vue **XAML** de MainWindow.xaml, remplacez le code par le code suivant.
 
@@ -612,9 +612,9 @@ La section suivante fournit le code pour générer l’exemple comme une applica
 
      Une fenêtre simple contenant une zone de texte et un bouton apparaît dans la vue **Design** de MainWindow.xaml.
 
-8. Dans **Solution Explorer**, cliquez à droite sur les **références** et sélectionnez Ajouter **référence**.
+8. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur **références** , puis sélectionnez **Ajouter une référence**.
 
-     Ajoutez une <xref:System.Net.Http>référence pour , si elle n’est pas déjà sélectionnée.
+     Ajoutez une référence pour <xref:System.Net.Http> , si elle n’est pas déjà sélectionnée.
 
 9. Dans l’**Explorateur de solutions**, ouvrez le menu contextuel pour MainWindow.xaml.cs, puis choisissez **Afficher le code**.
 

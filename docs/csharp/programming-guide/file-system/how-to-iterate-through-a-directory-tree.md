@@ -1,22 +1,22 @@
 ---
-title: Comment itérer à travers un arbre d’annuaire - Guide de programmation C
+title: Comment itérer au sein d’une arborescence de répertoires-Guide de programmation C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-ms.openlocfilehash: be3931a23e7a88affcf4d0abf617ec00bd35297a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 24a6225527becb0b896017616e2661ab8247c74c
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712258"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241602"
 ---
-# <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Comment itérer à travers un arbre d’annuaire (Guide de programmation de CMD)
+# <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Comment itérer au sein d’une arborescence de répertoires (Guide de programmation C#)
 L’expression « itérer au sein d’une arborescence de répertoires » signifie accéder à chaque fichier dans chaque sous-répertoire imbriqué sous un dossier racine spécifié, à n’importe quelle profondeur. Vous ne devez pas nécessairement ouvrir chaque fichier. Vous pouvez simplement récupérer le nom du fichier ou du sous-répertoire sous forme de `string`, ou vous pouvez récupérer des informations supplémentaires sous la forme d’un objet <xref:System.IO.FileInfo?displayProperty=nameWithType> ou <xref:System.IO.DirectoryInfo?displayProperty=nameWithType>.  
   
 > [!NOTE]
-> Dans Windows, les termes « répertoire » et « dossier » sont utilisés indifféremment. La plus grande partie de la documentation et du texte d’interface utilisateur utilise le terme « dossier », mais la bibliothèque de classes .NET Framework utilise le terme « répertoire ».  
+> Dans Windows, les termes « répertoire » et « dossier » sont utilisés indifféremment. La plupart de la documentation et du texte de l’interface utilisateur utilise le terme « dossier », mais les bibliothèques de classes .NET utilisent le terme « répertoire ».  
   
  Dans le cas le plus simple, où vous êtes sûr de disposer des autorisations d’accès à tous les répertoires situés sous une racine spécifiée, vous pouvez utiliser l’indicateur `System.IO.SearchOption.AllDirectories`. Cet indicateur retourne tous les sous-répertoires imbriqués qui correspondent au modèle spécifié. L’exemple suivant montre comment utiliser cet indicateur.  
   
@@ -33,16 +33,16 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
  Si vous devez effectuer diverses opérations sur des fichiers et des dossiers, vous pouvez modulariser ces exemples en refactorisant l’opération dans des fonctions distinctes que vous pouvez appeler à l’aide d’un délégué unique.  
   
 > [!NOTE]
-> Les systèmes de fichiers NTFS peuvent contenir des *points d’analyse* sous la forme de *points de jonction*, de *liens symboliques* et de *liens physiques*. Les méthodes .NET Framework telles que <xref:System.IO.DirectoryInfo.GetFiles%2A> et <xref:System.IO.DirectoryInfo.GetDirectories%2A> ne retournent pas de sous-répertoires situés sous un point d’analyse. Ce comportement vous protège contre le risque d’entrer dans une boucle infinie quand deux points d’analyse se référencent l’un l’autre. En général, lors de l’utilisation de points d’analyse vous devez faire attention à ne pas involontairement modifier ou supprimer des fichiers. Si vous avez besoin d’un contrôle précis sur les points d’analyse, utilisez du code natif ou un appel de code non managé pour appeler directement les méthodes de système de fichiers Win32 appropriées.  
+> Les systèmes de fichiers NTFS peuvent contenir des *points d’analyse* sous la forme de *points de jonction*, de *liens symboliques* et de *liens physiques*. Les méthodes .NET telles que <xref:System.IO.DirectoryInfo.GetFiles%2A> et <xref:System.IO.DirectoryInfo.GetDirectories%2A> ne retournent pas de sous-répertoires sous un point d’analyse. Ce comportement vous protège contre le risque d’entrer dans une boucle infinie quand deux points d’analyse se référencent l’un l’autre. En général, lors de l’utilisation de points d’analyse vous devez faire attention à ne pas involontairement modifier ou supprimer des fichiers. Si vous avez besoin d’un contrôle précis sur les points d’analyse, utilisez du code natif ou un appel de code non managé pour appeler directement les méthodes de système de fichiers Win32 appropriées.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre comment parcourir une arborescence de répertoires à l’aide de la récurrence. L’approche récursive est élégante, mais susceptible de provoquer une exception de dépassement de capacité de la pile si l’arborescence de répertoires est volumineuse et profondément imbriquée.  
   
  Les exceptions particulières gérées et les actions qui sont effectuées sur chaque fichier ou dossier sont fournies à titre d’exemple uniquement. Vous devez modifier ce code pour répondre à vos besoins spécifiques. Pour plus d’informations, consultez les commentaires du code.  
   
  [!code-csharp[csFilesandFolders#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#1)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre comment itérer au sein des fichiers et des dossiers dans une arborescence de répertoires sans utiliser la récurrence. Cette technique utilise le type de collection <xref:System.Collections.Generic.Stack%601> générique, qui est une pile LIFO (dernier entré, premier sorti).  
   
  Les exceptions particulières gérées et les actions qui sont effectuées sur chaque fichier ou dossier sont fournies à titre d’exemple uniquement. Vous devez modifier ce code pour répondre à vos besoins spécifiques. Pour plus d’informations, consultez les commentaires du code.  

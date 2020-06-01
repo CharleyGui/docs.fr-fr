@@ -2,24 +2,22 @@
 title: Déployer une base de données SQL Server vers Azure
 description: Découvrez comment migrer une base de données SQL Server depuis un serveur SQL local vers Azure.
 ms.topic: how-to
-ms.date: 11/15/2017
-ms.openlocfilehash: dac35970f2d77e232c2ee1a5e3a1f6e7bfec2317
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.date: 05/27/2020
+ms.openlocfilehash: ed5d6ef9395dca14d8e0ecba82d3fc18cb3d629a
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "82072094"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241446"
 ---
 # <a name="migrate-a-sql-server-database-to-azure"></a>Déployer une base de données SQL Server vers Azure
 
-Ce court article fournit une brève description des deux options pour migrer une base de données SQL Server vers Azure.
-
-Azure propose deux options principales pour la migration d’une base de données SQL Server de production :
+Cet article fournit un bref aperçu de deux options pour la migration d’une base de données SQL Server vers Azure. Azure propose trois options principales pour la migration d’une base de données de production SQL Server. Cet article se concentre sur les deux options suivantes :
 
 1. [SQL Server sur des machines virtuelles Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview) : instance SQL Server installée et hébergée sur une machine virtuelle Windows s’exécutant dans Azure, également appelé infrastructure as a service (IaaS).
 2. [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview) : service Azure de base de données SQL complètement managé, également appelé Platform as a Service (PaaS).
 
-Ces deux solutions présentent des avantages et des inconvénients que vous devez évaluer avant d’effectuer la migration.
+Ces deux solutions présentent des avantages et des inconvénients que vous devez évaluer avant d’effectuer la migration. La troisième option est [Azure SQL Database les instances gérées](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance).
 
 ## <a name="get-started"></a>Bien démarrer
 
@@ -30,7 +28,7 @@ Les guides de migration suivants vous seront utiles, selon le service que vous u
 
 En outre, les liens suivants vers du contenu conceptuel vous aideront à mieux comprendre les machines virtuelles :
 
-* [Haute disponibilité et récupération d’urgence pour les SQL Server dans les machines virtuelles Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-high-availability-dr)
+* [Haute disponibilité et récupération d’urgence pour SQL Server dans Azure Virtual Machines](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-high-availability-dr)
 * [Meilleures pratiques relatives aux performances de SQL Server dans les machines virtuelles Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-performance)
 * [Modèles d'application et stratégies de développement pour SQL Server dans Azure Virtual Machines](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-app-patterns-dev-strategies)
 
@@ -63,10 +61,10 @@ Le tableau suivant décrit les différences entre chaque service basé sur un je
 | Migration | Nécessite d’apporter des modifications mineures à votre base de données. | Peut nécessiter des modifications de votre base de données si vous utilisez des fonctionnalités non disponibles dans Azure SQL, comme déterminé par l’[Assistant Migration de données](https://www.microsoft.com/download/details.aspx?id=53595), ou si vous avez d’autres dépendances, telles que des fichiers exécutables installés en local.|
 | Gestion de la disponibilité, de la récupération et des mises à niveau | La disponibilité et la récupération sont configurées manuellement. Les mises à niveau peuvent être automatisées avec [Microsoft Azure Virtual Machine Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade). | Géré automatiquement. |
 | Configuration du système d’exploitation sous-jacent | Configuration manuelle. | Géré automatiquement. |
-| Gestion de la taille de la base de données | Prend en charge jusqu’à 64 to de stockage par instance de SQL Server. | Prend en charge 4 to de stockage avant de nécessiter une partition horizontale. |
+| Gestion de la taille de la base de données | Prend en charge jusqu’à 256 to de stockage par instance de SQL Server. | Prend en charge 8 to de stockage avant de nécessiter une partition horizontale. |
 | Gestion des coûts | Vous devez gérer les coûts de licence SQL Server, Windows Server et les coûts liés aux machines virtuelles (en fonction des cœurs, de la mémoire RAM et du stockage). | Vous devez gérer les coûts de service (en fonction des [eDTU ou DTU](https://docs.microsoft.com/azure/sql-database/sql-database-what-is-a-dtu), du stockage et du nombre de bases de données si vous utilisez un pool élastique). Vous devez également gérer le coût de n’importe quel contrat de niveau de service. |
 
-Pour en savoir plus sur les différences entre les deux, consultez choisir une option de SQL Server Cloud : [Azure SQL Database ou SQL Server sur des machines virtuelles Azure](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas).
+Pour en savoir plus sur les différences entre les deux, consultez [choisir l’option de déploiement appropriée dans Azure SQL](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas).
 
 ## <a name="faq"></a>Questions fréquentes (FAQ)
 

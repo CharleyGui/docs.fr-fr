@@ -1,18 +1,18 @@
 ---
-title: Comment lire les données d’objets à partir d’un fichier XML (C)
+title: Comment lire des données d’objet à partir d’un fichier XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 6ad60d96-a4d9-48e6-a8b0-d7f6f803cafa
-ms.openlocfilehash: 18428cbe2f2d3b9434a77ee4d063ceabbba6bcb8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e2365d1260d3f6e239f294b2af3399c2fb659575
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167816"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241875"
 ---
-# <a name="how-to-read-object-data-from-an-xml-file-c"></a>Comment lire les données d’objets à partir d’un fichier XML (C)
+# <a name="how-to-read-object-data-from-an-xml-file-c"></a>Comment lire des données d’objet à partir d’un fichier XML (C#)
 Cet exemple lit des données d’objet écrites précédemment dans un fichier XML en utilisant la classe <xref:System.Xml.Serialization.XmlSerializer>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 public class Book  
@@ -43,7 +43,7 @@ public void ReadXML()
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
-Remplacez le nom du fichier « c:\temp\SerializationOverview.xml » par le nom du fichier qui contient les données sérialisées. Pour plus d’informations sur la sérialisation des données, voir [Comment écrire des données d’objets à un fichier XML (C)](./how-to-write-object-data-to-an-xml-file.md).
+Remplacez le nom du fichier « c:\temp\SerializationOverview.xml » par le nom du fichier qui contient les données sérialisées. Pour plus d’informations sur la sérialisation des données, consultez [Comment écrire des données d’objet dans un fichier XML (C#)](./how-to-write-object-data-to-an-xml-file.md).
   
  La classe doit disposer d’un constructeur public sans paramètres.  
   
@@ -58,12 +58,12 @@ Remplacez le nom du fichier « c:\temp\SerializationOverview.xml » par le nom
   
 - Le fichier n'existe pas (<xref:System.IO.IOException>).  
   
-## <a name="net-framework-security"></a>Sécurité du .NET Framework  
+## <a name="net-security"></a>Sécurité .NET  
  Vérifiez toujours les entrées et ne désérialisez jamais les données provenant d’une source non fiable. L’objet recréé s’exécute sur un ordinateur local avec les autorisations du code qui l’a désérialisé. Vérifiez toutes les entrées avant d'utiliser les données dans votre application.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.IO.StreamWriter>
-- [Comment écrire des données d’objet à un fichier XML (C)](./how-to-write-object-data-to-an-xml-file.md)
+- [Comment écrire des données d’objet dans un fichier XML (C#)](./how-to-write-object-data-to-an-xml-file.md)
 - [Sérialisation (C#)](./index.md)
-- [Guide de programmation C#](../../index.md)
+- [Guide de programmation C#](../../index.md)

@@ -9,26 +9,26 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: de40369a661c347a2125075e820420af4eb71cac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: df69d895dee51f1bad1fb6164fcb18996ee3eef4
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75337258"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241654"
 ---
 # <a name="c-programming-guide"></a>Guide de programmation C#
 
-Cette section fournit des informations détaillées sur les fonctionnalités et fonctions clés du langage C# accessibles par .NET Framework.  
+Cette section fournit des informations détaillées sur les fonctionnalités clés du langage C# et les fonctionnalités accessibles à C# via .NET.  
   
- La majeure partie de cette section suppose que vous connaissez déjà en partie C# et les concepts de programmation généraux. Si vous êtes un débutant complet avec la programmation ou avec C, vous pouvez visiter [l’Introduction à C Tutoriels](../tutorials/intro-to-csharp/index.md) ou [.NET In-Browser Tutorial](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1), où aucune connaissance préalable de la programmation est nécessaire.  
+ La majeure partie de cette section suppose que vous connaissez déjà en partie C# et les concepts de programmation généraux. Si vous êtes débutant en programmation ou en C#, vous souhaiterez peut-être consulter la [Présentation des didacticiels C#](../tutorials/intro-to-csharp/index.md) ou du [didacticiel .net dans le navigateur](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1), où aucune connaissance préalable de la programmation n’est requise.  
   
- Pour plus d’informations sur des mots clés, opérateurs et directives de préprocesseur en particulier, consultez la page [Informations de référence sur C#](../language-reference/index.md). Pour plus d’informations sur la spécification du langage C#, consultez la page [Spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction).  
+ Pour plus d’informations sur les mots clés, les opérateurs et les directives de préprocesseur spécifiques, consultez [référence C#](../language-reference/index.md). Pour plus d’informations sur la spécification du langage C#, consultez la page [Spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction).  
   
 ## <a name="program-sections"></a>Sections du programme
 
-[À l'intérieur d'un programme C#](./inside-a-program/index.md)  
+[À l’intérieur d’un programme C#](./inside-a-program/index.md)  
   
-[Main() et arguments de ligne de commande](./main-and-command-args/index.md)  
+[Main () et arguments de ligne de commande](./main-and-command-args/index.md)  
 
 ## <a name="language-sections"></a>Sections du langage
 
@@ -44,7 +44,7 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
 
  [Tableaux](./arrays/index.md)  
   
- [Cordes](./strings/index.md)  
+ [Chaînes](./strings/index.md)  
   
  [Propriétés](./classes-and-structs/properties.md)  
   
@@ -54,7 +54,7 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
  [Génériques](./generics/index.md)  
   
- [Itérateurs](./concepts/iterators.md)
+ [Iterators](./concepts/iterators.md)
   
  [Expressions de requête LINQ](../linq/index.md)  
   
@@ -64,7 +64,7 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
  [Pointeurs et code unsafe](./unsafe-code-pointers/index.md)  
   
- [Commentaires sur la documentation XML](./xmldoc/index.md)  
+ [Commentaires de documentation XML](./xmldoc/index.md)  
   
 ## <a name="platform-sections"></a>Sections de la plateforme
 
@@ -74,7 +74,7 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
  [Attributs](./concepts/attributes/index.md)  
   
- [Collections](./concepts/collections.md)  
+ [Regroupements](./concepts/collections.md)  
   
  [Exceptions et gestion des exceptions](./exceptions/index.md)  
   
@@ -86,4 +86,4 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../language-reference/index.md)
+- [Référence C#](../language-reference/index.md)

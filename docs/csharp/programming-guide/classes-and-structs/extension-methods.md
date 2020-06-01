@@ -6,18 +6,18 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: fc816123134995b753beda0a6f281133d6ddd691
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 5db2797870b6c2e1998f17f1d8e4df8aa3f95c9e
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506816"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241407"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Méthodes d’extension (Guide de programmation C#)
 
 Les méthodes d'extension vous permettent d'« ajouter » des méthodes à des types existants sans créer un type dérivé, ni recompiler ou modifier le type d'origine. Les méthodes d’extension sont des méthodes statiques, mais elles sont appelées comme s’il s’agissait de méthodes d’instance sur le type étendu. Pour le code client écrit en C#, F # et Visual Basic, il n’y a aucune différence apparente entre appeler une méthode d’extension et les méthodes définies dans un type.
 
-Les méthodes d’extension les plus courantes sont les opérateurs de requête standard LINQ qui ajoutent des <xref:System.Collections.IEnumerable?displayProperty=nameWithType> fonctionnalités <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> de requête aux types et existants. Pour utiliser les opérateurs de requête standard, introduisez-les d'abord dans la portée avec une directive `using System.Linq`. Puis, tout type qui implémente <xref:System.Collections.Generic.IEnumerable%601> semble avoir des méthodes d'instance telles que <xref:System.Linq.Enumerable.GroupBy%2A>, <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.Average%2A>, etc. Vous pouvez consulter ces méthodes supplémentaires dans la saisie semi-automatique des instructions IntelliSense quand vous tapez un « point » après une instance d’un type <xref:System.Collections.Generic.IEnumerable%601> tel que <xref:System.Collections.Generic.List%601> ou <xref:System.Array>.
+Les méthodes d’extension les plus courantes sont les opérateurs de requête standard LINQ qui ajoutent des fonctionnalités de requête aux <xref:System.Collections.IEnumerable?displayProperty=nameWithType> types et existants <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> . Pour utiliser les opérateurs de requête standard, introduisez-les d'abord dans la portée avec une directive `using System.Linq`. Puis, tout type qui implémente <xref:System.Collections.Generic.IEnumerable%601> semble avoir des méthodes d'instance telles que <xref:System.Linq.Enumerable.GroupBy%2A>, <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.Average%2A>, etc. Vous pouvez consulter ces méthodes supplémentaires dans la saisie semi-automatique des instructions IntelliSense quand vous tapez un « point » après une instance d’un type <xref:System.Collections.Generic.IEnumerable%601> tel que <xref:System.Collections.Generic.List%601> ou <xref:System.Array>.
 
 ### <a name="orderby-example"></a>Exemple OrderBy
 
@@ -54,7 +54,7 @@ En général, vous appellerez probablement les méthodes d’extension beaucoup 
 using System.Linq;
 ```
 
-(Vous devrez peut-être également ajouter une référence à System. Core. dll.) Vous remarquerez que les opérateurs de requête standard apparaissent désormais dans IntelliSense comme des méthodes supplémentaires <xref:System.Collections.Generic.IEnumerable%601> disponibles pour la plupart des types.
+(Vous devrez peut-être également ajouter une référence à System. Core. dll.) Vous remarquerez que les opérateurs de requête standard apparaissent désormais dans IntelliSense comme des méthodes supplémentaires disponibles pour la plupart des <xref:System.Collections.Generic.IEnumerable%601> types.
 
 ## <a name="binding-extension-methods-at-compile-time"></a>Liaison de méthodes d’extension à la compilation
 
@@ -74,7 +74,7 @@ Lorsque le compilateur ne trouve pas de méthode d’instance avec une signature
 
 ### <a name="collection-functionality"></a>Fonctionnalités des collections
 
-Dans le passé, il était courant de créer des « classes de collection » implémentant l' <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> interface pour un type donné et des fonctionnalités contenues ayant agi sur des collections de ce type. Bien qu’il n’y ait rien de mal à créer ce type d’objet de collection, la même fonctionnalité peut être obtenue à <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>l’aide d’une extension sur le. Les extensions présentent l’avantage de permettre l’appel de la fonctionnalité à partir de n’importe <xref:System.Array?displayProperty=nameWithType> quelle <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> collection telle que <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> ou qui implémente sur ce type. Vous trouverez un exemple d’utilisation d’un tableau de Int32 [plus haut dans cet article](#orderby-example).
+Dans le passé, il était courant de créer des « classes de collection » implémentant l' <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> interface pour un type donné et des fonctionnalités contenues ayant agi sur des collections de ce type. Bien qu’il n’y ait rien de mal à créer ce type d’objet de collection, la même fonctionnalité peut être obtenue à l’aide d’une extension sur le <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> . Les extensions présentent l’avantage de permettre l’appel de la fonctionnalité à partir de n’importe quelle collection telle que <xref:System.Array?displayProperty=nameWithType> ou <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> qui implémente <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> sur ce type. Vous trouverez un exemple d’utilisation d’un tableau de Int32 [plus haut dans cet article](#orderby-example).
 
 ### <a name="layer-specific-functionality"></a>Fonctionnalités spécifiques aux couches
 
@@ -97,9 +97,9 @@ static class DomainEntityExtensions
 
 ### <a name="extending-predefined-types"></a>Extension des types prédéfinis
 
-Plutôt que de créer des objets quand des fonctionnalités réutilisables doivent être créées, il est souvent possible d’étendre un type existant, tel qu’un .NET Framework ou un type CLR. Par exemple, si nous n’utilisons pas les méthodes d’extension, nous pouvons `Engine` créer `Query` une classe ou pour effectuer le travail d’exécution d’une requête sur un SQL Server qui peut être appelé à partir de plusieurs emplacements dans notre code. Toutefois, nous pouvons étendre la <xref:System.Data.SqlClient.SqlConnection?displayProperty=nameWithType> classe à l’aide de méthodes d’extension pour effectuer cette requête depuis n’importe quel endroit où nous disposons d’une connexion à un SQL Server. D’autres exemples peuvent être d’ajouter des fonctionnalités communes <xref:System.String?displayProperty=nameWithType> à la classe, d’étendre les fonctionnalités de <xref:System.IO.File?displayProperty=nameWithType> traitement <xref:System.IO.Stream?displayProperty=nameWithType> des données des <xref:System.Exception?displayProperty=nameWithType> objets et, ainsi que des objets pour des fonctionnalités de gestion des erreurs spécifiques. Ces types de cas d’usage sont limités uniquement par votre imagination et bon sens.
+Plutôt que de créer des objets quand des fonctionnalités réutilisables doivent être créées, nous pouvons souvent étendre un type existant, tel qu’un type .NET ou CLR. Par exemple, si nous n’utilisons pas les méthodes d’extension, nous pouvons créer une `Engine` `Query` classe ou pour effectuer le travail d’exécution d’une requête sur un SQL Server qui peut être appelé à partir de plusieurs emplacements dans notre code. Toutefois, nous pouvons étendre la <xref:System.Data.SqlClient.SqlConnection?displayProperty=nameWithType> classe à l’aide de méthodes d’extension pour effectuer cette requête depuis n’importe quel endroit où nous disposons d’une connexion à un SQL Server. D’autres exemples peuvent être d’ajouter des fonctionnalités communes à la <xref:System.String?displayProperty=nameWithType> classe, d’étendre les fonctionnalités de traitement des données des <xref:System.IO.File?displayProperty=nameWithType> <xref:System.IO.Stream?displayProperty=nameWithType> objets et, ainsi que des <xref:System.Exception?displayProperty=nameWithType> objets pour des fonctionnalités de gestion des erreurs spécifiques. Ces types de cas d’usage sont limités uniquement par votre imagination et bon sens.
 
-L’extension de types prédéfinis peut être `struct` difficile avec les types, car ils sont passés par valeur aux méthodes. Cela signifie que toute modification apportée au struct est apportée à une copie du struct. Ces modifications ne sont pas visibles une fois que la méthode d’extension se termine. À compter de C# 7,2, vous pouvez ajouter `ref` le modificateur au premier argument d’une méthode d’extension. L’ajout `ref` du modificateur signifie que le premier argument est passé par référence. Cela vous permet d’écrire des méthodes d’extension qui modifient l’état du struct qui est étendu.
+L’extension de types prédéfinis peut être difficile avec les `struct` types, car ils sont passés par valeur aux méthodes. Cela signifie que toute modification apportée au struct est apportée à une copie du struct. Ces modifications ne sont pas visibles une fois que la méthode d’extension se termine. À compter de C# 7,2, vous pouvez ajouter le `ref` modificateur au premier argument d’une méthode d’extension. L’ajout du `ref` modificateur signifie que le premier argument est passé par référence. Cela vous permet d’écrire des méthodes d’extension qui modifient l’état du struct qui est étendu.
 
 ## <a name="general-guidelines"></a>Instructions générales
 
@@ -112,16 +112,16 @@ Lors de l’utilisation d’une méthode d’extension pour étendre un type don
 Si vous implémentez des méthodes d’extension pour un type donné, prenez en compte les points suivants :
 
 - Une méthode d'extension ne sera jamais appelée si elle a la même signature qu'une méthode définie dans le type.
-- Les méthodes d'extension sont mises en portée au niveau de l'espace de noms. Par exemple, si vous avez plusieurs classes statiques qui contiennent des méthodes d’extension dans un `Extensions`espace de noms unique nommé, elles seront toutes mises `using Extensions;` en portée par la directive.
+- Les méthodes d'extension sont mises en portée au niveau de l'espace de noms. Par exemple, si vous avez plusieurs classes statiques qui contiennent des méthodes d’extension dans un espace de noms unique nommé `Extensions` , elles seront toutes mises en portée par la `using Extensions;` directive.
 
-Pour une bibliothèque de classes que vous avez implémentée, vous ne devez pas utiliser de méthodes d'extension pour éviter d'incrémenter le numéro de version d'un assembly. Si vous souhaitez ajouter une fonctionnalité importante à une bibliothèque dont le code source vous appartient, vous devez suivre les directives .NET Framework standard relatives à la gestion de version des assemblys. Pour plus d’informations, consultez [Versioning des assemblys](../../../standard/assembly/versioning.md).
+Pour une bibliothèque de classes que vous avez implémentée, vous ne devez pas utiliser de méthodes d'extension pour éviter d'incrémenter le numéro de version d'un assembly. Si vous souhaitez ajouter des fonctionnalités importantes à une bibliothèque pour laquelle vous êtes propriétaire du code source, suivez les instructions .NET pour le contrôle de version des assemblys. Pour plus d’informations, consultez [Versioning des assemblys](../../../standard/assembly/versioning.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
 - [Exemples de programmation parallèle (il s’agit de nombreux exemples de méthodes d’extension)](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)
 - [Expressions lambda](../statements-expressions-operators/lambda-expressions.md)
-- [Vue d’ensemble des opérateurs de requête standard](../concepts/linq/standard-query-operators-overview.md)
+- [Vue d'ensemble des opérateurs de requête standard](../concepts/linq/standard-query-operators-overview.md)
 - [Règles de conversion pour les paramètres Instance et leur impact](https://docs.microsoft.com/archive/blogs/sreekarc/conversion-rules-for-instance-parameters-and-their-impact)
 - [Interopérabilité des méthodes d’extension entre les langages](https://docs.microsoft.com/archive/blogs/sreekarc/extension-methods-interoperability-between-languages)
 - [Méthodes d’extension et délégués curryfiés](https://docs.microsoft.com/archive/blogs/sreekarc/extension-methods-and-curried-delegates)

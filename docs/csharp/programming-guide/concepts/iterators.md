@@ -2,12 +2,12 @@
 title: Effectuer une itération dans des collections (C#)
 ms.date: 08/14/2018
 ms.assetid: c93f6dd4-e72a-4a06-be1c-a98b3255b734
-ms.openlocfilehash: aceedd11466c75cedad3c67224c3a5595b4cabfa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 15b77fd11c0ff606119425ec7aae8e7127315e82
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77626268"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84240692"
 ---
 # <a name="iterators-c"></a>Itérateurs (C#)
 
@@ -324,11 +324,11 @@ public class Stack<T> : IEnumerable<T>
 
 Un itérateur peut être une méthode ou un accesseur `get`. Un itérateur ne peut pas être présent dans un événement, un constructeur d’instance, un constructeur statique ou un finaliseur statique.
 
-Une conversion implicite doit exister du `yield return` type d’expression `IEnumerable<T>` dans la déclaration à l’argument de type pour le retourné par l’itérateur.
+Une conversion implicite doit exister du type d’expression dans l' `yield return` instruction à l’argument de type pour le `IEnumerable<T>` retourné par l’itérateur.
 
 En C#, une méthode d’itérateur ne peut avoir aucun paramètre `in`, `ref` ou `out`.
 
-Dans C, `yield` n’est pas un mot réservé et n’a une signification particulière que lorsqu’il est utilisé avant un `return` ou `break` un mot clé.
+En C#, `yield` n’est pas un mot réservé et a une signification spéciale uniquement lorsqu’il est utilisé avant un `return` `break` mot clé ou.
 
 ## <a name="technical-implementation"></a>Implémentation technique
 
@@ -350,7 +350,7 @@ Les itérateurs vous permettent de conserver la simplicité d’une boucle `fore
 
 - Modifier la séquence de la liste après la première itération de la boucle `foreach`.
 
-- Éviter de charger entièrement une grande liste avant la première itération d’une boucle `foreach`. Une extraction paginée pour charger un lot de lignes d’une table est un exemple. Un autre exemple est la méthode <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> , qui implémente les itérateurs dans le .NET Framework.
+- Éviter de charger entièrement une grande liste avant la première itération d’une boucle `foreach`. Une extraction paginée pour charger un lot de lignes d’une table est un exemple. Un autre exemple est la <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> méthode, qui implémente les itérateurs dans .net.
 
 - Encapsuler la création de la liste dans l’itérateur. Dans la méthode d’itérateur, vous pouvez créer la liste et générer ensuite chaque résultat dans une boucle.
 
@@ -359,6 +359,6 @@ Les itérateurs vous permettent de conserver la simplicité d’une boucle `fore
 - <xref:System.Collections.Generic>
 - <xref:System.Collections.Generic.IEnumerable%601>
 - [foreach, in](../../language-reference/keywords/foreach-in.md)
-- [Rendement](../../language-reference/keywords/yield.md)
+- [yield](../../language-reference/keywords/yield.md)
 - [Utiliser foreach avec des tableaux](../arrays/using-foreach-with-arrays.md)
 - [Génériques](../generics/index.md)
