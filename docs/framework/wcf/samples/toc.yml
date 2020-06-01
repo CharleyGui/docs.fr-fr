@@ -24,7 +24,7 @@
     - name: Basic
       href: basic.md
       items:
-        - name: Commencer
+        - name: Prise en main
           href: getting-started-sample.md
         - name: AJAX
           href: ajax.md
@@ -39,9 +39,9 @@
               href: ajax-service-using-http-post.md
             - name: AJAX Service Without Configuration
               href: ajax-service-without-configuration.md
-            - name: AJAX Service Using Complex Types
+            - name: Service AJAX utilisant des types complexes
               href: ajax-service-using-complex-types-sample.md
-            - name: AJAX Service with JSON and XML
+            - name: Service AJAX avec JSON et XML
               href: ajax-service-with-json-and-xml-sample.md
         - name: Liaison
           href: binding.md
@@ -202,7 +202,7 @@
                   href: one-way.md
                 - name: Session
                   href: session.md
-                - name: Flux de données
+                - name: Flux
                   href: stream.md
                 - name: Erreurs XmlSerializer
                   href: xmlserializer-faults.md
@@ -215,13 +215,13 @@
         - name: 'découverte,'
           href: discovery-samples.md
           items:
-            - name: Announcements
+            - name: Annonces
               href: announcements-sample.md
             - name: Basic
               href: basic-sample.md
             - name: Configuration
               href: configuration-sample.md
-            - name: Discovery with Scopes
+            - name: Découverte avec étendues
               href: discovery-with-scopes-sample.md
             - name: Custom Find Criteria
               href: custom-find-criteria.md
@@ -260,7 +260,7 @@
         - name: Sécurité
           href: security-in-wcf.md
           items:
-            - name: Agilité de chiffrement dans sécurité WCF
+            - name: Agilité de chiffrement dans la sécurité WCF
               href: cryptographic-agility-in-wcf-security.md
         - name: Services
           href: services.md
@@ -297,7 +297,7 @@
             - name: comportements
               href: behaviors.md
               items:
-                - name: Concurrency
+                - name: Concurrence
                   href: concurrency.md
                 - name: Default Service Behavior
                   href: default-service-behavior.md
@@ -354,9 +354,9 @@
         - name: Syndication
           href: syndication.md
           items:
-            - name: Stand-Alone Diagnostics Feed
+            - name: Flux de diagnostics autonome
               href: stand-alone-diagnostics-feed-sample.md
-            - name: Loosely-Typed Extensions
+            - name: Extensions faiblement typées
               href: loosely-typed-extensions-sample.md
         - name: Web
           href: web.md
@@ -369,9 +369,9 @@
               href: aspnet-caching-integration.md
             - name: UriTemplate
               href: uritemplate-sample.md
-            - name: UriTemplate Table
+            - name: Table UriTemplate
               href: uritemplate-table-sample.md
-            - name: UriTemplate Table Dispatcher
+            - name: Répartiteur de table UriTemplate
               href: uritemplate-table-dispatcher-sample.md
     - name: Extensibilité
       href: extensibility.md
@@ -401,7 +401,7 @@
           items:
             - name: Durable Instance Context
               href: durable-instance-context.md
-            - name: Custom Lifetime
+            - name: Durée de vie personnalisée
               href: custom-lifetime.md
             - name: Instancing Initialization
               href: instancing-initialization.md
@@ -417,9 +417,9 @@
         - name: Extensibilité de l'encodeur de message
           href: message-encoder-extensibility.md
           items:
-            - name: 'Encodeur de message personnalisé : Encodeur de texte personnalisé'
+            - name: "Encodeur de message personnalisé\_: Encodeur de texte personnalisé"
               href: custom-message-encoder-custom-text-encoder.md
-            - name: 'Custom Message Encoder: Compression Encoder'
+            - name: "Encodeur de message personnalisé\_: Encodeur de compression"
               href: custom-message-encoder-compression-encoder.md
         - name: Extensibilité des métadonnées
           href: metadata-extensibility.md
@@ -454,22 +454,22 @@
         - name: Exemples d’extensibilité de la syndication
           href: syndication-extensibility-samples.md
           items:
-            - name: Strongly-Typed Extensions
+            - name: Extensions fortement typées
               href: strongly-typed-extensions-sample.md
             - name: Feed Formatter (JSON)
               href: feed-formatter-json.md
-            - name: Streaming Feeds
+            - name: Flux de streaming
               href: streaming-feeds-sample.md
         - name: Extensibilité du transport
           href: transport-extensibility.md
           items:
             - name: UDP Activation
               href: udp-activation.md
-            - name: 'Transport: Custom Transactions over UDP'
+            - name: "Transport\_: Transactions personnalisées sur UDP"
               href: transport-custom-transactions-over-udp-sample.md
-            - name: 'Transport: UDP'
+            - name: "Transport\_: UDP"
               href: transport-udp.md
-            - name: 'Transport: WSE 3.0 TCP Interoperability'
+            - name: "Transport\_: Interopérabilité TCP WSE 3.0"
               href: transport-wse-3-0-tcp-interoperability.md
         - name: Operation Formatter and Operation Selector
           href: operation-formatter-and-operation-selector.md
@@ -501,11 +501,11 @@
           href: discovery-security-sample.md
         - name: 'Federation, exemple'
           href: federation-sample.md
-        - name: Weakly-typed JSON Serialization (AJAX)
+        - name: Sérialisation JSON faiblement typée (AJAX)
           href: weakly-typed-json-serialization-sample.md
         - name: Trusted Facade Service
           href: trusted-facade-service.md
-        - name: "Design Patterns\_: List-Based Publish-Subscribe"
+        - name: "Modèles de conception\_: Publication/Abonnement par liste"
           href: design-patterns-list-based-publish-subscribe.md
     - name: Exemples d'outils
       href: tool-samples.md
