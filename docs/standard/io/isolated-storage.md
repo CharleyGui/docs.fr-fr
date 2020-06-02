@@ -18,18 +18,18 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: ed784bafda2aed829f2e97d7e7e8b2716c48c7ba
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f98af970c8827623298fb43cd0653bdaafb20dd3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75706580"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84278880"
 ---
 # <a name="isolated-storage"></a>Stockage isolé
 <a name="top"></a> Pour les applications de bureau, le stockage isolé est un mécanisme de stockage de données qui offre une isolation et une sécurité en définissant des méthodes standardisées pour associer du code à des données enregistrées. La standardisation offre également d'autres avantages. Les administrateurs peuvent utiliser des outils conçus pour manipuler un stockage isolé afin de configurer l'espace de stockage du fichier, de définir des stratégies de sécurité et de supprimer des données inutilisées. Grâce au stockage isolé, votre code ne nécessite plus de chemins d'accès uniques pour spécifier des emplacements sécurisés dans le système de fichiers. En outre, les données sont protégées des autres applications qui possèdent uniquement un accès au stockage isolé. Les informations codées en dur concernant l'emplacement de la zone de stockage d'une application ne sont pas nécessaires.
 
 > [!IMPORTANT]
-> Le stockage isolé n’est pas disponible pour les applications Windows 8.x Store. À la place, utilisez les classes de données d’application des espaces de noms `Windows.Storage` inclus dans l’API Windows Runtime pour stocker des données locales et des fichiers. Pour plus d’informations, consultez [Données d’applications](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) dans le Centre de développement Windows.
+> Le stockage isolé n’est pas disponible pour les applications du Windows 8. x Store. À la place, utilisez les classes de données d’application des espaces de noms `Windows.Storage` inclus dans l’API Windows Runtime pour stocker des données locales et des fichiers. Pour plus d’informations, consultez [Données d’applications](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) dans le Centre de développement Windows.
 
 Cette rubrique contient les sections suivantes :
 
@@ -47,7 +47,7 @@ Cette rubrique contient les sections suivantes :
 
 - [Scénarios de stockage isolé](#scenarios_for_isolated_storage)
 
-- [Sujets connexes](#related_topics)
+- [Rubriques connexes](#related_topics)
 
 - [Référence](#reference)
 
@@ -113,10 +113,10 @@ Il est parfois utile de vérifier une modification apportée au stockage isolé 
 
 |Système d’exploitation|Emplacement dans le système de fichiers|
 |----------------------|-----------------------------|
-|Windows 2000, Windows XP, Windows Server 2003 (mise à niveau de Windows NT 4.0)|Magasins itinérants =<br /><br /> \<SYSTEMROOT>\Profiles\\<user\>\Application Data<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMROOT>\Profiles\\<user\>\Local Settings\Application Data|
-|Windows 2000 - Nouvelle installation (et mises à niveau de Windows 98 et Windows NT 3.51)|Magasins itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Application Data<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Local Settings\Application Data|
-|Windows XP, Windows Server 2003 - Nouvelle installation (et mises à niveau de Windows 2000 et Windows 98)|Magasins itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Application Data<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Local Settings\Application Data|
-|Windows 8, Windows 7, Windows Server 2008, Windows Vista|Magasins itinérants =<br /><br /> \<SYSTEMDRIVE>\Users\\<user\>\AppData\Roaming<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMDRIVE>\Users\\<user\>\AppData\Local|
+|Windows 2000, Windows XP, Windows Server 2003 (mise à niveau de Windows NT 4.0)|Magasins itinérants =<br /><br /> \<SYSTEMROOT>\Profiles \\<utilisateur \> \Application Data<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMROOT>\Profiles \\<utilisateur \> \Local Settings\Application Data|
+|Windows 2000 - Nouvelle installation (et mises à niveau de Windows 98 et Windows NT 3.51)|Magasins itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings \\<utilisateur \> \Application Data<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings \\<utilisateur \> \Local Settings\Application Data|
+|Windows XP, Windows Server 2003 - Nouvelle installation (et mises à niveau de Windows 2000 et Windows 98)|Magasins itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings \\<utilisateur \> \Application Data<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings \\<utilisateur \> \Local Settings\Application Data|
+|Windows 8, Windows 7, Windows Server 2008, Windows Vista|Magasins itinérants =<br /><br /> \<SYSTEMDRIVE>\Utilisateurs \\<utilisateur \> \AppData\Roaming<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMDRIVE>\Utilisateurs \\<utilisateur \> \AppData\Local|
 
 <a name="isolated_storage_tasks"></a>
 
@@ -164,20 +164,20 @@ De nombreuses applications utilisent une base de données pour stocker et isoler
 
 |Intitulé|Description|
 |-----------|-----------------|
-|[Types d'isolation](../../../docs/standard/io/types-of-isolation.md)|Décrit les divers types d'isolation.|
-|[Obtention de magasins](../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)|Donne un exemple d'utilisation de la classe <xref:System.IO.IsolatedStorage.IsolatedStorageFile> pour obtenir un magasin isolé par utilisateur et par assembly.|
-|[Énumération de magasins](../../../docs/standard/io/how-to-enumerate-stores-for-isolated-storage.md)|Indique comment utiliser la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType> pour calculer la taille de tout le stockage isolé de l'utilisateur.|
-|[Suppression de magasins](../../../docs/standard/io/how-to-delete-stores-in-isolated-storage.md)|Indique comment utiliser la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A?displayProperty=nameWithType> de deux façons différentes pour supprimer des magasins isolés.|
-|[Comment : anticiper des conditions d'espace insuffisant avec le stockage isolé](../../../docs/standard/io/how-to-anticipate-out-of-space-conditions-with-isolated-storage.md)|Illustre comment mesurer l'espace restant dans un magasin isolé.|
-|[Comment : créer des fichiers et des répertoires dans un stockage isolé](../../../docs/standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|Propose plusieurs exemples pour créer des fichiers et des répertoires dans un magasin isolé.|
-|[Comment : rechercher des fichiers et des répertoires existants dans un stockage isolé](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|Illustre comment lire la structure de répertoire et les fichiers dans le stockage isolé.|
-|[Lecture et écriture dans des fichiers](../../../docs/standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|Fournit un exemple d'écriture d'une chaîne dans un fichier de stockage isolé et de sa lecture ultérieure.|
-|[Comment : supprimer des fichiers et des répertoires dans un stockage isolé](../../../docs/standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|Indique comment supprimer des fichiers et des répertoires d'un stockage isolé|
-|[Fichier et stream I/O](../../../docs/standard/io/index.md)|Explique comment accéder aux flux de données et de fichiers de façon synchrone et asynchrone.|
+|[Types d'isolation](types-of-isolation.md)|Décrit les divers types d'isolation.|
+|[Procédure : obtenir des magasins pour le stockage isolé](how-to-obtain-stores-for-isolated-storage.md)|Donne un exemple d'utilisation de la classe <xref:System.IO.IsolatedStorage.IsolatedStorageFile> pour obtenir un magasin isolé par utilisateur et par assembly.|
+|[Procédure : énumérer des magasins pour le stockage isolé](how-to-enumerate-stores-for-isolated-storage.md)|Indique comment utiliser la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType> pour calculer la taille de tout le stockage isolé de l'utilisateur.|
+|[Procédure : supprimer des magasins dans le stockage isolé](how-to-delete-stores-in-isolated-storage.md)|Indique comment utiliser la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A?displayProperty=nameWithType> de deux façons différentes pour supprimer des magasins isolés.|
+|[Procédure : anticiper des conditions d’espace insuffisant avec le stockage isolé](how-to-anticipate-out-of-space-conditions-with-isolated-storage.md)|Illustre comment mesurer l'espace restant dans un magasin isolé.|
+|[Procédure : créer des fichiers et des répertoires dans un stockage isolé](how-to-create-files-and-directories-in-isolated-storage.md)|Propose plusieurs exemples pour créer des fichiers et des répertoires dans un magasin isolé.|
+|[Procédure : rechercher des fichiers et des répertoires existants dans un stockage isolé](how-to-find-existing-files-and-directories-in-isolated-storage.md)|Illustre comment lire la structure de répertoire et les fichiers dans le stockage isolé.|
+|[Procédure : lire et écrire des fichiers dans un stockage isolé](how-to-read-and-write-to-files-in-isolated-storage.md)|Fournit un exemple d'écriture d'une chaîne dans un fichier de stockage isolé et de sa lecture ultérieure.|
+|[Procédure : supprimer des fichiers et des répertoires dans un stockage isolé](how-to-delete-files-and-directories-in-isolated-storage.md)|Indique comment supprimer des fichiers et des répertoires d'un stockage isolé|
+|[E/s de fichier et de flux](index.md)|Explique comment accéder aux flux de données et de fichiers de façon synchrone et asynchrone.|
 
 <a name="reference"></a>
 
-## <a name="reference"></a>Informations de référence
+## <a name="reference"></a>Référence
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=nameWithType>
 

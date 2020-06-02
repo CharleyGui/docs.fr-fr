@@ -3,12 +3,12 @@ title: XSLT et la sécurité
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: fea695be-617c-4977-9567-140e820436fc
-ms.openlocfilehash: e6e490c0f637aace57dacc88ef49cc9be87532cd
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 81db764016607ebe6facfc530dbb2bac8e6b8cfe
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709684"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282506"
 ---
 # <a name="xslt-security-considerations"></a>XSLT et la sécurité
 Le langage XSLT possède une panoplie de fonctionnalités offrant puissance et flexibilité. Il comprend de nombreuses fonctionnalités qui, tout en étant utiles, pourraient aussi être exploitées par des sources extérieures. Pour utiliser XSLT en toute sécurité, vous devez comprendre les types de risques pour la sécurité que pose l'utilisation de XSLT et les stratégies de base que vous pouvez employer pour minimiser ces risques.  
@@ -26,7 +26,7 @@ Le langage XSLT possède une panoplie de fonctionnalités offrant puissance et f
 ### <a name="style-sheet-scripts"></a>Scripts de feuille de style  
  Des scripts peuvent être intégrés dans une feuille de style à l’aide de l’élément d’extension `msxsl:script`. La prise en charge des scripts est une fonction facultative de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Elle est désactivée par défaut. Les scripts peuvent être activés en définissant la propriété <xref:System.Xml.Xsl.XsltSettings.EnableScript%2A?displayProperty=nameWithType> sur `true` et en transmettant l'objet <xref:System.Xml.Xsl.XsltSettings> à la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>.  
   
-#### <a name="guidelines"></a>Consignes  
+#### <a name="guidelines"></a>Recommandations  
  N'activez les scripts que lorsque la source de la feuille de style est fiable. Si vous ne pouvez pas vérifier la source de la feuille de style ou si celle-ci ne provient pas d'une source fiable, transmettez l'argument `null` dans les réglages XSLT.  
   
 ## <a name="external-resources"></a>Ressources externes  
@@ -41,7 +41,7 @@ Le langage XSLT possède une panoplie de fonctionnalités offrant puissance et f
   
  Les méthodes <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> et <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> comprennent des surcharges qui prennent un objet <xref:System.Xml.XmlResolver> comme l’un de leurs arguments. Si aucun <xref:System.Xml.XmlResolver> n'est spécifié, un <xref:System.Xml.XmlUrlResolver> par défaut sans informations d'identification est utilisé.  
   
-#### <a name="guidelines"></a>Consignes  
+#### <a name="guidelines"></a>Recommandations  
  N'activez la fonction `document()` que lorsque la source de la feuille de style est fiable.  
   
  La liste suivante décrit les cas dans lesquels vous pouvez préférer spécifier un objet <xref:System.Xml.XmlResolver> :  
@@ -56,6 +56,6 @@ Le langage XSLT possède une panoplie de fonctionnalités offrant puissance et f
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Transformations XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)
-- [Résolution de ressources externes lors du traitement XSLT](../../../../docs/standard/data/xml/resolving-external-resources-during-xslt-processing.md)
-- [Sécurité d’accès du code](../../../../docs/framework/misc/code-access-security.md)
+- [Transformations XSLT](xslt-transformations.md)
+- [Résolution de ressources externes lors du traitement XSLT](resolving-external-resources-during-xslt-processing.md)
+- [Sécurité d’accès du code](../../../framework/misc/code-access-security.md)

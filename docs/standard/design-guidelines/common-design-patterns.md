@@ -6,18 +6,18 @@ helpviewer_keywords:
 - design patterns in class libraries
 - class library design guidelines [.NET Framework], design patterns
 ms.assetid: f7bd1361-4ab2-4132-972d-a044b8f197e1
-ms.openlocfilehash: 2c51b1c9bc970d6ff143fa5986eade4a8b69f25a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 9b9525a7597f7df6c9a554b51160a99f0e06232c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709502"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290965"
 ---
 # <a name="common-design-patterns"></a>Modèles de design courants
 Il existe de nombreux ouvrages sur les modèles de logiciels, les langages de modèle et les anti-modèles qui traitent le sujet très large des modèles. Ainsi, ce chapitre fournit des instructions et des discussions relatives à un ensemble très limité de modèles utilisés fréquemment dans la conception des API .NET Framework.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Propriétés de dépendance](../../../docs/standard/design-guidelines/dependency-properties.md)  
+ [Propriétés de dépendance](dependency-properties.md)  
  [Dispose, modèle](../garbage-collection/implementing-dispose.md)  
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
@@ -25,4 +25,4 @@ Il existe de nombreux ouvrages sur les modèles de logiciels, les langages de mo
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
+- [Directives de conception d’infrastructure](index.md)

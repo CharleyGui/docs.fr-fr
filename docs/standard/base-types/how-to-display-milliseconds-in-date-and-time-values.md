@@ -1,5 +1,5 @@
 ---
-title: "Comment : afficher les millisecondes dans les valeurs de date et d'heure"
+title: 'Procédure : afficher les millisecondes dans les valeurs de date et d’heure'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - dates [.NET Framework], milliseconds
 - milliseconds [.NET Framework]
 ms.assetid: ae1a0610-90b9-4877-8eb6-4e30bc5e00cf
-ms.openlocfilehash: 36d99753503d9ba4b1bde4143c86ba184674e53e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4c63e7e67d388b000954f3a53281f95b0f2522b9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74960394"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290498"
 ---
-# <a name="how-to-display-milliseconds-in-date-and-time-values"></a>Comment : afficher les millisecondes dans les valeurs de date et d'heure
+# <a name="how-to-display-milliseconds-in-date-and-time-values"></a>Procédure : afficher les millisecondes dans les valeurs de date et d’heure
 Les méthodes de mise en forme de date et d’heure par défaut, telles que <xref:System.DateTime.ToString?displayProperty=nameWithType>, incluent les heures, les minutes et les secondes d’une valeur d’heure, mais excluent son composant « millisecondes ». Cette rubrique montre comment inclure le composant « millisecondes » d’une date et d’une heure dans des chaînes de date et d’heure mises en forme.  
   
 ### <a name="to-display-the-millisecond-component-of-a-datetime-value"></a>Pour afficher le composant « millisecondes » d’une valeur DateTime  
@@ -28,7 +28,7 @@ Les méthodes de mise en forme de date et d’heure par défaut, telles que <xre
   
 2. Pour extraire la représentation sous forme de chaîne du composant « millisecondes » d’une heure, appelez la méthode <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> ou <xref:System.DateTimeOffset.ToString%2A> de la valeur de date et d’heure, puis transmettez le modèle de format personnalisé `fff` ou `FFF` seul ou avec d’autres spécificateurs de format personnalisé comme paramètre de `format`.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple affiche le composant « milliseconde » d’une valeur <xref:System.DateTime> et d’une valeur <xref:System.DateTimeOffset> sur la console, à la fois seul et inclus dans une chaîne de date et d’heure plus longue.  
   
  [!code-csharp[Formatting.HowTo.Millisecond#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.Millisecond/cs/Millisecond.cs#1)]
@@ -47,9 +47,9 @@ Les méthodes de mise en forme de date et d’heure par défaut, telles que <xre
  [!code-vb[Formatting.HowTo.Millisecond#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.Millisecond/vb/Millisecond.vb#3)]  
   
 > [!NOTE]
-> Il est possible d’afficher de très petites unités fractionnaires d’une seconde, telles que les dix millièmes de seconde ou les cent millièmes de seconde. Toutefois, ces valeurs peuvent ne pas être significatives. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur Windows NT 3.5 et plus tard, et les systèmes d’exploitation Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.  
+> Il est possible d’afficher de très petites unités fractionnaires d’une seconde, telles que les dix millièmes de seconde ou les cent millièmes de seconde. Toutefois, ces valeurs peuvent ne pas être significatives. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur Windows NT 3,5 et versions ultérieures, ainsi que sur les systèmes d’exploitation Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Globalization.DateTimeFormatInfo>
-- [Chaînes personnalisées de format de date et d’heure](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)

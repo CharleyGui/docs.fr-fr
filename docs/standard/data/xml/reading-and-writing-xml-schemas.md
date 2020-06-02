@@ -7,12 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: b5757c4a-ea59-467e-ac62-be2bfe24eb77
-ms.openlocfilehash: 889c5f85a2ea3fc08dadefda5509de0fcfab76ec
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: bf1078d52f5e9056da6b28acc8dd2fc257eb3636
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710412"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291251"
 ---
 # <a name="reading-and-writing-xml-schemas"></a>Lecture et écriture de schémas XML
 L’API Modèle Objet du schéma (SOM) peut permettre de lire et écrire des schémas de langage XSD (XML Schema Definition) dans des fichiers ou d’autres sources et de générer un cache de schéma XML à l’aide des classes de l’espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType> correspondant aux structures définies dans la recommandation du W3C (World Wide Web Consortium) sur les schémas XML.  
@@ -20,7 +20,7 @@ L’API Modèle Objet du schéma (SOM) peut permettre de lire et écrire des sch
 ## <a name="reading-and-writing-xml-schemas"></a>Lecture et écriture de schémas XML  
  La classe <xref:System.Xml.Schema.XmlSchema> fournit les méthodes <xref:System.Xml.Schema.XmlSchema.Read%2A> et <xref:System.Xml.Schema.XmlSchema.Write%2A> pour lire et écrire des schémas XML. La méthode <xref:System.Xml.Schema.XmlSchema.Read%2A> retourne un objet <xref:System.Xml.Schema.XmlSchema> représentant le schéma XML et prend un objet <xref:System.Xml.Schema.ValidationEventHandler> facultatif comme paramètre pour traiter les avertissements et erreurs de validation de schéma rencontrées lors de la lecture d'un schéma XML.  
   
- La méthode <xref:System.Xml.Schema.XmlSchema.Write%2A> écrit des schémas XML dans des objets <xref:System.IO.Stream>, <xref:System.IO.TextWriter> et <xref:System.Xml.XmlWriter> et peut prendre un <xref:System.Xml.XmlNamespaceManager> facultatif comme paramètre. Un objet <xref:System.Xml.XmlNamespaceManager> permet de traiter les espaces de noms rencontrés dans un schéma XML. Pour plus d’informations sur la classe <xref:System.Xml.XmlNamespaceManager>, consultez [Gestion d’espaces de noms dans un document XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md).  
+ La méthode <xref:System.Xml.Schema.XmlSchema.Write%2A> écrit des schémas XML dans des objets <xref:System.IO.Stream>, <xref:System.IO.TextWriter> et <xref:System.Xml.XmlWriter> et peut prendre un <xref:System.Xml.XmlNamespaceManager> facultatif comme paramètre. Un objet <xref:System.Xml.XmlNamespaceManager> permet de traiter les espaces de noms rencontrés dans un schéma XML. Pour plus d’informations sur la classe <xref:System.Xml.XmlNamespaceManager>, consultez [Gestion d’espaces de noms dans un document XML](managing-namespaces-in-an-xml-document.md).  
   
  L'exemple de code suivant illustre la lecture et l'écriture de schémas XML à partir de et vers un fichier. Il prend le fichier `example.xsd`, le lit dans un objet <xref:System.Xml.Schema.XmlSchema> à l'aide de la méthode `static`<xref:System.Xml.Schema.XmlSchema.Read%2A>, puis l'écrit dans la console et dans un nouveau fichier `new.xsd`. Il fournit également un objet <xref:System.Xml.Schema.ValidationEventHandler> comme paramètre à la méthode `static`<xref:System.Xml.Schema.XmlSchema.Read%2A> pour traiter les avertissements ou erreurs de validation de schéma rencontrés pendant la lecture du schéma XML. Si l'objet <xref:System.Xml.Schema.ValidationEventHandler> n'est pas spécifié (`null`), aucun avertissement ou aucune erreur n'est signalée.  
   
@@ -47,11 +47,11 @@ L’API Modèle Objet du schéma (SOM) peut permettre de lire et écrire des sch
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d'ensemble du Modèle Objet du schéma XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)
-- [Création de schémas XML](../../../../docs/standard/data/xml/building-xml-schemas.md)
-- [Traversée de schémas XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
-- [Modification de schémas XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)
-- [Inclusion ou importation de schémas XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)
-- [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
-- [Jeu d'informations de post-compilation de schéma](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)
-- [Gestion d'espaces de noms dans un document XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md)
+- [Vue d'ensemble du Modèle Objet du schéma XML](xml-schema-object-model-overview.md)
+- [Création de schémas XML](building-xml-schemas.md)
+- [Traversée de schémas XML](traversing-xml-schemas.md)
+- [Modification de schémas XML](editing-xml-schemas.md)
+- [Inclusion ou importation de schémas XML](including-or-importing-xml-schemas.md)
+- [XmlSchemaSet pour la compilation de schémas](xmlschemaset-for-schema-compilation.md)
+- [Jeu d'informations de post-compilation de schéma](post-schema-compilation-infoset.md)
+- [Gestion d'espaces de noms dans un document XML](managing-namespaces-in-an-xml-document.md)

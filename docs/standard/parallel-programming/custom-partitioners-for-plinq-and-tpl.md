@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, partitioners
 ms.assetid: 96153688-9a01-47c4-8430-909cee9a2887
-ms.openlocfilehash: 8caea6d8a97b8c0daf7c59718479ea2e12a52d78
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 50553aab30d5a1bc5880ae0fe39c34508e57d0e5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73141567"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276723"
 ---
 # <a name="custom-partitioners-for-plinq-and-tpl"></a>Partitionneurs personnalisés pour PLINQ et la bibliothèque parallèle de tâches (TPL)
 
@@ -23,7 +23,7 @@ Pour paralléliser une opération sur une source de données, l’une des étape
 
 Il existe de nombreuses façons de partitionner une source de données. Dans les approches les plus efficaces, plusieurs threads coopèrent pour traiter la séquence source d’origine, au lieu de séparer physiquement la source en plusieurs sous-séquences. Pour des tableaux et d’autres sources indexées telles que des collections <xref:System.Collections.IList> où la longueur est connue à l’avance, le *partitionnement par plage de valeurs* est le type de partitionnement le plus simple. Chaque thread reçoit des index de début et de fin uniques pour pouvoir traiter sa plage de la source, sans remplacer ni être remplacé par un autre thread. La seule surcharge impliquée dans le partitionnement par plage de valeurs est le travail initial consistant à créer les plages : aucune synchronisation supplémentaire n’est requise par la suite. Par conséquent, cette méthode offre de bonnes performances tant que la charge de travail est répartie uniformément. L’inconvénient du partitionnement par plage de valeurs réside dans le fait que si un thread se termine plus tôt, il ne peut pas aider les autres threads à terminer leur travail.
 
-Pour les listes liées ou d’autres collections dont la longueur n’est pas connue, vous pouvez utiliser le *partitionnement par segments*. Dans le partitionnement par segments, chaque thread ou tâche d’une boucle parallèle ou d’une requête consomme un certain nombre d’éléments de la source dans un segment, les traite, puis revient pour extraire des éléments supplémentaires. Le partitionneur s’assure que tous les éléments sont distribués et qu’il n’y a pas de doublons. Un segment peut être de n’importe quelle taille. Par exemple, le partitionneur présenté dans la section [Guide pratique pour implémenter des partitions dynamiques](../../../docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md) crée des segments qui ne contiennent qu’un seul élément. Tant que les segments ne sont pas trop volumineux, ce type de partitionnement effectue, par nature, un équilibrage de charge car l’affectation des éléments aux threads n’est pas prédéfinie. Cependant, le partitionneur déclenche la surcharge de synchronisation chaque fois que le thread a besoin d’un autre segment. Le niveau de synchronisation effectué dans ce cas est inversement proportionnel à la taille des segments.
+Pour les listes liées ou d’autres collections dont la longueur n’est pas connue, vous pouvez utiliser le *partitionnement par segments*. Dans le partitionnement par segments, chaque thread ou tâche d’une boucle parallèle ou d’une requête consomme un certain nombre d’éléments de la source dans un segment, les traite, puis revient pour extraire des éléments supplémentaires. Le partitionneur s’assure que tous les éléments sont distribués et qu’il n’y a pas de doublons. Un segment peut être de n’importe quelle taille. Par exemple, le partitionneur présenté dans la section [Guide pratique pour implémenter des partitions dynamiques](how-to-implement-dynamic-partitions.md) crée des segments qui ne contiennent qu’un seul élément. Tant que les segments ne sont pas trop volumineux, ce type de partitionnement effectue, par nature, un équilibrage de charge car l’affectation des éléments aux threads n’est pas prédéfinie. Cependant, le partitionneur déclenche la surcharge de synchronisation chaque fois que le thread a besoin d’un autre segment. Le niveau de synchronisation effectué dans ce cas est inversement proportionnel à la taille des segments.
 
 En règle générale, le partitionnement par plage de valeurs n’est plus rapide que lorsque la durée d’exécution du délégué est faible à modérée, que la source comporte un grand nombre d’éléments, et que le travail total de chaque partition est à peu près équivalent. Le partitionnement par segments est donc généralement plus rapide dans la plupart des cas. Sur les sources comportant un petit nombre d’éléments ou avec des durées d’exécution plus longues pour le délégué, les performances du partitionnement par plage de valeurs et du partitionnement par segments sont équivalentes.
 
@@ -99,7 +99,7 @@ Le tableau suivant fournit des détails supplémentaires sur la façon dont les 
 
 Si vous envisagez d’utiliser le partitionneur dans une méthode <xref:System.Threading.Tasks.Parallel.ForEach%2A>, vous devez être en mesure de retourner un nombre dynamique de partitions. Cela signifie que le partitionneur peut fournir un énumérateur pour une nouvelle partition, à la demande et à tout moment pendant l’exécution de la boucle. En fait, chaque fois que la boucle ajoute une nouvelle tâche parallèle, elle demande une nouvelle partition pour cette tâche. Si vous avez besoin de pouvoir classer les données, effectuez une dérivation <xref:System.Collections.Concurrent.OrderablePartitioner%601?displayProperty=nameWithType> afin d’affecter un index unique à chaque élément de chaque partition.
 
-Pour plus d’informations et consulter un exemple, voir [Guide pratique pour implémenter des partitions dynamiques](../../../docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).
+Pour plus d’informations et consulter un exemple, voir [Guide pratique pour implémenter des partitions dynamiques](how-to-implement-dynamic-partitions.md).
 
 ### <a name="contract-for-partitioners"></a>Contrat pour les partitionneurs
 
@@ -127,6 +127,6 @@ Lorsque vous implémentez un partitionneur personnalisé, suivez ces instruction
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Programmation parallèle](../../../docs/standard/parallel-programming/index.md)
-- [Comment : implémenter des partitions dynamiques](../../../docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)
-- [Comment : implémenter un partitionneur pour un partitionnement statique](../../../docs/standard/parallel-programming/how-to-implement-a-partitioner-for-static-partitioning.md)
+- [Programmation parallèle](index.md)
+- [Procédure : implémenter des partitions dynamiques](how-to-implement-dynamic-partitions.md)
+- [Procédure : implémenter un partitionneur pour un partitionnement statique](how-to-implement-a-partitioner-for-static-partitioning.md)

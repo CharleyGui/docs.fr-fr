@@ -8,15 +8,15 @@ helpviewer_keywords:
 - abstract types [.NET Framework]
 - types [.NET Framework], abstract
 ms.assetid: 0a632bc7-9b03-44ee-8842-c82f88672a45
-ms.openlocfilehash: 6a4f511af72aad916d367153090504e2a8e11cb8
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: fd5b8fe10d0dcca5da3a2093f7be37f6d88b382a
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741811"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280612"
 ---
 # <a name="abstractions-abstract-types-and-interfaces"></a>Abstractions (Types et interfaces abstraits)
-Une abstraction est un type qui décrit un contrat, mais qui ne fournit pas une implémentation complète du contrat. Les abstractions sont généralement implémentées en tant que classes abstraites ou interfaces, et elles sont fournies avec un ensemble bien défini de documentation de référence décrivant la sémantique requise des types qui implémentent le contrat. Voici quelques-unes des abstractions les plus importantes du .NET Framework : <xref:System.IO.Stream>, <xref:System.Collections.Generic.IEnumerable%601>et <xref:System.Object>.
+Une abstraction est un type qui décrit un contrat, mais qui ne fournit pas une implémentation complète du contrat. Les abstractions sont généralement implémentées en tant que classes abstraites ou interfaces, et elles sont fournies avec un ensemble bien défini de documentation de référence décrivant la sémantique requise des types qui implémentent le contrat. Certaines des abstractions les plus importantes dans le .NET Framework incluent <xref:System.IO.Stream> , <xref:System.Collections.Generic.IEnumerable%601> et <xref:System.Object> .
 
  Vous pouvez étendre des frameworks en implémentant un type concret qui prend en charge le contrat d’une abstraction et à l’aide de ce type concret avec les API d’infrastructure consommant (fonctionnant sur) l’abstraction.
 
@@ -26,7 +26,7 @@ Une abstraction est un type qui décrit un contrat, mais qui ne fournit pas une 
 
  Toutefois, les abstractions offrent une extensibilité extrêmement puissante que les autres mécanismes d’extensibilité ne correspondent pas souvent. Ils sont au cœur de nombreux modèles architecturaux, tels que les plug-ins, l’inversion de contrôle (IoC), les pipelines, etc. Ils sont également extrêmement importants pour la testabilité des frameworks. De bonnes abstractions permettent de remplacer les dépendances lourdes dans le cadre des tests unitaires. En résumé, les abstractions sont responsables de la richesse recherchée des frameworks orientés objet modernes.
 
- ❌ ne fournissez pas d’abstractions, à moins qu’elles ne soient testées en développant plusieurs implémentations concrètes et API consommant les abstractions.
+ ❌NE fournissez pas d’abstractions à moins d’être testées en développant plusieurs implémentations concrètes et API consommant les abstractions.
 
  ✔️ choisir soigneusement entre une classe abstraite et une interface lors de la conception d’une abstraction.
 
@@ -38,5 +38,5 @@ Une abstraction est un type qui décrit un contrat, mais qui ne fournit pas une 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
-- [Conception en vue de l’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
+- [Directives de conception d’infrastructure](index.md)
+- [Conception en vue de l’extensibilité](designing-for-extensibility.md)

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fde6f43f-c594-486f-abcb-2211197fae20
-ms.openlocfilehash: a63452df16e452a90eff3977ac8726cc0a5ac439
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e65308f097e81d844cb04b1ebd5cbcdd8a3aadad
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710191"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291992"
 ---
 # <a name="script-blocks-using-msxslscript"></a>Blocs de scripts utilisant msxsl:script
 La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts incorporés en utilisant l'élément `msxsl:script`. Lorsque la feuille de style est chargée, toute fonction définie est compilée en langage MSIL (Microsoft Intermediate Language) par le CodeDOM (Code Document Object Model) et exécutée au cours de l’exécution. L' assembly généré à partir du bloc de script incorporé est distinct de l'assembly généré pour la feuille de style.  
@@ -92,7 +92,7 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
 #### <a name="namespaces"></a>Espaces de noms  
  Les espaces de noms suivants sont inclus par défaut :  
   
-- Système  
+- System  
   
 - System.Collection  
   
@@ -148,5 +148,5 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Transformations XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)
-- [Génération et compilation de code source dynamique](../../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)
+- [Transformations XSLT](xslt-transformations.md)
+- [Génération et compilation de code source dynamique](../../../framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - member design guidelines, properties
 - properties [.NET Framework], design guidelines
 ms.assetid: 127cbc0c-cbed-48fd-9c89-7c5d4f98f163
-ms.openlocfilehash: 8b6570b1b7c292729b78f2fe52f24f73319efe6c
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: c49b42ab369ace582c76d7f326da309415e8c45b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743658"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291940"
 ---
 # <a name="property-design"></a>Conception des propriétés
 Bien que les propriétés soient techniquement très similaires aux méthodes, elles sont très différentes en termes de scénarios d’utilisation. Elles doivent être considérées comme des champs intelligents. Ils ont la syntaxe d’appel des champs et la flexibilité des méthodes.
@@ -20,11 +20,11 @@ Bien que les propriétés soient techniquement très similaires aux méthodes, e
 
  Gardez à l’esprit que si le type de la propriété est un type référence mutable, la valeur de la propriété peut être modifiée même si la propriété est en extraction seule.
 
- ❌ ne fournissez pas de propriétés ou de propriétés définies uniquement avec la méthode setter dont l’accessibilité est plus étendue que l’accesseur Get.
+ ❌NE fournissez pas de propriétés ou de propriétés définies uniquement avec la méthode setter dont l’accessibilité est plus étendue que l’accesseur Get.
 
  Par exemple, n’utilisez pas de propriétés avec un accesseur Set public et un accesseur Get protégé.
 
- Si l’accesseur Get de la propriété ne peut pas être fourni, implémentez la fonctionnalité comme une méthode à la place. Envisagez de démarrer le nom de la méthode avec `Set` et suivez ce que vous auriez nommé la propriété. Par exemple, <xref:System.AppDomain> a une méthode appelée `SetCachePath` au lieu d’avoir une propriété définie uniquement appelée `CachePath`.
+ Si l’accesseur Get de la propriété ne peut pas être fourni, implémentez la fonctionnalité comme une méthode à la place. Envisagez de démarrer le nom de la méthode avec `Set` et de suivre le nom de la propriété. Par exemple, <xref:System.AppDomain> a une méthode appelée `SetCachePath` au lieu d’avoir une propriété définie uniquement appelée `CachePath` .
 
  ✔️ fournissez des valeurs par défaut sensibles pour toutes les propriétés, en veillant à ce que les valeurs par défaut n’entraînent pas de brèche de sécurité ou de code peu efficace.
 
@@ -34,7 +34,7 @@ Bien que les propriétés soient techniquement très similaires aux méthodes, e
 
  ✔️ conserver la valeur précédente si un accesseur Set de propriété lève une exception.
 
- ❌ éviter de lever des exceptions à partir d’accesseurs get de propriété.
+ ❌Évitez de lever des exceptions à partir des accesseurs get de propriété.
 
  Les accesseurs get de propriété doivent être des opérations simples et ne doivent pas avoir de conditions préalables. Si un accesseur Get peut lever une exception, il doit probablement être remanié pour être une méthode. Notez que cette règle ne s’applique pas aux indexeurs, où nous attendons des exceptions en raison de la validation des arguments.
 
@@ -47,40 +47,40 @@ Bien que les propriétés soient techniquement très similaires aux méthodes, e
 
  ✔️ envisagez de fournir des indexeurs sur des types représentant des collections d’éléments.
 
- ❌ Évitez d’utiliser des propriétés indexées avec plusieurs paramètres.
+ ❌Évitez d’utiliser des propriétés indexées avec plusieurs paramètres.
 
- Si la conception requiert plusieurs paramètres, reconsidérez si la propriété représente vraiment un accesseur à une collection logique. Si ce n’est pas le cas, utilisez plutôt des méthodes. Envisagez de démarrer le nom de la méthode avec `Get` ou `Set`.
+ Si la conception requiert plusieurs paramètres, reconsidérez si la propriété représente vraiment un accesseur à une collection logique. Si ce n’est pas le cas, utilisez plutôt des méthodes. Envisagez de démarrer le nom de la méthode avec `Get` ou `Set` .
 
- ❌ Évitez les indexeurs avec des types de paramètres autres que <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Int64?displayProperty=nameWithType>, <xref:System.String?displayProperty=nameWithType>, <xref:System.Object?displayProperty=nameWithType>ou une énumération.
+ ❌Évitez les indexeurs avec des types de paramètres autres que <xref:System.Int32?displayProperty=nameWithType> , <xref:System.Int64?displayProperty=nameWithType> ,, <xref:System.String?displayProperty=nameWithType> <xref:System.Object?displayProperty=nameWithType> ou une énumération.
 
- Si la conception requiert d’autres types de paramètres, réévaluez fortement si l’API représente vraiment un accesseur à une collection logique. Si ce n’est pas le cas, utilisez une méthode. Envisagez de démarrer le nom de la méthode avec `Get` ou `Set`.
+ Si la conception requiert d’autres types de paramètres, réévaluez fortement si l’API représente vraiment un accesseur à une collection logique. Si ce n’est pas le cas, utilisez une méthode. Envisagez de démarrer le nom de la méthode avec `Get` ou `Set` .
 
- ✔️ Utilisez le nom `Item` pour les propriétés indexées, sauf si un nom est évidemment mieux adapté (par exemple, consultez la propriété <xref:System.String.Chars%2A> sur `System.String`).
+ ✔️ Utilisez le nom `Item` pour les propriétés indexées, sauf si un nom est évidemment mieux adapté (par exemple, consultez la <xref:System.String.Chars%2A> propriété sur `System.String` ).
 
- Dans C#, les indexeurs sont par défaut un élément nommé. Le <xref:System.Runtime.CompilerServices.IndexerNameAttribute> peut être utilisé pour personnaliser ce nom.
+ En C#, les indexeurs sont par défaut un élément nommé. Le <xref:System.Runtime.CompilerServices.IndexerNameAttribute> peut être utilisé pour personnaliser ce nom.
 
- ❌ ne fournissent pas à la fois un indexeur et des méthodes sémantiquement équivalentes.
+ ❌NE fournissez pas à la fois un indexeur et des méthodes sémantiquement équivalentes.
 
- ❌ ne fournissez pas plusieurs familles d’indexeurs surchargés dans un même type.
+ ❌NE fournissez pas plusieurs familles d’indexeurs surchargés dans un même type.
 
- Cela est appliqué par le C# compilateur.
+ Cela est appliqué par le compilateur C#.
 
- ❌ n’utilisez pas les propriétés indexées qui ne sont pas des valeurs par défaut.
+ ❌N’utilisez pas de propriétés indexées qui ne sont pas des valeurs par défaut.
 
- Cela est appliqué par le C# compilateur.
+ Cela est appliqué par le compilateur C#.
 
 ### <a name="property-change-notification-events"></a>Événements de notification de modification de propriété
- Parfois, il est utile de fournir un événement pour notifier l’utilisateur des modifications apportées à une valeur de propriété. Par exemple, `System.Windows.Forms.Control` déclenche un événement `TextChanged` après la modification de la valeur de sa propriété `Text`.
+ Parfois, il est utile de fournir un événement pour notifier l’utilisateur des modifications apportées à une valeur de propriété. Par exemple, `System.Windows.Forms.Control` déclenche un `TextChanged` événement après la modification de la valeur de sa `Text` propriété.
 
  ✔️ envisagez de déclencher des événements de notification de modification lorsque des valeurs de propriété dans des API de haut niveau (généralement des composants de concepteur) sont modifiées.
 
  S’il existe un bon scénario pour qu’un utilisateur sache quand une propriété d’un objet change, l’objet doit déclencher un événement de notification de modification pour la propriété.
 
- Toutefois, il est peu probable qu’il soit nécessaire de déclencher de tels événements pour les API de bas niveau, telles que les types de base ou les collections. Par exemple, <xref:System.Collections.Generic.List%601> ne déclencherait pas de tels événements lorsqu’un nouvel élément est ajouté à la liste et que la propriété `Count` change.
+ Toutefois, il est peu probable qu’il soit nécessaire de déclencher de tels événements pour les API de bas niveau, telles que les types de base ou les collections. Par exemple, <xref:System.Collections.Generic.List%601> ne déclencherait pas ces événements lorsqu’un nouvel élément est ajouté à la liste et que la `Count` propriété est modifiée.
 
  ✔️ envisagez de déclencher des événements de notification de modification lorsque la valeur d’une propriété change via des forces externes.
 
- Si une valeur de propriété change via une force externe (d’une manière autre que en appelant des méthodes sur l’objet), les événements Raise indiquent au développeur que la valeur change et a changé. Le `Text` propriété d’un contrôle zone de texte en est un bon exemple. Lorsque l’utilisateur tape du texte dans un `TextBox`, la valeur de la propriété change automatiquement.
+ Si une valeur de propriété change via une force externe (d’une manière autre que en appelant des méthodes sur l’objet), les événements Raise indiquent au développeur que la valeur change et a changé. La `Text` propriété d’un contrôle Text Box en est un bon exemple. Lorsque l’utilisateur tape du texte dans un `TextBox` , la valeur de la propriété change automatiquement.
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 
@@ -88,5 +88,5 @@ Bien que les propriétés soient techniquement très similaires aux méthodes, e
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions de conception des membres](../../../docs/standard/design-guidelines/member.md)
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
+- [Recommandations en matière de conception de membres](member.md)
+- [Directives de conception d’infrastructure](index.md)

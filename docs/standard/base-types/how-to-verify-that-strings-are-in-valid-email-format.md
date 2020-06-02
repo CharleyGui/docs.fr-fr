@@ -18,18 +18,18 @@ helpviewer_keywords:
 - email [.NET Framework], validating
 - IsMatch method
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
-ms.openlocfilehash: c02fc215fa66951ae3333175191ab96a226a2afe
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 360ed985575358dd9603a55fc2d5d6c297621ec8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73197581"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290420"
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Guide pratique pour vérifier que des chaînes sont dans un format d’adresse e-mail valide
 
 L'exemple suivant utilise une expression régulière pour vérifier qu'une chaîne est dans un format d'adresse e-mail valide.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L'exemple définit une méthode `IsValidEmail` qui retourne la valeur `true` si la chaîne contient une adresse de messagerie valide et la valeur `false` dans le cas contraire, mais qui n'effectue aucune autre action.
 
@@ -50,35 +50,35 @@ Notez que la méthode `IsValidEmail` n'effectue pas d'authentification pour vali
 [!code-csharp[RegularExpressions.Examples.Email#7](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Email/cs/example4.cs#7)]
 [!code-vb[RegularExpressions.Examples.Email#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Email/vb/example4.vb#7)]
 
-Dans cet exemple, le ``^(?(")(".+?(?<!\\)"@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$`` modèle d’expression régulière est interprété comme indiqué dans la légende suivante. L’expression régulière est <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> compilée à l’aide du drapeau.
+Dans cet exemple, le modèle d’expression régulière ``^(?(")(".+?(?<!\\)"@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$`` est interprété comme indiqué dans la légende suivante. L’expression régulière est compilée à l’aide de l' <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> indicateur.
 
-Modèle `^`: Commencez le match au début de la chaîne.
+Pattern `^` : commencer la correspondance au début de la chaîne.
 
-Modèle `(?(")`: Déterminez si le premier personnage est une marque de citation. `(?(")` est le début d'une construction d'alternative.
+Modèle `(?(")` : Déterminez si le premier caractère est un guillemet. `(?(")` est le début d'une construction d'alternative.
 
-Modèle `(?(")(".+?(?<!\\)"@)`: Si le premier personnage est une marque de citation, assortissez une marque de citation de début suivie d’au moins une occurrence de n’importe quel caractère, suivie d’une marque de citation finale. Les guillemets fermants ne doivent pas être précédés d'une barre oblique inverse (\\). `(?<!` est le début d'une assertion de postanalyse négative de largeur nulle. La chaîne doit se terminer par un arobase (@).
+Pattern `(?(")(".+?(?<!\\)"@)` : si le premier caractère est un guillemet, mettre en correspondance un guillemet ouvrant suivi d’au moins une occurrence d’un caractère quelconque, suivi d’un guillemet fermant. Les guillemets fermants ne doivent pas être précédés d'une barre oblique inverse (\\). `(?<!` est le début d'une assertion de postanalyse négative de largeur nulle. La chaîne doit se terminer par un arobase (@).
 
-Modèle `|(([0-9a-z]`: Si le premier personnage n’est pas une marque de citation, faites correspondre n’importe quel personnage alphabétique d’un z ou de A à Z (la comparaison est insensible au cas), ou n’importe quel personnage numérique de 0 à 9.
+Pattern `|(([0-9a-z]` : si le premier caractère n’est pas un guillemet, correspond à n’importe quel caractère alphabétique de a à z ou de a à z (la comparaison ne respecte pas la casse) ou n’importe quel caractère numérique compris entre 0 et 9.
 
-Modèle `(\.(?!\.))`: Si le personnage suivant est une période, assortissez-la. Dans le cas contraire, effectue une préanalyse du caractère suivant et continue la recherche de correspondances. `(?!\.)` est une assertion de préanalyse négative de largeur nulle qui empêche deux points consécutifs de s'afficher dans la partie locale d'une adresse de messagerie.
+Modèle `(\.(?!\.))` : si le caractère suivant est un point, associez-le. Dans le cas contraire, effectue une préanalyse du caractère suivant et continue la recherche de correspondances. `(?!\.)` est une assertion de préanalyse négative de largeur nulle qui empêche deux points consécutifs de s'afficher dans la partie locale d'une adresse de messagerie.
 
-Modèle ``|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w]``: Si le personnage suivant n’est\*\`{}pas une période, faites correspondre n’importe quel personnage de mot ou l’un des caractères suivants : -&!
+Modèle ``|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w]`` : si le caractère suivant n’est pas un point, correspond à un caractère alphabétique ou à l’un des caractères suivants :- ! # $% & ' \* +/= ? ^ \` {} | ~
 
-Modèle ``((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*``: Assortissez le modèle d’alternance (une période suivie d’une non-période, ou l’un des nombreux caractères) à des temps nuls ou plus.
+Modèle ``((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*`` : correspond au modèle d’alternative (un point suivi d’un autre que le point, ou un nombre de caractères) zéro, une ou plusieurs fois.
 
-Modèle `@`: Match le caractère.
+Modèle `@` : correspond au caractère @.
 
-Modèle `(?<=[0-9a-z])`: Continuez le match si le personnage qui précède le personnage est A à Z, un z à travers, ou 0 à 9. Ce modèle définit une affirmation positive de lookbehind de largeur zéro.
+Modèle `(?<=[0-9a-z])` : continue la correspondance si le caractère qui précède le caractère @ est de a à z, de a à z ou de 0 à 9. Ce modèle définit une assertion de postanalyse positive de largeur nulle.
 
-Modèle `(?(\[)`: Vérifiez si le personnage qui suit est un support d’ouverture.
+Pattern `(?(\[)` : Vérifiez si le caractère qui suit @ est un crochet ouvrant.
 
-Modèle `(\[(\d{1,3}\.){3}\d{1,3}\])`: S’il s’agit d’un support d’ouverture, assortissez le support d’ouverture suivi d’une adresse IP (quatre séries d’un à trois chiffres, chaque ensemble séparé par une période) et d’un support de clôture.
+Modèle `(\[(\d{1,3}\.){3}\d{1,3}\])` : s’il s’agit d’un crochet ouvrant, établit une correspondance avec le crochet ouvrant suivi d’une adresse IP (quatre ensembles de un à trois chiffres, chaque ensemble étant séparé par un point) et d’un crochet fermant.
 
-Modèle `|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+`: Si le personnage qui suit n’est pas un support d’ouverture, associez un personnage alphanumérique à une valeur de A-Z, a-z, ou 0-9, suivi de zéro ou plus d’occurrences d’un trait d’union, suivies d’un caractère alphanumérique nul ou d’un caractère alphanumérique d’une valeur de A-Z, a-z ou 0-9, suivi d’une période. Ce modèle peut être répété une ou plusieurs fois et doit être suivi du nom de domaine de niveau supérieur.
+Modèle `|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+` : si le caractère qui suit @ n’est pas un crochet ouvrant, correspond à un caractère alphanumérique avec la valeur a-z, a-z ou 0-9, suivi de zéro occurrence, ou plus, d’un trait d’Union, suivi de zéro ou d’un caractère alphanumérique avec la valeur a-z, a-z ou 0-9, suivi d’un point. Ce modèle peut être répété une ou plusieurs fois et doit être suivi du nom de domaine de niveau supérieur.
 
-Modèle `[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))`: Le nom de domaine de haut niveau doit commencer et se terminer par un caractère alphanumérique (a-z, A-Z et 0-9). Il peut également comprendre entre zéro et 22 caractères ASCII (soit des caractères alphanumériques, soit des traits d'union).
+Modèle `[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))` : le nom de domaine de niveau supérieur doit commencer et se terminer par un caractère alphanumérique (a-z, a-z et 0-9). Il peut également comprendre entre zéro et 22 caractères ASCII (soit des caractères alphanumériques, soit des traits d'union).
 
-Modèle `$`: Fin du match à la fin de la chaîne.
+Pattern `$` : termine la correspondance à la fin de la chaîne.
 
 ## <a name="compile-the-code"></a>Compiler le code
 
@@ -93,4 +93,4 @@ Si elles sont utilisées dans une bibliothèque d'expressions régulières, vous
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Expressions régulières du .NET Framework](../../../docs/standard/base-types/regular-expressions.md)
+- [Expressions régulières du .NET Framework](regular-expressions.md)

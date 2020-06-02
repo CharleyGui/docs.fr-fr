@@ -2,14 +2,14 @@
 title: Dépendances et bibliothèques .NET
 description: Meilleures pratiques suggérées pour la gestion des dépendances NuGet dans les bibliothèques .NET.
 ms.date: 10/02/2018
-ms.openlocfilehash: 265e92e86d22c778f65476e7f1383d32e4964655
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 344d5dff564b64b9d70bbd61afb0b7bc057c8f21
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895708"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291368"
 ---
-# <a name="dependencies"></a>Dépendances
+# <a name="dependencies"></a>Les dépendances
 
 Le principal moyen d’ajouter des dépendances à une bibliothèque .NET est de référencer des packages NuGet. Les références de packages NuGet vous permettent de réutiliser rapidement des fonctionnalités déjà écrites et d’en tirer parti , mais elles sont une source courante de friction pour les développeurs .NET. La gestion correcte des dépendances est importante pour empêcher des modifications dans d’autres bibliothèques .NET d’arrêter votre bibliothèque .NET et vice versa !
 
@@ -24,7 +24,7 @@ Lors du build, NuGet analyse tous les packages dont dépend un projet, y compris
 La plupart des dépendances en losange sont facilement résolues ; toutefois, elles peuvent créer des problèmes dans certaines circonstances :
 
 1. **Les conflits de références de packages NuGet** empêchent la résolution d’une version pendant la restauration du package.
-2. **Des modifications importantes entre les versions** provoquent des bogues et des exceptions lors de l’exécution.
+2. **Les modifications avec rupture entre les versions** entraînent des bogues et des exceptions au moment de l’exécution.
 3. **Un nom fort est attribué à l’assembly de package**, la version d’assembly est modifiée et l’application exécutée sur .NET Framework. Des redirection des liaisons d'assembly sont requises.
 
 Il n’est pas possible de savoir quels packages seront utilisées en même temps que le vôtre. Un bon moyen de réduire la probabilité d’une dépendance en losange avec arrêt de votre bibliothèque consiste à limiter le nombre de packages dont vous dépendez.
@@ -97,5 +97,5 @@ Les packages à code source partagé ont certaines limitations. Ils ne peuvent �
 > Publier des packages à code source partagé sur un [flux local ou MyGet](./publish-nuget-package.md) pour les utiliser en interne au sein de votre projet.
 
 >[!div class="step-by-step"]
->[Précédent](nuget.md)
->[suivant](sourcelink.md)
+>[Précédent](nuget.md) 
+> [Suivant](sourcelink.md)

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: 8cef1fcf-6f9f-417c-b21f-3fd8bac75007
-ms.openlocfilehash: 89c486618729c334bf74f0a1f4f9dd1b3cee8b0e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4a08c8a72116ea509f559e412c5f270f3471bf1c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78158166"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276437"
 ---
 # <a name="task-based-asynchronous-pattern-tap"></a>Modèle asynchrone basé sur les tâches (TAP)
 Le modèle asynchrone basé sur des tâches (TAP) est basé sur les types <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> de l’espace de noms <xref:System.Threading.Tasks?displayProperty=nameWithType>, qui sont utilisés pour représenter les opérations asynchrones arbitraires. Le TAP est le modèle de conception asynchrone recommandé pour le nouveau développement.  
@@ -30,9 +30,9 @@ Le TAP utilise une méthode unique pour représenter le début et la fin d'une o
   
  Les paramètres d’une méthode TAP doivent correspondre à ceux de son équivalent synchrone, dans le même ordre.  Toutefois, les paramètres `out` et `ref` sont exempts de cette règle et doivent être évités entièrement. Les données qui auraient dû être retournées par un paramètre `out` ou `ref` doivent être retournées comme faisant partie du `TResult` retourné par <xref:System.Threading.Tasks.Task%601>, et doivent utiliser un tuple ou une structure de données personnalisée pour s’adapter à plusieurs valeurs. Il peut rester intéressant d’ajouter un paramètre <xref:System.Threading.CancellationToken> même si l’équivalent synchrone de la méthode TAP n’en offre pas.
 
- Les méthodes qui sont consacrées exclusivement à la création, la manipulation ou la combinaison de tâches (où l’intention asynchrone de la méthode est clairement indiquée dans le nom de la méthode ou dans le nom du type auquel la méthode appartient) n’ont pas besoin de suivre ce modèle d’affectation de noms. Ces types de méthodes sont souvent appelés *combinateurs*. Les exemples de combinateurs incluent <xref:System.Threading.Tasks.Task.WhenAll%2A> et <xref:System.Threading.Tasks.Task.WhenAny%2A>, et sont traités dans la section [Utilisation des combinateurs intégrés basés sur des tâches](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md#combinators) de l'article [Utilisation du modèle asynchrone basé sur les tâches](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md).  
+ Les méthodes qui sont consacrées exclusivement à la création, la manipulation ou la combinaison de tâches (où l’intention asynchrone de la méthode est clairement indiquée dans le nom de la méthode ou dans le nom du type auquel la méthode appartient) n’ont pas besoin de suivre ce modèle d’affectation de noms. Ces types de méthodes sont souvent appelés *combinateurs*. Les exemples de combinateurs incluent <xref:System.Threading.Tasks.Task.WhenAll%2A> et <xref:System.Threading.Tasks.Task.WhenAny%2A>, et sont traités dans la section [Utilisation des combinateurs intégrés basés sur des tâches](consuming-the-task-based-asynchronous-pattern.md#combinators) de l'article [Utilisation du modèle asynchrone basé sur les tâches](consuming-the-task-based-asynchronous-pattern.md).  
   
- Pour obtenir des exemples de la façon dont la syntaxe du TAP diffère de celle utilisée dans les modèles de programmation asynchrones hérités tels que le modèle de programmation asynchrone (APM) et le modèle asynchrone basé sur des événements (EAP), consultez [Modèles de programmation asynchrone](../../../docs/standard/asynchronous-programming-patterns/index.md).  
+ Pour obtenir des exemples de la façon dont la syntaxe du TAP diffère de celle utilisée dans les modèles de programmation asynchrones hérités tels que le modèle de programmation asynchrone (APM) et le modèle asynchrone basé sur des événements (EAP), consultez [Modèles de programmation asynchrone](index.md).  
   
 ## <a name="initiating-an-asynchronous-operation"></a>Lancer une opération asynchrone  
  Une méthode asynchrone basée sur le TAP peut effectuer une petite quantité de travail de façon synchrone, comme valider les arguments et initialiser l’opération asynchrone, avant de retourner la tâche résultante. Le travail synchrone doit être conservé au minimum afin que la méthode asynchrone puisse retourner rapidement. Les raisons d'un retour rapide sont les suivantes :  
@@ -92,7 +92,7 @@ Le TAP utilise une méthode unique pour représenter le début et la fin d'une o
   
  Si les implémentations du TAP fournissent des surcharges qui acceptent un paramètre `progress`, elles doivent permettre à l’argument d’être `null`, dans ce cas aucune progression ne sera signalée. Les implémentations du TAP doivent signaler la progression vers l’objet <xref:System.Progress%601> de façon synchrone, ce qui permet à la méthode asynchrone de fournir rapidement la progression, et permettre au consommateur de la progression de déterminer où et comment gérer les informations. Par exemple, l'instance de progression peut choisir de marshaler les rappels et de déclencher des événements dans un contexte de synchronisation capturé.  
   
-## <a name="iprogresst-implementations"></a>Implémentations IProgress\<T>  
+## <a name="iprogresst-implementations"></a>\<T>Implémentations de IProgress  
  .NET Framework 4.5 fournit une implémentation unique de <xref:System.IProgress%601> : <xref:System.Progress%601>. La classe <xref:System.Progress%601> est déclarée comme suit :  
   
 ```csharp  
@@ -191,7 +191,7 @@ Public MethodNameAsync(…, cancellationToken As CancellationToken,
   
 |Intitulé|Description|  
 |-----------|-----------------|  
-|[Modèles de programmation asynchrone](../../../docs/standard/asynchronous-programming-patterns/index.md)|Présente les trois modèles permettant d'effectuer des opérations asynchrones : le modèle asynchrone basé sur des tâches (TAP), le modèle de programmation asynchrone (APM) et le modèle asynchrone basé sur des événements (EAP).|  
-|[Implémentation du modèle asynchrone basé sur des tâches](../../../docs/standard/asynchronous-programming-patterns/implementing-the-task-based-asynchronous-pattern.md)|Décrit comment implémenter le modèle asynchrone basé sur des tâches (TAP) de trois façons : à l'aide des compilateurs C# et Visual Basic dans Visual Studio, manuellement, ou par une combinaison des méthodes du compilateur et des méthodes manuelles.|  
-|[Consuming the Task-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md)|Décrit comment utiliser des tâches et des rappels afin de terminer l’attente sans blocage.|  
-|[Interopérabilité avec d’autres types et modèles asynchrones](../../../docs/standard/asynchronous-programming-patterns/interop-with-other-asynchronous-patterns-and-types.md)|Décrit comment utiliser le modèle asynchrone basé sur des tâches (TAP) pour implémenter le modèle de programmation asynchrone (APM) et le modèle asynchrone basé sur des événements (EAP).|
+|[Modèles de programmation asynchrone](index.md)|Présente les trois modèles permettant d'effectuer des opérations asynchrones : le modèle asynchrone basé sur des tâches (TAP), le modèle de programmation asynchrone (APM) et le modèle asynchrone basé sur des événements (EAP).|  
+|[Implémentation du modèle asynchrone basé sur des tâches](implementing-the-task-based-asynchronous-pattern.md)|Décrit comment implémenter le modèle asynchrone basé sur des tâches (TAP) de trois façons : à l'aide des compilateurs C# et Visual Basic dans Visual Studio, manuellement, ou par une combinaison des méthodes du compilateur et des méthodes manuelles.|  
+|[Consuming the Task-based Asynchronous Pattern](consuming-the-task-based-asynchronous-pattern.md)|Décrit comment utiliser des tâches et des rappels afin de terminer l’attente sans blocage.|  
+|[Interopérabilité avec d’autres types et modèles asynchrones](interop-with-other-asynchronous-patterns-and-types.md)|Décrit comment utiliser le modèle asynchrone basé sur des tâches (TAP) pour implémenter le modèle de programmation asynchrone (APM) et le modèle asynchrone basé sur des événements (EAP).|

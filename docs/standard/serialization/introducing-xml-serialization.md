@@ -13,12 +13,12 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: 8c63200d-db63-4a03-a93d-21641623df62
-ms.openlocfilehash: 7534ad702039b37a85a24223576320aea8052e9e
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: d9b71b7530debde7708ee107c990541e2b97cd44
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421265"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277958"
 ---
 # <a name="xml-serialization"></a>sérialisation XML
 
@@ -33,7 +33,7 @@ La sérialisation correspond au processus de conversion d'un objet en un formula
 
  Les données de vos objets sont décrites à l’aide des constructions du langage de programmation, telles que les classes, les champs, les propriétés, les types primitifs, les tableaux et même du code XML incorporé sous forme d’objets **XmlElement** ou **XmlAttribute**. Vous pouvez créer vos propres classes, annotées avec des attributs ou utiliser l'outil XML Schema Definition pour générer des classes à partir d'un schéma XML existant.
 
- Si vous disposez d'un schéma XML, vous pouvez exécuter l'outil XML Schema Definition pour générer un ensemble de classes fortement typées sur le schéma et annotées avec des attributs. Lorsqu'une instance d'une telle classe est sérialisée, le code XML généré respecte le schéma XML. Lorsque vous disposez d'une telle classe, vous pouvez programmer à l'aide d'un modèle d'objet manipulé facilement tout en garantissant que le code XML généré se conforme au schéma XML. Vous pouvez également utiliser d’autres classes dans .NET Framework, telles que les classes **XmlReader** et **XmlWriter**, pour analyser et écrire un flux de données XML. Pour plus d’informations, consultez [Documents et données XML](../../../docs/standard/data/xml/index.md). Ces classes vous permettent d'analyser tout flux de données XML. À l’inverse, utilisez **XmlSerializer** si le flux de données XML est supposé se conformer à un schéma XML connu.
+ Si vous disposez d'un schéma XML, vous pouvez exécuter l'outil XML Schema Definition pour générer un ensemble de classes fortement typées sur le schéma et annotées avec des attributs. Lorsqu'une instance d'une telle classe est sérialisée, le code XML généré respecte le schéma XML. Lorsque vous disposez d'une telle classe, vous pouvez programmer à l'aide d'un modèle d'objet manipulé facilement tout en garantissant que le code XML généré se conforme au schéma XML. Vous pouvez également utiliser d’autres classes dans .NET Framework, telles que les classes **XmlReader** et **XmlWriter**, pour analyser et écrire un flux de données XML. Pour plus d’informations, consultez [Documents et données XML](../data/xml/index.md). Ces classes vous permettent d'analyser tout flux de données XML. À l’inverse, utilisez **XmlSerializer** si le flux de données XML est supposé se conformer à un schéma XML connu.
 
  Les attributs contrôlent le flux de données XML généré par la classe **XmlSerializer**, en vous permettant de définir l’espace de noms XML, le nom d’élément, le nom de l’attribut, etc. du flux de données XML. Pour plus d’informations sur ces attributs et sur la manière dont ils contrôlent la sérialisation XML, consultez [Contrôle de la sérialisation XML à l’aide d’attributs](controlling-xml-serialization-using-attributes.md). Pour obtenir une liste des attributs utilisés pour contrôler le code XML généré, consultez [Attributs qui contrôlent la sérialisation XML](attributes-that-control-xml-serialization.md).
 

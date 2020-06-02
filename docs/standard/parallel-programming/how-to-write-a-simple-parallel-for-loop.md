@@ -1,5 +1,5 @@
 ---
-title: 'Comment : écrire une boucle Parallel.For simple'
+title: 'Procédure : écrire une boucle Parallel.For simple'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,19 +10,19 @@ helpviewer_keywords:
 - for loop, parallel construction in .NET
 - parallel for loops, how to use
 ms.assetid: 9029ba7f-a9d1-4526-8c84-c88716dba5d4
-ms.openlocfilehash: 78f07a4f0118c6bce7a043f111988281ddd6add0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b18e110b86389dd5d28bbc370e207aaaf7571aaf
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139656"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290731"
 ---
-# <a name="how-to-write-a-simple-parallelfor-loop"></a>Comment : écrire une boucle Parallel.For simple
+# <a name="how-to-write-a-simple-parallelfor-loop"></a>Procédure : écrire une boucle Parallel.For simple
 
 Cette rubrique contient deux exemples qui illustrent la méthode <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>. Le premier utilise la surcharge de méthode <xref:System.Threading.Tasks.Parallel.For%28System.Int64%2CSystem.Int64%2CSystem.Action%7BSystem.Int64%7D%29?displayProperty=nameWithType> et le second utilise la surcharge <xref:System.Threading.Tasks.Parallel.For%28System.Int32%2CSystem.Int32%2CSystem.Action%7BSystem.Int32%7D%29?displayProperty=nameWithType>, les deux surcharges les plus simples de la méthode <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>. Vous pouvez utiliser ces deux surcharges de la méthode <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> quand vous n'avez pas besoin d'annuler la boucle, de sortir des itérations de boucle ou de maintenir un état de thread local.
 
 > [!NOTE]
-> Cette documentation utilise les expressions lambda pour définir les délégués de la bibliothèque parallèle de tâches. Si les expressions lambda en C# ou Visual Basic ne vous sont pas familières, consultez la page [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
+> Cette documentation utilise les expressions lambda pour définir les délégués de la bibliothèque parallèle de tâches. Si les expressions lambda en C# ou Visual Basic ne vous sont pas familières, consultez la page [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](lambda-expressions-in-plinq-and-tpl.md).
 
 Le premier exemple calcule la taille des fichiers dans un répertoire unique. Le deuxième calcule le produit de deux matrices.
 
@@ -44,7 +44,7 @@ Lors de la parallélisation du code, y compris des boucles, un objectif importan
 
 ## <a name="the-delegate"></a>Délégué
 
-Le troisième paramètre de cette surcharge de <xref:System.Threading.Tasks.Parallel.For%2A> est un délégué de type `Action<int>` en C# ou `Action(Of Integer)` en Visual Basic. Un délégué `Action`, qu'il possède zéro, un ou seize paramètres de type, retourne toujours void. En Visual Basic, le comportement d'une `Action` est défini avec un `Sub`. L’exemple utilise une expression lambda pour créer le délégué, mais vous pouvez le créer d’autres façons. Pour plus d’informations, consultez [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
+Le troisième paramètre de cette surcharge de <xref:System.Threading.Tasks.Parallel.For%2A> est un délégué de type `Action<int>` en C# ou `Action(Of Integer)` en Visual Basic. Un délégué `Action`, qu'il possède zéro, un ou seize paramètres de type, retourne toujours void. En Visual Basic, le comportement d'une `Action` est défini avec un `Sub`. L’exemple utilise une expression lambda pour créer le délégué, mais vous pouvez le créer d’autres façons. Pour plus d’informations, consultez [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](lambda-expressions-in-plinq-and-tpl.md).
 
 ## <a name="the-iteration-value"></a>Valeur d'itération
 
@@ -72,5 +72,5 @@ Copiez et collez ce code dans un projet Visual Studio.
 
 - <xref:System.Threading.Tasks.Parallel.For%2A>
 - <xref:System.Threading.Tasks.Parallel.ForEach%2A>
-- [Parallélisme de données](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
-- [Programmation parallèle](../../../docs/standard/parallel-programming/index.md)
+- [Parallélisme des données](data-parallelism-task-parallel-library.md)
+- [Programmation parallèle](index.md)
