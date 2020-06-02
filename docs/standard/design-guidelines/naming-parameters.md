@@ -6,12 +6,12 @@ helpviewer_keywords:
 - parameters, names
 - names [.NET Framework], parameters
 ms.assetid: ca3c956e-725a-441b-b4e3-eab5d472f41c
-ms.openlocfilehash: ebe2e2db4b109057bf576d4e18cfe511c657707e
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 0d5c5cd144fbae88439ee981fbdb6e30ff487005
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743830"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290160"
 ---
 # <a name="naming-parameters"></a>Attribution d'un nom à des paramètres
 Au-delà de la raison évidente de la lisibilité, il est important de suivre les instructions pour les noms de paramètres, car les paramètres sont affichés dans la documentation et dans le concepteur quand les outils de conception visuelle proposent IntelliSense et la fonctionnalité de navigation des classes.
@@ -29,7 +29,7 @@ Au-delà de la raison évidente de la lisibilité, il est important de suivre le
 
  ✔️ CONSIDÉRez les noms significatifs pour les paramètres de surcharge d’opérateur si cela ajoute une valeur significative.
 
- ❌ n’utilisez pas d’abréviations ou d’index numériques pour les noms de paramètre de surcharge d’opérateur.
+ ❌N’utilisez pas d’abréviations ou d’index numériques pour les noms de paramètre de surcharge d’opérateur.
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 
@@ -37,5 +37,5 @@ Au-delà de la raison évidente de la lisibilité, il est important de suivre le
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
-- [Directives de nommage](../../../docs/standard/design-guidelines/naming-guidelines.md)
+- [Directives de conception d’infrastructure](index.md)
+- [Instructions d’affectation de noms](naming-guidelines.md)

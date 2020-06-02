@@ -3,12 +3,12 @@ title: Vue d'ensemble du Modèle Objet du schéma XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 896a1e12-5655-42c6-8cdd-89c12862b34b
-ms.openlocfilehash: 3ebf0cd06ebea3092ef8aa42debe0afeac9be4f2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0358efdcc2e8b86f589eea312d791610da5238db
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129149"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290329"
 ---
 # <a name="xml-schema-object-model-overview"></a>Vue d'ensemble du Modèle Objet du schéma XML
 Le Modèle Objet du schéma (SOM) de Microsoft .NET Framework est une API riche permettant de créer, modifier et valider des schémas à l'aide d'un programme. Le SOM travaille sur des documents de schéma XML de la même manière que le DOM (Document Object Model) travaille sur des documents XML. Les documents de schéma XML sont des fichiers XML valides qui, une fois chargés dans le SOM, communiquent la signification de la structure et de la validité d'autres documents XML conformes au schéma.  
@@ -38,10 +38,10 @@ Le Modèle Objet du schéma (SOM) de Microsoft .NET Framework est une API riche 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Lecture et écriture de schémas XML](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)
-- [Création de schémas XML](../../../../docs/standard/data/xml/building-xml-schemas.md)
-- [Traversée de schémas XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
-- [Modification de schémas XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)
-- [Inclusion ou importation de schémas XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)
-- [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
-- [Jeu d'informations de post-compilation de schéma](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)
+- [Lecture et écriture de schémas XML](reading-and-writing-xml-schemas.md)
+- [Création de schémas XML](building-xml-schemas.md)
+- [Traversée de schémas XML](traversing-xml-schemas.md)
+- [Modification de schémas XML](editing-xml-schemas.md)
+- [Inclusion ou importation de schémas XML](including-or-importing-xml-schemas.md)
+- [XmlSchemaSet pour la compilation de schémas](xmlschemaset-for-schema-compilation.md)
+- [Jeu d'informations de post-compilation de schéma](post-schema-compilation-infoset.md)

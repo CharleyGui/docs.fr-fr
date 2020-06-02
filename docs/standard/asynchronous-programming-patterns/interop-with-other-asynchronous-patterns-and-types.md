@@ -12,15 +12,15 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: f120a5d9-933b-4d1d-acb6-f034a57c3749
-ms.openlocfilehash: 981c13c68eaf1eb0c19f95eb1b097935ea02a16d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fe5d8321a62b67a54dc09507e8fd86ee8d5cf74d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159752"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276554"
 ---
 # <a name="interop-with-other-asynchronous-patterns-and-types"></a>Interopérabilité avec d’autres types et modèles asynchrones
-.NET Framework 1.0 a introduit le modèle <xref:System.IAsyncResult> , également appelé le [Asynchronous Programming Model (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md)ou le modèle `Begin/End` .  .NET Framework 2.0 a ajouté le [Event-based Asynchronous Pattern (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).  À partir de .NET Framework 4, le [Task-based Asynchronous Pattern (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) remplace le modèle de programmation asychrone (APM, Asynchronous Programming Model) et le modèle asynchrone basé sur les évènements (EAP, Event-based Asynchronous Pattern), mais permet de créer facilement des routines de migration à partir de modèles antérieurs.  
+.NET Framework 1.0 a introduit le modèle <xref:System.IAsyncResult> , également appelé le [Asynchronous Programming Model (APM)](asynchronous-programming-model-apm.md)ou le modèle `Begin/End` .  .NET Framework 2.0 a ajouté le [Event-based Asynchronous Pattern (EAP)](event-based-asynchronous-pattern-eap.md).  À partir de .NET Framework 4, le [Task-based Asynchronous Pattern (TAP)](task-based-asynchronous-pattern-tap.md) remplace le modèle de programmation asychrone (APM, Asynchronous Programming Model) et le modèle asynchrone basé sur les évènements (EAP, Event-based Asynchronous Pattern), mais permet de créer facilement des routines de migration à partir de modèles antérieurs.  
   
  Dans cette rubrique :  
   
@@ -35,7 +35,7 @@ ms.locfileid: "78159752"
   
 <a name="ApmToTap"></a>
 ### <a name="from-apm-to-tap"></a>APM vers modèle asynchrone basé sur les tâches (TAP, Task-based Asynchronous Pattern)  
- Étant donné que le modèle [Asynchronous Programming Model (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) est très structuré, vous pouvez facilement créer un wrapper pour exposer une implémentation APM en tant qu’implémentation TAP. En effet, le .NET Framework, à compter de .NET Framework 4, inclut des routines d’assistance sous la forme de surcharges de méthode <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> pour fournir cette traduction.  
+ Étant donné que le modèle [Asynchronous Programming Model (APM)](asynchronous-programming-model-apm.md) est très structuré, vous pouvez facilement créer un wrapper pour exposer une implémentation APM en tant qu’implémentation TAP. En effet, le .NET Framework, à compter de .NET Framework 4, inclut des routines d’assistance sous la forme de surcharges de méthode <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> pour fournir cette traduction.  
   
  Imaginez la classe <xref:System.IO.Stream> et ses méthodes <xref:System.IO.Stream.BeginRead%2A> et <xref:System.IO.Stream.EndRead%2A> , qui représentent la contrepartie AMP de méthode <xref:System.IO.Stream.Read%2A> synchrone :  
   
@@ -82,7 +82,7 @@ ms.locfileid: "78159752"
   
 <a name="EAP"></a>
 ## <a name="tasks-and-the-event-based-asynchronous-pattern-eap"></a>Tâches et EAP  
- Envelopper une implémentation [Event-based Asynchronous Pattern (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) est plus complexe qu’envelopper un modèle APM, car le modèle EAP est plus variable et moins structuré qu’un modèle APM.  Par exemple, le code suivant enveloppe la méthode `DownloadStringAsync` .  `DownloadStringAsync` accepte un URI, déclenche l’événement `DownloadProgressChanged` lors du téléchargement afin de générer plusieurs statistiques sur la progression et déclenche l’événement `DownloadStringCompleted` lorsque l’événement précédent est terminé.  Le résultat final est une chaîne qui détient le contenu de la page au niveau de l’URI spécifié.  
+ Envelopper une implémentation [Event-based Asynchronous Pattern (EAP)](event-based-asynchronous-pattern-eap.md) est plus complexe qu’envelopper un modèle APM, car le modèle EAP est plus variable et moins structuré qu’un modèle APM.  Par exemple, le code suivant enveloppe la méthode `DownloadStringAsync` .  `DownloadStringAsync` accepte un URI, déclenche l’événement `DownloadProgressChanged` lors du téléchargement afin de générer plusieurs statistiques sur la progression et déclenche l’événement `DownloadStringCompleted` lorsque l’événement précédent est terminé.  Le résultat final est une chaîne qui détient le contenu de la page au niveau de l’URI spécifié.  
   
  [!code-csharp[Conceptual.AsyncInterop#11](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/EAP1.cs#11)]
  [!code-vb[Conceptual.AsyncInterop#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/EAP1.vb#11)]  
@@ -102,7 +102,7 @@ ms.locfileid: "78159752"
  [!code-csharp[Conceptual.AsyncInterop#13](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/Semaphore1.cs#13)]
  [!code-vb[Conceptual.AsyncInterop#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/Semaphore1.vb#13)]  
   
- Vous pouvez également créer un sémaphore asynchrone qui ne repose pas sur les handles d’attente, mais sur les tâches. Pour ce faire, vous pouvez utiliser des techniques telles que celles abordées dans [Consuming the Task-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md) pour la création de structures de données sur <xref:System.Threading.Tasks.Task>.  
+ Vous pouvez également créer un sémaphore asynchrone qui ne repose pas sur les handles d’attente, mais sur les tâches. Pour ce faire, vous pouvez utiliser des techniques telles que celles abordées dans [Consuming the Task-based Asynchronous Pattern](consuming-the-task-based-asynchronous-pattern.md) pour la création de structures de données sur <xref:System.Threading.Tasks.Task>.  
   
 <a name="TapToWH"></a>
 ### <a name="from-tap-to-wait-handles"></a>TAP vers handles d’attente  
@@ -113,6 +113,6 @@ ms.locfileid: "78159752"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle asynchrone basé sur les tâches (TAP, Task-based Asynchronous Pattern)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)
-- [Implémentation du modèle asynchrone basé sur des tâches](../../../docs/standard/asynchronous-programming-patterns/implementing-the-task-based-asynchronous-pattern.md)
-- [Consuming the Task-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md)
+- [Modèle asynchrone basé sur les tâches (TAP, Task-based Asynchronous Pattern)](task-based-asynchronous-pattern-tap.md)
+- [Implémentation du modèle asynchrone basé sur des tâches](implementing-the-task-based-asynchronous-pattern.md)
+- [Consuming the Task-based Asynchronous Pattern](consuming-the-task-based-asynchronous-pattern.md)

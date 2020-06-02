@@ -1,17 +1,18 @@
 ---
 title: Oracle et ADO.NET
+description: Découvrez les fonctionnalités et les comportements du Fournisseur de données .NET Framework pour Oracle, qui permet d’accéder à une base de données Oracle à l’aide de l’interface d’appel Oracle.
 titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8ee8e389-53cf-45cf-80bd-1df63ef34f2e
-ms.openlocfilehash: 5683f2b4ba57021ff6dda3a51baca016f886b605
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: 8757352a7444fad802ea88ba58e0fe643c86cbb8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980078"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286687"
 ---
 # <a name="oracle-and-adonet"></a>Oracle et ADO.NET
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "76980078"
   
  La .NET Framework Fournisseur de données pour Oracle permet d’accéder à une base de données Oracle à l’aide de l’interface OCI (Oracle Call Interface) fournie par le logiciel client Oracle. La fonctionnalité du fournisseur de données est conçue pour être similaire à celle des fournisseurs de données .NET Framework pour SQL Server, OLE DB et ODBC.  
   
- Pour utiliser le Fournisseur de données .NET Framework pour Oracle, une application doit référencer l’espace de noms <xref:System.Data.OracleClient> comme suit :  
+ Pour utiliser le Fournisseur de données .NET Framework pour Oracle, une application doit faire référence à l' <xref:System.Data.OracleClient> espace de noms comme suit :  
   
 ```vb  
 Imports System.Data.OracleClient  
@@ -38,7 +39,7 @@ csc /r:System.Data.OracleClient.dll
 ```  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Configuration système requise](system-requirements-for-the-dotnet-data-provider-for-oracle.md)  
+ [Configuration requise](system-requirements-for-the-dotnet-data-provider-for-oracle.md)  
  Décrit la configuration requise pour l’utilisation du Fournisseur de données .NET Framework pour Oracle et décrit un certain nombre de problèmes à prendre en compte lors de son utilisation.  
   
  [BFILE Oracle](oracle-bfiles.md)  
@@ -62,7 +63,7 @@ csc /r:System.Data.OracleClient.dll
  [Transactions distribuées Oracle](oracle-distributed-transactions.md)  
  Décrit la manière dont l’objet <xref:System.Data.OracleClient.OracleConnection> s’inscrit automatiquement dans une transaction distribuée existante s’il détermine qu’une transaction est active.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Sécurisation des applications ADO.NET](securing-ado-net-applications.md)  
  Décrit des pratiques de codage sécurisées dans ADO.NET.  
   
@@ -81,4 +82,4 @@ csc /r:System.Data.OracleClient.dll
 ## <a name="see-also"></a>Voir aussi
 
 - [ADO.NET](index.md)
-- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

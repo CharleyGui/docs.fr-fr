@@ -1,5 +1,5 @@
 ---
-title: "Comment : extraire un protocole et un numéro de port d'une URL"
+title: 'Procédure : extraire un protocole et un numéro de port d’une URL'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,17 +13,17 @@ helpviewer_keywords:
 - regular expressions [.NET Framework], examples
 - pattern-matching with regular expressions, examples
 ms.assetid: ab7f62b3-6d2c-4efb-8ac6-28600df5fd5c
-ms.openlocfilehash: f2704e3fb5ceb68609a475d52e11030177ad760b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 48f2bf5c0d9af0a3fc286561ba978f86d1f11ac8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73138720"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290485"
 ---
-# <a name="how-to-extract-a-protocol-and-port-number-from-a-url"></a>Comment : extraire un protocole et un numéro de port d'une URL
+# <a name="how-to-extract-a-protocol-and-port-number-from-a-url"></a>Procédure : extraire un protocole et un numéro de port d’une URL
 L’exemple suivant montre comment extraire un protocole et un numéro de port d’une URL.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple utilise la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> pour retourner le protocole, suivi d’un signe deux-points, lui-même suivi du numéro de port.  
   
  [!code-csharp[RegularExpressions.Examples.Protocol#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Protocol/cs/Example.cs#1)]
@@ -49,4 +49,4 @@ L’exemple suivant montre comment extraire un protocole et un numéro de port d
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Expressions régulières .NET](../../../docs/standard/base-types/regular-expressions.md)
+- [Expressions régulières .NET](regular-expressions.md)

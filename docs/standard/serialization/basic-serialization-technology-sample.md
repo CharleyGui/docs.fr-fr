@@ -3,12 +3,12 @@ title: Sérialisation de base, exemple de technologie
 description: Cet exemple illustre la capacité du CLR à sérialiser un graphique d’objets en mémoire dans un flux. Cet exemple peut utiliser SoapFormatter ou BinaryFormatter.
 ms.date: 03/30/2017
 ms.assetid: 9d824e16-08d1-4a36-bc7f-2388c1f75f34
-ms.openlocfilehash: fcbf790c3b3d48a0aeb27fd1ef6f75dcd7609ae0
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 3f2273e6afb3a72f9734444ffe92d30871fb762b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378439"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276567"
 ---
 # <a name="basic-serialization-technology-sample"></a>Sérialisation de base, exemple de technologie
 
@@ -43,7 +43,7 @@ Pour plus d'informations sur la sérialisation, consultez les commentaires inclu
   > [!NOTE]
   > Cet exemple génère une application console. Vous devez la lancer à l'aide de l'invite de commandes pour pouvoir afficher sa sortie.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 L'exemple d'application accepte des paramètres de ligne de commande indiquant le test à exécuter. Pour sérialiser une liste de 10 nœuds dans un fichier nommé **Test.xml** à l’aide du formateur SOAP, utilisez les paramètres **sx Test.xml 10**.
 
@@ -100,9 +100,9 @@ Les éléments de la liste suivante décrivent brièvement les classes et les te
 - <xref:System.Runtime.Serialization.IFormatter>
 - <xref:System.SerializableAttribute>
 - <xref:System.Xml.Serialization>
-- [Sérialisation de base](../../../docs/standard/serialization/basic-serialization.md)
-- [Sérialisation binaire](../../../docs/standard/serialization/binary-serialization.md)
-- [Contrôle de la sérialisation XML à l’aide d’attributs](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)
-- [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
-- [Sérialisation](../../../docs/standard/serialization/index.md)
-- [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [Sérialisation de base](basic-serialization.md)
+- [Sérialisation binaire](binary-serialization.md)
+- [Contrôle de la sérialisation XML à l’aide d’attributs](controlling-xml-serialization-using-attributes.md)
+- [Introduction à la sérialisation XML](introducing-xml-serialization.md)
+- [Sérialisation](index.md)
+- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)

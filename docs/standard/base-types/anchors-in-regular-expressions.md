@@ -16,17 +16,17 @@ helpviewer_keywords:
 - .NET Framework regular expressions, anchors
 - .NET Framework regular expressions, atomic zero-width assertions
 ms.assetid: 336391f6-2614-499b-8b1b-07a6837108a7
-ms.openlocfilehash: c4853a6854f5da1a3217c976a03ddbde3b528560
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e86bae8a687e89acba9a0b713630b43809f081d1
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159661"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290627"
 ---
 # <a name="anchors-in-regular-expressions"></a>Ancres dans les expressions régulières
 Les ancres, ou assertions atomiques de largeur nulle, spécifient une position dans la chaîne où une correspondance doit se produire. Quand vous utilisez une ancre dans votre expression de recherche, le moteur des expressions régulières n'avance pas dans la chaîne ou ne consomme pas de caractères ; il recherche uniquement une correspondance à la position spécifiée. Par exemple, `^` spécifie que la correspondance doit commencer au début d'une ligne ou d'une chaîne. Par conséquent, l'expression régulière `^http:` correspond uniquement à « http: » quand elle se produit au début d'une ligne. Le tableau suivant répertorie les ancres prises en charge par les expressions régulières dans .NET.  
   
-|Ancrage|Description|  
+|Ancre|Description|  
 |------------|-----------------|  
 |`^`|Par défaut, la correspondance doit se produire au début de la chaîne ; en mode multiligne, elle doit se produire au début de la ligne. Pour plus d'informations, consultez [Début de chaîne ou de ligne](#start-of-string-or-line-).|  
 |`$`|Par défaut, la correspondance doit se produire à la fin de la chaîne ou avant `\n` à la fin de la chaîne ; en mode multiligne, elle doit se produire à la fin de la ligne ou avant `\n` à la fin de la ligne. Pour plus d'informations, consultez [Fin de chaîne ou de ligne](#end-of-string-or-line-).|  
@@ -38,7 +38,7 @@ Les ancres, ou assertions atomiques de largeur nulle, spécifient une position d
 |`\B`|La correspondance ne doit pas se produire à la limite d'un mot. Pour plus d'informations, consultez [Limite n'appartenant pas à un mot](#non-word-boundary-b).|  
 
 ## <a name="start-of-string-or-line-"></a>Début de chaîne ou de ligne : ^  
- Par défaut, l’ancre `^` spécifie que le modèle suivant doit commencer à la première position de caractère de la chaîne. Si vous utilisez `^` avec l'option <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> (consultez [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md)), la correspondance doit se trouver au début de chaque ligne.  
+ Par défaut, l’ancre `^` spécifie que le modèle suivant doit commencer à la première position de caractère de la chaîne. Si vous utilisez `^` avec l'option <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> (consultez [Options des expressions régulières](regular-expression-options.md)), la correspondance doit se trouver au début de chaque ligne.  
   
  L'exemple suivant utilise l'ancre `^` dans une expression régulière qui extrait des informations à propos des années pendant lesquelles certaines équipes de base-ball professionnelles ont existé. L'exemple appelle deux surcharges de la méthode <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> :  
   
@@ -54,7 +54,7 @@ Les ancres, ou assertions atomiques de largeur nulle, spécifient une position d
 |Modèle|Description|  
 |-------------|-----------------|  
 |`^`|Commencer la correspondance au début de la chaîne d'entrée (ou au début de la ligne si la méthode est appelée avec l'option <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> ).|  
-|`((\w+(\s?)){2,}`|Mettre en correspondance un ou plusieurs caractères de mot suivis de zéro ou d’un espace au moins deux fois. Il s'agit du premier groupe de capture. Cette expression définit également un deuxième et troisième groupe de capture : Le second se compose du mot capturé, et le troisième se compose de l’espace blanc capturé.|  
+|`((\w+(\s?)){2,}`|Mettre en correspondance un ou plusieurs caractères de mot suivis de zéro ou d’un espace au moins deux fois. Il s'agit du premier groupe de capture. Cette expression définit également un deuxième et un troisième groupe de capture : le deuxième se compose du mot capturé, et le troisième est constitué de l’espace blanc capturé.|  
 |`,\s`|Mettre en correspondance une virgule suivie d'un caractère d'espace blanc.|  
 |`(\w+\s\w+)`|Mettre en correspondance un ou plusieurs caractères de mot suivis d'un espace, suivi d'un ou plusieurs caractères de mot. Il s'agit du quatrième groupe de capture.|  
 |`,`|Mettre en correspondance une virgule.|  
@@ -119,7 +119,7 @@ Les ancres, ou assertions atomiques de largeur nulle, spécifient une position d
 |`,?`|Mettre en correspondance zéro ou une occurrence d'une virgule littérale.|
 
 ## <a name="word-boundary-b"></a>Limite de mot : \b  
- L'ancre `\b` spécifie que la correspondance doit se produire à la limite entre un caractère de mot (élément de langage `\w` ) et un caractère n'appartenant pas à un mot (élément de langage `\W` ). Les caractères de mot se composent de caractères alphanumériques et de traits de soulignement ; un caractère n'appartenant pas à un mot est un caractère qui n'est pas alphanumérique ou qui n'est pas un trait de soulignement. (Pour plus d’informations, voir [Classes de personnages](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).) Le match peut également se produire sur une limite de mot au début ou à la fin de la chaîne.  
+ L'ancre `\b` spécifie que la correspondance doit se produire à la limite entre un caractère de mot (élément de langage `\w` ) et un caractère n'appartenant pas à un mot (élément de langage `\W` ). Les caractères de mot se composent de caractères alphanumériques et de traits de soulignement ; un caractère n'appartenant pas à un mot est un caractère qui n'est pas alphanumérique ou qui n'est pas un trait de soulignement. (Pour plus d’informations, consultez [classes de caractères](character-classes-in-regular-expressions.md).) La correspondance peut également se produire à la limite d’un mot au début ou à la fin de la chaîne.  
   
  L'ancre `\b` est fréquemment utilisée pour faire en sorte qu'une sous-expression corresponde à un mot entier plutôt qu'au début ou à la fin d'un mot uniquement. L'expression régulière `\bare\w*\b` dans l'exemple suivant illustre cette utilisation. Elle correspond à tout mot qui commence par la sous-chaîne « are ». La sortie de l'exemple illustre également que `\b` correspond à la fois au début et la fin de la chaîne d'entrée.  
   
@@ -153,5 +153,5 @@ Les ancres, ou assertions atomiques de largeur nulle, spécifient une position d
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Langage d’expression régulière - Référence rapide](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
-- [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md)
+- [Langage des expressions régulières - Aide-mémoire](regular-expression-language-quick-reference.md)
+- [Options des expressions régulières](regular-expression-options.md)

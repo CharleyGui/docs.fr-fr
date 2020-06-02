@@ -1,13 +1,14 @@
 ---
 title: Autorisation et permissions dans SQL Server
+description: Apprenez à accorder explicitement des autorisations pour rendre les objets de base de données que vous créez accessibles aux utilisateurs dans SQL Server avec ADO.NET.
 ms.date: 03/30/2017
 ms.assetid: d340405c-91f4-4837-a3cc-a238ee89888a
-ms.openlocfilehash: c9b041a078494cd29d6cab5297728d233dafa236
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: eb01e29b36da5e1793b9176301a968a42115d19c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782589"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286531"
 ---
 # <a name="authorization-and-permissions-in-sql-server"></a>Autorisation et permissions dans SQL Server
 Lorsque vous créez des objets de base de données, vous devez accorder explicitement des autorisations de manière à les rendre accessibles aux utilisateurs. Chaque objet sécurisable possède des autorisations qui peuvent être accordées à une principal de sécurité à l'aide d'instructions d'autorisation.  
@@ -52,7 +53,7 @@ Lorsque vous créez des objets de base de données, vous devez accorder explicit
 > Le chaînage des propriétés ne s'applique pas aux instructions SQL dynamiques. Pour appeler une procédure qui exécute une instruction SQL, l'appelant doit bénéficier d'autorisations sur les tables sous-jacentes, ce qui rend votre application vulnérable aux attaques par injection de code SQL. SQL Server fournit de nouveaux mécanismes, comme l'emprunt d'identité et la signature de modules à l'aide de certificats, qui ne requièrent pas l'octroi d'autorisations sur les tables sous-jacentes. Ils peuvent également être utilisés avec les procédures stockées CLR.  
   
 ## <a name="external-resources"></a>Ressources externes  
- Pour plus d'informations, voir les ressources ci-dessous.  
+ Pour plus d'informations, consultez les ressources ci-dessous.  
   
 |Ressource|Description|  
 |--------------|-----------------|  
@@ -65,4 +66,4 @@ Lorsque vous créez des objets de base de données, vous devez accorder explicit
 - [Authentification dans SQL Server](authentication-in-sql-server.md)
 - [Serveur et rôles de base de données dans SQL Server](server-and-database-roles-in-sql-server.md)
 - [Propriété et séparation des schémas utilisateur dans SQL Server](ownership-and-user-schema-separation-in-sql-server.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

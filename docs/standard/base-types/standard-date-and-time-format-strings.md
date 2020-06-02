@@ -14,16 +14,16 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-ms.openlocfilehash: d6bde74441334a4454865c1fdb890a4e859bc072
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 0ff187251831130c846a20473237b13268c768be
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83440900"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289302"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Chaînes de format de date et d’heure standard
 
-Une chaîne de format de date et d'heure standard utilise un spécificateur de format unique pour définir la représentation textuelle d'une valeur de date et d'heure. Toute chaîne de format de date et d’heure contenant plusieurs caractères, y compris un espace blanc, est interprétée comme une chaîne de format de date et d’heure personnalisée. Pour plus d’informations, consultez [chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md). Une chaîne de format standard ou personnalisée peut être utilisée de deux façons :
+Une chaîne de format de date et d'heure standard utilise un spécificateur de format unique pour définir la représentation textuelle d'une valeur de date et d'heure. Toute chaîne de format de date et d’heure contenant plusieurs caractères, y compris un espace blanc, est interprétée comme une chaîne de format de date et d’heure personnalisée. Pour plus d’informations, consultez [chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md). Une chaîne de format standard ou personnalisée peut être utilisée de deux façons :
 
 - Pour définir la chaîne qui résulte d'une opération de mise en forme.
 
@@ -450,7 +450,7 @@ La mise en forme dépend des propriétés de l'objet <xref:System.Globalization.
 
 - <xref:System.DateTime?displayProperty=nameWithType>
 - <xref:System.DateTimeOffset?displayProperty=nameWithType>
-- [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
-- [Chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Mise en forme des types](formatting-types.md)
+- [Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)

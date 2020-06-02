@@ -1,44 +1,45 @@
 ---
 title: Détection des modifications avec SqlDependency
+description: Associez un objet SqlDependency à un SqlCommand pour détecter les différences entre les résultats de la requête et ceux qui ont été récupérés à l’origine dans ADO.NET.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: e6a58316-f005-4477-92e1-45cc2eb8c5b4
-ms.openlocfilehash: 3719188064388b00c756dd037d4a475ca6debd13
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b196d42477e1778c45df64b1390502645fdd649d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782420"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286466"
 ---
 # <a name="detecting-changes-with-sqldependency"></a>Détection des modifications avec SqlDependency
 
-Un objet <xref:System.Data.SqlClient.SqlDependency> peut être associé à un objet <xref:System.Data.SqlClient.SqlCommand> afin de détecter quand des résultats de requête sont différents des résultats récupérés à l'origine. Vous pouvez également assigner un délégué à l'événement `OnChange`, qui est déclenché lorsque les résultats changent pour une commande associée. Vous devez associer <xref:System.Data.SqlClient.SqlDependency> à la commande avant d'exécuter celle-ci. La propriété `HasChanges` de l'objet <xref:System.Data.SqlClient.SqlDependency> peut également être utilisée pour déterminer si les résultats de la requête ont changé depuis la première récupération des données.
+Un objet <xref:System.Data.SqlClient.SqlDependency> peut être associé à une <xref:System.Data.SqlClient.SqlCommand> afin de détecter si les résultats de la requête diffèrent de ceux qui sont récupérés à l’origine. Vous pouvez également attribuer un délégué à l’événement `OnChange`, qui se déclenche lorsque les résultats changent pour une commande associée. Vous devez associer la <xref:System.Data.SqlClient.SqlDependency> à la commande avant d’exécuter la commande. La propriété `HasChanges` de la <xref:System.Data.SqlClient.SqlDependency> peut également être utilisée pour déterminer si les résultats de la requête ont changé depuis la première récupération des données.
 
 ## <a name="security-considerations"></a>Considérations relatives à la sécurité
 
-L'infrastructure de dépendance repose sur un objet <xref:System.Data.SqlClient.SqlConnection> qui est ouvert lorsque la méthode <xref:System.Data.SqlClient.SqlDependency.Start%2A> est appelée pour recevoir des notifications de modification des données sous-jacentes pour une commande donnée. La capacité d'un client à lancer l'appel de la méthode `SqlDependency.Start` est contrôlée par le biais de l'utilisation de <xref:System.Data.SqlClient.SqlClientPermission> et des attributs de sécurité d'accès du code. Pour plus d’informations, consultez [activation des notifications de requêtes](enabling-query-notifications.md) et de la [sécurité d’accès du code et ADO.net](../code-access-security.md).
+L’infrastructure de dépendance repose sur une <xref:System.Data.SqlClient.SqlConnection> qui est ouverte lorsque <xref:System.Data.SqlClient.SqlDependency.Start%2A> est appelé pour recevoir des notifications de modification des données sous-jacentes pour une commande donnée. La possibilité pour un client d’initier l’appel à `SqlDependency.Start` est contrôlée par le biais de l’utilisation de <xref:System.Data.SqlClient.SqlClientPermission> et des attributs de sécurité d’accès du code. Pour plus d’informations, consultez [activation des notifications de requêtes](enabling-query-notifications.md) et de la [sécurité d’accès du code et ADO.net](../code-access-security.md).
 
-### <a name="example"></a>Exemples
+### <a name="example"></a>Exemple
 
-Les étapes suivantes montrent comment déclarer une dépendance, exécuter une commande et recevoir un notification lorsque le jeu de résultats change :
+Les étapes suivantes montrent comment déclarer une dépendance, exécuter une commande et recevoir une notification lorsque le jeu de résultats change :
 
-1. Établissez une connexion `SqlDependency` au serveur.
+1. Établit une connexion `SqlDependency` au serveur.
 
-2. Créez les objets <xref:System.Data.SqlClient.SqlConnection> et <xref:System.Data.SqlClient.SqlCommand> pour vous connecter au serveur et définissez une instruction Transact-SQL.
+2. Créez des objets <xref:System.Data.SqlClient.SqlConnection> et <xref:System.Data.SqlClient.SqlCommand> pour vous connecter au serveur et définir une instruction Transact-SQL.
 
-3. Créez un objet `SqlDependency` ou utilisez-en un existant et liez-le à l'objet `SqlCommand`. Au niveau interne, cette opération crée un objet <xref:System.Data.Sql.SqlNotificationRequest> et le lie à l'objet de commande de manière appropriée. La demande de notification contient un identificateur interne qui identifie de façon univoque cet objet `SqlDependency`. Elle démarre également l'écouteur client s'il est inactif.
+3. Créez un objet `SqlDependency` ou utilisez un objet existant, puis liez-le à l’objet `SqlCommand`. En interne, cela crée un objet <xref:System.Data.Sql.SqlNotificationRequest> et le lie à l’objet de commande en fonction des besoins. Cette requête de notification contient un identificateur interne qui identifie de façon unique cet objet `SqlDependency`. L’écouteur client est également démarré s’il n’est pas déjà actif.
 
-4. Abonnez un gestionnaire d'événements à l'événement `OnChange` de l'objet `SqlDependency`.
+4. Abonnez un gestionnaire d’événements à l’événement `OnChange` de l’objet `SqlDependency`.
 
-5. Exécutez la commande à l'aide de l'une des méthodes `Execute` de l'objet `SqlCommand`. Comme la commande est liée à l'objet Notification, le serveur reconnaît qu'il doit générer une notification et les informations de file d'attente pointent sur la file d'attente des dépendances.
+5. Exécutez la commande à l’aide de l’une des méthodes `Execute` de l’objet `SqlCommand`. Étant donné que la commande est liée à l’objet de notification, le serveur reconnaît qu’il doit générer une notification, et les informations de la file d’attente pointent vers la file d’attente des dépendances.
 
-6. Interrompez la connexion `SqlDependency` au serveur.
+6. Arrêtez la connexion `SqlDependency` au serveur.
 
-Si un utilisateur modifie ensuite les données sous-jacentes, Microsoft SQL Server détecte qu'il y a une notification en attente pour cette modification et émet une notification qui est traitée et transmise au client via l'objet `SqlConnection` sous-jacent qui a été créé en appelant la méthode `SqlDependency.Start`. L'écouteur client reçoit le message d'invalidation. Il localise ensuite l'objet `SqlDependency` associé puis déclenche l'événement `OnChange`.
+Si un utilisateur modifie ensuite les données sous-jacentes, Microsoft SQL Server détecte qu’il existe une notification en attente pour une telle modification, puis publie une notification qui est traitée et transférée au client via la `SqlConnection` sous-jacente qui a été créée en appelant `SqlDependency.Start`. L’écouteur client reçoit le message d’invalidation. L’écouteur client localise ensuite l’objet `SqlDependency` associé et déclenche l’événement `OnChange`.
 
-Le fragment de code suivant montre le modèle de design qui peut être utilisé pour créer un exemple d'application.
+Le fragment de code suivant montre le modèle de conception que vous utiliseriez pour créer un exemple d’application.
 
 ```vb
 Sub Initialization()
@@ -127,5 +128,5 @@ void Termination()
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Notifications de requête dans SQL Server](query-notifications-in-sql-server.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Notifications de requêtes dans SQL Server](query-notifications-in-sql-server.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

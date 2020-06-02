@@ -9,12 +9,12 @@ helpviewer_keywords:
 - namespaces [.NET Framework], names
 - names [.NET Framework], type names
 ms.assetid: a49058d2-0276-43a7-9502-04adddf857b2
-ms.openlocfilehash: 0ad98af240cf8d1041d6a8b64ab71a56e763f76f
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: e435e0281165b4a9f12bbccbeb10401b57375dcb
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419055"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290199"
 ---
 # <a name="names-of-namespaces"></a>Noms d'espaces de noms
 Comme pour les autres instructions d’affectation de noms, l’objectif de l’attribution de noms aux espaces de noms est de créer suffisamment de clarté pour le programmeur qui utilise l’infrastructure pour savoir immédiatement ce que le contenu de l’espace de noms est susceptible d’être. Le modèle suivant spécifie la règle générale pour nommer les espaces de noms :
@@ -84,5 +84,5 @@ Comme pour les autres instructions d’affectation de noms, l’objectif de l’
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Directives de conception d’infrastructure](../../../docs/standard/design-guidelines/index.md)
-- [Instructions d’affectation de noms](../../../docs/standard/design-guidelines/naming-guidelines.md)
+- [Directives de conception d’infrastructure](index.md)
+- [Instructions d’affectation de noms](naming-guidelines.md)

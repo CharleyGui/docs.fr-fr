@@ -3,12 +3,12 @@ title: Outil XML Serializer Generator (Sgen.exe)
 description: Le générateur de sérialiseur XML crée un assembly de sérialisation XML pour les types dans un assembly, ce qui améliore les performances de démarrage de XmlSerializer.
 ms.date: 03/30/2017
 ms.assetid: cc1d1f1c-fb26-4be9-885a-3fe84c81cec6
-ms.openlocfilehash: 65e368cfd9294497608b061f15a4fe4755ed745c
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: b6d9406ca6a69f7bdff3129b55c89dd5d1589d3f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380045"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288938"
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>Outil XML Serializer Generator (Sgen.exe)
 
@@ -23,7 +23,7 @@ sgen [options]
 ```
   
 > [!TIP]
-> Pour que .NET Framework outils fonctionnent correctement, vous devez définir `Path` correctement les `Include` variables d' `Lib` environnement, et. Définissez ces variables d’environnement en exécutant SDKVars.bat, qui se trouve dans le répertoire \<SDK>\v2.0\Bin. SDKVars.bat doit être exécuté dans chaque interpréteur de commandes.
+> Pour que .NET Framework outils fonctionnent correctement, vous devez définir `Path` correctement les `Include` variables d' `Lib` environnement, et. Définissez ces variables d’environnement en exécutant SDKVars. bat, qui se trouve dans le \<SDK> répertoire \v2.0\Bin. SDKVars.bat doit être exécuté dans chaque interpréteur de commandes.
   
 ## <a name="parameters"></a>Paramètres  
   
@@ -33,7 +33,7 @@ sgen [options]
 |**/c \[ ompiler \] :**_options_|Spécifie les options à passer au compilateur C#. Toutes les options csc.exe sont prises en charge à mesure qu'elles sont passées au compilateur. Cette option peut être utilisée pour spécifier que l'assembly doit être signé et pour indiquer le fichier de clé.|  
 |**/d \[ ebug\]**|Génère une image qui peut être utilisée avec un débogueur.|  
 |**/f \[ Orce\]**|Force l'écrasement par réécriture d'un assembly existant du même nom. La valeur par défaut est **false**.|  
-|**/help ou /?**|Affiche la syntaxe et les options de commande de l'outil.|  
+|**/Help ou/ ?**|Affiche la syntaxe et les options de commande de l'outil.|  
 |**/k \[ onserver\]**|Efface la suppression des fichiers source générés et d'autres fichiers temporaires une fois qu'ils ont été compilés dans l'assembly de sérialisation. Cette option peut être utilisée afin de déterminer si l'outil génère le code de sérialisation pour un type particulier.|  
 |**/n \[ ologo\]**|Supprime l'affichage de la bannière de démarrage Microsoft.|  
 |**/o \[ ut \] :**_chemin_|Spécifie le répertoire dans lequel enregistrer l'assembly généré. **Remarque :** Le nom de l’assembly généré est composé du nom de l’assembly d’entrée suivi de « xmlSerializers.dll ».|  
@@ -44,7 +44,7 @@ sgen [options]
 |**/v \[ erbose\]**|Affiche la sortie en clair pour le débogage. Répertorie les types à partir de l'assembly cible qui ne peuvent pas être sérialisés avec le <xref:System.Xml.Serialization.XmlSerializer>.|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Notes  
  Lorsque l'outil XML Serializer Generator n'est pas utilisé, un <xref:System.Xml.Serialization.XmlSerializer> génère un code de sérialisation et un assembly de sérialisation pour chacun des types chaque fois qu'une application est exécutée. Pour améliorer les performances de démarrage de la sérialisation XML, utilisez l’outil SGen. exe pour générer ces assemblys à l’avance. Ces assemblys peuvent ensuite être déployés avec l'application.  
   
  L'outil XML Serializer Generator peut également améliorer les performances des clients qui utilisent des proxies de service Web XML pour communiquer avec les serveurs car le processus de sérialisation n'entraîne pas de dégradation des performances lors du premier chargement du type.  
@@ -64,5 +64,5 @@ sgen Data.dll
   
 ## <a name="see-also"></a>Voir aussi
 
-- [outils](../../../docs/framework/tools/index.md)
-- [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [outils](../../framework/tools/index.md)
+- [Invites de commandes](../../framework/tools/developer-command-prompt-for-vs.md)

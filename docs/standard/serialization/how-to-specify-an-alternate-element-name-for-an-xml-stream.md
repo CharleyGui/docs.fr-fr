@@ -13,16 +13,16 @@ helpviewer_keywords:
 - classes, overriding
 - overriding classes
 ms.assetid: 5cc1c0b0-f94b-4525-9a41-88a582cd6668
-ms.openlocfilehash: d9851226b602226e00648d8742bf0a49c902c33b
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: d7e482ee6e1e1a7318ab05766508537d4b87789e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83377392"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289588"
 ---
 # <a name="how-to-specify-an-alternate-element-name-for-an-xml-stream"></a>Comment : spécifier un nom d'élément différent pour un flux XML
   
-Via <xref:System.Xml.Serialization.XmlSerializer>, vous pouvez générer plusieurs flux de données XML avec un même ensemble de classes. Vous pouvez procéder ainsi car deux services Web XML différents nécessitent les mêmes informations de base, avec seulement de légères différences. Par exemple, imaginez deux services Web XML qui traitent des commandes de livres. Ils nécessitent donc tous les deux des numéros ISBN. Un service utilise la balise \<ISBN> tandis que l’autre utilise la balise \<BookID>. Vous disposez d'une classe nommée `Book` qui contient un champ nommé `ISBN`. Lorsqu'une instance de la classe `Book` est sérialisée, elle utilise par défaut le nom de membre (ISBN) comme nom d'élément de balise. Pour le premier service Web XML, c'est ce qui est prévu. Toutefois, pour envoyer le flux de données XML au deuxième service Web XML, vous devez substituer la sérialisation afin que le nom d'élément de la balise soit `BookID`.  
+Via <xref:System.Xml.Serialization.XmlSerializer>, vous pouvez générer plusieurs flux de données XML avec un même ensemble de classes. Vous pouvez procéder ainsi car deux services Web XML différents nécessitent les mêmes informations de base, avec seulement de légères différences. Par exemple, imaginez deux services Web XML qui traitent des commandes de livres. Ils nécessitent donc tous les deux des numéros ISBN. Un service utilise la balise \<ISBN> , tandis que la seconde utilise la balise \<BookID> . Vous disposez d'une classe nommée `Book` qui contient un champ nommé `ISBN`. Lorsqu'une instance de la classe `Book` est sérialisée, elle utilise par défaut le nom de membre (ISBN) comme nom d'élément de balise. Pour le premier service Web XML, c'est ce qui est prévu. Toutefois, pour envoyer le flux de données XML au deuxième service Web XML, vous devez substituer la sérialisation afin que le nom d'élément de la balise soit `BookID`.  
   
 ## <a name="to-create-an-xml-stream-with-an-alternate-element-name"></a>Pour créer un flux de données XML avec un nom d'élément différent  
   
@@ -97,7 +97,7 @@ public void SerializeOverride()
 - <xref:System.Xml.Serialization.XmlElementAttribute>
 - <xref:System.Xml.Serialization.XmlAttributes>
 - <xref:System.Xml.Serialization.XmlAttributeOverrides>
-- [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [Guide pratique pour sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md)
-- [Guide pratique pour désérialiser un objet](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+- [Guide pratique pour sérialiser un objet](how-to-serialize-an-object.md)
+- [Guide pratique pour désérialiser un objet](how-to-deserialize-an-object.md)

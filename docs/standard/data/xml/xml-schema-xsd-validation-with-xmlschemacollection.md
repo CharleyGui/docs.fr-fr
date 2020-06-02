@@ -6,18 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ad0b5717-3d32-41ad-a4d7-072c3e492b82
-ms.openlocfilehash: 994153ba93848ebb120f23bdf6a979462a65142d
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 2ff8a8b85c3bfa594bd958a9a3688380885e0426
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159479"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290303"
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a>Validation de schéma XML (XSD) avec XmlSchemaCollection
 Vous pouvez utiliser la classe <xref:System.Xml.Schema.XmlSchemaCollection> pour valider un document XML par rapport à des schémas de langage XSD (XML Schema Definition). L'objet <xref:System.Xml.Schema.XmlSchemaCollection> améliore les performances en stockant des schémas dans la collection de sorte qu'ils ne soient pas chargés en mémoire lors de chaque validation. Si le schéma existe dans la collection de schémas, l’attribut `schemaLocation` permet de l’y rechercher.  
   
 > [!IMPORTANT]
-> La classe <xref:System.Xml.Schema.XmlSchemaCollection> est désormais obsolète et a été remplacée par la classe <xref:System.Xml.Schema.XmlSchemaSet>. Pour plus d’informations sur la classe <xref:System.Xml.Schema.XmlSchemaSet>, consultez [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
+> La classe <xref:System.Xml.Schema.XmlSchemaCollection> est désormais obsolète et a été remplacée par la classe <xref:System.Xml.Schema.XmlSchemaSet>. Pour plus d’informations sur la classe <xref:System.Xml.Schema.XmlSchemaSet>, consultez [XmlSchemaSet pour la compilation de schémas](xmlschemaset-for-schema-compilation.md).  
   
  L'exemple suivant montre l'élément racine d'un fichier de données.  
   
@@ -211,4 +211,4 @@ while(vr.Read()) {
 - <xref:System.Xml.XmlParserContext>
 - <xref:System.Xml.XmlValidatingReader.ValidationEventHandler?displayProperty=nameWithType>
 - <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=nameWithType>
-- [Compilation de schéma XmlSchemaCollection](../../../../docs/standard/data/xml/xmlschemacollection-schema-compilation.md)
+- [Compilation de schéma XmlSchemaCollection](xmlschemacollection-schema-compilation.md)

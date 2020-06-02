@@ -6,12 +6,12 @@ helpviewer_keywords:
 - cryptography [.NET Framework], model
 - encryption [.NET Framework], model
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-ms.openlocfilehash: f878f73497b83aaf31f2ba3b23cca1f685867b3e
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: c2d28abacd34736764b69be750a850a0f2e8db85
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77095266"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288379"
 ---
 # <a name="net-framework-cryptography-model"></a>Modèle de chiffrement de .NET Framework
 
@@ -49,7 +49,7 @@ Le Common Language Runtime utilise une conception orientée flux pour implément
 
 ## <a name="cryptographic-configuration"></a>Configuration du chiffrement
 
-La configuration du chiffrement vous permet de résoudre une implémentation d'un algorithme en un nom d'algorithme. De cette façon, les classes de chiffrement .NET Framework peuvent être étendues. Vous pouvez ajouter votre propre implémentation logicielle ou matérielle d'un algorithme, puis la mapper vers le nom d'algorithme de votre choix. Si un algorithme n'est pas spécifié dans le fichier de configuration, les paramètres par défaut sont utilisés. Pour plus d’informations sur la configuration de chiffrement, consultez [Configuration des classes de chiffrement](../../../docs/framework/configure-apps/configure-cryptography-classes.md).
+La configuration du chiffrement vous permet de résoudre une implémentation d'un algorithme en un nom d'algorithme. De cette façon, les classes de chiffrement .NET Framework peuvent être étendues. Vous pouvez ajouter votre propre implémentation logicielle ou matérielle d'un algorithme, puis la mapper vers le nom d'algorithme de votre choix. Si un algorithme n'est pas spécifié dans le fichier de configuration, les paramètres par défaut sont utilisés. Pour plus d’informations sur la configuration de chiffrement, consultez [Configuration des classes de chiffrement](../../framework/configure-apps/configure-cryptography-classes.md).
 
 ## <a name="choosing-an-algorithm"></a>Choix d'un algorithme
 
@@ -75,5 +75,5 @@ Voici une liste des algorithmes recommandés pour chaque application :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Services de chiffrement](../../../docs/standard/security/cryptographic-services.md)
+- [Services de chiffrement](cryptographic-services.md)
 - [Appliquer les protocoles de chiffrement, les algorithmes et le code source en C, par Bruce Schneier](https://www.schneier.com/books/applied_cryptography/)

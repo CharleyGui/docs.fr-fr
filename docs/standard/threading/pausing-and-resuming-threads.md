@@ -10,16 +10,16 @@ helpviewer_keywords:
 - threading [.NET Framework], pausing
 - pausing threads
 ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
-ms.openlocfilehash: 3020694b93479d5f1d64d31c203f8fe033a10320
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 369631603791d90c51244c1dc9907b9d8ec17364
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73129008"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291160"
 ---
 # <a name="pausing-and-interrupting-threads"></a>Suspension et interruption de threads
 
-Les méthodes les plus courantes permettant de synchroniser les activités de threads consistent à bloquer et à diffuser des threads, ou à verrouiller des objets ou des régions du code. Pour plus d’informations sur ces mécanismes de verrouillage et de blocage, voir [Vue d’ensemble des primitives de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
+Les méthodes les plus courantes permettant de synchroniser les activités de threads consistent à bloquer et à diffuser des threads, ou à verrouiller des objets ou des régions du code. Pour plus d’informations sur ces mécanismes de verrouillage et de blocage, voir [Vue d’ensemble des primitives de synchronisation](overview-of-synchronization-primitives.md).  
   
  Vous pouvez également avoir des threads en veille. Quand des threads sont bloqués ou en veille, vous pouvez utiliser une <xref:System.Threading.ThreadInterruptedException> pour les débloquer ou les réveiller.  
   
@@ -45,13 +45,13 @@ Les méthodes les plus courantes permettant de synchroniser les activités de th
   
 - <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> réveille un thread en attente et provoque la levée d'une <xref:System.Threading.ThreadInterruptedException> dans le thread de destination.  
   
-- <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> réveille un thread en attente et provoque la levée d'une <xref:System.Threading.ThreadAbortException> dans le thread. Pour plus d’informations, voir [Destruction de threads](../../../docs/standard/threading/destroying-threads.md).  
+- <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> réveille un thread en attente et provoque la levée d'une <xref:System.Threading.ThreadAbortException> dans le thread. Pour plus d’informations, voir [Destruction de threads](destroying-threads.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Threading.Thread>
 - <xref:System.Threading.ThreadInterruptedException>
 - <xref:System.Threading.ThreadAbortException>
-- [Thread](../../../docs/standard/threading/index.md)
-- [Utilisation des threads et du threading](../../../docs/standard/threading/using-threads-and-threading.md)
-- [Aperçu des primitifs de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md)
+- [Thread](index.md)
+- [Utilisation des threads et du threading](using-threads-and-threading.md)
+- [Vue d’ensemble des primitives de synchronisation](overview-of-synchronization-primitives.md)

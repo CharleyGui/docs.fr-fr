@@ -5,21 +5,21 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - class library design guidelines [.NET Framework], usage guidelines
 ms.assetid: 42215ffa-a099-4a26-b14e-fb2bdb6f95b7
-ms.openlocfilehash: 57f6600f60e99c72b72c9f82856dc9eb631a9d4b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 03eaba3e52cb25619f65637efb4f414c22770440
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708995"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291342"
 ---
 # <a name="usage-guidelines"></a>Indications relatives à l'utilisation
 
 Cette section contient des instructions pour l’utilisation des types courants dans les API accessibles publiquement. Il traite de l’utilisation directe des types d’infrastructure intégrés (par exemple, les attributs de sérialisation) et de la surcharge des opérateurs courants.
   
-L’interface <xref:System.IDisposable?displayProperty=nameWithType> n’est pas traitée dans cette section, mais elle est décrite dans la section [modèle de suppression](../garbage-collection/implementing-dispose.md) .
+L' <xref:System.IDisposable?displayProperty=nameWithType> interface n’est pas traitée dans cette section, mais elle est décrite dans la section [modèle de suppression](../garbage-collection/implementing-dispose.md) .
 
 > [!NOTE]
-> Pour obtenir des instructions et des informations supplémentaires sur d’autres types de .NET Framework intégrés communs, consultez les rubriques de référence pour les éléments suivants : <xref:System.DateTime?displayProperty=nameWithType>, <xref:System.DateTimeOffset?displayProperty=nameWithType>, <xref:System.ICloneable?displayProperty=nameWithType>, <xref:System.IComparable%601?displayProperty=nameWithType>, <xref:System.IEquatable%601?displayProperty=nameWithType>, <xref:System.Nullable%601?displayProperty=nameWithType>, <xref:System.Object?displayProperty=nameWithType>, <xref:System.Uri?displayProperty=nameWithType>.
+> Pour obtenir des instructions et des informations supplémentaires sur d’autres types de .NET Framework intégrés communs, consultez les rubriques de référence pour les éléments suivants : <xref:System.DateTime?displayProperty=nameWithType> , <xref:System.DateTimeOffset?displayProperty=nameWithType> , <xref:System.ICloneable?displayProperty=nameWithType> , <xref:System.IComparable%601?displayProperty=nameWithType> , <xref:System.IEquatable%601?displayProperty=nameWithType> , <xref:System.Nullable%601?displayProperty=nameWithType> , <xref:System.Object?displayProperty=nameWithType> , <xref:System.Uri?displayProperty=nameWithType> .
 
 ## <a name="in-this-section"></a>Dans cette section
 
@@ -27,7 +27,7 @@ L’interface <xref:System.IDisposable?displayProperty=nameWithType> n’est pas
 [Attributs](attributes.md)  
 [Regroupements](guidelines-for-collections.md)  
 [Sérialisation](serialization.md)  
-[System.Xml, utilisation](system-xml-usage.md)  
+[Utilisation de System. Xml](system-xml-usage.md)  
 [Opérateurs d’égalité](equality-operators.md)  
 
 *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
@@ -36,4 +36,4 @@ L’interface <xref:System.IDisposable?displayProperty=nameWithType> n’est pas
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
+- [Directives de conception d’infrastructure](index.md)

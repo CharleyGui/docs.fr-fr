@@ -1,16 +1,17 @@
 ---
 title: Paramètres table
+description: Découvrez comment marshaler plusieurs lignes de données d’une application cliente en SQL Server à l’aide de paramètres table.
 ms.date: 10/12/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: b968c599cf061fbd03b7ba8fb19470f6ace11a55
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 7b1f0a6c416f660f06cea099197ba136f84407f9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202173"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286195"
 ---
 # <a name="table-valued-parameters"></a>Paramètres table
 Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes de données d’une application cliente vers SQL Server sans avoir recours à plusieurs allers-retours ou à une logique spéciale côté serveur pour traiter les données. Vous pouvez utiliser des paramètres table pour encapsuler des lignes de données dans une application cliente et envoyer les données au serveur dans une commande paramétrable unique. Les lignes de données entrantes sont stockées dans une variable de table que vous pouvez ensuite utiliser à l’aide de Transact-SQL.  
@@ -18,7 +19,7 @@ Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes 
  Les valeurs de colonne dans les paramètres table sont accessibles à l’aide d’instructions Transact-SQL SELECT standard. Les paramètres table sont fortement typés et leur structure est validée automatiquement. La taille des paramètres table est limitée uniquement par la mémoire du serveur.  
   
 > [!NOTE]
-> Il n’est pas possible de retourner des données dans un paramètre table, car il prennent uniquement des valeurs d’entrée ; le mot clé OUTPUT n’est pas pris en charge.  
+> Vous ne pouvez pas renvoyer de données dans un paramètre table. car il prennent uniquement des valeurs d’entrée ; le mot clé OUTPUT n’est pas pris en charge.  
   
  Pour plus d’informations sur les paramètres table, consultez les ressources suivantes.  
   
@@ -32,11 +33,11 @@ Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes 
   
 - Utilisez une série de paramètres individuels pour représenter les valeurs dans plusieurs colonnes et lignes de données. La quantité de données transmissibles selon cette méthode est limitée par le nombre de paramètres autorisés. Les procédures SQL Server peuvent contenir jusqu’à 2 100 paramètres. Une logique côté serveur est requise pour assembler ces différentes valeurs dans une variable de table ou une table temporaire à des fins de traitement.  
   
-- Regroupez plusieurs valeurs de données dans des chaînes délimitées ou des documents XML, puis transmettez ces valeurs de texte à une procédure ou une instruction. Il faut pour cela que la procédure ou l’instruction inclue la logique nécessaire pour valider les structures de données et dissocier les valeurs.  
+- Regroupez plusieurs valeurs de données dans des chaînes délimitées ou des documents XML, puis transmettez ces valeurs de texte à une procédure ou une instruction. Cela requiert que la procédure ou l’instruction inclue la logique nécessaire pour valider les structures de données et dissocier les valeurs.  
   
-- Créez une série d’instructions SQL pour les modifications de données qui affectent plusieurs lignes, telles que celles créées en appelant la méthode `Update` d’un <xref:System.Data.SqlClient.SqlDataAdapter>. Ces modifications peuvent être envoyées individuellement au serveur ou regroupées par lots. Toutefois, même lorsqu’elles sont soumises dans des lots contenant plusieurs instructions, chacune des instructions est exécutée séparément sur le serveur.  
+- Créez une série d’instructions SQL pour les modifications de données qui affectent plusieurs lignes, telles que celles créées en appelant la méthode `Update` d’un <xref:System.Data.SqlClient.SqlDataAdapter>. Les modifications peuvent être envoyées au serveur individuellement ou regroupées par lot. Toutefois, même lorsqu’elles sont soumises dans des lots contenant plusieurs instructions, chaque instruction est exécutée séparément sur le serveur.  
   
-- Utilisez le programme utilitaire `bcp` ou l’objet <xref:System.Data.SqlClient.SqlBulkCopy> pour charger de nombreuses lignes de données dans une table. Bien que cette technique soit très efficace, elle ne gère pas le traitement côté serveur à moins que les données ne soient chargées dans une table temporaire ou une variable table.  
+- Utilisez le programme utilitaire `bcp` ou l’objet <xref:System.Data.SqlClient.SqlBulkCopy> pour charger de nombreuses lignes de données dans une table. Bien que cette technique soit très efficace, elle ne prend pas en charge le traitement côté serveur à moins que les données ne soient chargées dans une table temporaire ou une variable table.  
   
 ## <a name="creating-table-valued-parameter-types"></a>Création de types de paramètre table  
  Les paramètres table sont basés sur des structures de table fortement typées qui sont définies à l’aide des instructions Transact-SQL CREATe TYPE. Vous devez créer un type de table et définir la structure dans SQL Server avant de pouvoir utiliser les paramètres table dans vos applications clientes. Pour plus d’informations sur la création de types de table, consultez [types de tables définis par l’utilisateur](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/bb522526(v=sql.100)).  
@@ -56,7 +57,7 @@ CREATE PROCEDURE usp_UpdateCategories
 ```  
   
 ## <a name="modifying-data-with-table-valued-parameters-transact-sql"></a>Modification des données à l'aide des paramètres table (Transact-SQL)  
- Les paramètres table peuvent être utilisés dans des modifications de données par jeux qui affectent plusieurs lignes avec une seule instruction. Par exemple, vous pouvez sélectionner toutes les lignes d’un paramètre table et les insérer dans une table de base de données, ou créer une instruction de mise à jour en joignant un paramètre table à la table à mettre à jour.  
+ Les paramètres table peuvent être utilisés dans des modifications de données basées sur des jeux qui affectent plusieurs lignes en exécutant une instruction unique. Par exemple, vous pouvez sélectionner toutes les lignes d’un paramètre table et les insérer dans une table de base de données, ou créer une instruction de mise à jour en joignant un paramètre table à la table à mettre à jour.  
   
  L’instruction Transact-SQL UPDATE suivante montre comment utiliser un paramètre table en le joignant à la table Categories. Si vous utilisez un paramètre table avec un JOIN dans une clause FROM, vous devez également créer un alias pour celui-ci (ici, le paramètre table a pour alias « ec ») :  
   
@@ -79,11 +80,11 @@ INSERT INTO dbo.Categories (CategoryID, CategoryName)
   
 - Vous ne pouvez pas passer de paramètres table aux [fonctions CLR définies par l’utilisateur](/sql/relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-functions).  
   
-- Les paramètres table ne peuvent être indexés que pour prendre en charge les contraintes UNIQUE et PRIMARY KEY. SQL Server ne tient pas à jour de statistiques sur les paramètres table.  
+- Les paramètres table peuvent uniquement être indexés pour prendre en charge les contraintes UNIQUE ou PRIMARY KEY. SQL Server ne tient pas à jour de statistiques sur les paramètres table.  
   
 - Les paramètres table sont en lecture seule dans le code Transact-SQL. Il n’est pas possible de mettre à jour les valeurs de colonne dans les lignes d’un paramètre table, ni d’insérer ou de supprimer des lignes. Pour modifier les données transmises à une procédure stockée ou à une instruction paramétrable dans un paramètre table, il faut les insérer dans une table temporaire ou une variable de table.  
   
-- Il n’est pas possible d’utiliser des instructions ALTER TABLE pour modifier la conception de paramètres table.  
+- Vous ne pouvez pas utiliser d’instructions ALTER TABLE pour modifier la conception de paramètres table.  
   
 ## <a name="configuring-a-sqlparameter-example"></a>Exemple : configuration d'un SqlParameter  
  <xref:System.Data.SqlClient> prend en charge le remplissage des paramètres table à partir d’objets <xref:System.Data.DataTable>, <xref:System.Data.Common.DbDataReader> ou <xref:System.Collections.Generic.IEnumerable%601> \ <xref:Microsoft.SqlServer.Server.SqlDataRecord>. Vous devez spécifier un nom de type pour le paramètre table à l’aide de la propriété <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> d’un objet <xref:System.Data.SqlClient.SqlParameter>. Le `TypeName` doit correspondre au nom d’un type compatible précédemment créé sur le serveur. Le fragment de code suivant montre comment configurer <xref:System.Data.SqlClient.SqlParameter> pour insérer des données.  

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2038a90b-92af-4a0a-baaa-08e688d95194
-ms.openlocfilehash: 55ea0e31bb8a2863dc0e0eb30f6ca5700c3110b8
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 6847f3c5d233b720f8f4c41cfc52ac663e5e810f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78155735"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288626"
 ---
 # <a name="unordered-node-retrieval-by-name-or-index"></a>Extraction de nœuds non triés par leur nom ou par l'index
 **XmlNamedNodeMap**, appelé NamedNodeMap dans la spécification du World Wide Web Consortium (W3C), est requis pour gérer un ensemble non trié de nœuds tout en permettant de référencer les nœuds par leur nom ou sur base de l’index. Le seul moyen d’accéder à un **XmlNamedNodeMap** est le retour de **XmlNamedNodeMap** par une méthode ou une propriété. Trois méthodes ou propriétés retournent **XmlNamedNodeMap** :  
@@ -119,4 +119,4 @@ class test {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [DOM (Document Object Model) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [DOM (Document Object Model) XML](xml-document-object-model-dom.md)

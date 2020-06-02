@@ -7,19 +7,19 @@ helpviewer_keywords:
 - unsealed classes
 - inheritance, classes
 ms.assetid: 9a3bd505-90f5-4053-9f0d-3cf5fa3d3ebf
-ms.openlocfilehash: 6804a79e8beee1d42e313509966b46239e66c25f
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 8e332a6382cf644c82d5e26cf5234cea08dcc693
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743551"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289549"
 ---
 # <a name="unsealed-classes"></a>Classes unsealed
 Les classes sealed ne peuvent pas être héritées de, et elles empêchent l’extensibilité. En revanche, les classes qui peuvent être héritées de sont appelées « classes non scellées ».
 
  ✔️ envisagez d’utiliser des classes non scellées sans membres virtuels ou protégés comme un excellent moyen de fournir une extensibilité encore plus coûteuse à un Framework.
 
- Les développeurs souhaitent souvent hériter de classes non scellées afin d’ajouter des membres de commodité tels que des constructeurs personnalisés, de nouvelles méthodes ou des surcharges de méthode. Par exemple, `System.Messaging.MessageQueue` est déscellée et permet ainsi aux utilisateurs de créer des files d’attente personnalisées qui se trouvent par défaut dans un chemin d’accès de file d’attente particulier ou d’ajouter des méthodes personnalisées qui simplifient l’API pour des scénarios spécifiques.
+ Les développeurs souhaitent souvent hériter de classes non scellées afin d’ajouter des membres de commodité tels que des constructeurs personnalisés, de nouvelles méthodes ou des surcharges de méthode. Par exemple, `System.Messaging.MessageQueue` est déscellée et permet ainsi aux utilisateurs de créer des files d’attente personnalisées qui sont par défaut vers un chemin d’accès de file d’attente particulier ou d’ajouter des méthodes personnalisées qui simplifient l’API pour des scénarios spécifiques.
 
  Les classes sont déscellées par défaut dans la plupart des langages de programmation, et il s’agit également de la valeur par défaut recommandée pour la plupart des classes dans les infrastructures. L’extensibilité offerte par les types non scellés est grandement appréciée par les utilisateurs du Framework et très peu coûteuse à fournir en raison des coûts de test relativement faibles associés aux types non scellés.
 
@@ -29,6 +29,6 @@ Les classes sealed ne peuvent pas être héritées de, et elles empêchent l’e
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
-- [Conception en vue de l’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
-- [Scellement](../../../docs/standard/design-guidelines/sealing.md)
+- [Directives de conception d’infrastructure](index.md)
+- [Conception en vue de l’extensibilité](designing-for-extensibility.md)
+- [Sceller](sealing.md)

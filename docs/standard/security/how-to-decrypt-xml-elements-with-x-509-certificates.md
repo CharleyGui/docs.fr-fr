@@ -1,5 +1,5 @@
 ---
-title: 'Comment : déchiffrer des éléments XML avec les certificats X.509'
+title: 'Comment : déchiffrer des éléments XML avec les certificats X.509'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,19 +13,19 @@ helpviewer_keywords:
 - X.509 certificates
 - certificates, X.509 certificates
 ms.assetid: bd015722-d88d-408d-8ca8-e4e475c441ed
-ms.openlocfilehash: 46fbefbf7a427ec0d60a34ecc2166f8499d08575
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 32a6d95b96bb20571c14c16cc70b944fa3e4032b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708886"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277386"
 ---
-# <a name="how-to-decrypt-xml-elements-with-x509-certificates"></a>Comment : déchiffrer des éléments XML avec les certificats X.509
-Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Cryptography.Xml> pour chiffrer et déchiffrer un élément d'un document XML.  Le chiffrement XML est une méthode normalisée qui permet d'échanger et de stocker des données XML chiffrées sans que celles-ci ne puissent être lues facilement.  Pour plus d’informations sur la norme de chiffrement XML, consultez la spécification World Wide Web Consortium (W3C) pour le chiffrement XML situé sur <https://www.w3.org/TR/xmldsig-core/>.  
+# <a name="how-to-decrypt-xml-elements-with-x509-certificates"></a>Comment : déchiffrer des éléments XML avec les certificats X.509
+Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Cryptography.Xml> pour chiffrer et déchiffrer un élément d'un document XML.  Le chiffrement XML est une méthode normalisée qui permet d'échanger et de stocker des données XML chiffrées sans que celles-ci ne puissent être lues facilement.  Pour plus d’informations sur la norme de chiffrement XML, consultez la spécification World Wide Web Consortium (W3C) pour le chiffrement XML situé dans <https://www.w3.org/TR/xmldsig-core/> .  
   
- Cet exemple déchiffre un élément XML qui a été chiffré à l’aide des méthodes décrites dans : [Comment : chiffrer des éléments XML avec des certificats X. 509](../../../docs/standard/security/how-to-encrypt-xml-elements-with-x-509-certificates.md).  Il trouve une <`EncryptedData`élément >, déchiffre l’élément, puis remplace l’élément par l’élément XML en texte brut d’origine.  
+ Cet exemple déchiffre un élément XML qui a été chiffré à l’aide des méthodes décrites dans : [Comment : chiffrer des éléments XML avec des certificats X. 509](how-to-encrypt-xml-elements-with-x-509-certificates.md).  Il recherche une <`EncryptedData` élément>, déchiffre l’élément, puis remplace l’élément par l’élément XML en texte brut d’origine.  
   
- L'exemple de code de cette procédure déchiffre un élément XML à l'aide d'un certificat X.509 depuis le magasin de certificats local du compte d'utilisateur actuel.  L’exemple utilise la méthode <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> pour récupérer automatiquement le certificat X. 509 et déchiffrer une clé de session stockée dans le <`EncryptedKey`élément > de l’élément <`EncryptedData`>.  La méthode <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> utilise ensuite automatiquement la clé de session pour déchiffrer l'élément XML.  
+ L'exemple de code de cette procédure déchiffre un élément XML à l'aide d'un certificat X.509 depuis le magasin de certificats local du compte d'utilisateur actuel.  L’exemple utilise la <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> méthode pour récupérer automatiquement le certificat X. 509 et déchiffrer une clé de session stockée dans l' `EncryptedKey` élément <> de l' `EncryptedData` élément> <.  La méthode <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> utilise ensuite automatiquement la clé de session pour déchiffrer l'élément XML.  
   
  Cet exemple convient quand plusieurs applications doivent partager des données chiffrées ou quand une application doit enregistrer des données chiffrées entre chaque exécution.  
   
@@ -72,10 +72,10 @@ Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Crypt
   
 - Incluez les espaces de noms suivants : <xref:System.Xml>, <xref:System.Security.Cryptography> et <xref:System.Security.Cryptography.Xml>.  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
+## <a name="net-framework-security"></a>Sécurité du .NET Framework  
  Le certificat X.509 utilisé dans cet exemple sert à des fins de test uniquement.  Les applications doivent utiliser un certificat X.509 généré par une autorité de certification approuvée ou utiliser un certificat généré par le serveur de certificats Microsoft Windows.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Security.Cryptography.Xml>
-- [Comment : chiffrer des éléments XML avec des certificats X.509](../../../docs/standard/security/how-to-encrypt-xml-elements-with-x-509-certificates.md)
+- [Comment : chiffrer des éléments XML avec les certificats X.509](how-to-encrypt-xml-elements-with-x-509-certificates.md)

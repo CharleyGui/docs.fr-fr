@@ -1,5 +1,5 @@
 ---
-title: 'Comment : désencapsuler une tâche imbriquée'
+title: 'Procédure : désencapsuler une tâche imbriquée'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,14 +8,14 @@ dev_langs:
 helpviewer_keywords:
 - tasks, how to unwrap nested tasks
 ms.assetid: a0769dd2-0f6d-48ca-8418-a9d39de7f450
-ms.openlocfilehash: c72654a2bc21035fe706d76018bb163d8ba01ee8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9a69fa42da41ee4a071a6571042fd96fb5a009d2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73106908"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288028"
 ---
-# <a name="how-to-unwrap-a-nested-task"></a>Comment : désencapsuler une tâche imbriquée
+# <a name="how-to-unwrap-a-nested-task"></a>Procédure : désencapsuler une tâche imbriquée
 Vous pouvez retourner une tâche à partir d’une méthode, puis attendre ou poursuivre à partir de cette tâche, comme indiqué dans l’exemple suivant :  
   
  [!code-csharp[TPL_Unwrap#01](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_unwrap/cs/unwrapprogram.cs#01)]
@@ -35,7 +35,7 @@ Vous pouvez retourner une tâche à partir d’une méthode, puis attendre ou po
   
  Les méthodes <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> peuvent être utilisées pour transformer toute `Task<Task>` ou `Task<Task<TResult>>` (`Task(Of Task)` ou `Task(Of Task(Of TResult))` en Visual Basic) en `Task` ou `Task<TResult>` (`Task(Of TResult)` en Visual Basic). La nouvelle tâche représente entièrement la tâche imbriquée interne et inclut l’état d’annulation ainsi que toutes les exceptions.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant décrit comment utiliser la méthode d’extension <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A>.  
   
  [!code-csharp[TPL_UnWrap#04](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_unwrap/cs/unwrapprogram.cs#04)]
@@ -44,4 +44,4 @@ Vous pouvez retourner une tâche à partir d’une méthode, puis attendre ou po
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Threading.Tasks.TaskExtensions?displayProperty=nameWithType>
-- [Programmation asynchrone basée sur les tâches](../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md)
+- [Programmation asynchrone basée sur les tâches](task-based-asynchronous-programming.md)

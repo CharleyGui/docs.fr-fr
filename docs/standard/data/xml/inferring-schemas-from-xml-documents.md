@@ -7,12 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: f3d97d53-614d-4a04-a174-87965b7405f6
-ms.openlocfilehash: 2d991a7835d22af2c780b020d6884f626908665e
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 5b0f9bea33346083ce0015fbf3cdfeb0e0ea1181
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82796169"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287660"
 ---
 # <a name="inferring-schemas-from-xml-documents"></a>Inférence de schémas à partir de documents XML
 Cette rubrique décrit comment utiliser la classe <xref:System.Xml.Schema.XmlSchemaInference> pour déduire un schéma en langage XSD (XML Schema Definition) à partir de la structure d'un document XML.  
@@ -83,7 +83,7 @@ Cette rubrique décrit comment utiliser la classe <xref:System.Xml.Schema.XmlSch
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.Schema.XmlSchemaInference>
-- [Modèle Objet du schéma (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
-- [Inférence d'un schéma XML](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)
-- [Règles pour l'inférence de types et de structure de nœud de schéma](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)
-- [Règles relatives à l'inférence de types simples](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)
+- [Modèle Objet du schéma (SOM) XML](xml-schema-object-model-som.md)
+- [Inférence d'un schéma XML](inferring-an-xml-schema.md)
+- [Règles pour l'inférence de types et de structure de nœud de schéma](rules-for-inferring-schema-node-types-and-structure.md)
+- [Règles relatives à l'inférence de types simples](rules-for-inferring-simple-types.md)

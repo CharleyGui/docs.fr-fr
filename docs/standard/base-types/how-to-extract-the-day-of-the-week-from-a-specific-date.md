@@ -22,12 +22,12 @@ helpviewer_keywords:
 - DateTimeOffset.ToString method
 - full weekday names
 ms.assetid: 1c9bef76-5634-46cf-b91c-9b9eb72091d7
-ms.openlocfilehash: 8eed7c0176a2c1f4beb472dff981d52e522c7e36
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 128ff4887601431f75981f13b51a11469e65d65c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523830"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290472"
 ---
 # <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>Procédure : extraire le jour de la semaine d’une date spécifique
 Le .NET Framework permet de déterminer facilement le jour ordinal de la semaine pour une date particulière, et d'afficher le nom du jour de la semaine localisé pour une date particulière. Le jour de la semaine correspondant à une date particulière est indiqué par une valeur énumérée contenue dans la propriété <xref:System.DateTime.DayOfWeek%2A> ou <xref:System.DateTimeOffset.DayOfWeek%2A>. Par contre, la récupération du nom du jour de la semaine est une opération de mise en forme qui peut être effectuée en appelant une méthode de mise en forme, comme la méthode `ToString` d'une valeur de date et d'heure ou la méthode <xref:System.String.Format%2A?displayProperty=nameWithType>. Cette rubrique montre comment effectuer ces opérations de mise en forme.  
@@ -56,7 +56,7 @@ Le .NET Framework permet de déterminer facilement le jour ordinal de la semaine
          [!code-csharp[Formatting.Howto.WeekdayName#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/abbrname1.cs#1)]
          [!code-vb[Formatting.Howto.WeekdayName#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/abbrname1.vb#1)]  
   
-    2. Pour extraire le nom abrégé en semaine pour une culture <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> spécifique, appelez la méthode de la date et de la valeur de l’heure ou <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> de l’instance. Indiquez la chaîne « ddd » comme paramètre `format`. Indiquez comme paramètre <xref:System.Globalization.CultureInfo> un objet <xref:System.Globalization.DateTimeFormatInfo> ou `provider` qui représente la culture au format de laquelle vous souhaitez récupérer le nom du jour de la semaine. Le code suivant illustre un appel de la méthode <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> à l'aide d'un objet <xref:System.Globalization.CultureInfo> qui représente la culture fr-FR.  
+    2. Pour extraire le nom abrégé du jour de la semaine pour une culture spécifique, appelez la méthode d’instance ou de la valeur de date et d’heure <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> . Indiquez la chaîne « ddd » comme paramètre `format`. Indiquez comme paramètre <xref:System.Globalization.CultureInfo> un objet <xref:System.Globalization.DateTimeFormatInfo> ou `provider` qui représente la culture au format de laquelle vous souhaitez récupérer le nom du jour de la semaine. Le code suivant illustre un appel de la méthode <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> à l'aide d'un objet <xref:System.Globalization.CultureInfo> qui représente la culture fr-FR.  
   
          [!code-csharp[Formatting.Howto.WeekdayName#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/abbrname2.cs#2)]
          [!code-vb[Formatting.Howto.WeekdayName#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/abbrname2.vb#2)]  
@@ -67,12 +67,12 @@ Le .NET Framework permet de déterminer facilement le jour ordinal de la semaine
   
 2. Vous pouvez extraire le nom complet du jour de la semaine au format de la culture actuelle ou d'une culture spécifique :  
   
-    1. Pour extraire le nom en semaine de la culture <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> actuelle, appelez la méthode de la valeur de la date et de l’heure ou <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> de l’instance, et passez la chaîne « dddd » comme `format` paramètre. L'exemple suivant illustre l'appel de la méthode <xref:System.DateTime.ToString%28System.String%29>.  
+    1. Pour extraire le nom du jour de la semaine pour la culture actuelle, appelez la méthode d’instance ou de la valeur de date et d’heure <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> , puis transmettez la chaîne "dddd" comme `format` paramètre. L'exemple suivant illustre l'appel de la méthode <xref:System.DateTime.ToString%28System.String%29>.  
   
          [!code-csharp[Formatting.Howto.WeekdayName#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/fullname4.cs#4)]
          [!code-vb[Formatting.Howto.WeekdayName#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/fullname4.vb#4)]  
   
-    2. Pour extraire le nom en semaine d’une culture <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> spécifique, appelez la méthode de la date et de l’heure ou <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> de l’instance. Indiquez la chaîne « dddd » comme paramètre `format`. Indiquez comme paramètre <xref:System.Globalization.CultureInfo> un objet <xref:System.Globalization.DateTimeFormatInfo> ou `provider` qui représente la culture au format de laquelle vous souhaitez récupérer le nom du jour de la semaine. Le code suivant illustre un appel de la méthode <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> à l'aide d'un objet <xref:System.Globalization.CultureInfo> qui représente la culture es-ES.  
+    2. Pour extraire le nom du jour de la semaine pour une culture spécifique, appelez la <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> méthode d’instance ou de la valeur de date et d’heure <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> . Indiquez la chaîne « dddd » comme paramètre `format`. Indiquez comme paramètre <xref:System.Globalization.CultureInfo> un objet <xref:System.Globalization.DateTimeFormatInfo> ou `provider` qui représente la culture au format de laquelle vous souhaitez récupérer le nom du jour de la semaine. Le code suivant illustre un appel de la méthode <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> à l'aide d'un objet <xref:System.Globalization.CultureInfo> qui représente la culture es-ES.  
   
          [!code-csharp[Formatting.Howto.WeekdayName#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/fullname5.cs#5)]
          [!code-vb[Formatting.Howto.WeekdayName#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/fullname5.vb#5)]  
@@ -100,5 +100,5 @@ Le .NET Framework permet de déterminer facilement le jour ordinal de la semaine
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Chaînes de format de date et d'heure standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
-- [Chaînes de format de date et d'heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Chaînes de format de date et d’heure standard](standard-date-and-time-format-strings.md)
+- [Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)

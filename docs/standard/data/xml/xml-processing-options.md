@@ -3,12 +3,12 @@ title: Options de traitement XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 33ced8ee-1745-4e71-8dee-ebe70ec067c7
-ms.openlocfilehash: 1707ed10d944a518872132dded40751026a4c8e7
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 544c3467f46f5bebf79cb95906faeca7926c3824
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709918"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291420"
 ---
 # <a name="xml-processing-options"></a>Options de traitement XML
 Reportez-vous aux tableaux suivants pour obtenir une liste des technologies Microsoft que vous pouvez utiliser pour traiter des données XML.  
@@ -22,7 +22,7 @@ Reportez-vous aux tableaux suivants pour obtenir une liste des technologies Micr
 |<xref:System.Xml.XmlWriter?displayProperty=nameWithType>|Basé sur les flux|-   Fournit un moyen rapide, en avant seulement et non mis en cache de générer des données XML.<br />-   Vous pouvez créer des objets à l’aide de la méthode <xref:System.Xml.XmlWriter.Create%2A?displayProperty=nameWithType> et spécifier l’ensemble de fonctionnalités à activer sur l’objet avec la classe <xref:System.Xml.XmlWriterSettings>.|  
 |<xref:System.Xml.XmlDocument?displayProperty=nameWithType>|En mémoire|-   Implémente les recommandations du [W3C relatives aux modèles objet de document (DOM), niveaux 1](https://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html) et [2 (noyau)](https://www.w3.org/TR/DOM-Level-2-Core/).<br />-   Vous pouvez créer, insérer, supprimer et modifier des nœuds à l'aide de méthodes et de propriétés basées sur le modèle DOM habituel.<br />-   Utilisez cette option si vous modifiez du code existant qui implémente le modèle W3C DOM.|  
 |<xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>|En mémoire|-   Offre plusieurs options d'édition et capacités de navigation utilisant un modèle de curseur.<br />-   Les documents XML peuvent être contenus dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument>.<br />-   Procure d'excellentes performances pour le traitement en lecture seule du code XML.<br />-   Utilisez cette option si vous modifiez du code existant à l’aide de requêtes XPath ou de transformations XSLT.|  
-|<xref:System.Xml.Xsl.XslCompiledTransform>|En mémoire|-   Fournit des options pour la transformation de données XML à l'aide des transformations XSL.<br />-   [XSLT Compiler (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md) vous permet de faire référence à des transformations précompilées dans votre application.|  
+|<xref:System.Xml.Xsl.XslCompiledTransform>|En mémoire|-   Fournit des options pour la transformation de données XML à l'aide des transformations XSL.<br />-   [XSLT Compiler (xsltc.exe)](xslt-compiler-xsltc-exe.md) vous permet de faire référence à des transformations précompilées dans votre application.|  
   
 ## <a name="win32-and-com-based-options"></a>Options Win32 et COM  
   
@@ -33,6 +33,6 @@ Reportez-vous aux tableaux suivants pour obtenir une liste des technologies Micr
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Traitement de données XML à l'aide du modèle DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
-- [Traitement des données XML à l'aide du modèle de données XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [XSLT Compiler (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)
+- [Traitement de données XML à l'aide du modèle DOM](process-xml-data-using-the-dom-model.md)
+- [Traitement des données XML à l'aide du modèle de données XPath](process-xml-data-using-the-xpath-data-model.md)
+- [XSLT Compiler (xsltc.exe)](xslt-compiler-xsltc-exe.md)

@@ -16,18 +16,18 @@ helpviewer_keywords:
 - standard numeric format strings
 - formatting numbers [.NET Framework]
 - format specifiers, standard numeric format strings
-ms.openlocfilehash: 93f93574e6a3c24fc03a2cbc6c7d0f11f4fe61f6
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 6b84fc752a7bb37ff64bf6cfa08879aed3f20010
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83440874"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288314"
 ---
 # <a name="standard-numeric-format-strings"></a>Chaînes de format numériques standard
 
 Les chaînes de format numériques standard sont utilisées pour mettre en forme des types numériques courants. Une chaîne de format numérique standard se présente sous la forme `Axx`, où :
 
-- `A` est un caractère alphabétique unique appelé *spécificateur de format*. Toute chaîne de format numérique contenant plusieurs caractères alphabétiques, y compris un espace blanc, est interprétée comme une chaîne de format numérique personnalisée. Pour plus d’informations, consultez [Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md).
+- `A` est un caractère alphabétique unique appelé *spécificateur de format*. Toute chaîne de format numérique contenant plusieurs caractères alphabétiques, y compris un espace blanc, est interprétée comme une chaîne de format numérique personnalisée. Pour plus d’informations, consultez [Chaînes de format numériques personnalisées](custom-numeric-format-strings.md).
 
 - `xx` est un entier facultatif appelé *spécificateur de précision*. Le spécificateur de précision est compris entre 0 et 99 ; il affecte le nombre de chiffres dans le résultat. Notez que le spécificateur de précision contrôle le nombre de chiffres dans la représentation sous forme de chaîne d'un nombre. Il n'arrondit pas le nombre lui-même. Pour exécuter une opération d'arrondi, utilisez la méthode <xref:System.Math.Ceiling%2A?displayProperty=nameWithType>, <xref:System.Math.Floor%2A?displayProperty=nameWithType> ou <xref:System.Math.Round%2A?displayProperty=nameWithType>.
 
@@ -36,13 +36,13 @@ Les chaînes de format numériques standard sont utilisées pour mettre en forme
   - **Sur .NET Core 2.1 et versions ultérieures**, le runtime sélectionne le résultat ayant un chiffre encore moins significatif (autrement dit, à l’aide de <xref:System.MidpointRounding.ToEven?displayProperty=nameWithType>).
 
   > [!NOTE]
-  > Le spécificateur de précision détermine le nombre de chiffres dans la chaîne de résultat. Pour remplir une chaîne de résultat avec des espaces de début ou de fin, utilisez la fonctionnalité de [mise en forme composite](../../../docs/standard/base-types/composite-formatting.md) et définissez un *composant d’alignement* dans l’élément de mise en forme.
+  > Le spécificateur de précision détermine le nombre de chiffres dans la chaîne de résultat. Pour remplir une chaîne de résultat avec des espaces de début ou de fin, utilisez la fonctionnalité de [mise en forme composite](composite-formatting.md) et définissez un *composant d’alignement* dans l’élément de mise en forme.
 
 Les chaînes de format numériques standard sont prises en charge par :
 
 - Certaines surcharges de la méthode `ToString` de tous les types numériques. Par exemple, vous pouvez fournir une chaîne de format numérique aux méthodes <xref:System.Int32.ToString%28System.String%29?displayProperty=nameWithType> et <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>.
 
-- La [fonctionnalité de mise en forme composite](../../../docs/standard/base-types/composite-formatting.md) .NET, utilisée par certaines méthodes `Write` et `WriteLine` des classes <xref:System.Console> et <xref:System.IO.StreamWriter>, la méthode <xref:System.String.Format%2A?displayProperty=nameWithType> et la méthode <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>. La fonctionnalité de mise en forme composite vous permet d’inclure la représentation sous forme de chaîne de plusieurs éléments de données dans une même chaîne, de spécifier la largeur d’un champ et d’aligner les nombres dans un champ. Pour plus d’informations, consultez [Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md).
+- La [fonctionnalité de mise en forme composite](composite-formatting.md) .NET, utilisée par certaines méthodes `Write` et `WriteLine` des classes <xref:System.Console> et <xref:System.IO.StreamWriter>, la méthode <xref:System.String.Format%2A?displayProperty=nameWithType> et la méthode <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>. La fonctionnalité de mise en forme composite vous permet d’inclure la représentation sous forme de chaîne de plusieurs éléments de données dans une même chaîne, de spécifier la largeur d’un champ et d’aligner les nombres dans un champ. Pour plus d’informations, consultez [Mise en forme composite](composite-formatting.md).
 
 - Les [chaînes interpolées](../../csharp/language-reference/tokens/interpolated.md) en C# et Visual Basic, qui fournissent une syntaxe simplifiée par rapport aux de chaînes de format composite.
 
@@ -78,7 +78,7 @@ Une chaîne de format numérique standard peut être utilisée pour définir la 
   [!code-csharp-interactive[Formatting.Numeric.Standard#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/standardusage1.cs#10)]
   [!code-vb[Formatting.Numeric.Standard#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/standardusage1.vb#10)]
 
-- Elle peut être fournie comme argument `formatString` dans un élément de mise en forme utilisé avec des méthodes telles que <xref:System.String.Format%2A?displayProperty=nameWithType>, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> et <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>. Pour plus d’informations, consultez [Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md). L'exemple suivant utilise un élément de mise en forme pour insérer une valeur monétaire dans une chaîne.
+- Elle peut être fournie comme argument `formatString` dans un élément de mise en forme utilisé avec des méthodes telles que <xref:System.String.Format%2A?displayProperty=nameWithType>, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> et <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>. Pour plus d’informations, consultez [Mise en forme composite](composite-formatting.md). L'exemple suivant utilise un élément de mise en forme pour insérer une valeur monétaire dans une chaîne.
 
   [!code-cpp[Formatting.Numeric.Standard#11](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/standardusage1.cpp#11)]
   [!code-csharp-interactive[Formatting.Numeric.Standard#11](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/standardusage1.cs#11)]
@@ -384,9 +384,9 @@ L'exemple suivant met en forme une valeur numérique intégrale et à virgule fl
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Globalization.NumberFormatInfo>
-- [Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)
-- [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
-- [Procédure : remplir un nombre avec des zéros non significatifs](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
-- [Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md)
+- [Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)
+- [Mise en forme des types](formatting-types.md)
+- [Procédure : remplir un nombre avec des zéros non significatifs](how-to-pad-a-number-with-leading-zeros.md)
+- [Mise en forme composite](composite-formatting.md)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)

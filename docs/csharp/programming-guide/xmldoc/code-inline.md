@@ -1,5 +1,5 @@
 ---
-title: <c>- Guide de programmation C
+title: <c>-Guide de programmation C#
 ms.date: 07/20/2015
 f1_keywords:
 - c
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - c C# XML tag
 - <c> C# XML tag
 ms.assetid: aad5b16e-a29e-445e-bd0d-eea0b138d7b2
-ms.openlocfilehash: d5b28ee6db52d191f8454592d792ac0a1e1dc73b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a09bcd069e2f85f4a21736cb218c42c0e481d70b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76793453"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287465"
 ---
-# <a name="c-c-programming-guide"></a>\<c> (guide de programmation de C)
+# <a name="c-c-programming-guide"></a>\<c>(Guide de programmation C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -31,17 +31,17 @@ ms.locfileid: "76793453"
 
   Texte que vous souhaitez indiquer comme étant du code.
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
-La balise \<c> vous permet d’indiquer que le texte d’une description doit être marqué comme étant du code. Utilisez [ \<le code>](./code.md) pour indiquer plusieurs lignes sous forme de code.
+La `<c>` balise vous donne un moyen d’indiquer que le texte d’une description doit être marqué comme étant du code. Utilisez [\<code>](./code.md) pour indiquer plusieurs lignes en tant que code.
 
 Compilez avec [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 [!code-csharp[csProgGuideDocComments#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#2)]
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation CMD](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Balises recommandées pour les commentaires de documentation](./recommended-tags-for-documentation-comments.md)

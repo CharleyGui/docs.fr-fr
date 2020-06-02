@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 76f28770-7126-428f-9ed5-7b5ae8bad5ee
-ms.openlocfilehash: af6df3729f1bd926e9a47cc5b9d9bf460c8e1225
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 3d517652665d6d0693e141d623483ff8946bbbf4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159284"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290238"
 ---
 # <a name="xmlschemacollection-schema-compilation"></a>Compilation de schéma XmlSchemaCollection
 La classe **XmlSchemaCollection** est un cache ou une bibliothèque où des schémas XDR (XML-Data Reduced) et des schémas de langage XSD (XML Schema Definition) peuvent être stockés et validés. **XmlSchemaCollection** améliore les performances en mettant les schémas en cache au lieu d'y accéder à partir d'un fichier ou d'une URL.  
@@ -20,7 +20,7 @@ La classe **XmlSchemaCollection** est un cache ou une bibliothèque où des sch�
 > Bien que la classe **XmlSchemaCollection** contienne à la fois des schémas XDR et des schémas XML, toute méthode ou propriété qui prend ou retourne un objet **XmlSchema** ne prend en charge que les schémas XML.  
   
 > [!IMPORTANT]
-> La classe <xref:System.Xml.Schema.XmlSchemaCollection> est désormais obsolète et a été remplacée par la classe <xref:System.Xml.Schema.XmlSchemaSet>. Pour plus d’informations sur la classe <xref:System.Xml.Schema.XmlSchemaSet>, consultez [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
+> La classe <xref:System.Xml.Schema.XmlSchemaCollection> est désormais obsolète et a été remplacée par la classe <xref:System.Xml.Schema.XmlSchemaSet>. Pour plus d’informations sur la classe <xref:System.Xml.Schema.XmlSchemaSet>, consultez [XmlSchemaSet pour la compilation de schémas](xmlschemaset-for-schema-compilation.md).  
   
 ## <a name="add-schemas-to-the-collection"></a>Ajout de schémas à la collection  
  Les schémas sont chargés dans la collection à l’aide de la méthode **Add** de la collection **XmlSchemaCollection**. C’est à ce moment-là que le schéma est associé à un URI d’espace de noms. Pour les schémas XML, l'URI d'espace de noms correspond généralement à l'espace de noms cible du schéma. Pour les schémas XDR, l'URI d'espace de noms correspond à l'espace de noms spécifié lors de l'ajout du schéma à la collection.  
@@ -57,5 +57,5 @@ vr.Schemas.Add(xsc);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Validation par rapport à un schéma XDR à l'aide de XmlSchemaCollection](../../../../docs/standard/data/xml/xdr-validation-with-xmlschemacollection.md)
-- [Validation de schéma XML (XSD) avec XmlSchemaCollection](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemacollection.md)
+- [Validation par rapport à un schéma XDR à l'aide de XmlSchemaCollection](xdr-validation-with-xmlschemacollection.md)
+- [Validation de schéma XML (XSD) avec XmlSchemaCollection](xml-schema-xsd-validation-with-xmlschemacollection.md)

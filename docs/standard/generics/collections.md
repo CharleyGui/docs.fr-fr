@@ -11,16 +11,16 @@ helpviewer_keywords:
 - generic collections [.NET]
 - generic types [.NET]
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
-ms.openlocfilehash: dce0e38b0198396ec0dbc3ced7f2f59c2b112b56
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5767bac0bb1e3ae9e586e9a10d8452d421519447
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75708408"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287569"
 ---
-# <a name="generic-collections-in-net"></a>Collections génériques en .NET
+# <a name="generic-collections-in-net"></a>Collections génériques dans .NET
 
- La bibliothèque de classes .NET fournit plusieurs classes de collections génériques dans les espaces de noms <xref:System.Collections.Generic> et <xref:System.Collections.ObjectModel>. Pour plus d’informations sur ces classes, consultez [Types de collections fréquemment utilisés](../../../docs/standard/collections/commonly-used-collection-types.md).  
+ La bibliothèque de classes .NET fournit plusieurs classes de collections génériques dans les espaces de noms <xref:System.Collections.Generic> et <xref:System.Collections.ObjectModel>. Pour plus d’informations sur ces classes, consultez [Types de collections fréquemment utilisés](../collections/commonly-used-collection-types.md).  
   
 ## <a name="systemcollectionsgeneric"></a>System.Collections.Generic
 
@@ -41,7 +41,7 @@ ms.locfileid: "75708408"
  La structure générique <xref:System.Nullable%601> vous permet d'utiliser des types valeur comme si la valeur `null` pouvait leur être affectée. Ceci peut être utile quand vous travaillez avec des requêtes de base de données, où des champs contenant des types valeur peuvent être manquants. Le paramètre de type générique peut être n'importe quel type valeur.  
   
 > [!NOTE]
-> En C# et Visual Basic, il n'est pas nécessaire d'utiliser <xref:System.Nullable%601> explicitement, car le langage a une syntaxe pour les types Nullables. Voir [Les types de valeur nulables (référence C)](../../csharp/language-reference/builtin-types/nullable-value-types.md) et les types de valeur [nullable (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md).
+> En C# et Visual Basic, il n'est pas nécessaire d'utiliser <xref:System.Nullable%601> explicitement, car le langage a une syntaxe pour les types Nullables. Consultez types [valeur Nullable (référence C#)](../../csharp/language-reference/builtin-types/nullable-value-types.md) et [types valeur Nullable (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md).
   
  La structure générique <xref:System.ArraySegment%601> offre un moyen de délimiter une plage d'éléments dans un tableau unidimensionnel de base zéro, de n'importe quel type. Le paramètre de type générique est le type des éléments du tableau.  
   
@@ -55,6 +55,6 @@ ms.locfileid: "75708408"
 
 - <xref:System.Collections.Generic?displayProperty=nameWithType>
 - <xref:System.Collections.ObjectModel?displayProperty=nameWithType>
-- [Génériques](../../../docs/standard/generics/index.md)
-- [Délégués génériques pour la manipulation de tableaux et de listes](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)
-- [Interfaces génériques](../../../docs/standard/generics/interfaces.md)
+- [Génériques](index.md)
+- [Délégués génériques pour la manipulation de tableaux et de listes](delegates-for-manipulating-arrays-and-lists.md)
+- [Interfaces génériques](interfaces.md)

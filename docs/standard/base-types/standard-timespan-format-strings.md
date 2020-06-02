@@ -17,23 +17,23 @@ helpviewer_keywords:
 - standard TimeSpan format strings
 - formatting [.NET Framework], time intervals
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
-ms.openlocfilehash: ec06edc16829c6d4caf8c760922aac1471e365c2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2ed9ca7337e40b5520ddbfc92925c5bedb45f701
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75346626"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289276"
 ---
 # <a name="standard-timespan-format-strings"></a>Chaînes de format TimeSpan standard
 
- Une chaîne de format <xref:System.TimeSpan> standard utilise un spécificateur de format pour définir la représentation textuelle d'une valeur <xref:System.TimeSpan> qui résulte d'une opération de mise en forme. Toute chaîne de format contenant plusieurs caractères alphabétiques, y compris un espace blanc, est interprétée comme une chaîne de format <xref:System.TimeSpan> personnalisée. Pour plus d’informations, voir [chaînes de format Custom TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md) .  
+ Une chaîne de format <xref:System.TimeSpan> standard utilise un spécificateur de format pour définir la représentation textuelle d'une valeur <xref:System.TimeSpan> qui résulte d'une opération de mise en forme. Toute chaîne de format contenant plusieurs caractères alphabétiques, y compris un espace blanc, est interprétée comme une chaîne de format <xref:System.TimeSpan> personnalisée. Pour plus d’informations, consultez [chaînes de format TimeSpan personnalisées](custom-timespan-format-strings.md) .  
   
- Les représentations sous forme de chaîne de valeurs <xref:System.TimeSpan> sont produites par des appels aux surcharges de la méthode <xref:System.TimeSpan.ToString%2A?displayProperty=nameWithType>, ainsi que par les méthodes qui prennent en charge la mise en forme composite, telles que <xref:System.String.Format%2A?displayProperty=nameWithType>. Pour plus d’informations, consultez [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md) et [Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md). L'exemple suivant illustre l'utilisation de chaînes de format standard dans des opérations de mise en forme.  
+ Les représentations sous forme de chaîne de valeurs <xref:System.TimeSpan> sont produites par des appels aux surcharges de la méthode <xref:System.TimeSpan.ToString%2A?displayProperty=nameWithType>, ainsi que par les méthodes qui prennent en charge la mise en forme composite, telles que <xref:System.String.Format%2A?displayProperty=nameWithType>. Pour plus d’informations, consultez [Mise en forme des types](formatting-types.md) et [Mise en forme composite](composite-formatting.md). L'exemple suivant illustre l'utilisation de chaînes de format standard dans des opérations de mise en forme.  
   
  [!code-csharp[Conceptual.TimeSpan.Standard#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.standard/cs/formatexample1.cs#2)]
  [!code-vb[Conceptual.TimeSpan.Standard#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.standard/vb/formatexample1.vb#2)]  
   
- Les chaînes de format <xref:System.TimeSpan> standard sont également utilisées par les méthodes <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> et <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> pour définir le format requis des chaînes d'entrée pour les opérations d'analyse. (Parsing convertit la représentation des cordes d’une valeur à cette valeur.) L’exemple suivant illustre l’utilisation de chaînes de format standard dans les opérations d’analyse.  
+ Les chaînes de format <xref:System.TimeSpan> standard sont également utilisées par les méthodes <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> et <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> pour définir le format requis des chaînes d'entrée pour les opérations d'analyse. (L’analyse convertit la représentation sous forme de chaîne d’une valeur en cette valeur.) L’exemple suivant illustre l’utilisation de chaînes de format standard dans les opérations d’analyse.  
   
  [!code-csharp[Conceptual.TimeSpan.Standard#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.standard/cs/parseexample1.cs#3)]
  [!code-vb[Conceptual.TimeSpan.Standard#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.standard/vb/parseexample1.vb#3)]  
@@ -56,9 +56,9 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 |Élément|Description|  
 |-------------|-----------------|  
 |*-*|Signe négatif facultatif, qui indique un intervalle de temps négatif.|  
-|*D*|Nombre facultatif de jours, sans zéros non significatifs.|  
+|*d*|Nombre facultatif de jours, sans zéros non significatifs.|  
 |*hh*|Nombre d'heures, allant de "00" à "23".|  
-|*Mm*|Nombre de minutes, allant de "00" à "59".|  
+|*MM*|Nombre de minutes, allant de "00" à "59".|  
 |*ss*|Nombre de secondes, allant de "0" à "59".|  
 |*fffffff*|Partie fractionnaire facultative d'une seconde.  Sa valeur peut varier de "0000001" (une graduation ou un dix-millionième de seconde) à "9999999" (9 999 999 dix-millionièmes de seconde ou une seconde moins une graduation).|  
   
@@ -82,9 +82,9 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 |Élément|Description|  
 |-------------|-----------------|  
 |*-*|Signe négatif facultatif, qui indique un intervalle de temps négatif.|  
-|*D*|Nombre facultatif de jours, sans zéros non significatifs.|  
+|*d*|Nombre facultatif de jours, sans zéros non significatifs.|  
 |*h*|Nombre d'heures, allant de "0" à "23", sans zéros non significatifs.|  
-|*Mm*|Nombre de minutes, allant de "00" à "59".|  
+|*MM*|Nombre de minutes, allant de "00" à "59".|  
 |*ss*|Nombre de secondes, allant de "00" à "59".|  
 |*.*|Séparateur des fractions de seconde. Il équivaut à la propriété <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> de la culture spécifiée, sans substitutions par l'utilisateur.|  
 |*FFFFFFF*|Fractions de seconde. Le moins de chiffres possible sont affichés.|  
@@ -99,16 +99,16 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 ## <a name="the-general-long-g-format-specifier"></a>Spécificateur de format long général ("G")  
  Le spécificateur de format "G" <xref:System.TimeSpan> retourne la représentation sous forme de chaîne d'une valeur <xref:System.TimeSpan> sous une forme longue comprenant toujours les jours et les fractions de secondes. La chaîne qui résulte du spécificateur de format standard "G" est au format suivant :  
   
- [-] *d*:*hh*:*mm*:*ss*. *fffffff*  
+ [-] *d*:*hh*:*mm*:*SS*. *fffffff*  
   
  Les éléments entre crochets ([ et ]) sont facultatifs. Le signe deux-points (:) est un symbole littéral. Le tableau suivant décrit les éléments restants.  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |*-*|Signe négatif facultatif, qui indique un intervalle de temps négatif.|  
-|*D*|Nombre de jours, sans zéros non significatifs.|  
+|*d*|Nombre de jours, sans zéros non significatifs.|  
 |*hh*|Nombre d'heures, allant de "00" à "23".|  
-|*Mm*|Nombre de minutes, allant de "00" à "59".|  
+|*MM*|Nombre de minutes, allant de "00" à "59".|  
 |*ss*|Nombre de secondes, allant de "00" à "59".|  
 |*.*|Séparateur des fractions de seconde. Il équivaut à la propriété <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> de la culture spécifiée, sans substitutions par l'utilisateur.|  
 |*fffffff*|Fractions de seconde.|  
@@ -122,6 +122,6 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
-- [Chaînes de format TimeSpan personnalisées](../../../docs/standard/base-types/custom-timespan-format-strings.md)
-- [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)
+- [Mise en forme des types](formatting-types.md)
+- [Chaînes de format TimeSpan personnalisées](custom-timespan-format-strings.md)
+- [Analyse de chaînes](parsing-strings.md)

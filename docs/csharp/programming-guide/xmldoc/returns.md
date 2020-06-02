@@ -1,5 +1,5 @@
 ---
-title: <returns> - Guide de programmation C
+title: <returns> -Guide de programmation C#
 ms.date: 07/20/2015
 f1_keywords:
 - returns
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <returns> C# XML tag
 - returns C# XML tag
 ms.assetid: bb2d9958-62fc-47c7-9511-6311171f119f
-ms.openlocfilehash: 784d9effa589c962b8a2b982fd199f74309fb4dc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7bc950a8d89a3ac2b5c3b7a68e05c7778e97f85c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76789709"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287231"
 ---
-# <a name="returns-c-programming-guide"></a>\<retours> (guide de programmation C)
+# <a name="returns-c-programming-guide"></a>\<returns>(Guide de programmation C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -29,17 +29,17 @@ ms.locfileid: "76789709"
 
   Description de la valeur de retour.
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
-La balise \<returns> doit être utilisée dans le commentaire relatif à une déclaration de méthode pour décrire la valeur de retour.
+La `<returns>` balise doit être utilisée dans le commentaire pour une déclaration de méthode afin de décrire la valeur de retour.
 
 Compilez avec [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 [!code-csharp[csProgGuideDocComments#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#10)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation CMD](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Balises recommandées pour les commentaires de documentation](./recommended-tags-for-documentation-comments.md)

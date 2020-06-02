@@ -7,12 +7,12 @@ helpviewer_keywords:
 - threading [.NET], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-ms.openlocfilehash: a70bd3070d8b1dcd06e55d330a01d29071293f6c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7f064738472a65ce89f17efc4d7ea00ac98280d0
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159388"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291095"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronisation des données pour le multithreading
 
@@ -22,26 +22,26 @@ Le .NET fournit plusieurs stratégies pour synchroniser l’accès aux membres s
   
 - Régions de code synchronisées. Vous pouvez utiliser la classe <xref:System.Threading.Monitor> ou la prise en charge du compilateur pour cette classe afin de synchroniser uniquement le bloc de code qui en a besoin, ce qui améliore les performances.  
   
-- Synchronisation manuelle. Vous pouvez utiliser les objets de synchronisation fournis par la bibliothèque de classes .NET. Voir [Vue d’ensemble des primitives de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md), qui inclut également une présentation de la classe <xref:System.Threading.Monitor>.  
+- Synchronisation manuelle. Vous pouvez utiliser les objets de synchronisation fournis par la bibliothèque de classes .NET. Voir [Vue d’ensemble des primitives de synchronisation](overview-of-synchronization-primitives.md), qui inclut également une présentation de la classe <xref:System.Threading.Monitor>.  
   
 - Contextes synchronisés. Pour les applications .NET Framework et Xamarin, vous pouvez utiliser <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> pour activer la synchronisation simple et automatique des objets <xref:System.ContextBoundObject>.  
   
-- Classes de collection dans l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>. Ces classes fournissent des opérations d’ajout et de suppression intégrées et synchronisées. Pour plus d’informations, consultez [Collections thread-safe](../../../docs/standard/collections/thread-safe/index.md).  
+- Classes de collection dans l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>. Ces classes fournissent des opérations d’ajout et de suppression intégrées et synchronisées. Pour plus d’informations, consultez [Collections thread-safe](../collections/thread-safe/index.md).  
   
  Le common language runtime fournit un modèle de thread dans lequel les classes se répartissent en plusieurs catégories qui peuvent être synchronisées de différentes manières, selon les besoins. Le tableau suivant indique le type de prise en charge de la synchronisation fourni pour les champs et méthodes dans une catégorie de synchronisation donnée.  
   
 |Category|Champs globaux|Champs statiques|Méthodes statiques|Champs d'instance|Méthodes d’instance|Blocs de code spécifiques|  
 |--------------|-------------------|-------------------|--------------------|---------------------|----------------------|--------------------------|  
-|Aucune synchronisation|Non |Non |Non |Non |Non |Non |  
-|Contexte synchronisé|Non |Non |Non |Oui|Oui|Non |  
-|Régions de code synchronisées|Non |Non |Seulement en cas de marquage|Non |Seulement en cas de marquage|Seulement en cas de marquage|  
-|Synchronisation manuelle|Manuel|Manuel|Manuel|Manuel|Manuel|Manuel|  
+|Aucune synchronisation|Non|Non|Non|Non|Non|Non|  
+|Contexte synchronisé|Non|Non|Non|Oui|Oui|Non|  
+|Régions de code synchronisées|Non|Non|Seulement en cas de marquage|Non|Seulement en cas de marquage|Seulement en cas de marquage|  
+|Synchronisation manuelle|Manuelle|Manuelle|Manuelle|Manuelle|Manuelle|Manuelle|  
   
 ## <a name="no-synchronization"></a>Aucune synchronisation  
  Il s’agit de la valeur par défaut pour les objets. N’importe quel thread peut accéder à toute méthode ou champ et ce, à tout moment. Par contre, un seul thread à la fois doit accéder à ces objets.  
   
 ## <a name="manual-synchronization"></a>Synchronisation manuelle  
- La bibliothèque de classes .NET fournit plusieurs classes pour la synchronisation des threads. Voir [Vue d’ensemble des primitives de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
+ La bibliothèque de classes .NET fournit plusieurs classes pour la synchronisation des threads. Voir [Vue d’ensemble des primitives de synchronisation](overview-of-synchronization-primitives.md).  
   
 ## <a name="synchronized-code-regions"></a>Régions de code synchronisées  
  Vous pouvez utiliser la classe <xref:System.Threading.Monitor> ou un mot-clé de compilateur pour synchroniser des blocs de code ainsi que des méthodes d’instance et statiques. Les champs statiques synchronisés ne sont pas pris en charge.  
@@ -61,7 +61,7 @@ Le .NET fournit plusieurs stratégies pour synchroniser l’accès aux membres s
 ### <a name="compiler-support"></a>Prise en charge du compilateur  
  Visual Basic et C# prennent en charge un mot clé de langage qui utilise <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> et <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> pour verrouiller l’objet. Visual Basic prend en charge l’instruction [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) et C#, l’instruction [lock](../../csharp/language-reference/keywords/lock-statement.md).  
   
- Dans les deux cas, si une exception est déclenchée dans le bloc de code, le verrou acquis par l’instruction **lock** ou **SyncLock** est automatiquement libéré. Les compilateurs de base de C et de visuel émettent un **essai**/**finalement** bloquer avec **Monitor.Enter** au début de l’essai, et **Monitor.Exit** dans le bloc **de finale.** Si une exception est déclenchée dans le bloc **lock** ou **SyncLock**, le gestionnaire **finally** s’exécute pour vous permettre d’effectuer d’éventuelles tâches de nettoyage.  
+ Dans les deux cas, si une exception est déclenchée dans le bloc de code, le verrou acquis par l’instruction **lock** ou **SyncLock** est automatiquement libéré. Les compilateurs C# et Visual Basic émettent un bloc **try** / **finally** avec **Monitor. Enter** au début de la tentative, et **Monitor. Exit** dans le bloc **finally** . Si une exception est déclenchée dans le bloc **lock** ou **SyncLock**, le gestionnaire **finally** s’exécute pour vous permettre d’effectuer d’éventuelles tâches de nettoyage.  
   
 ## <a name="synchronized-context"></a>Contexte synchronisé  
 
@@ -70,7 +70,7 @@ Dans les applications .NET Framework et Xamarin uniquement, vous pouvez utiliser
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>
-- [Fils et threading](../../../docs/standard/threading/threads-and-threading.md)
-- [Aperçu des primitifs de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md)
-- [SyncLock (instruction)](../../visual-basic/language-reference/statements/synclock-statement.md)
+- [Threads et threads](threads-and-threading.md)
+- [Vue d’ensemble des primitives de synchronisation](overview-of-synchronization-primitives.md)
+- [SyncLock, instruction](../../visual-basic/language-reference/statements/synclock-statement.md)
 - [lock, instruction](../../csharp/language-reference/keywords/lock-statement.md)

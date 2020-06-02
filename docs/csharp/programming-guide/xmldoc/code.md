@@ -8,14 +8,14 @@ helpviewer_keywords:
 - code XML tag
 - <code> C# XML tag
 ms.assetid: f235e3bc-a709-43cf-8a9f-bd57cabdf6da
-ms.openlocfilehash: 1b292f0e1f93f815cc31ef3dfb7015b8950bf8a6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 52d4b6caa0ea9e1a2d0212398f86374bc8af0402
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76789836"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287439"
 ---
-# <a name="code-c-programming-guide"></a>\<code> (guide de programmation C)
+# <a name="code-c-programming-guide"></a>\<code>(Guide de programmation C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -29,17 +29,17 @@ ms.locfileid: "76789836"
 
   Texte à marquer comme étant du code.
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
-La balise \<code> vous permet d’indiquer plusieurs lignes comme étant du code. Utilisez [ \<c>](./code-inline.md) pour indiquer que le texte dans une description doit être marqué comme code.
+La `<code>` balise est utilisée pour indiquer plusieurs lignes de code. Utilisez [\<c>](./code-inline.md) pour indiquer que le texte d’une seule ligne dans une description doit être marqué comme étant du code.
 
 Compilez avec [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
-Voir [ \<l’exemple>](./example.md) sujet pour un exemple \<de la façon d’utiliser le code> tag.
+Consultez l' [\<example>](./example.md) article pour obtenir un exemple d’utilisation de la `<code>` balise.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation CMD](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Balises recommandées pour les commentaires de documentation](./recommended-tags-for-documentation-comments.md)

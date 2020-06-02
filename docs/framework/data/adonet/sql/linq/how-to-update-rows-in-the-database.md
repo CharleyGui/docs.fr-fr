@@ -1,27 +1,28 @@
 ---
-title: 'Procédure : Mettre à jour des lignes dans la base de données'
+title: 'Comment : mettre à jour des lignes dans la base de données'
+description: Apprenez à mettre à jour des lignes dans une base de données en modifiant des objets LINQ to SQL dans une collection liée à une table. LINQ to SQL traduit les ajouts dans les commandes de mise à jour SQL.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: a2b5c90f-6cc3-4128-bfab-1db488d5af26
-ms.openlocfilehash: c2055e1dd988352b50a439531ab5533f34a4965e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f25efb91fb5a83fb1c7c109bd018c8210edaec8b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70793135"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286337"
 ---
-# <a name="how-to-update-rows-in-the-database"></a>Procédure : Mettre à jour des lignes dans la base de données
+# <a name="how-to-update-rows-in-the-database"></a>Comment : mettre à jour des lignes dans la base de données
 
-Vous pouvez mettre à jour des lignes dans une base de données en modifiant les valeurs de membre [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] des objets associés à la <xref:System.Data.Linq.Table%601> collection, puis en soumettant les modifications à la base de données. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]traduit vos modifications en commandes SQL `UPDATE` appropriées.
+Vous pouvez mettre à jour des lignes dans une base de données en modifiant les valeurs de membre des objets associés à la [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Table%601> collection, puis en soumettant les modifications à la base de données. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]traduit vos modifications en commandes SQL appropriées `UPDATE` .
 
 > [!NOTE]
 > Vous pouvez substituer des méthodes par défaut [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pour les opérations `Insert`, `Update` et `Delete` sur les bases de données. Pour plus d’informations, consultez [Personnalisation des opérations d’insertion, de mise à jour et de suppression](customizing-insert-update-and-delete-operations.md).
 >
 > Les développeurs qui utilisent Visual Studio peuvent utiliser le Concepteur Objet Relationnel pour développer des procédures stockées dans le même but.
 
-Les étapes suivantes supposent qu'un <xref:System.Data.Linq.DataContext> valide vous connecte à la base de données Northwind. Pour plus d’informations, consultez [Guide pratique pour Connectez-vous à](how-to-connect-to-a-database.md)une base de données.
+Les étapes suivantes supposent qu'un <xref:System.Data.Linq.DataContext> valide vous connecte à la base de données Northwind. Pour plus d’informations, consultez [Comment : se connecter à une base de données](how-to-connect-to-a-database.md).
 
 ### <a name="to-update-a-row-in-the-database"></a>Pour mettre à jour une ligne dans la base de données
 
@@ -40,6 +41,6 @@ L'exemple suivant interroge la base de données concernant la commande 11000, p
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Gérer les conflits de modification](how-to-manage-change-conflicts.md)
-- [Guide pratique : affecter des procédures stockées pour effectuer des mises à jour, des insertions et des suppressions (Concepteur O/R)](/visualstudio/data-tools/how-to-assign-stored-procedures-to-perform-updates-inserts-and-deletes-o-r-designer)
+- [Comment : gérer les conflits de changement](how-to-manage-change-conflicts.md)
+- [Guide pratique pour affecter des procédures stockées pour effectuer des mises à jour, des insertions et des suppressions (Concepteur O/R)](/visualstudio/data-tools/how-to-assign-stored-procedures-to-perform-updates-inserts-and-deletes-o-r-designer)
 - [Apport et soumission de modifications de données](making-and-submitting-data-changes.md)

@@ -6,18 +6,18 @@ helpviewer_keywords:
 - observer design pattern [.NET Framework], best practices
 - best practices [.NET Framework], observer design pattern
 ms.assetid: c834760f-ddd4-417f-abb7-a059679d5b8c
-ms.openlocfilehash: 2da29e0baf429142707d0ddd39b1a11c13a17a90
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b4f8e568dcb6790dac1dc8fc5c969d6fa1367c4e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73141541"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288457"
 ---
 # <a name="observer-design-pattern-best-practices"></a>Meilleures pratiques du modèle de design observateur
 Dans le .NET Framework, le modèle de conception observateur est implémenté comme un ensemble d’interfaces. L'interface <xref:System.IObservable%601?displayProperty=nameWithType> représente le fournisseur de données, qui est également chargé de fournir une implémentation <xref:System.IDisposable> permettant aux observateurs d'annuler leur abonnement aux notifications. L'interface <xref:System.IObserver%601?displayProperty=nameWithType> représente l'observateur. Cette rubrique décrit les meilleures pratiques que les développeurs doivent suivre quand ils implémentent le modèle de conception observateur à l'aide de ces interfaces.  
   
 ## <a name="threading"></a>Thread  
- En général, un fournisseur implémente la méthode <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> en ajoutant un observateur à une liste d’abonnés représentée par un objet de collection, puis il implémente la méthode <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> en supprimant un observateur de la liste des abonnés. Un observateur peut appeler ces méthodes à tout moment. De plus, étant donné que le contrat fournisseur/observateur ne spécifie pas qui est responsable de l'annulation d'abonnement après la méthode de rappel <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType>, il est possible que le fournisseur et l'observateur tentent de supprimer le même membre de la liste. En raison de cette éventualité, les méthodes <xref:System.IObservable%601.Subscribe%2A> et <xref:System.IDisposable.Dispose%2A> doivent être thread-safe. En général, cela implique l’utilisation d’une [collection simultanée](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md) ou d’un verrou. Les implémentations qui ne sont pas thread-safe doivent indiquer explicitement qu'elles ne le sont pas.  
+ En général, un fournisseur implémente la méthode <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> en ajoutant un observateur à une liste d’abonnés représentée par un objet de collection, puis il implémente la méthode <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> en supprimant un observateur de la liste des abonnés. Un observateur peut appeler ces méthodes à tout moment. De plus, étant donné que le contrat fournisseur/observateur ne spécifie pas qui est responsable de l'annulation d'abonnement après la méthode de rappel <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType>, il est possible que le fournisseur et l'observateur tentent de supprimer le même membre de la liste. En raison de cette éventualité, les méthodes <xref:System.IObservable%601.Subscribe%2A> et <xref:System.IDisposable.Dispose%2A> doivent être thread-safe. En général, cela implique l’utilisation d’une [collection simultanée](../parallel-programming/data-structures-for-parallel-programming.md) ou d’un verrou. Les implémentations qui ne sont pas thread-safe doivent indiquer explicitement qu'elles ne le sont pas.  
   
  Les garanties supplémentaires doivent être spécifiées dans une couche supérieure au contrat fournisseur/observateur. Les implémenteurs doivent indiquer clairement lorsqu'ils imposent des conditions supplémentaires afin d'éviter la confusion des utilisateurs concernant le contrat observateur.  
   
@@ -53,6 +53,6 @@ Dans le .NET Framework, le modèle de conception observateur est implémenté co
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle de conception Observateur](../../../docs/standard/events/observer-design-pattern.md)
-- [Comment : implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md)
-- [Comment : implémenter un fournisseur](../../../docs/standard/events/how-to-implement-a-provider.md)
+- [Modèle de conception observateur](observer-design-pattern.md)
+- [Comment : implémenter un observateur](how-to-implement-an-observer.md)
+- [Comment : implémenter un fournisseur](how-to-implement-a-provider.md)

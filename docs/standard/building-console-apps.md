@@ -7,12 +7,12 @@ helpviewer_keywords:
 - application development [.NET Framework], console
 - console applications
 ms.assetid: c21fb997-9f0e-40a5-8741-f73bba376bd8
-ms.openlocfilehash: 1ec65795a7f3d706b2878dd8a8397ae42b61ce7e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3c2031e2d038f32f6392a2eb734e4f8851d7b936
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73132863"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291628"
 ---
 # <a name="building-console-applications-in-the-net-framework"></a>Génération d'applications de console dans le .NET Framework
 Les applications dans le .NET Framework peuvent utiliser la classe <xref:System.Console?displayProperty=nameWithType> pour lire et écrire des caractères en provenance ou à destination de la console. Les données provenant de la console sont lues dans le flux d'entrée standard, les données à destination de la console sont écrites dans le flux de sortie standard et les données d'erreur à destination de la console sont écrites dans le flux de sortie standard des erreurs. Ces flux de données, associés automatiquement à la console au démarrage de l'application, sont présentés respectivement en tant que propriétés <xref:System.Console.In%2A>, <xref:System.Console.Out%2A> et <xref:System.Console.Error%2A>.  
@@ -28,9 +28,9 @@ Les applications dans le .NET Framework peuvent utiliser la classe <xref:System.
   
  Les applications console ne disposent pas de pompe de messages démarrant par défaut. Par conséquent, les appels de console aux minuteries Microsoft Win32 peuvent échouer.  
   
- La classe **System.Console** possède des méthodes qui peuvent lire des caractères ou des lignes complètes à partir de la console. D'autres méthodes convertissent des données et mettent en forme des chaînes, puis écrivent les chaînes mises en forme sur la console. Pour plus d’informations sur la mise en forme des chaînes, consultez [Mise en forme des types](../../docs/standard/base-types/formatting-types.md).  
+ La classe **System.Console** possède des méthodes qui peuvent lire des caractères ou des lignes complètes à partir de la console. D'autres méthodes convertissent des données et mettent en forme des chaînes, puis écrivent les chaînes mises en forme sur la console. Pour plus d’informations sur la mise en forme des chaînes, consultez [Mise en forme des types](base-types/formatting-types.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Console?displayProperty=nameWithType>
-- [Mise en forme des types](../../docs/standard/base-types/formatting-types.md)
+- [Mise en forme des types](base-types/formatting-types.md)

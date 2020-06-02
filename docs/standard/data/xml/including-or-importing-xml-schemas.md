@@ -7,18 +7,18 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: fe1b4a11-37f4-4e1a-93c9-239f4fe736c0
-ms.openlocfilehash: d9a18876d8a5ba3067aa35c617b1e20fce0411f5
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: f6c2829d45db147c81592c00710f04168b40679e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710776"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287699"
 ---
 # <a name="including-or-importing-xml-schemas"></a>Inclusion ou importation de schémas XML
 Un schéma XML peut contenir des éléments `<xs:import />`, `<xs:include />` et `<xs:redefine />`. Ces éléments de schéma réfèrent à d'autres schémas XML qui peuvent être utilisés pour compléter la structure du schéma où ils sont inclus ou importés. Les classes <xref:System.Xml.Schema.XmlSchemaImport>, <xref:System.Xml.Schema.XmlSchemaInclude> et <xref:System.Xml.Schema.XmlSchemaRedefine> sont mappées à ces éléments dans l'API SOM (Schema Object Model).  
   
 ## <a name="including-or-importing-an-xml-schema"></a>Inclusion ou importation d'un schéma XML  
- L'exemple de code suivant complète le schéma utilisateur créé dans la rubrique [Création de schémas XML](../../../../docs/standard/data/xml/building-xml-schemas.md) avec le schéma d'adresse. Cette opération rend les types d'adresses disponibles dans le schéma utilisateur.  
+ L'exemple de code suivant complète le schéma utilisateur créé dans la rubrique [Création de schémas XML](building-xml-schemas.md) avec le schéma d'adresse. Cette opération rend les types d'adresses disponibles dans le schéma utilisateur.  
   
  Le schéma d'adresse peut être incorporé à l'aide d'éléments `<xs:include />` ou `<xs:import />` pour utiliser les composants du schéma d'adresse tels quels, ou à l'aide d'un élément `<xs:redefine />` pour modifier l'un quelconque de ses composants en fonction des besoins du schéma utilisateur. Le schéma d'adresse ayant un `targetNamespace` différent de celui du schéma utilisateur, on utilise l'élément `<xs:import />` et donc la sémantique d'importation.  
   
@@ -99,9 +99,9 @@ Un schéma XML peut contenir des éléments `<xs:import />`, `<xs:include />` e
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d'ensemble du Modèle Objet du schéma XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)
-- [Lecture et écriture de schémas XML](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)
-- [Création de schémas XML](../../../../docs/standard/data/xml/building-xml-schemas.md)
-- [Traversée de schémas XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
-- [Modification de schémas XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)
-- [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
+- [Vue d'ensemble du Modèle Objet du schéma XML](xml-schema-object-model-overview.md)
+- [Lecture et écriture de schémas XML](reading-and-writing-xml-schemas.md)
+- [Création de schémas XML](building-xml-schemas.md)
+- [Traversée de schémas XML](traversing-xml-schemas.md)
+- [Modification de schémas XML](editing-xml-schemas.md)
+- [XmlSchemaSet pour la compilation de schémas](xmlschemaset-for-schema-compilation.md)

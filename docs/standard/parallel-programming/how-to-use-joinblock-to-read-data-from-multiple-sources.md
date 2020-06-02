@@ -1,5 +1,5 @@
 ---
-title: 'Comment : utiliser JoinBlock pour lire des données issues de plusieurs sources'
+title: 'Procédure : Utiliser JoinBlock pour lire des données de plusieurs sources'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,19 +10,19 @@ helpviewer_keywords:
 - TPL dataflow library, joining blocks in
 - dataflow blocks, joining in TPL
 ms.assetid: e9c1ada4-ac57-4704-87cb-2f5117f8151d
-ms.openlocfilehash: 66fd7ed7a98b8be8f88f65ecb52710a1e40af778
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cd2f5c65f45d83ef23643dcc747a748bb8ba89d9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139739"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290822"
 ---
-# <a name="how-to-use-joinblock-to-read-data-from-multiple-sources"></a>Comment : utiliser JoinBlock pour lire des données issues de plusieurs sources
+# <a name="how-to-use-joinblock-to-read-data-from-multiple-sources"></a>Procédure : Utiliser JoinBlock pour lire des données de plusieurs sources
 Ce document explique comment utiliser la classe <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> pour effectuer une opération lorsque des données sont disponibles à partir de plusieurs sources. Il présente aussi comment utiliser le mode non gourmand pour permettre à plusieurs blocs de jointure de partager plus efficacement une source de données.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant définit trois types de ressources, `NetworkResource`, `FileResource` et `MemoryResource`, et effectue des opérations lorsque les ressources sont disponibles. Cet exemple nécessite une paire `NetworkResource` et `MemoryResource` pour effectuer la première opération et une paire `FileResource` et `MemoryResource` pour effectuer la seconde opération. Pour permettre aux opérations de se produire lorsque toutes les ressources requises sont disponibles, cet exemple utilise la classe <xref:System.Threading.Tasks.Dataflow.JoinBlock%602>. Lorsqu'un objet <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> reçoit les données de toutes les sources, il envoie ces données à la cible, qui dans cet exemple est un objet <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>. Les objets <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> lisent à partir d'un pool partagé d'objets `MemoryResource`.  
   
  [!code-csharp[TPLDataflow_NonGreedyJoin#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_nongreedyjoin/cs/nongreedyjoin.cs#1)]
@@ -35,4 +35,4 @@ Ce document explique comment utiliser la classe <xref:System.Threading.Tasks.Dat
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [Dataflow](dataflow-task-parallel-library.md)

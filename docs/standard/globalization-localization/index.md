@@ -11,12 +11,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - multilingual application development
 ms.assetid: 9a59696b-d89b-45bd-946d-c75da4732d02
-ms.openlocfilehash: c5c601d18d92d9b57781bc8a09f26f0bc3a9216a
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 10d07a02a7ff744a87b920fd97df24b076c22cc3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842008"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288288"
 ---
 # <a name="globalizing-and-localizing-net-applications"></a>Internationalisation et localisation d’applications .NET
 
@@ -26,7 +26,7 @@ Le développement d’une application mondialisable, notamment une application q
 
 Cette étape implique la conception et le codage d'une application indépendante des cultures et des langues qui prend en charge les interfaces utilisateur localisées et les paramètres régionaux pour tous les utilisateurs. Elle implique également de prendre des décisions relatives à la conception et à la programmation qui ne sont pas basées sur des hypothèses spécifiques à la culture. Même si une application globalisée n'est pas localisée, elle est néanmoins conçue et écrite pour pouvoir être ensuite localisée assez facilement en une ou plusieurs langues.
 
-[Revue de l’adaptabilité](localizability-review.md)
+[Révision de l’adaptabilité](localizability-review.md)
 
 Cette étape implique d’examiner le code et la conception d’une application pour vérifier qu’elle peut être localisée facilement et identifier les obstacles éventuels à la localisation, et de vérifier que le code exécutable de l’application est bien séparé de ses ressources. Si la phase de globalisation s'est déroulée correctement, l'examen de la faisabilité de localisation confirmera les choix de conception et de codage effectués pendant la globalisation. La phase d'examen de la faisabilité de localisation peut également identifier les problèmes restants afin de ne pas avoir à modifier le code source d'une application pendant la phase de localisation.
 
@@ -54,7 +54,7 @@ Décrit la première phase de création d'une application mondialisable, qui imp
 
 Décrit comment la globalisation .NET utilise [les composants internationaux pour Unicode (ICU)](http://site.icu-project.org/home).
 
-[Revue de l’adaptabilité](localizability-review.md)
+[Révision de l’adaptabilité](localizability-review.md)
 
 Décrit la seconde phase de création d'une application localisée, qui implique l'identification d'obstacles éventuels à la localisation.
 
@@ -70,7 +70,7 @@ Explique comment utiliser les méthodes et les classes .NET dépendantes de la c
 
 Décrit les meilleures pratiques en matière de globalisation, de localisation et de développement d'applications ASP.NET mondialisables.
 
-## <a name="reference"></a>Informations de référence
+## <a name="reference"></a>Référence
 
 - Espace de noms <xref:System.Globalization?displayProperty=nameWithType>
 
@@ -84,10 +84,10 @@ Décrit les meilleures pratiques en matière de globalisation, de localisation e
 
    Contient des classes représentant les encodages de caractères ASCII, ANSI, Unicode et autres.
 
-- [Resgen. exe (générateur de fichier de ressources)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)
+- [Resgen. exe (générateur de fichier de ressources)](../../framework/tools/resgen-exe-resource-file-generator.md)
 
    Explique comment utiliser Resgen.exe pour convertir des fichiers .txt et des fichiers .resx (format de ressource basé sur XML) en fichiers binaires .resources du Common Language Runtime.
 
-- [Winres. exe (Windows Forms éditeur de ressources)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md)
+- [Winres. exe (Windows Forms éditeur de ressources)](../../framework/tools/winres-exe-windows-forms-resource-editor.md)
 
    Explique comment utiliser Winres.exe pour localiser des formulaires Windows Forms.

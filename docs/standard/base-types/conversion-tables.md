@@ -12,12 +12,12 @@ helpviewer_keywords:
 - tables [.NET Framework], type conversions
 - data types [.NET Framework], converting
 ms.assetid: 0ea65c59-85eb-4a52-94ca-c36d3bd13058
-ms.openlocfilehash: aa1ef8397338af949bd147fd3252b2d9ecaf53ef
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb696c65078a5dae0b81a48bffc786d2257496c3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73103887"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290563"
 ---
 # <a name="type-conversion-tables-in-net"></a>Table de conversion de type dans .NET
 Une conversion étendue se produit quand une valeur d’un type est convertie en un autre type de taille égale ou supérieure. Une conversion restrictive se produit quand une valeur d’un type est convertie en une valeur d’un autre type de taille inférieure. Les tableaux de cette rubrique illustrent les comportements propres aux deux types de conversion.  
@@ -72,4 +72,4 @@ Une conversion étendue se produit quand une valeur d’un type est convertie en
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Convert?displayProperty=nameWithType>
-- [Conversion de types dans .NET](../../../docs/standard/base-types/type-conversion.md)
+- [Conversion de type dans .NET](type-conversion.md)

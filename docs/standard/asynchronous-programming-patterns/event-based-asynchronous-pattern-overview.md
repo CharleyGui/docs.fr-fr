@@ -16,12 +16,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: cce01a7c87f6f20b5e6c46881b8c863bb5a72a88
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f4aac5afbb13cafa7bb0e9c1eb6bbd92ac41bf8c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160065"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289419"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Vue d’ensemble du modèle asynchrone basé sur des événements
 Les applications qui effectuent de nombreuses tâches simultanément tout en réagissant aux interventions de l’utilisateur nécessitent souvent une conception utilisant plusieurs threads. L’espace de noms <xref:System.Threading> fournit tous les outils nécessaires à la création d’applications multithread de hautes performances, mais l’utilisation de ces outils suppose une connaissance approfondie du génie logiciel multithread. Pour les applications multithread relativement simples, le composant <xref:System.ComponentModel.BackgroundWorker> fournit une solution simple. Pour les applications asynchrones plus sophistiquées, envisagez l’implémentation d’une classe obéissant au modèle asynchrone basé sur les événements.  
@@ -34,7 +34,7 @@ Les applications qui effectuent de nombreuses tâches simultanément tout en ré
   
 - d’attendre que les ressources soient disponibles sans arrêter (« bloquer ») votre application ;  
   
-- de communiquer avec les opérations asynchrones en attente à l'aide du modèle d'événements et de délégués connu. Pour plus d'informations sur l'utilisation des gestionnaires d'événements et des délégués, consultez la page [Événements](../../../docs/standard/events/index.md).  
+- de communiquer avec les opérations asynchrones en attente à l'aide du modèle d'événements et de délégués connu. Pour plus d'informations sur l'utilisation des gestionnaires d'événements et des délégués, consultez la page [Événements](../events/index.md).  
   
  Une classe prenant en charge le modèle asynchrone basé sur les événements possède une ou plusieurs méthodes nommées _MethodName_**Async**. Ces méthodes peuvent refléter des versions synchrones qui exécutent la même opération sur le thread actuel. La classe peut également posséder un événement _MethodName_**Completed** et une méthode _MethodName_**AsyncCancel** (ou simplement **CancelAsync**).  
   
@@ -45,7 +45,7 @@ Les applications qui effectuent de nombreuses tâches simultanément tout en ré
  Le modèle asynchrone basé sur les événements nécessite qu'une opération asynchrone puisse être annulée ; le contrôle <xref:System.Windows.Forms.PictureBox> prend en charge cette exigence avec sa méthode <xref:System.Windows.Forms.PictureBox.CancelAsync%2A>. L’appel de <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> soumet une demande d’arrêt du téléchargement en attente et, quand la tâche est annulée, l’événement <xref:System.Windows.Forms.PictureBox.LoadCompleted> est déclenché.  
   
 > [!CAUTION]
-> Comme il est possible que le téléchargement se termine au moment où la demande <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> est effectuée, <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> peut ne pas refléter la demande d'annulation. C’est ce que l’on appelle une *condition de concurrence*, un problème courant en programmation multithread. Pour plus d'informations sur les problèmes relatifs à la programmation multithread, consultez la page [Meilleures pratiques de threads managés](../../../docs/standard/threading/managed-threading-best-practices.md).  
+> Comme il est possible que le téléchargement se termine au moment où la demande <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> est effectuée, <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> peut ne pas refléter la demande d'annulation. C’est ce que l’on appelle une *condition de concurrence*, un problème courant en programmation multithread. Pour plus d'informations sur les problèmes relatifs à la programmation multithread, consultez la page [Meilleures pratiques de threads managés](../threading/managed-threading-best-practices.md).  
   
 ## <a name="characteristics-of-the-event-based-asynchronous-pattern"></a>Caractéristiques du modèle asynchrone basé sur les événements  
  Le modèle asynchrone basé sur les événements peut prendre plusieurs formes selon la complexité des opérations prises en charge par une classe particulière. Les classes les plus simples peuvent avoir une seule méthode _MethodName_**Async** et un événement _MethodName_**Completed** correspondant. Les classes plus complexes peuvent posséder plusieurs méthodes _MethodName_**Async**, chacune assortie de l’événement _MethodName_**Completed** correspondant, ainsi que les versions synchrones de ces méthodes. Les classes peuvent éventuellement prendre en charge l'annulation, le rapport de progression et les résultats incrémentiels pour chaque méthode asynchrone.  
@@ -136,9 +136,9 @@ public class AsyncExample
 - <xref:System.ComponentModel.ProgressChangedEventArgs>
 - <xref:System.ComponentModel.BackgroundWorker>
 - <xref:System.ComponentModel.AsyncCompletedEventArgs>
-- [Comment : utiliser des composants qui prennent en charge le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)
-- [Guide pratique pour exécuter une opération en arrière-plan](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
-- [Comment : implémenter un formulaire qui utilise une opération d'arrière-plan](../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)
-- [Modèle asynchrone basé sur les événements (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
-- [Meilleures pratiques pour implémenter le modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
-- [Choix du moment auquel implémenter le modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/deciding-when-to-implement-the-event-based-asynchronous-pattern.md)
+- [Comment : utiliser des composants qui prennent en charge le modèle asynchrone basé sur des événements](how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)
+- [Guide pratique pour exécuter une opération en arrière-plan](../../framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
+- [Comment : implémenter un formulaire qui utilise une opération d'arrière-plan](../../framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)
+- [Modèle asynchrone basé sur les événements (EAP)](event-based-asynchronous-pattern-eap.md)
+- [Meilleures pratiques pour implémenter le modèle asynchrone basé sur les événements](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
+- [Choix du moment auquel implémenter le modèle asynchrone basé sur les événements](deciding-when-to-implement-the-event-based-asynchronous-pattern.md)

@@ -35,27 +35,27 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, classes
 - GroupCollection class
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
-ms.openlocfilehash: 8956be3cf8f96a8dd255f378d4927404c172c908
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ad7957fd555c1de8fe47c092d3eb399a803fb1fb
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159999"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290900"
 ---
 # <a name="the-regular-expression-object-model"></a>Modèle objet d'expression régulière
 <a name="introduction"></a> Cette rubrique décrit le modèle objet utilisé avec les expressions régulières .NET. Il contient les sections suivantes :  
   
-- [Le moteur d’expression régulière](#Engine)  
+- [Le moteur des expressions régulières](#Engine)  
   
-- [Le MatchCollection et Les objets de match](#Match_and_MCollection)  
+- [Objets MatchCollection et match](#Match_and_MCollection)  
   
-- [La collection de groupe](#GroupCollection)  
+- [Collection de groupes](#GroupCollection)  
   
-- [Le Groupe Capturé](#the_captured_group)  
+- [Groupe capturé](#the_captured_group)  
   
-- [La collection Capture](#CaptureCollection)  
+- [Collection de captures](#CaptureCollection)  
   
-- [La capture individuelle](#the_individual_capture)  
+- [Capture individuelle](#the_individual_capture)  
   
 <a name="Engine"></a>
 ## <a name="the-regular-expression-engine"></a>Moteur d'expression régulière  
@@ -284,7 +284,7 @@ ms.locfileid: "78159999"
   
  Les propriétés de la classe <xref:System.Text.RegularExpressions.Group> fournissent des informations sur le groupe capturé : la propriété `Group.Value` contient la sous-chaîne capturée, la propriété `Group.Index` indique la position de début du groupe capturé dans le texte d'entrée, la propriété `Group.Length` contient la longueur du texte capturé et la propriété `Group.Success` indique si une correspondance a été trouvée entre une sous-chaîne et le modèle défini par le groupe de capture.  
   
- L'application de quantificateurs à un groupe (pour plus d'informations, consultez [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)) modifie la relation d'une capture par groupe de capture de deux façons :  
+ L'application de quantificateurs à un groupe (pour plus d'informations, consultez [Quantificateurs](quantifiers-in-regular-expressions.md)) modifie la relation d'une capture par groupe de capture de deux façons :  
   
 - Si le quantificateur `*` ou `*?` (qui spécifie zéro correspondance, ou plus) est appliqué à un groupe, un groupe de capture peut ne pas avoir de correspondance dans la chaîne d'entrée. En l'absence de texte capturé, les propriétés de l'objet <xref:System.Text.RegularExpressions.Group> sont définies comme indiqué dans le tableau suivant.  
   
@@ -352,5 +352,5 @@ ms.locfileid: "78159999"
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Text.RegularExpressions>
-- [Expressions régulières .NET](../../../docs/standard/base-types/regular-expressions.md)
-- [Langage d’expression régulière - Référence rapide](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [Expressions régulières .NET](regular-expressions.md)
+- [Langage des expressions régulières - Aide-mémoire](regular-expression-language-quick-reference.md)

@@ -1,21 +1,22 @@
 ---
 title: Ajout de données à un DataTable
+description: Reportez-vous à cet exemple de code pour ajouter de nouvelles lignes de données à une table dans ADO.NET, après avoir créé un DataTable et défini sa structure à l’aide de colonnes et de contraintes.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d6aa8474-7bde-48f7-949d-20dc38a1625b
-ms.openlocfilehash: 02d7f94259cc56513be404c5539ca7015d5f3533
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 94ebc97d5f90b5bb92186ba6f33015633bd01127
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151531"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286932"
 ---
 # <a name="adding-data-to-a-datatable"></a>Ajout de données à un DataTable
-Après avoir créé un objet <xref:System.Data.DataTable> et défini sa structure à l'aide de colonnes et de contraintes, vous pouvez ajouter de nouvelles lignes de données à la table. Pour ajouter une nouvelle ligne, déclarez une nouvelle variable comme type <xref:System.Data.DataRow>. Un nouvel objet **DataRow** est <xref:System.Data.DataTable.NewRow%2A> retourné lorsque vous appelez la méthode. Le **DataTable** crée ensuite l’objet **DataRow** en fonction de <xref:System.Data.DataColumnCollection>la structure de la table, tel que défini par le .  
+Après avoir créé un objet <xref:System.Data.DataTable> et défini sa structure à l'aide de colonnes et de contraintes, vous pouvez ajouter de nouvelles lignes de données à la table. Pour ajouter une nouvelle ligne, déclarez une nouvelle variable comme type <xref:System.Data.DataRow>. Un nouvel objet **DataRow** est retourné lorsque vous appelez la <xref:System.Data.DataTable.NewRow%2A> méthode. Le **DataTable** crée ensuite l’objet **DataRow** en fonction de la structure de la table, comme défini par <xref:System.Data.DataColumnCollection> .  
   
- L’exemple suivant montre comment créer une nouvelle ligne en appelant la méthode **NewRow.**  
+ L’exemple suivant montre comment créer une nouvelle ligne en appelant la méthode **NewRow** .  
   
 ```vb  
 Dim workRow As DataRow = workTable.NewRow()  
@@ -37,7 +38,7 @@ workRow["CustLName"] = "Smith";
 workRow[1] = "Smith";  
 ```  
   
- Une fois que les données sont **Add** insérées dans la nouvelle <xref:System.Data.DataRowCollection>ligne, la méthode Add est utilisée pour ajouter la ligne au , indiqué dans le code suivant.  
+ Une fois que les données sont insérées dans la nouvelle ligne, la méthode **Add** est utilisée pour ajouter la ligne à <xref:System.Data.DataRowCollection> , comme indiqué dans le code suivant.  
   
 ```vb  
 workTable.Rows.Add(workRow)  
@@ -47,7 +48,7 @@ workTable.Rows.Add(workRow)
 workTable.Rows.Add(workRow);  
 ```  
   
- Vous pouvez également appeler la méthode **Add** pour ajouter une nouvelle ligne <xref:System.Object>en passant dans un tableau de valeurs, tapé comme , comme indiqué dans l’exemple suivant.  
+ Vous pouvez également appeler la méthode **Add** pour ajouter une nouvelle ligne en passant un tableau de valeurs, de type <xref:System.Object> , comme indiqué dans l’exemple suivant.  
   
 ```vb  
 workTable.Rows.Add(new Object() {1, "Smith"})  
@@ -57,9 +58,9 @@ workTable.Rows.Add(new Object() {1, "Smith"})
 workTable.Rows.Add(new Object[] {1, "Smith"});  
 ```  
   
- En passant un tableau de valeurs, tapé comme **objet,** à la méthode **Add** crée une nouvelle ligne à l’intérieur de la table et définit ses valeurs de colonne aux valeurs dans le tableau d’objets. Notez que les valeurs du tableau correspondent de façon séquentielle aux colonnes, en fonction de leur ordre d'apparition dans la table.  
+ Le passage d’un tableau de valeurs, typé en tant qu' **objet**, à la méthode **Add** crée une nouvelle ligne à l’intérieur de la table et définit ses valeurs de colonne avec les valeurs du tableau d’objets. Notez que les valeurs du tableau correspondent de façon séquentielle aux colonnes, en fonction de leur ordre d'apparition dans la table.  
   
- L’exemple suivant ajoute 10 lignes à la table **des clients** nouvellement créée.  
+ L’exemple suivant ajoute 10 lignes à la table **Customers** nouvellement créée.  
   
 ```vb  
 Dim workRow As DataRow  

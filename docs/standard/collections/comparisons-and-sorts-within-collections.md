@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Equals method
 - collections [.NET Framework], comparisons
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
-ms.openlocfilehash: 8e4530063f14211688e5ef2d2ec4ed7e4834cdf1
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: cb9dd3e8af570251b8bcd2e450e686ad69ab78c4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212965"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287976"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Comparaisons et tris dans les collections
 
@@ -51,7 +51,7 @@ Le comparateur par défaut repose sur au moins l'un des objets comparés pour im
 
 Pour fournir des comparaisons explicites, certaines méthodes acceptent une implémentation **IComparer** en tant que paramètre. Par exemple, la méthode <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> accepte une implémentation <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> .
 
-Le paramètre de culture actuel du système peut affecter les comparaisons et les tris d’une collection. Par défaut, les comparaisons et les tris des classes **Collections** sont dépendants de la culture. Pour ignorer le paramètre de culture et donc obtenir des résultats cohérents de comparaison et de tri, utilisez <xref:System.Globalization.CultureInfo.InvariantCulture%2A> avec des surcharges de membre qui acceptent <xref:System.Globalization.CultureInfo>. Pour plus d’informations, consultez [Performing Culture-Insensitive String Operations in Collections](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) et [Performing Culture-Insensitive String Operations in Arrays](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md).
+Le paramètre de culture actuel du système peut affecter les comparaisons et les tris d’une collection. Par défaut, les comparaisons et les tris des classes **Collections** sont dépendants de la culture. Pour ignorer le paramètre de culture et donc obtenir des résultats cohérents de comparaison et de tri, utilisez <xref:System.Globalization.CultureInfo.InvariantCulture%2A> avec des surcharges de membre qui acceptent <xref:System.Globalization.CultureInfo>. Pour plus d’informations, consultez [Performing Culture-Insensitive String Operations in Collections](../globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) et [Performing Culture-Insensitive String Operations in Arrays](../globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md).
 
 <a name="BKMK_Equalityandsortexample"></a>
 ## <a name="equality-and-sort-example"></a>Exemple d'égalité et de tri

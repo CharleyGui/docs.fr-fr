@@ -8,12 +8,12 @@ helpviewer_keywords:
 - threading [.NET Framework],exceptions in managed threads
 - managed threading
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
-ms.openlocfilehash: 6c14c60b30f8f70aa5e888ed45d6f867154e18d8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 56900ddab5e1e6ee5375c8979dc19694d4ad9c54
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159648"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279696"
 ---
 # <a name="exceptions-in-managed-threads"></a>Exceptions dans les threads managés
 À partir du .NET Framework version 2.0, le common language runtime permet à la plupart des exceptions non prises en charge dans les threads de poursuivre naturellement. Dans la plupart des cas, cela signifie que l’exception non prise en charge provoque l’arrêt de l’application.  
@@ -64,7 +64,7 @@ ms.locfileid: "78159648"
   
 - Si un thread doit être arrêté pour permettre l’arrêt du processus, faire du thread un thread d’arrière-plan afin qu’il s’arrête automatiquement à la sortie du processus.  
   
- Dans tous les cas, la stratégie doit respecter les instructions de conception des exceptions. Consultez la page [Instructions de conception des exceptions](../../../docs/standard/design-guidelines/exceptions.md).  
+ Dans tous les cas, la stratégie doit respecter les instructions de conception des exceptions. Consultez la page [Instructions de conception des exceptions](../design-guidelines/exceptions.md).  
   
 ### <a name="application-compatibility-flag"></a>Indicateur de compatibilité des applications  
  À titre de mesure de compatibilité temporaire, les administrateurs peuvent placer un indicateur de compatibilité dans la section `<runtime>` du fichier de configuration de l’application. Cela entraîne le retour du common language runtime au comportement des versions 1.0 et 1.1.  
@@ -74,8 +74,8 @@ ms.locfileid: "78159648"
 ```  
   
 ## <a name="host-override"></a>Remplacement de l’hôte  
- Dans le .NET Framework version 2.0, un hôte non managé peut utiliser l’interface [ICLRPolicyManager](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) dans l’API d’hébergement pour remplacer la stratégie d’exceptions non prises en charge par défaut du common language runtime. La fonction [ICLRPolicyManager::SetUnhandledExceptionPolicy](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md) est utilisée pour définir la stratégie des exceptions non prises en charge .  
+ Dans le .NET Framework version 2.0, un hôte non managé peut utiliser l’interface [ICLRPolicyManager](../../framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) dans l’API d’hébergement pour remplacer la stratégie d’exceptions non prises en charge par défaut du common language runtime. La fonction [ICLRPolicyManager::SetUnhandledExceptionPolicy](../../framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md) est utilisée pour définir la stratégie des exceptions non prises en charge .  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Base de threading gérée](../../../docs/standard/threading/managed-threading-basics.md)
+- [Concepts de base du threading managé](managed-threading-basics.md)

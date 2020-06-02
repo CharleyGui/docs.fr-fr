@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 910beb2f-cfb3-4e8e-9936-f7e0c5f4064a
-ms.openlocfilehash: 2bc5cbc1b0857a82d3b0a11f05a4eb5756724546
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 42ca884c269611ebf7dae3b4e7aa8a39ba96b521
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710841"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287738"
 ---
 # <a name="how-to-migrate-your-xsltransform-code"></a>Procédure : migrer votre code XslTransform
 Les nouvelles classes XSLT ont été conçues pour être très semblables aux classes existantes. La classe <xref:System.Xml.Xsl.XslCompiledTransform> remplace la classe <xref:System.Xml.Xsl.XslTransform>. Les feuilles de style sont compilées à l'aide de la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>. Les transformations sont exécutées à l'aide de la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>. Les procédures suivantes illustrent des tâches XSLT communes et comparent le code des classes <xref:System.Xml.Xsl.XslTransform> et <xref:System.Xml.Xsl.XslCompiledTransform>.  
@@ -93,5 +93,5 @@ Les nouvelles classes XSLT ont été conçues pour être très semblables aux cl
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)
-- [Utilisation de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)
+- [Migration depuis la classe XslTransform](migrating-from-the-xsltransform-class.md)
+- [Utilisation de la classe XslCompiledTransform](using-the-xslcompiledtransform-class.md)

@@ -1,24 +1,25 @@
 ---
-title: 'Procédure : Afficher le code SQL généré'
+title: 'Comment : afficher le code SQL généré'
+description: Découvrez comment afficher le code SQL généré pour les requêtes à l’aide de la propriété log pour mieux comprendre les fonctionnalités de LINQ to SQL et pour le débogage.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 626492c0-5ee3-4675-88e8-8c40379510b6
-ms.openlocfilehash: 15fc6a50d232ea12b229b7b2790c0398bc1c370d
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 5e75a8aadf4631f0a6e50641db72ba7b83af41fe
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002971"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286376"
 ---
-# <a name="how-to-display-generated-sql"></a>Procédure : Afficher le code SQL généré
+# <a name="how-to-display-generated-sql"></a>Comment : afficher le code SQL généré
 Vous pouvez consulter le code SQL généré pour les requêtes et modifier le traitement à l'aide de la propriété <xref:System.Data.Linq.DataContext.Log%2A>. Cette approche peut être utile pour comprendre les fonctionnalités de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] et déboguer des problèmes spécifiques.  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant utilise la propriété <xref:System.Data.Linq.DataContext.Log%2A> pour afficher le code SQL dans la fenêtre de console avant que son exécution.  Vous pouvez utiliser cette propriété avec les commandes de requête, d'insertion, de mise à jour et de suppression.  
   
- Les lignes de la fenêtre de console sont celles que vous voyez lorsque vous exécutez le C# Visual Basic ou le code qui suit.  
+ Les lignes de la fenêtre de console sont celles que vous voyez lorsque vous exécutez le Visual Basic ou le code C# qui suit.  
   
 ```console  
 SELECT [t0].[CustomerID], [t0].[CompanyName], [t0].[ContactName], [t0].[ContactT  

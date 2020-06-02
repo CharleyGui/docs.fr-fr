@@ -1,5 +1,5 @@
 ---
-title: 'Comment : spécifier un planificateur de tâches dans un bloc de flux de données'
+title: 'Procédure : spécifier un planificateur de tâches dans un bloc de dataflow'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - task scheduler, linking from TPL
 ms.assetid: 27ece374-ed5b-49ef-9cec-b20db34a65e8
-ms.openlocfilehash: 2abac1ccf45fc9c9c28e27c132e72fe483a24d75
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 76c9e75f787c28657af143b46bb22d08039e2dc4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73122218"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288132"
 ---
-# <a name="how-to-specify-a-task-scheduler-in-a-dataflow-block"></a>Comment : spécifier un planificateur de tâches dans un bloc de flux de données
+# <a name="how-to-specify-a-task-scheduler-in-a-dataflow-block"></a>Procédure : spécifier un planificateur de tâches dans un bloc de dataflow
 Ce document montre comment associer un planificateur de tâches spécifique lorsque vous utilisez le flux de données dans votre application. L’exemple utilise la classe <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair?displayProperty=nameWithType> dans une application Windows Forms pour indiquer lorsque les tâches de lecture sont actives et lorsqu’une tâche d’écriture est active. Il utilise également la méthode <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> pour permettre à un bloc de flux de données de s'exécuter sur le thread de l'interface utilisateur.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -73,7 +73,7 @@ Ce document montre comment associer un planificateur de tâches spécifique lors
   
  Cet exemple utilise également une classe <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> pour permettre à des blocs de flux de données d'agir simultanément, et à un autre bloc de flux de données d'agir de façon exclusive par rapport à tous les autres blocs de flux de données qui s'exécutent sur le même objet <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair>. Cette technique est utile lorsque plusieurs blocs de flux de données partagent une ressource et que certains requièrent un accès exclusif à cette ressource, car elle élimine le besoin de synchroniser manuellement l'accès à cette ressource. L'élimination de la synchronisation manuelle peut rendre le code plus efficace.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre le code complet pour Form1.cs (Form1.vb pour Visual Basic).  
   
  [!code-csharp[TPLDataflow_WriterReadersWinForms#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#100)]
@@ -81,4 +81,4 @@ Ce document montre comment associer un planificateur de tâches spécifique lors
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [Dataflow](dataflow-task-parallel-library.md)

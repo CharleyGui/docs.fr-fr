@@ -18,12 +18,12 @@ helpviewer_keywords:
 - OnDeserializedAttribute class, custom serialization
 - OnSerializingAttribute class, custom serialization
 ms.assetid: 12ed422d-5280-49b8-9b71-a2ed129c0384
-ms.openlocfilehash: dcd5fa2777d2f1e351179570806a95eb835ad843
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 1532c4eeb09e7110d0f369ec47f342256889e576
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375996"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289653"
 ---
 # <a name="custom-serialization"></a>Sérialisation personnalisée
 La sérialisation personnalisée est le processus de contrôle de la sérialisation et désérialisation d'un type. En contrôlant la sérialisation, il est possible de garantir la compatibilité de sérialisation (capacité de sérialisation et désérialisation entre des versions d’un type) sans interrompre la fonctionnalité principale du type. Par exemple, il peut y avoir uniquement deux champs dans la première version d'un type. Dans la version suivante d'un type, plusieurs champs supplémentaires sont ajoutés. La deuxième version d'une application doit néanmoins être en mesure de sérialiser et désérialiser les deux types. Les sections suivantes décrivent comment contrôler la sérialisation.
@@ -184,4 +184,4 @@ End Class
 
 - [Sérialisation binaire](binary-serialization.md)
 - [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
-- [Sécurité et sérialisation](../../../docs/framework/misc/security-and-serialization.md)
+- [Sécurité et sérialisation](../../framework/misc/security-and-serialization.md)

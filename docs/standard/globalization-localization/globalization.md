@@ -13,12 +13,12 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-ms.openlocfilehash: c08f4309d7673d7e7fb1c6bd84307e4323411d9e
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: adc617362cf3ba07ff63f1095968e2bd88df88d9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242684"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291914"
 ---
 # <a name="globalization"></a>Globalisation
 
@@ -38,7 +38,7 @@ Par défaut, .NET utilise des chaînes Unicode. Une chaîne Unicode se compose d
 
 Beaucoup d’applications et de systèmes d’exploitation, dont le système d’exploitation Windows, peuvent aussi utiliser des pages de codes pour représenter des jeux de caractères. Les pages de codes contiennent généralement les valeurs ASCII standard (de 0x00 à 0x7F) et mappent les autres caractères aux valeurs restantes (de 0x80 à 0xFF). L’interprétation des valeurs 0x80 à 0xFF dépend de la page de codes utilisée. C’est pour cette raison que vous devez éviter d’utiliser des pages de codes dans une application globalisée, dans la mesure du possible.
 
-L’exemple suivant illustre les risques liés à l’interprétation des données de page de codes quand la page de codes par défaut d’un système est différente de celle sur lequel les données ont été enregistrées. (Pour simuler ce scénario, l’exemple spécifie explicitement différentes pages de code.) Tout d’abord, l’exemple définit un tableau qui se compose des caractères supérieurs de l’alphabet grec. Ces caractères sont encodés dans un tableau d’octets en utilisant la page de codes 737 (aussi appelée MS-DOS Grec), tableau d’octets qui est ensuite enregistré dans un fichier. Si le fichier est récupéré et que son tableau d’octets est décodé en utilisant la page de codes 737, les caractères d’origine sont restaurés. En revanche, si le fichier est récupéré et que son tableau d’octets est décodé en utilisant la page de codes 1252 (ou Windows-1252, qui représente les caractères de l’alphabet latin), les caractères d’origine sont perdus.
+L’exemple suivant illustre les risques liés à l’interprétation des données de page de codes quand la page de codes par défaut d’un système est différente de celle sur lequel les données ont été enregistrées. (Pour simuler ce scénario, l’exemple spécifie explicitement des pages de codes différentes.) Tout d’abord, l’exemple définit un tableau qui se compose des caractères majuscules de l’alphabet grec. Ces caractères sont encodés dans un tableau d’octets en utilisant la page de codes 737 (aussi appelée MS-DOS Grec), tableau d’octets qui est ensuite enregistré dans un fichier. Si le fichier est récupéré et que son tableau d’octets est décodé en utilisant la page de codes 737, les caractères d’origine sont restaurés. En revanche, si le fichier est récupéré et que son tableau d’octets est décodé en utilisant la page de codes 1252 (ou Windows-1252, qui représente les caractères de l’alphabet latin), les caractères d’origine sont perdus.
 
 [!code-csharp[Conceptual.Globalization#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/codepages1.cs#1)]
 [!code-vb[Conceptual.Globalization#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/codepages1.vb#1)]
@@ -57,7 +57,7 @@ Même si vous décidez de développer une application qui cible une seule et mê
 
 L’utilisation de fichiers de ressources offre des avantages particuliers si vous créez une application localisée. Quand vous déployez des ressources dans des assemblys satellites, le common language runtime sélectionne automatiquement la ressource adaptée à la culture en fonction de la culture d’interface utilisateur active de l’utilisateur définie par la propriété <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>. Dans la mesure où vous fournissez une ressource appropriée propre à la culture et que vous instanciez correctement un objet <xref:System.Resources.ResourceManager> ou que vous utilisez une classe de ressource fortement typée, le runtime se charge de récupérer les ressources appropriées.
 
-Pour plus d’informations sur la création de fichiers de ressources, consultez [Création de fichiers de ressources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md). Pour plus d’informations sur la création et le déploiement d’assemblys satellites, consultez [Création d'assemblys satellites](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md) et [Empaquetage et déploiement de ressources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md).
+Pour plus d’informations sur la création de fichiers de ressources, consultez [Création de fichiers de ressources](../../framework/resources/creating-resource-files-for-desktop-apps.md). Pour plus d’informations sur la création et le déploiement d’assemblys satellites, consultez [Création d'assemblys satellites](../../framework/resources/creating-satellite-assemblies-for-desktop-apps.md) et [Empaquetage et déploiement de ressources](../../framework/resources/packaging-and-deploying-resources-in-desktop-apps.md).
 
 ### <a name="search-and-compare-strings"></a>Rechercher et comparer des chaînes
 
@@ -66,7 +66,7 @@ Dans la mesure du possible, vous devez traiter les chaînes comme des chaînes e
 > [!TIP]
 > Vous pouvez utiliser la classe <xref:System.Globalization.StringInfo> pour travailler sur les éléments de texte plutôt que sur les caractères individuels d’une chaîne.
 
-Pendant les opérations de recherche et de comparaison de chaînes, l’erreur courante à éviter est de traiter les chaînes comme des ensembles de caractères, chacun représenté par un objet <xref:System.Char>. De fait, un même caractère peut être constitué d’un ou plusieurs objets <xref:System.Char>. Ces caractères se trouvent généralement dans des chaînes de cultures dont les alphabets comportent des caractères extérieurs à la plage de caractères latins de base Unicode (de U+0021 à U+007E). L’exemple suivant recherche l’index du caractère LETTRE MAJUSCULE LATINE A AVEC ACCENT GRAVE (U+00C 0) dans une chaîne. Cependant, ce personnage peut être représenté de deux manières différentes : en tant qu’unité de code unique (U-00C0) ou en tant que caractère composite (deux unités de code : U-0041 et U-0300). Dans ce cas, le personnage est représenté <xref:System.Char> dans l’instance de chaîne par deux objets, U-0041 et U-0300. L’exemple de code appelle les surcharges <xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> et <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> pour rechercher la position de ce caractère dans l’instance de la chaîne, mais elles retournent des résultats différents. Le premier appel de méthode comporte un argument <xref:System.Char> ; il effectue une comparaison ordinale et ne peut donc pas trouver de correspondance. Le deuxième appel comporte un argument <xref:System.String> ; il effectue une comparaison dépendante de la culture et trouve donc une correspondance.
+Pendant les opérations de recherche et de comparaison de chaînes, l’erreur courante à éviter est de traiter les chaînes comme des ensembles de caractères, chacun représenté par un objet <xref:System.Char>. De fait, un même caractère peut être constitué d’un ou plusieurs objets <xref:System.Char>. Ces caractères se trouvent généralement dans des chaînes de cultures dont les alphabets comportent des caractères extérieurs à la plage de caractères latins de base Unicode (de U+0021 à U+007E). L’exemple suivant recherche l’index du caractère LETTRE MAJUSCULE LATINE A AVEC ACCENT GRAVE (U+00C 0) dans une chaîne. Toutefois, ce caractère peut être représenté de deux façons différentes : en tant qu’unité de code unique (U + 00C0) ou en tant que caractère composite (deux unités de code : U + 0041 et U + 0300). Dans ce cas, le caractère est représenté dans l’instance de chaîne par deux <xref:System.Char> objets, u + 0041 et u + 0300. L’exemple de code appelle les surcharges <xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> et <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> pour rechercher la position de ce caractère dans l’instance de la chaîne, mais elles retournent des résultats différents. Le premier appel de méthode comporte un argument <xref:System.Char> ; il effectue une comparaison ordinale et ne peut donc pas trouver de correspondance. Le deuxième appel comporte un argument <xref:System.String> ; il effectue une comparaison dépendante de la culture et trouve donc une correspondance.
 
 [!code-csharp[Conceptual.Globalization#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/search1.cs#18)]
 [!code-vb[Conceptual.Globalization#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/search1.vb#18)]
@@ -143,7 +143,7 @@ En règle générale, quand les dates et les heures s’affichent dans l’inter
 
 - <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType>, qui inclut une chaîne de format ;
 
-- fonctionnalité de [mise en forme composite](../../../docs/standard/base-types/composite-formatting.md), quand elle est utilisée avec des dates.
+- fonctionnalité de [mise en forme composite](../base-types/composite-formatting.md), quand elle est utilisée avec des dates.
 
 L’exemple suivant affiche des données relatives au lever du soleil (« sunrise ») et au coucher du soleil (« sunset ») à deux reprises pour le 11 octobre 2012. Dans un premier temps, il définit la culture active Croate (Croatie), puis Anglais (Royaume-Uni). Dans les deux cas, les dates et heures s’affichent au format adapté à la culture en question.
 
@@ -174,7 +174,7 @@ L’exemple suivant illustre la dernière approche. Il utilise les conventions d
 
 Une valeur de date et d’heure peut être interprétée de plusieurs façons, par exemple, en tant qu’heure générale (« les magasins seront ouverts le 2 janvier 2013 à 9h00 ») ou en tant que moment précis dans le temps (« Date de naissance : le 2 janvier 2013 à 6h32 »). Quand une valeur d’heure représente un moment précis dans le temps et que vous la restaurez à partir d’une valeur sérialisée, vous devez vérifier qu’elle représente le même moment dans le temps, quelle que soit la situation géographique ou le fuseau horaire de l’utilisateur.
 
-L'exemple de code suivant illustre ce problème. Il enregistre une même valeur de date et d’heure locale sous forme de chaîne dans trois [formats standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md) (« G » pour date générale et heure longue, « s » pour date/heure pouvant être triée et « o » pour date/heure aller-retour), ainsi qu’au format binaire.
+L'exemple de code suivant illustre ce problème. Il enregistre une même valeur de date et d’heure locale sous forme de chaîne dans trois [formats standard](../base-types/standard-date-and-time-format-strings.md) (« G » pour date générale et heure longue, « s » pour date/heure pouvant être triée et « o » pour date/heure aller-retour), ainsi qu’au format binaire.
 
 [!code-csharp[Conceptual.Globalization#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates4.cs#10)]
 [!code-vb[Conceptual.Globalization#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates4.vb#10)]
@@ -224,7 +224,7 @@ Quand les données sont sérialisées sur un système situé dans le fuseau hora
 3/31/2013 3:00:00 AM Local
 ```
 
-Pour plus d’informations, consultez [Conversion d’heures entre fuseaux horaires](../../../docs/standard/datetime/converting-between-time-zones.md).
+Pour plus d’informations, consultez [Conversion d’heures entre fuseaux horaires](../datetime/converting-between-time-zones.md).
 
 ### <a name="perform-date-and-time-arithmetic"></a>Exécuter des calculs de date et d’heure
 
@@ -248,7 +248,7 @@ L’exemple suivant est similaire à l’exemple précédent, sauf qu’il respe
 [!code-csharp[Conceptual.Globalization#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates6.cs#9)]
 [!code-vb[Conceptual.Globalization#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates6.vb#9)]
 
-Pour plus d’informations, consultez [Exécution d’opérations arithmétiques avec des dates et heures](../../../docs/standard/datetime/performing-arithmetic-operations.md).
+Pour plus d’informations, consultez [Exécution d’opérations arithmétiques avec des dates et heures](../datetime/performing-arithmetic-operations.md).
 
 ### <a name="use-culture-sensitive-names-for-date-elements"></a>Utiliser des noms dépendants de la culture pour les éléments de date
 
@@ -259,7 +259,7 @@ Votre application peut avoir besoin d’afficher le nom du mois ou le jour de la
 
 Or, ce code retourne toujours le nom des jours de la semaine en anglais. Il est fréquent que le code chargé d’extraire le nom du mois soit encore moins flexible. Il part souvent du principe que le calendrier est constitué de douze mois et affiche le nom des mois dans une langue spécifique.
 
-En utilisant des [chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md) ou les propriétés de l’objet <xref:System.Globalization.DateTimeFormatInfo>, il est facile d’extraire des chaînes qui correspondent au nom des jours de la semaine ou des mois dans la culture de l’utilisateur, comme l’illustre l’exemple suivant. Il remplace la culture active par la culture Français (France) et affiche le nom du jour de la semaine et le nom du mois pour le 1er juillet 2013.
+En utilisant des [chaînes de format de date et d’heure personnalisées](../base-types/custom-date-and-time-format-strings.md) ou les propriétés de l’objet <xref:System.Globalization.DateTimeFormatInfo>, il est facile d’extraire des chaînes qui correspondent au nom des jours de la semaine ou des mois dans la culture de l’utilisateur, comme l’illustre l’exemple suivant. Il remplace la culture active par la culture Français (France) et affiche le nom du jour de la semaine et le nom du mois pour le 1er juillet 2013.
 
 [!code-csharp[Conceptual.Globalization#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/monthname2.cs#20)]
 [!code-vb[Conceptual.Globalization#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/monthname2.vb#20)]
@@ -279,7 +279,7 @@ En règle générale, quand les nombres s’affichent dans l’interface utilisa
 
 - méthode `ToString(String)` de tout type numérique, ce qui inclut une chaîne de format en guise d’argument ;
 
-- fonctionnalité de [mise en forme composite](../../../docs/standard/base-types/composite-formatting.md), quand elle est utilisée avec des valeurs numériques.
+- fonctionnalité de [mise en forme composite](../base-types/composite-formatting.md), quand elle est utilisée avec des valeurs numériques.
 
 L’exemple suivant affiche la température moyenne par mois à Paris. Dans un premier temps, il définit la culture active Français (France) avant d’afficher les données, puis définit ensuite Anglais (États-Unis). Dans les deux cas, le nom des mois et les températures s’affichent au format adapté à la culture en question. À noter que les deux cultures utilisent des séparateurs décimaux différents dans la valeur de température. De même, notez que la chaîne de format de date et d’heure personnalisée « MMMM » est utilisée pour afficher le nom de mois complet et que la quantité d’espace nécessaire est allouée au nom de mois dans la chaîne de résultat par rapport à la longueur du nom de mois le plus long dans la tableau <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A?displayProperty=nameWithType>.
 
@@ -336,9 +336,9 @@ En général, ne faites aucune supposition quant aux valeurs des propriétés <x
 
 - .NET prend en charge les cultures de remplacement. Cela permet de définir une nouvelle culture personnalisée qui complète les cultures standard existants ou qui remplace entièrement une culture standard existante.
 
-- Sur des systèmes Windows, l’utilisateur peut personnaliser les paramètres propres à une culture à l’aide de l’application **Région et langue** du Panneau de configuration. Quand vous instanciez un objet <xref:System.Globalization.CultureInfo>, vous pouvez déterminer s’il reflète ces personnalisations utilisateur en appelant le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29>. En règle générale, pour les applications utilisateur final, vous devez respecter les préférences des utilisateurs afin que l’utilisateur soit présenté avec des données dans un format qu’il attend.
+- Sur des systèmes Windows, l’utilisateur peut personnaliser les paramètres propres à une culture à l’aide de l’application **Région et langue** du Panneau de configuration. Quand vous instanciez un objet <xref:System.Globalization.CultureInfo>, vous pouvez déterminer s’il reflète ces personnalisations utilisateur en appelant le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29>. En règle générale, pour les applications des utilisateurs finaux, vous devez respecter les préférences de l’utilisateur afin que l’utilisateur soit invité à fournir des données dans un format attendu.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Mondialisation et localisation](../../../docs/standard/globalization-localization/index.md)
-- [Meilleures pratiques pour l’utilisation des cordes](../../../docs/standard/base-types/best-practices-strings.md)
+- [Globalisation et localisation](index.md)
+- [Meilleures pratiques pour l’utilisation de chaînes](../base-types/best-practices-strings.md)

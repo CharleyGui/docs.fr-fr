@@ -12,12 +12,12 @@ helpviewer_keywords:
 - IObservable(Of T) interface
 - observer design pattern [.NET Framework]
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
-ms.openlocfilehash: 817337cec604a431f9f7d4eacb04378ee0d3c227
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5794cd1ec9b63a6e151b35c28e09e29f86dcfac6
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73131577"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291264"
 ---
 # <a name="observer-design-pattern"></a>Modèle de design observateur
 
@@ -93,6 +93,6 @@ L'exemple suivant contient le point d'entrée de l'application qui instancie la 
 
 |Intitulé|Description|
 |-----------|-----------------|
-|[Meilleures pratiques du modèle de design observateur](../../../docs/standard/events/observer-design-pattern-best-practices.md)|Décrit les meilleures pratiques à adopter lors du développement d'applications qui implémentent le modèle de design Observateur.|
-|[Comment : implémenter un fournisseur](../../../docs/standard/events/how-to-implement-a-provider.md)|Fournit une implémentation pas à pas d'un fournisseur pour une application de surveillance de la température.|
-|[Comment : implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md)|Fournit une implémentation pas à pas d'un observateur pour une application de surveillance de la température.|
+|[Meilleures pratiques du modèle de design observateur](observer-design-pattern-best-practices.md)|Décrit les meilleures pratiques à adopter lors du développement d'applications qui implémentent le modèle de design Observateur.|
+|[Comment : implémenter un fournisseur](how-to-implement-a-provider.md)|Fournit une implémentation pas à pas d'un fournisseur pour une application de surveillance de la température.|
+|[Comment : implémenter un observateur](how-to-implement-an-observer.md)|Fournit une implémentation pas à pas d'un observateur pour une application de surveillance de la température.|

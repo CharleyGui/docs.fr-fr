@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 450e350b-6a68-4634-a2a5-33f4dc33baf0
-ms.openlocfilehash: 4ad505749625e22a09406549329179990b81c140
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 8507c4b323f97279c3054b76aaf8d52f14f0d4ad
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794388"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289133"
 ---
 # <a name="mapping-the-object-hierarchy-to-xml-data"></a>Mappage de la hiérarchie d'objets à des données XML
 Quand un document XML est en mémoire, sa représentation conceptuelle est une arborescence. Pour la programmation, vous disposez d’une hiérarchie d’objets pour accéder aux nœuds de l’arborescence. L'exemple suivant illustre la manière dont le contenu XML se transforme en nœuds.  
@@ -30,7 +30,7 @@ Quand un document XML est en mémoire, sa représentation conceptuelle est une a
   
  L’entrée est représentée dans la mémoire sous la forme de l’arborescence de nœuds suivante, avec la propriété de type de nœud assignée :  
   
- ![Exemple d'arborescence de nœuds](../../../../docs/standard/data/xml/media/simple-xml.gif "Simple_XML")  
+ ![Exemple d'arborescence de nœuds](media/simple-xml.gif "Simple_XML")  
 Représentation sous forme d’arborescence de nœuds book et title  
   
  L'élément `book` devient un objet **XmlElement**, tout comme l'élément suivant `title` devient aussi un objet **XmlElement**, tandis que le contenu de l'élément devient un objet **XmlText**. Si vous examinez les méthodes et propriétés de **XmlElement**, vous constaterez qu'elles sont différentes des méthodes et propriétés disponibles pour un objet **XmlText**. Il est donc vital de connaître le type de nœud dans lequel le balisage XML se transforme, puisque ce type de nœud détermine les actions possibles.  
@@ -187,8 +187,8 @@ public class Sample
 |Entrée|Output|Type de nœud test|  
 |-----------|------------|--------------------|  
 |\<?xml version="1.0"?>|\<?xml version='1.0'?>|XmlNodeType.XmlDeclaration|  
-|\<!-- Exemple de document XML -->|\<!--Exemple de document XML -->|XmlNodeType.Comment|  
-|\<!DOCTYPE Items [\<!ENTITY number "123">]>|\<!DOCTYPE Items [\<!ENTITY number "123">]|XmlNodeType.DocumentType|  
+|\<!-- This is a sample XML document -->|\<!--This is a sample XML document -->|XmlNodeType.Comment|  
+|\<!DOCTYPE Items [\<!ENTITY number "123">] >|\<!DOCTYPE Items [\<!ENTITY number "123">]|XmlNodeType.DocumentType|  
 |\<Items>|\<Items>|XmlNodeType.Element|  
 |\<Item>|\<Item>|XmlNodeType.Element|  
 |Test with an entity: &number;|Test with an entity: 123|XmlNodeType.Text|  
@@ -200,13 +200,13 @@ public class Sample
 |\</Item>|\</Item>|XmlNodeType.EndElement|  
 |\<Item>|\<Item>|XmlNodeType.Element|  
 |test with a CDATA section|test with a CDATA section|XmlTest.Text|  
-|<![CDATA[\<456>]]\>|<![CDATA[\<456>]]\>|XmlTest.CDATA|  
+|< ! [CDATA [ \<456> ]]\>|< ! [CDATA [ \<456> ]]\>|XmlTest.CDATA|  
 |def|def|XmlNodeType.Text|  
 |\</Item>|\</Item>|XmlNodeType.EndElement|  
 |\<Item>|\<Item>|XmlNodeType.Element|  
 |Test with a char entity: &\#65;|Test with a char entity: A|XmlNodeType.Text|  
 |\</Item>|\</Item>|XmlNodeType.EndElement|  
-|\<!-- Quatorze caractères dans cet élément.-->|\<--Quatorze caractères dans cet élément.-->|XmlNodeType.Comment|  
+|\<!-- Fourteen chars in this element.-->|\<--Fourteen chars in this element.-->|XmlNodeType.Comment|  
 |\<Item>|\<Item>|XmlNodeType.Element|  
 |1234567890ABCD|1234567890ABCD|XmlNodeType.Text|  
 |\</Item>|\</Item>|XmlNodeType.EndElement|  
@@ -214,10 +214,10 @@ public class Sample
   
  Il est essentiel de savoir quel type de nœud est assigné, puisque le type de nœud régit les actions valides et les types de propriétés qu'il est possible de définir et d'extraire.  
   
- La création de nœuds pour l'espace blanc est contrôlée au moment du chargement des données dans le DOM par l'indicateur **PreserveWhitespace**. Pour plus d'informations, consultez [Gestion des espaces blancs significatifs ou non lors du chargement du DOM](../../../../docs/standard/data/xml/white-space-and-significant-white-space-handling-when-loading-the-dom.md).  
+ La création de nœuds pour l'espace blanc est contrôlée au moment du chargement des données dans le DOM par l'indicateur **PreserveWhitespace**. Pour plus d'informations, consultez [Gestion des espaces blancs significatifs ou non lors du chargement du DOM](white-space-and-significant-white-space-handling-when-loading-the-dom.md).  
   
- Pour ajouter de nouveaux nœuds au DOM, voir [Insertion de nœuds dans un document XML](../../../../docs/standard/data/xml/inserting-nodes-into-an-xml-document.md). Pour supprimer des nœuds du DOM, voir [Suppression de nœuds, de contenu et de valeurs d'un document XML](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md). Pour modifier le contenu de nœuds dans le DOM, voir [Modification de nœuds, de contenu et de valeurs dans un document XML](../../../../docs/standard/data/xml/modifying-nodes-content-and-values-in-an-xml-document.md).  
+ Pour ajouter de nouveaux nœuds au DOM, voir [Insertion de nœuds dans un document XML](inserting-nodes-into-an-xml-document.md). Pour supprimer des nœuds du DOM, voir [Suppression de nœuds, de contenu et de valeurs d'un document XML](removing-nodes-content-and-values-from-an-xml-document.md). Pour modifier le contenu de nœuds dans le DOM, voir [Modification de nœuds, de contenu et de valeurs dans un document XML](modifying-nodes-content-and-values-in-an-xml-document.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [DOM (Document Object Model) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [DOM (Document Object Model) XML](xml-document-object-model-dom.md)

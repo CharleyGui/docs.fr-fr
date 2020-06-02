@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c268c49e-32b9-4171-b782-dcb7b065fa73
-ms.openlocfilehash: 99b6b3b6959abf4c8adc313364ad641249bd9bc3
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d5e7074fc8c68a0a0243ea4ad237e713e0a729b3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710165"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289055"
 ---
 # <a name="select-xml-data-using-xpathnavigator"></a>Sélection de données XML à l'aide de XPathNavigator
 La classe <xref:System.Xml.XPath.XPathNavigator> offre un ensemble de méthodes permettant de sélectionner une collection de nœuds dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> à l’aide d’une expression XPath. Une fois la collection de nœuds sélectionnée, vous pouvez y effectuer des itérations.  
@@ -65,9 +65,9 @@ while(nodes.MoveNext())
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [Traitement des données XML à l'aide du modèle de données XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [Évaluation d’expressions XPath à l’aide de XPathNavigator](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)
-- [Mise en correspondance de nœuds avec XPathNavigator](../../../../docs/standard/data/xml/matching-nodes-using-xpathnavigator.md)
-- [Types de nœuds reconnus avec les requêtes XPath](../../../../docs/standard/data/xml/node-types-recognized-with-xpath-queries.md)
-- [Requêtes et espaces de noms XPath](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)
-- [Expressions XPath compilées](../../../../docs/standard/data/xml/compiled-xpath-expressions.md)
+- [Traitement des données XML à l'aide du modèle de données XPath](process-xml-data-using-the-xpath-data-model.md)
+- [Évaluation d’expressions XPath à l’aide de XPathNavigator](evaluate-xpath-expressions-using-xpathnavigator.md)
+- [Mise en correspondance de nœuds avec XPathNavigator](matching-nodes-using-xpathnavigator.md)
+- [Types de nœuds reconnus avec les requêtes XPath](node-types-recognized-with-xpath-queries.md)
+- [Requêtes et espaces de noms XPath](xpath-queries-and-namespaces.md)
+- [Expressions XPath compilées](compiled-xpath-expressions.md)

@@ -7,14 +7,14 @@ helpviewer_keywords:
 - XML serialization, configuration
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
-ms.openlocfilehash: 652a88e25f59cd905e47ef71351e47e67f375286
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: a2684ab72c1fb109d711e333e01836d3399caf86
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375824"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289640"
 ---
-# <a name="datetimeserialization-element"></a>\<dateTimeSerialization>, élément
+# <a name="datetimeserialization-element"></a>Élément \<dateTimeSerialization>
 Détermine le mode de sérialisation des objets <xref:System.DateTime>.  
   
  \<configuration>  
@@ -46,7 +46,7 @@ Détermine le mode de sérialisation des objets <xref:System.DateTime>.
 |-------------|-----------------|  
 |system.xml.serialization|Élément de niveau supérieur permettant de contrôler la sérialisation XML.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Notes  
  Dans les versions 1,0, 1,1, 2,0 et versions ultérieures de la .NET Framework, quand cette propriété est définie sur **local**, <xref:System.DateTime> les objets sont toujours mis en forme en tant qu’heure locale. Autrement dit, les informations du fuseau horaire local sont toujours incluses avec les données sérialisées. Affectez la valeur **Local** à cette propriété pour garantir la compatibilité avec les versions antérieures du .NET Framework.  
   
  Dans la version 2,0 et les versions ultérieures du .NET Framework dont cette propriété a la valeur **roundtrip**, les <xref:System.DateTime> objets sont examinés pour déterminer s’ils se trouvent dans le fuseau horaire local, UTC ou non spécifié. Les objets <xref:System.DateTime> sont ensuite sérialisés de manière à ce que ces informations soient conservées. Il s'agit du comportement par défaut, recommandé pour toutes les nouvelles applications qui ne communiquent pas avec les versions antérieures du .NET Framework.  
@@ -56,7 +56,7 @@ Détermine le mode de sérialisation des objets <xref:System.DateTime>.
 - <xref:System.DateTime>
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
-- [Schéma du fichier de configuration](../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<schemaImporterExtensions>, élément](../../../docs/standard/serialization/schemaimporterextensions-element.md)
-- [\<Ajouter> élément pour \< schemaImporterExtensions>](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
-- [\<Élément System. Xml. Serialization>](../../../docs/standard/serialization/system-xml-serialization-element.md)
+- [Schéma du fichier de configuration](../../framework/configure-apps/file-schema/index.md)
+- [\<schemaImporterExtensions>Appartient](schemaimporterextensions-element.md)
+- [\<add>, Élément de\<schemaImporterExtensions>](add-element-for-schemaimporterextensions.md)
+- [\<system.xml.serialization>Appartient](system-xml-serialization-element.md)

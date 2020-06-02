@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5711b225-6aa2-4e4f-9898-19f2d518ad1a
-ms.openlocfilehash: 87ae96944f9a9f2bbcefb54c343f429c75c3022d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: da1cb81c819e55f572e9faaabef4dd49ee7397de
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710386"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288678"
 ---
 # <a name="reading-xml-data-using-xpathdocument-and-xmldocument"></a>Lecture de données XML à l’aide de XPathDocument et XmlDocument
 Il existe deux manières de lire un document XML dans l'espace de noms <xref:System.Xml.XPath?displayProperty=nameWithType>. La première consiste à lire un document XML à l'aide de la classe <xref:System.Xml.XPath.XPathDocument> en lecture seule et la seconde à lire un document XML à l'aide de la classe <xref:System.Xml.XmlDocument> modifiable dans l'espace de noms <xref:System.Xml?displayProperty=nameWithType>.  
@@ -75,7 +75,7 @@ document.Load("books.xml");
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [Traitement des données XML à l'aide du modèle de données XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [Accès à des données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)
-- [Modification de données XML à l'aide de XPathNavigator](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)
-- [Validation de schéma à l'aide de XPathNavigator](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)
+- [Traitement des données XML à l'aide du modèle de données XPath](process-xml-data-using-the-xpath-data-model.md)
+- [Accès à des données XML à l’aide de XPathNavigator](accessing-xml-data-using-xpathnavigator.md)
+- [Modification de données XML à l'aide de XPathNavigator](editing-xml-data-using-xpathnavigator.md)
+- [Validation de schéma à l'aide de XPathNavigator](schema-validation-using-xpathnavigator.md)

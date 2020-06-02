@@ -9,32 +9,32 @@ helpviewer_keywords:
 - parameters, design guidelines
 - reserved parameters
 ms.assetid: 3f33bf46-4a7b-43b3-bb78-1ffebe0dcfa6
-ms.openlocfilehash: 78eb07503810e75d14bcd73740fe429e2f73475e
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 46c1b8f03d054a63ea837a73fd30eeed163ab0a4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743674"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290095"
 ---
 # <a name="parameter-design"></a>Conception de paramètres
 
-Cette section fournit des instructions générales sur la conception des paramètres, y compris des sections avec des indications pour la vérification des arguments. En outre, vous devez vous reporter aux instructions décrites dans [Naming Parameters](../../../docs/standard/design-guidelines/naming-parameters.md).
+Cette section fournit des instructions générales sur la conception des paramètres, y compris des sections avec des indications pour la vérification des arguments. En outre, vous devez vous reporter aux instructions décrites dans [Naming Parameters](naming-parameters.md).
 
  ✔️ Utilisez le type de paramètre le moins dérivé qui fournit les fonctionnalités requises par le membre.
 
- Supposons, par exemple, que vous souhaitiez concevoir une méthode qui énumère une collection et imprime chaque élément sur la console. Une telle méthode doit prendre <xref:System.Collections.IEnumerable> comme paramètre, et non <xref:System.Collections.ArrayList> ou <xref:System.Collections.IList>, par exemple.
+ Supposons, par exemple, que vous souhaitiez concevoir une méthode qui énumère une collection et imprime chaque élément sur la console. Une telle méthode doit prendre <xref:System.Collections.IEnumerable> comme paramètre, et non <xref:System.Collections.ArrayList> ou <xref:System.Collections.IList> , par exemple.
 
- ❌ n’utilisez pas de paramètres réservés.
+ ❌N’utilisez pas de paramètres réservés.
 
  Si une entrée supplémentaire à un membre est nécessaire dans une version ultérieure, une nouvelle surcharge peut être ajoutée.
 
- ❌ n’avez pas de méthodes exposées publiquement qui prennent des pointeurs, des tableaux de pointeurs ou des tableaux multidimensionnels en tant que paramètres.
+ ❌N’ont pas de méthodes exposées publiquement qui prennent des pointeurs, des tableaux de pointeurs ou des tableaux multidimensionnels en tant que paramètres.
 
  Les pointeurs et les tableaux multidimensionnels sont relativement difficiles à utiliser correctement. Dans presque tous les cas, les API peuvent être repensées pour éviter de prendre ces types comme paramètres.
 
- ✔️ Placez tous les paramètres `out` après tous les paramètres by-value et `ref` (à l’exception des tableaux de paramètres), même si cela entraîne une incohérence dans le classement des paramètres entre les surcharges (consultez [surcharge des membres](../../../docs/standard/design-guidelines/member-overloading.md)).
+ ✔️ Placez tous les `out` paramètres après la valeur et les `ref` paramètres (à l’exception des tableaux de paramètres), même si cela entraîne une incohérence dans l’ordre des paramètres entre les surcharges (consultez surcharge des [membres](member-overloading.md)).
 
- Les paramètres de `out` peuvent être considérés comme des valeurs de retour supplémentaires et les regrouper ensemble rendent la signature de méthode plus facile à comprendre.
+ Les `out` paramètres peuvent être considérés comme des valeurs de retour supplémentaires et les regrouper ensemble rendent la signature de méthode plus facile à comprendre.
 
  ✔️ sont cohérentes dans les paramètres d’attribution de noms lors du remplacement des membres ou de l’implémentation des membres d’interface.
 
@@ -43,43 +43,43 @@ Cette section fournit des instructions générales sur la conception des paramè
 ### <a name="choose-between-enum-and-boolean-parameters"></a>Choisir entre les paramètres enum et Boolean
  ✔️ Utilisez des enums si un membre a sinon deux paramètres booléens ou plus.
 
- ❌ n’utilisez pas de valeurs booléennes sauf si vous êtes absolument sûr qu’il n’y aura jamais besoin de plus de deux valeurs.
+ ❌N’utilisez pas de valeurs booléennes sauf si vous êtes absolument sûr qu’il n’y aura jamais besoin de plus de deux valeurs.
 
- Les enums vous donnent de la place pour l’ajout ultérieur de valeurs, mais vous devez être conscient de toutes les implications liées à l’ajout de valeurs aux enums, qui sont décrites dans la section [enum Design](../../../docs/standard/design-guidelines/enum.md).
+ Les enums vous donnent de la place pour l’ajout ultérieur de valeurs, mais vous devez être conscient de toutes les implications liées à l’ajout de valeurs aux enums, qui sont décrites dans la section [enum Design](enum.md).
 
  ✔️ envisagez d’utiliser des valeurs booléennes pour les paramètres de constructeur qui sont véritablement des valeurs à deux États et qui sont simplement utilisées pour initialiser des propriétés booléennes.
 
 ### <a name="validate-arguments"></a>Valider les arguments
- ✔️ validez les arguments passés aux membres publics, protégés ou implémentés explicitement. Lève <xref:System.ArgumentException?displayProperty=nameWithType>, ou l’une de ses sous-classes, en cas d’échec de la validation.
+ ✔️ validez les arguments passés aux membres publics, protégés ou implémentés explicitement. Throw <xref:System.ArgumentException?displayProperty=nameWithType> , ou l’une de ses sous-classes, si la validation échoue.
 
  Notez que la validation réelle ne doit pas nécessairement se produire dans le membre public ou protégé lui-même. Cela peut se produire à un niveau inférieur dans une routine privée ou interne. Le point principal est que la surface d’exposition entière exposée aux utilisateurs finaux vérifie les arguments.
 
- ✔️ lèvent <xref:System.ArgumentNullException> si un argument null est passé et que le membre ne prend pas en charge les arguments null.
+ ✔️ Levez <xref:System.ArgumentNullException> une exception si un argument null est passé et que le membre ne prend pas en charge les arguments null.
 
  ✔️ validez les paramètres Enum.
 
  Ne partez pas du principe que les arguments enum se trouvent dans la plage définie par l’enum. Le CLR permet de convertir n’importe quelle valeur entière en valeur enum, même si la valeur n’est pas définie dans l’enum.
 
- ❌ n’utilisez pas <xref:System.Enum.IsDefined%2A?displayProperty=nameWithType> pour les vérifications de plage d’énumération.
+ ❌N’utilisez pas <xref:System.Enum.IsDefined%2A?displayProperty=nameWithType> pour les vérifications de plage d’énumération.
 
  ✔️ N’oubliez pas que les arguments mutables peuvent avoir changé après leur validation.
 
  Si le membre est sensible à la sécurité, il est recommandé d’effectuer une copie, puis de valider et de traiter l’argument.
 
-### <a name="pass-parameters"></a>Passer des paramètres
- Du point de vue d’un concepteur d’infrastructure, il existe trois groupes principaux de paramètres : les paramètres par valeur, les paramètres de `ref` et les paramètres de `out`.
+### <a name="pass-parameters"></a>Transmettre des paramètres
+ Du point de vue d’un concepteur d’infrastructure, il existe trois groupes principaux de paramètres : les paramètres par valeur, `ref` les paramètres et les `out` paramètres.
 
- Quand un argument est passé via un paramètre par valeur, le membre reçoit une copie de l’argument réel passé. Si l’argument est un type valeur, une copie de l’argument est placée sur la pile. Si l’argument est un type référence, une copie de la référence est placée sur la pile. La plupart des langages CLR populaires C#, tels que, C++Visual Basic et, par défaut, transmettent des paramètres par valeur.
+ Quand un argument est passé via un paramètre par valeur, le membre reçoit une copie de l’argument réel passé. Si l’argument est un type valeur, une copie de l’argument est placée sur la pile. Si l’argument est un type référence, une copie de la référence est placée sur la pile. La plupart des langages CLR populaires, tels que C#, Visual Basic et C++, transmettent par défaut des paramètres par valeur.
 
- Quand un argument est passé via un paramètre `ref`, le membre reçoit une référence à l’argument réel passé. Si l’argument est un type valeur, une référence à l’argument est placée sur la pile. Si l’argument est un type référence, une référence à la référence est placée sur la pile. `Ref` paramètres peuvent être utilisés pour permettre au membre de modifier les arguments passés par l’appelant.
+ Quand un argument est passé via un `ref` paramètre, le membre reçoit une référence à l’argument réel passé. Si l’argument est un type valeur, une référence à l’argument est placée sur la pile. Si l’argument est un type référence, une référence à la référence est placée sur la pile. `Ref`les paramètres peuvent être utilisés pour permettre au membre de modifier les arguments passés par l’appelant.
 
- les paramètres de `Out` sont similaires aux paramètres de `ref`, avec quelques petites différences. Initialement, le paramètre est considéré comme non assigné et ne peut pas être lu dans le corps du membre avant qu’une valeur ne lui soit assignée. En outre, une valeur doit être assignée au paramètre avant que le membre retourne.
+ `Out`les paramètres sont similaires aux `ref` paramètres, avec quelques petites différences. Initialement, le paramètre est considéré comme non assigné et ne peut pas être lu dans le corps du membre avant qu’une valeur ne lui soit assignée. En outre, une valeur doit être assignée au paramètre avant que le membre retourne.
 
- ❌ Évitez d’utiliser des paramètres `out` ou `ref`.
+ ❌Évitez d’utiliser des `out` `ref` paramètres ou.
 
- L’utilisation de paramètres `out` ou `ref` requiert une expérience avec les pointeurs, en comprenant les différences entre les types valeur et les types référence, ainsi que la gestion des méthodes avec plusieurs valeurs de retour. En outre, la différence entre les paramètres de `out` et de `ref` n’est pas largement comprise. Les architectes d’infrastructure qui sont conçus pour un public général ne doivent pas s’attendre à ce que les utilisateurs maîtrisent le travail avec des paramètres de `out` ou `ref`.
+ L' `out` utilisation `ref` de paramètres ou nécessite une expérience avec les pointeurs, la compréhension de la différence entre les types valeur et les types référence, ainsi que la gestion des méthodes avec plusieurs valeurs de retour. En outre, la différence entre les `out` `ref` paramètres et n’est pas largement comprise. Les architectes d’infrastructure qui sont conçus pour un public général ne doivent pas s’attendre à ce que les utilisateurs maîtrisent le travail avec les `out` `ref` paramètres ou.
 
- ❌ ne transmettez pas de types référence par référence.
+ ❌NE transmettez pas de types référence par référence.
 
  Il existe quelques exceptions limitées à la règle, comme une méthode qui peut être utilisée pour échanger des références.
 
@@ -92,11 +92,11 @@ public class String {
 }
 ```
 
- Un utilisateur peut ensuite appeler la méthode <xref:System.String.Format%2A?displayProperty=nameWithType>, comme suit :
+ Un utilisateur peut ensuite appeler la <xref:System.String.Format%2A?displayProperty=nameWithType> méthode, comme suit :
 
  `String.Format("File {0} not found in {1}",new object[]{filename,directory});`
 
- L’ajout C# du mot clé params à un paramètre de tableau modifie le paramètre en paramètre de tableau « params » et fournit un raccourci pour créer un tableau temporaire.
+ L’ajout du mot clé params C# à un paramètre de tableau modifie le paramètre en paramètre de tableau « params » et fournit un raccourci pour créer un tableau temporaire.
 
 ```csharp
 public class String {
@@ -112,11 +112,11 @@ public class String {
 
  ✔️ envisagez d’ajouter le mot clé params aux paramètres de tableau si vous vous attendez à ce que les utilisateurs finaux passent des tableaux avec un petit nombre d’éléments. S’il est prévu que beaucoup d’éléments soient passés dans des scénarios courants, les utilisateurs ne passeront probablement pas ces éléments Inline, et le mot clé params n’est donc pas nécessaire.
 
- ❌ éviter d’utiliser des tableaux de paramètres si l’appelant a presque toujours l’entrée déjà dans un tableau.
+ ❌Évitez d’utiliser des tableaux de paramètres si l’appelant aurait presque toujours l’entrée déjà dans un tableau.
 
  Par exemple, les membres avec des paramètres de tableau d’octets ne seraient presque jamais appelés en passant des octets individuels. Pour cette raison, les paramètres de tableau d’octets dans le .NET Framework n’utilisent pas le mot clé params.
 
- ❌ n’utilisez pas de tableaux params si le tableau est modifié par le membre qui prend le paramètre de tableau params.
+ ❌N’utilisez pas de tableaux params si le tableau est modifié par le membre qui prend le paramètre de tableau params.
 
  Du fait que de nombreux compilateurs transforment les arguments en un tableau temporaire au niveau du site d’appel, le tableau peut être un objet temporaire et, par conséquent, toutes les modifications apportées au tableau seront perdues.
 
@@ -136,16 +136,16 @@ public class String {
 
  Vous devez vérifier que le tableau n’a pas la valeur null avant le traitement.
 
- ❌ n’utilisez pas les méthodes `varargs`, également appelées points de suspension.
+ ❌N’utilisez pas les `varargs` méthodes, également appelées points de suspension.
 
- Certains langages CLR, tels C++que, prennent en charge une autre convention pour passer des listes de paramètres de variables appelées `varargs` méthodes. La Convention ne doit pas être utilisée dans les frameworks, car elle n’est pas conforme CLS.
+ Certains langages CLR, tels que C++, prennent en charge une autre convention pour passer des listes de paramètres de variables appelées `varargs` méthodes. La Convention ne doit pas être utilisée dans les frameworks, car elle n’est pas conforme CLS.
 
 ### <a name="pointer-parameters"></a>Paramètres du pointeur
  En général, les pointeurs ne doivent pas apparaître dans la surface d’exposition publique d’un Framework de code géré bien conçu. La plupart du temps, les pointeurs doivent être encapsulés. Toutefois, dans certains cas, les pointeurs sont requis pour des raisons d’interopérabilité et l’utilisation de pointeurs dans de tels cas est appropriée.
 
  ✔️ fournissez une alternative pour tout membre qui accepte un argument de pointeur, car les pointeurs ne sont pas conformes CLS.
 
- ❌ Évitez d’exécuter une vérification coûteuse des arguments de pointeur.
+ ❌Évitez d’exécuter une vérification coûteuse des arguments de pointeur.
 
  ✔️ Suivez les conventions courantes liées aux pointeurs lors de la conception de membres avec des pointeurs.
 
@@ -157,5 +157,5 @@ public class String {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions de conception des membres](../../../docs/standard/design-guidelines/member.md)
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
+- [Recommandations en matière de conception de membres](member.md)
+- [Directives de conception d’infrastructure](index.md)

@@ -11,15 +11,15 @@ helpviewer_keywords:
 - enumerations [.NET Framework], parsing strings
 - base types, parsing strings
 ms.assetid: e39324ee-72e5-42d4-a80d-bf3ee7fc6c59
-ms.openlocfilehash: ac44282a06b2b3710d3a9e5390c7a514c1632c3a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 000419e63e86607cd76728ae6e15ac6cd67b87f4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73127599"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277646"
 ---
 # <a name="parsing-numeric-strings-in-net"></a>Analyse de chaînes numériques dans .NET
-Tous les types numériques disposent de deux méthodes d’analyse statiques, `Parse` et `TryParse`, que vous pouvez utiliser pour convertir la représentation sous forme de chaîne d’un nombre en type numérique. Ces méthodes vous permettent d’analyser les chaînes qui ont été générées à l’aide de chaînes de format documentées dans [Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md) et [Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md). Par défaut, les méthodes `Parse` et `TryParse` peuvent convertir correctement les chaînes qui contiennent uniquement des chiffres décimaux intégraux en valeurs entières. Ils peuvent convertir correctement les chaînes qui contiennent des chiffres décimaux intégraux et fractionnaires, des séparateurs de groupe et un séparateur décimal en valeurs à virgule flottante. La méthode `Parse` lève une exception si l’opération échoue, tandis que la méthode `TryParse` retourne `false`.  
+Tous les types numériques disposent de deux méthodes d’analyse statiques, `Parse` et `TryParse`, que vous pouvez utiliser pour convertir la représentation sous forme de chaîne d’un nombre en type numérique. Ces méthodes vous permettent d’analyser les chaînes qui ont été générées à l’aide de chaînes de format documentées dans [Chaînes de format numériques standard](standard-numeric-format-strings.md) et [Chaînes de format numériques personnalisées](custom-numeric-format-strings.md). Par défaut, les méthodes `Parse` et `TryParse` peuvent convertir correctement les chaînes qui contiennent uniquement des chiffres décimaux intégraux en valeurs entières. Ils peuvent convertir correctement les chaînes qui contiennent des chiffres décimaux intégraux et fractionnaires, des séparateurs de groupe et un séparateur décimal en valeurs à virgule flottante. La méthode `Parse` lève une exception si l’opération échoue, tandis que la méthode `TryParse` retourne `false`.  
   
 ## <a name="parsing-and-format-providers"></a>Analyse et fournisseurs de format  
  En général, les représentations sous forme de chaîne de valeurs numériques varient selon la culture. Les éléments des chaînes numériques, tels que les symboles monétaires, les séparateurs de groupes (ou de milliers) et les séparateurs décimaux, varient selon la culture. Les méthodes d’analyse utilisent implicitement ou explicitement un fournisseur de format qui identifie ces variantes spécifiques à la culture. Si aucun fournisseur de format n’est spécifié dans un appel à la méthode `Parse` ou `TryParse`, le fournisseur de format associé à la culture du thread actuel (l’objet <xref:System.Globalization.NumberFormatInfo> retourné par la propriété <xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A?displayProperty=nameWithType>) est utilisé.  
@@ -84,5 +84,5 @@ Tous les types numériques disposent de deux méthodes d’analyse statiques, `P
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Globalization.NumberStyles>
-- [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)
-- [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
+- [Analyse de chaînes](parsing-strings.md)
+- [Mise en forme des types](formatting-types.md)

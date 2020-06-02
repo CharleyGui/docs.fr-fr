@@ -16,12 +16,12 @@ helpviewer_keywords:
 - namespaces [.NET Framework], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.openlocfilehash: f079613f790121c000a312132e7135121ca721a6
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: a1aa244d470402823fc22e12cb5e32bbbdcd87fe
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635910"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289341"
 ---
 # <a name="common-type-system"></a>Système de type commun
 
@@ -70,7 +70,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
 |exported ou not exported|Indique si une classe est visible à l'extérieur de l'assembly dans lequel elle est définie. Cette caractéristique s'applique uniquement aux classes de niveau supérieur, et pas aux classes imbriquées.|  
   
 > [!NOTE]
-> Une classe peut également être imbriquée dans une structure ou une classe parente. Les classes imbriquées ont également des caractéristiques de membre. Pour plus d’informations, voir [Nested Types](#nested-types).  
+> Une classe peut également être imbriquée dans une structure ou une classe parente. Les classes imbriquées ont également des caractéristiques de membre. Pour plus d’informations, consultez [types imbriqués](#nested-types).  
   
  Les membres de classe sans implémentation sont des membres abstraits. Une classe qui possède un ou plusieurs membres abstraits est elle-même abstraite ; il n'est pas possible d'en créer de nouvelles instances. Certains langages qui ciblent le runtime vous permettent de marquer une classe comme abstraite même si aucun de ses membres n'est abstrait. Vous pouvez utiliser une classe abstraite lorsque vous voulez encapsuler un ensemble de fonctionnalités de base dont des classes dérivées peuvent hériter ou qu'elles peuvent substituer lorsque cela est approprié. Les classes qui ne sont pas abstraites sont qualifiées de classes concrètes.  
   
@@ -78,7 +78,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
   
 ### <a name="structures"></a>Structures
 
- Une structure est un type valeur qui dérive implicitement de <xref:System.ValueType?displayProperty=nameWithType> qui, à son tour, est dérivé de <xref:System.Object?displayProperty=nameWithType>. Une structure est utile pour représenter les valeurs dont les exigences de mémoire sont faibles, et pour passer des valeurs comme paramètres de valeur partielle à des méthodes qui ont fortement tapé des paramètres. Dans .NET, tous les types de données primitifs (<xref:System.Boolean>, <xref:System.Byte>, <xref:System.Char>, <xref:System.DateTime>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32> et <xref:System.UInt64>) sont définis en tant que structures.  
+ Une structure est un type valeur qui dérive implicitement de <xref:System.ValueType?displayProperty=nameWithType> qui, à son tour, est dérivé de <xref:System.Object?displayProperty=nameWithType>. Une structure est utile pour représenter des valeurs dont les besoins en mémoire sont faibles et pour passer des valeurs en tant que paramètres par valeur à des méthodes qui ont des paramètres fortement typés. Dans .NET, tous les types de données primitifs (<xref:System.Boolean>, <xref:System.Byte>, <xref:System.Char>, <xref:System.DateTime>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32> et <xref:System.UInt64>) sont définis en tant que structures.  
   
  Comme les classes, les structures définissent à la fois les données (les champs de la structure) et les opérations qui peuvent être exécutées sur ces données (les méthodes de la structure). Cela signifie que vous pouvez appeler des méthodes sur des structures, notamment les méthodes virtuelles définies sur les classes <xref:System.Object?displayProperty=nameWithType> et <xref:System.ValueType?displayProperty=nameWithType>, ainsi que toute méthode définie sur le type valeur lui-même. En d'autres termes, les structures peuvent comporter des champs, des propriétés et des événements, ainsi que des méthodes statiques et non statiques. Vous pouvez créer des instances de structures, les passer en tant que paramètres, les stocker en tant que variables locales ou les stocker dans un champ d'un autre type valeur ou type référence. Les structures peuvent aussi implémenter des interfaces.  
   
@@ -88,7 +88,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
   
 ### <a name="enumerations"></a>Énumérations
 
- Un recensement est un type de valeur <xref:System.Enum?displayProperty=nameWithType> qui hérite directement de et qui fournit des noms alternatifs pour les valeurs d’un type primitif sous-jacent. Un type énumération a un nom, un type sous-jacent qui doit être l'un des types d'entiers signés ou non signés intégrés (tels que <xref:System.Byte>, <xref:System.Int32> ou <xref:System.UInt64>) et un ensemble de champs. Les champs sont des champs statiques de type Literal, chacun représentant une constante. La même valeur peut être assignée à plusieurs champs. Dans ce cas, vous devez marquer l'une des valeurs comme valeur d'énumération primaire pour la réflexion et la conversion de chaînes.  
+ Une énumération est un type valeur qui hérite directement de <xref:System.Enum?displayProperty=nameWithType> et qui fournit des noms de remplacement pour les valeurs d’un type primitif sous-jacent. Un type énumération a un nom, un type sous-jacent qui doit être l'un des types d'entiers signés ou non signés intégrés (tels que <xref:System.Byte>, <xref:System.Int32> ou <xref:System.UInt64>) et un ensemble de champs. Les champs sont des champs statiques de type Literal, chacun représentant une constante. La même valeur peut être assignée à plusieurs champs. Dans ce cas, vous devez marquer l'une des valeurs comme valeur d'énumération primaire pour la réflexion et la conversion de chaînes.  
   
  Vous pouvez assigner une valeur du type sous-jacent à une énumération et vice-versa (aucun cast n'est requis par le runtime). Vous pouvez créer une instance d'une énumération et appeler les méthodes de <xref:System.Enum?displayProperty=nameWithType>, ainsi que toute méthode définie sur le type sous-jacent de l'énumération. Cependant, il est possible que certains langages ne vous permettent pas de passer une énumération en tant que paramètre lorsqu'une instance du type sous-jacent est requise (ou vice versa).  
   
@@ -206,7 +206,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
   
  Toutefois, la plupart des langages imposent des restrictions supplémentaires sur les noms de types. Toutes les comparaisons sont effectuées octet par octet ; elles respectent donc la casse et sont indépendantes des paramètres régionaux.  
   
- Bien qu’un type puisse référencer des types d’autres modules et assemblys, il doit être entièrement défini à l’intérieur d’un seul module .NET. (Selon le support compilateur, cependant, il peut être divisé en fichiers de code source multiples.) Les noms de type doivent être uniques uniquement dans un espace nom. Pour identifier complètement un type, le nom du type doit être qualifié par l'espace de noms qui contient l'implémentation du type.  
+ Bien qu’un type puisse référencer des types d’autres modules et assemblys, il doit être entièrement défini à l’intérieur d’un seul module .NET. (En fonction de la prise en charge du compilateur, toutefois, il peut être divisé en plusieurs fichiers de code source.) Les noms de types doivent être uniques uniquement dans un espace de noms. Pour identifier complètement un type, le nom du type doit être qualifié par l'espace de noms qui contient l'implémentation du type.  
   
 ### <a name="base-types-and-interfaces"></a>Types de base et interfaces  
  Un type peut hériter des valeurs et des comportements d'un autre type. Le système de type commun (CTS, Common Type System) ne permet pas à des types d'hériter de plusieurs types de base.  
@@ -221,7 +221,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
   
 - [Propriétés](#properties)  
   
-- [Méthodes](#methods)  
+- [Leurs](#methods)  
   
 - [Constructeurs](#constructors)  
   
@@ -249,7 +249,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
  [!code-csharp[Conceptual.Types.Members.Properties#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.members.properties/cs/example.cs#1)]
  [!code-vb[Conceptual.Types.Members.Properties#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.members.properties/vb/example.vb#1)]  
   
- En plus d’inclure la propriété elle-même, la langue intermédiaire Microsoft (MSIL) pour un type qui contient une propriété lisible comprend une `get_`méthode de nom de *propriété,* et le MSIL pour un type qui contient une propriété aptable comprend une `set_`méthode de nom de *propriété.*  
+ En plus d’inclure la propriété elle-même, le langage MSIL (Microsoft Intermediate Language) pour un type qui contient une propriété lisible inclut une `get_` méthode *PropertyName* , et le MSIL pour un type qui contient une propriété accessible en écriture inclut une `set_` méthode *PropertyName* .  
 
 ### <a name="methods"></a>Méthodes
 
@@ -267,7 +267,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
 
 ### <a name="events"></a>Événements
 
- Un événement définit un incident auquel il est possible de répondre, et définit les méthodes permettant de s'abonner à l'événement, d'annuler cet abonnement et de déclencher l'événement. Les événements sont souvent utilisés pour signaler d'autres types de changements d'état. Pour plus d’informations, consultez [Événements](../../../docs/standard/events/index.md).  
+ Un événement définit un incident auquel il est possible de répondre, et définit les méthodes permettant de s'abonner à l'événement, d'annuler cet abonnement et de déclencher l'événement. Les événements sont souvent utilisés pour signaler d'autres types de changements d'état. Pour plus d’informations, consultez [Événements](../events/index.md).  
 
 ### <a name="nested-types"></a>Types imbriqués
 
@@ -286,9 +286,9 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
 |final|Méthodes, propriétés et événements|La méthode virtuelle ne peut pas être substituée dans un type dérivé.|  
 |initialize-only|Champs|La valeur peut seulement être initialisée et ne peut pas être écrite après initialisation.|  
 |instance|Champs, méthodes, propriétés et événements|Si un membre n'est pas marqué comme `static` (C# et C++), `Shared` (Visual Basic), `virtual` (C# et C++) ou `Overridable` (Visual Basic), il est membre d'instance (il n'y a pas de mot clé d'instance). La mémoire comptera autant de copies de tels membres que d'objets qui les utilisent.|  
-|literal|Champs|La valeur assignée au champ est une valeur fixe, connue au moment de la compilation, d'un type valeur intégré. Les champs de type Literal sont parfois qualifiés de constantes.|  
+|littéral|Champs|La valeur assignée au champ est une valeur fixe, connue au moment de la compilation, d'un type valeur intégré. Les champs de type Literal sont parfois qualifiés de constantes.|  
 |newslot ou override|Tous|Définit la façon dont le membre interagit avec des membres hérités ayant la même signature :<br /><br /> newslot<br /> Masque les membres hérités ayant la même signature.<br /><br /> override<br /> Remplace la définition d'une méthode virtuelle héritée.<br /><br /> La valeur par défaut est newslot.|  
-|statique|Champs, méthodes, propriétés et événements|Le membre appartient au type sur lequel il est défini, et non à une instance particulière du type ; le membre existe même si une instance du type n'est pas créée, et il est partagé entre toutes les instances du type.|  
+|static|Champs, méthodes, propriétés et événements|Le membre appartient au type sur lequel il est défini, et non à une instance particulière du type ; le membre existe même si une instance du type n'est pas créée, et il est partagé entre toutes les instances du type.|  
 |virtual|Méthodes, propriétés et événements|La méthode peut être implémentée par un type dérivé et peut être appelée de manière statique ou dynamique. Si un appel dynamique est utilisé, le type de l'instance qui effectue l'appel au moment de l'exécution détermine quelle implémentation de la méthode est appelée (plutôt que le type connu au moment de la compilation). Pour appeler une méthode virtuelle de manière statique, un cast en un type qui utilise la version désirée de la méthode devra éventuellement être effectué sur la variable.|  
   
 ### <a name="overloading"></a>Surcharge  
@@ -297,7 +297,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
 > [!NOTE]
 > Le type de retour n’est pas considéré comme une partie de la signature d’une méthode. En d'autres termes, les méthodes ne peuvent pas être surchargées si seul le type de retour les différencie.  
   
-### <a name="inherit-override-and-hide-members"></a>Hériter, remplacer et cacher les membres  
+### <a name="inherit-override-and-hide-members"></a>Hériter, substituer et masquer les membres  
  Un type dérivé hérite de tous les membres de son type de base ; c'est-à-dire que ces membres sont définis sur le type dérivé et disponibles pour celui-ci. Le comportement ou les qualités de membres hérités peuvent être modifiés de deux manières :  
   
 - Un type dérivé peut masquer un membre hérité en définissant un nouveau membre avec la même signature. Cela permet notamment de rendre privé un membre précédemment public ou de définir un nouveau comportement pour une méthode héritée marquée comme `final`.  
@@ -306,6 +306,6 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Navigateur API .NET](/dotnet/api)
-- [Temps courant de course de langue](../../../docs/standard/clr.md)
-- [Conversion de type en .NET](../../../docs/standard/base-types/type-conversion.md)
+- [Navigateur de l’API .NET](/dotnet/api)
+- [Common Language Runtime](../clr.md)
+- [Conversion de type dans .NET](type-conversion.md)

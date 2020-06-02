@@ -16,17 +16,17 @@ helpviewer_keywords:
 - Advanced Encryption Standard algorithm
 - Rijndael
 ms.assetid: d8461a44-aa2c-4ef4-b3e4-ab7cbaaee1b5
-ms.openlocfilehash: cda5a32e9a7421cd65b2046b403fde9e05230493
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 1ad75b7f36130a9f3acad97f724406650a7fdb68
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706082"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277321"
 ---
 # <a name="how-to-encrypt-xml-elements-with-symmetric-keys"></a>Comment : chiffrer des éléments XML avec des clés symétriques
 Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Cryptography.Xml> pour chiffrer un élément d'un document XML.  Le chiffrement XML vous permet de stocker et de transporter du code XML sensible, en empêchant qu'il soit facilement lu.  Cette procédure chiffre un élément XML à l’aide de l’algorithme Advanced Encryption Standard (AES), également appelé Rijndael.  
   
- Pour plus d’informations sur le déchiffrement d’un élément XML chiffré à l’aide de cette procédure, consultez [Comment : déchiffrer des éléments XML avec des clés symétriques](../../../docs/standard/security/how-to-decrypt-xml-elements-with-symmetric-keys.md).  
+ Pour plus d’informations sur le déchiffrement d’un élément XML chiffré à l’aide de cette procédure, consultez [Comment : déchiffrer des éléments XML avec des clés symétriques](how-to-decrypt-xml-elements-with-symmetric-keys.md).  
   
  Quand vous utilisez un algorithme symétrique comme AES pour chiffrer des données XML, vous devez utiliser la même clé pour chiffrer et déchiffrer les données XML.  L'exemple de cette procédure suppose que le code XML chiffré sera déchiffré à l'aide de la même clé, et que les parties chargées du chiffrement et du déchiffrement se sont mises d'accord sur l'algorithme et la clé à utiliser.  Dans cet exemple, la clé AES n'est ni stockée ni chiffrée dans le code XML chiffré.  
   
@@ -94,7 +94,7 @@ Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Crypt
   
 - Incluez les espaces de noms suivants : <xref:System.Xml>, <xref:System.Security.Cryptography> et <xref:System.Security.Cryptography.Xml>.  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
+## <a name="net-framework-security"></a>Sécurité du .NET Framework  
  Ne stockez jamais une clé de chiffrement en texte brut et ne transférez jamais une clé d'un ordinateur à l'autre en texte brut.  Vous devez utiliser un conteneur de clé sécurisé pour stocker les clés de chiffrement.  
   
  Quand vous avez terminé d'utiliser une clé de chiffrement, effacez-la de la mémoire en affectant à chaque octet la valeur zéro ou en appelant la méthode <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> de la classe de chiffrement managée.  
@@ -102,4 +102,4 @@ Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Crypt
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Security.Cryptography.Xml>
-- [Comment : déchiffrer des éléments XML avec des clés symétriques](../../../docs/standard/security/how-to-decrypt-xml-elements-with-symmetric-keys.md)
+- [Comment : déchiffrer des éléments XML avec des clés symétriques](how-to-decrypt-xml-elements-with-symmetric-keys.md)

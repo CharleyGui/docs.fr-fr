@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 73a6c582-b9d7-4fa7-9a05-6d931e1f3de8
-ms.openlocfilehash: 56e9ef6031a5736acfa066ed6c068f954bd5af8d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e44f44db3e12c5e297f137fa247ecfc2d809dd4d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710815"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287712"
 ---
 # <a name="how-to-transform-a-node-fragment"></a>Procédure : transformer un fragment de nœud
 Lorsque vous transformez des données contenues dans un objet <xref:System.Xml.XmlDocument> ou <xref:System.Xml.XPath.XPathDocument>, les transformations XSLT s'appliquent à l'ensemble du document. En d'autres termes, si vous passez dans un autre nœud que le nœud racine du document, cela n'empêche pas le processus de transformation d'accéder à tous les nœuds dans le document chargé. Pour transformer un fragment de nœud, vous devez créer un objet séparé contenant uniquement le fragment de nœud et transmettre cet objet à la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>.  
@@ -47,4 +47,4 @@ Lorsque vous transformez des données contenues dans un objet <xref:System.Xml.X
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)
+- [Utilisation de la classe XslCompiledTransform](using-the-xslcompiledtransform-class.md)

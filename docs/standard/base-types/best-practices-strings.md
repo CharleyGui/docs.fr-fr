@@ -18,12 +18,12 @@ helpviewer_keywords:
 - comparing strings
 - strings [.NET Framework],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-ms.openlocfilehash: 0fb7ec8d9de8fae7a0443984511e538d38d93c7a
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 28c1397c71debeed181acb2c1acb01b0f8cee7c9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441004"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289363"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Bonnes pratiques pour l’utilisation de chaînes dans .NET
 
@@ -309,7 +309,7 @@ L'exemple suivant instancie un objet <xref:System.Collections.Hashtable> en lui 
 Lorsque vous affichez des données non-chaînées telles que les nombres et les dates et heures aux utilisateurs, mettez-les en forme en utilisant les paramètres de la culture de l'utilisateur. Par défaut, tous les éléments suivants utilisent la culture du thread actuelle dans les opérations de mise en forme :
 
 - Chaînes interpolées prises en charge par les compilateurs [C#](../../csharp/language-reference/tokens/interpolated.md) et [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
-- Opérations de concaténation de chaîne qui utilisent les opérateurs de concaténation [C#](../../csharp/language-reference/operators/addition-operator.md#string-concatenation) ou [Visual Basic](../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md ), ou qui appellent directement la méthode <xref:System.String.Concat%2A?displayProperty=nameWithType>.
+- Opérations de concaténation de chaîne qui utilisent les opérateurs de concaténation [C#](../../csharp/language-reference/operators/addition-operator.md#string-concatenation) ou [Visual Basic](../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md), ou qui appellent directement la méthode <xref:System.String.Concat%2A?displayProperty=nameWithType>.
 - Méthode <xref:System.String.Format%2A?displayProperty=nameWithType>
 - Méthodes `ToString` des types numériques et des types de date et d’heure.
 

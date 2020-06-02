@@ -1,13 +1,14 @@
 ---
 title: DataSets, DataTables et DataViews
+description: Découvrez plusieurs façons d’utiliser un jeu de données ADO.NET, une représentation résidente en mémoire de données qui fournit un modèle de programmation relationnel cohérent.
 ms.date: 03/30/2017
 ms.assetid: 6d4c4b69-8919-4224-8a65-6cca1c61b48f
-ms.openlocfilehash: 1744f6c6d8ea3c28a8dab30c0d201ae1dacc7ee3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f6562452261cbc1f7ee36fb264b858646a42e4f5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786197"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286894"
 ---
 # <a name="datasets-datatables-and-dataviews"></a>DataSets, DataTables et DataViews
 L'objet <xref:System.Data.DataSet> ADO.NET est une représentation de données résidente en mémoire qui propose un modèle de programmation relationnel cohérent, quelle que soit la source des données qu'il contient. Un objet <xref:System.Data.DataSet> représente un jeu de données complet, y compris les tables qui contiennent et organisent les données et y appliquent des contraintes, ainsi que les relations entre les tables.  
@@ -26,7 +27,7 @@ L'objet <xref:System.Data.DataSet> ADO.NET est une représentation de données r
  [Création d’un DataSet](creating-a-dataset.md)  
  Décrit la syntaxe permettant de créer une instance d'un objet <xref:System.Data.DataSet>.  
   
- [Ajout d’un DataTable à un DataSet](adding-a-datatable-to-a-dataset.md)  
+ [Ajout d'un nouveau DataTable à un DataSet](adding-a-datatable-to-a-dataset.md)  
  Explique comment créer et ajouter des tables et des colonnes à un objet <xref:System.Data.DataSet>.  
   
  [Ajout de DataRelations](adding-datarelations.md)  
@@ -62,17 +63,17 @@ L'objet <xref:System.Data.DataSet> ADO.NET est une représentation de données r
  [Consommation d’un DataSet à partir d’un service web XML](consuming-a-dataset-from-an-xml-web-service.md)  
  Explique comment créer un service web XML qui utilise un <xref:System.Data.DataSet> pour le transport des données.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Nouveautés d’ADO.NET](../whats-new.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Nouveautés dans ADO.NET](../whats-new.md)  
  Introduit des fonctionnalités nouvelles dans ADO.NET.  
   
- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)  
+ [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)  
  Propose une introduction à la conception et aux composants de la technologie ADO.NET.  
   
  [Remplissage d’un DataSet à partir d’un DataAdapter](../populating-a-dataset-from-a-dataadapter.md)  
  Explique comment charger un **DataSet** avec des données provenant d’une source de données.  
   
- [Mise à jour de sources de données avec des DataAdapters](../updating-data-sources-with-dataadapters.md)  
+ [Mise à jour des sources de données avec les DataAdapter](../updating-data-sources-with-dataadapters.md)  
  Explique comment répercuter à la source de données les modifications apportées aux données d’un **DataSet**.  
   
  [Ajout de contraintes existantes à un DataSet](../adding-existing-constraints-to-a-dataset.md)  
@@ -81,4 +82,4 @@ L'objet <xref:System.Data.DataSet> ADO.NET est une représentation de données r
 ## <a name="see-also"></a>Voir aussi
 
 - [ADO.NET](../index.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

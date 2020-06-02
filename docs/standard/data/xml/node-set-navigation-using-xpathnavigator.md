@@ -3,12 +3,12 @@ title: Navigation dans la collection de nœuds à l’aide de XPathNavigator
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 1a954b41-7173-40bc-8544-d430f209b1e5
-ms.openlocfilehash: 91115af03b635d7660721fac5ce8bd749953e4ff
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 132154afdfd3e5bd6769bfcce338e598136e7515
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710568"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288756"
 ---
 # <a name="node-set-navigation-using-xpathnavigator"></a>Navigation dans la collection de nœuds à l’aide de XPathNavigator
 Vous pouvez parcourir les nœuds d'un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> à l'aide des méthodes de navigation entre les collections de nœuds de la classe <xref:System.Xml.XPath.XPathNavigator>. Vous pouvez parcourir tous ces nœuds ou certaines collections de nœuds retournées par l'une des méthodes de sélection de la classe <xref:System.Xml.XPath.XPathNavigator>.  
@@ -16,7 +16,7 @@ Vous pouvez parcourir les nœuds d'un objet <xref:System.Xml.XPath.XPathDocument
 ## <a name="element-node-set-navigation"></a>Navigation entre les collections de nœuds d'éléments  
  La classe <xref:System.Xml.XPath.XPathNavigator> fournit plusieurs méthodes de navigation entre les nœuds d'élément. Le tableau suivant indique les méthodes de navigation disponibles et donne une description de leur mode de déplacement, mais ne comprend pas les méthodes permettant de naviguer entre les nœuds d'attribut et d'espace de noms.  
   
- Pour plus d’informations sur la sélection de nœuds dans un objet <xref:System.Xml.XPath.XPathNavigator>, consultez [Sélection, évaluation et mise en correspondance de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md). Pour plus d’informations sur la navigation dans les nœuds d’attribut et d’espace de noms, consultez [Navigation entre les nœuds d’attribut et d’espace de noms à l’aide de XPathNavigator](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md).  
+ Pour plus d’informations sur la sélection de nœuds dans un objet <xref:System.Xml.XPath.XPathNavigator>, consultez [Sélection, évaluation et mise en correspondance de données XML à l’aide de XPathNavigator](selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md). Pour plus d’informations sur la navigation dans les nœuds d’attribut et d’espace de noms, consultez [Navigation entre les nœuds d’attribut et d’espace de noms à l’aide de XPathNavigator](attribute-and-namespace-node-navigation-using-xpathnavigator.md).  
   
 |Méthode|Description|  
 |------------|-----------------|  
@@ -55,7 +55,7 @@ Vous pouvez parcourir les nœuds d'un objet <xref:System.Xml.XPath.XPathDocument
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [Traitement des données XML à l'aide du modèle de données XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [Navigation entre les nœuds d'attribut et d'espace de noms à l'aide de XPathNavigator](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)
-- [Extraction de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)
-- [Accès à des données XML fortement typées à l'aide de XPathNavigator](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)
+- [Traitement des données XML à l'aide du modèle de données XPath](process-xml-data-using-the-xpath-data-model.md)
+- [Navigation entre les nœuds d'attribut et d'espace de noms à l'aide de XPathNavigator](attribute-and-namespace-node-navigation-using-xpathnavigator.md)
+- [Extraction de données XML à l’aide de XPathNavigator](extract-xml-data-using-xpathnavigator.md)
+- [Accès à des données XML fortement typées à l'aide de XPathNavigator](accessing-strongly-typed-xml-data-using-xpathnavigator.md)

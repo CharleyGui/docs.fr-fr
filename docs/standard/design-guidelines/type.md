@@ -8,12 +8,12 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], type design guidelines
 - types [.NET Framework], design guidelines
 ms.assetid: 6b49314e-8bba-43ea-97ca-4e0255812f95
-ms.openlocfilehash: 2a3cca0139974cbc92ce85a19db73dfb3d13d1a0
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 17bd300277a039818a3d563c8f2d5f99eb2fc68d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743571"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289562"
 ---
 # <a name="type-design-guidelines"></a>Instructions de conception de types
 Du point de vue du CLR, il n’existe que deux catégories de types : les types référence et les types valeur, mais pour les besoins d’une discussion sur la conception de l’infrastructure, nous dipartissons les types en groupes plus logiques, chacun avec ses propres règles de conception spécifiques.
@@ -33,10 +33,10 @@ Du point de vue du CLR, il n’existe que deux catégories de types : les types
  ✔️ Assurez-vous que chaque type est un ensemble bien défini de membres associés, et pas seulement une collection aléatoire de fonctionnalités non liées.
 
 ## <a name="in-this-section"></a>Dans cette section
- [Choix entre une classe et une structure](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md) [abstraite conception](../../../docs/standard/design-guidelines/abstract-class.md) d’une classe [statique](../../../docs/standard/design-guidelines/static-class.md) conception d' [interface](../../../docs/standard/design-guidelines/interface.md) conception d’une [structure](../../../docs/standard/design-guidelines/struct.md) [enum](../../../docs/standard/design-guidelines/enum.md) conception des [types imbriqués](../../../docs/standard/design-guidelines/nested-types.md) *parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
+ [Choix entre une classe et une structure](choosing-between-class-and-struct.md) [abstraite conception](abstract-class.md) d’une classe [statique](static-class.md) conception d' [interface](interface.md) conception d’une [structure](struct.md) [enum](enum.md) conception des [types imbriqués](nested-types.md) *parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 
  *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
+- [Directives de conception d’infrastructure](index.md)

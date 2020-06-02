@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LOH
 - garbage collection, large object heap
 - GC [.NET ], large object heap
-ms.openlocfilehash: dae8a3690d63d77a47a5cd2e76f210ca8210f058
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 87105acbd43eb8eda0daa00c65ca0635f5e1cc74
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420576"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286026"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Tas de grands objets sur les systèmes Windows
 
@@ -203,7 +203,7 @@ Comme vous pouvez le voir, il s’agit d’un test très simple qui alloue simpl
 
 ### <a name="a-debugger"></a>Débogueur
 
-Si tout ce que vous avez est un vidage de mémoire et que vous devez examiner les objets qui se trouvent sur le LOH, vous pouvez utiliser [l’extension de débogueur SoS](../../../docs/framework/tools/sos-dll-sos-debugging-extension.md) fournie par .NET.
+Si tout ce que vous avez est un vidage de mémoire et que vous devez examiner les objets qui se trouvent sur le LOH, vous pouvez utiliser [l’extension de débogueur SoS](../../framework/tools/sos-dll-sos-debugging-extension.md) fournie par .NET.
 
 > [!NOTE]
 > Les commandes de débogage indiquées dans cette section sont applicables aux [débogueurs Windows](https://www.microsoft.com/whdc/devtools/debugging/default.mspx).

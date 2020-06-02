@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: caa92596-9e15-4d91-acbe-56911ef47a84
-ms.openlocfilehash: b9a8bd52b7dfe7a9bf43061d8f44747b3a847c68
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 08900f9e5b735065f97ef705dccd899eebe3bfe0
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379129"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289614"
 ---
 # <a name="how-to-control-serialization-of-derived-classes"></a>Comment : contrôler la sérialisation de classes dérivées
 L’utilisation de l’attribut **XmlElementAttribute** pour modifier le nom d’un élément XML ne constitue pas l’unique moyen de personnaliser la sérialisation d’un objet. Vous pouvez également personnaliser le flux de données XML en effectuant une dérivation à partir d'une classe existante et en indiquant à l'instance <xref:System.Xml.Serialization.XmlSerializer> comment sérialiser la nouvelle classe.  
@@ -239,6 +239,6 @@ public class Run
 - <xref:System.Xml.Serialization.XmlElementAttribute>
 - <xref:System.Xml.Serialization.XmlAttributes>
 - <xref:System.Xml.Serialization.XmlAttributeOverrides>
-- [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
-- [Guide pratique pour sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md)
-- [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
+- [Guide pratique pour sérialiser un objet](how-to-serialize-an-object.md)
+- [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
