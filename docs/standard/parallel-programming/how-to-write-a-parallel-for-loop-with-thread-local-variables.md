@@ -1,5 +1,5 @@
 ---
-title: 'Comment : écrire une boucle Parallel.For avec des variables locales de thread'
+title: 'Procédure : écrire une boucle Parallel.For avec des variables locales de thread'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,17 +8,17 @@ dev_langs:
 helpviewer_keywords:
 - parallel for loops, how to use local state
 ms.assetid: 68384064-7ee7-41e2-90e3-71f00bde01bb
-ms.openlocfilehash: 14f4f1402f564d38bb508e893521a3951c1509f4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb6ac1a64c3a71646946d1af894d1124b12e4769
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139711"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290757"
 ---
-# <a name="how-to-write-a-parallelfor-loop-with-thread-local-variables"></a>Comment : écrire une boucle Parallel.For avec des variables locales de thread
+# <a name="how-to-write-a-parallelfor-loop-with-thread-local-variables"></a>Procédure : écrire une boucle Parallel.For avec des variables locales de thread
 Cet exemple montre comment utiliser des variables de thread local pour stocker et récupérer l’état de chaque tâche créée par une boucle <xref:System.Threading.Tasks.Parallel.For%2A>. En utilisant des données de thread local, vous pouvez éviter la surcharge liée à la synchronisation d’un grand nombre d’accès à un état partagé. Au lieu d’écrire dans une ressource partagée à chaque itération, vous calculez et stockez la valeur jusqu’à ce que toutes les itérations de la tâche soient terminées. Vous pouvez ensuite écrire une fois le résultat final dans la ressource partagée ou le transmettre à une autre méthode.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant appelle la méthode <xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> pour calculer la somme des valeurs d'un tableau qui contient un million d'éléments. La valeur de chaque élément est égale à son index.  
   
  [!code-csharp[TPL_Parallel#05](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/forandforeach_simple.cs#05)]
@@ -40,11 +40,11 @@ Function() new MyClass()
   
  Le cinquième paramètre définit la méthode qui est appelée une fois, après la fin de toutes les itérations sur un thread particulier. Le type de l'argument d'entrée correspond de nouveau à l'argument de type de la méthode <xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> et au type retourné par l'expression lambda du corps. Dans cet exemple, la valeur est ajoutée à une variable à portée de classe d'une façon thread-safe en appelant la méthode <xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType>. L'utilisation d'une variable de thread local nous a évité d'écrire dans cette variable de classe à chaque itération de la boucle.  
   
- Pour plus d’informations sur l’utilisation d’expressions lambda, consultez [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).  
+ Pour plus d’informations sur l’utilisation d’expressions lambda, consultez [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](lambda-expressions-in-plinq-and-tpl.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Parallélisme de données](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
-- [Programmation parallèle](../../../docs/standard/parallel-programming/index.md)
-- [Bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)
-- [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)
+- [Parallélisme des données](data-parallelism-task-parallel-library.md)
+- [Programmation parallèle](index.md)
+- [Bibliothèque parallèle de tâches](task-parallel-library-tpl.md)
+- [Expressions lambda dans PLINQ et TPL](lambda-expressions-in-plinq-and-tpl.md)

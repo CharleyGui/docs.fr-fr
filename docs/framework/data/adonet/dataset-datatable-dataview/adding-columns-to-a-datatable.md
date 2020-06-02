@@ -1,21 +1,22 @@
 ---
 title: Ajout de colonnes à un DataTable
+description: Un DataTable contient des objets DataColumn référencés par la propriété Columns de la table. Utilisez cet exemple de code pour ajouter des colonnes à une table dans ADO.NET.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: e85c4a0e-4f3f-458c-b58b-0ddbc06bf974
-ms.openlocfilehash: 6e0dcd819dc354e1fd23b244692dff5091142004
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9d6d21696acd7a6b63cfd6d2ea7e906ec2acd7c9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784854"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286945"
 ---
 # <a name="adding-columns-to-a-datatable"></a>Ajout de colonnes à un DataTable
-Un <xref:System.Data.DataTable> objet contient une collection <xref:System.Data.DataColumn> d’objets référencés par la propriété **Columns** de la table. Cette collection de colonnes, ainsi que toute contrainte, définit le schéma, ou structure, de la table.  
+Un <xref:System.Data.DataTable> objet contient une collection d' <xref:System.Data.DataColumn> objets référencés par la propriété **Columns** de la table. Cette collection de colonnes, ainsi que toute contrainte, définit le schéma, ou structure, de la table.  
   
- Vous créez des objets **DataColumn** dans une table en utilisant le constructeur **DataColumn** ou en appelant la méthode **Add** de la propriété **Columns** de la table, qui est <xref:System.Data.DataColumnCollection>un. La méthode **Add** accepte les arguments facultatifs **ColumnName**, **DataType**et **expression** et crée un nouveau **DataColumn** en tant que membre de la collection. Il accepte également un objet **DataColumn** existant, l’ajoute à la collection et retourne une référence au **DataColumn** ajouté, le cas échéant. Étant donné que les objets **DataTable** ne sont pas spécifiques à une source de données, les types .NET Framework sont utilisés lors de la spécification du type de données d’un **DataColumn**.  
+ Vous créez des objets **DataColumn** dans une table en utilisant le constructeur **DataColumn** ou en appelant la méthode **Add** de la propriété **Columns** de la table, qui est un <xref:System.Data.DataColumnCollection> . La méthode **Add** accepte les arguments facultatifs **ColumnName**, **DataType**et **expression** et crée un nouveau **DataColumn** en tant que membre de la collection. Il accepte également un objet **DataColumn** existant, l’ajoute à la collection et retourne une référence au **DataColumn** ajouté, le cas échéant. Étant donné que les objets **DataTable** ne sont pas spécifiques à une source de données, les types .NET Framework sont utilisés lors de la spécification du type de données d’un **DataColumn**.  
   
  L’exemple suivant ajoute quatre colonnes à un **DataTable**.  
   
@@ -58,4 +59,4 @@ workTable.Columns.Add("Purchases", typeof(Double));
 - <xref:System.Data.DataTable>
 - [Définition de schéma de DataTable](datatable-schema-definition.md)
 - [DataTables](datatables.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

@@ -4,12 +4,12 @@ description: Découvrez dans quelle mesure le code managé est du code dont l’
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 20bb7ea8-192e-4a96-8ef3-e10e1950fd3d
-ms.openlocfilehash: 9133859bd9c999e076effcf0d4d631c59db02f33
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2d89fd48e4c05dc7ec7c27846a3580ee36b1886f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "61910115"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290082"
 ---
 # <a name="what-is-managed-code"></a>Qu’est-ce que le code managé ?
 
@@ -35,8 +35,8 @@ Bien entendu, le CLR permet de franchir les limites entre les environnements man
 
 De la même manière, C# est un langage qui vous permet d’utiliser des constructions non managées comme les pointeurs directement dans le code en utilisant ce que l’on appelle le **contexte unsafe**, qui désigne un élément de code dont l’exécution n’est pas gérée par le CLR.
 
-## <a name="more-resources"></a>Plus de ressources
+## <a name="more-resources"></a>Ressources complémentaires
 
-* [Aperçu du cadre .NET](../framework/get-started/overview.md)
-* [Pointeurs et code unsafe](../../docs/csharp/programming-guide/unsafe-code-pointers/index.md)
+* [Vue d’ensemble de l' .NET Framework](../framework/get-started/overview.md)
+* [Pointeurs et code unsafe](../csharp/programming-guide/unsafe-code-pointers/index.md)
 * [Interopérabilité native](./native-interop/index.md)

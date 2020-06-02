@@ -12,12 +12,12 @@ helpviewer_keywords:
 - event handling [.NET Framework], with multiple events
 - events [.NET Framework], multiple
 ms.assetid: 30047cba-e2fd-41c6-b9ca-2ad7a49003db
-ms.openlocfilehash: f74d75a09da350b34dfb067c3d0db8fc669116ac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5be541c1a40c5d16a0502e76adef24f6a41cc89
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73124768"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288470"
 ---
 # <a name="how-to-handle-multiple-events-using-event-properties"></a>Comment : gérer plusieurs événements à l'aide des propriétés d'événements
 Pour utiliser des propriétés d'événements, définissez les propriétés d'événements dans la classe qui déclenche les événements, puis affectez les délégués pour les propriétés d'événements dans les classes qui gèrent les événements. Pour implémenter plusieurs propriétés d'événements dans une classe, la classe doit stocker et maintenir le délégué défini pour chaque événement en interne. Une approche courante consiste à implémenter une collection de délégués indexée par une clé d’événement.  
@@ -38,7 +38,7 @@ Pour utiliser des propriétés d'événements, définissez les propriétés d'é
   
 5. Utilisez les propriétés d'événements publiques pour ajouter et supprimer des délégués de gestionnaire d'événements dans les classes qui gèrent les événements.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple C# suivant implémente les propriétés d'événements `MouseDown` et `MouseUp`, à l'aide d'un <xref:System.ComponentModel.EventHandlerList> pour stocker le délégué de chaque événement. Les mots clés des constructions des propriétés d'événements sont en gras.  
   
  [!code-cpp[Conceptual.Events.Other#31](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.events.other/cpp/example3.cpp#31)]
@@ -48,6 +48,6 @@ Pour utiliser des propriétés d'événements, définissez les propriétés d'é
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ComponentModel.EventHandlerList?displayProperty=nameWithType>
-- [Événements](../../../docs/standard/events/index.md)
+- [Événements](index.md)
 - <xref:System.Web.UI.Control.Events%2A?displayProperty=nameWithType>
 - [Comment : déclarer des événements personnalisés pour économiser la mémoire](../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)

@@ -1,21 +1,22 @@
 ---
 title: 'Comment : se connecter à une base de données'
+description: Découvrez comment utiliser DataContext pour vous connecter à une base de données dans LINQ to SQL. Reportez-vous à ces exemples pour utiliser DataContext pour se connecter à une base de données et obtenir des lignes.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: c33d74b3-530d-421b-a121-96786dd263a5
-ms.openlocfilehash: 837919b1cfcdf46026ccfb37cbbec951c0ae41b8
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: c3320a598cb8407ab584530c615c2e5ef0de53c8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634675"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286402"
 ---
 # <a name="how-to-connect-to-a-database"></a>Comment : se connecter à une base de données
-Le <xref:System.Data.Linq.DataContext> est le conduit principal par lequel vous vous connectez à une base de données, récupérez des objets de celle-ci et soumettez des modifications. Vous utilisez la <xref:System.Data.Linq.DataContext> de la même manière que vous utilisez un <xref:System.Data.SqlClient.SqlConnection>ADO.NET. En fait, le <xref:System.Data.Linq.DataContext> est initialisé avec une connexion ou une chaîne de connexion que vous fournissez. Pour plus d’informations, consultez [méthodes DataContext (Concepteur O/R)](/visualstudio/data-tools/datacontext-methods-o-r-designer).  
+Le <xref:System.Data.Linq.DataContext> est le conduit principal par lequel vous vous connectez à une base de données, récupérez des objets de celle-ci et soumettez des modifications. Vous utilisez le <xref:System.Data.Linq.DataContext> tout comme vous utiliseriez un ADO.NET <xref:System.Data.SqlClient.SqlConnection> . En fait, le <xref:System.Data.Linq.DataContext> est initialisé avec une connexion ou une chaîne de connexion que vous fournissez. Pour plus d’informations, consultez [méthodes DataContext (Concepteur O/R)](/visualstudio/data-tools/datacontext-methods-o-r-designer).  
   
- Le rôle de <xref:System.Data.Linq.DataContext> est de traduire vos demandes d'objets en requêtes SQL sur la base de données, puis de rassembler les objets parmi les résultats. L' <xref:System.Data.Linq.DataContext> active LINQ (Language-Integrated Query) en implémentant le même modèle d’opérateur que les opérateurs de requête standard, tels que `Where` et `Select`.  
+ Le rôle de <xref:System.Data.Linq.DataContext> est de traduire vos demandes d'objets en requêtes SQL sur la base de données, puis de rassembler les objets parmi les résultats. Le <xref:System.Data.Linq.DataContext> permet l’exécution de LINQ (Language-Integrated Query) en implémentant le même modèle d’opérateur que les opérateurs de requête standard, tels que `Where` et `Select` .  
   
 > [!IMPORTANT]
 > Il est primordial de maintenir une connexion sécurisée. Pour plus d’informations, consultez [sécurité dans LINQ to SQL](security-in-linq-to-sql.md).  

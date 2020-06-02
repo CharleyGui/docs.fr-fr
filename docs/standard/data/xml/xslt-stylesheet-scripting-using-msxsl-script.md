@@ -6,18 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-ms.openlocfilehash: 9bf57e0f74a353fb6512a24214e9479c1d813aab
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: aef2471a375469f7cd4dff27084b305ef9394d5e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160207"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291966"
 ---
-# <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Écriture de feuilles de style XSLT avec \<msxsl:script>
+# <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Écriture de scripts de feuille de style XSLT à l’aide de\<msxsl:script>
 La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorporés en utilisant l'élément `script`.  
   
 > [!NOTE]
-> La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans .NET Framework 2.0. Vous pouvez effectuer des transformations XSLT (Extensible Stylesheet Language Transformation) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez [Utilisation de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) et [Migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md).  
+> La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans .NET Framework 2.0. Vous pouvez effectuer des transformations XSLT (Extensible Stylesheet Language Transformation) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez [Utilisation de la classe XslCompiledTransform](using-the-xslcompiledtransform-class.md) et [Migration depuis la classe XslTransform](migrating-from-the-xsltransform-class.md).  
   
  La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorporés en utilisant l'élément `script`. Lorsque la feuille de style est chargée, toute fonction définie est compilée en langage MSIL (Microsoft Intermediate Language) par son enveloppement dans une définition de classe et n'engendre aucune perte des performances.  
   
@@ -29,7 +29,7 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
   
  où `msxsl` est un préfixe lié à l'espace de noms `urn:schemas-microsoft-com:xslt`.  
   
- L' `language` attribut n’est pas obligatoire, mais s’il est spécifié, sa valeur doit être l’une `C#`des `VB`suivantes `JScript`: `JavaScript`, `VisualBasic`,, `CSharp`, ou. Lorsqu'il n'est pas spécifié, le langage par défaut est JScript. Le `language-name` ne respecte pas la casse : les termes « JavaScript » et « javascript » sont équivalents.  
+ L' `language` attribut n’est pas obligatoire, mais s’il est spécifié, sa valeur doit être l’une des suivantes : `C#` , `VB` , `JScript` ,, `JavaScript` `VisualBasic` ou `CSharp` . Lorsqu'il n'est pas spécifié, le langage par défaut est JScript. Le `language-name` ne respecte pas la casse : les termes « JavaScript » et « javascript » sont équivalents.  
   
  L'attribut `implements-prefix` est obligatoire. Cet attribut est utilisé pour déclarer un espace de noms et l'associer au bloc de script. La valeur de cet attribut est le préfixe qui représente l'espace de noms. Cet espace de noms peut être défini à un endroit d'une feuille de style.  
   
@@ -49,7 +49,7 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
   
 |Espaces de noms par défaut|Description|  
 |------------------------|-----------------|  
-|Système|Classe système.|  
+|System|Classe système.|  
 |System.Collection|Classes de collection.|  
 |System.Text|Classes de texte.|  
 |System.Text.RegularExpressions|Classes d'expressions régulières.|  
@@ -231,4 +231,4 @@ public class Sample
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Implémentation du processeur XSLT par la classe XslTransform](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+- [Implémentation du processeur XSLT par la classe XslTransform](xsltransform-class-implements-the-xslt-processor.md)

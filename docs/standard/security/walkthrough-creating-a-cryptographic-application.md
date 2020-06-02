@@ -10,12 +10,12 @@ helpviewer_keywords:
 - cryptography [NET Framework], cryptographic application example
 - cryptography [NET Framework], application example
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
-ms.openlocfilehash: 6e2d9b8bebdfd2ea5d5507cc73d444fa8bf785fb
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 246028566c59e5c8a77b26a21729d3f143d38d07
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705832"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289705"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Procédure pas à pas : création d'une application de chiffrement
 Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. Les exemples de code sont conçus pour une application Windows Forms. Cette application ne montre pas de scénarios du monde réel, tels que l'utilisation de cartes à puce. Elle montre les principes fondamentaux du chiffrement et du déchiffrement.  
@@ -41,17 +41,17 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
 |Obtention d'une clé privée|Obtient la paire de clés complète en utilisant le nom du conteneur de clé.|  
 |Exportation d'une clé publique|Enregistre la clé dans un fichier XML avec uniquement les paramètres publics.|  
 |Importation d'une clé publique|Charge la clé d'un fichier XML dans le conteneur de clé.|  
-|Test de l'application|Répertorie les procédures pour le test de cette application.|  
+|Test de l’application|Répertorie les procédures pour le test de cette application.|  
   
-## <a name="prerequisites"></a>Configuration requise  
- Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
+## <a name="prerequisites"></a>Prérequis  
+ Vous devez disposer des éléments suivants pour exécuter cette procédure pas à pas :  
   
 - Références aux espaces de noms <xref:System.IO> et <xref:System.Security.Cryptography>.  
   
 ## <a name="creating-a-windows-forms-application"></a>Création d’une application Windows Forms  
  La plupart des exemples de code de cette procédure pas à pas sont conçus pour être des gestionnaires d'événements pour des contrôles de bouton. Le tableau suivant répertorie les contrôles requis par l'exemple d'application, ainsi que leur nom pour correspondre aux exemples de code.  
   
-|Contrôle|Name|Propriété Text (si nécessaire)|  
+|Control|Nom|Propriété Text (si nécessaire)|  
 |-------------|----------|---------------------------------|  
 |<xref:System.Windows.Forms.Button>|`buttonEncryptFile`|Chiffrer le fichier|  
 |<xref:System.Windows.Forms.Button>|`buttonDecryptFile`|Déchiffrer le fichier|  
@@ -80,7 +80,7 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
  [!code-vb[CryptoWalkThru#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#2)]  
   
 ## <a name="encrypting-a-file"></a>Chiffrement d'un fichier  
- Cette tâche implique deux méthodes : la méthode de gestionnaire d’événements pour le bouton de `Encrypt File` (`buttonEncryptFile_Click`) et la méthode de `EncryptFile`. La première méthode affiche une boîte de dialogue permettant de sélectionner un fichier, puis passe le nom du fichier à la deuxième méthode qui effectue le chiffrement.  
+ Cette tâche implique deux méthodes : la méthode de gestionnaire d’événements pour le `Encrypt File` bouton ( `buttonEncryptFile_Click` ) et la `EncryptFile` méthode. La première méthode affiche une boîte de dialogue permettant de sélectionner un fichier, puis passe le nom du fichier à la deuxième méthode qui effectue le chiffrement.  
   
  Le contenu chiffré, la clé et le vecteur d'initialisation sont enregistrés dans un <xref:System.IO.FileStream>, qui correspond au package de chiffrement.  
   
@@ -104,7 +104,7 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
   
 - Clé chiffrée  
   
-- Vecteur d'initialisation  
+- IV  
   
 - Texte chiffré  
   
@@ -175,7 +175,7 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
  [!code-csharp[CryptoWalkThru#7](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#7)]
  [!code-vb[CryptoWalkThru#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#7)]  
   
-## <a name="testing-the-application"></a>Test de l'application  
+## <a name="testing-the-application"></a>Test de l’application  
  Après avoir créé l'application, suivez les scénarios de test ci-dessous.  
   
 #### <a name="to-create-keys-encrypt-and-decrypt"></a>Pour créer, chiffrer et déchiffrer des clés  
@@ -210,4 +210,4 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)
+- [Services de chiffrement](cryptographic-services.md)

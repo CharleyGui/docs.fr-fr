@@ -13,17 +13,17 @@ helpviewer_keywords:
 - regular expressions [.NET Framework], examples
 - pattern-matching with regular expressions, examples
 ms.assetid: 5fcc75a5-09d7-45ae-a4c0-9ad6085ac83d
-ms.openlocfilehash: 358e26957747073fec9dfe9eb0d404cb438afaf9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4290bf0d6ee9deec8129c5f4f6092eedb08345f0
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73084183"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276177"
 ---
 # <a name="regular-expression-example-changing-date-formats"></a>Exemple d'expression régulière : modification des formats de date
-L’exemple de <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> code suivant utilise la méthode pour remplacer les dates qui ont le formulaire *mm*/*dd*/*yy* avec des dates qui ont le formulaire *dd*-*mm*-*yy*.  
+L’exemple de code suivant utilise la <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> méthode pour remplacer les dates au format *mm* / *JJ* / *AA* par les dates au format *JJ* - *mm* - *AA*.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  [!code-csharp[RegularExpressions.Examples.ChangeDateFormats#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.ChangeDateFormats/cs/Example_ChangeDateFormats1.cs#1)]
  [!code-vb[RegularExpressions.Examples.ChangeDateFormats#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.ChangeDateFormats/vb/Example_ChangeDateFormats1.vb#1)]  
   
@@ -57,4 +57,4 @@ L’exemple de <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProp
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Expressions régulières .NET](../../../docs/standard/base-types/regular-expressions.md)
+- [Expressions régulières .NET](regular-expressions.md)

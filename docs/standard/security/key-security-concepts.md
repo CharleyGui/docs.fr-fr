@@ -11,24 +11,24 @@ helpviewer_keywords:
 - permissions [.NET Framework]
 - security [.NET Framework], about security
 ms.assetid: 3cfced4f-ea02-4e66-ae98-d69286363e98
-ms.openlocfilehash: b7bcb7e56ca14d129eadcaeac19452d4a443713d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1ec811430056b7db575d6db229a3afe618850e49
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400658"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291238"
 ---
 # <a name="key-security-concepts"></a>Concepts fondamentaux sur la sécurité
 Le Microsoft .NET Framework offre la sécurité basée sur les rôles pour aider à résoudre les problèmes de sécurité relatifs au code mobile et pour permettre aux composants de déterminer ce que les utilisateurs sont autorisés à faire.  
   
 ## <a name="type-safety-and-security"></a>Sécurité de type et sécurité  
- Le code de type sécurisé accède uniquement aux emplacements de mémoire auxquels il est autorisé à accéder. (Pour cette discussion, la sécurité du type se réfère spécifiquement à la sécurité du type de mémoire et ne doit pas être confondue avec la sécurité de type à un égard plus large.) Par exemple, le code de type-sécurité ne peut pas lire les valeurs des champs privés d’un autre objet. Il accède aux types uniquement de manière autorisée et bien définie.  
+ Le code de type sécurisé accède uniquement aux emplacements de mémoire auxquels il est autorisé à accéder. (Pour cette discussion, la sécurité de type fait spécifiquement référence à la sécurité de type de la mémoire et ne doit pas être confondue avec la sécurité de type dans un respect plus large.) Par exemple, le code de type sécurisé ne peut pas lire les valeurs des champs privés d’un autre objet. Il accède aux types uniquement de manière autorisée et bien définie.  
   
- Pendant la compilation juste-à-temps (JIT, Just-In-Time), un processus de vérification facultatif examine les métadonnées et le Microsoft Intermediate Language (MSIL) d'une méthode devant subir une compilation JIT en code machine natif pour vérifier qu'ils sont de type sécurisé. Ce processus est omis si le code est autorisé à ignorer la vérification. Pour plus d’informations sur la vérification, consultez [Processus d’exécution managée](../../../docs/standard/managed-execution-process.md).  
+ Pendant la compilation juste-à-temps (JIT, Just-In-Time), un processus de vérification facultatif examine les métadonnées et le Microsoft Intermediate Language (MSIL) d'une méthode devant subir une compilation JIT en code machine natif pour vérifier qu'ils sont de type sécurisé. Ce processus est omis si le code est autorisé à ignorer la vérification. Pour plus d’informations sur la vérification, consultez [Processus d’exécution managée](../managed-execution-process.md).  
   
  Bien que la vérification de sécurité de type ne soit pas obligatoire pour exécuter du code managé, la sécurité de type joue un rôle crucial dans l'isolation des assemblys et dans la mise en œuvre de la sécurité. Quand le code est de type sécurisé, le Common Language Runtime peut isoler totalement les assemblys les uns des autres. Cette isolation permet de s'assurer que les assemblys ne peuvent pas nuire les uns aux autres et augmente la fiabilité des applications. Les composants de type sécurisé peuvent s'exécuter en toute sécurité dans le même processus, même s'ils sont approuvés à différents niveaux. Quand le code n'est pas de type sécurisé, des effets secondaires indésirables peuvent se produire. Par exemple, le runtime ne peut pas empêcher du code managé d'appeler du code natif (non managé) et d'exécuter des opérations nuisibles. Quand le code est de type sécurisé, le mécanisme de sécurité du runtime garantit qu'il n'accède pas à du code natif, sauf s'il a l'autorisation de le faire. Tout le code qui n'est pas de type sécurisé ne peut s'exécuter que s'il a obtenu l'autorisation <xref:System.Security.Permissions.SecurityPermission> avec le membre d'énumération transmis <xref:System.Security.Permissions.SecurityPermissionAttribute.SkipVerification%2A>.  
   
- Pour plus d’informations, consultez [Notions fondamentales de la sécurité d’accès du code](../../../docs/framework/misc/code-access-security-basics.md).  
+ Pour plus d’informations, consultez [Notions fondamentales de la sécurité d’accès du code](../../framework/misc/code-access-security-basics.md).  
   
 ## <a name="principal"></a>Principal  
  Un principal représente l'identité et le rôle d'un utilisateur et agit au nom de l'utilisateur. Dans .NET Framework, la sécurité basée sur les rôles prend en charge trois types de principaux :  
@@ -39,14 +39,14 @@ Le Microsoft .NET Framework offre la sécurité basée sur les rôles pour aider
   
 - Les principaux personnalisés peuvent être définis par une application, en fonction des besoins de celle-ci. Ils peuvent étendre les notions de base applicables à l'identité et aux rôles du principal.  
   
- Pour plus d’informations, consultez [Objets Principal et Identity](../../../docs/standard/security/principal-and-identity-objects.md).  
+ Pour plus d’informations, consultez [Objets Principal et Identity](principal-and-identity-objects.md).  
   
-## <a name="authentication"></a>Authentication  
+## <a name="authentication"></a>Authentification  
  Le processus d'authentification consiste à établir et à vérifier l'identité d'un principal en examinant les informations d'identification de l'utilisateur et en les validant auprès de l'autorité appropriée. Votre code peut utiliser directement les informations obtenues au cours de l'authentification. Vous pouvez également utiliser la sécurité basée sur les rôles du .NET Framework pour authentifier l'utilisateur actuel et déterminer s'il faut ou non autoriser ce principal à accéder à votre code. Consultez les surcharges de la méthode <xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A?displayProperty=nameWithType> pour obtenir des exemples d'authentification du principal pour des rôles spécifiques. Par exemple, vous pouvez utiliser la surcharge <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.String%29?displayProperty=nameWithType> pour déterminer si l'utilisateur actuel est membre du groupe Administrateurs.  
   
  De nombreux mécanismes d'authentification sont utilisés de nos jours et la majorité d'entre eux peuvent être utilisés avec la sécurité basée sur les rôles de .NET Framework. Parmi les mécanismes les plus courants figurent notamment Basic, Digest, Passport, les mécanismes liés aux systèmes d'exploitation (tels que NTLM ou Kerberos) ou encore ceux définis par les applications.  
   
-### <a name="example"></a> Exemple  
+### <a name="example"></a>Exemple  
  L'exemple suivant nécessite que le principal actif soit un administrateur. Le paramètre `name` est `null`, qui autorise tout utilisateur ayant la qualité d'administrateur à passer la demande.  
   
 > [!NOTE]

@@ -1,16 +1,17 @@
 ---
 title: Données de date et d'heure
+description: En savoir plus sur les types de données pour gérer les informations de date et d’heure dans le Fournisseur de données .NET Framework pour SQL Server.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
-ms.openlocfilehash: d7a016b8911cee3091dec24bc26d1f1965f54749
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9345e995dcb1179e7d0a86f62737f9fda5889f42
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79148762"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286492"
 ---
 # <a name="date-and-time-data"></a>Données de date et d'heure
 SQL Server 2008 introduit de nouveaux types de données pour gérer les informations de date et d’heure. Les nouveaux types de données incluent des types distincts pour la date et l’heure, ainsi que des types de données étendus avec une plus grande plage, une meilleure précision et la prise en compte des fuseaux horaires. À partir du .NET Framework version 3.5 Service Pack (SP) 1, le fournisseur de données .NET Framework pour SQL Server (<xref:System.Data.SqlClient>) assure la prise en charge complète de l’ensemble des nouvelles fonctionnalités du moteur de base de données SQL Server 2008. Vous devez installer le .NET Framework 3.5 SP1 (ou version ultérieure) pour utiliser ces nouvelles fonctionnalités avec SqlClient.  
@@ -41,12 +42,12 @@ SQL Server 2008 introduit de nouveaux types de données pour gérer les informat
   
  L’instruction Transact-SQL SET LANGUAGE définit implicitement le DATEFORMAT qui détermine l’ordre des parties de la date. Vous pouvez utiliser l’instruction Transact-SQL SET DATEFORMAT sur une connexion pour lever l’ambiguïté des valeurs de date en classant les parties de la date dans l’ordre MJA, JMA, AMJ, AJM, MAJ ou JAM.  
   
- Si vous ne spécifiez pas de DATEFORMAT pour la connexion, SQL Server utilise la langue par défaut associée à la connexion. Par exemple, une chaîne de date « 01/02/03 » est interprétée comme MJA (2 janvier 2003) sur un serveur avec un paramètre de langue Anglais des États-Unis, et comme JMA (1er février 2003) sur un serveur dont le paramètre de langue est Anglais britannique. L’année est déterminée à l’aide de la règle d’année de troncature de SQL Server, qui définit la date de troncature pour l’affectation de la valeur de siècle. Pour plus d’informations, voir [option de coupure de deux chiffres par an](/sql/database-engine/configure-windows/configure-the-two-digit-year-cutoff-server-configuration-option).  
+ Si vous ne spécifiez pas de DATEFORMAT pour la connexion, SQL Server utilise la langue par défaut associée à la connexion. Par exemple, une chaîne de date « 01/02/03 » est interprétée comme MJA (2 janvier 2003) sur un serveur avec un paramètre de langue Anglais des États-Unis, et comme JMA (1er février 2003) sur un serveur dont le paramètre de langue est Anglais britannique. L’année est déterminée à l’aide de la règle d’année de troncature de SQL Server, qui définit la date de troncature pour l’affectation de la valeur de siècle. Pour plus d’informations, consultez l' [option année de coupure à deux chiffres](/sql/database-engine/configure-windows/configure-the-two-digit-year-cutoff-server-configuration-option).  
   
 > [!NOTE]
 > Le format de date AJM n’est pas pris en charge lors de la conversion d’un format de chaîne en `date`, `time`, `datetime2` ou `datetimeoffset`.  
   
- Pour plus d’informations sur la façon dont SQL Server interprète les données de date et d’heure, voir [En utilisant les données de date et d’heure](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms180878(v=sql.100)).  
+ Pour plus d’informations sur la façon dont SQL Server interprète les données de date et d’heure, consultez [utilisation des données de date et d’heure](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms180878(v=sql.100)).  
   
 ## <a name="datetime-data-types-and-parameters"></a>Types de données et paramètres de date/heure  
  Les énumérations suivantes ont été ajoutées à <xref:System.Data.SqlDbType> pour prendre en charge les nouveaux types de données de date et heure.  
@@ -88,7 +89,7 @@ Vous pouvez spécifier le type de données d’un objet <xref:System.Data.SqlCli
   
 |Propriété|Description|  
 |--------------|-----------------|  
-|<xref:System.Data.SqlClient.SqlParameter.IsNullable%2A>|Obtient ou définit une valeur indiquant si une valeur peut accepter la valeur null. Lorsque vous envoyez une valeur de paramètre null au serveur, vous devez spécifier <xref:System.DBNull> plutôt que `null` (`Nothing` en Visual Basic). Pour plus d’informations sur les nulls de base de données, voir [Handling Null Values](handling-null-values.md).|  
+|<xref:System.Data.SqlClient.SqlParameter.IsNullable%2A>|Obtient ou définit une valeur indiquant si une valeur peut accepter la valeur null. Lorsque vous envoyez une valeur de paramètre null au serveur, vous devez spécifier <xref:System.DBNull> plutôt que `null` (`Nothing` en Visual Basic). Pour plus d’informations sur les valeurs null de base de données, consultez [gestion des valeurs NULL](handling-null-values.md).|  
 |<xref:System.Data.SqlClient.SqlParameter.Precision%2A>|Obtient ou définit le nombre maximal de chiffres utilisés pour représenter la valeur. Ce paramètre est ignoré pour les types de données de date et heure.|  
 |<xref:System.Data.SqlClient.SqlParameter.Scale%2A>|Obtient ou définit le nombre de décimales à laquelle la partie heure de la valeur est résolue pour `Time`, `DateTime2`, et `DateTimeOffset`. La valeur par défaut est 0, ce qui signifie que l’échelle réelle est déduite de la valeur et envoyée au serveur.|  
 |<xref:System.Data.SqlClient.SqlParameter.Size%2A>|Ignoré pour les types de données de date et heure.|  
@@ -101,7 +102,7 @@ Vous pouvez spécifier le type de données d’un objet <xref:System.Data.SqlCli
 ### <a name="creating-parameters"></a>Création de paramètres  
  Vous pouvez créer un objet <xref:System.Data.SqlClient.SqlParameter> à l’aide de son constructeur ou en l’ajoutant à une collection <xref:System.Data.SqlClient.SqlCommand><xref:System.Data.SqlClient.SqlCommand.Parameters%2A> en appelant la méthode `Add` de <xref:System.Data.SqlClient.SqlParameterCollection>. La méthode `Add` prendra comme entrée les arguments de constructeur ou un objet de paramètre existant.  
   
- Les sections suivantes de cette rubrique fournissent des exemples de spécification des paramètres de date et heure. Pour d’autres exemples de travail avec les paramètres, voir [Configurer paramètres et paramètres de données paramètres](../configuring-parameters-and-parameter-data-types.md) et [paramètres De dataAdapter](../dataadapter-parameters.md).  
+ Les sections suivantes de cette rubrique fournissent des exemples de spécification des paramètres de date et heure. Pour obtenir des exemples supplémentaires d’utilisation des paramètres, consultez [Configuration des paramètres et des types de données de paramètre](../configuring-parameters-and-parameter-data-types.md) et des [paramètres DataAdapter](../dataadapter-parameters.md).  
   
 ### <a name="date-example"></a>Exemple relatif au paramètre date  
  Le fragment de code suivant montre comment spécifier un paramètre `date`.  
@@ -231,7 +232,7 @@ command.Parameters.AddWithValue( _
  Les valeurs d’heure inférieures à zéro ou supérieures ou égales à 24 heures lèvent une <xref:System.ArgumentException>.  
   
 ## <a name="resources-in-sql-server-books-online"></a>Ressources dans la documentation en ligne de SQL Server  
- Pour plus d’informations sur le travail avec les valeurs de date et d’heure dans SQL Server, voir les ressources suivantes dans SQL Server Books Online.  
+ Pour plus d’informations sur l’utilisation des valeurs de date et d’heure dans SQL Server, consultez les ressources suivantes dans Documentation en ligne de SQL Server.  
   
 |Rubrique|Description|  
 |-----------|-----------------|  
@@ -243,5 +244,5 @@ command.Parameters.AddWithValue( _
 
 - [Mappages de types de données SQL Server](../sql-server-data-type-mappings.md)
 - [Configuration des paramètres et des types de données des paramètres](../configuring-parameters-and-parameter-data-types.md)
-- [Types de données et ADO.NET de données de serveur SQL](sql-server-data-types.md)
+- [Types de données SQL Server et ADO.NET](sql-server-data-types.md)
 - [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

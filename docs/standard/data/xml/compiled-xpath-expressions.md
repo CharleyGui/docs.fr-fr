@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e25dd95f-b64c-4d8b-a3a4-379e1aa0ad55
-ms.openlocfilehash: b4675765849299050eb6cddeaaa497bc6cdc620a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e74b52e471699fc663504fa42d6c7e502859adda
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711101"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291524"
 ---
 # <a name="compiled-xpath-expressions"></a>Expressions XPath compilées
 Un objet <xref:System.Xml.XPath.XPathExpression> représente une requête XPath compilée retournée depuis la méthode statique <xref:System.Xml.XPath.XPathExpression.Compile%2A> de la classe <xref:System.Xml.XPath.XPathExpression> ou depuis la méthode <xref:System.Xml.XPath.XPathNavigator.Compile%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>.  
@@ -115,16 +115,16 @@ Console.WriteLine(nodes.Current.Value);
   
  De plus, l'utilisation des méthodes de navigation dans les nœuds fournies par la classe <xref:System.Xml.XPath.XPathNavigator> peut améliorer les performances par rapport aux méthodes de sélection fournies par la classe <xref:System.Xml.XPath.XPathNavigator> lorsque les critères de sélection sont simples. Par exemple, si vous devez sélectionner le premier enfant du nœud actuel, il est plus rapide d’utiliser la méthode <xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A> que d’utiliser l’expression XPath `child::*[1]` et la méthode <xref:System.Xml.XPath.XPathNavigator.Select%2A>.  
   
- Pour plus d'informations sur les méthodes de navigation dans les nœuds fournies par la classe <xref:System.Xml.XPath.XPathNavigator>, consultez [Navigation dans la collection de nœuds à l’aide de XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md).  
+ Pour plus d'informations sur les méthodes de navigation dans les nœuds fournies par la classe <xref:System.Xml.XPath.XPathNavigator>, consultez [Navigation dans la collection de nœuds à l’aide de XPathNavigator](node-set-navigation-using-xpathnavigator.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [Traitement des données XML à l'aide du modèle de données XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [Sélection de données XML à l'aide de XPathNavigator](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)
-- [Évaluation d’expressions XPath à l’aide de XPathNavigator](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)
-- [Mise en correspondance de nœuds avec XPathNavigator](../../../../docs/standard/data/xml/matching-nodes-using-xpathnavigator.md)
-- [Types de nœuds reconnus avec les requêtes XPath](../../../../docs/standard/data/xml/node-types-recognized-with-xpath-queries.md)
-- [Requêtes et espaces de noms XPath](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)
+- [Traitement des données XML à l'aide du modèle de données XPath](process-xml-data-using-the-xpath-data-model.md)
+- [Sélection de données XML à l'aide de XPathNavigator](select-xml-data-using-xpathnavigator.md)
+- [Évaluation d’expressions XPath à l’aide de XPathNavigator](evaluate-xpath-expressions-using-xpathnavigator.md)
+- [Mise en correspondance de nœuds avec XPathNavigator](matching-nodes-using-xpathnavigator.md)
+- [Types de nœuds reconnus avec les requêtes XPath](node-types-recognized-with-xpath-queries.md)
+- [Requêtes et espaces de noms XPath](xpath-queries-and-namespaces.md)

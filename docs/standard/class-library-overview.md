@@ -37,12 +37,12 @@ helpviewer_keywords:
 - integer value type
 - base types, class library
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
-ms.openlocfilehash: 596c0fd8fec8f59d977f1db445f9000df23ad5ce
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b076298a5a5f90a3c2dd39e4c5c9684e02a291c4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400483"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289237"
 ---
 # <a name="net-class-library-overview"></a>Présentation des bibliothèques de classes .NET
 
@@ -64,7 +64,7 @@ Les implémentations .NET incluent des classes, des interfaces, des délégués 
   
  .NET fournit un ensemble complet d'interfaces, ainsi que des classes abstraites et concrètes (non abstraites). Vous pouvez utiliser les classes concrètes telles quelles ou, dans de nombreux cas, en dériver vos propres classes. Pour utiliser les fonctionnalités d’une interface, vous pouvez créer une classe qui implémente l’interface ou dériver une classe de l’une des classes .NET qui implémentent l’interface.  
   
-## <a name="naming-conventions"></a>Conventions d’affectation de noms
+## <a name="naming-conventions"></a>Conventions d'attribution d'un nom
 
  Les types .NET utilisent un schéma de nommage dans lequel les points indiquent une hiérarchie. Cette technique regroupe les types associés en espaces de noms de sorte qu'ils peuvent être recherchés et référencés plus facilement. La première partie du nom complet (jusqu'au point le plus à droite) constitue le nom de l'espace de noms. La dernière partie du nom est le nom du type. Par exemple, `System.Collections.Generic.List<T>` représente le type `List<T>`, qui appartient à l’espace de noms `System.Collections.Generic`. Les types dans <xref:System.Collections.Generic> peuvent être utilisés pour manipuler des collections génériques.  
   
@@ -76,7 +76,7 @@ Les implémentations .NET incluent des classes, des interfaces, des délégués 
   
  L'utilisation de modèles d'affectation de noms pour regrouper des types associés en espaces de noms est très utile pour générer et documenter les bibliothèques de classes. Cependant, ce schéma d’affectation de noms n’a pas d’effet sur la visibilité, l’accès aux membres, l’héritage, la sécurité ou la liaison. Un espace de noms peut être partitionné en plusieurs assemblys et un seul assembly peut contenir des types provenant de plusieurs espaces de noms. L'assembly fournit la structure formelle pour le versioning, le déploiement, la sécurité, le chargement et la visibilité dans le Common Language Runtime.  
   
- Pour plus d’informations sur les espaces de noms et les noms des types, consultez [Système de type commun (CTS, Common Type System)](../../docs/standard/base-types/common-type-system.md).  
+ Pour plus d’informations sur les espaces de noms et les noms des types, consultez [Système de type commun (CTS, Common Type System)](base-types/common-type-system.md).  
   
 ## <a name="system-namespace"></a>System (espace de noms)
 
@@ -86,23 +86,23 @@ Les implémentations .NET incluent des classes, des interfaces, des délégués 
   
 |Category|Nom de classe|Description|Type de données Visual Basic|Type de données C#|Type de données C++/CLI|Type de données F#|  
 |--------------|----------------|-----------------|----------------------------|-------------------|---------------------|-----------------------|  
-|Integer|<xref:System.Byte>|Entier non signé 8 bits.|**Byte**|**Octet**|**unsigned char**|**Octet**|  
-||<xref:System.SByte>|Entier signé 8 bits.<br /><br /> Non conforme CLS.|**SByte**|**Sbyte**|**char**<br /> -ou-<br /> **signed** **char**|**Sbyte**|  
-||<xref:System.Int16>|Entier signé 16 bits.|**Court**|**short**|**short**|**int16**|  
-||<xref:System.Int32>|Entier signé de 32 bits.|**Entier**|**int**|**int**<br /><br /> -ou-<br /><br /> **Long**|**int**|  
-||<xref:System.Int64>|Entier signé de 64 bits.|**Long**|**Long**|**__int64**|**int64**|  
-||<xref:System.UInt16>|Entier non signé 16 bits.<br /><br /> Non conforme CLS.|**Ushort**|**ushort**|**unsigned short**|**uint16**|  
-||<xref:System.UInt32>|Entier non signé 32 bits.<br /><br /> Non conforme CLS.|**UInteger**|**uint**|**nombre entier non signé**<br /> -ou-<br /> **unsigned long**|**uint32 uint32 uint32**|  
-||<xref:System.UInt64>|Entier non signé 64 bits.<br /><br /> Non conforme CLS.|**Ulong**|**Ulong**|**unsigned __int64**|**uint64 uint64 uint64 uint**|  
-|Virgule flottante|<xref:System.Single>|Nombre à virgule flottante (32 bits) simple précision.|**Seul**|**Flotteur**|**Flotteur**|**float32**<br> or<br>**Seul**|  
-||<xref:System.Double>|Nombre à virgule flottante (64 bits) double précision.|**Double**|**Double**|**Double**|**Flotteur**<br> or <br> **Double**|  
-|Logical|<xref:System.Boolean>|Valeur booléenne (true ou false).|**Boolean**|**Bool**|**Bool**|**Bool**|  
-|Autres|<xref:System.Char>|Caractère Unicode (16 bits).|**Char Char**|**char**|**Wchar_t**|**char**|  
-||<xref:System.Decimal>|Valeur décimale (128 bits).|**Decimales**|**Decimales**|**Decimales**|**Decimales**|  
+|Integer|<xref:System.Byte>|Entier non signé 8 bits.|**Poids**|**byte**|**unsigned char**|**byte**|  
+||<xref:System.SByte>|Entier signé 8 bits.<br /><br /> Non conforme CLS.|**SByte**|**sbyte**|**char**<br /> -ou-<br /> **signed** **char**|**sbyte**|  
+||<xref:System.Int16>|Entier signé 16 bits.|**Court**|**Résumé**|**Résumé**|**int16**|  
+||<xref:System.Int32>|Entier signé de 32 bits.|**Integer**|**int**|**int**<br /><br /> -ou-<br /><br /> **long**|**int**|  
+||<xref:System.Int64>|Entier signé de 64 bits.|**Long**|**long**|**__int64**|**int64**|  
+||<xref:System.UInt16>|Entier non signé 16 bits.<br /><br /> Non conforme CLS.|**UShort**|**ushort**|**unsigned short**|**UInt16**|  
+||<xref:System.UInt32>|Entier non signé 32 bits.<br /><br /> Non conforme CLS.|**UInteger**|**uint**|**nombre entier non signé**<br /> -ou-<br /> **unsigned long**|**uint32**|  
+||<xref:System.UInt64>|Entier non signé 64 bits.<br /><br /> Non conforme CLS.|**Correspondante**|**correspondante**|**unsigned __int64**|**uint64**|  
+|Virgule flottante|<xref:System.Single>|Nombre à virgule flottante (32 bits) simple précision.|**Unique**|**float**|**float**|**float32**<br> or<br>**single**|  
+||<xref:System.Double>|Nombre à virgule flottante (64 bits) double précision.|**Cliquer**|**double**|**double**|**float**<br> or <br> **double**|  
+|Logical|<xref:System.Boolean>|Valeur booléenne (true ou false).|**Booléen**|**bool**|**bool**|**bool**|  
+|Autres|<xref:System.Char>|Caractère Unicode (16 bits).|**Char**|**char**|**wchar_t**|**char**|  
+||<xref:System.Decimal>|Valeur décimale (128 bits).|**Décimal**|**decimal**|**Décimal**|**decimal**|  
 ||<xref:System.IntPtr>|Entier signé dont la taille dépend de la plateforme sous-jacente (valeur 32 bits sur une plateforme 32 bits et valeur 64 bits sur une plateforme 64 bits).|**IntPtr**<br /><br /> Pas de type intégré.|**IntPtr**<br /><br /> Pas de type intégré.|**IntPtr**<br /><br /> Pas de type intégré.|**unativeint**|  
 ||<xref:System.UIntPtr>|Entier non signé dont la taille dépend de la plateforme sous-jacente (valeur 32 bits sur une plateforme 32 bits et valeur 64 bits sur une plateforme 64 bits).<br /><br /> Non conforme CLS.|**UIntPtr**<br /><br /> Pas de type intégré.|**UIntPtr**<br /><br /> Pas de type intégré.|**UIntPtr**<br /><br /> Pas de type intégré.|**unativeint**|  
-||<xref:System.Object>|Racine de la hiérarchie d'objet.|**Objet**|**Objet**|**Objet**|**obj**|  
-||<xref:System.String>|Chaîne immuable à longueur fixe de caractères Unicode.|**Chaîne**|**String**|**Corde**|**String**|  
+||<xref:System.Object>|Racine de la hiérarchie d'objet.|**Objet**|**object**|**Objet ^**|**obj**|  
+||<xref:System.String>|Chaîne immuable à longueur fixe de caractères Unicode.|**Chaîne**|**string**|**Chaîne ^**|**string**|  
   
  En plus des types de données de base, l'espace de noms <xref:System> contient plus de 100 classes, de celles qui gèrent les exceptions à celles qui traitent des principaux concepts relatifs au runtime, tels que les domaines d'application et le « garbage collector ». L'espace de noms <xref:System> contient également de nombreux espaces de noms de deuxième niveau.  
   
@@ -110,6 +110,6 @@ Les implémentations .NET incluent des classes, des interfaces, des délégués 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Système de type commun](../../docs/standard/base-types/common-type-system.md)
-- [Navigateur d’API .NET](../../api/index.md)
-- [Vue d’ensemble](../../docs/framework/get-started/overview.md)
+- [Système de type commun](base-types/common-type-system.md)
+- [Navigateur de l’API .NET](../../api/index.md)
+- [Vue d'ensemble](../framework/get-started/overview.md)

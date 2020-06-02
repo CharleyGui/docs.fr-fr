@@ -1,17 +1,21 @@
 ---
-title: ''
+title: Comment sérialiser et désérialiser JSON à l’aide de C#-.NET
 description: Cet article explique comment utiliser l’espace de System.Text.Json noms pour sérialiser et désérialiser à partir de JSON dans .net. Il comprend un exemple de code.
-ms.date: ''
+ms.date: 05/13/2020
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
-helpviewer_keywords: []
-ms.openlocfilehash: f1a5da448b08f9b4f1cf3fa6cba67fb376b00a6f
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+helpviewer_keywords:
+- JSON serialization
+- serializing objects
+- serialization
+- objects, serializing
+ms.openlocfilehash: 7ad2721f12c5d14b61b35ecf7696ff0d6a6f27da
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702284"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289510"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Comment sérialiser et désérialiser (marshaler et démarshaler) JSON dans .NET
 
@@ -379,47 +383,11 @@ Pour exclure toutes les propriétés de valeur null, affectez à la propriété 
 
 Voici un exemple d’objet pour sérialiser et la sortie JSON :
 
-|Propriété |Value  |
-|---
-titre : Description : «cet article explique comment utiliser l’espace de System.Text.Json noms pour sérialiser et désérialiser à partir de JSON dans .net. Il comprend un exemple de code.
-ms. Date : No-Loc :
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords :
-- 
-- 
-- 
-- 
-
--
-titre : Description : «cet article explique comment utiliser l’espace de System.Text.Json noms pour sérialiser et désérialiser à partir de JSON dans .net. Il comprend un exemple de code.
-ms. Date : No-Loc :
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords :
-- 
-- 
-- 
-- 
-
------|---titre : Description : cet article vous montre comment utiliser l’espace de System.Text.Json noms pour sérialiser et désérialiser à partir de JSON dans .net. Il comprend un exemple de code.
-ms. Date : No-Loc :
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords :
-- 
-- 
-- 
-- 
-
--
-titre : Description : «cet article explique comment utiliser l’espace de System.Text.Json noms pour sérialiser et désérialiser à partir de JSON dans .net. Il comprend un exemple de code.
-ms. Date : No-Loc :
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords :
-- 
-- 
-- 
-- 
-
------| | Date | DE 8/1/2019 12:00:00 À 07:00 | | TemperatureCelsius | 25 | | Résumé | null |
+|Propriété |Valeur  |
+|---------|---------|
+| Date    | DE 8/1/2019 12:00:00 À 07:00|
+| TemperatureCelsius| 25 |
+| Résumé| null|
 
 ```json
 {
@@ -672,65 +640,13 @@ Si vous désérialisez le JSON affiché dans le type indiqué, les `DatesAvailab
 Lorsque vous désérialisez le JSON indiqué plus haut dans ce type d’exemple, les données supplémentaires deviennent des paires clé-valeur de la `ExtensionData` propriété :
 
 |Propriété |Valeur  |Notes  |
-|---
-titre : Description : «cet article explique comment utiliser l’espace de System.Text.Json noms pour sérialiser et désérialiser à partir de JSON dans .net. Il comprend un exemple de code.
-ms. Date : No-Loc :
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords :
-- 
-- 
-- 
-- 
-
--
-titre : Description : «cet article explique comment utiliser l’espace de System.Text.Json noms pour sérialiser et désérialiser à partir de JSON dans .net. Il comprend un exemple de code.
-ms. Date : No-Loc :
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords :
-- 
-- 
-- 
-- 
-
------|---titre : Description : cet article vous montre comment utiliser l’espace de System.Text.Json noms pour sérialiser et désérialiser à partir de JSON dans .net. Il comprend un exemple de code.
-ms. Date : No-Loc :
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords :
-- 
-- 
-- 
-- 
-
--
-titre : Description : «cet article explique comment utiliser l’espace de System.Text.Json noms pour sérialiser et désérialiser à partir de JSON dans .net. Il comprend un exemple de code.
-ms. Date : No-Loc :
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords :
-- 
-- 
-- 
-- 
-
------|---titre : Description : cet article vous montre comment utiliser l’espace de System.Text.Json noms pour sérialiser et désérialiser à partir de JSON dans .net. Il comprend un exemple de code.
-ms. Date : No-Loc :
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords :
-- 
-- 
-- 
-- 
-
--
-titre : Description : «cet article explique comment utiliser l’espace de System.Text.Json noms pour sérialiser et désérialiser à partir de JSON dans .net. Il comprend un exemple de code.
-ms. Date : No-Loc :
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords :
-- 
-- 
-- 
-- 
-
------| | Date | DE 8/1/2019 12:00:00 À 07:00 | | | TemperatureCelsius | 0 | Incompatibilité sensible à la casse ( `temperatureCelsius` dans le JSON), la propriété n’est donc pas définie. | | Résumé | À chaud | | | ExtensionData | temperatureCelsius : 25 | Étant donné que le cas ne correspondait pas, cette propriété JSON est un extra et devient une paire clé-valeur dans le dictionnaire. | || DatesAvailable:<br>  DE 8/1/2019 12:00:00 À 07:00<br>DE 8/2/2019 12:00:00 À 07:00 | Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur. | | | SummaryWords:<br>À froid<br>Venteux<br>Humide | Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur. |
+|---------|---------|---------|
+| Date    | DE 8/1/2019 12:00:00 À 07:00||
+| TemperatureCelsius| 0 | Incompatibilité sensible à la casse ( `temperatureCelsius` dans le JSON), la propriété n’est donc pas définie. |
+| Résumé | À chaud ||
+| ExtensionData | temperatureCelsius : 25 |Étant donné que le cas ne correspondait pas, cette propriété JSON est un extra et devient une paire clé-valeur dans le dictionnaire.|
+|| DatesAvailable:<br>  DE 8/1/2019 12:00:00 À 07:00<br>DE 8/2/2019 12:00:00 À 07:00 |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|
+| |SummaryWords:<br>À froid<br>Venteux<br>Humide |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|
 
 Lorsque l’objet cible est sérialisé, les paires de valeurs de clés de données d’extension deviennent des propriétés JSON comme elles étaient dans le JSON entrant :
 

@@ -3,12 +3,12 @@ title: Règles relatives à l'inférence de types simples
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-ms.openlocfilehash: 17429e77f7764873e607a8feaa62da1cc6e014a4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 571019d13433312a5d31f581c3527aae901bbba7
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710230"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289068"
 ---
 # <a name="rules-for-inferring-simple-types"></a>Règles relatives à l'inférence de types simples
 Décrit comment la classe <xref:System.Xml.Schema.XmlSchemaInference> déduit le type de données pour les attributs et les éléments.  
@@ -76,6 +76,6 @@ Vous trouverez ci-après les attributs de définition du schéma qui sont ignor�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle Objet du schéma (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
-- [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)
-- [Règles pour l'inférence de types et de structure de nœud de schéma](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)
+- [Modèle Objet du schéma (SOM) XML](xml-schema-object-model-som.md)
+- [Inférence de schémas à partir de documents XML](inferring-schemas-from-xml-documents.md)
+- [Règles pour l'inférence de types et de structure de nœud de schéma](rules-for-inferring-schema-node-types-and-structure.md)

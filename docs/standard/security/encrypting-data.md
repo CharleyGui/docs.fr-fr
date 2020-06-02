@@ -11,18 +11,18 @@ helpviewer_keywords:
 - cryptography [.NET Framework], asymmetric
 - asymmetric encryption
 ms.assetid: 7ecce51f-db5f-4bd4-9321-cceb6fcb2a77
-ms.openlocfilehash: 669b9c77ca0102ed94d8743cf37b18c0d0c528dc
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 3230836b93ea191e5de27717a918038f2f8dead6
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159401"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288353"
 ---
 # <a name="encrypting-data"></a>Chiffrement de données
 Le chiffrement symétrique et le chiffrement asymétrique utilisent des processus différents. Le chiffrement symétrique est effectué sur des flux. Il est donc utile pour le chiffrement de grandes quantités de données. Le chiffrement asymétrique s'effectue sur un petit nombre d'octets. Il n'est donc utile que pour les petites quantités de données.  
   
 ## <a name="symmetric-encryption"></a>Chiffrement symétrique  
- Les classes managées de chiffrement symétrique sont utilisées avec une classe de flux spéciale appelée <xref:System.Security.Cryptography.CryptoStream> , qui chiffre les données lues dans le flux. La classe **CryptoStream** est initialisée avec une classe de flux managée, une classe qui implémente l'interface <xref:System.Security.Cryptography.ICryptoTransform> (créée à partir d'une classe qui implémente un algorithme de chiffrement) et une énumération <xref:System.Security.Cryptography.CryptoStreamMode> qui décrit le type d'accès autorisé à **CryptoStream**. La classe **CryptoStream** peut être initialisée à l'aide de n'importe quelle classe dérivée de la classe <xref:System.IO.Stream> , y compris <xref:System.IO.FileStream>, <xref:System.IO.MemoryStream>et <xref:System.Net.Sockets.NetworkStream>. À l'aide de ces classes, vous pouvez effectuer le chiffrement symétrique sur une variété d'objets de flux.  
+ Les classes managées de chiffrement symétrique sont utilisées avec une classe de flux spéciale appelée <xref:System.Security.Cryptography.CryptoStream> , qui chiffre les données lues dans le flux. La classe **CryptoStream** est initialisée avec une classe de flux managée, une classe qui implémente l'interface <xref:System.Security.Cryptography.ICryptoTransform> (créée à partir d'une classe qui implémente un algorithme de chiffrement) et une énumération <xref:System.Security.Cryptography.CryptoStreamMode> qui décrit le type d'accès autorisé à **CryptoStream**. La classe **CryptoStream** peut être initialisée à l’aide de n’importe quelle classe qui dérive de la <xref:System.IO.Stream> classe, y compris <xref:System.IO.FileStream> , <xref:System.IO.MemoryStream> et <xref:System.Net.Sockets.NetworkStream> . À l'aide de ces classes, vous pouvez effectuer le chiffrement symétrique sur une variété d'objets de flux.  
   
  L'exemple suivant montre comment créer une instance de la classe <xref:System.Security.Cryptography.RijndaelManaged> qui implémente l'algorithme de chiffrement Rijndael, et comment l'utiliser pour effectuer un chiffrement sur une classe **CryptoStream** . Dans cet exemple, la classe **CryptoStream** est initialisée avec un objet de flux nommé `myStream` qui peut correspondre à n'importe quel type de flux managé. La méthode **CreateEncryptor** de la classe **RijndaelManaged** reçoit la clé et le vecteur d'initialisation utilisés pour le chiffrement. Dans ce cas, la clé et le vecteur d'initialisation par défaut générés à partir de `rmCrypto` sont utilisés. Enfin, **CryptoStreamMode.Write** est passé, en spécifiant l'accès en écriture dans le flux.  
   
@@ -262,6 +262,6 @@ class Class1
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Génération de clés pour le chiffrement et le déchiffrement](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
-- [Déchiffrement de données](../../../docs/standard/security/decrypting-data.md)
-- [Services de chiffrement](../../../docs/standard/security/cryptographic-services.md)
+- [Génération de clés pour le chiffrement et le déchiffrement](generating-keys-for-encryption-and-decryption.md)
+- [Déchiffrement de données](decrypting-data.md)
+- [Services de chiffrement](cryptographic-services.md)

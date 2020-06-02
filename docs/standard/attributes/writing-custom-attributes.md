@@ -16,12 +16,12 @@ helpviewer_keywords:
 - Inherited property
 - attribute classes, declaring
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
-ms.openlocfilehash: 6570c6994c0f2e6571361c3eadc73b02a55f1584
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d05df02bfc75e9aeb2c583a831bcee8b7b971206
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73140589"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276127"
 ---
 # <a name="writing-custom-attributes"></a>Écriture des attributs personnalisés
 Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de maîtriser les nombreux nouveaux concepts. Si vous êtes familiarisé avec la programmation orientée objet et savez concevoir des classes, vous possédez déjà la plupart des connaissances nécessaires. Les attributs personnalisés sont essentiellement des classes traditionnelles qui dérivent directement ou indirectement de <xref:System.Attribute?displayProperty=nameWithType>. Tout comme les classes traditionnelles, les attributs personnalisés contiennent des méthodes qui stockent et récupèrent les données.  
@@ -32,7 +32,7 @@ Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de
   
 - [Déclaration de la classe d’attributs](#declaring-the-attribute-class)  
   
-- [Déclarer les constructeurs](#declaring-constructors)  
+- [Déclarer des constructeurs](#declaring-constructors)  
   
 - [Déclaration des propriétés](#declaring-properties)  
   
@@ -150,4 +150,4 @@ Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de
 
 - <xref:System.Attribute?displayProperty=nameWithType>
 - <xref:System.AttributeUsageAttribute?displayProperty=nameWithType>
-- [Attributs](../../../docs/standard/attributes/index.md)
+- [Attributs](index.md)

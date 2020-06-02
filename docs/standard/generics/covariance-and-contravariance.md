@@ -11,12 +11,12 @@ helpviewer_keywords:
 - covariance and contravariance in generics
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-ms.openlocfilehash: 909b03588d2a41f667bfa117a5cecb420b125088
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b11b5fc93d9b7289e62d6abc9d3ca19027a107c5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75708395"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287556"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Covariance et contravariance dans les génériques
  La covariance et la contravariance sont des termes qui font référence à la possibilité d’utiliser un type plus dérivé (plus spécifique) ou moins dérivé (moins spécifique) que celui spécifié à l’origine. Les paramètres de type générique prennent en charge la covariance et la contravariance afin de fournir une meilleure flexibilité dans l'assignation et l'utilisation des types génériques. Lorsque vous faites référence à un système de type, la covariance, la contravariance et l'invariance ont les définitions suivantes. Les exemples supposent qu'une classe de base est nommée `Base` et qu'une classe dérivée est nommée `Derived`.  
@@ -92,7 +92,7 @@ ms.locfileid: "75708395"
 > [!NOTE]
 > Le dernier paramètre de type générique des délégués génériques `Func` spécifie le type de la valeur de retour dans la signature du délégué. Il est covariant (mot clé`out` ), alors que les autres paramètres de type générique sont contravariants (mot clé`in` ).  
   
- Le code suivant illustre ce comportement : La première partie du code définit une classe nommée `Base`, une classe nommée `Derived` qui hérite de `Base`, et une autre classe avec une méthode `static` (`Shared` en Visual Basic) nommée `MyMethod`. La méthode prend une instance de `Base` et retourne une instance de `Derived`. (Si l’argument est `Derived` `MyMethod` un exemple de , il `Base`retourne; si l’argument est un exemple de , `MyMethod` renvoie une nouvelle instance de `Derived`.) Dans `Main()`, l’exemple `Func<Base, Derived>` crée`Func(Of Base, Derived)` un exemple de `MyMethod`(dans Visual Basic) qui représente , et le stocke dans la variable `f1`.  
+ Le code suivant illustre ce comportement : La première partie du code définit une classe nommée `Base`, une classe nommée `Derived` qui hérite de `Base`, et une autre classe avec une méthode `static` (`Shared` en Visual Basic) nommée `MyMethod`. La méthode prend une instance de `Base` et retourne une instance de `Derived`. (Si l’argument est une instance de `Derived` , le `MyMethod` retourne ; si l’argument est une instance de `Base` , `MyMethod` retourne une nouvelle instance de `Derived` .) Dans `Main()` , l’exemple crée une instance de `Func<Base, Derived>` ( `Func(Of Base, Derived)` dans Visual Basic) qui représente `MyMethod` et le stocke dans la variable `f1` .  
   
  [!code-csharp[CoContravarianceDelegates#2](../../../samples/snippets/csharp/VS_Snippets_CLR/cocontravariancedelegates/cs/example.cs#2)]
  [!code-vb[CoContravarianceDelegates#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontravariancedelegates/vb/example.vb#2)]  
@@ -126,18 +126,18 @@ ms.locfileid: "75708395"
  À compter de .NET Framework 4, Visual Basic et Visual C# ont des mots clés qui vous permettent de marquer les paramètres de type générique des interfaces et des délégués comme covariants ou contravariants.  
   
 > [!NOTE]
-> Depuis le .NET Framework version 2.0, le Common Language Runtime prend en charge les annotations de variance sur les paramètres de type générique. Avant .NET Framework 4, la seule méthode pour définir une classe générique avec ces annotations consistait à utiliser le langage MSIL (Microsoft Intermediate Language), en compilant la classe avec [Ilasm.exe (Assembleur IL)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) ou en l’émettant dans un assembly dynamique.  
+> Depuis le .NET Framework version 2.0, le Common Language Runtime prend en charge les annotations de variance sur les paramètres de type générique. Avant .NET Framework 4, la seule méthode pour définir une classe générique avec ces annotations consistait à utiliser le langage MSIL (Microsoft Intermediate Language), en compilant la classe avec [Ilasm.exe (Assembleur IL)](../../framework/tools/ilasm-exe-il-assembler.md) ou en l’émettant dans un assembly dynamique.  
   
- Un paramètre de type covariant est marqué avec le mot clé `out` (mot clé `Out` en Visual Basic, `+` pour [l’assembleur MSIL](../../../docs/framework/tools/ilasm-exe-il-assembler.md)). Vous pouvez utiliser un paramètre de type covariant comme valeur de retour d'une méthode qui appartient à une interface ou comme type de retour d'un délégué. Vous ne pouvez pas utiliser un paramètre de type covariant comme contrainte de type générique pour les méthodes d'interface.  
+ Un paramètre de type covariant est marqué avec le mot clé `out` (mot clé `Out` en Visual Basic, `+` pour [l’assembleur MSIL](../../framework/tools/ilasm-exe-il-assembler.md)). Vous pouvez utiliser un paramètre de type covariant comme valeur de retour d'une méthode qui appartient à une interface ou comme type de retour d'un délégué. Vous ne pouvez pas utiliser un paramètre de type covariant comme contrainte de type générique pour les méthodes d'interface.  
   
 > [!NOTE]
 > Si une méthode d'une interface a un paramètre qui est un type délégué générique, un paramètre de type covariant du type d'interface peut être utilisé pour spécifier un paramètre de type contravariant du type délégué.  
   
- Un paramètre de type contravariant est marqué avec le mot clé `in` (mot clé`In` en Visual Basic, `-` pour l' [assembleur MSIL](../../../docs/framework/tools/ilasm-exe-il-assembler.md)). Vous pouvez utiliser un paramètre de type contravariant comme type d'un paramètre d'une méthode qui appartient à une interface ou comme type d'un paramètre d'un délégué. Vous pouvez utiliser un paramètre de type contravariant comme contrainte de type générique pour une méthode d'interface.  
+ Un paramètre de type contravariant est marqué avec le mot clé `in` (mot clé`In` en Visual Basic, `-` pour l' [assembleur MSIL](../../framework/tools/ilasm-exe-il-assembler.md)). Vous pouvez utiliser un paramètre de type contravariant comme type d'un paramètre d'une méthode qui appartient à une interface ou comme type d'un paramètre d'un délégué. Vous pouvez utiliser un paramètre de type contravariant comme contrainte de type générique pour une méthode d'interface.  
   
  Seuls les types d'interfaces et les types délégués peuvent avoir des paramètres de type variant. Un type d'interface ou un type délégué peut avoir à la fois des paramètres de type covariant et contravariant.  
   
- Visual Basic et Visual C# ne vous permettent pas de violer les règles d'utilisation des paramètres de type covariant et contravariant ou d'ajouter des annotations de covariance et de contravariance aux paramètres qui diffèrent des types d'interfaces et des types délégués. L' [assembleur MSIL](../../../docs/framework/tools/ilasm-exe-il-assembler.md) n'exécute pas ce type de contrôle, mais une exception <xref:System.TypeLoadException> est levée si vous essayez de charger un type qui viole les règles.  
+ Visual Basic et Visual C# ne vous permettent pas de violer les règles d'utilisation des paramètres de type covariant et contravariant ou d'ajouter des annotations de covariance et de contravariance aux paramètres qui diffèrent des types d'interfaces et des types délégués. L' [assembleur MSIL](../../framework/tools/ilasm-exe-il-assembler.md) n'exécute pas ce type de contrôle, mais une exception <xref:System.TypeLoadException> est levée si vous essayez de charger un type qui viole les règles.  
   
  Pour obtenir des informations et un exemple de code, consultez [Variance dans les interfaces génériques (C#)](../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md) et [Variance dans les interfaces génériques (Visual Basic)](../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md).  
 

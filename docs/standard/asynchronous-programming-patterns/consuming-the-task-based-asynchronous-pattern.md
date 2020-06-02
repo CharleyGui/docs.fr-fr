@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
-ms.openlocfilehash: f80e6ae520ab03c0f5f4edc30c0b7102193ee6c5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 64a9b963ce6a8554a581f9d5d0f77cf4edfa71b4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139817"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289458"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Utilisation du modèle asynchrone basé sur les tâches
 
@@ -631,7 +631,7 @@ double currentPrice = await NeedOnlyOne(
 ```
 
 ### <a name="interleaved-operations"></a>Opérations entrelacées
- Il existe un problème potentiel de performances avec l’utilisation de la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A> pour prendre en charge un scénario d’entrelacement quand vous travaillez avec de très grands ensembles de tâches. Chaque appel à <xref:System.Threading.Tasks.Task.WhenAny%2A> entraîne une continuation enregistrée avec chaque tâche. Pour le nombre N de tâches, cela se traduit par des continuations O(N<sup>2</sup>) créées au cours de la durée de vie de l’opération d’entrelacage. Si vous travaillez avec un grand nombre de tâches,`Interleaved` vous pouvez utiliser un combinateur (dans l’exemple suivant) pour résoudre le problème de performance :
+ Il existe un problème potentiel de performances avec l’utilisation de la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A> pour prendre en charge un scénario d’entrelacement quand vous travaillez avec de très grands ensembles de tâches. Chaque appel à <xref:System.Threading.Tasks.Task.WhenAny%2A> entraîne une continuation enregistrée avec chaque tâche. Pour N nombre de tâches, cela entraîne la création de continuations O (N<sup>2</sup>) au cours de la durée de vie de l’opération d’entrelacement. Si vous utilisez un grand nombre de tâches, vous pouvez utiliser un combinateur ( `Interleaved` dans l’exemple suivant) pour résoudre le problème de performances :
 
 ```csharp
 static IEnumerable<Task<T>> Interleaved<T>(IEnumerable<Task<T>> tasks)
@@ -725,7 +725,7 @@ public class AsyncCache<TKey, TValue>
 }
 ```
 
- La classe [AsyncCache\<TKey,TValue>](https://devblogs.microsoft.com/pfxteam/parallelextensionsextras-tour-12-asynccache/) accepte en tant que délégué à son constructeur une fonction qui prend une `TKey` et retourne une <xref:System.Threading.Tasks.Task%601>.  Toutes les valeurs précédemment accessibles à partir du cache sont stockées dans le dictionnaire interne, et `AsyncCache` garantit qu’une seule tâche est générée par clé, même en cas d’accès simultané au cache.
+ La [classe \<TKey,TValue> classe asynccache](https://devblogs.microsoft.com/pfxteam/parallelextensionsextras-tour-12-asynccache/) accepte comme délégué à son constructeur une fonction qui prend un `TKey` et retourne un <xref:System.Threading.Tasks.Task%601> .  Toutes les valeurs précédemment accessibles à partir du cache sont stockées dans le dictionnaire interne, et `AsyncCache` garantit qu’une seule tâche est générée par clé, même en cas d’accès simultané au cache.
 
  Par exemple, vous pouvez créer un cache de pages web téléchargées :
 
@@ -835,6 +835,6 @@ private static void Produce(int data)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle asynchrone basé sur les tâches (TAP, Task-based Asynchronous Pattern)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)
-- [Implémentation du modèle asynchrone basé sur des tâches](../../../docs/standard/asynchronous-programming-patterns/implementing-the-task-based-asynchronous-pattern.md)
-- [Interopérabilité avec d’autres types et modèles asynchrones](../../../docs/standard/asynchronous-programming-patterns/interop-with-other-asynchronous-patterns-and-types.md)
+- [Modèle asynchrone basé sur les tâches (TAP, Task-based Asynchronous Pattern)](task-based-asynchronous-pattern-tap.md)
+- [Implémentation du modèle asynchrone basé sur des tâches](implementing-the-task-based-asynchronous-pattern.md)
+- [Interopérabilité avec d’autres types et modèles asynchrones](interop-with-other-asynchronous-patterns-and-types.md)

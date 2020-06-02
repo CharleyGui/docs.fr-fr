@@ -16,12 +16,12 @@ helpviewer_keywords:
 - Insert method
 - strings [.NET Framework], StringBuilder object
 ms.assetid: 5c14867c-9a99-45bc-ae7f-2686700d377a
-ms.openlocfilehash: 19ee90f3300e3b610eeefd4949baa2759b834a60
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a8116013cc20ead3be13763ce72999d2c608dbce
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73121679"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289263"
 ---
 # <a name="using-the-stringbuilder-class-in-net"></a>Utilisation de la classe StringBuilder dans .NET
 L’objet <xref:System.String> est immuable. Chaque fois que vous utilisez l’une des méthodes de la classe <xref:System.String?displayProperty=nameWithType>, vous créez un nouvel objet string en mémoire, ce qui nécessite une nouvelle allocation d’espace pour ce nouvel objet. Si vous devez effectuer des modifications répétées sur une chaîne, la surcharge associée à la création d’un objet <xref:System.String> peut être coûteuse. Vous pouvez utiliser la classe <xref:System.Text.StringBuilder?displayProperty=nameWithType> quand vous voulez modifier une chaîne sans créer d’objet. Par exemple, la classe <xref:System.Text.StringBuilder> permet d’améliorer les performances quand il s’agit de concaténer un grand nombre de chaînes dans une boucle.  
@@ -76,7 +76,7 @@ L’objet <xref:System.String> est immuable. Chaque fois que vous utilisez l’u
  [!code-vb[Conceptual.StringBuilder#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/Example.vb#4)]  
   
 ### <a name="appendformat"></a>AppendFormat  
- La méthode <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> ajoute du texte à la fin de l’objet <xref:System.Text.StringBuilder>. Elle prend en charge la fonctionnalité de mise en forme composite (pour plus d’informations, consultez [Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md)) en appelant l’implémentation <xref:System.IFormattable> des objets à mettre en forme. Par conséquent, elle accepte les chaînes de format standard pour les valeurs numériques, de date et d’heure et d’énumération, les chaînes de format personnalisé pour les valeurs numériques et de date et d’heure, ainsi que les chaînes de format définies pour des types personnalisés. (Pour plus d’informations sur le formatage, voir [Formatting Types](../../../docs/standard/base-types/formatting-types.md).) Vous pouvez utiliser cette méthode pour personnaliser le format des <xref:System.Text.StringBuilder>variables et ajouter ces valeurs à un . L’exemple suivant utilise la méthode <xref:System.Text.StringBuilder.AppendFormat%2A> pour placer une valeur entière mise en forme en tant que valeur monétaire à la fin d’un objet <xref:System.Text.StringBuilder>.  
+ La méthode <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> ajoute du texte à la fin de l’objet <xref:System.Text.StringBuilder>. Elle prend en charge la fonctionnalité de mise en forme composite (pour plus d’informations, consultez [Mise en forme composite](composite-formatting.md)) en appelant l’implémentation <xref:System.IFormattable> des objets à mettre en forme. Par conséquent, elle accepte les chaînes de format standard pour les valeurs numériques, de date et d’heure et d’énumération, les chaînes de format personnalisé pour les valeurs numériques et de date et d’heure, ainsi que les chaînes de format définies pour des types personnalisés. (Pour plus d’informations sur la mise en forme, consultez [mise en forme des types](formatting-types.md).) Vous pouvez utiliser cette méthode pour personnaliser le format des variables et ajouter ces valeurs à un <xref:System.Text.StringBuilder> . L’exemple suivant utilise la méthode <xref:System.Text.StringBuilder.AppendFormat%2A> pour placer une valeur entière mise en forme en tant que valeur monétaire à la fin d’un objet <xref:System.Text.StringBuilder>.  
   
  [!code-cpp[Conceptual.StringBuilder#5](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.StringBuilder/cpp/example.cpp#5)]
  [!code-csharp[Conceptual.StringBuilder#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#5)]
@@ -112,5 +112,5 @@ L’objet <xref:System.String> est immuable. Chaque fois que vous utilisez l’u
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Text.StringBuilder?displayProperty=nameWithType>
-- [Opérations de base des cordes](../../../docs/standard/base-types/basic-string-operations.md)
-- [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
+- [Opérations de chaînes de base](basic-string-operations.md)
+- [Mise en forme des types](formatting-types.md)

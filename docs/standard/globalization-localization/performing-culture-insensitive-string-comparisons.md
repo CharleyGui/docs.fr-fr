@@ -13,12 +13,12 @@ helpviewer_keywords:
 - culture-insensitive string operations, comparisons
 - culture parameter
 ms.assetid: abae50ef-32f7-4a50-a540-fd256fd1aed0
-ms.openlocfilehash: 85ba91b63ab0edbccc768e2d1ad4aaef31fd2f21
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 91996bc721db55b24521be97e4d9accd53ef7924
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73120832"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288613"
 ---
 # <a name="performing-culture-insensitive-string-comparisons"></a>Exécution de comparaisons de chaînes indépendantes de la culture
 Par défaut, la méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> effectue des comparaisons dépendantes de la culture et qui respectent la casse. Cette méthode inclut également plusieurs surcharges qui fournissent un paramètre `culture` qui vous permet de spécifier la culture à utiliser et un paramètre `comparisonType` qui vous sert à spécifier les règles de comparaison à utiliser. L'appel de ces méthodes au lieu de la surcharge par défaut supprime toute ambiguïté à propos des règles utilisées dans un appel de méthode particulier et indique si une comparaison donnée est dépendante ou indépendante de la culture.  
@@ -43,5 +43,5 @@ Vous pouvez télécharger les [Sorting Weight Tables](https://www.microsoft.com/
 
 - <xref:System.String.Compare%2A?displayProperty=nameWithType>
 - <xref:System.String.CompareTo%2A?displayProperty=nameWithType>
-- [Exécution d’opérations de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
-- [Bonnes pratiques pour l’utilisation de chaînes](../../../docs/standard/base-types/best-practices-strings.md)
+- [Exécution d’opérations de chaînes indépendantes de la culture](performing-culture-insensitive-string-operations.md)
+- [Meilleures pratiques pour l’utilisation de chaînes](../base-types/best-practices-strings.md)

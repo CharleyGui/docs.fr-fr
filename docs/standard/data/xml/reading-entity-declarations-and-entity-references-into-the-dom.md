@@ -3,12 +3,12 @@ title: Lecture de déclarations d'entité et de références d'entité vers le D
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 86dba977-5cc4-4567-964f-027ffabc47b2
-ms.openlocfilehash: fa650e75d7661eeafea74146f5cbb61878978575
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 41d88de9ee988a29c54c6e2c6c437963b9f79cf8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710399"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289874"
 ---
 # <a name="reading-entity-declarations-and-entity-references-into-the-dom"></a>Lecture de déclarations d'entité et de références d'entité vers le DOM
 Une entité est une déclaration établissant qu'un certain nom doit être utilisé dans les données XML en lieu et place d'un contenu ou d'un balisage donné. Une entité présente deux aspects. D'une part, vous devez associer un nom au contenu de remplacement, au moyen d'une déclaration d'entité. Une déclaration d'entité est créée au moyen de la syntaxe `<!ENTITY name "value">` dans une DTD ou un schéma XML. D'autre part, le nom défini dans la déclaration d'entité est utilisé par la suite dans les données XML. Ce nom, une fois employé dans le code XML, est appelé référence d'entité. Par exemple, la déclaration d'entité suivante déclare une entité portant le nom `publisher` associé au contenu de « Microsoft Press ».  
@@ -42,16 +42,16 @@ Une entité est une déclaration établissant qu'un certain nom doit être utili
   
  Il existe diverses sortes d'entités. Le diagramme suivant montre la répartition des types d'entité et leur terminologie.  
   
- ![organigramme de la hiérarchie des types d'entités](../../../../docs/standard/data/xml/media/entity-hierarchy.gif "Entity_hierarchy")  
+ ![organigramme de la hiérarchie des types d'entités](media/entity-hierarchy.gif "Entity_hierarchy")  
   
  Par défaut, l’implémentation par Microsoft .NET Framework de DOM (Document Object Model) XML préserve les références d’entités et ne développe pas les entités lors du chargement du XML. Cela a pour effet de créer, lorsqu'un document est chargé dans le DOM, un nœud **XmlEntityReference** contenant la variable de référence `&publisher;`, avec des nœuds enfants représentant le contenu de l'entité déclarée dans la DTD.  
   
  En se basant sur la déclaration d'entité `<!ENTITY publisher "Microsoft Press">`, le diagramme suivant montre les nœuds **XmlEntity** et **XmlText** créés à partir de cette déclaration.  
   
- ![nœuds créés à partir de la déclaration d'entité](../../../../docs/standard/data/xml/media/xml-entitydeclaration-node2.png "xml_entitydeclaration_node2")  
+ ![nœuds créés à partir de la déclaration d'entité](media/xml-entitydeclaration-node2.png "xml_entitydeclaration_node2")  
   
- Les différences qu'il existe entre les références d'entité développées et non développées concernent les nœuds qui sont générés dans l'arborescence DOM en mémoire. La différence dans les nœuds générés est expliquée dans les rubriques [Conservation des références d’entité](../../../../docs/standard/data/xml/entity-references-are-preserved.md) et [Développement sans conservation des références d’entité](../../../../docs/standard/data/xml/entity-references-are-expanded-and-not-preserved.md).  
+ Les différences qu'il existe entre les références d'entité développées et non développées concernent les nœuds qui sont générés dans l'arborescence DOM en mémoire. La différence dans les nœuds générés est expliquée dans les rubriques [Conservation des références d’entité](entity-references-are-preserved.md) et [Développement sans conservation des références d’entité](entity-references-are-expanded-and-not-preserved.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [DOM (Document Object Model) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [DOM (Document Object Model) XML](xml-document-object-model-dom.md)

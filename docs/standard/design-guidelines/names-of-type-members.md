@@ -12,12 +12,12 @@ helpviewer_keywords:
 - names [.NET Framework], type members
 - members [.NET Framework], type
 ms.assetid: af5a0903-36af-4c2a-b848-cf959affeaa5
-ms.openlocfilehash: 81c837bd045992043208a59f6ee16803c1d6eb3c
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 87cf793229cfc7d8d0547af935369a3febee41a3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744184"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290186"
 ---
 # <a name="names-of-type-members"></a>Noms de membres de type
 Les types se composent de membres, de méthodes, de propriétés, d’événements, de constructeurs et de champs. Les sections suivantes décrivent les règles de nommage des membres de type.
@@ -40,7 +40,7 @@ public class String {
 
  ✔️ Nommez les propriétés à l’aide d’un nom, d’une expression nominale ou d’un adjectif.
 
- ❌ n’avez pas de propriétés qui correspondent au nom des méthodes « obtenir » comme dans l’exemple suivant :
+ ❌N’avez pas de propriétés qui correspondent au nom des méthodes « obtenir » comme dans l’exemple suivant :
 
  `public string TextWriter { get {...} set {...} }` `public string GetTextWriter(int value) { ... }`
 
@@ -48,7 +48,7 @@ public class String {
 
  ✔️ Nommez les propriétés de collection avec une expression pluriel décrivant les éléments de la collection au lieu d’utiliser une expression singulière suivie de « List » ou « collection ».
 
- ✔️ Nommez les propriétés booléennes avec une expression affirmative (`CanSeek` au lieu de `CantSeek`). Si vous le souhaitez, vous pouvez également préfixer les propriétés booléennes avec « is », « CAN » ou « has », mais uniquement à l’endroit où elle ajoute value.
+ ✔️ Nommez les propriétés booléennes avec une expression affirmative ( `CanSeek` au lieu de `CantSeek` ). Si vous le souhaitez, vous pouvez également préfixer les propriétés booléennes avec « is », « CAN » ou « has », mais uniquement à l’endroit où elle ajoute value.
 
  ✔️ envisagez de donner à une propriété le même nom que son type.
 
@@ -72,26 +72,26 @@ public class Control {
 
  Par exemple, un événement de fermeture déclenché avant la fermeture d’une fenêtre serait nommé `Closing`, tandis qu’un événement déclenché après la fermeture de la fenêtre serait nommé `Closed`.
 
- ❌ n’utilisez pas les préfixes ou les suffixes « Before » ou « after » pour indiquer les pré-et post-événements. Utilisez les temps du présent et du passé, comme nous venons de le décrire.
+ ❌N’utilisez pas les préfixes ou les suffixes « Before » ou « after » pour indiquer les pré-et post-événements. Utilisez les temps du présent et du passé, comme nous venons de le décrire.
 
  ✔️ Nommez les gestionnaires d’événements (délégués utilisés comme types d’événements) avec le suffixe « EventHandler », comme indiqué dans l’exemple suivant :
 
  `public delegate void ClickedEventHandler(object sender, ClickedEventArgs e);`
 
- ✔️ Utilisez deux paramètres nommés `sender` et `e` dans les gestionnaires d’événements.
+ ✔️ Utilisez deux paramètres nommés `sender` et `e` dans des gestionnaires d’événements.
 
  Le paramètre d’expéditeur représente l’objet qui a déclenché l’événement. Le paramètre d’expéditeur est généralement de type `object`, même s’il est possible d’employer un type plus spécifique.
 
  ✔️ Nommez les classes d’argument d’événement avec le suffixe « EventArgs ».
 
 ## <a name="names-of-fields"></a>Noms des champs
- Les règles de nommage des champs s’appliquent à des champs publics et protégés statiques. Les champs internes et privés ne sont pas couverts par les règles, tandis que les champs d’instance publics ou protégés ne sont pas autorisés par les [règles de conception de membres](../../../docs/standard/design-guidelines/member.md).
+ Les règles de nommage des champs s’appliquent à des champs publics et protégés statiques. Les champs internes et privés ne sont pas couverts par les règles, tandis que les champs d’instance publics ou protégés ne sont pas autorisés par les [règles de conception de membres](member.md).
 
  ✔️ Utilisez PascalCasing dans les noms de champs.
 
  ✔️ Nommez les champs à l’aide d’un nom, d’une expression nominale ou d’un adjectif.
 
- ❌ n’utilisez pas de préfixe pour les noms de champs.
+ ❌N’utilisez pas de préfixe pour les noms de champs.
 
  Par exemple, n’utilisez pas « g_ » ou « s_ » pour indiquer des champs statiques.
 
@@ -101,5 +101,5 @@ public class Control {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
-- [Directives de nommage](../../../docs/standard/design-guidelines/naming-guidelines.md)
+- [Directives de conception d’infrastructure](index.md)
+- [Instructions d’affectation de noms](naming-guidelines.md)

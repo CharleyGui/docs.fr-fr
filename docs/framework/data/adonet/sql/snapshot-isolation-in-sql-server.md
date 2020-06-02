@@ -1,22 +1,23 @@
 ---
 title: Isolation d'instantanés dans SQL Server
+description: Lisez une vue d’ensemble de l’isolation d’instantané et du contrôle de version de ligne dans SQL Server, et apprenez à gérer l’accès concurrentiel avec les niveaux d’isolation.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 43ae5dd3-50f5-43a8-8d01-e37a61664176
-ms.openlocfilehash: 8313ffc8eef70c1e5efc24b09a160edb7cec1595
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7fa769448dd922925a5eccf4c85bd1840155df68
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174262"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286244"
 ---
 # <a name="snapshot-isolation-in-sql-server"></a>Isolation d'instantanés dans SQL Server
 L’isolation d’instantané améliore l’accès concurrentiel pour les applications OLTP.  
   
 ## <a name="understanding-snapshot-isolation-and-row-versioning"></a>Présentation de l'isolation d'instantané et gestion des versions de ligne  
- Une fois l’isolement instantané activé, les versions de ligne mises à jour pour chaque transaction doivent être maintenues.  Avant SQL Server 2019, ces versions étaient stockées dans **tempdb**. SQL Server 2019 présente une nouvelle fonctionnalité, Accelerated Database Recovery (ADR) qui nécessite son propre ensemble de versions de ligne.  Ainsi, à partir de SQL Server 2019, si ADR n’est pas activé, les versions de ligne sont maintenues dans **le tempdb** comme toujours.  Si L’ADR est activée, toutes les versions de ligne, toutes deux liées à l’isolement instantané et à l’ADR, sont conservées dans le magasin de versions persistantes (PVS) d’ADR, qui se trouve dans la base de données utilisateur d’un groupe de fichiers que l’utilisateur spécifie. Un numéro de séquence de transaction unique identifie chaque transaction, et ces numéros uniques sont enregistrés pour chaque version de ligne. La transaction fonctionne avec les versions de ligne les plus récentes ayant un numéro de séquence antérieur au numéro de séquence de la transaction. Les versions de ligne plus récentes créées après le début de la transaction sont ignorées par la transaction.  
+ Une fois l’isolation d’instantané activée, les versions de ligne mises à jour pour chaque transaction doivent être conservées.  Avant SQL Server 2019, ces versions étaient stockées dans **tempdb**. SQL Server 2019 introduit une nouvelle fonctionnalité, la récupération de base de données accélérée (ADR) qui requiert son propre ensemble de versions de ligne.  Ainsi, à partir de SQL Server 2019, si la règle ADR n’est pas activée, les versions de ligne sont conservées dans **tempdb** comme toujours.  Si la valeur de la règle ADR est activée, toutes les versions de ligne associées à l’isolement d’instantané et à la règle ADR sont conservées dans la Banque des versions persistante (PVS) de la ADR, qui se trouve dans la base de données utilisateur dans un groupe de fichiers que l’utilisateur spécifie. Un numéro de séquence de transaction unique identifie chaque transaction, et ces numéros uniques sont enregistrés pour chaque version de ligne. La transaction fonctionne avec les versions de ligne les plus récentes ayant un numéro de séquence antérieur au numéro de séquence de la transaction. Les versions de ligne plus récentes créées après le début de la transaction sont ignorées par la transaction.  
   
  Le terme « instantané » reflète le fait que toutes les requêtes de la transaction voient la même version, ou instantané, de la base de données, en fonction de l’état de la base de données au moment où la transaction commence. Aucun verrou n’est acquis sur les lignes de données ou les pages de données sous-jacentes dans une transaction d’instantané, ce qui permet à d’autres transactions de s’exécuter sans être bloquées par une transaction inachevée antérieure. Les transactions qui modifient des données ne bloquent pas les transactions qui lisent des données, et les transactions qui lisent des données ne bloquent pas les transactions qui écrivent des données, comme elles le feraient normalement avec le niveau d’isolation READ COMMITTED par défaut dans SQL Server. Ce comportement non bloquant réduit également sensiblement la probabilité de blocages pour les transactions complexes.  
   
@@ -88,7 +89,7 @@ SqlTransaction sqlTran =
   connection.BeginTransaction(IsolationLevel.Snapshot);  
 ```  
   
-### <a name="example"></a> Exemple  
+### <a name="example"></a>Exemple  
  L’exemple suivant montre comment les différents niveaux d’isolation se comportent en tentant d’accéder aux données verrouillées et n’est pas destiné à être utilisé dans du code de production.  
   
  Le code se connecte à l’exemple de base de données **AdventureWorks** dans SQL Server, crée une table nommée **TestSnapshot** et insère une ligne de données. Le code utilise l’instruction Transact-SQL ALTER DATABASE pour activer l’isolation d’instantané pour la base de données, mais il ne définit pas l’option READ_COMMITTED_SNAPSHOT, ce qui laisse le comportement de niveau d’isolation READ COMMITTED par défaut en vigueur. Le code effectue ensuite les actions suivantes :  
@@ -97,7 +98,7 @@ SqlTransaction sqlTran =
   
 - Il ouvre une seconde connexion et lance une seconde transaction en utilisant le niveau d’isolation SNAPSHOT pour lire les données dans la table **TestSnapshot**. Étant donné que l’isolation d’instantané est activée, cette transaction peut lire les données qui existaient avant le démarrage de sqlTransaction1.  
   
-- Il ouvre une troisième connexion et initie une transaction en utilisant le niveau d’isolation READ COMMITTED pour tenter de lire les données de la table. Dans ce cas, le code ne peut pas lire les données parce qu’il ne peut pas lire au-delà des verrous placés sur la table dans la première transaction et les temps. Le même résultat se produirait si les niveaux d’isolement REPEATABLE READ et SERIALIZABLE étaient utilisés parce que ces niveaux d’isolement ne peuvent pas non plus lire au-delà des verrous placés dans la première transaction.  
+- Il ouvre une troisième connexion et initie une transaction en utilisant le niveau d’isolation READ COMMITTED pour tenter de lire les données de la table. Dans ce cas, le code ne peut pas lire les données, car il ne peut pas lire au-delà des verrous placés sur la table dans la première transaction et expire. Le même résultat se produit si les niveaux d’isolation REPEATable READ et Serializable ont été utilisés parce que ces niveaux d’isolation ne peuvent pas non plus lire au-delà des verrous placés dans la première transaction.  
   
 - Il ouvre une quatrième connexion et initie une transaction en utilisant le niveau d’isolation READ UNCOMMITTED, qui effectue une lecture erronée de la valeur non validée dans sqlTransaction1. Cette valeur peut ne jamais exister dans la base de données si la première transaction n’est pas validée.  
   
@@ -109,7 +110,7 @@ SqlTransaction sqlTran =
  [!code-csharp[DataWorks SnapshotIsolation.Demo#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SnapshotIsolation.Demo/CS/source.cs#1)]
  [!code-vb[DataWorks SnapshotIsolation.Demo#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SnapshotIsolation.Demo/VB/source.vb#1)]  
   
-### <a name="example"></a> Exemple  
+### <a name="example"></a>Exemple  
  L’exemple suivant illustre le comportement de l’isolation d’instantané quand des données sont modifiées. Le code effectue les actions suivantes :  
   
 - Il établit une connexion avec l’exemple de base de données **AdventureWorks** et active l’isolation SNAPSHOT.  

@@ -20,16 +20,16 @@ helpviewer_keywords:
 - digital signatures, verifying
 - signing XML
 ms.assetid: aa87cb7f-e608-4a81-948b-c9b8a1225783
-ms.openlocfilehash: 1de6b3f2eb30df270339910e7b8287101bde65ca
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 9e69578ceffeeacb73cf059f5b577fe7c137b599
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706251"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288392"
 ---
 # <a name="cryptographic-signatures"></a>Signatures de chiffrement
 
-Les signatures numériques de chiffrement utilisent des algorithmes de clé publique pour assurer l'intégrité des données. Quand vous signez des données avec une signature numérique, un tiers peut vérifier la signature et prouver que les données viennent bien de vous et qu'elles n'ont pas été modifiées après que vous les avez signées. Pour plus d’informations sur les signatures numériques, consultez [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md).
+Les signatures numériques de chiffrement utilisent des algorithmes de clé publique pour assurer l'intégrité des données. Quand vous signez des données avec une signature numérique, un tiers peut vérifier la signature et prouver que les données viennent bien de vous et qu'elles n'ont pas été modifiées après que vous les avez signées. Pour plus d’informations sur les signatures numériques, consultez [Cryptographic Services](cryptographic-services.md).
 
 Cette rubrique explique comment générer et vérifier des signatures numériques en utilisant les classes de l'espace de noms <xref:System.Security.Cryptography?displayProperty=nameWithType> .
 
@@ -116,7 +116,7 @@ Pour vérifier que les données ont été signées par un tiers donné, vous dev
 
 - l'algorithme de hachage utilisé par le signataire.
 
-Pour vérifier une signature signée par la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> , utilisez la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> . La clé publique du signataire doit être fournie à la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> . Vous aurez besoin des valeurs du modulo et de l'exposant pour spécifier la clé publique. (Le tiers qui a généré la paire de clés publique/privée doit fournir ces valeurs.) Commencez par créer un objet <xref:System.Security.Cryptography.RSACryptoServiceProvider> pour contenir la clé publique qui vérifiera la signature, puis initialisez une structure <xref:System.Security.Cryptography.RSAParameters> pour le modulo et les valeurs d’exposant qui spécifient la clé publique.
+Pour vérifier une signature signée par la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> , utilisez la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> . La clé publique du signataire doit être fournie à la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> . Vous aurez besoin des valeurs du modulo et de l'exposant pour spécifier la clé publique. (Le tiers qui a généré la paire de clés publique/privée doit fournir ces valeurs.) Commencez par créer un <xref:System.Security.Cryptography.RSACryptoServiceProvider> objet pour contenir la clé publique qui vérifiera la signature, puis initialisez une <xref:System.Security.Cryptography.RSAParameters> structure avec les valeurs de l’exposant et du modulo qui spécifient la clé publique.
 
 Le code suivant illustre la création d’une structure <xref:System.Security.Cryptography.RSAParameters> . La propriété `Modulus` est définie avec la valeur d'un tableau d'octets nommé `modulusData` , tandis que la propriété `Exponent` est définie avec la valeur d'un tableau d'octets nommé `exponentData`.
 
@@ -134,7 +134,7 @@ rsaKeyInfo.Exponent = exponentData;
 
 Après avoir créé l’objet <xref:System.Security.Cryptography.RSAParameters> , vous pouvez initialiser une nouvelle instance de la classe <xref:System.Security.Cryptography.RSACryptoServiceProvider> avec les valeurs spécifiées dans <xref:System.Security.Cryptography.RSAParameters>. À son tour, la classe <xref:System.Security.Cryptography.RSACryptoServiceProvider> est transmise au constructeur d'un <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> pour transférer la clé.
 
-L'exemple suivant illustre ce processus. Dans cet exemple, `hashValue` et `signedHashValue` sont les tableaux d'octets fournis par un tiers distant. Le tiers distant a signé `hashValue` à l'aide de l'algorithme SHA1, générant ainsi la signature numérique `signedHashValue`. La méthode <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.VerifySignature%2A?displayProperty=nameWithType> vérifie que la signature numérique est valide et qu’elle a été utilisée pour signer le `hashValue`.
+L'exemple suivant illustre ce processus. Dans cet exemple, `hashValue` et `signedHashValue` sont les tableaux d'octets fournis par un tiers distant. Le tiers distant a signé `hashValue` à l'aide de l'algorithme SHA1, générant ainsi la signature numérique `signedHashValue`. La <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.VerifySignature%2A?displayProperty=nameWithType> méthode vérifie que la signature numérique est valide et qu’elle a été utilisée pour signer `hashValue` .
 
 ```vb
 Dim rsa As New RSACryptoServiceProvider()
@@ -167,4 +167,4 @@ Ce fragment de code affiche «`The signature is valid`» si la signature est val
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)
+- [Services de chiffrement](cryptographic-services.md)

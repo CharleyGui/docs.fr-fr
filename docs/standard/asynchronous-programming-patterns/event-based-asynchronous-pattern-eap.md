@@ -7,12 +7,12 @@ helpviewer_keywords:
 - asynchronous programming, design patterns
 - asynchronous programming
 ms.assetid: c6baed9f-2a25-4728-9a9a-53b7b14840cf
-ms.openlocfilehash: ee8c90d63478e444b7d25cb7cbb5c969963d7c63
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 604e7a944579a284004817009b06c11b268d5daf
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73130939"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289432"
 ---
 # <a name="event-based-asynchronous-pattern-eap"></a>Modèle asynchrone basé sur les événements (EAP)
 
@@ -44,7 +44,7 @@ Il existe plusieurs façons d’exposer des fonctionnalités asynchrones à du c
  [Comment : utiliser des composants qui prennent en charge le modèle asynchrone basé sur des événements](how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)  
  Explique comment créer un composant qui prend en charge le modèle asynchrone basé sur les événements.  
   
-## <a name="reference"></a>Informations de référence
+## <a name="reference"></a>Référence
 
  <xref:System.ComponentModel.AsyncOperation>  
  Décrit la classe <xref:System.ComponentModel.AsyncOperation> et propose des liens vers tous ses membres.  
@@ -60,11 +60,11 @@ Il existe plusieurs façons d’exposer des fonctionnalités asynchrones à du c
  [Bibliothèque parallèle de tâches](../parallel-programming/task-parallel-library-tpl.md)  
  Décrit un modèle de programmation pour les opérations asynchrones et parallèles.  
   
- [Thread](../../../docs/standard/threading/index.md)  
+ [Thread](../threading/index.md)  
  Décrit les fonctionnalités de multithreading dans .NET.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Gestion des meilleures pratiques de threading](../threading/managed-threading-best-practices.md)
+- [Meilleures pratiques pour le threading managé](../threading/managed-threading-best-practices.md)
 - [Événements](../events/index.md)
 - [Modèles de conception de la programmation asynchrone](index.md)

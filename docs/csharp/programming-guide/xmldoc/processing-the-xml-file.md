@@ -1,46 +1,48 @@
 ---
-title: Traitement du fichier XML - Guide de programmation C
+title: Traitement du fichier XML-Guide de programmation C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-ms.openlocfilehash: bc72cade9ce6edddb88d741a3424405bba0a7ad8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1e3d96f9398f2c08ed715111f01987e2d1948439
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76793389"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287257"
 ---
-# <a name="processing-the-xml-file-c-programming-guide"></a>Traitement du fichier XML (guide de programmation C)
+# <a name="process-the-xml-file-c-programming-guide"></a>Traiter le fichier XML (Guide de programmation C#)
 
-Le compilateur génère une chaîne d’ID pour chaque construction de votre code qui est marquée pour générer la documentation. (Pour plus d’informations sur la façon d’étiqueter votre code, voir [les balises recommandées pour les commentaires de documentation](./recommended-tags-for-documentation-comments.md).) La chaîne ID identifie de façon unique la construction. Les programmes qui traitent le fichier XML peuvent utiliser la chaîne d’identification pour identifier l’élément de métadonnées/réflexion .NET Framework correspondant auquel s’applique la documentation.
+Le compilateur génère une chaîne d’ID pour chaque construction de votre code balisée pour générer la documentation. (Pour plus d’informations sur la façon de baliser votre code, consultez [Balises recommandées pour les commentaires de documentation](./recommended-tags-for-documentation-comments.md).) La chaîne d’ID identifie de façon unique la construction. Les programmes qui traitent le fichier XML peuvent utiliser la chaîne d’ID pour identifier les métadonnées .NET ou l’élément de réflexion correspondants auxquels la documentation s’applique.
 
-Le fichier XML n’est pas une représentation hiérarchique de votre code. Il s’agit d’une liste plate avec un ID généré pour chaque élément.
+## <a name="id-strings"></a>Chaînes d’ID
+
+Le fichier XML n’est pas une représentation hiérarchique de votre code. Il s’agit d’une liste plate qui a un ID généré pour chaque élément.
 
 Le compilateur respecte les règles suivantes quand il génère les chaînes d’ID :
 
 - La chaîne ne contient aucun espace blanc.
 
-- La première partie de la chaîne d’ID identifie le genre de membre identifié, au moyen d’un caractère unique suivi de deux-points. Les types de membres suivants sont utilisés :
+- La première partie de la chaîne identifie le type de membre à l’aide d’un caractère unique suivi d’un signe deux-points. Les types de membres suivants sont utilisés :
 
-    |Caractère|Description|
-    |---------------|-----------------|
-    |N|espace de noms<br /><br /> Vous ne pouvez pas ajouter de commentaires de documentation à un espace de noms, mais vous pouvez faire des références cref à des commentaires, si cela est pris en charge.|
-    |T|type : classe, interface, struct, enum ou délégué|
+    |Caractère|Type de membre|Notes|
+    |---------------|-----------------|-|
+    |N|namespace|Vous ne pouvez pas ajouter de commentaires de documentation à un espace de noms, mais vous pouvez faire des références cref à des commentaires, si cela est pris en charge.|
+    |T|type|Un type peut être une classe, une interface, un struct, une énumération ou un délégué.|
     |F|field|
-    |P|propriété (notamment des indexeurs ou autres propriétés indexées)|
-    |M|méthode (notamment des méthodes spéciales telles que des constructeurs, des opérateurs, etc.)|
-    |E|événement|
-    |!|chaîne d’erreur<br /><br /> Le reste de la chaîne fournit des informations sur l’erreur. Le compilateur C# génère des informations d’erreur pour les liens qui ne peuvent pas être résolus.|
+    |P|propriété|Comprend des indexeurs ou d’autres propriétés indexées.|
+    |M|method|Comprend des méthodes spéciales, telles que des constructeurs et des opérateurs.|
+    |E|event|
+    |!|chaîne d’erreur|Le reste de la chaîne fournit des informations sur l’erreur. Le compilateur C# génère des informations d’erreur pour les liens qui ne peuvent pas être résolus.|
 
-- La deuxième partie de la chaîne est le nom qualifié complet de l’élément, en commençant à la racine de l’espace de noms. Le nom de l’élément, ses types englobants et l’espace de noms sont séparés par des points. Si le nom de l’élément lui-même comporte des points, ceux-ci sont remplacés par un signe dièse (« # »). Il est supposé qu’aucun élément n’a un signe dièse directement dans son nom. Par exemple, le nom qualifié complet du constructeur String serait « System.String.#ctor ».
+- La deuxième partie de la chaîne est le nom qualifié complet de l’élément, en commençant à la racine de l’espace de noms. Le nom de l’élément, ses types englobants et l’espace de noms sont séparés par des points. Si le nom de l’élément lui-même comporte des points, ceux-ci sont remplacés par un signe dièse (« # »). Il est supposé qu’aucun élément n’a de signature de hachage directement dans son nom. Par exemple, le nom qualifié complet du constructeur de chaîne est « System. String. #ctor ».
 
-- Pour les propriétés et méthodes, si la méthode a des arguments, la liste d’arguments entre parenthèses suit. S’il n’y a pas d’arguments, aucune parenthèse n’est présente. Les arguments sont séparés par des virgules. L’encodage de chaque argument correspond directement à son encodage dans une signature .NET Framework :
+- Pour les propriétés et les méthodes, la liste de paramètres entre parenthèses suit. S’il n’y a aucun paramètre, aucune parenthèse n’est présente. Les paramètres sont séparés par des virgules. L’encodage de chaque paramètre suit directement la manière dont il est encodé dans une signature .NET :
 
   - Types de base. Les types réguliers (ELEMENT_TYPE_CLASS ou ELEMENT_TYPE_VALUETYPE) sont représentés en tant que nom qualifié complet du type.
 
-  - Les types intrinsèques (par exemple, ELEMENT_TYPE_I4, ELEMENT_TYPE_OBJECT, ELEMENT_TYPE_STRING, ELEMENT_TYPE_TYPEDBYREF et ELEMENT_TYPE_VOID) sont représentés comme le nom entièrement qualifié du type complet correspondant. Par exemple, System.Int32 ou System.TypedReference.
+  - Les types intrinsèques (par exemple, ELEMENT_TYPE_I4, ELEMENT_TYPE_OBJECT, ELEMENT_TYPE_STRING, ELEMENT_TYPE_TYPEDBYREF et ELEMENT_TYPE_VOID) sont représentés en tant que nom qualifié complet du type complet correspondant. Par exemple, System.Int32 ou System.TypedReference.
 
   - ELEMENT_TYPE_PTR est représenté par un « \* » après le type modifié.
 
@@ -56,11 +58,11 @@ Le compilateur respecte les règles suivantes quand il génère les chaînes d�
 
   - ELEMENT_TYPE_GENERICARRAY est représenté par « [?] » après le type d’élément du tableau. Le compilateur C# ne génère jamais ceci.
 
-  - ELEMENT_TYPE_ARRAY est représenté comme *[en*`size`baisse :`size`, plus*bas*: ] où le nombre de virgules est le rang - 1, et les limites inférieures et la taille de chaque dimension, si elles sont connues, sont représentées en décimale. Si la limite inférieure ou la taille n’est pas spécifiée, elle est simplement omise. Si la limite inférieure et la taille d’une dimension particulière sont omises, le « : » est également omis. Par exemple, un tableau à deux dimensions avec 1 comme limite inférieure et une taille non spécifiée est [1:,1:].
+  - ELEMENT_TYPE_ARRAY est représenté sous la*forme [Lower*: `size` , Lower :*lowerbound* `size` ], où le nombre de virgules est le rang-1, et les limites inférieures et la taille de chaque dimension, si elles sont connues, sont représentées au format décimal. Si une limite inférieure ou une taille n’est pas spécifiée, elle est omise. Si la limite inférieure et la taille d’une dimension particulière sont omises, le « : » est également omis. Par exemple, un tableau à deux dimensions avec 1 comme limite inférieure et une taille non spécifiée est [1:,1:].
 
   - ELEMENT_TYPE_FNPTR est représenté en tant que « =FUNC:`type`(*signature*) », où `type` est le type de retour et *signature* correspond aux arguments de la méthode. S’il n’y a pas d’argument, les parenthèses sont omises. Le compilateur C# ne génère jamais ceci.
 
-    Les composants de signature suivants ne sont pas représentés, car ils ne sont jamais utilisés pour différencier les méthodes surchargées :
+  Les composants de signature suivants ne sont pas représentés, car ils ne sont pas utilisés pour différencier les méthodes surchargées :
 
   - convention d’appel
 
@@ -68,22 +70,22 @@ Le compilateur respecte les règles suivantes quand il génère les chaînes d�
 
   - ELEMENT_TYPE_SENTINEL
 
-- Pour les opérateurs de conversion uniquement (op_Implicit et op_Explicit), la valeur de retour de la méthode est encodée en tant que « ~ » suivi du type de retour, conformément à l’encodage ci-dessus.
+- Pour les opérateurs de conversion uniquement ( `op_Implicit` et `op_Explicit` ), la valeur de retour de la méthode est encodée sous la forme d’un « ~ » suivi du type de retour.
 
 - Pour les types génériques, le nom du type est suivi d’un accent grave, puis d’un chiffre qui indique le nombre de paramètres de type générique. Par exemple :
 
      ``<member name="T:SampleClass`2">`` est l’étiquette pour un type qui est défini en tant que `public class SampleClass<T, U>`.
 
-     Pour les méthodes qui prennent des types génériques en tant que paramètres, les paramètres de types génériques sont spécifiés sous forme de chiffres précédés d’accents graves (par exemple \`0,\`1). Chaque chiffre représente une notation de tableau de base zéro pour les paramètres génériques du type.
+     Pour les méthodes qui prennent des types génériques comme paramètres, les paramètres de type générique sont spécifiés sous la forme de nombres précédés d’impulsions (par exemple \` , 0, \` 1). Chaque nombre représente une notation de tableau de base zéro pour les paramètres génériques du type.
 
 ## <a name="examples"></a>Exemples
 
-Les exemples suivants montrent comment les chaînes d’ID pour une classe et ses membres seraient générées :
+Les exemples suivants montrent comment les chaînes d’ID pour une classe et ses membres sont générées :
 
 [!code-csharp[csProgGuidePointers#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuidePointers/CS/Pointers.cs#21)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation CMD](../index.md)
-- [-doc (options de compilateur de C)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [Guide de programmation C#](../index.md)
+- [-doc (options du compilateur C#)](../../language-reference/compiler-options/doc-compiler-option.md)
 - [Commentaires sur la documentation XML](./index.md)

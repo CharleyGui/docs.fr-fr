@@ -1,13 +1,14 @@
 ---
 title: LINQ to Entities
+description: Découvrez comment créer et exécuter des requêtes LINQ to Entities, qui vous permettent d’écrire des requêtes sur le modèle conceptuel Entity Framework à l’aide de Visual Basic ou Visual C#.
 ms.date: 03/30/2017
 ms.assetid: 641f9b68-9046-47a1-abb0-1c8eaeda0e2d
-ms.openlocfilehash: bc568cb9dff170062651c908471a36cd17eac980
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 389a81872f4652c69e2b845359cf4e5a275aed5c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854367"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286842"
 ---
 # <a name="linq-to-entities"></a>LINQ to Entities
 LINQ to Entities assure une prise en charge de la technologie LINQ (Language Integrated Query), ce qui permet aux développeurs d'écrire des requêtes par rapport au modèle conceptuel Entity Framework à l'aide du langage Visual Basic ou Visual C#. Les requêtes exécutées avec Entity Framework sont représentées par des requêtes d'arborescence de commandes, lesquelles s'exécutent par rapport au contexte de l'objet. LINQ to Entities convertit les requêtes LINQ (Language-Integrated Query) en requêtes d'arborescence de commandes, exécute les requêtes avec Entity Framework, puis retourne les objets qui peuvent être utilisés aussi bien par Entity Framework que par LINQ. Voici le processus de création et d'exécution d'une requête LINQ to Entities :  
@@ -35,7 +36,7 @@ LINQ to Entities assure une prise en charge de la technologie LINQ (Language Int
 ## <a name="query-conversion"></a>Conversion de requête  
  Pour exécuter une requête LINQ to Entities avec Entity Framework, cette requête doit être convertie en représentation arborescente des commandes qui peut être exécutée avec Entity Framework.  
   
- Les requêtes LINQ to Entities sont constituées d’opérateurs de requête standard LINQ ( <xref:System.Linq.Queryable.Select%2A>tels <xref:System.Linq.Queryable.Where%2A>que, <xref:System.Linq.Queryable.GroupBy%2A>, et) et d’expressions (x > 10, contact. LastName, etc.). Les opérateurs LINQ ne sont pas définis par une classe ; ce sont des méthodes sur une classe. Dans LINQ, les expressions peuvent contenir tout ce que les types de l’espace de noms <xref:System.Linq.Expressions> autorisent et, par extension, tout ce qui peut être représenté dans une fonction lambda. Il s’agit d’un sur-ensemble des expressions qui sont autorisées par Entity Framework, lesquelles sont, par définition, limitées aux opérations autorisées sur la base de données et prises en charge par l’objet <xref:System.Data.Objects.ObjectQuery%601>.  
+ Les requêtes LINQ to Entities sont constituées d’opérateurs de requête standard LINQ (tels que <xref:System.Linq.Queryable.Select%2A> , <xref:System.Linq.Queryable.Where%2A> , et <xref:System.Linq.Queryable.GroupBy%2A> ) et d’expressions (x > 10, contact. LastName, etc.). Les opérateurs LINQ ne sont pas définis par une classe ; ce sont des méthodes sur une classe. Dans LINQ, les expressions peuvent contenir tout ce que les types de l’espace de noms <xref:System.Linq.Expressions> autorisent et, par extension, tout ce qui peut être représenté dans une fonction lambda. Il s’agit d’un sur-ensemble des expressions qui sont autorisées par Entity Framework, lesquelles sont, par définition, limitées aux opérations autorisées sur la base de données et prises en charge par l’objet <xref:System.Data.Objects.ObjectQuery%601>.  
   
  Dans Entity Framework, les opérateurs et les expressions sont représentés par une seule hiérarchie des types, qui sont ensuite placés dans une arborescence de commandes. L'arborescence de commandes est utilisée par Entity Framework pour exécuter la requête. Si la requête LINQ ne peut pas être exprimée sous la forme d’une arborescence de commandes, une exception est levée au moment de la conversion de la requête. La conversion de requêtes LINQ to Entities implique deux sous-conversions : la conversion des opérateurs de requête standard et la conversion des expressions.  
   
@@ -49,7 +50,7 @@ LINQ to Entities assure une prise en charge de la technologie LINQ (Language Int
   
  Pour plus d’informations sur l’appel des fonctions canoniques, de base de données et personnalisées à partir de LINQ to Entities des requêtes, consultez [appel de fonctions dans des requêtes LINQ to Entities](calling-functions-in-linq-to-entities-queries.md).  
   
-## <a name="query-execution"></a>Exécution de la requête  
+## <a name="query-execution"></a>Exécution des requêtes  
  Une fois la requête LINQ créée par l’utilisateur, elle est convertie en une représentation compatible avec Entity Framework (sous la forme d’arborescences de commandes), qui est ensuite exécutée sur la source de données. Au moment de l'exécution de la requête, l'ensemble des expressions de requête (ou des composants de la requête) sont évalués sur le client ou sur le serveur. Cela comprend les expressions qui sont utilisées dans la matérialisation des résultats ou les projections d'entités. Pour plus d’informations, consultez exécution de la [requête](query-execution.md). Pour plus d’informations sur l’amélioration des performances en compilant une requête, puis en l’exécutant plusieurs fois avec des paramètres différents, consultez [requêtes compilées (LINQ to Entities)](compiled-queries-linq-to-entities.md).  
   
 ## <a name="materialization"></a>Matérialisation  
@@ -76,13 +77,13 @@ LINQ to Entities assure une prise en charge de la technologie LINQ (Language Int
   
  [Requêtes compilées (LINQ to Entities)](compiled-queries-linq-to-entities.md)  
   
- [Exécution de la requête](query-execution.md)  
+ [Exécution des requêtes](query-execution.md)  
   
- [Résultats de requête](query-results.md)  
+ [Résultats de la requête](query-results.md)  
   
  [Opérateurs de requête standard dans les requêtes LINQ to Entities](standard-query-operators-in-linq-to-entities-queries.md)  
   
- [Mappage de la méthode CLR aux fonctions canoniques](clr-method-to-canonical-function-mapping.md)  
+ [Mappage de la méthode CLR aux fonctions de chaînes canoniques](clr-method-to-canonical-function-mapping.md)  
   
  [Méthodes LINQ prises en charge et non prises en charge (LINQ to Entities)](supported-and-unsupported-linq-methods-linq-to-entities.md)  
   

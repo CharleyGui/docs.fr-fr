@@ -1,24 +1,25 @@
 ---
 title: ADO.NET
+description: Découvrez les ADO.NET, les classes qui exposent les services d’accès aux données pour les programmeurs .NET Framework pour créer des applications distribuées de partage de données.
 titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: 5b96ed06-9759-4966-a797-a1d5f6ee50ca
-ms.openlocfilehash: cca3075a73a7bb45fd6154f760adfcda9064345c
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 4f9b2ca42a2c25c1463b7d1ca38b4b8920b2dafd
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094395"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286726"
 ---
 # <a name="adonet"></a>ADO.NET
 
 ADO.NET est un ensemble de classes qui exposent les services d'accès aux données pour les programmeurs .NET Framework. ADO.NET propose un large ensemble de composants pour la création d'applications distribuées avec partage de données. Partie intégrante du .NET Framework, il permet d'accéder à des données relationnelles, XML et d'application. ADO.NET répond à divers besoins en matière de développement, en permettant notamment de créer des clients de bases de données frontaux et des objets métier de couche intermédiaire utilisés par des applications, outils, langages ou navigateurs Internet.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Nouveautés d’ADO.NET](whats-new.md)  
+ [Nouveautés dans ADO.NET](whats-new.md)  
  Introduit des fonctionnalités nouvelles dans ADO.NET.  
   
- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)  
+ [Vue d'ensemble d’ADO.NET](ado-net-overview.md)  
  Propose une introduction à la conception et aux composants de la technologie ADO.NET.  
   
  [Entity Framework](/ef/ef6/index)  
@@ -37,7 +38,7 @@ ADO.NET est un ensemble de classes qui exposent les services d'accès aux donné
  Fournit des informations sur LINQ to DataSet, y compris des exemples de programmation.  
   
  [Extraction et modification de données dans ADO.NET](retrieving-and-modifying-data.md)  
- Décrit comment se connecter à une source de données et comment récupérer et modifier des données à l’aide de `Commands`, `DataReaders`et `DataAdapters`.  
+ Décrit comment se connecter à une source de données et comment récupérer et modifier des données à l’aide de `Commands` , de `DataReaders` et de `DataAdapters` .  
   
  [SQL Server et ADO.NET](./sql/index.md)  
  Décrit comment utiliser des fonctions et fonctionnalités spécifiques à SQL Server.  
@@ -47,7 +48,7 @@ ADO.NET est un ensemble de classes qui exposent les services d'accès aux donné
   
 ## <a name="related-sections"></a>Sections connexes  
  [LINQ (Language-Integrated Query) - C#](../../../csharp/programming-guide/concepts/linq/index.md)  
- Fournit des liens vers des rubriques et des C#exemples LINQ à l’aide de.  
+ Fournit des liens vers des rubriques et des exemples LINQ à l’aide de C#.  
   
  [LINQ (Language-Integrated Query) - Visual Basic](../../../visual-basic/programming-guide/concepts/linq/index.md)  
  Fournit des liens vers des rubriques et des exemples LINQ à l’aide de Visual Basic.  
@@ -64,4 +65,4 @@ ADO.NET est un ensemble de classes qui exposent les services d'accès aux donné
 ## <a name="see-also"></a>Voir aussi
 
 - [Accès aux données dans Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)
-- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

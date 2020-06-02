@@ -10,12 +10,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework], attributes
 - attributes [.NET Framework], applying
 ms.assetid: dd7604eb-9fa3-4b60-b2dd-b47739fa3148
-ms.openlocfilehash: 14cd6fef80ff9ae3a9d78531785edab0da7cc6b9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5557da1531eb55c13d1c7540a50b044d1a7b8a1d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73130913"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276333"
 ---
 # <a name="applying-attributes"></a>Application des attributs
 Effectuez la procédure suivante pour appliquer un attribut à un élément de votre code.  
@@ -42,18 +42,18 @@ Effectuez la procédure suivante pour appliquer un attribut à un élément de v
  [!code-vb[Conceptual.Attributes.Usage#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source1.vb#3)]  
   
 ## <a name="applying-attributes-at-the-assembly-level"></a>Application d’attributs au niveau de l’assembly  
- Si vous souhaitez appliquer un attribut au niveau`Assembly` de l’assemblage, utilisez le mot clé **(dans** Visual Basic). Le code suivant illustre l’attribut **AssemblyTitleAttribute** appliqué au niveau de l’assembly.  
+ Si vous souhaitez appliquer un attribut au niveau de l’assembly, utilisez le mot clé **assembly** ( `Assembly` en Visual Basic). Le code suivant illustre l’attribut **AssemblyTitleAttribute** appliqué au niveau de l’assembly.  
   
  [!code-cpp[Conceptual.Attributes.Usage#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source1.cpp#2)]
  [!code-csharp[Conceptual.Attributes.Usage#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source1.cs#2)]
  [!code-vb[Conceptual.Attributes.Usage#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source1.vb#2)]  
   
- Lorsque cet attribut est appliqué, la chaîne `"My Assembly"` est placée dans le manifeste de l’assembly dans la partie métadonnées du fichier. Vous pouvez afficher l’attribut à l’aide du [Désassembleur MSIL (Ildasm.exe)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) ou en créant un programme personnalisé pour récupérer l’attribut.  
+ Lorsque cet attribut est appliqué, la chaîne `"My Assembly"` est placée dans le manifeste de l’assembly dans la partie métadonnées du fichier. Vous pouvez afficher l’attribut à l’aide du [Désassembleur MSIL (Ildasm.exe)](../../framework/tools/ildasm-exe-il-disassembler.md) ou en créant un programme personnalisé pour récupérer l’attribut.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Attributs](../../../docs/standard/attributes/index.md)
-- [Récupération des informations stockées dans les attributs](../../../docs/standard/attributes/retrieving-information-stored-in-attributes.md)
-- [Concepts liés à la](/cpp/windows/attributed-programming-concepts)
+- [Attributs](index.md)
+- [Récupération des informations stockées dans les attributs](retrieving-information-stored-in-attributes.md)
+- [Concepts](/cpp/windows/attributed-programming-concepts)
 - [Attributs (C#)](../../csharp/programming-guide/concepts/attributes/index.md)
 - [Vue d’ensemble des attributs (Visual Basic)](../../visual-basic/programming-guide/concepts/attributes/index.md)

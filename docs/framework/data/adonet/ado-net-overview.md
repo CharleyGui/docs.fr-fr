@@ -1,13 +1,14 @@
 ---
-title: Vue d'ensemble de
+title: Vue d’ensemble
+description: Lisez une vue d’ensemble de ADO.NET dans .NET Framework et consultez les ressources pour obtenir des explications plus détaillées et des exemples.
 ms.date: 03/30/2017
 ms.assetid: ee3bc1d8-11db-4be4-89eb-c708cf04117d
-ms.openlocfilehash: d5dc9cf7081c6876118914a0b95853a5a7ca5e57
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: 2ff3b7ad197bfe1e1c12e382f3a59bd470c57a75
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980338"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287153"
 ---
 # <a name="adonet-overview"></a>Vue d'ensemble d'ADO.NET
 ADO.NET propose un accès cohérent à des sources de données, telles que SQL Server et XML, ainsi qu'à des sources de données exposées via OLE DB et ODBC. Des applications grand public de partage de données peuvent utiliser ADO.NET pour se connecter à des sources de données et extraire, manipuler et mettre à jour les données qu'elles contiennent.  
@@ -44,7 +45,7 @@ ADO.NET propose un accès cohérent à des sources de données, telles que SQL S
  [Exemples de code ADO.NET](ado-net-code-examples.md)  
  Fournit des exemples de code qui récupèrent des données à l'aide des fournisseurs de données ADO.NET.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Nouveautés dans ADO.NET](whats-new.md)  
  Introduit des fonctionnalités nouvelles dans ADO.NET.  
   

@@ -11,26 +11,26 @@ helpviewer_keywords:
 - multiple attribute instances
 - attributes [.NET Framework], retrieving
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
-ms.openlocfilehash: 4f0f3555ae1ab7e662d5f88ac65739a7c791a964
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fc8dcb38471d80d01d1f87993783af3d24868506
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78158075"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276132"
 ---
 # <a name="retrieving-information-stored-in-attributes"></a>Récupération des informations stockées dans les attributs
 La récupération d’un attribut personnalisé est un processus simple. Tout d’abord, déclarez une instance de l’attribut que vous souhaitez récupérer. Ensuite, utilisez la méthode <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> pour initialiser le nouvel attribut à la valeur de l’attribut que vous souhaitez récupérer. Une fois le nouvel attribut initialisé, vous utilisez simplement ses propriétés pour obtenir les valeurs.  
   
 > [!IMPORTANT]
-> Cette rubrique explique comment récupérer des attributs pour le code chargé dans le contexte d'exécution. Pour récupérer les attributs du code chargé dans le contexte de réflexion uniquement, vous devez utiliser la classe <xref:System.Reflection.CustomAttributeData>, comme indiqué dans [Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
+> Cette rubrique explique comment récupérer des attributs pour le code chargé dans le contexte d'exécution. Pour récupérer les attributs du code chargé dans le contexte de réflexion uniquement, vous devez utiliser la classe <xref:System.Reflection.CustomAttributeData>, comme indiqué dans [Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement](../../framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
   
  Cette section décrit les méthodes suivantes pour récupérer des attributs :  
   
-- [Récupération d’une seule instance d’attribut](#cpconretrievingsingleinstanceofattribute)  
+- [Récupération d’une seule instance d’un attribut](#cpconretrievingsingleinstanceofattribute)  
   
 - [Récupération de plusieurs instances d’un attribut appliqué à la même étendue](#cpconretrievingmultipleinstancesofattributeappliedtosamescope)  
   
-- [Récupération de multiples instances d’un attribut appliqué à différentes portées](#cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes)  
+- [Récupération de plusieurs instances d’un attribut appliqué à différentes portées](#cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes)  
   
 <a name="cpconretrievingsingleinstanceofattribute"></a>
 ## <a name="retrieving-a-single-instance-of-an-attribute"></a>Récupération d’une seule instance d’un attribut  
@@ -87,4 +87,4 @@ The attribute was not found.
 - <xref:System.Type?displayProperty=nameWithType>
 - <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType>
 - <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>
-- [Attributs](../../../docs/standard/attributes/index.md)
+- [Attributs](index.md)

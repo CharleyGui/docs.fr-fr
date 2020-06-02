@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
-ms.openlocfilehash: e54990785cafd6061c6d53c13af6476a4b46e20e
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: fda5441c58d14b91a9eca16fff9149c8795f95b9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160350"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289224"
 ---
 # <a name="converting-strings-to-net-framework-data-types"></a>Conversion de chaînes en types de données .NET Framework
 Si vous souhaitez convertir une chaîne en un type de données .NET Framework, utilisez la méthode **XmlConvert** conforme aux exigences de l’application. Pour une liste de toutes les méthodes de conversion disponibles dans la classe **XmlConvert**, consultez <xref:System.Xml.XmlConvert>.  
@@ -133,5 +133,5 @@ writer.WriteElementString("Infinity", XmlConvert.ToString(value));
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Conversion des types de données XML](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)
-- [Conversion de types .NET Framework en chaînes](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)
+- [Conversion des types de données XML](conversion-of-xml-data-types.md)
+- [Conversion de types .NET Framework en chaînes](converting-dotnet-types-to-strings.md)

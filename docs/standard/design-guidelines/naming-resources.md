@@ -9,12 +9,12 @@ helpviewer_keywords:
 - global applications, naming guidelines
 - international applications, naming guidelines
 ms.assetid: 8b0e97f3-7877-44fd-bc76-e05d36d5d79c
-ms.openlocfilehash: 95aff35569e58eacfd064609140a29b53e0036da
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 762ba99c4751ba40f5f33e99455cf950af35cdf6
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743814"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290147"
 ---
 # <a name="naming-resources"></a>Attribution d'un nom à des ressources
 Étant donné que les ressources localisables peuvent être référencées par le biais de certains objets comme s’il s’agissait de propriétés, les instructions d’affectation de noms pour les ressources sont similaires aux instructions de propriété.
@@ -23,7 +23,7 @@ ms.locfileid: "76743814"
 
  ✔️ fournissez des identificateurs descriptifs et non courts.
 
- ❌ n’utilisez pas les mots clés spécifiques au langage des principaux langages CLR.
+ ❌N’utilisez pas de mots clés spécifiques au langage pour les principaux langages CLR.
 
  ✔️ Utilisez uniquement des caractères alphanumériques et des traits de soulignement dans les ressources de nommage.
 
@@ -40,5 +40,5 @@ ms.locfileid: "76743814"
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
-- [Directives de nommage](../../../docs/standard/design-guidelines/naming-guidelines.md)
+- [Directives de conception d’infrastructure](index.md)
+- [Instructions d’affectation de noms](naming-guidelines.md)

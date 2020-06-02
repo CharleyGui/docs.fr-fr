@@ -7,19 +7,19 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 2ed8c28b-b88d-4be7-9c87-92df01f0821f
-ms.openlocfilehash: 68c003467d837fe79d5e275968e47fa5dc3490cc
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 1dbe1a709f7c1b527a1754ab943a0a10ff52c6e8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710724"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289185"
 ---
 # <a name="insert-xml-data-using-xpathnavigator"></a>Insertion de données XML à l’aide de XPathNavigator
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthodes permettant d'insérer des nœuds frères, enfants et d'attribut dans un document XML. Pour pouvoir utiliser ces méthodes, vous devez pouvoir modifier l'objet <xref:System.Xml.XPath.XPathNavigator>, ce qui signifie que sa propriété <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> doit être `true`.  
   
  Les objets <xref:System.Xml.XPath.XPathNavigator> qui permettent d'éditer un document XML sont créés par la méthode <xref:System.Xml.XmlDocument.CreateNavigator%2A> de la classe <xref:System.Xml.XmlDocument>. Les objets <xref:System.Xml.XPath.XPathNavigator> créés par la classe <xref:System.Xml.XPath.XPathDocument> sont en lecture seule et toute tentative d'utilisation des méthodes de modification d'un objet <xref:System.Xml.XPath.XPathNavigator> créé par un objet <xref:System.Xml.XPath.XPathDocument> se traduit par un objet <xref:System.NotSupportedException>.  
   
- Pour plus d’informations sur la création d’objets <xref:System.Xml.XPath.XPathNavigator> modifiables, consultez [Lecture de données XML à l’aide de XPathDocument et XmlDocument](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md).  
+ Pour plus d’informations sur la création d’objets <xref:System.Xml.XPath.XPathNavigator> modifiables, consultez [Lecture de données XML à l’aide de XPathDocument et XmlDocument](reading-xml-data-using-xpathdocument-and-xmldocument.md).  
   
 ## <a name="inserting-nodes"></a>Insertion de nœuds  
  La classe <xref:System.Xml.XPath.XPathNavigator> fournit des méthodes permettant d'insérer des nœuds frères, enfants et d'attribut dans un document XML. Ces méthodes permettent d'insérer des nœuds et des attributs à différents emplacements par rapport à la position actuelle d'un objet <xref:System.Xml.XPath.XPathNavigator> et sont décrites dans les sections suivantes.  
@@ -218,7 +218,7 @@ navigator.SetTypedValue(DateTime.Now);
   
  La propriété <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> modifie le balisage XML des nœuds enfants sur lesquels un objet <xref:System.Xml.XPath.XPathNavigator> est actuellement positionné avec le contenu analysé de la `string` XML donnée. De même, la propriété <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> modifie le balisage XML des nœuds enfants sur lesquels un objet <xref:System.Xml.XPath.XPathNavigator> est actuellement positionné, ainsi que le nœud actuel proprement dit.  
   
- Outre les méthodes décrites dans cette rubrique, les propriétés <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> et <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> peuvent permettre d'insérer des nœuds et des valeurs dans un document XML. Pour plus d'informations sur l'utilisation des propriétés <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> et <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> pour insérer des nœuds et des valeurs, consultez la rubrique [Modification de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md).  
+ Outre les méthodes décrites dans cette rubrique, les propriétés <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> et <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> peuvent permettre d'insérer des nœuds et des valeurs dans un document XML. Pour plus d'informations sur l'utilisation des propriétés <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> et <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> pour insérer des nœuds et des valeurs, consultez la rubrique [Modification de données XML à l’aide de XPathNavigator](modify-xml-data-using-xpathnavigator.md).  
   
 ## <a name="namespace-and-xmllang-conflicts"></a>Conflits d'espace de noms et xml:lang  
  Certains conflits relatifs à la portée de l'espace de noms et aux déclarations `xml:lang` peuvent survenir lors de l'insertion de données XML à l'aide des méthodes <xref:System.Xml.XPath.XPathNavigator.InsertBefore%2A>, <xref:System.Xml.XPath.XPathNavigator.InsertAfter%2A>, <xref:System.Xml.XPath.XPathNavigator.AppendChild%2A> et <xref:System.Xml.XPath.XPathNavigator.PrependChild%2A> de la classe <xref:System.Xml.XPath.XPathNavigator> qui prend les objets <xref:System.Xml.XmlReader> comme paramètres.  
@@ -326,13 +326,13 @@ document.Save("book.xml");
 ```  
   
 ## <a name="saving-an-xml-document"></a>Enregistrement d'un document XML  
- L'enregistrement des modifications apportées à un objet <xref:System.Xml.XmlDocument> suite aux méthodes décrites dans cette rubrique s'effectue à l'aide des méthodes de la classe <xref:System.Xml.XmlDocument>. Pour plus d'informations sur l'enregistrement des modifications apportées à un objet <xref:System.Xml.XmlDocument>, consultez [Enregistrement et écriture d'un document](../../../../docs/standard/data/xml/saving-and-writing-a-document.md).  
+ L'enregistrement des modifications apportées à un objet <xref:System.Xml.XmlDocument> suite aux méthodes décrites dans cette rubrique s'effectue à l'aide des méthodes de la classe <xref:System.Xml.XmlDocument>. Pour plus d'informations sur l'enregistrement des modifications apportées à un objet <xref:System.Xml.XmlDocument>, consultez [Enregistrement et écriture d'un document](saving-and-writing-a-document.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [Traitement des données XML à l'aide du modèle de données XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [Modification de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md)
-- [Suppression de données XML à l'aide de XPathNavigator](../../../../docs/standard/data/xml/remove-xml-data-using-xpathnavigator.md)
+- [Traitement des données XML à l'aide du modèle de données XPath](process-xml-data-using-the-xpath-data-model.md)
+- [Modification de données XML à l’aide de XPathNavigator](modify-xml-data-using-xpathnavigator.md)
+- [Suppression de données XML à l'aide de XPathNavigator](remove-xml-data-using-xpathnavigator.md)

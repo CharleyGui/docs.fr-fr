@@ -16,12 +16,12 @@ helpviewer_keywords:
 - security [.NET Framework], assemblies
 - integrity with assemblies
 ms.assetid: 1b5439c1-f3d5-4529-bd69-01814703d067
-ms.openlocfilehash: 7f897241b121cf1bd52d02ee5f487aeafafc3cb0
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: d0b822f725444248d1037c21ffea9afe1cebb7e2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378659"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290017"
 ---
 # <a name="assembly-security-considerations"></a>Aspects de la sécurité des assemblys
 Lorsque vous générez un assembly, vous pouvez spécifier un jeu d'autorisations que l'assembly doit exécuter. L'octroi ou non de certaines autorisations à un assembly repose sur la preuve.  
@@ -39,7 +39,7 @@ Lorsque vous générez un assembly, vous pouvez spécifier un jeu d'autorisation
 - ne pas utiliser de demande d'autorisation pour obtenir les autorisations dont votre code peut avoir besoin, mais être préparé à gérer les exceptions de sécurité lorsque les autorisations ne sont pas accordées.  
   
   > [!NOTE]
-  > La sécurité est un domaine complexe et vous pouvez effectuer votre choix parmi de nombreuses options. Pour plus d’informations, consultez [Concepts fondamentaux sur la sécurité](../../standard/security/key-security-concepts.md).  
+  > La sécurité est un domaine complexe et vous pouvez effectuer votre choix parmi de nombreuses options. Pour plus d’informations, consultez [Concepts fondamentaux sur la sécurité](../security/key-security-concepts.md).  
   
  Au moment du chargement, la preuve de l'assembly est utilisée comme entrée vers la stratégie de sécurité. La stratégie de sécurité est établie par l'entreprise et l'administrateur de l'ordinateur, ainsi que par les paramètres de stratégie de l'utilisateur, et détermine le jeu d'autorisations qui est accordé à l'ensemble du code managé lors de son exécution. La stratégie de sécurité peut être établie pour l'éditeur de l'assembly (s'il possède une signature générée par un outil de signature), pour le site Web et la zone (selon les termes d'Internet Explorer) à partir desquels l'assembly a été téléchargé ou pour le nom fort de l'assembly. Par exemple, l'administrateur d'un ordinateur peut établir une stratégie de sécurité qui autorise l'ensemble d'un code téléchargé à partir d'un site Web et signé par un éditeur de logiciel donné d'accéder à une base de données sur un ordinateur, mais qui n'accorde pas d'accès en écriture sur le disque de l'ordinateur.  
   

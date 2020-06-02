@@ -9,12 +9,12 @@ helpviewer_keywords:
 - SortedList collection type
 - collections [.NET Framework], SortedList collection type
 ms.assetid: 3db965b2-36a6-4b12-b76e-7f074ff7275a
-ms.openlocfilehash: c948c70a06931f5f93a6f4235585cf7ac94e8533
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 2d9d3744859eea1a09923980b3b4c57eca6bba97
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728370"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287937"
 ---
 # <a name="sorted-collection-types"></a>Types de collections triées
 
@@ -40,7 +40,7 @@ Le tableau suivant répertorie certaines des différences entre les deux classes
 | L’insertion et la suppression correspondent généralement à O(`n`). Toutefois, l’insertion correspond à O(log `n`) pour les données qui se trouvent déjà en ordre de tri, afin que chaque élément soit ajouté à la fin de la liste. (Cela suppose qu’un redimensionnement n’est pas requis.) | L’insertion et la suppression sont O(log `n`). |
 | Utilise moins de mémoire qu’un <xref:System.Collections.Generic.SortedDictionary%602>. | Utilise plus de mémoire que la classe non générique <xref:System.Collections.SortedList> et la classe générique <xref:System.Collections.Generic.SortedList%602>. |
 
-Pour les listes ou les dictionnaires triés qui doivent être accessibles simultanément à partir de plusieurs threads, vous pouvez ajouter une logique de tri à une classe qui dérive de <xref:System.Collections.Concurrent.ConcurrentDictionary%602>. Lorsque vous envisagez l’immuabilité, les types immuables correspondants suivants suivent la <xref:System.Collections.Immutable.ImmutableSortedSet%601> même <xref:System.Collections.Immutable.ImmutableSortedDictionary%602>sémantique de tri : et.
+Pour les listes ou les dictionnaires triés qui doivent être accessibles simultanément à partir de plusieurs threads, vous pouvez ajouter une logique de tri à une classe qui dérive de <xref:System.Collections.Concurrent.ConcurrentDictionary%602>. Lorsque vous envisagez l’immuabilité, les types immuables correspondants suivants suivent la même sémantique de tri : <xref:System.Collections.Immutable.ImmutableSortedSet%601> et <xref:System.Collections.Immutable.ImmutableSortedDictionary%602> .
 
 > [!NOTE]
 > Pour les valeurs qui contiennent leurs propres clés (par exemple, des enregistrements d’employés qui contiennent un numéro d’ID de l’employé), vous pouvez créer une collection à clé qui possède certaines caractéristiques d’une liste et certaines caractéristiques d’un dictionnaire en dérivant de la classe générique <xref:System.Collections.ObjectModel.KeyedCollection%602>.
@@ -52,4 +52,4 @@ Pour les listes ou les dictionnaires triés qui doivent être accessibles simult
 - <xref:System.Collections.IDictionary?displayProperty=nameWithType>
 - <xref:System.Collections.Generic.IDictionary%602?displayProperty=nameWithType>
 - <xref:System.Collections.Concurrent.ConcurrentDictionary%602>
-- [Types de collections couramment utilisés](../../../docs/standard/collections/commonly-used-collection-types.md)
+- [Types de collections couramment utilisés](commonly-used-collection-types.md)

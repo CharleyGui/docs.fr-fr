@@ -25,14 +25,14 @@ helpviewer_keywords:
 - custom formatting [.NET Framework]
 - strings [.NET Framework], formatting
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
-ms.openlocfilehash: 124c32a09a32dd90b8b96b39aa80352094030b23
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: e63a0962efb689a865436df771420e92319110b5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523943"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290537"
 ---
-# <a name="format-types-in-net"></a>Types de format en .NET
+# <a name="format-types-in-net"></a>Types de format dans .NET
 
 La mise en forme est le processus de conversion d'une instance d'une classe, d'une structure ou d'une valeur d'énumération en représentation sous forme de chaîne, généralement pour exposer la chaîne obtenue aux utilisateurs ou pour qu'elle soit désérialisée afin de restaurer le type de données d'origine. Cette conversion peut présenter plusieurs difficultés :
 
@@ -40,12 +40,12 @@ La mise en forme est le processus de conversion d'une instance d'une classe, d'u
 
 - La conversion d'un objet en sa représentation sous forme de chaîne n'est pas toujours intuitive. Par exemple, il n'est pas évident de savoir comment doit s'afficher la représentation sous forme de chaîne d'un objet Temperature ou Person. Pour obtenir un exemple illustrant la mise en forme d'un objet Temperature selon différentes manières, consultez la section [Chaînes de format standard](#standard-format-strings) .
 
-- Les valeurs requièrent souvent une mise en forme qui tient compte de la culture. Par exemple, dans une application qui utilise des chiffres pour refléter les valeurs monétaires, les chaînes numériques devraient inclure le symbole de la monnaie de la culture actuelle, le séparateur de groupe (qui, dans la plupart des cultures, est le séparateur de milliers), et le symbole décimal. Par exemple, consultez la section [Formatting sensible à la culture avec les fournisseurs de formats.](#culture-sensitive-formatting-with-format-providers)
+- Les valeurs requièrent souvent une mise en forme qui tient compte de la culture. Par exemple, dans une application qui utilise des nombres pour refléter des valeurs monétaires, les chaînes numériques doivent inclure le symbole monétaire de la culture actuelle, le séparateur de groupes (qui, dans la plupart des cultures, est le séparateur des milliers) et le symbole décimal. Pour obtenir un exemple, consultez la section [mise en forme dépendante de la culture avec les fournisseurs de format](#culture-sensitive-formatting-with-format-providers) .
 
 - Une application peut avoir à afficher la même valeur de différentes manières. Par exemple, une application peut représenter un membre d'énumération en affichant une représentation sous forme de chaîne de son nom ou en affichant sa valeur sous-jacente. Pour obtenir un exemple illustrant la mise en forme d'un membre de l'énumération <xref:System.DayOfWeek> selon différentes manières, consultez la section [Chaînes de format standard](#standard-format-strings) .
 
 > [!NOTE]
-> La mise en forme convertit la valeur d'un type en une représentation sous forme de chaîne. L'analyse est l'opération inverse de la mise en forme. Une opération d'analyse crée une instance d'un type de données à partir de sa représentation sous forme de chaîne. Pour plus d’informations sur la conversion de chaînes en d’autres types de données, consultez [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md).
+> La mise en forme convertit la valeur d'un type en une représentation sous forme de chaîne. L'analyse est l'opération inverse de la mise en forme. Une opération d'analyse crée une instance d'un type de données à partir de sa représentation sous forme de chaîne. Pour plus d’informations sur la conversion de chaînes en d’autres types de données, consultez [Parsing Strings](parsing-strings.md).
 
 .NET assure une prise en charge évoluée de la mise en forme qui permet aux développeurs de surmonter ces difficultés.
 
@@ -53,9 +53,9 @@ La mise en forme est le processus de conversion d'une instance d'une classe, d'u
 
 Le mécanisme de base de la mise en forme est l'implémentation par défaut de la méthode <xref:System.Object.ToString%2A?displayProperty=nameWithType>, décrite dans la section [Mise en forme par défaut à l'aide de la méthode ToString](#default-formatting-using-the-tostring-method), plus loin dans cette rubrique. Toutefois, .NET propose différentes manières de modifier et d’étendre sa prise en charge par défaut de la mise en forme. Ces options en question sont les suivantes :
 
-- Dépassement de <xref:System.Object.ToString%2A?displayProperty=nameWithType> la méthode pour définir une représentation personnalisée des chaînes de la valeur d’un objet. Pour plus d’informations, consultez la section [Override the ToString Method](#override-the-tostring-method) plus tard dans ce sujet.
+- Substitution de la <xref:System.Object.ToString%2A?displayProperty=nameWithType> méthode pour définir une représentation sous forme de chaîne personnalisée de la valeur d’un objet. Pour plus d’informations, consultez la section [substitution de la méthode ToString](#override-the-tostring-method) , plus loin dans cette rubrique.
 
-- Définir des spécificateurs de format qui permettent à la représentation des cordes de la valeur d’un objet de prendre plusieurs formes. Par exemple, dans l'instruction suivante, le spécificateur de format "X" convertit un entier en la représentation sous forme de chaîne d'une valeur hexadécimale.
+- Définition de spécificateurs de format qui permettent à la représentation sous forme de chaîne de la valeur d’un objet de prendre plusieurs formes. Par exemple, dans l'instruction suivante, le spécificateur de format "X" convertit un entier en la représentation sous forme de chaîne d'une valeur hexadécimale.
 
      [!code-csharp[Conceptual.Formatting.Overview#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/specifier1.cs#3)]
      [!code-vb[Conceptual.Formatting.Overview#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/specifier1.vb#3)]
@@ -67,7 +67,7 @@ Le mécanisme de base de la mise en forme est l'implémentation par défaut de l
      [!code-csharp[Conceptual.Formatting.Overview#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/specifier1.cs#10)]
      [!code-vb[Conceptual.Formatting.Overview#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/specifier1.vb#10)]
 
-     Pour plus d’informations sur le formatage avec les fournisseurs de formats, consultez la section [Fournisseurs de formats.](#culture-sensitive-formatting-with-format-providers)
+     Pour plus d’informations sur la mise en forme avec les fournisseurs de format, consultez la section [fournisseurs de format](#culture-sensitive-formatting-with-format-providers) .
 
 - Implémentation de l'interface <xref:System.IFormattable> pour prendre en charge la conversion de chaînes avec la classe <xref:System.Convert> et la mise en forme composite. Pour plus d'informations, consultez la section [Interface IFormattable](#the-iformattable-interface) .
 
@@ -85,21 +85,21 @@ Chaque type qui est dérivé d' <xref:System.Object?displayProperty=nameWithType
 [!code-vb[Conceptual.Formatting.Overview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/default1.vb#1)]
 
 > [!WARNING]
-> En commençant par Windows 8.1, <xref:Windows.Foundation.IStringable> le Windows Runtime inclut une interface avec une seule méthode, [IStringable.ToString](xref:Windows.Foundation.IStringable.ToString%2A), qui fournit un support de formatage par défaut. Toutefois, nous recommandons que les types managés n'implémentent pas l'interface `IStringable` . Pour plus d’informations, consultez la section « Windows Runtime et interface `IStringable` » dans la page de référence de <xref:System.Object.ToString%2A?displayProperty=nameWithType>.
+> À partir de Windows 8.1, le Windows Runtime inclut une <xref:Windows.Foundation.IStringable> interface avec une méthode unique, [IStringable. ToString](xref:Windows.Foundation.IStringable.ToString%2A), qui fournit la prise en charge de la mise en forme par défaut. Toutefois, nous recommandons que les types managés n'implémentent pas l'interface `IStringable` . Pour plus d’informations, consultez la section « Windows Runtime et interface `IStringable` » dans la page de référence de <xref:System.Object.ToString%2A?displayProperty=nameWithType>.
 
 Étant donné que tous les types autres que les interfaces sont dérivés de <xref:System.Object>, ces fonctionnalités sont fournies automatiquement à vos classes ou structures personnalisées. Toutefois, les fonctionnalités offertes par la méthode `ToString` par défaut sont limitées : Bien qu'elle identifie le type, elle ne fournit aucune information relative à une instance du type. Pour fournir une représentation sous forme de chaîne d'un objet qui donne des informations sur cet objet, vous devez substituer la méthode `ToString` .
 
 > [!NOTE]
 > Les structures héritent de <xref:System.ValueType>, qui, à son tour, est dérivé d' <xref:System.Object>. Bien que <xref:System.ValueType> substitue <xref:System.Object.ToString%2A?displayProperty=nameWithType>, son implémentation est identique.
 
-## <a name="override-the-tostring-method"></a>Remplacer la méthode ToString
+## <a name="override-the-tostring-method"></a>Substituer la méthode ToString
 
-L'utilité de l'affichage du nom d'un type est souvent limitée et ne permet pas aux consommateurs de vos types de différencier une instance d'une autre. Cependant, vous pouvez `ToString` remplacer la méthode pour fournir une représentation plus utile de la valeur d’un objet. L'exemple suivant définit un objet `Temperature` et substitue sa méthode `ToString` pour afficher la température en degrés Celsius.
+L'utilité de l'affichage du nom d'un type est souvent limitée et ne permet pas aux consommateurs de vos types de différencier une instance d'une autre. Toutefois, vous pouvez substituer la `ToString` méthode pour fournir une représentation plus utile de la valeur d’un objet. L'exemple suivant définit un objet `Temperature` et substitue sa méthode `ToString` pour afficher la température en degrés Celsius.
 
 [!code-csharp[Conceptual.Formatting.Overview#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/overrides1.cs#2)]
 [!code-vb[Conceptual.Formatting.Overview#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/overrides1.vb#2)]
 
-Dans .NET, `ToString` la méthode de chaque type de valeur primitive a été remplacée pour afficher la valeur de l’objet au lieu de son nom. Le tableau suivant montre la substitution pour chaque type primitif. Notez que la plupart des méthodes substituées appellent une autre surcharge de la méthode `ToString` et lui passent le spécificateur de format "G", qui définit le format général pour son type, ainsi qu'un objet <xref:System.IFormatProvider> qui représente la culture actuelle.
+Dans .NET, la `ToString` méthode de chaque type valeur primitif a été substituée de façon à afficher la valeur de l’objet au lieu de son nom. Le tableau suivant montre la substitution pour chaque type primitif. Notez que la plupart des méthodes substituées appellent une autre surcharge de la méthode `ToString` et lui passent le spécificateur de format "G", qui définit le format général pour son type, ainsi qu'un objet <xref:System.IFormatProvider> qui représente la culture actuelle.
 
 |Type|Substitution de ToString|
 |----------|-----------------------|
@@ -132,16 +132,16 @@ Une chaîne de format standard comprend un spécificateur de format unique, qui 
 
 .NET définit un jeu de spécificateurs de format standard pour tous les types numériques, types de date et d’heure et types énumération. Par exemple, chacune de ces catégories prend en charge un spécificateur de format standard "G", lequel définit une représentation sous forme de chaîne générale d'une valeur de ce type.
 
-Les chaînes de format standard pour les types énumération contrôlent directement la représentation sous forme de chaîne d'une valeur. Les chaînes de format transmises à `ToString` la méthode d’une valeur d’énumération déterminent si la valeur est affichée à l’aide de son nom de chaîne (les spécificateurs de format « G » et « F »), sa valeur intégrale sous-jacente (le spécificateur de format « D ») ou sa valeur hexadecimal (le spéificateur format « X »). L'exemple suivant illustre l'utilisation de chaînes de format standard pour mettre en forme une valeur d'énumération <xref:System.DayOfWeek> .
+Les chaînes de format standard pour les types énumération contrôlent directement la représentation sous forme de chaîne d'une valeur. Les chaînes de format passées à la méthode d’une valeur d’énumération `ToString` déterminent si la valeur est affichée à l’aide de son nom de chaîne (spécificateurs de format "G" et "F"), sa valeur intégrale sous-jacente (spécificateur de format "D") ou sa valeur hexadécimale (spécificateur de format "X"). L'exemple suivant illustre l'utilisation de chaînes de format standard pour mettre en forme une valeur d'énumération <xref:System.DayOfWeek> .
 
 [!code-csharp[Conceptual.Formatting.Overview#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/standard1.cs#4)]
 [!code-vb[Conceptual.Formatting.Overview#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/standard1.vb#4)]
 
-Pour plus d’informations sur les chaînes de format d’énumération, consultez [Enumeration Format Strings](../../../docs/standard/base-types/enumeration-format-strings.md).
+Pour plus d’informations sur les chaînes de format d’énumération, consultez [Enumeration Format Strings](enumeration-format-strings.md).
 
-Les chaînes de format standard pour les types numériques définissent généralement une chaîne de résultat dont l'apparence précise est contrôlée par une ou plusieurs valeurs de propriété. Par exemple, le spécificateur de format "C" met en forme un nombre en tant que valeur monétaire. Lorsque vous `ToString` appelez la méthode avec le spécificateur de format « C » <xref:System.Globalization.NumberFormatInfo> comme seul paramètre, les valeurs de propriété suivantes de l’objet de la culture actuelle sont utilisées pour définir la représentation des cordes de la valeur numérique :
+Les chaînes de format standard pour les types numériques définissent généralement une chaîne de résultat dont l'apparence précise est contrôlée par une ou plusieurs valeurs de propriété. Par exemple, le spécificateur de format "C" met en forme un nombre en tant que valeur monétaire. Quand vous appelez la `ToString` méthode avec le spécificateur de format "C" comme seul paramètre, les valeurs de propriétés suivantes de l’objet de la culture actuelle <xref:System.Globalization.NumberFormatInfo> sont utilisées pour définir la représentation sous forme de chaîne de la valeur numérique :
 
-- La <xref:System.Globalization.NumberFormatInfo.CurrencySymbol%2A> propriété, qui spécifie le symbole de la monnaie de la culture actuelle.
+- La <xref:System.Globalization.NumberFormatInfo.CurrencySymbol%2A> propriété, qui spécifie le symbole monétaire de la culture actuelle.
 
 - Propriété <xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A> ou <xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A> , qui retourne un entier déterminant :
 
@@ -166,16 +166,16 @@ De plus, les chaînes de format numériques peuvent inclure un spécificateur de
 [!code-csharp[Conceptual.Formatting.Overview#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/precisionspecifier1.cs#6)]
 [!code-vb[Conceptual.Formatting.Overview#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/precisionspecifier1.vb#6)]
 
-Pour plus d’informations sur les chaînes de format numériques standard, consultez [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md).
+Pour plus d’informations sur les chaînes de format numériques standard, consultez [Standard Numeric Format Strings](standard-numeric-format-strings.md).
 
-Les chaînes de format standard pour les valeurs de date et d'heure sont des alias de chaînes de format personnalisées stockées par une propriété <xref:System.Globalization.DateTimeFormatInfo> particulière. Par exemple, `ToString` appeler la méthode d’une valeur de date et d’heure avec le spécificateur de <xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A?displayProperty=nameWithType> format « D » affiche la date et l’heure en utilisant la chaîne de format personnalisée stockée dans la propriété de la culture actuelle. (Pour plus d’informations sur les chaînes de format personnalisés, voir la [section suivante](#custom-format-strings).) L’exemple suivant illustre cette relation.
+Les chaînes de format standard pour les valeurs de date et d'heure sont des alias de chaînes de format personnalisées stockées par une propriété <xref:System.Globalization.DateTimeFormatInfo> particulière. Par exemple, l’appel `ToString` de la méthode d’une valeur de date et d’heure avec le spécificateur de format "D" affiche la date et l’heure à l’aide de la chaîne de format personnalisée stockée dans la propriété de la culture actuelle <xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A?displayProperty=nameWithType> . (Pour plus d’informations sur les chaînes de format personnalisées, consultez la [section suivante](#custom-format-strings).) L’exemple suivant illustre cette relation.
 
 [!code-csharp[Conceptual.Formatting.Overview#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/alias1.cs#5)]
 [!code-vb[Conceptual.Formatting.Overview#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/alias1.vb#5)]
 
-Pour plus d’informations sur les chaînes de format de date et heure standard, consultez [Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md).
+Pour plus d’informations sur les chaînes de format de date et heure standard, consultez [Standard Date and Time Format Strings](standard-date-and-time-format-strings.md).
 
-Vous pouvez également utiliser des chaînes de format standard pour définir la représentation des `ToString(String)` chaînes d’un objet défini par l’application qui est produit par la méthode de l’objet. Vous pouvez définir les spécificateurs de format standard spécifiques que votre objet prend en charge, et déterminer s'ils respectent la casse. Votre implémentation de la méthode `ToString(String)` doit prendre en charge les éléments suivants :
+Vous pouvez également utiliser des chaînes de format standard pour définir la représentation sous forme de chaîne d’un objet défini par l’application qui est produit par la méthode de l’objet `ToString(String)` . Vous pouvez définir les spécificateurs de format standard spécifiques que votre objet prend en charge, et déterminer s'ils respectent la casse. Votre implémentation de la méthode `ToString(String)` doit prendre en charge les éléments suivants :
 
 - Spécificateur de format "G" qui représente un format habituel ou commun de l'objet. La surcharge sans paramètre de la méthode `ToString` de votre objet doit appeler sa surcharge `ToString(String)` et lui passer la chaîne de format standard "G".
 
@@ -188,7 +188,7 @@ Par exemple, une classe `Temperature` peut stocker en interne la température en
 
 ### <a name="custom-format-strings"></a>Chaînes de format personnalisées
 
-Outre les chaînes de format standard, .NET définit des chaînes de format personnalisées pour les valeurs numériques et les valeurs de date et d’heure. Une chaîne de format personnalisée se compose d'un ou de plusieurs spécificateurs de format personnalisés qui définissent la représentation sous forme de chaîne d'une valeur. Par exemple, la chaîne de format de date et d'heure personnalisée "yyyy\mm\dd hh:mm:ffff t zzz" convertit une date en sa représentation sous forme de chaîne "2008/11/15 07:45:00.0000 P -08:00" pour la culture en-US. De même, la chaîne de format personnalisée "0000" convertit la valeur entière 12 en "0012". Pour obtenir la liste complète des chaînes de format personnalisées, consultez [Custom Date and Time Format Strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md) et [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md).
+Outre les chaînes de format standard, .NET définit des chaînes de format personnalisées pour les valeurs numériques et les valeurs de date et d’heure. Une chaîne de format personnalisée se compose d'un ou de plusieurs spécificateurs de format personnalisés qui définissent la représentation sous forme de chaîne d'une valeur. Par exemple, la chaîne de format de date et d'heure personnalisée "yyyy\mm\dd hh:mm:ffff t zzz" convertit une date en sa représentation sous forme de chaîne "2008/11/15 07:45:00.0000 P -08:00" pour la culture en-US. De même, la chaîne de format personnalisée "0000" convertit la valeur entière 12 en "0012". Pour obtenir la liste complète des chaînes de format personnalisées, consultez [Custom Date and Time Format Strings](custom-date-and-time-format-strings.md) et [Custom Numeric Format Strings](custom-numeric-format-strings.md).
 
 Si une chaîne de format se compose d'un seul spécificateur de format personnalisé, le spécificateur de format doit être précédé du symbole de pourcentage (%) pour éviter toute confusion avec un spécificateur de format standard. L'exemple suivant utilise le spécificateur de format personnalisé "M" pour afficher un nombre à un chiffre ou à deux chiffres du mois d'une date particulière.
 
@@ -213,16 +213,16 @@ Tous les types numériques (c’est-à-dire, les types <xref:System.Byte>, <xref
 
 |Intitulé|Définition|
 |-----------|----------------|
-|[Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs numériques.|
-|[Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs numériques.|
-|[Chaînes de format de date et d'heure standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations courantes de valeurs <xref:System.DateTime> et <xref:System.DateTimeOffset> sous forme de chaînes.|
-|[Chaînes de format de date et d'heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats propres à l'application pour les valeurs <xref:System.DateTime> et <xref:System.DateTimeOffset>.|
-|[Chaînes de format TimeSpan standard.](../../../docs/standard/base-types/standard-timespan-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées d'intervalles de temps.|
-|[Chaînes de format TimeSpan personnalisées](../../../docs/standard/base-types/custom-timespan-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les intervalles de temps.|
-|[Chaînes de format d'énumération](../../../docs/standard/base-types/enumeration-format-strings.md)|Décrit les chaînes de format standard qui sont utilisées pour créer des représentations sous forme de chaîne de valeurs d'énumération.|
+|[Chaînes de format numériques standard](standard-numeric-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs numériques.|
+|[Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs numériques.|
+|[Chaînes de format de date et d’heure standard](standard-date-and-time-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations courantes de valeurs <xref:System.DateTime> et <xref:System.DateTimeOffset> sous forme de chaînes.|
+|[Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats propres à l'application pour les valeurs <xref:System.DateTime> et <xref:System.DateTimeOffset>.|
+|[Chaînes de format TimeSpan standard](standard-timespan-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées d'intervalles de temps.|
+|[Chaînes de format TimeSpan personnalisées](custom-timespan-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les intervalles de temps.|
+|[Chaînes de format d’énumération](enumeration-format-strings.md)|Décrit les chaînes de format standard qui sont utilisées pour créer des représentations sous forme de chaîne de valeurs d'énumération.|
 |<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|Décrit les chaînes de format standard pour les valeurs <xref:System.Guid> .|
 
-## <a name="culture-sensitive-formatting-with-format-providers"></a>Formatage sensible à la culture avec les fournisseurs de formats
+## <a name="culture-sensitive-formatting-with-format-providers"></a>Mise en forme dépendante de la culture avec les fournisseurs de format
 
 Si les spécificateurs de format vous permettent de personnaliser la mise en forme d'objets, la production, pour ces derniers, d'une représentation sous forme de chaîne explicite requiert souvent des informations de mise en forme supplémentaires. Par exemple, la mise en forme d'un nombre en tant que valeur monétaire en utilisant la chaîne de format standard "C" ou une chaîne de format personnalisée telle que "$ #, #.00" requiert au minimum l'existence d'informations à inclure dans la chaîne mise en forme concernant le symbole monétaire, le séparateur de groupes et le séparateur décimal appropriés. Dans .NET, ces informations de mise en forme supplémentaires sont disponibles sur l’interface <xref:System.IFormatProvider>, laquelle est fournie comme paramètre d’une ou plusieurs surcharges de la méthode `ToString` de types numériques et de types de date et d’heure. Des implémentations de <xref:System.IFormatProvider> sont utilisées dans .NET pour prendre en charge la mise en forme propre à la culture. L'exemple suivant montre comment la représentation d'un objet sous forme de chaîne évolue lorsqu'il est mis en forme avec trois objets <xref:System.IFormatProvider> représentant des cultures différentes.
 
@@ -253,7 +253,7 @@ Certaines méthodes de mise en forme ou de conversion de chaînes incluent un pa
 
 - <xref:System.Globalization.CultureInfo>. Son implémentation de <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> peut retourner un objet <xref:System.Globalization.NumberFormatInfo> pour fournir des informations de mise en forme des nombres ou un objet <xref:System.Globalization.DateTimeFormatInfo> pour fournir des informations de mise en forme des valeurs de date et d'heure.
 
-Vous pouvez aussi implémenter votre propre fournisseur de format en remplacement de l'une de ces classes. Toutefois, la méthode <xref:System.IFormatProvider.GetFormat%2A> de votre implémentation doit renvoyer un objet du type indiqué `ToString` dans le tableau précédent s’il doit fournir des informations de formatage à la méthode.
+Vous pouvez aussi implémenter votre propre fournisseur de format en remplacement de l'une de ces classes. Toutefois, la méthode de votre implémentation <xref:System.IFormatProvider.GetFormat%2A> doit retourner un objet du type listé dans le tableau précédent s’il doit fournir des informations de mise en forme à la `ToString` méthode.
 
 ### <a name="culture-sensitive-formatting-of-numeric-values"></a>Mise en forme dépendante de la culture des valeurs numériques
 
@@ -299,7 +299,7 @@ L'implémentation de l'interface <xref:System.IFormattable> pour votre classe d�
 
 - Prise en charge de la conversion de chaînes par la classe <xref:System.Convert> . Les appels aux méthodes <xref:System.Convert.ToString%28System.Object%29?displayProperty=nameWithType> et <xref:System.Convert.ToString%28System.Object%2CSystem.IFormatProvider%29?displayProperty=nameWithType> appellent automatiquement votre implémentation d' <xref:System.IFormattable> .
 
-- Prise en charge de la mise en forme composite. Si un élément de mise en forme qui inclut une chaîne de format est utilisé pour mettre en forme votre type personnalisé, le Common Language Runtime appelle automatiquement votre implémentation d' <xref:System.IFormattable> et lui passe la chaîne de format. Pour plus d’informations sur le <xref:System.String.Format%2A?displayProperty=nameWithType> <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>formatage composite avec des méthodes telles que ou , voir la section [Formatting composite.](#composite-formatting)
+- Prise en charge de la mise en forme composite. Si un élément de mise en forme qui inclut une chaîne de format est utilisé pour mettre en forme votre type personnalisé, le Common Language Runtime appelle automatiquement votre implémentation d' <xref:System.IFormattable> et lui passe la chaîne de format. Pour plus d’informations sur la mise en forme composite avec des méthodes telles que <xref:System.String.Format%2A?displayProperty=nameWithType> ou <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> , consultez la section [mise en forme composite](#composite-formatting) .
 
 L'exemple suivant définit une classe `Temperature` qui implémente l'interface <xref:System.IFormattable> . Il prend en charge les spécificateurs de format "C" ou "G" pour afficher la température en Celsius, le spécificateur de format "F" pour afficher la température en Fahrenheit et le spécificateur de format "K" pour afficher la température en Kelvin.
 
@@ -329,11 +329,11 @@ En plus de remplacer un élément de format par la représentation sous forme de
 
      Notez que si le composant de chaîne d'alignement et le composant de chaîne de format sont présents, le premier a priorité sur le deuxième (par exemple `{0,-20:g}`.
 
-Pour plus d’informations sur la mise en forme composite, consultez [Composite Formatting](../../../docs/standard/base-types/composite-formatting.md).
+Pour plus d’informations sur la mise en forme composite, consultez [Composite Formatting](composite-formatting.md).
 
 ## <a name="custom-formatting-with-icustomformatter"></a>Mise en forme personnalisée avec ICustomFormatter
 
-Deux méthodes de mise en forme composites, <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> et <xref:System.Text.StringBuilder.AppendFormat%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, incluent également un paramètre de fournisseur de format qui prend en charge la mise en forme personnalisée. Lorsque l’une ou l’autre de <xref:System.Type> ces méthodes <xref:System.ICustomFormatter> de formatage est <xref:System.IFormatProvider.GetFormat%2A> appelée, il passe un objet qui représente une interface à la méthode du fournisseur de format. La méthode <xref:System.IFormatProvider.GetFormat%2A> est alors chargée de retourner l'implémentation d' <xref:System.ICustomFormatter> qui fournit la mise en forme personnalisée.
+Deux méthodes de mise en forme composites, <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> et <xref:System.Text.StringBuilder.AppendFormat%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, incluent également un paramètre de fournisseur de format qui prend en charge la mise en forme personnalisée. Quand l’une de ces méthodes de mise en forme est appelée, elle passe un <xref:System.Type> objet qui représente une <xref:System.ICustomFormatter> interface à la méthode du fournisseur de format <xref:System.IFormatProvider.GetFormat%2A> . La méthode <xref:System.IFormatProvider.GetFormat%2A> est alors chargée de retourner l'implémentation d' <xref:System.ICustomFormatter> qui fournit la mise en forme personnalisée.
 
 L'interface <xref:System.ICustomFormatter> a une méthode unique, <xref:System.ICustomFormatter.Format%28System.String%2CSystem.Object%2CSystem.IFormatProvider%29>, qui est appelée automatiquement par une méthode de mise en forme composite, une fois pour chaque élément de mise en forme dans une chaîne de format composite. La méthode <xref:System.ICustomFormatter.Format%28System.String%2CSystem.Object%2CSystem.IFormatProvider%29> a trois paramètres : une chaîne de format, qui représente l'argument `formatString` dans un élément de mise en forme, un objet à mettre en forme et un objet <xref:System.IFormatProvider> qui fournit des services de mise en forme. En général, la classe qui implémente <xref:System.ICustomFormatter> implémente également <xref:System.IFormatProvider>; ce dernier paramètre est donc une référence à la classe de mise en forme personnalisée elle-même. La méthode retourne une représentation sous forme de chaîne mise en forme personnalisée de l'objet à mettre en forme. Si la méthode ne peut pas mettre en forme l'objet, elle doit retourner une référence null (`Nothing` en Visual Basic).
 
@@ -351,15 +351,15 @@ L'exemple suivant utilise la classe `ByteByByteFormatter` pour mettre en forme d
 
 |Intitulé|Définition|
 |-----------|----------------|
-|[Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs numériques.|
-|[Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs numériques.|
-|[Chaînes de format de date et d'heure standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs <xref:System.DateTime> .|
-|[Chaînes de format de date et d'heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs <xref:System.DateTime> .|
-|[Chaînes de format TimeSpan standard.](../../../docs/standard/base-types/standard-timespan-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées d'intervalles de temps.|
-|[Chaînes de format TimeSpan personnalisées](../../../docs/standard/base-types/custom-timespan-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les intervalles de temps.|
-|[Chaînes de format d'énumération](../../../docs/standard/base-types/enumeration-format-strings.md)|Décrit les chaînes de format standard qui sont utilisées pour créer des représentations sous forme de chaîne de valeurs d'énumération.|
-|[Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md)|Explique comment incorporer une ou plusieurs valeurs mises en forme dans une chaîne. La chaîne peut ensuite être affichée dans la console ou écrite dans un flux.|
-|[Analyse de chaînes](../../../docs/standard/base-types/parsing-strings.md)|Décrit comment initialiser des objets aux valeurs décrites par des représentations sous forme de chaîne de ces objets. L'analyse est l'opération inverse de la mise en forme.|
+|[Chaînes de format numériques standard](standard-numeric-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs numériques.|
+|[Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs numériques.|
+|[Chaînes de format de date et d’heure standard](standard-date-and-time-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs <xref:System.DateTime> .|
+|[Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs <xref:System.DateTime> .|
+|[Chaînes de format TimeSpan standard](standard-timespan-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées d'intervalles de temps.|
+|[Chaînes de format TimeSpan personnalisées](custom-timespan-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les intervalles de temps.|
+|[Chaînes de format d’énumération](enumeration-format-strings.md)|Décrit les chaînes de format standard qui sont utilisées pour créer des représentations sous forme de chaîne de valeurs d'énumération.|
+|[Mise en forme composite](composite-formatting.md)|Explique comment incorporer une ou plusieurs valeurs mises en forme dans une chaîne. La chaîne peut ensuite être affichée dans la console ou écrite dans un flux.|
+|[Analyse de chaînes](parsing-strings.md)|Décrit comment initialiser des objets aux valeurs décrites par des représentations sous forme de chaîne de ces objets. L'analyse est l'opération inverse de la mise en forme.|
 
 ## <a name="reference"></a>Référence
 

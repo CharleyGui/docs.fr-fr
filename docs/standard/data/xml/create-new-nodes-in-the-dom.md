@@ -3,12 +3,12 @@ title: Création de nouveaux nœuds dans le DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 6c2b9789-b61a-49f9-b33f-db01a945edf2
-ms.openlocfilehash: f48990286405baee347becef87d0511cd42e9e77
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d99a3c68c7554ab266d71a4cbf2e676bc6db8cbc
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710997"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289575"
 ---
 # <a name="create-new-nodes-in-the-dom"></a>Création de nouveaux nœuds dans le DOM
 L'objet <xref:System.Xml.XmlDocument> possède une méthode de création de tous les types de nœuds. À l'invite, donnez un nom à la méthode, au contenu ou autres paramètres pour les nœuds dotés de contenu (par exemple, un nœud de texte) et le nœud est créé. Les méthodes suivantes sont celles qui nécessitent un nom ainsi que quelques autres paramètres pour créer un nœud correct.  
@@ -37,7 +37,7 @@ L'objet <xref:System.Xml.XmlDocument> possède une méthode de création de tous
   
  La création des autres types de nœuds exige d’autres opérations : il ne suffit pas de fournir des données à des paramètres.  
   
- Pour plus d'informations sur les attributs, consultez [Création de nouveaux attributs pour des éléments du DOM](../../../../docs/standard/data/xml/creating-new-attributes-for-elements-in-the-dom.md). Pour plus d’informations sur la validation des noms d’élément et d’attribut, consultez [Vérification des noms d’attribut et d’élément XML lors de la création de nœuds](../../../../docs/standard/data/xml/xml-element-and-attribute-name-verification-when-creating-new-nodes.md). Pour plus d'informations sur la création de références d'entité, consultez [Création de nouvelles références d'entité](../../../../docs/standard/data/xml/creating-new-entity-references.md). Pour plus d'informations sur la manière dont les espaces de noms influent sur le développement des références d'entité, consultez [Effet des espaces de noms sur le développement des références d'entité avec les nouveaux nœuds contenant des éléments et attributs](../../../../docs/standard/data/xml/namespace-affect-on-entity-ref-expansion-for-new-nodes.md).  
+ Pour plus d'informations sur les attributs, consultez [Création de nouveaux attributs pour des éléments du DOM](creating-new-attributes-for-elements-in-the-dom.md). Pour plus d’informations sur la validation des noms d’élément et d’attribut, consultez [Vérification des noms d’attribut et d’élément XML lors de la création de nœuds](xml-element-and-attribute-name-verification-when-creating-new-nodes.md). Pour plus d'informations sur la création de références d'entité, consultez [Création de nouvelles références d'entité](creating-new-entity-references.md). Pour plus d'informations sur la manière dont les espaces de noms influent sur le développement des références d'entité, consultez [Effet des espaces de noms sur le développement des références d'entité avec les nouveaux nœuds contenant des éléments et attributs](namespace-affect-on-entity-ref-expansion-for-new-nodes.md).  
   
  Une fois de nouveaux nœuds créés, plusieurs méthodes sont disponibles pour insérer ces nœuds dans l'arborescence. Ce tableau répertorie ces méthodes et décrit la position qu'occupe le nouveau nœud dans le DOM (Document Object Model) XML.  
   
@@ -51,4 +51,4 @@ L'objet <xref:System.Xml.XmlDocument> possède une méthode de création de tous
   
 ## <a name="see-also"></a>Voir aussi
 
-- [DOM (Document Object Model) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [DOM (Document Object Model) XML](xml-document-object-model-dom.md)

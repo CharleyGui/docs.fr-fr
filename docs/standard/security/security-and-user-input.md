@@ -1,6 +1,6 @@
 ---
 title: Sécurité et entrées d'utilisateur
-description: Votre code peut transmettre les données saisies par l’utilisateur comme paramètres à d’autres codes, ce qui peut affecter la sécurité. Vous pouvez effectuer des vérifications de portée pour rejeter les entrées problématiques.
+description: Votre code peut passer des données entrées par l’utilisateur en tant que paramètres à un autre code, ce qui peut affecter la sécurité. Vous pouvez effectuer une vérification de plage pour rejeter les entrées problématiques.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - secure coding, user input
 - code security, user input
 ms.assetid: 9141076a-96c9-4b01-93de-366bb1d858bc
-ms.openlocfilehash: fa9f8d4708e928c51e446d8369c9b4556fc6fb77
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 995af30385790a88718193e7abad1db7bc4b56c3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186109"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84275943"
 ---
 # <a name="security-and-user-input"></a>Sécurité et entrées d'utilisateur
 
@@ -24,7 +24,7 @@ Il s’agit des bogues de sécurité les plus subtils et les plus difficiles à 
 
 Voici quelques considérations importantes associées aux données utilisateurs :
 
-- Toutes les données utilisateur d’une réponse de serveur s’exécutent dans le contexte du site du serveur sur le client. Si votre serveur Web prend les données utilisateur et les insère dans ** \<** la page Web retournée, il peut, par exemple, inclure un script>tag et s’exécuter comme si depuis le serveur.
+- Toutes les données utilisateur d’une réponse de serveur s’exécutent dans le contexte du site du serveur sur le client. Si votre serveur Web utilise des données utilisateur et les insère dans la page Web renvoyée, il peut, par exemple, inclure une **\<script>** balise et l’exécuter comme si elle était à partir du serveur.
 
 - N’oubliez pas que le client peut demander toute URL.
 
@@ -60,4 +60,4 @@ Voici quelques considérations importantes associées aux données utilisateurs�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions de codage sécurisé](../../../docs/standard/security/secure-coding-guidelines.md)
+- [Instructions de codage sécurisé](secure-coding-guidelines.md)

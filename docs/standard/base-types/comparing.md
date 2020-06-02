@@ -18,12 +18,12 @@ helpviewer_keywords:
 - Equals method
 - StartsWith method
 ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
-ms.openlocfilehash: e63b2a8ac44d6171f9c48990882780ea420f8c76
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7997f3098265b76f8fe2ef4fc7ab0e17f6e81d69
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73101671"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289328"
 ---
 # <a name="comparing-strings-in-net"></a>Comparer des chaînes dans . NET
 .NET fournit plusieurs méthodes permettant de comparer les valeurs de chaînes. Le tableau suivant répertorie et décrit les méthodes de comparaison de valeurs.  
@@ -59,7 +59,7 @@ ms.locfileid: "73101671"
   
  Cet exemple affiche `-1` sur la console.  
   
- L'exemple précédent tient compte par défaut de la culture. Pour effectuer une comparaison de chaînes indépendantes de la culture, utilisez une surcharge de la méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> qui vous permet de spécifier la culture à utiliser en fournissant un paramètre *culture*. Pour un exemple qui montre comment utiliser la méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> pour effectuer une comparaison indépendante de la culture, consultez [Réalisation de comparaisons de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).  
+ L'exemple précédent tient compte par défaut de la culture. Pour effectuer une comparaison de chaînes indépendantes de la culture, utilisez une surcharge de la méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> qui vous permet de spécifier la culture à utiliser en fournissant un paramètre *culture*. Pour un exemple qui montre comment utiliser la méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> pour effectuer une comparaison indépendante de la culture, consultez [Réalisation de comparaisons de chaînes indépendantes de la culture](../globalization-localization/performing-culture-insensitive-string-comparisons.md).  
   
 ## <a name="compareordinal"></a>CompareOrdinal  
  La méthode <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> compare deux objets chaîne sans prendre en compte la culture locale. Les valeurs de retour de cette méthode sont identiques aux valeurs retournées par la méthode **Compare** du tableau précédent.  
@@ -89,7 +89,7 @@ ms.locfileid: "73101671"
   
  Cet exemple affiche `-1` sur la console.  
   
- Toutes les surcharges de la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> effectuent par défaut des comparaisons dépendantes de la culture et qui respectent la casse. Aucune surcharge de cette méthode n'est fournie pour vous permettre d'effectuer une comparaison indépendante de la culture. Pour la clarté du code, nous vous recommandons d’utiliser à la place la méthode **String.Compare**, en spécifiant <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> pour les opérations dépendantes de la culture ou <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> pour les opérations indépendantes de la culture. Pour un exemple montrant comment utiliser la méthode **String.Compare** pour effectuer des comparaisons dépendantes et indépendantes de la culture, consultez [Réalisation de comparaisons de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).  
+ Toutes les surcharges de la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> effectuent par défaut des comparaisons dépendantes de la culture et qui respectent la casse. Aucune surcharge de cette méthode n'est fournie pour vous permettre d'effectuer une comparaison indépendante de la culture. Pour la clarté du code, nous vous recommandons d’utiliser à la place la méthode **String.Compare**, en spécifiant <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> pour les opérations dépendantes de la culture ou <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> pour les opérations indépendantes de la culture. Pour un exemple montrant comment utiliser la méthode **String.Compare** pour effectuer des comparaisons dépendantes et indépendantes de la culture, consultez [Réalisation de comparaisons de chaînes indépendantes de la culture](../globalization-localization/performing-culture-insensitive-string-comparisons.md).  
   
 ## <a name="equals"></a>Égal à  
  La méthode **String.Equals** peut facilement déterminer si deux chaînes sont identiques. Cette méthode respectant la casse retourne une valeur booléenne **true** ou **false** . Elle peut être utilisée à partir d'une classe existante, comme illustré dans l'exemple suivant. L'exemple suivant utilise la méthode **Equals** pour déterminer si un objet chaîne contient la phrase "Hello World".  
@@ -150,7 +150,7 @@ ms.locfileid: "73101671"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérations de base des cordes](../../../docs/standard/base-types/basic-string-operations.md)
-- [Exécution d’opérations de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
+- [Opérations de chaînes de base](basic-string-operations.md)
+- [Exécution d’opérations de chaînes indépendantes de la culture](../globalization-localization/performing-culture-insensitive-string-operations.md)
 - [Sorting Weight Tables (pour .NET sur Windows)](https://www.microsoft.com/download/details.aspx?id=10921)
 - [Default Unicode Collation Element Table (pour .NET Core sur Linux et macOS)](https://www.unicode.org/Public/UCA/latest/allkeys.txt)

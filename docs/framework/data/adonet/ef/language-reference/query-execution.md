@@ -1,29 +1,30 @@
 ---
 title: Exécution des requêtes
+description: Découvrez les différentes méthodes d’exécution d’une requête LINQ to Entities, y compris l’exécution différée des requêtes, l’exécution immédiate des requêtes et le stockage de l’exécution.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: c0e6cf23-63ac-47dd-bfe9-d5bdca826fac
-ms.openlocfilehash: e372744eea3eed7fc3f7ee9c8bbdd711c95b586e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e776df6d35b6cc8c24cd83e902bc4d050347343b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79149971"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286790"
 ---
 # <a name="query-execution"></a>Exécution des requêtes
 Après avoir été créée par un utilisateur, une requête LINQ est convertie en arborescence de commandes. Une arborescence de commandes est une représentation de requête compatible avec Entity Framework. L’arborescence de requêtes est ensuite exécutée sur la source de données. Pendant l'exécution de la requête, toutes les expressions de la requête (c'est-à-dire, toutes ses composantes) sont évaluées, y compris les expressions utilisées dans la matérialisation des résultats.  
   
- Le moment où les expressions d'une requête sont exécutées peut varier. Les requêtes LINQ sont toujours exécutées lorsque la variable de requête fait l'objet d'une itération, et non au moment où elle est créée. C’est ce *qu’on appelle l’exécution différée*. Vous pouvez également forcer l'exécution immédiate de la requête, ce qui est utile pour mettre en cache les résultats de la requête. Ce sujet est abordé plus loin dans cette rubrique.  
+ Le moment où les expressions d'une requête sont exécutées peut varier. Les requêtes LINQ sont toujours exécutées lorsque la variable de requête fait l'objet d'une itération, et non au moment où elle est créée. C’est ce que l’on appelle *l’exécution différée*. Vous pouvez également forcer l'exécution immédiate de la requête, ce qui est utile pour mettre en cache les résultats de la requête. Ce sujet est abordé plus loin dans cette rubrique.  
   
  Lorsqu'une requête LINQ to Entities est exécutée, il est possible que certaines expressions de la requête soient exécutées sur le serveur et que certaines parties soient exécutées localement sur le client. L'évaluation côté client d'une expression a lieu avant l'exécution de la requête sur le serveur. Si une expression est évaluée sur le client, le résultat de cette évaluation remplace l'expression de la requête, et la requête est ensuite exécutée sur le serveur. Étant donné que les requêtes sont exécutées sur la source de données, la configuration de la source de données prévaut sur le comportement spécifié dans le client. Par exemple, la gestion des valeurs Null et la précision numérique dépendent des paramètres du serveur. Toutes les exceptions levées pendant l'exécution de la requête sur le serveur sont passées directement au client.  
 
 > [!TIP]
-> Pour un résumé pratique des opérateurs de requête en format de table, qui vous permet d’identifier rapidement le comportement d’exécution d’un opérateur, voir [Classification of Standard Query Operators by Manner of Execution (C)](../../../../../csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution.md).
+> Pour obtenir un résumé pratique des opérateurs de requête dans un format de table, qui vous permet d’identifier rapidement le comportement d’exécution d’un opérateur, consultez [classification des opérateurs de requête standard par mode d’exécution (C#)](../../../../../csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution.md).
 
 ## <a name="deferred-query-execution"></a>Exécution de requête différée  
- Dans une requête qui retourne une séquence, la variable de requête elle-même ne contient jamais les résultats de la requête et stocke uniquement les commandes de requête. L'exécution de la requête est différée jusqu'à ce que la variable de requête soit itérée au sein d'une boucle `foreach` ou `For Each`. C’est ce qu’on appelle *l’exécution différée;* c’est-à-dire que l’exécution des requêtes se produit quelque temps après la construction de la requête. Vous pouvez ainsi exécuter une requête aussi fréquemment que vous le souhaitez. Cela est utile lorsque, par exemple, l'une de vos bases de données est en cours de mise à jour par d'autres applications. Dans votre application, vous pouvez créer une requête pour récupérer les informations les plus récentes et l'exécuter à plusieurs reprises, pour retourner chaque fois les informations à jour.  
+ Dans une requête qui retourne une séquence, la variable de requête elle-même ne contient jamais les résultats de la requête et stocke uniquement les commandes de requête. L'exécution de la requête est différée jusqu'à ce que la variable de requête soit itérée au sein d'une boucle `foreach` ou `For Each`. C’est ce qu’on appelle une *exécution différée*. autrement dit, l’exécution de la requête a lieu un certain temps après la construction de la requête. Vous pouvez ainsi exécuter une requête aussi fréquemment que vous le souhaitez. Cela est utile lorsque, par exemple, l'une de vos bases de données est en cours de mise à jour par d'autres applications. Dans votre application, vous pouvez créer une requête pour récupérer les informations les plus récentes et l'exécuter à plusieurs reprises, pour retourner chaque fois les informations à jour.  
   
  L'exécution différée permet de combiner plusieurs requêtes ou d'étendre une requête. Lorsqu'une requête est étendue, elle est modifiée de manière à inclure les nouvelles opérations, et l'exécution finale reflète les modifications. Dans l'exemple suivant, la première requête retourne tous les produits. La deuxième requête étend la première en utilisant `Where` pour retourner tous les produits de taille « L » :  
   
@@ -47,7 +48,7 @@ Après avoir été créée par un utilisateur, une requête LINQ est convertie e
   
  Certaines opérations sont toujours exécutées sur le client, notamment la liaison de valeurs, les sous-expressions, les sous-requêtes de clôtures et la matérialisation d'objets dans les résultats de requête. En conséquence de quoi, ces éléments (par exemple, les valeurs de paramètres) ne peuvent pas être mis à jour pendant l'exécution. Des types anonymes peuvent être construits par incorporation dans la source de données, mais ils ne sont pas censés l'être. Des regroupements inline peuvent être construits dans la source de données, mais cela n'est pas systématique. En règle générale, il est préférable de ne pas faire de suppositions sur ce qui est construit sur le serveur.  
   
- Cette section décrit les scénarios dans lesquels le code est exécuté localement sur le client. Pour plus d’informations sur les types d’expressions exécutées localement, voir [Expressions in LINQ to Entities Queries](expressions-in-linq-to-entities-queries.md).  
+ Cette section décrit les scénarios dans lesquels le code est exécuté localement sur le client. Pour plus d’informations sur les types d’expressions exécutés localement, consultez [expressions dans les requêtes LINQ to Entities](expressions-in-linq-to-entities-queries.md).  
   
 ### <a name="literals-and-parameters"></a>Littéraux et paramètres  
  Les variables locales, telles que la variable `orderID` de l'exemple suivant, sont évaluées sur le client.  

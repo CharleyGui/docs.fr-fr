@@ -13,12 +13,12 @@ helpviewer_keywords:
 - PadLeft method
 - padding strings
 ms.assetid: 84a9f142-3244-4c90-ba02-21af9bbaff71
-ms.openlocfilehash: 2cf114296005456f354d286aa2804fa8a95160dc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 83d4b348c4de537d9a71363d34898a50a6a74cb3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73127624"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290394"
 ---
 # <a name="padding-strings-in-net"></a>Remplissage de chaînes dans .NET
 
@@ -49,4 +49,4 @@ Utilisez l’une des méthodes <xref:System.String> suivantes pour créer une ch
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérations de base des cordes](../../../docs/standard/base-types/basic-string-operations.md)
+- [Opérations de chaînes de base](basic-string-operations.md)

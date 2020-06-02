@@ -7,12 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
-ms.openlocfilehash: 93686ddf1afff76926e77acdbf5aa58e93d6cb77
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 949dc52c332b17784b0e1851d178465fe4881b6f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710035"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287634"
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>Validation d'un document XML dans le DOM
 
@@ -92,5 +92,5 @@ Les erreurs de validation sont traitées par l'objet <xref:System.Xml.Schema.Val
 - <xref:System.Xml.XmlReader>
 - <xref:System.Xml.Schema.ValidationEventHandler>
 - <xref:System.Xml.XmlReaderSettings>
-- [Traitement de données XML à l'aide du modèle DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
-- [Utilisation de schémas XML](../../../../docs/standard/data/xml/working-with-xml-schemas.md)
+- [Traitement de données XML à l'aide du modèle DOM](process-xml-data-using-the-dom-model.md)
+- [Utilisation de schémas XML](working-with-xml-schemas.md)

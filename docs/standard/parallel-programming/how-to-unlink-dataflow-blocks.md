@@ -1,5 +1,5 @@
 ---
-title: 'Comment : dissocier des blocs de flux de données'
+title: 'Procédure : Dissocier des blocs de flux de données'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,19 +10,19 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, unlinking dataflow blocks
 ms.assetid: 40f0208d-4618-47f7-85cf-4913d07d2d7d
-ms.openlocfilehash: b49cfc9730ba154202baf15093a54ba3ce0e2a8a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8af978ca2ca237988dae8328656d70574dbc1f14
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139293"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288054"
 ---
-# <a name="how-to-unlink-dataflow-blocks"></a>Comment : dissocier des blocs de flux de données
+# <a name="how-to-unlink-dataflow-blocks"></a>Procédure : Dissocier des blocs de flux de données
 Ce document explique comment dissocier un bloc de flux de données cible de sa source.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant crée trois objets <xref:System.Threading.Tasks.Dataflow.TransformBlock%602>, dont chacun appelle la méthode `TrySolution` pour calculer une valeur. Cet exemple n’a besoin que du résultat du premier appel à `TrySolution` pour se terminer.  
   
  [!code-csharp[TPLDataflow_ReceiveAny#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_receiveany/cs/dataflowreceiveany.cs#1)]
@@ -34,4 +34,4 @@ Ce document explique comment dissocier un bloc de flux de données cible de sa s
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [Dataflow](dataflow-task-parallel-library.md)

@@ -3,12 +3,12 @@ title: Résolution des ressources externes
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: ad3fa320-4b8f-4e5c-b549-01157591007a
-ms.openlocfilehash: 05cc41cef7da07581d4f0ec8e584858b913d1a80
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 82e9231be8a3619f59313460f0d5e0b246eb9436
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710269"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291485"
 ---
 # <a name="resolving-external-resources"></a>Résolution des ressources externes
 La propriété **XmlResolver** de **XmlDocument** est utilisée par la classe **XmlDocument** pour localiser des ressources qui ne sont pas incluses dans les données XML, comme des définitions de type de document (DTD), des entités et des schémas externes. Ces éléments peuvent être localisés sur un réseau ou un lecteur local et sont identifiables par un URI (Uniform Resource Identifier). **XmlDocument** peut ainsi résoudre les nœuds **EntityReference** présents dans le document et valider le document en fonction de la DTD ou du schéma externe.  
@@ -52,4 +52,4 @@ La propriété **XmlResolver** de **XmlDocument** est utilisée par la classe **
   
 ## <a name="see-also"></a>Voir aussi
 
-- [DOM (Document Object Model) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [DOM (Document Object Model) XML](xml-document-object-model-dom.md)

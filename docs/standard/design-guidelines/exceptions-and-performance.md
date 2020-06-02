@@ -9,22 +9,22 @@ helpviewer_keywords:
 - exceptions, performance
 - throwing exceptions, performance
 ms.assetid: 3ad6aad9-08e6-4232-b336-0e301f2493e6
-ms.openlocfilehash: afa4e748599781a5979823320d8913ff5357d415
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: a558547f0e6770e7e76ca31f760d6e2f55c712db
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741645"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289783"
 ---
 # <a name="exceptions-and-performance"></a>Exceptions et performances
 L’une des préoccupations courantes liées aux exceptions est que, si des exceptions sont utilisées pour du code qui échoue régulièrement, les performances de l’implémentation seront inacceptables. Il s’agit d’un problème valide. Lorsqu’un membre lève une exception, ses performances peuvent être plus lentes. Toutefois, il est possible d’obtenir de bonnes performances tout en respectant strictement les règles d’exception qui interdisent l’utilisation de codes d’erreur. Deux modèles décrits dans cette section montrent comment procéder.
 
- ❌ n’utilisez pas de codes d’erreur en raison de problèmes liés au fait que les exceptions peuvent affecter les performances de manière négative.
+ ❌N’utilisez pas de codes d’erreur en raison de problèmes liés au fait que les exceptions peuvent affecter les performances de manière négative.
 
  Pour améliorer les performances, il est possible d’utiliser le modèle testeur-Doer ou le modèle try-Parse, décrit dans les deux sections suivantes.
 
 ## <a name="tester-doer-pattern"></a>Modèle testeur-Doer
- Parfois, les performances d’un membre levant une exception peuvent être améliorées en divisant le membre en deux. Examinons la méthode <xref:System.Collections.Generic.ICollection%601.Add%2A> de l’interface <xref:System.Collections.Generic.ICollection%601>.
+ Parfois, les performances d’un membre levant une exception peuvent être améliorées en divisant le membre en deux. Examinons la <xref:System.Collections.Generic.ICollection%601.Add%2A> méthode de l' <xref:System.Collections.Generic.ICollection%601> interface.
 
 ```csharp
 ICollection<int> numbers = ...
@@ -42,12 +42,12 @@ if (!numbers.IsReadOnly)
 }
 ```
 
- Le membre utilisé pour tester une condition, qui, dans notre exemple, est la propriété `IsReadOnly`, est appelé testeur. Le membre utilisé pour effectuer une opération de levée potentielle, la méthode `Add` dans notre exemple, est appelé Doer.
+ Le membre utilisé pour tester une condition, qui, dans notre exemple, est la propriété `IsReadOnly` , est appelé testeur. Le membre utilisé pour effectuer une opération de levée potentielle, la `Add` méthode dans notre exemple, est appelé Doer.
 
  ✔️ EXAMINEz le modèle testeur-Doer pour les membres qui peuvent lever des exceptions dans les scénarios courants afin d’éviter les problèmes de performances liés aux exceptions.
 
 ## <a name="try-parse-pattern"></a>Modèle try-parse
- Pour les API très performantes, il est préférable d’utiliser un modèle encore plus rapide que le modèle testeur-Doer décrit dans la section précédente. Le modèle appelle pour ajuster le nom de membre afin qu’un cas de test bien défini fasse partie de la sémantique de membre. Par exemple, <xref:System.DateTime> définit une méthode <xref:System.DateTime.Parse%2A> qui lève une exception en cas d’échec de l’analyse d’une chaîne. Il définit également une méthode <xref:System.DateTime.TryParse%2A> correspondante qui tente d’analyser, mais retourne la valeur false si l’analyse échoue et retourne le résultat d’une analyse réussie à l’aide d’un paramètre `out`.
+ Pour les API très performantes, il est préférable d’utiliser un modèle encore plus rapide que le modèle testeur-Doer décrit dans la section précédente. Le modèle appelle pour ajuster le nom de membre afin qu’un cas de test bien défini fasse partie de la sémantique de membre. Par exemple, <xref:System.DateTime> définit une <xref:System.DateTime.Parse%2A> méthode qui lève une exception en cas d’échec de l’analyse d’une chaîne. Il définit également une <xref:System.DateTime.TryParse%2A> méthode correspondante qui tente d’analyser, mais retourne la valeur false si l’analyse échoue et retourne le résultat d’une analyse réussie à l’aide d’un `out` paramètre.
 
 ```csharp
 public struct DateTime
@@ -77,5 +77,5 @@ public struct DateTime
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
-- [Instructions de conception pour les exceptions](../../../docs/standard/design-guidelines/exceptions.md)
+- [Directives de conception d’infrastructure](index.md)
+- [Instructions de conception pour les exceptions](exceptions.md)

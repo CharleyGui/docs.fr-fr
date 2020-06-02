@@ -1,5 +1,5 @@
 ---
-title: 'Comment : remplir un nombre avec des zéros non significatifs'
+title: 'Procédure : remplir un nombre avec des zéros non significatifs'
 ms.date: 02/25/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,16 +11,16 @@ helpviewer_keywords:
 - number formatting [.NET Framework]
 - numbers [.NET Framework], format strings
 ms.assetid: 0b2c2cb5-c580-4891-8d81-cb632f5ec384
-ms.openlocfilehash: bc3c4b75c484274c214141d8fbfcf8ac592b0b99
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ef18fb1bb7b1592a4e92866028868bf1cf793bbf
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73131976"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290459"
 ---
-# <a name="how-to-pad-a-number-with-leading-zeros"></a>Comment : remplir un nombre avec des zéros non significatifs
+# <a name="how-to-pad-a-number-with-leading-zeros"></a>Procédure : remplir un nombre avec des zéros non significatifs
 
-Vous pouvez ajouter des zéros non significatifs à un entier en utilisant la [chaîne de format numérique standard](../../../docs/standard/base-types/standard-numeric-format-strings.md) « D » avec un spécificateur de précision. Vous pouvez ajouter des zéros non significatifs aux nombres entiers et à virgule flottante en utilisant une [chaîne de format numérique personnalisée](../../../docs/standard/base-types/custom-numeric-format-strings.md). Cet article montre comment utiliser les deux méthodes pour remplir un nombre avec des zéros non significatifs.
+Vous pouvez ajouter des zéros non significatifs à un entier en utilisant la [chaîne de format numérique standard](standard-numeric-format-strings.md) « D » avec un spécificateur de précision. Vous pouvez ajouter des zéros non significatifs aux nombres entiers et à virgule flottante en utilisant une [chaîne de format numérique personnalisée](custom-numeric-format-strings.md). Cet article montre comment utiliser les deux méthodes pour remplir un nombre avec des zéros non significatifs.
 
 ## <a name="to-pad-an-integer-with-leading-zeros-to-a-specific-length"></a>Pour remplir un entier avec des zéros non significatifs dans la limite d'une longueur spécifique
 
@@ -32,7 +32,7 @@ Vous pouvez ajouter des zéros non significatifs à un entier en utilisant la [c
 
     - Pour afficher l’entier comme valeur hexadécimale, appelez sa méthode `ToString(String)`, puis transmettez la chaîne « X*n* » comme valeur du paramètre de format, où *n* représente la longueur minimale de la chaîne.
 
-Vous pouvez également utiliser la chaîne de format dans une chaîne interpolée dans [C#](../../csharp/language-reference/tokens/interpolated.md) et [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md), ou vous pouvez appeler une méthode, telle que <xref:System.String.Format%2A?displayProperty=nameWithType> ou <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, qui utilise la [mise en forme composite](../../../docs/standard/base-types/composite-formatting.md).
+Vous pouvez également utiliser la chaîne de format dans une chaîne interpolée dans [C#](../../csharp/language-reference/tokens/interpolated.md) et [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md), ou vous pouvez appeler une méthode, telle que <xref:System.String.Format%2A?displayProperty=nameWithType> ou <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, qui utilise la [mise en forme composite](composite-formatting.md).
 
 L'exemple suivant met en forme plusieurs valeurs entières avec des zéros non significatifs de manière à ce que la longueur totale du nombre mis en forme soit au moins égale à huit caractères.
 
@@ -102,6 +102,6 @@ L'exemple suivant remplit deux valeurs <xref:System.Double> avec cinq zéros non
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Chaînes de format numérique personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)
-- [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md)
+- [Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)
+- [Chaînes de format numériques standard](standard-numeric-format-strings.md)
+- [Mise en forme composite](composite-formatting.md)

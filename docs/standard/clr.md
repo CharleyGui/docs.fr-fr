@@ -16,12 +16,12 @@ helpviewer_keywords:
 - code, runtime functionality
 ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
 ms.custom: updateeachrelease
-ms.openlocfilehash: 6f9ad8aafc37039b55ae3bf6eb743e07ad8e2235
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 74421f79c18f32e121d51c47f3eb32f3c2ed71fd
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74884408"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289244"
 ---
 # <a name="common-language-runtime-clr-overview"></a>Vue d’ensemble du Common Language Runtime (CLR)
 
@@ -58,17 +58,17 @@ Les outils et les compilateurs de langage exposent le fonctionnement du runtime 
 
 - Garbage collection.
 
-- Utilisation des délégués plutôt que des pointeurs fonction pour une sécurité de type et une sécurité accrues. Pour plus d'informations sur les délégués, consultez [Système de type commun](../../docs/standard/base-types/common-type-system.md).
+- Utilisation des délégués plutôt que des pointeurs fonction pour une sécurité de type et une sécurité accrues. Pour plus d'informations sur les délégués, consultez [Système de type commun](base-types/common-type-system.md).
 
 ## <a name="clr-versions"></a>Versions CLR
 
-Le numéro de version cadre .NET ne correspond pas nécessairement au numéro de version du CLR qu’il inclut. Pour une liste de versions cadres .NET et leurs versions CLR correspondantes, voir [.NET Versions et dépendances .](../framework/migration-guide/versions-and-dependencies.md) .NET Core versions ont une version de produit unique, c’est-à-dire, il n’y a pas de version CLR séparée. Pour une liste de versions .NET Core, voir [Télécharger .NET Core](https://dotnet.microsoft.com/download/dotnet-core).
+Le numéro de version de .NET Framework ne correspond pas nécessairement au numéro de version du CLR qu’il contient. Pour obtenir la liste des versions de .NET Framework et leurs versions CLR correspondantes, consultez [versions et dépendances de .NET Framework](../framework/migration-guide/versions-and-dependencies.md). Les versions de .NET Core ont une seule version de produit, autrement dit, il n’existe pas de version CLR distincte. Pour obtenir la liste des versions de .NET Core, consultez [Télécharger .net Core](https://dotnet.microsoft.com/download/dotnet-core).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 |Intitulé|Description|
 |-----------|-----------------|
-|[Processus d'exécution managée](managed-execution-process.md)|Décrit les étapes nécessaires pour tirer parti du Common Language Runtime.|
+|[Processus d’exécution managée](managed-execution-process.md)|Décrit les étapes nécessaires pour tirer parti du Common Language Runtime.|
 |[Gestion automatique de la mémoire](automatic-memory-management.md)|Explique comment le « garbage collector » alloue et libère la mémoire.|
-|[Aperçu du cadre .NET](../framework/get-started/overview.md)|Décrit les concepts fondamentaux du .NET Framework, tels que le système de type commun (CTS, Common Type System), l'interopérabilité interlangage, l'exécution managée, les domaines d'application et les assemblys.|
+|[Vue d’ensemble de l' .NET Framework](../framework/get-started/overview.md)|Décrit les concepts fondamentaux du .NET Framework, tels que le système de type commun (CTS, Common Type System), l'interopérabilité interlangage, l'exécution managée, les domaines d'application et les assemblys.|
 |[Système de type commun](./base-types/common-type-system.md)|Décrit la manière dont les types sont déclarés, utilisés et managés dans le runtime à l'appui de l'intégration interlangage.|

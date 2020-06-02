@@ -1,13 +1,14 @@
 ---
 title: Entity Data Model
+description: Le Entity Data Model décrit la structure des données, indépendamment de son formulaire stocké, qui résout les problèmes résultant du stockage de données dans de nombreuses formes.
 ms.date: 03/30/2017
 ms.assetid: 2dda3d5b-4582-4ba0-a91d-fcd7a1498137
-ms.openlocfilehash: ed834c57104e9f03ac337f6c1d30a0498bd42a06
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: c98b1f4559ef297f8b11051940fd91f5f6fa06fd
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738410"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286738"
 ---
 # <a name="entity-data-model"></a>Entity Data Model
 Le modèle EDM (Entity Data Model) est un jeu de concepts qui décrivent la structure des données, indépendamment de la forme sous laquelle elles sont stockées. Inspiré du modèle entité-relation décrit par Peter Chen en 1976, le modèle EDM le complète et étend ses utilisations traditionnelles.  
@@ -23,7 +24,7 @@ Le modèle EDM (Entity Data Model) est un jeu de concepts qui décrivent la stru
   
  [Entity Data Model : espaces de noms](entity-data-model-namespaces.md)  
   
- [Entity Data Model : types de données primitifs](entity-data-model-primitive-data-types.md)  
+ [Entity Data Model : types de données primitifs](entity-data-model-primitive-data-types.md)  
   
  [Entity Data Model : héritage](entity-data-model-inheritance.md)  
   
@@ -35,7 +36,7 @@ Le modèle EDM (Entity Data Model) est un jeu de concepts qui décrivent la stru
   
  [terminaison d’ensemble d’associations](association-set-end.md)  
   
- [type d’association](association-type.md)  
+ [type d'association](association-type.md)  
   
  [type complexe](complex-type.md)  
   
@@ -47,7 +48,7 @@ Le modèle EDM (Entity Data Model) est un jeu de concepts qui décrivent la stru
   
  [type d’entité](entity-type.md)  
   
- [facet](facet.md)  
+ [articulaire](facet.md)  
   
  [propriété de clé étrangère](foreign-key-property.md)  
   
@@ -57,12 +58,12 @@ Le modèle EDM (Entity Data Model) est un jeu de concepts qui décrivent la stru
   
  [propriété de navigation](navigation-property.md)  
   
- [propriété](property.md)  
+ [property](property.md)  
   
  [contrainte d’intégrité référentielle](referential-integrity-constraint.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Outils de Entity Data Model ADO.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
-- [Vue d’ensemble du fichier. edmx](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
+- [Présentation d'un fichier .edmx](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
 - [Spécification CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)

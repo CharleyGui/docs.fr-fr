@@ -3,12 +3,12 @@ title: Règles pour l'inférence de types et de structure de nœud de schéma
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: d74ce896-717d-4871-8fd9-b070e2f53cb0
-ms.openlocfilehash: 6d66384dea7018bcc3b2dd8fde96f4fa2653f8e8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 381c5fbd3823514de98b38840b8259a417e48fb8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710243"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289081"
 ---
 # <a name="rules-for-inferring-schema-node-types-and-structure"></a>Règles pour l'inférence de types et de structure de nœud de schéma
 Cette rubrique décrit comment le processus d'inférence de schéma convertit les types de nœuds d'un document XML en une structure en langage XSD (XML Schema Definition).  
@@ -35,12 +35,12 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
 > [!NOTE]
 > Toutes les déclarations `complexType` sont déduites comme des types anonymes. Le seul élément global déduit est l'élément racine ; tous les autres éléments sont locaux.  
   
- Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
+ Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](inferring-schemas-from-xml-documents.md).  
   
 ### <a name="simple-typed-element"></a>Élément de type simple  
  Le tableau suivant présente l'entrée XML dans la méthode <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> et le schéma XML généré. L'élément en gras montre le schéma déduit pour l'élément de type simple.  
   
- Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
+ Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](inferring-schemas-from-xml-documents.md).  
   
 |XML|schéma|  
 |---------|------------|  
@@ -49,7 +49,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
 ### <a name="empty-element"></a>Élément vide  
  Le tableau suivant présente l'entrée XML dans la méthode <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> et le schéma XML généré. L'élément en gras montre le schéma déduit pour l'élément vide.  
   
- Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
+ Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](inferring-schemas-from-xml-documents.md).  
   
 |XML|schéma|  
 |---------|------------|  
@@ -58,7 +58,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
 ### <a name="empty-element-with-attributes"></a>Élément vide avec attributs  
  Le tableau suivant présente l'entrée XML dans la méthode <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> et le schéma XML généré. Les éléments en gras montrent le schéma déduit pour l'élément vide avec des attributs.  
   
- Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
+ Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](inferring-schemas-from-xml-documents.md).  
   
 |XML|schéma|  
 |---------|------------|  
@@ -67,7 +67,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
 ### <a name="element-with-attributes-and-simple-content"></a>Élément avec attributs et contenu simple  
  Le tableau suivant présente l'entrée XML dans la méthode <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> et le schéma XML généré. Les éléments en gras montrent le schéma déduit pour un élément avec des attributs et un contenu simple.  
   
- Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
+ Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](inferring-schemas-from-xml-documents.md).  
   
 |XML|schéma|  
 |---------|------------|  
@@ -79,7 +79,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
 > [!NOTE]
 > Même si un élément n'a qu'un seul élément enfant, il est traité comme une séquence.  
   
- Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
+ Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](inferring-schemas-from-xml-documents.md).  
   
 |XML|schéma|  
 |---------|------------|  
@@ -91,7 +91,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
 > [!NOTE]
 > Même si un élément n'a qu'un seul élément enfant, il est traité comme une séquence.  
   
- Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
+ Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](inferring-schemas-from-xml-documents.md).  
   
 |XML|schéma|  
 |---------|------------|  
@@ -103,7 +103,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
 > [!NOTE]
 > L'attribut `maxOccurs` de l'élément `xs:choice` a la valeur `"unbounded"` dans le schéma déduit.  
   
- Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
+ Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](inferring-schemas-from-xml-documents.md).  
   
 |XML|schéma|  
 |---------|------------|  
@@ -115,7 +115,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
 > [!NOTE]
 > L'attribut `maxOccurs` de l'élément `xs:choice` a la valeur `"unbounded"` dans le schéma déduit.  
   
- Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
+ Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](inferring-schemas-from-xml-documents.md).  
   
 |XML|schéma|  
 |---------|------------|  
@@ -136,18 +136,18 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
 |Type de nœud|Traduction|  
 |---------------|-----------------|  
 |Instruction de traitement|Ignoré.|  
-|Comment|Ignoré.|  
+|Commentaire|Ignoré.|  
 |Référence d'entité|La classe <xref:System.Xml.Schema.XmlSchemaInference> ne gère pas les références d'entité. Si un document XML contient des références d’entité, vous devez utiliser un lecteur qui développe les entités. Par exemple, vous pouvez passer un objet <xref:System.Xml.XmlTextReader> avec la propriété <xref:System.Xml.XmlTextReader.EntityHandling%2A> définie à <xref:System.Xml.EntityHandling.ExpandEntities> comme paramètre. Si des références d'entité sont rencontrées et que le lecteur n'étend pas les entités, une exception est levée.|  
 |CDATA|Toute section `<![CDATA[ … ]]` dans un document XML sera déduite en tant que `xs:string`.|  
 |Type du document|Ignoré.|  
 |Espaces de noms|Ignoré.|  
   
- Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
+ Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](inferring-schemas-from-xml-documents.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.Schema.XmlSchemaInference>
-- [Modèle Objet du schéma (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
-- [Inférence d'un schéma XML](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)
-- [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)
-- [Règles relatives à l'inférence de types simples](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)
+- [Modèle Objet du schéma (SOM) XML](xml-schema-object-model-som.md)
+- [Inférence d'un schéma XML](inferring-an-xml-schema.md)
+- [Inférence de schémas à partir de documents XML](inferring-schemas-from-xml-documents.md)
+- [Règles relatives à l'inférence de types simples](rules-for-inferring-simple-types.md)

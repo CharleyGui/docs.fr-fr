@@ -7,12 +7,12 @@ helpviewer_keywords:
 - virtual members
 - members [.NET Framework], virtual
 ms.assetid: 8ff4eb97-0364-43ec-8a02-934b5cd94d19
-ms.openlocfilehash: 8ed519a01162056151d8ae6398c0d06495911afd
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 9eb6cbef969e51dee1a72d402c124d06f08fe5c4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743526"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288496"
 ---
 # <a name="virtual-members"></a>Membres virtuels
 Les membres virtuels peuvent être remplacés, ce qui modifie le comportement de la sous-classe. Elles sont assez similaires aux rappels en termes d’extensibilité, mais elles sont préférables en termes de performances d’exécution et de consommation de mémoire. En outre, les membres virtuels s’apaisent plus naturellement dans les scénarios qui requièrent la création d’un type spécial de type existant (spécialisation).
@@ -23,7 +23,7 @@ Les membres virtuels peuvent être remplacés, ce qui modifie le comportement de
 
  Les membres virtuels, comme les rappels (et peut-être plus que les rappels), sont coûteux pour la conception, le test et la maintenance, car tout appel à un membre virtuel peut être substitué de manière imprévisible et peut exécuter du code arbitraire. En outre, un plus grand nombre d’efforts est généralement requis pour définir clairement le contrat des membres virtuels, de sorte que le coût de la conception et de la documentation est plus élevé.
 
- ❌ ne faites pas de membres virtuels, sauf si vous avez une bonne raison de le faire et que vous connaissez tous les coûts liés à la conception, au test et à la maintenance des membres virtuels.
+ ❌N’effectuez pas de membres virtuels, sauf si vous avez une bonne raison de le faire et que vous connaissez tous les coûts liés à la conception, au test et à la maintenance des membres virtuels.
 
  Les membres virtuels sont moins indulgent avec en termes de modifications qui peuvent être apportées sans interrompre la compatibilité. En outre, ils sont plus lents que les membres non virtuels, principalement parce que les appels aux membres virtuels ne sont pas Inline.
 
@@ -39,5 +39,5 @@ Les membres virtuels peuvent être remplacés, ce qui modifie le comportement de
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
-- [Conception en vue de l’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
+- [Directives de conception d’infrastructure](index.md)
+- [Conception en vue de l’extensibilité](designing-for-extensibility.md)

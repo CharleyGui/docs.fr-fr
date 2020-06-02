@@ -10,12 +10,12 @@ helpviewer_keywords:
 - lists [.NET Framework], generic delegates
 - generics [.NET Framework], delegates
 ms.assetid: 416be383-cc61-4102-9b1b-88b51adb963e
-ms.openlocfilehash: baf8497289ee71c2dbdc544607212de90928289c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b0ecd8661b7c58645e49ca884ed0499e8c828af9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75708382"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287530"
 ---
 # <a name="generic-delegates-for-manipulating-arrays-and-lists"></a>Délégués génériques pour la manipulation de tableaux et de listes
 Cette rubrique donne une vue d’ensemble des délégués génériques pour les conversions, des prédicats de recherche et des actions à effectuer sur les éléments d’un tableau ou d’une collection.  
@@ -43,7 +43,7 @@ Cette rubrique donne une vue d’ensemble des délégués génériques pour les 
 
 - <xref:System.Collections.Generic?displayProperty=nameWithType>
 - <xref:System.Collections.ObjectModel?displayProperty=nameWithType>
-- [Génériques](../../../docs/standard/generics/index.md)
-- [Collections génériques dans le .NET Framework](../../../docs/standard/generics/collections.md)
-- [Interfaces génériques](../../../docs/standard/generics/interfaces.md)
-- [Covariance et Contravariance](../../../docs/standard/generics/covariance-and-contravariance.md)
+- [Génériques](index.md)
+- [Collections génériques dans le .NET Framework](collections.md)
+- [Interfaces génériques](interfaces.md)
+- [Covariance et contravariance](covariance-and-contravariance.md)

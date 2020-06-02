@@ -1,14 +1,14 @@
 ---
 title: Qu’est-ce que Model Builder et comment fonctionne-t-il ?
 description: Comment utiliser Model Builder ML.NET pour entraîner automatiquement un modèle Machine Learning
-ms.date: 03/25/2020
+ms.date: 06/01/2020
 ms.custom: overview, mlnet-tooling
-ms.openlocfilehash: 4afdbfd1682a30647b09d05d51a5c73c214fe2bd
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 2ed4a0c3c94ae9f46bb1cf6ddb1e9774baf82367
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616927"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289497"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Qu’est-ce que Model Builder et comment fonctionne-t-il ?
 
@@ -112,14 +112,14 @@ Si vous n’avez pas encore vos propres données, essayez un de ces jeux de donn
 |classification ;|Prédire les anomalies de vente|[Données de ventes de produits](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Ventes de produits|Month|
 ||Prédiction des sentiments de commentaires sur le site Web|[Données de commentaires de site web](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Étiquette (0 quand le sentiment est négatif, 1 quand il est positif)|Commentaire, Année|
 ||Prédire les transactions de carte de crédit frauduleuse|[Données de carte de crédit](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Classe (1 en cas de fraude, sinon 0)|Quantité, V1-V28 (caractéristiques anonymisées)|
-||Prédire le type de problème dans un dépôt GitHub|[Données de problèmes GitHub](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Zone|Titre, Description|
+||Prédire le type de problème dans un dépôt GitHub|[Données de problèmes GitHub](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Domaine|Titre, Description|
 |Prédiction de valeur|Prédire le tarif des taxis|[Données de courses de taxi](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Fare|Heure, distance du trajet|
 |Classification d’image|Prédire la catégorie d’une fleur |[images de fleurs](http://download.tensorflow.org/example_images/flower_photos.tgz)|Type de fleur : marguerites, dandelion, roses, tournesols, tulipes|Données d’image elles-mêmes|
 |Recommandation|Prédire les films que quelqu’un souhaitera|[évaluations des films](http://files.grouplens.org/datasets/movielens/ml-latest-small.zip)|Utilisateurs, films|Évaluations|
 
 ## <a name="train"></a>Former
 
-Une fois que vous avez sélectionné votre scénario, vos données et votre étiquette, Model Builder entraîne le modèle.
+Une fois que vous avez sélectionné votre scénario, votre environnement, vos données et votre étiquette, le générateur de modèles forme le modèle.
 
 ### <a name="what-is-training"></a>Qu’est-ce que l’entraînement ?
 
@@ -149,6 +149,8 @@ Ces chiffres sont un guide uniquement. La longueur exacte de l’apprentissage d
 - type de colonne
 - tâche ML
 - performances du processeur, du disque et de la mémoire de la machine utilisée pour l’apprentissage
+
+Il est généralement recommandé d’utiliser plus de 100 lignes en tant que jeux de données avec moins que ce qui ne peut pas produire de résultats et peut prendre beaucoup plus de temps pour former.
 
 ## <a name="evaluate"></a>Évaluer
 
@@ -193,7 +195,7 @@ Si le score de performances de votre modèle n’est pas aussi bon que souhaité
 
 - Entraîner sur une période de temps plus longue. Avec plus de temps, le moteur de Machine Learning automatisé expérimente des algorithmes et des paramètres supplémentaires.
 
-- Ajouter des données. Parfois, la quantité de données n’est pas suffisante pour entraîner un modèle Machine Learning de haute qualité.
+- Ajouter des données. Parfois, la quantité de données n’est pas suffisante pour former un modèle de Machine Learning de haute qualité. Cela est particulièrement vrai pour les jeux de données qui ont un petit nombre d’exemples.
 
 - Équilibrer vos données. Pour les tâches de classification, vérifiez que le jeu d’entraînement est équilibré entre les différentes catégories. Par exemple, si vous avez quatre classes pour 100 exemples d’entraînement et que les deux premières classes (étiquette1 et étiquette2) sont utilisées pour 90 enregistrements, mais que les deux autres (étiquette3 et étiquette4) sont utilisées seulement sur les 10 enregistrements restants, l’absence de données équilibrées peut faire que votre modèle aura du mal à prédire correctement étiquette3 ou étiquette4.
 

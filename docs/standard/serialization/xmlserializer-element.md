@@ -7,14 +7,14 @@ helpviewer_keywords:
 - XML serialization, configuration
 - xmlSerializer element
 ms.assetid: d129d10c-3eb7-45d9-8098-5fa853825e47
-ms.openlocfilehash: 68037959893ec307a896ea86d21e40a9d7aa824c
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 667d59f7eb0d1c7682afcdda584cc5b0ca2da802
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380032"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288925"
 ---
-# <a name="xmlserializer-element"></a>\<Élément> XmlSerializer
+# <a name="xmlserializer-element"></a>Élément \<xmlSerializer>
 Spécifie si un contrôle supplémentaire de la progression de <xref:System.Xml.Serialization.XmlSerializer> est effectué.  
   
  \<configuration>  
@@ -43,9 +43,9 @@ Spécifie si un contrôle supplémentaire de la progression de <xref:System.Xml.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<Élément System. Xml. Serialization>](../../../docs/standard/serialization/system-xml-serialization-element.md)|Contient des paramètres de configuration pour les classes <xref:System.Xml.Serialization.XmlSerializer> et <xref:System.Xml.Serialization.XmlSchemaImporter>.|  
+|[\<system.xml.serialization>Appartient](system-xml-serialization-element.md)|Contient des paramètres de configuration pour les classes <xref:System.Xml.Serialization.XmlSerializer> et <xref:System.Xml.Serialization.XmlSchemaImporter>.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Notes  
  Par défaut, le <xref:System.Xml.Serialization.XmlSerializer> fournit une couche supplémentaire de sécurité contre des attaques par déni de service potentielles lors de la désérialisation de données non fiables. Pour ce faire, il tente de détecter des boucles infinies pendant la désérialisation. Si une telle condition est détectée, une exception est levée avec le message suivant : « Erreur interne : la désérialisation n’a pas pu avancer sur le flux de données sous-jacent. ».  
   
  Le fait de recevoir ce message n'indique pas nécessairement qu'une attaque par déni de service est en cours. Dans de rares circonstances, le mécanisme de détection de boucles infinies génère un faux positif et l'exception est levée pour un message entrant légitime. Si vous voyez, dans votre application, que des messages légitimes sont rejetés par cette couche de protection supplémentaire, définissez l’attribut **checkDeserializeAdvances** sur la valeur false.  
@@ -64,5 +64,5 @@ Spécifie si un contrôle supplémentaire de la progression de <xref:System.Xml.
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [\<Élément System. Xml. Serialization>](../../../docs/standard/serialization/system-xml-serialization-element.md)
-- [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [\<system.xml.serialization>Appartient](system-xml-serialization-element.md)
+- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)

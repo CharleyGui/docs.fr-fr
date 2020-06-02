@@ -10,23 +10,23 @@ helpviewer_keywords:
 - post-events
 - signatures, event handling
 ms.assetid: 67b3c6e2-6a8f-480d-a78f-ebeeaca1b95a
-ms.openlocfilehash: b44ee5933f8629b4dddbf3be1b79b2e77b0254f7
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 852c99b1a41691911f7ae82d3b8104526811757d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741688"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289822"
 ---
 # <a name="event-design"></a>Conception d'événements
-Les événements sont la forme de rappels la plus couramment utilisée (les constructions qui permettent à l’infrastructure d’appeler le code utilisateur). Parmi les autres mécanismes de rappel, citons les membres qui prennent des délégués, des membres virtuels et des plug-ins basés sur des interfaces. les données des études d’utilisation indiquent que la majorité des développeurs sont plus à l’aise avec les événements qu’avec les autres mécanismes de rappel. . Les événements sont parfaitement intégrés à Visual Studio et de nombreux langages.
+Les événements sont la forme de rappels la plus couramment utilisée (les constructions qui permettent à l’infrastructure d’appeler le code utilisateur). Parmi les autres mécanismes de rappel, citons les membres qui prennent des délégués, des membres virtuels et des plug-ins basés sur des interfaces. les données des études d’utilisation indiquent que la majorité des développeurs sont plus à l’aise avec les événements qu’avec les autres mécanismes de rappel. Les événements sont parfaitement intégrés à Visual Studio et de nombreux langages.
 
- Il est important de noter qu’il existe deux groupes d’événements : les événements déclenchés avant un état des modifications du système, appelés pré-événements et les événements déclenchés après la modification d’un État, appelés événements postérieurs à. Un exemple d’un pré-événement serait `Form.Closing`, qui est déclenché avant la fermeture d’un formulaire. Un exemple d’événement de publication serait `Form.Closed`, qui est déclenché après la fermeture d’un formulaire.
+ Il est important de noter qu’il existe deux groupes d’événements : les événements déclenchés avant un état des modifications du système, appelés pré-événements et les événements déclenchés après la modification d’un État, appelés événements postérieurs à. Un exemple d’un pré-événement serait `Form.Closing` , qui est déclenché avant la fermeture d’un formulaire. Un exemple d’événement de publication est `Form.Closed` , qui est déclenché après la fermeture d’un formulaire.
 
  ✔️ Utilisez le terme « Raise » pour les événements plutôt que « déclencher » ou « déclencheur ».
 
- ✔️ Utilisez <xref:System.EventHandler%601?displayProperty=nameWithType> au lieu de créer manuellement de nouveaux délégués à utiliser comme gestionnaires d’événements.
+ ✔️ Utilisez <xref:System.EventHandler%601?displayProperty=nameWithType> plutôt que de créer manuellement de nouveaux délégués à utiliser comme gestionnaires d’événements.
 
- ✔️ envisagez d’utiliser une sous-classe de <xref:System.EventArgs> comme argument d’événement, sauf si vous êtes absolument sûr que l’événement n’aura jamais besoin de transmettre des données à la méthode de gestion des événements, auquel cas vous pouvez utiliser directement le type de `EventArgs`.
+ ✔️ envisagez d’utiliser une sous-classe de <xref:System.EventArgs> comme argument d’événement, sauf si vous êtes absolument sûr que l’événement n’aura jamais besoin de transmettre des données à la méthode de gestion des événements, auquel cas vous pouvez utiliser `EventArgs` directement le type.
 
  Si vous livrez une API à l’aide de `EventArgs` directement, vous ne serez jamais en mesure d’ajouter des données à exécuter avec l’événement sans interrompre la compatibilité. Si vous utilisez une sous-classe, même si elle est initialement vide, vous pouvez ajouter des propriétés à la sous-classe si nécessaire.
 
@@ -40,11 +40,11 @@ Les événements sont la forme de rappels la plus couramment utilisée (les cons
 
  Le paramètre doit être nommé `e` et doit être typé en tant que classe d’argument d’événement.
 
- ❌ ne transmettez pas NULL comme expéditeur lors du déclenchement d’un événement non statique.
+ ❌NE transmettez pas NULL comme expéditeur lors du déclenchement d’un événement non statique.
 
  ✔️ passer NULL comme expéditeur lors du déclenchement d’un événement statique.
 
- ❌ ne transmettez pas NULL comme paramètre de données d’événement lors du déclenchement d’un événement.
+ ❌NE transmettez pas de valeur null en tant que paramètre de données d’événement lors du déclenchement d’un événement.
 
  Vous devez passer `EventArgs.Empty` si vous ne souhaitez pas transmettre de données à la méthode de gestion des événements. Les développeurs s’attendent à ce que ce paramètre ne soit pas null.
 
@@ -53,17 +53,17 @@ Les événements sont la forme de rappels la plus couramment utilisée (les cons
  Utilisez <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType> ou sa sous-classe comme argument d’événement pour permettre à l’utilisateur final d’annuler des événements.
 
 ### <a name="custom-event-handler-design"></a>Conception du gestionnaire d’événements personnalisé
- Dans certains cas, `EventHandler<T>` ne peut pas être utilisé, par exemple quand le Framework doit fonctionner avec des versions antérieures du CLR, qui ne prenait pas en charge les génériques. Dans ce cas, vous devrez peut-être concevoir et développer un délégué de gestionnaire d’événements personnalisé.
+ Dans certains cas, il `EventHandler<T>` ne peut pas être utilisé, par exemple quand le Framework doit fonctionner avec des versions antérieures du CLR, qui ne prenait pas en charge les génériques. Dans ce cas, vous devrez peut-être concevoir et développer un délégué de gestionnaire d’événements personnalisé.
 
  ✔️ Utilisez un type de retour void pour les gestionnaires d’événements.
 
  Un gestionnaire d’événements peut appeler plusieurs méthodes de gestion des événements, éventuellement sur plusieurs objets. Si les méthodes de gestion des événements étaient autorisées à retourner une valeur, il y aurait plusieurs valeurs de retour pour chaque appel d’événement.
 
- ✔️ Utilisez `object` comme type du premier paramètre du gestionnaire d’événements et appelez-le `sender`.
+ ✔️ Utilisez `object` comme type du premier paramètre du gestionnaire d’événements et appelez-le `sender` .
 
- ✔️ Utilisez <xref:System.EventArgs?displayProperty=nameWithType> ou sa sous-classe comme type du deuxième paramètre du gestionnaire d’événements, et appelez-le `e`.
+ ✔️ Utilisez <xref:System.EventArgs?displayProperty=nameWithType> ou sa sous-classe comme type du deuxième paramètre du gestionnaire d’événements et appelez-le `e` .
 
- ❌ n’avez pas plus de deux paramètres sur les gestionnaires d’événements.
+ ❌Il n’y a pas plus de deux paramètres sur les gestionnaires d’événements.
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 
@@ -71,5 +71,5 @@ Les événements sont la forme de rappels la plus couramment utilisée (les cons
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions de conception des membres](../../../docs/standard/design-guidelines/member.md)
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
+- [Recommandations en matière de conception de membres](member.md)
+- [Directives de conception d’infrastructure](index.md)

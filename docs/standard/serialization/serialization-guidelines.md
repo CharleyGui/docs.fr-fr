@@ -9,12 +9,12 @@ helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-ms.openlocfilehash: af0b857e98ffbe0ff9f12108174b79f873c2b38f
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: eb11f0b8ddd34df7c6970c275d4b83cb95f59a53
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378389"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287491"
 ---
 # <a name="serialization-guidelines"></a>Indications concernant la sérialisation
 Ce document répertorie les indications à prendre en compte lors de la conception d'une API à sérialiser.  
@@ -23,7 +23,7 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
   
  .NET offre trois technologies de sérialisation principales qui sont optimisées pour différents scénarios de sérialisation. Le tableau suivant répertorie ces technologies et les principaux types .NET qui leur sont associés.  
   
-|Technology|Classes concernées|Remarques|  
+|Technology|Classes concernées|Notes|  
 |----------------|----------------------|-----------|  
 |Sérialisation du contrat de données|<xref:System.Runtime.Serialization.DataContractAttribute><br /><br /> <xref:System.Runtime.Serialization.DataMemberAttribute><br /><br /> <xref:System.Runtime.Serialization.DataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.NetDataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer><br /><br /> <xref:System.Runtime.Serialization.ISerializable>|Persistance générale<br /><br /> Services Web<br /><br /> JSON|  
 |Sérialisation XML|<xref:System.Xml.Serialization.XmlSerializer>|Format XML <br />avec contrôle total|  
@@ -31,7 +31,7 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
   
  Lorsque vous concevez de nouveaux types, vous devez décider laquelle de ces technologies, le cas échéant, doit être prise en charge par ces types. Les indications suivantes expliquent comment effectuer ce choix et fournir cette prise en charge. Elles ne sont pas destinées à vous aider à choisir la technologie de sérialisation que vous devez utiliser dans l'implémentation de votre application ou bibliothèque. Elles ne sont pas non plus directement liées à la conception d'une API et par conséquent, elles ne relèvent pas du propos de cette rubrique.  
   
-## <a name="guidelines"></a>Consignes  
+## <a name="guidelines"></a>Recommandations  
   
 - PENSEZ à la sérialisation lorsque vous concevez de nouveaux types.  
   
@@ -79,7 +79,7 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
      [!code-csharp[SerializationGuidelines#4](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#4)]
      [!code-vb[SerializationGuidelines#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#4)]  
   
-     Quand la liste de types connus n’est pas connue de façon statique (lorsque la classe **Person** est compilée), **KnownTypeAttribute** peut aussi pointer vers une méthode qui retourne une liste de types connus au moment de l’exécution.  
+     Dans les cas où la liste de types connus n’est pas connue de façon statique (lorsque la classe **Person** est compilée), **KnownTypeAttribute** peut également pointer vers une méthode qui retourne une liste de types connus au moment de l’exécution.  
   
 5. TENEZ COMPTE de la compatibilité ascendante et descendante lors de la création ou modification de types sérialisables.  
   
@@ -92,7 +92,7 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
      [!code-csharp[SerializationGuidelines#5](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#5)]
      [!code-vb[SerializationGuidelines#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#5)]  
   
-     Pour plus d’informations, consultez [Contrats de données compatibles avec des versions ultérieures](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+     Pour plus d’informations, consultez [Contrats de données compatibles avec des versions ultérieures](../../framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 #### <a name="supporting-xml-serialization"></a>Prise en charge de la sérialisation XML  
  La sérialisation du contrat de données est la principale technologie de sérialisation (par défaut) dans le .NET Framework. Il existe cependant des scénarios de sérialisation qui ne sont pas pris en charge par cette technologie. Par exemple, vous n'avez pas le contrôle total sur la forme du XML généré ou consommé par le sérialiseur. Si ce contrôle renforcé est nécessaire, vous devez utiliser la *sérialisation XML*, et concevoir vos types pour prendre en charge cette technologie de sérialisation.  
@@ -140,10 +140,10 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Using Data Contracts](../../../docs/framework/wcf/feature-details/using-data-contracts.md)
-- [Sérialiseur de contrat de données](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)
-- [Types pris en charge par le sérialiseur de contrat de données](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
+- [Using Data Contracts](../../framework/wcf/feature-details/using-data-contracts.md)
+- [Sérialiseur de contrat de données](../../framework/wcf/feature-details/data-contract-serializer.md)
+- [Types pris en charge par le sérialiseur de contrat de données](../../framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
 - [Sérialisation binaire](binary-serialization.md)
 - [.NET Remoting](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
 - [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
-- [Sécurité et sérialisation](../../../docs/framework/misc/security-and-serialization.md)
+- [Sécurité et sérialisation](../../framework/misc/security-and-serialization.md)

@@ -7,12 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 359b10eb-ec05-4cc6-ac96-c2b060afc4de
-ms.openlocfilehash: 34215c2b06db08a74b5b9c13589ac84f26a2ef8f
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: 1729380180d4440ac107885a39eff706c7fc8e5c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158578"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290290"
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemaset"></a>Validation de schéma XML (XSD) avec XmlSchemaSet
 
@@ -44,5 +44,5 @@ Les documents XML peuvent être validés par rapport à un schéma XSD (XML Sche
   
 ## <a name="see-also"></a>Voir aussi
 
-- [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
-- [Utilisation de schémas XML](../../../../docs/standard/data/xml/working-with-xml-schemas.md)
+- [XmlSchemaSet pour la compilation de schémas](xmlschemaset-for-schema-compilation.md)
+- [Utilisation de schémas XML](working-with-xml-schemas.md)

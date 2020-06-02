@@ -16,12 +16,12 @@ helpviewer_keywords:
 - global applications, localizability
 - localizing resources
 ms.assetid: 3aee2fbb-de47-4e37-8fe4-ddebb9719247
-ms.openlocfilehash: b286bdd2c5d7b03a0a2b5f94478e252da6cd0ae2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ef23cff2416792f13fda04dbe9beb34cbacfd7ea
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73120865"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288275"
 ---
 # <a name="localizability-review"></a>Révision de l’adaptabilité
 
@@ -38,7 +38,7 @@ L'examen de l'adaptabilité inclut les trois contrôles suivants :
 <a name="global"></a>
 ## <a name="implement-globalization-recommendations"></a>Implémenter des recommandations de globalisation
 
-Si vous avez conçu et développé votre application en gardant à l'esprit la localisation, et si vous avez suivi les recommandations décrites dans l'article [Globalisation](../../../docs/standard/globalization-localization/globalization.md), l'examen de l'adaptabilité sera largement un gage d'assurance qualité. Sinon, au cours de cette étape, vous devez examiner et mettre en œuvre les recommandations pour [la mondialisation](../../../docs/standard/globalization-localization/globalization.md) et corriger les erreurs dans le code source qui empêchent la localisation.
+Si vous avez conçu et développé votre application en gardant à l'esprit la localisation, et si vous avez suivi les recommandations décrites dans l'article [Globalisation](globalization.md), l'examen de l'adaptabilité sera largement un gage d'assurance qualité. Dans le cas contraire, vous devez passer en revue et mettre en œuvre les recommandations de [globalisation](globalization.md) et corriger les erreurs dans le code source qui empêchent la localisation.
 
 <a name="culture"></a>
 ## <a name="handle-culture-sensitive-features"></a>Gérer les fonctionnalités dépendantes de la culture
@@ -75,11 +75,11 @@ Avant de localiser votre application, vous devriez la tester à l'aide des donn�
 
 - Les comparaisons de chaînes ou les comparaisons d'égalité qui retournent des résultats inattendus.
 
-Si vous avez suivi les recommandations de globalisation lorsque vous développez votre application, traité correctement les fonctionnalités dépendantes de la culture, et que vous avez identifié et traité les problèmes de localisation qui ont surgi pendant le test, vous pouvez passer à l'étape suivante, à savoir la [localisation](../../../docs/standard/globalization-localization/localization.md).
+Si vous avez suivi les recommandations de globalisation lorsque vous développez votre application, traité correctement les fonctionnalités dépendantes de la culture, et que vous avez identifié et traité les problèmes de localisation qui ont surgi pendant le test, vous pouvez passer à l'étape suivante, à savoir la [localisation](localization.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Globalisation et localisation](../../../docs/standard/globalization-localization/index.md)
-- [Localisation](../../../docs/standard/globalization-localization/localization.md)
-- [Mondialisation](../../../docs/standard/globalization-localization/globalization.md)
-- [Ressources dans des applications de bureau](../../../docs/framework/resources/index.md)
+- [Globalisation et localisation](index.md)
+- [Localisation](localization.md)
+- [Globalisation](globalization.md)
+- [Ressources dans les applications de bureau](../../framework/resources/index.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - security [.NET Framework], replacing principal objects
 - security [.NET Framework], principals
 ms.assetid: c323687e-b196-487b-beba-f38f9b3f961b
-ms.openlocfilehash: 89b7036215cb7998222e280ceef02073d455a1b2
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 056bd0bbafe0e7dc84d8d0c532ff844370c59230
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705936"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291212"
 ---
 # <a name="replacing-a-principal-object"></a>Remplacement d'un objet Principal
 Les applications qui fournissent des services d’authentification doivent pouvoir remplacer l’objet **Principal** (<xref:System.Security.Principal.IPrincipal>) d’un thread donné. En outre, le système de sécurité doit permettre de protéger la possibilité de remplacer les objets **Principal** si un **Principal** malveillant et incorrect attaché compromet la sécurité de votre application en simulant une fausse identité ou un faux rôle. Par conséquent, les applications ayant besoin de pouvoir remplacer les objets **Principal** doivent se voir attribuer l’objet <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType> pour le contrôle du principal. (Notez que cette autorisation n’est pas obligatoire pour effectuer des vérifications de sécurité basée sur les rôles ou créer des objets **Principal** .)  
@@ -35,4 +35,4 @@ Les applications qui fournissent des services d’authentification doivent pouvo
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType>
-- [Objets Principal et Identity](../../../docs/standard/security/principal-and-identity-objects.md)
+- [Objets Principal et Identity](principal-and-identity-objects.md)

@@ -14,17 +14,17 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - COM interop, applying attributes
 ms.assetid: b6014613-641c-4912-9e2f-83a99210a037
-ms.openlocfilehash: 831f8d79030264ef013a75cd91cb771c9d168576
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: f9ccf59e52c1ef27649cd70a57f7b24bb5a8e9bf
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420537"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291329"
 ---
 # <a name="applying-interop-attributes"></a>Application d'attributs d'interopérabilité
 L’espace de noms <xref:System.Runtime.InteropServices> propose trois catégories d’attributs spécifiques à l’interopérabilité : ceux que vous appliquez au moment du design, ceux que les interfaces API et les outils de COM Interop appliquent au cours du processus de conversion et ceux que vous appliquez ou que COM Interop applique.  
   
- Si vous n’êtes pas habitué aux tâches relatives à l’application d’attributs à du code managé, consultez [Extension des métadonnées à l’aide des attributs](../../../docs/standard/attributes/index.md). Comme pour les autres attributs personnalisés, vous pouvez appliquer des attributs spécifiques à l’interopérabilité à des types, à des méthodes, à des paramètres, à des propriétés, à des champs et à d’autres membres.  
+ Si vous n’êtes pas habitué aux tâches relatives à l’application d’attributs à du code managé, consultez [Extension des métadonnées à l’aide des attributs](../attributes/index.md). Comme pour les autres attributs personnalisés, vous pouvez appliquer des attributs spécifiques à l’interopérabilité à des types, à des méthodes, à des paramètres, à des propriétés, à des champs et à d’autres membres.  
   
 ## <a name="design-time-attributes"></a>Attributs au moment du design  
  Vous pouvez ajuster le résultat du processus de conversion effectué par les interfaces API et les outils de COM Interop à l’aide d’attributs au moment du design. Le tableau suivant décrit les attributs que vous pouvez appliquer à votre code source managé. Les outils de COM Interop peuvent également parfois appliquer les attributs décrits dans ce tableau.  
@@ -70,7 +70,7 @@ L’espace de noms <xref:System.Runtime.InteropServices> propose trois catégori
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices>
-- [Exposition de composants .NET Framework à COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
-- [Attributs](../../../docs/standard/attributes/index.md)
-- [Qualification des types .NET pour l’interopérabilité](../../../docs/standard/native-interop/qualify-net-types-for-interoperation.md)
-- [Empaquetage d’un assembly .NET Framework pour COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md)
+- [Exposition de composants .NET Framework à COM](../../framework/interop/exposing-dotnet-components-to-com.md)
+- [Attributs](../attributes/index.md)
+- [Qualification des types .NET pour l’interopérabilité](qualify-net-types-for-interoperation.md)
+- [Empaquetage d’un assembly .NET Framework pour COM](../../framework/interop/packaging-an-assembly-for-com.md)

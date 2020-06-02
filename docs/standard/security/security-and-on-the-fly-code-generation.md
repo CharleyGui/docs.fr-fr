@@ -1,6 +1,6 @@
 ---
 title: Sécurité et génération de code immédiate
-description: Générer du code au nom d’un code de moindre confiance qui fonctionne à une plus grande confiance est une préoccupation de sécurité, surtout lorsqu’un appelant peut influencer la génération de code.
+description: La génération de code pour le compte d’un code de confiance moindre qui s’exécute à un niveau de confiance supérieur est un problème de sécurité, en particulier lorsqu’un appelant peut influencer la génération de code.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - security [.NET Framework], on-the-fly code generation
 - secure coding, on-the-fly code generation
 ms.assetid: 6d221724-bb21-4d76-90c3-0ee2a2e69be2
-ms.openlocfilehash: 34ebda27a81ca29ebb27a721b77b735a12be882e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7e5168aa9305c559cf5ea2fb197b2c23ce2a05b0
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186802"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291030"
 ---
 # <a name="security-and-on-the-fly-code-generation"></a>Sécurité et génération de code immédiate
 Certaines bibliothèques fonctionnent en générant du code et en l'exécutant afin d'effectuer certaines opérations pour l'appelant. Le problème de base est la génération de code pour le compte de code d'un niveau de confiance moindre et son exécution à un niveau de confiance supérieur. Ce problème se complique quand l'appelant peut influencer la génération du code ; vous devez donc vous assurer que seul du code que vous estimez sécurisé est généré.  
@@ -27,4 +27,4 @@ Certaines bibliothèques fonctionnent en générant du code et en l'exécutant a
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions de codage sécurisé](../../../docs/standard/security/secure-coding-guidelines.md)
+- [Instructions de codage sécurisé](secure-coding-guidelines.md)

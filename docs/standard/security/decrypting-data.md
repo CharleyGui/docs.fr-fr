@@ -11,12 +11,12 @@ helpviewer_keywords:
 - asymmetric decryption
 - decryption
 ms.assetid: 9b266b6c-a9b2-4d20-afd8-b3a0d8fd48a0
-ms.openlocfilehash: 37194380d9f08d328f836bcb8648772348958768
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 844561c0d207106a183243f5f2b3e0cea3e70422
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706238"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288366"
 ---
 # <a name="decrypting-data"></a>Déchiffrement de données
 
@@ -174,9 +174,9 @@ Pour que l'exemple précédent fonctionne, une connexion chiffrée doit être é
 
 En règle générale, une partie (partie A) génère à la fois une clé publique et une clé privée, et stocke ces clés dans la mémoire ou dans un conteneur de clé de chiffrement. La partie A envoie ensuite la clé publique à une autre partie (partie B). À l’aide de la clé publique, le tiers B chiffre les données et renvoie les données au tiers A. Après avoir reçu les données, la partie A les déchiffre à l’aide de la clé privée qui correspond. Le déchiffrement réussira uniquement si la partie A utilise la clé privée qui correspond à la clé publique utilisée par la partie B pour chiffrer les données.
 
-Pour plus d’informations sur le stockage des clés asymétriques dans un conteneur de clé de chiffrement sécurisé et sur la récupération des clés asymétriques, consultez [How to: Store Asymmetric Keys in a Key Container](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md).
+Pour plus d’informations sur le stockage des clés asymétriques dans un conteneur de clé de chiffrement sécurisé et sur la récupération des clés asymétriques, consultez [How to: Store Asymmetric Keys in a Key Container](how-to-store-asymmetric-keys-in-a-key-container.md).
 
-L'exemple suivant montre le déchiffrement de deux tableaux d'octets qui représentent une clé symétrique et un vecteur d'initialisation. Pour plus d’informations sur l’extraction de la clé publique asymétrique de l’objet <xref:System.Security.Cryptography.RSACryptoServiceProvider> dans un format que vous pouvez facilement envoyer à un tiers, consultez [Encrypting Data](../../../docs/standard/security/encrypting-data.md).
+L'exemple suivant montre le déchiffrement de deux tableaux d'octets qui représentent une clé symétrique et un vecteur d'initialisation. Pour plus d’informations sur l’extraction de la clé publique asymétrique de l’objet <xref:System.Security.Cryptography.RSACryptoServiceProvider> dans un format que vous pouvez facilement envoyer à un tiers, consultez [Encrypting Data](encrypting-data.md).
 
 ```vb
 'Create a new instance of the RSACryptoServiceProvider class.
@@ -204,6 +204,6 @@ symmetricIV = rsa.Decrypt(encryptedSymmetricIV , false);
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Génération de clés pour le chiffrement et le déchiffrement](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
-- [Chiffrement de données](../../../docs/standard/security/encrypting-data.md)
-- [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)
+- [Génération de clés pour le chiffrement et le déchiffrement](generating-keys-for-encryption-and-decryption.md)
+- [Chiffrement de données](encrypting-data.md)
+- [Services de chiffrement](cryptographic-services.md)

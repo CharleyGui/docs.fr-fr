@@ -16,12 +16,12 @@ helpviewer_keywords:
 - serialization, examples
 - serialization, attributes
 ms.assetid: 47d4c39d-30e1-4c7b-8a2e-301325390647
-ms.openlocfilehash: 4fc7667a2123a106b995a1ea3a31da4551ca650e
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 79c5541b4c384e91fbec8c8f1b2130887e79a252
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375966"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289679"
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>Contrôle de la sérialisation XML à l'aide d'attributs
 
@@ -30,7 +30,7 @@ Les attributs peuvent être utilisés pour contrôler la sérialisation XML d'u
 > [!NOTE]
 > Si le code XML généré doit se conformer à la section 5 du document World Wide Web Consortium (W3C) intitulé [simple Object Access Protocol (SOAP) 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), utilisez les attributs listés dans [attributs qui contrôlent la sérialisation encodée](attributes-that-control-encoded-soap-serialization.md)selon le protocole SOAP.
 
-Par défaut, un nom d'élément XML est déterminé par le nom de la classe ou du membre. Dans une classe simple nommée `Book`, un champ nommé `ISBN` génère une balise d’élément XML \<ISBN>, comme illustré dans l’exemple suivant.
+Par défaut, un nom d'élément XML est déterminé par le nom de la classe ou du membre. Dans une classe simple nommée `Book` , un champ nommé `ISBN` génère une balise d’élément XML \<ISBN> , comme illustré dans l’exemple suivant.
 
 ```vb
 Public Class Book
@@ -67,7 +67,7 @@ public class TaxRates {
 }
 ```
 
-Pour plus d’informations sur les attributs, consultez [Attributs](../../../docs/standard/attributes/index.md). Pour obtenir une liste complète des attributs qui contrôlent la sérialisation XML, consultez [Attributs qui contrôlent la sérialisation XML](attributes-that-control-xml-serialization.md).
+Pour plus d’informations sur les attributs, consultez [Attributs](../attributes/index.md). Pour obtenir une liste complète des attributs qui contrôlent la sérialisation XML, consultez [Attributs qui contrôlent la sérialisation XML](attributes-that-control-xml-serialization.md).
 
 ## <a name="controlling-array-serialization"></a>Contrôle de la sérialisation de tableau
 

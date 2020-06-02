@@ -6,12 +6,12 @@ helpviewer_keywords:
 - garbage collection, troubleshooting
 - garbage collection, performance
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
-ms.openlocfilehash: 72cf742aae26f9441229b355dc6e70da7a5fc9cd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1d9c72a64d172dcadf1bff1b1edf3050ca5f7d05
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75900580"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287621"
 ---
 # <a name="garbage-collection-and-performance"></a>Garbage Collection et niveau de performance
 
@@ -23,7 +23,7 @@ Les sections suivantes décrivent les outils disponibles pour analyser les probl
 
 ### <a name="memory-performance-counters"></a>Compteurs de performance mémoire
 
-Vous pouvez utiliser les compteurs de performances pour collecter des données sur les performances. Pour obtenir des instructions, voir [Génération de profils d'exécution](../../../docs/framework/debug-trace-profile/runtime-profiling.md). La catégorie Mémoire CLR .NET des compteurs de performances, telle qu'elle est décrite dans [Compteurs de performances dans le .NET Framework](../../../docs/framework/debug-trace-profile/performance-counters.md), fournit des informations sur le garbage collector.
+Vous pouvez utiliser les compteurs de performances pour collecter des données sur les performances. Pour obtenir des instructions, voir [Génération de profils d'exécution](../../framework/debug-trace-profile/runtime-profiling.md). La catégorie Mémoire CLR .NET des compteurs de performances, telle qu'elle est décrite dans [Compteurs de performances dans le .NET Framework](../../framework/debug-trace-profile/performance-counters.md), fournit des informations sur le garbage collector.
 
 ### <a name="debugging-with-sos"></a>Débogage avec l'extension SOS
 
@@ -33,7 +33,7 @@ Pour installer WinDbg, installez les outils de débogage pour Windows à partir 
 
 ### <a name="garbage-collection-etw-events"></a>Événements ETW de garbage collection
 
-Le suivi d'événements pour Windows (ETW) est un système de suivi qui complète la prise en charge du profilage et du débogage fournie par .NET Framework. À compter de .NET Framework 4, les [événements ETW de garbage collection](../../../docs/framework/performance/garbage-collection-etw-events.md) capturent des informations utiles pour l’analyse du tas managé d’un point de vue statistique. Par exemple, l'événement `GCStart_V1`, qui est déclenché quand un garbage collection est sur le point de se produire, fournit les informations suivantes :
+Le suivi d'événements pour Windows (ETW) est un système de suivi qui complète la prise en charge du profilage et du débogage fournie par .NET Framework. À compter de .NET Framework 4, les [événements ETW de garbage collection](../../framework/performance/garbage-collection-etw-events.md) capturent des informations utiles pour l’analyse du tas managé d’un point de vue statistique. Par exemple, l'événement `GCStart_V1`, qui est déclenché quand un garbage collection est sur le point de se produire, fournit les informations suivantes :
 
 - La génération d'objets qui est collectée
 
@@ -45,13 +45,13 @@ La journalisation des événements ETW est efficace et ne masque pas les probl�
 
 ### <a name="the-profiling-api"></a>L'API de profilage
 
-Les interfaces de profilage du common language runtime (CLR) fournissent des informations détaillées sur les objets qui ont été affectés pendant le garbage collection. Un profileur peut être informé quand un garbage collection commence et se termine. Il peut fournir des rapports sur les objets du tas managé, y compris une identification des objets au cours de chaque génération. Pour plus d'informations, voir [Vue d'ensemble du profilage](../../../docs/framework/unmanaged-api/profiling/profiling-overview.md).
+Les interfaces de profilage du common language runtime (CLR) fournissent des informations détaillées sur les objets qui ont été affectés pendant le garbage collection. Un profileur peut être informé quand un garbage collection commence et se termine. Il peut fournir des rapports sur les objets du tas managé, y compris une identification des objets au cours de chaque génération. Pour plus d'informations, voir [Vue d'ensemble du profilage](../../framework/unmanaged-api/profiling/profiling-overview.md).
 
 Les profileurs peuvent fournir des informations complètes. Toutefois, les profileurs complexes peuvent potentiellement modifier le comportement d'une application.
 
 ### <a name="application-domain-resource-monitoring"></a>Analyse de ressource de domaine d'application
 
-À compter de .NET Framework 4, l’outil ARM (Application Domain Resource Monitoring) permet aux hôtes de superviser l’utilisation du processeur et de la mémoire par domaine d’application. Pour plus d'informations, voir [Analyse de ressource de domaine d'application](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md).
+À compter de .NET Framework 4, l’outil ARM (Application Domain Resource Monitoring) permet aux hôtes de superviser l’utilisation du processeur et de la mémoire par domaine d’application. Pour plus d'informations, voir [Analyse de ressource de domaine d'application](app-domain-resource-monitoring.md).
 
 ## <a name="troubleshooting-performance-issues"></a>Résolution des problèmes de performances
 
@@ -61,15 +61,15 @@ La première étape consiste à [déterminer si le problème est effectivement l
 
 - [Le processus utilise trop de mémoire](#Issue_TooMuchMemory)
 
-- [Le collecteur d’ordures ne récupère pas les objets assez vite](#Issue_NotFastEnough)
+- [Le garbage collector ne récupère pas les objets suffisamment rapidement](#Issue_NotFastEnough)
 
-- [Le tas géré est trop fragmenté](#Issue_Fragmentation)
+- [Le tas managé est trop fragmenté](#Issue_Fragmentation)
 
 - [Les pauses du nettoyage de la mémoire sont trop longues](#Issue_LongPauses)
 
 - [La génération 0 est trop volumineuse](#Issue_Gen0)
 
-- [L’utilisation du processeur lors d’une collecte des ordures est trop élevée](#Issue_HighCPU)
+- [L’utilisation du processeur pendant une garbage collection est trop élevée](#Issue_HighCPU)
 
 <a name="Issue_OOM"></a>
 
@@ -133,7 +133,7 @@ La fragmentation se produit toujours dans le tas des objets volumineux, car il n
 
 La fragmentation peut devenir un problème avec la génération 1 et la génération 2. Si ces générations disposent d'une grande quantité d'espace libre après un garbage collection, l'utilisation des objets d'une application peut nécessiter des modifications et vous devrez envisager de réévaluer la durée de vie des objets à long terme.
 
-L'épinglage excessif d'objets peut augmenter la fragmentation. Si la fragmentation est élevée, trop d’objets auraient pu être épinglés.
+L'épinglage excessif d'objets peut augmenter la fragmentation. Si la fragmentation est élevée, un trop grand nombre d’objets a pu être épinglé.
 
 Si la fragmentation de la mémoire virtuelle empêche le garbage collector d'ajouter des segments, la cause peut se trouver dans la liste ci-dessous :
 
@@ -143,7 +143,7 @@ Si la fragmentation de la mémoire virtuelle empêche le garbage collector d'ajo
 
 - La création d'objets transitoires volumineux, ce qui entraîne l'allocation et la libération fréquentes de segments par le tas des objets volumineux.
 
-  Lors de l'hébergement du CLR, une application peut demander que le garbage collector conserve ses segments. Cela réduit la fréquence des allocations de segments. Pour cela, utilisez la balise STARTUP_HOARD_GC_VM dans l'[énumération STARTUP_FLAGS](../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md).
+  Lors de l'hébergement du CLR, une application peut demander que le garbage collector conserve ses segments. Cela réduit la fréquence des allocations de segments. Pour cela, utilisez la balise STARTUP_HOARD_GC_VM dans l'[énumération STARTUP_FLAGS](../../framework/unmanaged-api/hosting/startup-flags-enumeration.md).
 
 |Contrôle des performances|
 |------------------------|
@@ -161,9 +161,9 @@ Avec le garbage collection simultané, les threads managés sont autorisés à s
 
 Les garbage collection éphémères (générations 0 et 1) ne durent que quelques millisecondes. La réduction du temps de pause n'est donc généralement pas possible. Toutefois, vous pouvez réduire les temps de pause des collections de génération 2 en modifiant le modèle des demandes d’allocation effectuées par une application.
 
-Une autre méthode plus précise est celle qui consiste à utiliser les [événements ETW de garbage collection](../../../docs/framework/performance/garbage-collection-etw-events.md). Vous pouvez rechercher le minutage des collections en ajoutant les différences de timestamp pour une séquence d’événements. L’intégralité de la séquence de collection inclut la suspension du moteur d’exécution, le garbage collection proprement dit et la reprise du moteur d’exécution.
+Une autre méthode plus précise est celle qui consiste à utiliser les [événements ETW de garbage collection](../../framework/performance/garbage-collection-etw-events.md). Vous pouvez rechercher le minutage des collections en ajoutant les différences de timestamp pour une séquence d’événements. L’intégralité de la séquence de collection inclut la suspension du moteur d’exécution, le garbage collection proprement dit et la reprise du moteur d’exécution.
 
-Vous pouvez utiliser les [notifications de garbage collection](../../../docs/standard/garbage-collection/notifications.md) pour déterminer si un serveur est sur le point de disposer d’une collection de génération 2, et si la redirection des demandes vers un autre serveur peut atténuer les problèmes liés aux pauses.
+Vous pouvez utiliser les [notifications de garbage collection](notifications.md) pour déterminer si un serveur est sur le point de disposer d’une collection de génération 2, et si la redirection des demandes vers un autre serveur peut atténuer les problèmes liés aux pauses.
 
 |Contrôle des performances|
 |------------------------|
@@ -181,7 +181,7 @@ La génération 0 est susceptible de contenir un plus grand nombre d'objets sur
 
 L'utilisation du processeur est élevée pendant les garbage collection. Si un temps de processus suffisant est consacré à un garbage collection, les collections seront trop fréquent ou la collection durera trop longtemps. Un taux d'allocation d'objets plus élevé sur le tas managé entraîne des garbage collection plus fréquents. La diminution du taux d'allocation réduit la fréquence des garbage collection.
 
-Vous pouvez surveiller les taux d'allocation à l'aide du compteur de performances `Allocated Bytes/second`. Pour plus d'informations, voir [Compteurs de performance dans le .NET Framework](../../../docs/framework/debug-trace-profile/performance-counters.md).
+Vous pouvez surveiller les taux d'allocation à l'aide du compteur de performances `Allocated Bytes/second`. Pour plus d'informations, voir [Compteurs de performance dans le .NET Framework](../../framework/debug-trace-profile/performance-counters.md).
 
 La durée d’une collection est principalement un facteur du nombre d’objets qui survivent après l’allocation. Le garbage collector devra parcourir une grande quantité de mémoire si de nombreux objets restent à collecter. Le travail qui consiste à compacter les survivants prend beaucoup de temps. Pour déterminer le nombre d'objets traités au cours d'une collection, définissez un point d'arrêt dans le débogueur à la fin d'un garbage collection pour une génération spécifique.
 
@@ -271,9 +271,9 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
 - Examinez les deux compteurs de performances de mémoire suivants :
 
-  - **% Temps dans GC**. Affiche le pourcentage de la durée calendaire passé à effectuer un garbage collection après le dernier cycle de garbage collection. Utilisez ce compteur pour déterminer si le garbage collector passe trop de temps à libérer de l'espace dans le tas managé. Si le temps passé au garbage collection est relativement faible, cela peut indiquer un problème de ressources en dehors du tas managé. Ce compteur peut être inexact si le garbage collection simultané ou le garbage collection d’arrière-plan sont impliqués.
+  - **% Temps dans le GC**. Affiche le pourcentage de la durée calendaire passé à effectuer un garbage collection après le dernier cycle de garbage collection. Utilisez ce compteur pour déterminer si le garbage collector passe trop de temps à libérer de l'espace dans le tas managé. Si le temps passé au garbage collection est relativement faible, cela peut indiquer un problème de ressources en dehors du tas managé. Ce compteur peut être inexact si le garbage collection simultané ou le garbage collection d’arrière-plan sont impliqués.
 
-  - **- Total des Octets engagés**. Affiche la quantité de mémoire virtuelle actuellement validée par le garbage collector. Utilisez ce compteur pour déterminer si la mémoire consommée par le garbage collector est trop élevée par rapport à la mémoire totale utilisée par votre application.
+  - Nombre **total d’octets validés**. Affiche la quantité de mémoire virtuelle actuellement validée par le garbage collector. Utilisez ce compteur pour déterminer si la mémoire consommée par le garbage collector est trop élevée par rapport à la mémoire totale utilisée par votre application.
 
   La plupart des compteurs de performances de mémoire sont mis à jour à la fin de chaque garbage collection. Ils peuvent donc ne pas refléter les conditions actuelles à propos desquelles vous voulez obtenir des informations.
 
@@ -283,7 +283,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
 1. Dans le débogueur WinDbg ou Visual Studio avec l’extension SOS chargée, tapez la commande d’exception d’impression (**pe**) suivante :
 
-    **!pe**
+    **! PE**
 
     Si l'exception est managée, <xref:System.OutOfMemoryException> s'affiche comme le type d'exception, comme illustré dans l'exemple suivant.
 
@@ -297,7 +297,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
 2. Si la sortie ne spécifie pas d'exception, vous devez déterminer de quel thread provient l'exception de mémoire insuffisante. Tapez la commande suivante dans le débogueur pour afficher tous les threads avec leurs piles d'appels :
 
-    **~\*Ko**
+    **~\*kbit**
 
     Le thread avec la pile associée aux appels d'exception est indiqué par l'argument `RaiseTheException`. Il s'agit de l'objet exception managée.
 
@@ -654,7 +654,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Le deuxième garbage collection de génération 2 a démarré pendant le troisième intervalle et s'est terminé au cinquième intervalle. Dans le pire des cas, le dernier garbage collection était pour une collection de génération 0 qui s'est terminée au début du deuxième intervalle et le garbage collection de génération 2 s'est terminé à la fin du cinquième intervalle. Le délai entre la fin du garbage collection de génération 0 et la fin du garbage collection de génération 2 est donc de 4 secondes. Étant donné que le compteur `% Time in GC` affiche 20 %, la durée maximale du garbage collection de génération 2 est de (4 secondes * 20 % = 800 ms).
 
-- Vous pouvez également déterminer la durée d’un garbage collection à l’aide des [événements ETW de garbage collection](../../../docs/framework/performance/garbage-collection-etw-events.md) en analysant les informations fournies.
+- Vous pouvez également déterminer la durée d’un garbage collection à l’aide des [événements ETW de garbage collection](../../framework/performance/garbage-collection-etw-events.md) en analysant les informations fournies.
 
   Par exemple, les données suivantes indiquent une séquence d’événements qui se sont produits pendant un garbage collection non simultané.
 
@@ -713,7 +713,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
 - Dans le débogueur WinDbg ou Visual Studio avec l’extension de débogueur SOS chargée, tapez la commande suivante pour afficher tous les threads avec leurs piles d’appels :
 
-  **~\*Ko**
+  **~\*kbit**
 
   Cette commande affiche une sortie similaire à la suivante :
 
@@ -796,4 +796,4 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Garbage collection](../../../docs/standard/garbage-collection/index.md)
+- [Garbage collection](index.md)

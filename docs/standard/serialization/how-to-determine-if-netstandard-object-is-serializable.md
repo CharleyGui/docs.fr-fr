@@ -8,20 +8,20 @@ dev_langs:
 helpviewer_keywords:
 - serializing objects
 - objects, serializing steps
-ms.openlocfilehash: 4037dee36aeb619eb2757016904fd877158e57cf
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: b6791ae0666aeb0ac02d8a38ca419d7de2b263cf
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159895"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289601"
 ---
 # <a name="how-to-determine-if-a-net-standard-object-is-serializable"></a>Comment déterminer si un objet .NET Standard est sérialisable
 
-Le .NET Standard est une spécification qui définit les types et les membres qui doivent être présents sur des implémentations .NET spécifiques qui se conforment à cette version de la norme. Toutefois, le .NET Standard ne définit pas si un type est sérialisable. Les types définis dans la bibliothèque de .NET Standard ne sont pas marqués <xref:System.SerializableAttribute> avec l’attribut. Au lieu de cela, des implémentations .NET spécifiques, telles que les .NET Framework et .NET Core, sont libres de déterminer si un type particulier est sérialisable.
+Le .NET Standard est une spécification qui définit les types et les membres qui doivent être présents sur des implémentations .NET spécifiques qui se conforment à cette version de la norme. Toutefois, le .NET Standard ne définit pas si un type est sérialisable. Les types définis dans la bibliothèque de .NET Standard ne sont pas marqués avec l' <xref:System.SerializableAttribute> attribut. Au lieu de cela, des implémentations .NET spécifiques, telles que les .NET Framework et .NET Core, sont libres de déterminer si un type particulier est sérialisable.
 
 Si vous avez développé une bibliothèque qui cible le .NET Standard, votre bibliothèque peut être consommée par n’importe quelle implémentation .NET qui prend en charge le .NET Standard. Cela signifie que vous ne pouvez pas savoir à l’avance si un type particulier est sérialisable ; vous pouvez uniquement déterminer si elle est sérialisable au moment de l’exécution.
 
-Vous pouvez déterminer si un objet est sérialisable au moment de l’exécution en extrayant la valeur de <xref:System.Type.IsSerializable> la propriété d' <xref:System.Type> un objet qui représente le type de cet objet. L’exemple suivant fournit une implémentation. Il définit une `IsSerializable(Object)` méthode d’extension qui indique si <xref:System.Object> une instance de peut être sérialisée.
+Vous pouvez déterminer si un objet est sérialisable au moment de l’exécution en extrayant la valeur de la <xref:System.Type.IsSerializable> propriété d’un <xref:System.Type> objet qui représente le type de cet objet. L’exemple suivant fournit une implémentation. Il définit une `IsSerializable(Object)` méthode d’extension qui indique si une <xref:System.Object> instance de peut être sérialisée.
 
 [!code-csharp[is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/csharp/program.cs#2)]
 [!code-vb[is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/vb/library.vb#2)]

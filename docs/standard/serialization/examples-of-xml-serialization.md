@@ -14,16 +14,16 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: eec46337-9696-435b-a375-dc5effae6992
-ms.openlocfilehash: 73f21c7f7d0670022d757e6c4c00280bb79709b8
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 98cc4a983c9703e6c5ab132f6110a327c6081b6c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379178"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289627"
 ---
 # <a name="examples-of-xml-serialization"></a>Exemples de sérialisation XML
 
-La sérialisation XML peut prendre plusieurs formes, de la plus simple à la plus complexe. Par exemple, vous pouvez sérialiser une classe qui se compose simplement de champs et de propriétés publics, comme illustré dans [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md). Les exemples de code suivants abordent différents scénarios avancés, y compris la manière d'utiliser la sérialisation XML pour générer un flux de données XML qui se conforme à un document de schéma XML (XSD) spécifique.
+La sérialisation XML peut prendre plusieurs formes, de la plus simple à la plus complexe. Par exemple, vous pouvez sérialiser une classe qui se compose simplement de champs et de propriétés publics, comme illustré dans [Introduction à la sérialisation XML](introducing-xml-serialization.md). Les exemples de code suivants abordent différents scénarios avancés, y compris la manière d'utiliser la sérialisation XML pour générer un flux de données XML qui se conforme à un document de schéma XML (XSD) spécifique.
 
 ## <a name="serializing-a-dataset"></a>Sérialisation d'un DataSet
 

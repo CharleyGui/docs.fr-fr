@@ -8,17 +8,17 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, order preservation
 ms.assetid: 10d202bc-19e1-4b5c-bbf1-9a977322a9ca
-ms.openlocfilehash: 0e9b4510757fc0f98b2edfbe1c656cdb5f6bce72
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 45752f3ffa64079079505934afd76e812daad7bd
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588636"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290653"
 ---
 # <a name="order-preservation-in-plinq"></a>Conservation de l'ordre en PLINQ
 Dans PLINQ, l’objectif est d’augmenter les performances tout en préservant l’exactitude. Une requête doit s’exécuter aussi rapidement que possible, mais toujours générer des résultats corrects. Dans certains cas, l’exactitude requiert que l’ordre de la séquence source soit conservé ; toutefois, le classement peut coûter cher en calcul. Par conséquent, par défaut, PLINQ ne conserve pas l’ordre de la séquence source. À cet égard, PLINQ est similaire à [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)], mais pas à LINQ to Objects, qui conserve le classement.  
   
- Pour remplacer le comportement par défaut, vous pouvez activer la conservation de l’ordre à l’aide de l’opérateur <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> sur la séquence source. Vous pouvez désactiver la préservation de l’ordre plus loin dans la requête à l’aide de la méthode <xref:System.Linq.ParallelEnumerable.AsUnordered%2A>. Ces deux méthodes permettent de traiter la requête en fonction des paramètres heuristiques, qui déterminent s’il faut exécuter la requête en parallèle ou de manière séquentielle. Pour plus d’informations, consultez [Fonctionnement de l’accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
+ Pour remplacer le comportement par défaut, vous pouvez activer la conservation de l’ordre à l’aide de l’opérateur <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> sur la séquence source. Vous pouvez désactiver la préservation de l’ordre plus loin dans la requête à l’aide de la méthode <xref:System.Linq.ParallelEnumerable.AsUnordered%2A>. Ces deux méthodes permettent de traiter la requête en fonction des paramètres heuristiques, qui déterminent s’il faut exécuter la requête en parallèle ou de manière séquentielle. Pour plus d’informations, consultez [Fonctionnement de l’accélération dans PLINQ](understanding-speedup-in-plinq.md).  
   
  L’exemple suivant montre une requête parallèle non classée qui filtre tous les éléments qui correspondent à une condition, sans essayer de classer les résultats de quelque manière que ce soit.  
   
@@ -122,5 +122,5 @@ Dans PLINQ, l’objectif est d’augmenter les performances tout en préservant 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
-- [Programmation parallèle](../../../docs/standard/parallel-programming/index.md)
+- [Parallel LINQ (PLINQ)](introduction-to-plinq.md)
+- [Programmation parallèle](index.md)

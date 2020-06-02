@@ -10,25 +10,25 @@ helpviewer_keywords:
 - classes [.NET Framework], design guidelines
 - type design guidelines, classes
 ms.assetid: d67c14d8-c4dd-443f-affb-4ccae677c9b6
-ms.openlocfilehash: 104fa204a95ef31d34e224348068e3a6505aded5
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: c906502ed071e8515f101996ec42a04772f72b12
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743598"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291927"
 ---
 # <a name="static-class-design"></a>Conception de classes statiques
-Une classe statique est définie en tant que classe qui contient uniquement des membres statiques (bien entendu, outre les membres d’instance hérités de <xref:System.Object?displayProperty=nameWithType> et éventuellement un constructeur privé). Certains langages fournissent une prise en charge intégrée des classes statiques. Dans C# 2,0 et versions ultérieures, lorsqu’une classe est déclarée comme étant statique, elle est sealed, abstract, et aucun membre d’instance ne peut être substitué ou déclaré.
+Une classe statique est définie en tant que classe qui contient uniquement des membres statiques (bien entendu, outre les membres d’instance hérités de <xref:System.Object?displayProperty=nameWithType> et éventuellement un constructeur privé). Certains langages fournissent une prise en charge intégrée des classes statiques. En C# 2,0 et versions ultérieures, lorsqu’une classe est déclarée comme étant statique, elle est sealed, abstract, et aucun membre d’instance ne peut être substitué ou déclaré.
 
- Les classes statiques sont un compromis entre une conception pure orientée objet et une simplicité. Elles sont généralement utilisées pour fournir des raccourcis vers d’autres opérations (telles que <xref:System.IO.File?displayProperty=nameWithType>), des détenteurs de méthodes d’extension ou des fonctionnalités pour lesquelles un wrapper orienté objet complet n’est pas justifié (comme <xref:System.Environment?displayProperty=nameWithType>).
+ Les classes statiques sont un compromis entre une conception pure orientée objet et une simplicité. Elles sont généralement utilisées pour fournir des raccourcis vers d’autres opérations (telles que <xref:System.IO.File?displayProperty=nameWithType> ), des détenteurs de méthodes d’extension ou des fonctionnalités pour lesquelles un wrapper orienté objet complet n’est pas justifié (comme <xref:System.Environment?displayProperty=nameWithType> ).
 
  ✔️ utiliser des classes statiques avec modération.
 
  Les classes statiques doivent être utilisées uniquement comme classes de prise en charge pour le noyau orienté objet de l’infrastructure.
 
- ❌ ne traitent pas les classes statiques comme un compartiment divers.
+ ❌NE traitez pas les classes statiques comme un compartiment divers.
 
- ❌ ne déclarez pas ou ne substituez pas de membres d’instance dans des classes statiques.
+ ❌NE déclarez pas ou ne substituez pas de membres d’instance dans des classes statiques.
 
  ✔️ déclarez des classes statiques comme sealed, abstract et ajoutez un constructeur d’instance privé si votre langage de programmation n’a pas de prise en charge intégrée des classes statiques.
 
@@ -38,5 +38,5 @@ Une classe statique est définie en tant que classe qui contient uniquement des 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions pour la conception des types](../../../docs/standard/design-guidelines/type.md)
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
+- [Règles de conception de type](type.md)
+- [Directives de conception d’infrastructure](index.md)

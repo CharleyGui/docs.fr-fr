@@ -11,12 +11,12 @@ helpviewer_keywords:
 - encoding, choosing
 - encoding, fallback strategy
 ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
-ms.openlocfilehash: 8e0cf961f4d6b481c354bdc854806f971458ce21
-ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
+ms.openlocfilehash: c626e79e7bbcd71c90775df8ee8c4d6570c29125
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82624941"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290576"
 ---
 # <a name="how-to-use-character-encoding-classes-in-net"></a>Guide pratique pour utiliser des classes d’encodage de caractères dans .NET
 
@@ -24,20 +24,20 @@ Cet article explique comment utiliser les classes fournies par .NET pour encoder
 
 ## <a name="encoders-and-decoders"></a>Encodeurs et décodeurs
 
-.NET fournit des classes d’encodage qui encodent et décodent du texte à l’aide de divers systèmes d’encodage. Par exemple, la <xref:System.Text.UTF8Encoding> classe décrit les règles d’encodage et de décodage UTF-8. .NET utilise l’encodage UTF-16 (représenté <xref:System.Text.UnicodeEncoding> par la classe `string` ) pour les instances. Les encodeurs et les décodeurs sont disponibles pour d’autres schémas d’encodage.
+.NET fournit des classes d’encodage qui encodent et décodent du texte à l’aide de divers systèmes d’encodage. Par exemple, la <xref:System.Text.UTF8Encoding> classe décrit les règles d’encodage et de décodage UTF-8. .NET utilise l’encodage UTF-16 (représenté par la <xref:System.Text.UnicodeEncoding> classe) pour les `string` instances. Les encodeurs et les décodeurs sont disponibles pour d’autres schémas d’encodage.
 
-L'encodage et le décodage peuvent également inclure une validation. Par exemple, la <xref:System.Text.UnicodeEncoding> classe vérifie toutes `char` les instances de la plage de substitution pour s’assurer qu’elles se trouvent dans des paires de substitution valides. Une stratégie de secours détermine comment un encodeur traite les caractères non valides ou comment un décodeur gère les octets non valides.
+L'encodage et le décodage peuvent également inclure une validation. Par exemple, la <xref:System.Text.UnicodeEncoding> classe vérifie toutes les `char` instances de la plage de substitution pour s’assurer qu’elles se trouvent dans des paires de substitution valides. Une stratégie de secours détermine comment un encodeur traite les caractères non valides ou comment un décodeur gère les octets non valides.
 
 > [!WARNING]
 > Les classes d’encodage .NET permettent de stocker et de convertir les données caractères. Elles ne doivent pas utilisées pour stocker des données binaires sous forme de chaîne. En fonction de l'encodage utilisé, la conversion de données binaires en un format chaîne avec les classes d'encodage peut entraîner un comportement inattendu et produire des données incorrectes ou endommagées. Pour convertir des données binaires en chaîne, utilisez la méthode <xref:System.Convert.ToBase64String%2A?displayProperty=nameWithType> .
 
 Toutes les classes d'encodage de caractères de .NET héritent de la classe <xref:System.Text.Encoding?displayProperty=nameWithType>, qui est une classe abstraite définissant les fonctionnalités communes à tous les encodages de caractères. Pour accéder aux objets d’encodage individuels implémentés dans .NET, procédez comme suit :
 
-- Utilisez les propriétés statiques de la classe <xref:System.Text.Encoding>, qui retournent des objets représentant les encodages de caractères standard disponibles dans .NET (ASCII, UTF-7, UTF-8, UTF-16 et UTF-32). Par exemple, la propriété <xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType> retourne un objet <xref:System.Text.UnicodeEncoding> . Chaque objet utilise la stratégie de secours pour les remplacements pour traiter les chaînes qu'il ne peut pas encoder et les octets qu'il ne peut pas décoder. Pour plus d’informations, consultez [remplacement de secours](../../../docs/standard/base-types/character-encoding.md#Replacement).
+- Utilisez les propriétés statiques de la classe <xref:System.Text.Encoding>, qui retournent des objets représentant les encodages de caractères standard disponibles dans .NET (ASCII, UTF-7, UTF-8, UTF-16 et UTF-32). Par exemple, la propriété <xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType> retourne un objet <xref:System.Text.UnicodeEncoding> . Chaque objet utilise la stratégie de secours pour les remplacements pour traiter les chaînes qu'il ne peut pas encoder et les octets qu'il ne peut pas décoder. Pour plus d’informations, consultez [remplacement de secours](character-encoding.md#Replacement).
 
-- Appelez le constructeur de classe de l'encodage. Les objets pour les encodages ASCII, UTF-7, UTF-8, UTF-16 et UTF-32 peuvent être instanciés de cette façon. Par défaut, chaque objet utilise la stratégie de secours pour les remplacements pour traiter les chaînes qu'il ne peut pas encoder et les octets qu'il ne peut pas décoder, mais vous pouvez spécifier qu'au lieu de cela, une exception doit être levée. Pour plus d’informations, consultez [remplacement de secours](../../../docs/standard/base-types/character-encoding.md#Replacement) et exception de [secours](../../../docs/standard/base-types/character-encoding.md#Exception).
+- Appelez le constructeur de classe de l'encodage. Les objets pour les encodages ASCII, UTF-7, UTF-8, UTF-16 et UTF-32 peuvent être instanciés de cette façon. Par défaut, chaque objet utilise la stratégie de secours pour les remplacements pour traiter les chaînes qu'il ne peut pas encoder et les octets qu'il ne peut pas décoder, mais vous pouvez spécifier qu'au lieu de cela, une exception doit être levée. Pour plus d’informations, consultez [remplacement de secours](character-encoding.md#Replacement) et exception de [secours](character-encoding.md#Exception).
 
-- Appelez le constructeur <xref:System.Text.Encoding.%23ctor%28System.Int32%29> et passez-lui un entier qui représente l'encodage. Les objets d'encodage standard utilisent la stratégie de secours pour les remplacements. Les objets d'encodage de page de codes et de jeu de caractères codés sur deux octets (DBCS) utilisent la stratégie de secours la mieux adaptée pour traiter les chaînes qu'ils ne peuvent pas encoder et les octets qu'ils ne peuvent pas décoder. Pour plus d’informations, consultez la page de [secours la mieux adaptée](../../../docs/standard/base-types/character-encoding.md#BestFit).
+- Appelez le constructeur <xref:System.Text.Encoding.%23ctor%28System.Int32%29> et passez-lui un entier qui représente l'encodage. Les objets d'encodage standard utilisent la stratégie de secours pour les remplacements. Les objets d'encodage de page de codes et de jeu de caractères codés sur deux octets (DBCS) utilisent la stratégie de secours la mieux adaptée pour traiter les chaînes qu'ils ne peuvent pas encoder et les octets qu'ils ne peuvent pas décoder. Pour plus d’informations, consultez la page de [secours la mieux adaptée](character-encoding.md#BestFit).
 
 - Appelez la méthode <xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType>, qui retourne les encodages standard, de page de codes ou DBCS disponibles dans .NET. Les surcharges vous permettent de spécifier un objet de secours pour l'encodeur et pour le décodeur.
 
@@ -45,7 +45,7 @@ Vous pouvez récupérer des informations sur les encodages disponibles dans .NET
 
 |Classe d’encodage|Description|
 |--------------|-----------|
-|[ASCII](xref:System.Text.ASCIIEncoding)|Encode une plage de caractères limitée en utilisant les sept bits de poids le plus faible d'un octet. Étant donné que cet encodage prend en charge seulement des valeurs de caractère de U+0000 à U+007F, dans la plupart des cas, il ne convient pas aux applications internationalisées.|
+|[R](xref:System.Text.ASCIIEncoding)|Encode une plage de caractères limitée en utilisant les sept bits de poids le plus faible d'un octet. Étant donné que cet encodage prend en charge seulement des valeurs de caractère de U+0000 à U+007F, dans la plupart des cas, il ne convient pas aux applications internationalisées.|
 |[UTF-7](xref:System.Text.UTF7Encoding)|Représente les caractères sous forme de séquences de caractères ASCII sur 7 bits. Les caractères Unicode non-ASCII sont représentés par une séquence d'échappement de caractères ASCII. UTF-7 prend en charge les protocoles tels que le courrier électronique et le groupe de discussion. UTF-7 n'est cependant pas particulièrement sécurisé ou robuste. Dans certains cas, la modification d'un seul bit peut changer radicalement l'interprétation de toute une chaîne UTF-7. Dans d'autres cas, des chaînes UTF-7 différentes peuvent correspondre à l'encodage d'un même texte. Pour les séquences incluant des caractères non-ASCII, UTF-7 nécessite davantage d'espace qu'UTF-8, et l'encodage/décodage est plus lent. Par conséquent, il est préférable d'utiliser UTF-8 au lieu d'UTF-7 si c'est possible.|
 |[UTF-8](xref:System.Text.UTF8Encoding)|Représente chaque point de code Unicode sous la forme d'une séquence de un à quatre octets. UTF-8 prend en charge des tailles de données de 8 bits et fonctionne bien avec de nombreux systèmes d'exploitation. Pour la plage de caractères ASCII, UTF-8 est identique à l'encodage ASCII et permet un ensemble de caractères plus large. Toutefois, pour les scripts chinois-japonais-coréen (CJC), UTF-8 peut nécessiter trois octets pour chaque caractère et peut entraîner des tailles de données supérieures à celles d’UTF-16. Parfois, la quantité de données ASCII, telles que les balises HTML, justifie l’augmentation de la taille de la plage CJC.|
 |[UTF-16](xref:System.Text.UnicodeEncoding)|Représente chaque point de code Unicode sous la forme d'une séquence de un ou deux entiers sur 16 bits. La plupart des caractères Unicode courants ne nécessitent qu'un seul point de code UTF-16, tandis que les caractères Unicode additionnels (U+10000 et supérieurs) nécessitent deux points de code de substitution UTF-16. Les ordres des octets Little Endian et Big Endian sont pris en charge. L'encodage UTF-16 est utilisé par le common language runtime pour représenter les valeurs <xref:System.Char> et <xref:System.String> , et il est utilisé par le système d'exploitation Windows pour représenter les `WCHAR` .|
@@ -127,7 +127,7 @@ Quand une méthode tente d'encoder ou de décoder un caractère, mais qu'il n'ex
 
 ### <a name="best-fit-fallback"></a>Best-Fit Fallback
 
-Quand un caractère n'a pas de correspondance exacte dans l'encodage cible, l'encodeur peut essayer de le mapper à un caractère similaire. (La stratégie de secours la mieux adaptée est principalement un codage plutôt qu'un problème de décodage. Il y a très peu de pages de codes qui contiennent des caractères qui ne peuvent pas être correctement mappés au format Unicode.) L’option de secours la mieux adaptée est la valeur par défaut pour les encodages de pages de codes et de jeux <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> de <xref:System.Text.Encoding.GetEncoding%28System.String%29?displayProperty=nameWithType> caractères codés sur deux octets, qui sont récupérés par les surcharges et.
+Quand un caractère n'a pas de correspondance exacte dans l'encodage cible, l'encodeur peut essayer de le mapper à un caractère similaire. (La stratégie de secours la mieux adaptée est principalement un codage plutôt qu'un problème de décodage. Il y a très peu de pages de codes qui contiennent des caractères qui ne peuvent pas être correctement mappés au format Unicode.) L’option de secours la mieux adaptée est la valeur par défaut pour les encodages de pages de codes et de jeux de caractères codés sur deux octets, qui sont récupérés par les <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> <xref:System.Text.Encoding.GetEncoding%28System.String%29?displayProperty=nameWithType> surcharges et.
 
 > [!NOTE]
 > En théorie, les classes d'encodage Unicode fournies dans .NET (<xref:System.Text.UTF8Encoding>, <xref:System.Text.UnicodeEncoding> et <xref:System.Text.UTF32Encoding>) prennent en charge tous les caractères de tous les jeux de caractères : elles peuvent donc être utilisées pour éliminer les problèmes de la stratégie de secours la mieux adaptée.
@@ -145,7 +145,7 @@ L'exemple suivant utilise la page de codes 1252 (la page de codes Windows pour l
 Le mappage le mieux adapté est le comportement par défaut pour un objet <xref:System.Text.Encoding> qui encode des données Unicode en données de page de codes, et il existe des applications héritées qui s'appuient sur ce comportement. Cependant, la plupart des nouvelles applications doivent éviter ce comportement le mieux adapté pour des raisons de sécurité. Par exemple, les applications ne doivent pas établir un nom de domaine via un encodage le mieux adapté.
 
 > [!NOTE]
-> Vous pouvez également implémenter un mappage de stratégie de secours la mieux adaptée personnalisé pour un encodage. Pour plus d’informations, consultez la section [implémentation d’une stratégie de secours personnalisée](../../../docs/standard/base-types/character-encoding.md#Custom) .
+> Vous pouvez également implémenter un mappage de stratégie de secours la mieux adaptée personnalisé pour un encodage. Pour plus d’informations, consultez la section [implémentation d’une stratégie de secours personnalisée](character-encoding.md#Custom) .
 
 Si la stratégie de secours la mieux adaptée est la stratégie par défaut pour un objet d'encodage, vous pouvez choisir une autre stratégie de secours quand vous récupérez un objet <xref:System.Text.Encoding> , en appelant la surcharge <xref:System.Text.Encoding.GetEncoding%28System.Int32%2CSystem.Text.EncoderFallback%2CSystem.Text.DecoderFallback%29?displayProperty=nameWithType> ou <xref:System.Text.Encoding.GetEncoding%28System.String%2CSystem.Text.EncoderFallback%2CSystem.Text.DecoderFallback%29?displayProperty=nameWithType> . La section suivante contient un exemple qui remplace chaque caractère qui ne peut pas être mappé à la page de codes 1252 par un astérisque (*).
 
@@ -167,7 +167,7 @@ Quand un caractère n'a pas de correspondance exacte dans le schéma cible, mais
 [!code-vb[Conceptual.Encoding#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.encoding/vb/bestfit1a.vb#3)]
 
 > [!NOTE]
-> Vous pouvez également implémenter une classe de remplacement pour un encodage. Pour plus d’informations, consultez la section [implémentation d’une stratégie de secours personnalisée](../../../docs/standard/base-types/character-encoding.md#Custom) .
+> Vous pouvez également implémenter une classe de remplacement pour un encodage. Pour plus d’informations, consultez la section [implémentation d’une stratégie de secours personnalisée](character-encoding.md#Custom) .
 
 En plus du POINT D'INTERROGATION (U+003F), le CARACTÈRE DE REMPLACEMENT Unicode (U+FFFD) est couramment utilisé comme chaîne de remplacement, en particulier lors du décodage de séquences d'octets qui ne peuvent pas être converties en caractères Unicode. Vous êtes cependant libre de choisir n'importe quelle chaîne de remplacement, qui peut contenir plusieurs caractères.
 
@@ -181,7 +181,7 @@ Au lieu de fournir une stratégie de secours la mieux adaptée ou une chaîne de
 [!code-vb[Conceptual.Encoding#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.encoding/vb/exceptionascii.vb#4)]
 
 > [!NOTE]
-> Vous pouvez également implémenter un gestionnaire d'exceptions personnalisé pour une opération d'encodage. Pour plus d’informations, consultez la section [implémentation d’une stratégie de secours personnalisée](../../../docs/standard/base-types/character-encoding.md#Custom) .
+> Vous pouvez également implémenter un gestionnaire d'exceptions personnalisé pour une opération d'encodage. Pour plus d’informations, consultez la section [implémentation d’une stratégie de secours personnalisée](character-encoding.md#Custom) .
 
 Les objets <xref:System.Text.EncoderFallbackException> et <xref:System.Text.DecoderFallbackException> fournissent les informations suivantes sur la condition qui a provoqué l'exception :
 
@@ -268,4 +268,4 @@ Le code suivant instancie ensuite l'objet `CustomMapper` et passe une instance d
 - <xref:System.Text.DecoderFallback>
 - <xref:System.Text.Encoding>
 - <xref:System.Text.EncoderFallback>
-- [Globalisation et localisation](../../../docs/standard/globalization-localization/index.md)
+- [Globalisation et localisation](../globalization-localization/index.md)

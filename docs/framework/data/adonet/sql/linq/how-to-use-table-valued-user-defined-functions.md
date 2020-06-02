@@ -1,18 +1,19 @@
 ---
-title: 'Procédure : Utiliser des fonctions tables définies par l’utilisateur'
+title: "Comment : utiliser des fonctions table définies par l'utilisateur"
+description: Utilisez ces exemples pour apprendre à créer une fonction table, qui retourne un ensemble de lignes unique. Utilisez une telle fonction table comme une table.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5a4ae2b4-3290-4aa1-bc95-fc70c51b54cf
-ms.openlocfilehash: c4b5290e4f1aa69c7f55951d526ccb303a5a95ec
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 44866367393e321d7dd2db965e2fad8a2e6b63e9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72003188"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286324"
 ---
-# <a name="how-to-use-table-valued-user-defined-functions"></a>Procédure : Utiliser des fonctions tables définies par l’utilisateur
+# <a name="how-to-use-table-valued-user-defined-functions"></a>Comment : utiliser des fonctions table définies par l'utilisateur
 Une fonction table retourne un jeu de lignes unique (contrairement aux procédures stockées qui peuvent retourner plusieurs formes de résultats). Étant donné que le type de retour d’une fonction table est `Table`, vous pouvez utiliser une fonction table à tout endroit dans SQL où il est possible d’utiliser une table. Vous pouvez également utiliser la fonction table comme une table.  
   
 ## <a name="example"></a>Exemple  

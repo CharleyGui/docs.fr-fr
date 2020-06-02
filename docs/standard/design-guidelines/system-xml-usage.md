@@ -3,23 +3,23 @@ title: System.Xml, utilisation
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 ms.assetid: 82302f0d-a621-4c6f-b57d-999bd61f21a6
-ms.openlocfilehash: 2ecb709684834a8280c841eb8eef4f024481f7a4
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 07828219f2e17be925d060fa3bb33a9209ecb62b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743583"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291667"
 ---
 # <a name="systemxml-usage"></a>System.Xml, utilisation
-Cette section parle de l’utilisation de plusieurs types résidant dans <xref:System.Xml?displayProperty=nameWithType> espaces de noms qui peuvent être utilisés pour représenter des données XML.
+Cette section parle de l’utilisation de plusieurs types résidant dans des <xref:System.Xml?displayProperty=nameWithType> espaces de noms qui peuvent être utilisés pour représenter des données XML.
 
- ❌ n’utilisez pas <xref:System.Xml.XmlNode> ou <xref:System.Xml.XmlDocument> pour représenter des données XML. Privilégiez l’utilisation d’instances de <xref:System.Xml.XPath.IXPathNavigable>, <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>ou des sous-types de <xref:System.Xml.Linq.XNode> à la place. `XmlNode` et `XmlDocument` ne sont pas conçus pour être exposés dans des API publiques.
+ ❌N’utilisez pas <xref:System.Xml.XmlNode> ou <xref:System.Xml.XmlDocument> pour représenter des données XML. Privilégiez l’utilisation d’instances de <xref:System.Xml.XPath.IXPathNavigable> ,, <xref:System.Xml.XmlReader> <xref:System.Xml.XmlWriter> ou de sous-types de à la <xref:System.Xml.Linq.XNode> place. `XmlNode`et ne `XmlDocument` sont pas conçus pour être exposés dans des API publiques.
 
- ✔️ Utilisez `XmlReader`, `IXPathNavigable`ou des sous-types de `XNode` comme entrée ou sortie des membres qui acceptent ou retournent du code XML.
+ ✔️ Utilisez `XmlReader` `IXPathNavigable` les sous-types, ou `XNode` en tant qu’entrée ou sortie des membres qui acceptent ou retournent du code XML.
 
- Utilisez ces abstractions au lieu de `XmlDocument`, `XmlNode`ou <xref:System.Xml.XPath.XPathDocument>, car cela dissocie les méthodes des implémentations spécifiques d’un document XML en mémoire et les permet de travailler avec des sources de données XML virtuelles qui exposent `XNode`, `XmlReader`ou <xref:System.Xml.XPath.XPathNavigator>.
+ Utilisez ces abstractions au lieu de `XmlDocument` , `XmlNode` ou <xref:System.Xml.XPath.XPathDocument> , car cela dissocie les méthodes des implémentations spécifiques d’un document XML en mémoire et leur permet de fonctionner avec des sources de données XML virtuelles qui exposent `XNode` , `XmlReader` ou <xref:System.Xml.XPath.XPathNavigator> .
 
- ❌ ne sous-classez pas `XmlDocument` si vous souhaitez créer un type représentant une vue XML d’un modèle d’objet sous-jacent ou d’une source de données.
+ ❌Ne procédez pas `XmlDocument` à la sous-classe si vous souhaitez créer un type représentant une vue XML d’un modèle objet ou d’une source de données sous-jacent.
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 
@@ -27,5 +27,5 @@ Cette section parle de l’utilisation de plusieurs types résidant dans <xref:S
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
-- [Indications relatives à l’utilisation](../../../docs/standard/design-guidelines/usage-guidelines.md)
+- [Directives de conception d’infrastructure](index.md)
+- [Instructions d’utilisation](usage-guidelines.md)

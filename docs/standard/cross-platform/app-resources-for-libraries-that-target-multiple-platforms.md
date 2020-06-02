@@ -12,26 +12,26 @@ helpviewer_keywords:
 - resources, for multiple platforms
 - targeting multiple platforms, resources for
 ms.assetid: 72c76f0b-7255-4576-9261-3587f949669c
-ms.openlocfilehash: 3bf475117a85c2fced260dcc9460d55cd7007277
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: a2d02a8ebe5e2611db3bc284bb022470ff77f601
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77123660"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290355"
 ---
 # <a name="app-resources-for-libraries-that-target-multiple-platforms"></a>Ressources d'application pour les bibliothèques qui ciblent des plateformes multiples
-Vous pouvez utiliser le type de projet de [bibliothèque de classes Portable](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) .NET Framework pour vous assurer que les ressources de vos bibliothèques de classes sont accessibles à partir de plusieurs plateformes. Ce type de projet est disponible dans Visual Studio 2012 et cible le sous-ensemble portable de la bibliothèque de classes .NET Framework. L’utilisation d’une bibliothèque de classes portable garantit que votre bibliothèque est accessible à partir des applications de bureau, des applications Silverlight, des applications de Windows Phone et des applications du Windows 8. x Store.
+Vous pouvez utiliser le type de projet de [bibliothèque de classes Portable](cross-platform-development-with-the-portable-class-library.md) .NET Framework pour vous assurer que les ressources de vos bibliothèques de classes sont accessibles à partir de plusieurs plateformes. Ce type de projet est disponible dans Visual Studio 2012 et cible le sous-ensemble portable de la bibliothèque de classes .NET Framework. L’utilisation d’une bibliothèque de classes portable garantit que votre bibliothèque est accessible à partir des applications de bureau, des applications Silverlight, des applications de Windows Phone et des applications du Windows 8. x Store.
 
 [!INCLUDE[standard](../../../includes/pcl-to-standard.md)]
 
- Le projet de bibliothèque de classes portables ne met à la disposition de votre application qu’un sous-ensemble très limité des types de l’espace de noms <xref:System.Resources>, mais vous permet d’utiliser la classe <xref:System.Resources.ResourceManager> pour récupérer des ressources. Toutefois, si vous créez une application à l'aide de Visual Studio, vous devez utiliser le wrapper fortement typé créé par Visual Studio, plutôt que d'utiliser directement la classe <xref:System.Resources.ResourceManager>.
+ Le projet de bibliothèque de classes portables ne met à la disposition de votre application qu’un sous-ensemble très limité des types de l' <xref:System.Resources> espace de noms, mais vous permet d’utiliser la <xref:System.Resources.ResourceManager> classe pour récupérer des ressources. Toutefois, si vous créez une application à l'aide de Visual Studio, vous devez utiliser le wrapper fortement typé créé par Visual Studio, plutôt que d'utiliser directement la classe <xref:System.Resources.ResourceManager>.
 
- Pour créer un wrapper fortement typé dans Visual Studio, définissez le **modificateur d’accès** du fichier de ressources principal dans le concepteur de ressources de Visual Studio sur **public**. Cela crée un fichier [resourceFileName].designer.cs ou [resourceFileName].designer.vb qui contient le wrapper fortement typé ResourceManager. Pour plus d’informations sur l’utilisation d’un wrapper de ressources fortement typé, consultez la section « génération d’une classe de ressource fortement typée » dans la rubrique [Resgen. exe (Resource File Generator)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) .
+ Pour créer un wrapper fortement typé dans Visual Studio, définissez le **modificateur d’accès** du fichier de ressources principal dans le concepteur de ressources de Visual Studio sur **public**. Cela crée un fichier [resourceFileName].designer.cs ou [resourceFileName].designer.vb qui contient le wrapper fortement typé ResourceManager. Pour plus d’informations sur l’utilisation d’un wrapper de ressources fortement typé, consultez la section « génération d’une classe de ressource fortement typée » dans la rubrique [Resgen. exe (Resource File Generator)](../../framework/tools/resgen-exe-resource-file-generator.md) .
 
 ## <a name="resource-manager-in-the-portable-class-library"></a>Gestionnaire des ressources dans la bibliothèque de classes portables
- Dans un projet de bibliothèque de classes portables, tout accès aux ressources est géré par la classe <xref:System.Resources.ResourceManager>. Étant donné que les types dans l’espace de noms <xref:System.Resources>, tels que <xref:System.Resources.ResourceReader> et <xref:System.Resources.ResourceSet>, ne sont pas accessibles à partir d’un projet de bibliothèque de classes portables, ils ne peuvent pas être utilisés pour accéder aux ressources.
+ Dans un projet de bibliothèque de classes portables, tout accès aux ressources est géré par la <xref:System.Resources.ResourceManager> classe. Étant donné que les types dans l' <xref:System.Resources> espace de noms, tels que <xref:System.Resources.ResourceReader> et <xref:System.Resources.ResourceSet> , ne sont pas accessibles à partir d’un projet de bibliothèque de classes portables, ils ne peuvent pas être utilisés pour accéder aux ressources.
 
- Le projet de bibliothèque de classes portables comprend les quatre membres <xref:System.Resources.ResourceManager> listés dans le tableau suivant. Ces constructeurs et méthodes vous permettent d'instancier un objet <xref:System.Resources.ResourceManager> et d'extraire des ressources de chaîne.
+ Le projet de bibliothèque de classes portable comprend les quatre <xref:System.Resources.ResourceManager> membres listés dans le tableau suivant. Ces constructeurs et méthodes vous permettent d'instancier un objet <xref:System.Resources.ResourceManager> et d'extraire des ressources de chaîne.
 
 |Membre`ResourceManager`|Description|
 |------------------------------|-----------------|
@@ -61,11 +61,11 @@ Vous pouvez utiliser le type de projet de [bibliothèque de classes Portable](..
 |HiredLength|12|
 |id|id|
 |ID.Length|12|
-|Name|Name|
+|Nom|Nom|
 |NameLength|25|
 |Intitulé|Base de données des employés|
 
- Le code suivant définit une classe `UILibrary` qui utilise la Gestionnaire des ressources Wrapper nommée `resources` générée par Visual Studio lorsque le **modificateur d’accès** pour le fichier devient **public**. La classe UILibrary analyse les données de chaîne selon les besoins. . Notez que la classe est dans l'espace de noms `MyCompany.Employees`.
+ Le code suivant définit une `UILibrary` classe qui utilise le wrapper gestionnaire des ressources nommé `resources` généré par Visual Studio lorsque le **modificateur d’accès** pour le fichier devient **public**. La classe UILibrary analyse les données de chaîne selon les besoins. . Notez que la classe est dans l'espace de noms `MyCompany.Employees`.
 
  [!code-csharp[Conceptual.Resources.Portable#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portable/cs/uilibrary.cs#1)]
  [!code-vb[Conceptual.Resources.Portable#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portable/vb/uilibrary.vb#1)]
@@ -75,12 +75,12 @@ Vous pouvez utiliser le type de projet de [bibliothèque de classes Portable](..
  [!code-csharp[Conceptual.Resources.Portable#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portable/cs/program.cs#2)]
  [!code-vb[Conceptual.Resources.Portable#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portable/vb/module1.vb#2)]
 
- Le code suivant illustre comment accéder à la classe `UILibrary` et à ses ressources à partir d’une application Windows 8. x Store. Elle nécessite l’ajout d’une référence à UILibrary. dll au projet d’application du Windows Store.
+ Le code suivant illustre comment `UILibrary` accéder à la classe et à ses ressources à partir d’une application Windows 8. x Store. Elle nécessite l’ajout d’une référence à UILibrary. dll au projet d’application du Windows Store.
 
  [!code-csharp[Conceptual.Resources.PortableMetro#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portablemetro/cs/blankpage.xaml.cs#1)]
 
 ## <a name="example-localized-portable-class-library"></a>Exemple : bibliothèque de classes portable localisée
- L’exemple de bibliothèque de classes portable localisée suivant comprend des ressources pour les cultures français (France) et anglais (États-Unis). La culture anglais (États-Unis) est la culture par défaut de l’application ; ses ressources sont indiquées dans le tableau de la [section précédente](../../../docs/standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md#NonLoc). Le fichier de ressources de la culture française (France) est nommé LibResources.fr-FR.resx et inclut les ressources de type de chaîne répertoriées dans le tableau suivant. Le code source de la classe `UILibrary` est identique que celui présenté dans la section précédente.
+ L’exemple de bibliothèque de classes portable localisée suivant comprend des ressources pour les cultures français (France) et anglais (États-Unis). La culture anglais (États-Unis) est la culture par défaut de l’application ; ses ressources sont indiquées dans le tableau de la [section précédente](app-resources-for-libraries-that-target-multiple-platforms.md#NonLoc). Le fichier de ressources de la culture française (France) est nommé LibResources.fr-FR.resx et inclut les ressources de type de chaîne répertoriées dans le tableau suivant. Le code source de la classe `UILibrary` est identique que celui présenté dans la section précédente.
 
 |Nom de la ressource|Valeur de la ressource|
 |-------------------|--------------------|
@@ -89,7 +89,7 @@ Vous pouvez utiliser le type de projet de [bibliothèque de classes Portable](..
 |Embauché|Date d'embauche|
 |HiredLength|16|
 |id|id|
-|Name|Nom|
+|Nom|Nom|
 |Intitulé|Base de données des employés|
 
  Le code suivant illustre de quelle manière la classe `UILibrary` et ses ressources sont accessibles à partir d'une application en mode console. Elle nécessite l’ajout d’une référence à UILibrary. dll au projet d’application console.
@@ -97,7 +97,7 @@ Vous pouvez utiliser le type de projet de [bibliothèque de classes Portable](..
  [!code-csharp[Conceptual.Resources.Portable#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portable/cs/program2.cs#3)]
  [!code-vb[Conceptual.Resources.Portable#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portable/vb/module2.vb#3)]
 
- Le code suivant illustre comment accéder à la classe `UILibrary` et à ses ressources à partir d’une application Windows 8. x Store. Elle nécessite l’ajout d’une référence à UILibrary. dll au projet d’application du Windows Store. Il utilise la propriété statique `ApplicationLanguages.PrimaryLanguageOverride` pour définir la langue par défaut sur Français.
+ Le code suivant illustre comment `UILibrary` accéder à la classe et à ses ressources à partir d’une application Windows 8. x Store. Elle nécessite l’ajout d’une référence à UILibrary. dll au projet d’application du Windows Store. Il utilise la propriété statique `ApplicationLanguages.PrimaryLanguageOverride` pour définir la langue par défaut sur Français.
 
  [!code-csharp[Conceptual.Resources.PortableMetroLoc#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portablemetroloc/cs/blankpage.xaml.cs#1)]
  [!code-vb[Conceptual.Resources.PortableMetroLoc#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portablemetroloc/vb/blankpage.xaml.vb#1)]  
@@ -105,5 +105,5 @@ Vous pouvez utiliser le type de projet de [bibliothèque de classes Portable](..
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Resources.ResourceManager>
-- [Ressources dans des applications de bureau](../../../docs/framework/resources/index.md)
-- [Empaquetage et déploiement de ressources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
+- [Ressources dans les applications de bureau](../../framework/resources/index.md)
+- [Packaging and Deploying Resources](../../framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
