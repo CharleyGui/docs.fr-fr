@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, child tasks
 ms.assetid: c95788bf-90a6-4e96-b7bc-58e36a228cc5
-ms.openlocfilehash: 8f15ee4f136e3e2df1a4e1c7683467f2a4bc9bc0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c8a5d2c1ccb8bb2d272c2582cd416cdfd75506d8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73123186"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285688"
 ---
 # <a name="attached-and-detached-child-tasks"></a>Tâches enfants attachées et détachées
 Une *tâche enfant* (ou *tâche imbriquée*) est une instance <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> créée dans le délégué utilisateur d’une autre tâche, appelée *tâche parent*. Une tâche enfant peut être détachée ou attachée. Une *tâche enfant détachée* est une tâche qui s’exécute indépendamment de son parent. Une *tâche enfant attachée* est une tâche imbriquée créée avec l’option <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> dont le parent ne l’empêche pas explicitement ou par défaut d’être attachée. Une tâche peut créer autant de tâches enfants attachées et détachées que le permettent les ressources système.  
@@ -22,9 +22,9 @@ Une *tâche enfant* (ou *tâche imbriquée*) est une instance <xref:System.Threa
   
 |Category|Tâches enfants détachées|Tâches enfants attachées|  
 |--------------|--------------------------|--------------------------|  
-|Le parent attend que les tâches enfants soient terminées.|Non |Oui|  
-|Le parent propage les exceptions levées par les tâches enfants.|Non |Oui|  
-|Le statut du parent dépend du statut de l'enfant.|Non |Oui|  
+|Le parent attend que les tâches enfants soient terminées.|Non|Oui|  
+|Le parent propage les exceptions levées par les tâches enfants.|Non|Oui|  
+|Le statut du parent dépend du statut de l'enfant.|Non|Oui|  
   
  Dans la plupart des scénarios, nous vous recommandons d’utiliser des tâches enfants détachées, car leurs relations avec les autres tâches sont moins complexes. C'est pourquoi les tâches créées à l'intérieur de tâches parentes sont détachées par défaut et vous devez spécifier explicitement l'option <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> pour créer une tâche enfant attachée.  
   
@@ -53,13 +53,13 @@ Une *tâche enfant* (ou *tâche imbriquée*) est une instance <xref:System.Threa
  [!code-vb[TPL_ChildTasks#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_childtasks/vb/child1a.vb#3)]  
   
 ## <a name="exceptions-in-child-tasks"></a>Exceptions dans les tâches enfants  
- Si une tâche enfant détachée lève une exception, celle-ci doit être observée ou gérée directement dans la tâche parente, comme dans le cas de n’importe quelle tâche non imbriquée. Si une tâche enfant attachée lève une exception, celle-ci est automatiquement propagée vers la tâche parente, puis vers le thread qui attend ou essaie d’accéder à la propriété <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> de la tâche. Ainsi, en utilisant des tâches enfants attachées, vous pouvez gérer toutes les exceptions en un seul point dans l’appel à <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> sur le thread appelant. Pour plus d’informations, consultez l’article [Gestion des exceptions](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).  
+ Si une tâche enfant détachée lève une exception, celle-ci doit être observée ou gérée directement dans la tâche parente, comme dans le cas de n’importe quelle tâche non imbriquée. Si une tâche enfant attachée lève une exception, celle-ci est automatiquement propagée vers la tâche parente, puis vers le thread qui attend ou essaie d’accéder à la propriété <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> de la tâche. Ainsi, en utilisant des tâches enfants attachées, vous pouvez gérer toutes les exceptions en un seul point dans l’appel à <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> sur le thread appelant. Pour plus d’informations, consultez l’article [Gestion des exceptions](exception-handling-task-parallel-library.md).  
   
 ## <a name="cancellation-and-child-tasks"></a>Annulation et tâches enfants  
- L'annulation de tâche est coopérative. Autrement dit, pour être annulable, chaque tâche enfant attachée ou détachée doit surveiller l'état du jeton d'annulation. Pour annuler un parent et tous ses enfants à l'aide d'une demande d'annulation, vous passez le même jeton en tant qu'argument à toutes les tâches et fournissez dans chaque tâche la logique pour répondre à la demande. Pour plus d’informations, consultez [Annulation de tâches](../../../docs/standard/parallel-programming/task-cancellation.md) et [Comment : annuler une tâche et ses enfants](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
+ L'annulation de tâche est coopérative. Autrement dit, pour être annulable, chaque tâche enfant attachée ou détachée doit surveiller l'état du jeton d'annulation. Pour annuler un parent et tous ses enfants à l'aide d'une demande d'annulation, vous passez le même jeton en tant qu'argument à toutes les tâches et fournissez dans chaque tâche la logique pour répondre à la demande. Pour plus d’informations, consultez [Annulation de tâches](task-cancellation.md) et [Comment : annuler une tâche et ses enfants](how-to-cancel-a-task-and-its-children.md).  
   
 ### <a name="when-the-parent-cancels"></a>Annulation d'un parent  
- Si un parent s’annule avant le démarrage de sa tâche enfant, celle-ci ne démarre jamais. Si un parent s’annule une fois que sa tâche enfant a démarré, celle-ci s’exécute jusqu’à son terme sauf si elle possède sa propre logique d’annulation. Pour plus d'informations, consultez [Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md).  
+ Si un parent s’annule avant le démarrage de sa tâche enfant, celle-ci ne démarre jamais. Si un parent s’annule une fois que sa tâche enfant a démarré, celle-ci s’exécute jusqu’à son terme sauf si elle possède sa propre logique d’annulation. Pour plus d'informations, consultez [Task Cancellation](task-cancellation.md).  
   
 ### <a name="when-a-detached-child-task-cancels"></a>Annulation d’une tâche enfant détachée  
  Si une tâche enfant détachée s’annule à l’aide du jeton passé au parent et que celui-ci n’attend pas la tâche enfant, aucune exception n’est propagée, car l’exception est traitée comme une annulation de coopération bénigne. Ce comportement est identique à celui de toute tâche de niveau supérieur.  
@@ -67,16 +67,16 @@ Une *tâche enfant* (ou *tâche imbriquée*) est une instance <xref:System.Threa
 ### <a name="when-an-attached-child-task-cancels"></a>Annulation d’une tâche enfant attachée  
  Quand une tâche enfant attachée s’annule à l’aide du jeton passé à sa tâche parente, une <xref:System.Threading.Tasks.TaskCanceledException> est propagée vers le thread intermédiaire à l’intérieur d’une <xref:System.AggregateException>. Vous devez attendre la tâche parente pour pouvoir gérer toutes les exceptions bénignes, en plus de toute exception d’erreur propagée vers un graphique de tâches enfants attachées.  
   
- Pour plus d’informations, consultez l’article [Gestion des exceptions](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).  
+ Pour plus d’informations, consultez l’article [Gestion des exceptions](exception-handling-task-parallel-library.md).  
   
 ## <a name="preventing-a-child-task-from-attaching-to-its-parent"></a>Empêcher qu'une tâche enfant ne s'attache à son parent  
  Une exception non gérée levée par une tâche enfant est propagée vers la tâche parente. Vous pouvez vous baser sur ce comportement pour observer toutes les exceptions de tâche enfant à partir d'une seule tâche racine au lieu de parcourir une arborescence de tâches. Toutefois, la propagation d’exception peut être problématique quand une tâche parente n’attend pas d’attachement de la part d’un autre code. Par exemple, imaginez une application qui appelle un composant de bibliothèque tierce à partir d'un objet <xref:System.Threading.Tasks.Task>. Si ce composant crée également un objet <xref:System.Threading.Tasks.Task> et spécifie <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> pour l’attacher à la tâche parente, les exceptions non gérées qui se produisent dans la tâche enfant se propagent vers le parent. Cela peut entraîner un comportement inattendu dans l'application principale.  
   
  Pour empêcher une tâche enfant de s'attacher à sa tâche parente, spécifiez l'option <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> quand vous créez l'objet <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601> parent. Si une tâche enfant tente de s’attacher à son parent alors que celui-ci spécifie l’option <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType>, elle échoue et s’exécute comme si l’option <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> n’était pas spécifiée.  
   
- Vous pourriez également empêcher une tâche enfant de s'attacher à son parent quand la tâche enfant ne se termine pas en temps voulu. Étant donné qu’une tâche parente ne se termine pas tant que toutes les tâches enfants ne sont pas achevées, une tâche enfant à exécution longue peut entraîner des performances médiocres de la part de l’application globale. Pour obtenir un exemple qui montre comment améliorer les performances de l’application en empêchant une tâche de s’attacher à sa tâche parente, consultez [Procédure : empêcher une tâche enfant de s’attacher à son parent](../../../docs/standard/parallel-programming/how-to-prevent-a-child-task-from-attaching-to-its-parent.md).  
+ Vous pourriez également empêcher une tâche enfant de s'attacher à son parent quand la tâche enfant ne se termine pas en temps voulu. Étant donné qu’une tâche parente ne se termine pas tant que toutes les tâches enfants ne sont pas achevées, une tâche enfant à exécution longue peut entraîner des performances médiocres de la part de l’application globale. Pour obtenir un exemple qui montre comment améliorer les performances de l’application en empêchant une tâche de s’attacher à sa tâche parente, consultez [Procédure : empêcher une tâche enfant de s’attacher à son parent](how-to-prevent-a-child-task-from-attaching-to-its-parent.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Programmation parallèle](../../../docs/standard/parallel-programming/index.md)
-- [Parallélisme de données](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
+- [Programmation parallèle](index.md)
+- [Parallélisme des données](data-parallelism-task-parallel-library.md)

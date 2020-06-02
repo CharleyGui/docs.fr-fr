@@ -10,15 +10,15 @@ helpviewer_keywords:
 - providers [.NET Framework], in observer design pattern
 - observables [.NET Framework], in observer design pattern
 ms.assetid: 790b5d8b-d546-40a6-beeb-151b574e5ee5
-ms.openlocfilehash: f5bb3cda0caa39ba3fd094b80e0b769a4bfc1f85
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4f8a213c0df3ef3c633106b7249a4947fe77c0d2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73141558"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280021"
 ---
 # <a name="how-to-implement-a-provider"></a>Comment : implémenter un fournisseur
-Le modèle de design observateur requiert une division entre un fournisseur, qui surveille les données et envoie des notifications, et un ou plusieurs observateurs, qui reçoivent des notifications (rappels) du fournisseur. Cette rubrique décrit comment créer un fournisseur. Une rubrique connexe, [Guide pratique pour implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md), explique comment créer un observateur.  
+Le modèle de design observateur requiert une division entre un fournisseur, qui surveille les données et envoie des notifications, et un ou plusieurs observateurs, qui reçoivent des notifications (rappels) du fournisseur. Cette rubrique décrit comment créer un fournisseur. Une rubrique connexe, [Guide pratique pour implémenter une méthode Observer](how-to-implement-an-observer.md), explique comment créer un observateur.  
   
 ### <a name="to-create-a-provider"></a>Pour créer un fournisseur  
   
@@ -52,7 +52,7 @@ Le modèle de design observateur requiert une division entre un fournisseur, qui
      [!code-csharp[Conceptual.ObserverDesign.HowTo#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#6)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#6)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant contient le code source complet permettant de définir une implémentation <xref:System.IObservable%601> pour une application de surveillance de la température. Il inclut la structure `Temperature`, qui correspond aux données envoyées aux observateurs, et la classe `TemperatureMonitor`, qui est l’implémentation <xref:System.IObservable%601>.  
   
  [!code-csharp[Conceptual.ObserverDesign.HowTo#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#7)]
@@ -61,6 +61,6 @@ Le modèle de design observateur requiert une division entre un fournisseur, qui
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.IObservable%601>
-- [Modèle de conception Observateur](../../../docs/standard/events/observer-design-pattern.md)
-- [Comment : implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md)
-- [Meilleures pratiques du modèle de design observateur](../../../docs/standard/events/observer-design-pattern-best-practices.md)
+- [Modèle de conception observateur](observer-design-pattern.md)
+- [Comment : implémenter un observateur](how-to-implement-an-observer.md)
+- [Meilleures pratiques du modèle de design observateur](observer-design-pattern-best-practices.md)

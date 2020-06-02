@@ -12,12 +12,12 @@ helpviewer_keywords:
 - runtime, attributes
 - extending metadata
 ms.assetid: 30386922-1e00-4602-9ebf-526b271a8b87
-ms.openlocfilehash: b3a106eb58de4865e260a43c8466019e738510f5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d27dc3d77a8f72123f23d9f5a893d144bacee662
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73130904"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276268"
 ---
 # <a name="extending-metadata-using-attributes"></a>Extension des métadonnées à l'aide des attributs
 Le common language runtime vous permet d’ajouter des déclarations descriptives de type mot clé, appelées attributs, pour annoter les éléments de programmation comme des types, des champs, des méthodes et des propriétés. Quand vous compilez votre code pour le runtime, il est converti en langage MSIL (Microsoft Intermediate Language) et placé dans un fichier exécutable portable avec des métadonnées générées par le compilateur. Les attributs vous permettent de placer des informations descriptives supplémentaires dans les métadonnées, qui peuvent être extraites à l'aide des services de réflexion du runtime. Le compilateur crée des attributs quand vous déclarez des instances de classes spéciales qui dérivent de <xref:System.Attribute?displayProperty=nameWithType>.  
@@ -28,11 +28,11 @@ Le common language runtime vous permet d’ajouter des déclarations descriptive
   
 |Intitulé|Description|  
 |-----------|-----------------|  
-|[Application des attributs](../../../docs/standard/attributes/applying-attributes.md)|Décrit comment appliquer un attribut à un élément de votre code.|  
-|[Écriture des attributs personnalisés](../../../docs/standard/attributes/writing-custom-attributes.md)|Décrit comment concevoir des classes d'attributs personnalisés.|  
-|[Récupération des informations stockées dans les attributs](../../../docs/standard/attributes/retrieving-information-stored-in-attributes.md)|Décrit comment récupérer des attributs personnalisés pour le code qui est chargé dans le contexte d'exécution.|  
-|[Métadonnées et composants autodescriptifs](../../../docs/standard/metadata-and-self-describing-components.md)|Fournit une vue d'ensemble des métadonnées et décrit comment elles sont implémentées dans un fichier exécutable portable du .NET Framework.|  
-|[Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)|Explique comment récupérer les informations des attributs personnalisés dans le contexte de réflexion uniquement.|  
+|[Application des attributs](applying-attributes.md)|Décrit comment appliquer un attribut à un élément de votre code.|  
+|[Écriture des attributs personnalisés](writing-custom-attributes.md)|Décrit comment concevoir des classes d'attributs personnalisés.|  
+|[Récupération des informations stockées dans les attributs](retrieving-information-stored-in-attributes.md)|Décrit comment récupérer des attributs personnalisés pour le code qui est chargé dans le contexte d'exécution.|  
+|[Métadonnées et composants autodescriptifs](../metadata-and-self-describing-components.md)|Fournit une vue d'ensemble des métadonnées et décrit comment elles sont implémentées dans un fichier exécutable portable du .NET Framework.|  
+|[Procédure : charger des assemblys dans le contexte de réflexion uniquement](../../framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)|Explique comment récupérer les informations des attributs personnalisés dans le contexte de réflexion uniquement.|  
   
-## <a name="reference"></a>Informations de référence  
+## <a name="reference"></a>Référence  
  <xref:System.Attribute?displayProperty=nameWithType>

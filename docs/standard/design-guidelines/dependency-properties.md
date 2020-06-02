@@ -3,43 +3,43 @@ title: Propriétés de dépendance
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 ms.assetid: 212cfb1e-cec4-4047-94a6-47209b387f6f
-ms.openlocfilehash: e1372b75cb6501f8bc3fec913364e9d80157ad83
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 476ef1bb1ac5ec1f551979c64a41cbae55c554bc
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741722"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280255"
 ---
 # <a name="dependency-properties"></a>Propriétés de dépendance
 Une propriété de dépendance (DP) est une propriété normale qui stocke sa valeur dans un magasin de propriétés au lieu de la stocker dans une variable de type (champ), par exemple.
 
- Une propriété de dépendance attachée est un genre de propriété de dépendance modélisée en tant que méthodes d’extraction et de définition statiques représentant des « propriétés » qui décrivent les relations entre les objets et leurs conteneurs (par exemple, la position d’un objet `Button` sur un `Panel` conteneur).
+ Une propriété de dépendance attachée est un genre de propriété de dépendance modélisée en tant que méthodes d’extraction et de définition statiques représentant des « propriétés » qui décrivent les relations entre les objets et leurs conteneurs (par exemple, la position d’un `Button` objet sur un `Panel` conteneur).
 
  ✔️ fournissez les propriétés de dépendance, si vous avez besoin des propriétés pour prendre en charge des fonctionnalités WPF telles que le style, les déclencheurs, la liaison de données, les animations, les ressources dynamiques et l’héritage.
 
 ## <a name="dependency-property-design"></a>Conception des propriétés de dépendance
- ✔️ héritent de <xref:System.Windows.DependencyObject>, ou de l’un de ses sous-types, lors de l’implémentation des propriétés de dépendance. Le type fournit une implémentation très efficace d’une banque de propriétés et prend automatiquement en charge la liaison de données WPF.
+ ✔️ héritent de <xref:System.Windows.DependencyObject> , ou de l’un de ses sous-types, lors de l’implémentation des propriétés de dépendance. Le type fournit une implémentation très efficace d’une banque de propriétés et prend automatiquement en charge la liaison de données WPF.
 
  ✔️ fournissez une propriété CLR normale et un champ en lecture seule statique public qui stocke une instance de <xref:System.Windows.DependencyProperty?displayProperty=nameWithType> pour chaque propriété de dépendance.
 
- ✔️ Implémentez des propriétés de dépendance en appelant des méthodes d’instance <xref:System.Windows.DependencyObject.GetValue%2A?displayProperty=nameWithType> et <xref:System.Windows.DependencyObject.SetValue%2A?displayProperty=nameWithType>.
+ ✔️ Implémentez des propriétés de dépendance en appelant des méthodes d’instance <xref:System.Windows.DependencyObject.GetValue%2A?displayProperty=nameWithType> et <xref:System.Windows.DependencyObject.SetValue%2A?displayProperty=nameWithType> .
 
  ✔️ Nommez le champ statique de la propriété de dépendance en suffixant le nom de la propriété avec « Property ».
 
- ❌ ne définissez pas explicitement les valeurs par défaut des propriétés de dépendance dans le code ; Définissez-les plutôt dans les métadonnées.
+ ❌NE définissez pas explicitement les valeurs par défaut des propriétés de dépendance dans le code ; Définissez-les plutôt dans les métadonnées.
 
  Si vous définissez une propriété par défaut explicitement, vous pouvez empêcher la définition de cette propriété par certains moyens implicites, tels qu’un style.
 
- ❌ ne placez pas de code dans les accesseurs de propriété autres que le code standard pour accéder au champ statique.
+ ❌NE placez pas de code dans les accesseurs de propriété autres que le code standard pour accéder au champ statique.
 
  Ce code ne s’exécute pas si la propriété est définie par des moyens implicites, tels qu’un style, car le style utilise directement le champ statique.
 
- ❌ n’utilisez pas les propriétés de dépendance pour stocker des données sécurisées. Même les propriétés de dépendance privées sont accessibles publiquement.
+ ❌N’utilisez pas de propriétés de dépendance pour stocker des données sécurisées. Même les propriétés de dépendance privées sont accessibles publiquement.
 
 ## <a name="attached-dependency-property-design"></a>Conception de propriété de dépendance attachée
- Les propriétés de dépendance décrites dans la section précédente représentent des propriétés intrinsèques du type déclarant. par exemple, la propriété `Text` est une propriété de `TextButton`, qui la déclare. La propriété de dépendance attachée est un type spécial de propriété de dépendance.
+ Les propriétés de dépendance décrites dans la section précédente représentent des propriétés intrinsèques du type déclarant. par exemple, la `Text` propriété est une propriété de `TextButton` , qui la déclare. La propriété de dépendance attachée est un type spécial de propriété de dépendance.
 
- La propriété <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType> est un exemple classique d’une propriété jointe. La propriété représente la position de la colonne du bouton (et non de la grille), mais elle ne s’applique que si le bouton est contenu dans une grille et est donc « attaché » aux boutons par grilles.
+ La propriété est un exemple classique d’une propriété jointe <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType> . La propriété représente la position de la colonne du bouton (et non de la grille), mais elle ne s’applique que si le bouton est contenu dans une grille et est donc « attaché » aux boutons par grilles.
 
 ```xaml
 <Grid>
@@ -80,17 +80,17 @@ public class Grid {
 
  Malheureusement, les accesseurs de propriété de dépendance ne peuvent pas contenir de code de validation arbitraire. Au lieu de cela, la logique de validation de la propriété de dépendance doit être spécifiée lors de l’inscription de la propriété.
 
- ❌ ne placez pas la logique de validation de la propriété de dépendance dans les accesseurs de la propriété. Au lieu de cela, passer un rappel de validation à `DependencyProperty.Register` méthode.
+ ❌NE placez pas la logique de validation de la propriété de dépendance dans les accesseurs de la propriété. Au lieu de cela, passer un rappel de validation à la `DependencyProperty.Register` méthode.
 
 ## <a name="dependency-property-change-notifications"></a>Notifications de modification de propriété de dépendance
- ❌ n’implémentez pas la logique de notification de modification dans les accesseurs de propriété de dépendance. Les propriétés de dépendance possèdent une fonctionnalité de notifications de modifications intégrée qui doit être utilisée en fournissant un rappel de notification de modification au <xref:System.Windows.PropertyMetadata>.
+ ❌N’implémentez pas la logique de notification de modification dans les accesseurs de propriété de dépendance. Les propriétés de dépendance possèdent une fonctionnalité de notifications de modifications intégrée qui doit être utilisée en fournissant un rappel de notification de modification à <xref:System.Windows.PropertyMetadata> .
 
 ## <a name="dependency-property-value-coercion"></a>Contrainte de valeur de propriété de dépendance
  La contrainte de propriété a lieu lorsque la valeur donnée à un accesseur Set de propriété est modifiée par l’accesseur Set avant la modification réelle de la Banque de propriétés.
 
- ❌ n’implémentez pas la logique de contrainte dans les accesseurs de propriété de dépendance.
+ ❌N’implémentez pas la logique de contrainte dans les accesseurs de propriété de dépendance.
 
- Les propriétés de dépendance ont une fonctionnalité de contrainte intégrée, et elles peuvent être utilisées en fournissant un rappel de contrainte au `PropertyMetadata`.
+ Les propriétés de dépendance ont une fonctionnalité de contrainte intégrée, et elles peuvent être utilisées en fournissant un rappel de contrainte à `PropertyMetadata` .
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 
@@ -98,5 +98,5 @@ public class Grid {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
-- [Modèles de design courants](../../../docs/standard/design-guidelines/common-design-patterns.md)
+- [Directives de conception d’infrastructure](index.md)
+- [Modèles de conception courants](common-design-patterns.md)

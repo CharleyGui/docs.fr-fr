@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - garbage collection, forced
 ms.assetid: 019008fe-4708-4e65-bebf-04fd9941e149
-ms.openlocfilehash: 604b49ef577a46204b523ebf5a8575a30b81635e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 36dff45587c6c28ba17fd7389dc3863893ff8f61
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73120921"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286039"
 ---
 # <a name="induced-collections"></a>Collections forcées
 Dans la plupart des cas, le Garbage collector peut déterminer le meilleur moment pour exécuter une collection. En outre, vous devez lui permettre de s’exécuter de façon indépendante. Dans de rares cas, une collection forcée peut toutefois améliorer les performances de votre application. Vous pouvez alors induire le garbage collection à l’aide de la méthode <xref:System.GC.Collect%2A?displayProperty=nameWithType> pour forcer un garbage collection.  
@@ -36,5 +36,5 @@ Dans la plupart des cas, le Garbage collector peut déterminer le meilleur momen
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modes de latence](../../../docs/standard/garbage-collection/latency.md)
-- [Garbage collection](../../../docs/standard/garbage-collection/index.md)
+- [Modes de latence](latency.md)
+- [Garbage collection](index.md)

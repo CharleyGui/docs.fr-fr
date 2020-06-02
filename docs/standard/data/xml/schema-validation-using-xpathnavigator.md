@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 81fa0e41-d9c9-46f0-b22b-50da839c77f5
-ms.openlocfilehash: bfcbf7306e896af54808c49e25f95d0631f5bcc0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: f6e56616543bf7d2ad2e6be4d7bf7cbc50ba3a23
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710204"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84292005"
 ---
 # <a name="schema-validation-using-xpathnavigator"></a>Validation de schéma à l'aide de XPathNavigator
 La classe <xref:System.Xml.XmlDocument> permet de valider le contenu XML d'un objet <xref:System.Xml.XmlDocument> de deux manières. La première consiste à valider le contenu XML à l'aide d'un objet <xref:System.Xml.XmlReader> de validation et la seconde, à utiliser la méthode <xref:System.Xml.XmlDocument.Validate%2A> de la classe <xref:System.Xml.XmlDocument>. Vous pouvez également effectuer une validation en lecture seule du contenu XML à l’aide de la classe <xref:System.Xml.XPath.XPathDocument>.  
@@ -348,22 +348,22 @@ class ValidatingReaderExample
   
  Les modifications apportées à l'aide de la méthode <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> de la classe <xref:System.Xml.XPath.XPathNavigator> ont généré une <xref:System.InvalidCastException> car la nouvelle valeur était non valide par rapport au type de schéma du nœud.  
   
- Pour plus d’informations sur la modification de valeurs avec la méthode <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A>, consultez la rubrique [Modification de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md).  
+ Pour plus d’informations sur la modification de valeurs avec la méthode <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A>, consultez la rubrique [Modification de données XML à l’aide de XPathNavigator](modify-xml-data-using-xpathnavigator.md).  
   
 ### <a name="read-only-validation"></a>Validation en lecture seule  
  La classe <xref:System.Xml.XPath.XPathDocument> est une représentation en lecture seule et en mémoire d'un document XML. Les classes <xref:System.Xml.XPath.XPathDocument> et <xref:System.Xml.XmlDocument> créent des objets <xref:System.Xml.XPath.XPathNavigator> permettant de parcourir et de modifier des documents XML. Étant donné que la classe <xref:System.Xml.XPath.XPathDocument> est une classe en lecture seule, l'objet <xref:System.Xml.XPath.XPathNavigator> retourné par les objets <xref:System.Xml.XPath.XPathDocument> ne peut pas modifier le document XML contenu dans l'objet <xref:System.Xml.XPath.XPathDocument>.  
   
  En cas de validation, vous pouvez créer un objet <xref:System.Xml.XPath.XPathDocument> de la même manière qu’un objet <xref:System.Xml.XmlDocument> à l’aide d’un objet <xref:System.Xml.XmlReader> de validation comme décrit précédemment dans cette rubrique. L'objet <xref:System.Xml.XPath.XPathDocument> valide le document XML lors de son chargement, mais comme vous ne pouvez pas modifier les données XML dans l'objet <xref:System.Xml.XPath.XPathDocument>, vous ne pouvez pas revalider le document XML.  
   
- Pour plus d’informations sur les objets <xref:System.Xml.XPath.XPathNavigator> en lecture seule et modifiables, consultez la rubrique [Lecture de données XML à l’aide de XPathDocument et de XmlDocument](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md).  
+ Pour plus d’informations sur les objets <xref:System.Xml.XPath.XPathNavigator> en lecture seule et modifiables, consultez la rubrique [Lecture de données XML à l’aide de XPathDocument et de XmlDocument](reading-xml-data-using-xpathdocument-and-xmldocument.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [Traitement des données XML à l'aide du modèle de données XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [Lecture de données XML à l’aide de XPathDocument et XmlDocument](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)
-- [Sélection, évaluation et mise en correspondance de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)
-- [Accès à des données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)
-- [Modification de données XML à l'aide de XPathNavigator](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)
+- [Traitement des données XML à l'aide du modèle de données XPath](process-xml-data-using-the-xpath-data-model.md)
+- [Lecture de données XML à l’aide de XPathDocument et XmlDocument](reading-xml-data-using-xpathdocument-and-xmldocument.md)
+- [Sélection, évaluation et mise en correspondance de données XML à l’aide de XPathNavigator](selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)
+- [Accès à des données XML à l’aide de XPathNavigator](accessing-xml-data-using-xpathnavigator.md)
+- [Modification de données XML à l'aide de XPathNavigator](editing-xml-data-using-xpathnavigator.md)

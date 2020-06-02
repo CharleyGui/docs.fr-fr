@@ -1,13 +1,14 @@
 ---
 title: Nouveautés
+description: Découvrez les nouvelles fonctionnalités de ADO.NET dans le .NET Framework 4,5, y compris les nouvelles fonctionnalités pour le fournisseur de données SqlClient et ADO.NET Entity Framework.
 ms.date: 03/30/2017
 ms.assetid: 3bb65d38-cce2-46f5-b979-e5c505e95e10
-ms.openlocfilehash: 2ac8ebced700dc6c874ac22304773b3b9c19f8b3
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: 536b9314dd83366202f7fd9b489759681021fd9e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76979769"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286169"
 ---
 # <a name="whats-new-in-adonet"></a>Nouveautés dans ADO.NET
 
@@ -27,7 +28,7 @@ Les fonctionnalités suivantes sont nouvelles dans le Fournisseur de données .N
 
 - SqlClient prend désormais en charge la haute disponibilité, la fonctionnalité de récupération d’urgence de SQL Server, AlwaysOn. Pour plus d’informations, consultez [prise en charge de SqlClient pour la haute disponibilité et la récupération d’urgence](./sql/sqlclient-support-for-high-availability-disaster-recovery.md).
 
-- Un mot de passe peut être passé en tant que <xref:System.Security.SecureString> lors de l’utilisation de l’authentification SQL Server. Pour plus d'informations, voir <xref:System.Data.SqlClient.SqlCredential>.
+- Un mot de passe peut être passé en tant que <xref:System.Security.SecureString> lors de l’utilisation de l’authentification SQL Server. Consultez la rubrique <xref:System.Data.SqlClient.SqlCredential> (éventuellement en anglais) pour plus d'informations.
 
 - Lorsque `TrustServerCertificate` a la valeur false et que `Encrypt` a la valeur true, le nom du serveur (ou l’adresse IP) dans un certificat SSL SQL Server doit correspondre exactement au nom du serveur (ou à l’adresse IP) spécifié dans la chaîne de connexion. Sinon, la connexion échouera. Pour plus d'informations, consultez la description de l'option de connexion `Encrypt` dans <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.
 
@@ -45,9 +46,9 @@ Les fonctionnalités suivantes sont nouvelles dans le Fournisseur de données .N
 
 - `Type System Version=SQL Server 2012;` est une nouvelle valeur à passer à la propriété de connexion `Type System Version`. La valeur `Type System Version=Latest;` est désormais obsolète et a été rendue équivalente à `Type System Version=SQL Server 2008;`. Pour plus d'informations, consultez <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.
 
-- SqlClient fournit la prise en charge supplémentaire des colonnes éparses, une fonctionnalité ajoutée dans SQL Server 2008. Si votre application accède déjà aux données d'une table qui utilise des colonnes éparses, vous devriez constater une amélioration des performances. La colonne IsColumnSet de <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> indique si une colonne est une colonne éparse qui est membre d'un jeu de colonnes. <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> indique si une colonne est une colonne éparse (consultez [SQL Server collections de schémas](sql-server-schema-collections.md) pour plus d’informations). Pour plus d’informations sur les colonnes éparses, consultez [utiliser des colonnes éparses](/sql/relational-databases/tables/use-sparse-columns).
+- SqlClient fournit la prise en charge supplémentaire des colonnes éparses, une fonctionnalité ajoutée dans SQL Server 2008. Si votre application accède déjà aux données dans un table qui utilise des colonnes éparses, vous devez constater une augmentation des performances. La colonne IsColumnSet de <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> indique si une colonne est une colonne éparse qui est membre d'un jeu de colonnes. <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A>indique si une colonne est une colonne éparse (pour plus d’informations, consultez [SQL Server collections de schémas](sql-server-schema-collections.md) ). Pour plus d’informations sur les colonnes éparses, consultez [utiliser des colonnes éparses](/sql/relational-databases/tables/use-sparse-columns).
 
-- L'assembly Microsoft.SqlServer.Types.dll, qui contient les types de données spatiales, a été mis à niveau de la version 10.0 vers la version 11.0. Les applications qui référencent cet assembly peuvent échouer. Pour plus d’informations, consultez [modifications critiques apportées aux fonctionnalités de moteur de base de données](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/ms143179(v=sql.110)).
+- L'assembly Microsoft.SqlServer.Types.dll, contenant les types de données spatiales, a été mis à niveau de la version 10.0 vers la version 11.0. Les applications qui référencent cet assembly peuvent échouer. Pour plus d’informations, consultez [modifications critiques apportées aux fonctionnalités de moteur de base de données](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/ms143179(v=sql.110)).
 
 ## <a name="adonet-entity-framework"></a>ADO.NET Entity Framework
 
@@ -56,6 +57,6 @@ Le .NET Framework 4,5 ajoute des API qui permettent de nouveaux scénarios lors 
 ## <a name="see-also"></a>Voir aussi
 
 - [ADO.NET](index.md)
-- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](ado-net-overview.md)
 - [SQL Server et ADO.NET](./sql/index.md)
 - [Nouveautés de WCF Data Services 5,0](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee373845(v=vs.103))

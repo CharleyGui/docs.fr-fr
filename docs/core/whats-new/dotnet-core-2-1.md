@@ -5,25 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.date: 10/10/2018
-ms.openlocfilehash: 78d9a6490c0479d9c21e01d0bcba41294d674a5c
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 3e6f3a921238a5897c7aa4b6034be979724b7167
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644380"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84283440"
 ---
 # <a name="whats-new-in-net-core-21"></a>Nouveautés de .NET Core 2.1
 
 .NET Core 2.1 inclut les nouvelles fonctionnalités et améliorations dans les domaines suivants :
 
-- [Outils](#tooling)
-- [Rouler vers l’avant](#roll-forward)
+- [Outillage](#tooling)
+- [Restaurer par progression](#roll-forward)
 - [Déploiement](#deployment)
 - [Pack de compatibilité Windows](#windows-compatibility-pack)
 - [Améliorations de la compilation JIT](#jit-compiler-improvements)
 - [Modifications d'API](#api-changes)
 
-## <a name="tooling"></a>Outils
+## <a name="tooling"></a>Outillage
 
 Le Kit SDK.NET Core 2.1 (2.1.300), les outils inclus avec .NET Core 2.1, intègrent les modifications et améliorations suivantes :
 
@@ -53,7 +53,7 @@ Un certain nombre d’outils qui étaient disponibles uniquement par projet à l
 
    Remarquez l’option `--` qui précède l’option `--verbose`. Elle délimite les options passées directement à la commande `dotnet watch` à partir des arguments passés au processus enfant `dotnet`. Sans elle, l’option `--verbose` s’applique à la commande `dotnet watch`, et non à la commande `dotnet build`.
   
-   Pour plus d’informations, voir [Développer ASP.NET applications Core à l’aide de la montre dotnet](/aspnet/core/tutorials/dotnet-watch).
+   Pour plus d’informations, consultez [développer des applications ASP.net core à l’aide de dotnet Watch](/aspnet/core/tutorials/dotnet-watch).
 
 - `dotnet dev-certs` génère et gère les certificats utilisés pendant le développement dans les applications ASP.NET Core.
 
@@ -81,9 +81,9 @@ Dans le SDK .NET Core 2.1, toutes les opérations avec les outils utilisent la c
 
 - [`dotnet tool install`](../tools/dotnet-tool-install.md)pour installer un outil.
 
-- [`dotnet tool update`](../tools/dotnet-tool-update.md)pour désinstaller et réinstaller un outil, qui le met à jour efficacement.
+- [`dotnet tool update`](../tools/dotnet-tool-update.md)pour désinstaller et réinstaller un outil qui le met à jour.
 
-- [`dotnet tool list`](../tools/dotnet-tool-list.md)d’énumérer les outils actuellement installés.
+- [`dotnet tool list`](../tools/dotnet-tool-list.md)pour répertorier les outils actuellement installés.
 
 - [`dotnet tool uninstall`](../tools/dotnet-tool-uninstall.md)pour désinstaller les outils actuellement installés.
 
@@ -91,7 +91,7 @@ Dans le SDK .NET Core 2.1, toutes les opérations avec les outils utilisent la c
 
 Toutes les applications .NET Core depuis .NET Core 2.0 extrapolent automatiquement vers la dernière *version mineure* installée sur un système.
 
-À compter de .NET Core 2.0, si la version de .NET Core avec laquelle une application a été créée n’est pas présente lors de l’exécution, l’application s’exécute automatiquement avec la dernière *version mineure* installée de .NET Core. En d’autres termes, si une application est générée avec .NET Core 2.0 et que .NET Core 2.0 n’est pas présent sur le système hôte, mais que .NET Core 2.1 l’est, l’application s’exécute avec .NET Core 2.1.
+À compter de .NET Core 2,0, si la version de .NET Core avec laquelle une application a été générée n’est pas présente au moment de l’exécution, l’application s’exécute automatiquement sur la dernière *version mineure* installée de .net core. En d’autres termes, si une application est générée avec .NET Core 2.0 et que .NET Core 2.0 n’est pas présent sur le système hôte, mais que .NET Core 2.1 l’est, l’application s’exécute avec .NET Core 2.1.
 
 > [!IMPORTANT]
 > Ce comportement de restauration par progression ne s’applique pas aux préversions, Par défaut, il ne s’applique pas non plus aux versions majeures, mais vous pouvez changer ce comportement avec les paramètres ci-dessous.
@@ -112,7 +112,7 @@ Vous pouvez modifier ce paramètre de trois manières :
    "rollForwardOnNoCandidateFx" : 0
    ```
 
-- Lors de l’utilisation de la [CLI Core .NET](../tools/index.md), ajoutez l’option suivante avec la valeur désirée à une commande .NET Core telle que `run`:
+- Lorsque vous utilisez l' [CLI .net Core](../tools/index.md), ajoutez l’option suivante avec la valeur souhaitée à une commande .net Core, par exemple `run` :
 
    ```dotnetcli
    dotnet run --rollForwardOnNoCandidateFx=0
@@ -124,11 +124,11 @@ L’extrapolation de version de correctif logiciel est indépendante de ce param
 
 ### <a name="self-contained-application-servicing"></a>Maintenance d’une application autonome
 
-`dotnet publish` publie désormais des applications autonomes avec une version de runtime révisée. Lorsque vous publiez une application autonome avec le Kit de développement .NET Core 2.1 (2.1.300), votre application inclut la dernière version du runtime révisée et identifiée par ce SDK. Lorsque vous passez à la dernière SDK, vous publierez avec la dernière version .NET Core runtime. Cela s’applique aux runtimes .NET Core 1.0 et versions ultérieures.
+`dotnet publish` publie désormais des applications autonomes avec une version de runtime révisée. Lorsque vous publiez une application autonome avec le Kit de développement .NET Core 2.1 (2.1.300), votre application inclut la dernière version du runtime révisée et identifiée par ce SDK. Lorsque vous effectuez une mise à niveau vers le dernier Kit de développement logiciel (SDK), vous publiez avec la dernière version du Runtime .NET Core. Cela s’applique aux runtimes .NET Core 1.0 et versions ultérieures.
 
-L’édition autonome repose sur des versions en temps d’exécution sur NuGet.org. Vous n’avez pas besoin d’avoir le temps d’exécution entretenu sur votre machine.
+La publication autonome s’appuie sur les versions du Runtime sur NuGet.org. Vous n’avez pas besoin du runtime desservi sur votre ordinateur.
 
-À l’aide du Kit de développement logiciel .NET Core 2.0, les applications autonomes sont publiées avec le runtime .NET Core 2.0.0, sauf si une version différente est spécifiée via la propriété `RuntimeFrameworkVersion`. Avec ce nouveau comportement, vous n’aurez plus besoin de définir cette propriété pour sélectionner une version de temps d’exécution plus élevé pour une application autonome. Dorénavant, l’approche la plus simple consiste à toujours publier avec le Kit de développement .NET Core 2.1 (2.1.300).
+À l’aide du Kit de développement logiciel .NET Core 2.0, les applications autonomes sont publiées avec le runtime .NET Core 2.0.0, sauf si une version différente est spécifiée via la propriété `RuntimeFrameworkVersion`. Avec ce nouveau comportement, vous n’avez plus besoin de définir cette propriété pour sélectionner une version de Runtime plus élevée pour une application autonome. Dorénavant, l’approche la plus simple consiste à toujours publier avec le Kit de développement .NET Core 2.1 (2.1.300).
 
 Pour plus d’informations, voir [Restauration par progression du runtime de déploiement autonome](../deploying/runtime-patch-selection.md).
 ## <a name="windows-compatibility-pack"></a>Pack de compatibilité Windows
@@ -211,7 +211,7 @@ Le comportement de <xref:System.IO.Compression.BrotliStream> est identique à <x
 
 - La méthode statique <xref:System.Security.Cryptography.RandomNumberGenerator.Fill%2A?displayProperty=nameWithType> remplit <xref:System.Span%601> de valeurs aléatoires.
 
-- Le <xref:System.Security.Cryptography.Pkcs.EnvelopedCms?displayProperty=nameWithType> est maintenant pris en charge sur Linux et macOS.
+- <xref:System.Security.Cryptography.Pkcs.EnvelopedCms?displayProperty=nameWithType>Est désormais pris en charge sur Linux et MacOS.
 
 - Diffie-Hellman à courbe elliptique (ECDH) est désormais disponible dans la famille de classe <xref:System.Security.Cryptography.ECDiffieHellman?displayProperty=nameWithType>. La surface d’exposition est la même que dans le .NET Framework.
 
@@ -247,7 +247,7 @@ Sous Linux et macOS, vous pouvez uniquement configurer <xref:System.Net.Http.Htt
 
 ### <a name="breaking-changes"></a>Changements cassants
 
-Pour plus d’informations sur les changements de rupture, voir [Breaking changes pour la migration de la version 2.0 à 2.1](../compatibility/2.0-2.1.md).
+Pour plus d’informations sur les modifications avec rupture, consultez [modifications avec rupture pour la migration de la version 2,0 vers 2,1](../compatibility/2.0-2.1.md).
 
 ## <a name="see-also"></a>Voir aussi
 

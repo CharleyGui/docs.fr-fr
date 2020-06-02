@@ -3,12 +3,12 @@ title: Remarques pour l'implémentation de la prise en charge du type XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 26b071f3-1261-47ef-8690-0717f5cd93c1
-ms.openlocfilehash: 40ab0f746ef82ccd195fc6b873f5c8edb255f868
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 91a685f122ff846217ea7a8677b29df430b65363
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709866"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290277"
 ---
 # <a name="xml-type-support-implementation-notes"></a>Remarques pour l'implémentation de la prise en charge du type XML
 Cette rubrique décrit certains détails de l'implémentation que vous souhaitez connaître.  
@@ -47,4 +47,4 @@ Cette rubrique décrit certains détails de l'implémentation que vous souhaitez
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Prise en charge du type dans les classes System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)
+- [Prise en charge du type dans les classes System.Xml](type-support-in-the-system-xml-classes.md)

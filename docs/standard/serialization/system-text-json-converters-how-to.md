@@ -1,16 +1,21 @@
 ---
-title: ''
-ms.date: ''
+title: Comment écrire des convertisseurs personnalisés pour la sérialisation JSON-.NET
+ms.date: 01/10/2020
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
-helpviewer_keywords: []
-ms.openlocfilehash: 69c11df8217ac6dbdddd98c550f084075b901ea6
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+helpviewer_keywords:
+- JSON serialization
+- serializing objects
+- serialization
+- objects, serializing
+- converters
+ms.openlocfilehash: abda23ea538c2c0da6ada4f359ce745602dca45d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703610"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279761"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Comment écrire des convertisseurs personnalisés pour la sérialisation JSON (marshaling) dans .NET
 
@@ -26,7 +31,7 @@ Vous pouvez également écrire des convertisseurs personnalisés pour personnali
 * [Désérialiser les types inférés en propriétés d’objet](#deserialize-inferred-types-to-object-properties).
 * [Dictionnaire de prise en charge avec clé non-chaîne](#support-dictionary-with-non-string-key).
 * [Prendre en charge la désérialisation polymorphe](#support-polymorphic-deserialization).
-* [Prendre en charge l’aller-retour pour la pile \< T>](#support-round-trip-for-stackt).
+* [Prenez en charge l’aller- \<T> retour pour la pile](#support-round-trip-for-stackt).
 
 ## <a name="custom-converter-patterns"></a>Modèles de convertisseurs personnalisés
 
@@ -44,7 +49,7 @@ Voici quelques exemples de types qui peuvent être gérés par le modèle de bas
 * `DateTime`
 * `Int32`
 
-Le modèle de base crée une classe qui peut gérer un type. Le modèle de fabrique crée une classe qui détermine au moment de l’exécution le type spécifique requis et crée dynamiquement le convertisseur approprié.
+Le modèle de base crée une classe qui peut gérer un type. Le modèle de fabrique crée une classe qui détermine, au moment de l’exécution, le type spécifique requis et crée dynamiquement le convertisseur approprié.
 
 ## <a name="sample-basic-converter"></a>Exemple de convertisseur de base
 
@@ -175,7 +180,7 @@ Les sections suivantes fournissent des exemples de convertisseurs qui traitent d
 * [Désérialiser les types inférés en propriétés d’objet](#deserialize-inferred-types-to-object-properties)
 * [Dictionnaire de prise en charge avec clé non-chaîne](#support-dictionary-with-non-string-key)
 * [Prendre en charge la désérialisation polymorphe](#support-polymorphic-deserialization)
-* [Prendre en charge l’aller-retour pour la pile \< T>](#support-round-trip-for-stackt).
+* [Prenez en charge l’aller- \<T> retour pour la pile](#support-round-trip-for-stackt).
 
 ### <a name="deserialize-inferred-types-to-object-properties"></a>Désérialiser les types inférés en propriétés d’objet
 
@@ -283,7 +288,7 @@ Le convertisseur peut désérialiser JSON qui a été créé à l’aide du mêm
 
 Dans l’exemple précédent, le code de convertisseur lit et écrit chaque propriété manuellement. Une alternative consiste à appeler `Deserialize` ou `Serialize` à effectuer une partie du travail. Pour obtenir un exemple, consultez [cette publication StackOverflow](https://stackoverflow.com/a/59744873/12509023).
 
-### <a name="support-round-trip-for-stackt"></a>Prendre en charge l’aller-retour pour la pile \< T>
+### <a name="support-round-trip-for-stackt"></a>Prendre en charge l’aller-retour pour la pile\<T>
 
 Si vous désérialisez une chaîne JSON dans un <xref:System.Collections.Generic.Stack%601> objet et que vous sérialisez ensuite cet objet, le contenu de la pile est dans l’ordre inverse. Ce comportement s’applique aux types et à l’interface suivants, ainsi qu’aux types définis par l’utilisateur qui dérivent de ceux-ci :
 
@@ -312,7 +317,7 @@ Le [dossier tests unitaires](https://github.com/dotnet/runtime/blob/81bf79fd9aa7
 * [Convertisseur Int32 qui convertit la valeur null en valeur 0 lors de la désérialisation](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.NullValueType.cs)
 * [Convertisseur Int32 qui autorise les valeurs de chaîne et de nombre lors de la désérialisation](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Int32.cs)
 * [Convertisseur enum](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Enum.cs)
-* [Répertorier les \<> le convertisseur qui accepte les données externes](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.List.cs)
+* [\<T>Convertisseur de liste qui accepte les données externes](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.List.cs)
 * [Long [] convertisseur qui fonctionne avec une liste de nombres délimités par des virgules](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Array.cs)
 
 Si vous devez créer un convertisseur qui modifie le comportement d’un convertisseur intégré existant, vous pouvez faire en sorte que [le code source du convertisseur existant](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters) serve de point de départ pour la personnalisation.

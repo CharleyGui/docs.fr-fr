@@ -3,12 +3,12 @@ title: XSLT Compiler (xsltc.exe)
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 672a5ac8-8305-4d28-ba10-11089c2c0924
-ms.openlocfilehash: 83d880da65c2fc0730819f0a51c4e8b29deb4c8f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 18f351546699487316858198b705e970de4856c1
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709723"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282608"
 ---
 # <a name="xslt-compiler-xsltcexe"></a>XSLT Compiler (xsltc.exe)
 Le compilateur XSLT (xsltc.exe) compile des feuilles de style XSLT et génère un assembly. La feuille de style compilée peut être passée directement dans la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType>. Vous ne pouvez pas générer d'assemblys signés avec xsltc.exe.  
@@ -35,7 +35,7 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
 |`/debug[`+&#124;-`]`|Spécifie s'il faut générer des informations de débogage.<br /><br /> Si vous spécifiez `+` ou `/debug`, le compilateur génère des informations de débogage et les place dans un fichier (PDB) de la base de données du programme. Le nom du fichier PDB généré est `assemblyName`.pdb.<br /><br /> Si vous spécifiez `-`, qui est en vigueur si vous ne spécifiez pas `/debug`, aucune information de débogage n'est créée. Un assembly retail est généré. **Remarque :** la compilation en mode débogage peut affecter considérablement les performances de XSLT.|  
 |`/help`|Affiche la syntaxe et les options de commande de l'outil.|  
 |`/nologo`|Supprime l'affichage du message de copyright du compilateur.|  
-|`/platform:` `string`|Spécifie les plateformes sur lesquelles l'assembly peut s'exécuter. Les valeurs de plateforme valides sont décrites ci-dessous :<br /><br /> `x86` compile votre assembly pour qu'il soit exécuté par le CLR 32 bits x86.<br /><br /> `x64` compile votre assembly pour qu'il soit exécuté par le CLR 64 bits sur un ordinateur qui prend en charge le jeu d'instructions AMD64 ou EM64T.<br /><br /> Itanium compile votre assembly pour que celui-ci soit exécuté par le CLR 64 bits sur un ordinateur doté d’un processeur Itanium.<br /><br /> `anycpu` compile votre assembly pour qu'il s'exécute sur n'importe quelle plateforme. Il s’agit de la valeur par défaut.|  
+|`/platform:` `string`|Spécifie les plateformes sur lesquelles l'assembly peut s'exécuter. Les valeurs de plateforme valides sont décrites ci-dessous :<br /><br /> `x86` compile votre assembly pour qu'il soit exécuté par le CLR 32 bits x86.<br /><br /> `x64` compile votre assembly pour qu'il soit exécuté par le CLR 64 bits sur un ordinateur qui prend en charge le jeu d'instructions AMD64 ou EM64T.<br /><br /> Itanium compile votre assembly pour que celui-ci soit exécuté par le CLR 64 bits sur un ordinateur doté d’un processeur Itanium.<br /><br /> `anycpu` compile votre assembly pour qu'il s'exécute sur n'importe quelle plateforme. Il s'agit de la valeur par défaut.|  
 |`/out:` `assemblyName`|Spécifie le nom de l'assembly qui est produit. Le nom de l'assembly est par défaut celui de la feuille de style principale ou de la première feuille de style s'il y en a plusieurs.<br /><br /> Si la feuille de style contient des scripts, ceux-ci sont enregistrés dans un assembly séparé. Les noms d'assemblys de script sont générés d'après le nom de l'assembly principal. Par exemple, si vous avez spécifié CustOrders.dll comme nom d'assembly, le premier assembly de script est nommé CustOrders_Script1.dll.|  
 |`/settings:` `document+-, script+-, DTD+-,`|Spécifie s'il faut autoriser des fonctions `document()`, un script XSLT ou une définition de type de document (DTD) dans la feuille de style.<br /><br /> Le comportement par défaut désactive la prise en charge de la DTD, la fonction `document()` et les scripts.|  
 |`@` `file`|Vous permet de spécifier un fichier qui contient les options du compilateur.|  
@@ -83,5 +83,5 @@ xsltc booksort.xsl output.xsl
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.Xsl.XslCompiledTransform>
-- [Procédure : effectuer une transformation XSLT à l’aide d’un assembly](../../../../docs/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly.md)
-- [Transformations XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)
+- [Procédure : effectuer une transformation XSLT à l’aide d’un assembly](how-to-perform-an-xslt-transformation-by-using-an-assembly.md)
+- [Transformations XSLT](xslt-transformations.md)

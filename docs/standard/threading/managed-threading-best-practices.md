@@ -10,18 +10,18 @@ helpviewer_keywords:
 - threading [.NET Framework], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-ms.openlocfilehash: a76cc40f308ac2f636a650cd4a17da0e94e23a34
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 30d746d739654ecad2b485b9d69cfe300caca2ff
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160259"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291186"
 ---
 # <a name="managed-threading-best-practices"></a>Bonnes pratiques pour le threading managé
 Le multithreading nécessite une programmation attentive. Pour réduire la complexité de la plupart des tâches, il vous suffit de mettre en file d’attente les requêtes à exécuter par les threads d’un pool de threads. Cet article vous permet de remédier aux situations plus complexes, telles que la coordination du travail de plusieurs threads ou la gestion des threads bloqués.  
   
 > [!NOTE]
-> À partir de .NET Framework 4, la bibliothèque parallèle de tâches et PLINQ fournissent des API qui atténuent une partie de la complexité et des risques de la programmation multithread. Pour plus d’informations, consultez la page [Programmation parallèle dans .NET](../../../docs/standard/parallel-programming/index.md).  
+> À partir de .NET Framework 4, la bibliothèque parallèle de tâches et PLINQ fournissent des API qui atténuent une partie de la complexité et des risques de la programmation multithread. Pour plus d’informations, consultez la page [Programmation parallèle dans .NET](../parallel-programming/index.md).  
   
 ## <a name="deadlocks-and-race-conditions"></a>Interblocages et conditions de concurrence  
  Le multithreading résout les problèmes de débit et de réactivité, mais, ce faisant, occasionne de nouveaux problèmes : les interblocages et les conditions de concurrence.  
@@ -64,7 +64,7 @@ else {
   
  Dans une application multithread, il est possible qu’un thread ayant chargé et incrémenté la valeur soit devancé par un autre thread qui exécute ces trois étapes ; lorsque le premier thread reprend l’exécution et stocke sa valeur, il remplace alors la valeur de `objCt` sans tenir compte du fait qu’elle a changé dans l’intervalle.  
   
- Cette condition de concurrence particulière est facile à éviter en utilisant des méthodes de la classe <xref:System.Threading.Interlocked>, telles que <xref:System.Threading.Interlocked.Increment%2A?displayProperty=nameWithType>. Pour découvrir d’autres techniques de synchronisation des données entre plusieurs threads, consultez l’article [Synchronisation des données pour le multithreading](../../../docs/standard/threading/synchronizing-data-for-multithreading.md).  
+ Cette condition de concurrence particulière est facile à éviter en utilisant des méthodes de la classe <xref:System.Threading.Interlocked>, telles que <xref:System.Threading.Interlocked.Increment%2A?displayProperty=nameWithType>. Pour découvrir d’autres techniques de synchronisation des données entre plusieurs threads, consultez l’article [Synchronisation des données pour le multithreading](synchronizing-data-for-multithreading.md).  
   
  Des conditions de concurrence peuvent également survenir lorsque vous synchronisez les activités de plusieurs threads. Chaque fois que vous écrivez une ligne de code, vous devez prendre en compte ce qui peut se produire si un thread est devancé par un autre thread avant d’avoir exécuté la ligne (ou avant toute instruction machine individuelle composant la ligne).  
   
@@ -79,7 +79,7 @@ else {
 
 Le fait que plusieurs processeurs ou un seul soient disponibles sur un système peut influencer l’architecture multithread. Pour plus d’informations, consultez [Nombre de processeurs](https://docs.microsoft.com/previous-versions/dotnet/netframework-1.1/1c9txz50(v%3dvs.71)#number-of-processors).
 
-Utilisez la propriété <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> pour déterminer le nombre de processeurs disponibles au moment de l’exécution.
+Utilisez la <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> propriété pour déterminer le nombre de processeurs disponibles au moment de l’exécution.
   
 ## <a name="general-recommendations"></a>Recommandations générales  
  Lorsque vous utilisez plusieurs threads, tenez compte des recommandations suivantes :  
@@ -90,7 +90,7 @@ Utilisez la propriété <xref:System.Environment.ProcessorCount?displayProperty=
   
 - Ne contrôlez pas l’exécution des threads de travail à partir de votre programme principal (à l’aide d’événements, par exemple). Concevez plutôt votre programme pour que les threads de travail soient chargés d’attendre que le travail devienne disponible, d’exécuter ce travail, puis d’en informer les autres parties de votre programme lorsqu’ils ont terminé. Si vos threads de travail ne se bloquent pas, envisagez d’utiliser les threads d’un pool de threads. <xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType> est utile dans les situations où les threads de travail se bloquent.  
   
-- N’utilisez pas de types en tant qu’objets de verrou. Autrement dit, évitez un code tel que `lock(typeof(X))` en C# ou `SyncLock(GetType(X))` en Visual Basic, ou l’utilisation de <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> avec des objets <xref:System.Type>. Pour un type donné, il existe une seule instance de <xref:System.Type?displayProperty=nameWithType> par domaine d’application. Si le type sur lequel vous utilisez un verrou est public, un code différent du vôtre peut utiliser des verrous sur ce type, entraînant ainsi des interblocages. Pour découvrir les autres problèmes, consultez l’article [Meilleures pratiques pour la fiabilité](../../../docs/framework/performance/reliability-best-practices.md).  
+- N’utilisez pas de types en tant qu’objets de verrou. Autrement dit, évitez un code tel que `lock(typeof(X))` en C# ou `SyncLock(GetType(X))` en Visual Basic, ou l’utilisation de <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> avec des objets <xref:System.Type>. Pour un type donné, il existe une seule instance de <xref:System.Type?displayProperty=nameWithType> par domaine d’application. Si le type sur lequel vous utilisez un verrou est public, un code différent du vôtre peut utiliser des verrous sur ce type, entraînant ainsi des interblocages. Pour découvrir les autres problèmes, consultez l’article [Meilleures pratiques pour la fiabilité](../../framework/performance/reliability-best-practices.md).  
   
 - Procédez avec précaution lorsque vous utilisez des verrous sur des instances, par exemple `lock(this)` en C# ou `SyncLock(Me)` en Visual Basic. Si un autre code de votre application, externe au type, utilise un verrou sur l’objet, des interblocages risquent de se produire.  
   
@@ -174,5 +174,5 @@ Utilisez la propriété <xref:System.Environment.ProcessorCount?displayProperty=
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Thread](../../../docs/standard/threading/index.md)
-- [Fils et threading](../../../docs/standard/threading/threads-and-threading.md)
+- [Thread](index.md)
+- [Threads et threads](threads-and-threading.md)

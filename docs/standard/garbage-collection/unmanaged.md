@@ -12,12 +12,12 @@ helpviewer_keywords:
 - unmanaged resource cleanup
 - Finalize method
 ms.assetid: a17b0066-71c2-4ba4-9822-8e19332fc213
-ms.openlocfilehash: 2d8b22063a184773928e5bc072f51a9f7d5d45ba
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: aeb39f32c97424646b85b26ed9c4ed0e350d196b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396986"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287608"
 ---
 # <a name="cleaning-up-unmanaged-resources"></a>Nettoyage de ressources non managées
 
@@ -40,13 +40,13 @@ Si vos types utilisent les ressources non managées, procédez comme suit :
 
 Les consommateurs de votre type peuvent ensuite appeler directement votre implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> pour libérer la mémoire utilisée par les ressources non managées. Lorsque vous implémentez correctement une méthode <xref:System.IDisposable.Dispose%2A>, la méthode <xref:System.Object.Finalize%2A> de votre handle sécurisé ou votre propre substitution de la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType> devient un dispositif de protection pour nettoyer les ressources si la méthode <xref:System.IDisposable.Dispose%2A> n'est pas appelée.
 
-## <a name="in-this-section"></a>Contenu de cette section
+## <a name="in-this-section"></a>Dans cette section
 
 [Implémentation d’une méthode dispose](implementing-dispose.md) décrit comment implémenter le modèle de suppression pour libérer des ressources non managées.
 
-[Utilisation d’objets qui `IDisposable` implémentent](../../../docs/standard/garbage-collection/using-objects.md) décrit comment les consommateurs d’un type vérifient que son <xref:System.IDisposable.Dispose%2A> implémentation est appelée. `using`Pour ce faire, nous vous recommandons d’utiliser l’instruction C# (ou l’Visual Basic `Using` ).
+[Utilisation d’objets qui `IDisposable` implémentent](using-objects.md) décrit comment les consommateurs d’un type vérifient que son <xref:System.IDisposable.Dispose%2A> implémentation est appelée. `using`Pour ce faire, nous vous recommandons d’utiliser l’instruction C# (ou l’Visual Basic `Using` ).
 
-## <a name="reference"></a>Informations de référence
+## <a name="reference"></a>Référence
 
 | Type/membre | Description |
 |--|--|
