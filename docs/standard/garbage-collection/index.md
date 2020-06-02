@@ -1,5 +1,5 @@
 ---
-title: .NET collecte des ordures
+title: Garbage collection .NET
 ms.date: 04/21/2020
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -18,34 +18,34 @@ helpviewer_keywords:
 - runtime, garbage collection
 - garbage collection, about
 ms.assetid: 22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9
-ms.openlocfilehash: c087deb033a373dd8b3980feb7ec6901c7909569
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: ef7e078c6ef2f0b4081c49aa0db09316e79f0702
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102240"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286052"
 ---
-# <a name="garbage-collection"></a>Nettoyage de la mémoire
+# <a name="garbage-collection"></a>Garbage collection
 
 Le « garbage collector » du .NET gère l’allocation et la libération de mémoire pour votre application. Chaque fois que vous créez un objet, le Common Language Runtime alloue de la mémoire pour l’objet à partir du tas managé. Aussi longtemps que de l'espace d'adressage est disponible dans le tas managé, le Runtime continue à allouer de l'espace pour de nouveaux objets. Toutefois, la mémoire n’est pas infinie. Pour finir, le garbage collector doit exécuter une collecte afin de libérer de la mémoire. Le moteur d'optimisation du « garbage collector » détermine le meilleur moment pour lancer une opération garbage collection sur base des allocations de mémoire effectuées. Lorsque le garbage collector effectue une collecte, il recherche les objets dans le tas managé qui ne sont plus utilisés par l’application et effectue les opérations nécessaires pour récupérer leur mémoire.  
   
-## <a name="in-this-section"></a>Contenu de cette section
+## <a name="in-this-section"></a>Dans cette section
   
 |Intitulé|Description|  
 |-----------|-----------------|  
-|[Principes fondamentaux de la collecte des ordures](../../../docs/standard/garbage-collection/fundamentals.md)|Décrit le fonctionnement du garbage collection, l’allocation des objets sur le tas managé, ainsi que d’autres concepts principaux.|  
-|[Garbage collection de station de travail et de serveur](workstation-server-gc.md)|Décrit les différences entre la collecte des ordures de poste de travail pour les applications client et la collecte des ordures du serveur pour les applications serveur.|
-|[Collecte des ordures de fond](background-gc.md)|Décrit la collecte des ordures de fond, qui est la collecte d’objets de génération 0 et 1 alors que la collection de la génération 2 est en cours.|
-|[Le grand tas d’objets](large-object-heap.md)|Décrit le grand tas d’objets (LOH) et comment les gros objets sont collectés par les ordures.|
-|[Collecte et performance des ordures](../../../docs/standard/garbage-collection/performance.md)|Décrit les contrôles de performances que vous pouvez utiliser pour diagnostiquer les problèmes de garbage collection et de performances.|  
-|[Collections forcées](../../../docs/standard/garbage-collection/induced.md)|Décrit comment faire pour qu’un garbage collection se produise.|  
-|[Modes de latence](../../../docs/standard/garbage-collection/latency.md)|Décrit les modes qui déterminent le niveau d’intrusion du garbage collection.|  
-|[Optimisation pour l’hébergement web partagé](../../../docs/standard/garbage-collection/optimization-for-shared-web-hosting.md)|Explique comment optimiser le garbage collection sur des serveurs partagés par plusieurs petits sites web.|  
-|[Notifications du garbage collection](../../../docs/standard/garbage-collection/notifications.md)|Explique comment déterminer si un garbage collection est presque atteint et s’il est terminé.|  
-|[Supervision des ressource de domaine d’application](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md)|Explique comment surveiller l’utilisation du processeur et de la mémoire par un domaine d’application.|  
-|[Références faibles](../../../docs/standard/garbage-collection/weak-references.md)|Décrit les fonctionnalités qui permettent au Garbage collector de collecter un objet tout en permettant à l’application d’accéder à cet objet.|  
+|[Notions de base de garbage collection](fundamentals.md)|Décrit le fonctionnement du garbage collection, l’allocation des objets sur le tas managé, ainsi que d’autres concepts principaux.|  
+|[Garbage collection de station de travail et de serveur](workstation-server-gc.md)|Décrit les différences entre les garbage collection de station de travail pour les applications clientes et les garbage collection de serveur pour les applications serveur.|
+|[garbage collection d’arrière-plan](background-gc.md)|Décrit les garbage collection d’arrière-plan, qui est la collection d’objets de génération 0 et 1 alors que la collection de génération 2 est en cours.|
+|[Tas d’objets volumineux](large-object-heap.md)|Décrit le tas d’objets volumineux (LOH) et la façon dont les objets volumineux sont récupérés par le garbage collector.|
+|[Garbage collection et performances](performance.md)|Décrit les contrôles de performances que vous pouvez utiliser pour diagnostiquer les problèmes de garbage collection et de performances.|  
+|[Collections forcées](induced.md)|Décrit comment faire pour qu’un garbage collection se produise.|  
+|[Modes de latence](latency.md)|Décrit les modes qui déterminent le niveau d’intrusion du garbage collection.|  
+|[Optimisation pour l’hébergement web partagé](optimization-for-shared-web-hosting.md)|Explique comment optimiser le garbage collection sur des serveurs partagés par plusieurs petits sites web.|  
+|[Notifications du garbage collection](notifications.md)|Explique comment déterminer si un garbage collection est presque atteint et s’il est terminé.|  
+|[Supervision des ressource de domaine d’application](app-domain-resource-monitoring.md)|Explique comment surveiller l’utilisation du processeur et de la mémoire par un domaine d’application.|  
+|[Références faibles](weak-references.md)|Décrit les fonctionnalités qui permettent au Garbage collector de collecter un objet tout en permettant à l’application d’accéder à cet objet.|  
   
-## <a name="reference"></a>Informations de référence
+## <a name="reference"></a>Référence
 
 - <xref:System.GC?displayProperty=nameWithType>  
 - <xref:System.GCCollectionMode?displayProperty=nameWithType>  
@@ -58,4 +58,4 @@ Le « garbage collector » du .NET gère l’allocation et la libération de m
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Nettoyer les ressources non managées](../../../docs/standard/garbage-collection/unmanaged.md)
+- [Nettoyer les ressources non managées](unmanaged.md)

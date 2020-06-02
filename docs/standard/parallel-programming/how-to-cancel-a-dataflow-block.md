@@ -1,5 +1,5 @@
 ---
-title: 'Comment : annuler un bloc de flux de données'
+title: 'Procédure : annuler un bloc de dataflow'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - dataflow blocks, canceling in TPL
 - TPL dataflow library,canceling dataflow blocks
 ms.assetid: fbddda0d-da3b-4ec8-a1d6-67ab8573fcd7
-ms.openlocfilehash: aa175d95f27fcbf28c3f3da3eaa7b8f7988681e1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 530c231deeaba007975849ab6dc41f4da6a859ea
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73140092"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285545"
 ---
-# <a name="how-to-cancel-a-dataflow-block"></a>Comment : annuler un bloc de flux de données
+# <a name="how-to-cancel-a-dataflow-block"></a>Procédure : annuler un bloc de dataflow
 Ce document montre comment activer l’annulation dans votre application. Cet exemple utilise des Windows Forms pour montrer où les éléments de travail sont actifs dans un pipeline de flux de données, ainsi que les effets de l’annulation.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -63,7 +63,7 @@ Ce document montre comment activer l’annulation dans votre application. Cet ex
   
  Étant donné que les blocs de flux de données `incrementProgress` et `decrementProgress` agissent sur l’interface utilisateur, il est important que ces actions se produisent sur le thread de l’interface utilisateur. Pour cela, lors de la construction, chacun de ces objets fournit un objet <xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions> dont la propriété <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler%2A> est définie sur <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType>. La méthode <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> crée un objet <xref:System.Threading.Tasks.TaskScheduler> qui effectue le travail dans le contexte actuel de synchronisation. Étant donné que le constructeur `Form1` est appelé depuis le thread de l’interface utilisateur, les actions des blocs de flux de données `incrementProgress` et `decrementProgress` fonctionnent aussi sur le thread de l’interface utilisateur.  
   
- Cet exemple définit la propriété <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> lors de la construction des membres du pipeline. Étant donné que la propriété <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> annule définitivement l’exécution du bloc de flux de données, l’ensemble du pipeline doit être recréé si l’utilisateur annule l’opération et souhaite par la suite ajouter d’autres éléments de travail au pipeline. Pour obtenir un exemple illustrant une autre méthode d’annulation d’un bloc de flux de données de sorte que les autres travaux puissent être effectués après l’annulation d’une opération, consultez [Walkthrough: Using Dataflow in a Windows Forms Application](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md) (Procédure pas à pas : utilisation d’un flux de données dans une application Windows Forms).  
+ Cet exemple définit la propriété <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> lors de la construction des membres du pipeline. Étant donné que la propriété <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> annule définitivement l’exécution du bloc de flux de données, l’ensemble du pipeline doit être recréé si l’utilisateur annule l’opération et souhaite par la suite ajouter d’autres éléments de travail au pipeline. Pour obtenir un exemple illustrant une autre méthode d’annulation d’un bloc de flux de données de sorte que les autres travaux puissent être effectués après l’annulation d’une opération, consultez [Walkthrough: Using Dataflow in a Windows Forms Application](walkthrough-using-dataflow-in-a-windows-forms-application.md) (Procédure pas à pas : utilisation d’un flux de données dans une application Windows Forms).  
   
 ## <a name="connecting-the-dataflow-pipeline-to-the-user-interface"></a>Connexion du pipeline de flux de données à l’interface utilisateur  
  Cette section décrit comment connecter le pipeline de flux de données à l’interface utilisateur. La création du pipeline et l’ajout d’éléments de travail au pipeline sont contrôlés par le gestionnaire d’événements pour le bouton **Add Work Items** (Ajouter des éléments de travail). L’annulation est lancée par le bouton **Annuler**. Lorsque l’utilisateur clique sur un de ces boutons, l’action appropriée est lancée de manière asynchrone.  
@@ -84,7 +84,7 @@ Ce document montre comment activer l’annulation dans votre application. Cet ex
      [!code-csharp[TPLDataflow_CancellationWinForms#6](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_cancellationwinforms/cs/cancellationwinforms/form1.cs#6)]
      [!code-vb[TPLDataflow_CancellationWinForms#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_cancellationwinforms/vb/cancellationwinforms/form1.vb#6)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre le code complet pour Form1.cs (Form1.vb pour Visual Basic).  
   
  [!code-csharp[TPLDataflow_CancellationWinForms#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_cancellationwinforms/cs/cancellationwinforms/form1.cs#100)]
@@ -92,8 +92,8 @@ Ce document montre comment activer l’annulation dans votre application. Cet ex
   
  L'illustration suivante présente l'application en cours d'exécution.  
   
- ![Application Windows Forms](../../../docs/standard/parallel-programming/media/tpldataflow-cancellation.png "TPLDataflow_Cancellation")  
+ ![Application Windows Forms](media/tpldataflow-cancellation.png "TPLDataflow_Cancellation")  
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [Dataflow](dataflow-task-parallel-library.md)

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9404d758-679f-4ffb-995d-3d07d817659e
-ms.openlocfilehash: 8383d8cb3e5819c46a0716c59323e492bb9add8e
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: d18cf72f0629d347fb5f55ad7332e6046614c01b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937988"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282387"
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>Migration depuis la classe XslTransform
 
@@ -35,7 +35,7 @@ Par défaut, la classe <xref:System.Xml.Xsl.XslCompiledTransform> désactive la 
 [!code-csharp[XML_Migration#16](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#16)]
 [!code-vb[XML_Migration#16](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#16)]
 
-Pour plus d’informations, consultez la page [Considérations relatives à la sécurité de XSLT](../../../../docs/standard/data/xml/xslt-security-considerations.md).
+Pour plus d’informations, consultez la page [Considérations relatives à la sécurité de XSLT](xslt-security-considerations.md).
 
 ## <a name="new-features"></a>Nouvelles fonctionnalités
 
@@ -97,7 +97,7 @@ using (XmlWriter writer = doc.CreateNavigator().AppendChild()) {
 
 ### <a name="discretionary-behavior"></a>Comportement discrétionnaire
 
-La recommandation du W3C sur XSLT (XSL Transformations) Version 1.0 comprend des zones dans lesquelles le fournisseur d'implémentation peut décider de la manière de gérer une situation. Ces zones sont considérées comme discrétionnaires en termes de comportement. Il existe plusieurs domaines où le <xref:System.Xml.Xsl.XslCompiledTransform> se comporte différemment de la classe <xref:System.Xml.Xsl.XslTransform>. Pour plus d’informations, consultez la page [Erreurs XSLT récupérables](../../../../docs/standard/data/xml/recoverable-xslt-errors.md).
+La recommandation du W3C sur XSLT (XSL Transformations) Version 1.0 comprend des zones dans lesquelles le fournisseur d'implémentation peut décider de la manière de gérer une situation. Ces zones sont considérées comme discrétionnaires en termes de comportement. Il existe plusieurs domaines où le <xref:System.Xml.Xsl.XslCompiledTransform> se comporte différemment de la classe <xref:System.Xml.Xsl.XslTransform>. Pour plus d’informations, consultez la page [Erreurs XSLT récupérables](recoverable-xslt-errors.md).
 
 ### <a name="extension-objects-and-script-functions"></a>Objets d’extension et fonctions de script
 
@@ -109,7 +109,7 @@ La recommandation du W3C sur XSLT (XSL Transformations) Version 1.0 comprend de
 
 Dans <xref:System.Xml.Xsl.XslCompiledTransform>, une liaison (recherche de nom de méthode) vers des fonctions de script se produit au moment de la compilation, et les feuilles de style qui fonctionnaient avec XslTransform risquent de déclencher une exception lorsqu’elles sont chargées avec <xref:System.Xml.Xsl.XslCompiledTransform>.
 
-<xref:System.Xml.Xsl.XslCompiledTransform> accepte la présence d'éléments enfants `msxsl:using` et `msxsl:assembly` dans l'élément `msxsl:script`. Les éléments `msxsl:using` et `msxsl:assembly` sont utilisés pour déclarer des espaces de noms et des assemblys supplémentaires pour une utilisation dans le bloc de script. Consultez la page [Blocs de script utilisant msxsl:script](../../../../docs/standard/data/xml/script-blocks-using-msxsl-script.md) pour plus d’informations.
+<xref:System.Xml.Xsl.XslCompiledTransform> accepte la présence d'éléments enfants `msxsl:using` et `msxsl:assembly` dans l'élément `msxsl:script`. Les éléments `msxsl:using` et `msxsl:assembly` sont utilisés pour déclarer des espaces de noms et des assemblys supplémentaires pour une utilisation dans le bloc de script. Consultez la page [Blocs de script utilisant msxsl:script](script-blocks-using-msxsl-script.md) pour plus d’informations.
 
 <xref:System.Xml.Xsl.XslCompiledTransform> interdit les objets d'extension qui ont plusieurs surcharges avec le même nombre d'arguments.
 
@@ -127,5 +127,5 @@ La prise en charge de fonctions MSXML supplémentaires a été ajoutée à la cl
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Transformations XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)
-- [Utilisation de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)
+- [Transformations XSLT](xslt-transformations.md)
+- [Utilisation de la classe XslCompiledTransform](using-the-xslcompiledtransform-class.md)

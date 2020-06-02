@@ -9,12 +9,12 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], enumerations
 - flags enumerations
 ms.assetid: dd53c952-9d9a-4736-86ff-9540e815d545
-ms.openlocfilehash: 3b24bfefd3edb0585e9c6369e9b8151b17151661
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: efdfcda95a67941f0fde5f7a96467af7dd374396
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741717"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280138"
 ---
 # <a name="enum-design"></a>Conception d'énumérations
 
@@ -28,17 +28,17 @@ Les enums d’indicateur sont conçus pour prendre en charge des opérations au 
 
 ✔️ préférez l’utilisation d’une énumération plutôt que de constantes statiques.
 
-❌ n’utilisez pas d’énumération pour les jeux ouverts (tels que la version du système d’exploitation, les noms de vos amis, etc.).
+❌N’utilisez pas d’énumération pour les jeux ouverts (tels que la version du système d’exploitation, les noms de vos amis, etc.).
 
-❌ ne fournissent pas de valeurs d’énumération réservées destinées à un usage ultérieur.
+❌NE fournissez pas de valeurs enum réservées destinées à un usage ultérieur.
 
 Vous pouvez toujours simplement ajouter des valeurs à l’énumération existante à un moment ultérieur. Pour plus d’informations sur l’ajout de valeurs aux enums, consultez [Ajout de valeurs aux enums](#add_value) . Les valeurs réservées polluent simplement l’ensemble des valeurs réelles et ont tendance à entraîner des erreurs de l’utilisateur.
 
-❌ éviter d’exposer publiquement des enums avec une seule valeur.
+❌Évitez d’exposer publiquement des enums avec une seule valeur.
 
 Une pratique courante pour garantir une extensibilité future des API C consiste à ajouter des paramètres réservés aux signatures de méthode. Ces paramètres réservés peuvent être exprimés comme des enums avec une seule valeur par défaut. Cela ne doit pas être fait dans les API managées. La surcharge de méthode permet d’ajouter des paramètres dans les versions ultérieures.
 
-❌ n’incluez pas de valeurs Sentinel dans les énumérations.
+❌N’incluez pas de valeurs Sentinel dans les enums.
 
 Bien qu’elles soient parfois utiles pour les développeurs d’infrastructure, les valeurs sentinelles sont confuses pour les utilisateurs de l’infrastructure. Ils sont utilisés pour suivre l’état de l’enum au lieu d’être l’une des valeurs de l’ensemble représenté par l’enum.
 
@@ -46,11 +46,11 @@ Bien qu’elles soient parfois utiles pour les développeurs d’infrastructure,
 
 Envisagez d’appeler la valeur comme « None ». Si une telle valeur n’est pas appropriée pour cette énumération particulière, la valeur par défaut la plus courante pour l’énumération doit être assignée à la valeur sous-jacente de zéro.
 
-✔️ envisagez d’utiliser <xref:System.Int32> (valeur par défaut dans la plupart des langages de programmation) comme type sous-jacent d’une énumération, sauf si l’une des conditions suivantes est vraie :
+✔️ envisagez <xref:System.Int32> d’utiliser (valeur par défaut dans la plupart des langages de programmation) comme type sous-jacent d’une énumération, sauf si l’une des conditions suivantes est vraie :
 
 - L’énumération est une énumération d’indicateurs et vous avez plus de 32 indicateurs, ou vous prévoyez d’en avoir plus à l’avenir.
 
-- Le type sous-jacent doit être différent de <xref:System.Int32> pour faciliter l’interopérabilité avec du code non managé qui attend des énumérations de taille différente.
+- Le type sous-jacent doit être différent <xref:System.Int32> de pour faciliter l’interopérabilité avec du code non managé qui attend des énumérations de taille différente.
 
 - Un type sous-jacent plus petit entraînerait des économies substantielles dans l’espace. Si vous vous attendez à ce que l’énumération soit principalement utilisée comme argument pour le workflow de contrôle, la taille n’a pas de différence. Les économies de taille peuvent être significatives dans les cas suivants :
 
@@ -60,31 +60,31 @@ Envisagez d’appeler la valeur comme « None ». Si une telle valeur n’est 
 
   - Vous vous attendez à ce qu’un grand nombre d’instances de l’énumération soient sérialisées.
 
-Pour l’utilisation en mémoire, sachez que les objets managés sont toujours `DWORD`alignés. par conséquent, vous avez besoin de plusieurs enums ou d’autres petites structures dans une instance pour empaqueter une énumération plus petite avec pour faire une différence, car la taille totale de l’instance est toujours arrondie à un `DWORD`.
+Pour l’utilisation en mémoire, sachez que les objets managés sont toujours `DWORD` alignés. par conséquent, vous avez besoin de plusieurs enums ou d’autres petites structures dans une instance pour empaqueter une énumération plus petite avec afin de faire la différence, car la taille totale de l’instance est toujours arrondie à un `DWORD` .
 
 ✔️ Nommez les énumérations d’indicateur avec des noms au pluriel ou des expressions nominales et des énumérations simples avec des noms au singulier ou des expressions nominales.
 
-❌ n’étendez pas <xref:System.Enum?displayProperty=nameWithType> directement.
+❌N’étendez pas <xref:System.Enum?displayProperty=nameWithType> directement.
 
-<xref:System.Enum?displayProperty=nameWithType> est un type spécial utilisé par le CLR pour créer des énumérations définies par l’utilisateur. La plupart des langages de programmation fournissent un élément de programmation qui vous permet d’accéder à cette fonctionnalité. Par exemple, dans C# le mot clé `enum` est utilisé pour définir une énumération.
+<xref:System.Enum?displayProperty=nameWithType>est un type spécial utilisé par le CLR pour créer des énumérations définies par l’utilisateur. La plupart des langages de programmation fournissent un élément de programmation qui vous permet d’accéder à cette fonctionnalité. Par exemple, en C#, le `enum` mot clé est utilisé pour définir une énumération.
 
 <a name="design"></a>
 
 ### <a name="designing-flag-enums"></a>Conception d’énumérations d’indicateur
 
-✔️ appliquer les <xref:System.FlagsAttribute?displayProperty=nameWithType> pour marquer les énumérations. N’appliquez pas cet attribut à des énumérations simples.
+✔️ Appliquez <xref:System.FlagsAttribute?displayProperty=nameWithType> pour marquer les enums. N’appliquez pas cet attribut à des énumérations simples.
 
 ✔️ Utilisez les puissances de deux pour les valeurs d’énumération d’indicateur afin qu’elles puissent être combinées librement à l’aide de l’opération or au niveau du bit.
 
 ✔️ envisagez de fournir des valeurs d’énumération spéciales pour les combinaisons d’indicateurs couramment utilisées.
 
-Les opérations au niveau du bit sont un concept avancé qui ne doit pas être nécessaire pour les tâches simples. <xref:System.IO.FileAccess.ReadWrite> est un exemple de cette valeur spéciale.
+Les opérations au niveau du bit sont un concept avancé qui ne doit pas être nécessaire pour les tâches simples. <xref:System.IO.FileAccess.ReadWrite>est un exemple de cette valeur spéciale.
 
-❌ éviter de créer des énumérations d’indicateurs où certaines combinaisons de valeurs ne sont pas valides.
+❌Évitez de créer des énumérations d’indicateur lorsque certaines combinaisons de valeurs ne sont pas valides.
 
-❌ Évitez d’utiliser des valeurs d’énumération d’indicateur de zéro, sauf si la valeur représente « tous les indicateurs sont désactivés » et s’il est nommé de manière appropriée, comme indiqué par l’instruction suivante.
+❌Évitez d’utiliser des valeurs d’énumération d’indicateur de zéro, sauf si la valeur représente « tous les indicateurs sont désactivés » et s’il est nommé de manière appropriée, comme indiqué par l’instruction suivante.
 
-✔️ Nommez la valeur zéro des énumérations d’indicateur `None`. Pour une énumération d’indicateur, la valeur doit toujours signifier que « tous les indicateurs sont effacés ».
+✔️ Nommez la valeur zéro des énumérations d’indicateur `None` . Pour une énumération d’indicateur, la valeur doit toujours signifier que « tous les indicateurs sont effacés ».
 
 <a name="add_value"></a>
 
@@ -102,5 +102,5 @@ Si vous avez des données réelles sur les incompatibilités d’application pro
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions pour la conception des types](../../../docs/standard/design-guidelines/type.md)
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
+- [Règles de conception de type](type.md)
+- [Directives de conception d’infrastructure](index.md)

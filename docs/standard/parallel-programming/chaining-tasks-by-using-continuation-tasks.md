@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-ms.openlocfilehash: 7de8c4e44e1866e3df36c666c9ecc210dc6a7d83
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c6952b4b341a76e15d9699a06cd64ae7b6b4f047
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159362"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285610"
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>Chaînage des tâches à l’aide de tâches de continuation
 En programmation asynchrone, il est courant pour une opération asynchrone, une fois terminée, d’appeler une deuxième opération et de lui passer des données. Habituellement, les continuations se faisaient à l’aide de méthodes de rappel. Dans la bibliothèque parallèle de tâches, les mêmes fonctionnalités sont fournies par les *tâches de continuation*. Une tâche de continuation (également appelée continuation) est une tâche asynchrone appelée par une autre tâche, appelée *antécédent*, quand ce dernier est terminé.  
@@ -45,7 +45,7 @@ En programmation asynchrone, il est courant pour une opération asynchrone, une 
  Vous créez une continuation qui s'exécute quand son antécédent est terminé en appelant la méthode <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> . L’exemple suivant montre le modèle de base (pour plus de clarté, la gestion des exceptions a été omise). Il exécute une tâche d'antécédent, `taskA`, qui retourne un objet <xref:System.DayOfWeek> indiquant le jour actuel de la semaine. Quand l’antécédent termine, la tâche de continuation, `continuation`, le récupère et affiche une chaîne qui comprend son résultat.
 
 > [!NOTE]
-> Les exemples en C# fournis dans cet article utilisent le modificateur `async` sur la méthode `Main`. Cette fonctionnalité est disponible dans les versions 7.1 et ultérieures de C#. Les versions [`CS5001`](../../csharp/misc/cs5001.md) précédentes génèrent lors de la compilation de ce code d’échantillon. Vous devez définir la version du langage sur C# 7.1 ou une version ultérieure. Pour savoir comment configurer la version du langage, consultez l’article sur la [configuration de la version du langage](../../csharp/language-reference/configure-language-version.md).
+> Les exemples en C# fournis dans cet article utilisent le modificateur `async` sur la méthode `Main`. Cette fonctionnalité est disponible dans les versions 7.1 et ultérieures de C#. Les versions précédentes ont été générées [`CS5001`](../../csharp/misc/cs5001.md) lors de la compilation de cet exemple de code. Vous devez définir la version du langage sur C# 7.1 ou une version ultérieure. Pour savoir comment configurer la version du langage, consultez l’article sur la [configuration de la version du langage](../../csharp/language-reference/configure-language-version.md).
   
  [!code-csharp[TPL_Continuations#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/simple1.cs#1)]
  [!code-vb[TPL_Continuations#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/simple1.vb#1)]  
@@ -75,7 +75,7 @@ En programmation asynchrone, il est courant pour une opération asynchrone, une 
  [!code-csharp[TPL_Continuations#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/result1.cs#2)]
  [!code-vb[TPL_Continuations#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/result1.vb#2)]  
   
- Si vous voulez que la continuation s‘exécute même si l‘exécution de l‘antécédent n‘est pas correctement terminée, vous devez vous attendre à des exceptions. Une approche consiste à tester la propriété <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> de l'antécédent et à n'essayer d'accéder à la propriété <xref:System.Threading.Tasks.Task%601.Result%2A> que si l'état n'est pas <xref:System.Threading.Tasks.TaskStatus.Faulted> ou <xref:System.Threading.Tasks.TaskStatus.Canceled>. Vous pouvez également examiner la propriété <xref:System.Threading.Tasks.Task.Exception%2A> de l'antécédent. Pour plus d’informations, consultez l’article [Gestion des exceptions](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md). L'exemple suivant modifie l'exemple précédent de manière à n'accéder à la propriété <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> de l'antécédent que si son état est <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType>.  
+ Si vous voulez que la continuation s‘exécute même si l‘exécution de l‘antécédent n‘est pas correctement terminée, vous devez vous attendre à des exceptions. Une approche consiste à tester la propriété <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> de l'antécédent et à n'essayer d'accéder à la propriété <xref:System.Threading.Tasks.Task%601.Result%2A> que si l'état n'est pas <xref:System.Threading.Tasks.TaskStatus.Faulted> ou <xref:System.Threading.Tasks.TaskStatus.Canceled>. Vous pouvez également examiner la propriété <xref:System.Threading.Tasks.Task.Exception%2A> de l'antécédent. Pour plus d’informations, consultez l’article [Gestion des exceptions](exception-handling-task-parallel-library.md). L'exemple suivant modifie l'exemple précédent de manière à n'accéder à la propriété <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> de l'antécédent que si son état est <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType>.  
   
  [!code-csharp[TPL_Continuations#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/result2.cs#7)]
  [!code-vb[TPL_Continuations#7](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/result2.vb#7)]  
@@ -114,12 +114,12 @@ En programmation asynchrone, il est courant pour une opération asynchrone, une 
  [!code-csharp[TPL_Continuations#10](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/detached1.cs#10)]
  [!code-vb[TPL_Continuations#10](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/detached1.vb#10)]  
   
- L’état final de la tâche d’antécédent dépend de l’état final des tâches enfants attachées. L’état des tâches enfants détachées n’affecte pas le parent. Pour plus d'informations, consultez [Tâches enfants attachées et détachées](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).  
+ L’état final de la tâche d’antécédent dépend de l’état final des tâches enfants attachées. L’état des tâches enfants détachées n’affecte pas le parent. Pour plus d'informations, consultez [Tâches enfants attachées et détachées](attached-and-detached-child-tasks.md).  
   
 ## <a name="associating-state-with-continuations"></a>Association d'un état à une continuation  
  Vous pouvez associer un état arbitraire à une continuation de tâche. La méthode <xref:System.Threading.Tasks.Task.ContinueWith%2A> fournit des versions surchargées prenant chacune une valeur <xref:System.Object> qui représente l'état de la continuation. Vous pouvez ensuite accéder à cet objet d'état à l'aide de la propriété <xref:System.Threading.Tasks.Task.AsyncState%2A?displayProperty=nameWithType> . Cet objet d'état est `null` si vous ne fournissez pas de valeur.  
   
- L'état de continuation est utile quand vous convertissez du code existant qui recourt au [modèle de programmation asynchrone (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) pour utiliser la bibliothèque parallèle de tâches. Dans l’APM, vous fournissez généralement l’état de l’objet dans la méthode **Begin**_Method_, puis vous accédez à cet état à l’aide de la propriété <xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType>. À l'aide de la méthode <xref:System.Threading.Tasks.Task.ContinueWith%2A> , vous pouvez conserver cet état quand vous convertissez du code qui recourt à l'APM pour utiliser la bibliothèque parallèle de tâches.  
+ L'état de continuation est utile quand vous convertissez du code existant qui recourt au [modèle de programmation asynchrone (APM)](../asynchronous-programming-patterns/asynchronous-programming-model-apm.md) pour utiliser la bibliothèque parallèle de tâches. Dans l’APM, vous fournissez généralement l’état de l’objet dans la méthode **Begin**_Method_, puis vous accédez à cet état à l’aide de la propriété <xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType>. À l'aide de la méthode <xref:System.Threading.Tasks.Task.ContinueWith%2A> , vous pouvez conserver cet état quand vous convertissez du code qui recourt à l'APM pour utiliser la bibliothèque parallèle de tâches.  
   
  L'état de continuation peut également être utile si vous employez des objets <xref:System.Threading.Tasks.Task> dans le débogueur Visual Studio. Par exemple, dans la fenêtre **Tâches parallèles** , la colonne **Tâche** affiche la représentation sous forme de chaîne de l'objet d'état pour chaque tâche. Pour plus d’informations sur la fenêtre **Tâches parallèles**, consultez [Utilisation de la fenêtre Tâches](/visualstudio/debugger/using-the-tasks-window).  
   
@@ -146,10 +146,10 @@ En programmation asynchrone, il est courant pour une opération asynchrone, une 
      [!code-csharp[TPL_Continuations#11](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/exception2.cs#11)]
      [!code-vb[TPL_Continuations#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/exception2.vb#11)]  
   
-     Pour plus d’informations, consultez l’article [Gestion des exceptions](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).  
+     Pour plus d’informations, consultez l’article [Gestion des exceptions](exception-handling-task-parallel-library.md).  
   
-- Si la continuation est une tâche enfant attachée qui a été créée à l'aide de l'option <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType> , ses exceptions sont de nouveau propagées par le parent au thread appelant, comme dans le cas de tout autre enfant attaché. Pour plus d'informations, consultez [Tâches enfants attachées et détachées](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).  
+- Si la continuation est une tâche enfant attachée qui a été créée à l'aide de l'option <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType> , ses exceptions sont de nouveau propagées par le parent au thread appelant, comme dans le cas de tout autre enfant attaché. Pour plus d'informations, consultez [Tâches enfants attachées et détachées](attached-and-detached-child-tasks.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)
+- [Bibliothèque parallèle de tâches](task-parallel-library-tpl.md)

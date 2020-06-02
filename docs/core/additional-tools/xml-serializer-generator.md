@@ -5,12 +5,12 @@ author: mlacouture
 ms.date: 01/19/2017
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: c3f1fcda8a8a6abc58d35bf37e51485bb3590fa3
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: efa0925a96fcdd4356109632fa77199edde73c26
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794635"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84284284"
 ---
 # <a name="using-microsoft-xml-serializer-generator-on-net-core"></a>Utilisation de Microsoft XML Serializer Generator sur .NET Core
 
@@ -64,7 +64,7 @@ Ouvrez votre éditeur de code et c’est parti ! Nous travaillons encore à part
 
 Ouvrez *MyApp.csproj* dans votre éditeur de texte.
 
-Après avoir exécuté [`dotnet add package`](../tools/dotnet-add-package.md) la commande, les lignes suivantes sont ajoutées à votre fichier projet *MyApp. csproj* :
+Après avoir exécuté la [`dotnet add package`](../tools/dotnet-add-package.md) commande, les lignes suivantes sont ajoutées à votre fichier projet *MyApp. csproj* :
 
  ```xml
  <ItemGroup>
@@ -103,7 +103,7 @@ var serializer = new System.Xml.Serialization.XmlSerializer(typeof(MyClass));
 
 ### <a name="build-and-run-the-application"></a>Génération et exécution de l’application
 
-Toujours dans le dossier *MyApp*, exécutez l’application avec [`dotnet run`](../tools/dotnet-run.md). Elle se charge automatiquement et utilise les sérialiseurs prégénérés au moment de l’exécution.
+Toujours dans le dossier *MyApp* , exécutez l’application via [`dotnet run`](../tools/dotnet-run.md) et elle charge automatiquement et utilise les sérialiseurs prégénérés au moment de l’exécution.
 
 Tapez la commande suivante dans la fenêtre de console :
 
@@ -112,7 +112,7 @@ dotnet run
 ```
 
 > [!NOTE]
-> [`dotnet run`](../tools/dotnet-run.md)appelle [`dotnet build`](../tools/dotnet-build.md) pour s’assurer que les cibles de génération ont été générées, `dotnet <assembly.dll>` puis appelle pour exécuter l’application cible.
+> [`dotnet run`](../tools/dotnet-run.md)appelle [`dotnet build`](../tools/dotnet-build.md) pour s’assurer que les cibles de génération ont été générées, puis appelle `dotnet <assembly.dll>` pour exécuter l’application cible.
 
 > [!IMPORTANT]
 > Les commandes et les étapes indiquées dans ce didacticiel pour exécuter votre application sont utilisées uniquement au moment du développement. Une fois que vous êtes prêt à déployer votre application, consultez les différentes [stratégies de déploiement](../deploying/index.md) pour les applications .NET Core et la commande [`dotnet publish`](../tools/dotnet-publish.md).

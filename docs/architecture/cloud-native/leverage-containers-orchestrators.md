@@ -2,12 +2,12 @@
 title: Exploitation des conteneurs et des orchestrateurs
 description: Tirer parti des conteneurs et orchestrateurs Kubernetes dans Azure
 ms.date: 05/13/2020
-ms.openlocfilehash: 5d0b7f41caecb3422a4416514de2fdd54e94539a
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b2fedac205d7a5bd8b8f8cf665ae370b9bf26654
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613893"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282582"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>Exploitation des conteneurs et des orchestrateurs
 
@@ -53,30 +53,11 @@ Les conteneurs sont définis par des fichiers texte simples qui deviennent des a
 
 Les conteneurs sont immuables. Une fois que vous avez défini un conteneur, vous pouvez le recréer et l’exécuter exactement de la même façon. Cette immuabilité se prête à la conception basée sur les composants. Si certaines parties d’une application évoluent différemment des autres, pourquoi redéployer l’application entière quand vous pouvez simplement déployer les parties qui changent le plus fréquemment ? Des fonctionnalités différentes et des problèmes de coupe croisée d’une application peuvent être divisées en unités distinctes. La figure 3-2 montre comment une application monolithique peut tirer parti des conteneurs et des microservices en déléguant certaines fonctionnalités ou fonctionnalités. Les fonctionnalités restantes de l’application elle-même ont également été en conteneur.
 
-Les conteneurs sont immuables. Une fois que vous avez défini un conteneur, vous pouvez le recréer et l’exécuter exactement de la même façon. Cette immuabilité se prête à la conception basée sur les composants. Si certaines parties d’une application évoluent différemment des autres, pourquoi redéployer l’application entière quand vous pouvez simplement déployer les parties qui changent le plus fréquemment ? Des fonctionnalités différentes et des problèmes de coupe croisée d’une application peuvent être divisées en unités distinctes. La figure 3-2 montre comment une application monolithique peut tirer parti des conteneurs et des microservices en déléguant certaines fonctionnalités ou fonctionnalités. Les fonctionnalités restantes de l’application elle-même ont également été en conteneur.
-
 ![Division d’une application monolithique pour utiliser des microservices dans le back end.](./media/cloud-native-design.png)
 
 **Figure 3-2**. Décomposition d’une application monolithique pour adopter des microservices.
 
 Chaque service Cloud natif est généré et déployé dans un conteneur distinct. Chaque peut être mis à jour en fonction des besoins. Les services individuels peuvent être hébergés sur des nœuds avec des ressources appropriées pour chaque service. L’environnement dans lequel chaque service s’exécute est immuable, partagé entre les environnements de développement, de test et de production, et facilement géré par un contrôle de version. Le couplage entre les différentes zones de l’application se produit explicitement comme des appels ou des messages entre les services, et non pour les dépendances au moment de la compilation dans le monolithe. Vous pouvez également choisir la technologie qui correspond le mieux à une fonctionnalité donnée sans avoir à modifier le reste de l’application.
-
-Les services en conteneur requièrent une gestion automatisée. Il n’est pas possible d’administrer manuellement un grand ensemble de conteneurs déployés de manière indépendante. Par exemple, considérez les tâches suivantes :
-
-- Comment les instances de conteneur seront-elles approvisionnées sur un cluster de plusieurs ordinateurs ?
-- Une fois le déploiement terminé, comment les conteneurs découvrent et communiquent les uns avec les autres ?
-- Comment les conteneurs peuvent-ils être mis à l’échelle ou sortants à la demande ?
-- Comment surveiller l’intégrité de chaque conteneur ?
-- Comment protéger un conteneur contre les défaillances matérielles et logicielles ?
-- Comment mettre à niveau des conteneurs pour une application active sans temps d’arrêt ?
-
-Les orchestrateurs de conteneurs adressent et automatisent ces problèmes et d’autres.
-
-Dans le système Eco Cloud-native, Kubernetes est devenu le conteneur de facto Orchestrator. Il s’agit d’une plateforme open source gérée par Cloud Native Computing Foundation (CNCF). Kubernetes automatise le déploiement, la mise à l’échelle et les problèmes opérationnels des charges de travail en conteneur sur un cluster d’ordinateurs. Toutefois, l’installation et la gestion de Kubernetes sont notoirement complexes.
-
-Une meilleure approche consiste à tirer parti de Kubernetes en tant que service géré à partir d’un fournisseur de Cloud. Le Cloud Azure est doté d’une plateforme Kubernetes entièrement gérée [, intitulée Azure Kubernetes service (AKS)](https://azure.microsoft.com/services/kubernetes-service/). AKS fait abstraction de la complexité et de la surcharge opérationnelle de la gestion des Kubernetes. Vous consommez Kubernetes en tant que service Cloud. Microsoft est responsable de la gestion et de la prise en charge. AKS s’intègre également étroitement avec d’autres services Azure et des outils de développement.
-
-AKS est une technologie basée sur les clusters. Un pool de machines virtuelles fédérées, ou nœuds, est déployé dans le Cloud Azure. Ensemble, ils forment un environnement hautement disponible ou un cluster. Le cluster apparaît comme une entité unique et transparente pour votre application Cloud-native. En coulisse, AKS déploie vos services en conteneur sur ces nœuds en suivant une stratégie prédéfinie qui répartit équitablement la charge.
 
 Les services en conteneur requièrent une gestion automatisée. Il n’est pas possible d’administrer manuellement un grand ensemble de conteneurs déployés de manière indépendante. Par exemple, considérez les tâches suivantes :
 
@@ -240,8 +221,6 @@ En outre, à tout moment, vous pouvez ajouter la prise en charge de l’ancrage 
 ![Ajout de la prise en charge de l’ancrage à Visual Studio](./media/visual-studio-add-docker-support.png)
 
 **Figure 3-8**. Ajout de la prise en charge de l’ancrage à Visual Studio
-
-Vous pouvez également ajouter la prise en charge de l’orchestration de conteneur, également illustrée dans la figure 3-8. Par défaut, l’orchestrateur utilise Kubernetes et Helm. Une fois que vous avez choisi l’orchestrateur, un `azds.yaml` fichier est ajouté à la racine du projet et un `charts` dossier contenant les graphiques Helm utilisés pour configurer et déployer l’application sur Kubernetes est ajouté. La figure 3-9 montre les fichiers résultants dans un nouveau projet.
 
 Vous pouvez également ajouter la prise en charge de l’orchestration de conteneur, également illustrée dans la figure 3-8. Par défaut, l’orchestrateur utilise Kubernetes et Helm. Une fois que vous avez choisi l’orchestrateur, un `azds.yaml` fichier est ajouté à la racine du projet et un `charts` dossier contenant les graphiques Helm utilisés pour configurer et déployer l’application sur Kubernetes est ajouté. La figure 3-9 montre les fichiers résultants dans un nouveau projet.
 

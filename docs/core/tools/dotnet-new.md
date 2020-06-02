@@ -2,12 +2,12 @@
 title: Commande dotnet new
 description: La commande dotnet new crée des projets .NET Core basés sur le modèle spécifié.
 ms.date: 04/10/2020
-ms.openlocfilehash: 1544f519f2a5f6a1a6e042c1db720eff45f5d98c
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 39301ad95761848b60b45cb5c18ede937f70c32c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442239"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84283973"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -55,9 +55,9 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
   Le tableau suivant répertorie les modèles qui sont préinstallés avec le kit SDK .NET Core. Le langage par défaut pour le modèle est indiqué entre crochets. Cliquez sur le lien nom abrégé pour afficher les options de modèle spécifiques.
 
-| Modèles                                    | Nom court                      | Langage     | Étiquettes                                  | Présent |
+| Modèles                                    | Nom court                      | Language     | Balises                                  | Présent |
 |----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
-| Application console                          | [Console](#console)             | [C#], F#, VB | Communes/Console                        | 1.0        |
+| Application console                          | [console](#console)             | [C#], F#, VB | Communes/Console                        | 1.0        |
 | Bibliothèque de classes                                | [classlib](#classlib)           | [C#], F#, VB | Communes/Bibliothèque                        | 1.0        |
 | Application WPF                              | [WPF](#wpf)                     | [C#]         | Commun/WPF                            | 3.0        |
 | Bibliothèque de classes WPF                            | [wpflib](#wpf)                  | [C#]         | Commun/WPF                            | 3.0        |
@@ -69,12 +69,13 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 | Projet de test unitaire                            | [MSTest](#test)                 | [C#], F#, VB | Test/MSTest                           | 1.0        |
 | Projet de test NUnit 3                         | [nunit](#nunit)                  | [C#], F#, VB | Test/NUnit                            | 2.1.400    |
 | Élément de test NUnit 3                            | `nunit-test`                    | [C#], F#, VB | Test/NUnit                            | 2.2        |
-| Projet de test xUnit                           | [xunit](#test)                  | [C#], F#, VB | Test/xUnit                            | 1.0        |
+| Projet de test xUnit                           | [xUnit](#test)                  | [C#], F#, VB | Test/xUnit                            | 1.0        |
 | Composant Razor                              | `razorcomponent`                | [C#]         | Web/ASP.NET                           | 3.0        |
 | Page Razor                                   | [pagination](#page)                   | [C#]         | Web/ASP.NET                           | 2.0        |
 | ViewImports MVC                              | [viewimports](#namespace)       | [C#]         | Web/ASP.NET                           | 2.0        |
 | ViewStart MVC                                | `viewstart`                     | [C#]         | Web/ASP.NET                           | 2.0        |
 | Application de serveur éblouissante                            | [blazorserver](#blazorserver)   | [C#]         | Web/éblouissant                            | 3.0        |
+| Application de webassembly éblouissante                       | `blazorwasm`                    | [C#]         | Web/éblouissant/webassembly                            | 3.1.300    |
 | ASP.NET Core vide                           | [Internet](#web)                     | [C#], F#     | Web/vides                             | 1.0        |
 | Application web ASP.NET Core (Model-View-Controller) | [MVC](#web-options)             | [C#], F#     | Web/MVC                               | 1.0        |
 | Application web ASP.NET Core                         | [webapp, Razor](#web-options)   | [C#]         | Web/MVC/Razor Pages                   | 2,2, 2,0   |
@@ -148,7 +149,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
   Si vous ne spécifiez pas de paramètre pour cette option, la commande répertorie les modèles installés et fournit des détails à leur sujet.
 
   > [!NOTE]
-  > Pour désinstaller un modèle à l’aide de `PATH`, vous devez qualifier le chemin d’accès avec un nom complet. Par exemple, *C:/Users/ \< User>/documents/templates/garciasoftware.consoletemplate.CSharp* fonctionnera, mais *./GarciaSoftware.ConsoleTemplate.CSharp* à partir du dossier conteneur ne le sera pas.
+  > Pour désinstaller un modèle à l’aide de `PATH`, vous devez qualifier le chemin d’accès avec un nom complet. Par exemple, *C:/Users/ \<USER> /documents/templates/GarciaSoftware.ConsoleTemplate.CSharp* fonctionnera, mais *./GarciaSoftware.ConsoleTemplate.CSharp* à partir du dossier conteneur ne le sera pas.
   > N’incluez pas de barre oblique finale de répertoire finale dans le chemin d’accès de votre modèle.
 
 - **`--update-apply`**

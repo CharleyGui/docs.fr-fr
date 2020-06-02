@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: 66904a24817eee0161d877ace7f4584d58fe30f0
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 188a80459fec021dc934597ea2f77ac7b4471b2d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507570"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285285"
 ---
 # <a name="task-based-asynchronous-programming"></a>Programmation asynchrone basée sur les tâches
 
@@ -34,7 +34,7 @@ Pour ces raisons, la bibliothèque parallèle de tâches est l'API privilégiée
 La méthode <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType> offre un moyen pratique d'exécuter simultanément un nombre d'instructions arbitraires. Pour cela, passez un délégué <xref:System.Action> pour chaque élément de travail. La façon la plus facile de créer ces délégués est d’utiliser des expressions lambda. L’expression lambda peut appeler une méthode nommée ou fournir le code inline. L'exemple suivant montre un appel <xref:System.Threading.Tasks.Parallel.Invoke%2A> de base qui crée et démarre deux tâches qui s'exécutent simultanément. La première tâche est représentée par une expression lambda qui appelle une méthode nommée `DoSomeWork` et la seconde tâche est représentée par une expression lambda qui appelle une méthode nommée `DoSomeOtherWork`.
 
 > [!NOTE]
-> Cette documentation utilise les expressions lambda pour définir les délégués de la bibliothèque parallèle de tâches. Si les expressions lambda en C# ou Visual Basic ne vous sont pas familières, consultez la page [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
+> Cette documentation utilise les expressions lambda pour définir les délégués de la bibliothèque parallèle de tâches. Si les expressions lambda en C# ou Visual Basic ne vous sont pas familières, consultez la page [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](lambda-expressions-in-plinq-and-tpl.md).
 
 [!code-csharp[TPL#21](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl/cs/tpl.cs#21)]
 [!code-vb[TPL#21](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl/vb/tpl_vb.vb#21)]
@@ -42,7 +42,7 @@ La méthode <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=name
 > [!NOTE]
 > Le nombre d'instances <xref:System.Threading.Tasks.Task> créées en arrière-plan par <xref:System.Threading.Tasks.Parallel.Invoke%2A> n'est pas nécessairement égal au nombre de délégués fournis. La bibliothèque parallèle de tâches peut utiliser différentes optimisations, surtout avec un grand nombre de délégués.
 
-Pour plus d’informations, consultez [Comment : utiliser parallel_invoke pour exécuter des opérations parallèles](../../../docs/standard/parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations.md).
+Pour plus d’informations, consultez [Comment : utiliser parallel_invoke pour exécuter des opérations parallèles](how-to-use-parallel-invoke-to-execute-parallel-operations.md).
 
 Pour un plus grand contrôle de l’exécution de tâches ou pour retourner une valeur à partir de la tâche, vous devez utiliser les objets <xref:System.Threading.Tasks.Task> de manière plus explicite.
 
@@ -70,7 +70,7 @@ Vous pouvez également utiliser la méthode <xref:System.Threading.Tasks.TaskFac
 [!code-csharp[TPL_TaskIntro#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/result1.cs#4)]
 [!code-vb[TPL_TaskIntro#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/result1.vb#4)]
 
-Pour plus d’informations, consultez [Comment : retourner une valeur à partir d’une tâche](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md).
+Pour plus d’informations, consultez [Comment : retourner une valeur à partir d’une tâche](how-to-return-a-value-from-a-task.md).
 
 Lorsque vous utilisez une expression lambda pour créer le délégué d’une tâche, vous avez accès à toutes les variables qui sont visibles à ce stade dans votre code source. Toutefois, dans certains cas, notamment dans les boucles, une expression lambda ne capture pas la variable comme prévu. Elle capture uniquement la valeur finale, pas la valeur qui change au cours de chaque itération. L'exemple de code suivant illustre le problème. Il passe un compteur de boucles à une expression lambda qui instancie un objet `CustomData` et utilise le compteur de boucles comme identificateur de l'objet. Comme le montre la sortie de l'exemple, chaque objet `CustomData` a un identificateur identique.
 
@@ -100,7 +100,7 @@ La plupart des API qui créent des tâches fournissent des surcharges qui accept
 |<xref:System.Threading.Tasks.TaskCreationOptions.None>|Valeur par défaut lorsqu'aucune option n'est spécifiée. Le planificateur utilise ses méthodes heuristiques par défaut pour planifier la tâche.|
 |<xref:System.Threading.Tasks.TaskCreationOptions.PreferFairness>|Spécifie que la tâche doit être planifiée afin que les tâches créées précédemment soient susceptibles d’être exécutées plus tôt et que les tâches créées ultérieurement soient susceptibles d’être exécutées plus tard.|
 |<xref:System.Threading.Tasks.TaskCreationOptions.LongRunning>|Spécifie que la tâche représente une opération de longue durée.|
-|<xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>|Spécifie qu’une tâche doit être créée en tant qu’enfant attaché à la tâche actuelle, s’il en existe une. Pour plus d'informations, consultez [Tâches enfants attachées et détachées](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).|
+|<xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>|Spécifie qu’une tâche doit être créée en tant qu’enfant attaché à la tâche actuelle, s’il en existe une. Pour plus d'informations, consultez [Tâches enfants attachées et détachées](attached-and-detached-child-tasks.md).|
 |<xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach>|Indique que si une tâche interne spécifie l'option `AttachedToParent`, cette tâche ne sera pas une tâche enfant attachée.|
 |<xref:System.Threading.Tasks.TaskCreationOptions.HideScheduler>|Spécifie que le planificateur de tâches pour les tâches créées en appelant des méthodes comme <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> ou <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> à partir d'une tâche particulière est le planificateur par défaut au lieu du planificateur sur lequel cette tâche s'exécute.|
 
@@ -145,7 +145,7 @@ Comme <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWith
 
 Les méthodes <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> et <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> vous permettent de continuer avec plusieurs tâches.
 
-Pour plus d’informations, consultez [Chaînage des tâches à l’aide de tâches de continuation](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md).
+Pour plus d’informations, consultez [Chaînage des tâches à l’aide de tâches de continuation](chaining-tasks-by-using-continuation-tasks.md).
 
 ## <a name="creating-detached-child-tasks"></a>Création de tâches enfants détachées
 
@@ -163,7 +163,7 @@ Lorsque le code utilisateur qui s’exécute dans une tâche crée une tâche av
 [!code-csharp[TPL_TaskIntro#8](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/child1.cs#8)]
 [!code-vb[TPL_TaskIntro#8](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/child1.vb#8)]
 
-Une tâche parent peut utiliser l’option <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> pour empêcher d’autres tâches de s’attacher à la tâche parent. Pour plus d'informations, consultez [Tâches enfants attachées et détachées](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).
+Une tâche parent peut utiliser l’option <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> pour empêcher d’autres tâches de s’attacher à la tâche parent. Pour plus d'informations, consultez [Tâches enfants attachées et détachées](attached-and-detached-child-tasks.md).
 
 ## <a name="waiting-for-tasks-to-finish"></a>Attente de fin d’exécution de tâches
 
@@ -182,7 +182,7 @@ L’exemple suivant affiche le modèle de base qui n’implique pas la gestion d
 [!code-csharp[TPL_TaskIntro#06](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/taskintro.cs#06)]
 [!code-vb[TPL_TaskIntro#06](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/tpl_intro.vb#06)]
 
-Pour obtenir un exemple illustrant la gestion des exceptions, consultez [Gestion des exceptions](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).
+Pour obtenir un exemple illustrant la gestion des exceptions, consultez [Gestion des exceptions](exception-handling-task-parallel-library.md).
 
 Certaines surcharges vous permettent de spécifier un délai d'attente, et d'autres prennent un <xref:System.Threading.CancellationToken> supplémentaire en tant que paramètre d'entrée, afin que l'attente puisse être annulée soit par programmation, soit en réponse à l'entrée utilisateur.
 
@@ -214,7 +214,7 @@ La méthode <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithT
 
 ### <a name="tasktfromresult"></a>Task(T).FromResult
 
-En utilisant la méthode <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType>, vous pouvez créer un objet <xref:System.Threading.Tasks.Task%601> qui contient un résultat précalculé. Cette méthode est utile lorsque vous exécutez une opération asynchrone qui retourne un objet <xref:System.Threading.Tasks.Task%601>, et que le résultat de cet objet <xref:System.Threading.Tasks.Task%601> est déjà calculé. Pour obtenir un exemple qui utilise <xref:System.Threading.Tasks.Task.FromResult%2A> pour récupérer les résultats des opérations de téléchargement asynchrones qui sont conservées dans un cache, consultez [Procédure : création de tâches précalculées](../../../docs/standard/parallel-programming/how-to-create-pre-computed-tasks.md).
+En utilisant la méthode <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType>, vous pouvez créer un objet <xref:System.Threading.Tasks.Task%601> qui contient un résultat précalculé. Cette méthode est utile lorsque vous exécutez une opération asynchrone qui retourne un objet <xref:System.Threading.Tasks.Task%601>, et que le résultat de cet objet <xref:System.Threading.Tasks.Task%601> est déjà calculé. Pour obtenir un exemple qui utilise <xref:System.Threading.Tasks.Task.FromResult%2A> pour récupérer les résultats des opérations de téléchargement asynchrones qui sont conservées dans un cache, consultez [Procédure : création de tâches précalculées](how-to-create-pre-computed-tasks.md).
 
 ## <a name="handling-exceptions-in-tasks"></a>Gestion des exceptions des tâches
 
@@ -230,7 +230,7 @@ Lorsqu’une tâche lève une ou plusieurs exceptions, les exceptions sont encap
 
 Le thread joint peut également gérer des exceptions en accédant à la propriété <xref:System.Threading.Tasks.Task.Exception%2A> avant que la tâche ne soit récupérée par le garbage collector. En accédant à cette propriété, vous empêchez l'exception non gérée de déclencher le comportement de propagation de l'exception qui termine le processus lorsque l'objet est finalisé.
 
-Pour plus d’informations sur les exceptions et les tâches, consultez [Gestion des exceptions](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).
+Pour plus d’informations sur les exceptions et les tâches, consultez [Gestion des exceptions](exception-handling-task-parallel-library.md).
 
 ## <a name="canceling-tasks"></a>Annulation des tâches
 
@@ -238,7 +238,7 @@ La classe <xref:System.Threading.Tasks.Task> prend en charge l'annulation coopé
 
 Vous pouvez créer le jeton et la requête d'annulation ultérieurement, à l'aide de la classe <xref:System.Threading.CancellationTokenSource>. Passez le jeton au <xref:System.Threading.Tasks.Task> en tant qu'argument et référencez ce même jeton dans votre délégué d'utilisateur, qui répond à une requête d'annulation.
 
-Pour plus d’informations, consultez [Annulation de tâches](../../../docs/standard/parallel-programming/task-cancellation.md) et [Comment : annuler une tâche et ses enfants](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).
+Pour plus d’informations, consultez [Annulation de tâches](task-cancellation.md) et [Comment : annuler une tâche et ses enfants](how-to-cancel-a-task-and-its-children.md).
 
 ## <a name="the-taskfactory-class"></a>Classe TaskFactory
 
@@ -246,48 +246,48 @@ La classe <xref:System.Threading.Tasks.TaskFactory> fournit des méthodes statiq
 
 - Le modèle le plus commun est <xref:System.Threading.Tasks.TaskFactory.StartNew%2A>, qui crée et lance une tâche dans une instruction.
 
-- Lorsque vous créez des tâches de continuation à partir de plusieurs antécédents, utilisez la méthode <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> ou <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A>, ou leurs équivalents de la classe <xref:System.Threading.Tasks.Task%601>. Pour plus d’informations, consultez [Chaînage des tâches à l’aide de tâches de continuation](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md).
+- Lorsque vous créez des tâches de continuation à partir de plusieurs antécédents, utilisez la méthode <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> ou <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A>, ou leurs équivalents de la classe <xref:System.Threading.Tasks.Task%601>. Pour plus d’informations, consultez [Chaînage des tâches à l’aide de tâches de continuation](chaining-tasks-by-using-continuation-tasks.md).
 
-- Pour encapsuler le modèle de programmation asynchrone `BeginX` et des méthodes `EndX` dans une instance <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>, utilisez les méthodes <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A>. Pour plus d’informations, consultez [Bibliothèque parallèle de tâches (TPL) et programmation asynchrone](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md).
+- Pour encapsuler le modèle de programmation asynchrone `BeginX` et des méthodes `EndX` dans une instance <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>, utilisez les méthodes <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A>. Pour plus d’informations, consultez [Bibliothèque parallèle de tâches (TPL) et programmation asynchrone](tpl-and-traditional-async-programming.md).
 
 <xref:System.Threading.Tasks.TaskFactory> par défaut est accessible en tant que propriété statique dans la classe <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>. Vous pouvez également instancier directement un <xref:System.Threading.Tasks.TaskFactory> et spécifier différentes options qui incluent une option <xref:System.Threading.CancellationToken>, <xref:System.Threading.Tasks.TaskCreationOptions>, <xref:System.Threading.Tasks.TaskContinuationOptions> ou <xref:System.Threading.Tasks.TaskScheduler>. Toutes les options spécifiées lors de la création de la fabrique de tâches seront appliquées à toutes les tâches qu'elle crée, à moins que la tâche <xref:System.Threading.Tasks.Task> ne soit créée à l'aide de l'énumération <xref:System.Threading.Tasks.TaskCreationOptions>, auquel cas les options de la tâche remplacent celles de la fabrique de tâches.
 
 ## <a name="tasks-without-delegates"></a>Tâches sans délégués
 
-Dans certains cas, vous pouvez utiliser un <xref:System.Threading.Tasks.Task> pour encapsuler une opération asynchrone exécutée par un composant externe au lieu de votre propre délégué utilisateur. Si l’opération est basée sur le modèle de programmation asynchrone Begin/End, vous pouvez utiliser les méthodes <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A>. Si ce n’est pas le cas, vous pouvez utiliser l’objet <xref:System.Threading.Tasks.TaskCompletionSource%601> pour encapsuler l’opération dans une tâche et, de cette façon, bénéficier de certains des avantages de programmabilité <xref:System.Threading.Tasks.Task>, comme par exemple, la prise en charge de la propagation et des continuations d’exceptions. Pour plus d’informations, consultez <xref:System.Threading.Tasks.TaskCompletionSource%601>.
+Dans certains cas, vous pouvez utiliser un <xref:System.Threading.Tasks.Task> pour encapsuler une opération asynchrone exécutée par un composant externe au lieu de votre propre délégué utilisateur. Si l’opération est basée sur le modèle de programmation asynchrone Begin/End, vous pouvez utiliser les méthodes <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A>. Si ce n’est pas le cas, vous pouvez utiliser l’objet <xref:System.Threading.Tasks.TaskCompletionSource%601> pour encapsuler l’opération dans une tâche et, de cette façon, bénéficier de certains des avantages de programmabilité <xref:System.Threading.Tasks.Task>, comme par exemple, la prise en charge de la propagation et des continuations d’exceptions. Pour plus d'informations, consultez <xref:System.Threading.Tasks.TaskCompletionSource%601>.
 
 ## <a name="custom-schedulers"></a>Planificateurs personnalisés
 
-La plupart des développeurs d'applications ou de bibliothèques ne se soucient pas du processeur sur lequel s'exécute la tâche, ni de la manière dont il synchronise son travail avec d'autres tâches ou de la façon dont il est planifié sur le <xref:System.Threading.ThreadPool?displayProperty=nameWithType>. Ils demandent simplement à ce qu'il s'exécute aussi efficacement que possible sur l'ordinateur hôte. Si vous avez besoin d’un contrôle plus affiné sur les détails de la planification, la bibliothèque parallèle de tâches vous permet de configurer des paramètres dans le planificateur de tâches par défaut et vous permet même de fournir un planificateur personnalisé. Pour plus d’informations, consultez <xref:System.Threading.Tasks.TaskScheduler>.
+La plupart des développeurs d'applications ou de bibliothèques ne se soucient pas du processeur sur lequel s'exécute la tâche, ni de la manière dont il synchronise son travail avec d'autres tâches ou de la façon dont il est planifié sur le <xref:System.Threading.ThreadPool?displayProperty=nameWithType>. Ils demandent simplement à ce qu'il s'exécute aussi efficacement que possible sur l'ordinateur hôte. Si vous avez besoin d’un contrôle plus affiné sur les détails de la planification, la bibliothèque parallèle de tâches vous permet de configurer des paramètres dans le planificateur de tâches par défaut et vous permet même de fournir un planificateur personnalisé. Pour plus d'informations, consultez <xref:System.Threading.Tasks.TaskScheduler>.
 
 ## <a name="related-data-structures"></a>Structures de données associées
 
-La bibliothèque parallèle de tâches possède plusieurs nouveaux types publics qui sont utiles dans les scénarios parallèles et séquentiels. Ces derniers incluent plusieurs classes de collection thread-safe, rapides et évolutives dans l'espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>, et plusieurs nouveaux types de synchronisation, tels que <xref:System.Threading.Semaphore?displayProperty=nameWithType> et <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>, qui sont plus efficaces que leurs prédécesseurs pour certains genres de charges de travail. D'autres types nouveaux dans .NET Framework 4, tels que <xref:System.Threading.Barrier?displayProperty=nameWithType> et <xref:System.Threading.SpinLock?displayProperty=nameWithType>, fournissent des fonctionnalités qui n'étaient pas disponibles dans les versions précédentes. Pour plus d’informations, consultez [Structures de données pour la programmation parallèle](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md).
+La bibliothèque parallèle de tâches possède plusieurs nouveaux types publics qui sont utiles dans les scénarios parallèles et séquentiels. Ces derniers incluent plusieurs classes de collection thread-safe, rapides et évolutives dans l'espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>, et plusieurs nouveaux types de synchronisation, tels que <xref:System.Threading.Semaphore?displayProperty=nameWithType> et <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>, qui sont plus efficaces que leurs prédécesseurs pour certains genres de charges de travail. D'autres types nouveaux dans .NET Framework 4, tels que <xref:System.Threading.Barrier?displayProperty=nameWithType> et <xref:System.Threading.SpinLock?displayProperty=nameWithType>, fournissent des fonctionnalités qui n'étaient pas disponibles dans les versions précédentes. Pour plus d’informations, consultez [Structures de données pour la programmation parallèle](data-structures-for-parallel-programming.md).
 
 ## <a name="custom-task-types"></a>Types de tâches personnalisés
 
 Nous vous recommandons de ne pas hériter de <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> ou <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>. Nous vous recommandons d'utiliser plutôt la propriété <xref:System.Threading.Tasks.Task.AsyncState%2A> pour associer d'autres données ou états à un objet <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>. Vous pouvez également utiliser des méthodes d'extension pour étendre les fonctionnalités des classes <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>. Pour plus d’informations sur les méthodes d’extension, consultez [Méthodes d’extension](../../csharp/programming-guide/classes-and-structs/extension-methods.md) et [Méthodes d’extension](../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).
 
-Si vous devez hériter <xref:System.Threading.Tasks.Task> de <xref:System.Threading.Tasks.Task%601>ou, vous ne <xref:System.Threading.Tasks.Task.Run%2A>pouvez pas utiliser <xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType>, <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType>ou les <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> classes, ou pour créer des instances de votre type de tâche personnalisée, <xref:System.Threading.Tasks.Task> car <xref:System.Threading.Tasks.Task%601> ces mécanismes créent uniquement des objets et. En outre, vous ne pouvez pas utiliser les mécanismes de continuation des tâches fournis par <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601><xref:System.Threading.Tasks.TaskFactory> et <xref:System.Threading.Tasks.TaskFactory%601> pour créer des instances de votre type de tâche personnalisé parce que ces mécanismes créent également uniquement des objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>.
+Si vous devez hériter de <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601> , vous ne pouvez pas utiliser <xref:System.Threading.Tasks.Task.Run%2A> , ou les <xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType> <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType> classes, ou <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> pour créer des instances de votre type de tâche personnalisée, car ces mécanismes créent uniquement des <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601> objets et. En outre, vous ne pouvez pas utiliser les mécanismes de continuation des tâches fournis par <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601><xref:System.Threading.Tasks.TaskFactory> et <xref:System.Threading.Tasks.TaskFactory%601> pour créer des instances de votre type de tâche personnalisé parce que ces mécanismes créent également uniquement des objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 |Intitulé|Description|
 |-|-|
-|[Chaînage des tâches à l’aide de tâches de continuation](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md)|Décrit le fonctionnement des continuations.|
-|[Tâches enfants attachées et détachées](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md)|Décrit la différence entre les tâches enfants attachées et les tâches enfants détachées.|
-|[Annulation de tâches](../../../docs/standard/parallel-programming/task-cancellation.md)|Décrit la prise en charge de l'annulation intégrée dans l'objet <xref:System.Threading.Tasks.Task>.|
-|[Gestion des exceptions](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)|Décrit comment les exceptions sur les threads simultanés sont gérées.|
-|[Procédure : utiliser Parallel_Invoke pour exécuter des opérations parallèles](../../../docs/standard/parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations.md)|Explique comment utiliser <xref:System.Threading.Tasks.Parallel.Invoke%2A>.|
-|[Procédure : retourner une valeur à partir d’une tâche](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md)|Décrit comment retourner des valeurs à partir de tâches.|
-|[Procédure : annuler une tâche et ses enfants](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)|Décrit comment annuler des tâches.|
-|[Procédure : créer des tâches précalculées](../../../docs/standard/parallel-programming/how-to-create-pre-computed-tasks.md)|Décrit comment utiliser la méthode <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> pour récupérer les résultats d'opérations de téléchargement asynchrones qui sont conservées dans un cache.|
-|[Procédure : parcourir un arbre binaire avec des tâches parallèles](../../../docs/standard/parallel-programming/how-to-traverse-a-binary-tree-with-parallel-tasks.md)|Décrit comment utiliser des tâches pour parcourir un arbre binaire.|
-|[Procédure : désencapsuler une tâche imbriquée](../../../docs/standard/parallel-programming/how-to-unwrap-a-nested-task.md)|Montre également comment utiliser la méthode d'extension <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A>.|
-|[Parallélisme des données](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)|Décrit comment utiliser <xref:System.Threading.Tasks.Parallel.For%2A> et <xref:System.Threading.Tasks.Parallel.ForEach%2A> pour créer des boucles parallèles sur des données.|
-|[Programmation parallèle](../../../docs/standard/parallel-programming/index.md)|Nœud de niveau supérieur pour la programmation parallèle .NET Framework.|
+|[Chaînage des tâches à l’aide de tâches de continuation](chaining-tasks-by-using-continuation-tasks.md)|Décrit le fonctionnement des continuations.|
+|[Tâches enfants attachées et détachées](attached-and-detached-child-tasks.md)|Décrit la différence entre les tâches enfants attachées et les tâches enfants détachées.|
+|[Annulation de tâches](task-cancellation.md)|Décrit la prise en charge de l'annulation intégrée dans l'objet <xref:System.Threading.Tasks.Task>.|
+|[Gestion des exceptions](exception-handling-task-parallel-library.md)|Décrit comment les exceptions sur les threads simultanés sont gérées.|
+|[Comment : utiliser Parallel. Invoke pour exécuter des opérations parallèles](how-to-use-parallel-invoke-to-execute-parallel-operations.md)|Explique comment utiliser <xref:System.Threading.Tasks.Parallel.Invoke%2A>.|
+|[Procédure : retourner une valeur à partir d’une tâche](how-to-return-a-value-from-a-task.md)|Décrit comment retourner des valeurs à partir de tâches.|
+|[Procédure : annuler une tâche et ses enfants](how-to-cancel-a-task-and-its-children.md)|Décrit comment annuler des tâches.|
+|[Procédure : créer des tâches précalculées](how-to-create-pre-computed-tasks.md)|Décrit comment utiliser la méthode <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> pour récupérer les résultats d'opérations de téléchargement asynchrones qui sont conservées dans un cache.|
+|[Procédure : parcourir un arbre binaire avec des tâches parallèles](how-to-traverse-a-binary-tree-with-parallel-tasks.md)|Décrit comment utiliser des tâches pour parcourir un arbre binaire.|
+|[Procédure : désencapsuler une tâche imbriquée](how-to-unwrap-a-nested-task.md)|Montre également comment utiliser la méthode d'extension <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A>.|
+|[Parallélisme des données](data-parallelism-task-parallel-library.md)|Décrit comment utiliser <xref:System.Threading.Tasks.Parallel.For%2A> et <xref:System.Threading.Tasks.Parallel.ForEach%2A> pour créer des boucles parallèles sur des données.|
+|[Programmation parallèle](index.md)|Nœud de niveau supérieur pour la programmation parallèle .NET Framework.|
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Programmation parallèle](../../../docs/standard/parallel-programming/index.md)
+- [Programmation parallèle](index.md)
 - [Exemples de programmation parallèle avec .NET Core & .NET Standard](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)

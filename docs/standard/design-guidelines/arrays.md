@@ -7,17 +7,17 @@ helpviewer_keywords:
 - arrays [.NET Framework], usage guidelines
 - empty arrays
 ms.assetid: 66a1b3d8-6f3f-4715-b235-e1ff95e32d8e
-ms.openlocfilehash: d4a1f379a88231654c710b1df7b505316377c915
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 30277507050091de6b1e9293401d61ac5e351a1f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741807"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280607"
 ---
 # <a name="arrays"></a>Tableaux
-✔️ préférez utiliser des collections sur des tableaux dans des API publiques. La section [Collections](../../../docs/standard/design-guidelines/guidelines-for-collections.md) fournit des détails sur la manière de choisir entre des collections et des tableaux.
+✔️ préférez utiliser des collections sur des tableaux dans des API publiques. La section [Collections](guidelines-for-collections.md) fournit des détails sur la manière de choisir entre des collections et des tableaux.
 
- ❌ n’utilisez pas de champs de tableau en lecture seule. Le champ lui-même est en lecture seule et ne peut pas être modifié, mais les éléments du tableau peuvent être modifiés.
+ ❌N’utilisez pas de champs de tableau en lecture seule. Le champ lui-même est en lecture seule et ne peut pas être modifié, mais les éléments du tableau peuvent être modifiés.
 
  ✔️ envisagez d’utiliser des tableaux en escalier à la place de tableaux multidimensionnels.
 
@@ -30,5 +30,5 @@ ms.locfileid: "76741807"
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Array>
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
-- [Indications relatives à l’utilisation](../../../docs/standard/design-guidelines/usage-guidelines.md)
+- [Directives de conception d’infrastructure](index.md)
+- [Instructions d’utilisation](usage-guidelines.md)

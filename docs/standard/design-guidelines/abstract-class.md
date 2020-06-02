@@ -10,16 +10,16 @@ helpviewer_keywords:
 - classes [.NET Framework], design guidelines
 - type design guidelines, classes
 ms.assetid: d3646e6d-5c1f-4922-8fb0-ec5effb30d60
-ms.openlocfilehash: 018dd353024e75e9819f5a97008f2f422ecad291
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: e6a5923f293ed536fb272f6fe6c805067aede0ab
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76739058"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280775"
 ---
 # <a name="abstract-class-design"></a>Conception de classes abstraites
 
-❌ ne définissez pas de constructeurs internes ou protégés internes dans des types abstraits.
+❌NE définissez pas de constructeurs internes publics ou protégés dans les types abstraits.
 
  Les constructeurs doivent être publics uniquement si les utilisateurs doivent créer des instances du type. Étant donné que vous ne pouvez pas créer d’instances d’un type abstrait, un type abstrait avec un constructeur public n’est pas correctement conçu et trompe les utilisateurs.
 
@@ -31,7 +31,7 @@ ms.locfileid: "76739058"
 
  ✔️ fournissez au moins un type concret qui hérite de chaque classe abstraite que vous livrez.
 
- Cela permet de valider la conception de la classe abstraite. Par exemple, <xref:System.IO.FileStream?displayProperty=nameWithType> est une implémentation de la classe abstraite <xref:System.IO.Stream?displayProperty=nameWithType>.
+ Cela permet de valider la conception de la classe abstraite. Par exemple, <xref:System.IO.FileStream?displayProperty=nameWithType> est une implémentation de la <xref:System.IO.Stream?displayProperty=nameWithType> classe abstraite.
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 
@@ -39,5 +39,5 @@ ms.locfileid: "76739058"
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions pour la conception des types](../../../docs/standard/design-guidelines/type.md)
-- [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)
+- [Règles de conception de type](type.md)
+- [Directives de conception d’infrastructure](index.md)

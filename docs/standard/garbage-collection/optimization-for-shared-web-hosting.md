@@ -7,12 +7,12 @@ helpviewer_keywords:
 - garbage collection, optimizing
 - garbage collection, shared Web hosting
 ms.assetid: be98c0ab-7ef8-409f-8a0d-cb6e5b75ff20
-ms.openlocfilehash: 07a100e2cd6aaff2b54b99144c9d762c8979fb47
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ccaacd44f8aaed9c3178cb94f98b0f58d4d3c7d4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73140272"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285987"
 ---
 # <a name="optimization-for-shared-web-hosting"></a>Optimisation de l'hébergement Web partagé
 Si vous êtes l’administrateur d’un serveur qui est partagé via l’hébergement de plusieurs petits sites web, vous pouvez optimiser les performances et augmenter la capacité du site en ajoutant le paramètre `gcTrimCommitOnLowMemory` suivant au nœud `runtime` dans le fichier Aspnet.config dans le répertoire .NET :  
@@ -28,7 +28,7 @@ Si vous êtes l’administrateur d’un serveur qui est partagé via l’héberg
   
  Lorsque les conditions le permettent, le récupérateur de mémoire peut décider que le paramètre `gcTrimCommitOnLowMemory` n’aidera pas l’application actuelle et l’ignorer.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Le fragment XML suivant montre comment activer le paramètre `gcTrimCommitOnLowMemory`. Les points de suspension indiquent d’autres paramètres dans le nœud `runtime`.  
   
 ```xml  
@@ -44,4 +44,4 @@ Si vous êtes l’administrateur d’un serveur qui est partagé via l’héberg
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Garbage collection](../../../docs/standard/garbage-collection/index.md)
+- [Garbage collection](index.md)

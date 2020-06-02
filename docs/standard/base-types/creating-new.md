@@ -13,12 +13,12 @@ helpviewer_keywords:
 - strings [.NET Framework], creating
 - Insert method
 ms.assetid: 06fdf123-2fac-4459-8904-eb48ab908a30
-ms.openlocfilehash: ef65c50111d6ba91ab70d0b9c8cb90c606f9366c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a5dfe6429ac135202874f0524a252a7af900bd8d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73103817"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279010"
 ---
 # <a name="creating-new-strings-in-net"></a>Création de nouvelles chaînes dans .NET
 Le .NET Framework permet de créer des chaînes à l’aide d’une assignation simple, et surcharge un constructeur de classe pour prendre en charge la création de chaînes à l’aide de plusieurs paramètres différents. Le .NET Framework fournit également plusieurs méthodes dans la classe <xref:System.String?displayProperty=nameWithType> qui créent des objets de chaînes en combinant plusieurs chaînes, tableaux de chaînes ou objets.  
@@ -41,7 +41,7 @@ Le .NET Framework permet de créer des chaînes à l’aide d’une assignation 
 |<xref:System.String.CopyTo%2A?displayProperty=nameWithType>|Copie des caractères spécifiés dans une chaîne à une position spécifiée dans un tableau de caractères.|  
   
 ### <a name="format"></a>Format  
- Vous pouvez utiliser la méthode **String.Format** pour créer des chaînes mises en forme et concaténer des chaînes représentant plusieurs objets. Cette méthode convertit automatiquement tout objet passé en une chaîne. Par exemple, si votre application doit afficher une valeur **Int32** et une valeur **DateTime** à l’utilisateur, vous pouvez aisément construire une chaîne représentant ces valeurs à l’aide de la méthode **Format**. Pour plus d’informations sur les conventions de mise en forme utilisées avec cette méthode, consultez la section relative à la [mise en forme composite](../../../docs/standard/base-types/composite-formatting.md).  
+ Vous pouvez utiliser la méthode **String.Format** pour créer des chaînes mises en forme et concaténer des chaînes représentant plusieurs objets. Cette méthode convertit automatiquement tout objet passé en une chaîne. Par exemple, si votre application doit afficher une valeur **Int32** et une valeur **DateTime** à l’utilisateur, vous pouvez aisément construire une chaîne représentant ces valeurs à l’aide de la méthode **Format**. Pour plus d’informations sur les conventions de mise en forme utilisées avec cette méthode, consultez la section relative à la [mise en forme composite](composite-formatting.md).  
   
  L’exemple suivant utilise la méthode **Format** pour créer une chaîne utilisant une variable de type integer.  
   
@@ -80,5 +80,5 @@ Le .NET Framework permet de créer des chaînes à l’aide d’une assignation 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérations de base des cordes](../../../docs/standard/base-types/basic-string-operations.md)
-- [Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md)
+- [Opérations de chaînes de base](basic-string-operations.md)
+- [Mise en forme composite](composite-formatting.md)
