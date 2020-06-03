@@ -11,12 +11,12 @@ helpviewer_keywords:
 - garbage collection, workstation
 - garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-ms.openlocfilehash: 98dee04593ea26bbbc3079f5da98d8106a373168
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d59f368f21964c07d371df604f0728fa6ca8ac00
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286065"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307031"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Notions de base du garbage collection
 
@@ -164,8 +164,8 @@ La taille du segment éphémère varie selon qu’il s’agit d’un système 32
 |-|-------------|-------------|
 |Garbage collector pour station de travail|16 Mo|256 octets|
 |Garbage collector pour serveur|64 Mo|4 Go|
-|Garbage collector pour serveur > 4 processeurs logiques|32 Mo|2 Go|
-|Garbage collector pour serveur > 8 processeurs logiques|16 Mo|1 Go|
+|Garbage collector pour serveur > 4 processeurs logiques|32 Mo|2 Go|
+|Garbage collector pour serveur > 8 processeurs logiques|16 Mo|1 Go|
 
 Le segment éphémère peut inclure des objets de la génération 2. Les objets de génération 2 peuvent utiliser plusieurs segments (autant que votre processus en requiert et que la mémoire en autorise).
 
@@ -200,7 +200,7 @@ Avant qu'une opération garbage collection ne démarre, tous les threads managé
 
 L'illustration suivante montre un thread qui déclenche un garbage collection et entraîne l'interruption des autres threads.
 
-![Lorsqu'un thread déclenche un nettoyage de la mémoire](./media/gc-triggered.png)
+![Lorsqu'un thread déclenche un nettoyage de la mémoire](media/gc-triggered.png)
 
 ## <a name="unmanaged-resources"></a>Ressources non managées
 

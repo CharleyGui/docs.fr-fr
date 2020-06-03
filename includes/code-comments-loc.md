@@ -6,4 +6,4 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/15/2020
 ms.locfileid: "77627389"
 ---
-Si vous souhaitez voir des commentaires de code traduits dans des langues autres que l’anglais, faites-le-nous savoir dans [cette question de discussion GitHub](https://github.com/MicrosoftDocs/feedback/issues/2515).
+Si vous souhaitez voir les commentaires de code traduits dans des langues autres que l’anglais, faites-le nous savoir dans [ce problème de discussion GitHub](https://github.com/MicrosoftDocs/feedback/issues/2515).

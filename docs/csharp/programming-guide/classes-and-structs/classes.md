@@ -101,7 +101,7 @@ L’exemple suivant définit une classe publique qui contient une [propriété i
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation CMD](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Programmation orientée objet dans Visual Basic](../concepts/object-oriented-programming.md)
 - [Polymorphisme](polymorphism.md)
 - [Noms d’identificateurs](../inside-a-program/identifier-names.md)

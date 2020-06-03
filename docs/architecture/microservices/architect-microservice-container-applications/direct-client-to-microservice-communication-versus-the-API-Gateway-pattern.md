@@ -2,12 +2,12 @@
 title: Modèle de passerelle API et communication directe de client à microservice
 description: Découvrez les différences et les utilisations du modèle de passerelle API et de la communication directe de client à microservice.
 ms.date: 01/07/2019
-ms.openlocfilehash: 5c2f3bd32396b45a6209550f5b7a07c88795ccc0
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 089b6302132437e4bb733653b3edb401ff81a164
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144329"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306953"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Modèle de passerelle API et communication directe de client à microservice
 
@@ -53,13 +53,13 @@ Dans une architecture microservices, les applications clientes doivent général
 
 Par conséquent, avoir un niveau ou une couche intermédiaire d’indirection (passerelle) peut être très pratique pour les applications basées sur des microservices. Si vous n’avez pas de passerelles d’API, les applications clientes doivent envoyer des requêtes directement aux microservices, ce qui entraîne les problèmes suivants :
 
-- **Couplage** : sans le modèle de passerelle d’API, les applications clientes sont couplées aux microservices internes. Les applications clientes doivent savoir comment les différentes zones de l’application sont décomposées en microservices. Lors du développement ou de la refactorisation des microservices internes, ces actions ont un impact négatif sur la maintenance car elles entraînent des modifications avec rupture dans les applications clientes en raison de la référence directe aux microservices internes à partir des applications clientes. Les applications clientes doivent être fréquemment mises à jour, ce qui perturbe le développement de la solution.
+- **Couplage** : sans le modèle de passerelle d’API, les applications clientes sont couplées aux microservices internes. Les applications clientes doivent savoir comment les différentes zones de l’application sont décomposées en microservices. Lors de l’évolution et de la refactorisation des microservices internes, ces actions ont un impact sur la maintenance, car elles entraînent des modifications avec rupture des applications clientes en raison de la référence directe aux microservices internes des applications clientes. Les applications clientes doivent être fréquemment mises à jour, ce qui perturbe le développement de la solution.
 
 - **Trop d’allers-retours**: un seul écran ou une seule page dans l’application cliente peut nécessiter plusieurs appels à différents services. Cela peut entraîner plusieurs allers-retours réseau entre le client et le serveur, ajoutant ainsi une latence importante. L’agrégation gérée dans un niveau intermédiaire peut améliorer les performances et l’expérience utilisateur pour l’application cliente.
 
 - **Problèmes de sécurité** : sans passerelle, tous les microservices doivent être exposés au « monde externe », augmentant ainsi la surface d’attaque même si vous masquez les microservices internes qui ne sont pas directement utilisés par les applications clientes. Plus la surface d’attaque est réduite, plus votre application peut être sécurisée.
 
-- **Problèmes croisés**: chaque microservice publié publiquement doit gérer des problèmes tels que l’autorisation, le protocole SSL, etc. Dans de nombreux cas, ces problèmes peuvent être traités dans un seul niveau afin que les microservices internes soient simplifiés.
+- **Problèmes croisés**: chaque microservice publié publiquement doit gérer des problèmes tels que l’autorisation et SSL. Dans de nombreux cas, ces problèmes pourraient être traités dans un même niveau afin de simplifier les microservices internes.
 
 ## <a name="what-is-the-api-gateway-pattern"></a>Présentation du modèle Passerelle d’API
 
@@ -75,7 +75,7 @@ La figure 4-13 montre comment une passerelle d’API personnalisée peut s’int
 
 Les applications se connectent à un point de terminaison unique, la passerelle d’API, qui est configurée pour transférer les demandes à des microservices individuels. Dans cet exemple, la passerelle d’API doit être implémentée comme un service ASP.NET Core WebHost personnalisé s’exécutant en tant que conteneur.
 
-Il est important de souligner que dans ce diagramme, vous utilisez un seul service de passerelle API personnalisée faisant face à plusieurs applications clientes différentes. Ceci peut présenter un risque important, car votre service de passerelle d’API va croître et évoluer en fonction des nombreuses exigences différentes des applications clientes. Au final, il deviendra trop étendu en raison de ces différents besoins et sera effectivement très similaire à une application monolithique ou à un service monolithique. C’est pourquoi il est vivement recommandé de diviser la passerelle API en plusieurs services ou en plusieurs passerelles API plus petites, par exemple, une par type de facteur de forme dans une application cliente.
+Il est important de souligner que dans ce diagramme, vous utilisez un seul service de passerelle API personnalisée faisant face à plusieurs applications clientes différentes. Ceci peut présenter un risque important, car votre service de passerelle d’API va croître et évoluer en fonction des nombreuses exigences différentes des applications clientes. Au bout du compte, il sera encombré en raison de ces différents besoins et il peut être similaire à une application monolithique ou à un service monolithique. C’est pourquoi il est vivement recommandé de diviser la passerelle API en plusieurs services ou en plusieurs passerelles API plus petites, par exemple, une par type de facteur de forme dans une application cliente.
 
 Soyez prudent lors de l’implémentation du modèle Passerelle API. Il n’est en général pas judicieux d’avoir une seule passerelle d’API agrégeant tous les microservices internes de votre application. Dans ce cas, elle se comporte comme un agrégateur ou un orchestrateur monolithique, et contrevient au principe d’autonomie des microservices en couplant tous les microservices.
 
@@ -93,11 +93,11 @@ Figure 4-13.1 affiche les passerelles d’API qui sont séparées par le type de
 
 Une passerelle d’API peut offrir plusieurs fonctionnalités. Selon le produit, elle peut proposer des fonctionnalités plus ou moins complètes, mais les fonctionnalités de bases les plus importantes pour toute passerelle d’API sont les modèles de conception suivants :
 
-**Proxy inversé ou routage de passerelle**. La passerelle d’API offre un proxy inversé pour rediriger ou acheminer les requêtes (routage de couche 7, généralement les requêtes HTTP) vers les points de terminaison des microservices internes. La passerelle fournit un point de terminaison ou une URL unique pour les applications clientes puis mappe en interne les requêtes à un groupe de microservices internes. Cette fonctionnalité de routage facilite le découplage des applications clientes des microservices, mais elle est également très pratique pour moderniser une API monolithique en plaçant la passerelle API entre l’API monolithique et les applications clientes. Vous pouvez alors ajouter d’autres API sous forme de nouveaux microservices tout en continuant à utiliser l’API monolithique héritée jusqu’à ce qu’elle soit divisée ultérieurement en plusieurs microservices. Avec la passerelle API, les applications clientes ne sauront pas si les API utilisées sont implémentées comme des microservices internes ou comme une API monolithique et, plus important encore, lors du développement et de la refactorisation de l’API monolithique en microservices, grâce au routage de la passerelle API, les applications clientes ne seront pas impactées par les modifications d’URI.
+**Proxy inversé ou routage de passerelle**. La passerelle d’API offre un proxy inversé pour rediriger ou acheminer les requêtes (routage de couche 7, généralement les requêtes HTTP) vers les points de terminaison des microservices internes. La passerelle fournit un point de terminaison ou une URL unique pour les applications clientes puis mappe en interne les requêtes à un groupe de microservices internes. Cette fonctionnalité de routage permet de découpler les applications clientes des microservices, mais elle est également pratique lors de la modernisation d’une API monolithique en assiste la passerelle d’API entre l’API monolithique et les applications clientes. vous pouvez alors ajouter de nouvelles API en tant que nouveaux microservices tout en continuant à utiliser l’API monolithique héritée jusqu’à ce qu’elle soit Avec la passerelle API, les applications clientes ne sauront pas si les API utilisées sont implémentées comme des microservices internes ou comme une API monolithique et, plus important encore, lors du développement et de la refactorisation de l’API monolithique en microservices, grâce au routage de la passerelle API, les applications clientes ne seront pas impactées par les modifications d’URI.
 
 Pour plus d’informations, consultez [Modèle de routage de passerelle](https://docs.microsoft.com/azure/architecture/patterns/gateway-routing).
 
-**Agrégation de requêtes**. Dans le cadre du modèle de passerelle, vous pouvez agréger plusieurs requêtes de client (généralement des requêtes HTTP) ciblant plusieurs microservices internes dans une requête de client unique. Ce modèle est particulièrement pratique lorsqu’une page ou un écran d’un client a besoin d’informations provenant de plusieurs microservices. Avec cette approche, l’application cliente envoie une demande unique à la passerelle d’API qui répartit plusieurs requêtes aux microservices internes, puis agrège les résultats et envoie le tout à l’application cliente. Le principal avantage et l’objectif de ce modèle de conception est de réduire les échanges entre les applications clientes et l’API de service principal, ce qui est particulièrement important pour les applications à distance situées en dehors du centre de données où résident les microservices, notamment les applications mobiles ou les requêtes issues d’applications SPA provenant de JavaScript dans les navigateurs clients à distance. Pour les applications web normales effectuant les requêtes dans l’environnement du serveur (par exemple, une application web ASP.NET Core MVC), ce modèle n’est pas si important car la latence est bien plus faible que pour les applications clientes à distance.
+**Agrégation de requêtes**. Dans le cadre du modèle de passerelle, vous pouvez agréger plusieurs requêtes de client (généralement des requêtes HTTP) ciblant plusieurs microservices internes dans une requête de client unique. Ce modèle est particulièrement pratique lorsqu’une page ou un écran d’un client a besoin d’informations provenant de plusieurs microservices. Avec cette approche, l’application cliente envoie une demande unique à la passerelle d’API qui répartit plusieurs requêtes aux microservices internes, puis agrège les résultats et envoie le tout à l’application cliente. Le principal avantage et l’objectif de ce modèle de conception est de réduire les échanges excessifs entre les applications clientes et l’API backend, ce qui est particulièrement important pour les applications distantes en dehors du centre de code, où les microservices sont actifs, comme les applications mobiles ou les demandes provenant des applications SPA provenant de JavaScript dans les navigateurs distants client. Pour les applications web normales effectuant les requêtes dans l’environnement du serveur (par exemple, une application web ASP.NET Core MVC), ce modèle n’est pas si important car la latence est bien plus faible que pour les applications clientes à distance.
 
 Selon le produit Passerelle d’API que vous utilisez, il sera en mesure d’effectuer cette agrégation. Toutefois, dans de nombreux cas, il est plus simple de créer des microservices d’agrégation dans le cadre de la passerelle API. Vous définissez alors l’agrégation directement dans le code (code C#) :
 
@@ -144,7 +144,7 @@ Dans ce guide et dans l’exemple d’application de référence (eShopOnContain
 
 ### <a name="ocelot"></a>Ocelot
 
-[Ocelot](https://github.com/ThreeMammals/Ocelot) est une passerelle API légère qui est recommandée pour les approches plus simples. Ocelot est une passerelle API .NET Core open source conçue spécifiquement pour une architecture de microservices qui nécessite des points d’entrée unifiés dans son système. Elle est légère, rapide, évolutive et fournit le routage et l’authentification, parmi de nombreuses autres fonctionnalités.
+[Ocelot](https://github.com/ThreeMammals/Ocelot) est une passerelle API légère qui est recommandée pour les approches plus simples. Ocelot est une passerelle d’API .NET Core Open source spécialement créée pour les architectures de microservices nécessitant des points d’entrée unifiés dans leurs systèmes. Elle est légère, rapide et évolutive, et fournit le routage et l’authentification parmi de nombreuses autres fonctionnalités.
 
 La principale raison de choisir Ocelot pour l' [application de référence eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) est que Ocelot est une passerelle d’API légère .net Core que vous pouvez déployer dans le même environnement de déploiement d’application que celui dans lequel vous déployez vos microservices/conteneurs, par exemple un hôte de station d’accueil, Kubernetes, etc. Et étant donné qu’il est basé sur .NET Core, il s’agit d’une plateforme multiplateforme qui vous permet de déployer sur Linux ou Windows.
 
@@ -188,7 +188,7 @@ Après les sections consacrées à l’architecture initiale et à la présentat
 - **Clemens. Messagerie et microservices à GOTO 2016 (vidéo)** \
   <https://www.youtube.com/watch?v=rXi5CLjIQ9k>
 
-- **API Gateway in a Nutshell** (série de tutoriels sur la passerelle API ASP.Net Core) \
+- **Passerelle d’API en résumé** (série de didacticiels de la passerelle API ASP.net Core) \
   <https://www.pogsdotnet.com/2018/08/api-gateway-in-nutshell.html>
 
 >[!div class="step-by-step"]

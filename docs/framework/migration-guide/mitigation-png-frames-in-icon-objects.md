@@ -18,7 +18,7 @@ ms.locfileid: "80248893"
  Cette modification affecte les applications qui sont recompilées pour cibler le .NET Framework 4.6 et qui implémentent un traitement spécial pour l’exception <xref:System.ArgumentOutOfRangeException> qui est levée quand un objet <xref:System.Drawing.Icon> comporte des cadres PNG. Dans le cadre d’une exécution sous le .NET Framework 4.6, la conversion aboutit, il n’est plus levé d’exception <xref:System.ArgumentOutOfRangeException> et, de ce fait, le gestionnaire d’exceptions n’est plus appelé.  
   
 ### <a name="mitigation"></a>Limitation des risques  
- Si ce comportement n’est pas souhaitable, vous pouvez conserver le comportement précédent en ajoutant l’élément suivant à [ \<l’heure d’exécution>](../configure-apps/file-schema/runtime/runtime-element.md) section de votre fichier app.config:  
+ Si ce comportement n’est pas souhaitable, vous pouvez conserver le comportement précédent en ajoutant l’élément suivant à la section [ \< > du runtime](../configure-apps/file-schema/runtime/runtime-element.md) de votre fichier app. config :  
   
 ```xml  
 <AppContextSwitchOverrides

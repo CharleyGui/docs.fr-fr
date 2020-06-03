@@ -2,12 +2,12 @@
 title: Conception d’un modèle de domaine de microservice
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les concepts clés de la conception d’un modèle de domaine orienté DDD.
 ms.date: 01/30/2020
-ms.openlocfilehash: 234d6e518eac8de5b2f130b91adb32b6a24a7265
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: fe78e719570d5758b71531beab883e5c24a88dca
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144589"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306906"
 ---
 # <a name="design-a-microservice-domain-model"></a>Concevoir un modèle de domaine de microservice
 
@@ -35,7 +35,7 @@ La figure 7-8 illustre une entité de domaine qui implémente non seulement des
 
 **Figure 7-8**. Exemple de conception d’entité de domaine qui implémente des données en plus d’un comportement
 
-Une entité de modèle de domaine implémente des comportements via des méthodes : autrement dit, il ne s’agit pas d’un modèle « passif ». Bien entendu, vous pouvez parfois avoir des entités qui n’implémentent pas de logique dans le cadre de la classe d’entité. Cela peut se produire dans les entités enfants au sein d’un agrégat si l’entité enfant n’a pas de logique spéciale, car la plupart de la logique est définie dans la racine d’agrégat. Si vous avez un microservice complexe qui contient beaucoup de logique implémentée dans les classes de service au lieu des entités de domaine, vous risquez de vous retrouver avec le modèle de domaine anémique, décrit dans la section suivante.
+Une entité de modèle de domaine implémente des comportements via des méthodes : autrement dit, il ne s’agit pas d’un modèle « passif ». Bien entendu, vous pouvez parfois avoir des entités qui n’implémentent pas de logique dans le cadre de la classe d’entité. Cela peut se produire dans les entités enfants au sein d’un agrégat si l’entité enfant n’a pas de logique spéciale, car la plupart de la logique est définie dans la racine d’agrégat. Si vous avez un microservice complexe qui a une logique implémentée dans les classes de service plutôt que dans les entités de domaine, vous pouvez être dans le modèle de domaine anémique, comme expliqué dans la section suivante.
 
 ### <a name="rich-domain-model-versus-anemic-domain-model"></a>Modèle de domaine riche et modèle de domaine anémique
 
@@ -45,7 +45,7 @@ Le symptôme de base d’un modèle de domaine anémique est qu’à première v
 
 Bien entendu, quand vous utilisez un modèle de domaine anémique, il est utilisé à partir d’un ensemble d’objets de service (généralement nommé *couche métier*) qui capture toute la logique métier ou du domaine. La couche métier est posée sur le modèle de données et utilise ce dernier simplement comme des données.
 
-Le modèle de domaine anémique est simplement une conception de style procédural. Les objets d’entité anémique ne sont pas des objets réels, car ils n’ont pas de comportement (méthodes). Ils contiennent uniquement des propriétés de données et ne correspondent donc pas à une conception orientée objet. En plaçant tout le comportement dans des objets de service (la couche métier), vous finissez par obtenir du [code spaghetti](https://en.wikipedia.org/wiki/Spaghetti_code) ou des [scripts de transaction](https://martinfowler.com/eaaCatalog/transactionScript.html). Vous perdez donc les avantages liés au modèle de domaine.
+Le modèle de domaine anémique est simplement une conception de style procédural. Les objets d’entité anémique ne sont pas des objets réels, car ils n’ont pas de comportement (méthodes). Ils contiennent uniquement des propriétés de données et ne correspondent donc pas à une conception orientée objet. En plaçant tout le comportement dans les objets de service (la couche métier), vous finissez essentiellement par le [code spaghetti](https://en.wikipedia.org/wiki/Spaghetti_code) ou les [scripts de transaction](https://martinfowler.com/eaaCatalog/transactionScript.html), et vous perdez donc les avantages fournis par un modèle de domaine.
 
 Quand même, si votre microservice ou contexte limité est très simple (un service CRUD), le modèle de domaine anémique sous la forme d’objets d’entité avec seulement des propriétés de données peut vous suffire, et l’implémentation de modèles DDD plus complexes peut ne pas valoir le coup. Dans ce cas, il s’agit simplement d’un modèle de persistance, car vous avez intentionnellement créé une entité avec des données uniquement pour les besoins de CRUD.
 
@@ -72,7 +72,7 @@ Une entité nécessite une identité, mais il existe de nombreux objets dans un 
 
 Une entité dans un microservice peut ne pas être une entité dans un autre microservice, puisque dans le deuxième cas, le contexte limité peut avoir une signification différente. Par exemple, une adresse dans une application de commerce électronique peut ne pas avoir d’identité, car elle peut uniquement représenter un groupe d’attributs du profil du client pour une personne ou une société. Dans ce cas, l’adresse doit être classée en tant qu’objet de valeur. Toutefois, dans une application destinée à un fournisseur d’énergie électrique, l’adresse du client peut s’avérer importante pour le domaine d’entreprise. Par conséquent, l’adresse doit avoir une identité pour que le système de facturation puisse être directement lié à l’adresse. Dans cet exemple, une adresse doit être classée en tant qu’entité de domaine.
 
-Une personne désignée par un prénom et un nom est généralement une entité, car elle a une identité, même si ce prénom et ce nom coïncident avec un autre ensemble de valeurs, par exemple s’ils font également référence à une autre personne.
+Une personne avec un nom et un nom de famille est généralement une entité, car une personne a une identité, même si le nom et le nom coïncident avec un autre ensemble de valeurs, par exemple si ces noms font également référence à une autre personne.
 
 Les objets de valeur sont difficiles à gérer dans les bases de données relationnelles et ORM comme Entity Framework (EF), tandis que dans les bases de données orientées document, ils sont plus faciles à implémenter et à utiliser.
 
@@ -114,14 +114,14 @@ Dans la figure 7-9, vous pouvez voir des exemples d’agrégats, comme l’agr�
 
 Un modèle de domaine DDD est composé d’agrégats ; un agrégat peut avoir une ou plusieurs entités, et inclure aussi des objets de valeur. Notez que l’agrégat d’acheteur (Buyer) peut avoir des entités enfants supplémentaires, en fonction de votre domaine, comme c’est le cas dans le microservice de passation de commandes dans l’application de référence eShopOnContainers. La figure 7-9 illustre un cas où l’acheteur a une seule entité, qui est un exemple d’agrégat contenant seulement une racine d’agrégat.
 
-Afin de maintenir la séparation des agrégats et de conserver des limites claires entre eux, il est conseillé, dans un modèle de domaine DDD, d’interdire la navigation directe entre les agrégats et d’implémenter uniquement le champ de clé étrangère comme dans le [modèle de domaine du microservice de passation de commandes](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs) dans eShopOnContainers. L’entité de commande (Order) a uniquement un champ de clé étrangère pour l’acheteur, mais pas de propriété de navigation EF Core, comme le montre le code suivant :
+Afin de maintenir la séparation des agrégats et de conserver des limites claires entre eux, il est conseillé, dans un modèle de domaine DDD, d’interdire la navigation directe entre les agrégats et d’implémenter uniquement le champ de clé étrangère comme dans le [modèle de domaine du microservice de passation de commandes](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs) dans eShopOnContainers. L’entité Order n’a qu’un champ de clé étrangère pour l’acheteur, mais pas une propriété de navigation EF Core, comme le montre le code suivant :
 
 ```csharp
 public class Order : Entity, IAggregateRoot
 {
     private DateTime _orderDate;
     public Address Address { get; private set; }
-    private int? _buyerId; //FK pointing to a different aggregate root
+    private int? _buyerId; // FK pointing to a different aggregate root
     public OrderStatus OrderStatus { get; private set; }
     private readonly List<OrderItem> _orderItems;
     public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;

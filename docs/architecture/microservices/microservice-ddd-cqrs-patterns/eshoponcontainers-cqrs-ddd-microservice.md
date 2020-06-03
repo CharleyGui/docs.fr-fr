@@ -2,12 +2,12 @@
 title: Application des approches CQRS et CQS dans un microservice DDD dans eShopOnContainers
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre la façon dont CQRS est implémenté dans le microservice Ordering de l’application eShopOnContainers.
 ms.date: 03/03/2020
-ms.openlocfilehash: 0fd38a93a1056cda4abd2f9f89ee9efc626985c8
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 2916df596a6d0f887411f3ef0074aed395ef58ba
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144277"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306940"
 ---
 # <a name="apply-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>Appliquer des approches CQRS et CQS dans un microservice DDD dans eShopOnContainers
 
@@ -27,9 +27,9 @@ Comme le montre la figure 7-2 de la section précédente, ce guide suggère l’
 
 Pour l’implémentation du côté « requêtes », vous pouvez choisir entre plusieurs approches, à partir de votre ORM complet, comme EF Core, les projections du Mappeur, les procédures stockées, les vues, les vues matérialisées ou un micro ORM.
 
-Dans ce guide et dans eShopOnContainers (en particulier le microservice de commandes), nous avons choisi d’implémenter des requêtes simples à l’aide d’un micro-ORM comme [Dapper](https://github.com/StackExchange/dapper-dot-net). Cela vous permet d’implémenter toute requête basée sur des instructions SQL pour obtenir des performances optimales, grâce à un framework léger avec très peu de surcharge.
+Dans ce guide et dans eShopOnContainers (en particulier le microservice de commandes), nous avons choisi d’implémenter des requêtes simples à l’aide d’un micro-ORM comme [Dapper](https://github.com/StackExchange/dapper-dot-net). Cela vous permet d’implémenter n’importe quelle requête basée sur des instructions SQL pour obtenir des performances optimales grâce à une infrastructure légère avec peu de surcharge.
 
-Notez que, quand vous utilisez cette approche, toutes les mises à jour apportées à votre modèle qui affectent le mode de persistance des entités dans une base de données SQL nécessitent également des mises à jour distinctes pour les requêtes SQL utilisées par Dapper ou toutes les autres approches (non-EF) distinctes pour l’interrogation.
+Lorsque vous utilisez cette approche, toutes les mises à jour de votre modèle qui ont un impact sur la façon dont les entités sont conservées dans une base de données SQL nécessitent également des mises à jour séparées pour les requêtes SQL utilisées par dapper ou toute autre approche distincte (non EF) pour l’interrogation.
 
 ## <a name="cqrs-and-ddd-patterns-are-not-top-level-architectures"></a>Les modèles CQRS et DDD ne sont pas des architectures de niveau supérieur
 

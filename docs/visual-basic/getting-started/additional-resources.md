@@ -50,8 +50,8 @@ Les sites web suivants fournissent des instructions et peuvent vous aider à tro
 
 |URL|Description|
 |----------|----------------|
-|[Microsoft Support](https://support.microsoft.com)|Permet d'accéder aux articles de la Base de connaissances, ainsi qu'aux téléchargements, mises à jour, webcasts de support technique et autres services.|
-|[Questions sur Visual Studio](https://developercommunity.visualstudio.com)|Permet de signaler des bogues ou d'envoyer des suggestions à Microsoft à propos de .Net et Visual Studio. Vous pouvez également signaler un bogue en sélectionnant **Help** > **Send Feedback** > **Report a Problem** in Visual Studio.|
+|[Support Microsoft](https://support.microsoft.com)|Permet d'accéder aux articles de la Base de connaissances, ainsi qu'aux téléchargements, mises à jour, webcasts de support technique et autres services.|
+|[Questions sur Visual Studio](https://developercommunity.visualstudio.com)|Permet de signaler des bogues ou d'envoyer des suggestions à Microsoft à propos de .Net et Visual Studio. Vous pouvez également signaler un bogue en sélectionnant **aide**  >  **Envoyer des commentaires**  >  **signaler un problème** dans Visual Studio.|
 
 ## <a name="third-party-resources"></a>Ressources tierces
 

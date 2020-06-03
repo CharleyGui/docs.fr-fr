@@ -5,12 +5,12 @@ ms.date: 04/21/2020
 helpviewer_keywords:
 - garbage collection, background
 - background garbage collection
-ms.openlocfilehash: e2e25dcfff759d68087006b63544bf688798c029
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8134c0af55d74e57dcfce8c7174265b8c9902feb
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286078"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307070"
 ---
 # <a name="background-garbage-collection"></a>garbage collection d’arrière-plan
 
@@ -39,11 +39,11 @@ Le serveur d’arrière-plan garbage collection fonctionne de la même façon qu
 
 L’illustration suivante montre les garbage collection de *station de travail* en arrière-plan effectuées sur un thread distinct dédié :
 
-![Nettoyage de la mémoire de la station de travail en arrière-plan](./media/fundamentals/background-workstation-garbage-collection.png)
+![Nettoyage de la mémoire de la station de travail en arrière-plan](media/fundamentals/background-workstation-garbage-collection.png)
 
 L’illustration suivante montre les garbage collection de *serveur* d’arrière-plan effectuées sur des threads distincts et dédiés :
 
-![Nettoyage de la mémoire du serveur en arrière-plan](./media/fundamentals/background-server-garbage-collection.png)
+![Nettoyage de la mémoire du serveur en arrière-plan](media/fundamentals/background-server-garbage-collection.png)
 
 ## <a name="concurrent-garbage-collection"></a>Garbage collection simultané
 
@@ -63,7 +63,7 @@ Le garbage collection simultané est exécuté sur un thread dédié. Par défau
 
 L'illustration suivante montre le garbage collection simultané exécuté sur un thread dédié différent.
 
-![Threads de nettoyage de la mémoire simultanés](./media/gc-concurrent.png)
+![Threads de nettoyage de la mémoire simultanés](media/gc-concurrent.png)
 
 ## <a name="see-also"></a>Voir aussi
 

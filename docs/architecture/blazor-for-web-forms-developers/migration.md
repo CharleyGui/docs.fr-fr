@@ -4,12 +4,12 @@ description: Découvrez comment aborder la migration d’une application Web For
 author: twsouthwick
 ms.author: tasou
 ms.date: 09/19/2019
-ms.openlocfilehash: b614572bd04d9ec694b0feb95173373591d5e117
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: c70e4a4f57ddac97db4d58d9f876f7edc6aa6ce9
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144407"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306979"
 ---
 # <a name="migrate-from-aspnet-web-forms-to-blazor"></a>Migrer de ASP.NET Web Forms vers éblouissant
 
@@ -285,7 +285,7 @@ Pour plus d’informations sur le regroupement et la minimisation, consultez [re
 
 Une page dans une application Web Forms est un fichier avec l’extension *. aspx* . Une page de Web Forms peut souvent être mappée à un composant dans éblouissant. Un composant éblouissant est créé dans un fichier avec l’extension *. Razor* . Pour le projet eShop, cinq pages sont converties en page Razor.
 
-Par exemple, la vue Détails est composée de trois fichiers dans le projet Web Forms : *Details. aspx*, *Details.aspx.cs*et *Details.aspx.Designer.cs*. Lors de la conversion en éblouissant, le code-behind et le balisage sont combinés dans *Details. Razor*. La compilation Razor (équivalente à ce qui se trouve dans les fichiers *. Designer.cs* ) est stockée dans le répertoire *obj* et n’est pas, par défaut, visible dans **Explorateur de solutions**. La page Web Forms se compose du balisage suivant :
+Par exemple, la vue Détails comprend trois fichiers dans le projet Web Forms : *Details. aspx*, *Details.aspx.cs*et *Details.aspx.Designer.cs*. Lors de la conversion en éblouissant, le code-behind et le balisage sont combinés dans *Details. Razor*. La compilation Razor (équivalente aux fichiers *. Designer.cs* ) est stockée dans le répertoire *obj* et n’est pas, par défaut, visible dans **Explorateur de solutions**. La page Web Forms se compose du balisage suivant :
 
 ```aspx-csharp
 <%@ Page Title="Details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Details.aspx.cs" Inherits="eShopLegacyWebForms.Catalog.Details" %>

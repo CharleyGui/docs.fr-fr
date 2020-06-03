@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 955d4ec4a0bd0ddf2d022d4154fc6528b2abf3d0
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: be674f3292238b1983064408184777d379cf52a7
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144550"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307005"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Développer des applications ASP.NET Core MVC
 
@@ -88,7 +88,7 @@ Dans l’exemple précédent, la page en question correspondrait à une route av
 "/Products/123"
 ```
 
-Après la mise en correspondance d’une requête donnée avec une route, mais avant l’appel de la méthode d’action, ASP.NET Core MV procède à la [liaison de données](/aspnet/core/mvc/models/model-binding) et à la [validation du modèle](/aspnet/core/mvc/models/validation) sur la requête. La liaison de données convertit les données HTTP entrantes en types .NET (spécifiés comme paramètres de la méthode d’action à appeler). Par exemple, si la méthode d’action attend un paramètre id de type int, la liaison de données tente de fournir ce paramètre à partir d’une valeur fournie dans le cadre de la requête. Pour ce faire, la liaison de données recherche des valeurs dans un formulaire publié, dans la route elle-même et dans la chaîne de requête. Si une valeur id est trouvée, elle est convertie en entier avant d’être passée à la méthode d’action.
+Après la mise en correspondance d’une requête donnée avec une route, mais avant l’appel de la méthode d’action, ASP.NET Core MV procède à la [liaison de données](/aspnet/core/mvc/models/model-binding) et à la [validation du modèle](/aspnet/core/mvc/models/validation) sur la requête. La liaison de données convertit les données HTTP entrantes en types .NET (spécifiés comme paramètres de la méthode d’action à appeler). Par exemple, si la méthode d’action attend un `int id` paramètre, la liaison de modèle tentera de fournir ce paramètre à partir d’une valeur fournie dans le cadre de la requête. Pour ce faire, la liaison de données recherche des valeurs dans un formulaire publié, dans la route elle-même et dans la chaîne de requête. Si une valeur id est trouvée, elle est convertie en entier avant d’être passée à la méthode d’action.
 
 La validation du modèle se produit après la liaison de données, mais avant l’appel de la méthode d’action. À l’aide d’attributs facultatifs sur le type de modèle, la validation du modèle peut contribuer à assurer la conformité de l’objet modèle fourni à certaines exigences en matière de données. Certaines valeurs peuvent être spécifiées comme obligatoires, ou limitées à une certaine longueur ou plage numérique, etc. Si les attributs de validation sont spécifiés mais que le modèle n’est pas conforme à leurs exigences, la propriété ModelState. IsValid prend la valeur false et le jeu de règles de validation qui échoue est disponible pour envoi au client qui effectue la demande.
 
@@ -158,7 +158,7 @@ La classe Startup est un modèle à suivre pour structurer d’autres parties de
 
 ## <a name="structuring-the-application"></a>Structuration de l’application
 
-Les applications monolithiques ont généralement un point d’entrée unique. Dans le cas d’une application web ASP.NET Core, le point d’entrée est le projet web ASP.NET Core. Toutefois, cela ne veut pas dire que la solution doit se composer d’un projet unique. Il est utile de diviser l’application en plusieurs couches pour honorer la « séparation des préoccupations ». Une fois l’application divisée en couches, il est recommandé d’aller au-delà des dossiers pour séparer les projets et ainsi améliorer l’encapsulation. Pour atteindre ces objectifs avec une application ASP.NET Core, la meilleure approche consiste à utiliser une variante de l’architecture propre (« Clean Architecture ») décrite dans le chapitre 5. Selon cette approche, la solution de l’application est constituée de bibliothèques distinctes (UI, Infrastructure et ApplicationCore).
+Les applications monolithiques ont généralement un point d’entrée unique. Dans le cas d’une application web ASP.NET Core, le point d’entrée est le projet web ASP.NET Core. Toutefois, cela ne veut pas dire que la solution doit se composer d’un projet unique. Il est utile de diviser l’application en plusieurs couches pour honorer la « séparation des préoccupations ». Une fois l’application divisée en couches, il est recommandé d’aller au-delà des dossiers pour séparer les projets et ainsi améliorer l’encapsulation. Pour atteindre ces objectifs avec une application ASP.NET Core, la meilleure approche consiste à utiliser une variante de l’architecture propre (« Clean Architecture ») décrite dans le chapitre 5. À la suite de cette approche, la solution de l’application comprendra des bibliothèques distinctes pour l’interface utilisateur, l’infrastructure et ApplicationCore.
 
 Des projets de test distincts sont également inclus (les tests sont décrits dans le chapitre 9).
 
@@ -501,7 +501,7 @@ La conception pilotée par le domaine (DDD, Domain-Driven Design) est une métho
 
 Quand vous suivez une approche DDD pour développer des logiciels, les membres de votre équipe, y compris les contributeurs et les parties prenantes qui ne sont pas impliqués dans la partie technique, doivent développer un _langage omniprésent_ pour l’espace du problème. Autrement dit, vous devez employer la même terminologie pour le concept du monde réel à modéliser, son équivalent logiciel et toute structure permettant de rendre le concept persistant (comme des tables de base de données). Les concepts décrits dans le langage omniprésent doivent donc former la base de votre _modèle de domaine_.
 
-Votre modèle de domaine se compose d’objets qui interagissent entre eux pour représenter le comportement du système. Ces objets peuvent appartenir aux catégories suivantes :
+Votre modèle de domaine comprend des objets qui interagissent les uns avec les autres pour représenter le comportement du système. Ces objets peuvent appartenir aux catégories suivantes :
 
 - [Entités](https://deviq.com/entity/) : les entités représentent des objets avec un thread d’identité. Elles sont généralement stockées de manière persistante avec une clé qui permet de les récupérer ultérieurement.
 
@@ -537,7 +537,7 @@ DDD est bien adapté aux grandes applications avec une complexité métier signi
 
 DDD nécessite des investissements dans les domaines de la modélisation, de l’architecture et des communications qui peuvent ne pas être justifiés pour des applications de petite taille ou celles offrant des fonctionnalités limitées : création, lecture, mise à jour et suppression (CRUD, Create/Read/Update/Delete). Si vous choisissez de développer votre application selon la méthode DDD, mais que vous réalisez que votre domaine a un modèle anémique sans comportement, il vous faudra peut-être repenser votre approche. Soit DDD n’est pas adapté à votre application, soit vous avez besoin d’aide pour refactoriser votre application et encapsuler la logique métier dans le modèle de domaine plutôt que dans votre base de données ou l’interface utilisateur.
 
-Une approche hybride consiste à utiliser DDD pour les zones transactionnelles ou plus complexes de l’application, mais pas pour les parties plus simples (CRUD ou en lecture seule). Par exemple, vous n’avez pas besoin des contraintes d’un agrégat si vous interrogez des données pour afficher un rapport ou visualiser les données d’un tableau de bord. Il est parfaitement acceptable d’avoir un modèle de lecture distinct et plus simple pour de telles exigences.
+Une approche hybride consiste à utiliser DDD pour les zones transactionnelles ou plus complexes de l’application, mais pas pour les parties plus simples (CRUD ou en lecture seule). Par exemple, vous n’avez pas besoin des contraintes d’un agrégat si vous interrogez des données pour afficher un rapport ou pour visualiser les données d’un tableau de bord. Il est parfaitement acceptable d’avoir un modèle de lecture distinct et plus simple pour de telles exigences.
 
 > ### <a name="references--domain-driven-design"></a>Références – DDD
 >

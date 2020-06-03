@@ -11,7 +11,7 @@ ms.locfileid: "81463664"
 ---
 # <a name="dotnet-list-package"></a>dotnet list package
 
-**Cet article s’applique à:** ✔️ .NET Core 2.2 SDK et les versions ultérieures
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,2 et versions ultérieures
 
 ## <a name="name"></a>Nom
 
@@ -80,7 +80,7 @@ Le fichier projet ou solution à traiter. Si aucun fichier n’est spécifié, l
 
 - **`--framework <FRAMEWORK>`**
 
-  Affiche uniquement les packages applicables au [framework cible](../../standard/frameworks.md) spécifié. Pour spécifier plusieurs frameworks, exécutez l’option plusieurs fois. Par exemple : `--framework netcoreapp2.2 --framework netstandard2.0`.
+  Affiche uniquement les packages applicables au [framework cible](../../standard/frameworks.md) spécifié. Pour spécifier plusieurs frameworks, exécutez l’option plusieurs fois. Par exemple : `--framework netcoreapp2.2 --framework netstandard2.0`.
 
 - **`-h|--help`**
 

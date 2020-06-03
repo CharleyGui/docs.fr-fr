@@ -1,6 +1,6 @@
 ---
 title: Comment créer des exceptions définies par l’utilisateur avec des messages d’exception localisés
-description: Apprenez à créer des exceptions définies par l’utilisateur avec des messages d’exception localisés
+description: Découvrez comment créer des exceptions définies par l’utilisateur avec des messages d’exception localisés
 author: Youssef1313
 dev_langs:
 - csharp
@@ -15,16 +15,16 @@ ms.locfileid: "81243347"
 ---
 # <a name="how-to-create-user-defined-exceptions-with-localized-exception-messages"></a>Comment créer des exceptions définies par l’utilisateur avec des messages d’exception localisés
 
-Dans cet article, vous apprendrez comment créer des exceptions <xref:System.Exception> définies par l’utilisateur qui sont héritées de la classe de base avec des messages d’exception localisés à l’aide d’assemblages satellites.
+Dans cet article, vous allez apprendre à créer des exceptions définies par l’utilisateur qui sont héritées de la classe de base <xref:System.Exception> avec des messages d’exception localisés à l’aide d’assemblys satellites.
 
 ## <a name="create-custom-exceptions"></a>Créer des exceptions personnalisées
 
-.NET contient de nombreuses exceptions différentes que vous pouvez utiliser. Cependant, dans certains cas, lorsqu’aucun d’entre eux ne répond à vos besoins, vous pouvez créer vos propres exceptions personnalisées.
+.NET contient de nombreuses exceptions que vous pouvez utiliser. Toutefois, dans certains cas, si aucune d’entre elles ne répond à vos besoins, vous pouvez créer vos propres exceptions personnalisées.
 
-Supposons que vous voulez `StudentNotFoundException` créer un `StudentName` qui contient une propriété.
-Pour créer une exception personnalisée, suivez ces étapes :
+Supposons que vous souhaitiez créer un `StudentNotFoundException` qui contient une `StudentName` propriété.
+Pour créer une exception personnalisée, procédez comme suit :
 
-1. Créez une classe sérialisable <xref:System.Exception>qui hérite de . Le nom de la classe doit se terminer par «Exception»:
+1. Créez une classe sérialisable qui hérite de <xref:System.Exception> . Le nom de la classe doit se terminer par « exception » :
 
     ```csharp
     [Serializable]
@@ -38,7 +38,7 @@ Pour créer une exception personnalisée, suivez ces étapes :
     End Class
     ```
 
-1. Ajouter les constructeurs par défaut :
+1. Ajoutez les constructeurs par défaut :
 
     ```csharp
     [Serializable]
@@ -72,7 +72,7 @@ Pour créer une exception personnalisée, suivez ces étapes :
     End Class
     ```
 
-1. Définir les propriétés et les constructeurs supplémentaires :
+1. Définissez les propriétés et constructeurs supplémentaires suivants :
 
     ```csharp
     [Serializable]
@@ -123,7 +123,7 @@ Pour créer une exception personnalisée, suivez ces étapes :
 
 ## <a name="create-localized-exception-messages"></a>Créer des messages d’exception localisés
 
-Vous avez créé une exception personnalisée, et vous pouvez le jeter n’importe où avec le code comme ce qui suit:
+Vous avez créé une exception personnalisée et vous pouvez la lever n’importe où avec du code similaire à ce qui suit :
 
 ```csharp
 throw new StudentNotFoundException("The student cannot be found.", "John");
@@ -133,24 +133,24 @@ throw new StudentNotFoundException("The student cannot be found.", "John");
 Throw New StudentNotFoundException("The student cannot be found.", "John")
 ```
 
-Le problème avec la `"The student cannot be found."` ligne précédente est que c’est juste une chaîne constante. Dans une application localisée, vous souhaitez avoir des messages différents selon la culture de l’utilisateur.
-[Les assemblages par satellite](../../framework/resources/creating-satellite-assemblies-for-desktop-apps.md) sont un bon moyen de le faire. Un assemblage satellite est un .dll qui contient des ressources pour une langue spécifique. Lorsque vous demandez une ressource spécifique au moment de l’exécution, le CLR trouve cette ressource en fonction de la culture de l’utilisateur. Si aucune assemblage par satellite n’est trouvée pour cette culture, les ressources de la culture par défaut sont utilisées.
+Le problème avec la ligne précédente est qu' `"The student cannot be found."` il s’agit simplement d’une chaîne constante. Dans une application localisée, vous souhaitez avoir des messages différents en fonction de la culture de l’utilisateur.
+Les [assemblys satellites](../../framework/resources/creating-satellite-assemblies-for-desktop-apps.md) sont un bon moyen de le faire. Un assembly satellite est un fichier. dll qui contient des ressources pour une langue spécifique. Lorsque vous demandez des ressources spécifiques au moment de l’exécution, le CLR trouve cette ressource en fonction de la culture de l’utilisateur. Si aucun assembly satellite n’est trouvé pour cette culture, les ressources de la culture par défaut sont utilisées.
 
-Pour créer les messages d’exception localisés :
+Pour créer les messages d’exception localisés :
 
-1. Créez un nouveau dossier nommé *Ressources* pour tenir les fichiers de ressources.
-1. Ajoutez un nouveau fichier de ressources. Pour ce faire dans Visual Studio, cliquez à droite sur le dossier dans **Solution Explorer**, et **sélectionnez Ajouter** > de nouveaux**fichiers ressources****d’objets** > . Nommez le fichier *ExceptionMessages.resx*. Il s’agit du fichier des ressources par défaut.
-1. Ajoutez une paire de nom/valeur pour votre message d’exception, comme l’image suivante montre :
+1. Créez un dossier nommé *Resources* pour contenir les fichiers de ressources.
+1. Ajoutez-lui un nouveau fichier de ressources. Pour ce faire, dans Visual Studio, cliquez avec le bouton droit sur le dossier dans **Explorateur de solutions**, puis sélectionnez **Ajouter**  >  **un nouveau**  >  **fichier de ressources**d’élément. Nommez le fichier *ExceptionMessages. resx*. Il s’agit du fichier de ressources par défaut.
+1. Ajoutez une paire nom/valeur pour votre message d’exception, comme dans l’illustration suivante :
 
    ![Ajouter des ressources à la culture par défaut](media/add-resources-to-default-culture.jpg)
 
-1. Ajouter un nouveau fichier de ressources pour Français. *Nommez-le ExceptionMessages.fr-FR.resx*.
-1. Ajoutez une paire de nom/valeur pour le message d’exception à nouveau, mais avec une valeur Français:
+1. Ajoutez un nouveau fichier de ressources pour le français. Nommez-le *ExceptionMessages.fr-fr. resx*.
+1. Ajoutez une nouvelle paire nom/valeur pour le message d’exception, mais avec une valeur en français :
 
    ![Ajouter des ressources à la culture fr-FR](media/add-resources-to-fr-culture.jpg)
 
-1. Après avoir construit le projet, le dossier de sortie de construction doit contenir le dossier *fr-FR* avec un fichier *.dll,* qui est l’assemblage satellite.
-1. Vous jetez l’exception avec le code comme ce qui suit:
+1. Une fois le projet généré, le dossier de sortie de la génération doit contenir le dossier *fr-fr* avec un fichier *. dll* , qui est l’assembly satellite.
+1. Vous levez l’exception à l’aide d’un code semblable au suivant :
 
     ```csharp
     var resourceManager = new ResourceManager("FULLY_QUALIFIED_NAME_OF_RESOURCE_FILE", Assembly.GetExecutingAssembly());
@@ -163,7 +163,7 @@ Pour créer les messages d’exception localisés :
     ```
 
     > [!NOTE]
-    > Si le nom `TestProject` du projet est et le fichier de ressources *ExceptionMessages.resx* réside dans le `TestProject.Resources.ExceptionMessages`dossier *Ressources* du projet, le nom entièrement qualifié du fichier de ressources est .
+    > Si le nom du projet est `TestProject` et que le fichier de ressources *ExceptionMessages. resx* se trouve dans le dossier *ressources* du projet, le nom qualifié complet du fichier de ressources est `TestProject.Resources.ExceptionMessages` .
 
 ## <a name="see-also"></a>Voir aussi
 

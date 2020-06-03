@@ -2,23 +2,23 @@
 title: Implémentation d’un modèle de domaine de microservice avec .NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Accéder aux détails d’implémentation d’un modèle de domaine orienté DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: 8aff06a2e37dc87e5ba4f556e9b808598ff3653a
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 0b42ecc2440faf5870b2d99e31d03cda00b21ce0
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144576"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306905"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implémenter un modèle de domaine de microservice avec .NET Core
 
-Dans la section précédente, les modèles et principes fondamentaux de conception d’un modèle de domaine ont été expliqués. Il est maintenant temps de découvrir des méthodes possibles pour implémenter le modèle de domaine à l’aide de .NET Core (code C\# standard) et EF Core. Notez que votre modèle de domaine sera composé simplement de code. Il présentera seulement les exigences en matière de modèle EF Core, mais pas de dépendances réelles sur EF. Vous ne devez pas avoir de dépendances dures ni de références à EF Core ou n’importe quel autre ORM dans votre modèle de domaine.
+Dans la section précédente, les modèles et principes fondamentaux de conception d’un modèle de domaine ont été expliqués. Il est maintenant temps de découvrir des méthodes possibles pour implémenter le modèle de domaine à l’aide de .NET Core (code C\# standard) et EF Core. Votre modèle de domaine sera composé simplement de votre code. Il présentera seulement les exigences en matière de modèle EF Core, mais pas de dépendances réelles sur EF. Vous ne devez pas avoir de dépendances dures ni de références à EF Core ou n’importe quel autre ORM dans votre modèle de domaine.
 
 ## <a name="domain-model-structure-in-a-custom-net-standard-library"></a>Structure de modèle de domaine dans une bibliothèque .NET Standard personnalisée
 
 L’organisation des dossiers utilisée pour l’application de référence eShopOnContainers montre le modèle DDD pour l’application. Vous pouvez trouver qu’une organisation des dossiers différente communique plus clairement les choix de conception effectués pour votre application. Comme vous pouvez le voir dans la figure 7-10, il existe deux agrégats dans le modèle de domaine de commandes : l’agrégat des commandes et l’agrégat des acheteurs. Chaque agrégat est un groupe d’entités de domaine et d’objets de valeur, bien que vous puissiez également avoir un agrégat composé d’une entité de domaine unique (la racine d’agrégat ou l’entité racine).
 
 :::image type="complex" source="./media/net-core-microservice-domain-model/ordering-microservice-container.png" alt-text="Capture d’écran du projet Ordering. Domain dans Explorateur de solutions.":::
-La vue Explorateur de solutions pour le projet Ordering.Domain, montrant le dossier AggregatesModel contenant les dossiers BuyerAggregate et OrderAggregate, chacun d’eux contenant ses classes d’entité, ses fichiers objets de valeur, etc.
+La vue Explorateur de solutions pour le projet Ordering. Domain, qui affiche le dossier AggregatesModel contenant les dossiers BuyerAggregate et OrderAggregate, chacun contenant ses classes d’entité, ses fichiers objet de valeur, etc.
 :::image-end:::
 
 **Figure 7-10.** Structure de modèle de domaine pour le microservice de commandes dans eShopOnContainers
@@ -95,7 +95,7 @@ public class Order : Entity, IAggregateRoot
 }
 ```
 
-Il est important de noter qu’il s’agit d’une entité de domaine implémentée comme une classe OCT. Elle n’a aucune dépendance directe sur Entity Framework Core ni un autre framework d’infrastructure. Cette implémentation est telle qu’elle doit être dans DDD, juste du code C\# implémentant un modèle de domaine.
+Il est important de noter qu’il s’agit d’une entité de domaine implémentée comme une classe OCT. Elle n’a aucune dépendance directe sur Entity Framework Core ni un autre framework d’infrastructure. Cette implémentation est telle qu’elle devrait être dans DDD, juste le code C# qui implémente un modèle de domaine.
 
 En outre, la classe est décorée avec une interface nommée IAggregateRoot. Cette interface est une interface vide, parfois appelée *interface de marqueur*, qui est utilisée uniquement pour indiquer que cette classe d’entité est également une racine d’agrégat.
 
@@ -154,7 +154,7 @@ En outre, la nouvelle opération OrderItem(params) sera également contrôlée e
 
 Quand vous utilisez Entity Framework Core 1.1 ou version ultérieure, une entité DDD peut être mieux exprimée, car elle permet un [mappage à des champs](https://docs.microsoft.com/ef/core/modeling/backing-field) en plus des propriétés. Cela est utile quand vous protégez des collections d’entités enfants ou d’objets de valeur. Avec cette amélioration, vous pouvez utiliser de simples champs privés au lieu de propriétés, et vous pouvez implémenter toute mise à jour de la collection de champs dans les méthodes publiques et fournir un accès en lecture seule via la méthode AsReadOnly.
 
-Dans DDD, vous mettez à jour l’entité uniquement par le biais de méthodes dans l’entité (ou le constructeur) afin de contrôler n’importe quel invariant et la cohérence des données ; par conséquent, les propriétés sont définies uniquement avec un accesseur get. Les propriétés sont associées à des champs privés. Les membres privés sont uniquement accessibles à partir de la classe. Toutefois, il existe une exception : EF Core doit également définir ces champs (afin qu’il puisse retourner l’objet avec les valeurs appropriées).
+Dans DDD, vous souhaitez mettre à jour l’entité uniquement par le biais des méthodes de l’entité (ou du constructeur) afin de contrôler tout invariant et la cohérence des données, de sorte que les propriétés sont définies uniquement avec un accesseur Get. Les propriétés sont associées à des champs privés. Les membres privés sont uniquement accessibles à partir de la classe. Toutefois, il existe une exception : EF Core doit également définir ces champs (afin qu’il puisse retourner l’objet avec les valeurs appropriées).
 
 ### <a name="map-properties-with-only-get-accessors-to-the-fields-in-the-database-table"></a>Mapper des propriétés avec uniquement des accesseurs get aux champs de la table de base de données
 

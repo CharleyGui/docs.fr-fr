@@ -2,12 +2,12 @@
 title: Implémentation de la couche Application de microservices à l’aide de l’API web
 description: Comprendre l’injection de dépendances et les modèles de médiateur et leurs détails d’implémentation dans la couche d’application de l’API Web.
 ms.date: 01/30/2020
-ms.openlocfilehash: 3efa4939bb8762534af398d4e92361e81e668b85
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: c6e82b610a528b688cb4334bdec01700abbd2a62
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144602"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306927"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implémenter la couche Application des microservices avec l’API web
 
@@ -18,14 +18,14 @@ Comme mentionné précédemment, la couche Application peut être implémentée 
 Par exemple, le code de la couche Application du microservice Ordering est directement implémenté dans le cadre du projet **Ordering.API** (un projet d’API web ASP.NET Core), comme le montre la figure 7-23.
 
 :::image type="complex" source="./media/microservice-application-layer-implementation-web-api/ordering-api-microservice.png" alt-text="Capture d’écran du microservice Ordering. API dans le Explorateur de solutions.":::
-La vue Explorateur de solutions du microservice Ordering.API, montrant les sous-dossiers sous le dossier Application : Comportements, Commandes, DomainEventHandlers, IntegrationEvents, Modèles, Requêtes et Validations.
+La vue Explorateur de solutions du microservice Ordering. API, qui affiche les sous-dossiers sous le dossier de l’application : comportements, commandes, DomainEventHandlers, IntegrationEvents, modèles, requêtes et validations.
 :::image-end:::
 
 **Figure 7-23**. Couche Application dans le projet d’API web ASP.NET Core Ordering.API
 
 ASP.NET Core inclut un simple [conteneur IoC intégré](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) (représenté par l’interface IserviceProvider) qui prend en charge l’injection de constructeurs par défaut, et ASP.NET rend certains services disponibles par le biais de l’injection de dépendances. ASP.NET Core utilise le terme *service* pour tous les types que vous inscrivez, qui seront injectés par injection de dépendances. Vous configurez les services du conteneur intégré dans la méthode ConfigureServices de la classe Startup de votre application. Vos dépendances sont implémentées dans les services dont un type a besoin et que vous inscrivez dans le conteneur IoC.
 
-En règle générale, vous injectez des dépendances qui implémentent des objets d’infrastructure. Un dépôt est une dépendance type à injecter. Mais vous pouvez injecter toutes vos autres dépendances d’infrastructure. Pour simplifier les implémentations, vous pouvez injecter directement votre objet de modèle Unité de travail (objet DbContext EF), car DBContext est également l’implémentation de vos objets de persistance d’infrastructure.
+En règle générale, vous injectez des dépendances qui implémentent des objets d’infrastructure. Une dépendance classique à injecter est un référentiel. Mais vous pouvez injecter toutes vos autres dépendances d’infrastructure. Pour simplifier les implémentations, vous pouvez injecter directement votre objet de modèle Unité de travail (objet DbContext EF), car DBContext est également l’implémentation de vos objets de persistance d’infrastructure.
 
 Dans l’exemple suivant, vous pouvez voir comment .NET Core injecte les objets de dépôt requis par le biais du constructeur. La classe est un gestionnaire de commandes, que nous allons expliquer dans la section suivante.
 
@@ -433,7 +433,7 @@ Le diagramme ci-dessus montre un zoom avant à partir de l’image 7-24 : le co
 
 L’utilisation du modèle Médiateur prend tout son sens dans les applications d’entreprise, où les demandes de traitement peuvent devenir compliquées. Vous avez besoin de pouvoir ajouter un nombre ouvert de problèmes transversaux comme la journalisation, les validations, l’audit et la sécurité. Dans ce cas, vous pouvez compter sur un pipeline de médiateur (consultez [Modèle Médiateur](https://en.wikipedia.org/wiki/Mediator_pattern)) pour fournir un moyen à ces comportements supplémentaires ou problèmes transversaux.
 
-Un médiateur est un objet qui encapsule la « procédure » de ce processus : il coordonne l’exécution en fonction de l’État, de la façon dont un gestionnaire de commandes est appelé ou de la charge utile que vous fournissez au gestionnaire. Avec un composant médiateur, vous pouvez appliquer des problèmes transversaux de manière centralisée et transparente en appliquant des éléments décoratifs (ou [comportements de pipeline](https://github.com/jbogard/MediatR/wiki/Behaviors) depuis [MediatR 3](https://www.nuget.org/packages/MediatR/3.0.0)). Pour plus d’informations, consultez le [modèle Élément décoratif](https://en.wikipedia.org/wiki/Decorator_pattern).
+Un médiateur est un objet qui encapsule la « procédure » de ce processus : il coordonne l’exécution en fonction de l’État, de la façon dont un gestionnaire de commandes est appelé ou de la charge utile que vous fournissez au gestionnaire. Avec un composant médiateur, vous pouvez appliquer des problèmes transversaux de manière centralisée et transparente en appliquant des décorateurs (ou des [comportements de pipeline](https://github.com/jbogard/MediatR/wiki/Behaviors) depuis [médiateur 3](https://www.nuget.org/packages/MediatR/3.0.0)). Pour plus d’informations, consultez le [modèle Élément décoratif](https://en.wikipedia.org/wiki/Decorator_pattern).
 
 Les éléments décoratifs et les comportements sont similaires à la [programmation orientée aspect](https://en.wikipedia.org/wiki/Aspect-oriented_programming), uniquement appliquée à un pipeline de processus spécifique géré par le composant médiateur. Les aspects en programmation orientée aspect qui implémentent des problèmes transversaux sont appliqués selon les *tisseurs d’aspect* injectés au moment de la compilation ou en fonction de l’interception des appels d’objet. Les deux approches usuelles de la programmation orientée aspect sont parfois considérées comme « magiques », car il n’est pas facile de voir comment leur travail est effectué. Lorsque qu’il s’agit de traiter des problèmes ou bogues graves, la programmation orientée aspect peut rendre le débogage difficile. En revanche, ces éléments décoratifs/comportements sont explicites et uniquement appliqués dans le contexte du médiateur, donc le débogage est beaucoup plus prévisible et facile.
 
@@ -477,7 +477,7 @@ Jimmy Bogard a précisé une autre bonne raison d’utiliser le modèle Médiate
 
 > Je pense qu’il est intéressant de mentionner les tests ici : le modèle ouvre une fenêtre cohérente sur le comportement de votre système. Demande, réponse. Nous avons constaté que cet aspect est très utile pour créer des tests qui se comportent de manière cohérente.
 
-Tout d’abord, examinons un exemple de contrôleur WebAPI dans lequel vous utilisez réellement l’objet médiateur. Si vous n’utilisez pas l’objet médiateur, vous devez injecter toutes les dépendances de ce contrôleur, comme un objet enregistreur d’événements et d’autres. Ainsi, le constructeur est assez complexe. En revanche, si vous utilisez l’objet médiateur, le constructeur de votre contrôleur peut être beaucoup plus simple, avec seulement quelques dépendances plutôt que de nombreuses dépendances si vous n’en avez qu’une par opération transversale, comme dans l’exemple suivant :
+Tout d’abord, examinons un exemple de contrôleur WebAPI dans lequel vous utilisez réellement l’objet médiateur. Si vous n’utilisez pas l’objet médiateur, vous devez injecter toutes les dépendances de ce contrôleur, comme un objet enregistreur d’événements et d’autres. Par conséquent, le constructeur serait compliqué. En revanche, si vous utilisez l’objet médiateur, le constructeur de votre contrôleur peut être beaucoup plus simple, avec seulement quelques dépendances plutôt que de nombreuses dépendances si vous n’en avez qu’une par opération transversale, comme dans l’exemple suivant :
 
 ```csharp
 public class MyMicroserviceController : Controller
@@ -526,9 +526,9 @@ var requestCreateOrder = new IdentifiedCommand<CreateOrderCommand,bool>(createOr
 result = await _mediator.Send(requestCreateOrder);
 ```
 
-Toutefois, ce cas est également un peu plus avancé, car nous implémentons également des commandes idempotent. Le processus CreateOrderCommand doit être idempotent, donc si le même message est dupliqué par le biais du réseau, pour une raison quelconque, comme de nouvelles tentatives, la même commande commerciale n’est traitée qu’une seule fois.
+Toutefois, ce cas est également légèrement plus avancé, car nous implémentons également des commandes idempotent. Le processus CreateOrderCommand doit être idempotent, donc si le même message est dupliqué par le biais du réseau, pour une raison quelconque, comme de nouvelles tentatives, la même commande commerciale n’est traitée qu’une seule fois.
 
-Ceci est implémenté en wrappant la commande métier (dans ce cas CreateOrderCommand) et en l’incorporant dans une IdentifiedCommand générique suivi par un ID de chaque message arrivant sur le réseau et devant être idempotent.
+Cela est implémenté en encapsulant la commande Business (dans ce cas CreateOrderCommand) et en l’incorporant dans un IdentifiedCommand générique, qui est suivi par un ID de chaque message entrant sur le réseau qui doit être idempotent.
 
 Dans le code ci-dessous, vous pouvez voir qu’IdentifiedCommand n’est rien d’autre qu’un objet de transfert de données avec un ID et l’objet commande métier inclus dans un wrapper.
 
@@ -590,9 +590,9 @@ public class IdentifiedCommandHandler<T, R> :
 }
 ```
 
-Étant donné que IdentifiedCommand agit comme l’enveloppe d’une commande métier, lorsque la commande métier doit être traitée parce qu’il ne s’agit pas d’un ID répété, elle prend cette commande métier interne et la soumet à nouveau au Médiateur, comme dans la dernière partie du code indiqué ci-dessus lors de `_mediator.Send(message.Command)` l’exécution, à partir du [IdentifiedCommandHandler.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs).
+Étant donné que IdentifiedCommand agit comme l’enveloppe d’une commande métier, lorsque la commande métier doit être traitée parce qu’il ne s’agit pas d’un ID répété, elle prend cette commande métier interne et la renvoie au Médiateur, comme dans la dernière partie du code indiqué ci-dessus lors `_mediator.Send(message.Command)` de l’exécution, à partir du [IdentifiedCommandHandler.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs).
 
-Ce faisant, le gestionnaire de commandes métier, dans ce cas [CreateOrderCommandHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs), qui exécute des transactions dans la base de données Ordering, est lié et exécuté, comme le montre le code suivant.
+Dans ce cas, le gestionnaire de commandes métier est lié et exécuté, dans ce cas, le [CreateOrderCommandHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs), qui exécute des transactions sur la base de données de tri, comme indiqué dans le code suivant.
 
 ```csharp
 // CreateOrderCommandHandler.cs

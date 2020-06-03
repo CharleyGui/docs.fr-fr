@@ -56,4 +56,4 @@ Vous pouvez utiliser un objet <xref:System.Threading.Mutex> pour octroyer un dro
 - <xref:System.Threading.Monitor?displayProperty=nameWithType>
 - [Fonctionnalités et objets de threading](threading-objects-and-features.md)
 - [Threads et threading](threads-and-threading.md)
-- [Thread](index.md)
+- [Threads](index.md)

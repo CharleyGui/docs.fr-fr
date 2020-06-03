@@ -66,7 +66,7 @@ class SampleClass
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Reflection>
-- [Guide de programmation CMD](../../index.md)
+- [Guide de programmation C#](../../index.md)
 - [Écriture des attributs personnalisés](../../../../standard/attributes/writing-custom-attributes.md)
 - [Réflexion (C#)](../reflection.md)
 - [Attributs (C#)](./index.md)

@@ -2,12 +2,12 @@
 title: Communication basée sur des messages asynchrones
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Les communications asynchrones par messages représentent un concept essentiel dans l’architecture de microservices, car elles constituent le meilleur moyen de maintenir l’indépendance des microservices les uns par rapport aux autres tout en les synchronisant au bout du compte.
 ms.date: 09/20/2018
-ms.openlocfilehash: 476e42ccb39374c2bb50f22e41f60c10c563dc66
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: a8af94540a7906c474b9b784c28aa60ebae0a6e3
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144342"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306966"
 ---
 # <a name="asynchronous-message-based-communication"></a>Communication basée sur des messages asynchrones
 
@@ -35,7 +35,7 @@ Une fois la communication basée sur les messages lancée (avec des commandes ou
 
 **Figure 4-18**. Microservice unique recevant un message asynchrone
 
-Notez que les commandes provenant d’applications clientes peuvent être implémentées en tant que commandes synchrones HTTP. Si vous souhaitez bénéficier d’une scalabilité plus élevée ou si vous vous trouvez déjà dans un processus métier à base de messages, utilisez des commandes à base de messages.
+Lorsque les commandes proviennent d’applications clientes, elles peuvent être implémentées en tant que commandes HTTP synchrones. Utilisez les commandes basées sur les messages lorsque vous avez besoin d’une plus grande évolutivité ou lorsque vous êtes déjà dans un processus d’entreprise basé sur des messages.
 
 ## <a name="multiple-receivers-message-based-communication"></a>Communication basée sur les messages avec plusieurs récepteurs
 
@@ -57,7 +57,7 @@ Il est important de noter qu’il est possible de communiquer avec plusieurs mic
 
 **Figure 4-19**. Communication par message asynchrone pilotée par les événements
 
-Dans une communication asynchrone pilotée par les événements, un microservice publie les événements sur un bus d’événements. De nombreux microservices peuvent s’y abonner pour recevoir des notifications et agir en conséquence. Votre implémentation détermine le protocole à utiliser pour les communications basées sur messages et pilotées par les événements. [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) peut vous aider à obtenir une communication en file d’attente fiable.
+Dans une communication asynchrone pilotée par les événements, un microservice publie des événements sur un bus d’événements et de nombreux microservices peuvent s’y abonner, pour être notifié et agir dessus. Votre implémentation détermine le protocole à utiliser pour les communications basées sur messages et pilotées par les événements. [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) peut vous aider à obtenir une communication en file d’attente fiable.
 
 Quand vous utilisez un bus d’événements, vous pouvez utiliser un niveau d’abstraction (par exemple, une interface de bus d’événements) basé sur une implémentation connexe dans des classes avec du code utilisant l’API d’un répartiteur de message comme [RabbitMQ](https://www.rabbitmq.com/) ou d’un Service Bus comme [Azure Service Bus avec des rubriques](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions). Vous pouvez également utiliser un Service Bus de niveau supérieur comme NServiceBus, MassTransit ou Brighter pour définir votre bus d’événements et votre système de publication/abonnement.
 

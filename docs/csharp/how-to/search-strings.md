@@ -1,5 +1,5 @@
 ---
-title: Comment rechercher les chaînes (Guide de recherche)
+title: Comment rechercher des chaînes (Guide C#)
 ms.date: 02/21/2018
 helpviewer_keywords:
 - searching strings [C#]
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 04/11/2020
 ms.locfileid: "81121492"
 ---
-# <a name="how-to-search-strings"></a>Comment rechercher les chaînes
+# <a name="how-to-search-strings"></a>Comment rechercher des chaînes
 
 Vous pouvez utiliser deux stratégies principales pour rechercher du texte dans des chaînes. Les méthodes de la classe <xref:System.String> recherchent un texte spécifique. Les expressions régulières recherchent des modèles dans du texte.
 
@@ -52,7 +52,7 @@ Le modèle de recherche décrit le texte que vous recherchez. Le tableau suivant
 [!code-csharp-interactive[Search using regular expressions](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#3)]
   
 > [!TIP]
-> Les méthodes `string` sont généralement de meilleurs choix quand vous recherchez une chaîne précise. Les expressions régulières sont meilleures lorsque vous êtes à la recherche d’un modèle dans une chaîne source.
+> Les méthodes `string` sont généralement de meilleurs choix quand vous recherchez une chaîne précise. Les expressions régulières sont mieux adaptées lorsque vous recherchez un modèle dans une chaîne source.
 
 ## <a name="does-a-string-follow-a-pattern"></a>Une chaîne suit-elle un modèle ?
 
@@ -72,11 +72,11 @@ Le code suivant utilise des expressions régulières pour valider le format de c
 
 Ce seul modèle de recherche correspond à de nombreuses chaînes valides. Les expressions régulières sont mieux adaptées pour rechercher un modèle ou pour effectuer une validation par rapport à un modèle, et le sont moins pour une seule chaîne de texte.
 
-Vous pouvez essayer ces échantillons en regardant le code dans notre [référentiel GitHub](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](../../../samples/snippets/csharp/how-to/strings.zip).
+Vous pouvez essayer ces exemples en examinant le code dans notre [référentiel GitHub](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](../../../samples/snippets/csharp/how-to/strings.zip).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation CMD](../programming-guide/index.md)
+- [Guide de programmation C#](../programming-guide/index.md)
 - [Chaînes](../programming-guide/strings/index.md)
 - [LINQ et chaînes](../programming-guide/concepts/linq/linq-and-strings.md)
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>

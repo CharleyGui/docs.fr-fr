@@ -38,7 +38,7 @@ Le nouveau format, \*.csproj, est un format basé sur XML. L’exemple suivant m
 }
 ```
 
-N'est plus pris en charge. Dans csproj, cette propriété est déterminée par le nom du fichier projet, qui correspond généralement au nom du répertoire. Par exemple, `MyProjectName.csproj`.
+N'est plus pris en charge. Dans csproj, cette propriété est déterminée par le nom du fichier projet, qui correspond généralement au nom du répertoire. Par exemple : `MyProjectName.csproj`.
 
 Par défaut, le nom de fichier du projet spécifie également la valeur des propriétés `<AssemblyName>` et `<PackageId>`.
 

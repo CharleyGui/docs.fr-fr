@@ -82,13 +82,13 @@ using System.IO;
 
 L'interface <xref:System.Collections.Generic.IEnumerable%601> est définie dans l’espace de noms <xref:System.Collections.Generic>. La classe <xref:System.IO.File> est définie dans l’espace de noms <xref:System.IO>.
 
-Cette méthode est un type spécial de méthode C# appelé *méthode d’itérateur*. Les méthodes d’énumérateur retournent des séquences qui sont évaluées de manière tardive. Cela signifie que chaque élément de la séquence est généré lorsque cela est demandé par le code utilisant la séquence. Les méthodes d’énumérateur sont des méthodes qui contiennent [`yield return`](../language-reference/keywords/yield.md) une ou plusieurs instructions. L’objet retourné par la méthode `ReadFrom` contient le code pour générer chaque élément dans la séquence. Dans cet exemple, cela implique la lecture de la ligne de texte suivante à partir du fichier source et le renvoi de cette chaîne. Chaque fois que le code appelant demande l’élément suivant de la séquence, le code lit la ligne suivante du texte à partir du fichier et la renvoie. Quand le fichier est entièrement lu, la séquence indique qu’il n’y a pas d’autres éléments.
+Cette méthode est un type spécial de méthode C# appelé *méthode d’itérateur*. Les méthodes d’énumérateur retournent des séquences qui sont évaluées de manière tardive. Cela signifie que chaque élément de la séquence est généré lorsque cela est demandé par le code utilisant la séquence. Les méthodes d’énumérateur sont des méthodes qui contiennent une ou plusieurs [`yield return`](../language-reference/keywords/yield.md) instructions. L’objet retourné par la méthode `ReadFrom` contient le code pour générer chaque élément dans la séquence. Dans cet exemple, cela implique la lecture de la ligne de texte suivante à partir du fichier source et le renvoi de cette chaîne. Chaque fois que le code appelant demande l’élément suivant de la séquence, le code lit la ligne suivante du texte à partir du fichier et la renvoie. Quand le fichier est entièrement lu, la séquence indique qu’il n’y a pas d’autres éléments.
 
 Il existe deux autres éléments de syntaxe de C# qui peuvent être nouveaux pour vous. L' [`using`](../language-reference/keywords/using-statement.md) instruction dans cette méthode gère le nettoyage des ressources. La variable initialisée dans l’instruction `using` (`reader`, dans cet exemple) doit implémenter l’interface <xref:System.IDisposable>. Cette interface définit une méthode unique, `Dispose`, qui doit être appelée lorsque les ressources doivent être libérées. Le compilateur génère l’appel lorsque l’exécution atteint l’accolade fermante de l’instruction `using`. Le code généré par le compilateur garantit que la ressource est libérée même si une exception est levée à partir du code dans le bloc défini par l’instruction using.
 
 La variable `reader` est définie à l’aide du mot-clé `var`. [`var`](../language-reference/keywords/var.md)définit une *variable locale implicitement typée*. Cela signifie que le type de la variable est déterminé par le type au moment de la compilation de l’objet assigné à la variable. Ici, c’est la valeur retournée par la méthode <xref:System.IO.File.OpenText(System.String)>, qui est un objet <xref:System.IO.StreamReader>.
 
-À présent, nous allons renseigner le code pour lire le fichier dans `Main` la méthode :
+À présent, nous allons renseigner le code pour lire le fichier dans la `Main` méthode :
 
 ```csharp
 var lines = ReadFrom("sampleQuotes.txt");
@@ -156,7 +156,7 @@ Exécutez l’exemple et vous serez en mesure de lire à haute voix à son rythm
 
 ## <a name="async-tasks"></a>Tâches asynchrones
 
-Dans cette étape finale, vous allez ajouter le code pour écrire la sortie de façon asynchrone dans une tâche, tout en exécutant également une autre tâche pour lire l’entrée de l’utilisateur s’il souhaite accélérer ou ralentir l’affichage du texte, ou arrêter complètement l’affichage du texte. Il y a quelques étapes dans l’informatique et, à la fin, vous disposerez de toutes les mises à jour dont vous avez besoin. La première étape consiste à créer une méthode <xref:System.Threading.Tasks.Task> de retour asynchrone qui représente le code que vous avez créé jusqu’à présent pour lire et afficher le fichier.
+Dans cette étape finale, vous allez ajouter le code pour écrire la sortie de façon asynchrone dans une tâche, tout en exécutant également une autre tâche pour lire l’entrée de l’utilisateur s’il souhaite accélérer ou ralentir l’affichage du texte, ou arrêter complètement l’affichage du texte. Il y a quelques étapes dans l’informatique et, à la fin, vous disposerez de toutes les mises à jour dont vous avez besoin. La première étape consiste à créer une <xref:System.Threading.Tasks.Task> méthode de retour asynchrone qui représente le code que vous avez créé jusqu’à présent pour lire et afficher le fichier.
 
 Ajoutez cette méthode à votre `Program` classe (elle est extraite du corps de votre `Main` méthode) :
 
@@ -184,7 +184,7 @@ Vous pouvez appeler cette nouvelle méthode dans votre méthode `Main` :
 ShowTeleprompter().Wait();
 ```
 
-Ici, dans `Main`, le code attend de façon synchrone. Vous devez utiliser l’opérateur `await` au lieu d’attendre de manière synchrone lorsque cela est possible. Toutefois, dans la méthode d' `Main` une application console, vous ne pouvez `await` pas utiliser l’opérateur. Cela entraînerait la fermeture de l’application avant la fin de toutes les tâches.
+Ici, dans `Main`, le code attend de façon synchrone. Vous devez utiliser l’opérateur `await` au lieu d’attendre de manière synchrone lorsque cela est possible. Toutefois, dans la méthode d’une application console `Main` , vous ne pouvez pas utiliser l' `await` opérateur. Cela entraînerait la fermeture de l’application avant la fin de toutes les tâches.
 
 > [!NOTE]
 > Si vous utilisez C# 7.1 ou une version ultérieure, vous pouvez créer des applications de console à l’aide de la méthode [`async` `Main`](../whats-new/csharp-7-1.md#async-main).
@@ -247,7 +247,7 @@ namespace TeleprompterConsole
 }
 ```
 
-Placez cette classe dans un nouveau fichier et ajoutez-la à l’espace de noms `TeleprompterConsole`, comme indiqué ci-dessus. Vous devez également ajouter une `using static` instruction pour pouvoir référencer les `Min` méthodes et `Max` sans les noms de classe ou d’espace de noms englobants. Une [`using static`](../language-reference/keywords/using-static.md) instruction importe les méthodes d’une classe. Cela est en opposition avec les instructions `using` utilisées jusqu'à présent, et qui avaient importé toutes les classes à partir d’un espace de noms.
+Placez cette classe dans un nouveau fichier et ajoutez-la à l’espace de noms `TeleprompterConsole`, comme indiqué ci-dessus. Vous devez également ajouter une `using static` instruction pour pouvoir référencer les `Min` `Max` méthodes et sans les noms de classe ou d’espace de noms englobants. Une [`using static`](../language-reference/keywords/using-static.md) instruction importe les méthodes d’une classe. Cela est en opposition avec les instructions `using` utilisées jusqu'à présent, et qui avaient importé toutes les classes à partir d’un espace de noms.
 
 ```csharp
 using static System.Math;

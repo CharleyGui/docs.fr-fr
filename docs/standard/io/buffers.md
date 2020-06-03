@@ -1,5 +1,5 @@
 ---
-title: System.Buffers - .NET
+title: System. buffers-.NET
 ms.date: 12/05/2019
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -14,48 +14,48 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 04/21/2020
 ms.locfileid: "81739626"
 ---
-# <a name="work-with-buffers-in-net"></a>Travailler avec Buffers en .NET
+# <a name="work-with-buffers-in-net"></a>Utiliser des mémoires tampons dans .NET
 
-Cet article fournit un aperçu des types qui aident à lire les données qui s’exécutent à travers plusieurs tampons. Ils sont principalement utilisés <xref:System.IO.Pipelines.PipeReader> pour soutenir les objets.
+Cet article fournit une vue d’ensemble des types qui aident à lire les données qui s’exécutent sur plusieurs mémoires tampons. Ils sont principalement utilisés pour prendre en charge les <xref:System.IO.Pipelines.PipeReader> objets.
 
-## <a name="ibufferwritert"></a>IBufferWriter\<T\>
+## <a name="ibufferwritert"></a>IBufferWriter \< T\>
 
-<xref:System.Buffers.IBufferWriter%601?displayProperty=fullName>est un contrat pour l’écriture tampon synchrone. Au niveau le plus bas, l’interface:
+<xref:System.Buffers.IBufferWriter%601?displayProperty=fullName>est un contrat pour l’écriture en mémoire tampon synchrone. Au niveau le plus bas, l’interface :
 
-- Est basique et pas difficile à utiliser.
-- Permet l’accès à un <xref:System.Memory%601> ou <xref:System.Span%601>. Le `Memory<T>` `Span<T>` ou peut être écrit à `T` et vous pouvez déterminer combien d’articles ont été écrits.
+- Est de base et n’est pas difficile à utiliser.
+- Autorise l’accès à un <xref:System.Memory%601> ou un <xref:System.Span%601> . `Memory<T>`Ou `Span<T>` peut être écrit dans et vous pouvez déterminer le nombre d' `T` éléments qui ont été écrits.
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet)]
 
-La méthode précédente :
+La méthode précédente :
 
-- Demande un tampon d’au moins `IBufferWriter<byte>` 5 octets de l’utilisation `GetSpan(5)`.
-- Écrit octets pour la chaîne ASCII `Span<byte>`"Bonjour" à l’retourné .
-- Appels <xref:System.Buffers.IBufferWriter%601> pour indiquer combien d’octets ont été écrits au tampon.
+- Demande une mémoire tampon d’au moins 5 octets à l' `IBufferWriter<byte>` aide de `GetSpan(5)` .
+- Écrit des octets pour la chaîne ASCII « Hello » sur le retourné `Span<byte>` .
+- Appelle <xref:System.Buffers.IBufferWriter%601> pour indiquer le nombre d’octets qui ont été écrits dans la mémoire tampon.
 
-Cette méthode d’écriture utilise `Memory<T>` / `Span<T>` `IBufferWriter<T>`le tampon fourni par le . Alternativement, <xref:System.Buffers.BuffersExtensions.Write%2A> la méthode d’extension peut être `IBufferWriter<T>`utilisée pour copier un tampon existant à la . `Write`fait le travail `GetSpan` / `Advance` d’appel le cas échéant, `Advance` il n’est donc pas nécessaire d’appeler après l’écriture:
+Cette méthode d’écriture utilise la `Memory<T>` / `Span<T>` mémoire tampon fournie par `IBufferWriter<T>` . La <xref:System.Buffers.BuffersExtensions.Write%2A> méthode d’extension peut également être utilisée pour copier une mémoire tampon existante dans le `IBufferWriter<T>` . `Write`le travail d’appel est- `GetSpan` / `Advance` il approprié, donc il n’est pas nécessaire d’appeler `Advance` après l’écriture :
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet2)]
 
-<xref:System.Buffers.ArrayBufferWriter%601>est une `IBufferWriter<T>` mise en œuvre de dont le magasin de soutien est un tableau contigus unique.
+<xref:System.Buffers.ArrayBufferWriter%601>est une implémentation de `IBufferWriter<T>` dont le magasin de stockage est un tableau contigu unique.
 
-### <a name="ibufferwriter-common-problems"></a>Problèmes communs iBufferWriter
+### <a name="ibufferwriter-common-problems"></a>Problèmes courants liés à IBufferWriter
 
-- `GetSpan`et `GetMemory` retourner un tampon avec au moins la quantité demandée de mémoire. N’assumez pas les tailles exactes de tampon.
-- Il n’y a aucune garantie que les appels successifs retourneront le même tampon ou le même tampon de taille.
-- Un nouveau tampon doit `Advance` être demandé après avoir appelé pour continuer à écrire plus de données. Un tampon acquis précédemment ne `Advance` peut pas être écrit après a été appelé.
+- `GetSpan`et `GetMemory` retournent une mémoire tampon avec au moins la quantité de mémoire demandée. Ne supposez pas des tailles de mémoire tampon exactes.
+- Il n’y a aucune garantie que les appels successifs retourneront la même mémoire tampon ou la même mémoire tampon de taille.
+- Une nouvelle mémoire tampon doit être demandée après l’appel `Advance` de pour continuer à écrire davantage de données. Une mémoire tampon acquise précédemment ne peut pas être écrite dans après l' `Advance` appel de.
 
-## <a name="readonlysequencet"></a>LireOnlySequence\<T\>
+## <a name="readonlysequencet"></a>ReadOnlySequence \< T\>
 
-![LireOnlySequence montrant la mémoire dans le tuyau et en dessous de cette position de séquence de la mémoire lue seulement](media/buffers/ro-sequence.png)
+![ReadOnlySequence indiquant la mémoire dans le canal et en dessous de la position de séquence de la mémoire en lecture seule](media/buffers/ro-sequence.png)
 
-<xref:System.Buffers.ReadOnlySequence%601>est une struct qui peut représenter une séquence contigu ou non contigue de `T`. Il peut être construit à partir de:
+<xref:System.Buffers.ReadOnlySequence%601>est un struct qui peut représenter une séquence contiguë ou non contiguë de `T` . Il peut être construit à partir de :
 
 1. Une variable de type `T[]`.
 1. Une variable de type `ReadOnlyMemory<T>`.
-1. Une paire de nœuds <xref:System.Buffers.ReadOnlySequenceSegment%601> de liste et d’index liés pour représenter le début et la position de fin de la séquence.
+1. Paire de nœuds de liste liée <xref:System.Buffers.ReadOnlySequenceSegment%601> et d’index pour représenter la position de début et de fin de la séquence.
 
-La troisième représentation est la plus intéressante car elle `ReadOnlySequence<T>`a des implications de performance sur diverses opérations sur le :
+La troisième représentation est la plus intéressante, car elle a une incidence sur les performances de diverses opérations sur le `ReadOnlySequence<T>` :
 
 |Représentation|Opération|Complexité|
 ---|---|---|
@@ -68,128 +68,128 @@ La troisième représentation est la plus intéressante car elle `ReadOnlySequen
 |`ReadOnlySequenceSegment<T>`|`Slice(int, int)`|`O(number of segments)`|
 |`ReadOnlySequenceSegment<T>`|`Slice(SequencePostion, SequencePostion)`|`O(1)`|
 
-En raison de cette `ReadOnlySequence<T>` représentation mixte, `SequencePosition` les indices expose comme au lieu d’un intégrant. A `SequencePosition`:
+En raison de cette représentation mixte, le `ReadOnlySequence<T>` expose les index au `SequencePosition` lieu d’un entier. R `SequencePosition` :
 
-- Est une valeur opaque qui `ReadOnlySequence<T>` représente un indice dans l’endroit où il est originaire.
-- Se compose de deux parties, un intégreur et un objet. Ce que ces deux valeurs représentent `ReadOnlySequence<T>`sont liés à la mise en œuvre de .
+- Valeur opaque qui représente un index dans le d' `ReadOnlySequence<T>` où il provient.
+- Se compose de deux parties : un entier et un objet. Ce que représentent ces deux valeurs sont liées à l’implémentation de `ReadOnlySequence<T>` .
 
 ### <a name="access-data"></a>Accéder aux données
 
-Le `ReadOnlySequence<T>` expose les données comme un `ReadOnlyMemory<T>`enumerable de . L’énumération de chacun des segments peut être faite à l’aide d’un avant-plan de base :
+`ReadOnlySequence<T>`Expose des données en tant qu’énumérable de `ReadOnlyMemory<T>` . L’énumération de chacun des segments peut être effectuée à l’aide d’une instruction foreach de base :
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet3)]
 
-La méthode précédente recherche chaque segment pour un byte spécifique. Si vous avez besoin de garder `SequencePosition` <xref:System.Buffers.ReadOnlySequence%601.TryGet%2A?displayProperty=nameWithType> une trace de chaque segment , est plus approprié. L’échantillon suivant modifie le `SequencePosition` code précédent pour retourner un au lieu d’un intégrant. Le `SequencePosition` retour d’un a l’avantage de permettre à l’appelant d’éviter une deuxième analyse pour obtenir les données à un index spécifique.
+La méthode précédente recherche un octet spécifique dans chaque segment. Si vous devez effectuer le suivi de chaque segment `SequencePosition` , <xref:System.Buffers.ReadOnlySequence%601.TryGet%2A?displayProperty=nameWithType> est plus approprié. L’exemple suivant modifie le code précédent pour retourner un `SequencePosition` au lieu d’un entier. Le retour d’un `SequencePosition` a l’avantage de permettre à l’appelant d’éviter une deuxième analyse pour obtenir les données à un index spécifique.
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet4)]
 
-La combinaison `SequencePosition` `TryGet` et agit comme un enumérateur. Le champ de position est modifié au début de chaque itération pour être le début de chaque segment dans le `ReadOnlySequence<T>`.
+La combinaison de `SequencePosition` et `TryGet` agit comme un énumérateur. Le champ position est modifié au début de chaque itération pour démarrer chaque segment dans le `ReadOnlySequence<T>` .
 
-La méthode précédente existe comme `ReadOnlySequence<T>`méthode d’extension sur . <xref:System.Buffers.BuffersExtensions.PositionOf%2A>peut être utilisé pour simplifier le code précédent :
+La méthode précédente existe en tant que méthode d’extension sur `ReadOnlySequence<T>` . <xref:System.Buffers.BuffersExtensions.PositionOf%2A>peut être utilisé pour simplifier le code précédent :
 
 ```csharp
 SequencePosition? FindIndexOf(in ReadOnlySequence<byte> buffer, byte data) => buffer.PositionOf(data);
 ```
 
-#### <a name="process-a-readonlysequencet"></a>Traiter un ReadOnlySequence\<T\>
+#### <a name="process-a-readonlysequencet"></a>Traiter un ReadOnlySequence \< T\>
 
-Le `ReadOnlySequence<T>` traitement d’un peut être difficile puisque les données peuvent être divisées entre plusieurs segments de la séquence. Pour la meilleure performance, diviser le code en deux chemins :
+Le traitement d’un `ReadOnlySequence<T>` peut être difficile, car les données peuvent être réparties entre plusieurs segments au sein de la séquence. Pour des performances optimales, fractionnez le code en deux chemins d’accès :
 
-- Un chemin rapide qui traite du cas du segment unique.
-- Un chemin lent qui traite des données réparties entre les segments.
+- Un chemin d’accès rapide qui gère le cas de segment unique.
+- Chemin d’accès lent qui traite les données fractionnées entre les segments.
 
-Il existe quelques approches qui peuvent être utilisées pour traiter les données dans des séquences multi-segmentées :
+Il existe plusieurs approches qui peuvent être utilisées pour traiter les données dans des séquences multisegment :
 
-- Utilisez [`SequenceReader<T>`](#sequencereadert)le .
-- Segment de données par segment de `SequencePosition` par segment, en gardant une trace de l’indice et de l’indice dans le segment analysé. Cela évite les allocations inutiles, mais peut être inefficace, en particulier pour les petits tampons.
-- Copiez `ReadOnlySequence<T>` le à un tableau contigus et le traiter comme un seul tampon:
-  - Si la taille `ReadOnlySequence<T>` de la est petite, il peut être raisonnable de copier les données dans un tampon de pile alloué à l’aide de [l’opérateur stackalloc.](../../csharp/language-reference/operators/stackalloc.md)
-  - Copiez-le `ReadOnlySequence<T>` dans un <xref:System.Buffers.ArrayPool%601.Shared%2A?displayProperty=nameWithType>tableau mis en commun à l’aide de .
-  - Utilisez [`ReadOnlySequence<T>.ToArray()`](xref:System.Buffers.BuffersExtensions.ToArray%2A). Ce n’est pas recommandé dans les `T[]` sentiers chauds car il alloue un nouveau sur le tas.
+- Utilisez le [`SequenceReader<T>`](#sequencereadert) .
+- Analyser le segment de données par segment, en effectuant le suivi de l' `SequencePosition` index et dans le segment analysé. Cela évite les allocations inutiles, mais peut s’avérer inefficace, en particulier pour les mémoires tampons de petite taille.
+- Copiez le `ReadOnlySequence<T>` dans un tableau contigu et traitez-le comme une mémoire tampon unique :
+  - Si la taille du `ReadOnlySequence<T>` est faible, il peut être raisonnable de copier les données dans une mémoire tampon allouée par la pile à l’aide de l’opérateur [stackalloc](../../csharp/language-reference/operators/stackalloc.md) .
+  - Copiez `ReadOnlySequence<T>` dans un tableau mis en pool à l’aide de <xref:System.Buffers.ArrayPool%601.Shared%2A?displayProperty=nameWithType> .
+  - Utilisez [`ReadOnlySequence<T>.ToArray()`](xref:System.Buffers.BuffersExtensions.ToArray%2A). Cela n’est pas recommandé dans les chemins d’accès à chaud, car il alloue un nouveau `T[]` sur le tas.
 
-Les exemples suivants démontrent `ReadOnlySequence<byte>`quelques cas courants pour le traitement :
+Les exemples suivants illustrent des cas courants de traitement `ReadOnlySequence<byte>` :
 
-##### <a name="process-binary-data"></a>Traiter les données binaires
+##### <a name="process-binary-data"></a>Traiter des données binaires
 
-L’exemple suivant analyse une longueur d’intégriste big-endian 4-bytete depuis le début de la `ReadOnlySequence<byte>`.
+L’exemple suivant analyse une longueur d’entier Big-endian de 4 octets à partir du début de `ReadOnlySequence<byte>` .
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet5)]
 
 [!INCLUDE [localized code comments](../../../includes/code-comments-loc.md)]
 
-##### <a name="process-text-data"></a>Traiter les données textuelles
+##### <a name="process-text-data"></a>Traiter des données texte
 
 L’exemple suivant :
 
-- Trouve la première`\r\n`nouvelle ligne `ReadOnlySequence<byte>` ( ) dans le et la renvoie via le paramètre «ligne» out.
-- Coupe cette ligne, `\r\n` à l’exclusion du tampon d’entrée.
+- Recherche le premier saut de ligne ( `\r\n` ) dans `ReadOnlySequence<byte>` et le retourne via le paramètre out’line'.
+- Supprime cette ligne, à l’exclusion `\r\n` de de la mémoire tampon d’entrée.
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet6)]
 
 ##### <a name="empty-segments"></a>Segments vides
 
-Il est valable de stocker des `ReadOnlySequence<T>`segments vides à l’intérieur d’un . Les segments vides peuvent se produire lors de l’énumération explicite des segments :
+Il est valide de stocker des segments vides à l’intérieur d’un `ReadOnlySequence<T>` . Des segments vides peuvent se produire lors de l’énumération des segments de manière explicite :
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet7)]
 
-Le code précédent `ReadOnlySequence<byte>` crée un avec des segments vides et montre comment ces segments vides affectent les différentes API:
+Le code précédent crée un `ReadOnlySequence<byte>` avec des segments vides et montre comment ces segments vides affectent les différentes API :
 
-- `ReadOnlySequence<T>.Slice`avec `SequencePosition` un pointage vers un segment vide conserve ce segment.
-- `ReadOnlySequence<T>.Slice`avec un int saute sur les segments vides.
-- Énumérer les `ReadOnlySequence<T>` énumérations des segments vides.
+- `ReadOnlySequence<T>.Slice`en `SequencePosition` pointant sur un segment vide, vous conservez ce segment.
+- `ReadOnlySequence<T>.Slice`avec un int ignore les segments vides.
+- L’énumération de `ReadOnlySequence<T>` énumère les segments vides.
 
-### <a name="potential-problems-with-readonlysequencet-and-sequenceposition"></a>Problèmes potentiels avec ReadOnlySequence\<T> et SequencePosition
+### <a name="potential-problems-with-readonlysequencet-and-sequenceposition"></a>Problèmes potentiels avec ReadOnlySequence \< T> et SequencePosition
 
-Il ya plusieurs résultats inhabituels `ReadOnlySequence<T>` / `SequencePosition` lors de `ReadOnlySpan<T>` / `ReadOnlyMemory<T>` / `T[]` / `int`la gestion d’un vs.
+Il existe plusieurs résultats inhabituels lors de la gestion d’un `ReadOnlySequence<T>` / `SequencePosition` et d’un normal `ReadOnlySpan<T>` / `ReadOnlyMemory<T>` / `T[]` / `int` :
 
-- `SequencePosition`est un marqueur de `ReadOnlySequence<T>`position pour une position spécifique, et non absolue. Parce qu’il est `ReadOnlySequence<T>`relatif à un spécifique, il n’a pas de sens s’il est utilisé en dehors de l’endroit `ReadOnlySequence<T>` où il est originaire.
-- Arithmetic ne peut pas `SequencePosition` être `ReadOnlySequence<T>`effectuée sans le . Cela signifie faire `position++` des `ReadOnlySequence<T>.GetPosition(position, 1)`choses de base comme est écrit .
-- `GetPosition(long)`ne prend **pas** en charge les indices négatifs. Cela signifie qu’il est impossible d’obtenir l’avant-dernier personnage sans marcher tous les segments.
-- Deux `SequencePosition` ne peuvent pas être comparés, ce qui rend difficile de :
-  - Sachez si une position est supérieure ou inférieure à celle d’une autre.
+- `SequencePosition`est un marqueur de position pour un spécifique `ReadOnlySequence<T>` , et non une position absolue. Étant donné qu’il est relatif à un spécifique `ReadOnlySequence<T>` , il n’a pas de sens s’il est utilisé en dehors de l' `ReadOnlySequence<T>` emplacement d’origine.
+- L’arithmétique ne peut pas être exécutée sur `SequencePosition` sans `ReadOnlySequence<T>` . Cela signifie que les choses de base `position++` sont écrites `ReadOnlySequence<T>.GetPosition(position, 1)` .
+- `GetPosition(long)`ne prend **pas** en charge les index négatifs. Cela signifie qu’il est impossible d’extraire l’avant-dernier caractère sans parcourir tous les segments.
+- Deux `SequencePosition` ne peuvent pas être comparés, ce qui complique la tâche :
+  - Savoir si une position est supérieure ou inférieure à une autre position.
   - Écrivez des algorithmes d’analyse.
-- `ReadOnlySequence<T>`est plus grand qu’une référence d’objet et doit être passé [par ou](../../csharp/language-reference/keywords/in-parameter-modifier.md) [arbitre](../../csharp/language-reference/keywords/ref.md) dans la mesure du possible. Passer `ReadOnlySequence<T>` `in` ou `ref` réduire des copies de la [struct](../../csharp/language-reference/builtin-types/struct.md).
-- Segments vides :
-  - Sont valides `ReadOnlySequence<T>`dans un .
-  - Peut apparaître lors de `ReadOnlySequence<T>.TryGet` l’itération en utilisant la méthode.
-  - Peut apparaître trancher la `ReadOnlySequence<T>.Slice()` séquence `SequencePosition` en utilisant la méthode avec des objets.
+- `ReadOnlySequence<T>`est plus grand qu’une référence d’objet et doit être passé par in ou [ref](../../csharp/language-reference/keywords/ref.md) dans la mesure [du](../../csharp/language-reference/keywords/in-parameter-modifier.md) possible. `ReadOnlySequence<T>`Le passage par `in` ou `ref` réduit les copies du [struct](../../csharp/language-reference/builtin-types/struct.md).
+- Segments vides :
+  - Sont valides dans un `ReadOnlySequence<T>` .
+  - Peut apparaître lors de l’itération à l’aide de la `ReadOnlySequence<T>.TryGet` méthode.
+  - Peut apparaître le découpage de la séquence à l’aide de la `ReadOnlySequence<T>.Slice()` méthode avec des `SequencePosition` objets.
 
-## <a name="sequencereadert"></a>SéquenceLire\<T\>
+## <a name="sequencereadert"></a>SequenceReader \< T\>
 
 <xref:System.Buffers.SequenceReader%601>:
 
-- Est un nouveau type qui a été introduit dans .NET Core `ReadOnlySequence<T>`3.0 pour simplifier le traitement d’un .
-- Unifie les différences entre `ReadOnlySequence<T>` un segment `ReadOnlySequence<T>`unique et un segment multi-segment.
-- Fournit des aides pour la`byte` lecture `char`de données binaires et textuelles ( et ) qui peuvent ou ne peuvent pas être divisées entre les segments.
+- Est un nouveau type qui a été introduit dans .NET Core 3,0 pour simplifier le traitement d’un `ReadOnlySequence<T>` .
+- Unifie les différences entre un segment unique `ReadOnlySequence<T>` et plusieurs segments `ReadOnlySequence<T>` .
+- Fournit des assistances pour la lecture de données binaires et textuelles ( `byte` et `char` ) qui peuvent ou non être fractionnées entre les segments.
 
-Il existe des méthodes intégrées pour traiter les données binaires et délimitées. La section suivante montre à quoi ressemblent `SequenceReader<T>`ces mêmes méthodes avec le :
+Il existe des méthodes intégrées pour traiter le traitement des données binaires et délimitées. La section suivante montre à quoi ressemblent ces mêmes méthodes avec `SequenceReader<T>` :
 
 ### <a name="access-data"></a>Accéder aux données
 
-`SequenceReader<T>`a des méthodes pour énumérer `ReadOnlySequence<T>` les données à l’intérieur du direct. Le code suivant est un `ReadOnlySequence<byte>` `byte` exemple de traitement d’un à la fois :
+`SequenceReader<T>`a des méthodes pour énumérer des données dans `ReadOnlySequence<T>` directement. Le code suivant est un exemple de traitement d’un `ReadOnlySequence<byte>` a `byte` à la fois :
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet8)]
 
-Le `CurrentSpan` expose le segment `Span`actuel , qui est similaire à ce qui a été fait dans la méthode manuellement.
+Le `CurrentSpan` expose le du segment actuel `Span` , qui est similaire à ce qui a été effectué manuellement dans la méthode.
 
-### <a name="use-position"></a>Position d’utilisation
+### <a name="use-position"></a>Utiliser la position
 
-Le code suivant est `FindIndexOf` un `SequenceReader<T>`exemple d’implémentation de l’utilisation de la :
+Le code suivant est un exemple d’implémentation de `FindIndexOf` à l’aide de `SequenceReader<T>` :
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet9)]
 
-### <a name="process-binary-data"></a>Traiter les données binaires
+### <a name="process-binary-data"></a>Traiter des données binaires
 
-L’exemple suivant analyse une longueur d’intégriste big-endian 4-bytete depuis le début de la `ReadOnlySequence<byte>`.
+L’exemple suivant analyse une longueur d’entier Big-endian de 4 octets à partir du début de `ReadOnlySequence<byte>` .
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet11)]
 
-### <a name="process-text-data"></a>Traiter les données textuelles
+### <a name="process-text-data"></a>Traiter des données texte
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet10)]
 
-### <a name="sequencereadert-common-problems"></a>SéquenceLire\<\> T problèmes communs
+### <a name="sequencereadert-common-problems"></a>\< \> Problèmes courants liés à SequenceReader T
 
-- Parce `SequenceReader<T>` que c’est une structable mutable, elle doit toujours être transmise par [référence](../../csharp/language-reference/keywords/ref.md).
-- `SequenceReader<T>`est une [structif de ref](../../csharp/language-reference/builtin-types/struct.md#ref-struct) de sorte qu’il ne peut être utilisé que dans des méthodes synchrones et ne peut pas être stocké dans les champs. Pour plus d’informations, voir [Écrire un code Cmd sûr et efficace](../../csharp/write-safe-efficient-code.md).
-- `SequenceReader<T>`est optimisé pour une utilisation en tant que lecteur avant-seulement. `Rewind`est destiné à de petites sauvegardes qui `Read`ne `Peek`peuvent `IsNext` pas être traitées en utilisant d’autres , , et API.
+- Étant donné que `SequenceReader<T>` est un struct mutable, il doit toujours être passé par [référence](../../csharp/language-reference/keywords/ref.md).
+- `SequenceReader<T>`est un [struct de référence](../../csharp/language-reference/builtin-types/struct.md#ref-struct) afin qu’il ne puisse être utilisé que dans des méthodes synchrones et ne peut pas être stocké dans des champs. Pour plus d’informations, consultez [écrire du code C# sécurisé et efficace](../../csharp/write-safe-efficient-code.md).
+- `SequenceReader<T>`est optimisé pour une utilisation en tant que lecteur avant uniquement. `Rewind`est destiné aux petites sauvegardes qui ne peuvent pas être traitées à l’aide d’autres `Read` `Peek` API, et `IsNext` .

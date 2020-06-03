@@ -1,18 +1,18 @@
 ---
-title: Organisation et test de projets avec le CLI core .NET
+title: Organisation et test de projets avec la CLI .NET Core
 description: Ce didacticiel explique comment organiser et tester des projets .NET Core à partir de la ligne de commande.
 author: cartermp
 ms.date: 09/10/2018
-ms.openlocfilehash: 0d61e0fc004cfcb6d78c49475c7b7f0f523aad2c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 58c78c0f11ab1b275e4e4d05bf1da32562333c91
+ms.sourcegitcommit: 0a798a7e9680e2d0a5a81a3eaa203870ea782883
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78239909"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84325943"
 ---
-# <a name="organizing-and-testing-projects-with-the-net-core-cli"></a>Organisation et test de projets avec le CLI core .NET
+# <a name="organizing-and-testing-projects-with-the-net-core-cli"></a>Organisation et test de projets avec la CLI .NET Core
 
-Ce tutoriel, qui fait suite à [Bien démarrer avec .NET Core sur Windows/Linux/macOS en ligne de commande](cli-create-console-app.md), montre comment aller au-delà de la création d’une application console simple pour développer des applications avancées et bien organisées. Après une présentation des dossiers disponibles pour organiser votre code, ce didacticiel vous montre comment étendre une application console avec le framework de tests [xUnit](https://xunit.github.io/).
+Ce didacticiel suit le [Didacticiel : créer une application console avec .net core à l’aide de Visual Studio code, en](with-visual-studio-code.md)allant au-delà de la création d’une application console simple pour développer des applications avancées et bien organisées. Après une présentation des dossiers disponibles pour organiser votre code, ce didacticiel vous montre comment étendre une application console avec le framework de tests [xUnit](https://xunit.github.io/).
 
 ## <a name="using-folders-to-organize-code"></a>Utilisation de dossiers pour organiser le code
 
@@ -104,7 +104,7 @@ Le projet `NewTypes` est en place et vous l’avez organisé en conservant les t
 
 Accédez au dossier *src*, puis créez un dossier *test* et un sous-dossier *NewTypesTests*. À une invite de commandes à partir du dossier *NewTypesTests*, exécutez `dotnet new xunit`. Deux fichiers sont générés : *NewTypesTests.csproj* et *UnitTest1.cs*.
 
-Le projet de test ne peut pas actuellement tester les types dans `NewTypes` et nécessite une référence de projet au projet `NewTypes`. Pour ajouter une référence [`dotnet add reference`](../tools/dotnet-add-reference.md) de projet, utilisez la commande :
+Le projet de test ne peut pas actuellement tester les types dans `NewTypes` et nécessite une référence de projet au projet `NewTypes`. Pour ajouter une référence de projet, utilisez la [`dotnet add reference`](../tools/dotnet-add-reference.md) commande :
 
 ```dotnetcli
 dotnet add reference ../../src/NewTypes/NewTypes.csproj
@@ -181,7 +181,7 @@ Le code suivant montre la structure complète du projet :
       |__NewTypesTests.csproj
 ```
 
-Démarrez dans le répertoire *test/NewTypesTests*. Restaurer le projet [`dotnet restore`](../tools/dotnet-restore.md) d’essai avec la commande. Exécutez les [`dotnet test`](../tools/dotnet-test.md) tests avec la commande. Cette commande démarre le Test Runner spécifié dans le fichier projet.
+Démarrez dans le répertoire *test/NewTypesTests*. Restaurez le projet de test avec la [`dotnet restore`](../tools/dotnet-restore.md) commande. Exécutez les tests avec la [`dotnet test`](../tools/dotnet-test.md) commande. Cette commande démarre le Test Runner spécifié dans le fichier projet.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 

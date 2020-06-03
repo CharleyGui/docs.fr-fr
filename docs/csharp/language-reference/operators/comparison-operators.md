@@ -75,7 +75,7 @@ Pour plus d’informations, consultez la section [Opérateurs relationnels et de
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - <xref:System.IComparable%601?displayProperty=nameWithType>
 - [Opérateurs d'égalité](equality-operators.md)

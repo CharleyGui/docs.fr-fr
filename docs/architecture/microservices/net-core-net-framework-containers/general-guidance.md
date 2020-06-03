@@ -2,18 +2,18 @@
 title: Règle générale
 description: Architecture de microservices .NET pour les applications .NET en conteneur | Recommandations générales
 ms.date: 09/11/2018
-ms.openlocfilehash: e3bb4b8cf3e371c31d783fe4cfafeac282fb72b8
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 6e63d7804abc1703f17378584d58d66a933022c7
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144563"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306875"
 ---
 # <a name="general-guidance"></a>Règle générale
 
 Cette section indique brièvement dans quels cas choisir .NET Core ou .NET Framework. Vous trouverez des détails complémentaires sur ces choix dans les sections suivantes.
 
-Vous avez tout intérêt à utiliser .NET Core, avec des conteneurs Windows ou Linux, pour votre application serveur Docker en conteneur dans les cas suivants :
+Utilisez .NET Core, avec des conteneurs Linux ou Windows, pour votre application serveur d’amarrage en conteneur lorsque :
 
 - vous avez des besoins multiplateformes ; Par exemple, vous souhaitez utiliser à la fois des conteneurs Linux et Windows.
 
@@ -25,7 +25,7 @@ En somme, quand il s’agit de créer des applications .NET en conteneur, vous d
 
 L’autre avantage de .NET Core est lié au fait que vous pouvez exécuter différentes versions de .NET côte à côte pour les applications présentes sur une même machine. Cet avantage est plus important pour les serveurs ou les machines virtuelles qui n’utilisent pas de conteneurs, car les conteneurs isolent les versions de .NET dont l’application a besoin. (Du moment qu’elles sont compatibles avec le système d’exploitation sous-jacent.)
 
-Vous avez tout intérêt à utiliser le .NET Framework pour votre application serveur Docker en conteneur dans les cas suivants :
+Utilisez .NET Framework pour votre application serveur d’amarrage en conteneur lorsque :
 
 - Votre application utilise actuellement le .NET Framework et présente de fortes dépendances vis-à-vis de Windows.
 

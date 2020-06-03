@@ -1,36 +1,36 @@
 ---
-title: Workstation vs collecte des ordures serveur (GC)
-description: En savoir plus sur la collecte des stations de travail et des ordures serveur dans .NET.
+title: Station de travail et garbage collection serveur (GC)
+description: En savoir plus sur les garbage collection de station de travail et de serveur dans .NET.
 ms.date: 04/21/2020
 helpviewer_keywords:
 - garbage collection, workstation
 - garbage collection, server
 - workstation garbage collection
 - server garbage collection
-ms.openlocfilehash: 6b8e5f6802e5d44669b95d43d4e897fa4a418512
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 5ff2b1fe2f997913e071f35ec5abb167ed757608
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82103554"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306693"
 ---
 # <a name="workstation-and-server-garbage-collection"></a>Garbage collection de station de travail et de serveur
 
-Le garbage collector s'ajuste automatiquement et peut travailler dans une large gamme de scénarios. Cependant, vous pouvez [définir le type de collecte des ordures](../../core/run-time-config/garbage-collector.md#flavors-of-garbage-collection) en fonction des caractéristiques de la charge de travail. Le CLR fournit les types de garbage collection suivants :
+Le garbage collector s'ajuste automatiquement et peut travailler dans une large gamme de scénarios. Toutefois, vous pouvez [définir le type de garbage collection](../../core/run-time-config/garbage-collector.md#flavors-of-garbage-collection) en fonction des caractéristiques de la charge de travail. Le CLR fournit les types de garbage collection suivants :
 
-- Collecte des ordures de poste de travail (GC), qui est conçu pour les applications client. C’est la saveur GC par défaut pour les applications autonomes. Pour les applications hébergées, par exemple, celles hébergées par ASP.NET, l’hôte détermine la saveur GC par défaut.
+- Station de travail garbage collection (GC), conçue pour les applications clientes. Il s’agit de la version de catalogue global par défaut pour les applications autonomes. Pour les applications hébergées, par exemple, celles hébergées par ASP.NET, l’hôte détermine la version GC par défaut.
 
-  Le garbage collection de station de travail peut être simultané ou non simultané. La collecte simultanée (ou *de fond)* des ordures permet aux threads gérés de poursuivre leurs opérations lors d’une collecte des ordures. [La collecte des ordures de fond](background-gc.md) remplace la collecte [simultanée des ordures](background-gc.md#concurrent-garbage-collection) dans .NET Framework 4 et les versions ultérieures.
+  Le garbage collection de station de travail peut être simultané ou non simultané. La garbage collection simultanée (ou d' *arrière-plan*) permet aux threads managés de continuer à fonctionner pendant une garbage collection. L' [garbage collection d’arrière-plan](background-gc.md) remplace les [garbage collection simultanées](background-gc.md#concurrent-garbage-collection) dans .NET Framework 4 et versions ultérieures.
 
 - Garbage collection de serveur, prévu pour les applications serveur qui ont besoin d'un débit et d'une extensibilité.
 
-  - Dans .NET Core, la collecte des ordures du serveur peut être non simultanée ou arrière-plan.
+  - Dans .NET Core, les garbage collection serveur peuvent être non simultanés ou en arrière-plan.
 
-  - Dans .NET Framework 4.5 et les versions ultérieures, la collecte des ordures du serveur peut être non simultanée ou arrière-plan. Dans .NET Framework 4 et les versions précédentes, la collecte des ordures du serveur n’est pas simultanée.
+  - Dans .NET Framework 4,5 et versions ultérieures, le garbage collection de serveur peut être non simultané ou en arrière-plan. Dans .NET Framework 4 et versions antérieures, le garbage collection de serveur n’est pas simultané.
 
-L’illustration suivante montre les fils dédiés qui effectuent la collecte des ordures sur un serveur :
+L’illustration suivante montre les threads dédiés qui exécutent les garbage collection sur un serveur :
 
-![Threads de garbage collection du serveur](./media/gc-server.png)
+![Threads de garbage collection du serveur](media/gc-server.png)
 
 ## <a name="performance-considerations"></a>Considérations relatives aux performances
 
@@ -38,9 +38,9 @@ L’illustration suivante montre les fils dédiés qui effectuent la collecte de
 
 Voici les considérations liées aux threads et aux performances pour le garbage collection de station de travail :
 
-- La collecte se produit sur le thread utilisateur qui a déclenché le garbage collection et reste à la même priorité. Étant donné que les threads utilisateur sont généralement exécutés à la priorité normale, le garbage collector (qui s'exécute sur un thread de priorité normale) doit rivaliser avec d'autres threads pour le temps processeur. (Les fils qui exécutent le code natif ne sont pas suspendus sur le serveur ou la collecte des ordures de poste de travail.)
+- La collecte se produit sur le thread utilisateur qui a déclenché le garbage collection et reste à la même priorité. Étant donné que les threads utilisateur sont généralement exécutés à la priorité normale, le garbage collector (qui s'exécute sur un thread de priorité normale) doit rivaliser avec d'autres threads pour le temps processeur. (Les threads qui exécutent du code natif ne sont pas suspendus sur le serveur ou la station de travail garbage collection.)
 
-- La collecte des ordures de poste de travail est toujours utilisée sur un ordinateur qui n’a qu’un seul processeur, quel que soit le réglage de [configuration.](../../core/run-time-config/garbage-collector.md#systemgcservercomplus_gcserver)
+- Le garbage collection de station de travail est toujours utilisé sur un ordinateur doté d’un seul processeur, quel que soit le [paramètre de configuration](../../core/run-time-config/garbage-collector.md#systemgcservercomplus_gcserver).
 
 ### <a name="server-gc"></a>Garbage collector pour serveur
 
@@ -52,13 +52,13 @@ Voici les considérations liées aux threads et aux performances pour le garbage
 
 - Étant donné que plusieurs threads de garbage collection fonctionnent ensemble, le garbage collection de serveur est plus rapide que le garbage collection de station de travail sur un tas de même taille.
 
-- Le garbage collection de serveur présente souvent des segments de plus grande taille. Cependant, il ne s’agit que d’une généralisation : la taille du segment est spécifique à la mise en œuvre et peut être modifiée. Ne faites pas d’hypothèses sur la taille des segments attribués par le collecteur d’ordures lors de l’accordage de votre application.
+- Le garbage collection de serveur présente souvent des segments de plus grande taille. Toutefois, il ne s’agit que d’une généralisation : la taille de segment est spécifique à l’implémentation et peut faire l’objet de modifications. N’effectuez pas d’hypothèses sur la taille des segments alloués par le garbage collector lors du paramétrage de votre application.
 
-- Le garbage collection de serveur peut consommer beaucoup de ressources. Par exemple, imaginez qu’il existe 12 processus qui utilisent le serveur GC fonctionnant sur un ordinateur qui a quatre processeurs. Si tous les processus se produisent pour ramasser les ordures en même temps, ils interfèrent les uns avec les autres, car il y aurait 12 threads prévus sur le même processeur. Si les processus sont actifs, ce n’est pas une bonne idée de les avoir tous utiliser serveur GC.
+- Le garbage collection de serveur peut consommer beaucoup de ressources. Par exemple, imaginez qu’il y a 12 processus qui utilisent le garbage collector de serveur exécuté sur un ordinateur doté de quatre processeurs. Si tous les processus se produisent pour collecter les opérations de garbage collection en même temps, ils interféreraient entre eux, car 12 threads sont planifiés sur le même processeur. Si les processus sont actifs, il n’est pas judicieux de leur demander d’utiliser le garbage collection de serveur.
 
-Si vous exécutez des centaines d’instances d’une application, envisagez d’utiliser la collecte des ordures de poste de travail avec la collecte simultanée des ordures désactivées. Cela provoquera moins de changements de contexte, ce qui peut améliorer les performances.
+Si vous exécutez des centaines d’instances d’une application, envisagez d’utiliser des garbage collection de station de travail avec garbage collection simultanée désactivée. Cela provoquera moins de changements de contexte, ce qui peut améliorer les performances.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Collecte des ordures de fond](background-gc.md)
-- [Options de configuration en temps d’exécution pour la collecte des ordures](../../core/run-time-config/garbage-collector.md)
+- [garbage collection d’arrière-plan](background-gc.md)
+- [Options de configuration au moment de l’exécution pour garbage collection](../../core/run-time-config/garbage-collector.md)
