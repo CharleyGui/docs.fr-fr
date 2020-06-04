@@ -1,16 +1,16 @@
 ---
-title: "Comment : analyser des chemins d'accès"
+title: 'Procédure : analyser des chemins de fichiers'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - file names [Visual Basic], parsing [Visual Basic]
 - parsing, file paths [Visual Basic]
 ms.assetid: c1bd99c9-8160-456a-b5ab-60a49139b923
-ms.openlocfilehash: 6a959994be3a57795dc9f7e3447fa54bf075d3ec
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: eb7714a8594c0bce344eb2e48ebc5053dc3bfbb4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74335349"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84359940"
 ---
 # <a name="how-to-parse-file-paths-in-visual-basic"></a>Comment : analyser des chemins d'accès dans Visual Basic
 
@@ -42,4 +42,4 @@ L’objet <xref:Microsoft.VisualBasic.FileIO.FileSystem> fournit plusieurs méth
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CombinePath%2A>
 - <xref:System.IO.FileInfo>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A>
-- [Comment : placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+- [Procédure : placer la collection de fichiers dans un répertoire](how-to-get-the-collection-of-files-in-a-directory.md)

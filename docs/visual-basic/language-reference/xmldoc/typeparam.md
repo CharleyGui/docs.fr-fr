@@ -5,14 +5,14 @@ helpviewer_keywords:
 - typeparam XML tag
 - <typeparam> XML tag
 ms.assetid: 1bb5ba78-f060-478c-905c-77a2e43639af
-ms.openlocfilehash: 00cb62827381146c172e0d15a2c64b167c21f025
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2ad54845645172acb5b91935f5347a828510e3aa
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352187"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411484"
 ---
-# <a name="typeparam-visual-basic"></a>> \<typeparam (Visual Basic)
+# <a name="typeparam-visual-basic"></a>\<typeparam> (Visual Basic)
 Définit un nom de paramètre de type et une description.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -23,21 +23,21 @@ Définit un nom de paramètre de type et une description.
   
 ## <a name="parameters"></a>Paramètres  
  `name`  
- Nom du paramètre de type. Mettez le nom entre guillemets doubles (" ").  
+ Nom du paramètre de type. Mettez le nom entre guillemets doubles (" ").  
   
  `description`  
  Description du paramètre de type.  
   
 ## <a name="remarks"></a>Notes  
- Utilisez la balise `<typeparam>` dans le commentaire pour un type générique ou une déclaration de membre générique pour décrire l’un des paramètres de type.  
+ Utilisez la `<typeparam>` balise dans le commentaire pour un type générique ou une déclaration de membre générique pour décrire l’un des paramètres de type.  
   
- Compilez avec [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
+ Compilez avec [-doc](../../reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise la balise `<typeparam>` pour décrire le paramètre `id`.  
+ Cet exemple utilise la `<typeparam>` balise pour décrire le `id` paramètre.  
   
  [!code-vb[VbVbcnXmlDocComments#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#8)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Étiquettes XML pour les commentaires](../../../visual-basic/language-reference/xmldoc/index.md)
+- [Étiquettes XML pour les commentaires](index.md)

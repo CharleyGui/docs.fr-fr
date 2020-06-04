@@ -7,12 +7,12 @@ helpviewer_keywords:
 - My.Computer.Ports object
 - serial ports, sending strings to
 ms.assetid: 6ebf46cd-b2d0-4b2c-9a1f-be177b22ad52
-ms.openlocfilehash: b2051451142a7818a3b7d1bc564c5ae36b2579fe
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f78df9cf1bd75432ea645c4dcc06498915ceee49
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345584"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360291"
 ---
 # <a name="how-to-send-strings-to-serial-ports-in-visual-basic"></a>Guide pratique pour envoyer des chaînes aux ports série en Visual Basic
 
@@ -36,13 +36,13 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour envoyer des ch
   
 ## <a name="robust-programming"></a>Programmation fiable  
 
- Cet exemple suppose que l’ordinateur utilise `COM1`. Pour plus de souplesse, le code doit autoriser l’utilisateur à sélectionner le port série dans la liste des ports disponibles. Pour plus d’informations, consultez [Guide pratique pour afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
+ Cet exemple suppose que l’ordinateur utilise `COM1`. Pour plus de souplesse, le code doit autoriser l’utilisateur à sélectionner le port série dans la liste des ports disponibles. Pour plus d’informations, consultez [Guide pratique pour afficher les ports série disponibles](how-to-show-available-serial-ports.md).  
   
- Cet exemple utilise un bloc `Using` pour garantir que l’application ferme le port même si elle lève une exception. Pour plus d’informations, consultez [using, instruction](../../../../visual-basic/language-reference/statements/using-statement.md).  
+ Cet exemple utilise un bloc `Using` pour garantir que l’application ferme le port même si elle lève une exception. Pour plus d’informations, consultez [using, instruction](../../../language-reference/statements/using-statement.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.Devices.Ports>
 - <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>
-- [Procédure : passer des appels avec des modems attachés aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)
-- [Procédure : afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)
+- [Procédure : passer des appels avec des modems attachés aux ports série](how-to-dial-modems-attached-to-serial-ports.md)
+- [Procédure : afficher les ports série disponibles](how-to-show-available-serial-ports.md)

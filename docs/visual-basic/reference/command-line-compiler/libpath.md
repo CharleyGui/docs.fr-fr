@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /libpath compiler option [Visual Basic]
 - -libpath compiler option [Visual Basic]
 ms.assetid: 5f1c26c9-3455-4e89-bdf3-b12d6c2e655b
-ms.openlocfilehash: 9a5822a097828f818da020735c3822e86eb3236b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: dff7e0c3eb696b9b18f4c4e59240a26c1cb9782c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716637"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408547"
 ---
 # <a name="-libpath"></a>-libpath
 Spécifie l’emplacement des assemblys référencés.  
@@ -29,7 +29,7 @@ Spécifie l’emplacement des assemblys référencés.
 |`dirList`|Obligatoire. Liste de répertoires délimités par des points-virgules pour le compilateur à examiner si un assembly référencé est introuvable dans le répertoire de travail actuel (le répertoire à partir duquel vous appelez le compilateur) ou le répertoire système de l’common language runtime. Si le nom du répertoire contient un espace, mettez-le entre guillemets ("").|  
   
 ## <a name="remarks"></a>Notes  
- L' `-libpath` option spécifie l’emplacement des assemblys référencés par l’option [-Reference](../../../visual-basic/reference/command-line-compiler/reference.md) .  
+ L' `-libpath` option spécifie l’emplacement des assemblys référencés par l’option [-Reference](reference.md) .  
   
  Le compilateur recherche les références d’assembly qui ne sont pas complètes dans l’ordre suivant :  
   
@@ -37,11 +37,11 @@ Spécifie l’emplacement des assemblys référencés.
   
 2. Répertoire système du common language runtime.  
   
-3. Répertoires spécifiés par `-libpath`.  
+3. Répertoires spécifiés par `-libpath` .  
   
 4. Répertoires spécifiés par la variable d’environnement LIB.  
   
- L' `-libpath` option est additive ; Si vous le spécifiez plusieurs fois, il est ajouté à toutes les valeurs précédentes.  
+ L' `-libpath` option est additive ; si vous la spécifiez plusieurs fois, elle est ajoutée à toutes les valeurs précédentes.  
   
  Utilisez `-reference` pour spécifier une référence d’assembly.  
   
@@ -59,5 +59,5 @@ vbc -libpath:c:\;"c:\New Assemblies" -reference:t2.dll t2.vb
 ## <a name="see-also"></a>Voir aussi
 
 - [Assemblys dans .NET](../../../standard/assembly/index.md)
-- [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
-- [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Compilateur de ligne de commande de Visual Basic](index.md)
+- [Exemples de lignes de commande de compilation](sample-compilation-command-lines.md)

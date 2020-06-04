@@ -15,147 +15,147 @@ helpviewer_keywords:
 - grouping data [LINQ in Visual Basic]
 - Select clause [LINQ in Visual Basic]
 ms.assetid: 1146f6d0-fcb8-4f4d-8223-c9db52620d21
-ms.openlocfilehash: efae72c65ad67b4a1b157b67dcc4d4d65f31f77b
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 92ac5beb70526795eb140bd794e47981cebfea93
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78266376"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410914"
 ---
 # <a name="basic-query-operations-visual-basic"></a>Opérations de requête de base (Visual Basic)
-Ce sujet fournit une brève introduction aux expressions de la requête intégrée en langue (LINQ) dans Visual Basic, et à certains des types typiques d’opérations que vous effectuez dans une requête. Pour plus d'informations, voir les rubriques suivantes :  
+Cette rubrique fournit une brève introduction aux expressions LINQ (Language-Integrated Query) dans Visual Basic, ainsi qu’à certains types d’opérations classiques que vous effectuez dans une requête. Pour plus d'informations, voir les rubriques suivantes :  
   
- [Introduction à LINQ en Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ [Introduction à LINQ en Visual Basic](../../language-features/linq/introduction-to-linq.md)  
   
- [Requêtes](../../../../visual-basic/language-reference/queries/index.md)  
+ [Requêtes](../../../language-reference/queries/index.md)  
   
- [Procédure pas à pas : écriture de requêtes dans Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md)  
+ [Procédure pas à pas : écriture de requêtes dans Visual Basic](walkthrough-writing-queries.md)  
   
-## <a name="specifying-the-data-source-from"></a>Spécifier la source de données (à partir de)  
- Dans une requête LINQ, la première étape consiste à spécifier la source de données que vous souhaitez interroger. Par conséquent, la `From` clause dans une requête vient toujours en premier. Les opérateurs de requête sélectionnent et façonnent le résultat en fonction du type de source.  
+## <a name="specifying-the-data-source-from"></a>Spécification de la source de données (à partir de)  
+ Dans une requête LINQ, la première étape consiste à spécifier la source de données que vous souhaitez interroger. Par conséquent, la `From` clause dans une requête est toujours la première. Les opérateurs de requête sélectionnent et déforment le résultat en fonction du type de la source.  
   
  [!code-vb[VbLINQBasicOps#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#1)]  
   
- La `From` clause spécifie `customers`la source de `cust`données, et une variable de *portée*, . La variable de plage est comme une variable d’itération en boucle, sauf que dans une expression de requête, aucune itération réelle ne se produit. Lorsque la requête est exécutée, `For Each` souvent en utilisant une boucle, la variable `customers`de plage sert de référence à chaque élément successif dans . Comme le compilateur déduit le type de `cust`, vous n’avez pas à le spécifier explicitement. Pour des exemples de requêtes écrites avec et sans dactylographie explicite, voir [Type Relationships in Query Operations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md).  
+ La `From` clause spécifie la source de données, `customers` et une *variable de portée*, `cust` . La variable de portée est semblable à une variable d’itération de boucle, sauf que dans une expression de requête, aucune itération réelle n’est effectuée. Lorsque la requête est exécutée, souvent à l’aide d’une `For Each` boucle, la variable de portée sert de référence à chaque élément successif dans `customers` . Comme le compilateur déduit le type de `cust`, vous n’avez pas à le spécifier explicitement. Pour obtenir des exemples de requêtes écrites avec et sans typage explicite, consultez [relations de types dans les opérations de requête (Visual Basic)](type-relationships-in-query-operations.md).  
   
- Pour plus d’informations `From` sur la façon d’utiliser la clause dans Visual Basic, voir [From Clause](../../../../visual-basic/language-reference/queries/from-clause.md).  
+ Pour plus d’informations sur l’utilisation de la `From` clause dans Visual Basic, consultez [from, clause](../../../language-reference/queries/from-clause.md).  
   
-## <a name="filtering-data-where"></a>Données filtantes (Où)  
- Probablement l’opération de requête la plus courante est l’application d’un filtre sous la forme d’une expression Boolean. La requête ne renvoie alors que les éléments pour lesquels l’expression est vraie. Une `Where` clause est utilisée pour effectuer le filtrage. Le filtre précise quels éléments de la source de données à inclure dans la séquence résultante. Dans l’exemple suivant, seuls les clients qui ont une adresse à Londres sont inclus.  
+## <a name="filtering-data-where"></a>Filtrage des données (où)  
+ L’opération de requête la plus courante est probablement l’application d’un filtre sous la forme d’une expression booléenne. La requête retourne alors uniquement les éléments pour lesquels l’expression a la valeur true. Une `Where` clause est utilisée pour effectuer le filtrage. Le filtre spécifie les éléments de la source de données à inclure dans la séquence résultante. Dans l’exemple suivant, seuls les clients qui ont une adresse à Londres sont inclus.  
   
  [!code-vb[VbLINQBasicOps#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#2)]  
   
- Vous pouvez utiliser des `And` `Or` opérateurs logiques tels `Where` que et combiner des expressions de filtre dans une clause. Par exemple, pour ne retourner que les clients qui sont de Londres et dont le nom est Devon, utilisez le code suivant:  
+ Vous pouvez utiliser des opérateurs logiques tels que `And` et `Or` pour combiner des expressions de filtre dans une `Where` clause. Par exemple, pour retourner uniquement les clients de Londres et dont le nom est Devon, utilisez le code suivant :  
   
 ```vb  
 Where cust.City = "London" And cust.Name = "Devon"
 ```  
   
- Pour renvoyer les clients de Londres ou de Paris, utilisez le code suivant :  
+ Pour retourner les clients de Londres ou Paris, utilisez le code suivant :  
   
 ```vb  
 Where cust.City = "London" Or cust.City = "Paris"
 ```  
   
- Pour plus d’informations `Where` sur la façon d’utiliser la clause dans Visual Basic, voir [Where Clause](../../../../visual-basic/language-reference/queries/where-clause.md).  
+ Pour plus d’informations sur l’utilisation de la `Where` clause dans Visual Basic, consultez [clause WHERE](../../../language-reference/queries/where-clause.md).  
   
-## <a name="ordering-data-order-by"></a>Données de commande (Ordre par)  
- Il est souvent pratique de trier les données retournées dans un ordre particulier. La `Order By` clause fera en sorte que les éléments de la séquence retournée seront triés sur un champ ou un champ spécifié. Par exemple, la requête suivante trie `Name` les résultats en fonction de la propriété. Parce `Name` que c’est une chaîne, les données retournées seront triées par ordre alphabétique, de A à Z.  
+## <a name="ordering-data-order-by"></a>Tri des données (Order By)  
+ Il est souvent pratique de trier les données retournées dans un ordre particulier. La `Order By` clause entraîne le tri des éléments de la séquence retournée sur un champ ou des champs spécifiés. Par exemple, la requête suivante trie les résultats en fonction de la `Name` propriété. Étant donné que `Name` est une chaîne, les données retournées sont triées par ordre alphabétique, de a à Z.  
   
  [!code-vb[VbLINQBasicOps#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#3)]  
   
- Pour trier les résultats dans l’ordre inverse, de Z à A, utilisez la clause `Order By...Descending`. La valeur `Ascending` par `Ascending` `Descending` défaut est lorsque ni ni est spécifié.  
+ Pour trier les résultats dans l’ordre inverse, de Z à A, utilisez la clause `Order By...Descending`. La valeur par défaut est `Ascending` lorsque ni `Ascending` ni `Descending` n’est spécifié.  
   
- Pour plus d’informations `Order By` sur la façon d’utiliser la clause dans Visual Basic, voir [Ordre par clause](../../../../visual-basic/language-reference/queries/order-by-clause.md).  
+ Pour plus d’informations sur l’utilisation de la `Order By` clause dans Visual Basic, consultez [clause ORDER BY](../../../language-reference/queries/order-by-clause.md).  
   
-## <a name="selecting-data-select"></a>Sélection des données (Sélectionner)  
- La `Select` clause spécifie le formulaire et le contenu des éléments retournés. Par exemple, vous pouvez spécifier `Customer` si vos `Customer` résultats seront composés d’objets complets, d’une seule propriété, d’un sous-ensemble de propriétés, d’une combinaison de propriétés provenant de diverses sources de données ou d’un nouveau type de résultat basé sur un calcul. Quand la clause `Select` produit autre chose qu’une copie de l’élément source, l’opération est appelée *projection*.  
+## <a name="selecting-data-select"></a>Sélection des données (Select)  
+ La `Select` clause spécifie la forme et le contenu des éléments retournés. Par exemple, vous pouvez spécifier si vos résultats se composent d’objets complets, d’une `Customer` seule `Customer` propriété, d’un sous-ensemble de propriétés, d’une combinaison de propriétés provenant de diverses sources de données ou d’un nouveau type de résultat basé sur un calcul. Quand la clause `Select` produit autre chose qu’une copie de l’élément source, l’opération est appelée *projection*.  
   
- Pour récupérer une collection `Customer` composée d’objets complets, sélectionnez la variable de plage elle-même :  
+ Pour récupérer une collection qui se compose d' `Customer` objets complets, sélectionnez la variable de portée proprement dite :  
   
  [!code-vb[VbLINQBasicOps#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#4)]  
   
- Si `Customer` une instance est un grand objet qui a de nombreux champs, et `cust.Name`tout ce que vous voulez récupérer est le nom, vous pouvez sélectionner , comme indiqué dans l’exemple suivant. L’inférence de type local reconnaît que `Customer` cela modifie le type de résultat d’une collection d’objets à une collection de cordes.  
+ Si une `Customer` instance est un objet volumineux qui contient de nombreux champs, et que vous souhaitez récupérer le nom, vous pouvez sélectionner `cust.Name` , comme indiqué dans l’exemple suivant. L’inférence de type local reconnaît que ce modifie le type de résultat d’une collection d' `Customer` objets en une collection de chaînes.  
   
  [!code-vb[VbLINQBasicOps#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#5)]  
   
- Pour sélectionner plusieurs champs à partir de la source de données, vous avez deux choix :  
+ Pour sélectionner plusieurs champs de la source de données, vous avez deux possibilités :  
   
-- Dans `Select` la clause, spécifiez les champs que vous souhaitez inclure dans le résultat. Le compilateur définira un type anonyme qui a ces champs comme ses propriétés. Pour plus d’informations, voir [Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
+- Dans la `Select` clause, spécifiez les champs que vous souhaitez inclure dans le résultat. Le compilateur définit un type anonyme dont les propriétés sont les champs. Pour plus d’informations, consultez [types anonymes](../../language-features/objects-and-classes/anonymous-types.md).  
   
-     Étant donné que les éléments retournés dans l’exemple suivant sont des cas de type anonyme, vous ne pouvez pas vous référer au type par nom ailleurs dans votre code. Le nom désigné compilateur pour le type contient des caractères qui ne sont pas valides dans le code de base visuel normal. Dans l’exemple suivant, les éléments de la collection `londonCusts4` qui sont retournés par la requête sont des cas de type anonyme  
+     Étant donné que les éléments retournés dans l’exemple suivant sont des instances d’un type anonyme, vous ne pouvez pas faire référence au type par un autre nom dans votre code. Le nom désigné par le compilateur pour le type contient des caractères qui ne sont pas valides dans le code Visual Basic normal. Dans l’exemple suivant, les éléments de la collection qui est retournée par la requête dans `londonCusts4` sont des instances d’un type anonyme  
   
      [!code-vb[VbLINQBasicOps#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#6)]  
   
      -ou-  
   
-- Définissez un type nommé qui contient les champs particuliers que vous souhaitez inclure dans `Select` le résultat, et créez et initialisez des instances du type de la clause. Utilisez cette option uniquement si vous devez utiliser des résultats individuels en dehors de la collection dans laquelle ils sont retournés, ou si vous devez les passer comme paramètres dans les appels de méthode. Le type `londonCusts5` de dans l’exemple suivant est IEnumerable (De NamePhone).  
+- Définissez un type nommé qui contient les champs particuliers que vous souhaitez inclure dans le résultat, et créez et initialisez des instances du type dans la `Select` clause. Utilisez cette option uniquement si vous devez utiliser des résultats individuels en dehors de la collection dans laquelle ils sont retournés, ou si vous devez les passer en tant que paramètres dans les appels de méthode. Le type de `londonCusts5` dans l’exemple suivant est IEnumerable (of NamePhone).  
   
      [!code-vb[VbLINQBasicOps#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#7)]  
   
      [!code-vb[VbLINQBasicOps#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#8)]  
   
- Pour plus d’informations `Select` sur la façon d’utiliser la clause dans Visual Basic, voir [Select Clause](../../../../visual-basic/language-reference/queries/select-clause.md).  
+ Pour plus d’informations sur l’utilisation de la `Select` clause dans Visual Basic, consultez [Select, clause](../../../language-reference/queries/select-clause.md).  
   
-## <a name="joining-data-join-and-group-join"></a>Rejoindre data (Join and Group Join)  
- Vous pouvez combiner plus d’une source de données dans la `From` clause de plusieurs façons. Par exemple, le code suivant utilise deux sources de données et combine implicitement les propriétés des deux dans le résultat. La requête sélectionne les étudiants dont les noms de famille commencent par une voyelle.  
+## <a name="joining-data-join-and-group-join"></a>Jointure de données (jointure et jointure groupée)  
+ Vous pouvez combiner plusieurs sources de données dans la `From` clause de plusieurs façons. Par exemple, le code suivant utilise deux sources de données et combine implicitement les propriétés des deux dans le résultat. La requête sélectionne les élèves dont les noms commencent par une voyelle.  
   
  [!code-vb[VbLINQBasicOps#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#9)]  
   
 > [!NOTE]
-> Vous pouvez exécuter ce code avec la liste des étudiants créés dans [Comment : Créer une liste d’objets](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md).  
+> Vous pouvez exécuter ce code avec la liste des élèves créée dans [How to : Create a list of items](how-to-create-a-list-of-items.md).  
   
- Le `Join` mot clé `INNER JOIN` est équivalent à un SQL. Il combine deux collections basées sur des valeurs clés assorties entre les éléments des deux collections. La requête renvoie tout ou partie des éléments de collecte qui ont des valeurs clés correspondantes. Par exemple, le code suivant reproduit l’action de la jointure implicite précédente.  
+ Le `Join` mot clé est équivalent à un `INNER JOIN` dans SQL. Il combine deux collections en fonction des valeurs de clé correspondantes entre les éléments des deux collections. La requête retourne tout ou partie des éléments de la collection qui ont des valeurs de clé correspondantes. Par exemple, le code suivant duplique l’action de la jointure implicite précédente.  
   
  [!code-vb[VbLINQBasicOps#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#10)]  
   
- `Group Join`combine des collections en une seule collection `LEFT JOIN` hiérarchique, tout comme un dans SQL. Pour plus d’informations, voir [Clause De jointure](../../../../visual-basic/language-reference/queries/join-clause.md) et [clause de jointure de groupe](../../../../visual-basic/language-reference/queries/group-join-clause.md).  
+ `Group Join`combine les collections dans une collection hiérarchique unique, comme `LEFT JOIN` dans SQL. Pour plus d’informations, consultez [clause join](../../../language-reference/queries/join-clause.md) et [clause Group Join](../../../language-reference/queries/group-join-clause.md).  
   
-## <a name="grouping-data-group-by"></a>Groupement des données (Groupe par)  
- Vous pouvez `Group By` ajouter une clause pour regrouper les éléments dans un résultat de requête selon un ou plusieurs champs des éléments. Par exemple, le code suivant regroupe les élèves par année de classe.  
+## <a name="grouping-data-group-by"></a>Regroupement de données (Group by)  
+ Vous pouvez ajouter une `Group By` clause pour regrouper les éléments d’un résultat de requête en fonction d’un ou de plusieurs champs des éléments. Par exemple, le code suivant regroupe les étudiants par année de classe.  
   
  [!code-vb[VbLINQBasicOps#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#11)]  
   
- Si vous exécutez ce code en utilisant la liste des étudiants créés dans [Comment : Créer une liste d’éléments,](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)la sortie de l’instruction `For Each` est :  
+ Si vous exécutez ce code à l’aide de la liste des élèves créée dans [How to : Create a list of items](how-to-create-a-list-of-items.md), la sortie de l' `For Each` instruction est la suivante :  
   
- Année: Junior  
+ Année : Junior  
   
- Michael Tucker  
+ Tucker, Michael  
   
- Hugo Garcia  
+ Garcia, Hugo  
   
- Garcia, Debra  
+ Garcia, Marie  
   
- Lance Tucker  
+ Tucker, lance  
   
- Année: Senior  
+ Année : Senior  
   
  Omelchenko, Svetlana  
   
- Michiko Osada  
+ Osada, Michiko  
   
- Fadi Fakhouri  
+ Fakhouri, Fadi  
   
  Feng, Hanying  
   
- Terry Adams  
+ Adams, Terry  
   
- Année: Freshman  
+ Année : actualité  
   
  Mortensen, Sven  
   
- César Garcia  
+ Garcia, Cesar  
   
- La variation indiquée dans le code suivant commande les années de classe, puis commande les étudiants dans chaque année par nom de famille.  
+ La variation indiquée dans le code suivant trie les années de la classe, puis classe les étudiants au cours de chaque année par nom.  
   
  [!code-vb[VbLINQBasicOps#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#12)]  
   
- Pour plus `Group By`d’informations sur , voir [Groupe par clause](../../../../visual-basic/language-reference/queries/group-by-clause.md).  
+ Pour plus d’informations sur `Group By` , consultez [Group by, clause](../../../language-reference/queries/group-by-clause.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Collections.Generic.IEnumerable%601>
-- [Mise en route de LINQ dans Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
-- [Requêtes](../../../../visual-basic/language-reference/queries/index.md)
-- [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
+- [Mise en route de LINQ dans Visual Basic](getting-started-with-linq.md)
+- [Requêtes](../../../language-reference/queries/index.md)
+- [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](standard-query-operators-overview.md)
+- [LINQ](../../language-features/linq/index.md)

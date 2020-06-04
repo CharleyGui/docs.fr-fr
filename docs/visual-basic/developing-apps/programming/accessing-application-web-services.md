@@ -6,12 +6,12 @@ helpviewer_keywords:
 - My.WebServices object
 - applications [Visual Basic], Web services
 ms.assetid: 8ad5405b-e771-42b1-82d3-ce97af2cea9e
-ms.openlocfilehash: ad616bd46f92261ec5ad6ae81d0db48138631ed1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cf9a0c9840b9228b59af9959cf3a4efb9a1d1ea0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74349224"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410190"
 ---
 # <a name="accessing-application-web-services-visual-basic"></a>Accès aux services web d’une application (Visual Basic)
 
@@ -23,9 +23,9 @@ Le tableau suivant liste les moyens possibles d’accéder aux services web réf
 
 |À|Consultez|
 |---|---|
-|Appeler un service web|[My.WebServices (objet)](../../../visual-basic/language-reference/objects/my-webservices-object.md)|
-|Appeler un service web de façon asynchrone et gérer un événement quand il s’exécute|[Comment : appeler un service Web de manière asynchrone](../../../visual-basic/developing-apps/programming/how-to-call-a-web-service-asynchronously.md)|
+|Appeler un service web|[My.WebServices, objet](../../language-reference/objects/my-webservices-object.md)|
+|Appeler un service web de façon asynchrone et gérer un événement quand il s’exécute|[Procédure : Appeler un service web de manière asynchrone](how-to-call-a-web-service-asynchronously.md)|
 
 ## <a name="see-also"></a>Voir aussi
 
-- [My.WebServices (objet)](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+- [My.WebServices, objet](../../language-reference/objects/my-webservices-object.md)

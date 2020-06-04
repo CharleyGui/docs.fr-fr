@@ -7,12 +7,12 @@ helpviewer_keywords:
 - My.Computer.EventLog element
 - event logs, writing to
 ms.assetid: cadbc8c1-87af-4746-934e-55b79a4f6e2b
-ms.openlocfilehash: 511bb8fb16851872c1a16ae7627ed0fc6594337c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 298d6d85f8b21176b72db8e676617577eb03fada
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74352045"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410034"
 ---
 # <a name="how-to-write-to-an-application-event-log-visual-basic"></a>Comment : écrire dans le journal des événements de l'application (Visual Basic)
 
@@ -34,7 +34,7 @@ Pour afficher un journal des événements, vous pouvez utiliser l’ **Explorate
 
     2. Dans la boîte de dialogue **Ajouter un nouvel élément** , choisissez **Fichier de configuration de l’application**.
 
-    3. Cliquez sur **Ajouter**.
+    3. Cliquez sur **Add**.
 
 2. Recherchez la section `<listeners>` dans le fichier de configuration de l’application.
 
@@ -59,11 +59,11 @@ Pour afficher un journal des événements, vous pouvez utiliser l’ **Explorate
     Remplacez `APPLICATION_NAME` par le nom de votre application.
 
     > [!NOTE]
-    > En règle générale, une application écrit les erreurs seulement dans le journal des événements. Pour plus d’informations sur le filtrage de la sortie du journal, consultez [Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
+    > En règle générale, une application écrit les erreurs seulement dans le journal des événements. Pour plus d’informations sur le filtrage de la sortie du journal, consultez [Walkthrough: Filtering My.Application.Log Output](walkthrough-filtering-my-application-log-output.md).
 
 ## <a name="to-write-event-information-to-the-event-log"></a>Pour écrire des informations sur les événements dans le journal des événements
 
-Utilisez la méthode `My.Application.Log.WriteEntry` ou `My.Application.Log.WriteException` pour écrire des informations dans le journal des événements. Pour plus d’informations, consultez [Guide pratique pour écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) et [Guide pratique pour enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
+Utilisez la méthode `My.Application.Log.WriteEntry` ou `My.Application.Log.WriteException` pour écrire des informations dans le journal des événements. Pour plus d’informations, consultez [Guide pratique pour écrire des messages de journal](how-to-write-log-messages.md) et [Guide pratique pour enregistrer des exceptions](how-to-log-exceptions.md).
 
 Une fois l’écouteur de journalisation des événements configuré pour un assembly, il reçoit tous les messages écrits par `My.Application.Log` depuis cet assembly.
 
@@ -72,6 +72,6 @@ Une fois l’écouteur de journalisation des événements configuré pour un ass
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
-- [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Procédure : journaliser des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
-- [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
+- [Utilisation des journaux des applications](working-with-application-logs.md)
+- [Procédure : journaliser des exceptions](how-to-log-exceptions.md)
+- [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](walkthrough-determining-where-my-application-log-writes-information.md)
