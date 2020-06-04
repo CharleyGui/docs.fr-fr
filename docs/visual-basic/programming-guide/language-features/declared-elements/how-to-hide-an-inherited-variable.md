@@ -11,18 +11,18 @@ helpviewer_keywords:
 - declared elements [Visual Basic], about declared elements
 - variables [Visual Basic], hiding inherited
 ms.assetid: 765728d9-7351-4a30-999d-b5f34f024412
-ms.openlocfilehash: c20c36b26c90c82da4e8836799f499498ccc40e4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f49bba0497f9f4f2774b01284c815bba9aaed119
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345354"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84357268"
 ---
 # <a name="how-to-hide-an-inherited-variable-visual-basic"></a>Comment : masquer une variable héritée (Visual Basic)
 
 Une classe dérivée hérite de toutes les définitions de sa classe de base. Si vous souhaitez définir une variable à l’aide du même nom qu’un élément de la classe de base, vous pouvez masquer ou *occulter*cet élément de classe de base lorsque vous définissez votre variable dans la classe dérivée. Dans ce cas, le code dans la classe dérivée accède à votre variable, sauf si elle ignore explicitement le mécanisme d’occultation.
 
-Une autre raison pour laquelle vous pouvez souhaiter masquer une variable héritée est la protection contre la révision de la classe de base. La classe de base peut subir une modification qui modifie l’élément que vous héritez. Dans ce cas, le modificateur de `Shadows` force la résolution des références de la classe dérivée vers votre variable, plutôt que vers l’élément de la classe de base.
+Une autre raison pour laquelle vous pouvez souhaiter masquer une variable héritée est la protection contre la révision de la classe de base. La classe de base peut subir une modification qui modifie l’élément que vous héritez. Dans ce cas, le `Shadows` modificateur force la résolution des références de la classe dérivée vers votre variable, plutôt que vers l’élément de classe de base.
 
 ## <a name="to-hide-an-inherited-variable"></a>Pour masquer une variable héritée
 
@@ -50,7 +50,7 @@ Une autre raison pour laquelle vous pouvez souhaiter masquer une variable hérit
     End Class  
     ```  
   
-     L’exemple précédent déclare la variable `shadowString` dans la classe de base et l’occulte dans la classe dérivée. La procédure `ShowStrings` dans la classe dérivée affiche la version de l’occultation de la chaîne lorsque le nom `shadowString` n’est pas qualifié. Il affiche ensuite la version occultée lorsque `shadowString` est qualifié avec le mot clé `MyBase`.  
+     L’exemple précédent déclare la variable `shadowString` dans la classe de base et l’occulte dans la classe dérivée. La procédure `ShowStrings` dans la classe dérivée affiche la version de l’occultation de la chaîne lorsque le nom `shadowString` n’est pas qualifié. Il affiche ensuite la version occultée lorsque `shadowString` est qualifié avec le `MyBase` mot clé.  
   
 ## <a name="robust-programming"></a>Programmation fiable
 
@@ -58,11 +58,11 @@ L’occultation introduit plusieurs versions d’une variable portant le même n
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Références aux éléments déclarés](references-to-declared-elements.md)
+- [References to Declared Elements](references-to-declared-elements.md)
 - [Occultation dans Visual Basic](shadowing.md)
 - [Différences entre l'occultation et la substitution](differences-between-shadowing-and-overriding.md)
-- [Guide pratique : masquer une variable portant le même nom que votre variable](how-to-hide-a-variable-with-the-same-name-as-your-variable.md)
-- [Guide pratique : accéder à une variable masquée par une classe dérivée](how-to-access-a-variable-hidden-by-a-derived-class.md)
-- [Overrides](../../../../visual-basic/language-reference/modifiers/overrides.md)
+- [Comment : masquer une variable portant le même nom que votre variable](how-to-hide-a-variable-with-the-same-name-as-your-variable.md)
+- [Comment : accéder à une variable masquée par une classe dérivée](how-to-access-a-variable-hidden-by-a-derived-class.md)
+- [Remplacements](../../../language-reference/modifiers/overrides.md)
 - [Me, My, MyBase et MyClass](../../program-structure/me-my-mybase-and-myclass.md)
 - [Éléments fondamentaux de l’héritage](../objects-and-classes/inheritance-basics.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - -l compiler option [Visual Basic]
 - /l compiler option [Visual Basic]
 ms.assetid: 1885f24a-86f5-486c-a064-9fb7e455ccec
-ms.openlocfilehash: c15f55f3a3c2b4e404767ddf96e258bc1e9771d7
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 6082806591d398aa8b16b44e769a3f8078ce62d9
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716756"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387736"
 ---
 # <a name="-link-visual-basic"></a>-Link (Visual Basic)
 Fait que le compilateur rend disponible pour le projet en cours de compilation les informations de type COM des assemblys spécifiés.  
@@ -59,7 +59,7 @@ ou
   
  Utilisez [-LIBPATH](libpath.md) pour spécifier le répertoire dans lequel se trouvent une ou plusieurs références d’assembly.  
   
- À l’instar de l’option de `-link` compilateur [-Reference](reference.md) , l’option de compilateur utilise le fichier réponse Vbc. rsp, qui référence les assemblys .NET Framework fréquemment utilisés. Utilisez l’option [de compilateur-noconfig](noconfig.md) si vous ne souhaitez pas que le compilateur utilise le fichier Vbc. rsp.  
+ À l’instar de l’option [de compilateur-Reference](reference.md) , l' `-link` option de compilateur utilise le fichier réponse Vbc. rsp, qui référence les assemblys .NET Framework fréquemment utilisés. Utilisez l’option [de compilateur-noconfig](noconfig.md) si vous ne souhaitez pas que le compilateur utilise le fichier Vbc. rsp.  
   
  La forme abrégée de `-link` est `-l`.  
   
@@ -83,7 +83,7 @@ ou
  [!code-vb[VbLinkCompiler#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vblinkcompiler/vb/module1.vb#5)]  
   
 ## <a name="example"></a>Exemple  
- La ligne de commande suivante compile `OfficeApp.vb` le fichier source et les assemblys de `COMData1.dll` référence `COMData2.dll` à partir `OfficeApp.exe`de et à produire.  
+ La ligne de commande suivante compile le fichier source `OfficeApp.vb` et les assemblys de référence à partir de `COMData1.dll` et `COMData2.dll` à produire `OfficeApp.exe` .  
   
 ```console  
 vbc -link:COMData1.dll,COMData2.dll -out:OfficeApp.exe OfficeApp.vb  
@@ -95,6 +95,6 @@ vbc -link:COMData1.dll,COMData2.dll -out:OfficeApp.exe OfficeApp.vb
 - [Procédure pas à pas : incorporation de types provenant d’assemblys managés](../../../standard/assembly/embed-types-visual-studio.md)
 - [-Reference (Visual Basic)](reference.md)
 - [-noconfig](noconfig.md)
-- [-LIBPATH](libpath.md)
+- [-libpath](libpath.md)
 - [Exemples de lignes de commande de compilation](sample-compilation-command-lines.md)
-- [Introduction à COM Interop](../../../visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)
+- [Présentation de COM Interop](../../programming-guide/com-interop/introduction-to-com-interop.md)

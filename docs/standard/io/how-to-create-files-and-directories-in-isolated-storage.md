@@ -14,12 +14,12 @@ helpviewer_keywords:
 - stores, creating files and directories
 - storing data using isolated storage, creating files and directories
 ms.assetid: 2ca4d2a4-809b-4f00-bc08-bf4a64d3a5c3
-ms.openlocfilehash: b74bf62dabe24765e07ffa6820cc1675122a9122
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d5e086e77ab6309fa0757ef32b620e0fdbc1f627
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288548"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413038"
 ---
 # <a name="how-to-create-files-and-directories-in-isolated-storage"></a>Procédure : créer des fichiers et des répertoires dans un stockage isolé
 Après avoir obtenu un magasin isolé, vous pouvez créer des répertoires et des fichiers pour le stockage des données. Dans un magasin, les noms de répertoires et de fichiers sont spécifiées par rapport à la racine du système de fichiers virtuel.  
@@ -29,6 +29,8 @@ Après avoir obtenu un magasin isolé, vous pouvez créer des répertoires et de
  Utilisez la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateFile%2A?displayProperty=nameWithType> pour créer un fichier.  
   
  Dans le système d’exploitation Windows, les noms de fichiers et de répertoires du stockage isolé ne sont pas sensibles à la casse. Autrement dit, si vous créez un fichier nommé `ThisFile.txt`, puis créez un autre fichier nommé `THISFILE.TXT`, un seul fichier est créé. Le nom de fichier conserve sa casse d’origine pour l’affichage.  
+
+ La création d’un fichier de stockage isolé lève une <xref:System.IO.IsolatedStorage.IsolatedStorageException> si le chemin d’accès contient un répertoire qui n’existe pas.
   
 ## <a name="example"></a>Exemple  
  L’exemple de code suivant illustre comment créer des fichiers et des répertoires dans un magasin isolé.  

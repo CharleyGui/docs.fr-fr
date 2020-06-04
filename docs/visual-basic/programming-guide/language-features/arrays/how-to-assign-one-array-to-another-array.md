@@ -6,12 +6,12 @@ helpviewer_keywords:
 - arrays [Visual Basic], assigning
 - arrays [Visual Basic], covariance
 ms.assetid: 1ae89ea5-f292-4282-bcfc-e9b06b37fbd5
-ms.openlocfilehash: be5337e36c2cc7ad9f9b32182b8575ac66bb4a50
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c38def1ba9f3720bc760d6f6e4264510c884c930
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351888"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413077"
 ---
 # <a name="how-to-assign-one-array-to-another-array-visual-basic"></a>Comment : assigner un tableau à un autre tableau (Visual Basic)
 
@@ -35,17 +35,17 @@ Lorsque vous affectez un tableau à un autre, les règles suivantes s’applique
 
   Si les rangs des deux tableaux sont égaux, les dimensions n’ont pas besoin d’être égales. Le nombre d’éléments d’une dimension donnée peut changer pendant l’assignation.
 
-- **Types d’éléments.** Soit les deux tableaux doivent avoir des éléments de *type référence* , soit les deux tableaux doivent avoir des éléments de *type valeur* . Pour plus d'informations, consultez [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).
+- **Types d’éléments.** Soit les deux tableaux doivent avoir des éléments de *type référence* , soit les deux tableaux doivent avoir des éléments de *type valeur* . Pour plus d'informations, consultez [Value Types and Reference Types](../data-types/value-types-and-reference-types.md).
 
-  - Si les deux tableaux ont des éléments de type valeur, les types de données d’élément doivent être exactement les mêmes. La seule exception à cela est que vous pouvez assigner un tableau d’éléments `Enum` à un tableau du type de base de ce `Enum`.
+  - Si les deux tableaux ont des éléments de type valeur, les types de données d’élément doivent être exactement les mêmes. La seule exception à cela est que vous pouvez assigner un tableau d' `Enum` éléments à un tableau du type de base de ce `Enum` .
 
   - Si les deux tableaux ont des éléments de type référence, le type d’élément source doit dériver du type d’élément de destination. Dans ce cas, les deux tableaux ont la même relation d’héritage que leurs éléments. C’est ce que l’on appelle la *covariance de tableau*.
 
-Le compilateur signale une erreur si les règles ci-dessus ne sont pas respectées, par exemple si les types de données ne sont pas compatibles ou si les rangs sont inégaux. Vous pouvez ajouter la gestion des erreurs à votre code pour vous assurer que les tableaux sont compatibles avant de tenter une attribution. Vous pouvez également utiliser le mot clé d' [opérateur TryCast](../../../../visual-basic/language-reference/operators/trycast-operator.md) si vous souhaitez éviter de lever une exception.
+Le compilateur signale une erreur si les règles ci-dessus ne sont pas respectées, par exemple si les types de données ne sont pas compatibles ou si les rangs sont inégaux. Vous pouvez ajouter la gestion des erreurs à votre code pour vous assurer que les tableaux sont compatibles avant de tenter une attribution. Vous pouvez également utiliser le mot clé d' [opérateur TryCast](../../../language-reference/operators/trycast-operator.md) si vous souhaitez éviter de lever une exception.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [Dépannage des tableaux](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)
-- [Enum (instruction)](../../../../visual-basic/language-reference/statements/enum-statement.md)
-- [Conversions de tableau](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)
+- [Tableaux](index.md)
+- [Résolution des problèmes de tableaux](troubleshooting-arrays.md)
+- [Enum (instruction)](../../../language-reference/statements/enum-statement.md)
+- [Conversions de tableau](../data-types/array-conversions.md)

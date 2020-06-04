@@ -1,17 +1,17 @@
 ---
-title: Argument '<argumentname>' est Nothing
+title: L’argument '<argumentname>' est Nothing
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_InvalidNullValue1
 ms.assetid: abbde904-c191-4911-8822-c9dd2f81d616
-ms.openlocfilehash: 2a0be0a10bc8b2a19c1c4b7ab3517ac6a32401e4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fe06605c25b9bb281ad9818708375a2f8f5c9480
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61666051"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84412869"
 ---
-# <a name="argument-argumentname-is-nothing"></a>Argument '\<nom_argument >' est Nothing
+# <a name="argument-argumentname-is-nothing"></a>L’argument '\<argumentname>' est Nothing
 Une expression contient un argument null.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
@@ -22,4 +22,4 @@ Une expression contient un argument null.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Passage d’un argument par valeur et par référence](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Passage des arguments par valeur et par référence](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

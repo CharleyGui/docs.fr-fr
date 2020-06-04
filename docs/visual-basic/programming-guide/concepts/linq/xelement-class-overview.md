@@ -2,12 +2,12 @@
 title: Vue d’ensemble de la classe XElement
 ms.date: 07/20/2015
 ms.assetid: 52331fcd-6023-4d19-b423-7b24f2d86ded
-ms.openlocfilehash: 2e5a1e161345df39ff5c006f751fb293cad60510
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: a0e50c8a5a14150ee09a328f4dcdd5bc88363621
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636664"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413217"
 ---
 # <a name="xelement-class-overview-visual-basic"></a>Vue d’ensemble de la classe XElement (Visual Basic)
 La classe <xref:System.Xml.Linq.XElement> est l'une des classes fondamentales dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Elle représente un élément XML. Vous pouvez utiliser cette classe pour créer des éléments, modifier le contenu de l'élément, ajouter, modifier ou supprimer des éléments enfants, ajouter des attributs à un élément ou sérialiser le contenu d'un élément sous forme textuelle. Vous pouvez également interagir avec d'autres classes dans <xref:System.Xml?displayProperty=nameWithType>, telles que <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter> et <xref:System.Xml.Xsl.XslCompiledTransform>.  
@@ -18,11 +18,11 @@ La classe <xref:System.Xml.Linq.XElement> est l'une des classes fondamentales da
 ### <a name="constructing-xml-trees"></a>Construction d'arborescences XML  
  Vous pouvez construire des arborescences XML de diverses façons, notamment les suivantes :  
   
-- Vous pouvez construire une arborescence XML dans du code. Pour plus d’informations, consultez [création d’arborescences XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md).  
+- Vous pouvez construire une arborescence XML dans du code. Pour plus d’informations, consultez [création d’arborescences XML (Visual Basic)](creating-xml-trees.md).  
   
-- Vous pouvez analyser du code XML de diverses sources, y compris un objet <xref:System.IO.TextReader>, des fichiers texte ou une adresse Web (URL). Pour plus d’informations, consultez [analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md).  
+- Vous pouvez analyser du code XML de diverses sources, y compris un objet <xref:System.IO.TextReader>, des fichiers texte ou une adresse Web (URL). Pour plus d’informations, consultez [analyse XML (Visual Basic)](parsing-xml.md).  
   
-- Vous pouvez utiliser un objet <xref:System.Xml.XmlReader> pour remplir l'arborescence. Pour plus d'informations, consultez <xref:System.Xml.Linq.XNode.ReadFrom%2A>.  
+- Vous pouvez utiliser un objet <xref:System.Xml.XmlReader> pour remplir l'arborescence. Pour plus d’informations, consultez <xref:System.Xml.Linq.XNode.ReadFrom%2A>.  
   
 - Si vous avez un module qui peut écrire du contenu dans un objet <xref:System.Xml.XmlWriter>, vous pouvez utiliser la méthode <xref:System.Xml.Linq.XContainer.CreateWriter%2A> pour créer un writer, passer ce dernier au module, puis utiliser le contenu écrit dans l'objet <xref:System.Xml.XmlWriter> pour remplir l'arborescence XML.  
   
@@ -66,7 +66,7 @@ Dim xmlTree As XElement = _
 Console.WriteLine(xmlTree)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Root>  
@@ -81,23 +81,23 @@ Console.WriteLine(xmlTree)
 ### <a name="serializing-xml-trees"></a>Sérialisation d'arborescences XML  
  Vous pouvez sérialiser l'arborescence XML vers un objet <xref:System.IO.File>, <xref:System.IO.TextWriter> ou <xref:System.Xml.XmlWriter>.  
   
- Pour plus d’informations, consultez [sérialisation d’arborescences XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md).  
+ Pour plus d’informations, consultez [sérialisation d’arborescences XML (Visual Basic)](serializing-xml-trees.md).  
   
 ### <a name="retrieving-xml-data-via-axis-methods"></a>Récupération de données XML par le biais de méthodes d'axe  
  Vous pouvez utiliser des méthodes d'axe pour récupérer des attributs, des éléments enfants, des éléments descendants et des éléments ancêtres. Les requêtes LINQ opèrent sur les méthodes d’axe et offrent plusieurs moyens flexibles et puissants de parcourir et de traiter une arborescence XML.  
   
- Pour plus d’informations, consultez [LINQ to XML axes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md).  
+ Pour plus d’informations, consultez [LINQ to XML axes (Visual Basic)](linq-to-xml-axes.md).  
   
 ### <a name="querying-xml-trees"></a>Interrogation d’arborescences XML  
  Vous pouvez écrire des requêtes LINQ qui extraient des données d’une arborescence XML.  
   
- Pour plus d’informations, consultez [interrogation d’arborescences XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md).  
+ Pour plus d’informations, consultez [interrogation d’arborescences XML (Visual Basic)](querying-xml-trees.md).  
   
 ### <a name="modifying-xml-trees"></a>Modification d’arborescences XML  
  Vous pouvez modifier un élément de différentes façons, y compris modifier son contenu ou ses attributs. Vous pouvez également supprimer un élément de son parent.  
   
- Pour plus d’informations, consultez [modification d’arborescences XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md).  
+ Pour plus d’informations, consultez [modification d’arborescences XML (LINQ to XML) (Visual Basic)](modifying-xml-trees-linq-to-xml.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la programmation de LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+- [Vue d’ensemble de la programmation de LINQ to XML (Visual Basic)](linq-to-xml-programming-overview.md)

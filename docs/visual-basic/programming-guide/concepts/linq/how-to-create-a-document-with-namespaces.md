@@ -1,13 +1,13 @@
 ---
-title: 'Comment : créer un document avec des espaces de noms (LINQ to XML)'
+title: 'Procédure : créer un document avec des espaces de noms (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: cc5b0d4d-360c-4ada-94fa-2d2916e989be
-ms.openlocfilehash: bbd23840b0356cf14d2c7d6cb71591fe6461a8bd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a440c9d810798eb5ebd025a336cbb17fface23b4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332584"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414632"
 ---
 # <a name="how-to-create-a-document-with-namespaces-linq-to-xml-visual-basic"></a>Comment : créer un document avec des espaces de noms (LINQ to XML) (Visual Basic)
 Cette rubrique montre comment créer un document avec des espaces de noms dans Visual Basic.  
@@ -18,7 +18,7 @@ Cette rubrique montre comment créer un document avec des espaces de noms dans V
   
  Vous définissez les espaces de noms par défaut et les espaces de noms avec préfixe à l'aide du mot clé `Imports`.  
   
- Pour plus d’informations, consultez [Introduction aux littéraux XML dans Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-xml-literals.md).  
+ Pour plus d’informations, consultez [Introduction aux littéraux XML dans Visual Basic](introduction-to-xml-literals.md).  
   
  Notez que l'espace de noms XML par défaut s'applique uniquement aux éléments, et non aux attributs. Par défaut, les attributs ne sont jamais dans aucun espace de noms. Toutefois, vous pouvez utiliser un préfixe d'espace de noms pour placer un attribut dans un espace de noms.  
   
@@ -38,7 +38,7 @@ Module Module1
 End Module  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <aw:Root xmlns:aw="http://www.adventure-works.com">  
@@ -67,7 +67,7 @@ Module Module1
 End Module  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Root xmlns:fc="www.fourthcoffee.com" xmlns="http://www.adventure-works.com">  
@@ -102,7 +102,7 @@ Module Module1
 End Module  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <aw:Root xmlns:fc="www.fourthcoffee.com" xmlns:aw="http://www.adventure-works.com">  

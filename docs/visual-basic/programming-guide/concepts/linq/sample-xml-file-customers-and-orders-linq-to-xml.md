@@ -2,19 +2,19 @@
 title: 'Exemple de fichier XML : Clients et commandes (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: ed319807-c432-4f8e-9694-dad4c7648310
-ms.openlocfilehash: 9d5bf7600f99085ec860e88ab58c5b97aa9fae4c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 786275cb6b2ae2281b09b9e8f8fc9a003e371ebb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786995"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413321"
 ---
 # <a name="sample-xml-file-customers-and-orders-linq-to-xml"></a>Exemple de fichier XML : Clients et commandes (LINQ to XML)
 Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Ce fichier contient des clients et des commandes.  
   
- La rubrique [Exemple de fichier XSD : Clients et commandes](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md) contient un XSD qui peut servir à valider ce document. Il utilise les fonctionnalités `xs:key` et `xs:keyref` de XSD pour déterminer que l'attribut `CustomerID` de l'élément `Customer` est une clé et pour établir une relation entre l'élément `CustomerID` dans chaque élément `Order` et l'attribut `CustomerID` dans chaque élément `Customer`.  
+ La rubrique [Exemple de fichier XSD : Clients et commandes](sample-xsd-file-customers-and-orders.md) contient un XSD qui peut servir à valider ce document. Il utilise les fonctionnalités `xs:key` et `xs:keyref` de XSD pour déterminer que l'attribut `CustomerID` de l'élément `Customer` est une clé et pour établir une relation entre l'élément `CustomerID` dans chaque élément `Order` et l'attribut `CustomerID` dans chaque élément `Customer`.  
   
- Pour un exemple d’écriture de requêtes LINQ qui utilisent cette relation à l’aide de la clause `Join`, consultez [Guide pratique pour Joindre deux Collections (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md).  
+ Pour obtenir un exemple d’écriture de requêtes LINQ qui tirent parti de cette relation à l’aide de la `Join` clause, consultez Guide pratique [pour joindre deux Collections (LINQ to XML) (Visual Basic)](how-to-join-two-collections-linq-to-xml.md).  
   
 ## <a name="customersordersxml"></a>CustomersOrders.xml  
   
@@ -436,4 +436,4 @@ Le fichier XML suivant est utilisé dans différents exemples dans la documentat
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de documents XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [Exemples de documents XML (LINQ to XML)](sample-xml-documents-linq-to-xml.md)

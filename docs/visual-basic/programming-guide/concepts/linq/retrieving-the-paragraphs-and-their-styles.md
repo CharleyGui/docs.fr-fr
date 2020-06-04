@@ -2,17 +2,17 @@
 title: Récupération des paragraphes et de leurs styles
 ms.date: 07/20/2015
 ms.assetid: d9ed2238-d38e-4ad4-b88b-db7859df9bde
-ms.openlocfilehash: 862a07c26733a4989ae010854ceaca1fd7e3578e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ad904abf9bd94e83b981859662c22787652e294f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347511"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413404"
 ---
 # <a name="retrieving-the-paragraphs-and-their-styles-visual-basic"></a>Récupération des paragraphes et de leurs styles (Visual Basic)
 Dans cet exemple, nous écrivons une requête qui récupère les nœuds de paragraphe à partir d'un document WordprocessingML. Il identifie également le style de chaque paragraphe.  
   
- Cette requête est basée sur la requête de l’exemple précédent, [recherche du style de paragraphe par défaut (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/finding-the-default-paragraph-style.md), qui récupère le style par défaut à partir de la liste de styles. Ces informations sont requises de manière que la requête puisse identifier le style des paragraphes pour lesquels aucun style n'est défini de façon explicite. Les style de paragraphes sont définis par le biais de l'élément `w:pPr` ; si un paragraphe ne contient pas cet élément, il est mis en forme avec le style par défaut.  
+ Cette requête est basée sur la requête de l’exemple précédent, [recherche du style de paragraphe par défaut (Visual Basic)](finding-the-default-paragraph-style.md), qui récupère le style par défaut à partir de la liste de styles. Ces informations sont requises de manière que la requête puisse identifier le style des paragraphes pour lesquels aucun style n'est défini de façon explicite. Les style de paragraphes sont définis par le biais de l'élément `w:pPr` ; si un paragraphe ne contient pas cet élément, il est mis en forme avec le style par défaut.  
   
  Cette rubrique explique l'importance de certaines parties de la requête, puis illustre la requête dans le cadre d'un exemple fonctionnel complet.  
   
@@ -23,7 +23,7 @@ Dans cet exemple, nous écrivons une requête qui récupère les nœuds de parag
 xDoc.Root.<w:body>...<w:p>  
 ```  
   
- Cette expression est similaire à la source de la requête de l’exemple précédent, [recherche du style de paragraphe par défaut (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/finding-the-default-paragraph-style.md). La différence principale est qu'elle utilise l'axe <xref:System.Xml.Linq.XContainer.Descendants%2A> au lieu de l'axe <xref:System.Xml.Linq.XContainer.Elements%2A>. La requête utilise l'axe <xref:System.Xml.Linq.XContainer.Descendants%2A> car dans les documents qui ont des sections, les paragraphes ne sont pas les enfants directs de l'élément de corps, mais se trouvent deux niveaux au-dessous dans la hiérarchie. Grâce à l'utilisation de la méthode <xref:System.Xml.Linq.XContainer.Descendants%2A>, le code fonctionnera, que le document utilise des sections ou non.  
+ Cette expression est similaire à la source de la requête de l’exemple précédent, [recherche du style de paragraphe par défaut (Visual Basic)](finding-the-default-paragraph-style.md). La différence principale est qu'elle utilise l'axe <xref:System.Xml.Linq.XContainer.Descendants%2A> au lieu de l'axe <xref:System.Xml.Linq.XContainer.Elements%2A>. La requête utilise l'axe <xref:System.Xml.Linq.XContainer.Descendants%2A> car dans les documents qui ont des sections, les paragraphes ne sont pas les enfants directs de l'élément de corps, mais se trouvent deux niveaux au-dessous dans la hiérarchie. Grâce à l'utilisation de la méthode <xref:System.Xml.Linq.XContainer.Descendants%2A>, le code fonctionnera, que le document utilise des sections ou non.  
   
 ## <a name="example"></a>Exemple  
  La requête utilise une clause `Let` afin de déterminer l'élément qui contient le nœud de style. S'il n'y a aucun élément, `styleNode` a la valeur `Nothing` :  
@@ -39,7 +39,7 @@ Let styleNode As XElement = para.<w:pPr>.<w:pStyle>.FirstOrDefault()
 ## <a name="example"></a>Exemple  
  Cet exemple traite un document WordprocessingML et récupère les nœuds de paragraphes à partir d'un document WordprocessingML. Il identifie également le style de chaque paragraphe. Cet exemple se base sur les exemples précédents de ce didacticiel. Dans le code ci-dessous, la nouvelle requête figure dans des commentaires.  
   
- Pour obtenir des instructions sur la création du document source pour cet exemple, consultez [création du document Office Open XML source (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Pour obtenir des instructions sur la création du document source pour cet exemple, consultez [création du document Office Open XML source (Visual Basic)](creating-the-source-office-open-xml-document.md).  
   
  Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
@@ -111,7 +111,7 @@ Module Module1
 End Module  
 ```  
   
- Cet exemple produit la sortie suivante lorsqu’elle est appliquée au document décrit dans [création du document Office Open XML source (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Cet exemple produit la sortie suivante lorsqu’elle est appliquée au document décrit dans [création du document Office Open XML source (Visual Basic)](creating-the-source-office-open-xml-document.md).  
   
 ```console  
 StyleName:Heading1  
@@ -132,8 +132,8 @@ StyleName:Code
 ```  
   
 ## <a name="next-steps"></a>Étapes suivantes  
- Dans la rubrique suivante, [extraction du texte des paragraphes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), vous allez créer une requête pour récupérer le texte des paragraphes.  
+ Dans la rubrique suivante, [extraction du texte des paragraphes (Visual Basic)](retrieving-the-text-of-the-paragraphs.md), vous allez créer une requête pour récupérer le texte des paragraphes.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Didacticiel : manipulation de contenu dans un document WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Didacticiel : manipulation de contenu dans un document WordprocessingML (Visual Basic)](tutorial-manipulating-content-in-a-wordprocessingml-document.md)

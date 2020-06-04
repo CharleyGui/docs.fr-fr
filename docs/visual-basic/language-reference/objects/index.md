@@ -1,15 +1,15 @@
 ---
-title: Objets du
+title: Objets
 ms.date: 07/20/2015
 helpviewer_keywords:
 - objects [Visual Basic]
 ms.assetid: 651c73e4-dca8-402b-9c6b-e3902b3a3f4b
-ms.openlocfilehash: 2108e36956ada98e48e6ab05cec56dbf2a12b3dd
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: e927f69b7606866a0a9e8eadd59270f51ffc5e2b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838258"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414218"
 ---
 # <a name="objects-visual-basic"></a>Objets (Visual Basic)
 Cette rubrique fournit des liens vers d’autres rubriques qui documentent les objets runtime Visual Basic et contiennent des tables de leurs procédures, propriétés et événements membres.  
@@ -35,16 +35,16 @@ Cette rubrique fournit des liens vers d’autres rubriques qui documentent les o
 |`My.Computer.Network` (<xref:Microsoft.VisualBasic.Devices.Network>)|Fournit une propriété, un événement et des méthodes permettant d’interagir avec le réseau auquel l’ordinateur est connecté.|  
 |`My.Computer.Ports` (<xref:Microsoft.VisualBasic.Devices.Ports>)|Fournit une propriété et une méthode permettant d’accéder aux ports série de l’ordinateur.|  
 |`My.Computer.Registry` (<xref:Microsoft.VisualBasic.MyServices.RegistryProxy>)|Fournit des propriétés et des méthodes permettant de manipuler le Registre.|  
-|[My.Forms (objet)](../../../visual-basic/language-reference/objects/my-forms-object.md)|Fournit des propriétés permettant d’accéder à une instance de chaque Windows Form déclaré dans le projet actuel.|  
+|[My.Forms, objet](my-forms-object.md)|Fournit des propriétés permettant d’accéder à une instance de chaque Windows Form déclaré dans le projet actuel.|  
 |`My.Log` (<xref:Microsoft.VisualBasic.Logging.AspLog>)|Fournit une propriété et des méthodes permettant d’écrire des informations sur les événements et les exceptions dans les écouteurs de journalisation de l’application pour les applications web.|  
-|[My.Request (objet)](../../../visual-basic/language-reference/objects/my-request-object.md)|Obtient l’objet <xref:System.Web.HttpRequest> pour la page demandée. L’objet `My.Request` contient des informations sur la requête HTTP en cours.<br /><br /> L’objet `My.Request` est disponible uniquement pour les applications ASP.NET.|  
-|[My.Resources (objet)](../../../visual-basic/language-reference/objects/my-resources-object.md)|Fournit des propriétés et des classes permettant d’accéder aux ressources d’une application.|  
-|[My.Response (objet)](../../../visual-basic/language-reference/objects/my-response-object.md)|Obtient l'objet <xref:System.Web.HttpResponse> qui est associé à <xref:System.Web.UI.Page>. Cet objet vous permet d’envoyer des données de réponse HTTP à un client et contient des informations relatives à cette réponse.<br /><br /> L’objet `My.Response` est disponible uniquement pour les applications ASP.NET.|  
-|[My.Settings (objet)](../../../visual-basic/language-reference/objects/my-settings-object.md)|Fournit des propriétés et des méthodes permettant d’accéder aux paramètres d’une application.|  
+|[My.Request, objet](my-request-object.md)|Obtient l’objet <xref:System.Web.HttpRequest> pour la page demandée. L’objet `My.Request` contient des informations sur la requête HTTP en cours.<br /><br /> L’objet `My.Request` est disponible uniquement pour les applications ASP.NET.|  
+|[My.Resources, objet](my-resources-object.md)|Fournit des propriétés et des classes permettant d’accéder aux ressources d’une application.|  
+|[My.Response, objet](my-response-object.md)|Obtient l'objet <xref:System.Web.HttpResponse> qui est associé à <xref:System.Web.UI.Page>. Cet objet vous permet d’envoyer des données de réponse HTTP à un client et contient des informations relatives à cette réponse.<br /><br /> L’objet `My.Response` est disponible uniquement pour les applications ASP.NET.|  
+|[My.Settings, objet](my-settings-object.md)|Fournit des propriétés et des méthodes permettant d’accéder aux paramètres d’une application.|  
 |`My.User` (<xref:Microsoft.VisualBasic.ApplicationServices.User>)|Permet d’accéder aux informations relatives à l’utilisateur actuel.|  
-|[My.WebServices (objet)](../../../visual-basic/language-reference/objects/my-webservices-object.md)|Fournit des propriétés permettant de créer une instance unique de chaque service web qui est référencé par le projet actuel et d’y accéder.|  
+|[My.WebServices, objet](my-webservices-object.md)|Fournit des propriétés permettant de créer une instance unique de chaque service web qui est référencé par le projet actuel et d’y accéder.|  
 |<xref:Microsoft.VisualBasic.FileIO.TextFieldParser>|Fournit des méthodes et des propriétés pour analyser des fichiers texte structurés.|  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)
+- [Informations de référence sur le langage Visual Basic](../index.md)

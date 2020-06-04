@@ -1,13 +1,13 @@
 ---
-title: 'Comment : créer une arborescence à partir d’un XmlReader'
+title: 'Procédure : créer une arborescence à partir d’un XmlReader'
 ms.date: 07/20/2015
 ms.assetid: 6de683d8-177d-402b-b0de-d0539f1ce5d8
-ms.openlocfilehash: 7d8d7f5b6389bef520e11fd2b7cc3e1c7e862e73
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 25c15ff08563b12b26041a536dfbca1c9cce260a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353084"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414606"
 ---
 # <a name="how-to-create-a-tree-from-an-xmlreader-visual-basic"></a>Comment : créer une arborescence à partir d’un XmlReader (Visual Basic)
 
@@ -15,7 +15,7 @@ Cette rubrique montre comment créer une arborescence XML directement à partir 
 
 ## <a name="example"></a>Exemple
 
-Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).
+Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](sample-xml-file-books-linq-to-xml.md).
 
 Le code suivant crée un objet `T:System.Xml.XmlReader`, puis il lit les nœuds jusqu'à trouver le premier nœud d'élément. Il charge ensuite l'objet <xref:System.Xml.Linq.XElement>.
 
@@ -28,7 +28,7 @@ Dim e As XElement = XElement.Load(r)
 Console.WriteLine(e)
 ```
 
-Cet exemple génère la sortie suivante :
+Cet exemple produit la sortie suivante :
 
 ```xml
 <Catalog>
@@ -56,4 +56,4 @@ Cet exemple génère la sortie suivante :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Analyse XML (Visual Basic)](parsing-xml.md)

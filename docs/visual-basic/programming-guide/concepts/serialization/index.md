@@ -2,12 +2,12 @@
 title: Sérialisation
 ms.date: 07/20/2015
 ms.assetid: 67379a76-5465-4af8-a781-0b0b25a62d9a
-ms.openlocfilehash: 9ce97e541cb204b92663464e36d9e8f221ccc3f2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: db14147a23940fa2403613036750be1bca566e8e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351915"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413140"
 ---
 # <a name="serialization-visual-basic"></a>Sérialisation (Visual Basic)
 La sérialisation est le processus de conversion d'un objet en un flux d'octets pour stocker l'objet ou le transmettre à la mémoire, à une base de données, ou dans un fichier. Son principal objectif est d’enregistrer l’état d’un objet afin de pouvoir le recréer si nécessaire. Le processus inverse est appelé désérialisation.  
@@ -37,7 +37,7 @@ La sérialisation est le processus de conversion d'un objet en un flux d'octets 
 ### <a name="binary-serialization"></a>Sérialisation binaire  
  La sérialisation binaire utilise l’encodage binaire pour produire une sérialisation compacte qui peut servir notamment aux flux réseau par socket ou stockage.  
   
-### <a name="xml-serialization"></a>Sérialisation XML  
+### <a name="xml-serialization"></a>Sérialisation XML  
  La sérialisation XML sérialise les champs et les propriétés publics d’un objet ou les paramètres et valeurs renvoyés de méthodes, en un flux XML conforme à un document XSD (langage de définition de schéma XML) spécifique. La sérialisation XML permet d’obtenir des classes fortement typées avec des propriétés et des champs publics convertis au format XML. <xref:System.Xml.Serialization> contient les classes nécessaires pour sérialiser et désérialiser du code XML.  
   
  Vous pouvez appliquer des attributs à des classes et des membres de classes afin de contrôler la manière dont <xref:System.Xml.Serialization.XmlSerializer> sérialise ou désérialise une instance de la classe.  
@@ -58,12 +58,12 @@ La sérialisation est le processus de conversion d'un objet en un flux d'octets 
 ## <a name="designer-serialization"></a>Sérialisation du concepteur  
  La sérialisation du concepteur est une forme particulière de sérialisation qui implique le type de persistance d’objets généralement associé aux outils de développement. La sérialisation du concepteur est le processus qui consiste à convertir un graphique d’objet en un fichier source utilisable ultérieurement pour récupérer le graphique d’objet. Un fichier source peut contenir du code, des balises ou même des tables SQL.  
   
-## <a name="BKMK_RelatedTopics"></a> Rubriques connexes et exemples  
- [Procédure pas à pas : persistance d’un objet dans Visual Studio (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/walkthrough-persisting-an-object-in-visual-studio.md)  
+## <a name="related-topics-and-examples"></a><a name="BKMK_RelatedTopics"></a> Rubriques connexes et exemples  
+ [Procédure pas à pas : persistance d’un objet dans Visual Studio (Visual Basic)](walkthrough-persisting-an-object-in-visual-studio.md)  
  Montre comment utiliser la sérialisation pour rendre les données d’un objet persistantes entre les instances, afin de stocker des valeurs et de les récupérer lors de la prochaine instanciation de l’objet.  
   
- [Guide pratique : lire des données d’objet à partir d’un fichier XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)  
+ [Guide pratique : lire des données d’objet à partir d’un fichier XML (Visual Basic)](how-to-read-object-data-from-an-xml-file.md)  
  Montre comment lire les données d’objet écrites précédemment dans un fichier XML en utilisant la classe <xref:System.Xml.Serialization.XmlSerializer>.  
   
- [Guide pratique : écrire des données d’objet dans un fichier XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)  
+ [Guide pratique : écrire des données d’objet dans un fichier XML (Visual Basic)](how-to-write-object-data-to-an-xml-file.md)  
  Montre comment écrire l’objet depuis une classe vers un fichier XML en utilisant la classe <xref:System.Xml.Serialization.XmlSerializer>.

@@ -1,16 +1,16 @@
 ---
-title: Refactorisation à l'aide d'une méthode d'extension
+title: Refactorisation à l’aide d’une méthode d’extension
 ms.date: 07/20/2015
 ms.assetid: d87ae99a-cfa9-4a31-a5e4-9d6437be6810
-ms.openlocfilehash: c66fb90f9949ee3e47105498b211c857d5d63804
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 5bb3ed44c0c3f7616468f820428fe1a384ab6d45
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348016"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413432"
 ---
 # <a name="refactoring-using-an-extension-method-visual-basic"></a>Refactorisation à l’aide d’une méthode d’extension (Visual Basic)
-Cet exemple s’appuie sur l’exemple précédent, [récupérant le texte des paragraphes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), en refactorisant la concaténation des chaînes à l’aide d’une fonction pure implémentée en tant que méthode d’extension.  
+Cet exemple s’appuie sur l’exemple précédent, [récupérant le texte des paragraphes (Visual Basic)](retrieving-the-text-of-the-paragraphs.md), en refactorisant la concaténation des chaînes à l’aide d’une fonction pure implémentée en tant que méthode d’extension.  
   
  L'exemple précédent utilisait l'opérateur de requête standard <xref:System.Linq.Enumerable.Aggregate%2A> pour concaténer plusieurs chaînes dans une chaîne. Toutefois, il est plus commode d'écrire une méthode d'extension pour cela, car la requête résultante est plus petite et plus simple.  
   
@@ -19,7 +19,7 @@ Cet exemple s’appuie sur l’exemple précédent, [récupérant le texte des p
   
  L'exemple contient plusieurs surcharges de la méthode `StringConcatenate`.  
   
- Pour obtenir des instructions sur la création du document source pour cet exemple, consultez [création du document Office Open XML source (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Pour obtenir des instructions sur la création du document source pour cet exemple, consultez [création du document Office Open XML source (Visual Basic)](creating-the-source-office-open-xml-document.md).  
   
  Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
@@ -80,7 +80,7 @@ Console.WriteLine("{0}", intNumbers.StringConcatenate(Function(i) i.ToString()))
 Console.WriteLine("{0}", intNumbers.StringConcatenate(Function(i) i.ToString(), ":"))  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```console  
 onetwothree  
@@ -241,9 +241,9 @@ StyleName:Code >Hello World<
 ## <a name="next-steps"></a>Étapes suivantes  
  L'exemple suivant montre comment refactoriser ce code d'une autre manière, à l'aide de fonctions pures :  
   
-- [Refactorisation à l’aide d’une fonction pure (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
+- [Refactorisation à l’aide d’une fonction pure (Visual Basic)](refactoring-using-a-pure-function.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Didacticiel : manipulation de contenu dans un document WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
-- [Refactorisation dans des fonctions pures (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [Didacticiel : manipulation de contenu dans un document WordprocessingML (Visual Basic)](tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Refactorisation dans des fonctions pures (Visual Basic)](refactoring-into-pure-functions.md)

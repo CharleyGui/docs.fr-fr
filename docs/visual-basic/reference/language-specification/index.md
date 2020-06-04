@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Visual Basic code, specifications
 - specifications, Visual Basic
 ms.assetid: 42c30017-19d0-442e-87a2-850b66ddc3df
-ms.openlocfilehash: 4148cac9d0ba9ec6851de5babcd37d175be84645
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: ddc4558cbf79afc968509177e5be14f5e2f17ef7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345065"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414229"
 ---
 # <a name="visual-basic-language-specification"></a>Spécification du langage Visual Basic
 
@@ -25,7 +25,7 @@ Les problèmes sur la spécification doivent être créés dans le dépôt [dotn
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)
+- [Informations de référence sur le langage Visual Basic](../../language-reference/index.md)
 
 >[!div class="step-by-step"]
 >[Suivant](../../../../_vblang/spec/introduction.md)

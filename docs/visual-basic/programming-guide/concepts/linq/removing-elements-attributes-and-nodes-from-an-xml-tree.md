@@ -1,20 +1,20 @@
 ---
-title: Suppression d'éléments, d'attributs et de nœuds d'une arborescence XML
+title: Suppression d’éléments, d’attributs et de nœuds d’une arborescence XML
 ms.date: 07/20/2015
 ms.assetid: 5cf21919-4360-4b49-b29d-58ea3164ac72
-ms.openlocfilehash: 4cce1eff469c1f737e18b88cce30155547d9f11b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f8be7fe521fb3c2662b105e34fd96fea1d1ac6e7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348951"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413403"
 ---
 # <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-visual-basic"></a>Suppression d’éléments, d’attributs et de nœuds d’une arborescence XML (Visual Basic)
 Vous pouvez modifier une arborescence XML en supprimant des éléments, des attributs et d’autres types de nœuds.  
   
  La suppression d'un seul élément ou attribut d'un document XML est simple. Toutefois, lors de la suppression de collections d’éléments ou d’attributs, vous devez tout d’abord matérialiser une collection dans une liste, puis supprimer les éléments ou attributs de la liste. La meilleure approche consiste à utiliser la méthode d'extension <xref:System.Xml.Linq.Extensions.Remove%2A>, qui effectuera cette tâche pour vous.  
   
- Cette opération est nécessaire car la plupart des collections que vous récupérez à partir d’une arborescence XML sont produites à l’aide de l’exécution différée. Si vous ne les matérialisez pas tout d’abord dans une liste, ou si vous n’utilisez pas les méthodes d’extension, vous risquez de rencontrer une certaine classe de bogues. Pour plus d’informations, consultez [code déclaratif mixte/bogues de code impératifs (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/mixed-declarative-code-imperative-code-bugs-linq-to-xml.md).  
+ Cette opération est nécessaire car la plupart des collections que vous récupérez à partir d’une arborescence XML sont produites à l’aide de l’exécution différée. Si vous ne les matérialisez pas tout d’abord dans une liste, ou si vous n’utilisez pas les méthodes d’extension, vous risquez de rencontrer une certaine classe de bogues. Pour plus d’informations, consultez [code déclaratif mixte/bogues de code impératifs (LINQ to XML) (Visual Basic)](mixed-declarative-code-imperative-code-bugs-linq-to-xml.md).  
   
  Les méthodes suivantes suppriment des nœuds et des attributs d’une arborescence XML.  
   
@@ -34,7 +34,7 @@ Vous pouvez modifier une arborescence XML en supprimant des éléments, des attr
 ### <a name="description"></a>Description  
  Cet exemple illustre trois approches de la suppression d'éléments. Tout d'abord, il supprime un seul élément. Ensuite, il récupère une collection d’éléments, les matérialise à l’aide de l’opérateur <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType>, puis supprime la collection. Pour finir, il récupère une collection d'éléments et les supprime à l'aide de la méthode d'extension <xref:System.Xml.Linq.Extensions.Remove%2A>.  
   
- Pour plus d’informations sur l’opérateur <xref:System.Linq.Enumerable.ToList%2A>, consultez [conversion des types de données (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/converting-data-types.md).  
+ Pour plus d’informations sur l' <xref:System.Linq.Enumerable.ToList%2A> opérateur, consultez [conversion des types de données (Visual Basic)](converting-data-types.md).  
   
 ### <a name="code"></a>Code  
   
@@ -81,4 +81,4 @@ Console.WriteLine(root)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modification d’arborescences XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [Modification d’arborescences XML (LINQ to XML) (Visual Basic)](modifying-xml-trees-linq-to-xml.md)

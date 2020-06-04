@@ -2,12 +2,12 @@
 title: Vue d'ensemble de la classe XDocument
 ms.date: 07/20/2015
 ms.assetid: 45cb7e71-196a-47da-bfe9-7a5589db1eed
-ms.openlocfilehash: cbc1ccca53978da07f31c0ba7e54eca9f06b0e72
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 90c97349006407b2eca861be31080ec17901fa5b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349292"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413230"
 ---
 # <a name="xdocument-class-overview-visual-basic"></a>Vue d’ensemble de la classe XDocument (Visual Basic)
 Cette rubrique présente la classe <xref:System.Xml.Linq.XDocument>.  
@@ -83,4 +83,4 @@ doc.Save("test.xml")
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la programmation de LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+- [Vue d’ensemble de la programmation de LINQ to XML (Visual Basic)](linq-to-xml-programming-overview.md)

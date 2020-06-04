@@ -1,13 +1,13 @@
 ---
-title: "Comment : contrôler le type d'une projection"
+title: 'Procédure : contrôler le type d’une projection'
 ms.date: 07/20/2015
 ms.assetid: a0171276-0b46-4817-aee5-a8d5191b12fe
-ms.openlocfilehash: b9620e7dab7abecce5161c5e7f50b187dbb3a71e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6b809188f68805afcca960bd809e079d997e79c9
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351098"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84357255"
 ---
 # <a name="how-to-control-the-type-of-a-projection-visual-basic"></a>Comment : contrôler le type d’une projection (Visual Basic)
 La projection est un processus qui consiste à prendre un ensemble de données, à le filtrer, à modifier sa forme et même à modifier son type. La plupart des expressions de requête effectuent des projections. La plupart des expressions de requête illustrées dans cette section évaluent à l'objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement>, mais vous pouvez contrôler le type de projection afin de créer des collections d'autres types. Cette rubrique montre comment procéder.  
@@ -15,7 +15,7 @@ La projection est un processus qui consiste à prendre un ensemble de données, 
 ## <a name="example"></a>Exemple  
  L'exemple suivant définit un nouveau type, `Customer`. L'expression de requête instancie ensuite de nouveaux objets `Customer` dans la clause `Select`. En conséquence, le type de l'expression de requête est <xref:System.Collections.Generic.IEnumerable%601> de `Customer`.  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Clients et commandes (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Clients et commandes (LINQ to XML)](sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
 ```vb  
 Public Class Customer  
@@ -89,4 +89,4 @@ LETSS:Let's Stop N Shop:Jaime Yorres
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq.Enumerable.Select%2A>
-- [Projections et transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projections et transformations (LINQ to XML) (Visual Basic)](projections-and-transformations-linq-to-xml.md)

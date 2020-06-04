@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /warnaserror compiler option [Visual Basic]
 - -warnaserror compiler option [Visual Basic]
 ms.assetid: 49819f1d-a1bd-4201-affe-5afe6d9712e1
-ms.openlocfilehash: f9ca5575e2a042d68fc490494f2e86991d58b80c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 94a8b43a891df9837925869e17fac4536a995264
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351709"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414270"
 ---
 # <a name="-warnaserror-visual-basic"></a>-warnaserror (Visual Basic)
 Indique au compilateur de considérer la première occurrence d’un avertissement comme une erreur.  
@@ -37,7 +37,7 @@ Indique au compilateur de considérer la première occurrence d’un avertisseme
  Si vous voulez que seuls certains avertissements spécifiques soient considérés comme des erreurs, vous pouvez spécifier une liste séparée par des virgules qui liste les numéros d’avertissement à considérer comme des erreurs.  
   
 > [!NOTE]
-> L’option `-warnaserror` ne contrôle pas le mode d’affichage des avertissements. Utilisez l’option [-nowarn](../../../visual-basic/reference/command-line-compiler/nowarn.md) pour désactiver les avertissements.  
+> L’option `-warnaserror` ne contrôle pas le mode d’affichage des avertissements. Utilisez l’option [-nowarn](nowarn.md) pour désactiver les avertissements.  
   
 |Pour définir -warnaserror de manière à considérer tous les avertissements comme des erreurs dans l’IDE Visual Studio|  
 |---|  
@@ -63,6 +63,6 @@ vbc -warnaserror:42024 t2.vb
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
-- [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Compilateur de ligne de commande de Visual Basic](index.md)
+- [Exemples de lignes de commande de compilation](sample-compilation-command-lines.md)
 - [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)

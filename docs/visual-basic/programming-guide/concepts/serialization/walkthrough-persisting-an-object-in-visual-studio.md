@@ -2,18 +2,18 @@
 title: Persistance d’un objet dans Visual Studio
 ms.date: 07/20/2015
 ms.assetid: f1d0b562-e349-4dce-ab5f-c05108467030
-ms.openlocfilehash: fbd342c929e8519571c0f6bb76d4091efcfe4476
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e4eaf87c99ea1577d7f3ca40e628c00cc2700511
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350394"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413127"
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>Procédure pas à pas : persistance d’un objet dans Visual Studio (Visual Basic)
 Bien qu’il soit possible de définir des valeur par défaut pour les propriétés d’un objet au moment du design, les valeurs entrées lors de l’exécution sont perdues en cas de destruction de l’objet. Vous pouvez utiliser la sérialisation pour rendre les données d’un objet persistantes entre les instances, ce qui vous permet de stocker des valeurs et de les récupérer lors de la prochaine instanciation de l’objet.  
   
 > [!NOTE]
-> Dans Visual Basic, pour stocker des données simples, telles qu’un nom ou un nombre, vous pouvez utiliser l’objet `My.Settings`. Pour plus d’informations, consultez [My.Settings, objet](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
+> Dans Visual Basic, pour stocker des données simples, telles qu’un nom ou un nombre, vous pouvez utiliser l’objet `My.Settings`. Pour plus d’informations, consultez [My.Settings, objet](../../../language-reference/objects/my-settings-object.md).  
   
  Dans cette procédure pas à pas, vous allez créer un objet `Loan` simple et rendre ses données persistantes dans un fichier. Vous récupérerez ensuite les données du fichier lors de la recréation de l’objet.  
   
@@ -24,7 +24,7 @@ Bien qu’il soit possible de définir des valeur par défaut pour les propriét
 > Cet exemple stocke des données au format binaire. Ces formats ne doivent pas être utilisés pour des données sensibles, telles que les mots de passe ou les informations relatives à la carte de crédit.  
   
 > [!NOTE]
-> Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier ces paramètres, cliquez sur **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
+> Les boîtes de dialogue et les commandes de menu affichées peuvent différer de celles décrites dans l'Aide selon les paramètres actifs ou le mode d'édition. Pour modifier ces paramètres, cliquez sur **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
 ## <a name="creating-the-loan-object"></a>Création de l’objet Loan  
  La première étape consiste à créer une classe `Loan` et une application de test qui utilise cette classe.  
@@ -85,7 +85,7 @@ Bien qu’il soit possible de définir des valeur par défaut pour les propriét
   
 4. Dans le menu **Projet**, choisissez **Définir comme projet de démarrage**.  
   
-5. Dans le menu **Projet** , choisissez **Ajouter une référence**.  
+5. Dans le menu **projet** , choisissez **Ajouter une référence**.  
   
 6. Dans la boîte de dialogue **Ajouter une référence**, choisissez l’onglet **Projets**, puis le projet LoanClass.  
   
@@ -217,5 +217,5 @@ Bien qu’il soit possible de définir des valeur par défaut pour les propriét
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sérialisation (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)
-- [Guide de programmation Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Sérialisation (Visual Basic)](index.md)
+- [Guide de programmation Visual Basic](../../index.md)

@@ -4,18 +4,18 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - collection initializers [Visual Basic]
 ms.assetid: c858db10-424d-47e0-92cd-e08087cc5ebc
-ms.openlocfilehash: 5eaf9e828455bf2accda86ab52a1ce645f10b9ee
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 7cba290b92f41125a93d1ed022e4db5ef62da789
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349062"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414554"
 ---
 # <a name="how-to-create-a-collection-used-by-a-collection-initializer-visual-basic"></a>Comment : créer une collection utilisée par un initialiseur de collection (Visual Basic)
-Lorsque vous utilisez un initialiseur de collection pour créer une collection, le compilateur Visual Basic recherche une `Add` méthode du type de collection pour lequel les paramètres de la méthode `Add` correspondent aux types des valeurs dans l’initialiseur de collection. Cette méthode `Add` est utilisée pour remplir la collection avec les valeurs de l’initialiseur de collection.  
+Lorsque vous utilisez un initialiseur de collection pour créer une collection, le compilateur Visual Basic recherche une `Add` méthode du type de collection pour lequel les paramètres de la `Add` méthode correspondent aux types des valeurs dans l’initialiseur de collection. Cette `Add` méthode est utilisée pour remplir la collection avec les valeurs de l’initialiseur de collection.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre une collection `OrderCollection` qui contient une méthode `Add` publique qu’un initialiseur de collection peut utiliser pour ajouter des objets de type `Order`. La méthode `Add` vous permet d’utiliser la syntaxe raccourcie de l’initialiseur de collection.  
+ L’exemple suivant montre une `OrderCollection` collection qui contient une `Add` méthode publique qu’un initialiseur de collection peut utiliser pour ajouter des objets de type `Order` . La `Add` méthode vous permet d’utiliser la syntaxe raccourcie de l’initialiseur de collection.  
   
  [!code-vb[VbVbalrCollectionInitializersHowTo2#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializersHowTo2/VB/Module1.vb#4)]  
   
@@ -27,5 +27,5 @@ Lorsque vous utilisez un initialiseur de collection pour créer une collection, 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Initialiseurs de collection](../../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
-- [Guide pratique : créer une méthode d’extension Add utilisée par un initialiseur de collection](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)
+- [Initialiseurs de collection](index.md)
+- [Comment : créer une méthode d'extension Add utilisée par un initialiseur de collection](how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)

@@ -16,39 +16,39 @@ helpviewer_keywords:
 - UShort data type
 - US literal type characters [Visual Basic]
 ms.assetid: 138db892-665d-4ba8-9cae-d8d91c4a8f39
-ms.openlocfilehash: 7cdbd5fb192fd5cc1be6260dcdcdb1f30cf3f865
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ee31156e00059699125fd72a7f091afbb21beab0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400693"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84415477"
 ---
-# <a name="ushort-data-type-visual-basic"></a>Type de données UShort (Visual Basic)
+# <a name="ushort-data-type-visual-basic"></a>UShort, type de données (Visual Basic)
 
-Détient des 16 pouces non signés (2-byte) d’une valeur allant de 0 à 65 535.  
+Contient des entiers 16 bits (2 octets) non signés dont la valeur est comprise entre 0 et 65 535.  
   
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
- Utilisez `UShort` le type de données pour `Byte`contenir des données binaires trop grandes pour .  
+ Utilisez le `UShort` type de données pour contenir des données binaires trop volumineuses pour `Byte` .  
   
  La valeur par défaut de `UShort` est 0.  
 
 ## <a name="literal-assignments"></a>Affectations littérales
 
-Vous pouvez déclarer et `UShort` initialiser une variable en lui assignant un littéal décimal, un littéal hexadecimal, un littéral octal, ou (à partir de Visual Basic 2017) un littéral binaire. Si le littéral entier est en dehors de la plage de `UShort` (autrement dit, s’il est inférieur à <xref:System.UInt16.MinValue?displayProperty=nameWithType> ou supérieur à <xref:System.UInt16.MaxValue?displayProperty=nameWithType>, une erreur de compilation se produit.
+Vous pouvez déclarer et initialiser une `UShort` variable en lui assignant un littéral décimal, un littéral hexadécimal, un littéral octal ou (à partir de Visual Basic 2017) un littéral binaire. Si le littéral entier est en dehors de la plage de `UShort` (autrement dit, s’il est inférieur à <xref:System.UInt16.MinValue?displayProperty=nameWithType> ou supérieur à <xref:System.UInt16.MaxValue?displayProperty=nameWithType>, une erreur de compilation se produit.
 
-Dans l’exemple suivant, les intégristes sont égaux à 65 034 qui sont représentés comme décimales, hexadecimal, et les littérals binaires sont attribués aux `UShort` valeurs.
+Dans l’exemple suivant, les entiers égaux à 65 034 représentés comme des littéraux décimaux, hexadécimaux et binaires sont assignés aux `UShort` valeurs.
   
 [!code-vb[UShort](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#UShort)]
 
 > [!NOTE]
-> Vous utilisez le `&h` `&H` préfixe ou pour désigner un littératal hexadecimal, le `&b` préfixe ou `&B` pour désigner un littératique binaire, et le préfixe `&o` ou `&O` pour désigner un littéral octal. Les littéraux décimaux n’ont pas de préfixe.
+> Vous utilisez le préfixe `&h` ou `&H` pour désigner un littéral hexadécimal, le préfixe `&b` ou `&B` pour désigner un littéral binaire, et le préfixe `&o` ou `&O` pour désigner un littéral octal. Les littéraux décimaux n’ont pas de préfixe.
 
-En commençant par Visual Basic 2017, vous `_`pouvez également utiliser le personnage de soulignement, , comme séparateur à chiffres pour améliorer la lisibilité, comme le montre l’exemple suivant.
+À compter de Visual Basic 2017, vous pouvez également utiliser le caractère de soulignement, `_` , comme séparateur de chiffres pour améliorer la lisibilité, comme le montre l’exemple suivant.
 
 [!code-vb[UShort](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#UShortS)]
 
-En commençant par Visual Basic 15.5, vous`_`pouvez également utiliser le caractère de soulignement ( ) comme séparateur de premier plan entre le préfixe et les chiffres hexadecimal, binaire ou octal. Par exemple :
+À compter de Visual Basic 15,5, vous pouvez également utiliser le trait de soulignement ( `_` ) comme séparateur de début entre le préfixe et les chiffres hexadécimaux, binaires ou octaux. Par exemple :
 
 ```vb
 Dim number As UShort = &H_FF8C
@@ -56,7 +56,7 @@ Dim number As UShort = &H_FF8C
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-Les littérals numériques `us` peuvent également inclure `UShort` le caractère ou le `US` [type](../../programming-guide/language-features/data-types/type-characters.md) pour désigner le type de données, comme le montre l’exemple suivant.
+Les littéraux numériques peuvent également inclure `US` le `us` [caractère de type](../../programming-guide/language-features/data-types/type-characters.md) ou pour désigner le `UShort` type de données, comme le montre l’exemple suivant.
 
 ```vb
 Dim number = &H_5826us
@@ -64,21 +64,21 @@ Dim number = &H_5826us
 
 ## <a name="programming-tips"></a>Conseils de programmation
   
-- **Nombres négatifs.** Parce `UShort` qu’il s’agit d’un type non signé, il ne peut pas représenter un nombre négatif. Si vous utilisez l’opérateur unary moins (`-`) `UShort`sur une expression qui `Integer` évalue au type, Visual Basic convertit l’expression en premier.  
+- **Nombres négatifs.** Étant donné que `UShort` est un type non signé, il ne peut pas représenter un nombre négatif. Si vous utilisez l’opérateur moins unaire ( `-` ) sur une expression qui prend la valeur type `UShort` , Visual Basic convertit d’abord l’expression en `Integer` premier.  
   
-- **Conformité CLS.** Le `UShort` type de données ne fait pas partie de la [spécification de langue commune](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS), de sorte que le code conforme à CLS ne peut pas consommer un composant qui l’utilise.
+- **Conformité CLS.** Le `UShort` type de données ne faisant pas partie du [Common Language Specification](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS), le code conforme CLS ne peut pas consommer un composant qui l’utilise.
   
-- **Élargissement.** Le `UShort` type de `Integer`données `UInteger` `Long`s’élargit à , , `ULong`, , `Decimal`, `Single`et `Double`. Cela signifie que `UShort` vous pouvez convertir à <xref:System.OverflowException?displayProperty=nameWithType> l’un de ces types sans rencontrer une erreur.  
+- **Étendue.** Le `UShort` type de données s’étend à `Integer` , `UInteger` , `Long` , `ULong` , `Decimal` , `Single` et `Double` . Cela signifie que vous pouvez `UShort` effectuer une conversion vers l’un de ces types sans rencontrer d' <xref:System.OverflowException?displayProperty=nameWithType> erreur.  
   
-- **Personnages de type.** Appending les caractères `US` de type littéral `UShort` à un littéral le force au type de données. `UShort`n’a pas de caractère de type identificateur.  
+- **Caractères de type.** L’ajout des caractères de type littéral `US` à un littéral force ce dernier en `UShort` type de données. `UShort`n’a pas de caractère de type d’identificateur.  
   
 - **Type .NET Framework.** Le type correspondant dans le .NET Framework est la structure <xref:System.UInt16?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.UInt16>
-- [Types de données](../../../visual-basic/language-reference/data-types/index.md)
-- [Fonctions de conversion de types](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [Liste des conversions](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [Guide pratique : appeler une fonction Windows qui possède des types non signés](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
-- [Utilisation efficace des types de données](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- [Types de données](index.md)
+- [Type Conversion Functions](../functions/type-conversion-functions.md)
+- [Liste des conversions](../keywords/conversion-summary.md)
+- [Procédure : Appeler une fonction Windows qui accepte des types non signés](../../programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
+- [Utilisation efficace des types de données](../../programming-guide/language-features/data-types/efficient-use-of-data-types.md)
