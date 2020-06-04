@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Default keyword [Visual Basic]
 - default properties
 ms.assetid: 45fce9b9-d212-4b2d-ab86-6e359b8b57af
-ms.openlocfilehash: ad4c9528f208cc2c31f07b0506d1b049a7568c86
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0c2808795d6fcbad7892369fd7f460ebf0406093
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351583"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84372970"
 ---
 # <a name="default-visual-basic"></a>Default (Visual Basic)
 Identifie une propriété en tant que propriété par défaut de sa classe, structure ou interface.  
@@ -25,17 +25,17 @@ Identifie une propriété en tant que propriété par défaut de sa classe, stru
   
  Les propriétés par défaut peuvent entraîner une petite réduction des caractères de code source, mais elles peuvent rendre votre code plus difficile à lire. Si le code appelant n’est pas familiarisé avec votre classe ou structure, lorsqu’il fait référence au nom de la classe ou de la structure, il ne peut pas être certain que cette référence accède à la classe ou à la structure elle-même, ou à une propriété par défaut. Cela peut entraîner des erreurs de compilation ou des erreurs de logique d’exécution subtiles.  
   
- Vous pouvez réduire légèrement les risques d’erreurs de propriété par défaut en utilisant toujours l' [instruction Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md) pour définir la vérification du type de compilateur sur `On`.  
+ Vous pouvez réduire légèrement les risques d’erreurs de propriété par défaut en utilisant toujours l' [instruction Option Strict](../statements/option-strict-statement.md) pour définir la vérification du type de compilateur sur `On` .  
   
  Si vous envisagez d’utiliser une classe ou une structure prédéfinie dans votre code, vous devez déterminer si elle a une propriété par défaut et, dans ce cas, son nom.  
   
  En raison de ces inconvénients, vous devez envisager de ne pas définir de propriétés par défaut. Pour une meilleure lisibilité du code, vous devez également penser à toujours faire référence à toutes les propriétés explicitement, même les propriétés par défaut.  
   
- Le modificateur `Default` peut être utilisé dans ce contexte :  
+ Le `Default` modificateur peut être utilisé dans ce contexte :  
   
- [Property (instruction)](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Property Statement](../statements/property-statement.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment : déclarer et appeler une propriété par défaut dans Visual Basic](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md)
-- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
+- [Comment : déclarer et appeler une propriété par défaut en Visual Basic](../../programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md)
+- [Mots clés](../keywords/index.md)

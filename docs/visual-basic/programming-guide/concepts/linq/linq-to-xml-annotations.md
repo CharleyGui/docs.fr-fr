@@ -2,12 +2,12 @@
 title: LINQ to XML Annotations2
 ms.date: 07/20/2015
 ms.assetid: c3e8b3ff-fceb-4428-b0ca-1ed6f128aac8
-ms.openlocfilehash: edf8e0126c632deae6b6d4c235c4880d7b8687e8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 917129a06483ce2001e178d744440504533d28d6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663425"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84369009"
 ---
 # <a name="linq-to-xml-annotations"></a>Annotations LINQ to XML
 Les annotations dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vous permettent d’associer n’importe quel objet arbitraire de n’importe quel type arbitraire à n’importe quel composant XML dans une arborescence XML.  
@@ -28,4 +28,4 @@ Les annotations dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vous 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Avancées programmation LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Visual Basic (Advanced LINQ to XML Programming)](advanced-linq-to-xml-programming.md)

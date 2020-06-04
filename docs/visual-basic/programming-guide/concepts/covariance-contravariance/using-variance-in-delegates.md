@@ -2,12 +2,12 @@
 title: Utilisation de la variance dans les délégués
 ms.date: 07/20/2015
 ms.assetid: 7b5c20f1-6416-46a3-94b6-f109c31c842c
-ms.openlocfilehash: 9c2aad0e4b9408939600938412fe5c3e73b5bf15
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 842392a1342f7d3689d4d1f2a2adb7470eeda05e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349027"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375782"
 ---
 # <a name="using-variance-in-delegates-visual-basic"></a>Utilisation de la variance dans les délégués (Visual Basic)
 
@@ -88,5 +88,5 @@ End Sub
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Variance dans les délégués (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)
-- [Utilisation de la variance pour les délégués génériques Func et Action (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
+- [Variance dans les délégués (Visual Basic)](variance-in-delegates.md)
+- [Utilisation de la variance pour les délégués génériques Func et Action (Visual Basic)](using-variance-for-func-and-action-generic-delegates.md)

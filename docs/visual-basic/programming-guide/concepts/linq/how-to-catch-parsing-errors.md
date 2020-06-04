@@ -1,13 +1,13 @@
 ---
-title: "Comment : intercepter des erreurs d'analyse"
+title: 'Procédure : intercepter les erreurs d’analyse'
 ms.date: 07/20/2015
 ms.assetid: 22e9068e-ea58-447b-816e-cd1852c11787
-ms.openlocfilehash: 14c4f76c5f10616f9346084cda276e2862b2b41d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c0b46d7df270dd6f081a0c736b6978088cfbd9c0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353342"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375146"
 ---
 # <a name="how-to-catch-parsing-errors-visual-basic"></a>Comment : intercepter des erreurs d’analyse (Visual Basic)
 Cette rubrique montre comment détecter du code XML incorrect ou non valide.  
@@ -43,4 +43,4 @@ The 'Contacts' start tag on line 1 does not match the end tag of 'Contcts'. Line
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Analyse XML (Visual Basic)](parsing-xml.md)

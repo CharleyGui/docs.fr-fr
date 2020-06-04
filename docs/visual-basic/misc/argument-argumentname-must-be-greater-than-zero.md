@@ -1,17 +1,17 @@
 ---
-title: Argument '<argumentname>' doit être supérieure à zéro
+title: L’argument '<argumentname>' doit être supérieur à zéro
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_GTZero1
 ms.assetid: f9939fbd-6c4f-4871-9452-9ea0267e948e
-ms.openlocfilehash: 9c5e2526a46ae155d304c08e1460f9a61111e251
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c44d2cde5f8b78971d1f54cb5ea1eea42c4fdd7e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62024428"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84382131"
 ---
-# <a name="argument-argumentname-must-be-greater-than-zero"></a>Argument '\<nom_argument >' doit être supérieure à zéro
+# <a name="argument-argumentname-must-be-greater-than-zero"></a>L’argument '\<argumentname>' doit être supérieur à zéro
 Un argument n’est pas valide car il est inférieur ou égal à zéro.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
@@ -22,4 +22,4 @@ Un argument n’est pas valide car il est inférieur ou égal à zéro.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Passage d’un argument par valeur et par référence](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Passage des arguments par valeur et par référence](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
