@@ -22,12 +22,12 @@ helpviewer_keywords:
 - I/O [Visual Basic], renaming folders
 - I/O [Visual Basic], moving files
 ms.assetid: 8f814fcc-4c42-4dbb-a131-005ec445ac9e
-ms.openlocfilehash: 8e0b291c0bb526c21654a1e8c08bd168d95ac53a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 12f5e8d29ea92750884e45bf1d9ef05bbfe672b8
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74348907"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401756"
 ---
 # <a name="creating-deleting-and-moving-files-and-directories-in-visual-basic"></a>Création, suppression et déplacement de fichiers et de répertoires dans Visual Basic
 
@@ -35,49 +35,49 @@ Cette section liste les tâches associées à la création, la suppression, le d
   
 ## <a name="in-this-section"></a>Dans cette section  
 
- [Comment : copier des fichiers avec un modèle spécifique dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)  
+ [Procédure : copier des fichiers avec un modèle spécifique dans un répertoire](how-to-copy-files-with-a-specific-pattern-to-a-directory.md)  
  Montre comment copier des fichiers dotés d’un modèle de nom spécifique, par exemple des fichiers .txt, dans un répertoire.  
   
- [Comment : créer une copie d'un fichier dans le même répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)  
+ [Procédure : créer une copie d’un fichier dans le même répertoire](how-to-create-a-copy-of-a-file-in-the-same-directory.md)  
  Montre comment créer une copie d’un fichier dans le même répertoire.  
   
- [Comment : créer une copie d'un fichier dans un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)  
+ [Procédure : créer une copie d’un fichier dans un autre répertoire](how-to-create-a-copy-of-a-file-in-a-different-directory.md)  
  Montre comment copier un fichier dans un autre répertoire.  
   
- [Comment : créer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-file.md)  
+ [Procédure : créer un fichier](how-to-create-a-file.md)  
  Montre comment créer un fichier.  
   
- [Comment : supprimer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-delete-a-file.md)  
+ [Procédure : supprimer un fichier](how-to-delete-a-file.md)  
  Montre comment supprimer un fichier.  
   
- [Comment : rechercher des fichiers avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)  
+ [Procédure : rechercher des fichiers avec un modèle spécifique](how-to-find-files-with-a-specific-pattern.md)  
  Montre comment lister uniquement les fichiers dotés d’un modèle de nom spécifique dans un répertoire.  
   
- [Comment : déplacer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)  
+ [Procédure : déplacer un fichier](how-to-move-a-file.md)  
  Montre comment déplacer un fichier dans un autre répertoire.  
   
- [Comment : renommer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)  
+ [Procédure : renommer un fichier](how-to-rename-a-file.md)  
  Montre comment renommer un fichier.  
   
- [Comment : copier un répertoire vers un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)  
+ [Procédure : copier un répertoire vers un autre répertoire](how-to-copy-a-directory-to-another-directory.md)  
  Montre comment copier un répertoire à un autre emplacement.  
   
- [Création d’un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-directory.md)  
+ [Procédure : créer un répertoire](how-to-create-a-directory.md)  
  Montre comment créer un répertoire.  
   
- [Comment : rechercher des sous-répertoires avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)  
+ [Procédure : rechercher des sous-répertoires avec un modèle spécifique](how-to-find-subdirectories-with-a-specific-pattern.md)  
  Montre comment lister des répertoires dotés d’un modèle de nom spécifique.  
   
- [Comment : placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)  
+ [Procédure : placer la collection de fichiers dans un répertoire](how-to-get-the-collection-of-files-in-a-directory.md)  
  Montre comment lister les fichiers d’un répertoire.  
   
- [Comment : récupérer le contenu du répertoire Mes Documents](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-retrieve-the-contents-of-the-my-documents-directory.md)  
+ [Procédure : récupérer le contenu du répertoire Mes documents](how-to-retrieve-the-contents-of-the-my-documents-directory.md)  
  Montre comment lire des répertoires spéciaux.  
   
- [Comment : analyser des chemins d'accès](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)  
+ [Procédure : analyser des chemins de fichiers](how-to-parse-file-paths.md)  
  Montre comment utiliser les méthodes `My` pour combiner des chemins d’accès aux fichiers.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
 
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  Décrit l’objet `My.Computer.FileSystem` et ses membres.  
@@ -120,8 +120,8 @@ Cette section liste les tâches associées à la création, la suppression, le d
   
 ## <a name="related-sections"></a>Sections connexes  
 
- [Lecture à partir de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
+ [Lecture à partir de fichiers](reading-from-files.md)  
  Liste les tâches associées à la lecture de fichiers.  
   
- [Écrire dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
+ [Écriture dans des fichiers](writing-to-files.md)  
  Liste les tâches relatives à l’écriture dans les fichiers.

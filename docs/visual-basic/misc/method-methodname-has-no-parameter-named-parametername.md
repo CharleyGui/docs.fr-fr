@@ -1,17 +1,17 @@
 ---
-title: Méthode '<methodname>'n’a aucun paramètre nommé'<parametername>'
+title: La méthode' <methodname> 'n’a aucun paramètre nommé' <parametername> '
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_InvalidNamedArg2
 ms.assetid: b4346b6a-87da-4e65-a2de-ee5239c671f8
-ms.openlocfilehash: aa9d34b0beccd664a4f6a001df3c80936de937e8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 831420e92dc8e1ae88719a738b32ad40abd49d8d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938409"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402094"
 ---
-# <a name="method-methodname-has-no-parameter-named-parametername"></a>Méthode '\<nom_méthode >' n’a aucun paramètre nommé '\<nom_paramètre >'
+# <a name="method-methodname-has-no-parameter-named-parametername"></a>La méthode' \<methodname> 'n’a aucun paramètre nommé' \<parametername> '
 Un argument nommé fourni ne correspond pas à l’un des arguments de la méthode cible.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
@@ -20,4 +20,4 @@ Un argument nommé fourni ne correspond pas à l’un des arguments de la métho
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Passage d’un argument par valeur et par référence](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Passage des arguments par valeur et par référence](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

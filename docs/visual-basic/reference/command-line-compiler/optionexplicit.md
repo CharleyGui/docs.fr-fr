@@ -9,12 +9,12 @@ helpviewer_keywords:
 - optionexplicit compiler option [Visual Basic]
 - -optionexplicit compiler option [Visual Basic]
 ms.assetid: 5d296ab3-bafe-4c4d-9887-78f162ed86c7
-ms.openlocfilehash: 37ccd14dae0ebba2535185f2646e312d9bb70390
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: b004acb0c1c7d145c59a1e3a88ef7f1d405a91c6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78266727"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400555"
 ---
 # <a name="-optionexplicit"></a>-optionexplicit
 Fait en sorte que le compilateur signale des erreurs si les variables ne sont pas déclarées avant d’être utilisées.  
@@ -27,10 +27,10 @@ Fait en sorte que le compilateur signale des erreurs si les variables ne sont pa
   
 ## <a name="arguments"></a>Arguments  
  `+` &#124; `-`  
- Facultatif. Spécifiez `-optionexplicit+` pour exiger une déclaration explicite de variables. L' `-optionexplicit+` option est la valeur par défaut et est identique `-optionexplicit`à. L' `-optionexplicit-` option active la déclaration implicite de variables.  
+ Facultatif. Spécifiez `-optionexplicit+` pour exiger une déclaration explicite de variables. L' `-optionexplicit+` option est la valeur par défaut et est identique à `-optionexplicit` . L' `-optionexplicit-` option active la déclaration implicite de variables.  
   
 ## <a name="remarks"></a>Notes  
- Si le fichier de code source contient une [instruction Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md), l’instruction remplace le `-optionexplicit` paramètre du compilateur de ligne de commande.  
+ Si le fichier de code source contient une [instruction Option Explicit](../../language-reference/statements/option-explicit-statement.md), l’instruction remplace le `-optionexplicit` paramètre du compilateur de ligne de commande.  
   
 ### <a name="to-set--optionexplicit-in-the-visual-studio-ide"></a>Pour définir-optionexplicit dans l’IDE de Visual Studio  
   
@@ -47,10 +47,10 @@ Fait en sorte que le compilateur signale des erreurs si les variables ne sont pa
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
-- [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
-- [-optioninfer (](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
-- [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [Option Explicit (instruction)](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
+- [Compilateur de ligne de commande de Visual Basic](index.md)
+- [-optioncompare](optioncompare.md)
+- [-optionstrict](optionstrict.md)
+- [-optioninfer](optioninfer.md)
+- [Exemples de lignes de commande de compilation](sample-compilation-command-lines.md)
+- [Option Explicit (instruction)](../../language-reference/statements/option-explicit-statement.md)
 - [Valeurs par défaut VB, Projets, boîte de dialogue Options](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

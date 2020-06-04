@@ -6,12 +6,12 @@ helpviewer_keywords:
 - win32manifest compiler option [Visual Basic]
 - -win32manifest compiler option [Visual Basic]
 ms.assetid: 9e3191b4-90db-41c8-966a-28036fd20005
-ms.openlocfilehash: cef1e6c19e7fdd6fc9f42c8fc36008314ea80a80
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6f77649365f8ca7b163cd55854aa9960d88f2984
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349130"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414257"
 ---
 # <a name="-win32manifest-visual-basic"></a>-win32manifest (Visual Basic)
 Identifie un fichier manifeste d'application Win32 défini par l'utilisateur à incorporer dans le fichier exécutable portable (PE) d'un projet.  
@@ -32,19 +32,19 @@ Identifie un fichier manifeste d'application Win32 défini par l'utilisateur à 
  Par défaut, le compilateur Visual Basic incorpore un manifeste d’application qui spécifie le niveau d’exécution demandé asInvoker. Il crée le manifeste dans le même dossier que celui dans lequel le fichier exécutable est généré, en général le dossier bin\Debug ou bin\Release lorsque vous utilisez Visual Studio. Si vous souhaitez fournir un manifeste personnalisé, par exemple pour spécifier le niveau d’exécution demandé de highestAvailable ou requireAdministrator, utilisez cette option pour spécifier le nom du fichier.  
   
 > [!NOTE]
-> Cette option et l’option [-Win32Resource](../../../visual-basic/reference/command-line-compiler/win32resource.md) s’excluent mutuellement. Si vous essayez d’utiliser ces deux options dans la même ligne de commande, vous obtiendrez une erreur de Build.  
+> Cette option et l’option [-Win32Resource](win32resource.md) s’excluent mutuellement. Si vous essayez d’utiliser ces deux options dans la même ligne de commande, vous obtiendrez une erreur de Build.  
   
  Une application sans manifeste d’application pour spécifier le niveau d’exécution requis est soumise à une virtualisation des fichiers/registres sous la fonctionnalité de contrôle de compte d’utilisateur de Windows Vista. Pour plus d’informations sur la virtualisation, consultez [Déploiement ClickOnce sur Windows Vista](/visualstudio/deployment/clickonce-deployment-on-windows-vista).  
   
  Votre application sera soumise à la virtualisation si l’une des conditions suivantes est remplie :  
   
-1. Vous utilisez l' `-nowin32manifest` option et vous ne fournissez pas de manifeste dans une étape de génération ultérieure ou dans le cadre d’un fichier de ressources Windows (. res `-win32resource` ) à l’aide de l’option.  
+1. Vous utilisez l' `-nowin32manifest` option et vous ne fournissez pas de manifeste dans une étape de génération ultérieure ou dans le cadre d’un fichier de ressources Windows (. res) à l’aide de l' `-win32resource` option.  
   
 2. Vous fournissez un manifeste personnalisé qui ne spécifie pas le niveau d’exécution requis.  
   
  Visual Studio crée un fichier .manifest par défaut et le stocke dans les répertoires de débogage et de mise en production avec le fichier exécutable. Vous pouvez afficher ou modifier le fichier app. manifest par défaut en cliquant sur **afficher les paramètres du contrôle de compte d’utilisateur** sous l’onglet **application** du concepteur de projet. Pour plus d'informations, consultez [Application Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
- Vous pouvez fournir le manifeste d’application en tant qu’étape de publication personnalisée ou dans le cadre d’un fichier de ressources Win32 `-nowin32manifest` à l’aide de l’option. Utilisez cette même option pour que votre application soit soumise à la virtualisation des fichiers ou des registres dans Windows Vista. Cela empêchera le compilateur de créer et d’incorporer un manifeste par défaut dans le fichier PE.  
+ Vous pouvez fournir le manifeste d’application en tant qu’étape de publication personnalisée ou dans le cadre d’un fichier de ressources Win32 à l’aide de l' `-nowin32manifest` option. Utilisez cette même option pour que votre application soit soumise à la virtualisation des fichiers ou des registres dans Windows Vista. Cela empêchera le compilateur de créer et d’incorporer un manifeste par défaut dans le fichier PE.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre le manifeste par défaut que le compilateur Visual Basic insère dans un fichier PE.  
@@ -68,5 +68,5 @@ Identifie un fichier manifeste d'application Win32 défini par l'utilisateur à 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-nowin32manifest (Visual Basic)](../../../visual-basic/reference/command-line-compiler/nowin32manifest.md)
+- [Compilateur de ligne de commande de Visual Basic](index.md)
+- [-nowin32manifest (Visual Basic)](nowin32manifest.md)

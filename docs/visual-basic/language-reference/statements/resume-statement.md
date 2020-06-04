@@ -15,17 +15,17 @@ helpviewer_keywords:
 - execution
 - Resume statement [Visual Basic]
 ms.assetid: e24d058b-1a5c-4274-acb9-7d295d3ea537
-ms.openlocfilehash: 95137a9f6a4a4a18655b51b95300bfaf93cca193
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3f49f05f1deb2027b03bbf3443ca44f30c44344e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74333027"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404211"
 ---
 # <a name="resume-statement"></a>Resume, instruction
 Reprend l’exécution après la fin d’une routine de gestion des erreurs.  
   
- Nous vous suggérons d’utiliser la gestion structurée des exceptions dans votre code dans la mesure du possible, au lieu d’utiliser la gestion non structurée des exceptions et les instructions `On Error` et `Resume`. Pour plus d’informations, consultez [Try...Catch...Finally, instruction](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+ Nous vous suggérons d’utiliser la gestion structurée des exceptions dans votre code dans la mesure du possible, au lieu d’utiliser la gestion non structurée des exceptions et les `On Error` `Resume` instructions et. Pour plus d’informations, consultez [Try...Catch...Finally, instruction](try-catch-finally-statement.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,37 +33,37 @@ Reprend l’exécution après la fin d’une routine de gestion des erreurs.
 Resume [ Next | line ]  
 ```  
   
-## <a name="parts"></a>Composants  
+## <a name="parts"></a>Éléments  
  `Resume`  
- Requis. Si l’erreur s’est produite dans la même procédure que le gestionnaire d’erreurs, l’exécution reprend avec l’instruction qui a provoqué l’erreur. Si l’erreur s’est produite dans une procédure appelée, l’exécution reprend au niveau de l’instruction qui a appelé en dehors de la procédure qui contient la routine de gestion des erreurs.  
+ Obligatoire. Si l’erreur s’est produite dans la même procédure que le gestionnaire d’erreurs, l’exécution reprend avec l’instruction qui a provoqué l’erreur. Si l’erreur s’est produite dans une procédure appelée, l’exécution reprend au niveau de l’instruction qui a appelé en dehors de la procédure qui contient la routine de gestion des erreurs.  
   
  `Next`  
- Ce paramètre est facultatif. Si l’erreur s’est produite dans la même procédure que le gestionnaire d’erreurs, l’exécution reprend avec l’instruction qui suit immédiatement l’instruction qui a provoqué l’erreur. Si l’erreur s’est produite dans une procédure appelée, l’exécution reprend avec l’instruction qui suit immédiatement l’instruction qui a appelé en dehors de la procédure qui contient la routine de gestion des erreurs (ou `On Error Resume Next` instruction).  
+ Facultatif. Si l’erreur s’est produite dans la même procédure que le gestionnaire d’erreurs, l’exécution reprend avec l’instruction qui suit immédiatement l’instruction qui a provoqué l’erreur. Si l’erreur s’est produite dans une procédure appelée, l’exécution reprend avec l’instruction qui suit immédiatement l’instruction qui a appelé en dehors de la procédure qui contient la routine de gestion des erreurs (ou l' `On Error Resume Next` instruction).  
   
  `line`  
- Ce paramètre est facultatif. L’exécution reprend à la ligne spécifiée dans l’argument `line` requis. L’argument `line` est une étiquette de ligne ou un numéro de ligne et doit être dans la même procédure que le gestionnaire d’erreurs.  
+ Facultatif. L’exécution reprend à la ligne spécifiée dans l' `line` argument requis. L' `line` argument est une étiquette de ligne ou un numéro de ligne et doit être dans la même procédure que le gestionnaire d’erreurs.  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
-> Nous vous recommandons d’utiliser la gestion structurée des exceptions dans votre code dans la mesure du possible, au lieu d’utiliser la gestion des exceptions non structurées et les instructions `On Error` et `Resume`. Pour plus d’informations, consultez [Try...Catch...Finally, instruction](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+> Nous vous recommandons d’utiliser la gestion structurée des exceptions dans votre code dans la mesure du possible, au lieu d’utiliser la gestion des exceptions non structurées et les `On Error` `Resume` instructions et. Pour plus d’informations, consultez [Try...Catch...Finally, instruction](try-catch-finally-statement.md).  
   
- Si vous utilisez une instruction `Resume` n’importe où dans une routine de gestion des erreurs, une erreur se produit.  
+ Si vous utilisez une `Resume` instruction n’importe où dans une routine de gestion des erreurs, une erreur se produit.  
   
- L’instruction `Resume` ne peut pas être utilisée dans une procédure qui contient une instruction `Try...Catch...Finally`.  
+ L' `Resume` instruction ne peut pas être utilisée dans une procédure qui contient une `Try...Catch...Finally` instruction.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise l’instruction `Resume` pour terminer la gestion des erreurs dans une procédure, puis reprendre l’exécution avec l’instruction qui a provoqué l’erreur. L’erreur numéro 55 est générée pour illustrer l’utilisation de l’instruction `Resume`.  
+ Cet exemple utilise l' `Resume` instruction pour terminer la gestion des erreurs dans une procédure, puis reprendre l’exécution avec l’instruction qui a provoqué l’erreur. L’erreur numéro 55 est générée pour illustrer l’utilisation de l' `Resume` instruction.  
   
  [!code-vb[VbVbalrErrorHandling#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#16)]  
   
-## <a name="requirements"></a>Configuration requise  
- **Espace de noms :** [Microsoft. VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
+## <a name="requirements"></a>Spécifications  
+ **Espace de noms :** [Microsoft. VisualBasic](../runtime-library-members.md)  
   
  **Assembly :** Visual Basic bibliothèque Runtime (dans Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Try...Catch...Finally (instruction)](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
-- [Error (instruction)](../../../visual-basic/language-reference/statements/error-statement.md)
-- [On Error (instruction)](../../../visual-basic/language-reference/statements/on-error-statement.md)
+- [Try...Catch...Finally (instruction)](try-catch-finally-statement.md)
+- [Error, instruction](error-statement.md)
+- [On Error (instruction)](on-error-statement.md)

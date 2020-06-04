@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC36599
 ms.assetid: 17763dbe-f74f-4ccb-8086-cb7e45ec4d12
-ms.openlocfilehash: ca50ddd86cfbba8db0148ed315645714acabc18d
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: d6b155de0bb62f667ca76ec9454dec1466976a9b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582422"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400407"
 ---
 # <a name="range-variable-name-can-be-inferred-only-from-a-simple-or-qualified-name-with-no-arguments"></a>Le nom de la variable de portée peut être déduit uniquement à partir d’un nom qualifié ou d’un nom simple sans arguments
 
@@ -31,5 +31,5 @@ Dim query = From var1 In collection1
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction à LINQ en Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [Select (clause)](../../../visual-basic/language-reference/queries/select-clause.md)
+- [Introduction à LINQ en Visual Basic](../../programming-guide/language-features/linq/introduction-to-linq.md)
+- [Clause SELECT](../queries/select-clause.md)

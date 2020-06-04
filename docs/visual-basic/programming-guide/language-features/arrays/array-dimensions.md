@@ -9,25 +9,25 @@ helpviewer_keywords:
 - rectangular arrays
 - ranking, arrays
 ms.assetid: 385e911b-18c1-4e98-9924-c6d279101dd9
-ms.openlocfilehash: 12e983ae62fa9f9ea762d434ffe5b73873a4a2e8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f971f0c3693177adbcb8869d487e3ad41d49ddc2
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351907"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413102"
 ---
 # <a name="array-dimensions-in-visual-basic"></a>Dimensions du tableau dans Visual Basic
 
 Une *dimension* est un sens dans lequel vous pouvez faire varier la spécification des éléments d’un tableau. Un tableau qui contient le total des ventes pour chaque jour du mois a une dimension (le jour du mois). Un tableau qui contient le total des ventes par département pour chaque jour du mois a deux dimensions (le numéro de service et le jour du mois). Le nombre de dimensions d’un tableau est appelé son *rang*.
 
 > [!NOTE]
-> Vous pouvez utiliser la propriété <xref:System.Array.Rank%2A> pour déterminer le nombre de dimensions d’un tableau.
+> Vous pouvez utiliser la <xref:System.Array.Rank%2A> propriété pour déterminer le nombre de dimensions d’un tableau.
 
 ## <a name="working-with-dimensions"></a>Utilisation de dimensions
 
 Vous spécifiez un élément d’un tableau en fournissant un *index* ou un *indice* pour chacune de ses dimensions. Les éléments sont contigus le long de chaque dimension à partir de l’index 0 jusqu’à l’index le plus élevé pour cette dimension.
 
-Les illustrations suivantes montrent la structure conceptuelle des tableaux avec des rangs différents. Chaque élément dans les illustrations affiche les valeurs d’index qui y accèdent. Par exemple, vous pouvez accéder au premier élément de la deuxième ligne du tableau à deux dimensions en spécifiant des index `(1, 0)`.
+Les illustrations suivantes montrent la structure conceptuelle des tableaux avec des rangs différents. Chaque élément dans les illustrations affiche les valeurs d’index qui y accèdent. Par exemple, vous pouvez accéder au premier élément de la deuxième ligne du tableau à deux dimensions en spécifiant des index `(1, 0)` .
 
 ![Diagramme qui montre un tableau unidimensionnel.](./media/array-dimensions/one-dimensional-array.gif)
 
@@ -91,9 +91,9 @@ Dim salesAmounts(4, 11, 30) As Double
 Notez que, étant donné que chaque index varie de 0 à son maximum, chaque dimension de `salesAmounts` est déclarée comme une valeur inférieure à la longueur requise pour cette dimension. Notez également que la taille du tableau augmente avec chaque nouvelle dimension. Les trois tailles dans les exemples précédents sont respectivement 31, 372 et 1 860 éléments.
 
 > [!NOTE]
-> Vous pouvez créer un tableau sans utiliser l’instruction `Dim` ou la clause `New`. Par exemple, vous pouvez appeler la méthode <xref:System.Array.CreateInstance%2A>, ou un autre composant peut passer votre code à un tableau créé de cette manière. Un tel tableau peut avoir une limite inférieure différente de 0. Vous pouvez toujours tester la limite inférieure d’une dimension à l’aide de la méthode <xref:System.Array.GetLowerBound%2A> ou de la fonction `LBound`.
+> Vous pouvez créer un tableau sans utiliser l' `Dim` instruction ou la `New` clause. Par exemple, vous pouvez appeler la <xref:System.Array.CreateInstance%2A> méthode, ou un autre composant peut passer votre code à un tableau créé de cette manière. Un tel tableau peut avoir une limite inférieure différente de 0. Vous pouvez toujours tester la limite inférieure d’une dimension à l’aide de la <xref:System.Array.GetLowerBound%2A> méthode ou de la `LBound` fonction.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [Dépannage des tableaux](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)
+- [Tableaux](index.md)
+- [Résolution des problèmes de tableaux](troubleshooting-arrays.md)

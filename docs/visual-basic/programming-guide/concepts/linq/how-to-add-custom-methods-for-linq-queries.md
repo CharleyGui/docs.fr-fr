@@ -1,19 +1,19 @@
 ---
-title: 'Comment : ajouter des méthodes personnalisées pour les requêtes LINQ'
+title: 'Procédure : ajouter des méthodes personnalisées pour les requêtes LINQ'
 ms.date: 07/20/2015
 ms.assetid: 099b2e2a-83cd-45c6-aa4d-01b398b5faaf
-ms.openlocfilehash: 3004a9c9c7abeffd9993b848ad765e7ae2dc8876
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 55004441d2d1d74556da6841f28d113b876d1048
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353373"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400602"
 ---
 # <a name="how-to-add-custom-methods-for-linq-queries-visual-basic"></a>Comment : ajouter des méthodes personnalisées pour les requêtes LINQ (Visual Basic)
 
 Vous pouvez étendre l’ensemble de méthodes que vous pouvez utiliser pour les requêtes LINQ en ajoutant des méthodes d’extension à l’interface <xref:System.Collections.Generic.IEnumerable%601>. Par exemple, en plus des opérations standard d’obtention de valeur moyenne et maximale, vous pouvez créer une méthode d’agrégation personnalisée pour calculer une valeur unique à partir d’une séquence de valeurs. Vous pouvez également créer une méthode qui fonctionne comme un filtre personnalisé ou une transformation de données pour une séquence de valeurs, et qui retourne une nouvelle séquence. <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Skip%2A> et <xref:System.Linq.Enumerable.Reverse%2A> en sont quelques exemples.
 
-Quand vous étendez l’interface <xref:System.Collections.Generic.IEnumerable%601>, vous pouvez appliquer vos méthodes personnalisées à n’importe quelle collection énumérable. Pour plus d’informations, consultez la page [Méthodes d’extension](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).
+Quand vous étendez l’interface <xref:System.Collections.Generic.IEnumerable%601>, vous pouvez appliquer vos méthodes personnalisées à n’importe quelle collection énumérable. Pour plus d’informations, consultez [Méthodes d’extension](../../language-features/procedures/extension-methods.md).
 
 ## <a name="adding-an-aggregate-method"></a>Utilisation d’une méthode d’agrégation
 
@@ -53,7 +53,7 @@ End Module
 Vous appelez cette méthode d’extension pour toute collection énumérable de la même façon que vous appelez d’autres méthodes d’agrégation depuis l’interface <xref:System.Collections.Generic.IEnumerable%601>.
 
 > [!NOTE]
-> Dans Visual Basic, vous pouvez utiliser un appel de méthode ou une syntaxe de requête standard pour la clause `Aggregate` ou `Group By`. Pour plus d’informations, consultez clause [Aggregate](../../../../visual-basic/language-reference/queries/aggregate-clause.md) et [clause Group by](../../../../visual-basic/language-reference/queries/group-by-clause.md).
+> Dans Visual Basic, vous pouvez utiliser un appel de méthode ou une syntaxe de requête standard pour la `Aggregate` `Group By` clause ou. Pour plus d’informations, consultez clause [Aggregate](../../../language-reference/queries/aggregate-clause.md) et [clause Group by](../../../language-reference/queries/group-by-clause.md).
 
 L’exemple de code suivant montre comment utiliser la méthode `Median` pour un tableau de type `double`.
 
@@ -129,7 +129,7 @@ Function Median(Of T)(ByVal source As IEnumerable(Of T),
 End Function
 ```
 
-Vous pouvez maintenant appeler la méthode `Median` pour une séquence d’objets de tout type. Si le type n’a pas sa propre surcharge de méthode, vous devez passer un paramètre délégué. Dans Visual Basic, vous pouvez utiliser une expression lambda à cet effet. En outre, si vous utilisez la clause `Aggregate` ou `Group By` à la place de l’appel de méthode, vous pouvez passer n’importe quelle valeur ou expression figurant dans la portée de cette clause.
+Vous pouvez maintenant appeler la méthode `Median` pour une séquence d’objets de tout type. Si le type n’a pas sa propre surcharge de méthode, vous devez passer un paramètre délégué. Dans Visual Basic, vous pouvez utiliser une expression lambda à cet effet. En outre, si vous utilisez `Aggregate` la `Group By` clause ou au lieu de l’appel de méthode, vous pouvez passer n’importe quelle valeur ou expression figurant dans la portée de cette clause.
 
 L’exemple de code suivant montre comment appeler la méthode `Median` pour un tableau d’entiers et un tableau de chaînes. Pour les chaînes, c’est la valeur médiane des longueurs de chaînes du tableau qui est calculée. L’exemple montre comment passer le paramètre de délégué <xref:System.Func%602> à la méthode `Median` pour chaque cas.
 
@@ -207,4 +207,4 @@ Next
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Collections.Generic.IEnumerable%601>
-- [Méthodes d’extension](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)
+- [Méthodes d’extension](../../language-features/procedures/extension-methods.md)

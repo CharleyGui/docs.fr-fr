@@ -6,12 +6,12 @@ f1_keywords:
 - fixed
 helpviewer_keywords:
 - fixed keyword [C#]
-ms.openlocfilehash: 53bee82bf24a847b0b21ed2375d09a6303d4fe48
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: d743daca2fa779e300c7e8ab430b1ffff10b434c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507189"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401912"
 ---
 # <a name="fixed-statement-c-reference"></a>fixed, instruction (référence C#)
 
@@ -19,15 +19,15 @@ L’instruction `fixed` empêche le récupérateur de mémoire de déplacer une 
 
 L’instruction `fixed` définit un pointeur vers une variable managée et épingle cette variable pendant l’exécution de l’instruction. Les pointeurs vers des variables managées ne sont utiles que dans un contexte `fixed`. Sans contexte `fixed`, le garbage collection peut déplacer les variables de manière imprévisible. Le compilateur C# permet seulement d’assigner un pointeur à une variable managée dans une instruction `fixed`.
 
-[!code-csharp[Accessing fixed memory](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#1)]
+[!code-csharp[Accessing fixed memory](snippets/FixedKeywordExamples.cs#1)]
 
 Vous pouvez initialiser un pointeur à l’aide d’un tableau, d’une chaîne, d’un tampon de taille fixe ou de l’adresse d’une variable. L’exemple suivant montre l’utilisation des adresses de variables, des tableaux et des chaînes :
 
-[!code-csharp[Initializing fixed size buffers](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#2)]
+[!code-csharp[Initializing fixed size buffers](snippets/FixedKeywordExamples.cs#2)]
 
 À compter de C# 7.3, l’instruction `fixed` s’applique à d’autres types au-delà des tableaux, chaînes, mémoires tampons de taille fixe ou variables non managées. Tout type qui implémente une méthode nommée `GetPinnableReference` peut être épinglé. `GetPinnableReference` doit retourner une variable `ref` d’un [type non managé](../builtin-types/unmanaged-types.md). Les types .NET <xref:System.Span%601?displayProperty=nameWithType> et <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> introduits dans .NET Core 2.0 utilisent ce modèle et peuvent être épinglés. Ceci est illustré dans l'exemple suivant :
 
-[!code-csharp[Accessing fixed memory](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#FixedSpan)]
+[!code-csharp[Accessing fixed memory](snippets/FixedKeywordExamples.cs#FixedSpan)]
 
 Si vous créez des types qui doivent être inclus dans ce modèle, consultez <xref:System.Span%601.GetPinnableReference?displayProperty=nameWithType> pour obtenir un exemple d’implémentation du modèle.
 
@@ -39,7 +39,7 @@ fixed (byte* ps = srcarray, pd = dstarray) {...}
 
 Pour initialiser des pointeurs de types différents, imbriquez des instructions `fixed`, comme indiqué dans l’exemple suivant.
 
-[!code-csharp[Initializing multiple pointers](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#3)]
+[!code-csharp[Initializing multiple pointers](snippets/FixedKeywordExamples.cs#3)]
 
 Une fois que le code de l’instruction est exécuté, toutes les variables épinglées sont libérées et soumises au garbage collection. Par conséquent, ne pointez pas vers ces variables en dehors de l’instruction `fixed`. La portée des variables déclarées dans l’instruction `fixed` est limitée à cette instruction, ce qui facilite les choses :
 
@@ -62,7 +62,7 @@ fixed (byte* ps = srcarray, pd = dstarray)
 }
 ```
 
-Vous pouvez allouer de la mémoire à la pile, où elle n’est pas soumise au nettoyage de la mémoire et n’a donc pas besoin d’être épinglée. Pour ce faire, [ `stackalloc` ](../operators/stackalloc.md)utilisez une expression .
+Vous pouvez allouer de la mémoire à la pile, où elle n’est pas soumise au nettoyage de la mémoire et n’a donc pas besoin d’être épinglée. Pour ce faire, utilisez une [ `stackalloc` expression](../operators/stackalloc.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -70,9 +70,9 @@ Pour plus d’informations, consultez la section [Instructions fixes](~/_csharpl
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [Dangereux](unsafe.md)
+- [unsafe](unsafe.md)
 - [Types de pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- [Tampons de taille fixe](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md)
+- [Mémoires tampons de taille fixe](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md)

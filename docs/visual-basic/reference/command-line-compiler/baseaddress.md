@@ -9,12 +9,12 @@ helpviewer_keywords:
 - /baseaddress compiler option [Visual Basic]
 - baseaddress compiler option [Visual Basic]
 ms.assetid: c982bcf2-46e5-47a2-bc8f-a5cc32b7dc47
-ms.openlocfilehash: 6ee842dbe65cbd9d147e77ec523a2b031d303738
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: d241584195da7d6f74b45b191c4f63204c200d45
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002392"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84357178"
 ---
 # <a name="-baseaddress"></a>-baseaddress
 Spécifie une adresse de base par défaut lors de la création d’une DLL.  
@@ -36,7 +36,7 @@ Spécifie une adresse de base par défaut lors de la création d’une DLL.
   
  N’oubliez pas que le mot de poids faible dans cette adresse est arrondi. Par exemple, si vous spécifiez 0x11110001, il est arrondi à 0x11110000.  
   
- Pour terminer le processus de signature pour une DLL, utilisez `–R` l’option de l’outil Strong Naming Tool (SN. exe).  
+ Pour terminer le processus de signature pour une DLL, utilisez l' `–R` option de l’outil Strong Naming Tool (SN. exe).  
   
  Cette option est ignorée si la cible n’est pas une DLL.  
   
@@ -46,7 +46,7 @@ Spécifie une adresse de base par défaut lors de la création d’une DLL.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-cible (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
-- [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Compilateur de ligne de commande de Visual Basic](index.md)
+- [-cible (Visual Basic)](target.md)
+- [Exemples de lignes de commande de compilation](sample-compilation-command-lines.md)
 - [Sn. exe (outil Strong Name Tool)](../../../framework/tools/sn-exe-strong-name-tool.md))

@@ -1,5 +1,5 @@
 ---
-title: Conversion des tableaux
+title: Conversions de tableau
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [Visual Basic], converting type
@@ -12,28 +12,28 @@ helpviewer_keywords:
 - conversions [Visual Basic], array types
 - object arrays
 ms.assetid: fceff7d2-a1b7-44c7-b9aa-8bd831d8a444
-ms.openlocfilehash: 622ebe8a77f2dfbeb35e0408be48622d93d409c6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 1d20b01200d3f967e3355dc6e9651291003d140e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345864"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402003"
 ---
 # <a name="array-conversions-visual-basic"></a>Conversion des tableaux (Visual Basic)
 Vous pouvez convertir un type tableau en un type de tableau différent, à condition que vous respectiez les conditions suivantes :  
   
 - **Même rang.** Les rangs des deux tableaux doivent être identiques, autrement dit, ils doivent avoir le même nombre de dimensions. Toutefois, les longueurs des dimensions respectives ne doivent pas nécessairement être identiques.  
   
-- **Type de données de l’élément.** Les types de données des éléments des deux tableaux doivent être des types référence. Vous ne pouvez pas convertir un tableau `Integer` en tableau `Long`, ni même en tableau `Object`, car au moins un type valeur est impliqué. Pour plus d'informations, consultez [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).  
+- **Type de données de l’élément.** Les types de données des éléments des deux tableaux doivent être des types référence. Vous ne pouvez pas convertir un `Integer` tableau en `Long` tableau, ni même en `Object` tableau, car au moins un type valeur est impliqué. Pour plus d'informations, consultez [Value Types and Reference Types](value-types-and-reference-types.md).  
   
-- **Convertibilité.** Une conversion, étendue ou restrictive, doit être possible entre les types d’éléments des deux tableaux. Un exemple qui ne respecte pas cette exigence est une tentative de conversion entre un tableau `String` et un tableau d’une classe dérivée de <xref:System.Attribute?displayProperty=nameWithType>. Ces deux types n’ont rien en commun et aucune conversion n’existe entre eux.  
+- **Convertibilité.** Une conversion, étendue ou restrictive, doit être possible entre les types d’éléments des deux tableaux. Un exemple qui ne respecte pas cette exigence est une tentative de conversion entre un `String` tableau et un tableau d’une classe dérivée de <xref:System.Attribute?displayProperty=nameWithType> . Ces deux types n’ont rien en commun et aucune conversion n’existe entre eux.  
   
- La conversion d’un type tableau en un autre est étendue ou restrictive, selon que la conversion des éléments respectifs est étendue ou restrictive. Pour plus d’informations, consultez [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
+ La conversion d’un type tableau en un autre est étendue ou restrictive, selon que la conversion des éléments respectifs est étendue ou restrictive. Pour plus d’informations, consultez [Widening and Narrowing Conversions](widening-and-narrowing-conversions.md).  
   
 ## <a name="conversion-to-an-object-array"></a>Conversion en tableau d’objets  
- Lorsque vous déclarez un tableau de `Object` sans l’initialiser, son type d’élément est `Object` tant qu’il n’est pas initialisé. Quand vous le définissez sur un tableau d’une classe spécifique, il prend le type de cette classe. Toutefois, son type sous-jacent est toujours `Object`, et vous pouvez le définir par la suite sur un autre tableau d’une classe non liée. Étant donné que toutes les classes dérivent de `Object`, vous pouvez remplacer le type d’élément du tableau de toute classe par une autre classe.  
+ Lorsque vous déclarez un `Object` tableau sans l’initialiser, son type d’élément est `Object` tant qu’il reste non initialisé. Quand vous le définissez sur un tableau d’une classe spécifique, il prend le type de cette classe. Toutefois, son type sous-jacent est toujours `Object` , et vous pouvez le définir par la suite sur un autre tableau d’une classe non liée. Étant donné que toutes les classes dérivent de `Object` , vous pouvez modifier le type d’élément du tableau, de n’importe quelle classe à une autre classe.  
   
- Dans l’exemple suivant, aucune conversion n’existe entre les types `student` et `String`, mais les deux dérivent de `Object`, donc toutes les affectations sont valides.  
+ Dans l’exemple suivant, aucune conversion n’existe entre les types `student` et `String` , mais les deux dérivent de `Object` , donc toutes les affectations sont valides.  
   
 ```vb  
 ' Assume student has already been defined as a class.  
@@ -49,7 +49,7 @@ testArray = names
 ### <a name="underlying-type-of-an-array"></a>Type sous-jacent d’un tableau  
  Si vous déclarez à l’origine un tableau avec une classe spécifique, son type d’élément sous-jacent est cette classe. Si vous la définissez par la suite sur un tableau d’une autre classe, il doit y avoir une conversion entre les deux classes.  
   
- Dans l’exemple suivant, `students` est un tableau de `student`. Étant donné qu’il n’existe aucune conversion entre `String` et `student`, la dernière instruction échoue.  
+ Dans l’exemple suivant, `students` est un `student` tableau. Étant donné qu’il n’existe aucune conversion entre `String` et `student` , la dernière instruction échoue.  
   
 ```vb  
 Dim students() As student  
@@ -61,11 +61,11 @@ students = names
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [Conversions de type dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
-- [Conversions implicites et explicites](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
-- [Conversion entre des chaînes et d’autres types](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)
-- [Comment : convertir un objet en un autre type dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)
-- [Types de données](../../../../visual-basic/language-reference/data-types/index.md)
-- [Type Conversion Functions](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [Types de données](index.md)
+- [Conversions de type en Visual Basic](type-conversions.md)
+- [Conversions implicites et explicites](implicit-and-explicit-conversions.md)
+- [Conversions entre des chaînes et d’autres types](conversions-between-strings-and-other-types.md)
+- [Comment : convertir un objet en un autre type dans Visual Basic](how-to-convert-an-object-to-another-type.md)
+- [Types de données](../../../language-reference/data-types/index.md)
+- [Type Conversion Functions](../../../language-reference/functions/type-conversion-functions.md)
+- [Tableaux](../arrays/index.md)
