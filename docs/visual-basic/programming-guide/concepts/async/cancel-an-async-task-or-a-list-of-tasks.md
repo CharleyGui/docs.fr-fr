@@ -2,23 +2,23 @@
 title: Annuler une tâche Asynch ou une liste de tâches
 ms.date: 07/20/2015
 ms.assetid: a9ee1b71-5bec-4736-a1e9-448042dd7215
-ms.openlocfilehash: 2956582cd0c8e044fcd37ffab13686489a7c854c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 932bf46f1e3aee220d0412f1688e961faaef3459
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347964"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396699"
 ---
-# <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>Annuler une tâche asynchrone ou une liste de tâches (Visual Basic)
+# <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>Annuler une tâche Asynch ou une liste de tâches (Visual Basic)
 
 Vous pouvez créer un bouton permettant d’annuler une application asynchrone que vous souhaitez interrompre avant la fin de son exécution. Les exemples de cette rubrique vous montrent comment ajouter un bouton d’annulation à une application qui télécharge du contenu d’un site web ou une liste de sites web.
 
-Les exemples utilisent l’interface utilisateur que décrit pour [ajuster votre application Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md) .
+Les exemples utilisent l’interface utilisateur que décrit pour [ajuster votre application Async (Visual Basic)](fine-tuning-your-async-application.md) .
 
 > [!NOTE]
-> Pour exécuter les exemples, Visual Studio 2012 ou ultérieur et le .NET Framework 4.5 ou ultérieur doivent être installés sur votre ordinateur.
+> Pour exécuter les exemples, Visual Studio version 2012 ou ultérieure et le .NET Framework version 4.5 ou ultérieure doivent être installés sur votre ordinateur.
 
-## <a name="BKMK_CancelaTask"></a> Annuler une tâche
+## <a name="cancel-a-task"></a><a name="BKMK_CancelaTask"></a> Annuler une tâche
 
 Le premier exemple associe le bouton **Annuler** à une tâche de téléchargement unique. Si vous appuyez sur le bouton pendant que l’application télécharge du contenu, le téléchargement est annulé.
 
@@ -138,7 +138,7 @@ Ajoutez ensuite les modifications suivantes au fichier MainWindow. Xaml. vb de c
     Download canceled.
     ```
 
-## <a name="BKMK_CancelaListofTasks"></a> Annuler une liste de tâches
+## <a name="cancel-a-list-of-tasks"></a><a name="BKMK_CancelaListofTasks"></a> Annuler une liste de tâches
 
 Vous pouvez étendre l’exemple précédent pour annuler de nombreuses tâches à la fois en associant la même instance `CancellationTokenSource` à chaque tâche. Si vous choisissez le bouton **Annuler**, vous annulez toutes les tâches qui ne sont pas encore terminées.
 
@@ -253,7 +253,7 @@ Pour étendre l’exemple vous-même, pas à pas, suivez les instructions de la 
     Downloads canceled.
     ```
 
-## <a name="BKMK_CompleteExamples"></a> Exemples complets
+## <a name="complete-examples"></a><a name="BKMK_CompleteExamples"></a> Exemples complets
 
 Les sections suivantes contiennent le code correspondant à chacun des exemples précédents. Notez que vous devez ajouter une référence pour <xref:System.Net.Http>.
 
@@ -467,6 +467,6 @@ End Class
 
 - <xref:System.Threading.CancellationTokenSource>
 - <xref:System.Threading.CancellationToken>
-- [Programmation asynchrone avec Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Ajuster une application Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
-- [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Programmation asynchrone avec Async et Await (Visual Basic)](index.md)
+- [Ajuster une application Async (Visual Basic)](fine-tuning-your-async-application.md)
+- [Exemple Async : ajuster une application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

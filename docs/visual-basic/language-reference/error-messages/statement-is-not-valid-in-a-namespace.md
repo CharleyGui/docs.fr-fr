@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30001
 ms.assetid: 43c1b509-15f9-4e91-bcad-90bcb5f6f191
-ms.openlocfilehash: 3110241d2c10c3018b2144dbc8234a9b6633e0c4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5e83fda1a7e58cceb86bbd3e700a25b70be96587
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593245"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400329"
 ---
 # <a name="statement-is-not-valid-in-a-namespace"></a>Instruction non valide dans un espace de noms
-L’instruction ne peut pas apparaître au niveau d’un espace de noms. Les seules déclarations autorisées au niveau de l’espace de noms sont module, interface, classe, délégué, énumération et déclarations de structure.  
+L’instruction ne peut pas apparaître au niveau d’un espace de noms. Les seules déclarations autorisées au niveau de l’espace de noms sont les déclarations de module, d’interface, de classe, de délégué, d’énumération et de structure.  
   
  **ID d’erreur :** BC30001  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-- Déplacez l’instruction à un emplacement au sein d’un module, classe, interface, de structure, énumération ou définition du délégué.  
+- Déplacez l’instruction vers un emplacement au sein d’un module, d’une classe, d’une interface, d’une structure, d’une énumération ou d’une définition de délégué.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Portée dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
-- [Espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
+- [Portée dans Visual Basic](../../programming-guide/language-features/declared-elements/scope.md)
+- [Espaces de noms dans Visual Basic](../../programming-guide/program-structure/namespaces.md)

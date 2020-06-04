@@ -5,23 +5,23 @@ helpviewer_keywords:
 - conditional compilation [Visual Basic], about conditional compilation
 - compilation [Visual Basic], conditional
 ms.assetid: 9c35e55e-7eee-44fb-a586-dad1f1884848
-ms.openlocfilehash: 19a2c70941a9a72574f7e624743def74b80c4e39
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c3eb1eb57b3d76e762ed53edb3b168ad96abec39
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347459"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403263"
 ---
 # <a name="conditional-compilation-in-visual-basic"></a>Compilation conditionnelle en Visual Basic
 Dans la *compilation conditionnelle*, les blocs de code particuliers d’un programme sont compilés de manière sélective, tandis que d’autres sont ignorés.  
   
  Par exemple, vous pouvez écrire des instructions de débogage qui comparent la vitesse des différentes approches de la même tâche de programmation, ou vous pouvez souhaiter localiser une application pour plusieurs langues. Les instructions de compilation conditionnelle sont conçues pour s’exécuter pendant la compilation, et non au moment de l’exécution.  
   
- Vous désignez des blocs de code à compiler de façon conditionnelle avec la directive `#If...Then...#Else`. Par exemple, pour créer des versions en français et en allemand de la même application à partir du même code source, vous incorporez des segments de code spécifiques à la plateforme dans `#If...Then` instructions à l’aide des constantes prédéfinies `FrenchVersion` et `GermanVersion`. L’exemple suivant montre comment :  
+ Vous désignez des blocs de code à compiler de façon conditionnelle avec la `#If...Then...#Else` directive. Par exemple, pour créer des versions en français et en allemand de la même application à partir du même code source, vous incorporez des segments de code spécifiques à la plateforme dans des `#If...Then` instructions à l’aide des constantes prédéfinies `FrenchVersion` et `GermanVersion` . L’exemple suivant montre comment :  
   
  [!code-vb[VbVbalrConditionalComp#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConditionalComp/VB/Class1.vb#5)]  
   
- Si vous définissez la valeur de la `FrenchVersion` constante de compilation conditionnelle sur `True` au moment de la compilation, le code conditionnel de la version française est compilé. Si vous définissez la valeur de la constante `GermanVersion` sur `True`, le compilateur utilise la version allemande. Si aucun de ces `True`n’est défini, le code du dernier bloc de `Else` s’exécute.  
+ Si vous affectez à la valeur de la `FrenchVersion` constante de compilation conditionnelle la valeur `True` au moment de la compilation, le code conditionnel de la version française est compilé. Si vous affectez `GermanVersion` à la constante la valeur `True` , le compilateur utilise la version allemande. Si aucun n’a `True` la valeur, le code du dernier `Else` bloc s’exécute.  
   
 > [!NOTE]
 > La saisie semi-automatique ne fonctionne pas lors de la modification du code et de l’utilisation de directives de compilation conditionnelle si le code ne fait pas partie de la branche active.  
@@ -41,7 +41,7 @@ Dans la *compilation conditionnelle*, les blocs de code particuliers d’un prog
 |---|---|  
 |**Concepteur de projets**|Public pour tous les fichiers du projet|  
 |Ligne de commande|Public pour tous les fichiers passés au compilateur de ligne de commande|  
-|instruction `#Const` dans le code|Privé pour le fichier dans lequel il est déclaré|  
+|`#Const`instruction dans le code|Privé pour le fichier dans lequel il est déclaré|  
   
 |Pour définir des constantes dans le concepteur de projets|  
 |---|  
@@ -49,7 +49,7 @@ Dans la *compilation conditionnelle*, les blocs de code particuliers d’un prog
   
 |Pour définir des constantes au niveau de la ligne de commande|  
 |---|  
-|-Utilisez le commutateur **-d** pour entrer des constantes de compilation conditionnelle, comme dans l’exemple suivant :<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     Aucun espace n’est requis entre le commutateur **-d** et la première constante. Pour plus d’informations, consultez [-define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md).<br />     Les déclarations de ligne de commande remplacent les déclarations entrées dans le **Concepteur de projet**, mais ne les efface pas. Les arguments définis dans le **Concepteur de projets** restent en vigueur pour les compilations suivantes.<br />     Lors de l’écriture de constantes dans le code lui-même, il n’existe pas de règles strictes quant à leur position, car leur étendue est le module entier dans lequel elles sont déclarées.|  
+|-Utilisez le commutateur **-d** pour entrer des constantes de compilation conditionnelle, comme dans l’exemple suivant :<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     Aucun espace n’est requis entre le commutateur **-d** et la première constante. Pour plus d’informations, consultez [-define (Visual Basic)](../../reference/command-line-compiler/define.md).<br />     Les déclarations de ligne de commande remplacent les déclarations entrées dans le **Concepteur de projet**, mais ne les efface pas. Les arguments définis dans le **Concepteur de projets** restent en vigueur pour les compilations suivantes.<br />     Lors de l’écriture de constantes dans le code lui-même, il n’existe pas de règles strictes quant à leur position, car leur étendue est le module entier dans lequel elles sont déclarées.|  
   
 |Pour définir des constantes dans votre code|  
 |---|  
@@ -57,13 +57,13 @@ Dans la *compilation conditionnelle*, les blocs de code particuliers d’un prog
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Titre|Description|  
+|Intitulé|Description|  
 |---|---|  
-|[Structure de programme et conventions de codage](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)|Fournit des suggestions pour faciliter la lecture et la maintenance de votre code.|  
+|[Structure de programme et conventions de code](program-structure-and-code-conventions.md)|Fournit des suggestions pour faciliter la lecture et la maintenance de votre code.|  
   
-## <a name="reference"></a>Référence  
- [#Const (directive)](../../../visual-basic/language-reference/directives/const-directive.md)  
+## <a name="reference"></a>Informations de référence  
+ [#Const directive](../../language-reference/directives/const-directive.md)  
   
- [#If...Then...#Else, directives](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
+ [#If... Then... #Else directives](../../language-reference/directives/if-then-else-directives.md)  
   
- [-définir (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)
+ [-définir (Visual Basic)](../../reference/command-line-compiler/define.md)

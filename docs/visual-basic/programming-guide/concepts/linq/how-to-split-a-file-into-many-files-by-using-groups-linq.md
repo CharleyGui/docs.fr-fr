@@ -1,13 +1,13 @@
 ---
-title: "Comment : fractionner un fichier en plusieurs fichiers à l'aide de groupes (LINQ)"
+title: 'Procédure : fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 5e8b2a2b-0b1d-4933-8a2b-03e91dfaf77f
-ms.openlocfilehash: 07d53c9afca88cd3156c7fc8fcfab5ac7ca24f25
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: f6b11ab4b4fe11dbf1cb4cf07654b5ef3f6785ad
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348026"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397711"
 ---
 # <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>Comment : fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQ) (Visual Basic)
 
@@ -118,9 +118,9 @@ Le programme écrit un fichier distinct pour chaque groupe, dans le même dossie
 
 ## <a name="compile-the-code"></a>Compiler le code
 
-Créez un projet d’application console Visual Basic, avec une instruction `Imports` pour l’espace de noms System. Linq.
+Créez un projet d’application console Visual Basic, avec une `Imports` instruction pour l’espace de noms System. Linq.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ et Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ et répertoires de fichiers (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ et chaînes (Visual Basic)](linq-and-strings.md)
+- [LINQ et répertoires de fichiers (Visual Basic)](linq-and-file-directories.md)

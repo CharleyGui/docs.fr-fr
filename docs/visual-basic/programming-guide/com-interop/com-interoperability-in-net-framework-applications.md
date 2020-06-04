@@ -6,12 +6,12 @@ helpviewer_keywords:
 - COM interop [Visual Basic]
 - shared components
 ms.assetid: f5a72143-c268-4dff-a019-974ad940e17d
-ms.openlocfilehash: c3567464616d3b0b3f91ff57e8a169aca046c866
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 377958a21886fe0257633ea19417f9a19bd51ff3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452290"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396867"
 ---
 # <a name="com-interoperability-in-net-framework-applications-visual-basic"></a>Interopérabilité COM dans les applications .NET Framework (Visual Basic)
 
@@ -25,8 +25,8 @@ Les liens de cette page fournissent des détails sur les interactions entre les 
 
 | | |
 |---------|---------|
-| [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md) | Fournit des liens vers les rubriques qui décrivent l’interopérabilité COM dans Visual Basic, y compris les objets COM, les contrôles ActiveX, les dll Win32, les objets managés et l’héritage d’objets COM. |
+| [COM Interop](index.md) | Fournit des liens vers les rubriques qui décrivent l’interopérabilité COM dans Visual Basic, y compris les objets COM, les contrôles ActiveX, les dll Win32, les objets managés et l’héritage d’objets COM. |
 | [Interopération avec du code non managé](../../../framework/interop/index.md) | Décrit brièvement certains des problèmes d’interaction entre le code managé et le code non managé, et fournit des liens pour approfondir l’étude. |
 | [Wrappers COM](../../../standard/native-interop/com-wrappers.md) | Traite des wrappers pouvant être appelés par le runtime, qui permettent au code managé d’appeler des méthodes COM et des wrappers CCW (COM Callable Wrapper), qui permettent aux clients COM d’appeler des méthodes d’objet .NET. |
 | [Interopérabilité COM avancée](../../../framework/interop/index.md) | Fournit des liens vers les rubriques qui décrivent l’interopérabilité COM en ce qui concerne les wrappers, les exceptions, l’héritage, les threads, les événements, les conversions et le marshaling. |
-| [Tlbimp.exe (importateur de bibliothèques de types)](../../../framework/tools/tlbimp-exe-type-library-importer.md) | Présente l’outil que vous pouvez utiliser pour convertir les définitions de types trouvées dans une bibliothèque de types COM en définitions équivalentes dans un assembly common language runtime. |
+| [Tlbimp. exe (importateur de bibliothèques de types)](../../../framework/tools/tlbimp-exe-type-library-importer.md) | Présente l’outil que vous pouvez utiliser pour convertir les définitions de types trouvées dans une bibliothèque de types COM en définitions équivalentes dans un assembly common language runtime. |

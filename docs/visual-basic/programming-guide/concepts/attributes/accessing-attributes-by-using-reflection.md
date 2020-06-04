@@ -2,16 +2,16 @@
 title: Accès à des attributs à l'aide de la réflexion
 ms.date: 07/20/2015
 ms.assetid: c56e41da-5433-464f-a7bf-2a722e78bc9f
-ms.openlocfilehash: 94352f07cf1f7e4a35f023503f138596ae5ac227
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c0da5c4ae00eb2bc80b10f63f4bfd39763445e55
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353555"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400756"
 ---
-# <a name="accessing-attributes-by-using-reflection-visual-basic"></a>Accès aux attributs à l’aide de la réflexion (Visual Basic)
+# <a name="accessing-attributes-by-using-reflection-visual-basic"></a>Accéder à des attributs à l’aide de la réflexion (Visual Basic)
 
-La définition d’attributs personnalisés et leur ajout à votre code source présentent peu d’intérêt si vous ne pouvez pas ensuite récupérer et manipuler ces informations. La réflexion vous permet de récupérer les informations qui ont été définies à l’aide d’attributs personnalisés. La méthode clé est `GetCustomAttributes`. Elle retourne un tableau d’objets qui sont les équivalents des attributs du code source au moment de l’exécution. Cette méthode a plusieurs versions surchargées. Pour plus d'informations, consultez <xref:System.Attribute>.
+La définition d’attributs personnalisés et leur ajout à votre code source présentent peu d’intérêt si vous ne pouvez pas ensuite récupérer et manipuler ces informations. La réflexion vous permet de récupérer les informations qui ont été définies à l’aide d’attributs personnalisés. La méthode clé est `GetCustomAttributes`. Elle retourne un tableau d’objets qui sont les équivalents des attributs du code source au moment de l’exécution. Cette méthode a plusieurs versions surchargées. Pour plus d’informations, consultez <xref:System.Attribute>.
 
 Par exemple, cette spécification d’attribut :
 
@@ -105,8 +105,8 @@ End Class
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Guide de programmation Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Guide de programmation Visual Basic](../../index.md)
 - [Récupération des informations stockées dans les attributs](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)
-- [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
-- [Attributs (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)
-- [Créer des attributs personnalisés (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
+- [Réflexion (Visual Basic)](../reflection.md)
+- [Attributs (Visual Basic)](../../../language-reference/attributes.md)
+- [Créer des attributs personnalisés (Visual Basic)](creating-custom-attributes.md)

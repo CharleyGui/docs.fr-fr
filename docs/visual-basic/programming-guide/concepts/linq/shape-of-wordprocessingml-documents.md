@@ -2,12 +2,12 @@
 title: Forme des documents WordprocessingML
 ms.date: 07/20/2015
 ms.assetid: 2dfb446b-5a07-4c00-9ab3-a74ba734ff3a
-ms.openlocfilehash: 9dd858e28c010d901c2c5fdfb477fe2c6975dbd4
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: eb4acef2caa731d17e8daf1955d50f0d2585c175
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76315848"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406805"
 ---
 # <a name="shape-of-wordprocessingml-documents-visual-basic"></a>Forme des documents WordprocessingML (Visual Basic)
 Cette rubrique présente la forme XML d'un document WordprocessingML.  
@@ -94,4 +94,4 @@ End Module
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Didacticiel : manipulation de contenu dans un document WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Didacticiel : manipulation de contenu dans un document WordprocessingML (Visual Basic)](tutorial-manipulating-content-in-a-wordprocessingml-document.md)

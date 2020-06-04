@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30108
 ms.assetid: 7931361d-78e2-40ca-ac69-e3374273b248
-ms.openlocfilehash: b576062ccbb751a23ecb68e4ae070103078b0c6c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f9a4dc9904f7875f0405227014e2238fe91f4c69
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664233"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402783"
 ---
-# <a name="typename-is-a-type-and-cannot-be-used-as-an-expression"></a>'\<nom_type >' est un type et ne peut pas être utilisé en tant qu’expression
-Un nom de type se produit là où une expression est requise. Une expression doit se composer d’une combinaison de variables, de constantes, de littéraux, de propriétés et d’appels de procédure `Function` .  
+# <a name="typename-is-a-type-and-cannot-be-used-as-an-expression"></a>'\<typename>' est un type et ne peut pas être utilisé en tant qu'expression
+Un nom de type se produit lorsqu’une expression est requise. Une expression doit se composer d’une combinaison de variables, de constantes, de littéraux, de propriétés et d’appels de procédure `Function` .  
   
  **ID d’erreur :** BC30108  
   
@@ -25,4 +25,4 @@ Un nom de type se produit là où une expression est requise. Une expression doi
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérateurs et expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+- [Opérateurs et expressions](../../programming-guide/language-features/operators-and-expressions/index.md)

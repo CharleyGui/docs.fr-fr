@@ -1,13 +1,13 @@
 ---
-title: 'Comment : répertorier tous les nœuds dans une arborescence'
+title: 'Procédure : lister tous les nœuds d’une arborescence'
 ms.date: 07/20/2015
 ms.assetid: e19289c4-26d1-435b-b0db-fb8bc856b753
-ms.openlocfilehash: ea968298d49397f493cf0963db1214915c2e3822
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 15427ccf4701f3cd4bd1dc348f753c187571972c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74336137"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396556"
 ---
 # <a name="how-to-list-all-nodes-in-a-tree-visual-basic"></a>Comment : répertorier tous les nœuds d’une arborescence (Visual Basic)
 Il est parfois utile de répertorier tous les nœuds d’une arborescence. Cela peut être utile pour savoir exactement comment une méthode ou une propriété affecte l'arborescence. L'une des manières de répertorier tous les nœuds sous forme textuelle consiste à générer une expression XPath qui identifie exactement et spécifiquement tout nœud dans l'arborescence.  
@@ -230,7 +230,7 @@ Module Module1
 End Module  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
@@ -265,4 +265,4 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](advanced-query-techniques-linq-to-xml.md)
