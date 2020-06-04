@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrFinancial_PeriodLELife
 ms.assetid: dc575d41-b376-4b05-bbbe-6de1e98385f1
-ms.openlocfilehash: 2de503f345ff27311019c492712ac3bd3adef5be
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0b20bb1fd1c0954e30262dd3a3b43d145226b7cc
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64659066"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84367722"
 ---
 # <a name="argument-period-must-be-less-than-or-equal-to-argument-life"></a>L’argument ’Period’ doit être inférieur ou égal à l’argument ’Life’
 La valeur de l’argument `Period` , qui indique la période pendant laquelle l’amortissement de la ressource est calculé, est supérieure à la valeur de l’argument `Life` .  
@@ -20,4 +20,4 @@ La valeur de l’argument `Period` , qui indique la période pendant laquelle l�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Passage d’un argument par valeur et par référence](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Passage des arguments par valeur et par référence](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

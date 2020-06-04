@@ -5,17 +5,17 @@ helpviewer_keywords:
 - information functions [Visual Basic]
 - interaction functions [Visual Basic]
 ms.assetid: 6e698461-e944-4c0f-ae48-87429f1fe740
-ms.openlocfilehash: 2dd4a8b4c7b06d53a1f19df35cf42a451c552f7d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 36d67789a8d399a359556bb56c30334cf6faf8c7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349794"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373653"
 ---
 # <a name="information-and-interaction-summary-visual-basic"></a>Liste des informations et des interactions (Visual Basic)
 Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtime sont organisés par rôle et utilisation.  
   
-|Action|élément Language|  
+|Action|Élément du langage|  
 |------------|----------------------|  
 |Exécuter d’autres programmes.|<xref:Microsoft.VisualBasic.Interaction.AppActivate%2A>, <xref:Microsoft.VisualBasic.Interaction.Shell%2A>|  
 |Appelez une méthode ou une propriété.|<xref:Microsoft.VisualBasic.Interaction.CallByName%2A>|  
@@ -27,5 +27,5 @@ Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtim
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
-- [Membres de la bibliothèque runtime Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
+- [Mots clés](index.md)
+- [Membres de la bibliothèque runtime Visual Basic](../runtime-library-members.md)

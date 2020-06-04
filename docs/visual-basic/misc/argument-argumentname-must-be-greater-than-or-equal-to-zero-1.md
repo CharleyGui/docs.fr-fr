@@ -1,17 +1,17 @@
 ---
-title: Argument <argumentname> doit être supérieur ou égal à zéro
+title: L’argument <argumentname> doit être supérieur ou égal à zéro
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_GEZero1
 ms.assetid: 6f54fdc6-e263-4b2f-a66f-f206f3a59818
-ms.openlocfilehash: e161ee7d7bbdb009c5d257715779ed28786867dc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e25a85fd4fc2fb407871fa77c403a701f1849728
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050244"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84412817"
 ---
-# <a name="argument-argumentname-must-be-greater-than-or-equal-to-zero"></a>Argument \<nom_argument > doit être supérieure ou égale à zéro
+# <a name="argument-argumentname-must-be-greater-than-or-equal-to-zero"></a>L’argument \<argumentname> doit être supérieur ou égal à zéro
 Une valeur d’argument est inférieure à zéro. Les valeurs d’argument doivent être supérieures ou égales à zéro.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
@@ -22,4 +22,4 @@ Une valeur d’argument est inférieure à zéro. Les valeurs d’argument doive
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Passage d’un argument par valeur et par référence](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Passage des arguments par valeur et par référence](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

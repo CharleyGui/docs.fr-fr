@@ -2,12 +2,12 @@
 title: LINQ to ADO.NET (page de portail)
 ms.date: 07/20/2015
 ms.assetid: bbbd7c76-2981-4b91-b8d2-437547181f52
-ms.openlocfilehash: d5d7ba8230ae9737d4938c1c8c55f7cd4330b117
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 8c90783b56d6393ce3ac71945ed8ebffc8005ee1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636495"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84369178"
 ---
 # <a name="linq-to-adonet-portal-page"></a>LINQ to ADO.NET (page de portail)
 LINQ to ADO.NET vous permet d’interroger un objet énumérable dans ADO.NET à l’aide du modèle de programmation LINQ (Language-Integrated Query).  
@@ -15,7 +15,7 @@ LINQ to ADO.NET vous permet d’interroger un objet énumérable dans ADO.NET à
 > [!NOTE]
 > La documentation LINQ to ADO.NET se trouve dans la section ADO.NET du kit de développement logiciel (SDK) .NET Framework : [LINQ et ADO.net](../../../../framework/data/adonet/linq-and-ado-net.md).
   
- Il existe trois technologies ADO.NET LINQ (Language-Integrated Query) distinctes : LINQ to DataSet, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]et LINQ to Entities. LINQ to DataSet assure une interrogation plus riche et optimisée du <xref:System.Data.DataSet>, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] vous permet d’interroger directement des schémas de base de données SQL Server, et LINQ to Entities vous permet d’interroger un Entity Data Model.  
+ Il existe trois technologies ADO.NET LINQ (Language-Integrated Query) distinctes : LINQ to DataSet, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] et LINQ to Entities. LINQ to DataSet assure une interrogation plus riche et optimisée du <xref:System.Data.DataSet>, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] vous permet d’interroger directement des schémas de base de données SQL Server, et LINQ to Entities vous permet d’interroger un Entity Data Model.  
   
 ## <a name="linq-to-dataset"></a>LINQ to DataSet  
  <xref:System.Data.DataSet> est l’un des composants les plus largement utilisés dans ADO.NET, et c’est un élément clé du modèle de programmation déconnecté sur lequel ADO.NET est fondé. Toutefois, en dépit de son importance, le <xref:System.Data.DataSet> a des capacités de requête limitées.  
@@ -37,4 +37,4 @@ LINQ to ADO.NET vous permet d’interroger un objet énumérable dans ADO.NET à
 ## <a name="see-also"></a>Voir aussi
 
 - [LINQ et ADO.NET](../../../../framework/data/adonet/linq-and-ado-net.md)
-- [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
+- [LINQ (Language-Integrated Query) (Visual Basic)](index.md)

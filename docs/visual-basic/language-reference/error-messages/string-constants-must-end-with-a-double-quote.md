@@ -7,22 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - BC30648
 ms.assetid: eefb77a4-efbc-4000-8871-edce7ef7f2df
-ms.openlocfilehash: 6b727d0ee6c87b4c8b3e19af56d35bc6335dcc81
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2eb28c342e485658f1550d95c6e4e0629272ad2c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593238"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374094"
 ---
 # <a name="string-constants-must-end-with-a-double-quote"></a>Les constantes de chaîne doivent se terminer par un guillemet
-Constantes de chaîne doivent commencer et se terminer par des guillemets.  
+Les constantes de chaîne doivent commencer et se terminer par des guillemets.  
   
- **ID d’erreur :** BC30648  
+ **ErrorID :** BC30648  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-- Assurez-vous que le littéral de chaîne se termine par un guillemet («). Si vous collez des valeurs à partir d’autres éditeurs de texte, assurez-vous que le caractère collé est un guillemet valid et pas un des caractères semblables, tels que « intelligent » ou « des » entre guillemets (« ou ») ou deux guillemets («).  
+- Assurez-vous que le littéral de chaîne se termine par un guillemet ("). Si vous collez des valeurs à partir d’autres éditeurs de texte, assurez-vous que le caractère collé est un guillemet valide et non un des caractères qui le composent, tels que des guillemets « intelligents » ou « courbes » (« ou ») ou deux guillemets simples («»).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Chaînes](../../../visual-basic/programming-guide/language-features/strings/index.md)
+- [Chaînes](../../programming-guide/language-features/strings/index.md)
