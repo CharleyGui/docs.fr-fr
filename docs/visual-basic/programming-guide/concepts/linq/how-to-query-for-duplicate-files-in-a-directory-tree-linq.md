@@ -1,13 +1,13 @@
 ---
-title: 'Comment : interroger des fichiers dupliqués dans une arborescence de répertoires (LINQ)'
+title: 'Procédure : rechercher les fichiers dupliqués dans une arborescence de répertoires (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 387d7c97-95dd-4a50-9761-7e9cf8ae9e6a
-ms.openlocfilehash: 9870ccae327bccb0f6f93d49e3b2fc77d72f95cd
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: b37da0a26c8bb4abc885faa7bb0c467e2d7d2347
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75342185"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396426"
 ---
 # <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>Comment : interroger des Fichiers dupliqués dans une arborescence de répertoires (LINQ) (Visual Basic)
 Parfois, plusieurs dossiers peuvent contenir des fichiers ayant le même nom. Par exemple, sous le dossier d’installation de Visual Studio, plusieurs dossiers ont un fichier readme.htm. Cet exemple montre comment rechercher ces noms de fichiers dupliqués sous un dossier racine spécifié. Le deuxième exemple montre comment rechercher des fichiers dont la taille et l’heure de création correspondent également.  
@@ -101,9 +101,9 @@ End Module
  La première requête utilise une clé simple pour déterminer une correspondance ; elle trouve les fichiers qui ont le même nom mais dont le contenu peut être différent. La deuxième requête utilise une clé composée à comparer à trois propriétés de l’objet <xref:System.IO.FileInfo>. Cette requête est beaucoup plus susceptible de trouver les fichiers ayant le même nom et un contenu similaire ou identique.  
   
 ## <a name="compile-the-code"></a>Compiler le code  
-Créez un projet d’application console Visual Basic, avec une instruction `Imports` pour l’espace de noms System. Linq.
+Créez un projet d’application console Visual Basic, avec une `Imports` instruction pour l’espace de noms System. Linq.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-- [LINQ et répertoires de fichiers (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ to Objects (Visual Basic)](linq-to-objects.md)
+- [LINQ et répertoires de fichiers (Visual Basic)](linq-and-file-directories.md)

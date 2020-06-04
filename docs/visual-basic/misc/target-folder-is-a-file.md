@@ -2,12 +2,12 @@
 title: Le dossier cible est un fichier
 ms.date: 07/20/2015
 ms.assetid: c5e40bcb-2414-4484-b2b9-a9c391ad0029
-ms.openlocfilehash: 8a80a6699d7f1d5226c39c29a9853e83051e0cd0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ff4c25ab4ffdd9b15a91c2b96cf9acb94cab93dd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64660913"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396881"
 ---
 # <a name="target-folder-is-a-file"></a>Le dossier cible est un fichier
 Vous spécifiez un fichier lors de la tentative d’exécution d’une action associée à un dossier.  
@@ -18,8 +18,8 @@ Vous spécifiez un fichier lors de la tentative d’exécution d’une action as
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour analyser des chemins](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
-- [My.Computer.FileSystem](xref:Microsoft.VisualBasic.FileIO.FileSystem)
-- [Création, suppression et déplacement de fichiers et de répertoires](../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)
-- [Propriétés des fichiers, répertoire et lecteur en Visual Basic](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/as4xcs58(v=vs.100))
-- [Guide pratique pour Déterminer le chemin d’accès absolu d’un fichier dans Visual Basic](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/e00wt2d8(v=vs.100))
+- [Procédure : analyser des chemins de fichiers](../developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+- [My. Computer. FileSystem](xref:Microsoft.VisualBasic.FileIO.FileSystem)
+- [Création, suppression et déplacement de fichiers et de répertoires](../developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)
+- [Propriétés de fichier, de répertoire et de lecteur en Visual Basic](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/as4xcs58(v=vs.100))
+- [Comment : déterminer le chemin d’accès absolu d’un fichier dans Visual Basic](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/e00wt2d8(v=vs.100))

@@ -1,18 +1,18 @@
 ---
-title: "Comment : diffuser des fragments XML en continu avec accès aux informations d'en-tête"
+title: 'Procédure : effectuer le streaming de fragments XML avec accès aux informations d’en-tête'
 ms.date: 07/20/2015
 ms.assetid: effd10df-87c4-4d7a-8a9a-1434d829dca5
-ms.openlocfilehash: 325609b9f8cf1feebcb4be1fcfd0122e12100156
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 8d0543ff5a772768292c0e3117f41bea9367d23a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636690"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397685"
 ---
 # <a name="how-to-stream-xml-fragments-with-access-to-header-information-visual-basic"></a>Comment : diffuser des fragments XML en continu avec accès aux informations d’en-tête (Visual Basic)
 Vous devez parfois lire des fichiers XML arbitrairement volumineux et écrire votre application de sorte que son encombrement mémoire soit prévisible. Si vous tentez de remplir une arborescence XML avec un grand fichier XML, l'utilisation de la mémoire sera proportionnelle à la taille du fichier (c'est-à-dire excessive). Par conséquent, vous devez utiliser une technique de diffusion en continu à la place.  
   
- L'une des options consiste à écrire votre application à l'aide de <xref:System.Xml.XmlReader>. Toutefois, vous souhaiterez peut-être utiliser LINQ pour interroger l’arborescence XML. Si tel est le cas, vous pouvez écrire votre propre méthode d'axe personnalisée. Pour plus d’informations, consultez [Comment : écrire une méthode d’axe LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md).  
+ L'une des options consiste à écrire votre application à l'aide de <xref:System.Xml.XmlReader>. Toutefois, vous souhaiterez peut-être utiliser LINQ pour interroger l’arborescence XML. Si tel est le cas, vous pouvez écrire votre propre méthode d'axe personnalisée. Pour plus d’informations, consultez [Comment : écrire une méthode d’axe LINQ to XML (Visual Basic)](how-to-write-a-linq-to-xml-axis-method.md).  
   
  Pour écrire votre propre méthode d'axe personnalisée, vous écrivez une petite méthode qui utilise l'objet <xref:System.Xml.XmlReader> pour lire les nœuds jusqu'à atteindre l'un des nœuds qui vous intéressent. La méthode appelle ensuite <xref:System.Xml.Linq.XNode.ReadFrom%2A>, qui lit à partir de l'objet <xref:System.Xml.XmlReader> et instancie un fragment XML. Vous pouvez ensuite écrire des requêtes LINQ sur votre méthode d'axe personnalisée.  
   
@@ -232,4 +232,4 @@ End Class
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Visual Basic (Advanced LINQ to XML Programming)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Visual Basic (Advanced LINQ to XML Programming)](advanced-linq-to-xml-programming.md)

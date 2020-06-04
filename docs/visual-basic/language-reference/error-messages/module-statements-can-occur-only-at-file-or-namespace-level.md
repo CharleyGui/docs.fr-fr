@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30617
 ms.assetid: 5e9de8e5-d26b-4fb2-9e28-814413fe9cef
-ms.openlocfilehash: fc3c102dbfe7c55e66093421bc11379d48ba000d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d01c30571fc34e142300ac8706c56d5e99175fcf
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592094"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397205"
 ---
 # <a name="module-statements-can-occur-only-at-file-or-namespace-level"></a>Les instructions 'Module' ne peuvent intervenir qu'au niveau du fichier ou de l'espace de noms
-`Module` les instructions doivent apparaître en haut de votre fichier source immédiatement après `Option` et `Imports` instructions, les attributs globaux et les déclarations d’espace de noms, mais avant toutes les autres déclarations.  
+`Module`les instructions doivent apparaître en haut de votre fichier source immédiatement après `Option` et `Imports` les instructions, les attributs globaux et les déclarations d’espaces de noms, mais avant toutes les autres déclarations.  
   
  **ID d’erreur :** BC30617  
   
@@ -25,4 +25,4 @@ ms.locfileid: "64592094"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Module (instruction)](../../../visual-basic/language-reference/statements/module-statement.md)
+- [Module, instruction](../statements/module-statement.md)

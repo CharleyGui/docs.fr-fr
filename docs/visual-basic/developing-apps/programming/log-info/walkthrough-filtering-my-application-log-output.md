@@ -6,12 +6,12 @@ helpviewer_keywords:
 - My.Application.Log object, filtering output
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
-ms.openlocfilehash: f18556bbe1ca2d77925482319246d403892d31ef
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: aa63e7d23641ad71b135f15236e29399a535784f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74353588"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398251"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Procédure pas à pas : filtrage de la sortie de My.Application.Log (Visual Basic)
 
@@ -43,7 +43,7 @@ Chaque message écrit par `My.Application.Log` a un niveau de gravité associé 
 
 6. Fermez l'application.
 
-     Pour plus d’informations sur la consultation de la fenêtre de sortie de débogage de l’application, consultez [Fenêtre Sortie](/visualstudio/ide/reference/output-window). Pour plus d’informations sur l’emplacement du fichier journal de l’application, consultez [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).
+     Pour plus d’informations sur la consultation de la fenêtre de sortie de débogage de l’application, consultez [Fenêtre Sortie](/visualstudio/ide/reference/output-window). Pour plus d’informations sur l’emplacement du fichier journal de l’application, consultez [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](walkthrough-determining-where-my-application-log-writes-information.md).
 
     > [!NOTE]
     > Par défaut, l’application vide la sortie du fichier journal quand elle se ferme.
@@ -84,7 +84,7 @@ Ce tableau explique la sortie de journal affichée dans l’exemple précédent�
 
     2. Dans la boîte de dialogue **Ajouter un nouvel élément** , choisissez **Fichier de configuration de l’application**.
 
-    3. Cliquez sur **Ajouter**.
+    3. Cliquez sur **Add**.
 
 2. Recherchez la section `<switches>` dans la section `<system.diagnostics>`, qui se trouve dans la section `<configuration>` de niveau supérieur.
 
@@ -160,7 +160,7 @@ Cet exemple montre comment configurer le filtrage d’un nouvel écouteur de dé
 
     2. Dans la boîte de dialogue **Ajouter un nouvel élément** , choisissez **Fichier de configuration de l’application**.
 
-    3. Cliquez sur **Ajouter**.
+    3. Cliquez sur **Add**.
 
 2. Cliquez avec le bouton droit sur app.config dans l’**Explorateur de solutions**. Choisissez **Ouvrir**.
 
@@ -249,13 +249,13 @@ Cet exemple montre comment configurer le filtrage d’un nouvel écouteur de dé
 
 10. Fermez l'application.
 
-Pour plus d’informations sur la modification des paramètres de journal après le déploiement, consultez [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).
+Pour plus d’informations sur la modification des paramètres de journal après le déploiement, consultez [Utilisation des journaux des applications](working-with-application-logs.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
-- [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
-- [Procédure pas à pas : création d’écouteurs de journalisation personnalisés](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)
-- [Procédure : écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
+- [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](walkthrough-determining-where-my-application-log-writes-information.md)
+- [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](walkthrough-changing-where-my-application-log-writes-information.md)
+- [Procédure pas à pas : création d’écouteurs de journalisation personnalisés](walkthrough-creating-custom-log-listeners.md)
+- [Procédure : écrire des messages de journal](how-to-write-log-messages.md)
 - [Commutateurs de traçage](../../../../framework/debug-trace-profile/trace-switches.md)
-- [Enregistrement d’informations provenant de l’application](../../../../visual-basic/developing-apps/programming/log-info/index.md)
+- [Enregistrement d'informations provenant de l'application](index.md)

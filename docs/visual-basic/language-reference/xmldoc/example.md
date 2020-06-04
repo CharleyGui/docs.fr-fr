@@ -5,14 +5,14 @@ helpviewer_keywords:
 - example XML tag
 - <example> XML tag
 ms.assetid: 90eeda1c-3fc4-427c-879c-5046d265a97c
-ms.openlocfilehash: 8f36ac1337dd0d1400180fbd3deae2bb24ad9c58
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 42f40581d252956433165789d6674234a295867c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348482"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400139"
 ---
-# <a name="example-visual-basic"></a>> exemple de \<(Visual Basic)
+# <a name="example-visual-basic"></a>\<example> (Visual Basic)
 Spécifie un exemple pour le membre.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,15 +26,15 @@ Spécifie un exemple pour le membre.
  Description de l’exemple de code.  
   
 ## <a name="remarks"></a>Notes  
- La balise `<example>` vous permet de spécifier un exemple d’utilisation d’une méthode ou d’un autre membre de bibliothèque. Cela implique généralement l’utilisation de la balise [\<code>](../../../visual-basic/language-reference/xmldoc/code.md).  
+ La `<example>` balise vous permet de spécifier un exemple d’utilisation d’une méthode ou d’un autre membre de bibliothèque. Cela implique généralement l’utilisation de la [\<code>](code.md) balise.  
   
- Compilez avec [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
+ Compilez avec [-doc](../../reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise la balise `<example>` pour inclure un exemple d’utilisation du champ `ID`.  
+ Cet exemple utilise la `<example>` balise pour inclure un exemple d’utilisation du `ID` champ.  
   
  [!code-vb[VbVbcnXmlDocComments#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#2)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Étiquettes XML pour les commentaires](../../../visual-basic/language-reference/xmldoc/index.md)
+- [Étiquettes XML pour les commentaires](index.md)

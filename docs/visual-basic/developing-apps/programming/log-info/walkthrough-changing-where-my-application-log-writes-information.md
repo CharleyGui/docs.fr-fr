@@ -5,12 +5,12 @@ helpviewer_keywords:
 - My.Application.Log object, walkthroughs
 - event logs, changing output location
 ms.assetid: ecc74f95-743c-450d-93f6-09a30db0fe4a
-ms.openlocfilehash: bdee0a91360580b156c1734ef4c82139b18ce2b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f9e45cdf4507840f62e32678f4c0a7be2c0be054
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74336733"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398290"
 ---
 # <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a>Procédure pas à pas : modification de l'emplacement des informations My.Application.Log (Visual Basic)
 
@@ -18,9 +18,9 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
 
 ## <a name="prerequisites"></a>Prérequis
 
-L’objet `Log` peut écrire des informations dans plusieurs écouteurs de journalisation. Vous devez déterminer la configuration actuelle des écouteurs de journalisation avant de modifier les configurations. Pour plus d’informations, consultez [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).
+L’objet `Log` peut écrire des informations dans plusieurs écouteurs de journalisation. Vous devez déterminer la configuration actuelle des écouteurs de journalisation avant de modifier les configurations. Pour plus d’informations, consultez [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](walkthrough-determining-where-my-application-log-writes-information.md).
 
-Vous pouvez passer en revue [Guide pratique pour écrire des informations sur les événements dans un fichier texte](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md) ou [Guide pratique pour écrire dans le journal des événements d’une application](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md).
+Vous pouvez passer en revue [Guide pratique pour écrire des informations sur les événements dans un fichier texte](how-to-write-event-information-to-a-text-file.md) ou [Guide pratique pour écrire dans le journal des événements d’une application](how-to-write-to-an-application-event-log.md).
 
 ### <a name="to-add-listeners"></a>Pour ajouter des écouteurs
 
@@ -34,7 +34,7 @@ Vous pouvez passer en revue [Guide pratique pour écrire des informations sur le
 
     2. Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez **Fichier de configuration de l’application**.
 
-    3. Cliquez sur **Ajouter**.
+    3. Cliquez sur **Add**.
 
 2. Recherchez la section `<listeners>` , sous la section `<source>` avec l’attribut `name` « DefaultSource » dans la section `<sources>` . La section `<sources>` se trouve dans la section `<system.diagnostics>` , dans la section `<configuration>` de plus haut niveau.
 
@@ -173,7 +173,7 @@ Vous pouvez passer en revue [Guide pratique pour écrire des informations sur le
 
 1. Pour être sûr que type correct est utilisé pour votre écouteur de journalisation, vérifiez que vous utilisez le nom de type qualifié complet et le nom d’assembly avec nom fort. La syntaxe d’un type avec nom fort est la suivante :
 
-     \<*nom de type*>, \<*nom d’assembly*>, \<*numéro de version*>, \<*culture*>, \<*nom fort*>
+     \<*type name*>, \<*assembly name*>, \<*version number*>, \<*culture*>, \<*strong name*>
 
 2. Cet exemple de code montre comment déterminer le nom de type avec nom fort pour un type qualifié complet, dans ce cas « System.Diagnostics.FileLogTraceListener ».
 
@@ -189,5 +189,5 @@ Vous pouvez passer en revue [Guide pratique pour écrire des informations sur le
 - <xref:System.Diagnostics.TraceListener>
 - <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType>
 - <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType>
-- [Procédure : écrire des informations sur les événements dans un fichier texte](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md)
-- [Procédure : écrire dans le journal des événements de l’application](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md)
+- [Procédure : écrire des informations sur les événements dans un fichier texte](how-to-write-event-information-to-a-text-file.md)
+- [Procédure : écrire dans le journal des événements de l’application](how-to-write-to-an-application-event-log.md)

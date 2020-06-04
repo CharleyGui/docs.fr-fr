@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC31194
 ms.assetid: 03d50c31-addd-4c90-9c53-725b84f9782e
-ms.openlocfilehash: 4a0f3eb2b1603899e9acc1273c023ec5d0ed3132
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: f19f157bd4c76f481aa3232bc33c2a0c6ac21367
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64913339"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400277"
 ---
 # <a name="value-of-type-type1-cannot-be-converted-to-type2"></a>Une valeur de type 'type1' ne peut pas être convertie en 'type2'
-Valeur de type 'type1' ne peut pas être convertie en 'type2'. Vous pouvez utiliser la propriété 'Value' pour obtenir la valeur de chaîne du premier élément de '\<parentElement >'.  
+Impossible de convertir une valeur de type’type1 'en’type2 '. Vous pouvez utiliser la propriété’value’pour récupérer la valeur de chaîne du premier élément de' \<parentElement> '.  
   
  Une tentative de conversion implicite d’un littéral XML vers un type spécifique a été effectuée. Le littéral XML ne peut pas être implicitement converti vers le type spécifié.  
   
@@ -28,6 +28,6 @@ Valeur de type 'type1' ne peut pas être convertie en 'type2'. Vous pouvez utili
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Convert>
-- [Fonctions de conversion de types](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [Littéraux XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [Type Conversion Functions](../functions/type-conversion-functions.md)
+- [Littéraux XML](../xml-literals/index.md)
+- [XML](../../programming-guide/language-features/xml/index.md)

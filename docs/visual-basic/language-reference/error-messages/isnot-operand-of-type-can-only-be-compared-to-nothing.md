@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - BC32128
 ms.assetid: 1155b23a-ad75-4bab-b9da-73f35c767a36
-ms.openlocfilehash: 1660971e2a1a11d7a2d14f222cd149edf4aa4c7b
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: fb61b04021bd844fade94413b4f3b28b82f6411b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249511"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402796"
 ---
 # <a name="isnot-operand-of-type-typename-can-only-be-compared-to-nothing-because-typename-is-a-nullable-type"></a>L’opérande 'IsNot' du type 'NomType' ne peut être comparé qu’à 'Nothing', car 'NomType' est un type nullable
 
-Une variable déclarée comme type de valeur nulle `Nothing` a `IsNot` été comparée à une expression autre que l’utilisation de l’opérateur.
+Une variable déclarée en tant que type valeur Nullable a été comparée à une expression autre que l' `Nothing` `IsNot` opérateur.
 
-**ID erreur:** BC32128
+**ID d’erreur :** BC32128
 
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur
 
@@ -36,5 +36,5 @@ End If
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de valeur nuls](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
-- [IsNot (opérateur)](../../../visual-basic/language-reference/operators/isnot-operator.md)
+- [Types valeur Nullable](../../programming-guide/language-features/data-types/nullable-value-types.md)
+- [IsNot, opérateur](../operators/isnot-operator.md)

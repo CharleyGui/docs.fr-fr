@@ -1,13 +1,13 @@
 ---
-title: Conservation des espaces lors du chargement ou de l’analyse XML2
+title: Conservation des espaces blancs lors du chargement ou de l’analyse de XML2
 ms.date: 07/20/2015
 ms.assetid: ef6518e0-2c8d-462c-8b92-a16e9dc737ad
-ms.openlocfilehash: 7febbf1ea27d3e73df8b91869befcd0b29a07c6e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9c60c707730ed0b07e82040a4ce3aab5d83eef1c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64666137"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396439"
 ---
 # <a name="preserving-white-space-while-loading-or-parsing-xml"></a>Conservation des espaces blancs lors du chargement ou de l’analyse de code XML
 Cette rubrique décrit comment contrôler le comportement d'espace blanc de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
@@ -16,7 +16,7 @@ Cette rubrique décrit comment contrôler le comportement d'espace blanc de [!IN
   
  Un autre scénario courant consiste à lire et à modifier du code XML qui a déjà été intentionnellement mis en retrait. Vous ne souhaiterez peut-être modifier cette mise en retrait en aucune manière. Pour ce faire dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], vous devez conserver les espaces lorsque vous chargez ou analysez le code XML et que vous désactivez la mise en forme lors de la sérialisation du code XML.  
   
- Cette rubrique décrit le comportement des espaces blancs des méthodes qui remplissent les arborescences XML. Pour plus d’informations sur le contrôle des espaces blancs quand vous sérialisez des arborescences XML, consultez [Conservation des espaces blancs lors de la sérialisation](../../../../visual-basic/programming-guide/concepts/linq/preserving-white-space-while-serializing.md).  
+ Cette rubrique décrit le comportement des espaces blancs des méthodes qui remplissent les arborescences XML. Pour plus d’informations sur le contrôle des espaces blancs quand vous sérialisez des arborescences XML, consultez [Conservation des espaces blancs lors de la sérialisation](preserving-white-space-while-serializing.md).  
   
 ## <a name="behavior-of-methods-that-populate-xml-trees"></a>Comportement des méthodes qui remplissent des arborescences XML  
  Les méthodes suivantes dans les classes <xref:System.Xml.Linq.XElement> et <xref:System.Xml.Linq.XDocument> remplissent une arborescence XML. Vous pouvez remplir une arborescence XML à partir d'un fichier, d'un objet <xref:System.IO.TextReader>, d'un objet <xref:System.Xml.XmlReader> ou d'une chaîne :  
@@ -39,4 +39,4 @@ Cette rubrique décrit comment contrôler le comportement d'espace blanc de [!IN
   
 ## <a name="see-also"></a>Voir aussi
 
-- [L’analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Analyse XML (Visual Basic)](parsing-xml.md)

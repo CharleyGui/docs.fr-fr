@@ -5,12 +5,12 @@ helpviewer_keywords:
 - custom log listeners
 - My.Application.Log object, custom log listeners
 ms.assetid: 0e019115-4b25-4820-afb1-af8c6e391698
-ms.openlocfilehash: 7b611e93119dc66a9404cf271ea201676d7b5318
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5a140607a4fe7e1e13de54e8d56cab53e52aaa2a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74353623"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398264"
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>Procédure pas à pas : création d'écouteurs de journalisation personnalisés (Visual Basic)
 
@@ -45,7 +45,7 @@ La procédure suivante fournit des étapes simples pour créer un assembly d’�
 
 3. Sélectionnez la zone **Signer l'assembly** .
 
-4. Sélectionnez ** \<nouveau>** dans la liste déroulante **choisir un fichier de clé de nom fort** .
+4. Sélectionnez **\<New>** dans la liste déroulante **choisir un fichier de clé de nom fort** .
 
      La boîte de dialogue **Créer une clé de nom fort** s’ouvre.
 
@@ -63,7 +63,7 @@ Maintenant que l’assembly a un nom fort, vous devez déterminer le nom fort de
 
 Le format d’un type portant un nom fort se présente comme suit.
 
-\<nom type>, \<nom assembly>, \<numéro version>, \<culture>, \<nom fort>
+\<type name>, \<assembly name>, \<version number>, \<culture>, \<strong name>
 
 #### <a name="to-determine-the-strong-name-of-the-listener"></a>Pour déterminer le nom fort de l’écouteur
 
@@ -87,7 +87,7 @@ Avec le nom fort, vous pouvez ajouter l’écouteur à la collection de l’éco
 
     2. Dans la boîte de dialogue **Ajouter un nouvel élément** , choisissez **Fichier de configuration de l’application**.
 
-    3. Cliquez sur **Ajouter**.
+    3. Cliquez sur **Add**.
 
 2. Recherchez la section `<listeners>` dans la section `<source>` avec l’attribut `name` « DefaultSource », qui se trouve dans la section `<sources>` . La section `<sources>` se trouve dans la section `<system.diagnostics>` , dans la section `<configuration>` de plus haut niveau.
 
@@ -110,7 +110,7 @@ Avec le nom fort, vous pouvez ajouter l’écouteur à la collection de l’éco
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
-- [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Procédure : journaliser des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
-- [Procédure : écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
-- [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [Utilisation des journaux des applications](working-with-application-logs.md)
+- [Procédure : journaliser des exceptions](how-to-log-exceptions.md)
+- [Procédure : écrire des messages de journal](how-to-write-log-messages.md)
+- [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](walkthrough-changing-where-my-application-log-writes-information.md)

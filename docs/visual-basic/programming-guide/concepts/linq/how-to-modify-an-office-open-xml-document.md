@@ -1,13 +1,13 @@
 ---
-title: 'Comment : modifier un document Office Open XML'
+title: 'Procédure : modifier un document Office Open XML'
 ms.date: 07/20/2015
 ms.assetid: 1cefd7f5-8e39-44c4-869c-f8021538a777
-ms.openlocfilehash: a6d546b064afe7020e5d3287351e946e182f03e6
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 9fb046f43686405a3d84cb68b49cd6dcd34e0839
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337889"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398023"
 ---
 # <a name="how-to-modify-an-office-open-xml-document-visual-basic"></a>Procédure : modifier un document Office Open XML (Visual Basic)
 Cette rubrique présente un exemple qui ouvre un document Office Open XML, le modifie et l'enregistre.  
@@ -137,7 +137,7 @@ End Module
   
  Si vous ouvrez `SampleDoc.docx` après avoir exécuté ce programme, vous constatez que ce programme a converti le premier paragraphe du document en majuscules.  
   
- Lorsqu’il est exécuté avec l’exemple de document Open XML décrit dans [création du document Office Open XML source (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), cet exemple produit la sortie suivante :  
+ Lorsqu’il est exécuté avec l’exemple de document Open XML décrit dans [création du document Office Open XML source (Visual Basic)](creating-the-source-office-open-xml-document.md), cet exemple produit la sortie suivante :  
   
 ```console  
 New first paragraph: >PARSING WORDPROCESSINGML WITH LINQ TO XML<  
@@ -145,4 +145,4 @@ New first paragraph: >PARSING WORDPROCESSINGML WITH LINQ TO XML<
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](advanced-query-techniques-linq-to-xml.md)

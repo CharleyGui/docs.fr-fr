@@ -1,22 +1,22 @@
 ---
-title: Annuler les tâches Asynch restantes lorsque l’une d’elles est terminée
+title: Annuler les tâches Asynch restantes quand l’une d’elles est terminée
 ms.date: 07/20/2015
 ms.assetid: c928b5a1-622f-4441-8baf-adca1dde197f
-ms.openlocfilehash: e6747f35e665611ac7a48a87f955c8b893ee2b99
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: be716e98263c865adad3c197236467b2f48d7740
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347923"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396673"
 ---
-# <a name="cancel-remaining-async-tasks-after-one-is-complete-visual-basic"></a>Annuler les tâches asynchrones restantes une fois l’opération terminée (Visual Basic)
+# <a name="cancel-remaining-async-tasks-after-one-is-complete-visual-basic"></a>Annuler les tâches Asynch restantes lorsque l’une d’elles est terminée (Visual Basic)
 
 Utilisez la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> avec un <xref:System.Threading.CancellationToken> pour annuler toutes les tâches restantes quand une tâche est terminée. La méthode `WhenAny` accepte un argument qui est une collection de tâches. La méthode démarre toutes les tâches et retourne une tâche unique. Cette dernière est terminée une fois que toutes les tâches de la collection sont terminées.
 
 Cet exemple montre comment utiliser un jeton d’annulation avec `WhenAny` pour attendre la fin de la première tâche de la collection et annuler les tâches restantes. Chaque tâche télécharge le contenu d’un site web. L’exemple affiche la longueur du contenu du premier téléchargement terminé et annule les autres téléchargements.
 
 > [!NOTE]
-> Pour exécuter les exemples, Visual Studio 2012 ou ultérieur et le .NET Framework 4.5 ou ultérieur doivent être installés sur votre ordinateur.
+> Pour exécuter les exemples, Visual Studio version 2012 ou ultérieure et le .NET Framework version 4.5 ou ultérieure doivent être installés sur votre ordinateur.
 
 ## <a name="downloading-the-example"></a>Téléchargement de l'exemple
 
@@ -40,7 +40,7 @@ Si vous ne souhaitez pas télécharger le projet, vous pouvez passer en revue le
 
 ## <a name="building-the-example"></a>Génération de l’exemple
 
-L’exemple de cette rubrique ajoute au projet développé dans [annuler une tâche asynchrone ou une liste de tâches](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) pour annuler une liste de tâches. Il utilise la même interface utilisateur, bien que le bouton **Annuler** ne soit pas utilisé explicitement.
+L’exemple de cette rubrique ajoute au projet développé dans [annuler une tâche asynchrone ou une liste de tâches](cancel-an-async-task-or-a-list-of-tasks.md) pour annuler une liste de tâches. Il utilise la même interface utilisateur, bien que le bouton **Annuler** ne soit pas utilisé explicitement.
 
 Pour générer vous-même l’exemple, suivez les instructions pas à pas de la section « Téléchargement de l’exemple », mais choisissez **CancelAListOfTasks** comme **Projet de démarrage**. Ajoutez les changements de cette rubrique à ce projet.
 
@@ -107,7 +107,7 @@ Exécutez le programme plusieurs fois pour vérifier que différents télécharg
 
 ## <a name="complete-example"></a>Exemple complet
 
-Le code suivant est le fichier MainWindow. Xaml. vb ou MainWindow.xaml.cs complet pour l’exemple. Les astérisques signalent les éléments ajoutés à cet exemple.
+Le code suivant est le fichier MainWindow. Xaml. vb ou MainWindow.xaml.cs complet pour l’exemple. Des astérisques marquent les éléments ajoutés pour cet exemple.
 
 Notez que vous devez ajouter une référence pour <xref:System.Net.Http>.
 
@@ -239,6 +239,6 @@ End Class
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
-- [Ajuster une application Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
-- [Programmation asynchrone avec Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Ajuster une application Async (Visual Basic)](fine-tuning-your-async-application.md)
+- [Programmation asynchrone avec Async et Await (Visual Basic)](index.md)
+- [Exemple Async : ajuster une application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

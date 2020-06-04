@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -recurse compiler option [Visual Basic]
 - recurse compiler option [Visual Basic]
 ms.assetid: 84a0b670-33ae-44c4-a46a-b90388809317
-ms.openlocfilehash: 71613af0f1c319801296180d49dbacfedf0ceca4
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: fc8dfe41ea56531ff34cd5e551ef24d636227e47
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005251"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400498"
 ---
 # <a name="-recurse"></a>-recurse
 Compile les fichiers de code source dans tous les répertoires enfants du répertoire spécifié ou du répertoire du projet.  
@@ -30,10 +30,10 @@ Compile les fichiers de code source dans tous les répertoires enfants du réper
  Obligatoire. Le ou les fichiers à rechercher. Les caractères génériques sont autorisés.  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez utiliser des caractères génériques dans un nom de fichier pour compiler tous les fichiers correspondants dans le répertoire `-recurse`du projet sans utiliser. Si aucun nom de fichier de sortie n’est spécifié, le compilateur base le nom du fichier de sortie sur le premier fichier d’entrée traité. Il s’agit généralement du premier fichier de la liste des fichiers compilés lorsqu’ils sont affichés par ordre alphabétique. Pour cette raison, il est préférable de spécifier un fichier de sortie à `-out` l’aide de l’option.  
+ Vous pouvez utiliser des caractères génériques dans un nom de fichier pour compiler tous les fichiers correspondants dans le répertoire du projet sans utiliser `-recurse` . Si aucun nom de fichier de sortie n’est spécifié, le compilateur base le nom du fichier de sortie sur le premier fichier d’entrée traité. Il s’agit généralement du premier fichier de la liste des fichiers compilés lorsqu’ils sont affichés par ordre alphabétique. Pour cette raison, il est préférable de spécifier un fichier de sortie à l’aide de l' `-out` option.  
   
 > [!NOTE]
-> L' `-recurse` option n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+> L' `-recurse` option n’est pas disponible dans l’environnement de développement Visual Studio ; elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
 ## <a name="example"></a>Exemple  
  La commande suivante compile tous les fichiers Visual Basic dans le répertoire actif.  
@@ -42,7 +42,7 @@ Compile les fichiers de code source dans tous les répertoires enfants du réper
 vbc *.vb  
 ```  
   
- La commande suivante compile tous les fichiers Visual Basic dans le `Test\ABC` répertoire et tous les répertoires situés en dessous de celui `Test.ABC.dll`-ci, puis génère.  
+ La commande suivante compile tous les fichiers Visual Basic dans le `Test\ABC` répertoire et tous les répertoires situés en dessous de celui-ci, puis génère `Test.ABC.dll` .  
   
 ```console
 vbc -target:library -out:Test.ABC.dll -recurse:Test\ABC\*.vb  
@@ -50,6 +50,6 @@ vbc -target:library -out:Test.ABC.dll -recurse:Test\ABC\*.vb
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-out (Visual Basic)](../../../visual-basic/reference/command-line-compiler/out.md)
-- [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Compilateur de ligne de commande de Visual Basic](index.md)
+- [-out (Visual Basic)](out.md)
+- [Exemples de lignes de commande de compilation](sample-compilation-command-lines.md)

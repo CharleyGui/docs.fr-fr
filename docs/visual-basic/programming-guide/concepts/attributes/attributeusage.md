@@ -2,12 +2,12 @@
 title: AttributeUsage
 ms.date: 07/20/2015
 ms.assetid: 48757216-c21d-4051-86d5-8a3e03c39d2c
-ms.openlocfilehash: 7e54e82c1e9edfd0d9d393a014f9d91f82970363
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 677d49aba38801f2adf42cc745983af30b3eddc5
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353539"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400730"
 ---
 # <a name="attributeusage-visual-basic"></a>AttributeUsage (Visual Basic)
 
@@ -57,7 +57,7 @@ End Class
 
 Dans ce cas, `MultiUseAttr` peut être appliqué à plusieurs reprises, car `AllowMultiple` est défini sur `true`. Les deux formats indiqués pour appliquer plusieurs attributs sont valides.
 
-Si `Inherited` est défini sur `false`, l’attribut n’est pas hérité par les classes qui sont dérivées d’une classe avec attributs. Exemple :
+Si `Inherited` est défini sur `false`, l’attribut n’est pas hérité par les classes qui sont dérivées d’une classe avec attributs. Par exemple :
 
 ```vb
 <AttributeUsage(AttributeTargets.Class, Inherited:=False)>
@@ -81,7 +81,7 @@ Dans ce cas, `Attr1` n’est pas appliqué à `DClass` par héritage.
 
 L’attribut `AttributeUsage` est un attribut à usage unique : il ne peut pas être appliqué plusieurs fois à la même classe. `AttributeUsage` est un alias pour <xref:System.AttributeUsageAttribute>.
 
-Pour plus d’informations, consultez la page [Accéder à des attributs grâce à la réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).
+Pour plus d’informations, consultez la page [Accéder à des attributs grâce à la réflexion (Visual Basic)](accessing-attributes-by-using-reflection.md).
 
 ## <a name="example"></a>Exemple
 
@@ -136,7 +136,7 @@ Public Class TestAttributeUsage
 End Class
 ```
 
-## <a name="sample-output"></a>Sortie exemple
+## <a name="sample-output"></a>Exemple de sortie
 
 ```console
 Attributes on Base Class:
@@ -152,9 +152,9 @@ A2
 
 - <xref:System.Attribute>
 - <xref:System.Reflection>
-- [Guide de programmation Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Guide de programmation Visual Basic](../../index.md)
 - [Attributs](../../../../standard/attributes/index.md)
-- [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
-- [Attributs (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)
-- [Créer des attributs personnalisés (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
-- [Accéder à des attributs à l’aide de la réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+- [Réflexion (Visual Basic)](../reflection.md)
+- [Attributs (Visual Basic)](../../../language-reference/attributes.md)
+- [Créer des attributs personnalisés (Visual Basic)](creating-custom-attributes.md)
+- [Accéder à des attributs à l’aide de la réflexion (Visual Basic)](accessing-attributes-by-using-reflection.md)

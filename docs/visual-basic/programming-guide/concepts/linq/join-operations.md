@@ -2,12 +2,12 @@
 title: Opérations de jointure
 ms.date: 07/20/2015
 ms.assetid: 39ab4854-ac84-4738-9d0b-3cb79be84db4
-ms.openlocfilehash: b09574369185be13664276c2e84697fc4969c6f5
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2e299b407712148db92c1c19a32fa318737ccf76
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353291"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397543"
 ---
 # <a name="join-operations-visual-basic"></a>Opérations de jointure (Visual Basic)
 Une *jointure* de deux sources de données est l’association des objets d’une source de données aux objets qui partagent un attribut commun dans une autre source de données.  
@@ -22,7 +22,7 @@ Une *jointure* de deux sources de données est l’association des objets d’un
   
 ## <a name="methods"></a>Méthodes  
   
-|Nom de la méthode|Description|Syntaxe des expressions de requête Visual Basic|Informations supplémentaires|  
+|Nom de la méthode|Description|Syntaxe des expressions de requête Visual Basic|Informations complémentaires|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
 |Join|Joint deux séquences selon les fonctions de sélection de clé et extrait des paires de valeurs.|`From x In …, y In … Where x.a = y.a`<br /><br /> -ou-<br /><br /> `Join … [As …]In … On …`|<xref:System.Linq.Enumerable.Join%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Join%2A?displayProperty=nameWithType>|  
 |GroupJoin|Joint deux séquences selon les fonctions de sélection de clé et regroupe les résultats correspondants pour chaque élément.|`Group Join … In … On …`|<xref:System.Linq.Enumerable.GroupJoin%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupJoin%2A?displayProperty=nameWithType>|  
@@ -30,9 +30,9 @@ Une *jointure* de deux sources de données est l’association des objets d’un
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq>
-- [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Types anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
+- [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](standard-query-operators-overview.md)
+- [Types anonymes](../../language-features/objects-and-classes/anonymous-types.md)
 - [Formuler des jointures et des requêtes de produit croisé](../../../../framework/data/adonet/sql/linq/formulate-joins-and-cross-product-queries.md)
-- [Join (clause)](../../../../visual-basic/language-reference/queries/join-clause.md)
-- [Comment : joindre du contenu issu de fichiers différents (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md)
-- [Comment : remplir des collections d’objets à partir de plusieurs sources (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)
+- [Join (clause)](../../../language-reference/queries/join-clause.md)
+- [Comment : joindre du contenu issu de fichiers différents (LINQ) (Visual Basic)](how-to-join-content-from-dissimilar-files-linq.md)
+- [Comment : remplir des collections d’objets à partir de plusieurs sources (LINQ) (Visual Basic)](how-to-populate-object-collections-from-multiple-sources-linq.md)

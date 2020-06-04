@@ -1,15 +1,15 @@
 ---
-title: "Comment : récupérer la valeur d'un élément (LINQ to XML)"
+title: 'Procédure : récupérer la valeur d’un élément (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 76b9b2a5-b3ba-49da-ba74-82100e1bd21c
-ms.openlocfilehash: b1a61091dc59b403c5d967609e8870492c24347f
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: b8ff44416f0fbb590119af7e11714e449185d977
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80248932"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397789"
 ---
-# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-visual-basic"></a>Comment : Récupérer la valeur d’un élément (LINQ à XML) (Visual Basic)
+# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-visual-basic"></a>Comment : récupérer la valeur d’un élément (LINQ to XML) (Visual Basic)
 Cette rubrique montre comment obtenir la valeur d'éléments. Il existe deux façons de procéder. L'un des moyens consiste à convertir un objet <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XAttribute> vers le type souhaité. L'opérateur de conversion explicite convertit alors le contenu de l'élément ou attribut vers le type spécifié et l'affecte à votre variable. En guise d'alternative, vous pouvez utiliser la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> ou <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType>.  
   
  Avec Visual Basic, la meilleure approche consiste à utiliser la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType>.  
@@ -67,7 +67,7 @@ Value of e:abcde
 ```  
   
 ## <a name="example"></a>Exemple  
- Parfois, vous souhaitez récupérer la valeur d'un élément sans être certain qu'il existe. Dans ce cas, lorsque vous attribuez l’élément `string` castré à un type nul (ou l’un des types de valeur nul `Nothing`dans le cadre .NET), si l’élément n’existe pas, la variable assignée est simplement définie à . Le code suivant montre que lorsqu'il n'est pas certain que l'élément existe, il est plus simple d'utiliser la conversion que la propriété <xref:System.Xml.Linq.XElement.Value%2A>.  
+ Parfois, vous souhaitez récupérer la valeur d'un élément sans être certain qu'il existe. Dans ce cas, lorsque vous assignez l’élément casté à un type Nullable ( `string` ou l’un des types valeur Nullable dans le .NET Framework), si l’élément n’existe pas, la variable assignée a simplement la valeur `Nothing` . Le code suivant montre que lorsqu'il n'est pas certain que l'élément existe, il est plus simple d'utiliser la conversion que la propriété <xref:System.Xml.Linq.XElement.Value%2A>.  
   
 ```vb  
 Dim root As XElement = <Root>  
@@ -151,4 +151,4 @@ v4:element does not exist
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Axes LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [Axes LINQ to XML (Visual Basic)](linq-to-xml-axes.md)

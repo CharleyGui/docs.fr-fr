@@ -1,13 +1,13 @@
 ---
-title: "Comment : écrire une méthode d'axe LINQ to XML"
+title: 'Procédure : écrire une méthode d’axe LINQ to XML'
 ms.date: 07/20/2015
 ms.assetid: b676f025-a24c-4076-8713-aa809b2b8ce0
-ms.openlocfilehash: 88a9df9a2750736cfd34b655cf3ea0f57b2bff39
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0a20bef800c07b0db8ed47c7a04fd102c1076588
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348344"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397646"
 ---
 # <a name="how-to-write-a-linq-to-xml-axis-method-visual-basic"></a>Comment : écrire une méthode d’axe LINQ to XML (Visual Basic)
 Vous pouvez écrire vos propres méthodes d’axe pour récupérer des collections à partir d’une arborescence XML. Pour cela, l'un des meilleurs moyens consiste à écrire une méthode d'extension qui retourne une collection d'éléments ou d'attributs. Vous pouvez écrire votre méthode d’extension de façon à retourner des sous-ensembles spécifiques d’éléments ou d’attributs, selon les exigences de votre application.  
@@ -15,7 +15,7 @@ Vous pouvez écrire vos propres méthodes d’axe pour récupérer des collectio
 ## <a name="example"></a>Exemple  
  L’exemple suivant utilise deux méthodes d’extension. La première méthode d'extension, `GetXPath`, opère sur <xref:System.Xml.Linq.XObject> et retourne une expression XPath qui, après évaluation, retourne le nœud ou l'attribut. La deuxième méthode d'extension, `Find`, opère sur <xref:System.Xml.Linq.XElement>. Elle retourne une collection d'objets <xref:System.Xml.Linq.XAttribute> et <xref:System.Xml.Linq.XElement> qui contiennent du texte spécifié.  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```vb  
 Imports System.Runtime.CompilerServices  
@@ -217,4 +217,4 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](advanced-query-techniques-linq-to-xml.md)
