@@ -1,5 +1,5 @@
 ---
-title: Les instructions '#Region' et '#End Region' ne sont pas valides dans les expressions lambda multiligne de corps de méthode
+title: Les instructions « #Region » et « #End Region » ne sont pas valides dans le corps des méthodes ou les expressions lambda multiligne
 ms.date: 07/20/2015
 f1_keywords:
 - bc32025
@@ -7,24 +7,24 @@ f1_keywords:
 helpviewer_keywords:
 - BC32025
 ms.assetid: 43707bf1-1c6b-4d82-b081-e5a17dca51c1
-ms.openlocfilehash: c41b95da7e3565ae7aaf332fe49361336e79f7c7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5652139ab139ea93258eb116f97ba21b76986a24
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013762"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400381"
 ---
-# <a name="region-and-end-region-statements-are-not-valid-within-method-bodiesmultiline-lambdas"></a><span data-ttu-id="883be-102">Les instructions '#Region' et '#End Region' ne sont pas valides dans le corps des méthodes ou les expressions lambda multiligne</span><span class="sxs-lookup"><span data-stu-id="883be-102">'#Region' and '#End Region' statements are not valid within method bodies/multiline lambdas</span></span>
-<span data-ttu-id="883be-103">Le `#Region` bloc doit être déclaré au niveau de la classe, module ou d’espace de noms.</span><span class="sxs-lookup"><span data-stu-id="883be-103">The `#Region` block must be declared at a class, module, or namespace level.</span></span> <span data-ttu-id="883be-104">Une zone réductible peut inclure une ou plusieurs procédures, mais il ne peut pas commencer ou se terminer à l’intérieur d’une procédure.</span><span class="sxs-lookup"><span data-stu-id="883be-104">A collapsible region can include one or more procedures, but it cannot begin or end inside of a procedure.</span></span>  
+# <a name="region-and-end-region-statements-are-not-valid-within-method-bodiesmultiline-lambdas"></a><span data-ttu-id="35e4d-102">Les instructions '#Region' et '#End Region' ne sont pas valides dans le corps des méthodes ou les expressions lambda multiligne</span><span class="sxs-lookup"><span data-stu-id="35e4d-102">'#Region' and '#End Region' statements are not valid within method bodies/multiline lambdas</span></span>
+<span data-ttu-id="35e4d-103">Le `#Region` bloc doit être déclaré au niveau d’un classe, d’un module ou d’un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="35e4d-103">The `#Region` block must be declared at a class, module, or namespace level.</span></span> <span data-ttu-id="35e4d-104">Une région réductible peut inclure une ou plusieurs procédures, mais elle ne peut pas commencer ni se terminer à l’intérieur d’une procédure.</span><span class="sxs-lookup"><span data-stu-id="35e4d-104">A collapsible region can include one or more procedures, but it cannot begin or end inside of a procedure.</span></span>  
   
- <span data-ttu-id="883be-105">**ID d’erreur :** BC32025</span><span class="sxs-lookup"><span data-stu-id="883be-105">**Error ID:** BC32025</span></span>  
+ <span data-ttu-id="35e4d-105">**ID d’erreur :** BC32025</span><span class="sxs-lookup"><span data-stu-id="35e4d-105">**Error ID:** BC32025</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="883be-106">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="883be-106">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="35e4d-106">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="35e4d-106">To correct this error</span></span>  
   
-1. <span data-ttu-id="883be-107">Assurez-vous que la procédure précédente est correctement terminée avec un `End Function` ou `End Sub` instruction.</span><span class="sxs-lookup"><span data-stu-id="883be-107">Ensure that the preceding procedure is properly terminated with an `End Function` or `End Sub` statement.</span></span>  
+1. <span data-ttu-id="35e4d-107">Vérifiez que la procédure précédente est correctement terminée par une `End Function` instruction ou `End Sub` .</span><span class="sxs-lookup"><span data-stu-id="35e4d-107">Ensure that the preceding procedure is properly terminated with an `End Function` or `End Sub` statement.</span></span>  
   
-2. <span data-ttu-id="883be-108">Vérifiez que le `#Region` et `#End Region` sont des directives dans le même bloc de code.</span><span class="sxs-lookup"><span data-stu-id="883be-108">Ensure that the `#Region` and `#End Region` directives are in the same code block.</span></span>  
+2. <span data-ttu-id="35e4d-108">Vérifiez que les `#Region` `#End Region` directives et se trouvent dans le même bloc de code.</span><span class="sxs-lookup"><span data-stu-id="35e4d-108">Ensure that the `#Region` and `#End Region` directives are in the same code block.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="883be-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="883be-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="35e4d-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="35e4d-109">See also</span></span>
 
-- [<span data-ttu-id="883be-110">#Region (directive)</span><span class="sxs-lookup"><span data-stu-id="883be-110">#Region Directive</span></span>](../../../visual-basic/language-reference/directives/region-directive.md)
+- [<span data-ttu-id="35e4d-110">#Region directive</span><span class="sxs-lookup"><span data-stu-id="35e4d-110">#Region Directive</span></span>](../directives/region-directive.md)
