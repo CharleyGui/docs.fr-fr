@@ -13,12 +13,12 @@ helpviewer_keywords:
 - late binding [Visual Basic]
 - late binding [Visual Basic], Visual Basic compiler
 ms.assetid: d6ff7f1e-b94f-4205-ab8d-5cfa91758724
-ms.openlocfilehash: bd70d8642c18e9bc2baba8128ec908c88e0477ce
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e8d87e095b7c3104e3a2d66525644d1771ae883e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345183"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410630"
 ---
 # <a name="early-and-late-binding-visual-basic"></a>Liaison anticipée et liaison tardive (Visual Basic)
 Le compilateur Visual Basic exécute un processus appelé `binding` lorsqu’un objet est assigné à une variable objet. Un objet est dit *à liaison anticipée* lorsqu’il est affecté à une variable déclarée comme étant d’un type d’objet spécifique. Les objets à liaison anticipée permettent au compilateur d’allouer de la mémoire et d’effectuer d’autres optimisations avant l’exécution d’une application. Par exemple, le fragment de code suivant déclare une variable de type <xref:System.IO.FileStream> :  
@@ -40,5 +40,5 @@ Le compilateur Visual Basic exécute un processus appelé `binding` lorsqu’un 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>
-- [Durée de vie d’un objet : création et destruction des objets](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
-- [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Durée de vie d’un objet : création et destruction des objets](../objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
+- [Object Data Type](../../../language-reference/data-types/object-data-type.md)

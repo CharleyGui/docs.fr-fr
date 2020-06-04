@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC32500
 ms.assetid: 6fa34c55-368e-4d7d-b488-07a3fffe045f
-ms.openlocfilehash: f7b6e42480075666ce9f7e8fc6966bd4bb6b888a
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 554c38c8f44999feba4cfa04d58ce2f07e955eb1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977315"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409918"
 ---
-# <a name="attribute-cannot-be-applied-because-the-format-of-the-guid-number-is-not-correct"></a>Impossible d’appliquer'\<attribute > ', car le format du GUID'\<number > 'n’est pas correct
+# <a name="attribute-cannot-be-applied-because-the-format-of-the-guid-number-is-not-correct"></a>'\<attribute>' ne peut pas être appliqué, car le format du GUID '\<number>' n'est pas correct
 
-Un `COMClassAttribute` bloc d’attributs spécifie un identificateur global unique (GUID) qui n’est pas conforme au format approprié pour un GUID. `COMClassAttribute` utilise des GUID pour identifier de manière unique la classe, l’interface et l’événement de création.  
+Un `COMClassAttribute` bloc d’attributs spécifie un identificateur global unique (Guid) qui n’est pas conforme au format approprié pour un GUID. `COMClassAttribute`utilise des GUID pour identifier de manière unique la classe, l’interface et l’événement de création.  
   
  Un GUID se compose de 16 octets, dont les huit premiers sont numériques et les huit derniers sont binaires. Elle est générée par des utilitaires Microsoft tels que uuidgen. exe et est garantie comme étant unique dans l’espace et dans le temps.  
   
@@ -31,4 +31,4 @@ Un `COMClassAttribute` bloc d’attributs spécifie un identificateur global uni
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Guid>
-- [Vue d’ensemble des attributs](../../../visual-basic/programming-guide/concepts/attributes/index.md)
+- [Vue d’ensemble des attributs](../../programming-guide/concepts/attributes/index.md)

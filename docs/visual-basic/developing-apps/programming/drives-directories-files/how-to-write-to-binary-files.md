@@ -1,17 +1,17 @@
 ---
-title: 'Comment : écrire dans des fichiers binaires'
+title: 'Procédure : écrire dans des fichiers binaires'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], binary access
 - WriteAllBytes method [Visual Basic]
 - binary files [Visual Basic], writing in Visual Basic
 ms.assetid: 59fae125-de5b-4c96-883c-209f4a55112c
-ms.openlocfilehash: 72d019f5f49868bd84d0507535e8ebc547b50e25
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b36da82060b930101cb54dd852d050ac0155bd10
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74334432"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411549"
 ---
 # <a name="how-to-write-to-binary-files-in-visual-basic"></a>Guide pratique pour écrire dans des fichiers binaires en Visual Basic
 
@@ -46,4 +46,4 @@ Les conditions ci-dessous peuvent générer une exception :
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A>
-- [Comment : insérer du texte dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)
+- [Procédure : écrire du texte dans des fichiers](how-to-write-text-to-files.md)

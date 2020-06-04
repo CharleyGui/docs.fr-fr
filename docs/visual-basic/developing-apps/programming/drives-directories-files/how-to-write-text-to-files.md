@@ -1,5 +1,5 @@
 ---
-title: 'Comment : insérer du texte dans des fichiers'
+title: 'Procédure : écrire du texte dans des fichiers'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], writing to
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - writing to files [Visual Basic]
 - examples [Visual Basic], text files
 ms.assetid: 304956eb-530d-4df7-b48f-9b4d1f2581a0
-ms.openlocfilehash: ce1ee59ba71af6bb13e05a5bce37a2f7eee37712
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f95a0c4df4a2eab0069a6dab0d4c3fa338d1d8ef
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74334470"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411536"
 ---
 # <a name="how-to-write-text-to-files-in-visual-basic"></a>Guide pratique pour écrire du texte dans des fichiers en Visual Basic
 
@@ -60,4 +60,4 @@ Vous pouvez utiliser la méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.W
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>
-- [Guide pratique pour lire des fichiers texte](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)
+- [Comment : lire des fichiers texte](how-to-read-from-text-files.md)

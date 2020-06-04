@@ -1,18 +1,18 @@
 ---
-title: Expression Trees
+title: Arborescences de l’expression
 ms.date: 07/20/2015
 ms.assetid: 8bbbb02d-7ffc-476b-8c25-118d82bf5d46
-ms.openlocfilehash: b2266cbae0a9a8a07c2a3569efa33d162ffedd1d
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 5d30b2e2e66aa322e6d43b5fbf4a4baf3435b2a6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78266415"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410965"
 ---
 # <a name="expression-trees-visual-basic"></a>Arborescences d’expressions (Visual Basic)
 Les arborescences d'expressions représentent du code dans une structure de données arborescente, où chaque nœud est une expression, par exemple un appel de méthode ou une opération binaire comme `x < y`.  
   
- Vous pouvez compiler et exécuter du code représenté par des arborescences d'expressions. Ceci permet la modification dynamique du code exécutable, l'exécution de requêtes LINQ dans différentes bases de données et la création de requêtes dynamiques. Pour plus d’informations sur les arborescences d’expressions dans LINQ, consultez [Guide pratique pour utiliser des arborescences d’expressions pour générer des requêtes dynamiques (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-use-expression-trees-to-build-dynamic-queries.md).  
+ Vous pouvez compiler et exécuter du code représenté par des arborescences d'expressions. Ceci permet la modification dynamique du code exécutable, l'exécution de requêtes LINQ dans différentes bases de données et la création de requêtes dynamiques. Pour plus d’informations sur les arborescences d’expressions dans LINQ, consultez [Guide pratique pour utiliser des arborescences d’expressions pour générer des requêtes dynamiques (Visual Basic)](how-to-use-expression-trees-to-build-dynamic-queries.md).  
   
  Les arborescences d’expressions sont également utilisées dans l’environnement d’exécution de langage dynamique (DLR, Dynamic Language Runtime) pour fournir une interopérabilité entre les langages dynamiques et .NET Framework, ainsi que pour permettre aux writers de compilateur d’émettre des arborescences d’expressions au lieu d’utiliser le langage intermédiaire MSIL (Microsoft Intermediate Language). Pour plus d’informations sur le DLR, consultez [Vue d’ensemble du Dynamic Language Runtime](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md).  
   
@@ -21,7 +21,7 @@ Les arborescences d'expressions représentent du code dans une structure de donn
 ## <a name="creating-expression-trees-from-lambda-expressions"></a>Création d’arborescences d’expressions à partir d’expressions lambda  
  Quand une expression lambda est affectée à une variable de type <xref:System.Linq.Expressions.Expression%601>, le compilateur produit du code pour générer une arborescence d'expressions qui représente l'expression lambda.  
   
- Le compilateur Visual Basic peut générer des arborescences d’expressions seulement à partir d’expressions lambda (ou de lambdas sur une seule ligne). Ils ne peuvent pas analyser des lambdas d'instruction (ou lambdas multilignes). Pour plus d’informations sur les expressions lambda en Visual Basic, consultez [Expressions lambda](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+ Le compilateur Visual Basic peut générer des arborescences d’expressions seulement à partir d’expressions lambda (ou de lambdas sur une seule ligne). Ils ne peuvent pas analyser des lambdas d'instruction (ou lambdas multilignes). Pour plus d’informations sur les expressions lambda en Visual Basic, consultez [Expressions lambda](../../language-features/procedures/lambda-expressions.md).  
   
  Les exemples de code suivants montrent comment le compilateur Visual Basic crée une arborescence d’expressions qui représente l’expression lambda `Function(num) num < 5`.  
   
@@ -111,7 +111,7 @@ Console.WriteLine(String.Format("Decomposed expression: {0} => {1} {2} {3}",
 ```  
   
 ## <a name="immutability-of-expression-trees"></a>Immuabilité des arborescences d’expressions  
- Les arborescences d'expressions doivent être immuables. Cela signifie que si vous voulez modifier une arborescence d'expressions, vous devez construire une nouvelle arborescence d'expressions en copiant l'arborescence existante et en y remplaçant les nœuds. Vous pouvez utiliser un visiteur d’arborescence d’expressions pour parcourir l’arborescence d’expressions existante. Pour plus d’informations, consultez [Guide pratique pour modifier des arborescences d’expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md).  
+ Les arborescences d'expressions doivent être immuables. Cela signifie que si vous voulez modifier une arborescence d'expressions, vous devez construire une nouvelle arborescence d'expressions en copiant l'arborescence existante et en y remplaçant les nœuds. Vous pouvez utiliser un visiteur d’arborescence d’expressions pour parcourir l’arborescence d’expressions existante. Pour plus d’informations, consultez [Guide pratique pour modifier des arborescences d’expressions (Visual Basic)](how-to-modify-expression-trees.md).  
   
 ## <a name="compiling-expression-trees"></a>Compilation des arborescences d’expressions  
  Le type <xref:System.Linq.Expressions.Expression%601> fournit la méthode <xref:System.Linq.Expressions.Expression%601.Compile%2A> qui compile le code représenté par une arborescence d'expressions en un délégué exécutable.  
@@ -139,13 +139,13 @@ Console.WriteLine(expr.Compile()(4))
 ' Also prints True.  
 ```  
   
- Pour plus d’informations, consultez [Guide pratique pour exécuter des arborescences d’expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md).  
+ Pour plus d’informations, consultez [Guide pratique pour exécuter des arborescences d’expressions (Visual Basic)](how-to-execute-expression-trees.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq.Expressions>
-- [Guide pratique pour exécuter des arborescences d’expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
-- [Guide pratique pour modifier des arborescences d’expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)
-- [Expressions lambda](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
-- [Aperçu dynamique du temps d’exécution du langage](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)
-- [Concepts de programmation (Visual Basic)](../../../../visual-basic/programming-guide/concepts/index.md)
+- [Guide pratique pour exécuter des arborescences d’expressions (Visual Basic)](how-to-execute-expression-trees.md)
+- [Guide pratique pour modifier des arborescences d’expressions (Visual Basic)](how-to-modify-expression-trees.md)
+- [Expressions lambda](../../language-features/procedures/lambda-expressions.md)
+- [Vue d’ensemble du Dynamic Language Runtime](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)
+- [Concepts de programmation (Visual Basic)](../index.md)

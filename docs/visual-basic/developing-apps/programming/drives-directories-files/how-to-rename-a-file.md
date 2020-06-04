@@ -1,16 +1,16 @@
 ---
-title: 'Comment : renommer un fichier'
+title: 'Procédure : renommer un fichier'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - I/O [Visual Basic], renaming files
 - files [Visual Basic], renaming
 ms.assetid: 0ea7e0c8-2cb2-4bf5-a00d-7b6e3c08a3bc
-ms.openlocfilehash: e69dad9ad7f59002ad62b7a06299ff012488e534
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3de41ee6627315f0e26964b75f564ff98fe472ec
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74334551"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411588"
 ---
 # <a name="how-to-rename-a-file-in-visual-basic"></a>Guide pratique pour renommer un fichier en Visual Basic
 
@@ -51,7 +51,7 @@ Utilisez la méthode `RenameFile` de l’objet `My.Computer.FileSystem` pour ren
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.RenameFile%2A>
-- [Comment : déplacer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)
-- [Création, suppression et déplacement de fichiers et de répertoires](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)
-- [Comment : créer une copie d'un fichier dans le même répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)
-- [Comment : créer une copie d'un fichier dans un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)
+- [Procédure : déplacer un fichier](how-to-move-a-file.md)
+- [Création, suppression et déplacement de fichiers et de répertoires](creating-deleting-and-moving-files-and-directories.md)
+- [Procédure : créer une copie d’un fichier dans le même répertoire](how-to-create-a-copy-of-a-file-in-the-same-directory.md)
+- [Procédure : créer une copie d’un fichier dans un autre répertoire](how-to-create-a-copy-of-a-file-in-a-different-directory.md)

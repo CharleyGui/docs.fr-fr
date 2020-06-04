@@ -1,13 +1,13 @@
 ---
-title: 'Exemple de fichier XML : Commande fournisseur typique dans un espace de noms3'
+title: 'Exemple de fichier XML : commande fournisseur typique dans un Noms3'
 ms.date: 07/20/2015
 ms.assetid: 38260901-c9f9-4240-9cbf-652c8b05021d
-ms.openlocfilehash: de0ac574b0f7b086592bc2d6afa3db3fdcebda78
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e753d0a4d6bea3e4a01221258e1f5de3862c4ecb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786917"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360837"
 ---
 # <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a>Exemple de fichier XML : Commande fournisseur standard dans un espace de noms
 Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Il concerne une commande fournisseur typique. Le code XML se trouve dans un espace de noms.  
@@ -56,4 +56,4 @@ Le fichier XML suivant est utilisé dans différents exemples dans la documentat
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de documents XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [Exemples de documents XML (LINQ to XML)](sample-xml-documents-linq-to-xml.md)

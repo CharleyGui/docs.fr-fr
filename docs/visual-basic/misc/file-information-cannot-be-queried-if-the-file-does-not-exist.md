@@ -2,12 +2,12 @@
 title: Impossible d’interroger les informations du fichier si ce dernier n’existe pas
 ms.date: 07/20/2015
 ms.assetid: 2bf50d79-2a74-403f-833c-6cabd2c213ce
-ms.openlocfilehash: 3259afc0e371bf00753cef927049ca826ad82848
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 926ac9a2eaf2c8b3daaa8fa3cb01d73b79e2c8b7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624941"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411016"
 ---
 # <a name="file-information-cannot-be-queried-if-the-file-does-not-exist"></a>Impossible d’interroger les informations du fichier si ce dernier n’existe pas
 Une tentative d’interrogation d’un objet <xref:System.IO.FileInfo> pour obtenir des informations sur un fichier qui n’existe pas a été effectuée. Cela arrive généralement en cas d’erreur lors de la spécification du nom du fichier.  
@@ -18,6 +18,6 @@ Une tentative d’interrogation d’un objet <xref:System.IO.FileInfo> pour obte
   
 ## <a name="see-also"></a>Voir aussi
 
-- [My.Computer.FileSystem](xref:Microsoft.VisualBasic.FileIO.FileSystem)
-- [Guide pratique pour Obtenir des informations sur un fichier en Visual Basic](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/abtzf6f7(v=vs.100))
-- [Guide pratique pour analyser des chemins](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+- [My. Computer. FileSystem](xref:Microsoft.VisualBasic.FileIO.FileSystem)
+- [Procédure : obtention d’informations sur un fichier dans Visual Basic](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/abtzf6f7(v=vs.100))
+- [Procédure : analyser des chemins de fichiers](../developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)

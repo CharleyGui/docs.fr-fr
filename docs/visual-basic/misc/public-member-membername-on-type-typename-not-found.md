@@ -1,17 +1,17 @@
 ---
-title: Membre public '<membername>'sur le type'<typename>' introuvable
+title: Le membre public '<membername>' du type '<typename>' est introuvable
 ms.date: 07/20/2015
 f1_keywords:
 - vbrMissingMember_MemberNotFoundOnType2
 ms.assetid: 6300feb8-78ac-4dd0-9653-1d03e1f5bc20
-ms.openlocfilehash: fdaea9d7f0aee92852430ae3ad676bf13a3d9396
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9c1015c7ab8e53daeb6902066b953de6c5f1fc11
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62023141"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411003"
 ---
-# <a name="public-member-membername-on-type-typename-not-found"></a>Membre public '\<nom_membre >' sur le type '\<nom_type >' introuvable
+# <a name="public-member-membername-on-type-typename-not-found"></a>Le membre public '\<membername>' du type '\<typename>' est introuvable
 Le membre auquel vous essayez d’accéder est introuvable. Cette erreur peut se produire lors de l’accès à des membres non publics d’objets à liaison tardive.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
@@ -20,5 +20,5 @@ Le membre auquel vous essayez d’accéder est introuvable. Cette erreur peut se
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Public](../../visual-basic/language-reference/modifiers/public.md)
-- [Liaison anticipée et liaison tardive](../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
+- [Public](../language-reference/modifiers/public.md)
+- [Liaison précoce et tardive](../programming-guide/language-features/early-late-binding/index.md)

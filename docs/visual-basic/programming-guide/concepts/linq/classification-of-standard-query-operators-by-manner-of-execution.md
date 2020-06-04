@@ -1,20 +1,20 @@
 ---
-title: Classification des opérateurs de requête standard en fonction de leur mode d'exécution
+title: Classification des opérateurs de requête standard en fonction de leur mode d’exécution
 ms.date: 07/20/2015
 ms.assetid: 7f55b0be-9f6e-44f8-865c-6afbea50cc54
-ms.openlocfilehash: edace870ea684c70bbf2768c44388f2236622c2c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e1ba5d8bdc2b7a521a11ca5c055323fde4bcb9d9
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345717"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410901"
 ---
 # <a name="classification-of-standard-query-operators-by-manner-of-execution-visual-basic"></a>Classification des opérateurs de requête standard par mode d’exécution (Visual Basic)
 Les implémentations LINQ to Objects des méthodes d’opérateur de requête standard s’exécutent de deux manières principales : immédiate ou différée. En outre, les opérateurs de requête qui utilisent l’exécution différée peuvent être divisés en deux catégories : ceux prenant en charge la diffusion en continu et ceux ne la prenant pas en charge. Le fait de connaître le mode d’exécution des différents opérateurs de requête peut vous aider à comprendre les résultats obtenus à partir d’une requête donnée. Ceci est particulièrement vrai si la source de données change ou si vous générez une requête sur une autre requête. Cette rubrique classe les opérateurs de requête standard selon leur mode d’exécution.  
   
 ## <a name="manners-of-execution"></a>Modes d’exécution  
   
-### <a name="immediate"></a>Immédiate  
+### <a name="immediate"></a>Immédiat  
  L’exécution immédiate signifie que la source de données est lue et que l’opération est effectuée au point où la requête est déclarée dans le code. Tous les opérateurs de requête standard qui retournent un résultat unique et non énumérable s’exécutent immédiatement.  
   
 ### <a name="deferred"></a>Différé  
@@ -22,7 +22,7 @@ Les implémentations LINQ to Objects des méthodes d’opérateur de requête st
   
  Les opérateurs de requête qui utilisent l’exécution différée peuvent également être classés comme prenant en charge la diffusion en continu ou non.  
   
-#### <a name="streaming"></a>Diffusion  
+#### <a name="streaming"></a>Diffusion en continu  
  Les opérateurs prenant en charge la diffusion en continu n’ont pas à lire toutes les données sources avant de générer des éléments. Au moment de l’exécution, un opérateur prenant en charge la diffusion en continu effectue son opération sur chaque élément source à mesure qu’il est lu et génère l’élément si nécessaire. Ce type d’opérateur continue à lire des éléments source jusqu’à ce qu’un élément de résultat puisse être produit. Cela signifie que plusieurs éléments source peuvent être lus pour produire un élément de résultat.  
   
 #### <a name="non-streaming"></a>Sans diffusion en continu  
@@ -90,6 +90,6 @@ Les implémentations LINQ to Objects des méthodes d’opérateur de requête st
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq.Enumerable>
-- [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Syntaxe des expressions de requête pour les opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)
-- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](standard-query-operators-overview.md)
+- [Syntaxe des expressions de requête pour les opérateurs de requête standard (Visual Basic)](query-expression-syntax-for-standard-query-operators.md)
+- [LINQ to Objects (Visual Basic)](linq-to-objects.md)

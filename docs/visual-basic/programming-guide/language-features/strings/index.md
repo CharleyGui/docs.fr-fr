@@ -5,35 +5,35 @@ helpviewer_keywords:
 - Visual Basic code, strings
 - strings [Visual Basic], Visual Basic
 ms.assetid: 7e4c777c-ad69-46e2-8b9e-9be4033b1c96
-ms.openlocfilehash: db79284e45161f87e447fec7ab7faf91093a3fd7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 302805f8b9a83fceeeaa050332140c157a7a786f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344339"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410553"
 ---
 # <a name="strings-in-visual-basic"></a>Chaînes en Visual Basic
 Cette section décrit les concepts de base qui sous-tendent l’utilisation de chaînes dans Visual Basic.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Introduction aux chaînes en Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)  
+ [Introduction aux chaînes en Visual Basic](introduction-to-strings.md)  
  Répertorie les rubriques qui décrivent les concepts de base de l’utilisation de chaînes dans Visual Basic.  
   
- [Guide pratique pour créer des chaînes à l’aide de StringBuilder en Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-to-create-strings-using-a-stringbuilder.md)  
+ [Comment : créer des chaînes à l'aide de StringBuilder en Visual Basic](how-to-create-strings-using-a-stringbuilder.md)  
  Montre comment créer efficacement une longue chaîne à partir de plusieurs chaînes plus petites.  
   
- [Guide pratique : effectuer une recherche dans une chaîne](../../../../visual-basic/programming-guide/language-features/strings/how-to-search-within-a-string.md)  
+ [Comment : effectuer une recherche dans une chaîne](how-to-search-within-a-string.md)  
  Montre comment déterminer l’index de la première occurrence d’une sous-chaîne.  
   
- [Conversion entre chaînes et d’autres types de données en Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)  
+ [Conversion entre chaînes et d'autres types de données en Visual Basic](converting-between-strings-and-other-data-types.md)  
  Liste les rubriques qui expliquent comment convertir des chaînes en d’autres types de données.  
   
- [Validation de chaînes en Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)  
+ [Validation de chaînes en Visual Basic](validating-strings.md)  
  Liste les rubriques qui expliquent comment valider des chaînes.  
   
- [Procédure pas à pas : chiffrement et déchiffrement de chaînes en Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/walkthrough-encrypting-and-decrypting-strings.md)  
+ [Procédure pas à pas : chiffrement et déchiffrement de chaînes en Visual Basic](walkthrough-encrypting-and-decrypting-strings.md)  
  Montre comment chiffrer et déchiffrer des chaînes à l’aide de la version du fournisseur de services de chiffrement de l’algorithme 3DES (Triple Data Encryption Standard).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctionnalités du langage Visual Basic](../../../../visual-basic/programming-guide/language-features/index.md)
+- [Fonctionnalités du langage Visual Basic](../index.md)

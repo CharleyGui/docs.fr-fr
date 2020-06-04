@@ -2,12 +2,12 @@
 title: Exemple d'exécution différée
 ms.date: 07/20/2015
 ms.assetid: 9a22bea1-c755-4aac-800a-fcd9e5107ace
-ms.openlocfilehash: 6ab8f6434bb24b7a66ca4afd1d082911481671f6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 863b018b6047d61f6fb4a5c1ac68151ed69d24a1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74354225"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410797"
 ---
 # <a name="deferred-execution-example-visual-basic"></a>Exemple d’exécution différée (Visual Basic)
 
@@ -46,7 +46,7 @@ Module Module1
 End Module
 ```
 
-Cet exemple génère la sortie suivante :
+Cet exemple produit la sortie suivante :
 
 ```console
 ToUpper: source abc
@@ -63,4 +63,4 @@ Vous pouvez constater que l'intégralité du tableau de chaînes n'est pas conve
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Didacticiel : exécution différée (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)
+- [Didacticiel : exécution différée (Visual Basic)](tutorial-deferred-execution.md)

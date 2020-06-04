@@ -1,5 +1,5 @@
 ---
-title: 'Déclaration d’opérateur doit être une des : +,-, *,-, -, ^, &amp;, Like, Mod et, Or, Xor, pas, <<>>,, =, <>, <, < =, >, > =, CType, IsTrue, IsFalse'
+title: 'La déclaration d’opérateur doit être l’une des suivantes : +,-, *,-,-, ^, &amp; , like, mod, and, or, Xor, not,  <<,  >>, =,  <>, <, <=, >, >=, CType, IsTrue, IsFalse'
 ms.date: 07/20/2015
 f1_keywords:
 - bc33000
@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC33000
 ms.assetid: 15c5d8eb-3a8c-4141-8f41-33151afabf97
-ms.openlocfilehash: 4283547109ec312cc4fe07a054bbb8db3bff660f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3fb2cf392611e5ca83818e3bf173513be031085d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946599"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409332"
 ---
-# <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a>Déclaration d’opérateur doit être une des : +,-, *,\,/, ^, &amp;, Like, Mod et, Or, Xor, pas, \< \<, >>...
-Vous pouvez déclarer uniquement un opérateur qui est éligible pour la surcharge. Le tableau suivant répertorie les opérateurs que vous pouvez déclarer.  
+# <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a>La déclaration d’opérateur doit être l’une des suivantes : +,-, *, \, /, ^, &amp; , like, mod, and, or, Xor, not, \<\<, >>...
+Vous pouvez déclarer uniquement un opérateur éligible pour la surcharge. Le tableau suivant répertorie les opérateurs que vous pouvez déclarer.  
   
 |Type|Opérateurs|  
 |----------|---------------|  
@@ -23,7 +23,7 @@ Vous pouvez déclarer uniquement un opérateur qui est éligible pour la surchar
 |Binaire|`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`|  
 |Conversion (unaire)|`CType`|  
   
- Notez que le `=` opérateur dans la liste binaire est l’opérateur de comparaison, pas l’opérateur d’assignation.  
+ Notez que l’opérateur `=` dans la liste binaire est l’opérateur de comparaison, et non l’opérateur d’assignation.  
   
  **ID d’erreur :** BC33000  
   
@@ -35,8 +35,8 @@ Vous pouvez déclarer uniquement un opérateur qui est éligible pour la surchar
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Operator (instruction)](../../../visual-basic/language-reference/statements/operator-statement.md)
-- [Procédures d’opérateur](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)
-- [Guide pratique pour Définir un opérateur](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
-- [Guide pratique pour Définir un opérateur de Conversion](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
-- [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Operator Statement](../statements/operator-statement.md)
+- [Procédures d'opérateur](../../programming-guide/language-features/procedures/operator-procedures.md)
+- [Comment : définir un opérateur](../../programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [Guide pratique : définir un opérateur de conversion](../../programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+- [Function (instruction)](../statements/function-statement.md)

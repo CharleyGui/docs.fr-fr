@@ -9,12 +9,12 @@ helpviewer_keywords:
 - /define compiler option [Visual Basic]
 - define compiler option [Visual Basic]
 ms.assetid: f735c57d-1cf9-4f2f-a26f-0de630fd4077
-ms.openlocfilehash: 5035466de4aa17c374824e1b0f02ed594731a9d3
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d0d1b03d9ab98f28a0112198f1ecc1e928d6d4a7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716810"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408710"
 ---
 # <a name="-define-visual-basic"></a>-définir (Visual Basic)
 Définit des constantes conditionnelles du compilateur.  
@@ -36,7 +36,7 @@ ou
 |Terme|Définition|  
 |---|---|  
 |`symbol`|Obligatoire. Symbole à définir.|  
-|`value`|Facultatif. Valeur à affecter au `symbol`. Si `value` est une chaîne, elle doit être entourée par des barres obliques inverses\\ou des séquences de guillemets (") au lieu de guillemets. Si aucune valeur n'est spécifiée, il prend la valeur True.|  
+|`value`|Facultatif. Valeur à affecter au `symbol`. Si `value` est une chaîne, elle doit être entourée par des barres obliques inverses ou des séquences de guillemets ( \\ ") au lieu de guillemets. Si aucune valeur n'est spécifiée, il prend la valeur True.|  
   
 ## <a name="remarks"></a>Notes  
  L'option `-define` revient à utiliser la directive de préprocesseur `#Const` dans votre fichier source, excepté que les constantes définies avec `-define` sont publiques et s'appliquent à tous les fichiers du projet.  
@@ -58,7 +58,7 @@ ou
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
-- [#If...Then...#Else, directives](../../../visual-basic/language-reference/directives/if-then-else-directives.md)
-- [#Const (directive)](../../../visual-basic/language-reference/directives/const-directive.md)
-- [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Compilateur de ligne de commande de Visual Basic](index.md)
+- [#If... Then... #Else directives](../../language-reference/directives/if-then-else-directives.md)
+- [#Const directive](../../language-reference/directives/const-directive.md)
+- [Exemples de lignes de commande de compilation](sample-compilation-command-lines.md)

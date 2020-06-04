@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows applications
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-ms.openlocfilehash: 1aa1edf0130e388c6cc87662d83591f41a8e2325
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 11216186a28509e1f10bafa1b24a440bcedaeeb6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349166"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398243"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Concepts de base de l'application Windows Forms (Visual Basic)
 
@@ -40,13 +40,13 @@ Lorsqu’un utilisateur effectue une opération sur votre formulaire ou sur l’
 
 Windows Forms contient divers contrôles que vous pouvez placer sur les formulaires : les contrôles qui affichent des zones de texte, des boutons, des zones déroulantes, des cases d’option et même des pages Web. Pour obtenir la liste de tous les contrôles que vous pouvez utiliser sur un formulaire, consultez [Contrôles à utiliser dans les Windows Forms](../../../framework/winforms/controls/controls-to-use-on-windows-forms.md). Si un contrôle existant ne répond pas à vos besoins, Windows Forms prend également en charge la création de vos propres contrôles personnalisés à l'aide de la classe <xref:System.Windows.Forms.UserControl>.
 
-Windows Forms offre des contrôles d’interface utilisateur enrichis qui émulent les fonctionnalités des applications haut de gamme telles que Microsoft Office. À l' <xref:System.Windows.Forms.ToolStrip> aide <xref:System.Windows.Forms.MenuStrip> du contrôle et, vous pouvez créer des barres d’outils et des menus qui contiennent du texte et des images, afficher des sous-menus et héberger d’autres contrôles tels que des zones de texte et des zones de liste déroulante.
+Windows Forms offre des contrôles d’interface utilisateur enrichis qui émulent les fonctionnalités des applications haut de gamme telles que Microsoft Office. À l’aide du <xref:System.Windows.Forms.ToolStrip> <xref:System.Windows.Forms.MenuStrip> contrôle et, vous pouvez créer des barres d’outils et des menus qui contiennent du texte et des images, afficher des sous-menus et héberger d’autres contrôles tels que des zones de texte et des zones de liste déroulante.
 
-Avec le concepteur de formulaires glisser-déplacer de Visual Studio, vous pouvez facilement créer des applications Windows Forms : sélectionnez simplement les contrôles avec votre curseur et placez-les là où vous le souhaitez dans le formulaire. Le concepteur fournit des outils tels que des quadrillages et des « lignes d’alignement » pour éliminer l’alignement des contrôles. Et si vous utilisez Visual Studio ou compilez sur la ligne de commande, vous <xref:System.Windows.Forms.FlowLayoutPanel>pouvez <xref:System.Windows.Forms.TableLayoutPanel> utiliser <xref:System.Windows.Forms.SplitContainer> les contrôles, et pour créer des dispositions de formulaire avancées avec un minimum de temps et d’efforts.
+Avec le concepteur de formulaires glisser-déplacer de Visual Studio, vous pouvez facilement créer des applications Windows Forms : sélectionnez simplement les contrôles avec votre curseur et placez-les là où vous le souhaitez dans le formulaire. Le concepteur fournit des outils tels que des quadrillages et des « lignes d’alignement » pour éliminer l’alignement des contrôles. Et si vous utilisez Visual Studio ou compilez sur la ligne de commande, vous pouvez utiliser les <xref:System.Windows.Forms.FlowLayoutPanel> <xref:System.Windows.Forms.TableLayoutPanel> contrôles, et <xref:System.Windows.Forms.SplitContainer> pour créer des dispositions de formulaire avancées avec un minimum de temps et d’efforts.
 
 ### <a name="custom-ui-elements"></a>Éléments d’interface utilisateur personnalisés
 
-Enfin, si vous devez créer vos propres éléments d’interface utilisateur personnalisés <xref:System.Drawing> , l’espace de noms contient toutes les classes dont vous avez besoin pour restituer des lignes, des cercles et d’autres formes directement sur un formulaire.
+Enfin, si vous devez créer vos propres éléments d’interface utilisateur personnalisés, l' <xref:System.Drawing> espace de noms contient toutes les classes dont vous avez besoin pour restituer des lignes, des cercles et d’autres formes directement sur un formulaire.
 
 Pour obtenir des informations pas à pas sur l’utilisation de ces fonctionnalités, consultez les rubriques d’aide suivantes.
 
@@ -59,7 +59,7 @@ Pour obtenir des informations pas à pas sur l’utilisation de ces fonctionnali
 
 ## <a name="displaying-and-manipulating-data"></a>Affichage et manipulation de données
 
-De nombreuses applications doivent afficher des données provenant d’une base de données, d’un fichier XML, d’un service web XML ou autre source de données. Windows Forms fournit un contrôle flexible appelé le <xref:System.Windows.Forms.DataGridView> contrôle pour le rendu de ces données tabulaires dans un format de ligne et de colonne traditionnel, de sorte que chaque élément de données occupe sa propre cellule. À <xref:System.Windows.Forms.DataGridView> l’aide de, vous pouvez personnaliser l’apparence de chaque cellule, verrouiller des lignes et des colonnes arbitraires et afficher des contrôles complexes dans des cellules, entre autres fonctionnalités.
+De nombreuses applications doivent afficher des données provenant d’une base de données, d’un fichier XML, d’un service web XML ou autre source de données. Windows Forms fournit un contrôle flexible appelé le <xref:System.Windows.Forms.DataGridView> contrôle pour le rendu de ces données tabulaires dans un format de ligne et de colonne traditionnel, de sorte que chaque élément de données occupe sa propre cellule. À l’aide <xref:System.Windows.Forms.DataGridView> de, vous pouvez personnaliser l’apparence de chaque cellule, verrouiller des lignes et des colonnes arbitraires et afficher des contrôles complexes dans des cellules, entre autres fonctionnalités.
 
 La connexion à des sources de données sur un réseau est une tâche simple avec les clients intelligents Windows Forms. Le <xref:System.Windows.Forms.BindingSource> composant, nouveau avec Windows Forms dans Visual Studio 2005 et le .NET Framework 2,0, représente une connexion à une source de données et expose des méthodes pour lier des données aux contrôles, naviguer vers les enregistrements précédents et suivants, modifier des enregistrements et enregistrer les modifications dans la source d’origine. Le contrôle <xref:System.Windows.Forms.BindingNavigator> fournit une interface simple sur le composant <xref:System.Windows.Forms.BindingSource> permettant aux utilisateurs de naviguer parmi les enregistrements.
 
@@ -110,4 +110,4 @@ Pour obtenir des informations pas à pas sur l’utilisation de ces fonctionnali
 
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>
 - [Vue d'ensemble des Windows Forms](../../../framework/winforms/windows-forms-overview.md)
-- [My.Forms, objet](../../../visual-basic/language-reference/objects/my-forms-object.md)
+- [My.Forms, objet](../../language-reference/objects/my-forms-object.md)
