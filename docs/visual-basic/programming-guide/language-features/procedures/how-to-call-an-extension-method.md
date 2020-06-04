@@ -5,18 +5,18 @@ helpviewer_keywords:
 - calling extension methods [Visual Basic]
 - extension methods [Visual Basic]
 ms.assetid: df07750f-40f4-4c07-a79e-1113a27cfbea
-ms.openlocfilehash: a19705a8f90833d48869df26a18d19b0ad1488e0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 54419c99ae08c9ca2e3cfa86993dc99bc02bbb64
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74340393"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84388658"
 ---
 # <a name="how-to-call-an-extension-method-visual-basic"></a>Comment : appeler une méthode d’extension (Visual Basic)
 
 Les méthodes d’extension vous permettent d’ajouter des méthodes à une classe existante. Une fois qu’une méthode d’extension a été déclarée et placée dans la portée, vous pouvez l’appeler comme une méthode d’instance du type qu’elle étend. Pour plus d’informations sur la façon d’écrire une méthode d’extension, consultez [Comment : écrire une méthode d’extension](./how-to-write-an-extension-method.md).
 
- Les instructions suivantes font référence à la méthode d’extension `PrintAndPunctuate`, qui affiche l’instance de chaîne qui l’appelle, suivie de la valeur envoyée dans pour le deuxième paramètre, `punc`.
+ Les instructions suivantes font référence à la méthode d’extension `PrintAndPunctuate` , qui affiche l’instance de chaîne qui l’appelle, suivie de la valeur envoyée dans pour le deuxième paramètre, `punc` .
 
 ```vb
 Imports System.Runtime.CompilerServices
@@ -35,19 +35,19 @@ La méthode doit être dans la portée quand elle est appelée.
 
 ### <a name="to-call-an-extension-method"></a>Pour appeler une méthode d’extension
 
-1. Déclarez une variable qui a le type de données du premier paramètre de la méthode d’extension. Pour `PrintAndPunctuate`, vous avez besoin d’une variable <xref:System.String> :
+1. Déclarez une variable qui a le type de données du premier paramètre de la méthode d’extension. Pour `PrintAndPunctuate` , vous avez besoin d’une <xref:System.String> variable :
 
     ```vb
     Dim example = "Ready"
     ```
 
-2. Cette variable appellera la méthode d’extension et sa valeur est liée au premier paramètre, `aString`. L’instruction appelante suivante affiche `Ready?`.
+2. Cette variable appellera la méthode d’extension et sa valeur est liée au premier paramètre, `aString` . L’instruction appelante suivante s’affiche `Ready?` .
 
     ```vb
     example.PrintAndPunctuate("?")
     ```
 
-     Notez que l’appel à cette méthode d’extension se présente comme un appel à l’une des méthodes d’instance <xref:System.String> qui requièrent un paramètre :
+     Notez que l’appel à cette méthode d’extension se présente comme un appel à l’une des <xref:System.String> méthodes d’instance qui requièrent un paramètre :
 
     ```vb
     example.EndsWith("dy")
@@ -61,7 +61,7 @@ La méthode doit être dans la portée quand elle est appelée.
     example2.PrintAndPunctuate("!!!")
     ```
 
-     Le résultat est le suivant : `or not!!!`.
+     Le résultat est le suivant : `or not!!!` .
 
 ## <a name="example"></a>Exemple
  Le code suivant est un exemple complet de la création et de l’utilisation d’une méthode d’extension simple.
@@ -97,6 +97,6 @@ End Module
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique : écrire une méthode d’extension](./how-to-write-an-extension-method.md)
+- [Comment : écrire une méthode d’extension](./how-to-write-an-extension-method.md)
 - [Méthodes d’extension](./extension-methods.md)
-- [Étendue dans Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Portée dans Visual Basic](../declared-elements/scope.md)

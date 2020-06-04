@@ -8,12 +8,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], multiple versions
 - procedure calls [Visual Basic], overloaded
 ms.assetid: 3bb331fb-f6bc-406f-9ca0-9609b497014c
-ms.openlocfilehash: d983f5f6183c33141079ed35171f7a73f254450f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: de101309fa1edaaddc3defc5759d9293fbef684c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74340207"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84388541"
 ---
 # <a name="how-to-call-an-overloaded-procedure-visual-basic"></a>Comment : appeler une procédure surchargée (Visual Basic)
 L’avantage de la surcharge d’une procédure est de la flexibilité de l’appel. Le code appelant peut obtenir les informations qu’il doit passer à la procédure, puis appeler un nom de procédure unique, quels que soient les arguments transmis.  
@@ -26,7 +26,7 @@ L’avantage de la surcharge d’une procédure est de la flexibilité de l’ap
   
 3. Vous n’avez pas besoin de déterminer la version de la procédure à appeler. Visual Basic passe le contrôle à la version correspondant à votre liste d’arguments.  
   
-     L’exemple suivant appelle la procédure `post` déclarée dans [Comment : définir plusieurs versions d’une procédure](./how-to-define-multiple-versions-of-a-procedure.md). Il obtient l’identification du client, détermine s’il s’agit d’un `String` ou d’un `Integer`, puis, dans les deux cas, appelle la même procédure.  
+     L’exemple suivant appelle la `post` procédure déclarée dans [Comment : définir plusieurs versions d’une procédure](./how-to-define-multiple-versions-of-a-procedure.md). Il obtient l’identification du client, détermine s’il s’agit d’un `String` ou d’un `Integer` , puis, dans les deux cas, appelle la même procédure.  
   
      [!code-vb[VbVbcnProcedures#56](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#56)]  
   
@@ -38,9 +38,9 @@ L’avantage de la surcharge d’une procédure est de la flexibilité de l’ap
 - [Paramètres et arguments d’une procédure](./procedure-parameters-and-arguments.md)
 - [Surcharge de procédure](./procedure-overloading.md)
 - [Procédures de dépannage](./troubleshooting-procedures.md)
-- [Guide pratique : définir plusieurs versions d’une procédure](./how-to-define-multiple-versions-of-a-procedure.md)
-- [Guide pratique : surcharger une procédure qui accepte des paramètres optionnels](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
-- [Guide pratique : surcharger une procédure qui accepte un nombre indéfini de paramètres](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
+- [Comment : définir plusieurs versions d'une procédure](./how-to-define-multiple-versions-of-a-procedure.md)
+- [Comment : surcharger une procédure qui accepte des paramètres optionnels](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
+- [Comment : surcharger une procédure qui accepte un nombre indéfini de paramètres](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
 - [Considérations sur les surcharges de procédures](./considerations-in-overloading-procedures.md)
 - [Résolution de surcharge](./overload-resolution.md)
-- [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)
+- [Surcharges](../../../language-reference/modifiers/overloads.md)

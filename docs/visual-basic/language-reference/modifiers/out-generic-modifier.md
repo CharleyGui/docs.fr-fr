@@ -7,16 +7,16 @@ helpviewer_keywords:
 - Out keyword [Visual Basic]
 - covariance, Out keyword [Visual Basic]
 ms.assetid: c4418369-1518-4a46-9a1e-054c61038eca
-ms.openlocfilehash: 0460015b44971fa638dba47183690ffcc89ca55f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 28ae7d6fd51170aa822072fc2f5357443f51a353
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351421"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84392091"
 ---
 # <a name="out-generic-modifier-visual-basic"></a>Out (modificateur générique) (Visual Basic)
 
-Pour les paramètres de type générique, le mot clé `Out` spécifie que le type est covariant.
+Pour les paramètres de type générique, le `Out` mot clé spécifie que le type est covariant.
 
 ## <a name="remarks"></a>Notes
 
@@ -64,4 +64,4 @@ L’exemple de code suivant montre comment déclarer, instancier et appeler un d
 ## <a name="see-also"></a>Voir aussi
 
 - [Variance dans les interfaces génériques](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
-- [In](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)
+- [Dans](in-generic-modifier.md)
