@@ -6,12 +6,12 @@ helpviewer_keywords:
 - events [Visual Basic], custom
 - custom events [Visual Basic]
 ms.assetid: 998b6a90-67c5-4d2c-8b11-366d3e355505
-ms.openlocfilehash: 8d73d9c4590afb33e7176f647069cafcb3a9d7d8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a9f9529d468a036d81c4e436429cbdb3207efd6e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345146"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84405155"
 ---
 # <a name="how-to-declare-custom-events-to-avoid-blocking-visual-basic"></a>Comment : déclarer des événements personnalisés pour éviter les blocages (Visual Basic)
 Dans certains cas, il est important qu’un gestionnaire d’événements ne bloque pas les gestionnaires d’événements suivants. Les événements personnalisés permettent à l’événement d’appeler ses gestionnaires d’événements de façon asynchrone.  
@@ -21,9 +21,9 @@ Dans certains cas, il est important qu’un gestionnaire d’événements ne blo
  Au lieu d’utiliser l’implémentation par défaut des événements fournis par Visual Basic, vous pouvez utiliser un événement personnalisé pour exécuter les gestionnaires d’événements de façon asynchrone.  
   
 ## <a name="example"></a>Exemple  
- Dans cet exemple, l’accesseur `AddHandler` ajoute le délégué pour chaque gestionnaire de l’événement `Click` à un <xref:System.Collections.ArrayList> stocké dans le champ `EventHandlerList`.  
+ Dans cet exemple, l' `AddHandler` accesseur ajoute le délégué pour chaque gestionnaire de l' `Click` événement à un <xref:System.Collections.ArrayList> stocké dans le `EventHandlerList` champ.  
   
- Lorsque le code déclenche l’événement `Click`, l’accesseur `RaiseEvent` appelle tous les délégués de gestionnaires d’événements de façon asynchrone à l’aide de la méthode <xref:System.Web.Services.Protocols.LogicalMethodInfo.BeginInvoke%2A>. Cette méthode appelle chaque gestionnaire sur un thread de travail et retourne immédiatement, de sorte que les gestionnaires ne peuvent pas s’interfacer mutuellement.  
+ Lorsque le code déclenche l' `Click` événement, l' `RaiseEvent` accesseur appelle tous les délégués de gestionnaires d’événements de façon asynchrone à l’aide de la <xref:System.Web.Services.Protocols.LogicalMethodInfo.BeginInvoke%2A> méthode. Cette méthode appelle chaque gestionnaire sur un thread de travail et retourne immédiatement, de sorte que les gestionnaires ne peuvent pas s’interfacer mutuellement.  
   
  [!code-vb[VbVbalrEvents#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#27)]  
   
@@ -31,5 +31,5 @@ Dans certains cas, il est important qu’un gestionnaire d’événements ne blo
 
 - <xref:System.Collections.ArrayList>
 - <xref:System.Web.Services.Protocols.LogicalMethodInfo.BeginInvoke%2A>
-- [Événements](../../../../visual-basic/programming-guide/language-features/events/index.md)
-- [Guide pratique : déclarer des événements personnalisés pour économiser la mémoire](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)
+- [Événements](index.md)
+- [Comment : déclarer des événements personnalisés pour économiser la mémoire](how-to-declare-custom-events-to-conserve-memory.md)

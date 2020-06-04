@@ -4,26 +4,26 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID322
 ms.assetid: 53617b5b-eb06-4188-b4c2-8607cb9fbc79
-ms.openlocfilehash: 658c2ab1dc210bf472646bce529ae5ffd7f67bc5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1a1464e0ac0d87bf9763efe63f2e09927a157a24
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649983"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84415425"
 ---
 # <a name="cant-create-necessary-temporary-file"></a>Impossible de créer le fichier temporaire nécessaire
-Le lecteur est complet qui contient le répertoire spécifié par la variable d’environnement TEMP, ou la variable d’environnement TEMP spécifie un lecteur non valide ou en lecture seule ou un répertoire.  
+Soit le lecteur est plein qui contient le répertoire spécifié par la variable d’environnement TEMP, soit la variable d’environnement TEMP spécifie un lecteur ou un répertoire non valide ou en lecture seule.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1. Supprimez les fichiers à partir du lecteur, si elle est complète.  
+1. Supprimez les fichiers du lecteur, s’ils sont pleins.  
   
-2. Spécifiez un lecteur différent dans la variable d’environnement TEMP.  
+2. Spécifiez un autre lecteur dans la variable d’environnement TEMP.  
   
 3. Spécifiez un lecteur valide pour la variable d’environnement TEMP.  
   
-4. Supprimez la restriction en lecture seule à partir du lecteur actuellement spécifié ou le répertoire.  
+4. Supprimer la restriction en lecture seule du lecteur ou du répertoire actuellement spécifié.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types d’erreurs](../../../visual-basic/programming-guide/language-features/error-types.md)
+- [Types d’erreurs](../../programming-guide/language-features/error-types.md)

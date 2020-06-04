@@ -1,16 +1,16 @@
 ---
-title: 'Comment : rechercher des sous-répertoires avec un modèle spécifique'
+title: 'Procédure : rechercher des sous-répertoires avec un modèle spécifique'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - pattern matching
 - folders, finding
 ms.assetid: c9265fd1-7483-4150-8b7f-ff642caa939d
-ms.openlocfilehash: c8e13598080139cafabffb2e17d0a3b99c37dc5d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5b57914a518b568732955e5c73bb2031824c84dd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74348772"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401626"
 ---
 # <a name="how-to-find-subdirectories-with-a-specific-pattern-in-visual-basic"></a>Guide pratique pour rechercher des sous-répertoires avec un modèle spécifique en Visual Basic
 
@@ -49,4 +49,4 @@ Les conditions ci-dessous peuvent générer une exception.
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetDirectories%2A>
-- [Comment : rechercher des fichiers avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)
+- [Procédure : rechercher des fichiers avec un modèle spécifique](how-to-find-files-with-a-specific-pattern.md)

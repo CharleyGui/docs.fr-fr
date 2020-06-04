@@ -18,12 +18,12 @@ helpviewer_keywords:
 - argument lists [Visual Basic]
 - procedures [Visual Basic], parameter lists
 ms.assetid: ff275aff-aa13-40df-bd4c-63486db8c1e9
-ms.openlocfilehash: 7dfbbcb39cf7bb05c8a62a7a252e425f287c9a09
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 178206ca2ee103bbdb5a4ac03bca0df903c8c5d8
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352579"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406714"
 ---
 # <a name="procedure-parameters-and-arguments-visual-basic"></a>Paramètres et arguments d’une procédure (Visual Basic)
 Dans la plupart des cas, une procédure a besoin d’informations sur les circonstances dans lesquelles elle a été appelée. Une procédure qui exécute des tâches répétitives ou partagées utilise des informations différentes pour chaque appel. Ces informations se composent de variables, de constantes et d’expressions que vous transmettez à la procédure lorsque vous l’appelez.  
@@ -34,39 +34,39 @@ Dans la plupart des cas, une procédure a besoin d’informations sur les circon
   
  Un *argument* représente la valeur que vous fournissez à un paramètre de procédure lorsque vous appelez la procédure. Le code appelant fournit les arguments lorsqu’il appelle la procédure. La partie de l’appel de procédure qui spécifie les arguments est appelée *liste d’arguments*.  
   
- L’illustration suivante montre le code appelant la procédure `safeSquareRoot` à partir de deux emplacements différents. Le premier appel passe la valeur de la variable `x` (4,0) au paramètre `number`, et la valeur de retour dans `root` (2,0) est assignée à la variable `y`. Le deuxième appel passe la valeur littérale 9,0 à `number`et affecte la valeur de retour (3,0) à la variable `z`.  
+ L’illustration suivante montre le code appelant la procédure `safeSquareRoot` à partir de deux emplacements différents. Le premier appel passe la valeur de la variable `x` (4,0) au paramètre `number` , et la valeur de retour dans `root` (2,0) est assignée à la variable `y` . Le deuxième appel passe la valeur littérale 9,0 à `number` , et assigne la valeur de retour (3,0) à la variable `z` .  
   
  ![Diagramme qui illustre le passage d’un argument à un paramètre](./media/procedure-parameters-and-arguments/pass-argument-parameter.gif)  
   
  Pour plus d’informations, consultez [différences entre les paramètres et les arguments](./differences-between-parameters-and-arguments.md).  
   
 ## <a name="parameter-data-type"></a>Type de données du paramètre  
- Vous définissez un type de données pour un paramètre à l’aide de la clause `As` dans sa déclaration. Par exemple, la fonction suivante accepte une chaîne et un entier.  
+ Vous définissez un type de données pour un paramètre à l’aide `As` de la clause dans sa déclaration. Par exemple, la fonction suivante accepte une chaîne et un entier.  
   
  [!code-vb[VbVbcnProcedures#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#32)]  
   
- Si le commutateur de vérification de type ([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) est `Off,` la clause `As` est facultative, mais si un paramètre l’utilise, tous les paramètres doivent l’utiliser. Si la vérification de type est `On`, la clause `As` est requise pour tous les paramètres de procédure.  
+ Si le commutateur de vérification de type ([Option Strict Statement](../../../language-reference/statements/option-strict-statement.md)) est `Off,` la `As` clause est facultative, sauf que si un paramètre l’utilise, tous les paramètres doivent l’utiliser. Si la vérification de type est `On` , la `As` clause est requise pour tous les paramètres de procédure.  
   
- Si le code appelant s’attend à fournir un argument avec un type de données différent de celui de son paramètre correspondant, par exemple `Byte` à un paramètre `String`, il doit effectuer l’une des opérations suivantes :  
+ Si le code appelant s’attend à fournir un argument avec un type de données différent de celui de son paramètre correspondant, par exemple `Byte` à un `String` paramètre, il doit effectuer l’une des opérations suivantes :  
   
 - Fournissez uniquement des arguments avec des types de données qui s’étendent au type de données du paramètre ;  
   
-- Définissez `Option Strict Off` pour autoriser les conversions restrictives implicites ; ni  
+- Défini `Option Strict Off` pour autoriser les conversions restrictives implicites ; ou  
   
 - Utilisez un mot clé de conversion pour convertir explicitement le type de données.  
   
 ### <a name="type-parameters"></a>Paramètres de type  
- Une *procédure générique* définit également un ou plusieurs *paramètres de type* en plus de ses paramètres normaux. Une procédure générique permet au code appelant de passer différents types de données chaque fois qu’il appelle la procédure. il peut donc adapter les types de données aux exigences de chaque appel individuel. Consultez [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md).  
+ Une *procédure générique* définit également un ou plusieurs *paramètres de type* en plus de ses paramètres normaux. Une procédure générique permet au code appelant de passer différents types de données chaque fois qu’il appelle la procédure. il peut donc adapter les types de données aux exigences de chaque appel individuel. Consultez [Generic Procedures in Visual Basic](../data-types/generic-procedures.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Procédures](./index.md)
-- [Procédures Sub](./sub-procedures.md)
-- [Procédures Function](./function-procedures.md)
-- [Procédures de propriété](./property-procedures.md)
-- [Procédures d’opérateur](./operator-procedures.md)
-- [Guide pratique : définir un paramètre pour une procédure](./how-to-define-a-parameter-for-a-procedure.md)
-- [Guide pratique : passer des arguments à une procédure](./how-to-pass-arguments-to-a-procedure.md)
-- [Passage d’un argument par valeur et par référence](./passing-arguments-by-value-and-by-reference.md)
+- [Sub, procédures](./sub-procedures.md)
+- [Function, procédures](./function-procedures.md)
+- [Procédures Property](./property-procedures.md)
+- [Procédures d'opérateur](./operator-procedures.md)
+- [Comment : définir un paramètre pour une procédure](./how-to-define-a-parameter-for-a-procedure.md)
+- [Comment : passer des arguments à une procédure](./how-to-pass-arguments-to-a-procedure.md)
+- [Passage des arguments par valeur et par référence](./passing-arguments-by-value-and-by-reference.md)
 - [Surcharge de procédure](./procedure-overloading.md)
-- [Conversions de type dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Conversions de type en Visual Basic](../data-types/type-conversions.md)

@@ -7,15 +7,15 @@ helpviewer_keywords:
 - XML axis [Visual Basic], attribute
 - XML [Visual Basic], accessing
 ms.assetid: 66cd704f-990c-4f8d-9b49-2b6aa76ca8fd
-ms.openlocfilehash: 905d6c4bb63323bad790bc833647a5c602d02ada
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2ab6ed27e403273c1b3b2b28593825c0cc6b6db7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332325"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410268"
 ---
 # <a name="how-to-access-xml-attributes-visual-basic"></a>Comment : accéder à des attributs XML (Visual Basic)
-Cet exemple montre comment utiliser une propriété d’axe d’attribut pour accéder aux attributs XML d’un élément XML par nom. En particulier, elle utilise la propriété d’axe d’attribut `type` pour accéder à l’attribut nommé `type` dans l’objet `phone`.  
+Cet exemple montre comment utiliser une propriété d’axe d’attribut pour accéder aux attributs XML d’un élément XML par nom. En particulier, elle utilise la `type` propriété d’axe d’attribut pour accéder à l’attribut nommé `type` dans l' `phone` objet.  
   
 ## <a name="example"></a>Exemple  
  [!code-vb[VbXMLSamples#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples5.vb#11)]  
@@ -23,6 +23,6 @@ Cet exemple montre comment utiliser une propriété d’axe d’attribut pour ac
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>
-- [Propriété d’axe d’attribut XML](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)
-- [Accès au code XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)
-- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [XML Attribute Axis Property](../../../language-reference/xml-axis/xml-attribute-axis-property.md)
+- [Accès au code XML dans Visual Basic](accessing-xml.md)
+- [XML](index.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - region directive (#region)
 - '#Region keyword [Visual Basic]'
 ms.assetid: 90a6a104-3cbf-47d0-bdc4-b585d0921b87
-ms.openlocfilehash: 4cf9b103486378d001b588aa285f590980b51bb8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: cd53a6079c1564a8c73a0a1a6273fc166d18d3e6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74343796"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409935"
 ---
 # <a name="region-directive"></a>#Region, directive
 
@@ -28,11 +28,11 @@ Réduit et masque des sections de code dans des fichiers Visual Basic.
 #End Region  
 ```  
   
-## <a name="parts"></a>Composants  
+## <a name="parts"></a>Éléments  
   
 |Terme|Définition|  
 |---|---|  
-|`identifier_string`|Requis. Chaîne qui joue le rôle du titre d'une région quand elle est réduite. Les régions sont réduites par défaut.|  
+|`identifier_string`|Obligatoire. Chaîne qui joue le rôle du titre d'une région quand elle est réduite. Les régions sont réduites par défaut.|  
 |`#End Region`|Met fin au bloc `#Region`.|  
   
 ## <a name="remarks"></a>Notes  
@@ -47,6 +47,6 @@ Réduit et masque des sections de code dans des fichiers Visual Basic.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [#If...Then...#Else, directives](../../../visual-basic/language-reference/directives/if-then-else-directives.md)
-- [Mode Plan](/visualstudio/ide/outlining)
-- [Guide pratique : réduire et masquer des sections de code](../../../visual-basic/programming-guide/program-structure/how-to-collapse-and-hide-sections-of-code.md)
+- [#If... Then... #Else directives](if-then-else-directives.md)
+- [mode Plan](/visualstudio/ide/outlining)
+- [Procédure : Réduire et masquer des sections de code](../../programming-guide/program-structure/how-to-collapse-and-hide-sections-of-code.md)

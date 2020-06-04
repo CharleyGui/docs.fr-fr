@@ -7,80 +7,80 @@ helpviewer_keywords:
 - procedures [Visual Basic], structure
 - Visual Basic code, program structure
 ms.assetid: ad0c6531-d762-4c77-a700-de16b07b6119
-ms.openlocfilehash: 4f4136a2c8fb7ca98ff22aa6a5fc676f30cd1c5d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dc6b38d78f02a42c8e7cc2aa964e9f3f74996f44
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624299"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408762"
 ---
 # <a name="structure-of-a-visual-basic-program"></a>Structure d'un programme Visual Basic
-Un programme Visual Basic est développé à partir de blocs de construction standard. Un *solution* comprend un ou plusieurs projets. Un *projet* à son tour peut contenir un ou plusieurs assemblys. Chaque *assembly* est compilé à partir d’un ou plusieurs fichiers source. Un *fichier source* fournit la définition et l’implémentation de classes, structures, modules et interfaces qui contiennent l’ensemble de votre code.  
+Un programme Visual Basic est créé à partir de blocs de construction standard. Une *solution* comprend un ou plusieurs projets. Un *projet* à son tour peut contenir un ou plusieurs assemblys. Chaque *assembly* est compilé à partir d’un ou de plusieurs fichiers sources. Un *fichier source* fournit la définition et l’implémentation des classes, des structures, des modules et des interfaces, qui contiennent finalement tout votre code.  
   
- Pour plus d’informations sur ces blocs de construction d’un programme Visual Basic, consultez [Solutions et projets](/visualstudio/ide/solutions-and-projects-in-visual-studio) et [assemblys dans .NET](../../../standard/assembly/index.md).  
+ Pour plus d’informations sur ces blocs de construction d’un programme Visual Basic, consultez [solutions et projets](/visualstudio/ide/solutions-and-projects-in-visual-studio) et [assemblys dans .net](../../../standard/assembly/index.md).  
   
-## <a name="file-level-programming-elements"></a>Éléments de programmation au niveau des fichiers  
- Lorsque vous démarrez un projet ou un fichier et que vous ouvrez l’éditeur de code, vous consultez du code déjà en place et dans le bon ordre. Tout code que vous écrivez doit respecter la séquence suivante :  
+## <a name="file-level-programming-elements"></a>Éléments de programmation au niveau du fichier  
+ Quand vous démarrez un projet ou un fichier et ouvrez l’éditeur de code, vous voyez du code déjà en place et dans le bon ordre. Tout code que vous écrivez doit suivre la séquence suivante :  
   
-1. `Option` Instructions  
+1. `Option`publication  
   
-2. `Imports` Instructions  
+2. `Imports`publication  
   
-3. `Namespace` instructions et des éléments au niveau de l’espace de noms  
+3. `Namespace`instructions et éléments au niveau de l’espace de noms  
   
- Si vous entrez des instructions dans un ordre différent, peuvent entraîner des erreurs de compilation.  
+ Si vous entrez des instructions dans un ordre différent, les erreurs de compilation peuvent se produire.  
   
  Un programme peut également contenir des instructions de compilation conditionnelle. Vous pouvez les intercaler dans le fichier source entre les instructions de la séquence précédente.  
   
-### <a name="option-statements"></a>Instructions de l’option  
- `Option` les instructions définissent les règles de bout en bout pour le code suivant, permettent d’éviter les erreurs de syntaxe et de logique. Le [Option Explicit, instruction](../../../visual-basic/language-reference/statements/option-explicit-statement.md) garantit que toutes les variables sont déclarées et correctement orthographiés, ce qui réduit le temps de débogage. Le [Option Strict, instruction](../../../visual-basic/language-reference/statements/option-strict-statement.md) contribue à minimiser la perte de données et les erreurs logique qui peut se produire lorsque vous travaillez avec des variables de différents types de données. Le [instruction Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md) spécifie les façon dont les chaînes sont comparées aux autres, en fonction de leur `Binary` ou `Text` valeurs.  
+### <a name="option-statements"></a>Instructions option  
+ `Option`les instructions établissent des règles de fond pour le code suivant, ce qui contribue à éviter les erreurs de syntaxe et de logique. L' [instruction Option Explicit](../../language-reference/statements/option-explicit-statement.md) garantit que toutes les variables sont déclarées et épelées correctement, ce qui réduit le temps de débogage. L' [instruction Option Strict](../../language-reference/statements/option-strict-statement.md) permet de réduire les erreurs logiques et la perte de données qui peuvent se produire lorsque vous travaillez entre des variables de types de données différents. L' [instruction Option Compare](../../language-reference/statements/option-compare-statement.md) spécifie la façon dont les chaînes sont comparées les unes aux autres, en fonction de leurs `Binary` `Text` valeurs ou.  
   
 ### <a name="imports-statements"></a>Instructions Imports  
- Vous pouvez inclure un [instruction Imports (.NET Namespace et Type)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pour importer des noms définis en dehors de votre projet. Un `Imports` instruction permet à votre code faire référence à des classes et d’autres types définis dans l’espace de noms importé sans devoir les qualifier. Vous pouvez utiliser autant `Imports` instructions comme il convient. Pour plus d’informations, consultez [références et l’instruction Imports](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md).  
+ Vous pouvez inclure une [instruction Imports (espace de noms et type .net)](../../language-reference/statements/imports-statement-net-namespace-and-type.md) pour importer des noms définis en dehors de votre projet. Une `Imports` instruction permet à votre code de faire référence à des classes et d’autres types définis dans l’espace de noms importé, sans avoir à les qualifier. Vous pouvez utiliser autant d' `Imports` instructions que nécessaire. Pour plus d’informations, consultez [références et l’instruction Imports](references-and-the-imports-statement.md).  
   
-### <a name="namespace-statements"></a>Instructions Namespace  
- Espaces de noms vous aident à organisez et classer les éléments de programmation pour faciliter le regroupement et leur accès. Vous utilisez le [Namespace instruction](../../../visual-basic/language-reference/statements/namespace-statement.md) pour classer les instructions suivantes dans un espace de noms particulier. Pour plus d’informations, consultez l’article [Espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md).  
+### <a name="namespace-statements"></a>Instructions d’espace de noms  
+ Les espaces de noms vous aident à organiser et à classer vos éléments de programmation pour faciliter le regroupement et l’accès. Vous utilisez l' [instruction Namespace](../../language-reference/statements/namespace-statement.md) pour classer les instructions suivantes dans un espace de noms particulier. Pour plus d’informations, consultez l’article [Espaces de noms dans Visual Basic](namespaces.md).  
   
-### <a name="conditional-compilation-statements"></a>Instructions de Compilation conditionnelle  
- Instructions de compilation conditionnelle peuvent apparaître quasiment n’importe où dans votre fichier source. Qu’elles provoquent des parties de votre code doit être inclus ou exclu au moment de la compilation en fonction de certaines conditions. Vous pouvez également les utiliser pour déboguer votre application, car le code conditionnel s’exécute uniquement en mode débogage. Pour plus d’informations, consultez [Compilation conditionnelle](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md).  
+### <a name="conditional-compilation-statements"></a>Instructions de compilation conditionnelle  
+ Les instructions de compilation conditionnelle peuvent apparaître presque n’importe où dans votre fichier source. Elles entraînent l’inclusion ou l’exclusion de certaines parties de votre code au moment de la compilation en fonction de certaines conditions. Vous pouvez également les utiliser pour déboguer votre application, car le code conditionnel s’exécute en mode de débogage uniquement. Pour plus d’informations, consultez [compilation conditionnelle](conditional-compilation.md).  
   
-## <a name="namespace-level-programming-elements"></a>Éléments de programmation au niveau du Namespace  
- Classes, structures et les modules contiennent tout le code dans votre fichier source. Ils sont *au niveau de l’espace de noms* éléments, qui peuvent apparaître dans un espace de noms ou au niveau des fichiers source. Ils contiennent les déclarations de tous les autres éléments de programmation. Les interfaces, qui définissent les signatures d’élément mais ne fournissent aucune implémentation, apparaissent également au niveau du module. Pour plus d’informations sur les éléments au niveau du module, consultez les rubriques suivantes :  
+## <a name="namespace-level-programming-elements"></a>Éléments de programmation au niveau de l’espace de noms  
+ Les classes, les structures et les modules contiennent tout le code dans votre fichier source. Il s’agit d’éléments *au niveau* de l’espace de noms, qui peuvent apparaître dans un espace de noms ou au niveau du fichier source. Ils contiennent les déclarations de tous les autres éléments de programmation. Les interfaces, qui définissent des signatures d’élément mais ne fournissent pas d’implémentation, s’affichent également au niveau du module. Pour plus d’informations sur les éléments de niveau module, consultez les rubriques suivantes :  
   
-- [Class (instruction)](../../../visual-basic/language-reference/statements/class-statement.md)  
+- [Class (instruction)](../../language-reference/statements/class-statement.md)  
   
-- [Structure (instruction)](../../../visual-basic/language-reference/statements/structure-statement.md)  
+- [Structure, instruction](../../language-reference/statements/structure-statement.md)  
   
-- [Module (instruction)](../../../visual-basic/language-reference/statements/module-statement.md)  
+- [Module, instruction](../../language-reference/statements/module-statement.md)  
   
-- [Interface (instruction)](../../../visual-basic/language-reference/statements/interface-statement.md)  
+- [Interface (instruction)](../../language-reference/statements/interface-statement.md)  
   
- Éléments de données au niveau de l’espace de noms sont les énumérations et les délégués.  
+ Les éléments de données au niveau de l’espace de noms sont des énumérations et des délégués.  
   
 ## <a name="module-level-programming-elements"></a>Éléments de programmation au niveau du module  
- Les procédures, les opérateurs, les propriétés et les événements sont les seuls éléments de programmation qui peuvent contenir du code exécutable (instructions qui effectuent des actions en cours d’exécution). Ils sont le *au niveau du module* éléments de votre programme. Pour plus d’informations sur les éléments de niveau de la procédure, consultez les rubriques suivantes :  
+ Les procédures, les opérateurs, les propriétés et les événements sont les seuls éléments de programmation qui peuvent contenir du code exécutable (les instructions qui exécutent des actions au moment de l’exécution). Il s’agit des éléments de *niveau module* de votre programme. Pour plus d’informations sur les éléments de niveau procédure, consultez les rubriques suivantes :  
   
-- [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)  
+- [Function (instruction)](../../language-reference/statements/function-statement.md)  
   
-- [Sub (instruction)](../../../visual-basic/language-reference/statements/sub-statement.md)  
+- [Sub (instruction)](../../language-reference/statements/sub-statement.md)  
   
-- [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md)  
+- [Declare Statement](../../language-reference/statements/declare-statement.md)  
   
-- [Operator (instruction)](../../../visual-basic/language-reference/statements/operator-statement.md)  
+- [Operator Statement](../../language-reference/statements/operator-statement.md)  
   
-- [Property (instruction)](../../../visual-basic/language-reference/statements/property-statement.md)  
+- [Property Statement](../../language-reference/statements/property-statement.md)  
   
-- [Event (instruction)](../../../visual-basic/language-reference/statements/event-statement.md)  
+- [Event, instruction](../../language-reference/statements/event-statement.md)  
   
- Éléments de données au niveau du module sont des variables, constantes, énumérations et les délégués.  
+ Les éléments de données au niveau du module sont les variables, les constantes, les énumérations et les délégués.  
   
-## <a name="procedure-level-programming-elements"></a>Éléments de programmation de niveau de la procédure  
- La plupart du contenu de *au niveau procédure* éléments sont des instructions exécutables qui constituent le code d’exécution de votre programme. Tout le code exécutable doit être dans une procédure (`Function`, `Sub`, `Operator`, `Get`, `Set`, `AddHandler`, `RemoveHandler`, `RaiseEvent`). Pour plus d’informations, consultez [Instructions](../../../visual-basic/programming-guide/language-features/statements.md).  
+## <a name="procedure-level-programming-elements"></a>Éléments de programmation au niveau de la procédure  
+ La majeure partie du contenu des éléments de *niveau procédure* sont des instructions exécutables qui constituent le code d’exécution de votre programme. Tout le code exécutable doit être dans une procédure ( `Function` , `Sub` , `Operator` , `Get` , `Set` , `AddHandler` , `RemoveHandler` , `RaiseEvent` ). Pour plus d’informations, consultez [Instructions](../language-features/statements.md).  
   
- Éléments de données au niveau de la procédure sont limités à des constantes et variables locales.  
+ Les éléments de données au niveau de la procédure sont limités aux constantes et variables locales.  
   
 ## <a name="the-main-procedure"></a>La procédure principale  
- Le `Main` procédure est le premier code à exécuter lorsque votre application a été chargée. `Main` sert de point de départ et de contrôle global pour votre application. Il existe quatre types de `Main`:  
+ La `Main` procédure est le premier code à s’exécuter lorsque votre application a été chargée. `Main`sert de point de départ et de contrôle global pour votre application. Il existe quatre types de `Main` :  
   
 - `Sub Main()`  
   
@@ -90,10 +90,10 @@ Un programme Visual Basic est développé à partir de blocs de construction sta
   
 - `Function Main(ByVal cmdArgs() As String) As Integer`  
   
- Le plus courant de cette procédure est `Sub Main()`. Pour plus d’informations, consultez [procédure Main dans Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md).  
+ La variété la plus courante de cette procédure est `Sub Main()` . Pour plus d’informations, consultez la [procédure main dans Visual Basic](main-procedure.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Procédure Main dans Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)
-- [Conventions d’affectation de noms de Visual Basic](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
-- [Limitations de Visual Basic](../../../visual-basic/programming-guide/program-structure/limitations.md)
+- [Procédure Main dans Visual Basic](main-procedure.md)
+- [Conventions d'affectation de noms Visual Basic](naming-conventions.md)
+- [Restrictions liées à Visual Basic](limitations.md)

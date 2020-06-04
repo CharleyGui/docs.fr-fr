@@ -1,13 +1,13 @@
 ---
-title: "Comment : utiliser des arborescences d'expression pour générer des requêtes dynamiques"
+title: 'Comment : utiliser des arborescences d’expression pour générer des requêtes dynamiques'
 ms.date: 07/20/2015
 ms.assetid: 16278787-7532-4b65-98b2-7a412406c4ee
-ms.openlocfilehash: 616aa3eba1e07a92983bb5d2048a9dbae936e77c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 1f686c37b5d04263ac5ae0dd6883aa8a519ed19e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346050"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410977"
 ---
 # <a name="how-to-use-expression-trees-to-build-dynamic-queries-visual-basic"></a>Comment : utiliser des arborescences d’expression pour générer des requêtes dynamiques (Visual Basic)
 
@@ -103,13 +103,13 @@ Ce code utilise un nombre fixe d’expressions dans le prédicat qui est passé 
 
 ## <a name="compile-the-code"></a>Compiler le code
 
-- Créez un projet d’**Application console**.
+- Créez un projet d' **application console** .
 
 - Incluez l’espace de noms System.Linq.Expressions.
 
-- Copiez le code de l’exemple et collez-le dans la procédure `Main` `Sub`.
+- Copiez le code de l’exemple et collez-le dans la `Main` `Sub` procédure.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Arborescences d’expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
-- [Comment : exécuter des arborescences d’expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
+- [Arborescences d’expressions (Visual Basic)](index.md)
+- [Guide pratique pour exécuter des arborescences d’expressions (Visual Basic)](how-to-execute-expression-trees.md)
