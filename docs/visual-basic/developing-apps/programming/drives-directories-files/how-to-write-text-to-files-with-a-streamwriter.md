@@ -1,43 +1,43 @@
 ---
-title: "Comment : écrire du texte dans des fichiers à l'aide de Streamwriter"
+title: 'Procédure : écrire du texte dans des fichiers avec un StreamWriter'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], writing to
 - text, writing to files
 - writing to files [Visual Basic], StreamWriter
 ms.assetid: 99762e57-ef46-4dcc-8959-a8f79c22f067
-ms.openlocfilehash: 869e29263abcdd8525b2c372c7bb466e3e21fc65
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 373f3bd07ea61263ddd81037d8cbbb06f789e599
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74334495"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411575"
 ---
-# <a name="how-to-write-text-to-files-with-a-streamwriter-in-visual-basic"></a><span data-ttu-id="61971-102">Guide pratique pour écrire du texte dans des fichiers à l'aide de Streamwriter dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="61971-102">How to: Write Text to Files with a StreamWriter in Visual Basic</span></span>
+# <a name="how-to-write-text-to-files-with-a-streamwriter-in-visual-basic"></a><span data-ttu-id="75f2d-102">Guide pratique pour écrire du texte dans des fichiers à l'aide de Streamwriter dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="75f2d-102">How to: Write Text to Files with a StreamWriter in Visual Basic</span></span>
 
-<span data-ttu-id="61971-103">Cet exemple ouvre un objet <xref:System.IO.StreamWriter> avec la méthode `My.Computer.FileSystem.OpenTextFileWriter` et l’utilise pour écrire une chaîne dans un fichier texte avec la méthode <xref:System.IO.TextWriter.WriteLine%2A> de la classe <xref:System.IO.StreamWriter>.</span><span class="sxs-lookup"><span data-stu-id="61971-103">This example opens a <xref:System.IO.StreamWriter> object with the `My.Computer.FileSystem.OpenTextFileWriter` method and uses it to write a string to a text file with the <xref:System.IO.TextWriter.WriteLine%2A> method of the <xref:System.IO.StreamWriter> class.</span></span>  
+<span data-ttu-id="75f2d-103">Cet exemple ouvre un objet <xref:System.IO.StreamWriter> avec la méthode `My.Computer.FileSystem.OpenTextFileWriter` et l’utilise pour écrire une chaîne dans un fichier texte avec la méthode <xref:System.IO.TextWriter.WriteLine%2A> de la classe <xref:System.IO.StreamWriter>.</span><span class="sxs-lookup"><span data-stu-id="75f2d-103">This example opens a <xref:System.IO.StreamWriter> object with the `My.Computer.FileSystem.OpenTextFileWriter` method and uses it to write a string to a text file with the <xref:System.IO.TextWriter.WriteLine%2A> method of the <xref:System.IO.StreamWriter> class.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="61971-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="61971-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="75f2d-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="75f2d-104">Example</span></span>  
 
  [!code-vb[VbFileIOWrite#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOWrite/VB/Class1.vb#5)]  
   
-## <a name="robust-programming"></a><span data-ttu-id="61971-105">Programmation fiable</span><span class="sxs-lookup"><span data-stu-id="61971-105">Robust Programming</span></span>  
+## <a name="robust-programming"></a><span data-ttu-id="75f2d-105">Programmation fiable</span><span class="sxs-lookup"><span data-stu-id="75f2d-105">Robust Programming</span></span>  
 
- <span data-ttu-id="61971-106">Les conditions ci-dessous peuvent générer une exception.</span><span class="sxs-lookup"><span data-stu-id="61971-106">The following conditions may cause an exception:</span></span>  
+ <span data-ttu-id="75f2d-106">Les conditions ci-dessous peuvent générer une exception.</span><span class="sxs-lookup"><span data-stu-id="75f2d-106">The following conditions may cause an exception:</span></span>  
   
-- <span data-ttu-id="61971-107">Le fichier existe et est en lecture seule (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="61971-107">The file exists and is read-only (<xref:System.IO.IOException>).</span></span>  
+- <span data-ttu-id="75f2d-107">Le fichier existe et est en lecture seule (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="75f2d-107">The file exists and is read-only (<xref:System.IO.IOException>).</span></span>  
   
-- <span data-ttu-id="61971-108">Le disque est plein (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="61971-108">The disk is full (<xref:System.IO.IOException>).</span></span>  
+- <span data-ttu-id="75f2d-108">Le disque est plein (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="75f2d-108">The disk is full (<xref:System.IO.IOException>).</span></span>  
   
-- <span data-ttu-id="61971-109">Le nom du chemin est trop long (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="61971-109">The pathname is too long (<xref:System.IO.PathTooLongException>).</span></span>  
+- <span data-ttu-id="75f2d-109">Le nom du chemin est trop long (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="75f2d-109">The pathname is too long (<xref:System.IO.PathTooLongException>).</span></span>  
   
-## <a name="net-framework-security"></a><span data-ttu-id="61971-110">Sécurité du .NET Framework</span><span class="sxs-lookup"><span data-stu-id="61971-110">.NET Framework Security</span></span>  
+## <a name="net-framework-security"></a><span data-ttu-id="75f2d-110">Sécurité du .NET Framework</span><span class="sxs-lookup"><span data-stu-id="75f2d-110">.NET Framework Security</span></span>  
 
- <span data-ttu-id="61971-111">Cet exemple crée un fichier s’il n’existe pas déjà.</span><span class="sxs-lookup"><span data-stu-id="61971-111">This example creates a new file, if the file does not already exist.</span></span> <span data-ttu-id="61971-112">Si une application doit créer un fichier, elle doit disposer de l’autorisation `Create` pour accéder au dossier.</span><span class="sxs-lookup"><span data-stu-id="61971-112">If an application needs to create a file, that application needs `Create` access for the folder.</span></span> <span data-ttu-id="61971-113">Si le fichier existe déjà, l’application a uniquement besoin de l’autorisation `Write`, qui est une autorisation de niveau inférieur.</span><span class="sxs-lookup"><span data-stu-id="61971-113">If the file already exists, the application needs only `Write` access, a lesser privilege.</span></span> <span data-ttu-id="61971-114">Quand cela est possible, il est plus sûr de créer le fichier au cours du déploiement et de n’accorder l’autorisation `Read` que sur un seul fichier, plutôt que l’autorisation `Create` sur un dossier.</span><span class="sxs-lookup"><span data-stu-id="61971-114">Where possible, it is more secure to create the file during deployment, and only grant `Read` access to a single file, rather than `Create` access for a folder.</span></span>  
+ <span data-ttu-id="75f2d-111">Cet exemple crée un fichier s’il n’existe pas déjà.</span><span class="sxs-lookup"><span data-stu-id="75f2d-111">This example creates a new file, if the file does not already exist.</span></span> <span data-ttu-id="75f2d-112">Si une application doit créer un fichier, elle doit disposer de l’autorisation `Create` pour accéder au dossier.</span><span class="sxs-lookup"><span data-stu-id="75f2d-112">If an application needs to create a file, that application needs `Create` access for the folder.</span></span> <span data-ttu-id="75f2d-113">Si le fichier existe déjà, l’application a uniquement besoin de l’autorisation `Write`, qui est une autorisation de niveau inférieur.</span><span class="sxs-lookup"><span data-stu-id="75f2d-113">If the file already exists, the application needs only `Write` access, a lesser privilege.</span></span> <span data-ttu-id="75f2d-114">Quand cela est possible, il est plus sûr de créer le fichier au cours du déploiement et de n’accorder l’autorisation `Read` que sur un seul fichier, plutôt que l’autorisation `Create` sur un dossier.</span><span class="sxs-lookup"><span data-stu-id="75f2d-114">Where possible, it is more secure to create the file during deployment, and only grant `Read` access to a single file, rather than `Create` access for a folder.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="61971-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="61971-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="75f2d-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="75f2d-115">See also</span></span>
 
 - <xref:System.IO.StreamWriter>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter%2A>
-- [<span data-ttu-id="61971-116">Guide pratique pour lire des fichiers texte</span><span class="sxs-lookup"><span data-stu-id="61971-116">How to: Read from Text Files</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)
-- [<span data-ttu-id="61971-117">Écrire dans des fichiers</span><span class="sxs-lookup"><span data-stu-id="61971-117">Writing to Files</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [<span data-ttu-id="75f2d-116">Comment : lire des fichiers texte</span><span class="sxs-lookup"><span data-stu-id="75f2d-116">How to: Read from Text Files</span></span>](how-to-read-from-text-files.md)
+- [<span data-ttu-id="75f2d-117">Écriture dans des fichiers</span><span class="sxs-lookup"><span data-stu-id="75f2d-117">Writing to Files</span></span>](writing-to-files.md)
