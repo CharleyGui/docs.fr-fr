@@ -1,18 +1,18 @@
 ---
-title: 'Exemple de fichier XML : Achat consolidées Orders3'
+title: 'Exemple de fichier XML : achat consolidé Orders3'
 ms.date: 07/20/2015
 ms.assetid: 7203da90-a514-415a-b978-6980e89f3e9c
-ms.openlocfilehash: edeb1381b674ee9f6fba45f14c7b6f12b363a37a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: de5acdd92b9d6dd300eb7bc7471db845cc00d44a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787059"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413347"
 ---
-# <a name="sample-xml-file-consolidated-purchase-orders"></a><span data-ttu-id="32154-102">Exemple de fichier XML : Commandes fournisseur consolidées</span><span class="sxs-lookup"><span data-stu-id="32154-102">Sample XML File: Consolidated Purchase Orders</span></span>
-<span data-ttu-id="32154-103">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="32154-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="32154-104">Ce fichier est un ensemble de commandes fournisseur avec différentes formes provenant de plusieurs sociétés.</span><span class="sxs-lookup"><span data-stu-id="32154-104">This file is a set of purchase orders with different shapes from multiple companies.</span></span> <span data-ttu-id="32154-105">Les commandes fournisseur de chaque société sont dans des espaces de noms distincts.</span><span class="sxs-lookup"><span data-stu-id="32154-105">Purchase orders from each company are in separate namespaces.</span></span>  
+# <a name="sample-xml-file-consolidated-purchase-orders"></a><span data-ttu-id="06e4e-102">Exemple de fichier XML : Commandes fournisseur consolidées</span><span class="sxs-lookup"><span data-stu-id="06e4e-102">Sample XML File: Consolidated Purchase Orders</span></span>
+<span data-ttu-id="06e4e-103">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="06e4e-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="06e4e-104">Ce fichier est un ensemble de commandes fournisseur avec différentes formes provenant de plusieurs sociétés.</span><span class="sxs-lookup"><span data-stu-id="06e4e-104">This file is a set of purchase orders with different shapes from multiple companies.</span></span> <span data-ttu-id="06e4e-105">Les commandes fournisseur de chaque société sont dans des espaces de noms distincts.</span><span class="sxs-lookup"><span data-stu-id="06e4e-105">Purchase orders from each company are in separate namespaces.</span></span>  
   
-## <a name="consolidatedpurchaseordersxml"></a><span data-ttu-id="32154-106">ConsolidatedPurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="32154-106">ConsolidatedPurchaseOrders.xml</span></span>  
+## <a name="consolidatedpurchaseordersxml"></a><span data-ttu-id="06e4e-106">ConsolidatedPurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="06e4e-106">ConsolidatedPurchaseOrders.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -144,6 +144,6 @@ ms.locfileid: "61787059"
 </PurchaseOrders>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="32154-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="32154-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="06e4e-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="06e4e-107">See also</span></span>
 
-- [<span data-ttu-id="32154-108">Exemples de documents XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="32154-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [<span data-ttu-id="06e4e-108">Exemples de documents XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="06e4e-108">Sample XML Documents (LINQ to XML)</span></span>](sample-xml-documents-linq-to-xml.md)
