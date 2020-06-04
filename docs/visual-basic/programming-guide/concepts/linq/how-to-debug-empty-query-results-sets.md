@@ -1,13 +1,13 @@
 ---
-title: 'Comment : déboguer des ensembles de résultats de requête vides'
+title: 'Procédure : déboguer des ensembles de résultats de requête vides'
 ms.date: 07/20/2015
 ms.assetid: b242c90a-d2b8-4309-8a1e-e4e70736c727
-ms.openlocfilehash: 21c161a702338c0c6943fa09212deaea7fdd72f9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b2059ccd4638d2fb77c524773cb4bd50f721b5b9
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353073"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398036"
 ---
 # <a name="how-to-debug-empty-query-results-sets-visual-basic"></a>Procédure : déboguer des ensembles de résultats de requête vides (Visual Basic)
 
@@ -94,4 +94,4 @@ End of result set
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Requêtes de base (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Requêtes de base (LINQ to XML) (Visual Basic)](basic-queries-linq-to-xml.md)

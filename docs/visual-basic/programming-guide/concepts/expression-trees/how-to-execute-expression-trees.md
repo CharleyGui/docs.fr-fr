@@ -1,15 +1,15 @@
 ---
-title: "Comment : exécuter des arborescences d'expression"
+title: 'Comment : exécuter des arborescences d’expression'
 ms.date: 07/20/2015
 ms.assetid: 9dfb5ab3-f48f-417e-975f-f8f6f1cdc18d
-ms.openlocfilehash: 2a2749eaed5279d04b72eb77b066c83de9722fa9
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 7b7b08ea1a7a1310b1d98876be96f1fa28ecba91
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346006"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375328"
 ---
-# <a name="how-to-execute-expression-trees-visual-basic"></a>Comment : exécuter des arborescences d’expressions (Visual Basic)
+# <a name="how-to-execute-expression-trees-visual-basic"></a>Guide pratique pour exécuter des arborescences d’expressions (Visual Basic)
 Cette rubrique montre comment exécuter une arborescence d’expressions. L’exécution d’une arborescence d’expressions peut retourner une valeur, ou elle peut simplement effectuer une action telle que l’appel d’une méthode.  
   
  Seules les arborescences d’expressions qui représentent des expressions lambda peuvent être exécutées. Les arborescences d’expressions qui représentent des expressions lambda peuvent être de type <xref:System.Linq.Expressions.LambdaExpression> ou <xref:System.Linq.Expressions.Expression%601>. Pour exécuter ces arborescences d’expressions, appelez la méthode <xref:System.Linq.Expressions.LambdaExpression.Compile%2A> pour créer un délégué exécutable, puis appelez le délégué.  
@@ -48,5 +48,5 @@ MsgBox(result)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Arborescences d’expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
-- [Comment : modifier les arborescences d’expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)
+- [Arborescences d’expressions (Visual Basic)](index.md)
+- [Guide pratique pour modifier des arborescences d’expressions (Visual Basic)](how-to-modify-expression-trees.md)

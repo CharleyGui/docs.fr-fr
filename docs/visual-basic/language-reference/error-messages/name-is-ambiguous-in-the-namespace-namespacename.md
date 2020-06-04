@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30560
 ms.assetid: 7f032293-054b-4eae-8d97-3db8e7ddde3b
-ms.openlocfilehash: 6171572176d53562a1baeb8d8602113f6abf9c43
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0fd07e4b777bdf48fa07eac7ef49dfb92aae522f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665711"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397192"
 ---
-# <a name="name-is-ambiguous-in-the-namespace-namespacename"></a>«\<nom >' est ambigu dans l’espace de noms '\<namespacename > »
-Vous avez fourni un nom qui est ambigu et donc en conflit avec un autre nom. Le compilateur Visual Basic n’a pas les règles de résolution de conflit ; Vous devez lever l’ambiguïté des noms vous-même.  
+# <a name="name-is-ambiguous-in-the-namespace-namespacename"></a>'\<name>' est ambigu dans l'espace de noms '\<namespacename>'
+Vous avez fourni un nom ambigu qui entre par conséquent en conflit avec un autre nom. Le compilateur de Visual Basic n’a pas de règles de résolution de conflit ; vous devez lever vous-même toute ambiguïté sur les noms.  
   
  **ID d’erreur :** BC30560  
   
@@ -25,5 +25,5 @@ Vous avez fourni un nom qui est ambigu et donc en conflit avec un autre nom. Le 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
-- [Namespace (instruction)](../../../visual-basic/language-reference/statements/namespace-statement.md)
+- [Espaces de noms dans Visual Basic](../../programming-guide/program-structure/namespaces.md)
+- [Namespace, instruction](../statements/namespace-statement.md)

@@ -7,19 +7,19 @@ f1_keywords:
 helpviewer_keywords:
 - BC42017
 ms.assetid: 45f552c8-57c6-44c0-97d3-e510119b257a
-ms.openlocfilehash: 6b78dfed1d615ba865f136365eac1c9c131ed5a5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f1dc656a09eee05080356892b280a79505f3b9cd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64661947"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397348"
 ---
 # <a name="late-bound-resolution-runtime-errors-could-occur"></a>Résolution à liaison tardive ; des erreurs d’exécution peuvent se produire
-Un objet est assigné à une variable déclarée comme étant de la [Object Data Type](../../../visual-basic/language-reference/data-types/object-data-type.md).  
+Un objet est affecté à une variable déclarée comme étant du [type de données Object](../data-types/object-data-type.md).  
   
- Lorsque vous déclarez une variable en tant que `Object`, le compilateur doit exécuter *liaison tardive*, ce qui entraîne des opérations supplémentaires au moment de l’exécution. Cela expose également votre application à des erreurs d’exécution potentielles. Par exemple, si vous assignez un <xref:System.Windows.Forms.Form> à la `Object` variable et réessayez d’accéder à la <xref:System.Xml.XmlDocument.NameTable%2A?displayProperty=nameWithType> propriété, le runtime lève un <xref:System.MemberAccessException> , car le <xref:System.Windows.Forms.Form> classe n’expose pas un `NameTable` propriété.  
+ Quand vous déclarez une variable en tant que `Object` , le compilateur doit exécuter une *liaison tardive*, ce qui entraîne des opérations supplémentaires au moment de l’exécution. Cela expose également votre application à de potentielles erreurs d’exécution. Par exemple, si vous assignez un <xref:System.Windows.Forms.Form> à la `Object` variable, puis essayez d’accéder à la <xref:System.Xml.XmlDocument.NameTable%2A?displayProperty=nameWithType> propriété, le runtime lève une, <xref:System.MemberAccessException> car la <xref:System.Windows.Forms.Form> classe n’expose pas de `NameTable` propriété.  
   
- Si vous déclarez la variable comme étant d’un type spécifique, le compilateur peut exécuter *liaison anticipée* au moment de la compilation. Cela entraîne des performances améliorées, un accès contrôlé aux membres du type spécifique et une meilleure lisibilité de votre code.  
+ Si vous déclarez la variable comme étant d’un type spécifique, le compilateur peut effectuer une *liaison précoce* au moment de la compilation. Cela permet d’améliorer les performances, de contrôler l’accès aux membres du type spécifique et d’améliorer la lisibilité de votre code.  
   
  Par défaut, ce message est un avertissement. Pour plus d’informations sur le masquage des avertissements ou leur traitement en tant qu’erreurs, consultez [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
@@ -31,5 +31,5 @@ Un objet est assigné à une variable déclarée comme étant de la [Object Data
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Liaison anticipée et liaison tardive](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
-- [Déclaration des variables objets](../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)
+- [Liaison précoce et tardive](../../programming-guide/language-features/early-late-binding/index.md)
+- [Déclaration des variables objets](../../programming-guide/language-features/variables/object-variable-declaration.md)

@@ -1,5 +1,5 @@
 ---
-title: Les instructions '#Region' et '#End Region' ne sont pas valides dans les expressions lambda multiligne de corps de méthode
+title: Les instructions « #Region » et « #End Region » ne sont pas valides dans le corps des méthodes ou les expressions lambda multiligne
 ms.date: 07/20/2015
 f1_keywords:
 - bc32025
@@ -7,24 +7,24 @@ f1_keywords:
 helpviewer_keywords:
 - BC32025
 ms.assetid: 43707bf1-1c6b-4d82-b081-e5a17dca51c1
-ms.openlocfilehash: c41b95da7e3565ae7aaf332fe49361336e79f7c7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5652139ab139ea93258eb116f97ba21b76986a24
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013762"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400381"
 ---
 # <a name="region-and-end-region-statements-are-not-valid-within-method-bodiesmultiline-lambdas"></a>Les instructions '#Region' et '#End Region' ne sont pas valides dans le corps des méthodes ou les expressions lambda multiligne
-Le `#Region` bloc doit être déclaré au niveau de la classe, module ou d’espace de noms. Une zone réductible peut inclure une ou plusieurs procédures, mais il ne peut pas commencer ou se terminer à l’intérieur d’une procédure.  
+Le `#Region` bloc doit être déclaré au niveau d’un classe, d’un module ou d’un espace de noms. Une région réductible peut inclure une ou plusieurs procédures, mais elle ne peut pas commencer ni se terminer à l’intérieur d’une procédure.  
   
  **ID d’erreur :** BC32025  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1. Assurez-vous que la procédure précédente est correctement terminée avec un `End Function` ou `End Sub` instruction.  
+1. Vérifiez que la procédure précédente est correctement terminée par une `End Function` instruction ou `End Sub` .  
   
-2. Vérifiez que le `#Region` et `#End Region` sont des directives dans le même bloc de code.  
+2. Vérifiez que les `#Region` `#End Region` directives et se trouvent dans le même bloc de code.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [#Region (directive)](../../../visual-basic/language-reference/directives/region-directive.md)
+- [#Region directive](../directives/region-directive.md)

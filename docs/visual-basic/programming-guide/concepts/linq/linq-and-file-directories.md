@@ -2,12 +2,12 @@
 title: LINQ et répertoires de fichiers
 ms.date: 07/20/2015
 ms.assetid: 159fd5c3-3926-4071-ae78-d8e423287eb7
-ms.openlocfilehash: 390d3c7a1c738aea0df8e3dcad0edb70563f8fb6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 9738dc2b07b33b2d96f8134e8418c54aae53e6a1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347801"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397517"
 ---
 # <a name="linq-and-file-directories-visual-basic"></a>LINQ et répertoires de fichiers (Visual Basic)
 De nombreuses opérations du système de fichiers sont des requêtes et l’approche de LINQ leur convient donc bien.  
@@ -16,22 +16,22 @@ De nombreuses opérations du système de fichiers sont des requêtes et l’appr
   
  Cette section contient les rubriques suivantes :  
   
- [Comment : interroger des fichiers ayant un attribut ou un nom spécifié (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)  
+ [Comment : interroger des fichiers ayant un attribut ou un nom spécifié (Visual Basic)](how-to-query-for-files-with-a-specified-attribute-or-name.md)  
  Montre comment rechercher des fichiers en examinant une ou plusieurs propriétés de son objet <xref:System.IO.FileInfo>.  
   
- [Comment : regrouper des fichiers par extension (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)  
+ [Comment : regrouper des fichiers par extension (LINQ) (Visual Basic)](how-to-group-files-by-extension-linq.md)  
  Montre comment retourner des groupes d’objets <xref:System.IO.FileInfo> en fonction de leur extension de nom de fichier.  
   
- [Comment : Rechercher le nombre total d’octets dans un ensemble de dossiers (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders.md)  
+ [Comment : Rechercher le nombre total d’octets dans un ensemble de dossiers (LINQ) (Visual Basic)](how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders.md)  
  Montre comment retourner le nombre total d’octets dans tous les fichiers d’une arborescence de répertoires spécifiée.  
   
- [Comment : comparer le contenu de deux dossiers (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md)s  
+ [Comment : comparer le contenu de deux dossiers (LINQ) (Visual Basic)](how-to-compare-the-contents-of-two-folders-linq.md)s  
  Montre comment retourner tous les fichiers qui sont présents dans deux dossiers spécifiés, ainsi que tous les fichiers qui sont présents dans un dossier mais pas dans l’autre.  
   
- [Comment : interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)  
+ [Comment : interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (Visual Basic)](how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)  
  Montre comment retourner le fichier le plus grand ou le plus petit, ou un nombre spécifié de fichiers, dans une arborescence de répertoires.  
   
- [Comment : interroger des Fichiers dupliqués dans une arborescence de répertoires (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)  
+ [Comment : interroger des Fichiers dupliqués dans une arborescence de répertoires (LINQ) (Visual Basic)](how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)  
  Montre comment regrouper tous les noms de fichier qui se trouvent dans plusieurs emplacements d’une arborescence de répertoires spécifiée. Montre aussi comment effectuer des comparaisons plus complexes avec un comparateur personnalisé.  
   
  [Comment interroger le contenu de fichiers dans un dossier (LINQ) (Visual Basic)](how-to-query-the-contents-of-files-in-a-folder-linq.md)  
@@ -42,4 +42,4 @@ De nombreuses opérations du système de fichiers sont des requêtes et l’appr
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [LINQ to Objects (Visual Basic)](linq-to-objects.md)

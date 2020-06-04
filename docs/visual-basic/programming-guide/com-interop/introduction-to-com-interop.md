@@ -1,16 +1,16 @@
 ---
-title: Introduction à COM Interop
+title: Présentation de COM Interop
 ms.date: 07/20/2015
 helpviewer_keywords:
 - interop assemblies
 - COM interop [Visual Basic], about COM interop
 ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
-ms.openlocfilehash: c7909b3b6a2c9f0b397b9621b7e5125c232be313
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6c7caf266514c43e40135b33d848a688546acf1c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353199"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396777"
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>Introduction à COM Interop (Visual Basic)
 Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonctionnalités à d’autres composants et d’héberger des applications. Bien que les objets COM soient fondamentaux pour la programmation Windows depuis de nombreuses années, les applications conçues pour le common language runtime (CLR) offrent de nombreux avantages.  
@@ -22,7 +22,7 @@ Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonct
 ## <a name="managed-code-and-data"></a>Code managé et données  
  Le code développé pour le .NET Framework est appelé *code managé*et contient les métadonnées utilisées par le CLR. Les données utilisées par les applications .NET Framework sont appelées *données managées* car le Runtime gère les tâches liées aux données, telles que l’allocation et la récupération de la mémoire et l’exécution de la vérification de type. Par défaut, Visual Basic .NET utilise du code managé et des données, mais vous pouvez accéder au code non managé et aux données d’objets COM à l’aide d’assemblys d’interopérabilité (décrits plus loin dans cette page).  
   
-## <a name="assemblies"></a>Assemblies  
+## <a name="assemblies"></a>Assemblys  
  Un assembly est le bloc de construction principal d’une application .NET Framework. Il s’agit d’une collection de fonctionnalités générées, gérées par version et déployées comme une seule unité d’implémentation contenant un ou plusieurs fichiers. Chaque assembly contient un manifeste d’assembly.  
   
 ## <a name="type-libraries-and-assembly-manifests"></a>Bibliothèques de types et manifestes d’assembly  
@@ -53,12 +53,12 @@ Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonct
   
 ## <a name="see-also"></a>Voir aussi
 
-- [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)
-- [Procédure pas à pas : implémentation de l’héritage avec les objets COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
+- [COM Interop](index.md)
+- [Procédure pas à pas : Implémentation de l’héritage avec les objets COM](walkthrough-implementing-inheritance-with-com-objects.md)
 - [Interopération avec du code non managé](../../../framework/interop/index.md)
-- [Dépannage des problèmes liés à l’interopérabilité](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)
+- [Dépannage de l’interopérabilité](troubleshooting-interoperability.md)
 - [Assemblys dans .NET](../../../standard/assembly/index.md)
-- [Tlbimp.exe (importateur de bibliothèques de types)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
-- [Tlbexp.exe (exportateur de bibliothèques de types)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
-- [Marshaling d'interopérabilité](../../../framework/interop/interop-marshaling.md)
+- [Tlbimp. exe (importateur de bibliothèques de types)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
+- [Tlbexp. exe (exportateur de bibliothèques de types)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
+- [Marshaling d’interopérabilité](../../../framework/interop/interop-marshaling.md)
 - [COM Interop sans inscription](../../../framework/interop/registration-free-com-interop.md)
