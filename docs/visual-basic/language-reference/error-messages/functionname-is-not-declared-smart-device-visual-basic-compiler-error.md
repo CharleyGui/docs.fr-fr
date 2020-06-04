@@ -1,5 +1,5 @@
 ---
-title: "'<functionname>' n’est pas déclaré (Smart Device / Visual Basic Erreur du compilateur)"
+title: <functionname> n’est pas déclaré (erreur du compilateur Visual Basic/Smart Device)
 ms.date: 07/20/2015
 f1_keywords:
 - bc30766
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30766
 ms.assetid: 13918600-6087-40d7-8134-32aa9d3bfda4
-ms.openlocfilehash: 421cc098956150526345c34c053a1df46fd08285
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 69cb2c1da439caba609c34aec8cfe90706bf9f92
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662088"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402938"
 ---
-# <a name="functionname-is-not-declared-smart-devicevisual-basic-compiler-error"></a>'\<functionname >' n’est pas déclaré (Smart Device/Visual Basic Erreur du compilateur)
+# <a name="functionname-is-not-declared-smart-devicevisual-basic-compiler-error"></a>' \<functionname> 'n’est pas déclaré (erreur du compilateur Smart Device/Visual Basic)
 <`functionname`> n’est pas déclaré. La fonctionnalité d’E/S de fichier est normalement disponible dans l’espace de noms `Microsoft.VisualBasic` , mais la version ciblée de .NET Compact Framework ne la prend pas en charge.  
   
  **ID d’erreur :** BC30766  
@@ -26,4 +26,4 @@ ms.locfileid: "64662088"
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.IO>
-- [Accès au fichier avec Visual Basic](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md)
+- [Accès au fichier avec Visual Basic](../../developing-apps/programming/drives-directories-files/file-access.md)

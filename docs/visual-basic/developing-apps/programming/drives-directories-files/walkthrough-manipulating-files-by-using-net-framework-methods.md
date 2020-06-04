@@ -15,12 +15,12 @@ helpviewer_keywords:
 - text files [Visual Basic], reading
 - I/O [Visual Basic], reading text from files
 ms.assetid: 7d2109eb-f98a-4389-b43d-30f384aaa7d5
-ms.openlocfilehash: 02cdbcc59e8817ff4ec06c2f78f835cad77b10f2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9abb87f3f6cdefefef29eb37c2c2d4d15155e93d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74333785"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406649"
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Procédure pas à pas : manipulation de fichiers à l'aide de méthodes du .NET Framework (Visual Basic)
 
@@ -38,17 +38,17 @@ Démarrez Visual Studio et commencez le projet par la création d’un formulair
 
 2. Dans le volet **Nouveau projet**, cliquez sur **Application Windows**.
 
-3. Dans la zone **nom** , `MyDiary` tapez, puis cliquez sur **OK**.
+3. Dans la zone **nom** `MyDiary` , tapez, puis cliquez sur **OK**.
 
      Visual Studio ajoute le projet à **Explorateur de solutions**et le **Concepteur Windows Forms** s’ouvre.
 
 4. Ajoutez au formulaire les contrôles répertoriés dans le tableau ci-après et définissez les valeurs de propriété correspondantes.
 
-|**Dessin**|**Propriétés**|**Valeur**|
+|**Object**|**Propriétés**|**Valeur**|
 |---|---|---|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Text**|`Submit`<br /><br /> **Envoyer l’entrée**|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Text**|`Clear`<br /><br /> **Effacer l’entrée**|
-|<xref:System.Windows.Forms.TextBox>|**Nom**<br /><br /> **Text**<br /><br /> **Multiline**|`Entry`<br /><br /> **Saisissez quelque chose.**<br /><br /> `False`|
+|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**|`Submit`<br /><br /> **Envoyer l’entrée**|
+|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**|`Clear`<br /><br /> **Effacer l’entrée**|
+|<xref:System.Windows.Forms.TextBox>|**Nom**<br /><br /> **Texte**<br /><br /> **Multiline**|`Entry`<br /><br /> **Saisissez quelque chose.**<br /><br /> `False`|
 
 ## <a name="writing-to-the-file"></a>Écriture dans le fichier
 
@@ -96,9 +96,9 @@ Pour cette section de la procédure pas à pas, ajoutez au formulaire les contr�
 |Control|Propriétés|Valeurs|
 |-------------|----------------|------------|
 |<xref:System.Windows.Forms.TextBox>|**Nom**<br /><br /> **Parent**<br /><br /> **Taille**<br /><br /> **Multiline**|`DisplayEntry`<br /><br /> `False`<br /><br /> `120,60`<br /><br /> `True`|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Text**|`Display`<br /><br /> **Affichage**|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Text**|`GetEntries`<br /><br /> **Obtenir des entrées**|
-|<xref:System.Windows.Forms.ComboBox>|**Nom**<br /><br /> **Text**<br /><br /> **Activé**|`PickEntries`<br /><br /> **Sélectionner une entrée**<br /><br /> `False`|
+|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**|`Display`<br /><br /> **Affichage**|
+|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**|`GetEntries`<br /><br /> **Obtenir des entrées**|
+|<xref:System.Windows.Forms.ComboBox>|**Nom**<br /><br /> **Texte**<br /><br /> **Activé**|`PickEntries`<br /><br /> **Sélectionner une entrée**<br /><br /> `False`|
 
 ### <a name="to-populate-the-combo-box"></a>Pour remplir la zone de liste déroulante
 
@@ -124,9 +124,9 @@ Ajoutez au formulaire les contrôles répertoriés dans le tableau ci-après et 
 
 |Control|Propriétés|Valeurs|
 |-------------|----------------|------------|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Text**<br /><br /> **Activé**|`DeleteEntry`<br /><br /> **Supprimer l’entrée**<br /><br /> `False`|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Text**<br /><br /> **Activé**|`EditEntry`<br /><br /> **Modifier l’entrée**<br /><br /> `False`|
-|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Text**<br /><br /> **Activé**|`SubmitEdit`<br /><br /> **Envoyer la modification**<br /><br /> `False`|
+|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**<br /><br /> **Activé**|`DeleteEntry`<br /><br /> **Supprimer l’entrée**<br /><br /> `False`|
+|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**<br /><br /> **Activé**|`EditEntry`<br /><br /> **Modifier l’entrée**<br /><br /> `False`|
+|<xref:System.Windows.Forms.Button>|**Nom**<br /><br /> **Texte**<br /><br /> **Activé**|`SubmitEdit`<br /><br /> **Envoyer la modification**<br /><br /> `False`|
 
 ### <a name="to-enable-deletion-and-modification-of-entries"></a>Pour activer la suppression et la modification d’entrées
 
@@ -156,4 +156,4 @@ Pour tester votre code, appuyez sur F5 pour compiler l’application. Cliquez su
 
 - <xref:System.IO.StreamReader>
 - <xref:System.IO.StreamWriter>
-- [Procédures pas à pas](../../../../visual-basic/walkthroughs.md)
+- [Procédures pas à pas](../../../walkthroughs.md)

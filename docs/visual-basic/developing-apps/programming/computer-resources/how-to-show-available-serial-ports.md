@@ -7,12 +7,12 @@ helpviewer_keywords:
 - My.Computer.Ports object
 - ports, serial port availability
 ms.assetid: eaf2ee5a-8103-4e10-a205-ed1d4db120ba
-ms.openlocfilehash: c7e5f797c1d098a3b2d01745b949ed50375ea7e8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e7a9166f1879ed0850ca893bed307a0318298bbb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345572"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401821"
 ---
 # <a name="how-to-show-available-serial-ports-in-visual-basic"></a>Guide pratique pour afficher les ports série disponibles en Visual Basic
 
@@ -36,7 +36,7 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour afficher les p
   
 - Une référence de projet à System.Windows.Forms.dll  
   
-- Un accès aux membres de l’espace de noms <xref:System.Windows.Forms>. Ajoutez une instruction `Imports` si vous n’utilisez pas de noms de membres qualifiés complets dans votre code. Pour plus d’informations, consultez [Instruction Imports (espace de noms et type .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
+- Un accès aux membres de l’espace de noms <xref:System.Windows.Forms>. Ajoutez une instruction `Imports` si vous n’utilisez pas de noms de membres qualifiés complets dans votre code. Pour plus d’informations, consultez [Instruction Imports (espace de noms et type .NET)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
 - Votre formulaire doit avoir un contrôle <xref:System.Windows.Forms.ListBox> nommé `ListBox1`.  
   
@@ -50,6 +50,6 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour afficher les p
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.Devices.Ports>
-- [Procédure : passer des appels avec des modems attachés aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)
-- [Procédure : envoyer des chaînes aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)
-- [Procédure : recevoir des chaînes provenant des ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)
+- [Procédure : passer des appels avec des modems attachés aux ports série](how-to-dial-modems-attached-to-serial-ports.md)
+- [Procédure : envoyer des chaînes aux ports série](how-to-send-strings-to-serial-ports.md)
+- [Procédure : recevoir des chaînes provenant des ports série](how-to-receive-strings-from-serial-ports.md)

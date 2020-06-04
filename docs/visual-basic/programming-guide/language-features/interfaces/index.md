@@ -7,12 +7,12 @@ helpviewer_keywords:
 - interfaces
 - interfaces [Visual Basic]
 ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
-ms.openlocfilehash: 619aa6695db756e56a836fd76693cc8a3976f8e2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 90f8e5d4eb7bb6b367ee5ffd4a4323097c6bde9c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345057"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84405041"
 ---
 # <a name="interfaces-visual-basic"></a>Interfaces (Visual Basic)
 Les *interfaces* définissent les propriétés, méthodes et événements qui peuvent être implémentés par les classes. Les interfaces vous permettent de définir des fonctionnalités sous forme de petits groupes de propriétés, méthodes et événements étroitement liés. Les risques d’incompatibilité sont ainsi limités, car vous pouvez développer des implémentations avancées pour vos interfaces sans mettre en danger le code existant. Vous pouvez ajouter de nouvelles fonctionnalités à tout moment en développant des interfaces et implémentations supplémentaires.  
@@ -33,7 +33,7 @@ Les *interfaces* définissent les propriétés, méthodes et événements qui pe
  Dans un espace de noms, les instructions d'interface sont `Friend` par défaut, mais elles peuvent également être déclarées explicitement comme `Public` ou `Friend`. Les interfaces définies dans des classes, des modules, des interfaces et des structures sont `Public` par défaut, mais elles peuvent également être déclarées explicitement comme `Public`, `Friend`, `Protected` ou `Private`.  
   
 > [!NOTE]
-> Le mot clé `Shadows` peut être appliqué à tous les membres d'interface. Le mot clé `Overloads` peut être appliqué aux instructions `Sub`, `Function` et `Property` déclarées dans une définition d'interface. En outre, les instructions `Property` peuvent posséder les modificateurs `Default`, `ReadOnly` ou `WriteOnly`. Aucun autre modificateur (`Public`, `Private`, `Friend`, `Protected`, `Shared`, `Overrides`, `MustOverride` ni `Overridable`) n'est autorisé. Pour plus d’informations, consultez [Contextes de déclaration et niveaux d’accès par défaut](../../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+> Le mot clé `Shadows` peut être appliqué à tous les membres d'interface. Le mot clé `Overloads` peut être appliqué aux instructions `Sub`, `Function` et `Property` déclarées dans une définition d'interface. En outre, les instructions `Property` peuvent posséder les modificateurs `Default`, `ReadOnly` ou `WriteOnly`. Aucun autre modificateur (`Public`, `Private`, `Friend`, `Protected`, `Shared`, `Overrides`, `MustOverride` ni `Overridable`) n'est autorisé. Pour plus d’informations, consultez [Contextes de déclaration et niveaux d’accès par défaut](../../../language-reference/statements/declaration-contexts-and-default-access-levels.md).  
   
  Par exemple, le code suivant définit une interface avec une fonction, une propriété et un événement.  
   
@@ -46,7 +46,7 @@ Les *interfaces* définissent les propriétés, méthodes et événements qui pe
  Si une classe ou une structure implémente une ou plusieurs interfaces, elle doit inclure l'instruction `Implements` immédiatement après l'instruction `Class` ou `Structure`. L'instruction `Implements` requiert une liste séparée par des virgules des interfaces qui doivent être implémentées par une classe. La classe ou la structure doit implémenter tous les membres d'interface à l'aide du mot clé `Implements`.  
   
 ### <a name="implements-keyword"></a>Implements, mot clé  
- Le mot clé `Implements` requiert une liste séparée par des virgules des membres d'interface qui doivent être implémentés. En règle générale, un seul membre d'interface est spécifié, mais vous pouvez spécifier plusieurs membres. La spécification d'un membre d'interface se compose du nom de l'interface (qui doit être spécifié dans une instruction implements dans la classe), d'un point et du nom de la fonction membre, de la propriété ou de l'événement à implémenter. Le nom d’un membre qui implémente un membre d’interface peut utiliser n’importe quel identificateur légal, et il n’est pas limité à la Convention d' `InterfaceName_MethodName` utilisée dans les versions antérieures de Visual Basic.  
+ Le mot clé `Implements` requiert une liste séparée par des virgules des membres d'interface qui doivent être implémentés. En règle générale, un seul membre d'interface est spécifié, mais vous pouvez spécifier plusieurs membres. La spécification d'un membre d'interface se compose du nom de l'interface (qui doit être spécifié dans une instruction implements dans la classe), d'un point et du nom de la fonction membre, de la propriété ou de l'événement à implémenter. Le nom d’un membre qui implémente un membre d’interface peut utiliser n’importe quel identificateur légal, et il n’est pas limité à la `InterfaceName_MethodName` Convention utilisée dans les versions antérieures de Visual Basic.  
   
  Par exemple, le code suivant montre comment déclarer une sous-routine nommée `Sub1` qui implémente une méthode d'une interface :  
   
@@ -81,7 +81,7 @@ Les *interfaces* définissent les propriétés, méthodes et événements qui pe
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Titre|Description|  
+|Intitulé|Description|  
 |-----------|-----------------|  
-|[Procédure pas à pas : création et implémentation d’interfaces](../../../../visual-basic/programming-guide/language-features/interfaces/walkthrough-creating-and-implementing-interfaces.md)|Fournit une procédure détaillée qui vous guide tout au long du processus de définition et d'implémentation de votre propre interface.|  
+|[Procédure pas à pas : Création et implémentation d’interfaces](walkthrough-creating-and-implementing-interfaces.md)|Fournit une procédure détaillée qui vous guide tout au long du processus de définition et d'implémentation de votre propre interface.|  
 |[Variance dans les interfaces génériques](../../concepts/covariance-contravariance/variance-in-generic-interfaces.md)|Décrit la covariance et la contravariance dans les interfaces génériques et fournit la liste des interfaces génériques de type variant dans le .NET Framework.|

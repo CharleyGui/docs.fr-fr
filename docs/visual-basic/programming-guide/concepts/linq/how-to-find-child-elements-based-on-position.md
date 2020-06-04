@@ -1,18 +1,18 @@
 ---
-title: 'Comment : rechercher des éléments enfants en fonction de leur position (XPath-LINQ to XML)'
+title: 'Procédure : rechercher des éléments enfants en fonction de leur position (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 6831e1db-5e97-444f-a7a1-d0a87104b005
-ms.openlocfilehash: c3062963c6144dfafed8b49410208f480c273ec9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: d6dd1150ae3e4ad586e476b777b1f7d47d60c261
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349085"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84405259"
 ---
 # <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-visual-basic"></a>Comment : Rechercher des éléments enfants en fonction de leur position (XPath-LINQ to XML) (Visual Basic)
 Parfois, vous souhaitez rechercher des éléments en fonction de leur position. Vous pourriez souhaiter rechercher le deuxième élément, ou les troisième, quatrième et cinquième éléments.  
   
- L'expression XPath est la suivante :  
+ L’expression XPath est la suivante :  
   
  `Test[position() >= 2 and position() <= 4]`  
   
@@ -21,7 +21,7 @@ Parfois, vous souhaitez rechercher des éléments en fonction de leur position. 
 ## <a name="example"></a>Exemple  
  Cet exemple recherche les deuxième, troisième et quatrième éléments `Test`. Le résultat est une collection d’éléments.  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration test (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-test-configuration-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration test (LINQ to XML)](sample-xml-file-test-configuration-linq-to-xml.md).  
   
 ```vb  
 Dim testCfg As XElement = XElement.Load("TestConfig.xml")  
@@ -54,7 +54,7 @@ For Each el As XElement In list1
 Next  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```console  
 Results are identical  
@@ -80,4 +80,4 @@ Results are identical
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](linq-to-xml-for-xpath-users.md)

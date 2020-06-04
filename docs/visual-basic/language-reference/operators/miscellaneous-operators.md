@@ -5,12 +5,12 @@ helpviewer_keywords:
 - operators [Visual Basic]
 - operators [Visual Basic], miscellaneous
 ms.assetid: 2423b3c5-fc3f-479c-bcd2-2c6ebe92814f
-ms.openlocfilehash: c7ae316e2409f5e5d1cb83dee60bdf08c679416c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3f352302ef875e66fe711187d891712fb32f219c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344063"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401522"
 ---
 # <a name="miscellaneous-operators-visual-basic"></a>Opérateurs divers (Visual Basic)
 Voici les opérateurs divers définis dans Visual Basic.  
@@ -19,18 +19,18 @@ Voici les opérateurs divers définis dans Visual Basic.
 
 [? () opérateur conditionnel null](null-conditional-operators.md)
 
- [AddressOf, opérateur](../../../visual-basic/language-reference/operators/addressof-operator.md)  
+ [AddressOf, opérateur](addressof-operator.md)  
   
- [Await (opérateur)](../../../visual-basic/language-reference/operators/await-operator.md)  
+ [Await (opérateur)](await-operator.md)  
   
- [GetType, opérateur](../../../visual-basic/language-reference/operators/gettype-operator.md)  
+ [GetType, opérateur](gettype-operator.md)  
   
- [Expression de fonction](../../../visual-basic/language-reference/operators/function-expression.md)  
+ [Expression de fonction](function-expression.md)  
 
- [If, opérateur](../../../visual-basic/language-reference/operators/if-operator.md)  
+ [If, opérateur](if-operator.md)  
   
- [Opérateur TypeOf](../../../visual-basic/language-reference/operators/typeof-operator.md)  
+ [Opérateur TypeOf](typeof-operator.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérateurs listés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
+- [Opérateurs listés par fonctionnalité](operators-listed-by-functionality.md)

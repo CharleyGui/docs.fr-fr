@@ -1,5 +1,5 @@
 ---
-title: pour déclaration - Référence C
+title: for, instruction-référence C#
 ms.date: 06/13/2018
 f1_keywords:
 - for
@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
-ms.openlocfilehash: cb83fa015eea19b156faebb5bed18cc1f0970cc1
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: db7cecc697a9cc9e5ff6b94b78747b799ed7e505
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738807"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401899"
 ---
 # <a name="for-c-reference"></a>for (référence C#)
 
 L’instruction `for` exécute une instruction ou un bloc d’instructions tant qu’une expression booléenne donne la valeur `true`.
 
-À tout moment dans le bloc d’instructions `for`, vous pouvez sortir de la boucle à l’aide de l’instruction [break](break.md), ou passer à l’itération suivante de la boucle à l’aide de l’instruction [continue](continue.md). Vous pouvez également `for` sortir d’une boucle par le [goto](goto.md), [retour](return.md), ou [lancer des](throw.md) déclarations.
+À tout moment dans le bloc d’instructions `for`, vous pouvez sortir de la boucle à l’aide de l’instruction [break](break.md), ou passer à l’itération suivante de la boucle à l’aide de l’instruction [continue](continue.md). Vous pouvez également quitter une `for` boucle à l’aide des instructions [goto](goto.md), [Return](return.md)ou [throw](throw.md) .
 
 ## <a name="structure-of-the-for-statement"></a>Structure de l’instruction `for`
 
@@ -33,7 +33,7 @@ Ces trois sections sont facultatives. Le corps de la boucle est une instruction 
 
 L’exemple suivant montre l’instruction `for` avec toutes les sections définies :
 
-[!code-csharp-interactive[for loop example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#5)]
+[!code-csharp-interactive[for loop example](snippets/IterationKeywordsExamples.cs#5)]
 
 ### <a name="the-initializer-section"></a>La section *initialiseur*
 
@@ -97,11 +97,11 @@ i++
 
 L’exemple suivant illustre plusieurs utilisations moins courantes des sections d’instruction `for` : l’attribution d’une valeur à une variable de boucle externe dans la section *initialiseur*, l’appel d’une méthode dans les sections *initialiseur* et *itérateur*, et la modification des valeurs de deux variables dans la section *itérateur*. Sélectionnez **Exécuter** pour exécuter l’exemple de code. Après cela, vous pouvez modifier le code et le réexécuter.
 
-[!code-csharp-interactive[not typical for loop example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#6)]
+[!code-csharp-interactive[not typical for loop example](snippets/IterationKeywordsExamples.cs#6)]
 
 L’exemple suivant définit la boucle `for` infinie :
 
-[!code-csharp[infinite for loop example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#7)]
+[!code-csharp[infinite for loop example](snippets/IterationKeywordsExamples.cs#7)]
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -109,7 +109,7 @@ Pour plus d’informations, voir la section [Instruction for](~/_csharplang/spec
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation CMD](../../programming-guide/index.md)
-- [Mots-clés C](index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Mots clés C#](index.md)
 - [foreach, in](foreach-in.md)

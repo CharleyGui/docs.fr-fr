@@ -1,13 +1,13 @@
 ---
-title: 'Comment : rechercher des éléments descendants (XPath-LINQ to XML)'
+title: 'Procédure : rechercher des éléments descendants (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: e7e2dc9e-bda9-420d-a5b1-4fabf1cca46b
-ms.openlocfilehash: 080afdb782bd6f1acaf2819814bb97a6e5ad0c77
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ee67a54116a7d91f6cf6af179d6398a4dcece9c4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346810"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84405233"
 ---
 # <a name="how-to-find-descendant-elements-xpath-linq-to-xml-visual-basic"></a>Comment : Rechercher des éléments descendants (XPath-LINQ to XML) (Visual Basic)
 Cette rubrique montre comment obtenir les éléments descendants avec un nom particulier.  
@@ -17,7 +17,7 @@ Cette rubrique montre comment obtenir les éléments descendants avec un nom par
 ## <a name="example"></a>Exemple  
  Cet exemple recherche tous les descendants nommés `Name`.  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```vb  
       Dim po As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -39,7 +39,7 @@ For Each el As XElement In list1
 Next  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```console
 Results are identical  
@@ -53,4 +53,4 @@ Results are identical
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](linq-to-xml-for-xpath-users.md)

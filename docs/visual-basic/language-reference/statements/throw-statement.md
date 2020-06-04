@@ -14,12 +14,12 @@ helpviewer_keywords:
 - exception handling, unstructured
 - throw statement [Visual Basic]
 ms.assetid: a6e07406-5c8a-4498-87a2-8339f3651d62
-ms.openlocfilehash: 147345990b625e034e651e69b322bc098d0bd8de
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 95572b1739490e90f53da6b6ec283bfb532c46d3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352782"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404133"
 ---
 # <a name="throw-statement-visual-basic"></a>Throw, instruction (Visual Basic)
 
@@ -34,23 +34,23 @@ Throw [ expression ]
 ## <a name="part"></a>Élément
 
 `expression`\
-Fournit des informations sur l’exception à lever. Facultatif lorsqu’il réside dans une instruction `Catch`, sinon requis.
+Fournit des informations sur l’exception à lever. Facultatif lorsqu’il réside dans une `Catch` instruction, sinon requis.
 
 ## <a name="remarks"></a>Notes
 
-L’instruction `Throw` lève une exception que vous pouvez gérer avec du code de gestion des exceptions structurées (`Try`...`Catch`...`Finally`) ou du code de gestion des exceptions non structuré (`On Error GoTo`). Vous pouvez utiliser l’instruction `Throw` pour intercepter les erreurs dans votre code, car Visual Basic monte dans la pile des appels jusqu’à ce qu’il trouve le code de gestion des exceptions approprié.
+L' `Throw` instruction lève une exception que vous pouvez gérer avec du code de gestion des exceptions structuré ( `Try` ... `Catch` ...`Finally`) ou du code de gestion des exceptions non structuré ( `On Error GoTo` ). Vous pouvez utiliser l' `Throw` instruction pour intercepter les erreurs dans votre code, car Visual Basic monte dans la pile des appels jusqu’à ce qu’il trouve le code de gestion des exceptions approprié.
 
-Une instruction `Throw` sans expression ne peut être utilisée que dans une instruction `Catch`. dans ce cas, l’instruction lève à nouveau l’exception en cours de traitement par l’instruction `Catch`.
+Une `Throw` instruction sans expression ne peut être utilisée que dans une `Catch` instruction, auquel cas l’instruction lève à nouveau l’exception en cours de traitement par l' `Catch` instruction.
 
-L’instruction `Throw` réinitialise la pile des appels pour l’exception `expression`. Si `expression` n’est pas fourni, la pile des appels reste inchangée. Vous pouvez accéder à la pile des appels pour l’exception via la propriété <xref:System.Exception.StackTrace%2A>.
+L' `Throw` instruction réinitialise la pile des appels pour l' `expression` exception. Si `expression` n’est pas fourni, la pile des appels reste inchangée. Vous pouvez accéder à la pile des appels pour l’exception via la <xref:System.Exception.StackTrace%2A> propriété.
 
 ## <a name="example"></a>Exemple
 
-Le code suivant utilise l’instruction `Throw` pour lever une exception :
+Le code suivant utilise l' `Throw` instruction pour lever une exception :
 
 [!code-vb[VbVbalrStatements#84](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#84)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Try...Catch...Finally (instruction)](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
-- [On Error (instruction)](../../../visual-basic/language-reference/statements/on-error-statement.md)
+- [Try...Catch...Finally (instruction)](try-catch-finally-statement.md)
+- [On Error (instruction)](on-error-statement.md)

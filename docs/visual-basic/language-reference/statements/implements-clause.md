@@ -17,37 +17,37 @@ helpviewer_keywords:
 - members [Visual Basic], Implements keyword
 - reimplementation
 ms.assetid: 5252cdf9-964d-4fc6-af0f-0449b7126b5a
-ms.openlocfilehash: f114aee75356e59eafd9d3ba6af9c64402cb374f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 46ab1a1148e8d73d91293aedfc407e5efdc7cfb4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345871"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404561"
 ---
 # <a name="implements-clause-visual-basic"></a>Implements, clause (Visual Basic)
 Indique qu’un membre de classe ou de structure fournit l’implémentation d’un membre défini dans une interface.  
   
 ## <a name="remarks"></a>Notes  
-Le mot clé `Implements` n’est pas le même que l' [instruction Implements](../../../visual-basic/language-reference/statements/implements-statement.md). Vous utilisez l’instruction `Implements` pour spécifier qu’une classe ou une structure implémente une ou plusieurs interfaces, puis, pour chaque membre, vous utilisez le mot clé `Implements` pour spécifier l’interface et le membre qu’elle implémente.
+Le `Implements` mot clé n’est pas le même que l' [instruction Implements](implements-statement.md). Utilisez l' `Implements` instruction pour spécifier qu’une classe ou une structure implémente une ou plusieurs interfaces, puis, pour chaque membre, vous utilisez le `Implements` mot clé pour spécifier l’interface et le membre qu’elle implémente.
 
-Si une classe ou une structure implémente une interface, elle doit inclure l’instruction `Implements` immédiatement après l’instruction de [classe](../../../visual-basic/language-reference/statements/class-statement.md) ou de [structure](../../../visual-basic/language-reference/statements/structure-statement.md), et elle doit implémenter tous les membres définis par l’interface.
+Si une classe ou une structure implémente une interface, elle doit inclure l' `Implements` instruction immédiatement après l’instruction de la [classe](class-statement.md) ou de la [structure](structure-statement.md), et elle doit implémenter tous les membres définis par l’interface.
 
 ## <a name="reimplementation"></a>Réimplémentation  
 Dans une classe dérivée, vous pouvez réimplémenter un membre d’interface que la classe de base a déjà implémenté. Cela diffère de la substitution du membre de classe de base dans les aspects suivants :
 
-- Le membre de la classe de base n’a pas besoin d’être [substituable](../../../visual-basic/language-reference/modifiers/overridable.md) pour être réimplémenté.
+- Le membre de la classe de base n’a pas besoin d’être [substituable](../modifiers/overridable.md) pour être réimplémenté.
 - Vous pouvez réimplémenter le membre avec un nom différent.
 
-Le mot clé `Implements` peut être utilisé dans les contextes suivants :
+Le `Implements` mot clé peut être utilisé dans les contextes suivants :
 
-- [Event (instruction)](../../../visual-basic/language-reference/statements/event-statement.md)
-- [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)
-- [Property (instruction)](../../../visual-basic/language-reference/statements/property-statement.md)
-- [Sub (instruction)](../../../visual-basic/language-reference/statements/sub-statement.md)  
+- [Event, instruction](event-statement.md)
+- [Function (instruction)](function-statement.md)
+- [Property Statement](property-statement.md)
+- [Sub (instruction)](sub-statement.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Implements (instruction)](../../../visual-basic/language-reference/statements/implements-statement.md)
-- [Interface (instruction)](../../../visual-basic/language-reference/statements/interface-statement.md)
-- [Class (instruction)](../../../visual-basic/language-reference/statements/class-statement.md)
-- [Structure (instruction)](../../../visual-basic/language-reference/statements/structure-statement.md)
+- [Implements, instruction](implements-statement.md)
+- [Interface (instruction)](interface-statement.md)
+- [Class (instruction)](class-statement.md)
+- [Structure, instruction](structure-statement.md)

@@ -8,15 +8,15 @@ helpviewer_keywords:
 - properties [Visual Basic], auto-implemented
 - auto-implemented properties [Visual Basic]
 ms.assetid: 5c669f0b-cf95-4b4e-ae84-9cc55212ca87
-ms.openlocfilehash: b322bd2215c95298be0a33ace1f3590a63878e24
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: d991a385e537c43daeb708e96e712acd92110379
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350384"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403380"
 ---
 # <a name="auto-implemented-properties-visual-basic"></a>Propriétés implémentées automatiquement (Visual Basic)
-Les *Propriétés implémentées automatiquement* vous permettent de spécifier rapidement une propriété d’une classe sans avoir à écrire du code pour `Get` et `Set` la propriété. Quand vous écrivez du code pour une propriété implémentée automatiquement, le compilateur Visual Basic crée automatiquement un champ privé pour stocker la variable de propriété en plus de créer les procédures `Get` et `Set` associées.  
+Les *Propriétés implémentées automatiquement* vous permettent de spécifier rapidement une propriété d’une classe sans avoir à écrire du code dans `Get` et à `Set` la propriété. Quand vous écrivez du code pour une propriété implémentée automatiquement, le compilateur Visual Basic crée automatiquement un champ privé pour stocker la variable de propriété en plus de créer les procédures `Get` et `Set` associées.  
   
  Avec les propriétés implémentées automatiquement, une propriété, y compris une valeur par défaut, peut être déclarée en une seule ligne. L'exemple suivant montre trois déclarations de propriété.  
   
@@ -90,13 +90,13 @@ End Class
 - Fournir des commentaires XML pour le champ de stockage.  
   
 ## <a name="expanding-an-auto-implemented-property"></a>Développement d’une propriété implémentée automatiquement  
- Si vous devez convertir une propriété implémentée automatiquement en une propriété développée qui contient une procédure `Get` ou `Set`, l’éditeur de code de Visual Basic peut générer automatiquement les procédures `Get` et `Set`, et l’instruction `End Property` pour la propriété. Le code est généré si vous placez le curseur sur une ligne vide à la suite de l’instruction `Property`, que vous tapez un `G` (pour `Get`) ou un `S` (pour `Set`) et que vous appuyez sur entrée. L'éditeur de code de Visual Basic génère automatiquement la procédure `Get` ou `Set` pour les propriétés en lecture seule et en écriture seule quand vous appuyez sur Entrée à la fin d'une instruction `Property`.  
+ Si vous devez convertir une propriété implémentée automatiquement en une propriété développée qui contient une procédure `Get` ou `Set`, l’éditeur de code de Visual Basic peut générer automatiquement les procédures `Get` et `Set`, et l’instruction `End Property` pour la propriété. Le code est généré si vous placez le curseur sur une ligne vide après l' `Property` instruction, que vous tapez un `G` (pour `Get` ) ou un `S` (pour `Set` ) et que vous appuyez sur entrée. L'éditeur de code de Visual Basic génère automatiquement la procédure `Get` ou `Set` pour les propriétés en lecture seule et en écriture seule quand vous appuyez sur Entrée à la fin d'une instruction `Property`.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment : déclarer et appeler une propriété par défaut dans Visual Basic](./how-to-declare-and-call-a-default-property.md)
-- [Guide pratique : déclarer une propriété avec des niveaux d’accès mixtes](./how-to-declare-a-property-with-mixed-access-levels.md)
-- [Property (instruction)](../../../../visual-basic/language-reference/statements/property-statement.md)
-- [ReadOnly](../../../../visual-basic/language-reference/modifiers/readonly.md)
-- [WriteOnly](../../../../visual-basic/language-reference/modifiers/writeonly.md)
-- [Objets et classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [Comment : déclarer et appeler une propriété par défaut en Visual Basic](./how-to-declare-and-call-a-default-property.md)
+- [Comment : déclarer une propriété avec des niveaux d'accès mixtes](./how-to-declare-a-property-with-mixed-access-levels.md)
+- [Property Statement](../../../language-reference/statements/property-statement.md)
+- [Seulement](../../../language-reference/modifiers/readonly.md)
+- [WriteOnly](../../../language-reference/modifiers/writeonly.md)
+- [Objets et classes](../objects-and-classes/index.md)
