@@ -21,15 +21,15 @@ helpviewer_keywords:
 - degrees
 - arccosine function
 ms.assetid: 63e449d8-9444-44fb-8db1-6d9cf346e2aa
-ms.openlocfilehash: 73cf56dd72f2baac0474d6f5c4e88228a1fe38cf
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 611f3d8faf2148b8a983467d9ace4fd6c18b30e6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349849"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373881"
 ---
 # <a name="derived-math-functions-visual-basic"></a>Fonctions mathématiques dérivées (Visual Basic)
-Le tableau suivant répertorie les fonctions mathématiques non intrinsèques qui peuvent être dérivées des fonctions mathématiques intrinsèques de l’objet <xref:System.Math?displayProperty=nameWithType>. Vous pouvez accéder aux fonctions mathématiques intrinsèques en ajoutant des `Imports System.Math` à votre fichier ou projet.  
+Le tableau suivant répertorie les fonctions mathématiques non intrinsèques qui peuvent être dérivées des fonctions mathématiques intrinsèques de l' <xref:System.Math?displayProperty=nameWithType> objet. Vous pouvez accéder aux fonctions mathématiques intrinsèques en ajoutant `Imports System.Math` à votre fichier ou projet.  
   
 |Fonction|Équivalents dérivés|  
 |--------------|-------------------------|  
@@ -38,7 +38,7 @@ Le tableau suivant répertorie les fonctions mathématiques non intrinsèques qu
 |Cotangente (CTAN (x))|1/Tan (x)|  
 |Sinus inverse (ASIN (x))|ATAN (x/sqrt (-x * x + 1))|  
 |Cosinus inverse (ACOS (x))|ATAN (-x/sqrt (-x * x + 1)) + 2 \* ATAN (1)|  
-|Inverse inverse (ASEC (x))|2 * ATAN (1) – ATAN (Sign (x)/sqrt (x \* x – 1))|  
+|Inverse inverse (ASEC (x))|2 * ATAN (1) – ATAN (Sign (x)/sqrt (x \* x-1))|  
 |Cosécante inverse (ACSC (x))|ATAN (Sign (x)/sqrt (x * x – 1))|  
 |Cotangente inverse (acot (x))|2 * ATAN (1)-ATAN (x)|  
 |Sinus hyperbolique (sinh (x))|(Exp (x) – exp (-x))/2|  
@@ -56,4 +56,4 @@ Le tableau suivant répertorie les fonctions mathématiques non intrinsèques qu
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions mathématiques](../../../visual-basic/language-reference/functions/math-functions.md)
+- [Fonctions mathématiques](../functions/math-functions.md)

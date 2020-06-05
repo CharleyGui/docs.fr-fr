@@ -4,12 +4,12 @@ description: En savoir plus sur les types tuple nommés et sans nom en C#
 ms.date: 05/15/2018
 ms.technology: csharp-fundamentals
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 9ce9e1d4395d1a75f36004384ec215c615cd9802
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 497f95811677c300e1fadad65eb495dced7f2da3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156907"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374614"
 ---
 # <a name="c-tuple-types"></a>Types tuple C#
 
@@ -19,7 +19,7 @@ Dans cet article, vous allez apprendre les règles de langage régissant les tup
 
 > [!NOTE]
 > Les nouvelles fonctionnalités des tuples exigent les types <xref:System.ValueTuple>.
-> Vous devez ajouter le [`System.ValueTuple`](https://www.nuget.org/packages/System.ValueTuple/) paquet NuGet afin de l’utiliser sur les plates-formes qui n’incluent pas les types.
+> Vous devez ajouter le package NuGet [`System.ValueTuple`](https://www.nuget.org/packages/System.ValueTuple/) pour pouvoir l’utiliser sur des plateformes qui n’incluent pas les types.
 >
 > Ces fonctionnalités sont semblables à celles d’autres langages qui reposent sur les types fournis dans le framework. `async` et `await` qui reposent sur l’interface `INotifyCompletion`, et LINQ qui repose sur `IEnumerable<T>` en sont des exemples. Toutefois, le mécanisme de remise change à mesure que le .NET dépend de moins en moins de la plateforme. Le .NET Framework n’est pas toujours émis à la même cadence que le compilateur de langage. Quand les nouvelles fonctionnalités de langage reposent sur de nouveaux types, ces types sont disponibles sous la forme de packages NuGet au moment de l’émission des fonctionnalités de langage. À mesure que ces nouveaux types sont ajoutés à l’API .NET Standard et remis dans le cadre du framework, les packages NuGet ne sont plus obligatoires.
 
@@ -43,7 +43,7 @@ Ces noms sont les seuls noms que vous pouvez utiliser pour les *tuples sans nom*
 
 [!code-csharp[UnnamedTuple](../../samples/snippets/csharp/tuples/program.cs#01_UnNamedTuple "Unnamed tuple")]
 
-Le tuple dans l’exemple précédent a été paralé à l’aide de constantes littérales et n’aura pas de noms d’éléments créés à l’aide de *projections de noms de champ de tuple* dans C 7.1.
+Le tuple de l’exemple précédent a été initialisé à l’aide de constantes littérales et n’a pas de noms d’éléments créés à l’aide de *projections de nom de champ de tuple* en C# 7,1.
 
 Toutefois, quand vous initialisez un tuple, vous pouvez utiliser les nouvelles fonctionnalités de langage qui donnent de meilleurs noms aux différents champs. Cette opération crée un *tuple nommé*.
 Les tuples nommés ont toujours des éléments appelés `Item1`, `Item2`, `Item3`, etc.
@@ -78,7 +78,7 @@ Pour tous les champs où un nom explicite n’est pas spécifié, un nom implici
 
 Il existe deux conditions où les noms de champ de candidat ne sont pas projetés sur le champ de tuple :
 
-1. Lorsque le nom du candidat est un nom de tuple réservé. Exemples `Item3` `ToString`incluent `Rest`, , ou .
+1. Lorsque le nom du candidat est un nom de tuple réservé. Exemples : `Item3` , `ToString` ou `Rest` .
 1. Lorsque le nom du candidat est un doublon d’un autre nom de champ de tuple, explicite ou implicite.
 
 Ces conditions évitent toute ambiguïté. Ces noms provoqueraient une ambiguïté s’ils étaient utilisés comme noms de champ pour un champ dans un tuple. Aucune de ces conditions n’entraîne d’erreur au moment de la compilation. Au lieu de cela, les éléments sans noms projetés n’ont pas de noms sémantiques projetés.  Les exemples suivants illustrent ces conditions :
@@ -252,7 +252,7 @@ public class Point
 
 N’importe quel type tuple peut être déconstruit comme indiqué ci-dessus. Il est également facile d’activer la déconstruction sur n’importe quel type défini par l’utilisateur (classes, structs ou même interfaces).
 
-L’auteur du type peut définir une ou plusieurs méthodes `Deconstruct` qui affectent des valeurs à un nombre quelconque de variables `out` qui représentent les éléments de données qui composent le type. Par exemple, le type `Person` suivant définit une méthode `Deconstruct` qui déconstruit un objet person en éléments représentant le prénom et le nom de famille :
+L’auteur du type peut définir une ou plusieurs `Deconstruct` méthodes qui affectent des valeurs à un nombre quelconque de [ `out` variables](language-reference/keywords/out-parameter-modifier.md) représentant les éléments de données qui composent le type. Par exemple, le type `Person` suivant définit une méthode `Deconstruct` qui déconstruit un objet person en éléments représentant le prénom et le nom de famille :
 
 [!code-csharp[TypeWithDeconstructMethod](../../samples/snippets/csharp/tuples/person.cs#12_TypeWithDeconstructMethod "Type with a deconstruct method")]
 
@@ -284,13 +284,13 @@ if (("Althea", "Goodwin") == p)
 
 La méthode `Deconstruct` pourrait convertir l’objet `Person``p` en un tuple contenant les deux chaînes, mais elle ne s’applique pas dans le contexte des tests d’égalité.
 
-## <a name="tuples-as-out-parameters"></a>Tuples comme paramètres
+## <a name="tuples-as-out-parameters"></a>Tuples en tant que paramètres de sortie
 
-Tuples peut être utilisé comme paramètres *eux-mêmes*. À ne pas confondre avec toute ambiguïté mentionnée précédemment dans la section [Déconstruction.](#deconstruction) Dans un appel de méthode, vous n’avez qu’à décrire la forme du tuple :
+Les tuples peuvent être utilisés en tant que [ `out` paramètres](language-reference/keywords/out-parameter-modifier.md) *.* À ne pas confondre avec toute ambiguïté mentionnée précédemment dans la section de [déconstruction](#deconstruction) . Dans un appel de méthode, vous devez uniquement décrire la forme du tuple :
 
 [!code-csharp[TuplesAsOutParameters](~/samples/snippets/csharp/tuples/program.cs#01_TupleAsOutVariable "Tuples as out parameters")]
 
-Alternativement, vous pouvez utiliser un tuple [_anonyme_](#named-and-unnamed-tuples) `Item1` et `Item2`se référer à ses champs comme et :
+Vous pouvez également utiliser un Tuple [_sans nom_](#named-and-unnamed-tuples) et faire référence à ses champs comme `Item1` et `Item2` :
 
 ```csharp
 dict.TryGetValue(2, out (int, string) pair);

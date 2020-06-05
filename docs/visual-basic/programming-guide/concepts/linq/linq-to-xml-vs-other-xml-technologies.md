@@ -2,17 +2,17 @@
 title: LINQ to XML et autres Technologies2 XML
 ms.date: 07/20/2015
 ms.assetid: 72ce3a82-ffc6-488c-98e7-b9b40f3591ec
-ms.openlocfilehash: 35d2be530c63cdbc09631c5dfc036558bb9851bc
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: ee855c40e61a6b63c2891d8f30072fc8e235fe4b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636613"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84389317"
 ---
-# <a name="linq-to-xml-vs-other-xml-technologies"></a>Comparaison de LINQ to XML et des autres technologies XML
+# <a name="linq-to-xml-vs-other-xml-technologies"></a>LINQ to XML, différences par rapport à d'autres technologies XML
 Cette rubrique compare [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] aux technologies XML suivantes : <xref:System.Xml.XmlReader>, XSLT, MSXML et XmlLite. Ces informations peuvent vous aider à décider de la technologie à utiliser.  
   
- Pour une comparaison entre les [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] et le Document Object Model (DOM), consultez [LINQ to XML et DOM (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-dom.md).  
+ Pour une comparaison entre [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] le document Object Model (DOM), consultez [LINQ to XML et dom (Visual Basic)](linq-to-xml-vs-dom.md).  
   
 ## <a name="linq-to-xml-vs-xmlreader"></a>Comparaison de LINQ to XML et de XmlReader  
  <xref:System.Xml.XmlReader> est un analyseur rapide, avant uniquement et sans mise en cache.  
@@ -54,4 +54,4 @@ Cette rubrique compare [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] aux
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Bien démarrer (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/getting-started-linq-to-xml.md)
+- [Mise en route (LINQ to XML)](getting-started-linq-to-xml.md)

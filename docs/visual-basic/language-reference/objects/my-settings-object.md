@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - My.Settings object
 ms.assetid: 41f30dc1-202a-4273-b9b7-5728941f996c
-ms.openlocfilehash: 9560a51332ea596d4cf2228f1e07c158a0457ece
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c905ff85c8e9729dd4d6068f0d34f729962bbb57
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350356"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84372399"
 ---
 # <a name="mysettings-object"></a>My.Settings, objet
 Fournit des propriétés et des méthodes pour accéder aux paramètres de l’application.  
   
 ## <a name="remarks"></a>Notes  
- L’objet `My.Settings` fournit l’accès aux paramètres de l’application et vous permet de stocker et de récupérer dynamiquement des paramètres de propriété et d’autres informations pour votre application. Pour plus d’informations, consultez [Gestion des paramètres d’une application (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
+ L' `My.Settings` objet fournit l’accès aux paramètres de l’application et vous permet de stocker et de récupérer dynamiquement des paramètres de propriété et d’autres informations pour votre application. Pour plus d’informations, consultez [Gestion des paramètres d’une application (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
 ## <a name="properties"></a>Propriétés  
  Les propriétés de l’objet `My.Settings` fournissent l’accès aux paramètres de votre application. Pour ajouter ou supprimer des paramètres, utilisez le **Concepteur de paramètres**.  
   
- Chaque paramètre a un **nom**, un **type**, une **étendue**et une **valeur**, et ces paramètres déterminent la façon dont la propriété pour accéder à chaque paramètre apparaît dans l’objet `My.Settings` :  
+ Chaque paramètre a un **nom**, un **type**, une **étendue**et une **valeur**, et ces paramètres déterminent la façon dont la propriété pour accéder à chaque paramètre apparaît dans l' `My.Settings` objet :  
   
 - **Nom** détermine le nom de la propriété.  
   
@@ -40,17 +40,17 @@ Fournit des propriétés et des méthodes pour accéder aux paramètres de l’a
 |`Reload`|Recharge les paramètres utilisateur à partir des dernières valeurs enregistrées.|  
 |`Save`|Enregistre les paramètres utilisateur actuels.|  
   
- L’objet `My.Settings` fournit également des propriétés et des méthodes avancées, héritées de la classe <xref:System.Configuration.ApplicationSettingsBase>.  
+ L' `My.Settings` objet fournit également des propriétés et des méthodes avancées, héritées de la <xref:System.Configuration.ApplicationSettingsBase> classe.  
   
 ## <a name="tasks"></a>Tâches  
- Le tableau suivant répertorie des exemples de tâches impliquant l’objet `My.Settings`.  
+ Le tableau suivant répertorie des exemples de tâches impliquant l' `My.Settings` objet.  
   
-|Pour|Consultez|  
+|À|Consultez|  
 |---|---|  
-|Lire un paramètre d’application|[Guide pratique pour lire des paramètres d’application dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)|  
-|Modifier un paramètre utilisateur|[Guide pratique pour modifier les paramètres utilisateur dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)|  
-|Conserver les paramètres utilisateur|[Guide pratique pour rendre persistants les paramètres utilisateur dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)|  
-|Créer une grille des propriétés pour les paramètres utilisateur|[Guide pratique pour créer des grilles de propriétés pour les paramètres utilisateur dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)|  
+|Lire un paramètre d’application|[Guide pratique pour lire des paramètres d’application en Visual Basic](../../developing-apps/programming/app-settings/how-to-read-application-settings.md)|  
+|Modifier un paramètre utilisateur|[Guide pratique pour modifier les paramètres utilisateur en Visual Basic](../../developing-apps/programming/app-settings/how-to-change-user-settings.md)|  
+|Conserver les paramètres utilisateur|[Guide pratique pour rendre persistants les paramètres utilisateur en Visual Basic](../../developing-apps/programming/app-settings/how-to-persist-user-settings.md)|  
+|Créer une grille des propriétés pour les paramètres utilisateur|[Guide pratique pour créer des grilles de propriétés pour les paramètres utilisateur en Visual Basic](../../developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)|  
   
 ## <a name="example"></a>Exemple  
  Cet exemple affiche la valeur du paramètre `Nickname`.  
@@ -62,8 +62,8 @@ Fournit des propriétés et des méthodes pour accéder aux paramètres de l’a
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Configuration.ApplicationSettingsBase>
-- [Guide pratique pour lire des paramètres d’application dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)
-- [Guide pratique pour modifier les paramètres utilisateur dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)
-- [Guide pratique pour rendre persistants les paramètres utilisateur dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)
-- [Guide pratique pour créer des grilles de propriétés pour les paramètres utilisateur dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)
-- [Gestion des paramètres d’une application (.NET)](/visualstudio/ide/managing-application-settings-dotnet)
+- [Guide pratique pour lire des paramètres d’application en Visual Basic](../../developing-apps/programming/app-settings/how-to-read-application-settings.md)
+- [Guide pratique pour modifier les paramètres utilisateur en Visual Basic](../../developing-apps/programming/app-settings/how-to-change-user-settings.md)
+- [Guide pratique pour rendre persistants les paramètres utilisateur en Visual Basic](../../developing-apps/programming/app-settings/how-to-persist-user-settings.md)
+- [Guide pratique pour créer des grilles de propriétés pour les paramètres utilisateur en Visual Basic](../../developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)
+- [Gestion des paramètres d'une application (.NET)](/visualstudio/ide/managing-application-settings-dotnet)

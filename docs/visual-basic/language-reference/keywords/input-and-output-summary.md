@@ -6,17 +6,17 @@ helpviewer_keywords:
 - output, Visual Basic functions
 - I/O [Visual Basic], functions
 ms.assetid: 6b0cbb88-6593-43b8-8a40-a61563bc0ce9
-ms.openlocfilehash: 12651977609d8a689f13777b0fe2244cdb10819c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 44321d75ce88beead2c631318392e5d630bae74b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348524"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373471"
 ---
 # <a name="input-and-output-summary-visual-basic"></a>Liste des entrées et sorties (Visual Basic)
 Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtime sont organisés par rôle et utilisation.  
   
-|Action|élément Language|  
+|Action|Élément du langage|  
 |------------|----------------------|  
 |Accéder ou créer un fichier.|<xref:Microsoft.VisualBasic.FileSystem.FileOpen%2A>|  
 |Fermez les fichiers.|<xref:Microsoft.VisualBasic.FileSystem.FileClose%2A>, <xref:Microsoft.VisualBasic.FileSystem.Reset%2A>|  
@@ -33,5 +33,5 @@ Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtim
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
-- [Membres de la bibliothèque runtime Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
+- [Mots clés](index.md)
+- [Membres de la bibliothèque runtime Visual Basic](../runtime-library-members.md)
