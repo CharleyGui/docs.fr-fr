@@ -4,17 +4,17 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - registry [Visual Basic]
 ms.assetid: 6e90eb8a-1a4e-4387-8a68-9287dc7875e8
-ms.openlocfilehash: 6564b4c3ad2025da4ebaeaca84e23c97a85f007d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6a093a771933b278a3c43a60cf7640a3a4ee3cd6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351685"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373250"
 ---
 # <a name="registry-summary-visual-basic"></a>Liste des registres (Visual Basic)
 Les mots clés de langage et les membres de la bibliothèque Runtime de Visual Studio sont organisés par rôle et utilisation.  
   
- L’utilisation de la fonctionnalité de `My` vous offre une plus grande productivité et de meilleures performances dans les opérations de registre que ces éléments. Pour plus d'informations, consultez <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>.  
+ L’utilisation de la `My` fonctionnalité vous offre une plus grande productivité et de meilleures performances dans les opérations de registre que ces éléments. Pour plus d’informations, consultez <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>.  
   
 |**Action**|**Élément de langage**|  
 |----------------|--------------------------|  
@@ -24,6 +24,6 @@ Les mots clés de langage et les membres de la bibliothèque Runtime de Visual S
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
-- [Membres de la bibliothèque runtime Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
-- [Lecture et écriture dans le Registre](../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
+- [Mots clés](index.md)
+- [Membres de la bibliothèque runtime Visual Basic](../runtime-library-members.md)
+- [Lecture et écriture dans le Registre](../../developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)

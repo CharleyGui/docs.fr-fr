@@ -8,18 +8,18 @@ helpviewer_keywords:
 - arrays [Visual Basic], structure elements
 - nested structures [Visual Basic]
 ms.assetid: 0f849313-ccd2-4c9a-acb9-69de6751c088
-ms.openlocfilehash: 73d3f999e95c484dff3f5409f2cdb9032b64fe38
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: dbd24065a954e5611663963371d5a9f4bbbaea68
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78266857"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84393492"
 ---
 # <a name="structures-and-other-programming-elements-visual-basic"></a>Structures et autres éléments de programmation (Visual Basic)
-Vous pouvez utiliser des structures en conjonction avec des tableaux, des objets et des procédures, ainsi qu’avec les autres. Les interactions utilisent la même syntaxe que ces éléments utilisent individuellement.  
+Vous pouvez utiliser des structures conjointement avec des tableaux, des objets et des procédures, ainsi qu’entre eux. Les interactions utilisent la même syntaxe que celles que ces éléments utilisent individuellement.  
   
 > [!NOTE]
-> Vous ne pouvez pas initialiser aucun des éléments de structure dans la déclaration de structure. Vous ne pouvez attribuer des valeurs qu’à des éléments d’une variable qui a été déclarée de type structure.  
+> Vous ne pouvez pas initialiser l’un des éléments de structure dans la déclaration de structure. Vous pouvez assigner des valeurs uniquement aux éléments d’une variable déclarée comme étant d’un type structure.  
   
 ## <a name="structures-and-arrays"></a>Structures et tableaux  
  Une structure peut contenir un tableau comme un ou plusieurs de ses éléments. L'exemple suivant illustre ce comportement.  
@@ -33,7 +33,7 @@ Public Structure systemInfo
 End Structure
 ```  
   
- Vous accédez aux valeurs d’un tableau au sein d’une structure de la même manière que vous accédez à une propriété sur un objet. L'exemple suivant illustre ce comportement.  
+ Vous accédez aux valeurs d’un tableau dans une structure de la même façon que vous accédez à une propriété sur un objet. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 Dim mySystem As systemInfo  
@@ -66,10 +66,10 @@ Protected Structure userInput
 End Structure  
 ```  
   
- Vous devez utiliser une classe d’objets `Object`spécifiques dans une telle déclaration, plutôt que .  
+ Vous devez utiliser une classe d’objet spécifique dans une telle déclaration, plutôt que `Object` .  
   
 ## <a name="structures-and-procedures"></a>Structures et procédures  
- Vous pouvez passer une structure comme argument de procédure. L'exemple suivant illustre ce comportement.  
+ Vous pouvez passer une structure en tant qu’argument de procédure. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 Public currentCPUName As String = "700MHz Pentium compatible"  
@@ -81,9 +81,9 @@ Public Sub fillSystem(ByRef someSystem As systemInfo)
 End Sub  
 ```  
   
- L’exemple précédent passe la structure *par référence*, ce qui permet à la procédure de modifier ses éléments de sorte que les modifications prennent effet dans le code d’appel. Si vous voulez protéger une structure contre une telle modification, passez-la par valeur.  
+ L’exemple précédent passe la structure *par référence*, ce qui permet à la procédure de modifier ses éléments afin que les modifications prennent effet dans le code appelant. Si vous souhaitez protéger une structure contre une telle modification, transmettez-la par valeur.  
   
- Vous pouvez également retourner `Function` une structure à partir d’une procédure. L'exemple suivant illustre ce comportement.  
+ Vous pouvez également retourner une structure à partir d’une `Function` procédure. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 Dim allSystems(100) As systemInfo  
@@ -96,7 +96,7 @@ Function findByDate(ByVal searchDate As Date) As systemInfo
 End Function  
 ```  
   
-## <a name="structures-within-structures"></a>Structures au sein des structures  
+## <a name="structures-within-structures"></a>Structures dans les structures  
  Les structures peuvent contenir d’autres structures. L'exemple suivant illustre ce comportement.  
   
 ```vb  
@@ -118,19 +118,19 @@ ReDim allSystems(1).diskDrives(3)
 allSystems(1).diskDrives(0).type = "Floppy"  
 ```  
   
- Vous pouvez également utiliser cette technique pour encapsuler une structure définie en un seul module dans une structure définie dans un module différent.  
+ Vous pouvez également utiliser cette technique pour encapsuler une structure définie dans un module au sein d’une structure définie dans un autre module.  
   
  Les structures peuvent contenir d’autres structures à une profondeur arbitraire.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [Types de données élémentaires](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
-- [Types de données composites](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)
-- [Types valeur et types référence](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
-- [Structures](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)
-- [Dépannage des types de données](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
-- [Comment : déclarer une structure](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
-- [Variables de structure](../../../../visual-basic/programming-guide/language-features/data-types/structure-variables.md)
-- [Structures et classes](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)
-- [Structure, instruction](../../../../visual-basic/language-reference/statements/structure-statement.md)
+- [Types de données](index.md)
+- [Types de données élémentaires](elementary-data-types.md)
+- [Types de données composites](composite-data-types.md)
+- [Types valeur et types référence](value-types-and-reference-types.md)
+- [Structures](structures.md)
+- [Dépannage des types de données](troubleshooting-data-types.md)
+- [Procédure : Déclarer une structure](how-to-declare-a-structure.md)
+- [Variables de structure](structure-variables.md)
+- [Structures et classes](structures-and-classes.md)
+- [Structure, instruction](../../../language-reference/statements/structure-statement.md)
