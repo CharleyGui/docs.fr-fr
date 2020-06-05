@@ -1,5 +1,6 @@
 ---
 title: 'Comment : écrire du texte dans un fichier'
+description: Apprenez comment écrire ou ajouter du texte dans un fichier pour une application .NET. Utilisez les méthodes des classes StreamWriter ou file pour écrire du texte de façon synchrone ou asynchrone.
 ms.date: 01/04/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - streams, writing text to files
 - data streams, writing text to files
 ms.assetid: 060cbe06-2adf-4337-9e7b-961a5c840208
-ms.openlocfilehash: 395344accf5be416fbcc527e51ba83408f9c5810
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 52d3d07f4ffdbdc6510425a65fc173d36e674d06
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291732"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447210"
 ---
 # <a name="how-to-write-text-to-a-file"></a>Comment : écrire du texte dans un fichier
 Cette rubrique présente différentes façons d’écrire du texte dans un fichier pour une application .NET.

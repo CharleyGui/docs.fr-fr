@@ -1,5 +1,6 @@
 ---
 title: Gestion et déclenchement d'événements
+description: Apprenez à gérer et à déclencher des événements .NET, qui sont basés sur le modèle délégué. Ce modèle permet aux abonnés de s’inscrire auprès des fournisseurs ou de recevoir des notifications.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - events [.NET Core]
 - events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-ms.openlocfilehash: b8ed028bc1edabf14d7b2dd67d94b28d574d2eb4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8cf0ff323e9bf7305e3d9cbb6dabd8f685059e97
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159622"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447106"
 ---
 # <a name="handling-and-raising-events"></a>Gestion et déclenchement d'événements
 
@@ -31,7 +32,7 @@ Les événements dans .NET Framework sont basés sur le modèle délégué. Le m
 
 Un événement est un message envoyé par un objet pour signaler la présence d’une action. L'action peut être provoquée par l'intervention de l'utilisateur, telle qu'un clic de bouton, ou être déclenchée par une autre logique de programme, comme la modification d’une valeur de propriété. L’objet qui déclenche l’événement est appelé *l’émetteur d’événements*. L'émetteur d'événements ne connaît pas l'objet, ni la méthode qui recevront (géreront) les événements qu'il déclenche. L'événement est généralement un membre de l'émetteur d'événements ; par exemple, l'événement <xref:System.Web.UI.WebControls.Button.Click> est membre de la classe <xref:System.Web.UI.WebControls.Button>, et l'événement <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> est membre de la classe qui implémente l'interface <xref:System.ComponentModel.INotifyPropertyChanged>.  
   
-Pour définir un événement, vous [`event`](../../csharp/language-reference/keywords/event.md) utilisez le [`Event`](../../visual-basic/language-reference/statements/event-statement.md) mot clé de base visuel ou CD dans la signature de votre classe d’événements, et spécifiez le type de délégué pour l’événement. Les délégués sont décrits dans la section suivante.  
+Pour définir un événement, vous utilisez le [`event`](../../csharp/language-reference/keywords/event.md) mot clé C# ou Visual Basic [`Event`](../../visual-basic/language-reference/statements/event-statement.md) dans la signature de votre classe d’événements, puis vous spécifiez le type de délégué pour l’événement. Les délégués sont décrits dans la section suivante.  
   
 En général, pour déclencher un événement, ajoutez une méthode qui est marquée comme `protected` et `virtual` (C#) ou `Protected` et `Overridable` (en Visual Basic). Nommez cette méthode `On`*EventName* ; par exemple, `OnDataReceived`. La méthode doit prendre un paramètre qui spécifie un objet de données d'événement, qui est un objet de type <xref:System.EventArgs> ou un type dérivé. Vous fournissez cette méthode pour permettre aux classes dérivées de substituer la logique de déclenchement d'événement. Une classe dérivée doit toujours appeler la méthode `On`*EventName* de la classe de base pour garantir que les délégués inscrits reçoivent l’événement.  
 
@@ -50,7 +51,7 @@ Les délégués ont de nombreux usages dans .NET. Dans le contexte des événeme
   
 Les délégués sont [multidiffusion](xref:System.MulticastDelegate), ce qui signifie qu'ils peuvent contenir des références à plusieurs méthodes de gestion des événements. Pour plus d'informations, consultez la page de référence <xref:System.Delegate>. Les délégués assurent une souplesse et un contrôle précis lors de la gestion des événements. Un délégué agit comme un répartiteur d’événements pour la classe qui déclenche l’événement en gérant une liste de gestionnaires d’événements inscrits pour l’événement.  
   
-Pour les scénarios dans lesquels les délégués <xref:System.EventHandler> et <xref:System.EventHandler%601> ne fonctionnent pas, vous pouvez définir un délégué. Les scénarios qui nécessitent de définir un délégué sont très rares, par exemple lorsque vous devez utiliser du code qui ne reconnaît pas les génériques. Vous marquez un délégué [`delegate`](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type) avec le [`Delegate`](../../visual-basic/language-reference/statements/delegate-statement.md) mot clé de base C et visuel dans la déclaration. L'exemple suivant montre comment déclarer un délégué nommé `ThresholdReachedEventHandler`.  
+Pour les scénarios dans lesquels les délégués <xref:System.EventHandler> et <xref:System.EventHandler%601> ne fonctionnent pas, vous pouvez définir un délégué. Les scénarios qui nécessitent de définir un délégué sont très rares, par exemple lorsque vous devez utiliser du code qui ne reconnaît pas les génériques. Vous marquez un délégué avec le [`delegate`](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type) mot clé C# et Visual Basic [`Delegate`](../../visual-basic/language-reference/statements/delegate-statement.md) dans la déclaration. L'exemple suivant montre comment déclarer un délégué nommé `ThresholdReachedEventHandler`.  
   
 [!code-csharp[EventsOverview#4](~/samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#4)]
 [!code-vb[EventsOverview#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#4)]  
@@ -92,7 +93,7 @@ L'exemple suivant présente une méthode de gestionnaire d'événements nommée 
 |-----------|-----------------|  
 |[Comment : déclencher et utiliser des événements](how-to-raise-and-consume-events.md)|Contient des exemples de déclenchement et de consommation d'événements.|  
 |[Comment : gérer plusieurs événements à l'aide des propriétés d'événements](how-to-handle-multiple-events-using-event-properties.md)|Montre comment utiliser des propriétés d'événement pour gérer plusieurs événements.|  
-|[Modèle de conception Observateur](observer-design-pattern.md)|Décrit le modèle de conception qui permet à un abonné de s’inscrire pour recevoir des notifications d’un fournisseur.|  
+|[Modèle de conception observateur](observer-design-pattern.md)|Décrit le modèle de conception qui permet à un abonné de s’inscrire pour recevoir des notifications d’un fournisseur.|  
 |[Comment : consommer des événements dans une application Web Forms](how-to-consume-events-in-a-web-forms-application.md)|Montre comment gérer un événement déclenché par un contrôle Web Forms.|  
   
 ## <a name="see-also"></a>Voir aussi

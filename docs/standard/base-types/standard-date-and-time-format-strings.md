@@ -1,5 +1,6 @@
 ---
 title: Chaînes de format de date et d’heure standard
+description: Dans cet article, Découvrez comment utiliser une chaîne de format de date et d’heure standard pour définir la représentation textuelle d’une valeur de date et d’heure dans .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-ms.openlocfilehash: 0ff187251831130c846a20473237b13268c768be
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5db9088a6b0d75ae5293b9be35346c4c2ddf81c6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289302"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447223"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Chaînes de format de date et d’heure standard
 
@@ -85,7 +86,7 @@ Dans certains cas, il est pratique d'utiliser la chaîne de format standard comm
 
 |Chaîne de format standard|Défini par la propriété DateTimeFormatInfo.InvariantInfo|Chaîne de format personnalisée|
 |----------------------------|----------------------------------------------------------|--------------------------|
-|"O" ou "o"|None|yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzz|
+|"O" ou "o"|Aucune|yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzz|
 |"R" ou "r"|<xref:System.Globalization.DateTimeFormatInfo.RFC1123Pattern%2A>|ddd, dd MMM yyyy HH':'mm':'ss 'GMT'|
 |"s"|<xref:System.Globalization.DateTimeFormatInfo.SortableDateTimePattern%2A>|yyyy'-'MM'-'dd'T'HH':'mm':'ss|
 |"u"|<xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>|yyyy'-'MM'-'dd HH':'mm':'ss'Z'|

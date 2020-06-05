@@ -1,5 +1,6 @@
 ---
 title: Programmation asynchrone basée sur les tâches - .NET
+description: Dans cet article, Découvrez la programmation asynchrone basée sur les tâches par le biais de la bibliothèque parallèle de tâches (TPL) dans .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: 188a80459fec021dc934597ea2f77ac7b4471b2d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: f7cb42c8982cb6a704b39730a4f7aa0ce781d506
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285285"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446377"
 ---
 # <a name="task-based-asynchronous-programming"></a>Programmation asynchrone basée sur les tâches
 
@@ -254,11 +255,11 @@ La classe <xref:System.Threading.Tasks.TaskFactory> fournit des méthodes statiq
 
 ## <a name="tasks-without-delegates"></a>Tâches sans délégués
 
-Dans certains cas, vous pouvez utiliser un <xref:System.Threading.Tasks.Task> pour encapsuler une opération asynchrone exécutée par un composant externe au lieu de votre propre délégué utilisateur. Si l’opération est basée sur le modèle de programmation asynchrone Begin/End, vous pouvez utiliser les méthodes <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A>. Si ce n’est pas le cas, vous pouvez utiliser l’objet <xref:System.Threading.Tasks.TaskCompletionSource%601> pour encapsuler l’opération dans une tâche et, de cette façon, bénéficier de certains des avantages de programmabilité <xref:System.Threading.Tasks.Task>, comme par exemple, la prise en charge de la propagation et des continuations d’exceptions. Pour plus d'informations, consultez <xref:System.Threading.Tasks.TaskCompletionSource%601>.
+Dans certains cas, vous pouvez utiliser un <xref:System.Threading.Tasks.Task> pour encapsuler une opération asynchrone exécutée par un composant externe au lieu de votre propre délégué utilisateur. Si l’opération est basée sur le modèle de programmation asynchrone Begin/End, vous pouvez utiliser les méthodes <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A>. Si ce n’est pas le cas, vous pouvez utiliser l’objet <xref:System.Threading.Tasks.TaskCompletionSource%601> pour encapsuler l’opération dans une tâche et, de cette façon, bénéficier de certains des avantages de programmabilité <xref:System.Threading.Tasks.Task>, comme par exemple, la prise en charge de la propagation et des continuations d’exceptions. Pour plus d’informations, consultez <xref:System.Threading.Tasks.TaskCompletionSource%601>.
 
 ## <a name="custom-schedulers"></a>Planificateurs personnalisés
 
-La plupart des développeurs d'applications ou de bibliothèques ne se soucient pas du processeur sur lequel s'exécute la tâche, ni de la manière dont il synchronise son travail avec d'autres tâches ou de la façon dont il est planifié sur le <xref:System.Threading.ThreadPool?displayProperty=nameWithType>. Ils demandent simplement à ce qu'il s'exécute aussi efficacement que possible sur l'ordinateur hôte. Si vous avez besoin d’un contrôle plus affiné sur les détails de la planification, la bibliothèque parallèle de tâches vous permet de configurer des paramètres dans le planificateur de tâches par défaut et vous permet même de fournir un planificateur personnalisé. Pour plus d'informations, consultez <xref:System.Threading.Tasks.TaskScheduler>.
+La plupart des développeurs d'applications ou de bibliothèques ne se soucient pas du processeur sur lequel s'exécute la tâche, ni de la manière dont il synchronise son travail avec d'autres tâches ou de la façon dont il est planifié sur le <xref:System.Threading.ThreadPool?displayProperty=nameWithType>. Ils demandent simplement à ce qu'il s'exécute aussi efficacement que possible sur l'ordinateur hôte. Si vous avez besoin d’un contrôle plus affiné sur les détails de la planification, la bibliothèque parallèle de tâches vous permet de configurer des paramètres dans le planificateur de tâches par défaut et vous permet même de fournir un planificateur personnalisé. Pour plus d’informations, consultez <xref:System.Threading.Tasks.TaskScheduler>.
 
 ## <a name="related-data-structures"></a>Structures de données associées
 
@@ -278,7 +279,7 @@ Si vous devez hériter de <xref:System.Threading.Tasks.Task> ou <xref:System.Thr
 |[Tâches enfants attachées et détachées](attached-and-detached-child-tasks.md)|Décrit la différence entre les tâches enfants attachées et les tâches enfants détachées.|
 |[Annulation de tâches](task-cancellation.md)|Décrit la prise en charge de l'annulation intégrée dans l'objet <xref:System.Threading.Tasks.Task>.|
 |[Gestion des exceptions](exception-handling-task-parallel-library.md)|Décrit comment les exceptions sur les threads simultanés sont gérées.|
-|[Comment : utiliser Parallel. Invoke pour exécuter des opérations parallèles](how-to-use-parallel-invoke-to-execute-parallel-operations.md)|Explique comment utiliser <xref:System.Threading.Tasks.Parallel.Invoke%2A>.|
+|[Procédure : utiliser Parallel_Invoke pour exécuter des opérations parallèles](how-to-use-parallel-invoke-to-execute-parallel-operations.md)|Explique comment utiliser <xref:System.Threading.Tasks.Parallel.Invoke%2A>.|
 |[Procédure : retourner une valeur à partir d’une tâche](how-to-return-a-value-from-a-task.md)|Décrit comment retourner des valeurs à partir de tâches.|
 |[Procédure : annuler une tâche et ses enfants](how-to-cancel-a-task-and-its-children.md)|Décrit comment annuler des tâches.|
 |[Procédure : créer des tâches précalculées](how-to-create-pre-computed-tasks.md)|Décrit comment utiliser la méthode <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> pour récupérer les résultats d'opérations de téléchargement asynchrones qui sont conservées dans un cache.|

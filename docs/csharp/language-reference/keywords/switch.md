@@ -12,16 +12,16 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 49b3836f17e91ae8de10d68e97fd662aae80d1ff
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: a4e6f8e43c2ec8c867af9f78bd83b435b78c73d5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249316"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446761"
 ---
 # <a name="switch-c-reference"></a>switch (informations de référence sur C#)
 
-Cet article `switch` couvre la déclaration. Pour plus `switch` d’informations sur l’expression (introduite dans C 8.0), voir l’article sur [ `switch` ](../operators/switch-expression.md) les expressions dans la section [expressions et opérateurs.](../operators/index.md)
+Cet article traite de l' `switch` instruction. Pour plus d’informations sur l' `switch` expression (introduite dans C# 8,0), consultez l’article sur les [ `switch` expressions](../operators/switch-expression.md) dans la section [expressions et opérateurs](../operators/index.md) .
 
 `switch` est une instruction de sélection qui choisit une *section de commutation* unique à exécuter à partir d’une liste de candidats en fonction d’une mise en correspondance de modèle avec l’*expression de correspondance*.
 
@@ -46,10 +46,10 @@ L’expression de correspondance fournit la valeur à mettre en correspondance a
 Avec C# 6 (et les versions antérieures), l’expression de correspondance doit retourner une valeur d’un des types suivants :
 
 - [char](../builtin-types/char.md),
-- une [chaîne](../builtin-types/reference-types.md).
+- [chaîne](../builtin-types/reference-types.md).
 - [bool](../builtin-types/bool.md),
-- une valeur [intégrale,](../builtin-types/integral-numeric-types.md) telle qu’un `int` ou un `long`.
-- une valeur [enum.](../builtin-types/enum.md)
+- valeur [intégrale](../builtin-types/integral-numeric-types.md) , telle qu’un `int` ou un `long` .
+- valeur [enum](../builtin-types/enum.md) .
 
 À compter de C# 7.0, l’expression de correspondance peut être toute expression non Null.
 
@@ -61,7 +61,7 @@ Une instruction `switch` peut inclure un nombre quelconque de sections de commut
 
 [!code-csharp[switch#2](~/samples/snippets/csharp/language-reference/keywords/switch/switch2.cs#1)]
 
-Une seule section de commutation s’exécute dans une instruction switch. C# ne permet pas à l’exécution de passer d’une section switch à la suivante. Pour cette raison, le code suivant génère une erreur de compilateur, CS0163: "Le contrôle ne peut pas passer d’une étiquette de cas (étiquette\<de cas>) à l’autre."
+Une seule section de commutation s’exécute dans une instruction switch. C# ne permet pas à l’exécution de passer d’une section switch à la suivante. Pour cette raison, le code suivant génère une erreur du compilateur, CS0163 : « Le contrôle ne peut pas passer d’une étiquette case (\<case label>) à une autre ».
 
 ```csharp
 switch (caseSwitch)
@@ -108,7 +108,7 @@ L’étiquette case `default` spécifie la section switch à exécuter si l’ex
 
 L’étiquette case `default` peut apparaître à n’importe quelle position dans l’instruction `switch`. Quelle que soit sa position dans le code source, il est toujours évalué en dernier, une fois que toutes les étiquettes `case` ont été évaluées.
 
-## <a name="pattern-matching-with-the-switch-statement"></a><a name="pattern" /> Critères spéciaux avec l’instruction `switch`
+## <a name="pattern-matching-with-the-switch-statement"></a><a name="pattern"></a> Critères spéciaux avec l’instruction `switch`
 
 Chaque instruction `case` définit un modèle qui, s’il correspond à l’expression de correspondance, entraîne l’exécution de la section de commutation qui le contient. Toutes les versions de C# prennent en charge le modèle de constante. Les autres modèles sont pris en charge à compter de C# 7.0.
 
@@ -122,8 +122,8 @@ Le modèle de constante teste si l’expression de correspondance est égale à 
 
 où *constant* est la valeur à tester. *constant* peut correspondre à l’une des expressions constantes suivantes :
 
-- Un [bool](../builtin-types/bool.md) littéral: soit `true` ou `false`.
-- Toute constante [intégrale,](../builtin-types/integral-numeric-types.md) comme un `int`, un `long`, ou un `byte`.
+- Littéral [bool](../builtin-types/bool.md) : `true` ou `false` .
+- Toute constante [intégrale](../builtin-types/integral-numeric-types.md) , telle qu’un `int` , un `long` ou un `byte` .
 - Le nom d’une variable `const` déclarée
 - Une constante d’énumération
 - Un littéral de type [char](../builtin-types/char.md)
@@ -201,8 +201,8 @@ Pour plus d’informations, consultez la section [Instruction switch](~/_csharpl
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [si-bien](if-else.md)
-- [Filtrage](../../pattern-matching.md)
+- [if-else](if-else.md)
+- [Critères spéciaux](../../pattern-matching.md)

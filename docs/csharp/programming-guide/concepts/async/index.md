@@ -1,13 +1,13 @@
 ---
 title: Programmation asynchrone en C#
 description: Vue d’ensemble de la prise en charge du langage C# pour la programmation asynchrone avec Async, Await, Task et Task<T>
-ms.date: 05/26/2020
-ms.openlocfilehash: 703392ca6ba4e6fb08dd8a88817babc167394788
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.date: 06/04/2020
+ms.openlocfilehash: fbbd08f8c0e650c366ca1d283825e629fcb952d7
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007960"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446431"
 ---
 # <a name="asynchronous-programming-with-async-and-await"></a>Programmation asynchrone avec Async et Await
 
@@ -32,6 +32,10 @@ Pour un algorithme parallèle, vous auriez besoin de plusieurs cuisiniers (ou th
 
 :::code language="csharp" source="snippets/index/AsyncBreakfast-starter/Program.cs" highlight="8-27":::
 
+:::image type="content" source="media/synchronous-breakfast.png" alt-text="petit-déjeuner synchrone":::
+
+Le petit déjeuner préparé de façon synchrone a duré environ 30 minutes, car le total est la somme de chaque tâche individuelle.
+
 > [!NOTE]
 > Les `Coffee` classes,,, `Egg` `Bacon` `Toast` et `Juice` sont vides. Il s’agit simplement de classes de marqueurs à des fins de démonstration, ne contiennent aucune propriété et n’a aucune autre fonction.
 
@@ -50,6 +54,9 @@ Le code précédent montre une pratique déconseillée : écrire du code synchr
 Commençons par mettre à jour ce code pour que le thread ne se bloque pas pendant l’exécution des tâches. Le mot clé `await` permet de démarrer une tâche sans bloquer le thread, puis de poursuivre l’exécution une fois cette tâche terminée. La version asynchrone du code de préparation du petit-déjeuner ressemblerait à l’extrait de code suivant :
 
 :::code language="csharp" source="snippets/index/AsyncBreakfast-V2/Program.cs" id="SnippetMain":::
+
+> [!IMPORTANT]
+> Le temps total écoulé est à peu près identique à la version initiale de Synchonous. Le code n’a pas encore pu tirer parti de certaines fonctionnalités clés de la programmation asynchrone.
 
 > [!TIP]
 > Les corps de méthode des `FryEggsAsync` , `FryBaconAsync` et `ToastBreadAsync` ont tous été mis à jour pour retourner `Task<Egg>` , `Task<Bacon>` et `Task<Toast>` respectivement. Les méthodes sont renommées à partir de leur version d’origine pour inclure le suffixe « Async ». Leurs implémentations sont indiquées dans le cadre de la [version finale](#final-version) plus loin dans cet article.
@@ -116,6 +123,10 @@ Console.WriteLine("bacon is ready");
 Console.WriteLine("Breakfast is ready!");
 ```
 
+:::image type="content" source="media/asynchronous-breakfast.png" alt-text="petit-déjeuner asynchrone":::
+
+Le petit déjeuner préparé de façon asynchrone a duré environ 20 minutes, car certaines tâches pouvaient s’exécuter simultanément.
+
 Le code précédent est plus efficace. Vous y démarrez toutes les tâches asynchrones en même temps. Vous n’attendez la fin d’une tâche que si vous avez besoin des résultats. Le code précédent est semblable au code des applications web qui envoient des requêtes à différents microservices, puis qui combinent les résultats au sein d’une même page. Vous allez exécuter toutes les requêtes en même temps, puis vous allez attendre (`await`) toutes ces tâches pour composer la page web.
 
 ## <a name="composition-with-tasks"></a>Composition de tâches
@@ -172,6 +183,10 @@ while (breakfastTasks.Count > 0)
 
 Après toutes ces modifications, la version finale du code ressemble à ceci :<a id="final-version"></a>
 :::code language="csharp" source="snippets/index/AsyncBreakfast-final/Program.cs" highlight="9-40":::
+
+:::image type="content" source="media/whenany-async-breakfast.png" alt-text="quand tout petit déjeuner asynchrone":::
+
+La version finale du petit-déjeuner préparé de façon asynchrone a duré environ 15 minutes. cela est dû au fait que certaines tâches pouvaient s’exécuter simultanément et que le code était en mesure de surveiller plusieurs tâches à la fois et d’agir uniquement lorsque cela était nécessaire.
 
 Le code final est asynchrone. Il reflète plus précisément la façon dont nous préparons habituellement le petit-déjeuner. Comparez le code précédent au premier exemple de code de cet article. Les actions de base sont toujours claires lorsque nous lisons le code. Ce code est tout aussi lisible que les instructions de préparation du petit-déjeuner au début de cet article. Les fonctionnalités de langage pour `async` et `await` traduisent ce que chaque personne fait lorsqu’elle suit des instructions : démarrer les tâches dès que possible et ne pas attendre qu’une tâche soit terminée avant de passer à la suivante.
 

@@ -1,5 +1,6 @@
 ---
 title: Chaînes de format numériques personnalisées
+description: Découvrez comment créer une chaîne de format numérique personnalisée pour mettre en forme des données numériques dans .NET. Une chaîne de format numérique personnalisée possède un ou plusieurs spécificateurs numériques personnalisés.
 ms.date: 06/25/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - formatting numbers [.NET Framework]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-ms.openlocfilehash: bc2ace5a068a49f19db55c6fcc3cfc7287b6f618
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: bd96766c7483a3de1a3c70d1efbe1aa91ea45fbc
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84278958"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447236"
 ---
 # <a name="custom-numeric-format-strings"></a>Chaînes de format numériques personnalisées
 
@@ -46,7 +47,7 @@ Les chaînes de format numérique personnalisées sont prises en charge par cert
 |"\\"|Caractère d’échappement|Entraîne l'interprétation du caractère suivant comme un littéral plutôt que comme un spécificateur de format personnalisé.<br /><br /> Informations supplémentaires : [Caractère d'échappement « \\ »](#SpecifierEscape).|987654 ("\\###00\\#") -> #987654#|
 |'*chaîne*'<br /><br /> «*chaîne*»|Délimiteur de chaîne littérale|Indique que les caractères encadrés doivent être copiés inchangés dans la chaîne de résultat.<br/><br/>Plus d’informations : [Littéraux de caractère](#character-literals).|68 ("# 'degrees'") -> 68 degrees<br /><br /> 68 ("#' degrees'") -> 68 degrees|
 |;|Séparateur de section|Définit des sections avec des chaînes de format distinctes pour les nombres positifs, négatifs et nuls.<br /><br /> Informations supplémentaires : [Séparateur de section « ; »](#SectionSeparator).|12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#);-\0-") -> -0-<br /><br /> -12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)<br /><br /> 12.345 ("#0.0#;(#0.0#)") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#)") -> 0.0<br /><br /> -12.345 ("#0.0#;(#0.0#)") -> (12.35)|
-|Autres|Tous les autres caractères|Le caractère est copié inchangé dans la chaîne de résultat.<br/><br/>Plus d’informations : [Littéraux de caractère](#character-literals).|68 ("# °") -> 68 °|
+|Autre|Tous les autres caractères|Le caractère est copié inchangé dans la chaîne de résultat.<br/><br/>Plus d’informations : [Littéraux de caractère](#character-literals).|68 ("# °") -> 68 °|
 
 Les sections suivantes fournissent des informations détaillées sur chacun des spécificateurs de format numériques personnalisés.
 

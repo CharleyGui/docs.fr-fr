@@ -1,5 +1,6 @@
 ---
 title: Mise en forme composite
+description: En savoir plus sur la mise en forme composite .NET, qui prend comme entrée une liste d’objets et une chaîne de format composite, contenant du texte fixe avec des espaces réservés indexés.
 ms.date: 10/26/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-ms.openlocfilehash: 2488a471af3e0dfc8ebf7dad1589c3c03ac15d86
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 36197b382c449a2570e1d5530f307c4e66b0d983
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289315"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447262"
 ---
 # <a name="composite-formatting"></a>Mise en forme composite
 

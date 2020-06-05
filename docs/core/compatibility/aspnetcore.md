@@ -5,12 +5,12 @@ description: Répertorie les dernières modifications apportées à ASP.NET Core
 ms.date: 04/29/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 63d39b1aa6e46b6bcbeb5a409efacac01dea4262
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 2e89a14c948365da1e7a04fc8d5ca4008842f8d8
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728338"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446967"
 ---
 # <a name="aspnet-core-breaking-changes"></a>Modifications avec rupture ASP.NET Core
 
@@ -55,6 +55,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 - [Kestrel : les en-têtes de demande de code de fin sont déplacés vers la nouvelle collection](#kestrel-request-trailer-headers-moved-to-new-collection)
 - [Kestrel : modifications apportées à la couche d’abstraction de transport](#kestrel-transport-abstractions-removed-and-made-public)
 - [Localisation : API marquées comme obsolètes](#localization-resourcemanagerwithculturestringlocalizer-and-withculture-marked-obsolete)
+- [Localisation : API « Pubternal » supprimées](#localization-pubternal-apis-removed)
 - [Localisation : classe ResourceManagerWithCultureStringLocalizer et membre d’interface WithCulture supprimé](#localization-resourcemanagerwithculturestringlocalizer-class-and-withculture-interface-member-removed)
 - [Journalisation : classe DebugLogger rendue interne](#logging-debuglogger-class-made-internal)
 - [MVC : suffixe asynchrone d’action de contrôleur supprimé](#mvc-async-suffix-trimmed-from-controller-action-names)
@@ -94,6 +95,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 ***
 
 [!INCLUDE[HTTP: Kestrel and IIS BadHttpRequestException types marked obsolete and replaced](~/includes/core-changes/aspnetcore/5.0/http-badhttprequestexception-obsolete.md)]
+
+***
+
+[!INCLUDE [Localization: "Pubternal" APIs removed](~/includes/core-changes/aspnetcore/5.0/localization-pubternal-apis-removed.md)]
 
 ***
 

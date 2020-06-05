@@ -1,5 +1,6 @@
 ---
 title: Bonnes pratiques pour les exceptions - .NET
+description: Découvrez les meilleures pratiques pour les exceptions, telles que l’utilisation de try/catch/finally, la gestion des conditions courantes sans exceptions et l’utilisation de types d’exception .NET prédéfinis.
 ms.date: 12/05/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +10,12 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: 1de231b01e3fa97e78a87ae6b0595a9b5536374e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 90dda00acd32852b032fc383580c5f34022ec9b4
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160168"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447093"
 ---
 # <a name="best-practices-for-exceptions"></a>Bonnes pratiques pour les exceptions
 
@@ -110,10 +111,10 @@ Par exemple, sur les implémentations .NET qui prennent en charge des domaines d
 
 Le message d’erreur que l’utilisateur voit est dérivé de la propriété <xref:System.Exception.Message?displayProperty=nameWithType> de l’exception qui a été levée, et non pas du nom de la classe d’exception. En règle générale, vous affectez une valeur à la propriété <xref:System.Exception.Message?displayProperty=nameWithType> en passant la chaîne de message à l’argument `message` d’un [constructeur d’exception](xref:System.Exception.%23ctor%2A).
 
-Pour les applications localisées, vous devez fournir une chaîne de message localisée pour chaque exception que votre application peut lever. Vous utilisez des fichiers de ressources pour fournir les messages d’erreur localisés. Pour plus d’informations sur la localisation des applications et la récupération des chaînes localisées, voir les articles suivants :
+Pour les applications localisées, vous devez fournir une chaîne de message localisée pour chaque exception que votre application peut lever. Vous utilisez des fichiers de ressources pour fournir les messages d’erreur localisés. Pour plus d’informations sur la localisation d’applications et la récupération de chaînes localisées, consultez les articles suivants :
 
 - [Guide pratique : créer des exceptions définies par l’utilisateur avec des messages d’exception localisés](how-to-create-localized-exception-messages.md)
-- [Ressources dans des applications de bureau](../../framework/resources/index.md)
+- [Ressources dans les applications de bureau](../../framework/resources/index.md)
 - <xref:System.Resources.ResourceManager?displayProperty=nameWithType>
 
 ## <a name="in-custom-exceptions-provide-additional-properties-as-needed"></a>Dans les exceptions personnalisées, fournir des propriétés supplémentaires si nécessaire

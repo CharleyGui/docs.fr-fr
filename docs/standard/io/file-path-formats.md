@@ -1,5 +1,6 @@
 ---
 title: Formats de chemin de fichier sur les systèmes Windows
+description: Dans cet article, Découvrez les formats de chemin d’accès aux fichiers sur les systèmes Windows, tels que les chemins DOS traditionnels, les chemins d’accès de périphérique DOS et les chemins d’accès UNC (Universal Naming Convention).
 ms.date: 06/06/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: b3510be5d417b555d2db163636eac5ce0c0779e4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2d3ede97b372dd8922a10a377f69155a12f88bda
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77628044"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447132"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formats de chemin de fichier sur les systèmes Windows
 
@@ -44,7 +45,7 @@ Si les trois composants sont présents, le chemin est absolu. Si aucune lettre d
 
 Pour déterminer si un chemin de fichier est complet (autrement dit, si le chemin est indépendant du répertoire actif et qu’il reste inchangé quand le répertoire actif change), appelez la méthode <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWthType>. Notez qu’un tel chemin peut inclure des segments de répertoire relatifs (`.` et `..`) et toujours être complet si le chemin résolu pointe toujours vers le même emplacement.
 
-L’exemple suivant illustre la différence entre les chemins absolus et relatifs. Il suppose que l’annuaire D: FY2018 existe, et que vous n’avez pas défini d’annuaire actuel pour D: de l’invite de commande avant d’exécuter l’exemple.
+L’exemple suivant illustre la différence entre les chemins absolus et relatifs. Il part du principe que le répertoire D:\FY2018\ existe et que vous n’avez défini aucun répertoire actif pour D:\ à partir de l’invite de commandes avant d’exécuter l’exemple.
 
 [!code-csharp[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/cs/paths.cs)]
 [!code-vb[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/vb/paths.vb)]
@@ -202,7 +203,7 @@ La seule différence entre les deux syntaxes de chemin de périphérique tient a
 
 Les chemins qui commencent par `\\?\` sont toujours normalisés si vous les passez explicitement à la [fonction GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea).
 
-Vous pouvez passer des `MAX_PATH` chemins de plus de personnages `\\?\`à [GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) sans . Elle prend en charge les chemins de longueur arbitraire jusqu’à la taille de chaîne maximale gérée par Windows.
+Vous pouvez passer des chemins de plus de `MAX_PATH` caractères à [GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) sans `\\?\` . Elle prend en charge les chemins de longueur arbitraire jusqu’à la taille de chaîne maximale gérée par Windows.
 
 ## <a name="case-and-the-windows-file-system"></a>Casse et système de fichiers Windows
 

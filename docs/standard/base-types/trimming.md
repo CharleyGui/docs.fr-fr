@@ -1,5 +1,6 @@
 ---
 title: Suppression d’espaces et de caractères dans .NET
+description: Apprenez à supprimer les espaces vides à partir du début ou de la fin d’une chaîne, ou à supprimer un nombre quelconque d’espaces ou de caractères à partir d’une position spécifiée dans la chaîne dans .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -15,12 +16,12 @@ helpviewer_keywords:
 - TrimStart method
 - removing characters
 ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
-ms.openlocfilehash: 0777ba7348d13697fd53f556ac69cba3f98d1e4d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 630fe6b51d151d1f1384f2e3cde62750c303d883
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290874"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446891"
 ---
 # <a name="trimming-and-removing-characters-from-strings-in-net"></a>Suppression d’espaces et de caractères dans .NET
 Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mots incluant des espaces vides (également appelés espaces blancs) à chaque extrémité du mot. Dans ce cas, vous pouvez utiliser l’une des méthodes de suppression de la classe **System.String** pour supprimer n’importe quel nombre d’espaces ou d’autres caractères à partir d’une position spécifiée dans la chaîne. Le tableau suivant décrit les méthodes de suppression disponibles.  

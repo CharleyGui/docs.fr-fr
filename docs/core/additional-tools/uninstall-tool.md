@@ -3,12 +3,12 @@ title: Outil de désinstallation
 description: Vue d’ensemble de l’outil de désinstallation de .NET Core, outil guidé qui permet le nettoyage contrôlé des kits de développement logiciel (SDK) .NET Core et des runtimes.
 author: sfoslund
 ms.date: 05/27/2020
-ms.openlocfilehash: 1ad31cd42d8f8f87e3501b422fc4298c643e2067
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 4e70fd3438b582bd5a0d6a52d7e58ed5e07f8811
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144511"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446904"
 ---
 # <a name="net-core-uninstall-tool"></a>Outil de désinstallation de .NET Core
 
@@ -88,7 +88,7 @@ dotnet-core-uninstall list [options]
 
   Répertorie tous les kits de développement logiciel (SDK) .NET Core x86 et les runtimes qui peuvent être désinstallés avec cet outil.
 
-## <a name="macos"></a>[MacOS](#tab/macos)
+## <a name="macos"></a>[macOS](#tab/macos)
 
 * **`--runtime`**
 
@@ -157,11 +157,11 @@ dotnet-core-uninstall whatif [options] [<VERSION>...]
 
   Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.
 
-* **`--all-below <VERSION>`**
+* **`--all-below <VERSION>[ <VERSION>...]`**
 
   Supprime uniquement les kits de développement logiciel (SDK) .NET Core et les runtimes dont la version est inférieure à la version spécifiée. La version spécifiée reste installée.
 
-* **`--all-but <VERSIONS>`**
+* **`--all-but <VERSIONS>[ <VERSION>...]`**
 
   Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.
 
@@ -221,17 +221,17 @@ Remarques :
 2. `--all`, `--all-below` , `--all-but` , `--all-but-latest` , `--all-lower-patches` , `--all-previews` , `--all-previews-but-latest` , `--major-minor` et `[<VERSION>...]` sont exclusifs.
 3. Si `--x64` ou `--x86` n’est pas spécifié, les paramètres x64 et x86 seront supprimés.
 
-## <a name="macos"></a>[MacOS](#tab/macos)
+## <a name="macos"></a>[macOS](#tab/macos)
 
 * **`--all`**
 
   Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.
 
-* **`--all-below <VERSION>`**
+* **`--all-below <VERSION>[ <VERSION>...]`**
 
   Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes inférieurs à la version spécifiée. La version spécifiée est conservée.
 
-* **`--all-but <VERSIONS>`**
+* **`--all-but <VERSIONS>[ <VERSION>...]`**
 
   Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.
 
@@ -337,11 +337,11 @@ dotnet-core-uninstall remove [options] [<VERSION>...]
 
   Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.
 
-* **`--all-below <VERSION>`**
+* **`--all-below <VERSION>[ <VERSION>...]`**
 
   Supprime uniquement les kits de développement logiciel (SDK) .NET Core et les runtimes dont la version est inférieure à la version spécifiée. La version spécifiée reste installée.
 
-* **`--all-but <VERSIONS>`**
+* **`--all-but <VERSIONS>[ <VERSION>...]`**
 
   Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.
 
@@ -367,7 +367,7 @@ dotnet-core-uninstall remove [options] [<VERSION>...]
 
 * **`--hosting-bundle`**
 
-  Supprime uniquement le Runtime .NET Core et les regroupements d’hébergement.
+  Supprime uniquement les regroupements d’hébergement .NET Core.
 
 * **`--major-minor <MAJOR_MINOR>`**
 
@@ -403,17 +403,17 @@ Remarques :
 2. `--all`, `--all-below` , `--all-but` , `--all-but-latest` , `--all-lower-patches` , `--all-previews` , `--all-previews-but-latest` , `--major-minor` et `[<VERSION>...]` sont exclusifs.
 3. Si `--x64` ou `--x86` n’est pas spécifié, les paramètres x64 et x86 seront supprimés.
 
-## <a name="macos"></a>[MacOS](#tab/macos)
+## <a name="macos"></a>[macOS](#tab/macos)
 
 * **`--all`**
 
   Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.
 
-* **`--all-below <VERSION>`**
+* **`--all-below <VERSION>[ <VERSION>...]`**
 
   Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes inférieurs à la version spécifiée. La version spécifiée est conservée.
 
-* **`--all-but <VERSIONS>`**
+* **`--all-but <VERSIONS>[ <VERSION>...]`**
 
   Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.
 
@@ -520,7 +520,7 @@ Dans certains cas, vous n’avez plus besoin de la et vous souhaiterez `NuGetFal
 2. Recherchez `Microsoft .NET Core SDK Uninstall Tool`.
 3. Sélectionner **Désinstaller**.
 
-## <a name="macos"></a>[MacOS](#tab/macos)
+## <a name="macos"></a>[macOS](#tab/macos)
 
 Supprimez le fichier *dotnet-Core-Uninstall. tar. gz* téléchargé à partir du répertoire où il a été installé. Si vous dézippéz le contenu de ce fichier dans un autre répertoire, veillez à supprimer également ce contenu.
 

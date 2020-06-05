@@ -3,12 +3,12 @@ title: Migrer votre application ou service web .NET vers Azure App Service
 description: En savoir plus sur la migration d’une application ou d’un service Web .NET d’un site local vers un Azure App Service.
 ms.topic: conceptual
 ms.date: 08/11/2018
-ms.openlocfilehash: 57f3b981a1d94c2193160f55f9c8242da694c169
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 8761642469b6f3d3c93d2e2e0fa7e02dbf3de6d7
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "82072136"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447002"
 ---
 # <a name="migrate-your-net-web-app-or-service-to-azure-app-service"></a>Migrer votre application ou service web .NET vers Azure App Service
 
@@ -53,55 +53,71 @@ Azure App Service prend en charge l’authentification anonyme par défaut et l�
 Ceci n’est pas pris en charge. Envisagez de copier les assemblys requis dans le dossier *\Bin* de l’application. Les fichiers *. msi* personnalisés installés sur le serveur (par exemple, les générateurs de PDF) ne peuvent pas être utilisés.
 
 ### <a name="iis-settings"></a>Paramètres IIS
+
 Tout ce qui est habituellement configuré via applicationHost.config dans votre application peut maintenant être configuré via le portail Azure. Cela s’applique au nombre de bits AppPool, à l’activation/désactivation de WebSockets, à la version de pipeline gérée, à la version .NET Framework (2.0/4.0), etc. Pour modifier vos [paramètres d’application](https://docs.microsoft.com/azure/app-service/web-sites-configure), accédez au [portail Azure](https://portal.azure.com), ouvrez le panneau de votre application web, puis sélectionnez l’onglet **Paramètres de l’application**.
 
 #### <a name="iis5-compatibility-mode"></a>Mode de compatibilité IIS5
-Le mode de compatibilité IIS5 n’est pas pris en charge. Dans Azure App Service, chaque application Web et toutes les applications qu’elle contient s’exécutent dans le même processus de travail avec un ensemble spécifique de [pools d’applications](https://technet.microsoft.com/library/cc735247(v=WS.10).aspx).
 
-#### <a name="iis7-schema-compliance"></a>Conformité de schéma IIS7+  
+Le mode de compatibilité IIS5 n’est pas pris en charge. Dans Azure App Service, chaque application Web et toutes les applications qu’elle contient s’exécutent dans le même processus de travail avec un ensemble spécifique de [pools d’applications](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc735247(v=ws.10)).
+
+#### <a name="iis7-schema-compliance"></a>Conformité de schéma IIS7+
+
 Certains éléments et attributs ne sont pas définis dans le schéma IIS Azure App Service. Si vous rencontrez des problèmes, envisagez d’utiliser des [transformations XDT](https://azure.microsoft.com/documentation/articles/web-sites-transform-extend/).
 
-#### <a name="single-application-pool-per-site"></a>Pool d’applications unique par site  
+#### <a name="single-application-pool-per-site"></a>Pool d’applications unique par site
+
 Dans Azure App Service, chaque application Web et toutes les applications qu’elle contient s’exécutent dans le même pool d’applications. Envisagez d’établir un pool d’applications unique avec des paramètres communs ou de créer une application Web distincte pour chaque application.
 
-### <a name="com-and-com-components"></a>Composants COM et COM+  
+### <a name="com-and-com-components"></a>Composants COM et COM+
+
 Azure App Service n’autorise pas l’inscription de composants COM sur la plateforme. Si votre application utilise des composants COM, ceux-ci doivent être réécrits en code managé et déployés avec le site ou l’application.
 
 ### <a name="physical-directories"></a>Répertoires physiques
+
 Azure App Service n’autorise pas l’accès au lecteur physique. Vous devrez peut-être utiliser [Azure Files](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) pour accéder aux fichiers via SMB. Le [Stockage Blob Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction) peut stocker des fichiers pour l’accès via HTTPS.
 
-### <a name="isapi-filters"></a>Filtres ISAPI  
+### <a name="isapi-filters"></a>Filtres ISAPI
+
 Azure App Service peut prendre en charge l’utilisation de filtres ISAPI, toutefois, la DLL ISAPI doit être déployée avec votre site et inscrite via le fichier web.config.
 
 ### <a name="https-bindings-and-ssl"></a>Liaisons HTTPS et SSL
+
 Les liaisons HTTPs ne sont pas migrées, ni les certificats SSL associés à vos sites Web. [Les certificats SSL peuvent être téléchargés manuellement](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl) après que la migration du site soit terminée.
 
 ### <a name="sharepoint-and-frontpage"></a>SharePoint et FrontPage
+
 Les extensions de serveur SharePoint et FrontPage (FPSE) ne sont pas prises en charge.
 
-### <a name="web-site-size"></a>Taille du site web  
+### <a name="web-site-size"></a>Taille du site web
+
 Les sites gratuits ont une limite de taille de 1 Go de contenu. Si la taille de votre site est supérieure à 1 Go, vous devez mettre à niveau vers une référence SKU payante. Consultez [app service tarification](https://azure.microsoft.com/pricing/details/app-service/windows/).
 
-### <a name="database-size"></a>Taille de la base de données  
+### <a name="database-size"></a>Taille de la base de données
+
 Pour les bases de données SQL Server, consultez la [tarification SQL Database](https://azure.microsoft.com/pricing/details/sql-database) actuelle.
 
-### <a name="azure-active-directory-aad-integration"></a>Intégration d’Azure Active Directory (AAD)  
+### <a name="azure-active-directory-aad-integration"></a>Intégration d’Azure Active Directory (AAD)
+
 AAD ne fonctionne pas avec les applications gratuites. Pour utiliser l’authentification AAD, vous devez mettre à niveau la référence SKU de l’application. Consultez [app service tarification](https://azure.microsoft.com/pricing/details/app-service/windows/).
 
 ### <a name="monitoring-and-diagnostics"></a>Surveillance et diagnostics
+
 Il est peu probable que vos solutions locales actuelles d’analyse et de diagnostics fonctionnent dans le cloud. Toutefois, Azure fournit des outils pour la journalisation, l’analyse et les diagnostics afin que vous puissiez identifier et résoudre les problèmes liés aux applications web. Vous pouvez facilement activer les diagnostics pour votre application web dans sa configuration, et afficher les journaux d’activité enregistrés dans Azure Application Insights. [En savoir plus sur l’activation de la journalisation des diagnostics pour les applications web](https://docs.microsoft.com/azure/app-service/web-sites-enable-diagnostic-log).
 
 ### <a name="connection-strings-and-application-settings"></a>Chaînes de connexion et paramètres d’application
+
 Envisagez d’utiliser [Azure KeyVault](https://docs.microsoft.com/azure/key-vault/), un service qui stocke en toute sécurité les informations sensibles utilisées dans votre application. Vous pouvez également stocker ces données sous forme de paramètre App Service.
 
 ### <a name="dns"></a>DNS
+
 Vous devrez peut-être mettre à jour les configurations DNS selon les besoins de votre application. Ces paramètres DNS peuvent être configurés dans les [paramètres de domaine personnalisés](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain) d’App Service.
 
 ## <a name="azure-app-service-with-windows-containers"></a>Azure App Service avec des conteneurs Windows
+
 Si votre application ne peut pas être migrée directement vers App Service, envisagez d’utiliser App Service à l’aide de conteneurs Windows, ce qui permet l’utilisation du GAC, des composants COM, MSI, l’accès complet à .NET FX API, DirectX et bien plus encore.
 
 ## <a name="see-also"></a>Voir aussi
 
 * [Comment déterminer si votre application est éligible à App Service](https://appmigration.microsoft.com/)
-* [Transfert de votre base de données vers le cloud](https://go.microsoft.com/fwlink/?linkid=863217)
+* [Transfert de votre base de données vers le cloud](sql.md)
 * [Détails et restrictions du bac à sable (sandbox) de l’application Web Azure](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)

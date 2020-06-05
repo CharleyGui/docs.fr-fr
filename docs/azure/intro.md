@@ -2,14 +2,14 @@
 title: Prise en main d’Azure et .NET
 description: Découvrez les principes de base que vous devez savoir sur Azure et .NET.
 ms.date: 03/15/2020
-ms.openlocfilehash: 64defed4433647c2a0dcce91493d9ec77d21b541
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: d57d1d50852c9d7fff099554bd64c48c15129bb4
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "82072143"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446390"
 ---
-# <a name="introduction-to-azure-and-net"></a>Présentation d’Azure et de .NET
+# <a name="introduction-to-azure-and-net"></a>Introduction à Azure et .NET
 
 Ce document fournit une vue d’ensemble des principaux concepts et services que les développeurs .NET doivent connaître pour commencer à développer des applications à l’aide des services Azure.
 
@@ -77,5 +77,5 @@ Une fois que vous déployez votre application dans Azure, vous pouvez rencontrer
 
 * [Déployer votre première application web ASP.NET Core sur Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet)
 * [En savoir plus sur l’authentification dans le kit de développement logiciel Azure SDK pour .NET](./sdk/authentication.md)
-* [Diagnostiquer des erreurs dans vos applications cloud](https://blogs.msdn.microsoft.com/webdev/2018/02/07/diagnosing-errors-on-your-cloud-apps)
+* [Diagnostiquer des erreurs dans vos applications cloud](https://devblogs.microsoft.com/aspnet/diagnosing-errors-on-your-cloud-apps/)
 * Téléchargez gratuitement l’e-book [Guide de démarrage rapide Azure pour les développeurs .NET](https://www.microsoft.com/net/download/thank-you/azure-quick-start-ebook)

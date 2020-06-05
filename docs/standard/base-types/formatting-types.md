@@ -1,5 +1,6 @@
 ---
 title: Mise en forme des types dans .NET
+description: Découvrez comment mettre en forme des types dans .NET. Comprendre comment utiliser ou substituer la méthode ToString. En savoir plus sur la mise en forme dépendante de la culture, composite et personnalisé.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -25,12 +26,12 @@ helpviewer_keywords:
 - custom formatting [.NET Framework]
 - strings [.NET Framework], formatting
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
-ms.openlocfilehash: e63a0962efb689a865436df771420e92319110b5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5d280b53d15bc674f325a726d69915d763aec34f
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290537"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447080"
 ---
 # <a name="format-types-in-net"></a>Types de format dans .NET
 
@@ -211,7 +212,7 @@ Bien que les chaînes de format standard puissent généralement gérer la plupa
 
 Tous les types numériques (c’est-à-dire, les types <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64> et <xref:System.Numerics.BigInteger>), ainsi que les types <xref:System.DateTime>, <xref:System.DateTimeOffset>, <xref:System.TimeSpan> et <xref:System.Guid>, et tous les types énumération, prennent en charge la mise en forme avec des chaînes de format. Pour plus d’informations sur les chaînes de format spécifiques prises en charge par chaque type, consultez les rubriques suivantes :
 
-|Intitulé|Définition|
+|Titre|Définition|
 |-----------|----------------|
 |[Chaînes de format numériques standard](standard-numeric-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs numériques.|
 |[Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs numériques.|
@@ -349,7 +350,7 @@ L'exemple suivant utilise la classe `ByteByByteFormatter` pour mettre en forme d
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Intitulé|Définition|
+|Titre|Définition|
 |-----------|----------------|
 |[Chaînes de format numériques standard](standard-numeric-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs numériques.|
 |[Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs numériques.|
