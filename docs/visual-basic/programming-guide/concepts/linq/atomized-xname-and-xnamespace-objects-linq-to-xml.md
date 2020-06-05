@@ -2,12 +2,12 @@
 title: Objets XName et XNamespace atomisés (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 21ee7585-7df9-40b4-8c76-a12bb5f29bb3
-ms.openlocfilehash: 0ffed5d00364f6614b439480607ed521f52754ec
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6a94bc0f2fd8013997e233b300fa19c12671bf29
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345730"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84383687"
 ---
 # <a name="atomized-xname-and-xnamespace-objects-linq-to-xml-visual-basic"></a>Objets XName et XNamespace atomisés (LINQ to XML) (Visual Basic)
 
@@ -19,7 +19,7 @@ L'atomisation signifie que si deux objets <xref:System.Xml.Linq.XName> ont le m�
 
 Pour qu'une classe autorise les objets atomisés, le constructeur de cette classe doit être privé, et non public. En effet, si le constructeur était public, vous pourriez créer un objet non atomisé. Les classes <xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace> implémentent un opérateur de conversion implicite pour convertir une chaîne en <xref:System.Xml.Linq.XName> ou en <xref:System.Xml.Linq.XNamespace>. Telle est la manière dont vous obtenez une instance de ces objets. Vous ne pouvez pas obtenir une instance à l'aide d'un constructeur, car le constructeur est inaccessible.
 
-<xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace> implémentent également les opérateurs d’égalité et d’inégalité pour déterminer si les deux objets comparés sont des références à la même instance.
+<xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace> implémentent également les opérateurs d'égalité et d'inégalité pour déterminer si les deux objets comparés sont des références à la même instance.
 
 ## <a name="example"></a>Exemple
 
@@ -44,7 +44,7 @@ Else
 End If
 ```
 
-Cet exemple génère la sortie suivante :
+Cet exemple produit la sortie suivante :
 
 ```console
 r1 and r2 have names that refer to the same instance.
@@ -65,7 +65,7 @@ For Each z As var In query
 Next
 ```
 
-Cet exemple génère la sortie suivante :
+Cet exemple produit la sortie suivante :
 
 ```xml
 <C1>1</C1>
@@ -74,4 +74,4 @@ Cet exemple génère la sortie suivante :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Performances (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/performance-linq-to-xml.md)
+- [Performances (LINQ to XML) (Visual Basic)](performance-linq-to-xml.md)

@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - modules, Visual Basic
 ms.assetid: 370bfc90-e8f2-4942-bdec-9897ce605d31
-ms.openlocfilehash: 6869d981cdca20b915a588969134fc50e8d1ff47
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: df7e32a81746a97a78a4a2a28e57032affa73cc0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838245"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84386593"
 ---
 # <a name="modules-visual-basic"></a>Modules (Visual Basic)
 
@@ -17,7 +17,7 @@ Visual Basic fournit plusieurs modules qui vous permettent de simplifier les tâ
   
 |||  
 |---|---|  
-|<xref:Microsoft.VisualBasic.Constants>|Contient diverses constantes. Ces constantes peuvent être utilisées n’importe où dans votre code.|  
+|<xref:Microsoft.VisualBasic.Constants>|Contient diverses constantes. Ces constantes peuvent être utilisées partout dans votre code.|  
 |<xref:Microsoft.VisualBasic.ControlChars>|Contient des caractères de contrôle de constante pour l’impression et l’affichage de texte.|  
 |<xref:Microsoft.VisualBasic.Conversion>|Contient des membres qui convertissent des nombres décimaux en d’autres bases, des nombres en chaînes, des chaînes en nombres et un type de données en un autre.|  
 |<xref:Microsoft.VisualBasic.DateAndTime>|Contient des membres qui obtiennent la date ou l’heure actuelle, effectuent des calculs de date, retournent une date ou une heure, définissent la date ou l’heure, ou la durée d’un processus.|  
@@ -32,4 +32,4 @@ Visual Basic fournit plusieurs modules qui vous permettent de simplifier les tâ
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur le langage Visual Basic](../../visual-basic/language-reference/index.md)
+- [Informations de référence sur le langage Visual Basic](index.md)
