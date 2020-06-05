@@ -2,12 +2,12 @@
 title: Sérialisation avec une déclaration XML
 ms.date: 07/20/2015
 ms.assetid: 8726f79e-2bb0-4ba0-969d-197cca591647
-ms.openlocfilehash: 96c95b4c94290016684721a194ca31a836a49740
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: cd303a800efe42d3fa99d601f25d54320570bed3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350632"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411794"
 ---
 # <a name="serializing-with-an-xml-declaration-visual-basic"></a>Sérialisation avec une déclaration XML (Visual Basic)
 Cette rubrique décrit comment contrôler si la sérialisation génère une déclaration XML.  
@@ -29,7 +29,7 @@ Dim str As String = File.ReadAllText("Root.xml")
 Console.WriteLine(str)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -55,7 +55,7 @@ End Using
 Console.WriteLine(sb.ToString())  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Root><Child>child content</Child></Root>  
@@ -63,4 +63,4 @@ Console.WriteLine(sb.ToString())
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sérialisation d’arborescences XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)
+- [Sérialisation d’arborescences XML (Visual Basic)](serializing-xml-trees.md)
