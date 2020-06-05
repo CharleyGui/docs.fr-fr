@@ -7,31 +7,31 @@ f1_keywords:
 helpviewer_keywords:
 - BC30957
 ms.assetid: 561e593a-f50a-4b72-a708-4cab60ec7b28
-ms.openlocfilehash: d004c89b742944622ce45e6a2be8d96116252745
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 7b0113e9c1018772da6dc180f7fc5beb0e922917
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197567"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402951"
 ---
-# <a name="function-evaluation-is-disabled-because-a-previous-function-evaluation-timed-out"></a><span data-ttu-id="522e1-102">L'évaluation de la fonction est désactivée, car une évaluation de fonction précédente a expiré</span><span class="sxs-lookup"><span data-stu-id="522e1-102">Function evaluation is disabled because a previous function evaluation timed out</span></span>
-<span data-ttu-id="522e1-103">L’évaluation de fonction est désactivée, car une évaluation de fonction précédente a expiré. Pour réactiver l’évaluation de fonction, recommencez l’opération ou redémarrez le débogage.</span><span class="sxs-lookup"><span data-stu-id="522e1-103">Function evaluation is disabled because a previous function evaluation timed out. To re-enable function evaluation, step again or restart debugging.</span></span>  
+# <a name="function-evaluation-is-disabled-because-a-previous-function-evaluation-timed-out"></a><span data-ttu-id="95186-102">L'évaluation de la fonction est désactivée, car une évaluation de fonction précédente a expiré</span><span class="sxs-lookup"><span data-stu-id="95186-102">Function evaluation is disabled because a previous function evaluation timed out</span></span>
+<span data-ttu-id="95186-103">L’évaluation de fonction est désactivée, car une évaluation de fonction précédente a expiré. Pour réactiver l’évaluation de fonction, recommencez l’opération ou redémarrez le débogage.</span><span class="sxs-lookup"><span data-stu-id="95186-103">Function evaluation is disabled because a previous function evaluation timed out. To re-enable function evaluation, step again or restart debugging.</span></span>  
   
- <span data-ttu-id="522e1-104">Dans le débogueur Visual Studio, une expression spécifie un appel de procédure, mais une autre évaluation a dépassé le délai d’attente.</span><span class="sxs-lookup"><span data-stu-id="522e1-104">In the Visual Studio debugger, an expression specifies a procedure call, but another evaluation has timed out.</span></span>  
+ <span data-ttu-id="95186-104">Dans le débogueur Visual Studio, une expression spécifie un appel de procédure, mais une autre évaluation a dépassé le délai d’attente.</span><span class="sxs-lookup"><span data-stu-id="95186-104">In the Visual Studio debugger, an expression specifies a procedure call, but another evaluation has timed out.</span></span>  
   
- <span data-ttu-id="522e1-105">Les causes possibles de l’expiration d’un appel de procédure incluent une boucle infinie ou une *boucle*infinie.</span><span class="sxs-lookup"><span data-stu-id="522e1-105">Possible causes for a procedure call to time out include an infinite loop or *endless loop*.</span></span> <span data-ttu-id="522e1-106">Pour plus d’informations, consultez [pour... Instruction suivante](../../../visual-basic/language-reference/statements/for-next-statement.md).</span><span class="sxs-lookup"><span data-stu-id="522e1-106">For more information, see [For...Next Statement](../../../visual-basic/language-reference/statements/for-next-statement.md).</span></span>  
+ <span data-ttu-id="95186-105">Les causes possibles de l’expiration d’un appel de procédure incluent une boucle infinie ou une *boucle*infinie.</span><span class="sxs-lookup"><span data-stu-id="95186-105">Possible causes for a procedure call to time out include an infinite loop or *endless loop*.</span></span> <span data-ttu-id="95186-106">Pour plus d’informations, consultez [pour... Instruction suivante](../statements/for-next-statement.md).</span><span class="sxs-lookup"><span data-stu-id="95186-106">For more information, see [For...Next Statement](../statements/for-next-statement.md).</span></span>  
   
- <span data-ttu-id="522e1-107">La *récursivité*est un cas particulier de boucle infinie.</span><span class="sxs-lookup"><span data-stu-id="522e1-107">A special case of an infinite loop is *recursion*.</span></span> <span data-ttu-id="522e1-108">Pour plus d’informations, consultez [procédures récursives](../../../visual-basic/programming-guide/language-features/procedures/recursive-procedures.md).</span><span class="sxs-lookup"><span data-stu-id="522e1-108">For more information, see [Recursive Procedures](../../../visual-basic/programming-guide/language-features/procedures/recursive-procedures.md).</span></span>  
+ <span data-ttu-id="95186-107">La *récursivité*est un cas particulier de boucle infinie.</span><span class="sxs-lookup"><span data-stu-id="95186-107">A special case of an infinite loop is *recursion*.</span></span> <span data-ttu-id="95186-108">Pour plus d’informations, consultez [procédures récursives](../../programming-guide/language-features/procedures/recursive-procedures.md).</span><span class="sxs-lookup"><span data-stu-id="95186-108">For more information, see [Recursive Procedures](../../programming-guide/language-features/procedures/recursive-procedures.md).</span></span>  
   
- <span data-ttu-id="522e1-109">**ID d’erreur :** BC30957</span><span class="sxs-lookup"><span data-stu-id="522e1-109">**Error ID:** BC30957</span></span>  
+ <span data-ttu-id="95186-109">**ID d’erreur :** BC30957</span><span class="sxs-lookup"><span data-stu-id="95186-109">**Error ID:** BC30957</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="522e1-110">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="522e1-110">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="95186-110">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="95186-110">To correct this error</span></span>  
   
-1. <span data-ttu-id="522e1-111">Si possible, déterminez l’évaluation de la fonction précédente et la raison de l’expiration du délai d’attente. Dans le cas contraire, vous risquez de rencontrer cette erreur.</span><span class="sxs-lookup"><span data-stu-id="522e1-111">If possible, determine what the previous function evaluation was and what caused it to time out. Otherwise, you might encounter this error again.</span></span>  
+1. <span data-ttu-id="95186-111">Si possible, déterminez l’évaluation de la fonction précédente et la raison de l’expiration du délai d’attente. Dans le cas contraire, vous risquez de rencontrer cette erreur.</span><span class="sxs-lookup"><span data-stu-id="95186-111">If possible, determine what the previous function evaluation was and what caused it to time out. Otherwise, you might encounter this error again.</span></span>  
   
-2. <span data-ttu-id="522e1-112">Effectuez une nouvelle opération sur le débogueur, ou arrêtez et redémarrez le débogage.</span><span class="sxs-lookup"><span data-stu-id="522e1-112">Either step the debugger again, or terminate and restart debugging.</span></span>  
+2. <span data-ttu-id="95186-112">Effectuez une nouvelle opération sur le débogueur, ou arrêtez et redémarrez le débogage.</span><span class="sxs-lookup"><span data-stu-id="95186-112">Either step the debugger again, or terminate and restart debugging.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="522e1-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="522e1-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="95186-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="95186-113">See also</span></span>
 
-- [<span data-ttu-id="522e1-114">Débogage dans Visual Studio</span><span class="sxs-lookup"><span data-stu-id="522e1-114">Debugging in Visual Studio</span></span>](/visualstudio/debugger/debugger-feature-tour)
-- [<span data-ttu-id="522e1-115">Naviguer dans le code avec le débogueur</span><span class="sxs-lookup"><span data-stu-id="522e1-115">Navigating through Code with the Debugger</span></span>](/visualstudio/debugger/navigating-through-code-with-the-debugger)
+- [<span data-ttu-id="95186-114">Débogage dans Visual Studio</span><span class="sxs-lookup"><span data-stu-id="95186-114">Debugging in Visual Studio</span></span>](/visualstudio/debugger/debugger-feature-tour)
+- [<span data-ttu-id="95186-115">Naviguer dans le code avec le débogueur</span><span class="sxs-lookup"><span data-stu-id="95186-115">Navigating through Code with the Debugger</span></span>](/visualstudio/debugger/navigating-through-code-with-the-debugger)
