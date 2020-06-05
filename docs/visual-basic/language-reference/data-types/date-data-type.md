@@ -1,5 +1,5 @@
 ---
-title: Type de données date
+title: Date (type de données)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Date
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - literals [Visual Basic], Date
 - '# specifier for Date literals'
 ms.assetid: d9edf5b0-e85e-438b-a1cf-1f321e7c831b
-ms.openlocfilehash: 972df72874753a0f1213f3a4942468c59e3913ce
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 46c25e14db56d4cc3c6d59ec7649b37c35676e2e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344027"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387424"
 ---
 # <a name="date-data-type-visual-basic"></a>Type de données date (Visual Basic)
 
@@ -40,9 +40,9 @@ Vous devez placer un littéral `Date` entre des signes dièse (`# #`). Vous deve
 
 Cette restriction tient au fait que la signification de votre code ne doit jamais changer en fonction des paramètres régionaux dans lesquels votre application s'exécute. Supposez que vous codez en dur un littéral `Date` égal à `#3/4/1998#` et qu'il doit correspondre au 4 mars 1998. Dans des paramètres régionaux qui utilisent le format mm/jj/aaaa, la date 3/4/1998 est compilée comme vous le souhaitez. Mais supposons que vous déployiez votre application dans de nombreux pays ou régions. Dans des paramètres régionaux qui utilisent le format jj/mm/aaaa, votre littéral codé en dur sera compilé en tant que 3 avril 1998. Dans des paramètres régionaux qui utilisent le format aaaa/mm/jj, le littéral sera non valide (avril 1998, 0003) et provoquera une erreur du compilateur.
 
-## <a name="workarounds"></a>Solutions
+## <a name="workarounds"></a>Solutions de contournement
 
-Pour convertir un littéral `Date` dans le format de vos paramètres régionaux ou dans un format personnalisé, fournissez le littéral à la fonction <xref:Microsoft.VisualBasic.Strings.Format%2A>, en spécifiant un format de date prédéfini ou défini par l'utilisateur. Cela est illustré par l'exemple suivant.
+Pour convertir un littéral `Date` dans le format de vos paramètres régionaux ou dans un format personnalisé, fournissez le littéral à la fonction <xref:Microsoft.VisualBasic.Strings.Format%2A>, en spécifiant un format de date prédéfini ou défini par l'utilisateur. l’exemple ci-dessous illustre ce cas de figure.
 
 ```vb
 MsgBox("The formatted date is " & Format(#5/31/1993#, "dddd, d MMM yyyy"))
@@ -68,15 +68,15 @@ Si vous convertissez une valeur `Date` vers le type `String`, Visual Basic resti
 
 ## <a name="programming-tips"></a>Conseils de programmation
 
-- **Considérations relatives à l’interopérabilité.** Si vous utilisez des composants non écrits pour le .NET Framework, tels que des objets Automation ou COM, n'oubliez pas que les types de date et d'heure utilisés dans les autres environnements ne sont pas compatibles avec le type `Date` de Visual Basic. Si vous transmettez un argument de date et d’heure à un tel composant, déclarez-le en tant que `Double` et non `Date` dans votre nouveau code Visual Basic, et utilisez les méthodes de conversion <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> et <xref:System.DateTime.ToOADate%2A?displayProperty=nameWithType>.
+- **Considérations sur l'interopérabilité.** Si vous utilisez des composants non écrits pour le .NET Framework, tels que des objets Automation ou COM, n'oubliez pas que les types de date et d'heure utilisés dans les autres environnements ne sont pas compatibles avec le type `Date` de Visual Basic. Si vous transmettez un argument de date et d’heure à un tel composant, déclarez-le en tant que `Double` et non `Date` dans votre nouveau code Visual Basic, et utilisez les méthodes de conversion <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> et <xref:System.DateTime.ToOADate%2A?displayProperty=nameWithType>.
 
-- **Caractères de type.** `Date` n’a aucun caractère de type de littéral ou caractère de type d’identificateur. Toutefois, le compilateur traite les littéraux compris entre des signes dièse (`# #`) en tant que `Date`.
+- **Caractères de type.** `Date`n’a aucun caractère de type de littéral ou caractère de type d’identificateur. Toutefois, le compilateur traite les littéraux compris entre des signes dièse (`# #`) en tant que `Date`.
 
-- **Type de Framework.** Le type correspondant dans le .NET Framework est la structure <xref:System.DateTime?displayProperty=nameWithType>.
+- **Type .NET Framework.** Le type correspondant dans le .NET Framework est la structure <xref:System.DateTime?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Exemple
 
-Une variable ou une constante du type de données `Date` contient à la fois la date et l'heure. L’exemple suivant illustre ces actions.
+Une variable ou une constante du type de données `Date` contient à la fois la date et l'heure. L'exemple suivant illustre ce comportement.
 
 ```vb
 Dim someDateAndTime As Date = #8/13/2002 12:14 PM#
@@ -85,9 +85,9 @@ Dim someDateAndTime As Date = #8/13/2002 12:14 PM#
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.DateTime?displayProperty=nameWithType>
-- [Types de données](../../../visual-basic/language-reference/data-types/index.md)
-- [Standard Date and Time Format Strings](../../../standard/base-types/standard-date-and-time-format-strings.md)
-- [Chaînes de format de date et d'heure personnalisées](../../../standard/base-types/custom-date-and-time-format-strings.md)
-- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [Liste des conversions](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [Utilisation efficace des types de données](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- [Types de données](index.md)
+- [Chaînes de format de date et d’heure standard](../../../standard/base-types/standard-date-and-time-format-strings.md)
+- [Chaînes de format de date et d’heure personnalisées](../../../standard/base-types/custom-date-and-time-format-strings.md)
+- [Type Conversion Functions](../functions/type-conversion-functions.md)
+- [Liste des conversions](../keywords/conversion-summary.md)
+- [Utilisation efficace des types de données](../../programming-guide/language-features/data-types/efficient-use-of-data-types.md)

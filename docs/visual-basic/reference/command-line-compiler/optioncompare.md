@@ -9,12 +9,12 @@ helpviewer_keywords:
 - -optioncompare compiler option [Visual Basic]
 - /optioncompare compiler option [Visual Basic]
 ms.assetid: 7237b766-b44d-4cc5-9a3c-885348a7d9e4
-ms.openlocfilehash: ac385880f8c13c23dffff67fc2a1ecc5609fd189
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: ed9adc7cddd9eb204937b9819e4eeff176821e95
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581416"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400554"
 ---
 # <a name="-optioncompare"></a>-optioncompare
 
@@ -28,7 +28,7 @@ Spécifie la façon dont sont effectuées les comparaisons de chaînes.
 
 ## <a name="remarks"></a>Notes
 
-Vous pouvez spécifier `-optioncompare` dans l’une des deux formes `-optioncompare:binary` suivantes : pour utiliser des comparaisons de `-optioncompare:text` chaînes binaires et pour utiliser des comparaisons de chaînes de texte. Par défaut, le compilateur utilise `-optioncompare:binary`.
+Vous pouvez spécifier `-optioncompare` dans l’une des deux formes suivantes : `-optioncompare:binary` pour utiliser des comparaisons de chaînes binaires et `-optioncompare:text` pour utiliser des comparaisons de chaînes de texte. Par défaut, le compilateur utilise `-optioncompare:binary` .
 
 Dans Microsoft Windows, la page de codes actuelle détermine l’ordre de tri binaire. Un ordre de tri binaire standard est le suivant :
 
@@ -48,7 +48,7 @@ Les comparaisons de chaînes basées sur du texte sont basées sur un ordre de t
 
 ### <a name="to-set--optioncompare-programmatically"></a>Pour définir-optioncompare par programmation
 
-Consultez [instruction Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md).
+Consultez [instruction Option Compare](../../language-reference/statements/option-compare-statement.md).
 
 ## <a name="example"></a>Exemple
 
@@ -60,10 +60,10 @@ vbc -optioncompare:binary projFile.vb
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
-- [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
-- [-optioninfer (](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
-- [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [Option Compare (instruction)](../../../visual-basic/language-reference/statements/option-compare-statement.md)
+- [Compilateur de ligne de commande de Visual Basic](index.md)
+- [-optionexplicit](optionexplicit.md)
+- [-optionstrict](optionstrict.md)
+- [-optioninfer](optioninfer.md)
+- [Exemples de lignes de commande de compilation](sample-compilation-command-lines.md)
+- [Option Compare, instruction](../../language-reference/statements/option-compare-statement.md)
 - [Valeurs par défaut VB, Projets, boîte de dialogue Options](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
