@@ -1,18 +1,18 @@
 ---
-title: 'Comment : rechercher des éléments dans un espace de noms (XPath-LINQ to XML)'
+title: 'Procédure : rechercher des éléments dans un espace de noms (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: c7cb3b77-3424-4b54-9efa-4dc715948e41
-ms.openlocfilehash: 822af6367fab707f52e2dcb7a130d899be1fba26
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3663516e6b6289fe3b1d0599ff3ed4b7dad6a80a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344662"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84405194"
 ---
 # <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-visual-basic"></a>Comment : Rechercher des éléments dans un espace de noms (XPath-LINQ to XML) (Visual Basic)
 Les expressions XPath peuvent rechercher des nœuds dans un espace de noms particulier. Les expressions XPath utilisent des préfixes d’espaces de noms pour spécifier des espaces de noms. Pour analyser une expression XPath qui contient des préfixes d'espaces de noms, vous devez passer un objet aux méthodes XPath qui implémente <xref:System.Xml.IXmlNamespaceResolver>. Cet exemple utilise <xref:System.Xml.XmlNamespaceManager>.  
   
- L'expression XPath est la suivante :  
+ L’expression XPath est la suivante :  
   
  `./aw:*`  
   
@@ -45,7 +45,7 @@ For Each el As XElement In list2
 Next  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```console
 Results are identical  
@@ -82,4 +82,4 @@ Results are identical
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](linq-to-xml-for-xpath-users.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - registry [Visual Basic], deleting keys
 - examples [Visual Basic], registry
 ms.assetid: ab9aca0e-42b0-4ff7-8ff9-845a4bfdf9f2
-ms.openlocfilehash: f38301a3a717a35b98e55804d6435d046bbbbab4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ea537d302f64933176f1a44fec2e27b804ff5809
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345654"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363317"
 ---
 # <a name="how-to-delete-a-registry-key-in-visual-basic"></a>Guide pratique pour supprimer une clé de Registre en Visual Basic
 
@@ -52,5 +52,5 @@ Vous pouvez utiliser les méthodes<xref:Microsoft.Win32.RegistryKey.DeleteSubKey
 
 - <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>
 - <xref:Microsoft.Win32.RegistryKey>
-- [Sécurité et Registre](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)
-- [Lecture et écriture dans le Registre](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
+- [Sécurité et Registre](security-and-the-registry.md)
+- [Lecture et écriture dans le Registre](reading-from-and-writing-to-the-registry.md)

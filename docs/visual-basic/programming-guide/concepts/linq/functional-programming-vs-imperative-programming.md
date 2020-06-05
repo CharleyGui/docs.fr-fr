@@ -1,18 +1,18 @@
 ---
-title: Comparaison de la programmation fonctionnelle et de la programmation impérative
+title: Comparaison de la programmation fonctionnelle et de la Programmation impérative
 ms.date: 07/20/2015
 ms.assetid: 6a1f3b57-00e6-447d-9906-74c7c4d5d85c
-ms.openlocfilehash: 704beadc29af0de606b8f246360dc6fffca8cfcc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0090761dc07218673e1e0299951530d5a4763ffe
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353440"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84364797"
 ---
 # <a name="functional-programming-vs-imperative-programming-visual-basic"></a>Programmation fonctionnelle et programmation impérative (Visual Basic)
 Cette rubrique compare et contraste la programmation fonctionnelle avec la programmation impérative (procédurale) plus traditionnelle.  
   
-## <a name="functional-programming-vs-imperative-programming"></a>Comparaison de la programmation fonctionnelle et de la programmation impérative  
+## <a name="functional-programming-vs-imperative-programming"></a>Comparaison de la programmation fonctionnelle et de la Programmation impérative  
  Le paradigme *programmation fonctionnelle* a été créé explicitement afin de prendre en charge une approche fonctionnelle pure de la résolution des problèmes. La programmation fonctionnelle est une forme de *programmation déclarative*. Par contraste, la plupart des langages courants, y compris des langages de programmation orientés objets tels que C#, Visual Basic, C++ et Java, ont été conçus principalement pour prendre en charge la programmation *impérative* (procédurale).  
   
  Avec une approche impérative, un développeur écrit du code qui décrit exactement et en détail les étapes que l'ordinateur doit effectuer pour atteindre l'objectif. On appelle parfois cela la programmation *algorithmique*. Par contraste, une approche fonctionnelle suppose la composition du problème sous la forme d'un ensemble de fonctions à exécuter. Vous définissez soigneusement l'entrée de chaque fonction et ce que chaque fonction retourne. Le tableau suivant décrit quelques-unes des différences générales entre ces deux approches.  
@@ -20,7 +20,7 @@ Cette rubrique compare et contraste la programmation fonctionnelle avec la progr
 |Caractéristique|Approche impérative|Approche fonctionnelle|  
 |--------------------|-------------------------|-------------------------|  
 |Focus du programmeur|Comment effectuer des tâches (algorithmes) et comment assurer le suivi des modifications d'état.|Les informations souhaitées et les transformations requises.|  
-|Modifications d'état|Important.|Non-existantes.|  
+|Changements d'état|Important.|Non-existantes.|  
 |Ordre d'exécution|Important.|Peu important.|  
 |Contrôle de flux principal|Boucles, conditions et appels de fonctions (méthodes).|Appels de fonctions, y compris la récursivité.|  
 |Unité de manipulation principale|Instances de structures ou classes.|Fonctions en tant que collectes de données et objets de première classe.|  
@@ -52,6 +52,6 @@ Cette rubrique compare et contraste la programmation fonctionnelle avec la progr
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation des transformations fonctionnelles pures (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
+- [Présentation des transformations fonctionnelles pures (Visual Basic)](introduction-to-pure-functional-transformations.md)
 - [Transformations XSLT](../../../../standard/data/xml/xslt-transformations.md)
-- [Refactorisation dans des fonctions pures (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [Refactorisation dans des fonctions pures (Visual Basic)](refactoring-into-pure-functions.md)

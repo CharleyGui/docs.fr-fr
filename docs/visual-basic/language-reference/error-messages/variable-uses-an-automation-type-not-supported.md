@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID458
 ms.assetid: bde4f4da-493b-452c-b6e4-1d370edba4cd
-ms.openlocfilehash: 944c0c63cd0d7ae7f9ff770fd123231464af1eaf
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 7d52189e31823b63547c757434847c0e1717aada
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344829"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406545"
 ---
 # <a name="variable-uses-an-automation-type-not-supported-in-visual-basic"></a>Cette variable utilise un type Automation non pris en charge par Visual Basic
 
@@ -21,8 +21,8 @@ Vous avez essayé d’utiliser une variable définie dans une bibliothèque de t
 
      -ou-
 
-- Si vous rencontrez cette erreur lors de l’utilisation de `FileGet` ou `FileGetObject`, assurez-vous que le fichier que vous essayez d’utiliser a été écrit avec `FilePut` ou `FilePutObject`.
+- Si vous rencontrez cette erreur lors de l’utilisation de ou de, assurez-vous que `FileGet` `FileGetObject` le fichier que vous essayez d’utiliser a été écrit dans avec `FilePut` ou `FilePutObject` .
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données](../../../visual-basic/language-reference/data-types/index.md)
+- [Types de données](../data-types/index.md)
