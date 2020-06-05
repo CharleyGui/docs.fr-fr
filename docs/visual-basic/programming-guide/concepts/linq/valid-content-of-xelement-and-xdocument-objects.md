@@ -1,13 +1,13 @@
 ---
-title: Contenu valide des XElement et objets du Répertoire2 XDocument
+title: Contenu valide des Objects2 XElement et XDocument
 ms.date: 07/20/2015
 ms.assetid: 400bb692-478a-40b6-ac1b-4ccbb4cbbd02
-ms.openlocfilehash: 5e9b5ec54b3005d18a1a0da10d78d3c8ad5300ea
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d222f19f6f588968a3ef1515dca522a4a80e1ffb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614361"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84364342"
 ---
 # <a name="valid-content-of-xelement-and-xdocument-objects"></a>Contenu valide des objets XElement et XDocument
 Cette rubrique décrit les arguments valides qui peuvent être passés aux constructeurs et méthodes utilisés pour ajouter du contenu aux éléments et aux documents.  
@@ -90,4 +90,4 @@ Cette rubrique décrit les arguments valides qui peuvent être passés aux const
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Création d’arborescences XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [Création d’arborescences XML (Visual Basic)](creating-xml-trees.md)

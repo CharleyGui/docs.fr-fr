@@ -4,15 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID9
 ms.assetid: d0344a65-ec02-4caf-8d3c-9977392ca353
-ms.openlocfilehash: 2e091fcbb9eac439b00f6c0518d6a5e875f3e97e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 1212b88d60754809e4c27e7e7d41e2faf1bca41b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350794"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363057"
 ---
 # <a name="subscript-out-of-range-visual-basic"></a>Indice hors limites (Visual Basic)
-Un indice de tableau n’est pas valide, car il se trouve en dehors de la plage autorisée. La valeur d’indice la plus faible d’une dimension est toujours 0, et la valeur d’indice la plus élevée est retournée par la méthode `GetUpperBound` pour cette dimension.  
+Un indice de tableau n’est pas valide, car il se trouve en dehors de la plage autorisée. La valeur d’indice la plus faible d’une dimension est toujours 0, et la valeur d’indice la plus élevée est retournée par la `GetUpperBound` méthode pour cette dimension.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
@@ -21,4 +21,4 @@ Un indice de tableau n’est pas valide, car il se trouve en dehors de la plage 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Array.GetUpperBound%2A?displayProperty=nameWithType>
-- [Tableaux](../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [Tableaux](../../programming-guide/language-features/arrays/index.md)

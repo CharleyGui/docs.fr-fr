@@ -4,17 +4,17 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - String data type [Visual Basic], validation
 ms.assetid: 5d9a918f-6c1f-41a3-a019-b5c2b8ce0381
-ms.openlocfilehash: 49e6f79c13c94a3f2f6891b259c4bb2bec54ae6f
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 7b2d6a81f5dc88688a469b96d56a098a2b45c59f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344519"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363682"
 ---
 # <a name="walkthrough-validating-that-passwords-are-complex-visual-basic"></a>Procédure pas à pas : validation de la complexité des mots de passe (Visual Basic)
 Cette méthode vérifie certaines caractéristiques de mot de passe fort et met à jour un paramètre de chaîne avec des informations sur la vérification de l’échec du mot de passe.  
   
- Les mots de passe peuvent être utilisés dans un système sécurisé pour autoriser un utilisateur. Toutefois, les mots de passe doivent être difficiles à deviner pour les utilisateurs non autorisés. Les attaquants peuvent utiliser un programme d' *attaque par dictionnaire* , qui itère au sein de tous les mots d’un dictionnaire (ou de plusieurs dictionnaires dans différentes langues) et teste si l’un des mots fonctionne en tant que mot de passe d’un utilisateur. Des mots de passe faibles, tels que « Yankees » ou « Mustang », peuvent être devinés rapidement. Des mots de passe plus forts, tels que « ? Vous «L1N3vaFiNdMeyeP@sSWerd! », bien moins susceptibles d’être devinés. Un système protégé par mot de passe doit s’assurer que les utilisateurs choisissent des mots de passe forts.  
+ Les mots de passe peuvent être utilisés dans un système sécurisé pour autoriser un utilisateur. Toutefois, les mots de passe doivent être difficiles à deviner pour les utilisateurs non autorisés. Les attaquants peuvent utiliser un programme d' *attaque par dictionnaire* , qui itère au sein de tous les mots d’un dictionnaire (ou de plusieurs dictionnaires dans différentes langues) et teste si l’un des mots fonctionne en tant que mot de passe d’un utilisateur. Des mots de passe faibles, tels que « Yankees » ou « Mustang », peuvent être devinés rapidement. Des mots de passe plus forts, tels que « ? « L1N3vaFiNdMeyeP@sSWerd ! » Sont très moins susceptibles d’être devinés. Un système protégé par mot de passe doit s’assurer que les utilisateurs choisissent des mots de passe forts.  
   
  Un mot de passe fort est complexe (contenant un mélange de majuscules, de minuscules, de chiffres et de caractères spéciaux) et n’est pas un mot. Cet exemple montre comment vérifier la complexité.  
   
@@ -28,12 +28,12 @@ Cette méthode vérifie certaines caractéristiques de mot de passe fort et met 
   
  Cet exemple nécessite :  
   
-- Un accès aux membres de l’espace de noms <xref:System.Text.RegularExpressions>. Ajoutez une instruction `Imports` si vous n’utilisez pas de noms de membres qualifiés complets dans votre code. Pour plus d’informations, consultez [Instruction Imports (espace de noms et type .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
+- Un accès aux membres de l’espace de noms <xref:System.Text.RegularExpressions>. Ajoutez une instruction `Imports` si vous n’utilisez pas de noms de membres qualifiés complets dans votre code. Pour plus d’informations, consultez [Instruction Imports (espace de noms et type .NET)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
 ## <a name="security"></a>Sécurité  
  Si vous déplacez le mot de passe sur un réseau, vous devez utiliser une méthode sécurisée pour le transfert des données. Pour plus d’informations, consultez [sécurité des applications Web ASP.net](https://docs.microsoft.com/previous-versions/aspnet/330a99hc(v=vs.100)).
   
- Vous pouvez améliorer la précision de la fonction `ValidatePassword` en ajoutant des vérifications de complexité supplémentaires :  
+ Vous pouvez améliorer la précision de la `ValidatePassword` fonction en ajoutant des vérifications de complexité supplémentaires :  
   
 - Comparez le mot de passe et ses sous-chaînes avec le nom de l’utilisateur, l’identificateur de l’utilisateur et un dictionnaire défini par l’application. En outre, traitez les caractères similaires visuellement comme équivalents lors de l’exécution des comparaisons. Par exemple, considérez les lettres « l » et « e » comme équivalentes aux chiffres « 1 » et « 3 ».  
   
