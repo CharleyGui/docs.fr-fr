@@ -10,17 +10,17 @@ helpviewer_keywords:
 - time, Visual Basic keywords and run-time library members
 - time data types [Visual Basic]
 ms.assetid: 914d0563-b53c-492c-ac62-d833ce805f2f
-ms.openlocfilehash: d377c5fe4c0726b468014639e39df1f2f0cc1c64
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 071da9305c3e58fbc35d82d0cd5a275c35467901
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349874"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402718"
 ---
 # <a name="dates-and-times-summary-visual-basic"></a>Liste des dates et heures (Visual Basic)
 Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtime sont organisés par rôle et utilisation.  
   
-|Action|élément Language|  
+|Action|Élément du langage|  
 |------------|----------------------|  
 |Obtient la date ou l’heure actuelle.|<xref:Microsoft.VisualBasic.DateAndTime.Now%2A>, <xref:Microsoft.VisualBasic.DateAndTime.Today%2A>, <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A>|  
 |Effectuez des calculs de date.|<xref:Microsoft.VisualBasic.DateAndTime.DateAdd%2A>, <xref:Microsoft.VisualBasic.DateAndTime.DateDiff%2A>, <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A>|  
@@ -31,5 +31,5 @@ Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtim
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
-- [Membres de la bibliothèque runtime Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
+- [Mots clés](index.md)
+- [Membres de la bibliothèque runtime Visual Basic](../runtime-library-members.md)

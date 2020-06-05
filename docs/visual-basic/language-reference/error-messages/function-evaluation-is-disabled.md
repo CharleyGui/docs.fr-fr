@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC30957
 ms.assetid: 561e593a-f50a-4b72-a708-4cab60ec7b28
-ms.openlocfilehash: d004c89b742944622ce45e6a2be8d96116252745
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 7b0113e9c1018772da6dc180f7fc5beb0e922917
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197567"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402951"
 ---
 # <a name="function-evaluation-is-disabled-because-a-previous-function-evaluation-timed-out"></a>L'évaluation de la fonction est désactivée, car une évaluation de fonction précédente a expiré
 L’évaluation de fonction est désactivée, car une évaluation de fonction précédente a expiré. Pour réactiver l’évaluation de fonction, recommencez l’opération ou redémarrez le débogage.  
   
  Dans le débogueur Visual Studio, une expression spécifie un appel de procédure, mais une autre évaluation a dépassé le délai d’attente.  
   
- Les causes possibles de l’expiration d’un appel de procédure incluent une boucle infinie ou une *boucle*infinie. Pour plus d’informations, consultez [pour... Instruction suivante](../../../visual-basic/language-reference/statements/for-next-statement.md).  
+ Les causes possibles de l’expiration d’un appel de procédure incluent une boucle infinie ou une *boucle*infinie. Pour plus d’informations, consultez [pour... Instruction suivante](../statements/for-next-statement.md).  
   
- La *récursivité*est un cas particulier de boucle infinie. Pour plus d’informations, consultez [procédures récursives](../../../visual-basic/programming-guide/language-features/procedures/recursive-procedures.md).  
+ La *récursivité*est un cas particulier de boucle infinie. Pour plus d’informations, consultez [procédures récursives](../../programming-guide/language-features/procedures/recursive-procedures.md).  
   
  **ID d’erreur :** BC30957  
   

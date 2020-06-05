@@ -4,25 +4,25 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - Into keyword [Visual Basic]
 ms.assetid: e1534550-8f4b-4978-b043-fad7b8fd79ac
-ms.openlocfilehash: 038cf9b812d3fbdb54afaca072694bbde4bfb600
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4e3648ee9893ca0f4045e28e68b659c01035dee0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348036"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404471"
 ---
 # <a name="into-clause-visual-basic"></a>Into, clause (Visual Basic)
 Identifie les fonctions d’agrégation ou les regroupements à appliquer à une collection.  
   
 ## <a name="remarks"></a>Notes  
- Le mot clé `Each` est utilisé dans les contextes suivants :  
+ Le `Each` mot clé est utilisé dans les contextes suivants :  
   
- [Aggregate (clause)](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
+ [Aggregate Clause](../queries/aggregate-clause.md)  
   
- [Group By (clause)](../../../visual-basic/language-reference/queries/group-by-clause.md)  
+ [Group by, clause](../queries/group-by-clause.md)  
   
- [Group Join (clause)](../../../visual-basic/language-reference/queries/group-join-clause.md)  
+ [Group Join (clause)](../queries/group-join-clause.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
+- [Mots clés](../keywords/index.md)

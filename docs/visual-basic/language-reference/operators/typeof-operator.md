@@ -12,12 +12,12 @@ helpviewer_keywords:
 - TypeOf operator [Visual Basic]
 - compatible data types [Visual Basic]
 ms.assetid: 33f65296-659a-4b9a-9a29-c2a91cff68b2
-ms.openlocfilehash: 22af5b8f8488ca44e388596530decd52e33525dc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0cce36073b53442bce63f966f3bd94bd5d70d2a8
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350889"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406324"
 ---
 # <a name="typeof-operator-visual-basic"></a>TypeOf, opérateur (Visual Basic)
 Vérifie si le type d’exécution du résultat d’une expression est compatible avec le type spécifié.
@@ -32,15 +32,15 @@ result = TypeOf objectexpression Is typename
 result = TypeOf objectexpression IsNot typename  
 ```  
   
-## <a name="parts"></a>Composants  
+## <a name="parts"></a>Éléments  
  `result`  
  Retourné. Valeur `Boolean`.  
   
  `objectexpression`  
- Requis. Toute expression ayant pour résultat un type référence.  
+ Obligatoire. Toute expression ayant pour résultat un type référence.  
   
  `typename`  
- Requis. Tout nom de type de données.  
+ Obligatoire. Tout nom de type de données.  
   
 ## <a name="remarks"></a>Notes  
  L'opérateur `TypeOf` détermine si le type d'exécution de `objectexpression` est compatible avec `typename`. La compatibilité dépend de la catégorie du type de `typename`. Le tableau suivant illustre la manière dont la compatibilité est déterminée.  
@@ -49,11 +49,11 @@ result = TypeOf objectexpression IsNot typename
 |---------------------------------|-----------------------------|  
 |Class|`objectexpression` est de type `typename` ou hérite de `typename`|  
 |Structure|`objectexpression` est de type `typename`|  
-|Interface|`objectexpression` implémente `typename` ou hérite d’une classe qui implémente `typename`|  
+|Interface|`objectexpression` implémente `typename` ou hérite d'une classe qui implémente `typename`|  
   
  Si le type de l'exécution de `objectexpression` satisfait le critère de compatibilité, `result` est `True`. Sinon, `result` est `False`.  Si `objectexpression` est null, alors `TypeOf`...`Is` retourne `False`, et ...`IsNot` retourne `True`.  
   
- `TypeOf` est toujours utilisé avec le mot clé `Is` pour construire une expression `TypeOf`...`Is` ou avec le mot clé `IsNot` pour construire une expression `TypeOf`...`IsNot`.  
+ `TypeOf` est toujours utilisé avec le mot clé `Is` pour construire une expression `TypeOf`...`Is`, ou avec le mot clé `IsNot` pour construire une expression `TypeOf`...`IsNot`.  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant utilise des expressions `TypeOf`...`Is` pour tester la compatibilité du type de deux variables de référence d'objet avec différents types de données.  
@@ -64,9 +64,9 @@ result = TypeOf objectexpression IsNot typename
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Is (opérateur)](../../../visual-basic/language-reference/operators/is-operator.md)
-- [IsNot (opérateur)](../../../visual-basic/language-reference/operators/isnot-operator.md)
-- [Opérateurs de comparaison dans Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Opérateurs répertoriés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Opérateurs et expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+- [Is, opérateur](is-operator.md)
+- [IsNot, opérateur](isnot-operator.md)
+- [Comparison Operators in Visual Basic](../../programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Priorité des opérateurs en Visual Basic](operator-precedence.md)
+- [Opérateurs listés par fonctionnalité](operators-listed-by-functionality.md)
+- [Opérateurs et expressions](../../programming-guide/language-features/operators-and-expressions/index.md)

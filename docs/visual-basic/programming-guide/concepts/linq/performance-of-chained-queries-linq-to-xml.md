@@ -1,13 +1,13 @@
 ---
-title: Performance des requêtes chaînées (LINQ to XML)
+title: Performances des requêtes chaînées (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 589f2adc-69f9-404d-b9d6-4c28dabea7f7
-ms.openlocfilehash: 15cb9f94a49600c221b0cbb246743a79e9a5297b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6b87f2744f663ebd45dceb036dcaac71b80765fc
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353119"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396387"
 ---
 # <a name="performance-of-chained-queries-linq-to-xml-visual-basic"></a>Performances des requêtes chaînées (LINQ to XML) (Visual Basic)
 
@@ -27,7 +27,7 @@ For Each i As var In query2
 Next
 ```
 
-Cet exemple génère la sortie suivante :
+Cet exemple produit la sortie suivante :
 
 ```console
 4
@@ -47,4 +47,4 @@ Cette requête chaînée offre le même profil de performance que l'itération s
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Performances (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/performance-linq-to-xml.md)
+- [Performances (LINQ to XML) (Visual Basic)](performance-linq-to-xml.md)
