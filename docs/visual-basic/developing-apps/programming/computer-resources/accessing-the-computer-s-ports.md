@@ -5,12 +5,12 @@ helpviewer_keywords:
 - serial ports
 - My.Computer.Ports object [Visual Basic], tasks
 ms.assetid: b04a2f76-992a-4585-ab41-8bbbdbd554a1
-ms.openlocfilehash: e790a41fc945a395feebc63f8d26efdc51dc4fa9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4868514ab7ddb3c85686f4e71360791f458240a0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74329594"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410099"
 ---
 # <a name="accessing-the-computers-ports-visual-basic"></a>Accès aux ports de l'ordinateur (Visual Basic)
 
@@ -18,22 +18,22 @@ L’objet `My.Computer.Ports` fournit une propriété et une méthode pour accé
   
 ## <a name="in-this-section"></a>Dans cette section  
 
- [Procédure : afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)  
+ [Procédure : afficher les ports série disponibles](how-to-show-available-serial-ports.md)  
  Montre comment afficher les ports série disponibles.  
   
- [Procédure : passer des appels avec des modems attachés aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)  
+ [Procédure : passer des appels avec des modems attachés aux ports série](how-to-dial-modems-attached-to-serial-ports.md)  
  Montre comment utiliser un modem attaché au port série d’un ordinateur.  
   
- [Procédure : envoyer des chaînes aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)  
+ [Procédure : envoyer des chaînes aux ports série](how-to-send-strings-to-serial-ports.md)  
  Montre comment envoyer une chaîne au port série d’un ordinateur.  
   
- [Procédure : recevoir des chaînes provenant des ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)  
+ [Procédure : recevoir des chaînes provenant des ports série](how-to-receive-strings-from-serial-ports.md)  
  Montre comment recevoir une chaîne du port série d’un ordinateur.  
   
- [Opérations relatives au port dans .NET Framework](../../../../visual-basic/developing-apps/programming/computer-resources/port-operations-in-the-net-framework.md)  
+ [Opérations relatives au port dans .NET Framework](port-operations-in-the-net-framework.md)  
  Montre comment utiliser le .NET Framework pour effectuer des opérations relatives au port.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
 
  <xref:Microsoft.VisualBasic.Devices.Ports>  
  Décrit l’objet `My.Computer.Ports` et ses membres.  

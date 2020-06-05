@@ -7,33 +7,33 @@ f1_keywords:
 helpviewer_keywords:
 - BC40057
 ms.assetid: 4ae3506e-2ebe-4ff3-995d-14ac60db5e9f
-ms.openlocfilehash: 105fa8da838938d13022c210c1f65cdafd251003
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0ee235252d69e6f77ce53b048f45e73d0969e864
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918305"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409450"
 ---
-# <a name="namespace-or-type-specified-in-the-project-level-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>Namespace ou type spécifié dans les Imports' au niveau du projet\<nom_qualifié_élément >' ne contient aucun membre public ou est introuvable
-Namespace ou type spécifié dans les Imports' au niveau du projet\<nom_qualifié_élément >' ne contient aucun membre public ou est introuvable. Assurez-vous que l’espace de noms ou le type est défini et contient au moins un membre public. Assurez-vous que le nom d’alias ne contient pas d’autres alias.  
+# <a name="namespace-or-type-specified-in-the-project-level-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>L'espace de noms ou le type spécifié dans les Imports '\<qualifiedelementname>' au niveau du projet ne contient aucun membre public ou est introuvable
+L’espace de noms ou le type spécifié dans les importations au niveau du projet' \<qualifiedelementname> 'ne contient aucun membre public ou est introuvable. Assurez-vous que l’espace de noms ou le type est défini et contient au moins un membre public. Assurez-vous que le nom d’alias ne contient pas d’autres alias.  
   
- Une propriété de l’importation d’un projet spécifie un élément conteneur qui ne peut pas être trouvé ou ne définit pas `Public` membres.  
+ Une propriété d’importation d’un projet spécifie un élément conteneur qui est introuvable ou ne définit aucun `Public` membre.  
   
- Un *contenant l’élément* peut être un espace de noms, une classe, une structure, un module, une interface ou une énumération. L’élément conteneur contient des membres, tels que des variables, procédures ou d’autres éléments qui le contient.  
+ Un *élément conteneur* peut être un espace de noms, une classe, une structure, un module, une interface ou une énumération. L’élément conteneur contient des membres, tels que des variables, des procédures ou d’autres éléments conteneurs.  
   
- L’objectif de l’importation consiste à autoriser votre code pour accéder aux membres de type ou espace de noms sans devoir les qualifier. Votre projet devrez peut-être également ajouter une référence à l’espace de noms ou type. Pour plus d’informations, consultez « Importation d’éléments conteneurs » dans [References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+ L’objectif de l’importation est de permettre à votre code d’accéder à des membres de type ou d’espace de noms sans avoir à les qualifier. Votre projet peut également avoir besoin d’ajouter une référence à l’espace de noms ou au type. Pour plus d’informations, consultez « importation d’éléments contenants » dans les [références aux éléments déclarés](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
   
- Si le compilateur ne peut pas trouver l’élément conteneur spécifié, il ne peut pas résoudre les références qui l’utilisent. Si elle recherche l’élément, mais l’élément n’expose pas `Public` membres, aucune référence peut être réussie. Dans les deux cas, il est sans signification pour importer l’élément.  
+ Si le compilateur ne peut pas trouver l’élément conteneur spécifié, il ne peut pas résoudre les références qui l’utilisent. S’il trouve l’élément mais que l’élément n’expose aucun `Public` membre, aucune référence ne peut être effectuée. Dans les deux cas, il est inutile d’importer l’élément.  
   
- Vous utilisez le **Concepteur de projet** pour spécifier les éléments à importer. Utilisez le **espaces de noms importés** section de la **références** page. Vous pouvez accéder à la **Concepteur de projets** en double-cliquant sur le **mon projet** icône dans **l’Explorateur de solutions**.  
+ Vous utilisez le **Concepteur de projet** pour spécifier les éléments à importer. Utilisez la section **espaces de noms importés** de la page **références** . Vous pouvez accéder au **Concepteur de projets** en double-cliquant sur l’icône **mon projet** dans **Explorateur de solutions**.  
   
  **ID d’erreur :** BC40057  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1. Ouvrez le **Concepteur de projets** et basculez vers le **référence** page.  
+1. Ouvrez le **Concepteur de projets** et basculez vers la page de **référence** .  
   
-2. Dans le **espaces de noms importés** section, vérifiez que l’élément conteneur est accessible à partir de votre projet.  
+2. Dans la section **espaces de noms importés** , vérifiez que l’élément conteneur est accessible à partir de votre projet.  
   
 3. Vérifiez que l’élément conteneur expose au moins un `Public` membre.  
   
@@ -41,6 +41,6 @@ Namespace ou type spécifié dans les Imports' au niveau du projet\<nom_qualifi�
 
 - [Page Références, Concepteur de projets (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
-- [Public](../../../visual-basic/language-reference/modifiers/public.md)
-- [Espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
-- [Références aux éléments déclarés](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+- [Public](../modifiers/public.md)
+- [Espaces de noms dans Visual Basic](../../programming-guide/program-structure/namespaces.md)
+- [References to Declared Elements](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md)

@@ -1,13 +1,13 @@
 ---
-title: 'Comment : utiliser des annotations pour transformer des arborescences LINQ to XML en un style XSLT'
+title: 'Procédure : utiliser des annotations dans le but de transformer des arborescences LINQ to XML en un style XSLT'
 ms.date: 07/20/2015
 ms.assetid: 08e91fa2-dac2-4463-9ef1-87b1ac3fa890
-ms.openlocfilehash: d9cb32462535f099107343bd9069b4da3508c5b0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 099457eaab8c80605138d7e67d7bc2823e316234
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348358"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84364446"
 ---
 # <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-visual-basic"></a>Comment : utiliser des annotations pour transformer des arbres LINQ to XML dans un style XSLT (Visual Basic)
 
@@ -37,13 +37,13 @@ En détail, l'approche se compose des étapes suivantes :
 
 - Il existe une règle spéciale : si un nœud enfant du nouvel élément est dans un espace de noms différent, un espace de noms créé à cet effet (dans cet exemple, l'espace de noms est `http://www.microsoft.com/LinqToXmlTransform/2007`), cet élément enfant n'est pas copié dans la nouvelle arborescence. Au lieu de cela, si l'espace de noms est l'espace de noms spécial mentionné ci-dessus et que le nom local de l'élément est `ApplyTransforms`, les nœuds enfants de l'élément dans l'arborescence source sont itérés et copiés dans la nouvelle arborescence (hormis le fait que les éléments enfants annotés sont eux-mêmes transformés conformément à ces règles).
 
-- Cela est quelque peu analogue à la spécification des transformations en XSL. La requête qui sélectionne un ensemble de nœuds est analogue à l’expression XPath pour un modèle. Le code permettant de créer le nouvel objet <xref:System.Xml.Linq.XElement> qui est enregistré en tant qu'annotation est analogue au constructeur de séquence en XSL et l'élément `ApplyTransforms` est analogue en termes de fonction à l'élément `xsl:apply-templates` en XSL.
+- Cela est quelque peu analogue à la spécification des transformations en XSL. La requête qui sélectionne un ensemble de nœuds est analogue à l'expression XPath pour un modèle. Le code permettant de créer le nouvel objet <xref:System.Xml.Linq.XElement> qui est enregistré en tant qu'annotation est analogue au constructeur de séquence en XSL et l'élément `ApplyTransforms` est analogue en termes de fonction à l'élément `xsl:apply-templates` en XSL.
 
 - L’un des avantages offerts par cette approche est que lorsque vous formulez des requêtes, vous écrivez toujours des requêtes sur l’arborescence source non modifiée. Vous n'avez pas à vous soucier de l'impact des modifications apportées à l'arborescence sur les requêtes que vous écrivez.
 
 ## <a name="transforming-a-tree"></a>Transformation d'une arborescence
 
-Ce premier exemple renomme tous les nœuds `Paragraph` en `para`:
+Le premier exemple renomme tous les `Paragraph` nœuds en `para` :
 
 ```vb
 Imports <xmlns:xf="http://www.microsoft.com/LinqToXmlTransform/2007">
@@ -74,7 +74,7 @@ Module Module1
 End Module
 ```
 
- Cet exemple génère la sortie suivante :
+ Cet exemple produit la sortie suivante :
 
 ```xml
 <Root>
@@ -136,7 +136,7 @@ Module Module1
 End Module
 ```
 
-Cet exemple génère la sortie suivante :
+Cet exemple produit la sortie suivante :
 
 ```console
 Before Transform
@@ -340,7 +340,7 @@ Module Module1
 End Module
 ```
 
-Cet exemple génère la sortie suivante :
+Cet exemple produit la sortie suivante :
 
 ```console
 Before Transform
@@ -376,4 +376,4 @@ After Transform
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Visual Basic (Advanced LINQ to XML Programming)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Visual Basic (Advanced LINQ to XML Programming)](advanced-linq-to-xml-programming.md)
